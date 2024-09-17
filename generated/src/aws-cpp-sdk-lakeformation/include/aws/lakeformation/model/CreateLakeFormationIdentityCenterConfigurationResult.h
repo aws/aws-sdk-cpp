@@ -32,63 +32,30 @@ namespace Model
     AWS_LAKEFORMATION_API CreateLakeFormationIdentityCenterConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-     */
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-     */
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-     */
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

@@ -20,13 +20,14 @@ namespace Model
 
 CodeEditorAppSettings::CodeEditorAppSettings() : 
     m_defaultResourceSpecHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
+    m_customImagesHasBeenSet(false),
+    m_lifecycleConfigArnsHasBeenSet(false),
+    m_appLifecycleManagementHasBeenSet(false)
 {
 }
 
-CodeEditorAppSettings::CodeEditorAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
+CodeEditorAppSettings::CodeEditorAppSettings(JsonView jsonValue)
+  : CodeEditorAppSettings()
 {
   *this = jsonValue;
 }
@@ -40,6 +41,16 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
     m_defaultResourceSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomImages"))
+  {
+    Aws::Utils::Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
+    for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+    {
+      m_customImages.push_back(customImagesJsonList[customImagesIndex].AsObject());
+    }
+    m_customImagesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LifecycleConfigArns"))
   {
     Aws::Utils::Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
@@ -48,6 +59,13 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
       m_lifecycleConfigArns.push_back(lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString());
     }
     m_lifecycleConfigArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppLifecycleManagement"))
+  {
+    m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
+
+    m_appLifecycleManagementHasBeenSet = true;
   }
 
   return *this;
@@ -63,6 +81,17 @@ JsonValue CodeEditorAppSettings::Jsonize() const
 
   }
 
+  if(m_customImagesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customImagesJsonList(m_customImages.size());
+   for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+   {
+     customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());
+   }
+   payload.WithArray("CustomImages", std::move(customImagesJsonList));
+
+  }
+
   if(m_lifecycleConfigArnsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
@@ -71,6 +100,12 @@ JsonValue CodeEditorAppSettings::Jsonize() const
      lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);
    }
    payload.WithArray("LifecycleConfigArns", std::move(lifecycleConfigArnsJsonList));
+
+  }
+
+  if(m_appLifecycleManagementHasBeenSet)
+  {
+   payload.WithObject("AppLifecycleManagement", m_appLifecycleManagement.Jsonize());
 
   }
 

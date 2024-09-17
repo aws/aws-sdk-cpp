@@ -34,47 +34,21 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayName() const{ return m_directConnectGatewayName; }
-
-    /**
-     * <p>The name of the Direct Connect gateway.</p>
-     */
     inline bool DirectConnectGatewayNameHasBeenSet() const { return m_directConnectGatewayNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayName(const Aws::String& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = value; }
-
-    /**
-     * <p>The name of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayName(Aws::String&& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = std::move(value); }
-
-    /**
-     * <p>The name of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayName(const char* value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName.assign(value); }
-
-    /**
-     * <p>The name of the Direct Connect gateway.</p>
-     */
     inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(const Aws::String& value) { SetDirectConnectGatewayName(value); return *this;}
-
-    /**
-     * <p>The name of the Direct Connect gateway.</p>
-     */
     inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(Aws::String&& value) { SetDirectConnectGatewayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Direct Connect gateway.</p>
-     */
     inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(const char* value) { SetDirectConnectGatewayName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
      * configured on the Amazon side of the connection. The ASN must be in the private
@@ -82,31 +56,10 @@ namespace Model
      * 64512.</p>
      */
     inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
-
-    /**
-     * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
-     * configured on the Amazon side of the connection. The ASN must be in the private
-     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
-     * 64512.</p>
-     */
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
-
-    /**
-     * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
-     * configured on the Amazon side of the connection. The ASN must be in the private
-     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
-     * 64512.</p>
-     */
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
-
-    /**
-     * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
-     * configured on the Amazon side of the connection. The ASN must be in the private
-     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
-     * 64512.</p>
-     */
     inline CreateDirectConnectGatewayRequest& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directConnectGatewayName;

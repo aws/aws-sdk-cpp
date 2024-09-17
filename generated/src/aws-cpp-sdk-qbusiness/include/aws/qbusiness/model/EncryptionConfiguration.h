@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>Provides the identifier of the KMS key used to encrypt data indexed by Amazon
-   * Q. Amazon Q doesn't support asymmetric keys.</p><p><h3>See Also:</h3>   <a
+   * Q Business. Amazon Q Business doesn't support asymmetric keys.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,46 +39,20 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
+     * <p>The identifier of the KMS key. Amazon Q Business doesn't support asymmetric
+     * keys.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-     */
     inline EncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-     */
     inline EncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-     */
     inline EncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

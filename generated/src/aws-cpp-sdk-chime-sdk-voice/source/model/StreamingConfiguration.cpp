@@ -28,13 +28,8 @@ StreamingConfiguration::StreamingConfiguration() :
 {
 }
 
-StreamingConfiguration::StreamingConfiguration(JsonView jsonValue) : 
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_streamingNotificationTargetsHasBeenSet(false),
-    m_mediaInsightsConfigurationHasBeenSet(false)
+StreamingConfiguration::StreamingConfiguration(JsonView jsonValue)
+  : StreamingConfiguration()
 {
   *this = jsonValue;
 }

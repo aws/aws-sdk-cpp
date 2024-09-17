@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeStarNotificationsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeStarNotificationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeStarNotificationsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeStarNotificationsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -41,130 +41,47 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline const TagResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline ResourceTagSet& WithResourceType(const TagResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline ResourceTagSet& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID for the specified resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The ID for the specified resource.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the specified resource.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The ID for the specified resource.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The ID for the specified resource.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The ID for the specified resource.</p>
-     */
     inline ResourceTagSet& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The ID for the specified resource.</p>
-     */
     inline ResourceTagSet& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the specified resource.</p>
-     */
     inline ResourceTagSet& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags associated with the specified resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags associated with the specified resource.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags associated with the specified resource.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags associated with the specified resource.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags associated with the specified resource.</p>
-     */
     inline ResourceTagSet& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags associated with the specified resource.</p>
-     */
     inline ResourceTagSet& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags associated with the specified resource.</p>
-     */
     inline ResourceTagSet& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags associated with the specified resource.</p>
-     */
     inline ResourceTagSet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     TagResourceType m_resourceType;

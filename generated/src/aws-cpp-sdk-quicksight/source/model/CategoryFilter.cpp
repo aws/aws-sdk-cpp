@@ -21,14 +21,13 @@ namespace Model
 CategoryFilter::CategoryFilter() : 
     m_filterIdHasBeenSet(false),
     m_columnHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
 }
 
-CategoryFilter::CategoryFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+CategoryFilter::CategoryFilter(JsonView jsonValue)
+  : CategoryFilter()
 {
   *this = jsonValue;
 }
@@ -56,6 +55,13 @@ CategoryFilter& CategoryFilter::operator =(JsonView jsonValue)
     m_configurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
+  {
+    m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
+
+    m_defaultFilterControlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +84,12 @@ JsonValue CategoryFilter::Jsonize() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("Configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_defaultFilterControlConfigurationHasBeenSet)
+  {
+   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
 
   }
 

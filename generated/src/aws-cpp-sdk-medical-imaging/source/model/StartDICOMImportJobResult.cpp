@@ -22,8 +22,8 @@ StartDICOMImportJobResult::StartDICOMImportJobResult() :
 {
 }
 
-StartDICOMImportJobResult::StartDICOMImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StartDICOMImportJobResult::StartDICOMImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDICOMImportJobResult()
 {
   *this = result;
 }

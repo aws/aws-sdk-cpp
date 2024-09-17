@@ -32,63 +32,29 @@ namespace Model
     AWS_TRANSFER_API StartFileTransferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline const Aws::String& GetTransferId() const{ return m_transferId; }
-
-    /**
-     * <p>Returns the unique identifier for the file transfer.</p>
-     */
     inline void SetTransferId(const Aws::String& value) { m_transferId = value; }
-
-    /**
-     * <p>Returns the unique identifier for the file transfer.</p>
-     */
     inline void SetTransferId(Aws::String&& value) { m_transferId = std::move(value); }
-
-    /**
-     * <p>Returns the unique identifier for the file transfer.</p>
-     */
     inline void SetTransferId(const char* value) { m_transferId.assign(value); }
-
-    /**
-     * <p>Returns the unique identifier for the file transfer.</p>
-     */
     inline StartFileTransferResult& WithTransferId(const Aws::String& value) { SetTransferId(value); return *this;}
-
-    /**
-     * <p>Returns the unique identifier for the file transfer.</p>
-     */
     inline StartFileTransferResult& WithTransferId(Aws::String&& value) { SetTransferId(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the unique identifier for the file transfer.</p>
-     */
     inline StartFileTransferResult& WithTransferId(const char* value) { SetTransferId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartFileTransferResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartFileTransferResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartFileTransferResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transferId;

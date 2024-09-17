@@ -28,13 +28,8 @@ DebugRuleEvaluationStatus::DebugRuleEvaluationStatus() :
 {
 }
 
-DebugRuleEvaluationStatus::DebugRuleEvaluationStatus(JsonView jsonValue) : 
-    m_ruleConfigurationNameHasBeenSet(false),
-    m_ruleEvaluationJobArnHasBeenSet(false),
-    m_ruleEvaluationStatus(RuleEvaluationStatus::NOT_SET),
-    m_ruleEvaluationStatusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+DebugRuleEvaluationStatus::DebugRuleEvaluationStatus(JsonView jsonValue)
+  : DebugRuleEvaluationStatus()
 {
   *this = jsonValue;
 }

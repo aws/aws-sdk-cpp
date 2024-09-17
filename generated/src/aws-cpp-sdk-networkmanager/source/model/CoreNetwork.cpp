@@ -27,22 +27,14 @@ CoreNetwork::CoreNetwork() :
     m_state(CoreNetworkState::NOT_SET),
     m_stateHasBeenSet(false),
     m_segmentsHasBeenSet(false),
+    m_networkFunctionGroupsHasBeenSet(false),
     m_edgesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-CoreNetwork::CoreNetwork(JsonView jsonValue) : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(CoreNetworkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_segmentsHasBeenSet(false),
-    m_edgesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CoreNetwork::CoreNetwork(JsonView jsonValue)
+  : CoreNetwork()
 {
   *this = jsonValue;
 }
@@ -99,6 +91,16 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());
     }
     m_segmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFunctionGroups"))
+  {
+    Aws::Utils::Array<JsonView> networkFunctionGroupsJsonList = jsonValue.GetArray("NetworkFunctionGroups");
+    for(unsigned networkFunctionGroupsIndex = 0; networkFunctionGroupsIndex < networkFunctionGroupsJsonList.GetLength(); ++networkFunctionGroupsIndex)
+    {
+      m_networkFunctionGroups.push_back(networkFunctionGroupsJsonList[networkFunctionGroupsIndex].AsObject());
+    }
+    m_networkFunctionGroupsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Edges"))
@@ -170,6 +172,17 @@ JsonValue CoreNetwork::Jsonize() const
      segmentsJsonList[segmentsIndex].AsObject(m_segments[segmentsIndex].Jsonize());
    }
    payload.WithArray("Segments", std::move(segmentsJsonList));
+
+  }
+
+  if(m_networkFunctionGroupsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> networkFunctionGroupsJsonList(m_networkFunctionGroups.size());
+   for(unsigned networkFunctionGroupsIndex = 0; networkFunctionGroupsIndex < networkFunctionGroupsJsonList.GetLength(); ++networkFunctionGroupsIndex)
+   {
+     networkFunctionGroupsJsonList[networkFunctionGroupsIndex].AsObject(m_networkFunctionGroups[networkFunctionGroupsIndex].Jsonize());
+   }
+   payload.WithArray("NetworkFunctionGroups", std::move(networkFunctionGroupsJsonList));
 
   }
 

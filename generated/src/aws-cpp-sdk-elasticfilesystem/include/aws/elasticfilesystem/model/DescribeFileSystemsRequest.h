@@ -41,197 +41,64 @@ namespace Model
     AWS_EFS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>(Optional) Specifies the maximum number of file systems to return in the
      * response (integer). This number is automatically set to 100. The response is
      * paginated at 100 per page if you have more than 100 file systems. </p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
-
-    /**
-     * <p>(Optional) Specifies the maximum number of file systems to return in the
-     * response (integer). This number is automatically set to 100. The response is
-     * paginated at 100 per page if you have more than 100 file systems. </p>
-     */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-
-    /**
-     * <p>(Optional) Specifies the maximum number of file systems to return in the
-     * response (integer). This number is automatically set to 100. The response is
-     * paginated at 100 per page if you have more than 100 file systems. </p>
-     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-
-    /**
-     * <p>(Optional) Specifies the maximum number of file systems to return in the
-     * response (integer). This number is automatically set to 100. The response is
-     * paginated at 100 per page if you have more than 100 file systems. </p>
-     */
     inline DescribeFileSystemsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If present, specifies to
      * continue the list from where the returning call had left off. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
-     * continue the list from where the returning call had left off. </p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
-     * continue the list from where the returning call had left off. </p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
-     * continue the list from where the returning call had left off. </p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
-     * continue the list from where the returning call had left off. </p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
-     * continue the list from where the returning call had left off. </p>
-     */
     inline DescribeFileSystemsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
-     * continue the list from where the returning call had left off. </p>
-     */
     inline DescribeFileSystemsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
-     * continue the list from where the returning call had left off. </p>
-     */
     inline DescribeFileSystemsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Optional) Restricts the list to the file system with this creation token
      * (String). You specify a creation token when you create an Amazon EFS file
      * system.</p>
      */
     inline const Aws::String& GetCreationToken() const{ return m_creationToken; }
-
-    /**
-     * <p>(Optional) Restricts the list to the file system with this creation token
-     * (String). You specify a creation token when you create an Amazon EFS file
-     * system.</p>
-     */
     inline bool CreationTokenHasBeenSet() const { return m_creationTokenHasBeenSet; }
-
-    /**
-     * <p>(Optional) Restricts the list to the file system with this creation token
-     * (String). You specify a creation token when you create an Amazon EFS file
-     * system.</p>
-     */
     inline void SetCreationToken(const Aws::String& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
-
-    /**
-     * <p>(Optional) Restricts the list to the file system with this creation token
-     * (String). You specify a creation token when you create an Amazon EFS file
-     * system.</p>
-     */
     inline void SetCreationToken(Aws::String&& value) { m_creationTokenHasBeenSet = true; m_creationToken = std::move(value); }
-
-    /**
-     * <p>(Optional) Restricts the list to the file system with this creation token
-     * (String). You specify a creation token when you create an Amazon EFS file
-     * system.</p>
-     */
     inline void SetCreationToken(const char* value) { m_creationTokenHasBeenSet = true; m_creationToken.assign(value); }
-
-    /**
-     * <p>(Optional) Restricts the list to the file system with this creation token
-     * (String). You specify a creation token when you create an Amazon EFS file
-     * system.</p>
-     */
     inline DescribeFileSystemsRequest& WithCreationToken(const Aws::String& value) { SetCreationToken(value); return *this;}
-
-    /**
-     * <p>(Optional) Restricts the list to the file system with this creation token
-     * (String). You specify a creation token when you create an Amazon EFS file
-     * system.</p>
-     */
     inline DescribeFileSystemsRequest& WithCreationToken(Aws::String&& value) { SetCreationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) Restricts the list to the file system with this creation token
-     * (String). You specify a creation token when you create an Amazon EFS file
-     * system.</p>
-     */
     inline DescribeFileSystemsRequest& WithCreationToken(const char* value) { SetCreationToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Optional) ID of the file system whose description you want to retrieve
      * (String).</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>(Optional) ID of the file system whose description you want to retrieve
-     * (String).</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>(Optional) ID of the file system whose description you want to retrieve
-     * (String).</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>(Optional) ID of the file system whose description you want to retrieve
-     * (String).</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>(Optional) ID of the file system whose description you want to retrieve
-     * (String).</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>(Optional) ID of the file system whose description you want to retrieve
-     * (String).</p>
-     */
     inline DescribeFileSystemsRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>(Optional) ID of the file system whose description you want to retrieve
-     * (String).</p>
-     */
     inline DescribeFileSystemsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) ID of the file system whose description you want to retrieve
-     * (String).</p>
-     */
     inline DescribeFileSystemsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxItems;

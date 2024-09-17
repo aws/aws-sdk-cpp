@@ -39,101 +39,35 @@ namespace Model
     AWS_EFS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Specifies the EFS resource that you want to remove tags from.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>Specifies the EFS resource that you want to remove tags from.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the EFS resource that you want to remove tags from.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>Specifies the EFS resource that you want to remove tags from.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>Specifies the EFS resource that you want to remove tags from.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>Specifies the EFS resource that you want to remove tags from.</p>
-     */
     inline UntagResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>Specifies the EFS resource that you want to remove tags from.</p>
-     */
     inline UntagResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the EFS resource that you want to remove tags from.</p>
-     */
     inline UntagResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The keys of the key-value tag pairs that you want to remove from the
      * specified EFS resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The keys of the key-value tag pairs that you want to remove from the
-     * specified EFS resource.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceId;

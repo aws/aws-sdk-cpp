@@ -26,11 +26,8 @@ HoursOfOperationConfig::HoursOfOperationConfig() :
 {
 }
 
-HoursOfOperationConfig::HoursOfOperationConfig(JsonView jsonValue) : 
-    m_day(HoursOfOperationDays::NOT_SET),
-    m_dayHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+HoursOfOperationConfig::HoursOfOperationConfig(JsonView jsonValue)
+  : HoursOfOperationConfig()
 {
   *this = jsonValue;
 }

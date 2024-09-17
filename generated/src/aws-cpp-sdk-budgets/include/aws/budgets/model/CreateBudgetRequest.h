@@ -10,6 +10,7 @@
 #include <aws/budgets/model/Budget.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/budgets/model/NotificationWithSubscribers.h>
+#include <aws/budgets/model/ResourceTag.h>
 #include <utility>
 
 namespace Aws
@@ -40,78 +41,33 @@ namespace Model
     AWS_BUDGETS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>accountId</code> that is associated with the budget.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget.</p>
-     */
     inline CreateBudgetRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget.</p>
-     */
     inline CreateBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>accountId</code> that is associated with the budget.</p>
-     */
     inline CreateBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The budget object that you want to create.</p>
      */
     inline const Budget& GetBudget() const{ return m_budget; }
-
-    /**
-     * <p>The budget object that you want to create.</p>
-     */
     inline bool BudgetHasBeenSet() const { return m_budgetHasBeenSet; }
-
-    /**
-     * <p>The budget object that you want to create.</p>
-     */
     inline void SetBudget(const Budget& value) { m_budgetHasBeenSet = true; m_budget = value; }
-
-    /**
-     * <p>The budget object that you want to create.</p>
-     */
     inline void SetBudget(Budget&& value) { m_budgetHasBeenSet = true; m_budget = std::move(value); }
-
-    /**
-     * <p>The budget object that you want to create.</p>
-     */
     inline CreateBudgetRequest& WithBudget(const Budget& value) { SetBudget(value); return *this;}
-
-    /**
-     * <p>The budget object that you want to create.</p>
-     */
     inline CreateBudgetRequest& WithBudget(Budget&& value) { SetBudget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
@@ -120,70 +76,29 @@ namespace Model
      * and subscribers for you.</p>
      */
     inline const Aws::Vector<NotificationWithSubscribers>& GetNotificationsWithSubscribers() const{ return m_notificationsWithSubscribers; }
-
-    /**
-     * <p>A notification that you want to associate with a budget. A budget can have up
-     * to five notifications, and each notification can have one SNS subscriber and up
-     * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
-     * and subscribers for you.</p>
-     */
     inline bool NotificationsWithSubscribersHasBeenSet() const { return m_notificationsWithSubscribersHasBeenSet; }
-
-    /**
-     * <p>A notification that you want to associate with a budget. A budget can have up
-     * to five notifications, and each notification can have one SNS subscriber and up
-     * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
-     * and subscribers for you.</p>
-     */
     inline void SetNotificationsWithSubscribers(const Aws::Vector<NotificationWithSubscribers>& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers = value; }
-
-    /**
-     * <p>A notification that you want to associate with a budget. A budget can have up
-     * to five notifications, and each notification can have one SNS subscriber and up
-     * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
-     * and subscribers for you.</p>
-     */
     inline void SetNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers = std::move(value); }
-
-    /**
-     * <p>A notification that you want to associate with a budget. A budget can have up
-     * to five notifications, and each notification can have one SNS subscriber and up
-     * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
-     * and subscribers for you.</p>
-     */
     inline CreateBudgetRequest& WithNotificationsWithSubscribers(const Aws::Vector<NotificationWithSubscribers>& value) { SetNotificationsWithSubscribers(value); return *this;}
-
-    /**
-     * <p>A notification that you want to associate with a budget. A budget can have up
-     * to five notifications, and each notification can have one SNS subscriber and up
-     * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
-     * and subscribers for you.</p>
-     */
     inline CreateBudgetRequest& WithNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { SetNotificationsWithSubscribers(std::move(value)); return *this;}
-
-    /**
-     * <p>A notification that you want to associate with a budget. A budget can have up
-     * to five notifications, and each notification can have one SNS subscriber and up
-     * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
-     * and subscribers for you.</p>
-     */
     inline CreateBudgetRequest& AddNotificationsWithSubscribers(const NotificationWithSubscribers& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(value); return *this; }
-
-    /**
-     * <p>A notification that you want to associate with a budget. A budget can have up
-     * to five notifications, and each notification can have one SNS subscriber and up
-     * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
-     * and subscribers for you.</p>
-     */
     inline CreateBudgetRequest& AddNotificationsWithSubscribers(NotificationWithSubscribers&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
+    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
+    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
+    inline CreateBudgetRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
+    inline CreateBudgetRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
+    inline CreateBudgetRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
+    inline CreateBudgetRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_accountId;
@@ -194,6 +109,9 @@ namespace Model
 
     Aws::Vector<NotificationWithSubscribers> m_notificationsWithSubscribers;
     bool m_notificationsWithSubscribersHasBeenSet = false;
+
+    Aws::Vector<ResourceTag> m_resourceTags;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

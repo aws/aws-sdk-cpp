@@ -29,9 +29,9 @@ CreatePlaceIndexResult::CreatePlaceIndexResult(const Aws::AmazonWebServiceResult
 CreatePlaceIndexResult& CreatePlaceIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("IndexName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_indexName = jsonValue.GetString("IndexName");
 
   }
 
@@ -41,9 +41,9 @@ CreatePlaceIndexResult& CreatePlaceIndexResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("IndexName"))
+  if(jsonValue.ValueExists("CreateTime"))
   {
-    m_indexName = jsonValue.GetString("IndexName");
+    m_createTime = jsonValue.GetString("CreateTime");
 
   }
 

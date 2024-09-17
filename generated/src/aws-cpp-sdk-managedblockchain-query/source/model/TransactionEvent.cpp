@@ -31,24 +31,21 @@ TransactionEvent::TransactionEvent() :
     m_tokenIdHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
     m_voutIndex(0),
-    m_voutIndexHasBeenSet(false)
+    m_voutIndexHasBeenSet(false),
+    m_voutSpent(false),
+    m_voutSpentHasBeenSet(false),
+    m_spentVoutTransactionIdHasBeenSet(false),
+    m_spentVoutTransactionHashHasBeenSet(false),
+    m_spentVoutIndex(0),
+    m_spentVoutIndexHasBeenSet(false),
+    m_blockchainInstantHasBeenSet(false),
+    m_confirmationStatus(ConfirmationStatus::NOT_SET),
+    m_confirmationStatusHasBeenSet(false)
 {
 }
 
-TransactionEvent::TransactionEvent(JsonView jsonValue) : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_transactionHashHasBeenSet(false),
-    m_eventType(QueryTransactionEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_contractAddressHasBeenSet(false),
-    m_tokenIdHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_voutIndex(0),
-    m_voutIndexHasBeenSet(false)
+TransactionEvent::TransactionEvent(JsonView jsonValue)
+  : TransactionEvent()
 {
   *this = jsonValue;
 }
@@ -125,6 +122,48 @@ TransactionEvent& TransactionEvent::operator =(JsonView jsonValue)
     m_voutIndexHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("voutSpent"))
+  {
+    m_voutSpent = jsonValue.GetBool("voutSpent");
+
+    m_voutSpentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("spentVoutTransactionId"))
+  {
+    m_spentVoutTransactionId = jsonValue.GetString("spentVoutTransactionId");
+
+    m_spentVoutTransactionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("spentVoutTransactionHash"))
+  {
+    m_spentVoutTransactionHash = jsonValue.GetString("spentVoutTransactionHash");
+
+    m_spentVoutTransactionHashHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("spentVoutIndex"))
+  {
+    m_spentVoutIndex = jsonValue.GetInteger("spentVoutIndex");
+
+    m_spentVoutIndexHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("blockchainInstant"))
+  {
+    m_blockchainInstant = jsonValue.GetObject("blockchainInstant");
+
+    m_blockchainInstantHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("confirmationStatus"))
+  {
+    m_confirmationStatus = ConfirmationStatusMapper::GetConfirmationStatusForName(jsonValue.GetString("confirmationStatus"));
+
+    m_confirmationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -188,6 +227,41 @@ JsonValue TransactionEvent::Jsonize() const
   {
    payload.WithInteger("voutIndex", m_voutIndex);
 
+  }
+
+  if(m_voutSpentHasBeenSet)
+  {
+   payload.WithBool("voutSpent", m_voutSpent);
+
+  }
+
+  if(m_spentVoutTransactionIdHasBeenSet)
+  {
+   payload.WithString("spentVoutTransactionId", m_spentVoutTransactionId);
+
+  }
+
+  if(m_spentVoutTransactionHashHasBeenSet)
+  {
+   payload.WithString("spentVoutTransactionHash", m_spentVoutTransactionHash);
+
+  }
+
+  if(m_spentVoutIndexHasBeenSet)
+  {
+   payload.WithInteger("spentVoutIndex", m_spentVoutIndex);
+
+  }
+
+  if(m_blockchainInstantHasBeenSet)
+  {
+   payload.WithObject("blockchainInstant", m_blockchainInstant.Jsonize());
+
+  }
+
+  if(m_confirmationStatusHasBeenSet)
+  {
+   payload.WithString("confirmationStatus", ConfirmationStatusMapper::GetNameForConfirmationStatus(m_confirmationStatus));
   }
 
   return payload;

@@ -24,9 +24,8 @@ VpcIngressConnectionSummary::VpcIngressConnectionSummary() :
 {
 }
 
-VpcIngressConnectionSummary::VpcIngressConnectionSummary(JsonView jsonValue) : 
-    m_vpcIngressConnectionArnHasBeenSet(false),
-    m_serviceArnHasBeenSet(false)
+VpcIngressConnectionSummary::VpcIngressConnectionSummary(JsonView jsonValue)
+  : VpcIngressConnectionSummary()
 {
   *this = jsonValue;
 }

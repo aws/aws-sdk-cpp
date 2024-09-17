@@ -31,6 +31,7 @@
 #include <aws/batch/model/DescribeJobQueuesResult.h>
 #include <aws/batch/model/DescribeJobsResult.h>
 #include <aws/batch/model/DescribeSchedulingPoliciesResult.h>
+#include <aws/batch/model/GetJobQueueSnapshotResult.h>
 #include <aws/batch/model/ListJobsResult.h>
 #include <aws/batch/model/ListSchedulingPoliciesResult.h>
 #include <aws/batch/model/ListTagsForResourceResult.h>
@@ -42,6 +43,11 @@
 #include <aws/batch/model/UpdateComputeEnvironmentResult.h>
 #include <aws/batch/model/UpdateJobQueueResult.h>
 #include <aws/batch/model/UpdateSchedulingPolicyResult.h>
+#include <aws/batch/model/ListSchedulingPoliciesRequest.h>
+#include <aws/batch/model/DescribeJobQueuesRequest.h>
+#include <aws/batch/model/DescribeJobDefinitionsRequest.h>
+#include <aws/batch/model/DescribeComputeEnvironmentsRequest.h>
+#include <aws/batch/model/ListJobsRequest.h>
 /* End of service model headers required in BatchClient header */
 
 namespace Aws
@@ -75,7 +81,7 @@ namespace Aws
 
   namespace Batch
   {
-    using BatchClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BatchClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BatchEndpointProviderBase = Aws::Batch::Endpoint::BatchEndpointProviderBase;
     using BatchEndpointProvider = Aws::Batch::Endpoint::BatchEndpointProvider;
 
@@ -95,6 +101,7 @@ namespace Aws
       class DescribeJobQueuesRequest;
       class DescribeJobsRequest;
       class DescribeSchedulingPoliciesRequest;
+      class GetJobQueueSnapshotRequest;
       class ListJobsRequest;
       class ListSchedulingPoliciesRequest;
       class ListTagsForResourceRequest;
@@ -122,6 +129,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeJobQueuesResult, BatchError> DescribeJobQueuesOutcome;
       typedef Aws::Utils::Outcome<DescribeJobsResult, BatchError> DescribeJobsOutcome;
       typedef Aws::Utils::Outcome<DescribeSchedulingPoliciesResult, BatchError> DescribeSchedulingPoliciesOutcome;
+      typedef Aws::Utils::Outcome<GetJobQueueSnapshotResult, BatchError> GetJobQueueSnapshotOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, BatchError> ListJobsOutcome;
       typedef Aws::Utils::Outcome<ListSchedulingPoliciesResult, BatchError> ListSchedulingPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, BatchError> ListTagsForResourceOutcome;
@@ -149,6 +157,7 @@ namespace Aws
       typedef std::future<DescribeJobQueuesOutcome> DescribeJobQueuesOutcomeCallable;
       typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
       typedef std::future<DescribeSchedulingPoliciesOutcome> DescribeSchedulingPoliciesOutcomeCallable;
+      typedef std::future<GetJobQueueSnapshotOutcome> GetJobQueueSnapshotOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
       typedef std::future<ListSchedulingPoliciesOutcome> ListSchedulingPoliciesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -179,6 +188,7 @@ namespace Aws
     typedef std::function<void(const BatchClient*, const Model::DescribeJobQueuesRequest&, const Model::DescribeJobQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobQueuesResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobsResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DescribeSchedulingPoliciesRequest&, const Model::DescribeSchedulingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchedulingPoliciesResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::GetJobQueueSnapshotRequest&, const Model::GetJobQueueSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobQueueSnapshotResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::ListSchedulingPoliciesRequest&, const Model::ListSchedulingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchedulingPoliciesResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;

@@ -34,6 +34,7 @@
 #include <aws/iot1click-projects/model/UntagResourceResult.h>
 #include <aws/iot1click-projects/model/UpdatePlacementResult.h>
 #include <aws/iot1click-projects/model/UpdateProjectResult.h>
+#include <aws/iot1click-projects/model/ListProjectsRequest.h>
 /* End of service model headers required in IoT1ClickProjectsClient header */
 
 namespace Aws
@@ -67,7 +68,7 @@ namespace Aws
 
   namespace IoT1ClickProjects
   {
-    using IoT1ClickProjectsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoT1ClickProjectsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoT1ClickProjectsEndpointProviderBase = Aws::IoT1ClickProjects::Endpoint::IoT1ClickProjectsEndpointProviderBase;
     using IoT1ClickProjectsEndpointProvider = Aws::IoT1ClickProjects::Endpoint::IoT1ClickProjectsEndpointProvider;
 

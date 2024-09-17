@@ -23,9 +23,8 @@ ListGremlinQueriesResult::ListGremlinQueriesResult() :
 {
 }
 
-ListGremlinQueriesResult::ListGremlinQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_acceptedQueryCount(0),
-    m_runningQueryCount(0)
+ListGremlinQueriesResult::ListGremlinQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListGremlinQueriesResult()
 {
   *this = result;
 }

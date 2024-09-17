@@ -22,8 +22,8 @@ UpdateDatasetEntriesResult::UpdateDatasetEntriesResult() :
 {
 }
 
-UpdateDatasetEntriesResult::UpdateDatasetEntriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DatasetStatus::NOT_SET)
+UpdateDatasetEntriesResult::UpdateDatasetEntriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDatasetEntriesResult()
 {
   *this = result;
 }

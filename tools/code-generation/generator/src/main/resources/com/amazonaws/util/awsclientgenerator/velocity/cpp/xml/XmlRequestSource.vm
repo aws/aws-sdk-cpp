@@ -11,6 +11,7 @@
 #end
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/UnreferencedParam.h>
 #if($shape.hasQueryStringMembers())
 \#include <aws/core/http/URI.h>
 #end
@@ -19,6 +20,9 @@
 #end
 
 \#include <utility>
+#if(${CppViewHelper.hasListMemberUsedForHeader($shape)})
+\#include <numeric>
+#end
 
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Utils::Xml;
@@ -38,21 +42,18 @@ bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {
   // Header is unused
-  (void) header;
+  AWS_UNREFERENCED_PARAM(header);
 
   auto readPointer = body.tellg();
-  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
   if (!doc.WasParseSuccessful()) {
-    body.seekg(readPointer);
     return false;
   }
 
   if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    body.seekg(readPointer);
     return true;
   }
-  body.seekg(readPointer);
   return false;
 }
 #end

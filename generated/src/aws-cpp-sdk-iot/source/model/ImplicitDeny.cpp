@@ -23,8 +23,8 @@ ImplicitDeny::ImplicitDeny() :
 {
 }
 
-ImplicitDeny::ImplicitDeny(JsonView jsonValue) : 
-    m_policiesHasBeenSet(false)
+ImplicitDeny::ImplicitDeny(JsonView jsonValue)
+  : ImplicitDeny()
 {
   *this = jsonValue;
 }

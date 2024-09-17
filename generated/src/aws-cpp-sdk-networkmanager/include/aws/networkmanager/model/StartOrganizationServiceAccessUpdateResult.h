@@ -33,58 +33,28 @@ namespace Model
     AWS_NETWORKMANAGER_API StartOrganizationServiceAccessUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the service access update request for an Amazon Web Services
      * Organization.</p>
      */
     inline const OrganizationStatus& GetOrganizationStatus() const{ return m_organizationStatus; }
-
-    /**
-     * <p>The status of the service access update request for an Amazon Web Services
-     * Organization.</p>
-     */
     inline void SetOrganizationStatus(const OrganizationStatus& value) { m_organizationStatus = value; }
-
-    /**
-     * <p>The status of the service access update request for an Amazon Web Services
-     * Organization.</p>
-     */
     inline void SetOrganizationStatus(OrganizationStatus&& value) { m_organizationStatus = std::move(value); }
-
-    /**
-     * <p>The status of the service access update request for an Amazon Web Services
-     * Organization.</p>
-     */
     inline StartOrganizationServiceAccessUpdateResult& WithOrganizationStatus(const OrganizationStatus& value) { SetOrganizationStatus(value); return *this;}
-
-    /**
-     * <p>The status of the service access update request for an Amazon Web Services
-     * Organization.</p>
-     */
     inline StartOrganizationServiceAccessUpdateResult& WithOrganizationStatus(OrganizationStatus&& value) { SetOrganizationStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartOrganizationServiceAccessUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartOrganizationServiceAccessUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartOrganizationServiceAccessUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OrganizationStatus m_organizationStatus;

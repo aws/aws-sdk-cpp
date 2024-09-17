@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AES256,
-    KMS
+    KMS,
+    KMS_DSSE
   };
 
 namespace EncryptionTypeMapper

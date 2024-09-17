@@ -32,54 +32,20 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The token used to confirm ownership or access to the topic rule confirmation
      * URL.</p>
      */
     inline const Aws::String& GetConfirmationToken() const{ return m_confirmationToken; }
-
-    /**
-     * <p>The token used to confirm ownership or access to the topic rule confirmation
-     * URL.</p>
-     */
     inline bool ConfirmationTokenHasBeenSet() const { return m_confirmationTokenHasBeenSet; }
-
-    /**
-     * <p>The token used to confirm ownership or access to the topic rule confirmation
-     * URL.</p>
-     */
     inline void SetConfirmationToken(const Aws::String& value) { m_confirmationTokenHasBeenSet = true; m_confirmationToken = value; }
-
-    /**
-     * <p>The token used to confirm ownership or access to the topic rule confirmation
-     * URL.</p>
-     */
     inline void SetConfirmationToken(Aws::String&& value) { m_confirmationTokenHasBeenSet = true; m_confirmationToken = std::move(value); }
-
-    /**
-     * <p>The token used to confirm ownership or access to the topic rule confirmation
-     * URL.</p>
-     */
     inline void SetConfirmationToken(const char* value) { m_confirmationTokenHasBeenSet = true; m_confirmationToken.assign(value); }
-
-    /**
-     * <p>The token used to confirm ownership or access to the topic rule confirmation
-     * URL.</p>
-     */
     inline ConfirmTopicRuleDestinationRequest& WithConfirmationToken(const Aws::String& value) { SetConfirmationToken(value); return *this;}
-
-    /**
-     * <p>The token used to confirm ownership or access to the topic rule confirmation
-     * URL.</p>
-     */
     inline ConfirmTopicRuleDestinationRequest& WithConfirmationToken(Aws::String&& value) { SetConfirmationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token used to confirm ownership or access to the topic rule confirmation
-     * URL.</p>
-     */
     inline ConfirmTopicRuleDestinationRequest& WithConfirmationToken(const char* value) { SetConfirmationToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_confirmationToken;

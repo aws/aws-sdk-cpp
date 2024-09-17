@@ -24,10 +24,8 @@ DescribeLocationAzureBlobResult::DescribeLocationAzureBlobResult() :
 {
 }
 
-DescribeLocationAzureBlobResult::DescribeLocationAzureBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authenticationType(AzureBlobAuthenticationType::NOT_SET),
-    m_blobType(AzureBlobType::NOT_SET),
-    m_accessTier(AzureAccessTier::NOT_SET)
+DescribeLocationAzureBlobResult::DescribeLocationAzureBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLocationAzureBlobResult()
 {
   *this = result;
 }

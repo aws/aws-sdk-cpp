@@ -24,9 +24,8 @@ ChannelStorageSummary::ChannelStorageSummary() :
 {
 }
 
-ChannelStorageSummary::ChannelStorageSummary(JsonView jsonValue) : 
-    m_serviceManagedS3HasBeenSet(false),
-    m_customerManagedS3HasBeenSet(false)
+ChannelStorageSummary::ChannelStorageSummary(JsonView jsonValue)
+  : ChannelStorageSummary()
 {
   *this = jsonValue;
 }

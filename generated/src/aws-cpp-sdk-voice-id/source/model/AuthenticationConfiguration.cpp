@@ -24,9 +24,8 @@ AuthenticationConfiguration::AuthenticationConfiguration() :
 {
 }
 
-AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue) : 
-    m_acceptanceThreshold(0),
-    m_acceptanceThresholdHasBeenSet(false)
+AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
+  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }

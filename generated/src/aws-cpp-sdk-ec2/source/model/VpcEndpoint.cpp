@@ -48,31 +48,8 @@ VpcEndpoint::VpcEndpoint() :
 {
 }
 
-VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointType(VpcEndpointType::NOT_SET),
-    m_vpcEndpointTypeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_dnsOptionsHasBeenSet(false),
-    m_privateDnsEnabled(false),
-    m_privateDnsEnabledHasBeenSet(false),
-    m_requesterManaged(false),
-    m_requesterManagedHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dnsEntriesHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_lastErrorHasBeenSet(false)
+VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode)
+  : VpcEndpoint()
 {
   *this = xmlNode;
 }

@@ -31,14 +31,8 @@ MetricDataResult::MetricDataResult() :
 {
 }
 
-MetricDataResult::MetricDataResult(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_statusCode(StatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_messagesHasBeenSet(false)
+MetricDataResult::MetricDataResult(const XmlNode& xmlNode)
+  : MetricDataResult()
 {
   *this = xmlNode;
 }

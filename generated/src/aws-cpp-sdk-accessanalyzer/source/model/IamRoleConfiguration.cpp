@@ -23,8 +23,8 @@ IamRoleConfiguration::IamRoleConfiguration() :
 {
 }
 
-IamRoleConfiguration::IamRoleConfiguration(JsonView jsonValue) : 
-    m_trustPolicyHasBeenSet(false)
+IamRoleConfiguration::IamRoleConfiguration(JsonView jsonValue)
+  : IamRoleConfiguration()
 {
   *this = jsonValue;
 }

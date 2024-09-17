@@ -25,11 +25,8 @@ PutProvisionedConcurrencyConfigResult::PutProvisionedConcurrencyConfigResult() :
 {
 }
 
-PutProvisionedConcurrencyConfigResult::PutProvisionedConcurrencyConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_requestedProvisionedConcurrentExecutions(0),
-    m_availableProvisionedConcurrentExecutions(0),
-    m_allocatedProvisionedConcurrentExecutions(0),
-    m_status(ProvisionedConcurrencyStatusEnum::NOT_SET)
+PutProvisionedConcurrencyConfigResult::PutProvisionedConcurrencyConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutProvisionedConcurrencyConfigResult()
 {
   *this = result;
 }

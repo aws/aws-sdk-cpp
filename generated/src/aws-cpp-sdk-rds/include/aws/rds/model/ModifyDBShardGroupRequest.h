@@ -36,71 +36,41 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the DB shard group to modify.</p>
      */
     inline const Aws::String& GetDBShardGroupIdentifier() const{ return m_dBShardGroupIdentifier; }
-
-    /**
-     * <p>The name of the DB shard group to modify.</p>
-     */
     inline bool DBShardGroupIdentifierHasBeenSet() const { return m_dBShardGroupIdentifierHasBeenSet; }
-
-    /**
-     * <p>The name of the DB shard group to modify.</p>
-     */
     inline void SetDBShardGroupIdentifier(const Aws::String& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = value; }
-
-    /**
-     * <p>The name of the DB shard group to modify.</p>
-     */
     inline void SetDBShardGroupIdentifier(Aws::String&& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = std::move(value); }
-
-    /**
-     * <p>The name of the DB shard group to modify.</p>
-     */
     inline void SetDBShardGroupIdentifier(const char* value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier.assign(value); }
-
-    /**
-     * <p>The name of the DB shard group to modify.</p>
-     */
     inline ModifyDBShardGroupRequest& WithDBShardGroupIdentifier(const Aws::String& value) { SetDBShardGroupIdentifier(value); return *this;}
-
-    /**
-     * <p>The name of the DB shard group to modify.</p>
-     */
     inline ModifyDBShardGroupRequest& WithDBShardGroupIdentifier(Aws::String&& value) { SetDBShardGroupIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DB shard group to modify.</p>
-     */
     inline ModifyDBShardGroupRequest& WithDBShardGroupIdentifier(const char* value) { SetDBShardGroupIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum capacity of the DB shard group in Aurora capacity units
      * (ACUs).</p>
      */
     inline double GetMaxACU() const{ return m_maxACU; }
-
-    /**
-     * <p>The maximum capacity of the DB shard group in Aurora capacity units
-     * (ACUs).</p>
-     */
     inline bool MaxACUHasBeenSet() const { return m_maxACUHasBeenSet; }
-
-    /**
-     * <p>The maximum capacity of the DB shard group in Aurora capacity units
-     * (ACUs).</p>
-     */
     inline void SetMaxACU(double value) { m_maxACUHasBeenSet = true; m_maxACU = value; }
+    inline ModifyDBShardGroupRequest& WithMaxACU(double value) { SetMaxACU(value); return *this;}
+    ///@}
 
+    ///@{
     /**
-     * <p>The maximum capacity of the DB shard group in Aurora capacity units
+     * <p>The minimum capacity of the DB shard group in Aurora capacity units
      * (ACUs).</p>
      */
-    inline ModifyDBShardGroupRequest& WithMaxACU(double value) { SetMaxACU(value); return *this;}
-
+    inline double GetMinACU() const{ return m_minACU; }
+    inline bool MinACUHasBeenSet() const { return m_minACUHasBeenSet; }
+    inline void SetMinACU(double value) { m_minACUHasBeenSet = true; m_minACU = value; }
+    inline ModifyDBShardGroupRequest& WithMinACU(double value) { SetMinACU(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBShardGroupIdentifier;
@@ -108,6 +78,9 @@ namespace Model
 
     double m_maxACU;
     bool m_maxACUHasBeenSet = false;
+
+    double m_minACU;
+    bool m_minACUHasBeenSet = false;
   };
 
 } // namespace Model

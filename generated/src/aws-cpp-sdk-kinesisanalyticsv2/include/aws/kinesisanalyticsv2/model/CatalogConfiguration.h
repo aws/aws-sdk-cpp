@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>The configuration parameters for the default Amazon Glue database. You use
-   * this database for SQL queries that you write in a Kinesis Data Analytics Studio
-   * notebook.</p><p><h3>See Also:</h3>   <a
+   * this database for SQL queries that you write in a Managed Service for Apache
+   * Flink Studio notebook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CatalogConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,48 +39,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration parameters for the default Amazon Glue database. You use
      * this database for Apache Flink SQL queries and table API transforms that you
-     * write in a Kinesis Data Analytics Studio notebook.</p>
+     * write in a Managed Service for Apache Flink Studio notebook.</p>
      */
     inline const GlueDataCatalogConfiguration& GetGlueDataCatalogConfiguration() const{ return m_glueDataCatalogConfiguration; }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for Apache Flink SQL queries and table API transforms that you
-     * write in a Kinesis Data Analytics Studio notebook.</p>
-     */
     inline bool GlueDataCatalogConfigurationHasBeenSet() const { return m_glueDataCatalogConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for Apache Flink SQL queries and table API transforms that you
-     * write in a Kinesis Data Analytics Studio notebook.</p>
-     */
     inline void SetGlueDataCatalogConfiguration(const GlueDataCatalogConfiguration& value) { m_glueDataCatalogConfigurationHasBeenSet = true; m_glueDataCatalogConfiguration = value; }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for Apache Flink SQL queries and table API transforms that you
-     * write in a Kinesis Data Analytics Studio notebook.</p>
-     */
     inline void SetGlueDataCatalogConfiguration(GlueDataCatalogConfiguration&& value) { m_glueDataCatalogConfigurationHasBeenSet = true; m_glueDataCatalogConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for Apache Flink SQL queries and table API transforms that you
-     * write in a Kinesis Data Analytics Studio notebook.</p>
-     */
     inline CatalogConfiguration& WithGlueDataCatalogConfiguration(const GlueDataCatalogConfiguration& value) { SetGlueDataCatalogConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for Apache Flink SQL queries and table API transforms that you
-     * write in a Kinesis Data Analytics Studio notebook.</p>
-     */
     inline CatalogConfiguration& WithGlueDataCatalogConfiguration(GlueDataCatalogConfiguration&& value) { SetGlueDataCatalogConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlueDataCatalogConfiguration m_glueDataCatalogConfiguration;

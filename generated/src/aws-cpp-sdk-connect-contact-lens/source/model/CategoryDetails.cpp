@@ -23,8 +23,8 @@ CategoryDetails::CategoryDetails() :
 {
 }
 
-CategoryDetails::CategoryDetails(JsonView jsonValue) : 
-    m_pointsOfInterestHasBeenSet(false)
+CategoryDetails::CategoryDetails(JsonView jsonValue)
+  : CategoryDetails()
 {
   *this = jsonValue;
 }

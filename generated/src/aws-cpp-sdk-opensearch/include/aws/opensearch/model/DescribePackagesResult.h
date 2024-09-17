@@ -40,113 +40,44 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API DescribePackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Basic information about a package.</p>
      */
     inline const Aws::Vector<PackageDetails>& GetPackageDetailsList() const{ return m_packageDetailsList; }
-
-    /**
-     * <p>Basic information about a package.</p>
-     */
     inline void SetPackageDetailsList(const Aws::Vector<PackageDetails>& value) { m_packageDetailsList = value; }
-
-    /**
-     * <p>Basic information about a package.</p>
-     */
     inline void SetPackageDetailsList(Aws::Vector<PackageDetails>&& value) { m_packageDetailsList = std::move(value); }
-
-    /**
-     * <p>Basic information about a package.</p>
-     */
     inline DescribePackagesResult& WithPackageDetailsList(const Aws::Vector<PackageDetails>& value) { SetPackageDetailsList(value); return *this;}
-
-    /**
-     * <p>Basic information about a package.</p>
-     */
     inline DescribePackagesResult& WithPackageDetailsList(Aws::Vector<PackageDetails>&& value) { SetPackageDetailsList(std::move(value)); return *this;}
-
-    /**
-     * <p>Basic information about a package.</p>
-     */
     inline DescribePackagesResult& AddPackageDetailsList(const PackageDetails& value) { m_packageDetailsList.push_back(value); return *this; }
-
-    /**
-     * <p>Basic information about a package.</p>
-     */
     inline DescribePackagesResult& AddPackageDetailsList(PackageDetails&& value) { m_packageDetailsList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>When <code>nextToken</code> is returned, there are more results available.
      * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
+     * Send the request again using the returned token to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>When <code>nextToken</code> is returned, there are more results available.
-     * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>When <code>nextToken</code> is returned, there are more results available.
-     * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>When <code>nextToken</code> is returned, there are more results available.
-     * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>When <code>nextToken</code> is returned, there are more results available.
-     * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
-     */
     inline DescribePackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>When <code>nextToken</code> is returned, there are more results available.
-     * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
-     */
     inline DescribePackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>When <code>nextToken</code> is returned, there are more results available.
-     * The value of <code>nextToken</code> is a unique pagination token for each page.
-     * Make the call again using the returned token to retrieve the next page.</p>
-     */
     inline DescribePackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribePackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribePackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribePackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PackageDetails> m_packageDetailsList;

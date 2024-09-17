@@ -21,6 +21,8 @@ namespace Model
 RecommendationResourceSummary::RecommendationResourceSummary() : 
     m_arnHasBeenSet(false),
     m_awsResourceIdHasBeenSet(false),
+    m_exclusionStatus(ExclusionStatus::NOT_SET),
+    m_exclusionStatusHasBeenSet(false),
     m_idHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_metadataHasBeenSet(false),
@@ -31,16 +33,8 @@ RecommendationResourceSummary::RecommendationResourceSummary() :
 {
 }
 
-RecommendationResourceSummary::RecommendationResourceSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_awsResourceIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_recommendationArnHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+RecommendationResourceSummary::RecommendationResourceSummary(JsonView jsonValue)
+  : RecommendationResourceSummary()
 {
   *this = jsonValue;
 }
@@ -59,6 +53,13 @@ RecommendationResourceSummary& RecommendationResourceSummary::operator =(JsonVie
     m_awsResourceId = jsonValue.GetString("awsResourceId");
 
     m_awsResourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exclusionStatus"))
+  {
+    m_exclusionStatus = ExclusionStatusMapper::GetExclusionStatusForName(jsonValue.GetString("exclusionStatus"));
+
+    m_exclusionStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -123,6 +124,11 @@ JsonValue RecommendationResourceSummary::Jsonize() const
   {
    payload.WithString("awsResourceId", m_awsResourceId);
 
+  }
+
+  if(m_exclusionStatusHasBeenSet)
+  {
+   payload.WithString("exclusionStatus", ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus));
   }
 
   if(m_idHasBeenSet)

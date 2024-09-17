@@ -32,17 +32,8 @@ SenderIdInformation::SenderIdInformation() :
 {
 }
 
-SenderIdInformation::SenderIdInformation(JsonView jsonValue) : 
-    m_senderIdArnHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_messageTypesHasBeenSet(false),
-    m_monthlyLeasingPriceHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_registered(false),
-    m_registeredHasBeenSet(false),
-    m_registrationIdHasBeenSet(false)
+SenderIdInformation::SenderIdInformation(JsonView jsonValue)
+  : SenderIdInformation()
 {
   *this = jsonValue;
 }

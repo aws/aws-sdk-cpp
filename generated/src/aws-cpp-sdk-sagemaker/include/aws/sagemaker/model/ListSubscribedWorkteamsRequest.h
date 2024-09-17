@@ -34,132 +34,46 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A string in the work team name. This filter returns only work teams whose
      * name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
-
-    /**
-     * <p>A string in the work team name. This filter returns only work teams whose
-     * name contains the specified string.</p>
-     */
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-
-    /**
-     * <p>A string in the work team name. This filter returns only work teams whose
-     * name contains the specified string.</p>
-     */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-
-    /**
-     * <p>A string in the work team name. This filter returns only work teams whose
-     * name contains the specified string.</p>
-     */
     inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-
-    /**
-     * <p>A string in the work team name. This filter returns only work teams whose
-     * name contains the specified string.</p>
-     */
     inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-
-    /**
-     * <p>A string in the work team name. This filter returns only work teams whose
-     * name contains the specified string.</p>
-     */
     inline ListSubscribedWorkteamsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-
-    /**
-     * <p>A string in the work team name. This filter returns only work teams whose
-     * name contains the specified string.</p>
-     */
     inline ListSubscribedWorkteamsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-
-    /**
-     * <p>A string in the work team name. This filter returns only work teams whose
-     * name contains the specified string.</p>
-     */
     inline ListSubscribedWorkteamsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
      * was truncated, the response includes a <code>NextToken</code>. To retrieve the
      * next set of labeling jobs, use the token in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
-     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
-     * next set of labeling jobs, use the token in the next request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
-     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
-     * next set of labeling jobs, use the token in the next request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
-     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
-     * next set of labeling jobs, use the token in the next request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
-     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
-     * next set of labeling jobs, use the token in the next request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
-     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
-     * next set of labeling jobs, use the token in the next request.</p>
-     */
     inline ListSubscribedWorkteamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
-     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
-     * next set of labeling jobs, use the token in the next request.</p>
-     */
     inline ListSubscribedWorkteamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
-     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
-     * next set of labeling jobs, use the token in the next request.</p>
-     */
     inline ListSubscribedWorkteamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of work teams to return in each page of the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of work teams to return in each page of the response.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of work teams to return in each page of the response.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of work teams to return in each page of the response.</p>
-     */
     inline ListSubscribedWorkteamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nameContains;

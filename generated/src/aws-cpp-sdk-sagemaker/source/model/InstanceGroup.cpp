@@ -27,12 +27,8 @@ InstanceGroup::InstanceGroup() :
 {
 }
 
-InstanceGroup::InstanceGroup(JsonView jsonValue) : 
-    m_instanceType(TrainingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceGroupNameHasBeenSet(false)
+InstanceGroup::InstanceGroup(JsonView jsonValue)
+  : InstanceGroup()
 {
   *this = jsonValue;
 }

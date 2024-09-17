@@ -38,58 +38,28 @@ namespace Model
     AWS_ELASTICTRANSCODER_API ReadPresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A section of the response body that provides information about the
      * preset.</p>
      */
     inline const Preset& GetPreset() const{ return m_preset; }
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * preset.</p>
-     */
     inline void SetPreset(const Preset& value) { m_preset = value; }
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * preset.</p>
-     */
     inline void SetPreset(Preset&& value) { m_preset = std::move(value); }
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * preset.</p>
-     */
     inline ReadPresetResult& WithPreset(const Preset& value) { SetPreset(value); return *this;}
-
-    /**
-     * <p>A section of the response body that provides information about the
-     * preset.</p>
-     */
     inline ReadPresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ReadPresetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ReadPresetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ReadPresetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Preset m_preset;

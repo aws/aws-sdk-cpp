@@ -22,8 +22,8 @@ GetDataQualityResultResult::GetDataQualityResultResult() :
 {
 }
 
-GetDataQualityResultResult::GetDataQualityResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_score(0.0)
+GetDataQualityResultResult::GetDataQualityResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataQualityResultResult()
 {
   *this = result;
 }
@@ -34,6 +34,12 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ResultId"))
   {
     m_resultId = jsonValue.GetString("ResultId");
+
+  }
+
+  if(jsonValue.ValueExists("ProfileId"))
+  {
+    m_profileId = jsonValue.GetString("ProfileId");
 
   }
 

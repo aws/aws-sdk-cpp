@@ -29,14 +29,8 @@ DatasetSchema::DatasetSchema() :
 {
 }
 
-DatasetSchema::DatasetSchema(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false)
+DatasetSchema::DatasetSchema(JsonView jsonValue)
+  : DatasetSchema()
 {
   *this = jsonValue;
 }

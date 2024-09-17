@@ -38,6 +38,8 @@
 #include <aws/payment-cryptography/model/TagResourceResult.h>
 #include <aws/payment-cryptography/model/UntagResourceResult.h>
 #include <aws/payment-cryptography/model/UpdateAliasResult.h>
+#include <aws/payment-cryptography/model/ListAliasesRequest.h>
+#include <aws/payment-cryptography/model/ListKeysRequest.h>
 /* End of service model headers required in PaymentCryptographyClient header */
 
 namespace Aws
@@ -71,7 +73,7 @@ namespace Aws
 
   namespace PaymentCryptography
   {
-    using PaymentCryptographyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PaymentCryptographyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PaymentCryptographyEndpointProviderBase = Aws::PaymentCryptography::Endpoint::PaymentCryptographyEndpointProviderBase;
     using PaymentCryptographyEndpointProvider = Aws::PaymentCryptography::Endpoint::PaymentCryptographyEndpointProvider;
 

@@ -28,11 +28,8 @@ SnapshotSortingEntity::SnapshotSortingEntity() :
 {
 }
 
-SnapshotSortingEntity::SnapshotSortingEntity(const XmlNode& xmlNode) : 
-    m_attribute(SnapshotAttributeToSortBy::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_sortOrder(SortByOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+SnapshotSortingEntity::SnapshotSortingEntity(const XmlNode& xmlNode)
+  : SnapshotSortingEntity()
 {
   *this = xmlNode;
 }

@@ -40,31 +40,18 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
      * to any destination.</p>
      */
     inline bool GetReplicated() const{ return m_replicated; }
-
-    /**
-     * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to any destination.</p>
-     */
     inline bool ReplicatedHasBeenSet() const { return m_replicatedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to any destination.</p>
-     */
     inline void SetReplicated(bool value) { m_replicatedHasBeenSet = true; m_replicated = value; }
-
-    /**
-     * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to any destination.</p>
-     */
     inline ReplicationDetails& WithReplicated(bool value) { SetReplicated(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
      * to a bucket for an Amazon Web Services account that isn't part of your Amazon
@@ -73,98 +60,27 @@ namespace Model
      * Organizations or by Macie invitation.</p>
      */
     inline bool GetReplicatedExternally() const{ return m_replicatedExternally; }
-
-    /**
-     * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to a bucket for an Amazon Web Services account that isn't part of your Amazon
-     * Macie organization. An <i>Amazon Macie organization</i> is a set of Macie
-     * accounts that are centrally managed as a group of related accounts through
-     * Organizations or by Macie invitation.</p>
-     */
     inline bool ReplicatedExternallyHasBeenSet() const { return m_replicatedExternallyHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to a bucket for an Amazon Web Services account that isn't part of your Amazon
-     * Macie organization. An <i>Amazon Macie organization</i> is a set of Macie
-     * accounts that are centrally managed as a group of related accounts through
-     * Organizations or by Macie invitation.</p>
-     */
     inline void SetReplicatedExternally(bool value) { m_replicatedExternallyHasBeenSet = true; m_replicatedExternally = value; }
-
-    /**
-     * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to a bucket for an Amazon Web Services account that isn't part of your Amazon
-     * Macie organization. An <i>Amazon Macie organization</i> is a set of Macie
-     * accounts that are centrally managed as a group of related accounts through
-     * Organizations or by Macie invitation.</p>
-     */
     inline ReplicationDetails& WithReplicatedExternally(bool value) { SetReplicatedExternally(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
      * account that owns a bucket that the bucket is configured to replicate one or
      * more objects to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicationAccounts() const{ return m_replicationAccounts; }
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline bool ReplicationAccountsHasBeenSet() const { return m_replicationAccountsHasBeenSet; }
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline void SetReplicationAccounts(const Aws::Vector<Aws::String>& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts = value; }
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline void SetReplicationAccounts(Aws::Vector<Aws::String>&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts = std::move(value); }
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline ReplicationDetails& WithReplicationAccounts(const Aws::Vector<Aws::String>& value) { SetReplicationAccounts(value); return *this;}
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline ReplicationDetails& WithReplicationAccounts(Aws::Vector<Aws::String>&& value) { SetReplicationAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline ReplicationDetails& AddReplicationAccounts(const Aws::String& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(value); return *this; }
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline ReplicationDetails& AddReplicationAccounts(Aws::String&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
-     * account that owns a bucket that the bucket is configured to replicate one or
-     * more objects to.</p>
-     */
     inline ReplicationDetails& AddReplicationAccounts(const char* value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(value); return *this; }
-
+    ///@}
   private:
 
     bool m_replicated;

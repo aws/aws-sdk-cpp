@@ -21,7 +21,9 @@ CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() :
     m_deviceNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_bgpAsnExtended(0),
+    m_bgpAsnExtendedHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,11 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_bgpAsnExtendedHasBeenSet)
+  {
+    ss << "BgpAsnExtended=" << m_bgpAsnExtended << "&";
   }
 
   ss << "Version=2016-11-15";

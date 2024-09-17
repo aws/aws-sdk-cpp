@@ -23,8 +23,8 @@ AwsWafRegionalRuleGroupRulesActionDetails::AwsWafRegionalRuleGroupRulesActionDet
 {
 }
 
-AwsWafRegionalRuleGroupRulesActionDetails::AwsWafRegionalRuleGroupRulesActionDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+AwsWafRegionalRuleGroupRulesActionDetails::AwsWafRegionalRuleGroupRulesActionDetails(JsonView jsonValue)
+  : AwsWafRegionalRuleGroupRulesActionDetails()
 {
   *this = jsonValue;
 }

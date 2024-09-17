@@ -36,103 +36,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Serial number that uniquely identifies the MFA device. For this API, we only
      * accept FIDO security key <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
-
-    /**
-     * <p>Serial number that uniquely identifies the MFA device. For this API, we only
-     * accept FIDO security key <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-     */
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
-
-    /**
-     * <p>Serial number that uniquely identifies the MFA device. For this API, we only
-     * accept FIDO security key <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-     */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
-
-    /**
-     * <p>Serial number that uniquely identifies the MFA device. For this API, we only
-     * accept FIDO security key <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-     */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
-
-    /**
-     * <p>Serial number that uniquely identifies the MFA device. For this API, we only
-     * accept FIDO security key <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-     */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
-
-    /**
-     * <p>Serial number that uniquely identifies the MFA device. For this API, we only
-     * accept FIDO security key <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-     */
     inline GetMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
-
-    /**
-     * <p>Serial number that uniquely identifies the MFA device. For this API, we only
-     * accept FIDO security key <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-     */
     inline GetMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>Serial number that uniquely identifies the MFA device. For this API, we only
-     * accept FIDO security key <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-     */
     inline GetMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The friendly name identifying the user.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>The friendly name identifying the user.</p>
-     */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-
-    /**
-     * <p>The friendly name identifying the user.</p>
-     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-
-    /**
-     * <p>The friendly name identifying the user.</p>
-     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-
-    /**
-     * <p>The friendly name identifying the user.</p>
-     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-
-    /**
-     * <p>The friendly name identifying the user.</p>
-     */
     inline GetMFADeviceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>The friendly name identifying the user.</p>
-     */
     inline GetMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>The friendly name identifying the user.</p>
-     */
     inline GetMFADeviceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serialNumber;

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SnowballClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SnowballClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SnowballClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SnowballBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

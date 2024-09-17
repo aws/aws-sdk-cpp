@@ -39,159 +39,59 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the dataset.</p>
      */
     inline const Aws::String& GetDatasetId() const{ return m_datasetId; }
-
-    /**
-     * <p>The ID of the dataset.</p>
-     */
     inline bool DatasetIdHasBeenSet() const { return m_datasetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the dataset.</p>
-     */
     inline void SetDatasetId(const Aws::String& value) { m_datasetIdHasBeenSet = true; m_datasetId = value; }
-
-    /**
-     * <p>The ID of the dataset.</p>
-     */
     inline void SetDatasetId(Aws::String&& value) { m_datasetIdHasBeenSet = true; m_datasetId = std::move(value); }
-
-    /**
-     * <p>The ID of the dataset.</p>
-     */
     inline void SetDatasetId(const char* value) { m_datasetIdHasBeenSet = true; m_datasetId.assign(value); }
-
-    /**
-     * <p>The ID of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetId(const Aws::String& value) { SetDatasetId(value); return *this;}
-
-    /**
-     * <p>The ID of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetId(Aws::String&& value) { SetDatasetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetId(const char* value) { SetDatasetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
-     */
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
-     */
     inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
-     */
     inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
-     */
     inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the dataset.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-
-    /**
-     * <p>The name of the dataset.</p>
-     */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dataset.</p>
-     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-
-    /**
-     * <p>The name of the dataset.</p>
-     */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-
-    /**
-     * <p>The name of the dataset.</p>
-     */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-
-    /**
-     * <p>The name of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-
-    /**
-     * <p>The name of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dataset.</p>
-     */
     inline TopicRefreshScheduleSummary& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The definition of a refresh schedule.</p>
      */
     inline const TopicRefreshSchedule& GetRefreshSchedule() const{ return m_refreshSchedule; }
-
-    /**
-     * <p>The definition of a refresh schedule.</p>
-     */
     inline bool RefreshScheduleHasBeenSet() const { return m_refreshScheduleHasBeenSet; }
-
-    /**
-     * <p>The definition of a refresh schedule.</p>
-     */
     inline void SetRefreshSchedule(const TopicRefreshSchedule& value) { m_refreshScheduleHasBeenSet = true; m_refreshSchedule = value; }
-
-    /**
-     * <p>The definition of a refresh schedule.</p>
-     */
     inline void SetRefreshSchedule(TopicRefreshSchedule&& value) { m_refreshScheduleHasBeenSet = true; m_refreshSchedule = std::move(value); }
-
-    /**
-     * <p>The definition of a refresh schedule.</p>
-     */
     inline TopicRefreshScheduleSummary& WithRefreshSchedule(const TopicRefreshSchedule& value) { SetRefreshSchedule(value); return *this;}
-
-    /**
-     * <p>The definition of a refresh schedule.</p>
-     */
     inline TopicRefreshScheduleSummary& WithRefreshSchedule(TopicRefreshSchedule&& value) { SetRefreshSchedule(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetId;

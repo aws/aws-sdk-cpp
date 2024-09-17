@@ -40,25 +40,8 @@ SecretListEntry::SecretListEntry() :
 {
 }
 
-SecretListEntry::SecretListEntry(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_rotationEnabled(false),
-    m_rotationEnabledHasBeenSet(false),
-    m_rotationLambdaARNHasBeenSet(false),
-    m_rotationRulesHasBeenSet(false),
-    m_lastRotatedDateHasBeenSet(false),
-    m_lastChangedDateHasBeenSet(false),
-    m_lastAccessedDateHasBeenSet(false),
-    m_deletedDateHasBeenSet(false),
-    m_nextRotationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_secretVersionsToStagesHasBeenSet(false),
-    m_owningServiceHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_primaryRegionHasBeenSet(false)
+SecretListEntry::SecretListEntry(JsonView jsonValue)
+  : SecretListEntry()
 {
   *this = jsonValue;
 }

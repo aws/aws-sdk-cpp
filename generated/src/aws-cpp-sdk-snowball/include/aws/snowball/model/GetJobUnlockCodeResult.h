@@ -32,77 +32,31 @@ namespace Model
     AWS_SNOWBALL_API GetJobUnlockCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>UnlockCode</code> value for the specified job. The
      * <code>UnlockCode</code> value can be accessed for up to 360 days after the job
      * has been created.</p>
      */
     inline const Aws::String& GetUnlockCode() const{ return m_unlockCode; }
-
-    /**
-     * <p>The <code>UnlockCode</code> value for the specified job. The
-     * <code>UnlockCode</code> value can be accessed for up to 360 days after the job
-     * has been created.</p>
-     */
     inline void SetUnlockCode(const Aws::String& value) { m_unlockCode = value; }
-
-    /**
-     * <p>The <code>UnlockCode</code> value for the specified job. The
-     * <code>UnlockCode</code> value can be accessed for up to 360 days after the job
-     * has been created.</p>
-     */
     inline void SetUnlockCode(Aws::String&& value) { m_unlockCode = std::move(value); }
-
-    /**
-     * <p>The <code>UnlockCode</code> value for the specified job. The
-     * <code>UnlockCode</code> value can be accessed for up to 360 days after the job
-     * has been created.</p>
-     */
     inline void SetUnlockCode(const char* value) { m_unlockCode.assign(value); }
-
-    /**
-     * <p>The <code>UnlockCode</code> value for the specified job. The
-     * <code>UnlockCode</code> value can be accessed for up to 360 days after the job
-     * has been created.</p>
-     */
     inline GetJobUnlockCodeResult& WithUnlockCode(const Aws::String& value) { SetUnlockCode(value); return *this;}
-
-    /**
-     * <p>The <code>UnlockCode</code> value for the specified job. The
-     * <code>UnlockCode</code> value can be accessed for up to 360 days after the job
-     * has been created.</p>
-     */
     inline GetJobUnlockCodeResult& WithUnlockCode(Aws::String&& value) { SetUnlockCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>UnlockCode</code> value for the specified job. The
-     * <code>UnlockCode</code> value can be accessed for up to 360 days after the job
-     * has been created.</p>
-     */
     inline GetJobUnlockCodeResult& WithUnlockCode(const char* value) { SetUnlockCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJobUnlockCodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJobUnlockCodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJobUnlockCodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_unlockCode;

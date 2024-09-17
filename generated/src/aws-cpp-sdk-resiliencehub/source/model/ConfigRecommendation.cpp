@@ -34,19 +34,8 @@ ConfigRecommendation::ConfigRecommendation() :
 {
 }
 
-ConfigRecommendation::ConfigRecommendation(JsonView jsonValue) : 
-    m_appComponentNameHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_costHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_haArchitecture(HaArchitecture::NOT_SET),
-    m_haArchitectureHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_optimizationType(ConfigRecommendationOptimizationType::NOT_SET),
-    m_optimizationTypeHasBeenSet(false),
-    m_recommendationComplianceHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_suggestedChangesHasBeenSet(false)
+ConfigRecommendation::ConfigRecommendation(JsonView jsonValue)
+  : ConfigRecommendation()
 {
   *this = jsonValue;
 }

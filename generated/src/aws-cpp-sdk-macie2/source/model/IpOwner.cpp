@@ -26,11 +26,8 @@ IpOwner::IpOwner() :
 {
 }
 
-IpOwner::IpOwner(JsonView jsonValue) : 
-    m_asnHasBeenSet(false),
-    m_asnOrgHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_orgHasBeenSet(false)
+IpOwner::IpOwner(JsonView jsonValue)
+  : IpOwner()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ PrivacyBudgetSummary::PrivacyBudgetSummary() :
 {
 }
 
-PrivacyBudgetSummary::PrivacyBudgetSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_privacyBudgetTemplateIdHasBeenSet(false),
-    m_privacyBudgetTemplateArnHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_type(PrivacyBudgetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_budgetHasBeenSet(false)
+PrivacyBudgetSummary::PrivacyBudgetSummary(JsonView jsonValue)
+  : PrivacyBudgetSummary()
 {
   *this = jsonValue;
 }

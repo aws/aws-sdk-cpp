@@ -35,18 +35,8 @@ ScalingConfiguration::ScalingConfiguration() :
 {
 }
 
-ScalingConfiguration::ScalingConfiguration(const XmlNode& xmlNode) : 
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_autoPause(false),
-    m_autoPauseHasBeenSet(false),
-    m_secondsUntilAutoPause(0),
-    m_secondsUntilAutoPauseHasBeenSet(false),
-    m_timeoutActionHasBeenSet(false),
-    m_secondsBeforeTimeout(0),
-    m_secondsBeforeTimeoutHasBeenSet(false)
+ScalingConfiguration::ScalingConfiguration(const XmlNode& xmlNode)
+  : ScalingConfiguration()
 {
   *this = xmlNode;
 }

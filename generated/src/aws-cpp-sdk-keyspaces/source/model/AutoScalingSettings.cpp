@@ -29,14 +29,8 @@ AutoScalingSettings::AutoScalingSettings() :
 {
 }
 
-AutoScalingSettings::AutoScalingSettings(JsonView jsonValue) : 
-    m_autoScalingDisabled(false),
-    m_autoScalingDisabledHasBeenSet(false),
-    m_minimumUnits(0),
-    m_minimumUnitsHasBeenSet(false),
-    m_maximumUnits(0),
-    m_maximumUnitsHasBeenSet(false),
-    m_scalingPolicyHasBeenSet(false)
+AutoScalingSettings::AutoScalingSettings(JsonView jsonValue)
+  : AutoScalingSettings()
 {
   *this = jsonValue;
 }

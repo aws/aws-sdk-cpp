@@ -37,95 +37,34 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The subject of the email.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
-
-    /**
-     * <p>The subject of the email.</p>
-     */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-
-    /**
-     * <p>The subject of the email.</p>
-     */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-
-    /**
-     * <p>The subject of the email.</p>
-     */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-
-    /**
-     * <p>The subject of the email.</p>
-     */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-
-    /**
-     * <p>The subject of the email.</p>
-     */
     inline EmailContent& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-
-    /**
-     * <p>The subject of the email.</p>
-     */
     inline EmailContent& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-
-    /**
-     * <p>The subject of the email.</p>
-     */
     inline EmailContent& WithSubject(const char* value) { SetSubject(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message that you want to send. The message can be up to 200
      * characters.</p>
      */
     inline const Aws::String& GetAdditionalMessage() const{ return m_additionalMessage; }
-
-    /**
-     * <p>The message that you want to send. The message can be up to 200
-     * characters.</p>
-     */
     inline bool AdditionalMessageHasBeenSet() const { return m_additionalMessageHasBeenSet; }
-
-    /**
-     * <p>The message that you want to send. The message can be up to 200
-     * characters.</p>
-     */
     inline void SetAdditionalMessage(const Aws::String& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = value; }
-
-    /**
-     * <p>The message that you want to send. The message can be up to 200
-     * characters.</p>
-     */
     inline void SetAdditionalMessage(Aws::String&& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = std::move(value); }
-
-    /**
-     * <p>The message that you want to send. The message can be up to 200
-     * characters.</p>
-     */
     inline void SetAdditionalMessage(const char* value) { m_additionalMessageHasBeenSet = true; m_additionalMessage.assign(value); }
-
-    /**
-     * <p>The message that you want to send. The message can be up to 200
-     * characters.</p>
-     */
     inline EmailContent& WithAdditionalMessage(const Aws::String& value) { SetAdditionalMessage(value); return *this;}
-
-    /**
-     * <p>The message that you want to send. The message can be up to 200
-     * characters.</p>
-     */
     inline EmailContent& WithAdditionalMessage(Aws::String&& value) { SetAdditionalMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message that you want to send. The message can be up to 200
-     * characters.</p>
-     */
     inline EmailContent& WithAdditionalMessage(const char* value) { SetAdditionalMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subject;

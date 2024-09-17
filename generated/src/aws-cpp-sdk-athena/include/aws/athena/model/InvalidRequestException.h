@@ -39,55 +39,29 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetAthenaErrorCode() const{ return m_athenaErrorCode; }
-
-    
     inline bool AthenaErrorCodeHasBeenSet() const { return m_athenaErrorCodeHasBeenSet; }
-
-    
     inline void SetAthenaErrorCode(const Aws::String& value) { m_athenaErrorCodeHasBeenSet = true; m_athenaErrorCode = value; }
-
-    
     inline void SetAthenaErrorCode(Aws::String&& value) { m_athenaErrorCodeHasBeenSet = true; m_athenaErrorCode = std::move(value); }
-
-    
     inline void SetAthenaErrorCode(const char* value) { m_athenaErrorCodeHasBeenSet = true; m_athenaErrorCode.assign(value); }
-
-    
     inline InvalidRequestException& WithAthenaErrorCode(const Aws::String& value) { SetAthenaErrorCode(value); return *this;}
-
-    
     inline InvalidRequestException& WithAthenaErrorCode(Aws::String&& value) { SetAthenaErrorCode(std::move(value)); return *this;}
-
-    
     inline InvalidRequestException& WithAthenaErrorCode(const char* value) { SetAthenaErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline InvalidRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline InvalidRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline InvalidRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_athenaErrorCode;

@@ -30,13 +30,8 @@ CpuOptionsRequest::CpuOptionsRequest() :
 {
 }
 
-CpuOptionsRequest::CpuOptionsRequest(const XmlNode& xmlNode) : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_amdSevSnp(AmdSevSnpSpecification::NOT_SET),
-    m_amdSevSnpHasBeenSet(false)
+CpuOptionsRequest::CpuOptionsRequest(const XmlNode& xmlNode)
+  : CpuOptionsRequest()
 {
   *this = xmlNode;
 }

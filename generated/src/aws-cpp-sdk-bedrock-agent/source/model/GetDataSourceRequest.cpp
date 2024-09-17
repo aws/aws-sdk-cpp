@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetDataSourceRequest::GetDataSourceRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
+    m_dataSourceIdHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false)
 {
 }
 

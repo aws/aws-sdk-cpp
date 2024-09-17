@@ -26,11 +26,8 @@ SampleDataS3SourceConfig::SampleDataS3SourceConfig() :
 {
 }
 
-SampleDataS3SourceConfig::SampleDataS3SourceConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_templatedPathListHasBeenSet(false),
-    m_historicalDataPathListHasBeenSet(false),
-    m_fileFormatDescriptorHasBeenSet(false)
+SampleDataS3SourceConfig::SampleDataS3SourceConfig(JsonView jsonValue)
+  : SampleDataS3SourceConfig()
 {
   *this = jsonValue;
 }

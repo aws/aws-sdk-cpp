@@ -54,6 +54,15 @@
 #include <aws/transcribe/model/UpdateMedicalVocabularyResult.h>
 #include <aws/transcribe/model/UpdateVocabularyResult.h>
 #include <aws/transcribe/model/UpdateVocabularyFilterResult.h>
+#include <aws/transcribe/model/ListLanguageModelsRequest.h>
+#include <aws/transcribe/model/ListTranscriptionJobsRequest.h>
+#include <aws/transcribe/model/ListMedicalVocabulariesRequest.h>
+#include <aws/transcribe/model/ListCallAnalyticsCategoriesRequest.h>
+#include <aws/transcribe/model/ListMedicalTranscriptionJobsRequest.h>
+#include <aws/transcribe/model/ListMedicalScribeJobsRequest.h>
+#include <aws/transcribe/model/ListVocabularyFiltersRequest.h>
+#include <aws/transcribe/model/ListCallAnalyticsJobsRequest.h>
+#include <aws/transcribe/model/ListVocabulariesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TranscribeServiceClient header */
 
@@ -88,7 +97,7 @@ namespace Aws
 
   namespace TranscribeService
   {
-    using TranscribeServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TranscribeServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TranscribeServiceEndpointProviderBase = Aws::TranscribeService::Endpoint::TranscribeServiceEndpointProviderBase;
     using TranscribeServiceEndpointProvider = Aws::TranscribeService::Endpoint::TranscribeServiceEndpointProvider;
 

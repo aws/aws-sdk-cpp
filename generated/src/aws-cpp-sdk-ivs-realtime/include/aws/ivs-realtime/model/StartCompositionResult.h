@@ -33,53 +33,27 @@ namespace Model
     AWS_IVSREALTIME_API StartCompositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Composition that was created.</p>
      */
     inline const Composition& GetComposition() const{ return m_composition; }
-
-    /**
-     * <p>The Composition that was created.</p>
-     */
     inline void SetComposition(const Composition& value) { m_composition = value; }
-
-    /**
-     * <p>The Composition that was created.</p>
-     */
     inline void SetComposition(Composition&& value) { m_composition = std::move(value); }
-
-    /**
-     * <p>The Composition that was created.</p>
-     */
     inline StartCompositionResult& WithComposition(const Composition& value) { SetComposition(value); return *this;}
-
-    /**
-     * <p>The Composition that was created.</p>
-     */
     inline StartCompositionResult& WithComposition(Composition&& value) { SetComposition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartCompositionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartCompositionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartCompositionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Composition m_composition;

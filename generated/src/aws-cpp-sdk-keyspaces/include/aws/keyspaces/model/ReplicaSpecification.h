@@ -46,108 +46,43 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecification& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecification& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecification& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The provisioned read capacity units for the multi-Region table in the
      * specified Amazon Web Services Region.</p>
      */
     inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
-
-    /**
-     * <p>The provisioned read capacity units for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p>The provisioned read capacity units for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
-
-    /**
-     * <p>The provisioned read capacity units for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecification& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read capacity auto scaling settings for the multi-Region table in the
      * specified Amazon Web Services Region.</p>
      */
     inline const AutoScalingSettings& GetReadCapacityAutoScaling() const{ return m_readCapacityAutoScaling; }
-
-    /**
-     * <p>The read capacity auto scaling settings for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline bool ReadCapacityAutoScalingHasBeenSet() const { return m_readCapacityAutoScalingHasBeenSet; }
-
-    /**
-     * <p>The read capacity auto scaling settings for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline void SetReadCapacityAutoScaling(const AutoScalingSettings& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = value; }
-
-    /**
-     * <p>The read capacity auto scaling settings for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline void SetReadCapacityAutoScaling(AutoScalingSettings&& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = std::move(value); }
-
-    /**
-     * <p>The read capacity auto scaling settings for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecification& WithReadCapacityAutoScaling(const AutoScalingSettings& value) { SetReadCapacityAutoScaling(value); return *this;}
-
-    /**
-     * <p>The read capacity auto scaling settings for the multi-Region table in the
-     * specified Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecification& WithReadCapacityAutoScaling(AutoScalingSettings&& value) { SetReadCapacityAutoScaling(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_region;

@@ -137,12 +137,12 @@ struct EventBridgeEndpointTestCase
 
     const char* expectedEndpointId;
     const char* expectedException;
-    using ExpectedHeaders = Aws::Vector<std::pair<const char*, const char*>>;
+    using ExpectedHeaders = std::vector<std::pair<const char*, const char*>>;
     ExpectedHeaders expectedHeaders;
 };
 
 static const std::pair<const char*, const char*> X_AMZ_HEADER = {"x-amz-region-set", "*"};
-static const Aws::Vector<EventBridgeEndpointTestCase> TEST_CASES = {
+static const std::vector<EventBridgeEndpointTestCase> TEST_CASES = {
         {"us-east-1", false, false, nullptr, "events.us-east-1.amazonaws.com", nullptr, {}},
         {"us-east-1", false, false, "abc123.456def", "abc123.456def.endpoint.events.amazonaws.com", nullptr, {X_AMZ_HEADER}},
         {"us-east-1", false, false, "badactor.aws?foo=bar", nullptr, "EndpointId must be a valid host label.", {}},

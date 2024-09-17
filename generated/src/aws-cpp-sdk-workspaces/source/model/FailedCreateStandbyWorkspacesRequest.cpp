@@ -25,10 +25,8 @@ FailedCreateStandbyWorkspacesRequest::FailedCreateStandbyWorkspacesRequest() :
 {
 }
 
-FailedCreateStandbyWorkspacesRequest::FailedCreateStandbyWorkspacesRequest(JsonView jsonValue) : 
-    m_standbyWorkspaceRequestHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailedCreateStandbyWorkspacesRequest::FailedCreateStandbyWorkspacesRequest(JsonView jsonValue)
+  : FailedCreateStandbyWorkspacesRequest()
 {
   *this = jsonValue;
 }

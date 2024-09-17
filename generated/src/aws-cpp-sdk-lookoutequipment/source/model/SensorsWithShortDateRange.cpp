@@ -24,9 +24,8 @@ SensorsWithShortDateRange::SensorsWithShortDateRange() :
 {
 }
 
-SensorsWithShortDateRange::SensorsWithShortDateRange(JsonView jsonValue) : 
-    m_affectedSensorCount(0),
-    m_affectedSensorCountHasBeenSet(false)
+SensorsWithShortDateRange::SensorsWithShortDateRange(JsonView jsonValue)
+  : SensorsWithShortDateRange()
 {
   *this = jsonValue;
 }

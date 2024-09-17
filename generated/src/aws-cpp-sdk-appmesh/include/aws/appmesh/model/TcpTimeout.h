@@ -37,42 +37,18 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that represents an idle timeout. An idle timeout bounds the amount
      * of time that a connection may be idle. The default value is none.</p>
      */
     inline const Duration& GetIdle() const{ return m_idle; }
-
-    /**
-     * <p>An object that represents an idle timeout. An idle timeout bounds the amount
-     * of time that a connection may be idle. The default value is none.</p>
-     */
     inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
-
-    /**
-     * <p>An object that represents an idle timeout. An idle timeout bounds the amount
-     * of time that a connection may be idle. The default value is none.</p>
-     */
     inline void SetIdle(const Duration& value) { m_idleHasBeenSet = true; m_idle = value; }
-
-    /**
-     * <p>An object that represents an idle timeout. An idle timeout bounds the amount
-     * of time that a connection may be idle. The default value is none.</p>
-     */
     inline void SetIdle(Duration&& value) { m_idleHasBeenSet = true; m_idle = std::move(value); }
-
-    /**
-     * <p>An object that represents an idle timeout. An idle timeout bounds the amount
-     * of time that a connection may be idle. The default value is none.</p>
-     */
     inline TcpTimeout& WithIdle(const Duration& value) { SetIdle(value); return *this;}
-
-    /**
-     * <p>An object that represents an idle timeout. An idle timeout bounds the amount
-     * of time that a connection may be idle. The default value is none.</p>
-     */
     inline TcpTimeout& WithIdle(Duration&& value) { SetIdle(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Duration m_idle;

@@ -34,99 +34,42 @@ namespace Model
     AWS_SAGEMAKER_API ListAppImageConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-     */
     inline ListAppImageConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-     */
     inline ListAppImageConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
-     */
     inline ListAppImageConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of AppImageConfigs and their properties.</p>
      */
     inline const Aws::Vector<AppImageConfigDetails>& GetAppImageConfigs() const{ return m_appImageConfigs; }
-
-    /**
-     * <p>A list of AppImageConfigs and their properties.</p>
-     */
     inline void SetAppImageConfigs(const Aws::Vector<AppImageConfigDetails>& value) { m_appImageConfigs = value; }
-
-    /**
-     * <p>A list of AppImageConfigs and their properties.</p>
-     */
     inline void SetAppImageConfigs(Aws::Vector<AppImageConfigDetails>&& value) { m_appImageConfigs = std::move(value); }
-
-    /**
-     * <p>A list of AppImageConfigs and their properties.</p>
-     */
     inline ListAppImageConfigsResult& WithAppImageConfigs(const Aws::Vector<AppImageConfigDetails>& value) { SetAppImageConfigs(value); return *this;}
-
-    /**
-     * <p>A list of AppImageConfigs and their properties.</p>
-     */
     inline ListAppImageConfigsResult& WithAppImageConfigs(Aws::Vector<AppImageConfigDetails>&& value) { SetAppImageConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of AppImageConfigs and their properties.</p>
-     */
     inline ListAppImageConfigsResult& AddAppImageConfigs(const AppImageConfigDetails& value) { m_appImageConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of AppImageConfigs and their properties.</p>
-     */
     inline ListAppImageConfigsResult& AddAppImageConfigs(AppImageConfigDetails&& value) { m_appImageConfigs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAppImageConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAppImageConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAppImageConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -24,9 +24,8 @@ PrincipalPermissions::PrincipalPermissions() :
 {
 }
 
-PrincipalPermissions::PrincipalPermissions(JsonView jsonValue) : 
-    m_principalHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+PrincipalPermissions::PrincipalPermissions(JsonView jsonValue)
+  : PrincipalPermissions()
 {
   *this = jsonValue;
 }

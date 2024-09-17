@@ -22,8 +22,8 @@ GetCurrentUserDataResult::GetCurrentUserDataResult() :
 {
 }
 
-GetCurrentUserDataResult::GetCurrentUserDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+GetCurrentUserDataResult::GetCurrentUserDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCurrentUserDataResult()
 {
   *this = result;
 }

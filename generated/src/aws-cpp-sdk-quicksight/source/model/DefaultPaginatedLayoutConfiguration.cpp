@@ -23,8 +23,8 @@ DefaultPaginatedLayoutConfiguration::DefaultPaginatedLayoutConfiguration() :
 {
 }
 
-DefaultPaginatedLayoutConfiguration::DefaultPaginatedLayoutConfiguration(JsonView jsonValue) : 
-    m_sectionBasedHasBeenSet(false)
+DefaultPaginatedLayoutConfiguration::DefaultPaginatedLayoutConfiguration(JsonView jsonValue)
+  : DefaultPaginatedLayoutConfiguration()
 {
   *this = jsonValue;
 }

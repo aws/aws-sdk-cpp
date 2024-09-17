@@ -28,11 +28,8 @@ ScannedResource::ScannedResource() :
 {
 }
 
-ScannedResource::ScannedResource(const XmlNode& xmlNode) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_managedByStack(false),
-    m_managedByStackHasBeenSet(false)
+ScannedResource::ScannedResource(const XmlNode& xmlNode)
+  : ScannedResource()
 {
   *this = xmlNode;
 }

@@ -35,28 +35,14 @@ Output::Output() :
     m_transportHasBeenSet(false),
     m_vpcInterfaceAttachmentHasBeenSet(false),
     m_bridgeArnHasBeenSet(false),
-    m_bridgePortsHasBeenSet(false)
+    m_bridgePortsHasBeenSet(false),
+    m_outputStatus(OutputStatus::NOT_SET),
+    m_outputStatusHasBeenSet(false)
 {
 }
 
-Output::Output(JsonView jsonValue) : 
-    m_dataTransferSubscriberFeePercent(0),
-    m_dataTransferSubscriberFeePercentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_listenerAddressHasBeenSet(false),
-    m_mediaLiveInputArnHasBeenSet(false),
-    m_mediaStreamOutputConfigurationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_transportHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false),
-    m_bridgeArnHasBeenSet(false),
-    m_bridgePortsHasBeenSet(false)
+Output::Output(JsonView jsonValue)
+  : Output()
 {
   *this = jsonValue;
 }
@@ -174,6 +160,13 @@ Output& Output::operator =(JsonView jsonValue)
     m_bridgePortsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputStatus"))
+  {
+    m_outputStatus = OutputStatusMapper::GetOutputStatusForName(jsonValue.GetString("outputStatus"));
+
+    m_outputStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -279,6 +272,11 @@ JsonValue Output::Jsonize() const
    }
    payload.WithArray("bridgePorts", std::move(bridgePortsJsonList));
 
+  }
+
+  if(m_outputStatusHasBeenSet)
+  {
+   payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
   }
 
   return payload;

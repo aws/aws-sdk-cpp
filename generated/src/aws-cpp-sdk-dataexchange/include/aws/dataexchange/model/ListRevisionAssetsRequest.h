@@ -38,157 +38,58 @@ namespace Model
     AWS_DATAEXCHANGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for a data set.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
-
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
     inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
     inline ListRevisionAssetsRequest& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
     inline ListRevisionAssetsRequest& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
     inline ListRevisionAssetsRequest& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results returned by a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results returned by a single call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results returned by a single call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results returned by a single call.</p>
-     */
     inline ListRevisionAssetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token value retrieved from a previous call to access the next page of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListRevisionAssetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListRevisionAssetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListRevisionAssetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for a revision.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
-
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
     inline ListRevisionAssetsRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
     inline ListRevisionAssetsRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for a revision.</p>
-     */
     inline ListRevisionAssetsRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSetId;

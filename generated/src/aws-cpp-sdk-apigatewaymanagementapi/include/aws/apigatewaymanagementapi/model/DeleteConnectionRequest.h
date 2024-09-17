@@ -32,30 +32,17 @@ namespace Model
     AWS_APIGATEWAYMANAGEMENTAPI_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-
-    
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-
-    
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-
-    
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-
-    
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-
-    
     inline DeleteConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-
-    
     inline DeleteConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-
-    
     inline DeleteConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectionId;

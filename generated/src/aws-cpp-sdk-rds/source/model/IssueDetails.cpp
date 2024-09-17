@@ -25,8 +25,8 @@ IssueDetails::IssueDetails() :
 {
 }
 
-IssueDetails::IssueDetails(const XmlNode& xmlNode) : 
-    m_performanceIssueDetailsHasBeenSet(false)
+IssueDetails::IssueDetails(const XmlNode& xmlNode)
+  : IssueDetails()
 {
   *this = xmlNode;
 }

@@ -39,77 +39,31 @@ namespace Model
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the scope.</p>
      */
     inline const ScopeType& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The type of the scope.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The type of the scope.</p>
-     */
     inline void SetKey(const ScopeType& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The type of the scope.</p>
-     */
     inline void SetKey(ScopeType&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The type of the scope.</p>
-     */
     inline Scope& WithKey(const ScopeType& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The type of the scope.</p>
-     */
     inline Scope& WithKey(ScopeType&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource identifier for the specified scope type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The resource identifier for the specified scope type.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The resource identifier for the specified scope type.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The resource identifier for the specified scope type.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The resource identifier for the specified scope type.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The resource identifier for the specified scope type.</p>
-     */
     inline Scope& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The resource identifier for the specified scope type.</p>
-     */
     inline Scope& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource identifier for the specified scope type.</p>
-     */
     inline Scope& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     ScopeType m_key;

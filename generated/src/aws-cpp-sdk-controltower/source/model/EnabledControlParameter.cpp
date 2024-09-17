@@ -24,9 +24,8 @@ EnabledControlParameter::EnabledControlParameter() :
 {
 }
 
-EnabledControlParameter::EnabledControlParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EnabledControlParameter::EnabledControlParameter(JsonView jsonValue)
+  : EnabledControlParameter()
 {
   *this = jsonValue;
 }

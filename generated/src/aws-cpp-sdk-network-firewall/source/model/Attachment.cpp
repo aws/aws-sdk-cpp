@@ -27,12 +27,8 @@ Attachment::Attachment() :
 {
 }
 
-Attachment::Attachment(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+Attachment::Attachment(JsonView jsonValue)
+  : Attachment()
 {
   *this = jsonValue;
 }

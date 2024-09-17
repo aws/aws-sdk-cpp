@@ -26,11 +26,8 @@ ProxyConfiguration::ProxyConfiguration() :
 {
 }
 
-ProxyConfiguration::ProxyConfiguration(JsonView jsonValue) : 
-    m_type(ProxyConfigurationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_containerNameHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+ProxyConfiguration::ProxyConfiguration(JsonView jsonValue)
+  : ProxyConfiguration()
 {
   *this = jsonValue;
 }

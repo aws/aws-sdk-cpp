@@ -24,9 +24,8 @@ DeviceEvent::DeviceEvent() :
 {
 }
 
-DeviceEvent::DeviceEvent(JsonView jsonValue) : 
-    m_deviceHasBeenSet(false),
-    m_stdEventHasBeenSet(false)
+DeviceEvent::DeviceEvent(JsonView jsonValue)
+  : DeviceEvent()
 {
   *this = jsonValue;
 }

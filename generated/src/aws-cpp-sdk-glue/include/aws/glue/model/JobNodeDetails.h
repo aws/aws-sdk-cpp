@@ -39,46 +39,19 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The information for the job runs represented by the job node.</p>
      */
     inline const Aws::Vector<JobRun>& GetJobRuns() const{ return m_jobRuns; }
-
-    /**
-     * <p>The information for the job runs represented by the job node.</p>
-     */
     inline bool JobRunsHasBeenSet() const { return m_jobRunsHasBeenSet; }
-
-    /**
-     * <p>The information for the job runs represented by the job node.</p>
-     */
     inline void SetJobRuns(const Aws::Vector<JobRun>& value) { m_jobRunsHasBeenSet = true; m_jobRuns = value; }
-
-    /**
-     * <p>The information for the job runs represented by the job node.</p>
-     */
     inline void SetJobRuns(Aws::Vector<JobRun>&& value) { m_jobRunsHasBeenSet = true; m_jobRuns = std::move(value); }
-
-    /**
-     * <p>The information for the job runs represented by the job node.</p>
-     */
     inline JobNodeDetails& WithJobRuns(const Aws::Vector<JobRun>& value) { SetJobRuns(value); return *this;}
-
-    /**
-     * <p>The information for the job runs represented by the job node.</p>
-     */
     inline JobNodeDetails& WithJobRuns(Aws::Vector<JobRun>&& value) { SetJobRuns(std::move(value)); return *this;}
-
-    /**
-     * <p>The information for the job runs represented by the job node.</p>
-     */
     inline JobNodeDetails& AddJobRuns(const JobRun& value) { m_jobRunsHasBeenSet = true; m_jobRuns.push_back(value); return *this; }
-
-    /**
-     * <p>The information for the job runs represented by the job node.</p>
-     */
     inline JobNodeDetails& AddJobRuns(JobRun&& value) { m_jobRunsHasBeenSet = true; m_jobRuns.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<JobRun> m_jobRuns;

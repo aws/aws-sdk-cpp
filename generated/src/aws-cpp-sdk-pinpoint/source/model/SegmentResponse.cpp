@@ -36,21 +36,8 @@ SegmentResponse::SegmentResponse() :
 {
 }
 
-SegmentResponse::SegmentResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_importDefinitionHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_segmentGroupsHasBeenSet(false),
-    m_segmentType(SegmentType::NOT_SET),
-    m_segmentTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+SegmentResponse::SegmentResponse(JsonView jsonValue)
+  : SegmentResponse()
 {
   *this = jsonValue;
 }

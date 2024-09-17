@@ -32,17 +32,8 @@ KinesisVideoStreamPoolConfiguration::KinesisVideoStreamPoolConfiguration() :
 {
 }
 
-KinesisVideoStreamPoolConfiguration::KinesisVideoStreamPoolConfiguration(JsonView jsonValue) : 
-    m_poolArnHasBeenSet(false),
-    m_poolNameHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_poolStatus(KinesisVideoStreamPoolStatus::NOT_SET),
-    m_poolStatusHasBeenSet(false),
-    m_poolSize(0),
-    m_poolSizeHasBeenSet(false),
-    m_streamConfigurationHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+KinesisVideoStreamPoolConfiguration::KinesisVideoStreamPoolConfiguration(JsonView jsonValue)
+  : KinesisVideoStreamPoolConfiguration()
 {
   *this = jsonValue;
 }

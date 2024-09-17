@@ -23,8 +23,8 @@ OrganizationScanEc2InstanceWithFindingsResult::OrganizationScanEc2InstanceWithFi
 {
 }
 
-OrganizationScanEc2InstanceWithFindingsResult::OrganizationScanEc2InstanceWithFindingsResult(JsonView jsonValue) : 
-    m_ebsVolumesHasBeenSet(false)
+OrganizationScanEc2InstanceWithFindingsResult::OrganizationScanEc2InstanceWithFindingsResult(JsonView jsonValue)
+  : OrganizationScanEc2InstanceWithFindingsResult()
 {
   *this = jsonValue;
 }

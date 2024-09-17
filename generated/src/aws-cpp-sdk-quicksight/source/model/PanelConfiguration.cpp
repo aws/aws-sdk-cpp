@@ -35,20 +35,8 @@ PanelConfiguration::PanelConfiguration() :
 {
 }
 
-PanelConfiguration::PanelConfiguration(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_borderVisibility(Visibility::NOT_SET),
-    m_borderVisibilityHasBeenSet(false),
-    m_borderThicknessHasBeenSet(false),
-    m_borderStyle(PanelBorderStyle::NOT_SET),
-    m_borderStyleHasBeenSet(false),
-    m_borderColorHasBeenSet(false),
-    m_gutterVisibility(Visibility::NOT_SET),
-    m_gutterVisibilityHasBeenSet(false),
-    m_gutterSpacingHasBeenSet(false),
-    m_backgroundVisibility(Visibility::NOT_SET),
-    m_backgroundVisibilityHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false)
+PanelConfiguration::PanelConfiguration(JsonView jsonValue)
+  : PanelConfiguration()
 {
   *this = jsonValue;
 }

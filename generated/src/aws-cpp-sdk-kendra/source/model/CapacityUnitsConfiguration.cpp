@@ -26,11 +26,8 @@ CapacityUnitsConfiguration::CapacityUnitsConfiguration() :
 {
 }
 
-CapacityUnitsConfiguration::CapacityUnitsConfiguration(JsonView jsonValue) : 
-    m_storageCapacityUnits(0),
-    m_storageCapacityUnitsHasBeenSet(false),
-    m_queryCapacityUnits(0),
-    m_queryCapacityUnitsHasBeenSet(false)
+CapacityUnitsConfiguration::CapacityUnitsConfiguration(JsonView jsonValue)
+  : CapacityUnitsConfiguration()
 {
   *this = jsonValue;
 }

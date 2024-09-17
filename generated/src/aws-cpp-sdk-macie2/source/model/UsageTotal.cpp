@@ -27,12 +27,8 @@ UsageTotal::UsageTotal() :
 {
 }
 
-UsageTotal::UsageTotal(JsonView jsonValue) : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_estimatedCostHasBeenSet(false),
-    m_type(UsageType::NOT_SET),
-    m_typeHasBeenSet(false)
+UsageTotal::UsageTotal(JsonView jsonValue)
+  : UsageTotal()
 {
   *this = jsonValue;
 }

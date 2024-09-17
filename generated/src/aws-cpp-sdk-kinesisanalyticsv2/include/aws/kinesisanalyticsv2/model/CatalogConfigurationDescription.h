@@ -26,7 +26,8 @@ namespace Model
   /**
    * <p>The configuration parameters for the default Amazon Glue database. You use
    * this database for Apache Flink SQL queries and table API transforms that you
-   * write in a Kinesis Data Analytics Studio notebook.</p><p><h3>See Also:</h3>   <a
+   * write in a Managed Service for Apache Flink Studio notebook.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CatalogConfigurationDescription">AWS
    * API Reference</a></p>
    */
@@ -39,48 +40,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for SQL queries that you write in a Kinesis Data Analytics Studio
-     * notebook.</p>
+     * this database for SQL queries that you write in a Managed Service for Apache
+     * Flink Studio notebook.</p>
      */
     inline const GlueDataCatalogConfigurationDescription& GetGlueDataCatalogConfigurationDescription() const{ return m_glueDataCatalogConfigurationDescription; }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for SQL queries that you write in a Kinesis Data Analytics Studio
-     * notebook.</p>
-     */
     inline bool GlueDataCatalogConfigurationDescriptionHasBeenSet() const { return m_glueDataCatalogConfigurationDescriptionHasBeenSet; }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for SQL queries that you write in a Kinesis Data Analytics Studio
-     * notebook.</p>
-     */
     inline void SetGlueDataCatalogConfigurationDescription(const GlueDataCatalogConfigurationDescription& value) { m_glueDataCatalogConfigurationDescriptionHasBeenSet = true; m_glueDataCatalogConfigurationDescription = value; }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for SQL queries that you write in a Kinesis Data Analytics Studio
-     * notebook.</p>
-     */
     inline void SetGlueDataCatalogConfigurationDescription(GlueDataCatalogConfigurationDescription&& value) { m_glueDataCatalogConfigurationDescriptionHasBeenSet = true; m_glueDataCatalogConfigurationDescription = std::move(value); }
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for SQL queries that you write in a Kinesis Data Analytics Studio
-     * notebook.</p>
-     */
     inline CatalogConfigurationDescription& WithGlueDataCatalogConfigurationDescription(const GlueDataCatalogConfigurationDescription& value) { SetGlueDataCatalogConfigurationDescription(value); return *this;}
-
-    /**
-     * <p>The configuration parameters for the default Amazon Glue database. You use
-     * this database for SQL queries that you write in a Kinesis Data Analytics Studio
-     * notebook.</p>
-     */
     inline CatalogConfigurationDescription& WithGlueDataCatalogConfigurationDescription(GlueDataCatalogConfigurationDescription&& value) { SetGlueDataCatalogConfigurationDescription(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlueDataCatalogConfigurationDescription m_glueDataCatalogConfigurationDescription;

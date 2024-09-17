@@ -28,13 +28,8 @@ InferenceRecommendation::InferenceRecommendation() :
 {
 }
 
-InferenceRecommendation::InferenceRecommendation(JsonView jsonValue) : 
-    m_recommendationIdHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false),
-    m_modelConfigurationHasBeenSet(false),
-    m_invocationEndTimeHasBeenSet(false),
-    m_invocationStartTimeHasBeenSet(false)
+InferenceRecommendation::InferenceRecommendation(JsonView jsonValue)
+  : InferenceRecommendation()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes() :
 {
 }
 
-DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes(JsonView jsonValue) : 
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false),
-    m_scheduleToStartTimeoutHasBeenSet(false)
+DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes(JsonView jsonValue)
+  : DecisionTaskScheduledEventAttributes()
 {
   *this = jsonValue;
 }

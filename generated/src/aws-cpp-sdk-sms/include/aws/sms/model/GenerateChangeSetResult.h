@@ -33,53 +33,27 @@ namespace Model
     AWS_SMS_API GenerateChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The location of the Amazon S3 object.</p>
      */
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
-
-    /**
-     * <p>The location of the Amazon S3 object.</p>
-     */
     inline void SetS3Location(const S3Location& value) { m_s3Location = value; }
-
-    /**
-     * <p>The location of the Amazon S3 object.</p>
-     */
     inline void SetS3Location(S3Location&& value) { m_s3Location = std::move(value); }
-
-    /**
-     * <p>The location of the Amazon S3 object.</p>
-     */
     inline GenerateChangeSetResult& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-
-    /**
-     * <p>The location of the Amazon S3 object.</p>
-     */
     inline GenerateChangeSetResult& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GenerateChangeSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GenerateChangeSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GenerateChangeSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     S3Location m_s3Location;

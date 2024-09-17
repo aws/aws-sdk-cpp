@@ -97,7 +97,6 @@ namespace CloudHSM
       void init(const CloudHSMClientConfiguration& clientConfiguration);
 
       CloudHSMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudHSMEndpointProviderBase> m_endpointProvider;
   };
 

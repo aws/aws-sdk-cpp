@@ -24,10 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the Amazon S3 object key name to filter on and whether to filter on
-   * the suffix or prefix of the key name.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/FilterRule">AWS API
-   * Reference</a></p>
+   * <p>Specifies the Amazon S3 object key name to filter on. An object key name is
+   * the name assigned to an object in your Amazon S3 bucket. You specify whether to
+   * filter on the suffix or prefix of the object key name. A prefix is a specific
+   * string of characters at the beginning of an object key name, which you can use
+   * to organize objects. For example, you can start the key names of related objects
+   * with a prefix, such as <code>2023-</code> or <code>engineering/</code>. Then,
+   * you can use <code>FilterRule</code> to find objects in a bucket with key names
+   * that have the same prefix. A suffix is similar to a prefix, but it is at the end
+   * of the object key name instead of at the beginning.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/FilterRule">AWS
+   * API Reference</a></p>
    */
   class FilterRule
   {
@@ -39,6 +46,7 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The object key name prefix or suffix identifying one or more objects to which
      * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
@@ -47,93 +55,26 @@ namespace Model
      * Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const FilterRuleName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
-     * prefixes and suffixes are not supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
-     * prefixes and suffixes are not supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline void SetName(const FilterRuleName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
-     * prefixes and suffixes are not supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline void SetName(FilterRuleName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
-     * prefixes and suffixes are not supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline FilterRule& WithName(const FilterRuleName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
-     * prefixes and suffixes are not supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline FilterRule& WithName(FilterRuleName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value that the filter searches for in object key names.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value that the filter searches for in object key names.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value that the filter searches for in object key names.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value that the filter searches for in object key names.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value that the filter searches for in object key names.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value that the filter searches for in object key names.</p>
-     */
     inline FilterRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value that the filter searches for in object key names.</p>
-     */
     inline FilterRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value that the filter searches for in object key names.</p>
-     */
     inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     FilterRuleName m_name;

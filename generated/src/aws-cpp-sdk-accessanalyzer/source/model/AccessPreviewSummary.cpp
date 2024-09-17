@@ -28,13 +28,8 @@ AccessPreviewSummary::AccessPreviewSummary() :
 {
 }
 
-AccessPreviewSummary::AccessPreviewSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_analyzerArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(AccessPreviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+AccessPreviewSummary::AccessPreviewSummary(JsonView jsonValue)
+  : AccessPreviewSummary()
 {
   *this = jsonValue;
 }

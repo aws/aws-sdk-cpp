@@ -39,63 +39,29 @@ namespace Model
     AWS_OPSWORKS_API GrantAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>TemporaryCredential</code> object that contains the data needed to
      * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
      * Connection.</p>
      */
     inline const TemporaryCredential& GetTemporaryCredential() const{ return m_temporaryCredential; }
-
-    /**
-     * <p>A <code>TemporaryCredential</code> object that contains the data needed to
-     * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
-     * Connection.</p>
-     */
     inline void SetTemporaryCredential(const TemporaryCredential& value) { m_temporaryCredential = value; }
-
-    /**
-     * <p>A <code>TemporaryCredential</code> object that contains the data needed to
-     * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
-     * Connection.</p>
-     */
     inline void SetTemporaryCredential(TemporaryCredential&& value) { m_temporaryCredential = std::move(value); }
-
-    /**
-     * <p>A <code>TemporaryCredential</code> object that contains the data needed to
-     * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
-     * Connection.</p>
-     */
     inline GrantAccessResult& WithTemporaryCredential(const TemporaryCredential& value) { SetTemporaryCredential(value); return *this;}
-
-    /**
-     * <p>A <code>TemporaryCredential</code> object that contains the data needed to
-     * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
-     * Connection.</p>
-     */
     inline GrantAccessResult& WithTemporaryCredential(TemporaryCredential&& value) { SetTemporaryCredential(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GrantAccessResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GrantAccessResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GrantAccessResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TemporaryCredential m_temporaryCredential;

@@ -26,11 +26,8 @@ PracticeRunConfiguration::PracticeRunConfiguration() :
 {
 }
 
-PracticeRunConfiguration::PracticeRunConfiguration(JsonView jsonValue) : 
-    m_blockedDatesHasBeenSet(false),
-    m_blockedWindowsHasBeenSet(false),
-    m_blockingAlarmsHasBeenSet(false),
-    m_outcomeAlarmsHasBeenSet(false)
+PracticeRunConfiguration::PracticeRunConfiguration(JsonView jsonValue)
+  : PracticeRunConfiguration()
 {
   *this = jsonValue;
 }

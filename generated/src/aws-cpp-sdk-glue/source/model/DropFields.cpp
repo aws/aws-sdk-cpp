@@ -25,10 +25,8 @@ DropFields::DropFields() :
 {
 }
 
-DropFields::DropFields(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_pathsHasBeenSet(false)
+DropFields::DropFields(JsonView jsonValue)
+  : DropFields()
 {
   *this = jsonValue;
 }

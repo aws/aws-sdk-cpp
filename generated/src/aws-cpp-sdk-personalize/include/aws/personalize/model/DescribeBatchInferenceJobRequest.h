@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the batch inference job to describe.</p>
      */
     inline const Aws::String& GetBatchInferenceJobArn() const{ return m_batchInferenceJobArn; }
-
-    /**
-     * <p>The ARN of the batch inference job to describe.</p>
-     */
     inline bool BatchInferenceJobArnHasBeenSet() const { return m_batchInferenceJobArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the batch inference job to describe.</p>
-     */
     inline void SetBatchInferenceJobArn(const Aws::String& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = value; }
-
-    /**
-     * <p>The ARN of the batch inference job to describe.</p>
-     */
     inline void SetBatchInferenceJobArn(Aws::String&& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the batch inference job to describe.</p>
-     */
     inline void SetBatchInferenceJobArn(const char* value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn.assign(value); }
-
-    /**
-     * <p>The ARN of the batch inference job to describe.</p>
-     */
     inline DescribeBatchInferenceJobRequest& WithBatchInferenceJobArn(const Aws::String& value) { SetBatchInferenceJobArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the batch inference job to describe.</p>
-     */
     inline DescribeBatchInferenceJobRequest& WithBatchInferenceJobArn(Aws::String&& value) { SetBatchInferenceJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the batch inference job to describe.</p>
-     */
     inline DescribeBatchInferenceJobRequest& WithBatchInferenceJobArn(const char* value) { SetBatchInferenceJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_batchInferenceJobArn;

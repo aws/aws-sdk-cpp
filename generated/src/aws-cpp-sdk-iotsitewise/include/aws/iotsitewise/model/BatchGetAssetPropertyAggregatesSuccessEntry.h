@@ -41,95 +41,34 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the entry.</p>
      */
     inline const Aws::String& GetEntryId() const{ return m_entryId; }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline BatchGetAssetPropertyAggregatesSuccessEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline BatchGetAssetPropertyAggregatesSuccessEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the entry.</p>
-     */
     inline BatchGetAssetPropertyAggregatesSuccessEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The requested aggregated asset property values (for example, average,
      * minimum, and maximum).</p>
      */
     inline const Aws::Vector<AggregatedValue>& GetAggregatedValues() const{ return m_aggregatedValues; }
-
-    /**
-     * <p>The requested aggregated asset property values (for example, average,
-     * minimum, and maximum).</p>
-     */
     inline bool AggregatedValuesHasBeenSet() const { return m_aggregatedValuesHasBeenSet; }
-
-    /**
-     * <p>The requested aggregated asset property values (for example, average,
-     * minimum, and maximum).</p>
-     */
     inline void SetAggregatedValues(const Aws::Vector<AggregatedValue>& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues = value; }
-
-    /**
-     * <p>The requested aggregated asset property values (for example, average,
-     * minimum, and maximum).</p>
-     */
     inline void SetAggregatedValues(Aws::Vector<AggregatedValue>&& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues = std::move(value); }
-
-    /**
-     * <p>The requested aggregated asset property values (for example, average,
-     * minimum, and maximum).</p>
-     */
     inline BatchGetAssetPropertyAggregatesSuccessEntry& WithAggregatedValues(const Aws::Vector<AggregatedValue>& value) { SetAggregatedValues(value); return *this;}
-
-    /**
-     * <p>The requested aggregated asset property values (for example, average,
-     * minimum, and maximum).</p>
-     */
     inline BatchGetAssetPropertyAggregatesSuccessEntry& WithAggregatedValues(Aws::Vector<AggregatedValue>&& value) { SetAggregatedValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The requested aggregated asset property values (for example, average,
-     * minimum, and maximum).</p>
-     */
     inline BatchGetAssetPropertyAggregatesSuccessEntry& AddAggregatedValues(const AggregatedValue& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues.push_back(value); return *this; }
-
-    /**
-     * <p>The requested aggregated asset property values (for example, average,
-     * minimum, and maximum).</p>
-     */
     inline BatchGetAssetPropertyAggregatesSuccessEntry& AddAggregatedValues(AggregatedValue&& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_entryId;

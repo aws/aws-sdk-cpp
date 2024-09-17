@@ -25,8 +25,8 @@ ResumeClusterMessage::ResumeClusterMessage() :
 {
 }
 
-ResumeClusterMessage::ResumeClusterMessage(const XmlNode& xmlNode) : 
-    m_clusterIdentifierHasBeenSet(false)
+ResumeClusterMessage::ResumeClusterMessage(const XmlNode& xmlNode)
+  : ResumeClusterMessage()
 {
   *this = xmlNode;
 }

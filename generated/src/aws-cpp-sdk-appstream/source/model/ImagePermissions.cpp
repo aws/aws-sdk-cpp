@@ -26,11 +26,8 @@ ImagePermissions::ImagePermissions() :
 {
 }
 
-ImagePermissions::ImagePermissions(JsonView jsonValue) : 
-    m_allowFleet(false),
-    m_allowFleetHasBeenSet(false),
-    m_allowImageBuilder(false),
-    m_allowImageBuilderHasBeenSet(false)
+ImagePermissions::ImagePermissions(JsonView jsonValue)
+  : ImagePermissions()
 {
   *this = jsonValue;
 }

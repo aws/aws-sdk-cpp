@@ -22,8 +22,8 @@ DescribeInboundDmarcSettingsResult::DescribeInboundDmarcSettingsResult() :
 {
 }
 
-DescribeInboundDmarcSettingsResult::DescribeInboundDmarcSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enforced(false)
+DescribeInboundDmarcSettingsResult::DescribeInboundDmarcSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInboundDmarcSettingsResult()
 {
   *this = result;
 }

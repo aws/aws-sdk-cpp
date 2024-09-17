@@ -37,30 +37,16 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time, in UTC format, when OpenSearch Service takes a daily automated
      * snapshot of the specified domain. Default is <code>0</code> hours.</p>
      */
     inline int GetAutomatedSnapshotStartHour() const{ return m_automatedSnapshotStartHour; }
-
-    /**
-     * <p>The time, in UTC format, when OpenSearch Service takes a daily automated
-     * snapshot of the specified domain. Default is <code>0</code> hours.</p>
-     */
     inline bool AutomatedSnapshotStartHourHasBeenSet() const { return m_automatedSnapshotStartHourHasBeenSet; }
-
-    /**
-     * <p>The time, in UTC format, when OpenSearch Service takes a daily automated
-     * snapshot of the specified domain. Default is <code>0</code> hours.</p>
-     */
     inline void SetAutomatedSnapshotStartHour(int value) { m_automatedSnapshotStartHourHasBeenSet = true; m_automatedSnapshotStartHour = value; }
-
-    /**
-     * <p>The time, in UTC format, when OpenSearch Service takes a daily automated
-     * snapshot of the specified domain. Default is <code>0</code> hours.</p>
-     */
     inline SnapshotOptions& WithAutomatedSnapshotStartHour(int value) { SetAutomatedSnapshotStartHour(value); return *this;}
-
+    ///@}
   private:
 
     int m_automatedSnapshotStartHour;

@@ -19,22 +19,28 @@ namespace Model
 {
 
 AcceptChoice::AcceptChoice() : 
+    m_editedValueHasBeenSet(false),
     m_predictionChoice(0),
     m_predictionChoiceHasBeenSet(false),
     m_predictionTargetHasBeenSet(false)
 {
 }
 
-AcceptChoice::AcceptChoice(JsonView jsonValue) : 
-    m_predictionChoice(0),
-    m_predictionChoiceHasBeenSet(false),
-    m_predictionTargetHasBeenSet(false)
+AcceptChoice::AcceptChoice(JsonView jsonValue)
+  : AcceptChoice()
 {
   *this = jsonValue;
 }
 
 AcceptChoice& AcceptChoice::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("editedValue"))
+  {
+    m_editedValue = jsonValue.GetString("editedValue");
+
+    m_editedValueHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("predictionChoice"))
   {
     m_predictionChoice = jsonValue.GetInteger("predictionChoice");
@@ -55,6 +61,12 @@ AcceptChoice& AcceptChoice::operator =(JsonView jsonValue)
 JsonValue AcceptChoice::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_editedValueHasBeenSet)
+  {
+   payload.WithString("editedValue", m_editedValue);
+
+  }
 
   if(m_predictionChoiceHasBeenSet)
   {

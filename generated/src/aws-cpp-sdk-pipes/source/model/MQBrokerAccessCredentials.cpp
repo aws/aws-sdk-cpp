@@ -23,8 +23,8 @@ MQBrokerAccessCredentials::MQBrokerAccessCredentials() :
 {
 }
 
-MQBrokerAccessCredentials::MQBrokerAccessCredentials(JsonView jsonValue) : 
-    m_basicAuthHasBeenSet(false)
+MQBrokerAccessCredentials::MQBrokerAccessCredentials(JsonView jsonValue)
+  : MQBrokerAccessCredentials()
 {
   *this = jsonValue;
 }

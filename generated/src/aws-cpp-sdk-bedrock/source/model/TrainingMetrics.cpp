@@ -24,9 +24,8 @@ TrainingMetrics::TrainingMetrics() :
 {
 }
 
-TrainingMetrics::TrainingMetrics(JsonView jsonValue) : 
-    m_trainingLoss(0.0),
-    m_trainingLossHasBeenSet(false)
+TrainingMetrics::TrainingMetrics(JsonView jsonValue)
+  : TrainingMetrics()
 {
   *this = jsonValue;
 }

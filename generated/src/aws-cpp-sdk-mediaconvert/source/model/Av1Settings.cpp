@@ -49,34 +49,8 @@ Av1Settings::Av1Settings() :
 {
 }
 
-Av1Settings::Av1Settings(JsonView jsonValue) : 
-    m_adaptiveQuantization(Av1AdaptiveQuantization::NOT_SET),
-    m_adaptiveQuantizationHasBeenSet(false),
-    m_bitDepth(Av1BitDepth::NOT_SET),
-    m_bitDepthHasBeenSet(false),
-    m_filmGrainSynthesis(Av1FilmGrainSynthesis::NOT_SET),
-    m_filmGrainSynthesisHasBeenSet(false),
-    m_framerateControl(Av1FramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(Av1FramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_gopSize(0.0),
-    m_gopSizeHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_numberBFramesBetweenReferenceFrames(0),
-    m_numberBFramesBetweenReferenceFramesHasBeenSet(false),
-    m_qvbrSettingsHasBeenSet(false),
-    m_rateControlMode(Av1RateControlMode::NOT_SET),
-    m_rateControlModeHasBeenSet(false),
-    m_slices(0),
-    m_slicesHasBeenSet(false),
-    m_spatialAdaptiveQuantization(Av1SpatialAdaptiveQuantization::NOT_SET),
-    m_spatialAdaptiveQuantizationHasBeenSet(false)
+Av1Settings::Av1Settings(JsonView jsonValue)
+  : Av1Settings()
 {
   *this = jsonValue;
 }

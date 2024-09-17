@@ -32,25 +32,17 @@ Fleet::Fleet() :
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
+    m_overflowBehaviorHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_fleetServiceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Fleet::Fleet(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_baseCapacity(0),
-    m_baseCapacityHasBeenSet(false),
-    m_environmentType(EnvironmentType::NOT_SET),
-    m_environmentTypeHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Fleet::Fleet(JsonView jsonValue)
+  : Fleet()
 {
   *this = jsonValue;
 }
@@ -127,6 +119,34 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_scalingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("overflowBehavior"))
+  {
+    m_overflowBehavior = FleetOverflowBehaviorMapper::GetFleetOverflowBehaviorForName(jsonValue.GetString("overflowBehavior"));
+
+    m_overflowBehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageId"))
+  {
+    m_imageId = jsonValue.GetString("imageId");
+
+    m_imageIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fleetServiceRole"))
+  {
+    m_fleetServiceRole = jsonValue.GetString("fleetServiceRole");
+
+    m_fleetServiceRoleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -197,6 +217,29 @@ JsonValue Fleet::Jsonize() const
   if(m_scalingConfigurationHasBeenSet)
   {
    payload.WithObject("scalingConfiguration", m_scalingConfiguration.Jsonize());
+
+  }
+
+  if(m_overflowBehaviorHasBeenSet)
+  {
+   payload.WithString("overflowBehavior", FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior));
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("imageId", m_imageId);
+
+  }
+
+  if(m_fleetServiceRoleHasBeenSet)
+  {
+   payload.WithString("fleetServiceRole", m_fleetServiceRole);
 
   }
 

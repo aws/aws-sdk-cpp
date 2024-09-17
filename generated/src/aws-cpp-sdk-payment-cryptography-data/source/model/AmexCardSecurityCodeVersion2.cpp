@@ -24,9 +24,8 @@ AmexCardSecurityCodeVersion2::AmexCardSecurityCodeVersion2() :
 {
 }
 
-AmexCardSecurityCodeVersion2::AmexCardSecurityCodeVersion2(JsonView jsonValue) : 
-    m_cardExpiryDateHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+AmexCardSecurityCodeVersion2::AmexCardSecurityCodeVersion2(JsonView jsonValue)
+  : AmexCardSecurityCodeVersion2()
 {
   *this = jsonValue;
 }

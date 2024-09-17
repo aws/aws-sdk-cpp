@@ -24,9 +24,8 @@ S3SignedObject::S3SignedObject() :
 {
 }
 
-S3SignedObject::S3SignedObject(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false)
+S3SignedObject::S3SignedObject(JsonView jsonValue)
+  : S3SignedObject()
 {
   *this = jsonValue;
 }

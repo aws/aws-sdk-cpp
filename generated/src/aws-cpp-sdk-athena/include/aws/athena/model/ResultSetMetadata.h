@@ -40,46 +40,19 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the columns returned in a query result metadata.</p>
      */
     inline const Aws::Vector<ColumnInfo>& GetColumnInfo() const{ return m_columnInfo; }
-
-    /**
-     * <p>Information about the columns returned in a query result metadata.</p>
-     */
     inline bool ColumnInfoHasBeenSet() const { return m_columnInfoHasBeenSet; }
-
-    /**
-     * <p>Information about the columns returned in a query result metadata.</p>
-     */
     inline void SetColumnInfo(const Aws::Vector<ColumnInfo>& value) { m_columnInfoHasBeenSet = true; m_columnInfo = value; }
-
-    /**
-     * <p>Information about the columns returned in a query result metadata.</p>
-     */
     inline void SetColumnInfo(Aws::Vector<ColumnInfo>&& value) { m_columnInfoHasBeenSet = true; m_columnInfo = std::move(value); }
-
-    /**
-     * <p>Information about the columns returned in a query result metadata.</p>
-     */
     inline ResultSetMetadata& WithColumnInfo(const Aws::Vector<ColumnInfo>& value) { SetColumnInfo(value); return *this;}
-
-    /**
-     * <p>Information about the columns returned in a query result metadata.</p>
-     */
     inline ResultSetMetadata& WithColumnInfo(Aws::Vector<ColumnInfo>&& value) { SetColumnInfo(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the columns returned in a query result metadata.</p>
-     */
     inline ResultSetMetadata& AddColumnInfo(const ColumnInfo& value) { m_columnInfoHasBeenSet = true; m_columnInfo.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the columns returned in a query result metadata.</p>
-     */
     inline ResultSetMetadata& AddColumnInfo(ColumnInfo&& value) { m_columnInfoHasBeenSet = true; m_columnInfo.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ColumnInfo> m_columnInfo;

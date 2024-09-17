@@ -24,9 +24,8 @@ CollectionConfiguration::CollectionConfiguration() :
 {
 }
 
-CollectionConfiguration::CollectionConfiguration(JsonView jsonValue) : 
-    m_collectionNameHasBeenSet(false),
-    m_collectionParametersHasBeenSet(false)
+CollectionConfiguration::CollectionConfiguration(JsonView jsonValue)
+  : CollectionConfiguration()
 {
   *this = jsonValue;
 }

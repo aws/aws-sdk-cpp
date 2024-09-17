@@ -9,6 +9,7 @@
 #include <aws/medialive/model/H264Settings.h>
 #include <aws/medialive/model/H265Settings.h>
 #include <aws/medialive/model/Mpeg2Settings.h>
+#include <aws/medialive/model/Av1Settings.h>
 #include <utility>
 
 namespace Aws
@@ -40,81 +41,55 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FrameCaptureSettings& GetFrameCaptureSettings() const{ return m_frameCaptureSettings; }
-
-    
     inline bool FrameCaptureSettingsHasBeenSet() const { return m_frameCaptureSettingsHasBeenSet; }
-
-    
     inline void SetFrameCaptureSettings(const FrameCaptureSettings& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = value; }
-
-    
     inline void SetFrameCaptureSettings(FrameCaptureSettings&& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = std::move(value); }
-
-    
     inline VideoCodecSettings& WithFrameCaptureSettings(const FrameCaptureSettings& value) { SetFrameCaptureSettings(value); return *this;}
-
-    
     inline VideoCodecSettings& WithFrameCaptureSettings(FrameCaptureSettings&& value) { SetFrameCaptureSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const H264Settings& GetH264Settings() const{ return m_h264Settings; }
-
-    
     inline bool H264SettingsHasBeenSet() const { return m_h264SettingsHasBeenSet; }
-
-    
     inline void SetH264Settings(const H264Settings& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = value; }
-
-    
     inline void SetH264Settings(H264Settings&& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = std::move(value); }
-
-    
     inline VideoCodecSettings& WithH264Settings(const H264Settings& value) { SetH264Settings(value); return *this;}
-
-    
     inline VideoCodecSettings& WithH264Settings(H264Settings&& value) { SetH264Settings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const H265Settings& GetH265Settings() const{ return m_h265Settings; }
-
-    
     inline bool H265SettingsHasBeenSet() const { return m_h265SettingsHasBeenSet; }
-
-    
     inline void SetH265Settings(const H265Settings& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = value; }
-
-    
     inline void SetH265Settings(H265Settings&& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = std::move(value); }
-
-    
     inline VideoCodecSettings& WithH265Settings(const H265Settings& value) { SetH265Settings(value); return *this;}
-
-    
     inline VideoCodecSettings& WithH265Settings(H265Settings&& value) { SetH265Settings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Mpeg2Settings& GetMpeg2Settings() const{ return m_mpeg2Settings; }
-
-    
     inline bool Mpeg2SettingsHasBeenSet() const { return m_mpeg2SettingsHasBeenSet; }
-
-    
     inline void SetMpeg2Settings(const Mpeg2Settings& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = value; }
-
-    
     inline void SetMpeg2Settings(Mpeg2Settings&& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = std::move(value); }
-
-    
     inline VideoCodecSettings& WithMpeg2Settings(const Mpeg2Settings& value) { SetMpeg2Settings(value); return *this;}
-
-    
     inline VideoCodecSettings& WithMpeg2Settings(Mpeg2Settings&& value) { SetMpeg2Settings(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    
+    inline const Av1Settings& GetAv1Settings() const{ return m_av1Settings; }
+    inline bool Av1SettingsHasBeenSet() const { return m_av1SettingsHasBeenSet; }
+    inline void SetAv1Settings(const Av1Settings& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = value; }
+    inline void SetAv1Settings(Av1Settings&& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = std::move(value); }
+    inline VideoCodecSettings& WithAv1Settings(const Av1Settings& value) { SetAv1Settings(value); return *this;}
+    inline VideoCodecSettings& WithAv1Settings(Av1Settings&& value) { SetAv1Settings(std::move(value)); return *this;}
+    ///@}
   private:
 
     FrameCaptureSettings m_frameCaptureSettings;
@@ -128,6 +103,9 @@ namespace Model
 
     Mpeg2Settings m_mpeg2Settings;
     bool m_mpeg2SettingsHasBeenSet = false;
+
+    Av1Settings m_av1Settings;
+    bool m_av1SettingsHasBeenSet = false;
   };
 
 } // namespace Model

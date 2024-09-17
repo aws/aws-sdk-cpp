@@ -4,11 +4,13 @@
     "apiVersion":"2018-08-20",
     "endpointPrefix":"s3-control",
     "protocol":"rest-xml",
+    "protocols":["rest-xml"],
     "serviceFullName":"AWS S3 Control",
     "serviceId":"S3 Control",
     "signatureVersion":"s3v4",
     "signingName":"s3",
-    "uid":"s3control-2018-08-20"
+    "uid":"s3control-2018-08-20",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AssociateAccessGrantsIdentityCenter":{
@@ -167,7 +169,7 @@
         {"shape":"IdempotencyException"},
         {"shape":"InternalServiceException"}
       ],
-      "documentation":"<p>This operation creates an S3 Batch Operations job.</p> <p>You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can run a single action on lists of Amazon S3 objects that you specify. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html\">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>For information about permissions required to use the Batch Operations, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html\">Granting permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> </dl> <p/> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html\">DescribeJob</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html\">ListJobs</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html\">UpdateJobPriority</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html\">UpdateJobStatus</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html\">JobOperation</a> </p> </li> </ul>",
+      "documentation":"<p>This operation creates an S3 Batch Operations job.</p> <p>You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can run a single action on lists of Amazon S3 objects that you specify. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html\">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>For information about permissions required to use the Batch Operations, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html\">Granting permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> </dl> <p/> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html\">DescribeJob</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html\">ListJobs</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html\">UpdateJobPriority</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html\">UpdateJobStatus</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html\">JobOperation</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -187,7 +189,7 @@
         "xmlNamespace":{"uri":"http://awss3control.amazonaws.com/doc/2018-08-20/"}
       },
       "output":{"shape":"CreateMultiRegionAccessPointResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Creates a Multi-Region Access Point and associates it with the specified buckets. For more information about creating Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html\">Creating Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This request is asynchronous, meaning that you might receive a response before the command has completed. When this request provides a response, it provides a token that you can use to monitor the status of the request with <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following actions are related to <code>CreateMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Creates a Multi-Region Access Point and associates it with the specified buckets. For more information about creating Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html\">Creating Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html\">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This request is asynchronous, meaning that you might receive a response before the command has completed. When this request provides a response, it provides a token that you can use to monitor the status of the request with <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following actions are related to <code>CreateMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -449,7 +451,7 @@
         "xmlNamespace":{"uri":"http://awss3control.amazonaws.com/doc/2018-08-20/"}
       },
       "output":{"shape":"DeleteMultiRegionAccessPointResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Deletes a Multi-Region Access Point. This action does not delete the buckets associated with the Multi-Region Access Point, only the Multi-Region Access Point itself.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This request is asynchronous, meaning that you might receive a response before the command has completed. When this request provides a response, it provides a token that you can use to monitor the status of the request with <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Deletes a Multi-Region Access Point. This action does not delete the buckets associated with the Multi-Region Access Point, only the Multi-Region Access Point itself.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html\">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This request is asynchronous, meaning that you might receive a response before the command has completed. When this request provides a response, it provides a token that you can use to monitor the status of the request with <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -550,7 +552,7 @@
       },
       "input":{"shape":"DescribeMultiRegionAccessPointOperationRequest"},
       "output":{"shape":"DescribeMultiRegionAccessPointOperationResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Retrieves the status of an asynchronous request to manage a Multi-Region Access Point. For more information about managing Multi-Region Access Points and how asynchronous requests work, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Retrieves the status of an asynchronous request to manage a Multi-Region Access Point. For more information about managing Multi-Region Access Points and how asynchronous requests work, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MrapOperations.html\">Using Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -600,7 +602,7 @@
       },
       "input":{"shape":"GetAccessGrantsInstanceRequest"},
       "output":{"shape":"GetAccessGrantsInstanceResult"},
-      "documentation":"<p>Retrieves the S3 Access Grants instance for a Region in your account. </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation. </p> </dd> </dl>",
+      "documentation":"<p>Retrieves the S3 Access Grants instance for a Region in your account. </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation. </p> </dd> </dl> <note> <p> <code>GetAccessGrantsInstance</code> is not supported for cross-account access. You can only call the API from the account that owns the S3 Access Grants instance.</p> </note>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -780,7 +782,7 @@
       },
       "input":{"shape":"GetBucketRequest"},
       "output":{"shape":"GetBucketResult"},
-      "documentation":"<note> <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html\"> Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> </note> <p>If you are using an identity other than the root user of the Amazon Web Services account that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket and belong to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket owner account with the right permissions can perform actions on an Outposts bucket. </p> <p> If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access Denied</code> error.</p> <p>The following actions are related to <code>GetBucket</code> for Amazon S3 on Outposts:</p> <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html#API_control_GetBucket_Examples\">Examples</a> section.</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html\">PutObject</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html\">CreateBucket</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html\">DeleteBucket</a> </p> </li> </ul>",
+      "documentation":"<p>Gets an Amazon S3 on Outposts bucket. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html\"> Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are using an identity other than the root user of the Amazon Web Services account that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket and belong to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket owner account with the right permissions can perform actions on an Outposts bucket. </p> <p>If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access Denied</code> error.</p> <p>The following actions are related to <code>GetBucket</code> for Amazon S3 on Outposts:</p> <p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html#API_control_GetBucket_Examples\">Examples</a> section.</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html\">PutObject</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html\">CreateBucket</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html\">DeleteBucket</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -876,7 +878,7 @@
       },
       "input":{"shape":"GetDataAccessRequest"},
       "output":{"shape":"GetDataAccessResult"},
-      "documentation":"<p>Returns a temporary access credential from S3 Access Grants to the grantee or client application. The <a href=\"https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html\">temporary credential</a> is an Amazon Web Services STS token that grants them access to the S3 data. </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the <code>s3:GetDataAccess</code> permission to use this operation. </p> </dd> <dt>Additional Permissions</dt> <dd> <p>The IAM role that S3 Access Grants assumes must have the following permissions specified in the trust policy when registering the location: <code>sts:AssumeRole</code>, for directory users or groups <code>sts:SetContext</code>, and for IAM users or roles <code>sts:SourceIdentity</code>. </p> </dd> </dl>",
+      "documentation":"<p>Returns a temporary access credential from S3 Access Grants to the grantee or client application. The <a href=\"https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html\">temporary credential</a> is an Amazon Web Services STS token that grants them access to the S3 data. </p> <dl> <dt>Permissions</dt> <dd> <p>You must have the <code>s3:GetDataAccess</code> permission to use this operation. </p> </dd> <dt>Additional Permissions</dt> <dd> <p>The IAM role that S3 Access Grants assumes must have the following permissions specified in the trust policy when registering the location: <code>sts:AssumeRole</code>, for directory users or groups <code>sts:SetContext</code>, and for IAM users or roles <code>sts:SetSourceIdentity</code>. </p> </dd> </dl>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -914,7 +916,7 @@
       },
       "input":{"shape":"GetMultiRegionAccessPointRequest"},
       "output":{"shape":"GetMultiRegionAccessPointResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns configuration information about the specified Multi-Region Access Point.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns configuration information about the specified Multi-Region Access Point.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html\">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html\">ListMultiRegionAccessPoints</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -931,7 +933,7 @@
       },
       "input":{"shape":"GetMultiRegionAccessPointPolicyRequest"},
       "output":{"shape":"GetMultiRegionAccessPointPolicyResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns the access control policy of the specified Multi-Region Access Point.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html\">GetMultiRegionAccessPointPolicyStatus</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html\">PutMultiRegionAccessPointPolicy</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns the access control policy of the specified Multi-Region Access Point.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html\">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html\">GetMultiRegionAccessPointPolicyStatus</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html\">PutMultiRegionAccessPointPolicy</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -948,7 +950,7 @@
       },
       "input":{"shape":"GetMultiRegionAccessPointPolicyStatusRequest"},
       "output":{"shape":"GetMultiRegionAccessPointPolicyStatusResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Indicates whether the specified Multi-Region Access Point has an access control policy that allows public access.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPointPolicyStatus</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html\">GetMultiRegionAccessPointPolicy</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html\">PutMultiRegionAccessPointPolicy</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Indicates whether the specified Multi-Region Access Point has an access control policy that allows public access.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html\">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>GetMultiRegionAccessPointPolicyStatus</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html\">GetMultiRegionAccessPointPolicy</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html\">PutMultiRegionAccessPointPolicy</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -965,7 +967,7 @@
       },
       "input":{"shape":"GetMultiRegionAccessPointRoutesRequest"},
       "output":{"shape":"GetMultiRegionAccessPointRoutesResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns the routing configuration for a Multi-Region Access Point, indicating which Regions are active or passive.</p> <p>To obtain routing control changes and failover requests, use the Amazon S3 failover control infrastructure endpoints in these five Amazon Web Services Regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul> <note> <p>Your Amazon S3 bucket does not need to be in these five Regions.</p> </note>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns the routing configuration for a Multi-Region Access Point, indicating which Regions are active or passive.</p> <p>To obtain routing control changes and failover requests, use the Amazon S3 failover control infrastructure endpoints in these five Amazon Web Services Regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1124,6 +1126,23 @@
         "RequiresAccountId":{"value":true}
       }
     },
+    "ListCallerAccessGrants":{
+      "name":"ListCallerAccessGrants",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v20180820/accessgrantsinstance/caller/grants"
+      },
+      "input":{"shape":"ListCallerAccessGrantsRequest"},
+      "output":{"shape":"ListCallerAccessGrantsResult"},
+      "documentation":"<p>Returns a list of the access grants that were given to the caller using S3 Access Grants and that allow the caller to access the S3 data of the Amazon Web Services account specified in the request.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the <code>s3:ListCallerAccessGrants</code> permission to use this operation. </p> </dd> </dl>",
+      "endpoint":{
+        "hostPrefix":"{AccountId}."
+      },
+      "httpChecksumRequired":true,
+      "staticContextParams":{
+        "RequiresAccountId":{"value":true}
+      }
+    },
     "ListJobs":{
       "name":"ListJobs",
       "http":{
@@ -1137,7 +1156,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"InvalidNextTokenException"}
       ],
-      "documentation":"<p>Lists current S3 Batch Operations jobs as well as the jobs that have ended within the last 30 days for the Amazon Web Services account making the request. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html\">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>To use the <code>ListJobs</code> operation, you must have permission to perform the <code>s3:ListJobs</code> action.</p> </dd> </dl> <p>Related actions include:</p> <p/> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html\">CreateJob</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html\">DescribeJob</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html\">UpdateJobPriority</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html\">UpdateJobStatus</a> </p> </li> </ul>",
+      "documentation":"<p>Lists current S3 Batch Operations jobs as well as the jobs that have ended within the last 90 days for the Amazon Web Services account making the request. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html\">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>To use the <code>ListJobs</code> operation, you must have permission to perform the <code>s3:ListJobs</code> action.</p> </dd> </dl> <p>Related actions include:</p> <p/> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html\">CreateJob</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html\">DescribeJob</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html\">UpdateJobPriority</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html\">UpdateJobStatus</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1153,7 +1172,7 @@
       },
       "input":{"shape":"ListMultiRegionAccessPointsRequest"},
       "output":{"shape":"ListMultiRegionAccessPointsResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns a list of the Multi-Region Access Points currently associated with the specified Amazon Web Services account. Each call can return up to 100 Multi-Region Access Points, the maximum number of Multi-Region Access Points that can be associated with a single account.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>ListMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Returns a list of the Multi-Region Access Points currently associated with the specified Amazon Web Services account. Each call can return up to 100 Multi-Region Access Points, the maximum number of Multi-Region Access Points that can be associated with a single account.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html\">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>ListMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html\">CreateMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html\">DeleteMultiRegionAccessPoint</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html\">DescribeMultiRegionAccessPointOperation</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html\">GetMultiRegionAccessPoint</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1426,7 +1445,7 @@
         "xmlNamespace":{"uri":"http://awss3control.amazonaws.com/doc/2018-08-20/"}
       },
       "output":{"shape":"PutMultiRegionAccessPointPolicyResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Associates an access control policy with the specified Multi-Region Access Point. Each Multi-Region Access Point can have only one policy, so a request made to this action replaces any existing policy that is associated with the specified Multi-Region Access Point.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>PutMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html\">GetMultiRegionAccessPointPolicy</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html\">GetMultiRegionAccessPointPolicyStatus</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Associates an access control policy with the specified Multi-Region Access Point. Each Multi-Region Access Point can have only one policy, so a request made to this action replaces any existing policy that is associated with the specified Multi-Region Access Point.</p> <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html\">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The following actions are related to <code>PutMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html\">GetMultiRegionAccessPointPolicy</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html\">GetMultiRegionAccessPointPolicyStatus</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1501,7 +1520,7 @@
         "xmlNamespace":{"uri":"http://awss3control.amazonaws.com/doc/2018-08-20/"}
       },
       "output":{"shape":"SubmitMultiRegionAccessPointRoutesResult"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code> indicates a passive status, which means that traffic won't be routed to the specified Region. A value of <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At least one Region must be active at all times.</p> <p>When the routing configuration is changed, any in-progress operations (uploads, copies, deletes, and so on) to formerly active Regions will continue to run to their final completion state (success or failure). The routing configurations of any Regions that aren’t specified remain unchanged.</p> <note> <p>Updated routing configurations might not be immediately applied. It can take up to 2 minutes for your changes to take effect.</p> </note> <p>To submit routing control changes and failover requests, use the Amazon S3 failover control infrastructure endpoints in these five Amazon Web Services Regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul> <note> <p>Your Amazon S3 bucket does not need to be in these five Regions.</p> </note>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code> indicates a passive status, which means that traffic won't be routed to the specified Region. A value of <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At least one Region must be active at all times.</p> <p>When the routing configuration is changed, any in-progress operations (uploads, copies, deletes, and so on) to formerly active Regions will continue to run to their final completion state (success or failure). The routing configurations of any Regions that aren’t specified remain unchanged.</p> <note> <p>Updated routing configurations might not be immediately applied. It can take up to 2 minutes for your changes to take effect.</p> </note> <p>To submit routing control changes and failover requests, use the Amazon S3 failover control infrastructure endpoints in these five Amazon Web Services Regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1746,7 +1765,7 @@
         },
         "VpcConfiguration":{
           "shape":"VpcConfiguration",
-          "documentation":"<p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note> <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> </note>"
+          "documentation":"<p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note> <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Servicesservices.</p> </note>"
         },
         "Bucket":{
           "shape":"BucketName",
@@ -1859,7 +1878,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -2087,6 +2106,13 @@
         "locationName":"Arn"
       }
     },
+    "CallerAccessGrantsList":{
+      "type":"list",
+      "member":{
+        "shape":"ListCallerAccessGrantsEntry",
+        "locationName":"AccessGrant"
+      }
+    },
     "CloudWatchMetrics":{
       "type":"structure",
       "required":["IsEnabled"],
@@ -2118,7 +2144,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -2201,7 +2227,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -2230,11 +2256,21 @@
         },
         "AccessGrantsInstanceArn":{
           "shape":"AccessGrantsInstanceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the S3 Access Grants instance. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html\">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>"
         },
         "IdentityCenterArn":{
           "shape":"IdentityCenterArn",
-          "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance passed in the request. S3 Access Grants creates this Identity Center application for this specific S3 Access Grants instance. </p>"
+          "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance. </p>",
+          "deprecated":true,
+          "deprecatedMessage":"IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn."
+        },
+        "IdentityCenterInstanceArn":{
+          "shape":"IdentityCenterArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html\">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>"
+        },
+        "IdentityCenterApplicationArn":{
+          "shape":"IdentityCenterApplicationArn",
+          "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance. </p>"
         }
       }
     },
@@ -2248,7 +2284,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -2371,7 +2407,7 @@
         },
         "BucketAccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>"
+          "documentation":"<p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p> <p>For same account access point when your bucket and access point belong to the same account owner, the <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point are not in the same account, the <code>BucketAccountId</code> is required. </p>"
         }
       }
     },
@@ -2672,7 +2708,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -2692,7 +2728,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -2706,7 +2742,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -2723,7 +2759,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -3247,7 +3283,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -3270,7 +3306,7 @@
           "box":true
         }
       },
-      "documentation":"<p>Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects.</p> <note> <p>This is not supported by Amazon S3 on Outposts buckets.</p> </note>"
+      "documentation":"<p>Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects. If you're specifying a customer managed KMS key, we recommend using a fully qualified KMS key ARN. If you use a KMS key alias instead, then KMS resolves the key within the requester’s account. This behavior can result in data that's encrypted with a KMS key that belongs to the requester, and not the bucket owner.</p> <note> <p>This is not supported by Amazon S3 on Outposts buckets.</p> </note>"
     },
     "Endpoints":{
       "type":"map",
@@ -3375,7 +3411,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -3472,7 +3508,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -3486,7 +3522,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -3524,7 +3560,17 @@
         },
         "IdentityCenterArn":{
           "shape":"IdentityCenterArn",
-          "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance. </p>"
+          "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance. </p>",
+          "deprecated":true,
+          "deprecatedMessage":"IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn."
+        },
+        "IdentityCenterInstanceArn":{
+          "shape":"IdentityCenterArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html\">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>"
+        },
+        "IdentityCenterApplicationArn":{
+          "shape":"IdentityCenterApplicationArn",
+          "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance. </p>"
         },
         "CreatedAt":{
           "shape":"CreationTimestamp",
@@ -3541,7 +3587,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -3824,7 +3870,7 @@
         },
         "VpcConfiguration":{
           "shape":"VpcConfiguration",
-          "documentation":"<p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note> <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p> </note>"
+          "documentation":"<p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note> <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Servicesservices.</p> </note>"
         },
         "PublicAccessBlockConfiguration":{"shape":"PublicAccessBlockConfiguration"},
         "CreationDate":{
@@ -4071,7 +4117,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -4171,7 +4217,7 @@
         },
         "Name":{
           "shape":"MultiRegionAccessPointName",
-          "documentation":"<p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>",
+          "documentation":"<p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>",
           "location":"uri",
           "locationName":"name"
         }
@@ -4203,7 +4249,7 @@
         },
         "Name":{
           "shape":"MultiRegionAccessPointName",
-          "documentation":"<p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>",
+          "documentation":"<p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>",
           "location":"uri",
           "locationName":"name"
         }
@@ -4232,7 +4278,7 @@
         },
         "Name":{
           "shape":"MultiRegionAccessPointName",
-          "documentation":"<p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>",
+          "documentation":"<p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>",
           "location":"uri",
           "locationName":"name"
         }
@@ -4452,7 +4498,7 @@
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:[^:]+:sso:.*$"
+      "pattern":"arn:[^:]+:sso::\\d{12}:application/.*$"
     },
     "IdentityCenterArn":{
       "type":"string",
@@ -4997,15 +5043,15 @@
       "members":{
         "MatchAnyPrefix":{
           "shape":"NonEmptyMaxLength1024StringList",
-          "documentation":"<p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string.</p>"
+          "documentation":"<p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>"
         },
         "MatchAnySuffix":{
           "shape":"NonEmptyMaxLength1024StringList",
-          "documentation":"<p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string.</p>"
+          "documentation":"<p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>"
         },
         "MatchAnySubstring":{
           "shape":"NonEmptyMaxLength1024StringList",
-          "documentation":"<p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string.</p>"
+          "documentation":"<p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>"
         }
       },
       "documentation":"<p>If provided, the generated manifest includes only source bucket objects whose object keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>, and <code>MatchAnySubstring</code>.</p>"
@@ -5024,11 +5070,11 @@
         },
         "InvocationSchemaVersion":{
           "shape":"NonEmptyMaxLength64String",
-          "documentation":"<p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href=\"https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/\">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p> <important> <p>Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your Lambda function expects, your function might not work as expected.</p> </important> <note> <p> <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform custom actions on objects in directory buckets, you must specify <code>2.0</code>.</p> </note>"
+          "documentation":"<p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href=\"https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/\">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> <important> <p>Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your Lambda function expects, your function might not work as expected.</p> </important> <note> <p> <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform custom actions on objects in directory buckets, you must specify <code>2.0</code>.</p> </note>"
         },
         "UserArguments":{
           "shape":"UserArguments",
-          "documentation":"<p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href=\"https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/\">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p>"
+          "documentation":"<p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href=\"https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/\">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>"
         }
       },
       "documentation":"<p>Contains the configuration parameters for a <code>Lambda Invoke</code> operation.</p>"
@@ -5113,12 +5159,12 @@
         },
         "ObjectSizeGreaterThan":{
           "shape":"ObjectSizeGreaterThanBytes",
-          "documentation":"<p>Minimum object size to which the rule applies.</p>",
+          "documentation":"<p>The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies to objects with a size that is greater than 7. </p>",
           "box":true
         },
         "ObjectSizeLessThan":{
           "shape":"ObjectSizeLessThanBytes",
-          "documentation":"<p>Maximum object size to which the rule applies.</p>",
+          "documentation":"<p>The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies to objects with a size that is less than 77. </p>",
           "box":true
         }
       },
@@ -5215,6 +5261,16 @@
         },
         "IdentityCenterArn":{
           "shape":"IdentityCenterArn",
+          "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance. </p>",
+          "deprecated":true,
+          "deprecatedMessage":"IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn."
+        },
+        "IdentityCenterInstanceArn":{
+          "shape":"IdentityCenterArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html\">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>"
+        },
+        "IdentityCenterApplicationArn":{
+          "shape":"IdentityCenterApplicationArn",
           "documentation":"<p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance. </p>"
         }
       },
@@ -5226,7 +5282,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -5291,7 +5347,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -5336,7 +5392,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -5481,6 +5537,75 @@
         "NextToken":{
           "shape":"NonEmptyMaxLength1024String",
           "documentation":"<p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>"
+        }
+      }
+    },
+    "ListCallerAccessGrantsEntry":{
+      "type":"structure",
+      "members":{
+        "Permission":{
+          "shape":"Permission",
+          "documentation":"<p>The type of permission granted, which can be one of the following values:</p> <ul> <li> <p> <code>READ</code> - Grants read-only access to the S3 data.</p> </li> <li> <p> <code>WRITE</code> - Grants write-only access to the S3 data.</p> </li> <li> <p> <code>READWRITE</code> - Grants both read and write access to the S3 data.</p> </li> </ul>"
+        },
+        "GrantScope":{
+          "shape":"S3Prefix",
+          "documentation":"<p>The S3 path of the data to which you have been granted access. </p>"
+        },
+        "ApplicationArn":{
+          "shape":"IdentityCenterApplicationArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application. </p>"
+        }
+      },
+      "documentation":"<p>Part of <code>ListCallerAccessGrantsResult</code>. Each entry includes the permission level (READ, WRITE, or READWRITE) and the grant scope of the access grant. If the grant also includes an application ARN, the grantee can only access the S3 data through this application.</p>"
+    },
+    "ListCallerAccessGrantsRequest":{
+      "type":"structure",
+      "required":["AccountId"],
+      "members":{
+        "AccountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
+          "contextParam":{"name":"AccountId"},
+          "hostLabel":true,
+          "location":"header",
+          "locationName":"x-amz-account-id"
+        },
+        "GrantScope":{
+          "shape":"S3Prefix",
+          "documentation":"<p>The S3 path of the data that you would like to access. Must start with <code>s3://</code>. You can optionally pass only the beginning characters of a path, and S3 Access Grants will search for all applicable grants for the path fragment. </p>",
+          "location":"querystring",
+          "locationName":"grantscope"
+        },
+        "NextToken":{
+          "shape":"ContinuationToken",
+          "documentation":"<p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Caller Access Grants</code> request in order to retrieve the next page of results.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of access grants that you would like returned in the <code>List Caller Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p>",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "AllowedByApplication":{
+          "shape":"Boolean",
+          "documentation":"<p>If this optional parameter is passed in the request, a filter is applied to the results. The results will include only the access grants for the caller's Identity Center application or for any other applications (<code>ALL</code>).</p>",
+          "location":"querystring",
+          "locationName":"allowedByApplication"
+        }
+      }
+    },
+    "ListCallerAccessGrantsResult":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"ContinuationToken",
+          "documentation":"<p>A pagination token that you can use to request the next page of results. Pass this value into a subsequent <code>List Caller Access Grants</code> request in order to retrieve the next page of results.</p>"
+        },
+        "CallerAccessGrantsList":{
+          "shape":"CallerAccessGrantsList",
+          "documentation":"<p>A list of the caller's access grants that were created using S3 Access Grants and that grant the caller access to the S3 data of the Amazon Web Services account ID that was specified in the request. </p>"
         }
       }
     },
@@ -5934,7 +6059,7 @@
         },
         "Alias":{
           "shape":"MultiRegionAccessPointAlias",
-          "documentation":"<p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Managing Multi-Region Access Points</a>.</p>"
+          "documentation":"<p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming\">Rules for naming Amazon S3 Multi-Region Access Points</a>.</p>"
         },
         "CreatedAt":{
           "shape":"CreationTimestamp",
@@ -6373,7 +6498,7 @@
         },
         "RestrictPublicBuckets":{
           "shape":"Setting",
-          "documentation":"<p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Service principals and authorized users within this account.</p> <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p> <p>This property is not supported for Amazon S3 on Outposts.</p>",
+          "documentation":"<p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this element to <code>TRUE</code> restricts access to buckets with public policies to only Amazon Web Servicesservice principals and authorized users within this account.</p> <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p> <p>This property is not supported for Amazon S3 on Outposts.</p>",
           "locationName":"RestrictPublicBuckets"
         }
       },
@@ -6389,7 +6514,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",
@@ -7279,7 +7404,7 @@
       "members":{
         "TargetResource":{
           "shape":"S3RegionalOrS3ExpressBucketArnString",
-          "documentation":"<p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch copy operation.</p> <ul> <li> <p> <b>General purpose buckets</b> - For example, to copy objects to a general purpose bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p> </li> </ul>"
+          "documentation":"<p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch copy operation.</p> <ul> <li> <p> <b>General purpose buckets</b> - For example, to copy objects to a general purpose bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az1</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p> </li> </ul>"
         },
         "CannedAccessControlList":{
           "shape":"S3CannedAccessControlList",
@@ -7455,7 +7580,7 @@
         },
         "SourceBucket":{
           "shape":"S3BucketArnString",
-          "documentation":"<p>The source bucket used by the ManifestGenerator.</p> <note> <p> <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p> </note>"
+          "documentation":"<p>The ARN of the source bucket used by the ManifestGenerator.</p> <note> <p> <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p> </note>"
         },
         "ManifestOutputLocation":{
           "shape":"S3ManifestOutputLocation",
@@ -8404,7 +8529,7 @@
       "members":{
         "AccountId":{
           "shape":"AccountId",
-          "documentation":"<p>The ID of the Amazon Web Services account that is making this request.</p>",
+          "documentation":"<p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>",
           "contextParam":{"name":"AccountId"},
           "hostLabel":true,
           "location":"header",

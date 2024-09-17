@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifies which operation in a batch has succeeded.</p>
      */
     inline const BatchReadSuccessfulResponse& GetSuccessfulResponse() const{ return m_successfulResponse; }
-
-    /**
-     * <p>Identifies which operation in a batch has succeeded.</p>
-     */
     inline bool SuccessfulResponseHasBeenSet() const { return m_successfulResponseHasBeenSet; }
-
-    /**
-     * <p>Identifies which operation in a batch has succeeded.</p>
-     */
     inline void SetSuccessfulResponse(const BatchReadSuccessfulResponse& value) { m_successfulResponseHasBeenSet = true; m_successfulResponse = value; }
-
-    /**
-     * <p>Identifies which operation in a batch has succeeded.</p>
-     */
     inline void SetSuccessfulResponse(BatchReadSuccessfulResponse&& value) { m_successfulResponseHasBeenSet = true; m_successfulResponse = std::move(value); }
-
-    /**
-     * <p>Identifies which operation in a batch has succeeded.</p>
-     */
     inline BatchReadOperationResponse& WithSuccessfulResponse(const BatchReadSuccessfulResponse& value) { SetSuccessfulResponse(value); return *this;}
-
-    /**
-     * <p>Identifies which operation in a batch has succeeded.</p>
-     */
     inline BatchReadOperationResponse& WithSuccessfulResponse(BatchReadSuccessfulResponse&& value) { SetSuccessfulResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifies which operation in a batch has failed.</p>
      */
     inline const BatchReadException& GetExceptionResponse() const{ return m_exceptionResponse; }
-
-    /**
-     * <p>Identifies which operation in a batch has failed.</p>
-     */
     inline bool ExceptionResponseHasBeenSet() const { return m_exceptionResponseHasBeenSet; }
-
-    /**
-     * <p>Identifies which operation in a batch has failed.</p>
-     */
     inline void SetExceptionResponse(const BatchReadException& value) { m_exceptionResponseHasBeenSet = true; m_exceptionResponse = value; }
-
-    /**
-     * <p>Identifies which operation in a batch has failed.</p>
-     */
     inline void SetExceptionResponse(BatchReadException&& value) { m_exceptionResponseHasBeenSet = true; m_exceptionResponse = std::move(value); }
-
-    /**
-     * <p>Identifies which operation in a batch has failed.</p>
-     */
     inline BatchReadOperationResponse& WithExceptionResponse(const BatchReadException& value) { SetExceptionResponse(value); return *this;}
-
-    /**
-     * <p>Identifies which operation in a batch has failed.</p>
-     */
     inline BatchReadOperationResponse& WithExceptionResponse(BatchReadException&& value) { SetExceptionResponse(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BatchReadSuccessfulResponse m_successfulResponse;

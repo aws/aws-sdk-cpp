@@ -26,11 +26,8 @@ ParameterizedStatement::ParameterizedStatement() :
 {
 }
 
-ParameterizedStatement::ParameterizedStatement(JsonView jsonValue) : 
-    m_statementHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
+ParameterizedStatement::ParameterizedStatement(JsonView jsonValue)
+  : ParameterizedStatement()
 {
   *this = jsonValue;
 }

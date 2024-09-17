@@ -29,14 +29,8 @@ FieldSummary::FieldSummary() :
 {
 }
 
-FieldSummary::FieldSummary(JsonView jsonValue) : 
-    m_fieldArnHasBeenSet(false),
-    m_fieldIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namespace(FieldNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_type(FieldType::NOT_SET),
-    m_typeHasBeenSet(false)
+FieldSummary::FieldSummary(JsonView jsonValue)
+  : FieldSummary()
 {
   *this = jsonValue;
 }

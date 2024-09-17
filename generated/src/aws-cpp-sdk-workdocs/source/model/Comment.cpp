@@ -33,18 +33,8 @@ Comment::Comment() :
 {
 }
 
-Comment::Comment(JsonView jsonValue) : 
-    m_commentIdHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_threadIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_contributorHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_status(CommentStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_visibility(CommentVisibilityType::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
+Comment::Comment(JsonView jsonValue)
+  : Comment()
 {
   *this = jsonValue;
 }

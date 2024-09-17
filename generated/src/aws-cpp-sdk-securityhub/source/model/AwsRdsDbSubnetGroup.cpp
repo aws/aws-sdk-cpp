@@ -28,13 +28,8 @@ AwsRdsDbSubnetGroup::AwsRdsDbSubnetGroup() :
 {
 }
 
-AwsRdsDbSubnetGroup::AwsRdsDbSubnetGroup(JsonView jsonValue) : 
-    m_dbSubnetGroupNameHasBeenSet(false),
-    m_dbSubnetGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_dbSubnetGroupArnHasBeenSet(false)
+AwsRdsDbSubnetGroup::AwsRdsDbSubnetGroup(JsonView jsonValue)
+  : AwsRdsDbSubnetGroup()
 {
   *this = jsonValue;
 }

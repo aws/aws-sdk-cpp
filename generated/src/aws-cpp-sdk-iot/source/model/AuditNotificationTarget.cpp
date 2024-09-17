@@ -26,11 +26,8 @@ AuditNotificationTarget::AuditNotificationTarget() :
 {
 }
 
-AuditNotificationTarget::AuditNotificationTarget(JsonView jsonValue) : 
-    m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AuditNotificationTarget::AuditNotificationTarget(JsonView jsonValue)
+  : AuditNotificationTarget()
 {
   *this = jsonValue;
 }

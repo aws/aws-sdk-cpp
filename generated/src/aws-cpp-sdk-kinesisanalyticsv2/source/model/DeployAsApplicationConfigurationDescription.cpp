@@ -23,8 +23,8 @@ DeployAsApplicationConfigurationDescription::DeployAsApplicationConfigurationDes
 {
 }
 
-DeployAsApplicationConfigurationDescription::DeployAsApplicationConfigurationDescription(JsonView jsonValue) : 
-    m_s3ContentLocationDescriptionHasBeenSet(false)
+DeployAsApplicationConfigurationDescription::DeployAsApplicationConfigurationDescription(JsonView jsonValue)
+  : DeployAsApplicationConfigurationDescription()
 {
   *this = jsonValue;
 }

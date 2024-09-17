@@ -20,21 +20,16 @@ namespace Model
 
 RecordingConfigurationSummary::RecordingConfigurationSummary() : 
     m_arnHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_destinationConfigurationHasBeenSet(false),
     m_state(RecordingConfigurationState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-RecordingConfigurationSummary::RecordingConfigurationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(RecordingConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RecordingConfigurationSummary::RecordingConfigurationSummary(JsonView jsonValue)
+  : RecordingConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -48,18 +43,18 @@ RecordingConfigurationSummary& RecordingConfigurationSummary::operator =(JsonVie
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("destinationConfiguration"))
-  {
-    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
-
-    m_destinationConfigurationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("destinationConfiguration"))
+  {
+    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
+
+    m_destinationConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -92,15 +87,15 @@ JsonValue RecordingConfigurationSummary::Jsonize() const
 
   }
 
-  if(m_destinationConfigurationHasBeenSet)
-  {
-   payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_destinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
 
   }
 

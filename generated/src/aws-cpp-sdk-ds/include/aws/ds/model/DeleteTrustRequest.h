@@ -38,67 +38,29 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
-
-    /**
-     * <p>The Trust ID of the trust relationship to be deleted.</p>
-     */
     inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
-
-    /**
-     * <p>The Trust ID of the trust relationship to be deleted.</p>
-     */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
-
-    /**
-     * <p>The Trust ID of the trust relationship to be deleted.</p>
-     */
     inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = std::move(value); }
-
-    /**
-     * <p>The Trust ID of the trust relationship to be deleted.</p>
-     */
     inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
-
-    /**
-     * <p>The Trust ID of the trust relationship to be deleted.</p>
-     */
     inline DeleteTrustRequest& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
-
-    /**
-     * <p>The Trust ID of the trust relationship to be deleted.</p>
-     */
     inline DeleteTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Trust ID of the trust relationship to be deleted.</p>
-     */
     inline DeleteTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
      */
     inline bool GetDeleteAssociatedConditionalForwarder() const{ return m_deleteAssociatedConditionalForwarder; }
-
-    /**
-     * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
-     */
     inline bool DeleteAssociatedConditionalForwarderHasBeenSet() const { return m_deleteAssociatedConditionalForwarderHasBeenSet; }
-
-    /**
-     * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
-     */
     inline void SetDeleteAssociatedConditionalForwarder(bool value) { m_deleteAssociatedConditionalForwarderHasBeenSet = true; m_deleteAssociatedConditionalForwarder = value; }
-
-    /**
-     * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
-     */
     inline DeleteTrustRequest& WithDeleteAssociatedConditionalForwarder(bool value) { SetDeleteAssociatedConditionalForwarder(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trustId;

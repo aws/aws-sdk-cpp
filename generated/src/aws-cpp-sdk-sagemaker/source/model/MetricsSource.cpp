@@ -25,10 +25,8 @@ MetricsSource::MetricsSource() :
 {
 }
 
-MetricsSource::MetricsSource(JsonView jsonValue) : 
-    m_contentTypeHasBeenSet(false),
-    m_contentDigestHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+MetricsSource::MetricsSource(JsonView jsonValue)
+  : MetricsSource()
 {
   *this = jsonValue;
 }

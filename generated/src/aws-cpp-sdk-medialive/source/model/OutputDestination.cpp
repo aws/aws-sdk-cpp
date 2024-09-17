@@ -22,15 +22,13 @@ OutputDestination::OutputDestination() :
     m_idHasBeenSet(false),
     m_mediaPackageSettingsHasBeenSet(false),
     m_multiplexSettingsHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+    m_settingsHasBeenSet(false),
+    m_srtSettingsHasBeenSet(false)
 {
 }
 
-OutputDestination::OutputDestination(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_mediaPackageSettingsHasBeenSet(false),
-    m_multiplexSettingsHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+OutputDestination::OutputDestination(JsonView jsonValue)
+  : OutputDestination()
 {
   *this = jsonValue;
 }
@@ -71,6 +69,16 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
     m_settingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("srtSettings"))
+  {
+    Aws::Utils::Array<JsonView> srtSettingsJsonList = jsonValue.GetArray("srtSettings");
+    for(unsigned srtSettingsIndex = 0; srtSettingsIndex < srtSettingsJsonList.GetLength(); ++srtSettingsIndex)
+    {
+      m_srtSettings.push_back(srtSettingsJsonList[srtSettingsIndex].AsObject());
+    }
+    m_srtSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +117,17 @@ JsonValue OutputDestination::Jsonize() const
      settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());
    }
    payload.WithArray("settings", std::move(settingsJsonList));
+
+  }
+
+  if(m_srtSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> srtSettingsJsonList(m_srtSettings.size());
+   for(unsigned srtSettingsIndex = 0; srtSettingsIndex < srtSettingsJsonList.GetLength(); ++srtSettingsIndex)
+   {
+     srtSettingsJsonList[srtSettingsIndex].AsObject(m_srtSettings[srtSettingsIndex].Jsonize());
+   }
+   payload.WithArray("srtSettings", std::move(srtSettingsJsonList));
 
   }
 

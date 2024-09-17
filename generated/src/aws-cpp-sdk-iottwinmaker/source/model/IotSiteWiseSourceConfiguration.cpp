@@ -23,8 +23,8 @@ IotSiteWiseSourceConfiguration::IotSiteWiseSourceConfiguration() :
 {
 }
 
-IotSiteWiseSourceConfiguration::IotSiteWiseSourceConfiguration(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false)
+IotSiteWiseSourceConfiguration::IotSiteWiseSourceConfiguration(JsonView jsonValue)
+  : IotSiteWiseSourceConfiguration()
 {
   *this = jsonValue;
 }

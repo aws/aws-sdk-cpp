@@ -39,77 +39,31 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services resource that generated usage.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The Amazon Web Services resource that generated usage.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services resource that generated usage.</p>
-     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The Amazon Web Services resource that generated usage.</p>
-     */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services resource that generated usage.</p>
-     */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services resource that generated usage.</p>
-     */
     inline UsageResourceResult& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services resource that generated usage.</p>
-     */
     inline UsageResourceResult& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services resource that generated usage.</p>
-     */
     inline UsageResourceResult& WithResource(const char* value) { SetResource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the sum total of usage for the specified resource type.</p>
      */
     inline const Total& GetTotal() const{ return m_total; }
-
-    /**
-     * <p>Represents the sum total of usage for the specified resource type.</p>
-     */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    /**
-     * <p>Represents the sum total of usage for the specified resource type.</p>
-     */
     inline void SetTotal(const Total& value) { m_totalHasBeenSet = true; m_total = value; }
-
-    /**
-     * <p>Represents the sum total of usage for the specified resource type.</p>
-     */
     inline void SetTotal(Total&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-
-    /**
-     * <p>Represents the sum total of usage for the specified resource type.</p>
-     */
     inline UsageResourceResult& WithTotal(const Total& value) { SetTotal(value); return *this;}
-
-    /**
-     * <p>Represents the sum total of usage for the specified resource type.</p>
-     */
     inline UsageResourceResult& WithTotal(Total&& value) { SetTotal(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resource;

@@ -25,10 +25,8 @@ ProjectMember::ProjectMember() :
 {
 }
 
-ProjectMember::ProjectMember(JsonView jsonValue) : 
-    m_designation(UserDesignation::NOT_SET),
-    m_designationHasBeenSet(false),
-    m_memberDetailsHasBeenSet(false)
+ProjectMember::ProjectMember(JsonView jsonValue)
+  : ProjectMember()
 {
   *this = jsonValue;
 }

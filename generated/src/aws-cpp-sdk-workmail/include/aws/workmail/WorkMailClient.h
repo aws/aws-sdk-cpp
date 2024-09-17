@@ -1619,13 +1619,13 @@ namespace WorkMail
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOrganizationsOutcome ListOrganizations(const Model::ListOrganizationsRequest& request) const;
+        virtual Model::ListOrganizationsOutcome ListOrganizations(const Model::ListOrganizationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOrganizations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOrganizationsRequestT = Model::ListOrganizationsRequest>
-        Model::ListOrganizationsOutcomeCallable ListOrganizationsCallable(const ListOrganizationsRequestT& request) const
+        Model::ListOrganizationsOutcomeCallable ListOrganizationsCallable(const ListOrganizationsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkMailClient::ListOrganizations, request);
         }
@@ -1634,7 +1634,7 @@ namespace WorkMail
          * An Async wrapper for ListOrganizations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOrganizationsRequestT = Model::ListOrganizationsRequest>
-        void ListOrganizationsAsync(const ListOrganizationsRequestT& request, const ListOrganizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOrganizationsAsync(const ListOrganizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOrganizationsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkMailClient::ListOrganizations, request, handler, context);
         }
@@ -2355,7 +2355,6 @@ namespace WorkMail
       void init(const WorkMailClientConfiguration& clientConfiguration);
 
       WorkMailClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WorkMailEndpointProviderBase> m_endpointProvider;
   };
 

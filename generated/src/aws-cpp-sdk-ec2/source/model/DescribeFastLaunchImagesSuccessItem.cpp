@@ -36,19 +36,8 @@ DescribeFastLaunchImagesSuccessItem::DescribeFastLaunchImagesSuccessItem() :
 {
 }
 
-DescribeFastLaunchImagesSuccessItem::DescribeFastLaunchImagesSuccessItem(const XmlNode& xmlNode) : 
-    m_imageIdHasBeenSet(false),
-    m_resourceType(FastLaunchResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_snapshotConfigurationHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_maxParallelLaunches(0),
-    m_maxParallelLaunchesHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_state(FastLaunchStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateTransitionReasonHasBeenSet(false),
-    m_stateTransitionTimeHasBeenSet(false)
+DescribeFastLaunchImagesSuccessItem::DescribeFastLaunchImagesSuccessItem(const XmlNode& xmlNode)
+  : DescribeFastLaunchImagesSuccessItem()
 {
   *this = xmlNode;
 }

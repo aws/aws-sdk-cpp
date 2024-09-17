@@ -22,15 +22,16 @@ DefaultSpaceSettings::DefaultSpaceSettings() :
     m_executionRoleHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_jupyterServerAppSettingsHasBeenSet(false),
-    m_kernelGatewayAppSettingsHasBeenSet(false)
+    m_kernelGatewayAppSettingsHasBeenSet(false),
+    m_jupyterLabAppSettingsHasBeenSet(false),
+    m_spaceStorageSettingsHasBeenSet(false),
+    m_customPosixUserConfigHasBeenSet(false),
+    m_customFileSystemConfigsHasBeenSet(false)
 {
 }
 
-DefaultSpaceSettings::DefaultSpaceSettings(JsonView jsonValue) : 
-    m_executionRoleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_jupyterServerAppSettingsHasBeenSet(false),
-    m_kernelGatewayAppSettingsHasBeenSet(false)
+DefaultSpaceSettings::DefaultSpaceSettings(JsonView jsonValue)
+  : DefaultSpaceSettings()
 {
   *this = jsonValue;
 }
@@ -68,6 +69,37 @@ DefaultSpaceSettings& DefaultSpaceSettings::operator =(JsonView jsonValue)
     m_kernelGatewayAppSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JupyterLabAppSettings"))
+  {
+    m_jupyterLabAppSettings = jsonValue.GetObject("JupyterLabAppSettings");
+
+    m_jupyterLabAppSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SpaceStorageSettings"))
+  {
+    m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
+
+    m_spaceStorageSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomPosixUserConfig"))
+  {
+    m_customPosixUserConfig = jsonValue.GetObject("CustomPosixUserConfig");
+
+    m_customPosixUserConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomFileSystemConfigs"))
+  {
+    Aws::Utils::Array<JsonView> customFileSystemConfigsJsonList = jsonValue.GetArray("CustomFileSystemConfigs");
+    for(unsigned customFileSystemConfigsIndex = 0; customFileSystemConfigsIndex < customFileSystemConfigsJsonList.GetLength(); ++customFileSystemConfigsIndex)
+    {
+      m_customFileSystemConfigs.push_back(customFileSystemConfigsJsonList[customFileSystemConfigsIndex].AsObject());
+    }
+    m_customFileSystemConfigsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +133,35 @@ JsonValue DefaultSpaceSettings::Jsonize() const
   if(m_kernelGatewayAppSettingsHasBeenSet)
   {
    payload.WithObject("KernelGatewayAppSettings", m_kernelGatewayAppSettings.Jsonize());
+
+  }
+
+  if(m_jupyterLabAppSettingsHasBeenSet)
+  {
+   payload.WithObject("JupyterLabAppSettings", m_jupyterLabAppSettings.Jsonize());
+
+  }
+
+  if(m_spaceStorageSettingsHasBeenSet)
+  {
+   payload.WithObject("SpaceStorageSettings", m_spaceStorageSettings.Jsonize());
+
+  }
+
+  if(m_customPosixUserConfigHasBeenSet)
+  {
+   payload.WithObject("CustomPosixUserConfig", m_customPosixUserConfig.Jsonize());
+
+  }
+
+  if(m_customFileSystemConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customFileSystemConfigsJsonList(m_customFileSystemConfigs.size());
+   for(unsigned customFileSystemConfigsIndex = 0; customFileSystemConfigsIndex < customFileSystemConfigsJsonList.GetLength(); ++customFileSystemConfigsIndex)
+   {
+     customFileSystemConfigsJsonList[customFileSystemConfigsIndex].AsObject(m_customFileSystemConfigs[customFileSystemConfigsIndex].Jsonize());
+   }
+   payload.WithArray("CustomFileSystemConfigs", std::move(customFileSystemConfigsJsonList));
 
   }
 

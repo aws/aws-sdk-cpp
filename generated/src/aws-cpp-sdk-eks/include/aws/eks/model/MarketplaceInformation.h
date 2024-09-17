@@ -38,87 +38,33 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The product ID from the Amazon Web Services Marketplace.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
-
-    /**
-     * <p>The product ID from the Amazon Web Services Marketplace.</p>
-     */
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-
-    /**
-     * <p>The product ID from the Amazon Web Services Marketplace.</p>
-     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-
-    /**
-     * <p>The product ID from the Amazon Web Services Marketplace.</p>
-     */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-
-    /**
-     * <p>The product ID from the Amazon Web Services Marketplace.</p>
-     */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-
-    /**
-     * <p>The product ID from the Amazon Web Services Marketplace.</p>
-     */
     inline MarketplaceInformation& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-
-    /**
-     * <p>The product ID from the Amazon Web Services Marketplace.</p>
-     */
     inline MarketplaceInformation& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-
-    /**
-     * <p>The product ID from the Amazon Web Services Marketplace.</p>
-     */
     inline MarketplaceInformation& WithProductId(const char* value) { SetProductId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The product URL from the Amazon Web Services Marketplace.</p>
      */
     inline const Aws::String& GetProductUrl() const{ return m_productUrl; }
-
-    /**
-     * <p>The product URL from the Amazon Web Services Marketplace.</p>
-     */
     inline bool ProductUrlHasBeenSet() const { return m_productUrlHasBeenSet; }
-
-    /**
-     * <p>The product URL from the Amazon Web Services Marketplace.</p>
-     */
     inline void SetProductUrl(const Aws::String& value) { m_productUrlHasBeenSet = true; m_productUrl = value; }
-
-    /**
-     * <p>The product URL from the Amazon Web Services Marketplace.</p>
-     */
     inline void SetProductUrl(Aws::String&& value) { m_productUrlHasBeenSet = true; m_productUrl = std::move(value); }
-
-    /**
-     * <p>The product URL from the Amazon Web Services Marketplace.</p>
-     */
     inline void SetProductUrl(const char* value) { m_productUrlHasBeenSet = true; m_productUrl.assign(value); }
-
-    /**
-     * <p>The product URL from the Amazon Web Services Marketplace.</p>
-     */
     inline MarketplaceInformation& WithProductUrl(const Aws::String& value) { SetProductUrl(value); return *this;}
-
-    /**
-     * <p>The product URL from the Amazon Web Services Marketplace.</p>
-     */
     inline MarketplaceInformation& WithProductUrl(Aws::String&& value) { SetProductUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The product URL from the Amazon Web Services Marketplace.</p>
-     */
     inline MarketplaceInformation& WithProductUrl(const char* value) { SetProductUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_productId;

@@ -29,14 +29,8 @@ UserPhoneConfig::UserPhoneConfig() :
 {
 }
 
-UserPhoneConfig::UserPhoneConfig(JsonView jsonValue) : 
-    m_phoneType(PhoneType::NOT_SET),
-    m_phoneTypeHasBeenSet(false),
-    m_autoAccept(false),
-    m_autoAcceptHasBeenSet(false),
-    m_afterContactWorkTimeLimit(0),
-    m_afterContactWorkTimeLimitHasBeenSet(false),
-    m_deskPhoneNumberHasBeenSet(false)
+UserPhoneConfig::UserPhoneConfig(JsonView jsonValue)
+  : UserPhoneConfig()
 {
   *this = jsonValue;
 }

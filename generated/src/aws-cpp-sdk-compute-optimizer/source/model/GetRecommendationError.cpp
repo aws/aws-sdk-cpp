@@ -25,10 +25,8 @@ GetRecommendationError::GetRecommendationError() :
 {
 }
 
-GetRecommendationError::GetRecommendationError(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+GetRecommendationError::GetRecommendationError(JsonView jsonValue)
+  : GetRecommendationError()
 {
   *this = jsonValue;
 }

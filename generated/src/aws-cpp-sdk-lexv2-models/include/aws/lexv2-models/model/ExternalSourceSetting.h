@@ -38,36 +38,17 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Settings required for a slot type based on a grammar that you provide.</p>
      */
     inline const GrammarSlotTypeSetting& GetGrammarSlotTypeSetting() const{ return m_grammarSlotTypeSetting; }
-
-    /**
-     * <p>Settings required for a slot type based on a grammar that you provide.</p>
-     */
     inline bool GrammarSlotTypeSettingHasBeenSet() const { return m_grammarSlotTypeSettingHasBeenSet; }
-
-    /**
-     * <p>Settings required for a slot type based on a grammar that you provide.</p>
-     */
     inline void SetGrammarSlotTypeSetting(const GrammarSlotTypeSetting& value) { m_grammarSlotTypeSettingHasBeenSet = true; m_grammarSlotTypeSetting = value; }
-
-    /**
-     * <p>Settings required for a slot type based on a grammar that you provide.</p>
-     */
     inline void SetGrammarSlotTypeSetting(GrammarSlotTypeSetting&& value) { m_grammarSlotTypeSettingHasBeenSet = true; m_grammarSlotTypeSetting = std::move(value); }
-
-    /**
-     * <p>Settings required for a slot type based on a grammar that you provide.</p>
-     */
     inline ExternalSourceSetting& WithGrammarSlotTypeSetting(const GrammarSlotTypeSetting& value) { SetGrammarSlotTypeSetting(value); return *this;}
-
-    /**
-     * <p>Settings required for a slot type based on a grammar that you provide.</p>
-     */
     inline ExternalSourceSetting& WithGrammarSlotTypeSetting(GrammarSlotTypeSetting&& value) { SetGrammarSlotTypeSetting(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GrammarSlotTypeSetting m_grammarSlotTypeSetting;

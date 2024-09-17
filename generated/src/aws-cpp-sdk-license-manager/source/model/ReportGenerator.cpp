@@ -35,20 +35,8 @@ ReportGenerator::ReportGenerator() :
 {
 }
 
-ReportGenerator::ReportGenerator(JsonView jsonValue) : 
-    m_reportGeneratorNameHasBeenSet(false),
-    m_reportTypeHasBeenSet(false),
-    m_reportContextHasBeenSet(false),
-    m_reportFrequencyHasBeenSet(false),
-    m_licenseManagerReportGeneratorArnHasBeenSet(false),
-    m_lastRunStatusHasBeenSet(false),
-    m_lastRunFailureReasonHasBeenSet(false),
-    m_lastReportGenerationTimeHasBeenSet(false),
-    m_reportCreatorAccountHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ReportGenerator::ReportGenerator(JsonView jsonValue)
+  : ReportGenerator()
 {
   *this = jsonValue;
 }

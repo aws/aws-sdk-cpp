@@ -28,13 +28,8 @@ LifecyclePolicyDetailActionIncludeResources::LifecyclePolicyDetailActionIncludeR
 {
 }
 
-LifecyclePolicyDetailActionIncludeResources::LifecyclePolicyDetailActionIncludeResources(JsonView jsonValue) : 
-    m_amis(false),
-    m_amisHasBeenSet(false),
-    m_snapshots(false),
-    m_snapshotsHasBeenSet(false),
-    m_containers(false),
-    m_containersHasBeenSet(false)
+LifecyclePolicyDetailActionIncludeResources::LifecyclePolicyDetailActionIncludeResources(JsonView jsonValue)
+  : LifecyclePolicyDetailActionIncludeResources()
 {
   *this = jsonValue;
 }

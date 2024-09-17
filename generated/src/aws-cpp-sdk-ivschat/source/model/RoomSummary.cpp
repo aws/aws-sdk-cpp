@@ -20,25 +20,18 @@ namespace Model
 
 RoomSummary::RoomSummary() : 
     m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_loggingConfigurationIdentifiersHasBeenSet(false),
-    m_messageReviewHandlerHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_messageReviewHandlerHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_loggingConfigurationIdentifiersHasBeenSet(false)
 {
 }
 
-RoomSummary::RoomSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_loggingConfigurationIdentifiersHasBeenSet(false),
-    m_messageReviewHandlerHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+RoomSummary::RoomSummary(JsonView jsonValue)
+  : RoomSummary()
 {
   *this = jsonValue;
 }
@@ -52,13 +45,6 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createTime"))
-  {
-    m_createTime = jsonValue.GetString("createTime");
-
-    m_createTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -66,14 +52,11 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("loggingConfigurationIdentifiers"))
+  if(jsonValue.ValueExists("name"))
   {
-    Aws::Utils::Array<JsonView> loggingConfigurationIdentifiersJsonList = jsonValue.GetArray("loggingConfigurationIdentifiers");
-    for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
-    {
-      m_loggingConfigurationIdentifiers.push_back(loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString());
-    }
-    m_loggingConfigurationIdentifiersHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("messageReviewHandler"))
@@ -83,11 +66,18 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
     m_messageReviewHandlerHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("createTime"))
   {
-    m_name = jsonValue.GetString("name");
+    m_createTime = jsonValue.GetString("createTime");
 
-    m_nameHasBeenSet = true;
+    m_createTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
+
+    m_updateTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -100,11 +90,14 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updateTime"))
+  if(jsonValue.ValueExists("loggingConfigurationIdentifiers"))
   {
-    m_updateTime = jsonValue.GetString("updateTime");
-
-    m_updateTimeHasBeenSet = true;
+    Aws::Utils::Array<JsonView> loggingConfigurationIdentifiersJsonList = jsonValue.GetArray("loggingConfigurationIdentifiers");
+    for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
+    {
+      m_loggingConfigurationIdentifiers.push_back(loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString());
+    }
+    m_loggingConfigurationIdentifiersHasBeenSet = true;
   }
 
   return *this;
@@ -120,25 +113,15 @@ JsonValue RoomSummary::Jsonize() const
 
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
-  if(m_loggingConfigurationIdentifiersHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> loggingConfigurationIdentifiersJsonList(m_loggingConfigurationIdentifiers.size());
-   for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
-   {
-     loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString(m_loggingConfigurationIdentifiers[loggingConfigurationIdentifiersIndex]);
-   }
-   payload.WithArray("loggingConfigurationIdentifiers", std::move(loggingConfigurationIdentifiersJsonList));
+   payload.WithString("name", m_name);
 
   }
 
@@ -148,10 +131,14 @@ JsonValue RoomSummary::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_createTimeHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
+  if(m_updateTimeHasBeenSet)
+  {
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_tagsHasBeenSet)
@@ -165,9 +152,15 @@ JsonValue RoomSummary::Jsonize() const
 
   }
 
-  if(m_updateTimeHasBeenSet)
+  if(m_loggingConfigurationIdentifiersHasBeenSet)
   {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   Aws::Utils::Array<JsonValue> loggingConfigurationIdentifiersJsonList(m_loggingConfigurationIdentifiers.size());
+   for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
+   {
+     loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString(m_loggingConfigurationIdentifiers[loggingConfigurationIdentifiersIndex]);
+   }
+   payload.WithArray("loggingConfigurationIdentifiers", std::move(loggingConfigurationIdentifiersJsonList));
+
   }
 
   return payload;

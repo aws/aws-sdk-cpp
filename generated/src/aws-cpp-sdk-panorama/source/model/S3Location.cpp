@@ -25,10 +25,8 @@ S3Location::S3Location() :
 {
 }
 
-S3Location::S3Location(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false),
-    m_regionHasBeenSet(false)
+S3Location::S3Location(JsonView jsonValue)
+  : S3Location()
 {
   *this = jsonValue;
 }

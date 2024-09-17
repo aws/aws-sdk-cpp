@@ -25,10 +25,8 @@ FailedWorkspaceChangeRequest::FailedWorkspaceChangeRequest() :
 {
 }
 
-FailedWorkspaceChangeRequest::FailedWorkspaceChangeRequest(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailedWorkspaceChangeRequest::FailedWorkspaceChangeRequest(JsonView jsonValue)
+  : FailedWorkspaceChangeRequest()
 {
   *this = jsonValue;
 }

@@ -50,41 +50,14 @@ DBClusterAutomatedBackup::DBClusterAutomatedBackup() :
     m_storageTypeHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
-DBClusterAutomatedBackup::DBClusterAutomatedBackup(const XmlNode& xmlNode) : 
-    m_engineHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_dBClusterAutomatedBackupsArnHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_restoreWindowHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBClusterArnHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+DBClusterAutomatedBackup::DBClusterAutomatedBackup(const XmlNode& xmlNode)
+  : DBClusterAutomatedBackup()
 {
   *this = xmlNode;
 }
@@ -245,6 +218,12 @@ DBClusterAutomatedBackup& DBClusterAutomatedBackup::operator =(const XmlNode& xm
       m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
       m_awsBackupRecoveryPointArnHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -378,6 +357,11 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
 }
 
 void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -483,6 +467,10 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
   if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
       oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 }
 

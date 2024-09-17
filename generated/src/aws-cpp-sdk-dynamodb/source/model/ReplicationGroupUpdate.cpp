@@ -25,10 +25,8 @@ ReplicationGroupUpdate::ReplicationGroupUpdate() :
 {
 }
 
-ReplicationGroupUpdate::ReplicationGroupUpdate(JsonView jsonValue) : 
-    m_createHasBeenSet(false),
-    m_updateHasBeenSet(false),
-    m_deleteHasBeenSet(false)
+ReplicationGroupUpdate::ReplicationGroupUpdate(JsonView jsonValue)
+  : ReplicationGroupUpdate()
 {
   *this = jsonValue;
 }

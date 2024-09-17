@@ -19,32 +19,31 @@ namespace Model
 {
 
 ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue() : 
-    m_displayValueHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_displayValueHasBeenSet(false)
 {
 }
 
-ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue(JsonView jsonValue) : 
-    m_displayValueHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue(JsonView jsonValue)
+  : ActionReviewPayloadFieldAllowedValue()
 {
   *this = jsonValue;
 }
 
 ActionReviewPayloadFieldAllowedValue& ActionReviewPayloadFieldAllowedValue::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("displayValue"))
-  {
-    m_displayValue = jsonValue.GetObject("displayValue");
-
-    m_displayValueHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
 
     m_valueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("displayValue"))
+  {
+    m_displayValue = jsonValue.GetObject("displayValue");
+
+    m_displayValueHasBeenSet = true;
   }
 
   return *this;
@@ -54,19 +53,19 @@ JsonValue ActionReviewPayloadFieldAllowedValue::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_displayValueHasBeenSet)
-  {
-    if(!m_displayValue.View().IsNull())
-    {
-       payload.WithObject("displayValue", JsonValue(m_displayValue.View()));
-    }
-  }
-
   if(m_valueHasBeenSet)
   {
     if(!m_value.View().IsNull())
     {
        payload.WithObject("value", JsonValue(m_value.View()));
+    }
+  }
+
+  if(m_displayValueHasBeenSet)
+  {
+    if(!m_displayValue.View().IsNull())
+    {
+       payload.WithObject("displayValue", JsonValue(m_displayValue.View()));
     }
   }
 

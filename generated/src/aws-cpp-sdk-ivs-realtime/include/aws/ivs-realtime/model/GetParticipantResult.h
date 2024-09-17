@@ -33,53 +33,27 @@ namespace Model
     AWS_IVSREALTIME_API GetParticipantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The participant that is returned.</p>
      */
     inline const Participant& GetParticipant() const{ return m_participant; }
-
-    /**
-     * <p>The participant that is returned.</p>
-     */
     inline void SetParticipant(const Participant& value) { m_participant = value; }
-
-    /**
-     * <p>The participant that is returned.</p>
-     */
     inline void SetParticipant(Participant&& value) { m_participant = std::move(value); }
-
-    /**
-     * <p>The participant that is returned.</p>
-     */
     inline GetParticipantResult& WithParticipant(const Participant& value) { SetParticipant(value); return *this;}
-
-    /**
-     * <p>The participant that is returned.</p>
-     */
     inline GetParticipantResult& WithParticipant(Participant&& value) { SetParticipant(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetParticipantResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetParticipantResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetParticipantResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Participant m_participant;

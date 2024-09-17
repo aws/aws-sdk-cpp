@@ -33,25 +33,17 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const SMSTemplateRequest& GetSMSTemplateRequest() const{ return m_sMSTemplateRequest; }
-
-    
     inline bool SMSTemplateRequestHasBeenSet() const { return m_sMSTemplateRequestHasBeenSet; }
-
-    
     inline void SetSMSTemplateRequest(const SMSTemplateRequest& value) { m_sMSTemplateRequestHasBeenSet = true; m_sMSTemplateRequest = value; }
-
-    
     inline void SetSMSTemplateRequest(SMSTemplateRequest&& value) { m_sMSTemplateRequestHasBeenSet = true; m_sMSTemplateRequest = std::move(value); }
-
-    
     inline CreateSmsTemplateRequest& WithSMSTemplateRequest(const SMSTemplateRequest& value) { SetSMSTemplateRequest(value); return *this;}
-
-    
     inline CreateSmsTemplateRequest& WithSMSTemplateRequest(SMSTemplateRequest&& value) { SetSMSTemplateRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the message template. A template name must start with an
      * alphanumeric character and can contain a maximum of 128 characters. The
@@ -59,63 +51,14 @@ namespace Model
      * Template names are case sensitive.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline CreateSmsTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline CreateSmsTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline CreateSmsTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
-
+    ///@}
   private:
 
     SMSTemplateRequest m_sMSTemplateRequest;

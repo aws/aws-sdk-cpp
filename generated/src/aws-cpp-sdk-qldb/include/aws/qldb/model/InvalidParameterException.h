@@ -38,71 +38,31 @@ namespace Model
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline InvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline InvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline InvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the invalid parameter.</p>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
-
-    /**
-     * <p>The name of the invalid parameter.</p>
-     */
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-
-    /**
-     * <p>The name of the invalid parameter.</p>
-     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-
-    /**
-     * <p>The name of the invalid parameter.</p>
-     */
     inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-
-    /**
-     * <p>The name of the invalid parameter.</p>
-     */
     inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-
-    /**
-     * <p>The name of the invalid parameter.</p>
-     */
     inline InvalidParameterException& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-
-    /**
-     * <p>The name of the invalid parameter.</p>
-     */
     inline InvalidParameterException& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the invalid parameter.</p>
-     */
     inline InvalidParameterException& WithParameterName(const char* value) { SetParameterName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

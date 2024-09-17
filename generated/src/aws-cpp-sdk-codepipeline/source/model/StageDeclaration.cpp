@@ -21,14 +21,15 @@ namespace Model
 StageDeclaration::StageDeclaration() : 
     m_nameHasBeenSet(false),
     m_blockersHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+    m_actionsHasBeenSet(false),
+    m_onFailureHasBeenSet(false),
+    m_onSuccessHasBeenSet(false),
+    m_beforeEntryHasBeenSet(false)
 {
 }
 
-StageDeclaration::StageDeclaration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_blockersHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+StageDeclaration::StageDeclaration(JsonView jsonValue)
+  : StageDeclaration()
 {
   *this = jsonValue;
 }
@@ -60,6 +61,27 @@ StageDeclaration& StageDeclaration::operator =(JsonView jsonValue)
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
     }
     m_actionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("onFailure"))
+  {
+    m_onFailure = jsonValue.GetObject("onFailure");
+
+    m_onFailureHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("onSuccess"))
+  {
+    m_onSuccess = jsonValue.GetObject("onSuccess");
+
+    m_onSuccessHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("beforeEntry"))
+  {
+    m_beforeEntry = jsonValue.GetObject("beforeEntry");
+
+    m_beforeEntryHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +116,24 @@ JsonValue StageDeclaration::Jsonize() const
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
    }
    payload.WithArray("actions", std::move(actionsJsonList));
+
+  }
+
+  if(m_onFailureHasBeenSet)
+  {
+   payload.WithObject("onFailure", m_onFailure.Jsonize());
+
+  }
+
+  if(m_onSuccessHasBeenSet)
+  {
+   payload.WithObject("onSuccess", m_onSuccess.Jsonize());
+
+  }
+
+  if(m_beforeEntryHasBeenSet)
+  {
+   payload.WithObject("beforeEntry", m_beforeEntry.Jsonize());
 
   }
 

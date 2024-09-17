@@ -41,34 +41,13 @@ SavingsPlan::SavingsPlan() :
     m_recurringPaymentAmountHasBeenSet(false),
     m_termDurationInSeconds(0),
     m_termDurationInSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_returnableUntilHasBeenSet(false)
 {
 }
 
-SavingsPlan::SavingsPlan(JsonView jsonValue) : 
-    m_offeringIdHasBeenSet(false),
-    m_savingsPlanIdHasBeenSet(false),
-    m_savingsPlanArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_state(SavingsPlanState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_ec2InstanceFamilyHasBeenSet(false),
-    m_savingsPlanType(SavingsPlanType::NOT_SET),
-    m_savingsPlanTypeHasBeenSet(false),
-    m_paymentOption(SavingsPlanPaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_productTypesHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_commitmentHasBeenSet(false),
-    m_upfrontPaymentAmountHasBeenSet(false),
-    m_recurringPaymentAmountHasBeenSet(false),
-    m_termDurationInSeconds(0),
-    m_termDurationInSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SavingsPlan::SavingsPlan(JsonView jsonValue)
+  : SavingsPlan()
 {
   *this = jsonValue;
 }
@@ -207,6 +186,13 @@ SavingsPlan& SavingsPlan::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("returnableUntil"))
+  {
+    m_returnableUntil = jsonValue.GetString("returnableUntil");
+
+    m_returnableUntilHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -325,6 +311,12 @@ JsonValue SavingsPlan::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_returnableUntilHasBeenSet)
+  {
+   payload.WithString("returnableUntil", m_returnableUntil);
 
   }
 

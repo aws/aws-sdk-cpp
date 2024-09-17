@@ -12,6 +12,7 @@
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/RedshiftS3BackupMode.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <aws/firehose/model/SecretsManagerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +45,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
      * more information, see <a
@@ -51,255 +53,83 @@ namespace Model
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline RedshiftDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline RedshiftDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline RedshiftDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The database connection string.</p>
      */
     inline const Aws::String& GetClusterJDBCURL() const{ return m_clusterJDBCURL; }
-
-    /**
-     * <p>The database connection string.</p>
-     */
     inline bool ClusterJDBCURLHasBeenSet() const { return m_clusterJDBCURLHasBeenSet; }
-
-    /**
-     * <p>The database connection string.</p>
-     */
     inline void SetClusterJDBCURL(const Aws::String& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = value; }
-
-    /**
-     * <p>The database connection string.</p>
-     */
     inline void SetClusterJDBCURL(Aws::String&& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = std::move(value); }
-
-    /**
-     * <p>The database connection string.</p>
-     */
     inline void SetClusterJDBCURL(const char* value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL.assign(value); }
-
-    /**
-     * <p>The database connection string.</p>
-     */
     inline RedshiftDestinationUpdate& WithClusterJDBCURL(const Aws::String& value) { SetClusterJDBCURL(value); return *this;}
-
-    /**
-     * <p>The database connection string.</p>
-     */
     inline RedshiftDestinationUpdate& WithClusterJDBCURL(Aws::String&& value) { SetClusterJDBCURL(std::move(value)); return *this;}
-
-    /**
-     * <p>The database connection string.</p>
-     */
     inline RedshiftDestinationUpdate& WithClusterJDBCURL(const char* value) { SetClusterJDBCURL(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>COPY</code> command.</p>
      */
     inline const CopyCommand& GetCopyCommand() const{ return m_copyCommand; }
-
-    /**
-     * <p>The <code>COPY</code> command.</p>
-     */
     inline bool CopyCommandHasBeenSet() const { return m_copyCommandHasBeenSet; }
-
-    /**
-     * <p>The <code>COPY</code> command.</p>
-     */
     inline void SetCopyCommand(const CopyCommand& value) { m_copyCommandHasBeenSet = true; m_copyCommand = value; }
-
-    /**
-     * <p>The <code>COPY</code> command.</p>
-     */
     inline void SetCopyCommand(CopyCommand&& value) { m_copyCommandHasBeenSet = true; m_copyCommand = std::move(value); }
-
-    /**
-     * <p>The <code>COPY</code> command.</p>
-     */
     inline RedshiftDestinationUpdate& WithCopyCommand(const CopyCommand& value) { SetCopyCommand(value); return *this;}
-
-    /**
-     * <p>The <code>COPY</code> command.</p>
-     */
     inline RedshiftDestinationUpdate& WithCopyCommand(CopyCommand&& value) { SetCopyCommand(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
-
-    /**
-     * <p>The name of the user.</p>
-     */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-
-    /**
-     * <p>The name of the user.</p>
-     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-
-    /**
-     * <p>The name of the user.</p>
-     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-
-    /**
-     * <p>The name of the user.</p>
-     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-
-    /**
-     * <p>The name of the user.</p>
-     */
     inline RedshiftDestinationUpdate& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-
-    /**
-     * <p>The name of the user.</p>
-     */
     inline RedshiftDestinationUpdate& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the user.</p>
-     */
     inline RedshiftDestinationUpdate& WithUsername(const char* value) { SetUsername(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
-
-    /**
-     * <p>The user password.</p>
-     */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-
-    /**
-     * <p>The user password.</p>
-     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-
-    /**
-     * <p>The user password.</p>
-     */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-
-    /**
-     * <p>The user password.</p>
-     */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-
-    /**
-     * <p>The user password.</p>
-     */
     inline RedshiftDestinationUpdate& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-
-    /**
-     * <p>The user password.</p>
-     */
     inline RedshiftDestinationUpdate& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>The user password.</p>
-     */
     inline RedshiftDestinationUpdate& WithPassword(const char* value) { SetPassword(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
+     * Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
-
-    /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-     */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-
-    /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-     */
     inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-
-    /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-     */
     inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-
-    /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-     */
     inline RedshiftDestinationUpdate& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
-
-    /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-     */
     inline RedshiftDestinationUpdate& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
@@ -308,188 +138,75 @@ namespace Model
      * compression formats.</p>
      */
     inline const S3DestinationUpdate& GetS3Update() const{ return m_s3Update; }
-
-    /**
-     * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
-     * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
-     * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
-     * compression formats.</p>
-     */
     inline bool S3UpdateHasBeenSet() const { return m_s3UpdateHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
-     * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
-     * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
-     * compression formats.</p>
-     */
     inline void SetS3Update(const S3DestinationUpdate& value) { m_s3UpdateHasBeenSet = true; m_s3Update = value; }
-
-    /**
-     * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
-     * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
-     * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
-     * compression formats.</p>
-     */
     inline void SetS3Update(S3DestinationUpdate&& value) { m_s3UpdateHasBeenSet = true; m_s3Update = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
-     * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
-     * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
-     * compression formats.</p>
-     */
     inline RedshiftDestinationUpdate& WithS3Update(const S3DestinationUpdate& value) { SetS3Update(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
-     * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
-     * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
-     * compression formats.</p>
-     */
     inline RedshiftDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data processing configuration.</p>
      */
     inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
-
-    /**
-     * <p>The data processing configuration.</p>
-     */
     inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
-
-    /**
-     * <p>The data processing configuration.</p>
-     */
     inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
-
-    /**
-     * <p>The data processing configuration.</p>
-     */
     inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
-
-    /**
-     * <p>The data processing configuration.</p>
-     */
     inline RedshiftDestinationUpdate& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
-
-    /**
-     * <p>The data processing configuration.</p>
-     */
     inline RedshiftDestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>You can update a delivery stream to enable Amazon S3 backup if it is
      * disabled. If backup is enabled, you can't update the delivery stream to disable
      * it. </p>
      */
     inline const RedshiftS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
-
-    /**
-     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
-     * disabled. If backup is enabled, you can't update the delivery stream to disable
-     * it. </p>
-     */
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
-
-    /**
-     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
-     * disabled. If backup is enabled, you can't update the delivery stream to disable
-     * it. </p>
-     */
     inline void SetS3BackupMode(const RedshiftS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
-
-    /**
-     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
-     * disabled. If backup is enabled, you can't update the delivery stream to disable
-     * it. </p>
-     */
     inline void SetS3BackupMode(RedshiftS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
-
-    /**
-     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
-     * disabled. If backup is enabled, you can't update the delivery stream to disable
-     * it. </p>
-     */
     inline RedshiftDestinationUpdate& WithS3BackupMode(const RedshiftS3BackupMode& value) { SetS3BackupMode(value); return *this;}
-
-    /**
-     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
-     * disabled. If backup is enabled, you can't update the delivery stream to disable
-     * it. </p>
-     */
     inline RedshiftDestinationUpdate& WithS3BackupMode(RedshiftS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 destination for backup.</p>
      */
     inline const S3DestinationUpdate& GetS3BackupUpdate() const{ return m_s3BackupUpdate; }
-
-    /**
-     * <p>The Amazon S3 destination for backup.</p>
-     */
     inline bool S3BackupUpdateHasBeenSet() const { return m_s3BackupUpdateHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 destination for backup.</p>
-     */
     inline void SetS3BackupUpdate(const S3DestinationUpdate& value) { m_s3BackupUpdateHasBeenSet = true; m_s3BackupUpdate = value; }
-
-    /**
-     * <p>The Amazon S3 destination for backup.</p>
-     */
     inline void SetS3BackupUpdate(S3DestinationUpdate&& value) { m_s3BackupUpdateHasBeenSet = true; m_s3BackupUpdate = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 destination for backup.</p>
-     */
     inline RedshiftDestinationUpdate& WithS3BackupUpdate(const S3DestinationUpdate& value) { SetS3BackupUpdate(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 destination for backup.</p>
-     */
     inline RedshiftDestinationUpdate& WithS3BackupUpdate(S3DestinationUpdate&& value) { SetS3BackupUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
-
-    /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-     */
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-
-    /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-     */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-
-    /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-     */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-
-    /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-     */
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-
-    /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-     */
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p> The configuration that defines how you access secrets for Amazon Redshift.
+     * </p>
+     */
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+    inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
+    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
+    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
+    inline RedshiftDestinationUpdate& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
+    inline RedshiftDestinationUpdate& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_roleARN;
@@ -524,6 +241,9 @@ namespace Model
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+
+    SecretsManagerConfiguration m_secretsManagerConfiguration;
+    bool m_secretsManagerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

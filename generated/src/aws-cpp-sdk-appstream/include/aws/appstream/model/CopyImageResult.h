@@ -32,63 +32,29 @@ namespace Model
     AWS_APPSTREAM_API CopyImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the destination image.</p>
      */
     inline const Aws::String& GetDestinationImageName() const{ return m_destinationImageName; }
-
-    /**
-     * <p>The name of the destination image.</p>
-     */
     inline void SetDestinationImageName(const Aws::String& value) { m_destinationImageName = value; }
-
-    /**
-     * <p>The name of the destination image.</p>
-     */
     inline void SetDestinationImageName(Aws::String&& value) { m_destinationImageName = std::move(value); }
-
-    /**
-     * <p>The name of the destination image.</p>
-     */
     inline void SetDestinationImageName(const char* value) { m_destinationImageName.assign(value); }
-
-    /**
-     * <p>The name of the destination image.</p>
-     */
     inline CopyImageResult& WithDestinationImageName(const Aws::String& value) { SetDestinationImageName(value); return *this;}
-
-    /**
-     * <p>The name of the destination image.</p>
-     */
     inline CopyImageResult& WithDestinationImageName(Aws::String&& value) { SetDestinationImageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the destination image.</p>
-     */
     inline CopyImageResult& WithDestinationImageName(const char* value) { SetDestinationImageName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CopyImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CopyImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CopyImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationImageName;

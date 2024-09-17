@@ -27,10 +27,8 @@ DnsServersOptionsModifyStructure::DnsServersOptionsModifyStructure() :
 {
 }
 
-DnsServersOptionsModifyStructure::DnsServersOptionsModifyStructure(const XmlNode& xmlNode) : 
-    m_customDnsServersHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+DnsServersOptionsModifyStructure::DnsServersOptionsModifyStructure(const XmlNode& xmlNode)
+  : DnsServersOptionsModifyStructure()
 {
   *this = xmlNode;
 }

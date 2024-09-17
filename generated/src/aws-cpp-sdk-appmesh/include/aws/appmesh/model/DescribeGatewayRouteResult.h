@@ -33,53 +33,27 @@ namespace Model
     AWS_APPMESH_API DescribeGatewayRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full description of your gateway route.</p>
      */
     inline const GatewayRouteData& GetGatewayRoute() const{ return m_gatewayRoute; }
-
-    /**
-     * <p>The full description of your gateway route.</p>
-     */
     inline void SetGatewayRoute(const GatewayRouteData& value) { m_gatewayRoute = value; }
-
-    /**
-     * <p>The full description of your gateway route.</p>
-     */
     inline void SetGatewayRoute(GatewayRouteData&& value) { m_gatewayRoute = std::move(value); }
-
-    /**
-     * <p>The full description of your gateway route.</p>
-     */
     inline DescribeGatewayRouteResult& WithGatewayRoute(const GatewayRouteData& value) { SetGatewayRoute(value); return *this;}
-
-    /**
-     * <p>The full description of your gateway route.</p>
-     */
     inline DescribeGatewayRouteResult& WithGatewayRoute(GatewayRouteData&& value) { SetGatewayRoute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeGatewayRouteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeGatewayRouteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeGatewayRouteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GatewayRouteData m_gatewayRoute;

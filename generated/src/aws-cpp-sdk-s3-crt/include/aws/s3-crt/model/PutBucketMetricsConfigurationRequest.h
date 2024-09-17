@@ -41,236 +41,86 @@ namespace Model
 
     AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    AWS_S3CRT_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
     AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The name of the bucket for which the metrics configuration is set.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The name of the bucket for which the metrics configuration is set.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The name of the bucket for which the metrics configuration is set.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The name of the bucket for which the metrics configuration is set.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The name of the bucket for which the metrics configuration is set.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The name of the bucket for which the metrics configuration is set.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the bucket for which the metrics configuration is set.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID used to identify the metrics configuration. The ID has a 64 character
      * limit and can only contain letters, numbers, periods, dashes, and
      * underscores.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
-     * limit and can only contain letters, numbers, periods, dashes, and
-     * underscores.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the metrics configuration.</p>
      */
     inline const MetricsConfiguration& GetMetricsConfiguration() const{ return m_metricsConfiguration; }
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline bool MetricsConfigurationHasBeenSet() const { return m_metricsConfigurationHasBeenSet; }
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline void SetMetricsConfiguration(const MetricsConfiguration& value) { m_metricsConfigurationHasBeenSet = true; m_metricsConfiguration = value; }
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline void SetMetricsConfiguration(MetricsConfiguration&& value) { m_metricsConfigurationHasBeenSet = true; m_metricsConfiguration = std::move(value); }
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithMetricsConfiguration(const MetricsConfiguration& value) { SetMetricsConfiguration(value); return *this;}
-
-    /**
-     * <p>Specifies the metrics configuration.</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The account ID of the expected bucket owner. If the account ID that you
      * provide does not match the actual owner of the bucket, the request fails with
      * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
-
-    /**
-     * <p>The account ID of the expected bucket owner. If the account ID that you
-     * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-     */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-
-    /**
-     * <p>The account ID of the expected bucket owner. If the account ID that you
-     * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-     */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-
-    /**
-     * <p>The account ID of the expected bucket owner. If the account ID that you
-     * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-     */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-
-    /**
-     * <p>The account ID of the expected bucket owner. If the account ID that you
-     * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-     */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-
-    /**
-     * <p>The account ID of the expected bucket owner. If the account ID that you
-     * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-
-    /**
-     * <p>The account ID of the expected bucket owner. If the account ID that you
-     * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-
-    /**
-     * <p>The account ID of the expected bucket owner. If the account ID that you
-     * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-     */
     inline PutBucketMetricsConfigurationRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
-
-    
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-
-    
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-
-    
     inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-
-    
     inline PutBucketMetricsConfigurationRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-
-    
     inline PutBucketMetricsConfigurationRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-
-    
     inline PutBucketMetricsConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-
-    
     inline PutBucketMetricsConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-
-    
     inline PutBucketMetricsConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-
-    
     inline PutBucketMetricsConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-
-    
     inline PutBucketMetricsConfigurationRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-
-    
     inline PutBucketMetricsConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-
-    
     inline PutBucketMetricsConfigurationRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_bucket;

@@ -19,12 +19,15 @@ namespace Model
 {
 
 InputDestinationRequest::InputDestinationRequest() : 
-    m_streamNameHasBeenSet(false)
+    m_streamNameHasBeenSet(false),
+    m_networkHasBeenSet(false),
+    m_networkRoutesHasBeenSet(false),
+    m_staticIpAddressHasBeenSet(false)
 {
 }
 
-InputDestinationRequest::InputDestinationRequest(JsonView jsonValue) : 
-    m_streamNameHasBeenSet(false)
+InputDestinationRequest::InputDestinationRequest(JsonView jsonValue)
+  : InputDestinationRequest()
 {
   *this = jsonValue;
 }
@@ -38,6 +41,30 @@ InputDestinationRequest& InputDestinationRequest::operator =(JsonView jsonValue)
     m_streamNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("network"))
+  {
+    m_network = jsonValue.GetString("network");
+
+    m_networkHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkRoutes"))
+  {
+    Aws::Utils::Array<JsonView> networkRoutesJsonList = jsonValue.GetArray("networkRoutes");
+    for(unsigned networkRoutesIndex = 0; networkRoutesIndex < networkRoutesJsonList.GetLength(); ++networkRoutesIndex)
+    {
+      m_networkRoutes.push_back(networkRoutesJsonList[networkRoutesIndex].AsObject());
+    }
+    m_networkRoutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("staticIpAddress"))
+  {
+    m_staticIpAddress = jsonValue.GetString("staticIpAddress");
+
+    m_staticIpAddressHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +75,29 @@ JsonValue InputDestinationRequest::Jsonize() const
   if(m_streamNameHasBeenSet)
   {
    payload.WithString("streamName", m_streamName);
+
+  }
+
+  if(m_networkHasBeenSet)
+  {
+   payload.WithString("network", m_network);
+
+  }
+
+  if(m_networkRoutesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> networkRoutesJsonList(m_networkRoutes.size());
+   for(unsigned networkRoutesIndex = 0; networkRoutesIndex < networkRoutesJsonList.GetLength(); ++networkRoutesIndex)
+   {
+     networkRoutesJsonList[networkRoutesIndex].AsObject(m_networkRoutes[networkRoutesIndex].Jsonize());
+   }
+   payload.WithArray("networkRoutes", std::move(networkRoutesJsonList));
+
+  }
+
+  if(m_staticIpAddressHasBeenSet)
+  {
+   payload.WithString("staticIpAddress", m_staticIpAddress);
 
   }
 

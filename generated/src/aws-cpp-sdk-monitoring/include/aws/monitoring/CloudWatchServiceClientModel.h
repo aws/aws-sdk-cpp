@@ -49,6 +49,15 @@
 #include <aws/monitoring/model/StopMetricStreamsResult.h>
 #include <aws/monitoring/model/TagResourceResult.h>
 #include <aws/monitoring/model/UntagResourceResult.h>
+#include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
+#include <aws/monitoring/model/DescribeAnomalyDetectorsRequest.h>
+#include <aws/monitoring/model/ListDashboardsRequest.h>
+#include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
+#include <aws/monitoring/model/DescribeAlarmHistoryRequest.h>
+#include <aws/monitoring/model/ListMetricsRequest.h>
+#include <aws/monitoring/model/ListMetricStreamsRequest.h>
+#include <aws/monitoring/model/DescribeAlarmsRequest.h>
+#include <aws/monitoring/model/DescribeInsightRulesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudWatchClient header */
 
@@ -83,7 +92,7 @@ namespace Aws
 
   namespace CloudWatch
   {
-    using CloudWatchClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchEndpointProviderBase = Aws::CloudWatch::Endpoint::CloudWatchEndpointProviderBase;
     using CloudWatchEndpointProvider = Aws::CloudWatch::Endpoint::CloudWatchEndpointProvider;
 

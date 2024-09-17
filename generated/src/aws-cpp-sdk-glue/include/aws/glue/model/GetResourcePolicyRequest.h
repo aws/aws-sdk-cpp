@@ -34,6 +34,7 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
      * not supplied, the Data Catalog resource policy is returned. Use
@@ -43,77 +44,14 @@ namespace Model
      * Glue Resource ARNs</a>. </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
-     * not supplied, the Data Catalog resource policy is returned. Use
-     * <code>GetResourcePolicies</code> to view all existing resource policies. For
-     * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-     * Glue Resource ARNs</a>. </p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
-     * not supplied, the Data Catalog resource policy is returned. Use
-     * <code>GetResourcePolicies</code> to view all existing resource policies. For
-     * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-     * Glue Resource ARNs</a>. </p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
-     * not supplied, the Data Catalog resource policy is returned. Use
-     * <code>GetResourcePolicies</code> to view all existing resource policies. For
-     * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-     * Glue Resource ARNs</a>. </p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
-     * not supplied, the Data Catalog resource policy is returned. Use
-     * <code>GetResourcePolicies</code> to view all existing resource policies. For
-     * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-     * Glue Resource ARNs</a>. </p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
-     * not supplied, the Data Catalog resource policy is returned. Use
-     * <code>GetResourcePolicies</code> to view all existing resource policies. For
-     * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-     * Glue Resource ARNs</a>. </p>
-     */
     inline GetResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
-     * not supplied, the Data Catalog resource policy is returned. Use
-     * <code>GetResourcePolicies</code> to view all existing resource policies. For
-     * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-     * Glue Resource ARNs</a>. </p>
-     */
     inline GetResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Glue resource for which to retrieve the resource policy. If
-     * not supplied, the Data Catalog resource policy is returned. Use
-     * <code>GetResourcePolicies</code> to view all existing resource policies. For
-     * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying
-     * Glue Resource ARNs</a>. </p>
-     */
     inline GetResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

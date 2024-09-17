@@ -34,106 +34,43 @@ namespace Model
     AWS_CONFIGSERVICE_API GetAggregateComplianceDetailsByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns an AggregateEvaluationResults object.</p>
      */
     inline const Aws::Vector<AggregateEvaluationResult>& GetAggregateEvaluationResults() const{ return m_aggregateEvaluationResults; }
-
-    /**
-     * <p>Returns an AggregateEvaluationResults object.</p>
-     */
     inline void SetAggregateEvaluationResults(const Aws::Vector<AggregateEvaluationResult>& value) { m_aggregateEvaluationResults = value; }
-
-    /**
-     * <p>Returns an AggregateEvaluationResults object.</p>
-     */
     inline void SetAggregateEvaluationResults(Aws::Vector<AggregateEvaluationResult>&& value) { m_aggregateEvaluationResults = std::move(value); }
-
-    /**
-     * <p>Returns an AggregateEvaluationResults object.</p>
-     */
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithAggregateEvaluationResults(const Aws::Vector<AggregateEvaluationResult>& value) { SetAggregateEvaluationResults(value); return *this;}
-
-    /**
-     * <p>Returns an AggregateEvaluationResults object.</p>
-     */
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithAggregateEvaluationResults(Aws::Vector<AggregateEvaluationResult>&& value) { SetAggregateEvaluationResults(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns an AggregateEvaluationResults object.</p>
-     */
     inline GetAggregateComplianceDetailsByConfigRuleResult& AddAggregateEvaluationResults(const AggregateEvaluationResult& value) { m_aggregateEvaluationResults.push_back(value); return *this; }
-
-    /**
-     * <p>Returns an AggregateEvaluationResults object.</p>
-     */
     inline GetAggregateComplianceDetailsByConfigRuleResult& AddAggregateEvaluationResults(AggregateEvaluationResult&& value) { m_aggregateEvaluationResults.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAggregateComplianceDetailsByConfigRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AggregateEvaluationResult> m_aggregateEvaluationResults;

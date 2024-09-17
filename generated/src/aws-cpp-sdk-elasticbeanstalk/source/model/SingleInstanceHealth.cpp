@@ -34,17 +34,8 @@ SingleInstanceHealth::SingleInstanceHealth() :
 {
 }
 
-SingleInstanceHealth::SingleInstanceHealth(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_causesHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_applicationMetricsHasBeenSet(false),
-    m_systemHasBeenSet(false),
-    m_deploymentHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+SingleInstanceHealth::SingleInstanceHealth(const XmlNode& xmlNode)
+  : SingleInstanceHealth()
 {
   *this = xmlNode;
 }

@@ -27,12 +27,8 @@ PillarDifference::PillarDifference() :
 {
 }
 
-PillarDifference::PillarDifference(JsonView jsonValue) : 
-    m_pillarIdHasBeenSet(false),
-    m_pillarNameHasBeenSet(false),
-    m_differenceStatus(DifferenceStatus::NOT_SET),
-    m_differenceStatusHasBeenSet(false),
-    m_questionDifferencesHasBeenSet(false)
+PillarDifference::PillarDifference(JsonView jsonValue)
+  : PillarDifference()
 {
   *this = jsonValue;
 }

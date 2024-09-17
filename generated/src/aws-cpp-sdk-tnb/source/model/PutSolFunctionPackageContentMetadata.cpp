@@ -23,8 +23,8 @@ PutSolFunctionPackageContentMetadata::PutSolFunctionPackageContentMetadata() :
 {
 }
 
-PutSolFunctionPackageContentMetadata::PutSolFunctionPackageContentMetadata(JsonView jsonValue) : 
-    m_vnfdHasBeenSet(false)
+PutSolFunctionPackageContentMetadata::PutSolFunctionPackageContentMetadata(JsonView jsonValue)
+  : PutSolFunctionPackageContentMetadata()
 {
   *this = jsonValue;
 }

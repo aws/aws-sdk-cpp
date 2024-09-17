@@ -25,8 +25,8 @@ Phase2EncryptionAlgorithmsListValue::Phase2EncryptionAlgorithmsListValue() :
 {
 }
 
-Phase2EncryptionAlgorithmsListValue::Phase2EncryptionAlgorithmsListValue(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false)
+Phase2EncryptionAlgorithmsListValue::Phase2EncryptionAlgorithmsListValue(const XmlNode& xmlNode)
+  : Phase2EncryptionAlgorithmsListValue()
 {
   *this = xmlNode;
 }

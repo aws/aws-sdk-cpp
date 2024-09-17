@@ -23,8 +23,8 @@ BrowserSettingsSummary::BrowserSettingsSummary() :
 {
 }
 
-BrowserSettingsSummary::BrowserSettingsSummary(JsonView jsonValue) : 
-    m_browserSettingsArnHasBeenSet(false)
+BrowserSettingsSummary::BrowserSettingsSummary(JsonView jsonValue)
+  : BrowserSettingsSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ S3ContentBaseLocationUpdate::S3ContentBaseLocationUpdate() :
 {
 }
 
-S3ContentBaseLocationUpdate::S3ContentBaseLocationUpdate(JsonView jsonValue) : 
-    m_bucketARNUpdateHasBeenSet(false),
-    m_basePathUpdateHasBeenSet(false)
+S3ContentBaseLocationUpdate::S3ContentBaseLocationUpdate(JsonView jsonValue)
+  : S3ContentBaseLocationUpdate()
 {
   *this = jsonValue;
 }

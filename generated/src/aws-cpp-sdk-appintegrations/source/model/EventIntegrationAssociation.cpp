@@ -28,13 +28,8 @@ EventIntegrationAssociation::EventIntegrationAssociation() :
 {
 }
 
-EventIntegrationAssociation::EventIntegrationAssociation(JsonView jsonValue) : 
-    m_eventIntegrationAssociationArnHasBeenSet(false),
-    m_eventIntegrationAssociationIdHasBeenSet(false),
-    m_eventIntegrationNameHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_eventBridgeRuleNameHasBeenSet(false),
-    m_clientAssociationMetadataHasBeenSet(false)
+EventIntegrationAssociation::EventIntegrationAssociation(JsonView jsonValue)
+  : EventIntegrationAssociation()
 {
   *this = jsonValue;
 }

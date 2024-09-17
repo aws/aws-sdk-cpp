@@ -26,11 +26,8 @@ TimeBasedLinear::TimeBasedLinear() :
 {
 }
 
-TimeBasedLinear::TimeBasedLinear(JsonView jsonValue) : 
-    m_linearPercentage(0),
-    m_linearPercentageHasBeenSet(false),
-    m_linearInterval(0),
-    m_linearIntervalHasBeenSet(false)
+TimeBasedLinear::TimeBasedLinear(JsonView jsonValue)
+  : TimeBasedLinear()
 {
   *this = jsonValue;
 }

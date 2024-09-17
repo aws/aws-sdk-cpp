@@ -30,15 +30,8 @@ AggregateEvaluationResult::AggregateEvaluationResult() :
 {
 }
 
-AggregateEvaluationResult::AggregateEvaluationResult(JsonView jsonValue) : 
-    m_evaluationResultIdentifierHasBeenSet(false),
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_resultRecordedTimeHasBeenSet(false),
-    m_configRuleInvokedTimeHasBeenSet(false),
-    m_annotationHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+AggregateEvaluationResult::AggregateEvaluationResult(JsonView jsonValue)
+  : AggregateEvaluationResult()
 {
   *this = jsonValue;
 }

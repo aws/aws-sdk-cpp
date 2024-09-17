@@ -41,93 +41,34 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The log publishing options configured for the Elasticsearch domain.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline void SetOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline void SetOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline LogPublishingOptionsStatus& WithOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline LogPublishingOptionsStatus& WithOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline LogPublishingOptionsStatus& AddOptions(const LogType& key, const LogPublishingOption& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline LogPublishingOptionsStatus& AddOptions(LogType&& key, const LogPublishingOption& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline LogPublishingOptionsStatus& AddOptions(const LogType& key, LogPublishingOption&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The log publishing options configured for the Elasticsearch domain.</p>
-     */
     inline LogPublishingOptionsStatus& AddOptions(LogType&& key, LogPublishingOption&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the log publishing options for the Elasticsearch domain. See
      * <code>OptionStatus</code> for the status information that's included. </p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the log publishing options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the log publishing options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the log publishing options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the log publishing options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline LogPublishingOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the log publishing options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline LogPublishingOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<LogType, LogPublishingOption> m_options;

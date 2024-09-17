@@ -542,10 +542,15 @@ namespace KMS
          * contain an RSA key pair, Elliptic Curve (ECC) key pair, or an SM2 key pair
          * (China Regions only). The private key in an asymmetric KMS key never leaves KMS
          * unencrypted. However, you can use the <a>GetPublicKey</a> operation to download
-         * the public key so it can be used outside of KMS. KMS keys with RSA or SM2 key
-         * pairs can be used to encrypt or decrypt data or sign and verify messages (but
-         * not both). KMS keys with ECC key pairs can be used only to sign and verify
-         * messages. For information about asymmetric KMS keys, see <a
+         * the public key so it can be used outside of KMS. Each KMS key can have only one
+         * key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data
+         * or sign and verify messages (but not both). KMS keys with NIST-recommended ECC
+         * key pairs can be used to sign and verify messages or derive shared secrets (but
+         * not both). KMS keys with <code>ECC_SECG_P256K1</code> can be used only to sign
+         * and verify messages. KMS keys with SM2 key pairs (China Regions only) can be
+         * used to either encrypt and decrypt data, sign and verify messages, or derive
+         * shared secrets (you must choose one key usage type). For information about
+         * asymmetric KMS keys, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
          * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p> </p>
          * </dd> <dt>HMAC KMS key</dt> <dd> <p>To create an HMAC KMS key, set the
@@ -655,13 +660,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">AWS API
          * Reference</a></p>
          */
-        virtual Model::CreateKeyOutcome CreateKey(const Model::CreateKeyRequest& request) const;
+        virtual Model::CreateKeyOutcome CreateKey(const Model::CreateKeyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateKeyRequestT = Model::CreateKeyRequest>
-        Model::CreateKeyOutcomeCallable CreateKeyCallable(const CreateKeyRequestT& request) const
+        Model::CreateKeyOutcomeCallable CreateKeyCallable(const CreateKeyRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::CreateKey, request);
         }
@@ -670,7 +675,7 @@ namespace KMS
          * An Async wrapper for CreateKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateKeyRequestT = Model::CreateKeyRequest>
-        void CreateKeyAsync(const CreateKeyRequestT& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateKeyAsync(const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateKeyRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::CreateKey, request, handler, context);
         }
@@ -930,6 +935,87 @@ namespace KMS
         }
 
         /**
+         * <p>Derives a shared secret using a key agreement algorithm.</p>  <p>You
+         * must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China
+         * Regions only) KMS key pair with a <code>KeyUsage</code> value of
+         * <code>KEY_AGREEMENT</code> to call DeriveSharedSecret.</p> 
+         * <p>DeriveSharedSecret uses the <a
+         * href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar3.pdf#page=60">Elliptic
+         * Curve Cryptography Cofactor Diffie-Hellman Primitive</a> (ECDH) to establish a
+         * key agreement between two peers by deriving a shared secret from their elliptic
+         * curve public-private key pairs. You can use the raw shared secret that
+         * DeriveSharedSecret returns to derive a symmetric key that can encrypt and
+         * decrypt data that is sent between the two peers, or that can generate and verify
+         * HMACs. KMS recommends that you follow <a
+         * href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr2.pdf">NIST
+         * recommendations for key derivation</a> when using the raw shared secret to
+         * derive a symmetric key.</p> <p>The following workflow demonstrates how to
+         * establish key agreement over an insecure communication channel using
+         * DeriveSharedSecret.</p> <ol> <li> <p> <b>Alice</b> calls <a>CreateKey</a> to
+         * create an asymmetric KMS key pair with a <code>KeyUsage</code> value of
+         * <code>KEY_AGREEMENT</code>.</p> <p>The asymmetric KMS key must use a
+         * NIST-recommended elliptic curve (ECC) or SM2 (China Regions only) key spec.</p>
+         * </li> <li> <p> <b>Bob</b> creates an elliptic curve key pair.</p> <p>Bob can
+         * call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
+         * pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic
+         * curve (ECC) or SM2 (China Regions ony) curve as Alice.</p> </li> <li> <p>Alice
+         * and Bob <b>exchange their public keys</b> through an insecure communication
+         * channel (like the internet).</p> <p>Use <a>GetPublicKey</a> to download the
+         * public key of your asymmetric KMS key pair.</p>  <p>KMS strongly
+         * recommends verifying that the public key you receive came from the expected
+         * party before using it to derive a shared secret.</p>  </li> <li> <p>
+         * <b>Alice</b> calls DeriveSharedSecret.</p> <p>KMS uses the private key from the
+         * KMS key pair generated in <b>Step 1</b>, Bob's public key, and the Elliptic
+         * Curve Cryptography Cofactor Diffie-Hellman Primitive to derive the shared
+         * secret. The private key in your KMS key pair never leaves KMS unencrypted.
+         * DeriveSharedSecret returns the raw shared secret.</p> </li> <li> <p> <b>Bob</b>
+         * uses the Elliptic Curve Cryptography Cofactor Diffie-Hellman Primitive to
+         * calculate the same raw secret using his private key and Alice's public key.</p>
+         * </li> </ol> <p>To derive a shared secret you must provide a key agreement
+         * algorithm, the private key of the caller's asymmetric NIST-recommended elliptic
+         * curve or SM2 (China Regions only) KMS key pair, and the public key from your
+         * peer's NIST-recommended elliptic curve or SM2 (China Regions only) key pair. The
+         * public key can be from another asymmetric KMS key pair or from a key pair
+         * generated outside of KMS, but both key pairs must be on the same elliptic
+         * curve.</p> <p>The KMS key that you use for this operation must be in a
+         * compatible key state. For details, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+         * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+         * <p> <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a
+         * different Amazon Web Services account, specify the key ARN or alias ARN in the
+         * value of the <code>KeyId</code> parameter.</p> <p> <b>Required permissions</b>:
+         * <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeriveSharedSecret</a>
+         * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+         * <a>CreateKey</a> </p> </li> <li> <p> <a>GetPublicKey</a> </p> </li> <li> <p>
+         * <a>DescribeKey</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The KMS API
+         * follows an eventual consistency model. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+         * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeriveSharedSecret">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeriveSharedSecretOutcome DeriveSharedSecret(const Model::DeriveSharedSecretRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeriveSharedSecret that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeriveSharedSecretRequestT = Model::DeriveSharedSecretRequest>
+        Model::DeriveSharedSecretOutcomeCallable DeriveSharedSecretCallable(const DeriveSharedSecretRequestT& request) const
+        {
+            return SubmitCallable(&KMSClient::DeriveSharedSecret, request);
+        }
+
+        /**
+         * An Async wrapper for DeriveSharedSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeriveSharedSecretRequestT = Model::DeriveSharedSecretRequest>
+        void DeriveSharedSecretAsync(const DeriveSharedSecretRequestT& request, const DeriveSharedSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KMSClient::DeriveSharedSecret, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key stores</a> in the account and Region.</p> <p> This operation is part of the
@@ -977,13 +1063,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeCustomKeyStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCustomKeyStoresOutcome DescribeCustomKeyStores(const Model::DescribeCustomKeyStoresRequest& request) const;
+        virtual Model::DescribeCustomKeyStoresOutcome DescribeCustomKeyStores(const Model::DescribeCustomKeyStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCustomKeyStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCustomKeyStoresRequestT = Model::DescribeCustomKeyStoresRequest>
-        Model::DescribeCustomKeyStoresOutcomeCallable DescribeCustomKeyStoresCallable(const DescribeCustomKeyStoresRequestT& request) const
+        Model::DescribeCustomKeyStoresOutcomeCallable DescribeCustomKeyStoresCallable(const DescribeCustomKeyStoresRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::DescribeCustomKeyStores, request);
         }
@@ -992,7 +1078,7 @@ namespace KMS
          * An Async wrapper for DescribeCustomKeyStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCustomKeyStoresRequestT = Model::DescribeCustomKeyStoresRequest>
-        void DescribeCustomKeyStoresAsync(const DescribeCustomKeyStoresRequestT& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCustomKeyStoresAsync(const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCustomKeyStoresRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::DescribeCustomKeyStores, request, handler, context);
         }
@@ -1151,8 +1237,9 @@ namespace KMS
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DisableKeyRotation</a>
          * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
          * <a>EnableKeyRotation</a> </p> </li> <li> <p> <a>GetKeyRotationStatus</a> </p>
-         * </li> </ul> <p> <b>Eventual consistency</b>: The KMS API follows an eventual
-         * consistency model. For more information, see <a
+         * </li> <li> <p> <a>ListKeyRotations</a> </p> </li> <li> <p>
+         * <a>RotateKeyOnDemand</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The
+         * KMS API follows an eventual consistency model. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
          * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">AWS
@@ -1277,16 +1364,22 @@ namespace KMS
 
         /**
          * <p>Enables <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic
          * rotation of the key material</a> of the specified symmetric encryption KMS key.
-         * </p> <p>When you enable automatic rotation of a <a
+         * </p> <p>By default, when you enable automatic rotation of a <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
          * managed KMS key</a>, KMS rotates the key material of the KMS key one year
          * (approximately 365 days) from the enable date and every year thereafter. You can
-         * monitor rotation of the key material for your KMS keys in CloudTrail and Amazon
+         * use the optional <code>RotationPeriodInDays</code> parameter to specify a custom
+         * rotation period when you enable key rotation, or you can use
+         * <code>RotationPeriodInDays</code> to modify the rotation period of a key that
+         * you previously enabled automatic key rotation on.</p> <p>You can monitor
+         * rotation of the key material for your KMS keys in CloudTrail and Amazon
          * CloudWatch. To disable rotation of the key material in a customer managed KMS
-         * key, use the <a>DisableKeyRotation</a> operation.</p> <p>Automatic key rotation
-         * is supported only on <a
+         * key, use the <a>DisableKeyRotation</a> operation. You can use the
+         * <a>GetKeyRotationStatus</a> operation to identify any in progress rotations. You
+         * can use the <a>ListKeyRotations</a> operation to view the details of completed
+         * rotations.</p> <p>Automatic key rotation is supported only on <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
          * encryption KMS keys</a>. You cannot enable automatic rotation of <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
@@ -1299,20 +1392,20 @@ namespace KMS
          * key store</a>. To enable or disable automatic rotation of a set of related <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
          * keys</a>, set the property on the primary key. </p> <p>You cannot enable or
-         * disable automatic rotation <a
+         * disable automatic rotation of <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
          * Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon
          * Web Services managed keys every year. Rotation of <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
-         * Web Services owned KMS keys</a> varies.</p>  <p>In May 2022, KMS changed
-         * the rotation schedule for Amazon Web Services managed keys from every three
-         * years (approximately 1,095 days) to every year (approximately 365 days).</p>
-         * <p>New Amazon Web Services managed keys are automatically rotated one year after
-         * they are created, and approximately every year thereafter. </p> <p>Existing
-         * Amazon Web Services managed keys are automatically rotated one year after their
-         * most recent rotation, and every year thereafter.</p>  <p>The KMS key that
-         * you use for this operation must be in a compatible key state. For details, see
-         * <a
+         * Web Services owned KMS keys</a> is managed by the Amazon Web Services service
+         * that owns the key.</p>  <p>In May 2022, KMS changed the rotation schedule
+         * for Amazon Web Services managed keys from every three years (approximately 1,095
+         * days) to every year (approximately 365 days).</p> <p>New Amazon Web Services
+         * managed keys are automatically rotated one year after they are created, and
+         * approximately every year thereafter. </p> <p>Existing Amazon Web Services
+         * managed keys are automatically rotated one year after their most recent
+         * rotation, and every year thereafter.</p>  <p>The KMS key that you use for
+         * this operation must be in a compatible key state. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
          * <p> <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key
@@ -1321,8 +1414,12 @@ namespace KMS
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:EnableKeyRotation</a>
          * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
          * <a>DisableKeyRotation</a> </p> </li> <li> <p> <a>GetKeyRotationStatus</a> </p>
-         * </li> </ul> <p> <b>Eventual consistency</b>: The KMS API follows an eventual
-         * consistency model. For more information, see <a
+         * </li> <li> <p> <a>ListKeyRotations</a> </p> </li> <li> <p>
+         * <a>RotateKeyOnDemand</a> </p>  <p>You can perform on-demand
+         * (<a>RotateKeyOnDemand</a>) rotation of the key material in customer managed KMS
+         * keys, regardless of whether or not automatic key rotation is enabled.</p>
+         *  </li> </ul> <p> <b>Eventual consistency</b>: The KMS API follows an
+         * eventual consistency model. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
          * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">AWS
@@ -1869,13 +1966,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">AWS
          * API Reference</a></p>
          */
-        virtual Model::GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest& request) const;
+        virtual Model::GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GenerateRandom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GenerateRandomRequestT = Model::GenerateRandomRequest>
-        Model::GenerateRandomOutcomeCallable GenerateRandomCallable(const GenerateRandomRequestT& request) const
+        Model::GenerateRandomOutcomeCallable GenerateRandomCallable(const GenerateRandomRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::GenerateRandom, request);
         }
@@ -1884,7 +1981,7 @@ namespace KMS
          * An Async wrapper for GenerateRandom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GenerateRandomRequestT = Model::GenerateRandomRequest>
-        void GenerateRandomAsync(const GenerateRandomRequestT& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GenerateRandomAsync(const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GenerateRandomRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::GenerateRandom, request, handler, context);
         }
@@ -1924,15 +2021,13 @@ namespace KMS
         }
 
         /**
-         * <p>Gets a Boolean value that indicates whether <a
+         * <p>Provides detailed information about the rotation status for a KMS key,
+         * including whether <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-         * rotation of the key material</a> is enabled for the specified KMS key.</p>
-         * <p>When you enable automatic rotation for <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-         * managed KMS keys</a>, KMS rotates the key material of the KMS key one year
-         * (approximately 365 days) from the enable date and every year thereafter. You can
-         * monitor rotation of the key material for your KMS keys in CloudTrail and Amazon
-         * CloudWatch.</p> <p>Automatic key rotation is supported only on <a
+         * rotation of the key material</a> is enabled for the specified KMS key, the <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotation-period">rotation
+         * period</a>, and the next scheduled rotation date.</p> <p>Automatic key rotation
+         * is supported only on <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
          * encryption KMS keys</a>. You cannot enable automatic rotation of <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
@@ -1952,8 +2047,13 @@ namespace KMS
          * Web Services managed KMS keys</a> is not configurable. KMS always rotates the
          * key material in Amazon Web Services managed KMS keys every year. The key
          * rotation status for Amazon Web Services managed KMS keys is always
-         * <code>true</code>.</p>  <p>In May 2022, KMS changed the rotation schedule
-         * for Amazon Web Services managed keys from every three years to every year. For
+         * <code>true</code>.</p> <p>You can perform on-demand (<a>RotateKeyOnDemand</a>)
+         * rotation of the key material in customer managed KMS keys, regardless of whether
+         * or not automatic key rotation is enabled. You can use GetKeyRotationStatus to
+         * identify the date and time that an in progress on-demand rotation was initiated.
+         * You can use <a>ListKeyRotations</a> to view the details of completed
+         * rotations.</p>  <p>In May 2022, KMS changed the rotation schedule for
+         * Amazon Web Services managed keys from every three years to every year. For
          * details, see <a>EnableKeyRotation</a>.</p>  <p>The KMS key that you use
          * for this operation must be in a compatible key state. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -1974,8 +2074,9 @@ namespace KMS
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyRotationStatus</a>
          * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
          * <a>DisableKeyRotation</a> </p> </li> <li> <p> <a>EnableKeyRotation</a> </p>
-         * </li> </ul> <p> <b>Eventual consistency</b>: The KMS API follows an eventual
-         * consistency model. For more information, see <a
+         * </li> <li> <p> <a>ListKeyRotations</a> </p> </li> <li> <p>
+         * <a>RotateKeyOnDemand</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The
+         * KMS API follows an eventual consistency model. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
          * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">AWS
@@ -2102,7 +2203,8 @@ namespace KMS
          * The type of key material in the public key, such as <code>RSA_4096</code> or
          * <code>ECC_NIST_P521</code>.</p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-KeyUsage">KeyUsage</a>:
-         * Whether the key is used for encryption or signing.</p> </li> <li> <p> <a
+         * Whether the key is used for encryption, signing, or deriving a shared
+         * secret.</p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-EncryptionAlgorithms">EncryptionAlgorithms</a>
          * or <a
          * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-SigningAlgorithms">SigningAlgorithms</a>:
@@ -2172,13 +2274,11 @@ namespace KMS
          * the same key material</a> into that KMS key, but you cannot import different key
          * material. You might reimport key material to replace key material that expired
          * or key material that you deleted. You might also reimport key material to change
-         * the expiration model or expiration date of the key material. Before reimporting
-         * key material, if necessary, call <a>DeleteImportedKeyMaterial</a> to delete the
-         * current imported key material. </p> <p>Each time you import key material into
-         * KMS, you can determine whether (<code>ExpirationModel</code>) and when
-         * (<code>ValidTo</code>) the key material expires. To change the expiration of
-         * your key material, you must import it again, either by calling
-         * <code>ImportKeyMaterial</code> or using the <a
+         * the expiration model or expiration date of the key material. </p> <p>Each time
+         * you import key material into KMS, you can determine whether
+         * (<code>ExpirationModel</code>) and when (<code>ValidTo</code>) the key material
+         * expires. To change the expiration of your key material, you must import it
+         * again, either by calling <code>ImportKeyMaterial</code> or using the <a
          * href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
          * features</a> of the KMS console.</p> <p>Before calling
          * <code>ImportKeyMaterial</code>:</p> <ul> <li> <p>Create or identify a KMS key
@@ -2302,13 +2402,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
+        virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAliases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAliasesRequestT = Model::ListAliasesRequest>
-        Model::ListAliasesOutcomeCallable ListAliasesCallable(const ListAliasesRequestT& request) const
+        Model::ListAliasesOutcomeCallable ListAliasesCallable(const ListAliasesRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::ListAliases, request);
         }
@@ -2317,7 +2417,7 @@ namespace KMS
          * An Async wrapper for ListAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAliasesRequestT = Model::ListAliasesRequest>
-        void ListAliasesAsync(const ListAliasesRequestT& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAliasesAsync(const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAliasesRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::ListAliases, request, handler, context);
         }
@@ -2411,6 +2511,46 @@ namespace KMS
         }
 
         /**
+         * <p>Returns information about all completed key material rotations for the
+         * specified KMS key.</p> <p>You must specify the KMS key in all requests. You can
+         * refine the key rotations list by limiting the number of rotations returned.</p>
+         * <p>For detailed information about automatic and on-demand key rotations, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Rotating
+         * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>
+         * <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in
+         * a different Amazon Web Services account.</p> <p> <b>Required permissions</b>: <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeyRotations</a>
+         * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+         * <a>EnableKeyRotation</a> </p> </li> <li> <p> <a>DisableKeyRotation</a> </p>
+         * </li> <li> <p> <a>GetKeyRotationStatus</a> </p> </li> <li> <p>
+         * <a>RotateKeyOnDemand</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The
+         * KMS API follows an eventual consistency model. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+         * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyRotations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKeyRotationsOutcome ListKeyRotations(const Model::ListKeyRotationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListKeyRotations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKeyRotationsRequestT = Model::ListKeyRotationsRequest>
+        Model::ListKeyRotationsOutcomeCallable ListKeyRotationsCallable(const ListKeyRotationsRequestT& request) const
+        {
+            return SubmitCallable(&KMSClient::ListKeyRotations, request);
+        }
+
+        /**
+         * An Async wrapper for ListKeyRotations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKeyRotationsRequestT = Model::ListKeyRotationsRequest>
+        void ListKeyRotationsAsync(const ListKeyRotationsRequestT& request, const ListKeyRotationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KMSClient::ListKeyRotations, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of all KMS keys in the caller's Amazon Web Services account and
          * Region.</p> <p> <b>Cross-account use</b>: No. You cannot perform this operation
          * on a KMS key in a different Amazon Web Services account.</p> <p> <b>Required
@@ -2426,13 +2566,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request) const;
+        virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKeys that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKeysRequestT = Model::ListKeysRequest>
-        Model::ListKeysOutcomeCallable ListKeysCallable(const ListKeysRequestT& request) const
+        Model::ListKeysOutcomeCallable ListKeysCallable(const ListKeysRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::ListKeys, request);
         }
@@ -2441,7 +2581,7 @@ namespace KMS
          * An Async wrapper for ListKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKeysRequestT = Model::ListKeysRequest>
-        void ListKeysAsync(const ListKeysRequestT& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKeysAsync(const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKeysRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::ListKeys, request, handler, context);
         }
@@ -2826,13 +2966,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">AWS API
          * Reference</a></p>
          */
-        virtual Model::RetireGrantOutcome RetireGrant(const Model::RetireGrantRequest& request) const;
+        virtual Model::RetireGrantOutcome RetireGrant(const Model::RetireGrantRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RetireGrant that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RetireGrantRequestT = Model::RetireGrantRequest>
-        Model::RetireGrantOutcomeCallable RetireGrantCallable(const RetireGrantRequestT& request) const
+        Model::RetireGrantOutcomeCallable RetireGrantCallable(const RetireGrantRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::RetireGrant, request);
         }
@@ -2841,7 +2981,7 @@ namespace KMS
          * An Async wrapper for RetireGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RetireGrantRequestT = Model::RetireGrantRequest>
-        void RetireGrantAsync(const RetireGrantRequestT& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RetireGrantAsync(const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RetireGrantRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::RetireGrant, request, handler, context);
         }
@@ -2849,7 +2989,7 @@ namespace KMS
         /**
          * <p>Deletes the specified grant. You revoke a grant to terminate the permissions
          * that the grant allows. For more information, see <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
          * and revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i>
          * </i>.</p> <p>When you create, retire, or revoke a grant, there might be a brief
          * delay, usually less than five minutes, until the grant is available throughout
@@ -2895,6 +3035,82 @@ namespace KMS
         void RevokeGrantAsync(const RevokeGrantRequestT& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KMSClient::RevokeGrant, request, handler, context);
+        }
+
+        /**
+         * <p>Immediately initiates rotation of the key material of the specified symmetric
+         * encryption KMS key.</p> <p>You can perform <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-on-demand">on-demand
+         * rotation</a> of the key material in customer managed KMS keys, regardless of
+         * whether or not <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic
+         * key rotation</a> is enabled. On-demand rotations do not change existing
+         * automatic rotation schedules. For example, consider a KMS key that has automatic
+         * key rotation enabled with a rotation period of 730 days. If the key is scheduled
+         * to automatically rotate on April 14, 2024, and you perform an on-demand rotation
+         * on April 10, 2024, the key will automatically rotate, as scheduled, on April 14,
+         * 2024 and every 730 days thereafter.</p>  <p>You can perform on-demand key
+         * rotation a <b>maximum of 10 times</b> per KMS key. You can use the KMS console
+         * to view the number of remaining on-demand rotations available for a KMS key.</p>
+         *  <p>You can use <a>GetKeyRotationStatus</a> to identify any in progress
+         * on-demand rotations. You can use <a>ListKeyRotations</a> to identify the date
+         * that completed on-demand rotations were performed. You can monitor rotation of
+         * the key material for your KMS keys in CloudTrail and Amazon CloudWatch.</p>
+         * <p>On-demand key rotation is supported only on <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+         * encryption KMS keys</a>. You cannot perform on-demand rotation of <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+         * KMS keys</a>, <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS
+         * keys</a>, KMS keys with <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
+         * key material</a>, or KMS keys in a <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store</a>. To perform on-demand rotation of a set of related <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+         * keys</a>, invoke the on-demand rotation on the primary key.</p> <p>You cannot
+         * initiate on-demand rotation of <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon
+         * Web Services managed keys every year. Rotation of <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+         * Web Services owned KMS keys</a> is managed by the Amazon Web Services service
+         * that owns the key.</p> <p>The KMS key that you use for this operation must be in
+         * a compatible key state. For details, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+         * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+         * <p> <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key
+         * in a different Amazon Web Services account.</p> <p> <b>Required permissions</b>:
+         * <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:RotateKeyOnDemand</a>
+         * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+         * <a>EnableKeyRotation</a> </p> </li> <li> <p> <a>DisableKeyRotation</a> </p>
+         * </li> <li> <p> <a>GetKeyRotationStatus</a> </p> </li> <li> <p>
+         * <a>ListKeyRotations</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The
+         * KMS API follows an eventual consistency model. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+         * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RotateKeyOnDemand">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RotateKeyOnDemandOutcome RotateKeyOnDemand(const Model::RotateKeyOnDemandRequest& request) const;
+
+        /**
+         * A Callable wrapper for RotateKeyOnDemand that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RotateKeyOnDemandRequestT = Model::RotateKeyOnDemandRequest>
+        Model::RotateKeyOnDemandOutcomeCallable RotateKeyOnDemandCallable(const RotateKeyOnDemandRequestT& request) const
+        {
+            return SubmitCallable(&KMSClient::RotateKeyOnDemand, request);
+        }
+
+        /**
+         * An Async wrapper for RotateKeyOnDemand that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RotateKeyOnDemandRequestT = Model::RotateKeyOnDemandRequest>
+        void RotateKeyOnDemandAsync(const RotateKeyOnDemandRequestT& request, const RotateKeyOnDemandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KMSClient::RotateKeyOnDemand, request, handler, context);
         }
 
         /**
@@ -3583,7 +3799,6 @@ namespace KMS
       void init(const KMSClientConfiguration& clientConfiguration);
 
       KMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KMSEndpointProviderBase> m_endpointProvider;
   };
 

@@ -39,77 +39,31 @@ namespace Model
     AWS_MACHINELEARNING_API UpdateEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
      * should be identical to the value of the <code>Evaluation</code> in the
      * request.</p>
      */
     inline const Aws::String& GetEvaluationId() const{ return m_evaluationId; }
-
-    /**
-     * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
-     * should be identical to the value of the <code>Evaluation</code> in the
-     * request.</p>
-     */
     inline void SetEvaluationId(const Aws::String& value) { m_evaluationId = value; }
-
-    /**
-     * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
-     * should be identical to the value of the <code>Evaluation</code> in the
-     * request.</p>
-     */
     inline void SetEvaluationId(Aws::String&& value) { m_evaluationId = std::move(value); }
-
-    /**
-     * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
-     * should be identical to the value of the <code>Evaluation</code> in the
-     * request.</p>
-     */
     inline void SetEvaluationId(const char* value) { m_evaluationId.assign(value); }
-
-    /**
-     * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
-     * should be identical to the value of the <code>Evaluation</code> in the
-     * request.</p>
-     */
     inline UpdateEvaluationResult& WithEvaluationId(const Aws::String& value) { SetEvaluationId(value); return *this;}
-
-    /**
-     * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
-     * should be identical to the value of the <code>Evaluation</code> in the
-     * request.</p>
-     */
     inline UpdateEvaluationResult& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID assigned to the <code>Evaluation</code> during creation. This value
-     * should be identical to the value of the <code>Evaluation</code> in the
-     * request.</p>
-     */
     inline UpdateEvaluationResult& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateEvaluationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateEvaluationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateEvaluationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_evaluationId;

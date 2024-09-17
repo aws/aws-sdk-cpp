@@ -32,95 +32,34 @@ namespace Model
     AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID of the detector associated with the publishing destination to
      * delete.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-
-    /**
-     * <p>The unique ID of the detector associated with the publishing destination to
-     * delete.</p>
-     */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the detector associated with the publishing destination to
-     * delete.</p>
-     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-
-    /**
-     * <p>The unique ID of the detector associated with the publishing destination to
-     * delete.</p>
-     */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the detector associated with the publishing destination to
-     * delete.</p>
-     */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-
-    /**
-     * <p>The unique ID of the detector associated with the publishing destination to
-     * delete.</p>
-     */
     inline DeletePublishingDestinationRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the detector associated with the publishing destination to
-     * delete.</p>
-     */
     inline DeletePublishingDestinationRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the detector associated with the publishing destination to
-     * delete.</p>
-     */
     inline DeletePublishingDestinationRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the publishing destination to delete.</p>
      */
     inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
-
-    /**
-     * <p>The ID of the publishing destination to delete.</p>
-     */
     inline bool DestinationIdHasBeenSet() const { return m_destinationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the publishing destination to delete.</p>
-     */
     inline void SetDestinationId(const Aws::String& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
-
-    /**
-     * <p>The ID of the publishing destination to delete.</p>
-     */
     inline void SetDestinationId(Aws::String&& value) { m_destinationIdHasBeenSet = true; m_destinationId = std::move(value); }
-
-    /**
-     * <p>The ID of the publishing destination to delete.</p>
-     */
     inline void SetDestinationId(const char* value) { m_destinationIdHasBeenSet = true; m_destinationId.assign(value); }
-
-    /**
-     * <p>The ID of the publishing destination to delete.</p>
-     */
     inline DeletePublishingDestinationRequest& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
-
-    /**
-     * <p>The ID of the publishing destination to delete.</p>
-     */
     inline DeletePublishingDestinationRequest& WithDestinationId(Aws::String&& value) { SetDestinationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the publishing destination to delete.</p>
-     */
     inline DeletePublishingDestinationRequest& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detectorId;

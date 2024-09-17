@@ -28,13 +28,8 @@ ServiceQuotaExceededException::ServiceQuotaExceededException() :
 {
 }
 
-ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
+  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DisableHttpEndpointResult::DisableHttpEndpointResult() :
 {
 }
 
-DisableHttpEndpointResult::DisableHttpEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_httpEndpointEnabled(false)
+DisableHttpEndpointResult::DisableHttpEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableHttpEndpointResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ ClusterOperationStepInfo::ClusterOperationStepInfo() :
 {
 }
 
-ClusterOperationStepInfo::ClusterOperationStepInfo(JsonView jsonValue) : 
-    m_stepStatusHasBeenSet(false)
+ClusterOperationStepInfo::ClusterOperationStepInfo(JsonView jsonValue)
+  : ClusterOperationStepInfo()
 {
   *this = jsonValue;
 }

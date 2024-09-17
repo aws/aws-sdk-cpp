@@ -245,9 +245,20 @@ bool WinINetSyncHttpClient::DoSendRequest(void* hHttpRequest) const
     return (HttpSendRequestEx(hHttpRequest, NULL, NULL, 0, 0) != 0);
 }
 
+bool WinINetSyncHttpClient::DoQueryDataAvailable(void* hHttpRequest, uint64_t& available) const
+{
+    return (InternetQueryDataAvailable(hHttpRequest, (LPDWORD)&available, /*reserved*/ 0, /*reserved*/ 0) != 0);
+}
+
 bool WinINetSyncHttpClient::DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const
 {
     return (InternetReadFile(hHttpRequest, body, (DWORD)size, (LPDWORD)&read) != 0);
+}
+
+const char* WinINetSyncHttpClient::GetActualHttpVersionUsed(void* hHttpRequest) const
+{
+    AWS_UNREFERENCED_PARAM(hHttpRequest);
+    return "Unknown";
 }
 
 void* WinINetSyncHttpClient::GetClientModule() const

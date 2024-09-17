@@ -47,32 +47,8 @@ LoadBalancer::LoadBalancer() :
 {
 }
 
-LoadBalancer::LoadBalancer(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_state(LoadBalancerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_protocol(LoadBalancerProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_publicPortsHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_instanceHealthSummaryHasBeenSet(false),
-    m_tlsCertificateSummariesHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_httpsRedirectionEnabled(false),
-    m_httpsRedirectionEnabledHasBeenSet(false),
-    m_tlsPolicyNameHasBeenSet(false)
+LoadBalancer::LoadBalancer(JsonView jsonValue)
+  : LoadBalancer()
 {
   *this = jsonValue;
 }

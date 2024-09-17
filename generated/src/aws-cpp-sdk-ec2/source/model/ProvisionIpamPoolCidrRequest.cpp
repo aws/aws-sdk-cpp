@@ -19,7 +19,10 @@ ProvisionIpamPoolCidrRequest::ProvisionIpamPoolCidrRequest() :
     m_netmaskLength(0),
     m_netmaskLengthHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_verificationMethod(VerificationMethod::NOT_SET),
+    m_verificationMethodHasBeenSet(false),
+    m_ipamExternalResourceVerificationTokenIdHasBeenSet(false)
 {
 }
 
@@ -55,6 +58,16 @@ Aws::String ProvisionIpamPoolCidrRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_verificationMethodHasBeenSet)
+  {
+    ss << "VerificationMethod=" << VerificationMethodMapper::GetNameForVerificationMethod(m_verificationMethod) << "&";
+  }
+
+  if(m_ipamExternalResourceVerificationTokenIdHasBeenSet)
+  {
+    ss << "IpamExternalResourceVerificationTokenId=" << StringUtils::URLEncode(m_ipamExternalResourceVerificationTokenId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

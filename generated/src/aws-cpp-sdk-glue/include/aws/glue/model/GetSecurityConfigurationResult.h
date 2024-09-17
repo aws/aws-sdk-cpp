@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API GetSecurityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested security configuration.</p>
      */
     inline const SecurityConfiguration& GetSecurityConfiguration() const{ return m_securityConfiguration; }
-
-    /**
-     * <p>The requested security configuration.</p>
-     */
     inline void SetSecurityConfiguration(const SecurityConfiguration& value) { m_securityConfiguration = value; }
-
-    /**
-     * <p>The requested security configuration.</p>
-     */
     inline void SetSecurityConfiguration(SecurityConfiguration&& value) { m_securityConfiguration = std::move(value); }
-
-    /**
-     * <p>The requested security configuration.</p>
-     */
     inline GetSecurityConfigurationResult& WithSecurityConfiguration(const SecurityConfiguration& value) { SetSecurityConfiguration(value); return *this;}
-
-    /**
-     * <p>The requested security configuration.</p>
-     */
     inline GetSecurityConfigurationResult& WithSecurityConfiguration(SecurityConfiguration&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSecurityConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSecurityConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSecurityConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SecurityConfiguration m_securityConfiguration;

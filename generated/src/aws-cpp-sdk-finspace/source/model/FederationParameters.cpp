@@ -28,13 +28,8 @@ FederationParameters::FederationParameters() :
 {
 }
 
-FederationParameters::FederationParameters(JsonView jsonValue) : 
-    m_samlMetadataDocumentHasBeenSet(false),
-    m_samlMetadataURLHasBeenSet(false),
-    m_applicationCallBackURLHasBeenSet(false),
-    m_federationURNHasBeenSet(false),
-    m_federationProviderNameHasBeenSet(false),
-    m_attributeMapHasBeenSet(false)
+FederationParameters::FederationParameters(JsonView jsonValue)
+  : FederationParameters()
 {
   *this = jsonValue;
 }

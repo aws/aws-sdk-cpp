@@ -22,8 +22,8 @@ StartModelResult::StartModelResult() :
 {
 }
 
-StartModelResult::StartModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelHostingStatus::NOT_SET)
+StartModelResult::StartModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartModelResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ HttpGatewayRouteRewrite::HttpGatewayRouteRewrite() :
 {
 }
 
-HttpGatewayRouteRewrite::HttpGatewayRouteRewrite(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+HttpGatewayRouteRewrite::HttpGatewayRouteRewrite(JsonView jsonValue)
+  : HttpGatewayRouteRewrite()
 {
   *this = jsonValue;
 }

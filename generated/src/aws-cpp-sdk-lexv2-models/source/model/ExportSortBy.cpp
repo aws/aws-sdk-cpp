@@ -26,11 +26,8 @@ ExportSortBy::ExportSortBy() :
 {
 }
 
-ExportSortBy::ExportSortBy(JsonView jsonValue) : 
-    m_attribute(ExportSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+ExportSortBy::ExportSortBy(JsonView jsonValue)
+  : ExportSortBy()
 {
   *this = jsonValue;
 }

@@ -16,7 +16,7 @@ namespace Aws
 namespace WorkSpacesThinClient
 {
   /**
-   * <p>Amazon WorkSpaces Thin Client is a affordable device built to work with
+   * <p>Amazon WorkSpaces Thin Client is an affordable device built to work with
    * Amazon Web Services End User Computing (EUC) virtual desktops to provide users
    * with a complete cloud desktop solution. WorkSpaces Thin Client is a compact
    * device designed to connect up to two monitors and USB devices like a keyboard,
@@ -273,13 +273,13 @@ namespace WorkSpacesThinClient
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/ListDevices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
+        virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDevicesRequestT = Model::ListDevicesRequest>
-        Model::ListDevicesOutcomeCallable ListDevicesCallable(const ListDevicesRequestT& request) const
+        Model::ListDevicesOutcomeCallable ListDevicesCallable(const ListDevicesRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesThinClientClient::ListDevices, request);
         }
@@ -288,7 +288,7 @@ namespace WorkSpacesThinClient
          * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDevicesRequestT = Model::ListDevicesRequest>
-        void ListDevicesAsync(const ListDevicesRequestT& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDevicesAsync(const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDevicesRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesThinClientClient::ListDevices, request, handler, context);
         }
@@ -298,13 +298,13 @@ namespace WorkSpacesThinClient
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/ListEnvironments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
+        virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEnvironmentsRequestT = Model::ListEnvironmentsRequest>
-        Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const ListEnvironmentsRequestT& request) const
+        Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const ListEnvironmentsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesThinClientClient::ListEnvironments, request);
         }
@@ -313,7 +313,7 @@ namespace WorkSpacesThinClient
          * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEnvironmentsRequestT = Model::ListEnvironmentsRequest>
-        void ListEnvironmentsAsync(const ListEnvironmentsRequestT& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEnvironmentsAsync(const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEnvironmentsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesThinClientClient::ListEnvironments, request, handler, context);
         }
@@ -323,13 +323,13 @@ namespace WorkSpacesThinClient
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/ListSoftwareSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSoftwareSetsOutcome ListSoftwareSets(const Model::ListSoftwareSetsRequest& request) const;
+        virtual Model::ListSoftwareSetsOutcome ListSoftwareSets(const Model::ListSoftwareSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSoftwareSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSoftwareSetsRequestT = Model::ListSoftwareSetsRequest>
-        Model::ListSoftwareSetsOutcomeCallable ListSoftwareSetsCallable(const ListSoftwareSetsRequestT& request) const
+        Model::ListSoftwareSetsOutcomeCallable ListSoftwareSetsCallable(const ListSoftwareSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesThinClientClient::ListSoftwareSets, request);
         }
@@ -338,7 +338,7 @@ namespace WorkSpacesThinClient
          * An Async wrapper for ListSoftwareSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSoftwareSetsRequestT = Model::ListSoftwareSetsRequest>
-        void ListSoftwareSetsAsync(const ListSoftwareSetsRequestT& request, const ListSoftwareSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSoftwareSetsAsync(const ListSoftwareSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSoftwareSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesThinClientClient::ListSoftwareSets, request, handler, context);
         }
@@ -502,7 +502,6 @@ namespace WorkSpacesThinClient
       void init(const WorkSpacesThinClientClientConfiguration& clientConfiguration);
 
       WorkSpacesThinClientClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> m_endpointProvider;
   };
 

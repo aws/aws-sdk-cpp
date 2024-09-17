@@ -34,19 +34,8 @@ ApiDestination::ApiDestination() :
 {
 }
 
-ApiDestination::ApiDestination(JsonView jsonValue) : 
-    m_apiDestinationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_apiDestinationState(ApiDestinationState::NOT_SET),
-    m_apiDestinationStateHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_invocationEndpointHasBeenSet(false),
-    m_httpMethod(ApiDestinationHttpMethod::NOT_SET),
-    m_httpMethodHasBeenSet(false),
-    m_invocationRateLimitPerSecond(0),
-    m_invocationRateLimitPerSecondHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ApiDestination::ApiDestination(JsonView jsonValue)
+  : ApiDestination()
 {
   *this = jsonValue;
 }

@@ -36,97 +36,47 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Height of rectangle in pixels. Specify only even numbers.
      */
     inline int GetHeight() const{ return m_height; }
-
-    /**
-     * Height of rectangle in pixels. Specify only even numbers.
-     */
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
-
-    /**
-     * Height of rectangle in pixels. Specify only even numbers.
-     */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
-
-    /**
-     * Height of rectangle in pixels. Specify only even numbers.
-     */
     inline Rectangle& WithHeight(int value) { SetHeight(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Width of rectangle in pixels. Specify only even numbers.
      */
     inline int GetWidth() const{ return m_width; }
-
-    /**
-     * Width of rectangle in pixels. Specify only even numbers.
-     */
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
-
-    /**
-     * Width of rectangle in pixels. Specify only even numbers.
-     */
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
-
-    /**
-     * Width of rectangle in pixels. Specify only even numbers.
-     */
     inline Rectangle& WithWidth(int value) { SetWidth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The distance, in pixels, between the rectangle and the left edge of the video
      * frame. Specify only even numbers.
      */
     inline int GetX() const{ return m_x; }
-
-    /**
-     * The distance, in pixels, between the rectangle and the left edge of the video
-     * frame. Specify only even numbers.
-     */
     inline bool XHasBeenSet() const { return m_xHasBeenSet; }
-
-    /**
-     * The distance, in pixels, between the rectangle and the left edge of the video
-     * frame. Specify only even numbers.
-     */
     inline void SetX(int value) { m_xHasBeenSet = true; m_x = value; }
-
-    /**
-     * The distance, in pixels, between the rectangle and the left edge of the video
-     * frame. Specify only even numbers.
-     */
     inline Rectangle& WithX(int value) { SetX(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The distance, in pixels, between the rectangle and the top edge of the video
      * frame. Specify only even numbers.
      */
     inline int GetY() const{ return m_y; }
-
-    /**
-     * The distance, in pixels, between the rectangle and the top edge of the video
-     * frame. Specify only even numbers.
-     */
     inline bool YHasBeenSet() const { return m_yHasBeenSet; }
-
-    /**
-     * The distance, in pixels, between the rectangle and the top edge of the video
-     * frame. Specify only even numbers.
-     */
     inline void SetY(int value) { m_yHasBeenSet = true; m_y = value; }
-
-    /**
-     * The distance, in pixels, between the rectangle and the top edge of the video
-     * frame. Specify only even numbers.
-     */
     inline Rectangle& WithY(int value) { SetY(value); return *this;}
-
+    ///@}
   private:
 
     int m_height;

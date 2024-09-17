@@ -22,15 +22,13 @@ RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienc
     m_dashboardHasBeenSet(false),
     m_quickSightConsoleHasBeenSet(false),
     m_qSearchBarHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false)
+    m_dashboardVisualHasBeenSet(false),
+    m_generativeQnAHasBeenSet(false)
 {
 }
 
-RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration(JsonView jsonValue) : 
-    m_dashboardHasBeenSet(false),
-    m_quickSightConsoleHasBeenSet(false),
-    m_qSearchBarHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false)
+RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration(JsonView jsonValue)
+  : RegisteredUserEmbeddingExperienceConfiguration()
 {
   *this = jsonValue;
 }
@@ -65,6 +63,13 @@ RegisteredUserEmbeddingExperienceConfiguration& RegisteredUserEmbeddingExperienc
     m_dashboardVisualHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GenerativeQnA"))
+  {
+    m_generativeQnA = jsonValue.GetObject("GenerativeQnA");
+
+    m_generativeQnAHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +98,12 @@ JsonValue RegisteredUserEmbeddingExperienceConfiguration::Jsonize() const
   if(m_dashboardVisualHasBeenSet)
   {
    payload.WithObject("DashboardVisual", m_dashboardVisual.Jsonize());
+
+  }
+
+  if(m_generativeQnAHasBeenSet)
+  {
+   payload.WithObject("GenerativeQnA", m_generativeQnA.Jsonize());
 
   }
 

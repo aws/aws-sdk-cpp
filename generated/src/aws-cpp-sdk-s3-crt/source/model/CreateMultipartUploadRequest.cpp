@@ -6,6 +6,7 @@
 #include <aws/s3-crt/model/CreateMultipartUploadRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -59,6 +60,25 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
 {
 }
 
+bool CreateMultipartUploadRequest::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  AWS_UNREFERENCED_PARAM(header);
+
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+  return false;
+}
+
 Aws::String CreateMultipartUploadRequest::SerializePayload() const
 {
   return {};
@@ -90,7 +110,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_aCLHasBeenSet)
+  if(m_aCLHasBeenSet && m_aCL != ObjectCannedACL::NOT_SET)
   {
     headers.emplace("x-amz-acl", ObjectCannedACLMapper::GetNameForObjectCannedACL(m_aCL));
   }
@@ -173,12 +193,12 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     }
   }
 
-  if(m_serverSideEncryptionHasBeenSet)
+  if(m_serverSideEncryptionHasBeenSet && m_serverSideEncryption != ServerSideEncryption::NOT_SET)
   {
     headers.emplace("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
   }
 
-  if(m_storageClassHasBeenSet)
+  if(m_storageClassHasBeenSet && m_storageClass != StorageClass::NOT_SET)
   {
     headers.emplace("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass));
   }
@@ -232,7 +252,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     ss.str("");
   }
 
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
@@ -244,7 +264,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     ss.str("");
   }
 
-  if(m_objectLockModeHasBeenSet)
+  if(m_objectLockModeHasBeenSet && m_objectLockMode != ObjectLockMode::NOT_SET)
   {
     headers.emplace("x-amz-object-lock-mode", ObjectLockModeMapper::GetNameForObjectLockMode(m_objectLockMode));
   }
@@ -254,7 +274,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_objectLockLegalHoldStatusHasBeenSet)
+  if(m_objectLockLegalHoldStatusHasBeenSet && m_objectLockLegalHoldStatus != ObjectLockLegalHoldStatus::NOT_SET)
   {
     headers.emplace("x-amz-object-lock-legal-hold", ObjectLockLegalHoldStatusMapper::GetNameForObjectLockLegalHoldStatus(m_objectLockLegalHoldStatus));
   }
@@ -266,7 +286,7 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet)
+  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
   {
     headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }

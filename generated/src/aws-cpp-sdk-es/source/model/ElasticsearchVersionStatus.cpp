@@ -24,9 +24,8 @@ ElasticsearchVersionStatus::ElasticsearchVersionStatus() :
 {
 }
 
-ElasticsearchVersionStatus::ElasticsearchVersionStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ElasticsearchVersionStatus::ElasticsearchVersionStatus(JsonView jsonValue)
+  : ElasticsearchVersionStatus()
 {
   *this = jsonValue;
 }

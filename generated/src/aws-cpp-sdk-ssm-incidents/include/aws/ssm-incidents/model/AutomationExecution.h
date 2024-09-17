@@ -38,46 +38,19 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the automation process.</p>
      */
     inline const Aws::String& GetSsmExecutionArn() const{ return m_ssmExecutionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the automation process.</p>
-     */
     inline bool SsmExecutionArnHasBeenSet() const { return m_ssmExecutionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the automation process.</p>
-     */
     inline void SetSsmExecutionArn(const Aws::String& value) { m_ssmExecutionArnHasBeenSet = true; m_ssmExecutionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the automation process.</p>
-     */
     inline void SetSsmExecutionArn(Aws::String&& value) { m_ssmExecutionArnHasBeenSet = true; m_ssmExecutionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the automation process.</p>
-     */
     inline void SetSsmExecutionArn(const char* value) { m_ssmExecutionArnHasBeenSet = true; m_ssmExecutionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the automation process.</p>
-     */
     inline AutomationExecution& WithSsmExecutionArn(const Aws::String& value) { SetSsmExecutionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the automation process.</p>
-     */
     inline AutomationExecution& WithSsmExecutionArn(Aws::String&& value) { SetSsmExecutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the automation process.</p>
-     */
     inline AutomationExecution& WithSsmExecutionArn(const char* value) { SetSsmExecutionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ssmExecutionArn;

@@ -23,8 +23,8 @@ HttpConfiguration::HttpConfiguration() :
 {
 }
 
-HttpConfiguration::HttpConfiguration(JsonView jsonValue) : 
-    m_baseUrlHasBeenSet(false)
+HttpConfiguration::HttpConfiguration(JsonView jsonValue)
+  : HttpConfiguration()
 {
   *this = jsonValue;
 }

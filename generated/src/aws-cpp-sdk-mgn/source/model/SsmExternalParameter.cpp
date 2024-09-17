@@ -23,8 +23,8 @@ SsmExternalParameter::SsmExternalParameter() :
 {
 }
 
-SsmExternalParameter::SsmExternalParameter(JsonView jsonValue) : 
-    m_dynamicPathHasBeenSet(false)
+SsmExternalParameter::SsmExternalParameter(JsonView jsonValue)
+  : SsmExternalParameter()
 {
   *this = jsonValue;
 }

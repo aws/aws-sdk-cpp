@@ -24,9 +24,8 @@ SecondaryValueOptions::SecondaryValueOptions() :
 {
 }
 
-SecondaryValueOptions::SecondaryValueOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+SecondaryValueOptions::SecondaryValueOptions(JsonView jsonValue)
+  : SecondaryValueOptions()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SystemEvent::SystemEvent() :
 {
 }
 
-SystemEvent::SystemEvent(JsonView jsonValue) : 
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_stateChangeConfigurationHasBeenSet(false)
+SystemEvent::SystemEvent(JsonView jsonValue)
+  : SystemEvent()
 {
   *this = jsonValue;
 }

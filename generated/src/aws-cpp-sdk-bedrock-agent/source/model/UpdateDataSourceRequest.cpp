@@ -13,11 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateDataSourceRequest::UpdateDataSourceRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_dataDeletionPolicy(DataDeletionPolicy::NOT_SET),
+    m_dataDeletionPolicyHasBeenSet(false),
     m_dataSourceConfigurationHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_vectorIngestionConfigurationHasBeenSet(false)
 {
@@ -27,9 +29,14 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
+  if(m_dataDeletionPolicyHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("dataDeletionPolicy", DataDeletionPolicyMapper::GetNameForDataDeletionPolicy(m_dataDeletionPolicy));
+  }
+
+  if(m_dataSourceConfigurationHasBeenSet)
+  {
+   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
 
   }
 
@@ -39,9 +46,9 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
 
   }
 
-  if(m_dataSourceConfigurationHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
+   payload.WithString("name", m_name);
 
   }
 

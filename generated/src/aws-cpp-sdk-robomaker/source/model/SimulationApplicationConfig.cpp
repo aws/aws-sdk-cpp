@@ -28,13 +28,8 @@ SimulationApplicationConfig::SimulationApplicationConfig() :
 {
 }
 
-SimulationApplicationConfig::SimulationApplicationConfig(JsonView jsonValue) : 
-    m_applicationHasBeenSet(false),
-    m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false),
-    m_uploadConfigurationsHasBeenSet(false),
-    m_worldConfigsHasBeenSet(false),
-    m_toolsHasBeenSet(false)
+SimulationApplicationConfig::SimulationApplicationConfig(JsonView jsonValue)
+  : SimulationApplicationConfig()
 {
   *this = jsonValue;
 }

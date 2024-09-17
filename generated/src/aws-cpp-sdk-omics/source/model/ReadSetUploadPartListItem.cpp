@@ -31,16 +31,8 @@ ReadSetUploadPartListItem::ReadSetUploadPartListItem() :
 {
 }
 
-ReadSetUploadPartListItem::ReadSetUploadPartListItem(JsonView jsonValue) : 
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_partSize(0),
-    m_partSizeHasBeenSet(false),
-    m_partSource(ReadSetPartSource::NOT_SET),
-    m_partSourceHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+ReadSetUploadPartListItem::ReadSetUploadPartListItem(JsonView jsonValue)
+  : ReadSetUploadPartListItem()
 {
   *this = jsonValue;
 }

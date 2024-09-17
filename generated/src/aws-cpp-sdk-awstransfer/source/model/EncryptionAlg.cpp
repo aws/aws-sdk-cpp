@@ -23,6 +23,7 @@ namespace Aws
         static const int AES128_CBC_HASH = HashingUtils::HashString("AES128_CBC");
         static const int AES192_CBC_HASH = HashingUtils::HashString("AES192_CBC");
         static const int AES256_CBC_HASH = HashingUtils::HashString("AES256_CBC");
+        static const int DES_EDE3_CBC_HASH = HashingUtils::HashString("DES_EDE3_CBC");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           else if (hashCode == AES256_CBC_HASH)
           {
             return EncryptionAlg::AES256_CBC;
+          }
+          else if (hashCode == DES_EDE3_CBC_HASH)
+          {
+            return EncryptionAlg::DES_EDE3_CBC;
           }
           else if (hashCode == NONE_HASH)
           {
@@ -67,6 +72,8 @@ namespace Aws
             return "AES192_CBC";
           case EncryptionAlg::AES256_CBC:
             return "AES256_CBC";
+          case EncryptionAlg::DES_EDE3_CBC:
+            return "DES_EDE3_CBC";
           case EncryptionAlg::NONE:
             return "NONE";
           default:

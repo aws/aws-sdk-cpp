@@ -34,95 +34,34 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
+     * cluster in which the node is.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-
-    /**
-     * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
-     */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-
-    /**
-     * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
-     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-
-    /**
-     * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
-     */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-
-    /**
-     * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
-     */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-
-    /**
-     * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
-     */
     inline DescribeClusterNodeRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-
-    /**
-     * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
-     */
     inline DescribeClusterNodeRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
-     * cluster in which the instance is.</p>
-     */
     inline DescribeClusterNodeRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the SageMaker HyperPod cluster node.</p>
      */
     inline const Aws::String& GetNodeId() const{ return m_nodeId; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline DescribeClusterNodeRequest& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline DescribeClusterNodeRequest& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline DescribeClusterNodeRequest& WithNodeId(const char* value) { SetNodeId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterName;

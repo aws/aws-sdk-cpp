@@ -23,8 +23,8 @@ ListConnectorsRequestFilters::ListConnectorsRequestFilters() :
 {
 }
 
-ListConnectorsRequestFilters::ListConnectorsRequestFilters(JsonView jsonValue) : 
-    m_connectorIDsHasBeenSet(false)
+ListConnectorsRequestFilters::ListConnectorsRequestFilters(JsonView jsonValue)
+  : ListConnectorsRequestFilters()
 {
   *this = jsonValue;
 }

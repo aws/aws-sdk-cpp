@@ -34,19 +34,8 @@ Result::Result() :
 {
 }
 
-Result::Result(JsonView jsonValue) : 
-    m_resultIdHasBeenSet(false),
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_alternativesHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageIdentificationHasBeenSet(false)
+Result::Result(JsonView jsonValue)
+  : Result()
 {
   *this = jsonValue;
 }

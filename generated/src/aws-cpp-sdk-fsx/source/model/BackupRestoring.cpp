@@ -24,9 +24,8 @@ BackupRestoring::BackupRestoring() :
 {
 }
 
-BackupRestoring::BackupRestoring(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
+BackupRestoring::BackupRestoring(JsonView jsonValue)
+  : BackupRestoring()
 {
   *this = jsonValue;
 }

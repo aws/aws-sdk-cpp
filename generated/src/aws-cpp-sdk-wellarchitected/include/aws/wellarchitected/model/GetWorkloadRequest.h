@@ -35,30 +35,17 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline GetWorkloadRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline GetWorkloadRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline GetWorkloadRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

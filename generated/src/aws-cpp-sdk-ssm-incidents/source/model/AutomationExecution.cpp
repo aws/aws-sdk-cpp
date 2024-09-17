@@ -23,8 +23,8 @@ AutomationExecution::AutomationExecution() :
 {
 }
 
-AutomationExecution::AutomationExecution(JsonView jsonValue) : 
-    m_ssmExecutionArnHasBeenSet(false)
+AutomationExecution::AutomationExecution(JsonView jsonValue)
+  : AutomationExecution()
 {
   *this = jsonValue;
 }

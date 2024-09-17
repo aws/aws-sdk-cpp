@@ -25,10 +25,8 @@ GitConfig::GitConfig() :
 {
 }
 
-GitConfig::GitConfig(JsonView jsonValue) : 
-    m_repositoryUrlHasBeenSet(false),
-    m_branchHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+GitConfig::GitConfig(JsonView jsonValue)
+  : GitConfig()
 {
   *this = jsonValue;
 }

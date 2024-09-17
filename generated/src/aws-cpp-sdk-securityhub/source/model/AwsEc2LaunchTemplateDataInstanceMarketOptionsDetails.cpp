@@ -24,9 +24,8 @@ AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails::AwsEc2LaunchTemplateDataIn
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails(JsonView jsonValue) : 
-    m_marketTypeHasBeenSet(false),
-    m_spotOptionsHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails()
 {
   *this = jsonValue;
 }

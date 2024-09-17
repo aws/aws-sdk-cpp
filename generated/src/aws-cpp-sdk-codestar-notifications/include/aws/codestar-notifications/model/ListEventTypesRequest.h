@@ -34,124 +34,46 @@ namespace Model
     AWS_CODESTARNOTIFICATIONS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The filters to use to return information by service or resource type.</p>
      */
     inline const Aws::Vector<ListEventTypesFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filters to use to return information by service or resource type.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filters to use to return information by service or resource type.</p>
-     */
     inline void SetFilters(const Aws::Vector<ListEventTypesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filters to use to return information by service or resource type.</p>
-     */
     inline void SetFilters(Aws::Vector<ListEventTypesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filters to use to return information by service or resource type.</p>
-     */
     inline ListEventTypesRequest& WithFilters(const Aws::Vector<ListEventTypesFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filters to use to return information by service or resource type.</p>
-     */
     inline ListEventTypesRequest& WithFilters(Aws::Vector<ListEventTypesFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters to use to return information by service or resource type.</p>
-     */
     inline ListEventTypesRequest& AddFilters(const ListEventTypesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters to use to return information by service or resource type.</p>
-     */
     inline ListEventTypesRequest& AddFilters(ListEventTypesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An enumeration token that, when provided in a request, returns the next batch
      * of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline ListEventTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline ListEventTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An enumeration token that, when provided in a request, returns the next batch
-     * of the results.</p>
-     */
     inline ListEventTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A non-negative integer used to limit the number of returned results. The
      * default number is 50. The maximum number of results that can be returned is
      * 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>A non-negative integer used to limit the number of returned results. The
-     * default number is 50. The maximum number of results that can be returned is
-     * 100.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>A non-negative integer used to limit the number of returned results. The
-     * default number is 50. The maximum number of results that can be returned is
-     * 100.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>A non-negative integer used to limit the number of returned results. The
-     * default number is 50. The maximum number of results that can be returned is
-     * 100.</p>
-     */
     inline ListEventTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ListEventTypesFilter> m_filters;

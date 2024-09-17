@@ -37,109 +37,50 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of buckets that allow the general public to have read or
      * write access to the bucket.</p>
      */
     inline long long GetPubliclyAccessible() const{ return m_publiclyAccessible; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have read or
-     * write access to the bucket.</p>
-     */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have read or
-     * write access to the bucket.</p>
-     */
     inline void SetPubliclyAccessible(long long value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have read or
-     * write access to the bucket.</p>
-     */
     inline BucketCountByEffectivePermission& WithPubliclyAccessible(long long value) { SetPubliclyAccessible(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of buckets that allow the general public to have read access
      * to the bucket.</p>
      */
     inline long long GetPubliclyReadable() const{ return m_publiclyReadable; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have read access
-     * to the bucket.</p>
-     */
     inline bool PubliclyReadableHasBeenSet() const { return m_publiclyReadableHasBeenSet; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have read access
-     * to the bucket.</p>
-     */
     inline void SetPubliclyReadable(long long value) { m_publiclyReadableHasBeenSet = true; m_publiclyReadable = value; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have read access
-     * to the bucket.</p>
-     */
     inline BucketCountByEffectivePermission& WithPubliclyReadable(long long value) { SetPubliclyReadable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of buckets that allow the general public to have write
      * access to the bucket.</p>
      */
     inline long long GetPubliclyWritable() const{ return m_publiclyWritable; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have write
-     * access to the bucket.</p>
-     */
     inline bool PubliclyWritableHasBeenSet() const { return m_publiclyWritableHasBeenSet; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have write
-     * access to the bucket.</p>
-     */
     inline void SetPubliclyWritable(long long value) { m_publiclyWritableHasBeenSet = true; m_publiclyWritable = value; }
-
-    /**
-     * <p>The total number of buckets that allow the general public to have write
-     * access to the bucket.</p>
-     */
     inline BucketCountByEffectivePermission& WithPubliclyWritable(long long value) { SetPubliclyWritable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
      * permissions settings for. Macie can't determine whether these buckets are
      * publicly accessible.</p>
      */
     inline long long GetUnknown() const{ return m_unknown; }
-
-    /**
-     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
-     * permissions settings for. Macie can't determine whether these buckets are
-     * publicly accessible.</p>
-     */
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
-
-    /**
-     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
-     * permissions settings for. Macie can't determine whether these buckets are
-     * publicly accessible.</p>
-     */
     inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
-
-    /**
-     * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
-     * permissions settings for. Macie can't determine whether these buckets are
-     * publicly accessible.</p>
-     */
     inline BucketCountByEffectivePermission& WithUnknown(long long value) { SetUnknown(value); return *this;}
-
+    ///@}
   private:
 
     long long m_publiclyAccessible;

@@ -28,13 +28,8 @@ IdentityProviderDetails::IdentityProviderDetails() :
 {
 }
 
-IdentityProviderDetails::IdentityProviderDetails(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_invocationRoleHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_sftpAuthenticationMethods(SftpAuthenticationMethods::NOT_SET),
-    m_sftpAuthenticationMethodsHasBeenSet(false)
+IdentityProviderDetails::IdentityProviderDetails(JsonView jsonValue)
+  : IdentityProviderDetails()
 {
   *this = jsonValue;
 }

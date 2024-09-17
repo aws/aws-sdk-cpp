@@ -27,12 +27,8 @@ ResultByTime::ResultByTime() :
 {
 }
 
-ResultByTime::ResultByTime(JsonView jsonValue) : 
-    m_timePeriodHasBeenSet(false),
-    m_totalHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_estimated(false),
-    m_estimatedHasBeenSet(false)
+ResultByTime::ResultByTime(JsonView jsonValue)
+  : ResultByTime()
 {
   *this = jsonValue;
 }

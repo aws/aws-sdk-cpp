@@ -28,13 +28,8 @@ Position::Position() :
 {
 }
 
-Position::Position(JsonView jsonValue) : 
-    m_line(0),
-    m_lineHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false)
+Position::Position(JsonView jsonValue)
+  : Position()
 {
   *this = jsonValue;
 }

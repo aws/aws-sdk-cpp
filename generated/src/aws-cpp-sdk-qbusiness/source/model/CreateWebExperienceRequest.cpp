@@ -14,14 +14,16 @@ using namespace Aws::Utils;
 
 CreateWebExperienceRequest::CreateWebExperienceRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
+    m_titleHasBeenSet(false),
+    m_subtitleHasBeenSet(false),
+    m_welcomeMessageHasBeenSet(false),
     m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
     m_samplePromptsControlModeHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_welcomeMessageHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true),
+    m_identityProviderConfigurationHasBeenSet(false)
 {
 }
 
@@ -29,9 +31,21 @@ Aws::String CreateWebExperienceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_titleHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("title", m_title);
+
+  }
+
+  if(m_subtitleHasBeenSet)
+  {
+   payload.WithString("subtitle", m_subtitle);
+
+  }
+
+  if(m_welcomeMessageHasBeenSet)
+  {
+   payload.WithString("welcomeMessage", m_welcomeMessage);
 
   }
 
@@ -40,9 +54,9 @@ Aws::String CreateWebExperienceRequest::SerializePayload() const
    payload.WithString("samplePromptsControlMode", WebExperienceSamplePromptsControlModeMapper::GetNameForWebExperienceSamplePromptsControlMode(m_samplePromptsControlMode));
   }
 
-  if(m_subtitleHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   payload.WithString("subtitle", m_subtitle);
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -57,15 +71,15 @@ Aws::String CreateWebExperienceRequest::SerializePayload() const
 
   }
 
-  if(m_titleHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("title", m_title);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
-  if(m_welcomeMessageHasBeenSet)
+  if(m_identityProviderConfigurationHasBeenSet)
   {
-   payload.WithString("welcomeMessage", m_welcomeMessage);
+   payload.WithObject("identityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
 
   }
 

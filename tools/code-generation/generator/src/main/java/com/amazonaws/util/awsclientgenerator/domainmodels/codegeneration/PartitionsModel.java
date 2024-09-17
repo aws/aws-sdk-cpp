@@ -7,7 +7,21 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
 
+import java.util.List;
+import java.util.Map;
+
 @Data
 public class PartitionsModel {
-    String partitionsBlob;
+    @Data
+    public static class Partition {
+        private String id;
+        private Map<String, RegionDescription> regions;
+
+        @Data
+        public static class RegionDescription {
+            private String description;
+        }
+    }
+    private List<Partition> partitions;
+    private String partitionsBlob;
 }

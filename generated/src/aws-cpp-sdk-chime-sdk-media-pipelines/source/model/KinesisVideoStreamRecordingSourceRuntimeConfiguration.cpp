@@ -24,9 +24,8 @@ KinesisVideoStreamRecordingSourceRuntimeConfiguration::KinesisVideoStreamRecordi
 {
 }
 
-KinesisVideoStreamRecordingSourceRuntimeConfiguration::KinesisVideoStreamRecordingSourceRuntimeConfiguration(JsonView jsonValue) : 
-    m_streamsHasBeenSet(false),
-    m_fragmentSelectorHasBeenSet(false)
+KinesisVideoStreamRecordingSourceRuntimeConfiguration::KinesisVideoStreamRecordingSourceRuntimeConfiguration(JsonView jsonValue)
+  : KinesisVideoStreamRecordingSourceRuntimeConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ DatabaseShortInfoResponse::DatabaseShortInfoResponse() :
 {
 }
 
-DatabaseShortInfoResponse::DatabaseShortInfoResponse(JsonView jsonValue) : 
-    m_databaseIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_databaseIpAddressHasBeenSet(false),
-    m_databaseEngineHasBeenSet(false)
+DatabaseShortInfoResponse::DatabaseShortInfoResponse(JsonView jsonValue)
+  : DatabaseShortInfoResponse()
 {
   *this = jsonValue;
 }

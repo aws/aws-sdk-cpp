@@ -39,113 +39,44 @@ namespace Model
     AWS_DEVICEFARM_API ListRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the runs.</p>
      */
     inline const Aws::Vector<Run>& GetRuns() const{ return m_runs; }
-
-    /**
-     * <p>Information about the runs.</p>
-     */
     inline void SetRuns(const Aws::Vector<Run>& value) { m_runs = value; }
-
-    /**
-     * <p>Information about the runs.</p>
-     */
     inline void SetRuns(Aws::Vector<Run>&& value) { m_runs = std::move(value); }
-
-    /**
-     * <p>Information about the runs.</p>
-     */
     inline ListRunsResult& WithRuns(const Aws::Vector<Run>& value) { SetRuns(value); return *this;}
-
-    /**
-     * <p>Information about the runs.</p>
-     */
     inline ListRunsResult& WithRuns(Aws::Vector<Run>&& value) { SetRuns(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the runs.</p>
-     */
     inline ListRunsResult& AddRuns(const Run& value) { m_runs.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the runs.</p>
-     */
     inline ListRunsResult& AddRuns(Run&& value) { m_runs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the number of items that are returned is significantly large, this is an
      * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned. It can be used in a subsequent call to this
-     * operation to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned. It can be used in a subsequent call to this
-     * operation to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned. It can be used in a subsequent call to this
-     * operation to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned. It can be used in a subsequent call to this
-     * operation to return the next set of items in the list.</p>
-     */
     inline ListRunsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned. It can be used in a subsequent call to this
-     * operation to return the next set of items in the list.</p>
-     */
     inline ListRunsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned. It can be used in a subsequent call to this
-     * operation to return the next set of items in the list.</p>
-     */
     inline ListRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Run> m_runs;

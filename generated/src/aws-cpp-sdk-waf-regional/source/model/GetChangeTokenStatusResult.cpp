@@ -22,8 +22,8 @@ GetChangeTokenStatusResult::GetChangeTokenStatusResult() :
 {
 }
 
-GetChangeTokenStatusResult::GetChangeTokenStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_changeTokenStatus(ChangeTokenStatus::NOT_SET)
+GetChangeTokenStatusResult::GetChangeTokenStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetChangeTokenStatusResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ TableStyleTarget::TableStyleTarget() :
 {
 }
 
-TableStyleTarget::TableStyleTarget(JsonView jsonValue) : 
-    m_cellType(StyledCellType::NOT_SET),
-    m_cellTypeHasBeenSet(false)
+TableStyleTarget::TableStyleTarget(JsonView jsonValue)
+  : TableStyleTarget()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ CancelImportTaskResult::CancelImportTaskResult() :
 {
 }
 
-CancelImportTaskResult::CancelImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(Format::NOT_SET),
-    m_status(ImportTaskStatus::NOT_SET)
+CancelImportTaskResult::CancelImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelImportTaskResult()
 {
   *this = result;
 }

@@ -35,137 +35,55 @@ namespace Model
     AWS_LIGHTSAIL_API GetAutoSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the source instance or disk for the automatic snapshots.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The name of the source instance or disk for the automatic snapshots.</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
-
-    /**
-     * <p>The name of the source instance or disk for the automatic snapshots.</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceName = std::move(value); }
-
-    /**
-     * <p>The name of the source instance or disk for the automatic snapshots.</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
-
-    /**
-     * <p>The name of the source instance or disk for the automatic snapshots.</p>
-     */
     inline GetAutoSnapshotsResult& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The name of the source instance or disk for the automatic snapshots.</p>
-     */
     inline GetAutoSnapshotsResult& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source instance or disk for the automatic snapshots.</p>
-     */
     inline GetAutoSnapshotsResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource type of the automatic snapshot. The possible values are
      * <code>Instance</code>, and <code>Disk</code>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The resource type of the automatic snapshot. The possible values are
-     * <code>Instance</code>, and <code>Disk</code>.</p>
-     */
     inline void SetResourceType(const ResourceType& value) { m_resourceType = value; }
-
-    /**
-     * <p>The resource type of the automatic snapshot. The possible values are
-     * <code>Instance</code>, and <code>Disk</code>.</p>
-     */
     inline void SetResourceType(ResourceType&& value) { m_resourceType = std::move(value); }
-
-    /**
-     * <p>The resource type of the automatic snapshot. The possible values are
-     * <code>Instance</code>, and <code>Disk</code>.</p>
-     */
     inline GetAutoSnapshotsResult& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The resource type of the automatic snapshot. The possible values are
-     * <code>Instance</code>, and <code>Disk</code>.</p>
-     */
     inline GetAutoSnapshotsResult& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of objects that describe the automatic snapshots that are available
      * for the specified source instance or disk.</p>
      */
     inline const Aws::Vector<AutoSnapshotDetails>& GetAutoSnapshots() const{ return m_autoSnapshots; }
-
-    /**
-     * <p>An array of objects that describe the automatic snapshots that are available
-     * for the specified source instance or disk.</p>
-     */
     inline void SetAutoSnapshots(const Aws::Vector<AutoSnapshotDetails>& value) { m_autoSnapshots = value; }
-
-    /**
-     * <p>An array of objects that describe the automatic snapshots that are available
-     * for the specified source instance or disk.</p>
-     */
     inline void SetAutoSnapshots(Aws::Vector<AutoSnapshotDetails>&& value) { m_autoSnapshots = std::move(value); }
-
-    /**
-     * <p>An array of objects that describe the automatic snapshots that are available
-     * for the specified source instance or disk.</p>
-     */
     inline GetAutoSnapshotsResult& WithAutoSnapshots(const Aws::Vector<AutoSnapshotDetails>& value) { SetAutoSnapshots(value); return *this;}
-
-    /**
-     * <p>An array of objects that describe the automatic snapshots that are available
-     * for the specified source instance or disk.</p>
-     */
     inline GetAutoSnapshotsResult& WithAutoSnapshots(Aws::Vector<AutoSnapshotDetails>&& value) { SetAutoSnapshots(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects that describe the automatic snapshots that are available
-     * for the specified source instance or disk.</p>
-     */
     inline GetAutoSnapshotsResult& AddAutoSnapshots(const AutoSnapshotDetails& value) { m_autoSnapshots.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects that describe the automatic snapshots that are available
-     * for the specified source instance or disk.</p>
-     */
     inline GetAutoSnapshotsResult& AddAutoSnapshots(AutoSnapshotDetails&& value) { m_autoSnapshots.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAutoSnapshotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAutoSnapshotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAutoSnapshotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

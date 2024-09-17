@@ -23,8 +23,8 @@ Detection::Detection() :
 {
 }
 
-Detection::Detection(JsonView jsonValue) : 
-    m_anomalyHasBeenSet(false)
+Detection::Detection(JsonView jsonValue)
+  : Detection()
 {
   *this = jsonValue;
 }

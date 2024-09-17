@@ -16,7 +16,17 @@ namespace Aws
 namespace DocDBElastic
 {
   /**
-   * <p>The new Amazon Elastic DocumentDB service endpoint.</p>
+   * <p><fullname>Amazon DocumentDB elastic clusters</fullname> <p>Amazon DocumentDB
+   * elastic-clusters support workloads with millions of reads/writes per second and
+   * petabytes of storage capacity. Amazon DocumentDB elastic clusters also simplify
+   * how developers interact with Amazon DocumentDB elastic-clusters by eliminating
+   * the need to choose, manage or upgrade instances.</p> <p>Amazon DocumentDB
+   * elastic-clusters were created to:</p> <ul> <li> <p>provide a solution for
+   * customers looking for a database that provides virtually limitless scale with
+   * rich query capabilities and MongoDB API compatibility.</p> </li> <li> <p>give
+   * customers higher connection limits, and to reduce downtime from patching.</p>
+   * </li> <li> <p>continue investing in a cloud-native, elastic, and class leading
+   * architecture for JSON workloads.</p> </li> </ul></p>
    */
   class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>
   {
@@ -77,7 +87,32 @@ namespace DocDBElastic
         virtual ~DocDBElasticClient();
 
         /**
-         * <p>Creates a new Elastic DocumentDB cluster and returns its Cluster
+         * <p>Copies a snapshot of an elastic cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CopyClusterSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopyClusterSnapshotOutcome CopyClusterSnapshot(const Model::CopyClusterSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for CopyClusterSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CopyClusterSnapshotRequestT = Model::CopyClusterSnapshotRequest>
+        Model::CopyClusterSnapshotOutcomeCallable CopyClusterSnapshotCallable(const CopyClusterSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&DocDBElasticClient::CopyClusterSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for CopyClusterSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CopyClusterSnapshotRequestT = Model::CopyClusterSnapshotRequest>
+        void CopyClusterSnapshotAsync(const CopyClusterSnapshotRequestT& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBElasticClient::CopyClusterSnapshot, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new Amazon DocumentDB elastic cluster and returns its cluster
          * structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CreateCluster">AWS
          * API Reference</a></p>
@@ -103,7 +138,7 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Creates a snapshot of a cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of an elastic cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CreateClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -128,7 +163,7 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Delete a Elastic DocumentDB cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete an elastic cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/DeleteCluster">AWS
          * API Reference</a></p>
          */
@@ -153,7 +188,7 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Delete a Elastic DocumentDB snapshot.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete an elastic cluster snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/DeleteClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -178,8 +213,8 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Returns information about a specific Elastic DocumentDB
-         * cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a specific elastic cluster.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/GetCluster">AWS
          * API Reference</a></p>
          */
@@ -204,8 +239,8 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Returns information about a specific Elastic DocumentDB
-         * snapshot</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a specific elastic cluster snapshot</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/GetClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -230,18 +265,18 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Returns information about Elastic DocumentDB snapshots for a specified
+         * <p>Returns information about snapshots for a specified elastic
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusterSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClusterSnapshotsOutcome ListClusterSnapshots(const Model::ListClusterSnapshotsRequest& request) const;
+        virtual Model::ListClusterSnapshotsOutcome ListClusterSnapshots(const Model::ListClusterSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusterSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClusterSnapshotsRequestT = Model::ListClusterSnapshotsRequest>
-        Model::ListClusterSnapshotsOutcomeCallable ListClusterSnapshotsCallable(const ListClusterSnapshotsRequestT& request) const
+        Model::ListClusterSnapshotsOutcomeCallable ListClusterSnapshotsCallable(const ListClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBElasticClient::ListClusterSnapshots, request);
         }
@@ -250,24 +285,24 @@ namespace DocDBElastic
          * An Async wrapper for ListClusterSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClusterSnapshotsRequestT = Model::ListClusterSnapshotsRequest>
-        void ListClusterSnapshotsAsync(const ListClusterSnapshotsRequestT& request, const ListClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClusterSnapshotsAsync(const ListClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBElasticClient::ListClusterSnapshots, request, handler, context);
         }
 
         /**
-         * <p>Returns information about provisioned Elastic DocumentDB
+         * <p>Returns information about provisioned Amazon DocumentDB elastic
          * clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request) const
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBElasticClient::ListClusters, request);
         }
@@ -276,13 +311,13 @@ namespace DocDBElastic
          * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBElasticClient::ListClusters, request, handler, context);
         }
 
         /**
-         * <p>Lists all tags on a Elastic DocumentDB resource</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all tags on a elastic cluster resource</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -307,8 +342,7 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Restores a Elastic DocumentDB cluster from a snapshot.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Restores an elastic cluster from a snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/RestoreClusterFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -333,7 +367,60 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Adds metadata tags to a Elastic DocumentDB resource</p><p><h3>See Also:</h3> 
+         * <p>Restarts the stopped elastic cluster that is specified by
+         * <code>clusterARN</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StartCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartClusterOutcome StartCluster(const Model::StartClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartClusterRequestT = Model::StartClusterRequest>
+        Model::StartClusterOutcomeCallable StartClusterCallable(const StartClusterRequestT& request) const
+        {
+            return SubmitCallable(&DocDBElasticClient::StartCluster, request);
+        }
+
+        /**
+         * An Async wrapper for StartCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartClusterRequestT = Model::StartClusterRequest>
+        void StartClusterAsync(const StartClusterRequestT& request, const StartClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBElasticClient::StartCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Stops the running elastic cluster that is specified by
+         * <code>clusterArn</code>. The elastic cluster must be in the <i>available</i>
+         * state. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StopCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopClusterOutcome StopCluster(const Model::StopClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopClusterRequestT = Model::StopClusterRequest>
+        Model::StopClusterOutcomeCallable StopClusterCallable(const StopClusterRequestT& request) const
+        {
+            return SubmitCallable(&DocDBElasticClient::StopCluster, request);
+        }
+
+        /**
+         * An Async wrapper for StopCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopClusterRequestT = Model::StopClusterRequest>
+        void StopClusterAsync(const StopClusterRequestT& request, const StopClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBElasticClient::StopCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Adds metadata tags to an elastic cluster resource</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/TagResource">AWS
          * API Reference</a></p>
@@ -359,7 +446,7 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Removes metadata tags to a Elastic DocumentDB resource</p><p><h3>See
+         * <p>Removes metadata tags from an elastic cluster resource</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -385,9 +472,9 @@ namespace DocDBElastic
         }
 
         /**
-         * <p>Modifies a Elastic DocumentDB cluster. This includes updating
-         * admin-username/password, upgrading API version setting up a backup window and
-         * maintenance window</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an elastic cluster. This includes updating admin-username/password,
+         * upgrading the API version, and setting up a backup window and maintenance
+         * window</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/UpdateCluster">AWS
          * API Reference</a></p>
          */
@@ -419,7 +506,6 @@ namespace DocDBElastic
       void init(const DocDBElasticClientConfiguration& clientConfiguration);
 
       DocDBElasticClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DocDBElasticEndpointProviderBase> m_endpointProvider;
   };
 

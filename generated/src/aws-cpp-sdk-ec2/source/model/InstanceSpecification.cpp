@@ -28,11 +28,8 @@ InstanceSpecification::InstanceSpecification() :
 {
 }
 
-InstanceSpecification::InstanceSpecification(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_excludeBootVolume(false),
-    m_excludeBootVolumeHasBeenSet(false),
-    m_excludeDataVolumeIdsHasBeenSet(false)
+InstanceSpecification::InstanceSpecification(const XmlNode& xmlNode)
+  : InstanceSpecification()
 {
   *this = xmlNode;
 }

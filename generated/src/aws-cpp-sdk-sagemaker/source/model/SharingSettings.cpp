@@ -26,11 +26,8 @@ SharingSettings::SharingSettings() :
 {
 }
 
-SharingSettings::SharingSettings(JsonView jsonValue) : 
-    m_notebookOutputOption(NotebookOutputOption::NOT_SET),
-    m_notebookOutputOptionHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_s3KmsKeyIdHasBeenSet(false)
+SharingSettings::SharingSettings(JsonView jsonValue)
+  : SharingSettings()
 {
   *this = jsonValue;
 }

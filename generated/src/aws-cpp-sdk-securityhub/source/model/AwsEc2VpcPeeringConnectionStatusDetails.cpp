@@ -24,9 +24,8 @@ AwsEc2VpcPeeringConnectionStatusDetails::AwsEc2VpcPeeringConnectionStatusDetails
 {
 }
 
-AwsEc2VpcPeeringConnectionStatusDetails::AwsEc2VpcPeeringConnectionStatusDetails(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AwsEc2VpcPeeringConnectionStatusDetails::AwsEc2VpcPeeringConnectionStatusDetails(JsonView jsonValue)
+  : AwsEc2VpcPeeringConnectionStatusDetails()
 {
   *this = jsonValue;
 }

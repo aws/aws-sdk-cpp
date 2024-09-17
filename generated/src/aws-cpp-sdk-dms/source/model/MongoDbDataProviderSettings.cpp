@@ -34,19 +34,8 @@ MongoDbDataProviderSettings::MongoDbDataProviderSettings() :
 {
 }
 
-MongoDbDataProviderSettings::MongoDbDataProviderSettings(JsonView jsonValue) : 
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_sslMode(DmsSslModeValue::NOT_SET),
-    m_sslModeHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_authType(AuthTypeValue::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_authSourceHasBeenSet(false),
-    m_authMechanism(AuthMechanismValue::NOT_SET),
-    m_authMechanismHasBeenSet(false)
+MongoDbDataProviderSettings::MongoDbDataProviderSettings(JsonView jsonValue)
+  : MongoDbDataProviderSettings()
 {
   *this = jsonValue;
 }

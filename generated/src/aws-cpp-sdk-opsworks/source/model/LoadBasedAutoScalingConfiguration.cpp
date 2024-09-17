@@ -27,12 +27,8 @@ LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration() :
 {
 }
 
-LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration(JsonView jsonValue) : 
-    m_layerIdHasBeenSet(false),
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_upScalingHasBeenSet(false),
-    m_downScalingHasBeenSet(false)
+LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration(JsonView jsonValue)
+  : LoadBasedAutoScalingConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeContactResult::DescribeContactResult() :
 {
 }
 
-DescribeContactResult::DescribeContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_contactStatus(ContactStatus::NOT_SET)
+DescribeContactResult::DescribeContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeContactResult()
 {
   *this = result;
 }
@@ -119,6 +119,18 @@ DescribeContactResult& DescribeContactResult::operator =(const Aws::AmazonWebSer
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("visibilityEndTime"))
+  {
+    m_visibilityEndTime = jsonValue.GetDouble("visibilityEndTime");
+
+  }
+
+  if(jsonValue.ValueExists("visibilityStartTime"))
+  {
+    m_visibilityStartTime = jsonValue.GetDouble("visibilityStartTime");
+
   }
 
 

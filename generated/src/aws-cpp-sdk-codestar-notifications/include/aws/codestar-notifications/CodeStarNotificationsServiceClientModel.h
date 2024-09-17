@@ -31,6 +31,9 @@
 #include <aws/codestar-notifications/model/UnsubscribeResult.h>
 #include <aws/codestar-notifications/model/UntagResourceResult.h>
 #include <aws/codestar-notifications/model/UpdateNotificationRuleResult.h>
+#include <aws/codestar-notifications/model/ListEventTypesRequest.h>
+#include <aws/codestar-notifications/model/ListNotificationRulesRequest.h>
+#include <aws/codestar-notifications/model/ListTargetsRequest.h>
 /* End of service model headers required in CodeStarNotificationsClient header */
 
 namespace Aws
@@ -64,7 +67,7 @@ namespace Aws
 
   namespace CodeStarNotifications
   {
-    using CodeStarNotificationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeStarNotificationsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeStarNotificationsEndpointProviderBase = Aws::CodeStarNotifications::Endpoint::CodeStarNotificationsEndpointProviderBase;
     using CodeStarNotificationsEndpointProvider = Aws::CodeStarNotifications::Endpoint::CodeStarNotificationsEndpointProvider;
 

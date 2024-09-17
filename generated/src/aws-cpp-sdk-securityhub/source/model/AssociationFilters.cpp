@@ -27,12 +27,8 @@ AssociationFilters::AssociationFilters() :
 {
 }
 
-AssociationFilters::AssociationFilters(JsonView jsonValue) : 
-    m_configurationPolicyIdHasBeenSet(false),
-    m_associationType(AssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_associationStatus(ConfigurationPolicyAssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false)
+AssociationFilters::AssociationFilters(JsonView jsonValue)
+  : AssociationFilters()
 {
   *this = jsonValue;
 }

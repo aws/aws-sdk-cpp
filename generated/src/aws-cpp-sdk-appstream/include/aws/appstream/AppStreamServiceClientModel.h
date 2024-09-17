@@ -36,6 +36,7 @@
 #include <aws/appstream/model/CreateImageBuilderStreamingURLResult.h>
 #include <aws/appstream/model/CreateStackResult.h>
 #include <aws/appstream/model/CreateStreamingURLResult.h>
+#include <aws/appstream/model/CreateThemeForStackResult.h>
 #include <aws/appstream/model/CreateUpdatedImageResult.h>
 #include <aws/appstream/model/CreateUsageReportSubscriptionResult.h>
 #include <aws/appstream/model/CreateUserResult.h>
@@ -49,6 +50,7 @@
 #include <aws/appstream/model/DeleteImageBuilderResult.h>
 #include <aws/appstream/model/DeleteImagePermissionsResult.h>
 #include <aws/appstream/model/DeleteStackResult.h>
+#include <aws/appstream/model/DeleteThemeForStackResult.h>
 #include <aws/appstream/model/DeleteUsageReportSubscriptionResult.h>
 #include <aws/appstream/model/DeleteUserResult.h>
 #include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsResult.h>
@@ -64,6 +66,7 @@
 #include <aws/appstream/model/DescribeImagesResult.h>
 #include <aws/appstream/model/DescribeSessionsResult.h>
 #include <aws/appstream/model/DescribeStacksResult.h>
+#include <aws/appstream/model/DescribeThemeForStackResult.h>
 #include <aws/appstream/model/DescribeUsageReportSubscriptionsResult.h>
 #include <aws/appstream/model/DescribeUserStackAssociationsResult.h>
 #include <aws/appstream/model/DescribeUsersResult.h>
@@ -93,6 +96,22 @@
 #include <aws/appstream/model/UpdateFleetResult.h>
 #include <aws/appstream/model/UpdateImagePermissionsResult.h>
 #include <aws/appstream/model/UpdateStackResult.h>
+#include <aws/appstream/model/UpdateThemeForStackResult.h>
+#include <aws/appstream/model/DescribeAppBlockBuildersRequest.h>
+#include <aws/appstream/model/DescribeImagesRequest.h>
+#include <aws/appstream/model/DescribeApplicationFleetAssociationsRequest.h>
+#include <aws/appstream/model/DescribeUsageReportSubscriptionsRequest.h>
+#include <aws/appstream/model/DescribeImageBuildersRequest.h>
+#include <aws/appstream/model/CreateUsageReportSubscriptionRequest.h>
+#include <aws/appstream/model/DeleteUsageReportSubscriptionRequest.h>
+#include <aws/appstream/model/DescribeUserStackAssociationsRequest.h>
+#include <aws/appstream/model/DescribeFleetsRequest.h>
+#include <aws/appstream/model/DescribeStacksRequest.h>
+#include <aws/appstream/model/DescribeApplicationsRequest.h>
+#include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsRequest.h>
+#include <aws/appstream/model/UpdateFleetRequest.h>
+#include <aws/appstream/model/DescribeDirectoryConfigsRequest.h>
+#include <aws/appstream/model/DescribeAppBlocksRequest.h>
 /* End of service model headers required in AppStreamClient header */
 
 namespace Aws
@@ -126,7 +145,7 @@ namespace Aws
 
   namespace AppStream
   {
-    using AppStreamClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppStreamClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppStreamEndpointProviderBase = Aws::AppStream::Endpoint::AppStreamEndpointProviderBase;
     using AppStreamEndpointProvider = Aws::AppStream::Endpoint::AppStreamEndpointProvider;
 
@@ -151,6 +170,7 @@ namespace Aws
       class CreateImageBuilderStreamingURLRequest;
       class CreateStackRequest;
       class CreateStreamingURLRequest;
+      class CreateThemeForStackRequest;
       class CreateUpdatedImageRequest;
       class CreateUsageReportSubscriptionRequest;
       class CreateUserRequest;
@@ -164,6 +184,7 @@ namespace Aws
       class DeleteImageBuilderRequest;
       class DeleteImagePermissionsRequest;
       class DeleteStackRequest;
+      class DeleteThemeForStackRequest;
       class DeleteUsageReportSubscriptionRequest;
       class DeleteUserRequest;
       class DescribeAppBlockBuilderAppBlockAssociationsRequest;
@@ -179,6 +200,7 @@ namespace Aws
       class DescribeImagesRequest;
       class DescribeSessionsRequest;
       class DescribeStacksRequest;
+      class DescribeThemeForStackRequest;
       class DescribeUsageReportSubscriptionsRequest;
       class DescribeUserStackAssociationsRequest;
       class DescribeUsersRequest;
@@ -208,6 +230,7 @@ namespace Aws
       class UpdateFleetRequest;
       class UpdateImagePermissionsRequest;
       class UpdateStackRequest;
+      class UpdateThemeForStackRequest;
       /* End of service model forward declarations required in AppStreamClient header */
 
       /* Service model Outcome class definitions */
@@ -229,6 +252,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateImageBuilderStreamingURLResult, AppStreamError> CreateImageBuilderStreamingURLOutcome;
       typedef Aws::Utils::Outcome<CreateStackResult, AppStreamError> CreateStackOutcome;
       typedef Aws::Utils::Outcome<CreateStreamingURLResult, AppStreamError> CreateStreamingURLOutcome;
+      typedef Aws::Utils::Outcome<CreateThemeForStackResult, AppStreamError> CreateThemeForStackOutcome;
       typedef Aws::Utils::Outcome<CreateUpdatedImageResult, AppStreamError> CreateUpdatedImageOutcome;
       typedef Aws::Utils::Outcome<CreateUsageReportSubscriptionResult, AppStreamError> CreateUsageReportSubscriptionOutcome;
       typedef Aws::Utils::Outcome<CreateUserResult, AppStreamError> CreateUserOutcome;
@@ -242,6 +266,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteImageBuilderResult, AppStreamError> DeleteImageBuilderOutcome;
       typedef Aws::Utils::Outcome<DeleteImagePermissionsResult, AppStreamError> DeleteImagePermissionsOutcome;
       typedef Aws::Utils::Outcome<DeleteStackResult, AppStreamError> DeleteStackOutcome;
+      typedef Aws::Utils::Outcome<DeleteThemeForStackResult, AppStreamError> DeleteThemeForStackOutcome;
       typedef Aws::Utils::Outcome<DeleteUsageReportSubscriptionResult, AppStreamError> DeleteUsageReportSubscriptionOutcome;
       typedef Aws::Utils::Outcome<DeleteUserResult, AppStreamError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<DescribeAppBlockBuilderAppBlockAssociationsResult, AppStreamError> DescribeAppBlockBuilderAppBlockAssociationsOutcome;
@@ -257,6 +282,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeImagesResult, AppStreamError> DescribeImagesOutcome;
       typedef Aws::Utils::Outcome<DescribeSessionsResult, AppStreamError> DescribeSessionsOutcome;
       typedef Aws::Utils::Outcome<DescribeStacksResult, AppStreamError> DescribeStacksOutcome;
+      typedef Aws::Utils::Outcome<DescribeThemeForStackResult, AppStreamError> DescribeThemeForStackOutcome;
       typedef Aws::Utils::Outcome<DescribeUsageReportSubscriptionsResult, AppStreamError> DescribeUsageReportSubscriptionsOutcome;
       typedef Aws::Utils::Outcome<DescribeUserStackAssociationsResult, AppStreamError> DescribeUserStackAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeUsersResult, AppStreamError> DescribeUsersOutcome;
@@ -286,6 +312,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateFleetResult, AppStreamError> UpdateFleetOutcome;
       typedef Aws::Utils::Outcome<UpdateImagePermissionsResult, AppStreamError> UpdateImagePermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateStackResult, AppStreamError> UpdateStackOutcome;
+      typedef Aws::Utils::Outcome<UpdateThemeForStackResult, AppStreamError> UpdateThemeForStackOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -307,6 +334,7 @@ namespace Aws
       typedef std::future<CreateImageBuilderStreamingURLOutcome> CreateImageBuilderStreamingURLOutcomeCallable;
       typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
       typedef std::future<CreateStreamingURLOutcome> CreateStreamingURLOutcomeCallable;
+      typedef std::future<CreateThemeForStackOutcome> CreateThemeForStackOutcomeCallable;
       typedef std::future<CreateUpdatedImageOutcome> CreateUpdatedImageOutcomeCallable;
       typedef std::future<CreateUsageReportSubscriptionOutcome> CreateUsageReportSubscriptionOutcomeCallable;
       typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
@@ -320,6 +348,7 @@ namespace Aws
       typedef std::future<DeleteImageBuilderOutcome> DeleteImageBuilderOutcomeCallable;
       typedef std::future<DeleteImagePermissionsOutcome> DeleteImagePermissionsOutcomeCallable;
       typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
+      typedef std::future<DeleteThemeForStackOutcome> DeleteThemeForStackOutcomeCallable;
       typedef std::future<DeleteUsageReportSubscriptionOutcome> DeleteUsageReportSubscriptionOutcomeCallable;
       typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DescribeAppBlockBuilderAppBlockAssociationsOutcome> DescribeAppBlockBuilderAppBlockAssociationsOutcomeCallable;
@@ -335,6 +364,7 @@ namespace Aws
       typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
       typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
       typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
+      typedef std::future<DescribeThemeForStackOutcome> DescribeThemeForStackOutcomeCallable;
       typedef std::future<DescribeUsageReportSubscriptionsOutcome> DescribeUsageReportSubscriptionsOutcomeCallable;
       typedef std::future<DescribeUserStackAssociationsOutcome> DescribeUserStackAssociationsOutcomeCallable;
       typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
@@ -364,6 +394,7 @@ namespace Aws
       typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
       typedef std::future<UpdateImagePermissionsOutcome> UpdateImagePermissionsOutcomeCallable;
       typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
+      typedef std::future<UpdateThemeForStackOutcome> UpdateThemeForStackOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -388,6 +419,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderStreamingURLRequest&, const Model::CreateImageBuilderStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderStreamingURLResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStreamingURLRequest&, const Model::CreateStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingURLResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::CreateThemeForStackRequest&, const Model::CreateThemeForStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeForStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateUpdatedImageRequest&, const Model::CreateUpdatedImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUpdatedImageResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateUsageReportSubscriptionRequest&, const Model::CreateUsageReportSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsageReportSubscriptionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
@@ -401,6 +433,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::DeleteImageBuilderRequest&, const Model::DeleteImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteImagePermissionsRequest&, const Model::DeleteImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImagePermissionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DeleteThemeForStackRequest&, const Model::DeleteThemeForStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThemeForStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteUsageReportSubscriptionRequest&, const Model::DeleteUsageReportSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUsageReportSubscriptionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeAppBlockBuilderAppBlockAssociationsRequest&, const Model::DescribeAppBlockBuilderAppBlockAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppBlockBuilderAppBlockAssociationsResponseReceivedHandler;
@@ -416,6 +449,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DescribeThemeForStackRequest&, const Model::DescribeThemeForStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeForStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeUsageReportSubscriptionsRequest&, const Model::DescribeUsageReportSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsageReportSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeUserStackAssociationsRequest&, const Model::DescribeUserStackAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserStackAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeUsersRequest&, const Model::DescribeUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsersResponseReceivedHandler;
@@ -445,6 +479,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::UpdateFleetRequest&, const Model::UpdateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateImagePermissionsRequest&, const Model::UpdateImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImagePermissionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::UpdateThemeForStackRequest&, const Model::UpdateThemeForStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemeForStackResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace AppStream
 } // namespace Aws

@@ -26,11 +26,8 @@ ServerSideEncryptionUpdateDetails::ServerSideEncryptionUpdateDetails() :
 {
 }
 
-ServerSideEncryptionUpdateDetails::ServerSideEncryptionUpdateDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_oldKmsKeyIdHasBeenSet(false),
-    m_updateStatus(ServerSideEncryptionUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false)
+ServerSideEncryptionUpdateDetails::ServerSideEncryptionUpdateDetails(JsonView jsonValue)
+  : ServerSideEncryptionUpdateDetails()
 {
   *this = jsonValue;
 }

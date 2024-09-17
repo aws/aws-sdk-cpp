@@ -24,9 +24,8 @@ UserQuickConnectConfig::UserQuickConnectConfig() :
 {
 }
 
-UserQuickConnectConfig::UserQuickConnectConfig(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false)
+UserQuickConnectConfig::UserQuickConnectConfig(JsonView jsonValue)
+  : UserQuickConnectConfig()
 {
   *this = jsonValue;
 }

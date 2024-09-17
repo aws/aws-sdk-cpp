@@ -26,11 +26,8 @@ IntentLevelSlotResolutionTestResultItem::IntentLevelSlotResolutionTestResultItem
 {
 }
 
-IntentLevelSlotResolutionTestResultItem::IntentLevelSlotResolutionTestResultItem(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_multiTurnConversation(false),
-    m_multiTurnConversationHasBeenSet(false),
-    m_slotResolutionResultsHasBeenSet(false)
+IntentLevelSlotResolutionTestResultItem::IntentLevelSlotResolutionTestResultItem(JsonView jsonValue)
+  : IntentLevelSlotResolutionTestResultItem()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ InitializationConfiguration::InitializationConfiguration() :
 {
 }
 
-InitializationConfiguration::InitializationConfiguration(JsonView jsonValue) : 
-    m_disabledOnInitialization(false),
-    m_disabledOnInitializationHasBeenSet(false)
+InitializationConfiguration::InitializationConfiguration(JsonView jsonValue)
+  : InitializationConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ NotificationConfiguration::NotificationConfiguration() :
 {
 }
 
-NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) : 
-    m_notificationTopicArnHasBeenSet(false)
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
+  : NotificationConfiguration()
 {
   *this = jsonValue;
 }

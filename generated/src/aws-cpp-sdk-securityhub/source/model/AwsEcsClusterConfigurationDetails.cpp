@@ -23,8 +23,8 @@ AwsEcsClusterConfigurationDetails::AwsEcsClusterConfigurationDetails() :
 {
 }
 
-AwsEcsClusterConfigurationDetails::AwsEcsClusterConfigurationDetails(JsonView jsonValue) : 
-    m_executeCommandConfigurationHasBeenSet(false)
+AwsEcsClusterConfigurationDetails::AwsEcsClusterConfigurationDetails(JsonView jsonValue)
+  : AwsEcsClusterConfigurationDetails()
 {
   *this = jsonValue;
 }

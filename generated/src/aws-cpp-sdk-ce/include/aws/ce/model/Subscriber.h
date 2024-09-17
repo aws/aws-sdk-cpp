@@ -40,116 +40,44 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
      * <code>Type</code>. </p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
-     * <code>Type</code>. </p>
-     */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-
-    /**
-     * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
-     * <code>Type</code>. </p>
-     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-
-    /**
-     * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
-     * <code>Type</code>. </p>
-     */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-
-    /**
-     * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
-     * <code>Type</code>. </p>
-     */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-
-    /**
-     * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
-     * <code>Type</code>. </p>
-     */
     inline Subscriber& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
-     * <code>Type</code>. </p>
-     */
     inline Subscriber& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
-     * <code>Type</code>. </p>
-     */
     inline Subscriber& WithAddress(const char* value) { SetAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The notification delivery channel. </p>
      */
     inline const SubscriberType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The notification delivery channel. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The notification delivery channel. </p>
-     */
     inline void SetType(const SubscriberType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The notification delivery channel. </p>
-     */
     inline void SetType(SubscriberType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The notification delivery channel. </p>
-     */
     inline Subscriber& WithType(const SubscriberType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The notification delivery channel. </p>
-     */
     inline Subscriber& WithType(SubscriberType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates if the subscriber accepts the notifications. </p>
      */
     inline const SubscriberStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Indicates if the subscriber accepts the notifications. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Indicates if the subscriber accepts the notifications. </p>
-     */
     inline void SetStatus(const SubscriberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Indicates if the subscriber accepts the notifications. </p>
-     */
     inline void SetStatus(SubscriberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Indicates if the subscriber accepts the notifications. </p>
-     */
     inline Subscriber& WithStatus(const SubscriberStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Indicates if the subscriber accepts the notifications. </p>
-     */
     inline Subscriber& WithStatus(SubscriberStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_address;

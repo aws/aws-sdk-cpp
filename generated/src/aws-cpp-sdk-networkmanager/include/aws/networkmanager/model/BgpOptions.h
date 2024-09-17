@@ -35,26 +35,15 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Peer ASN of the BGP.</p>
      */
     inline long long GetPeerAsn() const{ return m_peerAsn; }
-
-    /**
-     * <p>The Peer ASN of the BGP.</p>
-     */
     inline bool PeerAsnHasBeenSet() const { return m_peerAsnHasBeenSet; }
-
-    /**
-     * <p>The Peer ASN of the BGP.</p>
-     */
     inline void SetPeerAsn(long long value) { m_peerAsnHasBeenSet = true; m_peerAsn = value; }
-
-    /**
-     * <p>The Peer ASN of the BGP.</p>
-     */
     inline BgpOptions& WithPeerAsn(long long value) { SetPeerAsn(value); return *this;}
-
+    ///@}
   private:
 
     long long m_peerAsn;

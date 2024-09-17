@@ -26,11 +26,8 @@ Edge::Edge() :
 {
 }
 
-Edge::Edge(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_associationType(AssociationEdgeType::NOT_SET),
-    m_associationTypeHasBeenSet(false)
+Edge::Edge(JsonView jsonValue)
+  : Edge()
 {
   *this = jsonValue;
 }

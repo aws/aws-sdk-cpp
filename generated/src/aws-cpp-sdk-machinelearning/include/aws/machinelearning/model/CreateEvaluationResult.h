@@ -41,77 +41,31 @@ namespace Model
     AWS_MACHINELEARNING_API CreateEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
      * This value should be identical to the value of the <code>EvaluationId</code> in
      * the request.</p>
      */
     inline const Aws::String& GetEvaluationId() const{ return m_evaluationId; }
-
-    /**
-     * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
-     * This value should be identical to the value of the <code>EvaluationId</code> in
-     * the request.</p>
-     */
     inline void SetEvaluationId(const Aws::String& value) { m_evaluationId = value; }
-
-    /**
-     * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
-     * This value should be identical to the value of the <code>EvaluationId</code> in
-     * the request.</p>
-     */
     inline void SetEvaluationId(Aws::String&& value) { m_evaluationId = std::move(value); }
-
-    /**
-     * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
-     * This value should be identical to the value of the <code>EvaluationId</code> in
-     * the request.</p>
-     */
     inline void SetEvaluationId(const char* value) { m_evaluationId.assign(value); }
-
-    /**
-     * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
-     * This value should be identical to the value of the <code>EvaluationId</code> in
-     * the request.</p>
-     */
     inline CreateEvaluationResult& WithEvaluationId(const Aws::String& value) { SetEvaluationId(value); return *this;}
-
-    /**
-     * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
-     * This value should be identical to the value of the <code>EvaluationId</code> in
-     * the request.</p>
-     */
     inline CreateEvaluationResult& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>.
-     * This value should be identical to the value of the <code>EvaluationId</code> in
-     * the request.</p>
-     */
     inline CreateEvaluationResult& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateEvaluationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateEvaluationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateEvaluationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_evaluationId;

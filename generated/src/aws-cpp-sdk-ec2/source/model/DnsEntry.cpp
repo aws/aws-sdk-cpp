@@ -26,9 +26,8 @@ DnsEntry::DnsEntry() :
 {
 }
 
-DnsEntry::DnsEntry(const XmlNode& xmlNode) : 
-    m_dnsNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
+DnsEntry::DnsEntry(const XmlNode& xmlNode)
+  : DnsEntry()
 {
   *this = xmlNode;
 }

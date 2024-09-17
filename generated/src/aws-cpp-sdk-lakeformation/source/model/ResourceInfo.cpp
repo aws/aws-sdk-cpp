@@ -29,14 +29,8 @@ ResourceInfo::ResourceInfo() :
 {
 }
 
-ResourceInfo::ResourceInfo(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_withFederation(false),
-    m_withFederationHasBeenSet(false),
-    m_hybridAccessEnabled(false),
-    m_hybridAccessEnabledHasBeenSet(false)
+ResourceInfo::ResourceInfo(JsonView jsonValue)
+  : ResourceInfo()
 {
   *this = jsonValue;
 }

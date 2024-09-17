@@ -40,36 +40,17 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket that contains the input document.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the input document.</p>
-     */
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the input document.</p>
-     */
     inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the input document.</p>
-     */
     inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket that contains the input document.</p>
-     */
     inline DocumentLocation& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket that contains the input document.</p>
-     */
     inline DocumentLocation& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Object m_s3Object;

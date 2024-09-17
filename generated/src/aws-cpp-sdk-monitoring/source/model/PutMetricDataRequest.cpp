@@ -27,11 +27,18 @@ Aws::String PutMetricDataRequest::SerializePayload() const
 
   if(m_metricDataHasBeenSet)
   {
-    unsigned metricDataCount = 1;
-    for(auto& item : m_metricData)
+    if (m_metricData.empty())
     {
-      item.OutputToStream(ss, "MetricData.member.", metricDataCount, "");
-      metricDataCount++;
+      ss << "MetricData=&";
+    }
+    else
+    {
+      unsigned metricDataCount = 1;
+      for(auto& item : m_metricData)
+      {
+        item.OutputToStream(ss, "MetricData.member.", metricDataCount, "");
+        metricDataCount++;
+      }
     }
   }
 
@@ -44,3 +51,27 @@ void  PutMetricDataRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
   uri.SetQueryString(SerializePayload());
 }
+
+#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+Aws::Client::CompressionAlgorithm PutMetricDataRequest::GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const
+{
+    if (config.useRequestCompression == Aws::Client::UseRequestCompression::DISABLE)
+    {
+        return Aws::Client::CompressionAlgorithm::NONE;
+    }
+
+    const auto& body = AmazonSerializableWebServiceRequest::GetBody();
+    body->seekg(0, body->end);
+    size_t bodySize = body->tellg();
+    body->seekg(0, body->beg);
+    if ( bodySize < config.requestMinCompressionSizeBytes)
+    {
+        return Aws::Client::CompressionAlgorithm::NONE;
+    }
+    else
+    {
+        return Aws::Client::CompressionAlgorithm::GZIP;
+    }
+}
+#endif
+

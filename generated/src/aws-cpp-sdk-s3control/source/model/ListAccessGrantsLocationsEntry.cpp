@@ -29,12 +29,8 @@ ListAccessGrantsLocationsEntry::ListAccessGrantsLocationsEntry() :
 {
 }
 
-ListAccessGrantsLocationsEntry::ListAccessGrantsLocationsEntry(const XmlNode& xmlNode) : 
-    m_createdAtHasBeenSet(false),
-    m_accessGrantsLocationIdHasBeenSet(false),
-    m_accessGrantsLocationArnHasBeenSet(false),
-    m_locationScopeHasBeenSet(false),
-    m_iAMRoleArnHasBeenSet(false)
+ListAccessGrantsLocationsEntry::ListAccessGrantsLocationsEntry(const XmlNode& xmlNode)
+  : ListAccessGrantsLocationsEntry()
 {
   *this = xmlNode;
 }

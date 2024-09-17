@@ -33,58 +33,28 @@ namespace Model
     AWS_CLOUDFRONT_API TestFunction2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>An object that represents the result of running the function with the
      * provided event object.</p>
      */
     inline const TestResult& GetTestResult() const{ return m_testResult; }
-
-    /**
-     * <p>An object that represents the result of running the function with the
-     * provided event object.</p>
-     */
     inline void SetTestResult(const TestResult& value) { m_testResult = value; }
-
-    /**
-     * <p>An object that represents the result of running the function with the
-     * provided event object.</p>
-     */
     inline void SetTestResult(TestResult&& value) { m_testResult = std::move(value); }
-
-    /**
-     * <p>An object that represents the result of running the function with the
-     * provided event object.</p>
-     */
     inline TestFunction2020_05_31Result& WithTestResult(const TestResult& value) { SetTestResult(value); return *this;}
-
-    /**
-     * <p>An object that represents the result of running the function with the
-     * provided event object.</p>
-     */
     inline TestFunction2020_05_31Result& WithTestResult(TestResult&& value) { SetTestResult(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline TestFunction2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline TestFunction2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline TestFunction2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TestResult m_testResult;

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SageMakerFeatureStoreRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SageMakerFeatureStoreRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SageMakerFeatureStoreRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SageMakerFeatureStoreRuntimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

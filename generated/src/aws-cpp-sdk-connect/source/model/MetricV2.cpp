@@ -25,10 +25,8 @@ MetricV2::MetricV2() :
 {
 }
 
-MetricV2::MetricV2(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_thresholdHasBeenSet(false),
-    m_metricFiltersHasBeenSet(false)
+MetricV2::MetricV2(JsonView jsonValue)
+  : MetricV2()
 {
   *this = jsonValue;
 }

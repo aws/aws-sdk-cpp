@@ -26,9 +26,8 @@ CapacityReservationTarget::CapacityReservationTarget() :
 {
 }
 
-CapacityReservationTarget::CapacityReservationTarget(const XmlNode& xmlNode) : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_capacityReservationResourceGroupArnHasBeenSet(false)
+CapacityReservationTarget::CapacityReservationTarget(const XmlNode& xmlNode)
+  : CapacityReservationTarget()
 {
   *this = xmlNode;
 }

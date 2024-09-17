@@ -23,8 +23,8 @@ RunCommandParameters::RunCommandParameters() :
 {
 }
 
-RunCommandParameters::RunCommandParameters(JsonView jsonValue) : 
-    m_runCommandTargetsHasBeenSet(false)
+RunCommandParameters::RunCommandParameters(JsonView jsonValue)
+  : RunCommandParameters()
 {
   *this = jsonValue;
 }

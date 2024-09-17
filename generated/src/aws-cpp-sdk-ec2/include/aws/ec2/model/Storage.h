@@ -40,36 +40,17 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>An Amazon S3 storage location.</p>
      */
     inline const S3Storage& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>An Amazon S3 storage location.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>An Amazon S3 storage location.</p>
-     */
     inline void SetS3(const S3Storage& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>An Amazon S3 storage location.</p>
-     */
     inline void SetS3(S3Storage&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>An Amazon S3 storage location.</p>
-     */
     inline Storage& WithS3(const S3Storage& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>An Amazon S3 storage location.</p>
-     */
     inline Storage& WithS3(S3Storage&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Storage m_s3;

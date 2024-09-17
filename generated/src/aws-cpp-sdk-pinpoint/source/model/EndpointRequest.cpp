@@ -34,19 +34,8 @@ EndpointRequest::EndpointRequest() :
 {
 }
 
-EndpointRequest::EndpointRequest(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_channelType(ChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_demographicHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false),
-    m_endpointStatusHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_optOutHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_userHasBeenSet(false)
+EndpointRequest::EndpointRequest(JsonView jsonValue)
+  : EndpointRequest()
 {
   *this = jsonValue;
 }

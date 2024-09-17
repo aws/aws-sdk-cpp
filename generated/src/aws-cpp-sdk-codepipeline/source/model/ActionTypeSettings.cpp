@@ -26,11 +26,8 @@ ActionTypeSettings::ActionTypeSettings() :
 {
 }
 
-ActionTypeSettings::ActionTypeSettings(JsonView jsonValue) : 
-    m_thirdPartyConfigurationUrlHasBeenSet(false),
-    m_entityUrlTemplateHasBeenSet(false),
-    m_executionUrlTemplateHasBeenSet(false),
-    m_revisionUrlTemplateHasBeenSet(false)
+ActionTypeSettings::ActionTypeSettings(JsonView jsonValue)
+  : ActionTypeSettings()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InboundCrossClusterSearchConnectionStatus::InboundCrossClusterSearchConnectionSt
 {
 }
 
-InboundCrossClusterSearchConnectionStatus::InboundCrossClusterSearchConnectionStatus(JsonView jsonValue) : 
-    m_statusCode(InboundCrossClusterSearchConnectionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InboundCrossClusterSearchConnectionStatus::InboundCrossClusterSearchConnectionStatus(JsonView jsonValue)
+  : InboundCrossClusterSearchConnectionStatus()
 {
   *this = jsonValue;
 }

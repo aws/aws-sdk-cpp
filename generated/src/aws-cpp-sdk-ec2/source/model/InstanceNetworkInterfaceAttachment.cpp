@@ -35,18 +35,8 @@ InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment() :
 {
 }
 
-InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment(const XmlNode& xmlNode) : 
-    m_attachTimeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false)
+InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment(const XmlNode& xmlNode)
+  : InstanceNetworkInterfaceAttachment()
 {
   *this = xmlNode;
 }

@@ -30,15 +30,8 @@ DistributionBundle::DistributionBundle() :
 {
 }
 
-DistributionBundle::DistributionBundle(JsonView jsonValue) : 
-    m_bundleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false)
+DistributionBundle::DistributionBundle(JsonView jsonValue)
+  : DistributionBundle()
 {
   *this = jsonValue;
 }

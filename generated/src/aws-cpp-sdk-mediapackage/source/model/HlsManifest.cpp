@@ -38,23 +38,8 @@ HlsManifest::HlsManifest() :
 {
 }
 
-HlsManifest::HlsManifest(JsonView jsonValue) : 
-    m_adMarkers(AdMarkers::NOT_SET),
-    m_adMarkersHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_playlistType(PlaylistType::NOT_SET),
-    m_playlistTypeHasBeenSet(false),
-    m_playlistWindowSeconds(0),
-    m_playlistWindowSecondsHasBeenSet(false),
-    m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_adTriggersHasBeenSet(false),
-    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
-    m_adsOnDeliveryRestrictionsHasBeenSet(false)
+HlsManifest::HlsManifest(JsonView jsonValue)
+  : HlsManifest()
 {
   *this = jsonValue;
 }

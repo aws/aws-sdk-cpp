@@ -19,14 +19,12 @@ namespace Model
 {
 
 Scope::Scope() : 
-    m_awsAccountsHasBeenSet(false),
-    m_awsServicesHasBeenSet(false)
+    m_awsAccountsHasBeenSet(false)
 {
 }
 
-Scope::Scope(JsonView jsonValue) : 
-    m_awsAccountsHasBeenSet(false),
-    m_awsServicesHasBeenSet(false)
+Scope::Scope(JsonView jsonValue)
+  : Scope()
 {
   *this = jsonValue;
 }
@@ -41,16 +39,6 @@ Scope& Scope::operator =(JsonView jsonValue)
       m_awsAccounts.push_back(awsAccountsJsonList[awsAccountsIndex].AsObject());
     }
     m_awsAccountsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("awsServices"))
-  {
-    Aws::Utils::Array<JsonView> awsServicesJsonList = jsonValue.GetArray("awsServices");
-    for(unsigned awsServicesIndex = 0; awsServicesIndex < awsServicesJsonList.GetLength(); ++awsServicesIndex)
-    {
-      m_awsServices.push_back(awsServicesJsonList[awsServicesIndex].AsObject());
-    }
-    m_awsServicesHasBeenSet = true;
   }
 
   return *this;
@@ -68,17 +56,6 @@ JsonValue Scope::Jsonize() const
      awsAccountsJsonList[awsAccountsIndex].AsObject(m_awsAccounts[awsAccountsIndex].Jsonize());
    }
    payload.WithArray("awsAccounts", std::move(awsAccountsJsonList));
-
-  }
-
-  if(m_awsServicesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> awsServicesJsonList(m_awsServices.size());
-   for(unsigned awsServicesIndex = 0; awsServicesIndex < awsServicesJsonList.GetLength(); ++awsServicesIndex)
-   {
-     awsServicesJsonList[awsServicesIndex].AsObject(m_awsServices[awsServicesIndex].Jsonize());
-   }
-   payload.WithArray("awsServices", std::move(awsServicesJsonList));
 
   }
 

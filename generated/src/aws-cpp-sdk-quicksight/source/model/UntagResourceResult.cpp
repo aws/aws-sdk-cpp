@@ -22,8 +22,8 @@ UntagResourceResult::UntagResourceResult() :
 {
 }
 
-UntagResourceResult::UntagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UntagResourceResult::UntagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UntagResourceResult()
 {
   *this = result;
 }

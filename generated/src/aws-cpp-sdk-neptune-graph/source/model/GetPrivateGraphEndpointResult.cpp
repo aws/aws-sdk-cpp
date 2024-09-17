@@ -22,8 +22,8 @@ GetPrivateGraphEndpointResult::GetPrivateGraphEndpointResult() :
 {
 }
 
-GetPrivateGraphEndpointResult::GetPrivateGraphEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(PrivateGraphEndpointStatus::NOT_SET)
+GetPrivateGraphEndpointResult::GetPrivateGraphEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPrivateGraphEndpointResult()
 {
   *this = result;
 }

@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FrameCaptureS3Settings& GetFrameCaptureS3Settings() const{ return m_frameCaptureS3Settings; }
-
-    
     inline bool FrameCaptureS3SettingsHasBeenSet() const { return m_frameCaptureS3SettingsHasBeenSet; }
-
-    
     inline void SetFrameCaptureS3Settings(const FrameCaptureS3Settings& value) { m_frameCaptureS3SettingsHasBeenSet = true; m_frameCaptureS3Settings = value; }
-
-    
     inline void SetFrameCaptureS3Settings(FrameCaptureS3Settings&& value) { m_frameCaptureS3SettingsHasBeenSet = true; m_frameCaptureS3Settings = std::move(value); }
-
-    
     inline FrameCaptureCdnSettings& WithFrameCaptureS3Settings(const FrameCaptureS3Settings& value) { SetFrameCaptureS3Settings(value); return *this;}
-
-    
     inline FrameCaptureCdnSettings& WithFrameCaptureS3Settings(FrameCaptureS3Settings&& value) { SetFrameCaptureS3Settings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FrameCaptureS3Settings m_frameCaptureS3Settings;

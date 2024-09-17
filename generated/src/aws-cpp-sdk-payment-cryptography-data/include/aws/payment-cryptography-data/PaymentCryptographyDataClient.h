@@ -88,8 +88,9 @@ namespace PaymentCryptographyData
         virtual ~PaymentCryptographyDataClient();
 
         /**
-         * <p>Decrypts ciphertext data to plaintext using symmetric, asymmetric, or DUKPT
-         * data encryption key. For more information, see <a
+         * <p>Decrypts ciphertext data to plaintext using a symmetric (TDES, AES),
+         * asymmetric (RSA), or derived (DUKPT or EMV) encryption key scheme. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/decrypt-data.html">Decrypt
          * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
          * <p>You can use an encryption key generated within Amazon Web Services Payment
@@ -103,12 +104,14 @@ namespace PaymentCryptographyData
          * asymmetric key pair by calling <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>.</p>
          * <p>For symmetric and DUKPT decryption, Amazon Web Services Payment Cryptography
-         * supports <code>TDES</code> and <code>AES</code> algorithms. For asymmetric
-         * decryption, Amazon Web Services Payment Cryptography supports <code>RSA</code>.
-         * When you use DUKPT, for <code>TDES</code> algorithm, the ciphertext data length
-         * must be a multiple of 16 bytes. For <code>AES</code> algorithm, the ciphertext
-         * data length must be a multiple of 32 bytes.</p> <p>For information about valid
-         * keys for this operation, see <a
+         * supports <code>TDES</code> and <code>AES</code> algorithms. For EMV decryption,
+         * Amazon Web Services Payment Cryptography supports <code>TDES</code> algorithms.
+         * For asymmetric decryption, Amazon Web Services Payment Cryptography supports
+         * <code>RSA</code>. </p> <p>When you use TDES or TDES DUKPT, the ciphertext data
+         * length must be a multiple of 8 bytes. For AES or AES DUKPT, the ciphertext data
+         * length must be a multiple of 16 bytes. For RSA, it sould be equal to the key
+         * size unless padding is enabled.</p> <p>For information about valid keys for this
+         * operation, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
          * key attributes</a> and <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
@@ -144,8 +147,9 @@ namespace PaymentCryptographyData
         }
 
         /**
-         * <p>Encrypts plaintext data to ciphertext using symmetric, asymmetric, or DUKPT
-         * data encryption key. For more information, see <a
+         * <p>Encrypts plaintext data to ciphertext using a symmetric (TDES, AES),
+         * asymmetric (RSA), or derived (DUKPT or EMV) encryption key scheme. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
          * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
          * <p>You can generate an encryption key within Amazon Web Services Payment
@@ -157,14 +161,21 @@ namespace PaymentCryptographyData
          * <code>Encrypt</code>. In asymmetric encryption, plaintext is encrypted using
          * public component. You can import the public component of an asymmetric key pair
          * created outside Amazon Web Services Payment Cryptography by calling <a
-         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>).
-         * </p> <p>for symmetric and DUKPT encryption, Amazon Web Services Payment
-         * Cryptography supports <code>TDES</code> and <code>AES</code> algorithms. For
-         * asymmetric encryption, Amazon Web Services Payment Cryptography supports
-         * <code>RSA</code>. To encrypt using DUKPT, you must already have a DUKPT key in
-         * your account with <code>KeyModesOfUse</code> set to <code>DeriveKey</code>, or
-         * you can generate a new DUKPT key by calling <a
-         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.</p>
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
+         * </p> <p>For symmetric and DUKPT encryption, Amazon Web Services Payment
+         * Cryptography supports <code>TDES</code> and <code>AES</code> algorithms. For EMV
+         * encryption, Amazon Web Services Payment Cryptography supports <code>TDES</code>
+         * algorithms.For asymmetric encryption, Amazon Web Services Payment Cryptography
+         * supports <code>RSA</code>. </p> <p>When you use TDES or TDES DUKPT, the
+         * plaintext data length must be a multiple of 8 bytes. For AES or AES DUKPT, the
+         * plaintext data length must be a multiple of 16 bytes. For RSA, it sould be equal
+         * to the key size unless padding is enabled.</p> <p>To encrypt using DUKPT, you
+         * must already have a BDK (Base Derivation Key) key in your account with
+         * <code>KeyModesOfUse</code> set to <code>DeriveKey</code>, or you can generate a
+         * new DUKPT key by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
+         * To encrypt using EMV, you must already have an IMK (Issuer Master Key) key in
+         * your account with <code>KeyModesOfUse</code> set to <code>DeriveKey</code>.</p>
          * <p>For information about valid keys for this operation, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
          * key attributes</a> and <a
@@ -254,17 +265,19 @@ namespace PaymentCryptographyData
 
         /**
          * <p>Generates a Message Authentication Code (MAC) cryptogram within Amazon Web
-         * Services Payment Cryptography. </p> <p>You can use this operation when keys
-         * won't be shared but mutual data is present on both ends for validation. In this
-         * case, known data values are used to generate a MAC on both ends for comparision
-         * without sending or receiving data in ciphertext or plaintext. You can use this
-         * operation to generate a DUPKT, HMAC or EMV MAC by setting generation attributes
-         * and algorithm to the associated values. The MAC generation encryption key must
-         * have valid values for <code>KeyUsage</code> such as
-         * <code>TR31_M7_HMAC_KEY</code> for HMAC generation, and they key must have
-         * <code>KeyModesOfUse</code> set to <code>Generate</code> and
-         * <code>Verify</code>.</p> <p>For information about valid keys for this operation,
-         * see <a
+         * Services Payment Cryptography. </p> <p>You can use this operation to
+         * authenticate card-related data by using known data values to generate MAC for
+         * data validation between the sending and receiving parties. This operation uses
+         * message data, a secret encryption key and MAC algorithm to generate a unique MAC
+         * value for transmission. The receiving party of the MAC must use the same message
+         * data, secret encryption key and MAC algorithm to reproduce another MAC value for
+         * comparision.</p> <p>You can use this operation to generate a DUPKT, CMAC, HMAC
+         * or EMV MAC by setting generation attributes and algorithm to the associated
+         * values. The MAC generation encryption key must have valid values for
+         * <code>KeyUsage</code> such as <code>TR31_M7_HMAC_KEY</code> for HMAC generation,
+         * and they key must have <code>KeyModesOfUse</code> set to <code>Generate</code>
+         * and <code>Verify</code>.</p> <p>For information about valid keys for this
+         * operation, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
          * key attributes</a> and <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
@@ -342,24 +355,19 @@ namespace PaymentCryptographyData
         }
 
         /**
-         * <p>Re-encrypt ciphertext using DUKPT, Symmetric and Asymmetric Data Encryption
-         * Keys. </p> <p>You can either generate an encryption key within Amazon Web
-         * Services Payment Cryptography by calling <a
+         * <p>Re-encrypt ciphertext using DUKPT or Symmetric data encryption keys. </p>
+         * <p>You can either generate an encryption key within Amazon Web Services Payment
+         * Cryptography by calling <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
          * or import your own encryption key by calling <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
          * The <code>KeyArn</code> for use with this operation must be in a compatible key
-         * state with <code>KeyModesOfUse</code> set to <code>Encrypt</code>. In asymmetric
-         * encryption, ciphertext is encrypted using public component (imported by calling
-         * <a
-         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>)
-         * of the asymmetric key pair created outside of Amazon Web Services Payment
-         * Cryptography. </p> <p>For symmetric and DUKPT encryption, Amazon Web Services
-         * Payment Cryptography supports <code>TDES</code> and <code>AES</code> algorithms.
-         * For asymmetric encryption, Amazon Web Services Payment Cryptography supports
-         * <code>RSA</code>. To encrypt using DUKPT, a DUKPT key must already exist within
-         * your account with <code>KeyModesOfUse</code> set to <code>DeriveKey</code> or a
-         * new DUKPT can be generated by calling <a
+         * state with <code>KeyModesOfUse</code> set to <code>Encrypt</code>. </p> <p>For
+         * symmetric and DUKPT encryption, Amazon Web Services Payment Cryptography
+         * supports <code>TDES</code> and <code>AES</code> algorithms. To encrypt using
+         * DUKPT, a DUKPT key must already exist within your account with
+         * <code>KeyModesOfUse</code> set to <code>DeriveKey</code> or a new DUKPT can be
+         * generated by calling <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.</p>
          * <p>For information about valid keys for this operation, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
@@ -408,26 +416,24 @@ namespace PaymentCryptographyData
          * Payment Cryptography. The encryption key transformation can be from PEK (Pin
          * Encryption Key) to BDK (Base Derivation Key) for DUKPT or from BDK for DUKPT to
          * PEK. Amazon Web Services Payment Cryptography supports <code>TDES</code> and
-         * <code>AES</code> key derivation type for DUKPT tranlations. You can use this
-         * operation for P2PE (Point to Point Encryption) use cases where the encryption
-         * keys should change but the processing system either does not need to, or is not
-         * permitted to, decrypt the data.</p> <p>The allowed combinations of PIN block
-         * format translations are guided by PCI. It is important to note that not all
-         * encrypted PIN block formats (example, format 1) require PAN (Primary Account
-         * Number) as input. And as such, PIN block format that requires PAN (example,
-         * formats 0,3,4) cannot be translated to a format (format 1) that does not require
-         * a PAN for generation. </p> <p>For information about valid keys for this
-         * operation, see <a
+         * <code>AES</code> key derivation type for DUKPT translations. </p> <p>The allowed
+         * combinations of PIN block format translations are guided by PCI. It is important
+         * to note that not all encrypted PIN block formats (example, format 1) require PAN
+         * (Primary Account Number) as input. And as such, PIN block format that requires
+         * PAN (example, formats 0,3,4) cannot be translated to a format (format 1) that
+         * does not require a PAN for generation. </p> <p>For information about valid keys
+         * for this operation, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
          * key attributes</a> and <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
          * types for specific data operations</a> in the <i>Amazon Web Services Payment
-         * Cryptography User Guide</i>.</p>  <p>At this time, Amazon Web Services
-         * Payment Cryptography does not support translations to PIN format 4.</p> 
-         * <p> <b>Cross-account use</b>: This operation can't be used across different
-         * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
-         * <p> <a>GeneratePinData</a> </p> </li> <li> <p> <a>VerifyPinData</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Cryptography User Guide</i>.</p>  <p>Amazon Web Services Payment
+         * Cryptography currently supports ISO PIN block 4 translation for PIN block built
+         * using legacy PAN length. That is, PAN is the right most 12 digits excluding the
+         * check digits.</p>  <p> <b>Cross-account use</b>: This operation can't be
+         * used across different Amazon Web Services accounts.</p> <p> <b>Related
+         * operations:</b> </p> <ul> <li> <p> <a>GeneratePinData</a> </p> </li> <li> <p>
+         * <a>VerifyPinData</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslatePinData">AWS
          * API Reference</a></p>
          */
@@ -550,13 +556,12 @@ namespace PaymentCryptographyData
 
         /**
          * <p>Verifies a Message Authentication Code (MAC). </p> <p>You can use this
-         * operation when keys won't be shared but mutual data is present on both ends for
-         * validation. In this case, known data values are used to generate a MAC on both
-         * ends for verification without sending or receiving data in ciphertext or
-         * plaintext. You can use this operation to verify a DUPKT, HMAC or EMV MAC by
-         * setting generation attributes and algorithm to the associated values. Use the
-         * same encryption key for MAC verification as you use for <a>GenerateMac</a>. </p>
-         * <p>For information about valid keys for this operation, see <a
+         * operation to verify MAC for message data authentication such as . In this
+         * operation, you must use the same message data, secret encryption key and MAC
+         * algorithm that was used to generate MAC. You can use this operation to verify a
+         * DUPKT, CMAC, HMAC or EMV MAC by setting generation attributes and algorithm to
+         * the associated values. </p> <p>For information about valid keys for this
+         * operation, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
          * key attributes</a> and <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
@@ -639,7 +644,6 @@ namespace PaymentCryptographyData
       void init(const PaymentCryptographyDataClientConfiguration& clientConfiguration);
 
       PaymentCryptographyDataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PaymentCryptographyDataEndpointProviderBase> m_endpointProvider;
   };
 

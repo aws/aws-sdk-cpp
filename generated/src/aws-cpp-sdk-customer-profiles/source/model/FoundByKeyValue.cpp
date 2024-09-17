@@ -24,9 +24,8 @@ FoundByKeyValue::FoundByKeyValue() :
 {
 }
 
-FoundByKeyValue::FoundByKeyValue(JsonView jsonValue) : 
-    m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+FoundByKeyValue::FoundByKeyValue(JsonView jsonValue)
+  : FoundByKeyValue()
 {
   *this = jsonValue;
 }

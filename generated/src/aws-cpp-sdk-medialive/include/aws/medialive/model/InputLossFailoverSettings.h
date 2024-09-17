@@ -36,30 +36,16 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The amount of time (in milliseconds) that no input is detected. After that time,
      * an input failover will occur.
      */
     inline int GetInputLossThresholdMsec() const{ return m_inputLossThresholdMsec; }
-
-    /**
-     * The amount of time (in milliseconds) that no input is detected. After that time,
-     * an input failover will occur.
-     */
     inline bool InputLossThresholdMsecHasBeenSet() const { return m_inputLossThresholdMsecHasBeenSet; }
-
-    /**
-     * The amount of time (in milliseconds) that no input is detected. After that time,
-     * an input failover will occur.
-     */
     inline void SetInputLossThresholdMsec(int value) { m_inputLossThresholdMsecHasBeenSet = true; m_inputLossThresholdMsec = value; }
-
-    /**
-     * The amount of time (in milliseconds) that no input is detected. After that time,
-     * an input failover will occur.
-     */
     inline InputLossFailoverSettings& WithInputLossThresholdMsec(int value) { SetInputLossThresholdMsec(value); return *this;}
-
+    ///@}
   private:
 
     int m_inputLossThresholdMsec;

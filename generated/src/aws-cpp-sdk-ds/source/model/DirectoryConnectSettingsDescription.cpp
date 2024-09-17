@@ -28,13 +28,8 @@ DirectoryConnectSettingsDescription::DirectoryConnectSettingsDescription() :
 {
 }
 
-DirectoryConnectSettingsDescription::DirectoryConnectSettingsDescription(JsonView jsonValue) : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_customerUserNameHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_connectIpsHasBeenSet(false)
+DirectoryConnectSettingsDescription::DirectoryConnectSettingsDescription(JsonView jsonValue)
+  : DirectoryConnectSettingsDescription()
 {
   *this = jsonValue;
 }

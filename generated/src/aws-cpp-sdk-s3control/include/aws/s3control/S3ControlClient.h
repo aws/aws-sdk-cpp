@@ -381,7 +381,7 @@ namespace S3Control
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <dl>
          * <dt>Permissions</dt> <dd> <p>For information about permissions required to use
          * the Batch Operations, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Granting
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html">Granting
          * permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
          * </dd> </dl> <p/> <p>Related actions include:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html">DescribeJob</a>
@@ -424,16 +424,16 @@ namespace S3Control
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html">Creating
          * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
          * action will always be routed to the US West (Oregon) Region. For more
-         * information about the restrictions around managing Multi-Region Access Points,
-         * see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
-         * request is asynchronous, meaning that you might receive a response before the
-         * command has completed. When this request provides a response, it provides a
-         * token that you can use to monitor the status of the request with
-         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
-         * actions are related to <code>CreateMultiRegionAccessPoint</code>:</p> <ul> <li>
-         * <p> <a
+         * information about the restrictions around working with Multi-Region Access
+         * Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+         * Access Point restrictions and limitations</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>This request is asynchronous, meaning that you might receive a
+         * response before the command has completed. When this request provides a
+         * response, it provides a token that you can use to monitor the status of the
+         * request with <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The
+         * following actions are related to <code>CreateMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
@@ -1095,16 +1095,16 @@ namespace S3Control
          * <p>Deletes a Multi-Region Access Point. This action does not delete the buckets
          * associated with the Multi-Region Access Point, only the Multi-Region Access
          * Point itself.</p> <p>This action will always be routed to the US West (Oregon)
-         * Region. For more information about the restrictions around managing Multi-Region
-         * Access Points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>This
-         * request is asynchronous, meaning that you might receive a response before the
-         * command has completed. When this request provides a response, it provides a
-         * token that you can use to monitor the status of the request with
-         * <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The following
-         * actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p> <ul> <li>
-         * <p> <a
+         * Region. For more information about the restrictions around working with
+         * Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+         * Access Point restrictions and limitations</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>This request is asynchronous, meaning that you might receive a
+         * response before the command has completed. When this request provides a
+         * response, it provides a token that you can use to monitor the status of the
+         * request with <code>DescribeMultiRegionAccessPointOperation</code>.</p> <p>The
+         * following actions are related to <code>DeleteMultiRegionAccessPoint</code>:</p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
@@ -1317,7 +1317,7 @@ namespace S3Control
          * <p>Retrieves the status of an asynchronous request to manage a Multi-Region
          * Access Point. For more information about managing Multi-Region Access Points and
          * how asynchronous requests work, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MrapOperations.html">Using
          * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
          * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
          * <ul> <li> <p> <a
@@ -1414,7 +1414,9 @@ namespace S3Control
          * <p>Retrieves the S3 Access Grants instance for a Region in your account. </p>
          * <dl> <dt>Permissions</dt> <dd> <p>You must have the
          * <code>s3:GetAccessGrantsInstance</code> permission to use this operation. </p>
-         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * </dd> </dl>  <p> <code>GetAccessGrantsInstance</code> is not supported for
+         * cross-account access. You can only call the API from the account that owns the
+         * S3 Access Grants instance.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">AWS
          * API Reference</a></p>
          */
@@ -1754,15 +1756,15 @@ namespace S3Control
         }
 
         /**
-         *  <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
+         * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
-         * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> 
-         * <p>If you are using an identity other than the root user of the Amazon Web
-         * Services account that owns the Outposts bucket, the calling identity must have
-         * the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts
-         * bucket and belong to the Outposts bucket owner's account in order to use this
-         * action. Only users from Outposts bucket owner account with the right permissions
-         * can perform actions on an Outposts bucket. </p> <p> If you don't have
+         * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
+         * you are using an identity other than the root user of the Amazon Web Services
+         * account that owns the Outposts bucket, the calling identity must have the
+         * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
+         * and belong to the Outposts bucket owner's account in order to use this action.
+         * Only users from Outposts bucket owner account with the right permissions can
+         * perform actions on an Outposts bucket. </p> <p>If you don't have
          * <code>s3-outposts:GetBucket</code> permissions or you're not using an identity
          * that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access
          * Denied</code> error.</p> <p>The following actions are related to
@@ -2107,7 +2109,7 @@ namespace S3Control
          * assumes must have the following permissions specified in the trust policy when
          * registering the location: <code>sts:AssumeRole</code>, for directory users or
          * groups <code>sts:SetContext</code>, and for IAM users or roles
-         * <code>sts:SourceIdentity</code>. </p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * <code>sts:SetSourceIdentity</code>. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">AWS
          * API Reference</a></p>
          */
@@ -2172,12 +2174,12 @@ namespace S3Control
          *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Returns configuration information about the specified Multi-Region Access
          * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
-         * For more information about the restrictions around managing Multi-Region Access
-         * Points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
-         * following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>
-         * <ul> <li> <p> <a
+         * For more information about the restrictions around working with Multi-Region
+         * Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+         * Access Point restrictions and limitations</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>The following actions are related to
+         * <code>GetMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
@@ -2213,11 +2215,11 @@ namespace S3Control
          *  <p>This operation is not supported by directory buckets.</p> 
          * <p>Returns the access control policy of the specified Multi-Region Access
          * Point.</p> <p>This action will always be routed to the US West (Oregon) Region.
-         * For more information about the restrictions around managing Multi-Region Access
-         * Points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
-         * following actions are related to
+         * For more information about the restrictions around working with Multi-Region
+         * Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+         * Access Point restrictions and limitations</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>The following actions are related to
          * <code>GetMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
          * </p> </li> <li> <p> <a
@@ -2251,10 +2253,10 @@ namespace S3Control
          * <p>Indicates whether the specified Multi-Region Access Point has an access
          * control policy that allows public access.</p> <p>This action will always be
          * routed to the US West (Oregon) Region. For more information about the
-         * restrictions around managing Multi-Region Access Points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
-         * following actions are related to
+         * restrictions around working with Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+         * Access Point restrictions and limitations</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>The following actions are related to
          * <code>GetMultiRegionAccessPointPolicyStatus</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
          * </p> </li> <li> <p> <a
@@ -2292,8 +2294,7 @@ namespace S3Control
          * <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li>
          * <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p>
          * <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p>
-         * </li> </ul>  <p>Your Amazon S3 bucket does not need to be in these five
-         * Regions.</p> <p><h3>See Also:</h3>   <a
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">AWS
          * API Reference</a></p>
          */
@@ -2624,8 +2625,37 @@ namespace S3Control
         }
 
         /**
+         * <p>Returns a list of the access grants that were given to the caller using S3
+         * Access Grants and that allow the caller to access the S3 data of the Amazon Web
+         * Services account specified in the request.</p> <dl> <dt>Permissions</dt> <dd>
+         * <p>You must have the <code>s3:ListCallerAccessGrants</code> permission to use
+         * this operation. </p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCallerAccessGrantsOutcome ListCallerAccessGrants(const Model::ListCallerAccessGrantsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCallerAccessGrants that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCallerAccessGrantsRequestT = Model::ListCallerAccessGrantsRequest>
+        Model::ListCallerAccessGrantsOutcomeCallable ListCallerAccessGrantsCallable(const ListCallerAccessGrantsRequestT& request) const
+        {
+            return SubmitCallable(&S3ControlClient::ListCallerAccessGrants, request);
+        }
+
+        /**
+         * An Async wrapper for ListCallerAccessGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCallerAccessGrantsRequestT = Model::ListCallerAccessGrantsRequest>
+        void ListCallerAccessGrantsAsync(const ListCallerAccessGrantsRequestT& request, const ListCallerAccessGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3ControlClient::ListCallerAccessGrants, request, handler, context);
+        }
+
+        /**
          * <p>Lists current S3 Batch Operations jobs as well as the jobs that have ended
-         * within the last 30 days for the Amazon Web Services account making the request.
+         * within the last 90 days for the Amazon Web Services account making the request.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <dl>
@@ -2670,11 +2700,11 @@ namespace S3Control
          * Multi-Region Access Points, the maximum number of Multi-Region Access Points
          * that can be associated with a single account.</p> <p>This action will always be
          * routed to the US West (Oregon) Region. For more information about the
-         * restrictions around managing Multi-Region Access Points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
-         * following actions are related to <code>ListMultiRegionAccessPoint</code>:</p>
-         * <ul> <li> <p> <a
+         * restrictions around working with Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+         * Access Point restrictions and limitations</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>The following actions are related to
+         * <code>ListMultiRegionAccessPoint</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
@@ -3396,10 +3426,10 @@ namespace S3Control
          * made to this action replaces any existing policy that is associated with the
          * specified Multi-Region Access Point.</p> <p>This action will always be routed to
          * the US West (Oregon) Region. For more information about the restrictions around
-         * managing Multi-Region Access Points, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-         * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
-         * following actions are related to
+         * working with Multi-Region Access Points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+         * Access Point restrictions and limitations</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>The following actions are related to
          * <code>PutMultiRegionAccessPointPolicy</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicy.html">GetMultiRegionAccessPointPolicy</a>
          * </p> </li> <li> <p> <a
@@ -3555,8 +3585,7 @@ namespace S3Control
          * Services Regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p>
          * <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p>
          * </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p>
-         * <code>eu-west-1</code> </p> </li> </ul>  <p>Your Amazon S3 bucket does not
-         * need to be in these five Regions.</p> <p><h3>See Also:</h3>   <a
+         * <code>eu-west-1</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">AWS
          * API Reference</a></p>
          */
@@ -3812,7 +3841,6 @@ namespace S3Control
         friend class Aws::Client::ClientWithAsyncTemplateMethods<S3ControlClient>;
         void init(const S3ControlClientConfiguration& clientConfiguration);
         S3ControlClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Utils::Threading::Executor> m_executor;
         std::shared_ptr<S3ControlEndpointProviderBase> m_endpointProvider;
     };
 

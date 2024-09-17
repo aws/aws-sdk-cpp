@@ -31,16 +31,8 @@ PortfolioShareDetail::PortfolioShareDetail() :
 {
 }
 
-PortfolioShareDetail::PortfolioShareDetail(JsonView jsonValue) : 
-    m_principalIdHasBeenSet(false),
-    m_type(DescribePortfolioShareType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_accepted(false),
-    m_acceptedHasBeenSet(false),
-    m_shareTagOptions(false),
-    m_shareTagOptionsHasBeenSet(false),
-    m_sharePrincipals(false),
-    m_sharePrincipalsHasBeenSet(false)
+PortfolioShareDetail::PortfolioShareDetail(JsonView jsonValue)
+  : PortfolioShareDetail()
 {
   *this = jsonValue;
 }

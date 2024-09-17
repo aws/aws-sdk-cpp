@@ -81,6 +81,56 @@ namespace QuickSight
         virtual ~QuickSightClient();
 
         /**
+         * <p>Creates new reviewed answers for a Q Topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchCreateTopicReviewedAnswer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateTopicReviewedAnswerOutcome BatchCreateTopicReviewedAnswer(const Model::BatchCreateTopicReviewedAnswerRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchCreateTopicReviewedAnswer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchCreateTopicReviewedAnswerRequestT = Model::BatchCreateTopicReviewedAnswerRequest>
+        Model::BatchCreateTopicReviewedAnswerOutcomeCallable BatchCreateTopicReviewedAnswerCallable(const BatchCreateTopicReviewedAnswerRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::BatchCreateTopicReviewedAnswer, request);
+        }
+
+        /**
+         * An Async wrapper for BatchCreateTopicReviewedAnswer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchCreateTopicReviewedAnswerRequestT = Model::BatchCreateTopicReviewedAnswerRequest>
+        void BatchCreateTopicReviewedAnswerAsync(const BatchCreateTopicReviewedAnswerRequestT& request, const BatchCreateTopicReviewedAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::BatchCreateTopicReviewedAnswer, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes reviewed answers for Q Topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteTopicReviewedAnswer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteTopicReviewedAnswerOutcome BatchDeleteTopicReviewedAnswer(const Model::BatchDeleteTopicReviewedAnswerRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteTopicReviewedAnswer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteTopicReviewedAnswerRequestT = Model::BatchDeleteTopicReviewedAnswerRequest>
+        Model::BatchDeleteTopicReviewedAnswerOutcomeCallable BatchDeleteTopicReviewedAnswerCallable(const BatchDeleteTopicReviewedAnswerRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::BatchDeleteTopicReviewedAnswer, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteTopicReviewedAnswer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteTopicReviewedAnswerRequestT = Model::BatchDeleteTopicReviewedAnswerRequest>
+        void BatchDeleteTopicReviewedAnswerAsync(const BatchDeleteTopicReviewedAnswerRequestT& request, const BatchDeleteTopicReviewedAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::BatchDeleteTopicReviewedAnswer, request, handler, context);
+        }
+
+        /**
          * <p>Cancels an ongoing ingestion of data into SPICE.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CancelIngestion">AWS
@@ -2187,6 +2237,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes all customer managed key registrations in a Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKeyRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeKeyRegistrationOutcome DescribeKeyRegistration(const Model::DescribeKeyRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeKeyRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeKeyRegistrationRequestT = Model::DescribeKeyRegistrationRequest>
+        Model::DescribeKeyRegistrationOutcomeCallable DescribeKeyRegistrationCallable(const DescribeKeyRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeKeyRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeKeyRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeKeyRegistrationRequestT = Model::DescribeKeyRegistrationRequest>
+        void DescribeKeyRegistrationAsync(const DescribeKeyRegistrationRequestT& request, const DescribeKeyRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeKeyRegistration, request, handler, context);
+        }
+
+        /**
          * <p>Describes the current namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace">AWS
          * API Reference</a></p>
@@ -3450,6 +3526,31 @@ namespace QuickSight
         }
 
         /**
+         * <p>Lists all reviewed answers for a Q Topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicReviewedAnswers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTopicReviewedAnswersOutcome ListTopicReviewedAnswers(const Model::ListTopicReviewedAnswersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTopicReviewedAnswers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTopicReviewedAnswersRequestT = Model::ListTopicReviewedAnswersRequest>
+        Model::ListTopicReviewedAnswersOutcomeCallable ListTopicReviewedAnswersCallable(const ListTopicReviewedAnswersRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListTopicReviewedAnswers, request);
+        }
+
+        /**
+         * An Async wrapper for ListTopicReviewedAnswers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTopicReviewedAnswersRequestT = Model::ListTopicReviewedAnswersRequest>
+        void ListTopicReviewedAnswersAsync(const ListTopicReviewedAnswersRequestT& request, const ListTopicReviewedAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListTopicReviewedAnswers, request, handler, context);
+        }
+
+        /**
          * <p>Lists all of the topics within an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopics">AWS
          * API Reference</a></p>
@@ -3866,13 +3967,59 @@ namespace QuickSight
         }
 
         /**
-         * <p>Starts an asynchronous job that generates a dashboard snapshot. You can
-         * request one of the following format configurations per API call.</p> <ul> <li>
-         * <p>1 paginated PDF</p> </li> <li> <p>1 Excel workbook</p> </li> <li> <p>5
-         * CSVs</p> </li> </ul> <p>Poll job descriptions with a
-         * <code>DescribeDashboardSnapshotJob</code> API call. Once the job succeeds, use
-         * the <code>DescribeDashboardSnapshotJobResult</code> API to obtain the download
-         * URIs that the job generates.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an asynchronous job that generates a snapshot of a dashboard's output.
+         * You can request one or several of the following format configurations in each
+         * API call.</p> <ul> <li> <p>1 Paginated PDF</p> </li> <li> <p>1 Excel workbook
+         * that includes up to 5 table or pivot table visuals</p> </li> <li> <p>5 CSVs from
+         * table or pivot table visuals</p> </li> </ul> <p>The status of a submitted job
+         * can be polled with the <code>DescribeDashboardSnapshotJob</code> API. When you
+         * call the <code>DescribeDashboardSnapshotJob</code> API, check the
+         * <code>JobStatus</code> field in the response. Once the job reaches a
+         * <code>COMPLETED</code> or <code>FAILED</code> status, use the
+         * <code>DescribeDashboardSnapshotJobResult</code> API to obtain the URLs for the
+         * generated files. If the job fails, the
+         * <code>DescribeDashboardSnapshotJobResult</code> API returns detailed information
+         * about the error that occurred.</p> <p> <b>StartDashboardSnapshotJob API
+         * throttling</b> </p> <p>Amazon QuickSight utilizes API throttling to create a
+         * more consistent user experience within a time span for customers when they call
+         * the <code>StartDashboardSnapshotJob</code>. By default, 12 jobs can run
+         * simlutaneously in one Amazon Web Services account and users can submit up 10 API
+         * requests per second before an account is throttled. If an overwhelming number of
+         * API requests are made by the same user in a short period of time, Amazon
+         * QuickSight throttles the API calls to maintin an optimal experience and
+         * reliability for all Amazon QuickSight users.</p> <p> <b>Common throttling
+         * scenarios</b> </p> <p>The following list provides information about the most
+         * commin throttling scenarios that can occur.</p> <ul> <li> <p> <b>A large number
+         * of <code>SnapshotExport</code> API jobs are running simultaneously on an Amazon
+         * Web Services account.</b> When a new <code>StartDashboardSnapshotJob</code> is
+         * created and there are already 12 jobs with the <code>RUNNING</code> status, the
+         * new job request fails and returns a <code>LimitExceededException</code> error.
+         * Wait for a current job to comlpete before you resubmit the new job.</p> </li>
+         * <li> <p> <b>A large number of API requests are submitted on an Amazon Web
+         * Services account.</b> When a user makes more than 10 API calls to the Amazon
+         * QuickSight API in one second, a <code>ThrottlingException</code> is
+         * returned.</p> </li> </ul> <p>If your use case requires a higher throttling
+         * limit, contact your account admin or <a
+         * href="http://aws.amazon.com/contact-us/">Amazon Web ServicesSupport</a> to
+         * explore options to tailor a more optimal expereince for your account.</p> <p>
+         * <b>Best practices to handle throttling</b> </p> <p>If your use case projects
+         * high levels of API traffic, try to reduce the degree of frequency and
+         * parallelism of API calls as much as you can to avoid throttling. You can also
+         * perform a timing test to calculate an estimate for the total processing time of
+         * your projected load that stays within the throttling limits of the Amazon
+         * QuickSight APIs. For example, if your projected traffic is 100 snapshot jobs
+         * before 12:00 PM per day, start 12 jobs in parallel and measure the amount of
+         * time it takes to proccess all 12 jobs. Once you obtain the result, multiply the
+         * duration by 9, for example <code>(12 minutes * 9 = 108 minutes)</code>. Use the
+         * new result to determine the latest time at which the jobs need to be started to
+         * meet your target deadline.</p> <p>The time that it takes to process a job can be
+         * impacted by the following factors:</p> <ul> <li> <p>The dataset type (Direct
+         * Query or SPICE).</p> </li> <li> <p>The size of the dataset.</p> </li> <li>
+         * <p>The complexity of the calculated fields that are used in the dashboard.</p>
+         * </li> <li> <p>The number of visuals that are on a sheet.</p> </li> <li> <p>The
+         * types of visuals that are on the sheet.</p> </li> <li> <p>The number of formats
+         * and snapshots that are requested in the job configuration.</p> </li> <li> <p>The
+         * size of the generated snapshots.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">AWS
          * API Reference</a></p>
          */
@@ -4414,8 +4561,10 @@ namespace QuickSight
         }
 
         /**
-         * <p>Updates the content and status of IP rules. To use this operation, you must
-         * provide the entire map of rules. You can use the
+         * <p>Updates the content and status of IP rules. Traffic from a source is allowed
+         * when the source satisfies either the <code>IpRestrictionRule</code>,
+         * <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>.
+         * To use this operation, you must provide the entire map of rules. You can use the
          * <code>DescribeIpRestriction</code> operation to get the current rule
          * map.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">AWS
@@ -4439,6 +4588,32 @@ namespace QuickSight
         void UpdateIpRestrictionAsync(const UpdateIpRestrictionRequestT& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateIpRestriction, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a customer managed key in a Amazon QuickSight account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKeyRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKeyRegistrationOutcome UpdateKeyRegistration(const Model::UpdateKeyRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKeyRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKeyRegistrationRequestT = Model::UpdateKeyRegistrationRequest>
+        Model::UpdateKeyRegistrationOutcomeCallable UpdateKeyRegistrationCallable(const UpdateKeyRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateKeyRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKeyRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKeyRegistrationRequestT = Model::UpdateKeyRegistrationRequest>
+        void UpdateKeyRegistrationAsync(const UpdateKeyRegistrationRequestT& request, const UpdateKeyRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateKeyRegistration, request, handler, context);
         }
 
         /**
@@ -4524,6 +4699,32 @@ namespace QuickSight
         void UpdateRoleCustomPermissionAsync(const UpdateRoleCustomPermissionRequestT& request, const UpdateRoleCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateRoleCustomPermission, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the SPICE capacity configuration for a Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSPICECapacityConfigurationOutcome UpdateSPICECapacityConfiguration(const Model::UpdateSPICECapacityConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSPICECapacityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSPICECapacityConfigurationRequestT = Model::UpdateSPICECapacityConfigurationRequest>
+        Model::UpdateSPICECapacityConfigurationOutcomeCallable UpdateSPICECapacityConfigurationCallable(const UpdateSPICECapacityConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateSPICECapacityConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSPICECapacityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSPICECapacityConfigurationRequestT = Model::UpdateSPICECapacityConfigurationRequest>
+        void UpdateSPICECapacityConfigurationAsync(const UpdateSPICECapacityConfigurationRequestT& request, const UpdateSPICECapacityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateSPICECapacityConfiguration, request, handler, context);
         }
 
         /**
@@ -4832,7 +5033,6 @@ namespace QuickSight
       void init(const QuickSightClientConfiguration& clientConfiguration);
 
       QuickSightClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QuickSightEndpointProviderBase> m_endpointProvider;
   };
 

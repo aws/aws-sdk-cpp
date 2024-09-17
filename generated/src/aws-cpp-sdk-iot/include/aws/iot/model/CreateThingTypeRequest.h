@@ -38,130 +38,47 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the thing type.</p>
      */
     inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
-
-    /**
-     * <p>The name of the thing type.</p>
-     */
     inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing type.</p>
-     */
     inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
-
-    /**
-     * <p>The name of the thing type.</p>
-     */
     inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
-
-    /**
-     * <p>The name of the thing type.</p>
-     */
     inline void SetThingTypeName(const char* value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName.assign(value); }
-
-    /**
-     * <p>The name of the thing type.</p>
-     */
     inline CreateThingTypeRequest& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-
-    /**
-     * <p>The name of the thing type.</p>
-     */
     inline CreateThingTypeRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing type.</p>
-     */
     inline CreateThingTypeRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ThingTypeProperties for the thing type to create. It contains information
      * about the new thing type including a description, and a list of searchable thing
      * attribute names.</p>
      */
     inline const ThingTypeProperties& GetThingTypeProperties() const{ return m_thingTypeProperties; }
-
-    /**
-     * <p>The ThingTypeProperties for the thing type to create. It contains information
-     * about the new thing type including a description, and a list of searchable thing
-     * attribute names.</p>
-     */
     inline bool ThingTypePropertiesHasBeenSet() const { return m_thingTypePropertiesHasBeenSet; }
-
-    /**
-     * <p>The ThingTypeProperties for the thing type to create. It contains information
-     * about the new thing type including a description, and a list of searchable thing
-     * attribute names.</p>
-     */
     inline void SetThingTypeProperties(const ThingTypeProperties& value) { m_thingTypePropertiesHasBeenSet = true; m_thingTypeProperties = value; }
-
-    /**
-     * <p>The ThingTypeProperties for the thing type to create. It contains information
-     * about the new thing type including a description, and a list of searchable thing
-     * attribute names.</p>
-     */
     inline void SetThingTypeProperties(ThingTypeProperties&& value) { m_thingTypePropertiesHasBeenSet = true; m_thingTypeProperties = std::move(value); }
-
-    /**
-     * <p>The ThingTypeProperties for the thing type to create. It contains information
-     * about the new thing type including a description, and a list of searchable thing
-     * attribute names.</p>
-     */
     inline CreateThingTypeRequest& WithThingTypeProperties(const ThingTypeProperties& value) { SetThingTypeProperties(value); return *this;}
-
-    /**
-     * <p>The ThingTypeProperties for the thing type to create. It contains information
-     * about the new thing type including a description, and a list of searchable thing
-     * attribute names.</p>
-     */
     inline CreateThingTypeRequest& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata which can be used to manage the thing type.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing type.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing type.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing type.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Metadata which can be used to manage the thing type.</p>
-     */
     inline CreateThingTypeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Metadata which can be used to manage the thing type.</p>
-     */
     inline CreateThingTypeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata which can be used to manage the thing type.</p>
-     */
     inline CreateThingTypeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing type.</p>
-     */
     inline CreateThingTypeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_thingTypeName;

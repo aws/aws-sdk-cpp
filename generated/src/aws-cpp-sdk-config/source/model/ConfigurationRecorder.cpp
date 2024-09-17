@@ -26,11 +26,8 @@ ConfigurationRecorder::ConfigurationRecorder() :
 {
 }
 
-ConfigurationRecorder::ConfigurationRecorder(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_recordingGroupHasBeenSet(false),
-    m_recordingModeHasBeenSet(false)
+ConfigurationRecorder::ConfigurationRecorder(JsonView jsonValue)
+  : ConfigurationRecorder()
 {
   *this = jsonValue;
 }

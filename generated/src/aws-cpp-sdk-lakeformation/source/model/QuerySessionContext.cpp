@@ -27,12 +27,8 @@ QuerySessionContext::QuerySessionContext() :
 {
 }
 
-QuerySessionContext::QuerySessionContext(JsonView jsonValue) : 
-    m_queryIdHasBeenSet(false),
-    m_queryStartTimeHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_queryAuthorizationIdHasBeenSet(false),
-    m_additionalContextHasBeenSet(false)
+QuerySessionContext::QuerySessionContext(JsonView jsonValue)
+  : QuerySessionContext()
 {
   *this = jsonValue;
 }

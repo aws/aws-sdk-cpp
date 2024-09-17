@@ -40,100 +40,34 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
      * updates to an incident. You can also make updates to the incident through the
      * chat channel by using the Amazon SNS topics. </p>
      */
     inline const Aws::Vector<Aws::String>& GetChatbotSns() const{ return m_chatbotSns; }
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline bool ChatbotSnsHasBeenSet() const { return m_chatbotSnsHasBeenSet; }
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline void SetChatbotSns(const Aws::Vector<Aws::String>& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns = value; }
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline void SetChatbotSns(Aws::Vector<Aws::String>&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns = std::move(value); }
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline ChatChannel& WithChatbotSns(const Aws::Vector<Aws::String>& value) { SetChatbotSns(value); return *this;}
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline ChatChannel& WithChatbotSns(Aws::Vector<Aws::String>&& value) { SetChatbotSns(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline ChatChannel& AddChatbotSns(const Aws::String& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline ChatChannel& AddChatbotSns(Aws::String&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
-     * updates to an incident. You can also make updates to the incident through the
-     * chat channel by using the Amazon SNS topics. </p>
-     */
     inline ChatChannel& AddChatbotSns(const char* value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Used to remove the chat channel from an incident record or response plan.</p>
      */
     inline const EmptyChatChannel& GetEmpty() const{ return m_empty; }
-
-    /**
-     * <p>Used to remove the chat channel from an incident record or response plan.</p>
-     */
     inline bool EmptyHasBeenSet() const { return m_emptyHasBeenSet; }
-
-    /**
-     * <p>Used to remove the chat channel from an incident record or response plan.</p>
-     */
     inline void SetEmpty(const EmptyChatChannel& value) { m_emptyHasBeenSet = true; m_empty = value; }
-
-    /**
-     * <p>Used to remove the chat channel from an incident record or response plan.</p>
-     */
     inline void SetEmpty(EmptyChatChannel&& value) { m_emptyHasBeenSet = true; m_empty = std::move(value); }
-
-    /**
-     * <p>Used to remove the chat channel from an incident record or response plan.</p>
-     */
     inline ChatChannel& WithEmpty(const EmptyChatChannel& value) { SetEmpty(value); return *this;}
-
-    /**
-     * <p>Used to remove the chat channel from an incident record or response plan.</p>
-     */
     inline ChatChannel& WithEmpty(EmptyChatChannel&& value) { SetEmpty(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_chatbotSns;

@@ -32,17 +32,8 @@ SuiteDefinitionInformation::SuiteDefinitionInformation() :
 {
 }
 
-SuiteDefinitionInformation::SuiteDefinitionInformation(JsonView jsonValue) : 
-    m_suiteDefinitionIdHasBeenSet(false),
-    m_suiteDefinitionNameHasBeenSet(false),
-    m_defaultDevicesHasBeenSet(false),
-    m_intendedForQualification(false),
-    m_intendedForQualificationHasBeenSet(false),
-    m_isLongDurationTest(false),
-    m_isLongDurationTestHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+SuiteDefinitionInformation::SuiteDefinitionInformation(JsonView jsonValue)
+  : SuiteDefinitionInformation()
 {
   *this = jsonValue;
 }

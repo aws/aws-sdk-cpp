@@ -19,34 +19,32 @@ namespace Model
 {
 
 MessageReviewHandler::MessageReviewHandler() : 
+    m_uriHasBeenSet(false),
     m_fallbackResult(FallbackResult::NOT_SET),
-    m_fallbackResultHasBeenSet(false),
-    m_uriHasBeenSet(false)
+    m_fallbackResultHasBeenSet(false)
 {
 }
 
-MessageReviewHandler::MessageReviewHandler(JsonView jsonValue) : 
-    m_fallbackResult(FallbackResult::NOT_SET),
-    m_fallbackResultHasBeenSet(false),
-    m_uriHasBeenSet(false)
+MessageReviewHandler::MessageReviewHandler(JsonView jsonValue)
+  : MessageReviewHandler()
 {
   *this = jsonValue;
 }
 
 MessageReviewHandler& MessageReviewHandler::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("fallbackResult"))
-  {
-    m_fallbackResult = FallbackResultMapper::GetFallbackResultForName(jsonValue.GetString("fallbackResult"));
-
-    m_fallbackResultHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
 
     m_uriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fallbackResult"))
+  {
+    m_fallbackResult = FallbackResultMapper::GetFallbackResultForName(jsonValue.GetString("fallbackResult"));
+
+    m_fallbackResultHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +54,15 @@ JsonValue MessageReviewHandler::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_fallbackResultHasBeenSet)
-  {
-   payload.WithString("fallbackResult", FallbackResultMapper::GetNameForFallbackResult(m_fallbackResult));
-  }
-
   if(m_uriHasBeenSet)
   {
    payload.WithString("uri", m_uri);
 
+  }
+
+  if(m_fallbackResultHasBeenSet)
+  {
+   payload.WithString("fallbackResult", FallbackResultMapper::GetNameForFallbackResult(m_fallbackResult));
   }
 
   return payload;

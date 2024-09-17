@@ -22,15 +22,14 @@ InputDestination::InputDestination() :
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_networkHasBeenSet(false),
+    m_networkRoutesHasBeenSet(false)
 {
 }
 
-InputDestination::InputDestination(JsonView jsonValue) : 
-    m_ipHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+InputDestination::InputDestination(JsonView jsonValue)
+  : InputDestination()
 {
   *this = jsonValue;
 }
@@ -65,6 +64,23 @@ InputDestination& InputDestination::operator =(JsonView jsonValue)
     m_vpcHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("network"))
+  {
+    m_network = jsonValue.GetString("network");
+
+    m_networkHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkRoutes"))
+  {
+    Aws::Utils::Array<JsonView> networkRoutesJsonList = jsonValue.GetArray("networkRoutes");
+    for(unsigned networkRoutesIndex = 0; networkRoutesIndex < networkRoutesJsonList.GetLength(); ++networkRoutesIndex)
+    {
+      m_networkRoutes.push_back(networkRoutesJsonList[networkRoutesIndex].AsObject());
+    }
+    m_networkRoutesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +109,23 @@ JsonValue InputDestination::Jsonize() const
   if(m_vpcHasBeenSet)
   {
    payload.WithObject("vpc", m_vpc.Jsonize());
+
+  }
+
+  if(m_networkHasBeenSet)
+  {
+   payload.WithString("network", m_network);
+
+  }
+
+  if(m_networkRoutesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> networkRoutesJsonList(m_networkRoutes.size());
+   for(unsigned networkRoutesIndex = 0; networkRoutesIndex < networkRoutesJsonList.GetLength(); ++networkRoutesIndex)
+   {
+     networkRoutesJsonList[networkRoutesIndex].AsObject(m_networkRoutes[networkRoutesIndex].Jsonize());
+   }
+   payload.WithArray("networkRoutes", std::move(networkRoutesJsonList));
 
   }
 

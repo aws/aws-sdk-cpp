@@ -91,6 +91,33 @@
 #include <aws/config/model/StartConfigRulesEvaluationResult.h>
 #include <aws/config/model/StartRemediationExecutionResult.h>
 #include <aws/config/model/StartResourceEvaluationResult.h>
+#include <aws/config/model/ListStoredQueriesRequest.h>
+#include <aws/config/model/DescribeDeliveryChannelStatusRequest.h>
+#include <aws/config/model/DescribeRetentionConfigurationsRequest.h>
+#include <aws/config/model/StartConfigRulesEvaluationRequest.h>
+#include <aws/config/model/DescribeConformancePacksRequest.h>
+#include <aws/config/model/GetComplianceDetailsByResourceRequest.h>
+#include <aws/config/model/DescribeOrganizationConfigRuleStatusesRequest.h>
+#include <aws/config/model/DescribeConfigurationAggregatorsRequest.h>
+#include <aws/config/model/DescribeConfigRulesRequest.h>
+#include <aws/config/model/DescribeConfigRuleEvaluationStatusRequest.h>
+#include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
+#include <aws/config/model/GetCustomRulePolicyRequest.h>
+#include <aws/config/model/DescribeDeliveryChannelsRequest.h>
+#include <aws/config/model/ListConformancePackComplianceScoresRequest.h>
+#include <aws/config/model/DescribeConfigurationRecorderStatusRequest.h>
+#include <aws/config/model/DescribeAggregationAuthorizationsRequest.h>
+#include <aws/config/model/DescribeComplianceByResourceRequest.h>
+#include <aws/config/model/DescribeOrganizationConformancePacksRequest.h>
+#include <aws/config/model/DescribeConformancePackStatusRequest.h>
+#include <aws/config/model/DescribeComplianceByConfigRuleRequest.h>
+#include <aws/config/model/DescribeConfigurationRecordersRequest.h>
+#include <aws/config/model/ListResourceEvaluationsRequest.h>
+#include <aws/config/model/DescribeOrganizationConformancePackStatusesRequest.h>
+#include <aws/config/model/GetComplianceSummaryByResourceTypeRequest.h>
+#include <aws/config/model/DescribePendingAggregationRequestsRequest.h>
+#include <aws/config/model/DescribeOrganizationConfigRulesRequest.h>
+#include <aws/config/model/GetComplianceSummaryByConfigRuleRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConfigServiceClient header */
 
@@ -125,7 +152,7 @@ namespace Aws
 
   namespace ConfigService
   {
-    using ConfigServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConfigServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConfigServiceEndpointProviderBase = Aws::ConfigService::Endpoint::ConfigServiceEndpointProviderBase;
     using ConfigServiceEndpointProvider = Aws::ConfigService::Endpoint::ConfigServiceEndpointProvider;
 

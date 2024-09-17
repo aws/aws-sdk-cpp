@@ -29,14 +29,8 @@ HorizontalLayoutConfiguration::HorizontalLayoutConfiguration() :
 {
 }
 
-HorizontalLayoutConfiguration::HorizontalLayoutConfiguration(JsonView jsonValue) : 
-    m_tileOrder(TileOrder::NOT_SET),
-    m_tileOrderHasBeenSet(false),
-    m_tilePosition(HorizontalTilePosition::NOT_SET),
-    m_tilePositionHasBeenSet(false),
-    m_tileCount(0),
-    m_tileCountHasBeenSet(false),
-    m_tileAspectRatioHasBeenSet(false)
+HorizontalLayoutConfiguration::HorizontalLayoutConfiguration(JsonView jsonValue)
+  : HorizontalLayoutConfiguration()
 {
   *this = jsonValue;
 }

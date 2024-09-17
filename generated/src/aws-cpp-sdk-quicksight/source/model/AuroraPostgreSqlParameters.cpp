@@ -26,11 +26,8 @@ AuroraPostgreSqlParameters::AuroraPostgreSqlParameters() :
 {
 }
 
-AuroraPostgreSqlParameters::AuroraPostgreSqlParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+AuroraPostgreSqlParameters::AuroraPostgreSqlParameters(JsonView jsonValue)
+  : AuroraPostgreSqlParameters()
 {
   *this = jsonValue;
 }

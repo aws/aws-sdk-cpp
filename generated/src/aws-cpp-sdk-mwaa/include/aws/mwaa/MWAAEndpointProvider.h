@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MWAAClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MWAAClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MWAAClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MWAABuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -584,13 +584,13 @@ namespace MachineLearning
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeBatchPredictionsOutcome DescribeBatchPredictions(const Model::DescribeBatchPredictionsRequest& request) const;
+        virtual Model::DescribeBatchPredictionsOutcome DescribeBatchPredictions(const Model::DescribeBatchPredictionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeBatchPredictions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeBatchPredictionsRequestT = Model::DescribeBatchPredictionsRequest>
-        Model::DescribeBatchPredictionsOutcomeCallable DescribeBatchPredictionsCallable(const DescribeBatchPredictionsRequestT& request) const
+        Model::DescribeBatchPredictionsOutcomeCallable DescribeBatchPredictionsCallable(const DescribeBatchPredictionsRequestT& request = {}) const
         {
             return SubmitCallable(&MachineLearningClient::DescribeBatchPredictions, request);
         }
@@ -599,7 +599,7 @@ namespace MachineLearning
          * An Async wrapper for DescribeBatchPredictions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeBatchPredictionsRequestT = Model::DescribeBatchPredictionsRequest>
-        void DescribeBatchPredictionsAsync(const DescribeBatchPredictionsRequestT& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeBatchPredictionsAsync(const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeBatchPredictionsRequestT& request = {}) const
         {
             return SubmitAsync(&MachineLearningClient::DescribeBatchPredictions, request, handler, context);
         }
@@ -610,13 +610,13 @@ namespace MachineLearning
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDataSourcesOutcome DescribeDataSources(const Model::DescribeDataSourcesRequest& request) const;
+        virtual Model::DescribeDataSourcesOutcome DescribeDataSources(const Model::DescribeDataSourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDataSources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDataSourcesRequestT = Model::DescribeDataSourcesRequest>
-        Model::DescribeDataSourcesOutcomeCallable DescribeDataSourcesCallable(const DescribeDataSourcesRequestT& request) const
+        Model::DescribeDataSourcesOutcomeCallable DescribeDataSourcesCallable(const DescribeDataSourcesRequestT& request = {}) const
         {
             return SubmitCallable(&MachineLearningClient::DescribeDataSources, request);
         }
@@ -625,7 +625,7 @@ namespace MachineLearning
          * An Async wrapper for DescribeDataSources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDataSourcesRequestT = Model::DescribeDataSourcesRequest>
-        void DescribeDataSourcesAsync(const DescribeDataSourcesRequestT& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDataSourcesAsync(const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDataSourcesRequestT& request = {}) const
         {
             return SubmitAsync(&MachineLearningClient::DescribeDataSources, request, handler, context);
         }
@@ -636,13 +636,13 @@ namespace MachineLearning
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEvaluationsOutcome DescribeEvaluations(const Model::DescribeEvaluationsRequest& request) const;
+        virtual Model::DescribeEvaluationsOutcome DescribeEvaluations(const Model::DescribeEvaluationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEvaluations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEvaluationsRequestT = Model::DescribeEvaluationsRequest>
-        Model::DescribeEvaluationsOutcomeCallable DescribeEvaluationsCallable(const DescribeEvaluationsRequestT& request) const
+        Model::DescribeEvaluationsOutcomeCallable DescribeEvaluationsCallable(const DescribeEvaluationsRequestT& request = {}) const
         {
             return SubmitCallable(&MachineLearningClient::DescribeEvaluations, request);
         }
@@ -651,7 +651,7 @@ namespace MachineLearning
          * An Async wrapper for DescribeEvaluations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEvaluationsRequestT = Model::DescribeEvaluationsRequest>
-        void DescribeEvaluationsAsync(const DescribeEvaluationsRequestT& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEvaluationsAsync(const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEvaluationsRequestT& request = {}) const
         {
             return SubmitAsync(&MachineLearningClient::DescribeEvaluations, request, handler, context);
         }
@@ -662,13 +662,13 @@ namespace MachineLearning
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeMLModelsOutcome DescribeMLModels(const Model::DescribeMLModelsRequest& request) const;
+        virtual Model::DescribeMLModelsOutcome DescribeMLModels(const Model::DescribeMLModelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeMLModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeMLModelsRequestT = Model::DescribeMLModelsRequest>
-        Model::DescribeMLModelsOutcomeCallable DescribeMLModelsCallable(const DescribeMLModelsRequestT& request) const
+        Model::DescribeMLModelsOutcomeCallable DescribeMLModelsCallable(const DescribeMLModelsRequestT& request = {}) const
         {
             return SubmitCallable(&MachineLearningClient::DescribeMLModels, request);
         }
@@ -677,7 +677,7 @@ namespace MachineLearning
          * An Async wrapper for DescribeMLModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeMLModelsRequestT = Model::DescribeMLModelsRequest>
-        void DescribeMLModelsAsync(const DescribeMLModelsRequestT& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeMLModelsAsync(const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMLModelsRequestT& request = {}) const
         {
             return SubmitAsync(&MachineLearningClient::DescribeMLModels, request, handler, context);
         }
@@ -964,7 +964,6 @@ namespace MachineLearning
       void init(const MachineLearningClientConfiguration& clientConfiguration);
 
       MachineLearningClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MachineLearningEndpointProviderBase> m_endpointProvider;
   };
 

@@ -25,10 +25,8 @@ ResourceDetails::ResourceDetails() :
 {
 }
 
-ResourceDetails::ResourceDetails(JsonView jsonValue) : 
-    m_awsEc2InstanceHasBeenSet(false),
-    m_awsEcrContainerImageHasBeenSet(false),
-    m_awsLambdaFunctionHasBeenSet(false)
+ResourceDetails::ResourceDetails(JsonView jsonValue)
+  : ResourceDetails()
 {
   *this = jsonValue;
 }

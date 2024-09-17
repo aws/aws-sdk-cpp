@@ -19,38 +19,27 @@ namespace Model
 {
 
 DocumentAttributeValue::DocumentAttributeValue() : 
-    m_dateValueHasBeenSet(false),
+    m_stringValueHasBeenSet(false),
+    m_stringListValueHasBeenSet(false),
     m_longValue(0),
     m_longValueHasBeenSet(false),
-    m_stringListValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+    m_dateValueHasBeenSet(false)
 {
 }
 
-DocumentAttributeValue::DocumentAttributeValue(JsonView jsonValue) : 
-    m_dateValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_stringListValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+DocumentAttributeValue::DocumentAttributeValue(JsonView jsonValue)
+  : DocumentAttributeValue()
 {
   *this = jsonValue;
 }
 
 DocumentAttributeValue& DocumentAttributeValue::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dateValue"))
+  if(jsonValue.ValueExists("stringValue"))
   {
-    m_dateValue = jsonValue.GetDouble("dateValue");
+    m_stringValue = jsonValue.GetString("stringValue");
 
-    m_dateValueHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("longValue"))
-  {
-    m_longValue = jsonValue.GetInt64("longValue");
-
-    m_longValueHasBeenSet = true;
+    m_stringValueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stringListValue"))
@@ -63,11 +52,18 @@ DocumentAttributeValue& DocumentAttributeValue::operator =(JsonView jsonValue)
     m_stringListValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("stringValue"))
+  if(jsonValue.ValueExists("longValue"))
   {
-    m_stringValue = jsonValue.GetString("stringValue");
+    m_longValue = jsonValue.GetInt64("longValue");
 
-    m_stringValueHasBeenSet = true;
+    m_longValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dateValue"))
+  {
+    m_dateValue = jsonValue.GetDouble("dateValue");
+
+    m_dateValueHasBeenSet = true;
   }
 
   return *this;
@@ -77,14 +73,9 @@ JsonValue DocumentAttributeValue::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dateValueHasBeenSet)
+  if(m_stringValueHasBeenSet)
   {
-   payload.WithDouble("dateValue", m_dateValue.SecondsWithMSPrecision());
-  }
-
-  if(m_longValueHasBeenSet)
-  {
-   payload.WithInt64("longValue", m_longValue);
+   payload.WithString("stringValue", m_stringValue);
 
   }
 
@@ -99,10 +90,15 @@ JsonValue DocumentAttributeValue::Jsonize() const
 
   }
 
-  if(m_stringValueHasBeenSet)
+  if(m_longValueHasBeenSet)
   {
-   payload.WithString("stringValue", m_stringValue);
+   payload.WithInt64("longValue", m_longValue);
 
+  }
+
+  if(m_dateValueHasBeenSet)
+  {
+   payload.WithDouble("dateValue", m_dateValue.SecondsWithMSPrecision());
   }
 
   return payload;

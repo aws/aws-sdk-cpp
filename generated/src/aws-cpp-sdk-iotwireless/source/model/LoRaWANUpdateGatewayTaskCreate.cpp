@@ -27,12 +27,8 @@ LoRaWANUpdateGatewayTaskCreate::LoRaWANUpdateGatewayTaskCreate() :
 {
 }
 
-LoRaWANUpdateGatewayTaskCreate::LoRaWANUpdateGatewayTaskCreate(JsonView jsonValue) : 
-    m_updateSignatureHasBeenSet(false),
-    m_sigKeyCrc(0),
-    m_sigKeyCrcHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_updateVersionHasBeenSet(false)
+LoRaWANUpdateGatewayTaskCreate::LoRaWANUpdateGatewayTaskCreate(JsonView jsonValue)
+  : LoRaWANUpdateGatewayTaskCreate()
 {
   *this = jsonValue;
 }

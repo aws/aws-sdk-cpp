@@ -27,10 +27,11 @@ namespace ApplicationAutoScaling
    * function provisioned concurrency</p> </li> <li> <p>Amazon Managed Streaming for
    * Apache Kafka broker storage</p> </li> <li> <p>Amazon Neptune clusters</p> </li>
    * <li> <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Amazon SageMaker
-   * Serverless endpoint provisioned concurrency</p> </li> <li> <p>Amazon SageMaker
-   * inference components</p> </li> <li> <p>Spot Fleets (Amazon EC2)</p> </li> <li>
-   * <p>Custom resources provided by your own applications or services</p> </li>
-   * </ul> <p>To learn more about Application Auto Scaling, see the <a
+   * inference components</p> </li> <li> <p>Amazon SageMaker serverless endpoint
+   * provisioned concurrency</p> </li> <li> <p>Spot Fleets (Amazon EC2)</p> </li>
+   * <li> <p>Pool of WorkSpaces</p> </li> <li> <p>Custom resources provided by your
+   * own applications or services</p> </li> </ul> <p>To learn more about Application
+   * Auto Scaling, see the <a
    * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
    * Auto Scaling User Guide</a>.</p> <p> <b>API Summary</b> </p> <p>The Application
    * Auto Scaling service API includes three key sets of actions: </p> <ul> <li>
@@ -298,10 +299,8 @@ namespace ApplicationAutoScaling
          * <code>ScheduledActionNames</code> parameters.</p> <p>For more information, see
          * <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-         * scaling</a> and <a
-         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
-         * scheduled scaling</a> in the <i>Application Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">AWS
          * API Reference</a></p>
          */
@@ -330,7 +329,7 @@ namespace ApplicationAutoScaling
          * target.</p> <p>For general information about tags, including the format and
          * syntax, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-         * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+         * your Amazon Web Services resources</a> in the <i>Amazon Web Services General
          * Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -518,7 +517,7 @@ namespace ApplicationAutoScaling
          * (<code>RegisterScalableTarget</code>).</p> <p>For general information about
          * tags, including the format and syntax, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-         * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+         * your Amazon Web Services resources</a> in the <i>Amazon Web Services General
          * Reference</i>.</p> <p>Use tags to control access to a scalable target. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
@@ -582,7 +581,6 @@ namespace ApplicationAutoScaling
       void init(const ApplicationAutoScalingClientConfiguration& clientConfiguration);
 
       ApplicationAutoScalingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> m_endpointProvider;
   };
 

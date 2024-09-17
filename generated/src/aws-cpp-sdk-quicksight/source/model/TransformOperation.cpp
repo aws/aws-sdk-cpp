@@ -30,15 +30,8 @@ TransformOperation::TransformOperation() :
 {
 }
 
-TransformOperation::TransformOperation(JsonView jsonValue) : 
-    m_projectOperationHasBeenSet(false),
-    m_filterOperationHasBeenSet(false),
-    m_createColumnsOperationHasBeenSet(false),
-    m_renameColumnOperationHasBeenSet(false),
-    m_castColumnTypeOperationHasBeenSet(false),
-    m_tagColumnOperationHasBeenSet(false),
-    m_untagColumnOperationHasBeenSet(false),
-    m_overrideDatasetParameterOperationHasBeenSet(false)
+TransformOperation::TransformOperation(JsonView jsonValue)
+  : TransformOperation()
 {
   *this = jsonValue;
 }

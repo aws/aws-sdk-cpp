@@ -26,11 +26,8 @@ AddOnRequest::AddOnRequest() :
 {
 }
 
-AddOnRequest::AddOnRequest(JsonView jsonValue) : 
-    m_addOnType(AddOnType::NOT_SET),
-    m_addOnTypeHasBeenSet(false),
-    m_autoSnapshotAddOnRequestHasBeenSet(false),
-    m_stopInstanceOnIdleRequestHasBeenSet(false)
+AddOnRequest::AddOnRequest(JsonView jsonValue)
+  : AddOnRequest()
 {
   *this = jsonValue;
 }

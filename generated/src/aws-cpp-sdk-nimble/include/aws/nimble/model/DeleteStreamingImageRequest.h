@@ -35,6 +35,7 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. If you don’t specify a client token, the Amazon Web Services SDK
@@ -42,145 +43,42 @@ namespace Model
      * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
-     * automatically generates a client token and uses it for the request to ensure
-     * idempotency.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
-     * automatically generates a client token and uses it for the request to ensure
-     * idempotency.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
-     * automatically generates a client token and uses it for the request to ensure
-     * idempotency.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
-     * automatically generates a client token and uses it for the request to ensure
-     * idempotency.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
-     * automatically generates a client token and uses it for the request to ensure
-     * idempotency.</p>
-     */
     inline DeleteStreamingImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
-     * automatically generates a client token and uses it for the request to ensure
-     * idempotency.</p>
-     */
     inline DeleteStreamingImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
-     * automatically generates a client token and uses it for the request to ensure
-     * idempotency.</p>
-     */
     inline DeleteStreamingImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The streaming image ID.</p>
      */
     inline const Aws::String& GetStreamingImageId() const{ return m_streamingImageId; }
-
-    /**
-     * <p>The streaming image ID.</p>
-     */
     inline bool StreamingImageIdHasBeenSet() const { return m_streamingImageIdHasBeenSet; }
-
-    /**
-     * <p>The streaming image ID.</p>
-     */
     inline void SetStreamingImageId(const Aws::String& value) { m_streamingImageIdHasBeenSet = true; m_streamingImageId = value; }
-
-    /**
-     * <p>The streaming image ID.</p>
-     */
     inline void SetStreamingImageId(Aws::String&& value) { m_streamingImageIdHasBeenSet = true; m_streamingImageId = std::move(value); }
-
-    /**
-     * <p>The streaming image ID.</p>
-     */
     inline void SetStreamingImageId(const char* value) { m_streamingImageIdHasBeenSet = true; m_streamingImageId.assign(value); }
-
-    /**
-     * <p>The streaming image ID.</p>
-     */
     inline DeleteStreamingImageRequest& WithStreamingImageId(const Aws::String& value) { SetStreamingImageId(value); return *this;}
-
-    /**
-     * <p>The streaming image ID.</p>
-     */
     inline DeleteStreamingImageRequest& WithStreamingImageId(Aws::String&& value) { SetStreamingImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The streaming image ID.</p>
-     */
     inline DeleteStreamingImageRequest& WithStreamingImageId(const char* value) { SetStreamingImageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The studio ID. </p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline DeleteStreamingImageRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline DeleteStreamingImageRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
-
-    /**
-     * <p>The studio ID. </p>
-     */
     inline DeleteStreamingImageRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

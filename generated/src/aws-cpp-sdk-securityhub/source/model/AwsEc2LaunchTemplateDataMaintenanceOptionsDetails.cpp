@@ -23,8 +23,8 @@ AwsEc2LaunchTemplateDataMaintenanceOptionsDetails::AwsEc2LaunchTemplateDataMaint
 {
 }
 
-AwsEc2LaunchTemplateDataMaintenanceOptionsDetails::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails(JsonView jsonValue) : 
-    m_autoRecoveryHasBeenSet(false)
+AwsEc2LaunchTemplateDataMaintenanceOptionsDetails::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataMaintenanceOptionsDetails()
 {
   *this = jsonValue;
 }

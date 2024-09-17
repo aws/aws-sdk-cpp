@@ -27,12 +27,8 @@ CreationInfo::CreationInfo() :
 {
 }
 
-CreationInfo::CreationInfo(JsonView jsonValue) : 
-    m_ownerUid(0),
-    m_ownerUidHasBeenSet(false),
-    m_ownerGid(0),
-    m_ownerGidHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+CreationInfo::CreationInfo(JsonView jsonValue)
+  : CreationInfo()
 {
   *this = jsonValue;
 }

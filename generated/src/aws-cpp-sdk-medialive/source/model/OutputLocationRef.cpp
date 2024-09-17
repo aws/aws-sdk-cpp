@@ -23,8 +23,8 @@ OutputLocationRef::OutputLocationRef() :
 {
 }
 
-OutputLocationRef::OutputLocationRef(JsonView jsonValue) : 
-    m_destinationRefIdHasBeenSet(false)
+OutputLocationRef::OutputLocationRef(JsonView jsonValue)
+  : OutputLocationRef()
 {
   *this = jsonValue;
 }

@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the thousands separator symbol.</p>
      */
     inline const NumericSeparatorSymbol& GetSymbol() const{ return m_symbol; }
-
-    /**
-     * <p>Determines the thousands separator symbol.</p>
-     */
     inline bool SymbolHasBeenSet() const { return m_symbolHasBeenSet; }
-
-    /**
-     * <p>Determines the thousands separator symbol.</p>
-     */
     inline void SetSymbol(const NumericSeparatorSymbol& value) { m_symbolHasBeenSet = true; m_symbol = value; }
-
-    /**
-     * <p>Determines the thousands separator symbol.</p>
-     */
     inline void SetSymbol(NumericSeparatorSymbol&& value) { m_symbolHasBeenSet = true; m_symbol = std::move(value); }
-
-    /**
-     * <p>Determines the thousands separator symbol.</p>
-     */
     inline ThousandSeparatorOptions& WithSymbol(const NumericSeparatorSymbol& value) { SetSymbol(value); return *this;}
-
-    /**
-     * <p>Determines the thousands separator symbol.</p>
-     */
     inline ThousandSeparatorOptions& WithSymbol(NumericSeparatorSymbol&& value) { SetSymbol(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines the visibility of the thousands separator.</p>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
-
-    /**
-     * <p>Determines the visibility of the thousands separator.</p>
-     */
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-
-    /**
-     * <p>Determines the visibility of the thousands separator.</p>
-     */
     inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-
-    /**
-     * <p>Determines the visibility of the thousands separator.</p>
-     */
     inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-
-    /**
-     * <p>Determines the visibility of the thousands separator.</p>
-     */
     inline ThousandSeparatorOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-
-    /**
-     * <p>Determines the visibility of the thousands separator.</p>
-     */
     inline ThousandSeparatorOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NumericSeparatorSymbol m_symbol;

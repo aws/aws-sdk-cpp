@@ -39,108 +39,36 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
      * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
      * suffix).</p>
      */
     inline const Aws::String& GetSamplePayloadUrl() const{ return m_samplePayloadUrl; }
-
-    /**
-     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix).</p>
-     */
     inline bool SamplePayloadUrlHasBeenSet() const { return m_samplePayloadUrlHasBeenSet; }
-
-    /**
-     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix).</p>
-     */
     inline void SetSamplePayloadUrl(const Aws::String& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = value; }
-
-    /**
-     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix).</p>
-     */
     inline void SetSamplePayloadUrl(Aws::String&& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = std::move(value); }
-
-    /**
-     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix).</p>
-     */
     inline void SetSamplePayloadUrl(const char* value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl.assign(value); }
-
-    /**
-     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix).</p>
-     */
     inline RecommendationJobPayloadConfig& WithSamplePayloadUrl(const Aws::String& value) { SetSamplePayloadUrl(value); return *this;}
-
-    /**
-     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix).</p>
-     */
     inline RecommendationJobPayloadConfig& WithSamplePayloadUrl(Aws::String&& value) { SetSamplePayloadUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix).</p>
-     */
     inline RecommendationJobPayloadConfig& WithSamplePayloadUrl(const char* value) { SetSamplePayloadUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The supported MIME types for the input data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedContentTypes() const{ return m_supportedContentTypes; }
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline bool SupportedContentTypesHasBeenSet() const { return m_supportedContentTypesHasBeenSet; }
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline void SetSupportedContentTypes(const Aws::Vector<Aws::String>& value) { m_supportedContentTypesHasBeenSet = true; m_supportedContentTypes = value; }
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline void SetSupportedContentTypes(Aws::Vector<Aws::String>&& value) { m_supportedContentTypesHasBeenSet = true; m_supportedContentTypes = std::move(value); }
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline RecommendationJobPayloadConfig& WithSupportedContentTypes(const Aws::Vector<Aws::String>& value) { SetSupportedContentTypes(value); return *this;}
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline RecommendationJobPayloadConfig& WithSupportedContentTypes(Aws::Vector<Aws::String>&& value) { SetSupportedContentTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline RecommendationJobPayloadConfig& AddSupportedContentTypes(const Aws::String& value) { m_supportedContentTypesHasBeenSet = true; m_supportedContentTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline RecommendationJobPayloadConfig& AddSupportedContentTypes(Aws::String&& value) { m_supportedContentTypesHasBeenSet = true; m_supportedContentTypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The supported MIME types for the input data.</p>
-     */
     inline RecommendationJobPayloadConfig& AddSupportedContentTypes(const char* value) { m_supportedContentTypesHasBeenSet = true; m_supportedContentTypes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_samplePayloadUrl;

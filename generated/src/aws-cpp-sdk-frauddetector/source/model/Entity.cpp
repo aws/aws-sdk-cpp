@@ -24,9 +24,8 @@ Entity::Entity() :
 {
 }
 
-Entity::Entity(JsonView jsonValue) : 
-    m_entityTypeHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
+Entity::Entity(JsonView jsonValue)
+  : Entity()
 {
   *this = jsonValue;
 }

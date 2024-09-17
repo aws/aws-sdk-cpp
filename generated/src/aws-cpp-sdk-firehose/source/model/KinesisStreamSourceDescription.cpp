@@ -25,10 +25,8 @@ KinesisStreamSourceDescription::KinesisStreamSourceDescription() :
 {
 }
 
-KinesisStreamSourceDescription::KinesisStreamSourceDescription(JsonView jsonValue) : 
-    m_kinesisStreamARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_deliveryStartTimestampHasBeenSet(false)
+KinesisStreamSourceDescription::KinesisStreamSourceDescription(JsonView jsonValue)
+  : KinesisStreamSourceDescription()
 {
   *this = jsonValue;
 }

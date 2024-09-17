@@ -25,10 +25,8 @@ SequenceStoreFilter::SequenceStoreFilter() :
 {
 }
 
-SequenceStoreFilter::SequenceStoreFilter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+SequenceStoreFilter::SequenceStoreFilter(JsonView jsonValue)
+  : SequenceStoreFilter()
 {
   *this = jsonValue;
 }

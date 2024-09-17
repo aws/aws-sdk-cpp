@@ -25,10 +25,8 @@ ExternalMetricStatus::ExternalMetricStatus() :
 {
 }
 
-ExternalMetricStatus::ExternalMetricStatus(JsonView jsonValue) : 
-    m_statusCode(ExternalMetricStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+ExternalMetricStatus::ExternalMetricStatus(JsonView jsonValue)
+  : ExternalMetricStatus()
 {
   *this = jsonValue;
 }

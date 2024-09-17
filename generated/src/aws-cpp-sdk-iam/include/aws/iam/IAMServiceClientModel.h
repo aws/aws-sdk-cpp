@@ -104,6 +104,30 @@
 #include <aws/iam/model/UploadSSHPublicKeyResult.h>
 #include <aws/iam/model/UploadServerCertificateResult.h>
 #include <aws/iam/model/UploadSigningCertificateResult.h>
+#include <aws/iam/model/GetAccountSummaryRequest.h>
+#include <aws/iam/model/UpdateAccountPasswordPolicyRequest.h>
+#include <aws/iam/model/ListOpenIDConnectProvidersRequest.h>
+#include <aws/iam/model/ListUsersRequest.h>
+#include <aws/iam/model/ListAccessKeysRequest.h>
+#include <aws/iam/model/ListGroupsRequest.h>
+#include <aws/iam/model/GetAccountAuthorizationDetailsRequest.h>
+#include <aws/iam/model/DeleteAccountPasswordPolicyRequest.h>
+#include <aws/iam/model/ListSigningCertificatesRequest.h>
+#include <aws/iam/model/ListSSHPublicKeysRequest.h>
+#include <aws/iam/model/GetCredentialReportRequest.h>
+#include <aws/iam/model/CreateAccessKeyRequest.h>
+#include <aws/iam/model/ListAccountAliasesRequest.h>
+#include <aws/iam/model/ListPoliciesRequest.h>
+#include <aws/iam/model/ListServerCertificatesRequest.h>
+#include <aws/iam/model/ListServiceSpecificCredentialsRequest.h>
+#include <aws/iam/model/GenerateCredentialReportRequest.h>
+#include <aws/iam/model/ListSAMLProvidersRequest.h>
+#include <aws/iam/model/ListInstanceProfilesRequest.h>
+#include <aws/iam/model/ListMFADevicesRequest.h>
+#include <aws/iam/model/ListRolesRequest.h>
+#include <aws/iam/model/ListVirtualMFADevicesRequest.h>
+#include <aws/iam/model/GetAccountPasswordPolicyRequest.h>
+#include <aws/iam/model/GetUserRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IAMClient header */
 
@@ -138,7 +162,7 @@ namespace Aws
 
   namespace IAM
   {
-    using IAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IAMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IAMEndpointProviderBase = Aws::IAM::Endpoint::IAMEndpointProviderBase;
     using IAMEndpointProvider = Aws::IAM::Endpoint::IAMEndpointProvider;
 

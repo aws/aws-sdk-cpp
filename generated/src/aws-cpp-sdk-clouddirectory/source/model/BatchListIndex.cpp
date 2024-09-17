@@ -27,12 +27,8 @@ BatchListIndex::BatchListIndex() :
 {
 }
 
-BatchListIndex::BatchListIndex(JsonView jsonValue) : 
-    m_rangesOnIndexedValuesHasBeenSet(false),
-    m_indexReferenceHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchListIndex::BatchListIndex(JsonView jsonValue)
+  : BatchListIndex()
 {
   *this = jsonValue;
 }

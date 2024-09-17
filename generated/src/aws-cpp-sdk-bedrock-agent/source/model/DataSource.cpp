@@ -19,71 +19,43 @@ namespace Model
 {
 
 DataSource::DataSource() : 
-    m_knowledgeBaseIdHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_dataDeletionPolicy(DataDeletionPolicy::NOT_SET),
+    m_dataDeletionPolicyHasBeenSet(false),
+    m_dataSourceConfigurationHasBeenSet(false),
     m_dataSourceIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_failureReasonsHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_status(DataSourceStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_vectorIngestionConfigurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_vectorIngestionConfigurationHasBeenSet(false)
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_vectorIngestionConfigurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }
 
 DataSource& DataSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("knowledgeBaseId"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_createdAt = jsonValue.GetString("createdAt");
 
-    m_knowledgeBaseIdHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("dataSourceId"))
+  if(jsonValue.ValueExists("dataDeletionPolicy"))
   {
-    m_dataSourceId = jsonValue.GetString("dataSourceId");
+    m_dataDeletionPolicy = DataDeletionPolicyMapper::GetDataDeletionPolicyForName(jsonValue.GetString("dataDeletionPolicy"));
 
-    m_dataSourceIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
+    m_dataDeletionPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dataSourceConfiguration"))
@@ -93,6 +65,44 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_dataSourceConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataSourceId"))
+  {
+    m_dataSourceId = jsonValue.GetString("dataSourceId");
+
+    m_dataSourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureReasons"))
+  {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+    {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
+    }
+    m_failureReasonsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("knowledgeBaseId"))
+  {
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+
+    m_knowledgeBaseIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("serverSideEncryptionConfiguration"))
   {
     m_serverSideEncryptionConfiguration = jsonValue.GetObject("serverSideEncryptionConfiguration");
@@ -100,18 +110,11 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("vectorIngestionConfiguration"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_vectorIngestionConfiguration = jsonValue.GetObject("vectorIngestionConfiguration");
+    m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
 
-    m_vectorIngestionConfigurationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-    m_createdAtHasBeenSet = true;
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -121,6 +124,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vectorIngestionConfiguration"))
+  {
+    m_vectorIngestionConfiguration = jsonValue.GetObject("vectorIngestionConfiguration");
+
+    m_vectorIngestionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,9 +138,19 @@ JsonValue DataSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_knowledgeBaseIdHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_dataDeletionPolicyHasBeenSet)
+  {
+   payload.WithString("dataDeletionPolicy", DataDeletionPolicyMapper::GetNameForDataDeletionPolicy(m_dataDeletionPolicy));
+  }
+
+  if(m_dataSourceConfigurationHasBeenSet)
+  {
+   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
 
   }
 
@@ -140,26 +160,32 @@ JsonValue DataSource::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
 
   }
 
-  if(m_dataSourceConfigurationHasBeenSet)
+  if(m_failureReasonsHasBeenSet)
   {
-   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
+   Aws::Utils::Array<JsonValue> failureReasonsJsonList(m_failureReasons.size());
+   for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+   {
+     failureReasonsJsonList[failureReasonsIndex].AsString(m_failureReasons[failureReasonsIndex]);
+   }
+   payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
+
+  }
+
+  if(m_knowledgeBaseIdHasBeenSet)
+  {
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
   }
 
@@ -169,20 +195,20 @@ JsonValue DataSource::Jsonize() const
 
   }
 
-  if(m_vectorIngestionConfigurationHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
   }
 
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_vectorIngestionConfigurationHasBeenSet)
+  {
+   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
+
   }
 
   return payload;

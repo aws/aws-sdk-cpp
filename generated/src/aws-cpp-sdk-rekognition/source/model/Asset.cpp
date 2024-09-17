@@ -23,8 +23,8 @@ Asset::Asset() :
 {
 }
 
-Asset::Asset(JsonView jsonValue) : 
-    m_groundTruthManifestHasBeenSet(false)
+Asset::Asset(JsonView jsonValue)
+  : Asset()
 {
   *this = jsonValue;
 }

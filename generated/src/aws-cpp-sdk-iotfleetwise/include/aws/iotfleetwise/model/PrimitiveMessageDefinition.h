@@ -38,42 +38,18 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant
      * primitive type message of the complex data structure.</p>
      */
     inline const ROS2PrimitiveMessageDefinition& GetRos2PrimitiveMessageDefinition() const{ return m_ros2PrimitiveMessageDefinition; }
-
-    /**
-     * <p>Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant
-     * primitive type message of the complex data structure.</p>
-     */
     inline bool Ros2PrimitiveMessageDefinitionHasBeenSet() const { return m_ros2PrimitiveMessageDefinitionHasBeenSet; }
-
-    /**
-     * <p>Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant
-     * primitive type message of the complex data structure.</p>
-     */
     inline void SetRos2PrimitiveMessageDefinition(const ROS2PrimitiveMessageDefinition& value) { m_ros2PrimitiveMessageDefinitionHasBeenSet = true; m_ros2PrimitiveMessageDefinition = value; }
-
-    /**
-     * <p>Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant
-     * primitive type message of the complex data structure.</p>
-     */
     inline void SetRos2PrimitiveMessageDefinition(ROS2PrimitiveMessageDefinition&& value) { m_ros2PrimitiveMessageDefinitionHasBeenSet = true; m_ros2PrimitiveMessageDefinition = std::move(value); }
-
-    /**
-     * <p>Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant
-     * primitive type message of the complex data structure.</p>
-     */
     inline PrimitiveMessageDefinition& WithRos2PrimitiveMessageDefinition(const ROS2PrimitiveMessageDefinition& value) { SetRos2PrimitiveMessageDefinition(value); return *this;}
-
-    /**
-     * <p>Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant
-     * primitive type message of the complex data structure.</p>
-     */
     inline PrimitiveMessageDefinition& WithRos2PrimitiveMessageDefinition(ROS2PrimitiveMessageDefinition&& value) { SetRos2PrimitiveMessageDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ROS2PrimitiveMessageDefinition m_ros2PrimitiveMessageDefinition;

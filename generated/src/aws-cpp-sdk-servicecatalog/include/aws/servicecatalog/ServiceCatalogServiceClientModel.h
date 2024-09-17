@@ -108,6 +108,25 @@
 #include <aws/servicecatalog/model/UpdateProvisioningArtifactResult.h>
 #include <aws/servicecatalog/model/UpdateServiceActionResult.h>
 #include <aws/servicecatalog/model/UpdateTagOptionResult.h>
+#include <aws/servicecatalog/model/ListTagOptionsRequest.h>
+#include <aws/servicecatalog/model/DescribeProvisionedProductRequest.h>
+#include <aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h>
+#include <aws/servicecatalog/model/DisableAWSOrganizationsAccessRequest.h>
+#include <aws/servicecatalog/model/DescribeProvisioningParametersRequest.h>
+#include <aws/servicecatalog/model/GetProvisionedProductOutputsRequest.h>
+#include <aws/servicecatalog/model/DescribeProvisioningArtifactRequest.h>
+#include <aws/servicecatalog/model/SearchProductsAsAdminRequest.h>
+#include <aws/servicecatalog/model/DescribeProductAsAdminRequest.h>
+#include <aws/servicecatalog/model/ListPortfoliosRequest.h>
+#include <aws/servicecatalog/model/SearchProvisionedProductsRequest.h>
+#include <aws/servicecatalog/model/ScanProvisionedProductsRequest.h>
+#include <aws/servicecatalog/model/ListRecordHistoryRequest.h>
+#include <aws/servicecatalog/model/ListServiceActionsRequest.h>
+#include <aws/servicecatalog/model/SearchProductsRequest.h>
+#include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusRequest.h>
+#include <aws/servicecatalog/model/EnableAWSOrganizationsAccessRequest.h>
+#include <aws/servicecatalog/model/DescribeProductRequest.h>
+#include <aws/servicecatalog/model/ListProvisionedProductPlansRequest.h>
 /* End of service model headers required in ServiceCatalogClient header */
 
 namespace Aws
@@ -141,7 +160,7 @@ namespace Aws
 
   namespace ServiceCatalog
   {
-    using ServiceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServiceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ServiceCatalogEndpointProviderBase = Aws::ServiceCatalog::Endpoint::ServiceCatalogEndpointProviderBase;
     using ServiceCatalogEndpointProvider = Aws::ServiceCatalog::Endpoint::ServiceCatalogEndpointProvider;
 

@@ -25,10 +25,8 @@ AlertManagerDefinitionStatus::AlertManagerDefinitionStatus() :
 {
 }
 
-AlertManagerDefinitionStatus::AlertManagerDefinitionStatus(JsonView jsonValue) : 
-    m_statusCode(AlertManagerDefinitionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+AlertManagerDefinitionStatus::AlertManagerDefinitionStatus(JsonView jsonValue)
+  : AlertManagerDefinitionStatus()
 {
   *this = jsonValue;
 }

@@ -23,7 +23,9 @@ namespace Model
     ConfigurationConflict,
     AdmissionRequestDenied,
     UnsupportedAddonModification,
-    K8sResourceNotFound
+    K8sResourceNotFound,
+    AddonSubscriptionNeeded,
+    AddonPermissionFailure
   };
 
 namespace AddonIssueCodeMapper

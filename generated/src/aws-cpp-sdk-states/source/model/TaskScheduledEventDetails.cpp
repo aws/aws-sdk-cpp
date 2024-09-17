@@ -31,16 +31,8 @@ TaskScheduledEventDetails::TaskScheduledEventDetails() :
 {
 }
 
-TaskScheduledEventDetails::TaskScheduledEventDetails(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_heartbeatInSeconds(0),
-    m_heartbeatInSecondsHasBeenSet(false),
-    m_taskCredentialsHasBeenSet(false)
+TaskScheduledEventDetails::TaskScheduledEventDetails(JsonView jsonValue)
+  : TaskScheduledEventDetails()
 {
   *this = jsonValue;
 }

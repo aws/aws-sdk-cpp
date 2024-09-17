@@ -25,10 +25,8 @@ EventFilter::EventFilter() :
 {
 }
 
-EventFilter::EventFilter(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_filterType(FilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false)
+EventFilter::EventFilter(JsonView jsonValue)
+  : EventFilter()
 {
   *this = jsonValue;
 }

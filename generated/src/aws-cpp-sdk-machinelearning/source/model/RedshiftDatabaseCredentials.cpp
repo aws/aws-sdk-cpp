@@ -24,9 +24,8 @@ RedshiftDatabaseCredentials::RedshiftDatabaseCredentials() :
 {
 }
 
-RedshiftDatabaseCredentials::RedshiftDatabaseCredentials(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+RedshiftDatabaseCredentials::RedshiftDatabaseCredentials(JsonView jsonValue)
+  : RedshiftDatabaseCredentials()
 {
   *this = jsonValue;
 }

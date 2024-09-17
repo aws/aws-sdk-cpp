@@ -225,13 +225,13 @@ namespace IoTDataPlane
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListRetainedMessages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRetainedMessagesOutcome ListRetainedMessages(const Model::ListRetainedMessagesRequest& request) const;
+        virtual Model::ListRetainedMessagesOutcome ListRetainedMessages(const Model::ListRetainedMessagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRetainedMessages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRetainedMessagesRequestT = Model::ListRetainedMessagesRequest>
-        Model::ListRetainedMessagesOutcomeCallable ListRetainedMessagesCallable(const ListRetainedMessagesRequestT& request) const
+        Model::ListRetainedMessagesOutcomeCallable ListRetainedMessagesCallable(const ListRetainedMessagesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTDataPlaneClient::ListRetainedMessages, request);
         }
@@ -240,7 +240,7 @@ namespace IoTDataPlane
          * An Async wrapper for ListRetainedMessages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRetainedMessagesRequestT = Model::ListRetainedMessagesRequest>
-        void ListRetainedMessagesAsync(const ListRetainedMessagesRequestT& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRetainedMessagesAsync(const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRetainedMessagesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTDataPlaneClient::ListRetainedMessages, request, handler, context);
         }
@@ -315,7 +315,6 @@ namespace IoTDataPlane
       void init(const IoTDataPlaneClientConfiguration& clientConfiguration);
 
       IoTDataPlaneClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTDataPlaneEndpointProviderBase> m_endpointProvider;
   };
 

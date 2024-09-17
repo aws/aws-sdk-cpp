@@ -28,13 +28,8 @@ AwsIamGroupDetails::AwsIamGroupDetails() :
 {
 }
 
-AwsIamGroupDetails::AwsIamGroupDetails(JsonView jsonValue) : 
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupPolicyListHasBeenSet(false),
-    m_pathHasBeenSet(false)
+AwsIamGroupDetails::AwsIamGroupDetails(JsonView jsonValue)
+  : AwsIamGroupDetails()
 {
   *this = jsonValue;
 }

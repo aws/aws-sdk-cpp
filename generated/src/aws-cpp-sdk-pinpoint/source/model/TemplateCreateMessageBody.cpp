@@ -25,10 +25,8 @@ TemplateCreateMessageBody::TemplateCreateMessageBody() :
 {
 }
 
-TemplateCreateMessageBody::TemplateCreateMessageBody(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
+TemplateCreateMessageBody::TemplateCreateMessageBody(JsonView jsonValue)
+  : TemplateCreateMessageBody()
 {
   *this = jsonValue;
 }

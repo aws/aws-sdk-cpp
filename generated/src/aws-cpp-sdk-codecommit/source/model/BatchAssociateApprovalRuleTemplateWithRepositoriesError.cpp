@@ -25,10 +25,8 @@ BatchAssociateApprovalRuleTemplateWithRepositoriesError::BatchAssociateApprovalR
 {
 }
 
-BatchAssociateApprovalRuleTemplateWithRepositoriesError::BatchAssociateApprovalRuleTemplateWithRepositoriesError(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchAssociateApprovalRuleTemplateWithRepositoriesError::BatchAssociateApprovalRuleTemplateWithRepositoriesError(JsonView jsonValue)
+  : BatchAssociateApprovalRuleTemplateWithRepositoriesError()
 {
   *this = jsonValue;
 }

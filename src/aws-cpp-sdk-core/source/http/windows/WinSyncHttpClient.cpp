@@ -9,6 +9,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/stream/StreamBufProtectedWriter.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/windows/WinConnectionPoolMgr.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -73,7 +74,15 @@ void WinSyncHttpClient::AddHeadersToRequest(const std::shared_ptr<HttpRequest>& 
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "with headers:");
         for (auto& header : request->GetHeaders())
         {
-            ss << header.first << ": " << header.second << "\r\n";
+            if (!header.first.empty() && !header.second.empty())
+            {
+                ss << header.first << ": " << header.second << "\r\n";
+            }
+            else
+            {
+                // DOUBLE SPACE after COLON, thanks, WinHTTP!
+                ss << header.first << ":  " << "\r\n";
+            }
         }
 
         Aws::String headerString = ss.str();
@@ -99,16 +108,12 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const std::shared_ptr<HttpRequest
         uint64_t bytesWritten;
         uint64_t bytesToRead = HTTP_REQUEST_WRITE_BUFFER_LENGTH;
         auto startingPos = payloadStream->tellg();
-        char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH ];
         bool done = false;
         // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
-        if (isAwsChunked)
-        {
-            // Length of hex(HTTP_REQUEST_WRITE_BUFFER_LENGTH) is 4;
-            // Length of each CRLF is 2.
-            // Reserve 8 bytes in total.
-            bytesToRead -= 8;
-        }
+        // Length of hex(HTTP_REQUEST_WRITE_BUFFER_LENGTH) is 4;
+        // Length of each CRLF is 2.
+        // Reserve 8 bytes in total, should the request be aws-chunked.
+        char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH + 8 ];
         while(success && !done)
         {
             payloadStream->read(streamBuffer, bytesToRead);
@@ -209,7 +214,7 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
 
     DWORD error = GetLastError();
 
-    char messageBuffer[WINDOWS_ERROR_MESSAGE_BUFFER_SIZE];
+    char messageBuffer[WINDOWS_ERROR_MESSAGE_BUFFER_SIZE] = { 0 };
 
     FormatMessageA(
         FORMAT_MESSAGE_FROM_HMODULE |
@@ -220,7 +225,7 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
         messageBuffer,
         WINDOWS_ERROR_MESSAGE_BUFFER_SIZE,
         nullptr);
-    AWS_LOGSTREAM_WARN(GetLogTag(), "Send request failed: " << messageBuffer);
+    AWS_LOGSTREAM_WARN(GetLogTag(), "Send request failed: Windows/WinHTTP error code is " << error << ": " << messageBuffer);
 
 }
 
@@ -249,54 +254,103 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
 
     if (request->GetMethod() != HttpMethod::HTTP_HEAD)
     {
-        char body[1024];
-        uint64_t bodySize = sizeof(body);
-        int64_t numBytesResponseReceived = 0;
-        read = 0;
-
-        bool success = ContinueRequest(*request);
-
-        while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0 && success)
+        if(!ContinueRequest(*request) || !IsRequestProcessingEnabled())
         {
-            response->GetResponseBody().write(body, read);
-            if (read > 0)
-            {
-                for (const auto& hashIterator : request->GetResponseValidationHashes())
-                {
-                    hashIterator.second->Update(reinterpret_cast<unsigned char*>(body), static_cast<size_t>(read));
-                }
-                numBytesResponseReceived += read;
-                if (readLimiter != nullptr)
-                {
-                    readLimiter->ApplyAndPayForCost(read);
-                }
-                auto& receivedHandler = request->GetDataReceivedEventHandler();
-                if (receivedHandler)
-                {
-                    receivedHandler(request.get(), response.get(), (long long)read);
-                }
-            }
-
-            success = success && ContinueRequest(*request) && IsRequestProcessingEnabled();
+            response->SetClientErrorType(CoreErrors::USER_CANCELLED);
+            response->SetClientErrorMessage("Request processing disabled or continuation cancelled by user's continuation handler.");
+            response->SetResponseCode(Aws::Http::HttpResponseCode::NO_RESPONSE);
+            return false;
         }
 
-        if (success && response->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            AWS_LOGSTREAM_ERROR(GetLogTag(), "Response output stream is in a bad state (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
+            response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
+            response->SetClientErrorMessage("Response output stream is in a bad state.");
+            return false;
+        }
+
+        bool connectionOpen = true;
+        auto writerFunc =
+                [this, hHttpRequest, &request, readLimiter, &response, &connectionOpen](char* dst, uint64_t dstSz, uint64_t& read) -> bool
+                {
+                    bool success = true;
+                    uint64_t available = 0;
+                    connectionOpen = DoQueryDataAvailable(hHttpRequest, available);
+
+                    if (connectionOpen && available)
+                    {
+                        dstSz = (std::min)(dstSz, available);
+                        success = DoReadData(hHttpRequest, dst, dstSz, read);
+                        if (success && read > 0)
+                        {
+                            for (const auto& hashIterator : request->GetResponseValidationHashes())
+                            {
+                                hashIterator.second->Update(reinterpret_cast<unsigned char*>(dst), static_cast<size_t>(read));
+                            }
+                            if (readLimiter != nullptr)
+                            {
+                                readLimiter->ApplyAndPayForCost(read);
+                            }
+                            auto& receivedHandler = request->GetDataReceivedEventHandler();
+                            if (receivedHandler)
+                            {
+                                receivedHandler(request.get(), response.get(), (long long)read);
+                            }
+                        }
+                        if (!ContinueRequest(*request) || !IsRequestProcessingEnabled())
+                        {
+                            return false;
+                        }
+                    }
+                    return connectionOpen && success && ContinueRequest(*request) && IsRequestProcessingEnabled();
+                };
+        uint64_t numBytesResponseReceived = Aws::Utils::Stream::StreamBufProtectedWriter::WriteToBuffer(response->GetResponseBody(), writerFunc);
+
+        if(!ContinueRequest(*request) || !IsRequestProcessingEnabled())
+        {
+            response->SetClientErrorType(CoreErrors::USER_CANCELLED);
+            response->SetClientErrorMessage("Request processing disabled or continuation cancelled by user's continuation handler.");
+            response->SetResponseCode(Aws::Http::HttpResponseCode::NO_RESPONSE);
+            return false;
+        }
+
+        if (response->GetResponseBody().fail()) {
+            Aws::OStringStream errorMsgStr;
+            errorMsgStr << "Failed to write received response (eof: "
+                        << response->GetResponseBody().eof() << ", bad: " << response->GetResponseBody().bad() << ")";
+
+            Aws::String errorMsg = errorMsgStr.str();
+            AWS_LOGSTREAM_ERROR(GetLogTag(), errorMsg);
+            response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
+            response->SetClientErrorMessage(errorMsg);
+            return false;
+        }
+
+        if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
+        {
+            response->GetResponseBody().flush();
+            if (response->GetResponseBody().fail()) {
+                const auto& ref = response->GetResponseBody();
+                AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to flush event response (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
+                response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
+                response->SetClientErrorMessage("Failed to flush event stream event response");
+                return false;
+            }
+        }
+
+        if (response->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
         {
             const Aws::String& contentLength = response->GetHeader(Aws::Http::CONTENT_LENGTH_HEADER);
             AWS_LOGSTREAM_TRACE(GetLogTag(), "Response content-length header: " << contentLength);
             AWS_LOGSTREAM_TRACE(GetLogTag(), "Response body length: " << numBytesResponseReceived);
-            if (StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
+            if ((uint64_t) StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
             {
-                success = false;
                 response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
                 response->SetClientErrorMessage("Response body length doesn't match the content-length header.");
                 AWS_LOGSTREAM_ERROR(GetLogTag(), "Response body length doesn't match the content-length header.");
+                return false;
             }
-        }
-
-        if(!success)
-        {
-            return false;
         }
     }
 
@@ -356,6 +410,7 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(const std::shared_p
     }
     else if(!success)
     {
+        AWS_LOGSTREAM_INFO(GetLogTag(), "Actual HTTP Version used " <<  GetActualHttpVersionUsed(hHttpRequest));
         LogRequestInternalFailure();
     }
 

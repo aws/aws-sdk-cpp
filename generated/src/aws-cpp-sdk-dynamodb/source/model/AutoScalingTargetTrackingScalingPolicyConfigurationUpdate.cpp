@@ -30,15 +30,8 @@ AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrac
 {
 }
 
-AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(JsonView jsonValue) : 
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
+AutoScalingTargetTrackingScalingPolicyConfigurationUpdate::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(JsonView jsonValue)
+  : AutoScalingTargetTrackingScalingPolicyConfigurationUpdate()
 {
   *this = jsonValue;
 }

@@ -41,26 +41,8 @@ Job::Job() :
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(TestType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_result(ExecutionResult::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_startedHasBeenSet(false),
-    m_stoppedHasBeenSet(false),
-    m_countersHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false),
-    m_videoEndpointHasBeenSet(false),
-    m_videoCapture(false),
-    m_videoCaptureHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }

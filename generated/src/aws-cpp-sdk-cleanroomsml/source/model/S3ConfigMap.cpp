@@ -23,8 +23,8 @@ S3ConfigMap::S3ConfigMap() :
 {
 }
 
-S3ConfigMap::S3ConfigMap(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+S3ConfigMap::S3ConfigMap(JsonView jsonValue)
+  : S3ConfigMap()
 {
   *this = jsonValue;
 }

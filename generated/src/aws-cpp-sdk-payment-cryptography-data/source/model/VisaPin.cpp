@@ -24,9 +24,8 @@ VisaPin::VisaPin() :
 {
 }
 
-VisaPin::VisaPin(JsonView jsonValue) : 
-    m_pinVerificationKeyIndex(0),
-    m_pinVerificationKeyIndexHasBeenSet(false)
+VisaPin::VisaPin(JsonView jsonValue)
+  : VisaPin()
 {
   *this = jsonValue;
 }

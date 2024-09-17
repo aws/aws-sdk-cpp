@@ -25,10 +25,8 @@ ServerGroup::ServerGroup() :
 {
 }
 
-ServerGroup::ServerGroup(JsonView jsonValue) : 
-    m_serverGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverListHasBeenSet(false)
+ServerGroup::ServerGroup(JsonView jsonValue)
+  : ServerGroup()
 {
   *this = jsonValue;
 }

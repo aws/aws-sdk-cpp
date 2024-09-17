@@ -242,13 +242,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
+        virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateJobRequestT = Model::CreateJobRequest>
-        Model::CreateJobOutcomeCallable CreateJobCallable(const CreateJobRequestT& request) const
+        Model::CreateJobOutcomeCallable CreateJobCallable(const CreateJobRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::CreateJob, request);
         }
@@ -257,7 +257,7 @@ namespace Snowball
          * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateJobRequestT = Model::CreateJobRequest>
-        void CreateJobAsync(const CreateJobRequestT& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateJobAsync(const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateJobRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::CreateJob, request, handler, context);
         }
@@ -350,13 +350,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAddressesOutcome DescribeAddresses(const Model::DescribeAddressesRequest& request) const;
+        virtual Model::DescribeAddressesOutcome DescribeAddresses(const Model::DescribeAddressesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAddressesRequestT = Model::DescribeAddressesRequest>
-        Model::DescribeAddressesOutcomeCallable DescribeAddressesCallable(const DescribeAddressesRequestT& request) const
+        Model::DescribeAddressesOutcomeCallable DescribeAddressesCallable(const DescribeAddressesRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::DescribeAddresses, request);
         }
@@ -365,7 +365,7 @@ namespace Snowball
          * An Async wrapper for DescribeAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAddressesRequestT = Model::DescribeAddressesRequest>
-        void DescribeAddressesAsync(const DescribeAddressesRequestT& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAddressesAsync(const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAddressesRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::DescribeAddresses, request, handler, context);
         }
@@ -536,13 +536,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSnowballUsageOutcome GetSnowballUsage(const Model::GetSnowballUsageRequest& request) const;
+        virtual Model::GetSnowballUsageOutcome GetSnowballUsage(const Model::GetSnowballUsageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSnowballUsage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSnowballUsageRequestT = Model::GetSnowballUsageRequest>
-        Model::GetSnowballUsageOutcomeCallable GetSnowballUsageCallable(const GetSnowballUsageRequestT& request) const
+        Model::GetSnowballUsageOutcomeCallable GetSnowballUsageCallable(const GetSnowballUsageRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::GetSnowballUsage, request);
         }
@@ -551,7 +551,7 @@ namespace Snowball
          * An Async wrapper for GetSnowballUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSnowballUsageRequestT = Model::GetSnowballUsageRequest>
-        void GetSnowballUsageAsync(const GetSnowballUsageRequestT& request, const GetSnowballUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSnowballUsageAsync(const GetSnowballUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSnowballUsageRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::GetSnowballUsage, request, handler, context);
         }
@@ -618,13 +618,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request) const
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::ListClusters, request);
         }
@@ -633,7 +633,7 @@ namespace Snowball
          * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::ListClusters, request, handler, context);
         }
@@ -650,13 +650,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCompatibleImagesOutcome ListCompatibleImages(const Model::ListCompatibleImagesRequest& request) const;
+        virtual Model::ListCompatibleImagesOutcome ListCompatibleImages(const Model::ListCompatibleImagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCompatibleImages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCompatibleImagesRequestT = Model::ListCompatibleImagesRequest>
-        Model::ListCompatibleImagesOutcomeCallable ListCompatibleImagesCallable(const ListCompatibleImagesRequestT& request) const
+        Model::ListCompatibleImagesOutcomeCallable ListCompatibleImagesCallable(const ListCompatibleImagesRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::ListCompatibleImages, request);
         }
@@ -665,7 +665,7 @@ namespace Snowball
          * An Async wrapper for ListCompatibleImages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCompatibleImagesRequestT = Model::ListCompatibleImagesRequest>
-        void ListCompatibleImagesAsync(const ListCompatibleImagesRequestT& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCompatibleImagesAsync(const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCompatibleImagesRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::ListCompatibleImages, request, handler, context);
         }
@@ -680,13 +680,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const
+        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::ListJobs, request);
         }
@@ -695,7 +695,7 @@ namespace Snowball
          * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobsAsync(const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::ListJobs, request, handler, context);
         }
@@ -705,13 +705,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLongTermPricingOutcome ListLongTermPricing(const Model::ListLongTermPricingRequest& request) const;
+        virtual Model::ListLongTermPricingOutcome ListLongTermPricing(const Model::ListLongTermPricingRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLongTermPricing that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLongTermPricingRequestT = Model::ListLongTermPricingRequest>
-        Model::ListLongTermPricingOutcomeCallable ListLongTermPricingCallable(const ListLongTermPricingRequestT& request) const
+        Model::ListLongTermPricingOutcomeCallable ListLongTermPricingCallable(const ListLongTermPricingRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::ListLongTermPricing, request);
         }
@@ -720,7 +720,7 @@ namespace Snowball
          * An Async wrapper for ListLongTermPricing that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLongTermPricingRequestT = Model::ListLongTermPricingRequest>
-        void ListLongTermPricingAsync(const ListLongTermPricingRequestT& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLongTermPricingAsync(const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLongTermPricingRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::ListLongTermPricing, request, handler, context);
         }
@@ -731,13 +731,13 @@ namespace Snowball
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPickupLocationsOutcome ListPickupLocations(const Model::ListPickupLocationsRequest& request) const;
+        virtual Model::ListPickupLocationsOutcome ListPickupLocations(const Model::ListPickupLocationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPickupLocations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPickupLocationsRequestT = Model::ListPickupLocationsRequest>
-        Model::ListPickupLocationsOutcomeCallable ListPickupLocationsCallable(const ListPickupLocationsRequestT& request) const
+        Model::ListPickupLocationsOutcomeCallable ListPickupLocationsCallable(const ListPickupLocationsRequestT& request = {}) const
         {
             return SubmitCallable(&SnowballClient::ListPickupLocations, request);
         }
@@ -746,7 +746,7 @@ namespace Snowball
          * An Async wrapper for ListPickupLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPickupLocationsRequestT = Model::ListPickupLocationsRequest>
-        void ListPickupLocationsAsync(const ListPickupLocationsRequestT& request, const ListPickupLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPickupLocationsAsync(const ListPickupLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPickupLocationsRequestT& request = {}) const
         {
             return SubmitAsync(&SnowballClient::ListPickupLocations, request, handler, context);
         }
@@ -894,7 +894,6 @@ namespace Snowball
       void init(const SnowballClientConfiguration& clientConfiguration);
 
       SnowballClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SnowballEndpointProviderBase> m_endpointProvider;
   };
 

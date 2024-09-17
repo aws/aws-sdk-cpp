@@ -24,9 +24,8 @@ EcsInferenceAcceleratorOverride::EcsInferenceAcceleratorOverride() :
 {
 }
 
-EcsInferenceAcceleratorOverride::EcsInferenceAcceleratorOverride(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+EcsInferenceAcceleratorOverride::EcsInferenceAcceleratorOverride(JsonView jsonValue)
+  : EcsInferenceAcceleratorOverride()
 {
   *this = jsonValue;
 }

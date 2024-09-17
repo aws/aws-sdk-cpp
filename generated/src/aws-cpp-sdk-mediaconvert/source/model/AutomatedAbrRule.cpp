@@ -28,13 +28,8 @@ AutomatedAbrRule::AutomatedAbrRule() :
 {
 }
 
-AutomatedAbrRule::AutomatedAbrRule(JsonView jsonValue) : 
-    m_allowedRenditionsHasBeenSet(false),
-    m_forceIncludeRenditionsHasBeenSet(false),
-    m_minBottomRenditionSizeHasBeenSet(false),
-    m_minTopRenditionSizeHasBeenSet(false),
-    m_type(RuleType::NOT_SET),
-    m_typeHasBeenSet(false)
+AutomatedAbrRule::AutomatedAbrRule(JsonView jsonValue)
+  : AutomatedAbrRule()
 {
   *this = jsonValue;
 }

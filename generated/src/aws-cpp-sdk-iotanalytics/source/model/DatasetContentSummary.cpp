@@ -27,12 +27,8 @@ DatasetContentSummary::DatasetContentSummary() :
 {
 }
 
-DatasetContentSummary::DatasetContentSummary(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_scheduleTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
+DatasetContentSummary::DatasetContentSummary(JsonView jsonValue)
+  : DatasetContentSummary()
 {
   *this = jsonValue;
 }

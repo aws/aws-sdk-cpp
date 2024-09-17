@@ -36,87 +36,33 @@ namespace Model
     AWS_MEDIASTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the container that you want to assign the CORS policy to.</p>
      */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
-
-    /**
-     * <p>The name of the container that you want to assign the CORS policy to.</p>
-     */
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the container that you want to assign the CORS policy to.</p>
-     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-
-    /**
-     * <p>The name of the container that you want to assign the CORS policy to.</p>
-     */
     inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-
-    /**
-     * <p>The name of the container that you want to assign the CORS policy to.</p>
-     */
     inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-
-    /**
-     * <p>The name of the container that you want to assign the CORS policy to.</p>
-     */
     inline PutCorsPolicyRequest& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-
-    /**
-     * <p>The name of the container that you want to assign the CORS policy to.</p>
-     */
     inline PutCorsPolicyRequest& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the container that you want to assign the CORS policy to.</p>
-     */
     inline PutCorsPolicyRequest& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CORS policy to apply to the container. </p>
      */
     inline const Aws::Vector<CorsRule>& GetCorsPolicy() const{ return m_corsPolicy; }
-
-    /**
-     * <p>The CORS policy to apply to the container. </p>
-     */
     inline bool CorsPolicyHasBeenSet() const { return m_corsPolicyHasBeenSet; }
-
-    /**
-     * <p>The CORS policy to apply to the container. </p>
-     */
     inline void SetCorsPolicy(const Aws::Vector<CorsRule>& value) { m_corsPolicyHasBeenSet = true; m_corsPolicy = value; }
-
-    /**
-     * <p>The CORS policy to apply to the container. </p>
-     */
     inline void SetCorsPolicy(Aws::Vector<CorsRule>&& value) { m_corsPolicyHasBeenSet = true; m_corsPolicy = std::move(value); }
-
-    /**
-     * <p>The CORS policy to apply to the container. </p>
-     */
     inline PutCorsPolicyRequest& WithCorsPolicy(const Aws::Vector<CorsRule>& value) { SetCorsPolicy(value); return *this;}
-
-    /**
-     * <p>The CORS policy to apply to the container. </p>
-     */
     inline PutCorsPolicyRequest& WithCorsPolicy(Aws::Vector<CorsRule>&& value) { SetCorsPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The CORS policy to apply to the container. </p>
-     */
     inline PutCorsPolicyRequest& AddCorsPolicy(const CorsRule& value) { m_corsPolicyHasBeenSet = true; m_corsPolicy.push_back(value); return *this; }
-
-    /**
-     * <p>The CORS policy to apply to the container. </p>
-     */
     inline PutCorsPolicyRequest& AddCorsPolicy(CorsRule&& value) { m_corsPolicyHasBeenSet = true; m_corsPolicy.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_containerName;

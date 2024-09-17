@@ -25,10 +25,8 @@ LanguageIdSettings::LanguageIdSettings() :
 {
 }
 
-LanguageIdSettings::LanguageIdSettings(JsonView jsonValue) : 
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false)
+LanguageIdSettings::LanguageIdSettings(JsonView jsonValue)
+  : LanguageIdSettings()
 {
   *this = jsonValue;
 }

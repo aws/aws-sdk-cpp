@@ -24,9 +24,8 @@ CryptogramAuthResponse::CryptogramAuthResponse() :
 {
 }
 
-CryptogramAuthResponse::CryptogramAuthResponse(JsonView jsonValue) : 
-    m_arpcMethod1HasBeenSet(false),
-    m_arpcMethod2HasBeenSet(false)
+CryptogramAuthResponse::CryptogramAuthResponse(JsonView jsonValue)
+  : CryptogramAuthResponse()
 {
   *this = jsonValue;
 }

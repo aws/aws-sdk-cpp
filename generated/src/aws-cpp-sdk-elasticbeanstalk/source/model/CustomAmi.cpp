@@ -26,9 +26,8 @@ CustomAmi::CustomAmi() :
 {
 }
 
-CustomAmi::CustomAmi(const XmlNode& xmlNode) : 
-    m_virtualizationTypeHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+CustomAmi::CustomAmi(const XmlNode& xmlNode)
+  : CustomAmi()
 {
   *this = xmlNode;
 }

@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines whether or not missing dates are displayed.</p>
      */
     inline const Visibility& GetMissingDateVisibility() const{ return m_missingDateVisibility; }
-
-    /**
-     * <p>Determines whether or not missing dates are displayed.</p>
-     */
     inline bool MissingDateVisibilityHasBeenSet() const { return m_missingDateVisibilityHasBeenSet; }
-
-    /**
-     * <p>Determines whether or not missing dates are displayed.</p>
-     */
     inline void SetMissingDateVisibility(const Visibility& value) { m_missingDateVisibilityHasBeenSet = true; m_missingDateVisibility = value; }
-
-    /**
-     * <p>Determines whether or not missing dates are displayed.</p>
-     */
     inline void SetMissingDateVisibility(Visibility&& value) { m_missingDateVisibilityHasBeenSet = true; m_missingDateVisibility = std::move(value); }
-
-    /**
-     * <p>Determines whether or not missing dates are displayed.</p>
-     */
     inline DateAxisOptions& WithMissingDateVisibility(const Visibility& value) { SetMissingDateVisibility(value); return *this;}
-
-    /**
-     * <p>Determines whether or not missing dates are displayed.</p>
-     */
     inline DateAxisOptions& WithMissingDateVisibility(Visibility&& value) { SetMissingDateVisibility(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Visibility m_missingDateVisibility;

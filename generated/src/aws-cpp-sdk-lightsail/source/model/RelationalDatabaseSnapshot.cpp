@@ -39,24 +39,8 @@ RelationalDatabaseSnapshot::RelationalDatabaseSnapshot() :
 {
 }
 
-RelationalDatabaseSnapshot::RelationalDatabaseSnapshot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_fromRelationalDatabaseNameHasBeenSet(false),
-    m_fromRelationalDatabaseArnHasBeenSet(false),
-    m_fromRelationalDatabaseBundleIdHasBeenSet(false),
-    m_fromRelationalDatabaseBlueprintIdHasBeenSet(false)
+RelationalDatabaseSnapshot::RelationalDatabaseSnapshot(JsonView jsonValue)
+  : RelationalDatabaseSnapshot()
 {
   *this = jsonValue;
 }

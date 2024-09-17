@@ -25,10 +25,8 @@ NodeSignal::NodeSignal() :
 {
 }
 
-NodeSignal::NodeSignal(JsonView jsonValue) : 
-    m_nodeInstanceIdHasBeenSet(false),
-    m_signal(NodeSignalValue::NOT_SET),
-    m_signalHasBeenSet(false)
+NodeSignal::NodeSignal(JsonView jsonValue)
+  : NodeSignal()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ TermRelations::TermRelations() :
 {
 }
 
-TermRelations::TermRelations(JsonView jsonValue) : 
-    m_classifiesHasBeenSet(false),
-    m_isAHasBeenSet(false)
+TermRelations::TermRelations(JsonView jsonValue)
+  : TermRelations()
 {
   *this = jsonValue;
 }

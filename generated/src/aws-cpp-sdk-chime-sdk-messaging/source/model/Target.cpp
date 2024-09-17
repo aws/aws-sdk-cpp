@@ -23,8 +23,8 @@ Target::Target() :
 {
 }
 
-Target::Target(JsonView jsonValue) : 
-    m_memberArnHasBeenSet(false)
+Target::Target(JsonView jsonValue)
+  : Target()
 {
   *this = jsonValue;
 }

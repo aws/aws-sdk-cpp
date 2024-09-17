@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     EC2,
-    ANYWHERE
+    ANYWHERE,
+    CONTAINER
   };
 
 namespace ComputeTypeMapper

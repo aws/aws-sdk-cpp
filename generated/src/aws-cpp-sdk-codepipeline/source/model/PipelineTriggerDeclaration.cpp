@@ -25,10 +25,8 @@ PipelineTriggerDeclaration::PipelineTriggerDeclaration() :
 {
 }
 
-PipelineTriggerDeclaration::PipelineTriggerDeclaration(JsonView jsonValue) : 
-    m_providerType(PipelineTriggerProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_gitConfigurationHasBeenSet(false)
+PipelineTriggerDeclaration::PipelineTriggerDeclaration(JsonView jsonValue)
+  : PipelineTriggerDeclaration()
 {
   *this = jsonValue;
 }

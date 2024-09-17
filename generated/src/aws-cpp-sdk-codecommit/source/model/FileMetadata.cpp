@@ -26,11 +26,8 @@ FileMetadata::FileMetadata() :
 {
 }
 
-FileMetadata::FileMetadata(JsonView jsonValue) : 
-    m_absolutePathHasBeenSet(false),
-    m_blobIdHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
+FileMetadata::FileMetadata(JsonView jsonValue)
+  : FileMetadata()
 {
   *this = jsonValue;
 }

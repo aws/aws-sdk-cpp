@@ -24,9 +24,8 @@ KmsGrantConstraints::KmsGrantConstraints() :
 {
 }
 
-KmsGrantConstraints::KmsGrantConstraints(JsonView jsonValue) : 
-    m_encryptionContextEqualsHasBeenSet(false),
-    m_encryptionContextSubsetHasBeenSet(false)
+KmsGrantConstraints::KmsGrantConstraints(JsonView jsonValue)
+  : KmsGrantConstraints()
 {
   *this = jsonValue;
 }

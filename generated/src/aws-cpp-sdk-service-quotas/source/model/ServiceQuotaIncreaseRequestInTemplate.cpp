@@ -32,17 +32,8 @@ ServiceQuotaIncreaseRequestInTemplate::ServiceQuotaIncreaseRequestInTemplate() :
 {
 }
 
-ServiceQuotaIncreaseRequestInTemplate::ServiceQuotaIncreaseRequestInTemplate(JsonView jsonValue) : 
-    m_serviceCodeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_quotaNameHasBeenSet(false),
-    m_desiredValue(0.0),
-    m_desiredValueHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_globalQuota(false),
-    m_globalQuotaHasBeenSet(false)
+ServiceQuotaIncreaseRequestInTemplate::ServiceQuotaIncreaseRequestInTemplate(JsonView jsonValue)
+  : ServiceQuotaIncreaseRequestInTemplate()
 {
   *this = jsonValue;
 }

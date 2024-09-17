@@ -20,13 +20,15 @@ namespace Model
 
 OnDemandResizingSpecification::OnDemandResizingSpecification() : 
     m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false)
+    m_timeoutDurationMinutesHasBeenSet(false),
+    m_allocationStrategy(OnDemandProvisioningAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false),
+    m_capacityReservationOptionsHasBeenSet(false)
 {
 }
 
-OnDemandResizingSpecification::OnDemandResizingSpecification(JsonView jsonValue) : 
-    m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false)
+OnDemandResizingSpecification::OnDemandResizingSpecification(JsonView jsonValue)
+  : OnDemandResizingSpecification()
 {
   *this = jsonValue;
 }
@@ -40,6 +42,20 @@ OnDemandResizingSpecification& OnDemandResizingSpecification::operator =(JsonVie
     m_timeoutDurationMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllocationStrategy"))
+  {
+    m_allocationStrategy = OnDemandProvisioningAllocationStrategyMapper::GetOnDemandProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
+
+    m_allocationStrategyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CapacityReservationOptions"))
+  {
+    m_capacityReservationOptions = jsonValue.GetObject("CapacityReservationOptions");
+
+    m_capacityReservationOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +66,17 @@ JsonValue OnDemandResizingSpecification::Jsonize() const
   if(m_timeoutDurationMinutesHasBeenSet)
   {
    payload.WithInteger("TimeoutDurationMinutes", m_timeoutDurationMinutes);
+
+  }
+
+  if(m_allocationStrategyHasBeenSet)
+  {
+   payload.WithString("AllocationStrategy", OnDemandProvisioningAllocationStrategyMapper::GetNameForOnDemandProvisioningAllocationStrategy(m_allocationStrategy));
+  }
+
+  if(m_capacityReservationOptionsHasBeenSet)
+  {
+   payload.WithObject("CapacityReservationOptions", m_capacityReservationOptions.Jsonize());
 
   }
 

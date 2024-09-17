@@ -25,10 +25,8 @@ ConditionExpression::ConditionExpression() :
 {
 }
 
-ConditionExpression::ConditionExpression(JsonView jsonValue) : 
-    m_conditionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_targetColumnHasBeenSet(false)
+ConditionExpression::ConditionExpression(JsonView jsonValue)
+  : ConditionExpression()
 {
   *this = jsonValue;
 }

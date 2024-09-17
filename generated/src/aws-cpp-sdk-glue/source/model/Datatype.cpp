@@ -24,9 +24,8 @@ Datatype::Datatype() :
 {
 }
 
-Datatype::Datatype(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_labelHasBeenSet(false)
+Datatype::Datatype(JsonView jsonValue)
+  : Datatype()
 {
   *this = jsonValue;
 }

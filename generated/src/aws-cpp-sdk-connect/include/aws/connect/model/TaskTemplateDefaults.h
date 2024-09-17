@@ -39,46 +39,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Default value for the field.</p>
      */
     inline const Aws::Vector<TaskTemplateDefaultFieldValue>& GetDefaultFieldValues() const{ return m_defaultFieldValues; }
-
-    /**
-     * <p>Default value for the field.</p>
-     */
     inline bool DefaultFieldValuesHasBeenSet() const { return m_defaultFieldValuesHasBeenSet; }
-
-    /**
-     * <p>Default value for the field.</p>
-     */
     inline void SetDefaultFieldValues(const Aws::Vector<TaskTemplateDefaultFieldValue>& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues = value; }
-
-    /**
-     * <p>Default value for the field.</p>
-     */
     inline void SetDefaultFieldValues(Aws::Vector<TaskTemplateDefaultFieldValue>&& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues = std::move(value); }
-
-    /**
-     * <p>Default value for the field.</p>
-     */
     inline TaskTemplateDefaults& WithDefaultFieldValues(const Aws::Vector<TaskTemplateDefaultFieldValue>& value) { SetDefaultFieldValues(value); return *this;}
-
-    /**
-     * <p>Default value for the field.</p>
-     */
     inline TaskTemplateDefaults& WithDefaultFieldValues(Aws::Vector<TaskTemplateDefaultFieldValue>&& value) { SetDefaultFieldValues(std::move(value)); return *this;}
-
-    /**
-     * <p>Default value for the field.</p>
-     */
     inline TaskTemplateDefaults& AddDefaultFieldValues(const TaskTemplateDefaultFieldValue& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues.push_back(value); return *this; }
-
-    /**
-     * <p>Default value for the field.</p>
-     */
     inline TaskTemplateDefaults& AddDefaultFieldValues(TaskTemplateDefaultFieldValue&& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TaskTemplateDefaultFieldValue> m_defaultFieldValues;

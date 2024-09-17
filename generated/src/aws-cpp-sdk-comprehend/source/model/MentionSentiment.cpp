@@ -25,10 +25,8 @@ MentionSentiment::MentionSentiment() :
 {
 }
 
-MentionSentiment::MentionSentiment(JsonView jsonValue) : 
-    m_sentiment(SentimentType::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_sentimentScoreHasBeenSet(false)
+MentionSentiment::MentionSentiment(JsonView jsonValue)
+  : MentionSentiment()
 {
   *this = jsonValue;
 }

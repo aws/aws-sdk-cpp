@@ -19,30 +19,19 @@ namespace Model
 {
 
 UsersAndGroups::UsersAndGroups() : 
-    m_userGroupsHasBeenSet(false),
-    m_userIdsHasBeenSet(false)
+    m_userIdsHasBeenSet(false),
+    m_userGroupsHasBeenSet(false)
 {
 }
 
-UsersAndGroups::UsersAndGroups(JsonView jsonValue) : 
-    m_userGroupsHasBeenSet(false),
-    m_userIdsHasBeenSet(false)
+UsersAndGroups::UsersAndGroups(JsonView jsonValue)
+  : UsersAndGroups()
 {
   *this = jsonValue;
 }
 
 UsersAndGroups& UsersAndGroups::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("userGroups"))
-  {
-    Aws::Utils::Array<JsonView> userGroupsJsonList = jsonValue.GetArray("userGroups");
-    for(unsigned userGroupsIndex = 0; userGroupsIndex < userGroupsJsonList.GetLength(); ++userGroupsIndex)
-    {
-      m_userGroups.push_back(userGroupsJsonList[userGroupsIndex].AsString());
-    }
-    m_userGroupsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("userIds"))
   {
     Aws::Utils::Array<JsonView> userIdsJsonList = jsonValue.GetArray("userIds");
@@ -53,23 +42,22 @@ UsersAndGroups& UsersAndGroups::operator =(JsonView jsonValue)
     m_userIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("userGroups"))
+  {
+    Aws::Utils::Array<JsonView> userGroupsJsonList = jsonValue.GetArray("userGroups");
+    for(unsigned userGroupsIndex = 0; userGroupsIndex < userGroupsJsonList.GetLength(); ++userGroupsIndex)
+    {
+      m_userGroups.push_back(userGroupsJsonList[userGroupsIndex].AsString());
+    }
+    m_userGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue UsersAndGroups::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_userGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userGroupsJsonList(m_userGroups.size());
-   for(unsigned userGroupsIndex = 0; userGroupsIndex < userGroupsJsonList.GetLength(); ++userGroupsIndex)
-   {
-     userGroupsJsonList[userGroupsIndex].AsString(m_userGroups[userGroupsIndex]);
-   }
-   payload.WithArray("userGroups", std::move(userGroupsJsonList));
-
-  }
 
   if(m_userIdsHasBeenSet)
   {
@@ -79,6 +67,17 @@ JsonValue UsersAndGroups::Jsonize() const
      userIdsJsonList[userIdsIndex].AsString(m_userIds[userIdsIndex]);
    }
    payload.WithArray("userIds", std::move(userIdsJsonList));
+
+  }
+
+  if(m_userGroupsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> userGroupsJsonList(m_userGroups.size());
+   for(unsigned userGroupsIndex = 0; userGroupsIndex < userGroupsJsonList.GetLength(); ++userGroupsIndex)
+   {
+     userGroupsJsonList[userGroupsIndex].AsString(m_userGroups[userGroupsIndex]);
+   }
+   payload.WithArray("userGroups", std::move(userGroupsJsonList));
 
   }
 

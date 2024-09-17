@@ -23,8 +23,8 @@ AwsWafRuleGroupRulesActionDetails::AwsWafRuleGroupRulesActionDetails() :
 {
 }
 
-AwsWafRuleGroupRulesActionDetails::AwsWafRuleGroupRulesActionDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+AwsWafRuleGroupRulesActionDetails::AwsWafRuleGroupRulesActionDetails(JsonView jsonValue)
+  : AwsWafRuleGroupRulesActionDetails()
 {
   *this = jsonValue;
 }

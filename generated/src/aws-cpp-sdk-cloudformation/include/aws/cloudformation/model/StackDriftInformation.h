@@ -44,6 +44,7 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Status of the stack's actual configuration compared to its expected template
      * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
@@ -56,109 +57,25 @@ namespace Model
      * reserved for future use.</p> </li> </ul>
      */
     inline const StackDriftStatus& GetStackDriftStatus() const{ return m_stackDriftStatus; }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
-     * its expected template configuration. A stack is considered to have drifted if
-     * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
-     * from its expected template configuration.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
-     * reserved for future use.</p> </li> </ul>
-     */
     inline bool StackDriftStatusHasBeenSet() const { return m_stackDriftStatusHasBeenSet; }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
-     * its expected template configuration. A stack is considered to have drifted if
-     * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
-     * from its expected template configuration.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
-     * reserved for future use.</p> </li> </ul>
-     */
     inline void SetStackDriftStatus(const StackDriftStatus& value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = value; }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
-     * its expected template configuration. A stack is considered to have drifted if
-     * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
-     * from its expected template configuration.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
-     * reserved for future use.</p> </li> </ul>
-     */
     inline void SetStackDriftStatus(StackDriftStatus&& value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = std::move(value); }
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
-     * its expected template configuration. A stack is considered to have drifted if
-     * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
-     * from its expected template configuration.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
-     * reserved for future use.</p> </li> </ul>
-     */
     inline StackDriftInformation& WithStackDriftStatus(const StackDriftStatus& value) { SetStackDriftStatus(value); return *this;}
-
-    /**
-     * <p>Status of the stack's actual configuration compared to its expected template
-     * configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
-     * its expected template configuration. A stack is considered to have drifted if
-     * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs
-     * from its expected template configuration.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
-     * reserved for future use.</p> </li> </ul>
-     */
     inline StackDriftInformation& WithStackDriftStatus(StackDriftStatus&& value) { SetStackDriftStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Most recent time when a drift detection operation was initiated on the stack,
      * or any of its individual resources that support drift detection.</p>
      */
     inline const Aws::Utils::DateTime& GetLastCheckTimestamp() const{ return m_lastCheckTimestamp; }
-
-    /**
-     * <p>Most recent time when a drift detection operation was initiated on the stack,
-     * or any of its individual resources that support drift detection.</p>
-     */
     inline bool LastCheckTimestampHasBeenSet() const { return m_lastCheckTimestampHasBeenSet; }
-
-    /**
-     * <p>Most recent time when a drift detection operation was initiated on the stack,
-     * or any of its individual resources that support drift detection.</p>
-     */
     inline void SetLastCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastCheckTimestampHasBeenSet = true; m_lastCheckTimestamp = value; }
-
-    /**
-     * <p>Most recent time when a drift detection operation was initiated on the stack,
-     * or any of its individual resources that support drift detection.</p>
-     */
     inline void SetLastCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastCheckTimestampHasBeenSet = true; m_lastCheckTimestamp = std::move(value); }
-
-    /**
-     * <p>Most recent time when a drift detection operation was initiated on the stack,
-     * or any of its individual resources that support drift detection.</p>
-     */
     inline StackDriftInformation& WithLastCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastCheckTimestamp(value); return *this;}
-
-    /**
-     * <p>Most recent time when a drift detection operation was initiated on the stack,
-     * or any of its individual resources that support drift detection.</p>
-     */
     inline StackDriftInformation& WithLastCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastCheckTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StackDriftStatus m_stackDriftStatus;

@@ -26,9 +26,8 @@ ApplicationVersionLifecycleConfig::ApplicationVersionLifecycleConfig() :
 {
 }
 
-ApplicationVersionLifecycleConfig::ApplicationVersionLifecycleConfig(const XmlNode& xmlNode) : 
-    m_maxCountRuleHasBeenSet(false),
-    m_maxAgeRuleHasBeenSet(false)
+ApplicationVersionLifecycleConfig::ApplicationVersionLifecycleConfig(const XmlNode& xmlNode)
+  : ApplicationVersionLifecycleConfig()
 {
   *this = xmlNode;
 }

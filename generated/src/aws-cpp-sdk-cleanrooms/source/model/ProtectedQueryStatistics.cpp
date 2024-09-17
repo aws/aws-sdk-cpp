@@ -24,9 +24,8 @@ ProtectedQueryStatistics::ProtectedQueryStatistics() :
 {
 }
 
-ProtectedQueryStatistics::ProtectedQueryStatistics(JsonView jsonValue) : 
-    m_totalDurationInMillis(0),
-    m_totalDurationInMillisHasBeenSet(false)
+ProtectedQueryStatistics::ProtectedQueryStatistics(JsonView jsonValue)
+  : ProtectedQueryStatistics()
 {
   *this = jsonValue;
 }

@@ -36,6 +36,7 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
@@ -43,161 +44,44 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to use to scan the policies applied to the specified
-     * resource.</p>
-     */
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to use to scan the policies applied to the specified
-     * resource.</p>
-     */
     inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to use to scan the policies applied to the specified
-     * resource.</p>
-     */
     inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to use to scan the policies applied to the specified
-     * resource.</p>
-     */
     inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to use to scan the policies applied to the specified
-     * resource.</p>
-     */
     inline StartResourceScanRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to use to scan the policies applied to the specified
-     * resource.</p>
-     */
     inline StartResourceScanRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to use to scan the policies applied to the specified
-     * resource.</p>
-     */
     inline StartResourceScanRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the resource to scan.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the resource to scan.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource to scan.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the resource to scan.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource to scan.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource to scan.</p>
-     */
     inline StartResourceScanRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource to scan.</p>
-     */
     inline StartResourceScanRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource to scan.</p>
-     */
     inline StartResourceScanRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
      * Web Services resources, the owning account is the account in which the resource
      * was created.</p>
      */
     inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
-     * Web Services resources, the owning account is the account in which the resource
-     * was created.</p>
-     */
     inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
-     * Web Services resources, the owning account is the account in which the resource
-     * was created.</p>
-     */
     inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
-     * Web Services resources, the owning account is the account in which the resource
-     * was created.</p>
-     */
     inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
-     * Web Services resources, the owning account is the account in which the resource
-     * was created.</p>
-     */
     inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
-     * Web Services resources, the owning account is the account in which the resource
-     * was created.</p>
-     */
     inline StartResourceScanRequest& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
-     * Web Services resources, the owning account is the account in which the resource
-     * was created.</p>
-     */
     inline StartResourceScanRequest& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource. For most Amazon
-     * Web Services resources, the owning account is the account in which the resource
-     * was created.</p>
-     */
     inline StartResourceScanRequest& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analyzerArn;

@@ -26,11 +26,8 @@ ClusterInList::ClusterInList() :
 {
 }
 
-ClusterInList::ClusterInList(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+ClusterInList::ClusterInList(JsonView jsonValue)
+  : ClusterInList()
 {
   *this = jsonValue;
 }

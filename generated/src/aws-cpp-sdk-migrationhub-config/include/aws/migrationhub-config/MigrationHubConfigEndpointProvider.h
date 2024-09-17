@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MigrationHubConfigClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MigrationHubConfigClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MigrationHubConfigClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MigrationHubConfigBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

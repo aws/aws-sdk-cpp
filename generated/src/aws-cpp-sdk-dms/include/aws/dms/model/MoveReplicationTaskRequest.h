@@ -37,87 +37,33 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
      */
     inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-     */
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-     */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-     */
     inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-     */
     inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-     */
     inline MoveReplicationTaskRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-     */
     inline MoveReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-     */
     inline MoveReplicationTaskRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the replication instance where you want to move the task to.</p>
      */
     inline const Aws::String& GetTargetReplicationInstanceArn() const{ return m_targetReplicationInstanceArn; }
-
-    /**
-     * <p>The ARN of the replication instance where you want to move the task to.</p>
-     */
     inline bool TargetReplicationInstanceArnHasBeenSet() const { return m_targetReplicationInstanceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the replication instance where you want to move the task to.</p>
-     */
     inline void SetTargetReplicationInstanceArn(const Aws::String& value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn = value; }
-
-    /**
-     * <p>The ARN of the replication instance where you want to move the task to.</p>
-     */
     inline void SetTargetReplicationInstanceArn(Aws::String&& value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the replication instance where you want to move the task to.</p>
-     */
     inline void SetTargetReplicationInstanceArn(const char* value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the replication instance where you want to move the task to.</p>
-     */
     inline MoveReplicationTaskRequest& WithTargetReplicationInstanceArn(const Aws::String& value) { SetTargetReplicationInstanceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the replication instance where you want to move the task to.</p>
-     */
     inline MoveReplicationTaskRequest& WithTargetReplicationInstanceArn(Aws::String&& value) { SetTargetReplicationInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the replication instance where you want to move the task to.</p>
-     */
     inline MoveReplicationTaskRequest& WithTargetReplicationInstanceArn(const char* value) { SetTargetReplicationInstanceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationTaskArn;

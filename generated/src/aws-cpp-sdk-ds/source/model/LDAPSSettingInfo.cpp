@@ -26,11 +26,8 @@ LDAPSSettingInfo::LDAPSSettingInfo() :
 {
 }
 
-LDAPSSettingInfo::LDAPSSettingInfo(JsonView jsonValue) : 
-    m_lDAPSStatus(LDAPSStatus::NOT_SET),
-    m_lDAPSStatusHasBeenSet(false),
-    m_lDAPSStatusReasonHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+LDAPSSettingInfo::LDAPSSettingInfo(JsonView jsonValue)
+  : LDAPSSettingInfo()
 {
   *this = jsonValue;
 }

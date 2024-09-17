@@ -25,10 +25,8 @@ EncryptionKey::EncryptionKey() :
 {
 }
 
-EncryptionKey::EncryptionKey(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(EncryptionKeyType::NOT_SET),
-    m_typeHasBeenSet(false)
+EncryptionKey::EncryptionKey(JsonView jsonValue)
+  : EncryptionKey()
 {
   *this = jsonValue;
 }

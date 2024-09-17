@@ -22,8 +22,8 @@ DescribeRoleCustomPermissionResult::DescribeRoleCustomPermissionResult() :
 {
 }
 
-DescribeRoleCustomPermissionResult::DescribeRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeRoleCustomPermissionResult::DescribeRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRoleCustomPermissionResult()
 {
   *this = result;
 }

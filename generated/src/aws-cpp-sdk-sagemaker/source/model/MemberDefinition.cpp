@@ -24,9 +24,8 @@ MemberDefinition::MemberDefinition() :
 {
 }
 
-MemberDefinition::MemberDefinition(JsonView jsonValue) : 
-    m_cognitoMemberDefinitionHasBeenSet(false),
-    m_oidcMemberDefinitionHasBeenSet(false)
+MemberDefinition::MemberDefinition(JsonView jsonValue)
+  : MemberDefinition()
 {
   *this = jsonValue;
 }

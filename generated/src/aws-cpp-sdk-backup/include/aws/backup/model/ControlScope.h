@@ -46,233 +46,62 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the only Amazon Web Services resource that you want your control
      * scope to contain.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComplianceResourceIds() const{ return m_complianceResourceIds; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline bool ComplianceResourceIdsHasBeenSet() const { return m_complianceResourceIdsHasBeenSet; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline void SetComplianceResourceIds(const Aws::Vector<Aws::String>& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds = value; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline void SetComplianceResourceIds(Aws::Vector<Aws::String>&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds = std::move(value); }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline ControlScope& WithComplianceResourceIds(const Aws::Vector<Aws::String>& value) { SetComplianceResourceIds(value); return *this;}
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline ControlScope& WithComplianceResourceIds(Aws::Vector<Aws::String>&& value) { SetComplianceResourceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline ControlScope& AddComplianceResourceIds(const Aws::String& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline ControlScope& AddComplianceResourceIds(Aws::String&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want your control
-     * scope to contain.</p>
-     */
     inline ControlScope& AddComplianceResourceIds(const char* value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes whether the control scope includes one or more types of resources,
      * such as <code>EFS</code> or <code>RDS</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComplianceResourceTypes() const{ return m_complianceResourceTypes; }
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline bool ComplianceResourceTypesHasBeenSet() const { return m_complianceResourceTypesHasBeenSet; }
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline void SetComplianceResourceTypes(const Aws::Vector<Aws::String>& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = value; }
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline void SetComplianceResourceTypes(Aws::Vector<Aws::String>&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = std::move(value); }
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline ControlScope& WithComplianceResourceTypes(const Aws::Vector<Aws::String>& value) { SetComplianceResourceTypes(value); return *this;}
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline ControlScope& WithComplianceResourceTypes(Aws::Vector<Aws::String>&& value) { SetComplianceResourceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline ControlScope& AddComplianceResourceTypes(const Aws::String& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline ControlScope& AddComplianceResourceTypes(Aws::String&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Describes whether the control scope includes one or more types of resources,
-     * such as <code>EFS</code> or <code>RDS</code>.</p>
-     */
     inline ControlScope& AddComplianceResourceTypes(const char* value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag key-value pair applied to those Amazon Web Services resources that
      * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
+     * can be provided. The tag value is optional, but it cannot be an empty string if
+     * you are creating or editing a framework from the console (though the value can
+     * be an empty string when included in a CloudFormation template).</p> <p>The
+     * structure to assign a tag is:
      * <code>[{"Key":"string","Value":"string"}]</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tag key-value pair applied to those Amazon Web Services resources that
-     * you want to trigger an evaluation for a rule. A maximum of one key-value pair
-     * can be provided. The tag value is optional, but it cannot be an empty string.
-     * The structure to assign a tag is:
-     * <code>[{"Key":"string","Value":"string"}]</code>.</p>
-     */
     inline ControlScope& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_complianceResourceIds;

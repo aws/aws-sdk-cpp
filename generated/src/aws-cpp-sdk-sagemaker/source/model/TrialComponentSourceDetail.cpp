@@ -26,11 +26,8 @@ TrialComponentSourceDetail::TrialComponentSourceDetail() :
 {
 }
 
-TrialComponentSourceDetail::TrialComponentSourceDetail(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_trainingJobHasBeenSet(false),
-    m_processingJobHasBeenSet(false),
-    m_transformJobHasBeenSet(false)
+TrialComponentSourceDetail::TrialComponentSourceDetail(JsonView jsonValue)
+  : TrialComponentSourceDetail()
 {
   *this = jsonValue;
 }

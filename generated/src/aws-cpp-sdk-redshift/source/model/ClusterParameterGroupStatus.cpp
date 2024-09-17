@@ -27,10 +27,8 @@ ClusterParameterGroupStatus::ClusterParameterGroupStatus() :
 {
 }
 
-ClusterParameterGroupStatus::ClusterParameterGroupStatus(const XmlNode& xmlNode) : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_clusterParameterStatusListHasBeenSet(false)
+ClusterParameterGroupStatus::ClusterParameterGroupStatus(const XmlNode& xmlNode)
+  : ClusterParameterGroupStatus()
 {
   *this = xmlNode;
 }

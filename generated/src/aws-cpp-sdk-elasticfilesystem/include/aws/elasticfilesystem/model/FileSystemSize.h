@@ -44,148 +44,63 @@ namespace Model
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latest known metered size (in bytes) of data stored in the file
      * system.</p>
      */
     inline long long GetValue() const{ return m_value; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the file
-     * system.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the file
-     * system.</p>
-     */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the file
-     * system.</p>
-     */
     inline FileSystemSize& WithValue(long long value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which the size of data, returned in the <code>Value</code> field,
      * was determined. The value is the integer number of seconds since
      * 1970-01-01T00:00:00Z.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The time at which the size of data, returned in the <code>Value</code> field,
-     * was determined. The value is the integer number of seconds since
-     * 1970-01-01T00:00:00Z.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The time at which the size of data, returned in the <code>Value</code> field,
-     * was determined. The value is the integer number of seconds since
-     * 1970-01-01T00:00:00Z.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The time at which the size of data, returned in the <code>Value</code> field,
-     * was determined. The value is the integer number of seconds since
-     * 1970-01-01T00:00:00Z.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The time at which the size of data, returned in the <code>Value</code> field,
-     * was determined. The value is the integer number of seconds since
-     * 1970-01-01T00:00:00Z.</p>
-     */
     inline FileSystemSize& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The time at which the size of data, returned in the <code>Value</code> field,
-     * was determined. The value is the integer number of seconds since
-     * 1970-01-01T00:00:00Z.</p>
-     */
     inline FileSystemSize& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest known metered size (in bytes) of data stored in the Infrequent
      * Access storage class.</p>
      */
     inline long long GetValueInIA() const{ return m_valueInIA; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Infrequent
-     * Access storage class.</p>
-     */
     inline bool ValueInIAHasBeenSet() const { return m_valueInIAHasBeenSet; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Infrequent
-     * Access storage class.</p>
-     */
     inline void SetValueInIA(long long value) { m_valueInIAHasBeenSet = true; m_valueInIA = value; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Infrequent
-     * Access storage class.</p>
-     */
     inline FileSystemSize& WithValueInIA(long long value) { SetValueInIA(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest known metered size (in bytes) of data stored in the Standard
      * storage class.</p>
      */
     inline long long GetValueInStandard() const{ return m_valueInStandard; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Standard
-     * storage class.</p>
-     */
     inline bool ValueInStandardHasBeenSet() const { return m_valueInStandardHasBeenSet; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Standard
-     * storage class.</p>
-     */
     inline void SetValueInStandard(long long value) { m_valueInStandardHasBeenSet = true; m_valueInStandard = value; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Standard
-     * storage class.</p>
-     */
     inline FileSystemSize& WithValueInStandard(long long value) { SetValueInStandard(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest known metered size (in bytes) of data stored in the Archive
      * storage class.</p>
      */
     inline long long GetValueInArchive() const{ return m_valueInArchive; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Archive
-     * storage class.</p>
-     */
     inline bool ValueInArchiveHasBeenSet() const { return m_valueInArchiveHasBeenSet; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Archive
-     * storage class.</p>
-     */
     inline void SetValueInArchive(long long value) { m_valueInArchiveHasBeenSet = true; m_valueInArchive = value; }
-
-    /**
-     * <p>The latest known metered size (in bytes) of data stored in the Archive
-     * storage class.</p>
-     */
     inline FileSystemSize& WithValueInArchive(long long value) { SetValueInArchive(value); return *this;}
-
+    ///@}
   private:
 
     long long m_value;

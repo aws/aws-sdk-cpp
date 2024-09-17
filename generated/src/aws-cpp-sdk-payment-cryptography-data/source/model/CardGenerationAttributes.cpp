@@ -21,22 +21,16 @@ namespace Model
 CardGenerationAttributes::CardGenerationAttributes() : 
     m_amexCardSecurityCodeVersion1HasBeenSet(false),
     m_amexCardSecurityCodeVersion2HasBeenSet(false),
-    m_cardHolderVerificationValueHasBeenSet(false),
     m_cardVerificationValue1HasBeenSet(false),
     m_cardVerificationValue2HasBeenSet(false),
+    m_cardHolderVerificationValueHasBeenSet(false),
     m_dynamicCardVerificationCodeHasBeenSet(false),
     m_dynamicCardVerificationValueHasBeenSet(false)
 {
 }
 
-CardGenerationAttributes::CardGenerationAttributes(JsonView jsonValue) : 
-    m_amexCardSecurityCodeVersion1HasBeenSet(false),
-    m_amexCardSecurityCodeVersion2HasBeenSet(false),
-    m_cardHolderVerificationValueHasBeenSet(false),
-    m_cardVerificationValue1HasBeenSet(false),
-    m_cardVerificationValue2HasBeenSet(false),
-    m_dynamicCardVerificationCodeHasBeenSet(false),
-    m_dynamicCardVerificationValueHasBeenSet(false)
+CardGenerationAttributes::CardGenerationAttributes(JsonView jsonValue)
+  : CardGenerationAttributes()
 {
   *this = jsonValue;
 }
@@ -57,13 +51,6 @@ CardGenerationAttributes& CardGenerationAttributes::operator =(JsonView jsonValu
     m_amexCardSecurityCodeVersion2HasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CardHolderVerificationValue"))
-  {
-    m_cardHolderVerificationValue = jsonValue.GetObject("CardHolderVerificationValue");
-
-    m_cardHolderVerificationValueHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("CardVerificationValue1"))
   {
     m_cardVerificationValue1 = jsonValue.GetObject("CardVerificationValue1");
@@ -76,6 +63,13 @@ CardGenerationAttributes& CardGenerationAttributes::operator =(JsonView jsonValu
     m_cardVerificationValue2 = jsonValue.GetObject("CardVerificationValue2");
 
     m_cardVerificationValue2HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CardHolderVerificationValue"))
+  {
+    m_cardHolderVerificationValue = jsonValue.GetObject("CardHolderVerificationValue");
+
+    m_cardHolderVerificationValueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DynamicCardVerificationCode"))
@@ -111,12 +105,6 @@ JsonValue CardGenerationAttributes::Jsonize() const
 
   }
 
-  if(m_cardHolderVerificationValueHasBeenSet)
-  {
-   payload.WithObject("CardHolderVerificationValue", m_cardHolderVerificationValue.Jsonize());
-
-  }
-
   if(m_cardVerificationValue1HasBeenSet)
   {
    payload.WithObject("CardVerificationValue1", m_cardVerificationValue1.Jsonize());
@@ -126,6 +114,12 @@ JsonValue CardGenerationAttributes::Jsonize() const
   if(m_cardVerificationValue2HasBeenSet)
   {
    payload.WithObject("CardVerificationValue2", m_cardVerificationValue2.Jsonize());
+
+  }
+
+  if(m_cardHolderVerificationValueHasBeenSet)
+  {
+   payload.WithObject("CardHolderVerificationValue", m_cardHolderVerificationValue.Jsonize());
 
   }
 

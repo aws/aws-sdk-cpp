@@ -28,11 +28,8 @@ Metric::Metric() :
 {
 }
 
-Metric::Metric(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_statisticsDetailsHasBeenSet(false),
-    m_metricQueryHasBeenSet(false)
+Metric::Metric(const XmlNode& xmlNode)
+  : Metric()
 {
   *this = xmlNode;
 }

@@ -26,11 +26,8 @@ VariantImportItemDetail::VariantImportItemDetail() :
 {
 }
 
-VariantImportItemDetail::VariantImportItemDetail(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+VariantImportItemDetail::VariantImportItemDetail(JsonView jsonValue)
+  : VariantImportItemDetail()
 {
   *this = jsonValue;
 }

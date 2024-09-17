@@ -24,9 +24,8 @@ WorkloadDataSummary::WorkloadDataSummary() :
 {
 }
 
-WorkloadDataSummary::WorkloadDataSummary(JsonView jsonValue) : 
-    m_displayNameHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
+WorkloadDataSummary::WorkloadDataSummary(JsonView jsonValue)
+  : WorkloadDataSummary()
 {
   *this = jsonValue;
 }

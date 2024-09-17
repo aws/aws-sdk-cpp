@@ -24,6 +24,7 @@
 #include <aws/applicationcostprofiler/model/ListReportDefinitionsResult.h>
 #include <aws/applicationcostprofiler/model/PutReportDefinitionResult.h>
 #include <aws/applicationcostprofiler/model/UpdateReportDefinitionResult.h>
+#include <aws/applicationcostprofiler/model/ListReportDefinitionsRequest.h>
 /* End of service model headers required in ApplicationCostProfilerClient header */
 
 namespace Aws
@@ -57,7 +58,7 @@ namespace Aws
 
   namespace ApplicationCostProfiler
   {
-    using ApplicationCostProfilerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationCostProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApplicationCostProfilerEndpointProviderBase = Aws::ApplicationCostProfiler::Endpoint::ApplicationCostProfilerEndpointProviderBase;
     using ApplicationCostProfilerEndpointProvider = Aws::ApplicationCostProfiler::Endpoint::ApplicationCostProfilerEndpointProvider;
 

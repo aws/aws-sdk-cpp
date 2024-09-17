@@ -24,9 +24,8 @@ TranscriptionMessagesConcatenationConfiguration::TranscriptionMessagesConcatenat
 {
 }
 
-TranscriptionMessagesConcatenationConfiguration::TranscriptionMessagesConcatenationConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
+TranscriptionMessagesConcatenationConfiguration::TranscriptionMessagesConcatenationConfiguration(JsonView jsonValue)
+  : TranscriptionMessagesConcatenationConfiguration()
 {
   *this = jsonValue;
 }

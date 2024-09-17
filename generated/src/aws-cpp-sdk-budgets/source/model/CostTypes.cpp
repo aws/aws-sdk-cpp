@@ -44,29 +44,8 @@ CostTypes::CostTypes() :
 {
 }
 
-CostTypes::CostTypes(JsonView jsonValue) : 
-    m_includeTax(false),
-    m_includeTaxHasBeenSet(false),
-    m_includeSubscription(false),
-    m_includeSubscriptionHasBeenSet(false),
-    m_useBlended(false),
-    m_useBlendedHasBeenSet(false),
-    m_includeRefund(false),
-    m_includeRefundHasBeenSet(false),
-    m_includeCredit(false),
-    m_includeCreditHasBeenSet(false),
-    m_includeUpfront(false),
-    m_includeUpfrontHasBeenSet(false),
-    m_includeRecurring(false),
-    m_includeRecurringHasBeenSet(false),
-    m_includeOtherSubscription(false),
-    m_includeOtherSubscriptionHasBeenSet(false),
-    m_includeSupport(false),
-    m_includeSupportHasBeenSet(false),
-    m_includeDiscount(false),
-    m_includeDiscountHasBeenSet(false),
-    m_useAmortized(false),
-    m_useAmortizedHasBeenSet(false)
+CostTypes::CostTypes(JsonView jsonValue)
+  : CostTypes()
 {
   *this = jsonValue;
 }

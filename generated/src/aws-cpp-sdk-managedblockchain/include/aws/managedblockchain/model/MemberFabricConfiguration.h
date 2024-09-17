@@ -39,47 +39,21 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The user name for the member's initial administrative user.</p>
      */
     inline const Aws::String& GetAdminUsername() const{ return m_adminUsername; }
-
-    /**
-     * <p>The user name for the member's initial administrative user.</p>
-     */
     inline bool AdminUsernameHasBeenSet() const { return m_adminUsernameHasBeenSet; }
-
-    /**
-     * <p>The user name for the member's initial administrative user.</p>
-     */
     inline void SetAdminUsername(const Aws::String& value) { m_adminUsernameHasBeenSet = true; m_adminUsername = value; }
-
-    /**
-     * <p>The user name for the member's initial administrative user.</p>
-     */
     inline void SetAdminUsername(Aws::String&& value) { m_adminUsernameHasBeenSet = true; m_adminUsername = std::move(value); }
-
-    /**
-     * <p>The user name for the member's initial administrative user.</p>
-     */
     inline void SetAdminUsername(const char* value) { m_adminUsernameHasBeenSet = true; m_adminUsername.assign(value); }
-
-    /**
-     * <p>The user name for the member's initial administrative user.</p>
-     */
     inline MemberFabricConfiguration& WithAdminUsername(const Aws::String& value) { SetAdminUsername(value); return *this;}
-
-    /**
-     * <p>The user name for the member's initial administrative user.</p>
-     */
     inline MemberFabricConfiguration& WithAdminUsername(Aws::String&& value) { SetAdminUsername(std::move(value)); return *this;}
-
-    /**
-     * <p>The user name for the member's initial administrative user.</p>
-     */
     inline MemberFabricConfiguration& WithAdminUsername(const char* value) { SetAdminUsername(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least 8 characters long and no more than
@@ -88,70 +62,14 @@ namespace Model
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline const Aws::String& GetAdminPassword() const{ return m_adminPassword; }
-
-    /**
-     * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least 8 characters long and no more than
-     * 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quotation mark (‘), a double
-     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-     */
     inline bool AdminPasswordHasBeenSet() const { return m_adminPasswordHasBeenSet; }
-
-    /**
-     * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least 8 characters long and no more than
-     * 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quotation mark (‘), a double
-     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-     */
     inline void SetAdminPassword(const Aws::String& value) { m_adminPasswordHasBeenSet = true; m_adminPassword = value; }
-
-    /**
-     * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least 8 characters long and no more than
-     * 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quotation mark (‘), a double
-     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-     */
     inline void SetAdminPassword(Aws::String&& value) { m_adminPasswordHasBeenSet = true; m_adminPassword = std::move(value); }
-
-    /**
-     * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least 8 characters long and no more than
-     * 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quotation mark (‘), a double
-     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-     */
     inline void SetAdminPassword(const char* value) { m_adminPasswordHasBeenSet = true; m_adminPassword.assign(value); }
-
-    /**
-     * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least 8 characters long and no more than
-     * 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quotation mark (‘), a double
-     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-     */
     inline MemberFabricConfiguration& WithAdminPassword(const Aws::String& value) { SetAdminPassword(value); return *this;}
-
-    /**
-     * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least 8 characters long and no more than
-     * 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quotation mark (‘), a double
-     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-     */
     inline MemberFabricConfiguration& WithAdminPassword(Aws::String&& value) { SetAdminPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least 8 characters long and no more than
-     * 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quotation mark (‘), a double
-     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
-     */
     inline MemberFabricConfiguration& WithAdminPassword(const char* value) { SetAdminPassword(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_adminUsername;

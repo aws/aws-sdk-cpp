@@ -32,87 +32,33 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * The ID of the Greengrass group.
-     */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-
-    /**
-     * The ID of the Greengrass group.
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * The ID of the Greengrass group.
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * The ID of the Greengrass group.
-     */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * The ID of the Greengrass group.
-     */
     inline UpdateGroupRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * The ID of the Greengrass group.
-     */
     inline UpdateGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the Greengrass group.
-     */
     inline UpdateGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the definition.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateGroupRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupId;

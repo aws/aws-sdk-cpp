@@ -33,18 +33,8 @@ CriterionAdditionalProperties::CriterionAdditionalProperties() :
 {
 }
 
-CriterionAdditionalProperties::CriterionAdditionalProperties(JsonView jsonValue) : 
-    m_eqHasBeenSet(false),
-    m_eqExactMatchHasBeenSet(false),
-    m_gt(0),
-    m_gtHasBeenSet(false),
-    m_gte(0),
-    m_gteHasBeenSet(false),
-    m_lt(0),
-    m_ltHasBeenSet(false),
-    m_lte(0),
-    m_lteHasBeenSet(false),
-    m_neqHasBeenSet(false)
+CriterionAdditionalProperties::CriterionAdditionalProperties(JsonView jsonValue)
+  : CriterionAdditionalProperties()
 {
   *this = jsonValue;
 }

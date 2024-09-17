@@ -27,12 +27,8 @@ GrpcRouteMatch::GrpcRouteMatch() :
 {
 }
 
-GrpcRouteMatch::GrpcRouteMatch(JsonView jsonValue) : 
-    m_metadataHasBeenSet(false),
-    m_methodNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+GrpcRouteMatch::GrpcRouteMatch(JsonView jsonValue)
+  : GrpcRouteMatch()
 {
   *this = jsonValue;
 }

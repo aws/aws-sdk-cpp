@@ -24,9 +24,8 @@ DataPointMenuLabelOption::DataPointMenuLabelOption() :
 {
 }
 
-DataPointMenuLabelOption::DataPointMenuLabelOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+DataPointMenuLabelOption::DataPointMenuLabelOption(JsonView jsonValue)
+  : DataPointMenuLabelOption()
 {
   *this = jsonValue;
 }

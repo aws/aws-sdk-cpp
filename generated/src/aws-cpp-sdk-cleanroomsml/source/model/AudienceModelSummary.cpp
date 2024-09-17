@@ -19,72 +19,30 @@ namespace Model
 {
 
 AudienceModelSummary::AudienceModelSummary() : 
-    m_audienceModelArnHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_audienceModelArnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_trainingDatasetArnHasBeenSet(false),
     m_status(AudienceModelStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
 }
 
-AudienceModelSummary::AudienceModelSummary(JsonView jsonValue) : 
-    m_audienceModelArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(AudienceModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+AudienceModelSummary::AudienceModelSummary(JsonView jsonValue)
+  : AudienceModelSummary()
 {
   *this = jsonValue;
 }
 
 AudienceModelSummary& AudienceModelSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("audienceModelArn"))
-  {
-    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
-
-    m_audienceModelArnHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
 
     m_createTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = AudienceModelStatusMapper::GetAudienceModelStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("trainingDatasetArn"))
-  {
-    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
-
-    m_trainingDatasetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updateTime"))
@@ -94,6 +52,41 @@ AudienceModelSummary& AudienceModelSummary::operator =(JsonView jsonValue)
     m_updateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audienceModelArn"))
+  {
+    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
+
+    m_audienceModelArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trainingDatasetArn"))
+  {
+    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
+
+    m_trainingDatasetArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = AudienceModelStatusMapper::GetAudienceModelStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,20 +94,19 @@ JsonValue AudienceModelSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_audienceModelArnHasBeenSet)
-  {
-   payload.WithString("audienceModelArn", m_audienceModelArn);
-
-  }
-
   if(m_createTimeHasBeenSet)
   {
    payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_updateTimeHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_audienceModelArnHasBeenSet)
+  {
+   payload.WithString("audienceModelArn", m_audienceModelArn);
 
   }
 
@@ -124,20 +116,21 @@ JsonValue AudienceModelSummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", AudienceModelStatusMapper::GetNameForAudienceModelStatus(m_status));
-  }
-
   if(m_trainingDatasetArnHasBeenSet)
   {
    payload.WithString("trainingDatasetArn", m_trainingDatasetArn);
 
   }
 
-  if(m_updateTimeHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("status", AudienceModelStatusMapper::GetNameForAudienceModelStatus(m_status));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
   }
 
   return payload;

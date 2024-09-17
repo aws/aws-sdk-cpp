@@ -24,9 +24,8 @@ AwsElbLoadBalancerSourceSecurityGroup::AwsElbLoadBalancerSourceSecurityGroup() :
 {
 }
 
-AwsElbLoadBalancerSourceSecurityGroup::AwsElbLoadBalancerSourceSecurityGroup(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_ownerAliasHasBeenSet(false)
+AwsElbLoadBalancerSourceSecurityGroup::AwsElbLoadBalancerSourceSecurityGroup(JsonView jsonValue)
+  : AwsElbLoadBalancerSourceSecurityGroup()
 {
   *this = jsonValue;
 }

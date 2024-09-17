@@ -25,10 +25,8 @@ UsageBasedPricingTerm::UsageBasedPricingTerm() :
 {
 }
 
-UsageBasedPricingTerm::UsageBasedPricingTerm(JsonView jsonValue) : 
-    m_currencyCodeHasBeenSet(false),
-    m_rateCardsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+UsageBasedPricingTerm::UsageBasedPricingTerm(JsonView jsonValue)
+  : UsageBasedPricingTerm()
 {
   *this = jsonValue;
 }

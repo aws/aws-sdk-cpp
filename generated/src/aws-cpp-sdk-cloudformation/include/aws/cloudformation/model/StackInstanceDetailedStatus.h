@@ -22,7 +22,8 @@ namespace Model
     FAILED,
     CANCELLED,
     INOPERABLE,
-    SKIPPED_SUSPENDED_ACCOUNT
+    SKIPPED_SUSPENDED_ACCOUNT,
+    FAILED_IMPORT
   };
 
 namespace StackInstanceDetailedStatusMapper

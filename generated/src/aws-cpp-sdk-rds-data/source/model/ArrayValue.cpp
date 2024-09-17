@@ -27,12 +27,8 @@ ArrayValue::ArrayValue() :
 {
 }
 
-ArrayValue::ArrayValue(JsonView jsonValue) : 
-    m_booleanValuesHasBeenSet(false),
-    m_longValuesHasBeenSet(false),
-    m_doubleValuesHasBeenSet(false),
-    m_stringValuesHasBeenSet(false),
-    m_arrayValuesHasBeenSet(false)
+ArrayValue::ArrayValue(JsonView jsonValue)
+  : ArrayValue()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ LineChartFieldWells::LineChartFieldWells() :
 {
 }
 
-LineChartFieldWells::LineChartFieldWells(JsonView jsonValue) : 
-    m_lineChartAggregatedFieldWellsHasBeenSet(false)
+LineChartFieldWells::LineChartFieldWells(JsonView jsonValue)
+  : LineChartFieldWells()
 {
   *this = jsonValue;
 }

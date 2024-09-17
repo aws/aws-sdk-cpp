@@ -24,9 +24,8 @@ InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications
 {
 }
 
-InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications(JsonView jsonValue) : 
-    m_spotSpecificationHasBeenSet(false),
-    m_onDemandSpecificationHasBeenSet(false)
+InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications(JsonView jsonValue)
+  : InstanceFleetProvisioningSpecifications()
 {
   *this = jsonValue;
 }

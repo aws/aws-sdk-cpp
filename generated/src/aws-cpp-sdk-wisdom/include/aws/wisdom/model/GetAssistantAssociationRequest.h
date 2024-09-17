@@ -32,103 +32,35 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the assistant association. Can be either the ID or the ARN.
      * URLs cannot contain the ARN.</p>
      */
     inline const Aws::String& GetAssistantAssociationId() const{ return m_assistantAssociationId; }
-
-    /**
-     * <p>The identifier of the assistant association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline bool AssistantAssociationIdHasBeenSet() const { return m_assistantAssociationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the assistant association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline void SetAssistantAssociationId(const Aws::String& value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId = value; }
-
-    /**
-     * <p>The identifier of the assistant association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline void SetAssistantAssociationId(Aws::String&& value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the assistant association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline void SetAssistantAssociationId(const char* value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId.assign(value); }
-
-    /**
-     * <p>The identifier of the assistant association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline GetAssistantAssociationRequest& WithAssistantAssociationId(const Aws::String& value) { SetAssistantAssociationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the assistant association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline GetAssistantAssociationRequest& WithAssistantAssociationId(Aws::String&& value) { SetAssistantAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the assistant association. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
-     */
     inline GetAssistantAssociationRequest& WithAssistantAssociationId(const char* value) { SetAssistantAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
     inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline GetAssistantAssociationRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline GetAssistantAssociationRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
-     * cannot contain the ARN.</p>
-     */
     inline GetAssistantAssociationRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assistantAssociationId;

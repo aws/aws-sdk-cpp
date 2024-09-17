@@ -24,6 +24,9 @@
 #include <aws/kinesis-video-archived-media/model/GetImagesResult.h>
 #include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListResult.h>
 #include <aws/kinesis-video-archived-media/model/ListFragmentsResult.h>
+#include <aws/kinesis-video-archived-media/model/ListFragmentsRequest.h>
+#include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLRequest.h>
+#include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLRequest.h>
 /* End of service model headers required in KinesisVideoArchivedMediaClient header */
 
 namespace Aws
@@ -57,7 +60,7 @@ namespace Aws
 
   namespace KinesisVideoArchivedMedia
   {
-    using KinesisVideoArchivedMediaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisVideoArchivedMediaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisVideoArchivedMediaEndpointProviderBase = Aws::KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaEndpointProviderBase;
     using KinesisVideoArchivedMediaEndpointProvider = Aws::KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaEndpointProvider;
 

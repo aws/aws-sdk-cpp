@@ -26,11 +26,8 @@ HomeRegionControl::HomeRegionControl() :
 {
 }
 
-HomeRegionControl::HomeRegionControl(JsonView jsonValue) : 
-    m_controlIdHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_requestedTimeHasBeenSet(false)
+HomeRegionControl::HomeRegionControl(JsonView jsonValue)
+  : HomeRegionControl()
 {
   *this = jsonValue;
 }

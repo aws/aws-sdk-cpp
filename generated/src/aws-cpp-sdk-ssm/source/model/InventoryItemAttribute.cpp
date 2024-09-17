@@ -25,10 +25,8 @@ InventoryItemAttribute::InventoryItemAttribute() :
 {
 }
 
-InventoryItemAttribute::InventoryItemAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataType(InventoryAttributeDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false)
+InventoryItemAttribute::InventoryItemAttribute(JsonView jsonValue)
+  : InventoryItemAttribute()
 {
   *this = jsonValue;
 }

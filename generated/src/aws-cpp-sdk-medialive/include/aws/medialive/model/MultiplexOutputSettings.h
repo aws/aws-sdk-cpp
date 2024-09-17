@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Destination is a Multiplex.
      */
     inline const OutputLocationRef& GetDestination() const{ return m_destination; }
-
-    /**
-     * Destination is a Multiplex.
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * Destination is a Multiplex.
-     */
     inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * Destination is a Multiplex.
-     */
     inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * Destination is a Multiplex.
-     */
     inline MultiplexOutputSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-
-    /**
-     * Destination is a Multiplex.
-     */
     inline MultiplexOutputSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OutputLocationRef m_destination;

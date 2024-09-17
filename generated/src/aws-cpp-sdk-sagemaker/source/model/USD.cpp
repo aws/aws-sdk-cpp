@@ -28,13 +28,8 @@ USD::USD() :
 {
 }
 
-USD::USD(JsonView jsonValue) : 
-    m_dollars(0),
-    m_dollarsHasBeenSet(false),
-    m_cents(0),
-    m_centsHasBeenSet(false),
-    m_tenthFractionsOfACent(0),
-    m_tenthFractionsOfACentHasBeenSet(false)
+USD::USD(JsonView jsonValue)
+  : USD()
 {
   *this = jsonValue;
 }

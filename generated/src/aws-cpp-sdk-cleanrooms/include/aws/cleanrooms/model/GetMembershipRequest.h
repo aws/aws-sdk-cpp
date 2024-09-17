@@ -32,46 +32,19 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier for a membership resource.</p>
      */
     inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
-
-    /**
-     * <p>The identifier for a membership resource.</p>
-     */
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier for a membership resource.</p>
-     */
     inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-
-    /**
-     * <p>The identifier for a membership resource.</p>
-     */
     inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier for a membership resource.</p>
-     */
     inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier for a membership resource.</p>
-     */
     inline GetMembershipRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier for a membership resource.</p>
-     */
     inline GetMembershipRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for a membership resource.</p>
-     */
     inline GetMembershipRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_membershipIdentifier;

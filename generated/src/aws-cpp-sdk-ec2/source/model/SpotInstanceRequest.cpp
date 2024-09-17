@@ -48,31 +48,8 @@ SpotInstanceRequest::SpotInstanceRequest() :
 {
 }
 
-SpotInstanceRequest::SpotInstanceRequest(const XmlNode& xmlNode) : 
-    m_actualBlockHourlyPriceHasBeenSet(false),
-    m_availabilityZoneGroupHasBeenSet(false),
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_faultHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_launchGroupHasBeenSet(false),
-    m_launchSpecificationHasBeenSet(false),
-    m_launchedAvailabilityZoneHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false),
-    m_spotInstanceRequestIdHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_state(SpotInstanceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(SpotInstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
+SpotInstanceRequest::SpotInstanceRequest(const XmlNode& xmlNode)
+  : SpotInstanceRequest()
 {
   *this = xmlNode;
 }

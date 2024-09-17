@@ -36,52 +36,22 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Names (ARNs) of the licenses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseArns() const{ return m_licenseArns; }
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline bool LicenseArnsHasBeenSet() const { return m_licenseArnsHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline void SetLicenseArns(const Aws::Vector<Aws::String>& value) { m_licenseArnsHasBeenSet = true; m_licenseArns = value; }
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline void SetLicenseArns(Aws::Vector<Aws::String>&& value) { m_licenseArnsHasBeenSet = true; m_licenseArns = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline ListLicensesRequest& WithLicenseArns(const Aws::Vector<Aws::String>& value) { SetLicenseArns(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline ListLicensesRequest& WithLicenseArns(Aws::Vector<Aws::String>&& value) { SetLicenseArns(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline ListLicensesRequest& AddLicenseArns(const Aws::String& value) { m_licenseArnsHasBeenSet = true; m_licenseArns.push_back(value); return *this; }
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline ListLicensesRequest& AddLicenseArns(Aws::String&& value) { m_licenseArnsHasBeenSet = true; m_licenseArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Amazon Resource Names (ARNs) of the licenses.</p>
-     */
     inline ListLicensesRequest& AddLicenseArns(const char* value) { m_licenseArnsHasBeenSet = true; m_licenseArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters to scope the results. The following filters are supported:</p> <ul>
      * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
@@ -89,125 +59,38 @@ namespace Model
      * <code>Status</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
-     * </p> </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
-     * <code>Status</code> </p> </li> </ul>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
-     * </p> </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
-     * <code>Status</code> </p> </li> </ul>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
-     * </p> </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
-     * <code>Status</code> </p> </li> </ul>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
-     * </p> </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
-     * <code>Status</code> </p> </li> </ul>
-     */
     inline ListLicensesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
-     * </p> </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
-     * <code>Status</code> </p> </li> </ul>
-     */
     inline ListLicensesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
-     * </p> </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
-     * <code>Status</code> </p> </li> </ul>
-     */
     inline ListLicensesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>Filters to scope the results. The following filters are supported:</p> <ul>
-     * <li> <p> <code>Beneficiary</code> </p> </li> <li> <p> <code>ProductSKU</code>
-     * </p> </li> <li> <p> <code>Fingerprint</code> </p> </li> <li> <p>
-     * <code>Status</code> </p> </li> </ul>
-     */
     inline ListLicensesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Token for the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Token for the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Token for the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Token for the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Token for the next set of results.</p>
-     */
     inline ListLicensesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Token for the next set of results.</p>
-     */
     inline ListLicensesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Token for the next set of results.</p>
-     */
     inline ListLicensesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of results to return in a single call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of results to return in a single call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of results to return in a single call.</p>
-     */
     inline ListLicensesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_licenseArns;

@@ -26,11 +26,8 @@ CustomStruct::CustomStruct() :
 {
 }
 
-CustomStruct::CustomStruct(JsonView jsonValue) : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false)
+CustomStruct::CustomStruct(JsonView jsonValue)
+  : CustomStruct()
 {
   *this = jsonValue;
 }

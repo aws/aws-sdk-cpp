@@ -25,10 +25,8 @@ AccessTokenSummary::AccessTokenSummary() :
 {
 }
 
-AccessTokenSummary::AccessTokenSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_expiresTimeHasBeenSet(false)
+AccessTokenSummary::AccessTokenSummary(JsonView jsonValue)
+  : AccessTokenSummary()
 {
   *this = jsonValue;
 }

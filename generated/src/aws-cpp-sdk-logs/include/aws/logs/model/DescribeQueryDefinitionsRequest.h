@@ -34,100 +34,42 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Use this parameter to filter your results to only the query definitions that
      * have names that start with the prefix you specify.</p>
      */
     inline const Aws::String& GetQueryDefinitionNamePrefix() const{ return m_queryDefinitionNamePrefix; }
-
-    /**
-     * <p>Use this parameter to filter your results to only the query definitions that
-     * have names that start with the prefix you specify.</p>
-     */
     inline bool QueryDefinitionNamePrefixHasBeenSet() const { return m_queryDefinitionNamePrefixHasBeenSet; }
-
-    /**
-     * <p>Use this parameter to filter your results to only the query definitions that
-     * have names that start with the prefix you specify.</p>
-     */
     inline void SetQueryDefinitionNamePrefix(const Aws::String& value) { m_queryDefinitionNamePrefixHasBeenSet = true; m_queryDefinitionNamePrefix = value; }
-
-    /**
-     * <p>Use this parameter to filter your results to only the query definitions that
-     * have names that start with the prefix you specify.</p>
-     */
     inline void SetQueryDefinitionNamePrefix(Aws::String&& value) { m_queryDefinitionNamePrefixHasBeenSet = true; m_queryDefinitionNamePrefix = std::move(value); }
-
-    /**
-     * <p>Use this parameter to filter your results to only the query definitions that
-     * have names that start with the prefix you specify.</p>
-     */
     inline void SetQueryDefinitionNamePrefix(const char* value) { m_queryDefinitionNamePrefixHasBeenSet = true; m_queryDefinitionNamePrefix.assign(value); }
-
-    /**
-     * <p>Use this parameter to filter your results to only the query definitions that
-     * have names that start with the prefix you specify.</p>
-     */
     inline DescribeQueryDefinitionsRequest& WithQueryDefinitionNamePrefix(const Aws::String& value) { SetQueryDefinitionNamePrefix(value); return *this;}
-
-    /**
-     * <p>Use this parameter to filter your results to only the query definitions that
-     * have names that start with the prefix you specify.</p>
-     */
     inline DescribeQueryDefinitionsRequest& WithQueryDefinitionNamePrefix(Aws::String&& value) { SetQueryDefinitionNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>Use this parameter to filter your results to only the query definitions that
-     * have names that start with the prefix you specify.</p>
-     */
     inline DescribeQueryDefinitionsRequest& WithQueryDefinitionNamePrefix(const char* value) { SetQueryDefinitionNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Limits the number of returned query definitions to the specified number.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Limits the number of returned query definitions to the specified number.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Limits the number of returned query definitions to the specified number.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Limits the number of returned query definitions to the specified number.</p>
-     */
     inline DescribeQueryDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline DescribeQueryDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline DescribeQueryDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline DescribeQueryDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queryDefinitionNamePrefix;

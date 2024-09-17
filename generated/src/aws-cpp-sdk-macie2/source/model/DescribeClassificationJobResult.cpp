@@ -27,13 +27,8 @@ DescribeClassificationJobResult::DescribeClassificationJobResult() :
 {
 }
 
-DescribeClassificationJobResult::DescribeClassificationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_initialRun(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobType(JobType::NOT_SET),
-    m_managedDataIdentifierSelector(ManagedDataIdentifierSelector::NOT_SET),
-    m_samplingPercentage(0)
+DescribeClassificationJobResult::DescribeClassificationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeClassificationJobResult()
 {
   *this = result;
 }

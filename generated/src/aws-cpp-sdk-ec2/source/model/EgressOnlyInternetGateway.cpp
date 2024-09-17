@@ -27,10 +27,8 @@ EgressOnlyInternetGateway::EgressOnlyInternetGateway() :
 {
 }
 
-EgressOnlyInternetGateway::EgressOnlyInternetGateway(const XmlNode& xmlNode) : 
-    m_attachmentsHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EgressOnlyInternetGateway::EgressOnlyInternetGateway(const XmlNode& xmlNode)
+  : EgressOnlyInternetGateway()
 {
   *this = xmlNode;
 }

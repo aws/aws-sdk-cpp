@@ -24,19 +24,14 @@ AgentSummary::AgentSummary() :
     m_agentStatus(AgentStatus::NOT_SET),
     m_agentStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_latestAgentVersionHasBeenSet(false)
+    m_guardrailConfigurationHasBeenSet(false),
+    m_latestAgentVersionHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
-AgentSummary::AgentSummary(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_agentNameHasBeenSet(false),
-    m_agentStatus(AgentStatus::NOT_SET),
-    m_agentStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_latestAgentVersionHasBeenSet(false)
+AgentSummary::AgentSummary(JsonView jsonValue)
+  : AgentSummary()
 {
   *this = jsonValue;
 }
@@ -71,11 +66,11 @@ AgentSummary& AgentSummary::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("guardrailConfiguration"))
   {
-    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
 
-    m_updatedAtHasBeenSet = true;
+    m_guardrailConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("latestAgentVersion"))
@@ -83,6 +78,13 @@ AgentSummary& AgentSummary::operator =(JsonView jsonValue)
     m_latestAgentVersion = jsonValue.GetString("latestAgentVersion");
 
     m_latestAgentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   return *this;
@@ -115,15 +117,21 @@ JsonValue AgentSummary::Jsonize() const
 
   }
 
-  if(m_updatedAtHasBeenSet)
+  if(m_guardrailConfigurationHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
   }
 
   if(m_latestAgentVersionHasBeenSet)
   {
    payload.WithString("latestAgentVersion", m_latestAgentVersion);
 
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

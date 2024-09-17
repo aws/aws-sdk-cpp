@@ -42,142 +42,56 @@ namespace Model
     AWS_GLACIER_API UploadArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The relative URI path of the newly added archive resource.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The relative URI path of the newly added archive resource.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>The relative URI path of the newly added archive resource.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>The relative URI path of the newly added archive resource.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>The relative URI path of the newly added archive resource.</p>
-     */
     inline UploadArchiveResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The relative URI path of the newly added archive resource.</p>
-     */
     inline UploadArchiveResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The relative URI path of the newly added archive resource.</p>
-     */
     inline UploadArchiveResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
-
-    /**
-     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-     */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-
-    /**
-     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-     */
     inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-
-    /**
-     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-     */
     inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-
-    /**
-     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-     */
     inline UploadArchiveResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-
-    /**
-     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-     */
     inline UploadArchiveResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-
-    /**
-     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-     */
     inline UploadArchiveResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the archive. This value is also included as part of the
      * location.</p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-
-    /**
-     * <p>The ID of the archive. This value is also included as part of the
-     * location.</p>
-     */
     inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-
-    /**
-     * <p>The ID of the archive. This value is also included as part of the
-     * location.</p>
-     */
     inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-
-    /**
-     * <p>The ID of the archive. This value is also included as part of the
-     * location.</p>
-     */
     inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-
-    /**
-     * <p>The ID of the archive. This value is also included as part of the
-     * location.</p>
-     */
     inline UploadArchiveResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-
-    /**
-     * <p>The ID of the archive. This value is also included as part of the
-     * location.</p>
-     */
     inline UploadArchiveResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the archive. This value is also included as part of the
-     * location.</p>
-     */
     inline UploadArchiveResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UploadArchiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UploadArchiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UploadArchiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_location;

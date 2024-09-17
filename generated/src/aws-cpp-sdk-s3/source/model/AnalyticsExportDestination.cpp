@@ -25,8 +25,8 @@ AnalyticsExportDestination::AnalyticsExportDestination() :
 {
 }
 
-AnalyticsExportDestination::AnalyticsExportDestination(const XmlNode& xmlNode) : 
-    m_s3BucketDestinationHasBeenSet(false)
+AnalyticsExportDestination::AnalyticsExportDestination(const XmlNode& xmlNode)
+  : AnalyticsExportDestination()
 {
   *this = xmlNode;
 }

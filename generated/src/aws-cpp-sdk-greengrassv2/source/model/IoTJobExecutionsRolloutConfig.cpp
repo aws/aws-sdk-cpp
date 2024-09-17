@@ -25,10 +25,8 @@ IoTJobExecutionsRolloutConfig::IoTJobExecutionsRolloutConfig() :
 {
 }
 
-IoTJobExecutionsRolloutConfig::IoTJobExecutionsRolloutConfig(JsonView jsonValue) : 
-    m_exponentialRateHasBeenSet(false),
-    m_maximumPerMinute(0),
-    m_maximumPerMinuteHasBeenSet(false)
+IoTJobExecutionsRolloutConfig::IoTJobExecutionsRolloutConfig(JsonView jsonValue)
+  : IoTJobExecutionsRolloutConfig()
 {
   *this = jsonValue;
 }

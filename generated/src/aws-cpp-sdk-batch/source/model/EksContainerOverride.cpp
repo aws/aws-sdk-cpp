@@ -19,6 +19,7 @@ namespace Model
 {
 
 EksContainerOverride::EksContainerOverride() : 
+    m_nameHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_argsHasBeenSet(false),
@@ -27,18 +28,21 @@ EksContainerOverride::EksContainerOverride() :
 {
 }
 
-EksContainerOverride::EksContainerOverride(JsonView jsonValue) : 
-    m_imageHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_argsHasBeenSet(false),
-    m_envHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+EksContainerOverride::EksContainerOverride(JsonView jsonValue)
+  : EksContainerOverride()
 {
   *this = jsonValue;
 }
 
 EksContainerOverride& EksContainerOverride::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
@@ -89,6 +93,12 @@ EksContainerOverride& EksContainerOverride::operator =(JsonView jsonValue)
 JsonValue EksContainerOverride::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_imageHasBeenSet)
   {

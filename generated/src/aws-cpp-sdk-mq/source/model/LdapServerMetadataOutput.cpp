@@ -34,19 +34,8 @@ LdapServerMetadataOutput::LdapServerMetadataOutput() :
 {
 }
 
-LdapServerMetadataOutput::LdapServerMetadataOutput(JsonView jsonValue) : 
-    m_hostsHasBeenSet(false),
-    m_roleBaseHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_roleSearchMatchingHasBeenSet(false),
-    m_roleSearchSubtree(false),
-    m_roleSearchSubtreeHasBeenSet(false),
-    m_serviceAccountUsernameHasBeenSet(false),
-    m_userBaseHasBeenSet(false),
-    m_userRoleNameHasBeenSet(false),
-    m_userSearchMatchingHasBeenSet(false),
-    m_userSearchSubtree(false),
-    m_userSearchSubtreeHasBeenSet(false)
+LdapServerMetadataOutput::LdapServerMetadataOutput(JsonView jsonValue)
+  : LdapServerMetadataOutput()
 {
   *this = jsonValue;
 }

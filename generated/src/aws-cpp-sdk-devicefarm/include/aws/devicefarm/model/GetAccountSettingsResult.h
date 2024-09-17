@@ -39,53 +39,27 @@ namespace Model
     AWS_DEVICEFARM_API GetAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The account settings.</p>
      */
     inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
-
-    /**
-     * <p>The account settings.</p>
-     */
     inline void SetAccountSettings(const AccountSettings& value) { m_accountSettings = value; }
-
-    /**
-     * <p>The account settings.</p>
-     */
     inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = std::move(value); }
-
-    /**
-     * <p>The account settings.</p>
-     */
     inline GetAccountSettingsResult& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
-
-    /**
-     * <p>The account settings.</p>
-     */
     inline GetAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccountSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccountSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccountSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccountSettings m_accountSettings;

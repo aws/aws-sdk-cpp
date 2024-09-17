@@ -26,11 +26,8 @@ AwsLambdaLayerVersionDetails::AwsLambdaLayerVersionDetails() :
 {
 }
 
-AwsLambdaLayerVersionDetails::AwsLambdaLayerVersionDetails(JsonView jsonValue) : 
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_compatibleRuntimesHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+AwsLambdaLayerVersionDetails::AwsLambdaLayerVersionDetails(JsonView jsonValue)
+  : AwsLambdaLayerVersionDetails()
 {
   *this = jsonValue;
 }

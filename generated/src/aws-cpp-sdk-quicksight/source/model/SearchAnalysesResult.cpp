@@ -22,8 +22,8 @@ SearchAnalysesResult::SearchAnalysesResult() :
 {
 }
 
-SearchAnalysesResult::SearchAnalysesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+SearchAnalysesResult::SearchAnalysesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchAnalysesResult()
 {
   *this = result;
 }

@@ -38,46 +38,19 @@ namespace Model
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The URL of the Terraform s3 state file you need to import. </p>
      */
     inline const Aws::String& GetS3StateFileUrl() const{ return m_s3StateFileUrl; }
-
-    /**
-     * <p> The URL of the Terraform s3 state file you need to import. </p>
-     */
     inline bool S3StateFileUrlHasBeenSet() const { return m_s3StateFileUrlHasBeenSet; }
-
-    /**
-     * <p> The URL of the Terraform s3 state file you need to import. </p>
-     */
     inline void SetS3StateFileUrl(const Aws::String& value) { m_s3StateFileUrlHasBeenSet = true; m_s3StateFileUrl = value; }
-
-    /**
-     * <p> The URL of the Terraform s3 state file you need to import. </p>
-     */
     inline void SetS3StateFileUrl(Aws::String&& value) { m_s3StateFileUrlHasBeenSet = true; m_s3StateFileUrl = std::move(value); }
-
-    /**
-     * <p> The URL of the Terraform s3 state file you need to import. </p>
-     */
     inline void SetS3StateFileUrl(const char* value) { m_s3StateFileUrlHasBeenSet = true; m_s3StateFileUrl.assign(value); }
-
-    /**
-     * <p> The URL of the Terraform s3 state file you need to import. </p>
-     */
     inline TerraformSource& WithS3StateFileUrl(const Aws::String& value) { SetS3StateFileUrl(value); return *this;}
-
-    /**
-     * <p> The URL of the Terraform s3 state file you need to import. </p>
-     */
     inline TerraformSource& WithS3StateFileUrl(Aws::String&& value) { SetS3StateFileUrl(std::move(value)); return *this;}
-
-    /**
-     * <p> The URL of the Terraform s3 state file you need to import. </p>
-     */
     inline TerraformSource& WithS3StateFileUrl(const char* value) { SetS3StateFileUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3StateFileUrl;

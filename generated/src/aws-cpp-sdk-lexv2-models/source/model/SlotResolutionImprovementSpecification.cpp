@@ -25,10 +25,8 @@ SlotResolutionImprovementSpecification::SlotResolutionImprovementSpecification()
 {
 }
 
-SlotResolutionImprovementSpecification::SlotResolutionImprovementSpecification(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bedrockModelSpecificationHasBeenSet(false)
+SlotResolutionImprovementSpecification::SlotResolutionImprovementSpecification(JsonView jsonValue)
+  : SlotResolutionImprovementSpecification()
 {
   *this = jsonValue;
 }

@@ -14,7 +14,6 @@
 #include <aws/core/utils/Array.h>
 #include <aws/crt/Optional.h>
 #include <smithy/tracing/TelemetryProvider.h>
-#include <smithy/tracing/NoopTelemetryProvider.h>
 #include <memory>
 
 namespace Aws
@@ -62,7 +61,7 @@ namespace Aws
           size_t requestMinCompressionSizeBytes = 10240;
         };
          /**
-         * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
+          * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
           * - disableIMDS
          */
         struct ClientConfigurationInitValues {
@@ -75,6 +74,34 @@ namespace Aws
          */
         struct AWS_CORE_API ClientConfiguration
         {
+            struct ProviderFactories
+            {
+                /**
+                 * Retry Strategy factory method. Default is DefaultRetryStrategy (i.e. exponential backoff).
+                 */
+                std::function<std::shared_ptr<RetryStrategy>()> retryStrategyCreateFn;
+                /**
+                 * Threading Executor factory method. Default creates a factory that creates DefaultExecutor
+                 *  (i.e. spawn a separate thread for each task) for backward compatibility reasons.
+                 *  Please switch to a better executor such as PooledThreadExecutor.
+                 */
+                std::function<std::shared_ptr<Utils::Threading::Executor>()> executorCreateFn;
+                /**
+                 * Rate Limiter factory for outgoing bandwidth. Default is wide-open.
+                 */
+                std::function<std::shared_ptr<Utils::RateLimits::RateLimiterInterface>()> writeRateLimiterCreateFn;
+                /**
+                 * Rate Limiter factory for incoming bandwidth. Default is wide-open.
+                 */
+                std::function<std::shared_ptr<Utils::RateLimits::RateLimiterInterface>()> readRateLimiterCreateFn;
+                /**
+                 * TelemetryProvider factory. Defaults to Noop provider.
+                 */
+                std::function<std::shared_ptr<smithy::components::tracing::TelemetryProvider>()> telemetryProviderCreateFn;
+
+                static ProviderFactories defaultFactories;
+            };
+
             ClientConfiguration();
 
             /**
@@ -99,10 +126,15 @@ namespace Aws
              */
             explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
-	    /**
-	     * Add virtual method to allow use of dynamic_cast under inheritance.
-	     */
+            /**
+             * Add virtual method to allow use of dynamic_cast under inheritance.
+             */
             virtual ~ClientConfiguration() = default;
+
+            /**
+             * Client configuration factory methods to init client utility classes such as Executor, Retry Strategy
+             */
+            ProviderFactories configFactories = ProviderFactories::defaultFactories;
 
             /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
@@ -165,9 +197,10 @@ namespace Aws
              */
             unsigned long lowSpeedLimit = 1;
             /**
-             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff)
+             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff).
+             * Provide retry strategy here or via a factory method.
              */
-            std::shared_ptr<RetryStrategy> retryStrategy;
+            std::shared_ptr<RetryStrategy> retryStrategy = nullptr;
             /**
              * Override the http endpoint used to talk to a service.
              */
@@ -227,9 +260,10 @@ namespace Aws
             */
             Aws::Utils::Array<Aws::String> nonProxyHosts;
             /**
-            * Threading Executor implementation. Default uses std::thread::detach()
-            */
-            std::shared_ptr<Aws::Utils::Threading::Executor> executor;
+             * Threading Executor implementation. Default uses std::thread::detach()
+             * Provide executor here or via a factory method.
+             */
+            std::shared_ptr<Aws::Utils::Threading::Executor> executor = nullptr;
             /**
              * If you need to test and want to get around TLS validation errors, do that here.
              * You probably shouldn't use this flag in a production scenario.
@@ -242,23 +276,44 @@ namespace Aws
              */
             Aws::String caPath;
             /**
+             * Same as caPath, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAPATH in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
+             */
+            Aws::String proxyCaPath;
+            /**
              * If you certificate file is different from the default, you can tell clients that
              * aren't using the default trust store where to find your ca file.
              * If you are on windows or apple, you likely don't want this.
              */
              Aws::String caFile;
             /**
-             * Rate Limiter implementation for outgoing bandwidth. Default is wide-open.
+             * Same as caFile, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAINFO in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
              */
-            std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;
+            Aws::String proxyCaFile;
+            /**
+             * Rate Limiter implementation for outgoing bandwidth. Default is wide-open.
+             * Provide limiter here or via a factory method.
+             */
+            std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter = nullptr;
             /**
             * Rate Limiter implementation for incoming bandwidth. Default is wide-open.
+            * Provide limiter here or via a factory method.
             */
-            std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
+            std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter = nullptr;
             /**
              * Override the http implementation the default factory returns.
              */
             Aws::Http::TransferLibType httpLibOverride;
+            /**
+             * Configure low latency or low cpu consumption http client operation mode.
+             * Currently applies only to streaming APIs and libCurl. Defaults to LOW_LATENCY
+             */
+            Aws::Http::TransferLibPerformanceMode httpLibPerfMode = Http::TransferLibPerformanceMode::LOW_LATENCY;
             /**
              * Sets the behavior how http stack handles 30x redirect codes.
              */
@@ -303,6 +358,12 @@ namespace Aws
             Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
             /**
+             * Enable http client (WinHTTP or CURL) traces.
+             * Defaults to false, it's an optional feature.
+             */
+            bool enableHttpClientTrace = false;
+
+            /**
              * profileName in config file that will be used by this object to resolve more configurations.
              */
             Aws::String profileName;
@@ -335,6 +396,16 @@ namespace Aws
             bool disableImdsV1 = false;
 
             /**
+             * AppId is an optional application specific identifier that can be set.
+             * When set it will be appended to the User-Agent header of every request
+             * in the form of App/{AppId}. This variable is sourced from environment
+             * variable AWS_SDK_UA_APP_ID or the shared config profile attribute sdk_ua_app_id.
+             * See https://docs.aws.amazon.com/sdkref/latest/guide/settings-reference.html for
+             * more information on environment variables and shared config settings.
+             */
+            Aws::String appId;
+
+            /**
              * A helper function to read config value from env variable or aws profile config
              */
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey,
@@ -344,10 +415,10 @@ namespace Aws
                                                           const Aws::String& defaultValue);
 
             /**
-             * A wrapper for interfacing with telemetry functionality.
+             * A wrapper for interfacing with telemetry functionality. Defaults to Noop provider.
+             * Provide TelemetryProvider here or via a factory method.
              */
-            std::shared_ptr<smithy::components::tracing::TelemetryProvider> telemetryProvider =
-                smithy::components::tracing::NoopTelemetryProvider::CreateProvider();
+            std::shared_ptr<smithy::components::tracing::TelemetryProvider> telemetryProvider;
         };
 
         /**

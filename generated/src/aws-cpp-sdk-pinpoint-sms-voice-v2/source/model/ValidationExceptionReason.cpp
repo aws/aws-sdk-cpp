@@ -34,6 +34,7 @@ namespace Aws
         static const int INVALID_REQUEST_HASH = HashingUtils::HashString("INVALID_REQUEST");
         static const int INVALID_REGISTRATION_ASSOCIATION_HASH = HashingUtils::HashString("INVALID_REGISTRATION_ASSOCIATION");
         static const int MAXIMUM_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MAXIMUM_SIZE_EXCEEDED");
+        static const int MEDIA_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("MEDIA_TYPE_NOT_SUPPORTED");
         static const int MISSING_PARAMETER_HASH = HashingUtils::HashString("MISSING_PARAMETER");
         static const int PARAMETERS_CANNOT_BE_USED_TOGETHER_HASH = HashingUtils::HashString("PARAMETERS_CANNOT_BE_USED_TOGETHER");
         static const int PHONE_NUMBER_CANNOT_BE_OPTED_IN_HASH = HashingUtils::HashString("PHONE_NUMBER_CANNOT_BE_OPTED_IN");
@@ -118,6 +119,10 @@ namespace Aws
           else if (hashCode == MAXIMUM_SIZE_EXCEEDED_HASH)
           {
             return ValidationExceptionReason::MAXIMUM_SIZE_EXCEEDED;
+          }
+          else if (hashCode == MEDIA_TYPE_NOT_SUPPORTED_HASH)
+          {
+            return ValidationExceptionReason::MEDIA_TYPE_NOT_SUPPORTED;
           }
           else if (hashCode == MISSING_PARAMETER_HASH)
           {
@@ -259,6 +264,8 @@ namespace Aws
             return "INVALID_REGISTRATION_ASSOCIATION";
           case ValidationExceptionReason::MAXIMUM_SIZE_EXCEEDED:
             return "MAXIMUM_SIZE_EXCEEDED";
+          case ValidationExceptionReason::MEDIA_TYPE_NOT_SUPPORTED:
+            return "MEDIA_TYPE_NOT_SUPPORTED";
           case ValidationExceptionReason::MISSING_PARAMETER:
             return "MISSING_PARAMETER";
           case ValidationExceptionReason::PARAMETERS_CANNOT_BE_USED_TOGETHER:

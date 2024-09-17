@@ -22,8 +22,8 @@ ExecuteCommandResult::ExecuteCommandResult() :
 {
 }
 
-ExecuteCommandResult::ExecuteCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_interactive(false)
+ExecuteCommandResult::ExecuteCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ExecuteCommandResult()
 {
   *this = result;
 }

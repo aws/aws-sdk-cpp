@@ -25,10 +25,8 @@ LinkAttributeAction::LinkAttributeAction() :
 {
 }
 
-LinkAttributeAction::LinkAttributeAction(JsonView jsonValue) : 
-    m_attributeActionType(UpdateActionType::NOT_SET),
-    m_attributeActionTypeHasBeenSet(false),
-    m_attributeUpdateValueHasBeenSet(false)
+LinkAttributeAction::LinkAttributeAction(JsonView jsonValue)
+  : LinkAttributeAction()
 {
   *this = jsonValue;
 }

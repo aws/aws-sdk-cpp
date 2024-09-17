@@ -33,6 +33,7 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
      * does not use an IAM policy. This is the default.</p> </li> <li> <p>
@@ -40,129 +41,40 @@ namespace Model
      * auth is enabled and an auth policy is required.</p> </li> </ul>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline UpdateServiceRequest& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline UpdateServiceRequest& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
+     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
-     */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
-     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
-     */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
-     */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
-     */
     inline UpdateServiceRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
-     */
     inline UpdateServiceRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate. </p>
-     */
     inline UpdateServiceRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
      */
     inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline UpdateServiceRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline UpdateServiceRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline UpdateServiceRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     AuthType m_authType;

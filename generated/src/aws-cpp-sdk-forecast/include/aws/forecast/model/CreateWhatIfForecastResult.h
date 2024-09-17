@@ -32,63 +32,29 @@ namespace Model
     AWS_FORECASTSERVICE_API CreateWhatIfForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
      */
     inline const Aws::String& GetWhatIfForecastArn() const{ return m_whatIfForecastArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-     */
     inline void SetWhatIfForecastArn(const Aws::String& value) { m_whatIfForecastArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-     */
     inline void SetWhatIfForecastArn(Aws::String&& value) { m_whatIfForecastArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-     */
     inline void SetWhatIfForecastArn(const char* value) { m_whatIfForecastArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-     */
     inline CreateWhatIfForecastResult& WithWhatIfForecastArn(const Aws::String& value) { SetWhatIfForecastArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-     */
     inline CreateWhatIfForecastResult& WithWhatIfForecastArn(Aws::String&& value) { SetWhatIfForecastArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-     */
     inline CreateWhatIfForecastResult& WithWhatIfForecastArn(const char* value) { SetWhatIfForecastArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateWhatIfForecastResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateWhatIfForecastResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateWhatIfForecastResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_whatIfForecastArn;

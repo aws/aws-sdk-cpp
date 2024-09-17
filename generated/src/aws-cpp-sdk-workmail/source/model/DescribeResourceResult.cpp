@@ -24,10 +24,8 @@ DescribeResourceResult::DescribeResourceResult() :
 {
 }
 
-DescribeResourceResult::DescribeResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(ResourceType::NOT_SET),
-    m_state(EntityState::NOT_SET),
-    m_hiddenFromGlobalAddressList(false)
+DescribeResourceResult::DescribeResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeResourceResult()
 {
   *this = result;
 }

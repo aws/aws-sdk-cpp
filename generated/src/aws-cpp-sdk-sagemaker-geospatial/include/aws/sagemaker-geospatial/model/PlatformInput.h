@@ -41,77 +41,31 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ComparisonOperator to use with PlatformInput.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
-
-    /**
-     * <p>The ComparisonOperator to use with PlatformInput.</p>
-     */
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-
-    /**
-     * <p>The ComparisonOperator to use with PlatformInput.</p>
-     */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-
-    /**
-     * <p>The ComparisonOperator to use with PlatformInput.</p>
-     */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-
-    /**
-     * <p>The ComparisonOperator to use with PlatformInput.</p>
-     */
     inline PlatformInput& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-
-    /**
-     * <p>The ComparisonOperator to use with PlatformInput.</p>
-     */
     inline PlatformInput& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the platform.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the platform.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the platform.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the platform.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the platform.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the platform.</p>
-     */
     inline PlatformInput& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the platform.</p>
-     */
     inline PlatformInput& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the platform.</p>
-     */
     inline PlatformInput& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     ComparisonOperator m_comparisonOperator;

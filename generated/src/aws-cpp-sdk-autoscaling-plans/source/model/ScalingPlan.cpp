@@ -32,17 +32,8 @@ ScalingPlan::ScalingPlan() :
 {
 }
 
-ScalingPlan::ScalingPlan(JsonView jsonValue) : 
-    m_scalingPlanNameHasBeenSet(false),
-    m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false),
-    m_applicationSourceHasBeenSet(false),
-    m_scalingInstructionsHasBeenSet(false),
-    m_statusCode(ScalingPlanStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_statusStartTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+ScalingPlan::ScalingPlan(JsonView jsonValue)
+  : ScalingPlan()
 {
   *this = jsonValue;
 }

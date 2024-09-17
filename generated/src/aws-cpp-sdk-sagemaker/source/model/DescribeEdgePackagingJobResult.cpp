@@ -22,8 +22,8 @@ DescribeEdgePackagingJobResult::DescribeEdgePackagingJobResult() :
 {
 }
 
-DescribeEdgePackagingJobResult::DescribeEdgePackagingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_edgePackagingJobStatus(EdgePackagingJobStatus::NOT_SET)
+DescribeEdgePackagingJobResult::DescribeEdgePackagingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEdgePackagingJobResult()
 {
   *this = result;
 }

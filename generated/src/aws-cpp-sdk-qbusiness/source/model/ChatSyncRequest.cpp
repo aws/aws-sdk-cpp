@@ -16,17 +16,21 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ChatSyncRequest::ChatSyncRequest() : 
-    m_actionExecutionHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_userGroupsHasBeenSet(false),
+    m_userMessageHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
+    m_actionExecutionHasBeenSet(false),
+    m_authChallengeResponseHasBeenSet(false),
     m_conversationIdHasBeenSet(false),
     m_parentMessageIdHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userMessageHasBeenSet(false)
+    m_attributeFilterHasBeenSet(false),
+    m_chatMode(ChatMode::NOT_SET),
+    m_chatModeHasBeenSet(false),
+    m_chatModeConfigurationHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -34,9 +38,9 @@ Aws::String ChatSyncRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionExecutionHasBeenSet)
+  if(m_userMessageHasBeenSet)
   {
-   payload.WithObject("actionExecution", m_actionExecution.Jsonize());
+   payload.WithString("userMessage", m_userMessage);
 
   }
 
@@ -51,15 +55,15 @@ Aws::String ChatSyncRequest::SerializePayload() const
 
   }
 
-  if(m_attributeFilterHasBeenSet)
+  if(m_actionExecutionHasBeenSet)
   {
-   payload.WithObject("attributeFilter", m_attributeFilter.Jsonize());
+   payload.WithObject("actionExecution", m_actionExecution.Jsonize());
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_authChallengeResponseHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithObject("authChallengeResponse", m_authChallengeResponse.Jsonize());
 
   }
 
@@ -75,9 +79,26 @@ Aws::String ChatSyncRequest::SerializePayload() const
 
   }
 
-  if(m_userMessageHasBeenSet)
+  if(m_attributeFilterHasBeenSet)
   {
-   payload.WithString("userMessage", m_userMessage);
+   payload.WithObject("attributeFilter", m_attributeFilter.Jsonize());
+
+  }
+
+  if(m_chatModeHasBeenSet)
+  {
+   payload.WithString("chatMode", ChatModeMapper::GetNameForChatMode(m_chatMode));
+  }
+
+  if(m_chatModeConfigurationHasBeenSet)
+  {
+   payload.WithObject("chatModeConfiguration", m_chatModeConfiguration.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -87,6 +108,13 @@ Aws::String ChatSyncRequest::SerializePayload() const
 void ChatSyncRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_userIdHasBeenSet)
+    {
+      ss << m_userId;
+      uri.AddQueryStringParameter("userId", ss.str());
+      ss.str("");
+    }
+
     if(m_userGroupsHasBeenSet)
     {
       for(const auto& item : m_userGroups)
@@ -95,13 +123,6 @@ void ChatSyncRequest::AddQueryStringParameters(URI& uri) const
         uri.AddQueryStringParameter("userGroups", ss.str());
         ss.str("");
       }
-    }
-
-    if(m_userIdHasBeenSet)
-    {
-      ss << m_userId;
-      uri.AddQueryStringParameter("userId", ss.str());
-      ss.str("");
     }
 
 }

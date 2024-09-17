@@ -43,49 +43,27 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline UpdateScalingParametersRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline UpdateScalingParametersRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline UpdateScalingParametersRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ScalingParameters& GetScalingParameters() const{ return m_scalingParameters; }
-
-    
     inline bool ScalingParametersHasBeenSet() const { return m_scalingParametersHasBeenSet; }
-
-    
     inline void SetScalingParameters(const ScalingParameters& value) { m_scalingParametersHasBeenSet = true; m_scalingParameters = value; }
-
-    
     inline void SetScalingParameters(ScalingParameters&& value) { m_scalingParametersHasBeenSet = true; m_scalingParameters = std::move(value); }
-
-    
     inline UpdateScalingParametersRequest& WithScalingParameters(const ScalingParameters& value) { SetScalingParameters(value); return *this;}
-
-    
     inline UpdateScalingParametersRequest& WithScalingParameters(ScalingParameters&& value) { SetScalingParameters(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

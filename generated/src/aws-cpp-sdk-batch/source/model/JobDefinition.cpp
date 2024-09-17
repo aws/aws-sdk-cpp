@@ -36,33 +36,15 @@ JobDefinition::JobDefinition() :
     m_propagateTags(false),
     m_propagateTagsHasBeenSet(false),
     m_platformCapabilitiesHasBeenSet(false),
+    m_ecsPropertiesHasBeenSet(false),
     m_eksPropertiesHasBeenSet(false),
     m_containerOrchestrationType(OrchestrationType::NOT_SET),
     m_containerOrchestrationTypeHasBeenSet(false)
 {
 }
 
-JobDefinition::JobDefinition(JsonView jsonValue) : 
-    m_jobDefinitionNameHasBeenSet(false),
-    m_jobDefinitionArnHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_schedulingPriority(0),
-    m_schedulingPriorityHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_containerPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_propagateTags(false),
-    m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false),
-    m_containerOrchestrationType(OrchestrationType::NOT_SET),
-    m_containerOrchestrationTypeHasBeenSet(false)
+JobDefinition::JobDefinition(JsonView jsonValue)
+  : JobDefinition()
 {
   *this = jsonValue;
 }
@@ -174,6 +156,13 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
       m_platformCapabilities.push_back(PlatformCapabilityMapper::GetPlatformCapabilityForName(platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString()));
     }
     m_platformCapabilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ecsProperties"))
+  {
+    m_ecsProperties = jsonValue.GetObject("ecsProperties");
+
+    m_ecsPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("eksProperties"))
@@ -293,6 +282,12 @@ JsonValue JobDefinition::Jsonize() const
      platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));
    }
    payload.WithArray("platformCapabilities", std::move(platformCapabilitiesJsonList));
+
+  }
+
+  if(m_ecsPropertiesHasBeenSet)
+  {
+   payload.WithObject("ecsProperties", m_ecsProperties.Jsonize());
 
   }
 

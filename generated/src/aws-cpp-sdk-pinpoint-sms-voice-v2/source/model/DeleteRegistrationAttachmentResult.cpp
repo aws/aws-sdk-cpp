@@ -23,9 +23,8 @@ DeleteRegistrationAttachmentResult::DeleteRegistrationAttachmentResult() :
 {
 }
 
-DeleteRegistrationAttachmentResult::DeleteRegistrationAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_attachmentStatus(AttachmentStatus::NOT_SET),
-    m_attachmentUploadErrorReason(AttachmentUploadErrorReason::NOT_SET)
+DeleteRegistrationAttachmentResult::DeleteRegistrationAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRegistrationAttachmentResult()
 {
   *this = result;
 }

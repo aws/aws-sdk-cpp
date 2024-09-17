@@ -77,8 +77,8 @@ Aws::String BuildTableName(const char* baseName)
 class TableOperationTest : public ::testing::Test {
 
 public:
-    static std::shared_ptr<DynamoDBClient> m_client;
-    static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
+    std::shared_ptr<DynamoDBClient> m_client;
+    std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
 
     Aws::Vector<GetItemOutcome> getItemResultsFromCallbackTest;
     Aws::Vector<PutItemOutcome> putItemResultsFromCallbackTest;
@@ -99,6 +99,8 @@ public:
 
     std::mutex updateItemResultMutex;
     std::condition_variable updateItemResultSemaphore;
+
+    Aws::Vector<Aws::String> m_tablesCreated;
 
     void GetItemOutcomeReceived(const DynamoDBClient* sender, const GetItemRequest& request, const GetItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
     {
@@ -159,11 +161,10 @@ public:
             updateItemResultSemaphore.notify_all();
         }
     }
-
-protected:
-
-    static void SetUpClient(Aws::Http::TransferLibType transferType)
+    void SetUp() override
     {
+        Aws::Http::TransferLibType transferType = Aws::Http::TransferLibType::DEFAULT_CLIENT;
+        m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
         // Create a client
         ClientConfiguration config;
         config.endpointOverride = ENDPOINT_OVERRIDE;
@@ -175,39 +176,25 @@ protected:
         config.httpLibOverride = transferType;
         config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
         config.disableExpectHeader = true;
+        config.enableHttpClientTrace = true;
 
         //to test proxy functionality, uncomment the next two lines.
         //config.proxyHost = "localhost";
         //config.proxyPort = 8080;
         m_client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
-    }
-
-    static void SetUpTestCase()
-    {
-        m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
-        SetUpClient(Aws::Http::TransferLibType::DEFAULT_CLIENT);
         DYNAMODB_INTEGRATION_TEST_ID = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
     }
 
-    static void TearDownTestCase()
-    {
-        DeleteAllTables();
-        m_limiter = nullptr;
-        m_client = nullptr;
+    void TearDown() override {
+        for (auto tableName : m_tablesCreated)
+        {
+            DeleteTable(tableName);
+        }
     }
 
-    static void DeleteAllTables()
-    {
-        DeleteTable(BuildTableName(BASE_SIMPLE_TABLE));
-        DeleteTable(BuildTableName(BASE_THROUGHPUT_TABLE));
-        DeleteTable(BuildTableName(BASE_CONDITION_TABLE));
-        DeleteTable(BuildTableName(BASE_VALIDATION_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_THROTTLED_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_LIMITER_TEST_TABLE));
-        DeleteTable(BuildTableName(BASE_ATTRIBUTEVALUE_TEST_TABLE));
-    }
+
+protected:
+
 
     void CreateTable(Aws::String tableName, long readCap, long writeCap)
     {
@@ -230,6 +217,7 @@ protected:
         if (createTableOutcome.IsSuccess())
         {
             ASSERT_EQ(tableName, createTableOutcome.GetResult().GetTableDescription().GetTableName());
+            m_tablesCreated.emplace_back(tableName);
         }
         else
         {
@@ -240,7 +228,7 @@ protected:
         WaitUntilActive(tableName);
     }
 
-    static void DeleteTable(Aws::String tableName)
+    void DeleteTable(Aws::String tableName)
     {
         DeleteTableRequest deleteTableRequest;
         deleteTableRequest.SetTableName(tableName);
@@ -274,8 +262,6 @@ protected:
     }
 };
 
-std::shared_ptr<DynamoDBClient> TableOperationTest::m_client(nullptr);
-std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> TableOperationTest::m_limiter(nullptr);
 
 TEST_F(TableOperationTest, TestListTable)
 {
@@ -505,6 +491,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(crudTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -530,6 +517,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
 
     ScanRequest scanRequest;
     scanRequest.WithTableName(crudTestTableName);
+    scanRequest.SetConsistentRead(true);
 
     ScanOutcome scanOutcome = m_client->Scan(scanRequest);
     AWS_EXPECT_SUCCESS(scanOutcome);
@@ -575,6 +563,8 @@ TEST_F(TableOperationTest, TestCrudOperations)
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(crudTestTableName);
+        getItemRequest.SetConsistentRead(true);
+
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -681,6 +671,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(crudCallbacksTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -716,6 +707,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
 
     ScanRequest scanRequest;
     scanRequest.WithTableName(crudCallbacksTestTableName);
+    scanRequest.WithConsistentRead(true);
 
     ScanOutcome scanOutcome = m_client->Scan(scanRequest);
     AWS_EXPECT_SUCCESS(scanOutcome);
@@ -759,6 +751,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
         getItemRequest.SetTableName(crudCallbacksTestTableName);
+        getItemRequest.SetConsistentRead(true);
 
 
         Aws::Vector<Aws::String> attributesToGet;
@@ -1500,6 +1493,16 @@ TEST_F(TableOperationTest, TestEndpointOverride)
 
     config.enableEndpointDiscovery = false;
     {
+        DynamoDBClient client(config);
+        Aws::DynamoDB::Model::ListTablesRequest request;
+        Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
+        AWS_ASSERT_SUCCESS(outcome);
+    }
+
+    config.endpointOverride.clear();
+    for (const auto val : {true, false})
+    {
+        config.enableEndpointDiscovery = val;
         DynamoDBClient client(config);
         Aws::DynamoDB::Model::ListTablesRequest request;
         Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);

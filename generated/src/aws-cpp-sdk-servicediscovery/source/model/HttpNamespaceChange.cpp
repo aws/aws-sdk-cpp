@@ -23,8 +23,8 @@ HttpNamespaceChange::HttpNamespaceChange() :
 {
 }
 
-HttpNamespaceChange::HttpNamespaceChange(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false)
+HttpNamespaceChange::HttpNamespaceChange(JsonView jsonValue)
+  : HttpNamespaceChange()
 {
   *this = jsonValue;
 }

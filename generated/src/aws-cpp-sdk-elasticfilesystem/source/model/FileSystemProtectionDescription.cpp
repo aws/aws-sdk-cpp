@@ -26,10 +26,8 @@ FileSystemProtectionDescription::FileSystemProtectionDescription() :
 {
 }
 
-FileSystemProtectionDescription::FileSystemProtectionDescription(JsonView jsonValue) : 
-    m_replicationOverwriteProtection(ReplicationOverwriteProtection::NOT_SET),
-    m_replicationOverwriteProtectionHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+FileSystemProtectionDescription::FileSystemProtectionDescription(JsonView jsonValue)
+  : FileSystemProtectionDescription()
 {
   *this = jsonValue;
 }

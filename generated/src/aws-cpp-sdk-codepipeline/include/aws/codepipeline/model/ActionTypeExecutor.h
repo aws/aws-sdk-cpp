@@ -42,80 +42,33 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action configuration properties for the action type. These properties are
      * specified in the action definition when the action type is created.</p>
      */
     inline const ExecutorConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The action configuration properties for the action type. These properties are
-     * specified in the action definition when the action type is created.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The action configuration properties for the action type. These properties are
-     * specified in the action definition when the action type is created.</p>
-     */
     inline void SetConfiguration(const ExecutorConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The action configuration properties for the action type. These properties are
-     * specified in the action definition when the action type is created.</p>
-     */
     inline void SetConfiguration(ExecutorConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The action configuration properties for the action type. These properties are
-     * specified in the action definition when the action type is created.</p>
-     */
     inline ActionTypeExecutor& WithConfiguration(const ExecutorConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The action configuration properties for the action type. These properties are
-     * specified in the action definition when the action type is created.</p>
-     */
     inline ActionTypeExecutor& WithConfiguration(ExecutorConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The integration model used to create and update the action type,
      * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
     inline const ExecutorType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The integration model used to create and update the action type,
-     * <code>Lambda</code> or <code>JobWorker</code>. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The integration model used to create and update the action type,
-     * <code>Lambda</code> or <code>JobWorker</code>. </p>
-     */
     inline void SetType(const ExecutorType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The integration model used to create and update the action type,
-     * <code>Lambda</code> or <code>JobWorker</code>. </p>
-     */
     inline void SetType(ExecutorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The integration model used to create and update the action type,
-     * <code>Lambda</code> or <code>JobWorker</code>. </p>
-     */
     inline ActionTypeExecutor& WithType(const ExecutorType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The integration model used to create and update the action type,
-     * <code>Lambda</code> or <code>JobWorker</code>. </p>
-     */
     inline ActionTypeExecutor& WithType(ExecutorType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy statement that specifies the permissions in the CodePipeline
      * customer account that are needed to successfully run an action.</p> <p>To grant
@@ -125,102 +78,25 @@ namespace Model
      * JSON policy document cannot exceed 2048 characters.</p> 
      */
     inline const Aws::String& GetPolicyStatementsTemplate() const{ return m_policyStatementsTemplate; }
-
-    /**
-     * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer account that are needed to successfully run an action.</p> <p>To grant
-     * permission to another account, specify the account ID as the Principal, a
-     * domain-style identifier defined by the service, for example
-     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
-     * JSON policy document cannot exceed 2048 characters.</p> 
-     */
     inline bool PolicyStatementsTemplateHasBeenSet() const { return m_policyStatementsTemplateHasBeenSet; }
-
-    /**
-     * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer account that are needed to successfully run an action.</p> <p>To grant
-     * permission to another account, specify the account ID as the Principal, a
-     * domain-style identifier defined by the service, for example
-     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
-     * JSON policy document cannot exceed 2048 characters.</p> 
-     */
     inline void SetPolicyStatementsTemplate(const Aws::String& value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate = value; }
-
-    /**
-     * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer account that are needed to successfully run an action.</p> <p>To grant
-     * permission to another account, specify the account ID as the Principal, a
-     * domain-style identifier defined by the service, for example
-     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
-     * JSON policy document cannot exceed 2048 characters.</p> 
-     */
     inline void SetPolicyStatementsTemplate(Aws::String&& value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate = std::move(value); }
-
-    /**
-     * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer account that are needed to successfully run an action.</p> <p>To grant
-     * permission to another account, specify the account ID as the Principal, a
-     * domain-style identifier defined by the service, for example
-     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
-     * JSON policy document cannot exceed 2048 characters.</p> 
-     */
     inline void SetPolicyStatementsTemplate(const char* value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate.assign(value); }
-
-    /**
-     * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer account that are needed to successfully run an action.</p> <p>To grant
-     * permission to another account, specify the account ID as the Principal, a
-     * domain-style identifier defined by the service, for example
-     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
-     * JSON policy document cannot exceed 2048 characters.</p> 
-     */
     inline ActionTypeExecutor& WithPolicyStatementsTemplate(const Aws::String& value) { SetPolicyStatementsTemplate(value); return *this;}
-
-    /**
-     * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer account that are needed to successfully run an action.</p> <p>To grant
-     * permission to another account, specify the account ID as the Principal, a
-     * domain-style identifier defined by the service, for example
-     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
-     * JSON policy document cannot exceed 2048 characters.</p> 
-     */
     inline ActionTypeExecutor& WithPolicyStatementsTemplate(Aws::String&& value) { SetPolicyStatementsTemplate(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy statement that specifies the permissions in the CodePipeline
-     * customer account that are needed to successfully run an action.</p> <p>To grant
-     * permission to another account, specify the account ID as the Principal, a
-     * domain-style identifier defined by the service, for example
-     * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
-     * JSON policy document cannot exceed 2048 characters.</p> 
-     */
     inline ActionTypeExecutor& WithPolicyStatementsTemplate(const char* value) { SetPolicyStatementsTemplate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timeout in seconds for the job. An action execution can have multiple
      * jobs. This is the timeout for a single job, not the entire action execution.</p>
      */
     inline int GetJobTimeout() const{ return m_jobTimeout; }
-
-    /**
-     * <p>The timeout in seconds for the job. An action execution can have multiple
-     * jobs. This is the timeout for a single job, not the entire action execution.</p>
-     */
     inline bool JobTimeoutHasBeenSet() const { return m_jobTimeoutHasBeenSet; }
-
-    /**
-     * <p>The timeout in seconds for the job. An action execution can have multiple
-     * jobs. This is the timeout for a single job, not the entire action execution.</p>
-     */
     inline void SetJobTimeout(int value) { m_jobTimeoutHasBeenSet = true; m_jobTimeout = value; }
-
-    /**
-     * <p>The timeout in seconds for the job. An action execution can have multiple
-     * jobs. This is the timeout for a single job, not the entire action execution.</p>
-     */
     inline ActionTypeExecutor& WithJobTimeout(int value) { SetJobTimeout(value); return *this;}
-
+    ///@}
   private:
 
     ExecutorConfiguration m_configuration;

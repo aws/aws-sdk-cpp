@@ -23,8 +23,8 @@ KafkaCluster::KafkaCluster() :
 {
 }
 
-KafkaCluster::KafkaCluster(JsonView jsonValue) : 
-    m_apacheKafkaClusterHasBeenSet(false)
+KafkaCluster::KafkaCluster(JsonView jsonValue)
+  : KafkaCluster()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ PushNotificationTemplateRequest::PushNotificationTemplateRequest() :
 {
 }
 
-PushNotificationTemplateRequest::PushNotificationTemplateRequest(JsonView jsonValue) : 
-    m_aDMHasBeenSet(false),
-    m_aPNSHasBeenSet(false),
-    m_baiduHasBeenSet(false),
-    m_defaultHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_gCMHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false)
+PushNotificationTemplateRequest::PushNotificationTemplateRequest(JsonView jsonValue)
+  : PushNotificationTemplateRequest()
 {
   *this = jsonValue;
 }

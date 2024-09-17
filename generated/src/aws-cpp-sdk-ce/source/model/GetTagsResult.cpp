@@ -23,9 +23,8 @@ GetTagsResult::GetTagsResult() :
 {
 }
 
-GetTagsResult::GetTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnSize(0),
-    m_totalSize(0)
+GetTagsResult::GetTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTagsResult()
 {
   *this = result;
 }

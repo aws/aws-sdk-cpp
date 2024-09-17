@@ -27,12 +27,8 @@ ApplicationConfig::ApplicationConfig() :
 {
 }
 
-ApplicationConfig::ApplicationConfig(JsonView jsonValue) : 
-    m_fPort(0),
-    m_fPortHasBeenSet(false),
-    m_type(ApplicationConfigType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_destinationNameHasBeenSet(false)
+ApplicationConfig::ApplicationConfig(JsonView jsonValue)
+  : ApplicationConfig()
 {
   *this = jsonValue;
 }

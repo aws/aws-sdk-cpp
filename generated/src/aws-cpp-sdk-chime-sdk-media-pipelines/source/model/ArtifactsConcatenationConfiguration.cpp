@@ -29,14 +29,8 @@ ArtifactsConcatenationConfiguration::ArtifactsConcatenationConfiguration() :
 {
 }
 
-ArtifactsConcatenationConfiguration::ArtifactsConcatenationConfiguration(JsonView jsonValue) : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_dataChannelHasBeenSet(false),
-    m_transcriptionMessagesHasBeenSet(false),
-    m_meetingEventsHasBeenSet(false),
-    m_compositedVideoHasBeenSet(false)
+ArtifactsConcatenationConfiguration::ArtifactsConcatenationConfiguration(JsonView jsonValue)
+  : ArtifactsConcatenationConfiguration()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ MetricsSummary::MetricsSummary() :
 {
 }
 
-MetricsSummary::MetricsSummary(JsonView jsonValue) : 
-    m_meteredLinesOfCodeCount(0),
-    m_meteredLinesOfCodeCountHasBeenSet(false),
-    m_suppressedLinesOfCodeCount(0),
-    m_suppressedLinesOfCodeCountHasBeenSet(false),
-    m_findingsCount(0),
-    m_findingsCountHasBeenSet(false)
+MetricsSummary::MetricsSummary(JsonView jsonValue)
+  : MetricsSummary()
 {
   *this = jsonValue;
 }

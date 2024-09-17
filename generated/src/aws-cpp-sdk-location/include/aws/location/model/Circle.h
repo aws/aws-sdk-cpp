@@ -38,80 +38,31 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A single point geometry, specifying the center of the circle, using <a
      * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
      * coordinates, in the form <code>[longitude, latitude]</code>.</p>
      */
     inline const Aws::Vector<double>& GetCenter() const{ return m_center; }
-
-    /**
-     * <p>A single point geometry, specifying the center of the circle, using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates, in the form <code>[longitude, latitude]</code>.</p>
-     */
     inline bool CenterHasBeenSet() const { return m_centerHasBeenSet; }
-
-    /**
-     * <p>A single point geometry, specifying the center of the circle, using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates, in the form <code>[longitude, latitude]</code>.</p>
-     */
     inline void SetCenter(const Aws::Vector<double>& value) { m_centerHasBeenSet = true; m_center = value; }
-
-    /**
-     * <p>A single point geometry, specifying the center of the circle, using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates, in the form <code>[longitude, latitude]</code>.</p>
-     */
     inline void SetCenter(Aws::Vector<double>&& value) { m_centerHasBeenSet = true; m_center = std::move(value); }
-
-    /**
-     * <p>A single point geometry, specifying the center of the circle, using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates, in the form <code>[longitude, latitude]</code>.</p>
-     */
     inline Circle& WithCenter(const Aws::Vector<double>& value) { SetCenter(value); return *this;}
-
-    /**
-     * <p>A single point geometry, specifying the center of the circle, using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates, in the form <code>[longitude, latitude]</code>.</p>
-     */
     inline Circle& WithCenter(Aws::Vector<double>&& value) { SetCenter(std::move(value)); return *this;}
-
-    /**
-     * <p>A single point geometry, specifying the center of the circle, using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates, in the form <code>[longitude, latitude]</code>.</p>
-     */
     inline Circle& AddCenter(double value) { m_centerHasBeenSet = true; m_center.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The radius of the circle in meters. Must be greater than zero and no larger
      * than 100,000 (100 kilometers).</p>
      */
     inline double GetRadius() const{ return m_radius; }
-
-    /**
-     * <p>The radius of the circle in meters. Must be greater than zero and no larger
-     * than 100,000 (100 kilometers).</p>
-     */
     inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }
-
-    /**
-     * <p>The radius of the circle in meters. Must be greater than zero and no larger
-     * than 100,000 (100 kilometers).</p>
-     */
     inline void SetRadius(double value) { m_radiusHasBeenSet = true; m_radius = value; }
-
-    /**
-     * <p>The radius of the circle in meters. Must be greater than zero and no larger
-     * than 100,000 (100 kilometers).</p>
-     */
     inline Circle& WithRadius(double value) { SetRadius(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<double> m_center;

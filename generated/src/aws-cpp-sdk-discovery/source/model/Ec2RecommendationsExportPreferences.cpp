@@ -31,16 +31,8 @@ Ec2RecommendationsExportPreferences::Ec2RecommendationsExportPreferences() :
 {
 }
 
-Ec2RecommendationsExportPreferences::Ec2RecommendationsExportPreferences(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_cpuPerformanceMetricBasisHasBeenSet(false),
-    m_ramPerformanceMetricBasisHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_preferredRegionHasBeenSet(false),
-    m_reservedInstanceOptionsHasBeenSet(false)
+Ec2RecommendationsExportPreferences::Ec2RecommendationsExportPreferences(JsonView jsonValue)
+  : Ec2RecommendationsExportPreferences()
 {
   *this = jsonValue;
 }

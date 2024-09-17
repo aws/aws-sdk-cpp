@@ -39,53 +39,27 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API DescribeScraperResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains details about the scraper.</p>
      */
     inline const ScraperDescription& GetScraper() const{ return m_scraper; }
-
-    /**
-     * <p>Contains details about the scraper.</p>
-     */
     inline void SetScraper(const ScraperDescription& value) { m_scraper = value; }
-
-    /**
-     * <p>Contains details about the scraper.</p>
-     */
     inline void SetScraper(ScraperDescription&& value) { m_scraper = std::move(value); }
-
-    /**
-     * <p>Contains details about the scraper.</p>
-     */
     inline DescribeScraperResult& WithScraper(const ScraperDescription& value) { SetScraper(value); return *this;}
-
-    /**
-     * <p>Contains details about the scraper.</p>
-     */
     inline DescribeScraperResult& WithScraper(ScraperDescription&& value) { SetScraper(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeScraperResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeScraperResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeScraperResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ScraperDescription m_scraper;

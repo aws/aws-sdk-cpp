@@ -24,9 +24,8 @@ LifecycleExecutionSnapshotResource::LifecycleExecutionSnapshotResource() :
 {
 }
 
-LifecycleExecutionSnapshotResource::LifecycleExecutionSnapshotResource(JsonView jsonValue) : 
-    m_snapshotIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
+LifecycleExecutionSnapshotResource::LifecycleExecutionSnapshotResource(JsonView jsonValue)
+  : LifecycleExecutionSnapshotResource()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ SNOMEDCTDetails::SNOMEDCTDetails() :
 {
 }
 
-SNOMEDCTDetails::SNOMEDCTDetails(JsonView jsonValue) : 
-    m_editionHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_versionDateHasBeenSet(false)
+SNOMEDCTDetails::SNOMEDCTDetails(JsonView jsonValue)
+  : SNOMEDCTDetails()
 {
   *this = jsonValue;
 }

@@ -38,42 +38,18 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the savings estimation mode applied for calculating savings
      * opportunity for Lambda functions. </p>
      */
     inline const LambdaSavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
-
-    /**
-     * <p> Describes the savings estimation mode applied for calculating savings
-     * opportunity for Lambda functions. </p>
-     */
     inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }
-
-    /**
-     * <p> Describes the savings estimation mode applied for calculating savings
-     * opportunity for Lambda functions. </p>
-     */
     inline void SetSavingsEstimationMode(const LambdaSavingsEstimationMode& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
-
-    /**
-     * <p> Describes the savings estimation mode applied for calculating savings
-     * opportunity for Lambda functions. </p>
-     */
     inline void SetSavingsEstimationMode(LambdaSavingsEstimationMode&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::move(value); }
-
-    /**
-     * <p> Describes the savings estimation mode applied for calculating savings
-     * opportunity for Lambda functions. </p>
-     */
     inline LambdaEffectiveRecommendationPreferences& WithSavingsEstimationMode(const LambdaSavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
-
-    /**
-     * <p> Describes the savings estimation mode applied for calculating savings
-     * opportunity for Lambda functions. </p>
-     */
     inline LambdaEffectiveRecommendationPreferences& WithSavingsEstimationMode(LambdaSavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LambdaSavingsEstimationMode m_savingsEstimationMode;

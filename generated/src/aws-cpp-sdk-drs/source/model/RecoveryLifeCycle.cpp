@@ -26,11 +26,8 @@ RecoveryLifeCycle::RecoveryLifeCycle() :
 {
 }
 
-RecoveryLifeCycle::RecoveryLifeCycle(JsonView jsonValue) : 
-    m_apiCallDateTimeHasBeenSet(false),
-    m_jobIDHasBeenSet(false),
-    m_lastRecoveryResult(RecoveryResult::NOT_SET),
-    m_lastRecoveryResultHasBeenSet(false)
+RecoveryLifeCycle::RecoveryLifeCycle(JsonView jsonValue)
+  : RecoveryLifeCycle()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ KmsKeyConfiguration::KmsKeyConfiguration() :
 {
 }
 
-KmsKeyConfiguration::KmsKeyConfiguration(JsonView jsonValue) : 
-    m_keyPoliciesHasBeenSet(false),
-    m_grantsHasBeenSet(false)
+KmsKeyConfiguration::KmsKeyConfiguration(JsonView jsonValue)
+  : KmsKeyConfiguration()
 {
   *this = jsonValue;
 }

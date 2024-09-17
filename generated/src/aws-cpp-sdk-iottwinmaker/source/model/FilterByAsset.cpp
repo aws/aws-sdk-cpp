@@ -28,13 +28,8 @@ FilterByAsset::FilterByAsset() :
 {
 }
 
-FilterByAsset::FilterByAsset(JsonView jsonValue) : 
-    m_assetIdHasBeenSet(false),
-    m_assetExternalIdHasBeenSet(false),
-    m_includeOffspring(false),
-    m_includeOffspringHasBeenSet(false),
-    m_includeAssetModel(false),
-    m_includeAssetModelHasBeenSet(false)
+FilterByAsset::FilterByAsset(JsonView jsonValue)
+  : FilterByAsset()
 {
   *this = jsonValue;
 }

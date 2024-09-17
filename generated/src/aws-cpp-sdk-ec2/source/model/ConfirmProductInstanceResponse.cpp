@@ -22,8 +22,8 @@ ConfirmProductInstanceResponse::ConfirmProductInstanceResponse() :
 {
 }
 
-ConfirmProductInstanceResponse::ConfirmProductInstanceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ConfirmProductInstanceResponse::ConfirmProductInstanceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ConfirmProductInstanceResponse()
 {
   *this = result;
 }

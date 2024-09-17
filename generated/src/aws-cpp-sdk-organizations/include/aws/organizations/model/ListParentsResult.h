@@ -34,42 +34,20 @@ namespace Model
     AWS_ORGANIZATIONS_API ListParentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of parents for the specified child account or OU.</p>
      */
     inline const Aws::Vector<Parent>& GetParents() const{ return m_parents; }
-
-    /**
-     * <p>A list of parents for the specified child account or OU.</p>
-     */
     inline void SetParents(const Aws::Vector<Parent>& value) { m_parents = value; }
-
-    /**
-     * <p>A list of parents for the specified child account or OU.</p>
-     */
     inline void SetParents(Aws::Vector<Parent>&& value) { m_parents = std::move(value); }
-
-    /**
-     * <p>A list of parents for the specified child account or OU.</p>
-     */
     inline ListParentsResult& WithParents(const Aws::Vector<Parent>& value) { SetParents(value); return *this;}
-
-    /**
-     * <p>A list of parents for the specified child account or OU.</p>
-     */
     inline ListParentsResult& WithParents(Aws::Vector<Parent>&& value) { SetParents(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of parents for the specified child account or OU.</p>
-     */
     inline ListParentsResult& AddParents(const Parent& value) { m_parents.push_back(value); return *this; }
-
-    /**
-     * <p>A list of parents for the specified child account or OU.</p>
-     */
     inline ListParentsResult& AddParents(Parent&& value) { m_parents.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If present, indicates that more output is available than is included in the
      * current response. Use this value in the <code>NextToken</code> request parameter
@@ -78,83 +56,24 @@ namespace Model
      * as <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline ListParentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline ListParentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline ListParentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListParentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListParentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListParentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Parent> m_parents;

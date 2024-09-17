@@ -23,8 +23,8 @@ DeviceRegistrationStateResourceTypeEventConfiguration::DeviceRegistrationStateRe
 {
 }
 
-DeviceRegistrationStateResourceTypeEventConfiguration::DeviceRegistrationStateResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_sidewalkHasBeenSet(false)
+DeviceRegistrationStateResourceTypeEventConfiguration::DeviceRegistrationStateResourceTypeEventConfiguration(JsonView jsonValue)
+  : DeviceRegistrationStateResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResourceError::ResourceError() :
 {
 }
 
-ResourceError::ResourceError(JsonView jsonValue) : 
-    m_errorCode(FleetErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorTimestampHasBeenSet(false)
+ResourceError::ResourceError(JsonView jsonValue)
+  : ResourceError()
 {
   *this = jsonValue;
 }

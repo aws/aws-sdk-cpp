@@ -24,9 +24,8 @@ PhaseContext::PhaseContext() :
 {
 }
 
-PhaseContext::PhaseContext(JsonView jsonValue) : 
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PhaseContext::PhaseContext(JsonView jsonValue)
+  : PhaseContext()
 {
   *this = jsonValue;
 }

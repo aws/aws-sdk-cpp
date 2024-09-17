@@ -34,106 +34,43 @@ namespace Model
     AWS_CLOUDDIRECTORY_API ListObjectParentPathsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
      * with the directory.</p>
      */
     inline const Aws::Vector<PathToObjectIdentifiers>& GetPathToObjectIdentifiersList() const{ return m_pathToObjectIdentifiersList; }
-
-    /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
-     * with the directory.</p>
-     */
     inline void SetPathToObjectIdentifiersList(const Aws::Vector<PathToObjectIdentifiers>& value) { m_pathToObjectIdentifiersList = value; }
-
-    /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
-     * with the directory.</p>
-     */
     inline void SetPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { m_pathToObjectIdentifiersList = std::move(value); }
-
-    /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
-     * with the directory.</p>
-     */
     inline ListObjectParentPathsResult& WithPathToObjectIdentifiersList(const Aws::Vector<PathToObjectIdentifiers>& value) { SetPathToObjectIdentifiersList(value); return *this;}
-
-    /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
-     * with the directory.</p>
-     */
     inline ListObjectParentPathsResult& WithPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { SetPathToObjectIdentifiersList(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
-     * with the directory.</p>
-     */
     inline ListObjectParentPathsResult& AddPathToObjectIdentifiersList(const PathToObjectIdentifiers& value) { m_pathToObjectIdentifiersList.push_back(value); return *this; }
-
-    /**
-     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
-     * with the directory.</p>
-     */
     inline ListObjectParentPathsResult& AddPathToObjectIdentifiersList(PathToObjectIdentifiers&& value) { m_pathToObjectIdentifiersList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListObjectParentPathsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListObjectParentPathsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListObjectParentPathsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListObjectParentPathsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListObjectParentPathsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListObjectParentPathsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PathToObjectIdentifiers> m_pathToObjectIdentifiersList;

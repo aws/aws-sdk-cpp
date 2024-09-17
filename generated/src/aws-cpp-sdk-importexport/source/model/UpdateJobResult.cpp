@@ -22,8 +22,8 @@ UpdateJobResult::UpdateJobResult() :
 {
 }
 
-UpdateJobResult::UpdateJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_success(false)
+UpdateJobResult::UpdateJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : UpdateJobResult()
 {
   *this = result;
 }

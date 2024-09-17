@@ -26,11 +26,8 @@ ReactionForComment::ReactionForComment() :
 {
 }
 
-ReactionForComment::ReactionForComment(JsonView jsonValue) : 
-    m_reactionHasBeenSet(false),
-    m_reactionUsersHasBeenSet(false),
-    m_reactionsFromDeletedUsersCount(0),
-    m_reactionsFromDeletedUsersCountHasBeenSet(false)
+ReactionForComment::ReactionForComment(JsonView jsonValue)
+  : ReactionForComment()
 {
   *this = jsonValue;
 }

@@ -38,67 +38,29 @@ namespace Model
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>New user agent which accessed the resource.</p>
      */
     inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
-
-    /**
-     * <p>New user agent which accessed the resource.</p>
-     */
     inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
-
-    /**
-     * <p>New user agent which accessed the resource.</p>
-     */
     inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
-
-    /**
-     * <p>New user agent which accessed the resource.</p>
-     */
     inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
-
-    /**
-     * <p>New user agent which accessed the resource.</p>
-     */
     inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
-
-    /**
-     * <p>New user agent which accessed the resource.</p>
-     */
     inline NewUserAgentDetail& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
-
-    /**
-     * <p>New user agent which accessed the resource.</p>
-     */
     inline NewUserAgentDetail& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
-
-    /**
-     * <p>New user agent which accessed the resource.</p>
-     */
     inline NewUserAgentDetail& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks if the user agent is new for the entire account.</p>
      */
     inline bool GetIsNewForEntireAccount() const{ return m_isNewForEntireAccount; }
-
-    /**
-     * <p>Checks if the user agent is new for the entire account.</p>
-     */
     inline bool IsNewForEntireAccountHasBeenSet() const { return m_isNewForEntireAccountHasBeenSet; }
-
-    /**
-     * <p>Checks if the user agent is new for the entire account.</p>
-     */
     inline void SetIsNewForEntireAccount(bool value) { m_isNewForEntireAccountHasBeenSet = true; m_isNewForEntireAccount = value; }
-
-    /**
-     * <p>Checks if the user agent is new for the entire account.</p>
-     */
     inline NewUserAgentDetail& WithIsNewForEntireAccount(bool value) { SetIsNewForEntireAccount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userAgent;

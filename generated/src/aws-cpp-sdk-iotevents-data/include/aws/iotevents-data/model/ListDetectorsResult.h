@@ -34,106 +34,43 @@ namespace Model
     AWS_IOTEVENTSDATA_API ListDetectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of summary information about the detectors (instances).</p>
      */
     inline const Aws::Vector<DetectorSummary>& GetDetectorSummaries() const{ return m_detectorSummaries; }
-
-    /**
-     * <p>A list of summary information about the detectors (instances).</p>
-     */
     inline void SetDetectorSummaries(const Aws::Vector<DetectorSummary>& value) { m_detectorSummaries = value; }
-
-    /**
-     * <p>A list of summary information about the detectors (instances).</p>
-     */
     inline void SetDetectorSummaries(Aws::Vector<DetectorSummary>&& value) { m_detectorSummaries = std::move(value); }
-
-    /**
-     * <p>A list of summary information about the detectors (instances).</p>
-     */
     inline ListDetectorsResult& WithDetectorSummaries(const Aws::Vector<DetectorSummary>& value) { SetDetectorSummaries(value); return *this;}
-
-    /**
-     * <p>A list of summary information about the detectors (instances).</p>
-     */
     inline ListDetectorsResult& WithDetectorSummaries(Aws::Vector<DetectorSummary>&& value) { SetDetectorSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of summary information about the detectors (instances).</p>
-     */
     inline ListDetectorsResult& AddDetectorSummaries(const DetectorSummary& value) { m_detectorSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of summary information about the detectors (instances).</p>
-     */
     inline ListDetectorsResult& AddDetectorSummaries(DetectorSummary&& value) { m_detectorSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token that you can use to return the next set of results, or
      * <code>null</code> if there are no more results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results.</p>
-     */
     inline ListDetectorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results.</p>
-     */
     inline ListDetectorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token that you can use to return the next set of results, or
-     * <code>null</code> if there are no more results.</p>
-     */
     inline ListDetectorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDetectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDetectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDetectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DetectorSummary> m_detectorSummaries;

@@ -26,11 +26,8 @@ DiskResourceUtilization::DiskResourceUtilization() :
 {
 }
 
-DiskResourceUtilization::DiskResourceUtilization(JsonView jsonValue) : 
-    m_diskReadOpsPerSecondHasBeenSet(false),
-    m_diskWriteOpsPerSecondHasBeenSet(false),
-    m_diskReadBytesPerSecondHasBeenSet(false),
-    m_diskWriteBytesPerSecondHasBeenSet(false)
+DiskResourceUtilization::DiskResourceUtilization(JsonView jsonValue)
+  : DiskResourceUtilization()
 {
   *this = jsonValue;
 }

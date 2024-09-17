@@ -25,10 +25,8 @@ ServiceQuotaExceededException::ServiceQuotaExceededException() :
 {
 }
 
-ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
+  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }

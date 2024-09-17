@@ -22,6 +22,8 @@ namespace Aws
 
         static const int FIXED_SIZE_HASH = HashingUtils::HashString("FIXED_SIZE");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int HIERARCHICAL_HASH = HashingUtils::HashString("HIERARCHICAL");
+        static const int SEMANTIC_HASH = HashingUtils::HashString("SEMANTIC");
 
 
         ChunkingStrategy GetChunkingStrategyForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == NONE_HASH)
           {
             return ChunkingStrategy::NONE;
+          }
+          else if (hashCode == HIERARCHICAL_HASH)
+          {
+            return ChunkingStrategy::HIERARCHICAL;
+          }
+          else if (hashCode == SEMANTIC_HASH)
+          {
+            return ChunkingStrategy::SEMANTIC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "FIXED_SIZE";
           case ChunkingStrategy::NONE:
             return "NONE";
+          case ChunkingStrategy::HIERARCHICAL:
+            return "HIERARCHICAL";
+          case ChunkingStrategy::SEMANTIC:
+            return "SEMANTIC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

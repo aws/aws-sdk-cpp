@@ -35,20 +35,8 @@ ProductViewSummary::ProductViewSummary() :
 {
 }
 
-ProductViewSummary::ProductViewSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_type(ProductType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_distributorHasBeenSet(false),
-    m_hasDefaultPath(false),
-    m_hasDefaultPathHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportDescriptionHasBeenSet(false),
-    m_supportUrlHasBeenSet(false)
+ProductViewSummary::ProductViewSummary(JsonView jsonValue)
+  : ProductViewSummary()
 {
   *this = jsonValue;
 }

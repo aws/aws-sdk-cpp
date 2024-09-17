@@ -24,9 +24,8 @@ AwsEcrRepositoryLifecyclePolicyDetails::AwsEcrRepositoryLifecyclePolicyDetails()
 {
 }
 
-AwsEcrRepositoryLifecyclePolicyDetails::AwsEcrRepositoryLifecyclePolicyDetails(JsonView jsonValue) : 
-    m_lifecyclePolicyTextHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
+AwsEcrRepositoryLifecyclePolicyDetails::AwsEcrRepositoryLifecyclePolicyDetails(JsonView jsonValue)
+  : AwsEcrRepositoryLifecyclePolicyDetails()
 {
   *this = jsonValue;
 }

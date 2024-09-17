@@ -25,10 +25,8 @@ OverrideDatasetParameterOperation::OverrideDatasetParameterOperation() :
 {
 }
 
-OverrideDatasetParameterOperation::OverrideDatasetParameterOperation(JsonView jsonValue) : 
-    m_parameterNameHasBeenSet(false),
-    m_newParameterNameHasBeenSet(false),
-    m_newDefaultValuesHasBeenSet(false)
+OverrideDatasetParameterOperation::OverrideDatasetParameterOperation(JsonView jsonValue)
+  : OverrideDatasetParameterOperation()
 {
   *this = jsonValue;
 }

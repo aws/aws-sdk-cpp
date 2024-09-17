@@ -36,47 +36,25 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum setup for an axis display range.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
-
-    /**
-     * <p>The minimum setup for an axis display range.</p>
-     */
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
-
-    /**
-     * <p>The minimum setup for an axis display range.</p>
-     */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
-
-    /**
-     * <p>The minimum setup for an axis display range.</p>
-     */
     inline AxisDisplayMinMaxRange& WithMinimum(double value) { SetMinimum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum setup for an axis display range.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
-
-    /**
-     * <p>The maximum setup for an axis display range.</p>
-     */
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-
-    /**
-     * <p>The maximum setup for an axis display range.</p>
-     */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
-
-    /**
-     * <p>The maximum setup for an axis display range.</p>
-     */
     inline AxisDisplayMinMaxRange& WithMaximum(double value) { SetMaximum(value); return *this;}
-
+    ///@}
   private:
 
     double m_minimum;

@@ -22,8 +22,8 @@ GetRecoveryGroupReadinessSummaryResult::GetRecoveryGroupReadinessSummaryResult()
 {
 }
 
-GetRecoveryGroupReadinessSummaryResult::GetRecoveryGroupReadinessSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_readiness(Readiness::NOT_SET)
+GetRecoveryGroupReadinessSummaryResult::GetRecoveryGroupReadinessSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRecoveryGroupReadinessSummaryResult()
 {
   *this = result;
 }

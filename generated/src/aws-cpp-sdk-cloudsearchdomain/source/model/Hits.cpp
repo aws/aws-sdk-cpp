@@ -28,13 +28,8 @@ Hits::Hits() :
 {
 }
 
-Hits::Hits(JsonView jsonValue) : 
-    m_found(0),
-    m_foundHasBeenSet(false),
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_cursorHasBeenSet(false),
-    m_hitHasBeenSet(false)
+Hits::Hits(JsonView jsonValue)
+  : Hits()
 {
   *this = jsonValue;
 }

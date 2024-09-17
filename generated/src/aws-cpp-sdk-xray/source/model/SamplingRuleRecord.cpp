@@ -25,10 +25,8 @@ SamplingRuleRecord::SamplingRuleRecord() :
 {
 }
 
-SamplingRuleRecord::SamplingRuleRecord(JsonView jsonValue) : 
-    m_samplingRuleHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+SamplingRuleRecord::SamplingRuleRecord(JsonView jsonValue)
+  : SamplingRuleRecord()
 {
   *this = jsonValue;
 }

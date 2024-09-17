@@ -23,8 +23,8 @@ BatchInferenceJobOutput::BatchInferenceJobOutput() :
 {
 }
 
-BatchInferenceJobOutput::BatchInferenceJobOutput(JsonView jsonValue) : 
-    m_s3DataDestinationHasBeenSet(false)
+BatchInferenceJobOutput::BatchInferenceJobOutput(JsonView jsonValue)
+  : BatchInferenceJobOutput()
 {
   *this = jsonValue;
 }

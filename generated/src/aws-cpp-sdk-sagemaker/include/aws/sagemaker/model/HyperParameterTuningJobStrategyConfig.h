@@ -43,6 +43,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for the object that specifies the <code>Hyperband</code>
      * strategy. This parameter is only supported for the <code>Hyperband</code>
@@ -50,47 +51,12 @@ namespace Model
      * <code>HyperParameterTuningJobConfig</code> API.</p>
      */
     inline const HyperbandStrategyConfig& GetHyperbandStrategyConfig() const{ return m_hyperbandStrategyConfig; }
-
-    /**
-     * <p>The configuration for the object that specifies the <code>Hyperband</code>
-     * strategy. This parameter is only supported for the <code>Hyperband</code>
-     * selection for <code>Strategy</code> within the
-     * <code>HyperParameterTuningJobConfig</code> API.</p>
-     */
     inline bool HyperbandStrategyConfigHasBeenSet() const { return m_hyperbandStrategyConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration for the object that specifies the <code>Hyperband</code>
-     * strategy. This parameter is only supported for the <code>Hyperband</code>
-     * selection for <code>Strategy</code> within the
-     * <code>HyperParameterTuningJobConfig</code> API.</p>
-     */
     inline void SetHyperbandStrategyConfig(const HyperbandStrategyConfig& value) { m_hyperbandStrategyConfigHasBeenSet = true; m_hyperbandStrategyConfig = value; }
-
-    /**
-     * <p>The configuration for the object that specifies the <code>Hyperband</code>
-     * strategy. This parameter is only supported for the <code>Hyperband</code>
-     * selection for <code>Strategy</code> within the
-     * <code>HyperParameterTuningJobConfig</code> API.</p>
-     */
     inline void SetHyperbandStrategyConfig(HyperbandStrategyConfig&& value) { m_hyperbandStrategyConfigHasBeenSet = true; m_hyperbandStrategyConfig = std::move(value); }
-
-    /**
-     * <p>The configuration for the object that specifies the <code>Hyperband</code>
-     * strategy. This parameter is only supported for the <code>Hyperband</code>
-     * selection for <code>Strategy</code> within the
-     * <code>HyperParameterTuningJobConfig</code> API.</p>
-     */
     inline HyperParameterTuningJobStrategyConfig& WithHyperbandStrategyConfig(const HyperbandStrategyConfig& value) { SetHyperbandStrategyConfig(value); return *this;}
-
-    /**
-     * <p>The configuration for the object that specifies the <code>Hyperband</code>
-     * strategy. This parameter is only supported for the <code>Hyperband</code>
-     * selection for <code>Strategy</code> within the
-     * <code>HyperParameterTuningJobConfig</code> API.</p>
-     */
     inline HyperParameterTuningJobStrategyConfig& WithHyperbandStrategyConfig(HyperbandStrategyConfig&& value) { SetHyperbandStrategyConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HyperbandStrategyConfig m_hyperbandStrategyConfig;

@@ -24,9 +24,8 @@ ConversationLevelTestResultsFilterBy::ConversationLevelTestResultsFilterBy() :
 {
 }
 
-ConversationLevelTestResultsFilterBy::ConversationLevelTestResultsFilterBy(JsonView jsonValue) : 
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false)
+ConversationLevelTestResultsFilterBy::ConversationLevelTestResultsFilterBy(JsonView jsonValue)
+  : ConversationLevelTestResultsFilterBy()
 {
   *this = jsonValue;
 }

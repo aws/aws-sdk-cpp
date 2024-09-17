@@ -23,10 +23,10 @@ namespace EMRContainers
    * open-source applications. For more information about Amazon EMR on EKS concepts
    * and tasks, see <a
    * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html">What
-   * is shared id="EMR-EKS"/&gt;</a>.</p> <p> <i>Amazon EMR containers</i> is the API
-   * name for Amazon EMR on EKS. The <code>emr-containers</code> prefix is used in
-   * the following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands
-   * for Amazon EMR on EKS. For example, <code>aws emr-containers
+   * is Amazon EMR on EKS</a>.</p> <p> <i>Amazon EMR containers</i> is the API name
+   * for Amazon EMR on EKS. The <code>emr-containers</code> prefix is used in the
+   * following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands for
+   * Amazon EMR on EKS. For example, <code>aws emr-containers
    * start-job-run</code>.</p> </li> <li> <p>It is the prefix before IAM policy
    * actions for Amazon EMR on EKS. For example, <code>"Action": [
    * "emr-containers:StartJobRun"]</code>. For more information, see <a
@@ -176,6 +176,35 @@ namespace EMRContainers
         void CreateManagedEndpointAsync(const CreateManagedEndpointRequestT& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EMRContainersClient::CreateManagedEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a security configuration. Security configurations in Amazon EMR on
+         * EKS are templates for different security setups. You can use security
+         * configurations to configure the Lake Formation integration setup. You can also
+         * create a security configuration to re-use a security setup each time you create
+         * a virtual cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateSecurityConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSecurityConfigurationOutcome CreateSecurityConfiguration(const Model::CreateSecurityConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSecurityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSecurityConfigurationRequestT = Model::CreateSecurityConfigurationRequest>
+        Model::CreateSecurityConfigurationOutcomeCallable CreateSecurityConfigurationCallable(const CreateSecurityConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&EMRContainersClient::CreateSecurityConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSecurityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSecurityConfigurationRequestT = Model::CreateSecurityConfigurationRequest>
+        void CreateSecurityConfigurationAsync(const CreateSecurityConfigurationRequestT& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRContainersClient::CreateSecurityConfiguration, request, handler, context);
         }
 
         /**
@@ -378,6 +407,36 @@ namespace EMRContainers
         }
 
         /**
+         * <p>Displays detailed information about a specified security configuration.
+         * Security configurations in Amazon EMR on EKS are templates for different
+         * security setups. You can use security configurations to configure the Lake
+         * Formation integration setup. You can also create a security configuration to
+         * re-use a security setup each time you create a virtual cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeSecurityConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSecurityConfigurationOutcome DescribeSecurityConfiguration(const Model::DescribeSecurityConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSecurityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSecurityConfigurationRequestT = Model::DescribeSecurityConfigurationRequest>
+        Model::DescribeSecurityConfigurationOutcomeCallable DescribeSecurityConfigurationCallable(const DescribeSecurityConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&EMRContainersClient::DescribeSecurityConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSecurityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSecurityConfigurationRequestT = Model::DescribeSecurityConfigurationRequest>
+        void DescribeSecurityConfigurationAsync(const DescribeSecurityConfigurationRequestT& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRContainersClient::DescribeSecurityConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Displays detailed information about a specified virtual cluster. Virtual
          * cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list
          * and delete virtual clusters. They do not consume any additional resource in your
@@ -469,13 +528,13 @@ namespace EMRContainers
          * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request) const;
+        virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobTemplatesRequestT = Model::ListJobTemplatesRequest>
-        Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const ListJobTemplatesRequestT& request) const
+        Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const ListJobTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&EMRContainersClient::ListJobTemplates, request);
         }
@@ -484,7 +543,7 @@ namespace EMRContainers
          * An Async wrapper for ListJobTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobTemplatesRequestT = Model::ListJobTemplatesRequest>
-        void ListJobTemplatesAsync(const ListJobTemplatesRequestT& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobTemplatesAsync(const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&EMRContainersClient::ListJobTemplates, request, handler, context);
         }
@@ -514,6 +573,35 @@ namespace EMRContainers
         void ListManagedEndpointsAsync(const ListManagedEndpointsRequestT& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EMRContainersClient::ListManagedEndpoints, request, handler, context);
+        }
+
+        /**
+         * <p>Lists security configurations based on a set of parameters. Security
+         * configurations in Amazon EMR on EKS are templates for different security setups.
+         * You can use security configurations to configure the Lake Formation integration
+         * setup. You can also create a security configuration to re-use a security setup
+         * each time you create a virtual cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListSecurityConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSecurityConfigurationsOutcome ListSecurityConfigurations(const Model::ListSecurityConfigurationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListSecurityConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSecurityConfigurationsRequestT = Model::ListSecurityConfigurationsRequest>
+        Model::ListSecurityConfigurationsOutcomeCallable ListSecurityConfigurationsCallable(const ListSecurityConfigurationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EMRContainersClient::ListSecurityConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListSecurityConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSecurityConfigurationsRequestT = Model::ListSecurityConfigurationsRequest>
+        void ListSecurityConfigurationsAsync(const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSecurityConfigurationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EMRContainersClient::ListSecurityConfigurations, request, handler, context);
         }
 
         /**
@@ -551,13 +639,13 @@ namespace EMRContainers
          * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListVirtualClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVirtualClustersOutcome ListVirtualClusters(const Model::ListVirtualClustersRequest& request) const;
+        virtual Model::ListVirtualClustersOutcome ListVirtualClusters(const Model::ListVirtualClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVirtualClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVirtualClustersRequestT = Model::ListVirtualClustersRequest>
-        Model::ListVirtualClustersOutcomeCallable ListVirtualClustersCallable(const ListVirtualClustersRequestT& request) const
+        Model::ListVirtualClustersOutcomeCallable ListVirtualClustersCallable(const ListVirtualClustersRequestT& request = {}) const
         {
             return SubmitCallable(&EMRContainersClient::ListVirtualClusters, request);
         }
@@ -566,7 +654,7 @@ namespace EMRContainers
          * An Async wrapper for ListVirtualClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVirtualClustersRequestT = Model::ListVirtualClustersRequest>
-        void ListVirtualClustersAsync(const ListVirtualClustersRequestT& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVirtualClustersAsync(const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVirtualClustersRequestT& request = {}) const
         {
             return SubmitAsync(&EMRContainersClient::ListVirtualClusters, request, handler, context);
         }
@@ -665,7 +753,6 @@ namespace EMRContainers
       void init(const EMRContainersClientConfiguration& clientConfiguration);
 
       EMRContainersClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EMRContainersEndpointProviderBase> m_endpointProvider;
   };
 

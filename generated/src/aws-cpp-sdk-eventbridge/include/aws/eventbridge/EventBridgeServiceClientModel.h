@@ -65,6 +65,19 @@
 #include <aws/eventbridge/model/UpdateArchiveResult.h>
 #include <aws/eventbridge/model/UpdateConnectionResult.h>
 #include <aws/eventbridge/model/UpdateEndpointResult.h>
+#include <aws/eventbridge/model/UpdateEventBusResult.h>
+#include <aws/eventbridge/model/DescribeEventBusRequest.h>
+#include <aws/eventbridge/model/ListReplaysRequest.h>
+#include <aws/eventbridge/model/ListEndpointsRequest.h>
+#include <aws/eventbridge/model/PutPermissionRequest.h>
+#include <aws/eventbridge/model/ListArchivesRequest.h>
+#include <aws/eventbridge/model/UpdateEventBusRequest.h>
+#include <aws/eventbridge/model/ListApiDestinationsRequest.h>
+#include <aws/eventbridge/model/ListEventBusesRequest.h>
+#include <aws/eventbridge/model/ListEventSourcesRequest.h>
+#include <aws/eventbridge/model/ListConnectionsRequest.h>
+#include <aws/eventbridge/model/ListRulesRequest.h>
+#include <aws/eventbridge/model/RemovePermissionRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in EventBridgeClient header */
 
@@ -99,7 +112,7 @@ namespace Aws
 
   namespace EventBridge
   {
-    using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EventBridgeEndpointProviderBase = Aws::EventBridge::Endpoint::EventBridgeEndpointProviderBase;
     using EventBridgeEndpointProvider = Aws::EventBridge::Endpoint::EventBridgeEndpointProvider;
 
@@ -162,6 +175,7 @@ namespace Aws
       class UpdateArchiveRequest;
       class UpdateConnectionRequest;
       class UpdateEndpointRequest;
+      class UpdateEventBusRequest;
       /* End of service model forward declarations required in EventBridgeClient header */
 
       /* Service model Outcome class definitions */
@@ -221,6 +235,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateArchiveResult, EventBridgeError> UpdateArchiveOutcome;
       typedef Aws::Utils::Outcome<UpdateConnectionResult, EventBridgeError> UpdateConnectionOutcome;
       typedef Aws::Utils::Outcome<UpdateEndpointResult, EventBridgeError> UpdateEndpointOutcome;
+      typedef Aws::Utils::Outcome<UpdateEventBusResult, EventBridgeError> UpdateEventBusOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -280,6 +295,7 @@ namespace Aws
       typedef std::future<UpdateArchiveOutcome> UpdateArchiveOutcomeCallable;
       typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
       typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
+      typedef std::future<UpdateEventBusOutcome> UpdateEventBusOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -342,6 +358,7 @@ namespace Aws
     typedef std::function<void(const EventBridgeClient*, const Model::UpdateArchiveRequest&, const Model::UpdateArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
     typedef std::function<void(const EventBridgeClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
+    typedef std::function<void(const EventBridgeClient*, const Model::UpdateEventBusRequest&, const Model::UpdateEventBusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventBusResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace EventBridge
 } // namespace Aws

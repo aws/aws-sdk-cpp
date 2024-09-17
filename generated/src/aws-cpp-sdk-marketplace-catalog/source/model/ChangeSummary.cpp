@@ -28,13 +28,8 @@ ChangeSummary::ChangeSummary() :
 {
 }
 
-ChangeSummary::ChangeSummary(JsonView jsonValue) : 
-    m_changeTypeHasBeenSet(false),
-    m_entityHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_detailsDocumentHasBeenSet(false),
-    m_errorDetailListHasBeenSet(false),
-    m_changeNameHasBeenSet(false)
+ChangeSummary::ChangeSummary(JsonView jsonValue)
+  : ChangeSummary()
 {
   *this = jsonValue;
 }

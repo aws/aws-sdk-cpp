@@ -102,6 +102,7 @@
 #include <aws/workmail/model/UpdatePrimaryEmailAddressResult.h>
 #include <aws/workmail/model/UpdateResourceResult.h>
 #include <aws/workmail/model/UpdateUserResult.h>
+#include <aws/workmail/model/ListOrganizationsRequest.h>
 /* End of service model headers required in WorkMailClient header */
 
 namespace Aws
@@ -135,7 +136,7 @@ namespace Aws
 
   namespace WorkMail
   {
-    using WorkMailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkMailClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkMailEndpointProviderBase = Aws::WorkMail::Endpoint::WorkMailEndpointProviderBase;
     using WorkMailEndpointProvider = Aws::WorkMail::Endpoint::WorkMailEndpointProvider;
 

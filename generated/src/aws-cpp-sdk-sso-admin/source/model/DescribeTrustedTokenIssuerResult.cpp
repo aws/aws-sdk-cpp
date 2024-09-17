@@ -22,8 +22,8 @@ DescribeTrustedTokenIssuerResult::DescribeTrustedTokenIssuerResult() :
 {
 }
 
-DescribeTrustedTokenIssuerResult::DescribeTrustedTokenIssuerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_trustedTokenIssuerType(TrustedTokenIssuerType::NOT_SET)
+DescribeTrustedTokenIssuerResult::DescribeTrustedTokenIssuerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTrustedTokenIssuerResult()
 {
   *this = result;
 }

@@ -40,43 +40,25 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const MetricsDataSource& GetMetricsDataSource() const{ return m_metricsDataSource; }
-
-    
     inline bool MetricsDataSourceHasBeenSet() const { return m_metricsDataSourceHasBeenSet; }
-
-    
     inline void SetMetricsDataSource(const MetricsDataSource& value) { m_metricsDataSourceHasBeenSet = true; m_metricsDataSource = value; }
-
-    
     inline void SetMetricsDataSource(MetricsDataSource&& value) { m_metricsDataSourceHasBeenSet = true; m_metricsDataSource = std::move(value); }
-
-    
     inline ExportDataSource& WithMetricsDataSource(const MetricsDataSource& value) { SetMetricsDataSource(value); return *this;}
-
-    
     inline ExportDataSource& WithMetricsDataSource(MetricsDataSource&& value) { SetMetricsDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const MessageInsightsDataSource& GetMessageInsightsDataSource() const{ return m_messageInsightsDataSource; }
-
-    
     inline bool MessageInsightsDataSourceHasBeenSet() const { return m_messageInsightsDataSourceHasBeenSet; }
-
-    
     inline void SetMessageInsightsDataSource(const MessageInsightsDataSource& value) { m_messageInsightsDataSourceHasBeenSet = true; m_messageInsightsDataSource = value; }
-
-    
     inline void SetMessageInsightsDataSource(MessageInsightsDataSource&& value) { m_messageInsightsDataSourceHasBeenSet = true; m_messageInsightsDataSource = std::move(value); }
-
-    
     inline ExportDataSource& WithMessageInsightsDataSource(const MessageInsightsDataSource& value) { SetMessageInsightsDataSource(value); return *this;}
-
-    
     inline ExportDataSource& WithMessageInsightsDataSource(MessageInsightsDataSource&& value) { SetMessageInsightsDataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MetricsDataSource m_metricsDataSource;

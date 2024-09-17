@@ -29,14 +29,8 @@ CanaryRunConfigInput::CanaryRunConfigInput() :
 {
 }
 
-CanaryRunConfigInput::CanaryRunConfigInput(JsonView jsonValue) : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_memoryInMB(0),
-    m_memoryInMBHasBeenSet(false),
-    m_activeTracing(false),
-    m_activeTracingHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
+CanaryRunConfigInput::CanaryRunConfigInput(JsonView jsonValue)
+  : CanaryRunConfigInput()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ FormSummary::FormSummary() :
 {
 }
 
-FormSummary::FormSummary(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_formActionType(FormActionType::NOT_SET),
-    m_formActionTypeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+FormSummary::FormSummary(JsonView jsonValue)
+  : FormSummary()
 {
   *this = jsonValue;
 }

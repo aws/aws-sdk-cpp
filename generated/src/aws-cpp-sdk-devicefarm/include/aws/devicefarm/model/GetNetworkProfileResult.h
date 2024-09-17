@@ -33,53 +33,27 @@ namespace Model
     AWS_DEVICEFARM_API GetNetworkProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The network profile.</p>
      */
     inline const NetworkProfile& GetNetworkProfile() const{ return m_networkProfile; }
-
-    /**
-     * <p>The network profile.</p>
-     */
     inline void SetNetworkProfile(const NetworkProfile& value) { m_networkProfile = value; }
-
-    /**
-     * <p>The network profile.</p>
-     */
     inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfile = std::move(value); }
-
-    /**
-     * <p>The network profile.</p>
-     */
     inline GetNetworkProfileResult& WithNetworkProfile(const NetworkProfile& value) { SetNetworkProfile(value); return *this;}
-
-    /**
-     * <p>The network profile.</p>
-     */
     inline GetNetworkProfileResult& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetNetworkProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetNetworkProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetNetworkProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     NetworkProfile m_networkProfile;

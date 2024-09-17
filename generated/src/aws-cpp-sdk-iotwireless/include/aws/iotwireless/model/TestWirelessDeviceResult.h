@@ -32,63 +32,29 @@ namespace Model
     AWS_IOTWIRELESS_API TestWirelessDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The result returned by the test.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
-
-    /**
-     * <p>The result returned by the test.</p>
-     */
     inline void SetResult(const Aws::String& value) { m_result = value; }
-
-    /**
-     * <p>The result returned by the test.</p>
-     */
     inline void SetResult(Aws::String&& value) { m_result = std::move(value); }
-
-    /**
-     * <p>The result returned by the test.</p>
-     */
     inline void SetResult(const char* value) { m_result.assign(value); }
-
-    /**
-     * <p>The result returned by the test.</p>
-     */
     inline TestWirelessDeviceResult& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>The result returned by the test.</p>
-     */
     inline TestWirelessDeviceResult& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-
-    /**
-     * <p>The result returned by the test.</p>
-     */
     inline TestWirelessDeviceResult& WithResult(const char* value) { SetResult(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline TestWirelessDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline TestWirelessDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline TestWirelessDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_result;

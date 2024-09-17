@@ -35,46 +35,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>One or more associations.</p>
      */
     inline const Aws::Vector<CreateAssociationBatchRequestEntry>& GetEntries() const{ return m_entries; }
-
-    /**
-     * <p>One or more associations.</p>
-     */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-
-    /**
-     * <p>One or more associations.</p>
-     */
     inline void SetEntries(const Aws::Vector<CreateAssociationBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-
-    /**
-     * <p>One or more associations.</p>
-     */
     inline void SetEntries(Aws::Vector<CreateAssociationBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-
-    /**
-     * <p>One or more associations.</p>
-     */
     inline CreateAssociationBatchRequest& WithEntries(const Aws::Vector<CreateAssociationBatchRequestEntry>& value) { SetEntries(value); return *this;}
-
-    /**
-     * <p>One or more associations.</p>
-     */
     inline CreateAssociationBatchRequest& WithEntries(Aws::Vector<CreateAssociationBatchRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more associations.</p>
-     */
     inline CreateAssociationBatchRequest& AddEntries(const CreateAssociationBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-
-    /**
-     * <p>One or more associations.</p>
-     */
     inline CreateAssociationBatchRequest& AddEntries(CreateAssociationBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CreateAssociationBatchRequestEntry> m_entries;

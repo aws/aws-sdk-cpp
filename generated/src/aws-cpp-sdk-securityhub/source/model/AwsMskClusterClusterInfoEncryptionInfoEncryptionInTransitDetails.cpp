@@ -25,10 +25,8 @@ AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails::AwsMskClusterC
 {
 }
 
-AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails(JsonView jsonValue) : 
-    m_inCluster(false),
-    m_inClusterHasBeenSet(false),
-    m_clientBrokerHasBeenSet(false)
+AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails()
 {
   *this = jsonValue;
 }

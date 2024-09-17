@@ -40,87 +40,33 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The maximum IOPS supported by the attached instance.</p>
      */
     inline const Aws::String& GetIoPerformance() const{ return m_ioPerformance; }
-
-    /**
-     * <p>The maximum IOPS supported by the attached instance.</p>
-     */
     inline bool IoPerformanceHasBeenSet() const { return m_ioPerformanceHasBeenSet; }
-
-    /**
-     * <p>The maximum IOPS supported by the attached instance.</p>
-     */
     inline void SetIoPerformance(const Aws::String& value) { m_ioPerformanceHasBeenSet = true; m_ioPerformance = value; }
-
-    /**
-     * <p>The maximum IOPS supported by the attached instance.</p>
-     */
     inline void SetIoPerformance(Aws::String&& value) { m_ioPerformanceHasBeenSet = true; m_ioPerformance = std::move(value); }
-
-    /**
-     * <p>The maximum IOPS supported by the attached instance.</p>
-     */
     inline void SetIoPerformance(const char* value) { m_ioPerformanceHasBeenSet = true; m_ioPerformance.assign(value); }
-
-    /**
-     * <p>The maximum IOPS supported by the attached instance.</p>
-     */
     inline VolumeStatusAttachmentStatus& WithIoPerformance(const Aws::String& value) { SetIoPerformance(value); return *this;}
-
-    /**
-     * <p>The maximum IOPS supported by the attached instance.</p>
-     */
     inline VolumeStatusAttachmentStatus& WithIoPerformance(Aws::String&& value) { SetIoPerformance(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum IOPS supported by the attached instance.</p>
-     */
     inline VolumeStatusAttachmentStatus& WithIoPerformance(const char* value) { SetIoPerformance(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the attached instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the attached instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the attached instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the attached instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the attached instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the attached instance.</p>
-     */
     inline VolumeStatusAttachmentStatus& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the attached instance.</p>
-     */
     inline VolumeStatusAttachmentStatus& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the attached instance.</p>
-     */
     inline VolumeStatusAttachmentStatus& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ioPerformance;

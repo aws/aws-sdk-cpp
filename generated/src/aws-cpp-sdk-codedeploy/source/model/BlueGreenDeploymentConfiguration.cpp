@@ -25,10 +25,8 @@ BlueGreenDeploymentConfiguration::BlueGreenDeploymentConfiguration() :
 {
 }
 
-BlueGreenDeploymentConfiguration::BlueGreenDeploymentConfiguration(JsonView jsonValue) : 
-    m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet(false),
-    m_deploymentReadyOptionHasBeenSet(false),
-    m_greenFleetProvisioningOptionHasBeenSet(false)
+BlueGreenDeploymentConfiguration::BlueGreenDeploymentConfiguration(JsonView jsonValue)
+  : BlueGreenDeploymentConfiguration()
 {
   *this = jsonValue;
 }

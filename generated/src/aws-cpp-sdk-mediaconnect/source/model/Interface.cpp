@@ -23,8 +23,8 @@ Interface::Interface() :
 {
 }
 
-Interface::Interface(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+Interface::Interface(JsonView jsonValue)
+  : Interface()
 {
   *this = jsonValue;
 }

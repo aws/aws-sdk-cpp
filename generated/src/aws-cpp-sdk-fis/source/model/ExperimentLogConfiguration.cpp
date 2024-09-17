@@ -26,11 +26,8 @@ ExperimentLogConfiguration::ExperimentLogConfiguration() :
 {
 }
 
-ExperimentLogConfiguration::ExperimentLogConfiguration(JsonView jsonValue) : 
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_logSchemaVersion(0),
-    m_logSchemaVersionHasBeenSet(false)
+ExperimentLogConfiguration::ExperimentLogConfiguration(JsonView jsonValue)
+  : ExperimentLogConfiguration()
 {
   *this = jsonValue;
 }

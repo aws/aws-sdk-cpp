@@ -25,10 +25,8 @@ ExtensionAssociationSummary::ExtensionAssociationSummary() :
 {
 }
 
-ExtensionAssociationSummary::ExtensionAssociationSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_extensionArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+ExtensionAssociationSummary::ExtensionAssociationSummary(JsonView jsonValue)
+  : ExtensionAssociationSummary()
 {
   *this = jsonValue;
 }

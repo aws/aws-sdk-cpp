@@ -33,6 +33,7 @@ namespace Model
     AWS_NETWORKFIREWALL_API CreateFirewallPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A token used for optimistic locking. Network Firewall returns a token to your
      * requests that access the firewall policy. The token marks the state of the
@@ -45,143 +46,37 @@ namespace Model
      * using the new token. </p>
      */
     inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
-
-    /**
-     * <p>A token used for optimistic locking. Network Firewall returns a token to your
-     * requests that access the firewall policy. The token marks the state of the
-     * policy resource at the time of the request. </p> <p>To make changes to the
-     * policy, you provide the token in your request. Network Firewall uses the token
-     * to ensure that the policy hasn't changed since you last retrieved it. If it has
-     * changed, the operation fails with an <code>InvalidTokenException</code>. If this
-     * happens, retrieve the firewall policy again to get a current copy of it with
-     * current token. Reapply your changes as needed, then try the operation again
-     * using the new token. </p>
-     */
     inline void SetUpdateToken(const Aws::String& value) { m_updateToken = value; }
-
-    /**
-     * <p>A token used for optimistic locking. Network Firewall returns a token to your
-     * requests that access the firewall policy. The token marks the state of the
-     * policy resource at the time of the request. </p> <p>To make changes to the
-     * policy, you provide the token in your request. Network Firewall uses the token
-     * to ensure that the policy hasn't changed since you last retrieved it. If it has
-     * changed, the operation fails with an <code>InvalidTokenException</code>. If this
-     * happens, retrieve the firewall policy again to get a current copy of it with
-     * current token. Reapply your changes as needed, then try the operation again
-     * using the new token. </p>
-     */
     inline void SetUpdateToken(Aws::String&& value) { m_updateToken = std::move(value); }
-
-    /**
-     * <p>A token used for optimistic locking. Network Firewall returns a token to your
-     * requests that access the firewall policy. The token marks the state of the
-     * policy resource at the time of the request. </p> <p>To make changes to the
-     * policy, you provide the token in your request. Network Firewall uses the token
-     * to ensure that the policy hasn't changed since you last retrieved it. If it has
-     * changed, the operation fails with an <code>InvalidTokenException</code>. If this
-     * happens, retrieve the firewall policy again to get a current copy of it with
-     * current token. Reapply your changes as needed, then try the operation again
-     * using the new token. </p>
-     */
     inline void SetUpdateToken(const char* value) { m_updateToken.assign(value); }
-
-    /**
-     * <p>A token used for optimistic locking. Network Firewall returns a token to your
-     * requests that access the firewall policy. The token marks the state of the
-     * policy resource at the time of the request. </p> <p>To make changes to the
-     * policy, you provide the token in your request. Network Firewall uses the token
-     * to ensure that the policy hasn't changed since you last retrieved it. If it has
-     * changed, the operation fails with an <code>InvalidTokenException</code>. If this
-     * happens, retrieve the firewall policy again to get a current copy of it with
-     * current token. Reapply your changes as needed, then try the operation again
-     * using the new token. </p>
-     */
     inline CreateFirewallPolicyResult& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-
-    /**
-     * <p>A token used for optimistic locking. Network Firewall returns a token to your
-     * requests that access the firewall policy. The token marks the state of the
-     * policy resource at the time of the request. </p> <p>To make changes to the
-     * policy, you provide the token in your request. Network Firewall uses the token
-     * to ensure that the policy hasn't changed since you last retrieved it. If it has
-     * changed, the operation fails with an <code>InvalidTokenException</code>. If this
-     * happens, retrieve the firewall policy again to get a current copy of it with
-     * current token. Reapply your changes as needed, then try the operation again
-     * using the new token. </p>
-     */
     inline CreateFirewallPolicyResult& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token used for optimistic locking. Network Firewall returns a token to your
-     * requests that access the firewall policy. The token marks the state of the
-     * policy resource at the time of the request. </p> <p>To make changes to the
-     * policy, you provide the token in your request. Network Firewall uses the token
-     * to ensure that the policy hasn't changed since you last retrieved it. If it has
-     * changed, the operation fails with an <code>InvalidTokenException</code>. If this
-     * happens, retrieve the firewall policy again to get a current copy of it with
-     * current token. Reapply your changes as needed, then try the operation again
-     * using the new token. </p>
-     */
     inline CreateFirewallPolicyResult& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The high-level properties of a firewall policy. This, along with the
      * <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a
      * firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
      */
     inline const FirewallPolicyResponse& GetFirewallPolicyResponse() const{ return m_firewallPolicyResponse; }
-
-    /**
-     * <p>The high-level properties of a firewall policy. This, along with the
-     * <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a
-     * firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
-     */
     inline void SetFirewallPolicyResponse(const FirewallPolicyResponse& value) { m_firewallPolicyResponse = value; }
-
-    /**
-     * <p>The high-level properties of a firewall policy. This, along with the
-     * <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a
-     * firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
-     */
     inline void SetFirewallPolicyResponse(FirewallPolicyResponse&& value) { m_firewallPolicyResponse = std::move(value); }
-
-    /**
-     * <p>The high-level properties of a firewall policy. This, along with the
-     * <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a
-     * firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
-     */
     inline CreateFirewallPolicyResult& WithFirewallPolicyResponse(const FirewallPolicyResponse& value) { SetFirewallPolicyResponse(value); return *this;}
-
-    /**
-     * <p>The high-level properties of a firewall policy. This, along with the
-     * <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a
-     * firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
-     */
     inline CreateFirewallPolicyResult& WithFirewallPolicyResponse(FirewallPolicyResponse&& value) { SetFirewallPolicyResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateFirewallPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateFirewallPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateFirewallPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_updateToken;

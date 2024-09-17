@@ -21,8 +21,8 @@ CreateAccessGrantResult::CreateAccessGrantResult() :
 {
 }
 
-CreateAccessGrantResult::CreateAccessGrantResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_permission(Permission::NOT_SET)
+CreateAccessGrantResult::CreateAccessGrantResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateAccessGrantResult()
 {
   *this = result;
 }

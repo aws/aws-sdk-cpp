@@ -22,8 +22,8 @@ GetKxChangesetResult::GetKxChangesetResult() :
 {
 }
 
-GetKxChangesetResult::GetKxChangesetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ChangesetStatus::NOT_SET)
+GetKxChangesetResult::GetKxChangesetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKxChangesetResult()
 {
   *this = result;
 }

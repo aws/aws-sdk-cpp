@@ -35,20 +35,8 @@ AgentStatus::AgentStatus() :
 {
 }
 
-AgentStatus::AgentStatus(JsonView jsonValue) : 
-    m_agentStatusARNHasBeenSet(false),
-    m_agentStatusIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(AgentStatusType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayOrder(0),
-    m_displayOrderHasBeenSet(false),
-    m_state(AgentStatusState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+AgentStatus::AgentStatus(JsonView jsonValue)
+  : AgentStatus()
 {
   *this = jsonValue;
 }

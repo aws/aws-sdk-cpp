@@ -27,12 +27,8 @@ ItemSource::ItemSource() :
 {
 }
 
-ItemSource::ItemSource(JsonView jsonValue) : 
-    m_assetsHasBeenSet(false),
-    m_dateTimeHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+ItemSource::ItemSource(JsonView jsonValue)
+  : ItemSource()
 {
   *this = jsonValue;
 }

@@ -29,6 +29,8 @@ CreateFirewallRuleRequest::CreateFirewallRuleRequest() :
     m_blockOverrideTtl(0),
     m_blockOverrideTtlHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_firewallDomainRedirectionAction(FirewallDomainRedirectionAction::NOT_SET),
+    m_firewallDomainRedirectionActionHasBeenSet(false),
     m_qtypeHasBeenSet(false)
 {
 }
@@ -92,6 +94,11 @@ Aws::String CreateFirewallRuleRequest::SerializePayload() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_firewallDomainRedirectionActionHasBeenSet)
+  {
+   payload.WithString("FirewallDomainRedirectionAction", FirewallDomainRedirectionActionMapper::GetNameForFirewallDomainRedirectionAction(m_firewallDomainRedirectionAction));
   }
 
   if(m_qtypeHasBeenSet)

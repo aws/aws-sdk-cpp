@@ -22,8 +22,8 @@ BuildBotLocaleResult::BuildBotLocaleResult() :
 {
 }
 
-BuildBotLocaleResult::BuildBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botLocaleStatus(BotLocaleStatus::NOT_SET)
+BuildBotLocaleResult::BuildBotLocaleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : BuildBotLocaleResult()
 {
   *this = result;
 }

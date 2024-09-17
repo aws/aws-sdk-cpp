@@ -27,12 +27,8 @@ FailureInfo::FailureInfo() :
 {
 }
 
-FailureInfo::FailureInfo(JsonView jsonValue) : 
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FailureInfo::FailureInfo(JsonView jsonValue)
+  : FailureInfo()
 {
   *this = jsonValue;
 }

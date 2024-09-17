@@ -33,53 +33,27 @@ namespace Model
     AWS_GAMELIFT_API UpdateBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated build resource.</p>
      */
     inline const Build& GetBuild() const{ return m_build; }
-
-    /**
-     * <p>The updated build resource.</p>
-     */
     inline void SetBuild(const Build& value) { m_build = value; }
-
-    /**
-     * <p>The updated build resource.</p>
-     */
     inline void SetBuild(Build&& value) { m_build = std::move(value); }
-
-    /**
-     * <p>The updated build resource.</p>
-     */
     inline UpdateBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
-
-    /**
-     * <p>The updated build resource.</p>
-     */
     inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateBuildResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateBuildResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateBuildResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Build m_build;

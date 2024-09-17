@@ -26,9 +26,8 @@ SourceSecurityGroup::SourceSecurityGroup() :
 {
 }
 
-SourceSecurityGroup::SourceSecurityGroup(const XmlNode& xmlNode) : 
-    m_ownerAliasHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+SourceSecurityGroup::SourceSecurityGroup(const XmlNode& xmlNode)
+  : SourceSecurityGroup()
 {
   *this = xmlNode;
 }

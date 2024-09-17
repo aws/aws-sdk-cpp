@@ -24,9 +24,8 @@ ServiceUnavailableError::ServiceUnavailableError() :
 {
 }
 
-ServiceUnavailableError::ServiceUnavailableError(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_errorHasBeenSet(false)
+ServiceUnavailableError::ServiceUnavailableError(JsonView jsonValue)
+  : ServiceUnavailableError()
 {
   *this = jsonValue;
 }

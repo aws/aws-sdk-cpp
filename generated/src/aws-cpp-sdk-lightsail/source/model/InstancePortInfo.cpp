@@ -37,22 +37,8 @@ InstancePortInfo::InstancePortInfo() :
 {
 }
 
-InstancePortInfo::InstancePortInfo(JsonView jsonValue) : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_accessFromHasBeenSet(false),
-    m_accessType(PortAccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_accessDirection(AccessDirection::NOT_SET),
-    m_accessDirectionHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_ipv6CidrsHasBeenSet(false),
-    m_cidrListAliasesHasBeenSet(false)
+InstancePortInfo::InstancePortInfo(JsonView jsonValue)
+  : InstancePortInfo()
 {
   *this = jsonValue;
 }

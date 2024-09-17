@@ -24,9 +24,8 @@ ServerGroupValidationConfiguration::ServerGroupValidationConfiguration() :
 {
 }
 
-ServerGroupValidationConfiguration::ServerGroupValidationConfiguration(JsonView jsonValue) : 
-    m_serverGroupIdHasBeenSet(false),
-    m_serverValidationConfigurationsHasBeenSet(false)
+ServerGroupValidationConfiguration::ServerGroupValidationConfiguration(JsonView jsonValue)
+  : ServerGroupValidationConfiguration()
 {
   *this = jsonValue;
 }

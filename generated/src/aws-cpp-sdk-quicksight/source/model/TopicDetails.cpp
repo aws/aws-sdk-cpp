@@ -27,12 +27,8 @@ TopicDetails::TopicDetails() :
 {
 }
 
-TopicDetails::TopicDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_userExperienceVersion(TopicUserExperienceVersion::NOT_SET),
-    m_userExperienceVersionHasBeenSet(false),
-    m_dataSetsHasBeenSet(false)
+TopicDetails::TopicDetails(JsonView jsonValue)
+  : TopicDetails()
 {
   *this = jsonValue;
 }

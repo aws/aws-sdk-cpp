@@ -26,11 +26,8 @@ ApplicationComponentSummary::ApplicationComponentSummary() :
 {
 }
 
-ApplicationComponentSummary::ApplicationComponentSummary(JsonView jsonValue) : 
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
+ApplicationComponentSummary::ApplicationComponentSummary(JsonView jsonValue)
+  : ApplicationComponentSummary()
 {
   *this = jsonValue;
 }

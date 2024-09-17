@@ -38,6 +38,7 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates
      * the overall precision and recall performance of the model as a single value. A
@@ -45,62 +46,22 @@ namespace Model
      * indicates that precision, recall, or both are performing poorly. </p>
      */
     inline double GetF1Score() const{ return m_f1Score; }
-
-    /**
-     * <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates
-     * the overall precision and recall performance of the model as a single value. A
-     * higher value indicates better precision and recall performance. A lower score
-     * indicates that precision, recall, or both are performing poorly. </p>
-     */
     inline bool F1ScoreHasBeenSet() const { return m_f1ScoreHasBeenSet; }
-
-    /**
-     * <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates
-     * the overall precision and recall performance of the model as a single value. A
-     * higher value indicates better precision and recall performance. A lower score
-     * indicates that precision, recall, or both are performing poorly. </p>
-     */
     inline void SetF1Score(double value) { m_f1ScoreHasBeenSet = true; m_f1Score = value; }
-
-    /**
-     * <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates
-     * the overall precision and recall performance of the model as a single value. A
-     * higher value indicates better precision and recall performance. A lower score
-     * indicates that precision, recall, or both are performing poorly. </p>
-     */
     inline EvaluationResult& WithF1Score(double value) { SetF1Score(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 bucket that contains the training summary.</p>
      */
     inline const Summary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>The S3 bucket that contains the training summary.</p>
-     */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-
-    /**
-     * <p>The S3 bucket that contains the training summary.</p>
-     */
     inline void SetSummary(const Summary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-
-    /**
-     * <p>The S3 bucket that contains the training summary.</p>
-     */
     inline void SetSummary(Summary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-
-    /**
-     * <p>The S3 bucket that contains the training summary.</p>
-     */
     inline EvaluationResult& WithSummary(const Summary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>The S3 bucket that contains the training summary.</p>
-     */
     inline EvaluationResult& WithSummary(Summary&& value) { SetSummary(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_f1Score;

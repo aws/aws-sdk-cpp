@@ -24,9 +24,8 @@ AwsEc2LaunchTemplateDataHibernationOptionsDetails::AwsEc2LaunchTemplateDataHiber
 {
 }
 
-AwsEc2LaunchTemplateDataHibernationOptionsDetails::AwsEc2LaunchTemplateDataHibernationOptionsDetails(JsonView jsonValue) : 
-    m_configured(false),
-    m_configuredHasBeenSet(false)
+AwsEc2LaunchTemplateDataHibernationOptionsDetails::AwsEc2LaunchTemplateDataHibernationOptionsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataHibernationOptionsDetails()
 {
   *this = jsonValue;
 }

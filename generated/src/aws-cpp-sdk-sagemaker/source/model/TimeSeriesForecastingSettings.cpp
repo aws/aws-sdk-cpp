@@ -25,10 +25,8 @@ TimeSeriesForecastingSettings::TimeSeriesForecastingSettings() :
 {
 }
 
-TimeSeriesForecastingSettings::TimeSeriesForecastingSettings(JsonView jsonValue) : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_amazonForecastRoleArnHasBeenSet(false)
+TimeSeriesForecastingSettings::TimeSeriesForecastingSettings(JsonView jsonValue)
+  : TimeSeriesForecastingSettings()
 {
   *this = jsonValue;
 }

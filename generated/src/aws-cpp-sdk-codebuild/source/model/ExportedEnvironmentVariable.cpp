@@ -24,9 +24,8 @@ ExportedEnvironmentVariable::ExportedEnvironmentVariable() :
 {
 }
 
-ExportedEnvironmentVariable::ExportedEnvironmentVariable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ExportedEnvironmentVariable::ExportedEnvironmentVariable(JsonView jsonValue)
+  : ExportedEnvironmentVariable()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ AwsEcrContainerAggregationResponse::AwsEcrContainerAggregationResponse() :
 {
 }
 
-AwsEcrContainerAggregationResponse::AwsEcrContainerAggregationResponse(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_imageShaHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+AwsEcrContainerAggregationResponse::AwsEcrContainerAggregationResponse(JsonView jsonValue)
+  : AwsEcrContainerAggregationResponse()
 {
   *this = jsonValue;
 }

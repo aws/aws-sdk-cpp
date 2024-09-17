@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RDSDataServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RDSDataServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RDSDataServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RDSDataServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

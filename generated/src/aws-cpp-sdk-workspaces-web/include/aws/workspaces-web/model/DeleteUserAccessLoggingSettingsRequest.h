@@ -32,46 +32,19 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the user access logging settings.</p>
      */
     inline const Aws::String& GetUserAccessLoggingSettingsArn() const{ return m_userAccessLoggingSettingsArn; }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettingsArn(const Aws::String& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettingsArn(Aws::String&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettingsArn(const char* value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline DeleteUserAccessLoggingSettingsRequest& WithUserAccessLoggingSettingsArn(const Aws::String& value) { SetUserAccessLoggingSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline DeleteUserAccessLoggingSettingsRequest& WithUserAccessLoggingSettingsArn(Aws::String&& value) { SetUserAccessLoggingSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline DeleteUserAccessLoggingSettingsRequest& WithUserAccessLoggingSettingsArn(const char* value) { SetUserAccessLoggingSettingsArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userAccessLoggingSettingsArn;

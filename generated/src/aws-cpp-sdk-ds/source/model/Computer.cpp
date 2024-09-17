@@ -25,10 +25,8 @@ Computer::Computer() :
 {
 }
 
-Computer::Computer(JsonView jsonValue) : 
-    m_computerIdHasBeenSet(false),
-    m_computerNameHasBeenSet(false),
-    m_computerAttributesHasBeenSet(false)
+Computer::Computer(JsonView jsonValue)
+  : Computer()
 {
   *this = jsonValue;
 }

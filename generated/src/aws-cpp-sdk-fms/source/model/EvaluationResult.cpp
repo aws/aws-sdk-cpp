@@ -28,13 +28,8 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(JsonView jsonValue) : 
-    m_complianceStatus(PolicyComplianceStatusType::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_violatorCount(0),
-    m_violatorCountHasBeenSet(false),
-    m_evaluationLimitExceeded(false),
-    m_evaluationLimitExceededHasBeenSet(false)
+EvaluationResult::EvaluationResult(JsonView jsonValue)
+  : EvaluationResult()
 {
   *this = jsonValue;
 }

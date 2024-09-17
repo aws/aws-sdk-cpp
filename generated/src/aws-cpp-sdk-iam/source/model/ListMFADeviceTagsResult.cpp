@@ -22,8 +22,8 @@ ListMFADeviceTagsResult::ListMFADeviceTagsResult() :
 {
 }
 
-ListMFADeviceTagsResult::ListMFADeviceTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListMFADeviceTagsResult::ListMFADeviceTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListMFADeviceTagsResult()
 {
   *this = result;
 }

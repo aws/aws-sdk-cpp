@@ -23,8 +23,8 @@ DeleteDocument::DeleteDocument() :
 {
 }
 
-DeleteDocument::DeleteDocument(JsonView jsonValue) : 
-    m_documentIdHasBeenSet(false)
+DeleteDocument::DeleteDocument(JsonView jsonValue)
+  : DeleteDocument()
 {
   *this = jsonValue;
 }

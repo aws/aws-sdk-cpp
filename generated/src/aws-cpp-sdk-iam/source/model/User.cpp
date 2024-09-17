@@ -32,15 +32,8 @@ User::User() :
 {
 }
 
-User::User(const XmlNode& xmlNode) : 
-    m_pathHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_passwordLastUsedHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+User::User(const XmlNode& xmlNode)
+  : User()
 {
   *this = xmlNode;
 }

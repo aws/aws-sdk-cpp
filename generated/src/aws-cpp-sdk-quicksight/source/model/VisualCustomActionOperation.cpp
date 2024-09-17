@@ -26,11 +26,8 @@ VisualCustomActionOperation::VisualCustomActionOperation() :
 {
 }
 
-VisualCustomActionOperation::VisualCustomActionOperation(JsonView jsonValue) : 
-    m_filterOperationHasBeenSet(false),
-    m_navigationOperationHasBeenSet(false),
-    m_uRLOperationHasBeenSet(false),
-    m_setParametersOperationHasBeenSet(false)
+VisualCustomActionOperation::VisualCustomActionOperation(JsonView jsonValue)
+  : VisualCustomActionOperation()
 {
   *this = jsonValue;
 }

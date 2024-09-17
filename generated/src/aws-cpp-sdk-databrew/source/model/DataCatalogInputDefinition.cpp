@@ -26,11 +26,8 @@ DataCatalogInputDefinition::DataCatalogInputDefinition() :
 {
 }
 
-DataCatalogInputDefinition::DataCatalogInputDefinition(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tempDirectoryHasBeenSet(false)
+DataCatalogInputDefinition::DataCatalogInputDefinition(JsonView jsonValue)
+  : DataCatalogInputDefinition()
 {
   *this = jsonValue;
 }

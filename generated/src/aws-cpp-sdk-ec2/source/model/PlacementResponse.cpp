@@ -25,8 +25,8 @@ PlacementResponse::PlacementResponse() :
 {
 }
 
-PlacementResponse::PlacementResponse(const XmlNode& xmlNode) : 
-    m_groupNameHasBeenSet(false)
+PlacementResponse::PlacementResponse(const XmlNode& xmlNode)
+  : PlacementResponse()
 {
   *this = xmlNode;
 }

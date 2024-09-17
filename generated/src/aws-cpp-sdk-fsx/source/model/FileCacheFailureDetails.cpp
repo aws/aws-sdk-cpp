@@ -23,8 +23,8 @@ FileCacheFailureDetails::FileCacheFailureDetails() :
 {
 }
 
-FileCacheFailureDetails::FileCacheFailureDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+FileCacheFailureDetails::FileCacheFailureDetails(JsonView jsonValue)
+  : FileCacheFailureDetails()
 {
   *this = jsonValue;
 }

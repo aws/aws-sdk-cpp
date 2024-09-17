@@ -28,13 +28,8 @@ AwsEc2InstanceMetadataOptions::AwsEc2InstanceMetadataOptions() :
 {
 }
 
-AwsEc2InstanceMetadataOptions::AwsEc2InstanceMetadataOptions(JsonView jsonValue) : 
-    m_httpEndpointHasBeenSet(false),
-    m_httpProtocolIpv6HasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpTokensHasBeenSet(false),
-    m_instanceMetadataTagsHasBeenSet(false)
+AwsEc2InstanceMetadataOptions::AwsEc2InstanceMetadataOptions(JsonView jsonValue)
+  : AwsEc2InstanceMetadataOptions()
 {
   *this = jsonValue;
 }

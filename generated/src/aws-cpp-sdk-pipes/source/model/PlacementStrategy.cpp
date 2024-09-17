@@ -19,34 +19,32 @@ namespace Model
 {
 
 PlacementStrategy::PlacementStrategy() : 
-    m_fieldHasBeenSet(false),
     m_type(PlacementStrategyType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_fieldHasBeenSet(false)
 {
 }
 
-PlacementStrategy::PlacementStrategy(JsonView jsonValue) : 
-    m_fieldHasBeenSet(false),
-    m_type(PlacementStrategyType::NOT_SET),
-    m_typeHasBeenSet(false)
+PlacementStrategy::PlacementStrategy(JsonView jsonValue)
+  : PlacementStrategy()
 {
   *this = jsonValue;
 }
 
 PlacementStrategy& PlacementStrategy::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("field"))
-  {
-    m_field = jsonValue.GetString("field");
-
-    m_fieldHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = PlacementStrategyTypeMapper::GetPlacementStrategyTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("field"))
+  {
+    m_field = jsonValue.GetString("field");
+
+    m_fieldHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +54,15 @@ JsonValue PlacementStrategy::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", PlacementStrategyTypeMapper::GetNameForPlacementStrategyType(m_type));
+  }
+
   if(m_fieldHasBeenSet)
   {
    payload.WithString("field", m_field);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", PlacementStrategyTypeMapper::GetNameForPlacementStrategyType(m_type));
   }
 
   return payload;

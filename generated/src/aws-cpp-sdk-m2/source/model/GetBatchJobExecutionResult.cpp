@@ -23,9 +23,8 @@ GetBatchJobExecutionResult::GetBatchJobExecutionResult() :
 {
 }
 
-GetBatchJobExecutionResult::GetBatchJobExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobType(BatchJobType::NOT_SET),
-    m_status(BatchJobExecutionStatus::NOT_SET)
+GetBatchJobExecutionResult::GetBatchJobExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBatchJobExecutionResult()
 {
   *this = result;
 }
@@ -66,6 +65,12 @@ GetBatchJobExecutionResult& GetBatchJobExecutionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
+
+  }
+
+  if(jsonValue.ValueExists("jobStepRestartMarker"))
+  {
+    m_jobStepRestartMarker = jsonValue.GetObject("jobStepRestartMarker");
 
   }
 

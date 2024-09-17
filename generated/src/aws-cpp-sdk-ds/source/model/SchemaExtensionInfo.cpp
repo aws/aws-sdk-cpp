@@ -30,15 +30,8 @@ SchemaExtensionInfo::SchemaExtensionInfo() :
 {
 }
 
-SchemaExtensionInfo::SchemaExtensionInfo(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_schemaExtensionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_schemaExtensionStatus(SchemaExtensionStatus::NOT_SET),
-    m_schemaExtensionStatusHasBeenSet(false),
-    m_schemaExtensionStatusReasonHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+SchemaExtensionInfo::SchemaExtensionInfo(JsonView jsonValue)
+  : SchemaExtensionInfo()
 {
   *this = jsonValue;
 }

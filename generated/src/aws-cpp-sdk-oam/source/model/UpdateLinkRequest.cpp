@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateLinkRequest::UpdateLinkRequest() : 
     m_identifierHasBeenSet(false),
+    m_linkConfigurationHasBeenSet(false),
     m_resourceTypesHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String UpdateLinkRequest::SerializePayload() const
   if(m_identifierHasBeenSet)
   {
    payload.WithString("Identifier", m_identifier);
+
+  }
+
+  if(m_linkConfigurationHasBeenSet)
+  {
+   payload.WithObject("LinkConfiguration", m_linkConfiguration.Jsonize());
 
   }
 

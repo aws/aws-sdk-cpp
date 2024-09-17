@@ -19,12 +19,13 @@ namespace Model
 {
 
 SearchCriteria::SearchCriteria() : 
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_sortHasBeenSet(false)
 {
 }
 
-SearchCriteria::SearchCriteria(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false)
+SearchCriteria::SearchCriteria(JsonView jsonValue)
+  : SearchCriteria()
 {
   *this = jsonValue;
 }
@@ -39,6 +40,13 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
     }
     m_filtersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sort"))
+  {
+    m_sort = jsonValue.GetObject("sort");
+
+    m_sortHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +64,12 @@ JsonValue SearchCriteria::Jsonize() const
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
    }
    payload.WithArray("filters", std::move(filtersJsonList));
+
+  }
+
+  if(m_sortHasBeenSet)
+  {
+   payload.WithObject("sort", m_sort.Jsonize());
 
   }
 

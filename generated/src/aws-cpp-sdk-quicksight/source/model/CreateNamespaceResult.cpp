@@ -24,10 +24,8 @@ CreateNamespaceResult::CreateNamespaceResult() :
 {
 }
 
-CreateNamespaceResult::CreateNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationStatus(NamespaceStatus::NOT_SET),
-    m_identityStore(IdentityStore::NOT_SET),
-    m_status(0)
+CreateNamespaceResult::CreateNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateNamespaceResult()
 {
   *this = result;
 }

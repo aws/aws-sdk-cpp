@@ -37,22 +37,8 @@ GraphSummary::GraphSummary() :
 {
 }
 
-GraphSummary::GraphSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(GraphStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_provisionedMemory(0),
-    m_provisionedMemoryHasBeenSet(false),
-    m_publicConnectivity(false),
-    m_publicConnectivityHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+GraphSummary::GraphSummary(JsonView jsonValue)
+  : GraphSummary()
 {
   *this = jsonValue;
 }

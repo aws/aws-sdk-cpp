@@ -39,24 +39,8 @@ ComponentSummary::ComponentSummary() :
 {
 }
 
-ComponentSummary::ComponentSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_supportedOsVersionsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_type(ComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeDescriptionHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_obfuscate(false),
-    m_obfuscateHasBeenSet(false)
+ComponentSummary::ComponentSummary(JsonView jsonValue)
+  : ComponentSummary()
 {
   *this = jsonValue;
 }

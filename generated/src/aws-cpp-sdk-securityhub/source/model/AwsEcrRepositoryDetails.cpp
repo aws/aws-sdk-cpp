@@ -28,13 +28,8 @@ AwsEcrRepositoryDetails::AwsEcrRepositoryDetails() :
 {
 }
 
-AwsEcrRepositoryDetails::AwsEcrRepositoryDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_imageTagMutabilityHasBeenSet(false),
-    m_lifecyclePolicyHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryPolicyTextHasBeenSet(false)
+AwsEcrRepositoryDetails::AwsEcrRepositoryDetails(JsonView jsonValue)
+  : AwsEcrRepositoryDetails()
 {
   *this = jsonValue;
 }

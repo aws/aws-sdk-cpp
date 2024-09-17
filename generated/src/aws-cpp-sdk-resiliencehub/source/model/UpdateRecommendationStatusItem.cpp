@@ -25,10 +25,8 @@ UpdateRecommendationStatusItem::UpdateRecommendationStatusItem() :
 {
 }
 
-UpdateRecommendationStatusItem::UpdateRecommendationStatusItem(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false),
-    m_targetRegionHasBeenSet(false)
+UpdateRecommendationStatusItem::UpdateRecommendationStatusItem(JsonView jsonValue)
+  : UpdateRecommendationStatusItem()
 {
   *this = jsonValue;
 }

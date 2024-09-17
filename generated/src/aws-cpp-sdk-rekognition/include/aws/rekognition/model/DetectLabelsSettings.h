@@ -42,67 +42,29 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the specified filters for GENERAL_LABELS.</p>
      */
     inline const GeneralLabelsSettings& GetGeneralLabels() const{ return m_generalLabels; }
-
-    /**
-     * <p>Contains the specified filters for GENERAL_LABELS.</p>
-     */
     inline bool GeneralLabelsHasBeenSet() const { return m_generalLabelsHasBeenSet; }
-
-    /**
-     * <p>Contains the specified filters for GENERAL_LABELS.</p>
-     */
     inline void SetGeneralLabels(const GeneralLabelsSettings& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = value; }
-
-    /**
-     * <p>Contains the specified filters for GENERAL_LABELS.</p>
-     */
     inline void SetGeneralLabels(GeneralLabelsSettings&& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = std::move(value); }
-
-    /**
-     * <p>Contains the specified filters for GENERAL_LABELS.</p>
-     */
     inline DetectLabelsSettings& WithGeneralLabels(const GeneralLabelsSettings& value) { SetGeneralLabels(value); return *this;}
-
-    /**
-     * <p>Contains the specified filters for GENERAL_LABELS.</p>
-     */
     inline DetectLabelsSettings& WithGeneralLabels(GeneralLabelsSettings&& value) { SetGeneralLabels(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the chosen number of maximum dominant colors in an image.</p>
      */
     inline const DetectLabelsImagePropertiesSettings& GetImageProperties() const{ return m_imageProperties; }
-
-    /**
-     * <p>Contains the chosen number of maximum dominant colors in an image.</p>
-     */
     inline bool ImagePropertiesHasBeenSet() const { return m_imagePropertiesHasBeenSet; }
-
-    /**
-     * <p>Contains the chosen number of maximum dominant colors in an image.</p>
-     */
     inline void SetImageProperties(const DetectLabelsImagePropertiesSettings& value) { m_imagePropertiesHasBeenSet = true; m_imageProperties = value; }
-
-    /**
-     * <p>Contains the chosen number of maximum dominant colors in an image.</p>
-     */
     inline void SetImageProperties(DetectLabelsImagePropertiesSettings&& value) { m_imagePropertiesHasBeenSet = true; m_imageProperties = std::move(value); }
-
-    /**
-     * <p>Contains the chosen number of maximum dominant colors in an image.</p>
-     */
     inline DetectLabelsSettings& WithImageProperties(const DetectLabelsImagePropertiesSettings& value) { SetImageProperties(value); return *this;}
-
-    /**
-     * <p>Contains the chosen number of maximum dominant colors in an image.</p>
-     */
     inline DetectLabelsSettings& WithImageProperties(DetectLabelsImagePropertiesSettings&& value) { SetImageProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GeneralLabelsSettings m_generalLabels;

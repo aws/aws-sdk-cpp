@@ -22,8 +22,8 @@ StopKeyPhrasesDetectionJobResult::StopKeyPhrasesDetectionJobResult() :
 {
 }
 
-StopKeyPhrasesDetectionJobResult::StopKeyPhrasesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StopKeyPhrasesDetectionJobResult::StopKeyPhrasesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopKeyPhrasesDetectionJobResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ BatchPutAssetPropertyError::BatchPutAssetPropertyError() :
 {
 }
 
-BatchPutAssetPropertyError::BatchPutAssetPropertyError(JsonView jsonValue) : 
-    m_errorCode(BatchPutAssetPropertyValueErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_timestampsHasBeenSet(false)
+BatchPutAssetPropertyError::BatchPutAssetPropertyError(JsonView jsonValue)
+  : BatchPutAssetPropertyError()
 {
   *this = jsonValue;
 }

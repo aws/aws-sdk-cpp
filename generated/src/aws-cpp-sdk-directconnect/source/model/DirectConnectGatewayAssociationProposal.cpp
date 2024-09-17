@@ -30,15 +30,8 @@ DirectConnectGatewayAssociationProposal::DirectConnectGatewayAssociationProposal
 {
 }
 
-DirectConnectGatewayAssociationProposal::DirectConnectGatewayAssociationProposal(JsonView jsonValue) : 
-    m_proposalIdHasBeenSet(false),
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_directConnectGatewayOwnerAccountHasBeenSet(false),
-    m_proposalState(DirectConnectGatewayAssociationProposalState::NOT_SET),
-    m_proposalStateHasBeenSet(false),
-    m_associatedGatewayHasBeenSet(false),
-    m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet(false),
-    m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet(false)
+DirectConnectGatewayAssociationProposal::DirectConnectGatewayAssociationProposal(JsonView jsonValue)
+  : DirectConnectGatewayAssociationProposal()
 {
   *this = jsonValue;
 }

@@ -14,11 +14,11 @@ using namespace Aws::Utils;
 
 ListChannelsRequest::ListChannelsRequest() : 
     m_filterByNameHasBeenSet(false),
-    m_filterByPlaybackRestrictionPolicyArnHasBeenSet(false),
     m_filterByRecordingConfigurationArnHasBeenSet(false),
+    m_filterByPlaybackRestrictionPolicyArnHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -32,27 +32,27 @@ Aws::String ListChannelsRequest::SerializePayload() const
 
   }
 
-  if(m_filterByPlaybackRestrictionPolicyArnHasBeenSet)
-  {
-   payload.WithString("filterByPlaybackRestrictionPolicyArn", m_filterByPlaybackRestrictionPolicyArn);
-
-  }
-
   if(m_filterByRecordingConfigurationArnHasBeenSet)
   {
    payload.WithString("filterByRecordingConfigurationArn", m_filterByRecordingConfigurationArn);
 
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_filterByPlaybackRestrictionPolicyArnHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
+   payload.WithString("filterByPlaybackRestrictionPolicyArn", m_filterByPlaybackRestrictionPolicyArn);
 
   }
 
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 

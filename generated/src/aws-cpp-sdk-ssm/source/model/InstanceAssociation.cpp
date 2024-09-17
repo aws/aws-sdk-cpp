@@ -26,11 +26,8 @@ InstanceAssociation::InstanceAssociation() :
 {
 }
 
-InstanceAssociation::InstanceAssociation(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_associationVersionHasBeenSet(false)
+InstanceAssociation::InstanceAssociation(JsonView jsonValue)
+  : InstanceAssociation()
 {
   *this = jsonValue;
 }

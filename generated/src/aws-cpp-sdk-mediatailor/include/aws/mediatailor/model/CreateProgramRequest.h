@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/ScheduleConfiguration.h>
 #include <aws/mediatailor/model/AdBreak.h>
+#include <aws/mediatailor/model/AudienceMedia.h>
 #include <utility>
 
 namespace Aws
@@ -35,286 +36,122 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ad break configuration settings.</p>
      */
     inline const Aws::Vector<AdBreak>& GetAdBreaks() const{ return m_adBreaks; }
-
-    /**
-     * <p>The ad break configuration settings.</p>
-     */
     inline bool AdBreaksHasBeenSet() const { return m_adBreaksHasBeenSet; }
-
-    /**
-     * <p>The ad break configuration settings.</p>
-     */
     inline void SetAdBreaks(const Aws::Vector<AdBreak>& value) { m_adBreaksHasBeenSet = true; m_adBreaks = value; }
-
-    /**
-     * <p>The ad break configuration settings.</p>
-     */
     inline void SetAdBreaks(Aws::Vector<AdBreak>&& value) { m_adBreaksHasBeenSet = true; m_adBreaks = std::move(value); }
-
-    /**
-     * <p>The ad break configuration settings.</p>
-     */
     inline CreateProgramRequest& WithAdBreaks(const Aws::Vector<AdBreak>& value) { SetAdBreaks(value); return *this;}
-
-    /**
-     * <p>The ad break configuration settings.</p>
-     */
     inline CreateProgramRequest& WithAdBreaks(Aws::Vector<AdBreak>&& value) { SetAdBreaks(std::move(value)); return *this;}
-
-    /**
-     * <p>The ad break configuration settings.</p>
-     */
     inline CreateProgramRequest& AddAdBreaks(const AdBreak& value) { m_adBreaksHasBeenSet = true; m_adBreaks.push_back(value); return *this; }
-
-    /**
-     * <p>The ad break configuration settings.</p>
-     */
     inline CreateProgramRequest& AddAdBreaks(AdBreak&& value) { m_adBreaksHasBeenSet = true; m_adBreaks.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
+    inline bool AudienceMediaHasBeenSet() const { return m_audienceMediaHasBeenSet; }
+    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = value; }
+    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::move(value); }
+    inline CreateProgramRequest& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
+    inline CreateProgramRequest& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
+    inline CreateProgramRequest& AddAudienceMedia(const AudienceMedia& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(value); return *this; }
+    inline CreateProgramRequest& AddAudienceMedia(AudienceMedia&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
     /**
      * <p>The name of the channel for this Program.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
-
-    /**
-     * <p>The name of the channel for this Program.</p>
-     */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the channel for this Program.</p>
-     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-
-    /**
-     * <p>The name of the channel for this Program.</p>
-     */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-
-    /**
-     * <p>The name of the channel for this Program.</p>
-     */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-
-    /**
-     * <p>The name of the channel for this Program.</p>
-     */
     inline CreateProgramRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-
-    /**
-     * <p>The name of the channel for this Program.</p>
-     */
     inline CreateProgramRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the channel for this Program.</p>
-     */
     inline CreateProgramRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the LiveSource for this Program.</p>
      */
     inline const Aws::String& GetLiveSourceName() const{ return m_liveSourceName; }
-
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
     inline bool LiveSourceNameHasBeenSet() const { return m_liveSourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
     inline void SetLiveSourceName(const Aws::String& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = value; }
-
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
     inline void SetLiveSourceName(Aws::String&& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = std::move(value); }
-
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
     inline void SetLiveSourceName(const char* value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName.assign(value); }
-
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
     inline CreateProgramRequest& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
-
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
     inline CreateProgramRequest& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the LiveSource for this Program.</p>
-     */
     inline CreateProgramRequest& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Program.</p>
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
-
-    /**
-     * <p>The name of the Program.</p>
-     */
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Program.</p>
-     */
     inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
-
-    /**
-     * <p>The name of the Program.</p>
-     */
     inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
-
-    /**
-     * <p>The name of the Program.</p>
-     */
     inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
-
-    /**
-     * <p>The name of the Program.</p>
-     */
     inline CreateProgramRequest& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-
-    /**
-     * <p>The name of the Program.</p>
-     */
     inline CreateProgramRequest& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Program.</p>
-     */
     inline CreateProgramRequest& WithProgramName(const char* value) { SetProgramName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The schedule configuration settings.</p>
      */
     inline const ScheduleConfiguration& GetScheduleConfiguration() const{ return m_scheduleConfiguration; }
-
-    /**
-     * <p>The schedule configuration settings.</p>
-     */
     inline bool ScheduleConfigurationHasBeenSet() const { return m_scheduleConfigurationHasBeenSet; }
-
-    /**
-     * <p>The schedule configuration settings.</p>
-     */
     inline void SetScheduleConfiguration(const ScheduleConfiguration& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = value; }
-
-    /**
-     * <p>The schedule configuration settings.</p>
-     */
     inline void SetScheduleConfiguration(ScheduleConfiguration&& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = std::move(value); }
-
-    /**
-     * <p>The schedule configuration settings.</p>
-     */
     inline CreateProgramRequest& WithScheduleConfiguration(const ScheduleConfiguration& value) { SetScheduleConfiguration(value); return *this;}
-
-    /**
-     * <p>The schedule configuration settings.</p>
-     */
     inline CreateProgramRequest& WithScheduleConfiguration(ScheduleConfiguration&& value) { SetScheduleConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the source location.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline bool SourceLocationNameHasBeenSet() const { return m_sourceLocationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = value; }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::move(value); }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName.assign(value); }
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline CreateProgramRequest& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline CreateProgramRequest& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source location.</p>
-     */
     inline CreateProgramRequest& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name that's used to refer to a VOD source.</p>
      */
     inline const Aws::String& GetVodSourceName() const{ return m_vodSourceName; }
-
-    /**
-     * <p>The name that's used to refer to a VOD source.</p>
-     */
     inline bool VodSourceNameHasBeenSet() const { return m_vodSourceNameHasBeenSet; }
-
-    /**
-     * <p>The name that's used to refer to a VOD source.</p>
-     */
     inline void SetVodSourceName(const Aws::String& value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName = value; }
-
-    /**
-     * <p>The name that's used to refer to a VOD source.</p>
-     */
     inline void SetVodSourceName(Aws::String&& value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName = std::move(value); }
-
-    /**
-     * <p>The name that's used to refer to a VOD source.</p>
-     */
     inline void SetVodSourceName(const char* value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName.assign(value); }
-
-    /**
-     * <p>The name that's used to refer to a VOD source.</p>
-     */
     inline CreateProgramRequest& WithVodSourceName(const Aws::String& value) { SetVodSourceName(value); return *this;}
-
-    /**
-     * <p>The name that's used to refer to a VOD source.</p>
-     */
     inline CreateProgramRequest& WithVodSourceName(Aws::String&& value) { SetVodSourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name that's used to refer to a VOD source.</p>
-     */
     inline CreateProgramRequest& WithVodSourceName(const char* value) { SetVodSourceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AdBreak> m_adBreaks;
     bool m_adBreaksHasBeenSet = false;
+
+    Aws::Vector<AudienceMedia> m_audienceMedia;
+    bool m_audienceMediaHasBeenSet = false;
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;

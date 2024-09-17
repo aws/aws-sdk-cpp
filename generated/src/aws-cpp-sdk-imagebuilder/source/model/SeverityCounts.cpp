@@ -30,15 +30,8 @@ SeverityCounts::SeverityCounts() :
 {
 }
 
-SeverityCounts::SeverityCounts(JsonView jsonValue) : 
-    m_all(0),
-    m_allHasBeenSet(false),
-    m_critical(0),
-    m_criticalHasBeenSet(false),
-    m_high(0),
-    m_highHasBeenSet(false),
-    m_medium(0),
-    m_mediumHasBeenSet(false)
+SeverityCounts::SeverityCounts(JsonView jsonValue)
+  : SeverityCounts()
 {
   *this = jsonValue;
 }

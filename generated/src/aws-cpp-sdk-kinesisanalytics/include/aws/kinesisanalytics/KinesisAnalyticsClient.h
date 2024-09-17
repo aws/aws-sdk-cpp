@@ -559,13 +559,13 @@ namespace KinesisAnalytics
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema">AWS
          * API Reference</a></p>
          */
-        virtual Model::DiscoverInputSchemaOutcome DiscoverInputSchema(const Model::DiscoverInputSchemaRequest& request) const;
+        virtual Model::DiscoverInputSchemaOutcome DiscoverInputSchema(const Model::DiscoverInputSchemaRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DiscoverInputSchema that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DiscoverInputSchemaRequestT = Model::DiscoverInputSchemaRequest>
-        Model::DiscoverInputSchemaOutcomeCallable DiscoverInputSchemaCallable(const DiscoverInputSchemaRequestT& request) const
+        Model::DiscoverInputSchemaOutcomeCallable DiscoverInputSchemaCallable(const DiscoverInputSchemaRequestT& request = {}) const
         {
             return SubmitCallable(&KinesisAnalyticsClient::DiscoverInputSchema, request);
         }
@@ -574,7 +574,7 @@ namespace KinesisAnalytics
          * An Async wrapper for DiscoverInputSchema that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DiscoverInputSchemaRequestT = Model::DiscoverInputSchemaRequest>
-        void DiscoverInputSchemaAsync(const DiscoverInputSchemaRequestT& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DiscoverInputSchemaAsync(const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DiscoverInputSchemaRequestT& request = {}) const
         {
             return SubmitAsync(&KinesisAnalyticsClient::DiscoverInputSchema, request, handler, context);
         }
@@ -599,13 +599,13 @@ namespace KinesisAnalytics
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&KinesisAnalyticsClient::ListApplications, request);
         }
@@ -614,7 +614,7 @@ namespace KinesisAnalytics
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&KinesisAnalyticsClient::ListApplications, request, handler, context);
         }
@@ -827,7 +827,6 @@ namespace KinesisAnalytics
       void init(const KinesisAnalyticsClientConfiguration& clientConfiguration);
 
       KinesisAnalyticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KinesisAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 

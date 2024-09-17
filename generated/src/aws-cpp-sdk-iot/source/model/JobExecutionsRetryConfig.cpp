@@ -23,8 +23,8 @@ JobExecutionsRetryConfig::JobExecutionsRetryConfig() :
 {
 }
 
-JobExecutionsRetryConfig::JobExecutionsRetryConfig(JsonView jsonValue) : 
-    m_criteriaListHasBeenSet(false)
+JobExecutionsRetryConfig::JobExecutionsRetryConfig(JsonView jsonValue)
+  : JobExecutionsRetryConfig()
 {
   *this = jsonValue;
 }

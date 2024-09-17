@@ -24,9 +24,8 @@ WaitTime::WaitTime() :
 {
 }
 
-WaitTime::WaitTime(JsonView jsonValue) : 
-    m_waitForHasBeenSet(false),
-    m_waitUntilHasBeenSet(false)
+WaitTime::WaitTime(JsonView jsonValue)
+  : WaitTime()
 {
   *this = jsonValue;
 }

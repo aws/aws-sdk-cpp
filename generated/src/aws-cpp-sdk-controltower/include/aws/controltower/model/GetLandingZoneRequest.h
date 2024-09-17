@@ -32,46 +32,19 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the landing zone.</p>
      */
     inline const Aws::String& GetLandingZoneIdentifier() const{ return m_landingZoneIdentifier; }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline bool LandingZoneIdentifierHasBeenSet() const { return m_landingZoneIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline void SetLandingZoneIdentifier(const Aws::String& value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline void SetLandingZoneIdentifier(Aws::String&& value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline void SetLandingZoneIdentifier(const char* value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline GetLandingZoneRequest& WithLandingZoneIdentifier(const Aws::String& value) { SetLandingZoneIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline GetLandingZoneRequest& WithLandingZoneIdentifier(Aws::String&& value) { SetLandingZoneIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline GetLandingZoneRequest& WithLandingZoneIdentifier(const char* value) { SetLandingZoneIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_landingZoneIdentifier;

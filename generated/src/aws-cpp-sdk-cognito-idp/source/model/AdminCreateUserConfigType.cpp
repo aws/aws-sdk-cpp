@@ -27,12 +27,8 @@ AdminCreateUserConfigType::AdminCreateUserConfigType() :
 {
 }
 
-AdminCreateUserConfigType::AdminCreateUserConfigType(JsonView jsonValue) : 
-    m_allowAdminCreateUserOnly(false),
-    m_allowAdminCreateUserOnlyHasBeenSet(false),
-    m_unusedAccountValidityDays(0),
-    m_unusedAccountValidityDaysHasBeenSet(false),
-    m_inviteMessageTemplateHasBeenSet(false)
+AdminCreateUserConfigType::AdminCreateUserConfigType(JsonView jsonValue)
+  : AdminCreateUserConfigType()
 {
   *this = jsonValue;
 }

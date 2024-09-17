@@ -21,20 +21,15 @@ namespace Model
 MacAttributes::MacAttributes() : 
     m_algorithm(MacAlgorithm::NOT_SET),
     m_algorithmHasBeenSet(false),
-    m_dukptCmacHasBeenSet(false),
+    m_emvMacHasBeenSet(false),
     m_dukptIso9797Algorithm1HasBeenSet(false),
     m_dukptIso9797Algorithm3HasBeenSet(false),
-    m_emvMacHasBeenSet(false)
+    m_dukptCmacHasBeenSet(false)
 {
 }
 
-MacAttributes::MacAttributes(JsonView jsonValue) : 
-    m_algorithm(MacAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_dukptCmacHasBeenSet(false),
-    m_dukptIso9797Algorithm1HasBeenSet(false),
-    m_dukptIso9797Algorithm3HasBeenSet(false),
-    m_emvMacHasBeenSet(false)
+MacAttributes::MacAttributes(JsonView jsonValue)
+  : MacAttributes()
 {
   *this = jsonValue;
 }
@@ -48,11 +43,11 @@ MacAttributes& MacAttributes::operator =(JsonView jsonValue)
     m_algorithmHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("DukptCmac"))
+  if(jsonValue.ValueExists("EmvMac"))
   {
-    m_dukptCmac = jsonValue.GetObject("DukptCmac");
+    m_emvMac = jsonValue.GetObject("EmvMac");
 
-    m_dukptCmacHasBeenSet = true;
+    m_emvMacHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DukptIso9797Algorithm1"))
@@ -69,11 +64,11 @@ MacAttributes& MacAttributes::operator =(JsonView jsonValue)
     m_dukptIso9797Algorithm3HasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("EmvMac"))
+  if(jsonValue.ValueExists("DukptCmac"))
   {
-    m_emvMac = jsonValue.GetObject("EmvMac");
+    m_dukptCmac = jsonValue.GetObject("DukptCmac");
 
-    m_emvMacHasBeenSet = true;
+    m_dukptCmacHasBeenSet = true;
   }
 
   return *this;
@@ -88,9 +83,9 @@ JsonValue MacAttributes::Jsonize() const
    payload.WithString("Algorithm", MacAlgorithmMapper::GetNameForMacAlgorithm(m_algorithm));
   }
 
-  if(m_dukptCmacHasBeenSet)
+  if(m_emvMacHasBeenSet)
   {
-   payload.WithObject("DukptCmac", m_dukptCmac.Jsonize());
+   payload.WithObject("EmvMac", m_emvMac.Jsonize());
 
   }
 
@@ -106,9 +101,9 @@ JsonValue MacAttributes::Jsonize() const
 
   }
 
-  if(m_emvMacHasBeenSet)
+  if(m_dukptCmacHasBeenSet)
   {
-   payload.WithObject("EmvMac", m_emvMac.Jsonize());
+   payload.WithObject("DukptCmac", m_dukptCmac.Jsonize());
 
   }
 

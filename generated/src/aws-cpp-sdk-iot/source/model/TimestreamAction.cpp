@@ -27,12 +27,8 @@ TimestreamAction::TimestreamAction() :
 {
 }
 
-TimestreamAction::TimestreamAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+TimestreamAction::TimestreamAction(JsonView jsonValue)
+  : TimestreamAction()
 {
   *this = jsonValue;
 }

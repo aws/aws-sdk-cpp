@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for how much storage a user or group can use on the volume.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Used to configure quotas that define how much storage a user or group can use
+   * on an FSx for OpenZFS volume. For more information, see <a
+   * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume
+   * properties</a> in the FSx for OpenZFS User Guide. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSUserOrGroupQuota">AWS
    * API Reference</a></p>
    */
@@ -38,78 +40,37 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>A value that specifies whether the quota applies to a user or group.</p>
+     * <p>Specifies whether the quota applies to a user or group.</p>
      */
     inline const OpenZFSQuotaType& GetType() const{ return m_type; }
-
-    /**
-     * <p>A value that specifies whether the quota applies to a user or group.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>A value that specifies whether the quota applies to a user or group.</p>
-     */
     inline void SetType(const OpenZFSQuotaType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>A value that specifies whether the quota applies to a user or group.</p>
-     */
     inline void SetType(OpenZFSQuotaType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>A value that specifies whether the quota applies to a user or group.</p>
-     */
     inline OpenZFSUserOrGroupQuota& WithType(const OpenZFSQuotaType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>A value that specifies whether the quota applies to a user or group.</p>
-     */
     inline OpenZFSUserOrGroupQuota& WithType(OpenZFSQuotaType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The ID of the user or group.</p>
+     * <p>The ID of the user or group that the quota applies to.</p>
      */
     inline int GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the user or group.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the user or group.</p>
-     */
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the user or group.</p>
-     */
     inline OpenZFSUserOrGroupQuota& WithId(int value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
+     * <p>The user or group's storage quota, in gibibytes (GiB).</p>
      */
     inline int GetStorageCapacityQuotaGiB() const{ return m_storageCapacityQuotaGiB; }
-
-    /**
-     * <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-     */
     inline bool StorageCapacityQuotaGiBHasBeenSet() const { return m_storageCapacityQuotaGiBHasBeenSet; }
-
-    /**
-     * <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-     */
     inline void SetStorageCapacityQuotaGiB(int value) { m_storageCapacityQuotaGiBHasBeenSet = true; m_storageCapacityQuotaGiB = value; }
-
-    /**
-     * <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-     */
     inline OpenZFSUserOrGroupQuota& WithStorageCapacityQuotaGiB(int value) { SetStorageCapacityQuotaGiB(value); return *this;}
-
+    ///@}
   private:
 
     OpenZFSQuotaType m_type;

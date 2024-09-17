@@ -26,11 +26,8 @@ UnsupportedResource::UnsupportedResource() :
 {
 }
 
-UnsupportedResource::UnsupportedResource(JsonView jsonValue) : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_unsupportedResourceStatusHasBeenSet(false)
+UnsupportedResource::UnsupportedResource(JsonView jsonValue)
+  : UnsupportedResource()
 {
   *this = jsonValue;
 }

@@ -21,14 +21,13 @@ namespace Model
 IdMappingTechniques::IdMappingTechniques() : 
     m_idMappingType(IdMappingType::NOT_SET),
     m_idMappingTypeHasBeenSet(false),
-    m_providerPropertiesHasBeenSet(false)
+    m_providerPropertiesHasBeenSet(false),
+    m_ruleBasedPropertiesHasBeenSet(false)
 {
 }
 
-IdMappingTechniques::IdMappingTechniques(JsonView jsonValue) : 
-    m_idMappingType(IdMappingType::NOT_SET),
-    m_idMappingTypeHasBeenSet(false),
-    m_providerPropertiesHasBeenSet(false)
+IdMappingTechniques::IdMappingTechniques(JsonView jsonValue)
+  : IdMappingTechniques()
 {
   *this = jsonValue;
 }
@@ -49,6 +48,13 @@ IdMappingTechniques& IdMappingTechniques::operator =(JsonView jsonValue)
     m_providerPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ruleBasedProperties"))
+  {
+    m_ruleBasedProperties = jsonValue.GetObject("ruleBasedProperties");
+
+    m_ruleBasedPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +70,12 @@ JsonValue IdMappingTechniques::Jsonize() const
   if(m_providerPropertiesHasBeenSet)
   {
    payload.WithObject("providerProperties", m_providerProperties.Jsonize());
+
+  }
+
+  if(m_ruleBasedPropertiesHasBeenSet)
+  {
+   payload.WithObject("ruleBasedProperties", m_ruleBasedProperties.Jsonize());
 
   }
 

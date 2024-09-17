@@ -32,46 +32,19 @@ namespace Model
     AWS_IVS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Channel ARN for stream to be accessed.</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-
-    /**
-     * <p>Channel ARN for stream to be accessed.</p>
-     */
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-
-    /**
-     * <p>Channel ARN for stream to be accessed.</p>
-     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-
-    /**
-     * <p>Channel ARN for stream to be accessed.</p>
-     */
     inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-
-    /**
-     * <p>Channel ARN for stream to be accessed.</p>
-     */
     inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-
-    /**
-     * <p>Channel ARN for stream to be accessed.</p>
-     */
     inline GetStreamRequest& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-
-    /**
-     * <p>Channel ARN for stream to be accessed.</p>
-     */
     inline GetStreamRequest& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Channel ARN for stream to be accessed.</p>
-     */
     inline GetStreamRequest& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelArn;

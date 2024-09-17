@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/RetentionConfiguration.h>
+#include <aws/glue/model/OrphanFileDeletionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -39,75 +41,54 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A role passed by the caller which gives the service permission to update the
      * resources associated with the optimizer on the caller's behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>A role passed by the caller which gives the service permission to update the
-     * resources associated with the optimizer on the caller's behalf.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>A role passed by the caller which gives the service permission to update the
-     * resources associated with the optimizer on the caller's behalf.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>A role passed by the caller which gives the service permission to update the
-     * resources associated with the optimizer on the caller's behalf.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>A role passed by the caller which gives the service permission to update the
-     * resources associated with the optimizer on the caller's behalf.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>A role passed by the caller which gives the service permission to update the
-     * resources associated with the optimizer on the caller's behalf.</p>
-     */
     inline TableOptimizerConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>A role passed by the caller which gives the service permission to update the
-     * resources associated with the optimizer on the caller's behalf.</p>
-     */
     inline TableOptimizerConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>A role passed by the caller which gives the service permission to update the
-     * resources associated with the optimizer on the caller's behalf.</p>
-     */
     inline TableOptimizerConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>Whether table optimization is enabled. </p>
+     * <p>Whether table optimization is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Whether table optimization is enabled. </p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Whether table optimization is enabled. </p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Whether table optimization is enabled. </p>
-     */
     inline TableOptimizerConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The configuration for a snapshot retention optimizer.</p>
+     */
+    inline const RetentionConfiguration& GetRetentionConfiguration() const{ return m_retentionConfiguration; }
+    inline bool RetentionConfigurationHasBeenSet() const { return m_retentionConfigurationHasBeenSet; }
+    inline void SetRetentionConfiguration(const RetentionConfiguration& value) { m_retentionConfigurationHasBeenSet = true; m_retentionConfiguration = value; }
+    inline void SetRetentionConfiguration(RetentionConfiguration&& value) { m_retentionConfigurationHasBeenSet = true; m_retentionConfiguration = std::move(value); }
+    inline TableOptimizerConfiguration& WithRetentionConfiguration(const RetentionConfiguration& value) { SetRetentionConfiguration(value); return *this;}
+    inline TableOptimizerConfiguration& WithRetentionConfiguration(RetentionConfiguration&& value) { SetRetentionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for an orphan file deletion optimizer.</p>
+     */
+    inline const OrphanFileDeletionConfiguration& GetOrphanFileDeletionConfiguration() const{ return m_orphanFileDeletionConfiguration; }
+    inline bool OrphanFileDeletionConfigurationHasBeenSet() const { return m_orphanFileDeletionConfigurationHasBeenSet; }
+    inline void SetOrphanFileDeletionConfiguration(const OrphanFileDeletionConfiguration& value) { m_orphanFileDeletionConfigurationHasBeenSet = true; m_orphanFileDeletionConfiguration = value; }
+    inline void SetOrphanFileDeletionConfiguration(OrphanFileDeletionConfiguration&& value) { m_orphanFileDeletionConfigurationHasBeenSet = true; m_orphanFileDeletionConfiguration = std::move(value); }
+    inline TableOptimizerConfiguration& WithOrphanFileDeletionConfiguration(const OrphanFileDeletionConfiguration& value) { SetOrphanFileDeletionConfiguration(value); return *this;}
+    inline TableOptimizerConfiguration& WithOrphanFileDeletionConfiguration(OrphanFileDeletionConfiguration&& value) { SetOrphanFileDeletionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_roleArn;
@@ -115,6 +96,12 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet = false;
+
+    RetentionConfiguration m_retentionConfiguration;
+    bool m_retentionConfigurationHasBeenSet = false;
+
+    OrphanFileDeletionConfiguration m_orphanFileDeletionConfiguration;
+    bool m_orphanFileDeletionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

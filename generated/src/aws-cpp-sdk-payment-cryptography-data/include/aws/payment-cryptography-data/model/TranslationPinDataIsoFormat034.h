@@ -38,62 +38,21 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
      * identifier for a payment credit or debit card and associates the card to a
      * specific account holder.</p>
      */
     inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
-
-    /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
-     */
     inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
-
-    /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
-     */
     inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
-
-    /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
-     */
     inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
-
-    /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
-     */
     inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
-
-    /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
-     */
     inline TranslationPinDataIsoFormat034& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
-
-    /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
-     */
     inline TranslationPinDataIsoFormat034& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique
-     * identifier for a payment credit or debit card and associates the card to a
-     * specific account holder.</p>
-     */
     inline TranslationPinDataIsoFormat034& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_primaryAccountNumber;

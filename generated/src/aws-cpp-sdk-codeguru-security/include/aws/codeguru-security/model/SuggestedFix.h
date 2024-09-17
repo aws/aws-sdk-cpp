@@ -38,87 +38,34 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The suggested code to add to your file. </p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The suggested code to add to your file. </p>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The suggested code to add to your file. </p>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The suggested code to add to your file. </p>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>The suggested code to add to your file. </p>
-     */
     inline SuggestedFix& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The suggested code to add to your file. </p>
-     */
     inline SuggestedFix& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The suggested code to add to your file. </p>
-     */
     inline SuggestedFix& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the suggested code fix and why it is being suggested. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
     inline SuggestedFix& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
     inline SuggestedFix& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
     inline SuggestedFix& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_code;

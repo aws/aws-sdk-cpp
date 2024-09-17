@@ -34,19 +34,8 @@ GatewayInstance::GatewayInstance() :
 {
 }
 
-GatewayInstance::GatewayInstance(JsonView jsonValue) : 
-    m_bridgePlacement(BridgePlacement::NOT_SET),
-    m_bridgePlacementHasBeenSet(false),
-    m_connectionStatus(ConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false),
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayInstanceArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceMessagesHasBeenSet(false),
-    m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false),
-    m_runningBridgeCount(0),
-    m_runningBridgeCountHasBeenSet(false)
+GatewayInstance::GatewayInstance(JsonView jsonValue)
+  : GatewayInstance()
 {
   *this = jsonValue;
 }

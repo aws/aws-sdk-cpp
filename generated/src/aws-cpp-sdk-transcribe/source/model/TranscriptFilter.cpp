@@ -31,16 +31,8 @@ TranscriptFilter::TranscriptFilter() :
 {
 }
 
-TranscriptFilter::TranscriptFilter(JsonView jsonValue) : 
-    m_transcriptFilterType(TranscriptFilterType::NOT_SET),
-    m_transcriptFilterTypeHasBeenSet(false),
-    m_absoluteTimeRangeHasBeenSet(false),
-    m_relativeTimeRangeHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+TranscriptFilter::TranscriptFilter(JsonView jsonValue)
+  : TranscriptFilter()
 {
   *this = jsonValue;
 }

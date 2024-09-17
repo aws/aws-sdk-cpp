@@ -22,8 +22,8 @@ GetCustomModelResult::GetCustomModelResult() :
 {
 }
 
-GetCustomModelResult::GetCustomModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_customizationType(CustomizationType::NOT_SET)
+GetCustomModelResult::GetCustomModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCustomModelResult()
 {
   *this = result;
 }

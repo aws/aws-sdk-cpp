@@ -25,10 +25,8 @@ ProtectedQuerySQLParameters::ProtectedQuerySQLParameters() :
 {
 }
 
-ProtectedQuerySQLParameters::ProtectedQuerySQLParameters(JsonView jsonValue) : 
-    m_queryStringHasBeenSet(false),
-    m_analysisTemplateArnHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+ProtectedQuerySQLParameters::ProtectedQuerySQLParameters(JsonView jsonValue)
+  : ProtectedQuerySQLParameters()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ Lifecycle::Lifecycle() :
 {
 }
 
-Lifecycle::Lifecycle(JsonView jsonValue) : 
-    m_moveToColdStorageAfterDays(0),
-    m_moveToColdStorageAfterDaysHasBeenSet(false),
-    m_deleteAfterDays(0),
-    m_deleteAfterDaysHasBeenSet(false),
-    m_optInToArchiveForSupportedResources(false),
-    m_optInToArchiveForSupportedResourcesHasBeenSet(false)
+Lifecycle::Lifecycle(JsonView jsonValue)
+  : Lifecycle()
 {
   *this = jsonValue;
 }

@@ -19,32 +19,45 @@ namespace Model
 {
 
 Leg::Leg() : 
+    m_startPositionHasBeenSet(false),
+    m_endPositionHasBeenSet(false),
     m_distance(0.0),
     m_distanceHasBeenSet(false),
     m_durationSeconds(0.0),
     m_durationSecondsHasBeenSet(false),
-    m_endPositionHasBeenSet(false),
     m_geometryHasBeenSet(false),
-    m_startPositionHasBeenSet(false),
     m_stepsHasBeenSet(false)
 {
 }
 
-Leg::Leg(JsonView jsonValue) : 
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_endPositionHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_startPositionHasBeenSet(false),
-    m_stepsHasBeenSet(false)
+Leg::Leg(JsonView jsonValue)
+  : Leg()
 {
   *this = jsonValue;
 }
 
 Leg& Leg::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("StartPosition"))
+  {
+    Aws::Utils::Array<JsonView> startPositionJsonList = jsonValue.GetArray("StartPosition");
+    for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
+    {
+      m_startPosition.push_back(startPositionJsonList[startPositionIndex].AsDouble());
+    }
+    m_startPositionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndPosition"))
+  {
+    Aws::Utils::Array<JsonView> endPositionJsonList = jsonValue.GetArray("EndPosition");
+    for(unsigned endPositionIndex = 0; endPositionIndex < endPositionJsonList.GetLength(); ++endPositionIndex)
+    {
+      m_endPosition.push_back(endPositionJsonList[endPositionIndex].AsDouble());
+    }
+    m_endPositionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetDouble("Distance");
@@ -59,31 +72,11 @@ Leg& Leg::operator =(JsonView jsonValue)
     m_durationSecondsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("EndPosition"))
-  {
-    Aws::Utils::Array<JsonView> endPositionJsonList = jsonValue.GetArray("EndPosition");
-    for(unsigned endPositionIndex = 0; endPositionIndex < endPositionJsonList.GetLength(); ++endPositionIndex)
-    {
-      m_endPosition.push_back(endPositionJsonList[endPositionIndex].AsDouble());
-    }
-    m_endPositionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
 
     m_geometryHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("StartPosition"))
-  {
-    Aws::Utils::Array<JsonView> startPositionJsonList = jsonValue.GetArray("StartPosition");
-    for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
-    {
-      m_startPosition.push_back(startPositionJsonList[startPositionIndex].AsDouble());
-    }
-    m_startPositionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Steps"))
@@ -103,15 +96,14 @@ JsonValue Leg::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_distanceHasBeenSet)
+  if(m_startPositionHasBeenSet)
   {
-   payload.WithDouble("Distance", m_distance);
-
-  }
-
-  if(m_durationSecondsHasBeenSet)
-  {
-   payload.WithDouble("DurationSeconds", m_durationSeconds);
+   Aws::Utils::Array<JsonValue> startPositionJsonList(m_startPosition.size());
+   for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
+   {
+     startPositionJsonList[startPositionIndex].AsDouble(m_startPosition[startPositionIndex]);
+   }
+   payload.WithArray("StartPosition", std::move(startPositionJsonList));
 
   }
 
@@ -126,20 +118,21 @@ JsonValue Leg::Jsonize() const
 
   }
 
-  if(m_geometryHasBeenSet)
+  if(m_distanceHasBeenSet)
   {
-   payload.WithObject("Geometry", m_geometry.Jsonize());
+   payload.WithDouble("Distance", m_distance);
 
   }
 
-  if(m_startPositionHasBeenSet)
+  if(m_durationSecondsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> startPositionJsonList(m_startPosition.size());
-   for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
-   {
-     startPositionJsonList[startPositionIndex].AsDouble(m_startPosition[startPositionIndex]);
-   }
-   payload.WithArray("StartPosition", std::move(startPositionJsonList));
+   payload.WithDouble("DurationSeconds", m_durationSeconds);
+
+  }
+
+  if(m_geometryHasBeenSet)
+  {
+   payload.WithObject("Geometry", m_geometry.Jsonize());
 
   }
 

@@ -30,8 +30,9 @@ namespace Model
    * CloudWatch alarms, which you create in CloudWatch to use with the practice run.
    * The alarms that you specify are an <i>outcome alarm</i>, to monitor application
    * health during practice runs and, optionally, a <i>blocking alarm</i>, to block
-   * practice runs from starting.</p> <p>Control condition alarms do not apply for
-   * autoshifts.</p> <p>For more information, see <a
+   * practice runs from starting or to interrupt a practice run in progress.</p>
+   * <p>Control condition alarms do not apply for autoshifts.</p> <p>For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html">
    * Considerations when you configure zonal autoshift</a> in the Amazon Route 53
    * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
@@ -47,91 +48,34 @@ namespace Model
     AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
+     * <p>The Amazon Resource Name (ARN) for an Amazon CloudWatch alarm that you
      * specify as a control condition for a practice run.</p>
      */
     inline const Aws::String& GetAlarmIdentifier() const{ return m_alarmIdentifier; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
-     * specify as a control condition for a practice run.</p>
-     */
     inline bool AlarmIdentifierHasBeenSet() const { return m_alarmIdentifierHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
-     * specify as a control condition for a practice run.</p>
-     */
     inline void SetAlarmIdentifier(const Aws::String& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
-     * specify as a control condition for a practice run.</p>
-     */
     inline void SetAlarmIdentifier(Aws::String&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
-     * specify as a control condition for a practice run.</p>
-     */
     inline void SetAlarmIdentifier(const char* value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
-     * specify as a control condition for a practice run.</p>
-     */
     inline ControlCondition& WithAlarmIdentifier(const Aws::String& value) { SetAlarmIdentifier(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
-     * specify as a control condition for a practice run.</p>
-     */
     inline ControlCondition& WithAlarmIdentifier(Aws::String&& value) { SetAlarmIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you
-     * specify as a control condition for a practice run.</p>
-     */
     inline ControlCondition& WithAlarmIdentifier(const char* value) { SetAlarmIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The type of alarm specified for a practice run. The only valid value is
+     * <p>The type of alarm specified for a practice run. You can only specify Amazon
+     * CloudWatch alarms for practice runs, so the only valid value is
      * <code>CLOUDWATCH</code>.</p>
      */
     inline const ControlConditionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of alarm specified for a practice run. The only valid value is
-     * <code>CLOUDWATCH</code>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of alarm specified for a practice run. The only valid value is
-     * <code>CLOUDWATCH</code>.</p>
-     */
     inline void SetType(const ControlConditionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of alarm specified for a practice run. The only valid value is
-     * <code>CLOUDWATCH</code>.</p>
-     */
     inline void SetType(ControlConditionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of alarm specified for a practice run. The only valid value is
-     * <code>CLOUDWATCH</code>.</p>
-     */
     inline ControlCondition& WithType(const ControlConditionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of alarm specified for a practice run. The only valid value is
-     * <code>CLOUDWATCH</code>.</p>
-     */
     inline ControlCondition& WithType(ControlConditionType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alarmIdentifier;

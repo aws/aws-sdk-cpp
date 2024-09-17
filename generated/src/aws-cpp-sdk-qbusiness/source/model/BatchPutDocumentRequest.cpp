@@ -14,22 +14,16 @@ using namespace Aws::Utils;
 
 BatchPutDocumentRequest::BatchPutDocumentRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_dataSourceSyncIdHasBeenSet(false),
-    m_documentsHasBeenSet(false),
     m_indexIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_documentsHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_dataSourceSyncIdHasBeenSet(false)
 {
 }
 
 Aws::String BatchPutDocumentRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_dataSourceSyncIdHasBeenSet)
-  {
-   payload.WithString("dataSourceSyncId", m_dataSourceSyncId);
-
-  }
 
   if(m_documentsHasBeenSet)
   {
@@ -45,6 +39,12 @@ Aws::String BatchPutDocumentRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_dataSourceSyncIdHasBeenSet)
+  {
+   payload.WithString("dataSourceSyncId", m_dataSourceSyncId);
 
   }
 

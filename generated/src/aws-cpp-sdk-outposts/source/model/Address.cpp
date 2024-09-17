@@ -33,18 +33,8 @@ Address::Address() :
 {
 }
 
-Address::Address(JsonView jsonValue) : 
-    m_contactNameHasBeenSet(false),
-    m_contactPhoneNumberHasBeenSet(false),
-    m_addressLine1HasBeenSet(false),
-    m_addressLine2HasBeenSet(false),
-    m_addressLine3HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateOrRegionHasBeenSet(false),
-    m_districtOrCountyHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_municipalityHasBeenSet(false)
+Address::Address(JsonView jsonValue)
+  : Address()
 {
   *this = jsonValue;
 }

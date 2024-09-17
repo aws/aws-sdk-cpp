@@ -27,12 +27,8 @@ AwsEcsServiceCapacityProviderStrategyDetails::AwsEcsServiceCapacityProviderStrat
 {
 }
 
-AwsEcsServiceCapacityProviderStrategyDetails::AwsEcsServiceCapacityProviderStrategyDetails(JsonView jsonValue) : 
-    m_base(0),
-    m_baseHasBeenSet(false),
-    m_capacityProviderHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
+AwsEcsServiceCapacityProviderStrategyDetails::AwsEcsServiceCapacityProviderStrategyDetails(JsonView jsonValue)
+  : AwsEcsServiceCapacityProviderStrategyDetails()
 {
   *this = jsonValue;
 }

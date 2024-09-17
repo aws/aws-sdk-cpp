@@ -24,9 +24,8 @@ StartRecoveryRequestSourceServer::StartRecoveryRequestSourceServer() :
 {
 }
 
-StartRecoveryRequestSourceServer::StartRecoveryRequestSourceServer(JsonView jsonValue) : 
-    m_recoverySnapshotIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
+StartRecoveryRequestSourceServer::StartRecoveryRequestSourceServer(JsonView jsonValue)
+  : StartRecoveryRequestSourceServer()
 {
   *this = jsonValue;
 }

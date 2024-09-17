@@ -28,13 +28,8 @@ OutputColumn::OutputColumn() :
 {
 }
 
-OutputColumn::OutputColumn(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ColumnDataType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_subType(ColumnDataSubType::NOT_SET),
-    m_subTypeHasBeenSet(false)
+OutputColumn::OutputColumn(JsonView jsonValue)
+  : OutputColumn()
 {
   *this = jsonValue;
 }

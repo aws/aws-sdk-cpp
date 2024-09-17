@@ -39,95 +39,34 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of post launch action status.</p>
      */
     inline const Aws::Vector<LaunchActionRun>& GetRuns() const{ return m_runs; }
-
-    /**
-     * <p>List of post launch action status.</p>
-     */
     inline bool RunsHasBeenSet() const { return m_runsHasBeenSet; }
-
-    /**
-     * <p>List of post launch action status.</p>
-     */
     inline void SetRuns(const Aws::Vector<LaunchActionRun>& value) { m_runsHasBeenSet = true; m_runs = value; }
-
-    /**
-     * <p>List of post launch action status.</p>
-     */
     inline void SetRuns(Aws::Vector<LaunchActionRun>&& value) { m_runsHasBeenSet = true; m_runs = std::move(value); }
-
-    /**
-     * <p>List of post launch action status.</p>
-     */
     inline LaunchActionsStatus& WithRuns(const Aws::Vector<LaunchActionRun>& value) { SetRuns(value); return *this;}
-
-    /**
-     * <p>List of post launch action status.</p>
-     */
     inline LaunchActionsStatus& WithRuns(Aws::Vector<LaunchActionRun>&& value) { SetRuns(std::move(value)); return *this;}
-
-    /**
-     * <p>List of post launch action status.</p>
-     */
     inline LaunchActionsStatus& AddRuns(const LaunchActionRun& value) { m_runsHasBeenSet = true; m_runs.push_back(value); return *this; }
-
-    /**
-     * <p>List of post launch action status.</p>
-     */
     inline LaunchActionsStatus& AddRuns(LaunchActionRun&& value) { m_runsHasBeenSet = true; m_runs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Time where the AWS Systems Manager was detected as running on the launched
      * instance.</p>
      */
     inline const Aws::String& GetSsmAgentDiscoveryDatetime() const{ return m_ssmAgentDiscoveryDatetime; }
-
-    /**
-     * <p>Time where the AWS Systems Manager was detected as running on the launched
-     * instance.</p>
-     */
     inline bool SsmAgentDiscoveryDatetimeHasBeenSet() const { return m_ssmAgentDiscoveryDatetimeHasBeenSet; }
-
-    /**
-     * <p>Time where the AWS Systems Manager was detected as running on the launched
-     * instance.</p>
-     */
     inline void SetSsmAgentDiscoveryDatetime(const Aws::String& value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime = value; }
-
-    /**
-     * <p>Time where the AWS Systems Manager was detected as running on the launched
-     * instance.</p>
-     */
     inline void SetSsmAgentDiscoveryDatetime(Aws::String&& value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime = std::move(value); }
-
-    /**
-     * <p>Time where the AWS Systems Manager was detected as running on the launched
-     * instance.</p>
-     */
     inline void SetSsmAgentDiscoveryDatetime(const char* value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime.assign(value); }
-
-    /**
-     * <p>Time where the AWS Systems Manager was detected as running on the launched
-     * instance.</p>
-     */
     inline LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(const Aws::String& value) { SetSsmAgentDiscoveryDatetime(value); return *this;}
-
-    /**
-     * <p>Time where the AWS Systems Manager was detected as running on the launched
-     * instance.</p>
-     */
     inline LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(Aws::String&& value) { SetSsmAgentDiscoveryDatetime(std::move(value)); return *this;}
-
-    /**
-     * <p>Time where the AWS Systems Manager was detected as running on the launched
-     * instance.</p>
-     */
     inline LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(const char* value) { SetSsmAgentDiscoveryDatetime(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LaunchActionRun> m_runs;

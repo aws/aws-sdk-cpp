@@ -25,10 +25,8 @@ BridgeFlowOutput::BridgeFlowOutput() :
 {
 }
 
-BridgeFlowOutput::BridgeFlowOutput(JsonView jsonValue) : 
-    m_flowArnHasBeenSet(false),
-    m_flowSourceArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+BridgeFlowOutput::BridgeFlowOutput(JsonView jsonValue)
+  : BridgeFlowOutput()
 {
   *this = jsonValue;
 }

@@ -19,35 +19,23 @@ namespace Model
 {
 
 Index::Index() : 
-    m_createdAtHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_indexIdHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
     m_status(IndexStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
-Index::Index(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_status(IndexStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Index::Index(JsonView jsonValue)
+  : Index()
 {
   *this = jsonValue;
 }
 
 Index& Index::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
@@ -62,11 +50,11 @@ Index& Index::operator =(JsonView jsonValue)
     m_indexIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("status"));
+    m_createdAt = jsonValue.GetDouble("createdAt");
 
-    m_statusHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -76,17 +64,19 @@ Index& Index::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Index::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
 
   if(m_displayNameHasBeenSet)
   {
@@ -100,14 +90,19 @@ JsonValue Index::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("status", IndexStatusMapper::GetNameForIndexStatus(m_status));
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", IndexStatusMapper::GetNameForIndexStatus(m_status));
   }
 
   return payload;

@@ -23,8 +23,8 @@ PropertyFilter::PropertyFilter() :
 {
 }
 
-PropertyFilter::PropertyFilter(JsonView jsonValue) : 
-    m_propertyHasBeenSet(false)
+PropertyFilter::PropertyFilter(JsonView jsonValue)
+  : PropertyFilter()
 {
   *this = jsonValue;
 }

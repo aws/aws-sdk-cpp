@@ -23,9 +23,8 @@ GetSnowballUsageResult::GetSnowballUsageResult() :
 {
 }
 
-GetSnowballUsageResult::GetSnowballUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_snowballLimit(0),
-    m_snowballsInUse(0)
+GetSnowballUsageResult::GetSnowballUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSnowballUsageResult()
 {
   *this = result;
 }

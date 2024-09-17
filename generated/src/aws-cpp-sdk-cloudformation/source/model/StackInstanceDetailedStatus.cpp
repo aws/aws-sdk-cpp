@@ -27,6 +27,7 @@ namespace Aws
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
         static const int INOPERABLE_HASH = HashingUtils::HashString("INOPERABLE");
         static const int SKIPPED_SUSPENDED_ACCOUNT_HASH = HashingUtils::HashString("SKIPPED_SUSPENDED_ACCOUNT");
+        static const int FAILED_IMPORT_HASH = HashingUtils::HashString("FAILED_IMPORT");
 
 
         StackInstanceDetailedStatus GetStackInstanceDetailedStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return StackInstanceDetailedStatus::SKIPPED_SUSPENDED_ACCOUNT;
           }
+          else if (hashCode == FAILED_IMPORT_HASH)
+          {
+            return StackInstanceDetailedStatus::FAILED_IMPORT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "INOPERABLE";
           case StackInstanceDetailedStatus::SKIPPED_SUSPENDED_ACCOUNT:
             return "SKIPPED_SUSPENDED_ACCOUNT";
+          case StackInstanceDetailedStatus::FAILED_IMPORT:
+            return "FAILED_IMPORT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which
-   * means converting it from the JSON format in preparation for serializing it to
-   * the Parquet or ORC format. This is one of two deserializers you can choose,
+   * <p>The OpenX SerDe. Used by Firehose for deserializing data, which means
+   * converting it from the JSON format in preparation for serializing it to the
+   * Parquet or ORC format. This is one of two deserializers you can choose,
    * depending on which one offers the functionality you need. The other option is
    * the native Hive / HCatalog JsonSerDe.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/OpenXJsonSerDe">AWS
@@ -42,72 +42,32 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When set to <code>true</code>, specifies that the names of the keys include
-     * dots and that you want Kinesis Data Firehose to replace them with underscores.
-     * This is useful because Apache Hive does not allow dots in column names. For
-     * example, if the JSON contains a key whose name is "a.b", you can define the
-     * column name to be "a_b" when using this option.</p> <p>The default is
-     * <code>false</code>.</p>
+     * dots and that you want Firehose to replace them with underscores. This is useful
+     * because Apache Hive does not allow dots in column names. For example, if the
+     * JSON contains a key whose name is "a.b", you can define the column name to be
+     * "a_b" when using this option.</p> <p>The default is <code>false</code>.</p>
      */
     inline bool GetConvertDotsInJsonKeysToUnderscores() const{ return m_convertDotsInJsonKeysToUnderscores; }
-
-    /**
-     * <p>When set to <code>true</code>, specifies that the names of the keys include
-     * dots and that you want Kinesis Data Firehose to replace them with underscores.
-     * This is useful because Apache Hive does not allow dots in column names. For
-     * example, if the JSON contains a key whose name is "a.b", you can define the
-     * column name to be "a_b" when using this option.</p> <p>The default is
-     * <code>false</code>.</p>
-     */
     inline bool ConvertDotsInJsonKeysToUnderscoresHasBeenSet() const { return m_convertDotsInJsonKeysToUnderscoresHasBeenSet; }
-
-    /**
-     * <p>When set to <code>true</code>, specifies that the names of the keys include
-     * dots and that you want Kinesis Data Firehose to replace them with underscores.
-     * This is useful because Apache Hive does not allow dots in column names. For
-     * example, if the JSON contains a key whose name is "a.b", you can define the
-     * column name to be "a_b" when using this option.</p> <p>The default is
-     * <code>false</code>.</p>
-     */
     inline void SetConvertDotsInJsonKeysToUnderscores(bool value) { m_convertDotsInJsonKeysToUnderscoresHasBeenSet = true; m_convertDotsInJsonKeysToUnderscores = value; }
-
-    /**
-     * <p>When set to <code>true</code>, specifies that the names of the keys include
-     * dots and that you want Kinesis Data Firehose to replace them with underscores.
-     * This is useful because Apache Hive does not allow dots in column names. For
-     * example, if the JSON contains a key whose name is "a.b", you can define the
-     * column name to be "a_b" when using this option.</p> <p>The default is
-     * <code>false</code>.</p>
-     */
     inline OpenXJsonSerDe& WithConvertDotsInJsonKeysToUnderscores(bool value) { SetConvertDotsInJsonKeysToUnderscores(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>When set to <code>true</code>, which is the default, Kinesis Data Firehose
-     * converts JSON keys to lowercase before deserializing them.</p>
+     * <p>When set to <code>true</code>, which is the default, Firehose converts JSON
+     * keys to lowercase before deserializing them.</p>
      */
     inline bool GetCaseInsensitive() const{ return m_caseInsensitive; }
-
-    /**
-     * <p>When set to <code>true</code>, which is the default, Kinesis Data Firehose
-     * converts JSON keys to lowercase before deserializing them.</p>
-     */
     inline bool CaseInsensitiveHasBeenSet() const { return m_caseInsensitiveHasBeenSet; }
-
-    /**
-     * <p>When set to <code>true</code>, which is the default, Kinesis Data Firehose
-     * converts JSON keys to lowercase before deserializing them.</p>
-     */
     inline void SetCaseInsensitive(bool value) { m_caseInsensitiveHasBeenSet = true; m_caseInsensitive = value; }
-
-    /**
-     * <p>When set to <code>true</code>, which is the default, Kinesis Data Firehose
-     * converts JSON keys to lowercase before deserializing them.</p>
-     */
     inline OpenXJsonSerDe& WithCaseInsensitive(bool value) { SetCaseInsensitive(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maps column names to JSON keys that aren't identical to the column names.
      * This is useful when the JSON contains keys that are Hive keywords. For example,
@@ -116,115 +76,19 @@ namespace Model
      * to map this key to a column named <code>ts</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetColumnToJsonKeyMappings() const{ return m_columnToJsonKeyMappings; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline bool ColumnToJsonKeyMappingsHasBeenSet() const { return m_columnToJsonKeyMappingsHasBeenSet; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline void SetColumnToJsonKeyMappings(const Aws::Map<Aws::String, Aws::String>& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings = value; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline void SetColumnToJsonKeyMappings(Aws::Map<Aws::String, Aws::String>&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings = std::move(value); }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& WithColumnToJsonKeyMappings(const Aws::Map<Aws::String, Aws::String>& value) { SetColumnToJsonKeyMappings(value); return *this;}
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& WithColumnToJsonKeyMappings(Aws::Map<Aws::String, Aws::String>&& value) { SetColumnToJsonKeyMappings(std::move(value)); return *this;}
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const Aws::String& key, const Aws::String& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, value); return *this; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(Aws::String&& key, const Aws::String& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const Aws::String& key, Aws::String&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(Aws::String&& key, Aws::String&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const char* key, Aws::String&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(Aws::String&& key, const char* value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Maps column names to JSON keys that aren't identical to the column names.
-     * This is useful when the JSON contains keys that are Hive keywords. For example,
-     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
-     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
-     * to map this key to a column named <code>ts</code>.</p>
-     */
     inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const char* key, const char* value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     bool m_convertDotsInJsonKeysToUnderscores;

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The monitoring configuration for Apache Zeppelin within a Kinesis Data
-   * Analytics Studio notebook.</p><p><h3>See Also:</h3>   <a
+   * <p>The monitoring configuration for Apache Zeppelin within a Managed Service for
+   * Apache Flink Studio notebook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinMonitoringConfigurationDescription">AWS
    * API Reference</a></p>
    */
@@ -38,36 +38,17 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-
-    /**
-     * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-     */
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-
-    /**
-     * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-     */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-
-    /**
-     * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-     */
     inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-
-    /**
-     * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-     */
     inline ZeppelinMonitoringConfigurationDescription& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-
-    /**
-     * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-     */
     inline ZeppelinMonitoringConfigurationDescription& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LogLevel m_logLevel;

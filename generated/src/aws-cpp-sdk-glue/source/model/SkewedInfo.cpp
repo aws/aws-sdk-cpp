@@ -25,10 +25,8 @@ SkewedInfo::SkewedInfo() :
 {
 }
 
-SkewedInfo::SkewedInfo(JsonView jsonValue) : 
-    m_skewedColumnNamesHasBeenSet(false),
-    m_skewedColumnValuesHasBeenSet(false),
-    m_skewedColumnValueLocationMapsHasBeenSet(false)
+SkewedInfo::SkewedInfo(JsonView jsonValue)
+  : SkewedInfo()
 {
   *this = jsonValue;
 }

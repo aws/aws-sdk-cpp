@@ -33,12 +33,19 @@ Aws::String ListPoliciesGrantingServiceAccessRequest::SerializePayload() const
 
   if(m_serviceNamespacesHasBeenSet)
   {
-    unsigned serviceNamespacesCount = 1;
-    for(auto& item : m_serviceNamespaces)
+    if (m_serviceNamespaces.empty())
     {
-      ss << "ServiceNamespaces.member." << serviceNamespacesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      serviceNamespacesCount++;
+      ss << "ServiceNamespaces=&";
+    }
+    else
+    {
+      unsigned serviceNamespacesCount = 1;
+      for(auto& item : m_serviceNamespaces)
+      {
+        ss << "ServiceNamespaces.member." << serviceNamespacesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        serviceNamespacesCount++;
+      }
     }
   }
 

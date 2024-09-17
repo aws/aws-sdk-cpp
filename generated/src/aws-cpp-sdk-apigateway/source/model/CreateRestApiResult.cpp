@@ -24,10 +24,8 @@ CreateRestApiResult::CreateRestApiResult() :
 {
 }
 
-CreateRestApiResult::CreateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_minimumCompressionSize(0),
-    m_apiKeySource(ApiKeySourceType::NOT_SET),
-    m_disableExecuteApiEndpoint(false)
+CreateRestApiResult::CreateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRestApiResult()
 {
   *this = result;
 }

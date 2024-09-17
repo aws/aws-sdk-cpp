@@ -19,12 +19,14 @@ namespace Model
 {
 
 TaskSchedule::TaskSchedule() : 
-    m_scheduleExpressionHasBeenSet(false)
+    m_scheduleExpressionHasBeenSet(false),
+    m_status(ScheduleStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
-TaskSchedule::TaskSchedule(JsonView jsonValue) : 
-    m_scheduleExpressionHasBeenSet(false)
+TaskSchedule::TaskSchedule(JsonView jsonValue)
+  : TaskSchedule()
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ TaskSchedule& TaskSchedule::operator =(JsonView jsonValue)
     m_scheduleExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = ScheduleStatusMapper::GetScheduleStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +58,11 @@ JsonValue TaskSchedule::Jsonize() const
   {
    payload.WithString("ScheduleExpression", m_scheduleExpression);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", ScheduleStatusMapper::GetNameForScheduleStatus(m_status));
   }
 
   return payload;

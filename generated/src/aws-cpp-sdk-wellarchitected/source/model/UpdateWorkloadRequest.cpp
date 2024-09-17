@@ -32,7 +32,8 @@ UpdateWorkloadRequest::UpdateWorkloadRequest() :
     m_improvementStatus(WorkloadImprovementStatus::NOT_SET),
     m_improvementStatusHasBeenSet(false),
     m_discoveryConfigHasBeenSet(false),
-    m_applicationsHasBeenSet(false)
+    m_applicationsHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,12 @@ Aws::String UpdateWorkloadRequest::SerializePayload() const
      applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
    }
    payload.WithArray("Applications", std::move(applicationsJsonList));
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
 
   }
 

@@ -29,14 +29,8 @@ AwsWafRegionalRateBasedRuleDetails::AwsWafRegionalRateBasedRuleDetails() :
 {
 }
 
-AwsWafRegionalRateBasedRuleDetails::AwsWafRegionalRateBasedRuleDetails(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rateKeyHasBeenSet(false),
-    m_rateLimit(0),
-    m_rateLimitHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_matchPredicatesHasBeenSet(false)
+AwsWafRegionalRateBasedRuleDetails::AwsWafRegionalRateBasedRuleDetails(JsonView jsonValue)
+  : AwsWafRegionalRateBasedRuleDetails()
 {
   *this = jsonValue;
 }

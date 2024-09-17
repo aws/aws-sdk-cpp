@@ -140,6 +140,35 @@ namespace SupplyChain
             return SubmitAsync(&SupplyChainClient::GetBillOfMaterialsImportJob, request, handler, context);
         }
 
+        /**
+         * <p>Send the transactional data payload for the event with real-time data for
+         * analysis or monitoring. The real-time data events are stored in an Amazon Web
+         * Services service before being processed and stored in data lake. New data events
+         * are synced with data lake at 5 PM GMT everyday. The updated transactional data
+         * is available in data lake after ingestion.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/SendDataIntegrationEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendDataIntegrationEventOutcome SendDataIntegrationEvent(const Model::SendDataIntegrationEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendDataIntegrationEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendDataIntegrationEventRequestT = Model::SendDataIntegrationEventRequest>
+        Model::SendDataIntegrationEventOutcomeCallable SendDataIntegrationEventCallable(const SendDataIntegrationEventRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::SendDataIntegrationEvent, request);
+        }
+
+        /**
+         * An Async wrapper for SendDataIntegrationEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendDataIntegrationEventRequestT = Model::SendDataIntegrationEventRequest>
+        void SendDataIntegrationEventAsync(const SendDataIntegrationEventRequestT& request, const SendDataIntegrationEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::SendDataIntegrationEvent, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SupplyChainEndpointProviderBase>& accessEndpointProvider();
@@ -148,7 +177,6 @@ namespace SupplyChain
       void init(const SupplyChainClientConfiguration& clientConfiguration);
 
       SupplyChainClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SupplyChainEndpointProviderBase> m_endpointProvider;
   };
 

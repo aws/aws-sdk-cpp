@@ -23,8 +23,8 @@ PerformanceMetrics::PerformanceMetrics() :
 {
 }
 
-PerformanceMetrics::PerformanceMetrics(JsonView jsonValue) : 
-    m_propertiesHasBeenSet(false)
+PerformanceMetrics::PerformanceMetrics(JsonView jsonValue)
+  : PerformanceMetrics()
 {
   *this = jsonValue;
 }

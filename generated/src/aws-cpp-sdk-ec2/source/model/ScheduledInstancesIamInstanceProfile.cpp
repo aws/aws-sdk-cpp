@@ -26,9 +26,8 @@ ScheduledInstancesIamInstanceProfile::ScheduledInstancesIamInstanceProfile() :
 {
 }
 
-ScheduledInstancesIamInstanceProfile::ScheduledInstancesIamInstanceProfile(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ScheduledInstancesIamInstanceProfile::ScheduledInstancesIamInstanceProfile(const XmlNode& xmlNode)
+  : ScheduledInstancesIamInstanceProfile()
 {
   *this = xmlNode;
 }

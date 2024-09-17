@@ -29,15 +29,15 @@ UpdateRouteCalculatorResult::UpdateRouteCalculatorResult(const Aws::AmazonWebSer
 UpdateRouteCalculatorResult& UpdateRouteCalculatorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CalculatorArn"))
-  {
-    m_calculatorArn = jsonValue.GetString("CalculatorArn");
-
-  }
-
   if(jsonValue.ValueExists("CalculatorName"))
   {
     m_calculatorName = jsonValue.GetString("CalculatorName");
+
+  }
+
+  if(jsonValue.ValueExists("CalculatorArn"))
+  {
+    m_calculatorArn = jsonValue.GetString("CalculatorArn");
 
   }
 

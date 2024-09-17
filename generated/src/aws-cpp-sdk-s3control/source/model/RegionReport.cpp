@@ -27,10 +27,8 @@ RegionReport::RegionReport() :
 {
 }
 
-RegionReport::RegionReport(const XmlNode& xmlNode) : 
-    m_bucketHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
+RegionReport::RegionReport(const XmlNode& xmlNode)
+  : RegionReport()
 {
   *this = xmlNode;
 }

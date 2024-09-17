@@ -26,11 +26,8 @@ DecimalValueWhenUnsetConfiguration::DecimalValueWhenUnsetConfiguration() :
 {
 }
 
-DecimalValueWhenUnsetConfiguration::DecimalValueWhenUnsetConfiguration(JsonView jsonValue) : 
-    m_valueWhenUnsetOption(ValueWhenUnsetOption::NOT_SET),
-    m_valueWhenUnsetOptionHasBeenSet(false),
-    m_customValue(0.0),
-    m_customValueHasBeenSet(false)
+DecimalValueWhenUnsetConfiguration::DecimalValueWhenUnsetConfiguration(JsonView jsonValue)
+  : DecimalValueWhenUnsetConfiguration()
 {
   *this = jsonValue;
 }

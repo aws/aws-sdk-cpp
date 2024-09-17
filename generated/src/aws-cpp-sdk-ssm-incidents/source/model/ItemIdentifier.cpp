@@ -25,10 +25,8 @@ ItemIdentifier::ItemIdentifier() :
 {
 }
 
-ItemIdentifier::ItemIdentifier(JsonView jsonValue) : 
-    m_type(ItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ItemIdentifier::ItemIdentifier(JsonView jsonValue)
+  : ItemIdentifier()
 {
   *this = jsonValue;
 }

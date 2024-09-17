@@ -37,46 +37,19 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique token that identifies the CIS session.</p>
      */
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
-
-    /**
-     * <p>The unique token that identifies the CIS session.</p>
-     */
     inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
-
-    /**
-     * <p>The unique token that identifies the CIS session.</p>
-     */
     inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
-
-    /**
-     * <p>The unique token that identifies the CIS session.</p>
-     */
     inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
-
-    /**
-     * <p>The unique token that identifies the CIS session.</p>
-     */
     inline void SetSessionToken(const char* value) { m_sessionTokenHasBeenSet = true; m_sessionToken.assign(value); }
-
-    /**
-     * <p>The unique token that identifies the CIS session.</p>
-     */
     inline StartCisSessionMessage& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
-
-    /**
-     * <p>The unique token that identifies the CIS session.</p>
-     */
     inline StartCisSessionMessage& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique token that identifies the CIS session.</p>
-     */
     inline StartCisSessionMessage& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sessionToken;

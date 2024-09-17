@@ -22,8 +22,8 @@ PutOptedOutNumberResult::PutOptedOutNumberResult() :
 {
 }
 
-PutOptedOutNumberResult::PutOptedOutNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_endUserOptedOut(false)
+PutOptedOutNumberResult::PutOptedOutNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutOptedOutNumberResult()
 {
   *this = result;
 }

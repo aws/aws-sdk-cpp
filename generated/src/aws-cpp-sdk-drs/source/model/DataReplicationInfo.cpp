@@ -26,19 +26,13 @@ DataReplicationInfo::DataReplicationInfo() :
     m_etaDateTimeHasBeenSet(false),
     m_lagDurationHasBeenSet(false),
     m_replicatedDisksHasBeenSet(false),
-    m_stagingAvailabilityZoneHasBeenSet(false)
+    m_stagingAvailabilityZoneHasBeenSet(false),
+    m_stagingOutpostArnHasBeenSet(false)
 {
 }
 
-DataReplicationInfo::DataReplicationInfo(JsonView jsonValue) : 
-    m_dataReplicationErrorHasBeenSet(false),
-    m_dataReplicationInitiationHasBeenSet(false),
-    m_dataReplicationState(DataReplicationState::NOT_SET),
-    m_dataReplicationStateHasBeenSet(false),
-    m_etaDateTimeHasBeenSet(false),
-    m_lagDurationHasBeenSet(false),
-    m_replicatedDisksHasBeenSet(false),
-    m_stagingAvailabilityZoneHasBeenSet(false)
+DataReplicationInfo::DataReplicationInfo(JsonView jsonValue)
+  : DataReplicationInfo()
 {
   *this = jsonValue;
 }
@@ -97,6 +91,13 @@ DataReplicationInfo& DataReplicationInfo::operator =(JsonView jsonValue)
     m_stagingAvailabilityZoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stagingOutpostArn"))
+  {
+    m_stagingOutpostArn = jsonValue.GetString("stagingOutpostArn");
+
+    m_stagingOutpostArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +148,12 @@ JsonValue DataReplicationInfo::Jsonize() const
   if(m_stagingAvailabilityZoneHasBeenSet)
   {
    payload.WithString("stagingAvailabilityZone", m_stagingAvailabilityZone);
+
+  }
+
+  if(m_stagingOutpostArnHasBeenSet)
+  {
+   payload.WithString("stagingOutpostArn", m_stagingOutpostArn);
 
   }
 

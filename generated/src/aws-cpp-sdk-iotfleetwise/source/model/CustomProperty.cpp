@@ -31,16 +31,8 @@ CustomProperty::CustomProperty() :
 {
 }
 
-CustomProperty::CustomProperty(JsonView jsonValue) : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_dataType(NodeDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataEncoding(NodeDataEncoding::NOT_SET),
-    m_dataEncodingHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_structFullyQualifiedNameHasBeenSet(false)
+CustomProperty::CustomProperty(JsonView jsonValue)
+  : CustomProperty()
 {
   *this = jsonValue;
 }

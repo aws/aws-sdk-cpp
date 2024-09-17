@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -43,97 +44,35 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteInstanceEventWindowRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify <code>true</code> to force delete the event window. Use the force
      * delete parameter if the event window is currently associated with targets.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
-
-    /**
-     * <p>Specify <code>true</code> to force delete the event window. Use the force
-     * delete parameter if the event window is currently associated with targets.</p>
-     */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
-
-    /**
-     * <p>Specify <code>true</code> to force delete the event window. Use the force
-     * delete parameter if the event window is currently associated with targets.</p>
-     */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
-
-    /**
-     * <p>Specify <code>true</code> to force delete the event window. Use the force
-     * delete parameter if the event window is currently associated with targets.</p>
-     */
     inline DeleteInstanceEventWindowRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the event window.</p>
      */
     inline const Aws::String& GetInstanceEventWindowId() const{ return m_instanceEventWindowId; }
-
-    /**
-     * <p>The ID of the event window.</p>
-     */
     inline bool InstanceEventWindowIdHasBeenSet() const { return m_instanceEventWindowIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the event window.</p>
-     */
     inline void SetInstanceEventWindowId(const Aws::String& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = value; }
-
-    /**
-     * <p>The ID of the event window.</p>
-     */
     inline void SetInstanceEventWindowId(Aws::String&& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = std::move(value); }
-
-    /**
-     * <p>The ID of the event window.</p>
-     */
     inline void SetInstanceEventWindowId(const char* value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId.assign(value); }
-
-    /**
-     * <p>The ID of the event window.</p>
-     */
     inline DeleteInstanceEventWindowRequest& WithInstanceEventWindowId(const Aws::String& value) { SetInstanceEventWindowId(value); return *this;}
-
-    /**
-     * <p>The ID of the event window.</p>
-     */
     inline DeleteInstanceEventWindowRequest& WithInstanceEventWindowId(Aws::String&& value) { SetInstanceEventWindowId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the event window.</p>
-     */
     inline DeleteInstanceEventWindowRequest& WithInstanceEventWindowId(const char* value) { SetInstanceEventWindowId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

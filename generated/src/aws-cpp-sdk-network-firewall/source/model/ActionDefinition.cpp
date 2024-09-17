@@ -23,8 +23,8 @@ ActionDefinition::ActionDefinition() :
 {
 }
 
-ActionDefinition::ActionDefinition(JsonView jsonValue) : 
-    m_publishMetricActionHasBeenSet(false)
+ActionDefinition::ActionDefinition(JsonView jsonValue)
+  : ActionDefinition()
 {
   *this = jsonValue;
 }

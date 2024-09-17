@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     CREATE_FAILED,
-    UPDATE_FAILED
+    UPDATE_FAILED,
+    ACTION_REQUIRED,
+    PENDING_DELETION,
+    INSUFFICIENT_CAPACITY
   };
 
 namespace FleetContextCodeMapper

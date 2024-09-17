@@ -38,159 +38,59 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The bot Id from the conversation logs.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The bot Id from the conversation logs.</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The bot Id from the conversation logs.</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The bot Id from the conversation logs.</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The bot Id from the conversation logs.</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The bot Id from the conversation logs.</p>
-     */
     inline ConversationLogsDataSource& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The bot Id from the conversation logs.</p>
-     */
     inline ConversationLogsDataSource& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The bot Id from the conversation logs.</p>
-     */
     inline ConversationLogsDataSource& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The bot alias Id from the conversation logs.</p>
      */
     inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
-
-    /**
-     * <p>The bot alias Id from the conversation logs.</p>
-     */
     inline bool BotAliasIdHasBeenSet() const { return m_botAliasIdHasBeenSet; }
-
-    /**
-     * <p>The bot alias Id from the conversation logs.</p>
-     */
     inline void SetBotAliasId(const Aws::String& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = value; }
-
-    /**
-     * <p>The bot alias Id from the conversation logs.</p>
-     */
     inline void SetBotAliasId(Aws::String&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::move(value); }
-
-    /**
-     * <p>The bot alias Id from the conversation logs.</p>
-     */
     inline void SetBotAliasId(const char* value) { m_botAliasIdHasBeenSet = true; m_botAliasId.assign(value); }
-
-    /**
-     * <p>The bot alias Id from the conversation logs.</p>
-     */
     inline ConversationLogsDataSource& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-
-    /**
-     * <p>The bot alias Id from the conversation logs.</p>
-     */
     inline ConversationLogsDataSource& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-
-    /**
-     * <p>The bot alias Id from the conversation logs.</p>
-     */
     inline ConversationLogsDataSource& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The locale Id of the conversation log.</p>
      */
     inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-
-    /**
-     * <p>The locale Id of the conversation log.</p>
-     */
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-
-    /**
-     * <p>The locale Id of the conversation log.</p>
-     */
     inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-
-    /**
-     * <p>The locale Id of the conversation log.</p>
-     */
     inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-
-    /**
-     * <p>The locale Id of the conversation log.</p>
-     */
     inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-
-    /**
-     * <p>The locale Id of the conversation log.</p>
-     */
     inline ConversationLogsDataSource& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-
-    /**
-     * <p>The locale Id of the conversation log.</p>
-     */
     inline ConversationLogsDataSource& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The locale Id of the conversation log.</p>
-     */
     inline ConversationLogsDataSource& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filter for the data source of the conversation log.</p>
      */
     inline const ConversationLogsDataSourceFilterBy& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>The filter for the data source of the conversation log.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>The filter for the data source of the conversation log.</p>
-     */
     inline void SetFilter(const ConversationLogsDataSourceFilterBy& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>The filter for the data source of the conversation log.</p>
-     */
     inline void SetFilter(ConversationLogsDataSourceFilterBy&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>The filter for the data source of the conversation log.</p>
-     */
     inline ConversationLogsDataSource& WithFilter(const ConversationLogsDataSourceFilterBy& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>The filter for the data source of the conversation log.</p>
-     */
     inline ConversationLogsDataSource& WithFilter(ConversationLogsDataSourceFilterBy&& value) { SetFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botId;

@@ -41,26 +41,8 @@ ReservedElasticsearchInstance::ReservedElasticsearchInstance() :
 {
 }
 
-ReservedElasticsearchInstance::ReservedElasticsearchInstance(JsonView jsonValue) : 
-    m_reservationNameHasBeenSet(false),
-    m_reservedElasticsearchInstanceIdHasBeenSet(false),
-    m_reservedElasticsearchInstanceOfferingIdHasBeenSet(false),
-    m_elasticsearchInstanceType(ESPartitionInstanceType::NOT_SET),
-    m_elasticsearchInstanceTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_elasticsearchInstanceCount(0),
-    m_elasticsearchInstanceCountHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_paymentOption(ReservedElasticsearchInstancePaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+ReservedElasticsearchInstance::ReservedElasticsearchInstance(JsonView jsonValue)
+  : ReservedElasticsearchInstance()
 {
   *this = jsonValue;
 }

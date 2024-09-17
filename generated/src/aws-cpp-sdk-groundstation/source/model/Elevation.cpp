@@ -26,11 +26,8 @@ Elevation::Elevation() :
 {
 }
 
-Elevation::Elevation(JsonView jsonValue) : 
-    m_unit(AngleUnits::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+Elevation::Elevation(JsonView jsonValue)
+  : Elevation()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ TopicsDetectionJobProperties::TopicsDetectionJobProperties() :
 {
 }
 
-TopicsDetectionJobProperties::TopicsDetectionJobProperties(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_numberOfTopics(0),
-    m_numberOfTopicsHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+TopicsDetectionJobProperties::TopicsDetectionJobProperties(JsonView jsonValue)
+  : TopicsDetectionJobProperties()
 {
   *this = jsonValue;
 }

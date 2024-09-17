@@ -19,12 +19,13 @@ namespace Model
 {
 
 VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration() : 
-    m_embeddingModelArnHasBeenSet(false)
+    m_embeddingModelArnHasBeenSet(false),
+    m_embeddingModelConfigurationHasBeenSet(false)
 {
 }
 
-VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration(JsonView jsonValue) : 
-    m_embeddingModelArnHasBeenSet(false)
+VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration(JsonView jsonValue)
+  : VectorKnowledgeBaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ VectorKnowledgeBaseConfiguration& VectorKnowledgeBaseConfiguration::operator =(J
     m_embeddingModelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("embeddingModelConfiguration"))
+  {
+    m_embeddingModelConfiguration = jsonValue.GetObject("embeddingModelConfiguration");
+
+    m_embeddingModelConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue VectorKnowledgeBaseConfiguration::Jsonize() const
   if(m_embeddingModelArnHasBeenSet)
   {
    payload.WithString("embeddingModelArn", m_embeddingModelArn);
+
+  }
+
+  if(m_embeddingModelConfigurationHasBeenSet)
+  {
+   payload.WithObject("embeddingModelConfiguration", m_embeddingModelConfiguration.Jsonize());
 
   }
 

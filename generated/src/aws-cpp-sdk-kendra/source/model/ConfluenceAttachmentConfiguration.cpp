@@ -25,10 +25,8 @@ ConfluenceAttachmentConfiguration::ConfluenceAttachmentConfiguration() :
 {
 }
 
-ConfluenceAttachmentConfiguration::ConfluenceAttachmentConfiguration(JsonView jsonValue) : 
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_attachmentFieldMappingsHasBeenSet(false)
+ConfluenceAttachmentConfiguration::ConfluenceAttachmentConfiguration(JsonView jsonValue)
+  : ConfluenceAttachmentConfiguration()
 {
   *this = jsonValue;
 }

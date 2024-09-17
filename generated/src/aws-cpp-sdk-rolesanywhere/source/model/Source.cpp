@@ -25,10 +25,8 @@ Source::Source() :
 {
 }
 
-Source::Source(JsonView jsonValue) : 
-    m_sourceDataHasBeenSet(false),
-    m_sourceType(TrustAnchorType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+Source::Source(JsonView jsonValue)
+  : Source()
 {
   *this = jsonValue;
 }

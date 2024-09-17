@@ -46,6 +46,13 @@
 #include <aws/inspector/model/PreviewAgentsResult.h>
 #include <aws/inspector/model/RemoveAttributesFromFindingsResult.h>
 #include <aws/inspector/model/StartAssessmentRunResult.h>
+#include <aws/inspector/model/ListAssessmentTargetsRequest.h>
+#include <aws/inspector/model/DescribeCrossAccountAccessRoleRequest.h>
+#include <aws/inspector/model/ListEventSubscriptionsRequest.h>
+#include <aws/inspector/model/ListAssessmentRunsRequest.h>
+#include <aws/inspector/model/ListFindingsRequest.h>
+#include <aws/inspector/model/ListAssessmentTemplatesRequest.h>
+#include <aws/inspector/model/ListRulesPackagesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in InspectorClient header */
 
@@ -80,7 +87,7 @@ namespace Aws
 
   namespace Inspector
   {
-    using InspectorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using InspectorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using InspectorEndpointProviderBase = Aws::Inspector::Endpoint::InspectorEndpointProviderBase;
     using InspectorEndpointProvider = Aws::Inspector::Endpoint::InspectorEndpointProvider;
 

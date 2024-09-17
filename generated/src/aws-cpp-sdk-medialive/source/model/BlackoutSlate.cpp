@@ -29,14 +29,8 @@ BlackoutSlate::BlackoutSlate() :
 {
 }
 
-BlackoutSlate::BlackoutSlate(JsonView jsonValue) : 
-    m_blackoutSlateImageHasBeenSet(false),
-    m_networkEndBlackout(BlackoutSlateNetworkEndBlackout::NOT_SET),
-    m_networkEndBlackoutHasBeenSet(false),
-    m_networkEndBlackoutImageHasBeenSet(false),
-    m_networkIdHasBeenSet(false),
-    m_state(BlackoutSlateState::NOT_SET),
-    m_stateHasBeenSet(false)
+BlackoutSlate::BlackoutSlate(JsonView jsonValue)
+  : BlackoutSlate()
 {
   *this = jsonValue;
 }

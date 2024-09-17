@@ -24,6 +24,7 @@ namespace Aws
         static const int AWS_Logs_LogGroup_HASH = HashingUtils::HashString("AWS::Logs::LogGroup");
         static const int AWS_XRay_Trace_HASH = HashingUtils::HashString("AWS::XRay::Trace");
         static const int AWS_ApplicationInsights_Application_HASH = HashingUtils::HashString("AWS::ApplicationInsights::Application");
+        static const int AWS_InternetMonitor_Monitor_HASH = HashingUtils::HashString("AWS::InternetMonitor::Monitor");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == AWS_ApplicationInsights_Application_HASH)
           {
             return ResourceType::AWS_ApplicationInsights_Application;
+          }
+          else if (hashCode == AWS_InternetMonitor_Monitor_HASH)
+          {
+            return ResourceType::AWS_InternetMonitor_Monitor;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "AWS::XRay::Trace";
           case ResourceType::AWS_ApplicationInsights_Application:
             return "AWS::ApplicationInsights::Application";
+          case ResourceType::AWS_InternetMonitor_Monitor:
+            return "AWS::InternetMonitor::Monitor";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

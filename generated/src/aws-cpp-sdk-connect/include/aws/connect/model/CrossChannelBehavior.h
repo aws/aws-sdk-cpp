@@ -39,42 +39,18 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the other channels that can be routed to an agent handling their
      * current channel.</p>
      */
     inline const BehaviorType& GetBehaviorType() const{ return m_behaviorType; }
-
-    /**
-     * <p>Specifies the other channels that can be routed to an agent handling their
-     * current channel.</p>
-     */
     inline bool BehaviorTypeHasBeenSet() const { return m_behaviorTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the other channels that can be routed to an agent handling their
-     * current channel.</p>
-     */
     inline void SetBehaviorType(const BehaviorType& value) { m_behaviorTypeHasBeenSet = true; m_behaviorType = value; }
-
-    /**
-     * <p>Specifies the other channels that can be routed to an agent handling their
-     * current channel.</p>
-     */
     inline void SetBehaviorType(BehaviorType&& value) { m_behaviorTypeHasBeenSet = true; m_behaviorType = std::move(value); }
-
-    /**
-     * <p>Specifies the other channels that can be routed to an agent handling their
-     * current channel.</p>
-     */
     inline CrossChannelBehavior& WithBehaviorType(const BehaviorType& value) { SetBehaviorType(value); return *this;}
-
-    /**
-     * <p>Specifies the other channels that can be routed to an agent handling their
-     * current channel.</p>
-     */
     inline CrossChannelBehavior& WithBehaviorType(BehaviorType&& value) { SetBehaviorType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BehaviorType m_behaviorType;

@@ -23,8 +23,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(JsonView jsonValue) : 
-    m_recommendationTextHasBeenSet(false)
+Recommendation::Recommendation(JsonView jsonValue)
+  : Recommendation()
 {
   *this = jsonValue;
 }

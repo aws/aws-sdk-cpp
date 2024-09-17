@@ -23,8 +23,8 @@ ErrorReportConfiguration::ErrorReportConfiguration() :
 {
 }
 
-ErrorReportConfiguration::ErrorReportConfiguration(JsonView jsonValue) : 
-    m_s3ConfigurationHasBeenSet(false)
+ErrorReportConfiguration::ErrorReportConfiguration(JsonView jsonValue)
+  : ErrorReportConfiguration()
 {
   *this = jsonValue;
 }

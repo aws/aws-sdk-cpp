@@ -39,24 +39,8 @@ BatchImport::BatchImport() :
 {
 }
 
-BatchImport::BatchImport(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_status(AsyncJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_inputPathHasBeenSet(false),
-    m_outputPathHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_processedRecordsCount(0),
-    m_processedRecordsCountHasBeenSet(false),
-    m_failedRecordsCount(0),
-    m_failedRecordsCountHasBeenSet(false),
-    m_totalRecordsCount(0),
-    m_totalRecordsCountHasBeenSet(false)
+BatchImport::BatchImport(JsonView jsonValue)
+  : BatchImport()
 {
   *this = jsonValue;
 }

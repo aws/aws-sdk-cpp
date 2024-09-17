@@ -39,95 +39,34 @@ namespace Model
     AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
      * URLs and names are case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
-
-    /**
-     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
-     * URLs and names are case-sensitive.</p>
-     */
     inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
-
-    /**
-     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
-     * URLs and names are case-sensitive.</p>
-     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
-
-    /**
-     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
-     * URLs and names are case-sensitive.</p>
-     */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
-
-    /**
-     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
-     * URLs and names are case-sensitive.</p>
-     */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
-
-    /**
-     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
-     * URLs and names are case-sensitive.</p>
-     */
     inline DeleteMessageBatchRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
-
-    /**
-     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
-     * URLs and names are case-sensitive.</p>
-     */
     inline DeleteMessageBatchRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
-     * URLs and names are case-sensitive.</p>
-     */
     inline DeleteMessageBatchRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline const Aws::Vector<DeleteMessageBatchRequestEntry>& GetEntries() const{ return m_entries; }
-
-    /**
-     * <p>Lists the receipt handles for the messages to be deleted.</p>
-     */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-
-    /**
-     * <p>Lists the receipt handles for the messages to be deleted.</p>
-     */
     inline void SetEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-
-    /**
-     * <p>Lists the receipt handles for the messages to be deleted.</p>
-     */
     inline void SetEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-
-    /**
-     * <p>Lists the receipt handles for the messages to be deleted.</p>
-     */
     inline DeleteMessageBatchRequest& WithEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { SetEntries(value); return *this;}
-
-    /**
-     * <p>Lists the receipt handles for the messages to be deleted.</p>
-     */
     inline DeleteMessageBatchRequest& WithEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the receipt handles for the messages to be deleted.</p>
-     */
     inline DeleteMessageBatchRequest& AddEntries(const DeleteMessageBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-
-    /**
-     * <p>Lists the receipt handles for the messages to be deleted.</p>
-     */
     inline DeleteMessageBatchRequest& AddEntries(DeleteMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_queueUrl;

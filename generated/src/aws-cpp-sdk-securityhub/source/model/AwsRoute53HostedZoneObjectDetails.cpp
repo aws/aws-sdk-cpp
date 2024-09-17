@@ -25,10 +25,8 @@ AwsRoute53HostedZoneObjectDetails::AwsRoute53HostedZoneObjectDetails() :
 {
 }
 
-AwsRoute53HostedZoneObjectDetails::AwsRoute53HostedZoneObjectDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configHasBeenSet(false)
+AwsRoute53HostedZoneObjectDetails::AwsRoute53HostedZoneObjectDetails(JsonView jsonValue)
+  : AwsRoute53HostedZoneObjectDetails()
 {
   *this = jsonValue;
 }

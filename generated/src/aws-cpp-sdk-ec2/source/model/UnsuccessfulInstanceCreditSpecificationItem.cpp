@@ -26,9 +26,8 @@ UnsuccessfulInstanceCreditSpecificationItem::UnsuccessfulInstanceCreditSpecifica
 {
 }
 
-UnsuccessfulInstanceCreditSpecificationItem::UnsuccessfulInstanceCreditSpecificationItem(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+UnsuccessfulInstanceCreditSpecificationItem::UnsuccessfulInstanceCreditSpecificationItem(const XmlNode& xmlNode)
+  : UnsuccessfulInstanceCreditSpecificationItem()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ DisableImageDeprecationResponse::DisableImageDeprecationResponse() :
 {
 }
 
-DisableImageDeprecationResponse::DisableImageDeprecationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DisableImageDeprecationResponse::DisableImageDeprecationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisableImageDeprecationResponse()
 {
   *this = result;
 }

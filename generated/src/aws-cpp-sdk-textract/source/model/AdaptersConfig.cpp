@@ -23,8 +23,8 @@ AdaptersConfig::AdaptersConfig() :
 {
 }
 
-AdaptersConfig::AdaptersConfig(JsonView jsonValue) : 
-    m_adaptersHasBeenSet(false)
+AdaptersConfig::AdaptersConfig(JsonView jsonValue)
+  : AdaptersConfig()
 {
   *this = jsonValue;
 }

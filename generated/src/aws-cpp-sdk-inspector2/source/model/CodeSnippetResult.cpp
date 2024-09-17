@@ -29,14 +29,8 @@ CodeSnippetResult::CodeSnippetResult() :
 {
 }
 
-CodeSnippetResult::CodeSnippetResult(JsonView jsonValue) : 
-    m_codeSnippetHasBeenSet(false),
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false),
-    m_suggestedFixesHasBeenSet(false)
+CodeSnippetResult::CodeSnippetResult(JsonView jsonValue)
+  : CodeSnippetResult()
 {
   *this = jsonValue;
 }

@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
-#include <aws/resource-groups/model/GetAccountSettingsRequest.h>
 
 namespace Aws
 {
@@ -147,13 +146,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
+        virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteGroupRequestT = Model::DeleteGroupRequest>
-        Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const DeleteGroupRequestT& request) const
+        Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const DeleteGroupRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::DeleteGroup, request);
         }
@@ -162,7 +161,7 @@ namespace ResourceGroups
          * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteGroupRequestT = Model::DeleteGroupRequest>
-        void DeleteGroupAsync(const DeleteGroupRequestT& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteGroupAsync(const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteGroupRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::DeleteGroup, request, handler, context);
         }
@@ -201,13 +200,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
+        virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetGroupRequestT = Model::GetGroupRequest>
-        Model::GetGroupOutcomeCallable GetGroupCallable(const GetGroupRequestT& request) const
+        Model::GetGroupOutcomeCallable GetGroupCallable(const GetGroupRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::GetGroup, request);
         }
@@ -216,7 +215,7 @@ namespace ResourceGroups
          * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetGroupRequestT = Model::GetGroupRequest>
-        void GetGroupAsync(const GetGroupRequestT& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetGroupAsync(const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGroupRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::GetGroup, request, handler, context);
         }
@@ -232,13 +231,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetGroupConfigurationOutcome GetGroupConfiguration(const Model::GetGroupConfigurationRequest& request) const;
+        virtual Model::GetGroupConfigurationOutcome GetGroupConfiguration(const Model::GetGroupConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetGroupConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetGroupConfigurationRequestT = Model::GetGroupConfigurationRequest>
-        Model::GetGroupConfigurationOutcomeCallable GetGroupConfigurationCallable(const GetGroupConfigurationRequestT& request) const
+        Model::GetGroupConfigurationOutcomeCallable GetGroupConfigurationCallable(const GetGroupConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::GetGroupConfiguration, request);
         }
@@ -247,7 +246,7 @@ namespace ResourceGroups
          * An Async wrapper for GetGroupConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetGroupConfigurationRequestT = Model::GetGroupConfigurationRequest>
-        void GetGroupConfigurationAsync(const GetGroupConfigurationRequestT& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetGroupConfigurationAsync(const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGroupConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::GetGroupConfiguration, request, handler, context);
         }
@@ -263,13 +262,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetGroupQueryOutcome GetGroupQuery(const Model::GetGroupQueryRequest& request) const;
+        virtual Model::GetGroupQueryOutcome GetGroupQuery(const Model::GetGroupQueryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetGroupQuery that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetGroupQueryRequestT = Model::GetGroupQueryRequest>
-        Model::GetGroupQueryOutcomeCallable GetGroupQueryCallable(const GetGroupQueryRequestT& request) const
+        Model::GetGroupQueryOutcomeCallable GetGroupQueryCallable(const GetGroupQueryRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::GetGroupQuery, request);
         }
@@ -278,7 +277,7 @@ namespace ResourceGroups
          * An Async wrapper for GetGroupQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetGroupQueryRequestT = Model::GetGroupQueryRequest>
-        void GetGroupQueryAsync(const GetGroupQueryRequestT& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetGroupQueryAsync(const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGroupQueryRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::GetGroupQuery, request, handler, context);
         }
@@ -355,13 +354,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGroupResourcesOutcome ListGroupResources(const Model::ListGroupResourcesRequest& request) const;
+        virtual Model::ListGroupResourcesOutcome ListGroupResources(const Model::ListGroupResourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGroupResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGroupResourcesRequestT = Model::ListGroupResourcesRequest>
-        Model::ListGroupResourcesOutcomeCallable ListGroupResourcesCallable(const ListGroupResourcesRequestT& request) const
+        Model::ListGroupResourcesOutcomeCallable ListGroupResourcesCallable(const ListGroupResourcesRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::ListGroupResources, request);
         }
@@ -370,7 +369,7 @@ namespace ResourceGroups
          * An Async wrapper for ListGroupResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGroupResourcesRequestT = Model::ListGroupResourcesRequest>
-        void ListGroupResourcesAsync(const ListGroupResourcesRequestT& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGroupResourcesAsync(const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGroupResourcesRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::ListGroupResources, request, handler, context);
         }
@@ -383,13 +382,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
+        virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGroupsRequestT = Model::ListGroupsRequest>
-        Model::ListGroupsOutcomeCallable ListGroupsCallable(const ListGroupsRequestT& request) const
+        Model::ListGroupsOutcomeCallable ListGroupsCallable(const ListGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::ListGroups, request);
         }
@@ -398,7 +397,7 @@ namespace ResourceGroups
          * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGroupsRequestT = Model::ListGroupsRequest>
-        void ListGroupsAsync(const ListGroupsRequestT& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGroupsAsync(const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::ListGroups, request, handler, context);
         }
@@ -414,13 +413,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PutGroupConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutGroupConfigurationOutcome PutGroupConfiguration(const Model::PutGroupConfigurationRequest& request) const;
+        virtual Model::PutGroupConfigurationOutcome PutGroupConfiguration(const Model::PutGroupConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutGroupConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutGroupConfigurationRequestT = Model::PutGroupConfigurationRequest>
-        Model::PutGroupConfigurationOutcomeCallable PutGroupConfigurationCallable(const PutGroupConfigurationRequestT& request) const
+        Model::PutGroupConfigurationOutcomeCallable PutGroupConfigurationCallable(const PutGroupConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::PutGroupConfiguration, request);
         }
@@ -429,7 +428,7 @@ namespace ResourceGroups
          * An Async wrapper for PutGroupConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutGroupConfigurationRequestT = Model::PutGroupConfigurationRequest>
-        void PutGroupConfigurationAsync(const PutGroupConfigurationRequestT& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutGroupConfigurationAsync(const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutGroupConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::PutGroupConfiguration, request, handler, context);
         }
@@ -567,13 +566,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
+        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
-        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request) const
+        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::UpdateAccountSettings, request);
         }
@@ -582,7 +581,7 @@ namespace ResourceGroups
          * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
-        void UpdateAccountSettingsAsync(const UpdateAccountSettingsRequestT& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountSettingsAsync(const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::UpdateAccountSettings, request, handler, context);
         }
@@ -596,13 +595,13 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
+        virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateGroupRequestT = Model::UpdateGroupRequest>
-        Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const UpdateGroupRequestT& request) const
+        Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const UpdateGroupRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceGroupsClient::UpdateGroup, request);
         }
@@ -611,7 +610,7 @@ namespace ResourceGroups
          * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateGroupRequestT = Model::UpdateGroupRequest>
-        void UpdateGroupAsync(const UpdateGroupRequestT& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateGroupAsync(const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateGroupRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceGroupsClient::UpdateGroup, request, handler, context);
         }
@@ -655,7 +654,6 @@ namespace ResourceGroups
       void init(const ResourceGroupsClientConfiguration& clientConfiguration);
 
       ResourceGroupsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ResourceGroupsEndpointProviderBase> m_endpointProvider;
   };
 

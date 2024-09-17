@@ -26,11 +26,8 @@ SvmEndpoints::SvmEndpoints() :
 {
 }
 
-SvmEndpoints::SvmEndpoints(JsonView jsonValue) : 
-    m_iscsiHasBeenSet(false),
-    m_managementHasBeenSet(false),
-    m_nfsHasBeenSet(false),
-    m_smbHasBeenSet(false)
+SvmEndpoints::SvmEndpoints(JsonView jsonValue)
+  : SvmEndpoints()
 {
   *this = jsonValue;
 }

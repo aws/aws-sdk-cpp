@@ -26,11 +26,8 @@ StatefulRule::StatefulRule() :
 {
 }
 
-StatefulRule::StatefulRule(JsonView jsonValue) : 
-    m_action(StatefulAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false)
+StatefulRule::StatefulRule(JsonView jsonValue)
+  : StatefulRule()
 {
   *this = jsonValue;
 }

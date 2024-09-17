@@ -35,97 +35,34 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Resolver endpoint that you want to associate IP addresses
      * with.</p>
      */
     inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to associate IP addresses
-     * with.</p>
-     */
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to associate IP addresses
-     * with.</p>
-     */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to associate IP addresses
-     * with.</p>
-     */
     inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to associate IP addresses
-     * with.</p>
-     */
     inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to associate IP addresses
-     * with.</p>
-     */
     inline AssociateResolverEndpointIpAddressRequest& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to associate IP addresses
-     * with.</p>
-     */
     inline AssociateResolverEndpointIpAddressRequest& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to associate IP addresses
-     * with.</p>
-     */
     inline AssociateResolverEndpointIpAddressRequest& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Either the IPv4 address that you want to add to a Resolver endpoint or a
      * subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you
      * from the available IPs in the specified subnet.</p>
      */
     inline const IpAddressUpdate& GetIpAddress() const{ return m_ipAddress; }
-
-    /**
-     * <p>Either the IPv4 address that you want to add to a Resolver endpoint or a
-     * subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you
-     * from the available IPs in the specified subnet.</p>
-     */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-
-    /**
-     * <p>Either the IPv4 address that you want to add to a Resolver endpoint or a
-     * subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you
-     * from the available IPs in the specified subnet.</p>
-     */
     inline void SetIpAddress(const IpAddressUpdate& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-
-    /**
-     * <p>Either the IPv4 address that you want to add to a Resolver endpoint or a
-     * subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you
-     * from the available IPs in the specified subnet.</p>
-     */
     inline void SetIpAddress(IpAddressUpdate&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-
-    /**
-     * <p>Either the IPv4 address that you want to add to a Resolver endpoint or a
-     * subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you
-     * from the available IPs in the specified subnet.</p>
-     */
     inline AssociateResolverEndpointIpAddressRequest& WithIpAddress(const IpAddressUpdate& value) { SetIpAddress(value); return *this;}
-
-    /**
-     * <p>Either the IPv4 address that you want to add to a Resolver endpoint or a
-     * subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you
-     * from the available IPs in the specified subnet.</p>
-     */
     inline AssociateResolverEndpointIpAddressRequest& WithIpAddress(IpAddressUpdate&& value) { SetIpAddress(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resolverEndpointId;

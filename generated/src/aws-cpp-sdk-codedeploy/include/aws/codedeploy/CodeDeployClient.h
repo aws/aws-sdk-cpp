@@ -332,13 +332,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">AWS
          * API Reference</a></p>
          */
-        virtual Model::ContinueDeploymentOutcome ContinueDeployment(const Model::ContinueDeploymentRequest& request) const;
+        virtual Model::ContinueDeploymentOutcome ContinueDeployment(const Model::ContinueDeploymentRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ContinueDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ContinueDeploymentRequestT = Model::ContinueDeploymentRequest>
-        Model::ContinueDeploymentOutcomeCallable ContinueDeploymentCallable(const ContinueDeploymentRequestT& request) const
+        Model::ContinueDeploymentOutcomeCallable ContinueDeploymentCallable(const ContinueDeploymentRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::ContinueDeployment, request);
         }
@@ -347,7 +347,7 @@ namespace CodeDeploy
          * An Async wrapper for ContinueDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ContinueDeploymentRequestT = Model::ContinueDeploymentRequest>
-        void ContinueDeploymentAsync(const ContinueDeploymentRequestT& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ContinueDeploymentAsync(const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ContinueDeploymentRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::ContinueDeployment, request, handler, context);
         }
@@ -536,13 +536,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteGitHubAccountTokenOutcome DeleteGitHubAccountToken(const Model::DeleteGitHubAccountTokenRequest& request) const;
+        virtual Model::DeleteGitHubAccountTokenOutcome DeleteGitHubAccountToken(const Model::DeleteGitHubAccountTokenRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteGitHubAccountToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteGitHubAccountTokenRequestT = Model::DeleteGitHubAccountTokenRequest>
-        Model::DeleteGitHubAccountTokenOutcomeCallable DeleteGitHubAccountTokenCallable(const DeleteGitHubAccountTokenRequestT& request) const
+        Model::DeleteGitHubAccountTokenOutcomeCallable DeleteGitHubAccountTokenCallable(const DeleteGitHubAccountTokenRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::DeleteGitHubAccountToken, request);
         }
@@ -551,7 +551,7 @@ namespace CodeDeploy
          * An Async wrapper for DeleteGitHubAccountToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteGitHubAccountTokenRequestT = Model::DeleteGitHubAccountTokenRequest>
-        void DeleteGitHubAccountTokenAsync(const DeleteGitHubAccountTokenRequestT& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteGitHubAccountTokenAsync(const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteGitHubAccountTokenRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::DeleteGitHubAccountToken, request, handler, context);
         }
@@ -566,13 +566,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteResourcesByExternalId">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteResourcesByExternalIdOutcome DeleteResourcesByExternalId(const Model::DeleteResourcesByExternalIdRequest& request) const;
+        virtual Model::DeleteResourcesByExternalIdOutcome DeleteResourcesByExternalId(const Model::DeleteResourcesByExternalIdRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteResourcesByExternalId that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteResourcesByExternalIdRequestT = Model::DeleteResourcesByExternalIdRequest>
-        Model::DeleteResourcesByExternalIdOutcomeCallable DeleteResourcesByExternalIdCallable(const DeleteResourcesByExternalIdRequestT& request) const
+        Model::DeleteResourcesByExternalIdOutcomeCallable DeleteResourcesByExternalIdCallable(const DeleteResourcesByExternalIdRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::DeleteResourcesByExternalId, request);
         }
@@ -581,7 +581,7 @@ namespace CodeDeploy
          * An Async wrapper for DeleteResourcesByExternalId that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteResourcesByExternalIdRequestT = Model::DeleteResourcesByExternalIdRequest>
-        void DeleteResourcesByExternalIdAsync(const DeleteResourcesByExternalIdRequestT& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteResourcesByExternalIdAsync(const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourcesByExternalIdRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::DeleteResourcesByExternalId, request, handler, context);
         }
@@ -825,13 +825,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::ListApplications, request);
         }
@@ -840,7 +840,7 @@ namespace CodeDeploy
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::ListApplications, request, handler, context);
         }
@@ -851,13 +851,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDeploymentConfigsOutcome ListDeploymentConfigs(const Model::ListDeploymentConfigsRequest& request) const;
+        virtual Model::ListDeploymentConfigsOutcome ListDeploymentConfigs(const Model::ListDeploymentConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDeploymentConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDeploymentConfigsRequestT = Model::ListDeploymentConfigsRequest>
-        Model::ListDeploymentConfigsOutcomeCallable ListDeploymentConfigsCallable(const ListDeploymentConfigsRequestT& request) const
+        Model::ListDeploymentConfigsOutcomeCallable ListDeploymentConfigsCallable(const ListDeploymentConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::ListDeploymentConfigs, request);
         }
@@ -866,7 +866,7 @@ namespace CodeDeploy
          * An Async wrapper for ListDeploymentConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDeploymentConfigsRequestT = Model::ListDeploymentConfigsRequest>
-        void ListDeploymentConfigsAsync(const ListDeploymentConfigsRequestT& request, const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDeploymentConfigsAsync(const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeploymentConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::ListDeploymentConfigs, request, handler, context);
         }
@@ -929,13 +929,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
+        virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
-        Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const ListDeploymentsRequestT& request) const
+        Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const ListDeploymentsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::ListDeployments, request);
         }
@@ -944,7 +944,7 @@ namespace CodeDeploy
          * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
-        void ListDeploymentsAsync(const ListDeploymentsRequestT& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDeploymentsAsync(const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeploymentsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::ListDeployments, request, handler, context);
         }
@@ -955,13 +955,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGitHubAccountTokenNamesOutcome ListGitHubAccountTokenNames(const Model::ListGitHubAccountTokenNamesRequest& request) const;
+        virtual Model::ListGitHubAccountTokenNamesOutcome ListGitHubAccountTokenNames(const Model::ListGitHubAccountTokenNamesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGitHubAccountTokenNames that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGitHubAccountTokenNamesRequestT = Model::ListGitHubAccountTokenNamesRequest>
-        Model::ListGitHubAccountTokenNamesOutcomeCallable ListGitHubAccountTokenNamesCallable(const ListGitHubAccountTokenNamesRequestT& request) const
+        Model::ListGitHubAccountTokenNamesOutcomeCallable ListGitHubAccountTokenNamesCallable(const ListGitHubAccountTokenNamesRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::ListGitHubAccountTokenNames, request);
         }
@@ -970,7 +970,7 @@ namespace CodeDeploy
          * An Async wrapper for ListGitHubAccountTokenNames that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGitHubAccountTokenNamesRequestT = Model::ListGitHubAccountTokenNamesRequest>
-        void ListGitHubAccountTokenNamesAsync(const ListGitHubAccountTokenNamesRequestT& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGitHubAccountTokenNamesAsync(const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGitHubAccountTokenNamesRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::ListGitHubAccountTokenNames, request, handler, context);
         }
@@ -983,13 +983,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOnPremisesInstancesOutcome ListOnPremisesInstances(const Model::ListOnPremisesInstancesRequest& request) const;
+        virtual Model::ListOnPremisesInstancesOutcome ListOnPremisesInstances(const Model::ListOnPremisesInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOnPremisesInstancesRequestT = Model::ListOnPremisesInstancesRequest>
-        Model::ListOnPremisesInstancesOutcomeCallable ListOnPremisesInstancesCallable(const ListOnPremisesInstancesRequestT& request) const
+        Model::ListOnPremisesInstancesOutcomeCallable ListOnPremisesInstancesCallable(const ListOnPremisesInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::ListOnPremisesInstances, request);
         }
@@ -998,7 +998,7 @@ namespace CodeDeploy
          * An Async wrapper for ListOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOnPremisesInstancesRequestT = Model::ListOnPremisesInstancesRequest>
-        void ListOnPremisesInstancesAsync(const ListOnPremisesInstancesRequestT& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOnPremisesInstancesAsync(const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOnPremisesInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::ListOnPremisesInstances, request, handler, context);
         }
@@ -1047,13 +1047,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutLifecycleEventHookExecutionStatusOutcome PutLifecycleEventHookExecutionStatus(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
+        virtual Model::PutLifecycleEventHookExecutionStatusOutcome PutLifecycleEventHookExecutionStatus(const Model::PutLifecycleEventHookExecutionStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutLifecycleEventHookExecutionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutLifecycleEventHookExecutionStatusRequestT = Model::PutLifecycleEventHookExecutionStatusRequest>
-        Model::PutLifecycleEventHookExecutionStatusOutcomeCallable PutLifecycleEventHookExecutionStatusCallable(const PutLifecycleEventHookExecutionStatusRequestT& request) const
+        Model::PutLifecycleEventHookExecutionStatusOutcomeCallable PutLifecycleEventHookExecutionStatusCallable(const PutLifecycleEventHookExecutionStatusRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::PutLifecycleEventHookExecutionStatus, request);
         }
@@ -1062,7 +1062,7 @@ namespace CodeDeploy
          * An Async wrapper for PutLifecycleEventHookExecutionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutLifecycleEventHookExecutionStatusRequestT = Model::PutLifecycleEventHookExecutionStatusRequest>
-        void PutLifecycleEventHookExecutionStatusAsync(const PutLifecycleEventHookExecutionStatusRequestT& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutLifecycleEventHookExecutionStatusAsync(const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutLifecycleEventHookExecutionStatusRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::PutLifecycleEventHookExecutionStatus, request, handler, context);
         }
@@ -1231,13 +1231,13 @@ namespace CodeDeploy
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
+        virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateApplicationRequestT = Model::UpdateApplicationRequest>
-        Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const UpdateApplicationRequestT& request) const
+        Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const UpdateApplicationRequestT& request = {}) const
         {
             return SubmitCallable(&CodeDeployClient::UpdateApplication, request);
         }
@@ -1246,7 +1246,7 @@ namespace CodeDeploy
          * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateApplicationRequestT = Model::UpdateApplicationRequest>
-        void UpdateApplicationAsync(const UpdateApplicationRequestT& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateApplicationAsync(const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateApplicationRequestT& request = {}) const
         {
             return SubmitAsync(&CodeDeployClient::UpdateApplication, request, handler, context);
         }
@@ -1284,7 +1284,6 @@ namespace CodeDeploy
       void init(const CodeDeployClientConfiguration& clientConfiguration);
 
       CodeDeployClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeDeployEndpointProviderBase> m_endpointProvider;
   };
 

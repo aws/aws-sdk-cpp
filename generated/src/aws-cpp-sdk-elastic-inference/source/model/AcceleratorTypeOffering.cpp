@@ -26,11 +26,8 @@ AcceleratorTypeOffering::AcceleratorTypeOffering() :
 {
 }
 
-AcceleratorTypeOffering::AcceleratorTypeOffering(JsonView jsonValue) : 
-    m_acceleratorTypeHasBeenSet(false),
-    m_locationType(LocationType::NOT_SET),
-    m_locationTypeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+AcceleratorTypeOffering::AcceleratorTypeOffering(JsonView jsonValue)
+  : AcceleratorTypeOffering()
 {
   *this = jsonValue;
 }

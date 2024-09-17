@@ -33,65 +33,41 @@ namespace Model
     AWS_BEDROCKAGENT_API DeleteKnowledgeBaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>The unique identifier of the knowledge base that was deleted.</p>
+     */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
-
-    
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseId = value; }
-
-    
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseId = std::move(value); }
-
-    
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseId.assign(value); }
-
-    
     inline DeleteKnowledgeBaseResult& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-
-    
     inline DeleteKnowledgeBaseResult& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-
-    
     inline DeleteKnowledgeBaseResult& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    ///@}
 
-
-    
+    ///@{
+    /**
+     * <p>The status of the knowledge base and whether it has been successfully
+     * deleted.</p>
+     */
     inline const KnowledgeBaseStatus& GetStatus() const{ return m_status; }
-
-    
     inline void SetStatus(const KnowledgeBaseStatus& value) { m_status = value; }
-
-    
     inline void SetStatus(KnowledgeBaseStatus&& value) { m_status = std::move(value); }
-
-    
     inline DeleteKnowledgeBaseResult& WithStatus(const KnowledgeBaseStatus& value) { SetStatus(value); return *this;}
-
-    
     inline DeleteKnowledgeBaseResult& WithStatus(KnowledgeBaseStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteKnowledgeBaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteKnowledgeBaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteKnowledgeBaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_knowledgeBaseId;

@@ -25,10 +25,8 @@ AssessmentTemplateFilter::AssessmentTemplateFilter() :
 {
 }
 
-AssessmentTemplateFilter::AssessmentTemplateFilter(JsonView jsonValue) : 
-    m_namePatternHasBeenSet(false),
-    m_durationRangeHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false)
+AssessmentTemplateFilter::AssessmentTemplateFilter(JsonView jsonValue)
+  : AssessmentTemplateFilter()
 {
   *this = jsonValue;
 }

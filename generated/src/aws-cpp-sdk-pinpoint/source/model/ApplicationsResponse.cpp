@@ -24,9 +24,8 @@ ApplicationsResponse::ApplicationsResponse() :
 {
 }
 
-ApplicationsResponse::ApplicationsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+ApplicationsResponse::ApplicationsResponse(JsonView jsonValue)
+  : ApplicationsResponse()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ StartSyncExecutionResult::StartSyncExecutionResult() :
 {
 }
 
-StartSyncExecutionResult::StartSyncExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SyncExecutionStatus::NOT_SET)
+StartSyncExecutionResult::StartSyncExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartSyncExecutionResult()
 {
   *this = result;
 }

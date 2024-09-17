@@ -27,12 +27,8 @@ DateMeasureField::DateMeasureField() :
 {
 }
 
-DateMeasureField::DateMeasureField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_aggregationFunction(DateAggregationFunction::NOT_SET),
-    m_aggregationFunctionHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+DateMeasureField::DateMeasureField(JsonView jsonValue)
+  : DateMeasureField()
 {
   *this = jsonValue;
 }

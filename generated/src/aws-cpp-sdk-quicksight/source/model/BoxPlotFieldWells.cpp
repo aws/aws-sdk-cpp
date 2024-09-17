@@ -23,8 +23,8 @@ BoxPlotFieldWells::BoxPlotFieldWells() :
 {
 }
 
-BoxPlotFieldWells::BoxPlotFieldWells(JsonView jsonValue) : 
-    m_boxPlotAggregatedFieldWellsHasBeenSet(false)
+BoxPlotFieldWells::BoxPlotFieldWells(JsonView jsonValue)
+  : BoxPlotFieldWells()
 {
   *this = jsonValue;
 }

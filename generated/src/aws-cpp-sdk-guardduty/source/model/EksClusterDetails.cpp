@@ -28,13 +28,8 @@ EksClusterDetails::EksClusterDetails() :
 {
 }
 
-EksClusterDetails::EksClusterDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+EksClusterDetails::EksClusterDetails(JsonView jsonValue)
+  : EksClusterDetails()
 {
   *this = jsonValue;
 }

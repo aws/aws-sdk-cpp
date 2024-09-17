@@ -42,27 +42,8 @@ NetAppONTAPCluster::NetAppONTAPCluster() :
 {
 }
 
-NetAppONTAPCluster::NetAppONTAPCluster(JsonView jsonValue) : 
-    m_cifsShareCount(0),
-    m_cifsShareCountHasBeenSet(false),
-    m_nfsExportedVolumes(0),
-    m_nfsExportedVolumesHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_maxP95PerformanceHasBeenSet(false),
-    m_clusterBlockStorageSize(0),
-    m_clusterBlockStorageSizeHasBeenSet(false),
-    m_clusterBlockStorageUsed(0),
-    m_clusterBlockStorageUsedHasBeenSet(false),
-    m_clusterBlockStorageLogicalUsed(0),
-    m_clusterBlockStorageLogicalUsedHasBeenSet(false),
-    m_recommendationsHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_lunCount(0),
-    m_lunCountHasBeenSet(false),
-    m_clusterCloudStorageUsed(0),
-    m_clusterCloudStorageUsedHasBeenSet(false)
+NetAppONTAPCluster::NetAppONTAPCluster(JsonView jsonValue)
+  : NetAppONTAPCluster()
 {
   *this = jsonValue;
 }

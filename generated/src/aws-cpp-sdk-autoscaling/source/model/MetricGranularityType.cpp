@@ -25,8 +25,8 @@ MetricGranularityType::MetricGranularityType() :
 {
 }
 
-MetricGranularityType::MetricGranularityType(const XmlNode& xmlNode) : 
-    m_granularityHasBeenSet(false)
+MetricGranularityType::MetricGranularityType(const XmlNode& xmlNode)
+  : MetricGranularityType()
 {
   *this = xmlNode;
 }

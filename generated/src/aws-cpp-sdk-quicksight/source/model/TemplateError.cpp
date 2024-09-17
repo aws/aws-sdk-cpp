@@ -26,11 +26,8 @@ TemplateError::TemplateError() :
 {
 }
 
-TemplateError::TemplateError(JsonView jsonValue) : 
-    m_type(TemplateErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_violatedEntitiesHasBeenSet(false)
+TemplateError::TemplateError(JsonView jsonValue)
+  : TemplateError()
 {
   *this = jsonValue;
 }

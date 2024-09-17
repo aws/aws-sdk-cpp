@@ -24,9 +24,8 @@ GatewayNetwork::GatewayNetwork() :
 {
 }
 
-GatewayNetwork::GatewayNetwork(JsonView jsonValue) : 
-    m_cidrBlockHasBeenSet(false),
-    m_nameHasBeenSet(false)
+GatewayNetwork::GatewayNetwork(JsonView jsonValue)
+  : GatewayNetwork()
 {
   *this = jsonValue;
 }

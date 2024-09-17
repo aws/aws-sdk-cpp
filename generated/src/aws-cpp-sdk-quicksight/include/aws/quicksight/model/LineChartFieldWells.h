@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field well configuration of a line chart.</p>
      */
     inline const LineChartAggregatedFieldWells& GetLineChartAggregatedFieldWells() const{ return m_lineChartAggregatedFieldWells; }
-
-    /**
-     * <p>The field well configuration of a line chart.</p>
-     */
     inline bool LineChartAggregatedFieldWellsHasBeenSet() const { return m_lineChartAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The field well configuration of a line chart.</p>
-     */
     inline void SetLineChartAggregatedFieldWells(const LineChartAggregatedFieldWells& value) { m_lineChartAggregatedFieldWellsHasBeenSet = true; m_lineChartAggregatedFieldWells = value; }
-
-    /**
-     * <p>The field well configuration of a line chart.</p>
-     */
     inline void SetLineChartAggregatedFieldWells(LineChartAggregatedFieldWells&& value) { m_lineChartAggregatedFieldWellsHasBeenSet = true; m_lineChartAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The field well configuration of a line chart.</p>
-     */
     inline LineChartFieldWells& WithLineChartAggregatedFieldWells(const LineChartAggregatedFieldWells& value) { SetLineChartAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The field well configuration of a line chart.</p>
-     */
     inline LineChartFieldWells& WithLineChartAggregatedFieldWells(LineChartAggregatedFieldWells&& value) { SetLineChartAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LineChartAggregatedFieldWells m_lineChartAggregatedFieldWells;

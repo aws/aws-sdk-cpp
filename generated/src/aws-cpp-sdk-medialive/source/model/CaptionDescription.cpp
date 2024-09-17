@@ -25,18 +25,15 @@ CaptionDescription::CaptionDescription() :
     m_destinationSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
     m_languageDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_captionDashRolesHasBeenSet(false),
+    m_dvbDashAccessibility(DvbDashAccessibility::NOT_SET),
+    m_dvbDashAccessibilityHasBeenSet(false)
 {
 }
 
-CaptionDescription::CaptionDescription(JsonView jsonValue) : 
-    m_accessibility(AccessibilityType::NOT_SET),
-    m_accessibilityHasBeenSet(false),
-    m_captionSelectorNameHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+CaptionDescription::CaptionDescription(JsonView jsonValue)
+  : CaptionDescription()
 {
   *this = jsonValue;
 }
@@ -85,6 +82,23 @@ CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("captionDashRoles"))
+  {
+    Aws::Utils::Array<JsonView> captionDashRolesJsonList = jsonValue.GetArray("captionDashRoles");
+    for(unsigned captionDashRolesIndex = 0; captionDashRolesIndex < captionDashRolesJsonList.GetLength(); ++captionDashRolesIndex)
+    {
+      m_captionDashRoles.push_back(DashRoleCaptionMapper::GetDashRoleCaptionForName(captionDashRolesJsonList[captionDashRolesIndex].AsString()));
+    }
+    m_captionDashRolesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dvbDashAccessibility"))
+  {
+    m_dvbDashAccessibility = DvbDashAccessibilityMapper::GetDvbDashAccessibilityForName(jsonValue.GetString("dvbDashAccessibility"));
+
+    m_dvbDashAccessibilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +139,22 @@ JsonValue CaptionDescription::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_captionDashRolesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> captionDashRolesJsonList(m_captionDashRoles.size());
+   for(unsigned captionDashRolesIndex = 0; captionDashRolesIndex < captionDashRolesJsonList.GetLength(); ++captionDashRolesIndex)
+   {
+     captionDashRolesJsonList[captionDashRolesIndex].AsString(DashRoleCaptionMapper::GetNameForDashRoleCaption(m_captionDashRoles[captionDashRolesIndex]));
+   }
+   payload.WithArray("captionDashRoles", std::move(captionDashRolesJsonList));
+
+  }
+
+  if(m_dvbDashAccessibilityHasBeenSet)
+  {
+   payload.WithString("dvbDashAccessibility", DvbDashAccessibilityMapper::GetNameForDvbDashAccessibility(m_dvbDashAccessibility));
   }
 
   return payload;

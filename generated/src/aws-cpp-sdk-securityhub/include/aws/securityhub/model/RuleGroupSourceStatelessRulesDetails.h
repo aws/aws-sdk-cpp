@@ -37,61 +37,28 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the order in which to run this rule relative to all of the rules in
      * the stateless rule group.</p>
      */
     inline int GetPriority() const{ return m_priority; }
-
-    /**
-     * <p>Indicates the order in which to run this rule relative to all of the rules in
-     * the stateless rule group.</p>
-     */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>Indicates the order in which to run this rule relative to all of the rules in
-     * the stateless rule group.</p>
-     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>Indicates the order in which to run this rule relative to all of the rules in
-     * the stateless rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesDetails& WithPriority(int value) { SetPriority(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides the definition of the stateless rule.</p>
      */
     inline const RuleGroupSourceStatelessRuleDefinition& GetRuleDefinition() const{ return m_ruleDefinition; }
-
-    /**
-     * <p>Provides the definition of the stateless rule.</p>
-     */
     inline bool RuleDefinitionHasBeenSet() const { return m_ruleDefinitionHasBeenSet; }
-
-    /**
-     * <p>Provides the definition of the stateless rule.</p>
-     */
     inline void SetRuleDefinition(const RuleGroupSourceStatelessRuleDefinition& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = value; }
-
-    /**
-     * <p>Provides the definition of the stateless rule.</p>
-     */
     inline void SetRuleDefinition(RuleGroupSourceStatelessRuleDefinition&& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = std::move(value); }
-
-    /**
-     * <p>Provides the definition of the stateless rule.</p>
-     */
     inline RuleGroupSourceStatelessRulesDetails& WithRuleDefinition(const RuleGroupSourceStatelessRuleDefinition& value) { SetRuleDefinition(value); return *this;}
-
-    /**
-     * <p>Provides the definition of the stateless rule.</p>
-     */
     inline RuleGroupSourceStatelessRulesDetails& WithRuleDefinition(RuleGroupSourceStatelessRuleDefinition&& value) { SetRuleDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_priority;

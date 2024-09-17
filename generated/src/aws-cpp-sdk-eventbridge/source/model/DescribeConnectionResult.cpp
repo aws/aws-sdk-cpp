@@ -23,9 +23,8 @@ DescribeConnectionResult::DescribeConnectionResult() :
 {
 }
 
-DescribeConnectionResult::DescribeConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(ConnectionState::NOT_SET),
-    m_authorizationType(ConnectionAuthorizationType::NOT_SET)
+DescribeConnectionResult::DescribeConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeConnectionResult()
 {
   *this = result;
 }

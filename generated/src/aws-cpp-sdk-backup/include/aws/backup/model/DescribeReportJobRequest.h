@@ -32,62 +32,21 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the report job. A unique, randomly generated, Unicode,
      * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
      * be edited.</p>
      */
     inline const Aws::String& GetReportJobId() const{ return m_reportJobId; }
-
-    /**
-     * <p>The identifier of the report job. A unique, randomly generated, Unicode,
-     * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
-     * be edited.</p>
-     */
     inline bool ReportJobIdHasBeenSet() const { return m_reportJobIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the report job. A unique, randomly generated, Unicode,
-     * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
-     * be edited.</p>
-     */
     inline void SetReportJobId(const Aws::String& value) { m_reportJobIdHasBeenSet = true; m_reportJobId = value; }
-
-    /**
-     * <p>The identifier of the report job. A unique, randomly generated, Unicode,
-     * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
-     * be edited.</p>
-     */
     inline void SetReportJobId(Aws::String&& value) { m_reportJobIdHasBeenSet = true; m_reportJobId = std::move(value); }
-
-    /**
-     * <p>The identifier of the report job. A unique, randomly generated, Unicode,
-     * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
-     * be edited.</p>
-     */
     inline void SetReportJobId(const char* value) { m_reportJobIdHasBeenSet = true; m_reportJobId.assign(value); }
-
-    /**
-     * <p>The identifier of the report job. A unique, randomly generated, Unicode,
-     * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
-     * be edited.</p>
-     */
     inline DescribeReportJobRequest& WithReportJobId(const Aws::String& value) { SetReportJobId(value); return *this;}
-
-    /**
-     * <p>The identifier of the report job. A unique, randomly generated, Unicode,
-     * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
-     * be edited.</p>
-     */
     inline DescribeReportJobRequest& WithReportJobId(Aws::String&& value) { SetReportJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the report job. A unique, randomly generated, Unicode,
-     * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
-     * be edited.</p>
-     */
     inline DescribeReportJobRequest& WithReportJobId(const char* value) { SetReportJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportJobId;

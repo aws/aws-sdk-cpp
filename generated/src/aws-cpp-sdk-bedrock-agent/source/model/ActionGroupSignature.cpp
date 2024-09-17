@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int AMAZON_UserInput_HASH = HashingUtils::HashString("AMAZON.UserInput");
+        static const int AMAZON_CodeInterpreter_HASH = HashingUtils::HashString("AMAZON.CodeInterpreter");
 
 
         ActionGroupSignature GetActionGroupSignatureForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == AMAZON_UserInput_HASH)
           {
             return ActionGroupSignature::AMAZON_UserInput;
+          }
+          else if (hashCode == AMAZON_CodeInterpreter_HASH)
+          {
+            return ActionGroupSignature::AMAZON_CodeInterpreter;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case ActionGroupSignature::AMAZON_UserInput:
             return "AMAZON.UserInput";
+          case ActionGroupSignature::AMAZON_CodeInterpreter:
+            return "AMAZON.CodeInterpreter";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

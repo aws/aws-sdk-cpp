@@ -30,15 +30,8 @@ AwsJobAbortCriteria::AwsJobAbortCriteria() :
 {
 }
 
-AwsJobAbortCriteria::AwsJobAbortCriteria(JsonView jsonValue) : 
-    m_failureType(AwsJobAbortCriteriaFailureType::NOT_SET),
-    m_failureTypeHasBeenSet(false),
-    m_action(AwsJobAbortCriteriaAbortAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_thresholdPercentage(0.0),
-    m_thresholdPercentageHasBeenSet(false),
-    m_minNumberOfExecutedThings(0),
-    m_minNumberOfExecutedThingsHasBeenSet(false)
+AwsJobAbortCriteria::AwsJobAbortCriteria(JsonView jsonValue)
+  : AwsJobAbortCriteria()
 {
   *this = jsonValue;
 }

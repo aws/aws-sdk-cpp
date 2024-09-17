@@ -35,20 +35,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_instanceGroupIdHasBeenSet(false),
-    m_instanceFleetIdHasBeenSet(false),
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_ebsVolumesHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

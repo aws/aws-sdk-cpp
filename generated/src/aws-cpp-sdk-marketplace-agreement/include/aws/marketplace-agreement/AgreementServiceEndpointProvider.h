@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AgreementServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AgreementServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AgreementServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AgreementServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

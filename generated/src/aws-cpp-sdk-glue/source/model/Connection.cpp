@@ -28,21 +28,17 @@ Connection::Connection() :
     m_physicalConnectionRequirementsHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false)
+    m_lastUpdatedByHasBeenSet(false),
+    m_status(ConnectionStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
+    m_lastConnectionValidationTimeHasBeenSet(false),
+    m_authenticationConfigurationHasBeenSet(false)
 {
 }
 
-Connection::Connection(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_matchCriteriaHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false),
-    m_physicalConnectionRequirementsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false)
+Connection::Connection(JsonView jsonValue)
+  : Connection()
 {
   *this = jsonValue;
 }
@@ -118,6 +114,34 @@ Connection& Connection::operator =(JsonView jsonValue)
     m_lastUpdatedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusReason"))
+  {
+    m_statusReason = jsonValue.GetString("StatusReason");
+
+    m_statusReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastConnectionValidationTime"))
+  {
+    m_lastConnectionValidationTime = jsonValue.GetDouble("LastConnectionValidationTime");
+
+    m_lastConnectionValidationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuthenticationConfiguration"))
+  {
+    m_authenticationConfiguration = jsonValue.GetObject("AuthenticationConfiguration");
+
+    m_authenticationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +207,28 @@ JsonValue Connection::Jsonize() const
   if(m_lastUpdatedByHasBeenSet)
   {
    payload.WithString("LastUpdatedBy", m_lastUpdatedBy);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", ConnectionStatusMapper::GetNameForConnectionStatus(m_status));
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("StatusReason", m_statusReason);
+
+  }
+
+  if(m_lastConnectionValidationTimeHasBeenSet)
+  {
+   payload.WithDouble("LastConnectionValidationTime", m_lastConnectionValidationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_authenticationConfigurationHasBeenSet)
+  {
+   payload.WithObject("AuthenticationConfiguration", m_authenticationConfiguration.Jsonize());
 
   }
 

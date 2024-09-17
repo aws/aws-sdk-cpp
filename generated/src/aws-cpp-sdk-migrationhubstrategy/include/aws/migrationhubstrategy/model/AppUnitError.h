@@ -37,36 +37,17 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The category of the error.</p>
      */
     inline const AppUnitErrorCategory& GetAppUnitErrorCategory() const{ return m_appUnitErrorCategory; }
-
-    /**
-     * <p>The category of the error.</p>
-     */
     inline bool AppUnitErrorCategoryHasBeenSet() const { return m_appUnitErrorCategoryHasBeenSet; }
-
-    /**
-     * <p>The category of the error.</p>
-     */
     inline void SetAppUnitErrorCategory(const AppUnitErrorCategory& value) { m_appUnitErrorCategoryHasBeenSet = true; m_appUnitErrorCategory = value; }
-
-    /**
-     * <p>The category of the error.</p>
-     */
     inline void SetAppUnitErrorCategory(AppUnitErrorCategory&& value) { m_appUnitErrorCategoryHasBeenSet = true; m_appUnitErrorCategory = std::move(value); }
-
-    /**
-     * <p>The category of the error.</p>
-     */
     inline AppUnitError& WithAppUnitErrorCategory(const AppUnitErrorCategory& value) { SetAppUnitErrorCategory(value); return *this;}
-
-    /**
-     * <p>The category of the error.</p>
-     */
     inline AppUnitError& WithAppUnitErrorCategory(AppUnitErrorCategory&& value) { SetAppUnitErrorCategory(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AppUnitErrorCategory m_appUnitErrorCategory;

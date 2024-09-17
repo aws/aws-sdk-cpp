@@ -44,127 +44,37 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
      * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
+     * and Amazon Web Services Region for the SSM document.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
-     * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
-     */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
-     * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
-     */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
-     * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
-     */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
-     * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
-     */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
-     * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
-     */
     inline TemplateSSMDocumentDetails& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
-     * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
-     */
     inline TemplateSSMDocumentDetails& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a
-     * conformance pack. If you use the document name, Config checks only your account
-     * and Amazon Web Services Region for the SSM document. If you want to use an SSM
-     * document from another Region or account, you must provide the ARN.</p>
-     */
     inline TemplateSSMDocumentDetails& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the SSM document to use to create a conformance pack. By
      * default, Config uses the latest version.</p>  <p>This field is
      * optional.</p> 
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
-
-    /**
-     * <p>The version of the SSM document to use to create a conformance pack. By
-     * default, Config uses the latest version.</p>  <p>This field is
-     * optional.</p> 
-     */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the SSM document to use to create a conformance pack. By
-     * default, Config uses the latest version.</p>  <p>This field is
-     * optional.</p> 
-     */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-
-    /**
-     * <p>The version of the SSM document to use to create a conformance pack. By
-     * default, Config uses the latest version.</p>  <p>This field is
-     * optional.</p> 
-     */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-
-    /**
-     * <p>The version of the SSM document to use to create a conformance pack. By
-     * default, Config uses the latest version.</p>  <p>This field is
-     * optional.</p> 
-     */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-
-    /**
-     * <p>The version of the SSM document to use to create a conformance pack. By
-     * default, Config uses the latest version.</p>  <p>This field is
-     * optional.</p> 
-     */
     inline TemplateSSMDocumentDetails& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-
-    /**
-     * <p>The version of the SSM document to use to create a conformance pack. By
-     * default, Config uses the latest version.</p>  <p>This field is
-     * optional.</p> 
-     */
     inline TemplateSSMDocumentDetails& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the SSM document to use to create a conformance pack. By
-     * default, Config uses the latest version.</p>  <p>This field is
-     * optional.</p> 
-     */
     inline TemplateSSMDocumentDetails& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_documentName;

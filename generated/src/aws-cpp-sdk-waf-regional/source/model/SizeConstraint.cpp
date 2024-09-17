@@ -29,14 +29,8 @@ SizeConstraint::SizeConstraint() :
 {
 }
 
-SizeConstraint::SizeConstraint(JsonView jsonValue) : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+SizeConstraint::SizeConstraint(JsonView jsonValue)
+  : SizeConstraint()
 {
   *this = jsonValue;
 }

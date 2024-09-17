@@ -27,10 +27,8 @@ IdentityVerificationAttributes::IdentityVerificationAttributes() :
 {
 }
 
-IdentityVerificationAttributes::IdentityVerificationAttributes(const XmlNode& xmlNode) : 
-    m_verificationStatus(VerificationStatus::NOT_SET),
-    m_verificationStatusHasBeenSet(false),
-    m_verificationTokenHasBeenSet(false)
+IdentityVerificationAttributes::IdentityVerificationAttributes(const XmlNode& xmlNode)
+  : IdentityVerificationAttributes()
 {
   *this = xmlNode;
 }

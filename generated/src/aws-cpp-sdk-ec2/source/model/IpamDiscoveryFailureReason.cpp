@@ -27,10 +27,8 @@ IpamDiscoveryFailureReason::IpamDiscoveryFailureReason() :
 {
 }
 
-IpamDiscoveryFailureReason::IpamDiscoveryFailureReason(const XmlNode& xmlNode) : 
-    m_code(IpamDiscoveryFailureCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+IpamDiscoveryFailureReason::IpamDiscoveryFailureReason(const XmlNode& xmlNode)
+  : IpamDiscoveryFailureReason()
 {
   *this = xmlNode;
 }

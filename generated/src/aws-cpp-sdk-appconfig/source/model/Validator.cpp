@@ -25,10 +25,8 @@ Validator::Validator() :
 {
 }
 
-Validator::Validator(JsonView jsonValue) : 
-    m_type(ValidatorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+Validator::Validator(JsonView jsonValue)
+  : Validator()
 {
   *this = jsonValue;
 }

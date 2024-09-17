@@ -39,106 +39,43 @@ namespace Model
     AWS_DATASYNC_API ListTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of all the tasks that are returned.</p>
      */
     inline const Aws::Vector<TaskListEntry>& GetTasks() const{ return m_tasks; }
-
-    /**
-     * <p>A list of all the tasks that are returned.</p>
-     */
     inline void SetTasks(const Aws::Vector<TaskListEntry>& value) { m_tasks = value; }
-
-    /**
-     * <p>A list of all the tasks that are returned.</p>
-     */
     inline void SetTasks(Aws::Vector<TaskListEntry>&& value) { m_tasks = std::move(value); }
-
-    /**
-     * <p>A list of all the tasks that are returned.</p>
-     */
     inline ListTasksResult& WithTasks(const Aws::Vector<TaskListEntry>& value) { SetTasks(value); return *this;}
-
-    /**
-     * <p>A list of all the tasks that are returned.</p>
-     */
     inline ListTasksResult& WithTasks(Aws::Vector<TaskListEntry>&& value) { SetTasks(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of all the tasks that are returned.</p>
-     */
     inline ListTasksResult& AddTasks(const TaskListEntry& value) { m_tasks.push_back(value); return *this; }
-
-    /**
-     * <p>A list of all the tasks that are returned.</p>
-     */
     inline ListTasksResult& AddTasks(TaskListEntry&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An opaque string that indicates the position at which to begin returning the
      * next list of tasks.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of tasks.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of tasks.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of tasks.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of tasks.</p>
-     */
     inline ListTasksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of tasks.</p>
-     */
     inline ListTasksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of tasks.</p>
-     */
     inline ListTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TaskListEntry> m_tasks;

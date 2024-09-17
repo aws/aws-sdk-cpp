@@ -12,7 +12,11 @@
 #if($member.usedForHeader)
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#if($member.shape.enum && !$member.shape.enumValues.contains("NOT_SET"))
+#set($varNameHasBeenSet = "$CppViewHelper.computeVariableHasBeenSetName($memberName) && $memberVarName != ${member.shape.name}::NOT_SET")
+#else
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#end
 #if(!$member.required && $useRequiredField)
 #set($spaces = '  ')
   if($varNameHasBeenSet)
@@ -38,16 +42,17 @@
   ${spaces}  ss.str("");
   ${spaces}}
 #elseif($member.shape.list)
-  ${spaces}for(const auto& item : $memberVarName)
-  ${spaces}{
+  ${spaces}headers.emplace("${locationName}", std::accumulate(std::begin($memberVarName),
+  ${spaces}  std::end($memberVarName),
+  ${spaces}  Aws::String{},
+  ${spaces}  [](const Aws::String &acc, const $CppViewHelper.computeCppType($member.shape.listMember.shape) &item) -> Aws::String {
 #if($member.shape.listMember.shape.enum)
-  ${spaces}  ss << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item);
+  ${spaces}    const auto headerValue = ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item);
 #else
-  ${spaces}  ss << item;
+  ${spaces}    const auto headerValue = item;
 #end
-  ${spaces}  headers.emplace("${locationName}", ss.str());
-  ${spaces}  ss.str("");
-  ${spaces}}
+  ${spaces}    return acc.empty() ? headerValue : acc + "," + headerValue;
+  ${spaces}  }));
 #else
   ${spaces}ss << m_${lowerCaseVarName};
   ${spaces}headers.emplace("${locationName}", #if($member.requiresHeaderEncoding())URI::URLEncodePath(ss.str())#else ss.str()#end);

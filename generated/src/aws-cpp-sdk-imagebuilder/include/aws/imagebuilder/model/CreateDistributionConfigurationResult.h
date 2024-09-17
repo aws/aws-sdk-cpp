@@ -32,120 +32,45 @@ namespace Model
     AWS_IMAGEBUILDER_API CreateDistributionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client token that uniquely identifies the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
      * created by this request.</p>
      */
     inline const Aws::String& GetDistributionConfigurationArn() const{ return m_distributionConfigurationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
-     * created by this request.</p>
-     */
     inline void SetDistributionConfigurationArn(const Aws::String& value) { m_distributionConfigurationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
-     * created by this request.</p>
-     */
     inline void SetDistributionConfigurationArn(Aws::String&& value) { m_distributionConfigurationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
-     * created by this request.</p>
-     */
     inline void SetDistributionConfigurationArn(const char* value) { m_distributionConfigurationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
-     * created by this request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithDistributionConfigurationArn(const Aws::String& value) { SetDistributionConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
-     * created by this request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithDistributionConfigurationArn(Aws::String&& value) { SetDistributionConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
-     * created by this request.</p>
-     */
     inline CreateDistributionConfigurationResult& WithDistributionConfigurationArn(const char* value) { SetDistributionConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestId;

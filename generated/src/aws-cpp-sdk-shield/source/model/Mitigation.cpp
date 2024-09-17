@@ -23,8 +23,8 @@ Mitigation::Mitigation() :
 {
 }
 
-Mitigation::Mitigation(JsonView jsonValue) : 
-    m_mitigationNameHasBeenSet(false)
+Mitigation::Mitigation(JsonView jsonValue)
+  : Mitigation()
 {
   *this = jsonValue;
 }

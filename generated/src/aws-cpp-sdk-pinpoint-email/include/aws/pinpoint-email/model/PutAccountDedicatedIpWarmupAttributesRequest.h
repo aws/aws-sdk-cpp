@@ -34,6 +34,7 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
      * that are associated with your Amazon Pinpoint account in the current AWS Region.
@@ -41,31 +42,10 @@ namespace Model
      * <code>false</code> to disable it.</p>
      */
     inline bool GetAutoWarmupEnabled() const{ return m_autoWarmupEnabled; }
-
-    /**
-     * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
-     * that are associated with your Amazon Pinpoint account in the current AWS Region.
-     * Set to <code>true</code> to enable the automatic warm-up feature, or set to
-     * <code>false</code> to disable it.</p>
-     */
     inline bool AutoWarmupEnabledHasBeenSet() const { return m_autoWarmupEnabledHasBeenSet; }
-
-    /**
-     * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
-     * that are associated with your Amazon Pinpoint account in the current AWS Region.
-     * Set to <code>true</code> to enable the automatic warm-up feature, or set to
-     * <code>false</code> to disable it.</p>
-     */
     inline void SetAutoWarmupEnabled(bool value) { m_autoWarmupEnabledHasBeenSet = true; m_autoWarmupEnabled = value; }
-
-    /**
-     * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
-     * that are associated with your Amazon Pinpoint account in the current AWS Region.
-     * Set to <code>true</code> to enable the automatic warm-up feature, or set to
-     * <code>false</code> to disable it.</p>
-     */
     inline PutAccountDedicatedIpWarmupAttributesRequest& WithAutoWarmupEnabled(bool value) { SetAutoWarmupEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoWarmupEnabled;

@@ -38,36 +38,17 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the configuration for scanning EBS volumes for an organization.</p>
      */
     inline const OrganizationEbsVolumesResult& GetEbsVolumes() const{ return m_ebsVolumes; }
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-     */
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-     */
     inline void SetEbsVolumes(const OrganizationEbsVolumesResult& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-     */
     inline void SetEbsVolumes(OrganizationEbsVolumesResult&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::move(value); }
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-     */
     inline OrganizationScanEc2InstanceWithFindingsResult& WithEbsVolumes(const OrganizationEbsVolumesResult& value) { SetEbsVolumes(value); return *this;}
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-     */
     inline OrganizationScanEc2InstanceWithFindingsResult& WithEbsVolumes(OrganizationEbsVolumesResult&& value) { SetEbsVolumes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OrganizationEbsVolumesResult m_ebsVolumes;

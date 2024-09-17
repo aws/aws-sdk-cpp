@@ -147,6 +147,10 @@ public class CppViewHelper {
         return CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, lowerCamel);
     }
 
+    public static String convertToUpperSnake(final String string) {
+        return CaseFormat.LOWER_HYPHEN.to(CaseFormat.UPPER_UNDERSCORE, string);
+    }
+
     public static String computeVariableHasBeenSetName(String memberName) {
         return String.format("%sHasBeenSet", computeMemberVariableName(memberName));
     }
@@ -317,6 +321,9 @@ public class CppViewHelper {
             }
         }
 
+        if(shape.isEvent() && shape.getName().endsWith("InitialResponse")) {
+            headers.add("<aws/core/http/HttpTypes.h>");
+        }
         if(includeUtilityHeader) {
             headers.add("<utility>");
         }
@@ -480,5 +487,10 @@ public class CppViewHelper {
                 .filter(FORBIDDEN_FUNCTION_NAMES::contains)
                 .map(__ -> prefix + cppType)
                 .orElse(functionName);
+    }
+
+    public static boolean hasListMemberUsedForHeader(final Shape shape) {
+        return shape.getMembers().values().stream()
+                .anyMatch(shapeMember -> shapeMember.getShape().isList() && shapeMember.isUsedForHeader());
     }
 }

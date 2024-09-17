@@ -39,46 +39,19 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the timer to reset.</p>
      */
     inline const Aws::String& GetTimerName() const{ return m_timerName; }
-
-    /**
-     * <p>The name of the timer to reset.</p>
-     */
     inline bool TimerNameHasBeenSet() const { return m_timerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the timer to reset.</p>
-     */
     inline void SetTimerName(const Aws::String& value) { m_timerNameHasBeenSet = true; m_timerName = value; }
-
-    /**
-     * <p>The name of the timer to reset.</p>
-     */
     inline void SetTimerName(Aws::String&& value) { m_timerNameHasBeenSet = true; m_timerName = std::move(value); }
-
-    /**
-     * <p>The name of the timer to reset.</p>
-     */
     inline void SetTimerName(const char* value) { m_timerNameHasBeenSet = true; m_timerName.assign(value); }
-
-    /**
-     * <p>The name of the timer to reset.</p>
-     */
     inline ResetTimerAction& WithTimerName(const Aws::String& value) { SetTimerName(value); return *this;}
-
-    /**
-     * <p>The name of the timer to reset.</p>
-     */
     inline ResetTimerAction& WithTimerName(Aws::String&& value) { SetTimerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the timer to reset.</p>
-     */
     inline ResetTimerAction& WithTimerName(const char* value) { SetTimerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_timerName;

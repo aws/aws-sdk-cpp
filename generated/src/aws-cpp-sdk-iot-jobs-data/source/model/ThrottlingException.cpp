@@ -25,9 +25,8 @@ ThrottlingException::ThrottlingException() :
 {
 }
 
-ThrottlingException::ThrottlingException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+ThrottlingException::ThrottlingException(JsonView jsonValue)
+  : ThrottlingException()
 {
   *this = jsonValue;
 }

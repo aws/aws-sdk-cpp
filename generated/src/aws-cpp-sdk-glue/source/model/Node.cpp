@@ -29,14 +29,8 @@ Node::Node() :
 {
 }
 
-Node::Node(JsonView jsonValue) : 
-    m_type(NodeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uniqueIdHasBeenSet(false),
-    m_triggerDetailsHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_crawlerDetailsHasBeenSet(false)
+Node::Node(JsonView jsonValue)
+  : Node()
 {
   *this = jsonValue;
 }

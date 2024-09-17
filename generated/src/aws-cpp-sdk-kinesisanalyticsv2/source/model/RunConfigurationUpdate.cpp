@@ -24,9 +24,8 @@ RunConfigurationUpdate::RunConfigurationUpdate() :
 {
 }
 
-RunConfigurationUpdate::RunConfigurationUpdate(JsonView jsonValue) : 
-    m_flinkRunConfigurationHasBeenSet(false),
-    m_applicationRestoreConfigurationHasBeenSet(false)
+RunConfigurationUpdate::RunConfigurationUpdate(JsonView jsonValue)
+  : RunConfigurationUpdate()
 {
   *this = jsonValue;
 }

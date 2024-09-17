@@ -26,11 +26,8 @@ IpAccessSettingsSummary::IpAccessSettingsSummary() :
 {
 }
 
-IpAccessSettingsSummary::IpAccessSettingsSummary(JsonView jsonValue) : 
-    m_creationDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_ipAccessSettingsArnHasBeenSet(false)
+IpAccessSettingsSummary::IpAccessSettingsSummary(JsonView jsonValue)
+  : IpAccessSettingsSummary()
 {
   *this = jsonValue;
 }

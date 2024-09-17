@@ -34,94 +34,41 @@ namespace Model
     AWS_QLDB_API GetDigestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The 256-bit hash value representing the digest returned by a
      * <code>GetDigest</code> request.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetDigest() const{ return m_digest; }
-
-    /**
-     * <p>The 256-bit hash value representing the digest returned by a
-     * <code>GetDigest</code> request.</p>
-     */
     inline void SetDigest(const Aws::Utils::ByteBuffer& value) { m_digest = value; }
-
-    /**
-     * <p>The 256-bit hash value representing the digest returned by a
-     * <code>GetDigest</code> request.</p>
-     */
     inline void SetDigest(Aws::Utils::ByteBuffer&& value) { m_digest = std::move(value); }
-
-    /**
-     * <p>The 256-bit hash value representing the digest returned by a
-     * <code>GetDigest</code> request.</p>
-     */
     inline GetDigestResult& WithDigest(const Aws::Utils::ByteBuffer& value) { SetDigest(value); return *this;}
-
-    /**
-     * <p>The 256-bit hash value representing the digest returned by a
-     * <code>GetDigest</code> request.</p>
-     */
     inline GetDigestResult& WithDigest(Aws::Utils::ByteBuffer&& value) { SetDigest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest block location covered by the digest that you requested. An
      * address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p>
      */
     inline const ValueHolder& GetDigestTipAddress() const{ return m_digestTipAddress; }
-
-    /**
-     * <p>The latest block location covered by the digest that you requested. An
-     * address is an Amazon Ion structure that has two fields: <code>strandId</code>
-     * and <code>sequenceNo</code>.</p>
-     */
     inline void SetDigestTipAddress(const ValueHolder& value) { m_digestTipAddress = value; }
-
-    /**
-     * <p>The latest block location covered by the digest that you requested. An
-     * address is an Amazon Ion structure that has two fields: <code>strandId</code>
-     * and <code>sequenceNo</code>.</p>
-     */
     inline void SetDigestTipAddress(ValueHolder&& value) { m_digestTipAddress = std::move(value); }
-
-    /**
-     * <p>The latest block location covered by the digest that you requested. An
-     * address is an Amazon Ion structure that has two fields: <code>strandId</code>
-     * and <code>sequenceNo</code>.</p>
-     */
     inline GetDigestResult& WithDigestTipAddress(const ValueHolder& value) { SetDigestTipAddress(value); return *this;}
-
-    /**
-     * <p>The latest block location covered by the digest that you requested. An
-     * address is an Amazon Ion structure that has two fields: <code>strandId</code>
-     * and <code>sequenceNo</code>.</p>
-     */
     inline GetDigestResult& WithDigestTipAddress(ValueHolder&& value) { SetDigestTipAddress(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDigestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDigestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDigestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_digest;

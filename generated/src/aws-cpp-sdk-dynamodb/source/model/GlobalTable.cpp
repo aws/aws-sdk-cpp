@@ -24,9 +24,8 @@ GlobalTable::GlobalTable() :
 {
 }
 
-GlobalTable::GlobalTable(JsonView jsonValue) : 
-    m_globalTableNameHasBeenSet(false),
-    m_replicationGroupHasBeenSet(false)
+GlobalTable::GlobalTable(JsonView jsonValue)
+  : GlobalTable()
 {
   *this = jsonValue;
 }

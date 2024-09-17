@@ -33,53 +33,27 @@ namespace Model
     AWS_CLEANROOMS_API CreateConfiguredTableAnalysisRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>The entire created analysis rule.</p>
+     * <p>The analysis rule that was created for the configured table.</p>
      */
     inline const ConfiguredTableAnalysisRule& GetAnalysisRule() const{ return m_analysisRule; }
-
-    /**
-     * <p>The entire created analysis rule.</p>
-     */
     inline void SetAnalysisRule(const ConfiguredTableAnalysisRule& value) { m_analysisRule = value; }
-
-    /**
-     * <p>The entire created analysis rule.</p>
-     */
     inline void SetAnalysisRule(ConfiguredTableAnalysisRule&& value) { m_analysisRule = std::move(value); }
-
-    /**
-     * <p>The entire created analysis rule.</p>
-     */
     inline CreateConfiguredTableAnalysisRuleResult& WithAnalysisRule(const ConfiguredTableAnalysisRule& value) { SetAnalysisRule(value); return *this;}
-
-    /**
-     * <p>The entire created analysis rule.</p>
-     */
     inline CreateConfiguredTableAnalysisRuleResult& WithAnalysisRule(ConfiguredTableAnalysisRule&& value) { SetAnalysisRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateConfiguredTableAnalysisRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateConfiguredTableAnalysisRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateConfiguredTableAnalysisRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConfiguredTableAnalysisRule m_analysisRule;

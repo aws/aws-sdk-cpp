@@ -38,95 +38,34 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 destination URI for log publishing.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
-
-    /**
-     * <p>The Amazon S3 destination URI for log publishing.</p>
-     */
     inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 destination URI for log publishing.</p>
-     */
     inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
-
-    /**
-     * <p>The Amazon S3 destination URI for log publishing.</p>
-     */
     inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 destination URI for log publishing.</p>
-     */
     inline void SetLogUri(const char* value) { m_logUriHasBeenSet = true; m_logUri.assign(value); }
-
-    /**
-     * <p>The Amazon S3 destination URI for log publishing.</p>
-     */
     inline S3MonitoringConfiguration& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 destination URI for log publishing.</p>
-     */
     inline S3MonitoringConfiguration& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 destination URI for log publishing.</p>
-     */
     inline S3MonitoringConfiguration& WithLogUri(const char* value) { SetLogUri(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
      * destination.</p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
-     * destination.</p>
-     */
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
-     * destination.</p>
-     */
     inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
-     * destination.</p>
-     */
     inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
-     * destination.</p>
-     */
     inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
-     * destination.</p>
-     */
     inline S3MonitoringConfiguration& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
-     * destination.</p>
-     */
     inline S3MonitoringConfiguration& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs published to the given Amazon S3
-     * destination.</p>
-     */
     inline S3MonitoringConfiguration& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logUri;

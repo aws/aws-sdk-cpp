@@ -38,42 +38,18 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>,
      * <code>Medium</code>, or <code>High</code>. </p>
      */
     inline const ConfidenceLevel& GetConfidenceLevel() const{ return m_confidenceLevel; }
-
-    /**
-     * <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>,
-     * <code>Medium</code>, or <code>High</code>. </p>
-     */
     inline bool ConfidenceLevelHasBeenSet() const { return m_confidenceLevelHasBeenSet; }
-
-    /**
-     * <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>,
-     * <code>Medium</code>, or <code>High</code>. </p>
-     */
     inline void SetConfidenceLevel(const ConfidenceLevel& value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = value; }
-
-    /**
-     * <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>,
-     * <code>Medium</code>, or <code>High</code>. </p>
-     */
     inline void SetConfidenceLevel(ConfidenceLevel&& value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = std::move(value); }
-
-    /**
-     * <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>,
-     * <code>Medium</code>, or <code>High</code>. </p>
-     */
     inline MachineLearningDetectionConfig& WithConfidenceLevel(const ConfidenceLevel& value) { SetConfidenceLevel(value); return *this;}
-
-    /**
-     * <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>,
-     * <code>Medium</code>, or <code>High</code>. </p>
-     */
     inline MachineLearningDetectionConfig& WithConfidenceLevel(ConfidenceLevel&& value) { SetConfidenceLevel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConfidenceLevel m_confidenceLevel;

@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACESWEB_API GetIpAccessSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The IP access settings.</p>
      */
     inline const IpAccessSettings& GetIpAccessSettings() const{ return m_ipAccessSettings; }
-
-    /**
-     * <p>The IP access settings.</p>
-     */
     inline void SetIpAccessSettings(const IpAccessSettings& value) { m_ipAccessSettings = value; }
-
-    /**
-     * <p>The IP access settings.</p>
-     */
     inline void SetIpAccessSettings(IpAccessSettings&& value) { m_ipAccessSettings = std::move(value); }
-
-    /**
-     * <p>The IP access settings.</p>
-     */
     inline GetIpAccessSettingsResult& WithIpAccessSettings(const IpAccessSettings& value) { SetIpAccessSettings(value); return *this;}
-
-    /**
-     * <p>The IP access settings.</p>
-     */
     inline GetIpAccessSettingsResult& WithIpAccessSettings(IpAccessSettings&& value) { SetIpAccessSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetIpAccessSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetIpAccessSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetIpAccessSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IpAccessSettings m_ipAccessSettings;

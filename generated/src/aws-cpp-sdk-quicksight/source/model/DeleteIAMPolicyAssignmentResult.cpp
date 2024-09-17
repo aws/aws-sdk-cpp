@@ -22,8 +22,8 @@ DeleteIAMPolicyAssignmentResult::DeleteIAMPolicyAssignmentResult() :
 {
 }
 
-DeleteIAMPolicyAssignmentResult::DeleteIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteIAMPolicyAssignmentResult::DeleteIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteIAMPolicyAssignmentResult()
 {
   *this = result;
 }

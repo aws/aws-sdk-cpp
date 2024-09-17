@@ -38,46 +38,19 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-     */
     inline SchedulingPolicyListingDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-     */
     inline SchedulingPolicyListingDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-     */
     inline SchedulingPolicyListingDetail& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

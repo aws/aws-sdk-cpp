@@ -32,17 +32,8 @@ AccountRecommendationLifecycleSummary::AccountRecommendationLifecycleSummary() :
 {
 }
 
-AccountRecommendationLifecycleSummary::AccountRecommendationLifecycleSummary(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_accountRecommendationArnHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleStage(RecommendationLifecycleStage::NOT_SET),
-    m_lifecycleStageHasBeenSet(false),
-    m_updateReasonHasBeenSet(false),
-    m_updateReasonCode(UpdateRecommendationLifecycleStageReasonCode::NOT_SET),
-    m_updateReasonCodeHasBeenSet(false),
-    m_updatedOnBehalfOfHasBeenSet(false),
-    m_updatedOnBehalfOfJobTitleHasBeenSet(false)
+AccountRecommendationLifecycleSummary::AccountRecommendationLifecycleSummary(JsonView jsonValue)
+  : AccountRecommendationLifecycleSummary()
 {
   *this = jsonValue;
 }

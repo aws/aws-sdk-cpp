@@ -24,9 +24,8 @@ Credential::Credential() :
 {
 }
 
-Credential::Credential(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+Credential::Credential(JsonView jsonValue)
+  : Credential()
 {
   *this = jsonValue;
 }

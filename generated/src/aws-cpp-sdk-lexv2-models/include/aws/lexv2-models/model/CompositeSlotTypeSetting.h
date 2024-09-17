@@ -39,46 +39,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Subslots in the composite slot.</p>
      */
     inline const Aws::Vector<SubSlotTypeComposition>& GetSubSlots() const{ return m_subSlots; }
-
-    /**
-     * <p>Subslots in the composite slot.</p>
-     */
     inline bool SubSlotsHasBeenSet() const { return m_subSlotsHasBeenSet; }
-
-    /**
-     * <p>Subslots in the composite slot.</p>
-     */
     inline void SetSubSlots(const Aws::Vector<SubSlotTypeComposition>& value) { m_subSlotsHasBeenSet = true; m_subSlots = value; }
-
-    /**
-     * <p>Subslots in the composite slot.</p>
-     */
     inline void SetSubSlots(Aws::Vector<SubSlotTypeComposition>&& value) { m_subSlotsHasBeenSet = true; m_subSlots = std::move(value); }
-
-    /**
-     * <p>Subslots in the composite slot.</p>
-     */
     inline CompositeSlotTypeSetting& WithSubSlots(const Aws::Vector<SubSlotTypeComposition>& value) { SetSubSlots(value); return *this;}
-
-    /**
-     * <p>Subslots in the composite slot.</p>
-     */
     inline CompositeSlotTypeSetting& WithSubSlots(Aws::Vector<SubSlotTypeComposition>&& value) { SetSubSlots(std::move(value)); return *this;}
-
-    /**
-     * <p>Subslots in the composite slot.</p>
-     */
     inline CompositeSlotTypeSetting& AddSubSlots(const SubSlotTypeComposition& value) { m_subSlotsHasBeenSet = true; m_subSlots.push_back(value); return *this; }
-
-    /**
-     * <p>Subslots in the composite slot.</p>
-     */
     inline CompositeSlotTypeSetting& AddSubSlots(SubSlotTypeComposition&& value) { m_subSlotsHasBeenSet = true; m_subSlots.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SubSlotTypeComposition> m_subSlots;

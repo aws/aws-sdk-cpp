@@ -28,11 +28,8 @@ Error::Error() :
 {
 }
 
-Error::Error(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+Error::Error(const XmlNode& xmlNode)
+  : Error()
 {
   *this = xmlNode;
 }

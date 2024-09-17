@@ -30,23 +30,13 @@ PipelineSummary::PipelineSummary() :
     m_maxUnitsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
+    m_destinationsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-PipelineSummary::PipelineSummary(JsonView jsonValue) : 
-    m_status(PipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineArnHasBeenSet(false),
-    m_minUnits(0),
-    m_minUnitsHasBeenSet(false),
-    m_maxUnits(0),
-    m_maxUnitsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PipelineSummary::PipelineSummary(JsonView jsonValue)
+  : PipelineSummary()
 {
   *this = jsonValue;
 }
@@ -109,6 +99,16 @@ PipelineSummary& PipelineSummary::operator =(JsonView jsonValue)
     m_lastUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Destinations"))
+  {
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
+    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
+    {
+      m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
+    }
+    m_destinationsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -169,6 +169,17 @@ JsonValue PipelineSummary::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_destinationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
+   for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
+   {
+     destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
+   }
+   payload.WithArray("Destinations", std::move(destinationsJsonList));
+
   }
 
   if(m_tagsHasBeenSet)

@@ -34,46 +34,19 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the grant.</p>
      */
     inline const Aws::String& GetGrantArn() const{ return m_grantArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline bool GrantArnHasBeenSet() const { return m_grantArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline void SetGrantArn(const Aws::String& value) { m_grantArnHasBeenSet = true; m_grantArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline void SetGrantArn(Aws::String&& value) { m_grantArnHasBeenSet = true; m_grantArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline void SetGrantArn(const char* value) { m_grantArnHasBeenSet = true; m_grantArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline RejectGrantRequest& WithGrantArn(const Aws::String& value) { SetGrantArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline RejectGrantRequest& WithGrantArn(Aws::String&& value) { SetGrantArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the grant.</p>
-     */
     inline RejectGrantRequest& WithGrantArn(const char* value) { SetGrantArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_grantArn;

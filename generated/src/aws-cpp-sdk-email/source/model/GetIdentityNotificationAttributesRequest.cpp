@@ -21,12 +21,19 @@ Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const
   ss << "Action=GetIdentityNotificationAttributes&";
   if(m_identitiesHasBeenSet)
   {
-    unsigned identitiesCount = 1;
-    for(auto& item : m_identities)
+    if (m_identities.empty())
     {
-      ss << "Identities.member." << identitiesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      identitiesCount++;
+      ss << "Identities=&";
+    }
+    else
+    {
+      unsigned identitiesCount = 1;
+      for(auto& item : m_identities)
+      {
+        ss << "Identities.member." << identitiesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        identitiesCount++;
+      }
     }
   }
 

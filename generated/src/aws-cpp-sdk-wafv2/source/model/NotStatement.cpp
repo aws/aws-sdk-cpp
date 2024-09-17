@@ -24,8 +24,8 @@ NotStatement::NotStatement() :
 {
 }
 
-NotStatement::NotStatement(JsonView jsonValue) : 
-    m_statementHasBeenSet(false)
+NotStatement::NotStatement(JsonView jsonValue)
+  : NotStatement()
 {
   *this = jsonValue;
 }

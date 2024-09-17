@@ -23,9 +23,8 @@ RegisterSchemaVersionResult::RegisterSchemaVersionResult() :
 {
 }
 
-RegisterSchemaVersionResult::RegisterSchemaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_versionNumber(0),
-    m_status(SchemaVersionStatus::NOT_SET)
+RegisterSchemaVersionResult::RegisterSchemaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RegisterSchemaVersionResult()
 {
   *this = result;
 }

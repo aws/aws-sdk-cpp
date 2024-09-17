@@ -19,32 +19,20 @@ namespace Model
 {
 
 PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters() : 
-    m_headerParametersHasBeenSet(false),
     m_pathParameterValuesHasBeenSet(false),
+    m_headerParametersHasBeenSet(false),
     m_queryStringParametersHasBeenSet(false)
 {
 }
 
-PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters(JsonView jsonValue) : 
-    m_headerParametersHasBeenSet(false),
-    m_pathParameterValuesHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
+PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters(JsonView jsonValue)
+  : PipeEnrichmentHttpParameters()
 {
   *this = jsonValue;
 }
 
 PipeEnrichmentHttpParameters& PipeEnrichmentHttpParameters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("HeaderParameters"))
-  {
-    Aws::Map<Aws::String, JsonView> headerParametersJsonMap = jsonValue.GetObject("HeaderParameters").GetAllObjects();
-    for(auto& headerParametersItem : headerParametersJsonMap)
-    {
-      m_headerParameters[headerParametersItem.first] = headerParametersItem.second.AsString();
-    }
-    m_headerParametersHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("PathParameterValues"))
   {
     Aws::Utils::Array<JsonView> pathParameterValuesJsonList = jsonValue.GetArray("PathParameterValues");
@@ -53,6 +41,16 @@ PipeEnrichmentHttpParameters& PipeEnrichmentHttpParameters::operator =(JsonView 
       m_pathParameterValues.push_back(pathParameterValuesJsonList[pathParameterValuesIndex].AsString());
     }
     m_pathParameterValuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HeaderParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> headerParametersJsonMap = jsonValue.GetObject("HeaderParameters").GetAllObjects();
+    for(auto& headerParametersItem : headerParametersJsonMap)
+    {
+      m_headerParameters[headerParametersItem.first] = headerParametersItem.second.AsString();
+    }
+    m_headerParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("QueryStringParameters"))
@@ -72,17 +70,6 @@ JsonValue PipeEnrichmentHttpParameters::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_headerParametersHasBeenSet)
-  {
-   JsonValue headerParametersJsonMap;
-   for(auto& headerParametersItem : m_headerParameters)
-   {
-     headerParametersJsonMap.WithString(headerParametersItem.first, headerParametersItem.second);
-   }
-   payload.WithObject("HeaderParameters", std::move(headerParametersJsonMap));
-
-  }
-
   if(m_pathParameterValuesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> pathParameterValuesJsonList(m_pathParameterValues.size());
@@ -91,6 +78,17 @@ JsonValue PipeEnrichmentHttpParameters::Jsonize() const
      pathParameterValuesJsonList[pathParameterValuesIndex].AsString(m_pathParameterValues[pathParameterValuesIndex]);
    }
    payload.WithArray("PathParameterValues", std::move(pathParameterValuesJsonList));
+
+  }
+
+  if(m_headerParametersHasBeenSet)
+  {
+   JsonValue headerParametersJsonMap;
+   for(auto& headerParametersItem : m_headerParameters)
+   {
+     headerParametersJsonMap.WithString(headerParametersItem.first, headerParametersItem.second);
+   }
+   payload.WithObject("HeaderParameters", std::move(headerParametersJsonMap));
 
   }
 

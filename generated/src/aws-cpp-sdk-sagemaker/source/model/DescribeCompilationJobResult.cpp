@@ -22,8 +22,8 @@ DescribeCompilationJobResult::DescribeCompilationJobResult() :
 {
 }
 
-DescribeCompilationJobResult::DescribeCompilationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_compilationJobStatus(CompilationJobStatus::NOT_SET)
+DescribeCompilationJobResult::DescribeCompilationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCompilationJobResult()
 {
   *this = result;
 }

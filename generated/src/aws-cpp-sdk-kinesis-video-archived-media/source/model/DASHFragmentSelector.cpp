@@ -25,10 +25,8 @@ DASHFragmentSelector::DASHFragmentSelector() :
 {
 }
 
-DASHFragmentSelector::DASHFragmentSelector(JsonView jsonValue) : 
-    m_fragmentSelectorType(DASHFragmentSelectorType::NOT_SET),
-    m_fragmentSelectorTypeHasBeenSet(false),
-    m_timestampRangeHasBeenSet(false)
+DASHFragmentSelector::DASHFragmentSelector(JsonView jsonValue)
+  : DASHFragmentSelector()
 {
   *this = jsonValue;
 }

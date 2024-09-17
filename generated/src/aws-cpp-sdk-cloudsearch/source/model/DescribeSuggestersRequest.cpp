@@ -29,12 +29,19 @@ Aws::String DescribeSuggestersRequest::SerializePayload() const
 
   if(m_suggesterNamesHasBeenSet)
   {
-    unsigned suggesterNamesCount = 1;
-    for(auto& item : m_suggesterNames)
+    if (m_suggesterNames.empty())
     {
-      ss << "SuggesterNames.member." << suggesterNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      suggesterNamesCount++;
+      ss << "SuggesterNames=&";
+    }
+    else
+    {
+      unsigned suggesterNamesCount = 1;
+      for(auto& item : m_suggesterNames)
+      {
+        ss << "SuggesterNames.member." << suggesterNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        suggesterNamesCount++;
+      }
     }
   }
 

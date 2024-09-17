@@ -22,15 +22,14 @@ JupyterLabAppSettings::JupyterLabAppSettings() :
     m_defaultResourceSpecHasBeenSet(false),
     m_customImagesHasBeenSet(false),
     m_lifecycleConfigArnsHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+    m_codeRepositoriesHasBeenSet(false),
+    m_appLifecycleManagementHasBeenSet(false),
+    m_emrSettingsHasBeenSet(false)
 {
 }
 
-JupyterLabAppSettings::JupyterLabAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+JupyterLabAppSettings::JupyterLabAppSettings(JsonView jsonValue)
+  : JupyterLabAppSettings()
 {
   *this = jsonValue;
 }
@@ -72,6 +71,20 @@ JupyterLabAppSettings& JupyterLabAppSettings::operator =(JsonView jsonValue)
       m_codeRepositories.push_back(codeRepositoriesJsonList[codeRepositoriesIndex].AsObject());
     }
     m_codeRepositoriesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppLifecycleManagement"))
+  {
+    m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
+
+    m_appLifecycleManagementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EmrSettings"))
+  {
+    m_emrSettings = jsonValue.GetObject("EmrSettings");
+
+    m_emrSettingsHasBeenSet = true;
   }
 
   return *this;
@@ -117,6 +130,18 @@ JsonValue JupyterLabAppSettings::Jsonize() const
      codeRepositoriesJsonList[codeRepositoriesIndex].AsObject(m_codeRepositories[codeRepositoriesIndex].Jsonize());
    }
    payload.WithArray("CodeRepositories", std::move(codeRepositoriesJsonList));
+
+  }
+
+  if(m_appLifecycleManagementHasBeenSet)
+  {
+   payload.WithObject("AppLifecycleManagement", m_appLifecycleManagement.Jsonize());
+
+  }
+
+  if(m_emrSettingsHasBeenSet)
+  {
+   payload.WithObject("EmrSettings", m_emrSettings.Jsonize());
 
   }
 

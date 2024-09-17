@@ -26,11 +26,8 @@ AggregationConfig::AggregationConfig() :
 {
 }
 
-AggregationConfig::AggregationConfig(JsonView jsonValue) : 
-    m_aggregationType(AggregationType::NOT_SET),
-    m_aggregationTypeHasBeenSet(false),
-    m_targetFileSize(0),
-    m_targetFileSizeHasBeenSet(false)
+AggregationConfig::AggregationConfig(JsonView jsonValue)
+  : AggregationConfig()
 {
   *this = jsonValue;
 }

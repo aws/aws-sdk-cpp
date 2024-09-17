@@ -25,11 +25,8 @@ GetPatchBaselineResult::GetPatchBaselineResult() :
 {
 }
 
-GetPatchBaselineResult::GetPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesEnableNonSecurity(false),
-    m_rejectedPatchesAction(PatchAction::NOT_SET)
+GetPatchBaselineResult::GetPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPatchBaselineResult()
 {
   *this = result;
 }

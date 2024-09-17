@@ -28,11 +28,8 @@ PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup
 {
 }
 
-PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup(const XmlNode& xmlNode) : 
-    m_dimensionsHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
+PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup(const XmlNode& xmlNode)
+  : PerformanceInsightsMetricDimensionGroup()
 {
   *this = xmlNode;
 }

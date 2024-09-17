@@ -23,8 +23,8 @@ DeliveryDestinationConfiguration::DeliveryDestinationConfiguration() :
 {
 }
 
-DeliveryDestinationConfiguration::DeliveryDestinationConfiguration(JsonView jsonValue) : 
-    m_destinationResourceArnHasBeenSet(false)
+DeliveryDestinationConfiguration::DeliveryDestinationConfiguration(JsonView jsonValue)
+  : DeliveryDestinationConfiguration()
 {
   *this = jsonValue;
 }

@@ -12,6 +12,8 @@
 #include <aws/codepipeline/model/ExecutionTrigger.h>
 #include <aws/codepipeline/model/StopExecutionTrigger.h>
 #include <aws/codepipeline/model/ExecutionMode.h>
+#include <aws/codepipeline/model/ExecutionType.h>
+#include <aws/codepipeline/model/PipelineRollbackMetadata.h>
 #include <aws/codepipeline/model/SourceRevision.h>
 #include <utility>
 
@@ -44,47 +46,21 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the pipeline execution.</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
-
-    /**
-     * <p>The ID of the pipeline execution.</p>
-     */
     inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the pipeline execution.</p>
-     */
     inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
-
-    /**
-     * <p>The ID of the pipeline execution.</p>
-     */
     inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::move(value); }
-
-    /**
-     * <p>The ID of the pipeline execution.</p>
-     */
     inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId.assign(value); }
-
-    /**
-     * <p>The ID of the pipeline execution.</p>
-     */
     inline PipelineExecutionSummary& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
-
-    /**
-     * <p>The ID of the pipeline execution.</p>
-     */
     inline PipelineExecutionSummary& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the pipeline execution.</p>
-     */
     inline PipelineExecutionSummary& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
      * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
@@ -105,334 +81,128 @@ namespace Model
      * completed successfully.</p> </li> </ul>
      */
     inline const PipelineExecutionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
-     * request to be manually stopped. Depending on the selected stop mode, the
-     * execution is either completing or abandoning in-progress actions. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
-     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
-     * execution was waiting for the next stage to be completed, a newer pipeline
-     * execution advanced and continued through the pipeline instead. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
-     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
-     * completed successfully.</p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
-     * request to be manually stopped. Depending on the selected stop mode, the
-     * execution is either completing or abandoning in-progress actions. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
-     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
-     * execution was waiting for the next stage to be completed, a newer pipeline
-     * execution advanced and continued through the pipeline instead. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
-     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
-     * completed successfully.</p> </li> </ul>
-     */
     inline void SetStatus(const PipelineExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
-     * request to be manually stopped. Depending on the selected stop mode, the
-     * execution is either completing or abandoning in-progress actions. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
-     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
-     * execution was waiting for the next stage to be completed, a newer pipeline
-     * execution advanced and continued through the pipeline instead. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
-     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
-     * completed successfully.</p> </li> </ul>
-     */
     inline void SetStatus(PipelineExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
-     * request to be manually stopped. Depending on the selected stop mode, the
-     * execution is either completing or abandoning in-progress actions. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
-     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
-     * execution was waiting for the next stage to be completed, a newer pipeline
-     * execution advanced and continued through the pipeline instead. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
-     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
-     * completed successfully.</p> </li> </ul>
-     */
     inline PipelineExecutionSummary& WithStatus(const PipelineExecutionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
-     * execution was manually stopped. For more information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
-     * request to be manually stopped. Depending on the selected stop mode, the
-     * execution is either completing or abandoning in-progress actions. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
-     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
-     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
-     * execution was waiting for the next stage to be completed, a newer pipeline
-     * execution advanced and continued through the pipeline instead. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
-     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
-     * completed successfully.</p> </li> </ul>
-     */
     inline PipelineExecutionSummary& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Status summary for the pipeline.</p>
+     */
+    inline const Aws::String& GetStatusSummary() const{ return m_statusSummary; }
+    inline bool StatusSummaryHasBeenSet() const { return m_statusSummaryHasBeenSet; }
+    inline void SetStatusSummary(const Aws::String& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = value; }
+    inline void SetStatusSummary(Aws::String&& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = std::move(value); }
+    inline void SetStatusSummary(const char* value) { m_statusSummaryHasBeenSet = true; m_statusSummary.assign(value); }
+    inline PipelineExecutionSummary& WithStatusSummary(const Aws::String& value) { SetStatusSummary(value); return *this;}
+    inline PipelineExecutionSummary& WithStatusSummary(Aws::String&& value) { SetStatusSummary(std::move(value)); return *this;}
+    inline PipelineExecutionSummary& WithStatusSummary(const char* value) { SetStatusSummary(value); return *this;}
+    ///@}
 
+    ///@{
     /**
      * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
-     */
     inline PipelineExecutionSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
-     */
     inline PipelineExecutionSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time of the last change to the pipeline execution, in timestamp
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
-
-    /**
-     * <p>The date and time of the last change to the pipeline execution, in timestamp
-     * format.</p>
-     */
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time of the last change to the pipeline execution, in timestamp
-     * format.</p>
-     */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-
-    /**
-     * <p>The date and time of the last change to the pipeline execution, in timestamp
-     * format.</p>
-     */
     inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-
-    /**
-     * <p>The date and time of the last change to the pipeline execution, in timestamp
-     * format.</p>
-     */
     inline PipelineExecutionSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the last change to the pipeline execution, in timestamp
-     * format.</p>
-     */
     inline PipelineExecutionSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the source artifact revisions that initiated a pipeline
      * execution.</p>
      */
     inline const Aws::Vector<SourceRevision>& GetSourceRevisions() const{ return m_sourceRevisions; }
-
-    /**
-     * <p>A list of the source artifact revisions that initiated a pipeline
-     * execution.</p>
-     */
     inline bool SourceRevisionsHasBeenSet() const { return m_sourceRevisionsHasBeenSet; }
-
-    /**
-     * <p>A list of the source artifact revisions that initiated a pipeline
-     * execution.</p>
-     */
     inline void SetSourceRevisions(const Aws::Vector<SourceRevision>& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions = value; }
-
-    /**
-     * <p>A list of the source artifact revisions that initiated a pipeline
-     * execution.</p>
-     */
     inline void SetSourceRevisions(Aws::Vector<SourceRevision>&& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions = std::move(value); }
-
-    /**
-     * <p>A list of the source artifact revisions that initiated a pipeline
-     * execution.</p>
-     */
     inline PipelineExecutionSummary& WithSourceRevisions(const Aws::Vector<SourceRevision>& value) { SetSourceRevisions(value); return *this;}
-
-    /**
-     * <p>A list of the source artifact revisions that initiated a pipeline
-     * execution.</p>
-     */
     inline PipelineExecutionSummary& WithSourceRevisions(Aws::Vector<SourceRevision>&& value) { SetSourceRevisions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the source artifact revisions that initiated a pipeline
-     * execution.</p>
-     */
     inline PipelineExecutionSummary& AddSourceRevisions(const SourceRevision& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the source artifact revisions that initiated a pipeline
-     * execution.</p>
-     */
     inline PipelineExecutionSummary& AddSourceRevisions(SourceRevision&& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The interaction or event that started a pipeline execution, such as automated
      * change detection or a <code>StartPipelineExecution</code> API call.</p>
      */
     inline const ExecutionTrigger& GetTrigger() const{ return m_trigger; }
-
-    /**
-     * <p>The interaction or event that started a pipeline execution, such as automated
-     * change detection or a <code>StartPipelineExecution</code> API call.</p>
-     */
     inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
-
-    /**
-     * <p>The interaction or event that started a pipeline execution, such as automated
-     * change detection or a <code>StartPipelineExecution</code> API call.</p>
-     */
     inline void SetTrigger(const ExecutionTrigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
-
-    /**
-     * <p>The interaction or event that started a pipeline execution, such as automated
-     * change detection or a <code>StartPipelineExecution</code> API call.</p>
-     */
     inline void SetTrigger(ExecutionTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
-
-    /**
-     * <p>The interaction or event that started a pipeline execution, such as automated
-     * change detection or a <code>StartPipelineExecution</code> API call.</p>
-     */
     inline PipelineExecutionSummary& WithTrigger(const ExecutionTrigger& value) { SetTrigger(value); return *this;}
-
-    /**
-     * <p>The interaction or event that started a pipeline execution, such as automated
-     * change detection or a <code>StartPipelineExecution</code> API call.</p>
-     */
     inline PipelineExecutionSummary& WithTrigger(ExecutionTrigger&& value) { SetTrigger(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The interaction that stopped a pipeline execution.</p>
      */
     inline const StopExecutionTrigger& GetStopTrigger() const{ return m_stopTrigger; }
-
-    /**
-     * <p>The interaction that stopped a pipeline execution.</p>
-     */
     inline bool StopTriggerHasBeenSet() const { return m_stopTriggerHasBeenSet; }
-
-    /**
-     * <p>The interaction that stopped a pipeline execution.</p>
-     */
     inline void SetStopTrigger(const StopExecutionTrigger& value) { m_stopTriggerHasBeenSet = true; m_stopTrigger = value; }
-
-    /**
-     * <p>The interaction that stopped a pipeline execution.</p>
-     */
     inline void SetStopTrigger(StopExecutionTrigger&& value) { m_stopTriggerHasBeenSet = true; m_stopTrigger = std::move(value); }
-
-    /**
-     * <p>The interaction that stopped a pipeline execution.</p>
-     */
     inline PipelineExecutionSummary& WithStopTrigger(const StopExecutionTrigger& value) { SetStopTrigger(value); return *this;}
-
-    /**
-     * <p>The interaction that stopped a pipeline execution.</p>
-     */
     inline PipelineExecutionSummary& WithStopTrigger(StopExecutionTrigger&& value) { SetStopTrigger(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The method that the pipeline will use to handle multiple executions. The
      * default mode is SUPERSEDED.</p>
      */
     inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
-
-    /**
-     * <p>The method that the pipeline will use to handle multiple executions. The
-     * default mode is SUPERSEDED.</p>
-     */
     inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
-
-    /**
-     * <p>The method that the pipeline will use to handle multiple executions. The
-     * default mode is SUPERSEDED.</p>
-     */
     inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
-
-    /**
-     * <p>The method that the pipeline will use to handle multiple executions. The
-     * default mode is SUPERSEDED.</p>
-     */
     inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
-
-    /**
-     * <p>The method that the pipeline will use to handle multiple executions. The
-     * default mode is SUPERSEDED.</p>
-     */
     inline PipelineExecutionSummary& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
-
-    /**
-     * <p>The method that the pipeline will use to handle multiple executions. The
-     * default mode is SUPERSEDED.</p>
-     */
     inline PipelineExecutionSummary& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Type of the pipeline execution.</p>
+     */
+    inline const ExecutionType& GetExecutionType() const{ return m_executionType; }
+    inline bool ExecutionTypeHasBeenSet() const { return m_executionTypeHasBeenSet; }
+    inline void SetExecutionType(const ExecutionType& value) { m_executionTypeHasBeenSet = true; m_executionType = value; }
+    inline void SetExecutionType(ExecutionType&& value) { m_executionTypeHasBeenSet = true; m_executionType = std::move(value); }
+    inline PipelineExecutionSummary& WithExecutionType(const ExecutionType& value) { SetExecutionType(value); return *this;}
+    inline PipelineExecutionSummary& WithExecutionType(ExecutionType&& value) { SetExecutionType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The metadata for the stage execution to be rolled back.</p>
+     */
+    inline const PipelineRollbackMetadata& GetRollbackMetadata() const{ return m_rollbackMetadata; }
+    inline bool RollbackMetadataHasBeenSet() const { return m_rollbackMetadataHasBeenSet; }
+    inline void SetRollbackMetadata(const PipelineRollbackMetadata& value) { m_rollbackMetadataHasBeenSet = true; m_rollbackMetadata = value; }
+    inline void SetRollbackMetadata(PipelineRollbackMetadata&& value) { m_rollbackMetadataHasBeenSet = true; m_rollbackMetadata = std::move(value); }
+    inline PipelineExecutionSummary& WithRollbackMetadata(const PipelineRollbackMetadata& value) { SetRollbackMetadata(value); return *this;}
+    inline PipelineExecutionSummary& WithRollbackMetadata(PipelineRollbackMetadata&& value) { SetRollbackMetadata(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_pipelineExecutionId;
@@ -440,6 +210,9 @@ namespace Model
 
     PipelineExecutionStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusSummary;
+    bool m_statusSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;
@@ -458,6 +231,12 @@ namespace Model
 
     ExecutionMode m_executionMode;
     bool m_executionModeHasBeenSet = false;
+
+    ExecutionType m_executionType;
+    bool m_executionTypeHasBeenSet = false;
+
+    PipelineRollbackMetadata m_rollbackMetadata;
+    bool m_rollbackMetadataHasBeenSet = false;
   };
 
 } // namespace Model

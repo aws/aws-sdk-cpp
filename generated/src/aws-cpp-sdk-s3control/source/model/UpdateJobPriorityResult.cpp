@@ -21,8 +21,8 @@ UpdateJobPriorityResult::UpdateJobPriorityResult() :
 {
 }
 
-UpdateJobPriorityResult::UpdateJobPriorityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_priority(0)
+UpdateJobPriorityResult::UpdateJobPriorityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : UpdateJobPriorityResult()
 {
   *this = result;
 }

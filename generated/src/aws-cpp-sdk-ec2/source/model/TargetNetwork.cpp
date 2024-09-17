@@ -30,13 +30,8 @@ TargetNetwork::TargetNetwork() :
 {
 }
 
-TargetNetwork::TargetNetwork(const XmlNode& xmlNode) : 
-    m_associationIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_targetNetworkIdHasBeenSet(false),
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+TargetNetwork::TargetNetwork(const XmlNode& xmlNode)
+  : TargetNetwork()
 {
   *this = xmlNode;
 }

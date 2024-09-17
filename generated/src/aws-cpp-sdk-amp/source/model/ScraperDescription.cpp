@@ -34,19 +34,8 @@ ScraperDescription::ScraperDescription() :
 {
 }
 
-ScraperDescription::ScraperDescription(JsonView jsonValue) : 
-    m_aliasHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_scrapeConfigurationHasBeenSet(false),
-    m_scraperIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ScraperDescription::ScraperDescription(JsonView jsonValue)
+  : ScraperDescription()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListMedicalVocabulariesResult::ListMedicalVocabulariesResult() :
 {
 }
 
-ListMedicalVocabulariesResult::ListMedicalVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(VocabularyState::NOT_SET)
+ListMedicalVocabulariesResult::ListMedicalVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListMedicalVocabulariesResult()
 {
   *this = result;
 }

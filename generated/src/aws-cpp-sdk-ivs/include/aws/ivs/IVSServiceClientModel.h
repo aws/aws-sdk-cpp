@@ -48,6 +48,13 @@
 #include <aws/ivs/model/UntagResourceResult.h>
 #include <aws/ivs/model/UpdateChannelResult.h>
 #include <aws/ivs/model/UpdatePlaybackRestrictionPolicyResult.h>
+#include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
+#include <aws/ivs/model/ListRecordingConfigurationsRequest.h>
+#include <aws/ivs/model/ListStreamsRequest.h>
+#include <aws/ivs/model/CreateChannelRequest.h>
+#include <aws/ivs/model/ListChannelsRequest.h>
+#include <aws/ivs/model/ListPlaybackRestrictionPoliciesRequest.h>
+#include <aws/ivs/model/CreatePlaybackRestrictionPolicyRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IVSClient header */
 
@@ -82,7 +89,7 @@ namespace Aws
 
   namespace IVS
   {
-    using IVSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IVSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IVSEndpointProviderBase = Aws::IVS::Endpoint::IVSEndpointProviderBase;
     using IVSEndpointProvider = Aws::IVS::Endpoint::IVSEndpointProvider;
 

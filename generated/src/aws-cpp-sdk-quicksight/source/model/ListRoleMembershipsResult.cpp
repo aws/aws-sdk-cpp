@@ -22,8 +22,8 @@ ListRoleMembershipsResult::ListRoleMembershipsResult() :
 {
 }
 
-ListRoleMembershipsResult::ListRoleMembershipsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListRoleMembershipsResult::ListRoleMembershipsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListRoleMembershipsResult()
 {
   *this = result;
 }

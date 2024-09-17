@@ -26,9 +26,8 @@ RollbackTrigger::RollbackTrigger() :
 {
 }
 
-RollbackTrigger::RollbackTrigger(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false)
+RollbackTrigger::RollbackTrigger(const XmlNode& xmlNode)
+  : RollbackTrigger()
 {
   *this = xmlNode;
 }

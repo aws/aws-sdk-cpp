@@ -24,9 +24,8 @@ RedshiftConnectorProfileCredentials::RedshiftConnectorProfileCredentials() :
 {
 }
 
-RedshiftConnectorProfileCredentials::RedshiftConnectorProfileCredentials(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+RedshiftConnectorProfileCredentials::RedshiftConnectorProfileCredentials(JsonView jsonValue)
+  : RedshiftConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

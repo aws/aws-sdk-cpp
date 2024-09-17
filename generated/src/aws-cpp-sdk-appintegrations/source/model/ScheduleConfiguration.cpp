@@ -25,10 +25,8 @@ ScheduleConfiguration::ScheduleConfiguration() :
 {
 }
 
-ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue) : 
-    m_firstExecutionFromHasBeenSet(false),
-    m_objectHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false)
+ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue)
+  : ScheduleConfiguration()
 {
   *this = jsonValue;
 }

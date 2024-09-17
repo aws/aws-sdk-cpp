@@ -22,8 +22,8 @@ ListEnrollmentStatusesResult::ListEnrollmentStatusesResult() :
 {
 }
 
-ListEnrollmentStatusesResult::ListEnrollmentStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_includeMemberAccounts(false)
+ListEnrollmentStatusesResult::ListEnrollmentStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListEnrollmentStatusesResult()
 {
   *this = result;
 }
@@ -31,12 +31,6 @@ ListEnrollmentStatusesResult::ListEnrollmentStatusesResult(const Aws::AmazonWebS
 ListEnrollmentStatusesResult& ListEnrollmentStatusesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("includeMemberAccounts"))
-  {
-    m_includeMemberAccounts = jsonValue.GetBool("includeMemberAccounts");
-
-  }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -44,6 +38,12 @@ ListEnrollmentStatusesResult& ListEnrollmentStatusesResult::operator =(const Aws
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("includeMemberAccounts"))
+  {
+    m_includeMemberAccounts = jsonValue.GetBool("includeMemberAccounts");
+
   }
 
   if(jsonValue.ValueExists("nextToken"))

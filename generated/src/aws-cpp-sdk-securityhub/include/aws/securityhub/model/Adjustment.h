@@ -37,87 +37,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The metric to adjust.</p>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
-
-    /**
-     * <p>The metric to adjust.</p>
-     */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-
-    /**
-     * <p>The metric to adjust.</p>
-     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-
-    /**
-     * <p>The metric to adjust.</p>
-     */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-
-    /**
-     * <p>The metric to adjust.</p>
-     */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-
-    /**
-     * <p>The metric to adjust.</p>
-     */
     inline Adjustment& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-
-    /**
-     * <p>The metric to adjust.</p>
-     */
     inline Adjustment& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-
-    /**
-     * <p>The metric to adjust.</p>
-     */
     inline Adjustment& WithMetric(const char* value) { SetMetric(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the adjustment.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason for the adjustment.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the adjustment.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason for the adjustment.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason for the adjustment.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>The reason for the adjustment.</p>
-     */
     inline Adjustment& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason for the adjustment.</p>
-     */
     inline Adjustment& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the adjustment.</p>
-     */
     inline Adjustment& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metric;

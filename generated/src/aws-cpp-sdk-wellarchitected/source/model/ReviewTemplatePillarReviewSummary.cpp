@@ -26,11 +26,8 @@ ReviewTemplatePillarReviewSummary::ReviewTemplatePillarReviewSummary() :
 {
 }
 
-ReviewTemplatePillarReviewSummary::ReviewTemplatePillarReviewSummary(JsonView jsonValue) : 
-    m_pillarIdHasBeenSet(false),
-    m_pillarNameHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_questionCountsHasBeenSet(false)
+ReviewTemplatePillarReviewSummary::ReviewTemplatePillarReviewSummary(JsonView jsonValue)
+  : ReviewTemplatePillarReviewSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Scoping::Scoping() :
 {
 }
 
-Scoping::Scoping(JsonView jsonValue) : 
-    m_excludesHasBeenSet(false),
-    m_includesHasBeenSet(false)
+Scoping::Scoping(JsonView jsonValue)
+  : Scoping()
 {
   *this = jsonValue;
 }

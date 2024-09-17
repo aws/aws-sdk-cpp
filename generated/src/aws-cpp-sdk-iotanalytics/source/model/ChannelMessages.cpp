@@ -23,8 +23,8 @@ ChannelMessages::ChannelMessages() :
 {
 }
 
-ChannelMessages::ChannelMessages(JsonView jsonValue) : 
-    m_s3PathsHasBeenSet(false)
+ChannelMessages::ChannelMessages(JsonView jsonValue)
+  : ChannelMessages()
 {
   *this = jsonValue;
 }

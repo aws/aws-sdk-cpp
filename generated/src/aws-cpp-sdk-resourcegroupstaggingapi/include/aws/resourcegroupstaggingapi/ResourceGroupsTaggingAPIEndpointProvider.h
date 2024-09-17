@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ResourceGroupsTaggingAPIClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ResourceGroupsTaggingAPIClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ResourceGroupsTaggingAPIClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ResourceGroupsTaggingAPIBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -25,10 +25,8 @@ FSxWindowsFileServerVolumeConfiguration::FSxWindowsFileServerVolumeConfiguration
 {
 }
 
-FSxWindowsFileServerVolumeConfiguration::FSxWindowsFileServerVolumeConfiguration(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_authorizationConfigHasBeenSet(false)
+FSxWindowsFileServerVolumeConfiguration::FSxWindowsFileServerVolumeConfiguration(JsonView jsonValue)
+  : FSxWindowsFileServerVolumeConfiguration()
 {
   *this = jsonValue;
 }

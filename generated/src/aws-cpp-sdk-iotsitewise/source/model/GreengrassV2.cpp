@@ -23,8 +23,8 @@ GreengrassV2::GreengrassV2() :
 {
 }
 
-GreengrassV2::GreengrassV2(JsonView jsonValue) : 
-    m_coreDeviceThingNameHasBeenSet(false)
+GreengrassV2::GreengrassV2(JsonView jsonValue)
+  : GreengrassV2()
 {
   *this = jsonValue;
 }

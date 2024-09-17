@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The object representing the filter that Amazon Lex will use to select the
      * appropriate transcript when the transcript format is the Amazon Lex format.</p>
      */
     inline const LexTranscriptFilter& GetLexTranscriptFilter() const{ return m_lexTranscriptFilter; }
-
-    /**
-     * <p>The object representing the filter that Amazon Lex will use to select the
-     * appropriate transcript when the transcript format is the Amazon Lex format.</p>
-     */
     inline bool LexTranscriptFilterHasBeenSet() const { return m_lexTranscriptFilterHasBeenSet; }
-
-    /**
-     * <p>The object representing the filter that Amazon Lex will use to select the
-     * appropriate transcript when the transcript format is the Amazon Lex format.</p>
-     */
     inline void SetLexTranscriptFilter(const LexTranscriptFilter& value) { m_lexTranscriptFilterHasBeenSet = true; m_lexTranscriptFilter = value; }
-
-    /**
-     * <p>The object representing the filter that Amazon Lex will use to select the
-     * appropriate transcript when the transcript format is the Amazon Lex format.</p>
-     */
     inline void SetLexTranscriptFilter(LexTranscriptFilter&& value) { m_lexTranscriptFilterHasBeenSet = true; m_lexTranscriptFilter = std::move(value); }
-
-    /**
-     * <p>The object representing the filter that Amazon Lex will use to select the
-     * appropriate transcript when the transcript format is the Amazon Lex format.</p>
-     */
     inline TranscriptFilter& WithLexTranscriptFilter(const LexTranscriptFilter& value) { SetLexTranscriptFilter(value); return *this;}
-
-    /**
-     * <p>The object representing the filter that Amazon Lex will use to select the
-     * appropriate transcript when the transcript format is the Amazon Lex format.</p>
-     */
     inline TranscriptFilter& WithLexTranscriptFilter(LexTranscriptFilter&& value) { SetLexTranscriptFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LexTranscriptFilter m_lexTranscriptFilter;

@@ -19,7 +19,8 @@ ListAssetModelCompositeModelsRequest::ListAssetModelCompositeModelsRequest() :
     m_assetModelIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_assetModelVersionHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,13 @@ void ListAssetModelCompositeModelsRequest::AddQueryStringParameters(URI& uri) co
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_assetModelVersionHasBeenSet)
+    {
+      ss << m_assetModelVersion;
+      uri.AddQueryStringParameter("assetModelVersion", ss.str());
       ss.str("");
     }
 

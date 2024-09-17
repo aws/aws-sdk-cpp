@@ -27,12 +27,8 @@ Join::Join() :
 {
 }
 
-Join::Join(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_joinType(JoinType::NOT_SET),
-    m_joinTypeHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+Join::Join(JsonView jsonValue)
+  : Join()
 {
   *this = jsonValue;
 }

@@ -47,6 +47,11 @@
 #include <aws/workdocs/model/InitiateDocumentVersionUploadResult.h>
 #include <aws/workdocs/model/SearchResourcesResult.h>
 #include <aws/workdocs/model/UpdateUserResult.h>
+#include <aws/workdocs/model/InitiateDocumentVersionUploadRequest.h>
+#include <aws/workdocs/model/DescribeUsersRequest.h>
+#include <aws/workdocs/model/SearchResourcesRequest.h>
+#include <aws/workdocs/model/DescribeActivitiesRequest.h>
+#include <aws/workdocs/model/GetResourcesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in WorkDocsClient header */
 
@@ -81,7 +86,7 @@ namespace Aws
 
   namespace WorkDocs
   {
-    using WorkDocsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkDocsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkDocsEndpointProviderBase = Aws::WorkDocs::Endpoint::WorkDocsEndpointProviderBase;
     using WorkDocsEndpointProvider = Aws::WorkDocs::Endpoint::WorkDocsEndpointProvider;
 

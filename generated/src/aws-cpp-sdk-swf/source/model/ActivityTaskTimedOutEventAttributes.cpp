@@ -29,14 +29,8 @@ ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes() :
 {
 }
 
-ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes(JsonView jsonValue) : 
-    m_timeoutType(ActivityTaskTimeoutType::NOT_SET),
-    m_timeoutTypeHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes(JsonView jsonValue)
+  : ActivityTaskTimedOutEventAttributes()
 {
   *this = jsonValue;
 }

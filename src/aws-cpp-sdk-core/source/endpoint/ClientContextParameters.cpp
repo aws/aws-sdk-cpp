@@ -53,6 +53,11 @@ namespace Endpoint
         return SetParameter(EndpointParameter(std::move(name), value, EndpointParameter::ParameterOrigin::CLIENT_CONTEXT));
     }
 
+    void ClientContextParameters::SetStringArrayParameter(Aws::String name, const Aws::Vector<Aws::String>& value)
+    {
+        return SetParameter(EndpointParameter(std::move(name), value, EndpointParameter::ParameterOrigin::CLIENT_CONTEXT));
+    }
+
     const Aws::Vector<ClientContextParameters::EndpointParameter>& ClientContextParameters::GetAllParameters() const
     {
         return m_params;

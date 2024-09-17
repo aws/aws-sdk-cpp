@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using Route53RecoveryReadinessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using Route53RecoveryReadinessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using Route53RecoveryReadinessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Route53RecoveryReadinessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

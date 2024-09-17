@@ -37,55 +37,27 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the number of days after creation that a recovery point is deleted.
      * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
      */
     inline long long GetDeleteAfterDays() const{ return m_deleteAfterDays; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
-     */
     inline bool DeleteAfterDaysHasBeenSet() const { return m_deleteAfterDaysHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
-     */
     inline void SetDeleteAfterDays(long long value) { m_deleteAfterDaysHasBeenSet = true; m_deleteAfterDays = value; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
-     */
     inline AwsBackupBackupPlanLifecycleDetails& WithDeleteAfterDays(long long value) { SetDeleteAfterDays(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the number of days after creation that a recovery point is moved to
      * cold storage. </p>
      */
     inline long long GetMoveToColdStorageAfterDays() const{ return m_moveToColdStorageAfterDays; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is moved to
-     * cold storage. </p>
-     */
     inline bool MoveToColdStorageAfterDaysHasBeenSet() const { return m_moveToColdStorageAfterDaysHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is moved to
-     * cold storage. </p>
-     */
     inline void SetMoveToColdStorageAfterDays(long long value) { m_moveToColdStorageAfterDaysHasBeenSet = true; m_moveToColdStorageAfterDays = value; }
-
-    /**
-     * <p>Specifies the number of days after creation that a recovery point is moved to
-     * cold storage. </p>
-     */
     inline AwsBackupBackupPlanLifecycleDetails& WithMoveToColdStorageAfterDays(long long value) { SetMoveToColdStorageAfterDays(value); return *this;}
-
+    ///@}
   private:
 
     long long m_deleteAfterDays;

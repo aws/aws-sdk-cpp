@@ -33,53 +33,27 @@ namespace Model
     AWS_DYNAMODB_API RestoreTableFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of the table created from an existing backup.</p>
      */
     inline const TableDescription& GetTableDescription() const{ return m_tableDescription; }
-
-    /**
-     * <p>The description of the table created from an existing backup.</p>
-     */
     inline void SetTableDescription(const TableDescription& value) { m_tableDescription = value; }
-
-    /**
-     * <p>The description of the table created from an existing backup.</p>
-     */
     inline void SetTableDescription(TableDescription&& value) { m_tableDescription = std::move(value); }
-
-    /**
-     * <p>The description of the table created from an existing backup.</p>
-     */
     inline RestoreTableFromBackupResult& WithTableDescription(const TableDescription& value) { SetTableDescription(value); return *this;}
-
-    /**
-     * <p>The description of the table created from an existing backup.</p>
-     */
     inline RestoreTableFromBackupResult& WithTableDescription(TableDescription&& value) { SetTableDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RestoreTableFromBackupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RestoreTableFromBackupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RestoreTableFromBackupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TableDescription m_tableDescription;

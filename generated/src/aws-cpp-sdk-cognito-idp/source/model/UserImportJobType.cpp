@@ -39,24 +39,8 @@ UserImportJobType::UserImportJobType() :
 {
 }
 
-UserImportJobType::UserImportJobType(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_status(UserImportJobStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_importedUsers(0),
-    m_importedUsersHasBeenSet(false),
-    m_skippedUsers(0),
-    m_skippedUsersHasBeenSet(false),
-    m_failedUsers(0),
-    m_failedUsersHasBeenSet(false),
-    m_completionMessageHasBeenSet(false)
+UserImportJobType::UserImportJobType(JsonView jsonValue)
+  : UserImportJobType()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ SSEDescription::SSEDescription() :
 {
 }
 
-SSEDescription::SSEDescription(JsonView jsonValue) : 
-    m_status(SSEStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sSEType(SSEType::NOT_SET),
-    m_sSETypeHasBeenSet(false),
-    m_kMSMasterKeyArnHasBeenSet(false),
-    m_inaccessibleEncryptionDateTimeHasBeenSet(false)
+SSEDescription::SSEDescription(JsonView jsonValue)
+  : SSEDescription()
 {
   *this = jsonValue;
 }

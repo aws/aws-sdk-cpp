@@ -36,21 +36,8 @@ WorkflowExecutionStartedEventAttributes::WorkflowExecutionStartedEventAttributes
 {
 }
 
-WorkflowExecutionStartedEventAttributes::WorkflowExecutionStartedEventAttributes(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_executionStartToCloseTimeoutHasBeenSet(false),
-    m_taskStartToCloseTimeoutHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_continuedExecutionRunIdHasBeenSet(false),
-    m_parentWorkflowExecutionHasBeenSet(false),
-    m_parentInitiatedEventId(0),
-    m_parentInitiatedEventIdHasBeenSet(false),
-    m_lambdaRoleHasBeenSet(false)
+WorkflowExecutionStartedEventAttributes::WorkflowExecutionStartedEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionStartedEventAttributes()
 {
   *this = jsonValue;
 }

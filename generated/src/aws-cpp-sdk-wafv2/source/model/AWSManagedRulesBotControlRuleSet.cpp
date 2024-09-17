@@ -26,11 +26,8 @@ AWSManagedRulesBotControlRuleSet::AWSManagedRulesBotControlRuleSet() :
 {
 }
 
-AWSManagedRulesBotControlRuleSet::AWSManagedRulesBotControlRuleSet(JsonView jsonValue) : 
-    m_inspectionLevel(InspectionLevel::NOT_SET),
-    m_inspectionLevelHasBeenSet(false),
-    m_enableMachineLearning(false),
-    m_enableMachineLearningHasBeenSet(false)
+AWSManagedRulesBotControlRuleSet::AWSManagedRulesBotControlRuleSet(JsonView jsonValue)
+  : AWSManagedRulesBotControlRuleSet()
 {
   *this = jsonValue;
 }

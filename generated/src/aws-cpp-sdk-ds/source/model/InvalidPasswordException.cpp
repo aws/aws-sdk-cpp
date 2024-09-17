@@ -24,9 +24,8 @@ InvalidPasswordException::InvalidPasswordException() :
 {
 }
 
-InvalidPasswordException::InvalidPasswordException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+InvalidPasswordException::InvalidPasswordException(JsonView jsonValue)
+  : InvalidPasswordException()
 {
   *this = jsonValue;
 }

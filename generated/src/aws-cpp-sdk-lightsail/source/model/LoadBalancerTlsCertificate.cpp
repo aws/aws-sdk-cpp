@@ -52,37 +52,8 @@ LoadBalancerTlsCertificate::LoadBalancerTlsCertificate() :
 {
 }
 
-LoadBalancerTlsCertificate::LoadBalancerTlsCertificate(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_loadBalancerNameHasBeenSet(false),
-    m_isAttached(false),
-    m_isAttachedHasBeenSet(false),
-    m_status(LoadBalancerTlsCertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainValidationRecordsHasBeenSet(false),
-    m_failureReason(LoadBalancerTlsCertificateFailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_issuedAtHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_keyAlgorithmHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false),
-    m_revocationReason(LoadBalancerTlsCertificateRevocationReason::NOT_SET),
-    m_revocationReasonHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_signatureAlgorithmHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false)
+LoadBalancerTlsCertificate::LoadBalancerTlsCertificate(JsonView jsonValue)
+  : LoadBalancerTlsCertificate()
 {
   *this = jsonValue;
 }

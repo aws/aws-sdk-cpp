@@ -28,13 +28,8 @@ ActivityTypeInfo::ActivityTypeInfo() :
 {
 }
 
-ActivityTypeInfo::ActivityTypeInfo(JsonView jsonValue) : 
-    m_activityTypeHasBeenSet(false),
-    m_status(RegistrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false)
+ActivityTypeInfo::ActivityTypeInfo(JsonView jsonValue)
+  : ActivityTypeInfo()
 {
   *this = jsonValue;
 }

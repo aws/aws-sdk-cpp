@@ -25,9 +25,8 @@ ValueHolder::ValueHolder() :
 {
 }
 
-ValueHolder::ValueHolder(JsonView jsonValue) : 
-    m_ionBinaryHasBeenSet(false),
-    m_ionTextHasBeenSet(false)
+ValueHolder::ValueHolder(JsonView jsonValue)
+  : ValueHolder()
 {
   *this = jsonValue;
 }

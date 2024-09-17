@@ -29,14 +29,8 @@ TableCell::TableCell() :
 {
 }
 
-TableCell::TableCell(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_topAnswer(false),
-    m_topAnswerHasBeenSet(false),
-    m_highlighted(false),
-    m_highlightedHasBeenSet(false),
-    m_header(false),
-    m_headerHasBeenSet(false)
+TableCell::TableCell(JsonView jsonValue)
+  : TableCell()
 {
   *this = jsonValue;
 }

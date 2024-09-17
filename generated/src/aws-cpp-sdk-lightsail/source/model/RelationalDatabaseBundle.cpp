@@ -38,23 +38,8 @@ RelationalDatabaseBundle::RelationalDatabaseBundle() :
 {
 }
 
-RelationalDatabaseBundle::RelationalDatabaseBundle(JsonView jsonValue) : 
-    m_bundleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false),
-    m_diskSizeInGb(0),
-    m_diskSizeInGbHasBeenSet(false),
-    m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false),
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_isEncrypted(false),
-    m_isEncryptedHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false)
+RelationalDatabaseBundle::RelationalDatabaseBundle(JsonView jsonValue)
+  : RelationalDatabaseBundle()
 {
   *this = jsonValue;
 }

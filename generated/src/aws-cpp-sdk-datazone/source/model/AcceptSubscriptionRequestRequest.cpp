@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AcceptSubscriptionRequestRequest::AcceptSubscriptionRequestRequest() : 
+    m_assetScopesHasBeenSet(false),
     m_decisionCommentHasBeenSet(false),
     m_domainIdentifierHasBeenSet(false),
     m_identifierHasBeenSet(false)
@@ -22,6 +23,17 @@ AcceptSubscriptionRequestRequest::AcceptSubscriptionRequestRequest() :
 Aws::String AcceptSubscriptionRequestRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_assetScopesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> assetScopesJsonList(m_assetScopes.size());
+   for(unsigned assetScopesIndex = 0; assetScopesIndex < assetScopesJsonList.GetLength(); ++assetScopesIndex)
+   {
+     assetScopesJsonList[assetScopesIndex].AsObject(m_assetScopes[assetScopesIndex].Jsonize());
+   }
+   payload.WithArray("assetScopes", std::move(assetScopesJsonList));
+
+  }
 
   if(m_decisionCommentHasBeenSet)
   {

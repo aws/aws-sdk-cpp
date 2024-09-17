@@ -24,9 +24,8 @@ AwsBackupBackupPlanRuleCopyActionsDetails::AwsBackupBackupPlanRuleCopyActionsDet
 {
 }
 
-AwsBackupBackupPlanRuleCopyActionsDetails::AwsBackupBackupPlanRuleCopyActionsDetails(JsonView jsonValue) : 
-    m_destinationBackupVaultArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
+AwsBackupBackupPlanRuleCopyActionsDetails::AwsBackupBackupPlanRuleCopyActionsDetails(JsonView jsonValue)
+  : AwsBackupBackupPlanRuleCopyActionsDetails()
 {
   *this = jsonValue;
 }

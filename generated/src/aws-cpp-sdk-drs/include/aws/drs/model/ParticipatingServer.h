@@ -40,149 +40,57 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The post-launch action runs of a participating server.</p>
      */
     inline const LaunchActionsStatus& GetLaunchActionsStatus() const{ return m_launchActionsStatus; }
-
-    /**
-     * <p>The post-launch action runs of a participating server.</p>
-     */
     inline bool LaunchActionsStatusHasBeenSet() const { return m_launchActionsStatusHasBeenSet; }
-
-    /**
-     * <p>The post-launch action runs of a participating server.</p>
-     */
     inline void SetLaunchActionsStatus(const LaunchActionsStatus& value) { m_launchActionsStatusHasBeenSet = true; m_launchActionsStatus = value; }
-
-    /**
-     * <p>The post-launch action runs of a participating server.</p>
-     */
     inline void SetLaunchActionsStatus(LaunchActionsStatus&& value) { m_launchActionsStatusHasBeenSet = true; m_launchActionsStatus = std::move(value); }
-
-    /**
-     * <p>The post-launch action runs of a participating server.</p>
-     */
     inline ParticipatingServer& WithLaunchActionsStatus(const LaunchActionsStatus& value) { SetLaunchActionsStatus(value); return *this;}
-
-    /**
-     * <p>The post-launch action runs of a participating server.</p>
-     */
     inline ParticipatingServer& WithLaunchActionsStatus(LaunchActionsStatus&& value) { SetLaunchActionsStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The launch status of a participating server.</p>
      */
     inline const LaunchStatus& GetLaunchStatus() const{ return m_launchStatus; }
-
-    /**
-     * <p>The launch status of a participating server.</p>
-     */
     inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
-
-    /**
-     * <p>The launch status of a participating server.</p>
-     */
     inline void SetLaunchStatus(const LaunchStatus& value) { m_launchStatusHasBeenSet = true; m_launchStatus = value; }
-
-    /**
-     * <p>The launch status of a participating server.</p>
-     */
     inline void SetLaunchStatus(LaunchStatus&& value) { m_launchStatusHasBeenSet = true; m_launchStatus = std::move(value); }
-
-    /**
-     * <p>The launch status of a participating server.</p>
-     */
     inline ParticipatingServer& WithLaunchStatus(const LaunchStatus& value) { SetLaunchStatus(value); return *this;}
-
-    /**
-     * <p>The launch status of a participating server.</p>
-     */
     inline ParticipatingServer& WithLaunchStatus(LaunchStatus&& value) { SetLaunchStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Recovery Instance ID of a participating server.</p>
      */
     inline const Aws::String& GetRecoveryInstanceID() const{ return m_recoveryInstanceID; }
-
-    /**
-     * <p>The Recovery Instance ID of a participating server.</p>
-     */
     inline bool RecoveryInstanceIDHasBeenSet() const { return m_recoveryInstanceIDHasBeenSet; }
-
-    /**
-     * <p>The Recovery Instance ID of a participating server.</p>
-     */
     inline void SetRecoveryInstanceID(const Aws::String& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = value; }
-
-    /**
-     * <p>The Recovery Instance ID of a participating server.</p>
-     */
     inline void SetRecoveryInstanceID(Aws::String&& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = std::move(value); }
-
-    /**
-     * <p>The Recovery Instance ID of a participating server.</p>
-     */
     inline void SetRecoveryInstanceID(const char* value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID.assign(value); }
-
-    /**
-     * <p>The Recovery Instance ID of a participating server.</p>
-     */
     inline ParticipatingServer& WithRecoveryInstanceID(const Aws::String& value) { SetRecoveryInstanceID(value); return *this;}
-
-    /**
-     * <p>The Recovery Instance ID of a participating server.</p>
-     */
     inline ParticipatingServer& WithRecoveryInstanceID(Aws::String&& value) { SetRecoveryInstanceID(std::move(value)); return *this;}
-
-    /**
-     * <p>The Recovery Instance ID of a participating server.</p>
-     */
     inline ParticipatingServer& WithRecoveryInstanceID(const char* value) { SetRecoveryInstanceID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Source Server ID of a participating server.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
-
-    /**
-     * <p>The Source Server ID of a participating server.</p>
-     */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-
-    /**
-     * <p>The Source Server ID of a participating server.</p>
-     */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-
-    /**
-     * <p>The Source Server ID of a participating server.</p>
-     */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-
-    /**
-     * <p>The Source Server ID of a participating server.</p>
-     */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-
-    /**
-     * <p>The Source Server ID of a participating server.</p>
-     */
     inline ParticipatingServer& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-
-    /**
-     * <p>The Source Server ID of a participating server.</p>
-     */
     inline ParticipatingServer& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-
-    /**
-     * <p>The Source Server ID of a participating server.</p>
-     */
     inline ParticipatingServer& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
-
+    ///@}
   private:
 
     LaunchActionsStatus m_launchActionsStatus;

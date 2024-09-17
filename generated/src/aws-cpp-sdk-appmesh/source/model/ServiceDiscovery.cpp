@@ -24,9 +24,8 @@ ServiceDiscovery::ServiceDiscovery() :
 {
 }
 
-ServiceDiscovery::ServiceDiscovery(JsonView jsonValue) : 
-    m_awsCloudMapHasBeenSet(false),
-    m_dnsHasBeenSet(false)
+ServiceDiscovery::ServiceDiscovery(JsonView jsonValue)
+  : ServiceDiscovery()
 {
   *this = jsonValue;
 }

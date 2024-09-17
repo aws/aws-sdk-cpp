@@ -44,6 +44,8 @@
 #include <aws/appfabric/model/UntagResourceResult.h>
 #include <aws/appfabric/model/UpdateAppAuthorizationResult.h>
 #include <aws/appfabric/model/UpdateIngestionDestinationResult.h>
+#include <aws/appfabric/model/ListAppBundlesRequest.h>
+#include <aws/appfabric/model/CreateAppBundleRequest.h>
 /* End of service model headers required in AppFabricClient header */
 
 namespace Aws
@@ -77,7 +79,7 @@ namespace Aws
 
   namespace AppFabric
   {
-    using AppFabricClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppFabricClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppFabricEndpointProviderBase = Aws::AppFabric::Endpoint::AppFabricEndpointProviderBase;
     using AppFabricEndpointProvider = Aws::AppFabric::Endpoint::AppFabricEndpointProvider;
 

@@ -24,9 +24,8 @@ UserContextDataType::UserContextDataType() :
 {
 }
 
-UserContextDataType::UserContextDataType(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_encodedDataHasBeenSet(false)
+UserContextDataType::UserContextDataType(JsonView jsonValue)
+  : UserContextDataType()
 {
   *this = jsonValue;
 }

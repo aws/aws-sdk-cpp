@@ -38,46 +38,19 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-     */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-     */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-     */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-     */
     inline OnSuccess& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-     */
     inline OnSuccess& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-     */
     inline OnSuccess& WithDestination(const char* value) { SetDestination(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destination;

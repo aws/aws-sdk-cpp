@@ -28,13 +28,8 @@ AnomalousLogGroup::AnomalousLogGroup() :
 {
 }
 
-AnomalousLogGroup::AnomalousLogGroup(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false),
-    m_impactStartTimeHasBeenSet(false),
-    m_impactEndTimeHasBeenSet(false),
-    m_numberOfLogLinesScanned(0),
-    m_numberOfLogLinesScannedHasBeenSet(false),
-    m_logAnomalyShowcasesHasBeenSet(false)
+AnomalousLogGroup::AnomalousLogGroup(JsonView jsonValue)
+  : AnomalousLogGroup()
 {
   *this = jsonValue;
 }

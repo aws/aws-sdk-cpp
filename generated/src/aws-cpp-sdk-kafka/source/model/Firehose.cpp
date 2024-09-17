@@ -25,10 +25,8 @@ Firehose::Firehose() :
 {
 }
 
-Firehose::Firehose(JsonView jsonValue) : 
-    m_deliveryStreamHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+Firehose::Firehose(JsonView jsonValue)
+  : Firehose()
 {
   *this = jsonValue;
 }

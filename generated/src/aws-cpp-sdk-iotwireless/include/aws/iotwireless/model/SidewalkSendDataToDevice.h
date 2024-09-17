@@ -37,66 +37,35 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sequence number.</p>
      */
     inline int GetSeq() const{ return m_seq; }
-
-    /**
-     * <p>The sequence number.</p>
-     */
     inline bool SeqHasBeenSet() const { return m_seqHasBeenSet; }
-
-    /**
-     * <p>The sequence number.</p>
-     */
     inline void SetSeq(int value) { m_seqHasBeenSet = true; m_seq = value; }
-
-    /**
-     * <p>The sequence number.</p>
-     */
     inline SidewalkSendDataToDevice& WithSeq(int value) { SetSeq(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const MessageType& GetMessageType() const{ return m_messageType; }
-
-    
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
-
-    
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
-
-    
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
-
-    
     inline SidewalkSendDataToDevice& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
-
-    
     inline SidewalkSendDataToDevice& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The duration of time in seconds to retry sending the ACK.</p>
      */
     inline int GetAckModeRetryDurationSecs() const{ return m_ackModeRetryDurationSecs; }
-
-    /**
-     * <p>The duration of time in seconds to retry sending the ACK.</p>
-     */
     inline bool AckModeRetryDurationSecsHasBeenSet() const { return m_ackModeRetryDurationSecsHasBeenSet; }
-
-    /**
-     * <p>The duration of time in seconds to retry sending the ACK.</p>
-     */
     inline void SetAckModeRetryDurationSecs(int value) { m_ackModeRetryDurationSecsHasBeenSet = true; m_ackModeRetryDurationSecs = value; }
-
-    /**
-     * <p>The duration of time in seconds to retry sending the ACK.</p>
-     */
     inline SidewalkSendDataToDevice& WithAckModeRetryDurationSecs(int value) { SetAckModeRetryDurationSecs(value); return *this;}
-
+    ///@}
   private:
 
     int m_seq;

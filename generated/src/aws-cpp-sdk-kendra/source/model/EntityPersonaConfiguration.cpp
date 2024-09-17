@@ -25,10 +25,8 @@ EntityPersonaConfiguration::EntityPersonaConfiguration() :
 {
 }
 
-EntityPersonaConfiguration::EntityPersonaConfiguration(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_persona(Persona::NOT_SET),
-    m_personaHasBeenSet(false)
+EntityPersonaConfiguration::EntityPersonaConfiguration(JsonView jsonValue)
+  : EntityPersonaConfiguration()
 {
   *this = jsonValue;
 }

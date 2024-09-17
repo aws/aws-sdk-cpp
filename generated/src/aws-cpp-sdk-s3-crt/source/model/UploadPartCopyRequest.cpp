@@ -6,6 +6,7 @@
 #include <aws/s3-crt/model/UploadPartCopyRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -46,21 +47,18 @@ bool UploadPartCopyRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {
   // Header is unused
-  (void) header;
+  AWS_UNREFERENCED_PARAM(header);
 
   auto readPointer = body.tellg();
-  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
   if (!doc.WasParseSuccessful()) {
-    body.seekg(readPointer);
     return false;
   }
 
   if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    body.seekg(readPointer);
     return true;
   }
-  body.seekg(readPointer);
   return false;
 }
 
@@ -189,7 +187,7 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
     ss.str("");
   }
 
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }

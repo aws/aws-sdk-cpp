@@ -20,13 +20,14 @@ namespace Model
 
 SpotResizingSpecification::SpotResizingSpecification() : 
     m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false)
+    m_timeoutDurationMinutesHasBeenSet(false),
+    m_allocationStrategy(SpotProvisioningAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false)
 {
 }
 
-SpotResizingSpecification::SpotResizingSpecification(JsonView jsonValue) : 
-    m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false)
+SpotResizingSpecification::SpotResizingSpecification(JsonView jsonValue)
+  : SpotResizingSpecification()
 {
   *this = jsonValue;
 }
@@ -40,6 +41,13 @@ SpotResizingSpecification& SpotResizingSpecification::operator =(JsonView jsonVa
     m_timeoutDurationMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllocationStrategy"))
+  {
+    m_allocationStrategy = SpotProvisioningAllocationStrategyMapper::GetSpotProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
+
+    m_allocationStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -51,6 +59,11 @@ JsonValue SpotResizingSpecification::Jsonize() const
   {
    payload.WithInteger("TimeoutDurationMinutes", m_timeoutDurationMinutes);
 
+  }
+
+  if(m_allocationStrategyHasBeenSet)
+  {
+   payload.WithString("AllocationStrategy", SpotProvisioningAllocationStrategyMapper::GetNameForSpotProvisioningAllocationStrategy(m_allocationStrategy));
   }
 
   return payload;

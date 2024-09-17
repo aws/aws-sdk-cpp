@@ -39,67 +39,29 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of IP addresses and address ranges, in CIDR notation.</p>
      */
     inline const RuleGroupVariablesIpSetsDetails& GetIpSets() const{ return m_ipSets; }
-
-    /**
-     * <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-     */
     inline bool IpSetsHasBeenSet() const { return m_ipSetsHasBeenSet; }
-
-    /**
-     * <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-     */
     inline void SetIpSets(const RuleGroupVariablesIpSetsDetails& value) { m_ipSetsHasBeenSet = true; m_ipSets = value; }
-
-    /**
-     * <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-     */
     inline void SetIpSets(RuleGroupVariablesIpSetsDetails&& value) { m_ipSetsHasBeenSet = true; m_ipSets = std::move(value); }
-
-    /**
-     * <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-     */
     inline RuleGroupVariables& WithIpSets(const RuleGroupVariablesIpSetsDetails& value) { SetIpSets(value); return *this;}
-
-    /**
-     * <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-     */
     inline RuleGroupVariables& WithIpSets(RuleGroupVariablesIpSetsDetails&& value) { SetIpSets(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of port ranges.</p>
      */
     inline const RuleGroupVariablesPortSetsDetails& GetPortSets() const{ return m_portSets; }
-
-    /**
-     * <p>A list of port ranges.</p>
-     */
     inline bool PortSetsHasBeenSet() const { return m_portSetsHasBeenSet; }
-
-    /**
-     * <p>A list of port ranges.</p>
-     */
     inline void SetPortSets(const RuleGroupVariablesPortSetsDetails& value) { m_portSetsHasBeenSet = true; m_portSets = value; }
-
-    /**
-     * <p>A list of port ranges.</p>
-     */
     inline void SetPortSets(RuleGroupVariablesPortSetsDetails&& value) { m_portSetsHasBeenSet = true; m_portSets = std::move(value); }
-
-    /**
-     * <p>A list of port ranges.</p>
-     */
     inline RuleGroupVariables& WithPortSets(const RuleGroupVariablesPortSetsDetails& value) { SetPortSets(value); return *this;}
-
-    /**
-     * <p>A list of port ranges.</p>
-     */
     inline RuleGroupVariables& WithPortSets(RuleGroupVariablesPortSetsDetails&& value) { SetPortSets(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleGroupVariablesIpSetsDetails m_ipSets;

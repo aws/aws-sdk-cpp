@@ -22,8 +22,8 @@ CreateApiDestinationResult::CreateApiDestinationResult() :
 {
 }
 
-CreateApiDestinationResult::CreateApiDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiDestinationState(ApiDestinationState::NOT_SET)
+CreateApiDestinationResult::CreateApiDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateApiDestinationResult()
 {
   *this = result;
 }

@@ -35,46 +35,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the rule.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline GetTopicRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline GetTopicRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline GetTopicRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleName;

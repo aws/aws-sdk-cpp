@@ -25,10 +25,8 @@ ContinuousBackupsDescription::ContinuousBackupsDescription() :
 {
 }
 
-ContinuousBackupsDescription::ContinuousBackupsDescription(JsonView jsonValue) : 
-    m_continuousBackupsStatus(ContinuousBackupsStatus::NOT_SET),
-    m_continuousBackupsStatusHasBeenSet(false),
-    m_pointInTimeRecoveryDescriptionHasBeenSet(false)
+ContinuousBackupsDescription::ContinuousBackupsDescription(JsonView jsonValue)
+  : ContinuousBackupsDescription()
 {
   *this = jsonValue;
 }

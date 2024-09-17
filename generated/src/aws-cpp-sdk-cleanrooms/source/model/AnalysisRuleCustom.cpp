@@ -21,14 +21,15 @@ namespace Model
 AnalysisRuleCustom::AnalysisRuleCustom() : 
     m_allowedAnalysesHasBeenSet(false),
     m_allowedAnalysisProvidersHasBeenSet(false),
+    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
+    m_additionalAnalysesHasBeenSet(false),
+    m_disallowedOutputColumnsHasBeenSet(false),
     m_differentialPrivacyHasBeenSet(false)
 {
 }
 
-AnalysisRuleCustom::AnalysisRuleCustom(JsonView jsonValue) : 
-    m_allowedAnalysesHasBeenSet(false),
-    m_allowedAnalysisProvidersHasBeenSet(false),
-    m_differentialPrivacyHasBeenSet(false)
+AnalysisRuleCustom::AnalysisRuleCustom(JsonView jsonValue)
+  : AnalysisRuleCustom()
 {
   *this = jsonValue;
 }
@@ -53,6 +54,23 @@ AnalysisRuleCustom& AnalysisRuleCustom::operator =(JsonView jsonValue)
       m_allowedAnalysisProviders.push_back(allowedAnalysisProvidersJsonList[allowedAnalysisProvidersIndex].AsString());
     }
     m_allowedAnalysisProvidersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("additionalAnalyses"))
+  {
+    m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
+
+    m_additionalAnalysesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("disallowedOutputColumns"))
+  {
+    Aws::Utils::Array<JsonView> disallowedOutputColumnsJsonList = jsonValue.GetArray("disallowedOutputColumns");
+    for(unsigned disallowedOutputColumnsIndex = 0; disallowedOutputColumnsIndex < disallowedOutputColumnsJsonList.GetLength(); ++disallowedOutputColumnsIndex)
+    {
+      m_disallowedOutputColumns.push_back(disallowedOutputColumnsJsonList[disallowedOutputColumnsIndex].AsString());
+    }
+    m_disallowedOutputColumnsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("differentialPrivacy"))
@@ -88,6 +106,22 @@ JsonValue AnalysisRuleCustom::Jsonize() const
      allowedAnalysisProvidersJsonList[allowedAnalysisProvidersIndex].AsString(m_allowedAnalysisProviders[allowedAnalysisProvidersIndex]);
    }
    payload.WithArray("allowedAnalysisProviders", std::move(allowedAnalysisProvidersJsonList));
+
+  }
+
+  if(m_additionalAnalysesHasBeenSet)
+  {
+   payload.WithString("additionalAnalyses", AdditionalAnalysesMapper::GetNameForAdditionalAnalyses(m_additionalAnalyses));
+  }
+
+  if(m_disallowedOutputColumnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> disallowedOutputColumnsJsonList(m_disallowedOutputColumns.size());
+   for(unsigned disallowedOutputColumnsIndex = 0; disallowedOutputColumnsIndex < disallowedOutputColumnsJsonList.GetLength(); ++disallowedOutputColumnsIndex)
+   {
+     disallowedOutputColumnsJsonList[disallowedOutputColumnsIndex].AsString(m_disallowedOutputColumns[disallowedOutputColumnsIndex]);
+   }
+   payload.WithArray("disallowedOutputColumns", std::move(disallowedOutputColumnsJsonList));
 
   }
 

@@ -37,20 +37,8 @@ Recommendation::Recommendation() :
 {
 }
 
-Recommendation::Recommendation(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_namespaceArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_recommendationTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_observationHasBeenSet(false),
-    m_impactRanking(ImpactRankingType::NOT_SET),
-    m_impactRankingHasBeenSet(false),
-    m_recommendationTextHasBeenSet(false),
-    m_recommendedActionsHasBeenSet(false),
-    m_referenceLinksHasBeenSet(false)
+Recommendation::Recommendation(const XmlNode& xmlNode)
+  : Recommendation()
 {
   *this = xmlNode;
 }

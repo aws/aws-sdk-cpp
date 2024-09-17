@@ -46,6 +46,7 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
@@ -56,195 +57,53 @@ namespace Model
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
-
-    /**
-     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
-     * You can create Amazon Resource Names (ARNs) for topics by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
-     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the Amazon Web Services Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
-     */
     inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
-
-    /**
-     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
-     * You can create Amazon Resource Names (ARNs) for topics by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
-     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the Amazon Web Services Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
-     */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
-
-    /**
-     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
-     * You can create Amazon Resource Names (ARNs) for topics by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
-     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the Amazon Web Services Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
-     */
     inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
-
-    /**
-     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
-     * You can create Amazon Resource Names (ARNs) for topics by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
-     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the Amazon Web Services Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
-     */
     inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
-
-    /**
-     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
-     * You can create Amazon Resource Names (ARNs) for topics by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
-     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the Amazon Web Services Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
-     */
     inline Notification& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
-
-    /**
-     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
-     * You can create Amazon Resource Names (ARNs) for topics by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
-     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the Amazon Web Services Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
-     */
     inline Notification& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
-     * You can create Amazon Resource Names (ARNs) for topics by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
-     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the Amazon Web Services Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
-     */
     inline Notification& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
      */
     inline const Aws::Vector<JobState>& GetJobStatesToNotify() const{ return m_jobStatesToNotify; }
-
-    /**
-     * <p>The list of job states that will trigger a notification for this job.</p>
-     */
     inline bool JobStatesToNotifyHasBeenSet() const { return m_jobStatesToNotifyHasBeenSet; }
-
-    /**
-     * <p>The list of job states that will trigger a notification for this job.</p>
-     */
     inline void SetJobStatesToNotify(const Aws::Vector<JobState>& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = value; }
-
-    /**
-     * <p>The list of job states that will trigger a notification for this job.</p>
-     */
     inline void SetJobStatesToNotify(Aws::Vector<JobState>&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = std::move(value); }
-
-    /**
-     * <p>The list of job states that will trigger a notification for this job.</p>
-     */
     inline Notification& WithJobStatesToNotify(const Aws::Vector<JobState>& value) { SetJobStatesToNotify(value); return *this;}
-
-    /**
-     * <p>The list of job states that will trigger a notification for this job.</p>
-     */
     inline Notification& WithJobStatesToNotify(Aws::Vector<JobState>&& value) { SetJobStatesToNotify(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of job states that will trigger a notification for this job.</p>
-     */
     inline Notification& AddJobStatesToNotify(const JobState& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(value); return *this; }
-
-    /**
-     * <p>The list of job states that will trigger a notification for this job.</p>
-     */
     inline Notification& AddJobStatesToNotify(JobState&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any change in job state will trigger a notification for this job.</p>
      */
     inline bool GetNotifyAll() const{ return m_notifyAll; }
-
-    /**
-     * <p>Any change in job state will trigger a notification for this job.</p>
-     */
     inline bool NotifyAllHasBeenSet() const { return m_notifyAllHasBeenSet; }
-
-    /**
-     * <p>Any change in job state will trigger a notification for this job.</p>
-     */
     inline void SetNotifyAll(bool value) { m_notifyAllHasBeenSet = true; m_notifyAll = value; }
-
-    /**
-     * <p>Any change in job state will trigger a notification for this job.</p>
-     */
     inline Notification& WithNotifyAll(bool value) { SetNotifyAll(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Used to send SNS notifications for the person picking up the device
      * (identified during job creation).</p>
      */
     inline const Aws::String& GetDevicePickupSnsTopicARN() const{ return m_devicePickupSnsTopicARN; }
-
-    /**
-     * <p>Used to send SNS notifications for the person picking up the device
-     * (identified during job creation).</p>
-     */
     inline bool DevicePickupSnsTopicARNHasBeenSet() const { return m_devicePickupSnsTopicARNHasBeenSet; }
-
-    /**
-     * <p>Used to send SNS notifications for the person picking up the device
-     * (identified during job creation).</p>
-     */
     inline void SetDevicePickupSnsTopicARN(const Aws::String& value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN = value; }
-
-    /**
-     * <p>Used to send SNS notifications for the person picking up the device
-     * (identified during job creation).</p>
-     */
     inline void SetDevicePickupSnsTopicARN(Aws::String&& value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN = std::move(value); }
-
-    /**
-     * <p>Used to send SNS notifications for the person picking up the device
-     * (identified during job creation).</p>
-     */
     inline void SetDevicePickupSnsTopicARN(const char* value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN.assign(value); }
-
-    /**
-     * <p>Used to send SNS notifications for the person picking up the device
-     * (identified during job creation).</p>
-     */
     inline Notification& WithDevicePickupSnsTopicARN(const Aws::String& value) { SetDevicePickupSnsTopicARN(value); return *this;}
-
-    /**
-     * <p>Used to send SNS notifications for the person picking up the device
-     * (identified during job creation).</p>
-     */
     inline Notification& WithDevicePickupSnsTopicARN(Aws::String&& value) { SetDevicePickupSnsTopicARN(std::move(value)); return *this;}
-
-    /**
-     * <p>Used to send SNS notifications for the person picking up the device
-     * (identified during job creation).</p>
-     */
     inline Notification& WithDevicePickupSnsTopicARN(const char* value) { SetDevicePickupSnsTopicARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snsTopicARN;

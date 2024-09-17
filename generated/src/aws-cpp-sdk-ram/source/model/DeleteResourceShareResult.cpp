@@ -22,8 +22,8 @@ DeleteResourceShareResult::DeleteResourceShareResult() :
 {
 }
 
-DeleteResourceShareResult::DeleteResourceShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+DeleteResourceShareResult::DeleteResourceShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteResourceShareResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ FirewallSubnetMissingVPCEndpointViolation::FirewallSubnetMissingVPCEndpointViola
 {
 }
 
-FirewallSubnetMissingVPCEndpointViolation::FirewallSubnetMissingVPCEndpointViolation(JsonView jsonValue) : 
-    m_firewallSubnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetAvailabilityZoneIdHasBeenSet(false)
+FirewallSubnetMissingVPCEndpointViolation::FirewallSubnetMissingVPCEndpointViolation(JsonView jsonValue)
+  : FirewallSubnetMissingVPCEndpointViolation()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ CreateRefreshScheduleResult::CreateRefreshScheduleResult() :
 {
 }
 
-CreateRefreshScheduleResult::CreateRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateRefreshScheduleResult::CreateRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRefreshScheduleResult()
 {
   *this = result;
 }

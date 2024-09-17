@@ -46,31 +46,8 @@ GitHubConfiguration::GitHubConfiguration() :
 {
 }
 
-GitHubConfiguration::GitHubConfiguration(JsonView jsonValue) : 
-    m_saaSConfigurationHasBeenSet(false),
-    m_onPremiseConfigurationHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_gitHubDocumentCrawlPropertiesHasBeenSet(false),
-    m_repositoryFilterHasBeenSet(false),
-    m_inclusionFolderNamePatternsHasBeenSet(false),
-    m_inclusionFileTypePatternsHasBeenSet(false),
-    m_inclusionFileNamePatternsHasBeenSet(false),
-    m_exclusionFolderNamePatternsHasBeenSet(false),
-    m_exclusionFileTypePatternsHasBeenSet(false),
-    m_exclusionFileNamePatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubCommitConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet(false)
+GitHubConfiguration::GitHubConfiguration(JsonView jsonValue)
+  : GitHubConfiguration()
 {
   *this = jsonValue;
 }

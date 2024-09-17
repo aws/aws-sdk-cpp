@@ -24,9 +24,8 @@ ProjectSourceVersion::ProjectSourceVersion() :
 {
 }
 
-ProjectSourceVersion::ProjectSourceVersion(JsonView jsonValue) : 
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
+ProjectSourceVersion::ProjectSourceVersion(JsonView jsonValue)
+  : ProjectSourceVersion()
 {
   *this = jsonValue;
 }

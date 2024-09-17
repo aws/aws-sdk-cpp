@@ -24,9 +24,8 @@ Monitor::Monitor() :
 {
 }
 
-Monitor::Monitor(JsonView jsonValue) : 
-    m_alarmArnHasBeenSet(false),
-    m_alarmRoleArnHasBeenSet(false)
+Monitor::Monitor(JsonView jsonValue)
+  : Monitor()
 {
   *this = jsonValue;
 }

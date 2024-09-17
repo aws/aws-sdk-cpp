@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
+#include <aws/omics/model/ReadSetS3Access.h>
+#include <utility>
 
 namespace Aws
 {
@@ -35,68 +37,47 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file's total parts.</p>
      */
     inline int GetTotalParts() const{ return m_totalParts; }
-
-    /**
-     * <p>The file's total parts.</p>
-     */
     inline bool TotalPartsHasBeenSet() const { return m_totalPartsHasBeenSet; }
-
-    /**
-     * <p>The file's total parts.</p>
-     */
     inline void SetTotalParts(int value) { m_totalPartsHasBeenSet = true; m_totalParts = value; }
-
-    /**
-     * <p>The file's total parts.</p>
-     */
     inline FileInformation& WithTotalParts(int value) { SetTotalParts(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file's part size.</p>
      */
     inline long long GetPartSize() const{ return m_partSize; }
-
-    /**
-     * <p>The file's part size.</p>
-     */
     inline bool PartSizeHasBeenSet() const { return m_partSizeHasBeenSet; }
-
-    /**
-     * <p>The file's part size.</p>
-     */
     inline void SetPartSize(long long value) { m_partSizeHasBeenSet = true; m_partSize = value; }
-
-    /**
-     * <p>The file's part size.</p>
-     */
     inline FileInformation& WithPartSize(long long value) { SetPartSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file's content length.</p>
      */
     inline long long GetContentLength() const{ return m_contentLength; }
-
-    /**
-     * <p>The file's content length.</p>
-     */
     inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
-
-    /**
-     * <p>The file's content length.</p>
-     */
     inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
-
-    /**
-     * <p>The file's content length.</p>
-     */
     inline FileInformation& WithContentLength(long long value) { SetContentLength(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The S3 URI metadata of a sequence store.</p>
+     */
+    inline const ReadSetS3Access& GetS3Access() const{ return m_s3Access; }
+    inline bool S3AccessHasBeenSet() const { return m_s3AccessHasBeenSet; }
+    inline void SetS3Access(const ReadSetS3Access& value) { m_s3AccessHasBeenSet = true; m_s3Access = value; }
+    inline void SetS3Access(ReadSetS3Access&& value) { m_s3AccessHasBeenSet = true; m_s3Access = std::move(value); }
+    inline FileInformation& WithS3Access(const ReadSetS3Access& value) { SetS3Access(value); return *this;}
+    inline FileInformation& WithS3Access(ReadSetS3Access&& value) { SetS3Access(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_totalParts;
@@ -107,6 +88,9 @@ namespace Model
 
     long long m_contentLength;
     bool m_contentLengthHasBeenSet = false;
+
+    ReadSetS3Access m_s3Access;
+    bool m_s3AccessHasBeenSet = false;
   };
 
 } // namespace Model

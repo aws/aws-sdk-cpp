@@ -38,62 +38,21 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Use Page Number to specify the three-digit hexadecimal page number that will be
      * used for Teletext captions. Do not use this setting if you are passing through
      * teletext from the input source to output.
      */
     inline const Aws::String& GetPageNumber() const{ return m_pageNumber; }
-
-    /**
-     * Use Page Number to specify the three-digit hexadecimal page number that will be
-     * used for Teletext captions. Do not use this setting if you are passing through
-     * teletext from the input source to output.
-     */
     inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
-
-    /**
-     * Use Page Number to specify the three-digit hexadecimal page number that will be
-     * used for Teletext captions. Do not use this setting if you are passing through
-     * teletext from the input source to output.
-     */
     inline void SetPageNumber(const Aws::String& value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
-
-    /**
-     * Use Page Number to specify the three-digit hexadecimal page number that will be
-     * used for Teletext captions. Do not use this setting if you are passing through
-     * teletext from the input source to output.
-     */
     inline void SetPageNumber(Aws::String&& value) { m_pageNumberHasBeenSet = true; m_pageNumber = std::move(value); }
-
-    /**
-     * Use Page Number to specify the three-digit hexadecimal page number that will be
-     * used for Teletext captions. Do not use this setting if you are passing through
-     * teletext from the input source to output.
-     */
     inline void SetPageNumber(const char* value) { m_pageNumberHasBeenSet = true; m_pageNumber.assign(value); }
-
-    /**
-     * Use Page Number to specify the three-digit hexadecimal page number that will be
-     * used for Teletext captions. Do not use this setting if you are passing through
-     * teletext from the input source to output.
-     */
     inline TeletextSourceSettings& WithPageNumber(const Aws::String& value) { SetPageNumber(value); return *this;}
-
-    /**
-     * Use Page Number to specify the three-digit hexadecimal page number that will be
-     * used for Teletext captions. Do not use this setting if you are passing through
-     * teletext from the input source to output.
-     */
     inline TeletextSourceSettings& WithPageNumber(Aws::String&& value) { SetPageNumber(std::move(value)); return *this;}
-
-    /**
-     * Use Page Number to specify the three-digit hexadecimal page number that will be
-     * used for Teletext captions. Do not use this setting if you are passing through
-     * teletext from the input source to output.
-     */
     inline TeletextSourceSettings& WithPageNumber(const char* value) { SetPageNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pageNumber;

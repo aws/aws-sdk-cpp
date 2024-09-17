@@ -25,10 +25,8 @@ ApplicationSettings::ApplicationSettings() :
 {
 }
 
-ApplicationSettings::ApplicationSettings(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_settingsGroupHasBeenSet(false)
+ApplicationSettings::ApplicationSettings(JsonView jsonValue)
+  : ApplicationSettings()
 {
   *this = jsonValue;
 }

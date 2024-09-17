@@ -23,8 +23,8 @@ LabelingJobDataAttributes::LabelingJobDataAttributes() :
 {
 }
 
-LabelingJobDataAttributes::LabelingJobDataAttributes(JsonView jsonValue) : 
-    m_contentClassifiersHasBeenSet(false)
+LabelingJobDataAttributes::LabelingJobDataAttributes(JsonView jsonValue)
+  : LabelingJobDataAttributes()
 {
   *this = jsonValue;
 }

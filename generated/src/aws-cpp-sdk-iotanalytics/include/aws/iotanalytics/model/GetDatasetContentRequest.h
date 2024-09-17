@@ -38,47 +38,21 @@ namespace Model
     AWS_IOTANALYTICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the dataset whose contents are retrieved.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-
-    /**
-     * <p>The name of the dataset whose contents are retrieved.</p>
-     */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dataset whose contents are retrieved.</p>
-     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-
-    /**
-     * <p>The name of the dataset whose contents are retrieved.</p>
-     */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-
-    /**
-     * <p>The name of the dataset whose contents are retrieved.</p>
-     */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-
-    /**
-     * <p>The name of the dataset whose contents are retrieved.</p>
-     */
     inline GetDatasetContentRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-
-    /**
-     * <p>The name of the dataset whose contents are retrieved.</p>
-     */
     inline GetDatasetContentRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dataset whose contents are retrieved.</p>
-     */
     inline GetDatasetContentRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the dataset whose contents are retrieved. You can also use the
      * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
@@ -86,63 +60,14 @@ namespace Model
      * is the default.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
-
-    /**
-     * <p>The version of the dataset whose contents are retrieved. You can also use the
-     * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
-     * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
-     * is the default.</p>
-     */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-
-    /**
-     * <p>The version of the dataset whose contents are retrieved. You can also use the
-     * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
-     * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
-     * is the default.</p>
-     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-
-    /**
-     * <p>The version of the dataset whose contents are retrieved. You can also use the
-     * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
-     * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
-     * is the default.</p>
-     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-
-    /**
-     * <p>The version of the dataset whose contents are retrieved. You can also use the
-     * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
-     * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
-     * is the default.</p>
-     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-
-    /**
-     * <p>The version of the dataset whose contents are retrieved. You can also use the
-     * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
-     * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
-     * is the default.</p>
-     */
     inline GetDatasetContentRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-
-    /**
-     * <p>The version of the dataset whose contents are retrieved. You can also use the
-     * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
-     * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
-     * is the default.</p>
-     */
     inline GetDatasetContentRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the dataset whose contents are retrieved. You can also use the
-     * strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest
-     * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
-     * is the default.</p>
-     */
     inline GetDatasetContentRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetName;

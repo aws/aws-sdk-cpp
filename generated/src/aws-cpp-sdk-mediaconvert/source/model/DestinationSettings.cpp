@@ -23,8 +23,8 @@ DestinationSettings::DestinationSettings() :
 {
 }
 
-DestinationSettings::DestinationSettings(JsonView jsonValue) : 
-    m_s3SettingsHasBeenSet(false)
+DestinationSettings::DestinationSettings(JsonView jsonValue)
+  : DestinationSettings()
 {
   *this = jsonValue;
 }

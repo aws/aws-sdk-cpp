@@ -27,12 +27,8 @@ CACertificate::CACertificate() :
 {
 }
 
-CACertificate::CACertificate(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_status(CACertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+CACertificate::CACertificate(JsonView jsonValue)
+  : CACertificate()
 {
   *this = jsonValue;
 }

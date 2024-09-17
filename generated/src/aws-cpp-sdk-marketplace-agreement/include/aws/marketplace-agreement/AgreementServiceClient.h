@@ -192,13 +192,13 @@ namespace AgreementService
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SearchAgreements">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchAgreementsOutcome SearchAgreements(const Model::SearchAgreementsRequest& request) const;
+        virtual Model::SearchAgreementsOutcome SearchAgreements(const Model::SearchAgreementsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchAgreements that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchAgreementsRequestT = Model::SearchAgreementsRequest>
-        Model::SearchAgreementsOutcomeCallable SearchAgreementsCallable(const SearchAgreementsRequestT& request) const
+        Model::SearchAgreementsOutcomeCallable SearchAgreementsCallable(const SearchAgreementsRequestT& request = {}) const
         {
             return SubmitCallable(&AgreementServiceClient::SearchAgreements, request);
         }
@@ -207,7 +207,7 @@ namespace AgreementService
          * An Async wrapper for SearchAgreements that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchAgreementsRequestT = Model::SearchAgreementsRequest>
-        void SearchAgreementsAsync(const SearchAgreementsRequestT& request, const SearchAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchAgreementsAsync(const SearchAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchAgreementsRequestT& request = {}) const
         {
             return SubmitAsync(&AgreementServiceClient::SearchAgreements, request, handler, context);
         }
@@ -220,7 +220,6 @@ namespace AgreementService
       void init(const AgreementServiceClientConfiguration& clientConfiguration);
 
       AgreementServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AgreementServiceEndpointProviderBase> m_endpointProvider;
   };
 

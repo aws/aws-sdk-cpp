@@ -25,18 +25,13 @@ ImprovementSummary::ImprovementSummary() :
     m_risk(Risk::NOT_SET),
     m_riskHasBeenSet(false),
     m_improvementPlanUrlHasBeenSet(false),
-    m_improvementPlansHasBeenSet(false)
+    m_improvementPlansHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
-ImprovementSummary::ImprovementSummary(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false),
-    m_improvementPlansHasBeenSet(false)
+ImprovementSummary::ImprovementSummary(JsonView jsonValue)
+  : ImprovementSummary()
 {
   *this = jsonValue;
 }
@@ -88,6 +83,13 @@ ImprovementSummary& ImprovementSummary::operator =(JsonView jsonValue)
     m_improvementPlansHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +134,12 @@ JsonValue ImprovementSummary::Jsonize() const
      improvementPlansJsonList[improvementPlansIndex].AsObject(m_improvementPlans[improvementPlansIndex].Jsonize());
    }
    payload.WithArray("ImprovementPlans", std::move(improvementPlansJsonList));
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
 
   }
 

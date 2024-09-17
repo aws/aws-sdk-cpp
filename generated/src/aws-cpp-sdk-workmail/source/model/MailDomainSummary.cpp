@@ -25,10 +25,8 @@ MailDomainSummary::MailDomainSummary() :
 {
 }
 
-MailDomainSummary::MailDomainSummary(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_defaultDomain(false),
-    m_defaultDomainHasBeenSet(false)
+MailDomainSummary::MailDomainSummary(JsonView jsonValue)
+  : MailDomainSummary()
 {
   *this = jsonValue;
 }

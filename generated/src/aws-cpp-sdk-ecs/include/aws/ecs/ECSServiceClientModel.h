@@ -74,6 +74,20 @@
 #include <aws/ecs/model/UpdateServicePrimaryTaskSetResult.h>
 #include <aws/ecs/model/UpdateTaskProtectionResult.h>
 #include <aws/ecs/model/UpdateTaskSetResult.h>
+#include <aws/ecs/model/DescribeClustersRequest.h>
+#include <aws/ecs/model/DiscoverPollEndpointRequest.h>
+#include <aws/ecs/model/ListAccountSettingsRequest.h>
+#include <aws/ecs/model/ListTaskDefinitionsRequest.h>
+#include <aws/ecs/model/ListContainerInstancesRequest.h>
+#include <aws/ecs/model/ListServicesRequest.h>
+#include <aws/ecs/model/SubmitContainerStateChangeRequest.h>
+#include <aws/ecs/model/SubmitTaskStateChangeRequest.h>
+#include <aws/ecs/model/ListTasksRequest.h>
+#include <aws/ecs/model/RegisterContainerInstanceRequest.h>
+#include <aws/ecs/model/DescribeCapacityProvidersRequest.h>
+#include <aws/ecs/model/ListTaskDefinitionFamiliesRequest.h>
+#include <aws/ecs/model/ListClustersRequest.h>
+#include <aws/ecs/model/CreateClusterRequest.h>
 /* End of service model headers required in ECSClient header */
 
 namespace Aws
@@ -107,7 +121,7 @@ namespace Aws
 
   namespace ECS
   {
-    using ECSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ECSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ECSEndpointProviderBase = Aws::ECS::Endpoint::ECSEndpointProviderBase;
     using ECSEndpointProvider = Aws::ECS::Endpoint::ECSEndpointProvider;
 

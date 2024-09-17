@@ -37,22 +37,8 @@ Entity::Entity() :
 {
 }
 
-Entity::Entity(JsonView jsonValue) : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_category(EntityType::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_type(EntitySubType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_traitsHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+Entity::Entity(JsonView jsonValue)
+  : Entity()
 {
   *this = jsonValue;
 }

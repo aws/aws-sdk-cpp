@@ -25,10 +25,8 @@ ScrollBarOptions::ScrollBarOptions() :
 {
 }
 
-ScrollBarOptions::ScrollBarOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_visibleRangeHasBeenSet(false)
+ScrollBarOptions::ScrollBarOptions(JsonView jsonValue)
+  : ScrollBarOptions()
 {
   *this = jsonValue;
 }

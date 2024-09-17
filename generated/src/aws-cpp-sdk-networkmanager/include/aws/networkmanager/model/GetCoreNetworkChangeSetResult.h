@@ -34,99 +34,42 @@ namespace Model
     AWS_NETWORKMANAGER_API GetCoreNetworkChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes a core network changes.</p>
      */
     inline const Aws::Vector<CoreNetworkChange>& GetCoreNetworkChanges() const{ return m_coreNetworkChanges; }
-
-    /**
-     * <p>Describes a core network changes.</p>
-     */
     inline void SetCoreNetworkChanges(const Aws::Vector<CoreNetworkChange>& value) { m_coreNetworkChanges = value; }
-
-    /**
-     * <p>Describes a core network changes.</p>
-     */
     inline void SetCoreNetworkChanges(Aws::Vector<CoreNetworkChange>&& value) { m_coreNetworkChanges = std::move(value); }
-
-    /**
-     * <p>Describes a core network changes.</p>
-     */
     inline GetCoreNetworkChangeSetResult& WithCoreNetworkChanges(const Aws::Vector<CoreNetworkChange>& value) { SetCoreNetworkChanges(value); return *this;}
-
-    /**
-     * <p>Describes a core network changes.</p>
-     */
     inline GetCoreNetworkChangeSetResult& WithCoreNetworkChanges(Aws::Vector<CoreNetworkChange>&& value) { SetCoreNetworkChanges(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes a core network changes.</p>
-     */
     inline GetCoreNetworkChangeSetResult& AddCoreNetworkChanges(const CoreNetworkChange& value) { m_coreNetworkChanges.push_back(value); return *this; }
-
-    /**
-     * <p>Describes a core network changes.</p>
-     */
     inline GetCoreNetworkChangeSetResult& AddCoreNetworkChanges(CoreNetworkChange&& value) { m_coreNetworkChanges.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline GetCoreNetworkChangeSetResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline GetCoreNetworkChangeSetResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline GetCoreNetworkChangeSetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCoreNetworkChangeSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCoreNetworkChangeSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCoreNetworkChangeSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CoreNetworkChange> m_coreNetworkChanges;

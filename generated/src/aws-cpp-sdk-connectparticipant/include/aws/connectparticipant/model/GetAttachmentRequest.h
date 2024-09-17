@@ -34,87 +34,33 @@ namespace Model
     AWS_CONNECTPARTICIPANT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-
-    /**
-     * <p>A unique identifier for the attachment.</p>
-     */
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the attachment.</p>
-     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-
-    /**
-     * <p>A unique identifier for the attachment.</p>
-     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the attachment.</p>
-     */
     inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the attachment.</p>
-     */
     inline GetAttachmentRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the attachment.</p>
-     */
     inline GetAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the attachment.</p>
-     */
     inline GetAttachmentRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The authentication token associated with the participant's connection.</p>
      */
     inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
-
-    /**
-     * <p>The authentication token associated with the participant's connection.</p>
-     */
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-
-    /**
-     * <p>The authentication token associated with the participant's connection.</p>
-     */
     inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-
-    /**
-     * <p>The authentication token associated with the participant's connection.</p>
-     */
     inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-
-    /**
-     * <p>The authentication token associated with the participant's connection.</p>
-     */
     inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-
-    /**
-     * <p>The authentication token associated with the participant's connection.</p>
-     */
     inline GetAttachmentRequest& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-
-    /**
-     * <p>The authentication token associated with the participant's connection.</p>
-     */
     inline GetAttachmentRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The authentication token associated with the participant's connection.</p>
-     */
     inline GetAttachmentRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachmentId;

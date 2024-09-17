@@ -29,12 +29,8 @@ SelectionCriteria::SelectionCriteria() :
 {
 }
 
-SelectionCriteria::SelectionCriteria(const XmlNode& xmlNode) : 
-    m_delimiterHasBeenSet(false),
-    m_maxDepth(0),
-    m_maxDepthHasBeenSet(false),
-    m_minStorageBytesPercentage(0.0),
-    m_minStorageBytesPercentageHasBeenSet(false)
+SelectionCriteria::SelectionCriteria(const XmlNode& xmlNode)
+  : SelectionCriteria()
 {
   *this = xmlNode;
 }

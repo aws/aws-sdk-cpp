@@ -23,8 +23,8 @@ EncryptionConfiguration::EncryptionConfiguration() :
 {
 }
 
-EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false)
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
+  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }

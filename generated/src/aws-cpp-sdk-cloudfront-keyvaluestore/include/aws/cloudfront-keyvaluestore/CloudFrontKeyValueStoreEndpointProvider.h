@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudFrontKeyValueStoreClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudFrontKeyValueStoreClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudFrontKeyValueStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudFrontKeyValueStoreBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

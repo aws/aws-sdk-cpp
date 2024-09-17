@@ -29,14 +29,8 @@ RedshiftTarget::RedshiftTarget() :
 {
 }
 
-RedshiftTarget::RedshiftTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_redshiftTmpDirHasBeenSet(false),
-    m_tmpDirIAMRoleHasBeenSet(false),
-    m_upsertRedshiftOptionsHasBeenSet(false)
+RedshiftTarget::RedshiftTarget(JsonView jsonValue)
+  : RedshiftTarget()
 {
   *this = jsonValue;
 }

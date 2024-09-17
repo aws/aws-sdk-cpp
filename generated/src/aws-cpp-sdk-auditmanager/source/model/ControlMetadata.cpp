@@ -28,13 +28,8 @@ ControlMetadata::ControlMetadata() :
 {
 }
 
-ControlMetadata::ControlMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_controlSourcesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+ControlMetadata::ControlMetadata(JsonView jsonValue)
+  : ControlMetadata()
 {
   *this = jsonValue;
 }

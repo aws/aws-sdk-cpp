@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CORE_NETWORK_SEGMENT_HASH = HashingUtils::HashString("CORE_NETWORK_SEGMENT");
+        static const int NETWORK_FUNCTION_GROUP_HASH = HashingUtils::HashString("NETWORK_FUNCTION_GROUP");
         static const int CORE_NETWORK_EDGE_HASH = HashingUtils::HashString("CORE_NETWORK_EDGE");
         static const int ATTACHMENT_MAPPING_HASH = HashingUtils::HashString("ATTACHMENT_MAPPING");
         static const int ATTACHMENT_ROUTE_PROPAGATION_HASH = HashingUtils::HashString("ATTACHMENT_ROUTE_PROPAGATION");
@@ -37,6 +38,10 @@ namespace Aws
           if (hashCode == CORE_NETWORK_SEGMENT_HASH)
           {
             return ChangeType::CORE_NETWORK_SEGMENT;
+          }
+          else if (hashCode == NETWORK_FUNCTION_GROUP_HASH)
+          {
+            return ChangeType::NETWORK_FUNCTION_GROUP;
           }
           else if (hashCode == CORE_NETWORK_EDGE_HASH)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return {};
           case ChangeType::CORE_NETWORK_SEGMENT:
             return "CORE_NETWORK_SEGMENT";
+          case ChangeType::NETWORK_FUNCTION_GROUP:
+            return "NETWORK_FUNCTION_GROUP";
           case ChangeType::CORE_NETWORK_EDGE:
             return "CORE_NETWORK_EDGE";
           case ChangeType::ATTACHMENT_MAPPING:

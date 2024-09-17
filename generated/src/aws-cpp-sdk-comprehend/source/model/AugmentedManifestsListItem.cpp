@@ -30,15 +30,8 @@ AugmentedManifestsListItem::AugmentedManifestsListItem() :
 {
 }
 
-AugmentedManifestsListItem::AugmentedManifestsListItem(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_split(Split::NOT_SET),
-    m_splitHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false),
-    m_annotationDataS3UriHasBeenSet(false),
-    m_sourceDocumentsS3UriHasBeenSet(false),
-    m_documentType(AugmentedManifestsDocumentTypeFormat::NOT_SET),
-    m_documentTypeHasBeenSet(false)
+AugmentedManifestsListItem::AugmentedManifestsListItem(JsonView jsonValue)
+  : AugmentedManifestsListItem()
 {
   *this = jsonValue;
 }

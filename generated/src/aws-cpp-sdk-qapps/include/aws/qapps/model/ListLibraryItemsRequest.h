@@ -1,0 +1,112 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/qapps/QApps_EXPORTS.h>
+#include <aws/qapps/QAppsRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Http
+{
+    class URI;
+} //namespace Http
+namespace QApps
+{
+namespace Model
+{
+
+  /**
+   */
+  class ListLibraryItemsRequest : public QAppsRequest
+  {
+  public:
+    AWS_QAPPS_API ListLibraryItemsRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "ListLibraryItems"; }
+
+    AWS_QAPPS_API Aws::String SerializePayload() const override;
+
+    AWS_QAPPS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+    AWS_QAPPS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    ///@{
+    /**
+     * <p>The unique identifier of the Amazon Q Business application environment
+     * instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+    inline ListLibraryItemsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline ListLibraryItemsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+    inline ListLibraryItemsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of library items to return in the response.</p>
+     */
+    inline int GetLimit() const{ return m_limit; }
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline ListLibraryItemsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline ListLibraryItemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListLibraryItemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListLibraryItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Optional category to filter the library items by.</p>
+     */
+    inline const Aws::String& GetCategoryId() const{ return m_categoryId; }
+    inline bool CategoryIdHasBeenSet() const { return m_categoryIdHasBeenSet; }
+    inline void SetCategoryId(const Aws::String& value) { m_categoryIdHasBeenSet = true; m_categoryId = value; }
+    inline void SetCategoryId(Aws::String&& value) { m_categoryIdHasBeenSet = true; m_categoryId = std::move(value); }
+    inline void SetCategoryId(const char* value) { m_categoryIdHasBeenSet = true; m_categoryId.assign(value); }
+    inline ListLibraryItemsRequest& WithCategoryId(const Aws::String& value) { SetCategoryId(value); return *this;}
+    inline ListLibraryItemsRequest& WithCategoryId(Aws::String&& value) { SetCategoryId(std::move(value)); return *this;}
+    inline ListLibraryItemsRequest& WithCategoryId(const char* value) { SetCategoryId(value); return *this;}
+    ///@}
+  private:
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
+
+    int m_limit;
+    bool m_limitHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_categoryId;
+    bool m_categoryIdHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace QApps
+} // namespace Aws

@@ -41,6 +41,11 @@
 #include <aws/ecr-public/model/TagResourceResult.h>
 #include <aws/ecr-public/model/UntagResourceResult.h>
 #include <aws/ecr-public/model/UploadLayerPartResult.h>
+#include <aws/ecr-public/model/DescribeRepositoriesRequest.h>
+#include <aws/ecr-public/model/DescribeRegistriesRequest.h>
+#include <aws/ecr-public/model/PutRegistryCatalogDataRequest.h>
+#include <aws/ecr-public/model/GetAuthorizationTokenRequest.h>
+#include <aws/ecr-public/model/GetRegistryCatalogDataRequest.h>
 /* End of service model headers required in ECRPublicClient header */
 
 namespace Aws
@@ -74,7 +79,7 @@ namespace Aws
 
   namespace ECRPublic
   {
-    using ECRPublicClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ECRPublicClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ECRPublicEndpointProviderBase = Aws::ECRPublic::Endpoint::ECRPublicEndpointProviderBase;
     using ECRPublicEndpointProvider = Aws::ECRPublic::Endpoint::ECRPublicEndpointProvider;
 

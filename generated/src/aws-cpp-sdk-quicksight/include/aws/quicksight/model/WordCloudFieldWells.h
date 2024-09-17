@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field wells of a word cloud.</p>
      */
     inline const WordCloudAggregatedFieldWells& GetWordCloudAggregatedFieldWells() const{ return m_wordCloudAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field wells of a word cloud.</p>
-     */
     inline bool WordCloudAggregatedFieldWellsHasBeenSet() const { return m_wordCloudAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field wells of a word cloud.</p>
-     */
     inline void SetWordCloudAggregatedFieldWells(const WordCloudAggregatedFieldWells& value) { m_wordCloudAggregatedFieldWellsHasBeenSet = true; m_wordCloudAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field wells of a word cloud.</p>
-     */
     inline void SetWordCloudAggregatedFieldWells(WordCloudAggregatedFieldWells&& value) { m_wordCloudAggregatedFieldWellsHasBeenSet = true; m_wordCloudAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field wells of a word cloud.</p>
-     */
     inline WordCloudFieldWells& WithWordCloudAggregatedFieldWells(const WordCloudAggregatedFieldWells& value) { SetWordCloudAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field wells of a word cloud.</p>
-     */
     inline WordCloudFieldWells& WithWordCloudAggregatedFieldWells(WordCloudAggregatedFieldWells&& value) { SetWordCloudAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WordCloudAggregatedFieldWells m_wordCloudAggregatedFieldWells;

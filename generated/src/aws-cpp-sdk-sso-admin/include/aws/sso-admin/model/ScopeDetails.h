@@ -39,92 +39,34 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array list of ARNs of applications.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const{ return m_authorizedTargets; }
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline bool AuthorizedTargetsHasBeenSet() const { return m_authorizedTargetsHasBeenSet; }
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline void SetAuthorizedTargets(const Aws::Vector<Aws::String>& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = value; }
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline void SetAuthorizedTargets(Aws::Vector<Aws::String>&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = std::move(value); }
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline ScopeDetails& WithAuthorizedTargets(const Aws::Vector<Aws::String>& value) { SetAuthorizedTargets(value); return *this;}
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline ScopeDetails& WithAuthorizedTargets(Aws::Vector<Aws::String>&& value) { SetAuthorizedTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline ScopeDetails& AddAuthorizedTargets(const Aws::String& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(value); return *this; }
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline ScopeDetails& AddAuthorizedTargets(Aws::String&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array list of ARNs of applications.</p>
-     */
     inline ScopeDetails& AddAuthorizedTargets(const char* value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the access scope.</p>
      */
     inline const Aws::String& GetScope() const{ return m_scope; }
-
-    /**
-     * <p>The name of the access scope.</p>
-     */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-
-    /**
-     * <p>The name of the access scope.</p>
-     */
     inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
-
-    /**
-     * <p>The name of the access scope.</p>
-     */
     inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-
-    /**
-     * <p>The name of the access scope.</p>
-     */
     inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
-
-    /**
-     * <p>The name of the access scope.</p>
-     */
     inline ScopeDetails& WithScope(const Aws::String& value) { SetScope(value); return *this;}
-
-    /**
-     * <p>The name of the access scope.</p>
-     */
     inline ScopeDetails& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the access scope.</p>
-     */
     inline ScopeDetails& WithScope(const char* value) { SetScope(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_authorizedTargets;

@@ -38,79 +38,32 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline InvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline InvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline InvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>For an <code>InvalidParameterException</code> error, the name of the
      * parameter that's invalid.</p>
      */
     inline const Aws::String& GetFieldName() const{ return m_fieldName; }
-
-    /**
-     * <p>For an <code>InvalidParameterException</code> error, the name of the
-     * parameter that's invalid.</p>
-     */
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-
-    /**
-     * <p>For an <code>InvalidParameterException</code> error, the name of the
-     * parameter that's invalid.</p>
-     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-
-    /**
-     * <p>For an <code>InvalidParameterException</code> error, the name of the
-     * parameter that's invalid.</p>
-     */
     inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-
-    /**
-     * <p>For an <code>InvalidParameterException</code> error, the name of the
-     * parameter that's invalid.</p>
-     */
     inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-
-    /**
-     * <p>For an <code>InvalidParameterException</code> error, the name of the
-     * parameter that's invalid.</p>
-     */
     inline InvalidParameterException& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-
-    /**
-     * <p>For an <code>InvalidParameterException</code> error, the name of the
-     * parameter that's invalid.</p>
-     */
     inline InvalidParameterException& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-
-    /**
-     * <p>For an <code>InvalidParameterException</code> error, the name of the
-     * parameter that's invalid.</p>
-     */
     inline InvalidParameterException& WithFieldName(const char* value) { SetFieldName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

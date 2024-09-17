@@ -26,11 +26,8 @@ PendingDeploymentSummary::PendingDeploymentSummary() :
 {
 }
 
-PendingDeploymentSummary::PendingDeploymentSummary(JsonView jsonValue) : 
-    m_endpointConfigNameHasBeenSet(false),
-    m_productionVariantsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_shadowProductionVariantsHasBeenSet(false)
+PendingDeploymentSummary::PendingDeploymentSummary(JsonView jsonValue)
+  : PendingDeploymentSummary()
 {
   *this = jsonValue;
 }

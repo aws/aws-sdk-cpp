@@ -25,10 +25,8 @@ UnableToDetectSchemaException::UnableToDetectSchemaException() :
 {
 }
 
-UnableToDetectSchemaException::UnableToDetectSchemaException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_rawInputRecordsHasBeenSet(false),
-    m_processedInputRecordsHasBeenSet(false)
+UnableToDetectSchemaException::UnableToDetectSchemaException(JsonView jsonValue)
+  : UnableToDetectSchemaException()
 {
   *this = jsonValue;
 }

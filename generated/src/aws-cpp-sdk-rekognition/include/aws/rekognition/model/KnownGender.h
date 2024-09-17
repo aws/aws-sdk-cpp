@@ -39,36 +39,17 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string value of the KnownGender info about the Celebrity.</p>
      */
     inline const KnownGenderType& GetType() const{ return m_type; }
-
-    /**
-     * <p>A string value of the KnownGender info about the Celebrity.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>A string value of the KnownGender info about the Celebrity.</p>
-     */
     inline void SetType(const KnownGenderType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>A string value of the KnownGender info about the Celebrity.</p>
-     */
     inline void SetType(KnownGenderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>A string value of the KnownGender info about the Celebrity.</p>
-     */
     inline KnownGender& WithType(const KnownGenderType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>A string value of the KnownGender info about the Celebrity.</p>
-     */
     inline KnownGender& WithType(KnownGenderType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KnownGenderType m_type;

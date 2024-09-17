@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     GITHUB,
     BITBUCKET,
-    GITHUB_ENTERPRISE
+    GITHUB_ENTERPRISE,
+    GITLAB,
+    GITLAB_SELF_MANAGED
   };
 
 namespace ServerTypeMapper

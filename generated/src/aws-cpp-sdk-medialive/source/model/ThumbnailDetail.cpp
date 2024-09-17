@@ -24,9 +24,8 @@ ThumbnailDetail::ThumbnailDetail() :
 {
 }
 
-ThumbnailDetail::ThumbnailDetail(JsonView jsonValue) : 
-    m_pipelineIdHasBeenSet(false),
-    m_thumbnailsHasBeenSet(false)
+ThumbnailDetail::ThumbnailDetail(JsonView jsonValue)
+  : ThumbnailDetail()
 {
   *this = jsonValue;
 }

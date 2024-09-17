@@ -24,9 +24,8 @@ KxClusterCodeDeploymentConfiguration::KxClusterCodeDeploymentConfiguration() :
 {
 }
 
-KxClusterCodeDeploymentConfiguration::KxClusterCodeDeploymentConfiguration(JsonView jsonValue) : 
-    m_deploymentStrategy(KxClusterCodeDeploymentStrategy::NOT_SET),
-    m_deploymentStrategyHasBeenSet(false)
+KxClusterCodeDeploymentConfiguration::KxClusterCodeDeploymentConfiguration(JsonView jsonValue)
+  : KxClusterCodeDeploymentConfiguration()
 {
   *this = jsonValue;
 }

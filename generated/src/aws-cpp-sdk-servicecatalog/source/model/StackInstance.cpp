@@ -26,11 +26,8 @@ StackInstance::StackInstance() :
 {
 }
 
-StackInstance::StackInstance(JsonView jsonValue) : 
-    m_accountHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_stackInstanceStatus(StackInstanceStatus::NOT_SET),
-    m_stackInstanceStatusHasBeenSet(false)
+StackInstance::StackInstance(JsonView jsonValue)
+  : StackInstance()
 {
   *this = jsonValue;
 }

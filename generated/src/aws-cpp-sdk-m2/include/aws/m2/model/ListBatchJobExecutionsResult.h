@@ -34,106 +34,43 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API ListBatchJobExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns a list of batch job executions for an application.</p>
      */
     inline const Aws::Vector<BatchJobExecutionSummary>& GetBatchJobExecutions() const{ return m_batchJobExecutions; }
-
-    /**
-     * <p>Returns a list of batch job executions for an application.</p>
-     */
     inline void SetBatchJobExecutions(const Aws::Vector<BatchJobExecutionSummary>& value) { m_batchJobExecutions = value; }
-
-    /**
-     * <p>Returns a list of batch job executions for an application.</p>
-     */
     inline void SetBatchJobExecutions(Aws::Vector<BatchJobExecutionSummary>&& value) { m_batchJobExecutions = std::move(value); }
-
-    /**
-     * <p>Returns a list of batch job executions for an application.</p>
-     */
     inline ListBatchJobExecutionsResult& WithBatchJobExecutions(const Aws::Vector<BatchJobExecutionSummary>& value) { SetBatchJobExecutions(value); return *this;}
-
-    /**
-     * <p>Returns a list of batch job executions for an application.</p>
-     */
     inline ListBatchJobExecutionsResult& WithBatchJobExecutions(Aws::Vector<BatchJobExecutionSummary>&& value) { SetBatchJobExecutions(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns a list of batch job executions for an application.</p>
-     */
     inline ListBatchJobExecutionsResult& AddBatchJobExecutions(const BatchJobExecutionSummary& value) { m_batchJobExecutions.push_back(value); return *this; }
-
-    /**
-     * <p>Returns a list of batch job executions for an application.</p>
-     */
     inline ListBatchJobExecutionsResult& AddBatchJobExecutions(BatchJobExecutionSummary&& value) { m_batchJobExecutions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token that's returned when the response doesn't contain all
      * batch job executions.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token that's returned when the response doesn't contain all
-     * batch job executions.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token that's returned when the response doesn't contain all
-     * batch job executions.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token that's returned when the response doesn't contain all
-     * batch job executions.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token that's returned when the response doesn't contain all
-     * batch job executions.</p>
-     */
     inline ListBatchJobExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token that's returned when the response doesn't contain all
-     * batch job executions.</p>
-     */
     inline ListBatchJobExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that's returned when the response doesn't contain all
-     * batch job executions.</p>
-     */
     inline ListBatchJobExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListBatchJobExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListBatchJobExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListBatchJobExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchJobExecutionSummary> m_batchJobExecutions;

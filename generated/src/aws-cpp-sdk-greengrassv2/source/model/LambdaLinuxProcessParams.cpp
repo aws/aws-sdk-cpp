@@ -25,10 +25,8 @@ LambdaLinuxProcessParams::LambdaLinuxProcessParams() :
 {
 }
 
-LambdaLinuxProcessParams::LambdaLinuxProcessParams(JsonView jsonValue) : 
-    m_isolationMode(LambdaIsolationMode::NOT_SET),
-    m_isolationModeHasBeenSet(false),
-    m_containerParamsHasBeenSet(false)
+LambdaLinuxProcessParams::LambdaLinuxProcessParams(JsonView jsonValue)
+  : LambdaLinuxProcessParams()
 {
   *this = jsonValue;
 }

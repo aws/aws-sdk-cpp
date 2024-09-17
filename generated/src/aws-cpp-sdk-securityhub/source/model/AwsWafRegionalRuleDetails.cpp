@@ -26,11 +26,8 @@ AwsWafRegionalRuleDetails::AwsWafRegionalRuleDetails() :
 {
 }
 
-AwsWafRegionalRuleDetails::AwsWafRegionalRuleDetails(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_predicateListHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+AwsWafRegionalRuleDetails::AwsWafRegionalRuleDetails(JsonView jsonValue)
+  : AwsWafRegionalRuleDetails()
 {
   *this = jsonValue;
 }

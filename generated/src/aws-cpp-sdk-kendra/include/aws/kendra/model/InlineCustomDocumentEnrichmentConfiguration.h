@@ -45,104 +45,42 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration of the condition used for the target document attribute or
      * metadata field when ingesting documents into Amazon Kendra.</p>
      */
     inline const DocumentAttributeCondition& GetCondition() const{ return m_condition; }
-
-    /**
-     * <p>Configuration of the condition used for the target document attribute or
-     * metadata field when ingesting documents into Amazon Kendra.</p>
-     */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-
-    /**
-     * <p>Configuration of the condition used for the target document attribute or
-     * metadata field when ingesting documents into Amazon Kendra.</p>
-     */
     inline void SetCondition(const DocumentAttributeCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-
-    /**
-     * <p>Configuration of the condition used for the target document attribute or
-     * metadata field when ingesting documents into Amazon Kendra.</p>
-     */
     inline void SetCondition(DocumentAttributeCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-
-    /**
-     * <p>Configuration of the condition used for the target document attribute or
-     * metadata field when ingesting documents into Amazon Kendra.</p>
-     */
     inline InlineCustomDocumentEnrichmentConfiguration& WithCondition(const DocumentAttributeCondition& value) { SetCondition(value); return *this;}
-
-    /**
-     * <p>Configuration of the condition used for the target document attribute or
-     * metadata field when ingesting documents into Amazon Kendra.</p>
-     */
     inline InlineCustomDocumentEnrichmentConfiguration& WithCondition(DocumentAttributeCondition&& value) { SetCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configuration of the target document attribute or metadata field when
      * ingesting documents into Amazon Kendra. You can also include a value.</p>
      */
     inline const DocumentAttributeTarget& GetTarget() const{ return m_target; }
-
-    /**
-     * <p>Configuration of the target document attribute or metadata field when
-     * ingesting documents into Amazon Kendra. You can also include a value.</p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p>Configuration of the target document attribute or metadata field when
-     * ingesting documents into Amazon Kendra. You can also include a value.</p>
-     */
     inline void SetTarget(const DocumentAttributeTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p>Configuration of the target document attribute or metadata field when
-     * ingesting documents into Amazon Kendra. You can also include a value.</p>
-     */
     inline void SetTarget(DocumentAttributeTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p>Configuration of the target document attribute or metadata field when
-     * ingesting documents into Amazon Kendra. You can also include a value.</p>
-     */
     inline InlineCustomDocumentEnrichmentConfiguration& WithTarget(const DocumentAttributeTarget& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p>Configuration of the target document attribute or metadata field when
-     * ingesting documents into Amazon Kendra. You can also include a value.</p>
-     */
     inline InlineCustomDocumentEnrichmentConfiguration& WithTarget(DocumentAttributeTarget&& value) { SetTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <code>TRUE</code> to delete content if the condition used for the target
      * attribute is met.</p>
      */
     inline bool GetDocumentContentDeletion() const{ return m_documentContentDeletion; }
-
-    /**
-     * <p> <code>TRUE</code> to delete content if the condition used for the target
-     * attribute is met.</p>
-     */
     inline bool DocumentContentDeletionHasBeenSet() const { return m_documentContentDeletionHasBeenSet; }
-
-    /**
-     * <p> <code>TRUE</code> to delete content if the condition used for the target
-     * attribute is met.</p>
-     */
     inline void SetDocumentContentDeletion(bool value) { m_documentContentDeletionHasBeenSet = true; m_documentContentDeletion = value; }
-
-    /**
-     * <p> <code>TRUE</code> to delete content if the condition used for the target
-     * attribute is met.</p>
-     */
     inline InlineCustomDocumentEnrichmentConfiguration& WithDocumentContentDeletion(bool value) { SetDocumentContentDeletion(value); return *this;}
-
+    ///@}
   private:
 
     DocumentAttributeCondition m_condition;

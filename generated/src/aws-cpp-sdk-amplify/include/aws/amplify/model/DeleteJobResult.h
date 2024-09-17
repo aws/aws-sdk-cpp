@@ -39,43 +39,25 @@ namespace Model
     AWS_AMPLIFY_API DeleteJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const JobSummary& GetJobSummary() const{ return m_jobSummary; }
-
-    
     inline void SetJobSummary(const JobSummary& value) { m_jobSummary = value; }
-
-    
     inline void SetJobSummary(JobSummary&& value) { m_jobSummary = std::move(value); }
-
-    
     inline DeleteJobResult& WithJobSummary(const JobSummary& value) { SetJobSummary(value); return *this;}
-
-    
     inline DeleteJobResult& WithJobSummary(JobSummary&& value) { SetJobSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobSummary m_jobSummary;

@@ -28,13 +28,8 @@ ResourceInfo::ResourceInfo() :
 {
 }
 
-ResourceInfo::ResourceInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+ResourceInfo::ResourceInfo(JsonView jsonValue)
+  : ResourceInfo()
 {
   *this = jsonValue;
 }

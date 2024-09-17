@@ -33,18 +33,8 @@ VpcLink::VpcLink() :
 {
 }
 
-VpcLink::VpcLink(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcLinkIdHasBeenSet(false),
-    m_vpcLinkStatus(VpcLinkStatus::NOT_SET),
-    m_vpcLinkStatusHasBeenSet(false),
-    m_vpcLinkStatusMessageHasBeenSet(false),
-    m_vpcLinkVersion(VpcLinkVersion::NOT_SET),
-    m_vpcLinkVersionHasBeenSet(false)
+VpcLink::VpcLink(JsonView jsonValue)
+  : VpcLink()
 {
   *this = jsonValue;
 }

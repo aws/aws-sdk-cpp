@@ -25,10 +25,8 @@ S3Source::S3Source() :
 {
 }
 
-S3Source::S3Source(JsonView jsonValue) : 
-    m_dataSourceArnHasBeenSet(false),
-    m_uploadSettingsHasBeenSet(false),
-    m_inputColumnsHasBeenSet(false)
+S3Source::S3Source(JsonView jsonValue)
+  : S3Source()
 {
   *this = jsonValue;
 }

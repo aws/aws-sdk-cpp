@@ -25,10 +25,8 @@ PullRequestMergedStateChangedEventMetadata::PullRequestMergedStateChangedEventMe
 {
 }
 
-PullRequestMergedStateChangedEventMetadata::PullRequestMergedStateChangedEventMetadata(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_destinationReferenceHasBeenSet(false),
-    m_mergeMetadataHasBeenSet(false)
+PullRequestMergedStateChangedEventMetadata::PullRequestMergedStateChangedEventMetadata(JsonView jsonValue)
+  : PullRequestMergedStateChangedEventMetadata()
 {
   *this = jsonValue;
 }

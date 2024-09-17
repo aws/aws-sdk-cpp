@@ -22,8 +22,8 @@ CreateRegistrationAttachmentResult::CreateRegistrationAttachmentResult() :
 {
 }
 
-CreateRegistrationAttachmentResult::CreateRegistrationAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_attachmentStatus(AttachmentStatus::NOT_SET)
+CreateRegistrationAttachmentResult::CreateRegistrationAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRegistrationAttachmentResult()
 {
   *this = result;
 }

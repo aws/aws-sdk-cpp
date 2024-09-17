@@ -19,46 +19,25 @@ namespace Model
 {
 
 UpdatePipeSourceParameters::UpdatePipeSourceParameters() : 
-    m_activeMQBrokerParametersHasBeenSet(false),
-    m_dynamoDBStreamParametersHasBeenSet(false),
     m_filterCriteriaHasBeenSet(false),
     m_kinesisStreamParametersHasBeenSet(false),
-    m_managedStreamingKafkaParametersHasBeenSet(false),
+    m_dynamoDBStreamParametersHasBeenSet(false),
+    m_sqsQueueParametersHasBeenSet(false),
+    m_activeMQBrokerParametersHasBeenSet(false),
     m_rabbitMQBrokerParametersHasBeenSet(false),
-    m_selfManagedKafkaParametersHasBeenSet(false),
-    m_sqsQueueParametersHasBeenSet(false)
+    m_managedStreamingKafkaParametersHasBeenSet(false),
+    m_selfManagedKafkaParametersHasBeenSet(false)
 {
 }
 
-UpdatePipeSourceParameters::UpdatePipeSourceParameters(JsonView jsonValue) : 
-    m_activeMQBrokerParametersHasBeenSet(false),
-    m_dynamoDBStreamParametersHasBeenSet(false),
-    m_filterCriteriaHasBeenSet(false),
-    m_kinesisStreamParametersHasBeenSet(false),
-    m_managedStreamingKafkaParametersHasBeenSet(false),
-    m_rabbitMQBrokerParametersHasBeenSet(false),
-    m_selfManagedKafkaParametersHasBeenSet(false),
-    m_sqsQueueParametersHasBeenSet(false)
+UpdatePipeSourceParameters::UpdatePipeSourceParameters(JsonView jsonValue)
+  : UpdatePipeSourceParameters()
 {
   *this = jsonValue;
 }
 
 UpdatePipeSourceParameters& UpdatePipeSourceParameters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ActiveMQBrokerParameters"))
-  {
-    m_activeMQBrokerParameters = jsonValue.GetObject("ActiveMQBrokerParameters");
-
-    m_activeMQBrokerParametersHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DynamoDBStreamParameters"))
-  {
-    m_dynamoDBStreamParameters = jsonValue.GetObject("DynamoDBStreamParameters");
-
-    m_dynamoDBStreamParametersHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("FilterCriteria"))
   {
     m_filterCriteria = jsonValue.GetObject("FilterCriteria");
@@ -73,25 +52,11 @@ UpdatePipeSourceParameters& UpdatePipeSourceParameters::operator =(JsonView json
     m_kinesisStreamParametersHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ManagedStreamingKafkaParameters"))
+  if(jsonValue.ValueExists("DynamoDBStreamParameters"))
   {
-    m_managedStreamingKafkaParameters = jsonValue.GetObject("ManagedStreamingKafkaParameters");
+    m_dynamoDBStreamParameters = jsonValue.GetObject("DynamoDBStreamParameters");
 
-    m_managedStreamingKafkaParametersHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("RabbitMQBrokerParameters"))
-  {
-    m_rabbitMQBrokerParameters = jsonValue.GetObject("RabbitMQBrokerParameters");
-
-    m_rabbitMQBrokerParametersHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("SelfManagedKafkaParameters"))
-  {
-    m_selfManagedKafkaParameters = jsonValue.GetObject("SelfManagedKafkaParameters");
-
-    m_selfManagedKafkaParametersHasBeenSet = true;
+    m_dynamoDBStreamParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SqsQueueParameters"))
@@ -101,24 +66,40 @@ UpdatePipeSourceParameters& UpdatePipeSourceParameters::operator =(JsonView json
     m_sqsQueueParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ActiveMQBrokerParameters"))
+  {
+    m_activeMQBrokerParameters = jsonValue.GetObject("ActiveMQBrokerParameters");
+
+    m_activeMQBrokerParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RabbitMQBrokerParameters"))
+  {
+    m_rabbitMQBrokerParameters = jsonValue.GetObject("RabbitMQBrokerParameters");
+
+    m_rabbitMQBrokerParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManagedStreamingKafkaParameters"))
+  {
+    m_managedStreamingKafkaParameters = jsonValue.GetObject("ManagedStreamingKafkaParameters");
+
+    m_managedStreamingKafkaParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SelfManagedKafkaParameters"))
+  {
+    m_selfManagedKafkaParameters = jsonValue.GetObject("SelfManagedKafkaParameters");
+
+    m_selfManagedKafkaParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue UpdatePipeSourceParameters::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_activeMQBrokerParametersHasBeenSet)
-  {
-   payload.WithObject("ActiveMQBrokerParameters", m_activeMQBrokerParameters.Jsonize());
-
-  }
-
-  if(m_dynamoDBStreamParametersHasBeenSet)
-  {
-   payload.WithObject("DynamoDBStreamParameters", m_dynamoDBStreamParameters.Jsonize());
-
-  }
 
   if(m_filterCriteriaHasBeenSet)
   {
@@ -132,9 +113,21 @@ JsonValue UpdatePipeSourceParameters::Jsonize() const
 
   }
 
-  if(m_managedStreamingKafkaParametersHasBeenSet)
+  if(m_dynamoDBStreamParametersHasBeenSet)
   {
-   payload.WithObject("ManagedStreamingKafkaParameters", m_managedStreamingKafkaParameters.Jsonize());
+   payload.WithObject("DynamoDBStreamParameters", m_dynamoDBStreamParameters.Jsonize());
+
+  }
+
+  if(m_sqsQueueParametersHasBeenSet)
+  {
+   payload.WithObject("SqsQueueParameters", m_sqsQueueParameters.Jsonize());
+
+  }
+
+  if(m_activeMQBrokerParametersHasBeenSet)
+  {
+   payload.WithObject("ActiveMQBrokerParameters", m_activeMQBrokerParameters.Jsonize());
 
   }
 
@@ -144,15 +137,15 @@ JsonValue UpdatePipeSourceParameters::Jsonize() const
 
   }
 
-  if(m_selfManagedKafkaParametersHasBeenSet)
+  if(m_managedStreamingKafkaParametersHasBeenSet)
   {
-   payload.WithObject("SelfManagedKafkaParameters", m_selfManagedKafkaParameters.Jsonize());
+   payload.WithObject("ManagedStreamingKafkaParameters", m_managedStreamingKafkaParameters.Jsonize());
 
   }
 
-  if(m_sqsQueueParametersHasBeenSet)
+  if(m_selfManagedKafkaParametersHasBeenSet)
   {
-   payload.WithObject("SqsQueueParameters", m_sqsQueueParameters.Jsonize());
+   payload.WithObject("SelfManagedKafkaParameters", m_selfManagedKafkaParameters.Jsonize());
 
   }
 

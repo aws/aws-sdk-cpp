@@ -22,8 +22,8 @@ EvaluateSessionResult::EvaluateSessionResult() :
 {
 }
 
-EvaluateSessionResult::EvaluateSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_streamingStatus(StreamingStatus::NOT_SET)
+EvaluateSessionResult::EvaluateSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : EvaluateSessionResult()
 {
   *this = result;
 }

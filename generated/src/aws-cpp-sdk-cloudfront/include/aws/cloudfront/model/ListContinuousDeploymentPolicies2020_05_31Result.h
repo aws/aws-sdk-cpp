@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDFRONT_API ListContinuousDeploymentPolicies2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A list of continuous deployment policies.</p>
      */
     inline const ContinuousDeploymentPolicyList& GetContinuousDeploymentPolicyList() const{ return m_continuousDeploymentPolicyList; }
-
-    /**
-     * <p>A list of continuous deployment policies.</p>
-     */
     inline void SetContinuousDeploymentPolicyList(const ContinuousDeploymentPolicyList& value) { m_continuousDeploymentPolicyList = value; }
-
-    /**
-     * <p>A list of continuous deployment policies.</p>
-     */
     inline void SetContinuousDeploymentPolicyList(ContinuousDeploymentPolicyList&& value) { m_continuousDeploymentPolicyList = std::move(value); }
-
-    /**
-     * <p>A list of continuous deployment policies.</p>
-     */
     inline ListContinuousDeploymentPolicies2020_05_31Result& WithContinuousDeploymentPolicyList(const ContinuousDeploymentPolicyList& value) { SetContinuousDeploymentPolicyList(value); return *this;}
-
-    /**
-     * <p>A list of continuous deployment policies.</p>
-     */
     inline ListContinuousDeploymentPolicies2020_05_31Result& WithContinuousDeploymentPolicyList(ContinuousDeploymentPolicyList&& value) { SetContinuousDeploymentPolicyList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListContinuousDeploymentPolicies2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListContinuousDeploymentPolicies2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListContinuousDeploymentPolicies2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ContinuousDeploymentPolicyList m_continuousDeploymentPolicyList;

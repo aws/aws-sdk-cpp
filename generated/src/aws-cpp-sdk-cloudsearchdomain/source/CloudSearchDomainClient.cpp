@@ -58,7 +58,6 @@ CloudSearchDomainClient::CloudSearchDomainClient(const CloudSearchDomain::CloudS
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -74,7 +73,6 @@ CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentia
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -90,7 +88,6 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -105,7 +102,6 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -120,7 +116,6 @@ CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentia
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -135,7 +130,6 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -155,6 +149,14 @@ std::shared_ptr<CloudSearchDomainEndpointProviderBase>& CloudSearchDomainClient:
 void CloudSearchDomainClient::init(const CloudSearchDomain::CloudSearchDomainClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("CloudSearch Domain");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

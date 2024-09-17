@@ -26,11 +26,8 @@ ICD10CMConcept::ICD10CMConcept() :
 {
 }
 
-ICD10CMConcept::ICD10CMConcept(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+ICD10CMConcept::ICD10CMConcept(JsonView jsonValue)
+  : ICD10CMConcept()
 {
   *this = jsonValue;
 }

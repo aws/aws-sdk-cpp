@@ -24,9 +24,8 @@ RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure() :
 {
 }
 
-RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure(JsonView jsonValue) : 
-    m_triggerHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure(JsonView jsonValue)
+  : RepositoryTriggerExecutionFailure()
 {
   *this = jsonValue;
 }

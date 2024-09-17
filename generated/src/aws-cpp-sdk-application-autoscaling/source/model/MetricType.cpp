@@ -44,6 +44,9 @@ namespace Aws
         static const int SageMakerVariantProvisionedConcurrencyUtilization_HASH = HashingUtils::HashString("SageMakerVariantProvisionedConcurrencyUtilization");
         static const int ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage");
         static const int SageMakerInferenceComponentInvocationsPerCopy_HASH = HashingUtils::HashString("SageMakerInferenceComponentInvocationsPerCopy");
+        static const int WorkSpacesAverageUserSessionsCapacityUtilization_HASH = HashingUtils::HashString("WorkSpacesAverageUserSessionsCapacityUtilization");
+        static const int SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution_HASH = HashingUtils::HashString("SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution");
+        static const int SageMakerVariantConcurrentRequestsPerModelHighResolution_HASH = HashingUtils::HashString("SageMakerVariantConcurrentRequestsPerModelHighResolution");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -145,6 +148,18 @@ namespace Aws
           {
             return MetricType::SageMakerInferenceComponentInvocationsPerCopy;
           }
+          else if (hashCode == WorkSpacesAverageUserSessionsCapacityUtilization_HASH)
+          {
+            return MetricType::WorkSpacesAverageUserSessionsCapacityUtilization;
+          }
+          else if (hashCode == SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution_HASH)
+          {
+            return MetricType::SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution;
+          }
+          else if (hashCode == SageMakerVariantConcurrentRequestsPerModelHighResolution_HASH)
+          {
+            return MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -209,6 +224,12 @@ namespace Aws
             return "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage";
           case MetricType::SageMakerInferenceComponentInvocationsPerCopy:
             return "SageMakerInferenceComponentInvocationsPerCopy";
+          case MetricType::WorkSpacesAverageUserSessionsCapacityUtilization:
+            return "WorkSpacesAverageUserSessionsCapacityUtilization";
+          case MetricType::SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution:
+            return "SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution";
+          case MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution:
+            return "SageMakerVariantConcurrentRequestsPerModelHighResolution";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

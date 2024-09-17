@@ -26,11 +26,8 @@ IntentClassificationTestResultItemCounts::IntentClassificationTestResultItemCoun
 {
 }
 
-IntentClassificationTestResultItemCounts::IntentClassificationTestResultItemCounts(JsonView jsonValue) : 
-    m_totalResultCount(0),
-    m_totalResultCountHasBeenSet(false),
-    m_speechTranscriptionResultCountsHasBeenSet(false),
-    m_intentMatchResultCountsHasBeenSet(false)
+IntentClassificationTestResultItemCounts::IntentClassificationTestResultItemCounts(JsonView jsonValue)
+  : IntentClassificationTestResultItemCounts()
 {
   *this = jsonValue;
 }

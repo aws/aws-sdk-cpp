@@ -36,21 +36,8 @@ Alert::Alert() :
 {
 }
 
-Alert::Alert(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_alertDescriptionHasBeenSet(false),
-    m_alertArnHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_alertNameHasBeenSet(false),
-    m_alertSensitivityThreshold(0),
-    m_alertSensitivityThresholdHasBeenSet(false),
-    m_alertType(AlertType::NOT_SET),
-    m_alertTypeHasBeenSet(false),
-    m_alertStatus(AlertStatus::NOT_SET),
-    m_alertStatusHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_alertFiltersHasBeenSet(false)
+Alert::Alert(JsonView jsonValue)
+  : Alert()
 {
   *this = jsonValue;
 }

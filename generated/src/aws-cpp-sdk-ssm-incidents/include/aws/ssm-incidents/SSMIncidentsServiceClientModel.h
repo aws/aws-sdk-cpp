@@ -49,6 +49,9 @@
 #include <aws/ssm-incidents/model/UpdateReplicationSetResult.h>
 #include <aws/ssm-incidents/model/UpdateResponsePlanResult.h>
 #include <aws/ssm-incidents/model/UpdateTimelineEventResult.h>
+#include <aws/ssm-incidents/model/ListResponsePlansRequest.h>
+#include <aws/ssm-incidents/model/ListIncidentRecordsRequest.h>
+#include <aws/ssm-incidents/model/ListReplicationSetsRequest.h>
 /* End of service model headers required in SSMIncidentsClient header */
 
 namespace Aws
@@ -82,7 +85,7 @@ namespace Aws
 
   namespace SSMIncidents
   {
-    using SSMIncidentsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMIncidentsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSMIncidentsEndpointProviderBase = Aws::SSMIncidents::Endpoint::SSMIncidentsEndpointProviderBase;
     using SSMIncidentsEndpointProvider = Aws::SSMIncidents::Endpoint::SSMIncidentsEndpointProvider;
 

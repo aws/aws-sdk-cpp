@@ -25,10 +25,8 @@ SsmParameterStoreParameter::SsmParameterStoreParameter() :
 {
 }
 
-SsmParameterStoreParameter::SsmParameterStoreParameter(JsonView jsonValue) : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterType(SsmParameterStoreParameterType::NOT_SET),
-    m_parameterTypeHasBeenSet(false)
+SsmParameterStoreParameter::SsmParameterStoreParameter(JsonView jsonValue)
+  : SsmParameterStoreParameter()
 {
   *this = jsonValue;
 }

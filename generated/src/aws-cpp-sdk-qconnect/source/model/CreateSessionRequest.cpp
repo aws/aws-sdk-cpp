@@ -18,6 +18,7 @@ CreateSessionRequest::CreateSessionRequest() :
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_tagFilterHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -41,6 +42,12 @@ Aws::String CreateSessionRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_tagFilterHasBeenSet)
+  {
+   payload.WithObject("tagFilter", m_tagFilter.Jsonize());
 
   }
 

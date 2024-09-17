@@ -25,10 +25,8 @@ ClarifyShapBaselineConfig::ClarifyShapBaselineConfig() :
 {
 }
 
-ClarifyShapBaselineConfig::ClarifyShapBaselineConfig(JsonView jsonValue) : 
-    m_mimeTypeHasBeenSet(false),
-    m_shapBaselineHasBeenSet(false),
-    m_shapBaselineUriHasBeenSet(false)
+ClarifyShapBaselineConfig::ClarifyShapBaselineConfig(JsonView jsonValue)
+  : ClarifyShapBaselineConfig()
 {
   *this = jsonValue;
 }

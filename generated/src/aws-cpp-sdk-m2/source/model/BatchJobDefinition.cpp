@@ -24,9 +24,8 @@ BatchJobDefinition::BatchJobDefinition() :
 {
 }
 
-BatchJobDefinition::BatchJobDefinition(JsonView jsonValue) : 
-    m_fileBatchJobDefinitionHasBeenSet(false),
-    m_scriptBatchJobDefinitionHasBeenSet(false)
+BatchJobDefinition::BatchJobDefinition(JsonView jsonValue)
+  : BatchJobDefinition()
 {
   *this = jsonValue;
 }

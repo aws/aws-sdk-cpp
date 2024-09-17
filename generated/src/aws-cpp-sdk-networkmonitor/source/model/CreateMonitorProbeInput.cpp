@@ -31,16 +31,8 @@ CreateMonitorProbeInput::CreateMonitorProbeInput() :
 {
 }
 
-CreateMonitorProbeInput::CreateMonitorProbeInput(JsonView jsonValue) : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_packetSize(0),
-    m_packetSizeHasBeenSet(false),
-    m_probeTagsHasBeenSet(false)
+CreateMonitorProbeInput::CreateMonitorProbeInput(JsonView jsonValue)
+  : CreateMonitorProbeInput()
 {
   *this = jsonValue;
 }

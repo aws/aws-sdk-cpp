@@ -34,19 +34,8 @@ Operation::Operation() :
 {
 }
 
-Operation::Operation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+Operation::Operation(JsonView jsonValue)
+  : Operation()
 {
   *this = jsonValue;
 }

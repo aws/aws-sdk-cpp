@@ -25,10 +25,8 @@ HierarchyGroupCondition::HierarchyGroupCondition() :
 {
 }
 
-HierarchyGroupCondition::HierarchyGroupCondition(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_hierarchyGroupMatchType(HierarchyGroupMatchType::NOT_SET),
-    m_hierarchyGroupMatchTypeHasBeenSet(false)
+HierarchyGroupCondition::HierarchyGroupCondition(JsonView jsonValue)
+  : HierarchyGroupCondition()
 {
   *this = jsonValue;
 }

@@ -24,15 +24,13 @@ ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry() :
     m_accessGrantsInstanceIdHasBeenSet(false),
     m_accessGrantsInstanceArnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_identityCenterArnHasBeenSet(false)
+    m_identityCenterInstanceArnHasBeenSet(false),
+    m_identityCenterApplicationArnHasBeenSet(false)
 {
 }
 
-ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry(const XmlNode& xmlNode) : 
-    m_accessGrantsInstanceIdHasBeenSet(false),
-    m_accessGrantsInstanceArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_identityCenterArnHasBeenSet(false)
+ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry(const XmlNode& xmlNode)
+  : ListAccessGrantsInstanceEntry()
 {
   *this = xmlNode;
 }
@@ -61,11 +59,17 @@ ListAccessGrantsInstanceEntry& ListAccessGrantsInstanceEntry::operator =(const X
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
     }
-    XmlNode identityCenterArnNode = resultNode.FirstChild("IdentityCenterArn");
-    if(!identityCenterArnNode.IsNull())
+    XmlNode identityCenterInstanceArnNode = resultNode.FirstChild("IdentityCenterInstanceArn");
+    if(!identityCenterInstanceArnNode.IsNull())
     {
-      m_identityCenterArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterArnNode.GetText());
-      m_identityCenterArnHasBeenSet = true;
+      m_identityCenterInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterInstanceArnNode.GetText());
+      m_identityCenterInstanceArnHasBeenSet = true;
+    }
+    XmlNode identityCenterApplicationArnNode = resultNode.FirstChild("IdentityCenterApplicationArn");
+    if(!identityCenterApplicationArnNode.IsNull())
+    {
+      m_identityCenterApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterApplicationArnNode.GetText());
+      m_identityCenterApplicationArnHasBeenSet = true;
     }
   }
 
@@ -93,10 +97,16 @@ void ListAccessGrantsInstanceEntry::AddToNode(XmlNode& parentNode) const
    createdAtNode.SetText(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_identityCenterArnHasBeenSet)
+  if(m_identityCenterInstanceArnHasBeenSet)
   {
-   XmlNode identityCenterArnNode = parentNode.CreateChildElement("IdentityCenterArn");
-   identityCenterArnNode.SetText(m_identityCenterArn);
+   XmlNode identityCenterInstanceArnNode = parentNode.CreateChildElement("IdentityCenterInstanceArn");
+   identityCenterInstanceArnNode.SetText(m_identityCenterInstanceArn);
+  }
+
+  if(m_identityCenterApplicationArnHasBeenSet)
+  {
+   XmlNode identityCenterApplicationArnNode = parentNode.CreateChildElement("IdentityCenterApplicationArn");
+   identityCenterApplicationArnNode.SetText(m_identityCenterApplicationArn);
   }
 
 }

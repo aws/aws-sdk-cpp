@@ -26,9 +26,8 @@ PartitionedPrefix::PartitionedPrefix() :
 {
 }
 
-PartitionedPrefix::PartitionedPrefix(const XmlNode& xmlNode) : 
-    m_partitionDateSource(PartitionDateSource::NOT_SET),
-    m_partitionDateSourceHasBeenSet(false)
+PartitionedPrefix::PartitionedPrefix(const XmlNode& xmlNode)
+  : PartitionedPrefix()
 {
   *this = xmlNode;
 }

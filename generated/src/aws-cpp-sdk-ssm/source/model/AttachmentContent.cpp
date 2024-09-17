@@ -29,14 +29,8 @@ AttachmentContent::AttachmentContent() :
 {
 }
 
-AttachmentContent::AttachmentContent(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_hashHasBeenSet(false),
-    m_hashType(AttachmentHashType::NOT_SET),
-    m_hashTypeHasBeenSet(false),
-    m_urlHasBeenSet(false)
+AttachmentContent::AttachmentContent(JsonView jsonValue)
+  : AttachmentContent()
 {
   *this = jsonValue;
 }

@@ -19,7 +19,12 @@ UpdateDistributionRequest::UpdateDistributionRequest() :
     m_cacheBehaviorSettingsHasBeenSet(false),
     m_cacheBehaviorsHasBeenSet(false),
     m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
+    m_isEnabledHasBeenSet(false),
+    m_viewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum::NOT_SET),
+    m_viewerMinimumTlsProtocolVersionHasBeenSet(false),
+    m_certificateNameHasBeenSet(false),
+    m_useDefaultCertificate(false),
+    m_useDefaultCertificateHasBeenSet(false)
 {
 }
 
@@ -65,6 +70,23 @@ Aws::String UpdateDistributionRequest::SerializePayload() const
   if(m_isEnabledHasBeenSet)
   {
    payload.WithBool("isEnabled", m_isEnabled);
+
+  }
+
+  if(m_viewerMinimumTlsProtocolVersionHasBeenSet)
+  {
+   payload.WithString("viewerMinimumTlsProtocolVersion", ViewerMinimumTlsProtocolVersionEnumMapper::GetNameForViewerMinimumTlsProtocolVersionEnum(m_viewerMinimumTlsProtocolVersion));
+  }
+
+  if(m_certificateNameHasBeenSet)
+  {
+   payload.WithString("certificateName", m_certificateName);
+
+  }
+
+  if(m_useDefaultCertificateHasBeenSet)
+  {
+   payload.WithBool("useDefaultCertificate", m_useDefaultCertificate);
 
   }
 

@@ -37,55 +37,27 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The revision version of the template. Re-enrolling all certificate holders
      * will increment the major revision.</p>
      */
     inline int GetMajorRevision() const{ return m_majorRevision; }
-
-    /**
-     * <p>The revision version of the template. Re-enrolling all certificate holders
-     * will increment the major revision.</p>
-     */
     inline bool MajorRevisionHasBeenSet() const { return m_majorRevisionHasBeenSet; }
-
-    /**
-     * <p>The revision version of the template. Re-enrolling all certificate holders
-     * will increment the major revision.</p>
-     */
     inline void SetMajorRevision(int value) { m_majorRevisionHasBeenSet = true; m_majorRevision = value; }
-
-    /**
-     * <p>The revision version of the template. Re-enrolling all certificate holders
-     * will increment the major revision.</p>
-     */
     inline TemplateRevision& WithMajorRevision(int value) { SetMajorRevision(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The revision version of the template. Re-enrolling all certificate holders
      * will increment the major revision.</p>
      */
     inline int GetMinorRevision() const{ return m_minorRevision; }
-
-    /**
-     * <p>The revision version of the template. Re-enrolling all certificate holders
-     * will increment the major revision.</p>
-     */
     inline bool MinorRevisionHasBeenSet() const { return m_minorRevisionHasBeenSet; }
-
-    /**
-     * <p>The revision version of the template. Re-enrolling all certificate holders
-     * will increment the major revision.</p>
-     */
     inline void SetMinorRevision(int value) { m_minorRevisionHasBeenSet = true; m_minorRevision = value; }
-
-    /**
-     * <p>The revision version of the template. Re-enrolling all certificate holders
-     * will increment the major revision.</p>
-     */
     inline TemplateRevision& WithMinorRevision(int value) { SetMinorRevision(value); return *this;}
-
+    ///@}
   private:
 
     int m_majorRevision;

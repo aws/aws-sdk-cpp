@@ -26,6 +26,8 @@
 #include <aws/acm/model/ListCertificatesResult.h>
 #include <aws/acm/model/ListTagsForCertificateResult.h>
 #include <aws/acm/model/RequestCertificateResult.h>
+#include <aws/acm/model/GetAccountConfigurationRequest.h>
+#include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ACMClient header */
 
@@ -60,7 +62,7 @@ namespace Aws
 
   namespace ACM
   {
-    using ACMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ACMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ACMEndpointProviderBase = Aws::ACM::Endpoint::ACMEndpointProviderBase;
     using ACMEndpointProvider = Aws::ACM::Endpoint::ACMEndpointProvider;
 

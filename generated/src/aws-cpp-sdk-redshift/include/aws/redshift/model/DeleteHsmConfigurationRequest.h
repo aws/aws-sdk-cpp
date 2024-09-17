@@ -39,46 +39,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
      */
     inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
-
-    /**
-     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-     */
     inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-     */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
-
-    /**
-     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-     */
     inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-     */
     inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-     */
     inline DeleteHsmConfigurationRequest& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-     */
     inline DeleteHsmConfigurationRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-     */
     inline DeleteHsmConfigurationRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hsmConfigurationIdentifier;

@@ -38,87 +38,33 @@ namespace Model
     AWS_WORKSPACESWEB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const Aws::String& value) { m_portalArnHasBeenSet = true; m_portalArn = value; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(Aws::String&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const char* value) { m_portalArnHasBeenSet = true; m_portalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateUserSettingsRequest& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateUserSettingsRequest& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateUserSettingsRequest& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the user settings.</p>
      */
     inline const Aws::String& GetUserSettingsArn() const{ return m_userSettingsArn; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline bool UserSettingsArnHasBeenSet() const { return m_userSettingsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(const Aws::String& value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(Aws::String&& value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(const char* value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline AssociateUserSettingsRequest& WithUserSettingsArn(const Aws::String& value) { SetUserSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline AssociateUserSettingsRequest& WithUserSettingsArn(Aws::String&& value) { SetUserSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline AssociateUserSettingsRequest& WithUserSettingsArn(const char* value) { SetUserSettingsArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_portalArn;

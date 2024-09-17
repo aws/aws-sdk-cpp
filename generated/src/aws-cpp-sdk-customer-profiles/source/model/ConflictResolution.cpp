@@ -25,10 +25,8 @@ ConflictResolution::ConflictResolution() :
 {
 }
 
-ConflictResolution::ConflictResolution(JsonView jsonValue) : 
-    m_conflictResolvingModel(ConflictResolvingModel::NOT_SET),
-    m_conflictResolvingModelHasBeenSet(false),
-    m_sourceNameHasBeenSet(false)
+ConflictResolution::ConflictResolution(JsonView jsonValue)
+  : ConflictResolution()
 {
   *this = jsonValue;
 }

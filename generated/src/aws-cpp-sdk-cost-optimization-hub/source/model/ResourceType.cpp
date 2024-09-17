@@ -33,6 +33,8 @@ namespace Aws
         static const int OpenSearchReservedInstances_HASH = HashingUtils::HashString("OpenSearchReservedInstances");
         static const int RedshiftReservedInstances_HASH = HashingUtils::HashString("RedshiftReservedInstances");
         static const int ElastiCacheReservedInstances_HASH = HashingUtils::HashString("ElastiCacheReservedInstances");
+        static const int RdsDbInstanceStorage_HASH = HashingUtils::HashString("RdsDbInstanceStorage");
+        static const int RdsDbInstance_HASH = HashingUtils::HashString("RdsDbInstance");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -90,6 +92,14 @@ namespace Aws
           {
             return ResourceType::ElastiCacheReservedInstances;
           }
+          else if (hashCode == RdsDbInstanceStorage_HASH)
+          {
+            return ResourceType::RdsDbInstanceStorage;
+          }
+          else if (hashCode == RdsDbInstance_HASH)
+          {
+            return ResourceType::RdsDbInstance;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -132,6 +142,10 @@ namespace Aws
             return "RedshiftReservedInstances";
           case ResourceType::ElastiCacheReservedInstances:
             return "ElastiCacheReservedInstances";
+          case ResourceType::RdsDbInstanceStorage:
+            return "RdsDbInstanceStorage";
+          case ResourceType::RdsDbInstance:
+            return "RdsDbInstance";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

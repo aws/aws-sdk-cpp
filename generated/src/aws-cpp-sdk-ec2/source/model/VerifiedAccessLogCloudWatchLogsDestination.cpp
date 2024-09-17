@@ -28,11 +28,8 @@ VerifiedAccessLogCloudWatchLogsDestination::VerifiedAccessLogCloudWatchLogsDesti
 {
 }
 
-VerifiedAccessLogCloudWatchLogsDestination::VerifiedAccessLogCloudWatchLogsDestination(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStatusHasBeenSet(false),
-    m_logGroupHasBeenSet(false)
+VerifiedAccessLogCloudWatchLogsDestination::VerifiedAccessLogCloudWatchLogsDestination(const XmlNode& xmlNode)
+  : VerifiedAccessLogCloudWatchLogsDestination()
 {
   *this = xmlNode;
 }

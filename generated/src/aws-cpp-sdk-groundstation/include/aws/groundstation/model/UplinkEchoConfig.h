@@ -41,67 +41,29 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>ARN of an uplink <code>Config</code>.</p>
      */
     inline const Aws::String& GetAntennaUplinkConfigArn() const{ return m_antennaUplinkConfigArn; }
-
-    /**
-     * <p>ARN of an uplink <code>Config</code>.</p>
-     */
     inline bool AntennaUplinkConfigArnHasBeenSet() const { return m_antennaUplinkConfigArnHasBeenSet; }
-
-    /**
-     * <p>ARN of an uplink <code>Config</code>.</p>
-     */
     inline void SetAntennaUplinkConfigArn(const Aws::String& value) { m_antennaUplinkConfigArnHasBeenSet = true; m_antennaUplinkConfigArn = value; }
-
-    /**
-     * <p>ARN of an uplink <code>Config</code>.</p>
-     */
     inline void SetAntennaUplinkConfigArn(Aws::String&& value) { m_antennaUplinkConfigArnHasBeenSet = true; m_antennaUplinkConfigArn = std::move(value); }
-
-    /**
-     * <p>ARN of an uplink <code>Config</code>.</p>
-     */
     inline void SetAntennaUplinkConfigArn(const char* value) { m_antennaUplinkConfigArnHasBeenSet = true; m_antennaUplinkConfigArn.assign(value); }
-
-    /**
-     * <p>ARN of an uplink <code>Config</code>.</p>
-     */
     inline UplinkEchoConfig& WithAntennaUplinkConfigArn(const Aws::String& value) { SetAntennaUplinkConfigArn(value); return *this;}
-
-    /**
-     * <p>ARN of an uplink <code>Config</code>.</p>
-     */
     inline UplinkEchoConfig& WithAntennaUplinkConfigArn(Aws::String&& value) { SetAntennaUplinkConfigArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of an uplink <code>Config</code>.</p>
-     */
     inline UplinkEchoConfig& WithAntennaUplinkConfigArn(const char* value) { SetAntennaUplinkConfigArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether or not an uplink <code>Config</code> is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Whether or not an uplink <code>Config</code> is enabled.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Whether or not an uplink <code>Config</code> is enabled.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Whether or not an uplink <code>Config</code> is enabled.</p>
-     */
     inline UplinkEchoConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_antennaUplinkConfigArn;

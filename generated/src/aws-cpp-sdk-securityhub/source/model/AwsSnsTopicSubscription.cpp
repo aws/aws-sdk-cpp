@@ -24,9 +24,8 @@ AwsSnsTopicSubscription::AwsSnsTopicSubscription() :
 {
 }
 
-AwsSnsTopicSubscription::AwsSnsTopicSubscription(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+AwsSnsTopicSubscription::AwsSnsTopicSubscription(JsonView jsonValue)
+  : AwsSnsTopicSubscription()
 {
   *this = jsonValue;
 }

@@ -34,108 +34,43 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the snapshot to be created before the namespace is deleted.</p>
      */
     inline const Aws::String& GetFinalSnapshotName() const{ return m_finalSnapshotName; }
-
-    /**
-     * <p>The name of the snapshot to be created before the namespace is deleted.</p>
-     */
     inline bool FinalSnapshotNameHasBeenSet() const { return m_finalSnapshotNameHasBeenSet; }
-
-    /**
-     * <p>The name of the snapshot to be created before the namespace is deleted.</p>
-     */
     inline void SetFinalSnapshotName(const Aws::String& value) { m_finalSnapshotNameHasBeenSet = true; m_finalSnapshotName = value; }
-
-    /**
-     * <p>The name of the snapshot to be created before the namespace is deleted.</p>
-     */
     inline void SetFinalSnapshotName(Aws::String&& value) { m_finalSnapshotNameHasBeenSet = true; m_finalSnapshotName = std::move(value); }
-
-    /**
-     * <p>The name of the snapshot to be created before the namespace is deleted.</p>
-     */
     inline void SetFinalSnapshotName(const char* value) { m_finalSnapshotNameHasBeenSet = true; m_finalSnapshotName.assign(value); }
-
-    /**
-     * <p>The name of the snapshot to be created before the namespace is deleted.</p>
-     */
     inline DeleteNamespaceRequest& WithFinalSnapshotName(const Aws::String& value) { SetFinalSnapshotName(value); return *this;}
-
-    /**
-     * <p>The name of the snapshot to be created before the namespace is deleted.</p>
-     */
     inline DeleteNamespaceRequest& WithFinalSnapshotName(Aws::String&& value) { SetFinalSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the snapshot to be created before the namespace is deleted.</p>
-     */
     inline DeleteNamespaceRequest& WithFinalSnapshotName(const char* value) { SetFinalSnapshotName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>How long to retain the final snapshot.</p>
      */
     inline int GetFinalSnapshotRetentionPeriod() const{ return m_finalSnapshotRetentionPeriod; }
-
-    /**
-     * <p>How long to retain the final snapshot.</p>
-     */
     inline bool FinalSnapshotRetentionPeriodHasBeenSet() const { return m_finalSnapshotRetentionPeriodHasBeenSet; }
-
-    /**
-     * <p>How long to retain the final snapshot.</p>
-     */
     inline void SetFinalSnapshotRetentionPeriod(int value) { m_finalSnapshotRetentionPeriodHasBeenSet = true; m_finalSnapshotRetentionPeriod = value; }
-
-    /**
-     * <p>How long to retain the final snapshot.</p>
-     */
     inline DeleteNamespaceRequest& WithFinalSnapshotRetentionPeriod(int value) { SetFinalSnapshotRetentionPeriod(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the namespace to delete.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
-
-    /**
-     * <p>The name of the namespace to delete.</p>
-     */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the namespace to delete.</p>
-     */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-
-    /**
-     * <p>The name of the namespace to delete.</p>
-     */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-
-    /**
-     * <p>The name of the namespace to delete.</p>
-     */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-
-    /**
-     * <p>The name of the namespace to delete.</p>
-     */
     inline DeleteNamespaceRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-
-    /**
-     * <p>The name of the namespace to delete.</p>
-     */
     inline DeleteNamespaceRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the namespace to delete.</p>
-     */
     inline DeleteNamespaceRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_finalSnapshotName;

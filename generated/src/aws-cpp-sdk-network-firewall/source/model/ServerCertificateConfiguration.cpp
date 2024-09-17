@@ -26,11 +26,8 @@ ServerCertificateConfiguration::ServerCertificateConfiguration() :
 {
 }
 
-ServerCertificateConfiguration::ServerCertificateConfiguration(JsonView jsonValue) : 
-    m_serverCertificatesHasBeenSet(false),
-    m_scopesHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_checkCertificateRevocationStatusHasBeenSet(false)
+ServerCertificateConfiguration::ServerCertificateConfiguration(JsonView jsonValue)
+  : ServerCertificateConfiguration()
 {
   *this = jsonValue;
 }

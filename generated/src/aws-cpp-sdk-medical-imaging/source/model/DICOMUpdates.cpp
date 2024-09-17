@@ -25,9 +25,8 @@ DICOMUpdates::DICOMUpdates() :
 {
 }
 
-DICOMUpdates::DICOMUpdates(JsonView jsonValue) : 
-    m_removableAttributesHasBeenSet(false),
-    m_updatableAttributesHasBeenSet(false)
+DICOMUpdates::DICOMUpdates(JsonView jsonValue)
+  : DICOMUpdates()
 {
   *this = jsonValue;
 }

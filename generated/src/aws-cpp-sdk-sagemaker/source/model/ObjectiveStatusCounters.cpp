@@ -28,13 +28,8 @@ ObjectiveStatusCounters::ObjectiveStatusCounters() :
 {
 }
 
-ObjectiveStatusCounters::ObjectiveStatusCounters(JsonView jsonValue) : 
-    m_succeeded(0),
-    m_succeededHasBeenSet(false),
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false)
+ObjectiveStatusCounters::ObjectiveStatusCounters(JsonView jsonValue)
+  : ObjectiveStatusCounters()
 {
   *this = jsonValue;
 }

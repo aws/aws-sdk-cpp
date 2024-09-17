@@ -36,47 +36,25 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The start index of the substring, starting from 0.</p>
      */
     inline int GetStart() const{ return m_start; }
-
-    /**
-     * <p>The start index of the substring, starting from 0.</p>
-     */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-
-    /**
-     * <p>The start index of the substring, starting from 0.</p>
-     */
     inline void SetStart(int value) { m_startHasBeenSet = true; m_start = value; }
-
-    /**
-     * <p>The start index of the substring, starting from 0.</p>
-     */
     inline Substring& WithStart(int value) { SetStart(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The length of the substring.</p>
      */
     inline int GetLength() const{ return m_length; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
     inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
     inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
     inline Substring& WithLength(int value) { SetLength(value); return *this;}
-
+    ///@}
   private:
 
     int m_start;

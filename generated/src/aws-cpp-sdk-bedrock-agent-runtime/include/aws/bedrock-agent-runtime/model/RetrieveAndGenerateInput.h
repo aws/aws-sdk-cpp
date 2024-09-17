@@ -24,7 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Customer input of the turn</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the query made to the knowledge base.</p> <p>This data type is used
+   * in the following API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+   * request</a> – in the <code>input</code> field</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerateInput">AWS
    * API Reference</a></p>
    */
@@ -37,46 +41,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Customer input of the turn in text</p>
+     * <p>The query made to the knowledge base.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>Customer input of the turn in text</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>Customer input of the turn in text</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>Customer input of the turn in text</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>Customer input of the turn in text</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>Customer input of the turn in text</p>
-     */
     inline RetrieveAndGenerateInput& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>Customer input of the turn in text</p>
-     */
     inline RetrieveAndGenerateInput& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>Customer input of the turn in text</p>
-     */
     inline RetrieveAndGenerateInput& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

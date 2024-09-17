@@ -32,136 +32,48 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID for the Amazon Web Services account that contains the folder to
      * update.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that contains the folder to
-     * update.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that contains the folder to
-     * update.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that contains the folder to
-     * update.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that contains the folder to
-     * update.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that contains the folder to
-     * update.</p>
-     */
     inline UpdateFolderRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID for the Amazon Web Services account that contains the folder to
-     * update.</p>
-     */
     inline UpdateFolderRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the Amazon Web Services account that contains the folder to
-     * update.</p>
-     */
     inline UpdateFolderRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the folder.</p>
      */
     inline const Aws::String& GetFolderId() const{ return m_folderId; }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline bool FolderIdHasBeenSet() const { return m_folderIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline void SetFolderId(const Aws::String& value) { m_folderIdHasBeenSet = true; m_folderId = value; }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline void SetFolderId(Aws::String&& value) { m_folderIdHasBeenSet = true; m_folderId = std::move(value); }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline void SetFolderId(const char* value) { m_folderIdHasBeenSet = true; m_folderId.assign(value); }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline UpdateFolderRequest& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline UpdateFolderRequest& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline UpdateFolderRequest& WithFolderId(const char* value) { SetFolderId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the folder.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the folder.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the folder.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the folder.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the folder.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the folder.</p>
-     */
     inline UpdateFolderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the folder.</p>
-     */
     inline UpdateFolderRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the folder.</p>
-     */
     inline UpdateFolderRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

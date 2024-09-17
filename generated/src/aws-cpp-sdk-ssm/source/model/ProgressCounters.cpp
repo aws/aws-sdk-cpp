@@ -32,17 +32,8 @@ ProgressCounters::ProgressCounters() :
 {
 }
 
-ProgressCounters::ProgressCounters(JsonView jsonValue) : 
-    m_totalSteps(0),
-    m_totalStepsHasBeenSet(false),
-    m_successSteps(0),
-    m_successStepsHasBeenSet(false),
-    m_failedSteps(0),
-    m_failedStepsHasBeenSet(false),
-    m_cancelledSteps(0),
-    m_cancelledStepsHasBeenSet(false),
-    m_timedOutSteps(0),
-    m_timedOutStepsHasBeenSet(false)
+ProgressCounters::ProgressCounters(JsonView jsonValue)
+  : ProgressCounters()
 {
   *this = jsonValue;
 }

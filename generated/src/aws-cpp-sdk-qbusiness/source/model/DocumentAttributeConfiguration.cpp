@@ -20,19 +20,15 @@ namespace Model
 
 DocumentAttributeConfiguration::DocumentAttributeConfiguration() : 
     m_nameHasBeenSet(false),
-    m_search(Status::NOT_SET),
-    m_searchHasBeenSet(false),
     m_type(AttributeType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_search(Status::NOT_SET),
+    m_searchHasBeenSet(false)
 {
 }
 
-DocumentAttributeConfiguration::DocumentAttributeConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_search(Status::NOT_SET),
-    m_searchHasBeenSet(false),
-    m_type(AttributeType::NOT_SET),
-    m_typeHasBeenSet(false)
+DocumentAttributeConfiguration::DocumentAttributeConfiguration(JsonView jsonValue)
+  : DocumentAttributeConfiguration()
 {
   *this = jsonValue;
 }
@@ -46,18 +42,18 @@ DocumentAttributeConfiguration& DocumentAttributeConfiguration::operator =(JsonV
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("search"))
-  {
-    m_search = StatusMapper::GetStatusForName(jsonValue.GetString("search"));
-
-    m_searchHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AttributeTypeMapper::GetAttributeTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("search"))
+  {
+    m_search = StatusMapper::GetStatusForName(jsonValue.GetString("search"));
+
+    m_searchHasBeenSet = true;
   }
 
   return *this;
@@ -73,14 +69,14 @@ JsonValue DocumentAttributeConfiguration::Jsonize() const
 
   }
 
-  if(m_searchHasBeenSet)
-  {
-   payload.WithString("search", StatusMapper::GetNameForStatus(m_search));
-  }
-
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", AttributeTypeMapper::GetNameForAttributeType(m_type));
+  }
+
+  if(m_searchHasBeenSet)
+  {
+   payload.WithString("search", StatusMapper::GetNameForStatus(m_search));
   }
 
   return payload;

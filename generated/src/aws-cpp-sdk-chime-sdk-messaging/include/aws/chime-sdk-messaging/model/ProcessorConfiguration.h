@@ -37,36 +37,17 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates that the processor is of type Lambda.</p>
      */
     inline const LambdaConfiguration& GetLambda() const{ return m_lambda; }
-
-    /**
-     * <p>Indicates that the processor is of type Lambda.</p>
-     */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
-
-    /**
-     * <p>Indicates that the processor is of type Lambda.</p>
-     */
     inline void SetLambda(const LambdaConfiguration& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
-
-    /**
-     * <p>Indicates that the processor is of type Lambda.</p>
-     */
     inline void SetLambda(LambdaConfiguration&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
-
-    /**
-     * <p>Indicates that the processor is of type Lambda.</p>
-     */
     inline ProcessorConfiguration& WithLambda(const LambdaConfiguration& value) { SetLambda(value); return *this;}
-
-    /**
-     * <p>Indicates that the processor is of type Lambda.</p>
-     */
     inline ProcessorConfiguration& WithLambda(LambdaConfiguration&& value) { SetLambda(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LambdaConfiguration m_lambda;

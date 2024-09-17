@@ -31,16 +31,8 @@ ElasticLoadBalancer::ElasticLoadBalancer() :
 {
 }
 
-ElasticLoadBalancer::ElasticLoadBalancer(JsonView jsonValue) : 
-    m_elasticLoadBalancerNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_layerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_ec2InstanceIdsHasBeenSet(false)
+ElasticLoadBalancer::ElasticLoadBalancer(JsonView jsonValue)
+  : ElasticLoadBalancer()
 {
   *this = jsonValue;
 }

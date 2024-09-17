@@ -39,67 +39,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The finding detail field by which results are sorted.</p>
      */
     inline const SortField& GetField() const{ return m_field; }
-
-    /**
-     * <p>The finding detail field by which results are sorted.</p>
-     */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-
-    /**
-     * <p>The finding detail field by which results are sorted.</p>
-     */
     inline void SetField(const SortField& value) { m_fieldHasBeenSet = true; m_field = value; }
-
-    /**
-     * <p>The finding detail field by which results are sorted.</p>
-     */
     inline void SetField(SortField&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-
-    /**
-     * <p>The finding detail field by which results are sorted.</p>
-     */
     inline SortCriteria& WithField(const SortField& value) { SetField(value); return *this;}
-
-    /**
-     * <p>The finding detail field by which results are sorted.</p>
-     */
     inline SortCriteria& WithField(SortField&& value) { SetField(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order by which findings are sorted.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The order by which findings are sorted.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The order by which findings are sorted.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The order by which findings are sorted.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The order by which findings are sorted.</p>
-     */
     inline SortCriteria& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The order by which findings are sorted.</p>
-     */
     inline SortCriteria& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SortField m_field;

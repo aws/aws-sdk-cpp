@@ -39,62 +39,35 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline int GetIndex() const{ return m_index; }
-
-    
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
-
-    
     inline BatchWriteException& WithIndex(int value) { SetIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BatchWriteExceptionType& GetType() const{ return m_type; }
-
-    
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    
     inline void SetType(const BatchWriteExceptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    
     inline void SetType(BatchWriteExceptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    
     inline BatchWriteException& WithType(const BatchWriteExceptionType& value) { SetType(value); return *this;}
-
-    
     inline BatchWriteException& WithType(BatchWriteExceptionType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline BatchWriteException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline BatchWriteException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline BatchWriteException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     int m_index;

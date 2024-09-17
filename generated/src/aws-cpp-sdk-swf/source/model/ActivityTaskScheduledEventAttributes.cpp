@@ -34,19 +34,8 @@ ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes() :
 {
 }
 
-ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes(JsonView jsonValue) : 
-    m_activityTypeHasBeenSet(false),
-    m_activityIdHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_scheduleToStartTimeoutHasBeenSet(false),
-    m_scheduleToCloseTimeoutHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_heartbeatTimeoutHasBeenSet(false)
+ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes(JsonView jsonValue)
+  : ActivityTaskScheduledEventAttributes()
 {
   *this = jsonValue;
 }

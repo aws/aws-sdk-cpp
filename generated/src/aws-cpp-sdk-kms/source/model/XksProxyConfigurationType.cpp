@@ -28,13 +28,8 @@ XksProxyConfigurationType::XksProxyConfigurationType() :
 {
 }
 
-XksProxyConfigurationType::XksProxyConfigurationType(JsonView jsonValue) : 
-    m_connectivity(XksProxyConnectivityType::NOT_SET),
-    m_connectivityHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_uriEndpointHasBeenSet(false),
-    m_uriPathHasBeenSet(false),
-    m_vpcEndpointServiceNameHasBeenSet(false)
+XksProxyConfigurationType::XksProxyConfigurationType(JsonView jsonValue)
+  : XksProxyConfigurationType()
 {
   *this = jsonValue;
 }

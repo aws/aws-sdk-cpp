@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using KeyspacesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KeyspacesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using KeyspacesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KeyspacesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

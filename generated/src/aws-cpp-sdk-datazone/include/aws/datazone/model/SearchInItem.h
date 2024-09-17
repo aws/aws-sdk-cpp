@@ -37,46 +37,19 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The search attribute.</p>
      */
     inline const Aws::String& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The search attribute.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The search attribute.</p>
-     */
     inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The search attribute.</p>
-     */
     inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The search attribute.</p>
-     */
     inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
-
-    /**
-     * <p>The search attribute.</p>
-     */
     inline SearchInItem& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The search attribute.</p>
-     */
     inline SearchInItem& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
-
-    /**
-     * <p>The search attribute.</p>
-     */
     inline SearchInItem& WithAttribute(const char* value) { SetAttribute(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attribute;

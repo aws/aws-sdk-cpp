@@ -27,12 +27,8 @@ ParticipatingGateways::ParticipatingGateways() :
 {
 }
 
-ParticipatingGateways::ParticipatingGateways(JsonView jsonValue) : 
-    m_downlinkMode(DownlinkMode::NOT_SET),
-    m_downlinkModeHasBeenSet(false),
-    m_gatewayListHasBeenSet(false),
-    m_transmissionInterval(0),
-    m_transmissionIntervalHasBeenSet(false)
+ParticipatingGateways::ParticipatingGateways(JsonView jsonValue)
+  : ParticipatingGateways()
 {
   *this = jsonValue;
 }

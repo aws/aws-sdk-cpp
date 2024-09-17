@@ -30,15 +30,8 @@ NetworkACLEntry::NetworkACLEntry() :
 {
 }
 
-NetworkACLEntry::NetworkACLEntry(JsonView jsonValue) : 
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleAction(RuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_icmpTypeCodeHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false)
+NetworkACLEntry::NetworkACLEntry(JsonView jsonValue)
+  : NetworkACLEntry()
 {
   *this = jsonValue;
 }

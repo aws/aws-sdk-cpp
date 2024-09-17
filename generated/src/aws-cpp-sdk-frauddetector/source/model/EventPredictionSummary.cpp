@@ -28,13 +28,8 @@ EventPredictionSummary::EventPredictionSummary() :
 {
 }
 
-EventPredictionSummary::EventPredictionSummary(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_eventTimestampHasBeenSet(false),
-    m_predictionTimestampHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_detectorVersionIdHasBeenSet(false)
+EventPredictionSummary::EventPredictionSummary(JsonView jsonValue)
+  : EventPredictionSummary()
 {
   *this = jsonValue;
 }

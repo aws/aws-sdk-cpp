@@ -34,46 +34,19 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
      */
     inline const Aws::String& GetDatasetImportJobArn() const{ return m_datasetImportJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-     */
     inline bool DatasetImportJobArnHasBeenSet() const { return m_datasetImportJobArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-     */
     inline void SetDatasetImportJobArn(const Aws::String& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-     */
     inline void SetDatasetImportJobArn(Aws::String&& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-     */
     inline void SetDatasetImportJobArn(const char* value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-     */
     inline DeleteDatasetImportJobRequest& WithDatasetImportJobArn(const Aws::String& value) { SetDatasetImportJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-     */
     inline DeleteDatasetImportJobRequest& WithDatasetImportJobArn(Aws::String&& value) { SetDatasetImportJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-     */
     inline DeleteDatasetImportJobRequest& WithDatasetImportJobArn(const char* value) { SetDatasetImportJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetImportJobArn;

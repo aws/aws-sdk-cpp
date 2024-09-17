@@ -38,54 +38,20 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
      * index.</p>
      */
     inline const Aws::String& GetAttachedObjectIdentifier() const{ return m_attachedObjectIdentifier; }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline bool AttachedObjectIdentifierHasBeenSet() const { return m_attachedObjectIdentifierHasBeenSet; }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = value; }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline void SetAttachedObjectIdentifier(const char* value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline BatchAttachToIndexResponse& WithAttachedObjectIdentifier(const Aws::String& value) { SetAttachedObjectIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline BatchAttachToIndexResponse& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
-     * index.</p>
-     */
     inline BatchAttachToIndexResponse& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachedObjectIdentifier;

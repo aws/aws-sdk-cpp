@@ -33,18 +33,8 @@ NeptuneSettings::NeptuneSettings() :
 {
 }
 
-NeptuneSettings::NeptuneSettings(JsonView jsonValue) : 
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3BucketFolderHasBeenSet(false),
-    m_errorRetryDuration(0),
-    m_errorRetryDurationHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_maxRetryCount(0),
-    m_maxRetryCountHasBeenSet(false),
-    m_iamAuthEnabled(false),
-    m_iamAuthEnabledHasBeenSet(false)
+NeptuneSettings::NeptuneSettings(JsonView jsonValue)
+  : NeptuneSettings()
 {
   *this = jsonValue;
 }

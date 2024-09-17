@@ -32,25 +32,15 @@ AudioDescription::AudioDescription() :
     m_languageCodeControlHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_remixSettingsHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+    m_streamNameHasBeenSet(false),
+    m_audioDashRolesHasBeenSet(false),
+    m_dvbDashAccessibility(DvbDashAccessibility::NOT_SET),
+    m_dvbDashAccessibilityHasBeenSet(false)
 {
 }
 
-AudioDescription::AudioDescription(JsonView jsonValue) : 
-    m_audioNormalizationSettingsHasBeenSet(false),
-    m_audioSelectorNameHasBeenSet(false),
-    m_audioType(AudioType::NOT_SET),
-    m_audioTypeHasBeenSet(false),
-    m_audioTypeControl(AudioDescriptionAudioTypeControl::NOT_SET),
-    m_audioTypeControlHasBeenSet(false),
-    m_audioWatermarkingSettingsHasBeenSet(false),
-    m_codecSettingsHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageCodeControl(AudioDescriptionLanguageCodeControl::NOT_SET),
-    m_languageCodeControlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_remixSettingsHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+AudioDescription::AudioDescription(JsonView jsonValue)
+  : AudioDescription()
 {
   *this = jsonValue;
 }
@@ -134,6 +124,23 @@ AudioDescription& AudioDescription::operator =(JsonView jsonValue)
     m_streamNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioDashRoles"))
+  {
+    Aws::Utils::Array<JsonView> audioDashRolesJsonList = jsonValue.GetArray("audioDashRoles");
+    for(unsigned audioDashRolesIndex = 0; audioDashRolesIndex < audioDashRolesJsonList.GetLength(); ++audioDashRolesIndex)
+    {
+      m_audioDashRoles.push_back(DashRoleAudioMapper::GetDashRoleAudioForName(audioDashRolesJsonList[audioDashRolesIndex].AsString()));
+    }
+    m_audioDashRolesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dvbDashAccessibility"))
+  {
+    m_dvbDashAccessibility = DvbDashAccessibilityMapper::GetDvbDashAccessibilityForName(jsonValue.GetString("dvbDashAccessibility"));
+
+    m_dvbDashAccessibilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -202,6 +209,22 @@ JsonValue AudioDescription::Jsonize() const
   {
    payload.WithString("streamName", m_streamName);
 
+  }
+
+  if(m_audioDashRolesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audioDashRolesJsonList(m_audioDashRoles.size());
+   for(unsigned audioDashRolesIndex = 0; audioDashRolesIndex < audioDashRolesJsonList.GetLength(); ++audioDashRolesIndex)
+   {
+     audioDashRolesJsonList[audioDashRolesIndex].AsString(DashRoleAudioMapper::GetNameForDashRoleAudio(m_audioDashRoles[audioDashRolesIndex]));
+   }
+   payload.WithArray("audioDashRoles", std::move(audioDashRolesJsonList));
+
+  }
+
+  if(m_dvbDashAccessibilityHasBeenSet)
+  {
+   payload.WithString("dvbDashAccessibility", DvbDashAccessibilityMapper::GetNameForDvbDashAccessibility(m_dvbDashAccessibility));
   }
 
   return payload;

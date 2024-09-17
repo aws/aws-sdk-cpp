@@ -23,8 +23,8 @@ AppValidationOutput::AppValidationOutput() :
 {
 }
 
-AppValidationOutput::AppValidationOutput(JsonView jsonValue) : 
-    m_ssmOutputHasBeenSet(false)
+AppValidationOutput::AppValidationOutput(JsonView jsonValue)
+  : AppValidationOutput()
 {
   *this = jsonValue;
 }

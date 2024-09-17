@@ -34,46 +34,19 @@ namespace Model
     AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The calculation execution UUID.</p>
      */
     inline const Aws::String& GetCalculationExecutionId() const{ return m_calculationExecutionId; }
-
-    /**
-     * <p>The calculation execution UUID.</p>
-     */
     inline bool CalculationExecutionIdHasBeenSet() const { return m_calculationExecutionIdHasBeenSet; }
-
-    /**
-     * <p>The calculation execution UUID.</p>
-     */
     inline void SetCalculationExecutionId(const Aws::String& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = value; }
-
-    /**
-     * <p>The calculation execution UUID.</p>
-     */
     inline void SetCalculationExecutionId(Aws::String&& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = std::move(value); }
-
-    /**
-     * <p>The calculation execution UUID.</p>
-     */
     inline void SetCalculationExecutionId(const char* value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId.assign(value); }
-
-    /**
-     * <p>The calculation execution UUID.</p>
-     */
     inline GetCalculationExecutionCodeRequest& WithCalculationExecutionId(const Aws::String& value) { SetCalculationExecutionId(value); return *this;}
-
-    /**
-     * <p>The calculation execution UUID.</p>
-     */
     inline GetCalculationExecutionCodeRequest& WithCalculationExecutionId(Aws::String&& value) { SetCalculationExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The calculation execution UUID.</p>
-     */
     inline GetCalculationExecutionCodeRequest& WithCalculationExecutionId(const char* value) { SetCalculationExecutionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_calculationExecutionId;

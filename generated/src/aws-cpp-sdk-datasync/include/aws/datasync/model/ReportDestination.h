@@ -39,36 +39,17 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
      */
     inline const ReportDestinationS3& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
-     */
     inline void SetS3(const ReportDestinationS3& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
-     */
     inline void SetS3(ReportDestinationS3&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
-     */
     inline ReportDestination& WithS3(const ReportDestinationS3& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
-     */
     inline ReportDestination& WithS3(ReportDestinationS3&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReportDestinationS3 m_s3;

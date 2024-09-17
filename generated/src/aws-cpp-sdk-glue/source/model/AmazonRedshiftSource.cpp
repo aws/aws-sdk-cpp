@@ -24,9 +24,8 @@ AmazonRedshiftSource::AmazonRedshiftSource() :
 {
 }
 
-AmazonRedshiftSource::AmazonRedshiftSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false)
+AmazonRedshiftSource::AmazonRedshiftSource(JsonView jsonValue)
+  : AmazonRedshiftSource()
 {
   *this = jsonValue;
 }

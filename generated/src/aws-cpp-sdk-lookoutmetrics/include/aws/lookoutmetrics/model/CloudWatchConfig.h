@@ -38,85 +38,32 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
      * in Amazon CloudWatch.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
-     * in Amazon CloudWatch.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
-     * in Amazon CloudWatch.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
-     * in Amazon CloudWatch.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
-     * in Amazon CloudWatch.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
-     * in Amazon CloudWatch.</p>
-     */
     inline CloudWatchConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
-     * in Amazon CloudWatch.</p>
-     */
     inline CloudWatchConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
-     * in Amazon CloudWatch.</p>
-     */
     inline CloudWatchConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Settings for backtest mode.</p>
      */
     inline const BackTestConfiguration& GetBackTestConfiguration() const{ return m_backTestConfiguration; }
-
-    /**
-     * <p>Settings for backtest mode.</p>
-     */
     inline bool BackTestConfigurationHasBeenSet() const { return m_backTestConfigurationHasBeenSet; }
-
-    /**
-     * <p>Settings for backtest mode.</p>
-     */
     inline void SetBackTestConfiguration(const BackTestConfiguration& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = value; }
-
-    /**
-     * <p>Settings for backtest mode.</p>
-     */
     inline void SetBackTestConfiguration(BackTestConfiguration&& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = std::move(value); }
-
-    /**
-     * <p>Settings for backtest mode.</p>
-     */
     inline CloudWatchConfig& WithBackTestConfiguration(const BackTestConfiguration& value) { SetBackTestConfiguration(value); return *this;}
-
-    /**
-     * <p>Settings for backtest mode.</p>
-     */
     inline CloudWatchConfig& WithBackTestConfiguration(BackTestConfiguration&& value) { SetBackTestConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

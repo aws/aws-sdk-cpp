@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
+#include <aws/timestream-query/TimestreamQueryClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -20,14 +20,20 @@ namespace TimestreamQuery
 {
 namespace Endpoint
 {
+using TimestreamQueryClientConfiguration = Aws::TimestreamQuery::TimestreamQueryClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
 
 using TimestreamQueryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TimestreamQueryClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
-using TimestreamQueryBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_TIMESTREAMQUERY_API TimestreamQueryBuiltInParameters : public Aws::Endpoint::BuiltInParameters
+{
+public:
+    virtual ~TimestreamQueryBuiltInParameters(){};
+    using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+    virtual void SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config);
+};
 
 /**
  * The type for the TimestreamQuery Client Endpoint Provider.
@@ -40,6 +46,25 @@ using TimestreamQueryEndpointProviderBase =
 using TimestreamQueryDefaultEpProviderBase =
     DefaultEndpointProvider<TimestreamQueryClientConfiguration, TimestreamQueryBuiltInParameters, TimestreamQueryClientContextParameters>;
 
+} // namespace Endpoint
+} // namespace TimestreamQuery
+
+namespace Endpoint
+{
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_TIMESTREAMQUERY_EXTERN template class AWS_TIMESTREAMQUERY_API
+    Aws::Endpoint::EndpointProviderBase<TimestreamQuery::Endpoint::TimestreamQueryClientConfiguration, TimestreamQuery::Endpoint::TimestreamQueryBuiltInParameters, TimestreamQuery::Endpoint::TimestreamQueryClientContextParameters>;
+
+AWS_TIMESTREAMQUERY_EXTERN template class AWS_TIMESTREAMQUERY_API
+    Aws::Endpoint::DefaultEndpointProvider<TimestreamQuery::Endpoint::TimestreamQueryClientConfiguration, TimestreamQuery::Endpoint::TimestreamQueryBuiltInParameters, TimestreamQuery::Endpoint::TimestreamQueryClientContextParameters>;
+} // namespace Endpoint
+
+namespace TimestreamQuery
+{
+namespace Endpoint
+{
 /**
  * Default endpoint provider used for this service
  */

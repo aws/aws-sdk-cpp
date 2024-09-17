@@ -33,53 +33,27 @@ namespace Model
     AWS_IOT_API GetTopicRuleDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The topic rule destination.</p>
      */
     inline const TopicRuleDestination& GetTopicRuleDestination() const{ return m_topicRuleDestination; }
-
-    /**
-     * <p>The topic rule destination.</p>
-     */
     inline void SetTopicRuleDestination(const TopicRuleDestination& value) { m_topicRuleDestination = value; }
-
-    /**
-     * <p>The topic rule destination.</p>
-     */
     inline void SetTopicRuleDestination(TopicRuleDestination&& value) { m_topicRuleDestination = std::move(value); }
-
-    /**
-     * <p>The topic rule destination.</p>
-     */
     inline GetTopicRuleDestinationResult& WithTopicRuleDestination(const TopicRuleDestination& value) { SetTopicRuleDestination(value); return *this;}
-
-    /**
-     * <p>The topic rule destination.</p>
-     */
     inline GetTopicRuleDestinationResult& WithTopicRuleDestination(TopicRuleDestination&& value) { SetTopicRuleDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTopicRuleDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTopicRuleDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTopicRuleDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TopicRuleDestination m_topicRuleDestination;

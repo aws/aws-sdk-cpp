@@ -24,9 +24,8 @@ DriftStatusSummary::DriftStatusSummary() :
 {
 }
 
-DriftStatusSummary::DriftStatusSummary(JsonView jsonValue) : 
-    m_driftStatus(DriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false)
+DriftStatusSummary::DriftStatusSummary(JsonView jsonValue)
+  : DriftStatusSummary()
 {
   *this = jsonValue;
 }

@@ -42,87 +42,33 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
-
-    /**
-     * <p>The ID of the provisioning artifact.</p>
-     */
     inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the provisioning artifact.</p>
-     */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
-
-    /**
-     * <p>The ID of the provisioning artifact.</p>
-     */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
-
-    /**
-     * <p>The ID of the provisioning artifact.</p>
-     */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
-
-    /**
-     * <p>The ID of the provisioning artifact.</p>
-     */
     inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
-
-    /**
-     * <p>The ID of the provisioning artifact.</p>
-     */
     inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the provisioning artifact.</p>
-     */
     inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key value pairs that you specify when you provision a product.</p>
      */
     inline const Aws::Vector<ProvisioningParameter>& GetProvisioningParameters() const{ return m_provisioningParameters; }
-
-    /**
-     * <p>A list of key value pairs that you specify when you provision a product.</p>
-     */
     inline bool ProvisioningParametersHasBeenSet() const { return m_provisioningParametersHasBeenSet; }
-
-    /**
-     * <p>A list of key value pairs that you specify when you provision a product.</p>
-     */
     inline void SetProvisioningParameters(const Aws::Vector<ProvisioningParameter>& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
-
-    /**
-     * <p>A list of key value pairs that you specify when you provision a product.</p>
-     */
     inline void SetProvisioningParameters(Aws::Vector<ProvisioningParameter>&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = std::move(value); }
-
-    /**
-     * <p>A list of key value pairs that you specify when you provision a product.</p>
-     */
     inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningParameters(const Aws::Vector<ProvisioningParameter>& value) { SetProvisioningParameters(value); return *this;}
-
-    /**
-     * <p>A list of key value pairs that you specify when you provision a product.</p>
-     */
     inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningParameters(Aws::Vector<ProvisioningParameter>&& value) { SetProvisioningParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key value pairs that you specify when you provision a product.</p>
-     */
     inline ServiceCatalogProvisioningUpdateDetails& AddProvisioningParameters(const ProvisioningParameter& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key value pairs that you specify when you provision a product.</p>
-     */
     inline ServiceCatalogProvisioningUpdateDetails& AddProvisioningParameters(ProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_provisioningArtifactId;

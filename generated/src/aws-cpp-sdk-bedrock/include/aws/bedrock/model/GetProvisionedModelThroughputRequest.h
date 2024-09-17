@@ -32,46 +32,19 @@ namespace Model
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>The ARN or name of the provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
      */
     inline const Aws::String& GetProvisionedModelId() const{ return m_provisionedModelId; }
-
-    /**
-     * <p>The ARN or name of the provisioned throughput.</p>
-     */
     inline bool ProvisionedModelIdHasBeenSet() const { return m_provisionedModelIdHasBeenSet; }
-
-    /**
-     * <p>The ARN or name of the provisioned throughput.</p>
-     */
     inline void SetProvisionedModelId(const Aws::String& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = value; }
-
-    /**
-     * <p>The ARN or name of the provisioned throughput.</p>
-     */
     inline void SetProvisionedModelId(Aws::String&& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = std::move(value); }
-
-    /**
-     * <p>The ARN or name of the provisioned throughput.</p>
-     */
     inline void SetProvisionedModelId(const char* value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId.assign(value); }
-
-    /**
-     * <p>The ARN or name of the provisioned throughput.</p>
-     */
     inline GetProvisionedModelThroughputRequest& WithProvisionedModelId(const Aws::String& value) { SetProvisionedModelId(value); return *this;}
-
-    /**
-     * <p>The ARN or name of the provisioned throughput.</p>
-     */
     inline GetProvisionedModelThroughputRequest& WithProvisionedModelId(Aws::String&& value) { SetProvisionedModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN or name of the provisioned throughput.</p>
-     */
     inline GetProvisionedModelThroughputRequest& WithProvisionedModelId(const char* value) { SetProvisionedModelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_provisionedModelId;

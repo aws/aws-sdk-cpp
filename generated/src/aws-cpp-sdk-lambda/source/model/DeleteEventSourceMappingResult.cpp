@@ -29,15 +29,8 @@ DeleteEventSourceMappingResult::DeleteEventSourceMappingResult() :
 {
 }
 
-DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_startingPosition(EventSourcePosition::NOT_SET),
-    m_batchSize(0),
-    m_maximumBatchingWindowInSeconds(0),
-    m_parallelizationFactor(0),
-    m_maximumRecordAgeInSeconds(0),
-    m_bisectBatchOnFunctionError(false),
-    m_maximumRetryAttempts(0),
-    m_tumblingWindowInSeconds(0)
+DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteEventSourceMappingResult()
 {
   *this = result;
 }
@@ -216,6 +209,18 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
   if(jsonValue.ValueExists("DocumentDBEventSourceConfig"))
   {
     m_documentDBEventSourceConfig = jsonValue.GetObject("DocumentDBEventSourceConfig");
+
+  }
+
+  if(jsonValue.ValueExists("KMSKeyArn"))
+  {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("FilterCriteriaError"))
+  {
+    m_filterCriteriaError = jsonValue.GetObject("FilterCriteriaError");
 
   }
 

@@ -24,9 +24,8 @@ OEMEphemeris::OEMEphemeris() :
 {
 }
 
-OEMEphemeris::OEMEphemeris(JsonView jsonValue) : 
-    m_oemDataHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false)
+OEMEphemeris::OEMEphemeris(JsonView jsonValue)
+  : OEMEphemeris()
 {
   *this = jsonValue;
 }

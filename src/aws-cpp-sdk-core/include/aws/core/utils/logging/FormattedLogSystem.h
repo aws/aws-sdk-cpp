@@ -46,10 +46,19 @@ namespace Aws
                 virtual void Log(LogLevel logLevel, const char* tag, const char* formatStr, ...) override;
 
                 /**
+                 * Does a printf style output to ProcessFormattedStatement. Don't use this, it's unsafe. See LogStream
+                 */
+                virtual void vaLog(LogLevel logLevel, const char* tag, const char* formatStr, va_list args) override;
+
+                /**
                  * Writes the stream to ProcessFormattedStatement.
                  */
                 virtual void LogStream(LogLevel logLevel, const char* tag, const Aws::OStringStream &messageStream) override;
 
+                /**
+                 * Stops logging on this logger without destroying the object.
+                 */
+                virtual void Stop() override { return SetLogLevel(Aws::Utils::Logging::LogLevel::Off); };
             protected:
                 /**
                  * This is the method that most logger implementations will want to override.

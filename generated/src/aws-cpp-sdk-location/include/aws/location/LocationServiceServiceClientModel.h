@@ -46,6 +46,7 @@
 #include <aws/location/model/DescribeRouteCalculatorResult.h>
 #include <aws/location/model/DescribeTrackerResult.h>
 #include <aws/location/model/DisassociateTrackerConsumerResult.h>
+#include <aws/location/model/ForecastGeofenceEventsResult.h>
 #include <aws/location/model/GetDevicePositionResult.h>
 #include <aws/location/model/GetDevicePositionHistoryResult.h>
 #include <aws/location/model/GetGeofenceResult.h>
@@ -76,6 +77,13 @@
 #include <aws/location/model/UpdatePlaceIndexResult.h>
 #include <aws/location/model/UpdateRouteCalculatorResult.h>
 #include <aws/location/model/UpdateTrackerResult.h>
+#include <aws/location/model/VerifyDevicePositionResult.h>
+#include <aws/location/model/ListRouteCalculatorsRequest.h>
+#include <aws/location/model/ListTrackersRequest.h>
+#include <aws/location/model/ListKeysRequest.h>
+#include <aws/location/model/ListMapsRequest.h>
+#include <aws/location/model/ListGeofenceCollectionsRequest.h>
+#include <aws/location/model/ListPlaceIndexesRequest.h>
 /* End of service model headers required in LocationServiceClient header */
 
 namespace Aws
@@ -109,7 +117,7 @@ namespace Aws
 
   namespace LocationService
   {
-    using LocationServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LocationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LocationServiceEndpointProviderBase = Aws::LocationService::Endpoint::LocationServiceEndpointProviderBase;
     using LocationServiceEndpointProvider = Aws::LocationService::Endpoint::LocationServiceEndpointProvider;
 
@@ -144,6 +152,7 @@ namespace Aws
       class DescribeRouteCalculatorRequest;
       class DescribeTrackerRequest;
       class DisassociateTrackerConsumerRequest;
+      class ForecastGeofenceEventsRequest;
       class GetDevicePositionRequest;
       class GetDevicePositionHistoryRequest;
       class GetGeofenceRequest;
@@ -174,6 +183,7 @@ namespace Aws
       class UpdatePlaceIndexRequest;
       class UpdateRouteCalculatorRequest;
       class UpdateTrackerRequest;
+      class VerifyDevicePositionRequest;
       /* End of service model forward declarations required in LocationServiceClient header */
 
       /* Service model Outcome class definitions */
@@ -205,6 +215,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeRouteCalculatorResult, LocationServiceError> DescribeRouteCalculatorOutcome;
       typedef Aws::Utils::Outcome<DescribeTrackerResult, LocationServiceError> DescribeTrackerOutcome;
       typedef Aws::Utils::Outcome<DisassociateTrackerConsumerResult, LocationServiceError> DisassociateTrackerConsumerOutcome;
+      typedef Aws::Utils::Outcome<ForecastGeofenceEventsResult, LocationServiceError> ForecastGeofenceEventsOutcome;
       typedef Aws::Utils::Outcome<GetDevicePositionResult, LocationServiceError> GetDevicePositionOutcome;
       typedef Aws::Utils::Outcome<GetDevicePositionHistoryResult, LocationServiceError> GetDevicePositionHistoryOutcome;
       typedef Aws::Utils::Outcome<GetGeofenceResult, LocationServiceError> GetGeofenceOutcome;
@@ -235,6 +246,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdatePlaceIndexResult, LocationServiceError> UpdatePlaceIndexOutcome;
       typedef Aws::Utils::Outcome<UpdateRouteCalculatorResult, LocationServiceError> UpdateRouteCalculatorOutcome;
       typedef Aws::Utils::Outcome<UpdateTrackerResult, LocationServiceError> UpdateTrackerOutcome;
+      typedef Aws::Utils::Outcome<VerifyDevicePositionResult, LocationServiceError> VerifyDevicePositionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -266,6 +278,7 @@ namespace Aws
       typedef std::future<DescribeRouteCalculatorOutcome> DescribeRouteCalculatorOutcomeCallable;
       typedef std::future<DescribeTrackerOutcome> DescribeTrackerOutcomeCallable;
       typedef std::future<DisassociateTrackerConsumerOutcome> DisassociateTrackerConsumerOutcomeCallable;
+      typedef std::future<ForecastGeofenceEventsOutcome> ForecastGeofenceEventsOutcomeCallable;
       typedef std::future<GetDevicePositionOutcome> GetDevicePositionOutcomeCallable;
       typedef std::future<GetDevicePositionHistoryOutcome> GetDevicePositionHistoryOutcomeCallable;
       typedef std::future<GetGeofenceOutcome> GetGeofenceOutcomeCallable;
@@ -296,6 +309,7 @@ namespace Aws
       typedef std::future<UpdatePlaceIndexOutcome> UpdatePlaceIndexOutcomeCallable;
       typedef std::future<UpdateRouteCalculatorOutcome> UpdateRouteCalculatorOutcomeCallable;
       typedef std::future<UpdateTrackerOutcome> UpdateTrackerOutcomeCallable;
+      typedef std::future<VerifyDevicePositionOutcome> VerifyDevicePositionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -330,6 +344,7 @@ namespace Aws
     typedef std::function<void(const LocationServiceClient*, const Model::DescribeRouteCalculatorRequest&, const Model::DescribeRouteCalculatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRouteCalculatorResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DescribeTrackerRequest&, const Model::DescribeTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrackerResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DisassociateTrackerConsumerRequest&, const Model::DisassociateTrackerConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrackerConsumerResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::ForecastGeofenceEventsRequest&, const Model::ForecastGeofenceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ForecastGeofenceEventsResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::GetDevicePositionRequest&, const Model::GetDevicePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicePositionResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::GetDevicePositionHistoryRequest&, const Model::GetDevicePositionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicePositionHistoryResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::GetGeofenceRequest&, const Model::GetGeofenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeofenceResponseReceivedHandler;
@@ -360,6 +375,7 @@ namespace Aws
     typedef std::function<void(const LocationServiceClient*, const Model::UpdatePlaceIndexRequest&, const Model::UpdatePlaceIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePlaceIndexResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UpdateRouteCalculatorRequest&, const Model::UpdateRouteCalculatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRouteCalculatorResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UpdateTrackerRequest&, const Model::UpdateTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrackerResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::VerifyDevicePositionRequest&, const Model::VerifyDevicePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyDevicePositionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace LocationService
 } // namespace Aws

@@ -40,63 +40,29 @@ namespace Model
     AWS_CODEDEPLOY_API BatchGetApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the applications.</p>
      */
     inline const Aws::Vector<ApplicationInfo>& GetApplicationsInfo() const{ return m_applicationsInfo; }
-
-    /**
-     * <p>Information about the applications.</p>
-     */
     inline void SetApplicationsInfo(const Aws::Vector<ApplicationInfo>& value) { m_applicationsInfo = value; }
-
-    /**
-     * <p>Information about the applications.</p>
-     */
     inline void SetApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { m_applicationsInfo = std::move(value); }
-
-    /**
-     * <p>Information about the applications.</p>
-     */
     inline BatchGetApplicationsResult& WithApplicationsInfo(const Aws::Vector<ApplicationInfo>& value) { SetApplicationsInfo(value); return *this;}
-
-    /**
-     * <p>Information about the applications.</p>
-     */
     inline BatchGetApplicationsResult& WithApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { SetApplicationsInfo(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the applications.</p>
-     */
     inline BatchGetApplicationsResult& AddApplicationsInfo(const ApplicationInfo& value) { m_applicationsInfo.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the applications.</p>
-     */
     inline BatchGetApplicationsResult& AddApplicationsInfo(ApplicationInfo&& value) { m_applicationsInfo.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ApplicationInfo> m_applicationsInfo;

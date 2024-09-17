@@ -38,70 +38,30 @@ namespace Model
     AWS_APIGATEWAY_API GetModelTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Apache Velocity Template Language (VTL) template content used for the
      * template resource.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The Apache Velocity Template Language (VTL) template content used for the
-     * template resource.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_value = value; }
-
-    /**
-     * <p>The Apache Velocity Template Language (VTL) template content used for the
-     * template resource.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_value = std::move(value); }
-
-    /**
-     * <p>The Apache Velocity Template Language (VTL) template content used for the
-     * template resource.</p>
-     */
     inline void SetValue(const char* value) { m_value.assign(value); }
-
-    /**
-     * <p>The Apache Velocity Template Language (VTL) template content used for the
-     * template resource.</p>
-     */
     inline GetModelTemplateResult& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The Apache Velocity Template Language (VTL) template content used for the
-     * template resource.</p>
-     */
     inline GetModelTemplateResult& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The Apache Velocity Template Language (VTL) template content used for the
-     * template resource.</p>
-     */
     inline GetModelTemplateResult& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetModelTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetModelTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetModelTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

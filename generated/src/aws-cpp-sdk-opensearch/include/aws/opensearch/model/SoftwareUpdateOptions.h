@@ -36,26 +36,15 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether automatic service software updates are enabled for the domain.</p>
      */
     inline bool GetAutoSoftwareUpdateEnabled() const{ return m_autoSoftwareUpdateEnabled; }
-
-    /**
-     * <p>Whether automatic service software updates are enabled for the domain.</p>
-     */
     inline bool AutoSoftwareUpdateEnabledHasBeenSet() const { return m_autoSoftwareUpdateEnabledHasBeenSet; }
-
-    /**
-     * <p>Whether automatic service software updates are enabled for the domain.</p>
-     */
     inline void SetAutoSoftwareUpdateEnabled(bool value) { m_autoSoftwareUpdateEnabledHasBeenSet = true; m_autoSoftwareUpdateEnabled = value; }
-
-    /**
-     * <p>Whether automatic service software updates are enabled for the domain.</p>
-     */
     inline SoftwareUpdateOptions& WithAutoSoftwareUpdateEnabled(bool value) { SetAutoSoftwareUpdateEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoSoftwareUpdateEnabled;

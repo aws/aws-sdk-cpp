@@ -35,20 +35,8 @@ ListedServer::ListedServer() :
 {
 }
 
-ListedServer::ListedServer(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_identityProviderType(IdentityProviderType::NOT_SET),
-    m_identityProviderTypeHasBeenSet(false),
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_loggingRoleHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_userCount(0),
-    m_userCountHasBeenSet(false)
+ListedServer::ListedServer(JsonView jsonValue)
+  : ListedServer()
 {
   *this = jsonValue;
 }

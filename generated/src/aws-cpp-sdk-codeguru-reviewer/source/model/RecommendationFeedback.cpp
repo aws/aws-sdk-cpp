@@ -28,13 +28,8 @@ RecommendationFeedback::RecommendationFeedback() :
 {
 }
 
-RecommendationFeedback::RecommendationFeedback(JsonView jsonValue) : 
-    m_codeReviewArnHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_reactionsHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_lastUpdatedTimeStampHasBeenSet(false)
+RecommendationFeedback::RecommendationFeedback(JsonView jsonValue)
+  : RecommendationFeedback()
 {
   *this = jsonValue;
 }

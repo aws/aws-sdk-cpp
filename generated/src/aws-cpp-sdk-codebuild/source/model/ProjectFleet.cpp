@@ -23,8 +23,8 @@ ProjectFleet::ProjectFleet() :
 {
 }
 
-ProjectFleet::ProjectFleet(JsonView jsonValue) : 
-    m_fleetArnHasBeenSet(false)
+ProjectFleet::ProjectFleet(JsonView jsonValue)
+  : ProjectFleet()
 {
   *this = jsonValue;
 }

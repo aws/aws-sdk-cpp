@@ -30,15 +30,8 @@ DatabaseResponse::DatabaseResponse() :
 {
 }
 
-DatabaseResponse::DatabaseResponse(JsonView jsonValue) : 
-    m_databaseIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_numberOfSchemas(0),
-    m_numberOfSchemasHasBeenSet(false),
-    m_serverHasBeenSet(false),
-    m_softwareDetailsHasBeenSet(false),
-    m_collectorsHasBeenSet(false)
+DatabaseResponse::DatabaseResponse(JsonView jsonValue)
+  : DatabaseResponse()
 {
   *this = jsonValue;
 }

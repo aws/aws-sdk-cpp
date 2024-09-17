@@ -39,53 +39,27 @@ namespace Model
     AWS_AMPLIFY_API StopJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The summary for the job. </p>
      */
     inline const JobSummary& GetJobSummary() const{ return m_jobSummary; }
-
-    /**
-     * <p> The summary for the job. </p>
-     */
     inline void SetJobSummary(const JobSummary& value) { m_jobSummary = value; }
-
-    /**
-     * <p> The summary for the job. </p>
-     */
     inline void SetJobSummary(JobSummary&& value) { m_jobSummary = std::move(value); }
-
-    /**
-     * <p> The summary for the job. </p>
-     */
     inline StopJobResult& WithJobSummary(const JobSummary& value) { SetJobSummary(value); return *this;}
-
-    /**
-     * <p> The summary for the job. </p>
-     */
     inline StopJobResult& WithJobSummary(JobSummary&& value) { SetJobSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobSummary m_jobSummary;

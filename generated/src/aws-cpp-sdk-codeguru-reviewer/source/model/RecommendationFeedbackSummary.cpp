@@ -25,10 +25,8 @@ RecommendationFeedbackSummary::RecommendationFeedbackSummary() :
 {
 }
 
-RecommendationFeedbackSummary::RecommendationFeedbackSummary(JsonView jsonValue) : 
-    m_recommendationIdHasBeenSet(false),
-    m_reactionsHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+RecommendationFeedbackSummary::RecommendationFeedbackSummary(JsonView jsonValue)
+  : RecommendationFeedbackSummary()
 {
   *this = jsonValue;
 }

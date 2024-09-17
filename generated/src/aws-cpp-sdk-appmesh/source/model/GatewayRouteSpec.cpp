@@ -27,12 +27,8 @@ GatewayRouteSpec::GatewayRouteSpec() :
 {
 }
 
-GatewayRouteSpec::GatewayRouteSpec(JsonView jsonValue) : 
-    m_grpcRouteHasBeenSet(false),
-    m_http2RouteHasBeenSet(false),
-    m_httpRouteHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+GatewayRouteSpec::GatewayRouteSpec(JsonView jsonValue)
+  : GatewayRouteSpec()
 {
   *this = jsonValue;
 }

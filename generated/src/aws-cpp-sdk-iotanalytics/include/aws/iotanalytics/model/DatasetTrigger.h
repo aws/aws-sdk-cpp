@@ -39,73 +39,30 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Schedule when the trigger is initiated.</p>
      */
     inline const Schedule& GetSchedule() const{ return m_schedule; }
-
-    /**
-     * <p>The Schedule when the trigger is initiated.</p>
-     */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-
-    /**
-     * <p>The Schedule when the trigger is initiated.</p>
-     */
     inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-
-    /**
-     * <p>The Schedule when the trigger is initiated.</p>
-     */
     inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-
-    /**
-     * <p>The Schedule when the trigger is initiated.</p>
-     */
     inline DatasetTrigger& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
-
-    /**
-     * <p>The Schedule when the trigger is initiated.</p>
-     */
     inline DatasetTrigger& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
     inline const TriggeringDataset& GetDataset() const{ return m_dataset; }
-
-    /**
-     * <p>The dataset whose content creation triggers the creation of this dataset's
-     * contents.</p>
-     */
     inline bool DatasetHasBeenSet() const { return m_datasetHasBeenSet; }
-
-    /**
-     * <p>The dataset whose content creation triggers the creation of this dataset's
-     * contents.</p>
-     */
     inline void SetDataset(const TriggeringDataset& value) { m_datasetHasBeenSet = true; m_dataset = value; }
-
-    /**
-     * <p>The dataset whose content creation triggers the creation of this dataset's
-     * contents.</p>
-     */
     inline void SetDataset(TriggeringDataset&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
-
-    /**
-     * <p>The dataset whose content creation triggers the creation of this dataset's
-     * contents.</p>
-     */
     inline DatasetTrigger& WithDataset(const TriggeringDataset& value) { SetDataset(value); return *this;}
-
-    /**
-     * <p>The dataset whose content creation triggers the creation of this dataset's
-     * contents.</p>
-     */
     inline DatasetTrigger& WithDataset(TriggeringDataset&& value) { SetDataset(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Schedule m_schedule;

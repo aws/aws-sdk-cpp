@@ -29,14 +29,8 @@ EvaluateDataQualityMultiFrame::EvaluateDataQualityMultiFrame() :
 {
 }
 
-EvaluateDataQualityMultiFrame::EvaluateDataQualityMultiFrame(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_additionalDataSourcesHasBeenSet(false),
-    m_rulesetHasBeenSet(false),
-    m_publishingOptionsHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_stopJobOnFailureOptionsHasBeenSet(false)
+EvaluateDataQualityMultiFrame::EvaluateDataQualityMultiFrame(JsonView jsonValue)
+  : EvaluateDataQualityMultiFrame()
 {
   *this = jsonValue;
 }

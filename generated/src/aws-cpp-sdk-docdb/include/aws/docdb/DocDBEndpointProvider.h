@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DocDBClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DocDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DocDBClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DocDBBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

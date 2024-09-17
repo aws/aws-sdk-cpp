@@ -26,11 +26,8 @@ ResourceScanMetadata::ResourceScanMetadata() :
 {
 }
 
-ResourceScanMetadata::ResourceScanMetadata(JsonView jsonValue) : 
-    m_ec2HasBeenSet(false),
-    m_ecrImageHasBeenSet(false),
-    m_ecrRepositoryHasBeenSet(false),
-    m_lambdaFunctionHasBeenSet(false)
+ResourceScanMetadata::ResourceScanMetadata(JsonView jsonValue)
+  : ResourceScanMetadata()
 {
   *this = jsonValue;
 }

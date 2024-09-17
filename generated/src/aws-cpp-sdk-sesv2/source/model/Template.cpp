@@ -21,14 +21,13 @@ namespace Model
 Template::Template() : 
     m_templateNameHasBeenSet(false),
     m_templateArnHasBeenSet(false),
-    m_templateDataHasBeenSet(false)
+    m_templateDataHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
 }
 
-Template::Template(JsonView jsonValue) : 
-    m_templateNameHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateDataHasBeenSet(false)
+Template::Template(JsonView jsonValue)
+  : Template()
 {
   *this = jsonValue;
 }
@@ -56,6 +55,16 @@ Template& Template::operator =(JsonView jsonValue)
     m_templateDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Headers"))
+  {
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
+    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+    {
+      m_headers.push_back(headersJsonList[headersIndex].AsObject());
+    }
+    m_headersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,17 @@ JsonValue Template::Jsonize() const
   if(m_templateDataHasBeenSet)
   {
    payload.WithString("TemplateData", m_templateData);
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+   {
+     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+   }
+   payload.WithArray("Headers", std::move(headersJsonList));
 
   }
 

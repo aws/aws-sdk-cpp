@@ -28,13 +28,8 @@ MonitoredResourceIdentifier::MonitoredResourceIdentifier() :
 {
 }
 
-MonitoredResourceIdentifier::MonitoredResourceIdentifier(JsonView jsonValue) : 
-    m_monitoredResourceNameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_resourcePermission(ResourcePermission::NOT_SET),
-    m_resourcePermissionHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+MonitoredResourceIdentifier::MonitoredResourceIdentifier(JsonView jsonValue)
+  : MonitoredResourceIdentifier()
 {
   *this = jsonValue;
 }

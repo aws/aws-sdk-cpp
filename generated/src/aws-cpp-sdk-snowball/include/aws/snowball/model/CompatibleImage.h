@@ -40,87 +40,33 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for an individual Snow device AMI.</p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
-
-    /**
-     * <p>The unique identifier for an individual Snow device AMI.</p>
-     */
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for an individual Snow device AMI.</p>
-     */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-
-    /**
-     * <p>The unique identifier for an individual Snow device AMI.</p>
-     */
     inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for an individual Snow device AMI.</p>
-     */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-
-    /**
-     * <p>The unique identifier for an individual Snow device AMI.</p>
-     */
     inline CompatibleImage& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for an individual Snow device AMI.</p>
-     */
     inline CompatibleImage& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for an individual Snow device AMI.</p>
-     */
     inline CompatibleImage& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The optional name of a compatible image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The optional name of a compatible image.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The optional name of a compatible image.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The optional name of a compatible image.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The optional name of a compatible image.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The optional name of a compatible image.</p>
-     */
     inline CompatibleImage& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The optional name of a compatible image.</p>
-     */
     inline CompatibleImage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional name of a compatible image.</p>
-     */
     inline CompatibleImage& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_amiId;

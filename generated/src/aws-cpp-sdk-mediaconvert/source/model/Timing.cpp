@@ -25,10 +25,8 @@ Timing::Timing() :
 {
 }
 
-Timing::Timing(JsonView jsonValue) : 
-    m_finishTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_submitTimeHasBeenSet(false)
+Timing::Timing(JsonView jsonValue)
+  : Timing()
 {
   *this = jsonValue;
 }

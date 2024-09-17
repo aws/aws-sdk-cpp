@@ -23,9 +23,8 @@ DescribeConfigurationResult::DescribeConfigurationResult() :
 {
 }
 
-DescribeConfigurationResult::DescribeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_engineType(EngineType::NOT_SET)
+DescribeConfigurationResult::DescribeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeConfigurationResult()
 {
   *this = result;
 }

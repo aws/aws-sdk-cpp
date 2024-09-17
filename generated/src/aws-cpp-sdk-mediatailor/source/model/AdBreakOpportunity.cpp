@@ -24,9 +24,8 @@ AdBreakOpportunity::AdBreakOpportunity() :
 {
 }
 
-AdBreakOpportunity::AdBreakOpportunity(JsonView jsonValue) : 
-    m_offsetMillis(0),
-    m_offsetMillisHasBeenSet(false)
+AdBreakOpportunity::AdBreakOpportunity(JsonView jsonValue)
+  : AdBreakOpportunity()
 {
   *this = jsonValue;
 }

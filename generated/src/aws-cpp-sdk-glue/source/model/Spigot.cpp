@@ -29,14 +29,8 @@ Spigot::Spigot() :
 {
 }
 
-Spigot::Spigot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_topk(0),
-    m_topkHasBeenSet(false),
-    m_prob(0.0),
-    m_probHasBeenSet(false)
+Spigot::Spigot(JsonView jsonValue)
+  : Spigot()
 {
   *this = jsonValue;
 }

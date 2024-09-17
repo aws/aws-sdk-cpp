@@ -26,11 +26,8 @@ EoCloudCoverInput::EoCloudCoverInput() :
 {
 }
 
-EoCloudCoverInput::EoCloudCoverInput(JsonView jsonValue) : 
-    m_lowerBound(0.0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0.0),
-    m_upperBoundHasBeenSet(false)
+EoCloudCoverInput::EoCloudCoverInput(JsonView jsonValue)
+  : EoCloudCoverInput()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ QuestionMetric::QuestionMetric() :
 {
 }
 
-QuestionMetric::QuestionMetric(JsonView jsonValue) : 
-    m_questionIdHasBeenSet(false),
-    m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_bestPracticesHasBeenSet(false)
+QuestionMetric::QuestionMetric(JsonView jsonValue)
+  : QuestionMetric()
 {
   *this = jsonValue;
 }

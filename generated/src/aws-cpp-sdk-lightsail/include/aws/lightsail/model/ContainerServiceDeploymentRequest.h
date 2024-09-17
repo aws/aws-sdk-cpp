@@ -43,109 +43,36 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that describes the configuration for the containers of the
      * deployment.</p>
      */
     inline const Aws::Map<Aws::String, Container>& GetContainers() const{ return m_containers; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline void SetContainers(const Aws::Map<Aws::String, Container>& value) { m_containersHasBeenSet = true; m_containers = value; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline void SetContainers(Aws::Map<Aws::String, Container>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& WithContainers(const Aws::Map<Aws::String, Container>& value) { SetContainers(value); return *this;}
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& WithContainers(Aws::Map<Aws::String, Container>&& value) { SetContainers(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& AddContainers(const Aws::String& key, const Container& value) { m_containersHasBeenSet = true; m_containers.emplace(key, value); return *this; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& AddContainers(Aws::String&& key, const Container& value) { m_containersHasBeenSet = true; m_containers.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& AddContainers(const Aws::String& key, Container&& value) { m_containersHasBeenSet = true; m_containers.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& AddContainers(Aws::String&& key, Container&& value) { m_containersHasBeenSet = true; m_containers.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& AddContainers(const char* key, Container&& value) { m_containersHasBeenSet = true; m_containers.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that describes the configuration for the containers of the
-     * deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& AddContainers(const char* key, const Container& value) { m_containersHasBeenSet = true; m_containers.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that describes the endpoint of the deployment.</p>
      */
     inline const EndpointRequest& GetPublicEndpoint() const{ return m_publicEndpoint; }
-
-    /**
-     * <p>An object that describes the endpoint of the deployment.</p>
-     */
     inline bool PublicEndpointHasBeenSet() const { return m_publicEndpointHasBeenSet; }
-
-    /**
-     * <p>An object that describes the endpoint of the deployment.</p>
-     */
     inline void SetPublicEndpoint(const EndpointRequest& value) { m_publicEndpointHasBeenSet = true; m_publicEndpoint = value; }
-
-    /**
-     * <p>An object that describes the endpoint of the deployment.</p>
-     */
     inline void SetPublicEndpoint(EndpointRequest&& value) { m_publicEndpointHasBeenSet = true; m_publicEndpoint = std::move(value); }
-
-    /**
-     * <p>An object that describes the endpoint of the deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& WithPublicEndpoint(const EndpointRequest& value) { SetPublicEndpoint(value); return *this;}
-
-    /**
-     * <p>An object that describes the endpoint of the deployment.</p>
-     */
     inline ContainerServiceDeploymentRequest& WithPublicEndpoint(EndpointRequest&& value) { SetPublicEndpoint(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Container> m_containers;

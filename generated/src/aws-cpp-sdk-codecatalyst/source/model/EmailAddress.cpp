@@ -25,10 +25,8 @@ EmailAddress::EmailAddress() :
 {
 }
 
-EmailAddress::EmailAddress(JsonView jsonValue) : 
-    m_emailHasBeenSet(false),
-    m_verified(false),
-    m_verifiedHasBeenSet(false)
+EmailAddress::EmailAddress(JsonView jsonValue)
+  : EmailAddress()
 {
   *this = jsonValue;
 }

@@ -33,53 +33,27 @@ namespace Model
     AWS_APPFLOW_API DescribeConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Configuration info of all the connectors that the user requested.</p>
      */
     inline const ConnectorConfiguration& GetConnectorConfiguration() const{ return m_connectorConfiguration; }
-
-    /**
-     * <p>Configuration info of all the connectors that the user requested.</p>
-     */
     inline void SetConnectorConfiguration(const ConnectorConfiguration& value) { m_connectorConfiguration = value; }
-
-    /**
-     * <p>Configuration info of all the connectors that the user requested.</p>
-     */
     inline void SetConnectorConfiguration(ConnectorConfiguration&& value) { m_connectorConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration info of all the connectors that the user requested.</p>
-     */
     inline DescribeConnectorResult& WithConnectorConfiguration(const ConnectorConfiguration& value) { SetConnectorConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration info of all the connectors that the user requested.</p>
-     */
     inline DescribeConnectorResult& WithConnectorConfiguration(ConnectorConfiguration&& value) { SetConnectorConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConnectorConfiguration m_connectorConfiguration;

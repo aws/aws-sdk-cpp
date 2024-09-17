@@ -23,8 +23,8 @@ ManifestPayload::ManifestPayload() :
 {
 }
 
-ManifestPayload::ManifestPayload(JsonView jsonValue) : 
-    m_payloadDataHasBeenSet(false)
+ManifestPayload::ManifestPayload(JsonView jsonValue)
+  : ManifestPayload()
 {
   *this = jsonValue;
 }

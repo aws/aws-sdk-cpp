@@ -22,8 +22,8 @@ CreateApiKeyResult::CreateApiKeyResult() :
 {
 }
 
-CreateApiKeyResult::CreateApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false)
+CreateApiKeyResult::CreateApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateApiKeyResult()
 {
   *this = result;
 }

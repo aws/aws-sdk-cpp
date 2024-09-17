@@ -22,8 +22,8 @@ ModifyEndpointAccessResult::ModifyEndpointAccessResult() :
 {
 }
 
-ModifyEndpointAccessResult::ModifyEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_port(0)
+ModifyEndpointAccessResult::ModifyEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyEndpointAccessResult()
 {
   *this = result;
 }

@@ -26,11 +26,8 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_profileVersionHasBeenSet(false)
+Permission::Permission(JsonView jsonValue)
+  : Permission()
 {
   *this = jsonValue;
 }

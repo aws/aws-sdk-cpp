@@ -26,11 +26,8 @@ UncertaintyRange::UncertaintyRange() :
 {
 }
 
-UncertaintyRange::UncertaintyRange(JsonView jsonValue) : 
-    m_lowerBoundValue(0.0),
-    m_lowerBoundValueHasBeenSet(false),
-    m_upperBoundValue(0.0),
-    m_upperBoundValueHasBeenSet(false)
+UncertaintyRange::UncertaintyRange(JsonView jsonValue)
+  : UncertaintyRange()
 {
   *this = jsonValue;
 }

@@ -38,61 +38,28 @@ namespace Model
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Provides a name or contextual description about the trait. </p>
      */
     inline const AttributeName& GetName() const{ return m_name; }
-
-    /**
-     * <p> Provides a name or contextual description about the trait. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> Provides a name or contextual description about the trait. </p>
-     */
     inline void SetName(const AttributeName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> Provides a name or contextual description about the trait. </p>
-     */
     inline void SetName(AttributeName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> Provides a name or contextual description about the trait. </p>
-     */
     inline Trait& WithName(const AttributeName& value) { SetName(value); return *this;}
-
-    /**
-     * <p> Provides a name or contextual description about the trait. </p>
-     */
     inline Trait& WithName(AttributeName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
      * of this trait.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
-     * of this trait.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
-     * of this trait.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
-     * of this trait.</p>
-     */
     inline Trait& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     AttributeName m_name;

@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUE_API GetDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of <code>Database</code> objects from the specified catalog.</p>
      */
     inline const Aws::Vector<Database>& GetDatabaseList() const{ return m_databaseList; }
-
-    /**
-     * <p>A list of <code>Database</code> objects from the specified catalog.</p>
-     */
     inline void SetDatabaseList(const Aws::Vector<Database>& value) { m_databaseList = value; }
-
-    /**
-     * <p>A list of <code>Database</code> objects from the specified catalog.</p>
-     */
     inline void SetDatabaseList(Aws::Vector<Database>&& value) { m_databaseList = std::move(value); }
-
-    /**
-     * <p>A list of <code>Database</code> objects from the specified catalog.</p>
-     */
     inline GetDatabasesResult& WithDatabaseList(const Aws::Vector<Database>& value) { SetDatabaseList(value); return *this;}
-
-    /**
-     * <p>A list of <code>Database</code> objects from the specified catalog.</p>
-     */
     inline GetDatabasesResult& WithDatabaseList(Aws::Vector<Database>&& value) { SetDatabaseList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>Database</code> objects from the specified catalog.</p>
-     */
     inline GetDatabasesResult& AddDatabaseList(const Database& value) { m_databaseList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>Database</code> objects from the specified catalog.</p>
-     */
     inline GetDatabasesResult& AddDatabaseList(Database&& value) { m_databaseList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token for paginating the returned list of tokens, returned if
      * the current segment of the list is not the last.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline GetDatabasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline GetDatabasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token for paginating the returned list of tokens, returned if
-     * the current segment of the list is not the last.</p>
-     */
     inline GetDatabasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDatabasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDatabasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDatabasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Database> m_databaseList;

@@ -33,18 +33,8 @@ ExecutorsSummary::ExecutorsSummary() :
 {
 }
 
-ExecutorsSummary::ExecutorsSummary(JsonView jsonValue) : 
-    m_executorIdHasBeenSet(false),
-    m_executorType(ExecutorType::NOT_SET),
-    m_executorTypeHasBeenSet(false),
-    m_startDateTime(0),
-    m_startDateTimeHasBeenSet(false),
-    m_terminationDateTime(0),
-    m_terminationDateTimeHasBeenSet(false),
-    m_executorState(ExecutorState::NOT_SET),
-    m_executorStateHasBeenSet(false),
-    m_executorSize(0),
-    m_executorSizeHasBeenSet(false)
+ExecutorsSummary::ExecutorsSummary(JsonView jsonValue)
+  : ExecutorsSummary()
 {
   *this = jsonValue;
 }

@@ -70,7 +70,8 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_objectLockRetainUntilDate(std::move(toMove.m_objectLockRetainUntilDate)),
     m_objectLockLegalHoldStatus(toMove.m_objectLockLegalHoldStatus),
     m_id2(std::move(toMove.m_id2)),
-    m_requestId(std::move(toMove.m_requestId))
+    m_requestId(std::move(toMove.m_requestId)),
+    m_expiresString(std::move(toMove.m_expiresString))
 {
 }
 
@@ -119,23 +120,13 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_objectLockLegalHoldStatus = toMove.m_objectLockLegalHoldStatus;
    m_id2 = std::move(toMove.m_id2);
    m_requestId = std::move(toMove.m_requestId);
+   m_expiresString = std::move(toMove.m_expiresString);
 
    return *this;
 }
 
-GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_deleteMarker(false),
-    m_contentLength(0),
-    m_missingMeta(0),
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_replicationStatus(ReplicationStatus::NOT_SET),
-    m_partsCount(0),
-    m_tagCount(0),
-    m_objectLockMode(ObjectLockMode::NOT_SET),
-    m_objectLockLegalHoldStatus(ObjectLockLegalHoldStatus::NOT_SET)
+GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetObjectResult()
 {
   *this = std::move(result);
 }
@@ -172,7 +163,11 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
+    if(!m_lastModified.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3::GetObjectResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
+    }
   }
 
   const auto& contentLengthIter = headers.find("content-length");
@@ -262,7 +257,11 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
-    m_expires = DateTime(expiresIter->second, Aws::Utils::DateFormat::RFC822);
+    m_expires = DateTime(expiresIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
+    if(!m_expires.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3::GetObjectResult", "Failed to parse expires header as an RFC822 timestamp: " << expiresIter->second.c_str());
+    }
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");
@@ -351,7 +350,11 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   const auto& objectLockRetainUntilDateIter = headers.find("x-amz-object-lock-retain-until-date");
   if(objectLockRetainUntilDateIter != headers.end())
   {
-    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second, Aws::Utils::DateFormat::ISO_8601);
+    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second.c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if(!m_objectLockRetainUntilDate.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3::GetObjectResult", "Failed to parse objectLockRetainUntilDate header as an ISO_8601 timestamp: " << objectLockRetainUntilDateIter->second.c_str());
+    }
   }
 
   const auto& objectLockLegalHoldStatusIter = headers.find("x-amz-object-lock-legal-hold");
@@ -370,6 +373,12 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+  }
+
+  const auto& expiresStringIter = headers.find("expires");
+  if(expiresStringIter != headers.end())
+  {
+    m_expiresString = expiresStringIter->second;
   }
 
    return *this;

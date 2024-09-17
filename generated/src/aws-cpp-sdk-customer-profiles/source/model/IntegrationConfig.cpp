@@ -23,8 +23,8 @@ IntegrationConfig::IntegrationConfig() :
 {
 }
 
-IntegrationConfig::IntegrationConfig(JsonView jsonValue) : 
-    m_appflowIntegrationHasBeenSet(false)
+IntegrationConfig::IntegrationConfig(JsonView jsonValue)
+  : IntegrationConfig()
 {
   *this = jsonValue;
 }

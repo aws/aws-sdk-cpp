@@ -42,25 +42,8 @@ VpnConnection::VpnConnection() :
 {
 }
 
-VpnConnection::VpnConnection(const XmlNode& xmlNode) : 
-    m_customerGatewayConfigurationHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_state(VpnState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(GatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vpnConnectionIdHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_coreNetworkAttachmentArnHasBeenSet(false),
-    m_gatewayAssociationState(GatewayAssociationState::NOT_SET),
-    m_gatewayAssociationStateHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vgwTelemetryHasBeenSet(false)
+VpnConnection::VpnConnection(const XmlNode& xmlNode)
+  : VpnConnection()
 {
   *this = xmlNode;
 }

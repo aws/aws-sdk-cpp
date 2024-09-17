@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSYNC_API CreateGraphqlApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>GraphqlApi</code>.</p>
      */
     inline const GraphqlApi& GetGraphqlApi() const{ return m_graphqlApi; }
-
-    /**
-     * <p>The <code>GraphqlApi</code>.</p>
-     */
     inline void SetGraphqlApi(const GraphqlApi& value) { m_graphqlApi = value; }
-
-    /**
-     * <p>The <code>GraphqlApi</code>.</p>
-     */
     inline void SetGraphqlApi(GraphqlApi&& value) { m_graphqlApi = std::move(value); }
-
-    /**
-     * <p>The <code>GraphqlApi</code>.</p>
-     */
     inline CreateGraphqlApiResult& WithGraphqlApi(const GraphqlApi& value) { SetGraphqlApi(value); return *this;}
-
-    /**
-     * <p>The <code>GraphqlApi</code>.</p>
-     */
     inline CreateGraphqlApiResult& WithGraphqlApi(GraphqlApi&& value) { SetGraphqlApi(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateGraphqlApiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateGraphqlApiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateGraphqlApiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GraphqlApi m_graphqlApi;

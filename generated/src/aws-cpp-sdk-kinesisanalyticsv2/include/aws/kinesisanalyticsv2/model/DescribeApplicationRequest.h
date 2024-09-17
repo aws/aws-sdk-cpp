@@ -34,71 +34,30 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline DescribeApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline DescribeApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline DescribeApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
+     * <p>Displays verbose information about a Managed Service for Apache Flink
+     * application, including the application's job plan.</p>
      */
     inline bool GetIncludeAdditionalDetails() const{ return m_includeAdditionalDetails; }
-
-    /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
-     */
     inline bool IncludeAdditionalDetailsHasBeenSet() const { return m_includeAdditionalDetailsHasBeenSet; }
-
-    /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
-     */
     inline void SetIncludeAdditionalDetails(bool value) { m_includeAdditionalDetailsHasBeenSet = true; m_includeAdditionalDetails = value; }
-
-    /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
-     */
     inline DescribeApplicationRequest& WithIncludeAdditionalDetails(bool value) { SetIncludeAdditionalDetails(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

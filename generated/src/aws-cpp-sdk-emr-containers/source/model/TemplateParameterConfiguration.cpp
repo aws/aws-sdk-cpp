@@ -25,10 +25,8 @@ TemplateParameterConfiguration::TemplateParameterConfiguration() :
 {
 }
 
-TemplateParameterConfiguration::TemplateParameterConfiguration(JsonView jsonValue) : 
-    m_type(TemplateParameterDataType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+TemplateParameterConfiguration::TemplateParameterConfiguration(JsonView jsonValue)
+  : TemplateParameterConfiguration()
 {
   *this = jsonValue;
 }

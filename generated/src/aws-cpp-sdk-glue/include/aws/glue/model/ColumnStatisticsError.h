@@ -39,67 +39,29 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>ColumnStatistics</code> of the column.</p>
      */
     inline const ColumnStatistics& GetColumnStatistics() const{ return m_columnStatistics; }
-
-    /**
-     * <p>The <code>ColumnStatistics</code> of the column.</p>
-     */
     inline bool ColumnStatisticsHasBeenSet() const { return m_columnStatisticsHasBeenSet; }
-
-    /**
-     * <p>The <code>ColumnStatistics</code> of the column.</p>
-     */
     inline void SetColumnStatistics(const ColumnStatistics& value) { m_columnStatisticsHasBeenSet = true; m_columnStatistics = value; }
-
-    /**
-     * <p>The <code>ColumnStatistics</code> of the column.</p>
-     */
     inline void SetColumnStatistics(ColumnStatistics&& value) { m_columnStatisticsHasBeenSet = true; m_columnStatistics = std::move(value); }
-
-    /**
-     * <p>The <code>ColumnStatistics</code> of the column.</p>
-     */
     inline ColumnStatisticsError& WithColumnStatistics(const ColumnStatistics& value) { SetColumnStatistics(value); return *this;}
-
-    /**
-     * <p>The <code>ColumnStatistics</code> of the column.</p>
-     */
     inline ColumnStatisticsError& WithColumnStatistics(ColumnStatistics&& value) { SetColumnStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An error message with the reason for the failure of an operation.</p>
      */
     inline const ErrorDetail& GetError() const{ return m_error; }
-
-    /**
-     * <p>An error message with the reason for the failure of an operation.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>An error message with the reason for the failure of an operation.</p>
-     */
     inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>An error message with the reason for the failure of an operation.</p>
-     */
     inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>An error message with the reason for the failure of an operation.</p>
-     */
     inline ColumnStatisticsError& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-
-    /**
-     * <p>An error message with the reason for the failure of an operation.</p>
-     */
     inline ColumnStatisticsError& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ColumnStatistics m_columnStatistics;

@@ -23,8 +23,8 @@ GameSessionQueueDestination::GameSessionQueueDestination() :
 {
 }
 
-GameSessionQueueDestination::GameSessionQueueDestination(JsonView jsonValue) : 
-    m_destinationArnHasBeenSet(false)
+GameSessionQueueDestination::GameSessionQueueDestination(JsonView jsonValue)
+  : GameSessionQueueDestination()
 {
   *this = jsonValue;
 }

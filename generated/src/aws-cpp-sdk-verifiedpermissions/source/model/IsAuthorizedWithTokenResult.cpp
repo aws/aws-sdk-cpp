@@ -22,8 +22,8 @@ IsAuthorizedWithTokenResult::IsAuthorizedWithTokenResult() :
 {
 }
 
-IsAuthorizedWithTokenResult::IsAuthorizedWithTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_decision(Decision::NOT_SET)
+IsAuthorizedWithTokenResult::IsAuthorizedWithTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : IsAuthorizedWithTokenResult()
 {
   *this = result;
 }
@@ -53,6 +53,12 @@ IsAuthorizedWithTokenResult& IsAuthorizedWithTokenResult::operator =(const Aws::
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("principal"))
+  {
+    m_principal = jsonValue.GetObject("principal");
+
   }
 
 

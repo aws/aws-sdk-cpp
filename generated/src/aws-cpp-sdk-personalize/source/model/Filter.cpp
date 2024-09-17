@@ -30,15 +30,8 @@ Filter::Filter() :
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }

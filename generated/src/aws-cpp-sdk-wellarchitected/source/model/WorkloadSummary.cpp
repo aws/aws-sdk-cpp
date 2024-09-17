@@ -33,18 +33,8 @@ WorkloadSummary::WorkloadSummary() :
 {
 }
 
-WorkloadSummary::WorkloadSummary(JsonView jsonValue) : 
-    m_workloadIdHasBeenSet(false),
-    m_workloadArnHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_improvementStatus(WorkloadImprovementStatus::NOT_SET),
-    m_improvementStatusHasBeenSet(false),
-    m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
+WorkloadSummary::WorkloadSummary(JsonView jsonValue)
+  : WorkloadSummary()
 {
   *this = jsonValue;
 }

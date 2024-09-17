@@ -36,26 +36,15 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percentage of the slot migration that is complete.</p>
      */
     inline double GetProgressPercentage() const{ return m_progressPercentage; }
-
-    /**
-     * <p>The percentage of the slot migration that is complete.</p>
-     */
     inline bool ProgressPercentageHasBeenSet() const { return m_progressPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of the slot migration that is complete.</p>
-     */
     inline void SetProgressPercentage(double value) { m_progressPercentageHasBeenSet = true; m_progressPercentage = value; }
-
-    /**
-     * <p>The percentage of the slot migration that is complete.</p>
-     */
     inline SlotMigration& WithProgressPercentage(double value) { SetProgressPercentage(value); return *this;}
-
+    ///@}
   private:
 
     double m_progressPercentage;

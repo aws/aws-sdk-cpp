@@ -28,13 +28,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_status(NetworkInterfaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+NetworkInterface::NetworkInterface(JsonView jsonValue)
+  : NetworkInterface()
 {
   *this = jsonValue;
 }

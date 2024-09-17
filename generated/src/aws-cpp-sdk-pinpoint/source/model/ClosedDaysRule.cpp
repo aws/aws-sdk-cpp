@@ -25,10 +25,8 @@ ClosedDaysRule::ClosedDaysRule() :
 {
 }
 
-ClosedDaysRule::ClosedDaysRule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+ClosedDaysRule::ClosedDaysRule(JsonView jsonValue)
+  : ClosedDaysRule()
 {
   *this = jsonValue;
 }

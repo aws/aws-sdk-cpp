@@ -41,146 +41,58 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the accessor.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique identifier of the accessor.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the accessor.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique identifier of the accessor.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the accessor.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique identifier of the accessor.</p>
-     */
     inline AccessorSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the accessor.</p>
-     */
     inline AccessorSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the accessor.</p>
-     */
     inline AccessorSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
      * to <code>BILLING_TOKEN</code>.</p> 
      */
     inline const AccessorType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
-     */
     inline void SetType(const AccessorType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
-     */
     inline void SetType(AccessorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
-     */
     inline AccessorSummary& WithType(const AccessorType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
-     */
     inline AccessorSummary& WithType(AccessorType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the accessor.</p>
      */
     inline const AccessorStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the accessor.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the accessor.</p>
-     */
     inline void SetStatus(const AccessorStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the accessor.</p>
-     */
     inline void SetStatus(AccessorStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the accessor.</p>
-     */
     inline AccessorSummary& WithStatus(const AccessorStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the accessor.</p>
-     */
     inline AccessorSummary& WithStatus(AccessorStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creation date and time of the accessor.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The creation date and time of the accessor.</p>
-     */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-
-    /**
-     * <p>The creation date and time of the accessor.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-
-    /**
-     * <p>The creation date and time of the accessor.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-
-    /**
-     * <p>The creation date and time of the accessor.</p>
-     */
     inline AccessorSummary& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The creation date and time of the accessor.</p>
-     */
     inline AccessorSummary& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
      * ARNs and their format, see <a
@@ -189,101 +101,26 @@ namespace Model
      * Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
-     * ARNs and their format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
-     * ARNs and their format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
-     * ARNs and their format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
-     * ARNs and their format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
-     * ARNs and their format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline AccessorSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
-     * ARNs and their format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline AccessorSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the accessor. For more information about
-     * ARNs and their format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
-     */
     inline AccessorSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The blockchain network that the Accessor token is created for.</p>
      */
     inline const AccessorNetworkType& GetNetworkType() const{ return m_networkType; }
-
-    /**
-     * <p>The blockchain network that the Accessor token is created for.</p>
-     */
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-
-    /**
-     * <p>The blockchain network that the Accessor token is created for.</p>
-     */
     inline void SetNetworkType(const AccessorNetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-
-    /**
-     * <p>The blockchain network that the Accessor token is created for.</p>
-     */
     inline void SetNetworkType(AccessorNetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-
-    /**
-     * <p>The blockchain network that the Accessor token is created for.</p>
-     */
     inline AccessorSummary& WithNetworkType(const AccessorNetworkType& value) { SetNetworkType(value); return *this;}
-
-    /**
-     * <p>The blockchain network that the Accessor token is created for.</p>
-     */
     inline AccessorSummary& WithNetworkType(AccessorNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

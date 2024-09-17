@@ -25,10 +25,8 @@ GrantItem::GrantItem() :
 {
 }
 
-GrantItem::GrantItem(JsonView jsonValue) : 
-    m_grantHasBeenSet(false),
-    m_grantType(GrantType::NOT_SET),
-    m_grantTypeHasBeenSet(false)
+GrantItem::GrantItem(JsonView jsonValue)
+  : GrantItem()
 {
   *this = jsonValue;
 }

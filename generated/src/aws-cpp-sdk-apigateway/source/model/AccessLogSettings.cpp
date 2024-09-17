@@ -24,9 +24,8 @@ AccessLogSettings::AccessLogSettings() :
 {
 }
 
-AccessLogSettings::AccessLogSettings(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_destinationArnHasBeenSet(false)
+AccessLogSettings::AccessLogSettings(JsonView jsonValue)
+  : AccessLogSettings()
 {
   *this = jsonValue;
 }

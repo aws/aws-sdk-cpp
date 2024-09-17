@@ -27,13 +27,8 @@ GetIntegrationResult::GetIntegrationResult() :
 {
 }
 
-GetIntegrationResult::GetIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_contentHandlingStrategy(ContentHandlingStrategy::NOT_SET),
-    m_integrationType(IntegrationType::NOT_SET),
-    m_passthroughBehavior(PassthroughBehavior::NOT_SET),
-    m_timeoutInMillis(0)
+GetIntegrationResult::GetIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIntegrationResult()
 {
   *this = result;
 }

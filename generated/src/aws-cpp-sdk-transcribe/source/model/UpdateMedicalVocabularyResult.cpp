@@ -23,9 +23,8 @@ UpdateMedicalVocabularyResult::UpdateMedicalVocabularyResult() :
 {
 }
 
-UpdateMedicalVocabularyResult::UpdateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_vocabularyState(VocabularyState::NOT_SET)
+UpdateMedicalVocabularyResult::UpdateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateMedicalVocabularyResult()
 {
   *this = result;
 }

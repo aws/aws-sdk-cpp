@@ -28,13 +28,8 @@ JobDetails::JobDetails() :
 {
 }
 
-JobDetails::JobDetails(JsonView jsonValue) : 
-    m_isDefinedInJob(IsDefinedInJob::NOT_SET),
-    m_isDefinedInJobHasBeenSet(false),
-    m_isMonitoredByJob(IsMonitoredByJob::NOT_SET),
-    m_isMonitoredByJobHasBeenSet(false),
-    m_lastJobIdHasBeenSet(false),
-    m_lastJobRunTimeHasBeenSet(false)
+JobDetails::JobDetails(JsonView jsonValue)
+  : JobDetails()
 {
   *this = jsonValue;
 }

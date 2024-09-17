@@ -38,54 +38,20 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the PagerDuty service that the response plan associates with an
      * incident when it launches.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
-
-    /**
-     * <p>The ID of the PagerDuty service that the response plan associates with an
-     * incident when it launches.</p>
-     */
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the PagerDuty service that the response plan associates with an
-     * incident when it launches.</p>
-     */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-
-    /**
-     * <p>The ID of the PagerDuty service that the response plan associates with an
-     * incident when it launches.</p>
-     */
     inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the PagerDuty service that the response plan associates with an
-     * incident when it launches.</p>
-     */
     inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-
-    /**
-     * <p>The ID of the PagerDuty service that the response plan associates with an
-     * incident when it launches.</p>
-     */
     inline PagerDutyIncidentConfiguration& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-
-    /**
-     * <p>The ID of the PagerDuty service that the response plan associates with an
-     * incident when it launches.</p>
-     */
     inline PagerDutyIncidentConfiguration& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the PagerDuty service that the response plan associates with an
-     * incident when it launches.</p>
-     */
     inline PagerDutyIncidentConfiguration& WithServiceId(const char* value) { SetServiceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceId;

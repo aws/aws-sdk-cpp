@@ -22,8 +22,8 @@ ListCallAnalyticsJobsResult::ListCallAnalyticsJobsResult() :
 {
 }
 
-ListCallAnalyticsJobsResult::ListCallAnalyticsJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(CallAnalyticsJobStatus::NOT_SET)
+ListCallAnalyticsJobsResult::ListCallAnalyticsJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListCallAnalyticsJobsResult()
 {
   *this = result;
 }

@@ -36,19 +36,8 @@ LaunchTemplateInstanceMetadataOptions::LaunchTemplateInstanceMetadataOptions() :
 {
 }
 
-LaunchTemplateInstanceMetadataOptions::LaunchTemplateInstanceMetadataOptions(const XmlNode& xmlNode) : 
-    m_state(LaunchTemplateInstanceMetadataOptionsState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_httpTokens(LaunchTemplateHttpTokensState::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpEndpoint(LaunchTemplateInstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_httpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET),
-    m_httpProtocolIpv6HasBeenSet(false),
-    m_instanceMetadataTags(LaunchTemplateInstanceMetadataTagsState::NOT_SET),
-    m_instanceMetadataTagsHasBeenSet(false)
+LaunchTemplateInstanceMetadataOptions::LaunchTemplateInstanceMetadataOptions(const XmlNode& xmlNode)
+  : LaunchTemplateInstanceMetadataOptions()
 {
   *this = xmlNode;
 }

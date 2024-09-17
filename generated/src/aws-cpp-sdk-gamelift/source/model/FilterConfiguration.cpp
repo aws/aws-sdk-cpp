@@ -23,8 +23,8 @@ FilterConfiguration::FilterConfiguration() :
 {
 }
 
-FilterConfiguration::FilterConfiguration(JsonView jsonValue) : 
-    m_allowedLocationsHasBeenSet(false)
+FilterConfiguration::FilterConfiguration(JsonView jsonValue)
+  : FilterConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ TaskObject::TaskObject() :
 {
 }
 
-TaskObject::TaskObject(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false),
-    m_attemptIdHasBeenSet(false),
-    m_objectsHasBeenSet(false)
+TaskObject::TaskObject(JsonView jsonValue)
+  : TaskObject()
 {
   *this = jsonValue;
 }

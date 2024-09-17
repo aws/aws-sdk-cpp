@@ -43,126 +43,46 @@ namespace Model
     AWS_SESV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The domain that you want to obtain deliverability metrics for.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>The domain that you want to obtain deliverability metrics for.</p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p>The domain that you want to obtain deliverability metrics for.</p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p>The domain that you want to obtain deliverability metrics for.</p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p>The domain that you want to obtain deliverability metrics for.</p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p>The domain that you want to obtain deliverability metrics for.</p>
-     */
     inline GetDomainStatisticsReportRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>The domain that you want to obtain deliverability metrics for.</p>
-     */
     inline GetDomainStatisticsReportRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain that you want to obtain deliverability metrics for.</p>
-     */
     inline GetDomainStatisticsReportRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The first day (in Unix time) that you want to obtain domain deliverability
      * metrics for.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
-
-    /**
-     * <p>The first day (in Unix time) that you want to obtain domain deliverability
-     * metrics for.</p>
-     */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-
-    /**
-     * <p>The first day (in Unix time) that you want to obtain domain deliverability
-     * metrics for.</p>
-     */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-
-    /**
-     * <p>The first day (in Unix time) that you want to obtain domain deliverability
-     * metrics for.</p>
-     */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-
-    /**
-     * <p>The first day (in Unix time) that you want to obtain domain deliverability
-     * metrics for.</p>
-     */
     inline GetDomainStatisticsReportRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-
-    /**
-     * <p>The first day (in Unix time) that you want to obtain domain deliverability
-     * metrics for.</p>
-     */
     inline GetDomainStatisticsReportRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last day (in Unix time) that you want to obtain domain deliverability
      * metrics for. The <code>EndDate</code> that you specify has to be less than or
      * equal to 30 days after the <code>StartDate</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
-
-    /**
-     * <p>The last day (in Unix time) that you want to obtain domain deliverability
-     * metrics for. The <code>EndDate</code> that you specify has to be less than or
-     * equal to 30 days after the <code>StartDate</code>.</p>
-     */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-
-    /**
-     * <p>The last day (in Unix time) that you want to obtain domain deliverability
-     * metrics for. The <code>EndDate</code> that you specify has to be less than or
-     * equal to 30 days after the <code>StartDate</code>.</p>
-     */
     inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-
-    /**
-     * <p>The last day (in Unix time) that you want to obtain domain deliverability
-     * metrics for. The <code>EndDate</code> that you specify has to be less than or
-     * equal to 30 days after the <code>StartDate</code>.</p>
-     */
     inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-
-    /**
-     * <p>The last day (in Unix time) that you want to obtain domain deliverability
-     * metrics for. The <code>EndDate</code> that you specify has to be less than or
-     * equal to 30 days after the <code>StartDate</code>.</p>
-     */
     inline GetDomainStatisticsReportRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-
-    /**
-     * <p>The last day (in Unix time) that you want to obtain domain deliverability
-     * metrics for. The <code>EndDate</code> that you specify has to be less than or
-     * equal to 30 days after the <code>StartDate</code>.</p>
-     */
     inline GetDomainStatisticsReportRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domain;

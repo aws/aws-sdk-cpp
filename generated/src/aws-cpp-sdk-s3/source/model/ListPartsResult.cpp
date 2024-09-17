@@ -27,14 +27,8 @@ ListPartsResult::ListPartsResult() :
 {
 }
 
-ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_partNumberMarker(0),
-    m_nextPartNumberMarker(0),
-    m_maxParts(0),
-    m_isTruncated(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
+ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListPartsResult()
 {
   *this = result;
 }
@@ -118,7 +112,11 @@ ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<X
   const auto& abortDateIter = headers.find("x-amz-abort-date");
   if(abortDateIter != headers.end())
   {
-    m_abortDate = DateTime(abortDateIter->second, Aws::Utils::DateFormat::RFC822);
+    m_abortDate = DateTime(abortDateIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
+    if(!m_abortDate.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3::ListPartsResult", "Failed to parse abortDate header as an RFC822 timestamp: " << abortDateIter->second.c_str());
+    }
   }
 
   const auto& abortRuleIdIter = headers.find("x-amz-abort-rule-id");

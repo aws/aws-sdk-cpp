@@ -27,12 +27,8 @@ RefreshFrequency::RefreshFrequency() :
 {
 }
 
-RefreshFrequency::RefreshFrequency(JsonView jsonValue) : 
-    m_interval(RefreshInterval::NOT_SET),
-    m_intervalHasBeenSet(false),
-    m_refreshOnDayHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_timeOfTheDayHasBeenSet(false)
+RefreshFrequency::RefreshFrequency(JsonView jsonValue)
+  : RefreshFrequency()
 {
   *this = jsonValue;
 }

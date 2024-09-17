@@ -37,63 +37,29 @@ namespace Model
     AWS_DATASYNC_API CreateTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline CreateTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline CreateTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline CreateTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskArn;

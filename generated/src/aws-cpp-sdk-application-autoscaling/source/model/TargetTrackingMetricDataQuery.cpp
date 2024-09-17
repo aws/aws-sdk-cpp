@@ -28,13 +28,8 @@ TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery() :
 {
 }
 
-TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_metricStatHasBeenSet(false),
-    m_returnData(false),
-    m_returnDataHasBeenSet(false)
+TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery(JsonView jsonValue)
+  : TargetTrackingMetricDataQuery()
 {
   *this = jsonValue;
 }

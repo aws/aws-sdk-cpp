@@ -24,9 +24,8 @@ AssetLocation::AssetLocation() :
 {
 }
 
-AssetLocation::AssetLocation(JsonView jsonValue) : 
-    m_rackElevation(0.0),
-    m_rackElevationHasBeenSet(false)
+AssetLocation::AssetLocation(JsonView jsonValue)
+  : AssetLocation()
 {
   *this = jsonValue;
 }

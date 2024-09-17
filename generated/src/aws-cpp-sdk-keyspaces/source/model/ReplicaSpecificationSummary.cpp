@@ -26,11 +26,8 @@ ReplicaSpecificationSummary::ReplicaSpecificationSummary() :
 {
 }
 
-ReplicaSpecificationSummary::ReplicaSpecificationSummary(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_status(TableStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_capacitySpecificationHasBeenSet(false)
+ReplicaSpecificationSummary::ReplicaSpecificationSummary(JsonView jsonValue)
+  : ReplicaSpecificationSummary()
 {
   *this = jsonValue;
 }

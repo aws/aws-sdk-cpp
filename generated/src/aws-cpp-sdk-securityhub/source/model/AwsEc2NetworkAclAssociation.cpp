@@ -25,10 +25,8 @@ AwsEc2NetworkAclAssociation::AwsEc2NetworkAclAssociation() :
 {
 }
 
-AwsEc2NetworkAclAssociation::AwsEc2NetworkAclAssociation(JsonView jsonValue) : 
-    m_networkAclAssociationIdHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+AwsEc2NetworkAclAssociation::AwsEc2NetworkAclAssociation(JsonView jsonValue)
+  : AwsEc2NetworkAclAssociation()
 {
   *this = jsonValue;
 }

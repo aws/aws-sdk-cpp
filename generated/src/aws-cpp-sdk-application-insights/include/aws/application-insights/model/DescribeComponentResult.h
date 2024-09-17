@@ -34,84 +34,39 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API DescribeComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ApplicationComponent& GetApplicationComponent() const{ return m_applicationComponent; }
-
-    
     inline void SetApplicationComponent(const ApplicationComponent& value) { m_applicationComponent = value; }
-
-    
     inline void SetApplicationComponent(ApplicationComponent&& value) { m_applicationComponent = std::move(value); }
-
-    
     inline DescribeComponentResult& WithApplicationComponent(const ApplicationComponent& value) { SetApplicationComponent(value); return *this;}
-
-    
     inline DescribeComponentResult& WithApplicationComponent(ApplicationComponent&& value) { SetApplicationComponent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of resource ARNs that belong to the component.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceList() const{ return m_resourceList; }
-
-    /**
-     * <p>The list of resource ARNs that belong to the component.</p>
-     */
     inline void SetResourceList(const Aws::Vector<Aws::String>& value) { m_resourceList = value; }
-
-    /**
-     * <p>The list of resource ARNs that belong to the component.</p>
-     */
     inline void SetResourceList(Aws::Vector<Aws::String>&& value) { m_resourceList = std::move(value); }
-
-    /**
-     * <p>The list of resource ARNs that belong to the component.</p>
-     */
     inline DescribeComponentResult& WithResourceList(const Aws::Vector<Aws::String>& value) { SetResourceList(value); return *this;}
-
-    /**
-     * <p>The list of resource ARNs that belong to the component.</p>
-     */
     inline DescribeComponentResult& WithResourceList(Aws::Vector<Aws::String>&& value) { SetResourceList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of resource ARNs that belong to the component.</p>
-     */
     inline DescribeComponentResult& AddResourceList(const Aws::String& value) { m_resourceList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of resource ARNs that belong to the component.</p>
-     */
     inline DescribeComponentResult& AddResourceList(Aws::String&& value) { m_resourceList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of resource ARNs that belong to the component.</p>
-     */
     inline DescribeComponentResult& AddResourceList(const char* value) { m_resourceList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationComponent m_applicationComponent;

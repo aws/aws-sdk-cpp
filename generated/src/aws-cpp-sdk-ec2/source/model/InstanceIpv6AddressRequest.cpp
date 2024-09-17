@@ -25,8 +25,8 @@ InstanceIpv6AddressRequest::InstanceIpv6AddressRequest() :
 {
 }
 
-InstanceIpv6AddressRequest::InstanceIpv6AddressRequest(const XmlNode& xmlNode) : 
-    m_ipv6AddressHasBeenSet(false)
+InstanceIpv6AddressRequest::InstanceIpv6AddressRequest(const XmlNode& xmlNode)
+  : InstanceIpv6AddressRequest()
 {
   *this = xmlNode;
 }

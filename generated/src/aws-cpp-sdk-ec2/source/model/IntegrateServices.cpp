@@ -25,8 +25,8 @@ IntegrateServices::IntegrateServices() :
 {
 }
 
-IntegrateServices::IntegrateServices(const XmlNode& xmlNode) : 
-    m_athenaIntegrationsHasBeenSet(false)
+IntegrateServices::IntegrateServices(const XmlNode& xmlNode)
+  : IntegrateServices()
 {
   *this = xmlNode;
 }

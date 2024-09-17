@@ -22,8 +22,8 @@ QueryResult::QueryResult() :
 {
 }
 
-QueryResult::QueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalNumberOfResults(0)
+QueryResult::QueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : QueryResult()
 {
   *this = result;
 }

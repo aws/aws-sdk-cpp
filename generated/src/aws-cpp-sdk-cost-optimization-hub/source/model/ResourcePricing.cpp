@@ -19,49 +19,29 @@ namespace Model
 {
 
 ResourcePricing::ResourcePricing() : 
-    m_estimatedCostAfterDiscounts(0.0),
-    m_estimatedCostAfterDiscountsHasBeenSet(false),
     m_estimatedCostBeforeDiscounts(0.0),
     m_estimatedCostBeforeDiscountsHasBeenSet(false),
-    m_estimatedDiscountsHasBeenSet(false),
     m_estimatedNetUnusedAmortizedCommitments(0.0),
-    m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet(false)
+    m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet(false),
+    m_estimatedDiscountsHasBeenSet(false),
+    m_estimatedCostAfterDiscounts(0.0),
+    m_estimatedCostAfterDiscountsHasBeenSet(false)
 {
 }
 
-ResourcePricing::ResourcePricing(JsonView jsonValue) : 
-    m_estimatedCostAfterDiscounts(0.0),
-    m_estimatedCostAfterDiscountsHasBeenSet(false),
-    m_estimatedCostBeforeDiscounts(0.0),
-    m_estimatedCostBeforeDiscountsHasBeenSet(false),
-    m_estimatedDiscountsHasBeenSet(false),
-    m_estimatedNetUnusedAmortizedCommitments(0.0),
-    m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet(false)
+ResourcePricing::ResourcePricing(JsonView jsonValue)
+  : ResourcePricing()
 {
   *this = jsonValue;
 }
 
 ResourcePricing& ResourcePricing::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("estimatedCostAfterDiscounts"))
-  {
-    m_estimatedCostAfterDiscounts = jsonValue.GetDouble("estimatedCostAfterDiscounts");
-
-    m_estimatedCostAfterDiscountsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("estimatedCostBeforeDiscounts"))
   {
     m_estimatedCostBeforeDiscounts = jsonValue.GetDouble("estimatedCostBeforeDiscounts");
 
     m_estimatedCostBeforeDiscountsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("estimatedDiscounts"))
-  {
-    m_estimatedDiscounts = jsonValue.GetObject("estimatedDiscounts");
-
-    m_estimatedDiscountsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("estimatedNetUnusedAmortizedCommitments"))
@@ -71,6 +51,20 @@ ResourcePricing& ResourcePricing::operator =(JsonView jsonValue)
     m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("estimatedDiscounts"))
+  {
+    m_estimatedDiscounts = jsonValue.GetObject("estimatedDiscounts");
+
+    m_estimatedDiscountsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("estimatedCostAfterDiscounts"))
+  {
+    m_estimatedCostAfterDiscounts = jsonValue.GetDouble("estimatedCostAfterDiscounts");
+
+    m_estimatedCostAfterDiscountsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,15 +72,15 @@ JsonValue ResourcePricing::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_estimatedCostAfterDiscountsHasBeenSet)
-  {
-   payload.WithDouble("estimatedCostAfterDiscounts", m_estimatedCostAfterDiscounts);
-
-  }
-
   if(m_estimatedCostBeforeDiscountsHasBeenSet)
   {
    payload.WithDouble("estimatedCostBeforeDiscounts", m_estimatedCostBeforeDiscounts);
+
+  }
+
+  if(m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet)
+  {
+   payload.WithDouble("estimatedNetUnusedAmortizedCommitments", m_estimatedNetUnusedAmortizedCommitments);
 
   }
 
@@ -96,9 +90,9 @@ JsonValue ResourcePricing::Jsonize() const
 
   }
 
-  if(m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet)
+  if(m_estimatedCostAfterDiscountsHasBeenSet)
   {
-   payload.WithDouble("estimatedNetUnusedAmortizedCommitments", m_estimatedNetUnusedAmortizedCommitments);
+   payload.WithDouble("estimatedCostAfterDiscounts", m_estimatedCostAfterDiscounts);
 
   }
 

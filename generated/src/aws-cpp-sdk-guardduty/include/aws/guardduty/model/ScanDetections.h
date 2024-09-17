@@ -41,135 +41,54 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Total number of scanned files.</p>
      */
     inline const ScannedItemCount& GetScannedItemCount() const{ return m_scannedItemCount; }
-
-    /**
-     * <p>Total number of scanned files.</p>
-     */
     inline bool ScannedItemCountHasBeenSet() const { return m_scannedItemCountHasBeenSet; }
-
-    /**
-     * <p>Total number of scanned files.</p>
-     */
     inline void SetScannedItemCount(const ScannedItemCount& value) { m_scannedItemCountHasBeenSet = true; m_scannedItemCount = value; }
-
-    /**
-     * <p>Total number of scanned files.</p>
-     */
     inline void SetScannedItemCount(ScannedItemCount&& value) { m_scannedItemCountHasBeenSet = true; m_scannedItemCount = std::move(value); }
-
-    /**
-     * <p>Total number of scanned files.</p>
-     */
     inline ScanDetections& WithScannedItemCount(const ScannedItemCount& value) { SetScannedItemCount(value); return *this;}
-
-    /**
-     * <p>Total number of scanned files.</p>
-     */
     inline ScanDetections& WithScannedItemCount(ScannedItemCount&& value) { SetScannedItemCount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Total number of infected files.</p>
      */
     inline const ThreatsDetectedItemCount& GetThreatsDetectedItemCount() const{ return m_threatsDetectedItemCount; }
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline bool ThreatsDetectedItemCountHasBeenSet() const { return m_threatsDetectedItemCountHasBeenSet; }
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline void SetThreatsDetectedItemCount(const ThreatsDetectedItemCount& value) { m_threatsDetectedItemCountHasBeenSet = true; m_threatsDetectedItemCount = value; }
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline void SetThreatsDetectedItemCount(ThreatsDetectedItemCount&& value) { m_threatsDetectedItemCountHasBeenSet = true; m_threatsDetectedItemCount = std::move(value); }
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline ScanDetections& WithThreatsDetectedItemCount(const ThreatsDetectedItemCount& value) { SetThreatsDetectedItemCount(value); return *this;}
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline ScanDetections& WithThreatsDetectedItemCount(ThreatsDetectedItemCount&& value) { SetThreatsDetectedItemCount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details of the highest severity threat detected during malware scan and
      * number of infected files.</p>
      */
     inline const HighestSeverityThreatDetails& GetHighestSeverityThreatDetails() const{ return m_highestSeverityThreatDetails; }
-
-    /**
-     * <p>Details of the highest severity threat detected during malware scan and
-     * number of infected files.</p>
-     */
     inline bool HighestSeverityThreatDetailsHasBeenSet() const { return m_highestSeverityThreatDetailsHasBeenSet; }
-
-    /**
-     * <p>Details of the highest severity threat detected during malware scan and
-     * number of infected files.</p>
-     */
     inline void SetHighestSeverityThreatDetails(const HighestSeverityThreatDetails& value) { m_highestSeverityThreatDetailsHasBeenSet = true; m_highestSeverityThreatDetails = value; }
-
-    /**
-     * <p>Details of the highest severity threat detected during malware scan and
-     * number of infected files.</p>
-     */
     inline void SetHighestSeverityThreatDetails(HighestSeverityThreatDetails&& value) { m_highestSeverityThreatDetailsHasBeenSet = true; m_highestSeverityThreatDetails = std::move(value); }
-
-    /**
-     * <p>Details of the highest severity threat detected during malware scan and
-     * number of infected files.</p>
-     */
     inline ScanDetections& WithHighestSeverityThreatDetails(const HighestSeverityThreatDetails& value) { SetHighestSeverityThreatDetails(value); return *this;}
-
-    /**
-     * <p>Details of the highest severity threat detected during malware scan and
-     * number of infected files.</p>
-     */
     inline ScanDetections& WithHighestSeverityThreatDetails(HighestSeverityThreatDetails&& value) { SetHighestSeverityThreatDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains details about identified threats organized by threat name.</p>
      */
     inline const ThreatDetectedByName& GetThreatDetectedByName() const{ return m_threatDetectedByName; }
-
-    /**
-     * <p>Contains details about identified threats organized by threat name.</p>
-     */
     inline bool ThreatDetectedByNameHasBeenSet() const { return m_threatDetectedByNameHasBeenSet; }
-
-    /**
-     * <p>Contains details about identified threats organized by threat name.</p>
-     */
     inline void SetThreatDetectedByName(const ThreatDetectedByName& value) { m_threatDetectedByNameHasBeenSet = true; m_threatDetectedByName = value; }
-
-    /**
-     * <p>Contains details about identified threats organized by threat name.</p>
-     */
     inline void SetThreatDetectedByName(ThreatDetectedByName&& value) { m_threatDetectedByNameHasBeenSet = true; m_threatDetectedByName = std::move(value); }
-
-    /**
-     * <p>Contains details about identified threats organized by threat name.</p>
-     */
     inline ScanDetections& WithThreatDetectedByName(const ThreatDetectedByName& value) { SetThreatDetectedByName(value); return *this;}
-
-    /**
-     * <p>Contains details about identified threats organized by threat name.</p>
-     */
     inline ScanDetections& WithThreatDetectedByName(ThreatDetectedByName&& value) { SetThreatDetectedByName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScannedItemCount m_scannedItemCount;

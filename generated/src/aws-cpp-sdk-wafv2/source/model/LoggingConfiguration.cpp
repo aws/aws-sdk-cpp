@@ -24,17 +24,16 @@ LoggingConfiguration::LoggingConfiguration() :
     m_redactedFieldsHasBeenSet(false),
     m_managedByFirewallManager(false),
     m_managedByFirewallManagerHasBeenSet(false),
-    m_loggingFilterHasBeenSet(false)
+    m_loggingFilterHasBeenSet(false),
+    m_logType(LogType::NOT_SET),
+    m_logTypeHasBeenSet(false),
+    m_logScope(LogScope::NOT_SET),
+    m_logScopeHasBeenSet(false)
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false),
-    m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false),
-    m_loggingFilterHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -82,6 +81,20 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     m_loggingFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogType"))
+  {
+    m_logType = LogTypeMapper::GetLogTypeForName(jsonValue.GetString("LogType"));
+
+    m_logTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogScope"))
+  {
+    m_logScope = LogScopeMapper::GetLogScopeForName(jsonValue.GetString("LogScope"));
+
+    m_logScopeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +140,16 @@ JsonValue LoggingConfiguration::Jsonize() const
   {
    payload.WithObject("LoggingFilter", m_loggingFilter.Jsonize());
 
+  }
+
+  if(m_logTypeHasBeenSet)
+  {
+   payload.WithString("LogType", LogTypeMapper::GetNameForLogType(m_logType));
+  }
+
+  if(m_logScopeHasBeenSet)
+  {
+   payload.WithString("LogScope", LogScopeMapper::GetNameForLogScope(m_logScope));
   }
 
   return payload;

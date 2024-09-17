@@ -26,11 +26,8 @@ InputDeviceConfigurableAudioChannelPairConfig::InputDeviceConfigurableAudioChann
 {
 }
 
-InputDeviceConfigurableAudioChannelPairConfig::InputDeviceConfigurableAudioChannelPairConfig(JsonView jsonValue) : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_profile(InputDeviceConfigurableAudioChannelPairProfile::NOT_SET),
-    m_profileHasBeenSet(false)
+InputDeviceConfigurableAudioChannelPairConfig::InputDeviceConfigurableAudioChannelPairConfig(JsonView jsonValue)
+  : InputDeviceConfigurableAudioChannelPairConfig()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ BucketCountBySharedAccessType::BucketCountBySharedAccessType() :
 {
 }
 
-BucketCountBySharedAccessType::BucketCountBySharedAccessType(JsonView jsonValue) : 
-    m_external(0),
-    m_externalHasBeenSet(false),
-    m_internal(0),
-    m_internalHasBeenSet(false),
-    m_notShared(0),
-    m_notSharedHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
+BucketCountBySharedAccessType::BucketCountBySharedAccessType(JsonView jsonValue)
+  : BucketCountBySharedAccessType()
 {
   *this = jsonValue;
 }

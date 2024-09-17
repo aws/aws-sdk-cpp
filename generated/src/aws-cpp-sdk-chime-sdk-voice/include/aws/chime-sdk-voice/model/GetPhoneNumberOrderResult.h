@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetPhoneNumberOrderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The phone number order details.</p>
      */
     inline const PhoneNumberOrder& GetPhoneNumberOrder() const{ return m_phoneNumberOrder; }
-
-    /**
-     * <p>The phone number order details.</p>
-     */
     inline void SetPhoneNumberOrder(const PhoneNumberOrder& value) { m_phoneNumberOrder = value; }
-
-    /**
-     * <p>The phone number order details.</p>
-     */
     inline void SetPhoneNumberOrder(PhoneNumberOrder&& value) { m_phoneNumberOrder = std::move(value); }
-
-    /**
-     * <p>The phone number order details.</p>
-     */
     inline GetPhoneNumberOrderResult& WithPhoneNumberOrder(const PhoneNumberOrder& value) { SetPhoneNumberOrder(value); return *this;}
-
-    /**
-     * <p>The phone number order details.</p>
-     */
     inline GetPhoneNumberOrderResult& WithPhoneNumberOrder(PhoneNumberOrder&& value) { SetPhoneNumberOrder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPhoneNumberOrderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPhoneNumberOrderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPhoneNumberOrderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PhoneNumberOrder m_phoneNumberOrder;

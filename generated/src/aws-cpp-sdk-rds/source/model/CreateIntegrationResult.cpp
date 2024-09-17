@@ -22,8 +22,8 @@ CreateIntegrationResult::CreateIntegrationResult() :
 {
 }
 
-CreateIntegrationResult::CreateIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(IntegrationStatus::NOT_SET)
+CreateIntegrationResult::CreateIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateIntegrationResult()
 {
   *this = result;
 }
@@ -111,6 +111,16 @@ CreateIntegrationResult& CreateIntegrationResult::operator =(const Aws::AmazonWe
         errorsMember = errorsMember.NextNode("IntegrationError");
       }
 
+    }
+    XmlNode dataFilterNode = resultNode.FirstChild("DataFilter");
+    if(!dataFilterNode.IsNull())
+    {
+      m_dataFilter = Aws::Utils::Xml::DecodeEscapedXmlText(dataFilterNode.GetText());
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
     }
   }
 

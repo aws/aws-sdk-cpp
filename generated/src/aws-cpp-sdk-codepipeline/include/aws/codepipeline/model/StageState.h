@@ -9,6 +9,7 @@
 #include <aws/codepipeline/model/StageExecution.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/TransitionState.h>
+#include <aws/codepipeline/model/StageConditionState.h>
 #include <aws/codepipeline/model/ActionState.h>
 #include <utility>
 
@@ -42,215 +43,118 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the stage.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
-
-    /**
-     * <p>The name of the stage.</p>
-     */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stage.</p>
-     */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-
-    /**
-     * <p>The name of the stage.</p>
-     */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-
-    /**
-     * <p>The name of the stage.</p>
-     */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-
-    /**
-     * <p>The name of the stage.</p>
-     */
     inline StageState& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-
-    /**
-     * <p>The name of the stage.</p>
-     */
     inline StageState& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stage.</p>
-     */
     inline StageState& WithStageName(const char* value) { SetStageName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const StageExecution& GetInboundExecution() const{ return m_inboundExecution; }
-
-    
     inline bool InboundExecutionHasBeenSet() const { return m_inboundExecutionHasBeenSet; }
-
-    
     inline void SetInboundExecution(const StageExecution& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = value; }
-
-    
     inline void SetInboundExecution(StageExecution&& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = std::move(value); }
-
-    
     inline StageState& WithInboundExecution(const StageExecution& value) { SetInboundExecution(value); return *this;}
-
-    
     inline StageState& WithInboundExecution(StageExecution&& value) { SetInboundExecution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The inbound executions for a stage.</p>
      */
     inline const Aws::Vector<StageExecution>& GetInboundExecutions() const{ return m_inboundExecutions; }
-
-    /**
-     * <p>The inbound executions for a stage.</p>
-     */
     inline bool InboundExecutionsHasBeenSet() const { return m_inboundExecutionsHasBeenSet; }
-
-    /**
-     * <p>The inbound executions for a stage.</p>
-     */
     inline void SetInboundExecutions(const Aws::Vector<StageExecution>& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions = value; }
-
-    /**
-     * <p>The inbound executions for a stage.</p>
-     */
     inline void SetInboundExecutions(Aws::Vector<StageExecution>&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions = std::move(value); }
-
-    /**
-     * <p>The inbound executions for a stage.</p>
-     */
     inline StageState& WithInboundExecutions(const Aws::Vector<StageExecution>& value) { SetInboundExecutions(value); return *this;}
-
-    /**
-     * <p>The inbound executions for a stage.</p>
-     */
     inline StageState& WithInboundExecutions(Aws::Vector<StageExecution>&& value) { SetInboundExecutions(std::move(value)); return *this;}
-
-    /**
-     * <p>The inbound executions for a stage.</p>
-     */
     inline StageState& AddInboundExecutions(const StageExecution& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions.push_back(value); return *this; }
-
-    /**
-     * <p>The inbound executions for a stage.</p>
-     */
     inline StageState& AddInboundExecutions(StageExecution&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the inbound transition, which is either enabled or disabled.</p>
      */
     inline const TransitionState& GetInboundTransitionState() const{ return m_inboundTransitionState; }
-
-    /**
-     * <p>The state of the inbound transition, which is either enabled or disabled.</p>
-     */
     inline bool InboundTransitionStateHasBeenSet() const { return m_inboundTransitionStateHasBeenSet; }
-
-    /**
-     * <p>The state of the inbound transition, which is either enabled or disabled.</p>
-     */
     inline void SetInboundTransitionState(const TransitionState& value) { m_inboundTransitionStateHasBeenSet = true; m_inboundTransitionState = value; }
-
-    /**
-     * <p>The state of the inbound transition, which is either enabled or disabled.</p>
-     */
     inline void SetInboundTransitionState(TransitionState&& value) { m_inboundTransitionStateHasBeenSet = true; m_inboundTransitionState = std::move(value); }
-
-    /**
-     * <p>The state of the inbound transition, which is either enabled or disabled.</p>
-     */
     inline StageState& WithInboundTransitionState(const TransitionState& value) { SetInboundTransitionState(value); return *this;}
-
-    /**
-     * <p>The state of the inbound transition, which is either enabled or disabled.</p>
-     */
     inline StageState& WithInboundTransitionState(TransitionState&& value) { SetInboundTransitionState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the stage.</p>
      */
     inline const Aws::Vector<ActionState>& GetActionStates() const{ return m_actionStates; }
-
-    /**
-     * <p>The state of the stage.</p>
-     */
     inline bool ActionStatesHasBeenSet() const { return m_actionStatesHasBeenSet; }
-
-    /**
-     * <p>The state of the stage.</p>
-     */
     inline void SetActionStates(const Aws::Vector<ActionState>& value) { m_actionStatesHasBeenSet = true; m_actionStates = value; }
-
-    /**
-     * <p>The state of the stage.</p>
-     */
     inline void SetActionStates(Aws::Vector<ActionState>&& value) { m_actionStatesHasBeenSet = true; m_actionStates = std::move(value); }
-
-    /**
-     * <p>The state of the stage.</p>
-     */
     inline StageState& WithActionStates(const Aws::Vector<ActionState>& value) { SetActionStates(value); return *this;}
-
-    /**
-     * <p>The state of the stage.</p>
-     */
     inline StageState& WithActionStates(Aws::Vector<ActionState>&& value) { SetActionStates(std::move(value)); return *this;}
-
-    /**
-     * <p>The state of the stage.</p>
-     */
     inline StageState& AddActionStates(const ActionState& value) { m_actionStatesHasBeenSet = true; m_actionStates.push_back(value); return *this; }
-
-    /**
-     * <p>The state of the stage.</p>
-     */
     inline StageState& AddActionStates(ActionState&& value) { m_actionStatesHasBeenSet = true; m_actionStates.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the latest execution in the stage, including its ID and
      * status.</p>
      */
     inline const StageExecution& GetLatestExecution() const{ return m_latestExecution; }
-
-    /**
-     * <p>Information about the latest execution in the stage, including its ID and
-     * status.</p>
-     */
     inline bool LatestExecutionHasBeenSet() const { return m_latestExecutionHasBeenSet; }
-
-    /**
-     * <p>Information about the latest execution in the stage, including its ID and
-     * status.</p>
-     */
     inline void SetLatestExecution(const StageExecution& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
-
-    /**
-     * <p>Information about the latest execution in the stage, including its ID and
-     * status.</p>
-     */
     inline void SetLatestExecution(StageExecution&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::move(value); }
-
-    /**
-     * <p>Information about the latest execution in the stage, including its ID and
-     * status.</p>
-     */
     inline StageState& WithLatestExecution(const StageExecution& value) { SetLatestExecution(value); return *this;}
-
-    /**
-     * <p>Information about the latest execution in the stage, including its ID and
-     * status.</p>
-     */
     inline StageState& WithLatestExecution(StageExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The state of the entry conditions for a stage.</p>
+     */
+    inline const StageConditionState& GetBeforeEntryConditionState() const{ return m_beforeEntryConditionState; }
+    inline bool BeforeEntryConditionStateHasBeenSet() const { return m_beforeEntryConditionStateHasBeenSet; }
+    inline void SetBeforeEntryConditionState(const StageConditionState& value) { m_beforeEntryConditionStateHasBeenSet = true; m_beforeEntryConditionState = value; }
+    inline void SetBeforeEntryConditionState(StageConditionState&& value) { m_beforeEntryConditionStateHasBeenSet = true; m_beforeEntryConditionState = std::move(value); }
+    inline StageState& WithBeforeEntryConditionState(const StageConditionState& value) { SetBeforeEntryConditionState(value); return *this;}
+    inline StageState& WithBeforeEntryConditionState(StageConditionState&& value) { SetBeforeEntryConditionState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The state of the success conditions for a stage.</p>
+     */
+    inline const StageConditionState& GetOnSuccessConditionState() const{ return m_onSuccessConditionState; }
+    inline bool OnSuccessConditionStateHasBeenSet() const { return m_onSuccessConditionStateHasBeenSet; }
+    inline void SetOnSuccessConditionState(const StageConditionState& value) { m_onSuccessConditionStateHasBeenSet = true; m_onSuccessConditionState = value; }
+    inline void SetOnSuccessConditionState(StageConditionState&& value) { m_onSuccessConditionStateHasBeenSet = true; m_onSuccessConditionState = std::move(value); }
+    inline StageState& WithOnSuccessConditionState(const StageConditionState& value) { SetOnSuccessConditionState(value); return *this;}
+    inline StageState& WithOnSuccessConditionState(StageConditionState&& value) { SetOnSuccessConditionState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The state of the failure conditions for a stage.</p>
+     */
+    inline const StageConditionState& GetOnFailureConditionState() const{ return m_onFailureConditionState; }
+    inline bool OnFailureConditionStateHasBeenSet() const { return m_onFailureConditionStateHasBeenSet; }
+    inline void SetOnFailureConditionState(const StageConditionState& value) { m_onFailureConditionStateHasBeenSet = true; m_onFailureConditionState = value; }
+    inline void SetOnFailureConditionState(StageConditionState&& value) { m_onFailureConditionStateHasBeenSet = true; m_onFailureConditionState = std::move(value); }
+    inline StageState& WithOnFailureConditionState(const StageConditionState& value) { SetOnFailureConditionState(value); return *this;}
+    inline StageState& WithOnFailureConditionState(StageConditionState&& value) { SetOnFailureConditionState(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_stageName;
@@ -270,6 +174,15 @@ namespace Model
 
     StageExecution m_latestExecution;
     bool m_latestExecutionHasBeenSet = false;
+
+    StageConditionState m_beforeEntryConditionState;
+    bool m_beforeEntryConditionStateHasBeenSet = false;
+
+    StageConditionState m_onSuccessConditionState;
+    bool m_onSuccessConditionStateHasBeenSet = false;
+
+    StageConditionState m_onFailureConditionState;
+    bool m_onFailureConditionStateHasBeenSet = false;
   };
 
 } // namespace Model

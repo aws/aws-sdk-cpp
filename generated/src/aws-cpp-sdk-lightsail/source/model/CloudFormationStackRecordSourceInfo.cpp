@@ -26,11 +26,8 @@ CloudFormationStackRecordSourceInfo::CloudFormationStackRecordSourceInfo() :
 {
 }
 
-CloudFormationStackRecordSourceInfo::CloudFormationStackRecordSourceInfo(JsonView jsonValue) : 
-    m_resourceType(CloudFormationStackRecordSourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+CloudFormationStackRecordSourceInfo::CloudFormationStackRecordSourceInfo(JsonView jsonValue)
+  : CloudFormationStackRecordSourceInfo()
 {
   *this = jsonValue;
 }

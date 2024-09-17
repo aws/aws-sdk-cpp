@@ -24,10 +24,8 @@ CancelExportTaskResult::CancelExportTaskResult() :
 {
 }
 
-CancelExportTaskResult::CancelExportTaskResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_percentProgress(0),
-    m_totalExtractedDataInGB(0),
-    m_sourceType(ExportSourceType::NOT_SET)
+CancelExportTaskResult::CancelExportTaskResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CancelExportTaskResult()
 {
   *this = result;
 }

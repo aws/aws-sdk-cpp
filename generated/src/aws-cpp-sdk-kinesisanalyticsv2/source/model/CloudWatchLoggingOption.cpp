@@ -23,8 +23,8 @@ CloudWatchLoggingOption::CloudWatchLoggingOption() :
 {
 }
 
-CloudWatchLoggingOption::CloudWatchLoggingOption(JsonView jsonValue) : 
-    m_logStreamARNHasBeenSet(false)
+CloudWatchLoggingOption::CloudWatchLoggingOption(JsonView jsonValue)
+  : CloudWatchLoggingOption()
 {
   *this = jsonValue;
 }

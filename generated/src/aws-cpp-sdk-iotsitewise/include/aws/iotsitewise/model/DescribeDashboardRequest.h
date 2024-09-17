@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the dashboard.</p>
      */
     inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
-
-    /**
-     * <p>The ID of the dashboard.</p>
-     */
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the dashboard.</p>
-     */
     inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
-
-    /**
-     * <p>The ID of the dashboard.</p>
-     */
     inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
-
-    /**
-     * <p>The ID of the dashboard.</p>
-     */
     inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
-
-    /**
-     * <p>The ID of the dashboard.</p>
-     */
     inline DescribeDashboardRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
-
-    /**
-     * <p>The ID of the dashboard.</p>
-     */
     inline DescribeDashboardRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the dashboard.</p>
-     */
     inline DescribeDashboardRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dashboardId;

@@ -22,8 +22,8 @@ ListPartsResult::ListPartsResult() :
 {
 }
 
-ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_partSizeInBytes(0)
+ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListPartsResult()
 {
   *this = result;
 }

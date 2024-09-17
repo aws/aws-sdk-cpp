@@ -39,92 +39,34 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Detailed status information about the aggregated associations.</p>
      */
     inline const Aws::String& GetDetailedStatus() const{ return m_detailedStatus; }
-
-    /**
-     * <p>Detailed status information about the aggregated associations.</p>
-     */
     inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
-
-    /**
-     * <p>Detailed status information about the aggregated associations.</p>
-     */
     inline void SetDetailedStatus(const Aws::String& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
-
-    /**
-     * <p>Detailed status information about the aggregated associations.</p>
-     */
     inline void SetDetailedStatus(Aws::String&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
-
-    /**
-     * <p>Detailed status information about the aggregated associations.</p>
-     */
     inline void SetDetailedStatus(const char* value) { m_detailedStatusHasBeenSet = true; m_detailedStatus.assign(value); }
-
-    /**
-     * <p>Detailed status information about the aggregated associations.</p>
-     */
     inline InstanceAggregatedAssociationOverview& WithDetailedStatus(const Aws::String& value) { SetDetailedStatus(value); return *this;}
-
-    /**
-     * <p>Detailed status information about the aggregated associations.</p>
-     */
     inline InstanceAggregatedAssociationOverview& WithDetailedStatus(Aws::String&& value) { SetDetailedStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>Detailed status information about the aggregated associations.</p>
-     */
     inline InstanceAggregatedAssociationOverview& WithDetailedStatus(const char* value) { SetDetailedStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The number of associations for the managed node(s).</p>
+     * <p>The number of associations for the managed nodes.</p>
      */
     inline const Aws::Map<Aws::String, int>& GetInstanceAssociationStatusAggregatedCount() const{ return m_instanceAssociationStatusAggregatedCount; }
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline bool InstanceAssociationStatusAggregatedCountHasBeenSet() const { return m_instanceAssociationStatusAggregatedCountHasBeenSet; }
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline void SetInstanceAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount = value; }
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline void SetInstanceAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount = std::move(value); }
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline InstanceAggregatedAssociationOverview& WithInstanceAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { SetInstanceAssociationStatusAggregatedCount(value); return *this;}
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline InstanceAggregatedAssociationOverview& WithInstanceAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { SetInstanceAssociationStatusAggregatedCount(std::move(value)); return *this;}
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline InstanceAggregatedAssociationOverview& AddInstanceAssociationStatusAggregatedCount(const Aws::String& key, int value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount.emplace(key, value); return *this; }
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline InstanceAggregatedAssociationOverview& AddInstanceAssociationStatusAggregatedCount(Aws::String&& key, int value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The number of associations for the managed node(s).</p>
-     */
     inline InstanceAggregatedAssociationOverview& AddInstanceAssociationStatusAggregatedCount(const char* key, int value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_detailedStatus;

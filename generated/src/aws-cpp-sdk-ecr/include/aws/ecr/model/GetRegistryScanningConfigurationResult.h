@@ -33,89 +33,40 @@ namespace Model
     AWS_ECR_API GetRegistryScanningConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>The ID of the registry.</p>
+     * <p>The registry ID associated with the request.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline GetRegistryScanningConfigurationResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline GetRegistryScanningConfigurationResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline GetRegistryScanningConfigurationResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scanning configuration for the registry.</p>
      */
     inline const RegistryScanningConfiguration& GetScanningConfiguration() const{ return m_scanningConfiguration; }
-
-    /**
-     * <p>The scanning configuration for the registry.</p>
-     */
     inline void SetScanningConfiguration(const RegistryScanningConfiguration& value) { m_scanningConfiguration = value; }
-
-    /**
-     * <p>The scanning configuration for the registry.</p>
-     */
     inline void SetScanningConfiguration(RegistryScanningConfiguration&& value) { m_scanningConfiguration = std::move(value); }
-
-    /**
-     * <p>The scanning configuration for the registry.</p>
-     */
     inline GetRegistryScanningConfigurationResult& WithScanningConfiguration(const RegistryScanningConfiguration& value) { SetScanningConfiguration(value); return *this;}
-
-    /**
-     * <p>The scanning configuration for the registry.</p>
-     */
     inline GetRegistryScanningConfigurationResult& WithScanningConfiguration(RegistryScanningConfiguration&& value) { SetScanningConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRegistryScanningConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRegistryScanningConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRegistryScanningConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryId;

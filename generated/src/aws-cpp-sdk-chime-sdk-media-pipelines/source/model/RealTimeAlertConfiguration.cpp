@@ -25,10 +25,8 @@ RealTimeAlertConfiguration::RealTimeAlertConfiguration() :
 {
 }
 
-RealTimeAlertConfiguration::RealTimeAlertConfiguration(JsonView jsonValue) : 
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+RealTimeAlertConfiguration::RealTimeAlertConfiguration(JsonView jsonValue)
+  : RealTimeAlertConfiguration()
 {
   *this = jsonValue;
 }

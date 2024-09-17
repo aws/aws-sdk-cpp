@@ -26,11 +26,8 @@ BatchGetAssetPropertyValueHistorySkippedEntry::BatchGetAssetPropertyValueHistory
 {
 }
 
-BatchGetAssetPropertyValueHistorySkippedEntry::BatchGetAssetPropertyValueHistorySkippedEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_completionStatus(BatchEntryCompletionStatus::NOT_SET),
-    m_completionStatusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+BatchGetAssetPropertyValueHistorySkippedEntry::BatchGetAssetPropertyValueHistorySkippedEntry(JsonView jsonValue)
+  : BatchGetAssetPropertyValueHistorySkippedEntry()
 {
   *this = jsonValue;
 }

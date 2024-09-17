@@ -40,36 +40,17 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
     AWS_WAFV2_API const Statement& GetStatement() const;
-
-    /**
-     * <p>The statement to negate. You can use any statement that can be nested.</p>
-     */
     AWS_WAFV2_API bool StatementHasBeenSet() const;
-
-    /**
-     * <p>The statement to negate. You can use any statement that can be nested.</p>
-     */
     AWS_WAFV2_API void SetStatement(const Statement& value);
-
-    /**
-     * <p>The statement to negate. You can use any statement that can be nested.</p>
-     */
     AWS_WAFV2_API void SetStatement(Statement&& value);
-
-    /**
-     * <p>The statement to negate. You can use any statement that can be nested.</p>
-     */
     AWS_WAFV2_API NotStatement& WithStatement(const Statement& value);
-
-    /**
-     * <p>The statement to negate. You can use any statement that can be nested.</p>
-     */
     AWS_WAFV2_API NotStatement& WithStatement(Statement&& value);
-
+    ///@}
   private:
 
     std::shared_ptr<Statement> m_statement;

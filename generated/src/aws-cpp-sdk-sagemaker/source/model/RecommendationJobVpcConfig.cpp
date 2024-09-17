@@ -24,9 +24,8 @@ RecommendationJobVpcConfig::RecommendationJobVpcConfig() :
 {
 }
 
-RecommendationJobVpcConfig::RecommendationJobVpcConfig(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+RecommendationJobVpcConfig::RecommendationJobVpcConfig(JsonView jsonValue)
+  : RecommendationJobVpcConfig()
 {
   *this = jsonValue;
 }

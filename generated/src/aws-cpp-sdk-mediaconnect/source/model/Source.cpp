@@ -40,25 +40,8 @@ Source::Source() :
 {
 }
 
-Source::Source(JsonView jsonValue) : 
-    m_dataTransferSubscriberFeePercent(0),
-    m_dataTransferSubscriberFeePercentHasBeenSet(false),
-    m_decryptionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_ingestIpHasBeenSet(false),
-    m_ingestPort(0),
-    m_ingestPortHasBeenSet(false),
-    m_mediaStreamSourceConfigurationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_transportHasBeenSet(false),
-    m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false),
-    m_gatewayBridgeSourceHasBeenSet(false)
+Source::Source(JsonView jsonValue)
+  : Source()
 {
   *this = jsonValue;
 }

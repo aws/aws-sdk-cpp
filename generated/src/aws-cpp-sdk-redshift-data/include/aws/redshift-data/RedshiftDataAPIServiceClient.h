@@ -455,13 +455,13 @@ namespace RedshiftDataAPIService
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListStatements">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStatementsOutcome ListStatements(const Model::ListStatementsRequest& request) const;
+        virtual Model::ListStatementsOutcome ListStatements(const Model::ListStatementsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStatements that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStatementsRequestT = Model::ListStatementsRequest>
-        Model::ListStatementsOutcomeCallable ListStatementsCallable(const ListStatementsRequestT& request) const
+        Model::ListStatementsOutcomeCallable ListStatementsCallable(const ListStatementsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftDataAPIServiceClient::ListStatements, request);
         }
@@ -470,7 +470,7 @@ namespace RedshiftDataAPIService
          * An Async wrapper for ListStatements that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStatementsRequestT = Model::ListStatementsRequest>
-        void ListStatementsAsync(const ListStatementsRequestT& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStatementsAsync(const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStatementsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftDataAPIServiceClient::ListStatements, request, handler, context);
         }
@@ -539,7 +539,6 @@ namespace RedshiftDataAPIService
       void init(const RedshiftDataAPIServiceClientConfiguration& clientConfiguration);
 
       RedshiftDataAPIServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> m_endpointProvider;
   };
 

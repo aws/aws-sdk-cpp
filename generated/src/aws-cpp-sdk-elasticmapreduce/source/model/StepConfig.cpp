@@ -26,11 +26,8 @@ StepConfig::StepConfig() :
 {
 }
 
-StepConfig::StepConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_actionOnFailure(ActionOnFailure::NOT_SET),
-    m_actionOnFailureHasBeenSet(false),
-    m_hadoopJarStepHasBeenSet(false)
+StepConfig::StepConfig(JsonView jsonValue)
+  : StepConfig()
 {
   *this = jsonValue;
 }

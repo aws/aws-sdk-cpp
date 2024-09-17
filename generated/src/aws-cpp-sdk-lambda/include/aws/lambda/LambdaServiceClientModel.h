@@ -36,12 +36,15 @@
 #include <aws/lambda/model/GetFunctionConcurrencyResult.h>
 #include <aws/lambda/model/GetFunctionConfigurationResult.h>
 #include <aws/lambda/model/GetFunctionEventInvokeConfigResult.h>
+#include <aws/lambda/model/GetFunctionRecursionConfigResult.h>
 #include <aws/lambda/model/GetFunctionUrlConfigResult.h>
 #include <aws/lambda/model/GetLayerVersionResult.h>
 #include <aws/lambda/model/GetLayerVersionByArnResult.h>
 #include <aws/lambda/model/GetLayerVersionPolicyResult.h>
 #include <aws/lambda/model/GetPolicyResult.h>
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigResult.h>
+#include <aws/lambda/model/GetPublicAccessBlockConfigResult.h>
+#include <aws/lambda/model/GetResourcePolicyResult.h>
 #include <aws/lambda/model/GetRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/InvokeResult.h>
 #include <aws/lambda/model/ListAliasesResult.h>
@@ -61,7 +64,10 @@
 #include <aws/lambda/model/PutFunctionCodeSigningConfigResult.h>
 #include <aws/lambda/model/PutFunctionConcurrencyResult.h>
 #include <aws/lambda/model/PutFunctionEventInvokeConfigResult.h>
+#include <aws/lambda/model/PutFunctionRecursionConfigResult.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigResult.h>
+#include <aws/lambda/model/PutPublicAccessBlockConfigResult.h>
+#include <aws/lambda/model/PutResourcePolicyResult.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigResult.h>
 #include <aws/lambda/model/UpdateAliasResult.h>
 #include <aws/lambda/model/UpdateCodeSigningConfigResult.h>
@@ -70,6 +76,11 @@
 #include <aws/lambda/model/UpdateFunctionConfigurationResult.h>
 #include <aws/lambda/model/UpdateFunctionEventInvokeConfigResult.h>
 #include <aws/lambda/model/UpdateFunctionUrlConfigResult.h>
+#include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
+#include <aws/lambda/model/ListEventSourceMappingsRequest.h>
+#include <aws/lambda/model/ListLayersRequest.h>
+#include <aws/lambda/model/GetAccountSettingsRequest.h>
+#include <aws/lambda/model/ListFunctionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in LambdaClient header */
 
@@ -104,7 +115,7 @@ namespace Aws
 
   namespace Lambda
   {
-    using LambdaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LambdaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LambdaEndpointProviderBase = Aws::Lambda::Endpoint::LambdaEndpointProviderBase;
     using LambdaEndpointProvider = Aws::Lambda::Endpoint::LambdaEndpointProvider;
 
@@ -128,6 +139,7 @@ namespace Aws
       class DeleteFunctionUrlConfigRequest;
       class DeleteLayerVersionRequest;
       class DeleteProvisionedConcurrencyConfigRequest;
+      class DeleteResourcePolicyRequest;
       class GetAccountSettingsRequest;
       class GetAliasRequest;
       class GetCodeSigningConfigRequest;
@@ -137,12 +149,15 @@ namespace Aws
       class GetFunctionConcurrencyRequest;
       class GetFunctionConfigurationRequest;
       class GetFunctionEventInvokeConfigRequest;
+      class GetFunctionRecursionConfigRequest;
       class GetFunctionUrlConfigRequest;
       class GetLayerVersionRequest;
       class GetLayerVersionByArnRequest;
       class GetLayerVersionPolicyRequest;
       class GetPolicyRequest;
       class GetProvisionedConcurrencyConfigRequest;
+      class GetPublicAccessBlockConfigRequest;
+      class GetResourcePolicyRequest;
       class GetRuntimeManagementConfigRequest;
       class InvokeRequest;
       class InvokeWithResponseStreamRequest;
@@ -163,7 +178,10 @@ namespace Aws
       class PutFunctionCodeSigningConfigRequest;
       class PutFunctionConcurrencyRequest;
       class PutFunctionEventInvokeConfigRequest;
+      class PutFunctionRecursionConfigRequest;
       class PutProvisionedConcurrencyConfigRequest;
+      class PutPublicAccessBlockConfigRequest;
+      class PutResourcePolicyRequest;
       class PutRuntimeManagementConfigRequest;
       class RemoveLayerVersionPermissionRequest;
       class RemovePermissionRequest;
@@ -196,6 +214,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionUrlConfigOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteLayerVersionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteProvisionedConcurrencyConfigOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<GetAccountSettingsResult, LambdaError> GetAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<GetAliasResult, LambdaError> GetAliasOutcome;
       typedef Aws::Utils::Outcome<GetCodeSigningConfigResult, LambdaError> GetCodeSigningConfigOutcome;
@@ -205,12 +224,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetFunctionConcurrencyResult, LambdaError> GetFunctionConcurrencyOutcome;
       typedef Aws::Utils::Outcome<GetFunctionConfigurationResult, LambdaError> GetFunctionConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetFunctionEventInvokeConfigResult, LambdaError> GetFunctionEventInvokeConfigOutcome;
+      typedef Aws::Utils::Outcome<GetFunctionRecursionConfigResult, LambdaError> GetFunctionRecursionConfigOutcome;
       typedef Aws::Utils::Outcome<GetFunctionUrlConfigResult, LambdaError> GetFunctionUrlConfigOutcome;
       typedef Aws::Utils::Outcome<GetLayerVersionResult, LambdaError> GetLayerVersionOutcome;
       typedef Aws::Utils::Outcome<GetLayerVersionByArnResult, LambdaError> GetLayerVersionByArnOutcome;
       typedef Aws::Utils::Outcome<GetLayerVersionPolicyResult, LambdaError> GetLayerVersionPolicyOutcome;
       typedef Aws::Utils::Outcome<GetPolicyResult, LambdaError> GetPolicyOutcome;
       typedef Aws::Utils::Outcome<GetProvisionedConcurrencyConfigResult, LambdaError> GetProvisionedConcurrencyConfigOutcome;
+      typedef Aws::Utils::Outcome<GetPublicAccessBlockConfigResult, LambdaError> GetPublicAccessBlockConfigOutcome;
+      typedef Aws::Utils::Outcome<GetResourcePolicyResult, LambdaError> GetResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<GetRuntimeManagementConfigResult, LambdaError> GetRuntimeManagementConfigOutcome;
       typedef Aws::Utils::Outcome<InvokeResult, LambdaError> InvokeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> InvokeWithResponseStreamOutcome;
@@ -231,7 +253,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutFunctionCodeSigningConfigResult, LambdaError> PutFunctionCodeSigningConfigOutcome;
       typedef Aws::Utils::Outcome<PutFunctionConcurrencyResult, LambdaError> PutFunctionConcurrencyOutcome;
       typedef Aws::Utils::Outcome<PutFunctionEventInvokeConfigResult, LambdaError> PutFunctionEventInvokeConfigOutcome;
+      typedef Aws::Utils::Outcome<PutFunctionRecursionConfigResult, LambdaError> PutFunctionRecursionConfigOutcome;
       typedef Aws::Utils::Outcome<PutProvisionedConcurrencyConfigResult, LambdaError> PutProvisionedConcurrencyConfigOutcome;
+      typedef Aws::Utils::Outcome<PutPublicAccessBlockConfigResult, LambdaError> PutPublicAccessBlockConfigOutcome;
+      typedef Aws::Utils::Outcome<PutResourcePolicyResult, LambdaError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<PutRuntimeManagementConfigResult, LambdaError> PutRuntimeManagementConfigOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemoveLayerVersionPermissionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemovePermissionOutcome;
@@ -264,6 +289,7 @@ namespace Aws
       typedef std::future<DeleteFunctionUrlConfigOutcome> DeleteFunctionUrlConfigOutcomeCallable;
       typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable;
       typedef std::future<DeleteProvisionedConcurrencyConfigOutcome> DeleteProvisionedConcurrencyConfigOutcomeCallable;
+      typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
       typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
       typedef std::future<GetCodeSigningConfigOutcome> GetCodeSigningConfigOutcomeCallable;
@@ -273,12 +299,15 @@ namespace Aws
       typedef std::future<GetFunctionConcurrencyOutcome> GetFunctionConcurrencyOutcomeCallable;
       typedef std::future<GetFunctionConfigurationOutcome> GetFunctionConfigurationOutcomeCallable;
       typedef std::future<GetFunctionEventInvokeConfigOutcome> GetFunctionEventInvokeConfigOutcomeCallable;
+      typedef std::future<GetFunctionRecursionConfigOutcome> GetFunctionRecursionConfigOutcomeCallable;
       typedef std::future<GetFunctionUrlConfigOutcome> GetFunctionUrlConfigOutcomeCallable;
       typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
       typedef std::future<GetLayerVersionByArnOutcome> GetLayerVersionByArnOutcomeCallable;
       typedef std::future<GetLayerVersionPolicyOutcome> GetLayerVersionPolicyOutcomeCallable;
       typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
       typedef std::future<GetProvisionedConcurrencyConfigOutcome> GetProvisionedConcurrencyConfigOutcomeCallable;
+      typedef std::future<GetPublicAccessBlockConfigOutcome> GetPublicAccessBlockConfigOutcomeCallable;
+      typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
       typedef std::future<GetRuntimeManagementConfigOutcome> GetRuntimeManagementConfigOutcomeCallable;
       typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
       typedef std::future<InvokeWithResponseStreamOutcome> InvokeWithResponseStreamOutcomeCallable;
@@ -299,7 +328,10 @@ namespace Aws
       typedef std::future<PutFunctionCodeSigningConfigOutcome> PutFunctionCodeSigningConfigOutcomeCallable;
       typedef std::future<PutFunctionConcurrencyOutcome> PutFunctionConcurrencyOutcomeCallable;
       typedef std::future<PutFunctionEventInvokeConfigOutcome> PutFunctionEventInvokeConfigOutcomeCallable;
+      typedef std::future<PutFunctionRecursionConfigOutcome> PutFunctionRecursionConfigOutcomeCallable;
       typedef std::future<PutProvisionedConcurrencyConfigOutcome> PutProvisionedConcurrencyConfigOutcomeCallable;
+      typedef std::future<PutPublicAccessBlockConfigOutcome> PutPublicAccessBlockConfigOutcomeCallable;
+      typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<PutRuntimeManagementConfigOutcome> PutRuntimeManagementConfigOutcomeCallable;
       typedef std::future<RemoveLayerVersionPermissionOutcome> RemoveLayerVersionPermissionOutcomeCallable;
       typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
@@ -335,6 +367,7 @@ namespace Aws
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionUrlConfigRequest&, const Model::DeleteFunctionUrlConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionUrlConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteLayerVersionRequest&, const Model::DeleteLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteProvisionedConcurrencyConfigRequest&, const Model::DeleteProvisionedConcurrencyConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProvisionedConcurrencyConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAliasRequest&, const Model::GetAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAliasResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetCodeSigningConfigRequest&, const Model::GetCodeSigningConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCodeSigningConfigResponseReceivedHandler;
@@ -344,12 +377,15 @@ namespace Aws
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionConcurrencyRequest&, const Model::GetFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionConcurrencyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionConfigurationRequest&, const Model::GetFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionConfigurationResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionEventInvokeConfigRequest&, const Model::GetFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionEventInvokeConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetFunctionRecursionConfigRequest&, const Model::GetFunctionRecursionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionRecursionConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionUrlConfigRequest&, const Model::GetFunctionUrlConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionUrlConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionRequest&, const Model::GetLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionByArnRequest&, const Model::GetLayerVersionByArnOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionByArnResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionPolicyRequest&, const Model::GetLayerVersionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionPolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetProvisionedConcurrencyConfigRequest&, const Model::GetProvisionedConcurrencyConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProvisionedConcurrencyConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetPublicAccessBlockConfigRequest&, const Model::GetPublicAccessBlockConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicAccessBlockConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetRuntimeManagementConfigRequest&, const Model::GetRuntimeManagementConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuntimeManagementConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::InvokeRequest&, Model::InvokeOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::InvokeWithResponseStreamRequest&, const Model::InvokeWithResponseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeWithResponseStreamResponseReceivedHandler;
@@ -370,7 +406,10 @@ namespace Aws
     typedef std::function<void(const LambdaClient*, const Model::PutFunctionCodeSigningConfigRequest&, const Model::PutFunctionCodeSigningConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFunctionCodeSigningConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PutFunctionConcurrencyRequest&, const Model::PutFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFunctionConcurrencyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PutFunctionEventInvokeConfigRequest&, const Model::PutFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFunctionEventInvokeConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::PutFunctionRecursionConfigRequest&, const Model::PutFunctionRecursionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFunctionRecursionConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PutProvisionedConcurrencyConfigRequest&, const Model::PutProvisionedConcurrencyConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProvisionedConcurrencyConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::PutPublicAccessBlockConfigRequest&, const Model::PutPublicAccessBlockConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockConfigResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PutRuntimeManagementConfigRequest&, const Model::PutRuntimeManagementConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRuntimeManagementConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::RemoveLayerVersionPermissionRequest&, const Model::RemoveLayerVersionPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveLayerVersionPermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;

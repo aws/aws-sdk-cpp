@@ -24,7 +24,15 @@ namespace Model
 {
 
   /**
-   * <p>Generate response part</p><p><h3>See Also:</h3>   <a
+   * <p>Contains metadata about a part of the generated response that is accompanied
+   * by a citation.</p> <p>This data type is used in the following API
+   * operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent
+   * response</a> – in the <code>generatedResponsePart</code> field</p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+   * response</a> – in the <code>generatedResponsePart</code> field</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GeneratedResponsePart">AWS
    * API Reference</a></p>
    */
@@ -37,24 +45,18 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    ///@{
+    /**
+     * <p>Contains metadata about a textual part of the generated response that is
+     * accompanied by a citation.</p>
+     */
     inline const TextResponsePart& GetTextResponsePart() const{ return m_textResponsePart; }
-
-    
     inline bool TextResponsePartHasBeenSet() const { return m_textResponsePartHasBeenSet; }
-
-    
     inline void SetTextResponsePart(const TextResponsePart& value) { m_textResponsePartHasBeenSet = true; m_textResponsePart = value; }
-
-    
     inline void SetTextResponsePart(TextResponsePart&& value) { m_textResponsePartHasBeenSet = true; m_textResponsePart = std::move(value); }
-
-    
     inline GeneratedResponsePart& WithTextResponsePart(const TextResponsePart& value) { SetTextResponsePart(value); return *this;}
-
-    
     inline GeneratedResponsePart& WithTextResponsePart(TextResponsePart&& value) { SetTextResponsePart(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TextResponsePart m_textResponsePart;

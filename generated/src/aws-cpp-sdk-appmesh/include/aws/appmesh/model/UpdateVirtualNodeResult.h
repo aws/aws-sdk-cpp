@@ -38,53 +38,27 @@ namespace Model
     AWS_APPMESH_API UpdateVirtualNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A full description of the virtual node that was updated.</p>
      */
     inline const VirtualNodeData& GetVirtualNode() const{ return m_virtualNode; }
-
-    /**
-     * <p>A full description of the virtual node that was updated.</p>
-     */
     inline void SetVirtualNode(const VirtualNodeData& value) { m_virtualNode = value; }
-
-    /**
-     * <p>A full description of the virtual node that was updated.</p>
-     */
     inline void SetVirtualNode(VirtualNodeData&& value) { m_virtualNode = std::move(value); }
-
-    /**
-     * <p>A full description of the virtual node that was updated.</p>
-     */
     inline UpdateVirtualNodeResult& WithVirtualNode(const VirtualNodeData& value) { SetVirtualNode(value); return *this;}
-
-    /**
-     * <p>A full description of the virtual node that was updated.</p>
-     */
     inline UpdateVirtualNodeResult& WithVirtualNode(VirtualNodeData&& value) { SetVirtualNode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateVirtualNodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateVirtualNodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateVirtualNodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VirtualNodeData m_virtualNode;

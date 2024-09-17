@@ -33,53 +33,27 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API DeleteSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The deleted snapshot object.</p>
      */
     inline const Snapshot& GetSnapshot() const{ return m_snapshot; }
-
-    /**
-     * <p>The deleted snapshot object.</p>
-     */
     inline void SetSnapshot(const Snapshot& value) { m_snapshot = value; }
-
-    /**
-     * <p>The deleted snapshot object.</p>
-     */
     inline void SetSnapshot(Snapshot&& value) { m_snapshot = std::move(value); }
-
-    /**
-     * <p>The deleted snapshot object.</p>
-     */
     inline DeleteSnapshotResult& WithSnapshot(const Snapshot& value) { SetSnapshot(value); return *this;}
-
-    /**
-     * <p>The deleted snapshot object.</p>
-     */
     inline DeleteSnapshotResult& WithSnapshot(Snapshot&& value) { SetSnapshot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Snapshot m_snapshot;

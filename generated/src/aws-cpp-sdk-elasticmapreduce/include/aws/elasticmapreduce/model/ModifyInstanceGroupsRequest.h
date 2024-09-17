@@ -39,87 +39,33 @@ namespace Model
     AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-
-    /**
-     * <p>The ID of the cluster to which the instance group belongs.</p>
-     */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the cluster to which the instance group belongs.</p>
-     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-
-    /**
-     * <p>The ID of the cluster to which the instance group belongs.</p>
-     */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-
-    /**
-     * <p>The ID of the cluster to which the instance group belongs.</p>
-     */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-
-    /**
-     * <p>The ID of the cluster to which the instance group belongs.</p>
-     */
     inline ModifyInstanceGroupsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-
-    /**
-     * <p>The ID of the cluster to which the instance group belongs.</p>
-     */
     inline ModifyInstanceGroupsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the cluster to which the instance group belongs.</p>
-     */
     inline ModifyInstanceGroupsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Instance groups to change.</p>
      */
     inline const Aws::Vector<InstanceGroupModifyConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
-
-    /**
-     * <p>Instance groups to change.</p>
-     */
     inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
-
-    /**
-     * <p>Instance groups to change.</p>
-     */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
-
-    /**
-     * <p>Instance groups to change.</p>
-     */
     inline void SetInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
-
-    /**
-     * <p>Instance groups to change.</p>
-     */
     inline ModifyInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { SetInstanceGroups(value); return *this;}
-
-    /**
-     * <p>Instance groups to change.</p>
-     */
     inline ModifyInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { SetInstanceGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Instance groups to change.</p>
-     */
     inline ModifyInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupModifyConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
-
-    /**
-     * <p>Instance groups to change.</p>
-     */
     inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_clusterId;

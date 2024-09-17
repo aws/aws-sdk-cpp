@@ -39,85 +39,32 @@ namespace Model
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier for the user or group associated as the resource's
      * delegate.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier for the user or group associated as the resource's
-     * delegate.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier for the user or group associated as the resource's
-     * delegate.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier for the user or group associated as the resource's
-     * delegate.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier for the user or group associated as the resource's
-     * delegate.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier for the user or group associated as the resource's
-     * delegate.</p>
-     */
     inline Delegate& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier for the user or group associated as the resource's
-     * delegate.</p>
-     */
     inline Delegate& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the user or group associated as the resource's
-     * delegate.</p>
-     */
     inline Delegate& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the delegate: user or group.</p>
      */
     inline const MemberType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the delegate: user or group.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the delegate: user or group.</p>
-     */
     inline void SetType(const MemberType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the delegate: user or group.</p>
-     */
     inline void SetType(MemberType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the delegate: user or group.</p>
-     */
     inline Delegate& WithType(const MemberType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the delegate: user or group.</p>
-     */
     inline Delegate& WithType(MemberType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

@@ -25,10 +25,8 @@ DescriptiveBotBuilderSpecification::DescriptiveBotBuilderSpecification() :
 {
 }
 
-DescriptiveBotBuilderSpecification::DescriptiveBotBuilderSpecification(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bedrockModelSpecificationHasBeenSet(false)
+DescriptiveBotBuilderSpecification::DescriptiveBotBuilderSpecification(JsonView jsonValue)
+  : DescriptiveBotBuilderSpecification()
 {
   *this = jsonValue;
 }

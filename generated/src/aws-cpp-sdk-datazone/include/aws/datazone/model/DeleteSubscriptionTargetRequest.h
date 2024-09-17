@@ -32,144 +32,49 @@ namespace Model
     AWS_DATAZONE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon DataZone domain in which the subscription target is
      * deleted.</p>
      */
     inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
     inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
     inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
     inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Amazon DataZone environment in which the subscription target is
      * deleted.</p>
      */
     inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
-
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
     inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
     inline void SetEnvironmentIdentifier(const Aws::String& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = value; }
-
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
     inline void SetEnvironmentIdentifier(Aws::String&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
     inline void SetEnvironmentIdentifier(const char* value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithEnvironmentIdentifier(const Aws::String& value) { SetEnvironmentIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithEnvironmentIdentifier(Aws::String&& value) { SetEnvironmentIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithEnvironmentIdentifier(const char* value) { SetEnvironmentIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the subscription target that is deleted.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
     inline DeleteSubscriptionTargetRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainIdentifier;

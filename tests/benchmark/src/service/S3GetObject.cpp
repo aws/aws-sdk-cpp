@@ -2,11 +2,23 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#ifdef AWS_SDK_BENCHMARK_USE_CRT
+#include <aws/s3-crt/model/CreateBucketRequest.h>
+#include <aws/s3-crt/model/DeleteBucketRequest.h>
+#include <aws/s3-crt/model/PutObjectRequest.h>
+#include <aws/s3-crt/model/GetObjectRequest.h>
+#include <aws/s3-crt/model/DeleteObjectRequest.h>
+using namespace Aws::S3Crt;
+using namespace Aws::S3Crt::Model;
+#else
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+using namespace Aws::S3;
+using namespace Aws::S3::Model;
+#endif
 #include <aws/core/utils/UUID.h>
 #include <service/S3GetObject.h>
 #include <service/S3Utils.h>
@@ -15,8 +27,6 @@
 
 using namespace Aws;
 using namespace Aws::Utils;
-using namespace Aws::S3;
-using namespace Aws::S3::Model;
 using namespace std::chrono;
 
 Benchmark::TestFunction Benchmark::S3GetObject::CreateTestFunction() {
@@ -30,7 +40,19 @@ Benchmark::TestFunction Benchmark::S3GetObject::CreateTestFunction() {
         metricsEmitter->EmitMetricForOp("CreateBucket",
             S3Utils::getMetricDimensions(dimensions, {{"Service", "S3"}, {"Operation", "CreateBucket"}}),
             [&]() -> bool {
-                auto response = s3->CreateBucket(CreateBucketRequest().WithBucket(bucketName));
+                auto request = CreateBucketRequest()
+                        .WithBucket(bucketName);
+                if (dimensions.find("BucketType") != dimensions.end() && dimensions.at("BucketType") == "S3Express") {
+                    request.WithCreateBucketConfiguration(CreateBucketConfiguration()
+                                                                  .WithLocation(LocationInfo()
+                                                                                        .WithType(LocationType::AvailabilityZone)
+                                                                                        .WithName("use1-az2"))
+                                                                  .WithBucket(BucketInfo()
+                                                                                      .WithType(BucketType::Directory)
+                                                                                      .WithDataRedundancy(DataRedundancy::SingleAvailabilityZone)));
+                }
+
+                auto response = s3->CreateBucket(request);
                 if (!response.IsSuccess()) {
                     std::cout << "Create Bucket Failed With: "
                               << response.GetError().GetMessage()
@@ -54,7 +76,7 @@ Benchmark::TestFunction Benchmark::S3GetObject::CreateTestFunction() {
                 if (!response.IsSuccess()) {
                     std::cout << "Put Object Failed With: "
                               << response.GetError().GetMessage()
-                              << "\n";;
+                              << "\n";
                 }
                 return response.IsSuccess();
             });
@@ -62,8 +84,10 @@ Benchmark::TestFunction Benchmark::S3GetObject::CreateTestFunction() {
         // Run GetObject requests
         const auto timeToEnd = duration_cast<milliseconds>(steady_clock::now().time_since_epoch()).count() +
                                configuration.GetConfiguration().durationMillis;
+        size_t counter = 0;
+        size_t maxRepeats = configuration.GetConfiguration().maxRepeats;
         auto getObjectRequest = GetObjectRequest().WithBucket(bucketName).WithKey(testObjectKey);
-        while (duration_cast<milliseconds>(steady_clock::now().time_since_epoch()).count() < timeToEnd) { ;
+        while (duration_cast<milliseconds>(steady_clock::now().time_since_epoch()).count() < timeToEnd) {
             metricsEmitter->EmitMetricForOp(
                 "GetObject",
                 S3Utils::getMetricDimensions(dimensions, {{"Service", "S3"}, {"Operation", "GetObject"}}),
@@ -72,10 +96,14 @@ Benchmark::TestFunction Benchmark::S3GetObject::CreateTestFunction() {
                     if (!response.IsSuccess()) {
                         std::cout << "Get Object Failed With: "
                                   << response.GetError().GetMessage()
-                                  << "\n";;
+                                  << "\n";
                     }
                     return response.IsSuccess();
                 });
+            counter++;
+            if (maxRepeats && counter == maxRepeats) {
+                break;
+            }
         }
 
         // Clean up

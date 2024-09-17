@@ -23,9 +23,8 @@ GetRuleResult::GetRuleResult() :
 {
 }
 
-GetRuleResult::GetRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isDefault(false),
-    m_priority(0)
+GetRuleResult::GetRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRuleResult()
 {
   *this = result;
 }

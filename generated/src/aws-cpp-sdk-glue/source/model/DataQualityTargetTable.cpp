@@ -25,10 +25,8 @@ DataQualityTargetTable::DataQualityTargetTable() :
 {
 }
 
-DataQualityTargetTable::DataQualityTargetTable(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
+DataQualityTargetTable::DataQualityTargetTable(JsonView jsonValue)
+  : DataQualityTargetTable()
 {
   *this = jsonValue;
 }

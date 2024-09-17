@@ -24,9 +24,8 @@ ExecutionFailedEventDetails::ExecutionFailedEventDetails() :
 {
 }
 
-ExecutionFailedEventDetails::ExecutionFailedEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+ExecutionFailedEventDetails::ExecutionFailedEventDetails(JsonView jsonValue)
+  : ExecutionFailedEventDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DeploymentRecommendation::DeploymentRecommendation() :
 {
 }
 
-DeploymentRecommendation::DeploymentRecommendation(JsonView jsonValue) : 
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_realTimeInferenceRecommendationsHasBeenSet(false)
+DeploymentRecommendation::DeploymentRecommendation(JsonView jsonValue)
+  : DeploymentRecommendation()
 {
   *this = jsonValue;
 }

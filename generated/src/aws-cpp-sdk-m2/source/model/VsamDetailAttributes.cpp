@@ -30,15 +30,8 @@ VsamDetailAttributes::VsamDetailAttributes() :
 {
 }
 
-VsamDetailAttributes::VsamDetailAttributes(JsonView jsonValue) : 
-    m_alternateKeysHasBeenSet(false),
-    m_cacheAtStartup(false),
-    m_cacheAtStartupHasBeenSet(false),
-    m_compressed(false),
-    m_compressedHasBeenSet(false),
-    m_encodingHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false),
-    m_recordFormatHasBeenSet(false)
+VsamDetailAttributes::VsamDetailAttributes(JsonView jsonValue)
+  : VsamDetailAttributes()
 {
   *this = jsonValue;
 }

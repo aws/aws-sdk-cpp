@@ -33,18 +33,8 @@ Properties::Properties() :
 {
 }
 
-Properties::Properties(JsonView jsonValue) : 
-    m_eoCloudCover(0.0),
-    m_eoCloudCoverHasBeenSet(false),
-    m_landsatCloudCoverLand(0.0),
-    m_landsatCloudCoverLandHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_viewOffNadir(0.0),
-    m_viewOffNadirHasBeenSet(false),
-    m_viewSunAzimuth(0.0),
-    m_viewSunAzimuthHasBeenSet(false),
-    m_viewSunElevation(0.0),
-    m_viewSunElevationHasBeenSet(false)
+Properties::Properties(JsonView jsonValue)
+  : Properties()
 {
   *this = jsonValue;
 }

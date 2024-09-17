@@ -309,7 +309,6 @@ namespace EBS
       void init(const EBSClientConfiguration& clientConfiguration);
 
       EBSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EBSEndpointProviderBase> m_endpointProvider;
   };
 

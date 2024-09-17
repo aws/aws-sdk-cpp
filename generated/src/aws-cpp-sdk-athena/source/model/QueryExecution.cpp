@@ -36,21 +36,8 @@ QueryExecution::QueryExecution() :
 {
 }
 
-QueryExecution::QueryExecution(JsonView jsonValue) : 
-    m_queryExecutionIdHasBeenSet(false),
-    m_queryHasBeenSet(false),
-    m_statementType(StatementType::NOT_SET),
-    m_statementTypeHasBeenSet(false),
-    m_resultConfigurationHasBeenSet(false),
-    m_resultReuseConfigurationHasBeenSet(false),
-    m_queryExecutionContextHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_executionParametersHasBeenSet(false),
-    m_substatementTypeHasBeenSet(false),
-    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
+QueryExecution::QueryExecution(JsonView jsonValue)
+  : QueryExecution()
 {
   *this = jsonValue;
 }

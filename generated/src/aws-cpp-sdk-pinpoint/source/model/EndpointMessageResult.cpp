@@ -30,15 +30,8 @@ EndpointMessageResult::EndpointMessageResult() :
 {
 }
 
-EndpointMessageResult::EndpointMessageResult(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_deliveryStatus(DeliveryStatus::NOT_SET),
-    m_deliveryStatusHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_updatedTokenHasBeenSet(false)
+EndpointMessageResult::EndpointMessageResult(JsonView jsonValue)
+  : EndpointMessageResult()
 {
   *this = jsonValue;
 }

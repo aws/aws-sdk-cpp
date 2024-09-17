@@ -39,51 +39,20 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The desired authorization scope for the Amazon Honeycode account. </p>
      */
     inline const Aws::Vector<Aws::String>& GetOAuthScopes() const{ return m_oAuthScopes; }
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline bool OAuthScopesHasBeenSet() const { return m_oAuthScopesHasBeenSet; }
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline void SetOAuthScopes(const Aws::Vector<Aws::String>& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = value; }
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline void SetOAuthScopes(Aws::Vector<Aws::String>&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::move(value); }
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline HoneycodeMetadata& WithOAuthScopes(const Aws::Vector<Aws::String>& value) { SetOAuthScopes(value); return *this;}
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline HoneycodeMetadata& WithOAuthScopes(Aws::Vector<Aws::String>&& value) { SetOAuthScopes(std::move(value)); return *this;}
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline HoneycodeMetadata& AddOAuthScopes(const Aws::String& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline HoneycodeMetadata& AddOAuthScopes(Aws::String&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The desired authorization scope for the Amazon Honeycode account. </p>
-     */
     inline HoneycodeMetadata& AddOAuthScopes(const char* value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_oAuthScopes;

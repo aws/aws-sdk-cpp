@@ -40,67 +40,29 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of Auto-Tune action.</p>
      */
     inline const AutoTuneType& GetAutoTuneType() const{ return m_autoTuneType; }
-
-    /**
-     * <p>The type of Auto-Tune action.</p>
-     */
     inline bool AutoTuneTypeHasBeenSet() const { return m_autoTuneTypeHasBeenSet; }
-
-    /**
-     * <p>The type of Auto-Tune action.</p>
-     */
     inline void SetAutoTuneType(const AutoTuneType& value) { m_autoTuneTypeHasBeenSet = true; m_autoTuneType = value; }
-
-    /**
-     * <p>The type of Auto-Tune action.</p>
-     */
     inline void SetAutoTuneType(AutoTuneType&& value) { m_autoTuneTypeHasBeenSet = true; m_autoTuneType = std::move(value); }
-
-    /**
-     * <p>The type of Auto-Tune action.</p>
-     */
     inline AutoTune& WithAutoTuneType(const AutoTuneType& value) { SetAutoTuneType(value); return *this;}
-
-    /**
-     * <p>The type of Auto-Tune action.</p>
-     */
     inline AutoTune& WithAutoTuneType(AutoTuneType&& value) { SetAutoTuneType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about an Auto-Tune action.</p>
      */
     inline const AutoTuneDetails& GetAutoTuneDetails() const{ return m_autoTuneDetails; }
-
-    /**
-     * <p>Details about an Auto-Tune action.</p>
-     */
     inline bool AutoTuneDetailsHasBeenSet() const { return m_autoTuneDetailsHasBeenSet; }
-
-    /**
-     * <p>Details about an Auto-Tune action.</p>
-     */
     inline void SetAutoTuneDetails(const AutoTuneDetails& value) { m_autoTuneDetailsHasBeenSet = true; m_autoTuneDetails = value; }
-
-    /**
-     * <p>Details about an Auto-Tune action.</p>
-     */
     inline void SetAutoTuneDetails(AutoTuneDetails&& value) { m_autoTuneDetailsHasBeenSet = true; m_autoTuneDetails = std::move(value); }
-
-    /**
-     * <p>Details about an Auto-Tune action.</p>
-     */
     inline AutoTune& WithAutoTuneDetails(const AutoTuneDetails& value) { SetAutoTuneDetails(value); return *this;}
-
-    /**
-     * <p>Details about an Auto-Tune action.</p>
-     */
     inline AutoTune& WithAutoTuneDetails(AutoTuneDetails&& value) { SetAutoTuneDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutoTuneType m_autoTuneType;

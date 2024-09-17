@@ -25,10 +25,8 @@ OFIModelPerformance::OFIModelPerformance() :
 {
 }
 
-OFIModelPerformance::OFIModelPerformance(JsonView jsonValue) : 
-    m_auc(0.0),
-    m_aucHasBeenSet(false),
-    m_uncertaintyRangeHasBeenSet(false)
+OFIModelPerformance::OFIModelPerformance(JsonView jsonValue)
+  : OFIModelPerformance()
 {
   *this = jsonValue;
 }

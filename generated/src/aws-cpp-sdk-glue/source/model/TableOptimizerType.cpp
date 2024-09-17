@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int compaction_HASH = HashingUtils::HashString("compaction");
+        static const int retention_HASH = HashingUtils::HashString("retention");
+        static const int orphan_file_deletion_HASH = HashingUtils::HashString("orphan_file_deletion");
 
 
         TableOptimizerType GetTableOptimizerTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == compaction_HASH)
           {
             return TableOptimizerType::compaction;
+          }
+          else if (hashCode == retention_HASH)
+          {
+            return TableOptimizerType::retention;
+          }
+          else if (hashCode == orphan_file_deletion_HASH)
+          {
+            return TableOptimizerType::orphan_file_deletion;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case TableOptimizerType::compaction:
             return "compaction";
+          case TableOptimizerType::retention:
+            return "retention";
+          case TableOptimizerType::orphan_file_deletion:
+            return "orphan_file_deletion";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

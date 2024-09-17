@@ -39,67 +39,29 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of artifact in the location.</p>
      */
     inline const ArtifactLocationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of artifact in the location.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of artifact in the location.</p>
-     */
     inline void SetType(const ArtifactLocationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of artifact in the location.</p>
-     */
     inline void SetType(ArtifactLocationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of artifact in the location.</p>
-     */
     inline ArtifactLocation& WithType(const ArtifactLocationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of artifact in the location.</p>
-     */
     inline ArtifactLocation& WithType(ArtifactLocationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 bucket that contains the artifact.</p>
      */
     inline const S3ArtifactLocation& GetS3Location() const{ return m_s3Location; }
-
-    /**
-     * <p>The S3 bucket that contains the artifact.</p>
-     */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-
-    /**
-     * <p>The S3 bucket that contains the artifact.</p>
-     */
     inline void SetS3Location(const S3ArtifactLocation& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-
-    /**
-     * <p>The S3 bucket that contains the artifact.</p>
-     */
     inline void SetS3Location(S3ArtifactLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-
-    /**
-     * <p>The S3 bucket that contains the artifact.</p>
-     */
     inline ArtifactLocation& WithS3Location(const S3ArtifactLocation& value) { SetS3Location(value); return *this;}
-
-    /**
-     * <p>The S3 bucket that contains the artifact.</p>
-     */
     inline ArtifactLocation& WithS3Location(S3ArtifactLocation&& value) { SetS3Location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArtifactLocationType m_type;

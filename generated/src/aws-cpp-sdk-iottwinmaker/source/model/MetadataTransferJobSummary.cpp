@@ -28,13 +28,8 @@ MetadataTransferJobSummary::MetadataTransferJobSummary() :
 {
 }
 
-MetadataTransferJobSummary::MetadataTransferJobSummary(JsonView jsonValue) : 
-    m_metadataTransferJobIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_progressHasBeenSet(false)
+MetadataTransferJobSummary::MetadataTransferJobSummary(JsonView jsonValue)
+  : MetadataTransferJobSummary()
 {
   *this = jsonValue;
 }

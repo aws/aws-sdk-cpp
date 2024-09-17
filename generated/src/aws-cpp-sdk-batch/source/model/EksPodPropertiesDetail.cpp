@@ -23,24 +23,20 @@ EksPodPropertiesDetail::EksPodPropertiesDetail() :
     m_hostNetwork(false),
     m_hostNetworkHasBeenSet(false),
     m_dnsPolicyHasBeenSet(false),
+    m_imagePullSecretsHasBeenSet(false),
     m_containersHasBeenSet(false),
+    m_initContainersHasBeenSet(false),
     m_volumesHasBeenSet(false),
     m_podNameHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_shareProcessNamespace(false),
+    m_shareProcessNamespaceHasBeenSet(false)
 {
 }
 
-EksPodPropertiesDetail::EksPodPropertiesDetail(JsonView jsonValue) : 
-    m_serviceAccountNameHasBeenSet(false),
-    m_hostNetwork(false),
-    m_hostNetworkHasBeenSet(false),
-    m_dnsPolicyHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_podNameHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+EksPodPropertiesDetail::EksPodPropertiesDetail(JsonView jsonValue)
+  : EksPodPropertiesDetail()
 {
   *this = jsonValue;
 }
@@ -68,6 +64,16 @@ EksPodPropertiesDetail& EksPodPropertiesDetail::operator =(JsonView jsonValue)
     m_dnsPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imagePullSecrets"))
+  {
+    Aws::Utils::Array<JsonView> imagePullSecretsJsonList = jsonValue.GetArray("imagePullSecrets");
+    for(unsigned imagePullSecretsIndex = 0; imagePullSecretsIndex < imagePullSecretsJsonList.GetLength(); ++imagePullSecretsIndex)
+    {
+      m_imagePullSecrets.push_back(imagePullSecretsJsonList[imagePullSecretsIndex].AsObject());
+    }
+    m_imagePullSecretsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("containers"))
   {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
@@ -76,6 +82,16 @@ EksPodPropertiesDetail& EksPodPropertiesDetail::operator =(JsonView jsonValue)
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
     }
     m_containersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("initContainers"))
+  {
+    Aws::Utils::Array<JsonView> initContainersJsonList = jsonValue.GetArray("initContainers");
+    for(unsigned initContainersIndex = 0; initContainersIndex < initContainersJsonList.GetLength(); ++initContainersIndex)
+    {
+      m_initContainers.push_back(initContainersJsonList[initContainersIndex].AsObject());
+    }
+    m_initContainersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("volumes"))
@@ -109,6 +125,13 @@ EksPodPropertiesDetail& EksPodPropertiesDetail::operator =(JsonView jsonValue)
     m_metadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("shareProcessNamespace"))
+  {
+    m_shareProcessNamespace = jsonValue.GetBool("shareProcessNamespace");
+
+    m_shareProcessNamespaceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +157,17 @@ JsonValue EksPodPropertiesDetail::Jsonize() const
 
   }
 
+  if(m_imagePullSecretsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> imagePullSecretsJsonList(m_imagePullSecrets.size());
+   for(unsigned imagePullSecretsIndex = 0; imagePullSecretsIndex < imagePullSecretsJsonList.GetLength(); ++imagePullSecretsIndex)
+   {
+     imagePullSecretsJsonList[imagePullSecretsIndex].AsObject(m_imagePullSecrets[imagePullSecretsIndex].Jsonize());
+   }
+   payload.WithArray("imagePullSecrets", std::move(imagePullSecretsJsonList));
+
+  }
+
   if(m_containersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> containersJsonList(m_containers.size());
@@ -142,6 +176,17 @@ JsonValue EksPodPropertiesDetail::Jsonize() const
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
    }
    payload.WithArray("containers", std::move(containersJsonList));
+
+  }
+
+  if(m_initContainersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> initContainersJsonList(m_initContainers.size());
+   for(unsigned initContainersIndex = 0; initContainersIndex < initContainersJsonList.GetLength(); ++initContainersIndex)
+   {
+     initContainersJsonList[initContainersIndex].AsObject(m_initContainers[initContainersIndex].Jsonize());
+   }
+   payload.WithArray("initContainers", std::move(initContainersJsonList));
 
   }
 
@@ -171,6 +216,12 @@ JsonValue EksPodPropertiesDetail::Jsonize() const
   if(m_metadataHasBeenSet)
   {
    payload.WithObject("metadata", m_metadata.Jsonize());
+
+  }
+
+  if(m_shareProcessNamespaceHasBeenSet)
+  {
+   payload.WithBool("shareProcessNamespace", m_shareProcessNamespace);
 
   }
 

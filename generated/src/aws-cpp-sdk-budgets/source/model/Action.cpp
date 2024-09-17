@@ -36,21 +36,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false),
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_actionThresholdHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_approvalModel(ApprovalModel::NOT_SET),
-    m_approvalModelHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subscribersHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

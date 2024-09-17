@@ -39,36 +39,17 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A reference to the object.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
-
-    /**
-     * <p>A reference to the object.</p>
-     */
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to the object.</p>
-     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-
-    /**
-     * <p>A reference to the object.</p>
-     */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-
-    /**
-     * <p>A reference to the object.</p>
-     */
     inline BatchGetObjectInformation& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-
-    /**
-     * <p>A reference to the object.</p>
-     */
     inline BatchGetObjectInformation& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObjectReference m_objectReference;

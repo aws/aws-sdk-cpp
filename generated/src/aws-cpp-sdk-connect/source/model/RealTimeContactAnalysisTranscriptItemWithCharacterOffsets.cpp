@@ -24,9 +24,8 @@ RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::RealTimeContactAnalys
 {
 }
 
-RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_characterOffsetsHasBeenSet(false)
+RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets(JsonView jsonValue)
+  : RealTimeContactAnalysisTranscriptItemWithCharacterOffsets()
 {
   *this = jsonValue;
 }

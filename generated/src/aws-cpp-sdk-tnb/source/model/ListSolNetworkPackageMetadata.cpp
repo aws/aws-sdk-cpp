@@ -24,9 +24,8 @@ ListSolNetworkPackageMetadata::ListSolNetworkPackageMetadata() :
 {
 }
 
-ListSolNetworkPackageMetadata::ListSolNetworkPackageMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+ListSolNetworkPackageMetadata::ListSolNetworkPackageMetadata(JsonView jsonValue)
+  : ListSolNetworkPackageMetadata()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ CacheSettings::CacheSettings() :
 {
 }
 
-CacheSettings::CacheSettings(JsonView jsonValue) : 
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_minimumTTL(0),
-    m_minimumTTLHasBeenSet(false),
-    m_maximumTTL(0),
-    m_maximumTTLHasBeenSet(false),
-    m_allowedHTTPMethodsHasBeenSet(false),
-    m_cachedHTTPMethodsHasBeenSet(false),
-    m_forwardedCookiesHasBeenSet(false),
-    m_forwardedHeadersHasBeenSet(false),
-    m_forwardedQueryStringsHasBeenSet(false)
+CacheSettings::CacheSettings(JsonView jsonValue)
+  : CacheSettings()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ S3DataAccessAsset::S3DataAccessAsset() :
 {
 }
 
-S3DataAccessAsset::S3DataAccessAsset(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixesHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_s3AccessPointAliasHasBeenSet(false),
-    m_s3AccessPointArnHasBeenSet(false),
-    m_kmsKeysToGrantHasBeenSet(false)
+S3DataAccessAsset::S3DataAccessAsset(JsonView jsonValue)
+  : S3DataAccessAsset()
 {
   *this = jsonValue;
 }

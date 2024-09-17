@@ -38,36 +38,17 @@ namespace Model
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A regular expression used to validate the value of a slot.</p>
      */
     inline const SlotTypeRegexConfiguration& GetRegexConfiguration() const{ return m_regexConfiguration; }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline bool RegexConfigurationHasBeenSet() const { return m_regexConfigurationHasBeenSet; }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline void SetRegexConfiguration(const SlotTypeRegexConfiguration& value) { m_regexConfigurationHasBeenSet = true; m_regexConfiguration = value; }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline void SetRegexConfiguration(SlotTypeRegexConfiguration&& value) { m_regexConfigurationHasBeenSet = true; m_regexConfiguration = std::move(value); }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline SlotTypeConfiguration& WithRegexConfiguration(const SlotTypeRegexConfiguration& value) { SetRegexConfiguration(value); return *this;}
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline SlotTypeConfiguration& WithRegexConfiguration(SlotTypeRegexConfiguration&& value) { SetRegexConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SlotTypeRegexConfiguration m_regexConfiguration;

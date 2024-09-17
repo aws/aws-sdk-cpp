@@ -30,15 +30,8 @@ WatchlistSummary::WatchlistSummary() :
 {
 }
 
-WatchlistSummary::WatchlistSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_defaultWatchlist(false),
-    m_defaultWatchlistHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_watchlistIdHasBeenSet(false)
+WatchlistSummary::WatchlistSummary(JsonView jsonValue)
+  : WatchlistSummary()
 {
   *this = jsonValue;
 }

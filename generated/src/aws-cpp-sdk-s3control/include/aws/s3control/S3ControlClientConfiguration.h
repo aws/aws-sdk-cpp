@@ -14,9 +14,9 @@ namespace Aws
 {
     namespace S3Control
     {
-        struct AWS_S3CONTROL_API S3ControlClientConfiguration : public Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>
+        struct AWS_S3CONTROL_API S3ControlClientConfiguration : public Aws::Client::GenericClientConfiguration
         {
-            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>;
+            using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
             S3ControlClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
@@ -42,6 +42,10 @@ namespace Aws
             S3ControlClientConfiguration(const Client::ClientConfiguration& config);
             bool useArnRegion = false;
             Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
+            /**
+             * The Account ID used to send the request. This is an optional parameter that will be set automatically for operations that require it.
+             */
+            Aws::String accountId;
         private:
             void LoadS3ControlSpecificConfig(const Aws::String& profileName);
         };

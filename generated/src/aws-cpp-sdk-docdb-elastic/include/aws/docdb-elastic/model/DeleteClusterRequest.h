@@ -32,46 +32,19 @@ namespace Model
     AWS_DOCDBELASTIC_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
+     * <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-     */
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-     */
     inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-     */
     inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-     */
     inline DeleteClusterRequest& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-
-    /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-     */
     inline DeleteClusterRequest& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-     */
     inline DeleteClusterRequest& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterArn;

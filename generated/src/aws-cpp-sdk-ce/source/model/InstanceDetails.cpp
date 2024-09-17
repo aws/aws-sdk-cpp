@@ -28,13 +28,8 @@ InstanceDetails::InstanceDetails() :
 {
 }
 
-InstanceDetails::InstanceDetails(JsonView jsonValue) : 
-    m_eC2InstanceDetailsHasBeenSet(false),
-    m_rDSInstanceDetailsHasBeenSet(false),
-    m_redshiftInstanceDetailsHasBeenSet(false),
-    m_elastiCacheInstanceDetailsHasBeenSet(false),
-    m_eSInstanceDetailsHasBeenSet(false),
-    m_memoryDBInstanceDetailsHasBeenSet(false)
+InstanceDetails::InstanceDetails(JsonView jsonValue)
+  : InstanceDetails()
 {
   *this = jsonValue;
 }

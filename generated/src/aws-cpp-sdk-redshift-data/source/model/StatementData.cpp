@@ -27,6 +27,7 @@ StatementData::StatementData() :
     m_queryStringHasBeenSet(false),
     m_queryStringsHasBeenSet(false),
     m_secretArnHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_status(StatusString::NOT_SET),
     m_statusHasBeenSet(false),
@@ -34,19 +35,8 @@ StatementData::StatementData() :
 {
 }
 
-StatementData::StatementData(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isBatchStatement(false),
-    m_isBatchStatementHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_queryStringsHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_statementNameHasBeenSet(false),
-    m_status(StatusString::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+StatementData::StatementData(JsonView jsonValue)
+  : StatementData()
 {
   *this = jsonValue;
 }
@@ -106,6 +96,13 @@ StatementData& StatementData::operator =(JsonView jsonValue)
     m_secretArn = jsonValue.GetString("SecretArn");
 
     m_secretArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SessionId"))
+  {
+    m_sessionId = jsonValue.GetString("SessionId");
+
+    m_sessionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StatementName"))
@@ -184,6 +181,12 @@ JsonValue StatementData::Jsonize() const
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("SessionId", m_sessionId);
 
   }
 

@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace OSIS
 {
 namespace Model
@@ -31,51 +35,43 @@ namespace Model
 
     AWS_OSIS_API Aws::String SerializePayload() const override;
 
+    AWS_OSIS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
+    ///@{
     /**
      * <p>The name of the blueprint to retrieve.</p>
      */
     inline const Aws::String& GetBlueprintName() const{ return m_blueprintName; }
-
-    /**
-     * <p>The name of the blueprint to retrieve.</p>
-     */
     inline bool BlueprintNameHasBeenSet() const { return m_blueprintNameHasBeenSet; }
-
-    /**
-     * <p>The name of the blueprint to retrieve.</p>
-     */
     inline void SetBlueprintName(const Aws::String& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = value; }
-
-    /**
-     * <p>The name of the blueprint to retrieve.</p>
-     */
     inline void SetBlueprintName(Aws::String&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::move(value); }
-
-    /**
-     * <p>The name of the blueprint to retrieve.</p>
-     */
     inline void SetBlueprintName(const char* value) { m_blueprintNameHasBeenSet = true; m_blueprintName.assign(value); }
-
-    /**
-     * <p>The name of the blueprint to retrieve.</p>
-     */
     inline GetPipelineBlueprintRequest& WithBlueprintName(const Aws::String& value) { SetBlueprintName(value); return *this;}
-
-    /**
-     * <p>The name of the blueprint to retrieve.</p>
-     */
     inline GetPipelineBlueprintRequest& WithBlueprintName(Aws::String&& value) { SetBlueprintName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the blueprint to retrieve.</p>
-     */
     inline GetPipelineBlueprintRequest& WithBlueprintName(const char* value) { SetBlueprintName(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
+    inline GetPipelineBlueprintRequest& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+    inline GetPipelineBlueprintRequest& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+    inline GetPipelineBlueprintRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_blueprintName;
     bool m_blueprintNameHasBeenSet = false;
+
+    Aws::String m_format;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

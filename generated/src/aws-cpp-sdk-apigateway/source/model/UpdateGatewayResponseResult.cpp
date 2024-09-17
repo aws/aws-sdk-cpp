@@ -23,9 +23,8 @@ UpdateGatewayResponseResult::UpdateGatewayResponseResult() :
 {
 }
 
-UpdateGatewayResponseResult::UpdateGatewayResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_responseType(GatewayResponseType::NOT_SET),
-    m_defaultResponse(false)
+UpdateGatewayResponseResult::UpdateGatewayResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateGatewayResponseResult()
 {
   *this = result;
 }

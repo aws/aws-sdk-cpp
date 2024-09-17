@@ -35,20 +35,8 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails() :
 {
 }
 
-AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_ipV4AddressesHasBeenSet(false),
-    m_ipV6AddressesHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_iamInstanceProfileArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_virtualizationTypeHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false),
-    m_monitoringHasBeenSet(false)
+AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue)
+  : AwsEc2InstanceDetails()
 {
   *this = jsonValue;
 }

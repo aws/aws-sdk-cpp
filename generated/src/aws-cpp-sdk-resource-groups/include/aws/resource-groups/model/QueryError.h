@@ -26,12 +26,7 @@ namespace Model
 
   /**
    * <p>A two-part error structure that can occur in <code>ListGroupResources</code>
-   * or <code>SearchResources</code> operations on CloudFront stack-based queries.
-   * The error occurs if the CloudFront stack on which the query is based either does
-   * not exist, or has a status that renders the stack inactive. A
-   * <code>QueryError</code> occurrence does not necessarily mean that Resource
-   * Groups could not complete the operation, but the resulting group might have no
-   * member resources.</p><p><h3>See Also:</h3>   <a
+   * or <code>SearchResources</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/QueryError">AWS
    * API Reference</a></p>
    */
@@ -44,109 +39,31 @@ namespace Model
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the error code that was raised.</p>
      */
     inline const QueryErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>Specifies the error code that was raised.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>Specifies the error code that was raised.</p>
-     */
     inline void SetErrorCode(const QueryErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>Specifies the error code that was raised.</p>
-     */
     inline void SetErrorCode(QueryErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>Specifies the error code that was raised.</p>
-     */
     inline QueryError& WithErrorCode(const QueryErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>Specifies the error code that was raised.</p>
-     */
     inline QueryError& WithErrorCode(QueryErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
+     * <p>A message that explains the <code>ErrorCode</code>. </p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
-     */
     inline QueryError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
-     */
     inline QueryError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
-     * state that the specified CloudFront stack does not exist (or no longer exists).
-     * For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states
-     * that the CloudFront stack has a status that is not (or no longer) active, such
-     * as <code>CREATE_FAILED</code>.</p>
-     */
     inline QueryError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     QueryErrorCode m_errorCode;

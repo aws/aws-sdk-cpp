@@ -26,9 +26,8 @@ Limit::Limit() :
 {
 }
 
-Limit::Limit(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_maxHasBeenSet(false)
+Limit::Limit(const XmlNode& xmlNode)
+  : Limit()
 {
   *this = xmlNode;
 }

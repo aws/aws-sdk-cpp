@@ -38,36 +38,17 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details of the <code>AppInstanceAdmin</code>.</p>
      */
     inline const Identity& GetAdmin() const{ return m_admin; }
-
-    /**
-     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
-     */
     inline bool AdminHasBeenSet() const { return m_adminHasBeenSet; }
-
-    /**
-     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
-     */
     inline void SetAdmin(const Identity& value) { m_adminHasBeenSet = true; m_admin = value; }
-
-    /**
-     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
-     */
     inline void SetAdmin(Identity&& value) { m_adminHasBeenSet = true; m_admin = std::move(value); }
-
-    /**
-     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
-     */
     inline AppInstanceAdminSummary& WithAdmin(const Identity& value) { SetAdmin(value); return *this;}
-
-    /**
-     * <p>The details of the <code>AppInstanceAdmin</code>.</p>
-     */
     inline AppInstanceAdminSummary& WithAdmin(Identity&& value) { SetAdmin(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Identity m_admin;

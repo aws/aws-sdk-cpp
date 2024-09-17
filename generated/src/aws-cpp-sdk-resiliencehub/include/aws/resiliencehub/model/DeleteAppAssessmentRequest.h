@@ -33,6 +33,7 @@ namespace Model
     AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
@@ -42,134 +43,30 @@ namespace Model
      * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
-     * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i> guide.</p>
-     */
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
-     * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i> guide.</p>
-     */
     inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
-     * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i> guide.</p>
-     */
     inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
-     * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i> guide.</p>
-     */
     inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
-     * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i> guide.</p>
-     */
     inline DeleteAppAssessmentRequest& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
-     * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i> guide.</p>
-     */
     inline DeleteAppAssessmentRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-     * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
-     * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i> guide.</p>
-     */
     inline DeleteAppAssessmentRequest& WithAssessmentArn(const char* value) { SetAssessmentArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Used for an idempotency token. A client token is a unique, case-sensitive
      * string of up to 64 ASCII characters. You should not reuse the same client token
      * for other API requests.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Used for an idempotency token. A client token is a unique, case-sensitive
-     * string of up to 64 ASCII characters. You should not reuse the same client token
-     * for other API requests.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Used for an idempotency token. A client token is a unique, case-sensitive
-     * string of up to 64 ASCII characters. You should not reuse the same client token
-     * for other API requests.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Used for an idempotency token. A client token is a unique, case-sensitive
-     * string of up to 64 ASCII characters. You should not reuse the same client token
-     * for other API requests.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Used for an idempotency token. A client token is a unique, case-sensitive
-     * string of up to 64 ASCII characters. You should not reuse the same client token
-     * for other API requests.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Used for an idempotency token. A client token is a unique, case-sensitive
-     * string of up to 64 ASCII characters. You should not reuse the same client token
-     * for other API requests.</p>
-     */
     inline DeleteAppAssessmentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Used for an idempotency token. A client token is a unique, case-sensitive
-     * string of up to 64 ASCII characters. You should not reuse the same client token
-     * for other API requests.</p>
-     */
     inline DeleteAppAssessmentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Used for an idempotency token. A client token is a unique, case-sensitive
-     * string of up to 64 ASCII characters. You should not reuse the same client token
-     * for other API requests.</p>
-     */
     inline DeleteAppAssessmentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assessmentArn;

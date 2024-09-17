@@ -24,9 +24,8 @@ CapacityUpdate::CapacityUpdate() :
 {
 }
 
-CapacityUpdate::CapacityUpdate(JsonView jsonValue) : 
-    m_autoScalingHasBeenSet(false),
-    m_provisionedCapacityHasBeenSet(false)
+CapacityUpdate::CapacityUpdate(JsonView jsonValue)
+  : CapacityUpdate()
 {
   *this = jsonValue;
 }

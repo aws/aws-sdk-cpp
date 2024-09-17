@@ -37,36 +37,17 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The compute type.</p>
      */
     inline const Compute& GetName() const{ return m_name; }
-
-    /**
-     * <p>The compute type.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The compute type.</p>
-     */
     inline void SetName(const Compute& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The compute type.</p>
-     */
     inline void SetName(Compute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The compute type.</p>
-     */
     inline ComputeType& WithName(const Compute& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The compute type.</p>
-     */
     inline ComputeType& WithName(Compute&& value) { SetName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Compute m_name;

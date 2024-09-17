@@ -37,46 +37,19 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-     */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-     */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-     */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-     */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-     */
     inline DeleteLocationRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-     */
     inline DeleteLocationRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-     */
     inline DeleteLocationRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_locationArn;

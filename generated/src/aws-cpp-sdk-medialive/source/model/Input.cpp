@@ -38,31 +38,16 @@ Input::Input() :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_srtSettingsHasBeenSet(false),
+    m_inputNetworkLocation(InputNetworkLocation::NOT_SET),
+    m_inputNetworkLocationHasBeenSet(false),
+    m_multicastSettingsHasBeenSet(false)
 {
 }
 
-Input::Input(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_attachedChannelsHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inputClass(InputClass::NOT_SET),
-    m_inputClassHasBeenSet(false),
-    m_inputDevicesHasBeenSet(false),
-    m_inputPartnerIdsHasBeenSet(false),
-    m_inputSourceType(InputSourceType::NOT_SET),
-    m_inputSourceTypeHasBeenSet(false),
-    m_mediaConnectFlowsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_state(InputState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(InputType::NOT_SET),
-    m_typeHasBeenSet(false)
+Input::Input(JsonView jsonValue)
+  : Input()
 {
   *this = jsonValue;
 }
@@ -205,6 +190,27 @@ Input& Input::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("srtSettings"))
+  {
+    m_srtSettings = jsonValue.GetObject("srtSettings");
+
+    m_srtSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputNetworkLocation"))
+  {
+    m_inputNetworkLocation = InputNetworkLocationMapper::GetInputNetworkLocationForName(jsonValue.GetString("inputNetworkLocation"));
+
+    m_inputNetworkLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("multicastSettings"))
+  {
+    m_multicastSettings = jsonValue.GetObject("multicastSettings");
+
+    m_multicastSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -342,6 +348,23 @@ JsonValue Input::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", InputTypeMapper::GetNameForInputType(m_type));
+  }
+
+  if(m_srtSettingsHasBeenSet)
+  {
+   payload.WithObject("srtSettings", m_srtSettings.Jsonize());
+
+  }
+
+  if(m_inputNetworkLocationHasBeenSet)
+  {
+   payload.WithString("inputNetworkLocation", InputNetworkLocationMapper::GetNameForInputNetworkLocation(m_inputNetworkLocation));
+  }
+
+  if(m_multicastSettingsHasBeenSet)
+  {
+   payload.WithObject("multicastSettings", m_multicastSettings.Jsonize());
+
   }
 
   return payload;

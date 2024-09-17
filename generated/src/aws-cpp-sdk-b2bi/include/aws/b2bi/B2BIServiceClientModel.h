@@ -39,6 +39,10 @@
 #include <aws/b2bi/model/UpdatePartnershipResult.h>
 #include <aws/b2bi/model/UpdateProfileResult.h>
 #include <aws/b2bi/model/UpdateTransformerResult.h>
+#include <aws/b2bi/model/ListTransformersRequest.h>
+#include <aws/b2bi/model/ListCapabilitiesRequest.h>
+#include <aws/b2bi/model/ListPartnershipsRequest.h>
+#include <aws/b2bi/model/ListProfilesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in B2BIClient header */
 
@@ -73,7 +77,7 @@ namespace Aws
 
   namespace B2BI
   {
-    using B2BIClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using B2BIClientConfiguration = Aws::Client::GenericClientConfiguration;
     using B2BIEndpointProviderBase = Aws::B2BI::Endpoint::B2BIEndpointProviderBase;
     using B2BIEndpointProvider = Aws::B2BI::Endpoint::B2BIEndpointProvider;
 

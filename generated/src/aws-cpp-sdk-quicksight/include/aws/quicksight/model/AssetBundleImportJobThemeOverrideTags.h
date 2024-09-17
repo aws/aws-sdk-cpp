@@ -40,101 +40,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of theme IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all themes in this asset bundle.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThemeIds() const{ return m_themeIds; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline bool ThemeIdsHasBeenSet() const { return m_themeIdsHasBeenSet; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline void SetThemeIds(const Aws::Vector<Aws::String>& value) { m_themeIdsHasBeenSet = true; m_themeIds = value; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline void SetThemeIds(Aws::Vector<Aws::String>&& value) { m_themeIdsHasBeenSet = true; m_themeIds = std::move(value); }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& WithThemeIds(const Aws::Vector<Aws::String>& value) { SetThemeIds(value); return *this;}
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& WithThemeIds(Aws::Vector<Aws::String>&& value) { SetThemeIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& AddThemeIds(const Aws::String& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& AddThemeIds(Aws::String&& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of theme IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all themes in this asset bundle.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& AddThemeIds(const char* value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tags for the themes that you want to apply overrides to.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags for the themes that you want to apply overrides to.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of tags for the themes that you want to apply overrides to.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of tags for the themes that you want to apply overrides to.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags for the themes that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags for the themes that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags for the themes that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags for the themes that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobThemeOverrideTags& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_themeIds;

@@ -24,9 +24,8 @@ AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails::AwsOpenSearch
 {
 }
 
-AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails(JsonView jsonValue) : 
-    m_availabilityZoneCount(0),
-    m_availabilityZoneCountHasBeenSet(false)
+AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails()
 {
   *this = jsonValue;
 }

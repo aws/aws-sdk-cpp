@@ -37,36 +37,17 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the specified object has a legal hold in place.</p>
      */
     inline const ObjectLockLegalHoldStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Indicates whether the specified object has a legal hold in place.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the specified object has a legal hold in place.</p>
-     */
     inline void SetStatus(const ObjectLockLegalHoldStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Indicates whether the specified object has a legal hold in place.</p>
-     */
     inline void SetStatus(ObjectLockLegalHoldStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Indicates whether the specified object has a legal hold in place.</p>
-     */
     inline ObjectLockLegalHold& WithStatus(const ObjectLockLegalHoldStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Indicates whether the specified object has a legal hold in place.</p>
-     */
     inline ObjectLockLegalHold& WithStatus(ObjectLockLegalHoldStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObjectLockLegalHoldStatus m_status;

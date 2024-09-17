@@ -25,10 +25,8 @@ UpdateAssessmentFrameworkControlSet::UpdateAssessmentFrameworkControlSet() :
 {
 }
 
-UpdateAssessmentFrameworkControlSet::UpdateAssessmentFrameworkControlSet(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_controlsHasBeenSet(false)
+UpdateAssessmentFrameworkControlSet::UpdateAssessmentFrameworkControlSet(JsonView jsonValue)
+  : UpdateAssessmentFrameworkControlSet()
 {
   *this = jsonValue;
 }

@@ -19,32 +19,35 @@ namespace Model
 {
 
 CalculateRouteSummary::CalculateRouteSummary() : 
+    m_routeBBoxHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_distance(0.0),
     m_distanceHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false),
     m_durationSeconds(0.0),
     m_durationSecondsHasBeenSet(false),
-    m_routeBBoxHasBeenSet(false)
+    m_distanceUnit(DistanceUnit::NOT_SET),
+    m_distanceUnitHasBeenSet(false)
 {
 }
 
-CalculateRouteSummary::CalculateRouteSummary(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_routeBBoxHasBeenSet(false)
+CalculateRouteSummary::CalculateRouteSummary(JsonView jsonValue)
+  : CalculateRouteSummary()
 {
   *this = jsonValue;
 }
 
 CalculateRouteSummary& CalculateRouteSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("RouteBBox"))
+  {
+    Aws::Utils::Array<JsonView> routeBBoxJsonList = jsonValue.GetArray("RouteBBox");
+    for(unsigned routeBBoxIndex = 0; routeBBoxIndex < routeBBoxJsonList.GetLength(); ++routeBBoxIndex)
+    {
+      m_routeBBox.push_back(routeBBoxJsonList[routeBBoxIndex].AsDouble());
+    }
+    m_routeBBoxHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
@@ -59,13 +62,6 @@ CalculateRouteSummary& CalculateRouteSummary::operator =(JsonView jsonValue)
     m_distanceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("DistanceUnit"))
-  {
-    m_distanceUnit = DistanceUnitMapper::GetDistanceUnitForName(jsonValue.GetString("DistanceUnit"));
-
-    m_distanceUnitHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("DurationSeconds"))
   {
     m_durationSeconds = jsonValue.GetDouble("DurationSeconds");
@@ -73,14 +69,11 @@ CalculateRouteSummary& CalculateRouteSummary::operator =(JsonView jsonValue)
     m_durationSecondsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RouteBBox"))
+  if(jsonValue.ValueExists("DistanceUnit"))
   {
-    Aws::Utils::Array<JsonView> routeBBoxJsonList = jsonValue.GetArray("RouteBBox");
-    for(unsigned routeBBoxIndex = 0; routeBBoxIndex < routeBBoxJsonList.GetLength(); ++routeBBoxIndex)
-    {
-      m_routeBBox.push_back(routeBBoxJsonList[routeBBoxIndex].AsDouble());
-    }
-    m_routeBBoxHasBeenSet = true;
+    m_distanceUnit = DistanceUnitMapper::GetDistanceUnitForName(jsonValue.GetString("DistanceUnit"));
+
+    m_distanceUnitHasBeenSet = true;
   }
 
   return *this;
@@ -89,6 +82,17 @@ CalculateRouteSummary& CalculateRouteSummary::operator =(JsonView jsonValue)
 JsonValue CalculateRouteSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_routeBBoxHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> routeBBoxJsonList(m_routeBBox.size());
+   for(unsigned routeBBoxIndex = 0; routeBBoxIndex < routeBBoxJsonList.GetLength(); ++routeBBoxIndex)
+   {
+     routeBBoxJsonList[routeBBoxIndex].AsDouble(m_routeBBox[routeBBoxIndex]);
+   }
+   payload.WithArray("RouteBBox", std::move(routeBBoxJsonList));
+
+  }
 
   if(m_dataSourceHasBeenSet)
   {
@@ -102,26 +106,15 @@ JsonValue CalculateRouteSummary::Jsonize() const
 
   }
 
-  if(m_distanceUnitHasBeenSet)
-  {
-   payload.WithString("DistanceUnit", DistanceUnitMapper::GetNameForDistanceUnit(m_distanceUnit));
-  }
-
   if(m_durationSecondsHasBeenSet)
   {
    payload.WithDouble("DurationSeconds", m_durationSeconds);
 
   }
 
-  if(m_routeBBoxHasBeenSet)
+  if(m_distanceUnitHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> routeBBoxJsonList(m_routeBBox.size());
-   for(unsigned routeBBoxIndex = 0; routeBBoxIndex < routeBBoxJsonList.GetLength(); ++routeBBoxIndex)
-   {
-     routeBBoxJsonList[routeBBoxIndex].AsDouble(m_routeBBox[routeBBoxIndex]);
-   }
-   payload.WithArray("RouteBBox", std::move(routeBBoxJsonList));
-
+   payload.WithString("DistanceUnit", DistanceUnitMapper::GetNameForDistanceUnit(m_distanceUnit));
   }
 
   return payload;

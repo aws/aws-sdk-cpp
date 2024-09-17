@@ -38,54 +38,20 @@ namespace Model
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The primary quantum processing unit (QPU) or simulator used to create and run
      * an Amazon Braket job.</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
-
-    /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
-     */
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
-
-    /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
-     */
     inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
-
-    /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
-     */
     inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
-
-    /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
-     */
     inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
-
-    /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
-     */
     inline DeviceConfig& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
-
-    /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
-     */
     inline DeviceConfig& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
-
-    /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
-     */
     inline DeviceConfig& WithDevice(const char* value) { SetDevice(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_device;

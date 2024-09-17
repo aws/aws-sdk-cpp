@@ -23,8 +23,8 @@ InputSerialization::InputSerialization() :
 {
 }
 
-InputSerialization::InputSerialization(JsonView jsonValue) : 
-    m_csvHasBeenSet(false)
+InputSerialization::InputSerialization(JsonView jsonValue)
+  : InputSerialization()
 {
   *this = jsonValue;
 }

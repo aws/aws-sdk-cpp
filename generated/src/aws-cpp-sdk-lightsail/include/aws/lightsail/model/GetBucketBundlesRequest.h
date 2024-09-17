@@ -32,30 +32,16 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A Boolean value that indicates whether to include inactive (unavailable)
      * bundles in the response of your request.</p>
      */
     inline bool GetIncludeInactive() const{ return m_includeInactive; }
-
-    /**
-     * <p>A Boolean value that indicates whether to include inactive (unavailable)
-     * bundles in the response of your request.</p>
-     */
     inline bool IncludeInactiveHasBeenSet() const { return m_includeInactiveHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that indicates whether to include inactive (unavailable)
-     * bundles in the response of your request.</p>
-     */
     inline void SetIncludeInactive(bool value) { m_includeInactiveHasBeenSet = true; m_includeInactive = value; }
-
-    /**
-     * <p>A Boolean value that indicates whether to include inactive (unavailable)
-     * bundles in the response of your request.</p>
-     */
     inline GetBucketBundlesRequest& WithIncludeInactive(bool value) { SetIncludeInactive(value); return *this;}
-
+    ///@}
   private:
 
     bool m_includeInactive;

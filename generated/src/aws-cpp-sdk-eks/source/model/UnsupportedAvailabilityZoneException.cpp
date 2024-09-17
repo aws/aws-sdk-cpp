@@ -26,11 +26,8 @@ UnsupportedAvailabilityZoneException::UnsupportedAvailabilityZoneException() :
 {
 }
 
-UnsupportedAvailabilityZoneException::UnsupportedAvailabilityZoneException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_validZonesHasBeenSet(false)
+UnsupportedAvailabilityZoneException::UnsupportedAvailabilityZoneException(JsonView jsonValue)
+  : UnsupportedAvailabilityZoneException()
 {
   *this = jsonValue;
 }

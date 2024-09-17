@@ -27,12 +27,8 @@ NetworkResourceDefinition::NetworkResourceDefinition() :
 {
 }
 
-NetworkResourceDefinition::NetworkResourceDefinition(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_type(NetworkResourceDefinitionType::NOT_SET),
-    m_typeHasBeenSet(false)
+NetworkResourceDefinition::NetworkResourceDefinition(JsonView jsonValue)
+  : NetworkResourceDefinition()
 {
   *this = jsonValue;
 }

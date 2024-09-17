@@ -25,10 +25,8 @@ TextFieldControlDisplayOptions::TextFieldControlDisplayOptions() :
 {
 }
 
-TextFieldControlDisplayOptions::TextFieldControlDisplayOptions(JsonView jsonValue) : 
-    m_titleOptionsHasBeenSet(false),
-    m_placeholderOptionsHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
+TextFieldControlDisplayOptions::TextFieldControlDisplayOptions(JsonView jsonValue)
+  : TextFieldControlDisplayOptions()
 {
   *this = jsonValue;
 }

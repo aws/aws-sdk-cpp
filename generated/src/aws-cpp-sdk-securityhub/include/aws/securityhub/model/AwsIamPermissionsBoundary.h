@@ -38,87 +38,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
     inline const Aws::String& GetPermissionsBoundaryArn() const{ return m_permissionsBoundaryArn; }
-
-    /**
-     * <p>The ARN of the policy used to set the permissions boundary.</p>
-     */
     inline bool PermissionsBoundaryArnHasBeenSet() const { return m_permissionsBoundaryArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the policy used to set the permissions boundary.</p>
-     */
     inline void SetPermissionsBoundaryArn(const Aws::String& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = value; }
-
-    /**
-     * <p>The ARN of the policy used to set the permissions boundary.</p>
-     */
     inline void SetPermissionsBoundaryArn(Aws::String&& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the policy used to set the permissions boundary.</p>
-     */
     inline void SetPermissionsBoundaryArn(const char* value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn.assign(value); }
-
-    /**
-     * <p>The ARN of the policy used to set the permissions boundary.</p>
-     */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(const Aws::String& value) { SetPermissionsBoundaryArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the policy used to set the permissions boundary.</p>
-     */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(Aws::String&& value) { SetPermissionsBoundaryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the policy used to set the permissions boundary.</p>
-     */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(const char* value) { SetPermissionsBoundaryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The usage type for the permissions boundary.</p>
      */
     inline const Aws::String& GetPermissionsBoundaryType() const{ return m_permissionsBoundaryType; }
-
-    /**
-     * <p>The usage type for the permissions boundary.</p>
-     */
     inline bool PermissionsBoundaryTypeHasBeenSet() const { return m_permissionsBoundaryTypeHasBeenSet; }
-
-    /**
-     * <p>The usage type for the permissions boundary.</p>
-     */
     inline void SetPermissionsBoundaryType(const Aws::String& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = value; }
-
-    /**
-     * <p>The usage type for the permissions boundary.</p>
-     */
     inline void SetPermissionsBoundaryType(Aws::String&& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = std::move(value); }
-
-    /**
-     * <p>The usage type for the permissions boundary.</p>
-     */
     inline void SetPermissionsBoundaryType(const char* value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType.assign(value); }
-
-    /**
-     * <p>The usage type for the permissions boundary.</p>
-     */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryType(const Aws::String& value) { SetPermissionsBoundaryType(value); return *this;}
-
-    /**
-     * <p>The usage type for the permissions boundary.</p>
-     */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryType(Aws::String&& value) { SetPermissionsBoundaryType(std::move(value)); return *this;}
-
-    /**
-     * <p>The usage type for the permissions boundary.</p>
-     */
     inline AwsIamPermissionsBoundary& WithPermissionsBoundaryType(const char* value) { SetPermissionsBoundaryType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_permissionsBoundaryArn;

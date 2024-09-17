@@ -33,18 +33,8 @@ MediaInsightsPipeline::MediaInsightsPipeline() :
 {
 }
 
-MediaInsightsPipeline::MediaInsightsPipeline(JsonView jsonValue) : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationArnHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet(false),
-    m_mediaInsightsRuntimeMetadataHasBeenSet(false),
-    m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet(false),
-    m_s3RecordingSinkRuntimeConfigurationHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_elementStatusesHasBeenSet(false)
+MediaInsightsPipeline::MediaInsightsPipeline(JsonView jsonValue)
+  : MediaInsightsPipeline()
 {
   *this = jsonValue;
 }

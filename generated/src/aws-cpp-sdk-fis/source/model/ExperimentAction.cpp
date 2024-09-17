@@ -30,15 +30,8 @@ ExperimentAction::ExperimentAction() :
 {
 }
 
-ExperimentAction::ExperimentAction(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_startAfterHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+ExperimentAction::ExperimentAction(JsonView jsonValue)
+  : ExperimentAction()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ DirectKafkaSource::DirectKafkaSource() :
 {
 }
 
-DirectKafkaSource::DirectKafkaSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_streamingOptionsHasBeenSet(false),
-    m_windowSize(0),
-    m_windowSizeHasBeenSet(false),
-    m_detectSchema(false),
-    m_detectSchemaHasBeenSet(false),
-    m_dataPreviewOptionsHasBeenSet(false)
+DirectKafkaSource::DirectKafkaSource(JsonView jsonValue)
+  : DirectKafkaSource()
 {
   *this = jsonValue;
 }

@@ -43,6 +43,11 @@
 #include <aws/comprehendmedical/model/StopPHIDetectionJobResult.h>
 #include <aws/comprehendmedical/model/StopRxNormInferenceJobResult.h>
 #include <aws/comprehendmedical/model/StopSNOMEDCTInferenceJobResult.h>
+#include <aws/comprehendmedical/model/ListICD10CMInferenceJobsRequest.h>
+#include <aws/comprehendmedical/model/ListSNOMEDCTInferenceJobsRequest.h>
+#include <aws/comprehendmedical/model/ListPHIDetectionJobsRequest.h>
+#include <aws/comprehendmedical/model/ListEntitiesDetectionV2JobsRequest.h>
+#include <aws/comprehendmedical/model/ListRxNormInferenceJobsRequest.h>
 /* End of service model headers required in ComprehendMedicalClient header */
 
 namespace Aws
@@ -76,7 +81,7 @@ namespace Aws
 
   namespace ComprehendMedical
   {
-    using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ComprehendMedicalEndpointProviderBase = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProviderBase;
     using ComprehendMedicalEndpointProvider = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProvider;
 

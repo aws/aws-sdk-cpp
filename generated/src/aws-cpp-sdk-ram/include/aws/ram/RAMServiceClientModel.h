@@ -52,6 +52,12 @@
 #include <aws/ram/model/TagResourceResult.h>
 #include <aws/ram/model/UntagResourceResult.h>
 #include <aws/ram/model/UpdateResourceShareResult.h>
+#include <aws/ram/model/ListResourceTypesRequest.h>
+#include <aws/ram/model/ListPermissionsRequest.h>
+#include <aws/ram/model/ListReplacePermissionAssociationsWorkRequest.h>
+#include <aws/ram/model/GetResourceShareInvitationsRequest.h>
+#include <aws/ram/model/EnableSharingWithAwsOrganizationRequest.h>
+#include <aws/ram/model/ListPermissionAssociationsRequest.h>
 /* End of service model headers required in RAMClient header */
 
 namespace Aws
@@ -85,7 +91,7 @@ namespace Aws
 
   namespace RAM
   {
-    using RAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RAMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RAMEndpointProviderBase = Aws::RAM::Endpoint::RAMEndpointProviderBase;
     using RAMEndpointProvider = Aws::RAM::Endpoint::RAMEndpointProvider;
 

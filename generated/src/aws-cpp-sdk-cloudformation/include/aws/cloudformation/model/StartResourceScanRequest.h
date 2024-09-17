@@ -36,62 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
      * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to start a new resource scan.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    /**
-     * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to start a new resource scan.</p>
-     */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to start a new resource scan.</p>
-     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    /**
-     * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to start a new resource scan.</p>
-     */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    /**
-     * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to start a new resource scan.</p>
-     */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    /**
-     * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to start a new resource scan.</p>
-     */
     inline StartResourceScanRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    /**
-     * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to start a new resource scan.</p>
-     */
     inline StartResourceScanRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for this <code>StartResourceScan</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to start a new resource scan.</p>
-     */
     inline StartResourceScanRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientRequestToken;

@@ -24,9 +24,8 @@ AutoMLJobArtifacts::AutoMLJobArtifacts() :
 {
 }
 
-AutoMLJobArtifacts::AutoMLJobArtifacts(JsonView jsonValue) : 
-    m_candidateDefinitionNotebookLocationHasBeenSet(false),
-    m_dataExplorationNotebookLocationHasBeenSet(false)
+AutoMLJobArtifacts::AutoMLJobArtifacts(JsonView jsonValue)
+  : AutoMLJobArtifacts()
 {
   *this = jsonValue;
 }

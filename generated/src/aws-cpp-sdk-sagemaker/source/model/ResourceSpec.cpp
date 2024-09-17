@@ -28,13 +28,8 @@ ResourceSpec::ResourceSpec() :
 {
 }
 
-ResourceSpec::ResourceSpec(JsonView jsonValue) : 
-    m_sageMakerImageArnHasBeenSet(false),
-    m_sageMakerImageVersionArnHasBeenSet(false),
-    m_sageMakerImageVersionAliasHasBeenSet(false),
-    m_instanceType(AppInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_lifecycleConfigArnHasBeenSet(false)
+ResourceSpec::ResourceSpec(JsonView jsonValue)
+  : ResourceSpec()
 {
   *this = jsonValue;
 }

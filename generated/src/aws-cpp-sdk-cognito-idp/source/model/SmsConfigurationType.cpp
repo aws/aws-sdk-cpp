@@ -25,10 +25,8 @@ SmsConfigurationType::SmsConfigurationType() :
 {
 }
 
-SmsConfigurationType::SmsConfigurationType(JsonView jsonValue) : 
-    m_snsCallerArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_snsRegionHasBeenSet(false)
+SmsConfigurationType::SmsConfigurationType(JsonView jsonValue)
+  : SmsConfigurationType()
 {
   *this = jsonValue;
 }

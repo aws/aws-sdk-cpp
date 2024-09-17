@@ -22,8 +22,8 @@ DeleteUserByPrincipalIdResult::DeleteUserByPrincipalIdResult() :
 {
 }
 
-DeleteUserByPrincipalIdResult::DeleteUserByPrincipalIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteUserByPrincipalIdResult::DeleteUserByPrincipalIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteUserByPrincipalIdResult()
 {
   *this = result;
 }

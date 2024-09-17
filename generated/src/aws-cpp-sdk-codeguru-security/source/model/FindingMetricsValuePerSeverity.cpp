@@ -32,17 +32,8 @@ FindingMetricsValuePerSeverity::FindingMetricsValuePerSeverity() :
 {
 }
 
-FindingMetricsValuePerSeverity::FindingMetricsValuePerSeverity(JsonView jsonValue) : 
-    m_critical(0.0),
-    m_criticalHasBeenSet(false),
-    m_high(0.0),
-    m_highHasBeenSet(false),
-    m_info(0.0),
-    m_infoHasBeenSet(false),
-    m_low(0.0),
-    m_lowHasBeenSet(false),
-    m_medium(0.0),
-    m_mediumHasBeenSet(false)
+FindingMetricsValuePerSeverity::FindingMetricsValuePerSeverity(JsonView jsonValue)
+  : FindingMetricsValuePerSeverity()
 {
   *this = jsonValue;
 }

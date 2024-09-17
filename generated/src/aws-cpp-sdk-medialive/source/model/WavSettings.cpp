@@ -28,13 +28,8 @@ WavSettings::WavSettings() :
 {
 }
 
-WavSettings::WavSettings(JsonView jsonValue) : 
-    m_bitDepth(0.0),
-    m_bitDepthHasBeenSet(false),
-    m_codingMode(WavCodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_sampleRate(0.0),
-    m_sampleRateHasBeenSet(false)
+WavSettings::WavSettings(JsonView jsonValue)
+  : WavSettings()
 {
   *this = jsonValue;
 }

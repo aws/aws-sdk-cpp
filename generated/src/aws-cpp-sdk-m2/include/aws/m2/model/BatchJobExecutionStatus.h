@@ -24,6 +24,7 @@ namespace Model
     Cancelled,
     Succeeded,
     Failed,
+    Purged,
     Succeeded_With_Warning
   };
 

@@ -28,11 +28,8 @@ EventInfoMap::EventInfoMap() :
 {
 }
 
-EventInfoMap::EventInfoMap(const XmlNode& xmlNode) : 
-    m_eventIdHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_eventDescriptionHasBeenSet(false),
-    m_severityHasBeenSet(false)
+EventInfoMap::EventInfoMap(const XmlNode& xmlNode)
+  : EventInfoMap()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ AlternateIdentifier::AlternateIdentifier() :
 {
 }
 
-AlternateIdentifier::AlternateIdentifier(JsonView jsonValue) : 
-    m_externalIdHasBeenSet(false),
-    m_uniqueAttributeHasBeenSet(false)
+AlternateIdentifier::AlternateIdentifier(JsonView jsonValue)
+  : AlternateIdentifier()
 {
   *this = jsonValue;
 }

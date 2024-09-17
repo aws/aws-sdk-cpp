@@ -29,14 +29,8 @@ AwsEc2VpnConnectionVgwTelemetryDetails::AwsEc2VpnConnectionVgwTelemetryDetails()
 {
 }
 
-AwsEc2VpnConnectionVgwTelemetryDetails::AwsEc2VpnConnectionVgwTelemetryDetails(JsonView jsonValue) : 
-    m_acceptedRouteCount(0),
-    m_acceptedRouteCountHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_outsideIpAddressHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+AwsEc2VpnConnectionVgwTelemetryDetails::AwsEc2VpnConnectionVgwTelemetryDetails(JsonView jsonValue)
+  : AwsEc2VpnConnectionVgwTelemetryDetails()
 {
   *this = jsonValue;
 }

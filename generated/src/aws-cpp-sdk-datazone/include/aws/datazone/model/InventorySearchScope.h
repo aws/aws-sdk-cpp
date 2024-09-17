@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ASSET,
     GLOSSARY,
-    GLOSSARY_TERM
+    GLOSSARY_TERM,
+    DATA_PRODUCT
   };
 
 namespace InventorySearchScopeMapper

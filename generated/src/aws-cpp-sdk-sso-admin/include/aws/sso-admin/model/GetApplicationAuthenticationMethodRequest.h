@@ -35,77 +35,31 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the application.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline GetApplicationAuthenticationMethodRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline GetApplicationAuthenticationMethodRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application.</p>
-     */
     inline GetApplicationAuthenticationMethodRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the type of authentication method for which you want details.</p>
      */
     inline const AuthenticationMethodType& GetAuthenticationMethodType() const{ return m_authenticationMethodType; }
-
-    /**
-     * <p>Specifies the type of authentication method for which you want details.</p>
-     */
     inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of authentication method for which you want details.</p>
-     */
     inline void SetAuthenticationMethodType(const AuthenticationMethodType& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
-
-    /**
-     * <p>Specifies the type of authentication method for which you want details.</p>
-     */
     inline void SetAuthenticationMethodType(AuthenticationMethodType&& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = std::move(value); }
-
-    /**
-     * <p>Specifies the type of authentication method for which you want details.</p>
-     */
     inline GetApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(const AuthenticationMethodType& value) { SetAuthenticationMethodType(value); return *this;}
-
-    /**
-     * <p>Specifies the type of authentication method for which you want details.</p>
-     */
     inline GetApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType&& value) { SetAuthenticationMethodType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

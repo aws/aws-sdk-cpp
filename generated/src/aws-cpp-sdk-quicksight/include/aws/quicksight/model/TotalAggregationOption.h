@@ -39,83 +39,32 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field id that's associated with the total aggregation option.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The field id that's associated with the total aggregation option.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The field id that's associated with the total aggregation option.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The field id that's associated with the total aggregation option.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The field id that's associated with the total aggregation option.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The field id that's associated with the total aggregation option.</p>
-     */
     inline TotalAggregationOption& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The field id that's associated with the total aggregation option.</p>
-     */
     inline TotalAggregationOption& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The field id that's associated with the total aggregation option.</p>
-     */
     inline TotalAggregationOption& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total aggregation function that you want to set for a specified field
      * id.</p>
      */
     inline const TotalAggregationFunction& GetTotalAggregationFunction() const{ return m_totalAggregationFunction; }
-
-    /**
-     * <p>The total aggregation function that you want to set for a specified field
-     * id.</p>
-     */
     inline bool TotalAggregationFunctionHasBeenSet() const { return m_totalAggregationFunctionHasBeenSet; }
-
-    /**
-     * <p>The total aggregation function that you want to set for a specified field
-     * id.</p>
-     */
     inline void SetTotalAggregationFunction(const TotalAggregationFunction& value) { m_totalAggregationFunctionHasBeenSet = true; m_totalAggregationFunction = value; }
-
-    /**
-     * <p>The total aggregation function that you want to set for a specified field
-     * id.</p>
-     */
     inline void SetTotalAggregationFunction(TotalAggregationFunction&& value) { m_totalAggregationFunctionHasBeenSet = true; m_totalAggregationFunction = std::move(value); }
-
-    /**
-     * <p>The total aggregation function that you want to set for a specified field
-     * id.</p>
-     */
     inline TotalAggregationOption& WithTotalAggregationFunction(const TotalAggregationFunction& value) { SetTotalAggregationFunction(value); return *this;}
-
-    /**
-     * <p>The total aggregation function that you want to set for a specified field
-     * id.</p>
-     */
     inline TotalAggregationOption& WithTotalAggregationFunction(TotalAggregationFunction&& value) { SetTotalAggregationFunction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

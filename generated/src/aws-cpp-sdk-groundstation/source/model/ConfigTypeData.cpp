@@ -29,14 +29,8 @@ ConfigTypeData::ConfigTypeData() :
 {
 }
 
-ConfigTypeData::ConfigTypeData(JsonView jsonValue) : 
-    m_antennaDownlinkConfigHasBeenSet(false),
-    m_antennaDownlinkDemodDecodeConfigHasBeenSet(false),
-    m_antennaUplinkConfigHasBeenSet(false),
-    m_dataflowEndpointConfigHasBeenSet(false),
-    m_s3RecordingConfigHasBeenSet(false),
-    m_trackingConfigHasBeenSet(false),
-    m_uplinkEchoConfigHasBeenSet(false)
+ConfigTypeData::ConfigTypeData(JsonView jsonValue)
+  : ConfigTypeData()
 {
   *this = jsonValue;
 }

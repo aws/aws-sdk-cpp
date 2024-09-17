@@ -24,9 +24,8 @@ KMSDisabledException::KMSDisabledException() :
 {
 }
 
-KMSDisabledException::KMSDisabledException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+KMSDisabledException::KMSDisabledException(JsonView jsonValue)
+  : KMSDisabledException()
 {
   *this = jsonValue;
 }

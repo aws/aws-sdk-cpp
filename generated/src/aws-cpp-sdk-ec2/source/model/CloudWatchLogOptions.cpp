@@ -28,11 +28,8 @@ CloudWatchLogOptions::CloudWatchLogOptions() :
 {
 }
 
-CloudWatchLogOptions::CloudWatchLogOptions(const XmlNode& xmlNode) : 
-    m_logEnabled(false),
-    m_logEnabledHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false),
-    m_logOutputFormatHasBeenSet(false)
+CloudWatchLogOptions::CloudWatchLogOptions(const XmlNode& xmlNode)
+  : CloudWatchLogOptions()
 {
   *this = xmlNode;
 }

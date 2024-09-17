@@ -68,6 +68,19 @@
 #include <aws/codebuild/model/UpdateProjectVisibilityResult.h>
 #include <aws/codebuild/model/UpdateReportGroupResult.h>
 #include <aws/codebuild/model/UpdateWebhookResult.h>
+#include <aws/codebuild/model/ListReportsRequest.h>
+#include <aws/codebuild/model/RetryBuildRequest.h>
+#include <aws/codebuild/model/ListProjectsRequest.h>
+#include <aws/codebuild/model/ListBuildBatchesForProjectRequest.h>
+#include <aws/codebuild/model/ListCuratedEnvironmentImagesRequest.h>
+#include <aws/codebuild/model/ListFleetsRequest.h>
+#include <aws/codebuild/model/ListReportGroupsRequest.h>
+#include <aws/codebuild/model/ListSharedReportGroupsRequest.h>
+#include <aws/codebuild/model/ListSourceCredentialsRequest.h>
+#include <aws/codebuild/model/RetryBuildBatchRequest.h>
+#include <aws/codebuild/model/ListBuildsRequest.h>
+#include <aws/codebuild/model/ListBuildBatchesRequest.h>
+#include <aws/codebuild/model/ListSharedProjectsRequest.h>
 /* End of service model headers required in CodeBuildClient header */
 
 namespace Aws
@@ -101,7 +114,7 @@ namespace Aws
 
   namespace CodeBuild
   {
-    using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeBuildEndpointProviderBase = Aws::CodeBuild::Endpoint::CodeBuildEndpointProviderBase;
     using CodeBuildEndpointProvider = Aws::CodeBuild::Endpoint::CodeBuildEndpointProvider;
 

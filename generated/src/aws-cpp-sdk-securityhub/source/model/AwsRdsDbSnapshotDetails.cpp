@@ -55,40 +55,8 @@ AwsRdsDbSnapshotDetails::AwsRdsDbSnapshotDetails() :
 {
 }
 
-AwsRdsDbSnapshotDetails::AwsRdsDbSnapshotDetails(JsonView jsonValue) : 
-    m_dbSnapshotIdentifierHasBeenSet(false),
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_instanceCreateTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceDbSnapshotIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false)
+AwsRdsDbSnapshotDetails::AwsRdsDbSnapshotDetails(JsonView jsonValue)
+  : AwsRdsDbSnapshotDetails()
 {
   *this = jsonValue;
 }

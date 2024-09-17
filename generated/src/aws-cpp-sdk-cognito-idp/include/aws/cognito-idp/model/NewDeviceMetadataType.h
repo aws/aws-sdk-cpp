@@ -37,87 +37,33 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The device key.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline void SetDeviceKey(const char* value) { m_deviceKeyHasBeenSet = true; m_deviceKey.assign(value); }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline NewDeviceMetadataType& WithDeviceKey(const Aws::String& value) { SetDeviceKey(value); return *this;}
-
-    /**
-     * <p>The device key.</p>
-     */
     inline NewDeviceMetadataType& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The device key.</p>
-     */
     inline NewDeviceMetadataType& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The device group key.</p>
      */
     inline const Aws::String& GetDeviceGroupKey() const{ return m_deviceGroupKey; }
-
-    /**
-     * <p>The device group key.</p>
-     */
     inline bool DeviceGroupKeyHasBeenSet() const { return m_deviceGroupKeyHasBeenSet; }
-
-    /**
-     * <p>The device group key.</p>
-     */
     inline void SetDeviceGroupKey(const Aws::String& value) { m_deviceGroupKeyHasBeenSet = true; m_deviceGroupKey = value; }
-
-    /**
-     * <p>The device group key.</p>
-     */
     inline void SetDeviceGroupKey(Aws::String&& value) { m_deviceGroupKeyHasBeenSet = true; m_deviceGroupKey = std::move(value); }
-
-    /**
-     * <p>The device group key.</p>
-     */
     inline void SetDeviceGroupKey(const char* value) { m_deviceGroupKeyHasBeenSet = true; m_deviceGroupKey.assign(value); }
-
-    /**
-     * <p>The device group key.</p>
-     */
     inline NewDeviceMetadataType& WithDeviceGroupKey(const Aws::String& value) { SetDeviceGroupKey(value); return *this;}
-
-    /**
-     * <p>The device group key.</p>
-     */
     inline NewDeviceMetadataType& WithDeviceGroupKey(Aws::String&& value) { SetDeviceGroupKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The device group key.</p>
-     */
     inline NewDeviceMetadataType& WithDeviceGroupKey(const char* value) { SetDeviceGroupKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceKey;

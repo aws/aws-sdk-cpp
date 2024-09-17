@@ -32,17 +32,8 @@ PortMapping::PortMapping() :
 {
 }
 
-PortMapping::PortMapping(JsonView jsonValue) : 
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_hostPort(0),
-    m_hostPortHasBeenSet(false),
-    m_protocol(TransportProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_appProtocol(ApplicationProtocol::NOT_SET),
-    m_appProtocolHasBeenSet(false),
-    m_containerPortRangeHasBeenSet(false)
+PortMapping::PortMapping(JsonView jsonValue)
+  : PortMapping()
 {
   *this = jsonValue;
 }

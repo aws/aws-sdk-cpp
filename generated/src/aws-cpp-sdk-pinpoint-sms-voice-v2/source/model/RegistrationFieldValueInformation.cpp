@@ -27,12 +27,8 @@ RegistrationFieldValueInformation::RegistrationFieldValueInformation() :
 {
 }
 
-RegistrationFieldValueInformation::RegistrationFieldValueInformation(JsonView jsonValue) : 
-    m_fieldPathHasBeenSet(false),
-    m_selectChoicesHasBeenSet(false),
-    m_textValueHasBeenSet(false),
-    m_registrationAttachmentIdHasBeenSet(false),
-    m_deniedReasonHasBeenSet(false)
+RegistrationFieldValueInformation::RegistrationFieldValueInformation(JsonView jsonValue)
+  : RegistrationFieldValueInformation()
 {
   *this = jsonValue;
 }

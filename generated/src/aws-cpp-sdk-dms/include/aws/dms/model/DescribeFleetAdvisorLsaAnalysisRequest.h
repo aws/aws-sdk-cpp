@@ -34,27 +34,17 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Sets the maximum number of records returned in the response.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
-
-    /**
-     * <p>Sets the maximum number of records returned in the response.</p>
-     */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-
-    /**
-     * <p>Sets the maximum number of records returned in the response.</p>
-     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-
-    /**
-     * <p>Sets the maximum number of records returned in the response.</p>
-     */
     inline DescribeFleetAdvisorLsaAnalysisRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If <code>NextToken</code> is returned by a previous response, there are more
      * results available. The value of <code>NextToken</code> is a unique pagination
@@ -62,63 +52,14 @@ namespace Model
      * the next page. Keep all other arguments unchanged. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If <code>NextToken</code> is returned by a previous response, there are more
-     * results available. The value of <code>NextToken</code> is a unique pagination
-     * token for each page. Make the call again using the returned token to retrieve
-     * the next page. Keep all other arguments unchanged. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If <code>NextToken</code> is returned by a previous response, there are more
-     * results available. The value of <code>NextToken</code> is a unique pagination
-     * token for each page. Make the call again using the returned token to retrieve
-     * the next page. Keep all other arguments unchanged. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If <code>NextToken</code> is returned by a previous response, there are more
-     * results available. The value of <code>NextToken</code> is a unique pagination
-     * token for each page. Make the call again using the returned token to retrieve
-     * the next page. Keep all other arguments unchanged. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If <code>NextToken</code> is returned by a previous response, there are more
-     * results available. The value of <code>NextToken</code> is a unique pagination
-     * token for each page. Make the call again using the returned token to retrieve
-     * the next page. Keep all other arguments unchanged. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If <code>NextToken</code> is returned by a previous response, there are more
-     * results available. The value of <code>NextToken</code> is a unique pagination
-     * token for each page. Make the call again using the returned token to retrieve
-     * the next page. Keep all other arguments unchanged. </p>
-     */
     inline DescribeFleetAdvisorLsaAnalysisRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If <code>NextToken</code> is returned by a previous response, there are more
-     * results available. The value of <code>NextToken</code> is a unique pagination
-     * token for each page. Make the call again using the returned token to retrieve
-     * the next page. Keep all other arguments unchanged. </p>
-     */
     inline DescribeFleetAdvisorLsaAnalysisRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If <code>NextToken</code> is returned by a previous response, there are more
-     * results available. The value of <code>NextToken</code> is a unique pagination
-     * token for each page. Make the call again using the returned token to retrieve
-     * the next page. Keep all other arguments unchanged. </p>
-     */
     inline DescribeFleetAdvisorLsaAnalysisRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxRecords;

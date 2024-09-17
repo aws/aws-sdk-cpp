@@ -29,14 +29,8 @@ AdditionalInferenceSpecificationDefinition::AdditionalInferenceSpecificationDefi
 {
 }
 
-AdditionalInferenceSpecificationDefinition::AdditionalInferenceSpecificationDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_supportedTransformInstanceTypesHasBeenSet(false),
-    m_supportedRealtimeInferenceInstanceTypesHasBeenSet(false),
-    m_supportedContentTypesHasBeenSet(false),
-    m_supportedResponseMIMETypesHasBeenSet(false)
+AdditionalInferenceSpecificationDefinition::AdditionalInferenceSpecificationDefinition(JsonView jsonValue)
+  : AdditionalInferenceSpecificationDefinition()
 {
   *this = jsonValue;
 }

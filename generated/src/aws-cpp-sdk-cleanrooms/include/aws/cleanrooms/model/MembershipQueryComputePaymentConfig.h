@@ -36,6 +36,7 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the collaboration member has accepted to pay for query
      * compute costs (<code>TRUE</code>) or has not accepted to pay for query compute
@@ -48,46 +49,10 @@ namespace Model
      * compute costs. </p> </li> </ul>
      */
     inline bool GetIsResponsible() const{ return m_isResponsible; }
-
-    /**
-     * <p>Indicates whether the collaboration member has accepted to pay for query
-     * compute costs (<code>TRUE</code>) or has not accepted to pay for query compute
-     * costs (<code>FALSE</code>).</p> <p>If the collaboration creator has not
-     * specified anyone to pay for query compute costs, then the member who can query
-     * is the default payer. </p> <p>An error message is returned for the following
-     * reasons: </p> <ul> <li> <p>If you set the value to <code>FALSE</code> but you
-     * are responsible to pay for query compute costs. </p> </li> <li> <p>If you set
-     * the value to <code>TRUE</code> but you are not responsible to pay for query
-     * compute costs. </p> </li> </ul>
-     */
     inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the collaboration member has accepted to pay for query
-     * compute costs (<code>TRUE</code>) or has not accepted to pay for query compute
-     * costs (<code>FALSE</code>).</p> <p>If the collaboration creator has not
-     * specified anyone to pay for query compute costs, then the member who can query
-     * is the default payer. </p> <p>An error message is returned for the following
-     * reasons: </p> <ul> <li> <p>If you set the value to <code>FALSE</code> but you
-     * are responsible to pay for query compute costs. </p> </li> <li> <p>If you set
-     * the value to <code>TRUE</code> but you are not responsible to pay for query
-     * compute costs. </p> </li> </ul>
-     */
     inline void SetIsResponsible(bool value) { m_isResponsibleHasBeenSet = true; m_isResponsible = value; }
-
-    /**
-     * <p>Indicates whether the collaboration member has accepted to pay for query
-     * compute costs (<code>TRUE</code>) or has not accepted to pay for query compute
-     * costs (<code>FALSE</code>).</p> <p>If the collaboration creator has not
-     * specified anyone to pay for query compute costs, then the member who can query
-     * is the default payer. </p> <p>An error message is returned for the following
-     * reasons: </p> <ul> <li> <p>If you set the value to <code>FALSE</code> but you
-     * are responsible to pay for query compute costs. </p> </li> <li> <p>If you set
-     * the value to <code>TRUE</code> but you are not responsible to pay for query
-     * compute costs. </p> </li> </ul>
-     */
     inline MembershipQueryComputePaymentConfig& WithIsResponsible(bool value) { SetIsResponsible(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isResponsible;

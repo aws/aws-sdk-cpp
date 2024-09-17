@@ -25,10 +25,8 @@ FleetError::FleetError() :
 {
 }
 
-FleetError::FleetError(JsonView jsonValue) : 
-    m_errorCode(FleetErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+FleetError::FleetError(JsonView jsonValue)
+  : FleetError()
 {
   *this = jsonValue;
 }

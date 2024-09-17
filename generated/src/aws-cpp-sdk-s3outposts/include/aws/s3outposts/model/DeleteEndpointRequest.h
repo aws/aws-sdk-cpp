@@ -38,87 +38,33 @@ namespace Model
     AWS_S3OUTPOSTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the endpoint.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
     inline DeleteEndpointRequest& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
     inline DeleteEndpointRequest& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the endpoint.</p>
-     */
     inline DeleteEndpointRequest& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Outposts. </p>
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
-
-    /**
-     * <p>The ID of the Outposts. </p>
-     */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Outposts. </p>
-     */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
-
-    /**
-     * <p>The ID of the Outposts. </p>
-     */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
-
-    /**
-     * <p>The ID of the Outposts. </p>
-     */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
-
-    /**
-     * <p>The ID of the Outposts. </p>
-     */
     inline DeleteEndpointRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
-
-    /**
-     * <p>The ID of the Outposts. </p>
-     */
     inline DeleteEndpointRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Outposts. </p>
-     */
     inline DeleteEndpointRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointId;

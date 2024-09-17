@@ -23,8 +23,8 @@ DnsConfigChange::DnsConfigChange() :
 {
 }
 
-DnsConfigChange::DnsConfigChange(JsonView jsonValue) : 
-    m_dnsRecordsHasBeenSet(false)
+DnsConfigChange::DnsConfigChange(JsonView jsonValue)
+  : DnsConfigChange()
 {
   *this = jsonValue;
 }

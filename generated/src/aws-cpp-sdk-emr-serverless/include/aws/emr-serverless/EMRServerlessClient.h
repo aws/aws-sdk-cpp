@@ -256,13 +256,13 @@ namespace EMRServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&EMRServerlessClient::ListApplications, request);
         }
@@ -271,9 +271,34 @@ namespace EMRServerless
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&EMRServerlessClient::ListApplications, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all attempt of a job run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListJobRunAttempts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListJobRunAttemptsOutcome ListJobRunAttempts(const Model::ListJobRunAttemptsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListJobRunAttempts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListJobRunAttemptsRequestT = Model::ListJobRunAttemptsRequest>
+        Model::ListJobRunAttemptsOutcomeCallable ListJobRunAttemptsCallable(const ListJobRunAttemptsRequestT& request) const
+        {
+            return SubmitCallable(&EMRServerlessClient::ListJobRunAttempts, request);
+        }
+
+        /**
+         * An Async wrapper for ListJobRunAttempts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListJobRunAttemptsRequestT = Model::ListJobRunAttemptsRequest>
+        void ListJobRunAttemptsAsync(const ListJobRunAttemptsRequestT& request, const ListJobRunAttemptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRServerlessClient::ListJobRunAttempts, request, handler, context);
         }
 
         /**
@@ -493,7 +518,6 @@ namespace EMRServerless
       void init(const EMRServerlessClientConfiguration& clientConfiguration);
 
       EMRServerlessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EMRServerlessEndpointProviderBase> m_endpointProvider;
   };
 

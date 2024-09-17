@@ -85,13 +85,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest& request) const;
+        virtual Model::CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateApiKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateApiKeyRequestT = Model::CreateApiKeyRequest>
-        Model::CreateApiKeyOutcomeCallable CreateApiKeyCallable(const CreateApiKeyRequestT& request) const
+        Model::CreateApiKeyOutcomeCallable CreateApiKeyCallable(const CreateApiKeyRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::CreateApiKey, request);
         }
@@ -100,7 +100,7 @@ namespace APIGateway
          * An Async wrapper for CreateApiKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateApiKeyRequestT = Model::CreateApiKeyRequest>
-        void CreateApiKeyAsync(const CreateApiKeyRequestT& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateApiKeyAsync(const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateApiKeyRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::CreateApiKey, request, handler, context);
         }
@@ -1050,13 +1050,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">AWS
          * API Reference</a></p>
          */
-        virtual Model::GenerateClientCertificateOutcome GenerateClientCertificate(const Model::GenerateClientCertificateRequest& request) const;
+        virtual Model::GenerateClientCertificateOutcome GenerateClientCertificate(const Model::GenerateClientCertificateRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GenerateClientCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GenerateClientCertificateRequestT = Model::GenerateClientCertificateRequest>
-        Model::GenerateClientCertificateOutcomeCallable GenerateClientCertificateCallable(const GenerateClientCertificateRequestT& request) const
+        Model::GenerateClientCertificateOutcomeCallable GenerateClientCertificateCallable(const GenerateClientCertificateRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GenerateClientCertificate, request);
         }
@@ -1065,7 +1065,7 @@ namespace APIGateway
          * An Async wrapper for GenerateClientCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GenerateClientCertificateRequestT = Model::GenerateClientCertificateRequest>
-        void GenerateClientCertificateAsync(const GenerateClientCertificateRequestT& request, const GenerateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GenerateClientCertificateAsync(const GenerateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GenerateClientCertificateRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GenerateClientCertificate, request, handler, context);
         }
@@ -1076,13 +1076,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountOutcome GetAccount(const Model::GetAccountRequest& request) const;
+        virtual Model::GetAccountOutcome GetAccount(const Model::GetAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountRequestT = Model::GetAccountRequest>
-        Model::GetAccountOutcomeCallable GetAccountCallable(const GetAccountRequestT& request) const
+        Model::GetAccountOutcomeCallable GetAccountCallable(const GetAccountRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetAccount, request);
         }
@@ -1091,7 +1091,7 @@ namespace APIGateway
          * An Async wrapper for GetAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountRequestT = Model::GetAccountRequest>
-        void GetAccountAsync(const GetAccountRequestT& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountAsync(const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetAccount, request, handler, context);
         }
@@ -1128,13 +1128,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetApiKeysOutcome GetApiKeys(const Model::GetApiKeysRequest& request) const;
+        virtual Model::GetApiKeysOutcome GetApiKeys(const Model::GetApiKeysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetApiKeys that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetApiKeysRequestT = Model::GetApiKeysRequest>
-        Model::GetApiKeysOutcomeCallable GetApiKeysCallable(const GetApiKeysRequestT& request) const
+        Model::GetApiKeysOutcomeCallable GetApiKeysCallable(const GetApiKeysRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetApiKeys, request);
         }
@@ -1143,7 +1143,7 @@ namespace APIGateway
          * An Async wrapper for GetApiKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetApiKeysRequestT = Model::GetApiKeysRequest>
-        void GetApiKeysAsync(const GetApiKeysRequestT& request, const GetApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetApiKeysAsync(const GetApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetApiKeysRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetApiKeys, request, handler, context);
         }
@@ -1281,13 +1281,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetClientCertificatesOutcome GetClientCertificates(const Model::GetClientCertificatesRequest& request) const;
+        virtual Model::GetClientCertificatesOutcome GetClientCertificates(const Model::GetClientCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetClientCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetClientCertificatesRequestT = Model::GetClientCertificatesRequest>
-        Model::GetClientCertificatesOutcomeCallable GetClientCertificatesCallable(const GetClientCertificatesRequestT& request) const
+        Model::GetClientCertificatesOutcomeCallable GetClientCertificatesCallable(const GetClientCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetClientCertificates, request);
         }
@@ -1296,7 +1296,7 @@ namespace APIGateway
          * An Async wrapper for GetClientCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetClientCertificatesRequestT = Model::GetClientCertificatesRequest>
-        void GetClientCertificatesAsync(const GetClientCertificatesRequestT& request, const GetClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetClientCertificatesAsync(const GetClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetClientCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetClientCertificates, request, handler, context);
         }
@@ -1484,13 +1484,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDomainNamesOutcome GetDomainNames(const Model::GetDomainNamesRequest& request) const;
+        virtual Model::GetDomainNamesOutcome GetDomainNames(const Model::GetDomainNamesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDomainNames that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDomainNamesRequestT = Model::GetDomainNamesRequest>
-        Model::GetDomainNamesOutcomeCallable GetDomainNamesCallable(const GetDomainNamesRequestT& request) const
+        Model::GetDomainNamesOutcomeCallable GetDomainNamesCallable(const GetDomainNamesRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetDomainNames, request);
         }
@@ -1499,7 +1499,7 @@ namespace APIGateway
          * An Async wrapper for GetDomainNames that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDomainNamesRequestT = Model::GetDomainNamesRequest>
-        void GetDomainNamesAsync(const GetDomainNamesRequestT& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDomainNamesAsync(const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDomainNamesRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetDomainNames, request, handler, context);
         }
@@ -1895,13 +1895,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRestApisOutcome GetRestApis(const Model::GetRestApisRequest& request) const;
+        virtual Model::GetRestApisOutcome GetRestApis(const Model::GetRestApisRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRestApis that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRestApisRequestT = Model::GetRestApisRequest>
-        Model::GetRestApisOutcomeCallable GetRestApisCallable(const GetRestApisRequestT& request) const
+        Model::GetRestApisOutcomeCallable GetRestApisCallable(const GetRestApisRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetRestApis, request);
         }
@@ -1910,7 +1910,7 @@ namespace APIGateway
          * An Async wrapper for GetRestApis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRestApisRequestT = Model::GetRestApisRequest>
-        void GetRestApisAsync(const GetRestApisRequestT& request, const GetRestApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRestApisAsync(const GetRestApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRestApisRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetRestApis, request, handler, context);
         }
@@ -1970,13 +1970,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSdkTypesOutcome GetSdkTypes(const Model::GetSdkTypesRequest& request) const;
+        virtual Model::GetSdkTypesOutcome GetSdkTypes(const Model::GetSdkTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSdkTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSdkTypesRequestT = Model::GetSdkTypesRequest>
-        Model::GetSdkTypesOutcomeCallable GetSdkTypesCallable(const GetSdkTypesRequestT& request) const
+        Model::GetSdkTypesOutcomeCallable GetSdkTypesCallable(const GetSdkTypesRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetSdkTypes, request);
         }
@@ -1985,7 +1985,7 @@ namespace APIGateway
          * An Async wrapper for GetSdkTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSdkTypesRequestT = Model::GetSdkTypesRequest>
-        void GetSdkTypesAsync(const GetSdkTypesRequestT& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSdkTypesAsync(const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSdkTypesRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetSdkTypes, request, handler, context);
         }
@@ -2175,13 +2175,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetUsagePlansOutcome GetUsagePlans(const Model::GetUsagePlansRequest& request) const;
+        virtual Model::GetUsagePlansOutcome GetUsagePlans(const Model::GetUsagePlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetUsagePlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetUsagePlansRequestT = Model::GetUsagePlansRequest>
-        Model::GetUsagePlansOutcomeCallable GetUsagePlansCallable(const GetUsagePlansRequestT& request) const
+        Model::GetUsagePlansOutcomeCallable GetUsagePlansCallable(const GetUsagePlansRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetUsagePlans, request);
         }
@@ -2190,7 +2190,7 @@ namespace APIGateway
          * An Async wrapper for GetUsagePlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetUsagePlansRequestT = Model::GetUsagePlansRequest>
-        void GetUsagePlansAsync(const GetUsagePlansRequestT& request, const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetUsagePlansAsync(const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetUsagePlansRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetUsagePlans, request, handler, context);
         }
@@ -2227,13 +2227,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetVpcLinksOutcome GetVpcLinks(const Model::GetVpcLinksRequest& request) const;
+        virtual Model::GetVpcLinksOutcome GetVpcLinks(const Model::GetVpcLinksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetVpcLinks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetVpcLinksRequestT = Model::GetVpcLinksRequest>
-        Model::GetVpcLinksOutcomeCallable GetVpcLinksCallable(const GetVpcLinksRequestT& request) const
+        Model::GetVpcLinksOutcomeCallable GetVpcLinksCallable(const GetVpcLinksRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::GetVpcLinks, request);
         }
@@ -2242,7 +2242,7 @@ namespace APIGateway
          * An Async wrapper for GetVpcLinks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetVpcLinksRequestT = Model::GetVpcLinksRequest>
-        void GetVpcLinksAsync(const GetVpcLinksRequestT& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetVpcLinksAsync(const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetVpcLinksRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::GetVpcLinks, request, handler, context);
         }
@@ -2587,13 +2587,13 @@ namespace APIGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountOutcome UpdateAccount(const Model::UpdateAccountRequest& request) const;
+        virtual Model::UpdateAccountOutcome UpdateAccount(const Model::UpdateAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountRequestT = Model::UpdateAccountRequest>
-        Model::UpdateAccountOutcomeCallable UpdateAccountCallable(const UpdateAccountRequestT& request) const
+        Model::UpdateAccountOutcomeCallable UpdateAccountCallable(const UpdateAccountRequestT& request = {}) const
         {
             return SubmitCallable(&APIGatewayClient::UpdateAccount, request);
         }
@@ -2602,7 +2602,7 @@ namespace APIGateway
          * An Async wrapper for UpdateAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountRequestT = Model::UpdateAccountRequest>
-        void UpdateAccountAsync(const UpdateAccountRequestT& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountAsync(const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountRequestT& request = {}) const
         {
             return SubmitAsync(&APIGatewayClient::UpdateAccount, request, handler, context);
         }
@@ -2938,7 +2938,8 @@ namespace APIGateway
         }
 
         /**
-         * <p>Changes information about a model.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes information about a model. The maximum size of the model is 400
+         * KB.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">AWS
          * API Reference</a></p>
          */
@@ -3147,7 +3148,6 @@ namespace APIGateway
       void init(const APIGatewayClientConfiguration& clientConfiguration);
 
       APIGatewayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<APIGatewayEndpointProviderBase> m_endpointProvider;
   };
 

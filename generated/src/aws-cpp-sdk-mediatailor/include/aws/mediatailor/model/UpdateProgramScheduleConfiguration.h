@@ -38,67 +38,29 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Program clip range configuration.</p>
      */
     inline const ClipRange& GetClipRange() const{ return m_clipRange; }
-
-    /**
-     * <p>Program clip range configuration.</p>
-     */
     inline bool ClipRangeHasBeenSet() const { return m_clipRangeHasBeenSet; }
-
-    /**
-     * <p>Program clip range configuration.</p>
-     */
     inline void SetClipRange(const ClipRange& value) { m_clipRangeHasBeenSet = true; m_clipRange = value; }
-
-    /**
-     * <p>Program clip range configuration.</p>
-     */
     inline void SetClipRange(ClipRange&& value) { m_clipRangeHasBeenSet = true; m_clipRange = std::move(value); }
-
-    /**
-     * <p>Program clip range configuration.</p>
-     */
     inline UpdateProgramScheduleConfiguration& WithClipRange(const ClipRange& value) { SetClipRange(value); return *this;}
-
-    /**
-     * <p>Program clip range configuration.</p>
-     */
     inline UpdateProgramScheduleConfiguration& WithClipRange(ClipRange&& value) { SetClipRange(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Program transition configuration.</p>
      */
     inline const UpdateProgramTransition& GetTransition() const{ return m_transition; }
-
-    /**
-     * <p>Program transition configuration.</p>
-     */
     inline bool TransitionHasBeenSet() const { return m_transitionHasBeenSet; }
-
-    /**
-     * <p>Program transition configuration.</p>
-     */
     inline void SetTransition(const UpdateProgramTransition& value) { m_transitionHasBeenSet = true; m_transition = value; }
-
-    /**
-     * <p>Program transition configuration.</p>
-     */
     inline void SetTransition(UpdateProgramTransition&& value) { m_transitionHasBeenSet = true; m_transition = std::move(value); }
-
-    /**
-     * <p>Program transition configuration.</p>
-     */
     inline UpdateProgramScheduleConfiguration& WithTransition(const UpdateProgramTransition& value) { SetTransition(value); return *this;}
-
-    /**
-     * <p>Program transition configuration.</p>
-     */
     inline UpdateProgramScheduleConfiguration& WithTransition(UpdateProgramTransition&& value) { SetTransition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClipRange m_clipRange;

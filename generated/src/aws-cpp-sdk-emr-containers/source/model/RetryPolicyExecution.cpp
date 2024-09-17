@@ -24,9 +24,8 @@ RetryPolicyExecution::RetryPolicyExecution() :
 {
 }
 
-RetryPolicyExecution::RetryPolicyExecution(JsonView jsonValue) : 
-    m_currentAttemptCount(0),
-    m_currentAttemptCountHasBeenSet(false)
+RetryPolicyExecution::RetryPolicyExecution(JsonView jsonValue)
+  : RetryPolicyExecution()
 {
   *this = jsonValue;
 }

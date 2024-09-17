@@ -38,6 +38,7 @@ namespace Model
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
      * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
@@ -45,63 +46,14 @@ namespace Model
      * in the <i>AppSync User Guide</i>.</p>
      */
     inline const Aws::String& GetGraphQLOperation() const{ return m_graphQLOperation; }
-
-    /**
-     * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
-     * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
-     * in the <i>AppSync User Guide</i>.</p>
-     */
     inline bool GraphQLOperationHasBeenSet() const { return m_graphQLOperationHasBeenSet; }
-
-    /**
-     * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
-     * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
-     * in the <i>AppSync User Guide</i>.</p>
-     */
     inline void SetGraphQLOperation(const Aws::String& value) { m_graphQLOperationHasBeenSet = true; m_graphQLOperation = value; }
-
-    /**
-     * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
-     * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
-     * in the <i>AppSync User Guide</i>.</p>
-     */
     inline void SetGraphQLOperation(Aws::String&& value) { m_graphQLOperationHasBeenSet = true; m_graphQLOperation = std::move(value); }
-
-    /**
-     * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
-     * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
-     * in the <i>AppSync User Guide</i>.</p>
-     */
     inline void SetGraphQLOperation(const char* value) { m_graphQLOperationHasBeenSet = true; m_graphQLOperation.assign(value); }
-
-    /**
-     * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
-     * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
-     * in the <i>AppSync User Guide</i>.</p>
-     */
     inline AppSyncParameters& WithGraphQLOperation(const Aws::String& value) { SetGraphQLOperation(value); return *this;}
-
-    /**
-     * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
-     * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
-     * in the <i>AppSync User Guide</i>.</p>
-     */
     inline AppSyncParameters& WithGraphQLOperation(Aws::String&& value) { SetGraphQLOperation(std::move(value)); return *this;}
-
-    /**
-     * <p>The GraphQL operation; that is, the query, mutation, or subscription to be
-     * parsed and executed by the GraphQL service.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
-     * in the <i>AppSync User Guide</i>.</p>
-     */
     inline AppSyncParameters& WithGraphQLOperation(const char* value) { SetGraphQLOperation(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_graphQLOperation;

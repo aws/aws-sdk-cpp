@@ -32,17 +32,8 @@ DestinationPortMapping::DestinationPortMapping() :
 {
 }
 
-DestinationPortMapping::DestinationPortMapping(JsonView jsonValue) : 
-    m_acceleratorArnHasBeenSet(false),
-    m_acceleratorSocketAddressesHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_endpointGroupRegionHasBeenSet(false),
-    m_destinationSocketAddressHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_destinationTrafficState(CustomRoutingDestinationTrafficState::NOT_SET),
-    m_destinationTrafficStateHasBeenSet(false)
+DestinationPortMapping::DestinationPortMapping(JsonView jsonValue)
+  : DestinationPortMapping()
 {
   *this = jsonValue;
 }

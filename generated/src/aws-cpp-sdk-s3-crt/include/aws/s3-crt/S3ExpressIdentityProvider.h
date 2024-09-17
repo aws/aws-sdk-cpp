@@ -10,6 +10,7 @@
 #include <aws/core/utils/ConcurrentCache.h>
 #include <aws/core/auth/signer/AWSAuthSignerBase.h>
 #include <aws/s3-crt/S3ExpressIdentity.h>
+#include <smithy/identity/resolver/AwsIdentityResolverBase.h>
 #include <thread>
 #include <condition_variable>
 
@@ -20,17 +21,21 @@ namespace Aws {
 
     namespace S3Crt {
         class S3CrtClient;
-        class S3ExpressIdentityProvider {
+        class S3ExpressIdentityProvider: public smithy::IdentityResolverBase<S3ExpressIdentity> {
         public:
             explicit S3ExpressIdentityProvider(const S3CrtClient &s3Client) : m_s3Client(s3Client) {}
 
             virtual S3ExpressIdentity
-            GetS3ExpressIdentity(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) = 0;
+            GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
+
+            ResolveIdentityFutureOutcome
+            getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) override;
+            S3ExpressIdentity
+            getIdentity(const Aws::String &bucketName);
 
             virtual ~S3ExpressIdentityProvider() {}
 
         protected:
-            S3ExpressIdentity getIdentity(const Aws::String &bucketName);
             std::shared_ptr<std::mutex> GetMutexForBucketName(const Aws::String& bucketName);
 
         private:
@@ -53,7 +58,7 @@ namespace Aws {
 
             virtual ~DefaultS3ExpressIdentityProvider() override = default;
 
-            S3ExpressIdentity GetS3ExpressIdentity(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) override;
+            S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
         private:
             mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
@@ -75,7 +80,7 @@ namespace Aws {
 
             virtual ~DefaultAsyncS3ExpressIdentityProvider() override;
 
-            S3ExpressIdentity GetS3ExpressIdentity(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) override;
+            S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
         private:
             void refreshIdentities(std::chrono::minutes refreshPeriod);

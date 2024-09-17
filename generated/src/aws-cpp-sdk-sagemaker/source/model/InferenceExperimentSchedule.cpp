@@ -24,9 +24,8 @@ InferenceExperimentSchedule::InferenceExperimentSchedule() :
 {
 }
 
-InferenceExperimentSchedule::InferenceExperimentSchedule(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+InferenceExperimentSchedule::InferenceExperimentSchedule(JsonView jsonValue)
+  : InferenceExperimentSchedule()
 {
   *this = jsonValue;
 }

@@ -19,27 +19,25 @@ namespace Model
 {
 
 RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping() : 
-    m_vectorFieldHasBeenSet(false),
+    m_metadataFieldHasBeenSet(false),
     m_textFieldHasBeenSet(false),
-    m_metadataFieldHasBeenSet(false)
+    m_vectorFieldHasBeenSet(false)
 {
 }
 
-RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping(JsonView jsonValue) : 
-    m_vectorFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_metadataFieldHasBeenSet(false)
+RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping(JsonView jsonValue)
+  : RedisEnterpriseCloudFieldMapping()
 {
   *this = jsonValue;
 }
 
 RedisEnterpriseCloudFieldMapping& RedisEnterpriseCloudFieldMapping::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("vectorField"))
+  if(jsonValue.ValueExists("metadataField"))
   {
-    m_vectorField = jsonValue.GetString("vectorField");
+    m_metadataField = jsonValue.GetString("metadataField");
 
-    m_vectorFieldHasBeenSet = true;
+    m_metadataFieldHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("textField"))
@@ -49,11 +47,11 @@ RedisEnterpriseCloudFieldMapping& RedisEnterpriseCloudFieldMapping::operator =(J
     m_textFieldHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("metadataField"))
+  if(jsonValue.ValueExists("vectorField"))
   {
-    m_metadataField = jsonValue.GetString("metadataField");
+    m_vectorField = jsonValue.GetString("vectorField");
 
-    m_metadataFieldHasBeenSet = true;
+    m_vectorFieldHasBeenSet = true;
   }
 
   return *this;
@@ -63,9 +61,9 @@ JsonValue RedisEnterpriseCloudFieldMapping::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_vectorFieldHasBeenSet)
+  if(m_metadataFieldHasBeenSet)
   {
-   payload.WithString("vectorField", m_vectorField);
+   payload.WithString("metadataField", m_metadataField);
 
   }
 
@@ -75,9 +73,9 @@ JsonValue RedisEnterpriseCloudFieldMapping::Jsonize() const
 
   }
 
-  if(m_metadataFieldHasBeenSet)
+  if(m_vectorFieldHasBeenSet)
   {
-   payload.WithString("metadataField", m_metadataField);
+   payload.WithString("vectorField", m_vectorField);
 
   }
 

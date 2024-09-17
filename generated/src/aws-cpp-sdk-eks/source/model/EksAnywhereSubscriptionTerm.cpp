@@ -26,11 +26,8 @@ EksAnywhereSubscriptionTerm::EksAnywhereSubscriptionTerm() :
 {
 }
 
-EksAnywhereSubscriptionTerm::EksAnywhereSubscriptionTerm(JsonView jsonValue) : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_unit(EksAnywhereSubscriptionTermUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+EksAnywhereSubscriptionTerm::EksAnywhereSubscriptionTerm(JsonView jsonValue)
+  : EksAnywhereSubscriptionTerm()
 {
   *this = jsonValue;
 }

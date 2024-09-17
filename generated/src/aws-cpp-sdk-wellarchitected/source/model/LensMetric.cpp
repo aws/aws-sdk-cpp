@@ -25,10 +25,8 @@ LensMetric::LensMetric() :
 {
 }
 
-LensMetric::LensMetric(JsonView jsonValue) : 
-    m_lensArnHasBeenSet(false),
-    m_pillarsHasBeenSet(false),
-    m_riskCountsHasBeenSet(false)
+LensMetric::LensMetric(JsonView jsonValue)
+  : LensMetric()
 {
   *this = jsonValue;
 }

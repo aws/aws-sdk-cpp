@@ -24,9 +24,8 @@ EvaluationAnswerOutput::EvaluationAnswerOutput() :
 {
 }
 
-EvaluationAnswerOutput::EvaluationAnswerOutput(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_systemSuggestedValueHasBeenSet(false)
+EvaluationAnswerOutput::EvaluationAnswerOutput(JsonView jsonValue)
+  : EvaluationAnswerOutput()
 {
   *this = jsonValue;
 }

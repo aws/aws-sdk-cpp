@@ -57,7 +57,7 @@ namespace Aws
 
   namespace CloudFrontKeyValueStore
   {
-    using CloudFrontKeyValueStoreClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudFrontKeyValueStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudFrontKeyValueStoreEndpointProviderBase = Aws::CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreEndpointProviderBase;
     using CloudFrontKeyValueStoreEndpointProvider = Aws::CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreEndpointProvider;
 

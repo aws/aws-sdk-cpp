@@ -26,11 +26,8 @@ HyperbandStrategyConfig::HyperbandStrategyConfig() :
 {
 }
 
-HyperbandStrategyConfig::HyperbandStrategyConfig(JsonView jsonValue) : 
-    m_minResource(0),
-    m_minResourceHasBeenSet(false),
-    m_maxResource(0),
-    m_maxResourceHasBeenSet(false)
+HyperbandStrategyConfig::HyperbandStrategyConfig(JsonView jsonValue)
+  : HyperbandStrategyConfig()
 {
   *this = jsonValue;
 }

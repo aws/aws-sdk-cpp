@@ -27,12 +27,8 @@ CustomLineItemChargeDetails::CustomLineItemChargeDetails() :
 {
 }
 
-CustomLineItemChargeDetails::CustomLineItemChargeDetails(JsonView jsonValue) : 
-    m_flatHasBeenSet(false),
-    m_percentageHasBeenSet(false),
-    m_type(CustomLineItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lineItemFiltersHasBeenSet(false)
+CustomLineItemChargeDetails::CustomLineItemChargeDetails(JsonView jsonValue)
+  : CustomLineItemChargeDetails()
 {
   *this = jsonValue;
 }

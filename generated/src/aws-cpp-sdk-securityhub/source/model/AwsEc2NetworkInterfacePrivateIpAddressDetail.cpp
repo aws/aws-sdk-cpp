@@ -24,9 +24,8 @@ AwsEc2NetworkInterfacePrivateIpAddressDetail::AwsEc2NetworkInterfacePrivateIpAdd
 {
 }
 
-AwsEc2NetworkInterfacePrivateIpAddressDetail::AwsEc2NetworkInterfacePrivateIpAddressDetail(JsonView jsonValue) : 
-    m_privateIpAddressHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false)
+AwsEc2NetworkInterfacePrivateIpAddressDetail::AwsEc2NetworkInterfacePrivateIpAddressDetail(JsonView jsonValue)
+  : AwsEc2NetworkInterfacePrivateIpAddressDetail()
 {
   *this = jsonValue;
 }

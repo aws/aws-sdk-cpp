@@ -36,128 +36,47 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline CreateResourceRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline CreateResourceRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline CreateResourceRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parent resource's identifier.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
-
-    /**
-     * <p>The parent resource's identifier.</p>
-     */
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
-
-    /**
-     * <p>The parent resource's identifier.</p>
-     */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
-
-    /**
-     * <p>The parent resource's identifier.</p>
-     */
     inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
-
-    /**
-     * <p>The parent resource's identifier.</p>
-     */
     inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
-
-    /**
-     * <p>The parent resource's identifier.</p>
-     */
     inline CreateResourceRequest& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
-
-    /**
-     * <p>The parent resource's identifier.</p>
-     */
     inline CreateResourceRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The parent resource's identifier.</p>
-     */
     inline CreateResourceRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last path segment for this resource.</p>
      */
     inline const Aws::String& GetPathPart() const{ return m_pathPart; }
-
-    /**
-     * <p>The last path segment for this resource.</p>
-     */
     inline bool PathPartHasBeenSet() const { return m_pathPartHasBeenSet; }
-
-    /**
-     * <p>The last path segment for this resource.</p>
-     */
     inline void SetPathPart(const Aws::String& value) { m_pathPartHasBeenSet = true; m_pathPart = value; }
-
-    /**
-     * <p>The last path segment for this resource.</p>
-     */
     inline void SetPathPart(Aws::String&& value) { m_pathPartHasBeenSet = true; m_pathPart = std::move(value); }
-
-    /**
-     * <p>The last path segment for this resource.</p>
-     */
     inline void SetPathPart(const char* value) { m_pathPartHasBeenSet = true; m_pathPart.assign(value); }
-
-    /**
-     * <p>The last path segment for this resource.</p>
-     */
     inline CreateResourceRequest& WithPathPart(const Aws::String& value) { SetPathPart(value); return *this;}
-
-    /**
-     * <p>The last path segment for this resource.</p>
-     */
     inline CreateResourceRequest& WithPathPart(Aws::String&& value) { SetPathPart(std::move(value)); return *this;}
-
-    /**
-     * <p>The last path segment for this resource.</p>
-     */
     inline CreateResourceRequest& WithPathPart(const char* value) { SetPathPart(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

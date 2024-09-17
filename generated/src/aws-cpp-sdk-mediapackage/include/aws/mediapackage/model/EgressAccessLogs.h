@@ -37,46 +37,19 @@ namespace Model
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Customize the log group name.
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-
-    /**
-     * Customize the log group name.
-     */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-
-    /**
-     * Customize the log group name.
-     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-
-    /**
-     * Customize the log group name.
-     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-
-    /**
-     * Customize the log group name.
-     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-
-    /**
-     * Customize the log group name.
-     */
     inline EgressAccessLogs& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * Customize the log group name.
-     */
     inline EgressAccessLogs& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-
-    /**
-     * Customize the log group name.
-     */
     inline EgressAccessLogs& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logGroupName;

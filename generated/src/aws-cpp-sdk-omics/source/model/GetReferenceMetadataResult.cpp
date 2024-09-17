@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetReferenceMetadataResult::GetReferenceMetadataResult() : 
-    m_status(ReferenceStatus::NOT_SET)
+    m_status(ReferenceStatus::NOT_SET),
+    m_creationType(ReferenceCreationType::NOT_SET)
 {
 }
 
-GetReferenceMetadataResult::GetReferenceMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReferenceStatus::NOT_SET)
+GetReferenceMetadataResult::GetReferenceMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReferenceMetadataResult()
 {
   *this = result;
 }
@@ -88,6 +89,18 @@ GetReferenceMetadataResult& GetReferenceMetadataResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("files"))
   {
     m_files = jsonValue.GetObject("files");
+
+  }
+
+  if(jsonValue.ValueExists("creationType"))
+  {
+    m_creationType = ReferenceCreationTypeMapper::GetReferenceCreationTypeForName(jsonValue.GetString("creationType"));
+
+  }
+
+  if(jsonValue.ValueExists("creationJobId"))
+  {
+    m_creationJobId = jsonValue.GetString("creationJobId");
 
   }
 

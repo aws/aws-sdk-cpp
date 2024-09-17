@@ -24,9 +24,8 @@ FormatOptions::FormatOptions() :
 {
 }
 
-FormatOptions::FormatOptions(JsonView jsonValue) : 
-    m_tsvOptionsHasBeenSet(false),
-    m_vcfOptionsHasBeenSet(false)
+FormatOptions::FormatOptions(JsonView jsonValue)
+  : FormatOptions()
 {
   *this = jsonValue;
 }

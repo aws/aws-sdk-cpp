@@ -29,14 +29,8 @@ FindMatchesParameters::FindMatchesParameters() :
 {
 }
 
-FindMatchesParameters::FindMatchesParameters(JsonView jsonValue) : 
-    m_primaryKeyColumnNameHasBeenSet(false),
-    m_precisionRecallTradeoff(0.0),
-    m_precisionRecallTradeoffHasBeenSet(false),
-    m_accuracyCostTradeoff(0.0),
-    m_accuracyCostTradeoffHasBeenSet(false),
-    m_enforceProvidedLabels(false),
-    m_enforceProvidedLabelsHasBeenSet(false)
+FindMatchesParameters::FindMatchesParameters(JsonView jsonValue)
+  : FindMatchesParameters()
 {
   *this = jsonValue;
 }

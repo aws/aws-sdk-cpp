@@ -25,10 +25,8 @@ VehicleMiddleware::VehicleMiddleware() :
 {
 }
 
-VehicleMiddleware::VehicleMiddleware(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_protocolName(VehicleMiddlewareProtocol::NOT_SET),
-    m_protocolNameHasBeenSet(false)
+VehicleMiddleware::VehicleMiddleware(JsonView jsonValue)
+  : VehicleMiddleware()
 {
   *this = jsonValue;
 }

@@ -35,85 +35,32 @@ namespace Model
     AWS_CODESTARCONNECTIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The type of sync configuration to be deleted.</p>
      */
     inline const SyncConfigurationType& GetSyncType() const{ return m_syncType; }
-
-    /**
-     * <p>The type of sync configuration to be deleted.</p>
-     */
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
-
-    /**
-     * <p>The type of sync configuration to be deleted.</p>
-     */
     inline void SetSyncType(const SyncConfigurationType& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
-
-    /**
-     * <p>The type of sync configuration to be deleted.</p>
-     */
     inline void SetSyncType(SyncConfigurationType&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
-
-    /**
-     * <p>The type of sync configuration to be deleted.</p>
-     */
     inline DeleteSyncConfigurationRequest& WithSyncType(const SyncConfigurationType& value) { SetSyncType(value); return *this;}
-
-    /**
-     * <p>The type of sync configuration to be deleted.</p>
-     */
     inline DeleteSyncConfigurationRequest& WithSyncType(SyncConfigurationType&& value) { SetSyncType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon Web Services resource associated with the sync
      * configuration to be deleted.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The name of the Amazon Web Services resource associated with the sync
-     * configuration to be deleted.</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Services resource associated with the sync
-     * configuration to be deleted.</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The name of the Amazon Web Services resource associated with the sync
-     * configuration to be deleted.</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services resource associated with the sync
-     * configuration to be deleted.</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services resource associated with the sync
-     * configuration to be deleted.</p>
-     */
     inline DeleteSyncConfigurationRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services resource associated with the sync
-     * configuration to be deleted.</p>
-     */
     inline DeleteSyncConfigurationRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services resource associated with the sync
-     * configuration to be deleted.</p>
-     */
     inline DeleteSyncConfigurationRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
-
+    ///@}
   private:
 
     SyncConfigurationType m_syncType;

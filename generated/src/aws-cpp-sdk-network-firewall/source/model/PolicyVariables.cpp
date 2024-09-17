@@ -23,8 +23,8 @@ PolicyVariables::PolicyVariables() :
 {
 }
 
-PolicyVariables::PolicyVariables(JsonView jsonValue) : 
-    m_ruleVariablesHasBeenSet(false)
+PolicyVariables::PolicyVariables(JsonView jsonValue)
+  : PolicyVariables()
 {
   *this = jsonValue;
 }

@@ -36,109 +36,38 @@ namespace Model
     AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the container instance to update. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the container instance to update. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
-     */
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the container instance to update. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
-     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the container instance to update. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
-     */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the container instance to update. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
-     */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the container instance to update. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
-     */
     inline UpdateContainerInstancesStateRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the container instance to update. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
-     */
     inline UpdateContainerInstancesStateRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the container instance to update. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
-     */
     inline UpdateContainerInstancesStateRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline UpdateContainerInstancesStateRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline UpdateContainerInstancesStateRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline UpdateContainerInstancesStateRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline UpdateContainerInstancesStateRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-     */
     inline UpdateContainerInstancesStateRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The container instance state to update the container instance with. The only
      * valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>.
@@ -149,62 +78,12 @@ namespace Model
      * but can't update the container instance state.</p>
      */
     inline const ContainerInstanceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The container instance state to update the container instance with. The only
-     * valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>.
-     * A container instance can only be updated to <code>DRAINING</code> status once it
-     * has reached an <code>ACTIVE</code> state. If a container instance is in
-     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-     * <code>REGISTRATION_FAILED</code> state you can describe the container instance
-     * but can't update the container instance state.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The container instance state to update the container instance with. The only
-     * valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>.
-     * A container instance can only be updated to <code>DRAINING</code> status once it
-     * has reached an <code>ACTIVE</code> state. If a container instance is in
-     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-     * <code>REGISTRATION_FAILED</code> state you can describe the container instance
-     * but can't update the container instance state.</p>
-     */
     inline void SetStatus(const ContainerInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The container instance state to update the container instance with. The only
-     * valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>.
-     * A container instance can only be updated to <code>DRAINING</code> status once it
-     * has reached an <code>ACTIVE</code> state. If a container instance is in
-     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-     * <code>REGISTRATION_FAILED</code> state you can describe the container instance
-     * but can't update the container instance state.</p>
-     */
     inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The container instance state to update the container instance with. The only
-     * valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>.
-     * A container instance can only be updated to <code>DRAINING</code> status once it
-     * has reached an <code>ACTIVE</code> state. If a container instance is in
-     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-     * <code>REGISTRATION_FAILED</code> state you can describe the container instance
-     * but can't update the container instance state.</p>
-     */
     inline UpdateContainerInstancesStateRequest& WithStatus(const ContainerInstanceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The container instance state to update the container instance with. The only
-     * valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>.
-     * A container instance can only be updated to <code>DRAINING</code> status once it
-     * has reached an <code>ACTIVE</code> state. If a container instance is in
-     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
-     * <code>REGISTRATION_FAILED</code> state you can describe the container instance
-     * but can't update the container instance state.</p>
-     */
     inline UpdateContainerInstancesStateRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cluster;

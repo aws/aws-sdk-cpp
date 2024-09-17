@@ -40,46 +40,19 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of aggregation functions that you can perform.</p>
      */
     inline const Aws::Vector<DifferentialPrivacyPreviewAggregation>& GetAggregations() const{ return m_aggregations; }
-
-    /**
-     * <p>The number of aggregation functions that you can perform.</p>
-     */
     inline bool AggregationsHasBeenSet() const { return m_aggregationsHasBeenSet; }
-
-    /**
-     * <p>The number of aggregation functions that you can perform.</p>
-     */
     inline void SetAggregations(const Aws::Vector<DifferentialPrivacyPreviewAggregation>& value) { m_aggregationsHasBeenSet = true; m_aggregations = value; }
-
-    /**
-     * <p>The number of aggregation functions that you can perform.</p>
-     */
     inline void SetAggregations(Aws::Vector<DifferentialPrivacyPreviewAggregation>&& value) { m_aggregationsHasBeenSet = true; m_aggregations = std::move(value); }
-
-    /**
-     * <p>The number of aggregation functions that you can perform.</p>
-     */
     inline DifferentialPrivacyPrivacyImpact& WithAggregations(const Aws::Vector<DifferentialPrivacyPreviewAggregation>& value) { SetAggregations(value); return *this;}
-
-    /**
-     * <p>The number of aggregation functions that you can perform.</p>
-     */
     inline DifferentialPrivacyPrivacyImpact& WithAggregations(Aws::Vector<DifferentialPrivacyPreviewAggregation>&& value) { SetAggregations(std::move(value)); return *this;}
-
-    /**
-     * <p>The number of aggregation functions that you can perform.</p>
-     */
     inline DifferentialPrivacyPrivacyImpact& AddAggregations(const DifferentialPrivacyPreviewAggregation& value) { m_aggregationsHasBeenSet = true; m_aggregations.push_back(value); return *this; }
-
-    /**
-     * <p>The number of aggregation functions that you can perform.</p>
-     */
     inline DifferentialPrivacyPrivacyImpact& AddAggregations(DifferentialPrivacyPreviewAggregation&& value) { m_aggregationsHasBeenSet = true; m_aggregations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DifferentialPrivacyPreviewAggregation> m_aggregations;

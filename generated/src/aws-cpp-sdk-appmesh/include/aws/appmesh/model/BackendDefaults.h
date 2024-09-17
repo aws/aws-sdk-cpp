@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A reference to an object that represents a client policy.</p>
      */
     inline const ClientPolicy& GetClientPolicy() const{ return m_clientPolicy; }
-
-    /**
-     * <p>A reference to an object that represents a client policy.</p>
-     */
     inline bool ClientPolicyHasBeenSet() const { return m_clientPolicyHasBeenSet; }
-
-    /**
-     * <p>A reference to an object that represents a client policy.</p>
-     */
     inline void SetClientPolicy(const ClientPolicy& value) { m_clientPolicyHasBeenSet = true; m_clientPolicy = value; }
-
-    /**
-     * <p>A reference to an object that represents a client policy.</p>
-     */
     inline void SetClientPolicy(ClientPolicy&& value) { m_clientPolicyHasBeenSet = true; m_clientPolicy = std::move(value); }
-
-    /**
-     * <p>A reference to an object that represents a client policy.</p>
-     */
     inline BackendDefaults& WithClientPolicy(const ClientPolicy& value) { SetClientPolicy(value); return *this;}
-
-    /**
-     * <p>A reference to an object that represents a client policy.</p>
-     */
     inline BackendDefaults& WithClientPolicy(ClientPolicy&& value) { SetClientPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClientPolicy m_clientPolicy;

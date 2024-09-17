@@ -26,11 +26,8 @@ SqlServerParameters::SqlServerParameters() :
 {
 }
 
-SqlServerParameters::SqlServerParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+SqlServerParameters::SqlServerParameters(JsonView jsonValue)
+  : SqlServerParameters()
 {
   *this = jsonValue;
 }

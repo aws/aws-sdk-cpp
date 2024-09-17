@@ -38,48 +38,19 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies whether Amazon S3 replicates objects created with server-side
      * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
      * Key Management Service.</p>
      */
     inline const SseKmsEncryptedObjectsStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
-     * Key Management Service.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
-     * Key Management Service.</p>
-     */
     inline void SetStatus(const SseKmsEncryptedObjectsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
-     * Key Management Service.</p>
-     */
     inline void SetStatus(SseKmsEncryptedObjectsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
-     * Key Management Service.</p>
-     */
     inline SseKmsEncryptedObjects& WithStatus(const SseKmsEncryptedObjectsStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
-     * Key Management Service.</p>
-     */
     inline SseKmsEncryptedObjects& WithStatus(SseKmsEncryptedObjectsStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SseKmsEncryptedObjectsStatus m_status;

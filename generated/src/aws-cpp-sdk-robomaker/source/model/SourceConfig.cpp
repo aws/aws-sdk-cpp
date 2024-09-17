@@ -26,11 +26,8 @@ SourceConfig::SourceConfig() :
 {
 }
 
-SourceConfig::SourceConfig(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false)
+SourceConfig::SourceConfig(JsonView jsonValue)
+  : SourceConfig()
 {
   *this = jsonValue;
 }

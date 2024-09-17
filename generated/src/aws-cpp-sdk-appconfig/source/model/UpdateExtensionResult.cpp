@@ -22,8 +22,8 @@ UpdateExtensionResult::UpdateExtensionResult() :
 {
 }
 
-UpdateExtensionResult::UpdateExtensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_versionNumber(0)
+UpdateExtensionResult::UpdateExtensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateExtensionResult()
 {
   *this = result;
 }

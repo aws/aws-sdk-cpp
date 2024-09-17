@@ -5,6 +5,7 @@
 
 #include <aws/mediapackagev2/model/UpdateChannelGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -14,6 +15,7 @@ using namespace Aws::Utils;
 
 UpdateChannelGroupRequest::UpdateChannelGroupRequest() : 
     m_channelGroupNameHasBeenSet(false),
+    m_eTagHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -29,6 +31,21 @@ Aws::String UpdateChannelGroupRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection UpdateChannelGroupRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_eTagHasBeenSet)
+  {
+    ss << m_eTag;
+    headers.emplace("x-amzn-update-if-match",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

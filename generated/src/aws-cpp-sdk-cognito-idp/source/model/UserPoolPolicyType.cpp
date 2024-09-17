@@ -23,8 +23,8 @@ UserPoolPolicyType::UserPoolPolicyType() :
 {
 }
 
-UserPoolPolicyType::UserPoolPolicyType(JsonView jsonValue) : 
-    m_passwordPolicyHasBeenSet(false)
+UserPoolPolicyType::UserPoolPolicyType(JsonView jsonValue)
+  : UserPoolPolicyType()
 {
   *this = jsonValue;
 }

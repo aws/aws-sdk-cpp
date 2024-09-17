@@ -25,10 +25,8 @@ LinuxSubscriptionsDiscoverySettings::LinuxSubscriptionsDiscoverySettings() :
 {
 }
 
-LinuxSubscriptionsDiscoverySettings::LinuxSubscriptionsDiscoverySettings(JsonView jsonValue) : 
-    m_organizationIntegration(OrganizationIntegration::NOT_SET),
-    m_organizationIntegrationHasBeenSet(false),
-    m_sourceRegionsHasBeenSet(false)
+LinuxSubscriptionsDiscoverySettings::LinuxSubscriptionsDiscoverySettings(JsonView jsonValue)
+  : LinuxSubscriptionsDiscoverySettings()
 {
   *this = jsonValue;
 }

@@ -32,63 +32,29 @@ namespace Model
     AWS_APPLICATIONCOSTPROFILER_API PutReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>ID of the report.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>ID of the report.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportId = value; }
-
-    /**
-     * <p>ID of the report.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportId = std::move(value); }
-
-    /**
-     * <p>ID of the report.</p>
-     */
     inline void SetReportId(const char* value) { m_reportId.assign(value); }
-
-    /**
-     * <p>ID of the report.</p>
-     */
     inline PutReportDefinitionResult& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>ID of the report.</p>
-     */
     inline PutReportDefinitionResult& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the report.</p>
-     */
     inline PutReportDefinitionResult& WithReportId(const char* value) { SetReportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutReportDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutReportDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutReportDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

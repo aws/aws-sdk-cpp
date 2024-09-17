@@ -26,9 +26,8 @@ Exclude::Exclude() :
 {
 }
 
-Exclude::Exclude(const XmlNode& xmlNode) : 
-    m_bucketsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+Exclude::Exclude(const XmlNode& xmlNode)
+  : Exclude()
 {
   *this = xmlNode;
 }

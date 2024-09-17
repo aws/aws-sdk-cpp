@@ -31,16 +31,8 @@ RateBasedStatementCustomKey::RateBasedStatementCustomKey() :
 {
 }
 
-RateBasedStatementCustomKey::RateBasedStatementCustomKey(JsonView jsonValue) : 
-    m_headerHasBeenSet(false),
-    m_cookieHasBeenSet(false),
-    m_queryArgumentHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_hTTPMethodHasBeenSet(false),
-    m_forwardedIPHasBeenSet(false),
-    m_iPHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false),
-    m_uriPathHasBeenSet(false)
+RateBasedStatementCustomKey::RateBasedStatementCustomKey(JsonView jsonValue)
+  : RateBasedStatementCustomKey()
 {
   *this = jsonValue;
 }

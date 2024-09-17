@@ -28,13 +28,8 @@ OfferingStatus::OfferingStatus() :
 {
 }
 
-OfferingStatus::OfferingStatus(JsonView jsonValue) : 
-    m_type(OfferingTransactionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_offeringHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_effectiveOnHasBeenSet(false)
+OfferingStatus::OfferingStatus(JsonView jsonValue)
+  : OfferingStatus()
 {
   *this = jsonValue;
 }

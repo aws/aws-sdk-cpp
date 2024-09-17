@@ -271,13 +271,13 @@ namespace SnowDeviceManagement
          * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListDevices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
+        virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDevicesRequestT = Model::ListDevicesRequest>
-        Model::ListDevicesOutcomeCallable ListDevicesCallable(const ListDevicesRequestT& request) const
+        Model::ListDevicesOutcomeCallable ListDevicesCallable(const ListDevicesRequestT& request = {}) const
         {
             return SubmitCallable(&SnowDeviceManagementClient::ListDevices, request);
         }
@@ -286,7 +286,7 @@ namespace SnowDeviceManagement
          * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDevicesRequestT = Model::ListDevicesRequest>
-        void ListDevicesAsync(const ListDevicesRequestT& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDevicesAsync(const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDevicesRequestT& request = {}) const
         {
             return SubmitAsync(&SnowDeviceManagementClient::ListDevices, request, handler, context);
         }
@@ -349,13 +349,13 @@ namespace SnowDeviceManagement
          * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
+        virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTasksRequestT = Model::ListTasksRequest>
-        Model::ListTasksOutcomeCallable ListTasksCallable(const ListTasksRequestT& request) const
+        Model::ListTasksOutcomeCallable ListTasksCallable(const ListTasksRequestT& request = {}) const
         {
             return SubmitCallable(&SnowDeviceManagementClient::ListTasks, request);
         }
@@ -364,7 +364,7 @@ namespace SnowDeviceManagement
          * An Async wrapper for ListTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTasksRequestT = Model::ListTasksRequest>
-        void ListTasksAsync(const ListTasksRequestT& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTasksAsync(const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTasksRequestT& request = {}) const
         {
             return SubmitAsync(&SnowDeviceManagementClient::ListTasks, request, handler, context);
         }
@@ -427,7 +427,6 @@ namespace SnowDeviceManagement
       void init(const SnowDeviceManagementClientConfiguration& clientConfiguration);
 
       SnowDeviceManagementClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SnowDeviceManagementEndpointProviderBase> m_endpointProvider;
   };
 

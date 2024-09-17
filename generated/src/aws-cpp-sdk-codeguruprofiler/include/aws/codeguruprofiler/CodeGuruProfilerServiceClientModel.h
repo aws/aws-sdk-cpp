@@ -41,6 +41,8 @@
 #include <aws/codeguruprofiler/model/TagResourceResult.h>
 #include <aws/codeguruprofiler/model/UntagResourceResult.h>
 #include <aws/codeguruprofiler/model/UpdateProfilingGroupResult.h>
+#include <aws/codeguruprofiler/model/ListProfilingGroupsRequest.h>
+#include <aws/codeguruprofiler/model/GetFindingsReportAccountSummaryRequest.h>
 /* End of service model headers required in CodeGuruProfilerClient header */
 
 namespace Aws
@@ -74,7 +76,7 @@ namespace Aws
 
   namespace CodeGuruProfiler
   {
-    using CodeGuruProfilerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeGuruProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeGuruProfilerEndpointProviderBase = Aws::CodeGuruProfiler::Endpoint::CodeGuruProfilerEndpointProviderBase;
     using CodeGuruProfilerEndpointProvider = Aws::CodeGuruProfiler::Endpoint::CodeGuruProfilerEndpointProvider;
 

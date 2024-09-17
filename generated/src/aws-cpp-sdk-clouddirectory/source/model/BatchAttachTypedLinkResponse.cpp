@@ -23,8 +23,8 @@ BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse() :
 {
 }
 
-BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse(JsonView jsonValue) : 
-    m_typedLinkSpecifierHasBeenSet(false)
+BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse(JsonView jsonValue)
+  : BatchAttachTypedLinkResponse()
 {
   *this = jsonValue;
 }

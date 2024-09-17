@@ -28,13 +28,8 @@ ValidatePolicyFinding::ValidatePolicyFinding() :
 {
 }
 
-ValidatePolicyFinding::ValidatePolicyFinding(JsonView jsonValue) : 
-    m_findingDetailsHasBeenSet(false),
-    m_findingType(ValidatePolicyFindingType::NOT_SET),
-    m_findingTypeHasBeenSet(false),
-    m_issueCodeHasBeenSet(false),
-    m_learnMoreLinkHasBeenSet(false),
-    m_locationsHasBeenSet(false)
+ValidatePolicyFinding::ValidatePolicyFinding(JsonView jsonValue)
+  : ValidatePolicyFinding()
 {
   *this = jsonValue;
 }

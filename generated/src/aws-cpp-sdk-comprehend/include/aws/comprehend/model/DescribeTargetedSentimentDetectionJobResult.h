@@ -33,58 +33,28 @@ namespace Model
     AWS_COMPREHEND_API DescribeTargetedSentimentDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains the properties associated with a targeted sentiment
      * detection job.</p>
      */
     inline const TargetedSentimentDetectionJobProperties& GetTargetedSentimentDetectionJobProperties() const{ return m_targetedSentimentDetectionJobProperties; }
-
-    /**
-     * <p>An object that contains the properties associated with a targeted sentiment
-     * detection job.</p>
-     */
     inline void SetTargetedSentimentDetectionJobProperties(const TargetedSentimentDetectionJobProperties& value) { m_targetedSentimentDetectionJobProperties = value; }
-
-    /**
-     * <p>An object that contains the properties associated with a targeted sentiment
-     * detection job.</p>
-     */
     inline void SetTargetedSentimentDetectionJobProperties(TargetedSentimentDetectionJobProperties&& value) { m_targetedSentimentDetectionJobProperties = std::move(value); }
-
-    /**
-     * <p>An object that contains the properties associated with a targeted sentiment
-     * detection job.</p>
-     */
     inline DescribeTargetedSentimentDetectionJobResult& WithTargetedSentimentDetectionJobProperties(const TargetedSentimentDetectionJobProperties& value) { SetTargetedSentimentDetectionJobProperties(value); return *this;}
-
-    /**
-     * <p>An object that contains the properties associated with a targeted sentiment
-     * detection job.</p>
-     */
     inline DescribeTargetedSentimentDetectionJobResult& WithTargetedSentimentDetectionJobProperties(TargetedSentimentDetectionJobProperties&& value) { SetTargetedSentimentDetectionJobProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTargetedSentimentDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTargetedSentimentDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTargetedSentimentDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TargetedSentimentDetectionJobProperties m_targetedSentimentDetectionJobProperties;

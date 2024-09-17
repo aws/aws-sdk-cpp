@@ -40,6 +40,7 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
      * an item to be processed by <code>PutItem</code>. All of the table's primary key
@@ -49,117 +50,18 @@ namespace Model
      * schema.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * an item to be processed by <code>PutItem</code>. All of the table's primary key
-     * attributes must be specified, and their data types must match those of the
-     * table's key schema. If any attributes are present in the item that are part of
-     * an index key schema for the table, their types must match the index key
-     * schema.</p>
-     */
     inline PutRequest& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_item;

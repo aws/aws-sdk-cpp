@@ -25,10 +25,8 @@ DataCatalogSummary::DataCatalogSummary() :
 {
 }
 
-DataCatalogSummary::DataCatalogSummary(JsonView jsonValue) : 
-    m_catalogNameHasBeenSet(false),
-    m_type(DataCatalogType::NOT_SET),
-    m_typeHasBeenSet(false)
+DataCatalogSummary::DataCatalogSummary(JsonView jsonValue)
+  : DataCatalogSummary()
 {
   *this = jsonValue;
 }

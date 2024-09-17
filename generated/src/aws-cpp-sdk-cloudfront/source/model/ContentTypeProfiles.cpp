@@ -27,10 +27,8 @@ ContentTypeProfiles::ContentTypeProfiles() :
 {
 }
 
-ContentTypeProfiles::ContentTypeProfiles(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+ContentTypeProfiles::ContentTypeProfiles(const XmlNode& xmlNode)
+  : ContentTypeProfiles()
 {
   *this = xmlNode;
 }

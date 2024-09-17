@@ -28,21 +28,13 @@ ConnectPeer::ConnectPeer() :
     m_createdAtHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false)
+    m_subnetArnHasBeenSet(false),
+    m_lastModificationErrorsHasBeenSet(false)
 {
 }
 
-ConnectPeer::ConnectPeer(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_connectAttachmentIdHasBeenSet(false),
-    m_connectPeerIdHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_state(ConnectPeerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false)
+ConnectPeer::ConnectPeer(JsonView jsonValue)
+  : ConnectPeer()
 {
   *this = jsonValue;
 }
@@ -115,6 +107,16 @@ ConnectPeer& ConnectPeer::operator =(JsonView jsonValue)
     m_subnetArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModificationErrors"))
+  {
+    Aws::Utils::Array<JsonView> lastModificationErrorsJsonList = jsonValue.GetArray("LastModificationErrors");
+    for(unsigned lastModificationErrorsIndex = 0; lastModificationErrorsIndex < lastModificationErrorsJsonList.GetLength(); ++lastModificationErrorsIndex)
+    {
+      m_lastModificationErrors.push_back(lastModificationErrorsJsonList[lastModificationErrorsIndex].AsObject());
+    }
+    m_lastModificationErrorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +178,17 @@ JsonValue ConnectPeer::Jsonize() const
   if(m_subnetArnHasBeenSet)
   {
    payload.WithString("SubnetArn", m_subnetArn);
+
+  }
+
+  if(m_lastModificationErrorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lastModificationErrorsJsonList(m_lastModificationErrors.size());
+   for(unsigned lastModificationErrorsIndex = 0; lastModificationErrorsIndex < lastModificationErrorsJsonList.GetLength(); ++lastModificationErrorsIndex)
+   {
+     lastModificationErrorsJsonList[lastModificationErrorsIndex].AsObject(m_lastModificationErrors[lastModificationErrorsIndex].Jsonize());
+   }
+   payload.WithArray("LastModificationErrors", std::move(lastModificationErrorsJsonList));
 
   }
 

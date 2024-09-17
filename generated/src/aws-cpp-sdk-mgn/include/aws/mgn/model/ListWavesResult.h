@@ -34,99 +34,42 @@ namespace Model
     AWS_MGN_API ListWavesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Waves list.</p>
      */
     inline const Aws::Vector<Wave>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>Waves list.</p>
-     */
     inline void SetItems(const Aws::Vector<Wave>& value) { m_items = value; }
-
-    /**
-     * <p>Waves list.</p>
-     */
     inline void SetItems(Aws::Vector<Wave>&& value) { m_items = std::move(value); }
-
-    /**
-     * <p>Waves list.</p>
-     */
     inline ListWavesResult& WithItems(const Aws::Vector<Wave>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>Waves list.</p>
-     */
     inline ListWavesResult& WithItems(Aws::Vector<Wave>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Waves list.</p>
-     */
     inline ListWavesResult& AddItems(const Wave& value) { m_items.push_back(value); return *this; }
-
-    /**
-     * <p>Waves list.</p>
-     */
     inline ListWavesResult& AddItems(Wave&& value) { m_items.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Response next token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Response next token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Response next token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Response next token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Response next token.</p>
-     */
     inline ListWavesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Response next token.</p>
-     */
     inline ListWavesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Response next token.</p>
-     */
     inline ListWavesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListWavesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListWavesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListWavesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Wave> m_items;

@@ -38,23 +38,8 @@ Operation::Operation() :
 {
 }
 
-Operation::Operation(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_isTerminal(false),
-    m_isTerminalHasBeenSet(false),
-    m_operationDetailsHasBeenSet(false),
-    m_operationType(OperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusChangedAtHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+Operation::Operation(JsonView jsonValue)
+  : Operation()
 {
   *this = jsonValue;
 }

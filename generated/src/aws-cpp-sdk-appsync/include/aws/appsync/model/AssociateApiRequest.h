@@ -32,87 +32,33 @@ namespace Model
     AWS_APPSYNC_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline AssociateApiRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline AssociateApiRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline AssociateApiRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The API ID. Private APIs can not be associated with custom domains.</p>
      */
     inline const Aws::String& GetApiId() const{ return m_apiId; }
-
-    /**
-     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
-     */
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-
-    /**
-     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
-     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-
-    /**
-     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
-     */
     inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-
-    /**
-     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
-     */
     inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-
-    /**
-     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
-     */
     inline AssociateApiRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-
-    /**
-     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
-     */
     inline AssociateApiRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The API ID. Private APIs can not be associated with custom domains.</p>
-     */
     inline AssociateApiRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

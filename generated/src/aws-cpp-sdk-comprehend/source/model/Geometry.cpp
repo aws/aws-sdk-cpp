@@ -24,9 +24,8 @@ Geometry::Geometry() :
 {
 }
 
-Geometry::Geometry(JsonView jsonValue) : 
-    m_boundingBoxHasBeenSet(false),
-    m_polygonHasBeenSet(false)
+Geometry::Geometry(JsonView jsonValue)
+  : Geometry()
 {
   *this = jsonValue;
 }

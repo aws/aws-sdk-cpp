@@ -27,10 +27,8 @@ DiskImageVolumeDescription::DiskImageVolumeDescription() :
 {
 }
 
-DiskImageVolumeDescription::DiskImageVolumeDescription(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+DiskImageVolumeDescription::DiskImageVolumeDescription(const XmlNode& xmlNode)
+  : DiskImageVolumeDescription()
 {
   *this = xmlNode;
 }

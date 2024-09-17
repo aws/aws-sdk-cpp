@@ -35,20 +35,8 @@ PipelineExecutionStep::PipelineExecutionStep() :
 {
 }
 
-PipelineExecutionStep::PipelineExecutionStep(JsonView jsonValue) : 
-    m_stepNameHasBeenSet(false),
-    m_stepDisplayNameHasBeenSet(false),
-    m_stepDescriptionHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_stepStatus(StepStatus::NOT_SET),
-    m_stepStatusHasBeenSet(false),
-    m_cacheHitResultHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_attemptCount(0),
-    m_attemptCountHasBeenSet(false),
-    m_selectiveExecutionResultHasBeenSet(false)
+PipelineExecutionStep::PipelineExecutionStep(JsonView jsonValue)
+  : PipelineExecutionStep()
 {
   *this = jsonValue;
 }

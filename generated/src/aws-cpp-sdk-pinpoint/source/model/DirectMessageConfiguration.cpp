@@ -31,16 +31,8 @@ DirectMessageConfiguration::DirectMessageConfiguration() :
 {
 }
 
-DirectMessageConfiguration::DirectMessageConfiguration(JsonView jsonValue) : 
-    m_aDMMessageHasBeenSet(false),
-    m_aPNSMessageHasBeenSet(false),
-    m_baiduMessageHasBeenSet(false),
-    m_defaultMessageHasBeenSet(false),
-    m_defaultPushNotificationMessageHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false),
-    m_voiceMessageHasBeenSet(false)
+DirectMessageConfiguration::DirectMessageConfiguration(JsonView jsonValue)
+  : DirectMessageConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AnalyticsIntentStageGroupBySpecification::AnalyticsIntentStageGroupBySpecificati
 {
 }
 
-AnalyticsIntentStageGroupBySpecification::AnalyticsIntentStageGroupBySpecification(JsonView jsonValue) : 
-    m_name(AnalyticsIntentStageField::NOT_SET),
-    m_nameHasBeenSet(false)
+AnalyticsIntentStageGroupBySpecification::AnalyticsIntentStageGroupBySpecification(JsonView jsonValue)
+  : AnalyticsIntentStageGroupBySpecification()
 {
   *this = jsonValue;
 }

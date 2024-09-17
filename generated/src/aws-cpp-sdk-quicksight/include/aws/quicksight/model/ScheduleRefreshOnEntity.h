@@ -39,77 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The day of the week that you want to schedule a refresh on.</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
-
-    /**
-     * <p>The day of the week that you want to schedule a refresh on.</p>
-     */
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-
-    /**
-     * <p>The day of the week that you want to schedule a refresh on.</p>
-     */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
-
-    /**
-     * <p>The day of the week that you want to schedule a refresh on.</p>
-     */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
-
-    /**
-     * <p>The day of the week that you want to schedule a refresh on.</p>
-     */
     inline ScheduleRefreshOnEntity& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
-
-    /**
-     * <p>The day of the week that you want to schedule a refresh on.</p>
-     */
     inline ScheduleRefreshOnEntity& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The day of the month that you want to schedule refresh on.</p>
      */
     inline const Aws::String& GetDayOfMonth() const{ return m_dayOfMonth; }
-
-    /**
-     * <p>The day of the month that you want to schedule refresh on.</p>
-     */
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
-
-    /**
-     * <p>The day of the month that you want to schedule refresh on.</p>
-     */
     inline void SetDayOfMonth(const Aws::String& value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
-
-    /**
-     * <p>The day of the month that you want to schedule refresh on.</p>
-     */
     inline void SetDayOfMonth(Aws::String&& value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = std::move(value); }
-
-    /**
-     * <p>The day of the month that you want to schedule refresh on.</p>
-     */
     inline void SetDayOfMonth(const char* value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth.assign(value); }
-
-    /**
-     * <p>The day of the month that you want to schedule refresh on.</p>
-     */
     inline ScheduleRefreshOnEntity& WithDayOfMonth(const Aws::String& value) { SetDayOfMonth(value); return *this;}
-
-    /**
-     * <p>The day of the month that you want to schedule refresh on.</p>
-     */
     inline ScheduleRefreshOnEntity& WithDayOfMonth(Aws::String&& value) { SetDayOfMonth(std::move(value)); return *this;}
-
-    /**
-     * <p>The day of the month that you want to schedule refresh on.</p>
-     */
     inline ScheduleRefreshOnEntity& WithDayOfMonth(const char* value) { SetDayOfMonth(value); return *this;}
-
+    ///@}
   private:
 
     DayOfWeek m_dayOfWeek;

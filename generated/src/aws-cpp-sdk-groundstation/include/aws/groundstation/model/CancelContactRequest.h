@@ -35,46 +35,19 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>UUID of a contact.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
-
-    /**
-     * <p>UUID of a contact.</p>
-     */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-
-    /**
-     * <p>UUID of a contact.</p>
-     */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-
-    /**
-     * <p>UUID of a contact.</p>
-     */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-
-    /**
-     * <p>UUID of a contact.</p>
-     */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-
-    /**
-     * <p>UUID of a contact.</p>
-     */
     inline CancelContactRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-
-    /**
-     * <p>UUID of a contact.</p>
-     */
     inline CancelContactRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-
-    /**
-     * <p>UUID of a contact.</p>
-     */
     inline CancelContactRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contactId;

@@ -75,68 +75,26 @@ H265Settings::H265Settings() :
     m_tierHasBeenSet(false),
     m_timecodeInsertion(H265TimecodeInsertionBehavior::NOT_SET),
     m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+    m_timecodeBurninSettingsHasBeenSet(false),
+    m_mvOverPictureBoundaries(H265MvOverPictureBoundaries::NOT_SET),
+    m_mvOverPictureBoundariesHasBeenSet(false),
+    m_mvTemporalPredictor(H265MvTemporalPredictor::NOT_SET),
+    m_mvTemporalPredictorHasBeenSet(false),
+    m_tileHeight(0),
+    m_tileHeightHasBeenSet(false),
+    m_tilePadding(H265TilePadding::NOT_SET),
+    m_tilePaddingHasBeenSet(false),
+    m_tileWidth(0),
+    m_tileWidthHasBeenSet(false),
+    m_treeblockSize(H265TreeblockSize::NOT_SET),
+    m_treeblockSizeHasBeenSet(false),
+    m_minQp(0),
+    m_minQpHasBeenSet(false)
 {
 }
 
-H265Settings::H265Settings(JsonView jsonValue) : 
-    m_adaptiveQuantization(H265AdaptiveQuantization::NOT_SET),
-    m_adaptiveQuantizationHasBeenSet(false),
-    m_afdSignaling(AfdSignaling::NOT_SET),
-    m_afdSignalingHasBeenSet(false),
-    m_alternativeTransferFunction(H265AlternativeTransferFunction::NOT_SET),
-    m_alternativeTransferFunctionHasBeenSet(false),
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_bufSize(0),
-    m_bufSizeHasBeenSet(false),
-    m_colorMetadata(H265ColorMetadata::NOT_SET),
-    m_colorMetadataHasBeenSet(false),
-    m_colorSpaceSettingsHasBeenSet(false),
-    m_filterSettingsHasBeenSet(false),
-    m_fixedAfd(FixedAfd::NOT_SET),
-    m_fixedAfdHasBeenSet(false),
-    m_flickerAq(H265FlickerAq::NOT_SET),
-    m_flickerAqHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_gopClosedCadence(0),
-    m_gopClosedCadenceHasBeenSet(false),
-    m_gopSize(0.0),
-    m_gopSizeHasBeenSet(false),
-    m_gopSizeUnits(H265GopSizeUnits::NOT_SET),
-    m_gopSizeUnitsHasBeenSet(false),
-    m_level(H265Level::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_lookAheadRateControl(H265LookAheadRateControl::NOT_SET),
-    m_lookAheadRateControlHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_minIInterval(0),
-    m_minIIntervalHasBeenSet(false),
-    m_parDenominator(0),
-    m_parDenominatorHasBeenSet(false),
-    m_parNumerator(0),
-    m_parNumeratorHasBeenSet(false),
-    m_profile(H265Profile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_qvbrQualityLevel(0),
-    m_qvbrQualityLevelHasBeenSet(false),
-    m_rateControlMode(H265RateControlMode::NOT_SET),
-    m_rateControlModeHasBeenSet(false),
-    m_scanType(H265ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false),
-    m_sceneChangeDetect(H265SceneChangeDetect::NOT_SET),
-    m_sceneChangeDetectHasBeenSet(false),
-    m_slices(0),
-    m_slicesHasBeenSet(false),
-    m_tier(H265Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_timecodeInsertion(H265TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+H265Settings::H265Settings(JsonView jsonValue)
+  : H265Settings()
 {
   *this = jsonValue;
 }
@@ -353,6 +311,55 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_timecodeBurninSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mvOverPictureBoundaries"))
+  {
+    m_mvOverPictureBoundaries = H265MvOverPictureBoundariesMapper::GetH265MvOverPictureBoundariesForName(jsonValue.GetString("mvOverPictureBoundaries"));
+
+    m_mvOverPictureBoundariesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mvTemporalPredictor"))
+  {
+    m_mvTemporalPredictor = H265MvTemporalPredictorMapper::GetH265MvTemporalPredictorForName(jsonValue.GetString("mvTemporalPredictor"));
+
+    m_mvTemporalPredictorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tileHeight"))
+  {
+    m_tileHeight = jsonValue.GetInteger("tileHeight");
+
+    m_tileHeightHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tilePadding"))
+  {
+    m_tilePadding = H265TilePaddingMapper::GetH265TilePaddingForName(jsonValue.GetString("tilePadding"));
+
+    m_tilePaddingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tileWidth"))
+  {
+    m_tileWidth = jsonValue.GetInteger("tileWidth");
+
+    m_tileWidthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("treeblockSize"))
+  {
+    m_treeblockSize = H265TreeblockSizeMapper::GetH265TreeblockSizeForName(jsonValue.GetString("treeblockSize"));
+
+    m_treeblockSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minQp"))
+  {
+    m_minQp = jsonValue.GetInteger("minQp");
+
+    m_minQpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -522,6 +529,44 @@ JsonValue H265Settings::Jsonize() const
   if(m_timecodeBurninSettingsHasBeenSet)
   {
    payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
+
+  }
+
+  if(m_mvOverPictureBoundariesHasBeenSet)
+  {
+   payload.WithString("mvOverPictureBoundaries", H265MvOverPictureBoundariesMapper::GetNameForH265MvOverPictureBoundaries(m_mvOverPictureBoundaries));
+  }
+
+  if(m_mvTemporalPredictorHasBeenSet)
+  {
+   payload.WithString("mvTemporalPredictor", H265MvTemporalPredictorMapper::GetNameForH265MvTemporalPredictor(m_mvTemporalPredictor));
+  }
+
+  if(m_tileHeightHasBeenSet)
+  {
+   payload.WithInteger("tileHeight", m_tileHeight);
+
+  }
+
+  if(m_tilePaddingHasBeenSet)
+  {
+   payload.WithString("tilePadding", H265TilePaddingMapper::GetNameForH265TilePadding(m_tilePadding));
+  }
+
+  if(m_tileWidthHasBeenSet)
+  {
+   payload.WithInteger("tileWidth", m_tileWidth);
+
+  }
+
+  if(m_treeblockSizeHasBeenSet)
+  {
+   payload.WithString("treeblockSize", H265TreeblockSizeMapper::GetNameForH265TreeblockSize(m_treeblockSize));
+  }
+
+  if(m_minQpHasBeenSet)
+  {
+   payload.WithInteger("minQp", m_minQp);
 
   }
 

@@ -35,20 +35,8 @@ KubernetesWorkloadDetails::KubernetesWorkloadDetails() :
 {
 }
 
-KubernetesWorkloadDetails::KubernetesWorkloadDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_hostNetwork(false),
-    m_hostNetworkHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_serviceAccountNameHasBeenSet(false),
-    m_hostIPC(false),
-    m_hostIPCHasBeenSet(false),
-    m_hostPID(false),
-    m_hostPIDHasBeenSet(false)
+KubernetesWorkloadDetails::KubernetesWorkloadDetails(JsonView jsonValue)
+  : KubernetesWorkloadDetails()
 {
   *this = jsonValue;
 }

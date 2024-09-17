@@ -32,46 +32,19 @@ namespace Model
     AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The application instance's ID.</p>
      */
     inline const Aws::String& GetApplicationInstanceId() const{ return m_applicationInstanceId; }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline bool ApplicationInstanceIdHasBeenSet() const { return m_applicationInstanceIdHasBeenSet; }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline void SetApplicationInstanceId(const Aws::String& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = value; }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline void SetApplicationInstanceId(Aws::String&& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = std::move(value); }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline void SetApplicationInstanceId(const char* value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId.assign(value); }
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline DescribeApplicationInstanceDetailsRequest& WithApplicationInstanceId(const Aws::String& value) { SetApplicationInstanceId(value); return *this;}
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline DescribeApplicationInstanceDetailsRequest& WithApplicationInstanceId(Aws::String&& value) { SetApplicationInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application instance's ID.</p>
-     */
     inline DescribeApplicationInstanceDetailsRequest& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationInstanceId;

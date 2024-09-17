@@ -22,8 +22,8 @@ SearchGroupsResult::SearchGroupsResult() :
 {
 }
 
-SearchGroupsResult::SearchGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+SearchGroupsResult::SearchGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchGroupsResult()
 {
   *this = result;
 }

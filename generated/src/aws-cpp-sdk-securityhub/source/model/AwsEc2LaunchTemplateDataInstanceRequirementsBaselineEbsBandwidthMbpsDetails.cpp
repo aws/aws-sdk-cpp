@@ -26,11 +26,8 @@ AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails::Aws
 {
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails(JsonView jsonValue) : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
+AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails()
 {
   *this = jsonValue;
 }

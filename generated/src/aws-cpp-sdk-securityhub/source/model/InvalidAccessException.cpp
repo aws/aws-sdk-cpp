@@ -24,9 +24,8 @@ InvalidAccessException::InvalidAccessException() :
 {
 }
 
-InvalidAccessException::InvalidAccessException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
+InvalidAccessException::InvalidAccessException(JsonView jsonValue)
+  : InvalidAccessException()
 {
   *this = jsonValue;
 }

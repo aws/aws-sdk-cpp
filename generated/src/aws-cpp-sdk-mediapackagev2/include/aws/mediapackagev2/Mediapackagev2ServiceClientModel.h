@@ -40,6 +40,7 @@
 #include <aws/mediapackagev2/model/UpdateChannelResult.h>
 #include <aws/mediapackagev2/model/UpdateChannelGroupResult.h>
 #include <aws/mediapackagev2/model/UpdateOriginEndpointResult.h>
+#include <aws/mediapackagev2/model/ListChannelGroupsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in Mediapackagev2Client header */
 
@@ -74,7 +75,7 @@ namespace Aws
 
   namespace mediapackagev2
   {
-    using Mediapackagev2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Mediapackagev2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Mediapackagev2EndpointProviderBase = Aws::mediapackagev2::Endpoint::Mediapackagev2EndpointProviderBase;
     using Mediapackagev2EndpointProvider = Aws::mediapackagev2::Endpoint::Mediapackagev2EndpointProvider;
 

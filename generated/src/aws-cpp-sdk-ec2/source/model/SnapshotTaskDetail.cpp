@@ -37,20 +37,8 @@ SnapshotTaskDetail::SnapshotTaskDetail() :
 {
 }
 
-SnapshotTaskDetail::SnapshotTaskDetail(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_diskImageSize(0.0),
-    m_diskImageSizeHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false)
+SnapshotTaskDetail::SnapshotTaskDetail(const XmlNode& xmlNode)
+  : SnapshotTaskDetail()
 {
   *this = xmlNode;
 }

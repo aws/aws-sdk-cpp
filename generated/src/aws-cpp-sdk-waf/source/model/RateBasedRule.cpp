@@ -30,15 +30,8 @@ RateBasedRule::RateBasedRule() :
 {
 }
 
-RateBasedRule::RateBasedRule(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_matchPredicatesHasBeenSet(false),
-    m_rateKey(RateKey::NOT_SET),
-    m_rateKeyHasBeenSet(false),
-    m_rateLimit(0),
-    m_rateLimitHasBeenSet(false)
+RateBasedRule::RateBasedRule(JsonView jsonValue)
+  : RateBasedRule()
 {
   *this = jsonValue;
 }

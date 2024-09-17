@@ -38,231 +38,78 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
      * source security group.</p>
      */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
-
-    /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
-     */
     inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
-
-    /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
-     */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
-
-    /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
-     */
     inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
-
-    /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
-     */
     inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
-
-    /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
-
-    /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
+     * protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
-     */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-
-    /**
-     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
-     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the security group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
      * security group ID or the security group name in the request. For security groups
      * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request. For security groups
-     * in a nondefault VPC, you must specify the security group ID.</p>
-     */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request. For security groups
-     * in a nondefault VPC, you must specify the security group ID.</p>
-     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request. For security groups
-     * in a nondefault VPC, you must specify the security group ID.</p>
-     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request. For security groups
-     * in a nondefault VPC, you must specify the security group ID.</p>
-     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request. For security groups
-     * in a nondefault VPC, you must specify the security group ID.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request. For security groups
-     * in a nondefault VPC, you must specify the security group ID.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request. For security groups
-     * in a nondefault VPC, you must specify the security group ID.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sets of IP permissions. You can't specify a source security group and a
      * CIDR IP address range in the same set of permissions.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
-
-    /**
-     * <p>The sets of IP permissions. You can't specify a source security group and a
-     * CIDR IP address range in the same set of permissions.</p>
-     */
     inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
-
-    /**
-     * <p>The sets of IP permissions. You can't specify a source security group and a
-     * CIDR IP address range in the same set of permissions.</p>
-     */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
-
-    /**
-     * <p>The sets of IP permissions. You can't specify a source security group and a
-     * CIDR IP address range in the same set of permissions.</p>
-     */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
-
-    /**
-     * <p>The sets of IP permissions. You can't specify a source security group and a
-     * CIDR IP address range in the same set of permissions.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
-
-    /**
-     * <p>The sets of IP permissions. You can't specify a source security group and a
-     * CIDR IP address range in the same set of permissions.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
-
-    /**
-     * <p>The sets of IP permissions. You can't specify a source security group and a
-     * CIDR IP address range in the same set of permissions.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
-
-    /**
-     * <p>The sets of IP permissions. You can't specify a source security group and a
-     * CIDR IP address range in the same set of permissions.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
@@ -270,64 +117,16 @@ namespace Model
      * Numbers</a>). Use <code>-1</code> to specify all.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
-
-    /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
-     */
     inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
-
-    /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
-     */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
-
-    /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
-     */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
-
-    /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
-     */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
-
-    /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
-
-    /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>[Default VPC] The name of the source security group. You can't specify this
      * parameter in combination with the following parameters: the CIDR IP address
@@ -336,137 +135,41 @@ namespace Model
      * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupName() const{ return m_sourceSecurityGroupName; }
-
-    /**
-     * <p>[Default VPC] The name of the source security group. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the start of the port range, the IP protocol, and the end of the port
-     * range. The source security group must be in the same VPC. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-     */
     inline bool SourceSecurityGroupNameHasBeenSet() const { return m_sourceSecurityGroupNameHasBeenSet; }
-
-    /**
-     * <p>[Default VPC] The name of the source security group. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the start of the port range, the IP protocol, and the end of the port
-     * range. The source security group must be in the same VPC. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-     */
     inline void SetSourceSecurityGroupName(const Aws::String& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = value; }
-
-    /**
-     * <p>[Default VPC] The name of the source security group. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the start of the port range, the IP protocol, and the end of the port
-     * range. The source security group must be in the same VPC. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-     */
     inline void SetSourceSecurityGroupName(Aws::String&& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = std::move(value); }
-
-    /**
-     * <p>[Default VPC] The name of the source security group. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the start of the port range, the IP protocol, and the end of the port
-     * range. The source security group must be in the same VPC. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-     */
     inline void SetSourceSecurityGroupName(const char* value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName.assign(value); }
-
-    /**
-     * <p>[Default VPC] The name of the source security group. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the start of the port range, the IP protocol, and the end of the port
-     * range. The source security group must be in the same VPC. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupName(const Aws::String& value) { SetSourceSecurityGroupName(value); return *this;}
-
-    /**
-     * <p>[Default VPC] The name of the source security group. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the start of the port range, the IP protocol, and the end of the port
-     * range. The source security group must be in the same VPC. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupName(Aws::String&& value) { SetSourceSecurityGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>[Default VPC] The name of the source security group. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
-     * range, the start of the port range, the IP protocol, and the end of the port
-     * range. The source security group must be in the same VPC. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupName(const char* value) { SetSourceSecurityGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Not supported.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupOwnerId() const{ return m_sourceSecurityGroupOwnerId; }
-
-    /**
-     * <p>Not supported.</p>
-     */
     inline bool SourceSecurityGroupOwnerIdHasBeenSet() const { return m_sourceSecurityGroupOwnerIdHasBeenSet; }
-
-    /**
-     * <p>Not supported.</p>
-     */
     inline void SetSourceSecurityGroupOwnerId(const Aws::String& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
-
-    /**
-     * <p>Not supported.</p>
-     */
     inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = std::move(value); }
-
-    /**
-     * <p>Not supported.</p>
-     */
     inline void SetSourceSecurityGroupOwnerId(const char* value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId.assign(value); }
-
-    /**
-     * <p>Not supported.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const Aws::String& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
-
-    /**
-     * <p>Not supported.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(std::move(value)); return *this;}
-
-    /**
-     * <p>Not supported.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+     * protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
-     */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-
-    /**
-     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
-     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithToPort(int value) { SetToPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -474,77 +177,25 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of the security group rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupRuleIds() const{ return m_securityGroupRuleIds; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline bool SecurityGroupRuleIdsHasBeenSet() const { return m_securityGroupRuleIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline void SetSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = value; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline void SetSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupRuleIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& WithSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupRuleIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(const Aws::String& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(Aws::String&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(const char* value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_cidrIp;

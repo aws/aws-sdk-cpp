@@ -30,26 +30,15 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The maximum expected bitrate (in bps).
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
-
-    /**
-     * The maximum expected bitrate (in bps).
-     */
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
-
-    /**
-     * The maximum expected bitrate (in bps).
-     */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
-
-    /**
-     * The maximum expected bitrate (in bps).
-     */
     inline AddEgressGatewayBridgeRequest& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxBitrate;

@@ -25,10 +25,8 @@ EgressGatewayBridge::EgressGatewayBridge() :
 {
 }
 
-EgressGatewayBridge::EgressGatewayBridge(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false)
+EgressGatewayBridge::EgressGatewayBridge(JsonView jsonValue)
+  : EgressGatewayBridge()
 {
   *this = jsonValue;
 }

@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeBatchInferenceJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information on the specified batch inference job.</p>
      */
     inline const BatchInferenceJob& GetBatchInferenceJob() const{ return m_batchInferenceJob; }
-
-    /**
-     * <p>Information on the specified batch inference job.</p>
-     */
     inline void SetBatchInferenceJob(const BatchInferenceJob& value) { m_batchInferenceJob = value; }
-
-    /**
-     * <p>Information on the specified batch inference job.</p>
-     */
     inline void SetBatchInferenceJob(BatchInferenceJob&& value) { m_batchInferenceJob = std::move(value); }
-
-    /**
-     * <p>Information on the specified batch inference job.</p>
-     */
     inline DescribeBatchInferenceJobResult& WithBatchInferenceJob(const BatchInferenceJob& value) { SetBatchInferenceJob(value); return *this;}
-
-    /**
-     * <p>Information on the specified batch inference job.</p>
-     */
     inline DescribeBatchInferenceJobResult& WithBatchInferenceJob(BatchInferenceJob&& value) { SetBatchInferenceJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeBatchInferenceJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeBatchInferenceJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeBatchInferenceJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BatchInferenceJob m_batchInferenceJob;

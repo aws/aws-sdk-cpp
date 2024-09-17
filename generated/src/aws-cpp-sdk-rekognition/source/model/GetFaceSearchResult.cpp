@@ -22,8 +22,8 @@ GetFaceSearchResult::GetFaceSearchResult() :
 {
 }
 
-GetFaceSearchResult::GetFaceSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetFaceSearchResult::GetFaceSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFaceSearchResult()
 {
   *this = result;
 }

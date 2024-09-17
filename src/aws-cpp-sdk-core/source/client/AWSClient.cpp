@@ -119,13 +119,19 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_region(configuration.region),
-    m_telemetryProvider(configuration.telemetryProvider),
+    m_telemetryProvider(configuration.telemetryProvider ? configuration.telemetryProvider : configuration.configFactories.telemetryProviderCreateFn()),
     m_signerProvider(Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(AWS_CLIENT_LOG_TAG, signer)),
-    m_httpClient(CreateHttpClient(configuration)),
+    m_httpClient(CreateHttpClient(
+        [&configuration, this]()
+        {
+            ClientConfiguration tempConfig(configuration);
+            tempConfig.telemetryProvider = m_telemetryProvider;
+            return tempConfig;
+        }())),
     m_errorMarshaller(errorMarshaller),
-    m_retryStrategy(configuration.retryStrategy),
-    m_writeRateLimiter(configuration.writeRateLimiter),
-    m_readRateLimiter(configuration.readRateLimiter),
+    m_retryStrategy(configuration.retryStrategy ? configuration.retryStrategy : configuration.configFactories.retryStrategyCreateFn()),
+    m_writeRateLimiter(configuration.writeRateLimiter ? configuration.writeRateLimiter : configuration.configFactories.writeRateLimiterCreateFn()),
+    m_readRateLimiter(configuration.readRateLimiter ? configuration.readRateLimiter : configuration.configFactories.readRateLimiterCreateFn()),
     m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
@@ -138,13 +144,19 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_region(configuration.region),
-    m_telemetryProvider(configuration.telemetryProvider),
+    m_telemetryProvider(configuration.telemetryProvider ? configuration.telemetryProvider : configuration.configFactories.telemetryProviderCreateFn()),
     m_signerProvider(signerProvider),
-    m_httpClient(CreateHttpClient(configuration)),
+    m_httpClient(CreateHttpClient(
+        [&configuration, this]()
+        {
+            ClientConfiguration tempConfig(configuration);
+            tempConfig.telemetryProvider = m_telemetryProvider;
+            return tempConfig;
+        }())),
     m_errorMarshaller(errorMarshaller),
-    m_retryStrategy(configuration.retryStrategy),
-    m_writeRateLimiter(configuration.writeRateLimiter),
-    m_readRateLimiter(configuration.readRateLimiter),
+    m_retryStrategy(configuration.retryStrategy ? configuration.retryStrategy : configuration.configFactories.retryStrategyCreateFn()),
+    m_writeRateLimiter(configuration.writeRateLimiter ? configuration.writeRateLimiter : configuration.configFactories.writeRateLimiterCreateFn()),
+    m_readRateLimiter(configuration.readRateLimiter ? configuration.readRateLimiter : configuration.configFactories.readRateLimiterCreateFn()),
     m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
@@ -582,11 +594,18 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         }
     }
 
-    if (DoesResponseGenerateError(httpResponse) || request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
+    if (DoesResponseGenerateError(httpResponse) )
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
         auto error = BuildAWSError(httpResponse);
         return HttpResponseOutcome(std::move(error));
+    }
+    else if(request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
+    {
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Response has embedded errors");
+
+        auto error = GetErrorMarshaller()->Marshall(*httpResponse);
+        return HttpResponseOutcome(std::move(error) );
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
@@ -859,9 +878,9 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         {
             httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
         }
-        else
+        else if (headers.find(CONTENT_MD5_HEADER) == headers.end())
         {
-            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Checksum algorithm: " << checksumAlgorithmName << "is not supported by SDK.");
+            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Checksum algorithm: " << checksumAlgorithmName << " is not supported by SDK.");
         }
     }
 
@@ -1017,6 +1036,7 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
 
     AddChecksumToRequest(httpRequest, request);
     // Pass along handlers for processing data sent/received in bytes
+    httpRequest->SetHeadersReceivedEventHandler(request.GetHeadersReceivedEventHandler());
     httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());
     httpRequest->SetDataSentEventHandler(request.GetDataSentEventHandler());
     httpRequest->SetContinueRequestHandle(request.GetContinueRequestHandler());

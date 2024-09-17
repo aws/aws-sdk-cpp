@@ -39,79 +39,31 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies additional settings for your VDM configuration as applicable to the
      * Dashboard.</p>
      */
     inline const DashboardOptions& GetDashboardOptions() const{ return m_dashboardOptions; }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Dashboard.</p>
-     */
     inline bool DashboardOptionsHasBeenSet() const { return m_dashboardOptionsHasBeenSet; }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Dashboard.</p>
-     */
     inline void SetDashboardOptions(const DashboardOptions& value) { m_dashboardOptionsHasBeenSet = true; m_dashboardOptions = value; }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Dashboard.</p>
-     */
     inline void SetDashboardOptions(DashboardOptions&& value) { m_dashboardOptionsHasBeenSet = true; m_dashboardOptions = std::move(value); }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Dashboard.</p>
-     */
     inline VdmOptions& WithDashboardOptions(const DashboardOptions& value) { SetDashboardOptions(value); return *this;}
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Dashboard.</p>
-     */
     inline VdmOptions& WithDashboardOptions(DashboardOptions&& value) { SetDashboardOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies additional settings for your VDM configuration as applicable to the
      * Guardian.</p>
      */
     inline const GuardianOptions& GetGuardianOptions() const{ return m_guardianOptions; }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Guardian.</p>
-     */
     inline bool GuardianOptionsHasBeenSet() const { return m_guardianOptionsHasBeenSet; }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Guardian.</p>
-     */
     inline void SetGuardianOptions(const GuardianOptions& value) { m_guardianOptionsHasBeenSet = true; m_guardianOptions = value; }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Guardian.</p>
-     */
     inline void SetGuardianOptions(GuardianOptions&& value) { m_guardianOptionsHasBeenSet = true; m_guardianOptions = std::move(value); }
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Guardian.</p>
-     */
     inline VdmOptions& WithGuardianOptions(const GuardianOptions& value) { SetGuardianOptions(value); return *this;}
-
-    /**
-     * <p>Specifies additional settings for your VDM configuration as applicable to the
-     * Guardian.</p>
-     */
     inline VdmOptions& WithGuardianOptions(GuardianOptions&& value) { SetGuardianOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DashboardOptions m_dashboardOptions;

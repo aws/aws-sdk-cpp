@@ -24,9 +24,8 @@ PendingMaintenance::PendingMaintenance() :
 {
 }
 
-PendingMaintenance::PendingMaintenance(JsonView jsonValue) : 
-    m_engineVersionHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
+PendingMaintenance::PendingMaintenance(JsonView jsonValue)
+  : PendingMaintenance()
 {
   *this = jsonValue;
 }

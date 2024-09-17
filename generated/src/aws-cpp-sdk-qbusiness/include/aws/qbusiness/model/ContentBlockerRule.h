@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-   * topic. You can configure a custom message to inform your end users that they
-   * have asked about a restricted topic and suggest any next steps they should
+   * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+   * blocked topic. You can configure a custom message to inform your end users that
+   * they have asked about a restricted topic and suggest any next steps they should
    * take.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ContentBlockerRule">AWS
    * API Reference</a></p>
@@ -40,54 +40,20 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configured custom message displayed to an end user informing them that
      * they've used a blocked phrase during chat.</p>
      */
     inline const Aws::String& GetSystemMessageOverride() const{ return m_systemMessageOverride; }
-
-    /**
-     * <p>The configured custom message displayed to an end user informing them that
-     * they've used a blocked phrase during chat.</p>
-     */
     inline bool SystemMessageOverrideHasBeenSet() const { return m_systemMessageOverrideHasBeenSet; }
-
-    /**
-     * <p>The configured custom message displayed to an end user informing them that
-     * they've used a blocked phrase during chat.</p>
-     */
     inline void SetSystemMessageOverride(const Aws::String& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = value; }
-
-    /**
-     * <p>The configured custom message displayed to an end user informing them that
-     * they've used a blocked phrase during chat.</p>
-     */
     inline void SetSystemMessageOverride(Aws::String&& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = std::move(value); }
-
-    /**
-     * <p>The configured custom message displayed to an end user informing them that
-     * they've used a blocked phrase during chat.</p>
-     */
     inline void SetSystemMessageOverride(const char* value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride.assign(value); }
-
-    /**
-     * <p>The configured custom message displayed to an end user informing them that
-     * they've used a blocked phrase during chat.</p>
-     */
     inline ContentBlockerRule& WithSystemMessageOverride(const Aws::String& value) { SetSystemMessageOverride(value); return *this;}
-
-    /**
-     * <p>The configured custom message displayed to an end user informing them that
-     * they've used a blocked phrase during chat.</p>
-     */
     inline ContentBlockerRule& WithSystemMessageOverride(Aws::String&& value) { SetSystemMessageOverride(std::move(value)); return *this;}
-
-    /**
-     * <p>The configured custom message displayed to an end user informing them that
-     * they've used a blocked phrase during chat.</p>
-     */
     inline ContentBlockerRule& WithSystemMessageOverride(const char* value) { SetSystemMessageOverride(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_systemMessageOverride;

@@ -47,40 +47,13 @@ TaskSet::TaskSet() :
     m_stabilityStatus(StabilityStatus::NOT_SET),
     m_stabilityStatusHasBeenSet(false),
     m_stabilityStatusAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fargateEphemeralStorageHasBeenSet(false)
 {
 }
 
-TaskSet::TaskSet(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_taskSetArnHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_computedDesiredCount(0),
-    m_computedDesiredCountHasBeenSet(false),
-    m_pendingCount(0),
-    m_pendingCountHasBeenSet(false),
-    m_runningCount(0),
-    m_runningCountHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformFamilyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false),
-    m_scaleHasBeenSet(false),
-    m_stabilityStatus(StabilityStatus::NOT_SET),
-    m_stabilityStatusHasBeenSet(false),
-    m_stabilityStatusAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TaskSet::TaskSet(JsonView jsonValue)
+  : TaskSet()
 {
   *this = jsonValue;
 }
@@ -267,6 +240,13 @@ TaskSet& TaskSet::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fargateEphemeralStorage"))
+  {
+    m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
+
+    m_fargateEphemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -430,6 +410,12 @@ JsonValue TaskSet::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_fargateEphemeralStorageHasBeenSet)
+  {
+   payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
 
   }
 

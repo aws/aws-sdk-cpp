@@ -33,53 +33,27 @@ namespace Model
     AWS_FSX_API CreateDataRepositoryTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of the data repository task that you just created.</p>
      */
     inline const DataRepositoryTask& GetDataRepositoryTask() const{ return m_dataRepositoryTask; }
-
-    /**
-     * <p>The description of the data repository task that you just created.</p>
-     */
     inline void SetDataRepositoryTask(const DataRepositoryTask& value) { m_dataRepositoryTask = value; }
-
-    /**
-     * <p>The description of the data repository task that you just created.</p>
-     */
     inline void SetDataRepositoryTask(DataRepositoryTask&& value) { m_dataRepositoryTask = std::move(value); }
-
-    /**
-     * <p>The description of the data repository task that you just created.</p>
-     */
     inline CreateDataRepositoryTaskResult& WithDataRepositoryTask(const DataRepositoryTask& value) { SetDataRepositoryTask(value); return *this;}
-
-    /**
-     * <p>The description of the data repository task that you just created.</p>
-     */
     inline CreateDataRepositoryTaskResult& WithDataRepositoryTask(DataRepositoryTask&& value) { SetDataRepositoryTask(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDataRepositoryTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDataRepositoryTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDataRepositoryTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DataRepositoryTask m_dataRepositoryTask;

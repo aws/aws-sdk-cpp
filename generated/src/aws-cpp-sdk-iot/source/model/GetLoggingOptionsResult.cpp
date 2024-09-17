@@ -22,8 +22,8 @@ GetLoggingOptionsResult::GetLoggingOptionsResult() :
 {
 }
 
-GetLoggingOptionsResult::GetLoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_logLevel(LogLevel::NOT_SET)
+GetLoggingOptionsResult::GetLoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLoggingOptionsResult()
 {
   *this = result;
 }

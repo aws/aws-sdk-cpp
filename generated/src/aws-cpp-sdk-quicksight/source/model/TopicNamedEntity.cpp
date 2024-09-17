@@ -27,12 +27,8 @@ TopicNamedEntity::TopicNamedEntity() :
 {
 }
 
-TopicNamedEntity::TopicNamedEntity(JsonView jsonValue) : 
-    m_entityNameHasBeenSet(false),
-    m_entityDescriptionHasBeenSet(false),
-    m_entitySynonymsHasBeenSet(false),
-    m_semanticEntityTypeHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+TopicNamedEntity::TopicNamedEntity(JsonView jsonValue)
+  : TopicNamedEntity()
 {
   *this = jsonValue;
 }

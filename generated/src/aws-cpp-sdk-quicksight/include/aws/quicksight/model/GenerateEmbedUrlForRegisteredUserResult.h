@@ -32,86 +32,39 @@ namespace Model
     AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
-     * console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar,
+     * Generative Q&amp;A experience, or console.</p>
      */
     inline const Aws::String& GetEmbedUrl() const{ return m_embedUrl; }
-
-    /**
-     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
-     * console.</p>
-     */
     inline void SetEmbedUrl(const Aws::String& value) { m_embedUrl = value; }
-
-    /**
-     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
-     * console.</p>
-     */
     inline void SetEmbedUrl(Aws::String&& value) { m_embedUrl = std::move(value); }
-
-    /**
-     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
-     * console.</p>
-     */
     inline void SetEmbedUrl(const char* value) { m_embedUrl.assign(value); }
-
-    /**
-     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
-     * console.</p>
-     */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(const Aws::String& value) { SetEmbedUrl(value); return *this;}
-
-    /**
-     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
-     * console.</p>
-     */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(Aws::String&& value) { SetEmbedUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
-     * console.</p>
-     */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(const char* value) { SetEmbedUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline GenerateEmbedUrlForRegisteredUserResult& WithStatus(int value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GenerateEmbedUrlForRegisteredUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GenerateEmbedUrlForRegisteredUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GenerateEmbedUrlForRegisteredUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_embedUrl;

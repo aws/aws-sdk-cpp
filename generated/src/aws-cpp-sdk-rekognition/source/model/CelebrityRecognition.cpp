@@ -25,10 +25,8 @@ CelebrityRecognition::CelebrityRecognition() :
 {
 }
 
-CelebrityRecognition::CelebrityRecognition(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_celebrityHasBeenSet(false)
+CelebrityRecognition::CelebrityRecognition(JsonView jsonValue)
+  : CelebrityRecognition()
 {
   *this = jsonValue;
 }

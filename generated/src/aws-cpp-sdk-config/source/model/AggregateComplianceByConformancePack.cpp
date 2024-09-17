@@ -26,11 +26,8 @@ AggregateComplianceByConformancePack::AggregateComplianceByConformancePack() :
 {
 }
 
-AggregateComplianceByConformancePack::AggregateComplianceByConformancePack(JsonView jsonValue) : 
-    m_conformancePackNameHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+AggregateComplianceByConformancePack::AggregateComplianceByConformancePack(JsonView jsonValue)
+  : AggregateComplianceByConformancePack()
 {
   *this = jsonValue;
 }

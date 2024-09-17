@@ -22,8 +22,8 @@ GetRasterDataCollectionResult::GetRasterDataCollectionResult() :
 {
 }
 
-GetRasterDataCollectionResult::GetRasterDataCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(DataCollectionType::NOT_SET)
+GetRasterDataCollectionResult::GetRasterDataCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRasterDataCollectionResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ MailFromAttributes::MailFromAttributes() :
 {
 }
 
-MailFromAttributes::MailFromAttributes(JsonView jsonValue) : 
-    m_mailFromDomainHasBeenSet(false),
-    m_mailFromDomainStatus(MailFromDomainStatus::NOT_SET),
-    m_mailFromDomainStatusHasBeenSet(false),
-    m_behaviorOnMxFailure(BehaviorOnMxFailure::NOT_SET),
-    m_behaviorOnMxFailureHasBeenSet(false)
+MailFromAttributes::MailFromAttributes(JsonView jsonValue)
+  : MailFromAttributes()
 {
   *this = jsonValue;
 }

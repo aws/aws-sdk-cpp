@@ -35,20 +35,8 @@ FunctionConfiguration::FunctionConfiguration() :
 {
 }
 
-FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) : 
-    m_functionIdHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceNameHasBeenSet(false),
-    m_requestMappingTemplateHasBeenSet(false),
-    m_responseMappingTemplateHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_syncConfigHasBeenSet(false),
-    m_maxBatchSize(0),
-    m_maxBatchSizeHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_codeHasBeenSet(false)
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue)
+  : FunctionConfiguration()
 {
   *this = jsonValue;
 }

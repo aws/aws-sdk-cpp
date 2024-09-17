@@ -23,9 +23,8 @@ DescribeRuleGroupMetadataResult::DescribeRuleGroupMetadataResult() :
 {
 }
 
-DescribeRuleGroupMetadataResult::DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(RuleGroupType::NOT_SET),
-    m_capacity(0)
+DescribeRuleGroupMetadataResult::DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRuleGroupMetadataResult()
 {
   *this = result;
 }

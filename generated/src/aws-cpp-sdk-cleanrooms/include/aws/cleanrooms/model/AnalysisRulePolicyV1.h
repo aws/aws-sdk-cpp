@@ -8,6 +8,7 @@
 #include <aws/cleanrooms/model/AnalysisRuleList.h>
 #include <aws/cleanrooms/model/AnalysisRuleAggregation.h>
 #include <aws/cleanrooms/model/AnalysisRuleCustom.h>
+#include <aws/cleanrooms/model/AnalysisRuleIdMappingTable.h>
 #include <utility>
 
 namespace Aws
@@ -40,104 +41,54 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Analysis rule type that enables only list queries on a configured table.</p>
      */
     inline const AnalysisRuleList& GetList() const{ return m_list; }
-
-    /**
-     * <p>Analysis rule type that enables only list queries on a configured table.</p>
-     */
     inline bool ListHasBeenSet() const { return m_listHasBeenSet; }
-
-    /**
-     * <p>Analysis rule type that enables only list queries on a configured table.</p>
-     */
     inline void SetList(const AnalysisRuleList& value) { m_listHasBeenSet = true; m_list = value; }
-
-    /**
-     * <p>Analysis rule type that enables only list queries on a configured table.</p>
-     */
     inline void SetList(AnalysisRuleList&& value) { m_listHasBeenSet = true; m_list = std::move(value); }
-
-    /**
-     * <p>Analysis rule type that enables only list queries on a configured table.</p>
-     */
     inline AnalysisRulePolicyV1& WithList(const AnalysisRuleList& value) { SetList(value); return *this;}
-
-    /**
-     * <p>Analysis rule type that enables only list queries on a configured table.</p>
-     */
     inline AnalysisRulePolicyV1& WithList(AnalysisRuleList&& value) { SetList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Analysis rule type that enables only aggregation queries on a configured
      * table.</p>
      */
     inline const AnalysisRuleAggregation& GetAggregation() const{ return m_aggregation; }
-
-    /**
-     * <p>Analysis rule type that enables only aggregation queries on a configured
-     * table.</p>
-     */
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-
-    /**
-     * <p>Analysis rule type that enables only aggregation queries on a configured
-     * table.</p>
-     */
     inline void SetAggregation(const AnalysisRuleAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-
-    /**
-     * <p>Analysis rule type that enables only aggregation queries on a configured
-     * table.</p>
-     */
     inline void SetAggregation(AnalysisRuleAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-
-    /**
-     * <p>Analysis rule type that enables only aggregation queries on a configured
-     * table.</p>
-     */
     inline AnalysisRulePolicyV1& WithAggregation(const AnalysisRuleAggregation& value) { SetAggregation(value); return *this;}
-
-    /**
-     * <p>Analysis rule type that enables only aggregation queries on a configured
-     * table.</p>
-     */
     inline AnalysisRulePolicyV1& WithAggregation(AnalysisRuleAggregation&& value) { SetAggregation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
      */
     inline const AnalysisRuleCustom& GetCustom() const{ return m_custom; }
-
-    /**
-     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
-     */
     inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
-
-    /**
-     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
-     */
     inline void SetCustom(const AnalysisRuleCustom& value) { m_customHasBeenSet = true; m_custom = value; }
-
-    /**
-     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
-     */
     inline void SetCustom(AnalysisRuleCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
-
-    /**
-     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
-     */
     inline AnalysisRulePolicyV1& WithCustom(const AnalysisRuleCustom& value) { SetCustom(value); return *this;}
-
-    /**
-     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
-     */
     inline AnalysisRulePolicyV1& WithCustom(AnalysisRuleCustom&& value) { SetCustom(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The ID mapping table.</p>
+     */
+    inline const AnalysisRuleIdMappingTable& GetIdMappingTable() const{ return m_idMappingTable; }
+    inline bool IdMappingTableHasBeenSet() const { return m_idMappingTableHasBeenSet; }
+    inline void SetIdMappingTable(const AnalysisRuleIdMappingTable& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = value; }
+    inline void SetIdMappingTable(AnalysisRuleIdMappingTable&& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = std::move(value); }
+    inline AnalysisRulePolicyV1& WithIdMappingTable(const AnalysisRuleIdMappingTable& value) { SetIdMappingTable(value); return *this;}
+    inline AnalysisRulePolicyV1& WithIdMappingTable(AnalysisRuleIdMappingTable&& value) { SetIdMappingTable(std::move(value)); return *this;}
+    ///@}
   private:
 
     AnalysisRuleList m_list;
@@ -148,6 +99,9 @@ namespace Model
 
     AnalysisRuleCustom m_custom;
     bool m_customHasBeenSet = false;
+
+    AnalysisRuleIdMappingTable m_idMappingTable;
+    bool m_idMappingTableHasBeenSet = false;
   };
 
 } // namespace Model

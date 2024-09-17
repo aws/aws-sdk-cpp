@@ -25,8 +25,8 @@ PrefixLevel::PrefixLevel() :
 {
 }
 
-PrefixLevel::PrefixLevel(const XmlNode& xmlNode) : 
-    m_storageMetricsHasBeenSet(false)
+PrefixLevel::PrefixLevel(const XmlNode& xmlNode)
+  : PrefixLevel()
 {
   *this = xmlNode;
 }

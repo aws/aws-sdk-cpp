@@ -40,54 +40,20 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of up to two channels to be used for sending notifications for events
      * detected from the application profile.</p>
      */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
-
-    /**
-     * <p>List of up to two channels to be used for sending notifications for events
-     * detected from the application profile.</p>
-     */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-
-    /**
-     * <p>List of up to two channels to be used for sending notifications for events
-     * detected from the application profile.</p>
-     */
     inline void SetChannels(const Aws::Vector<Channel>& value) { m_channelsHasBeenSet = true; m_channels = value; }
-
-    /**
-     * <p>List of up to two channels to be used for sending notifications for events
-     * detected from the application profile.</p>
-     */
     inline void SetChannels(Aws::Vector<Channel>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-
-    /**
-     * <p>List of up to two channels to be used for sending notifications for events
-     * detected from the application profile.</p>
-     */
     inline NotificationConfiguration& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-
-    /**
-     * <p>List of up to two channels to be used for sending notifications for events
-     * detected from the application profile.</p>
-     */
     inline NotificationConfiguration& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-
-    /**
-     * <p>List of up to two channels to be used for sending notifications for events
-     * detected from the application profile.</p>
-     */
     inline NotificationConfiguration& AddChannels(const Channel& value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
-
-    /**
-     * <p>List of up to two channels to be used for sending notifications for events
-     * detected from the application profile.</p>
-     */
     inline NotificationConfiguration& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Channel> m_channels;

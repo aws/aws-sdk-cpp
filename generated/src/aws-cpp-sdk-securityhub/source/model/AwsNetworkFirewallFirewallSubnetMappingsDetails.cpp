@@ -23,8 +23,8 @@ AwsNetworkFirewallFirewallSubnetMappingsDetails::AwsNetworkFirewallFirewallSubne
 {
 }
 
-AwsNetworkFirewallFirewallSubnetMappingsDetails::AwsNetworkFirewallFirewallSubnetMappingsDetails(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false)
+AwsNetworkFirewallFirewallSubnetMappingsDetails::AwsNetworkFirewallFirewallSubnetMappingsDetails(JsonView jsonValue)
+  : AwsNetworkFirewallFirewallSubnetMappingsDetails()
 {
   *this = jsonValue;
 }

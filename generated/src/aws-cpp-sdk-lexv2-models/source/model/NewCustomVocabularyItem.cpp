@@ -26,11 +26,8 @@ NewCustomVocabularyItem::NewCustomVocabularyItem() :
 {
 }
 
-NewCustomVocabularyItem::NewCustomVocabularyItem(JsonView jsonValue) : 
-    m_phraseHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_displayAsHasBeenSet(false)
+NewCustomVocabularyItem::NewCustomVocabularyItem(JsonView jsonValue)
+  : NewCustomVocabularyItem()
 {
   *this = jsonValue;
 }

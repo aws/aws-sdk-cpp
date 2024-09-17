@@ -25,10 +25,8 @@ FilterActivity::FilterActivity() :
 {
 }
 
-FilterActivity::FilterActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_nextHasBeenSet(false)
+FilterActivity::FilterActivity(JsonView jsonValue)
+  : FilterActivity()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ Segment::Segment() :
 {
 }
 
-Segment::Segment(JsonView jsonValue) : 
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_tsUseAudioRenditionGroup(false),
-    m_tsUseAudioRenditionGroupHasBeenSet(false),
-    m_includeIframeOnlyStreams(false),
-    m_includeIframeOnlyStreamsHasBeenSet(false),
-    m_tsIncludeDvbSubtitles(false),
-    m_tsIncludeDvbSubtitlesHasBeenSet(false),
-    m_scteHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+Segment::Segment(JsonView jsonValue)
+  : Segment()
 {
   *this = jsonValue;
 }

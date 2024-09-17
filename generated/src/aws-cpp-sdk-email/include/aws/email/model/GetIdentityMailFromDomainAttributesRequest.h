@@ -43,51 +43,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A list of one or more identities.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentities() const{ return m_identities; }
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline bool IdentitiesHasBeenSet() const { return m_identitiesHasBeenSet; }
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = std::move(value); }
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline GetIdentityMailFromDomainAttributesRequest& WithIdentities(const Aws::Vector<Aws::String>& value) { SetIdentities(value); return *this;}
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline GetIdentityMailFromDomainAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline GetIdentityMailFromDomainAttributesRequest& AddIdentities(const Aws::String& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline GetIdentityMailFromDomainAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of one or more identities.</p>
-     */
     inline GetIdentityMailFromDomainAttributesRequest& AddIdentities(const char* value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_identities;

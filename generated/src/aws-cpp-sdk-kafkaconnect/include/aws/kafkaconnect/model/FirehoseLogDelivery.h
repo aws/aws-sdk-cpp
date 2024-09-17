@@ -38,79 +38,31 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
      * for log delivery.</p>
      */
     inline const Aws::String& GetDeliveryStream() const{ return m_deliveryStream; }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
-     * for log delivery.</p>
-     */
     inline bool DeliveryStreamHasBeenSet() const { return m_deliveryStreamHasBeenSet; }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
-     * for log delivery.</p>
-     */
     inline void SetDeliveryStream(const Aws::String& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = value; }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
-     * for log delivery.</p>
-     */
     inline void SetDeliveryStream(Aws::String&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::move(value); }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
-     * for log delivery.</p>
-     */
     inline void SetDeliveryStream(const char* value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream.assign(value); }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
-     * for log delivery.</p>
-     */
     inline FirehoseLogDelivery& WithDeliveryStream(const Aws::String& value) { SetDeliveryStream(value); return *this;}
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
-     * for log delivery.</p>
-     */
     inline FirehoseLogDelivery& WithDeliveryStream(Aws::String&& value) { SetDeliveryStream(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream that is the destination
-     * for log delivery.</p>
-     */
     inline FirehoseLogDelivery& WithDeliveryStream(const char* value) { SetDeliveryStream(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether connector logs get delivered to Amazon Kinesis Data
      * Firehose.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether connector logs get delivered to Amazon Kinesis Data
-     * Firehose.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether connector logs get delivered to Amazon Kinesis Data
-     * Firehose.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether connector logs get delivered to Amazon Kinesis Data
-     * Firehose.</p>
-     */
     inline FirehoseLogDelivery& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deliveryStream;

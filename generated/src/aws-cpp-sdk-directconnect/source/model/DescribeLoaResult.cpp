@@ -23,8 +23,8 @@ DescribeLoaResult::DescribeLoaResult() :
 {
 }
 
-DescribeLoaResult::DescribeLoaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_loaContentType(LoaContentType::NOT_SET)
+DescribeLoaResult::DescribeLoaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeLoaResult()
 {
   *this = result;
 }

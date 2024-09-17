@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeClusterResult::DescribeClusterResult() : 
-    m_clusterStatus(ClusterStatus::NOT_SET)
+    m_clusterStatus(ClusterStatus::NOT_SET),
+    m_nodeRecovery(ClusterNodeRecovery::NOT_SET)
 {
 }
 
-DescribeClusterResult::DescribeClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_clusterStatus(ClusterStatus::NOT_SET)
+DescribeClusterResult::DescribeClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeClusterResult()
 {
   *this = result;
 }
@@ -73,6 +74,18 @@ DescribeClusterResult& DescribeClusterResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+  }
+
+  if(jsonValue.ValueExists("Orchestrator"))
+  {
+    m_orchestrator = jsonValue.GetObject("Orchestrator");
+
+  }
+
+  if(jsonValue.ValueExists("NodeRecovery"))
+  {
+    m_nodeRecovery = ClusterNodeRecoveryMapper::GetClusterNodeRecoveryForName(jsonValue.GetString("NodeRecovery"));
 
   }
 

@@ -32,37 +32,23 @@ namespace Model
     AWS_EC2_API EnableAwsNetworkPerformanceMetricSubscriptionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether the subscribe action was successful.</p>
      */
     inline bool GetOutput() const{ return m_output; }
-
-    /**
-     * <p>Indicates whether the subscribe action was successful.</p>
-     */
     inline void SetOutput(bool value) { m_output = value; }
-
-    /**
-     * <p>Indicates whether the subscribe action was successful.</p>
-     */
     inline EnableAwsNetworkPerformanceMetricSubscriptionResponse& WithOutput(bool value) { SetOutput(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline EnableAwsNetworkPerformanceMetricSubscriptionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline EnableAwsNetworkPerformanceMetricSubscriptionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_output;

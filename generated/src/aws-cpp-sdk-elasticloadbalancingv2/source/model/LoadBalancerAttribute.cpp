@@ -26,9 +26,8 @@ LoadBalancerAttribute::LoadBalancerAttribute() :
 {
 }
 
-LoadBalancerAttribute::LoadBalancerAttribute(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+LoadBalancerAttribute::LoadBalancerAttribute(const XmlNode& xmlNode)
+  : LoadBalancerAttribute()
 {
   *this = xmlNode;
 }

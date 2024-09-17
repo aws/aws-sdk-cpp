@@ -25,10 +25,8 @@ MissingParameterException::MissingParameterException() :
 {
 }
 
-MissingParameterException::MissingParameterException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+MissingParameterException::MissingParameterException(JsonView jsonValue)
+  : MissingParameterException()
 {
   *this = jsonValue;
 }

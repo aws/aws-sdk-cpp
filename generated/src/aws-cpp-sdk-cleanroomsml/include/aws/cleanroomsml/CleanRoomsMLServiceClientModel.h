@@ -37,6 +37,11 @@
 #include <aws/cleanroomsml/model/TagResourceResult.h>
 #include <aws/cleanroomsml/model/UntagResourceResult.h>
 #include <aws/cleanroomsml/model/UpdateConfiguredAudienceModelResult.h>
+#include <aws/cleanroomsml/model/ListAudienceExportJobsRequest.h>
+#include <aws/cleanroomsml/model/ListAudienceModelsRequest.h>
+#include <aws/cleanroomsml/model/ListAudienceGenerationJobsRequest.h>
+#include <aws/cleanroomsml/model/ListConfiguredAudienceModelsRequest.h>
+#include <aws/cleanroomsml/model/ListTrainingDatasetsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CleanRoomsMLClient header */
 
@@ -71,7 +76,7 @@ namespace Aws
 
   namespace CleanRoomsML
   {
-    using CleanRoomsMLClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CleanRoomsMLClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CleanRoomsMLEndpointProviderBase = Aws::CleanRoomsML::Endpoint::CleanRoomsMLEndpointProviderBase;
     using CleanRoomsMLEndpointProvider = Aws::CleanRoomsML::Endpoint::CleanRoomsMLEndpointProvider;
 

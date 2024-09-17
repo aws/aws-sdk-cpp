@@ -31,16 +31,8 @@ AwsEcrContainerAggregation::AwsEcrContainerAggregation() :
 {
 }
 
-AwsEcrContainerAggregation::AwsEcrContainerAggregation(JsonView jsonValue) : 
-    m_architecturesHasBeenSet(false),
-    m_imageShasHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_repositoriesHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_sortBy(AwsEcrContainerSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+AwsEcrContainerAggregation::AwsEcrContainerAggregation(JsonView jsonValue)
+  : AwsEcrContainerAggregation()
 {
   *this = jsonValue;
 }

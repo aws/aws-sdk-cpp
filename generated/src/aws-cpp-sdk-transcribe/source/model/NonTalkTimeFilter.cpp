@@ -28,13 +28,8 @@ NonTalkTimeFilter::NonTalkTimeFilter() :
 {
 }
 
-NonTalkTimeFilter::NonTalkTimeFilter(JsonView jsonValue) : 
-    m_threshold(0),
-    m_thresholdHasBeenSet(false),
-    m_absoluteTimeRangeHasBeenSet(false),
-    m_relativeTimeRangeHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
+NonTalkTimeFilter::NonTalkTimeFilter(JsonView jsonValue)
+  : NonTalkTimeFilter()
 {
   *this = jsonValue;
 }

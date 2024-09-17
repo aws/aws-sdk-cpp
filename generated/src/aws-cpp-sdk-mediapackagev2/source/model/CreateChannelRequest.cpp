@@ -18,6 +18,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_channelNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -31,6 +33,11 @@ Aws::String CreateChannelRequest::SerializePayload() const
   {
    payload.WithString("ChannelName", m_channelName);
 
+  }
+
+  if(m_inputTypeHasBeenSet)
+  {
+   payload.WithString("InputType", InputTypeMapper::GetNameForInputType(m_inputType));
   }
 
   if(m_descriptionHasBeenSet)

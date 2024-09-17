@@ -24,9 +24,8 @@ ContactSearchSummaryAgentInfo::ContactSearchSummaryAgentInfo() :
 {
 }
 
-ContactSearchSummaryAgentInfo::ContactSearchSummaryAgentInfo(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_connectedToAgentTimestampHasBeenSet(false)
+ContactSearchSummaryAgentInfo::ContactSearchSummaryAgentInfo(JsonView jsonValue)
+  : ContactSearchSummaryAgentInfo()
 {
   *this = jsonValue;
 }

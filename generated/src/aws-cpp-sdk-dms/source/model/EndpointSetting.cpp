@@ -35,20 +35,8 @@ EndpointSetting::EndpointSetting() :
 {
 }
 
-EndpointSetting::EndpointSetting(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(EndpointSettingTypeValue::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_enumValuesHasBeenSet(false),
-    m_sensitive(false),
-    m_sensitiveHasBeenSet(false),
-    m_unitsHasBeenSet(false),
-    m_applicabilityHasBeenSet(false),
-    m_intValueMin(0),
-    m_intValueMinHasBeenSet(false),
-    m_intValueMax(0),
-    m_intValueMaxHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+EndpointSetting::EndpointSetting(JsonView jsonValue)
+  : EndpointSetting()
 {
   *this = jsonValue;
 }

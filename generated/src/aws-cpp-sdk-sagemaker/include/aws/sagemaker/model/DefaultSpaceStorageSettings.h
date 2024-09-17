@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The default storage settings for a private space.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The default storage settings for a space.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DefaultSpaceStorageSettings">AWS
    * API Reference</a></p>
    */
@@ -38,36 +37,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The default EBS storage settings for a private space.</p>
+     * <p>The default EBS storage settings for a space.</p>
      */
     inline const DefaultEbsStorageSettings& GetDefaultEbsStorageSettings() const{ return m_defaultEbsStorageSettings; }
-
-    /**
-     * <p>The default EBS storage settings for a private space.</p>
-     */
     inline bool DefaultEbsStorageSettingsHasBeenSet() const { return m_defaultEbsStorageSettingsHasBeenSet; }
-
-    /**
-     * <p>The default EBS storage settings for a private space.</p>
-     */
     inline void SetDefaultEbsStorageSettings(const DefaultEbsStorageSettings& value) { m_defaultEbsStorageSettingsHasBeenSet = true; m_defaultEbsStorageSettings = value; }
-
-    /**
-     * <p>The default EBS storage settings for a private space.</p>
-     */
     inline void SetDefaultEbsStorageSettings(DefaultEbsStorageSettings&& value) { m_defaultEbsStorageSettingsHasBeenSet = true; m_defaultEbsStorageSettings = std::move(value); }
-
-    /**
-     * <p>The default EBS storage settings for a private space.</p>
-     */
     inline DefaultSpaceStorageSettings& WithDefaultEbsStorageSettings(const DefaultEbsStorageSettings& value) { SetDefaultEbsStorageSettings(value); return *this;}
-
-    /**
-     * <p>The default EBS storage settings for a private space.</p>
-     */
     inline DefaultSpaceStorageSettings& WithDefaultEbsStorageSettings(DefaultEbsStorageSettings&& value) { SetDefaultEbsStorageSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DefaultEbsStorageSettings m_defaultEbsStorageSettings;

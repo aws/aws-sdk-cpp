@@ -24,9 +24,8 @@ ContainerProductLastModifiedDateFilterDateRange::ContainerProductLastModifiedDat
 {
 }
 
-ContainerProductLastModifiedDateFilterDateRange::ContainerProductLastModifiedDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+ContainerProductLastModifiedDateFilterDateRange::ContainerProductLastModifiedDateFilterDateRange(JsonView jsonValue)
+  : ContainerProductLastModifiedDateFilterDateRange()
 {
   *this = jsonValue;
 }

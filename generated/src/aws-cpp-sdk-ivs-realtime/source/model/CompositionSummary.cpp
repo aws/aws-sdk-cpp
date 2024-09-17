@@ -20,25 +20,18 @@ namespace Model
 
 CompositionSummary::CompositionSummary() : 
     m_arnHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
     m_stageArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
+    m_destinationsHasBeenSet(false),
     m_state(CompositionState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
-CompositionSummary::CompositionSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_stageArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(CompositionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CompositionSummary::CompositionSummary(JsonView jsonValue)
+  : CompositionSummary()
 {
   *this = jsonValue;
 }
@@ -52,6 +45,13 @@ CompositionSummary& CompositionSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stageArn"))
+  {
+    m_stageArn = jsonValue.GetString("stageArn");
+
+    m_stageArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
@@ -60,27 +60,6 @@ CompositionSummary& CompositionSummary::operator =(JsonView jsonValue)
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
     }
     m_destinationsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetString("endTime");
-
-    m_endTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("stageArn"))
-  {
-    m_stageArn = jsonValue.GetString("stageArn");
-
-    m_stageArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -100,6 +79,20 @@ CompositionSummary& CompositionSummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetString("endTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +106,12 @@ JsonValue CompositionSummary::Jsonize() const
 
   }
 
+  if(m_stageArnHasBeenSet)
+  {
+   payload.WithString("stageArn", m_stageArn);
+
+  }
+
   if(m_destinationsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
@@ -122,22 +121,6 @@ JsonValue CompositionSummary::Jsonize() const
    }
    payload.WithArray("destinations", std::move(destinationsJsonList));
 
-  }
-
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_stageArnHasBeenSet)
-  {
-   payload.WithString("stageArn", m_stageArn);
-
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_stateHasBeenSet)
@@ -154,6 +137,16 @@ JsonValue CompositionSummary::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

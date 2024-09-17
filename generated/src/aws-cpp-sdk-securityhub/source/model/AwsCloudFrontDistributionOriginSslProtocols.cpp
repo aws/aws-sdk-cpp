@@ -25,10 +25,8 @@ AwsCloudFrontDistributionOriginSslProtocols::AwsCloudFrontDistributionOriginSslP
 {
 }
 
-AwsCloudFrontDistributionOriginSslProtocols::AwsCloudFrontDistributionOriginSslProtocols(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false)
+AwsCloudFrontDistributionOriginSslProtocols::AwsCloudFrontDistributionOriginSslProtocols(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginSslProtocols()
 {
   *this = jsonValue;
 }

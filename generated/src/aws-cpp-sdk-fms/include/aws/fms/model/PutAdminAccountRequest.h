@@ -35,6 +35,7 @@ namespace Model
     AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID to add as an Firewall Manager
      * administrator account. The account must be a member of the organization that was
@@ -44,78 +45,16 @@ namespace Model
      * the Amazon Web Services Accounts in Your Organization</a>.</p>
      */
     inline const Aws::String& GetAdminAccount() const{ return m_adminAccount; }
-
-    /**
-     * <p>The Amazon Web Services account ID to add as an Firewall Manager
-     * administrator account. The account must be a member of the organization that was
-     * onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. For more
-     * information about Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the Amazon Web Services Accounts in Your Organization</a>.</p>
-     */
     inline bool AdminAccountHasBeenSet() const { return m_adminAccountHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID to add as an Firewall Manager
-     * administrator account. The account must be a member of the organization that was
-     * onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. For more
-     * information about Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the Amazon Web Services Accounts in Your Organization</a>.</p>
-     */
     inline void SetAdminAccount(const Aws::String& value) { m_adminAccountHasBeenSet = true; m_adminAccount = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID to add as an Firewall Manager
-     * administrator account. The account must be a member of the organization that was
-     * onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. For more
-     * information about Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the Amazon Web Services Accounts in Your Organization</a>.</p>
-     */
     inline void SetAdminAccount(Aws::String&& value) { m_adminAccountHasBeenSet = true; m_adminAccount = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID to add as an Firewall Manager
-     * administrator account. The account must be a member of the organization that was
-     * onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. For more
-     * information about Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the Amazon Web Services Accounts in Your Organization</a>.</p>
-     */
     inline void SetAdminAccount(const char* value) { m_adminAccountHasBeenSet = true; m_adminAccount.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID to add as an Firewall Manager
-     * administrator account. The account must be a member of the organization that was
-     * onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. For more
-     * information about Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the Amazon Web Services Accounts in Your Organization</a>.</p>
-     */
     inline PutAdminAccountRequest& WithAdminAccount(const Aws::String& value) { SetAdminAccount(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID to add as an Firewall Manager
-     * administrator account. The account must be a member of the organization that was
-     * onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. For more
-     * information about Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the Amazon Web Services Accounts in Your Organization</a>.</p>
-     */
     inline PutAdminAccountRequest& WithAdminAccount(Aws::String&& value) { SetAdminAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID to add as an Firewall Manager
-     * administrator account. The account must be a member of the organization that was
-     * onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. For more
-     * information about Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the Amazon Web Services Accounts in Your Organization</a>.</p>
-     */
     inline PutAdminAccountRequest& WithAdminAccount(const char* value) { SetAdminAccount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configures the resources that the specified Firewall Manager administrator
      * can manage. As a best practice, set the administrative scope according to the
@@ -123,47 +62,12 @@ namespace Model
      * resources or permissions that they need to perform the duties of their role.</p>
      */
     inline const AdminScope& GetAdminScope() const{ return m_adminScope; }
-
-    /**
-     * <p>Configures the resources that the specified Firewall Manager administrator
-     * can manage. As a best practice, set the administrative scope according to the
-     * principles of least privilege. Only grant the administrator the specific
-     * resources or permissions that they need to perform the duties of their role.</p>
-     */
     inline bool AdminScopeHasBeenSet() const { return m_adminScopeHasBeenSet; }
-
-    /**
-     * <p>Configures the resources that the specified Firewall Manager administrator
-     * can manage. As a best practice, set the administrative scope according to the
-     * principles of least privilege. Only grant the administrator the specific
-     * resources or permissions that they need to perform the duties of their role.</p>
-     */
     inline void SetAdminScope(const AdminScope& value) { m_adminScopeHasBeenSet = true; m_adminScope = value; }
-
-    /**
-     * <p>Configures the resources that the specified Firewall Manager administrator
-     * can manage. As a best practice, set the administrative scope according to the
-     * principles of least privilege. Only grant the administrator the specific
-     * resources or permissions that they need to perform the duties of their role.</p>
-     */
     inline void SetAdminScope(AdminScope&& value) { m_adminScopeHasBeenSet = true; m_adminScope = std::move(value); }
-
-    /**
-     * <p>Configures the resources that the specified Firewall Manager administrator
-     * can manage. As a best practice, set the administrative scope according to the
-     * principles of least privilege. Only grant the administrator the specific
-     * resources or permissions that they need to perform the duties of their role.</p>
-     */
     inline PutAdminAccountRequest& WithAdminScope(const AdminScope& value) { SetAdminScope(value); return *this;}
-
-    /**
-     * <p>Configures the resources that the specified Firewall Manager administrator
-     * can manage. As a best practice, set the administrative scope according to the
-     * principles of least privilege. Only grant the administrator the specific
-     * resources or permissions that they need to perform the duties of their role.</p>
-     */
     inline PutAdminAccountRequest& WithAdminScope(AdminScope&& value) { SetAdminScope(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_adminAccount;

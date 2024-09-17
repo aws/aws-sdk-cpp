@@ -24,9 +24,8 @@ ProvisionalConfiguration::ProvisionalConfiguration() :
 {
 }
 
-ProvisionalConfiguration::ProvisionalConfiguration(JsonView jsonValue) : 
-    m_maxTimeToLiveInMinutes(0),
-    m_maxTimeToLiveInMinutesHasBeenSet(false)
+ProvisionalConfiguration::ProvisionalConfiguration(JsonView jsonValue)
+  : ProvisionalConfiguration()
 {
   *this = jsonValue;
 }

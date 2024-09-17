@@ -24,9 +24,8 @@ OnInputLifecycle::OnInputLifecycle() :
 {
 }
 
-OnInputLifecycle::OnInputLifecycle(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false),
-    m_transitionEventsHasBeenSet(false)
+OnInputLifecycle::OnInputLifecycle(JsonView jsonValue)
+  : OnInputLifecycle()
 {
   *this = jsonValue;
 }

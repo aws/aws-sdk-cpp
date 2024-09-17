@@ -38,26 +38,15 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The number of stack instances for which the StackSet operation failed.</p>
      */
     inline int GetFailedStackInstancesCount() const{ return m_failedStackInstancesCount; }
-
-    /**
-     * <p>The number of stack instances for which the StackSet operation failed.</p>
-     */
     inline bool FailedStackInstancesCountHasBeenSet() const { return m_failedStackInstancesCountHasBeenSet; }
-
-    /**
-     * <p>The number of stack instances for which the StackSet operation failed.</p>
-     */
     inline void SetFailedStackInstancesCount(int value) { m_failedStackInstancesCountHasBeenSet = true; m_failedStackInstancesCount = value; }
-
-    /**
-     * <p>The number of stack instances for which the StackSet operation failed.</p>
-     */
     inline StackSetOperationStatusDetails& WithFailedStackInstancesCount(int value) { SetFailedStackInstancesCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_failedStackInstancesCount;

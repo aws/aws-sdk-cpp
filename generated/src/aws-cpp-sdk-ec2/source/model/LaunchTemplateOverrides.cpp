@@ -34,17 +34,8 @@ LaunchTemplateOverrides::LaunchTemplateOverrides() :
 {
 }
 
-LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode) : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false),
-    m_priority(0.0),
-    m_priorityHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode)
+  : LaunchTemplateOverrides()
 {
   *this = xmlNode;
 }

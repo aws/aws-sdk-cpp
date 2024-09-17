@@ -25,10 +25,8 @@ StorageVirtualMachineFilter::StorageVirtualMachineFilter() :
 {
 }
 
-StorageVirtualMachineFilter::StorageVirtualMachineFilter(JsonView jsonValue) : 
-    m_name(StorageVirtualMachineFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+StorageVirtualMachineFilter::StorageVirtualMachineFilter(JsonView jsonValue)
+  : StorageVirtualMachineFilter()
 {
   *this = jsonValue;
 }

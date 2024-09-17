@@ -38,35 +38,19 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether or not the cluster creator IAM principal was set as a
      * cluster admin access entry during cluster creation time. The default value is
      * <code>true</code>.</p>
      */
     inline bool GetBootstrapClusterCreatorAdminPermissions() const{ return m_bootstrapClusterCreatorAdminPermissions; }
-
-    /**
-     * <p>Specifies whether or not the cluster creator IAM principal was set as a
-     * cluster admin access entry during cluster creation time. The default value is
-     * <code>true</code>.</p>
-     */
     inline bool BootstrapClusterCreatorAdminPermissionsHasBeenSet() const { return m_bootstrapClusterCreatorAdminPermissionsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether or not the cluster creator IAM principal was set as a
-     * cluster admin access entry during cluster creation time. The default value is
-     * <code>true</code>.</p>
-     */
     inline void SetBootstrapClusterCreatorAdminPermissions(bool value) { m_bootstrapClusterCreatorAdminPermissionsHasBeenSet = true; m_bootstrapClusterCreatorAdminPermissions = value; }
-
-    /**
-     * <p>Specifies whether or not the cluster creator IAM principal was set as a
-     * cluster admin access entry during cluster creation time. The default value is
-     * <code>true</code>.</p>
-     */
     inline CreateAccessConfigRequest& WithBootstrapClusterCreatorAdminPermissions(bool value) { SetBootstrapClusterCreatorAdminPermissions(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The desired authentication mode for the cluster. If you create a cluster by
      * using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is
@@ -75,52 +59,12 @@ namespace Model
      * <code>API_AND_CONFIG_MAP</code>.</p>
      */
     inline const AuthenticationMode& GetAuthenticationMode() const{ return m_authenticationMode; }
-
-    /**
-     * <p>The desired authentication mode for the cluster. If you create a cluster by
-     * using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is
-     * <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web
-     * Services Management Console, the default value is
-     * <code>API_AND_CONFIG_MAP</code>.</p>
-     */
     inline bool AuthenticationModeHasBeenSet() const { return m_authenticationModeHasBeenSet; }
-
-    /**
-     * <p>The desired authentication mode for the cluster. If you create a cluster by
-     * using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is
-     * <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web
-     * Services Management Console, the default value is
-     * <code>API_AND_CONFIG_MAP</code>.</p>
-     */
     inline void SetAuthenticationMode(const AuthenticationMode& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
-
-    /**
-     * <p>The desired authentication mode for the cluster. If you create a cluster by
-     * using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is
-     * <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web
-     * Services Management Console, the default value is
-     * <code>API_AND_CONFIG_MAP</code>.</p>
-     */
     inline void SetAuthenticationMode(AuthenticationMode&& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = std::move(value); }
-
-    /**
-     * <p>The desired authentication mode for the cluster. If you create a cluster by
-     * using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is
-     * <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web
-     * Services Management Console, the default value is
-     * <code>API_AND_CONFIG_MAP</code>.</p>
-     */
     inline CreateAccessConfigRequest& WithAuthenticationMode(const AuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
-
-    /**
-     * <p>The desired authentication mode for the cluster. If you create a cluster by
-     * using the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is
-     * <code>CONFIG_MAP</code>. If you create the cluster by using the Amazon Web
-     * Services Management Console, the default value is
-     * <code>API_AND_CONFIG_MAP</code>.</p>
-     */
     inline CreateAccessConfigRequest& WithAuthenticationMode(AuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_bootstrapClusterCreatorAdminPermissions;

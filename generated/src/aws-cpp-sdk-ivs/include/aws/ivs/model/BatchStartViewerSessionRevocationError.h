@@ -39,182 +39,74 @@ namespace Model
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Channel ARN.</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-
-    /**
-     * <p>Channel ARN.</p>
-     */
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-
-    /**
-     * <p>Channel ARN.</p>
-     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-
-    /**
-     * <p>Channel ARN.</p>
-     */
     inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-
-    /**
-     * <p>Channel ARN.</p>
-     */
     inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-
-    /**
-     * <p>Channel ARN.</p>
-     */
     inline BatchStartViewerSessionRevocationError& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-
-    /**
-     * <p>Channel ARN.</p>
-     */
     inline BatchStartViewerSessionRevocationError& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Channel ARN.</p>
-     */
     inline BatchStartViewerSessionRevocationError& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    ///@}
 
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline BatchStartViewerSessionRevocationError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline BatchStartViewerSessionRevocationError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Error code.</p>
-     */
-    inline BatchStartViewerSessionRevocationError& WithCode(const char* value) { SetCode(value); return *this;}
-
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline BatchStartViewerSessionRevocationError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline BatchStartViewerSessionRevocationError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Error message, determined by the application.</p>
-     */
-    inline BatchStartViewerSessionRevocationError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
-
+    ///@{
     /**
      * <p>The ID of the viewer session to revoke.</p>
      */
     inline const Aws::String& GetViewerId() const{ return m_viewerId; }
-
-    /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
     inline bool ViewerIdHasBeenSet() const { return m_viewerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
     inline void SetViewerId(const Aws::String& value) { m_viewerIdHasBeenSet = true; m_viewerId = value; }
-
-    /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
     inline void SetViewerId(Aws::String&& value) { m_viewerIdHasBeenSet = true; m_viewerId = std::move(value); }
-
-    /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
     inline void SetViewerId(const char* value) { m_viewerIdHasBeenSet = true; m_viewerId.assign(value); }
-
-    /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
     inline BatchStartViewerSessionRevocationError& WithViewerId(const Aws::String& value) { SetViewerId(value); return *this;}
-
-    /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
     inline BatchStartViewerSessionRevocationError& WithViewerId(Aws::String&& value) { SetViewerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
     inline BatchStartViewerSessionRevocationError& WithViewerId(const char* value) { SetViewerId(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Error code.</p>
+     */
+    inline const Aws::String& GetCode() const{ return m_code; }
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
+    inline BatchStartViewerSessionRevocationError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+    inline BatchStartViewerSessionRevocationError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
+    inline BatchStartViewerSessionRevocationError& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Error message, determined by the application.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+    inline BatchStartViewerSessionRevocationError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline BatchStartViewerSessionRevocationError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline BatchStartViewerSessionRevocationError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
+
+    Aws::String m_viewerId;
+    bool m_viewerIdHasBeenSet = false;
 
     Aws::String m_code;
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
-
-    Aws::String m_viewerId;
-    bool m_viewerIdHasBeenSet = false;
   };
 
 } // namespace Model

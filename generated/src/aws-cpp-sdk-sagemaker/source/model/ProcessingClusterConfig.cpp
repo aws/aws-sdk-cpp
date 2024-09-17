@@ -29,14 +29,8 @@ ProcessingClusterConfig::ProcessingClusterConfig() :
 {
 }
 
-ProcessingClusterConfig::ProcessingClusterConfig(JsonView jsonValue) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(ProcessingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+ProcessingClusterConfig::ProcessingClusterConfig(JsonView jsonValue)
+  : ProcessingClusterConfig()
 {
   *this = jsonValue;
 }

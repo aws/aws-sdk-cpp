@@ -33,136 +33,50 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the landing zone.</p>
      */
     inline const Aws::String& GetLandingZoneIdentifier() const{ return m_landingZoneIdentifier; }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline bool LandingZoneIdentifierHasBeenSet() const { return m_landingZoneIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline void SetLandingZoneIdentifier(const Aws::String& value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline void SetLandingZoneIdentifier(Aws::String&& value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline void SetLandingZoneIdentifier(const char* value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline UpdateLandingZoneRequest& WithLandingZoneIdentifier(const Aws::String& value) { SetLandingZoneIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline UpdateLandingZoneRequest& WithLandingZoneIdentifier(Aws::String&& value) { SetLandingZoneIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the landing zone.</p>
-     */
     inline UpdateLandingZoneRequest& WithLandingZoneIdentifier(const char* value) { SetLandingZoneIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
-     * resources. For examples, review <a
+     * <p>The manifest file (JSON) is a text file that describes your Amazon Web
+     * Services resources. For an example, review <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-     * your landing zone</a>.</p>
+     * your landing zone</a>. The example manifest file contains each of the available
+     * parameters. The schema for the landing zone's JSON manifest file is not
+     * published, by design.</p>
      */
     inline Aws::Utils::DocumentView GetManifest() const{ return m_manifest; }
-
-    /**
-     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
-     * resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-     * your landing zone</a>.</p>
-     */
     inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-
-    /**
-     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
-     * resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-     * your landing zone</a>.</p>
-     */
     inline void SetManifest(const Aws::Utils::Document& value) { m_manifestHasBeenSet = true; m_manifest = value; }
-
-    /**
-     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
-     * resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-     * your landing zone</a>.</p>
-     */
     inline void SetManifest(Aws::Utils::Document&& value) { m_manifestHasBeenSet = true; m_manifest = std::move(value); }
-
-    /**
-     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
-     * resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-     * your landing zone</a>.</p>
-     */
     inline UpdateLandingZoneRequest& WithManifest(const Aws::Utils::Document& value) { SetManifest(value); return *this;}
-
-    /**
-     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
-     * resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-     * your landing zone</a>.</p>
-     */
     inline UpdateLandingZoneRequest& WithManifest(Aws::Utils::Document&& value) { SetManifest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The landing zone version, for example, 3.2.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The landing zone version, for example, 3.2.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The landing zone version, for example, 3.2.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The landing zone version, for example, 3.2.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The landing zone version, for example, 3.2.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The landing zone version, for example, 3.2.</p>
-     */
     inline UpdateLandingZoneRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The landing zone version, for example, 3.2.</p>
-     */
     inline UpdateLandingZoneRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The landing zone version, for example, 3.2.</p>
-     */
     inline UpdateLandingZoneRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_landingZoneIdentifier;

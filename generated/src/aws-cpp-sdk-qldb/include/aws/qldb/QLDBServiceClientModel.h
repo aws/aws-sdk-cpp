@@ -37,6 +37,8 @@
 #include <aws/qldb/model/UntagResourceResult.h>
 #include <aws/qldb/model/UpdateLedgerResult.h>
 #include <aws/qldb/model/UpdateLedgerPermissionsModeResult.h>
+#include <aws/qldb/model/ListLedgersRequest.h>
+#include <aws/qldb/model/ListJournalS3ExportsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in QLDBClient header */
 
@@ -71,7 +73,7 @@ namespace Aws
 
   namespace QLDB
   {
-    using QLDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QLDBClientConfiguration = Aws::Client::GenericClientConfiguration;
     using QLDBEndpointProviderBase = Aws::QLDB::Endpoint::QLDBEndpointProviderBase;
     using QLDBEndpointProvider = Aws::QLDB::Endpoint::QLDBEndpointProvider;
 

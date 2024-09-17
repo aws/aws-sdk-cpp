@@ -28,14 +28,8 @@ GetMLTransformResult::GetMLTransformResult() :
 {
 }
 
-GetMLTransformResult::GetMLTransformResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TransformStatusType::NOT_SET),
-    m_labelCount(0),
-    m_maxCapacity(0.0),
-    m_workerType(WorkerType::NOT_SET),
-    m_numberOfWorkers(0),
-    m_timeout(0),
-    m_maxRetries(0)
+GetMLTransformResult::GetMLTransformResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMLTransformResult()
 {
   *this = result;
 }

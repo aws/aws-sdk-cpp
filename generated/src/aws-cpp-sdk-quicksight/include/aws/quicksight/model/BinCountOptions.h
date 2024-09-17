@@ -36,26 +36,15 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options that determine the bin count value.</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>The options that determine the bin count value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The options that determine the bin count value.</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The options that determine the bin count value.</p>
-     */
     inline BinCountOptions& WithValue(int value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     int m_value;

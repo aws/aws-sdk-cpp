@@ -33,56 +33,45 @@ namespace Model
     AWS_OSIS_API GetPipelineBlueprintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested blueprint in YAML format.</p>
      */
     inline const PipelineBlueprint& GetBlueprint() const{ return m_blueprint; }
-
-    /**
-     * <p>The requested blueprint in YAML format.</p>
-     */
     inline void SetBlueprint(const PipelineBlueprint& value) { m_blueprint = value; }
-
-    /**
-     * <p>The requested blueprint in YAML format.</p>
-     */
     inline void SetBlueprint(PipelineBlueprint&& value) { m_blueprint = std::move(value); }
-
-    /**
-     * <p>The requested blueprint in YAML format.</p>
-     */
     inline GetPipelineBlueprintResult& WithBlueprint(const PipelineBlueprint& value) { SetBlueprint(value); return *this;}
-
-    /**
-     * <p>The requested blueprint in YAML format.</p>
-     */
     inline GetPipelineBlueprintResult& WithBlueprint(PipelineBlueprint&& value) { SetBlueprint(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline void SetFormat(const Aws::String& value) { m_format = value; }
+    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
+    inline void SetFormat(const char* value) { m_format.assign(value); }
+    inline GetPipelineBlueprintResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+    inline GetPipelineBlueprintResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+    inline GetPipelineBlueprintResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPipelineBlueprintResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPipelineBlueprintResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPipelineBlueprintResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PipelineBlueprint m_blueprint;
+
+    Aws::String m_format;
 
     Aws::String m_requestId;
   };

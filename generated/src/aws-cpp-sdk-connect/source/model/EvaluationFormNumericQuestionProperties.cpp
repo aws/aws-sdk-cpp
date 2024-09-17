@@ -28,13 +28,8 @@ EvaluationFormNumericQuestionProperties::EvaluationFormNumericQuestionProperties
 {
 }
 
-EvaluationFormNumericQuestionProperties::EvaluationFormNumericQuestionProperties(JsonView jsonValue) : 
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_automationHasBeenSet(false)
+EvaluationFormNumericQuestionProperties::EvaluationFormNumericQuestionProperties(JsonView jsonValue)
+  : EvaluationFormNumericQuestionProperties()
 {
   *this = jsonValue;
 }

@@ -16,9 +16,9 @@ namespace Aws
 namespace CloudHSMV2
 {
   /**
-   * <p>For more information about AWS CloudHSM, see <a
-   * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a> and the <a
-   * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
+   * <p>For more information about CloudHSM, see <a
+   * href="http://aws.amazon.com/cloudhsm/">CloudHSM</a> and the <a
+   * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/"> CloudHSM User
    * Guide</a>.</p>
    */
   class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>
@@ -80,8 +80,9 @@ namespace CloudHSMV2
         virtual ~CloudHSMV2Client();
 
         /**
-         * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Copy an CloudHSM cluster backup to a different region.</p> <p>
+         * <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM
+         * backup in a different Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">AWS
          * API Reference</a></p>
          */
@@ -106,7 +107,10 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Creates a new AWS CloudHSM cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new CloudHSM cluster.</p> <p> <b>Cross-account use:</b> Yes. To
+         * perform this operation with an CloudHSM backup in a different AWS account,
+         * specify the full backup ARN in the value of the SourceBackupId
+         * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster">AWS
          * API Reference</a></p>
          */
@@ -131,8 +135,10 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM
-         * cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new hardware security module (HSM) in the specified CloudHSM
+         * cluster.</p> <p> <b>Cross-account use:</b> No. You cannot perform this operation
+         * on an CloudHSM cluster in a different Amazon Web Service account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">AWS
          * API Reference</a></p>
          */
@@ -157,9 +163,11 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
-         * days after the DeleteBackup request is made. For more information on restoring a
-         * backup, see <a>RestoreBackup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified CloudHSM backup. A backup can be restored up to 7 days
+         * after the DeleteBackup request is made. For more information on restoring a
+         * backup, see <a>RestoreBackup</a>.</p> <p> <b>Cross-account use:</b> No. You
+         * cannot perform this operation on an CloudHSM backup in a different Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">AWS
          * API Reference</a></p>
          */
@@ -184,10 +192,12 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster,
-         * you must delete all HSMs in the cluster. To see if the cluster contains any
-         * HSMs, use <a>DescribeClusters</a>. To delete an HSM, use
-         * <a>DeleteHsm</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified CloudHSM cluster. Before you can delete a cluster, you
+         * must delete all HSMs in the cluster. To see if the cluster contains any HSMs,
+         * use <a>DescribeClusters</a>. To delete an HSM, use <a>DeleteHsm</a>.</p> <p>
+         * <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM
+         * cluster in a different Amazon Web Services account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster">AWS
          * API Reference</a></p>
          */
@@ -215,7 +225,9 @@ namespace CloudHSMV2
          * <p>Deletes the specified HSM. To specify an HSM, you can use its identifier
          * (ID), the IP address of the HSM's elastic network interface (ENI), or the ID of
          * the HSM's ENI. You need to specify only one of these values. To find these
-         * values, use <a>DescribeClusters</a>.</p><p><h3>See Also:</h3>   <a
+         * values, use <a>DescribeClusters</a>.</p> <p> <b>Cross-account use:</b> No. You
+         * cannot perform this operation on an CloudHSM hsm in a different Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteHsm">AWS
          * API Reference</a></p>
          */
@@ -240,23 +252,56 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Gets information about backups of AWS CloudHSM clusters.</p> <p>This is a
-         * paginated operation, which means that each response might contain only a subset
-         * of all the backups. When the response contains only a subset of backups, it
-         * includes a <code>NextToken</code> value. Use this value in a subsequent
-         * <code>DescribeBackups</code> request to get more backups. When you receive a
-         * response with no <code>NextToken</code> (or an empty or null value), that means
-         * there are no more backups to get.</p><p><h3>See Also:</h3>   <a
+         * <p> Deletes an CloudHSM resource policy. Deleting a resource policy will result
+         * in the resource being unshared and removed from any RAM resource shares.
+         * Deleting the resource policy attached to a backup will not impact any clusters
+         * created from that backup.</p> <p> <b>Cross-account use:</b> No. You cannot
+         * perform this operation on an CloudHSM resource in a different Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudHSMV2Client::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourcePolicyRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudHSMV2Client::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about backups of CloudHSM clusters. Lists either the backups
+         * you own or the backups shared with you when the Shared parameter is true.</p>
+         * <p>This is a paginated operation, which means that each response might contain
+         * only a subset of all the backups. When the response contains only a subset of
+         * backups, it includes a <code>NextToken</code> value. Use this value in a
+         * subsequent <code>DescribeBackups</code> request to get more backups. When you
+         * receive a response with no <code>NextToken</code> (or an empty or null value),
+         * that means there are no more backups to get.</p> <p> <b>Cross-account use:</b>
+         * Yes. Customers can describe backups in other Amazon Web Services accounts that
+         * are shared with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
+        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeBackups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request) const
+        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudHSMV2Client::DescribeBackups, request);
         }
@@ -265,29 +310,31 @@ namespace CloudHSMV2
          * An Async wrapper for DescribeBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        void DescribeBackupsAsync(const DescribeBackupsRequestT& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeBackupsAsync(const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudHSMV2Client::DescribeBackups, request, handler, context);
         }
 
         /**
-         * <p>Gets information about AWS CloudHSM clusters.</p> <p>This is a paginated
+         * <p>Gets information about CloudHSM clusters.</p> <p>This is a paginated
          * operation, which means that each response might contain only a subset of all the
          * clusters. When the response contains only a subset of clusters, it includes a
          * <code>NextToken</code> value. Use this value in a subsequent
          * <code>DescribeClusters</code> request to get more clusters. When you receive a
          * response with no <code>NextToken</code> (or an empty or null value), that means
-         * there are no more clusters to get.</p><p><h3>See Also:</h3>   <a
+         * there are no more clusters to get.</p> <p> <b>Cross-account use:</b> No. You
+         * cannot perform this operation on CloudHSM clusters in a different Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
+        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request) const
+        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request = {}) const
         {
             return SubmitCallable(&CloudHSMV2Client::DescribeClusters, request);
         }
@@ -296,17 +343,47 @@ namespace CloudHSMV2
          * An Async wrapper for DescribeClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        void DescribeClustersAsync(const DescribeClustersRequestT& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeClustersAsync(const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeClustersRequestT& request = {}) const
         {
             return SubmitAsync(&CloudHSMV2Client::DescribeClusters, request, handler, context);
         }
 
         /**
-         * <p>Claims an AWS CloudHSM cluster by submitting the cluster certificate issued
-         * by your issuing certificate authority (CA) and the CA's root certificate. Before
+         * <p> Retrieves the resource policy document attached to a given resource. </p>
+         * <p> <b>Cross-account use:</b> No. You cannot perform this operation on an
+         * CloudHSM resource in a different Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudHSMV2Client::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetResourcePolicyRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudHSMV2Client::GetResourcePolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Claims an CloudHSM cluster by submitting the cluster certificate issued by
+         * your issuing certificate authority (CA) and the CA's root certificate. Before
          * you can claim a cluster, you must sign the cluster's certificate signing request
          * (CSR) with your issuing CA. To get the cluster's CSR, use
-         * <a>DescribeClusters</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribeClusters</a>.</p> <p> <b>Cross-account use:</b> No. You cannot
+         * perform this operation on an CloudHSM cluster in a different Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster">AWS
          * API Reference</a></p>
          */
@@ -331,13 +408,15 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Gets a list of tags for the specified AWS CloudHSM cluster.</p> <p>This is a
+         * <p>Gets a list of tags for the specified CloudHSM cluster.</p> <p>This is a
          * paginated operation, which means that each response might contain only a subset
          * of all the tags. When the response contains only a subset of tags, it includes a
          * <code>NextToken</code> value. Use this value in a subsequent
          * <code>ListTags</code> request to get more tags. When you receive a response with
          * no <code>NextToken</code> (or an empty or null value), that means there are no
-         * more tags to get.</p><p><h3>See Also:</h3>   <a
+         * more tags to get.</p> <p> <b>Cross-account use:</b> No. You cannot perform this
+         * operation on an CloudHSM resource in a different Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">AWS
          * API Reference</a></p>
          */
@@ -362,7 +441,9 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Modifies attributes for AWS CloudHSM backup.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies attributes for CloudHSM backup.</p> <p> <b>Cross-account use:</b>
+         * No. You cannot perform this operation on an CloudHSM backup in a different
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes">AWS
          * API Reference</a></p>
          */
@@ -387,7 +468,9 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Modifies AWS CloudHSM cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies CloudHSM cluster.</p> <p> <b>Cross-account use:</b> No. You cannot
+         * perform this operation on an CloudHSM cluster in a different Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster">AWS
          * API Reference</a></p>
          */
@@ -412,9 +495,55 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Restores a specified AWS CloudHSM backup that is in the
-         * <code>PENDING_DELETION</code> state. For mor information on deleting a backup,
-         * see <a>DeleteBackup</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates an CloudHSM resource policy. A resource policy helps you
+         * to define the IAM entity (for example, an Amazon Web Services account) that can
+         * manage your CloudHSM resources. The following resources support CloudHSM
+         * resource policies: </p> <ul> <li> <p> Backup - The resource policy allows you to
+         * describe the backup and restore a cluster from the backup in another Amazon Web
+         * Services account.</p> </li> </ul> <p>In order to share a backup, it must be in a
+         * 'READY' state and you must own it.</p>  <p>While you can share a
+         * backup using the CloudHSM PutResourcePolicy operation, we recommend using
+         * Resource Access Manager (RAM) instead. Using RAM provides multiple benefits as
+         * it creates the policy for you, allows multiple resources to be shared at one
+         * time, and increases the discoverability of shared resources. If you use
+         * PutResourcePolicy and want consumers to be able to describe the backups you
+         * share with them, you must promote the backup to a standard RAM Resource Share
+         * using the RAM PromoteResourceShareCreatedFromPolicy API operation. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html">
+         * Working with shared backups</a> in the CloudHSM User Guide</p>  <p>
+         * <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM
+         * resource in a different Amazon Web Services account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudHSMV2Client::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutResourcePolicyRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudHSMV2Client::PutResourcePolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Restores a specified CloudHSM backup that is in the
+         * <code>PENDING_DELETION</code> state. For more information on deleting a backup,
+         * see <a>DeleteBackup</a>.</p> <p> <b>Cross-account use:</b> No. You cannot
+         * perform this operation on an CloudHSM backup in a different Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">AWS
          * API Reference</a></p>
          */
@@ -439,8 +568,10 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
-         * cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or overwrites one or more tags for the specified CloudHSM cluster.</p>
+         * <p> <b>Cross-account use:</b> No. You cannot perform this operation on an
+         * CloudHSM resource in a different Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">AWS
          * API Reference</a></p>
          */
@@ -465,8 +596,10 @@ namespace CloudHSMV2
         }
 
         /**
-         * <p>Removes the specified tag or tags from the specified AWS CloudHSM
-         * cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tag or tags from the specified CloudHSM cluster.</p>
+         * <p> <b>Cross-account use:</b> No. You cannot perform this operation on an
+         * CloudHSM resource in a different Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -498,7 +631,6 @@ namespace CloudHSMV2
       void init(const CloudHSMV2ClientConfiguration& clientConfiguration);
 
       CloudHSMV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudHSMV2EndpointProviderBase> m_endpointProvider;
   };
 

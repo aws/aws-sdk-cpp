@@ -23,8 +23,8 @@ ConfiguredTableAnalysisRulePolicy::ConfiguredTableAnalysisRulePolicy() :
 {
 }
 
-ConfiguredTableAnalysisRulePolicy::ConfiguredTableAnalysisRulePolicy(JsonView jsonValue) : 
-    m_v1HasBeenSet(false)
+ConfiguredTableAnalysisRulePolicy::ConfiguredTableAnalysisRulePolicy(JsonView jsonValue)
+  : ConfiguredTableAnalysisRulePolicy()
 {
   *this = jsonValue;
 }

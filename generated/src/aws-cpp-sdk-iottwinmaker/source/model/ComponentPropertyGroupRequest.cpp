@@ -27,12 +27,8 @@ ComponentPropertyGroupRequest::ComponentPropertyGroupRequest() :
 {
 }
 
-ComponentPropertyGroupRequest::ComponentPropertyGroupRequest(JsonView jsonValue) : 
-    m_groupType(GroupType::NOT_SET),
-    m_groupTypeHasBeenSet(false),
-    m_propertyNamesHasBeenSet(false),
-    m_updateType(PropertyGroupUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
+ComponentPropertyGroupRequest::ComponentPropertyGroupRequest(JsonView jsonValue)
+  : ComponentPropertyGroupRequest()
 {
   *this = jsonValue;
 }

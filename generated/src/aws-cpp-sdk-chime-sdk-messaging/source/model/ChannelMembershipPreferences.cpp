@@ -23,8 +23,8 @@ ChannelMembershipPreferences::ChannelMembershipPreferences() :
 {
 }
 
-ChannelMembershipPreferences::ChannelMembershipPreferences(JsonView jsonValue) : 
-    m_pushNotificationsHasBeenSet(false)
+ChannelMembershipPreferences::ChannelMembershipPreferences(JsonView jsonValue)
+  : ChannelMembershipPreferences()
 {
   *this = jsonValue;
 }

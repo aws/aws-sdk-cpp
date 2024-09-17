@@ -24,9 +24,8 @@ AudioConcatenationConfiguration::AudioConcatenationConfiguration() :
 {
 }
 
-AudioConcatenationConfiguration::AudioConcatenationConfiguration(JsonView jsonValue) : 
-    m_state(AudioArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
+AudioConcatenationConfiguration::AudioConcatenationConfiguration(JsonView jsonValue)
+  : AudioConcatenationConfiguration()
 {
   *this = jsonValue;
 }

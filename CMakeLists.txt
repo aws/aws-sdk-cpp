@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
     message(WARNING "In 1.11 releases, we are releasing experimental alternative building mode."
-            "By setting -DLEGACY_MODE=OFF you can test our advances in modern CMake building and "
+            "By setting -DLEGACY_BUILD=OFF you can test our advances in modern CMake building and "
             "provide early feedback. "
             "The legacy support is set by default in 1.11, when you complete build updating scripts please "
             "update the build flags as mentioned in README.md and set -DLEGACY_BUILD=OFF. "
@@ -108,10 +108,6 @@ if (LEGACY_BUILD)
         set(BoldWhite "${Esc}[1;37m")
     endif ()
 
-    if (NOT USE_OPENSSL)
-        message(WARNING "Turning off USE_OPENSSL will install AWS-LC as replacement of OpenSSL in the system default directory. This is an experimental feature. Do not use if you have an OpenSSL installation in your system already.")
-    endif ()
-
     # backwards compatibility with old command line params
     if ("${STATIC_LINKING}" STREQUAL "1")
         set(BUILD_SHARED_LIBS OFF)
@@ -159,14 +155,10 @@ if (LEGACY_BUILD)
         set(STATIC_CRT ON)
     endif ()
 
-    # Add Linker search paths to RPATH so as to fix the problem where some linkers can't find cross-compiled dependent libraries in customer paths when linking executables.
-    set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
-
     # build the sdk targets
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
-    set(Python_ADDITIONAL_VERSIONS 3.7 3.8 3.9 3.10)
-    find_package(PythonInterp)
+    find_package(Python3 COMPONENTS Interpreter Development)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 
     # ENABLE_ZLIB_REQUEST_COMPRESSION should be ON by default if ZLIB is available
@@ -223,9 +215,7 @@ if (LEGACY_BUILD)
     if (BUILD_DEPS)
         set(CMAKE_INSTALL_RPATH "$ORIGIN")
         list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/crt/aws-crt-cpp/crt/aws-c-common/cmake")
-
         include(AwsFindPackage)
-
         set(IN_SOURCE_BUILD ON)
         set(BUILD_TESTING_PREV ${BUILD_TESTING})
         set(BUILD_TESTING OFF CACHE BOOL "Disable all tests in dependencies.")
@@ -242,10 +232,27 @@ if (LEGACY_BUILD)
             set(BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS_PREV})
         endif ()
     else ()
+        # This is required in order to append /lib/cmake to each element in CMAKE_PREFIX_PATH
+        set(AWS_MODULE_DIR "/${CMAKE_INSTALL_LIBDIR}/cmake")
+        string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
+        # Append that generated list to the module search path
+        list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
         include(AwsFindPackage)
         set(IN_SOURCE_BUILD OFF)
     endif ()
-    set(AWS_COMMON_RUNTIME_LIBS "aws-crt-cpp;aws-c-auth;aws-c-cal;aws-c-common;aws-c-compression;aws-c-event-stream;aws-c-http;aws-c-io;aws-c-mqtt;aws-c-s3;aws-checksums;aws-c-sdkutils")
+    aws_use_package(aws-crt-cpp)
+    aws_use_package(aws-c-http)
+    aws_use_package(aws-c-mqtt)
+    aws_use_package(aws-c-cal)
+    aws_use_package(aws-c-auth)
+    aws_use_package(aws-c-common)
+    aws_use_package(aws-c-io)
+    aws_use_package(aws-checksums)
+    aws_use_package(aws-c-event-stream)
+    aws_use_package(aws-c-s3)
+    aws_use_package(aws-c-compression)
+    aws_use_package(aws-c-sdkutils)
+    set(AWS_COMMON_RUNTIME_LIBS ${DEP_AWS_LIBS})
 
     include(compiler_settings)
     # Instead of calling functions/macros inside included cmake scripts, we should call them in our main CMakeList.txt
@@ -256,10 +263,7 @@ if (LEGACY_BUILD)
 
     include(utilities)
 
-    if (ENABLE_BCRYPT_ENCRYPTION)
-        set(CRYPTO_LIBS Bcrypt)
-        set(CRYPTO_LIBS_ABSTRACT_NAME Bcrypt)
-    elseif (ENABLE_OPENSSL_ENCRYPTION)
+    if (ENABLE_OPENSSL_ENCRYPTION)
         set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
         set(CRYPTO_LIBS_ABSTRACT_NAME crypto ssl z)
     endif ()

@@ -26,11 +26,8 @@ TaskRunSortCriteria::TaskRunSortCriteria() :
 {
 }
 
-TaskRunSortCriteria::TaskRunSortCriteria(JsonView jsonValue) : 
-    m_column(TaskRunSortColumnType::NOT_SET),
-    m_columnHasBeenSet(false),
-    m_sortDirection(SortDirectionType::NOT_SET),
-    m_sortDirectionHasBeenSet(false)
+TaskRunSortCriteria::TaskRunSortCriteria(JsonView jsonValue)
+  : TaskRunSortCriteria()
 {
   *this = jsonValue;
 }

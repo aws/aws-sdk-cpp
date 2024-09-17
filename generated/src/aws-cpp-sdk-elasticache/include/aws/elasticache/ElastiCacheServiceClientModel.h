@@ -90,6 +90,24 @@
 #include <aws/elasticache/model/StartMigrationResult.h>
 #include <aws/elasticache/model/TestFailoverResult.h>
 #include <aws/elasticache/model/TestMigrationResult.h>
+#include <aws/elasticache/model/DescribeReservedCacheNodesOfferingsRequest.h>
+#include <aws/elasticache/model/DescribeCacheParameterGroupsRequest.h>
+#include <aws/elasticache/model/DescribeReservedCacheNodesRequest.h>
+#include <aws/elasticache/model/DescribeUsersRequest.h>
+#include <aws/elasticache/model/DescribeUserGroupsRequest.h>
+#include <aws/elasticache/model/DescribeCacheSecurityGroupsRequest.h>
+#include <aws/elasticache/model/DescribeGlobalReplicationGroupsRequest.h>
+#include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
+#include <aws/elasticache/model/DescribeCacheEngineVersionsRequest.h>
+#include <aws/elasticache/model/DescribeReplicationGroupsRequest.h>
+#include <aws/elasticache/model/DescribeSnapshotsRequest.h>
+#include <aws/elasticache/model/DescribeServiceUpdatesRequest.h>
+#include <aws/elasticache/model/DescribeCacheSubnetGroupsRequest.h>
+#include <aws/elasticache/model/DescribeEventsRequest.h>
+#include <aws/elasticache/model/DescribeUpdateActionsRequest.h>
+#include <aws/elasticache/model/DescribeServerlessCacheSnapshotsRequest.h>
+#include <aws/elasticache/model/DescribeServerlessCachesRequest.h>
+#include <aws/elasticache/model/DescribeCacheClustersRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ElastiCacheClient header */
 
@@ -124,7 +142,7 @@ namespace Aws
 
   namespace ElastiCache
   {
-    using ElastiCacheClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElastiCacheClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElastiCacheEndpointProviderBase = Aws::ElastiCache::Endpoint::ElastiCacheEndpointProviderBase;
     using ElastiCacheEndpointProvider = Aws::ElastiCache::Endpoint::ElastiCacheEndpointProvider;
 

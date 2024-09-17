@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Disables the automatic recovery behavior of your instance or sets it to
      * default. </p>
      */
     inline const Aws::String& GetAutoRecovery() const{ return m_autoRecovery; }
-
-    /**
-     * <p> Disables the automatic recovery behavior of your instance or sets it to
-     * default. </p>
-     */
     inline bool AutoRecoveryHasBeenSet() const { return m_autoRecoveryHasBeenSet; }
-
-    /**
-     * <p> Disables the automatic recovery behavior of your instance or sets it to
-     * default. </p>
-     */
     inline void SetAutoRecovery(const Aws::String& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
-
-    /**
-     * <p> Disables the automatic recovery behavior of your instance or sets it to
-     * default. </p>
-     */
     inline void SetAutoRecovery(Aws::String&& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = std::move(value); }
-
-    /**
-     * <p> Disables the automatic recovery behavior of your instance or sets it to
-     * default. </p>
-     */
     inline void SetAutoRecovery(const char* value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery.assign(value); }
-
-    /**
-     * <p> Disables the automatic recovery behavior of your instance or sets it to
-     * default. </p>
-     */
     inline AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& WithAutoRecovery(const Aws::String& value) { SetAutoRecovery(value); return *this;}
-
-    /**
-     * <p> Disables the automatic recovery behavior of your instance or sets it to
-     * default. </p>
-     */
     inline AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& WithAutoRecovery(Aws::String&& value) { SetAutoRecovery(std::move(value)); return *this;}
-
-    /**
-     * <p> Disables the automatic recovery behavior of your instance or sets it to
-     * default. </p>
-     */
     inline AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& WithAutoRecovery(const char* value) { SetAutoRecovery(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_autoRecovery;

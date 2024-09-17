@@ -38,47 +38,21 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The ID of the agent or data collector to delete. </p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
     inline DeleteAgent& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
     inline DeleteAgent& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
     inline DeleteAgent& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Optional flag used to force delete an agent or data collector. It is needed
      * to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an
@@ -87,34 +61,10 @@ namespace Model
      * </p>
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p> Optional flag used to force delete an agent or data collector. It is needed
-     * to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an
-     * agent that is actively reporting health causes it to be re-registered with a
-     * different agent ID after data collector re-connects with Amazon Web Services.
-     * </p>
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p> Optional flag used to force delete an agent or data collector. It is needed
-     * to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an
-     * agent that is actively reporting health causes it to be re-registered with a
-     * different agent ID after data collector re-connects with Amazon Web Services.
-     * </p>
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p> Optional flag used to force delete an agent or data collector. It is needed
-     * to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an
-     * agent that is actively reporting health causes it to be re-registered with a
-     * different agent ID after data collector re-connects with Amazon Web Services.
-     * </p>
-     */
     inline DeleteAgent& WithForce(bool value) { SetForce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

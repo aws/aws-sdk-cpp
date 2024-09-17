@@ -33,18 +33,8 @@ SoftwarePackage::SoftwarePackage() :
 {
 }
 
-SoftwarePackage::SoftwarePackage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_epochHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_packageManagerHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_fixedInVersionHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_sourceLayerHashHasBeenSet(false),
-    m_sourceLayerArnHasBeenSet(false)
+SoftwarePackage::SoftwarePackage(JsonView jsonValue)
+  : SoftwarePackage()
 {
   *this = jsonValue;
 }

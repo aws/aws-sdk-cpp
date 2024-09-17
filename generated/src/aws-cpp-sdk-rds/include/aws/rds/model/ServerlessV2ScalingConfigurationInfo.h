@@ -41,6 +41,7 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an
      * Aurora Serverless v2 cluster. You can specify ACU values in half-step
@@ -48,32 +49,12 @@ namespace Model
      * 0.5.</p>
      */
     inline double GetMinCapacity() const{ return m_minCapacity; }
-
-    /**
-     * <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an
-     * Aurora Serverless v2 cluster. You can specify ACU values in half-step
-     * increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is
-     * 0.5.</p>
-     */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
-
-    /**
-     * <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an
-     * Aurora Serverless v2 cluster. You can specify ACU values in half-step
-     * increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is
-     * 0.5.</p>
-     */
     inline void SetMinCapacity(double value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
-
-    /**
-     * <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an
-     * Aurora Serverless v2 cluster. You can specify ACU values in half-step
-     * increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is
-     * 0.5.</p>
-     */
     inline ServerlessV2ScalingConfigurationInfo& WithMinCapacity(double value) { SetMinCapacity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an
      * Aurora Serverless v2 cluster. You can specify ACU values in half-step
@@ -81,31 +62,10 @@ namespace Model
      * is 128.</p>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
-
-    /**
-     * <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an
-     * Aurora Serverless v2 cluster. You can specify ACU values in half-step
-     * increments, such as 40, 40.5, 41, and so on. The largest value that you can use
-     * is 128.</p>
-     */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
-
-    /**
-     * <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an
-     * Aurora Serverless v2 cluster. You can specify ACU values in half-step
-     * increments, such as 40, 40.5, 41, and so on. The largest value that you can use
-     * is 128.</p>
-     */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
-
-    /**
-     * <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an
-     * Aurora Serverless v2 cluster. You can specify ACU values in half-step
-     * increments, such as 40, 40.5, 41, and so on. The largest value that you can use
-     * is 128.</p>
-     */
     inline ServerlessV2ScalingConfigurationInfo& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
-
+    ///@}
   private:
 
     double m_minCapacity;

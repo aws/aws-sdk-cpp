@@ -25,10 +25,8 @@ HyperParameterTuningJobWarmStartConfig::HyperParameterTuningJobWarmStartConfig()
 {
 }
 
-HyperParameterTuningJobWarmStartConfig::HyperParameterTuningJobWarmStartConfig(JsonView jsonValue) : 
-    m_parentHyperParameterTuningJobsHasBeenSet(false),
-    m_warmStartType(HyperParameterTuningJobWarmStartType::NOT_SET),
-    m_warmStartTypeHasBeenSet(false)
+HyperParameterTuningJobWarmStartConfig::HyperParameterTuningJobWarmStartConfig(JsonView jsonValue)
+  : HyperParameterTuningJobWarmStartConfig()
 {
   *this = jsonValue;
 }

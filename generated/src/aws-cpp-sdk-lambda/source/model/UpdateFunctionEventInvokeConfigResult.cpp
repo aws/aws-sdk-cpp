@@ -23,9 +23,8 @@ UpdateFunctionEventInvokeConfigResult::UpdateFunctionEventInvokeConfigResult() :
 {
 }
 
-UpdateFunctionEventInvokeConfigResult::UpdateFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maximumRetryAttempts(0),
-    m_maximumEventAgeInSeconds(0)
+UpdateFunctionEventInvokeConfigResult::UpdateFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFunctionEventInvokeConfigResult()
 {
   *this = result;
 }

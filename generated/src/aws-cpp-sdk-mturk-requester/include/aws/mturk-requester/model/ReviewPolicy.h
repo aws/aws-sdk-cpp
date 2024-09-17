@@ -40,95 +40,34 @@ namespace Model
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
      * ScoreMyKnownAnswers/2011-09-01 </p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
-     * ScoreMyKnownAnswers/2011-09-01 </p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
-     * ScoreMyKnownAnswers/2011-09-01 </p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
-     * ScoreMyKnownAnswers/2011-09-01 </p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
-     * ScoreMyKnownAnswers/2011-09-01 </p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
-     * ScoreMyKnownAnswers/2011-09-01 </p>
-     */
     inline ReviewPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
-     * ScoreMyKnownAnswers/2011-09-01 </p>
-     */
     inline ReviewPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
-     * ScoreMyKnownAnswers/2011-09-01 </p>
-     */
     inline ReviewPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Name of the parameter from the Review policy.</p>
      */
     inline const Aws::Vector<PolicyParameter>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>Name of the parameter from the Review policy.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>Name of the parameter from the Review policy.</p>
-     */
     inline void SetParameters(const Aws::Vector<PolicyParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>Name of the parameter from the Review policy.</p>
-     */
     inline void SetParameters(Aws::Vector<PolicyParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>Name of the parameter from the Review policy.</p>
-     */
     inline ReviewPolicy& WithParameters(const Aws::Vector<PolicyParameter>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>Name of the parameter from the Review policy.</p>
-     */
     inline ReviewPolicy& WithParameters(Aws::Vector<PolicyParameter>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the parameter from the Review policy.</p>
-     */
     inline ReviewPolicy& AddParameters(const PolicyParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>Name of the parameter from the Review policy.</p>
-     */
     inline ReviewPolicy& AddParameters(PolicyParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_policyName;

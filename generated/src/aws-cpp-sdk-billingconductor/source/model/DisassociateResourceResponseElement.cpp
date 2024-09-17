@@ -24,9 +24,8 @@ DisassociateResourceResponseElement::DisassociateResourceResponseElement() :
 {
 }
 
-DisassociateResourceResponseElement::DisassociateResourceResponseElement(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_errorHasBeenSet(false)
+DisassociateResourceResponseElement::DisassociateResourceResponseElement(JsonView jsonValue)
+  : DisassociateResourceResponseElement()
 {
   *this = jsonValue;
 }

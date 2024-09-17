@@ -26,11 +26,8 @@ CustomRoutingEndpointGroup::CustomRoutingEndpointGroup() :
 {
 }
 
-CustomRoutingEndpointGroup::CustomRoutingEndpointGroup(JsonView jsonValue) : 
-    m_endpointGroupArnHasBeenSet(false),
-    m_endpointGroupRegionHasBeenSet(false),
-    m_destinationDescriptionsHasBeenSet(false),
-    m_endpointDescriptionsHasBeenSet(false)
+CustomRoutingEndpointGroup::CustomRoutingEndpointGroup(JsonView jsonValue)
+  : CustomRoutingEndpointGroup()
 {
   *this = jsonValue;
 }

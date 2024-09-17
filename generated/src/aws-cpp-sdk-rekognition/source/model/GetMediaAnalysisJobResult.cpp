@@ -22,8 +22,8 @@ GetMediaAnalysisJobResult::GetMediaAnalysisJobResult() :
 {
 }
 
-GetMediaAnalysisJobResult::GetMediaAnalysisJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MediaAnalysisJobStatus::NOT_SET)
+GetMediaAnalysisJobResult::GetMediaAnalysisJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMediaAnalysisJobResult()
 {
   *this = result;
 }

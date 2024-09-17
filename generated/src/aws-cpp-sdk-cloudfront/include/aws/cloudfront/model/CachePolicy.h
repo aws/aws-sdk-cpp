@@ -50,108 +50,43 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the cache policy.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique identifier for the cache policy.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the cache policy.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique identifier for the cache policy.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the cache policy.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique identifier for the cache policy.</p>
-     */
     inline CachePolicy& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the cache policy.</p>
-     */
     inline CachePolicy& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the cache policy.</p>
-     */
     inline CachePolicy& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the cache policy was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-
-    /**
-     * <p>The date and time when the cache policy was last modified.</p>
-     */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the cache policy was last modified.</p>
-     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-
-    /**
-     * <p>The date and time when the cache policy was last modified.</p>
-     */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the cache policy was last modified.</p>
-     */
     inline CachePolicy& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the cache policy was last modified.</p>
-     */
     inline CachePolicy& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cache policy configuration.</p>
      */
     inline const CachePolicyConfig& GetCachePolicyConfig() const{ return m_cachePolicyConfig; }
-
-    /**
-     * <p>The cache policy configuration.</p>
-     */
     inline bool CachePolicyConfigHasBeenSet() const { return m_cachePolicyConfigHasBeenSet; }
-
-    /**
-     * <p>The cache policy configuration.</p>
-     */
     inline void SetCachePolicyConfig(const CachePolicyConfig& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = value; }
-
-    /**
-     * <p>The cache policy configuration.</p>
-     */
     inline void SetCachePolicyConfig(CachePolicyConfig&& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = std::move(value); }
-
-    /**
-     * <p>The cache policy configuration.</p>
-     */
     inline CachePolicy& WithCachePolicyConfig(const CachePolicyConfig& value) { SetCachePolicyConfig(value); return *this;}
-
-    /**
-     * <p>The cache policy configuration.</p>
-     */
     inline CachePolicy& WithCachePolicyConfig(CachePolicyConfig&& value) { SetCachePolicyConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

@@ -38,36 +38,17 @@ namespace Model
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The information about the integration of Resource Groups.</p>
      */
     inline const ResourceGroup& GetResourceGroup() const{ return m_resourceGroup; }
-
-    /**
-     * <p>The information about the integration of Resource Groups.</p>
-     */
     inline bool ResourceGroupHasBeenSet() const { return m_resourceGroupHasBeenSet; }
-
-    /**
-     * <p>The information about the integration of Resource Groups.</p>
-     */
     inline void SetResourceGroup(const ResourceGroup& value) { m_resourceGroupHasBeenSet = true; m_resourceGroup = value; }
-
-    /**
-     * <p>The information about the integration of Resource Groups.</p>
-     */
     inline void SetResourceGroup(ResourceGroup&& value) { m_resourceGroupHasBeenSet = true; m_resourceGroup = std::move(value); }
-
-    /**
-     * <p>The information about the integration of Resource Groups.</p>
-     */
     inline ResourceIntegrations& WithResourceGroup(const ResourceGroup& value) { SetResourceGroup(value); return *this;}
-
-    /**
-     * <p>The information about the integration of Resource Groups.</p>
-     */
     inline ResourceIntegrations& WithResourceGroup(ResourceGroup&& value) { SetResourceGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceGroup m_resourceGroup;

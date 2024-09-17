@@ -28,13 +28,8 @@ ApplicationSummary::ApplicationSummary() :
 {
 }
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ApplicationSummary::ApplicationSummary(JsonView jsonValue)
+  : ApplicationSummary()
 {
   *this = jsonValue;
 }

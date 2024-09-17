@@ -27,10 +27,8 @@ ClusterVersion::ClusterVersion() :
 {
 }
 
-ClusterVersion::ClusterVersion(const XmlNode& xmlNode) : 
-    m_clusterVersionHasBeenSet(false),
-    m_clusterParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ClusterVersion::ClusterVersion(const XmlNode& xmlNode)
+  : ClusterVersion()
 {
   *this = xmlNode;
 }

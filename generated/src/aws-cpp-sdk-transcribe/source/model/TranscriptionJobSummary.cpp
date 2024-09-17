@@ -43,28 +43,8 @@ TranscriptionJobSummary::TranscriptionJobSummary() :
 {
 }
 
-TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue) : 
-    m_transcriptionJobNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_transcriptionJobStatus(TranscriptionJobStatus::NOT_SET),
-    m_transcriptionJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_outputLocationType(OutputLocationType::NOT_SET),
-    m_outputLocationTypeHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false),
-    m_modelSettingsHasBeenSet(false),
-    m_identifyLanguage(false),
-    m_identifyLanguageHasBeenSet(false),
-    m_identifyMultipleLanguages(false),
-    m_identifyMultipleLanguagesHasBeenSet(false),
-    m_identifiedLanguageScore(0.0),
-    m_identifiedLanguageScoreHasBeenSet(false),
-    m_languageCodesHasBeenSet(false),
-    m_toxicityDetectionHasBeenSet(false)
+TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue)
+  : TranscriptionJobSummary()
 {
   *this = jsonValue;
 }

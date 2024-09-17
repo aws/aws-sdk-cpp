@@ -26,9 +26,8 @@ ResponseHeadersPolicyContentTypeOptions::ResponseHeadersPolicyContentTypeOptions
 {
 }
 
-ResponseHeadersPolicyContentTypeOptions::ResponseHeadersPolicyContentTypeOptions(const XmlNode& xmlNode) : 
-    m_override(false),
-    m_overrideHasBeenSet(false)
+ResponseHeadersPolicyContentTypeOptions::ResponseHeadersPolicyContentTypeOptions(const XmlNode& xmlNode)
+  : ResponseHeadersPolicyContentTypeOptions()
 {
   *this = xmlNode;
 }

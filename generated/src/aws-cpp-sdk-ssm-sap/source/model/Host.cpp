@@ -29,14 +29,8 @@ Host::Host() :
 {
 }
 
-Host::Host(JsonView jsonValue) : 
-    m_hostNameHasBeenSet(false),
-    m_hostIpHasBeenSet(false),
-    m_eC2InstanceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_hostRole(HostRole::NOT_SET),
-    m_hostRoleHasBeenSet(false),
-    m_osVersionHasBeenSet(false)
+Host::Host(JsonView jsonValue)
+  : Host()
 {
   *this = jsonValue;
 }

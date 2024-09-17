@@ -26,11 +26,8 @@ AdminScope::AdminScope() :
 {
 }
 
-AdminScope::AdminScope(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_organizationalUnitScopeHasBeenSet(false),
-    m_regionScopeHasBeenSet(false),
-    m_policyTypeScopeHasBeenSet(false)
+AdminScope::AdminScope(JsonView jsonValue)
+  : AdminScope()
 {
   *this = jsonValue;
 }

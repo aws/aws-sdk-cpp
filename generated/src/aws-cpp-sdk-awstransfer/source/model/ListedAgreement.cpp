@@ -30,15 +30,8 @@ ListedAgreement::ListedAgreement() :
 {
 }
 
-ListedAgreement::ListedAgreement(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_agreementIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(AgreementStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_localProfileIdHasBeenSet(false),
-    m_partnerProfileIdHasBeenSet(false)
+ListedAgreement::ListedAgreement(JsonView jsonValue)
+  : ListedAgreement()
 {
   *this = jsonValue;
 }

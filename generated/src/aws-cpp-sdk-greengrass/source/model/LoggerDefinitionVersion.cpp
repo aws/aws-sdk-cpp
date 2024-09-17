@@ -23,8 +23,8 @@ LoggerDefinitionVersion::LoggerDefinitionVersion() :
 {
 }
 
-LoggerDefinitionVersion::LoggerDefinitionVersion(JsonView jsonValue) : 
-    m_loggersHasBeenSet(false)
+LoggerDefinitionVersion::LoggerDefinitionVersion(JsonView jsonValue)
+  : LoggerDefinitionVersion()
 {
   *this = jsonValue;
 }

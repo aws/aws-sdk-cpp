@@ -26,11 +26,8 @@ ConnectClientAddIn::ConnectClientAddIn() :
 {
 }
 
-ConnectClientAddIn::ConnectClientAddIn(JsonView jsonValue) : 
-    m_addInIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uRLHasBeenSet(false)
+ConnectClientAddIn::ConnectClientAddIn(JsonView jsonValue)
+  : ConnectClientAddIn()
 {
   *this = jsonValue;
 }

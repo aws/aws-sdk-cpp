@@ -25,10 +25,8 @@ FirehoseAction::FirehoseAction() :
 {
 }
 
-FirehoseAction::FirehoseAction(JsonView jsonValue) : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+FirehoseAction::FirehoseAction(JsonView jsonValue)
+  : FirehoseAction()
 {
   *this = jsonValue;
 }

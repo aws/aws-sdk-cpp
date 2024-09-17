@@ -33,52 +33,26 @@ namespace Model
     AWS_RDS_API ModifyDBProxyEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The <code>DBProxyEndpoint</code> object representing the new settings for the
      * DB proxy endpoint.</p>
      */
     inline const DBProxyEndpoint& GetDBProxyEndpoint() const{ return m_dBProxyEndpoint; }
-
-    /**
-     * <p>The <code>DBProxyEndpoint</code> object representing the new settings for the
-     * DB proxy endpoint.</p>
-     */
     inline void SetDBProxyEndpoint(const DBProxyEndpoint& value) { m_dBProxyEndpoint = value; }
-
-    /**
-     * <p>The <code>DBProxyEndpoint</code> object representing the new settings for the
-     * DB proxy endpoint.</p>
-     */
     inline void SetDBProxyEndpoint(DBProxyEndpoint&& value) { m_dBProxyEndpoint = std::move(value); }
-
-    /**
-     * <p>The <code>DBProxyEndpoint</code> object representing the new settings for the
-     * DB proxy endpoint.</p>
-     */
     inline ModifyDBProxyEndpointResult& WithDBProxyEndpoint(const DBProxyEndpoint& value) { SetDBProxyEndpoint(value); return *this;}
-
-    /**
-     * <p>The <code>DBProxyEndpoint</code> object representing the new settings for the
-     * DB proxy endpoint.</p>
-     */
     inline ModifyDBProxyEndpointResult& WithDBProxyEndpoint(DBProxyEndpoint&& value) { SetDBProxyEndpoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyDBProxyEndpointResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyDBProxyEndpointResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DBProxyEndpoint m_dBProxyEndpoint;

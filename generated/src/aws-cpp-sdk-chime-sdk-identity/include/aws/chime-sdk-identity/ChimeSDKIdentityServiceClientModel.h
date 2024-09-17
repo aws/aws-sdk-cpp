@@ -41,6 +41,7 @@
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceBotResult.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceUserResult.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceUserEndpointResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstancesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ChimeSDKIdentityClient header */
 
@@ -75,7 +76,7 @@ namespace Aws
 
   namespace ChimeSDKIdentity
   {
-    using ChimeSDKIdentityClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeSDKIdentityClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ChimeSDKIdentityEndpointProviderBase = Aws::ChimeSDKIdentity::Endpoint::ChimeSDKIdentityEndpointProviderBase;
     using ChimeSDKIdentityEndpointProvider = Aws::ChimeSDKIdentity::Endpoint::ChimeSDKIdentityEndpointProvider;
 

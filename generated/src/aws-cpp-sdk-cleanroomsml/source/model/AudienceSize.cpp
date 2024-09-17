@@ -26,11 +26,8 @@ AudienceSize::AudienceSize() :
 {
 }
 
-AudienceSize::AudienceSize(JsonView jsonValue) : 
-    m_type(AudienceSizeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+AudienceSize::AudienceSize(JsonView jsonValue)
+  : AudienceSize()
 {
   *this = jsonValue;
 }

@@ -32,99 +32,42 @@ namespace Model
     AWS_MEDIACONNECT_API RemoveFlowOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The ARN of the flow that is associated with the output you removed.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The ARN of the flow that is associated with the output you removed.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-
-    /**
-     * The ARN of the flow that is associated with the output you removed.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-
-    /**
-     * The ARN of the flow that is associated with the output you removed.
-     */
     inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-
-    /**
-     * The ARN of the flow that is associated with the output you removed.
-     */
     inline RemoveFlowOutputResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The ARN of the flow that is associated with the output you removed.
-     */
     inline RemoveFlowOutputResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the flow that is associated with the output you removed.
-     */
     inline RemoveFlowOutputResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ARN of the output that was removed.
      */
     inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
-
-    /**
-     * The ARN of the output that was removed.
-     */
     inline void SetOutputArn(const Aws::String& value) { m_outputArn = value; }
-
-    /**
-     * The ARN of the output that was removed.
-     */
     inline void SetOutputArn(Aws::String&& value) { m_outputArn = std::move(value); }
-
-    /**
-     * The ARN of the output that was removed.
-     */
     inline void SetOutputArn(const char* value) { m_outputArn.assign(value); }
-
-    /**
-     * The ARN of the output that was removed.
-     */
     inline RemoveFlowOutputResult& WithOutputArn(const Aws::String& value) { SetOutputArn(value); return *this;}
-
-    /**
-     * The ARN of the output that was removed.
-     */
     inline RemoveFlowOutputResult& WithOutputArn(Aws::String&& value) { SetOutputArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the output that was removed.
-     */
     inline RemoveFlowOutputResult& WithOutputArn(const char* value) { SetOutputArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RemoveFlowOutputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RemoveFlowOutputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RemoveFlowOutputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

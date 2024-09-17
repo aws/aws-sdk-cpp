@@ -70,6 +70,8 @@
 #include <aws/customer-profiles/model/UpdateCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/UpdateDomainResult.h>
 #include <aws/customer-profiles/model/UpdateProfileResult.h>
+#include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesRequest.h>
+#include <aws/customer-profiles/model/ListDomainsRequest.h>
 /* End of service model headers required in CustomerProfilesClient header */
 
 namespace Aws
@@ -103,7 +105,7 @@ namespace Aws
 
   namespace CustomerProfiles
   {
-    using CustomerProfilesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CustomerProfilesClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CustomerProfilesEndpointProviderBase = Aws::CustomerProfiles::Endpoint::CustomerProfilesEndpointProviderBase;
     using CustomerProfilesEndpointProvider = Aws::CustomerProfiles::Endpoint::CustomerProfilesEndpointProvider;
 

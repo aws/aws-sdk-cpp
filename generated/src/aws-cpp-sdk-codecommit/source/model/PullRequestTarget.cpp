@@ -29,14 +29,8 @@ PullRequestTarget::PullRequestTarget() :
 {
 }
 
-PullRequestTarget::PullRequestTarget(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceReferenceHasBeenSet(false),
-    m_destinationReferenceHasBeenSet(false),
-    m_destinationCommitHasBeenSet(false),
-    m_sourceCommitHasBeenSet(false),
-    m_mergeBaseHasBeenSet(false),
-    m_mergeMetadataHasBeenSet(false)
+PullRequestTarget::PullRequestTarget(JsonView jsonValue)
+  : PullRequestTarget()
 {
   *this = jsonValue;
 }

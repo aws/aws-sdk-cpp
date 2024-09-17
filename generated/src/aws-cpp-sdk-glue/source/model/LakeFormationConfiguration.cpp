@@ -25,10 +25,8 @@ LakeFormationConfiguration::LakeFormationConfiguration() :
 {
 }
 
-LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue) : 
-    m_useLakeFormationCredentials(false),
-    m_useLakeFormationCredentialsHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue)
+  : LakeFormationConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,54 +32,20 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
      * resource for which to list the tags.
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
-     */
     inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
-     * resource for which to list the tags.
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

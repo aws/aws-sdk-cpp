@@ -32,111 +32,35 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * Amazon Web Services Region where they are created.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
-
-    /**
-     * <p>The name of a logical container where backups are stored. Backup vaults are
-     * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
-     */
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-
-    /**
-     * <p>The name of a logical container where backups are stored. Backup vaults are
-     * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
-     */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-
-    /**
-     * <p>The name of a logical container where backups are stored. Backup vaults are
-     * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
-     */
     inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-
-    /**
-     * <p>The name of a logical container where backups are stored. Backup vaults are
-     * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
-     */
     inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-
-    /**
-     * <p>The name of a logical container where backups are stored. Backup vaults are
-     * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
-     */
     inline PutBackupVaultAccessPolicyRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-
-    /**
-     * <p>The name of a logical container where backups are stored. Backup vaults are
-     * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
-     */
     inline PutBackupVaultAccessPolicyRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a logical container where backups are stored. Backup vaults are
-     * identified by names that are unique to the account used to create them and the
-     * Amazon Web Services Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
-     */
     inline PutBackupVaultAccessPolicyRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The backup vault access policy document in JSON format.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The backup vault access policy document in JSON format.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The backup vault access policy document in JSON format.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The backup vault access policy document in JSON format.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The backup vault access policy document in JSON format.</p>
-     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>The backup vault access policy document in JSON format.</p>
-     */
     inline PutBackupVaultAccessPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The backup vault access policy document in JSON format.</p>
-     */
     inline PutBackupVaultAccessPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The backup vault access policy document in JSON format.</p>
-     */
     inline PutBackupVaultAccessPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupVaultName;

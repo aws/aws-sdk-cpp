@@ -32,15 +32,8 @@ StoreImageTaskResponse::StoreImageTaskResponse() :
 {
 }
 
-StoreImageTaskResponse::StoreImageTaskResponse(const XmlNode& xmlNode) : 
-    m_amiIdHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_s3objectKeyHasBeenSet(false),
-    m_progressPercentage(0),
-    m_progressPercentageHasBeenSet(false),
-    m_storeTaskStateHasBeenSet(false),
-    m_storeTaskFailureReasonHasBeenSet(false)
+StoreImageTaskResponse::StoreImageTaskResponse(const XmlNode& xmlNode)
+  : StoreImageTaskResponse()
 {
   *this = xmlNode;
 }

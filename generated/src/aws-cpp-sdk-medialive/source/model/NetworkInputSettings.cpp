@@ -21,14 +21,13 @@ namespace Model
 NetworkInputSettings::NetworkInputSettings() : 
     m_hlsInputSettingsHasBeenSet(false),
     m_serverValidation(NetworkInputServerValidation::NOT_SET),
-    m_serverValidationHasBeenSet(false)
+    m_serverValidationHasBeenSet(false),
+    m_multicastInputSettingsHasBeenSet(false)
 {
 }
 
-NetworkInputSettings::NetworkInputSettings(JsonView jsonValue) : 
-    m_hlsInputSettingsHasBeenSet(false),
-    m_serverValidation(NetworkInputServerValidation::NOT_SET),
-    m_serverValidationHasBeenSet(false)
+NetworkInputSettings::NetworkInputSettings(JsonView jsonValue)
+  : NetworkInputSettings()
 {
   *this = jsonValue;
 }
@@ -49,6 +48,13 @@ NetworkInputSettings& NetworkInputSettings::operator =(JsonView jsonValue)
     m_serverValidationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("multicastInputSettings"))
+  {
+    m_multicastInputSettings = jsonValue.GetObject("multicastInputSettings");
+
+    m_multicastInputSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +71,12 @@ JsonValue NetworkInputSettings::Jsonize() const
   if(m_serverValidationHasBeenSet)
   {
    payload.WithString("serverValidation", NetworkInputServerValidationMapper::GetNameForNetworkInputServerValidation(m_serverValidation));
+  }
+
+  if(m_multicastInputSettingsHasBeenSet)
+  {
+   payload.WithObject("multicastInputSettings", m_multicastInputSettings.Jsonize());
+
   }
 
   return payload;

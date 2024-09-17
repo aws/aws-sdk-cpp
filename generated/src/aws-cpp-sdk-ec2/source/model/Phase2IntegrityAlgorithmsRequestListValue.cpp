@@ -25,8 +25,8 @@ Phase2IntegrityAlgorithmsRequestListValue::Phase2IntegrityAlgorithmsRequestListV
 {
 }
 
-Phase2IntegrityAlgorithmsRequestListValue::Phase2IntegrityAlgorithmsRequestListValue(const XmlNode& xmlNode) : 
-    m_valueHasBeenSet(false)
+Phase2IntegrityAlgorithmsRequestListValue::Phase2IntegrityAlgorithmsRequestListValue(const XmlNode& xmlNode)
+  : Phase2IntegrityAlgorithmsRequestListValue()
 {
   *this = xmlNode;
 }

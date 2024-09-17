@@ -22,8 +22,8 @@ AcknowledgeThirdPartyJobResult::AcknowledgeThirdPartyJobResult() :
 {
 }
 
-AcknowledgeThirdPartyJobResult::AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(JobStatus::NOT_SET)
+AcknowledgeThirdPartyJobResult::AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AcknowledgeThirdPartyJobResult()
 {
   *this = result;
 }

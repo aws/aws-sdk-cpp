@@ -30,15 +30,8 @@ AutoScalingSettingsDescription::AutoScalingSettingsDescription() :
 {
 }
 
-AutoScalingSettingsDescription::AutoScalingSettingsDescription(JsonView jsonValue) : 
-    m_minimumUnits(0),
-    m_minimumUnitsHasBeenSet(false),
-    m_maximumUnits(0),
-    m_maximumUnitsHasBeenSet(false),
-    m_autoScalingDisabled(false),
-    m_autoScalingDisabledHasBeenSet(false),
-    m_autoScalingRoleArnHasBeenSet(false),
-    m_scalingPoliciesHasBeenSet(false)
+AutoScalingSettingsDescription::AutoScalingSettingsDescription(JsonView jsonValue)
+  : AutoScalingSettingsDescription()
 {
   *this = jsonValue;
 }

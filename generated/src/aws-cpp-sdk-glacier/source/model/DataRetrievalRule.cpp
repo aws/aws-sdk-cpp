@@ -25,10 +25,8 @@ DataRetrievalRule::DataRetrievalRule() :
 {
 }
 
-DataRetrievalRule::DataRetrievalRule(JsonView jsonValue) : 
-    m_strategyHasBeenSet(false),
-    m_bytesPerHour(0),
-    m_bytesPerHourHasBeenSet(false)
+DataRetrievalRule::DataRetrievalRule(JsonView jsonValue)
+  : DataRetrievalRule()
 {
   *this = jsonValue;
 }

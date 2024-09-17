@@ -24,9 +24,8 @@ AlgorithmSpecification::AlgorithmSpecification() :
 {
 }
 
-AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) : 
-    m_containerImageHasBeenSet(false),
-    m_scriptModeConfigHasBeenSet(false)
+AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue)
+  : AlgorithmSpecification()
 {
   *this = jsonValue;
 }

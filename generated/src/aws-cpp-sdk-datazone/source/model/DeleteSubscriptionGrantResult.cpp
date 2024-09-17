@@ -22,8 +22,8 @@ DeleteSubscriptionGrantResult::DeleteSubscriptionGrantResult() :
 {
 }
 
-DeleteSubscriptionGrantResult::DeleteSubscriptionGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionGrantOverallStatus::NOT_SET)
+DeleteSubscriptionGrantResult::DeleteSubscriptionGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteSubscriptionGrantResult()
 {
   *this = result;
 }
@@ -73,12 +73,6 @@ DeleteSubscriptionGrantResult& DeleteSubscriptionGrantResult::operator =(const A
   if(jsonValue.ValueExists("status"))
   {
     m_status = SubscriptionGrantOverallStatusMapper::GetSubscriptionGrantOverallStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("subscriptionId"))
-  {
-    m_subscriptionId = jsonValue.GetString("subscriptionId");
 
   }
 

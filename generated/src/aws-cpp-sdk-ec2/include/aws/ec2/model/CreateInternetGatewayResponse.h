@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateInternetGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the internet gateway.</p>
      */
     inline const InternetGateway& GetInternetGateway() const{ return m_internetGateway; }
-
-    /**
-     * <p>Information about the internet gateway.</p>
-     */
     inline void SetInternetGateway(const InternetGateway& value) { m_internetGateway = value; }
-
-    /**
-     * <p>Information about the internet gateway.</p>
-     */
     inline void SetInternetGateway(InternetGateway&& value) { m_internetGateway = std::move(value); }
-
-    /**
-     * <p>Information about the internet gateway.</p>
-     */
     inline CreateInternetGatewayResponse& WithInternetGateway(const InternetGateway& value) { SetInternetGateway(value); return *this;}
-
-    /**
-     * <p>Information about the internet gateway.</p>
-     */
     inline CreateInternetGatewayResponse& WithInternetGateway(InternetGateway&& value) { SetInternetGateway(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateInternetGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InternetGateway m_internetGateway;

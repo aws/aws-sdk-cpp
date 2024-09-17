@@ -23,8 +23,8 @@ AcknowledgeActionConfiguration::AcknowledgeActionConfiguration() :
 {
 }
 
-AcknowledgeActionConfiguration::AcknowledgeActionConfiguration(JsonView jsonValue) : 
-    m_noteHasBeenSet(false)
+AcknowledgeActionConfiguration::AcknowledgeActionConfiguration(JsonView jsonValue)
+  : AcknowledgeActionConfiguration()
 {
   *this = jsonValue;
 }

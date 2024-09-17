@@ -24,9 +24,8 @@ TemplateSourceEntity::TemplateSourceEntity() :
 {
 }
 
-TemplateSourceEntity::TemplateSourceEntity(JsonView jsonValue) : 
-    m_sourceAnalysisHasBeenSet(false),
-    m_sourceTemplateHasBeenSet(false)
+TemplateSourceEntity::TemplateSourceEntity(JsonView jsonValue)
+  : TemplateSourceEntity()
 {
   *this = jsonValue;
 }

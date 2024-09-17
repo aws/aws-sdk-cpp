@@ -27,12 +27,8 @@ SourceConfiguration::SourceConfiguration() :
 {
 }
 
-SourceConfiguration::SourceConfiguration(JsonView jsonValue) : 
-    m_type(SourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_iotSiteWiseConfigurationHasBeenSet(false),
-    m_iotTwinMakerConfigurationHasBeenSet(false)
+SourceConfiguration::SourceConfiguration(JsonView jsonValue)
+  : SourceConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Relationship::Relationship() :
 {
 }
 
-Relationship::Relationship(JsonView jsonValue) : 
-    m_targetComponentTypeIdHasBeenSet(false),
-    m_relationshipTypeHasBeenSet(false)
+Relationship::Relationship(JsonView jsonValue)
+  : Relationship()
 {
   *this = jsonValue;
 }

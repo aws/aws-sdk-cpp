@@ -25,10 +25,8 @@ KxCacheStorageConfiguration::KxCacheStorageConfiguration() :
 {
 }
 
-KxCacheStorageConfiguration::KxCacheStorageConfiguration(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+KxCacheStorageConfiguration::KxCacheStorageConfiguration(JsonView jsonValue)
+  : KxCacheStorageConfiguration()
 {
   *this = jsonValue;
 }

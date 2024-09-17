@@ -24,9 +24,8 @@ RequestBodyAssociatedResourceTypeConfig::RequestBodyAssociatedResourceTypeConfig
 {
 }
 
-RequestBodyAssociatedResourceTypeConfig::RequestBodyAssociatedResourceTypeConfig(JsonView jsonValue) : 
-    m_defaultSizeInspectionLimit(SizeInspectionLimit::NOT_SET),
-    m_defaultSizeInspectionLimitHasBeenSet(false)
+RequestBodyAssociatedResourceTypeConfig::RequestBodyAssociatedResourceTypeConfig(JsonView jsonValue)
+  : RequestBodyAssociatedResourceTypeConfig()
 {
   *this = jsonValue;
 }

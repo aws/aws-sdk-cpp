@@ -26,11 +26,8 @@ ConnectorDataSource::ConnectorDataSource() :
 {
 }
 
-ConnectorDataSource::ConnectorDataSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+ConnectorDataSource::ConnectorDataSource(JsonView jsonValue)
+  : ConnectorDataSource()
 {
   *this = jsonValue;
 }

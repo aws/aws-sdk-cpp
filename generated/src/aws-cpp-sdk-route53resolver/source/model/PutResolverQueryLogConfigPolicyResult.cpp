@@ -22,8 +22,8 @@ PutResolverQueryLogConfigPolicyResult::PutResolverQueryLogConfigPolicyResult() :
 {
 }
 
-PutResolverQueryLogConfigPolicyResult::PutResolverQueryLogConfigPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+PutResolverQueryLogConfigPolicyResult::PutResolverQueryLogConfigPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutResolverQueryLogConfigPolicyResult()
 {
   *this = result;
 }

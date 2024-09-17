@@ -33,52 +33,26 @@ namespace Model
     AWS_ELASTICACHE_API DeleteServerlessCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Provides the details of the specified serverless cache that is about to be
      * deleted.</p>
      */
     inline const ServerlessCache& GetServerlessCache() const{ return m_serverlessCache; }
-
-    /**
-     * <p>Provides the details of the specified serverless cache that is about to be
-     * deleted.</p>
-     */
     inline void SetServerlessCache(const ServerlessCache& value) { m_serverlessCache = value; }
-
-    /**
-     * <p>Provides the details of the specified serverless cache that is about to be
-     * deleted.</p>
-     */
     inline void SetServerlessCache(ServerlessCache&& value) { m_serverlessCache = std::move(value); }
-
-    /**
-     * <p>Provides the details of the specified serverless cache that is about to be
-     * deleted.</p>
-     */
     inline DeleteServerlessCacheResult& WithServerlessCache(const ServerlessCache& value) { SetServerlessCache(value); return *this;}
-
-    /**
-     * <p>Provides the details of the specified serverless cache that is about to be
-     * deleted.</p>
-     */
     inline DeleteServerlessCacheResult& WithServerlessCache(ServerlessCache&& value) { SetServerlessCache(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteServerlessCacheResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteServerlessCacheResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServerlessCache m_serverlessCache;

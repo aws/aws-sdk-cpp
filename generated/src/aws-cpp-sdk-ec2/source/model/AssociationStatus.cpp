@@ -27,10 +27,8 @@ AssociationStatus::AssociationStatus() :
 {
 }
 
-AssociationStatus::AssociationStatus(const XmlNode& xmlNode) : 
-    m_code(AssociationStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AssociationStatus::AssociationStatus(const XmlNode& xmlNode)
+  : AssociationStatus()
 {
   *this = xmlNode;
 }

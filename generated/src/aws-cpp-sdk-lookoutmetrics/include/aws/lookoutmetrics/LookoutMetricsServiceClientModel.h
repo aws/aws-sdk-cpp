@@ -48,6 +48,10 @@
 #include <aws/lookoutmetrics/model/UpdateAlertResult.h>
 #include <aws/lookoutmetrics/model/UpdateAnomalyDetectorResult.h>
 #include <aws/lookoutmetrics/model/UpdateMetricSetResult.h>
+#include <aws/lookoutmetrics/model/ListAlertsRequest.h>
+#include <aws/lookoutmetrics/model/ListAnomalyDetectorsRequest.h>
+#include <aws/lookoutmetrics/model/GetSampleDataRequest.h>
+#include <aws/lookoutmetrics/model/ListMetricSetsRequest.h>
 /* End of service model headers required in LookoutMetricsClient header */
 
 namespace Aws
@@ -81,7 +85,7 @@ namespace Aws
 
   namespace LookoutMetrics
   {
-    using LookoutMetricsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LookoutMetricsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LookoutMetricsEndpointProviderBase = Aws::LookoutMetrics::Endpoint::LookoutMetricsEndpointProviderBase;
     using LookoutMetricsEndpointProvider = Aws::LookoutMetrics::Endpoint::LookoutMetricsEndpointProvider;
 

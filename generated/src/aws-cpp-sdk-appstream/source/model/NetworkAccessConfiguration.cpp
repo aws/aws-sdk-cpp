@@ -24,9 +24,8 @@ NetworkAccessConfiguration::NetworkAccessConfiguration() :
 {
 }
 
-NetworkAccessConfiguration::NetworkAccessConfiguration(JsonView jsonValue) : 
-    m_eniPrivateIpAddressHasBeenSet(false),
-    m_eniIdHasBeenSet(false)
+NetworkAccessConfiguration::NetworkAccessConfiguration(JsonView jsonValue)
+  : NetworkAccessConfiguration()
 {
   *this = jsonValue;
 }

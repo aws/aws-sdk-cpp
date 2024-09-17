@@ -32,15 +32,8 @@ SpotFleetRequestConfig::SpotFleetRequestConfig() :
 {
 }
 
-SpotFleetRequestConfig::SpotFleetRequestConfig(const XmlNode& xmlNode) : 
-    m_activityStatus(ActivityStatus::NOT_SET),
-    m_activityStatusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_spotFleetRequestConfigHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false),
-    m_spotFleetRequestState(BatchState::NOT_SET),
-    m_spotFleetRequestStateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SpotFleetRequestConfig::SpotFleetRequestConfig(const XmlNode& xmlNode)
+  : SpotFleetRequestConfig()
 {
   *this = xmlNode;
 }

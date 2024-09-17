@@ -24,9 +24,8 @@ UpdateTagCollectionFilter::UpdateTagCollectionFilter() :
 {
 }
 
-UpdateTagCollectionFilter::UpdateTagCollectionFilter(JsonView jsonValue) : 
-    m_appBoundaryKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+UpdateTagCollectionFilter::UpdateTagCollectionFilter(JsonView jsonValue)
+  : UpdateTagCollectionFilter()
 {
   *this = jsonValue;
 }

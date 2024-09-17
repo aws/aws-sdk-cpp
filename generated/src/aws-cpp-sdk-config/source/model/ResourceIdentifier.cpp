@@ -27,12 +27,8 @@ ResourceIdentifier::ResourceIdentifier() :
 {
 }
 
-ResourceIdentifier::ResourceIdentifier(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceDeletionTimeHasBeenSet(false)
+ResourceIdentifier::ResourceIdentifier(JsonView jsonValue)
+  : ResourceIdentifier()
 {
   *this = jsonValue;
 }

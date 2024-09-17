@@ -57,42 +57,8 @@ DocumentDescription::DocumentDescription() :
 {
 }
 
-DocumentDescription::DocumentDescription(JsonView jsonValue) : 
-    m_sha1HasBeenSet(false),
-    m_hashHasBeenSet(false),
-    m_hashType(DocumentHashType::NOT_SET),
-    m_hashTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_status(DocumentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusInformationHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_platformTypesHasBeenSet(false),
-    m_documentType(DocumentType::NOT_SET),
-    m_documentTypeHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_latestVersionHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false),
-    m_targetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_attachmentsInformationHasBeenSet(false),
-    m_requiresHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_reviewInformationHasBeenSet(false),
-    m_approvedVersionHasBeenSet(false),
-    m_pendingReviewVersionHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_categoryEnumHasBeenSet(false)
+DocumentDescription::DocumentDescription(JsonView jsonValue)
+  : DocumentDescription()
 {
   *this = jsonValue;
 }

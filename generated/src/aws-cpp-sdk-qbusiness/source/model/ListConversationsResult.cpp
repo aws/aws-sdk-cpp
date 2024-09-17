@@ -29,6 +29,12 @@ ListConversationsResult::ListConversationsResult(const Aws::AmazonWebServiceResu
 ListConversationsResult& ListConversationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("conversations"))
   {
     Aws::Utils::Array<JsonView> conversationsJsonList = jsonValue.GetArray("conversations");
@@ -36,12 +42,6 @@ ListConversationsResult& ListConversationsResult::operator =(const Aws::AmazonWe
     {
       m_conversations.push_back(conversationsJsonList[conversationsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

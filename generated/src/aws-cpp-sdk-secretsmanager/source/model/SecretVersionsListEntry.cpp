@@ -27,12 +27,8 @@ SecretVersionsListEntry::SecretVersionsListEntry() :
 {
 }
 
-SecretVersionsListEntry::SecretVersionsListEntry(JsonView jsonValue) : 
-    m_versionIdHasBeenSet(false),
-    m_versionStagesHasBeenSet(false),
-    m_lastAccessedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_kmsKeyIdsHasBeenSet(false)
+SecretVersionsListEntry::SecretVersionsListEntry(JsonView jsonValue)
+  : SecretVersionsListEntry()
 {
   *this = jsonValue;
 }

@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateProgramRequest::UpdateProgramRequest() : 
     m_adBreaksHasBeenSet(false),
+    m_audienceMediaHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
     m_scheduleConfigurationHasBeenSet(false)
@@ -32,6 +33,17 @@ Aws::String UpdateProgramRequest::SerializePayload() const
      adBreaksJsonList[adBreaksIndex].AsObject(m_adBreaks[adBreaksIndex].Jsonize());
    }
    payload.WithArray("AdBreaks", std::move(adBreaksJsonList));
+
+  }
+
+  if(m_audienceMediaHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audienceMediaJsonList(m_audienceMedia.size());
+   for(unsigned audienceMediaIndex = 0; audienceMediaIndex < audienceMediaJsonList.GetLength(); ++audienceMediaIndex)
+   {
+     audienceMediaJsonList[audienceMediaIndex].AsObject(m_audienceMedia[audienceMediaIndex].Jsonize());
+   }
+   payload.WithArray("AudienceMedia", std::move(audienceMediaJsonList));
 
   }
 

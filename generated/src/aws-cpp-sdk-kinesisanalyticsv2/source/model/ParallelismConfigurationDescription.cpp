@@ -32,17 +32,8 @@ ParallelismConfigurationDescription::ParallelismConfigurationDescription() :
 {
 }
 
-ParallelismConfigurationDescription::ParallelismConfigurationDescription(JsonView jsonValue) : 
-    m_configurationType(ConfigurationType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_parallelism(0),
-    m_parallelismHasBeenSet(false),
-    m_parallelismPerKPU(0),
-    m_parallelismPerKPUHasBeenSet(false),
-    m_currentParallelism(0),
-    m_currentParallelismHasBeenSet(false),
-    m_autoScalingEnabled(false),
-    m_autoScalingEnabledHasBeenSet(false)
+ParallelismConfigurationDescription::ParallelismConfigurationDescription(JsonView jsonValue)
+  : ParallelismConfigurationDescription()
 {
   *this = jsonValue;
 }

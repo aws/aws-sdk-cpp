@@ -23,8 +23,8 @@ ConformancePackComplianceScoresFilters::ConformancePackComplianceScoresFilters()
 {
 }
 
-ConformancePackComplianceScoresFilters::ConformancePackComplianceScoresFilters(JsonView jsonValue) : 
-    m_conformancePackNamesHasBeenSet(false)
+ConformancePackComplianceScoresFilters::ConformancePackComplianceScoresFilters(JsonView jsonValue)
+  : ConformancePackComplianceScoresFilters()
 {
   *this = jsonValue;
 }

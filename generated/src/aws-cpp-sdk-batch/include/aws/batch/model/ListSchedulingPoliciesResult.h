@@ -34,42 +34,20 @@ namespace Model
     AWS_BATCH_API ListSchedulingPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of scheduling policies that match the request.</p>
      */
     inline const Aws::Vector<SchedulingPolicyListingDetail>& GetSchedulingPolicies() const{ return m_schedulingPolicies; }
-
-    /**
-     * <p>A list of scheduling policies that match the request.</p>
-     */
     inline void SetSchedulingPolicies(const Aws::Vector<SchedulingPolicyListingDetail>& value) { m_schedulingPolicies = value; }
-
-    /**
-     * <p>A list of scheduling policies that match the request.</p>
-     */
     inline void SetSchedulingPolicies(Aws::Vector<SchedulingPolicyListingDetail>&& value) { m_schedulingPolicies = std::move(value); }
-
-    /**
-     * <p>A list of scheduling policies that match the request.</p>
-     */
     inline ListSchedulingPoliciesResult& WithSchedulingPolicies(const Aws::Vector<SchedulingPolicyListingDetail>& value) { SetSchedulingPolicies(value); return *this;}
-
-    /**
-     * <p>A list of scheduling policies that match the request.</p>
-     */
     inline ListSchedulingPoliciesResult& WithSchedulingPolicies(Aws::Vector<SchedulingPolicyListingDetail>&& value) { SetSchedulingPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of scheduling policies that match the request.</p>
-     */
     inline ListSchedulingPoliciesResult& AddSchedulingPolicies(const SchedulingPolicyListingDetail& value) { m_schedulingPolicies.push_back(value); return *this; }
-
-    /**
-     * <p>A list of scheduling policies that match the request.</p>
-     */
     inline ListSchedulingPoliciesResult& AddSchedulingPolicies(SchedulingPolicyListingDetail&& value) { m_schedulingPolicies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>nextToken</code> value to include in a future
      * <code>ListSchedulingPolicies</code> request. When the results of a
@@ -78,83 +56,24 @@ namespace Model
      * <code>null</code> when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSchedulingPolicies</code> request. When the results of a
-     * <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSchedulingPolicies</code> request. When the results of a
-     * <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSchedulingPolicies</code> request. When the results of a
-     * <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSchedulingPolicies</code> request. When the results of a
-     * <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline ListSchedulingPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSchedulingPolicies</code> request. When the results of a
-     * <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline ListSchedulingPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSchedulingPolicies</code> request. When the results of a
-     * <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline ListSchedulingPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSchedulingPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSchedulingPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSchedulingPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SchedulingPolicyListingDetail> m_schedulingPolicies;

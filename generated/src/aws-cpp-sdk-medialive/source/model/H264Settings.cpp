@@ -99,92 +99,14 @@ H264Settings::H264Settings() :
     m_temporalAqHasBeenSet(false),
     m_timecodeInsertion(H264TimecodeInsertionBehavior::NOT_SET),
     m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+    m_timecodeBurninSettingsHasBeenSet(false),
+    m_minQp(0),
+    m_minQpHasBeenSet(false)
 {
 }
 
-H264Settings::H264Settings(JsonView jsonValue) : 
-    m_adaptiveQuantization(H264AdaptiveQuantization::NOT_SET),
-    m_adaptiveQuantizationHasBeenSet(false),
-    m_afdSignaling(AfdSignaling::NOT_SET),
-    m_afdSignalingHasBeenSet(false),
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_bufFillPct(0),
-    m_bufFillPctHasBeenSet(false),
-    m_bufSize(0),
-    m_bufSizeHasBeenSet(false),
-    m_colorMetadata(H264ColorMetadata::NOT_SET),
-    m_colorMetadataHasBeenSet(false),
-    m_colorSpaceSettingsHasBeenSet(false),
-    m_entropyEncoding(H264EntropyEncoding::NOT_SET),
-    m_entropyEncodingHasBeenSet(false),
-    m_filterSettingsHasBeenSet(false),
-    m_fixedAfd(FixedAfd::NOT_SET),
-    m_fixedAfdHasBeenSet(false),
-    m_flickerAq(H264FlickerAq::NOT_SET),
-    m_flickerAqHasBeenSet(false),
-    m_forceFieldPictures(H264ForceFieldPictures::NOT_SET),
-    m_forceFieldPicturesHasBeenSet(false),
-    m_framerateControl(H264FramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_gopBReference(H264GopBReference::NOT_SET),
-    m_gopBReferenceHasBeenSet(false),
-    m_gopClosedCadence(0),
-    m_gopClosedCadenceHasBeenSet(false),
-    m_gopNumBFrames(0),
-    m_gopNumBFramesHasBeenSet(false),
-    m_gopSize(0.0),
-    m_gopSizeHasBeenSet(false),
-    m_gopSizeUnits(H264GopSizeUnits::NOT_SET),
-    m_gopSizeUnitsHasBeenSet(false),
-    m_level(H264Level::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_lookAheadRateControl(H264LookAheadRateControl::NOT_SET),
-    m_lookAheadRateControlHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_minIInterval(0),
-    m_minIIntervalHasBeenSet(false),
-    m_numRefFrames(0),
-    m_numRefFramesHasBeenSet(false),
-    m_parControl(H264ParControl::NOT_SET),
-    m_parControlHasBeenSet(false),
-    m_parDenominator(0),
-    m_parDenominatorHasBeenSet(false),
-    m_parNumerator(0),
-    m_parNumeratorHasBeenSet(false),
-    m_profile(H264Profile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_qualityLevel(H264QualityLevel::NOT_SET),
-    m_qualityLevelHasBeenSet(false),
-    m_qvbrQualityLevel(0),
-    m_qvbrQualityLevelHasBeenSet(false),
-    m_rateControlMode(H264RateControlMode::NOT_SET),
-    m_rateControlModeHasBeenSet(false),
-    m_scanType(H264ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false),
-    m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
-    m_sceneChangeDetectHasBeenSet(false),
-    m_slices(0),
-    m_slicesHasBeenSet(false),
-    m_softness(0),
-    m_softnessHasBeenSet(false),
-    m_spatialAq(H264SpatialAq::NOT_SET),
-    m_spatialAqHasBeenSet(false),
-    m_subgopLength(H264SubGopLength::NOT_SET),
-    m_subgopLengthHasBeenSet(false),
-    m_syntax(H264Syntax::NOT_SET),
-    m_syntaxHasBeenSet(false),
-    m_temporalAq(H264TemporalAq::NOT_SET),
-    m_temporalAqHasBeenSet(false),
-    m_timecodeInsertion(H264TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+H264Settings::H264Settings(JsonView jsonValue)
+  : H264Settings()
 {
   *this = jsonValue;
 }
@@ -485,6 +407,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_timecodeBurninSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("minQp"))
+  {
+    m_minQp = jsonValue.GetInteger("minQp");
+
+    m_minQpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -718,6 +647,12 @@ JsonValue H264Settings::Jsonize() const
   if(m_timecodeBurninSettingsHasBeenSet)
   {
    payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
+
+  }
+
+  if(m_minQpHasBeenSet)
+  {
+   payload.WithInteger("minQp", m_minQp);
 
   }
 

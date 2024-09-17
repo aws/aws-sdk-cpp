@@ -35,20 +35,8 @@ UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration() :
 {
 }
 
-UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration(JsonView jsonValue) : 
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_copyTagsToVolumes(false),
-    m_copyTagsToVolumesHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false),
-    m_addRouteTableIdsHasBeenSet(false),
-    m_removeRouteTableIdsHasBeenSet(false)
+UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration(JsonView jsonValue)
+  : UpdateFileSystemOpenZFSConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ JobEntry::JobEntry() :
 {
 }
 
-JobEntry::JobEntry(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+JobEntry::JobEntry(JsonView jsonValue)
+  : JobEntry()
 {
   *this = jsonValue;
 }

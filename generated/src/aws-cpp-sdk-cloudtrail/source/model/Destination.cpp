@@ -25,10 +25,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(JsonView jsonValue) : 
-    m_type(DestinationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+Destination::Destination(JsonView jsonValue)
+  : Destination()
 {
   *this = jsonValue;
 }

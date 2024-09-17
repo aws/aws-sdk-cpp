@@ -24,9 +24,8 @@ VirtualGateway::VirtualGateway() :
 {
 }
 
-VirtualGateway::VirtualGateway(JsonView jsonValue) : 
-    m_virtualGatewayIdHasBeenSet(false),
-    m_virtualGatewayStateHasBeenSet(false)
+VirtualGateway::VirtualGateway(JsonView jsonValue)
+  : VirtualGateway()
 {
   *this = jsonValue;
 }

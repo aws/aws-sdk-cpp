@@ -26,11 +26,8 @@ ComplianceContributorCount::ComplianceContributorCount() :
 {
 }
 
-ComplianceContributorCount::ComplianceContributorCount(JsonView jsonValue) : 
-    m_cappedCount(0),
-    m_cappedCountHasBeenSet(false),
-    m_capExceeded(false),
-    m_capExceededHasBeenSet(false)
+ComplianceContributorCount::ComplianceContributorCount(JsonView jsonValue)
+  : ComplianceContributorCount()
 {
   *this = jsonValue;
 }

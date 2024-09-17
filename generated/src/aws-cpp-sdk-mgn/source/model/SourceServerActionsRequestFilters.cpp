@@ -23,8 +23,8 @@ SourceServerActionsRequestFilters::SourceServerActionsRequestFilters() :
 {
 }
 
-SourceServerActionsRequestFilters::SourceServerActionsRequestFilters(JsonView jsonValue) : 
-    m_actionIDsHasBeenSet(false)
+SourceServerActionsRequestFilters::SourceServerActionsRequestFilters(JsonView jsonValue)
+  : SourceServerActionsRequestFilters()
 {
   *this = jsonValue;
 }

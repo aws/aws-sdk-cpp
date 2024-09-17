@@ -37,47 +37,25 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The step count setup of a linear axis.</p>
      */
     inline int GetStepCount() const{ return m_stepCount; }
-
-    /**
-     * <p>The step count setup of a linear axis.</p>
-     */
     inline bool StepCountHasBeenSet() const { return m_stepCountHasBeenSet; }
-
-    /**
-     * <p>The step count setup of a linear axis.</p>
-     */
     inline void SetStepCount(int value) { m_stepCountHasBeenSet = true; m_stepCount = value; }
-
-    /**
-     * <p>The step count setup of a linear axis.</p>
-     */
     inline AxisLinearScale& WithStepCount(int value) { SetStepCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The step size setup of a linear axis.</p>
      */
     inline double GetStepSize() const{ return m_stepSize; }
-
-    /**
-     * <p>The step size setup of a linear axis.</p>
-     */
     inline bool StepSizeHasBeenSet() const { return m_stepSizeHasBeenSet; }
-
-    /**
-     * <p>The step size setup of a linear axis.</p>
-     */
     inline void SetStepSize(double value) { m_stepSizeHasBeenSet = true; m_stepSize = value; }
-
-    /**
-     * <p>The step size setup of a linear axis.</p>
-     */
     inline AxisLinearScale& WithStepSize(double value) { SetStepSize(value); return *this;}
-
+    ///@}
   private:
 
     int m_stepCount;

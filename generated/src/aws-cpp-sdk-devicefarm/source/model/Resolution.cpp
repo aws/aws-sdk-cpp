@@ -26,11 +26,8 @@ Resolution::Resolution() :
 {
 }
 
-Resolution::Resolution(JsonView jsonValue) : 
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false)
+Resolution::Resolution(JsonView jsonValue)
+  : Resolution()
 {
   *this = jsonValue;
 }

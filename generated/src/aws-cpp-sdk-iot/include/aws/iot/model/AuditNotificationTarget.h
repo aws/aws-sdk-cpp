@@ -38,116 +38,44 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
-
-    /**
-     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-     */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-     */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-
-    /**
-     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-     */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-     */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-
-    /**
-     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-     */
     inline AuditNotificationTarget& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-     */
     inline AuditNotificationTarget& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-     */
     inline AuditNotificationTarget& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the role that grants permission to send notifications to the
      * target.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the role that grants permission to send notifications to the
-     * target.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the role that grants permission to send notifications to the
-     * target.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the role that grants permission to send notifications to the
-     * target.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the role that grants permission to send notifications to the
-     * target.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the role that grants permission to send notifications to the
-     * target.</p>
-     */
     inline AuditNotificationTarget& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the role that grants permission to send notifications to the
-     * target.</p>
-     */
     inline AuditNotificationTarget& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the role that grants permission to send notifications to the
-     * target.</p>
-     */
     inline AuditNotificationTarget& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>True if notifications to the target are enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>True if notifications to the target are enabled.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>True if notifications to the target are enabled.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>True if notifications to the target are enabled.</p>
-     */
     inline AuditNotificationTarget& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetArn;

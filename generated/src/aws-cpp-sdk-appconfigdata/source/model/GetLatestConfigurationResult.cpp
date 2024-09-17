@@ -48,8 +48,8 @@ GetLatestConfigurationResult& GetLatestConfigurationResult::operator=(GetLatestC
    return *this;
 }
 
-GetLatestConfigurationResult::GetLatestConfigurationResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_nextPollIntervalInSeconds(0)
+GetLatestConfigurationResult::GetLatestConfigurationResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetLatestConfigurationResult()
 {
   *this = std::move(result);
 }

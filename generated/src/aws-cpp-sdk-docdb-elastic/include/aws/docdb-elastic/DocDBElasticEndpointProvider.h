@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DocDBElasticClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DocDBElasticClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DocDBElasticClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DocDBElasticBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

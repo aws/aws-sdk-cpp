@@ -24,9 +24,8 @@ VirtualNodeStatus::VirtualNodeStatus() :
 {
 }
 
-VirtualNodeStatus::VirtualNodeStatus(JsonView jsonValue) : 
-    m_status(VirtualNodeStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
+VirtualNodeStatus::VirtualNodeStatus(JsonView jsonValue)
+  : VirtualNodeStatus()
 {
   *this = jsonValue;
 }

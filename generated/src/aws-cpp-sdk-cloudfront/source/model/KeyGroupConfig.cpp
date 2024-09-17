@@ -27,10 +27,8 @@ KeyGroupConfig::KeyGroupConfig() :
 {
 }
 
-KeyGroupConfig::KeyGroupConfig(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_commentHasBeenSet(false)
+KeyGroupConfig::KeyGroupConfig(const XmlNode& xmlNode)
+  : KeyGroupConfig()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ StandardHlsSettings::StandardHlsSettings() :
 {
 }
 
-StandardHlsSettings::StandardHlsSettings(JsonView jsonValue) : 
-    m_audioRenditionSetsHasBeenSet(false),
-    m_m3u8SettingsHasBeenSet(false)
+StandardHlsSettings::StandardHlsSettings(JsonView jsonValue)
+  : StandardHlsSettings()
 {
   *this = jsonValue;
 }

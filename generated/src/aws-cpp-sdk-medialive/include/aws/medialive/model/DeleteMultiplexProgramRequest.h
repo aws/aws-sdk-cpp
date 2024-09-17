@@ -36,87 +36,33 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the multiplex that the program belongs to.
      */
     inline const Aws::String& GetMultiplexId() const{ return m_multiplexId; }
-
-    /**
-     * The ID of the multiplex that the program belongs to.
-     */
     inline bool MultiplexIdHasBeenSet() const { return m_multiplexIdHasBeenSet; }
-
-    /**
-     * The ID of the multiplex that the program belongs to.
-     */
     inline void SetMultiplexId(const Aws::String& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = value; }
-
-    /**
-     * The ID of the multiplex that the program belongs to.
-     */
     inline void SetMultiplexId(Aws::String&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::move(value); }
-
-    /**
-     * The ID of the multiplex that the program belongs to.
-     */
     inline void SetMultiplexId(const char* value) { m_multiplexIdHasBeenSet = true; m_multiplexId.assign(value); }
-
-    /**
-     * The ID of the multiplex that the program belongs to.
-     */
     inline DeleteMultiplexProgramRequest& WithMultiplexId(const Aws::String& value) { SetMultiplexId(value); return *this;}
-
-    /**
-     * The ID of the multiplex that the program belongs to.
-     */
     inline DeleteMultiplexProgramRequest& WithMultiplexId(Aws::String&& value) { SetMultiplexId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the multiplex that the program belongs to.
-     */
     inline DeleteMultiplexProgramRequest& WithMultiplexId(const char* value) { SetMultiplexId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The multiplex program name.
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
-
-    /**
-     * The multiplex program name.
-     */
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
-
-    /**
-     * The multiplex program name.
-     */
     inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
-
-    /**
-     * The multiplex program name.
-     */
     inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
-
-    /**
-     * The multiplex program name.
-     */
     inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
-
-    /**
-     * The multiplex program name.
-     */
     inline DeleteMultiplexProgramRequest& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-
-    /**
-     * The multiplex program name.
-     */
     inline DeleteMultiplexProgramRequest& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-
-    /**
-     * The multiplex program name.
-     */
     inline DeleteMultiplexProgramRequest& WithProgramName(const char* value) { SetProgramName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_multiplexId;

@@ -27,12 +27,8 @@ EventContextDataType::EventContextDataType() :
 {
 }
 
-EventContextDataType::EventContextDataType(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false)
+EventContextDataType::EventContextDataType(JsonView jsonValue)
+  : EventContextDataType()
 {
   *this = jsonValue;
 }

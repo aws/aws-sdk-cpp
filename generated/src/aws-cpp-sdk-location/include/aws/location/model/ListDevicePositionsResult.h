@@ -34,106 +34,43 @@ namespace Model
     AWS_LOCATIONSERVICE_API ListDevicePositionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains details about each device's last known position.</p>
      */
     inline const Aws::Vector<ListDevicePositionsResponseEntry>& GetEntries() const{ return m_entries; }
-
-    /**
-     * <p>Contains details about each device's last known position.</p>
-     */
     inline void SetEntries(const Aws::Vector<ListDevicePositionsResponseEntry>& value) { m_entries = value; }
-
-    /**
-     * <p>Contains details about each device's last known position.</p>
-     */
     inline void SetEntries(Aws::Vector<ListDevicePositionsResponseEntry>&& value) { m_entries = std::move(value); }
-
-    /**
-     * <p>Contains details about each device's last known position.</p>
-     */
     inline ListDevicePositionsResult& WithEntries(const Aws::Vector<ListDevicePositionsResponseEntry>& value) { SetEntries(value); return *this;}
-
-    /**
-     * <p>Contains details about each device's last known position.</p>
-     */
     inline ListDevicePositionsResult& WithEntries(Aws::Vector<ListDevicePositionsResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains details about each device's last known position.</p>
-     */
     inline ListDevicePositionsResult& AddEntries(const ListDevicePositionsResponseEntry& value) { m_entries.push_back(value); return *this; }
-
-    /**
-     * <p>Contains details about each device's last known position.</p>
-     */
     inline ListDevicePositionsResult& AddEntries(ListDevicePositionsResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token indicating there are additional pages available. You can
      * use the token in a following request to fetch the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results.</p>
-     */
     inline ListDevicePositionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results.</p>
-     */
     inline ListDevicePositionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results.</p>
-     */
     inline ListDevicePositionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDevicePositionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDevicePositionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDevicePositionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ListDevicePositionsResponseEntry> m_entries;

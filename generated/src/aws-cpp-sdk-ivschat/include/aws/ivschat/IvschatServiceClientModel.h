@@ -33,6 +33,9 @@
 #include <aws/ivschat/model/UntagResourceResult.h>
 #include <aws/ivschat/model/UpdateLoggingConfigurationResult.h>
 #include <aws/ivschat/model/UpdateRoomResult.h>
+#include <aws/ivschat/model/ListRoomsRequest.h>
+#include <aws/ivschat/model/CreateRoomRequest.h>
+#include <aws/ivschat/model/ListLoggingConfigurationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IvschatClient header */
 
@@ -67,7 +70,7 @@ namespace Aws
 
   namespace ivschat
   {
-    using IvschatClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IvschatClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IvschatEndpointProviderBase = Aws::ivschat::Endpoint::IvschatEndpointProviderBase;
     using IvschatEndpointProvider = Aws::ivschat::Endpoint::IvschatEndpointProvider;
 

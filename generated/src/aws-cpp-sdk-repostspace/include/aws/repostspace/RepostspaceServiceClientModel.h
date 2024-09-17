@@ -24,6 +24,7 @@
 #include <aws/repostspace/model/ListTagsForResourceResult.h>
 #include <aws/repostspace/model/TagResourceResult.h>
 #include <aws/repostspace/model/UntagResourceResult.h>
+#include <aws/repostspace/model/ListSpacesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in RepostspaceClient header */
 
@@ -58,7 +59,7 @@ namespace Aws
 
   namespace repostspace
   {
-    using RepostspaceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RepostspaceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RepostspaceEndpointProviderBase = Aws::repostspace::Endpoint::RepostspaceEndpointProviderBase;
     using RepostspaceEndpointProvider = Aws::repostspace::Endpoint::RepostspaceEndpointProvider;
 

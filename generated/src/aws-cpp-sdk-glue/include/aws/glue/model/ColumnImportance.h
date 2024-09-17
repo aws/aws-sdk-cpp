@@ -40,67 +40,29 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a column.</p>
      */
     inline const Aws::String& GetColumnName() const{ return m_columnName; }
-
-    /**
-     * <p>The name of a column.</p>
-     */
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-
-    /**
-     * <p>The name of a column.</p>
-     */
     inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-
-    /**
-     * <p>The name of a column.</p>
-     */
     inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-
-    /**
-     * <p>The name of a column.</p>
-     */
     inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-
-    /**
-     * <p>The name of a column.</p>
-     */
     inline ColumnImportance& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-
-    /**
-     * <p>The name of a column.</p>
-     */
     inline ColumnImportance& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a column.</p>
-     */
     inline ColumnImportance& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The column importance score for the column, as a decimal.</p>
      */
     inline double GetImportance() const{ return m_importance; }
-
-    /**
-     * <p>The column importance score for the column, as a decimal.</p>
-     */
     inline bool ImportanceHasBeenSet() const { return m_importanceHasBeenSet; }
-
-    /**
-     * <p>The column importance score for the column, as a decimal.</p>
-     */
     inline void SetImportance(double value) { m_importanceHasBeenSet = true; m_importance = value; }
-
-    /**
-     * <p>The column importance score for the column, as a decimal.</p>
-     */
     inline ColumnImportance& WithImportance(double value) { SetImportance(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_columnName;

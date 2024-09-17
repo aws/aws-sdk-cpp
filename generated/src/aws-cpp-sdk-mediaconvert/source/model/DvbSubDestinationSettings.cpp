@@ -37,6 +37,10 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_fallbackFontHasBeenSet(false),
     m_fontColor(DvbSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
+    m_fontFileBoldHasBeenSet(false),
+    m_fontFileBoldItalicHasBeenSet(false),
+    m_fontFileItalicHasBeenSet(false),
+    m_fontFileRegularHasBeenSet(false),
     m_fontOpacity(0),
     m_fontOpacityHasBeenSet(false),
     m_fontResolution(0),
@@ -75,60 +79,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
 {
 }
 
-DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) : 
-    m_alignment(DvbSubtitleAlignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_applyFontColor(DvbSubtitleApplyFontColor::NOT_SET),
-    m_applyFontColorHasBeenSet(false),
-    m_backgroundColor(DvbSubtitleBackgroundColor::NOT_SET),
-    m_backgroundColorHasBeenSet(false),
-    m_backgroundOpacity(0),
-    m_backgroundOpacityHasBeenSet(false),
-    m_ddsHandling(DvbddsHandling::NOT_SET),
-    m_ddsHandlingHasBeenSet(false),
-    m_ddsXCoordinate(0),
-    m_ddsXCoordinateHasBeenSet(false),
-    m_ddsYCoordinate(0),
-    m_ddsYCoordinateHasBeenSet(false),
-    m_fallbackFont(DvbSubSubtitleFallbackFont::NOT_SET),
-    m_fallbackFontHasBeenSet(false),
-    m_fontColor(DvbSubtitleFontColor::NOT_SET),
-    m_fontColorHasBeenSet(false),
-    m_fontOpacity(0),
-    m_fontOpacityHasBeenSet(false),
-    m_fontResolution(0),
-    m_fontResolutionHasBeenSet(false),
-    m_fontScript(FontScript::NOT_SET),
-    m_fontScriptHasBeenSet(false),
-    m_fontSize(0),
-    m_fontSizeHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_hexFontColorHasBeenSet(false),
-    m_outlineColor(DvbSubtitleOutlineColor::NOT_SET),
-    m_outlineColorHasBeenSet(false),
-    m_outlineSize(0),
-    m_outlineSizeHasBeenSet(false),
-    m_shadowColor(DvbSubtitleShadowColor::NOT_SET),
-    m_shadowColorHasBeenSet(false),
-    m_shadowOpacity(0),
-    m_shadowOpacityHasBeenSet(false),
-    m_shadowXOffset(0),
-    m_shadowXOffsetHasBeenSet(false),
-    m_shadowYOffset(0),
-    m_shadowYOffsetHasBeenSet(false),
-    m_stylePassthrough(DvbSubtitleStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false),
-    m_subtitlingType(DvbSubtitlingType::NOT_SET),
-    m_subtitlingTypeHasBeenSet(false),
-    m_teletextSpacing(DvbSubtitleTeletextSpacing::NOT_SET),
-    m_teletextSpacingHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_xPosition(0),
-    m_xPositionHasBeenSet(false),
-    m_yPosition(0),
-    m_yPositionHasBeenSet(false)
+DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue)
+  : DvbSubDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -196,6 +148,34 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_fontColor = DvbSubtitleFontColorMapper::GetDvbSubtitleFontColorForName(jsonValue.GetString("fontColor"));
 
     m_fontColorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileBold"))
+  {
+    m_fontFileBold = jsonValue.GetString("fontFileBold");
+
+    m_fontFileBoldHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileBoldItalic"))
+  {
+    m_fontFileBoldItalic = jsonValue.GetString("fontFileBoldItalic");
+
+    m_fontFileBoldItalicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileItalic"))
+  {
+    m_fontFileItalic = jsonValue.GetString("fontFileItalic");
+
+    m_fontFileItalicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileRegular"))
+  {
+    m_fontFileRegular = jsonValue.GetString("fontFileRegular");
+
+    m_fontFileRegularHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fontOpacity"))
@@ -377,6 +357,30 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   if(m_fontColorHasBeenSet)
   {
    payload.WithString("fontColor", DvbSubtitleFontColorMapper::GetNameForDvbSubtitleFontColor(m_fontColor));
+  }
+
+  if(m_fontFileBoldHasBeenSet)
+  {
+   payload.WithString("fontFileBold", m_fontFileBold);
+
+  }
+
+  if(m_fontFileBoldItalicHasBeenSet)
+  {
+   payload.WithString("fontFileBoldItalic", m_fontFileBoldItalic);
+
+  }
+
+  if(m_fontFileItalicHasBeenSet)
+  {
+   payload.WithString("fontFileItalic", m_fontFileItalic);
+
+  }
+
+  if(m_fontFileRegularHasBeenSet)
+  {
+   payload.WithString("fontFileRegular", m_fontFileRegular);
+
   }
 
   if(m_fontOpacityHasBeenSet)

@@ -23,8 +23,8 @@ AwsEventsEndpointReplicationConfigDetails::AwsEventsEndpointReplicationConfigDet
 {
 }
 
-AwsEventsEndpointReplicationConfigDetails::AwsEventsEndpointReplicationConfigDetails(JsonView jsonValue) : 
-    m_stateHasBeenSet(false)
+AwsEventsEndpointReplicationConfigDetails::AwsEventsEndpointReplicationConfigDetails(JsonView jsonValue)
+  : AwsEventsEndpointReplicationConfigDetails()
 {
   *this = jsonValue;
 }

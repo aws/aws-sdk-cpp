@@ -25,10 +25,8 @@ EBSSavingsOpportunityAfterDiscounts::EBSSavingsOpportunityAfterDiscounts() :
 {
 }
 
-EBSSavingsOpportunityAfterDiscounts::EBSSavingsOpportunityAfterDiscounts(JsonView jsonValue) : 
-    m_savingsOpportunityPercentage(0.0),
-    m_savingsOpportunityPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
+EBSSavingsOpportunityAfterDiscounts::EBSSavingsOpportunityAfterDiscounts(JsonView jsonValue)
+  : EBSSavingsOpportunityAfterDiscounts()
 {
   *this = jsonValue;
 }

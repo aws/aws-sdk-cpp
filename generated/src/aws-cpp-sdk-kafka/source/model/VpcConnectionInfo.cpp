@@ -26,11 +26,8 @@ VpcConnectionInfo::VpcConnectionInfo() :
 {
 }
 
-VpcConnectionInfo::VpcConnectionInfo(JsonView jsonValue) : 
-    m_vpcConnectionArnHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_userIdentityHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+VpcConnectionInfo::VpcConnectionInfo(JsonView jsonValue)
+  : VpcConnectionInfo()
 {
   *this = jsonValue;
 }

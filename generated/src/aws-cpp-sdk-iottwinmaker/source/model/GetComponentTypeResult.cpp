@@ -24,10 +24,8 @@ GetComponentTypeResult::GetComponentTypeResult() :
 {
 }
 
-GetComponentTypeResult::GetComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isSingleton(false),
-    m_isAbstract(false),
-    m_isSchemaInitialized(false)
+GetComponentTypeResult::GetComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetComponentTypeResult()
 {
   *this = result;
 }

@@ -33,37 +33,23 @@ namespace Model
     AWS_RDS_API DeleteDBInstanceAutomatedBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const DBInstanceAutomatedBackup& GetDBInstanceAutomatedBackup() const{ return m_dBInstanceAutomatedBackup; }
-
-    
     inline void SetDBInstanceAutomatedBackup(const DBInstanceAutomatedBackup& value) { m_dBInstanceAutomatedBackup = value; }
-
-    
     inline void SetDBInstanceAutomatedBackup(DBInstanceAutomatedBackup&& value) { m_dBInstanceAutomatedBackup = std::move(value); }
-
-    
     inline DeleteDBInstanceAutomatedBackupResult& WithDBInstanceAutomatedBackup(const DBInstanceAutomatedBackup& value) { SetDBInstanceAutomatedBackup(value); return *this;}
-
-    
     inline DeleteDBInstanceAutomatedBackupResult& WithDBInstanceAutomatedBackup(DBInstanceAutomatedBackup&& value) { SetDBInstanceAutomatedBackup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteDBInstanceAutomatedBackupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteDBInstanceAutomatedBackupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DBInstanceAutomatedBackup m_dBInstanceAutomatedBackup;

@@ -28,6 +28,7 @@
 #include <aws/pipes/model/TagResourceResult.h>
 #include <aws/pipes/model/UntagResourceResult.h>
 #include <aws/pipes/model/UpdatePipeResult.h>
+#include <aws/pipes/model/ListPipesRequest.h>
 /* End of service model headers required in PipesClient header */
 
 namespace Aws
@@ -61,7 +62,7 @@ namespace Aws
 
   namespace Pipes
   {
-    using PipesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PipesClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PipesEndpointProviderBase = Aws::Pipes::Endpoint::PipesEndpointProviderBase;
     using PipesEndpointProvider = Aws::Pipes::Endpoint::PipesEndpointProvider;
 

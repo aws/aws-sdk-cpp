@@ -34,25 +34,13 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues() :
     m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
 }
 
-ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNode) : 
-    m_pendingCloudwatchLogsExportsHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_rdsCustomClusterConfigurationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNode)
+  : ClusterPendingModifiedValues()
 {
   *this = xmlNode;
 }
@@ -123,6 +111,12 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator =(const Xml
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
+    {
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -184,6 +178,13 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -231,6 +232,12 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
   }
 }
 

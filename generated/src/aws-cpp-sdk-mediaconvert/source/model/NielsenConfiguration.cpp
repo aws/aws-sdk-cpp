@@ -25,10 +25,8 @@ NielsenConfiguration::NielsenConfiguration() :
 {
 }
 
-NielsenConfiguration::NielsenConfiguration(JsonView jsonValue) : 
-    m_breakoutCode(0),
-    m_breakoutCodeHasBeenSet(false),
-    m_distributorIdHasBeenSet(false)
+NielsenConfiguration::NielsenConfiguration(JsonView jsonValue)
+  : NielsenConfiguration()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ StartLifecyclePolicyPreviewResult::StartLifecyclePolicyPreviewResult() :
 {
 }
 
-StartLifecyclePolicyPreviewResult::StartLifecyclePolicyPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(LifecyclePolicyPreviewStatus::NOT_SET)
+StartLifecyclePolicyPreviewResult::StartLifecyclePolicyPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartLifecyclePolicyPreviewResult()
 {
   *this = result;
 }

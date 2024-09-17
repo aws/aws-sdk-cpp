@@ -28,14 +28,8 @@ CreateLagResult::CreateLagResult() :
 {
 }
 
-CreateLagResult::CreateLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfConnections(0),
-    m_lagState(LagState::NOT_SET),
-    m_minimumLinks(0),
-    m_allowsHostedConnections(false),
-    m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_macSecCapable(false)
+CreateLagResult::CreateLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateLagResult()
 {
   *this = result;
 }

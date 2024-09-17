@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetPluginResult::GetPluginResult() : 
-    m_state(PluginState::NOT_SET),
-    m_type(PluginType::NOT_SET)
+    m_type(PluginType::NOT_SET),
+    m_buildStatus(PluginBuildStatus::NOT_SET),
+    m_state(PluginState::NOT_SET)
 {
 }
 
-GetPluginResult::GetPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(PluginState::NOT_SET),
-    m_type(PluginType::NOT_SET)
+GetPluginResult::GetPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPluginResult()
 {
   *this = result;
 }
@@ -39,15 +39,9 @@ GetPluginResult& GetPluginResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
-  if(jsonValue.ValueExists("authConfiguration"))
+  if(jsonValue.ValueExists("pluginId"))
   {
-    m_authConfiguration = jsonValue.GetObject("authConfiguration");
-
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_pluginId = jsonValue.GetString("pluginId");
 
   }
 
@@ -57,15 +51,9 @@ GetPluginResult& GetPluginResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
-  if(jsonValue.ValueExists("pluginArn"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_pluginArn = jsonValue.GetString("pluginArn");
-
-  }
-
-  if(jsonValue.ValueExists("pluginId"))
-  {
-    m_pluginId = jsonValue.GetString("pluginId");
+    m_type = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("type"));
 
   }
 
@@ -75,15 +63,39 @@ GetPluginResult& GetPluginResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("authConfiguration"))
+  {
+    m_authConfiguration = jsonValue.GetObject("authConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("customPluginConfiguration"))
+  {
+    m_customPluginConfiguration = jsonValue.GetObject("customPluginConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("buildStatus"))
+  {
+    m_buildStatus = PluginBuildStatusMapper::GetPluginBuildStatusForName(jsonValue.GetString("buildStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("pluginArn"))
+  {
+    m_pluginArn = jsonValue.GetString("pluginArn");
+
+  }
+
   if(jsonValue.ValueExists("state"))
   {
     m_state = PluginStateMapper::GetPluginStateForName(jsonValue.GetString("state"));
 
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_type = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("type"));
+    m_createdAt = jsonValue.GetDouble("createdAt");
 
   }
 

@@ -29,28 +29,20 @@ namespace Model
 
   /**
    * <p>The log configuration for the container. This parameter maps to
-   * <code>LogConfig</code> in the <a
-   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-   * a container</a> section of the <a
-   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-   * <code>--log-driver</code> option to <a
-   * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
-   * run</code> </a>.</p> <p>By default, containers use the same logging driver that
-   * the Docker daemon uses. However, the container might use a different logging
-   * driver than the Docker daemon by specifying a log driver configuration in the
-   * container definition. For more information about the options for different
-   * supported log drivers, see <a
-   * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
-   * drivers</a> in the Docker documentation.</p> <p>Understand the following when
-   * specifying a log configuration for your containers.</p> <ul> <li> <p>Amazon ECS
-   * currently supports a subset of the logging drivers available to the Docker
-   * daemon. Additional log drivers may be available in future releases of the Amazon
-   * ECS container agent.</p> <p>For tasks on Fargate, the supported log drivers are
-   * <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-   * <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are
-   * <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
-   * <code>json-file</code>, <code>journald</code>,
-   * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
+   * <code>LogConfig</code> in the docker container create command and the
+   * <code>--log-driver</code> option to docker run.</p> <p>By default, containers
+   * use the same logging driver that the Docker daemon uses. However, the container
+   * might use a different logging driver than the Docker daemon by specifying a log
+   * driver configuration in the container definition.</p> <p>Understand the
+   * following when specifying a log configuration for your containers.</p> <ul> <li>
+   * <p>Amazon ECS currently supports a subset of the logging drivers available to
+   * the Docker daemon. Additional log drivers may be available in future releases of
+   * the Amazon ECS container agent.</p> <p>For tasks on Fargate, the supported log
+   * drivers are <code>awslogs</code>, <code>splunk</code>, and
+   * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
+   * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+   * <code>gelf</code>, <code>json-file</code>,
+   * <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and
    * <code>awsfirelens</code>.</p> </li> <li> <p>This parameter requires version 1.18
    * of the Docker Remote API or greater on your container instance.</p> </li> <li>
    * <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container
@@ -77,151 +69,37 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
      * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
-     * log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-     * log routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that isn't listed, you can
-     * fork the Amazon ECS container agent project that's <a
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Send
+     * Amazon ECS logs to CloudWatch</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>For more information about using the
+     * <code>awsfirelens</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send
+     * Amazon ECS logs to an Amazon Web Services service or Amazon Web Services
+     * Partner</a>.</p>  <p>If you have a custom driver that isn't listed, you
+     * can fork the Amazon ECS container agent project that's <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we don't currently
      * provide support for running modified copies of this software.</p> 
      */
     inline const LogDriver& GetLogDriver() const{ return m_logDriver; }
-
-    /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
-     * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
-     * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
-     * log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-     * log routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that isn't listed, you can
-     * fork the Amazon ECS container agent project that's <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, we don't currently
-     * provide support for running modified copies of this software.</p> 
-     */
     inline bool LogDriverHasBeenSet() const { return m_logDriverHasBeenSet; }
-
-    /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
-     * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
-     * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
-     * log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-     * log routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that isn't listed, you can
-     * fork the Amazon ECS container agent project that's <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, we don't currently
-     * provide support for running modified copies of this software.</p> 
-     */
     inline void SetLogDriver(const LogDriver& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
-
-    /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
-     * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
-     * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
-     * log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-     * log routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that isn't listed, you can
-     * fork the Amazon ECS container agent project that's <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, we don't currently
-     * provide support for running modified copies of this software.</p> 
-     */
     inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
-
-    /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
-     * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
-     * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
-     * log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-     * log routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that isn't listed, you can
-     * fork the Amazon ECS container agent project that's <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, we don't currently
-     * provide support for running modified copies of this software.</p> 
-     */
     inline LogConfiguration& WithLogDriver(const LogDriver& value) { SetLogDriver(value); return *this;}
-
-    /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
-     * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
-     * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
-     * <code>awsfirelens</code>.</p> <p>For more information about using the
-     * <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     * the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
-     * log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-     * log routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>If you have a custom driver that isn't listed, you can
-     * fork the Amazon ECS container agent project that's <a
-     * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
-     * customize it to work with that driver. We encourage you to submit pull requests
-     * for changes that you would like to have included. However, we don't currently
-     * provide support for running modified copies of this software.</p> 
-     */
     inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
@@ -230,116 +108,21 @@ namespace Model
      * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The configuration options to send to the log driver. This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
-     */
     inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The secrets to pass to the log configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
@@ -347,63 +130,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
-
-    /**
-     * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
-     */
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
-
-    /**
-     * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
-     */
     inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
-
-    /**
-     * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
-     */
     inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
-
-    /**
-     * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
-     */
     inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
-
-    /**
-     * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
-     */
     inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
-     */
     inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
-
-    /**
-     * <p>The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
-     */
     inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     LogDriver m_logDriver;

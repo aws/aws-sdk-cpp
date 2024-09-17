@@ -37,49 +37,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The language to use to retrieve for the generated template. Supported values
      * are:</p> <ul> <li> <p> <code>JSON</code> </p> </li> <li> <p> <code>YAML</code>
      * </p> </li> </ul>
      */
     inline const TemplateFormat& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>The language to use to retrieve for the generated template. Supported values
-     * are:</p> <ul> <li> <p> <code>JSON</code> </p> </li> <li> <p> <code>YAML</code>
-     * </p> </li> </ul>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>The language to use to retrieve for the generated template. Supported values
-     * are:</p> <ul> <li> <p> <code>JSON</code> </p> </li> <li> <p> <code>YAML</code>
-     * </p> </li> </ul>
-     */
     inline void SetFormat(const TemplateFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>The language to use to retrieve for the generated template. Supported values
-     * are:</p> <ul> <li> <p> <code>JSON</code> </p> </li> <li> <p> <code>YAML</code>
-     * </p> </li> </ul>
-     */
     inline void SetFormat(TemplateFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>The language to use to retrieve for the generated template. Supported values
-     * are:</p> <ul> <li> <p> <code>JSON</code> </p> </li> <li> <p> <code>YAML</code>
-     * </p> </li> </ul>
-     */
     inline GetGeneratedTemplateRequest& WithFormat(const TemplateFormat& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>The language to use to retrieve for the generated template. Supported values
-     * are:</p> <ul> <li> <p> <code>JSON</code> </p> </li> <li> <p> <code>YAML</code>
-     * </p> </li> </ul>
-     */
     inline GetGeneratedTemplateRequest& WithFormat(TemplateFormat&& value) { SetFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
      * is
@@ -89,77 +61,14 @@ namespace Model
      * </code>.</p>
      */
     inline const Aws::String& GetGeneratedTemplateName() const{ return m_generatedTemplateName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
-     * is
-     * <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>.
-     * For example,
-     * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i>
-     * </code>.</p>
-     */
     inline bool GeneratedTemplateNameHasBeenSet() const { return m_generatedTemplateNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
-     * is
-     * <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>.
-     * For example,
-     * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i>
-     * </code>.</p>
-     */
     inline void SetGeneratedTemplateName(const Aws::String& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
-     * is
-     * <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>.
-     * For example,
-     * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i>
-     * </code>.</p>
-     */
     inline void SetGeneratedTemplateName(Aws::String&& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
-     * is
-     * <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>.
-     * For example,
-     * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i>
-     * </code>.</p>
-     */
     inline void SetGeneratedTemplateName(const char* value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
-     * is
-     * <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>.
-     * For example,
-     * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i>
-     * </code>.</p>
-     */
     inline GetGeneratedTemplateRequest& WithGeneratedTemplateName(const Aws::String& value) { SetGeneratedTemplateName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
-     * is
-     * <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>.
-     * For example,
-     * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i>
-     * </code>.</p>
-     */
     inline GetGeneratedTemplateRequest& WithGeneratedTemplateName(Aws::String&& value) { SetGeneratedTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the generated template. The format
-     * is
-     * <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>.
-     * For example,
-     * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i>
-     * </code>.</p>
-     */
     inline GetGeneratedTemplateRequest& WithGeneratedTemplateName(const char* value) { SetGeneratedTemplateName(value); return *this;}
-
+    ///@}
   private:
 
     TemplateFormat m_format;

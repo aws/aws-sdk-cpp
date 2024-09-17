@@ -31,16 +31,8 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_isDeploymentComplete(false),
-    m_isDeploymentCompleteHasBeenSet(false),
-    m_messagesHasBeenSet(false)
+Deployment::Deployment(JsonView jsonValue)
+  : Deployment()
 {
   *this = jsonValue;
 }

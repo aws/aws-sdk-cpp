@@ -26,9 +26,8 @@ EnclaveOptions::EnclaveOptions() :
 {
 }
 
-EnclaveOptions::EnclaveOptions(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+EnclaveOptions::EnclaveOptions(const XmlNode& xmlNode)
+  : EnclaveOptions()
 {
   *this = xmlNode;
 }

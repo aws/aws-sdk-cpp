@@ -23,8 +23,8 @@ ContributionMatrix::ContributionMatrix() :
 {
 }
 
-ContributionMatrix::ContributionMatrix(JsonView jsonValue) : 
-    m_dimensionContributionListHasBeenSet(false)
+ContributionMatrix::ContributionMatrix(JsonView jsonValue)
+  : ContributionMatrix()
 {
   *this = jsonValue;
 }

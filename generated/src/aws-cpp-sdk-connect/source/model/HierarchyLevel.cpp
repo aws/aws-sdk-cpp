@@ -27,12 +27,8 @@ HierarchyLevel::HierarchyLevel() :
 {
 }
 
-HierarchyLevel::HierarchyLevel(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+HierarchyLevel::HierarchyLevel(JsonView jsonValue)
+  : HierarchyLevel()
 {
   *this = jsonValue;
 }

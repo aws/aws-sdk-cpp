@@ -32,63 +32,29 @@ namespace Model
     AWS_LICENSEMANAGER_API CreateLicenseManagerReportGeneratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
     inline const Aws::String& GetLicenseManagerReportGeneratorArn() const{ return m_licenseManagerReportGeneratorArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-     */
     inline void SetLicenseManagerReportGeneratorArn(const Aws::String& value) { m_licenseManagerReportGeneratorArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-     */
     inline void SetLicenseManagerReportGeneratorArn(Aws::String&& value) { m_licenseManagerReportGeneratorArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-     */
     inline void SetLicenseManagerReportGeneratorArn(const char* value) { m_licenseManagerReportGeneratorArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-     */
     inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(const Aws::String& value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-     */
     inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(Aws::String&& value) { SetLicenseManagerReportGeneratorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-     */
     inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(const char* value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLicenseManagerReportGeneratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLicenseManagerReportGeneratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLicenseManagerReportGeneratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseManagerReportGeneratorArn;

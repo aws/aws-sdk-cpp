@@ -25,10 +25,8 @@ DetectMitigationActionsTaskTarget::DetectMitigationActionsTaskTarget() :
 {
 }
 
-DetectMitigationActionsTaskTarget::DetectMitigationActionsTaskTarget(JsonView jsonValue) : 
-    m_violationIdsHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorNameHasBeenSet(false)
+DetectMitigationActionsTaskTarget::DetectMitigationActionsTaskTarget(JsonView jsonValue)
+  : DetectMitigationActionsTaskTarget()
 {
   *this = jsonValue;
 }

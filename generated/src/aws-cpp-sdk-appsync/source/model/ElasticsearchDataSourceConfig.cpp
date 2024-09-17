@@ -24,9 +24,8 @@ ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig() :
 {
 }
 
-ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
+ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig(JsonView jsonValue)
+  : ElasticsearchDataSourceConfig()
 {
   *this = jsonValue;
 }

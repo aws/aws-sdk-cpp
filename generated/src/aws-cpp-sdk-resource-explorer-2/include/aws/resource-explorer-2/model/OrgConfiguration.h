@@ -40,91 +40,33 @@ namespace Model
     AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This value displays whether your Amazon Web Services service access is
      * <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
     inline const AWSServiceAccessStatus& GetAWSServiceAccessStatus() const{ return m_aWSServiceAccessStatus; }
-
-    /**
-     * <p>This value displays whether your Amazon Web Services service access is
-     * <code>ENABLED</code> or <code>DISABLED</code>.</p>
-     */
     inline bool AWSServiceAccessStatusHasBeenSet() const { return m_aWSServiceAccessStatusHasBeenSet; }
-
-    /**
-     * <p>This value displays whether your Amazon Web Services service access is
-     * <code>ENABLED</code> or <code>DISABLED</code>.</p>
-     */
     inline void SetAWSServiceAccessStatus(const AWSServiceAccessStatus& value) { m_aWSServiceAccessStatusHasBeenSet = true; m_aWSServiceAccessStatus = value; }
-
-    /**
-     * <p>This value displays whether your Amazon Web Services service access is
-     * <code>ENABLED</code> or <code>DISABLED</code>.</p>
-     */
     inline void SetAWSServiceAccessStatus(AWSServiceAccessStatus&& value) { m_aWSServiceAccessStatusHasBeenSet = true; m_aWSServiceAccessStatus = std::move(value); }
-
-    /**
-     * <p>This value displays whether your Amazon Web Services service access is
-     * <code>ENABLED</code> or <code>DISABLED</code>.</p>
-     */
     inline OrgConfiguration& WithAWSServiceAccessStatus(const AWSServiceAccessStatus& value) { SetAWSServiceAccessStatus(value); return *this;}
-
-    /**
-     * <p>This value displays whether your Amazon Web Services service access is
-     * <code>ENABLED</code> or <code>DISABLED</code>.</p>
-     */
     inline OrgConfiguration& WithAWSServiceAccessStatus(AWSServiceAccessStatus&& value) { SetAWSServiceAccessStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This value shows whether or not you have a valid a service-linked role
      * required to start the multi-account search feature.</p>
      */
     inline const Aws::String& GetServiceLinkedRole() const{ return m_serviceLinkedRole; }
-
-    /**
-     * <p>This value shows whether or not you have a valid a service-linked role
-     * required to start the multi-account search feature.</p>
-     */
     inline bool ServiceLinkedRoleHasBeenSet() const { return m_serviceLinkedRoleHasBeenSet; }
-
-    /**
-     * <p>This value shows whether or not you have a valid a service-linked role
-     * required to start the multi-account search feature.</p>
-     */
     inline void SetServiceLinkedRole(const Aws::String& value) { m_serviceLinkedRoleHasBeenSet = true; m_serviceLinkedRole = value; }
-
-    /**
-     * <p>This value shows whether or not you have a valid a service-linked role
-     * required to start the multi-account search feature.</p>
-     */
     inline void SetServiceLinkedRole(Aws::String&& value) { m_serviceLinkedRoleHasBeenSet = true; m_serviceLinkedRole = std::move(value); }
-
-    /**
-     * <p>This value shows whether or not you have a valid a service-linked role
-     * required to start the multi-account search feature.</p>
-     */
     inline void SetServiceLinkedRole(const char* value) { m_serviceLinkedRoleHasBeenSet = true; m_serviceLinkedRole.assign(value); }
-
-    /**
-     * <p>This value shows whether or not you have a valid a service-linked role
-     * required to start the multi-account search feature.</p>
-     */
     inline OrgConfiguration& WithServiceLinkedRole(const Aws::String& value) { SetServiceLinkedRole(value); return *this;}
-
-    /**
-     * <p>This value shows whether or not you have a valid a service-linked role
-     * required to start the multi-account search feature.</p>
-     */
     inline OrgConfiguration& WithServiceLinkedRole(Aws::String&& value) { SetServiceLinkedRole(std::move(value)); return *this;}
-
-    /**
-     * <p>This value shows whether or not you have a valid a service-linked role
-     * required to start the multi-account search feature.</p>
-     */
     inline OrgConfiguration& WithServiceLinkedRole(const char* value) { SetServiceLinkedRole(value); return *this;}
-
+    ///@}
   private:
 
     AWSServiceAccessStatus m_aWSServiceAccessStatus;

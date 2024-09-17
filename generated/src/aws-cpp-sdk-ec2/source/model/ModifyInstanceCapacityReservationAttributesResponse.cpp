@@ -22,8 +22,8 @@ ModifyInstanceCapacityReservationAttributesResponse::ModifyInstanceCapacityReser
 {
 }
 
-ModifyInstanceCapacityReservationAttributesResponse::ModifyInstanceCapacityReservationAttributesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyInstanceCapacityReservationAttributesResponse::ModifyInstanceCapacityReservationAttributesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyInstanceCapacityReservationAttributesResponse()
 {
   *this = result;
 }

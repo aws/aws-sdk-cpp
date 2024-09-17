@@ -24,9 +24,8 @@ JA3Fingerprint::JA3Fingerprint() :
 {
 }
 
-JA3Fingerprint::JA3Fingerprint(JsonView jsonValue) : 
-    m_fallbackBehavior(FallbackBehavior::NOT_SET),
-    m_fallbackBehaviorHasBeenSet(false)
+JA3Fingerprint::JA3Fingerprint(JsonView jsonValue)
+  : JA3Fingerprint()
 {
   *this = jsonValue;
 }

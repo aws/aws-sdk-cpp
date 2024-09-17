@@ -27,10 +27,8 @@ OriginRequestPolicy::OriginRequestPolicy() :
 {
 }
 
-OriginRequestPolicy::OriginRequestPolicy(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_originRequestPolicyConfigHasBeenSet(false)
+OriginRequestPolicy::OriginRequestPolicy(const XmlNode& xmlNode)
+  : OriginRequestPolicy()
 {
   *this = xmlNode;
 }

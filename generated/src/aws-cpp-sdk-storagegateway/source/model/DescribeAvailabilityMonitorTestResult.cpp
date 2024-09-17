@@ -22,8 +22,8 @@ DescribeAvailabilityMonitorTestResult::DescribeAvailabilityMonitorTestResult() :
 {
 }
 
-DescribeAvailabilityMonitorTestResult::DescribeAvailabilityMonitorTestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AvailabilityMonitorTestStatus::NOT_SET)
+DescribeAvailabilityMonitorTestResult::DescribeAvailabilityMonitorTestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAvailabilityMonitorTestResult()
 {
   *this = result;
 }

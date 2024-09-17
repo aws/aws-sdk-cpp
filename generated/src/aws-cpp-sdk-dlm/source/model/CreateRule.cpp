@@ -31,16 +31,8 @@ CreateRule::CreateRule() :
 {
 }
 
-CreateRule::CreateRule(JsonView jsonValue) : 
-    m_location(LocationValues::NOT_SET),
-    m_locationHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(IntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false),
-    m_timesHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_scriptsHasBeenSet(false)
+CreateRule::CreateRule(JsonView jsonValue)
+  : CreateRule()
 {
   *this = jsonValue;
 }

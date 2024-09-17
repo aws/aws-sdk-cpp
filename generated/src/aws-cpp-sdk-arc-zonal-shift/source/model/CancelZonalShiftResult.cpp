@@ -22,8 +22,8 @@ CancelZonalShiftResult::CancelZonalShiftResult() :
 {
 }
 
-CancelZonalShiftResult::CancelZonalShiftResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ZonalShiftStatus::NOT_SET)
+CancelZonalShiftResult::CancelZonalShiftResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelZonalShiftResult()
 {
   *this = result;
 }

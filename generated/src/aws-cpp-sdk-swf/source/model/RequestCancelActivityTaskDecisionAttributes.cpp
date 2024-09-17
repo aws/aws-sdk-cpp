@@ -23,8 +23,8 @@ RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAt
 {
 }
 
-RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAttributes(JsonView jsonValue) : 
-    m_activityIdHasBeenSet(false)
+RequestCancelActivityTaskDecisionAttributes::RequestCancelActivityTaskDecisionAttributes(JsonView jsonValue)
+  : RequestCancelActivityTaskDecisionAttributes()
 {
   *this = jsonValue;
 }

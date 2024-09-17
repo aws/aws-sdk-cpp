@@ -23,8 +23,8 @@ ContextDefinition::ContextDefinition() :
 {
 }
 
-ContextDefinition::ContextDefinition(JsonView jsonValue) : 
-    m_contextMapHasBeenSet(false)
+ContextDefinition::ContextDefinition(JsonView jsonValue)
+  : ContextDefinition()
 {
   *this = jsonValue;
 }

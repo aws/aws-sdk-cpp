@@ -26,11 +26,8 @@ ScanFilePath::ScanFilePath() :
 {
 }
 
-ScanFilePath::ScanFilePath(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_volumeArnHasBeenSet(false),
-    m_hashHasBeenSet(false),
-    m_fileNameHasBeenSet(false)
+ScanFilePath::ScanFilePath(JsonView jsonValue)
+  : ScanFilePath()
 {
   *this = jsonValue;
 }

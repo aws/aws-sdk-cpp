@@ -37,6 +37,12 @@
 #include <aws/service-quotas/model/RequestServiceQuotaIncreaseResult.h>
 #include <aws/service-quotas/model/TagResourceResult.h>
 #include <aws/service-quotas/model/UntagResourceResult.h>
+#include <aws/service-quotas/model/GetAssociationForServiceQuotaTemplateRequest.h>
+#include <aws/service-quotas/model/AssociateServiceQuotaTemplateRequest.h>
+#include <aws/service-quotas/model/ListServicesRequest.h>
+#include <aws/service-quotas/model/ListServiceQuotaIncreaseRequestsInTemplateRequest.h>
+#include <aws/service-quotas/model/DisassociateServiceQuotaTemplateRequest.h>
+#include <aws/service-quotas/model/ListRequestedServiceQuotaChangeHistoryRequest.h>
 /* End of service model headers required in ServiceQuotasClient header */
 
 namespace Aws
@@ -70,7 +76,7 @@ namespace Aws
 
   namespace ServiceQuotas
   {
-    using ServiceQuotasClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServiceQuotasClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ServiceQuotasEndpointProviderBase = Aws::ServiceQuotas::Endpoint::ServiceQuotasEndpointProviderBase;
     using ServiceQuotasEndpointProvider = Aws::ServiceQuotas::Endpoint::ServiceQuotasEndpointProvider;
 

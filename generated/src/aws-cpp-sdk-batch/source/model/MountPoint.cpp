@@ -26,11 +26,8 @@ MountPoint::MountPoint() :
 {
 }
 
-MountPoint::MountPoint(JsonView jsonValue) : 
-    m_containerPathHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_sourceVolumeHasBeenSet(false)
+MountPoint::MountPoint(JsonView jsonValue)
+  : MountPoint()
 {
   *this = jsonValue;
 }

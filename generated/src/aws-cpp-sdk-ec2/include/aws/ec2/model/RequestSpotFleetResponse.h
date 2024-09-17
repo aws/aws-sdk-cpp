@@ -38,57 +38,27 @@ namespace Model
     AWS_EC2_API RequestSpotFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
-
-    /**
-     * <p>The ID of the Spot Fleet request.</p>
-     */
     inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
-
-    /**
-     * <p>The ID of the Spot Fleet request.</p>
-     */
     inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
-
-    /**
-     * <p>The ID of the Spot Fleet request.</p>
-     */
     inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
-
-    /**
-     * <p>The ID of the Spot Fleet request.</p>
-     */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-
-    /**
-     * <p>The ID of the Spot Fleet request.</p>
-     */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Spot Fleet request.</p>
-     */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline RequestSpotFleetResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline RequestSpotFleetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_spotFleetRequestId;

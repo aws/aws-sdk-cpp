@@ -38,23 +38,8 @@ Ac3Settings::Ac3Settings() :
 {
 }
 
-Ac3Settings::Ac3Settings(JsonView jsonValue) : 
-    m_bitrate(0.0),
-    m_bitrateHasBeenSet(false),
-    m_bitstreamMode(Ac3BitstreamMode::NOT_SET),
-    m_bitstreamModeHasBeenSet(false),
-    m_codingMode(Ac3CodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_dialnorm(0),
-    m_dialnormHasBeenSet(false),
-    m_drcProfile(Ac3DrcProfile::NOT_SET),
-    m_drcProfileHasBeenSet(false),
-    m_lfeFilter(Ac3LfeFilter::NOT_SET),
-    m_lfeFilterHasBeenSet(false),
-    m_metadataControl(Ac3MetadataControl::NOT_SET),
-    m_metadataControlHasBeenSet(false),
-    m_attenuationControl(Ac3AttenuationControl::NOT_SET),
-    m_attenuationControlHasBeenSet(false)
+Ac3Settings::Ac3Settings(JsonView jsonValue)
+  : Ac3Settings()
 {
   *this = jsonValue;
 }

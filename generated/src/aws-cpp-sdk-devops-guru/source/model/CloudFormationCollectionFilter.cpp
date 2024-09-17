@@ -23,8 +23,8 @@ CloudFormationCollectionFilter::CloudFormationCollectionFilter() :
 {
 }
 
-CloudFormationCollectionFilter::CloudFormationCollectionFilter(JsonView jsonValue) : 
-    m_stackNamesHasBeenSet(false)
+CloudFormationCollectionFilter::CloudFormationCollectionFilter(JsonView jsonValue)
+  : CloudFormationCollectionFilter()
 {
   *this = jsonValue;
 }

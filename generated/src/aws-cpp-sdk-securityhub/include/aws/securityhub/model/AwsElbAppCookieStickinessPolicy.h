@@ -38,95 +38,34 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the application cookie used for stickiness.</p>
      */
     inline const Aws::String& GetCookieName() const{ return m_cookieName; }
-
-    /**
-     * <p>The name of the application cookie used for stickiness.</p>
-     */
     inline bool CookieNameHasBeenSet() const { return m_cookieNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application cookie used for stickiness.</p>
-     */
     inline void SetCookieName(const Aws::String& value) { m_cookieNameHasBeenSet = true; m_cookieName = value; }
-
-    /**
-     * <p>The name of the application cookie used for stickiness.</p>
-     */
     inline void SetCookieName(Aws::String&& value) { m_cookieNameHasBeenSet = true; m_cookieName = std::move(value); }
-
-    /**
-     * <p>The name of the application cookie used for stickiness.</p>
-     */
     inline void SetCookieName(const char* value) { m_cookieNameHasBeenSet = true; m_cookieName.assign(value); }
-
-    /**
-     * <p>The name of the application cookie used for stickiness.</p>
-     */
     inline AwsElbAppCookieStickinessPolicy& WithCookieName(const Aws::String& value) { SetCookieName(value); return *this;}
-
-    /**
-     * <p>The name of the application cookie used for stickiness.</p>
-     */
     inline AwsElbAppCookieStickinessPolicy& WithCookieName(Aws::String&& value) { SetCookieName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application cookie used for stickiness.</p>
-     */
     inline AwsElbAppCookieStickinessPolicy& WithCookieName(const char* value) { SetCookieName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The mnemonic name for the policy being created. The name must be unique
      * within the set of policies for the load balancer.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The mnemonic name for the policy being created. The name must be unique
-     * within the set of policies for the load balancer.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The mnemonic name for the policy being created. The name must be unique
-     * within the set of policies for the load balancer.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The mnemonic name for the policy being created. The name must be unique
-     * within the set of policies for the load balancer.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The mnemonic name for the policy being created. The name must be unique
-     * within the set of policies for the load balancer.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The mnemonic name for the policy being created. The name must be unique
-     * within the set of policies for the load balancer.</p>
-     */
     inline AwsElbAppCookieStickinessPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The mnemonic name for the policy being created. The name must be unique
-     * within the set of policies for the load balancer.</p>
-     */
     inline AwsElbAppCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The mnemonic name for the policy being created. The name must be unique
-     * within the set of policies for the load balancer.</p>
-     */
     inline AwsElbAppCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cookieName;

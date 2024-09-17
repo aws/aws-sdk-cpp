@@ -28,13 +28,8 @@ DatasetSchemaSummary::DatasetSchemaSummary() :
 {
 }
 
-DatasetSchemaSummary::DatasetSchemaSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false)
+DatasetSchemaSummary::DatasetSchemaSummary(JsonView jsonValue)
+  : DatasetSchemaSummary()
 {
   *this = jsonValue;
 }

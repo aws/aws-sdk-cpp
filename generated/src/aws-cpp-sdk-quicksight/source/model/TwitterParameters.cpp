@@ -25,10 +25,8 @@ TwitterParameters::TwitterParameters() :
 {
 }
 
-TwitterParameters::TwitterParameters(JsonView jsonValue) : 
-    m_queryHasBeenSet(false),
-    m_maxRows(0),
-    m_maxRowsHasBeenSet(false)
+TwitterParameters::TwitterParameters(JsonView jsonValue)
+  : TwitterParameters()
 {
   *this = jsonValue;
 }

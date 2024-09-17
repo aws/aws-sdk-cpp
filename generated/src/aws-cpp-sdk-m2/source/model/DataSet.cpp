@@ -27,12 +27,8 @@ DataSet::DataSet() :
 {
 }
 
-DataSet::DataSet(JsonView jsonValue) : 
-    m_datasetNameHasBeenSet(false),
-    m_datasetOrgHasBeenSet(false),
-    m_recordLengthHasBeenSet(false),
-    m_relativePathHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+DataSet::DataSet(JsonView jsonValue)
+  : DataSet()
 {
   *this = jsonValue;
 }

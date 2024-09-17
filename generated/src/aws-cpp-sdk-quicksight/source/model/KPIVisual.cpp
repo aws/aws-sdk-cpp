@@ -29,14 +29,8 @@ KPIVisual::KPIVisual() :
 {
 }
 
-KPIVisual::KPIVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_conditionalFormattingHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false)
+KPIVisual::KPIVisual(JsonView jsonValue)
+  : KPIVisual()
 {
   *this = jsonValue;
 }

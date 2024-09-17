@@ -30,15 +30,8 @@ AnomalySubscription::AnomalySubscription() :
 {
 }
 
-AnomalySubscription::AnomalySubscription(JsonView jsonValue) : 
-    m_subscriptionArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_monitorArnListHasBeenSet(false),
-    m_subscribersHasBeenSet(false),
-    m_frequency(AnomalySubscriptionFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false),
-    m_thresholdExpressionHasBeenSet(false)
+AnomalySubscription::AnomalySubscription(JsonView jsonValue)
+  : AnomalySubscription()
 {
   *this = jsonValue;
 }

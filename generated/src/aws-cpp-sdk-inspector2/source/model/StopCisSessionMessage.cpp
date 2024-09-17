@@ -29,14 +29,8 @@ StopCisSessionMessage::StopCisSessionMessage() :
 {
 }
 
-StopCisSessionMessage::StopCisSessionMessage(JsonView jsonValue) : 
-    m_benchmarkProfileHasBeenSet(false),
-    m_benchmarkVersionHasBeenSet(false),
-    m_computePlatformHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_status(StopCisSessionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+StopCisSessionMessage::StopCisSessionMessage(JsonView jsonValue)
+  : StopCisSessionMessage()
 {
   *this = jsonValue;
 }

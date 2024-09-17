@@ -23,8 +23,8 @@ InvalidContactFlowModuleException::InvalidContactFlowModuleException() :
 {
 }
 
-InvalidContactFlowModuleException::InvalidContactFlowModuleException(JsonView jsonValue) : 
-    m_problemsHasBeenSet(false)
+InvalidContactFlowModuleException::InvalidContactFlowModuleException(JsonView jsonValue)
+  : InvalidContactFlowModuleException()
 {
   *this = jsonValue;
 }

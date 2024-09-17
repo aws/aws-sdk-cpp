@@ -25,18 +25,14 @@ SequenceStoreDetail::SequenceStoreDetail() :
     m_descriptionHasBeenSet(false),
     m_sseConfigHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_fallbackLocationHasBeenSet(false)
+    m_fallbackLocationHasBeenSet(false),
+    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET),
+    m_eTagAlgorithmFamilyHasBeenSet(false)
 {
 }
 
-SequenceStoreDetail::SequenceStoreDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fallbackLocationHasBeenSet(false)
+SequenceStoreDetail::SequenceStoreDetail(JsonView jsonValue)
+  : SequenceStoreDetail()
 {
   *this = jsonValue;
 }
@@ -92,6 +88,13 @@ SequenceStoreDetail& SequenceStoreDetail::operator =(JsonView jsonValue)
     m_fallbackLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eTagAlgorithmFamily"))
+  {
+    m_eTagAlgorithmFamily = ETagAlgorithmFamilyMapper::GetETagAlgorithmFamilyForName(jsonValue.GetString("eTagAlgorithmFamily"));
+
+    m_eTagAlgorithmFamilyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +141,11 @@ JsonValue SequenceStoreDetail::Jsonize() const
   {
    payload.WithString("fallbackLocation", m_fallbackLocation);
 
+  }
+
+  if(m_eTagAlgorithmFamilyHasBeenSet)
+  {
+   payload.WithString("eTagAlgorithmFamily", ETagAlgorithmFamilyMapper::GetNameForETagAlgorithmFamily(m_eTagAlgorithmFamily));
   }
 
   return payload;

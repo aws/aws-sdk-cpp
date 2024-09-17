@@ -24,7 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Knowledge base input query.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the query made to the knowledge base.</p> <p>This data type is used
+   * in the following API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+   * request</a> – in the <code>retrievalQuery</code> field</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseQuery">AWS
    * API Reference</a></p>
    */
@@ -37,46 +41,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Knowledge base input query in text</p>
+     * <p>The text of the query made to the knowledge base.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>Knowledge base input query in text</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>Knowledge base input query in text</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>Knowledge base input query in text</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>Knowledge base input query in text</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>Knowledge base input query in text</p>
-     */
     inline KnowledgeBaseQuery& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>Knowledge base input query in text</p>
-     */
     inline KnowledgeBaseQuery& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>Knowledge base input query in text</p>
-     */
     inline KnowledgeBaseQuery& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

@@ -39,108 +39,43 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version of the bot that was used in the event. </p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-
-    /**
-     * <p>The version of the bot that was used in the event. </p>
-     */
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the bot that was used in the event. </p>
-     */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-
-    /**
-     * <p>The version of the bot that was used in the event. </p>
-     */
     inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-
-    /**
-     * <p>The version of the bot that was used in the event. </p>
-     */
     inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-
-    /**
-     * <p>The version of the bot that was used in the event. </p>
-     */
     inline BotAliasHistoryEvent& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-
-    /**
-     * <p>The version of the bot that was used in the event. </p>
-     */
     inline BotAliasHistoryEvent& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the bot that was used in the event. </p>
-     */
     inline BotAliasHistoryEvent& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the event started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
-
-    /**
-     * <p>The date and time that the event started.</p>
-     */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-
-    /**
-     * <p>The date and time that the event started.</p>
-     */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-
-    /**
-     * <p>The date and time that the event started.</p>
-     */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-
-    /**
-     * <p>The date and time that the event started.</p>
-     */
     inline BotAliasHistoryEvent& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-
-    /**
-     * <p>The date and time that the event started.</p>
-     */
     inline BotAliasHistoryEvent& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the event ended.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
-
-    /**
-     * <p>The date and time that the event ended.</p>
-     */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-
-    /**
-     * <p>The date and time that the event ended.</p>
-     */
     inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-
-    /**
-     * <p>The date and time that the event ended.</p>
-     */
     inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-
-    /**
-     * <p>The date and time that the event ended.</p>
-     */
     inline BotAliasHistoryEvent& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-
-    /**
-     * <p>The date and time that the event ended.</p>
-     */
     inline BotAliasHistoryEvent& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botVersion;

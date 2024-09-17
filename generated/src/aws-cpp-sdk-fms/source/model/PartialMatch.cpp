@@ -24,9 +24,8 @@ PartialMatch::PartialMatch() :
 {
 }
 
-PartialMatch::PartialMatch(JsonView jsonValue) : 
-    m_referenceHasBeenSet(false),
-    m_targetViolationReasonsHasBeenSet(false)
+PartialMatch::PartialMatch(JsonView jsonValue)
+  : PartialMatch()
 {
   *this = jsonValue;
 }

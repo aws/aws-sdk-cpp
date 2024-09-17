@@ -24,9 +24,8 @@ JobAlbumArt::JobAlbumArt() :
 {
 }
 
-JobAlbumArt::JobAlbumArt(JsonView jsonValue) : 
-    m_mergePolicyHasBeenSet(false),
-    m_artworkHasBeenSet(false)
+JobAlbumArt::JobAlbumArt(JsonView jsonValue)
+  : JobAlbumArt()
 {
   *this = jsonValue;
 }

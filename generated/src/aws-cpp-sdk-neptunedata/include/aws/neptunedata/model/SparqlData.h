@@ -40,54 +40,20 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
      * expressing the changed quad.</p>
      */
     inline const Aws::String& GetStmt() const{ return m_stmt; }
-
-    /**
-     * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
-     * expressing the changed quad.</p>
-     */
     inline bool StmtHasBeenSet() const { return m_stmtHasBeenSet; }
-
-    /**
-     * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
-     * expressing the changed quad.</p>
-     */
     inline void SetStmt(const Aws::String& value) { m_stmtHasBeenSet = true; m_stmt = value; }
-
-    /**
-     * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
-     * expressing the changed quad.</p>
-     */
     inline void SetStmt(Aws::String&& value) { m_stmtHasBeenSet = true; m_stmt = std::move(value); }
-
-    /**
-     * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
-     * expressing the changed quad.</p>
-     */
     inline void SetStmt(const char* value) { m_stmtHasBeenSet = true; m_stmt.assign(value); }
-
-    /**
-     * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
-     * expressing the changed quad.</p>
-     */
     inline SparqlData& WithStmt(const Aws::String& value) { SetStmt(value); return *this;}
-
-    /**
-     * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
-     * expressing the changed quad.</p>
-     */
     inline SparqlData& WithStmt(Aws::String&& value) { SetStmt(std::move(value)); return *this;}
-
-    /**
-     * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
-     * expressing the changed quad.</p>
-     */
     inline SparqlData& WithStmt(const char* value) { SetStmt(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stmt;

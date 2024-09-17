@@ -25,10 +25,8 @@ NotificationsConfiguration::NotificationsConfiguration() :
 {
 }
 
-NotificationsConfiguration::NotificationsConfiguration(JsonView jsonValue) : 
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_sqsQueueArnHasBeenSet(false)
+NotificationsConfiguration::NotificationsConfiguration(JsonView jsonValue)
+  : NotificationsConfiguration()
 {
   *this = jsonValue;
 }

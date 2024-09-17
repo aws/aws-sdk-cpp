@@ -34,95 +34,34 @@ namespace Model
     AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The repository name prefix associated with the pull through cache rule.</p>
      */
     inline const Aws::String& GetEcrRepositoryPrefix() const{ return m_ecrRepositoryPrefix; }
-
-    /**
-     * <p>The repository name prefix associated with the pull through cache rule.</p>
-     */
     inline bool EcrRepositoryPrefixHasBeenSet() const { return m_ecrRepositoryPrefixHasBeenSet; }
-
-    /**
-     * <p>The repository name prefix associated with the pull through cache rule.</p>
-     */
     inline void SetEcrRepositoryPrefix(const Aws::String& value) { m_ecrRepositoryPrefixHasBeenSet = true; m_ecrRepositoryPrefix = value; }
-
-    /**
-     * <p>The repository name prefix associated with the pull through cache rule.</p>
-     */
     inline void SetEcrRepositoryPrefix(Aws::String&& value) { m_ecrRepositoryPrefixHasBeenSet = true; m_ecrRepositoryPrefix = std::move(value); }
-
-    /**
-     * <p>The repository name prefix associated with the pull through cache rule.</p>
-     */
     inline void SetEcrRepositoryPrefix(const char* value) { m_ecrRepositoryPrefixHasBeenSet = true; m_ecrRepositoryPrefix.assign(value); }
-
-    /**
-     * <p>The repository name prefix associated with the pull through cache rule.</p>
-     */
     inline ValidatePullThroughCacheRuleRequest& WithEcrRepositoryPrefix(const Aws::String& value) { SetEcrRepositoryPrefix(value); return *this;}
-
-    /**
-     * <p>The repository name prefix associated with the pull through cache rule.</p>
-     */
     inline ValidatePullThroughCacheRuleRequest& WithEcrRepositoryPrefix(Aws::String&& value) { SetEcrRepositoryPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The repository name prefix associated with the pull through cache rule.</p>
-     */
     inline ValidatePullThroughCacheRuleRequest& WithEcrRepositoryPrefix(const char* value) { SetEcrRepositoryPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The registry ID associated with the pull through cache rule. If you do not
      * specify a registry, the default registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The registry ID associated with the pull through cache rule. If you do not
-     * specify a registry, the default registry is assumed.</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>The registry ID associated with the pull through cache rule. If you do not
-     * specify a registry, the default registry is assumed.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>The registry ID associated with the pull through cache rule. If you do not
-     * specify a registry, the default registry is assumed.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>The registry ID associated with the pull through cache rule. If you do not
-     * specify a registry, the default registry is assumed.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-
-    /**
-     * <p>The registry ID associated with the pull through cache rule. If you do not
-     * specify a registry, the default registry is assumed.</p>
-     */
     inline ValidatePullThroughCacheRuleRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The registry ID associated with the pull through cache rule. If you do not
-     * specify a registry, the default registry is assumed.</p>
-     */
     inline ValidatePullThroughCacheRuleRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The registry ID associated with the pull through cache rule. If you do not
-     * specify a registry, the default registry is assumed.</p>
-     */
     inline ValidatePullThroughCacheRuleRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ecrRepositoryPrefix;

@@ -26,11 +26,8 @@ BatchGetVariableError::BatchGetVariableError() :
 {
 }
 
-BatchGetVariableError::BatchGetVariableError(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchGetVariableError::BatchGetVariableError(JsonView jsonValue)
+  : BatchGetVariableError()
 {
   *this = jsonValue;
 }

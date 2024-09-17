@@ -24,9 +24,8 @@ TaskStartedEventDetails::TaskStartedEventDetails() :
 {
 }
 
-TaskStartedEventDetails::TaskStartedEventDetails(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+TaskStartedEventDetails::TaskStartedEventDetails(JsonView jsonValue)
+  : TaskStartedEventDetails()
 {
   *this = jsonValue;
 }

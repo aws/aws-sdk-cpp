@@ -23,8 +23,8 @@ SaaSProductVisibilityFilter::SaaSProductVisibilityFilter() :
 {
 }
 
-SaaSProductVisibilityFilter::SaaSProductVisibilityFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+SaaSProductVisibilityFilter::SaaSProductVisibilityFilter(JsonView jsonValue)
+  : SaaSProductVisibilityFilter()
 {
   *this = jsonValue;
 }

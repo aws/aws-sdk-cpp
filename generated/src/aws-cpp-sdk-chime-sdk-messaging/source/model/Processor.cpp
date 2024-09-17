@@ -28,13 +28,8 @@ Processor::Processor() :
 {
 }
 
-Processor::Processor(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_executionOrder(0),
-    m_executionOrderHasBeenSet(false),
-    m_fallbackAction(FallbackAction::NOT_SET),
-    m_fallbackActionHasBeenSet(false)
+Processor::Processor(JsonView jsonValue)
+  : Processor()
 {
   *this = jsonValue;
 }

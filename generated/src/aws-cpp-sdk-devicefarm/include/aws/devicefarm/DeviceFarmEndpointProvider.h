@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DeviceFarmClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DeviceFarmBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

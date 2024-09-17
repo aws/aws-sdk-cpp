@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PersonalizeRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PersonalizeRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PersonalizeRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PersonalizeRuntimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

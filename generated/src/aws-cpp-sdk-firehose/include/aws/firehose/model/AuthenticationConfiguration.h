@@ -39,77 +39,31 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
-
-    /**
-     * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-     */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-
-    /**
-     * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-     */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-     */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-
-    /**
-     * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-     */
     inline AuthenticationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-     */
     inline AuthenticationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-     */
     inline AuthenticationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of connectivity used to access the Amazon MSK cluster.</p>
      */
     inline const Connectivity& GetConnectivity() const{ return m_connectivity; }
-
-    /**
-     * <p>The type of connectivity used to access the Amazon MSK cluster.</p>
-     */
     inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
-
-    /**
-     * <p>The type of connectivity used to access the Amazon MSK cluster.</p>
-     */
     inline void SetConnectivity(const Connectivity& value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
-
-    /**
-     * <p>The type of connectivity used to access the Amazon MSK cluster.</p>
-     */
     inline void SetConnectivity(Connectivity&& value) { m_connectivityHasBeenSet = true; m_connectivity = std::move(value); }
-
-    /**
-     * <p>The type of connectivity used to access the Amazon MSK cluster.</p>
-     */
     inline AuthenticationConfiguration& WithConnectivity(const Connectivity& value) { SetConnectivity(value); return *this;}
-
-    /**
-     * <p>The type of connectivity used to access the Amazon MSK cluster.</p>
-     */
     inline AuthenticationConfiguration& WithConnectivity(Connectivity&& value) { SetConnectivity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleARN;

@@ -24,7 +24,15 @@ namespace Model
 {
 
   /**
-   * <p>The S3 location of a retrieval result.</p><p><h3>See Also:</h3>   <a
+   * <p>The S3 data source location.</p> <p>This data type is used in the following
+   * API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+   * response</a> – in the <code>s3Location</code> field</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+   * response</a> – in the <code>s3Location</code> field</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent
+   * response</a> – in the <code>s3Location</code> field</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrievalResultS3Location">AWS
    * API Reference</a></p>
    */
@@ -37,46 +45,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI for the data source location.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
-
-    /**
-     * <p>URI of S3 location</p>
-     */
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-
-    /**
-     * <p>URI of S3 location</p>
-     */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-
-    /**
-     * <p>URI of S3 location</p>
-     */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-
-    /**
-     * <p>URI of S3 location</p>
-     */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-
-    /**
-     * <p>URI of S3 location</p>
-     */
     inline RetrievalResultS3Location& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-
-    /**
-     * <p>URI of S3 location</p>
-     */
     inline RetrievalResultS3Location& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-
-    /**
-     * <p>URI of S3 location</p>
-     */
     inline RetrievalResultS3Location& WithUri(const char* value) { SetUri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_uri;

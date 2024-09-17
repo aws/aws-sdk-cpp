@@ -33,43 +33,25 @@ namespace Model
     AWS_EKS_API DisassociateIdentityProviderConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Update& GetUpdate() const{ return m_update; }
-
-    
     inline void SetUpdate(const Update& value) { m_update = value; }
-
-    
     inline void SetUpdate(Update&& value) { m_update = std::move(value); }
-
-    
     inline DisassociateIdentityProviderConfigResult& WithUpdate(const Update& value) { SetUpdate(value); return *this;}
-
-    
     inline DisassociateIdentityProviderConfigResult& WithUpdate(Update&& value) { SetUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateIdentityProviderConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateIdentityProviderConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateIdentityProviderConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Update m_update;

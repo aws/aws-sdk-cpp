@@ -37,36 +37,17 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for an Amazon Lex V2 bot.</p>
      */
     inline const LexConfiguration& GetLex() const{ return m_lex; }
-
-    /**
-     * <p>The configuration for an Amazon Lex V2 bot.</p>
-     */
     inline bool LexHasBeenSet() const { return m_lexHasBeenSet; }
-
-    /**
-     * <p>The configuration for an Amazon Lex V2 bot.</p>
-     */
     inline void SetLex(const LexConfiguration& value) { m_lexHasBeenSet = true; m_lex = value; }
-
-    /**
-     * <p>The configuration for an Amazon Lex V2 bot.</p>
-     */
     inline void SetLex(LexConfiguration&& value) { m_lexHasBeenSet = true; m_lex = std::move(value); }
-
-    /**
-     * <p>The configuration for an Amazon Lex V2 bot.</p>
-     */
     inline Configuration& WithLex(const LexConfiguration& value) { SetLex(value); return *this;}
-
-    /**
-     * <p>The configuration for an Amazon Lex V2 bot.</p>
-     */
     inline Configuration& WithLex(LexConfiguration&& value) { SetLex(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LexConfiguration m_lex;

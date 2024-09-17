@@ -36,19 +36,8 @@ LockedSnapshotsInfo::LockedSnapshotsInfo() :
 {
 }
 
-LockedSnapshotsInfo::LockedSnapshotsInfo(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_lockState(LockState::NOT_SET),
-    m_lockStateHasBeenSet(false),
-    m_lockDuration(0),
-    m_lockDurationHasBeenSet(false),
-    m_coolOffPeriod(0),
-    m_coolOffPeriodHasBeenSet(false),
-    m_coolOffPeriodExpiresOnHasBeenSet(false),
-    m_lockCreatedOnHasBeenSet(false),
-    m_lockDurationStartTimeHasBeenSet(false),
-    m_lockExpiresOnHasBeenSet(false)
+LockedSnapshotsInfo::LockedSnapshotsInfo(const XmlNode& xmlNode)
+  : LockedSnapshotsInfo()
 {
   *this = xmlNode;
 }

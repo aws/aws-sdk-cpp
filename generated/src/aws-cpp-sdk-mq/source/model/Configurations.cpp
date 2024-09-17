@@ -25,10 +25,8 @@ Configurations::Configurations() :
 {
 }
 
-Configurations::Configurations(JsonView jsonValue) : 
-    m_currentHasBeenSet(false),
-    m_historyHasBeenSet(false),
-    m_pendingHasBeenSet(false)
+Configurations::Configurations(JsonView jsonValue)
+  : Configurations()
 {
   *this = jsonValue;
 }

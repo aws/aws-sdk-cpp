@@ -29,14 +29,8 @@ RegistrationAttachmentsInformation::RegistrationAttachmentsInformation() :
 {
 }
 
-RegistrationAttachmentsInformation::RegistrationAttachmentsInformation(JsonView jsonValue) : 
-    m_registrationAttachmentArnHasBeenSet(false),
-    m_registrationAttachmentIdHasBeenSet(false),
-    m_attachmentStatus(AttachmentStatus::NOT_SET),
-    m_attachmentStatusHasBeenSet(false),
-    m_attachmentUploadErrorReason(AttachmentUploadErrorReason::NOT_SET),
-    m_attachmentUploadErrorReasonHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+RegistrationAttachmentsInformation::RegistrationAttachmentsInformation(JsonView jsonValue)
+  : RegistrationAttachmentsInformation()
 {
   *this = jsonValue;
 }

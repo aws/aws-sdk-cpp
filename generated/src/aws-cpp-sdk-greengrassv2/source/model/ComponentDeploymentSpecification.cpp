@@ -25,10 +25,8 @@ ComponentDeploymentSpecification::ComponentDeploymentSpecification() :
 {
 }
 
-ComponentDeploymentSpecification::ComponentDeploymentSpecification(JsonView jsonValue) : 
-    m_componentVersionHasBeenSet(false),
-    m_configurationUpdateHasBeenSet(false),
-    m_runWithHasBeenSet(false)
+ComponentDeploymentSpecification::ComponentDeploymentSpecification(JsonView jsonValue)
+  : ComponentDeploymentSpecification()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FirewallPolicyStatelessCustomActionsDetails::FirewallPolicyStatelessCustomAction
 {
 }
 
-FirewallPolicyStatelessCustomActionsDetails::FirewallPolicyStatelessCustomActionsDetails(JsonView jsonValue) : 
-    m_actionDefinitionHasBeenSet(false),
-    m_actionNameHasBeenSet(false)
+FirewallPolicyStatelessCustomActionsDetails::FirewallPolicyStatelessCustomActionsDetails(JsonView jsonValue)
+  : FirewallPolicyStatelessCustomActionsDetails()
 {
   *this = jsonValue;
 }

@@ -32,46 +32,19 @@ namespace Model
     AWS_DOCDBELASTIC_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+     * <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
      */
     inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-     */
     inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-     */
     inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-     */
     inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-     */
     inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
-
-    /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-     */
     inline DeleteClusterSnapshotRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
-
-    /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-     */
     inline DeleteClusterSnapshotRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-     */
     inline DeleteClusterSnapshotRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotArn;

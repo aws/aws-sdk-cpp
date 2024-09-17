@@ -21,6 +21,7 @@
 #include <aws/marketplace-agreement/model/DescribeAgreementResult.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsResult.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsResult.h>
+#include <aws/marketplace-agreement/model/SearchAgreementsRequest.h>
 /* End of service model headers required in AgreementServiceClient header */
 
 namespace Aws
@@ -54,7 +55,7 @@ namespace Aws
 
   namespace AgreementService
   {
-    using AgreementServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AgreementServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AgreementServiceEndpointProviderBase = Aws::AgreementService::Endpoint::AgreementServiceEndpointProviderBase;
     using AgreementServiceEndpointProvider = Aws::AgreementService::Endpoint::AgreementServiceEndpointProvider;
 

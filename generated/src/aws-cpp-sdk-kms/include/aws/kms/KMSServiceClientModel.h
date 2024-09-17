@@ -25,6 +25,7 @@
 #include <aws/kms/model/CreateKeyResult.h>
 #include <aws/kms/model/DecryptResult.h>
 #include <aws/kms/model/DeleteCustomKeyStoreResult.h>
+#include <aws/kms/model/DeriveSharedSecretResult.h>
 #include <aws/kms/model/DescribeCustomKeyStoresResult.h>
 #include <aws/kms/model/DescribeKeyResult.h>
 #include <aws/kms/model/DisconnectCustomKeyStoreResult.h>
@@ -43,16 +44,24 @@
 #include <aws/kms/model/ListAliasesResult.h>
 #include <aws/kms/model/ListGrantsResult.h>
 #include <aws/kms/model/ListKeyPoliciesResult.h>
+#include <aws/kms/model/ListKeyRotationsResult.h>
 #include <aws/kms/model/ListKeysResult.h>
 #include <aws/kms/model/ListResourceTagsResult.h>
 #include <aws/kms/model/ListRetirableGrantsResult.h>
 #include <aws/kms/model/ReEncryptResult.h>
 #include <aws/kms/model/ReplicateKeyResult.h>
+#include <aws/kms/model/RotateKeyOnDemandResult.h>
 #include <aws/kms/model/ScheduleKeyDeletionResult.h>
 #include <aws/kms/model/SignResult.h>
 #include <aws/kms/model/UpdateCustomKeyStoreResult.h>
 #include <aws/kms/model/VerifyResult.h>
 #include <aws/kms/model/VerifyMacResult.h>
+#include <aws/kms/model/ListAliasesRequest.h>
+#include <aws/kms/model/DescribeCustomKeyStoresRequest.h>
+#include <aws/kms/model/GenerateRandomRequest.h>
+#include <aws/kms/model/RetireGrantRequest.h>
+#include <aws/kms/model/ListKeysRequest.h>
+#include <aws/kms/model/CreateKeyRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KMSClient header */
 
@@ -87,7 +96,7 @@ namespace Aws
 
   namespace KMS
   {
-    using KMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KMSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KMSEndpointProviderBase = Aws::KMS::Endpoint::KMSEndpointProviderBase;
     using KMSEndpointProvider = Aws::KMS::Endpoint::KMSEndpointProvider;
 
@@ -104,6 +113,7 @@ namespace Aws
       class DeleteAliasRequest;
       class DeleteCustomKeyStoreRequest;
       class DeleteImportedKeyMaterialRequest;
+      class DeriveSharedSecretRequest;
       class DescribeCustomKeyStoresRequest;
       class DescribeKeyRequest;
       class DisableKeyRequest;
@@ -126,6 +136,7 @@ namespace Aws
       class ListAliasesRequest;
       class ListGrantsRequest;
       class ListKeyPoliciesRequest;
+      class ListKeyRotationsRequest;
       class ListKeysRequest;
       class ListResourceTagsRequest;
       class ListRetirableGrantsRequest;
@@ -134,6 +145,7 @@ namespace Aws
       class ReplicateKeyRequest;
       class RetireGrantRequest;
       class RevokeGrantRequest;
+      class RotateKeyOnDemandRequest;
       class ScheduleKeyDeletionRequest;
       class SignRequest;
       class TagResourceRequest;
@@ -157,6 +169,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DeleteAliasOutcome;
       typedef Aws::Utils::Outcome<DeleteCustomKeyStoreResult, KMSError> DeleteCustomKeyStoreOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DeleteImportedKeyMaterialOutcome;
+      typedef Aws::Utils::Outcome<DeriveSharedSecretResult, KMSError> DeriveSharedSecretOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomKeyStoresResult, KMSError> DescribeCustomKeyStoresOutcome;
       typedef Aws::Utils::Outcome<DescribeKeyResult, KMSError> DescribeKeyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DisableKeyOutcome;
@@ -179,6 +192,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAliasesResult, KMSError> ListAliasesOutcome;
       typedef Aws::Utils::Outcome<ListGrantsResult, KMSError> ListGrantsOutcome;
       typedef Aws::Utils::Outcome<ListKeyPoliciesResult, KMSError> ListKeyPoliciesOutcome;
+      typedef Aws::Utils::Outcome<ListKeyRotationsResult, KMSError> ListKeyRotationsOutcome;
       typedef Aws::Utils::Outcome<ListKeysResult, KMSError> ListKeysOutcome;
       typedef Aws::Utils::Outcome<ListResourceTagsResult, KMSError> ListResourceTagsOutcome;
       typedef Aws::Utils::Outcome<ListRetirableGrantsResult, KMSError> ListRetirableGrantsOutcome;
@@ -187,6 +201,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ReplicateKeyResult, KMSError> ReplicateKeyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> RetireGrantOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> RevokeGrantOutcome;
+      typedef Aws::Utils::Outcome<RotateKeyOnDemandResult, KMSError> RotateKeyOnDemandOutcome;
       typedef Aws::Utils::Outcome<ScheduleKeyDeletionResult, KMSError> ScheduleKeyDeletionOutcome;
       typedef Aws::Utils::Outcome<SignResult, KMSError> SignOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> TagResourceOutcome;
@@ -210,6 +225,7 @@ namespace Aws
       typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
       typedef std::future<DeleteCustomKeyStoreOutcome> DeleteCustomKeyStoreOutcomeCallable;
       typedef std::future<DeleteImportedKeyMaterialOutcome> DeleteImportedKeyMaterialOutcomeCallable;
+      typedef std::future<DeriveSharedSecretOutcome> DeriveSharedSecretOutcomeCallable;
       typedef std::future<DescribeCustomKeyStoresOutcome> DescribeCustomKeyStoresOutcomeCallable;
       typedef std::future<DescribeKeyOutcome> DescribeKeyOutcomeCallable;
       typedef std::future<DisableKeyOutcome> DisableKeyOutcomeCallable;
@@ -232,6 +248,7 @@ namespace Aws
       typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
       typedef std::future<ListGrantsOutcome> ListGrantsOutcomeCallable;
       typedef std::future<ListKeyPoliciesOutcome> ListKeyPoliciesOutcomeCallable;
+      typedef std::future<ListKeyRotationsOutcome> ListKeyRotationsOutcomeCallable;
       typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
       typedef std::future<ListResourceTagsOutcome> ListResourceTagsOutcomeCallable;
       typedef std::future<ListRetirableGrantsOutcome> ListRetirableGrantsOutcomeCallable;
@@ -240,6 +257,7 @@ namespace Aws
       typedef std::future<ReplicateKeyOutcome> ReplicateKeyOutcomeCallable;
       typedef std::future<RetireGrantOutcome> RetireGrantOutcomeCallable;
       typedef std::future<RevokeGrantOutcome> RevokeGrantOutcomeCallable;
+      typedef std::future<RotateKeyOnDemandOutcome> RotateKeyOnDemandOutcomeCallable;
       typedef std::future<ScheduleKeyDeletionOutcome> ScheduleKeyDeletionOutcomeCallable;
       typedef std::future<SignOutcome> SignOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -266,6 +284,7 @@ namespace Aws
     typedef std::function<void(const KMSClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::DeleteCustomKeyStoreRequest&, const Model::DeleteCustomKeyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomKeyStoreResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::DeleteImportedKeyMaterialRequest&, const Model::DeleteImportedKeyMaterialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportedKeyMaterialResponseReceivedHandler;
+    typedef std::function<void(const KMSClient*, const Model::DeriveSharedSecretRequest&, const Model::DeriveSharedSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeriveSharedSecretResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::DescribeCustomKeyStoresRequest&, const Model::DescribeCustomKeyStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomKeyStoresResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::DescribeKeyRequest&, const Model::DescribeKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::DisableKeyRequest&, const Model::DisableKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableKeyResponseReceivedHandler;
@@ -288,6 +307,7 @@ namespace Aws
     typedef std::function<void(const KMSClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListGrantsRequest&, const Model::ListGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGrantsResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListKeyPoliciesRequest&, const Model::ListKeyPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyPoliciesResponseReceivedHandler;
+    typedef std::function<void(const KMSClient*, const Model::ListKeyRotationsRequest&, const Model::ListKeyRotationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyRotationsResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListKeysRequest&, const Model::ListKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeysResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListResourceTagsRequest&, const Model::ListResourceTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceTagsResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListRetirableGrantsRequest&, const Model::ListRetirableGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRetirableGrantsResponseReceivedHandler;
@@ -296,6 +316,7 @@ namespace Aws
     typedef std::function<void(const KMSClient*, const Model::ReplicateKeyRequest&, const Model::ReplicateKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateKeyResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::RetireGrantRequest&, const Model::RetireGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetireGrantResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::RevokeGrantRequest&, const Model::RevokeGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeGrantResponseReceivedHandler;
+    typedef std::function<void(const KMSClient*, const Model::RotateKeyOnDemandRequest&, const Model::RotateKeyOnDemandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateKeyOnDemandResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ScheduleKeyDeletionRequest&, const Model::ScheduleKeyDeletionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScheduleKeyDeletionResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::SignRequest&, const Model::SignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

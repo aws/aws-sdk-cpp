@@ -34,75 +34,30 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
-     */
     inline ListLongTermPricingRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Because HTTP requests are stateless, this is the starting point for your next
      * list of <code>ListLongTermPricing</code> to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Because HTTP requests are stateless, this is the starting point for your next
-     * list of <code>ListLongTermPricing</code> to return.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Because HTTP requests are stateless, this is the starting point for your next
-     * list of <code>ListLongTermPricing</code> to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Because HTTP requests are stateless, this is the starting point for your next
-     * list of <code>ListLongTermPricing</code> to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Because HTTP requests are stateless, this is the starting point for your next
-     * list of <code>ListLongTermPricing</code> to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Because HTTP requests are stateless, this is the starting point for your next
-     * list of <code>ListLongTermPricing</code> to return.</p>
-     */
     inline ListLongTermPricingRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Because HTTP requests are stateless, this is the starting point for your next
-     * list of <code>ListLongTermPricing</code> to return.</p>
-     */
     inline ListLongTermPricingRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Because HTTP requests are stateless, this is the starting point for your next
-     * list of <code>ListLongTermPricing</code> to return.</p>
-     */
     inline ListLongTermPricingRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

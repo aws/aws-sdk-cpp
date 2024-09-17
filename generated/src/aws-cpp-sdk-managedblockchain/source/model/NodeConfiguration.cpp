@@ -27,12 +27,8 @@ NodeConfiguration::NodeConfiguration() :
 {
 }
 
-NodeConfiguration::NodeConfiguration(JsonView jsonValue) : 
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false),
-    m_stateDB(StateDBType::NOT_SET),
-    m_stateDBHasBeenSet(false)
+NodeConfiguration::NodeConfiguration(JsonView jsonValue)
+  : NodeConfiguration()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ ImageRecipeSummary::ImageRecipeSummary() :
 {
 }
 
-ImageRecipeSummary::ImageRecipeSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ImageRecipeSummary::ImageRecipeSummary(JsonView jsonValue)
+  : ImageRecipeSummary()
 {
   *this = jsonValue;
 }

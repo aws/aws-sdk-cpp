@@ -40,70 +40,30 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API UpdateUserAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The code delivery details list from the server for the request to update user
      * attributes.</p>
      */
     inline const Aws::Vector<CodeDeliveryDetailsType>& GetCodeDeliveryDetailsList() const{ return m_codeDeliveryDetailsList; }
-
-    /**
-     * <p>The code delivery details list from the server for the request to update user
-     * attributes.</p>
-     */
     inline void SetCodeDeliveryDetailsList(const Aws::Vector<CodeDeliveryDetailsType>& value) { m_codeDeliveryDetailsList = value; }
-
-    /**
-     * <p>The code delivery details list from the server for the request to update user
-     * attributes.</p>
-     */
     inline void SetCodeDeliveryDetailsList(Aws::Vector<CodeDeliveryDetailsType>&& value) { m_codeDeliveryDetailsList = std::move(value); }
-
-    /**
-     * <p>The code delivery details list from the server for the request to update user
-     * attributes.</p>
-     */
     inline UpdateUserAttributesResult& WithCodeDeliveryDetailsList(const Aws::Vector<CodeDeliveryDetailsType>& value) { SetCodeDeliveryDetailsList(value); return *this;}
-
-    /**
-     * <p>The code delivery details list from the server for the request to update user
-     * attributes.</p>
-     */
     inline UpdateUserAttributesResult& WithCodeDeliveryDetailsList(Aws::Vector<CodeDeliveryDetailsType>&& value) { SetCodeDeliveryDetailsList(std::move(value)); return *this;}
-
-    /**
-     * <p>The code delivery details list from the server for the request to update user
-     * attributes.</p>
-     */
     inline UpdateUserAttributesResult& AddCodeDeliveryDetailsList(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetailsList.push_back(value); return *this; }
-
-    /**
-     * <p>The code delivery details list from the server for the request to update user
-     * attributes.</p>
-     */
     inline UpdateUserAttributesResult& AddCodeDeliveryDetailsList(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetailsList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUserAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUserAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUserAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CodeDeliveryDetailsType> m_codeDeliveryDetailsList;

@@ -25,10 +25,8 @@ SecurityDetails::SecurityDetails() :
 {
 }
 
-SecurityDetails::SecurityDetails(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+SecurityDetails::SecurityDetails(JsonView jsonValue)
+  : SecurityDetails()
 {
   *this = jsonValue;
 }

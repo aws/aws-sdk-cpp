@@ -26,11 +26,8 @@ Vertex::Vertex() :
 {
 }
 
-Vertex::Vertex(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_lineageType(LineageType::NOT_SET),
-    m_lineageTypeHasBeenSet(false)
+Vertex::Vertex(JsonView jsonValue)
+  : Vertex()
 {
   *this = jsonValue;
 }

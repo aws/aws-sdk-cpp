@@ -25,10 +25,8 @@ EmptyVisual::EmptyVisual() :
 {
 }
 
-EmptyVisual::EmptyVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_dataSetIdentifierHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+EmptyVisual::EmptyVisual(JsonView jsonValue)
+  : EmptyVisual()
 {
   *this = jsonValue;
 }

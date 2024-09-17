@@ -35,20 +35,8 @@ TestSetSummary::TestSetSummary() :
 {
 }
 
-TestSetSummary::TestSetSummary(JsonView jsonValue) : 
-    m_testSetIdHasBeenSet(false),
-    m_testSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_modality(TestSetModality::NOT_SET),
-    m_modalityHasBeenSet(false),
-    m_status(TestSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_numTurns(0),
-    m_numTurnsHasBeenSet(false),
-    m_storageLocationHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+TestSetSummary::TestSetSummary(JsonView jsonValue)
+  : TestSetSummary()
 {
   *this = jsonValue;
 }

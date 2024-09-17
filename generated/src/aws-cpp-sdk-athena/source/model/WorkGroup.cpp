@@ -29,14 +29,8 @@ WorkGroup::WorkGroup() :
 {
 }
 
-WorkGroup::WorkGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_state(WorkGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_identityCenterApplicationArnHasBeenSet(false)
+WorkGroup::WorkGroup(JsonView jsonValue)
+  : WorkGroup()
 {
   *this = jsonValue;
 }

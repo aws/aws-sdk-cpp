@@ -28,13 +28,8 @@ VmServer::VmServer() :
 {
 }
 
-VmServer::VmServer(JsonView jsonValue) : 
-    m_vmServerAddressHasBeenSet(false),
-    m_vmNameHasBeenSet(false),
-    m_vmManagerNameHasBeenSet(false),
-    m_vmManagerType(VmManagerType::NOT_SET),
-    m_vmManagerTypeHasBeenSet(false),
-    m_vmPathHasBeenSet(false)
+VmServer::VmServer(JsonView jsonValue)
+  : VmServer()
 {
   *this = jsonValue;
 }

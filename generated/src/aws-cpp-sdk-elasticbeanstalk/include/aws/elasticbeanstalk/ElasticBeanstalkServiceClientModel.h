@@ -53,6 +53,30 @@
 #include <aws/elasticbeanstalk/model/UpdateConfigurationTemplateResult.h>
 #include <aws/elasticbeanstalk/model/UpdateEnvironmentResult.h>
 #include <aws/elasticbeanstalk/model/ValidateConfigurationSettingsResult.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentsRequest.h>
+#include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
+#include <aws/elasticbeanstalk/model/SwapEnvironmentCNAMEsRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeAccountAttributesRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeInstancesHealthRequest.h>
+#include <aws/elasticbeanstalk/model/RestartAppServerRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentResourcesRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeApplicationsRequest.h>
+#include <aws/elasticbeanstalk/model/DeletePlatformVersionRequest.h>
+#include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEventsRequest.h>
+#include <aws/elasticbeanstalk/model/TerminateEnvironmentRequest.h>
+#include <aws/elasticbeanstalk/model/ComposeEnvironmentsRequest.h>
+#include <aws/elasticbeanstalk/model/DescribePlatformVersionRequest.h>
+#include <aws/elasticbeanstalk/model/RebuildEnvironmentRequest.h>
+#include <aws/elasticbeanstalk/model/AbortEnvironmentUpdateRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeApplicationVersionsRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeConfigurationOptionsRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryRequest.h>
+#include <aws/elasticbeanstalk/model/ListPlatformBranchesRequest.h>
+#include <aws/elasticbeanstalk/model/UpdateEnvironmentRequest.h>
+#include <aws/elasticbeanstalk/model/CreateStorageLocationRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ElasticBeanstalkClient header */
 
@@ -87,7 +111,7 @@ namespace Aws
 
   namespace ElasticBeanstalk
   {
-    using ElasticBeanstalkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticBeanstalkClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticBeanstalkEndpointProviderBase = Aws::ElasticBeanstalk::Endpoint::ElasticBeanstalkEndpointProviderBase;
     using ElasticBeanstalkEndpointProvider = Aws::ElasticBeanstalk::Endpoint::ElasticBeanstalkEndpointProvider;
 

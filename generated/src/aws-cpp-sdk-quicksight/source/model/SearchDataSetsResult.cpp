@@ -22,8 +22,8 @@ SearchDataSetsResult::SearchDataSetsResult() :
 {
 }
 
-SearchDataSetsResult::SearchDataSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+SearchDataSetsResult::SearchDataSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchDataSetsResult()
 {
   *this = result;
 }

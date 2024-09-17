@@ -19,6 +19,8 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_cdnConfigurationHasBeenSet(false),
     m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
+    m_insertionMode(InsertionMode::NOT_SET),
+    m_insertionModeHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -79,6 +81,11 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   {
    payload.WithObject("DashConfiguration", m_dashConfiguration.Jsonize());
 
+  }
+
+  if(m_insertionModeHasBeenSet)
+  {
+   payload.WithString("InsertionMode", InsertionModeMapper::GetNameForInsertionMode(m_insertionMode));
   }
 
   if(m_livePreRollConfigurationHasBeenSet)

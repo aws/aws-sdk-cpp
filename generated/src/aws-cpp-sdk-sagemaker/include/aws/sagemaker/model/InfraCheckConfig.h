@@ -37,26 +37,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables an infrastructure health check.</p>
      */
     inline bool GetEnableInfraCheck() const{ return m_enableInfraCheck; }
-
-    /**
-     * <p>Enables an infrastructure health check.</p>
-     */
     inline bool EnableInfraCheckHasBeenSet() const { return m_enableInfraCheckHasBeenSet; }
-
-    /**
-     * <p>Enables an infrastructure health check.</p>
-     */
     inline void SetEnableInfraCheck(bool value) { m_enableInfraCheckHasBeenSet = true; m_enableInfraCheck = value; }
-
-    /**
-     * <p>Enables an infrastructure health check.</p>
-     */
     inline InfraCheckConfig& WithEnableInfraCheck(bool value) { SetEnableInfraCheck(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableInfraCheck;

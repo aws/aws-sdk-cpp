@@ -41,26 +41,8 @@ ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail
 {
 }
 
-ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_instanceDetailsHasBeenSet(false),
-    m_recommendedNumberOfInstancesToPurchaseHasBeenSet(false),
-    m_recommendedNormalizedUnitsToPurchaseHasBeenSet(false),
-    m_minimumNumberOfInstancesUsedPerHourHasBeenSet(false),
-    m_minimumNormalizedUnitsUsedPerHourHasBeenSet(false),
-    m_maximumNumberOfInstancesUsedPerHourHasBeenSet(false),
-    m_maximumNormalizedUnitsUsedPerHourHasBeenSet(false),
-    m_averageNumberOfInstancesUsedPerHourHasBeenSet(false),
-    m_averageNormalizedUnitsUsedPerHourHasBeenSet(false),
-    m_averageUtilizationHasBeenSet(false),
-    m_estimatedBreakEvenInMonthsHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false),
-    m_estimatedMonthlySavingsPercentageHasBeenSet(false),
-    m_estimatedMonthlyOnDemandCostHasBeenSet(false),
-    m_estimatedReservationCostForLookbackPeriodHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_recurringStandardMonthlyCostHasBeenSet(false)
+ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail(JsonView jsonValue)
+  : ReservationPurchaseRecommendationDetail()
 {
   *this = jsonValue;
 }

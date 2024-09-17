@@ -34,149 +34,57 @@ namespace Model
     AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
      */
     inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
-
-    /**
-     * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-     */
     inline bool CodeSigningConfigArnHasBeenSet() const { return m_codeSigningConfigArnHasBeenSet; }
-
-    /**
-     * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-     */
     inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = value; }
-
-    /**
-     * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-     */
     inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::move(value); }
-
-    /**
-     * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-     */
     inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn.assign(value); }
-
-    /**
-     * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
-
-    /**
-     * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Descriptive name for this code signing configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Descriptive name for this code signing configuration.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>Descriptive name for this code signing configuration.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>Descriptive name for this code signing configuration.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>Descriptive name for this code signing configuration.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>Descriptive name for this code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Descriptive name for this code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Descriptive name for this code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Signing profiles for this code signing configuration.</p>
      */
     inline const AllowedPublishers& GetAllowedPublishers() const{ return m_allowedPublishers; }
-
-    /**
-     * <p>Signing profiles for this code signing configuration.</p>
-     */
     inline bool AllowedPublishersHasBeenSet() const { return m_allowedPublishersHasBeenSet; }
-
-    /**
-     * <p>Signing profiles for this code signing configuration.</p>
-     */
     inline void SetAllowedPublishers(const AllowedPublishers& value) { m_allowedPublishersHasBeenSet = true; m_allowedPublishers = value; }
-
-    /**
-     * <p>Signing profiles for this code signing configuration.</p>
-     */
     inline void SetAllowedPublishers(AllowedPublishers&& value) { m_allowedPublishersHasBeenSet = true; m_allowedPublishers = std::move(value); }
-
-    /**
-     * <p>Signing profiles for this code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithAllowedPublishers(const AllowedPublishers& value) { SetAllowedPublishers(value); return *this;}
-
-    /**
-     * <p>Signing profiles for this code signing configuration.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithAllowedPublishers(AllowedPublishers&& value) { SetAllowedPublishers(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code signing policy.</p>
      */
     inline const CodeSigningPolicies& GetCodeSigningPolicies() const{ return m_codeSigningPolicies; }
-
-    /**
-     * <p>The code signing policy.</p>
-     */
     inline bool CodeSigningPoliciesHasBeenSet() const { return m_codeSigningPoliciesHasBeenSet; }
-
-    /**
-     * <p>The code signing policy.</p>
-     */
     inline void SetCodeSigningPolicies(const CodeSigningPolicies& value) { m_codeSigningPoliciesHasBeenSet = true; m_codeSigningPolicies = value; }
-
-    /**
-     * <p>The code signing policy.</p>
-     */
     inline void SetCodeSigningPolicies(CodeSigningPolicies&& value) { m_codeSigningPoliciesHasBeenSet = true; m_codeSigningPolicies = std::move(value); }
-
-    /**
-     * <p>The code signing policy.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithCodeSigningPolicies(const CodeSigningPolicies& value) { SetCodeSigningPolicies(value); return *this;}
-
-    /**
-     * <p>The code signing policy.</p>
-     */
     inline UpdateCodeSigningConfigRequest& WithCodeSigningPolicies(CodeSigningPolicies&& value) { SetCodeSigningPolicies(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_codeSigningConfigArn;

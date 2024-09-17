@@ -25,10 +25,8 @@ SizeConstraintSet::SizeConstraintSet() :
 {
 }
 
-SizeConstraintSet::SizeConstraintSet(JsonView jsonValue) : 
-    m_sizeConstraintSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sizeConstraintsHasBeenSet(false)
+SizeConstraintSet::SizeConstraintSet(JsonView jsonValue)
+  : SizeConstraintSet()
 {
   *this = jsonValue;
 }

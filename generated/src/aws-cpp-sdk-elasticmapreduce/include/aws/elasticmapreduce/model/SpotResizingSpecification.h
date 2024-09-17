@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/elasticmapreduce/model/SpotProvisioningAllocationStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -36,6 +38,7 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
      * this time, the resize workflow will stop provisioning of Spot instances. Minimum
@@ -47,47 +50,32 @@ namespace Model
      * Reclamation.</p>
      */
     inline int GetTimeoutDurationMinutes() const{ return m_timeoutDurationMinutes; }
-
-    /**
-     * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
-     * this time, the resize workflow will stop provisioning of Spot instances. Minimum
-     * value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout
-     * applies to all resize workflows on the Instance Fleet. The resize could be
-     * triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR
-     * Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK
-     * ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot
-     * Reclamation.</p>
-     */
     inline bool TimeoutDurationMinutesHasBeenSet() const { return m_timeoutDurationMinutesHasBeenSet; }
-
-    /**
-     * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
-     * this time, the resize workflow will stop provisioning of Spot instances. Minimum
-     * value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout
-     * applies to all resize workflows on the Instance Fleet. The resize could be
-     * triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR
-     * Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK
-     * ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot
-     * Reclamation.</p>
-     */
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
-
-    /**
-     * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
-     * this time, the resize workflow will stop provisioning of Spot instances. Minimum
-     * value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout
-     * applies to all resize workflows on the Instance Fleet. The resize could be
-     * triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR
-     * Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK
-     * ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot
-     * Reclamation.</p>
-     */
     inline SpotResizingSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Specifies the allocation strategy to use to launch Spot instances during a
+     * resize. If you run Amazon EMR releases 6.9.0 or higher, the default is
+     * <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or
+     * lower, the default is <code>capacity-optimized</code>.</p>
+     */
+    inline const SpotProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+    inline void SetAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline void SetAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
+    inline SpotResizingSpecification& WithAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
+    inline SpotResizingSpecification& WithAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_timeoutDurationMinutes;
     bool m_timeoutDurationMinutesHasBeenSet = false;
+
+    SpotProvisioningAllocationStrategy m_allocationStrategy;
+    bool m_allocationStrategyHasBeenSet = false;
   };
 
 } // namespace Model

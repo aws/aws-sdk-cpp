@@ -40,161 +40,59 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file system id.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>The file system id.</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>The file system id.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>The file system id.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>The file system id.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>The file system id.</p>
-     */
     inline FileSystemDataSource& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>The file system id.</p>
-     */
     inline FileSystemDataSource& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The file system id.</p>
-     */
     inline FileSystemDataSource& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The access mode of the mount of the directory associated with the channel. A
      * directory can be mounted either in <code>ro</code> (read-only) or
      * <code>rw</code> (read-write) mode.</p>
      */
     inline const FileSystemAccessMode& GetFileSystemAccessMode() const{ return m_fileSystemAccessMode; }
-
-    /**
-     * <p>The access mode of the mount of the directory associated with the channel. A
-     * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write) mode.</p>
-     */
     inline bool FileSystemAccessModeHasBeenSet() const { return m_fileSystemAccessModeHasBeenSet; }
-
-    /**
-     * <p>The access mode of the mount of the directory associated with the channel. A
-     * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write) mode.</p>
-     */
     inline void SetFileSystemAccessMode(const FileSystemAccessMode& value) { m_fileSystemAccessModeHasBeenSet = true; m_fileSystemAccessMode = value; }
-
-    /**
-     * <p>The access mode of the mount of the directory associated with the channel. A
-     * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write) mode.</p>
-     */
     inline void SetFileSystemAccessMode(FileSystemAccessMode&& value) { m_fileSystemAccessModeHasBeenSet = true; m_fileSystemAccessMode = std::move(value); }
-
-    /**
-     * <p>The access mode of the mount of the directory associated with the channel. A
-     * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write) mode.</p>
-     */
     inline FileSystemDataSource& WithFileSystemAccessMode(const FileSystemAccessMode& value) { SetFileSystemAccessMode(value); return *this;}
-
-    /**
-     * <p>The access mode of the mount of the directory associated with the channel. A
-     * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write) mode.</p>
-     */
     inline FileSystemDataSource& WithFileSystemAccessMode(FileSystemAccessMode&& value) { SetFileSystemAccessMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file system type. </p>
      */
     inline const FileSystemType& GetFileSystemType() const{ return m_fileSystemType; }
-
-    /**
-     * <p>The file system type. </p>
-     */
     inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
-
-    /**
-     * <p>The file system type. </p>
-     */
     inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
-
-    /**
-     * <p>The file system type. </p>
-     */
     inline void SetFileSystemType(FileSystemType&& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = std::move(value); }
-
-    /**
-     * <p>The file system type. </p>
-     */
     inline FileSystemDataSource& WithFileSystemType(const FileSystemType& value) { SetFileSystemType(value); return *this;}
-
-    /**
-     * <p>The file system type. </p>
-     */
     inline FileSystemDataSource& WithFileSystemType(FileSystemType&& value) { SetFileSystemType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The full path to the directory to associate with the channel.</p>
      */
     inline const Aws::String& GetDirectoryPath() const{ return m_directoryPath; }
-
-    /**
-     * <p>The full path to the directory to associate with the channel.</p>
-     */
     inline bool DirectoryPathHasBeenSet() const { return m_directoryPathHasBeenSet; }
-
-    /**
-     * <p>The full path to the directory to associate with the channel.</p>
-     */
     inline void SetDirectoryPath(const Aws::String& value) { m_directoryPathHasBeenSet = true; m_directoryPath = value; }
-
-    /**
-     * <p>The full path to the directory to associate with the channel.</p>
-     */
     inline void SetDirectoryPath(Aws::String&& value) { m_directoryPathHasBeenSet = true; m_directoryPath = std::move(value); }
-
-    /**
-     * <p>The full path to the directory to associate with the channel.</p>
-     */
     inline void SetDirectoryPath(const char* value) { m_directoryPathHasBeenSet = true; m_directoryPath.assign(value); }
-
-    /**
-     * <p>The full path to the directory to associate with the channel.</p>
-     */
     inline FileSystemDataSource& WithDirectoryPath(const Aws::String& value) { SetDirectoryPath(value); return *this;}
-
-    /**
-     * <p>The full path to the directory to associate with the channel.</p>
-     */
     inline FileSystemDataSource& WithDirectoryPath(Aws::String&& value) { SetDirectoryPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The full path to the directory to associate with the channel.</p>
-     */
     inline FileSystemDataSource& WithDirectoryPath(const char* value) { SetDirectoryPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemId;

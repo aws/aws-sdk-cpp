@@ -24,9 +24,8 @@ ZoneAwarenessConfig::ZoneAwarenessConfig() :
 {
 }
 
-ZoneAwarenessConfig::ZoneAwarenessConfig(JsonView jsonValue) : 
-    m_availabilityZoneCount(0),
-    m_availabilityZoneCountHasBeenSet(false)
+ZoneAwarenessConfig::ZoneAwarenessConfig(JsonView jsonValue)
+  : ZoneAwarenessConfig()
 {
   *this = jsonValue;
 }

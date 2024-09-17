@@ -61,9 +61,8 @@ PutSessionResult& PutSessionResult::operator=(PutSessionResult&& toMove)
    return *this;
 }
 
-PutSessionResult::PutSessionResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_messageFormat(MessageFormatType::NOT_SET),
-    m_dialogState(DialogState::NOT_SET)
+PutSessionResult::PutSessionResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : PutSessionResult()
 {
   *this = std::move(result);
 }

@@ -27,12 +27,8 @@ SendUsersMessageRequest::SendUsersMessageRequest() :
 {
 }
 
-SendUsersMessageRequest::SendUsersMessageRequest(JsonView jsonValue) : 
-    m_contextHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_traceIdHasBeenSet(false),
-    m_usersHasBeenSet(false)
+SendUsersMessageRequest::SendUsersMessageRequest(JsonView jsonValue)
+  : SendUsersMessageRequest()
 {
   *this = jsonValue;
 }

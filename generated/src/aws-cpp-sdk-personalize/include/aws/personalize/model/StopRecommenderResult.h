@@ -32,63 +32,29 @@ namespace Model
     AWS_PERSONALIZE_API StopRecommenderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
      */
     inline const Aws::String& GetRecommenderArn() const{ return m_recommenderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-     */
     inline void SetRecommenderArn(const Aws::String& value) { m_recommenderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-     */
     inline void SetRecommenderArn(Aws::String&& value) { m_recommenderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-     */
     inline void SetRecommenderArn(const char* value) { m_recommenderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-     */
     inline StopRecommenderResult& WithRecommenderArn(const Aws::String& value) { SetRecommenderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-     */
     inline StopRecommenderResult& WithRecommenderArn(Aws::String&& value) { SetRecommenderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-     */
     inline StopRecommenderResult& WithRecommenderArn(const char* value) { SetRecommenderArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopRecommenderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopRecommenderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopRecommenderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recommenderArn;

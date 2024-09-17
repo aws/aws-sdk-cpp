@@ -26,11 +26,8 @@ ApplicationPolicyStatement::ApplicationPolicyStatement() :
 {
 }
 
-ApplicationPolicyStatement::ApplicationPolicyStatement(JsonView jsonValue) : 
-    m_actionsHasBeenSet(false),
-    m_principalOrgIDsHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
+ApplicationPolicyStatement::ApplicationPolicyStatement(JsonView jsonValue)
+  : ApplicationPolicyStatement()
 {
   *this = jsonValue;
 }

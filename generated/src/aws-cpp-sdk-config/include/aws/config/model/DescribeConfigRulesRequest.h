@@ -39,110 +39,38 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The names of the Config rules for which you want details. If you do not
      * specify any names, Config returns details for all your rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const{ return m_configRuleNames; }
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline DescribeConfigRulesRequest& WithConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetConfigRuleNames(value); return *this;}
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline DescribeConfigRulesRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline DescribeConfigRulesRequest& AddConfigRuleNames(const Aws::String& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline DescribeConfigRulesRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the Config rules for which you want details. If you do not
-     * specify any names, Config returns details for all your rules.</p>
-     */
     inline DescribeConfigRulesRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline DescribeConfigRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline DescribeConfigRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> string returned on a previous page that you use to
-     * get the next page of results in a paginated response.</p>
-     */
     inline DescribeConfigRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns a list of Detective or Proactive Config rules. By default, this API
      * returns an unfiltered list. For more information on Detective or Proactive
@@ -151,52 +79,12 @@ namespace Model
      * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
      */
     inline const DescribeConfigRulesFilters& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
-     * returns an unfiltered list. For more information on Detective or Proactive
-     * Config rules, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
-     * returns an unfiltered list. For more information on Detective or Proactive
-     * Config rules, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-     */
     inline void SetFilters(const DescribeConfigRulesFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
-     * returns an unfiltered list. For more information on Detective or Proactive
-     * Config rules, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-     */
     inline void SetFilters(DescribeConfigRulesFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
-     * returns an unfiltered list. For more information on Detective or Proactive
-     * Config rules, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-     */
     inline DescribeConfigRulesRequest& WithFilters(const DescribeConfigRulesFilters& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
-     * returns an unfiltered list. For more information on Detective or Proactive
-     * Config rules, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-     * <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-     */
     inline DescribeConfigRulesRequest& WithFilters(DescribeConfigRulesFilters&& value) { SetFilters(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;

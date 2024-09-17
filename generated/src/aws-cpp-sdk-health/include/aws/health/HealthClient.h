@@ -10,9 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/health/HealthServiceClientModel.h>
-#include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
-#include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
-#include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
 
 namespace Aws
 {
@@ -216,13 +213,13 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntitiesForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAffectedEntitiesForOrganizationOutcome DescribeAffectedEntitiesForOrganization(const Model::DescribeAffectedEntitiesForOrganizationRequest& request) const;
+        virtual Model::DescribeAffectedEntitiesForOrganizationOutcome DescribeAffectedEntitiesForOrganization(const Model::DescribeAffectedEntitiesForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAffectedEntitiesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAffectedEntitiesForOrganizationRequestT = Model::DescribeAffectedEntitiesForOrganizationRequest>
-        Model::DescribeAffectedEntitiesForOrganizationOutcomeCallable DescribeAffectedEntitiesForOrganizationCallable(const DescribeAffectedEntitiesForOrganizationRequestT& request) const
+        Model::DescribeAffectedEntitiesForOrganizationOutcomeCallable DescribeAffectedEntitiesForOrganizationCallable(const DescribeAffectedEntitiesForOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&HealthClient::DescribeAffectedEntitiesForOrganization, request);
         }
@@ -231,7 +228,7 @@ namespace Health
          * An Async wrapper for DescribeAffectedEntitiesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAffectedEntitiesForOrganizationRequestT = Model::DescribeAffectedEntitiesForOrganizationRequest>
-        void DescribeAffectedEntitiesForOrganizationAsync(const DescribeAffectedEntitiesForOrganizationRequestT& request, const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAffectedEntitiesForOrganizationAsync(const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAffectedEntitiesForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&HealthClient::DescribeAffectedEntitiesForOrganization, request, handler, context);
         }
@@ -242,13 +239,13 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEntityAggregatesOutcome DescribeEntityAggregates(const Model::DescribeEntityAggregatesRequest& request) const;
+        virtual Model::DescribeEntityAggregatesOutcome DescribeEntityAggregates(const Model::DescribeEntityAggregatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEntityAggregates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEntityAggregatesRequestT = Model::DescribeEntityAggregatesRequest>
-        Model::DescribeEntityAggregatesOutcomeCallable DescribeEntityAggregatesCallable(const DescribeEntityAggregatesRequestT& request) const
+        Model::DescribeEntityAggregatesOutcomeCallable DescribeEntityAggregatesCallable(const DescribeEntityAggregatesRequestT& request = {}) const
         {
             return SubmitCallable(&HealthClient::DescribeEntityAggregates, request);
         }
@@ -257,7 +254,7 @@ namespace Health
          * An Async wrapper for DescribeEntityAggregates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEntityAggregatesRequestT = Model::DescribeEntityAggregatesRequest>
-        void DescribeEntityAggregatesAsync(const DescribeEntityAggregatesRequestT& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEntityAggregatesAsync(const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEntityAggregatesRequestT& request = {}) const
         {
             return SubmitAsync(&HealthClient::DescribeEntityAggregates, request, handler, context);
         }
@@ -422,13 +419,13 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventTypesOutcome DescribeEventTypes(const Model::DescribeEventTypesRequest& request) const;
+        virtual Model::DescribeEventTypesOutcome DescribeEventTypes(const Model::DescribeEventTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventTypesRequestT = Model::DescribeEventTypesRequest>
-        Model::DescribeEventTypesOutcomeCallable DescribeEventTypesCallable(const DescribeEventTypesRequestT& request) const
+        Model::DescribeEventTypesOutcomeCallable DescribeEventTypesCallable(const DescribeEventTypesRequestT& request = {}) const
         {
             return SubmitCallable(&HealthClient::DescribeEventTypes, request);
         }
@@ -437,7 +434,7 @@ namespace Health
          * An Async wrapper for DescribeEventTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventTypesRequestT = Model::DescribeEventTypesRequest>
-        void DescribeEventTypesAsync(const DescribeEventTypesRequestT& request, const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventTypesAsync(const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventTypesRequestT& request = {}) const
         {
             return SubmitAsync(&HealthClient::DescribeEventTypes, request, handler, context);
         }
@@ -468,13 +465,13 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request) const
+        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request = {}) const
         {
             return SubmitCallable(&HealthClient::DescribeEvents, request);
         }
@@ -483,7 +480,7 @@ namespace Health
          * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        void DescribeEventsAsync(const DescribeEventsRequestT& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsRequestT& request = {}) const
         {
             return SubmitAsync(&HealthClient::DescribeEvents, request, handler, context);
         }
@@ -515,13 +512,13 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventsForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventsForOrganizationOutcome DescribeEventsForOrganization(const Model::DescribeEventsForOrganizationRequest& request) const;
+        virtual Model::DescribeEventsForOrganizationOutcome DescribeEventsForOrganization(const Model::DescribeEventsForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventsForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventsForOrganizationRequestT = Model::DescribeEventsForOrganizationRequest>
-        Model::DescribeEventsForOrganizationOutcomeCallable DescribeEventsForOrganizationCallable(const DescribeEventsForOrganizationRequestT& request) const
+        Model::DescribeEventsForOrganizationOutcomeCallable DescribeEventsForOrganizationCallable(const DescribeEventsForOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&HealthClient::DescribeEventsForOrganization, request);
         }
@@ -530,7 +527,7 @@ namespace Health
          * An Async wrapper for DescribeEventsForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventsForOrganizationRequestT = Model::DescribeEventsForOrganizationRequest>
-        void DescribeEventsForOrganizationAsync(const DescribeEventsForOrganizationRequestT& request, const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventsForOrganizationAsync(const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&HealthClient::DescribeEventsForOrganization, request, handler, context);
         }
@@ -653,7 +650,6 @@ namespace Health
       void init(const HealthClientConfiguration& clientConfiguration);
 
       HealthClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<HealthEndpointProviderBase> m_endpointProvider;
   };
 

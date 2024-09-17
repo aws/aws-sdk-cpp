@@ -24,7 +24,10 @@ CreateClusterRequest::CreateClusterRequest() :
     m_tagsHasBeenSet(false),
     m_encryptionConfigHasBeenSet(false),
     m_outpostConfigHasBeenSet(false),
-    m_accessConfigHasBeenSet(false)
+    m_accessConfigHasBeenSet(false),
+    m_bootstrapSelfManagedAddons(false),
+    m_bootstrapSelfManagedAddonsHasBeenSet(false),
+    m_upgradePolicyHasBeenSet(false)
 {
 }
 
@@ -105,6 +108,18 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_accessConfigHasBeenSet)
   {
    payload.WithObject("accessConfig", m_accessConfig.Jsonize());
+
+  }
+
+  if(m_bootstrapSelfManagedAddonsHasBeenSet)
+  {
+   payload.WithBool("bootstrapSelfManagedAddons", m_bootstrapSelfManagedAddons);
+
+  }
+
+  if(m_upgradePolicyHasBeenSet)
+  {
+   payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
 
   }
 

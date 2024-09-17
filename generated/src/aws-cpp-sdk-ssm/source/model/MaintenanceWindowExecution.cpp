@@ -29,14 +29,8 @@ MaintenanceWindowExecution::MaintenanceWindowExecution() :
 {
 }
 
-MaintenanceWindowExecution::MaintenanceWindowExecution(JsonView jsonValue) : 
-    m_windowIdHasBeenSet(false),
-    m_windowExecutionIdHasBeenSet(false),
-    m_status(MaintenanceWindowExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+MaintenanceWindowExecution::MaintenanceWindowExecution(JsonView jsonValue)
+  : MaintenanceWindowExecution()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteDataSetRefreshPropertiesResult::DeleteDataSetRefreshPropertiesResult() :
 {
 }
 
-DeleteDataSetRefreshPropertiesResult::DeleteDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteDataSetRefreshPropertiesResult::DeleteDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDataSetRefreshPropertiesResult()
 {
   *this = result;
 }

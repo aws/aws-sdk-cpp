@@ -41,256 +41,89 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The range of IP addresses that contribute content or initiate output requests
      * for flows communicating with this gateway. These IP addresses should be in the
      * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline const Aws::Vector<Aws::String>& GetEgressCidrBlocks() const{ return m_egressCidrBlocks; }
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline bool EgressCidrBlocksHasBeenSet() const { return m_egressCidrBlocksHasBeenSet; }
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline void SetEgressCidrBlocks(const Aws::Vector<Aws::String>& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks = value; }
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline void SetEgressCidrBlocks(Aws::Vector<Aws::String>&& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks = std::move(value); }
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline Gateway& WithEgressCidrBlocks(const Aws::Vector<Aws::String>& value) { SetEgressCidrBlocks(value); return *this;}
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline Gateway& WithEgressCidrBlocks(Aws::Vector<Aws::String>&& value) { SetEgressCidrBlocks(std::move(value)); return *this;}
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline Gateway& AddEgressCidrBlocks(const Aws::String& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks.push_back(value); return *this; }
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline Gateway& AddEgressCidrBlocks(Aws::String&& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks.push_back(std::move(value)); return *this; }
-
-    /**
-     * The range of IP addresses that contribute content or initiate output requests
-     * for flows communicating with this gateway. These IP addresses should be in the
-     * form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-     */
     inline Gateway& AddEgressCidrBlocks(const char* value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of the gateway.
      */
     inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway.
-     */
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway.
-     */
     inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway.
-     */
     inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway.
-     */
     inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway.
-     */
     inline Gateway& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway.
-     */
     inline Gateway& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway.
-     */
     inline Gateway& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<MessageDetail>& GetGatewayMessages() const{ return m_gatewayMessages; }
-
-    
     inline bool GatewayMessagesHasBeenSet() const { return m_gatewayMessagesHasBeenSet; }
-
-    
     inline void SetGatewayMessages(const Aws::Vector<MessageDetail>& value) { m_gatewayMessagesHasBeenSet = true; m_gatewayMessages = value; }
-
-    
     inline void SetGatewayMessages(Aws::Vector<MessageDetail>&& value) { m_gatewayMessagesHasBeenSet = true; m_gatewayMessages = std::move(value); }
-
-    
     inline Gateway& WithGatewayMessages(const Aws::Vector<MessageDetail>& value) { SetGatewayMessages(value); return *this;}
-
-    
     inline Gateway& WithGatewayMessages(Aws::Vector<MessageDetail>&& value) { SetGatewayMessages(std::move(value)); return *this;}
-
-    
     inline Gateway& AddGatewayMessages(const MessageDetail& value) { m_gatewayMessagesHasBeenSet = true; m_gatewayMessages.push_back(value); return *this; }
-
-    
     inline Gateway& AddGatewayMessages(MessageDetail&& value) { m_gatewayMessagesHasBeenSet = true; m_gatewayMessages.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * The current status of the gateway.
      */
     inline const GatewayState& GetGatewayState() const{ return m_gatewayState; }
-
-    /**
-     * The current status of the gateway.
-     */
     inline bool GatewayStateHasBeenSet() const { return m_gatewayStateHasBeenSet; }
-
-    /**
-     * The current status of the gateway.
-     */
     inline void SetGatewayState(const GatewayState& value) { m_gatewayStateHasBeenSet = true; m_gatewayState = value; }
-
-    /**
-     * The current status of the gateway.
-     */
     inline void SetGatewayState(GatewayState&& value) { m_gatewayStateHasBeenSet = true; m_gatewayState = std::move(value); }
-
-    /**
-     * The current status of the gateway.
-     */
     inline Gateway& WithGatewayState(const GatewayState& value) { SetGatewayState(value); return *this;}
-
-    /**
-     * The current status of the gateway.
-     */
     inline Gateway& WithGatewayState(GatewayState&& value) { SetGatewayState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the gateway. This name can not be modified after the gateway is
      * created.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
-     */
     inline Gateway& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
-     */
     inline Gateway& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the gateway. This name can not be modified after the gateway is
-     * created.
-     */
     inline Gateway& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The list of networks in the gateway.
      */
     inline const Aws::Vector<GatewayNetwork>& GetNetworks() const{ return m_networks; }
-
-    /**
-     * The list of networks in the gateway.
-     */
     inline bool NetworksHasBeenSet() const { return m_networksHasBeenSet; }
-
-    /**
-     * The list of networks in the gateway.
-     */
     inline void SetNetworks(const Aws::Vector<GatewayNetwork>& value) { m_networksHasBeenSet = true; m_networks = value; }
-
-    /**
-     * The list of networks in the gateway.
-     */
     inline void SetNetworks(Aws::Vector<GatewayNetwork>&& value) { m_networksHasBeenSet = true; m_networks = std::move(value); }
-
-    /**
-     * The list of networks in the gateway.
-     */
     inline Gateway& WithNetworks(const Aws::Vector<GatewayNetwork>& value) { SetNetworks(value); return *this;}
-
-    /**
-     * The list of networks in the gateway.
-     */
     inline Gateway& WithNetworks(Aws::Vector<GatewayNetwork>&& value) { SetNetworks(std::move(value)); return *this;}
-
-    /**
-     * The list of networks in the gateway.
-     */
     inline Gateway& AddNetworks(const GatewayNetwork& value) { m_networksHasBeenSet = true; m_networks.push_back(value); return *this; }
-
-    /**
-     * The list of networks in the gateway.
-     */
     inline Gateway& AddNetworks(GatewayNetwork&& value) { m_networksHasBeenSet = true; m_networks.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_egressCidrBlocks;

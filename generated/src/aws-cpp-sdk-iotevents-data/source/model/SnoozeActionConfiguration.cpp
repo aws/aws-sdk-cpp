@@ -25,10 +25,8 @@ SnoozeActionConfiguration::SnoozeActionConfiguration() :
 {
 }
 
-SnoozeActionConfiguration::SnoozeActionConfiguration(JsonView jsonValue) : 
-    m_snoozeDuration(0),
-    m_snoozeDurationHasBeenSet(false),
-    m_noteHasBeenSet(false)
+SnoozeActionConfiguration::SnoozeActionConfiguration(JsonView jsonValue)
+  : SnoozeActionConfiguration()
 {
   *this = jsonValue;
 }

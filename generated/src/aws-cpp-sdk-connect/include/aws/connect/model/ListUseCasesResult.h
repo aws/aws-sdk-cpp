@@ -34,106 +34,43 @@ namespace Model
     AWS_CONNECT_API ListUseCasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The use cases.</p>
      */
     inline const Aws::Vector<UseCase>& GetUseCaseSummaryList() const{ return m_useCaseSummaryList; }
-
-    /**
-     * <p>The use cases.</p>
-     */
     inline void SetUseCaseSummaryList(const Aws::Vector<UseCase>& value) { m_useCaseSummaryList = value; }
-
-    /**
-     * <p>The use cases.</p>
-     */
     inline void SetUseCaseSummaryList(Aws::Vector<UseCase>&& value) { m_useCaseSummaryList = std::move(value); }
-
-    /**
-     * <p>The use cases.</p>
-     */
     inline ListUseCasesResult& WithUseCaseSummaryList(const Aws::Vector<UseCase>& value) { SetUseCaseSummaryList(value); return *this;}
-
-    /**
-     * <p>The use cases.</p>
-     */
     inline ListUseCasesResult& WithUseCaseSummaryList(Aws::Vector<UseCase>&& value) { SetUseCaseSummaryList(std::move(value)); return *this;}
-
-    /**
-     * <p>The use cases.</p>
-     */
     inline ListUseCasesResult& AddUseCaseSummaryList(const UseCase& value) { m_useCaseSummaryList.push_back(value); return *this; }
-
-    /**
-     * <p>The use cases.</p>
-     */
     inline ListUseCasesResult& AddUseCaseSummaryList(UseCase&& value) { m_useCaseSummaryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListUseCasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListUseCasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListUseCasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListUseCasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListUseCasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListUseCasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UseCase> m_useCaseSummaryList;

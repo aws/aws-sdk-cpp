@@ -12,9 +12,6 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/crypto/CryptoStream.h>
-#ifdef ENABLE_COMMONCRYPTO_ENCRYPTION
-#include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
-#endif
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
@@ -270,14 +267,11 @@ TEST_F(AES_GCM_TEST, TestBadTagCausesFailure)
     ASSERT_TRUE(*cipher);
 
     const_cast<CryptoBuffer&>(cipher->GetTag())[8] = 0;
-
     cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
-    ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
-#if !defined(ENABLE_COMMONCRYPTO_ENCRYPTION) || defined(MAC_14_4_AVAILABLE)
     ASSERT_FALSE(*cipher);
-#endif
+    ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
 }
 
 TEST_F(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_104_Test_3)
@@ -695,23 +689,6 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
     memcpy(plainText.GetUnderlyingData(), completeDecryptedMessage.GetUnderlyingData(), completeDecryptedMessage.GetLength());
 
     ASSERT_EQ(data, plainText);
-
-    // Test modified AAD will lead to wrong decryption.
-#if !defined(ENABLE_COMMONCRYPTO_ENCRYPTION) || defined(MAC_14_4_AVAILABLE)
-    if (aad.GetLength())
-    {
-        /**
-         * Note that CommonCrypto on Mac tests AAD at finalizeDecryption stage,
-         * While Openssl tests AAD at begining of Decryption (additional Decryption call) stage.
-         * For BCrypto on Windows, testing of AAD is inside Decryption stage.
-         * So we can only assert false of cipher after finalize.
-         */
-        auto cipherDe = CreateAES_GCMImplementation(key, iv, cipher->GetTag(), CryptoBuffer());
-        decryptResult = cipherDe->DecryptBuffer(encryptedResult);
-        finalDecryptBuffer = cipherDe->FinalizeDecryption();
-        ASSERT_FALSE(*cipherDe);
-    }
-#endif
 
     // Test AES GCM with too long IV will cause cipher init error. expect 12 bytes
     CryptoBuffer ivLong = CryptoBuffer({&iv, &iv}); // pass 24 bytes

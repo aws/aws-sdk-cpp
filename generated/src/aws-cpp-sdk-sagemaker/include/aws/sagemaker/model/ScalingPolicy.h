@@ -38,42 +38,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A target tracking scaling policy. Includes support for predefined or
      * customized metrics.</p>
      */
     inline const TargetTrackingScalingPolicyConfiguration& GetTargetTracking() const{ return m_targetTracking; }
-
-    /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p>
-     */
     inline bool TargetTrackingHasBeenSet() const { return m_targetTrackingHasBeenSet; }
-
-    /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p>
-     */
     inline void SetTargetTracking(const TargetTrackingScalingPolicyConfiguration& value) { m_targetTrackingHasBeenSet = true; m_targetTracking = value; }
-
-    /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p>
-     */
     inline void SetTargetTracking(TargetTrackingScalingPolicyConfiguration&& value) { m_targetTrackingHasBeenSet = true; m_targetTracking = std::move(value); }
-
-    /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p>
-     */
     inline ScalingPolicy& WithTargetTracking(const TargetTrackingScalingPolicyConfiguration& value) { SetTargetTracking(value); return *this;}
-
-    /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p>
-     */
     inline ScalingPolicy& WithTargetTracking(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTracking(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TargetTrackingScalingPolicyConfiguration m_targetTracking;

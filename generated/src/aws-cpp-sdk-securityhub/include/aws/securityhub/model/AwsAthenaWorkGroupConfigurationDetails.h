@@ -41,6 +41,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The location in Amazon S3 where query and calculation results are stored and
      * the encryption option, if any, used for query and calculation results. These are
@@ -48,47 +49,12 @@ namespace Model
      * settings, then the query uses the workgroup settings.</p>
      */
     inline const AwsAthenaWorkGroupConfigurationResultConfigurationDetails& GetResultConfiguration() const{ return m_resultConfiguration; }
-
-    /**
-     * <p> The location in Amazon S3 where query and calculation results are stored and
-     * the encryption option, if any, used for query and calculation results. These are
-     * known as client-side settings. If workgroup settings override client-side
-     * settings, then the query uses the workgroup settings.</p>
-     */
     inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
-
-    /**
-     * <p> The location in Amazon S3 where query and calculation results are stored and
-     * the encryption option, if any, used for query and calculation results. These are
-     * known as client-side settings. If workgroup settings override client-side
-     * settings, then the query uses the workgroup settings.</p>
-     */
     inline void SetResultConfiguration(const AwsAthenaWorkGroupConfigurationResultConfigurationDetails& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
-
-    /**
-     * <p> The location in Amazon S3 where query and calculation results are stored and
-     * the encryption option, if any, used for query and calculation results. These are
-     * known as client-side settings. If workgroup settings override client-side
-     * settings, then the query uses the workgroup settings.</p>
-     */
     inline void SetResultConfiguration(AwsAthenaWorkGroupConfigurationResultConfigurationDetails&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::move(value); }
-
-    /**
-     * <p> The location in Amazon S3 where query and calculation results are stored and
-     * the encryption option, if any, used for query and calculation results. These are
-     * known as client-side settings. If workgroup settings override client-side
-     * settings, then the query uses the workgroup settings.</p>
-     */
     inline AwsAthenaWorkGroupConfigurationDetails& WithResultConfiguration(const AwsAthenaWorkGroupConfigurationResultConfigurationDetails& value) { SetResultConfiguration(value); return *this;}
-
-    /**
-     * <p> The location in Amazon S3 where query and calculation results are stored and
-     * the encryption option, if any, used for query and calculation results. These are
-     * known as client-side settings. If workgroup settings override client-side
-     * settings, then the query uses the workgroup settings.</p>
-     */
     inline AwsAthenaWorkGroupConfigurationDetails& WithResultConfiguration(AwsAthenaWorkGroupConfigurationResultConfigurationDetails&& value) { SetResultConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsAthenaWorkGroupConfigurationResultConfigurationDetails m_resultConfiguration;

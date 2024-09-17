@@ -31,14 +31,8 @@ RouteTable::RouteTable() :
 {
 }
 
-RouteTable::RouteTable(const XmlNode& xmlNode) : 
-    m_associationsHasBeenSet(false),
-    m_propagatingVgwsHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+RouteTable::RouteTable(const XmlNode& xmlNode)
+  : RouteTable()
 {
   *this = xmlNode;
 }

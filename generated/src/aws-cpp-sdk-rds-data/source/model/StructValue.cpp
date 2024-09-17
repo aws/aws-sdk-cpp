@@ -23,8 +23,8 @@ StructValue::StructValue() :
 {
 }
 
-StructValue::StructValue(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false)
+StructValue::StructValue(JsonView jsonValue)
+  : StructValue()
 {
   *this = jsonValue;
 }

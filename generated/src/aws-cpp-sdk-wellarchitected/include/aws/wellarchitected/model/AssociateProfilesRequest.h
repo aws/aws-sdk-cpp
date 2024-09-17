@@ -33,76 +33,32 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline AssociateProfilesRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline AssociateProfilesRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline AssociateProfilesRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of profile ARNs to associate with the workload.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProfileArns() const{ return m_profileArns; }
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline bool ProfileArnsHasBeenSet() const { return m_profileArnsHasBeenSet; }
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline void SetProfileArns(const Aws::Vector<Aws::String>& value) { m_profileArnsHasBeenSet = true; m_profileArns = value; }
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline void SetProfileArns(Aws::Vector<Aws::String>&& value) { m_profileArnsHasBeenSet = true; m_profileArns = std::move(value); }
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline AssociateProfilesRequest& WithProfileArns(const Aws::Vector<Aws::String>& value) { SetProfileArns(value); return *this;}
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline AssociateProfilesRequest& WithProfileArns(Aws::Vector<Aws::String>&& value) { SetProfileArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline AssociateProfilesRequest& AddProfileArns(const Aws::String& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline AssociateProfilesRequest& AddProfileArns(Aws::String&& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of profile ARNs to associate with the workload.</p>
-     */
     inline AssociateProfilesRequest& AddProfileArns(const char* value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

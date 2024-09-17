@@ -40,111 +40,38 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name specified to identify the patch source.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name specified to identify the patch source.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name specified to identify the patch source.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name specified to identify the patch source.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name specified to identify the patch source.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name specified to identify the patch source.</p>
-     */
     inline PatchSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name specified to identify the patch source.</p>
-     */
     inline PatchSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name specified to identify the patch source.</p>
-     */
     inline PatchSource& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specific operating system versions a patch repository applies to, such as
      * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
      * For lists of supported product values, see <a>PatchFilter</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProducts() const{ return m_products; }
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline bool ProductsHasBeenSet() const { return m_productsHasBeenSet; }
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline void SetProducts(const Aws::Vector<Aws::String>& value) { m_productsHasBeenSet = true; m_products = value; }
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline void SetProducts(Aws::Vector<Aws::String>&& value) { m_productsHasBeenSet = true; m_products = std::move(value); }
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline PatchSource& WithProducts(const Aws::Vector<Aws::String>& value) { SetProducts(value); return *this;}
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline PatchSource& WithProducts(Aws::Vector<Aws::String>&& value) { SetProducts(std::move(value)); return *this;}
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline PatchSource& AddProducts(const Aws::String& value) { m_productsHasBeenSet = true; m_products.push_back(value); return *this; }
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline PatchSource& AddProducts(Aws::String&& value) { m_productsHasBeenSet = true; m_products.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The specific operating system versions a patch repository applies to, such as
-     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
-     * For lists of supported product values, see <a>PatchFilter</a>.</p>
-     */
     inline PatchSource& AddProducts(const char* value) { m_productsHasBeenSet = true; m_products.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
      * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
@@ -155,84 +82,14 @@ namespace Model
      * 
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
-     * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
-     * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
-     */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
-     * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
-     */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
-     * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
-     */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
-
-    /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
-     * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
-     */
     inline PatchSource& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
-     * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
-     */
     inline PatchSource& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
-     * <code>baseurl=https://my-custom-repository</code> </p> <p>
-     * <code>enabled=1</code> </p>  <p>For information about other options
-     * available for your yum repository configuration, see <a
-     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
-     * 
-     */
     inline PatchSource& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

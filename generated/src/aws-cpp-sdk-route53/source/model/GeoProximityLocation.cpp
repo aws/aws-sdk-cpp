@@ -29,12 +29,8 @@ GeoProximityLocation::GeoProximityLocation() :
 {
 }
 
-GeoProximityLocation::GeoProximityLocation(const XmlNode& xmlNode) : 
-    m_aWSRegionHasBeenSet(false),
-    m_localZoneGroupHasBeenSet(false),
-    m_coordinatesHasBeenSet(false),
-    m_bias(0),
-    m_biasHasBeenSet(false)
+GeoProximityLocation::GeoProximityLocation(const XmlNode& xmlNode)
+  : GeoProximityLocation()
 {
   *this = xmlNode;
 }

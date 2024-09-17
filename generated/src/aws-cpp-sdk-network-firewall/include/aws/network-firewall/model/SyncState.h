@@ -48,6 +48,7 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The attachment status of the firewall's association with a single VPC subnet.
      * For each configured subnet, Network Firewall creates the attachment by
@@ -55,48 +56,14 @@ namespace Model
      * traffic. This is part of the <a>FirewallStatus</a>.</p>
      */
     inline const Attachment& GetAttachment() const{ return m_attachment; }
-
-    /**
-     * <p>The attachment status of the firewall's association with a single VPC subnet.
-     * For each configured subnet, Network Firewall creates the attachment by
-     * instantiating the firewall endpoint in the subnet so that it's ready to take
-     * traffic. This is part of the <a>FirewallStatus</a>.</p>
-     */
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-
-    /**
-     * <p>The attachment status of the firewall's association with a single VPC subnet.
-     * For each configured subnet, Network Firewall creates the attachment by
-     * instantiating the firewall endpoint in the subnet so that it's ready to take
-     * traffic. This is part of the <a>FirewallStatus</a>.</p>
-     */
     inline void SetAttachment(const Attachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-
-    /**
-     * <p>The attachment status of the firewall's association with a single VPC subnet.
-     * For each configured subnet, Network Firewall creates the attachment by
-     * instantiating the firewall endpoint in the subnet so that it's ready to take
-     * traffic. This is part of the <a>FirewallStatus</a>.</p>
-     */
     inline void SetAttachment(Attachment&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-
-    /**
-     * <p>The attachment status of the firewall's association with a single VPC subnet.
-     * For each configured subnet, Network Firewall creates the attachment by
-     * instantiating the firewall endpoint in the subnet so that it's ready to take
-     * traffic. This is part of the <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
-
-    /**
-     * <p>The attachment status of the firewall's association with a single VPC subnet.
-     * For each configured subnet, Network Firewall creates the attachment by
-     * instantiating the firewall endpoint in the subnet so that it's ready to take
-     * traffic. This is part of the <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration status of the firewall endpoint in a single VPC subnet.
      * Network Firewall provides each endpoint with the rules that are configured in
@@ -106,117 +73,18 @@ namespace Model
      * <a>FirewallStatus</a>.</p>
      */
     inline const Aws::Map<Aws::String, PerObjectStatus>& GetConfig() const{ return m_config; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline void SetConfig(const Aws::Map<Aws::String, PerObjectStatus>& value) { m_configHasBeenSet = true; m_config = value; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline void SetConfig(Aws::Map<Aws::String, PerObjectStatus>&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& WithConfig(const Aws::Map<Aws::String, PerObjectStatus>& value) { SetConfig(value); return *this;}
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& WithConfig(Aws::Map<Aws::String, PerObjectStatus>&& value) { SetConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& AddConfig(const Aws::String& key, const PerObjectStatus& value) { m_configHasBeenSet = true; m_config.emplace(key, value); return *this; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& AddConfig(Aws::String&& key, const PerObjectStatus& value) { m_configHasBeenSet = true; m_config.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& AddConfig(const Aws::String& key, PerObjectStatus&& value) { m_configHasBeenSet = true; m_config.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& AddConfig(Aws::String&& key, PerObjectStatus&& value) { m_configHasBeenSet = true; m_config.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& AddConfig(const char* key, PerObjectStatus&& value) { m_configHasBeenSet = true; m_config.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The configuration status of the firewall endpoint in a single VPC subnet.
-     * Network Firewall provides each endpoint with the rules that are configured in
-     * the firewall policy. Each time you add a subnet or modify the associated
-     * firewall policy, Network Firewall synchronizes the rules in the endpoint, so it
-     * can properly filter network traffic. This is part of the
-     * <a>FirewallStatus</a>.</p>
-     */
     inline SyncState& AddConfig(const char* key, const PerObjectStatus& value) { m_configHasBeenSet = true; m_config.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Attachment m_attachment;

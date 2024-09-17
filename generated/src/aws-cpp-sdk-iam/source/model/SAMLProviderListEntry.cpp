@@ -27,10 +27,8 @@ SAMLProviderListEntry::SAMLProviderListEntry() :
 {
 }
 
-SAMLProviderListEntry::SAMLProviderListEntry(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+SAMLProviderListEntry::SAMLProviderListEntry(const XmlNode& xmlNode)
+  : SAMLProviderListEntry()
 {
   *this = xmlNode;
 }

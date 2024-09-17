@@ -24,9 +24,8 @@ UniqueAttribute::UniqueAttribute() :
 {
 }
 
-UniqueAttribute::UniqueAttribute(JsonView jsonValue) : 
-    m_attributePathHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
+UniqueAttribute::UniqueAttribute(JsonView jsonValue)
+  : UniqueAttribute()
 {
   *this = jsonValue;
 }

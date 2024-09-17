@@ -22,8 +22,8 @@ DescribeTypeRegistrationResult::DescribeTypeRegistrationResult() :
 {
 }
 
-DescribeTypeRegistrationResult::DescribeTypeRegistrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_progressStatus(RegistrationStatus::NOT_SET)
+DescribeTypeRegistrationResult::DescribeTypeRegistrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeTypeRegistrationResult()
 {
   *this = result;
 }

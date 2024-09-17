@@ -49,7 +49,10 @@ ${typeInfo.className}& ${typeInfo.className}::operator=(${typeInfo.className}&& 
    return *this;
 }
 
-${typeInfo.className}::${typeInfo.className}(Aws::AmazonWebServiceResult<ResponseStream>&& result)$initializers
+${typeInfo.className}::${typeInfo.className}(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
 {
   *this = std::move(result);
 }
@@ -58,45 +61,7 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(Aws::AmazonWebServiceRe
 {
   ${CppViewHelper.computeMemberVariableName($shape.payload)} = result.TakeOwnershipOfPayload();
 
-#if($shape.hasHeaderMembers())
-  const auto& headers = result.GetHeaderValueCollection();
-#foreach($memberEntry in $shape.members.entrySet())
-#set($varName = $CppViewHelper.computeVariableName($memberEntry.key))
-#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberEntry.key))
-#if($memberEntry.value.usedForHeader)
-#if($memberEntry.value.shape.map)
-  std::size_t prefixSize = sizeof("${memberEntry.value.locationName}") - 1; //subtract the NULL terminator out
-  for(const auto& item : headers)
-  {
-    std::size_t foundPrefix = item.first.find("${memberEntry.value.locationName}");
-
-    if(foundPrefix != std::string::npos)
-    {
-      ${memberVarName}[item.first.substr(prefixSize)] = item.second;
-    }
-  }
-
-#else
-  const auto& ${varName}Iter = headers.find("${memberEntry.value.locationName}");
-  if(${varName}Iter != headers.end())
-  {
-#if($memberEntry.value.shape.string)
-    ${memberVarName} = ${varName}Iter->second;
-#elseif($memberEntry.value.shape.enum)
-    ${memberVarName} = ${memberEntry.value.shape.name}Mapper::Get${memberEntry.value.shape.name}ForName(${varName}Iter->second);
-#elseif($memberEntry.value.shape.timeStamp)
-    ${memberVarName} = DateTime(${varName}Iter->second, Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
-#elseif($memberEntry.value.shape.blob)
-    ${memberVarName} = HashingUtils::Base64Decode(StringUtils::Trim(${varName}Iter->second.c_str()));
-#elseif($memberEntry.value.shape.primitive)
-     ${memberVarName} = ${CppViewHelper.computeXmlConversionMethodName($memberEntry.value.shape)}(${varName}Iter->second.c_str());
-#end
-  }
-
-#end
-#end
-#end
-#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ResultClassHeadersDeserialize.vm")
 #if($shape.hasStatusCodeMembers())
 #foreach($memberEntry in $shape.members.entrySet())
 #if($memberEntry.value.usedForHttpStatusCode)

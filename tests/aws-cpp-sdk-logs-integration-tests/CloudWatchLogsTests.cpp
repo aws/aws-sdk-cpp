@@ -69,6 +69,7 @@ namespace
                 auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
                 Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
                 accountId = accessManagementClient.GetAccountId();
+                assert(!accountId.empty()); // AccountId must be set for this test
             }
             m_accountId = accountId;
         }
@@ -107,26 +108,36 @@ namespace
         putRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
                     .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM));
 
+        auto nowMs = Aws::Utils::DateTime::Now().Millis();
         InputLogEvent e1;
-        e1.WithTimestamp(Aws::Utils::DateTime::Now().Millis()).WithMessage("Test Message 1");
+        e1.WithTimestamp(nowMs).WithMessage("Test Message 1");
         InputLogEvent e2;
         // Make sure the timestamp of e2 is greater than that of e1.
-        e2.WithTimestamp(Aws::Utils::DateTime::Now().Millis()+1).WithMessage("Test Message 2");
+        e2.WithTimestamp(nowMs+1).WithMessage("Test Message 2");
 
         putRequest.AddLogEvents(e1).AddLogEvents(e2);
         auto putOutcome = m_client->PutLogEvents(putRequest);
         AWS_ASSERT_SUCCESS(putOutcome);
-        auto nextSeqToken = putOutcome.GetResult().GetNextSequenceToken();
+        const auto& rejected = putOutcome.GetResult().GetRejectedLogEventsInfo();
+        EXPECT_EQ(rejected.GetExpiredLogEventEndIndex(), 0);
+        EXPECT_EQ(rejected.GetTooNewLogEventStartIndex(), 0);
+        EXPECT_EQ(rejected.GetTooOldLogEventEndIndex(), 0);
 
+        // The log events in the batch must be in chronological order by their timestamp
+        nowMs = nowMs + 2;
         InputLogEvent e3;
-        e3.WithTimestamp(Aws::Utils::DateTime::Now().Millis()).WithMessage("Test Message 3");
+        e3.WithTimestamp(nowMs).WithMessage("Test Message 3");
         InputLogEvent e4;
         // Make sure the timestamp of e4 is greater than that of e3.
-        e4.WithTimestamp(Aws::Utils::DateTime::Now().Millis()+1).WithMessage("Test Message 4");
+        e4.WithTimestamp(nowMs+1).WithMessage("Test Message 4");
         putRequest.AddLogEvents(e3).AddLogEvents(e4);
-        putRequest.WithSequenceToken(nextSeqToken);
+
         putOutcome = m_client->PutLogEvents(putRequest);
         AWS_ASSERT_SUCCESS(putOutcome);
+        const auto& rejected2 = putOutcome.GetResult().GetRejectedLogEventsInfo();
+        EXPECT_EQ(rejected2.GetExpiredLogEventEndIndex(), 0);
+        EXPECT_EQ(rejected2.GetTooNewLogEventStartIndex(), 0);
+        EXPECT_EQ(rejected2.GetTooOldLogEventEndIndex(), 0);
 
         //There should be in total 6 events in the stream. with messages ended with 1,2,1,2,3,4;
         GetLogEventsRequest getRequest;

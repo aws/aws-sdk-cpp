@@ -36,21 +36,8 @@ Accelerator::Accelerator() :
 {
 }
 
-Accelerator::Accelerator(JsonView jsonValue) : 
-    m_acceleratorArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ipSetsHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_status(AcceleratorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_dualStackDnsNameHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+Accelerator::Accelerator(JsonView jsonValue)
+  : Accelerator()
 {
   *this = jsonValue;
 }

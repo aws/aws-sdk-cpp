@@ -26,9 +26,8 @@ ActivityMetrics::ActivityMetrics() :
 {
 }
 
-ActivityMetrics::ActivityMetrics(const XmlNode& xmlNode) : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
+ActivityMetrics::ActivityMetrics(const XmlNode& xmlNode)
+  : ActivityMetrics()
 {
   *this = xmlNode;
 }

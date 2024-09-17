@@ -41,24 +41,15 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FunctionArtifactMeta& GetVnfd() const{ return m_vnfd; }
-
-    
     inline bool VnfdHasBeenSet() const { return m_vnfdHasBeenSet; }
-
-    
     inline void SetVnfd(const FunctionArtifactMeta& value) { m_vnfdHasBeenSet = true; m_vnfd = value; }
-
-    
     inline void SetVnfd(FunctionArtifactMeta&& value) { m_vnfdHasBeenSet = true; m_vnfd = std::move(value); }
-
-    
     inline PutSolFunctionPackageContentMetadata& WithVnfd(const FunctionArtifactMeta& value) { SetVnfd(value); return *this;}
-
-    
     inline PutSolFunctionPackageContentMetadata& WithVnfd(FunctionArtifactMeta&& value) { SetVnfd(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FunctionArtifactMeta m_vnfd;

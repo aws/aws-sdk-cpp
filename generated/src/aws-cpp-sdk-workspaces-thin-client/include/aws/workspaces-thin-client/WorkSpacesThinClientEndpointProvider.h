@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using WorkSpacesThinClientClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WorkSpacesThinClientClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using WorkSpacesThinClientClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkSpacesThinClientBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

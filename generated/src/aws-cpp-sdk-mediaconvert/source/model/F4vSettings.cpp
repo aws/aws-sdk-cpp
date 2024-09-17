@@ -24,9 +24,8 @@ F4vSettings::F4vSettings() :
 {
 }
 
-F4vSettings::F4vSettings(JsonView jsonValue) : 
-    m_moovPlacement(F4vMoovPlacement::NOT_SET),
-    m_moovPlacementHasBeenSet(false)
+F4vSettings::F4vSettings(JsonView jsonValue)
+  : F4vSettings()
 {
   *this = jsonValue;
 }

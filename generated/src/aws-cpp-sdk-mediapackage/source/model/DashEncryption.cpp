@@ -25,10 +25,8 @@ DashEncryption::DashEncryption() :
 {
 }
 
-DashEncryption::DashEncryption(JsonView jsonValue) : 
-    m_keyRotationIntervalSeconds(0),
-    m_keyRotationIntervalSecondsHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
+DashEncryption::DashEncryption(JsonView jsonValue)
+  : DashEncryption()
 {
   *this = jsonValue;
 }

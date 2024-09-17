@@ -24,9 +24,8 @@ AccessPointLimitExceeded::AccessPointLimitExceeded() :
 {
 }
 
-AccessPointLimitExceeded::AccessPointLimitExceeded(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AccessPointLimitExceeded::AccessPointLimitExceeded(JsonView jsonValue)
+  : AccessPointLimitExceeded()
 {
   *this = jsonValue;
 }

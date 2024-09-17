@@ -19,30 +19,19 @@ namespace Model
 {
 
 NetworkConfiguration::NetworkConfiguration() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
-NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
+  : NetworkConfiguration()
 {
   *this = jsonValue;
 }
 
 NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("SecurityGroupIds"))
-  {
-    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
-      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
-    }
-    m_securityGroupIdsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -53,23 +42,22 @@ NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
     m_subnetIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityGroupIds"))
+  {
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue NetworkConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_securityGroupIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-   {
-     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
-   }
-   payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
-
-  }
 
   if(m_subnetIdsHasBeenSet)
   {
@@ -79,6 +67,17 @@ JsonValue NetworkConfiguration::Jsonize() const
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
    }
    payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_securityGroupIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
 
   }
 

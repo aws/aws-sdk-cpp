@@ -34,54 +34,20 @@ namespace Model
     AWS_WAF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The change token for which you want to get the status. This change token was
      * previously returned in the <code>GetChangeToken</code> response.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
-
-    /**
-     * <p>The change token for which you want to get the status. This change token was
-     * previously returned in the <code>GetChangeToken</code> response.</p>
-     */
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-
-    /**
-     * <p>The change token for which you want to get the status. This change token was
-     * previously returned in the <code>GetChangeToken</code> response.</p>
-     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-
-    /**
-     * <p>The change token for which you want to get the status. This change token was
-     * previously returned in the <code>GetChangeToken</code> response.</p>
-     */
     inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-
-    /**
-     * <p>The change token for which you want to get the status. This change token was
-     * previously returned in the <code>GetChangeToken</code> response.</p>
-     */
     inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-
-    /**
-     * <p>The change token for which you want to get the status. This change token was
-     * previously returned in the <code>GetChangeToken</code> response.</p>
-     */
     inline GetChangeTokenStatusRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-
-    /**
-     * <p>The change token for which you want to get the status. This change token was
-     * previously returned in the <code>GetChangeToken</code> response.</p>
-     */
     inline GetChangeTokenStatusRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The change token for which you want to get the status. This change token was
-     * previously returned in the <code>GetChangeToken</code> response.</p>
-     */
     inline GetChangeTokenStatusRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_changeToken;

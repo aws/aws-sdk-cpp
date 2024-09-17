@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents an attribute for describing the key schema for the table and
+   * <p>Represents an attribute for describing the schema for the table and
    * indexes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeDefinition">AWS
    * API Reference</a></p>
@@ -39,47 +39,21 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A name for the attribute.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>A name for the attribute.</p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>A name for the attribute.</p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>A name for the attribute.</p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>A name for the attribute.</p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p>A name for the attribute.</p>
-     */
     inline AttributeDefinition& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>A name for the attribute.</p>
-     */
     inline AttributeDefinition& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the attribute.</p>
-     */
     inline AttributeDefinition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
      * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
@@ -87,47 +61,12 @@ namespace Model
      * of type Binary</p> </li> </ul>
      */
     inline const ScalarAttributeType& GetAttributeType() const{ return m_attributeType; }
-
-    /**
-     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
-     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
-     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
-     * of type Binary</p> </li> </ul>
-     */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
-
-    /**
-     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
-     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
-     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
-     * of type Binary</p> </li> </ul>
-     */
     inline void SetAttributeType(const ScalarAttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
-
-    /**
-     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
-     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
-     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
-     * of type Binary</p> </li> </ul>
-     */
     inline void SetAttributeType(ScalarAttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
-
-    /**
-     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
-     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
-     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
-     * of type Binary</p> </li> </ul>
-     */
     inline AttributeDefinition& WithAttributeType(const ScalarAttributeType& value) { SetAttributeType(value); return *this;}
-
-    /**
-     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
-     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
-     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
-     * of type Binary</p> </li> </ul>
-     */
     inline AttributeDefinition& WithAttributeType(ScalarAttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attributeName;

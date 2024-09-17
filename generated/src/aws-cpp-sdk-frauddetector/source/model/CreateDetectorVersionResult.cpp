@@ -22,8 +22,8 @@ CreateDetectorVersionResult::CreateDetectorVersionResult() :
 {
 }
 
-CreateDetectorVersionResult::CreateDetectorVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DetectorVersionStatus::NOT_SET)
+CreateDetectorVersionResult::CreateDetectorVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDetectorVersionResult()
 {
   *this = result;
 }

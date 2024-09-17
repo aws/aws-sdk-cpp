@@ -26,11 +26,8 @@ AccessRules::AccessRules() :
 {
 }
 
-AccessRules::AccessRules(JsonView jsonValue) : 
-    m_getObject(AccessType::NOT_SET),
-    m_getObjectHasBeenSet(false),
-    m_allowPublicOverrides(false),
-    m_allowPublicOverridesHasBeenSet(false)
+AccessRules::AccessRules(JsonView jsonValue)
+  : AccessRules()
 {
   *this = jsonValue;
 }

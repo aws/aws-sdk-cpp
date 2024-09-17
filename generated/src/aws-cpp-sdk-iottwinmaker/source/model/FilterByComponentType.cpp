@@ -23,8 +23,8 @@ FilterByComponentType::FilterByComponentType() :
 {
 }
 
-FilterByComponentType::FilterByComponentType(JsonView jsonValue) : 
-    m_componentTypeIdHasBeenSet(false)
+FilterByComponentType::FilterByComponentType(JsonView jsonValue)
+  : FilterByComponentType()
 {
   *this = jsonValue;
 }

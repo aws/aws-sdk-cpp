@@ -20,17 +20,14 @@ namespace Model
 
 PlaybackKeyPair::PlaybackKeyPair() : 
     m_arnHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_fingerprintHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-PlaybackKeyPair::PlaybackKeyPair(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PlaybackKeyPair::PlaybackKeyPair(JsonView jsonValue)
+  : PlaybackKeyPair()
 {
   *this = jsonValue;
 }
@@ -44,18 +41,18 @@ PlaybackKeyPair& PlaybackKeyPair::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("fingerprint"))
-  {
-    m_fingerprint = jsonValue.GetString("fingerprint");
-
-    m_fingerprintHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fingerprint"))
+  {
+    m_fingerprint = jsonValue.GetString("fingerprint");
+
+    m_fingerprintHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -81,15 +78,15 @@ JsonValue PlaybackKeyPair::Jsonize() const
 
   }
 
-  if(m_fingerprintHasBeenSet)
-  {
-   payload.WithString("fingerprint", m_fingerprint);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_fingerprintHasBeenSet)
+  {
+   payload.WithString("fingerprint", m_fingerprint);
 
   }
 

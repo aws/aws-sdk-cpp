@@ -26,11 +26,8 @@ FlexibleTimeWindow::FlexibleTimeWindow() :
 {
 }
 
-FlexibleTimeWindow::FlexibleTimeWindow(JsonView jsonValue) : 
-    m_maximumWindowInMinutes(0),
-    m_maximumWindowInMinutesHasBeenSet(false),
-    m_mode(FlexibleTimeWindowMode::NOT_SET),
-    m_modeHasBeenSet(false)
+FlexibleTimeWindow::FlexibleTimeWindow(JsonView jsonValue)
+  : FlexibleTimeWindow()
 {
   *this = jsonValue;
 }

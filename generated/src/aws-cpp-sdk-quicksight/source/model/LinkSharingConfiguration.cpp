@@ -23,8 +23,8 @@ LinkSharingConfiguration::LinkSharingConfiguration() :
 {
 }
 
-LinkSharingConfiguration::LinkSharingConfiguration(JsonView jsonValue) : 
-    m_permissionsHasBeenSet(false)
+LinkSharingConfiguration::LinkSharingConfiguration(JsonView jsonValue)
+  : LinkSharingConfiguration()
 {
   *this = jsonValue;
 }

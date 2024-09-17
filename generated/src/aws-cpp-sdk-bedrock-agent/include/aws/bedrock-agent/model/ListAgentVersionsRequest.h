@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>List Agent Versions Request</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentVersionsRequest">AWS
-   * API Reference</a></p>
    */
   class ListAgentVersionsRequest : public BedrockAgentRequest
   {
@@ -35,84 +32,49 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p>Id generated at the server side when an Agent is created</p>
-     */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-
-    /**
-     * <p>Id generated at the server side when an Agent is created</p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-
-    /**
-     * <p>Id generated at the server side when an Agent is created</p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-
-    /**
-     * <p>Id generated at the server side when an Agent is created</p>
-     */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-
-    /**
-     * <p>Id generated at the server side when an Agent is created</p>
-     */
     inline ListAgentVersionsRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p>Id generated at the server side when an Agent is created</p>
-     */
     inline ListAgentVersionsRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p>Id generated at the server side when an Agent is created</p>
-     */
     inline ListAgentVersionsRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
 
-
-    
+    ///@{
+    /**
+     * <p>The maximum number of results to return in the response. If the total number
+     * of results is greater than this value, use the token returned in the response in
+     * the <code>nextToken</code> field when making another request to return the next
+     * batch of results.</p>
+     */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    
     inline ListAgentVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
-    
+    ///@{
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline ListAgentVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListAgentVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListAgentVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

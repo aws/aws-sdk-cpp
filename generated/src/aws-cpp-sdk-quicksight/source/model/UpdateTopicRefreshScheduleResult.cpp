@@ -22,8 +22,8 @@ UpdateTopicRefreshScheduleResult::UpdateTopicRefreshScheduleResult() :
 {
 }
 
-UpdateTopicRefreshScheduleResult::UpdateTopicRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateTopicRefreshScheduleResult::UpdateTopicRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateTopicRefreshScheduleResult()
 {
   *this = result;
 }

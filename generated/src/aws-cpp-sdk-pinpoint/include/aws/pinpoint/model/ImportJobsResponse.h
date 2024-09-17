@@ -42,111 +42,36 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of responses, one for each import job that's associated with the
      * application (Import Jobs resource) or segment (Segment Import Jobs
      * resource).</p>
      */
     inline const Aws::Vector<ImportJobResponse>& GetItem() const{ return m_item; }
-
-    /**
-     * <p>An array of responses, one for each import job that's associated with the
-     * application (Import Jobs resource) or segment (Segment Import Jobs
-     * resource).</p>
-     */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-
-    /**
-     * <p>An array of responses, one for each import job that's associated with the
-     * application (Import Jobs resource) or segment (Segment Import Jobs
-     * resource).</p>
-     */
     inline void SetItem(const Aws::Vector<ImportJobResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
-
-    /**
-     * <p>An array of responses, one for each import job that's associated with the
-     * application (Import Jobs resource) or segment (Segment Import Jobs
-     * resource).</p>
-     */
     inline void SetItem(Aws::Vector<ImportJobResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-
-    /**
-     * <p>An array of responses, one for each import job that's associated with the
-     * application (Import Jobs resource) or segment (Segment Import Jobs
-     * resource).</p>
-     */
     inline ImportJobsResponse& WithItem(const Aws::Vector<ImportJobResponse>& value) { SetItem(value); return *this;}
-
-    /**
-     * <p>An array of responses, one for each import job that's associated with the
-     * application (Import Jobs resource) or segment (Segment Import Jobs
-     * resource).</p>
-     */
     inline ImportJobsResponse& WithItem(Aws::Vector<ImportJobResponse>&& value) { SetItem(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of responses, one for each import job that's associated with the
-     * application (Import Jobs resource) or segment (Segment Import Jobs
-     * resource).</p>
-     */
     inline ImportJobsResponse& AddItem(const ImportJobResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
-
-    /**
-     * <p>An array of responses, one for each import job that's associated with the
-     * application (Import Jobs resource) or segment (Segment Import Jobs
-     * resource).</p>
-     */
     inline ImportJobsResponse& AddItem(ImportJobResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline ImportJobsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline ImportJobsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline ImportJobsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ImportJobResponse> m_item;

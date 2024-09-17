@@ -34,46 +34,19 @@ namespace Model
     AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> Operation ID. </p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
-
-    /**
-     * <p> Operation ID. </p>
-     */
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
-
-    /**
-     * <p> Operation ID. </p>
-     */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
-
-    /**
-     * <p> Operation ID. </p>
-     */
     inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
-
-    /**
-     * <p> Operation ID. </p>
-     */
     inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
-
-    /**
-     * <p> Operation ID. </p>
-     */
     inline ResendOperationAuthorizationRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-
-    /**
-     * <p> Operation ID. </p>
-     */
     inline ResendOperationAuthorizationRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-
-    /**
-     * <p> Operation ID. </p>
-     */
     inline ResendOperationAuthorizationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationId;

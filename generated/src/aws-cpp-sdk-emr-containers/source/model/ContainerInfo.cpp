@@ -23,8 +23,8 @@ ContainerInfo::ContainerInfo() :
 {
 }
 
-ContainerInfo::ContainerInfo(JsonView jsonValue) : 
-    m_eksInfoHasBeenSet(false)
+ContainerInfo::ContainerInfo(JsonView jsonValue)
+  : ContainerInfo()
 {
   *this = jsonValue;
 }

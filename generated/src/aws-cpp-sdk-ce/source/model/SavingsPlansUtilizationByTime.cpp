@@ -26,11 +26,8 @@ SavingsPlansUtilizationByTime::SavingsPlansUtilizationByTime() :
 {
 }
 
-SavingsPlansUtilizationByTime::SavingsPlansUtilizationByTime(JsonView jsonValue) : 
-    m_timePeriodHasBeenSet(false),
-    m_utilizationHasBeenSet(false),
-    m_savingsHasBeenSet(false),
-    m_amortizedCommitmentHasBeenSet(false)
+SavingsPlansUtilizationByTime::SavingsPlansUtilizationByTime(JsonView jsonValue)
+  : SavingsPlansUtilizationByTime()
 {
   *this = jsonValue;
 }

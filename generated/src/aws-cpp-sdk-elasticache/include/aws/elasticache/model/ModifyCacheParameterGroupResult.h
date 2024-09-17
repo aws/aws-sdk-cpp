@@ -40,57 +40,27 @@ namespace Model
     AWS_ELASTICACHE_API ModifyCacheParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The name of the cache parameter group.</p>
      */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
-
-    /**
-     * <p>The name of the cache parameter group.</p>
-     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupName = value; }
-
-    /**
-     * <p>The name of the cache parameter group.</p>
-     */
     inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the cache parameter group.</p>
-     */
     inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupName.assign(value); }
-
-    /**
-     * <p>The name of the cache parameter group.</p>
-     */
     inline ModifyCacheParameterGroupResult& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the cache parameter group.</p>
-     */
     inline ModifyCacheParameterGroupResult& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cache parameter group.</p>
-     */
     inline ModifyCacheParameterGroupResult& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyCacheParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyCacheParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cacheParameterGroupName;

@@ -273,13 +273,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
+        virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateBackup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateBackupRequestT = Model::CreateBackupRequest>
-        Model::CreateBackupOutcomeCallable CreateBackupCallable(const CreateBackupRequestT& request) const
+        Model::CreateBackupOutcomeCallable CreateBackupCallable(const CreateBackupRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::CreateBackup, request);
         }
@@ -288,7 +288,7 @@ namespace FSx
          * An Async wrapper for CreateBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateBackupRequestT = Model::CreateBackupRequest>
-        void CreateBackupAsync(const CreateBackupRequestT& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateBackupAsync(const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateBackupRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::CreateBackup, request, handler, context);
         }
@@ -436,7 +436,7 @@ namespace FSx
          * parameters don't match, this call returns
          * <code>IncompatibleParameterError</code>. If a file system with the specified
          * client request token doesn't exist, <code>CreateFileSystem</code> does the
-         * following: </p> <ul> <li> <p>Creates a new, empty Amazon FSx file system with an
+         * following:</p> <ul> <li> <p>Creates a new, empty Amazon FSx file system with an
          * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
          * <li> <p>Returns the description of the file system in JSON format.</p> </li>
          * </ul>  <p>The <code>CreateFileSystem</code> call returns while the file
@@ -742,15 +742,15 @@ namespace FSx
          * deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
          * delete all the volumes and storage virtual machines (SVMs) on the file system.
          * Then provide a <code>FileSystemId</code> value to the
-         * <code>DeleFileSystem</code> operation.</p> <p>By default, when you delete an
+         * <code>DeleteFileSystem</code> operation.</p> <p>By default, when you delete an
          * Amazon FSx for Windows File Server file system, a final backup is created upon
          * deletion. This final backup isn't subject to the file system's retention policy,
          * and must be manually deleted.</p> <p>To delete an Amazon FSx for Lustre file
          * system, first <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/unmounting-fs.html">unmount</a>
          * it from every connected Amazon EC2 instance, then provide a
-         * <code>FileSystemId</code> value to the <code>DeleFileSystem</code> operation. By
-         * default, Amazon FSx will not take a final backup when the
+         * <code>FileSystemId</code> value to the <code>DeleteFileSystem</code> operation.
+         * By default, Amazon FSx will not take a final backup when the
          * <code>DeleteFileSystem</code> operation is invoked. On file systems not linked
          * to an Amazon S3 bucket, set <code>SkipFinalBackup</code> to <code>false</code>
          * to take a final backup of the file system you are deleting. Backups cannot be
@@ -904,13 +904,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
+        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeBackups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request) const
+        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeBackups, request);
         }
@@ -919,7 +919,7 @@ namespace FSx
          * An Async wrapper for DescribeBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        void DescribeBackupsAsync(const DescribeBackupsRequestT& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeBackupsAsync(const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeBackups, request, handler, context);
         }
@@ -949,13 +949,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDataRepositoryAssociationsOutcome DescribeDataRepositoryAssociations(const Model::DescribeDataRepositoryAssociationsRequest& request) const;
+        virtual Model::DescribeDataRepositoryAssociationsOutcome DescribeDataRepositoryAssociations(const Model::DescribeDataRepositoryAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDataRepositoryAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDataRepositoryAssociationsRequestT = Model::DescribeDataRepositoryAssociationsRequest>
-        Model::DescribeDataRepositoryAssociationsOutcomeCallable DescribeDataRepositoryAssociationsCallable(const DescribeDataRepositoryAssociationsRequestT& request) const
+        Model::DescribeDataRepositoryAssociationsOutcomeCallable DescribeDataRepositoryAssociationsCallable(const DescribeDataRepositoryAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeDataRepositoryAssociations, request);
         }
@@ -964,7 +964,7 @@ namespace FSx
          * An Async wrapper for DescribeDataRepositoryAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDataRepositoryAssociationsRequestT = Model::DescribeDataRepositoryAssociationsRequest>
-        void DescribeDataRepositoryAssociationsAsync(const DescribeDataRepositoryAssociationsRequestT& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDataRepositoryAssociationsAsync(const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDataRepositoryAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeDataRepositoryAssociations, request, handler, context);
         }
@@ -986,13 +986,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDataRepositoryTasksOutcome DescribeDataRepositoryTasks(const Model::DescribeDataRepositoryTasksRequest& request) const;
+        virtual Model::DescribeDataRepositoryTasksOutcome DescribeDataRepositoryTasks(const Model::DescribeDataRepositoryTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDataRepositoryTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDataRepositoryTasksRequestT = Model::DescribeDataRepositoryTasksRequest>
-        Model::DescribeDataRepositoryTasksOutcomeCallable DescribeDataRepositoryTasksCallable(const DescribeDataRepositoryTasksRequestT& request) const
+        Model::DescribeDataRepositoryTasksOutcomeCallable DescribeDataRepositoryTasksCallable(const DescribeDataRepositoryTasksRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeDataRepositoryTasks, request);
         }
@@ -1001,7 +1001,7 @@ namespace FSx
          * An Async wrapper for DescribeDataRepositoryTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDataRepositoryTasksRequestT = Model::DescribeDataRepositoryTasksRequest>
-        void DescribeDataRepositoryTasksAsync(const DescribeDataRepositoryTasksRequestT& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDataRepositoryTasksAsync(const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDataRepositoryTasksRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeDataRepositoryTasks, request, handler, context);
         }
@@ -1032,13 +1032,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileCaches">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFileCachesOutcome DescribeFileCaches(const Model::DescribeFileCachesRequest& request) const;
+        virtual Model::DescribeFileCachesOutcome DescribeFileCaches(const Model::DescribeFileCachesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFileCaches that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFileCachesRequestT = Model::DescribeFileCachesRequest>
-        Model::DescribeFileCachesOutcomeCallable DescribeFileCachesCallable(const DescribeFileCachesRequestT& request) const
+        Model::DescribeFileCachesOutcomeCallable DescribeFileCachesCallable(const DescribeFileCachesRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeFileCaches, request);
         }
@@ -1047,7 +1047,7 @@ namespace FSx
          * An Async wrapper for DescribeFileCaches that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFileCachesRequestT = Model::DescribeFileCachesRequest>
-        void DescribeFileCachesAsync(const DescribeFileCachesRequestT& request, const DescribeFileCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFileCachesAsync(const DescribeFileCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFileCachesRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeFileCaches, request, handler, context);
         }
@@ -1107,13 +1107,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystems">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFileSystemsOutcome DescribeFileSystems(const Model::DescribeFileSystemsRequest& request) const;
+        virtual Model::DescribeFileSystemsOutcome DescribeFileSystems(const Model::DescribeFileSystemsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFileSystems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFileSystemsRequestT = Model::DescribeFileSystemsRequest>
-        Model::DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const DescribeFileSystemsRequestT& request) const
+        Model::DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const DescribeFileSystemsRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeFileSystems, request);
         }
@@ -1122,7 +1122,7 @@ namespace FSx
          * An Async wrapper for DescribeFileSystems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFileSystemsRequestT = Model::DescribeFileSystemsRequest>
-        void DescribeFileSystemsAsync(const DescribeFileSystemsRequestT& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFileSystemsAsync(const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFileSystemsRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeFileSystems, request, handler, context);
         }
@@ -1130,19 +1130,19 @@ namespace FSx
         /**
          * <p>Indicates whether participant accounts in your organization can create Amazon
          * FSx for NetApp ONTAP Multi-AZ file systems in subnets that are shared by a
-         * virtual private cloud (VPC) owner. For more information, see the <a
-         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon
-         * FSx for NetApp ONTAP User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * virtual private cloud (VPC) owner. For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/creating-file-systems.html#fsxn-vpc-shared-subnets">Creating
+         * FSx for ONTAP file systems in shared subnets</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSharedVpcConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSharedVpcConfigurationOutcome DescribeSharedVpcConfiguration(const Model::DescribeSharedVpcConfigurationRequest& request) const;
+        virtual Model::DescribeSharedVpcConfigurationOutcome DescribeSharedVpcConfiguration(const Model::DescribeSharedVpcConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSharedVpcConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSharedVpcConfigurationRequestT = Model::DescribeSharedVpcConfigurationRequest>
-        Model::DescribeSharedVpcConfigurationOutcomeCallable DescribeSharedVpcConfigurationCallable(const DescribeSharedVpcConfigurationRequestT& request) const
+        Model::DescribeSharedVpcConfigurationOutcomeCallable DescribeSharedVpcConfigurationCallable(const DescribeSharedVpcConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeSharedVpcConfiguration, request);
         }
@@ -1151,7 +1151,7 @@ namespace FSx
          * An Async wrapper for DescribeSharedVpcConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSharedVpcConfigurationRequestT = Model::DescribeSharedVpcConfigurationRequest>
-        void DescribeSharedVpcConfigurationAsync(const DescribeSharedVpcConfigurationRequestT& request, const DescribeSharedVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSharedVpcConfigurationAsync(const DescribeSharedVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSharedVpcConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeSharedVpcConfiguration, request, handler, context);
         }
@@ -1180,13 +1180,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
+        virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSnapshotsRequestT = Model::DescribeSnapshotsRequest>
-        Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const DescribeSnapshotsRequestT& request) const
+        Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const DescribeSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeSnapshots, request);
         }
@@ -1195,7 +1195,7 @@ namespace FSx
          * An Async wrapper for DescribeSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSnapshotsRequestT = Model::DescribeSnapshotsRequest>
-        void DescribeSnapshotsAsync(const DescribeSnapshotsRequestT& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSnapshotsAsync(const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeSnapshots, request, handler, context);
         }
@@ -1206,13 +1206,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeStorageVirtualMachinesOutcome DescribeStorageVirtualMachines(const Model::DescribeStorageVirtualMachinesRequest& request) const;
+        virtual Model::DescribeStorageVirtualMachinesOutcome DescribeStorageVirtualMachines(const Model::DescribeStorageVirtualMachinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeStorageVirtualMachines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeStorageVirtualMachinesRequestT = Model::DescribeStorageVirtualMachinesRequest>
-        Model::DescribeStorageVirtualMachinesOutcomeCallable DescribeStorageVirtualMachinesCallable(const DescribeStorageVirtualMachinesRequestT& request) const
+        Model::DescribeStorageVirtualMachinesOutcomeCallable DescribeStorageVirtualMachinesCallable(const DescribeStorageVirtualMachinesRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeStorageVirtualMachines, request);
         }
@@ -1221,7 +1221,7 @@ namespace FSx
          * An Async wrapper for DescribeStorageVirtualMachines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeStorageVirtualMachinesRequestT = Model::DescribeStorageVirtualMachinesRequest>
-        void DescribeStorageVirtualMachinesAsync(const DescribeStorageVirtualMachinesRequestT& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeStorageVirtualMachinesAsync(const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeStorageVirtualMachinesRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeStorageVirtualMachines, request, handler, context);
         }
@@ -1232,13 +1232,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
+        virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeVolumesRequestT = Model::DescribeVolumesRequest>
-        Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const DescribeVolumesRequestT& request) const
+        Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const DescribeVolumesRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::DescribeVolumes, request);
         }
@@ -1247,7 +1247,7 @@ namespace FSx
          * An Async wrapper for DescribeVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeVolumesRequestT = Model::DescribeVolumesRequest>
-        void DescribeVolumesAsync(const DescribeVolumesRequestT& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeVolumesAsync(const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVolumesRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::DescribeVolumes, request, handler, context);
         }
@@ -1532,6 +1532,7 @@ namespace FSx
          * <code>DataCompressionType</code> </p> </li> <li> <p>
          * <code>LogConfiguration</code> </p> </li> <li> <p>
          * <code>LustreRootSquashConfiguration</code> </p> </li> <li> <p>
+         * <code>MetadataConfiguration</code> </p> </li> <li> <p>
          * <code>PerUnitStorageThroughput</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p>
          * <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul> <p>For FSx for ONTAP
@@ -1595,13 +1596,13 @@ namespace FSx
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSharedVpcConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateSharedVpcConfigurationOutcome UpdateSharedVpcConfiguration(const Model::UpdateSharedVpcConfigurationRequest& request) const;
+        virtual Model::UpdateSharedVpcConfigurationOutcome UpdateSharedVpcConfiguration(const Model::UpdateSharedVpcConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateSharedVpcConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateSharedVpcConfigurationRequestT = Model::UpdateSharedVpcConfigurationRequest>
-        Model::UpdateSharedVpcConfigurationOutcomeCallable UpdateSharedVpcConfigurationCallable(const UpdateSharedVpcConfigurationRequestT& request) const
+        Model::UpdateSharedVpcConfigurationOutcomeCallable UpdateSharedVpcConfigurationCallable(const UpdateSharedVpcConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&FSxClient::UpdateSharedVpcConfiguration, request);
         }
@@ -1610,7 +1611,7 @@ namespace FSx
          * An Async wrapper for UpdateSharedVpcConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateSharedVpcConfigurationRequestT = Model::UpdateSharedVpcConfigurationRequest>
-        void UpdateSharedVpcConfigurationAsync(const UpdateSharedVpcConfigurationRequestT& request, const UpdateSharedVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateSharedVpcConfigurationAsync(const UpdateSharedVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateSharedVpcConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&FSxClient::UpdateSharedVpcConfiguration, request, handler, context);
         }
@@ -1701,7 +1702,6 @@ namespace FSx
       void init(const FSxClientConfiguration& clientConfiguration);
 
       FSxClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FSxEndpointProviderBase> m_endpointProvider;
   };
 

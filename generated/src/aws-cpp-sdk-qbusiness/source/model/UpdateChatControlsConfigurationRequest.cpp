@@ -14,25 +14,20 @@ using namespace Aws::Utils;
 
 UpdateChatControlsConfigurationRequest::UpdateChatControlsConfigurationRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_blockedPhrasesConfigurationUpdateHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_responseScope(ResponseScope::NOT_SET),
     m_responseScopeHasBeenSet(false),
+    m_blockedPhrasesConfigurationUpdateHasBeenSet(false),
     m_topicConfigurationsToCreateOrUpdateHasBeenSet(false),
-    m_topicConfigurationsToDeleteHasBeenSet(false)
+    m_topicConfigurationsToDeleteHasBeenSet(false),
+    m_creatorModeConfigurationHasBeenSet(false)
 {
 }
 
 Aws::String UpdateChatControlsConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_blockedPhrasesConfigurationUpdateHasBeenSet)
-  {
-   payload.WithObject("blockedPhrasesConfigurationUpdate", m_blockedPhrasesConfigurationUpdate.Jsonize());
-
-  }
 
   if(m_clientTokenHasBeenSet)
   {
@@ -43,6 +38,12 @@ Aws::String UpdateChatControlsConfigurationRequest::SerializePayload() const
   if(m_responseScopeHasBeenSet)
   {
    payload.WithString("responseScope", ResponseScopeMapper::GetNameForResponseScope(m_responseScope));
+  }
+
+  if(m_blockedPhrasesConfigurationUpdateHasBeenSet)
+  {
+   payload.WithObject("blockedPhrasesConfigurationUpdate", m_blockedPhrasesConfigurationUpdate.Jsonize());
+
   }
 
   if(m_topicConfigurationsToCreateOrUpdateHasBeenSet)
@@ -64,6 +65,12 @@ Aws::String UpdateChatControlsConfigurationRequest::SerializePayload() const
      topicConfigurationsToDeleteJsonList[topicConfigurationsToDeleteIndex].AsObject(m_topicConfigurationsToDelete[topicConfigurationsToDeleteIndex].Jsonize());
    }
    payload.WithArray("topicConfigurationsToDelete", std::move(topicConfigurationsToDeleteJsonList));
+
+  }
+
+  if(m_creatorModeConfigurationHasBeenSet)
+  {
+   payload.WithObject("creatorModeConfiguration", m_creatorModeConfiguration.Jsonize());
 
   }
 

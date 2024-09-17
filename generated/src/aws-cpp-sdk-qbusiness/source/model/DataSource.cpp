@@ -19,35 +19,29 @@ namespace Model
 {
 
 DataSource::DataSource() : 
-    m_createdAtHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
+    m_status(DataSourceStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
-DataSource::DataSource(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DataSource::DataSource(JsonView jsonValue)
+  : DataSource()
 {
   *this = jsonValue;
 }
 
 DataSource& DataSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("displayName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_displayName = jsonValue.GetString("displayName");
 
-    m_createdAtHasBeenSet = true;
+    m_displayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dataSourceId"))
@@ -57,25 +51,18 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_dataSourceIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-    m_displayNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -85,6 +72,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,9 +86,10 @@ JsonValue DataSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("displayName", m_displayName);
+
   }
 
   if(m_dataSourceIdHasBeenSet)
@@ -103,26 +98,25 @@ JsonValue DataSource::Jsonize() const
 
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
-  }
-
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", m_type);
 
   }
 
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
   }
 
   return payload;

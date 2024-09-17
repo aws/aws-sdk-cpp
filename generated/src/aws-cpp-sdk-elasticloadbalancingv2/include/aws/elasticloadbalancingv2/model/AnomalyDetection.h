@@ -41,67 +41,29 @@ namespace Model
     AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The latest anomaly detection result.</p>
      */
     inline const AnomalyResultEnum& GetResult() const{ return m_result; }
-
-    /**
-     * <p>The latest anomaly detection result.</p>
-     */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-
-    /**
-     * <p>The latest anomaly detection result.</p>
-     */
     inline void SetResult(const AnomalyResultEnum& value) { m_resultHasBeenSet = true; m_result = value; }
-
-    /**
-     * <p>The latest anomaly detection result.</p>
-     */
     inline void SetResult(AnomalyResultEnum&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-
-    /**
-     * <p>The latest anomaly detection result.</p>
-     */
     inline AnomalyDetection& WithResult(const AnomalyResultEnum& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>The latest anomaly detection result.</p>
-     */
     inline AnomalyDetection& WithResult(AnomalyResultEnum&& value) { SetResult(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether anomaly mitigation is in progress.</p>
      */
     inline const MitigationInEffectEnum& GetMitigationInEffect() const{ return m_mitigationInEffect; }
-
-    /**
-     * <p>Indicates whether anomaly mitigation is in progress.</p>
-     */
     inline bool MitigationInEffectHasBeenSet() const { return m_mitigationInEffectHasBeenSet; }
-
-    /**
-     * <p>Indicates whether anomaly mitigation is in progress.</p>
-     */
     inline void SetMitigationInEffect(const MitigationInEffectEnum& value) { m_mitigationInEffectHasBeenSet = true; m_mitigationInEffect = value; }
-
-    /**
-     * <p>Indicates whether anomaly mitigation is in progress.</p>
-     */
     inline void SetMitigationInEffect(MitigationInEffectEnum&& value) { m_mitigationInEffectHasBeenSet = true; m_mitigationInEffect = std::move(value); }
-
-    /**
-     * <p>Indicates whether anomaly mitigation is in progress.</p>
-     */
     inline AnomalyDetection& WithMitigationInEffect(const MitigationInEffectEnum& value) { SetMitigationInEffect(value); return *this;}
-
-    /**
-     * <p>Indicates whether anomaly mitigation is in progress.</p>
-     */
     inline AnomalyDetection& WithMitigationInEffect(MitigationInEffectEnum&& value) { SetMitigationInEffect(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AnomalyResultEnum m_result;

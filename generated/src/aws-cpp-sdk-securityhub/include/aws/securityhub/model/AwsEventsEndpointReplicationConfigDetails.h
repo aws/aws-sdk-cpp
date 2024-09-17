@@ -39,46 +39,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The state of event replication.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
-
-    /**
-     * <p> The state of event replication.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p> The state of event replication.</p>
-     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p> The state of event replication.</p>
-     */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p> The state of event replication.</p>
-     */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-
-    /**
-     * <p> The state of event replication.</p>
-     */
     inline AwsEventsEndpointReplicationConfigDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
-
-    /**
-     * <p> The state of event replication.</p>
-     */
     inline AwsEventsEndpointReplicationConfigDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-
-    /**
-     * <p> The state of event replication.</p>
-     */
     inline AwsEventsEndpointReplicationConfigDetails& WithState(const char* value) { SetState(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_state;

@@ -26,11 +26,8 @@ CreateThemeData::CreateThemeData() :
 {
 }
 
-CreateThemeData::CreateThemeData(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CreateThemeData::CreateThemeData(JsonView jsonValue)
+  : CreateThemeData()
 {
   *this = jsonValue;
 }

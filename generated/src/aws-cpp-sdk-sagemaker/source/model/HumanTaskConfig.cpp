@@ -38,23 +38,8 @@ HumanTaskConfig::HumanTaskConfig() :
 {
 }
 
-HumanTaskConfig::HumanTaskConfig(JsonView jsonValue) : 
-    m_workteamArnHasBeenSet(false),
-    m_uiConfigHasBeenSet(false),
-    m_preHumanTaskLambdaArnHasBeenSet(false),
-    m_taskKeywordsHasBeenSet(false),
-    m_taskTitleHasBeenSet(false),
-    m_taskDescriptionHasBeenSet(false),
-    m_numberOfHumanWorkersPerDataObject(0),
-    m_numberOfHumanWorkersPerDataObjectHasBeenSet(false),
-    m_taskTimeLimitInSeconds(0),
-    m_taskTimeLimitInSecondsHasBeenSet(false),
-    m_taskAvailabilityLifetimeInSeconds(0),
-    m_taskAvailabilityLifetimeInSecondsHasBeenSet(false),
-    m_maxConcurrentTaskCount(0),
-    m_maxConcurrentTaskCountHasBeenSet(false),
-    m_annotationConsolidationConfigHasBeenSet(false),
-    m_publicWorkforceTaskPriceHasBeenSet(false)
+HumanTaskConfig::HumanTaskConfig(JsonView jsonValue)
+  : HumanTaskConfig()
 {
   *this = jsonValue;
 }

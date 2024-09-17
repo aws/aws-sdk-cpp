@@ -34,46 +34,19 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the snapshot copy configuration to delete.</p>
      */
     inline const Aws::String& GetSnapshotCopyConfigurationId() const{ return m_snapshotCopyConfigurationId; }
-
-    /**
-     * <p>The ID of the snapshot copy configuration to delete.</p>
-     */
     inline bool SnapshotCopyConfigurationIdHasBeenSet() const { return m_snapshotCopyConfigurationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the snapshot copy configuration to delete.</p>
-     */
     inline void SetSnapshotCopyConfigurationId(const Aws::String& value) { m_snapshotCopyConfigurationIdHasBeenSet = true; m_snapshotCopyConfigurationId = value; }
-
-    /**
-     * <p>The ID of the snapshot copy configuration to delete.</p>
-     */
     inline void SetSnapshotCopyConfigurationId(Aws::String&& value) { m_snapshotCopyConfigurationIdHasBeenSet = true; m_snapshotCopyConfigurationId = std::move(value); }
-
-    /**
-     * <p>The ID of the snapshot copy configuration to delete.</p>
-     */
     inline void SetSnapshotCopyConfigurationId(const char* value) { m_snapshotCopyConfigurationIdHasBeenSet = true; m_snapshotCopyConfigurationId.assign(value); }
-
-    /**
-     * <p>The ID of the snapshot copy configuration to delete.</p>
-     */
     inline DeleteSnapshotCopyConfigurationRequest& WithSnapshotCopyConfigurationId(const Aws::String& value) { SetSnapshotCopyConfigurationId(value); return *this;}
-
-    /**
-     * <p>The ID of the snapshot copy configuration to delete.</p>
-     */
     inline DeleteSnapshotCopyConfigurationRequest& WithSnapshotCopyConfigurationId(Aws::String&& value) { SetSnapshotCopyConfigurationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the snapshot copy configuration to delete.</p>
-     */
     inline DeleteSnapshotCopyConfigurationRequest& WithSnapshotCopyConfigurationId(const char* value) { SetSnapshotCopyConfigurationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotCopyConfigurationId;

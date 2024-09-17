@@ -41,26 +41,8 @@ FlowDefinition::FlowDefinition() :
 {
 }
 
-FlowDefinition::FlowDefinition(JsonView jsonValue) : 
-    m_flowArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_flowNameHasBeenSet(false),
-    m_flowStatus(FlowStatus::NOT_SET),
-    m_flowStatusHasBeenSet(false),
-    m_sourceConnectorType(ConnectorType::NOT_SET),
-    m_sourceConnectorTypeHasBeenSet(false),
-    m_sourceConnectorLabelHasBeenSet(false),
-    m_destinationConnectorType(ConnectorType::NOT_SET),
-    m_destinationConnectorTypeHasBeenSet(false),
-    m_destinationConnectorLabelHasBeenSet(false),
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastRunExecutionDetailsHasBeenSet(false)
+FlowDefinition::FlowDefinition(JsonView jsonValue)
+  : FlowDefinition()
 {
   *this = jsonValue;
 }

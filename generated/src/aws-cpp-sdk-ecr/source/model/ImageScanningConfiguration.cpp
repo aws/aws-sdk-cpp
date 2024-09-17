@@ -24,9 +24,8 @@ ImageScanningConfiguration::ImageScanningConfiguration() :
 {
 }
 
-ImageScanningConfiguration::ImageScanningConfiguration(JsonView jsonValue) : 
-    m_scanOnPush(false),
-    m_scanOnPushHasBeenSet(false)
+ImageScanningConfiguration::ImageScanningConfiguration(JsonView jsonValue)
+  : ImageScanningConfiguration()
 {
   *this = jsonValue;
 }

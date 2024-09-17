@@ -39,79 +39,32 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resize specification for Spot Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
+     * contains the allocation strategy and the resize timeout period. </p>
      */
     inline const SpotResizingSpecification& GetSpotResizeSpecification() const{ return m_spotResizeSpecification; }
-
-    /**
-     * <p>The resize specification for Spot Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline bool SpotResizeSpecificationHasBeenSet() const { return m_spotResizeSpecificationHasBeenSet; }
-
-    /**
-     * <p>The resize specification for Spot Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline void SetSpotResizeSpecification(const SpotResizingSpecification& value) { m_spotResizeSpecificationHasBeenSet = true; m_spotResizeSpecification = value; }
-
-    /**
-     * <p>The resize specification for Spot Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline void SetSpotResizeSpecification(SpotResizingSpecification&& value) { m_spotResizeSpecificationHasBeenSet = true; m_spotResizeSpecification = std::move(value); }
-
-    /**
-     * <p>The resize specification for Spot Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline InstanceFleetResizingSpecifications& WithSpotResizeSpecification(const SpotResizingSpecification& value) { SetSpotResizeSpecification(value); return *this;}
-
-    /**
-     * <p>The resize specification for Spot Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline InstanceFleetResizingSpecifications& WithSpotResizeSpecification(SpotResizingSpecification&& value) { SetSpotResizeSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resize specification for On-Demand Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
+     * contains the allocation strategy, capacity reservation options, and the resize
+     * timeout period. </p>
      */
     inline const OnDemandResizingSpecification& GetOnDemandResizeSpecification() const{ return m_onDemandResizeSpecification; }
-
-    /**
-     * <p>The resize specification for On-Demand Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline bool OnDemandResizeSpecificationHasBeenSet() const { return m_onDemandResizeSpecificationHasBeenSet; }
-
-    /**
-     * <p>The resize specification for On-Demand Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline void SetOnDemandResizeSpecification(const OnDemandResizingSpecification& value) { m_onDemandResizeSpecificationHasBeenSet = true; m_onDemandResizeSpecification = value; }
-
-    /**
-     * <p>The resize specification for On-Demand Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline void SetOnDemandResizeSpecification(OnDemandResizingSpecification&& value) { m_onDemandResizeSpecificationHasBeenSet = true; m_onDemandResizeSpecification = std::move(value); }
-
-    /**
-     * <p>The resize specification for On-Demand Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline InstanceFleetResizingSpecifications& WithOnDemandResizeSpecification(const OnDemandResizingSpecification& value) { SetOnDemandResizeSpecification(value); return *this;}
-
-    /**
-     * <p>The resize specification for On-Demand Instances in the instance fleet, which
-     * contains the resize timeout period. </p>
-     */
     inline InstanceFleetResizingSpecifications& WithOnDemandResizeSpecification(OnDemandResizingSpecification&& value) { SetOnDemandResizeSpecification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SpotResizingSpecification m_spotResizeSpecification;

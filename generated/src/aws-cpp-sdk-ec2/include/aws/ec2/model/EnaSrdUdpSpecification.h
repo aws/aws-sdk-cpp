@@ -43,30 +43,16 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To
      * specify this setting, you must first enable ENA Express.</p>
      */
     inline bool GetEnaSrdUdpEnabled() const{ return m_enaSrdUdpEnabled; }
-
-    /**
-     * <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To
-     * specify this setting, you must first enable ENA Express.</p>
-     */
     inline bool EnaSrdUdpEnabledHasBeenSet() const { return m_enaSrdUdpEnabledHasBeenSet; }
-
-    /**
-     * <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To
-     * specify this setting, you must first enable ENA Express.</p>
-     */
     inline void SetEnaSrdUdpEnabled(bool value) { m_enaSrdUdpEnabledHasBeenSet = true; m_enaSrdUdpEnabled = value; }
-
-    /**
-     * <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To
-     * specify this setting, you must first enable ENA Express.</p>
-     */
     inline EnaSrdUdpSpecification& WithEnaSrdUdpEnabled(bool value) { SetEnaSrdUdpEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enaSrdUdpEnabled;

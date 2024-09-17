@@ -39,55 +39,27 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The next step in the conversation.</p>
      */
     inline const DialogState& GetNextStep() const{ return m_nextStep; }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline bool NextStepHasBeenSet() const { return m_nextStepHasBeenSet; }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline void SetNextStep(const DialogState& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline void SetNextStep(DialogState&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline DefaultConditionalBranch& WithNextStep(const DialogState& value) { SetNextStep(value); return *this;}
-
-    /**
-     * <p>The next step in the conversation.</p>
-     */
     inline DefaultConditionalBranch& WithNextStep(DialogState&& value) { SetNextStep(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseSpecification& GetResponse() const{ return m_response; }
-
-    
     inline bool ResponseHasBeenSet() const { return m_responseHasBeenSet; }
-
-    
     inline void SetResponse(const ResponseSpecification& value) { m_responseHasBeenSet = true; m_response = value; }
-
-    
     inline void SetResponse(ResponseSpecification&& value) { m_responseHasBeenSet = true; m_response = std::move(value); }
-
-    
     inline DefaultConditionalBranch& WithResponse(const ResponseSpecification& value) { SetResponse(value); return *this;}
-
-    
     inline DefaultConditionalBranch& WithResponse(ResponseSpecification&& value) { SetResponse(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DialogState m_nextStep;

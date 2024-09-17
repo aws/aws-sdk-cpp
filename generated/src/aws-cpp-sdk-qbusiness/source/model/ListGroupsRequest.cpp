@@ -17,12 +17,12 @@ using namespace Aws::Http;
 
 ListGroupsRequest::ListGroupsRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
     m_indexIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
+    m_updatedEarlierThanHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_updatedEarlierThanHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -34,17 +34,17 @@ Aws::String ListGroupsRequest::SerializePayload() const
 void ListGroupsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_updatedEarlierThanHasBeenSet)
+    {
+      ss << m_updatedEarlierThan.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("updatedEarlierThan", ss.str());
+      ss.str("");
+    }
+
     if(m_dataSourceIdHasBeenSet)
     {
       ss << m_dataSourceId;
       uri.AddQueryStringParameter("dataSourceId", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 
@@ -55,10 +55,10 @@ void ListGroupsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_updatedEarlierThanHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << m_updatedEarlierThan.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("updatedEarlierThan", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The refresh configuration for a dataset.</p>
      */
     inline const RefreshConfiguration& GetRefreshConfiguration() const{ return m_refreshConfiguration; }
-
-    /**
-     * <p>The refresh configuration for a dataset.</p>
-     */
     inline bool RefreshConfigurationHasBeenSet() const { return m_refreshConfigurationHasBeenSet; }
-
-    /**
-     * <p>The refresh configuration for a dataset.</p>
-     */
     inline void SetRefreshConfiguration(const RefreshConfiguration& value) { m_refreshConfigurationHasBeenSet = true; m_refreshConfiguration = value; }
-
-    /**
-     * <p>The refresh configuration for a dataset.</p>
-     */
     inline void SetRefreshConfiguration(RefreshConfiguration&& value) { m_refreshConfigurationHasBeenSet = true; m_refreshConfiguration = std::move(value); }
-
-    /**
-     * <p>The refresh configuration for a dataset.</p>
-     */
     inline DataSetRefreshProperties& WithRefreshConfiguration(const RefreshConfiguration& value) { SetRefreshConfiguration(value); return *this;}
-
-    /**
-     * <p>The refresh configuration for a dataset.</p>
-     */
     inline DataSetRefreshProperties& WithRefreshConfiguration(RefreshConfiguration&& value) { SetRefreshConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RefreshConfiguration m_refreshConfiguration;

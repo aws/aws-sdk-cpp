@@ -36,29 +36,15 @@ ModelSummary::ModelSummary() :
     m_latestScheduledRetrainingStartTimeHasBeenSet(false),
     m_nextScheduledRetrainingStartDateHasBeenSet(false),
     m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
-    m_retrainingSchedulerStatusHasBeenSet(false)
+    m_retrainingSchedulerStatusHasBeenSet(false),
+    m_modelDiagnosticsOutputConfigurationHasBeenSet(false),
+    m_modelQuality(ModelQuality::NOT_SET),
+    m_modelQualityHasBeenSet(false)
 {
 }
 
-ModelSummary::ModelSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_activeModelVersion(0),
-    m_activeModelVersionHasBeenSet(false),
-    m_activeModelVersionArnHasBeenSet(false),
-    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
-    m_latestScheduledRetrainingStatusHasBeenSet(false),
-    m_latestScheduledRetrainingModelVersion(0),
-    m_latestScheduledRetrainingModelVersionHasBeenSet(false),
-    m_latestScheduledRetrainingStartTimeHasBeenSet(false),
-    m_nextScheduledRetrainingStartDateHasBeenSet(false),
-    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
-    m_retrainingSchedulerStatusHasBeenSet(false)
+ModelSummary::ModelSummary(JsonView jsonValue)
+  : ModelSummary()
 {
   *this = jsonValue;
 }
@@ -156,6 +142,20 @@ ModelSummary& ModelSummary::operator =(JsonView jsonValue)
     m_retrainingSchedulerStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelDiagnosticsOutputConfiguration"))
+  {
+    m_modelDiagnosticsOutputConfiguration = jsonValue.GetObject("ModelDiagnosticsOutputConfiguration");
+
+    m_modelDiagnosticsOutputConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelQuality"))
+  {
+    m_modelQuality = ModelQualityMapper::GetModelQualityForName(jsonValue.GetString("ModelQuality"));
+
+    m_modelQualityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -233,6 +233,17 @@ JsonValue ModelSummary::Jsonize() const
   if(m_retrainingSchedulerStatusHasBeenSet)
   {
    payload.WithString("RetrainingSchedulerStatus", RetrainingSchedulerStatusMapper::GetNameForRetrainingSchedulerStatus(m_retrainingSchedulerStatus));
+  }
+
+  if(m_modelDiagnosticsOutputConfigurationHasBeenSet)
+  {
+   payload.WithObject("ModelDiagnosticsOutputConfiguration", m_modelDiagnosticsOutputConfiguration.Jsonize());
+
+  }
+
+  if(m_modelQualityHasBeenSet)
+  {
+   payload.WithString("ModelQuality", ModelQualityMapper::GetNameForModelQuality(m_modelQuality));
   }
 
   return payload;

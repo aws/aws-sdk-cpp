@@ -23,8 +23,8 @@ BatchDeleteObject::BatchDeleteObject() :
 {
 }
 
-BatchDeleteObject::BatchDeleteObject(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false)
+BatchDeleteObject::BatchDeleteObject(JsonView jsonValue)
+  : BatchDeleteObject()
 {
   *this = jsonValue;
 }

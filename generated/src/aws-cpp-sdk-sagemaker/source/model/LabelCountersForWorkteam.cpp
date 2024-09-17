@@ -28,13 +28,8 @@ LabelCountersForWorkteam::LabelCountersForWorkteam() :
 {
 }
 
-LabelCountersForWorkteam::LabelCountersForWorkteam(JsonView jsonValue) : 
-    m_humanLabeled(0),
-    m_humanLabeledHasBeenSet(false),
-    m_pendingHuman(0),
-    m_pendingHumanHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
+LabelCountersForWorkteam::LabelCountersForWorkteam(JsonView jsonValue)
+  : LabelCountersForWorkteam()
 {
   *this = jsonValue;
 }

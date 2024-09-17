@@ -39,67 +39,29 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies that WAF should allow requests by default. </p>
      */
     inline const AwsWafv2ActionAllowDetails& GetAllow() const{ return m_allow; }
-
-    /**
-     * <p> Specifies that WAF should allow requests by default. </p>
-     */
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
-
-    /**
-     * <p> Specifies that WAF should allow requests by default. </p>
-     */
     inline void SetAllow(const AwsWafv2ActionAllowDetails& value) { m_allowHasBeenSet = true; m_allow = value; }
-
-    /**
-     * <p> Specifies that WAF should allow requests by default. </p>
-     */
     inline void SetAllow(AwsWafv2ActionAllowDetails&& value) { m_allowHasBeenSet = true; m_allow = std::move(value); }
-
-    /**
-     * <p> Specifies that WAF should allow requests by default. </p>
-     */
     inline AwsWafv2WebAclActionDetails& WithAllow(const AwsWafv2ActionAllowDetails& value) { SetAllow(value); return *this;}
-
-    /**
-     * <p> Specifies that WAF should allow requests by default. </p>
-     */
     inline AwsWafv2WebAclActionDetails& WithAllow(AwsWafv2ActionAllowDetails&& value) { SetAllow(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies that WAF should block requests by default. </p>
      */
     inline const AwsWafv2ActionBlockDetails& GetBlock() const{ return m_block; }
-
-    /**
-     * <p> Specifies that WAF should block requests by default. </p>
-     */
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
-
-    /**
-     * <p> Specifies that WAF should block requests by default. </p>
-     */
     inline void SetBlock(const AwsWafv2ActionBlockDetails& value) { m_blockHasBeenSet = true; m_block = value; }
-
-    /**
-     * <p> Specifies that WAF should block requests by default. </p>
-     */
     inline void SetBlock(AwsWafv2ActionBlockDetails&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
-
-    /**
-     * <p> Specifies that WAF should block requests by default. </p>
-     */
     inline AwsWafv2WebAclActionDetails& WithBlock(const AwsWafv2ActionBlockDetails& value) { SetBlock(value); return *this;}
-
-    /**
-     * <p> Specifies that WAF should block requests by default. </p>
-     */
     inline AwsWafv2WebAclActionDetails& WithBlock(AwsWafv2ActionBlockDetails&& value) { SetBlock(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsWafv2ActionAllowDetails m_allow;

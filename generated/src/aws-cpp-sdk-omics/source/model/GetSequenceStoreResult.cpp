@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSequenceStoreResult::GetSequenceStoreResult()
+GetSequenceStoreResult::GetSequenceStoreResult() : 
+    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET)
 {
 }
 
 GetSequenceStoreResult::GetSequenceStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSequenceStoreResult()
 {
   *this = result;
 }
@@ -68,6 +70,18 @@ GetSequenceStoreResult& GetSequenceStoreResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("fallbackLocation"))
   {
     m_fallbackLocation = jsonValue.GetString("fallbackLocation");
+
+  }
+
+  if(jsonValue.ValueExists("s3Access"))
+  {
+    m_s3Access = jsonValue.GetObject("s3Access");
+
+  }
+
+  if(jsonValue.ValueExists("eTagAlgorithmFamily"))
+  {
+    m_eTagAlgorithmFamily = ETagAlgorithmFamilyMapper::GetETagAlgorithmFamilyForName(jsonValue.GetString("eTagAlgorithmFamily"));
 
   }
 

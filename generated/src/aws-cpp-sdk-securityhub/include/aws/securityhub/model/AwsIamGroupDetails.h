@@ -40,291 +40,103 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of the managed policies that are attached to the IAM group.</p>
      */
     inline const Aws::Vector<AwsIamAttachedManagedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
-
-    /**
-     * <p>A list of the managed policies that are attached to the IAM group.</p>
-     */
     inline bool AttachedManagedPoliciesHasBeenSet() const { return m_attachedManagedPoliciesHasBeenSet; }
-
-    /**
-     * <p>A list of the managed policies that are attached to the IAM group.</p>
-     */
     inline void SetAttachedManagedPolicies(const Aws::Vector<AwsIamAttachedManagedPolicy>& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = value; }
-
-    /**
-     * <p>A list of the managed policies that are attached to the IAM group.</p>
-     */
     inline void SetAttachedManagedPolicies(Aws::Vector<AwsIamAttachedManagedPolicy>&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = std::move(value); }
-
-    /**
-     * <p>A list of the managed policies that are attached to the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithAttachedManagedPolicies(const Aws::Vector<AwsIamAttachedManagedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
-
-    /**
-     * <p>A list of the managed policies that are attached to the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithAttachedManagedPolicies(Aws::Vector<AwsIamAttachedManagedPolicy>&& value) { SetAttachedManagedPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the managed policies that are attached to the IAM group.</p>
-     */
     inline AwsIamGroupDetails& AddAttachedManagedPolicies(const AwsIamAttachedManagedPolicy& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the managed policies that are attached to the IAM group.</p>
-     */
     inline AwsIamGroupDetails& AddAttachedManagedPolicies(AwsIamAttachedManagedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>Indicates when the IAM group was created.</p> <p>This field accepts only the
+     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
+     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
+     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+     * timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetCreateDate() const{ return m_createDate; }
-
-    /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-
-    /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetCreateDate(const Aws::String& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-
-    /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetCreateDate(Aws::String&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-
-    /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetCreateDate(const char* value) { m_createDateHasBeenSet = true; m_createDate.assign(value); }
-
-    /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsIamGroupDetails& WithCreateDate(const Aws::String& value) { SetCreateDate(value); return *this;}
-
-    /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsIamGroupDetails& WithCreateDate(Aws::String&& value) { SetCreateDate(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates when the IAM group was created.</p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsIamGroupDetails& WithCreateDate(const char* value) { SetCreateDate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the IAM group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The identifier of the IAM group.</p>
-     */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the IAM group.</p>
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p>The identifier of the IAM group.</p>
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * <p>The identifier of the IAM group.</p>
-     */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p>The identifier of the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier of the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the IAM group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The name of the IAM group.</p>
-     */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the IAM group.</p>
-     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The name of the IAM group.</p>
-     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The name of the IAM group.</p>
-     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The name of the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IAM group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of inline policies that are embedded in the group.</p>
      */
     inline const Aws::Vector<AwsIamGroupPolicy>& GetGroupPolicyList() const{ return m_groupPolicyList; }
-
-    /**
-     * <p>The list of inline policies that are embedded in the group.</p>
-     */
     inline bool GroupPolicyListHasBeenSet() const { return m_groupPolicyListHasBeenSet; }
-
-    /**
-     * <p>The list of inline policies that are embedded in the group.</p>
-     */
     inline void SetGroupPolicyList(const Aws::Vector<AwsIamGroupPolicy>& value) { m_groupPolicyListHasBeenSet = true; m_groupPolicyList = value; }
-
-    /**
-     * <p>The list of inline policies that are embedded in the group.</p>
-     */
     inline void SetGroupPolicyList(Aws::Vector<AwsIamGroupPolicy>&& value) { m_groupPolicyListHasBeenSet = true; m_groupPolicyList = std::move(value); }
-
-    /**
-     * <p>The list of inline policies that are embedded in the group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupPolicyList(const Aws::Vector<AwsIamGroupPolicy>& value) { SetGroupPolicyList(value); return *this;}
-
-    /**
-     * <p>The list of inline policies that are embedded in the group.</p>
-     */
     inline AwsIamGroupDetails& WithGroupPolicyList(Aws::Vector<AwsIamGroupPolicy>&& value) { SetGroupPolicyList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of inline policies that are embedded in the group.</p>
-     */
     inline AwsIamGroupDetails& AddGroupPolicyList(const AwsIamGroupPolicy& value) { m_groupPolicyListHasBeenSet = true; m_groupPolicyList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of inline policies that are embedded in the group.</p>
-     */
     inline AwsIamGroupDetails& AddGroupPolicyList(AwsIamGroupPolicy&& value) { m_groupPolicyListHasBeenSet = true; m_groupPolicyList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The path to the group.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The path to the group.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The path to the group.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The path to the group.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The path to the group.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The path to the group.</p>
-     */
     inline AwsIamGroupDetails& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The path to the group.</p>
-     */
     inline AwsIamGroupDetails& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path to the group.</p>
-     */
     inline AwsIamGroupDetails& WithPath(const char* value) { SetPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AwsIamAttachedManagedPolicy> m_attachedManagedPolicies;

@@ -19,45 +19,27 @@ namespace Model
 {
 
 DestinationSummary::DestinationSummary() : 
-    m_endTimeHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
     m_state(DestinationState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
-DestinationSummary::DestinationSummary(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(DestinationState::NOT_SET),
-    m_stateHasBeenSet(false)
+DestinationSummary::DestinationSummary(JsonView jsonValue)
+  : DestinationSummary()
 {
   *this = jsonValue;
 }
 
 DestinationSummary& DestinationSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetString("endTime");
-
-    m_endTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -67,6 +49,20 @@ DestinationSummary& DestinationSummary::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetString("endTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,15 +70,15 @@ JsonValue DestinationSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", DestinationStateMapper::GetNameForDestinationState(m_state));
   }
 
   if(m_startTimeHasBeenSet)
@@ -90,9 +86,9 @@ JsonValue DestinationSummary::Jsonize() const
    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_stateHasBeenSet)
+  if(m_endTimeHasBeenSet)
   {
-   payload.WithString("state", DestinationStateMapper::GetNameForDestinationState(m_state));
+   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

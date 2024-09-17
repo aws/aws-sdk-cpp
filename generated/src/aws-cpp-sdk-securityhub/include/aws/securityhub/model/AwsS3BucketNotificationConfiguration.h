@@ -39,46 +39,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configurations for S3 bucket notifications.</p>
      */
     inline const Aws::Vector<AwsS3BucketNotificationConfigurationDetail>& GetConfigurations() const{ return m_configurations; }
-
-    /**
-     * <p>Configurations for S3 bucket notifications.</p>
-     */
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-
-    /**
-     * <p>Configurations for S3 bucket notifications.</p>
-     */
     inline void SetConfigurations(const Aws::Vector<AwsS3BucketNotificationConfigurationDetail>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-
-    /**
-     * <p>Configurations for S3 bucket notifications.</p>
-     */
     inline void SetConfigurations(Aws::Vector<AwsS3BucketNotificationConfigurationDetail>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-
-    /**
-     * <p>Configurations for S3 bucket notifications.</p>
-     */
     inline AwsS3BucketNotificationConfiguration& WithConfigurations(const Aws::Vector<AwsS3BucketNotificationConfigurationDetail>& value) { SetConfigurations(value); return *this;}
-
-    /**
-     * <p>Configurations for S3 bucket notifications.</p>
-     */
     inline AwsS3BucketNotificationConfiguration& WithConfigurations(Aws::Vector<AwsS3BucketNotificationConfigurationDetail>&& value) { SetConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>Configurations for S3 bucket notifications.</p>
-     */
     inline AwsS3BucketNotificationConfiguration& AddConfigurations(const AwsS3BucketNotificationConfigurationDetail& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
-
-    /**
-     * <p>Configurations for S3 bucket notifications.</p>
-     */
     inline AwsS3BucketNotificationConfiguration& AddConfigurations(AwsS3BucketNotificationConfigurationDetail&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AwsS3BucketNotificationConfigurationDetail> m_configurations;

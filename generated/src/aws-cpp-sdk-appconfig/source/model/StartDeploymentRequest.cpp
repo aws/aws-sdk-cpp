@@ -20,7 +20,8 @@ StartDeploymentRequest::StartDeploymentRequest() :
     m_configurationVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false)
+    m_kmsKeyIdentifierHasBeenSet(false),
+    m_dynamicExtensionParametersHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,17 @@ Aws::String StartDeploymentRequest::SerializePayload() const
   if(m_kmsKeyIdentifierHasBeenSet)
   {
    payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
+
+  }
+
+  if(m_dynamicExtensionParametersHasBeenSet)
+  {
+   JsonValue dynamicExtensionParametersJsonMap;
+   for(auto& dynamicExtensionParametersItem : m_dynamicExtensionParameters)
+   {
+     dynamicExtensionParametersJsonMap.WithString(dynamicExtensionParametersItem.first, dynamicExtensionParametersItem.second);
+   }
+   payload.WithObject("DynamicExtensionParameters", std::move(dynamicExtensionParametersJsonMap));
 
   }
 

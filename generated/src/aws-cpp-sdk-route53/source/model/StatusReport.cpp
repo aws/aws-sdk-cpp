@@ -26,9 +26,8 @@ StatusReport::StatusReport() :
 {
 }
 
-StatusReport::StatusReport(const XmlNode& xmlNode) : 
-    m_statusHasBeenSet(false),
-    m_checkedTimeHasBeenSet(false)
+StatusReport::StatusReport(const XmlNode& xmlNode)
+  : StatusReport()
 {
   *this = xmlNode;
 }

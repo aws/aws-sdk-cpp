@@ -37,30 +37,14 @@ SnowflakeDestinationUpdate::SnowflakeDestinationUpdate() :
     m_retryOptionsHasBeenSet(false),
     m_s3BackupMode(SnowflakeS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false)
+    m_s3UpdateHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false),
+    m_bufferingHintsHasBeenSet(false)
 {
 }
 
-SnowflakeDestinationUpdate::SnowflakeDestinationUpdate(JsonView jsonValue) : 
-    m_accountUrlHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_keyPassphraseHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_snowflakeRoleConfigurationHasBeenSet(false),
-    m_dataLoadingOption(SnowflakeDataLoadingOption::NOT_SET),
-    m_dataLoadingOptionHasBeenSet(false),
-    m_metaDataColumnNameHasBeenSet(false),
-    m_contentColumnNameHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3BackupMode(SnowflakeS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false)
+SnowflakeDestinationUpdate::SnowflakeDestinationUpdate(JsonView jsonValue)
+  : SnowflakeDestinationUpdate()
 {
   *this = jsonValue;
 }
@@ -186,6 +170,20 @@ SnowflakeDestinationUpdate& SnowflakeDestinationUpdate::operator =(JsonView json
     m_s3UpdateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
+  {
+    m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
+
+    m_secretsManagerConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BufferingHints"))
+  {
+    m_bufferingHints = jsonValue.GetObject("BufferingHints");
+
+    m_bufferingHintsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,6 +288,18 @@ JsonValue SnowflakeDestinationUpdate::Jsonize() const
   if(m_s3UpdateHasBeenSet)
   {
    payload.WithObject("S3Update", m_s3Update.Jsonize());
+
+  }
+
+  if(m_secretsManagerConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
+
+  }
+
+  if(m_bufferingHintsHasBeenSet)
+  {
+   payload.WithObject("BufferingHints", m_bufferingHints.Jsonize());
 
   }
 

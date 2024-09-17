@@ -16,7 +16,9 @@ namespace Model
   enum class TableOptimizerType
   {
     NOT_SET,
-    compaction
+    compaction,
+    retention,
+    orphan_file_deletion
   };
 
 namespace TableOptimizerTypeMapper

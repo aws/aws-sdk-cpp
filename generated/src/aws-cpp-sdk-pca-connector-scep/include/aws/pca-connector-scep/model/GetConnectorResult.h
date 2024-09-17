@@ -1,0 +1,66 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
+#include <aws/pca-connector-scep/model/Connector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace PcaConnectorScep
+{
+namespace Model
+{
+  class GetConnectorResult
+  {
+  public:
+    AWS_PCACONNECTORSCEP_API GetConnectorResult();
+    AWS_PCACONNECTORSCEP_API GetConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PCACONNECTORSCEP_API GetConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    ///@{
+    /**
+     * <p>The properties of the connector.</p>
+     */
+    inline const Connector& GetConnector() const{ return m_connector; }
+    inline void SetConnector(const Connector& value) { m_connector = value; }
+    inline void SetConnector(Connector&& value) { m_connector = std::move(value); }
+    inline GetConnectorResult& WithConnector(const Connector& value) { SetConnector(value); return *this;}
+    inline GetConnectorResult& WithConnector(Connector&& value) { SetConnector(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+    inline GetConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline GetConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline GetConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
+  private:
+
+    Connector m_connector;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace PcaConnectorScep
+} // namespace Aws

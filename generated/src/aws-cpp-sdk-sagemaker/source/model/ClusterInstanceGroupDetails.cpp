@@ -29,22 +29,14 @@ ClusterInstanceGroupDetails::ClusterInstanceGroupDetails() :
     m_lifeCycleConfigHasBeenSet(false),
     m_executionRoleHasBeenSet(false),
     m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
+    m_threadsPerCoreHasBeenSet(false),
+    m_instanceStorageConfigsHasBeenSet(false),
+    m_onStartDeepHealthChecksHasBeenSet(false)
 {
 }
 
-ClusterInstanceGroupDetails::ClusterInstanceGroupDetails(JsonView jsonValue) : 
-    m_currentCount(0),
-    m_currentCountHasBeenSet(false),
-    m_targetCount(0),
-    m_targetCountHasBeenSet(false),
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
+ClusterInstanceGroupDetails::ClusterInstanceGroupDetails(JsonView jsonValue)
+  : ClusterInstanceGroupDetails()
 {
   *this = jsonValue;
 }
@@ -100,6 +92,26 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator =(JsonView js
     m_threadsPerCoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceStorageConfigs"))
+  {
+    Aws::Utils::Array<JsonView> instanceStorageConfigsJsonList = jsonValue.GetArray("InstanceStorageConfigs");
+    for(unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength(); ++instanceStorageConfigsIndex)
+    {
+      m_instanceStorageConfigs.push_back(instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject());
+    }
+    m_instanceStorageConfigsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnStartDeepHealthChecks"))
+  {
+    Aws::Utils::Array<JsonView> onStartDeepHealthChecksJsonList = jsonValue.GetArray("OnStartDeepHealthChecks");
+    for(unsigned onStartDeepHealthChecksIndex = 0; onStartDeepHealthChecksIndex < onStartDeepHealthChecksJsonList.GetLength(); ++onStartDeepHealthChecksIndex)
+    {
+      m_onStartDeepHealthChecks.push_back(DeepHealthCheckTypeMapper::GetDeepHealthCheckTypeForName(onStartDeepHealthChecksJsonList[onStartDeepHealthChecksIndex].AsString()));
+    }
+    m_onStartDeepHealthChecksHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,6 +157,28 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const
   if(m_threadsPerCoreHasBeenSet)
   {
    payload.WithInteger("ThreadsPerCore", m_threadsPerCore);
+
+  }
+
+  if(m_instanceStorageConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceStorageConfigsJsonList(m_instanceStorageConfigs.size());
+   for(unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength(); ++instanceStorageConfigsIndex)
+   {
+     instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject(m_instanceStorageConfigs[instanceStorageConfigsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceStorageConfigs", std::move(instanceStorageConfigsJsonList));
+
+  }
+
+  if(m_onStartDeepHealthChecksHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> onStartDeepHealthChecksJsonList(m_onStartDeepHealthChecks.size());
+   for(unsigned onStartDeepHealthChecksIndex = 0; onStartDeepHealthChecksIndex < onStartDeepHealthChecksJsonList.GetLength(); ++onStartDeepHealthChecksIndex)
+   {
+     onStartDeepHealthChecksJsonList[onStartDeepHealthChecksIndex].AsString(DeepHealthCheckTypeMapper::GetNameForDeepHealthCheckType(m_onStartDeepHealthChecks[onStartDeepHealthChecksIndex]));
+   }
+   payload.WithArray("OnStartDeepHealthChecks", std::move(onStartDeepHealthChecksJsonList));
 
   }
 

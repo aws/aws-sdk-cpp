@@ -23,8 +23,8 @@ BatchAttachObjectResponse::BatchAttachObjectResponse() :
 {
 }
 
-BatchAttachObjectResponse::BatchAttachObjectResponse(JsonView jsonValue) : 
-    m_attachedObjectIdentifierHasBeenSet(false)
+BatchAttachObjectResponse::BatchAttachObjectResponse(JsonView jsonValue)
+  : BatchAttachObjectResponse()
 {
   *this = jsonValue;
 }

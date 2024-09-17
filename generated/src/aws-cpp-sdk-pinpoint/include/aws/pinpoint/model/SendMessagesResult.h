@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API SendMessagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const MessageResponse& GetMessageResponse() const{ return m_messageResponse; }
-
-    
     inline void SetMessageResponse(const MessageResponse& value) { m_messageResponse = value; }
-
-    
     inline void SetMessageResponse(MessageResponse&& value) { m_messageResponse = std::move(value); }
-
-    
     inline SendMessagesResult& WithMessageResponse(const MessageResponse& value) { SetMessageResponse(value); return *this;}
-
-    
     inline SendMessagesResult& WithMessageResponse(MessageResponse&& value) { SetMessageResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendMessagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendMessagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendMessagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MessageResponse m_messageResponse;

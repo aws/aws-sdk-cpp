@@ -26,9 +26,8 @@ GpuDeviceMemoryInfo::GpuDeviceMemoryInfo() :
 {
 }
 
-GpuDeviceMemoryInfo::GpuDeviceMemoryInfo(const XmlNode& xmlNode) : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
+GpuDeviceMemoryInfo::GpuDeviceMemoryInfo(const XmlNode& xmlNode)
+  : GpuDeviceMemoryInfo()
 {
   *this = xmlNode;
 }

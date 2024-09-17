@@ -40,180 +40,69 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resource type.</p>
      */
     inline const SyncResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline void SetResourceType(const SyncResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline void SetResourceType(SyncResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline SyncResourceSummary& WithResourceType(const SyncResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The resource type.</p>
-     */
     inline SyncResourceSummary& WithResourceType(SyncResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The external ID.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
-
-    /**
-     * <p>The external ID.</p>
-     */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-
-    /**
-     * <p>The external ID.</p>
-     */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-
-    /**
-     * <p>The external ID.</p>
-     */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-
-    /**
-     * <p>The external ID.</p>
-     */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-
-    /**
-     * <p>The external ID.</p>
-     */
     inline SyncResourceSummary& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-
-    /**
-     * <p>The external ID.</p>
-     */
     inline SyncResourceSummary& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The external ID.</p>
-     */
     inline SyncResourceSummary& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline SyncResourceSummary& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline SyncResourceSummary& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource ID.</p>
-     */
     inline SyncResourceSummary& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sync resource summary status.</p>
      */
     inline const SyncResourceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The sync resource summary status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The sync resource summary status.</p>
-     */
     inline void SetStatus(const SyncResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The sync resource summary status.</p>
-     */
     inline void SetStatus(SyncResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The sync resource summary status.</p>
-     */
     inline SyncResourceSummary& WithStatus(const SyncResourceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The sync resource summary status.</p>
-     */
     inline SyncResourceSummary& WithStatus(SyncResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The update date and time.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
-
-    /**
-     * <p>The update date and time.</p>
-     */
     inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
-
-    /**
-     * <p>The update date and time.</p>
-     */
     inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
-
-    /**
-     * <p>The update date and time.</p>
-     */
     inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
-
-    /**
-     * <p>The update date and time.</p>
-     */
     inline SyncResourceSummary& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
-
-    /**
-     * <p>The update date and time.</p>
-     */
     inline SyncResourceSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SyncResourceType m_resourceType;

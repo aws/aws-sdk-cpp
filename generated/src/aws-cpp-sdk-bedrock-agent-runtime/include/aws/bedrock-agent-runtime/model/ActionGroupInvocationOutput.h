@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>output from lambda used in action group</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the JSON-formatted string returned by the API invoked by the action
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ActionGroupInvocationOutput">AWS
    * API Reference</a></p>
    */
@@ -37,30 +38,20 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    ///@{
+    /**
+     * <p>The JSON-formatted string returned by the API invoked by the action
+     * group.</p>
+     */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    
     inline ActionGroupInvocationOutput& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    
     inline ActionGroupInvocationOutput& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    
     inline ActionGroupInvocationOutput& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

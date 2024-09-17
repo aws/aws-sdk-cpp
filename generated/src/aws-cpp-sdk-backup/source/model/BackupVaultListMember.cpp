@@ -21,6 +21,10 @@ namespace Model
 BackupVaultListMember::BackupVaultListMember() : 
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
+    m_vaultType(VaultType::NOT_SET),
+    m_vaultTypeHasBeenSet(false),
+    m_vaultState(VaultState::NOT_SET),
+    m_vaultStateHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_encryptionKeyArnHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
@@ -36,21 +40,8 @@ BackupVaultListMember::BackupVaultListMember() :
 {
 }
 
-BackupVaultListMember::BackupVaultListMember(JsonView jsonValue) : 
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_numberOfRecoveryPoints(0),
-    m_numberOfRecoveryPointsHasBeenSet(false),
-    m_locked(false),
-    m_lockedHasBeenSet(false),
-    m_minRetentionDays(0),
-    m_minRetentionDaysHasBeenSet(false),
-    m_maxRetentionDays(0),
-    m_maxRetentionDaysHasBeenSet(false),
-    m_lockDateHasBeenSet(false)
+BackupVaultListMember::BackupVaultListMember(JsonView jsonValue)
+  : BackupVaultListMember()
 {
   *this = jsonValue;
 }
@@ -69,6 +60,20 @@ BackupVaultListMember& BackupVaultListMember::operator =(JsonView jsonValue)
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
 
     m_backupVaultArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VaultType"))
+  {
+    m_vaultType = VaultTypeMapper::GetVaultTypeForName(jsonValue.GetString("VaultType"));
+
+    m_vaultTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VaultState"))
+  {
+    m_vaultState = VaultStateMapper::GetVaultStateForName(jsonValue.GetString("VaultState"));
+
+    m_vaultStateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationDate"))
@@ -144,6 +149,16 @@ JsonValue BackupVaultListMember::Jsonize() const
   {
    payload.WithString("BackupVaultArn", m_backupVaultArn);
 
+  }
+
+  if(m_vaultTypeHasBeenSet)
+  {
+   payload.WithString("VaultType", VaultTypeMapper::GetNameForVaultType(m_vaultType));
+  }
+
+  if(m_vaultStateHasBeenSet)
+  {
+   payload.WithString("VaultState", VaultStateMapper::GetNameForVaultState(m_vaultState));
   }
 
   if(m_creationDateHasBeenSet)

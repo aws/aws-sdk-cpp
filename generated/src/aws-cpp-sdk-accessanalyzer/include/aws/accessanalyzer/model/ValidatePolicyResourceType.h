@@ -20,7 +20,8 @@ namespace Model
     AWS_S3_AccessPoint,
     AWS_S3_MultiRegionAccessPoint,
     AWS_S3ObjectLambda_AccessPoint,
-    AWS_IAM_AssumeRolePolicyDocument
+    AWS_IAM_AssumeRolePolicyDocument,
+    AWS_DynamoDB_Table
   };
 
 namespace ValidatePolicyResourceTypeMapper

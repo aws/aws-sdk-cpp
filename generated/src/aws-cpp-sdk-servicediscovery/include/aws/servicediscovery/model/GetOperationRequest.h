@@ -34,46 +34,19 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the operation that you want to get more information about.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
-
-    /**
-     * <p>The ID of the operation that you want to get more information about.</p>
-     */
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the operation that you want to get more information about.</p>
-     */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
-
-    /**
-     * <p>The ID of the operation that you want to get more information about.</p>
-     */
     inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
-
-    /**
-     * <p>The ID of the operation that you want to get more information about.</p>
-     */
     inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
-
-    /**
-     * <p>The ID of the operation that you want to get more information about.</p>
-     */
     inline GetOperationRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-
-    /**
-     * <p>The ID of the operation that you want to get more information about.</p>
-     */
     inline GetOperationRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the operation that you want to get more information about.</p>
-     */
     inline GetOperationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationId;

@@ -25,10 +25,8 @@ LocalSecondaryIndex::LocalSecondaryIndex() :
 {
 }
 
-LocalSecondaryIndex::LocalSecondaryIndex(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false)
+LocalSecondaryIndex::LocalSecondaryIndex(JsonView jsonValue)
+  : LocalSecondaryIndex()
 {
   *this = jsonValue;
 }

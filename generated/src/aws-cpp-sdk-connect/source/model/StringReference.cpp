@@ -24,9 +24,8 @@ StringReference::StringReference() :
 {
 }
 
-StringReference::StringReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+StringReference::StringReference(JsonView jsonValue)
+  : StringReference()
 {
   *this = jsonValue;
 }

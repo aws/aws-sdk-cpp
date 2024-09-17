@@ -20,15 +20,13 @@ namespace Model
 
 Ibm3624RandomPin::Ibm3624RandomPin() : 
     m_decimalizationTableHasBeenSet(false),
-    m_pinValidationDataHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false)
+    m_pinValidationDataPadCharacterHasBeenSet(false),
+    m_pinValidationDataHasBeenSet(false)
 {
 }
 
-Ibm3624RandomPin::Ibm3624RandomPin(JsonView jsonValue) : 
-    m_decimalizationTableHasBeenSet(false),
-    m_pinValidationDataHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false)
+Ibm3624RandomPin::Ibm3624RandomPin(JsonView jsonValue)
+  : Ibm3624RandomPin()
 {
   *this = jsonValue;
 }
@@ -42,18 +40,18 @@ Ibm3624RandomPin& Ibm3624RandomPin::operator =(JsonView jsonValue)
     m_decimalizationTableHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PinValidationData"))
-  {
-    m_pinValidationData = jsonValue.GetString("PinValidationData");
-
-    m_pinValidationDataHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("PinValidationDataPadCharacter"))
   {
     m_pinValidationDataPadCharacter = jsonValue.GetString("PinValidationDataPadCharacter");
 
     m_pinValidationDataPadCharacterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PinValidationData"))
+  {
+    m_pinValidationData = jsonValue.GetString("PinValidationData");
+
+    m_pinValidationDataHasBeenSet = true;
   }
 
   return *this;
@@ -69,15 +67,15 @@ JsonValue Ibm3624RandomPin::Jsonize() const
 
   }
 
-  if(m_pinValidationDataHasBeenSet)
-  {
-   payload.WithString("PinValidationData", m_pinValidationData);
-
-  }
-
   if(m_pinValidationDataPadCharacterHasBeenSet)
   {
    payload.WithString("PinValidationDataPadCharacter", m_pinValidationDataPadCharacter);
+
+  }
+
+  if(m_pinValidationDataHasBeenSet)
+  {
+   payload.WithString("PinValidationData", m_pinValidationData);
 
   }
 

@@ -23,8 +23,8 @@ RootStorage::RootStorage() :
 {
 }
 
-RootStorage::RootStorage(JsonView jsonValue) : 
-    m_capacityHasBeenSet(false)
+RootStorage::RootStorage(JsonView jsonValue)
+  : RootStorage()
 {
   *this = jsonValue;
 }

@@ -32,36 +32,17 @@ namespace Model
     AWS_APPREGISTRY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> Associates a <code>TagKey</code> configuration to an account. </p>
      */
     inline const AppRegistryConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p> Associates a <code>TagKey</code> configuration to an account. </p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p> Associates a <code>TagKey</code> configuration to an account. </p>
-     */
     inline void SetConfiguration(const AppRegistryConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p> Associates a <code>TagKey</code> configuration to an account. </p>
-     */
     inline void SetConfiguration(AppRegistryConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p> Associates a <code>TagKey</code> configuration to an account. </p>
-     */
     inline PutConfigurationRequest& WithConfiguration(const AppRegistryConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p> Associates a <code>TagKey</code> configuration to an account. </p>
-     */
     inline PutConfigurationRequest& WithConfiguration(AppRegistryConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AppRegistryConfiguration m_configuration;

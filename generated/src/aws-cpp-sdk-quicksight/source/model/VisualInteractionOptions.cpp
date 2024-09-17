@@ -24,9 +24,8 @@ VisualInteractionOptions::VisualInteractionOptions() :
 {
 }
 
-VisualInteractionOptions::VisualInteractionOptions(JsonView jsonValue) : 
-    m_visualMenuOptionHasBeenSet(false),
-    m_contextMenuOptionHasBeenSet(false)
+VisualInteractionOptions::VisualInteractionOptions(JsonView jsonValue)
+  : VisualInteractionOptions()
 {
   *this = jsonValue;
 }

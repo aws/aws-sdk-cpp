@@ -37,87 +37,33 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the resource created at the destination.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the resource created at the destination.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the resource created at the destination.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the resource created at the destination.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the resource created at the destination.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the resource created at the destination.</p>
-     */
     inline DestinationInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the resource created at the destination.</p>
-     */
     inline DestinationInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the resource created at the destination.</p>
-     */
     inline DestinationInfo& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination service of the record.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
-
-    /**
-     * <p>The destination service of the record.</p>
-     */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-
-    /**
-     * <p>The destination service of the record.</p>
-     */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-
-    /**
-     * <p>The destination service of the record.</p>
-     */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-
-    /**
-     * <p>The destination service of the record.</p>
-     */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-
-    /**
-     * <p>The destination service of the record.</p>
-     */
     inline DestinationInfo& WithService(const Aws::String& value) { SetService(value); return *this;}
-
-    /**
-     * <p>The destination service of the record.</p>
-     */
     inline DestinationInfo& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-
-    /**
-     * <p>The destination service of the record.</p>
-     */
     inline DestinationInfo& WithService(const char* value) { SetService(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

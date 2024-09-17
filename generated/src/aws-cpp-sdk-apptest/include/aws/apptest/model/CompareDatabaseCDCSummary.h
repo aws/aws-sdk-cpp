@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/apptest/AppTest_EXPORTS.h>
+#include <aws/apptest/model/CompareDatabaseCDCStepInput.h>
+#include <aws/apptest/model/CompareDatabaseCDCStepOutput.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace AppTest
+{
+namespace Model
+{
+
+  /**
+   * <p>Compares the database CDC summary.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/CompareDatabaseCDCSummary">AWS
+   * API Reference</a></p>
+   */
+  class CompareDatabaseCDCSummary
+  {
+  public:
+    AWS_APPTEST_API CompareDatabaseCDCSummary();
+    AWS_APPTEST_API CompareDatabaseCDCSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPTEST_API CompareDatabaseCDCSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>The step input of the compare database CDC summary.</p>
+     */
+    inline const CompareDatabaseCDCStepInput& GetStepInput() const{ return m_stepInput; }
+    inline bool StepInputHasBeenSet() const { return m_stepInputHasBeenSet; }
+    inline void SetStepInput(const CompareDatabaseCDCStepInput& value) { m_stepInputHasBeenSet = true; m_stepInput = value; }
+    inline void SetStepInput(CompareDatabaseCDCStepInput&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::move(value); }
+    inline CompareDatabaseCDCSummary& WithStepInput(const CompareDatabaseCDCStepInput& value) { SetStepInput(value); return *this;}
+    inline CompareDatabaseCDCSummary& WithStepInput(CompareDatabaseCDCStepInput&& value) { SetStepInput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The step output of the compare database CDC summary.</p>
+     */
+    inline const CompareDatabaseCDCStepOutput& GetStepOutput() const{ return m_stepOutput; }
+    inline bool StepOutputHasBeenSet() const { return m_stepOutputHasBeenSet; }
+    inline void SetStepOutput(const CompareDatabaseCDCStepOutput& value) { m_stepOutputHasBeenSet = true; m_stepOutput = value; }
+    inline void SetStepOutput(CompareDatabaseCDCStepOutput&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::move(value); }
+    inline CompareDatabaseCDCSummary& WithStepOutput(const CompareDatabaseCDCStepOutput& value) { SetStepOutput(value); return *this;}
+    inline CompareDatabaseCDCSummary& WithStepOutput(CompareDatabaseCDCStepOutput&& value) { SetStepOutput(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    CompareDatabaseCDCStepInput m_stepInput;
+    bool m_stepInputHasBeenSet = false;
+
+    CompareDatabaseCDCStepOutput m_stepOutput;
+    bool m_stepOutputHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace AppTest
+} // namespace Aws

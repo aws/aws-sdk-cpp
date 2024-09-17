@@ -28,11 +28,8 @@ PathFilter::PathFilter() :
 {
 }
 
-PathFilter::PathFilter(const XmlNode& xmlNode) : 
-    m_sourceAddressHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationAddressHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false)
+PathFilter::PathFilter(const XmlNode& xmlNode)
+  : PathFilter()
 {
   *this = xmlNode;
 }

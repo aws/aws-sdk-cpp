@@ -19,44 +19,65 @@ namespace Model
 {
 
 Participant::Participant() : 
-    m_attributesHasBeenSet(false),
-    m_browserNameHasBeenSet(false),
-    m_browserVersionHasBeenSet(false),
+    m_participantIdHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_state(ParticipantState::NOT_SET),
+    m_stateHasBeenSet(false),
     m_firstJoinTimeHasBeenSet(false),
+    m_attributesHasBeenSet(false),
+    m_published(false),
+    m_publishedHasBeenSet(false),
     m_ispNameHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_osVersionHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_published(false),
-    m_publishedHasBeenSet(false),
+    m_browserNameHasBeenSet(false),
+    m_browserVersionHasBeenSet(false),
     m_sdkVersionHasBeenSet(false),
-    m_state(ParticipantState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_recordingS3BucketNameHasBeenSet(false),
+    m_recordingS3PrefixHasBeenSet(false),
+    m_recordingState(ParticipantRecordingState::NOT_SET),
+    m_recordingStateHasBeenSet(false),
+    m_protocol(ParticipantProtocol::NOT_SET),
+    m_protocolHasBeenSet(false)
 {
 }
 
-Participant::Participant(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_browserNameHasBeenSet(false),
-    m_browserVersionHasBeenSet(false),
-    m_firstJoinTimeHasBeenSet(false),
-    m_ispNameHasBeenSet(false),
-    m_osNameHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_published(false),
-    m_publishedHasBeenSet(false),
-    m_sdkVersionHasBeenSet(false),
-    m_state(ParticipantState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+Participant::Participant(JsonView jsonValue)
+  : Participant()
 {
   *this = jsonValue;
 }
 
 Participant& Participant::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("participantId"))
+  {
+    m_participantId = jsonValue.GetString("participantId");
+
+    m_participantIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("userId"))
+  {
+    m_userId = jsonValue.GetString("userId");
+
+    m_userIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = ParticipantStateMapper::GetParticipantStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("firstJoinTime"))
+  {
+    m_firstJoinTime = jsonValue.GetString("firstJoinTime");
+
+    m_firstJoinTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -67,25 +88,11 @@ Participant& Participant::operator =(JsonView jsonValue)
     m_attributesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("browserName"))
+  if(jsonValue.ValueExists("published"))
   {
-    m_browserName = jsonValue.GetString("browserName");
+    m_published = jsonValue.GetBool("published");
 
-    m_browserNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("browserVersion"))
-  {
-    m_browserVersion = jsonValue.GetString("browserVersion");
-
-    m_browserVersionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("firstJoinTime"))
-  {
-    m_firstJoinTime = jsonValue.GetString("firstJoinTime");
-
-    m_firstJoinTimeHasBeenSet = true;
+    m_publishedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ispName"))
@@ -109,18 +116,18 @@ Participant& Participant::operator =(JsonView jsonValue)
     m_osVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("participantId"))
+  if(jsonValue.ValueExists("browserName"))
   {
-    m_participantId = jsonValue.GetString("participantId");
+    m_browserName = jsonValue.GetString("browserName");
 
-    m_participantIdHasBeenSet = true;
+    m_browserNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("published"))
+  if(jsonValue.ValueExists("browserVersion"))
   {
-    m_published = jsonValue.GetBool("published");
+    m_browserVersion = jsonValue.GetString("browserVersion");
 
-    m_publishedHasBeenSet = true;
+    m_browserVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sdkVersion"))
@@ -130,18 +137,32 @@ Participant& Participant::operator =(JsonView jsonValue)
     m_sdkVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("state"))
+  if(jsonValue.ValueExists("recordingS3BucketName"))
   {
-    m_state = ParticipantStateMapper::GetParticipantStateForName(jsonValue.GetString("state"));
+    m_recordingS3BucketName = jsonValue.GetString("recordingS3BucketName");
 
-    m_stateHasBeenSet = true;
+    m_recordingS3BucketNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("userId"))
+  if(jsonValue.ValueExists("recordingS3Prefix"))
   {
-    m_userId = jsonValue.GetString("userId");
+    m_recordingS3Prefix = jsonValue.GetString("recordingS3Prefix");
 
-    m_userIdHasBeenSet = true;
+    m_recordingS3PrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recordingState"))
+  {
+    m_recordingState = ParticipantRecordingStateMapper::GetParticipantRecordingStateForName(jsonValue.GetString("recordingState"));
+
+    m_recordingStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("protocol"))
+  {
+    m_protocol = ParticipantProtocolMapper::GetParticipantProtocolForName(jsonValue.GetString("protocol"));
+
+    m_protocolHasBeenSet = true;
   }
 
   return *this;
@@ -150,6 +171,28 @@ Participant& Participant::operator =(JsonView jsonValue)
 JsonValue Participant::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_participantIdHasBeenSet)
+  {
+   payload.WithString("participantId", m_participantId);
+
+  }
+
+  if(m_userIdHasBeenSet)
+  {
+   payload.WithString("userId", m_userId);
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", ParticipantStateMapper::GetNameForParticipantState(m_state));
+  }
+
+  if(m_firstJoinTimeHasBeenSet)
+  {
+   payload.WithString("firstJoinTime", m_firstJoinTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
   if(m_attributesHasBeenSet)
   {
@@ -162,21 +205,10 @@ JsonValue Participant::Jsonize() const
 
   }
 
-  if(m_browserNameHasBeenSet)
+  if(m_publishedHasBeenSet)
   {
-   payload.WithString("browserName", m_browserName);
+   payload.WithBool("published", m_published);
 
-  }
-
-  if(m_browserVersionHasBeenSet)
-  {
-   payload.WithString("browserVersion", m_browserVersion);
-
-  }
-
-  if(m_firstJoinTimeHasBeenSet)
-  {
-   payload.WithString("firstJoinTime", m_firstJoinTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_ispNameHasBeenSet)
@@ -197,15 +229,15 @@ JsonValue Participant::Jsonize() const
 
   }
 
-  if(m_participantIdHasBeenSet)
+  if(m_browserNameHasBeenSet)
   {
-   payload.WithString("participantId", m_participantId);
+   payload.WithString("browserName", m_browserName);
 
   }
 
-  if(m_publishedHasBeenSet)
+  if(m_browserVersionHasBeenSet)
   {
-   payload.WithBool("published", m_published);
+   payload.WithString("browserVersion", m_browserVersion);
 
   }
 
@@ -215,15 +247,26 @@ JsonValue Participant::Jsonize() const
 
   }
 
-  if(m_stateHasBeenSet)
+  if(m_recordingS3BucketNameHasBeenSet)
   {
-   payload.WithString("state", ParticipantStateMapper::GetNameForParticipantState(m_state));
+   payload.WithString("recordingS3BucketName", m_recordingS3BucketName);
+
   }
 
-  if(m_userIdHasBeenSet)
+  if(m_recordingS3PrefixHasBeenSet)
   {
-   payload.WithString("userId", m_userId);
+   payload.WithString("recordingS3Prefix", m_recordingS3Prefix);
 
+  }
+
+  if(m_recordingStateHasBeenSet)
+  {
+   payload.WithString("recordingState", ParticipantRecordingStateMapper::GetNameForParticipantRecordingState(m_recordingState));
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("protocol", ParticipantProtocolMapper::GetNameForParticipantProtocol(m_protocol));
   }
 
   return payload;

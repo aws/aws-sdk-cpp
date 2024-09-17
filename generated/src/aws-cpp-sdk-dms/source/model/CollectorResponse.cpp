@@ -36,21 +36,8 @@ CollectorResponse::CollectorResponse() :
 {
 }
 
-CollectorResponse::CollectorResponse(JsonView jsonValue) : 
-    m_collectorReferencedIdHasBeenSet(false),
-    m_collectorNameHasBeenSet(false),
-    m_collectorVersionHasBeenSet(false),
-    m_versionStatus(VersionStatus::NOT_SET),
-    m_versionStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_collectorHealthCheckHasBeenSet(false),
-    m_lastDataReceivedHasBeenSet(false),
-    m_registeredDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_modifiedDateHasBeenSet(false),
-    m_inventoryDataHasBeenSet(false)
+CollectorResponse::CollectorResponse(JsonView jsonValue)
+  : CollectorResponse()
 {
   *this = jsonValue;
 }

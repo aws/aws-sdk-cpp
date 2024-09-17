@@ -23,8 +23,8 @@ Region::Region() :
 {
 }
 
-Region::Region(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+Region::Region(JsonView jsonValue)
+  : Region()
 {
   *this = jsonValue;
 }

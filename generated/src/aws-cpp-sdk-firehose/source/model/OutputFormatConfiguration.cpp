@@ -23,8 +23,8 @@ OutputFormatConfiguration::OutputFormatConfiguration() :
 {
 }
 
-OutputFormatConfiguration::OutputFormatConfiguration(JsonView jsonValue) : 
-    m_serializerHasBeenSet(false)
+OutputFormatConfiguration::OutputFormatConfiguration(JsonView jsonValue)
+  : OutputFormatConfiguration()
 {
   *this = jsonValue;
 }

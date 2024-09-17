@@ -27,12 +27,8 @@ DataFormatConversionConfiguration::DataFormatConversionConfiguration() :
 {
 }
 
-DataFormatConversionConfiguration::DataFormatConversionConfiguration(JsonView jsonValue) : 
-    m_schemaConfigurationHasBeenSet(false),
-    m_inputFormatConfigurationHasBeenSet(false),
-    m_outputFormatConfigurationHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+DataFormatConversionConfiguration::DataFormatConversionConfiguration(JsonView jsonValue)
+  : DataFormatConversionConfiguration()
 {
   *this = jsonValue;
 }

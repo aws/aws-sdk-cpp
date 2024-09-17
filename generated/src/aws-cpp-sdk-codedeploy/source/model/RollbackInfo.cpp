@@ -25,10 +25,8 @@ RollbackInfo::RollbackInfo() :
 {
 }
 
-RollbackInfo::RollbackInfo(JsonView jsonValue) : 
-    m_rollbackDeploymentIdHasBeenSet(false),
-    m_rollbackTriggeringDeploymentIdHasBeenSet(false),
-    m_rollbackMessageHasBeenSet(false)
+RollbackInfo::RollbackInfo(JsonView jsonValue)
+  : RollbackInfo()
 {
   *this = jsonValue;
 }

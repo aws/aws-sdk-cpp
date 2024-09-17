@@ -25,10 +25,8 @@ AwsRdsDbSubnetGroupSubnet::AwsRdsDbSubnetGroupSubnet() :
 {
 }
 
-AwsRdsDbSubnetGroupSubnet::AwsRdsDbSubnetGroupSubnet(JsonView jsonValue) : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetStatusHasBeenSet(false)
+AwsRdsDbSubnetGroupSubnet::AwsRdsDbSubnetGroupSubnet(JsonView jsonValue)
+  : AwsRdsDbSubnetGroupSubnet()
 {
   *this = jsonValue;
 }

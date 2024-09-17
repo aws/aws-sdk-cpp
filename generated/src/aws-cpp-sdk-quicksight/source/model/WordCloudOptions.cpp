@@ -34,19 +34,8 @@ WordCloudOptions::WordCloudOptions() :
 {
 }
 
-WordCloudOptions::WordCloudOptions(JsonView jsonValue) : 
-    m_wordOrientation(WordCloudWordOrientation::NOT_SET),
-    m_wordOrientationHasBeenSet(false),
-    m_wordScaling(WordCloudWordScaling::NOT_SET),
-    m_wordScalingHasBeenSet(false),
-    m_cloudLayout(WordCloudCloudLayout::NOT_SET),
-    m_cloudLayoutHasBeenSet(false),
-    m_wordCasing(WordCloudWordCasing::NOT_SET),
-    m_wordCasingHasBeenSet(false),
-    m_wordPadding(WordCloudWordPadding::NOT_SET),
-    m_wordPaddingHasBeenSet(false),
-    m_maximumStringLength(0),
-    m_maximumStringLengthHasBeenSet(false)
+WordCloudOptions::WordCloudOptions(JsonView jsonValue)
+  : WordCloudOptions()
 {
   *this = jsonValue;
 }

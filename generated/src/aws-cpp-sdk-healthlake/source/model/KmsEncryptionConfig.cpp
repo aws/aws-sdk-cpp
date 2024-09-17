@@ -25,10 +25,8 @@ KmsEncryptionConfig::KmsEncryptionConfig() :
 {
 }
 
-KmsEncryptionConfig::KmsEncryptionConfig(JsonView jsonValue) : 
-    m_cmkType(CmkType::NOT_SET),
-    m_cmkTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+KmsEncryptionConfig::KmsEncryptionConfig(JsonView jsonValue)
+  : KmsEncryptionConfig()
 {
   *this = jsonValue;
 }

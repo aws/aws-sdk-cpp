@@ -25,18 +25,14 @@ LifecycleExecutionResource::LifecycleExecutionResource() :
     m_actionHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_snapshotsHasBeenSet(false),
-    m_imageUrisHasBeenSet(false)
+    m_imageUrisHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
-LifecycleExecutionResource::LifecycleExecutionResource(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_snapshotsHasBeenSet(false),
-    m_imageUrisHasBeenSet(false)
+LifecycleExecutionResource::LifecycleExecutionResource(JsonView jsonValue)
+  : LifecycleExecutionResource()
 {
   *this = jsonValue;
 }
@@ -98,6 +94,20 @@ LifecycleExecutionResource& LifecycleExecutionResource::operator =(JsonView json
     m_imageUrisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetDouble("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetDouble("endTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +165,16 @@ JsonValue LifecycleExecutionResource::Jsonize() const
    }
    payload.WithArray("imageUris", std::move(imageUrisJsonList));
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;

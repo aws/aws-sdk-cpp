@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
      * get.</p>
      */
     inline const Aws::String& GetWorkflowBuildVersionArn() const{ return m_workflowBuildVersionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-     * get.</p>
-     */
     inline bool WorkflowBuildVersionArnHasBeenSet() const { return m_workflowBuildVersionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-     * get.</p>
-     */
     inline void SetWorkflowBuildVersionArn(const Aws::String& value) { m_workflowBuildVersionArnHasBeenSet = true; m_workflowBuildVersionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-     * get.</p>
-     */
     inline void SetWorkflowBuildVersionArn(Aws::String&& value) { m_workflowBuildVersionArnHasBeenSet = true; m_workflowBuildVersionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-     * get.</p>
-     */
     inline void SetWorkflowBuildVersionArn(const char* value) { m_workflowBuildVersionArnHasBeenSet = true; m_workflowBuildVersionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-     * get.</p>
-     */
     inline GetWorkflowRequest& WithWorkflowBuildVersionArn(const Aws::String& value) { SetWorkflowBuildVersionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-     * get.</p>
-     */
     inline GetWorkflowRequest& WithWorkflowBuildVersionArn(Aws::String&& value) { SetWorkflowBuildVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workflow resource that you want to
-     * get.</p>
-     */
     inline GetWorkflowRequest& WithWorkflowBuildVersionArn(const char* value) { SetWorkflowBuildVersionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workflowBuildVersionArn;

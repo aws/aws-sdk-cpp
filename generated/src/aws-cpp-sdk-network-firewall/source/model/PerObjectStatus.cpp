@@ -25,10 +25,8 @@ PerObjectStatus::PerObjectStatus() :
 {
 }
 
-PerObjectStatus::PerObjectStatus(JsonView jsonValue) : 
-    m_syncStatus(PerObjectSyncStatus::NOT_SET),
-    m_syncStatusHasBeenSet(false),
-    m_updateTokenHasBeenSet(false)
+PerObjectStatus::PerObjectStatus(JsonView jsonValue)
+  : PerObjectStatus()
 {
   *this = jsonValue;
 }

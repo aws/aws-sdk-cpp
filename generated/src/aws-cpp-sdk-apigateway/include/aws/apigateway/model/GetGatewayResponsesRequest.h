@@ -44,124 +44,46 @@ namespace Model
     AWS_APIGATEWAY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline GetGatewayResponsesRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline GetGatewayResponsesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline GetGatewayResponsesRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current pagination position in the paged result set. The GatewayResponse
      * collection does not support pagination and the position does not apply here.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
-
-    /**
-     * <p>The current pagination position in the paged result set. The GatewayResponse
-     * collection does not support pagination and the position does not apply here.</p>
-     */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-
-    /**
-     * <p>The current pagination position in the paged result set. The GatewayResponse
-     * collection does not support pagination and the position does not apply here.</p>
-     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-
-    /**
-     * <p>The current pagination position in the paged result set. The GatewayResponse
-     * collection does not support pagination and the position does not apply here.</p>
-     */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-
-    /**
-     * <p>The current pagination position in the paged result set. The GatewayResponse
-     * collection does not support pagination and the position does not apply here.</p>
-     */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-
-    /**
-     * <p>The current pagination position in the paged result set. The GatewayResponse
-     * collection does not support pagination and the position does not apply here.</p>
-     */
     inline GetGatewayResponsesRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-
-    /**
-     * <p>The current pagination position in the paged result set. The GatewayResponse
-     * collection does not support pagination and the position does not apply here.</p>
-     */
     inline GetGatewayResponsesRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>The current pagination position in the paged result set. The GatewayResponse
-     * collection does not support pagination and the position does not apply here.</p>
-     */
     inline GetGatewayResponsesRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500. The GatewayResponses collection does not support
      * pagination and the limit does not apply here.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of returned results per page. The default value is 25 and
-     * the maximum value is 500. The GatewayResponses collection does not support
-     * pagination and the limit does not apply here.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of returned results per page. The default value is 25 and
-     * the maximum value is 500. The GatewayResponses collection does not support
-     * pagination and the limit does not apply here.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of returned results per page. The default value is 25 and
-     * the maximum value is 500. The GatewayResponses collection does not support
-     * pagination and the limit does not apply here.</p>
-     */
     inline GetGatewayResponsesRequest& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

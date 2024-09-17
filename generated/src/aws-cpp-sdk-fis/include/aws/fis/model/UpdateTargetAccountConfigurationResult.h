@@ -33,53 +33,27 @@ namespace Model
     AWS_FIS_API UpdateTargetAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the target account configuration.</p>
      */
     inline const TargetAccountConfiguration& GetTargetAccountConfiguration() const{ return m_targetAccountConfiguration; }
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline void SetTargetAccountConfiguration(const TargetAccountConfiguration& value) { m_targetAccountConfiguration = value; }
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline void SetTargetAccountConfiguration(TargetAccountConfiguration&& value) { m_targetAccountConfiguration = std::move(value); }
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline UpdateTargetAccountConfigurationResult& WithTargetAccountConfiguration(const TargetAccountConfiguration& value) { SetTargetAccountConfiguration(value); return *this;}
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline UpdateTargetAccountConfigurationResult& WithTargetAccountConfiguration(TargetAccountConfiguration&& value) { SetTargetAccountConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTargetAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTargetAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTargetAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TargetAccountConfiguration m_targetAccountConfiguration;

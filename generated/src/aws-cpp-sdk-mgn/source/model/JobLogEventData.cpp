@@ -26,11 +26,8 @@ JobLogEventData::JobLogEventData() :
 {
 }
 
-JobLogEventData::JobLogEventData(JsonView jsonValue) : 
-    m_conversionServerIDHasBeenSet(false),
-    m_rawErrorHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_targetInstanceIDHasBeenSet(false)
+JobLogEventData::JobLogEventData(JsonView jsonValue)
+  : JobLogEventData()
 {
   *this = jsonValue;
 }

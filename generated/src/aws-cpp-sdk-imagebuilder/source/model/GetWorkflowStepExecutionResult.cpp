@@ -23,10 +23,8 @@ GetWorkflowStepExecutionResult::GetWorkflowStepExecutionResult() :
 {
 }
 
-GetWorkflowStepExecutionResult::GetWorkflowStepExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WorkflowStepExecutionStatus::NOT_SET),
-    m_rollbackStatus(WorkflowStepExecutionRollbackStatus::NOT_SET),
-    m_timeoutSeconds(0)
+GetWorkflowStepExecutionResult::GetWorkflowStepExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWorkflowStepExecutionResult()
 {
   *this = result;
 }

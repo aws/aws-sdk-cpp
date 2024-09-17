@@ -45,37 +45,19 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The payload type for your login endpoint, either JSON or form encoded.</p>
      */
     inline const PayloadType& GetPayloadType() const{ return m_payloadType; }
-
-    /**
-     * <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-     */
     inline bool PayloadTypeHasBeenSet() const { return m_payloadTypeHasBeenSet; }
-
-    /**
-     * <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-     */
     inline void SetPayloadType(const PayloadType& value) { m_payloadTypeHasBeenSet = true; m_payloadType = value; }
-
-    /**
-     * <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-     */
     inline void SetPayloadType(PayloadType&& value) { m_payloadTypeHasBeenSet = true; m_payloadType = std::move(value); }
-
-    /**
-     * <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-     */
     inline RequestInspection& WithPayloadType(const PayloadType& value) { SetPayloadType(value); return *this;}
-
-    /**
-     * <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-     */
     inline RequestInspection& WithPayloadType(PayloadType&& value) { SetPayloadType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the field in the request payload that contains your customer's
      * username. </p> <p>How you specify this depends on the request inspection payload
@@ -91,88 +73,14 @@ namespace Model
      * <code>username1</code> </p> </li> </ul>
      */
     inline const UsernameField& GetUsernameField() const{ return m_usernameField; }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * username. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "username": "THE_USERNAME" } }</code>, the username field specification is
-     * <code>/form/username</code>. </p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>username1</code>, the username field specification is
-     * <code>username1</code> </p> </li> </ul>
-     */
     inline bool UsernameFieldHasBeenSet() const { return m_usernameFieldHasBeenSet; }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * username. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "username": "THE_USERNAME" } }</code>, the username field specification is
-     * <code>/form/username</code>. </p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>username1</code>, the username field specification is
-     * <code>username1</code> </p> </li> </ul>
-     */
     inline void SetUsernameField(const UsernameField& value) { m_usernameFieldHasBeenSet = true; m_usernameField = value; }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * username. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "username": "THE_USERNAME" } }</code>, the username field specification is
-     * <code>/form/username</code>. </p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>username1</code>, the username field specification is
-     * <code>username1</code> </p> </li> </ul>
-     */
     inline void SetUsernameField(UsernameField&& value) { m_usernameFieldHasBeenSet = true; m_usernameField = std::move(value); }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * username. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "username": "THE_USERNAME" } }</code>, the username field specification is
-     * <code>/form/username</code>. </p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>username1</code>, the username field specification is
-     * <code>username1</code> </p> </li> </ul>
-     */
     inline RequestInspection& WithUsernameField(const UsernameField& value) { SetUsernameField(value); return *this;}
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * username. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "username": "THE_USERNAME" } }</code>, the username field specification is
-     * <code>/form/username</code>. </p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>username1</code>, the username field specification is
-     * <code>username1</code> </p> </li> </ul>
-     */
     inline RequestInspection& WithUsernameField(UsernameField&& value) { SetUsernameField(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the field in the request payload that contains your customer's
      * password. </p> <p>How you specify this depends on the request inspection payload
@@ -188,87 +96,12 @@ namespace Model
      * <code>password1</code>.</p> </li> </ul>
      */
     inline const PasswordField& GetPasswordField() const{ return m_passwordField; }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * password. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "password": "THE_PASSWORD" } }</code>, the password field specification is
-     * <code>/form/password</code>.</p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>password1</code>, the password field specification is
-     * <code>password1</code>.</p> </li> </ul>
-     */
     inline bool PasswordFieldHasBeenSet() const { return m_passwordFieldHasBeenSet; }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * password. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "password": "THE_PASSWORD" } }</code>, the password field specification is
-     * <code>/form/password</code>.</p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>password1</code>, the password field specification is
-     * <code>password1</code>.</p> </li> </ul>
-     */
     inline void SetPasswordField(const PasswordField& value) { m_passwordFieldHasBeenSet = true; m_passwordField = value; }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * password. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "password": "THE_PASSWORD" } }</code>, the password field specification is
-     * <code>/form/password</code>.</p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>password1</code>, the password field specification is
-     * <code>password1</code>.</p> </li> </ul>
-     */
     inline void SetPasswordField(PasswordField&& value) { m_passwordFieldHasBeenSet = true; m_passwordField = std::move(value); }
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * password. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "password": "THE_PASSWORD" } }</code>, the password field specification is
-     * <code>/form/password</code>.</p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>password1</code>, the password field specification is
-     * <code>password1</code>.</p> </li> </ul>
-     */
     inline RequestInspection& WithPasswordField(const PasswordField& value) { SetPasswordField(value); return *this;}
-
-    /**
-     * <p>The name of the field in the request payload that contains your customer's
-     * password. </p> <p>How you specify this depends on the request inspection payload
-     * type.</p> <ul> <li> <p>For JSON payloads, specify the field name in JSON pointer
-     * syntax. For information about the JSON Pointer syntax, see the Internet
-     * Engineering Task Force (IETF) documentation <a
-     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-     * Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": {
-     * "password": "THE_PASSWORD" } }</code>, the password field specification is
-     * <code>/form/password</code>.</p> </li> <li> <p>For form encoded payload types,
-     * use the HTML form names.</p> <p>For example, for an HTML form with the input
-     * element named <code>password1</code>, the password field specification is
-     * <code>password1</code>.</p> </li> </ul>
-     */
     inline RequestInspection& WithPasswordField(PasswordField&& value) { SetPasswordField(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PayloadType m_payloadType;

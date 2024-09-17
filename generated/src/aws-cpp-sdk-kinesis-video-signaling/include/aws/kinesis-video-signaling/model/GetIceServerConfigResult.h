@@ -34,63 +34,29 @@ namespace Model
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of ICE server information objects.</p>
      */
     inline const Aws::Vector<IceServer>& GetIceServerList() const{ return m_iceServerList; }
-
-    /**
-     * <p>The list of ICE server information objects.</p>
-     */
     inline void SetIceServerList(const Aws::Vector<IceServer>& value) { m_iceServerList = value; }
-
-    /**
-     * <p>The list of ICE server information objects.</p>
-     */
     inline void SetIceServerList(Aws::Vector<IceServer>&& value) { m_iceServerList = std::move(value); }
-
-    /**
-     * <p>The list of ICE server information objects.</p>
-     */
     inline GetIceServerConfigResult& WithIceServerList(const Aws::Vector<IceServer>& value) { SetIceServerList(value); return *this;}
-
-    /**
-     * <p>The list of ICE server information objects.</p>
-     */
     inline GetIceServerConfigResult& WithIceServerList(Aws::Vector<IceServer>&& value) { SetIceServerList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of ICE server information objects.</p>
-     */
     inline GetIceServerConfigResult& AddIceServerList(const IceServer& value) { m_iceServerList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of ICE server information objects.</p>
-     */
     inline GetIceServerConfigResult& AddIceServerList(IceServer&& value) { m_iceServerList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetIceServerConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetIceServerConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetIceServerConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<IceServer> m_iceServerList;

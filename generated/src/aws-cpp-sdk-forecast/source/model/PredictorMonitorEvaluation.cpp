@@ -34,19 +34,8 @@ PredictorMonitorEvaluation::PredictorMonitorEvaluation() :
 {
 }
 
-PredictorMonitorEvaluation::PredictorMonitorEvaluation(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_monitorArnHasBeenSet(false),
-    m_evaluationTimeHasBeenSet(false),
-    m_evaluationStateHasBeenSet(false),
-    m_windowStartDatetimeHasBeenSet(false),
-    m_windowEndDatetimeHasBeenSet(false),
-    m_predictorEventHasBeenSet(false),
-    m_monitorDataSourceHasBeenSet(false),
-    m_metricResultsHasBeenSet(false),
-    m_numItemsEvaluated(0),
-    m_numItemsEvaluatedHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PredictorMonitorEvaluation::PredictorMonitorEvaluation(JsonView jsonValue)
+  : PredictorMonitorEvaluation()
 {
   *this = jsonValue;
 }

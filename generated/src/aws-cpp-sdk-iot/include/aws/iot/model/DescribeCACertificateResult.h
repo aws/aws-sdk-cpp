@@ -40,79 +40,38 @@ namespace Model
     AWS_IOT_API DescribeCACertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The CA certificate description.</p>
      */
     inline const CACertificateDescription& GetCertificateDescription() const{ return m_certificateDescription; }
-
-    /**
-     * <p>The CA certificate description.</p>
-     */
     inline void SetCertificateDescription(const CACertificateDescription& value) { m_certificateDescription = value; }
-
-    /**
-     * <p>The CA certificate description.</p>
-     */
     inline void SetCertificateDescription(CACertificateDescription&& value) { m_certificateDescription = std::move(value); }
-
-    /**
-     * <p>The CA certificate description.</p>
-     */
     inline DescribeCACertificateResult& WithCertificateDescription(const CACertificateDescription& value) { SetCertificateDescription(value); return *this;}
-
-    /**
-     * <p>The CA certificate description.</p>
-     */
     inline DescribeCACertificateResult& WithCertificateDescription(CACertificateDescription&& value) { SetCertificateDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the registration configuration.</p>
      */
     inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
-
-    /**
-     * <p>Information about the registration configuration.</p>
-     */
     inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfig = value; }
-
-    /**
-     * <p>Information about the registration configuration.</p>
-     */
     inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfig = std::move(value); }
-
-    /**
-     * <p>Information about the registration configuration.</p>
-     */
     inline DescribeCACertificateResult& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
-
-    /**
-     * <p>Information about the registration configuration.</p>
-     */
     inline DescribeCACertificateResult& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCACertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCACertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCACertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CACertificateDescription m_certificateDescription;

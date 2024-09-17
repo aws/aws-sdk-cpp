@@ -23,8 +23,8 @@ MeasurementProcessingConfig::MeasurementProcessingConfig() :
 {
 }
 
-MeasurementProcessingConfig::MeasurementProcessingConfig(JsonView jsonValue) : 
-    m_forwardingConfigHasBeenSet(false)
+MeasurementProcessingConfig::MeasurementProcessingConfig(JsonView jsonValue)
+  : MeasurementProcessingConfig()
 {
   *this = jsonValue;
 }

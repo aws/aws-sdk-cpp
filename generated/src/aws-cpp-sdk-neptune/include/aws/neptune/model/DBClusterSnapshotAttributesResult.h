@@ -46,95 +46,34 @@ namespace Model
     AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The identifier of the manual DB cluster snapshot that the attributes apply
      * to.</p>
      */
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
-
-    /**
-     * <p>The identifier of the manual DB cluster snapshot that the attributes apply
-     * to.</p>
-     */
     inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the manual DB cluster snapshot that the attributes apply
-     * to.</p>
-     */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
-
-    /**
-     * <p>The identifier of the manual DB cluster snapshot that the attributes apply
-     * to.</p>
-     */
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the manual DB cluster snapshot that the attributes apply
-     * to.</p>
-     */
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the manual DB cluster snapshot that the attributes apply
-     * to.</p>
-     */
     inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the manual DB cluster snapshot that the attributes apply
-     * to.</p>
-     */
     inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the manual DB cluster snapshot that the attributes apply
-     * to.</p>
-     */
     inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
      */
     inline const Aws::Vector<DBClusterSnapshotAttribute>& GetDBClusterSnapshotAttributes() const{ return m_dBClusterSnapshotAttributes; }
-
-    /**
-     * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-     */
     inline bool DBClusterSnapshotAttributesHasBeenSet() const { return m_dBClusterSnapshotAttributesHasBeenSet; }
-
-    /**
-     * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-     */
     inline void SetDBClusterSnapshotAttributes(const Aws::Vector<DBClusterSnapshotAttribute>& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes = value; }
-
-    /**
-     * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-     */
     inline void SetDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes = std::move(value); }
-
-    /**
-     * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-     */
     inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotAttributes(const Aws::Vector<DBClusterSnapshotAttribute>& value) { SetDBClusterSnapshotAttributes(value); return *this;}
-
-    /**
-     * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-     */
     inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { SetDBClusterSnapshotAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-     */
     inline DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(const DBClusterSnapshotAttribute& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.push_back(value); return *this; }
-
-    /**
-     * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-     */
     inline DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(DBClusterSnapshotAttribute&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_dBClusterSnapshotIdentifier;

@@ -38,26 +38,16 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Whether to enable or disable cold storage on the domain.</p>
+     * <p>Whether to enable or disable cold storage on the domain. You must enable
+     * UltraWarm storage to enable cold storage.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Whether to enable or disable cold storage on the domain.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Whether to enable or disable cold storage on the domain.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Whether to enable or disable cold storage on the domain.</p>
-     */
     inline ColdStorageOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

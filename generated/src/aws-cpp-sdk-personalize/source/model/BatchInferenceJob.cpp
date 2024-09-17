@@ -39,24 +39,8 @@ BatchInferenceJob::BatchInferenceJob() :
 {
 }
 
-BatchInferenceJob::BatchInferenceJob(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_batchInferenceJobArnHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_numResults(0),
-    m_numResultsHasBeenSet(false),
-    m_jobInputHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_batchInferenceJobConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
-    m_batchInferenceJobModeHasBeenSet(false),
-    m_themeGenerationConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+BatchInferenceJob::BatchInferenceJob(JsonView jsonValue)
+  : BatchInferenceJob()
 {
   *this = jsonValue;
 }

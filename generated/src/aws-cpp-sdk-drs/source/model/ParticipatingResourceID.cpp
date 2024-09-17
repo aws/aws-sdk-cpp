@@ -23,8 +23,8 @@ ParticipatingResourceID::ParticipatingResourceID() :
 {
 }
 
-ParticipatingResourceID::ParticipatingResourceID(JsonView jsonValue) : 
-    m_sourceNetworkIDHasBeenSet(false)
+ParticipatingResourceID::ParticipatingResourceID(JsonView jsonValue)
+  : ParticipatingResourceID()
 {
   *this = jsonValue;
 }

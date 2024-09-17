@@ -24,6 +24,9 @@ namespace Aws
         extern bool s_compliantRfc3986Encoding;
         AWS_CORE_API void SetCompliantRfc3986Encoding(bool compliant);
 
+        extern AWS_CORE_API bool s_preservePathSeparators;
+        AWS_CORE_API void SetPreservePathSeparators(bool preservePathSeparators);
+
         //per https://tools.ietf.org/html/rfc3986#section-3.4 there is nothing preventing servers from allowing
         //multiple values for the same key. So use a multimap instead of a map.
         typedef Aws::MultiMap<Aws::String, Aws::String> QueryStringParameterCollection;
@@ -135,7 +138,16 @@ namespace Aws
                 Aws::StringStream ss;
                 ss << pathSegments;
                 Aws::String segments = ss.str();
-                for (const auto& segment : Aws::Utils::StringUtils::Split(segments, '/'))
+                const auto splitOption = s_preservePathSeparators
+                                           ? Utils::StringUtils::SplitOptions::INCLUDE_EMPTY_SEGMENTS
+                                           : Utils::StringUtils::SplitOptions::NOT_SET;
+                // Preserve legacy behavior -- we need to remove a leading "/" if use `INCLUDE_EMPTY_SEGMENTS` is specified
+                // because string split will no longer ignore leading delimiters -- which is correct.
+                auto split = Aws::Utils::StringUtils::Split(segments, '/', splitOption);
+                if (s_preservePathSeparators && m_pathSegments.empty() && !split.empty() && split.front().empty() && !m_pathHasTrailingSlash) {
+                  split.erase(split.begin());
+                }
+                for (const auto& segment: split)
                 {
                     m_pathSegments.push_back(segment);
                 }

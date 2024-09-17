@@ -22,8 +22,8 @@ StartInferenceSchedulerResult::StartInferenceSchedulerResult() :
 {
 }
 
-StartInferenceSchedulerResult::StartInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(InferenceSchedulerStatus::NOT_SET)
+StartInferenceSchedulerResult::StartInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartInferenceSchedulerResult()
 {
   *this = result;
 }

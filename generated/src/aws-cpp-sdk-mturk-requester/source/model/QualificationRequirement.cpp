@@ -29,14 +29,8 @@ QualificationRequirement::QualificationRequirement() :
 {
 }
 
-QualificationRequirement::QualificationRequirement(JsonView jsonValue) : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_comparator(Comparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_integerValuesHasBeenSet(false),
-    m_localeValuesHasBeenSet(false),
-    m_actionsGuarded(HITAccessActions::NOT_SET),
-    m_actionsGuardedHasBeenSet(false)
+QualificationRequirement::QualificationRequirement(JsonView jsonValue)
+  : QualificationRequirement()
 {
   *this = jsonValue;
 }

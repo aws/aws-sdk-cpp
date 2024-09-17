@@ -25,10 +25,8 @@ LoggingConfiguration::LoggingConfiguration() :
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }

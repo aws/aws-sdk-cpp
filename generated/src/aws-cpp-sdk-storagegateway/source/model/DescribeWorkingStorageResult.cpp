@@ -23,9 +23,8 @@ DescribeWorkingStorageResult::DescribeWorkingStorageResult() :
 {
 }
 
-DescribeWorkingStorageResult::DescribeWorkingStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_workingStorageUsedInBytes(0),
-    m_workingStorageAllocatedInBytes(0)
+DescribeWorkingStorageResult::DescribeWorkingStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeWorkingStorageResult()
 {
   *this = result;
 }

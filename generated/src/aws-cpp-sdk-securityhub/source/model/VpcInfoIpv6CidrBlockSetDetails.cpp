@@ -23,8 +23,8 @@ VpcInfoIpv6CidrBlockSetDetails::VpcInfoIpv6CidrBlockSetDetails() :
 {
 }
 
-VpcInfoIpv6CidrBlockSetDetails::VpcInfoIpv6CidrBlockSetDetails(JsonView jsonValue) : 
-    m_ipv6CidrBlockHasBeenSet(false)
+VpcInfoIpv6CidrBlockSetDetails::VpcInfoIpv6CidrBlockSetDetails(JsonView jsonValue)
+  : VpcInfoIpv6CidrBlockSetDetails()
 {
   *this = jsonValue;
 }

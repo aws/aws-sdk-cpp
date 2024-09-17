@@ -36,68 +36,35 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The F1 score for an adapter version.</p>
      */
     inline double GetF1Score() const{ return m_f1Score; }
-
-    /**
-     * <p>The F1 score for an adapter version.</p>
-     */
     inline bool F1ScoreHasBeenSet() const { return m_f1ScoreHasBeenSet; }
-
-    /**
-     * <p>The F1 score for an adapter version.</p>
-     */
     inline void SetF1Score(double value) { m_f1ScoreHasBeenSet = true; m_f1Score = value; }
-
-    /**
-     * <p>The F1 score for an adapter version.</p>
-     */
     inline EvaluationMetric& WithF1Score(double value) { SetF1Score(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Precision score for an adapter version.</p>
      */
     inline double GetPrecision() const{ return m_precision; }
-
-    /**
-     * <p>The Precision score for an adapter version.</p>
-     */
     inline bool PrecisionHasBeenSet() const { return m_precisionHasBeenSet; }
-
-    /**
-     * <p>The Precision score for an adapter version.</p>
-     */
     inline void SetPrecision(double value) { m_precisionHasBeenSet = true; m_precision = value; }
-
-    /**
-     * <p>The Precision score for an adapter version.</p>
-     */
     inline EvaluationMetric& WithPrecision(double value) { SetPrecision(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Recall score for an adapter version.</p>
      */
     inline double GetRecall() const{ return m_recall; }
-
-    /**
-     * <p>The Recall score for an adapter version.</p>
-     */
     inline bool RecallHasBeenSet() const { return m_recallHasBeenSet; }
-
-    /**
-     * <p>The Recall score for an adapter version.</p>
-     */
     inline void SetRecall(double value) { m_recallHasBeenSet = true; m_recall = value; }
-
-    /**
-     * <p>The Recall score for an adapter version.</p>
-     */
     inline EvaluationMetric& WithRecall(double value) { SetRecall(value); return *this;}
-
+    ///@}
   private:
 
     double m_f1Score;

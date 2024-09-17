@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeChangeSetResult::DescribeChangeSetResult() : 
+    m_intent(Intent::NOT_SET),
     m_status(ChangeStatus::NOT_SET),
     m_failureCode(FailureCode::NOT_SET)
 {
 }
 
-DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ChangeStatus::NOT_SET),
-    m_failureCode(FailureCode::NOT_SET)
+DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeChangeSetResult()
 {
   *this = result;
 }
@@ -48,6 +48,12 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ChangeSetName"))
   {
     m_changeSetName = jsonValue.GetString("ChangeSetName");
+
+  }
+
+  if(jsonValue.ValueExists("Intent"))
+  {
+    m_intent = IntentMapper::GetIntentForName(jsonValue.GetString("Intent"));
 
   }
 

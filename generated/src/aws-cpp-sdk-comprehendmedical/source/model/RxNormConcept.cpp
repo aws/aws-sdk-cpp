@@ -26,11 +26,8 @@ RxNormConcept::RxNormConcept() :
 {
 }
 
-RxNormConcept::RxNormConcept(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+RxNormConcept::RxNormConcept(JsonView jsonValue)
+  : RxNormConcept()
 {
   *this = jsonValue;
 }

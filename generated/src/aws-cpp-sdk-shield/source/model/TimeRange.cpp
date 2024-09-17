@@ -24,9 +24,8 @@ TimeRange::TimeRange() :
 {
 }
 
-TimeRange::TimeRange(JsonView jsonValue) : 
-    m_fromInclusiveHasBeenSet(false),
-    m_toExclusiveHasBeenSet(false)
+TimeRange::TimeRange(JsonView jsonValue)
+  : TimeRange()
 {
   *this = jsonValue;
 }

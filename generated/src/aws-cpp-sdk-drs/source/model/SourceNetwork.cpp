@@ -34,19 +34,8 @@ SourceNetwork::SourceNetwork() :
 {
 }
 
-SourceNetwork::SourceNetwork(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_cfnStackNameHasBeenSet(false),
-    m_lastRecoveryHasBeenSet(false),
-    m_launchedVpcIDHasBeenSet(false),
-    m_replicationStatus(ReplicationStatus::NOT_SET),
-    m_replicationStatusHasBeenSet(false),
-    m_replicationStatusDetailsHasBeenSet(false),
-    m_sourceAccountIDHasBeenSet(false),
-    m_sourceNetworkIDHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceVpcIDHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SourceNetwork::SourceNetwork(JsonView jsonValue)
+  : SourceNetwork()
 {
   *this = jsonValue;
 }

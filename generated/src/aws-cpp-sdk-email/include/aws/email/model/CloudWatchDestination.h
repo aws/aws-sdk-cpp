@@ -46,54 +46,20 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>A list of dimensions upon which to categorize your emails when you publish
      * email sending events to Amazon CloudWatch.</p>
      */
     inline const Aws::Vector<CloudWatchDimensionConfiguration>& GetDimensionConfigurations() const{ return m_dimensionConfigurations; }
-
-    /**
-     * <p>A list of dimensions upon which to categorize your emails when you publish
-     * email sending events to Amazon CloudWatch.</p>
-     */
     inline bool DimensionConfigurationsHasBeenSet() const { return m_dimensionConfigurationsHasBeenSet; }
-
-    /**
-     * <p>A list of dimensions upon which to categorize your emails when you publish
-     * email sending events to Amazon CloudWatch.</p>
-     */
     inline void SetDimensionConfigurations(const Aws::Vector<CloudWatchDimensionConfiguration>& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = value; }
-
-    /**
-     * <p>A list of dimensions upon which to categorize your emails when you publish
-     * email sending events to Amazon CloudWatch.</p>
-     */
     inline void SetDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = std::move(value); }
-
-    /**
-     * <p>A list of dimensions upon which to categorize your emails when you publish
-     * email sending events to Amazon CloudWatch.</p>
-     */
     inline CloudWatchDestination& WithDimensionConfigurations(const Aws::Vector<CloudWatchDimensionConfiguration>& value) { SetDimensionConfigurations(value); return *this;}
-
-    /**
-     * <p>A list of dimensions upon which to categorize your emails when you publish
-     * email sending events to Amazon CloudWatch.</p>
-     */
     inline CloudWatchDestination& WithDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { SetDimensionConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of dimensions upon which to categorize your emails when you publish
-     * email sending events to Amazon CloudWatch.</p>
-     */
     inline CloudWatchDestination& AddDimensionConfigurations(const CloudWatchDimensionConfiguration& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>A list of dimensions upon which to categorize your emails when you publish
-     * email sending events to Amazon CloudWatch.</p>
-     */
     inline CloudWatchDestination& AddDimensionConfigurations(CloudWatchDimensionConfiguration&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CloudWatchDimensionConfiguration> m_dimensionConfigurations;

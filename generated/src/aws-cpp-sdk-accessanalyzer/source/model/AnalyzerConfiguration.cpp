@@ -23,8 +23,8 @@ AnalyzerConfiguration::AnalyzerConfiguration() :
 {
 }
 
-AnalyzerConfiguration::AnalyzerConfiguration(JsonView jsonValue) : 
-    m_unusedAccessHasBeenSet(false)
+AnalyzerConfiguration::AnalyzerConfiguration(JsonView jsonValue)
+  : AnalyzerConfiguration()
 {
   *this = jsonValue;
 }

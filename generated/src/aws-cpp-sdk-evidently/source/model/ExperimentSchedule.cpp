@@ -23,8 +23,8 @@ ExperimentSchedule::ExperimentSchedule() :
 {
 }
 
-ExperimentSchedule::ExperimentSchedule(JsonView jsonValue) : 
-    m_analysisCompleteTimeHasBeenSet(false)
+ExperimentSchedule::ExperimentSchedule(JsonView jsonValue)
+  : ExperimentSchedule()
 {
   *this = jsonValue;
 }

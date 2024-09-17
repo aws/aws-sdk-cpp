@@ -25,10 +25,8 @@ TargetContainerRepository::TargetContainerRepository() :
 {
 }
 
-TargetContainerRepository::TargetContainerRepository(JsonView jsonValue) : 
-    m_service(ContainerRepositoryService::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
+TargetContainerRepository::TargetContainerRepository(JsonView jsonValue)
+  : TargetContainerRepository()
 {
   *this = jsonValue;
 }

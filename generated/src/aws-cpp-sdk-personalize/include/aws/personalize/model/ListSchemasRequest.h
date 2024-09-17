@@ -34,75 +34,30 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A token returned from the previous call to <code>ListSchemas</code> for
      * getting the next set of schemas (if they exist).</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListSchemas</code> for
-     * getting the next set of schemas (if they exist).</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListSchemas</code> for
-     * getting the next set of schemas (if they exist).</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListSchemas</code> for
-     * getting the next set of schemas (if they exist).</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListSchemas</code> for
-     * getting the next set of schemas (if they exist).</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListSchemas</code> for
-     * getting the next set of schemas (if they exist).</p>
-     */
     inline ListSchemasRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token returned from the previous call to <code>ListSchemas</code> for
-     * getting the next set of schemas (if they exist).</p>
-     */
     inline ListSchemasRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token returned from the previous call to <code>ListSchemas</code> for
-     * getting the next set of schemas (if they exist).</p>
-     */
     inline ListSchemasRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of schemas to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of schemas to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of schemas to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of schemas to return.</p>
-     */
     inline ListSchemasRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

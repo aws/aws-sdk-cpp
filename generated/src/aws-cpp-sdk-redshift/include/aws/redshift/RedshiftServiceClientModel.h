@@ -135,6 +135,44 @@
 #include <aws/redshift/model/RevokeSnapshotAccessResult.h>
 #include <aws/redshift/model/RotateEncryptionKeyResult.h>
 #include <aws/redshift/model/UpdatePartnerStatusResult.h>
+#include <aws/redshift/model/ListRecommendationsRequest.h>
+#include <aws/redshift/model/DescribeClusterVersionsRequest.h>
+#include <aws/redshift/model/DescribeDataSharesForConsumerRequest.h>
+#include <aws/redshift/model/DescribeEndpointAuthorizationRequest.h>
+#include <aws/redshift/model/DescribeHsmConfigurationsRequest.h>
+#include <aws/redshift/model/DescribeUsageLimitsRequest.h>
+#include <aws/redshift/model/DescribeEventCategoriesRequest.h>
+#include <aws/redshift/model/DescribeAuthenticationProfilesRequest.h>
+#include <aws/redshift/model/DescribeClusterParameterGroupsRequest.h>
+#include <aws/redshift/model/DescribeStorageRequest.h>
+#include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
+#include <aws/redshift/model/DescribeScheduledActionsRequest.h>
+#include <aws/redshift/model/RevokeEndpointAccessRequest.h>
+#include <aws/redshift/model/DescribeHsmClientCertificatesRequest.h>
+#include <aws/redshift/model/CreateSnapshotScheduleRequest.h>
+#include <aws/redshift/model/DescribeSnapshotCopyGrantsRequest.h>
+#include <aws/redshift/model/DescribeRedshiftIdcApplicationsRequest.h>
+#include <aws/redshift/model/DescribeSnapshotSchedulesRequest.h>
+#include <aws/redshift/model/DescribeReservedNodesRequest.h>
+#include <aws/redshift/model/DescribeClusterSnapshotsRequest.h>
+#include <aws/redshift/model/DescribeClustersRequest.h>
+#include <aws/redshift/model/DescribeEventSubscriptionsRequest.h>
+#include <aws/redshift/model/DescribeTagsRequest.h>
+#include <aws/redshift/model/DescribeAccountAttributesRequest.h>
+#include <aws/redshift/model/DescribeClusterTracksRequest.h>
+#include <aws/redshift/model/DescribeDataSharesForProducerRequest.h>
+#include <aws/redshift/model/DescribeDataSharesRequest.h>
+#include <aws/redshift/model/DescribeInboundIntegrationsRequest.h>
+#include <aws/redshift/model/DescribeClusterSubnetGroupsRequest.h>
+#include <aws/redshift/model/DescribeOrderableClusterOptionsRequest.h>
+#include <aws/redshift/model/DescribeReservedNodeOfferingsRequest.h>
+#include <aws/redshift/model/DescribeTableRestoreStatusRequest.h>
+#include <aws/redshift/model/DescribeEventsRequest.h>
+#include <aws/redshift/model/DescribeClusterSecurityGroupsRequest.h>
+#include <aws/redshift/model/DescribeEndpointAccessRequest.h>
+#include <aws/redshift/model/DescribeReservedNodeExchangeStatusRequest.h>
+#include <aws/redshift/model/DescribeClusterDbRevisionsRequest.h>
+#include <aws/redshift/model/DescribeCustomDomainAssociationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in RedshiftClient header */
 
@@ -169,7 +207,7 @@ namespace Aws
 
   namespace Redshift
   {
-    using RedshiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RedshiftClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RedshiftEndpointProviderBase = Aws::Redshift::Endpoint::RedshiftEndpointProviderBase;
     using RedshiftEndpointProvider = Aws::Redshift::Endpoint::RedshiftEndpointProvider;
 

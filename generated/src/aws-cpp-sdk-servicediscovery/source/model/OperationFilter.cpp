@@ -27,12 +27,8 @@ OperationFilter::OperationFilter() :
 {
 }
 
-OperationFilter::OperationFilter(JsonView jsonValue) : 
-    m_name(OperationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_condition(FilterCondition::NOT_SET),
-    m_conditionHasBeenSet(false)
+OperationFilter::OperationFilter(JsonView jsonValue)
+  : OperationFilter()
 {
   *this = jsonValue;
 }

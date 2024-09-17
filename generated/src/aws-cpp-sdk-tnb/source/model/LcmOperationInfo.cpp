@@ -23,8 +23,8 @@ LcmOperationInfo::LcmOperationInfo() :
 {
 }
 
-LcmOperationInfo::LcmOperationInfo(JsonView jsonValue) : 
-    m_nsLcmOpOccIdHasBeenSet(false)
+LcmOperationInfo::LcmOperationInfo(JsonView jsonValue)
+  : LcmOperationInfo()
 {
   *this = jsonValue;
 }

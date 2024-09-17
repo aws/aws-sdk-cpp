@@ -23,8 +23,8 @@ Homogeneous::Homogeneous() :
 {
 }
 
-Homogeneous::Homogeneous(JsonView jsonValue) : 
-    m_targetDatabaseEngineHasBeenSet(false)
+Homogeneous::Homogeneous(JsonView jsonValue)
+  : Homogeneous()
 {
   *this = jsonValue;
 }

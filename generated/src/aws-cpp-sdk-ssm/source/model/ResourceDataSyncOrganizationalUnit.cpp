@@ -23,8 +23,8 @@ ResourceDataSyncOrganizationalUnit::ResourceDataSyncOrganizationalUnit() :
 {
 }
 
-ResourceDataSyncOrganizationalUnit::ResourceDataSyncOrganizationalUnit(JsonView jsonValue) : 
-    m_organizationalUnitIdHasBeenSet(false)
+ResourceDataSyncOrganizationalUnit::ResourceDataSyncOrganizationalUnit(JsonView jsonValue)
+  : ResourceDataSyncOrganizationalUnit()
 {
   *this = jsonValue;
 }

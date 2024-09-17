@@ -35,20 +35,8 @@ AutoScalingThresholds::AutoScalingThresholds() :
 {
 }
 
-AutoScalingThresholds::AutoScalingThresholds(JsonView jsonValue) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_thresholdsWaitTime(0),
-    m_thresholdsWaitTimeHasBeenSet(false),
-    m_ignoreMetricsTime(0),
-    m_ignoreMetricsTimeHasBeenSet(false),
-    m_cpuThreshold(0.0),
-    m_cpuThresholdHasBeenSet(false),
-    m_memoryThreshold(0.0),
-    m_memoryThresholdHasBeenSet(false),
-    m_loadThreshold(0.0),
-    m_loadThresholdHasBeenSet(false),
-    m_alarmsHasBeenSet(false)
+AutoScalingThresholds::AutoScalingThresholds(JsonView jsonValue)
+  : AutoScalingThresholds()
 {
   *this = jsonValue;
 }

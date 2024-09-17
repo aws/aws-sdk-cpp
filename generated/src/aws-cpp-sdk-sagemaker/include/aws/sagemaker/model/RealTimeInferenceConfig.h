@@ -38,61 +38,28 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The instance type the model is deployed to.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type the model is deployed to.</p>
-     */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-
-    /**
-     * <p>The instance type the model is deployed to.</p>
-     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance type the model is deployed to.</p>
-     */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type the model is deployed to.</p>
-     */
     inline RealTimeInferenceConfig& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type the model is deployed to.</p>
-     */
     inline RealTimeInferenceConfig& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of instances of the type specified by
      * <code>InstanceType</code>.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
-
-    /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
-     */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
-
-    /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
-     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-
-    /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
-     */
     inline RealTimeInferenceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
-
+    ///@}
   private:
 
     InstanceType m_instanceType;

@@ -27,12 +27,8 @@ ActionTypeIdentifier::ActionTypeIdentifier() :
 {
 }
 
-ActionTypeIdentifier::ActionTypeIdentifier(JsonView jsonValue) : 
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_versionHasBeenSet(false)
+ActionTypeIdentifier::ActionTypeIdentifier(JsonView jsonValue)
+  : ActionTypeIdentifier()
 {
   *this = jsonValue;
 }

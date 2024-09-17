@@ -21,6 +21,7 @@ ListSubscriptionGrantsRequest::ListSubscriptionGrantsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
+    m_owningProjectIdHasBeenSet(false),
     m_sortBy(SortKey::NOT_SET),
     m_sortByHasBeenSet(false),
     m_sortOrder(SortOrder::NOT_SET),
@@ -57,6 +58,13 @@ void ListSubscriptionGrantsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_owningProjectIdHasBeenSet)
+    {
+      ss << m_owningProjectId;
+      uri.AddQueryStringParameter("owningProjectId", ss.str());
       ss.str("");
     }
 

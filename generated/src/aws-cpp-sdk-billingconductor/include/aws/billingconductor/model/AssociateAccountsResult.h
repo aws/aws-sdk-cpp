@@ -32,70 +32,30 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API AssociateAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the billing group that associates the
      * array of account IDs. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline AssociateAccountsResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline AssociateAccountsResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the billing group that associates the
-     * array of account IDs. </p>
-     */
     inline AssociateAccountsResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateAccountsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateAccountsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateAccountsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

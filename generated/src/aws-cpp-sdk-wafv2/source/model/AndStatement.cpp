@@ -23,8 +23,8 @@ AndStatement::AndStatement() :
 {
 }
 
-AndStatement::AndStatement(JsonView jsonValue) : 
-    m_statementsHasBeenSet(false)
+AndStatement::AndStatement(JsonView jsonValue)
+  : AndStatement()
 {
   *this = jsonValue;
 }

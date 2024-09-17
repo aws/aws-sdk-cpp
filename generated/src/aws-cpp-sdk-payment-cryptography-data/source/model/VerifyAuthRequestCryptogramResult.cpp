@@ -29,12 +29,6 @@ VerifyAuthRequestCryptogramResult::VerifyAuthRequestCryptogramResult(const Aws::
 VerifyAuthRequestCryptogramResult& VerifyAuthRequestCryptogramResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AuthResponseValue"))
-  {
-    m_authResponseValue = jsonValue.GetString("AuthResponseValue");
-
-  }
-
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
@@ -44,6 +38,12 @@ VerifyAuthRequestCryptogramResult& VerifyAuthRequestCryptogramResult::operator =
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
+
+  }
+
+  if(jsonValue.ValueExists("AuthResponseValue"))
+  {
+    m_authResponseValue = jsonValue.GetString("AuthResponseValue");
 
   }
 

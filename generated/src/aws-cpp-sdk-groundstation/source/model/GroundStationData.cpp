@@ -25,10 +25,8 @@ GroundStationData::GroundStationData() :
 {
 }
 
-GroundStationData::GroundStationData(JsonView jsonValue) : 
-    m_groundStationIdHasBeenSet(false),
-    m_groundStationNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
+GroundStationData::GroundStationData(JsonView jsonValue)
+  : GroundStationData()
 {
   *this = jsonValue;
 }

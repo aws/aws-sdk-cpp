@@ -33,58 +33,29 @@ namespace Model
     AWS_CODEGURUSECURITY_API UpdateAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption.</p>
+     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is
+     * used for encryption. If you did not specify a customer-managed KMS key in the
+     * request, returns empty. </p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
-
-    /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption.</p>
-     */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfig = value; }
-
-    /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption.</p>
-     */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfig = std::move(value); }
-
-    /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption.</p>
-     */
     inline UpdateAccountConfigurationResult& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-
-    /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption.</p>
-     */
     inline UpdateAccountConfigurationResult& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EncryptionConfig m_encryptionConfig;

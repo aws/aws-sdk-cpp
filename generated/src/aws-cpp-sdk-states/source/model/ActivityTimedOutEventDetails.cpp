@@ -24,9 +24,8 @@ ActivityTimedOutEventDetails::ActivityTimedOutEventDetails() :
 {
 }
 
-ActivityTimedOutEventDetails::ActivityTimedOutEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+ActivityTimedOutEventDetails::ActivityTimedOutEventDetails(JsonView jsonValue)
+  : ActivityTimedOutEventDetails()
 {
   *this = jsonValue;
 }

@@ -40,482 +40,173 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the application that the GCM channel applies
      * to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application that the GCM channel applies
-     * to.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application that the GCM channel applies
-     * to.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application that the GCM channel applies
-     * to.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application that the GCM channel applies
-     * to.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application that the GCM channel applies
-     * to.</p>
-     */
     inline GCMChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application that the GCM channel applies
-     * to.</p>
-     */
     inline GCMChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application that the GCM channel applies
-     * to.</p>
-     */
     inline GCMChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the GCM channel was enabled.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The date and time when the GCM channel was enabled.</p>
-     */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the GCM channel was enabled.</p>
-     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-
-    /**
-     * <p>The date and time when the GCM channel was enabled.</p>
-     */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-
-    /**
-     * <p>The date and time when the GCM channel was enabled.</p>
-     */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-
-    /**
-     * <p>The date and time when the GCM channel was enabled.</p>
-     */
     inline GCMChannelResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the GCM channel was enabled.</p>
-     */
     inline GCMChannelResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-
-    /**
-     * <p>The date and time when the GCM channel was enabled.</p>
-     */
     inline GCMChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
      * that you received from Google to communicate with Google services.</p>
      */
     inline const Aws::String& GetCredential() const{ return m_credential; }
-
-    /**
-     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
-     * that you received from Google to communicate with Google services.</p>
-     */
     inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
-
-    /**
-     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
-     * that you received from Google to communicate with Google services.</p>
-     */
     inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
-
-    /**
-     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
-     * that you received from Google to communicate with Google services.</p>
-     */
     inline void SetCredential(Aws::String&& value) { m_credentialHasBeenSet = true; m_credential = std::move(value); }
-
-    /**
-     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
-     * that you received from Google to communicate with Google services.</p>
-     */
     inline void SetCredential(const char* value) { m_credentialHasBeenSet = true; m_credential.assign(value); }
-
-    /**
-     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
-     * that you received from Google to communicate with Google services.</p>
-     */
     inline GCMChannelResponse& WithCredential(const Aws::String& value) { SetCredential(value); return *this;}
-
-    /**
-     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
-     * that you received from Google to communicate with Google services.</p>
-     */
     inline GCMChannelResponse& WithCredential(Aws::String&& value) { SetCredential(std::move(value)); return *this;}
-
-    /**
-     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
-     * that you received from Google to communicate with Google services.</p>
-     */
     inline GCMChannelResponse& WithCredential(const char* value) { SetCredential(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default authentication method used for GCM. Values are either "TOKEN" or
      * "KEY". Defaults to "KEY".</p>
      */
     inline const Aws::String& GetDefaultAuthenticationMethod() const{ return m_defaultAuthenticationMethod; }
-
-    /**
-     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
-     * "KEY". Defaults to "KEY".</p>
-     */
     inline bool DefaultAuthenticationMethodHasBeenSet() const { return m_defaultAuthenticationMethodHasBeenSet; }
-
-    /**
-     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
-     * "KEY". Defaults to "KEY".</p>
-     */
     inline void SetDefaultAuthenticationMethod(const Aws::String& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = value; }
-
-    /**
-     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
-     * "KEY". Defaults to "KEY".</p>
-     */
     inline void SetDefaultAuthenticationMethod(Aws::String&& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = std::move(value); }
-
-    /**
-     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
-     * "KEY". Defaults to "KEY".</p>
-     */
     inline void SetDefaultAuthenticationMethod(const char* value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod.assign(value); }
-
-    /**
-     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
-     * "KEY". Defaults to "KEY".</p>
-     */
     inline GCMChannelResponse& WithDefaultAuthenticationMethod(const Aws::String& value) { SetDefaultAuthenticationMethod(value); return *this;}
-
-    /**
-     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
-     * "KEY". Defaults to "KEY".</p>
-     */
     inline GCMChannelResponse& WithDefaultAuthenticationMethod(Aws::String&& value) { SetDefaultAuthenticationMethod(std::move(value)); return *this;}
-
-    /**
-     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
-     * "KEY". Defaults to "KEY".</p>
-     */
     inline GCMChannelResponse& WithDefaultAuthenticationMethod(const char* value) { SetDefaultAuthenticationMethod(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the GCM channel is enabled for the application.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether the GCM channel is enabled for the application.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the GCM channel is enabled for the application.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether the GCM channel is enabled for the application.</p>
-     */
     inline GCMChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Not used) This property is retained only for backward compatibility.</p>
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
-
-    /**
-     * <p>(Not used) This property is retained only for backward compatibility.</p>
-     */
     inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
-
-    /**
-     * <p>(Not used) This property is retained only for backward compatibility.</p>
-     */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
-
-    /**
-     * <p>(Not used) This property is retained only for backward compatibility.</p>
-     */
     inline GCMChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns true if the JSON file provided by Google during registration process
      * was used in the <b>ServiceJson</b> field of the request.</p>
      */
     inline bool GetHasFcmServiceCredentials() const{ return m_hasFcmServiceCredentials; }
-
-    /**
-     * <p>Returns true if the JSON file provided by Google during registration process
-     * was used in the <b>ServiceJson</b> field of the request.</p>
-     */
     inline bool HasFcmServiceCredentialsHasBeenSet() const { return m_hasFcmServiceCredentialsHasBeenSet; }
-
-    /**
-     * <p>Returns true if the JSON file provided by Google during registration process
-     * was used in the <b>ServiceJson</b> field of the request.</p>
-     */
     inline void SetHasFcmServiceCredentials(bool value) { m_hasFcmServiceCredentialsHasBeenSet = true; m_hasFcmServiceCredentials = value; }
-
-    /**
-     * <p>Returns true if the JSON file provided by Google during registration process
-     * was used in the <b>ServiceJson</b> field of the request.</p>
-     */
     inline GCMChannelResponse& WithHasFcmServiceCredentials(bool value) { SetHasFcmServiceCredentials(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Deprecated) An identifier for the GCM channel. This property is retained
      * only for backward compatibility.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>(Deprecated) An identifier for the GCM channel. This property is retained
-     * only for backward compatibility.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>(Deprecated) An identifier for the GCM channel. This property is retained
-     * only for backward compatibility.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>(Deprecated) An identifier for the GCM channel. This property is retained
-     * only for backward compatibility.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>(Deprecated) An identifier for the GCM channel. This property is retained
-     * only for backward compatibility.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>(Deprecated) An identifier for the GCM channel. This property is retained
-     * only for backward compatibility.</p>
-     */
     inline GCMChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>(Deprecated) An identifier for the GCM channel. This property is retained
-     * only for backward compatibility.</p>
-     */
     inline GCMChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>(Deprecated) An identifier for the GCM channel. This property is retained
-     * only for backward compatibility.</p>
-     */
     inline GCMChannelResponse& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the GCM channel is archived.</p>
      */
     inline bool GetIsArchived() const{ return m_isArchived; }
-
-    /**
-     * <p>Specifies whether the GCM channel is archived.</p>
-     */
     inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the GCM channel is archived.</p>
-     */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
-
-    /**
-     * <p>Specifies whether the GCM channel is archived.</p>
-     */
     inline GCMChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user who last modified the GCM channel.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
-
-    /**
-     * <p>The user who last modified the GCM channel.</p>
-     */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
-
-    /**
-     * <p>The user who last modified the GCM channel.</p>
-     */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
-
-    /**
-     * <p>The user who last modified the GCM channel.</p>
-     */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
-
-    /**
-     * <p>The user who last modified the GCM channel.</p>
-     */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
-
-    /**
-     * <p>The user who last modified the GCM channel.</p>
-     */
     inline GCMChannelResponse& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
-
-    /**
-     * <p>The user who last modified the GCM channel.</p>
-     */
     inline GCMChannelResponse& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The user who last modified the GCM channel.</p>
-     */
     inline GCMChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the GCM channel was last modified.</p>
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-
-    /**
-     * <p>The date and time when the GCM channel was last modified.</p>
-     */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the GCM channel was last modified.</p>
-     */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-
-    /**
-     * <p>The date and time when the GCM channel was last modified.</p>
-     */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-
-    /**
-     * <p>The date and time when the GCM channel was last modified.</p>
-     */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
-
-    /**
-     * <p>The date and time when the GCM channel was last modified.</p>
-     */
     inline GCMChannelResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the GCM channel was last modified.</p>
-     */
     inline GCMChannelResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
-
-    /**
-     * <p>The date and time when the GCM channel was last modified.</p>
-     */
     inline GCMChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of messaging or notification platform for the channel. For the GCM
      * channel, this value is GCM.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
-
-    /**
-     * <p>The type of messaging or notification platform for the channel. For the GCM
-     * channel, this value is GCM.</p>
-     */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-
-    /**
-     * <p>The type of messaging or notification platform for the channel. For the GCM
-     * channel, this value is GCM.</p>
-     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-
-    /**
-     * <p>The type of messaging or notification platform for the channel. For the GCM
-     * channel, this value is GCM.</p>
-     */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-
-    /**
-     * <p>The type of messaging or notification platform for the channel. For the GCM
-     * channel, this value is GCM.</p>
-     */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-
-    /**
-     * <p>The type of messaging or notification platform for the channel. For the GCM
-     * channel, this value is GCM.</p>
-     */
     inline GCMChannelResponse& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-
-    /**
-     * <p>The type of messaging or notification platform for the channel. For the GCM
-     * channel, this value is GCM.</p>
-     */
     inline GCMChannelResponse& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of messaging or notification platform for the channel. For the GCM
-     * channel, this value is GCM.</p>
-     */
     inline GCMChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current version of the GCM channel.</p>
      */
     inline int GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The current version of the GCM channel.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The current version of the GCM channel.</p>
-     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The current version of the GCM channel.</p>
-     */
     inline GCMChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

@@ -35,68 +35,35 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of checks that failed.</p>
      */
     inline int GetFailed() const{ return m_failed; }
-
-    /**
-     * <p>The number of checks that failed.</p>
-     */
     inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
-
-    /**
-     * <p>The number of checks that failed.</p>
-     */
     inline void SetFailed(int value) { m_failedHasBeenSet = true; m_failed = value; }
-
-    /**
-     * <p>The number of checks that failed.</p>
-     */
     inline StatusCounts& WithFailed(int value) { SetFailed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of checks that passed.</p>
      */
     inline int GetPassed() const{ return m_passed; }
-
-    /**
-     * <p>The number of checks that passed.</p>
-     */
     inline bool PassedHasBeenSet() const { return m_passedHasBeenSet; }
-
-    /**
-     * <p>The number of checks that passed.</p>
-     */
     inline void SetPassed(int value) { m_passedHasBeenSet = true; m_passed = value; }
-
-    /**
-     * <p>The number of checks that passed.</p>
-     */
     inline StatusCounts& WithPassed(int value) { SetPassed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of checks that were skipped.</p>
      */
     inline int GetSkipped() const{ return m_skipped; }
-
-    /**
-     * <p>The number of checks that were skipped.</p>
-     */
     inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
-
-    /**
-     * <p>The number of checks that were skipped.</p>
-     */
     inline void SetSkipped(int value) { m_skippedHasBeenSet = true; m_skipped = value; }
-
-    /**
-     * <p>The number of checks that were skipped.</p>
-     */
     inline StatusCounts& WithSkipped(int value) { SetSkipped(value); return *this;}
-
+    ///@}
   private:
 
     int m_failed;

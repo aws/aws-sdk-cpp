@@ -28,13 +28,8 @@ Permission::Permission() :
 {
 }
 
-Permission::Permission(JsonView jsonValue) : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_sourceAccountHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_policyHasBeenSet(false)
+Permission::Permission(JsonView jsonValue)
+  : Permission()
 {
   *this = jsonValue;
 }

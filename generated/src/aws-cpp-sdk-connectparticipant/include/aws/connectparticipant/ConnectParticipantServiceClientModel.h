@@ -60,7 +60,7 @@ namespace Aws
 
   namespace ConnectParticipant
   {
-    using ConnectParticipantClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectParticipantClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConnectParticipantEndpointProviderBase = Aws::ConnectParticipant::Endpoint::ConnectParticipantEndpointProviderBase;
     using ConnectParticipantEndpointProvider = Aws::ConnectParticipant::Endpoint::ConnectParticipantEndpointProvider;
 

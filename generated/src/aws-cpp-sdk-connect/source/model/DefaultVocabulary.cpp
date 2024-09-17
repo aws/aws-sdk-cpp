@@ -27,12 +27,8 @@ DefaultVocabulary::DefaultVocabulary() :
 {
 }
 
-DefaultVocabulary::DefaultVocabulary(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_vocabularyIdHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false)
+DefaultVocabulary::DefaultVocabulary(JsonView jsonValue)
+  : DefaultVocabulary()
 {
   *this = jsonValue;
 }

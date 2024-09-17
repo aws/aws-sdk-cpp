@@ -32,63 +32,29 @@ namespace Model
     AWS_SSM_API DeleteMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the deleted maintenance window.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
-
-    /**
-     * <p>The ID of the deleted maintenance window.</p>
-     */
     inline void SetWindowId(const Aws::String& value) { m_windowId = value; }
-
-    /**
-     * <p>The ID of the deleted maintenance window.</p>
-     */
     inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
-
-    /**
-     * <p>The ID of the deleted maintenance window.</p>
-     */
     inline void SetWindowId(const char* value) { m_windowId.assign(value); }
-
-    /**
-     * <p>The ID of the deleted maintenance window.</p>
-     */
     inline DeleteMaintenanceWindowResult& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
-
-    /**
-     * <p>The ID of the deleted maintenance window.</p>
-     */
     inline DeleteMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the deleted maintenance window.</p>
-     */
     inline DeleteMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteMaintenanceWindowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteMaintenanceWindowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteMaintenanceWindowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_windowId;

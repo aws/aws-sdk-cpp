@@ -32,17 +32,8 @@ TreatmentResource::TreatmentResource() :
 {
 }
 
-TreatmentResource::TreatmentResource(JsonView jsonValue) : 
-    m_customDeliveryConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_sizePercent(0),
-    m_sizePercentHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
+TreatmentResource::TreatmentResource(JsonView jsonValue)
+  : TreatmentResource()
 {
   *this = jsonValue;
 }

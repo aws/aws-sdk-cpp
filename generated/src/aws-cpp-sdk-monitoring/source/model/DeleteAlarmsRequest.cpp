@@ -21,12 +21,19 @@ Aws::String DeleteAlarmsRequest::SerializePayload() const
   ss << "Action=DeleteAlarms&";
   if(m_alarmNamesHasBeenSet)
   {
-    unsigned alarmNamesCount = 1;
-    for(auto& item : m_alarmNames)
+    if (m_alarmNames.empty())
     {
-      ss << "AlarmNames.member." << alarmNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      alarmNamesCount++;
+      ss << "AlarmNames=&";
+    }
+    else
+    {
+      unsigned alarmNamesCount = 1;
+      for(auto& item : m_alarmNames)
+      {
+        ss << "AlarmNames.member." << alarmNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        alarmNamesCount++;
+      }
     }
   }
 

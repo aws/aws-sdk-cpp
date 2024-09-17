@@ -22,16 +22,22 @@ Cluster::Cluster() :
     m_adminUserNameHasBeenSet(false),
     m_authType(Auth::NOT_SET),
     m_authTypeHasBeenSet(false),
+    m_backupRetentionPeriod(0),
+    m_backupRetentionPeriodHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_clusterEndpointHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_shardCapacity(0),
     m_shardCapacityHasBeenSet(false),
     m_shardCount(0),
     m_shardCountHasBeenSet(false),
+    m_shardInstanceCount(0),
+    m_shardInstanceCountHasBeenSet(false),
+    m_shardsHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
@@ -39,24 +45,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_adminUserNameHasBeenSet(false),
-    m_authType(Auth::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_shardCapacity(0),
-    m_shardCapacityHasBeenSet(false),
-    m_shardCount(0),
-    m_shardCountHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }
@@ -75,6 +65,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_authType = AuthMapper::GetAuthForName(jsonValue.GetString("authType"));
 
     m_authTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("backupRetentionPeriod"))
+  {
+    m_backupRetentionPeriod = jsonValue.GetInteger("backupRetentionPeriod");
+
+    m_backupRetentionPeriodHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clusterArn"))
@@ -112,6 +109,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("preferredBackupWindow"))
+  {
+    m_preferredBackupWindow = jsonValue.GetString("preferredBackupWindow");
+
+    m_preferredBackupWindowHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("preferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("preferredMaintenanceWindow");
@@ -131,6 +135,23 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_shardCount = jsonValue.GetInteger("shardCount");
 
     m_shardCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("shardInstanceCount"))
+  {
+    m_shardInstanceCount = jsonValue.GetInteger("shardInstanceCount");
+
+    m_shardInstanceCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("shards"))
+  {
+    Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("shards");
+    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
+    {
+      m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
+    }
+    m_shardsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -178,6 +199,12 @@ JsonValue Cluster::Jsonize() const
    payload.WithString("authType", AuthMapper::GetNameForAuth(m_authType));
   }
 
+  if(m_backupRetentionPeriodHasBeenSet)
+  {
+   payload.WithInteger("backupRetentionPeriod", m_backupRetentionPeriod);
+
+  }
+
   if(m_clusterArnHasBeenSet)
   {
    payload.WithString("clusterArn", m_clusterArn);
@@ -208,6 +235,12 @@ JsonValue Cluster::Jsonize() const
 
   }
 
+  if(m_preferredBackupWindowHasBeenSet)
+  {
+   payload.WithString("preferredBackupWindow", m_preferredBackupWindow);
+
+  }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
    payload.WithString("preferredMaintenanceWindow", m_preferredMaintenanceWindow);
@@ -223,6 +256,23 @@ JsonValue Cluster::Jsonize() const
   if(m_shardCountHasBeenSet)
   {
    payload.WithInteger("shardCount", m_shardCount);
+
+  }
+
+  if(m_shardInstanceCountHasBeenSet)
+  {
+   payload.WithInteger("shardInstanceCount", m_shardInstanceCount);
+
+  }
+
+  if(m_shardsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
+   for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
+   {
+     shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());
+   }
+   payload.WithArray("shards", std::move(shardsJsonList));
 
   }
 

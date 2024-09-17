@@ -37,59 +37,28 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The maximum number of accelerators. If this parameter isn't specified,
      * there's no maximum limit. To exclude accelerator-enabled instance types, set
      * <code>Max</code> to <code>0</code>. </p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p> The maximum number of accelerators. If this parameter isn't specified,
-     * there's no maximum limit. To exclude accelerator-enabled instance types, set
-     * <code>Max</code> to <code>0</code>. </p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p> The maximum number of accelerators. If this parameter isn't specified,
-     * there's no maximum limit. To exclude accelerator-enabled instance types, set
-     * <code>Max</code> to <code>0</code>. </p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p> The maximum number of accelerators. If this parameter isn't specified,
-     * there's no maximum limit. To exclude accelerator-enabled instance types, set
-     * <code>Max</code> to <code>0</code>. </p>
-     */
     inline AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails& WithMax(int value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The minimum number of accelerators. If this parameter isn't specified,
      * there's no minimum limit. </p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p> The minimum number of accelerators. If this parameter isn't specified,
-     * there's no minimum limit. </p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p> The minimum number of accelerators. If this parameter isn't specified,
-     * there's no minimum limit. </p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p> The minimum number of accelerators. If this parameter isn't specified,
-     * there's no minimum limit. </p>
-     */
     inline AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails& WithMin(int value) { SetMin(value); return *this;}
-
+    ///@}
   private:
 
     int m_max;

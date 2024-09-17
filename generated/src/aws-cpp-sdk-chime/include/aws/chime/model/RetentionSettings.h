@@ -40,67 +40,29 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The chat room retention settings.</p>
      */
     inline const RoomRetentionSettings& GetRoomRetentionSettings() const{ return m_roomRetentionSettings; }
-
-    /**
-     * <p>The chat room retention settings.</p>
-     */
     inline bool RoomRetentionSettingsHasBeenSet() const { return m_roomRetentionSettingsHasBeenSet; }
-
-    /**
-     * <p>The chat room retention settings.</p>
-     */
     inline void SetRoomRetentionSettings(const RoomRetentionSettings& value) { m_roomRetentionSettingsHasBeenSet = true; m_roomRetentionSettings = value; }
-
-    /**
-     * <p>The chat room retention settings.</p>
-     */
     inline void SetRoomRetentionSettings(RoomRetentionSettings&& value) { m_roomRetentionSettingsHasBeenSet = true; m_roomRetentionSettings = std::move(value); }
-
-    /**
-     * <p>The chat room retention settings.</p>
-     */
     inline RetentionSettings& WithRoomRetentionSettings(const RoomRetentionSettings& value) { SetRoomRetentionSettings(value); return *this;}
-
-    /**
-     * <p>The chat room retention settings.</p>
-     */
     inline RetentionSettings& WithRoomRetentionSettings(RoomRetentionSettings&& value) { SetRoomRetentionSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The chat conversation retention settings.</p>
      */
     inline const ConversationRetentionSettings& GetConversationRetentionSettings() const{ return m_conversationRetentionSettings; }
-
-    /**
-     * <p>The chat conversation retention settings.</p>
-     */
     inline bool ConversationRetentionSettingsHasBeenSet() const { return m_conversationRetentionSettingsHasBeenSet; }
-
-    /**
-     * <p>The chat conversation retention settings.</p>
-     */
     inline void SetConversationRetentionSettings(const ConversationRetentionSettings& value) { m_conversationRetentionSettingsHasBeenSet = true; m_conversationRetentionSettings = value; }
-
-    /**
-     * <p>The chat conversation retention settings.</p>
-     */
     inline void SetConversationRetentionSettings(ConversationRetentionSettings&& value) { m_conversationRetentionSettingsHasBeenSet = true; m_conversationRetentionSettings = std::move(value); }
-
-    /**
-     * <p>The chat conversation retention settings.</p>
-     */
     inline RetentionSettings& WithConversationRetentionSettings(const ConversationRetentionSettings& value) { SetConversationRetentionSettings(value); return *this;}
-
-    /**
-     * <p>The chat conversation retention settings.</p>
-     */
     inline RetentionSettings& WithConversationRetentionSettings(ConversationRetentionSettings&& value) { SetConversationRetentionSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RoomRetentionSettings m_roomRetentionSettings;

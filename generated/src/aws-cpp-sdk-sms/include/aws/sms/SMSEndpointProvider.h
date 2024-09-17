@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SMSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SMSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SMSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

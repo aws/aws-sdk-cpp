@@ -30,15 +30,8 @@ EbsVolumeScanDetails::EbsVolumeScanDetails() :
 {
 }
 
-EbsVolumeScanDetails::EbsVolumeScanDetails(JsonView jsonValue) : 
-    m_scanIdHasBeenSet(false),
-    m_scanStartedAtHasBeenSet(false),
-    m_scanCompletedAtHasBeenSet(false),
-    m_triggerFindingIdHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_scanDetectionsHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
+EbsVolumeScanDetails::EbsVolumeScanDetails(JsonView jsonValue)
+  : EbsVolumeScanDetails()
 {
   *this = jsonValue;
 }

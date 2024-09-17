@@ -27,6 +27,7 @@ SourceTableDetails::SourceTableDetails() :
     m_keySchemaHasBeenSet(false),
     m_tableCreationDateTimeHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false),
     m_itemCount(0),
     m_itemCountHasBeenSet(false),
     m_billingMode(BillingMode::NOT_SET),
@@ -34,19 +35,8 @@ SourceTableDetails::SourceTableDetails() :
 {
 }
 
-SourceTableDetails::SourceTableDetails(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableSizeBytes(0),
-    m_tableSizeBytesHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_tableCreationDateTimeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false)
+SourceTableDetails::SourceTableDetails(JsonView jsonValue)
+  : SourceTableDetails()
 {
   *this = jsonValue;
 }
@@ -103,6 +93,13 @@ SourceTableDetails& SourceTableDetails::operator =(JsonView jsonValue)
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
 
     m_provisionedThroughputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnDemandThroughput"))
+  {
+    m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
+
+    m_onDemandThroughputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ItemCount"))
@@ -169,6 +166,12 @@ JsonValue SourceTableDetails::Jsonize() const
   if(m_provisionedThroughputHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 

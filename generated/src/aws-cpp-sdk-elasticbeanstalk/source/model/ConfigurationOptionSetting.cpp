@@ -28,11 +28,8 @@ ConfigurationOptionSetting::ConfigurationOptionSetting() :
 {
 }
 
-ConfigurationOptionSetting::ConfigurationOptionSetting(const XmlNode& xmlNode) : 
-    m_resourceNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_optionNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ConfigurationOptionSetting::ConfigurationOptionSetting(const XmlNode& xmlNode)
+  : ConfigurationOptionSetting()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ ImagePermission::ImagePermission() :
 {
 }
 
-ImagePermission::ImagePermission(JsonView jsonValue) : 
-    m_sharedAccountIdHasBeenSet(false)
+ImagePermission::ImagePermission(JsonView jsonValue)
+  : ImagePermission()
 {
   *this = jsonValue;
 }

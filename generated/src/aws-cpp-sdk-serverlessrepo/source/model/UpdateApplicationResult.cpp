@@ -22,8 +22,8 @@ UpdateApplicationResult::UpdateApplicationResult() :
 {
 }
 
-UpdateApplicationResult::UpdateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isVerifiedAuthor(false)
+UpdateApplicationResult::UpdateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateApplicationResult()
 {
   *this = result;
 }

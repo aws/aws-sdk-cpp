@@ -22,8 +22,8 @@ ListAttachedRolePoliciesResult::ListAttachedRolePoliciesResult() :
 {
 }
 
-ListAttachedRolePoliciesResult::ListAttachedRolePoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListAttachedRolePoliciesResult::ListAttachedRolePoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListAttachedRolePoliciesResult()
 {
   *this = result;
 }

@@ -27,12 +27,8 @@ AudioLogSetting::AudioLogSetting() :
 {
 }
 
-AudioLogSetting::AudioLogSetting(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_selectiveLoggingEnabled(false),
-    m_selectiveLoggingEnabledHasBeenSet(false)
+AudioLogSetting::AudioLogSetting(JsonView jsonValue)
+  : AudioLogSetting()
 {
   *this = jsonValue;
 }

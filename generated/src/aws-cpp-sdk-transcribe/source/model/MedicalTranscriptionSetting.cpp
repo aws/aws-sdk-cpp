@@ -33,18 +33,8 @@ MedicalTranscriptionSetting::MedicalTranscriptionSetting() :
 {
 }
 
-MedicalTranscriptionSetting::MedicalTranscriptionSetting(JsonView jsonValue) : 
-    m_showSpeakerLabels(false),
-    m_showSpeakerLabelsHasBeenSet(false),
-    m_maxSpeakerLabels(0),
-    m_maxSpeakerLabelsHasBeenSet(false),
-    m_channelIdentification(false),
-    m_channelIdentificationHasBeenSet(false),
-    m_showAlternatives(false),
-    m_showAlternativesHasBeenSet(false),
-    m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false)
+MedicalTranscriptionSetting::MedicalTranscriptionSetting(JsonView jsonValue)
+  : MedicalTranscriptionSetting()
 {
   *this = jsonValue;
 }

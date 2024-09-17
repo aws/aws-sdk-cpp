@@ -32,17 +32,8 @@ AppDetails::AppDetails() :
 {
 }
 
-AppDetails::AppDetails(JsonView jsonValue) : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_spaceNameHasBeenSet(false),
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_appNameHasBeenSet(false),
-    m_status(AppStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_resourceSpecHasBeenSet(false)
+AppDetails::AppDetails(JsonView jsonValue)
+  : AppDetails()
 {
   *this = jsonValue;
 }

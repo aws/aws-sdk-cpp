@@ -27,12 +27,8 @@ PartitionIndexDescriptor::PartitionIndexDescriptor() :
 {
 }
 
-PartitionIndexDescriptor::PartitionIndexDescriptor(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_indexStatus(PartitionIndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false),
-    m_backfillErrorsHasBeenSet(false)
+PartitionIndexDescriptor::PartitionIndexDescriptor(JsonView jsonValue)
+  : PartitionIndexDescriptor()
 {
   *this = jsonValue;
 }

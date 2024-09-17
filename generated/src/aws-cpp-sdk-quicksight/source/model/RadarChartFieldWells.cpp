@@ -23,8 +23,8 @@ RadarChartFieldWells::RadarChartFieldWells() :
 {
 }
 
-RadarChartFieldWells::RadarChartFieldWells(JsonView jsonValue) : 
-    m_radarChartAggregatedFieldWellsHasBeenSet(false)
+RadarChartFieldWells::RadarChartFieldWells(JsonView jsonValue)
+  : RadarChartFieldWells()
 {
   *this = jsonValue;
 }

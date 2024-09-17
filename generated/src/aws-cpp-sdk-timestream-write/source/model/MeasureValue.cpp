@@ -26,11 +26,8 @@ MeasureValue::MeasureValue() :
 {
 }
 
-MeasureValue::MeasureValue(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(MeasureValueType::NOT_SET),
-    m_typeHasBeenSet(false)
+MeasureValue::MeasureValue(JsonView jsonValue)
+  : MeasureValue()
 {
   *this = jsonValue;
 }

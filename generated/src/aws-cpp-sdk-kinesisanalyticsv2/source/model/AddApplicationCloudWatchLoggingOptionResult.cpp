@@ -22,8 +22,8 @@ AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOpti
 {
 }
 
-AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddApplicationCloudWatchLoggingOptionResult()
 {
   *this = result;
 }
@@ -50,6 +50,12 @@ AddApplicationCloudWatchLoggingOptionResult& AddApplicationCloudWatchLoggingOpti
     {
       m_cloudWatchLoggingOptionDescriptions.push_back(cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("OperationId"))
+  {
+    m_operationId = jsonValue.GetString("OperationId");
+
   }
 
 

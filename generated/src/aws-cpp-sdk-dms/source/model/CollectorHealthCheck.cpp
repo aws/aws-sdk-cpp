@@ -30,15 +30,8 @@ CollectorHealthCheck::CollectorHealthCheck() :
 {
 }
 
-CollectorHealthCheck::CollectorHealthCheck(JsonView jsonValue) : 
-    m_collectorStatus(CollectorStatus::NOT_SET),
-    m_collectorStatusHasBeenSet(false),
-    m_localCollectorS3Access(false),
-    m_localCollectorS3AccessHasBeenSet(false),
-    m_webCollectorS3Access(false),
-    m_webCollectorS3AccessHasBeenSet(false),
-    m_webCollectorGrantedRoleBasedAccess(false),
-    m_webCollectorGrantedRoleBasedAccessHasBeenSet(false)
+CollectorHealthCheck::CollectorHealthCheck(JsonView jsonValue)
+  : CollectorHealthCheck()
 {
   *this = jsonValue;
 }

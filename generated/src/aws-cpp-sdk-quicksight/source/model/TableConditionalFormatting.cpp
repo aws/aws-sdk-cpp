@@ -23,8 +23,8 @@ TableConditionalFormatting::TableConditionalFormatting() :
 {
 }
 
-TableConditionalFormatting::TableConditionalFormatting(JsonView jsonValue) : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
+TableConditionalFormatting::TableConditionalFormatting(JsonView jsonValue)
+  : TableConditionalFormatting()
 {
   *this = jsonValue;
 }

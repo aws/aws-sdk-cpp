@@ -25,10 +25,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_detectorIdHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_ruleVersionHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

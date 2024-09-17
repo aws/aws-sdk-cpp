@@ -19,29 +19,20 @@ namespace Model
 {
 
 StageSessionSummary::StageSessionSummary() : 
-    m_endTimeHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
-StageSessionSummary::StageSessionSummary(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+StageSessionSummary::StageSessionSummary(JsonView jsonValue)
+  : StageSessionSummary()
 {
   *this = jsonValue;
 }
 
 StageSessionSummary& StageSessionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetString("endTime");
-
-    m_endTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
@@ -56,17 +47,19 @@ StageSessionSummary& StageSessionSummary::operator =(JsonView jsonValue)
     m_startTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetString("endTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue StageSessionSummary::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if(m_sessionIdHasBeenSet)
   {
@@ -77,6 +70,11 @@ JsonValue StageSessionSummary::Jsonize() const
   if(m_startTimeHasBeenSet)
   {
    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

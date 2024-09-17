@@ -30,13 +30,8 @@ Range::Range() :
 {
 }
 
-Range::Range(const XmlNode& xmlNode) : 
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false),
-    m_step(0),
-    m_stepHasBeenSet(false)
+Range::Range(const XmlNode& xmlNode)
+  : Range()
 {
   *this = xmlNode;
 }

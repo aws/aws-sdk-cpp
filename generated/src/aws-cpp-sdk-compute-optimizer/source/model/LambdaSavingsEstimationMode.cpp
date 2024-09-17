@@ -24,9 +24,8 @@ LambdaSavingsEstimationMode::LambdaSavingsEstimationMode() :
 {
 }
 
-LambdaSavingsEstimationMode::LambdaSavingsEstimationMode(JsonView jsonValue) : 
-    m_source(LambdaSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+LambdaSavingsEstimationMode::LambdaSavingsEstimationMode(JsonView jsonValue)
+  : LambdaSavingsEstimationMode()
 {
   *this = jsonValue;
 }

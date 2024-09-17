@@ -38,23 +38,8 @@ KxCluster::KxCluster() :
 {
 }
 
-KxCluster::KxCluster(JsonView jsonValue) : 
-    m_status(KxClusterStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_clusterType(KxClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterDescriptionHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_initializationScriptHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+KxCluster::KxCluster(JsonView jsonValue)
+  : KxCluster()
 {
   *this = jsonValue;
 }

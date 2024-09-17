@@ -26,11 +26,8 @@ NumberFilter::NumberFilter() :
 {
 }
 
-NumberFilter::NumberFilter(JsonView jsonValue) : 
-    m_lowerInclusive(0.0),
-    m_lowerInclusiveHasBeenSet(false),
-    m_upperInclusive(0.0),
-    m_upperInclusiveHasBeenSet(false)
+NumberFilter::NumberFilter(JsonView jsonValue)
+  : NumberFilter()
 {
   *this = jsonValue;
 }

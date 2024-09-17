@@ -43,6 +43,10 @@
 #include <aws/iotevents/model/UpdateAlarmModelResult.h>
 #include <aws/iotevents/model/UpdateDetectorModelResult.h>
 #include <aws/iotevents/model/UpdateInputResult.h>
+#include <aws/iotevents/model/ListAlarmModelsRequest.h>
+#include <aws/iotevents/model/ListDetectorModelsRequest.h>
+#include <aws/iotevents/model/ListInputsRequest.h>
+#include <aws/iotevents/model/DescribeLoggingOptionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IoTEventsClient header */
 
@@ -77,7 +81,7 @@ namespace Aws
 
   namespace IoTEvents
   {
-    using IoTEventsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTEventsEndpointProviderBase = Aws::IoTEvents::Endpoint::IoTEventsEndpointProviderBase;
     using IoTEventsEndpointProvider = Aws::IoTEvents::Endpoint::IoTEventsEndpointProvider;
 

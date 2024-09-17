@@ -29,14 +29,8 @@ Compliance::Compliance() :
 {
 }
 
-Compliance::Compliance(JsonView jsonValue) : 
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_relatedRequirementsHasBeenSet(false),
-    m_statusReasonsHasBeenSet(false),
-    m_securityControlIdHasBeenSet(false),
-    m_associatedStandardsHasBeenSet(false),
-    m_securityControlParametersHasBeenSet(false)
+Compliance::Compliance(JsonView jsonValue)
+  : Compliance()
 {
   *this = jsonValue;
 }

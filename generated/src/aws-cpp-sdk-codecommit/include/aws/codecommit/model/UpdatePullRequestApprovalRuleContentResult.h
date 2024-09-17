@@ -33,53 +33,27 @@ namespace Model
     AWS_CODECOMMIT_API UpdatePullRequestApprovalRuleContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the updated approval rule.</p>
      */
     inline const ApprovalRule& GetApprovalRule() const{ return m_approvalRule; }
-
-    /**
-     * <p>Information about the updated approval rule.</p>
-     */
     inline void SetApprovalRule(const ApprovalRule& value) { m_approvalRule = value; }
-
-    /**
-     * <p>Information about the updated approval rule.</p>
-     */
     inline void SetApprovalRule(ApprovalRule&& value) { m_approvalRule = std::move(value); }
-
-    /**
-     * <p>Information about the updated approval rule.</p>
-     */
     inline UpdatePullRequestApprovalRuleContentResult& WithApprovalRule(const ApprovalRule& value) { SetApprovalRule(value); return *this;}
-
-    /**
-     * <p>Information about the updated approval rule.</p>
-     */
     inline UpdatePullRequestApprovalRuleContentResult& WithApprovalRule(ApprovalRule&& value) { SetApprovalRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePullRequestApprovalRuleContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePullRequestApprovalRuleContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePullRequestApprovalRuleContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApprovalRule m_approvalRule;

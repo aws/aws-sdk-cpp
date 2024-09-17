@@ -40,46 +40,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
      */
     inline const Aws::String& GetCNAMEPrefix() const{ return m_cNAMEPrefix; }
-
-    /**
-     * <p>The prefix used when this CNAME is reserved.</p>
-     */
     inline bool CNAMEPrefixHasBeenSet() const { return m_cNAMEPrefixHasBeenSet; }
-
-    /**
-     * <p>The prefix used when this CNAME is reserved.</p>
-     */
     inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
-
-    /**
-     * <p>The prefix used when this CNAME is reserved.</p>
-     */
     inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = std::move(value); }
-
-    /**
-     * <p>The prefix used when this CNAME is reserved.</p>
-     */
     inline void SetCNAMEPrefix(const char* value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix.assign(value); }
-
-    /**
-     * <p>The prefix used when this CNAME is reserved.</p>
-     */
     inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(const Aws::String& value) { SetCNAMEPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix used when this CNAME is reserved.</p>
-     */
     inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix used when this CNAME is reserved.</p>
-     */
     inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(const char* value) { SetCNAMEPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cNAMEPrefix;

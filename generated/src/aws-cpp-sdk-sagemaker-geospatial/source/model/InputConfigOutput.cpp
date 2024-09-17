@@ -24,9 +24,8 @@ InputConfigOutput::InputConfigOutput() :
 {
 }
 
-InputConfigOutput::InputConfigOutput(JsonView jsonValue) : 
-    m_previousEarthObservationJobArnHasBeenSet(false),
-    m_rasterDataCollectionQueryHasBeenSet(false)
+InputConfigOutput::InputConfigOutput(JsonView jsonValue)
+  : InputConfigOutput()
 {
   *this = jsonValue;
 }

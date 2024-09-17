@@ -22,8 +22,8 @@ StartMLModelTransformJobResult::StartMLModelTransformJobResult() :
 {
 }
 
-StartMLModelTransformJobResult::StartMLModelTransformJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationTimeInMillis(0)
+StartMLModelTransformJobResult::StartMLModelTransformJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartMLModelTransformJobResult()
 {
   *this = result;
 }

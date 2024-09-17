@@ -32,46 +32,19 @@ namespace Model
     AWS_DRS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Launch Configuration Template to be deleted.</p>
      */
     inline const Aws::String& GetLaunchConfigurationTemplateID() const{ return m_launchConfigurationTemplateID; }
-
-    /**
-     * <p>The ID of the Launch Configuration Template to be deleted.</p>
-     */
     inline bool LaunchConfigurationTemplateIDHasBeenSet() const { return m_launchConfigurationTemplateIDHasBeenSet; }
-
-    /**
-     * <p>The ID of the Launch Configuration Template to be deleted.</p>
-     */
     inline void SetLaunchConfigurationTemplateID(const Aws::String& value) { m_launchConfigurationTemplateIDHasBeenSet = true; m_launchConfigurationTemplateID = value; }
-
-    /**
-     * <p>The ID of the Launch Configuration Template to be deleted.</p>
-     */
     inline void SetLaunchConfigurationTemplateID(Aws::String&& value) { m_launchConfigurationTemplateIDHasBeenSet = true; m_launchConfigurationTemplateID = std::move(value); }
-
-    /**
-     * <p>The ID of the Launch Configuration Template to be deleted.</p>
-     */
     inline void SetLaunchConfigurationTemplateID(const char* value) { m_launchConfigurationTemplateIDHasBeenSet = true; m_launchConfigurationTemplateID.assign(value); }
-
-    /**
-     * <p>The ID of the Launch Configuration Template to be deleted.</p>
-     */
     inline DeleteLaunchConfigurationTemplateRequest& WithLaunchConfigurationTemplateID(const Aws::String& value) { SetLaunchConfigurationTemplateID(value); return *this;}
-
-    /**
-     * <p>The ID of the Launch Configuration Template to be deleted.</p>
-     */
     inline DeleteLaunchConfigurationTemplateRequest& WithLaunchConfigurationTemplateID(Aws::String&& value) { SetLaunchConfigurationTemplateID(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Launch Configuration Template to be deleted.</p>
-     */
     inline DeleteLaunchConfigurationTemplateRequest& WithLaunchConfigurationTemplateID(const char* value) { SetLaunchConfigurationTemplateID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_launchConfigurationTemplateID;

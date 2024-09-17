@@ -60,6 +60,15 @@
 #include <aws/elasticmapreduce/model/RemoveTagsResult.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
 #include <aws/elasticmapreduce/model/StartNotebookExecutionResult.h>
+#include <aws/elasticmapreduce/model/DescribeReleaseLabelRequest.h>
+#include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
+#include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
+#include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/ListClustersRequest.h>
+#include <aws/elasticmapreduce/model/ListNotebookExecutionsRequest.h>
+#include <aws/elasticmapreduce/model/ListReleaseLabelsRequest.h>
+#include <aws/elasticmapreduce/model/ListStudioSessionMappingsRequest.h>
+#include <aws/elasticmapreduce/model/ListStudiosRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in EMRClient header */
 
@@ -94,7 +103,7 @@ namespace Aws
 
   namespace EMR
   {
-    using EMRClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMRClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EMREndpointProviderBase = Aws::EMR::Endpoint::EMREndpointProviderBase;
     using EMREndpointProvider = Aws::EMR::Endpoint::EMREndpointProvider;
 
@@ -149,6 +158,7 @@ namespace Aws
       class RunJobFlowRequest;
       class SetKeepJobFlowAliveWhenNoStepsRequest;
       class SetTerminationProtectionRequest;
+      class SetUnhealthyNodeReplacementRequest;
       class SetVisibleToAllUsersRequest;
       class StartNotebookExecutionRequest;
       class StopNotebookExecutionRequest;
@@ -206,6 +216,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RunJobFlowResult, EMRError> RunJobFlowOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetKeepJobFlowAliveWhenNoStepsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetTerminationProtectionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetUnhealthyNodeReplacementOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetVisibleToAllUsersOutcome;
       typedef Aws::Utils::Outcome<StartNotebookExecutionResult, EMRError> StartNotebookExecutionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> StopNotebookExecutionOutcome;
@@ -263,6 +274,7 @@ namespace Aws
       typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
       typedef std::future<SetKeepJobFlowAliveWhenNoStepsOutcome> SetKeepJobFlowAliveWhenNoStepsOutcomeCallable;
       typedef std::future<SetTerminationProtectionOutcome> SetTerminationProtectionOutcomeCallable;
+      typedef std::future<SetUnhealthyNodeReplacementOutcome> SetUnhealthyNodeReplacementOutcomeCallable;
       typedef std::future<SetVisibleToAllUsersOutcome> SetVisibleToAllUsersOutcomeCallable;
       typedef std::future<StartNotebookExecutionOutcome> StartNotebookExecutionOutcomeCallable;
       typedef std::future<StopNotebookExecutionOutcome> StopNotebookExecutionOutcomeCallable;
@@ -323,6 +335,7 @@ namespace Aws
     typedef std::function<void(const EMRClient*, const Model::RunJobFlowRequest&, const Model::RunJobFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunJobFlowResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetKeepJobFlowAliveWhenNoStepsRequest&, const Model::SetKeepJobFlowAliveWhenNoStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetKeepJobFlowAliveWhenNoStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetTerminationProtectionRequest&, const Model::SetTerminationProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTerminationProtectionResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::SetUnhealthyNodeReplacementRequest&, const Model::SetUnhealthyNodeReplacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUnhealthyNodeReplacementResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetVisibleToAllUsersRequest&, const Model::SetVisibleToAllUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetVisibleToAllUsersResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::StartNotebookExecutionRequest&, const Model::StartNotebookExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookExecutionResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::StopNotebookExecutionRequest&, const Model::StopNotebookExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopNotebookExecutionResponseReceivedHandler;

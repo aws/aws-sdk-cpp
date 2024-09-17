@@ -19,37 +19,30 @@ namespace Model
 {
 
 Document::Document() : 
-    m_accessConfigurationHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
     m_contentTypeHasBeenSet(false),
-    m_documentEnrichmentConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_accessConfigurationHasBeenSet(false),
+    m_documentEnrichmentConfigurationHasBeenSet(false)
 {
 }
 
-Document::Document(JsonView jsonValue) : 
-    m_accessConfigurationHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_documentEnrichmentConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false)
+Document::Document(JsonView jsonValue)
+  : Document()
 {
   *this = jsonValue;
 }
 
 Document& Document::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accessConfiguration"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_accessConfiguration = jsonValue.GetObject("accessConfiguration");
+    m_id = jsonValue.GetString("id");
 
-    m_accessConfigurationHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("attributes"))
@@ -76,25 +69,25 @@ Document& Document::operator =(JsonView jsonValue)
     m_contentTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("documentEnrichmentConfiguration"))
-  {
-    m_documentEnrichmentConfiguration = jsonValue.GetObject("documentEnrichmentConfiguration");
-
-    m_documentEnrichmentConfigurationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
 
     m_titleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("accessConfiguration"))
+  {
+    m_accessConfiguration = jsonValue.GetObject("accessConfiguration");
+
+    m_accessConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("documentEnrichmentConfiguration"))
+  {
+    m_documentEnrichmentConfiguration = jsonValue.GetObject("documentEnrichmentConfiguration");
+
+    m_documentEnrichmentConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -104,9 +97,9 @@ JsonValue Document::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accessConfigurationHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithObject("accessConfiguration", m_accessConfiguration.Jsonize());
+   payload.WithString("id", m_id);
 
   }
 
@@ -132,21 +125,21 @@ JsonValue Document::Jsonize() const
    payload.WithString("contentType", ContentTypeMapper::GetNameForContentType(m_contentType));
   }
 
-  if(m_documentEnrichmentConfigurationHasBeenSet)
-  {
-   payload.WithObject("documentEnrichmentConfiguration", m_documentEnrichmentConfiguration.Jsonize());
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
   if(m_titleHasBeenSet)
   {
    payload.WithString("title", m_title);
+
+  }
+
+  if(m_accessConfigurationHasBeenSet)
+  {
+   payload.WithObject("accessConfiguration", m_accessConfiguration.Jsonize());
+
+  }
+
+  if(m_documentEnrichmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("documentEnrichmentConfiguration", m_documentEnrichmentConfiguration.Jsonize());
 
   }
 

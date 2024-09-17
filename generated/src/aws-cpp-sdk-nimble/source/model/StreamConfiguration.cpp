@@ -37,22 +37,8 @@ StreamConfiguration::StreamConfiguration() :
 {
 }
 
-StreamConfiguration::StreamConfiguration(JsonView jsonValue) : 
-    m_automaticTerminationMode(AutomaticTerminationMode::NOT_SET),
-    m_automaticTerminationModeHasBeenSet(false),
-    m_clipboardMode(StreamingClipboardMode::NOT_SET),
-    m_clipboardModeHasBeenSet(false),
-    m_ec2InstanceTypesHasBeenSet(false),
-    m_maxSessionLengthInMinutes(0),
-    m_maxSessionLengthInMinutesHasBeenSet(false),
-    m_maxStoppedSessionLengthInMinutes(0),
-    m_maxStoppedSessionLengthInMinutesHasBeenSet(false),
-    m_sessionBackupHasBeenSet(false),
-    m_sessionPersistenceMode(SessionPersistenceMode::NOT_SET),
-    m_sessionPersistenceModeHasBeenSet(false),
-    m_sessionStorageHasBeenSet(false),
-    m_streamingImageIdsHasBeenSet(false),
-    m_volumeConfigurationHasBeenSet(false)
+StreamConfiguration::StreamConfiguration(JsonView jsonValue)
+  : StreamConfiguration()
 {
   *this = jsonValue;
 }

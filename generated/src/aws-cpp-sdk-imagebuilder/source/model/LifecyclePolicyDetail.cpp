@@ -25,10 +25,8 @@ LifecyclePolicyDetail::LifecyclePolicyDetail() :
 {
 }
 
-LifecyclePolicyDetail::LifecyclePolicyDetail(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_exclusionRulesHasBeenSet(false)
+LifecyclePolicyDetail::LifecyclePolicyDetail(JsonView jsonValue)
+  : LifecyclePolicyDetail()
 {
   *this = jsonValue;
 }

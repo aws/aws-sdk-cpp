@@ -22,8 +22,8 @@ StopFlowResult::StopFlowResult() :
 {
 }
 
-StopFlowResult::StopFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+StopFlowResult::StopFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopFlowResult()
 {
   *this = result;
 }

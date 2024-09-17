@@ -27,12 +27,8 @@ AwsNetworkFirewallFirewallPolicyDetails::AwsNetworkFirewallFirewallPolicyDetails
 {
 }
 
-AwsNetworkFirewallFirewallPolicyDetails::AwsNetworkFirewallFirewallPolicyDetails(JsonView jsonValue) : 
-    m_firewallPolicyHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false),
-    m_firewallPolicyIdHasBeenSet(false),
-    m_firewallPolicyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+AwsNetworkFirewallFirewallPolicyDetails::AwsNetworkFirewallFirewallPolicyDetails(JsonView jsonValue)
+  : AwsNetworkFirewallFirewallPolicyDetails()
 {
   *this = jsonValue;
 }

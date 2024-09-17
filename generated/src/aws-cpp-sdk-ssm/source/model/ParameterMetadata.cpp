@@ -20,6 +20,7 @@ namespace Model
 
 ParameterMetadata::ParameterMetadata() : 
     m_nameHasBeenSet(false),
+    m_aRNHasBeenSet(false),
     m_type(ParameterType::NOT_SET),
     m_typeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
@@ -36,21 +37,8 @@ ParameterMetadata::ParameterMetadata() :
 {
 }
 
-ParameterMetadata::ParameterMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_tier(ParameterTier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
+ParameterMetadata::ParameterMetadata(JsonView jsonValue)
+  : ParameterMetadata()
 {
   *this = jsonValue;
 }
@@ -62,6 +50,13 @@ ParameterMetadata& ParameterMetadata::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ARN"))
+  {
+    m_aRN = jsonValue.GetString("ARN");
+
+    m_aRNHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -147,6 +142,12 @@ JsonValue ParameterMetadata::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_aRNHasBeenSet)
+  {
+   payload.WithString("ARN", m_aRN);
 
   }
 

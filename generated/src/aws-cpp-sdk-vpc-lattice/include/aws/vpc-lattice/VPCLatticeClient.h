@@ -85,7 +85,11 @@ namespace VPCLattice
         /**
          * <p>Updates the listener rules in a batch. You can use this operation to change
          * the priority of listener rules. This can be useful when bulk updating or
-         * swapping rule priority. </p><p><h3>See Also:</h3>   <a
+         * swapping rule priority.</p> <p> <b>Required permissions:</b>
+         * <code>vpc-lattice:UpdateRule</code> </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/security_iam_service-with-iam.html">How
+         * Amazon VPC Lattice works with IAM</a> in the <i>Amazon VPC Lattice User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/BatchUpdateRule">AWS
          * API Reference</a></p>
          */
@@ -112,10 +116,10 @@ namespace VPCLattice
         /**
          * <p>Enables access logs to be sent to Amazon CloudWatch, Amazon S3, and Amazon
          * Kinesis Data Firehose. The service network owner can use the access logs to
-         * audit the services in the network. The service network owner will only see
-         * access logs from clients and services that are associated with their service
-         * network. Access log entries represent traffic originated from VPCs associated
-         * with that network. For more information, see <a
+         * audit the services in the network. The service network owner can only see access
+         * logs from clients and services that are associated with their service network.
+         * Access log entries represent traffic originated from VPCs associated with that
+         * network. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html">Access
          * logs</a> in the <i>Amazon VPC Lattice User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
@@ -263,14 +267,17 @@ namespace VPCLattice
         }
 
         /**
-         * <p>Associates a service with a service network.</p> <p>You can't use this
-         * operation if the service and service network are already associated or if there
-         * is a disassociation or deletion in progress. If the association fails, you can
-         * retry the operation by deleting the association and recreating it.</p> <p>You
-         * cannot associate a service and service network that are shared with a caller.
-         * The caller must own either the service or the service network.</p> <p>As a
-         * result of this operation, the association is created in the service network
-         * account and the association owner account.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a service with a service network. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
+         * service associations</a> in the <i>Amazon VPC Lattice User Guide</i>.</p> <p>You
+         * can't use this operation if the service and service network are already
+         * associated or if there is a disassociation or deletion in progress. If the
+         * association fails, you can retry the operation by deleting the association and
+         * recreating it.</p> <p>You cannot associate a service and service network that
+         * are shared with a caller. The caller must own either the service or the service
+         * network.</p> <p>As a result of this operation, the association is created in the
+         * service network account and the association owner account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkServiceAssociation">AWS
          * API Reference</a></p>
          */
@@ -304,11 +311,12 @@ namespace VPCLattice
          * can't use this operation if there is a disassociation in progress. If the
          * association fails, retry by deleting the association and recreating it.</p>
          * <p>As a result of this operation, the association gets created in the service
-         * network account and the VPC owner account.</p> <p>Once a security group is added
-         * to the VPC association it cannot be removed. You can add or update the security
-         * groups being used for the VPC association once a security group is attached. To
-         * remove all security groups you must reassociate the VPC.</p><p><h3>See
-         * Also:</h3>   <a
+         * network account and the VPC owner account.</p> <p>If you add a security group to
+         * the service network and VPC association, the association must continue to always
+         * have at least one security group. You can add or edit security groups at any
+         * time. However, to remove all security groups, you must first delete the
+         * association and recreate it without security groups.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkVpcAssociation">AWS
          * API Reference</a></p>
          */
@@ -388,11 +396,11 @@ namespace VPCLattice
         }
 
         /**
-         * <p>Deletes the specified auth policy. If an auth is set to <code>Amazon Web
-         * Services_IAM</code> and the auth policy is deleted, all requests will be denied
-         * by default. If you are trying to remove the auth policy completely, you must set
-         * the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no
-         * auth policy is set, all requests will be denied.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code>
+         * and the auth policy is deleted, all requests are denied. If you are trying to
+         * remove the auth policy completely, you must set the auth type to
+         * <code>NONE</code>. If auth is enabled on the resource, but no auth policy is
+         * set, all requests are denied.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteAuthPolicy">AWS
          * API Reference</a></p>
          */
@@ -563,7 +571,7 @@ namespace VPCLattice
 
         /**
          * <p>Deletes the association between a specified service and the specific service
-         * network. This request will fail if an association is still in
+         * network. This operation fails if an association is still in
          * progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkServiceAssociation">AWS
          * API Reference</a></p>
@@ -748,7 +756,7 @@ namespace VPCLattice
 
         /**
          * <p>Retrieves information about the resource policy. The resource policy is an
-         * IAM policy created by AWS RAM on behalf of the resource owner when they share a
+         * IAM policy created on behalf of the resource owner when they share a
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourcePolicy">AWS
          * API Reference</a></p>
@@ -1015,19 +1023,19 @@ namespace VPCLattice
          * association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN),
          * such as when a service network is associated with a VPC or when a service is
          * associated with a service network. If the association is for a resource that is
-         * shared with another account, the association will include the local account ID
-         * as the prefix in the ARN for each account the resource is shared
+         * shared with another account, the association includes the local account ID as
+         * the prefix in the ARN for each account the resource is shared
          * with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkServiceAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceNetworkServiceAssociationsOutcome ListServiceNetworkServiceAssociations(const Model::ListServiceNetworkServiceAssociationsRequest& request) const;
+        virtual Model::ListServiceNetworkServiceAssociationsOutcome ListServiceNetworkServiceAssociations(const Model::ListServiceNetworkServiceAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceNetworkServiceAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceNetworkServiceAssociationsRequestT = Model::ListServiceNetworkServiceAssociationsRequest>
-        Model::ListServiceNetworkServiceAssociationsOutcomeCallable ListServiceNetworkServiceAssociationsCallable(const ListServiceNetworkServiceAssociationsRequestT& request) const
+        Model::ListServiceNetworkServiceAssociationsOutcomeCallable ListServiceNetworkServiceAssociationsCallable(const ListServiceNetworkServiceAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServiceNetworkServiceAssociations, request);
         }
@@ -1036,7 +1044,7 @@ namespace VPCLattice
          * An Async wrapper for ListServiceNetworkServiceAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceNetworkServiceAssociationsRequestT = Model::ListServiceNetworkServiceAssociationsRequest>
-        void ListServiceNetworkServiceAssociationsAsync(const ListServiceNetworkServiceAssociationsRequestT& request, const ListServiceNetworkServiceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceNetworkServiceAssociationsAsync(const ListServiceNetworkServiceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceNetworkServiceAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServiceNetworkServiceAssociations, request, handler, context);
         }
@@ -1048,13 +1056,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceNetworkVpcAssociationsOutcome ListServiceNetworkVpcAssociations(const Model::ListServiceNetworkVpcAssociationsRequest& request) const;
+        virtual Model::ListServiceNetworkVpcAssociationsOutcome ListServiceNetworkVpcAssociations(const Model::ListServiceNetworkVpcAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceNetworkVpcAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceNetworkVpcAssociationsRequestT = Model::ListServiceNetworkVpcAssociationsRequest>
-        Model::ListServiceNetworkVpcAssociationsOutcomeCallable ListServiceNetworkVpcAssociationsCallable(const ListServiceNetworkVpcAssociationsRequestT& request) const
+        Model::ListServiceNetworkVpcAssociationsOutcomeCallable ListServiceNetworkVpcAssociationsCallable(const ListServiceNetworkVpcAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServiceNetworkVpcAssociations, request);
         }
@@ -1063,7 +1071,7 @@ namespace VPCLattice
          * An Async wrapper for ListServiceNetworkVpcAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceNetworkVpcAssociationsRequestT = Model::ListServiceNetworkVpcAssociationsRequest>
-        void ListServiceNetworkVpcAssociationsAsync(const ListServiceNetworkVpcAssociationsRequestT& request, const ListServiceNetworkVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceNetworkVpcAssociationsAsync(const ListServiceNetworkVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceNetworkVpcAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServiceNetworkVpcAssociations, request, handler, context);
         }
@@ -1075,13 +1083,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceNetworksOutcome ListServiceNetworks(const Model::ListServiceNetworksRequest& request) const;
+        virtual Model::ListServiceNetworksOutcome ListServiceNetworks(const Model::ListServiceNetworksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceNetworksRequestT = Model::ListServiceNetworksRequest>
-        Model::ListServiceNetworksOutcomeCallable ListServiceNetworksCallable(const ListServiceNetworksRequestT& request) const
+        Model::ListServiceNetworksOutcomeCallable ListServiceNetworksCallable(const ListServiceNetworksRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServiceNetworks, request);
         }
@@ -1090,7 +1098,7 @@ namespace VPCLattice
          * An Async wrapper for ListServiceNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceNetworksRequestT = Model::ListServiceNetworksRequest>
-        void ListServiceNetworksAsync(const ListServiceNetworksRequestT& request, const ListServiceNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceNetworksAsync(const ListServiceNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceNetworksRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServiceNetworks, request, handler, context);
         }
@@ -1101,13 +1109,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
+        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request) const
+        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServices, request);
         }
@@ -1116,7 +1124,7 @@ namespace VPCLattice
          * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        void ListServicesAsync(const ListServicesRequestT& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServicesAsync(const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServicesRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServices, request, handler, context);
         }
@@ -1152,13 +1160,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTargetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTargetGroupsOutcome ListTargetGroups(const Model::ListTargetGroupsRequest& request) const;
+        virtual Model::ListTargetGroupsOutcome ListTargetGroups(const Model::ListTargetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTargetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTargetGroupsRequestT = Model::ListTargetGroupsRequest>
-        Model::ListTargetGroupsOutcomeCallable ListTargetGroupsCallable(const ListTargetGroupsRequestT& request) const
+        Model::ListTargetGroupsOutcomeCallable ListTargetGroupsCallable(const ListTargetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListTargetGroups, request);
         }
@@ -1167,7 +1175,7 @@ namespace VPCLattice
          * An Async wrapper for ListTargetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTargetGroupsRequestT = Model::ListTargetGroupsRequest>
-        void ListTargetGroupsAsync(const ListTargetGroupsRequestT& request, const ListTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTargetGroupsAsync(const ListTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTargetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListTargetGroups, request, handler, context);
         }
@@ -1175,7 +1183,7 @@ namespace VPCLattice
         /**
          * <p>Lists the targets for the target group. By default, all targets are included.
          * You can use this API to check the health status of targets. You can also ﬁlter
-         * the results by target. </p><p><h3>See Also:</h3>   <a
+         * the results by target.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTargets">AWS
          * API Reference</a></p>
          */
@@ -1200,7 +1208,11 @@ namespace VPCLattice
         }
 
         /**
-         * <p>Creates or updates the auth policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates the auth policy. The policy string in JSON must not
+         * contain newlines or blank lines.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html">Auth
+         * policies</a> in the <i>Amazon VPC Lattice User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/PutAuthPolicy">AWS
          * API Reference</a></p>
          */
@@ -1459,8 +1471,12 @@ namespace VPCLattice
         }
 
         /**
-         * <p>Updates the service network and VPC association. Once you add a security
-         * group, it cannot be removed.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the service network and VPC association. If you add a security group
+         * to the service network and VPC association, the association must continue to
+         * always have at least one security group. You can add or edit security groups at
+         * any time. However, to remove all security groups, you must first delete the
+         * association and recreate it without security groups.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateServiceNetworkVpcAssociation">AWS
          * API Reference</a></p>
          */
@@ -1517,7 +1533,6 @@ namespace VPCLattice
       void init(const VPCLatticeClientConfiguration& clientConfiguration);
 
       VPCLatticeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<VPCLatticeEndpointProviderBase> m_endpointProvider;
   };
 

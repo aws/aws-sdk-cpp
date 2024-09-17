@@ -38,42 +38,18 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The selected video streams to capture for a specified media capture pipeline.
      * The number of video streams can't exceed 25.</p>
      */
     inline const SelectedVideoStreams& GetSelectedVideoStreams() const{ return m_selectedVideoStreams; }
-
-    /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
-     */
     inline bool SelectedVideoStreamsHasBeenSet() const { return m_selectedVideoStreamsHasBeenSet; }
-
-    /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
-     */
     inline void SetSelectedVideoStreams(const SelectedVideoStreams& value) { m_selectedVideoStreamsHasBeenSet = true; m_selectedVideoStreams = value; }
-
-    /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
-     */
     inline void SetSelectedVideoStreams(SelectedVideoStreams&& value) { m_selectedVideoStreamsHasBeenSet = true; m_selectedVideoStreams = std::move(value); }
-
-    /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
-     */
     inline SourceConfiguration& WithSelectedVideoStreams(const SelectedVideoStreams& value) { SetSelectedVideoStreams(value); return *this;}
-
-    /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
-     */
     inline SourceConfiguration& WithSelectedVideoStreams(SelectedVideoStreams&& value) { SetSelectedVideoStreams(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SelectedVideoStreams m_selectedVideoStreams;

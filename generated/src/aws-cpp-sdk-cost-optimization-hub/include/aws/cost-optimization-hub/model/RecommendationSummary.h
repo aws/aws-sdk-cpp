@@ -38,99 +38,47 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
+    /**
+     * <p>The grouping of recommendations.</p>
+     */
+    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
+    inline RecommendationSummary& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
+    inline RecommendationSummary& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
+    inline RecommendationSummary& WithGroup(const char* value) { SetGroup(value); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The estimated total savings resulting from modifications, on a monthly
      * basis.</p>
      */
     inline double GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
-
-    /**
-     * <p>The estimated total savings resulting from modifications, on a monthly
-     * basis.</p>
-     */
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
-
-    /**
-     * <p>The estimated total savings resulting from modifications, on a monthly
-     * basis.</p>
-     */
     inline void SetEstimatedMonthlySavings(double value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
-
-    /**
-     * <p>The estimated total savings resulting from modifications, on a monthly
-     * basis.</p>
-     */
     inline RecommendationSummary& WithEstimatedMonthlySavings(double value) { SetEstimatedMonthlySavings(value); return *this;}
+    ///@}
 
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline const Aws::String& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline RecommendationSummary& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline RecommendationSummary& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The grouping of recommendations.</p>
-     */
-    inline RecommendationSummary& WithGroup(const char* value) { SetGroup(value); return *this;}
-
-
+    ///@{
     /**
      * <p>The total number of instance recommendations.</p>
      */
     inline int GetRecommendationCount() const{ return m_recommendationCount; }
-
-    /**
-     * <p>The total number of instance recommendations.</p>
-     */
     inline bool RecommendationCountHasBeenSet() const { return m_recommendationCountHasBeenSet; }
-
-    /**
-     * <p>The total number of instance recommendations.</p>
-     */
     inline void SetRecommendationCount(int value) { m_recommendationCountHasBeenSet = true; m_recommendationCount = value; }
-
-    /**
-     * <p>The total number of instance recommendations.</p>
-     */
     inline RecommendationSummary& WithRecommendationCount(int value) { SetRecommendationCount(value); return *this;}
-
+    ///@}
   private:
-
-    double m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     Aws::String m_group;
     bool m_groupHasBeenSet = false;
+
+    double m_estimatedMonthlySavings;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     int m_recommendationCount;
     bool m_recommendationCountHasBeenSet = false;

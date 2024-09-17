@@ -29,12 +29,8 @@ PrivateDnsNameConfiguration::PrivateDnsNameConfiguration() :
 {
 }
 
-PrivateDnsNameConfiguration::PrivateDnsNameConfiguration(const XmlNode& xmlNode) : 
-    m_state(DnsNameState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false)
+PrivateDnsNameConfiguration::PrivateDnsNameConfiguration(const XmlNode& xmlNode)
+  : PrivateDnsNameConfiguration()
 {
   *this = xmlNode;
 }

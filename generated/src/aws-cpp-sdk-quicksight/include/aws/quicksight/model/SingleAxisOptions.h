@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Y axis options of a single axis configuration.</p>
      */
     inline const YAxisOptions& GetYAxisOptions() const{ return m_yAxisOptions; }
-
-    /**
-     * <p>The Y axis options of a single axis configuration.</p>
-     */
     inline bool YAxisOptionsHasBeenSet() const { return m_yAxisOptionsHasBeenSet; }
-
-    /**
-     * <p>The Y axis options of a single axis configuration.</p>
-     */
     inline void SetYAxisOptions(const YAxisOptions& value) { m_yAxisOptionsHasBeenSet = true; m_yAxisOptions = value; }
-
-    /**
-     * <p>The Y axis options of a single axis configuration.</p>
-     */
     inline void SetYAxisOptions(YAxisOptions&& value) { m_yAxisOptionsHasBeenSet = true; m_yAxisOptions = std::move(value); }
-
-    /**
-     * <p>The Y axis options of a single axis configuration.</p>
-     */
     inline SingleAxisOptions& WithYAxisOptions(const YAxisOptions& value) { SetYAxisOptions(value); return *this;}
-
-    /**
-     * <p>The Y axis options of a single axis configuration.</p>
-     */
     inline SingleAxisOptions& WithYAxisOptions(YAxisOptions&& value) { SetYAxisOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     YAxisOptions m_yAxisOptions;

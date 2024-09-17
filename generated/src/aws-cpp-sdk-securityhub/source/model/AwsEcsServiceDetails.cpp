@@ -48,33 +48,8 @@ AwsEcsServiceDetails::AwsEcsServiceDetails() :
 {
 }
 
-AwsEcsServiceDetails::AwsEcsServiceDetails(JsonView jsonValue) : 
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_clusterHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false),
-    m_deploymentControllerHasBeenSet(false),
-    m_desiredCount(0),
-    m_desiredCountHasBeenSet(false),
-    m_enableEcsManagedTags(false),
-    m_enableEcsManagedTagsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false),
-    m_launchTypeHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategiesHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_propagateTagsHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_schedulingStrategyHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false)
+AwsEcsServiceDetails::AwsEcsServiceDetails(JsonView jsonValue)
+  : AwsEcsServiceDetails()
 {
   *this = jsonValue;
 }

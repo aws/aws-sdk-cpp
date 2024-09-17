@@ -23,8 +23,8 @@ ZendeskConnectorProfileProperties::ZendeskConnectorProfileProperties() :
 {
 }
 
-ZendeskConnectorProfileProperties::ZendeskConnectorProfileProperties(JsonView jsonValue) : 
-    m_instanceUrlHasBeenSet(false)
+ZendeskConnectorProfileProperties::ZendeskConnectorProfileProperties(JsonView jsonValue)
+  : ZendeskConnectorProfileProperties()
 {
   *this = jsonValue;
 }

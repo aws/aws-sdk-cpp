@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The collection of algorithms run on a dataset for training the model
-   * candidates of an Autopilot job.</p><p><h3>See Also:</h3>   <a
+   * <p>The selection of algorithms trained on your dataset to generate the model
+   * candidates for an Autopilot job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLAlgorithmConfig">AWS
    * API Reference</a></p>
    */
@@ -39,134 +39,36 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
+     * <p>The selection of algorithms trained on your dataset to generate the model
+     * candidates for an Autopilot job.</p> <ul> <li> <p> <b>For the tabular problem
+     * type <code>TabularJobConfig</code>:</b> </p>  <p>Selected algorithms must
+     * belong to the list corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
      * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * minimum of 1 algorithm.</p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
      * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
      * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
+     * <p>"xgboost"</p> </li> </ul> </li> </ul> </li> <li> <p> <b>For the time-series
+     * forecasting problem type <code>TimeSeriesForecastingJobConfig</code>:</b> </p>
+     * <ul> <li> <p>Choose your algorithms from this list.</p> <ul> <li>
+     * <p>"cnn-qr"</p> </li> <li> <p>"deepar"</p> </li> <li> <p>"prophet"</p> </li>
+     * <li> <p>"arima"</p> </li> <li> <p>"npts"</p> </li> <li> <p>"ets"</p> </li> </ul>
+     * </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<AutoMLAlgorithm>& GetAutoMLAlgorithms() const{ return m_autoMLAlgorithms; }
-
-    /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
-     * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
-     * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
-     * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
-     * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
-     */
     inline bool AutoMLAlgorithmsHasBeenSet() const { return m_autoMLAlgorithmsHasBeenSet; }
-
-    /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
-     * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
-     * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
-     * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
-     * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
-     */
     inline void SetAutoMLAlgorithms(const Aws::Vector<AutoMLAlgorithm>& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms = value; }
-
-    /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
-     * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
-     * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
-     * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
-     * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
-     */
     inline void SetAutoMLAlgorithms(Aws::Vector<AutoMLAlgorithm>&& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms = std::move(value); }
-
-    /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
-     * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
-     * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
-     * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
-     * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
-     */
     inline AutoMLAlgorithmConfig& WithAutoMLAlgorithms(const Aws::Vector<AutoMLAlgorithm>& value) { SetAutoMLAlgorithms(value); return *this;}
-
-    /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
-     * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
-     * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
-     * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
-     * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
-     */
     inline AutoMLAlgorithmConfig& WithAutoMLAlgorithms(Aws::Vector<AutoMLAlgorithm>&& value) { SetAutoMLAlgorithms(std::move(value)); return *this;}
-
-    /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
-     * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
-     * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
-     * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
-     * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
-     */
     inline AutoMLAlgorithmConfig& AddAutoMLAlgorithms(const AutoMLAlgorithm& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms.push_back(value); return *this; }
-
-    /**
-     * <p>The selection of algorithms run on a dataset to train the model candidates of
-     * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
-     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
-     * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
-     * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
-     * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> <li> <p>In <code>HYPERPARAMETER_TUNING</code>
-     * mode:</p> <ul> <li> <p>"linear-learner"</p> </li> <li> <p>"mlp"</p> </li> <li>
-     * <p>"xgboost"</p> </li> </ul> </li> </ul>
-     */
     inline AutoMLAlgorithmConfig& AddAutoMLAlgorithms(AutoMLAlgorithm&& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AutoMLAlgorithm> m_autoMLAlgorithms;

@@ -30,23 +30,13 @@ RedshiftDestinationUpdate::RedshiftDestinationUpdate() :
     m_s3BackupMode(RedshiftS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupUpdateHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
 }
 
-RedshiftDestinationUpdate::RedshiftDestinationUpdate(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_clusterJDBCURLHasBeenSet(false),
-    m_copyCommandHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_s3BackupMode(RedshiftS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3BackupUpdateHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+RedshiftDestinationUpdate::RedshiftDestinationUpdate(JsonView jsonValue)
+  : RedshiftDestinationUpdate()
 {
   *this = jsonValue;
 }
@@ -130,6 +120,13 @@ RedshiftDestinationUpdate& RedshiftDestinationUpdate::operator =(JsonView jsonVa
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
+  {
+    m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
+
+    m_secretsManagerConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +196,12 @@ JsonValue RedshiftDestinationUpdate::Jsonize() const
   if(m_cloudWatchLoggingOptionsHasBeenSet)
   {
    payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
+
+  }
+
+  if(m_secretsManagerConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
 
   }
 

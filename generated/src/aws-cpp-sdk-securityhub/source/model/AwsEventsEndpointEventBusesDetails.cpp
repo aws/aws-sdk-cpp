@@ -23,8 +23,8 @@ AwsEventsEndpointEventBusesDetails::AwsEventsEndpointEventBusesDetails() :
 {
 }
 
-AwsEventsEndpointEventBusesDetails::AwsEventsEndpointEventBusesDetails(JsonView jsonValue) : 
-    m_eventBusArnHasBeenSet(false)
+AwsEventsEndpointEventBusesDetails::AwsEventsEndpointEventBusesDetails(JsonView jsonValue)
+  : AwsEventsEndpointEventBusesDetails()
 {
   *this = jsonValue;
 }

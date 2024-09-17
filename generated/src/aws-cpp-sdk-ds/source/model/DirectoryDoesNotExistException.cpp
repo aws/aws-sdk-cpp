@@ -24,9 +24,8 @@ DirectoryDoesNotExistException::DirectoryDoesNotExistException() :
 {
 }
 
-DirectoryDoesNotExistException::DirectoryDoesNotExistException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DirectoryDoesNotExistException::DirectoryDoesNotExistException(JsonView jsonValue)
+  : DirectoryDoesNotExistException()
 {
   *this = jsonValue;
 }

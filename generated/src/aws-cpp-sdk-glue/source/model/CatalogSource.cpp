@@ -25,10 +25,8 @@ CatalogSource::CatalogSource() :
 {
 }
 
-CatalogSource::CatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+CatalogSource::CatalogSource(JsonView jsonValue)
+  : CatalogSource()
 {
   *this = jsonValue;
 }

@@ -23,6 +23,7 @@ namespace Aws
         static const int EntityId_HASH = HashingUtils::HashString("EntityId");
         static const int Name_HASH = HashingUtils::HashString("Name");
         static const int ProductId_HASH = HashingUtils::HashString("ProductId");
+        static const int ResaleAuthorizationId_HASH = HashingUtils::HashString("ResaleAuthorizationId");
         static const int ReleaseDate_HASH = HashingUtils::HashString("ReleaseDate");
         static const int AvailabilityEndDate_HASH = HashingUtils::HashString("AvailabilityEndDate");
         static const int BuyerAccounts_HASH = HashingUtils::HashString("BuyerAccounts");
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == ProductId_HASH)
           {
             return OfferSortBy::ProductId;
+          }
+          else if (hashCode == ResaleAuthorizationId_HASH)
+          {
+            return OfferSortBy::ResaleAuthorizationId;
           }
           else if (hashCode == ReleaseDate_HASH)
           {
@@ -92,6 +97,8 @@ namespace Aws
             return "Name";
           case OfferSortBy::ProductId:
             return "ProductId";
+          case OfferSortBy::ResaleAuthorizationId:
+            return "ResaleAuthorizationId";
           case OfferSortBy::ReleaseDate:
             return "ReleaseDate";
           case OfferSortBy::AvailabilityEndDate:

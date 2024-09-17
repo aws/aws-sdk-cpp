@@ -32,36 +32,17 @@ namespace Model
     AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The new values of the AWS IoT Events logging options.</p>
      */
     inline const LoggingOptions& GetLoggingOptions() const{ return m_loggingOptions; }
-
-    /**
-     * <p>The new values of the AWS IoT Events logging options.</p>
-     */
     inline bool LoggingOptionsHasBeenSet() const { return m_loggingOptionsHasBeenSet; }
-
-    /**
-     * <p>The new values of the AWS IoT Events logging options.</p>
-     */
     inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = value; }
-
-    /**
-     * <p>The new values of the AWS IoT Events logging options.</p>
-     */
     inline void SetLoggingOptions(LoggingOptions&& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = std::move(value); }
-
-    /**
-     * <p>The new values of the AWS IoT Events logging options.</p>
-     */
     inline PutLoggingOptionsRequest& WithLoggingOptions(const LoggingOptions& value) { SetLoggingOptions(value); return *this;}
-
-    /**
-     * <p>The new values of the AWS IoT Events logging options.</p>
-     */
     inline PutLoggingOptionsRequest& WithLoggingOptions(LoggingOptions&& value) { SetLoggingOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoggingOptions m_loggingOptions;

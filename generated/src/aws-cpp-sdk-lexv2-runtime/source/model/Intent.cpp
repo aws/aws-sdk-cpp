@@ -28,13 +28,8 @@ Intent::Intent() :
 {
 }
 
-Intent::Intent(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_state(IntentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_confirmationState(ConfirmationState::NOT_SET),
-    m_confirmationStateHasBeenSet(false)
+Intent::Intent(JsonView jsonValue)
+  : Intent()
 {
   *this = jsonValue;
 }

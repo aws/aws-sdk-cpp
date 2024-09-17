@@ -22,8 +22,8 @@ GetAggregateDiscoveredResourceCountsResult::GetAggregateDiscoveredResourceCounts
 {
 }
 
-GetAggregateDiscoveredResourceCountsResult::GetAggregateDiscoveredResourceCountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalDiscoveredResources(0)
+GetAggregateDiscoveredResourceCountsResult::GetAggregateDiscoveredResourceCountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAggregateDiscoveredResourceCountsResult()
 {
   *this = result;
 }

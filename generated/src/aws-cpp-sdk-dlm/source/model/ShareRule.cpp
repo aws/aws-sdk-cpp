@@ -27,12 +27,8 @@ ShareRule::ShareRule() :
 {
 }
 
-ShareRule::ShareRule(JsonView jsonValue) : 
-    m_targetAccountsHasBeenSet(false),
-    m_unshareInterval(0),
-    m_unshareIntervalHasBeenSet(false),
-    m_unshareIntervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_unshareIntervalUnitHasBeenSet(false)
+ShareRule::ShareRule(JsonView jsonValue)
+  : ShareRule()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AwsWafRegionalRuleGroupRulesDetails::AwsWafRegionalRuleGroupRulesDetails() :
 {
 }
 
-AwsWafRegionalRuleGroupRulesDetails::AwsWafRegionalRuleGroupRulesDetails(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsWafRegionalRuleGroupRulesDetails::AwsWafRegionalRuleGroupRulesDetails(JsonView jsonValue)
+  : AwsWafRegionalRuleGroupRulesDetails()
 {
   *this = jsonValue;
 }

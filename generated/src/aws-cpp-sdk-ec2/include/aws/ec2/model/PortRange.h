@@ -37,47 +37,25 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The first port in the range.</p>
      */
     inline int GetFrom() const{ return m_from; }
-
-    /**
-     * <p>The first port in the range.</p>
-     */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-
-    /**
-     * <p>The first port in the range.</p>
-     */
     inline void SetFrom(int value) { m_fromHasBeenSet = true; m_from = value; }
-
-    /**
-     * <p>The first port in the range.</p>
-     */
     inline PortRange& WithFrom(int value) { SetFrom(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last port in the range.</p>
      */
     inline int GetTo() const{ return m_to; }
-
-    /**
-     * <p>The last port in the range.</p>
-     */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-
-    /**
-     * <p>The last port in the range.</p>
-     */
     inline void SetTo(int value) { m_toHasBeenSet = true; m_to = value; }
-
-    /**
-     * <p>The last port in the range.</p>
-     */
     inline PortRange& WithTo(int value) { SetTo(value); return *this;}
-
+    ///@}
   private:
 
     int m_from;

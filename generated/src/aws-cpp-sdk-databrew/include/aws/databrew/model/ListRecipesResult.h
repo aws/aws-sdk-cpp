@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUEDATABREW_API ListRecipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of recipes that are defined.</p>
      */
     inline const Aws::Vector<Recipe>& GetRecipes() const{ return m_recipes; }
-
-    /**
-     * <p>A list of recipes that are defined.</p>
-     */
     inline void SetRecipes(const Aws::Vector<Recipe>& value) { m_recipes = value; }
-
-    /**
-     * <p>A list of recipes that are defined.</p>
-     */
     inline void SetRecipes(Aws::Vector<Recipe>&& value) { m_recipes = std::move(value); }
-
-    /**
-     * <p>A list of recipes that are defined.</p>
-     */
     inline ListRecipesResult& WithRecipes(const Aws::Vector<Recipe>& value) { SetRecipes(value); return *this;}
-
-    /**
-     * <p>A list of recipes that are defined.</p>
-     */
     inline ListRecipesResult& WithRecipes(Aws::Vector<Recipe>&& value) { SetRecipes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of recipes that are defined.</p>
-     */
     inline ListRecipesResult& AddRecipes(const Recipe& value) { m_recipes.push_back(value); return *this; }
-
-    /**
-     * <p>A list of recipes that are defined.</p>
-     */
     inline ListRecipesResult& AddRecipes(Recipe&& value) { m_recipes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token that you can use in a subsequent call to retrieve the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListRecipesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListRecipesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListRecipesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRecipesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRecipesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRecipesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Recipe> m_recipes;

@@ -23,8 +23,8 @@ RecordingStreamConfiguration::RecordingStreamConfiguration() :
 {
 }
 
-RecordingStreamConfiguration::RecordingStreamConfiguration(JsonView jsonValue) : 
-    m_streamArnHasBeenSet(false)
+RecordingStreamConfiguration::RecordingStreamConfiguration(JsonView jsonValue)
+  : RecordingStreamConfiguration()
 {
   *this = jsonValue;
 }

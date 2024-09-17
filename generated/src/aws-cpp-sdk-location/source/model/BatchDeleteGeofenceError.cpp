@@ -19,32 +19,31 @@ namespace Model
 {
 
 BatchDeleteGeofenceError::BatchDeleteGeofenceError() : 
-    m_errorHasBeenSet(false),
-    m_geofenceIdHasBeenSet(false)
+    m_geofenceIdHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
-BatchDeleteGeofenceError::BatchDeleteGeofenceError(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_geofenceIdHasBeenSet(false)
+BatchDeleteGeofenceError::BatchDeleteGeofenceError(JsonView jsonValue)
+  : BatchDeleteGeofenceError()
 {
   *this = jsonValue;
 }
 
 BatchDeleteGeofenceError& BatchDeleteGeofenceError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Error"))
-  {
-    m_error = jsonValue.GetObject("Error");
-
-    m_errorHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("GeofenceId"))
   {
     m_geofenceId = jsonValue.GetString("GeofenceId");
 
     m_geofenceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Error"))
+  {
+    m_error = jsonValue.GetObject("Error");
+
+    m_errorHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +53,15 @@ JsonValue BatchDeleteGeofenceError::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithObject("Error", m_error.Jsonize());
-
-  }
-
   if(m_geofenceIdHasBeenSet)
   {
    payload.WithString("GeofenceId", m_geofenceId);
+
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithObject("Error", m_error.Jsonize());
 
   }
 

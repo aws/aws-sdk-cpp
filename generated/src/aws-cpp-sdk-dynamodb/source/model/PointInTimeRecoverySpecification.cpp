@@ -24,9 +24,8 @@ PointInTimeRecoverySpecification::PointInTimeRecoverySpecification() :
 {
 }
 
-PointInTimeRecoverySpecification::PointInTimeRecoverySpecification(JsonView jsonValue) : 
-    m_pointInTimeRecoveryEnabled(false),
-    m_pointInTimeRecoveryEnabledHasBeenSet(false)
+PointInTimeRecoverySpecification::PointInTimeRecoverySpecification(JsonView jsonValue)
+  : PointInTimeRecoverySpecification()
 {
   *this = jsonValue;
 }

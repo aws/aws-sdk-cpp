@@ -24,9 +24,8 @@ NotebookS3LocationFromInput::NotebookS3LocationFromInput() :
 {
 }
 
-NotebookS3LocationFromInput::NotebookS3LocationFromInput(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+NotebookS3LocationFromInput::NotebookS3LocationFromInput(JsonView jsonValue)
+  : NotebookS3LocationFromInput()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ LabelParameterVersionResult::LabelParameterVersionResult() :
 {
 }
 
-LabelParameterVersionResult::LabelParameterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_parameterVersion(0)
+LabelParameterVersionResult::LabelParameterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : LabelParameterVersionResult()
 {
   *this = result;
 }

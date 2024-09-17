@@ -23,7 +23,8 @@ CreateComputeEnvironmentRequest::CreateComputeEnvironmentRequest() :
     m_computeResourcesHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_eksConfigurationHasBeenSet(false)
+    m_eksConfigurationHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateComputeEnvironmentRequest::SerializePayload() const
   if(m_eksConfigurationHasBeenSet)
   {
    payload.WithObject("eksConfiguration", m_eksConfiguration.Jsonize());
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   payload.WithString("context", m_context);
 
   }
 

@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 UpdateAgentKnowledgeBaseRequest::UpdateAgentKnowledgeBaseRequest() : 
     m_agentIdHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
     m_knowledgeBaseStateHasBeenSet(false)
 {

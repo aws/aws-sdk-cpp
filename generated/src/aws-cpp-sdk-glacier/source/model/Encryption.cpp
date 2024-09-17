@@ -26,11 +26,8 @@ Encryption::Encryption() :
 {
 }
 
-Encryption::Encryption(JsonView jsonValue) : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_kMSContextHasBeenSet(false)
+Encryption::Encryption(JsonView jsonValue)
+  : Encryption()
 {
   *this = jsonValue;
 }

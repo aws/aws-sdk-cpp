@@ -23,8 +23,8 @@ Evidence::Evidence() :
 {
 }
 
-Evidence::Evidence(JsonView jsonValue) : 
-    m_threatIntelligenceDetailsHasBeenSet(false)
+Evidence::Evidence(JsonView jsonValue)
+  : Evidence()
 {
   *this = jsonValue;
 }

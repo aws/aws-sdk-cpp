@@ -25,10 +25,8 @@ FailoverConditionSettings::FailoverConditionSettings() :
 {
 }
 
-FailoverConditionSettings::FailoverConditionSettings(JsonView jsonValue) : 
-    m_audioSilenceSettingsHasBeenSet(false),
-    m_inputLossSettingsHasBeenSet(false),
-    m_videoBlackSettingsHasBeenSet(false)
+FailoverConditionSettings::FailoverConditionSettings(JsonView jsonValue)
+  : FailoverConditionSettings()
 {
   *this = jsonValue;
 }

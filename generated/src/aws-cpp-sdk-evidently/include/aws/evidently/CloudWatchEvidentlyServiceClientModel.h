@@ -56,6 +56,8 @@
 #include <aws/evidently/model/UpdateLaunchResult.h>
 #include <aws/evidently/model/UpdateProjectResult.h>
 #include <aws/evidently/model/UpdateProjectDataDeliveryResult.h>
+#include <aws/evidently/model/ListProjectsRequest.h>
+#include <aws/evidently/model/ListSegmentsRequest.h>
 /* End of service model headers required in CloudWatchEvidentlyClient header */
 
 namespace Aws
@@ -89,7 +91,7 @@ namespace Aws
 
   namespace CloudWatchEvidently
   {
-    using CloudWatchEvidentlyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchEvidentlyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchEvidentlyEndpointProviderBase = Aws::CloudWatchEvidently::Endpoint::CloudWatchEvidentlyEndpointProviderBase;
     using CloudWatchEvidentlyEndpointProvider = Aws::CloudWatchEvidently::Endpoint::CloudWatchEvidentlyEndpointProvider;
 

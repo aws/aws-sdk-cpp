@@ -28,33 +28,18 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation() :
     m_lookBackPeriodInDays(0.0),
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_currentConfigurationHasBeenSet(false),
+    m_currentInstanceGpuInfoHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
     m_lastRefreshTimestampHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
     m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_currentInstanceGpuInfoHasBeenSet(false)
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
 }
 
-AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_autoScalingGroupArnHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_finding(Finding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_currentConfigurationHasBeenSet(false),
-    m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_currentInstanceGpuInfoHasBeenSet(false)
+AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValue)
+  : AutoScalingGroupRecommendation()
 {
   *this = jsonValue;
 }
@@ -113,6 +98,13 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
     m_currentConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentInstanceGpuInfo"))
+  {
+    m_currentInstanceGpuInfo = jsonValue.GetObject("currentInstanceGpuInfo");
+
+    m_currentInstanceGpuInfoHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("recommendationOptions"))
   {
     Aws::Utils::Array<JsonView> recommendationOptionsJsonList = jsonValue.GetArray("recommendationOptions");
@@ -152,13 +144,6 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
       m_inferredWorkloadTypes.push_back(InferredWorkloadTypeMapper::GetInferredWorkloadTypeForName(inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString()));
     }
     m_inferredWorkloadTypesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("currentInstanceGpuInfo"))
-  {
-    m_currentInstanceGpuInfo = jsonValue.GetObject("currentInstanceGpuInfo");
-
-    m_currentInstanceGpuInfoHasBeenSet = true;
   }
 
   return *this;
@@ -214,6 +199,12 @@ JsonValue AutoScalingGroupRecommendation::Jsonize() const
 
   }
 
+  if(m_currentInstanceGpuInfoHasBeenSet)
+  {
+   payload.WithObject("currentInstanceGpuInfo", m_currentInstanceGpuInfo.Jsonize());
+
+  }
+
   if(m_recommendationOptionsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> recommendationOptionsJsonList(m_recommendationOptions.size());
@@ -249,12 +240,6 @@ JsonValue AutoScalingGroupRecommendation::Jsonize() const
      inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString(InferredWorkloadTypeMapper::GetNameForInferredWorkloadType(m_inferredWorkloadTypes[inferredWorkloadTypesIndex]));
    }
    payload.WithArray("inferredWorkloadTypes", std::move(inferredWorkloadTypesJsonList));
-
-  }
-
-  if(m_currentInstanceGpuInfoHasBeenSet)
-  {
-   payload.WithObject("currentInstanceGpuInfo", m_currentInstanceGpuInfo.Jsonize());
 
   }
 

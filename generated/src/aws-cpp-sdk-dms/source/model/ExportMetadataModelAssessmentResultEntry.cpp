@@ -24,9 +24,8 @@ ExportMetadataModelAssessmentResultEntry::ExportMetadataModelAssessmentResultEnt
 {
 }
 
-ExportMetadataModelAssessmentResultEntry::ExportMetadataModelAssessmentResultEntry(JsonView jsonValue) : 
-    m_s3ObjectKeyHasBeenSet(false),
-    m_objectURLHasBeenSet(false)
+ExportMetadataModelAssessmentResultEntry::ExportMetadataModelAssessmentResultEntry(JsonView jsonValue)
+  : ExportMetadataModelAssessmentResultEntry()
 {
   *this = jsonValue;
 }

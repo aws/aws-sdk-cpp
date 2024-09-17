@@ -32,63 +32,29 @@ namespace Model
     AWS_APPFLOW_API RegisterConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the connector being registered.</p>
      */
     inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
-
-    /**
-     * <p>The ARN of the connector being registered.</p>
-     */
     inline void SetConnectorArn(const Aws::String& value) { m_connectorArn = value; }
-
-    /**
-     * <p>The ARN of the connector being registered.</p>
-     */
     inline void SetConnectorArn(Aws::String&& value) { m_connectorArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the connector being registered.</p>
-     */
     inline void SetConnectorArn(const char* value) { m_connectorArn.assign(value); }
-
-    /**
-     * <p>The ARN of the connector being registered.</p>
-     */
     inline RegisterConnectorResult& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the connector being registered.</p>
-     */
     inline RegisterConnectorResult& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the connector being registered.</p>
-     */
     inline RegisterConnectorResult& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectorArn;

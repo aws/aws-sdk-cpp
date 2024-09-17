@@ -24,9 +24,8 @@ AwsDynamoDbTableReplicaGlobalSecondaryIndex::AwsDynamoDbTableReplicaGlobalSecond
 {
 }
 
-AwsDynamoDbTableReplicaGlobalSecondaryIndex::AwsDynamoDbTableReplicaGlobalSecondaryIndex(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false)
+AwsDynamoDbTableReplicaGlobalSecondaryIndex::AwsDynamoDbTableReplicaGlobalSecondaryIndex(JsonView jsonValue)
+  : AwsDynamoDbTableReplicaGlobalSecondaryIndex()
 {
   *this = jsonValue;
 }

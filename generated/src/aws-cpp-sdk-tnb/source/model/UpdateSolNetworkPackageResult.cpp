@@ -22,8 +22,8 @@ UpdateSolNetworkPackageResult::UpdateSolNetworkPackageResult() :
 {
 }
 
-UpdateSolNetworkPackageResult::UpdateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nsdOperationalState(NsdOperationalState::NOT_SET)
+UpdateSolNetworkPackageResult::UpdateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSolNetworkPackageResult()
 {
   *this = result;
 }

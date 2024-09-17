@@ -33,111 +33,44 @@ namespace Model
     AWS_IOT_API ListCustomMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The name of the custom metric. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricNames() const{ return m_metricNames; }
-
-    /**
-     * <p> The name of the custom metric. </p>
-     */
     inline void SetMetricNames(const Aws::Vector<Aws::String>& value) { m_metricNames = value; }
-
-    /**
-     * <p> The name of the custom metric. </p>
-     */
     inline void SetMetricNames(Aws::Vector<Aws::String>&& value) { m_metricNames = std::move(value); }
-
-    /**
-     * <p> The name of the custom metric. </p>
-     */
     inline ListCustomMetricsResult& WithMetricNames(const Aws::Vector<Aws::String>& value) { SetMetricNames(value); return *this;}
-
-    /**
-     * <p> The name of the custom metric. </p>
-     */
     inline ListCustomMetricsResult& WithMetricNames(Aws::Vector<Aws::String>&& value) { SetMetricNames(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the custom metric. </p>
-     */
     inline ListCustomMetricsResult& AddMetricNames(const Aws::String& value) { m_metricNames.push_back(value); return *this; }
-
-    /**
-     * <p> The name of the custom metric. </p>
-     */
     inline ListCustomMetricsResult& AddMetricNames(Aws::String&& value) { m_metricNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The name of the custom metric. </p>
-     */
     inline ListCustomMetricsResult& AddMetricNames(const char* value) { m_metricNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> A token that can be used to retrieve the next set of results, or
      * <code>null</code> if there are no additional results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> A token that can be used to retrieve the next set of results, or
-     * <code>null</code> if there are no additional results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> A token that can be used to retrieve the next set of results, or
-     * <code>null</code> if there are no additional results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> A token that can be used to retrieve the next set of results, or
-     * <code>null</code> if there are no additional results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> A token that can be used to retrieve the next set of results, or
-     * <code>null</code> if there are no additional results. </p>
-     */
     inline ListCustomMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> A token that can be used to retrieve the next set of results, or
-     * <code>null</code> if there are no additional results. </p>
-     */
     inline ListCustomMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> A token that can be used to retrieve the next set of results, or
-     * <code>null</code> if there are no additional results. </p>
-     */
     inline ListCustomMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCustomMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCustomMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCustomMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_metricNames;

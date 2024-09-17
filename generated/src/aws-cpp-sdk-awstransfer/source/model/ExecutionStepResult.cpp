@@ -26,11 +26,8 @@ ExecutionStepResult::ExecutionStepResult() :
 {
 }
 
-ExecutionStepResult::ExecutionStepResult(JsonView jsonValue) : 
-    m_stepType(WorkflowStepType::NOT_SET),
-    m_stepTypeHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_errorHasBeenSet(false)
+ExecutionStepResult::ExecutionStepResult(JsonView jsonValue)
+  : ExecutionStepResult()
 {
   *this = jsonValue;
 }

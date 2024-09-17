@@ -24,9 +24,8 @@ IotSiteWiseAssetModelPropertyIdentifier::IotSiteWiseAssetModelPropertyIdentifier
 {
 }
 
-IotSiteWiseAssetModelPropertyIdentifier::IotSiteWiseAssetModelPropertyIdentifier(JsonView jsonValue) : 
-    m_assetModelIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false)
+IotSiteWiseAssetModelPropertyIdentifier::IotSiteWiseAssetModelPropertyIdentifier(JsonView jsonValue)
+  : IotSiteWiseAssetModelPropertyIdentifier()
 {
   *this = jsonValue;
 }

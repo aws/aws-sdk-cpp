@@ -43,28 +43,8 @@ AwsSageMakerNotebookInstanceDetails::AwsSageMakerNotebookInstanceDetails() :
 {
 }
 
-AwsSageMakerNotebookInstanceDetails::AwsSageMakerNotebookInstanceDetails(JsonView jsonValue) : 
-    m_acceleratorTypesHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false),
-    m_defaultCodeRepositoryHasBeenSet(false),
-    m_directInternetAccessHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_instanceMetadataServiceConfigurationHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_notebookInstanceArnHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
-    m_notebookInstanceNameHasBeenSet(false),
-    m_notebookInstanceStatusHasBeenSet(false),
-    m_platformIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_rootAccessHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
+AwsSageMakerNotebookInstanceDetails::AwsSageMakerNotebookInstanceDetails(JsonView jsonValue)
+  : AwsSageMakerNotebookInstanceDetails()
 {
   *this = jsonValue;
 }

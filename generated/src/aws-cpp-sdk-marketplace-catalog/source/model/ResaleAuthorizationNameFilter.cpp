@@ -24,9 +24,8 @@ ResaleAuthorizationNameFilter::ResaleAuthorizationNameFilter() :
 {
 }
 
-ResaleAuthorizationNameFilter::ResaleAuthorizationNameFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false),
-    m_wildCardValueHasBeenSet(false)
+ResaleAuthorizationNameFilter::ResaleAuthorizationNameFilter(JsonView jsonValue)
+  : ResaleAuthorizationNameFilter()
 {
   *this = jsonValue;
 }

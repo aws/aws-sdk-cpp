@@ -23,8 +23,8 @@ PointsOfInterest::PointsOfInterest() :
 {
 }
 
-PointsOfInterest::PointsOfInterest(JsonView jsonValue) : 
-    m_timestampRangesHasBeenSet(false)
+PointsOfInterest::PointsOfInterest(JsonView jsonValue)
+  : PointsOfInterest()
 {
   *this = jsonValue;
 }

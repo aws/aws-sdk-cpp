@@ -26,11 +26,8 @@ SchemaDefinition::SchemaDefinition() :
 {
 }
 
-SchemaDefinition::SchemaDefinition(JsonView jsonValue) : 
-    m_allColumnsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_clusteringKeysHasBeenSet(false),
-    m_staticColumnsHasBeenSet(false)
+SchemaDefinition::SchemaDefinition(JsonView jsonValue)
+  : SchemaDefinition()
 {
   *this = jsonValue;
 }

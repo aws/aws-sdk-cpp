@@ -67,6 +67,17 @@
 #include <aws/cloudtrail/model/UpdateChannelResult.h>
 #include <aws/cloudtrail/model/UpdateEventDataStoreResult.h>
 #include <aws/cloudtrail/model/UpdateTrailResult.h>
+#include <aws/cloudtrail/model/ListImportsRequest.h>
+#include <aws/cloudtrail/model/ListChannelsRequest.h>
+#include <aws/cloudtrail/model/DescribeQueryRequest.h>
+#include <aws/cloudtrail/model/GetInsightSelectorsRequest.h>
+#include <aws/cloudtrail/model/LookupEventsRequest.h>
+#include <aws/cloudtrail/model/DescribeTrailsRequest.h>
+#include <aws/cloudtrail/model/StartImportRequest.h>
+#include <aws/cloudtrail/model/ListEventDataStoresRequest.h>
+#include <aws/cloudtrail/model/ListPublicKeysRequest.h>
+#include <aws/cloudtrail/model/StartQueryRequest.h>
+#include <aws/cloudtrail/model/ListTrailsRequest.h>
 /* End of service model headers required in CloudTrailClient header */
 
 namespace Aws
@@ -100,7 +111,7 @@ namespace Aws
 
   namespace CloudTrail
   {
-    using CloudTrailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudTrailClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudTrailEndpointProviderBase = Aws::CloudTrail::Endpoint::CloudTrailEndpointProviderBase;
     using CloudTrailEndpointProvider = Aws::CloudTrail::Endpoint::CloudTrailEndpointProvider;
 

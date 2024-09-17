@@ -25,10 +25,8 @@ SensitivityInspectionTemplateIncludes::SensitivityInspectionTemplateIncludes() :
 {
 }
 
-SensitivityInspectionTemplateIncludes::SensitivityInspectionTemplateIncludes(JsonView jsonValue) : 
-    m_allowListIdsHasBeenSet(false),
-    m_customDataIdentifierIdsHasBeenSet(false),
-    m_managedDataIdentifierIdsHasBeenSet(false)
+SensitivityInspectionTemplateIncludes::SensitivityInspectionTemplateIncludes(JsonView jsonValue)
+  : SensitivityInspectionTemplateIncludes()
 {
   *this = jsonValue;
 }

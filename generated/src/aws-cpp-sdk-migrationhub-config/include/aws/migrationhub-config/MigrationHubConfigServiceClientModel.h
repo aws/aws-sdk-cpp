@@ -22,6 +22,8 @@
 #include <aws/migrationhub-config/model/DeleteHomeRegionControlResult.h>
 #include <aws/migrationhub-config/model/DescribeHomeRegionControlsResult.h>
 #include <aws/migrationhub-config/model/GetHomeRegionResult.h>
+#include <aws/migrationhub-config/model/DescribeHomeRegionControlsRequest.h>
+#include <aws/migrationhub-config/model/GetHomeRegionRequest.h>
 /* End of service model headers required in MigrationHubConfigClient header */
 
 namespace Aws
@@ -55,7 +57,7 @@ namespace Aws
 
   namespace MigrationHubConfig
   {
-    using MigrationHubConfigClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MigrationHubConfigClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MigrationHubConfigEndpointProviderBase = Aws::MigrationHubConfig::Endpoint::MigrationHubConfigEndpointProviderBase;
     using MigrationHubConfigEndpointProvider = Aws::MigrationHubConfig::Endpoint::MigrationHubConfigEndpointProvider;
 

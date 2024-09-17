@@ -26,11 +26,8 @@ NotificationConfig::NotificationConfig() :
 {
 }
 
-NotificationConfig::NotificationConfig(JsonView jsonValue) : 
-    m_notificationArnHasBeenSet(false),
-    m_notificationEventsHasBeenSet(false),
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false)
+NotificationConfig::NotificationConfig(JsonView jsonValue)
+  : NotificationConfig()
 {
   *this = jsonValue;
 }

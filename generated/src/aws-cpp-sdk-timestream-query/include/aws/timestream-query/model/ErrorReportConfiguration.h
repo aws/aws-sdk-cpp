@@ -37,36 +37,17 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 configuration for the error reports.</p>
      */
     inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
-
-    /**
-     * <p>The S3 configuration for the error reports.</p>
-     */
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-
-    /**
-     * <p>The S3 configuration for the error reports.</p>
-     */
     inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-
-    /**
-     * <p>The S3 configuration for the error reports.</p>
-     */
     inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-
-    /**
-     * <p>The S3 configuration for the error reports.</p>
-     */
     inline ErrorReportConfiguration& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
-
-    /**
-     * <p>The S3 configuration for the error reports.</p>
-     */
     inline ErrorReportConfiguration& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Configuration m_s3Configuration;

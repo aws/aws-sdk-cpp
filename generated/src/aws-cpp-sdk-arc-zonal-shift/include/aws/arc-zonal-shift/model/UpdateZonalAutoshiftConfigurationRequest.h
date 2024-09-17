@@ -33,99 +33,36 @@ namespace Model
     AWS_ARCZONALSHIFT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier for the resource that you want to update the zonal autoshift
      * configuration for. The identifier is the Amazon Resource Name (ARN) for the
      * resource.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-
-    /**
-     * <p>The identifier for the resource that you want to update the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier for the resource that you want to update the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-
-    /**
-     * <p>The identifier for the resource that you want to update the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier for the resource that you want to update the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier for the resource that you want to update the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier for the resource that you want to update the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the resource that you want to update the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The zonal autoshift status for the resource that you want to update the zonal
-     * autoshift configuration for.</p>
+     * autoshift configuration for. Choose <code>ENABLED</code> to authorize Amazon Web
+     * Services to shift away resource traffic for an application from an Availability
+     * Zone during events, on your behalf, to help reduce time to recovery.</p>
      */
     inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
-
-    /**
-     * <p>The zonal autoshift status for the resource that you want to update the zonal
-     * autoshift configuration for.</p>
-     */
     inline bool ZonalAutoshiftStatusHasBeenSet() const { return m_zonalAutoshiftStatusHasBeenSet; }
-
-    /**
-     * <p>The zonal autoshift status for the resource that you want to update the zonal
-     * autoshift configuration for.</p>
-     */
     inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = value; }
-
-    /**
-     * <p>The zonal autoshift status for the resource that you want to update the zonal
-     * autoshift configuration for.</p>
-     */
     inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = std::move(value); }
-
-    /**
-     * <p>The zonal autoshift status for the resource that you want to update the zonal
-     * autoshift configuration for.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationRequest& WithZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { SetZonalAutoshiftStatus(value); return *this;}
-
-    /**
-     * <p>The zonal autoshift status for the resource that you want to update the zonal
-     * autoshift configuration for.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationRequest& WithZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { SetZonalAutoshiftStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceIdentifier;

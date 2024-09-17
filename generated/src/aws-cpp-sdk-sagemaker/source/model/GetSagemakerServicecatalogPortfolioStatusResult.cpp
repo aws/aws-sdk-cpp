@@ -22,8 +22,8 @@ GetSagemakerServicecatalogPortfolioStatusResult::GetSagemakerServicecatalogPortf
 {
 }
 
-GetSagemakerServicecatalogPortfolioStatusResult::GetSagemakerServicecatalogPortfolioStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SagemakerServicecatalogStatus::NOT_SET)
+GetSagemakerServicecatalogPortfolioStatusResult::GetSagemakerServicecatalogPortfolioStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSagemakerServicecatalogPortfolioStatusResult()
 {
   *this = result;
 }

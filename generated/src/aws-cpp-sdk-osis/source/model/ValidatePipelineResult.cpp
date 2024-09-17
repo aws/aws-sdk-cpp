@@ -22,8 +22,8 @@ ValidatePipelineResult::ValidatePipelineResult() :
 {
 }
 
-ValidatePipelineResult::ValidatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isValid(false)
+ValidatePipelineResult::ValidatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidatePipelineResult()
 {
   *this = result;
 }

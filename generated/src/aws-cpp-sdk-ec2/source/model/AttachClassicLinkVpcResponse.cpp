@@ -22,8 +22,8 @@ AttachClassicLinkVpcResponse::AttachClassicLinkVpcResponse() :
 {
 }
 
-AttachClassicLinkVpcResponse::AttachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+AttachClassicLinkVpcResponse::AttachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AttachClassicLinkVpcResponse()
 {
   *this = result;
 }

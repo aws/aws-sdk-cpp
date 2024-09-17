@@ -40,87 +40,33 @@ namespace Model
     AWS_BRAKET_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>A list of attributes to return information for.</p>
      */
     inline const Aws::Vector<HybridJobAdditionalAttributeName>& GetAdditionalAttributeNames() const{ return m_additionalAttributeNames; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline bool AdditionalAttributeNamesHasBeenSet() const { return m_additionalAttributeNamesHasBeenSet; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline void SetAdditionalAttributeNames(const Aws::Vector<HybridJobAdditionalAttributeName>& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames = value; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline void SetAdditionalAttributeNames(Aws::Vector<HybridJobAdditionalAttributeName>&& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames = std::move(value); }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetJobRequest& WithAdditionalAttributeNames(const Aws::Vector<HybridJobAdditionalAttributeName>& value) { SetAdditionalAttributeNames(value); return *this;}
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetJobRequest& WithAdditionalAttributeNames(Aws::Vector<HybridJobAdditionalAttributeName>&& value) { SetAdditionalAttributeNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetJobRequest& AddAdditionalAttributeNames(const HybridJobAdditionalAttributeName& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetJobRequest& AddAdditionalAttributeNames(HybridJobAdditionalAttributeName&& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the job to retrieve.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
     inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
     inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
     inline GetJobRequest& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
     inline GetJobRequest& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
     inline GetJobRequest& WithJobArn(const char* value) { SetJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<HybridJobAdditionalAttributeName> m_additionalAttributeNames;

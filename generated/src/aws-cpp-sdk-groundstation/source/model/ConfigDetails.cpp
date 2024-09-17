@@ -25,10 +25,8 @@ ConfigDetails::ConfigDetails() :
 {
 }
 
-ConfigDetails::ConfigDetails(JsonView jsonValue) : 
-    m_antennaDemodDecodeDetailsHasBeenSet(false),
-    m_endpointDetailsHasBeenSet(false),
-    m_s3RecordingDetailsHasBeenSet(false)
+ConfigDetails::ConfigDetails(JsonView jsonValue)
+  : ConfigDetails()
 {
   *this = jsonValue;
 }

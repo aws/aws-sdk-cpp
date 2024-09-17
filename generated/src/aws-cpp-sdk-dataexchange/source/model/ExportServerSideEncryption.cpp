@@ -25,10 +25,8 @@ ExportServerSideEncryption::ExportServerSideEncryption() :
 {
 }
 
-ExportServerSideEncryption::ExportServerSideEncryption(JsonView jsonValue) : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_type(ServerSideEncryptionTypes::NOT_SET),
-    m_typeHasBeenSet(false)
+ExportServerSideEncryption::ExportServerSideEncryption(JsonView jsonValue)
+  : ExportServerSideEncryption()
 {
   *this = jsonValue;
 }

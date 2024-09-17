@@ -41,97 +41,34 @@ namespace Model
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the S3 bucket used for associating a new S3 repository. It must
      * begin with <code>codeguru-reviewer-</code>. </p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline S3RepositoryDetails& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline S3RepositoryDetails& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline S3RepositoryDetails& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
      * includes the S3 object key for a source code .zip file and for a build artifacts
      * .zip file that contains .jar or .class files.</p>
      */
     inline const CodeArtifacts& GetCodeArtifacts() const{ return m_codeArtifacts; }
-
-    /**
-     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
-     * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files.</p>
-     */
     inline bool CodeArtifactsHasBeenSet() const { return m_codeArtifactsHasBeenSet; }
-
-    /**
-     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
-     * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files.</p>
-     */
     inline void SetCodeArtifacts(const CodeArtifacts& value) { m_codeArtifactsHasBeenSet = true; m_codeArtifacts = value; }
-
-    /**
-     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
-     * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files.</p>
-     */
     inline void SetCodeArtifacts(CodeArtifacts&& value) { m_codeArtifactsHasBeenSet = true; m_codeArtifacts = std::move(value); }
-
-    /**
-     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
-     * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files.</p>
-     */
     inline S3RepositoryDetails& WithCodeArtifacts(const CodeArtifacts& value) { SetCodeArtifacts(value); return *this;}
-
-    /**
-     * <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object
-     * includes the S3 object key for a source code .zip file and for a build artifacts
-     * .zip file that contains .jar or .class files.</p>
-     */
     inline S3RepositoryDetails& WithCodeArtifacts(CodeArtifacts&& value) { SetCodeArtifacts(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketName;

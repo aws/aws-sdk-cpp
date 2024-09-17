@@ -21,15 +21,13 @@ DescribeInputResult::DescribeInputResult() :
     m_inputClass(InputClass::NOT_SET),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_state(InputState::NOT_SET),
-    m_type(InputType::NOT_SET)
+    m_type(InputType::NOT_SET),
+    m_inputNetworkLocation(InputNetworkLocation::NOT_SET)
 {
 }
 
-DescribeInputResult::DescribeInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_inputClass(InputClass::NOT_SET),
-    m_inputSourceType(InputSourceType::NOT_SET),
-    m_state(InputState::NOT_SET),
-    m_type(InputType::NOT_SET)
+DescribeInputResult::DescribeInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInputResult()
 {
   *this = result;
 }
@@ -154,6 +152,24 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("type"))
   {
     m_type = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("type"));
+
+  }
+
+  if(jsonValue.ValueExists("srtSettings"))
+  {
+    m_srtSettings = jsonValue.GetObject("srtSettings");
+
+  }
+
+  if(jsonValue.ValueExists("inputNetworkLocation"))
+  {
+    m_inputNetworkLocation = InputNetworkLocationMapper::GetInputNetworkLocationForName(jsonValue.GetString("inputNetworkLocation"));
+
+  }
+
+  if(jsonValue.ValueExists("multicastSettings"))
+  {
+    m_multicastSettings = jsonValue.GetObject("multicastSettings");
 
   }
 

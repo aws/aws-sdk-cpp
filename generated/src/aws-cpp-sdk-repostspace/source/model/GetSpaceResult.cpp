@@ -27,13 +27,8 @@ GetSpaceResult::GetSpaceResult() :
 {
 }
 
-GetSpaceResult::GetSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_configurationStatus(ConfigurationStatus::NOT_SET),
-    m_contentSize(0),
-    m_storageLimit(0),
-    m_tier(TierLevel::NOT_SET),
-    m_userCount(0),
-    m_vanityDomainStatus(VanityDomainStatus::NOT_SET)
+GetSpaceResult::GetSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSpaceResult()
 {
   *this = result;
 }

@@ -23,8 +23,8 @@ UdpContainerSettings::UdpContainerSettings() :
 {
 }
 
-UdpContainerSettings::UdpContainerSettings(JsonView jsonValue) : 
-    m_m2tsSettingsHasBeenSet(false)
+UdpContainerSettings::UdpContainerSettings(JsonView jsonValue)
+  : UdpContainerSettings()
 {
   *this = jsonValue;
 }

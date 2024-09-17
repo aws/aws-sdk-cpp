@@ -27,12 +27,8 @@ ResourceTargetDefinition::ResourceTargetDefinition() :
 {
 }
 
-ResourceTargetDefinition::ResourceTargetDefinition(JsonView jsonValue) : 
-    m_attribute(ResourceAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requiresRecreation(RequiresRecreation::NOT_SET),
-    m_requiresRecreationHasBeenSet(false)
+ResourceTargetDefinition::ResourceTargetDefinition(JsonView jsonValue)
+  : ResourceTargetDefinition()
 {
   *this = jsonValue;
 }

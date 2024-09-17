@@ -35,94 +35,64 @@ namespace Model
     AWS_S3_API ListBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The list of buckets owned by the requester.</p>
      */
     inline const Aws::Vector<Bucket>& GetBuckets() const{ return m_buckets; }
-
-    /**
-     * <p>The list of buckets owned by the requester.</p>
-     */
     inline void SetBuckets(const Aws::Vector<Bucket>& value) { m_buckets = value; }
-
-    /**
-     * <p>The list of buckets owned by the requester.</p>
-     */
     inline void SetBuckets(Aws::Vector<Bucket>&& value) { m_buckets = std::move(value); }
-
-    /**
-     * <p>The list of buckets owned by the requester.</p>
-     */
     inline ListBucketsResult& WithBuckets(const Aws::Vector<Bucket>& value) { SetBuckets(value); return *this;}
-
-    /**
-     * <p>The list of buckets owned by the requester.</p>
-     */
     inline ListBucketsResult& WithBuckets(Aws::Vector<Bucket>&& value) { SetBuckets(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of buckets owned by the requester.</p>
-     */
     inline ListBucketsResult& AddBuckets(const Bucket& value) { m_buckets.push_back(value); return *this; }
-
-    /**
-     * <p>The list of buckets owned by the requester.</p>
-     */
     inline ListBucketsResult& AddBuckets(Bucket&& value) { m_buckets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The owner of the buckets listed.</p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
-
-    /**
-     * <p>The owner of the buckets listed.</p>
-     */
     inline void SetOwner(const Owner& value) { m_owner = value; }
-
-    /**
-     * <p>The owner of the buckets listed.</p>
-     */
     inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
-
-    /**
-     * <p>The owner of the buckets listed.</p>
-     */
     inline ListBucketsResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-
-    /**
-     * <p>The owner of the buckets listed.</p>
-     */
     inline ListBucketsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p> <code>ContinuationToken</code> is included in the response when there are
+     * more buckets that can be listed with pagination. The next
+     * <code>ListBuckets</code> request to Amazon S3 can be continued with this
+     * <code>ContinuationToken</code>. <code>ContinuationToken</code> is obfuscated and
+     * is not a real bucket.</p>
+     */
+    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
+    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
+    inline ListBucketsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
+    inline ListBucketsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
+    inline ListBucketsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListBucketsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListBucketsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListBucketsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Bucket> m_buckets;
 
     Owner m_owner;
+
+    Aws::String m_continuationToken;
 
     Aws::String m_requestId;
   };

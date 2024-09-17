@@ -25,10 +25,8 @@ VerifyOTPMessageRequestParameters::VerifyOTPMessageRequestParameters() :
 {
 }
 
-VerifyOTPMessageRequestParameters::VerifyOTPMessageRequestParameters(JsonView jsonValue) : 
-    m_destinationIdentityHasBeenSet(false),
-    m_otpHasBeenSet(false),
-    m_referenceIdHasBeenSet(false)
+VerifyOTPMessageRequestParameters::VerifyOTPMessageRequestParameters(JsonView jsonValue)
+  : VerifyOTPMessageRequestParameters()
 {
   *this = jsonValue;
 }

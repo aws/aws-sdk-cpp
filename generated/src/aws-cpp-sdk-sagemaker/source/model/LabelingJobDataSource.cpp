@@ -24,9 +24,8 @@ LabelingJobDataSource::LabelingJobDataSource() :
 {
 }
 
-LabelingJobDataSource::LabelingJobDataSource(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false),
-    m_snsDataSourceHasBeenSet(false)
+LabelingJobDataSource::LabelingJobDataSource(JsonView jsonValue)
+  : LabelingJobDataSource()
 {
   *this = jsonValue;
 }

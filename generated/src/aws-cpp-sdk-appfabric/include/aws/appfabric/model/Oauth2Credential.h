@@ -37,87 +37,33 @@ namespace Model
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The client ID of the client application.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
-
-    /**
-     * <p>The client ID of the client application.</p>
-     */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-
-    /**
-     * <p>The client ID of the client application.</p>
-     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-
-    /**
-     * <p>The client ID of the client application.</p>
-     */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-
-    /**
-     * <p>The client ID of the client application.</p>
-     */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-
-    /**
-     * <p>The client ID of the client application.</p>
-     */
     inline Oauth2Credential& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-
-    /**
-     * <p>The client ID of the client application.</p>
-     */
     inline Oauth2Credential& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-
-    /**
-     * <p>The client ID of the client application.</p>
-     */
     inline Oauth2Credential& WithClientId(const char* value) { SetClientId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client secret of the client application.</p>
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
-
-    /**
-     * <p>The client secret of the client application.</p>
-     */
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-
-    /**
-     * <p>The client secret of the client application.</p>
-     */
     inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
-
-    /**
-     * <p>The client secret of the client application.</p>
-     */
     inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
-
-    /**
-     * <p>The client secret of the client application.</p>
-     */
     inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
-
-    /**
-     * <p>The client secret of the client application.</p>
-     */
     inline Oauth2Credential& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
-
-    /**
-     * <p>The client secret of the client application.</p>
-     */
     inline Oauth2Credential& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
-
-    /**
-     * <p>The client secret of the client application.</p>
-     */
     inline Oauth2Credential& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientId;

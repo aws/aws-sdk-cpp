@@ -24,9 +24,8 @@ LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter() :
 {
 }
 
-LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter(JsonView jsonValue) : 
-    m_tagStatus(TagStatus::NOT_SET),
-    m_tagStatusHasBeenSet(false)
+LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter(JsonView jsonValue)
+  : LifecyclePolicyPreviewFilter()
 {
   *this = jsonValue;
 }

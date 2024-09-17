@@ -24,9 +24,8 @@ OtherName::OtherName() :
 {
 }
 
-OtherName::OtherName(JsonView jsonValue) : 
-    m_typeIdHasBeenSet(false),
-    m_valueHasBeenSet(false)
+OtherName::OtherName(JsonView jsonValue)
+  : OtherName()
 {
   *this = jsonValue;
 }

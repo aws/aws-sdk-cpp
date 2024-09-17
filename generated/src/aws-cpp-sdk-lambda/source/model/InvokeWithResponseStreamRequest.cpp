@@ -27,6 +27,13 @@ InvokeWithResponseStreamRequest::InvokeWithResponseStreamRequest() :
     m_qualifierHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
+    AmazonWebServiceRequest::SetHeadersReceivedEventHandler([this](const Http::HttpRequest*, Http::HttpResponse* response)
+    {
+        auto& initialResponseHandler = m_handler.GetInitialResponseCallbackEx();
+        if (initialResponseHandler) {
+            initialResponseHandler(InvokeWithResponseStreamInitialResponse(response->GetHeaders()), Utils::Event::InitialResponseType::ON_RESPONSE);
+        }
+    });
 }
 
 
@@ -46,12 +53,12 @@ Aws::Http::HeaderValueCollection InvokeWithResponseStreamRequest::GetRequestSpec
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_invocationTypeHasBeenSet)
+  if(m_invocationTypeHasBeenSet && m_invocationType != ResponseStreamingInvocationType::NOT_SET)
   {
     headers.emplace("x-amz-invocation-type", ResponseStreamingInvocationTypeMapper::GetNameForResponseStreamingInvocationType(m_invocationType));
   }
 
-  if(m_logTypeHasBeenSet)
+  if(m_logTypeHasBeenSet && m_logType != LogType::NOT_SET)
   {
     headers.emplace("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType));
   }

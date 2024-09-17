@@ -34,42 +34,20 @@ namespace Model
     AWS_S3CONTROL_API ListMultiRegionAccessPointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The list of Multi-Region Access Points associated with the user.</p>
      */
     inline const Aws::Vector<MultiRegionAccessPointReport>& GetAccessPoints() const{ return m_accessPoints; }
-
-    /**
-     * <p>The list of Multi-Region Access Points associated with the user.</p>
-     */
     inline void SetAccessPoints(const Aws::Vector<MultiRegionAccessPointReport>& value) { m_accessPoints = value; }
-
-    /**
-     * <p>The list of Multi-Region Access Points associated with the user.</p>
-     */
     inline void SetAccessPoints(Aws::Vector<MultiRegionAccessPointReport>&& value) { m_accessPoints = std::move(value); }
-
-    /**
-     * <p>The list of Multi-Region Access Points associated with the user.</p>
-     */
     inline ListMultiRegionAccessPointsResult& WithAccessPoints(const Aws::Vector<MultiRegionAccessPointReport>& value) { SetAccessPoints(value); return *this;}
-
-    /**
-     * <p>The list of Multi-Region Access Points associated with the user.</p>
-     */
     inline ListMultiRegionAccessPointsResult& WithAccessPoints(Aws::Vector<MultiRegionAccessPointReport>&& value) { SetAccessPoints(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of Multi-Region Access Points associated with the user.</p>
-     */
     inline ListMultiRegionAccessPointsResult& AddAccessPoints(const MultiRegionAccessPointReport& value) { m_accessPoints.push_back(value); return *this; }
-
-    /**
-     * <p>The list of Multi-Region Access Points associated with the user.</p>
-     */
     inline ListMultiRegionAccessPointsResult& AddAccessPoints(MultiRegionAccessPointReport&& value) { m_accessPoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the specified bucket has more Multi-Region Access Points than can be
      * returned in one call to this action, this field contains a continuation token.
@@ -77,77 +55,24 @@ namespace Model
      * additional Multi-Region Access Points.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the specified bucket has more Multi-Region Access Points than can be
-     * returned in one call to this action, this field contains a continuation token.
-     * You can use this token tin subsequent calls to this action to retrieve
-     * additional Multi-Region Access Points.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the specified bucket has more Multi-Region Access Points than can be
-     * returned in one call to this action, this field contains a continuation token.
-     * You can use this token tin subsequent calls to this action to retrieve
-     * additional Multi-Region Access Points.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the specified bucket has more Multi-Region Access Points than can be
-     * returned in one call to this action, this field contains a continuation token.
-     * You can use this token tin subsequent calls to this action to retrieve
-     * additional Multi-Region Access Points.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the specified bucket has more Multi-Region Access Points than can be
-     * returned in one call to this action, this field contains a continuation token.
-     * You can use this token tin subsequent calls to this action to retrieve
-     * additional Multi-Region Access Points.</p>
-     */
     inline ListMultiRegionAccessPointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the specified bucket has more Multi-Region Access Points than can be
-     * returned in one call to this action, this field contains a continuation token.
-     * You can use this token tin subsequent calls to this action to retrieve
-     * additional Multi-Region Access Points.</p>
-     */
     inline ListMultiRegionAccessPointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the specified bucket has more Multi-Region Access Points than can be
-     * returned in one call to this action, this field contains a continuation token.
-     * You can use this token tin subsequent calls to this action to retrieve
-     * additional Multi-Region Access Points.</p>
-     */
     inline ListMultiRegionAccessPointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMultiRegionAccessPointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMultiRegionAccessPointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMultiRegionAccessPointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MultiRegionAccessPointReport> m_accessPoints;

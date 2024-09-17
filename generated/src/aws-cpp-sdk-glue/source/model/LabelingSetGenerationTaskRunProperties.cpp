@@ -23,8 +23,8 @@ LabelingSetGenerationTaskRunProperties::LabelingSetGenerationTaskRunProperties()
 {
 }
 
-LabelingSetGenerationTaskRunProperties::LabelingSetGenerationTaskRunProperties(JsonView jsonValue) : 
-    m_outputS3PathHasBeenSet(false)
+LabelingSetGenerationTaskRunProperties::LabelingSetGenerationTaskRunProperties(JsonView jsonValue)
+  : LabelingSetGenerationTaskRunProperties()
 {
   *this = jsonValue;
 }

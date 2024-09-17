@@ -24,9 +24,8 @@ GitHubLocation::GitHubLocation() :
 {
 }
 
-GitHubLocation::GitHubLocation(JsonView jsonValue) : 
-    m_repositoryHasBeenSet(false),
-    m_commitIdHasBeenSet(false)
+GitHubLocation::GitHubLocation(JsonView jsonValue)
+  : GitHubLocation()
 {
   *this = jsonValue;
 }

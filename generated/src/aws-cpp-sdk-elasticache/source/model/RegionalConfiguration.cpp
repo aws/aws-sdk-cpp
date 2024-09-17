@@ -27,10 +27,8 @@ RegionalConfiguration::RegionalConfiguration() :
 {
 }
 
-RegionalConfiguration::RegionalConfiguration(const XmlNode& xmlNode) : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupRegionHasBeenSet(false),
-    m_reshardingConfigurationHasBeenSet(false)
+RegionalConfiguration::RegionalConfiguration(const XmlNode& xmlNode)
+  : RegionalConfiguration()
 {
   *this = xmlNode;
 }

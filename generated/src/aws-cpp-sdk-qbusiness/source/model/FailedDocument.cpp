@@ -19,27 +19,25 @@ namespace Model
 {
 
 FailedDocument::FailedDocument() : 
-    m_dataSourceIdHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_errorHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 
-FailedDocument::FailedDocument(JsonView jsonValue) : 
-    m_dataSourceIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_idHasBeenSet(false)
+FailedDocument::FailedDocument(JsonView jsonValue)
+  : FailedDocument()
 {
   *this = jsonValue;
 }
 
 FailedDocument& FailedDocument::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dataSourceId"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_dataSourceId = jsonValue.GetString("dataSourceId");
+    m_id = jsonValue.GetString("id");
 
-    m_dataSourceIdHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("error"))
@@ -49,11 +47,11 @@ FailedDocument& FailedDocument::operator =(JsonView jsonValue)
     m_errorHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("dataSourceId"))
   {
-    m_id = jsonValue.GetString("id");
+    m_dataSourceId = jsonValue.GetString("dataSourceId");
 
-    m_idHasBeenSet = true;
+    m_dataSourceIdHasBeenSet = true;
   }
 
   return *this;
@@ -63,9 +61,9 @@ JsonValue FailedDocument::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataSourceIdHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("dataSourceId", m_dataSourceId);
+   payload.WithString("id", m_id);
 
   }
 
@@ -75,9 +73,9 @@ JsonValue FailedDocument::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_dataSourceIdHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   payload.WithString("dataSourceId", m_dataSourceId);
 
   }
 

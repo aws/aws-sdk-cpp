@@ -39,55 +39,29 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    
     inline GetStatusRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    
     inline GetStatusRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    
     inline GetStatusRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
-
-    
     inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
-
-    
     inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }
-
-    
     inline void SetAPIVersion(Aws::String&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::move(value); }
-
-    
     inline void SetAPIVersion(const char* value) { m_aPIVersionHasBeenSet = true; m_aPIVersion.assign(value); }
-
-    
     inline GetStatusRequest& WithAPIVersion(const Aws::String& value) { SetAPIVersion(value); return *this;}
-
-    
     inline GetStatusRequest& WithAPIVersion(Aws::String&& value) { SetAPIVersion(std::move(value)); return *this;}
-
-    
     inline GetStatusRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

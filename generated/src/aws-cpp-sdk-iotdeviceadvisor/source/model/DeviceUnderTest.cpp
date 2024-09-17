@@ -25,10 +25,8 @@ DeviceUnderTest::DeviceUnderTest() :
 {
 }
 
-DeviceUnderTest::DeviceUnderTest(JsonView jsonValue) : 
-    m_thingArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_deviceRoleArnHasBeenSet(false)
+DeviceUnderTest::DeviceUnderTest(JsonView jsonValue)
+  : DeviceUnderTest()
 {
   *this = jsonValue;
 }

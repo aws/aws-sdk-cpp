@@ -27,12 +27,8 @@ SignalExternalWorkflowExecutionDecisionAttributes::SignalExternalWorkflowExecuti
 {
 }
 
-SignalExternalWorkflowExecutionDecisionAttributes::SignalExternalWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_signalNameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_controlHasBeenSet(false)
+SignalExternalWorkflowExecutionDecisionAttributes::SignalExternalWorkflowExecutionDecisionAttributes(JsonView jsonValue)
+  : SignalExternalWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }

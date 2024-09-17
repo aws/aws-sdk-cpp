@@ -24,9 +24,8 @@ TableSortConfiguration::TableSortConfiguration() :
 {
 }
 
-TableSortConfiguration::TableSortConfiguration(JsonView jsonValue) : 
-    m_rowSortHasBeenSet(false),
-    m_paginationConfigurationHasBeenSet(false)
+TableSortConfiguration::TableSortConfiguration(JsonView jsonValue)
+  : TableSortConfiguration()
 {
   *this = jsonValue;
 }

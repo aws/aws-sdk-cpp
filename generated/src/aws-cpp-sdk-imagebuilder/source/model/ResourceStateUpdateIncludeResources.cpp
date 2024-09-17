@@ -28,13 +28,8 @@ ResourceStateUpdateIncludeResources::ResourceStateUpdateIncludeResources() :
 {
 }
 
-ResourceStateUpdateIncludeResources::ResourceStateUpdateIncludeResources(JsonView jsonValue) : 
-    m_amis(false),
-    m_amisHasBeenSet(false),
-    m_snapshots(false),
-    m_snapshotsHasBeenSet(false),
-    m_containers(false),
-    m_containersHasBeenSet(false)
+ResourceStateUpdateIncludeResources::ResourceStateUpdateIncludeResources(JsonView jsonValue)
+  : ResourceStateUpdateIncludeResources()
 {
   *this = jsonValue;
 }

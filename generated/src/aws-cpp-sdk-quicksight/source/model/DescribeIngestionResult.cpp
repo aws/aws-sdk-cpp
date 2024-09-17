@@ -22,8 +22,8 @@ DescribeIngestionResult::DescribeIngestionResult() :
 {
 }
 
-DescribeIngestionResult::DescribeIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeIngestionResult::DescribeIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeIngestionResult()
 {
   *this = result;
 }

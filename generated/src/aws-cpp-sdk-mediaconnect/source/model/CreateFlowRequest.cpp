@@ -22,7 +22,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_sourceFailoverConfigHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_vpcInterfacesHasBeenSet(false),
-    m_maintenanceHasBeenSet(false)
+    m_maintenanceHasBeenSet(false),
+    m_sourceMonitoringConfigHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,12 @@ Aws::String CreateFlowRequest::SerializePayload() const
   if(m_maintenanceHasBeenSet)
   {
    payload.WithObject("maintenance", m_maintenance.Jsonize());
+
+  }
+
+  if(m_sourceMonitoringConfigHasBeenSet)
+  {
+   payload.WithObject("sourceMonitoringConfig", m_sourceMonitoringConfig.Jsonize());
 
   }
 

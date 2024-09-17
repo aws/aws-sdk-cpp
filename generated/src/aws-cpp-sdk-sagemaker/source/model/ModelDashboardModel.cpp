@@ -27,12 +27,8 @@ ModelDashboardModel::ModelDashboardModel() :
 {
 }
 
-ModelDashboardModel::ModelDashboardModel(JsonView jsonValue) : 
-    m_modelHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_lastBatchTransformJobHasBeenSet(false),
-    m_monitoringSchedulesHasBeenSet(false),
-    m_modelCardHasBeenSet(false)
+ModelDashboardModel::ModelDashboardModel(JsonView jsonValue)
+  : ModelDashboardModel()
 {
   *this = jsonValue;
 }

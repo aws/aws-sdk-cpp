@@ -26,11 +26,8 @@ ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEvent
 {
 }
 
-ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEventAttributes(JsonView jsonValue) : 
-    m_workflowExecutionHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false)
+ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEventAttributes(JsonView jsonValue)
+  : ChildWorkflowExecutionStartedEventAttributes()
 {
   *this = jsonValue;
 }

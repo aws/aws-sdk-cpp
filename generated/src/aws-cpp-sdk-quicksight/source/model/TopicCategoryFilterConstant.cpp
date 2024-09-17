@@ -26,11 +26,8 @@ TopicCategoryFilterConstant::TopicCategoryFilterConstant() :
 {
 }
 
-TopicCategoryFilterConstant::TopicCategoryFilterConstant(JsonView jsonValue) : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_singularConstantHasBeenSet(false),
-    m_collectiveConstantHasBeenSet(false)
+TopicCategoryFilterConstant::TopicCategoryFilterConstant(JsonView jsonValue)
+  : TopicCategoryFilterConstant()
 {
   *this = jsonValue;
 }

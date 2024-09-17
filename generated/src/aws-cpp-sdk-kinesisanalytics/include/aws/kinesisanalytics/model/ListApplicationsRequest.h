@@ -37,27 +37,17 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Maximum number of applications to list.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>Maximum number of applications to list.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>Maximum number of applications to list.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>Maximum number of applications to list.</p>
-     */
     inline ListApplicationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Name of the application to start the list with. When using pagination to
      * retrieve the list, you don't need to specify this parameter in the first
@@ -65,63 +55,14 @@ namespace Model
      * the previous response to get the next page of applications.</p>
      */
     inline const Aws::String& GetExclusiveStartApplicationName() const{ return m_exclusiveStartApplicationName; }
-
-    /**
-     * <p>Name of the application to start the list with. When using pagination to
-     * retrieve the list, you don't need to specify this parameter in the first
-     * request. However, in subsequent requests, you add the last application name from
-     * the previous response to get the next page of applications.</p>
-     */
     inline bool ExclusiveStartApplicationNameHasBeenSet() const { return m_exclusiveStartApplicationNameHasBeenSet; }
-
-    /**
-     * <p>Name of the application to start the list with. When using pagination to
-     * retrieve the list, you don't need to specify this parameter in the first
-     * request. However, in subsequent requests, you add the last application name from
-     * the previous response to get the next page of applications.</p>
-     */
     inline void SetExclusiveStartApplicationName(const Aws::String& value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName = value; }
-
-    /**
-     * <p>Name of the application to start the list with. When using pagination to
-     * retrieve the list, you don't need to specify this parameter in the first
-     * request. However, in subsequent requests, you add the last application name from
-     * the previous response to get the next page of applications.</p>
-     */
     inline void SetExclusiveStartApplicationName(Aws::String&& value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName = std::move(value); }
-
-    /**
-     * <p>Name of the application to start the list with. When using pagination to
-     * retrieve the list, you don't need to specify this parameter in the first
-     * request. However, in subsequent requests, you add the last application name from
-     * the previous response to get the next page of applications.</p>
-     */
     inline void SetExclusiveStartApplicationName(const char* value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName.assign(value); }
-
-    /**
-     * <p>Name of the application to start the list with. When using pagination to
-     * retrieve the list, you don't need to specify this parameter in the first
-     * request. However, in subsequent requests, you add the last application name from
-     * the previous response to get the next page of applications.</p>
-     */
     inline ListApplicationsRequest& WithExclusiveStartApplicationName(const Aws::String& value) { SetExclusiveStartApplicationName(value); return *this;}
-
-    /**
-     * <p>Name of the application to start the list with. When using pagination to
-     * retrieve the list, you don't need to specify this parameter in the first
-     * request. However, in subsequent requests, you add the last application name from
-     * the previous response to get the next page of applications.</p>
-     */
     inline ListApplicationsRequest& WithExclusiveStartApplicationName(Aws::String&& value) { SetExclusiveStartApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the application to start the list with. When using pagination to
-     * retrieve the list, you don't need to specify this parameter in the first
-     * request. However, in subsequent requests, you add the last application name from
-     * the previous response to get the next page of applications.</p>
-     */
     inline ListApplicationsRequest& WithExclusiveStartApplicationName(const char* value) { SetExclusiveStartApplicationName(value); return *this;}
-
+    ///@}
   private:
 
     int m_limit;

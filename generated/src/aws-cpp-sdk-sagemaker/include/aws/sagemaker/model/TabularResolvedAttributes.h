@@ -38,6 +38,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of supervised learning problem available for the model candidates of
      * the AutoML job V2 (Binary Classification, Multiclass Classification,
@@ -46,52 +47,12 @@ namespace Model
      * SageMaker Autopilot problem types</a>.</p>
      */
     inline const ProblemType& GetProblemType() const{ return m_problemType; }
-
-    /**
-     * <p>The type of supervised learning problem available for the model candidates of
-     * the AutoML job V2 (Binary Classification, Multiclass Classification,
-     * Regression). For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * SageMaker Autopilot problem types</a>.</p>
-     */
     inline bool ProblemTypeHasBeenSet() const { return m_problemTypeHasBeenSet; }
-
-    /**
-     * <p>The type of supervised learning problem available for the model candidates of
-     * the AutoML job V2 (Binary Classification, Multiclass Classification,
-     * Regression). For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * SageMaker Autopilot problem types</a>.</p>
-     */
     inline void SetProblemType(const ProblemType& value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
-
-    /**
-     * <p>The type of supervised learning problem available for the model candidates of
-     * the AutoML job V2 (Binary Classification, Multiclass Classification,
-     * Regression). For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * SageMaker Autopilot problem types</a>.</p>
-     */
     inline void SetProblemType(ProblemType&& value) { m_problemTypeHasBeenSet = true; m_problemType = std::move(value); }
-
-    /**
-     * <p>The type of supervised learning problem available for the model candidates of
-     * the AutoML job V2 (Binary Classification, Multiclass Classification,
-     * Regression). For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * SageMaker Autopilot problem types</a>.</p>
-     */
     inline TabularResolvedAttributes& WithProblemType(const ProblemType& value) { SetProblemType(value); return *this;}
-
-    /**
-     * <p>The type of supervised learning problem available for the model candidates of
-     * the AutoML job V2 (Binary Classification, Multiclass Classification,
-     * Regression). For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * SageMaker Autopilot problem types</a>.</p>
-     */
     inline TabularResolvedAttributes& WithProblemType(ProblemType&& value) { SetProblemType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProblemType m_problemType;

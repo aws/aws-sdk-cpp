@@ -25,10 +25,8 @@ DeliveryStreamEncryptionConfigurationInput::DeliveryStreamEncryptionConfiguratio
 {
 }
 
-DeliveryStreamEncryptionConfigurationInput::DeliveryStreamEncryptionConfigurationInput(JsonView jsonValue) : 
-    m_keyARNHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false)
+DeliveryStreamEncryptionConfigurationInput::DeliveryStreamEncryptionConfigurationInput(JsonView jsonValue)
+  : DeliveryStreamEncryptionConfigurationInput()
 {
   *this = jsonValue;
 }

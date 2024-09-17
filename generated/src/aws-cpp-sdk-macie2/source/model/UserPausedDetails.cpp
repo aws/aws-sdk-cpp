@@ -25,10 +25,8 @@ UserPausedDetails::UserPausedDetails() :
 {
 }
 
-UserPausedDetails::UserPausedDetails(JsonView jsonValue) : 
-    m_jobExpiresAtHasBeenSet(false),
-    m_jobImminentExpirationHealthEventArnHasBeenSet(false),
-    m_jobPausedAtHasBeenSet(false)
+UserPausedDetails::UserPausedDetails(JsonView jsonValue)
+  : UserPausedDetails()
 {
   *this = jsonValue;
 }

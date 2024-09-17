@@ -24,9 +24,8 @@ ProvisionedThroughputOverride::ProvisionedThroughputOverride() :
 {
 }
 
-ProvisionedThroughputOverride::ProvisionedThroughputOverride(JsonView jsonValue) : 
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false)
+ProvisionedThroughputOverride::ProvisionedThroughputOverride(JsonView jsonValue)
+  : ProvisionedThroughputOverride()
 {
   *this = jsonValue;
 }

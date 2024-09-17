@@ -33,53 +33,27 @@ namespace Model
     AWS_NIMBLESTUDIO_API DeleteLaunchProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The launch profile.</p>
      */
     inline const LaunchProfile& GetLaunchProfile() const{ return m_launchProfile; }
-
-    /**
-     * <p>The launch profile.</p>
-     */
     inline void SetLaunchProfile(const LaunchProfile& value) { m_launchProfile = value; }
-
-    /**
-     * <p>The launch profile.</p>
-     */
     inline void SetLaunchProfile(LaunchProfile&& value) { m_launchProfile = std::move(value); }
-
-    /**
-     * <p>The launch profile.</p>
-     */
     inline DeleteLaunchProfileResult& WithLaunchProfile(const LaunchProfile& value) { SetLaunchProfile(value); return *this;}
-
-    /**
-     * <p>The launch profile.</p>
-     */
     inline DeleteLaunchProfileResult& WithLaunchProfile(LaunchProfile&& value) { SetLaunchProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteLaunchProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteLaunchProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteLaunchProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LaunchProfile m_launchProfile;

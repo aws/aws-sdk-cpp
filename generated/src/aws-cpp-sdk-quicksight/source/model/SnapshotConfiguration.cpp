@@ -25,10 +25,8 @@ SnapshotConfiguration::SnapshotConfiguration() :
 {
 }
 
-SnapshotConfiguration::SnapshotConfiguration(JsonView jsonValue) : 
-    m_fileGroupsHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+SnapshotConfiguration::SnapshotConfiguration(JsonView jsonValue)
+  : SnapshotConfiguration()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ ChangeServerLifeCycleStateResult::ChangeServerLifeCycleStateResult() :
 {
 }
 
-ChangeServerLifeCycleStateResult::ChangeServerLifeCycleStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+ChangeServerLifeCycleStateResult::ChangeServerLifeCycleStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ChangeServerLifeCycleStateResult()
 {
   *this = result;
 }

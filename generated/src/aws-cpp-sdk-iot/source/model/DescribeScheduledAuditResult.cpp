@@ -23,9 +23,8 @@ DescribeScheduledAuditResult::DescribeScheduledAuditResult() :
 {
 }
 
-DescribeScheduledAuditResult::DescribeScheduledAuditResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_frequency(AuditFrequency::NOT_SET),
-    m_dayOfWeek(DayOfWeek::NOT_SET)
+DescribeScheduledAuditResult::DescribeScheduledAuditResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeScheduledAuditResult()
 {
   *this = result;
 }

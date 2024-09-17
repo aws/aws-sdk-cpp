@@ -22,8 +22,8 @@ GetSchemaCreationStatusResult::GetSchemaCreationStatusResult() :
 {
 }
 
-GetSchemaCreationStatusResult::GetSchemaCreationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SchemaStatus::NOT_SET)
+GetSchemaCreationStatusResult::GetSchemaCreationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSchemaCreationStatusResult()
 {
   *this = result;
 }

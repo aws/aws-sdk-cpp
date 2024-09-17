@@ -40,36 +40,17 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the S3 bucket where you're hosting your manifest.</p>
      */
     inline const S3ManifestConfig& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>Specifies the S3 bucket where you're hosting your manifest.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>Specifies the S3 bucket where you're hosting your manifest.</p>
-     */
     inline void SetS3(const S3ManifestConfig& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>Specifies the S3 bucket where you're hosting your manifest.</p>
-     */
     inline void SetS3(S3ManifestConfig&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>Specifies the S3 bucket where you're hosting your manifest.</p>
-     */
     inline SourceManifestConfig& WithS3(const S3ManifestConfig& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>Specifies the S3 bucket where you're hosting your manifest.</p>
-     */
     inline SourceManifestConfig& WithS3(S3ManifestConfig&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ManifestConfig m_s3;

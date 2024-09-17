@@ -33,53 +33,27 @@ namespace Model
     AWS_APPFABRIC_API ConnectAppAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains a summary of the app authorization.</p>
      */
     inline const AppAuthorizationSummary& GetAppAuthorizationSummary() const{ return m_appAuthorizationSummary; }
-
-    /**
-     * <p>Contains a summary of the app authorization.</p>
-     */
     inline void SetAppAuthorizationSummary(const AppAuthorizationSummary& value) { m_appAuthorizationSummary = value; }
-
-    /**
-     * <p>Contains a summary of the app authorization.</p>
-     */
     inline void SetAppAuthorizationSummary(AppAuthorizationSummary&& value) { m_appAuthorizationSummary = std::move(value); }
-
-    /**
-     * <p>Contains a summary of the app authorization.</p>
-     */
     inline ConnectAppAuthorizationResult& WithAppAuthorizationSummary(const AppAuthorizationSummary& value) { SetAppAuthorizationSummary(value); return *this;}
-
-    /**
-     * <p>Contains a summary of the app authorization.</p>
-     */
     inline ConnectAppAuthorizationResult& WithAppAuthorizationSummary(AppAuthorizationSummary&& value) { SetAppAuthorizationSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ConnectAppAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ConnectAppAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ConnectAppAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AppAuthorizationSummary m_appAuthorizationSummary;

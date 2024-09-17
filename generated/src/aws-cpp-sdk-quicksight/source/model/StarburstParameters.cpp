@@ -28,13 +28,8 @@ StarburstParameters::StarburstParameters() :
 {
 }
 
-StarburstParameters::StarburstParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_productType(StarburstProductType::NOT_SET),
-    m_productTypeHasBeenSet(false)
+StarburstParameters::StarburstParameters(JsonView jsonValue)
+  : StarburstParameters()
 {
   *this = jsonValue;
 }

@@ -82,13 +82,13 @@ namespace PinpointSMSVoice
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateConfigurationSetOutcome CreateConfigurationSet(const Model::CreateConfigurationSetRequest& request) const;
+        virtual Model::CreateConfigurationSetOutcome CreateConfigurationSet(const Model::CreateConfigurationSetRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateConfigurationSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateConfigurationSetRequestT = Model::CreateConfigurationSetRequest>
-        Model::CreateConfigurationSetOutcomeCallable CreateConfigurationSetCallable(const CreateConfigurationSetRequestT& request) const
+        Model::CreateConfigurationSetOutcomeCallable CreateConfigurationSetCallable(const CreateConfigurationSetRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceClient::CreateConfigurationSet, request);
         }
@@ -97,7 +97,7 @@ namespace PinpointSMSVoice
          * An Async wrapper for CreateConfigurationSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateConfigurationSetRequestT = Model::CreateConfigurationSetRequest>
-        void CreateConfigurationSetAsync(const CreateConfigurationSetRequestT& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateConfigurationSetAsync(const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateConfigurationSetRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceClient::CreateConfigurationSet, request, handler, context);
         }
@@ -210,13 +210,13 @@ namespace PinpointSMSVoice
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConfigurationSetsOutcome ListConfigurationSets(const Model::ListConfigurationSetsRequest& request) const;
+        virtual Model::ListConfigurationSetsOutcome ListConfigurationSets(const Model::ListConfigurationSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConfigurationSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConfigurationSetsRequestT = Model::ListConfigurationSetsRequest>
-        Model::ListConfigurationSetsOutcomeCallable ListConfigurationSetsCallable(const ListConfigurationSetsRequestT& request) const
+        Model::ListConfigurationSetsOutcomeCallable ListConfigurationSetsCallable(const ListConfigurationSetsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceClient::ListConfigurationSets, request);
         }
@@ -225,7 +225,7 @@ namespace PinpointSMSVoice
          * An Async wrapper for ListConfigurationSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConfigurationSetsRequestT = Model::ListConfigurationSetsRequest>
-        void ListConfigurationSetsAsync(const ListConfigurationSetsRequestT& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConfigurationSetsAsync(const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfigurationSetsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceClient::ListConfigurationSets, request, handler, context);
         }
@@ -236,13 +236,13 @@ namespace PinpointSMSVoice
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">AWS
          * API Reference</a></p>
          */
-        virtual Model::SendVoiceMessageOutcome SendVoiceMessage(const Model::SendVoiceMessageRequest& request) const;
+        virtual Model::SendVoiceMessageOutcome SendVoiceMessage(const Model::SendVoiceMessageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SendVoiceMessage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SendVoiceMessageRequestT = Model::SendVoiceMessageRequest>
-        Model::SendVoiceMessageOutcomeCallable SendVoiceMessageCallable(const SendVoiceMessageRequestT& request) const
+        Model::SendVoiceMessageOutcomeCallable SendVoiceMessageCallable(const SendVoiceMessageRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceClient::SendVoiceMessage, request);
         }
@@ -251,7 +251,7 @@ namespace PinpointSMSVoice
          * An Async wrapper for SendVoiceMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SendVoiceMessageRequestT = Model::SendVoiceMessageRequest>
-        void SendVoiceMessageAsync(const SendVoiceMessageRequestT& request, const SendVoiceMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SendVoiceMessageAsync(const SendVoiceMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SendVoiceMessageRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceClient::SendVoiceMessage, request, handler, context);
         }
@@ -292,7 +292,6 @@ namespace PinpointSMSVoice
       void init(const PinpointSMSVoiceClientConfiguration& clientConfiguration);
 
       PinpointSMSVoiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> m_endpointProvider;
   };
 

@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateTransitGatewayRouteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the route.</p>
      */
     inline const TransitGatewayRoute& GetRoute() const{ return m_route; }
-
-    /**
-     * <p>Information about the route.</p>
-     */
     inline void SetRoute(const TransitGatewayRoute& value) { m_route = value; }
-
-    /**
-     * <p>Information about the route.</p>
-     */
     inline void SetRoute(TransitGatewayRoute&& value) { m_route = std::move(value); }
-
-    /**
-     * <p>Information about the route.</p>
-     */
     inline CreateTransitGatewayRouteResponse& WithRoute(const TransitGatewayRoute& value) { SetRoute(value); return *this;}
-
-    /**
-     * <p>Information about the route.</p>
-     */
     inline CreateTransitGatewayRouteResponse& WithRoute(TransitGatewayRoute&& value) { SetRoute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateTransitGatewayRouteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateTransitGatewayRouteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayRoute m_route;

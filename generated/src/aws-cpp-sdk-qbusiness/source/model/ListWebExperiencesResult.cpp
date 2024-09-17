@@ -29,12 +29,6 @@ ListWebExperiencesResult::ListWebExperiencesResult(const Aws::AmazonWebServiceRe
 ListWebExperiencesResult& ListWebExperiencesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("webExperiences"))
   {
     Aws::Utils::Array<JsonView> webExperiencesJsonList = jsonValue.GetArray("webExperiences");
@@ -42,6 +36,12 @@ ListWebExperiencesResult& ListWebExperiencesResult::operator =(const Aws::Amazon
     {
       m_webExperiences.push_back(webExperiencesJsonList[webExperiencesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

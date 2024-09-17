@@ -26,11 +26,8 @@ AnomalyInstance::AnomalyInstance() :
 {
 }
 
-AnomalyInstance::AnomalyInstance(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_userFeedbackHasBeenSet(false)
+AnomalyInstance::AnomalyInstance(JsonView jsonValue)
+  : AnomalyInstance()
 {
   *this = jsonValue;
 }

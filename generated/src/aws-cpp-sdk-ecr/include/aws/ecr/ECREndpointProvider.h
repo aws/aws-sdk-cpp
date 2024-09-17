@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ECRClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ECRClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ECRClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ECRBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

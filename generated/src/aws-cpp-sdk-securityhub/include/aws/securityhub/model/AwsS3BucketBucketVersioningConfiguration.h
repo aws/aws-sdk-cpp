@@ -37,83 +37,32 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning
      * configuration. If the S3 bucket was never configured with MFA delete, then this
      * attribute is not included.</p>
      */
     inline bool GetIsMfaDeleteEnabled() const{ return m_isMfaDeleteEnabled; }
-
-    /**
-     * <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning
-     * configuration. If the S3 bucket was never configured with MFA delete, then this
-     * attribute is not included.</p>
-     */
     inline bool IsMfaDeleteEnabledHasBeenSet() const { return m_isMfaDeleteEnabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning
-     * configuration. If the S3 bucket was never configured with MFA delete, then this
-     * attribute is not included.</p>
-     */
     inline void SetIsMfaDeleteEnabled(bool value) { m_isMfaDeleteEnabledHasBeenSet = true; m_isMfaDeleteEnabled = value; }
-
-    /**
-     * <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning
-     * configuration. If the S3 bucket was never configured with MFA delete, then this
-     * attribute is not included.</p>
-     */
     inline AwsS3BucketBucketVersioningConfiguration& WithIsMfaDeleteEnabled(bool value) { SetIsMfaDeleteEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
      * or <code>Suspended</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
-     * or <code>Suspended</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
-     * or <code>Suspended</code>.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
-     * or <code>Suspended</code>.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
-     * or <code>Suspended</code>.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
-     * or <code>Suspended</code>.</p>
-     */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
-     * or <code>Suspended</code>.</p>
-     */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
-     * or <code>Suspended</code>.</p>
-     */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isMfaDeleteEnabled;

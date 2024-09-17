@@ -34,106 +34,43 @@ namespace Model
     AWS_APPSTREAM_API DescribeApplicationFleetAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The application fleet associations in the list.</p>
      */
     inline const Aws::Vector<ApplicationFleetAssociation>& GetApplicationFleetAssociations() const{ return m_applicationFleetAssociations; }
-
-    /**
-     * <p>The application fleet associations in the list.</p>
-     */
     inline void SetApplicationFleetAssociations(const Aws::Vector<ApplicationFleetAssociation>& value) { m_applicationFleetAssociations = value; }
-
-    /**
-     * <p>The application fleet associations in the list.</p>
-     */
     inline void SetApplicationFleetAssociations(Aws::Vector<ApplicationFleetAssociation>&& value) { m_applicationFleetAssociations = std::move(value); }
-
-    /**
-     * <p>The application fleet associations in the list.</p>
-     */
     inline DescribeApplicationFleetAssociationsResult& WithApplicationFleetAssociations(const Aws::Vector<ApplicationFleetAssociation>& value) { SetApplicationFleetAssociations(value); return *this;}
-
-    /**
-     * <p>The application fleet associations in the list.</p>
-     */
     inline DescribeApplicationFleetAssociationsResult& WithApplicationFleetAssociations(Aws::Vector<ApplicationFleetAssociation>&& value) { SetApplicationFleetAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>The application fleet associations in the list.</p>
-     */
     inline DescribeApplicationFleetAssociationsResult& AddApplicationFleetAssociations(const ApplicationFleetAssociation& value) { m_applicationFleetAssociations.push_back(value); return *this; }
-
-    /**
-     * <p>The application fleet associations in the list.</p>
-     */
     inline DescribeApplicationFleetAssociationsResult& AddApplicationFleetAssociations(ApplicationFleetAssociation&& value) { m_applicationFleetAssociations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token used to retrieve the next page of results for this
      * operation.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token used to retrieve the next page of results for this
-     * operation.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token used to retrieve the next page of results for this
-     * operation.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token used to retrieve the next page of results for this
-     * operation.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token used to retrieve the next page of results for this
-     * operation.</p>
-     */
     inline DescribeApplicationFleetAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token used to retrieve the next page of results for this
-     * operation.</p>
-     */
     inline DescribeApplicationFleetAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token used to retrieve the next page of results for this
-     * operation.</p>
-     */
     inline DescribeApplicationFleetAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeApplicationFleetAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeApplicationFleetAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeApplicationFleetAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ApplicationFleetAssociation> m_applicationFleetAssociations;

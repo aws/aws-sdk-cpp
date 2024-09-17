@@ -26,11 +26,8 @@ RuntimeVersion::RuntimeVersion() :
 {
 }
 
-RuntimeVersion::RuntimeVersion(JsonView jsonValue) : 
-    m_versionNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false)
+RuntimeVersion::RuntimeVersion(JsonView jsonValue)
+  : RuntimeVersion()
 {
   *this = jsonValue;
 }

@@ -30,26 +30,15 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Update an existing egress-type bridge.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
-
-    /**
-     * Update an existing egress-type bridge.
-     */
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
-
-    /**
-     * Update an existing egress-type bridge.
-     */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
-
-    /**
-     * Update an existing egress-type bridge.
-     */
     inline UpdateEgressGatewayBridgeRequest& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxBitrate;

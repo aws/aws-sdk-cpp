@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using NeptunedataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NeptunedataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using NeptunedataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NeptunedataBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -37,23 +37,37 @@ Aws::String DecreaseNodeGroupsInGlobalReplicationGroupRequest::SerializePayload(
 
   if(m_globalNodeGroupsToRemoveHasBeenSet)
   {
-    unsigned globalNodeGroupsToRemoveCount = 1;
-    for(auto& item : m_globalNodeGroupsToRemove)
+    if (m_globalNodeGroupsToRemove.empty())
     {
-      ss << "GlobalNodeGroupsToRemove.member." << globalNodeGroupsToRemoveCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      globalNodeGroupsToRemoveCount++;
+      ss << "GlobalNodeGroupsToRemove=&";
+    }
+    else
+    {
+      unsigned globalNodeGroupsToRemoveCount = 1;
+      for(auto& item : m_globalNodeGroupsToRemove)
+      {
+        ss << "GlobalNodeGroupsToRemove.member." << globalNodeGroupsToRemoveCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        globalNodeGroupsToRemoveCount++;
+      }
     }
   }
 
   if(m_globalNodeGroupsToRetainHasBeenSet)
   {
-    unsigned globalNodeGroupsToRetainCount = 1;
-    for(auto& item : m_globalNodeGroupsToRetain)
+    if (m_globalNodeGroupsToRetain.empty())
     {
-      ss << "GlobalNodeGroupsToRetain.member." << globalNodeGroupsToRetainCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      globalNodeGroupsToRetainCount++;
+      ss << "GlobalNodeGroupsToRetain=&";
+    }
+    else
+    {
+      unsigned globalNodeGroupsToRetainCount = 1;
+      for(auto& item : m_globalNodeGroupsToRetain)
+      {
+        ss << "GlobalNodeGroupsToRetain.member." << globalNodeGroupsToRetainCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        globalNodeGroupsToRetainCount++;
+      }
     }
   }
 

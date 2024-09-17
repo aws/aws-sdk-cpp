@@ -31,16 +31,8 @@ DeviceDescription::DeviceDescription() :
 {
 }
 
-DeviceDescription::DeviceDescription(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_remainingLife(0.0),
-    m_remainingLifeHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DeviceDescription::DeviceDescription(JsonView jsonValue)
+  : DeviceDescription()
 {
   *this = jsonValue;
 }

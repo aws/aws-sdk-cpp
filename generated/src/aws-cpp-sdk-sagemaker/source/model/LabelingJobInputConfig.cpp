@@ -24,9 +24,8 @@ LabelingJobInputConfig::LabelingJobInputConfig() :
 {
 }
 
-LabelingJobInputConfig::LabelingJobInputConfig(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_dataAttributesHasBeenSet(false)
+LabelingJobInputConfig::LabelingJobInputConfig(JsonView jsonValue)
+  : LabelingJobInputConfig()
 {
   *this = jsonValue;
 }

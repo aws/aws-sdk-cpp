@@ -23,8 +23,8 @@ ZendeskMetadata::ZendeskMetadata() :
 {
 }
 
-ZendeskMetadata::ZendeskMetadata(JsonView jsonValue) : 
-    m_oAuthScopesHasBeenSet(false)
+ZendeskMetadata::ZendeskMetadata(JsonView jsonValue)
+  : ZendeskMetadata()
 {
   *this = jsonValue;
 }

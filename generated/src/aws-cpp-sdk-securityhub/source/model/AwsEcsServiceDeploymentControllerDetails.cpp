@@ -23,8 +23,8 @@ AwsEcsServiceDeploymentControllerDetails::AwsEcsServiceDeploymentControllerDetai
 {
 }
 
-AwsEcsServiceDeploymentControllerDetails::AwsEcsServiceDeploymentControllerDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+AwsEcsServiceDeploymentControllerDetails::AwsEcsServiceDeploymentControllerDetails(JsonView jsonValue)
+  : AwsEcsServiceDeploymentControllerDetails()
 {
   *this = jsonValue;
 }

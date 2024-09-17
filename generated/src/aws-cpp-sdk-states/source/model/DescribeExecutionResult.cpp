@@ -24,10 +24,8 @@ DescribeExecutionResult::DescribeExecutionResult() :
 {
 }
 
-DescribeExecutionResult::DescribeExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ExecutionStatus::NOT_SET),
-    m_redriveCount(0),
-    m_redriveStatus(ExecutionRedriveStatus::NOT_SET)
+DescribeExecutionResult::DescribeExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeExecutionResult()
 {
   *this = result;
 }

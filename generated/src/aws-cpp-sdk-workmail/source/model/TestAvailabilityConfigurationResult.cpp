@@ -22,8 +22,8 @@ TestAvailabilityConfigurationResult::TestAvailabilityConfigurationResult() :
 {
 }
 
-TestAvailabilityConfigurationResult::TestAvailabilityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_testPassed(false)
+TestAvailabilityConfigurationResult::TestAvailabilityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : TestAvailabilityConfigurationResult()
 {
   *this = result;
 }

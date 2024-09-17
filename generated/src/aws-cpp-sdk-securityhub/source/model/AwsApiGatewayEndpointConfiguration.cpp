@@ -23,8 +23,8 @@ AwsApiGatewayEndpointConfiguration::AwsApiGatewayEndpointConfiguration() :
 {
 }
 
-AwsApiGatewayEndpointConfiguration::AwsApiGatewayEndpointConfiguration(JsonView jsonValue) : 
-    m_typesHasBeenSet(false)
+AwsApiGatewayEndpointConfiguration::AwsApiGatewayEndpointConfiguration(JsonView jsonValue)
+  : AwsApiGatewayEndpointConfiguration()
 {
   *this = jsonValue;
 }

@@ -39,60 +39,28 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FrameMetric& GetFrameMetric() const{ return m_frameMetric; }
-
-    
     inline bool FrameMetricHasBeenSet() const { return m_frameMetricHasBeenSet; }
-
-    
     inline void SetFrameMetric(const FrameMetric& value) { m_frameMetricHasBeenSet = true; m_frameMetric = value; }
-
-    
     inline void SetFrameMetric(FrameMetric&& value) { m_frameMetricHasBeenSet = true; m_frameMetric = std::move(value); }
-
-    
     inline FrameMetricDatum& WithFrameMetric(const FrameMetric& value) { SetFrameMetric(value); return *this;}
-
-    
     inline FrameMetricDatum& WithFrameMetric(FrameMetric&& value) { SetFrameMetric(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A list of values that are associated with a frame metric. </p>
      */
     inline const Aws::Vector<double>& GetValues() const{ return m_values; }
-
-    /**
-     * <p> A list of values that are associated with a frame metric. </p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p> A list of values that are associated with a frame metric. </p>
-     */
     inline void SetValues(const Aws::Vector<double>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p> A list of values that are associated with a frame metric. </p>
-     */
     inline void SetValues(Aws::Vector<double>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p> A list of values that are associated with a frame metric. </p>
-     */
     inline FrameMetricDatum& WithValues(const Aws::Vector<double>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p> A list of values that are associated with a frame metric. </p>
-     */
     inline FrameMetricDatum& WithValues(Aws::Vector<double>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of values that are associated with a frame metric. </p>
-     */
     inline FrameMetricDatum& AddValues(double value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     FrameMetric m_frameMetric;

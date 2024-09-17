@@ -32,46 +32,19 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p> The generated ID for a share. </p>
+     * <p>The ID of the share.</p>
      */
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    /**
-     * <p> The generated ID for a share. </p>
-     */
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-
-    /**
-     * <p> The generated ID for a share. </p>
-     */
     inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
-
-    /**
-     * <p> The generated ID for a share. </p>
-     */
     inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
-
-    /**
-     * <p> The generated ID for a share. </p>
-     */
     inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
-
-    /**
-     * <p> The generated ID for a share. </p>
-     */
     inline GetShareRequest& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    /**
-     * <p> The generated ID for a share. </p>
-     */
     inline GetShareRequest& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    /**
-     * <p> The generated ID for a share. </p>
-     */
     inline GetShareRequest& WithShareId(const char* value) { SetShareId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shareId;

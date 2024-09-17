@@ -22,8 +22,8 @@ GetContainerServiceMetricDataResult::GetContainerServiceMetricDataResult() :
 {
 }
 
-GetContainerServiceMetricDataResult::GetContainerServiceMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricName(ContainerServiceMetricName::NOT_SET)
+GetContainerServiceMetricDataResult::GetContainerServiceMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetContainerServiceMetricDataResult()
 {
   *this = result;
 }

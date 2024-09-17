@@ -23,8 +23,8 @@ InstanceAssociationOutputUrl::InstanceAssociationOutputUrl() :
 {
 }
 
-InstanceAssociationOutputUrl::InstanceAssociationOutputUrl(JsonView jsonValue) : 
-    m_s3OutputUrlHasBeenSet(false)
+InstanceAssociationOutputUrl::InstanceAssociationOutputUrl(JsonView jsonValue)
+  : InstanceAssociationOutputUrl()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ StreamingImage::StreamingImage() :
 {
 }
 
-StreamingImage::StreamingImage(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ec2ImageIdHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_eulaIdsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_state(StreamingImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(StreamingImageStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_streamingImageIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StreamingImage::StreamingImage(JsonView jsonValue)
+  : StreamingImage()
 {
   *this = jsonValue;
 }

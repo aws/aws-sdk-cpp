@@ -24,9 +24,8 @@ FsxStorageConfiguration::FsxStorageConfiguration() :
 {
 }
 
-FsxStorageConfiguration::FsxStorageConfiguration(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_mountPointHasBeenSet(false)
+FsxStorageConfiguration::FsxStorageConfiguration(JsonView jsonValue)
+  : FsxStorageConfiguration()
 {
   *this = jsonValue;
 }

@@ -69,7 +69,9 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false)
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
 }
 
@@ -164,11 +166,18 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
+    if (m_tags.empty())
     {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
     }
   }
 
@@ -189,12 +198,19 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
-    unsigned vpcSecurityGroupIdsCount = 1;
-    for(auto& item : m_vpcSecurityGroupIds)
+    if (m_vpcSecurityGroupIds.empty())
     {
-      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      vpcSecurityGroupIdsCount++;
+      ss << "VpcSecurityGroupIds=&";
+    }
+    else
+    {
+      unsigned vpcSecurityGroupIdsCount = 1;
+      for(auto& item : m_vpcSecurityGroupIds)
+      {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        vpcSecurityGroupIdsCount++;
+      }
     }
   }
 
@@ -225,12 +241,19 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_domainDnsIpsHasBeenSet)
   {
-    unsigned domainDnsIpsCount = 1;
-    for(auto& item : m_domainDnsIps)
+    if (m_domainDnsIps.empty())
     {
-      ss << "DomainDnsIps.member." << domainDnsIpsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      domainDnsIpsCount++;
+      ss << "DomainDnsIps=&";
+    }
+    else
+    {
+      unsigned domainDnsIpsCount = 1;
+      for(auto& item : m_domainDnsIps)
+      {
+        ss << "DomainDnsIps.member." << domainDnsIpsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        domainDnsIpsCount++;
+      }
     }
   }
 
@@ -241,22 +264,36 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_enableCloudwatchLogsExportsHasBeenSet)
   {
-    unsigned enableCloudwatchLogsExportsCount = 1;
-    for(auto& item : m_enableCloudwatchLogsExports)
+    if (m_enableCloudwatchLogsExports.empty())
     {
-      ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      enableCloudwatchLogsExportsCount++;
+      ss << "EnableCloudwatchLogsExports=&";
+    }
+    else
+    {
+      unsigned enableCloudwatchLogsExportsCount = 1;
+      for(auto& item : m_enableCloudwatchLogsExports)
+      {
+        ss << "EnableCloudwatchLogsExports.member." << enableCloudwatchLogsExportsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        enableCloudwatchLogsExportsCount++;
+      }
     }
   }
 
   if(m_processorFeaturesHasBeenSet)
   {
-    unsigned processorFeaturesCount = 1;
-    for(auto& item : m_processorFeatures)
+    if (m_processorFeatures.empty())
     {
-      item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
-      processorFeaturesCount++;
+      ss << "ProcessorFeatures=&";
+    }
+    else
+    {
+      unsigned processorFeaturesCount = 1;
+      for(auto& item : m_processorFeatures)
+      {
+        item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
+        processorFeaturesCount++;
+      }
     }
   }
 
@@ -323,6 +360,16 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_dedicatedLogVolumeHasBeenSet)
   {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+    ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

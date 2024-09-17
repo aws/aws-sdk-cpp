@@ -25,6 +25,7 @@
 #include <aws/kendra-ranking/model/RescoreResult.h>
 #include <aws/kendra-ranking/model/TagResourceResult.h>
 #include <aws/kendra-ranking/model/UntagResourceResult.h>
+#include <aws/kendra-ranking/model/ListRescoreExecutionPlansRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KendraRankingClient header */
 
@@ -59,7 +60,7 @@ namespace Aws
 
   namespace KendraRanking
   {
-    using KendraRankingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KendraRankingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KendraRankingEndpointProviderBase = Aws::KendraRanking::Endpoint::KendraRankingEndpointProviderBase;
     using KendraRankingEndpointProvider = Aws::KendraRanking::Endpoint::KendraRankingEndpointProvider;
 

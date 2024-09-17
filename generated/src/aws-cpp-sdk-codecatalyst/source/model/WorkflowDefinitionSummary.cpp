@@ -23,8 +23,8 @@ WorkflowDefinitionSummary::WorkflowDefinitionSummary() :
 {
 }
 
-WorkflowDefinitionSummary::WorkflowDefinitionSummary(JsonView jsonValue) : 
-    m_pathHasBeenSet(false)
+WorkflowDefinitionSummary::WorkflowDefinitionSummary(JsonView jsonValue)
+  : WorkflowDefinitionSummary()
 {
   *this = jsonValue;
 }

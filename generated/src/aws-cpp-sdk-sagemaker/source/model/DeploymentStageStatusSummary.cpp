@@ -26,11 +26,8 @@ DeploymentStageStatusSummary::DeploymentStageStatusSummary() :
 {
 }
 
-DeploymentStageStatusSummary::DeploymentStageStatusSummary(JsonView jsonValue) : 
-    m_stageNameHasBeenSet(false),
-    m_deviceSelectionConfigHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false)
+DeploymentStageStatusSummary::DeploymentStageStatusSummary(JsonView jsonValue)
+  : DeploymentStageStatusSummary()
 {
   *this = jsonValue;
 }

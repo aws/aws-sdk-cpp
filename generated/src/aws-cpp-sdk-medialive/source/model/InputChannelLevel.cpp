@@ -26,11 +26,8 @@ InputChannelLevel::InputChannelLevel() :
 {
 }
 
-InputChannelLevel::InputChannelLevel(JsonView jsonValue) : 
-    m_gain(0),
-    m_gainHasBeenSet(false),
-    m_inputChannel(0),
-    m_inputChannelHasBeenSet(false)
+InputChannelLevel::InputChannelLevel(JsonView jsonValue)
+  : InputChannelLevel()
 {
   *this = jsonValue;
 }

@@ -43,102 +43,26 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the Greengrass group. For more information about how to find a group's ARN,
      * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
+     * href="https://docs.aws.amazon.com/greengrass/v1/apireference/listgroups-get.html">ListGroups</a>
      * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/greengrass/v1/apireference/getgroup-get.html">GetGroup</a>
+     * in the <i>IoT Greengrass V1 API Reference</i>.</p>
      */
     inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the Greengrass group. For more information about how to find a group's ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
-     */
     inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the Greengrass group. For more information about how to find a group's ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
-     */
     inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the Greengrass group. For more information about how to find a group's ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
-     */
     inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the Greengrass group. For more information about how to find a group's ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
-     */
     inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the Greengrass group. For more information about how to find a group's ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
-     */
     inline Greengrass& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the Greengrass group. For more information about how to find a group's ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
-     */
     inline Greengrass& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the Greengrass group. For more information about how to find a group's ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>IoT Greengrass API Reference</i>.</p>
-     */
     inline Greengrass& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupArn;

@@ -22,8 +22,8 @@ DescribeSecurityProfileResult::DescribeSecurityProfileResult() :
 {
 }
 
-DescribeSecurityProfileResult::DescribeSecurityProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0)
+DescribeSecurityProfileResult::DescribeSecurityProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSecurityProfileResult()
 {
   *this = result;
 }

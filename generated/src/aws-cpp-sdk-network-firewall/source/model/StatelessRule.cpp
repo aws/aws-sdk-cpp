@@ -25,10 +25,8 @@ StatelessRule::StatelessRule() :
 {
 }
 
-StatelessRule::StatelessRule(JsonView jsonValue) : 
-    m_ruleDefinitionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+StatelessRule::StatelessRule(JsonView jsonValue)
+  : StatelessRule()
 {
   *this = jsonValue;
 }

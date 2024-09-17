@@ -16,31 +16,42 @@ namespace Aws
 namespace ARCZonalShift
 {
   /**
-   * <p>Welcome to the Zonal Shift API Reference Guide for Amazon Route 53
-   * Application Recovery Controller (Route 53 ARC).</p> <p>You can start a zonal
-   * shift to move traffic for a load balancer resource away from an Availability
-   * Zone to help your application recover quickly from an impairment in an
-   * Availability Zone. For example, you can recover your application from a
+   * <p>Welcome to the API Reference Guide for zonal shift and zonal autoshift in
+   * Amazon Route 53 Application Recovery Controller (Route 53 ARC).</p> <p>You can
+   * start a zonal shift to move traffic for a load balancer resource away from an
+   * Availability Zone to help your application recover quickly from an impairment in
+   * an Availability Zone. For example, you can recover your application from a
    * developer's bad code deployment or from an Amazon Web Services infrastructure
    * failure in a single Availability Zone.</p> <p>You can also configure zonal
-   * autoshift for a load balancer resource. Zonal autoshift is a capability in Route
-   * 53 ARC where Amazon Web Services shifts away application resource traffic from
-   * an Availability Zone, on your behalf, to help reduce your time to recovery
-   * during events. Amazon Web Services shifts away traffic for resources that are
-   * enabled for zonal autoshift whenever Amazon Web Services determines that there's
-   * an issue in the Availability Zone that could potentially affect customers.</p>
-   * <p>To ensure that zonal autoshift is safe for your application, you must also
-   * configure practice runs when you enable zonal autoshift for a resource. Practice
-   * runs start weekly zonal shifts for a resource, to shift traffic for the resource
-   * out of an Availability Zone. Practice runs make sure, on a regular basis, that
-   * you have enough capacity in all the Availability Zones in an Amazon Web Services
-   * Region for your application to continue to operate normally when traffic for a
-   * resource is shifted away from one Availability Zone.</p>  <p>You must
-   * prescale resource capacity in all Availability Zones in the Region where your
-   * application is deployed, before you configure practice runs or enable zonal
-   * autoshift for a resource. You should not rely on scaling on demand when an
-   * autoshift or practice run starts. </p>  <p>For more information
-   * about using zonal shift and zonal autoshift, see the <a
+   * autoshift for supported load balancer resources. Zonal autoshift is a capability
+   * in Route 53 ARC where you authorize Amazon Web Services to shift away
+   * application resource traffic from an Availability Zone during events, on your
+   * behalf, to help reduce your time to recovery. Amazon Web Services starts an
+   * autoshift when internal telemetry indicates that there is an Availability Zone
+   * impairment that could potentially impact customers.</p> <p>To help make sure
+   * that zonal autoshift is safe for your application, you must also configure
+   * practice runs when you enable zonal autoshift for a resource. Practice runs
+   * start weekly zonal shifts for a resource, to shift traffic for the resource away
+   * from an Availability Zone. Practice runs help you to make sure, on a regular
+   * basis, that you have enough capacity in all the Availability Zones in an Amazon
+   * Web Services Region for your application to continue to operate normally when
+   * traffic for a resource is shifted away from one Availability Zone.</p>
+   *  <p>Before you configure practice runs or enable zonal autoshift, we
+   * strongly recommend that you prescale your application resource capacity in all
+   * Availability Zones in the Region where your application resources are deployed.
+   * You should not rely on scaling on demand when an autoshift or practice run
+   * starts. Zonal autoshift, including practice runs, works independently, and does
+   * not wait for auto scaling actions to complete. Relying on auto scaling, instead
+   * of pre-scaling, can result in loss of availability.</p> <p>If you use auto
+   * scaling to handle regular cycles of traffic, we strongly recommend that you
+   * configure the minimum capacity of your auto scaling to continue operating
+   * normally with the loss of an Availability Zone. </p>  <p>Be aware
+   * that Route 53 ARC does not inspect the health of individual resources. Amazon
+   * Web Services only starts an autoshift when Amazon Web Services telemetry detects
+   * that there is an Availability Zone impairment that could potentially impact
+   * customers. In some cases, resources might be shifted away that are not
+   * experiencing impact.</p> <p>For more information about using zonal shift and
+   * zonal autoshift, see the <a
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html">Amazon
    * Route 53 Application Recovery Controller Developer Guide</a>.</p>
    */
@@ -138,7 +149,11 @@ namespace ARCZonalShift
          * you create to use with practice runs. The alarms that you specify are an
          * <i>outcome alarm</i>, to monitor application health during practice runs and,
          * optionally, a <i>blocking alarm</i>, to block practice runs from starting.</p>
-         * <p>For more information, see <a
+         * <p>When a resource has a practice run configuration, Route 53 ARC starts zonal
+         * shifts for the resource weekly, to shift traffic for practice runs. Practice
+         * runs help you to ensure that shifting away traffic from an Availability Zone
+         * during an autoshift is safe for your application.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html">
          * Considerations when you configure zonal autoshift</a> in the Amazon Route 53
          * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
@@ -194,6 +209,41 @@ namespace ARCZonalShift
         }
 
         /**
+         * <p>Returns the status of autoshift observer notification. Autoshift observer
+         * notification enables you to be notified, through Amazon EventBridge, when there
+         * is an autoshift event for zonal autoshift.</p> <p>If the status is
+         * <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use
+         * the EventBridge pattern <code>Autoshift In Progress</code>. When the status is
+         * <code>DISABLED</code>, Route 53 ARC includes only autoshift events for
+         * autoshifts when one or more of your resources is included in the autoshift.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html#ZAShiftNotification">
+         * Notifications for practice runs and autoshifts</a> in the Amazon Route 53
+         * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/GetAutoshiftObserverNotificationStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutoshiftObserverNotificationStatusOutcome GetAutoshiftObserverNotificationStatus(const Model::GetAutoshiftObserverNotificationStatusRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetAutoshiftObserverNotificationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutoshiftObserverNotificationStatusRequestT = Model::GetAutoshiftObserverNotificationStatusRequest>
+        Model::GetAutoshiftObserverNotificationStatusOutcomeCallable GetAutoshiftObserverNotificationStatusCallable(const GetAutoshiftObserverNotificationStatusRequestT& request = {}) const
+        {
+            return SubmitCallable(&ARCZonalShiftClient::GetAutoshiftObserverNotificationStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutoshiftObserverNotificationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutoshiftObserverNotificationStatusRequestT = Model::GetAutoshiftObserverNotificationStatusRequest>
+        void GetAutoshiftObserverNotificationStatusAsync(const GetAutoshiftObserverNotificationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAutoshiftObserverNotificationStatusRequestT& request = {}) const
+        {
+            return SubmitAsync(&ARCZonalShiftClient::GetAutoshiftObserverNotificationStatus, request, handler, context);
+        }
+
+        /**
          * <p>Get information about a resource that's been registered for zonal shifts with
          * Amazon Route 53 Application Recovery Controller in this Amazon Web Services
          * Region. Resources that are registered for zonal shifts are managed resources in
@@ -226,18 +276,20 @@ namespace ARCZonalShift
         }
 
         /**
-         * <p>Returns the active autoshifts for a specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of autoshifts for an Amazon Web Services Region. By default,
+         * the call returns only <code>ACTIVE</code> autoshifts. Optionally, you can
+         * specify the <code>status</code> parameter to return <code>COMPLETED</code>
+         * autoshifts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListAutoshifts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAutoshiftsOutcome ListAutoshifts(const Model::ListAutoshiftsRequest& request) const;
+        virtual Model::ListAutoshiftsOutcome ListAutoshifts(const Model::ListAutoshiftsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAutoshifts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAutoshiftsRequestT = Model::ListAutoshiftsRequest>
-        Model::ListAutoshiftsOutcomeCallable ListAutoshiftsCallable(const ListAutoshiftsRequestT& request) const
+        Model::ListAutoshiftsOutcomeCallable ListAutoshiftsCallable(const ListAutoshiftsRequestT& request = {}) const
         {
             return SubmitCallable(&ARCZonalShiftClient::ListAutoshifts, request);
         }
@@ -246,7 +298,7 @@ namespace ARCZonalShift
          * An Async wrapper for ListAutoshifts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAutoshiftsRequestT = Model::ListAutoshiftsRequest>
-        void ListAutoshiftsAsync(const ListAutoshiftsRequestT& request, const ListAutoshiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAutoshiftsAsync(const ListAutoshiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAutoshiftsRequestT& request = {}) const
         {
             return SubmitAsync(&ARCZonalShiftClient::ListAutoshifts, request, handler, context);
         }
@@ -261,13 +313,13 @@ namespace ARCZonalShift
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListManagedResources">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListManagedResourcesOutcome ListManagedResources(const Model::ListManagedResourcesRequest& request) const;
+        virtual Model::ListManagedResourcesOutcome ListManagedResources(const Model::ListManagedResourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListManagedResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListManagedResourcesRequestT = Model::ListManagedResourcesRequest>
-        Model::ListManagedResourcesOutcomeCallable ListManagedResourcesCallable(const ListManagedResourcesRequestT& request) const
+        Model::ListManagedResourcesOutcomeCallable ListManagedResourcesCallable(const ListManagedResourcesRequestT& request = {}) const
         {
             return SubmitCallable(&ARCZonalShiftClient::ListManagedResources, request);
         }
@@ -276,7 +328,7 @@ namespace ARCZonalShift
          * An Async wrapper for ListManagedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListManagedResourcesRequestT = Model::ListManagedResourcesRequest>
-        void ListManagedResourcesAsync(const ListManagedResourcesRequestT& request, const ListManagedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListManagedResourcesAsync(const ListManagedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedResourcesRequestT& request = {}) const
         {
             return SubmitAsync(&ARCZonalShiftClient::ListManagedResources, request, handler, context);
         }
@@ -284,7 +336,7 @@ namespace ARCZonalShift
         /**
          * <p>Lists all active and completed zonal shifts in Amazon Route 53 Application
          * Recovery Controller in your Amazon Web Services account in this Amazon Web
-         * Services Region. <code>ListZonalShifts</code> returns customer-started zonal
+         * Services Region. <code>ListZonalShifts</code> returns customer-initiated zonal
          * shifts, as well as practice run zonal shifts that Route 53 ARC started on your
          * behalf for zonal autoshift.</p> <p>The <code>ListZonalShifts</code> operation
          * does not list autoshifts. For more information about listing autoshifts, see <a
@@ -293,13 +345,13 @@ namespace ARCZonalShift
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListZonalShifts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListZonalShiftsOutcome ListZonalShifts(const Model::ListZonalShiftsRequest& request) const;
+        virtual Model::ListZonalShiftsOutcome ListZonalShifts(const Model::ListZonalShiftsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListZonalShifts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListZonalShiftsRequestT = Model::ListZonalShiftsRequest>
-        Model::ListZonalShiftsOutcomeCallable ListZonalShiftsCallable(const ListZonalShiftsRequestT& request) const
+        Model::ListZonalShiftsOutcomeCallable ListZonalShiftsCallable(const ListZonalShiftsRequestT& request = {}) const
         {
             return SubmitCallable(&ARCZonalShiftClient::ListZonalShifts, request);
         }
@@ -308,7 +360,7 @@ namespace ARCZonalShift
          * An Async wrapper for ListZonalShifts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListZonalShiftsRequestT = Model::ListZonalShiftsRequest>
-        void ListZonalShiftsAsync(const ListZonalShiftsRequestT& request, const ListZonalShiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListZonalShiftsAsync(const ListZonalShiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListZonalShiftsRequestT& request = {}) const
         {
             return SubmitAsync(&ARCZonalShiftClient::ListZonalShifts, request, handler, context);
         }
@@ -355,6 +407,41 @@ namespace ARCZonalShift
         }
 
         /**
+         * <p>Update the status of autoshift observer notification. Autoshift observer
+         * notification enables you to be notified, through Amazon EventBridge, when there
+         * is an autoshift event for zonal autoshift.</p> <p>If the status is
+         * <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use
+         * the EventBridge pattern <code>Autoshift In Progress</code>. When the status is
+         * <code>DISABLED</code>, Route 53 ARC includes only autoshift events for
+         * autoshifts when one or more of your resources is included in the autoshift.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html#ZAShiftNotification">
+         * Notifications for practice runs and autoshifts</a> in the Amazon Route 53
+         * Application Recovery Controller Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateAutoshiftObserverNotificationStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAutoshiftObserverNotificationStatusOutcome UpdateAutoshiftObserverNotificationStatus(const Model::UpdateAutoshiftObserverNotificationStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAutoshiftObserverNotificationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAutoshiftObserverNotificationStatusRequestT = Model::UpdateAutoshiftObserverNotificationStatusRequest>
+        Model::UpdateAutoshiftObserverNotificationStatusOutcomeCallable UpdateAutoshiftObserverNotificationStatusCallable(const UpdateAutoshiftObserverNotificationStatusRequestT& request) const
+        {
+            return SubmitCallable(&ARCZonalShiftClient::UpdateAutoshiftObserverNotificationStatus, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAutoshiftObserverNotificationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAutoshiftObserverNotificationStatusRequestT = Model::UpdateAutoshiftObserverNotificationStatusRequest>
+        void UpdateAutoshiftObserverNotificationStatusAsync(const UpdateAutoshiftObserverNotificationStatusRequestT& request, const UpdateAutoshiftObserverNotificationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ARCZonalShiftClient::UpdateAutoshiftObserverNotificationStatus, request, handler, context);
+        }
+
+        /**
          * <p>Update a practice run configuration to change one or more of the following:
          * add, change, or remove the blocking alarm; change the outcome alarm; or add,
          * change, or remove blocking dates or time windows.</p><p><h3>See Also:</h3>   <a
@@ -382,12 +469,17 @@ namespace ARCZonalShift
         }
 
         /**
-         * <p>You can update the zonal autoshift status for a resource, to enable or
-         * disable zonal autoshift. When zonal autoshift is <code>ENABLED</code>, Amazon
-         * Web Services shifts away resource traffic from an Availability Zone, on your
-         * behalf, when Amazon Web Services determines that there's an issue in the
-         * Availability Zone that could potentially affect customers.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The zonal autoshift configuration for a resource includes the practice run
+         * configuration and the status for running autoshifts, zonal autoshift status.
+         * When a resource has a practice run configuation, Route 53 ARC starts weekly
+         * zonal shifts for the resource, to shift traffic away from an Availability Zone.
+         * Weekly practice runs help you to make sure that your application can continue to
+         * operate normally with the loss of one Availability Zone.</p> <p>You can update
+         * the zonal autoshift autoshift status to enable or disable zonal autoshift. When
+         * zonal autoshift is <code>ENABLED</code>, you authorize Amazon Web Services to
+         * shift away resource traffic for an application from an Availability Zone during
+         * events, on your behalf, to help reduce time to recovery. Traffic is also shifted
+         * away for the required weekly practice runs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateZonalAutoshiftConfiguration">AWS
          * API Reference</a></p>
          */
@@ -447,7 +539,6 @@ namespace ARCZonalShift
       void init(const ARCZonalShiftClientConfiguration& clientConfiguration);
 
       ARCZonalShiftClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ARCZonalShiftEndpointProviderBase> m_endpointProvider;
   };
 

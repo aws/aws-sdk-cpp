@@ -23,8 +23,8 @@ EvaluationAnswerInput::EvaluationAnswerInput() :
 {
 }
 
-EvaluationAnswerInput::EvaluationAnswerInput(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+EvaluationAnswerInput::EvaluationAnswerInput(JsonView jsonValue)
+  : EvaluationAnswerInput()
 {
   *this = jsonValue;
 }

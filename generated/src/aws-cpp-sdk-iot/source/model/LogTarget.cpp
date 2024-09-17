@@ -25,10 +25,8 @@ LogTarget::LogTarget() :
 {
 }
 
-LogTarget::LogTarget(JsonView jsonValue) : 
-    m_targetType(LogTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
+LogTarget::LogTarget(JsonView jsonValue)
+  : LogTarget()
 {
   *this = jsonValue;
 }

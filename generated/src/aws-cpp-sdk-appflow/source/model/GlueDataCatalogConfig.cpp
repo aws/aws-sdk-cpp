@@ -25,10 +25,8 @@ GlueDataCatalogConfig::GlueDataCatalogConfig() :
 {
 }
 
-GlueDataCatalogConfig::GlueDataCatalogConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tablePrefixHasBeenSet(false)
+GlueDataCatalogConfig::GlueDataCatalogConfig(JsonView jsonValue)
+  : GlueDataCatalogConfig()
 {
   *this = jsonValue;
 }

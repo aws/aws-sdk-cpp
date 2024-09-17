@@ -7,6 +7,7 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/S3ConfigMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanroomsml/model/ProtectedQuerySQLParameters.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines the Amazon S3 bucket where the training data for the configured
+   * <p>Defines the Amazon S3 bucket where the seed audience for the generating
    * audience is stored.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/AudienceGenerationJobDataSource">AWS
    * API Reference</a></p>
@@ -39,91 +40,47 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
+     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
+     * audience is stored. A valid data source is a JSON line file in the following
+     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
+     * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline const S3ConfigMap& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
-     */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
-     */
     inline void SetDataSource(const S3ConfigMap& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
-     */
     inline void SetDataSource(S3ConfigMap&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithDataSource(const S3ConfigMap& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithDataSource(S3ConfigMap&& value) { SetDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
+     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed
+     * audience is stored.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The protected SQL query parameters.</p>
+     */
+    inline const ProtectedQuerySQLParameters& GetSqlParameters() const{ return m_sqlParameters; }
+    inline bool SqlParametersHasBeenSet() const { return m_sqlParametersHasBeenSet; }
+    inline void SetSqlParameters(const ProtectedQuerySQLParameters& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = value; }
+    inline void SetSqlParameters(ProtectedQuerySQLParameters&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::move(value); }
+    inline AudienceGenerationJobDataSource& WithSqlParameters(const ProtectedQuerySQLParameters& value) { SetSqlParameters(value); return *this;}
+    inline AudienceGenerationJobDataSource& WithSqlParameters(ProtectedQuerySQLParameters&& value) { SetSqlParameters(std::move(value)); return *this;}
+    ///@}
   private:
 
     S3ConfigMap m_dataSource;
@@ -131,6 +88,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    ProtectedQuerySQLParameters m_sqlParameters;
+    bool m_sqlParametersHasBeenSet = false;
   };
 
 } // namespace Model

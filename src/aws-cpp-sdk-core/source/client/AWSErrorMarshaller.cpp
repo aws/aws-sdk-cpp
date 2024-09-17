@@ -26,6 +26,20 @@ AWS_CORE_API extern const char REQUEST_ID_HEADER[]      = "x-amzn-RequestId";
 AWS_CORE_API extern const char QUERY_ERROR_HEADER[]     = "x-amzn-query-error";
 AWS_CORE_API extern const char TYPE[]                   = "__type";
 
+static CoreErrors GuessBodylessErrorType(const Aws::Http::HttpResponseCode responseCode)
+{
+    switch (responseCode)
+    {
+    case HttpResponseCode::FORBIDDEN:
+    case HttpResponseCode::UNAUTHORIZED:
+        return CoreErrors::ACCESS_DENIED;
+    case HttpResponseCode::NOT_FOUND:
+        return CoreErrors::RESOURCE_NOT_FOUND;
+    default:
+        return CoreErrors::UNKNOWN;
+    }
+}
+
 AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
     Aws::StringStream memoryStream;
@@ -83,6 +97,37 @@ AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse
 
     error.SetRequestId(httpResponse.HasHeader(REQUEST_ID_HEADER) ? httpResponse.GetHeader(REQUEST_ID_HEADER) : "");
     error.SetJsonPayload(std::move(exceptionPayload));
+    return error;
+}
+
+AWSError<CoreErrors> JsonErrorMarshaller::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
+{
+    AWSError<CoreErrors> error;
+    if (httpResponse->HasClientError())
+    {
+        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
+        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
+    }
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
+    {
+        auto responseCode = httpResponse->GetResponseCode();
+        auto errorCode = GuessBodylessErrorType(responseCode);
+
+        Aws::StringStream ss;
+        ss << "No response body.";
+        error = AWSError<CoreErrors>(errorCode, "", ss.str(),
+            IsRetryableHttpResponseCode(responseCode));
+    }
+    else
+    {
+        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
+        error = Marshall(*httpResponse);
+    }
+
+    error.SetResponseHeaders(httpResponse->GetHeaders());
+    error.SetResponseCode(httpResponse->GetResponseCode());
+    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
+    AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
     return error;
 }
 
@@ -146,6 +191,43 @@ AWSError<CoreErrors> XmlErrorMarshaller::Marshall(const Aws::Http::HttpResponse&
     }
 
     error.SetXmlPayload(std::move(doc));
+    return error;
+}
+
+AWSError<CoreErrors> XmlErrorMarshaller::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
+{
+    AWSError<CoreErrors> error;
+    if (httpResponse->HasClientError())
+    {
+        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
+        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
+    }
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
+    {
+        auto responseCode = httpResponse->GetResponseCode();
+        auto errorCode = GuessBodylessErrorType(responseCode);
+
+        Aws::StringStream ss;
+        ss << "No response body.";
+        error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
+    }
+    else
+    {
+        // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
+        // file pointer back to the beginning in order to correctly read the input using the XML string iterator
+        if ((httpResponse->GetResponseBody().tellp() > 0)
+            && (httpResponse->GetResponseBody().tellg() > 0))
+        {
+            httpResponse->GetResponseBody().seekg(0);
+        }
+
+        error = Marshall(*httpResponse);
+    }
+
+    error.SetResponseHeaders(httpResponse->GetHeaders());
+    error.SetResponseCode(httpResponse->GetResponseCode());
+    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
+    AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
     return error;
 }
 

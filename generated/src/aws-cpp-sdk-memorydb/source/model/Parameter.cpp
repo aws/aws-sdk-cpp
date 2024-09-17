@@ -28,13 +28,8 @@ Parameter::Parameter() :
 {
 }
 
-Parameter::Parameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
+Parameter::Parameter(JsonView jsonValue)
+  : Parameter()
 {
   *this = jsonValue;
 }

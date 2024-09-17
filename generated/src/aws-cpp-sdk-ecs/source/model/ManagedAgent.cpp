@@ -27,12 +27,8 @@ ManagedAgent::ManagedAgent() :
 {
 }
 
-ManagedAgent::ManagedAgent(JsonView jsonValue) : 
-    m_lastStartedAtHasBeenSet(false),
-    m_name(ManagedAgentName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_lastStatusHasBeenSet(false)
+ManagedAgent::ManagedAgent(JsonView jsonValue)
+  : ManagedAgent()
 {
   *this = jsonValue;
 }

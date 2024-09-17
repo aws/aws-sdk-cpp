@@ -18,14 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 StartPipeResult::StartPipeResult() : 
-    m_currentState(PipeState::NOT_SET),
-    m_desiredState(RequestedPipeState::NOT_SET)
+    m_desiredState(RequestedPipeState::NOT_SET),
+    m_currentState(PipeState::NOT_SET)
 {
 }
 
-StartPipeResult::StartPipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_currentState(PipeState::NOT_SET),
-    m_desiredState(RequestedPipeState::NOT_SET)
+StartPipeResult::StartPipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartPipeResult()
 {
   *this = result;
 }
@@ -39,15 +38,9 @@ StartPipeResult& StartPipeResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
-  if(jsonValue.ValueExists("CreationTime"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
-
-  }
-
-  if(jsonValue.ValueExists("CurrentState"))
-  {
-    m_currentState = PipeStateMapper::GetPipeStateForName(jsonValue.GetString("CurrentState"));
+    m_name = jsonValue.GetString("Name");
 
   }
 
@@ -57,15 +50,21 @@ StartPipeResult& StartPipeResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
-  if(jsonValue.ValueExists("LastModifiedTime"))
+  if(jsonValue.ValueExists("CurrentState"))
   {
-    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+    m_currentState = PipeStateMapper::GetPipeStateForName(jsonValue.GetString("CurrentState"));
 
   }
 
-  if(jsonValue.ValueExists("Name"))
+  if(jsonValue.ValueExists("CreationTime"))
   {
-    m_name = jsonValue.GetString("Name");
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+
+  }
+
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
 
   }
 

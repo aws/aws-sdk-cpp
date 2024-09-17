@@ -29,14 +29,8 @@ AvailabilityConfiguration::AvailabilityConfiguration() :
 {
 }
 
-AvailabilityConfiguration::AvailabilityConfiguration(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_providerType(AvailabilityProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_ewsProviderHasBeenSet(false),
-    m_lambdaProviderHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
+AvailabilityConfiguration::AvailabilityConfiguration(JsonView jsonValue)
+  : AvailabilityConfiguration()
 {
   *this = jsonValue;
 }

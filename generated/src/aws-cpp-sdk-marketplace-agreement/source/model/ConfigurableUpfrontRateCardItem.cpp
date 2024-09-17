@@ -25,10 +25,8 @@ ConfigurableUpfrontRateCardItem::ConfigurableUpfrontRateCardItem() :
 {
 }
 
-ConfigurableUpfrontRateCardItem::ConfigurableUpfrontRateCardItem(JsonView jsonValue) : 
-    m_constraintsHasBeenSet(false),
-    m_rateCardHasBeenSet(false),
-    m_selectorHasBeenSet(false)
+ConfigurableUpfrontRateCardItem::ConfigurableUpfrontRateCardItem(JsonView jsonValue)
+  : ConfigurableUpfrontRateCardItem()
 {
   *this = jsonValue;
 }

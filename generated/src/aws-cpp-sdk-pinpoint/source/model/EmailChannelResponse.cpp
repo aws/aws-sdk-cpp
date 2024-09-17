@@ -37,32 +37,14 @@ EmailChannelResponse::EmailChannelResponse() :
     m_messagesPerSecondHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_orchestrationSendingRoleArnHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
 {
 }
 
-EmailChannelResponse::EmailChannelResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationSetHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_hasCredential(false),
-    m_hasCredentialHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_identityHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+EmailChannelResponse::EmailChannelResponse(JsonView jsonValue)
+  : EmailChannelResponse()
 {
   *this = jsonValue;
 }
@@ -167,6 +149,13 @@ EmailChannelResponse& EmailChannelResponse::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OrchestrationSendingRoleArn"))
+  {
+    m_orchestrationSendingRoleArn = jsonValue.GetString("OrchestrationSendingRoleArn");
+
+    m_orchestrationSendingRoleArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
@@ -262,6 +251,12 @@ JsonValue EmailChannelResponse::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_orchestrationSendingRoleArnHasBeenSet)
+  {
+   payload.WithString("OrchestrationSendingRoleArn", m_orchestrationSendingRoleArn);
 
   }
 

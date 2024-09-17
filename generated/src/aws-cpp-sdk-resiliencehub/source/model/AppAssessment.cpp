@@ -39,34 +39,14 @@ AppAssessment::AppAssessment() :
     m_resiliencyScoreHasBeenSet(false),
     m_resourceErrorsDetailsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_summaryHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_versionNameHasBeenSet(false)
 {
 }
 
-AppAssessment::AppAssessment(JsonView jsonValue) : 
-    m_appArnHasBeenSet(false),
-    m_appVersionHasBeenSet(false),
-    m_assessmentArnHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_assessmentStatus(AssessmentStatus::NOT_SET),
-    m_assessmentStatusHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_complianceStatus(ComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_costHasBeenSet(false),
-    m_driftStatus(DriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_invoker(AssessmentInvoker::NOT_SET),
-    m_invokerHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_resiliencyScoreHasBeenSet(false),
-    m_resourceErrorsDetailsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
+AppAssessment::AppAssessment(JsonView jsonValue)
+  : AppAssessment()
 {
   *this = jsonValue;
 }
@@ -188,6 +168,13 @@ AppAssessment& AppAssessment::operator =(JsonView jsonValue)
     m_startTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("summary"))
+  {
+    m_summary = jsonValue.GetObject("summary");
+
+    m_summaryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -305,6 +292,12 @@ JsonValue AppAssessment::Jsonize() const
   if(m_startTimeHasBeenSet)
   {
    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if(m_summaryHasBeenSet)
+  {
+   payload.WithObject("summary", m_summary.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

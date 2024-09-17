@@ -23,8 +23,8 @@ SearchExpression::SearchExpression() :
 {
 }
 
-SearchExpression::SearchExpression(JsonView jsonValue) : 
-    m_filtersHasBeenSet(false)
+SearchExpression::SearchExpression(JsonView jsonValue)
+  : SearchExpression()
 {
   *this = jsonValue;
 }

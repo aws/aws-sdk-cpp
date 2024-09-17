@@ -33,58 +33,28 @@ namespace Model
     AWS_BACKUPGATEWAY_API GetGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>By providing the ARN (Amazon Resource Name), this API returns the
      * gateway.</p>
      */
     inline const GatewayDetails& GetGateway() const{ return m_gateway; }
-
-    /**
-     * <p>By providing the ARN (Amazon Resource Name), this API returns the
-     * gateway.</p>
-     */
     inline void SetGateway(const GatewayDetails& value) { m_gateway = value; }
-
-    /**
-     * <p>By providing the ARN (Amazon Resource Name), this API returns the
-     * gateway.</p>
-     */
     inline void SetGateway(GatewayDetails&& value) { m_gateway = std::move(value); }
-
-    /**
-     * <p>By providing the ARN (Amazon Resource Name), this API returns the
-     * gateway.</p>
-     */
     inline GetGatewayResult& WithGateway(const GatewayDetails& value) { SetGateway(value); return *this;}
-
-    /**
-     * <p>By providing the ARN (Amazon Resource Name), this API returns the
-     * gateway.</p>
-     */
     inline GetGatewayResult& WithGateway(GatewayDetails&& value) { SetGateway(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GatewayDetails m_gateway;

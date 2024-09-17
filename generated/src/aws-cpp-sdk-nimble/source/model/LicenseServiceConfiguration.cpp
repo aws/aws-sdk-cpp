@@ -23,8 +23,8 @@ LicenseServiceConfiguration::LicenseServiceConfiguration() :
 {
 }
 
-LicenseServiceConfiguration::LicenseServiceConfiguration(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false)
+LicenseServiceConfiguration::LicenseServiceConfiguration(JsonView jsonValue)
+  : LicenseServiceConfiguration()
 {
   *this = jsonValue;
 }

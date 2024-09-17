@@ -22,8 +22,8 @@ CreateBotReplicaResult::CreateBotReplicaResult() :
 {
 }
 
-CreateBotReplicaResult::CreateBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botReplicaStatus(BotReplicaStatus::NOT_SET)
+CreateBotReplicaResult::CreateBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateBotReplicaResult()
 {
   *this = result;
 }

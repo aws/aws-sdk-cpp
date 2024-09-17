@@ -21,7 +21,8 @@ UpdateAddonRequest::UpdateAddonRequest() :
     m_resolveConflictsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_configurationValuesHasBeenSet(false)
+    m_configurationValuesHasBeenSet(false),
+    m_podIdentityAssociationsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String UpdateAddonRequest::SerializePayload() const
   if(m_configurationValuesHasBeenSet)
   {
    payload.WithString("configurationValues", m_configurationValues);
+
+  }
+
+  if(m_podIdentityAssociationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> podIdentityAssociationsJsonList(m_podIdentityAssociations.size());
+   for(unsigned podIdentityAssociationsIndex = 0; podIdentityAssociationsIndex < podIdentityAssociationsJsonList.GetLength(); ++podIdentityAssociationsIndex)
+   {
+     podIdentityAssociationsJsonList[podIdentityAssociationsIndex].AsObject(m_podIdentityAssociations[podIdentityAssociationsIndex].Jsonize());
+   }
+   payload.WithArray("podIdentityAssociations", std::move(podIdentityAssociationsJsonList));
 
   }
 

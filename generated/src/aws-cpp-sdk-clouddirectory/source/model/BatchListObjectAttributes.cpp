@@ -27,12 +27,8 @@ BatchListObjectAttributes::BatchListObjectAttributes() :
 {
 }
 
-BatchListObjectAttributes::BatchListObjectAttributes(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_facetFilterHasBeenSet(false)
+BatchListObjectAttributes::BatchListObjectAttributes(JsonView jsonValue)
+  : BatchListObjectAttributes()
 {
   *this = jsonValue;
 }

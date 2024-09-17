@@ -39,6 +39,7 @@ namespace Model
     AWS_SES_API VerifyDomainIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A TXT record that you must place in the DNS settings of the domain to
      * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
@@ -50,95 +51,22 @@ namespace Model
      * verification status also changes to "Success" when it is DKIM verified.</p>
      */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
-
-    /**
-     * <p>A TXT record that you must place in the DNS settings of the domain to
-     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
-     * the TXT record, the domain's verification status is "Pending". When Amazon SES
-     * detects the record, the domain's verification status changes to "Success". If
-     * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, to verify the domain, you
-     * must restart the verification process from the beginning. The domain's
-     * verification status also changes to "Success" when it is DKIM verified.</p>
-     */
     inline void SetVerificationToken(const Aws::String& value) { m_verificationToken = value; }
-
-    /**
-     * <p>A TXT record that you must place in the DNS settings of the domain to
-     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
-     * the TXT record, the domain's verification status is "Pending". When Amazon SES
-     * detects the record, the domain's verification status changes to "Success". If
-     * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, to verify the domain, you
-     * must restart the verification process from the beginning. The domain's
-     * verification status also changes to "Success" when it is DKIM verified.</p>
-     */
     inline void SetVerificationToken(Aws::String&& value) { m_verificationToken = std::move(value); }
-
-    /**
-     * <p>A TXT record that you must place in the DNS settings of the domain to
-     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
-     * the TXT record, the domain's verification status is "Pending". When Amazon SES
-     * detects the record, the domain's verification status changes to "Success". If
-     * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, to verify the domain, you
-     * must restart the verification process from the beginning. The domain's
-     * verification status also changes to "Success" when it is DKIM verified.</p>
-     */
     inline void SetVerificationToken(const char* value) { m_verificationToken.assign(value); }
-
-    /**
-     * <p>A TXT record that you must place in the DNS settings of the domain to
-     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
-     * the TXT record, the domain's verification status is "Pending". When Amazon SES
-     * detects the record, the domain's verification status changes to "Success". If
-     * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, to verify the domain, you
-     * must restart the verification process from the beginning. The domain's
-     * verification status also changes to "Success" when it is DKIM verified.</p>
-     */
     inline VerifyDomainIdentityResult& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
-
-    /**
-     * <p>A TXT record that you must place in the DNS settings of the domain to
-     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
-     * the TXT record, the domain's verification status is "Pending". When Amazon SES
-     * detects the record, the domain's verification status changes to "Success". If
-     * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, to verify the domain, you
-     * must restart the verification process from the beginning. The domain's
-     * verification status also changes to "Success" when it is DKIM verified.</p>
-     */
     inline VerifyDomainIdentityResult& WithVerificationToken(Aws::String&& value) { SetVerificationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A TXT record that you must place in the DNS settings of the domain to
-     * complete domain verification with Amazon SES.</p> <p>As Amazon SES searches for
-     * the TXT record, the domain's verification status is "Pending". When Amazon SES
-     * detects the record, the domain's verification status changes to "Success". If
-     * Amazon SES is unable to detect the record within 72 hours, the domain's
-     * verification status changes to "Failed." In that case, to verify the domain, you
-     * must restart the verification process from the beginning. The domain's
-     * verification status also changes to "Success" when it is DKIM verified.</p>
-     */
     inline VerifyDomainIdentityResult& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline VerifyDomainIdentityResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline VerifyDomainIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_verificationToken;

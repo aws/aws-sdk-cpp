@@ -27,10 +27,8 @@ ClusterNode::ClusterNode() :
 {
 }
 
-ClusterNode::ClusterNode(const XmlNode& xmlNode) : 
-    m_nodeRoleHasBeenSet(false),
-    m_privateIPAddressHasBeenSet(false),
-    m_publicIPAddressHasBeenSet(false)
+ClusterNode::ClusterNode(const XmlNode& xmlNode)
+  : ClusterNode()
 {
   *this = xmlNode;
 }

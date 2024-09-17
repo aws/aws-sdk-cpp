@@ -19,26 +19,29 @@ namespace Model
 {
 
 LastUpdate::LastUpdate() : 
+    m_status(UpdateStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_errorHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_status(UpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_sourceHasBeenSet(false)
 {
 }
 
-LastUpdate::LastUpdate(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_status(UpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+LastUpdate::LastUpdate(JsonView jsonValue)
+  : LastUpdate()
 {
   *this = jsonValue;
 }
 
 LastUpdate& LastUpdate::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = UpdateStatusMapper::GetUpdateStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
@@ -60,19 +63,17 @@ LastUpdate& LastUpdate::operator =(JsonView jsonValue)
     m_sourceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Status"))
-  {
-    m_status = UpdateStatusMapper::GetUpdateStatusForName(jsonValue.GetString("Status"));
-
-    m_statusHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue LastUpdate::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", UpdateStatusMapper::GetNameForUpdateStatus(m_status));
+  }
 
   if(m_createdAtHasBeenSet)
   {
@@ -89,11 +90,6 @@ JsonValue LastUpdate::Jsonize() const
   {
    payload.WithString("Source", m_source);
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", UpdateStatusMapper::GetNameForUpdateStatus(m_status));
   }
 
   return payload;

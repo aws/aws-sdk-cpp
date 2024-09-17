@@ -23,8 +23,8 @@ ResourceDefinitionVersion::ResourceDefinitionVersion() :
 {
 }
 
-ResourceDefinitionVersion::ResourceDefinitionVersion(JsonView jsonValue) : 
-    m_resourcesHasBeenSet(false)
+ResourceDefinitionVersion::ResourceDefinitionVersion(JsonView jsonValue)
+  : ResourceDefinitionVersion()
 {
   *this = jsonValue;
 }

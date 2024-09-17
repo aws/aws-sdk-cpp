@@ -24,9 +24,8 @@ ResaleAuthorizationCreatedDateFilter::ResaleAuthorizationCreatedDateFilter() :
 {
 }
 
-ResaleAuthorizationCreatedDateFilter::ResaleAuthorizationCreatedDateFilter(JsonView jsonValue) : 
-    m_dateRangeHasBeenSet(false),
-    m_valueListHasBeenSet(false)
+ResaleAuthorizationCreatedDateFilter::ResaleAuthorizationCreatedDateFilter(JsonView jsonValue)
+  : ResaleAuthorizationCreatedDateFilter()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PreviewOverride::PreviewOverride() :
 {
 }
 
-PreviewOverride::PreviewOverride(JsonView jsonValue) : 
-    m_newMembersHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+PreviewOverride::PreviewOverride(JsonView jsonValue)
+  : PreviewOverride()
 {
   *this = jsonValue;
 }

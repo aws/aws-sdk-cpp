@@ -32,63 +32,29 @@ namespace Model
     AWS_INSPECTOR2_API CreateSbomExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The report ID for the software bill of materials (SBOM) report.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>The report ID for the software bill of materials (SBOM) report.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportId = value; }
-
-    /**
-     * <p>The report ID for the software bill of materials (SBOM) report.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportId = std::move(value); }
-
-    /**
-     * <p>The report ID for the software bill of materials (SBOM) report.</p>
-     */
     inline void SetReportId(const char* value) { m_reportId.assign(value); }
-
-    /**
-     * <p>The report ID for the software bill of materials (SBOM) report.</p>
-     */
     inline CreateSbomExportResult& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>The report ID for the software bill of materials (SBOM) report.</p>
-     */
     inline CreateSbomExportResult& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The report ID for the software bill of materials (SBOM) report.</p>
-     */
     inline CreateSbomExportResult& WithReportId(const char* value) { SetReportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSbomExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSbomExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSbomExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

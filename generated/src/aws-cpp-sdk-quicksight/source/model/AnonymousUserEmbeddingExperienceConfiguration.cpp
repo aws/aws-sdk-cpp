@@ -21,14 +21,13 @@ namespace Model
 AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration() : 
     m_dashboardHasBeenSet(false),
     m_dashboardVisualHasBeenSet(false),
-    m_qSearchBarHasBeenSet(false)
+    m_qSearchBarHasBeenSet(false),
+    m_generativeQnAHasBeenSet(false)
 {
 }
 
-AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration(JsonView jsonValue) : 
-    m_dashboardHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false),
-    m_qSearchBarHasBeenSet(false)
+AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration(JsonView jsonValue)
+  : AnonymousUserEmbeddingExperienceConfiguration()
 {
   *this = jsonValue;
 }
@@ -56,6 +55,13 @@ AnonymousUserEmbeddingExperienceConfiguration& AnonymousUserEmbeddingExperienceC
     m_qSearchBarHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GenerativeQnA"))
+  {
+    m_generativeQnA = jsonValue.GetObject("GenerativeQnA");
+
+    m_generativeQnAHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +84,12 @@ JsonValue AnonymousUserEmbeddingExperienceConfiguration::Jsonize() const
   if(m_qSearchBarHasBeenSet)
   {
    payload.WithObject("QSearchBar", m_qSearchBar.Jsonize());
+
+  }
+
+  if(m_generativeQnAHasBeenSet)
+  {
+   payload.WithObject("GenerativeQnA", m_generativeQnA.Jsonize());
 
   }
 

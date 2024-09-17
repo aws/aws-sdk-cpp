@@ -26,11 +26,8 @@ AccountUsage::AccountUsage() :
 {
 }
 
-AccountUsage::AccountUsage(JsonView jsonValue) : 
-    m_totalCodeSize(0),
-    m_totalCodeSizeHasBeenSet(false),
-    m_functionCount(0),
-    m_functionCountHasBeenSet(false)
+AccountUsage::AccountUsage(JsonView jsonValue)
+  : AccountUsage()
 {
   *this = jsonValue;
 }

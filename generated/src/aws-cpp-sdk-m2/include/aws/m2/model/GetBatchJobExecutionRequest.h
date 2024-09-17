@@ -32,87 +32,33 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The identifier of the application.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the application.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The identifier of the application.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the application.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The identifier of the application.</p>
-     */
     inline GetBatchJobExecutionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the application.</p>
-     */
     inline GetBatchJobExecutionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the application.</p>
-     */
     inline GetBatchJobExecutionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the batch job execution.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
-
-    /**
-     * <p>The unique identifier of the batch job execution.</p>
-     */
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the batch job execution.</p>
-     */
     inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-
-    /**
-     * <p>The unique identifier of the batch job execution.</p>
-     */
     inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the batch job execution.</p>
-     */
     inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the batch job execution.</p>
-     */
     inline GetBatchJobExecutionRequest& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the batch job execution.</p>
-     */
     inline GetBatchJobExecutionRequest& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the batch job execution.</p>
-     */
     inline GetBatchJobExecutionRequest& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

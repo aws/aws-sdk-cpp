@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The forecast properties setup of a forecast in the line chart.</p>
      */
     inline const TimeBasedForecastProperties& GetForecastProperties() const{ return m_forecastProperties; }
-
-    /**
-     * <p>The forecast properties setup of a forecast in the line chart.</p>
-     */
     inline bool ForecastPropertiesHasBeenSet() const { return m_forecastPropertiesHasBeenSet; }
-
-    /**
-     * <p>The forecast properties setup of a forecast in the line chart.</p>
-     */
     inline void SetForecastProperties(const TimeBasedForecastProperties& value) { m_forecastPropertiesHasBeenSet = true; m_forecastProperties = value; }
-
-    /**
-     * <p>The forecast properties setup of a forecast in the line chart.</p>
-     */
     inline void SetForecastProperties(TimeBasedForecastProperties&& value) { m_forecastPropertiesHasBeenSet = true; m_forecastProperties = std::move(value); }
-
-    /**
-     * <p>The forecast properties setup of a forecast in the line chart.</p>
-     */
     inline ForecastConfiguration& WithForecastProperties(const TimeBasedForecastProperties& value) { SetForecastProperties(value); return *this;}
-
-    /**
-     * <p>The forecast properties setup of a forecast in the line chart.</p>
-     */
     inline ForecastConfiguration& WithForecastProperties(TimeBasedForecastProperties&& value) { SetForecastProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The forecast scenario of a forecast in the line chart.</p>
      */
     inline const ForecastScenario& GetScenario() const{ return m_scenario; }
-
-    /**
-     * <p>The forecast scenario of a forecast in the line chart.</p>
-     */
     inline bool ScenarioHasBeenSet() const { return m_scenarioHasBeenSet; }
-
-    /**
-     * <p>The forecast scenario of a forecast in the line chart.</p>
-     */
     inline void SetScenario(const ForecastScenario& value) { m_scenarioHasBeenSet = true; m_scenario = value; }
-
-    /**
-     * <p>The forecast scenario of a forecast in the line chart.</p>
-     */
     inline void SetScenario(ForecastScenario&& value) { m_scenarioHasBeenSet = true; m_scenario = std::move(value); }
-
-    /**
-     * <p>The forecast scenario of a forecast in the line chart.</p>
-     */
     inline ForecastConfiguration& WithScenario(const ForecastScenario& value) { SetScenario(value); return *this;}
-
-    /**
-     * <p>The forecast scenario of a forecast in the line chart.</p>
-     */
     inline ForecastConfiguration& WithScenario(ForecastScenario&& value) { SetScenario(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TimeBasedForecastProperties m_forecastProperties;

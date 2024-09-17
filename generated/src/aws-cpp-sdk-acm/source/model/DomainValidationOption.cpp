@@ -24,9 +24,8 @@ DomainValidationOption::DomainValidationOption() :
 {
 }
 
-DomainValidationOption::DomainValidationOption(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_validationDomainHasBeenSet(false)
+DomainValidationOption::DomainValidationOption(JsonView jsonValue)
+  : DomainValidationOption()
 {
   *this = jsonValue;
 }

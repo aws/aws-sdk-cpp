@@ -31,16 +31,8 @@ CatalogKinesisSource::CatalogKinesisSource() :
 {
 }
 
-CatalogKinesisSource::CatalogKinesisSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_windowSize(0),
-    m_windowSizeHasBeenSet(false),
-    m_detectSchema(false),
-    m_detectSchemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_streamingOptionsHasBeenSet(false),
-    m_dataPreviewOptionsHasBeenSet(false)
+CatalogKinesisSource::CatalogKinesisSource(JsonView jsonValue)
+  : CatalogKinesisSource()
 {
   *this = jsonValue;
 }

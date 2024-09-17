@@ -25,8 +25,8 @@ CommonPrefix::CommonPrefix() :
 {
 }
 
-CommonPrefix::CommonPrefix(const XmlNode& xmlNode) : 
-    m_prefixHasBeenSet(false)
+CommonPrefix::CommonPrefix(const XmlNode& xmlNode)
+  : CommonPrefix()
 {
   *this = xmlNode;
 }

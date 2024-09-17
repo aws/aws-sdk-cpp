@@ -37,36 +37,17 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The business name generation mechanism.</p>
      */
     inline const BusinessNameGenerationConfiguration& GetBusinessNameGeneration() const{ return m_businessNameGeneration; }
-
-    /**
-     * <p>The business name generation mechanism.</p>
-     */
     inline bool BusinessNameGenerationHasBeenSet() const { return m_businessNameGenerationHasBeenSet; }
-
-    /**
-     * <p>The business name generation mechanism.</p>
-     */
     inline void SetBusinessNameGeneration(const BusinessNameGenerationConfiguration& value) { m_businessNameGenerationHasBeenSet = true; m_businessNameGeneration = value; }
-
-    /**
-     * <p>The business name generation mechanism.</p>
-     */
     inline void SetBusinessNameGeneration(BusinessNameGenerationConfiguration&& value) { m_businessNameGenerationHasBeenSet = true; m_businessNameGeneration = std::move(value); }
-
-    /**
-     * <p>The business name generation mechanism.</p>
-     */
     inline PredictionConfiguration& WithBusinessNameGeneration(const BusinessNameGenerationConfiguration& value) { SetBusinessNameGeneration(value); return *this;}
-
-    /**
-     * <p>The business name generation mechanism.</p>
-     */
     inline PredictionConfiguration& WithBusinessNameGeneration(BusinessNameGenerationConfiguration&& value) { SetBusinessNameGeneration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BusinessNameGenerationConfiguration m_businessNameGeneration;

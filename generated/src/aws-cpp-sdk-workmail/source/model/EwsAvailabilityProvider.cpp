@@ -25,10 +25,8 @@ EwsAvailabilityProvider::EwsAvailabilityProvider() :
 {
 }
 
-EwsAvailabilityProvider::EwsAvailabilityProvider(JsonView jsonValue) : 
-    m_ewsEndpointHasBeenSet(false),
-    m_ewsUsernameHasBeenSet(false),
-    m_ewsPasswordHasBeenSet(false)
+EwsAvailabilityProvider::EwsAvailabilityProvider(JsonView jsonValue)
+  : EwsAvailabilityProvider()
 {
   *this = jsonValue;
 }

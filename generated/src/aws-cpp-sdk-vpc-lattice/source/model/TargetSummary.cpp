@@ -28,13 +28,8 @@ TargetSummary::TargetSummary() :
 {
 }
 
-TargetSummary::TargetSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_reasonCodeHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+TargetSummary::TargetSummary(JsonView jsonValue)
+  : TargetSummary()
 {
   *this = jsonValue;
 }

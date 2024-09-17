@@ -25,8 +25,8 @@ LaunchConfiguration::LaunchConfiguration() :
 {
 }
 
-LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode)
+  : LaunchConfiguration()
 {
   *this = xmlNode;
 }

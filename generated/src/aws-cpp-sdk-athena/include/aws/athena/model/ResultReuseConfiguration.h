@@ -38,42 +38,18 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether previous query results are reused, and if so, their maximum
      * age.</p>
      */
     inline const ResultReuseByAgeConfiguration& GetResultReuseByAgeConfiguration() const{ return m_resultReuseByAgeConfiguration; }
-
-    /**
-     * <p>Specifies whether previous query results are reused, and if so, their maximum
-     * age.</p>
-     */
     inline bool ResultReuseByAgeConfigurationHasBeenSet() const { return m_resultReuseByAgeConfigurationHasBeenSet; }
-
-    /**
-     * <p>Specifies whether previous query results are reused, and if so, their maximum
-     * age.</p>
-     */
     inline void SetResultReuseByAgeConfiguration(const ResultReuseByAgeConfiguration& value) { m_resultReuseByAgeConfigurationHasBeenSet = true; m_resultReuseByAgeConfiguration = value; }
-
-    /**
-     * <p>Specifies whether previous query results are reused, and if so, their maximum
-     * age.</p>
-     */
     inline void SetResultReuseByAgeConfiguration(ResultReuseByAgeConfiguration&& value) { m_resultReuseByAgeConfigurationHasBeenSet = true; m_resultReuseByAgeConfiguration = std::move(value); }
-
-    /**
-     * <p>Specifies whether previous query results are reused, and if so, their maximum
-     * age.</p>
-     */
     inline ResultReuseConfiguration& WithResultReuseByAgeConfiguration(const ResultReuseByAgeConfiguration& value) { SetResultReuseByAgeConfiguration(value); return *this;}
-
-    /**
-     * <p>Specifies whether previous query results are reused, and if so, their maximum
-     * age.</p>
-     */
     inline ResultReuseConfiguration& WithResultReuseByAgeConfiguration(ResultReuseByAgeConfiguration&& value) { SetResultReuseByAgeConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResultReuseByAgeConfiguration m_resultReuseByAgeConfiguration;

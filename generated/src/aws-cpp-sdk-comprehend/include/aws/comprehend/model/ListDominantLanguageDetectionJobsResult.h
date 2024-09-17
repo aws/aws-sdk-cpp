@@ -34,99 +34,42 @@ namespace Model
     AWS_COMPREHEND_API ListDominantLanguageDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list containing the properties of each job that is returned.</p>
      */
     inline const Aws::Vector<DominantLanguageDetectionJobProperties>& GetDominantLanguageDetectionJobPropertiesList() const{ return m_dominantLanguageDetectionJobPropertiesList; }
-
-    /**
-     * <p>A list containing the properties of each job that is returned.</p>
-     */
     inline void SetDominantLanguageDetectionJobPropertiesList(const Aws::Vector<DominantLanguageDetectionJobProperties>& value) { m_dominantLanguageDetectionJobPropertiesList = value; }
-
-    /**
-     * <p>A list containing the properties of each job that is returned.</p>
-     */
     inline void SetDominantLanguageDetectionJobPropertiesList(Aws::Vector<DominantLanguageDetectionJobProperties>&& value) { m_dominantLanguageDetectionJobPropertiesList = std::move(value); }
-
-    /**
-     * <p>A list containing the properties of each job that is returned.</p>
-     */
     inline ListDominantLanguageDetectionJobsResult& WithDominantLanguageDetectionJobPropertiesList(const Aws::Vector<DominantLanguageDetectionJobProperties>& value) { SetDominantLanguageDetectionJobPropertiesList(value); return *this;}
-
-    /**
-     * <p>A list containing the properties of each job that is returned.</p>
-     */
     inline ListDominantLanguageDetectionJobsResult& WithDominantLanguageDetectionJobPropertiesList(Aws::Vector<DominantLanguageDetectionJobProperties>&& value) { SetDominantLanguageDetectionJobPropertiesList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list containing the properties of each job that is returned.</p>
-     */
     inline ListDominantLanguageDetectionJobsResult& AddDominantLanguageDetectionJobPropertiesList(const DominantLanguageDetectionJobProperties& value) { m_dominantLanguageDetectionJobPropertiesList.push_back(value); return *this; }
-
-    /**
-     * <p>A list containing the properties of each job that is returned.</p>
-     */
     inline ListDominantLanguageDetectionJobsResult& AddDominantLanguageDetectionJobPropertiesList(DominantLanguageDetectionJobProperties&& value) { m_dominantLanguageDetectionJobPropertiesList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline ListDominantLanguageDetectionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline ListDominantLanguageDetectionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline ListDominantLanguageDetectionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDominantLanguageDetectionJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDominantLanguageDetectionJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDominantLanguageDetectionJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DominantLanguageDetectionJobProperties> m_dominantLanguageDetectionJobPropertiesList;

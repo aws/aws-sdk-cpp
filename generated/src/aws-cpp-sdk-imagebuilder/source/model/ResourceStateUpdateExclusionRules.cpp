@@ -23,8 +23,8 @@ ResourceStateUpdateExclusionRules::ResourceStateUpdateExclusionRules() :
 {
 }
 
-ResourceStateUpdateExclusionRules::ResourceStateUpdateExclusionRules(JsonView jsonValue) : 
-    m_amisHasBeenSet(false)
+ResourceStateUpdateExclusionRules::ResourceStateUpdateExclusionRules(JsonView jsonValue)
+  : ResourceStateUpdateExclusionRules()
 {
   *this = jsonValue;
 }

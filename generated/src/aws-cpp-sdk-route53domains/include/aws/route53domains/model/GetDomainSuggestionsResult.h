@@ -34,77 +34,31 @@ namespace Model
     AWS_ROUTE53DOMAINS_API GetDomainSuggestionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of possible domain names. If you specified <code>true</code> for
      * <code>OnlyAvailable</code> in the request, the list contains only domains that
      * are available for registration.</p>
      */
     inline const Aws::Vector<DomainSuggestion>& GetSuggestionsList() const{ return m_suggestionsList; }
-
-    /**
-     * <p>A list of possible domain names. If you specified <code>true</code> for
-     * <code>OnlyAvailable</code> in the request, the list contains only domains that
-     * are available for registration.</p>
-     */
     inline void SetSuggestionsList(const Aws::Vector<DomainSuggestion>& value) { m_suggestionsList = value; }
-
-    /**
-     * <p>A list of possible domain names. If you specified <code>true</code> for
-     * <code>OnlyAvailable</code> in the request, the list contains only domains that
-     * are available for registration.</p>
-     */
     inline void SetSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { m_suggestionsList = std::move(value); }
-
-    /**
-     * <p>A list of possible domain names. If you specified <code>true</code> for
-     * <code>OnlyAvailable</code> in the request, the list contains only domains that
-     * are available for registration.</p>
-     */
     inline GetDomainSuggestionsResult& WithSuggestionsList(const Aws::Vector<DomainSuggestion>& value) { SetSuggestionsList(value); return *this;}
-
-    /**
-     * <p>A list of possible domain names. If you specified <code>true</code> for
-     * <code>OnlyAvailable</code> in the request, the list contains only domains that
-     * are available for registration.</p>
-     */
     inline GetDomainSuggestionsResult& WithSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { SetSuggestionsList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of possible domain names. If you specified <code>true</code> for
-     * <code>OnlyAvailable</code> in the request, the list contains only domains that
-     * are available for registration.</p>
-     */
     inline GetDomainSuggestionsResult& AddSuggestionsList(const DomainSuggestion& value) { m_suggestionsList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of possible domain names. If you specified <code>true</code> for
-     * <code>OnlyAvailable</code> in the request, the list contains only domains that
-     * are available for registration.</p>
-     */
     inline GetDomainSuggestionsResult& AddSuggestionsList(DomainSuggestion&& value) { m_suggestionsList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDomainSuggestionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDomainSuggestionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDomainSuggestionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DomainSuggestion> m_suggestionsList;

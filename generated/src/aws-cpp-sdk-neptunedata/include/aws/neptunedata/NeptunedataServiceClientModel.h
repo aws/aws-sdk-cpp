@@ -61,6 +61,25 @@
 #include <aws/neptunedata/model/StartMLDataProcessingJobResult.h>
 #include <aws/neptunedata/model/StartMLModelTrainingJobResult.h>
 #include <aws/neptunedata/model/StartMLModelTransformJobResult.h>
+#include <aws/neptunedata/model/GetRDFGraphSummaryRequest.h>
+#include <aws/neptunedata/model/GetSparqlStatisticsRequest.h>
+#include <aws/neptunedata/model/ListLoaderJobsRequest.h>
+#include <aws/neptunedata/model/ListMLModelTrainingJobsRequest.h>
+#include <aws/neptunedata/model/GetPropertygraphStreamRequest.h>
+#include <aws/neptunedata/model/ManagePropertygraphStatisticsRequest.h>
+#include <aws/neptunedata/model/DeleteSparqlStatisticsRequest.h>
+#include <aws/neptunedata/model/ListMLModelTransformJobsRequest.h>
+#include <aws/neptunedata/model/ListMLDataProcessingJobsRequest.h>
+#include <aws/neptunedata/model/ManageSparqlStatisticsRequest.h>
+#include <aws/neptunedata/model/GetEngineStatusRequest.h>
+#include <aws/neptunedata/model/GetSparqlStreamRequest.h>
+#include <aws/neptunedata/model/GetPropertygraphSummaryRequest.h>
+#include <aws/neptunedata/model/ListGremlinQueriesRequest.h>
+#include <aws/neptunedata/model/GetPropertygraphStatisticsRequest.h>
+#include <aws/neptunedata/model/DeletePropertygraphStatisticsRequest.h>
+#include <aws/neptunedata/model/CreateMLEndpointRequest.h>
+#include <aws/neptunedata/model/ListOpenCypherQueriesRequest.h>
+#include <aws/neptunedata/model/ListMLEndpointsRequest.h>
 /* End of service model headers required in NeptunedataClient header */
 
 namespace Aws
@@ -94,7 +113,7 @@ namespace Aws
 
   namespace neptunedata
   {
-    using NeptunedataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NeptunedataClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NeptunedataEndpointProviderBase = Aws::neptunedata::Endpoint::NeptunedataEndpointProviderBase;
     using NeptunedataEndpointProvider = Aws::neptunedata::Endpoint::NeptunedataEndpointProvider;
 

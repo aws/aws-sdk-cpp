@@ -40,25 +40,8 @@ BatchPrediction::BatchPrediction() :
 {
 }
 
-BatchPrediction::BatchPrediction(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_status(AsyncJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_lastHeartbeatTimeHasBeenSet(false),
-    m_inputPathHasBeenSet(false),
-    m_outputPathHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_detectorNameHasBeenSet(false),
-    m_detectorVersionHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_processedRecordsCount(0),
-    m_processedRecordsCountHasBeenSet(false),
-    m_totalRecordsCount(0),
-    m_totalRecordsCountHasBeenSet(false)
+BatchPrediction::BatchPrediction(JsonView jsonValue)
+  : BatchPrediction()
 {
   *this = jsonValue;
 }

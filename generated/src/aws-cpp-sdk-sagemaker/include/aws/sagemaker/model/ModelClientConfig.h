@@ -36,55 +36,27 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The timeout value in seconds for an invocation request. The default value is
      * 600.</p>
      */
     inline int GetInvocationsTimeoutInSeconds() const{ return m_invocationsTimeoutInSeconds; }
-
-    /**
-     * <p>The timeout value in seconds for an invocation request. The default value is
-     * 600.</p>
-     */
     inline bool InvocationsTimeoutInSecondsHasBeenSet() const { return m_invocationsTimeoutInSecondsHasBeenSet; }
-
-    /**
-     * <p>The timeout value in seconds for an invocation request. The default value is
-     * 600.</p>
-     */
     inline void SetInvocationsTimeoutInSeconds(int value) { m_invocationsTimeoutInSecondsHasBeenSet = true; m_invocationsTimeoutInSeconds = value; }
-
-    /**
-     * <p>The timeout value in seconds for an invocation request. The default value is
-     * 600.</p>
-     */
     inline ModelClientConfig& WithInvocationsTimeoutInSeconds(int value) { SetInvocationsTimeoutInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of retries when invocation requests are failing. The
      * default value is 3.</p>
      */
     inline int GetInvocationsMaxRetries() const{ return m_invocationsMaxRetries; }
-
-    /**
-     * <p>The maximum number of retries when invocation requests are failing. The
-     * default value is 3.</p>
-     */
     inline bool InvocationsMaxRetriesHasBeenSet() const { return m_invocationsMaxRetriesHasBeenSet; }
-
-    /**
-     * <p>The maximum number of retries when invocation requests are failing. The
-     * default value is 3.</p>
-     */
     inline void SetInvocationsMaxRetries(int value) { m_invocationsMaxRetriesHasBeenSet = true; m_invocationsMaxRetries = value; }
-
-    /**
-     * <p>The maximum number of retries when invocation requests are failing. The
-     * default value is 3.</p>
-     */
     inline ModelClientConfig& WithInvocationsMaxRetries(int value) { SetInvocationsMaxRetries(value); return *this;}
-
+    ///@}
   private:
 
     int m_invocationsTimeoutInSeconds;

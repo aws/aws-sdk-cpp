@@ -31,16 +31,8 @@ OrganizationStatistics::OrganizationStatistics() :
 {
 }
 
-OrganizationStatistics::OrganizationStatistics(JsonView jsonValue) : 
-    m_totalAccountsCount(0),
-    m_totalAccountsCountHasBeenSet(false),
-    m_memberAccountsCount(0),
-    m_memberAccountsCountHasBeenSet(false),
-    m_activeAccountsCount(0),
-    m_activeAccountsCountHasBeenSet(false),
-    m_enabledAccountsCount(0),
-    m_enabledAccountsCountHasBeenSet(false),
-    m_countByFeatureHasBeenSet(false)
+OrganizationStatistics::OrganizationStatistics(JsonView jsonValue)
+  : OrganizationStatistics()
 {
   *this = jsonValue;
 }

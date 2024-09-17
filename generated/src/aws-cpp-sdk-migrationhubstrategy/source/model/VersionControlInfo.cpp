@@ -25,10 +25,8 @@ VersionControlInfo::VersionControlInfo() :
 {
 }
 
-VersionControlInfo::VersionControlInfo(JsonView jsonValue) : 
-    m_versionControlConfigurationTimeStampHasBeenSet(false),
-    m_versionControlType(VersionControlType::NOT_SET),
-    m_versionControlTypeHasBeenSet(false)
+VersionControlInfo::VersionControlInfo(JsonView jsonValue)
+  : VersionControlInfo()
 {
   *this = jsonValue;
 }

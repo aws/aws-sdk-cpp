@@ -26,11 +26,8 @@ DataPathLabelType::DataPathLabelType() :
 {
 }
 
-DataPathLabelType::DataPathLabelType(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_fieldValueHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+DataPathLabelType::DataPathLabelType(JsonView jsonValue)
+  : DataPathLabelType()
 {
   *this = jsonValue;
 }

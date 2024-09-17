@@ -21,14 +21,20 @@
 #include <aws/arc-zonal-shift/model/CancelZonalShiftResult.h>
 #include <aws/arc-zonal-shift/model/CreatePracticeRunConfigurationResult.h>
 #include <aws/arc-zonal-shift/model/DeletePracticeRunConfigurationResult.h>
+#include <aws/arc-zonal-shift/model/GetAutoshiftObserverNotificationStatusResult.h>
 #include <aws/arc-zonal-shift/model/GetManagedResourceResult.h>
 #include <aws/arc-zonal-shift/model/ListAutoshiftsResult.h>
 #include <aws/arc-zonal-shift/model/ListManagedResourcesResult.h>
 #include <aws/arc-zonal-shift/model/ListZonalShiftsResult.h>
 #include <aws/arc-zonal-shift/model/StartZonalShiftResult.h>
+#include <aws/arc-zonal-shift/model/UpdateAutoshiftObserverNotificationStatusResult.h>
 #include <aws/arc-zonal-shift/model/UpdatePracticeRunConfigurationResult.h>
 #include <aws/arc-zonal-shift/model/UpdateZonalAutoshiftConfigurationResult.h>
 #include <aws/arc-zonal-shift/model/UpdateZonalShiftResult.h>
+#include <aws/arc-zonal-shift/model/ListManagedResourcesRequest.h>
+#include <aws/arc-zonal-shift/model/ListAutoshiftsRequest.h>
+#include <aws/arc-zonal-shift/model/ListZonalShiftsRequest.h>
+#include <aws/arc-zonal-shift/model/GetAutoshiftObserverNotificationStatusRequest.h>
 /* End of service model headers required in ARCZonalShiftClient header */
 
 namespace Aws
@@ -62,7 +68,7 @@ namespace Aws
 
   namespace ARCZonalShift
   {
-    using ARCZonalShiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ARCZonalShiftClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ARCZonalShiftEndpointProviderBase = Aws::ARCZonalShift::Endpoint::ARCZonalShiftEndpointProviderBase;
     using ARCZonalShiftEndpointProvider = Aws::ARCZonalShift::Endpoint::ARCZonalShiftEndpointProvider;
 
@@ -72,11 +78,13 @@ namespace Aws
       class CancelZonalShiftRequest;
       class CreatePracticeRunConfigurationRequest;
       class DeletePracticeRunConfigurationRequest;
+      class GetAutoshiftObserverNotificationStatusRequest;
       class GetManagedResourceRequest;
       class ListAutoshiftsRequest;
       class ListManagedResourcesRequest;
       class ListZonalShiftsRequest;
       class StartZonalShiftRequest;
+      class UpdateAutoshiftObserverNotificationStatusRequest;
       class UpdatePracticeRunConfigurationRequest;
       class UpdateZonalAutoshiftConfigurationRequest;
       class UpdateZonalShiftRequest;
@@ -86,11 +94,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<CancelZonalShiftResult, ARCZonalShiftError> CancelZonalShiftOutcome;
       typedef Aws::Utils::Outcome<CreatePracticeRunConfigurationResult, ARCZonalShiftError> CreatePracticeRunConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeletePracticeRunConfigurationResult, ARCZonalShiftError> DeletePracticeRunConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetAutoshiftObserverNotificationStatusResult, ARCZonalShiftError> GetAutoshiftObserverNotificationStatusOutcome;
       typedef Aws::Utils::Outcome<GetManagedResourceResult, ARCZonalShiftError> GetManagedResourceOutcome;
       typedef Aws::Utils::Outcome<ListAutoshiftsResult, ARCZonalShiftError> ListAutoshiftsOutcome;
       typedef Aws::Utils::Outcome<ListManagedResourcesResult, ARCZonalShiftError> ListManagedResourcesOutcome;
       typedef Aws::Utils::Outcome<ListZonalShiftsResult, ARCZonalShiftError> ListZonalShiftsOutcome;
       typedef Aws::Utils::Outcome<StartZonalShiftResult, ARCZonalShiftError> StartZonalShiftOutcome;
+      typedef Aws::Utils::Outcome<UpdateAutoshiftObserverNotificationStatusResult, ARCZonalShiftError> UpdateAutoshiftObserverNotificationStatusOutcome;
       typedef Aws::Utils::Outcome<UpdatePracticeRunConfigurationResult, ARCZonalShiftError> UpdatePracticeRunConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateZonalAutoshiftConfigurationResult, ARCZonalShiftError> UpdateZonalAutoshiftConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateZonalShiftResult, ARCZonalShiftError> UpdateZonalShiftOutcome;
@@ -100,11 +110,13 @@ namespace Aws
       typedef std::future<CancelZonalShiftOutcome> CancelZonalShiftOutcomeCallable;
       typedef std::future<CreatePracticeRunConfigurationOutcome> CreatePracticeRunConfigurationOutcomeCallable;
       typedef std::future<DeletePracticeRunConfigurationOutcome> DeletePracticeRunConfigurationOutcomeCallable;
+      typedef std::future<GetAutoshiftObserverNotificationStatusOutcome> GetAutoshiftObserverNotificationStatusOutcomeCallable;
       typedef std::future<GetManagedResourceOutcome> GetManagedResourceOutcomeCallable;
       typedef std::future<ListAutoshiftsOutcome> ListAutoshiftsOutcomeCallable;
       typedef std::future<ListManagedResourcesOutcome> ListManagedResourcesOutcomeCallable;
       typedef std::future<ListZonalShiftsOutcome> ListZonalShiftsOutcomeCallable;
       typedef std::future<StartZonalShiftOutcome> StartZonalShiftOutcomeCallable;
+      typedef std::future<UpdateAutoshiftObserverNotificationStatusOutcome> UpdateAutoshiftObserverNotificationStatusOutcomeCallable;
       typedef std::future<UpdatePracticeRunConfigurationOutcome> UpdatePracticeRunConfigurationOutcomeCallable;
       typedef std::future<UpdateZonalAutoshiftConfigurationOutcome> UpdateZonalAutoshiftConfigurationOutcomeCallable;
       typedef std::future<UpdateZonalShiftOutcome> UpdateZonalShiftOutcomeCallable;
@@ -117,11 +129,13 @@ namespace Aws
     typedef std::function<void(const ARCZonalShiftClient*, const Model::CancelZonalShiftRequest&, const Model::CancelZonalShiftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelZonalShiftResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::CreatePracticeRunConfigurationRequest&, const Model::CreatePracticeRunConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePracticeRunConfigurationResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::DeletePracticeRunConfigurationRequest&, const Model::DeletePracticeRunConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePracticeRunConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ARCZonalShiftClient*, const Model::GetAutoshiftObserverNotificationStatusRequest&, const Model::GetAutoshiftObserverNotificationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoshiftObserverNotificationStatusResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::GetManagedResourceRequest&, const Model::GetManagedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedResourceResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::ListAutoshiftsRequest&, const Model::ListAutoshiftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutoshiftsResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::ListManagedResourcesRequest&, const Model::ListManagedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedResourcesResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::ListZonalShiftsRequest&, const Model::ListZonalShiftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListZonalShiftsResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::StartZonalShiftRequest&, const Model::StartZonalShiftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartZonalShiftResponseReceivedHandler;
+    typedef std::function<void(const ARCZonalShiftClient*, const Model::UpdateAutoshiftObserverNotificationStatusRequest&, const Model::UpdateAutoshiftObserverNotificationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutoshiftObserverNotificationStatusResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::UpdatePracticeRunConfigurationRequest&, const Model::UpdatePracticeRunConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePracticeRunConfigurationResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::UpdateZonalAutoshiftConfigurationRequest&, const Model::UpdateZonalAutoshiftConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateZonalAutoshiftConfigurationResponseReceivedHandler;
     typedef std::function<void(const ARCZonalShiftClient*, const Model::UpdateZonalShiftRequest&, const Model::UpdateZonalShiftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateZonalShiftResponseReceivedHandler;

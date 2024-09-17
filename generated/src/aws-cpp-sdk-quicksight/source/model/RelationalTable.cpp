@@ -27,12 +27,8 @@ RelationalTable::RelationalTable() :
 {
 }
 
-RelationalTable::RelationalTable(JsonView jsonValue) : 
-    m_dataSourceArnHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_inputColumnsHasBeenSet(false)
+RelationalTable::RelationalTable(JsonView jsonValue)
+  : RelationalTable()
 {
   *this = jsonValue;
 }

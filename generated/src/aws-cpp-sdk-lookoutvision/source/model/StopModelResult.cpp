@@ -22,8 +22,8 @@ StopModelResult::StopModelResult() :
 {
 }
 
-StopModelResult::StopModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelHostingStatus::NOT_SET)
+StopModelResult::StopModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopModelResult()
 {
   *this = result;
 }

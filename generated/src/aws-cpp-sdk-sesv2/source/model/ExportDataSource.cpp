@@ -24,9 +24,8 @@ ExportDataSource::ExportDataSource() :
 {
 }
 
-ExportDataSource::ExportDataSource(JsonView jsonValue) : 
-    m_metricsDataSourceHasBeenSet(false),
-    m_messageInsightsDataSourceHasBeenSet(false)
+ExportDataSource::ExportDataSource(JsonView jsonValue)
+  : ExportDataSource()
 {
   *this = jsonValue;
 }

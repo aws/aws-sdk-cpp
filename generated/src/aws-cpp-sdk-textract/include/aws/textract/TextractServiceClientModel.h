@@ -43,6 +43,8 @@
 #include <aws/textract/model/TagResourceResult.h>
 #include <aws/textract/model/UntagResourceResult.h>
 #include <aws/textract/model/UpdateAdapterResult.h>
+#include <aws/textract/model/ListAdapterVersionsRequest.h>
+#include <aws/textract/model/ListAdaptersRequest.h>
 /* End of service model headers required in TextractClient header */
 
 namespace Aws
@@ -76,7 +78,7 @@ namespace Aws
 
   namespace Textract
   {
-    using TextractClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TextractClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TextractEndpointProviderBase = Aws::Textract::Endpoint::TextractEndpointProviderBase;
     using TextractEndpointProvider = Aws::Textract::Endpoint::TextractEndpointProvider;
 

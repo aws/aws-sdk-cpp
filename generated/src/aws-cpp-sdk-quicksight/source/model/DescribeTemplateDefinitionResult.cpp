@@ -23,9 +23,8 @@ DescribeTemplateDefinitionResult::DescribeTemplateDefinitionResult() :
 {
 }
 
-DescribeTemplateDefinitionResult::DescribeTemplateDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+DescribeTemplateDefinitionResult::DescribeTemplateDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTemplateDefinitionResult()
 {
   *this = result;
 }

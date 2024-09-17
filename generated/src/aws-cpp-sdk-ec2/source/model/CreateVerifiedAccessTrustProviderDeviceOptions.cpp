@@ -26,9 +26,8 @@ CreateVerifiedAccessTrustProviderDeviceOptions::CreateVerifiedAccessTrustProvide
 {
 }
 
-CreateVerifiedAccessTrustProviderDeviceOptions::CreateVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode) : 
-    m_tenantIdHasBeenSet(false),
-    m_publicSigningKeyUrlHasBeenSet(false)
+CreateVerifiedAccessTrustProviderDeviceOptions::CreateVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode)
+  : CreateVerifiedAccessTrustProviderDeviceOptions()
 {
   *this = xmlNode;
 }

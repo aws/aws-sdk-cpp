@@ -36,62 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The deletion task identifier. This identifier is returned by the
      * <a>DeleteServiceLinkedRole</a> operation in the format
      * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
      */
     inline const Aws::String& GetDeletionTaskId() const{ return m_deletionTaskId; }
-
-    /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
-     * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
-     */
     inline bool DeletionTaskIdHasBeenSet() const { return m_deletionTaskIdHasBeenSet; }
-
-    /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
-     * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
-     */
     inline void SetDeletionTaskId(const Aws::String& value) { m_deletionTaskIdHasBeenSet = true; m_deletionTaskId = value; }
-
-    /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
-     * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
-     */
     inline void SetDeletionTaskId(Aws::String&& value) { m_deletionTaskIdHasBeenSet = true; m_deletionTaskId = std::move(value); }
-
-    /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
-     * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
-     */
     inline void SetDeletionTaskId(const char* value) { m_deletionTaskIdHasBeenSet = true; m_deletionTaskId.assign(value); }
-
-    /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
-     * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
-     */
     inline GetServiceLinkedRoleDeletionStatusRequest& WithDeletionTaskId(const Aws::String& value) { SetDeletionTaskId(value); return *this;}
-
-    /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
-     * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
-     */
     inline GetServiceLinkedRoleDeletionStatusRequest& WithDeletionTaskId(Aws::String&& value) { SetDeletionTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The deletion task identifier. This identifier is returned by the
-     * <a>DeleteServiceLinkedRole</a> operation in the format
-     * <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
-     */
     inline GetServiceLinkedRoleDeletionStatusRequest& WithDeletionTaskId(const char* value) { SetDeletionTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deletionTaskId;

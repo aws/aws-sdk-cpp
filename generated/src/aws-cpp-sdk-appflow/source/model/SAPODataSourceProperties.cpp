@@ -25,10 +25,8 @@ SAPODataSourceProperties::SAPODataSourceProperties() :
 {
 }
 
-SAPODataSourceProperties::SAPODataSourceProperties(JsonView jsonValue) : 
-    m_objectPathHasBeenSet(false),
-    m_parallelismConfigHasBeenSet(false),
-    m_paginationConfigHasBeenSet(false)
+SAPODataSourceProperties::SAPODataSourceProperties(JsonView jsonValue)
+  : SAPODataSourceProperties()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ CacheUsageLimits::CacheUsageLimits() :
 {
 }
 
-CacheUsageLimits::CacheUsageLimits(const XmlNode& xmlNode) : 
-    m_dataStorageHasBeenSet(false),
-    m_eCPUPerSecondHasBeenSet(false)
+CacheUsageLimits::CacheUsageLimits(const XmlNode& xmlNode)
+  : CacheUsageLimits()
 {
   *this = xmlNode;
 }

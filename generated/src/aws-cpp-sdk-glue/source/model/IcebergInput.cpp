@@ -25,10 +25,8 @@ IcebergInput::IcebergInput() :
 {
 }
 
-IcebergInput::IcebergInput(JsonView jsonValue) : 
-    m_metadataOperation(MetadataOperation::NOT_SET),
-    m_metadataOperationHasBeenSet(false),
-    m_versionHasBeenSet(false)
+IcebergInput::IcebergInput(JsonView jsonValue)
+  : IcebergInput()
 {
   *this = jsonValue;
 }

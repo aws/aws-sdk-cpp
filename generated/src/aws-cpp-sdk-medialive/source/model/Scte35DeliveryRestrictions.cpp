@@ -30,15 +30,8 @@ Scte35DeliveryRestrictions::Scte35DeliveryRestrictions() :
 {
 }
 
-Scte35DeliveryRestrictions::Scte35DeliveryRestrictions(JsonView jsonValue) : 
-    m_archiveAllowedFlag(Scte35ArchiveAllowedFlag::NOT_SET),
-    m_archiveAllowedFlagHasBeenSet(false),
-    m_deviceRestrictions(Scte35DeviceRestrictions::NOT_SET),
-    m_deviceRestrictionsHasBeenSet(false),
-    m_noRegionalBlackoutFlag(Scte35NoRegionalBlackoutFlag::NOT_SET),
-    m_noRegionalBlackoutFlagHasBeenSet(false),
-    m_webDeliveryAllowedFlag(Scte35WebDeliveryAllowedFlag::NOT_SET),
-    m_webDeliveryAllowedFlagHasBeenSet(false)
+Scte35DeliveryRestrictions::Scte35DeliveryRestrictions(JsonView jsonValue)
+  : Scte35DeliveryRestrictions()
 {
   *this = jsonValue;
 }

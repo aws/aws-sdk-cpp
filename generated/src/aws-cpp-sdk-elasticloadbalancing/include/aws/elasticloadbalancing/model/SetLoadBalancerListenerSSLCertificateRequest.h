@@ -40,108 +40,43 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port that uses the specified SSL certificate.</p>
      */
     inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
-
-    /**
-     * <p>The port that uses the specified SSL certificate.</p>
-     */
     inline bool LoadBalancerPortHasBeenSet() const { return m_loadBalancerPortHasBeenSet; }
-
-    /**
-     * <p>The port that uses the specified SSL certificate.</p>
-     */
     inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
-
-    /**
-     * <p>The port that uses the specified SSL certificate.</p>
-     */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
      */
     inline const Aws::String& GetSSLCertificateId() const{ return m_sSLCertificateId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-     */
     inline bool SSLCertificateIdHasBeenSet() const { return m_sSLCertificateIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-     */
     inline void SetSSLCertificateId(const Aws::String& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-     */
     inline void SetSSLCertificateId(Aws::String&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-     */
     inline void SetSSLCertificateId(const char* value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-     */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(const Aws::String& value) { SetSSLCertificateId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-     */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(Aws::String&& value) { SetSSLCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-     */
     inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(const char* value) { SetSSLCertificateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerName;

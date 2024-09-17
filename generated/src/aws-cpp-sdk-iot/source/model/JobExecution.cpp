@@ -38,23 +38,8 @@ JobExecution::JobExecution() :
 {
 }
 
-JobExecution::JobExecution(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_status(JobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_forceCanceled(false),
-    m_forceCanceledHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_thingArnHasBeenSet(false),
-    m_queuedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_approximateSecondsBeforeTimedOut(0),
-    m_approximateSecondsBeforeTimedOutHasBeenSet(false)
+JobExecution::JobExecution(JsonView jsonValue)
+  : JobExecution()
 {
   *this = jsonValue;
 }

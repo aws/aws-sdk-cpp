@@ -133,13 +133,13 @@ namespace SecretsManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">AWS
          * API Reference</a></p>
          */
-        virtual Model::BatchGetSecretValueOutcome BatchGetSecretValue(const Model::BatchGetSecretValueRequest& request) const;
+        virtual Model::BatchGetSecretValueOutcome BatchGetSecretValue(const Model::BatchGetSecretValueRequest& request = {}) const;
 
         /**
          * A Callable wrapper for BatchGetSecretValue that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename BatchGetSecretValueRequestT = Model::BatchGetSecretValueRequest>
-        Model::BatchGetSecretValueOutcomeCallable BatchGetSecretValueCallable(const BatchGetSecretValueRequestT& request) const
+        Model::BatchGetSecretValueOutcomeCallable BatchGetSecretValueCallable(const BatchGetSecretValueRequestT& request = {}) const
         {
             return SubmitCallable(&SecretsManagerClient::BatchGetSecretValue, request);
         }
@@ -148,7 +148,7 @@ namespace SecretsManager
          * An Async wrapper for BatchGetSecretValue that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename BatchGetSecretValueRequestT = Model::BatchGetSecretValueRequest>
-        void BatchGetSecretValueAsync(const BatchGetSecretValueRequestT& request, const BatchGetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void BatchGetSecretValueAsync(const BatchGetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const BatchGetSecretValueRequestT& request = {}) const
         {
             return SubmitAsync(&SecretsManagerClient::BatchGetSecretValue, request, handler, context);
         }
@@ -239,15 +239,23 @@ namespace SecretsManager
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
          * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
          * </b> <code>secretsmanager:CreateSecret</code>. If you include tags in the
-         * secret, you also need <code>secretsmanager:TagResource</code>. For more
-         * information, see <a
+         * secret, you also need <code>secretsmanager:TagResource</code>. To add replica
+         * Regions, you must also have
+         * <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
          * and access control in Secrets Manager</a>. </p> <p>To encrypt the secret with a
          * KMS key other than <code>aws/secretsmanager</code>, you need
          * <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permission to the
-         * key. </p><p><h3>See Also:</h3>   <a
+         * key. </p>  <p>When you enter commands in a command shell, there is a
+         * risk of the command history being accessed or utilities having access to your
+         * command parameters. This is a concern if the command includes the value of a
+         * secret. Learn how to <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+         * the risks of using command-line tools to store Secrets Manager secrets</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">AWS
          * API Reference</a></p>
          */
@@ -408,12 +416,9 @@ namespace SecretsManager
          * for can support. By default, Secrets Manager uses uppercase and lowercase
          * letters, numbers, and the following characters in passwords:
          * <code>!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~</code> </p> <p>Secrets
-         * Manager generates a CloudTrail log entry when you call this action. Do not
-         * include sensitive information in request parameters because it might be logged.
-         * For more information, see <a
-         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
-         * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
-         * </b> <code>secretsmanager:GetRandomPassword</code>. For more information, see <a
+         * Manager generates a CloudTrail log entry when you call this action.</p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
@@ -421,13 +426,13 @@ namespace SecretsManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRandomPasswordOutcome GetRandomPassword(const Model::GetRandomPasswordRequest& request) const;
+        virtual Model::GetRandomPasswordOutcome GetRandomPassword(const Model::GetRandomPasswordRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRandomPassword that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRandomPasswordRequestT = Model::GetRandomPasswordRequest>
-        Model::GetRandomPasswordOutcomeCallable GetRandomPasswordCallable(const GetRandomPasswordRequestT& request) const
+        Model::GetRandomPasswordOutcomeCallable GetRandomPasswordCallable(const GetRandomPasswordRequestT& request = {}) const
         {
             return SubmitCallable(&SecretsManagerClient::GetRandomPassword, request);
         }
@@ -436,7 +441,7 @@ namespace SecretsManager
          * An Async wrapper for GetRandomPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRandomPasswordRequestT = Model::GetRandomPasswordRequest>
-        void GetRandomPasswordAsync(const GetRandomPasswordRequestT& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRandomPasswordAsync(const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRandomPasswordRequestT& request = {}) const
         {
             return SubmitAsync(&SecretsManagerClient::GetRandomPassword, request, handler, context);
         }
@@ -569,13 +574,13 @@ namespace SecretsManager
         /**
          * <p>Lists the secrets that are stored by Secrets Manager in the Amazon Web
          * Services account, not including secrets that are marked for deletion. To see
-         * secrets marked for deletion, use the Secrets Manager console.</p> <p>ListSecrets
-         * is eventually consistent, however it might not reflect changes from the last
-         * five minutes. To get the latest information for a specific secret, use
-         * <a>DescribeSecret</a>.</p> <p>To list the versions of a secret, use
-         * <a>ListSecretVersionIds</a>.</p> <p>To retrieve the values for the secrets, call
-         * <a>BatchGetSecretValue</a> or <a>GetSecretValue</a>.</p> <p>For information
-         * about finding secrets in the console, see <a
+         * secrets marked for deletion, use the Secrets Manager console.</p> <p>All Secrets
+         * Manager operations are eventually consistent. ListSecrets might not reflect
+         * changes from the last five minutes. You can get more recent information for a
+         * specific secret by calling <a>DescribeSecret</a>.</p> <p>To list the versions of
+         * a secret, use <a>ListSecretVersionIds</a>.</p> <p>To retrieve the values for the
+         * secrets, call <a>BatchGetSecretValue</a> or <a>GetSecretValue</a>.</p> <p>For
+         * information about finding secrets in the console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find
          * secrets in Secrets Manager</a>.</p> <p>Secrets Manager generates a CloudTrail
          * log entry when you call this action. Do not include sensitive information in
@@ -590,13 +595,13 @@ namespace SecretsManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSecretsOutcome ListSecrets(const Model::ListSecretsRequest& request) const;
+        virtual Model::ListSecretsOutcome ListSecrets(const Model::ListSecretsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSecrets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSecretsRequestT = Model::ListSecretsRequest>
-        Model::ListSecretsOutcomeCallable ListSecretsCallable(const ListSecretsRequestT& request) const
+        Model::ListSecretsOutcomeCallable ListSecretsCallable(const ListSecretsRequestT& request = {}) const
         {
             return SubmitCallable(&SecretsManagerClient::ListSecrets, request);
         }
@@ -605,7 +610,7 @@ namespace SecretsManager
          * An Async wrapper for ListSecrets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSecretsRequestT = Model::ListSecretsRequest>
-        void ListSecretsAsync(const ListSecretsRequestT& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSecretsAsync(const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSecretsRequestT& request = {}) const
         {
             return SubmitAsync(&SecretsManagerClient::ListSecrets, request, handler, context);
         }
@@ -676,16 +681,22 @@ namespace SecretsManager
          * different, then the operation fails because you can't modify an existing
          * version; you can only create new ones.</p> <p>Secrets Manager generates a
          * CloudTrail log entry when you call this action. Do not include sensitive
-         * information in request parameters except <code>SecretBinary</code> or
-         * <code>SecretString</code> because it might be logged. For more information, see
-         * <a
+         * information in request parameters except <code>SecretBinary</code>,
+         * <code>SecretString</code>, or <code>RotationToken</code> because it might be
+         * logged. For more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
          * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
          * </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
+         * and access control in Secrets Manager</a>. </p>  <p>When you enter
+         * commands in a command shell, there is a risk of the command history being
+         * accessed or utilities having access to your command parameters. This is a
+         * concern if the command includes the value of a secret. Learn how to <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+         * the risks of using command-line tools to store Secrets Manager secrets</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">AWS
          * API Reference</a></p>
          */
@@ -1037,10 +1048,16 @@ namespace SecretsManager
          * you must also have <code>kms:GenerateDataKey</code>, <code>kms:Encrypt</code>,
          * and <code>kms:Decrypt</code> permissions on the key. If you change the KMS key
          * and you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
-         * Manager does not re-ecrypt existing secret versions with the new key. For more
+         * Manager does not re-encrypt existing secret versions with the new key. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
-         * Secret encryption and decryption</a>.</p><p><h3>See Also:</h3>   <a
+         * Secret encryption and decryption</a>.</p>  <p>When you enter commands
+         * in a command shell, there is a risk of the command history being accessed or
+         * utilities having access to your command parameters. This is a concern if the
+         * command includes the value of a secret. Learn how to <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+         * the risks of using command-line tools to store Secrets Manager secrets</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">AWS
          * API Reference</a></p>
          */
@@ -1167,7 +1184,6 @@ namespace SecretsManager
       void init(const SecretsManagerClientConfiguration& clientConfiguration);
 
       SecretsManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SecretsManagerEndpointProviderBase> m_endpointProvider;
   };
 

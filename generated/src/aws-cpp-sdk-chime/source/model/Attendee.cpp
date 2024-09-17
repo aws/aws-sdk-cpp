@@ -25,10 +25,8 @@ Attendee::Attendee() :
 {
 }
 
-Attendee::Attendee(JsonView jsonValue) : 
-    m_externalUserIdHasBeenSet(false),
-    m_attendeeIdHasBeenSet(false),
-    m_joinTokenHasBeenSet(false)
+Attendee::Attendee(JsonView jsonValue)
+  : Attendee()
 {
   *this = jsonValue;
 }

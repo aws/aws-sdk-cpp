@@ -36,51 +36,26 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Boolean value that indicates whether the mouth on the face is open or
      * not.</p>
      */
     inline bool GetValue() const{ return m_value; }
-
-    /**
-     * <p>Boolean value that indicates whether the mouth on the face is open or
-     * not.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Boolean value that indicates whether the mouth on the face is open or
-     * not.</p>
-     */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Boolean value that indicates whether the mouth on the face is open or
-     * not.</p>
-     */
     inline MouthOpen& WithValue(bool value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Level of confidence in the determination.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>Level of confidence in the determination.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>Level of confidence in the determination.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>Level of confidence in the determination.</p>
-     */
     inline MouthOpen& WithConfidence(double value) { SetConfidence(value); return *this;}
-
+    ///@}
   private:
 
     bool m_value;

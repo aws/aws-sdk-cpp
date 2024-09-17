@@ -30,27 +30,15 @@ CoverageFilterCriteria::CoverageFilterCriteria() :
     m_lastScannedAtHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
+    m_scanModeHasBeenSet(false),
     m_scanStatusCodeHasBeenSet(false),
     m_scanStatusReasonHasBeenSet(false),
     m_scanTypeHasBeenSet(false)
 {
 }
 
-CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_ec2InstanceTagsHasBeenSet(false),
-    m_ecrImageTagsHasBeenSet(false),
-    m_ecrRepositoryNameHasBeenSet(false),
-    m_imagePulledAtHasBeenSet(false),
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_lambdaFunctionRuntimeHasBeenSet(false),
-    m_lambdaFunctionTagsHasBeenSet(false),
-    m_lastScannedAtHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_scanStatusCodeHasBeenSet(false),
-    m_scanStatusReasonHasBeenSet(false),
-    m_scanTypeHasBeenSet(false)
+CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue)
+  : CoverageFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -165,6 +153,16 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
       m_resourceType.push_back(resourceTypeJsonList[resourceTypeIndex].AsObject());
     }
     m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scanMode"))
+  {
+    Aws::Utils::Array<JsonView> scanModeJsonList = jsonValue.GetArray("scanMode");
+    for(unsigned scanModeIndex = 0; scanModeIndex < scanModeJsonList.GetLength(); ++scanModeIndex)
+    {
+      m_scanMode.push_back(scanModeJsonList[scanModeIndex].AsObject());
+    }
+    m_scanModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scanStatusCode"))
@@ -322,6 +320,17 @@ JsonValue CoverageFilterCriteria::Jsonize() const
      resourceTypeJsonList[resourceTypeIndex].AsObject(m_resourceType[resourceTypeIndex].Jsonize());
    }
    payload.WithArray("resourceType", std::move(resourceTypeJsonList));
+
+  }
+
+  if(m_scanModeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> scanModeJsonList(m_scanMode.size());
+   for(unsigned scanModeIndex = 0; scanModeIndex < scanModeJsonList.GetLength(); ++scanModeIndex)
+   {
+     scanModeJsonList[scanModeIndex].AsObject(m_scanMode[scanModeIndex].Jsonize());
+   }
+   payload.WithArray("scanMode", std::move(scanModeJsonList));
 
   }
 

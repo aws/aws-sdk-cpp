@@ -27,12 +27,8 @@ DominantLanguageDetectionJobFilter::DominantLanguageDetectionJobFilter() :
 {
 }
 
-DominantLanguageDetectionJobFilter::DominantLanguageDetectionJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+DominantLanguageDetectionJobFilter::DominantLanguageDetectionJobFilter(JsonView jsonValue)
+  : DominantLanguageDetectionJobFilter()
 {
   *this = jsonValue;
 }

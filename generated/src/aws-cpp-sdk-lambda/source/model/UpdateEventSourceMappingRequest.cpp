@@ -36,7 +36,8 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_tumblingWindowInSecondsHasBeenSet(false),
     m_functionResponseTypesHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
-    m_documentDBEventSourceConfigHasBeenSet(false)
+    m_documentDBEventSourceConfigHasBeenSet(false),
+    m_kMSKeyArnHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,12 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
   if(m_documentDBEventSourceConfigHasBeenSet)
   {
    payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_kMSKeyArnHasBeenSet)
+  {
+   payload.WithString("KMSKeyArn", m_kMSKeyArn);
 
   }
 

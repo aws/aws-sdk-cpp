@@ -24,9 +24,8 @@ DatasetContentDeliveryDestination::DatasetContentDeliveryDestination() :
 {
 }
 
-DatasetContentDeliveryDestination::DatasetContentDeliveryDestination(JsonView jsonValue) : 
-    m_iotEventsDestinationConfigurationHasBeenSet(false),
-    m_s3DestinationConfigurationHasBeenSet(false)
+DatasetContentDeliveryDestination::DatasetContentDeliveryDestination(JsonView jsonValue)
+  : DatasetContentDeliveryDestination()
 {
   *this = jsonValue;
 }

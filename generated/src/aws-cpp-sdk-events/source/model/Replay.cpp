@@ -32,17 +32,8 @@ Replay::Replay() :
 {
 }
 
-Replay::Replay(JsonView jsonValue) : 
-    m_replayNameHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_state(ReplayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_eventStartTimeHasBeenSet(false),
-    m_eventEndTimeHasBeenSet(false),
-    m_eventLastReplayedTimeHasBeenSet(false),
-    m_replayStartTimeHasBeenSet(false),
-    m_replayEndTimeHasBeenSet(false)
+Replay::Replay(JsonView jsonValue)
+  : Replay()
 {
   *this = jsonValue;
 }

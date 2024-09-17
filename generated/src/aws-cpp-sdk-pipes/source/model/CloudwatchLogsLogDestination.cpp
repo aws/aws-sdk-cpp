@@ -23,8 +23,8 @@ CloudwatchLogsLogDestination::CloudwatchLogsLogDestination() :
 {
 }
 
-CloudwatchLogsLogDestination::CloudwatchLogsLogDestination(JsonView jsonValue) : 
-    m_logGroupArnHasBeenSet(false)
+CloudwatchLogsLogDestination::CloudwatchLogsLogDestination(JsonView jsonValue)
+  : CloudwatchLogsLogDestination()
 {
   *this = jsonValue;
 }

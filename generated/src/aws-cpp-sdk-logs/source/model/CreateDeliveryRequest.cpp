@@ -15,6 +15,9 @@ using namespace Aws::Utils;
 CreateDeliveryRequest::CreateDeliveryRequest() : 
     m_deliverySourceNameHasBeenSet(false),
     m_deliveryDestinationArnHasBeenSet(false),
+    m_recordFieldsHasBeenSet(false),
+    m_fieldDelimiterHasBeenSet(false),
+    m_s3DeliveryConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +35,29 @@ Aws::String CreateDeliveryRequest::SerializePayload() const
   if(m_deliveryDestinationArnHasBeenSet)
   {
    payload.WithString("deliveryDestinationArn", m_deliveryDestinationArn);
+
+  }
+
+  if(m_recordFieldsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> recordFieldsJsonList(m_recordFields.size());
+   for(unsigned recordFieldsIndex = 0; recordFieldsIndex < recordFieldsJsonList.GetLength(); ++recordFieldsIndex)
+   {
+     recordFieldsJsonList[recordFieldsIndex].AsString(m_recordFields[recordFieldsIndex]);
+   }
+   payload.WithArray("recordFields", std::move(recordFieldsJsonList));
+
+  }
+
+  if(m_fieldDelimiterHasBeenSet)
+  {
+   payload.WithString("fieldDelimiter", m_fieldDelimiter);
+
+  }
+
+  if(m_s3DeliveryConfigurationHasBeenSet)
+  {
+   payload.WithObject("s3DeliveryConfiguration", m_s3DeliveryConfiguration.Jsonize());
 
   }
 

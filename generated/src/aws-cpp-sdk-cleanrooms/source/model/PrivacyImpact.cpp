@@ -23,8 +23,8 @@ PrivacyImpact::PrivacyImpact() :
 {
 }
 
-PrivacyImpact::PrivacyImpact(JsonView jsonValue) : 
-    m_differentialPrivacyHasBeenSet(false)
+PrivacyImpact::PrivacyImpact(JsonView jsonValue)
+  : PrivacyImpact()
 {
   *this = jsonValue;
 }

@@ -40,6 +40,7 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>An Amazon Web Services account number that contains active CloudFront key
      * pairs that CloudFront can use to verify the signatures of signed URLs and signed
@@ -48,101 +49,26 @@ namespace Model
      * <code>self</code>.</p>
      */
     inline const Aws::String& GetAwsAccountNumber() const{ return m_awsAccountNumber; }
-
-    /**
-     * <p>An Amazon Web Services account number that contains active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed
-     * cookies. If the Amazon Web Services account that owns the key pairs is the same
-     * account that owns the CloudFront distribution, the value of this field is
-     * <code>self</code>.</p>
-     */
     inline bool AwsAccountNumberHasBeenSet() const { return m_awsAccountNumberHasBeenSet; }
-
-    /**
-     * <p>An Amazon Web Services account number that contains active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed
-     * cookies. If the Amazon Web Services account that owns the key pairs is the same
-     * account that owns the CloudFront distribution, the value of this field is
-     * <code>self</code>.</p>
-     */
     inline void SetAwsAccountNumber(const Aws::String& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
-
-    /**
-     * <p>An Amazon Web Services account number that contains active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed
-     * cookies. If the Amazon Web Services account that owns the key pairs is the same
-     * account that owns the CloudFront distribution, the value of this field is
-     * <code>self</code>.</p>
-     */
     inline void SetAwsAccountNumber(Aws::String&& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = std::move(value); }
-
-    /**
-     * <p>An Amazon Web Services account number that contains active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed
-     * cookies. If the Amazon Web Services account that owns the key pairs is the same
-     * account that owns the CloudFront distribution, the value of this field is
-     * <code>self</code>.</p>
-     */
     inline void SetAwsAccountNumber(const char* value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber.assign(value); }
-
-    /**
-     * <p>An Amazon Web Services account number that contains active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed
-     * cookies. If the Amazon Web Services account that owns the key pairs is the same
-     * account that owns the CloudFront distribution, the value of this field is
-     * <code>self</code>.</p>
-     */
     inline Signer& WithAwsAccountNumber(const Aws::String& value) { SetAwsAccountNumber(value); return *this;}
-
-    /**
-     * <p>An Amazon Web Services account number that contains active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed
-     * cookies. If the Amazon Web Services account that owns the key pairs is the same
-     * account that owns the CloudFront distribution, the value of this field is
-     * <code>self</code>.</p>
-     */
     inline Signer& WithAwsAccountNumber(Aws::String&& value) { SetAwsAccountNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Web Services account number that contains active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed
-     * cookies. If the Amazon Web Services account that owns the key pairs is the same
-     * account that owns the CloudFront distribution, the value of this field is
-     * <code>self</code>.</p>
-     */
     inline Signer& WithAwsAccountNumber(const char* value) { SetAwsAccountNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of CloudFront key pair identifiers.</p>
      */
     inline const KeyPairIds& GetKeyPairIds() const{ return m_keyPairIds; }
-
-    /**
-     * <p>A list of CloudFront key pair identifiers.</p>
-     */
     inline bool KeyPairIdsHasBeenSet() const { return m_keyPairIdsHasBeenSet; }
-
-    /**
-     * <p>A list of CloudFront key pair identifiers.</p>
-     */
     inline void SetKeyPairIds(const KeyPairIds& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = value; }
-
-    /**
-     * <p>A list of CloudFront key pair identifiers.</p>
-     */
     inline void SetKeyPairIds(KeyPairIds&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = std::move(value); }
-
-    /**
-     * <p>A list of CloudFront key pair identifiers.</p>
-     */
     inline Signer& WithKeyPairIds(const KeyPairIds& value) { SetKeyPairIds(value); return *this;}
-
-    /**
-     * <p>A list of CloudFront key pair identifiers.</p>
-     */
     inline Signer& WithKeyPairIds(KeyPairIds&& value) { SetKeyPairIds(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountNumber;

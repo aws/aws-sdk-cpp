@@ -25,10 +25,8 @@ EventBridgeConfiguration::EventBridgeConfiguration() :
 {
 }
 
-EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_includedDataHasBeenSet(false)
+EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue)
+  : EventBridgeConfiguration()
 {
   *this = jsonValue;
 }

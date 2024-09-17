@@ -47,6 +47,7 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
      * more information, see <a
@@ -55,70 +56,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetTopicPolicy() const{ return m_topicPolicy; }
-
-    /**
-     * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example
-     * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p>
-     */
     inline bool TopicPolicyHasBeenSet() const { return m_topicPolicyHasBeenSet; }
-
-    /**
-     * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example
-     * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p>
-     */
     inline void SetTopicPolicy(const Aws::String& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = value; }
-
-    /**
-     * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example
-     * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p>
-     */
     inline void SetTopicPolicy(Aws::String&& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = std::move(value); }
-
-    /**
-     * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example
-     * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p>
-     */
     inline void SetTopicPolicy(const char* value) { m_topicPolicyHasBeenSet = true; m_topicPolicy.assign(value); }
-
-    /**
-     * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example
-     * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p>
-     */
     inline SnsTopicConfiguration& WithTopicPolicy(const Aws::String& value) { SetTopicPolicy(value); return *this;}
-
-    /**
-     * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example
-     * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p>
-     */
     inline SnsTopicConfiguration& WithTopicPolicy(Aws::String&& value) { SetTopicPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The JSON policy text that defines who can access an Amazon SNS topic. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example
-     * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p>
-     */
     inline SnsTopicConfiguration& WithTopicPolicy(const char* value) { SetTopicPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicPolicy;

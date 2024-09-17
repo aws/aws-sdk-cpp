@@ -24,9 +24,8 @@ RecommendationJobPayloadConfig::RecommendationJobPayloadConfig() :
 {
 }
 
-RecommendationJobPayloadConfig::RecommendationJobPayloadConfig(JsonView jsonValue) : 
-    m_samplePayloadUrlHasBeenSet(false),
-    m_supportedContentTypesHasBeenSet(false)
+RecommendationJobPayloadConfig::RecommendationJobPayloadConfig(JsonView jsonValue)
+  : RecommendationJobPayloadConfig()
 {
   *this = jsonValue;
 }

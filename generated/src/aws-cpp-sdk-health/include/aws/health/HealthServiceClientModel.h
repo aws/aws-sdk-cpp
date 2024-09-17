@@ -30,6 +30,14 @@
 #include <aws/health/model/DescribeEventsResult.h>
 #include <aws/health/model/DescribeEventsForOrganizationResult.h>
 #include <aws/health/model/DescribeHealthServiceStatusForOrganizationResult.h>
+#include <aws/health/model/DescribeEventsRequest.h>
+#include <aws/health/model/DescribeEventsForOrganizationRequest.h>
+#include <aws/health/model/DescribeEntityAggregatesRequest.h>
+#include <aws/health/model/DescribeEventTypesRequest.h>
+#include <aws/health/model/DescribeAffectedEntitiesForOrganizationRequest.h>
+#include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
+#include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
+#include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in HealthClient header */
 
@@ -64,7 +72,7 @@ namespace Aws
 
   namespace Health
   {
-    using HealthClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using HealthClientConfiguration = Aws::Client::GenericClientConfiguration;
     using HealthEndpointProviderBase = Aws::Health::Endpoint::HealthEndpointProviderBase;
     using HealthEndpointProvider = Aws::Health::Endpoint::HealthEndpointProvider;
 

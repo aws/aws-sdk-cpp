@@ -27,12 +27,8 @@ IcebergTarget::IcebergTarget() :
 {
 }
 
-IcebergTarget::IcebergTarget(JsonView jsonValue) : 
-    m_pathsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_maximumTraversalDepth(0),
-    m_maximumTraversalDepthHasBeenSet(false)
+IcebergTarget::IcebergTarget(JsonView jsonValue)
+  : IcebergTarget()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ TopicsDetectionJobFilter::TopicsDetectionJobFilter() :
 {
 }
 
-TopicsDetectionJobFilter::TopicsDetectionJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+TopicsDetectionJobFilter::TopicsDetectionJobFilter(JsonView jsonValue)
+  : TopicsDetectionJobFilter()
 {
   *this = jsonValue;
 }

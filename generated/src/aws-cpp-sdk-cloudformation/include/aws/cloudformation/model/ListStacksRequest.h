@@ -41,55 +41,22 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A string that identifies the next page of stacks that you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline ListStacksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline ListStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline ListStacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stack status to use as a filter. Specify one or more stack status codes to
      * list only stacks with the specified status codes. For a complete list of stack
@@ -97,63 +64,14 @@ namespace Model
      * data type.</p>
      */
     inline const Aws::Vector<StackStatus>& GetStackStatusFilter() const{ return m_stackStatusFilter; }
-
-    /**
-     * <p>Stack status to use as a filter. Specify one or more stack status codes to
-     * list only stacks with the specified status codes. For a complete list of stack
-     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
-     * data type.</p>
-     */
     inline bool StackStatusFilterHasBeenSet() const { return m_stackStatusFilterHasBeenSet; }
-
-    /**
-     * <p>Stack status to use as a filter. Specify one or more stack status codes to
-     * list only stacks with the specified status codes. For a complete list of stack
-     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
-     * data type.</p>
-     */
     inline void SetStackStatusFilter(const Aws::Vector<StackStatus>& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter = value; }
-
-    /**
-     * <p>Stack status to use as a filter. Specify one or more stack status codes to
-     * list only stacks with the specified status codes. For a complete list of stack
-     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
-     * data type.</p>
-     */
     inline void SetStackStatusFilter(Aws::Vector<StackStatus>&& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter = std::move(value); }
-
-    /**
-     * <p>Stack status to use as a filter. Specify one or more stack status codes to
-     * list only stacks with the specified status codes. For a complete list of stack
-     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
-     * data type.</p>
-     */
     inline ListStacksRequest& WithStackStatusFilter(const Aws::Vector<StackStatus>& value) { SetStackStatusFilter(value); return *this;}
-
-    /**
-     * <p>Stack status to use as a filter. Specify one or more stack status codes to
-     * list only stacks with the specified status codes. For a complete list of stack
-     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
-     * data type.</p>
-     */
     inline ListStacksRequest& WithStackStatusFilter(Aws::Vector<StackStatus>&& value) { SetStackStatusFilter(std::move(value)); return *this;}
-
-    /**
-     * <p>Stack status to use as a filter. Specify one or more stack status codes to
-     * list only stacks with the specified status codes. For a complete list of stack
-     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
-     * data type.</p>
-     */
     inline ListStacksRequest& AddStackStatusFilter(const StackStatus& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter.push_back(value); return *this; }
-
-    /**
-     * <p>Stack status to use as a filter. Specify one or more stack status codes to
-     * list only stacks with the specified status codes. For a complete list of stack
-     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
-     * data type.</p>
-     */
     inline ListStacksRequest& AddStackStatusFilter(StackStatus&& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

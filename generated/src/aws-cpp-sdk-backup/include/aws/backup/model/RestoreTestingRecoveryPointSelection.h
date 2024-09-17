@@ -27,10 +27,29 @@ namespace Model
 {
 
   /**
-   * <p>Required: Algorithm; Required: Recovery point types; IncludeVaults(one or
-   * more). Optional: SelectionWindowDays ('30' if not specified);ExcludeVaults (list
-   * of selectors), defaults to empty list if not listed.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p> <code>RecoveryPointSelection</code> has five parameters (three required and
+   * two optional). The values you specify determine which recovery point is included
+   * in the restore test. You must indicate with <code>Algorithm</code> if you want
+   * the latest recovery point within your <code>SelectionWindowDays</code> or if you
+   * want a random recovery point, and you must indicate through
+   * <code>IncludeVaults</code> from which vaults the recovery points can be
+   * chosen.</p> <p> <code>Algorithm</code> (<i>required</i>) Valid values:
+   * "<code>LATEST_WITHIN_WINDOW</code>" or "<code>RANDOM_WITHIN_WINDOW</code>".</p>
+   * <p> <code>Recovery point types</code> (<i>required</i>) Valid values:
+   * "<code>SNAPSHOT</code>" and/or "<code>CONTINUOUS</code>". Include
+   * <code>SNAPSHOT</code> to restore only snapshot recovery points; include
+   * <code>CONTINUOUS</code> to restore continuous recovery points (point in time
+   * restore / PITR); use both to restore either a snapshot or a continuous recovery
+   * point. The recovery point will be determined by the value for
+   * <code>Algorithm</code>.</p> <p> <code>IncludeVaults</code> (<i>required</i>).
+   * You must include one or more backup vaults. Use the wildcard ["*"] or specific
+   * ARNs.</p> <p> <code>SelectionWindowDays</code> (<i>optional</i>) Value must be
+   * an integer (in days) from 1 to 365. If not included, the value defaults to
+   * <code>30</code>.</p> <p> <code>ExcludeVaults</code> (<i>optional</i>). You can
+   * choose to input one or more specific backup vault ARNs to exclude those vaults'
+   * contents from restore eligibility. Or, you can include a list of selectors. If
+   * this parameter and its value are not included, it defaults to empty
+   * list.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RestoreTestingRecoveryPointSelection">AWS
    * API Reference</a></p>
    */
@@ -43,223 +62,79 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Acceptable values include "LATEST_WITHIN_WINDOW" or
      * "RANDOM_WITHIN_WINDOW"</p>
      */
     inline const RestoreTestingRecoveryPointSelectionAlgorithm& GetAlgorithm() const{ return m_algorithm; }
-
-    /**
-     * <p>Acceptable values include "LATEST_WITHIN_WINDOW" or
-     * "RANDOM_WITHIN_WINDOW"</p>
-     */
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-
-    /**
-     * <p>Acceptable values include "LATEST_WITHIN_WINDOW" or
-     * "RANDOM_WITHIN_WINDOW"</p>
-     */
     inline void SetAlgorithm(const RestoreTestingRecoveryPointSelectionAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-
-    /**
-     * <p>Acceptable values include "LATEST_WITHIN_WINDOW" or
-     * "RANDOM_WITHIN_WINDOW"</p>
-     */
     inline void SetAlgorithm(RestoreTestingRecoveryPointSelectionAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-
-    /**
-     * <p>Acceptable values include "LATEST_WITHIN_WINDOW" or
-     * "RANDOM_WITHIN_WINDOW"</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithAlgorithm(const RestoreTestingRecoveryPointSelectionAlgorithm& value) { SetAlgorithm(value); return *this;}
-
-    /**
-     * <p>Acceptable values include "LATEST_WITHIN_WINDOW" or
-     * "RANDOM_WITHIN_WINDOW"</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithAlgorithm(RestoreTestingRecoveryPointSelectionAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
      * list if not listed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeVaults() const{ return m_excludeVaults; }
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline bool ExcludeVaultsHasBeenSet() const { return m_excludeVaultsHasBeenSet; }
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline void SetExcludeVaults(const Aws::Vector<Aws::String>& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults = value; }
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline void SetExcludeVaults(Aws::Vector<Aws::String>&& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults = std::move(value); }
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithExcludeVaults(const Aws::Vector<Aws::String>& value) { SetExcludeVaults(value); return *this;}
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithExcludeVaults(Aws::Vector<Aws::String>&& value) { SetExcludeVaults(std::move(value)); return *this;}
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddExcludeVaults(const Aws::String& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults.push_back(value); return *this; }
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddExcludeVaults(Aws::String&& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
-     * list if not listed.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddExcludeVaults(const char* value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
      * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
      * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
      */
     inline const Aws::Vector<Aws::String>& GetIncludeVaults() const{ return m_includeVaults; }
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline bool IncludeVaultsHasBeenSet() const { return m_includeVaultsHasBeenSet; }
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline void SetIncludeVaults(const Aws::Vector<Aws::String>& value) { m_includeVaultsHasBeenSet = true; m_includeVaults = value; }
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline void SetIncludeVaults(Aws::Vector<Aws::String>&& value) { m_includeVaultsHasBeenSet = true; m_includeVaults = std::move(value); }
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithIncludeVaults(const Aws::Vector<Aws::String>& value) { SetIncludeVaults(value); return *this;}
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithIncludeVaults(Aws::Vector<Aws::String>&& value) { SetIncludeVaults(std::move(value)); return *this;}
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddIncludeVaults(const Aws::String& value) { m_includeVaultsHasBeenSet = true; m_includeVaults.push_back(value); return *this; }
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddIncludeVaults(Aws::String&& value) { m_includeVaultsHasBeenSet = true; m_includeVaults.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard
-     * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
-     * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddIncludeVaults(const char* value) { m_includeVaultsHasBeenSet = true; m_includeVaults.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
-     * <p>These are the types of recovery points.</p>
+     * <p>These are the types of recovery points.</p> <p>Include <code>SNAPSHOT</code>
+     * to restore only snapshot recovery points; include <code>CONTINUOUS</code> to
+     * restore continuous recovery points (point in time restore / PITR); use both to
+     * restore either a snapshot or a continuous recovery point. The recovery point
+     * will be determined by the value for <code>Algorithm</code>.</p>
      */
     inline const Aws::Vector<RestoreTestingRecoveryPointType>& GetRecoveryPointTypes() const{ return m_recoveryPointTypes; }
-
-    /**
-     * <p>These are the types of recovery points.</p>
-     */
     inline bool RecoveryPointTypesHasBeenSet() const { return m_recoveryPointTypesHasBeenSet; }
-
-    /**
-     * <p>These are the types of recovery points.</p>
-     */
     inline void SetRecoveryPointTypes(const Aws::Vector<RestoreTestingRecoveryPointType>& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes = value; }
-
-    /**
-     * <p>These are the types of recovery points.</p>
-     */
     inline void SetRecoveryPointTypes(Aws::Vector<RestoreTestingRecoveryPointType>&& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes = std::move(value); }
-
-    /**
-     * <p>These are the types of recovery points.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithRecoveryPointTypes(const Aws::Vector<RestoreTestingRecoveryPointType>& value) { SetRecoveryPointTypes(value); return *this;}
-
-    /**
-     * <p>These are the types of recovery points.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithRecoveryPointTypes(Aws::Vector<RestoreTestingRecoveryPointType>&& value) { SetRecoveryPointTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>These are the types of recovery points.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddRecoveryPointTypes(const RestoreTestingRecoveryPointType& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes.push_back(value); return *this; }
-
-    /**
-     * <p>These are the types of recovery points.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& AddRecoveryPointTypes(RestoreTestingRecoveryPointType&& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Accepted values are integers from 1 to 365.</p>
      */
     inline int GetSelectionWindowDays() const{ return m_selectionWindowDays; }
-
-    /**
-     * <p>Accepted values are integers from 1 to 365.</p>
-     */
     inline bool SelectionWindowDaysHasBeenSet() const { return m_selectionWindowDaysHasBeenSet; }
-
-    /**
-     * <p>Accepted values are integers from 1 to 365.</p>
-     */
     inline void SetSelectionWindowDays(int value) { m_selectionWindowDaysHasBeenSet = true; m_selectionWindowDays = value; }
-
-    /**
-     * <p>Accepted values are integers from 1 to 365.</p>
-     */
     inline RestoreTestingRecoveryPointSelection& WithSelectionWindowDays(int value) { SetSelectionWindowDays(value); return *this;}
-
+    ///@}
   private:
 
     RestoreTestingRecoveryPointSelectionAlgorithm m_algorithm;

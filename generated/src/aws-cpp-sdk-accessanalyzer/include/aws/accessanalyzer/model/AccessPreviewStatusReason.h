@@ -41,36 +41,17 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reason code for the current status of the access preview.</p>
      */
     inline const AccessPreviewStatusReasonCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The reason code for the current status of the access preview.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The reason code for the current status of the access preview.</p>
-     */
     inline void SetCode(const AccessPreviewStatusReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The reason code for the current status of the access preview.</p>
-     */
     inline void SetCode(AccessPreviewStatusReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The reason code for the current status of the access preview.</p>
-     */
     inline AccessPreviewStatusReason& WithCode(const AccessPreviewStatusReasonCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The reason code for the current status of the access preview.</p>
-     */
     inline AccessPreviewStatusReason& WithCode(AccessPreviewStatusReasonCode&& value) { SetCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AccessPreviewStatusReasonCode m_code;

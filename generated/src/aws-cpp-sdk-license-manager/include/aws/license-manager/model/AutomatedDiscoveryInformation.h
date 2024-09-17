@@ -37,36 +37,17 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Time that automated discovery last ran.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRunTime() const{ return m_lastRunTime; }
-
-    /**
-     * <p>Time that automated discovery last ran.</p>
-     */
     inline bool LastRunTimeHasBeenSet() const { return m_lastRunTimeHasBeenSet; }
-
-    /**
-     * <p>Time that automated discovery last ran.</p>
-     */
     inline void SetLastRunTime(const Aws::Utils::DateTime& value) { m_lastRunTimeHasBeenSet = true; m_lastRunTime = value; }
-
-    /**
-     * <p>Time that automated discovery last ran.</p>
-     */
     inline void SetLastRunTime(Aws::Utils::DateTime&& value) { m_lastRunTimeHasBeenSet = true; m_lastRunTime = std::move(value); }
-
-    /**
-     * <p>Time that automated discovery last ran.</p>
-     */
     inline AutomatedDiscoveryInformation& WithLastRunTime(const Aws::Utils::DateTime& value) { SetLastRunTime(value); return *this;}
-
-    /**
-     * <p>Time that automated discovery last ran.</p>
-     */
     inline AutomatedDiscoveryInformation& WithLastRunTime(Aws::Utils::DateTime&& value) { SetLastRunTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_lastRunTime;

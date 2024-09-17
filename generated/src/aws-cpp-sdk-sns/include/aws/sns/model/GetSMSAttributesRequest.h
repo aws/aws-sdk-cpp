@@ -41,6 +41,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A list of the individual attribute names, such as
      * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
@@ -49,79 +50,15 @@ namespace Model
      * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline void SetAttributes(const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline void SetAttributes(Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline GetSMSAttributesRequest& WithAttributes(const Aws::Vector<Aws::String>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline GetSMSAttributesRequest& WithAttributes(Aws::Vector<Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline GetSMSAttributesRequest& AddAttributes(const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline GetSMSAttributesRequest& AddAttributes(Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of the individual attribute names, such as
-     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
-     * attribute names, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
-     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-     */
     inline GetSMSAttributesRequest& AddAttributes(const char* value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_attributes;

@@ -27,12 +27,8 @@ AgentHierarchyGroups::AgentHierarchyGroups() :
 {
 }
 
-AgentHierarchyGroups::AgentHierarchyGroups(JsonView jsonValue) : 
-    m_l1IdsHasBeenSet(false),
-    m_l2IdsHasBeenSet(false),
-    m_l3IdsHasBeenSet(false),
-    m_l4IdsHasBeenSet(false),
-    m_l5IdsHasBeenSet(false)
+AgentHierarchyGroups::AgentHierarchyGroups(JsonView jsonValue)
+  : AgentHierarchyGroups()
 {
   *this = jsonValue;
 }

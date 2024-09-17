@@ -25,10 +25,8 @@ MaintenanceWindow::MaintenanceWindow() :
 {
 }
 
-MaintenanceWindow::MaintenanceWindow(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_durationInMinutes(0),
-    m_durationInMinutesHasBeenSet(false)
+MaintenanceWindow::MaintenanceWindow(JsonView jsonValue)
+  : MaintenanceWindow()
 {
   *this = jsonValue;
 }

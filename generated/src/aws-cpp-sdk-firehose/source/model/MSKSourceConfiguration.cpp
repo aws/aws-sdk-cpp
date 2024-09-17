@@ -21,14 +21,13 @@ namespace Model
 MSKSourceConfiguration::MSKSourceConfiguration() : 
     m_mSKClusterARNHasBeenSet(false),
     m_topicNameHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
+    m_authenticationConfigurationHasBeenSet(false),
+    m_readFromTimestampHasBeenSet(false)
 {
 }
 
-MSKSourceConfiguration::MSKSourceConfiguration(JsonView jsonValue) : 
-    m_mSKClusterARNHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
+MSKSourceConfiguration::MSKSourceConfiguration(JsonView jsonValue)
+  : MSKSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -56,6 +55,13 @@ MSKSourceConfiguration& MSKSourceConfiguration::operator =(JsonView jsonValue)
     m_authenticationConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReadFromTimestamp"))
+  {
+    m_readFromTimestamp = jsonValue.GetDouble("ReadFromTimestamp");
+
+    m_readFromTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +85,11 @@ JsonValue MSKSourceConfiguration::Jsonize() const
   {
    payload.WithObject("AuthenticationConfiguration", m_authenticationConfiguration.Jsonize());
 
+  }
+
+  if(m_readFromTimestampHasBeenSet)
+  {
+   payload.WithDouble("ReadFromTimestamp", m_readFromTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

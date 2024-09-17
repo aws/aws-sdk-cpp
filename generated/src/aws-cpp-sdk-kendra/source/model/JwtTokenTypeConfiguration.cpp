@@ -30,15 +30,8 @@ JwtTokenTypeConfiguration::JwtTokenTypeConfiguration() :
 {
 }
 
-JwtTokenTypeConfiguration::JwtTokenTypeConfiguration(JsonView jsonValue) : 
-    m_keyLocation(KeyLocation::NOT_SET),
-    m_keyLocationHasBeenSet(false),
-    m_uRLHasBeenSet(false),
-    m_secretManagerArnHasBeenSet(false),
-    m_userNameAttributeFieldHasBeenSet(false),
-    m_groupAttributeFieldHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_claimRegexHasBeenSet(false)
+JwtTokenTypeConfiguration::JwtTokenTypeConfiguration(JsonView jsonValue)
+  : JwtTokenTypeConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,8 +25,8 @@ StorageLensAwsOrg::StorageLensAwsOrg() :
 {
 }
 
-StorageLensAwsOrg::StorageLensAwsOrg(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false)
+StorageLensAwsOrg::StorageLensAwsOrg(const XmlNode& xmlNode)
+  : StorageLensAwsOrg()
 {
   *this = xmlNode;
 }

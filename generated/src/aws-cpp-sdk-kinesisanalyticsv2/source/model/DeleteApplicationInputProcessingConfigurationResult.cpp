@@ -22,8 +22,8 @@ DeleteApplicationInputProcessingConfigurationResult::DeleteApplicationInputProce
 {
 }
 
-DeleteApplicationInputProcessingConfigurationResult::DeleteApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+DeleteApplicationInputProcessingConfigurationResult::DeleteApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteApplicationInputProcessingConfigurationResult()
 {
   *this = result;
 }

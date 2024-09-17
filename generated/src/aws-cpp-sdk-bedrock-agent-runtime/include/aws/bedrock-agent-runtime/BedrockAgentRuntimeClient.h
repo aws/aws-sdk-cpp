@@ -16,7 +16,8 @@ namespace Aws
 namespace BedrockAgentRuntime
 {
   /**
-   * <p>Amazon Bedrock Agent</p>
+   * <p>Contains APIs related to model invocation and querying of knowledge
+   * bases.</p>
    */
   class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>
   {
@@ -77,8 +78,82 @@ namespace BedrockAgentRuntime
         virtual ~BedrockAgentRuntimeClient();
 
         /**
-         * <p>Invokes the specified Bedrock model to run inference using the input provided
-         * in the request body.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes memory from the specified memory identifier.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteAgentMemory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAgentMemoryOutcome DeleteAgentMemory(const Model::DeleteAgentMemoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAgentMemory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAgentMemoryRequestT = Model::DeleteAgentMemoryRequest>
+        Model::DeleteAgentMemoryOutcomeCallable DeleteAgentMemoryCallable(const DeleteAgentMemoryRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::DeleteAgentMemory, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAgentMemory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAgentMemoryRequestT = Model::DeleteAgentMemoryRequest>
+        void DeleteAgentMemoryAsync(const DeleteAgentMemoryRequestT& request, const DeleteAgentMemoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::DeleteAgentMemory, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the sessions stored in the memory of the agent.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAgentMemoryOutcome GetAgentMemory(const Model::GetAgentMemoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAgentMemory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAgentMemoryRequestT = Model::GetAgentMemoryRequest>
+        Model::GetAgentMemoryOutcomeCallable GetAgentMemoryCallable(const GetAgentMemoryRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::GetAgentMemory, request);
+        }
+
+        /**
+         * An Async wrapper for GetAgentMemory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAgentMemoryRequestT = Model::GetAgentMemoryRequest>
+        void GetAgentMemoryAsync(const GetAgentMemoryRequestT& request, const GetAgentMemoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::GetAgentMemory, request, handler, context);
+        }
+
+        /**
+         *  <p>The CLI doesn't support streaming operations in Amazon Bedrock,
+         * including <code>InvokeAgent</code>.</p>  <p>Sends a prompt for the agent
+         * to process and respond to. Note the following fields for the request:</p> <ul>
+         * <li> <p>To continue the same conversation with an agent, use the same
+         * <code>sessionId</code> value in the request.</p> </li> <li> <p>To activate trace
+         * enablement, turn <code>enableTrace</code> to <code>true</code>. Trace enablement
+         * helps you follow the agent's reasoning process that led it to the information it
+         * processed, the actions it took, and the final result it yielded. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
+         * enablement</a>.</p> </li> <li> <p>End a conversation by setting
+         * <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>In the
+         * <code>sessionState</code> object, you can include attributes for the session or
+         * prompt or, if you configured an action group to return control, results from
+         * invocation of the action group.</p> </li> </ul> <p>The response is returned in
+         * the <code>bytes</code> field of the <code>chunk</code> object.</p> <ul> <li>
+         * <p>The <code>attribution</code> object contains citations for parts of the
+         * response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
+         * <code>true</code> in the request, you can trace the agent's steps and reasoning
+         * process that led it to the response.</p> </li> <li> <p>If the action predicted
+         * was configured to return control, the response returns parameters for the
+         * action, elicited from the user, in the <code>returnControl</code> field.</p>
+         * </li> <li> <p>Errors are also surfaced in the response.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeAgent">AWS
          * API Reference</a></p>
          */
@@ -103,7 +178,39 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Retrieve from knowledge base.</p><p><h3>See Also:</h3>   <a
+         * <p>Invokes an alias of a flow to run the inputs that you specify and return the
+         * output of each node as a stream. If there's an error, the error is returned. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
+         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p>  <p>The
+         * CLI doesn't support streaming operations in Amazon Bedrock, including
+         * <code>InvokeFlow</code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InvokeFlowOutcome InvokeFlow(Model::InvokeFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for InvokeFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename InvokeFlowRequestT = Model::InvokeFlowRequest>
+        Model::InvokeFlowOutcomeCallable InvokeFlowCallable(InvokeFlowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::InvokeFlow, request);
+        }
+
+        /**
+         * An Async wrapper for InvokeFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename InvokeFlowRequestT = Model::InvokeFlowRequest>
+        void InvokeFlowAsync(InvokeFlowRequestT& request, const InvokeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::InvokeFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Queries a knowledge base and retrieves information from it.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Retrieve">AWS
          * API Reference</a></p>
          */
@@ -128,7 +235,11 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>RetrieveAndGenerate API</p><p><h3>See Also:</h3>   <a
+         * <p>Queries a knowledge base and generates responses based on the retrieved
+         * results and using the specified foundation model or <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+         * profile</a>. The response only cites sources that are relevant to the
+         * query.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerate">AWS
          * API Reference</a></p>
          */
@@ -160,7 +271,6 @@ namespace BedrockAgentRuntime
       void init(const BedrockAgentRuntimeClientConfiguration& clientConfiguration);
 
       BedrockAgentRuntimeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> m_endpointProvider;
   };
 

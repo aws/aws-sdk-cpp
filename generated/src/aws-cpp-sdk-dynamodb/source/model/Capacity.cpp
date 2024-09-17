@@ -28,13 +28,8 @@ Capacity::Capacity() :
 {
 }
 
-Capacity::Capacity(JsonView jsonValue) : 
-    m_readCapacityUnits(0.0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0.0),
-    m_writeCapacityUnitsHasBeenSet(false),
-    m_capacityUnits(0.0),
-    m_capacityUnitsHasBeenSet(false)
+Capacity::Capacity(JsonView jsonValue)
+  : Capacity()
 {
   *this = jsonValue;
 }

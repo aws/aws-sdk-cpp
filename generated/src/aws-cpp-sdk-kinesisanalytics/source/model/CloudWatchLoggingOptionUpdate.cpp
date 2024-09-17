@@ -25,10 +25,8 @@ CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate() :
 {
 }
 
-CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate(JsonView jsonValue) : 
-    m_cloudWatchLoggingOptionIdHasBeenSet(false),
-    m_logStreamARNUpdateHasBeenSet(false),
-    m_roleARNUpdateHasBeenSet(false)
+CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate(JsonView jsonValue)
+  : CloudWatchLoggingOptionUpdate()
 {
   *this = jsonValue;
 }

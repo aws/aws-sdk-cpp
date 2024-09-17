@@ -27,10 +27,8 @@ LoadPermission::LoadPermission() :
 {
 }
 
-LoadPermission::LoadPermission(const XmlNode& xmlNode) : 
-    m_userIdHasBeenSet(false),
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false)
+LoadPermission::LoadPermission(const XmlNode& xmlNode)
+  : LoadPermission()
 {
   *this = xmlNode;
 }

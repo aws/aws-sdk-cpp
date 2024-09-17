@@ -41,6 +41,7 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The retention period assigned to a write once, read many (WORM) file by
      * default if an explicit retention period is not set for an FSx for ONTAP SnapLock
@@ -49,126 +50,38 @@ namespace Model
      * </p>
      */
     inline const RetentionPeriod& GetDefaultRetention() const{ return m_defaultRetention; }
-
-    /**
-     * <p>The retention period assigned to a write once, read many (WORM) file by
-     * default if an explicit retention period is not set for an FSx for ONTAP SnapLock
-     * volume. The default retention period must be greater than or equal to the
-     * minimum retention period and less than or equal to the maximum retention period.
-     * </p>
-     */
     inline bool DefaultRetentionHasBeenSet() const { return m_defaultRetentionHasBeenSet; }
-
-    /**
-     * <p>The retention period assigned to a write once, read many (WORM) file by
-     * default if an explicit retention period is not set for an FSx for ONTAP SnapLock
-     * volume. The default retention period must be greater than or equal to the
-     * minimum retention period and less than or equal to the maximum retention period.
-     * </p>
-     */
     inline void SetDefaultRetention(const RetentionPeriod& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = value; }
-
-    /**
-     * <p>The retention period assigned to a write once, read many (WORM) file by
-     * default if an explicit retention period is not set for an FSx for ONTAP SnapLock
-     * volume. The default retention period must be greater than or equal to the
-     * minimum retention period and less than or equal to the maximum retention period.
-     * </p>
-     */
     inline void SetDefaultRetention(RetentionPeriod&& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = std::move(value); }
-
-    /**
-     * <p>The retention period assigned to a write once, read many (WORM) file by
-     * default if an explicit retention period is not set for an FSx for ONTAP SnapLock
-     * volume. The default retention period must be greater than or equal to the
-     * minimum retention period and less than or equal to the maximum retention period.
-     * </p>
-     */
     inline SnaplockRetentionPeriod& WithDefaultRetention(const RetentionPeriod& value) { SetDefaultRetention(value); return *this;}
-
-    /**
-     * <p>The retention period assigned to a write once, read many (WORM) file by
-     * default if an explicit retention period is not set for an FSx for ONTAP SnapLock
-     * volume. The default retention period must be greater than or equal to the
-     * minimum retention period and less than or equal to the maximum retention period.
-     * </p>
-     */
     inline SnaplockRetentionPeriod& WithDefaultRetention(RetentionPeriod&& value) { SetDefaultRetention(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The shortest retention period that can be assigned to a WORM file on an FSx
      * for ONTAP SnapLock volume. </p>
      */
     inline const RetentionPeriod& GetMinimumRetention() const{ return m_minimumRetention; }
-
-    /**
-     * <p>The shortest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline bool MinimumRetentionHasBeenSet() const { return m_minimumRetentionHasBeenSet; }
-
-    /**
-     * <p>The shortest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline void SetMinimumRetention(const RetentionPeriod& value) { m_minimumRetentionHasBeenSet = true; m_minimumRetention = value; }
-
-    /**
-     * <p>The shortest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline void SetMinimumRetention(RetentionPeriod&& value) { m_minimumRetentionHasBeenSet = true; m_minimumRetention = std::move(value); }
-
-    /**
-     * <p>The shortest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline SnaplockRetentionPeriod& WithMinimumRetention(const RetentionPeriod& value) { SetMinimumRetention(value); return *this;}
-
-    /**
-     * <p>The shortest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline SnaplockRetentionPeriod& WithMinimumRetention(RetentionPeriod&& value) { SetMinimumRetention(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The longest retention period that can be assigned to a WORM file on an FSx
      * for ONTAP SnapLock volume. </p>
      */
     inline const RetentionPeriod& GetMaximumRetention() const{ return m_maximumRetention; }
-
-    /**
-     * <p>The longest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline bool MaximumRetentionHasBeenSet() const { return m_maximumRetentionHasBeenSet; }
-
-    /**
-     * <p>The longest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline void SetMaximumRetention(const RetentionPeriod& value) { m_maximumRetentionHasBeenSet = true; m_maximumRetention = value; }
-
-    /**
-     * <p>The longest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline void SetMaximumRetention(RetentionPeriod&& value) { m_maximumRetentionHasBeenSet = true; m_maximumRetention = std::move(value); }
-
-    /**
-     * <p>The longest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline SnaplockRetentionPeriod& WithMaximumRetention(const RetentionPeriod& value) { SetMaximumRetention(value); return *this;}
-
-    /**
-     * <p>The longest retention period that can be assigned to a WORM file on an FSx
-     * for ONTAP SnapLock volume. </p>
-     */
     inline SnaplockRetentionPeriod& WithMaximumRetention(RetentionPeriod&& value) { SetMaximumRetention(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RetentionPeriod m_defaultRetention;

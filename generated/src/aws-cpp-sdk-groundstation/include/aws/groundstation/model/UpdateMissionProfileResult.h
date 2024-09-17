@@ -37,63 +37,29 @@ namespace Model
     AWS_GROUNDSTATION_API UpdateMissionProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>UUID of a mission profile.</p>
      */
     inline const Aws::String& GetMissionProfileId() const{ return m_missionProfileId; }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline void SetMissionProfileId(const Aws::String& value) { m_missionProfileId = value; }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline void SetMissionProfileId(Aws::String&& value) { m_missionProfileId = std::move(value); }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline void SetMissionProfileId(const char* value) { m_missionProfileId.assign(value); }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline UpdateMissionProfileResult& WithMissionProfileId(const Aws::String& value) { SetMissionProfileId(value); return *this;}
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline UpdateMissionProfileResult& WithMissionProfileId(Aws::String&& value) { SetMissionProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline UpdateMissionProfileResult& WithMissionProfileId(const char* value) { SetMissionProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateMissionProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateMissionProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateMissionProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_missionProfileId;

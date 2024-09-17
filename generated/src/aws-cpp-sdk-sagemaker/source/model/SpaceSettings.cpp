@@ -30,15 +30,8 @@ SpaceSettings::SpaceSettings() :
 {
 }
 
-SpaceSettings::SpaceSettings(JsonView jsonValue) : 
-    m_jupyterServerAppSettingsHasBeenSet(false),
-    m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_codeEditorAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false),
-    m_customFileSystemsHasBeenSet(false)
+SpaceSettings::SpaceSettings(JsonView jsonValue)
+  : SpaceSettings()
 {
   *this = jsonValue;
 }

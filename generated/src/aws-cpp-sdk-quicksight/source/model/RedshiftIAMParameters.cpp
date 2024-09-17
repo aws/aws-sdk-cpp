@@ -27,12 +27,8 @@ RedshiftIAMParameters::RedshiftIAMParameters() :
 {
 }
 
-RedshiftIAMParameters::RedshiftIAMParameters(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_databaseUserHasBeenSet(false),
-    m_databaseGroupsHasBeenSet(false),
-    m_autoCreateDatabaseUser(false),
-    m_autoCreateDatabaseUserHasBeenSet(false)
+RedshiftIAMParameters::RedshiftIAMParameters(JsonView jsonValue)
+  : RedshiftIAMParameters()
 {
   *this = jsonValue;
 }

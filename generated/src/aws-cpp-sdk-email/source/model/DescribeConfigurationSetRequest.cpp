@@ -27,12 +27,19 @@ Aws::String DescribeConfigurationSetRequest::SerializePayload() const
 
   if(m_configurationSetAttributeNamesHasBeenSet)
   {
-    unsigned configurationSetAttributeNamesCount = 1;
-    for(auto& item : m_configurationSetAttributeNames)
+    if (m_configurationSetAttributeNames.empty())
     {
-      ss << "ConfigurationSetAttributeNames.member." << configurationSetAttributeNamesCount << "="
-          << StringUtils::URLEncode(ConfigurationSetAttributeMapper::GetNameForConfigurationSetAttribute(item).c_str()) << "&";
-      configurationSetAttributeNamesCount++;
+      ss << "ConfigurationSetAttributeNames=&";
+    }
+    else
+    {
+      unsigned configurationSetAttributeNamesCount = 1;
+      for(auto& item : m_configurationSetAttributeNames)
+      {
+        ss << "ConfigurationSetAttributeNames.member." << configurationSetAttributeNamesCount << "="
+            << StringUtils::URLEncode(ConfigurationSetAttributeMapper::GetNameForConfigurationSetAttribute(item).c_str()) << "&";
+        configurationSetAttributeNamesCount++;
+      }
     }
   }
 

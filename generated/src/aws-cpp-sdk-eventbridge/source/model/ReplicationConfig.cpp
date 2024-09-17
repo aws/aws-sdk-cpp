@@ -24,9 +24,8 @@ ReplicationConfig::ReplicationConfig() :
 {
 }
 
-ReplicationConfig::ReplicationConfig(JsonView jsonValue) : 
-    m_state(ReplicationState::NOT_SET),
-    m_stateHasBeenSet(false)
+ReplicationConfig::ReplicationConfig(JsonView jsonValue)
+  : ReplicationConfig()
 {
   *this = jsonValue;
 }

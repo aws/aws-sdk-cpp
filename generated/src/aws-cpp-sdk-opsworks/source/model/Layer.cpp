@@ -51,36 +51,8 @@ Layer::Layer() :
 {
 }
 
-Layer::Layer(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_layerIdHasBeenSet(false),
-    m_type(LayerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortnameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_customInstanceProfileArnHasBeenSet(false),
-    m_customJsonHasBeenSet(false),
-    m_customSecurityGroupIdsHasBeenSet(false),
-    m_defaultSecurityGroupNamesHasBeenSet(false),
-    m_packagesHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false),
-    m_enableAutoHealing(false),
-    m_enableAutoHealingHasBeenSet(false),
-    m_autoAssignElasticIps(false),
-    m_autoAssignElasticIpsHasBeenSet(false),
-    m_autoAssignPublicIps(false),
-    m_autoAssignPublicIpsHasBeenSet(false),
-    m_defaultRecipesHasBeenSet(false),
-    m_customRecipesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_installUpdatesOnBoot(false),
-    m_installUpdatesOnBootHasBeenSet(false),
-    m_useEbsOptimizedInstances(false),
-    m_useEbsOptimizedInstancesHasBeenSet(false),
-    m_lifecycleEventConfigurationHasBeenSet(false)
+Layer::Layer(JsonView jsonValue)
+  : Layer()
 {
   *this = jsonValue;
 }

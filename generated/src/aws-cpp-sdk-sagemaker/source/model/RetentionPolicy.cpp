@@ -24,9 +24,8 @@ RetentionPolicy::RetentionPolicy() :
 {
 }
 
-RetentionPolicy::RetentionPolicy(JsonView jsonValue) : 
-    m_homeEfsFileSystem(RetentionType::NOT_SET),
-    m_homeEfsFileSystemHasBeenSet(false)
+RetentionPolicy::RetentionPolicy(JsonView jsonValue)
+  : RetentionPolicy()
 {
   *this = jsonValue;
 }

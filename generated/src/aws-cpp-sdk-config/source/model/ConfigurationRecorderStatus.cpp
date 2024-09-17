@@ -32,17 +32,8 @@ ConfigurationRecorderStatus::ConfigurationRecorderStatus() :
 {
 }
 
-ConfigurationRecorderStatus::ConfigurationRecorderStatus(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_lastStartTimeHasBeenSet(false),
-    m_lastStopTimeHasBeenSet(false),
-    m_recording(false),
-    m_recordingHasBeenSet(false),
-    m_lastStatus(RecorderStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTimeHasBeenSet(false)
+ConfigurationRecorderStatus::ConfigurationRecorderStatus(JsonView jsonValue)
+  : ConfigurationRecorderStatus()
 {
   *this = jsonValue;
 }

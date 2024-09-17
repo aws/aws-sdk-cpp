@@ -34,130 +34,54 @@ namespace Model
     AWS_REKOGNITION_API GetCelebrityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of URLs pointing to additional celebrity information. </p>
      */
     inline const Aws::Vector<Aws::String>& GetUrls() const{ return m_urls; }
-
-    /**
-     * <p>An array of URLs pointing to additional celebrity information. </p>
-     */
     inline void SetUrls(const Aws::Vector<Aws::String>& value) { m_urls = value; }
-
-    /**
-     * <p>An array of URLs pointing to additional celebrity information. </p>
-     */
     inline void SetUrls(Aws::Vector<Aws::String>&& value) { m_urls = std::move(value); }
-
-    /**
-     * <p>An array of URLs pointing to additional celebrity information. </p>
-     */
     inline GetCelebrityInfoResult& WithUrls(const Aws::Vector<Aws::String>& value) { SetUrls(value); return *this;}
-
-    /**
-     * <p>An array of URLs pointing to additional celebrity information. </p>
-     */
     inline GetCelebrityInfoResult& WithUrls(Aws::Vector<Aws::String>&& value) { SetUrls(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of URLs pointing to additional celebrity information. </p>
-     */
     inline GetCelebrityInfoResult& AddUrls(const Aws::String& value) { m_urls.push_back(value); return *this; }
-
-    /**
-     * <p>An array of URLs pointing to additional celebrity information. </p>
-     */
     inline GetCelebrityInfoResult& AddUrls(Aws::String&& value) { m_urls.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of URLs pointing to additional celebrity information. </p>
-     */
     inline GetCelebrityInfoResult& AddUrls(const char* value) { m_urls.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the celebrity.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the celebrity.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the celebrity.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the celebrity.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the celebrity.</p>
-     */
     inline GetCelebrityInfoResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the celebrity.</p>
-     */
     inline GetCelebrityInfoResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the celebrity.</p>
-     */
     inline GetCelebrityInfoResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Retrieves the known gender for the celebrity.</p>
      */
     inline const KnownGender& GetKnownGender() const{ return m_knownGender; }
-
-    /**
-     * <p>Retrieves the known gender for the celebrity.</p>
-     */
     inline void SetKnownGender(const KnownGender& value) { m_knownGender = value; }
-
-    /**
-     * <p>Retrieves the known gender for the celebrity.</p>
-     */
     inline void SetKnownGender(KnownGender&& value) { m_knownGender = std::move(value); }
-
-    /**
-     * <p>Retrieves the known gender for the celebrity.</p>
-     */
     inline GetCelebrityInfoResult& WithKnownGender(const KnownGender& value) { SetKnownGender(value); return *this;}
-
-    /**
-     * <p>Retrieves the known gender for the celebrity.</p>
-     */
     inline GetCelebrityInfoResult& WithKnownGender(KnownGender&& value) { SetKnownGender(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCelebrityInfoResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCelebrityInfoResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCelebrityInfoResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_urls;

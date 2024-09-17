@@ -23,8 +23,8 @@ DatabaseLFTagPolicy::DatabaseLFTagPolicy() :
 {
 }
 
-DatabaseLFTagPolicy::DatabaseLFTagPolicy(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false)
+DatabaseLFTagPolicy::DatabaseLFTagPolicy(JsonView jsonValue)
+  : DatabaseLFTagPolicy()
 {
   *this = jsonValue;
 }

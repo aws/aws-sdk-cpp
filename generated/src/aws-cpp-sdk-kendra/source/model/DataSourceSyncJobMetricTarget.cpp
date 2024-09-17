@@ -24,9 +24,8 @@ DataSourceSyncJobMetricTarget::DataSourceSyncJobMetricTarget() :
 {
 }
 
-DataSourceSyncJobMetricTarget::DataSourceSyncJobMetricTarget(JsonView jsonValue) : 
-    m_dataSourceIdHasBeenSet(false),
-    m_dataSourceSyncJobIdHasBeenSet(false)
+DataSourceSyncJobMetricTarget::DataSourceSyncJobMetricTarget(JsonView jsonValue)
+  : DataSourceSyncJobMetricTarget()
 {
   *this = jsonValue;
 }

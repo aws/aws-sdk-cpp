@@ -19,36 +19,33 @@ namespace Model
 {
 
 RdsFieldMapping::RdsFieldMapping() : 
+    m_metadataFieldHasBeenSet(false),
     m_primaryKeyFieldHasBeenSet(false),
-    m_vectorFieldHasBeenSet(false),
     m_textFieldHasBeenSet(false),
-    m_metadataFieldHasBeenSet(false)
+    m_vectorFieldHasBeenSet(false)
 {
 }
 
-RdsFieldMapping::RdsFieldMapping(JsonView jsonValue) : 
-    m_primaryKeyFieldHasBeenSet(false),
-    m_vectorFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_metadataFieldHasBeenSet(false)
+RdsFieldMapping::RdsFieldMapping(JsonView jsonValue)
+  : RdsFieldMapping()
 {
   *this = jsonValue;
 }
 
 RdsFieldMapping& RdsFieldMapping::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("metadataField"))
+  {
+    m_metadataField = jsonValue.GetString("metadataField");
+
+    m_metadataFieldHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("primaryKeyField"))
   {
     m_primaryKeyField = jsonValue.GetString("primaryKeyField");
 
     m_primaryKeyFieldHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("vectorField"))
-  {
-    m_vectorField = jsonValue.GetString("vectorField");
-
-    m_vectorFieldHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("textField"))
@@ -58,11 +55,11 @@ RdsFieldMapping& RdsFieldMapping::operator =(JsonView jsonValue)
     m_textFieldHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("metadataField"))
+  if(jsonValue.ValueExists("vectorField"))
   {
-    m_metadataField = jsonValue.GetString("metadataField");
+    m_vectorField = jsonValue.GetString("vectorField");
 
-    m_metadataFieldHasBeenSet = true;
+    m_vectorFieldHasBeenSet = true;
   }
 
   return *this;
@@ -72,15 +69,15 @@ JsonValue RdsFieldMapping::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_primaryKeyFieldHasBeenSet)
+  if(m_metadataFieldHasBeenSet)
   {
-   payload.WithString("primaryKeyField", m_primaryKeyField);
+   payload.WithString("metadataField", m_metadataField);
 
   }
 
-  if(m_vectorFieldHasBeenSet)
+  if(m_primaryKeyFieldHasBeenSet)
   {
-   payload.WithString("vectorField", m_vectorField);
+   payload.WithString("primaryKeyField", m_primaryKeyField);
 
   }
 
@@ -90,9 +87,9 @@ JsonValue RdsFieldMapping::Jsonize() const
 
   }
 
-  if(m_metadataFieldHasBeenSet)
+  if(m_vectorFieldHasBeenSet)
   {
-   payload.WithString("metadataField", m_metadataField);
+   payload.WithString("vectorField", m_vectorField);
 
   }
 

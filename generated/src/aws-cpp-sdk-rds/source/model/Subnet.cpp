@@ -28,11 +28,8 @@ Subnet::Subnet() :
 {
 }
 
-Subnet::Subnet(const XmlNode& xmlNode) : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetOutpostHasBeenSet(false),
-    m_subnetStatusHasBeenSet(false)
+Subnet::Subnet(const XmlNode& xmlNode)
+  : Subnet()
 {
   *this = xmlNode;
 }

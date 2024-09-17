@@ -33,53 +33,27 @@ namespace Model
     AWS_MEDIASTORE_API GetMetricPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The metric policy that is associated with the specific container.</p>
      */
     inline const MetricPolicy& GetMetricPolicy() const{ return m_metricPolicy; }
-
-    /**
-     * <p>The metric policy that is associated with the specific container.</p>
-     */
     inline void SetMetricPolicy(const MetricPolicy& value) { m_metricPolicy = value; }
-
-    /**
-     * <p>The metric policy that is associated with the specific container.</p>
-     */
     inline void SetMetricPolicy(MetricPolicy&& value) { m_metricPolicy = std::move(value); }
-
-    /**
-     * <p>The metric policy that is associated with the specific container.</p>
-     */
     inline GetMetricPolicyResult& WithMetricPolicy(const MetricPolicy& value) { SetMetricPolicy(value); return *this;}
-
-    /**
-     * <p>The metric policy that is associated with the specific container.</p>
-     */
     inline GetMetricPolicyResult& WithMetricPolicy(MetricPolicy&& value) { SetMetricPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMetricPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMetricPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMetricPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MetricPolicy m_metricPolicy;

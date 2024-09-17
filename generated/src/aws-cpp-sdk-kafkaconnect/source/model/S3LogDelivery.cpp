@@ -26,11 +26,8 @@ S3LogDelivery::S3LogDelivery() :
 {
 }
 
-S3LogDelivery::S3LogDelivery(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+S3LogDelivery::S3LogDelivery(JsonView jsonValue)
+  : S3LogDelivery()
 {
   *this = jsonValue;
 }

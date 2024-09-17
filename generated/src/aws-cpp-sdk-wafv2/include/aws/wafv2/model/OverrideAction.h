@@ -48,6 +48,7 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Override the rule group evaluation result to count only. </p>  <p>This
      * option is usually set to none. It does not affect how the rules in the rule
@@ -57,94 +58,25 @@ namespace Model
      * 
      */
     inline const CountAction& GetCount() const{ return m_count; }
-
-    /**
-     * <p>Override the rule group evaluation result to count only. </p>  <p>This
-     * option is usually set to none. It does not affect how the rules in the rule
-     * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead use the rule action override option, with
-     * <code>Count</code> action, in your rule group reference statement settings. </p>
-     * 
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>Override the rule group evaluation result to count only. </p>  <p>This
-     * option is usually set to none. It does not affect how the rules in the rule
-     * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead use the rule action override option, with
-     * <code>Count</code> action, in your rule group reference statement settings. </p>
-     * 
-     */
     inline void SetCount(const CountAction& value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>Override the rule group evaluation result to count only. </p>  <p>This
-     * option is usually set to none. It does not affect how the rules in the rule
-     * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead use the rule action override option, with
-     * <code>Count</code> action, in your rule group reference statement settings. </p>
-     * 
-     */
     inline void SetCount(CountAction&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
-
-    /**
-     * <p>Override the rule group evaluation result to count only. </p>  <p>This
-     * option is usually set to none. It does not affect how the rules in the rule
-     * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead use the rule action override option, with
-     * <code>Count</code> action, in your rule group reference statement settings. </p>
-     * 
-     */
     inline OverrideAction& WithCount(const CountAction& value) { SetCount(value); return *this;}
-
-    /**
-     * <p>Override the rule group evaluation result to count only. </p>  <p>This
-     * option is usually set to none. It does not affect how the rules in the rule
-     * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead use the rule action override option, with
-     * <code>Count</code> action, in your rule group reference statement settings. </p>
-     * 
-     */
     inline OverrideAction& WithCount(CountAction&& value) { SetCount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Don't override the rule group evaluation result. This is the most common
      * setting.</p>
      */
     inline const NoneAction& GetNone() const{ return m_none; }
-
-    /**
-     * <p>Don't override the rule group evaluation result. This is the most common
-     * setting.</p>
-     */
     inline bool NoneHasBeenSet() const { return m_noneHasBeenSet; }
-
-    /**
-     * <p>Don't override the rule group evaluation result. This is the most common
-     * setting.</p>
-     */
     inline void SetNone(const NoneAction& value) { m_noneHasBeenSet = true; m_none = value; }
-
-    /**
-     * <p>Don't override the rule group evaluation result. This is the most common
-     * setting.</p>
-     */
     inline void SetNone(NoneAction&& value) { m_noneHasBeenSet = true; m_none = std::move(value); }
-
-    /**
-     * <p>Don't override the rule group evaluation result. This is the most common
-     * setting.</p>
-     */
     inline OverrideAction& WithNone(const NoneAction& value) { SetNone(value); return *this;}
-
-    /**
-     * <p>Don't override the rule group evaluation result. This is the most common
-     * setting.</p>
-     */
     inline OverrideAction& WithNone(NoneAction&& value) { SetNone(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CountAction m_count;

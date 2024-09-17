@@ -24,10 +24,8 @@ GetImportTaskResult::GetImportTaskResult() :
 {
 }
 
-GetImportTaskResult::GetImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(Format::NOT_SET),
-    m_status(ImportTaskStatus::NOT_SET),
-    m_attemptNumber(0)
+GetImportTaskResult::GetImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImportTaskResult()
 {
   *this = result;
 }

@@ -38,87 +38,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates the name of the feature that is activated for the detector. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p> Indicates the name of the feature that is activated for the detector. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> Indicates the name of the feature that is activated for the detector. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> Indicates the name of the feature that is activated for the detector. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> Indicates the name of the feature that is activated for the detector. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p> Indicates the name of the feature that is activated for the detector. </p>
-     */
     inline AwsGuardDutyDetectorFeaturesDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p> Indicates the name of the feature that is activated for the detector. </p>
-     */
     inline AwsGuardDutyDetectorFeaturesDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p> Indicates the name of the feature that is activated for the detector. </p>
-     */
     inline AwsGuardDutyDetectorFeaturesDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates the status of the feature that is activated for the detector. </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Indicates the status of the feature that is activated for the detector. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Indicates the status of the feature that is activated for the detector. </p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Indicates the status of the feature that is activated for the detector. </p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Indicates the status of the feature that is activated for the detector. </p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p> Indicates the status of the feature that is activated for the detector. </p>
-     */
     inline AwsGuardDutyDetectorFeaturesDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Indicates the status of the feature that is activated for the detector. </p>
-     */
     inline AwsGuardDutyDetectorFeaturesDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p> Indicates the status of the feature that is activated for the detector. </p>
-     */
     inline AwsGuardDutyDetectorFeaturesDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -29,14 +29,8 @@ UICustomizationType::UICustomizationType() :
 {
 }
 
-UICustomizationType::UICustomizationType(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_cSSHasBeenSet(false),
-    m_cSSVersionHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+UICustomizationType::UICustomizationType(JsonView jsonValue)
+  : UICustomizationType()
 {
   *this = jsonValue;
 }

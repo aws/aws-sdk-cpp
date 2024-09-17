@@ -33,18 +33,8 @@ AwsSecretsManagerSecretDetails::AwsSecretsManagerSecretDetails() :
 {
 }
 
-AwsSecretsManagerSecretDetails::AwsSecretsManagerSecretDetails(JsonView jsonValue) : 
-    m_rotationRulesHasBeenSet(false),
-    m_rotationOccurredWithinFrequency(false),
-    m_rotationOccurredWithinFrequencyHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_rotationEnabled(false),
-    m_rotationEnabledHasBeenSet(false),
-    m_rotationLambdaArnHasBeenSet(false),
-    m_deleted(false),
-    m_deletedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+AwsSecretsManagerSecretDetails::AwsSecretsManagerSecretDetails(JsonView jsonValue)
+  : AwsSecretsManagerSecretDetails()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ SNOMEDCTConcept::SNOMEDCTConcept() :
 {
 }
 
-SNOMEDCTConcept::SNOMEDCTConcept(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+SNOMEDCTConcept::SNOMEDCTConcept(JsonView jsonValue)
+  : SNOMEDCTConcept()
 {
   *this = jsonValue;
 }

@@ -128,13 +128,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRecommendationExportJobsOutcome DescribeRecommendationExportJobs(const Model::DescribeRecommendationExportJobsRequest& request) const;
+        virtual Model::DescribeRecommendationExportJobsOutcome DescribeRecommendationExportJobs(const Model::DescribeRecommendationExportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRecommendationExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRecommendationExportJobsRequestT = Model::DescribeRecommendationExportJobsRequest>
-        Model::DescribeRecommendationExportJobsOutcomeCallable DescribeRecommendationExportJobsCallable(const DescribeRecommendationExportJobsRequestT& request) const
+        Model::DescribeRecommendationExportJobsOutcomeCallable DescribeRecommendationExportJobsCallable(const DescribeRecommendationExportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::DescribeRecommendationExportJobs, request);
         }
@@ -143,7 +143,7 @@ namespace ComputeOptimizer
          * An Async wrapper for DescribeRecommendationExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRecommendationExportJobsRequestT = Model::DescribeRecommendationExportJobsRequest>
-        void DescribeRecommendationExportJobsAsync(const DescribeRecommendationExportJobsRequestT& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRecommendationExportJobsAsync(const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRecommendationExportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::DescribeRecommendationExportJobs, request, handler, context);
         }
@@ -346,6 +346,39 @@ namespace ComputeOptimizer
         }
 
         /**
+         * <p> Export optimization recommendations for your Amazon Relational Database
+         * Service (Amazon RDS). </p> <p>Recommendations are exported in a comma-separated
+         * values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file,
+         * to an existing Amazon Simple Storage Service (Amazon S3) bucket that you
+         * specify. For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Amazon RDS export job in progress per Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportRDSDatabaseRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportRDSDatabaseRecommendationsOutcome ExportRDSDatabaseRecommendations(const Model::ExportRDSDatabaseRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportRDSDatabaseRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportRDSDatabaseRecommendationsRequestT = Model::ExportRDSDatabaseRecommendationsRequest>
+        Model::ExportRDSDatabaseRecommendationsOutcomeCallable ExportRDSDatabaseRecommendationsCallable(const ExportRDSDatabaseRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::ExportRDSDatabaseRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for ExportRDSDatabaseRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportRDSDatabaseRecommendationsRequestT = Model::ExportRDSDatabaseRecommendationsRequest>
+        void ExportRDSDatabaseRecommendationsAsync(const ExportRDSDatabaseRecommendationsRequestT& request, const ExportRDSDatabaseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::ExportRDSDatabaseRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon EC2 Auto Scaling groups that meet a
          * specific set of requirements. For more information, see the <a
@@ -355,13 +388,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAutoScalingGroupRecommendationsOutcome GetAutoScalingGroupRecommendations(const Model::GetAutoScalingGroupRecommendationsRequest& request) const;
+        virtual Model::GetAutoScalingGroupRecommendationsOutcome GetAutoScalingGroupRecommendations(const Model::GetAutoScalingGroupRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAutoScalingGroupRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAutoScalingGroupRecommendationsRequestT = Model::GetAutoScalingGroupRecommendationsRequest>
-        Model::GetAutoScalingGroupRecommendationsOutcomeCallable GetAutoScalingGroupRecommendationsCallable(const GetAutoScalingGroupRecommendationsRequestT& request) const
+        Model::GetAutoScalingGroupRecommendationsOutcomeCallable GetAutoScalingGroupRecommendationsCallable(const GetAutoScalingGroupRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetAutoScalingGroupRecommendations, request);
         }
@@ -370,7 +403,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetAutoScalingGroupRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAutoScalingGroupRecommendationsRequestT = Model::GetAutoScalingGroupRecommendationsRequest>
-        void GetAutoScalingGroupRecommendationsAsync(const GetAutoScalingGroupRecommendationsRequestT& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAutoScalingGroupRecommendationsAsync(const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAutoScalingGroupRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetAutoScalingGroupRecommendations, request, handler, context);
         }
@@ -385,13 +418,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEBSVolumeRecommendationsOutcome GetEBSVolumeRecommendations(const Model::GetEBSVolumeRecommendationsRequest& request) const;
+        virtual Model::GetEBSVolumeRecommendationsOutcome GetEBSVolumeRecommendations(const Model::GetEBSVolumeRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEBSVolumeRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetEBSVolumeRecommendationsRequestT = Model::GetEBSVolumeRecommendationsRequest>
-        Model::GetEBSVolumeRecommendationsOutcomeCallable GetEBSVolumeRecommendationsCallable(const GetEBSVolumeRecommendationsRequestT& request) const
+        Model::GetEBSVolumeRecommendationsOutcomeCallable GetEBSVolumeRecommendationsCallable(const GetEBSVolumeRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetEBSVolumeRecommendations, request);
         }
@@ -400,7 +433,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetEBSVolumeRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetEBSVolumeRecommendationsRequestT = Model::GetEBSVolumeRecommendationsRequest>
-        void GetEBSVolumeRecommendationsAsync(const GetEBSVolumeRecommendationsRequestT& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetEBSVolumeRecommendationsAsync(const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEBSVolumeRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetEBSVolumeRecommendations, request, handler, context);
         }
@@ -416,13 +449,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEC2InstanceRecommendationsOutcome GetEC2InstanceRecommendations(const Model::GetEC2InstanceRecommendationsRequest& request) const;
+        virtual Model::GetEC2InstanceRecommendationsOutcome GetEC2InstanceRecommendations(const Model::GetEC2InstanceRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEC2InstanceRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetEC2InstanceRecommendationsRequestT = Model::GetEC2InstanceRecommendationsRequest>
-        Model::GetEC2InstanceRecommendationsOutcomeCallable GetEC2InstanceRecommendationsCallable(const GetEC2InstanceRecommendationsRequestT& request) const
+        Model::GetEC2InstanceRecommendationsOutcomeCallable GetEC2InstanceRecommendationsCallable(const GetEC2InstanceRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetEC2InstanceRecommendations, request);
         }
@@ -431,7 +464,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetEC2InstanceRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetEC2InstanceRecommendationsRequestT = Model::GetEC2InstanceRecommendationsRequest>
-        void GetEC2InstanceRecommendationsAsync(const GetEC2InstanceRecommendationsRequestT& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetEC2InstanceRecommendationsAsync(const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEC2InstanceRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetEC2InstanceRecommendations, request, handler, context);
         }
@@ -505,13 +538,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetECSServiceRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetECSServiceRecommendationsOutcome GetECSServiceRecommendations(const Model::GetECSServiceRecommendationsRequest& request) const;
+        virtual Model::GetECSServiceRecommendationsOutcome GetECSServiceRecommendations(const Model::GetECSServiceRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetECSServiceRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetECSServiceRecommendationsRequestT = Model::GetECSServiceRecommendationsRequest>
-        Model::GetECSServiceRecommendationsOutcomeCallable GetECSServiceRecommendationsCallable(const GetECSServiceRecommendationsRequestT& request) const
+        Model::GetECSServiceRecommendationsOutcomeCallable GetECSServiceRecommendationsCallable(const GetECSServiceRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetECSServiceRecommendations, request);
         }
@@ -520,7 +553,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetECSServiceRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetECSServiceRecommendationsRequestT = Model::GetECSServiceRecommendationsRequest>
-        void GetECSServiceRecommendationsAsync(const GetECSServiceRecommendationsRequestT& request, const GetECSServiceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetECSServiceRecommendationsAsync(const GetECSServiceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetECSServiceRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetECSServiceRecommendations, request, handler, context);
         }
@@ -566,13 +599,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEnrollmentStatusOutcome GetEnrollmentStatus(const Model::GetEnrollmentStatusRequest& request) const;
+        virtual Model::GetEnrollmentStatusOutcome GetEnrollmentStatus(const Model::GetEnrollmentStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEnrollmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetEnrollmentStatusRequestT = Model::GetEnrollmentStatusRequest>
-        Model::GetEnrollmentStatusOutcomeCallable GetEnrollmentStatusCallable(const GetEnrollmentStatusRequestT& request) const
+        Model::GetEnrollmentStatusOutcomeCallable GetEnrollmentStatusCallable(const GetEnrollmentStatusRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetEnrollmentStatus, request);
         }
@@ -581,7 +614,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetEnrollmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetEnrollmentStatusRequestT = Model::GetEnrollmentStatusRequest>
-        void GetEnrollmentStatusAsync(const GetEnrollmentStatusRequestT& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetEnrollmentStatusAsync(const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEnrollmentStatusRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetEnrollmentStatus, request, handler, context);
         }
@@ -594,13 +627,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEnrollmentStatusesForOrganizationOutcome GetEnrollmentStatusesForOrganization(const Model::GetEnrollmentStatusesForOrganizationRequest& request) const;
+        virtual Model::GetEnrollmentStatusesForOrganizationOutcome GetEnrollmentStatusesForOrganization(const Model::GetEnrollmentStatusesForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEnrollmentStatusesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetEnrollmentStatusesForOrganizationRequestT = Model::GetEnrollmentStatusesForOrganizationRequest>
-        Model::GetEnrollmentStatusesForOrganizationOutcomeCallable GetEnrollmentStatusesForOrganizationCallable(const GetEnrollmentStatusesForOrganizationRequestT& request) const
+        Model::GetEnrollmentStatusesForOrganizationOutcomeCallable GetEnrollmentStatusesForOrganizationCallable(const GetEnrollmentStatusesForOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetEnrollmentStatusesForOrganization, request);
         }
@@ -609,7 +642,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetEnrollmentStatusesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetEnrollmentStatusesForOrganizationRequestT = Model::GetEnrollmentStatusesForOrganizationRequest>
-        void GetEnrollmentStatusesForOrganizationAsync(const GetEnrollmentStatusesForOrganizationRequestT& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetEnrollmentStatusesForOrganizationAsync(const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEnrollmentStatusesForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetEnrollmentStatusesForOrganization, request, handler, context);
         }
@@ -624,13 +657,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetLambdaFunctionRecommendationsOutcome GetLambdaFunctionRecommendations(const Model::GetLambdaFunctionRecommendationsRequest& request) const;
+        virtual Model::GetLambdaFunctionRecommendationsOutcome GetLambdaFunctionRecommendations(const Model::GetLambdaFunctionRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetLambdaFunctionRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetLambdaFunctionRecommendationsRequestT = Model::GetLambdaFunctionRecommendationsRequest>
-        Model::GetLambdaFunctionRecommendationsOutcomeCallable GetLambdaFunctionRecommendationsCallable(const GetLambdaFunctionRecommendationsRequestT& request) const
+        Model::GetLambdaFunctionRecommendationsOutcomeCallable GetLambdaFunctionRecommendationsCallable(const GetLambdaFunctionRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetLambdaFunctionRecommendations, request);
         }
@@ -639,7 +672,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetLambdaFunctionRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetLambdaFunctionRecommendationsRequestT = Model::GetLambdaFunctionRecommendationsRequest>
-        void GetLambdaFunctionRecommendationsAsync(const GetLambdaFunctionRecommendationsRequestT& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetLambdaFunctionRecommendationsAsync(const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetLambdaFunctionRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetLambdaFunctionRecommendations, request, handler, context);
         }
@@ -655,13 +688,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetLicenseRecommendationsOutcome GetLicenseRecommendations(const Model::GetLicenseRecommendationsRequest& request) const;
+        virtual Model::GetLicenseRecommendationsOutcome GetLicenseRecommendations(const Model::GetLicenseRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetLicenseRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetLicenseRecommendationsRequestT = Model::GetLicenseRecommendationsRequest>
-        Model::GetLicenseRecommendationsOutcomeCallable GetLicenseRecommendationsCallable(const GetLicenseRecommendationsRequestT& request) const
+        Model::GetLicenseRecommendationsOutcomeCallable GetLicenseRecommendationsCallable(const GetLicenseRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetLicenseRecommendations, request);
         }
@@ -670,9 +703,65 @@ namespace ComputeOptimizer
          * An Async wrapper for GetLicenseRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetLicenseRecommendationsRequestT = Model::GetLicenseRecommendationsRequest>
-        void GetLicenseRecommendationsAsync(const GetLicenseRecommendationsRequestT& request, const GetLicenseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetLicenseRecommendationsAsync(const GetLicenseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetLicenseRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetLicenseRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p> Returns the projected metrics of Amazon RDS recommendations. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendationProjectedMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRDSDatabaseRecommendationProjectedMetricsOutcome GetRDSDatabaseRecommendationProjectedMetrics(const Model::GetRDSDatabaseRecommendationProjectedMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRDSDatabaseRecommendationProjectedMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRDSDatabaseRecommendationProjectedMetricsRequestT = Model::GetRDSDatabaseRecommendationProjectedMetricsRequest>
+        Model::GetRDSDatabaseRecommendationProjectedMetricsOutcomeCallable GetRDSDatabaseRecommendationProjectedMetricsCallable(const GetRDSDatabaseRecommendationProjectedMetricsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::GetRDSDatabaseRecommendationProjectedMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for GetRDSDatabaseRecommendationProjectedMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRDSDatabaseRecommendationProjectedMetricsRequestT = Model::GetRDSDatabaseRecommendationProjectedMetricsRequest>
+        void GetRDSDatabaseRecommendationProjectedMetricsAsync(const GetRDSDatabaseRecommendationProjectedMetricsRequestT& request, const GetRDSDatabaseRecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::GetRDSDatabaseRecommendationProjectedMetrics, request, handler, context);
+        }
+
+        /**
+         * <p> Returns Amazon RDS recommendations. </p> <p>Compute Optimizer generates
+         * recommendations for Amazon RDS that meet a specific set of requirements. For
+         * more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRDSDatabaseRecommendationsOutcome GetRDSDatabaseRecommendations(const Model::GetRDSDatabaseRecommendationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetRDSDatabaseRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRDSDatabaseRecommendationsRequestT = Model::GetRDSDatabaseRecommendationsRequest>
+        Model::GetRDSDatabaseRecommendationsOutcomeCallable GetRDSDatabaseRecommendationsCallable(const GetRDSDatabaseRecommendationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::GetRDSDatabaseRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for GetRDSDatabaseRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRDSDatabaseRecommendationsRequestT = Model::GetRDSDatabaseRecommendationsRequest>
+        void GetRDSDatabaseRecommendationsAsync(const GetRDSDatabaseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRDSDatabaseRecommendationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::GetRDSDatabaseRecommendations, request, handler, context);
         }
 
         /**
@@ -722,13 +811,13 @@ namespace ComputeOptimizer
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRecommendationSummariesOutcome GetRecommendationSummaries(const Model::GetRecommendationSummariesRequest& request) const;
+        virtual Model::GetRecommendationSummariesOutcome GetRecommendationSummaries(const Model::GetRecommendationSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRecommendationSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRecommendationSummariesRequestT = Model::GetRecommendationSummariesRequest>
-        Model::GetRecommendationSummariesOutcomeCallable GetRecommendationSummariesCallable(const GetRecommendationSummariesRequestT& request) const
+        Model::GetRecommendationSummariesOutcomeCallable GetRecommendationSummariesCallable(const GetRecommendationSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&ComputeOptimizerClient::GetRecommendationSummaries, request);
         }
@@ -737,7 +826,7 @@ namespace ComputeOptimizer
          * An Async wrapper for GetRecommendationSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRecommendationSummariesRequestT = Model::GetRecommendationSummariesRequest>
-        void GetRecommendationSummariesAsync(const GetRecommendationSummariesRequestT& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRecommendationSummariesAsync(const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRecommendationSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetRecommendationSummaries, request, handler, context);
         }
@@ -818,7 +907,6 @@ namespace ComputeOptimizer
       void init(const ComputeOptimizerClientConfiguration& clientConfiguration);
 
       ComputeOptimizerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ComputeOptimizerEndpointProviderBase> m_endpointProvider;
   };
 

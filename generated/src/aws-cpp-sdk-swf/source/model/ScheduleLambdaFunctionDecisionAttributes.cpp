@@ -27,12 +27,8 @@ ScheduleLambdaFunctionDecisionAttributes::ScheduleLambdaFunctionDecisionAttribut
 {
 }
 
-ScheduleLambdaFunctionDecisionAttributes::ScheduleLambdaFunctionDecisionAttributes(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false)
+ScheduleLambdaFunctionDecisionAttributes::ScheduleLambdaFunctionDecisionAttributes(JsonView jsonValue)
+  : ScheduleLambdaFunctionDecisionAttributes()
 {
   *this = jsonValue;
 }

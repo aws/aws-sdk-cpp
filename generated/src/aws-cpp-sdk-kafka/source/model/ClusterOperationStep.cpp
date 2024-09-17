@@ -24,9 +24,8 @@ ClusterOperationStep::ClusterOperationStep() :
 {
 }
 
-ClusterOperationStep::ClusterOperationStep(JsonView jsonValue) : 
-    m_stepInfoHasBeenSet(false),
-    m_stepNameHasBeenSet(false)
+ClusterOperationStep::ClusterOperationStep(JsonView jsonValue)
+  : ClusterOperationStep()
 {
   *this = jsonValue;
 }

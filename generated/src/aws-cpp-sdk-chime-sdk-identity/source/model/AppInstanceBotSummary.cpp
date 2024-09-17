@@ -25,10 +25,8 @@ AppInstanceBotSummary::AppInstanceBotSummary() :
 {
 }
 
-AppInstanceBotSummary::AppInstanceBotSummary(JsonView jsonValue) : 
-    m_appInstanceBotArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+AppInstanceBotSummary::AppInstanceBotSummary(JsonView jsonValue)
+  : AppInstanceBotSummary()
 {
   *this = jsonValue;
 }

@@ -52,7 +52,7 @@ namespace Aws
 
   namespace MarketplaceEntitlementService
   {
-    using MarketplaceEntitlementServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MarketplaceEntitlementServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MarketplaceEntitlementServiceEndpointProviderBase = Aws::MarketplaceEntitlementService::Endpoint::MarketplaceEntitlementServiceEndpointProviderBase;
     using MarketplaceEntitlementServiceEndpointProvider = Aws::MarketplaceEntitlementService::Endpoint::MarketplaceEntitlementServiceEndpointProvider;
 

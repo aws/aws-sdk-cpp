@@ -25,11 +25,8 @@ GetDocumentResult::GetDocumentResult() :
 {
 }
 
-GetDocumentResult::GetDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DocumentStatus::NOT_SET),
-    m_documentType(DocumentType::NOT_SET),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_reviewStatus(ReviewStatus::NOT_SET)
+GetDocumentResult::GetDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDocumentResult()
 {
   *this = result;
 }

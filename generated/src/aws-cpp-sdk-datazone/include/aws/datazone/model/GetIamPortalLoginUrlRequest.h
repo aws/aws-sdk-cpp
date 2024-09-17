@@ -32,54 +32,20 @@ namespace Model
     AWS_DATAZONE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>the ID of the Amazon DataZone domain the data portal of which you want to
      * get.</p>
      */
     inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
-
-    /**
-     * <p>the ID of the Amazon DataZone domain the data portal of which you want to
-     * get.</p>
-     */
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-
-    /**
-     * <p>the ID of the Amazon DataZone domain the data portal of which you want to
-     * get.</p>
-     */
     inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-
-    /**
-     * <p>the ID of the Amazon DataZone domain the data portal of which you want to
-     * get.</p>
-     */
     inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-
-    /**
-     * <p>the ID of the Amazon DataZone domain the data portal of which you want to
-     * get.</p>
-     */
     inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-
-    /**
-     * <p>the ID of the Amazon DataZone domain the data portal of which you want to
-     * get.</p>
-     */
     inline GetIamPortalLoginUrlRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-
-    /**
-     * <p>the ID of the Amazon DataZone domain the data portal of which you want to
-     * get.</p>
-     */
     inline GetIamPortalLoginUrlRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>the ID of the Amazon DataZone domain the data portal of which you want to
-     * get.</p>
-     */
     inline GetIamPortalLoginUrlRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainIdentifier;

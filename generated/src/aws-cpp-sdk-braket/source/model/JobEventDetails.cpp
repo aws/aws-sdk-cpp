@@ -26,11 +26,8 @@ JobEventDetails::JobEventDetails() :
 {
 }
 
-JobEventDetails::JobEventDetails(JsonView jsonValue) : 
-    m_eventType(JobEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_timeOfEventHasBeenSet(false)
+JobEventDetails::JobEventDetails(JsonView jsonValue)
+  : JobEventDetails()
 {
   *this = jsonValue;
 }

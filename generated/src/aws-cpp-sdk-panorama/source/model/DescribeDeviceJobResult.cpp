@@ -24,10 +24,8 @@ DescribeDeviceJobResult::DescribeDeviceJobResult() :
 {
 }
 
-DescribeDeviceJobResult::DescribeDeviceJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deviceType(DeviceType::NOT_SET),
-    m_jobType(JobType::NOT_SET),
-    m_status(UpdateProgress::NOT_SET)
+DescribeDeviceJobResult::DescribeDeviceJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDeviceJobResult()
 {
   *this = result;
 }

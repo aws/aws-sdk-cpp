@@ -23,8 +23,8 @@ AttributeValue::AttributeValue() :
 {
 }
 
-AttributeValue::AttributeValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+AttributeValue::AttributeValue(JsonView jsonValue)
+  : AttributeValue()
 {
   *this = jsonValue;
 }

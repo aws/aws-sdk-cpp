@@ -28,11 +28,8 @@ HealthCheckObservation::HealthCheckObservation() :
 {
 }
 
-HealthCheckObservation::HealthCheckObservation(const XmlNode& xmlNode) : 
-    m_region(HealthCheckRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_iPAddressHasBeenSet(false),
-    m_statusReportHasBeenSet(false)
+HealthCheckObservation::HealthCheckObservation(const XmlNode& xmlNode)
+  : HealthCheckObservation()
 {
   *this = xmlNode;
 }

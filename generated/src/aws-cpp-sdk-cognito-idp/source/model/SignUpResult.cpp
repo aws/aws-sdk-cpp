@@ -22,8 +22,8 @@ SignUpResult::SignUpResult() :
 {
 }
 
-SignUpResult::SignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_userConfirmed(false)
+SignUpResult::SignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SignUpResult()
 {
   *this = result;
 }

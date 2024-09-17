@@ -25,10 +25,8 @@ Location::Location() :
 {
 }
 
-Location::Location(JsonView jsonValue) : 
-    m_jdbcHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_dynamoDBHasBeenSet(false)
+Location::Location(JsonView jsonValue)
+  : Location()
 {
   *this = jsonValue;
 }

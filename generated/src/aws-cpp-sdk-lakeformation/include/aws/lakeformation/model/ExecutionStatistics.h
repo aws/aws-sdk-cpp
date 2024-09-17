@@ -36,68 +36,35 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The average time the request took to be executed.</p>
      */
     inline long long GetAverageExecutionTimeMillis() const{ return m_averageExecutionTimeMillis; }
-
-    /**
-     * <p>The average time the request took to be executed.</p>
-     */
     inline bool AverageExecutionTimeMillisHasBeenSet() const { return m_averageExecutionTimeMillisHasBeenSet; }
-
-    /**
-     * <p>The average time the request took to be executed.</p>
-     */
     inline void SetAverageExecutionTimeMillis(long long value) { m_averageExecutionTimeMillisHasBeenSet = true; m_averageExecutionTimeMillis = value; }
-
-    /**
-     * <p>The average time the request took to be executed.</p>
-     */
     inline ExecutionStatistics& WithAverageExecutionTimeMillis(long long value) { SetAverageExecutionTimeMillis(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of data that was scanned in bytes.</p>
      */
     inline long long GetDataScannedBytes() const{ return m_dataScannedBytes; }
-
-    /**
-     * <p>The amount of data that was scanned in bytes.</p>
-     */
     inline bool DataScannedBytesHasBeenSet() const { return m_dataScannedBytesHasBeenSet; }
-
-    /**
-     * <p>The amount of data that was scanned in bytes.</p>
-     */
     inline void SetDataScannedBytes(long long value) { m_dataScannedBytesHasBeenSet = true; m_dataScannedBytes = value; }
-
-    /**
-     * <p>The amount of data that was scanned in bytes.</p>
-     */
     inline ExecutionStatistics& WithDataScannedBytes(long long value) { SetDataScannedBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of work units executed.</p>
      */
     inline long long GetWorkUnitsExecutedCount() const{ return m_workUnitsExecutedCount; }
-
-    /**
-     * <p>The number of work units executed.</p>
-     */
     inline bool WorkUnitsExecutedCountHasBeenSet() const { return m_workUnitsExecutedCountHasBeenSet; }
-
-    /**
-     * <p>The number of work units executed.</p>
-     */
     inline void SetWorkUnitsExecutedCount(long long value) { m_workUnitsExecutedCountHasBeenSet = true; m_workUnitsExecutedCount = value; }
-
-    /**
-     * <p>The number of work units executed.</p>
-     */
     inline ExecutionStatistics& WithWorkUnitsExecutedCount(long long value) { SetWorkUnitsExecutedCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_averageExecutionTimeMillis;

@@ -33,69 +33,22 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
      * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
      * </code></pre>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline BatchGetMemberEc2DeepInspectionStatusRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline BatchGetMemberEc2DeepInspectionStatusRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline BatchGetMemberEc2DeepInspectionStatusRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline BatchGetMemberEc2DeepInspectionStatusRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The unique identifiers for the Amazon Web Services accounts to retrieve
-     * Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline BatchGetMemberEc2DeepInspectionStatusRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;

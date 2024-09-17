@@ -23,9 +23,8 @@ DescribePackageVersionResult::DescribePackageVersionResult() :
 {
 }
 
-DescribePackageVersionResult::DescribePackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isLatestPatch(false),
-    m_status(PackageVersionStatus::NOT_SET)
+DescribePackageVersionResult::DescribePackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePackageVersionResult()
 {
   *this = result;
 }

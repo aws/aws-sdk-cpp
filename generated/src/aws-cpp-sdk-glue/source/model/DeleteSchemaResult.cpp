@@ -22,8 +22,8 @@ DeleteSchemaResult::DeleteSchemaResult() :
 {
 }
 
-DeleteSchemaResult::DeleteSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SchemaStatus::NOT_SET)
+DeleteSchemaResult::DeleteSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteSchemaResult()
 {
   *this = result;
 }

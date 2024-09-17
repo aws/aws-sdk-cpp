@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using FinSpaceDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FinSpaceDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using FinSpaceDataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FinSpaceDataBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -19,44 +19,24 @@ namespace Model
 {
 
 Event::Event() : 
-    m_errorCode(EventErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
     m_name(EventName::NOT_SET),
     m_nameHasBeenSet(false),
     m_participantIdHasBeenSet(false),
-    m_remoteParticipantIdHasBeenSet(false)
+    m_eventTimeHasBeenSet(false),
+    m_remoteParticipantIdHasBeenSet(false),
+    m_errorCode(EventErrorCode::NOT_SET),
+    m_errorCodeHasBeenSet(false)
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_errorCode(EventErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_name(EventName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_remoteParticipantIdHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }
 
 Event& Event::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("errorCode"))
-  {
-    m_errorCode = EventErrorCodeMapper::GetEventErrorCodeForName(jsonValue.GetString("errorCode"));
-
-    m_errorCodeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("eventTime"))
-  {
-    m_eventTime = jsonValue.GetString("eventTime");
-
-    m_eventTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = EventNameMapper::GetEventNameForName(jsonValue.GetString("name"));
@@ -71,11 +51,25 @@ Event& Event::operator =(JsonView jsonValue)
     m_participantIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eventTime"))
+  {
+    m_eventTime = jsonValue.GetString("eventTime");
+
+    m_eventTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("remoteParticipantId"))
   {
     m_remoteParticipantId = jsonValue.GetString("remoteParticipantId");
 
     m_remoteParticipantIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = EventErrorCodeMapper::GetEventErrorCodeForName(jsonValue.GetString("errorCode"));
+
+    m_errorCodeHasBeenSet = true;
   }
 
   return *this;
@@ -84,16 +78,6 @@ Event& Event::operator =(JsonView jsonValue)
 JsonValue Event::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", EventErrorCodeMapper::GetNameForEventErrorCode(m_errorCode));
-  }
-
-  if(m_eventTimeHasBeenSet)
-  {
-   payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if(m_nameHasBeenSet)
   {
@@ -106,10 +90,20 @@ JsonValue Event::Jsonize() const
 
   }
 
+  if(m_eventTimeHasBeenSet)
+  {
+   payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_remoteParticipantIdHasBeenSet)
   {
    payload.WithString("remoteParticipantId", m_remoteParticipantId);
 
+  }
+
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", EventErrorCodeMapper::GetNameForEventErrorCode(m_errorCode));
   }
 
   return payload;

@@ -27,12 +27,8 @@ ContactFlowModuleSummary::ContactFlowModuleSummary() :
 {
 }
 
-ContactFlowModuleSummary::ContactFlowModuleSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ContactFlowModuleState::NOT_SET),
-    m_stateHasBeenSet(false)
+ContactFlowModuleSummary::ContactFlowModuleSummary(JsonView jsonValue)
+  : ContactFlowModuleSummary()
 {
   *this = jsonValue;
 }

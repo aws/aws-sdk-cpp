@@ -24,9 +24,8 @@ GetSolInstantiatedVnfInfo::GetSolInstantiatedVnfInfo() :
 {
 }
 
-GetSolInstantiatedVnfInfo::GetSolInstantiatedVnfInfo(JsonView jsonValue) : 
-    m_vnfState(VnfOperationalState::NOT_SET),
-    m_vnfStateHasBeenSet(false)
+GetSolInstantiatedVnfInfo::GetSolInstantiatedVnfInfo(JsonView jsonValue)
+  : GetSolInstantiatedVnfInfo()
 {
   *this = jsonValue;
 }

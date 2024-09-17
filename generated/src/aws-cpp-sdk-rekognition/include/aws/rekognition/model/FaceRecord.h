@@ -40,73 +40,30 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the face properties such as the bounding box, face ID, image ID of
      * the input image, and external image ID that you assigned. </p>
      */
     inline const Face& GetFace() const{ return m_face; }
-
-    /**
-     * <p>Describes the face properties such as the bounding box, face ID, image ID of
-     * the input image, and external image ID that you assigned. </p>
-     */
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-
-    /**
-     * <p>Describes the face properties such as the bounding box, face ID, image ID of
-     * the input image, and external image ID that you assigned. </p>
-     */
     inline void SetFace(const Face& value) { m_faceHasBeenSet = true; m_face = value; }
-
-    /**
-     * <p>Describes the face properties such as the bounding box, face ID, image ID of
-     * the input image, and external image ID that you assigned. </p>
-     */
     inline void SetFace(Face&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-
-    /**
-     * <p>Describes the face properties such as the bounding box, face ID, image ID of
-     * the input image, and external image ID that you assigned. </p>
-     */
     inline FaceRecord& WithFace(const Face& value) { SetFace(value); return *this;}
-
-    /**
-     * <p>Describes the face properties such as the bounding box, face ID, image ID of
-     * the input image, and external image ID that you assigned. </p>
-     */
     inline FaceRecord& WithFace(Face&& value) { SetFace(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Structure containing attributes of the face that the algorithm detected.</p>
      */
     inline const FaceDetail& GetFaceDetail() const{ return m_faceDetail; }
-
-    /**
-     * <p>Structure containing attributes of the face that the algorithm detected.</p>
-     */
     inline bool FaceDetailHasBeenSet() const { return m_faceDetailHasBeenSet; }
-
-    /**
-     * <p>Structure containing attributes of the face that the algorithm detected.</p>
-     */
     inline void SetFaceDetail(const FaceDetail& value) { m_faceDetailHasBeenSet = true; m_faceDetail = value; }
-
-    /**
-     * <p>Structure containing attributes of the face that the algorithm detected.</p>
-     */
     inline void SetFaceDetail(FaceDetail&& value) { m_faceDetailHasBeenSet = true; m_faceDetail = std::move(value); }
-
-    /**
-     * <p>Structure containing attributes of the face that the algorithm detected.</p>
-     */
     inline FaceRecord& WithFaceDetail(const FaceDetail& value) { SetFaceDetail(value); return *this;}
-
-    /**
-     * <p>Structure containing attributes of the face that the algorithm detected.</p>
-     */
     inline FaceRecord& WithFaceDetail(FaceDetail&& value) { SetFaceDetail(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Face m_face;

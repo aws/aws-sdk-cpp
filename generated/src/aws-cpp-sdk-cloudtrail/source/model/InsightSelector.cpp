@@ -24,9 +24,8 @@ InsightSelector::InsightSelector() :
 {
 }
 
-InsightSelector::InsightSelector(JsonView jsonValue) : 
-    m_insightType(InsightType::NOT_SET),
-    m_insightTypeHasBeenSet(false)
+InsightSelector::InsightSelector(JsonView jsonValue)
+  : InsightSelector()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ EventSelector::EventSelector() :
 {
 }
 
-EventSelector::EventSelector(JsonView jsonValue) : 
-    m_readWriteType(ReadWriteType::NOT_SET),
-    m_readWriteTypeHasBeenSet(false),
-    m_includeManagementEvents(false),
-    m_includeManagementEventsHasBeenSet(false),
-    m_dataResourcesHasBeenSet(false),
-    m_excludeManagementEventSourcesHasBeenSet(false)
+EventSelector::EventSelector(JsonView jsonValue)
+  : EventSelector()
 {
   *this = jsonValue;
 }

@@ -29,6 +29,7 @@ WorkspaceDescription::WorkspaceDescription() :
     m_freeTrialConsumed(false),
     m_freeTrialConsumedHasBeenSet(false),
     m_freeTrialExpirationHasBeenSet(false),
+    m_grafanaTokenHasBeenSet(false),
     m_grafanaVersionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_licenseExpirationHasBeenSet(false),
@@ -51,36 +52,8 @@ WorkspaceDescription::WorkspaceDescription() :
 {
 }
 
-WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) : 
-    m_accountAccessType(AccountAccessType::NOT_SET),
-    m_accountAccessTypeHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_freeTrialConsumed(false),
-    m_freeTrialConsumedHasBeenSet(false),
-    m_freeTrialExpirationHasBeenSet(false),
-    m_grafanaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_licenseExpirationHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_modifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkAccessControlHasBeenSet(false),
-    m_notificationDestinationsHasBeenSet(false),
-    m_organizationRoleNameHasBeenSet(false),
-    m_organizationalUnitsHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_stackSetNameHasBeenSet(false),
-    m_status(WorkspaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_workspaceRoleArnHasBeenSet(false)
+WorkspaceDescription::WorkspaceDescription(JsonView jsonValue)
+  : WorkspaceDescription()
 {
   *this = jsonValue;
 }
@@ -144,6 +117,13 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_freeTrialExpiration = jsonValue.GetDouble("freeTrialExpiration");
 
     m_freeTrialExpirationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("grafanaToken"))
+  {
+    m_grafanaToken = jsonValue.GetString("grafanaToken");
+
+    m_grafanaTokenHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("grafanaVersion"))
@@ -322,6 +302,12 @@ JsonValue WorkspaceDescription::Jsonize() const
   if(m_freeTrialExpirationHasBeenSet)
   {
    payload.WithDouble("freeTrialExpiration", m_freeTrialExpiration.SecondsWithMSPrecision());
+  }
+
+  if(m_grafanaTokenHasBeenSet)
+  {
+   payload.WithString("grafanaToken", m_grafanaToken);
+
   }
 
   if(m_grafanaVersionHasBeenSet)

@@ -28,13 +28,8 @@ ImageScanFinding::ImageScanFinding() :
 {
 }
 
-ImageScanFinding::ImageScanFinding(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_severity(FindingSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+ImageScanFinding::ImageScanFinding(JsonView jsonValue)
+  : ImageScanFinding()
 {
   *this = jsonValue;
 }

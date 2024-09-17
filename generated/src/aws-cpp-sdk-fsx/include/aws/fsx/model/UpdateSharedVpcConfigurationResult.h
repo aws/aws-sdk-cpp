@@ -32,70 +32,30 @@ namespace Model
     AWS_FSX_API UpdateSharedVpcConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
      * systems in shared subnets.</p>
      */
     inline const Aws::String& GetEnableFsxRouteTableUpdatesFromParticipantAccounts() const{ return m_enableFsxRouteTableUpdatesFromParticipantAccounts; }
-
-    /**
-     * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets.</p>
-     */
     inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { m_enableFsxRouteTableUpdatesFromParticipantAccounts = value; }
-
-    /**
-     * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets.</p>
-     */
     inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { m_enableFsxRouteTableUpdatesFromParticipantAccounts = std::move(value); }
-
-    /**
-     * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets.</p>
-     */
     inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { m_enableFsxRouteTableUpdatesFromParticipantAccounts.assign(value); }
-
-    /**
-     * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets.</p>
-     */
     inline UpdateSharedVpcConfigurationResult& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
-
-    /**
-     * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets.</p>
-     */
     inline UpdateSharedVpcConfigurationResult& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets.</p>
-     */
     inline UpdateSharedVpcConfigurationResult& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSharedVpcConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSharedVpcConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSharedVpcConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_enableFsxRouteTableUpdatesFromParticipantAccounts;

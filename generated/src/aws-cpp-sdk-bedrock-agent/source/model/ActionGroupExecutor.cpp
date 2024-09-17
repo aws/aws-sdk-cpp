@@ -19,18 +19,27 @@ namespace Model
 {
 
 ActionGroupExecutor::ActionGroupExecutor() : 
+    m_customControl(CustomControlMethod::NOT_SET),
+    m_customControlHasBeenSet(false),
     m_lambdaHasBeenSet(false)
 {
 }
 
-ActionGroupExecutor::ActionGroupExecutor(JsonView jsonValue) : 
-    m_lambdaHasBeenSet(false)
+ActionGroupExecutor::ActionGroupExecutor(JsonView jsonValue)
+  : ActionGroupExecutor()
 {
   *this = jsonValue;
 }
 
 ActionGroupExecutor& ActionGroupExecutor::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("customControl"))
+  {
+    m_customControl = CustomControlMethodMapper::GetCustomControlMethodForName(jsonValue.GetString("customControl"));
+
+    m_customControlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("lambda"))
   {
     m_lambda = jsonValue.GetString("lambda");
@@ -44,6 +53,11 @@ ActionGroupExecutor& ActionGroupExecutor::operator =(JsonView jsonValue)
 JsonValue ActionGroupExecutor::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customControlHasBeenSet)
+  {
+   payload.WithString("customControl", CustomControlMethodMapper::GetNameForCustomControlMethod(m_customControl));
+  }
 
   if(m_lambdaHasBeenSet)
   {

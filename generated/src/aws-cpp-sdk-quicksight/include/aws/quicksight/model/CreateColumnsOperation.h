@@ -39,46 +39,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Calculated columns to create.</p>
      */
     inline const Aws::Vector<CalculatedColumn>& GetColumns() const{ return m_columns; }
-
-    /**
-     * <p>Calculated columns to create.</p>
-     */
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-
-    /**
-     * <p>Calculated columns to create.</p>
-     */
     inline void SetColumns(const Aws::Vector<CalculatedColumn>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-
-    /**
-     * <p>Calculated columns to create.</p>
-     */
     inline void SetColumns(Aws::Vector<CalculatedColumn>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-
-    /**
-     * <p>Calculated columns to create.</p>
-     */
     inline CreateColumnsOperation& WithColumns(const Aws::Vector<CalculatedColumn>& value) { SetColumns(value); return *this;}
-
-    /**
-     * <p>Calculated columns to create.</p>
-     */
     inline CreateColumnsOperation& WithColumns(Aws::Vector<CalculatedColumn>&& value) { SetColumns(std::move(value)); return *this;}
-
-    /**
-     * <p>Calculated columns to create.</p>
-     */
     inline CreateColumnsOperation& AddColumns(const CalculatedColumn& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-
-    /**
-     * <p>Calculated columns to create.</p>
-     */
     inline CreateColumnsOperation& AddColumns(CalculatedColumn&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CalculatedColumn> m_columns;

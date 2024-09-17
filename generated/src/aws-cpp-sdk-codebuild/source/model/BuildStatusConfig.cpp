@@ -24,9 +24,8 @@ BuildStatusConfig::BuildStatusConfig() :
 {
 }
 
-BuildStatusConfig::BuildStatusConfig(JsonView jsonValue) : 
-    m_contextHasBeenSet(false),
-    m_targetUrlHasBeenSet(false)
+BuildStatusConfig::BuildStatusConfig(JsonView jsonValue)
+  : BuildStatusConfig()
 {
   *this = jsonValue;
 }

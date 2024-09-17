@@ -39,24 +39,8 @@ DeploymentSummary::DeploymentSummary() :
 {
 }
 
-DeploymentSummary::DeploymentSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastAttemptedDeploymentIdHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_lastSucceededDeploymentIdHasBeenSet(false),
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_targetResourceCreatedAtHasBeenSet(false),
-    m_targetResourceType(DeploymentTargetResourceType::NOT_SET),
-    m_targetResourceTypeHasBeenSet(false)
+DeploymentSummary::DeploymentSummary(JsonView jsonValue)
+  : DeploymentSummary()
 {
   *this = jsonValue;
 }

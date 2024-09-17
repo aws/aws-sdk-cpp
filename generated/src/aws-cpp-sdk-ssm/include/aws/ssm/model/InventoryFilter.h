@@ -40,165 +40,52 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the filter key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The name of the filter key.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The name of the filter key.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The name of the filter key.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The name of the filter key.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The name of the filter key.</p>
-     */
     inline InventoryFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The name of the filter key.</p>
-     */
     inline InventoryFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the filter key.</p>
-     */
     inline InventoryFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline InventoryFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline InventoryFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline InventoryFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline InventoryFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
-     * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
-     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-     */
     inline InventoryFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of filter.</p>  <p>The <code>Exists</code> filter must be used
      * with aggregators. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-aggregate.html">Aggregating
      * inventory data</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p> 
      */
     inline const InventoryQueryOperatorType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of filter.</p>  <p>The <code>Exists</code> filter must be used
-     * with aggregators. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p> 
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of filter.</p>  <p>The <code>Exists</code> filter must be used
-     * with aggregators. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p> 
-     */
     inline void SetType(const InventoryQueryOperatorType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of filter.</p>  <p>The <code>Exists</code> filter must be used
-     * with aggregators. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p> 
-     */
     inline void SetType(InventoryQueryOperatorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of filter.</p>  <p>The <code>Exists</code> filter must be used
-     * with aggregators. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p> 
-     */
     inline InventoryFilter& WithType(const InventoryQueryOperatorType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of filter.</p>  <p>The <code>Exists</code> filter must be used
-     * with aggregators. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.</p> 
-     */
     inline InventoryFilter& WithType(InventoryQueryOperatorType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

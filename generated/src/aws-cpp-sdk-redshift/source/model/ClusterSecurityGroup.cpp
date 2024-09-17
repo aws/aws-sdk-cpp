@@ -29,12 +29,8 @@ ClusterSecurityGroup::ClusterSecurityGroup() :
 {
 }
 
-ClusterSecurityGroup::ClusterSecurityGroup(const XmlNode& xmlNode) : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false),
-    m_iPRangesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ClusterSecurityGroup::ClusterSecurityGroup(const XmlNode& xmlNode)
+  : ClusterSecurityGroup()
 {
   *this = xmlNode;
 }

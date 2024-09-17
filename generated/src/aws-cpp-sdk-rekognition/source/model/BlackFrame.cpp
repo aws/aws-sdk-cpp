@@ -26,11 +26,8 @@ BlackFrame::BlackFrame() :
 {
 }
 
-BlackFrame::BlackFrame(JsonView jsonValue) : 
-    m_maxPixelThreshold(0.0),
-    m_maxPixelThresholdHasBeenSet(false),
-    m_minCoveragePercentage(0.0),
-    m_minCoveragePercentageHasBeenSet(false)
+BlackFrame::BlackFrame(JsonView jsonValue)
+  : BlackFrame()
 {
   *this = jsonValue;
 }

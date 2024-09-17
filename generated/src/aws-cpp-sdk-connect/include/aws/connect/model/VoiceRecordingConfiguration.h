@@ -38,36 +38,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifies which track is being recorded.</p>
      */
     inline const VoiceRecordingTrack& GetVoiceRecordingTrack() const{ return m_voiceRecordingTrack; }
-
-    /**
-     * <p>Identifies which track is being recorded.</p>
-     */
     inline bool VoiceRecordingTrackHasBeenSet() const { return m_voiceRecordingTrackHasBeenSet; }
-
-    /**
-     * <p>Identifies which track is being recorded.</p>
-     */
     inline void SetVoiceRecordingTrack(const VoiceRecordingTrack& value) { m_voiceRecordingTrackHasBeenSet = true; m_voiceRecordingTrack = value; }
-
-    /**
-     * <p>Identifies which track is being recorded.</p>
-     */
     inline void SetVoiceRecordingTrack(VoiceRecordingTrack&& value) { m_voiceRecordingTrackHasBeenSet = true; m_voiceRecordingTrack = std::move(value); }
-
-    /**
-     * <p>Identifies which track is being recorded.</p>
-     */
     inline VoiceRecordingConfiguration& WithVoiceRecordingTrack(const VoiceRecordingTrack& value) { SetVoiceRecordingTrack(value); return *this;}
-
-    /**
-     * <p>Identifies which track is being recorded.</p>
-     */
     inline VoiceRecordingConfiguration& WithVoiceRecordingTrack(VoiceRecordingTrack&& value) { SetVoiceRecordingTrack(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VoiceRecordingTrack m_voiceRecordingTrack;

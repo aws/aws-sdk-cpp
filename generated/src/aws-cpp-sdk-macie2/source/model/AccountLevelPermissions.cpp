@@ -23,8 +23,8 @@ AccountLevelPermissions::AccountLevelPermissions() :
 {
 }
 
-AccountLevelPermissions::AccountLevelPermissions(JsonView jsonValue) : 
-    m_blockPublicAccessHasBeenSet(false)
+AccountLevelPermissions::AccountLevelPermissions(JsonView jsonValue)
+  : AccountLevelPermissions()
 {
   *this = jsonValue;
 }

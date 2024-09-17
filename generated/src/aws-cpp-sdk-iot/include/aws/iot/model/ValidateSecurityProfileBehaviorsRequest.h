@@ -33,54 +33,20 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the behaviors that, when violated by a device (thing), cause an
      * alert.</p>
      */
     inline const Aws::Vector<Behavior>& GetBehaviors() const{ return m_behaviors; }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline bool BehaviorsHasBeenSet() const { return m_behaviorsHasBeenSet; }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline void SetBehaviors(const Aws::Vector<Behavior>& value) { m_behaviorsHasBeenSet = true; m_behaviors = value; }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline void SetBehaviors(Aws::Vector<Behavior>&& value) { m_behaviorsHasBeenSet = true; m_behaviors = std::move(value); }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline ValidateSecurityProfileBehaviorsRequest& WithBehaviors(const Aws::Vector<Behavior>& value) { SetBehaviors(value); return *this;}
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline ValidateSecurityProfileBehaviorsRequest& WithBehaviors(Aws::Vector<Behavior>&& value) { SetBehaviors(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline ValidateSecurityProfileBehaviorsRequest& AddBehaviors(const Behavior& value) { m_behaviorsHasBeenSet = true; m_behaviors.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
-     * alert.</p>
-     */
     inline ValidateSecurityProfileBehaviorsRequest& AddBehaviors(Behavior&& value) { m_behaviorsHasBeenSet = true; m_behaviors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Behavior> m_behaviors;

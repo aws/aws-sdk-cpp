@@ -36,21 +36,8 @@ ReplicationRun::ReplicationRun() :
 {
 }
 
-ReplicationRun::ReplicationRun(JsonView jsonValue) : 
-    m_replicationRunIdHasBeenSet(false),
-    m_state(ReplicationRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(ReplicationRunType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_stageDetailsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_scheduledStartTimeHasBeenSet(false),
-    m_completedTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+ReplicationRun::ReplicationRun(JsonView jsonValue)
+  : ReplicationRun()
 {
   *this = jsonValue;
 }

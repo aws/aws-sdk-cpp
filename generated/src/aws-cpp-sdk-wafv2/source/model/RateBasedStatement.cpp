@@ -22,6 +22,8 @@ namespace Model
 RateBasedStatement::RateBasedStatement() : 
     m_limit(0),
     m_limitHasBeenSet(false),
+    m_evaluationWindowSec(0),
+    m_evaluationWindowSecHasBeenSet(false),
     m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
     m_aggregateKeyTypeHasBeenSet(false),
     m_scopeDownStatementHasBeenSet(false),
@@ -30,14 +32,8 @@ RateBasedStatement::RateBasedStatement() :
 {
 }
 
-RateBasedStatement::RateBasedStatement(JsonView jsonValue) : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
-    m_aggregateKeyTypeHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false),
-    m_forwardedIPConfigHasBeenSet(false),
-    m_customKeysHasBeenSet(false)
+RateBasedStatement::RateBasedStatement(JsonView jsonValue)
+  : RateBasedStatement()
 {
   *this = jsonValue;
 }
@@ -56,6 +52,13 @@ RateBasedStatement& RateBasedStatement::operator =(JsonView jsonValue)
     m_limit = jsonValue.GetInt64("Limit");
 
     m_limitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EvaluationWindowSec"))
+  {
+    m_evaluationWindowSec = jsonValue.GetInt64("EvaluationWindowSec");
+
+    m_evaluationWindowSecHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AggregateKeyType"))
@@ -99,6 +102,12 @@ JsonValue RateBasedStatement::Jsonize() const
   if(m_limitHasBeenSet)
   {
    payload.WithInt64("Limit", m_limit);
+
+  }
+
+  if(m_evaluationWindowSecHasBeenSet)
+  {
+   payload.WithInt64("EvaluationWindowSec", m_evaluationWindowSec);
 
   }
 

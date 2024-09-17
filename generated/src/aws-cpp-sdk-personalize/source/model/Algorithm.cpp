@@ -32,17 +32,8 @@ Algorithm::Algorithm() :
 {
 }
 
-Algorithm::Algorithm(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_algorithmArnHasBeenSet(false),
-    m_algorithmImageHasBeenSet(false),
-    m_defaultHyperParametersHasBeenSet(false),
-    m_defaultHyperParameterRangesHasBeenSet(false),
-    m_defaultResourceConfigHasBeenSet(false),
-    m_trainingInputModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+Algorithm::Algorithm(JsonView jsonValue)
+  : Algorithm()
 {
   *this = jsonValue;
 }

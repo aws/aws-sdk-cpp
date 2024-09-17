@@ -26,11 +26,8 @@ RStudioServerProDomainSettingsForUpdate::RStudioServerProDomainSettingsForUpdate
 {
 }
 
-RStudioServerProDomainSettingsForUpdate::RStudioServerProDomainSettingsForUpdate(JsonView jsonValue) : 
-    m_domainExecutionRoleArnHasBeenSet(false),
-    m_defaultResourceSpecHasBeenSet(false),
-    m_rStudioConnectUrlHasBeenSet(false),
-    m_rStudioPackageManagerUrlHasBeenSet(false)
+RStudioServerProDomainSettingsForUpdate::RStudioServerProDomainSettingsForUpdate(JsonView jsonValue)
+  : RStudioServerProDomainSettingsForUpdate()
 {
   *this = jsonValue;
 }

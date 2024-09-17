@@ -501,13 +501,13 @@ namespace LookoutMetrics
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetSampleData">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSampleDataOutcome GetSampleData(const Model::GetSampleDataRequest& request) const;
+        virtual Model::GetSampleDataOutcome GetSampleData(const Model::GetSampleDataRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSampleData that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSampleDataRequestT = Model::GetSampleDataRequest>
-        Model::GetSampleDataOutcomeCallable GetSampleDataCallable(const GetSampleDataRequestT& request) const
+        Model::GetSampleDataOutcomeCallable GetSampleDataCallable(const GetSampleDataRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutMetricsClient::GetSampleData, request);
         }
@@ -516,7 +516,7 @@ namespace LookoutMetrics
          * An Async wrapper for GetSampleData that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSampleDataRequestT = Model::GetSampleDataRequest>
-        void GetSampleDataAsync(const GetSampleDataRequestT& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSampleDataAsync(const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSampleDataRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutMetricsClient::GetSampleData, request, handler, context);
         }
@@ -529,13 +529,13 @@ namespace LookoutMetrics
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAlertsOutcome ListAlerts(const Model::ListAlertsRequest& request) const;
+        virtual Model::ListAlertsOutcome ListAlerts(const Model::ListAlertsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAlerts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAlertsRequestT = Model::ListAlertsRequest>
-        Model::ListAlertsOutcomeCallable ListAlertsCallable(const ListAlertsRequestT& request) const
+        Model::ListAlertsOutcomeCallable ListAlertsCallable(const ListAlertsRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutMetricsClient::ListAlerts, request);
         }
@@ -544,7 +544,7 @@ namespace LookoutMetrics
          * An Async wrapper for ListAlerts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAlertsRequestT = Model::ListAlertsRequest>
-        void ListAlertsAsync(const ListAlertsRequestT& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAlertsAsync(const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAlertsRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutMetricsClient::ListAlerts, request, handler, context);
         }
@@ -557,13 +557,13 @@ namespace LookoutMetrics
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAnomalyDetectorsOutcome ListAnomalyDetectors(const Model::ListAnomalyDetectorsRequest& request) const;
+        virtual Model::ListAnomalyDetectorsOutcome ListAnomalyDetectors(const Model::ListAnomalyDetectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAnomalyDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAnomalyDetectorsRequestT = Model::ListAnomalyDetectorsRequest>
-        Model::ListAnomalyDetectorsOutcomeCallable ListAnomalyDetectorsCallable(const ListAnomalyDetectorsRequestT& request) const
+        Model::ListAnomalyDetectorsOutcomeCallable ListAnomalyDetectorsCallable(const ListAnomalyDetectorsRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutMetricsClient::ListAnomalyDetectors, request);
         }
@@ -572,7 +572,7 @@ namespace LookoutMetrics
          * An Async wrapper for ListAnomalyDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAnomalyDetectorsRequestT = Model::ListAnomalyDetectorsRequest>
-        void ListAnomalyDetectorsAsync(const ListAnomalyDetectorsRequestT& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAnomalyDetectorsAsync(const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAnomalyDetectorsRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutMetricsClient::ListAnomalyDetectors, request, handler, context);
         }
@@ -662,13 +662,13 @@ namespace LookoutMetrics
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMetricSetsOutcome ListMetricSets(const Model::ListMetricSetsRequest& request) const;
+        virtual Model::ListMetricSetsOutcome ListMetricSets(const Model::ListMetricSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMetricSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMetricSetsRequestT = Model::ListMetricSetsRequest>
-        Model::ListMetricSetsOutcomeCallable ListMetricSetsCallable(const ListMetricSetsRequestT& request) const
+        Model::ListMetricSetsOutcomeCallable ListMetricSetsCallable(const ListMetricSetsRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutMetricsClient::ListMetricSets, request);
         }
@@ -677,7 +677,7 @@ namespace LookoutMetrics
          * An Async wrapper for ListMetricSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMetricSetsRequestT = Model::ListMetricSetsRequest>
-        void ListMetricSetsAsync(const ListMetricSetsRequestT& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMetricSetsAsync(const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMetricSetsRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutMetricsClient::ListMetricSets, request, handler, context);
         }
@@ -872,7 +872,6 @@ namespace LookoutMetrics
       void init(const LookoutMetricsClientConfiguration& clientConfiguration);
 
       LookoutMetricsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LookoutMetricsEndpointProviderBase> m_endpointProvider;
   };
 

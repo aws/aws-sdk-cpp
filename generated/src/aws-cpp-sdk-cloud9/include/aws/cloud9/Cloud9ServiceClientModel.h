@@ -31,6 +31,8 @@
 #include <aws/cloud9/model/UntagResourceResult.h>
 #include <aws/cloud9/model/UpdateEnvironmentResult.h>
 #include <aws/cloud9/model/UpdateEnvironmentMembershipResult.h>
+#include <aws/cloud9/model/ListEnvironmentsRequest.h>
+#include <aws/cloud9/model/DescribeEnvironmentMembershipsRequest.h>
 /* End of service model headers required in Cloud9Client header */
 
 namespace Aws
@@ -64,7 +66,7 @@ namespace Aws
 
   namespace Cloud9
   {
-    using Cloud9ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Cloud9ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Cloud9EndpointProviderBase = Aws::Cloud9::Endpoint::Cloud9EndpointProviderBase;
     using Cloud9EndpointProvider = Aws::Cloud9::Endpoint::Cloud9EndpointProvider;
 

@@ -27,12 +27,8 @@ HistogramVisual::HistogramVisual() :
 {
 }
 
-HistogramVisual::HistogramVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+HistogramVisual::HistogramVisual(JsonView jsonValue)
+  : HistogramVisual()
 {
   *this = jsonValue;
 }

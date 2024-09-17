@@ -29,14 +29,8 @@ CampaignDateRangeKpiResponse::CampaignDateRangeKpiResponse() :
 {
 }
 
-CampaignDateRangeKpiResponse::CampaignDateRangeKpiResponse(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_kpiNameHasBeenSet(false),
-    m_kpiResultHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+CampaignDateRangeKpiResponse::CampaignDateRangeKpiResponse(JsonView jsonValue)
+  : CampaignDateRangeKpiResponse()
 {
   *this = jsonValue;
 }

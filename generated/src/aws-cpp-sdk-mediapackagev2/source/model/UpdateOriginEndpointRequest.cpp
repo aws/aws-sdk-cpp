@@ -5,6 +5,7 @@
 
 #include <aws/mediapackagev2/model/UpdateOriginEndpointRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -23,7 +24,10 @@ UpdateOriginEndpointRequest::UpdateOriginEndpointRequest() :
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
-    m_lowLatencyHlsManifestsHasBeenSet(false)
+    m_lowLatencyHlsManifestsHasBeenSet(false),
+    m_dashManifestsHasBeenSet(false),
+    m_forceEndpointErrorConfigurationHasBeenSet(false),
+    m_eTagHasBeenSet(false)
 {
 }
 
@@ -76,7 +80,39 @@ Aws::String UpdateOriginEndpointRequest::SerializePayload() const
 
   }
 
+  if(m_dashManifestsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dashManifestsJsonList(m_dashManifests.size());
+   for(unsigned dashManifestsIndex = 0; dashManifestsIndex < dashManifestsJsonList.GetLength(); ++dashManifestsIndex)
+   {
+     dashManifestsJsonList[dashManifestsIndex].AsObject(m_dashManifests[dashManifestsIndex].Jsonize());
+   }
+   payload.WithArray("DashManifests", std::move(dashManifestsJsonList));
+
+  }
+
+  if(m_forceEndpointErrorConfigurationHasBeenSet)
+  {
+   payload.WithObject("ForceEndpointErrorConfiguration", m_forceEndpointErrorConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection UpdateOriginEndpointRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_eTagHasBeenSet)
+  {
+    ss << m_eTag;
+    headers.emplace("x-amzn-update-if-match",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

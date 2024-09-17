@@ -26,11 +26,8 @@ AwsVPCSecurityGroupViolation::AwsVPCSecurityGroupViolation() :
 {
 }
 
-AwsVPCSecurityGroupViolation::AwsVPCSecurityGroupViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_violationTargetDescriptionHasBeenSet(false),
-    m_partialMatchesHasBeenSet(false),
-    m_possibleSecurityGroupRemediationActionsHasBeenSet(false)
+AwsVPCSecurityGroupViolation::AwsVPCSecurityGroupViolation(JsonView jsonValue)
+  : AwsVPCSecurityGroupViolation()
 {
   *this = jsonValue;
 }

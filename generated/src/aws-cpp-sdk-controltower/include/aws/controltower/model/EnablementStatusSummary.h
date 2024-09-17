@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The deployment summary of the enabled control.</p><p><h3>See Also:</h3>   <a
+   * <p>The deployment summary of an <code>EnabledControl</code> or
+   * <code>EnabledBaseline</code> resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnablementStatusSummary">AWS
    * API Reference</a></p>
    */
@@ -38,107 +39,37 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The last operation identifier for the enabled control.</p>
+     * <p>The last operation identifier for the enabled resource.</p>
      */
     inline const Aws::String& GetLastOperationIdentifier() const{ return m_lastOperationIdentifier; }
-
-    /**
-     * <p>The last operation identifier for the enabled control.</p>
-     */
     inline bool LastOperationIdentifierHasBeenSet() const { return m_lastOperationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The last operation identifier for the enabled control.</p>
-     */
     inline void SetLastOperationIdentifier(const Aws::String& value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier = value; }
-
-    /**
-     * <p>The last operation identifier for the enabled control.</p>
-     */
     inline void SetLastOperationIdentifier(Aws::String&& value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier = std::move(value); }
-
-    /**
-     * <p>The last operation identifier for the enabled control.</p>
-     */
     inline void SetLastOperationIdentifier(const char* value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier.assign(value); }
-
-    /**
-     * <p>The last operation identifier for the enabled control.</p>
-     */
     inline EnablementStatusSummary& WithLastOperationIdentifier(const Aws::String& value) { SetLastOperationIdentifier(value); return *this;}
-
-    /**
-     * <p>The last operation identifier for the enabled control.</p>
-     */
     inline EnablementStatusSummary& WithLastOperationIdentifier(Aws::String&& value) { SetLastOperationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The last operation identifier for the enabled control.</p>
-     */
     inline EnablementStatusSummary& WithLastOperationIdentifier(const char* value) { SetLastOperationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p> The deployment status of the enabled control.</p> <p>Valid values:</p> <ul>
-     * <li> <p> <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration
-     * was deployed successfully.</p> </li> <li> <p> <code>UNDER_CHANGE</code>: The
-     * <code>enabledControl</code> configuration is changing. </p> </li> <li> <p>
-     * <code>FAILED</code>: The <code>enabledControl</code> configuration failed to
-     * deploy.</p> </li> </ul>
+     * <p> The deployment status of the enabled resource.</p> <p>Valid values:</p> <ul>
+     * <li> <p> <code>SUCCEEDED</code>: The <code>EnabledControl</code> or
+     * <code>EnabledBaseline</code> configuration was deployed successfully.</p> </li>
+     * <li> <p> <code>UNDER_CHANGE</code>: The <code>EnabledControl</code> or
+     * <code>EnabledBaseline</code> configuration is changing. </p> </li> <li> <p>
+     * <code>FAILED</code>: The <code>EnabledControl</code> or
+     * <code>EnabledBaseline</code> configuration failed to deploy.</p> </li> </ul>
      */
     inline const EnablementStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The deployment status of the enabled control.</p> <p>Valid values:</p> <ul>
-     * <li> <p> <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration
-     * was deployed successfully.</p> </li> <li> <p> <code>UNDER_CHANGE</code>: The
-     * <code>enabledControl</code> configuration is changing. </p> </li> <li> <p>
-     * <code>FAILED</code>: The <code>enabledControl</code> configuration failed to
-     * deploy.</p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The deployment status of the enabled control.</p> <p>Valid values:</p> <ul>
-     * <li> <p> <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration
-     * was deployed successfully.</p> </li> <li> <p> <code>UNDER_CHANGE</code>: The
-     * <code>enabledControl</code> configuration is changing. </p> </li> <li> <p>
-     * <code>FAILED</code>: The <code>enabledControl</code> configuration failed to
-     * deploy.</p> </li> </ul>
-     */
     inline void SetStatus(const EnablementStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The deployment status of the enabled control.</p> <p>Valid values:</p> <ul>
-     * <li> <p> <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration
-     * was deployed successfully.</p> </li> <li> <p> <code>UNDER_CHANGE</code>: The
-     * <code>enabledControl</code> configuration is changing. </p> </li> <li> <p>
-     * <code>FAILED</code>: The <code>enabledControl</code> configuration failed to
-     * deploy.</p> </li> </ul>
-     */
     inline void SetStatus(EnablementStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The deployment status of the enabled control.</p> <p>Valid values:</p> <ul>
-     * <li> <p> <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration
-     * was deployed successfully.</p> </li> <li> <p> <code>UNDER_CHANGE</code>: The
-     * <code>enabledControl</code> configuration is changing. </p> </li> <li> <p>
-     * <code>FAILED</code>: The <code>enabledControl</code> configuration failed to
-     * deploy.</p> </li> </ul>
-     */
     inline EnablementStatusSummary& WithStatus(const EnablementStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The deployment status of the enabled control.</p> <p>Valid values:</p> <ul>
-     * <li> <p> <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration
-     * was deployed successfully.</p> </li> <li> <p> <code>UNDER_CHANGE</code>: The
-     * <code>enabledControl</code> configuration is changing. </p> </li> <li> <p>
-     * <code>FAILED</code>: The <code>enabledControl</code> configuration failed to
-     * deploy.</p> </li> </ul>
-     */
     inline EnablementStatusSummary& WithStatus(EnablementStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lastOperationIdentifier;

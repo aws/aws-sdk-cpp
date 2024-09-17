@@ -38,36 +38,17 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies how frequently inventory results are produced.</p>
      */
     inline const InventoryFrequency& GetFrequency() const{ return m_frequency; }
-
-    /**
-     * <p>Specifies how frequently inventory results are produced.</p>
-     */
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
-
-    /**
-     * <p>Specifies how frequently inventory results are produced.</p>
-     */
     inline void SetFrequency(const InventoryFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
-
-    /**
-     * <p>Specifies how frequently inventory results are produced.</p>
-     */
     inline void SetFrequency(InventoryFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
-
-    /**
-     * <p>Specifies how frequently inventory results are produced.</p>
-     */
     inline InventorySchedule& WithFrequency(const InventoryFrequency& value) { SetFrequency(value); return *this;}
-
-    /**
-     * <p>Specifies how frequently inventory results are produced.</p>
-     */
     inline InventorySchedule& WithFrequency(InventoryFrequency&& value) { SetFrequency(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InventoryFrequency m_frequency;

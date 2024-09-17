@@ -26,11 +26,8 @@ HadoopStepConfig::HadoopStepConfig() :
 {
 }
 
-HadoopStepConfig::HadoopStepConfig(JsonView jsonValue) : 
-    m_jarHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_mainClassHasBeenSet(false),
-    m_argsHasBeenSet(false)
+HadoopStepConfig::HadoopStepConfig(JsonView jsonValue)
+  : HadoopStepConfig()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ContainerRecommendation::ContainerRecommendation() :
 {
 }
 
-ContainerRecommendation::ContainerRecommendation(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_memorySizeConfigurationHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false)
+ContainerRecommendation::ContainerRecommendation(JsonView jsonValue)
+  : ContainerRecommendation()
 {
   *this = jsonValue;
 }

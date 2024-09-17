@@ -22,8 +22,8 @@ StopCalculationExecutionResult::StopCalculationExecutionResult() :
 {
 }
 
-StopCalculationExecutionResult::StopCalculationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(CalculationExecutionState::NOT_SET)
+StopCalculationExecutionResult::StopCalculationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopCalculationExecutionResult()
 {
   *this = result;
 }

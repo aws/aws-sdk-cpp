@@ -27,12 +27,8 @@ HttpRetryPolicy::HttpRetryPolicy() :
 {
 }
 
-HttpRetryPolicy::HttpRetryPolicy(JsonView jsonValue) : 
-    m_httpRetryEventsHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_perRetryTimeoutHasBeenSet(false),
-    m_tcpRetryEventsHasBeenSet(false)
+HttpRetryPolicy::HttpRetryPolicy(JsonView jsonValue)
+  : HttpRetryPolicy()
 {
   *this = jsonValue;
 }

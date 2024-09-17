@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DataExchangeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DataExchangeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DataExchangeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataExchangeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

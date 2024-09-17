@@ -37,24 +37,15 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const S3DataConfig& GetS3DataSource() const{ return m_s3DataSource; }
-
-    
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
-
-    
     inline void SetS3DataSource(const S3DataConfig& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
-
-    
     inline void SetS3DataSource(S3DataConfig&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::move(value); }
-
-    
     inline BatchSegmentJobInput& WithS3DataSource(const S3DataConfig& value) { SetS3DataSource(value); return *this;}
-
-    
     inline BatchSegmentJobInput& WithS3DataSource(S3DataConfig&& value) { SetS3DataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3DataConfig m_s3DataSource;

@@ -85,14 +85,14 @@ void SSOBearerTokenProvider::Reload()
         AWS_LOGSTREAM_TRACE(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Access token for SSO not available");
         return;
     }
+    m_token.SetToken(cachedSsoToken.accessToken);
+    m_token.SetExpiration(cachedSsoToken.expiresAt);
+
     const Aws::Utils::DateTime now = Aws::Utils::DateTime::Now();
     if(cachedSsoToken.expiresAt < now) {
         AWS_LOGSTREAM_ERROR(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Cached Token is already expired at " << cachedSsoToken.expiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
         return;
     }
-
-    m_token.SetToken(cachedSsoToken.accessToken);
-    m_token.SetExpiration(cachedSsoToken.expiresAt);
 }
 
 void SSOBearerTokenProvider::RefreshFromSso()

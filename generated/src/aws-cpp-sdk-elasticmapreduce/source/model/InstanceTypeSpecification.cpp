@@ -29,22 +29,14 @@ InstanceTypeSpecification::InstanceTypeSpecification() :
     m_ebsBlockDevicesHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+    m_customAmiIdHasBeenSet(false),
+    m_priority(0.0),
+    m_priorityHasBeenSet(false)
 {
 }
 
-InstanceTypeSpecification::InstanceTypeSpecification(JsonView jsonValue) : 
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacity(0),
-    m_weightedCapacityHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_bidPriceAsPercentageOfOnDemandPrice(0.0),
-    m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_ebsBlockDevicesHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+InstanceTypeSpecification::InstanceTypeSpecification(JsonView jsonValue)
+  : InstanceTypeSpecification()
 {
   *this = jsonValue;
 }
@@ -113,6 +105,13 @@ InstanceTypeSpecification& InstanceTypeSpecification::operator =(JsonView jsonVa
     m_customAmiIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetDouble("Priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -175,6 +174,12 @@ JsonValue InstanceTypeSpecification::Jsonize() const
   if(m_customAmiIdHasBeenSet)
   {
    payload.WithString("CustomAmiId", m_customAmiId);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithDouble("Priority", m_priority);
 
   }
 

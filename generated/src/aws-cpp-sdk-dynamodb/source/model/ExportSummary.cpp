@@ -27,12 +27,8 @@ ExportSummary::ExportSummary() :
 {
 }
 
-ExportSummary::ExportSummary(JsonView jsonValue) : 
-    m_exportArnHasBeenSet(false),
-    m_exportStatus(ExportStatus::NOT_SET),
-    m_exportStatusHasBeenSet(false),
-    m_exportType(ExportType::NOT_SET),
-    m_exportTypeHasBeenSet(false)
+ExportSummary::ExportSummary(JsonView jsonValue)
+  : ExportSummary()
 {
   *this = jsonValue;
 }

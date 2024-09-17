@@ -19,56 +19,31 @@ namespace Model
 {
 
 ParticipantSummary::ParticipantSummary() : 
-    m_firstJoinTimeHasBeenSet(false),
     m_participantIdHasBeenSet(false),
-    m_published(false),
-    m_publishedHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_state(ParticipantState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_firstJoinTimeHasBeenSet(false),
+    m_published(false),
+    m_publishedHasBeenSet(false),
+    m_recordingState(ParticipantRecordingState::NOT_SET),
+    m_recordingStateHasBeenSet(false)
 {
 }
 
-ParticipantSummary::ParticipantSummary(JsonView jsonValue) : 
-    m_firstJoinTimeHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_published(false),
-    m_publishedHasBeenSet(false),
-    m_state(ParticipantState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+ParticipantSummary::ParticipantSummary(JsonView jsonValue)
+  : ParticipantSummary()
 {
   *this = jsonValue;
 }
 
 ParticipantSummary& ParticipantSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("firstJoinTime"))
-  {
-    m_firstJoinTime = jsonValue.GetString("firstJoinTime");
-
-    m_firstJoinTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("participantId"))
   {
     m_participantId = jsonValue.GetString("participantId");
 
     m_participantIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("published"))
-  {
-    m_published = jsonValue.GetBool("published");
-
-    m_publishedHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("state"))
-  {
-    m_state = ParticipantStateMapper::GetParticipantStateForName(jsonValue.GetString("state"));
-
-    m_stateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("userId"))
@@ -78,6 +53,34 @@ ParticipantSummary& ParticipantSummary::operator =(JsonView jsonValue)
     m_userIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = ParticipantStateMapper::GetParticipantStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("firstJoinTime"))
+  {
+    m_firstJoinTime = jsonValue.GetString("firstJoinTime");
+
+    m_firstJoinTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("published"))
+  {
+    m_published = jsonValue.GetBool("published");
+
+    m_publishedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recordingState"))
+  {
+    m_recordingState = ParticipantRecordingStateMapper::GetParticipantRecordingStateForName(jsonValue.GetString("recordingState"));
+
+    m_recordingStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -85,20 +88,15 @@ JsonValue ParticipantSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_firstJoinTimeHasBeenSet)
-  {
-   payload.WithString("firstJoinTime", m_firstJoinTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_participantIdHasBeenSet)
   {
    payload.WithString("participantId", m_participantId);
 
   }
 
-  if(m_publishedHasBeenSet)
+  if(m_userIdHasBeenSet)
   {
-   payload.WithBool("published", m_published);
+   payload.WithString("userId", m_userId);
 
   }
 
@@ -107,10 +105,20 @@ JsonValue ParticipantSummary::Jsonize() const
    payload.WithString("state", ParticipantStateMapper::GetNameForParticipantState(m_state));
   }
 
-  if(m_userIdHasBeenSet)
+  if(m_firstJoinTimeHasBeenSet)
   {
-   payload.WithString("userId", m_userId);
+   payload.WithString("firstJoinTime", m_firstJoinTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
+  if(m_publishedHasBeenSet)
+  {
+   payload.WithBool("published", m_published);
+
+  }
+
+  if(m_recordingStateHasBeenSet)
+  {
+   payload.WithString("recordingState", ParticipantRecordingStateMapper::GetNameForParticipantRecordingState(m_recordingState));
   }
 
   return payload;

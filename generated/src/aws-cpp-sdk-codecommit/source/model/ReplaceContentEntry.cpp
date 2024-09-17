@@ -29,13 +29,8 @@ ReplaceContentEntry::ReplaceContentEntry() :
 {
 }
 
-ReplaceContentEntry::ReplaceContentEntry(JsonView jsonValue) : 
-    m_filePathHasBeenSet(false),
-    m_replacementType(ReplacementTypeEnum::NOT_SET),
-    m_replacementTypeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
+ReplaceContentEntry::ReplaceContentEntry(JsonView jsonValue)
+  : ReplaceContentEntry()
 {
   *this = jsonValue;
 }

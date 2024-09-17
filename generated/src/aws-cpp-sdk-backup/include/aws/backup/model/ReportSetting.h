@@ -39,6 +39,7 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifies the report template for the report. Reports are built using a
      * report template. The report templates are:</p> <p>
@@ -46,268 +47,86 @@ namespace Model
      * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
      */
     inline const Aws::String& GetReportTemplate() const{ return m_reportTemplate; }
-
-    /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-     */
     inline bool ReportTemplateHasBeenSet() const { return m_reportTemplateHasBeenSet; }
-
-    /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-     */
     inline void SetReportTemplate(const Aws::String& value) { m_reportTemplateHasBeenSet = true; m_reportTemplate = value; }
-
-    /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-     */
     inline void SetReportTemplate(Aws::String&& value) { m_reportTemplateHasBeenSet = true; m_reportTemplate = std::move(value); }
-
-    /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-     */
     inline void SetReportTemplate(const char* value) { m_reportTemplateHasBeenSet = true; m_reportTemplate.assign(value); }
-
-    /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-     */
     inline ReportSetting& WithReportTemplate(const Aws::String& value) { SetReportTemplate(value); return *this;}
-
-    /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-     */
     inline ReportSetting& WithReportTemplate(Aws::String&& value) { SetReportTemplate(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifies the report template for the report. Reports are built using a
-     * report template. The report templates are:</p> <p>
-     * <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-     * | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-     */
     inline ReportSetting& WithReportTemplate(const char* value) { SetReportTemplate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFrameworkArns() const{ return m_frameworkArns; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline bool FrameworkArnsHasBeenSet() const { return m_frameworkArnsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline void SetFrameworkArns(const Aws::Vector<Aws::String>& value) { m_frameworkArnsHasBeenSet = true; m_frameworkArns = value; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline void SetFrameworkArns(Aws::Vector<Aws::String>&& value) { m_frameworkArnsHasBeenSet = true; m_frameworkArns = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline ReportSetting& WithFrameworkArns(const Aws::Vector<Aws::String>& value) { SetFrameworkArns(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline ReportSetting& WithFrameworkArns(Aws::Vector<Aws::String>&& value) { SetFrameworkArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline ReportSetting& AddFrameworkArns(const Aws::String& value) { m_frameworkArnsHasBeenSet = true; m_frameworkArns.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline ReportSetting& AddFrameworkArns(Aws::String&& value) { m_frameworkArnsHasBeenSet = true; m_frameworkArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-     */
     inline ReportSetting& AddFrameworkArns(const char* value) { m_frameworkArnsHasBeenSet = true; m_frameworkArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of frameworks a report covers.</p>
      */
     inline int GetNumberOfFrameworks() const{ return m_numberOfFrameworks; }
-
-    /**
-     * <p>The number of frameworks a report covers.</p>
-     */
     inline bool NumberOfFrameworksHasBeenSet() const { return m_numberOfFrameworksHasBeenSet; }
-
-    /**
-     * <p>The number of frameworks a report covers.</p>
-     */
     inline void SetNumberOfFrameworks(int value) { m_numberOfFrameworksHasBeenSet = true; m_numberOfFrameworks = value; }
-
-    /**
-     * <p>The number of frameworks a report covers.</p>
-     */
     inline ReportSetting& WithNumberOfFrameworks(int value) { SetNumberOfFrameworks(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>These are the accounts to be included in the report.</p>
+     * <p>These are the accounts to be included in the report.</p> <p>Use string value
+     * of <code>ROOT</code> to include all organizational units.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline ReportSetting& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline ReportSetting& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline ReportSetting& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline ReportSetting& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>These are the accounts to be included in the report.</p>
-     */
     inline ReportSetting& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>These are the Organizational Units to be included in the report.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationUnits() const{ return m_organizationUnits; }
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline bool OrganizationUnitsHasBeenSet() const { return m_organizationUnitsHasBeenSet; }
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline void SetOrganizationUnits(const Aws::Vector<Aws::String>& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits = value; }
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline void SetOrganizationUnits(Aws::Vector<Aws::String>&& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits = std::move(value); }
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline ReportSetting& WithOrganizationUnits(const Aws::Vector<Aws::String>& value) { SetOrganizationUnits(value); return *this;}
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline ReportSetting& WithOrganizationUnits(Aws::Vector<Aws::String>&& value) { SetOrganizationUnits(std::move(value)); return *this;}
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline ReportSetting& AddOrganizationUnits(const Aws::String& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits.push_back(value); return *this; }
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline ReportSetting& AddOrganizationUnits(Aws::String&& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>These are the Organizational Units to be included in the report.</p>
-     */
     inline ReportSetting& AddOrganizationUnits(const char* value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
-     * <p>These are the Regions to be included in the report.</p>
+     * <p>These are the Regions to be included in the report.</p> <p>Use the wildcard
+     * as the string value to include all Regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline ReportSetting& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline ReportSetting& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline ReportSetting& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline ReportSetting& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>These are the Regions to be included in the report.</p>
-     */
     inline ReportSetting& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_reportTemplate;

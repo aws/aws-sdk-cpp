@@ -24,9 +24,8 @@ HistoricalMetricResult::HistoricalMetricResult() :
 {
 }
 
-HistoricalMetricResult::HistoricalMetricResult(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_collectionsHasBeenSet(false)
+HistoricalMetricResult::HistoricalMetricResult(JsonView jsonValue)
+  : HistoricalMetricResult()
 {
   *this = jsonValue;
 }

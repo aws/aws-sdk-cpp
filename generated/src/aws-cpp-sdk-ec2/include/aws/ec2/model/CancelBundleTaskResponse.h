@@ -38,47 +38,25 @@ namespace Model
     AWS_EC2_API CancelBundleTaskResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the bundle task.</p>
      */
     inline const BundleTask& GetBundleTask() const{ return m_bundleTask; }
-
-    /**
-     * <p>Information about the bundle task.</p>
-     */
     inline void SetBundleTask(const BundleTask& value) { m_bundleTask = value; }
-
-    /**
-     * <p>Information about the bundle task.</p>
-     */
     inline void SetBundleTask(BundleTask&& value) { m_bundleTask = std::move(value); }
-
-    /**
-     * <p>Information about the bundle task.</p>
-     */
     inline CancelBundleTaskResponse& WithBundleTask(const BundleTask& value) { SetBundleTask(value); return *this;}
-
-    /**
-     * <p>Information about the bundle task.</p>
-     */
     inline CancelBundleTaskResponse& WithBundleTask(BundleTask&& value) { SetBundleTask(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CancelBundleTaskResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CancelBundleTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BundleTask m_bundleTask;

@@ -24,9 +24,8 @@ JobDriver::JobDriver() :
 {
 }
 
-JobDriver::JobDriver(JsonView jsonValue) : 
-    m_sparkSubmitHasBeenSet(false),
-    m_hiveHasBeenSet(false)
+JobDriver::JobDriver(JsonView jsonValue)
+  : JobDriver()
 {
   *this = jsonValue;
 }

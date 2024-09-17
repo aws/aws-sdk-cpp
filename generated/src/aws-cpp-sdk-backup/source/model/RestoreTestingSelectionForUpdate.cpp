@@ -28,13 +28,8 @@ RestoreTestingSelectionForUpdate::RestoreTestingSelectionForUpdate() :
 {
 }
 
-RestoreTestingSelectionForUpdate::RestoreTestingSelectionForUpdate(JsonView jsonValue) : 
-    m_iamRoleArnHasBeenSet(false),
-    m_protectedResourceArnsHasBeenSet(false),
-    m_protectedResourceConditionsHasBeenSet(false),
-    m_restoreMetadataOverridesHasBeenSet(false),
-    m_validationWindowHours(0),
-    m_validationWindowHoursHasBeenSet(false)
+RestoreTestingSelectionForUpdate::RestoreTestingSelectionForUpdate(JsonView jsonValue)
+  : RestoreTestingSelectionForUpdate()
 {
   *this = jsonValue;
 }

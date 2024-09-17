@@ -33,53 +33,27 @@ namespace Model
     AWS_GLOBALACCELERATOR_API UpdateAcceleratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the updated accelerator.</p>
      */
     inline const Accelerator& GetAccelerator() const{ return m_accelerator; }
-
-    /**
-     * <p>Information about the updated accelerator.</p>
-     */
     inline void SetAccelerator(const Accelerator& value) { m_accelerator = value; }
-
-    /**
-     * <p>Information about the updated accelerator.</p>
-     */
     inline void SetAccelerator(Accelerator&& value) { m_accelerator = std::move(value); }
-
-    /**
-     * <p>Information about the updated accelerator.</p>
-     */
     inline UpdateAcceleratorResult& WithAccelerator(const Accelerator& value) { SetAccelerator(value); return *this;}
-
-    /**
-     * <p>Information about the updated accelerator.</p>
-     */
     inline UpdateAcceleratorResult& WithAccelerator(Accelerator&& value) { SetAccelerator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAcceleratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAcceleratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAcceleratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Accelerator m_accelerator;

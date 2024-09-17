@@ -40,67 +40,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field well for the table.</p>
      */
     inline const TableAggregatedFieldWells& GetTableAggregatedFieldWells() const{ return m_tableAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field well for the table.</p>
-     */
     inline bool TableAggregatedFieldWellsHasBeenSet() const { return m_tableAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field well for the table.</p>
-     */
     inline void SetTableAggregatedFieldWells(const TableAggregatedFieldWells& value) { m_tableAggregatedFieldWellsHasBeenSet = true; m_tableAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field well for the table.</p>
-     */
     inline void SetTableAggregatedFieldWells(TableAggregatedFieldWells&& value) { m_tableAggregatedFieldWellsHasBeenSet = true; m_tableAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field well for the table.</p>
-     */
     inline TableFieldWells& WithTableAggregatedFieldWells(const TableAggregatedFieldWells& value) { SetTableAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field well for the table.</p>
-     */
     inline TableFieldWells& WithTableAggregatedFieldWells(TableAggregatedFieldWells&& value) { SetTableAggregatedFieldWells(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unaggregated field well for the table.</p>
      */
     inline const TableUnaggregatedFieldWells& GetTableUnaggregatedFieldWells() const{ return m_tableUnaggregatedFieldWells; }
-
-    /**
-     * <p>The unaggregated field well for the table.</p>
-     */
     inline bool TableUnaggregatedFieldWellsHasBeenSet() const { return m_tableUnaggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The unaggregated field well for the table.</p>
-     */
     inline void SetTableUnaggregatedFieldWells(const TableUnaggregatedFieldWells& value) { m_tableUnaggregatedFieldWellsHasBeenSet = true; m_tableUnaggregatedFieldWells = value; }
-
-    /**
-     * <p>The unaggregated field well for the table.</p>
-     */
     inline void SetTableUnaggregatedFieldWells(TableUnaggregatedFieldWells&& value) { m_tableUnaggregatedFieldWellsHasBeenSet = true; m_tableUnaggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The unaggregated field well for the table.</p>
-     */
     inline TableFieldWells& WithTableUnaggregatedFieldWells(const TableUnaggregatedFieldWells& value) { SetTableUnaggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The unaggregated field well for the table.</p>
-     */
     inline TableFieldWells& WithTableUnaggregatedFieldWells(TableUnaggregatedFieldWells&& value) { SetTableUnaggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TableAggregatedFieldWells m_tableAggregatedFieldWells;

@@ -27,12 +27,8 @@ SchemaShortInfoResponse::SchemaShortInfoResponse() :
 {
 }
 
-SchemaShortInfoResponse::SchemaShortInfoResponse(JsonView jsonValue) : 
-    m_schemaIdHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_databaseIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_databaseIpAddressHasBeenSet(false)
+SchemaShortInfoResponse::SchemaShortInfoResponse(JsonView jsonValue)
+  : SchemaShortInfoResponse()
 {
   *this = jsonValue;
 }

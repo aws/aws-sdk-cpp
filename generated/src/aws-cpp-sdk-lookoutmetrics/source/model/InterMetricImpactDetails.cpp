@@ -28,13 +28,8 @@ InterMetricImpactDetails::InterMetricImpactDetails() :
 {
 }
 
-InterMetricImpactDetails::InterMetricImpactDetails(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_anomalyGroupIdHasBeenSet(false),
-    m_relationshipType(RelationshipType::NOT_SET),
-    m_relationshipTypeHasBeenSet(false),
-    m_contributionPercentage(0.0),
-    m_contributionPercentageHasBeenSet(false)
+InterMetricImpactDetails::InterMetricImpactDetails(JsonView jsonValue)
+  : InterMetricImpactDetails()
 {
   *this = jsonValue;
 }

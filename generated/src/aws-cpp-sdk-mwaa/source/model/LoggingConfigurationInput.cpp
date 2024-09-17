@@ -21,18 +21,14 @@ namespace Model
 LoggingConfigurationInput::LoggingConfigurationInput() : 
     m_dagProcessingLogsHasBeenSet(false),
     m_schedulerLogsHasBeenSet(false),
-    m_taskLogsHasBeenSet(false),
     m_webserverLogsHasBeenSet(false),
-    m_workerLogsHasBeenSet(false)
+    m_workerLogsHasBeenSet(false),
+    m_taskLogsHasBeenSet(false)
 {
 }
 
-LoggingConfigurationInput::LoggingConfigurationInput(JsonView jsonValue) : 
-    m_dagProcessingLogsHasBeenSet(false),
-    m_schedulerLogsHasBeenSet(false),
-    m_taskLogsHasBeenSet(false),
-    m_webserverLogsHasBeenSet(false),
-    m_workerLogsHasBeenSet(false)
+LoggingConfigurationInput::LoggingConfigurationInput(JsonView jsonValue)
+  : LoggingConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -53,13 +49,6 @@ LoggingConfigurationInput& LoggingConfigurationInput::operator =(JsonView jsonVa
     m_schedulerLogsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TaskLogs"))
-  {
-    m_taskLogs = jsonValue.GetObject("TaskLogs");
-
-    m_taskLogsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("WebserverLogs"))
   {
     m_webserverLogs = jsonValue.GetObject("WebserverLogs");
@@ -72,6 +61,13 @@ LoggingConfigurationInput& LoggingConfigurationInput::operator =(JsonView jsonVa
     m_workerLogs = jsonValue.GetObject("WorkerLogs");
 
     m_workerLogsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TaskLogs"))
+  {
+    m_taskLogs = jsonValue.GetObject("TaskLogs");
+
+    m_taskLogsHasBeenSet = true;
   }
 
   return *this;
@@ -93,12 +89,6 @@ JsonValue LoggingConfigurationInput::Jsonize() const
 
   }
 
-  if(m_taskLogsHasBeenSet)
-  {
-   payload.WithObject("TaskLogs", m_taskLogs.Jsonize());
-
-  }
-
   if(m_webserverLogsHasBeenSet)
   {
    payload.WithObject("WebserverLogs", m_webserverLogs.Jsonize());
@@ -108,6 +98,12 @@ JsonValue LoggingConfigurationInput::Jsonize() const
   if(m_workerLogsHasBeenSet)
   {
    payload.WithObject("WorkerLogs", m_workerLogs.Jsonize());
+
+  }
+
+  if(m_taskLogsHasBeenSet)
+  {
+   payload.WithObject("TaskLogs", m_taskLogs.Jsonize());
 
   }
 

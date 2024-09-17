@@ -38,46 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The color of the simple cluster marker.</p>
      */
     inline const Aws::String& GetColor() const{ return m_color; }
-
-    /**
-     * <p>The color of the simple cluster marker.</p>
-     */
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-
-    /**
-     * <p>The color of the simple cluster marker.</p>
-     */
     inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-
-    /**
-     * <p>The color of the simple cluster marker.</p>
-     */
     inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-
-    /**
-     * <p>The color of the simple cluster marker.</p>
-     */
     inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-
-    /**
-     * <p>The color of the simple cluster marker.</p>
-     */
     inline SimpleClusterMarker& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-
-    /**
-     * <p>The color of the simple cluster marker.</p>
-     */
     inline SimpleClusterMarker& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-
-    /**
-     * <p>The color of the simple cluster marker.</p>
-     */
     inline SimpleClusterMarker& WithColor(const char* value) { SetColor(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_color;

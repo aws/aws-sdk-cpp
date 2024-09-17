@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The identifier for the S3 resource.</p><p><h3>See Also:</h3>   <a
+   * <p>The identifier information for an Amazon S3 bucket.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/S3Identifier">AWS
    * API Reference</a></p>
    */
@@ -37,55 +38,33 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    ///@{
+    /**
+     * <p>The name of the S3 bucket.</p>
+     */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
-
-    
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-
-    
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-
-    
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-
-    
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-
-    
     inline S3Identifier& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-
-    
     inline S3Identifier& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-
-    
     inline S3Identifier& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    ///@}
 
-
-    
+    ///@{
+    /**
+     * <p>The S3 object key for the S3 resource.</p>
+     */
     inline const Aws::String& GetS3ObjectKey() const{ return m_s3ObjectKey; }
-
-    
     inline bool S3ObjectKeyHasBeenSet() const { return m_s3ObjectKeyHasBeenSet; }
-
-    
     inline void SetS3ObjectKey(const Aws::String& value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey = value; }
-
-    
     inline void SetS3ObjectKey(Aws::String&& value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey = std::move(value); }
-
-    
     inline void SetS3ObjectKey(const char* value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey.assign(value); }
-
-    
     inline S3Identifier& WithS3ObjectKey(const Aws::String& value) { SetS3ObjectKey(value); return *this;}
-
-    
     inline S3Identifier& WithS3ObjectKey(Aws::String&& value) { SetS3ObjectKey(std::move(value)); return *this;}
-
-    
     inline S3Identifier& WithS3ObjectKey(const char* value) { SetS3ObjectKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3BucketName;

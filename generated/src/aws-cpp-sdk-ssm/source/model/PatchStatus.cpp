@@ -27,12 +27,8 @@ PatchStatus::PatchStatus() :
 {
 }
 
-PatchStatus::PatchStatus(JsonView jsonValue) : 
-    m_deploymentStatus(PatchDeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_complianceLevel(PatchComplianceLevel::NOT_SET),
-    m_complianceLevelHasBeenSet(false),
-    m_approvalDateHasBeenSet(false)
+PatchStatus::PatchStatus(JsonView jsonValue)
+  : PatchStatus()
 {
   *this = jsonValue;
 }

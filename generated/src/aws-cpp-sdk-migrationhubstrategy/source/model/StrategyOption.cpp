@@ -30,15 +30,8 @@ StrategyOption::StrategyOption() :
 {
 }
 
-StrategyOption::StrategyOption(JsonView jsonValue) : 
-    m_isPreferred(false),
-    m_isPreferredHasBeenSet(false),
-    m_strategy(Strategy::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_targetDestination(TargetDestination::NOT_SET),
-    m_targetDestinationHasBeenSet(false),
-    m_toolName(TransformationToolName::NOT_SET),
-    m_toolNameHasBeenSet(false)
+StrategyOption::StrategyOption(JsonView jsonValue)
+  : StrategyOption()
 {
   *this = jsonValue;
 }

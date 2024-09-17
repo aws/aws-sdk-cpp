@@ -39,22 +39,8 @@ ScheduledInstancesLaunchSpecification::ScheduledInstancesLaunchSpecification() :
 {
 }
 
-ScheduledInstancesLaunchSpecification::ScheduledInstancesLaunchSpecification(const XmlNode& xmlNode) : 
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+ScheduledInstancesLaunchSpecification::ScheduledInstancesLaunchSpecification(const XmlNode& xmlNode)
+  : ScheduledInstancesLaunchSpecification()
 {
   *this = xmlNode;
 }

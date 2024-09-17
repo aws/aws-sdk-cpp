@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUEDATABREW_API ListSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of schedules that are defined.</p>
      */
     inline const Aws::Vector<Schedule>& GetSchedules() const{ return m_schedules; }
-
-    /**
-     * <p>A list of schedules that are defined.</p>
-     */
     inline void SetSchedules(const Aws::Vector<Schedule>& value) { m_schedules = value; }
-
-    /**
-     * <p>A list of schedules that are defined.</p>
-     */
     inline void SetSchedules(Aws::Vector<Schedule>&& value) { m_schedules = std::move(value); }
-
-    /**
-     * <p>A list of schedules that are defined.</p>
-     */
     inline ListSchedulesResult& WithSchedules(const Aws::Vector<Schedule>& value) { SetSchedules(value); return *this;}
-
-    /**
-     * <p>A list of schedules that are defined.</p>
-     */
     inline ListSchedulesResult& WithSchedules(Aws::Vector<Schedule>&& value) { SetSchedules(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of schedules that are defined.</p>
-     */
     inline ListSchedulesResult& AddSchedules(const Schedule& value) { m_schedules.push_back(value); return *this; }
-
-    /**
-     * <p>A list of schedules that are defined.</p>
-     */
     inline ListSchedulesResult& AddSchedules(Schedule&& value) { m_schedules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token that you can use in a subsequent call to retrieve the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListSchedulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListSchedulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent call to retrieve the next set of
-     * results.</p>
-     */
     inline ListSchedulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSchedulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSchedulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSchedulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Schedule> m_schedules;

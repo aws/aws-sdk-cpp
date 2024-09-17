@@ -22,6 +22,8 @@ namespace Aws
 
         static const int s3_HASH = HashingUtils::HashString("s3");
         static const int mediastore_HASH = HashingUtils::HashString("mediastore");
+        static const int mediapackagev2_HASH = HashingUtils::HashString("mediapackagev2");
+        static const int lambda_HASH = HashingUtils::HashString("lambda");
 
 
         OriginAccessControlOriginTypes GetOriginAccessControlOriginTypesForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == mediastore_HASH)
           {
             return OriginAccessControlOriginTypes::mediastore;
+          }
+          else if (hashCode == mediapackagev2_HASH)
+          {
+            return OriginAccessControlOriginTypes::mediapackagev2;
+          }
+          else if (hashCode == lambda_HASH)
+          {
+            return OriginAccessControlOriginTypes::lambda;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "s3";
           case OriginAccessControlOriginTypes::mediastore:
             return "mediastore";
+          case OriginAccessControlOriginTypes::mediapackagev2:
+            return "mediapackagev2";
+          case OriginAccessControlOriginTypes::lambda:
+            return "lambda";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

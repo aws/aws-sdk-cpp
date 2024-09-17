@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSTREAM_API CreateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the stack.</p>
      */
     inline const Stack& GetStack() const{ return m_stack; }
-
-    /**
-     * <p>Information about the stack.</p>
-     */
     inline void SetStack(const Stack& value) { m_stack = value; }
-
-    /**
-     * <p>Information about the stack.</p>
-     */
     inline void SetStack(Stack&& value) { m_stack = std::move(value); }
-
-    /**
-     * <p>Information about the stack.</p>
-     */
     inline CreateStackResult& WithStack(const Stack& value) { SetStack(value); return *this;}
-
-    /**
-     * <p>Information about the stack.</p>
-     */
     inline CreateStackResult& WithStack(Stack&& value) { SetStack(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateStackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateStackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateStackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Stack m_stack;

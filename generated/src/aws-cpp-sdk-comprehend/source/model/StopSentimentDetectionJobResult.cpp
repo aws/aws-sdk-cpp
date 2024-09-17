@@ -22,8 +22,8 @@ StopSentimentDetectionJobResult::StopSentimentDetectionJobResult() :
 {
 }
 
-StopSentimentDetectionJobResult::StopSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StopSentimentDetectionJobResult::StopSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopSentimentDetectionJobResult()
 {
   *this = result;
 }

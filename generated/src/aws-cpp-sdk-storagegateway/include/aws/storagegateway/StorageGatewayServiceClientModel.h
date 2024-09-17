@@ -108,6 +108,14 @@
 #include <aws/storagegateway/model/UpdateSMBSecurityStrategyResult.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeResult.h>
+#include <aws/storagegateway/model/ListFileSystemAssociationsRequest.h>
+#include <aws/storagegateway/model/DescribeTapeArchivesRequest.h>
+#include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesRequest.h>
+#include <aws/storagegateway/model/ListFileSharesRequest.h>
+#include <aws/storagegateway/model/ListTapesRequest.h>
+#include <aws/storagegateway/model/ListTapePoolsRequest.h>
+#include <aws/storagegateway/model/ListGatewaysRequest.h>
+#include <aws/storagegateway/model/ListVolumesRequest.h>
 /* End of service model headers required in StorageGatewayClient header */
 
 namespace Aws
@@ -141,7 +149,7 @@ namespace Aws
 
   namespace StorageGateway
   {
-    using StorageGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using StorageGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
     using StorageGatewayEndpointProviderBase = Aws::StorageGateway::Endpoint::StorageGatewayEndpointProviderBase;
     using StorageGatewayEndpointProvider = Aws::StorageGateway::Endpoint::StorageGatewayEndpointProvider;
 

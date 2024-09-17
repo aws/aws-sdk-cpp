@@ -25,10 +25,8 @@ CreateBackendAuthMFAConfig::CreateBackendAuthMFAConfig() :
 {
 }
 
-CreateBackendAuthMFAConfig::CreateBackendAuthMFAConfig(JsonView jsonValue) : 
-    m_mFAMode(MFAMode::NOT_SET),
-    m_mFAModeHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+CreateBackendAuthMFAConfig::CreateBackendAuthMFAConfig(JsonView jsonValue)
+  : CreateBackendAuthMFAConfig()
 {
   *this = jsonValue;
 }

@@ -38,42 +38,18 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes whether Kubernetes audit logs are activated as a data source for
      * the detector. </p>
      */
     inline const AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails& GetAuditLogs() const{ return m_auditLogs; }
-
-    /**
-     * <p> Describes whether Kubernetes audit logs are activated as a data source for
-     * the detector. </p>
-     */
     inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
-
-    /**
-     * <p> Describes whether Kubernetes audit logs are activated as a data source for
-     * the detector. </p>
-     */
     inline void SetAuditLogs(const AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
-
-    /**
-     * <p> Describes whether Kubernetes audit logs are activated as a data source for
-     * the detector. </p>
-     */
     inline void SetAuditLogs(AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
-
-    /**
-     * <p> Describes whether Kubernetes audit logs are activated as a data source for
-     * the detector. </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesKubernetesDetails& WithAuditLogs(const AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails& value) { SetAuditLogs(value); return *this;}
-
-    /**
-     * <p> Describes whether Kubernetes audit logs are activated as a data source for
-     * the detector. </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesKubernetesDetails& WithAuditLogs(AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails&& value) { SetAuditLogs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails m_auditLogs;

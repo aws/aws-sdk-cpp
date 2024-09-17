@@ -13,13 +13,27 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartIdMappingJobRequest::StartIdMappingJobRequest() : 
+    m_outputSourceConfigHasBeenSet(false),
     m_workflowNameHasBeenSet(false)
 {
 }
 
 Aws::String StartIdMappingJobRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_outputSourceConfigHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> outputSourceConfigJsonList(m_outputSourceConfig.size());
+   for(unsigned outputSourceConfigIndex = 0; outputSourceConfigIndex < outputSourceConfigJsonList.GetLength(); ++outputSourceConfigIndex)
+   {
+     outputSourceConfigJsonList[outputSourceConfigIndex].AsObject(m_outputSourceConfig[outputSourceConfigIndex].Jsonize());
+   }
+   payload.WithArray("outputSourceConfig", std::move(outputSourceConfigJsonList));
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

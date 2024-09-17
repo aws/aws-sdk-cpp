@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ALERT,
-    FLOW
+    FLOW,
+    TLS
   };
 
 namespace LogTypeMapper

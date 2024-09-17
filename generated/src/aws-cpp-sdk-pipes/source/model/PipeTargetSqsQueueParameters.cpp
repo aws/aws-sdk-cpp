@@ -19,32 +19,31 @@ namespace Model
 {
 
 PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters() : 
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
+    m_messageGroupIdHasBeenSet(false),
+    m_messageDeduplicationIdHasBeenSet(false)
 {
 }
 
-PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters(JsonView jsonValue) : 
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
+PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters(JsonView jsonValue)
+  : PipeTargetSqsQueueParameters()
 {
   *this = jsonValue;
 }
 
 PipeTargetSqsQueueParameters& PipeTargetSqsQueueParameters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("MessageDeduplicationId"))
-  {
-    m_messageDeduplicationId = jsonValue.GetString("MessageDeduplicationId");
-
-    m_messageDeduplicationIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("MessageGroupId"))
   {
     m_messageGroupId = jsonValue.GetString("MessageGroupId");
 
     m_messageGroupIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageDeduplicationId"))
+  {
+    m_messageDeduplicationId = jsonValue.GetString("MessageDeduplicationId");
+
+    m_messageDeduplicationIdHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +53,15 @@ JsonValue PipeTargetSqsQueueParameters::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_messageDeduplicationIdHasBeenSet)
-  {
-   payload.WithString("MessageDeduplicationId", m_messageDeduplicationId);
-
-  }
-
   if(m_messageGroupIdHasBeenSet)
   {
    payload.WithString("MessageGroupId", m_messageGroupId);
+
+  }
+
+  if(m_messageDeduplicationIdHasBeenSet)
+  {
+   payload.WithString("MessageDeduplicationId", m_messageDeduplicationId);
 
   }
 

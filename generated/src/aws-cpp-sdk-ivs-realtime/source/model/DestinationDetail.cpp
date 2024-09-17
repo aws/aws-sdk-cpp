@@ -23,8 +23,8 @@ DestinationDetail::DestinationDetail() :
 {
 }
 
-DestinationDetail::DestinationDetail(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+DestinationDetail::DestinationDetail(JsonView jsonValue)
+  : DestinationDetail()
 {
   *this = jsonValue;
 }

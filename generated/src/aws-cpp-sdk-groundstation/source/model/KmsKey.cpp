@@ -25,10 +25,8 @@ KmsKey::KmsKey() :
 {
 }
 
-KmsKey::KmsKey(JsonView jsonValue) : 
-    m_kmsAliasArnHasBeenSet(false),
-    m_kmsAliasNameHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+KmsKey::KmsKey(JsonView jsonValue)
+  : KmsKey()
 {
   *this = jsonValue;
 }

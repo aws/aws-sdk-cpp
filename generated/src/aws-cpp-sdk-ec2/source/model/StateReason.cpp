@@ -26,9 +26,8 @@ StateReason::StateReason() :
 {
 }
 
-StateReason::StateReason(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+StateReason::StateReason(const XmlNode& xmlNode)
+  : StateReason()
 {
   *this = xmlNode;
 }

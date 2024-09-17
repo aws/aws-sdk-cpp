@@ -25,10 +25,8 @@ AnnotationImportItemDetail::AnnotationImportItemDetail() :
 {
 }
 
-AnnotationImportItemDetail::AnnotationImportItemDetail(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false)
+AnnotationImportItemDetail::AnnotationImportItemDetail(JsonView jsonValue)
+  : AnnotationImportItemDetail()
 {
   *this = jsonValue;
 }

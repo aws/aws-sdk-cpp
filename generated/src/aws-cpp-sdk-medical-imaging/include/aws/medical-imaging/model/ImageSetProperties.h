@@ -9,6 +9,7 @@
 #include <aws/medical-imaging/model/ImageSetState.h>
 #include <aws/medical-imaging/model/ImageSetWorkflowStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/medical-imaging/model/Overrides.h>
 #include <utility>
 
 namespace Aws
@@ -40,283 +41,121 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The image set identifier.</p>
      */
     inline const Aws::String& GetImageSetId() const{ return m_imageSetId; }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline bool ImageSetIdHasBeenSet() const { return m_imageSetIdHasBeenSet; }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline void SetImageSetId(const Aws::String& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = value; }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline void SetImageSetId(Aws::String&& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = std::move(value); }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline void SetImageSetId(const char* value) { m_imageSetIdHasBeenSet = true; m_imageSetId.assign(value); }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline ImageSetProperties& WithImageSetId(const Aws::String& value) { SetImageSetId(value); return *this;}
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline ImageSetProperties& WithImageSetId(Aws::String&& value) { SetImageSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline ImageSetProperties& WithImageSetId(const char* value) { SetImageSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image set version identifier.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline ImageSetProperties& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline ImageSetProperties& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline ImageSetProperties& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image set state.</p>
      */
     inline const ImageSetState& GetImageSetState() const{ return m_imageSetState; }
-
-    /**
-     * <p>The image set state.</p>
-     */
     inline bool ImageSetStateHasBeenSet() const { return m_imageSetStateHasBeenSet; }
-
-    /**
-     * <p>The image set state.</p>
-     */
     inline void SetImageSetState(const ImageSetState& value) { m_imageSetStateHasBeenSet = true; m_imageSetState = value; }
-
-    /**
-     * <p>The image set state.</p>
-     */
     inline void SetImageSetState(ImageSetState&& value) { m_imageSetStateHasBeenSet = true; m_imageSetState = std::move(value); }
-
-    /**
-     * <p>The image set state.</p>
-     */
     inline ImageSetProperties& WithImageSetState(const ImageSetState& value) { SetImageSetState(value); return *this;}
-
-    /**
-     * <p>The image set state.</p>
-     */
     inline ImageSetProperties& WithImageSetState(ImageSetState&& value) { SetImageSetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image set workflow status.</p>
      */
     inline const ImageSetWorkflowStatus& GetImageSetWorkflowStatus() const{ return m_imageSetWorkflowStatus; }
-
-    /**
-     * <p>The image set workflow status.</p>
-     */
     inline bool ImageSetWorkflowStatusHasBeenSet() const { return m_imageSetWorkflowStatusHasBeenSet; }
-
-    /**
-     * <p>The image set workflow status.</p>
-     */
     inline void SetImageSetWorkflowStatus(const ImageSetWorkflowStatus& value) { m_imageSetWorkflowStatusHasBeenSet = true; m_imageSetWorkflowStatus = value; }
-
-    /**
-     * <p>The image set workflow status.</p>
-     */
     inline void SetImageSetWorkflowStatus(ImageSetWorkflowStatus&& value) { m_imageSetWorkflowStatusHasBeenSet = true; m_imageSetWorkflowStatus = std::move(value); }
-
-    /**
-     * <p>The image set workflow status.</p>
-     */
     inline ImageSetProperties& WithImageSetWorkflowStatus(const ImageSetWorkflowStatus& value) { SetImageSetWorkflowStatus(value); return *this;}
-
-    /**
-     * <p>The image set workflow status.</p>
-     */
     inline ImageSetProperties& WithImageSetWorkflowStatus(ImageSetWorkflowStatus&& value) { SetImageSetWorkflowStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp when the image set properties were created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The timestamp when the image set properties were created.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The timestamp when the image set properties were created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The timestamp when the image set properties were created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The timestamp when the image set properties were created.</p>
-     */
     inline ImageSetProperties& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp when the image set properties were created.</p>
-     */
     inline ImageSetProperties& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp when the image set properties were updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>The timestamp when the image set properties were updated.</p>
-     */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>The timestamp when the image set properties were updated.</p>
-     */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>The timestamp when the image set properties were updated.</p>
-     */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>The timestamp when the image set properties were updated.</p>
-     */
     inline ImageSetProperties& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp when the image set properties were updated.</p>
-     */
     inline ImageSetProperties& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp when the image set properties were deleted.</p>
      */
     inline const Aws::Utils::DateTime& GetDeletedAt() const{ return m_deletedAt; }
-
-    /**
-     * <p>The timestamp when the image set properties were deleted.</p>
-     */
     inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
-
-    /**
-     * <p>The timestamp when the image set properties were deleted.</p>
-     */
     inline void SetDeletedAt(const Aws::Utils::DateTime& value) { m_deletedAtHasBeenSet = true; m_deletedAt = value; }
-
-    /**
-     * <p>The timestamp when the image set properties were deleted.</p>
-     */
     inline void SetDeletedAt(Aws::Utils::DateTime&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::move(value); }
-
-    /**
-     * <p>The timestamp when the image set properties were deleted.</p>
-     */
     inline ImageSetProperties& WithDeletedAt(const Aws::Utils::DateTime& value) { SetDeletedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp when the image set properties were deleted.</p>
-     */
     inline ImageSetProperties& WithDeletedAt(Aws::Utils::DateTime&& value) { SetDeletedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message thrown if an image set action fails.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The error message thrown if an image set action fails.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The error message thrown if an image set action fails.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The error message thrown if an image set action fails.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The error message thrown if an image set action fails.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The error message thrown if an image set action fails.</p>
-     */
     inline ImageSetProperties& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The error message thrown if an image set action fails.</p>
-     */
     inline ImageSetProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message thrown if an image set action fails.</p>
-     */
     inline ImageSetProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Contains details on overrides used when creating the returned version of an
+     * image set. For example, if <code>forced</code> exists, the <code>forced</code>
+     * flag was used when creating the image set.</p>
+     */
+    inline const Overrides& GetOverrides() const{ return m_overrides; }
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
+    inline void SetOverrides(const Overrides& value) { m_overridesHasBeenSet = true; m_overrides = value; }
+    inline void SetOverrides(Overrides&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
+    inline ImageSetProperties& WithOverrides(const Overrides& value) { SetOverrides(value); return *this;}
+    inline ImageSetProperties& WithOverrides(Overrides&& value) { SetOverrides(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_imageSetId;
@@ -342,6 +181,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Overrides m_overrides;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model

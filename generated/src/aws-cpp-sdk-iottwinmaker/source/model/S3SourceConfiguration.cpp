@@ -23,8 +23,8 @@ S3SourceConfiguration::S3SourceConfiguration() :
 {
 }
 
-S3SourceConfiguration::S3SourceConfiguration(JsonView jsonValue) : 
-    m_locationHasBeenSet(false)
+S3SourceConfiguration::S3SourceConfiguration(JsonView jsonValue)
+  : S3SourceConfiguration()
 {
   *this = jsonValue;
 }

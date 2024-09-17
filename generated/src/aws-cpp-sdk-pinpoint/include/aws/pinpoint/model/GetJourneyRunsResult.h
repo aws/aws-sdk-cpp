@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetJourneyRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const JourneyRunsResponse& GetJourneyRunsResponse() const{ return m_journeyRunsResponse; }
-
-    
     inline void SetJourneyRunsResponse(const JourneyRunsResponse& value) { m_journeyRunsResponse = value; }
-
-    
     inline void SetJourneyRunsResponse(JourneyRunsResponse&& value) { m_journeyRunsResponse = std::move(value); }
-
-    
     inline GetJourneyRunsResult& WithJourneyRunsResponse(const JourneyRunsResponse& value) { SetJourneyRunsResponse(value); return *this;}
-
-    
     inline GetJourneyRunsResult& WithJourneyRunsResponse(JourneyRunsResponse&& value) { SetJourneyRunsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJourneyRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJourneyRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJourneyRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JourneyRunsResponse m_journeyRunsResponse;

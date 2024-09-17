@@ -24,9 +24,8 @@ AxisScale::AxisScale() :
 {
 }
 
-AxisScale::AxisScale(JsonView jsonValue) : 
-    m_linearHasBeenSet(false),
-    m_logarithmicHasBeenSet(false)
+AxisScale::AxisScale(JsonView jsonValue)
+  : AxisScale()
 {
   *this = jsonValue;
 }

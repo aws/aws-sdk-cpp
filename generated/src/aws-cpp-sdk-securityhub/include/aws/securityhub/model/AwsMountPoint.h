@@ -38,95 +38,34 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the volume to mount. Must be a volume name referenced in the
      * <code>name</code> parameter of task definition <code>volume</code>. </p>
      */
     inline const Aws::String& GetSourceVolume() const{ return m_sourceVolume; }
-
-    /**
-     * <p>The name of the volume to mount. Must be a volume name referenced in the
-     * <code>name</code> parameter of task definition <code>volume</code>. </p>
-     */
     inline bool SourceVolumeHasBeenSet() const { return m_sourceVolumeHasBeenSet; }
-
-    /**
-     * <p>The name of the volume to mount. Must be a volume name referenced in the
-     * <code>name</code> parameter of task definition <code>volume</code>. </p>
-     */
     inline void SetSourceVolume(const Aws::String& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = value; }
-
-    /**
-     * <p>The name of the volume to mount. Must be a volume name referenced in the
-     * <code>name</code> parameter of task definition <code>volume</code>. </p>
-     */
     inline void SetSourceVolume(Aws::String&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::move(value); }
-
-    /**
-     * <p>The name of the volume to mount. Must be a volume name referenced in the
-     * <code>name</code> parameter of task definition <code>volume</code>. </p>
-     */
     inline void SetSourceVolume(const char* value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume.assign(value); }
-
-    /**
-     * <p>The name of the volume to mount. Must be a volume name referenced in the
-     * <code>name</code> parameter of task definition <code>volume</code>. </p>
-     */
     inline AwsMountPoint& WithSourceVolume(const Aws::String& value) { SetSourceVolume(value); return *this;}
-
-    /**
-     * <p>The name of the volume to mount. Must be a volume name referenced in the
-     * <code>name</code> parameter of task definition <code>volume</code>. </p>
-     */
     inline AwsMountPoint& WithSourceVolume(Aws::String&& value) { SetSourceVolume(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the volume to mount. Must be a volume name referenced in the
-     * <code>name</code> parameter of task definition <code>volume</code>. </p>
-     */
     inline AwsMountPoint& WithSourceVolume(const char* value) { SetSourceVolume(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The path on the container to mount the host volume at. </p>
      */
     inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
-
-    /**
-     * <p>The path on the container to mount the host volume at. </p>
-     */
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
-
-    /**
-     * <p>The path on the container to mount the host volume at. </p>
-     */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
-
-    /**
-     * <p>The path on the container to mount the host volume at. </p>
-     */
     inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
-
-    /**
-     * <p>The path on the container to mount the host volume at. </p>
-     */
     inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
-
-    /**
-     * <p>The path on the container to mount the host volume at. </p>
-     */
     inline AwsMountPoint& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
-
-    /**
-     * <p>The path on the container to mount the host volume at. </p>
-     */
     inline AwsMountPoint& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path on the container to mount the host volume at. </p>
-     */
     inline AwsMountPoint& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceVolume;

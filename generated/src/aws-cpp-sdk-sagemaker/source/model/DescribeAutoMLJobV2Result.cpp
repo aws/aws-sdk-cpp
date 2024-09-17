@@ -24,10 +24,8 @@ DescribeAutoMLJobV2Result::DescribeAutoMLJobV2Result() :
 {
 }
 
-DescribeAutoMLJobV2Result::DescribeAutoMLJobV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoMLProblemTypeConfigName(AutoMLProblemTypeConfigName::NOT_SET),
-    m_autoMLJobStatus(AutoMLJobStatus::NOT_SET),
-    m_autoMLJobSecondaryStatus(AutoMLJobSecondaryStatus::NOT_SET)
+DescribeAutoMLJobV2Result::DescribeAutoMLJobV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAutoMLJobV2Result()
 {
   *this = result;
 }
@@ -170,6 +168,12 @@ DescribeAutoMLJobV2Result& DescribeAutoMLJobV2Result::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("SecurityConfig"))
   {
     m_securityConfig = jsonValue.GetObject("SecurityConfig");
+
+  }
+
+  if(jsonValue.ValueExists("AutoMLComputeConfig"))
+  {
+    m_autoMLComputeConfig = jsonValue.GetObject("AutoMLComputeConfig");
 
   }
 

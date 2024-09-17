@@ -26,11 +26,8 @@ ReturnInformation::ReturnInformation() :
 {
 }
 
-ReturnInformation::ReturnInformation(JsonView jsonValue) : 
-    m_replacementOrderArnHasBeenSet(false),
-    m_returnReasonHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_shippingLabelHasBeenSet(false)
+ReturnInformation::ReturnInformation(JsonView jsonValue)
+  : ReturnInformation()
 {
   *this = jsonValue;
 }

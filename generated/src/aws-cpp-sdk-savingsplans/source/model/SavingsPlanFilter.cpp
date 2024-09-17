@@ -25,10 +25,8 @@ SavingsPlanFilter::SavingsPlanFilter() :
 {
 }
 
-SavingsPlanFilter::SavingsPlanFilter(JsonView jsonValue) : 
-    m_name(SavingsPlansFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SavingsPlanFilter::SavingsPlanFilter(JsonView jsonValue)
+  : SavingsPlanFilter()
 {
   *this = jsonValue;
 }

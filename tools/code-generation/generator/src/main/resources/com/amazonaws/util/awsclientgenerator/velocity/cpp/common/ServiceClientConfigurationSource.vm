@@ -4,7 +4,12 @@
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
 #set($endpointPrefix = $metadata.endpointPrefix)
+#set($serviceNameCaps = $metadata.serviceId.replaceAll("[^a-zA-Z\d]+", "_").toUpperCase())
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#if($serviceNamespace == "S3Crt")
+\#include <aws/core/Globals.h>
+\#include <aws/core/client/RetryStrategy.h>
+#end
 
 namespace ${rootNamespace}
 {
@@ -24,6 +29,45 @@ static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REG
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 #end
 
+#if($metadata.hasEndpointDiscoveryTrait)
+bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName)
+{
+#if($metadata.requireEndpointDiscovery)
+  bool enabled = true;
+#else
+  bool enabled = false;
+#end
+
+  if (!endpointOverride.empty())
+  {
+    enabled = false;
+  }
+  else
+  {
+    static const char* AWS_ENABLE_ENDPOINT_DISCOVERY_ENV_KEY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
+    static const char* AWS_ENABLE_ENDPOINT_DISCOVERY_PROFILE_KEY = "endpoint_discovery_enabled";
+    static const char* AWS_EP_DISCOVERY_ENABLED = "true";
+    static const char* AWS_EP_DISCOVERY_DISABLED = "false";
+#if($metadata.requireEndpointDiscovery)
+    static const char* DEFAULT_VALUE_FOR_${serviceNameCaps} = AWS_EP_DISCOVERY_ENABLED;
+#else
+    static const char* DEFAULT_VALUE_FOR_${serviceNameCaps} = AWS_EP_DISCOVERY_DISABLED;
+#end
+
+    Aws::String configVal = Client::ClientConfiguration::LoadConfigFromEnvOrProfile(
+        AWS_ENABLE_ENDPOINT_DISCOVERY_ENV_KEY, profileName, AWS_ENABLE_ENDPOINT_DISCOVERY_PROFILE_KEY,
+        {AWS_EP_DISCOVERY_ENABLED, AWS_EP_DISCOVERY_DISABLED}, DEFAULT_VALUE_FOR_${serviceNameCaps});
+
+    if (AWS_EP_DISCOVERY_ENABLED == configVal) {
+      enabled = true;
+    } else if (AWS_EP_DISCOVERY_DISABLED == configVal) {
+      enabled = false;
+    }
+  }
+  return enabled;
+}
+
+#end
 void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}SpecificConfig(const Aws::String& inputProfileName)
 {
 #if($serviceModel.metadata.serviceId == "S3")
@@ -74,23 +118,38 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
     useArnRegion = true;
   }
 #end
+#if($metadata.hasEndpointDiscoveryTrait)
+  if(!enableEndpointDiscovery) {
+    enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
+  }
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+  // accountId is intentionally not set here: AWS_ACCOUNT_ID env variable may not match the provided credentials.
+  // it must be set by an auth provider / identity resolver or by an SDK user.
+#end
+#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+  static const char AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE[] = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
+  static const char AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION[] = "account_id_endpoint_mode";
+  accountIdEndpointMode = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE,
+                                                                               inputProfileName,
+                                                                               AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION,
+                                                                               {"required", "disabled", "preferred"}, /* allowed values */
+                                                                               "preferred" /* default value */);
+#end
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
-: BaseClientConfigClass(configuration)
-{
+: BaseClientConfigClass(configuration)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
-: BaseClientConfigClass(inputProfileName, shouldDisableIMDS)
-{
+: BaseClientConfigClass(inputProfileName, shouldDisableIMDS)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
   Load${serviceNamespace}SpecificConfig(Aws::String(inputProfileName));
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool shouldDisableIMDS)
-: BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS)
-{
+: BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
@@ -104,7 +163,7 @@ ${clsPrefixWSpace}                     ${clsPrefixWSpace}Client::AWSAuthV4Signer
 ${clsPrefixWSpace}                     ${clsPrefixWSpace}bool iUseVirtualAddressing,
 ${clsPrefixWSpace}                     ${clsPrefixWSpace}US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)
 #end
-  : BaseClientConfigClass(config)#if($serviceModel.metadata.serviceId == "S3"),
+  : BaseClientConfigClass(config)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end#if($serviceModel.metadata.serviceId == "S3"),
 #else
 #end
 #if($serviceModel.metadata.serviceId == "S3")
@@ -116,6 +175,9 @@ ${clsPrefixWSpace}                     ${clsPrefixWSpace}US_EAST_1_REGIONAL_ENDP
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
+#if($serviceNamespace == "S3Crt")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfigSource.vm")
+#end
 
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}

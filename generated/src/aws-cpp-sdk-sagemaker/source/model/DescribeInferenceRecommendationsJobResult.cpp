@@ -23,9 +23,8 @@ DescribeInferenceRecommendationsJobResult::DescribeInferenceRecommendationsJobRe
 {
 }
 
-DescribeInferenceRecommendationsJobResult::DescribeInferenceRecommendationsJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobType(RecommendationJobType::NOT_SET),
-    m_status(RecommendationJobStatus::NOT_SET)
+DescribeInferenceRecommendationsJobResult::DescribeInferenceRecommendationsJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInferenceRecommendationsJobResult()
 {
   *this = result;
 }

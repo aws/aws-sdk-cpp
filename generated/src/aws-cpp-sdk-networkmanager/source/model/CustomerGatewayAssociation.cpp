@@ -28,13 +28,8 @@ CustomerGatewayAssociation::CustomerGatewayAssociation() :
 {
 }
 
-CustomerGatewayAssociation::CustomerGatewayAssociation(JsonView jsonValue) : 
-    m_customerGatewayArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_state(CustomerGatewayAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
+CustomerGatewayAssociation::CustomerGatewayAssociation(JsonView jsonValue)
+  : CustomerGatewayAssociation()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ IncidentRecordSource::IncidentRecordSource() :
 {
 }
 
-IncidentRecordSource::IncidentRecordSource(JsonView jsonValue) : 
-    m_createdByHasBeenSet(false),
-    m_invokedByHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+IncidentRecordSource::IncidentRecordSource(JsonView jsonValue)
+  : IncidentRecordSource()
 {
   *this = jsonValue;
 }

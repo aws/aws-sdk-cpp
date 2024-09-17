@@ -37,47 +37,25 @@ namespace Model
     AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The minimum value in the range.</p>
      */
     inline double GetFrom() const{ return m_from; }
-
-    /**
-     * <p>The minimum value in the range.</p>
-     */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-
-    /**
-     * <p>The minimum value in the range.</p>
-     */
     inline void SetFrom(double value) { m_fromHasBeenSet = true; m_from = value; }
-
-    /**
-     * <p>The minimum value in the range.</p>
-     */
     inline DoubleRange& WithFrom(double value) { SetFrom(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum value in the range.</p>
      */
     inline double GetTo() const{ return m_to; }
-
-    /**
-     * <p>The maximum value in the range.</p>
-     */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-
-    /**
-     * <p>The maximum value in the range.</p>
-     */
     inline void SetTo(double value) { m_toHasBeenSet = true; m_to = value; }
-
-    /**
-     * <p>The maximum value in the range.</p>
-     */
     inline DoubleRange& WithTo(double value) { SetTo(value); return *this;}
-
+    ///@}
   private:
 
     double m_from;

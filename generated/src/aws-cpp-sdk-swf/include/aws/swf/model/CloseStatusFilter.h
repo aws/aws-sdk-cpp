@@ -38,42 +38,18 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The close status that must match the close status of an execution for it to
      * meet the criteria of this filter.</p>
      */
     inline const CloseStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The close status that must match the close status of an execution for it to
-     * meet the criteria of this filter.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The close status that must match the close status of an execution for it to
-     * meet the criteria of this filter.</p>
-     */
     inline void SetStatus(const CloseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The close status that must match the close status of an execution for it to
-     * meet the criteria of this filter.</p>
-     */
     inline void SetStatus(CloseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The close status that must match the close status of an execution for it to
-     * meet the criteria of this filter.</p>
-     */
     inline CloseStatusFilter& WithStatus(const CloseStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The close status that must match the close status of an execution for it to
-     * meet the criteria of this filter.</p>
-     */
     inline CloseStatusFilter& WithStatus(CloseStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloseStatus m_status;

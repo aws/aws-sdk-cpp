@@ -26,11 +26,8 @@ RecoveryGroupOutput::RecoveryGroupOutput() :
 {
 }
 
-RecoveryGroupOutput::RecoveryGroupOutput(JsonView jsonValue) : 
-    m_cellsHasBeenSet(false),
-    m_recoveryGroupArnHasBeenSet(false),
-    m_recoveryGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+RecoveryGroupOutput::RecoveryGroupOutput(JsonView jsonValue)
+  : RecoveryGroupOutput()
 {
   *this = jsonValue;
 }

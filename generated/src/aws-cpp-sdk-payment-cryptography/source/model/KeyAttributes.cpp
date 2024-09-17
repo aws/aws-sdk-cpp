@@ -19,35 +19,29 @@ namespace Model
 {
 
 KeyAttributes::KeyAttributes() : 
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
+    m_keyUsage(KeyUsage::NOT_SET),
+    m_keyUsageHasBeenSet(false),
     m_keyClass(KeyClass::NOT_SET),
     m_keyClassHasBeenSet(false),
-    m_keyModesOfUseHasBeenSet(false),
-    m_keyUsage(KeyUsage::NOT_SET),
-    m_keyUsageHasBeenSet(false)
+    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
+    m_keyAlgorithmHasBeenSet(false),
+    m_keyModesOfUseHasBeenSet(false)
 {
 }
 
-KeyAttributes::KeyAttributes(JsonView jsonValue) : 
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_keyClass(KeyClass::NOT_SET),
-    m_keyClassHasBeenSet(false),
-    m_keyModesOfUseHasBeenSet(false),
-    m_keyUsage(KeyUsage::NOT_SET),
-    m_keyUsageHasBeenSet(false)
+KeyAttributes::KeyAttributes(JsonView jsonValue)
+  : KeyAttributes()
 {
   *this = jsonValue;
 }
 
 KeyAttributes& KeyAttributes::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("KeyAlgorithm"))
+  if(jsonValue.ValueExists("KeyUsage"))
   {
-    m_keyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("KeyAlgorithm"));
+    m_keyUsage = KeyUsageMapper::GetKeyUsageForName(jsonValue.GetString("KeyUsage"));
 
-    m_keyAlgorithmHasBeenSet = true;
+    m_keyUsageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KeyClass"))
@@ -57,18 +51,18 @@ KeyAttributes& KeyAttributes::operator =(JsonView jsonValue)
     m_keyClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyAlgorithm"))
+  {
+    m_keyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("KeyAlgorithm"));
+
+    m_keyAlgorithmHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("KeyModesOfUse"))
   {
     m_keyModesOfUse = jsonValue.GetObject("KeyModesOfUse");
 
     m_keyModesOfUseHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("KeyUsage"))
-  {
-    m_keyUsage = KeyUsageMapper::GetKeyUsageForName(jsonValue.GetString("KeyUsage"));
-
-    m_keyUsageHasBeenSet = true;
   }
 
   return *this;
@@ -78,9 +72,9 @@ JsonValue KeyAttributes::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_keyAlgorithmHasBeenSet)
+  if(m_keyUsageHasBeenSet)
   {
-   payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
+   payload.WithString("KeyUsage", KeyUsageMapper::GetNameForKeyUsage(m_keyUsage));
   }
 
   if(m_keyClassHasBeenSet)
@@ -88,15 +82,15 @@ JsonValue KeyAttributes::Jsonize() const
    payload.WithString("KeyClass", KeyClassMapper::GetNameForKeyClass(m_keyClass));
   }
 
+  if(m_keyAlgorithmHasBeenSet)
+  {
+   payload.WithString("KeyAlgorithm", KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyAlgorithm));
+  }
+
   if(m_keyModesOfUseHasBeenSet)
   {
    payload.WithObject("KeyModesOfUse", m_keyModesOfUse.Jsonize());
 
-  }
-
-  if(m_keyUsageHasBeenSet)
-  {
-   payload.WithString("KeyUsage", KeyUsageMapper::GetNameForKeyUsage(m_keyUsage));
   }
 
   return payload;

@@ -23,8 +23,8 @@ FileSystemFailureDetails::FileSystemFailureDetails() :
 {
 }
 
-FileSystemFailureDetails::FileSystemFailureDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+FileSystemFailureDetails::FileSystemFailureDetails(JsonView jsonValue)
+  : FileSystemFailureDetails()
 {
   *this = jsonValue;
 }

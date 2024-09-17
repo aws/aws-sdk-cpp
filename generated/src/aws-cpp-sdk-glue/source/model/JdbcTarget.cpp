@@ -26,11 +26,8 @@ JdbcTarget::JdbcTarget() :
 {
 }
 
-JdbcTarget::JdbcTarget(JsonView jsonValue) : 
-    m_connectionNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_enableAdditionalMetadataHasBeenSet(false)
+JdbcTarget::JdbcTarget(JsonView jsonValue)
+  : JdbcTarget()
 {
   *this = jsonValue;
 }

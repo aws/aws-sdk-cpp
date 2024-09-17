@@ -24,9 +24,8 @@ BatchAttachToIndex::BatchAttachToIndex() :
 {
 }
 
-BatchAttachToIndex::BatchAttachToIndex(JsonView jsonValue) : 
-    m_indexReferenceHasBeenSet(false),
-    m_targetReferenceHasBeenSet(false)
+BatchAttachToIndex::BatchAttachToIndex(JsonView jsonValue)
+  : BatchAttachToIndex()
 {
   *this = jsonValue;
 }

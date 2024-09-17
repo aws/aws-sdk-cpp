@@ -30,15 +30,8 @@ CurrentPerformanceRiskRatings::CurrentPerformanceRiskRatings() :
 {
 }
 
-CurrentPerformanceRiskRatings::CurrentPerformanceRiskRatings(JsonView jsonValue) : 
-    m_high(0),
-    m_highHasBeenSet(false),
-    m_medium(0),
-    m_mediumHasBeenSet(false),
-    m_low(0),
-    m_lowHasBeenSet(false),
-    m_veryLow(0),
-    m_veryLowHasBeenSet(false)
+CurrentPerformanceRiskRatings::CurrentPerformanceRiskRatings(JsonView jsonValue)
+  : CurrentPerformanceRiskRatings()
 {
   *this = jsonValue;
 }

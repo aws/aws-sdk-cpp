@@ -27,12 +27,8 @@ FieldValidationMessage::FieldValidationMessage() :
 {
 }
 
-FieldValidationMessage::FieldValidationMessage(JsonView jsonValue) : 
-    m_fieldNameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_typeHasBeenSet(false)
+FieldValidationMessage::FieldValidationMessage(JsonView jsonValue)
+  : FieldValidationMessage()
 {
   *this = jsonValue;
 }

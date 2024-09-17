@@ -26,11 +26,8 @@ ResourceCreationLimitPolicy::ResourceCreationLimitPolicy() :
 {
 }
 
-ResourceCreationLimitPolicy::ResourceCreationLimitPolicy(JsonView jsonValue) : 
-    m_newGameSessionsPerCreator(0),
-    m_newGameSessionsPerCreatorHasBeenSet(false),
-    m_policyPeriodInMinutes(0),
-    m_policyPeriodInMinutesHasBeenSet(false)
+ResourceCreationLimitPolicy::ResourceCreationLimitPolicy(JsonView jsonValue)
+  : ResourceCreationLimitPolicy()
 {
   *this = jsonValue;
 }

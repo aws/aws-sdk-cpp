@@ -27,12 +27,8 @@ EventNotificationItemConfigurations::EventNotificationItemConfigurations() :
 {
 }
 
-EventNotificationItemConfigurations::EventNotificationItemConfigurations(JsonView jsonValue) : 
-    m_deviceRegistrationStateHasBeenSet(false),
-    m_proximityHasBeenSet(false),
-    m_joinHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false),
-    m_messageDeliveryStatusHasBeenSet(false)
+EventNotificationItemConfigurations::EventNotificationItemConfigurations(JsonView jsonValue)
+  : EventNotificationItemConfigurations()
 {
   *this = jsonValue;
 }

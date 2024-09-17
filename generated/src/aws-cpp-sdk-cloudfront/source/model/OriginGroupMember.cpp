@@ -25,8 +25,8 @@ OriginGroupMember::OriginGroupMember() :
 {
 }
 
-OriginGroupMember::OriginGroupMember(const XmlNode& xmlNode) : 
-    m_originIdHasBeenSet(false)
+OriginGroupMember::OriginGroupMember(const XmlNode& xmlNode)
+  : OriginGroupMember()
 {
   *this = xmlNode;
 }

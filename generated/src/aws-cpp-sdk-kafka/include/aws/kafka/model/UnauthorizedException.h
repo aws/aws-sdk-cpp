@@ -40,119 +40,37 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>The parameter that caused the error.</p>
          
      */
     inline const Aws::String& GetInvalidParameter() const{ return m_invalidParameter; }
-
-    /**
-     * 
-            <p>The parameter that caused the error.</p>
-         
-     */
     inline bool InvalidParameterHasBeenSet() const { return m_invalidParameterHasBeenSet; }
-
-    /**
-     * 
-            <p>The parameter that caused the error.</p>
-         
-     */
     inline void SetInvalidParameter(const Aws::String& value) { m_invalidParameterHasBeenSet = true; m_invalidParameter = value; }
-
-    /**
-     * 
-            <p>The parameter that caused the error.</p>
-         
-     */
     inline void SetInvalidParameter(Aws::String&& value) { m_invalidParameterHasBeenSet = true; m_invalidParameter = std::move(value); }
-
-    /**
-     * 
-            <p>The parameter that caused the error.</p>
-         
-     */
     inline void SetInvalidParameter(const char* value) { m_invalidParameterHasBeenSet = true; m_invalidParameter.assign(value); }
-
-    /**
-     * 
-            <p>The parameter that caused the error.</p>
-         
-     */
     inline UnauthorizedException& WithInvalidParameter(const Aws::String& value) { SetInvalidParameter(value); return *this;}
-
-    /**
-     * 
-            <p>The parameter that caused the error.</p>
-         
-     */
     inline UnauthorizedException& WithInvalidParameter(Aws::String&& value) { SetInvalidParameter(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The parameter that caused the error.</p>
-         
-     */
     inline UnauthorizedException& WithInvalidParameter(const char* value) { SetInvalidParameter(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>The description of the error.</p>
          
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * 
-            <p>The description of the error.</p>
-         
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * 
-            <p>The description of the error.</p>
-         
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * 
-            <p>The description of the error.</p>
-         
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * 
-            <p>The description of the error.</p>
-         
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * 
-            <p>The description of the error.</p>
-         
-     */
     inline UnauthorizedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * 
-            <p>The description of the error.</p>
-         
-     */
     inline UnauthorizedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The description of the error.</p>
-         
-     */
     inline UnauthorizedException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_invalidParameter;

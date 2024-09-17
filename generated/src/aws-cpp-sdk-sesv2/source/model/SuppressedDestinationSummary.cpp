@@ -26,11 +26,8 @@ SuppressedDestinationSummary::SuppressedDestinationSummary() :
 {
 }
 
-SuppressedDestinationSummary::SuppressedDestinationSummary(JsonView jsonValue) : 
-    m_emailAddressHasBeenSet(false),
-    m_reason(SuppressionListReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+SuppressedDestinationSummary::SuppressedDestinationSummary(JsonView jsonValue)
+  : SuppressedDestinationSummary()
 {
   *this = jsonValue;
 }

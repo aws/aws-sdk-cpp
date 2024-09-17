@@ -27,12 +27,8 @@ ApplicationSettingsJourneyLimits::ApplicationSettingsJourneyLimits() :
 {
 }
 
-ApplicationSettingsJourneyLimits::ApplicationSettingsJourneyLimits(JsonView jsonValue) : 
-    m_dailyCap(0),
-    m_dailyCapHasBeenSet(false),
-    m_timeframeCapHasBeenSet(false),
-    m_totalCap(0),
-    m_totalCapHasBeenSet(false)
+ApplicationSettingsJourneyLimits::ApplicationSettingsJourneyLimits(JsonView jsonValue)
+  : ApplicationSettingsJourneyLimits()
 {
   *this = jsonValue;
 }

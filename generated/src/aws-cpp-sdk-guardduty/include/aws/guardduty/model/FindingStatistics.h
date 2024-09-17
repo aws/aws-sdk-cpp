@@ -5,8 +5,12 @@
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/AccountStatistics.h>
+#include <aws/guardduty/model/DateStatistics.h>
+#include <aws/guardduty/model/FindingTypeStatistics.h>
+#include <aws/guardduty/model/ResourceStatistics.h>
+#include <aws/guardduty/model/SeverityStatistics.h>
 #include <utility>
 
 namespace Aws
@@ -38,55 +42,99 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
+     * <p>Represents a list of map of accounts with a findings count associated with
+     * each account.</p>
      */
-    inline const Aws::Map<Aws::String, int>& GetCountBySeverity() const{ return m_countBySeverity; }
+    inline const Aws::Vector<AccountStatistics>& GetGroupedByAccount() const{ return m_groupedByAccount; }
+    inline bool GroupedByAccountHasBeenSet() const { return m_groupedByAccountHasBeenSet; }
+    inline void SetGroupedByAccount(const Aws::Vector<AccountStatistics>& value) { m_groupedByAccountHasBeenSet = true; m_groupedByAccount = value; }
+    inline void SetGroupedByAccount(Aws::Vector<AccountStatistics>&& value) { m_groupedByAccountHasBeenSet = true; m_groupedByAccount = std::move(value); }
+    inline FindingStatistics& WithGroupedByAccount(const Aws::Vector<AccountStatistics>& value) { SetGroupedByAccount(value); return *this;}
+    inline FindingStatistics& WithGroupedByAccount(Aws::Vector<AccountStatistics>&& value) { SetGroupedByAccount(std::move(value)); return *this;}
+    inline FindingStatistics& AddGroupedByAccount(const AccountStatistics& value) { m_groupedByAccountHasBeenSet = true; m_groupedByAccount.push_back(value); return *this; }
+    inline FindingStatistics& AddGroupedByAccount(AccountStatistics&& value) { m_groupedByAccountHasBeenSet = true; m_groupedByAccount.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
     /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
+     * <p>Represents a list of map of dates with a count of total findings generated on
+     * each date per severity level.</p>
      */
-    inline bool CountBySeverityHasBeenSet() const { return m_countBySeverityHasBeenSet; }
+    inline const Aws::Vector<DateStatistics>& GetGroupedByDate() const{ return m_groupedByDate; }
+    inline bool GroupedByDateHasBeenSet() const { return m_groupedByDateHasBeenSet; }
+    inline void SetGroupedByDate(const Aws::Vector<DateStatistics>& value) { m_groupedByDateHasBeenSet = true; m_groupedByDate = value; }
+    inline void SetGroupedByDate(Aws::Vector<DateStatistics>&& value) { m_groupedByDateHasBeenSet = true; m_groupedByDate = std::move(value); }
+    inline FindingStatistics& WithGroupedByDate(const Aws::Vector<DateStatistics>& value) { SetGroupedByDate(value); return *this;}
+    inline FindingStatistics& WithGroupedByDate(Aws::Vector<DateStatistics>&& value) { SetGroupedByDate(std::move(value)); return *this;}
+    inline FindingStatistics& AddGroupedByDate(const DateStatistics& value) { m_groupedByDateHasBeenSet = true; m_groupedByDate.push_back(value); return *this; }
+    inline FindingStatistics& AddGroupedByDate(DateStatistics&& value) { m_groupedByDateHasBeenSet = true; m_groupedByDate.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
     /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
+     * <p>Represents a list of map of finding types with a count of total findings
+     * generated for each type. </p> <p>Based on the <code>orderBy</code> parameter,
+     * this request returns either the most occurring finding types or the least
+     * occurring finding types. If the <code>orderBy</code> parameter is
+     * <code>ASC</code>, this will represent the least occurring finding types in your
+     * account; otherwise, this will represent the most occurring finding types. The
+     * default value of <code>orderBy</code> is <code>DESC</code>.</p>
      */
-    inline void SetCountBySeverity(const Aws::Map<Aws::String, int>& value) { m_countBySeverityHasBeenSet = true; m_countBySeverity = value; }
+    inline const Aws::Vector<FindingTypeStatistics>& GetGroupedByFindingType() const{ return m_groupedByFindingType; }
+    inline bool GroupedByFindingTypeHasBeenSet() const { return m_groupedByFindingTypeHasBeenSet; }
+    inline void SetGroupedByFindingType(const Aws::Vector<FindingTypeStatistics>& value) { m_groupedByFindingTypeHasBeenSet = true; m_groupedByFindingType = value; }
+    inline void SetGroupedByFindingType(Aws::Vector<FindingTypeStatistics>&& value) { m_groupedByFindingTypeHasBeenSet = true; m_groupedByFindingType = std::move(value); }
+    inline FindingStatistics& WithGroupedByFindingType(const Aws::Vector<FindingTypeStatistics>& value) { SetGroupedByFindingType(value); return *this;}
+    inline FindingStatistics& WithGroupedByFindingType(Aws::Vector<FindingTypeStatistics>&& value) { SetGroupedByFindingType(std::move(value)); return *this;}
+    inline FindingStatistics& AddGroupedByFindingType(const FindingTypeStatistics& value) { m_groupedByFindingTypeHasBeenSet = true; m_groupedByFindingType.push_back(value); return *this; }
+    inline FindingStatistics& AddGroupedByFindingType(FindingTypeStatistics&& value) { m_groupedByFindingTypeHasBeenSet = true; m_groupedByFindingType.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
     /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
+     * <p>Represents a list of map of top resources with a count of total findings.</p>
      */
-    inline void SetCountBySeverity(Aws::Map<Aws::String, int>&& value) { m_countBySeverityHasBeenSet = true; m_countBySeverity = std::move(value); }
+    inline const Aws::Vector<ResourceStatistics>& GetGroupedByResource() const{ return m_groupedByResource; }
+    inline bool GroupedByResourceHasBeenSet() const { return m_groupedByResourceHasBeenSet; }
+    inline void SetGroupedByResource(const Aws::Vector<ResourceStatistics>& value) { m_groupedByResourceHasBeenSet = true; m_groupedByResource = value; }
+    inline void SetGroupedByResource(Aws::Vector<ResourceStatistics>&& value) { m_groupedByResourceHasBeenSet = true; m_groupedByResource = std::move(value); }
+    inline FindingStatistics& WithGroupedByResource(const Aws::Vector<ResourceStatistics>& value) { SetGroupedByResource(value); return *this;}
+    inline FindingStatistics& WithGroupedByResource(Aws::Vector<ResourceStatistics>&& value) { SetGroupedByResource(std::move(value)); return *this;}
+    inline FindingStatistics& AddGroupedByResource(const ResourceStatistics& value) { m_groupedByResourceHasBeenSet = true; m_groupedByResource.push_back(value); return *this; }
+    inline FindingStatistics& AddGroupedByResource(ResourceStatistics&& value) { m_groupedByResourceHasBeenSet = true; m_groupedByResource.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
     /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
+     * <p>Represents a list of map of total findings for each severity level.</p>
      */
-    inline FindingStatistics& WithCountBySeverity(const Aws::Map<Aws::String, int>& value) { SetCountBySeverity(value); return *this;}
-
-    /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
-     */
-    inline FindingStatistics& WithCountBySeverity(Aws::Map<Aws::String, int>&& value) { SetCountBySeverity(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
-     */
-    inline FindingStatistics& AddCountBySeverity(const Aws::String& key, int value) { m_countBySeverityHasBeenSet = true; m_countBySeverity.emplace(key, value); return *this; }
-
-    /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
-     */
-    inline FindingStatistics& AddCountBySeverity(Aws::String&& key, int value) { m_countBySeverityHasBeenSet = true; m_countBySeverity.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Represents a map of severity to count statistics for a set of findings.</p>
-     */
-    inline FindingStatistics& AddCountBySeverity(const char* key, int value) { m_countBySeverityHasBeenSet = true; m_countBySeverity.emplace(key, value); return *this; }
-
+    inline const Aws::Vector<SeverityStatistics>& GetGroupedBySeverity() const{ return m_groupedBySeverity; }
+    inline bool GroupedBySeverityHasBeenSet() const { return m_groupedBySeverityHasBeenSet; }
+    inline void SetGroupedBySeverity(const Aws::Vector<SeverityStatistics>& value) { m_groupedBySeverityHasBeenSet = true; m_groupedBySeverity = value; }
+    inline void SetGroupedBySeverity(Aws::Vector<SeverityStatistics>&& value) { m_groupedBySeverityHasBeenSet = true; m_groupedBySeverity = std::move(value); }
+    inline FindingStatistics& WithGroupedBySeverity(const Aws::Vector<SeverityStatistics>& value) { SetGroupedBySeverity(value); return *this;}
+    inline FindingStatistics& WithGroupedBySeverity(Aws::Vector<SeverityStatistics>&& value) { SetGroupedBySeverity(std::move(value)); return *this;}
+    inline FindingStatistics& AddGroupedBySeverity(const SeverityStatistics& value) { m_groupedBySeverityHasBeenSet = true; m_groupedBySeverity.push_back(value); return *this; }
+    inline FindingStatistics& AddGroupedBySeverity(SeverityStatistics&& value) { m_groupedBySeverityHasBeenSet = true; m_groupedBySeverity.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
-    Aws::Map<Aws::String, int> m_countBySeverity;
-    bool m_countBySeverityHasBeenSet = false;
+    Aws::Vector<AccountStatistics> m_groupedByAccount;
+    bool m_groupedByAccountHasBeenSet = false;
+
+    Aws::Vector<DateStatistics> m_groupedByDate;
+    bool m_groupedByDateHasBeenSet = false;
+
+    Aws::Vector<FindingTypeStatistics> m_groupedByFindingType;
+    bool m_groupedByFindingTypeHasBeenSet = false;
+
+    Aws::Vector<ResourceStatistics> m_groupedByResource;
+    bool m_groupedByResourceHasBeenSet = false;
+
+    Aws::Vector<SeverityStatistics> m_groupedBySeverity;
+    bool m_groupedBySeverityHasBeenSet = false;
   };
 
 } // namespace Model

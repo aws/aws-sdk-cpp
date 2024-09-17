@@ -28,13 +28,8 @@ AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails::AwsEcsTaskDefinitionVo
 {
 }
 
-AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails(JsonView jsonValue) : 
-    m_authorizationConfigHasBeenSet(false),
-    m_filesystemIdHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_transitEncryptionHasBeenSet(false),
-    m_transitEncryptionPort(0),
-    m_transitEncryptionPortHasBeenSet(false)
+AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails()
 {
   *this = jsonValue;
 }

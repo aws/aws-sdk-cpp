@@ -84,7 +84,6 @@ namespace FinSpaceData
       void init(const FinSpaceDataClientConfiguration& clientConfiguration);
 
       FinSpaceDataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FinSpaceDataEndpointProviderBase> m_endpointProvider;
   };
 

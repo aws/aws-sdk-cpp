@@ -23,8 +23,8 @@ ManagedAccount::ManagedAccount() :
 {
 }
 
-ManagedAccount::ManagedAccount(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false)
+ManagedAccount::ManagedAccount(JsonView jsonValue)
+  : ManagedAccount()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EndpointPerformance::EndpointPerformance() :
 {
 }
 
-EndpointPerformance::EndpointPerformance(JsonView jsonValue) : 
-    m_metricsHasBeenSet(false),
-    m_endpointInfoHasBeenSet(false)
+EndpointPerformance::EndpointPerformance(JsonView jsonValue)
+  : EndpointPerformance()
 {
   *this = jsonValue;
 }

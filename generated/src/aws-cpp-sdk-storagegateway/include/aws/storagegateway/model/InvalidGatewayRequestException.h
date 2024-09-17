@@ -40,83 +40,32 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A human-readable message describing the error that occurred.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A human-readable message describing the error that occurred.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A human-readable message describing the error that occurred.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A human-readable message describing the error that occurred.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A human-readable message describing the error that occurred.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A human-readable message describing the error that occurred.</p>
-     */
     inline InvalidGatewayRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A human-readable message describing the error that occurred.</p>
-     */
     inline InvalidGatewayRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A human-readable message describing the error that occurred.</p>
-     */
     inline InvalidGatewayRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
      * error.</p>
      */
     inline const StorageGatewayError& GetError() const{ return m_error; }
-
-    /**
-     * <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-     * error.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-     * error.</p>
-     */
     inline void SetError(const StorageGatewayError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-     * error.</p>
-     */
     inline void SetError(StorageGatewayError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-     * error.</p>
-     */
     inline InvalidGatewayRequestException& WithError(const StorageGatewayError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-     * error.</p>
-     */
     inline InvalidGatewayRequestException& WithError(StorageGatewayError&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

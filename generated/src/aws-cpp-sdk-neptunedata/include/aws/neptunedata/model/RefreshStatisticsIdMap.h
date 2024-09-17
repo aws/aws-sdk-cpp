@@ -37,46 +37,19 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the statistics generation run that is currently occurring.</p>
      */
     inline const Aws::String& GetStatisticsId() const{ return m_statisticsId; }
-
-    /**
-     * <p>The ID of the statistics generation run that is currently occurring.</p>
-     */
     inline bool StatisticsIdHasBeenSet() const { return m_statisticsIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the statistics generation run that is currently occurring.</p>
-     */
     inline void SetStatisticsId(const Aws::String& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = value; }
-
-    /**
-     * <p>The ID of the statistics generation run that is currently occurring.</p>
-     */
     inline void SetStatisticsId(Aws::String&& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = std::move(value); }
-
-    /**
-     * <p>The ID of the statistics generation run that is currently occurring.</p>
-     */
     inline void SetStatisticsId(const char* value) { m_statisticsIdHasBeenSet = true; m_statisticsId.assign(value); }
-
-    /**
-     * <p>The ID of the statistics generation run that is currently occurring.</p>
-     */
     inline RefreshStatisticsIdMap& WithStatisticsId(const Aws::String& value) { SetStatisticsId(value); return *this;}
-
-    /**
-     * <p>The ID of the statistics generation run that is currently occurring.</p>
-     */
     inline RefreshStatisticsIdMap& WithStatisticsId(Aws::String&& value) { SetStatisticsId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the statistics generation run that is currently occurring.</p>
-     */
     inline RefreshStatisticsIdMap& WithStatisticsId(const char* value) { SetStatisticsId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_statisticsId;

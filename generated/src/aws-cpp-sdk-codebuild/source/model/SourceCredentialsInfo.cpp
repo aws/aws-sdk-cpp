@@ -23,16 +23,13 @@ SourceCredentialsInfo::SourceCredentialsInfo() :
     m_serverType(ServerType::NOT_SET),
     m_serverTypeHasBeenSet(false),
     m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false)
+    m_authTypeHasBeenSet(false),
+    m_resourceHasBeenSet(false)
 {
 }
 
-SourceCredentialsInfo::SourceCredentialsInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false)
+SourceCredentialsInfo::SourceCredentialsInfo(JsonView jsonValue)
+  : SourceCredentialsInfo()
 {
   *this = jsonValue;
 }
@@ -60,6 +57,13 @@ SourceCredentialsInfo& SourceCredentialsInfo::operator =(JsonView jsonValue)
     m_authTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resource"))
+  {
+    m_resource = jsonValue.GetString("resource");
+
+    m_resourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +85,12 @@ JsonValue SourceCredentialsInfo::Jsonize() const
   if(m_authTypeHasBeenSet)
   {
    payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
+  }
+
+  if(m_resourceHasBeenSet)
+  {
+   payload.WithString("resource", m_resource);
+
   }
 
   return payload;

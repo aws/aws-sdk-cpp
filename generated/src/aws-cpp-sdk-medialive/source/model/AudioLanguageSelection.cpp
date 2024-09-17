@@ -25,10 +25,8 @@ AudioLanguageSelection::AudioLanguageSelection() :
 {
 }
 
-AudioLanguageSelection::AudioLanguageSelection(JsonView jsonValue) : 
-    m_languageCodeHasBeenSet(false),
-    m_languageSelectionPolicy(AudioLanguageSelectionPolicy::NOT_SET),
-    m_languageSelectionPolicyHasBeenSet(false)
+AudioLanguageSelection::AudioLanguageSelection(JsonView jsonValue)
+  : AudioLanguageSelection()
 {
   *this = jsonValue;
 }

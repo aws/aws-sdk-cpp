@@ -32,63 +32,29 @@ namespace Model
     AWS_GLUE_API CreateMLTransformResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique identifier that is generated for the transform.</p>
      */
     inline const Aws::String& GetTransformId() const{ return m_transformId; }
-
-    /**
-     * <p>A unique identifier that is generated for the transform.</p>
-     */
     inline void SetTransformId(const Aws::String& value) { m_transformId = value; }
-
-    /**
-     * <p>A unique identifier that is generated for the transform.</p>
-     */
     inline void SetTransformId(Aws::String&& value) { m_transformId = std::move(value); }
-
-    /**
-     * <p>A unique identifier that is generated for the transform.</p>
-     */
     inline void SetTransformId(const char* value) { m_transformId.assign(value); }
-
-    /**
-     * <p>A unique identifier that is generated for the transform.</p>
-     */
     inline CreateMLTransformResult& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-
-    /**
-     * <p>A unique identifier that is generated for the transform.</p>
-     */
     inline CreateMLTransformResult& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier that is generated for the transform.</p>
-     */
     inline CreateMLTransformResult& WithTransformId(const char* value) { SetTransformId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMLTransformResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMLTransformResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMLTransformResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transformId;

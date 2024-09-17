@@ -23,8 +23,8 @@ AnonymousUserSnapshotJobResult::AnonymousUserSnapshotJobResult() :
 {
 }
 
-AnonymousUserSnapshotJobResult::AnonymousUserSnapshotJobResult(JsonView jsonValue) : 
-    m_fileGroupsHasBeenSet(false)
+AnonymousUserSnapshotJobResult::AnonymousUserSnapshotJobResult(JsonView jsonValue)
+  : AnonymousUserSnapshotJobResult()
 {
   *this = jsonValue;
 }

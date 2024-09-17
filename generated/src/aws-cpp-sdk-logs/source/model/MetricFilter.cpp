@@ -28,13 +28,8 @@ MetricFilter::MetricFilter() :
 {
 }
 
-MetricFilter::MetricFilter(JsonView jsonValue) : 
-    m_filterNameHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_metricTransformationsHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
+MetricFilter::MetricFilter(JsonView jsonValue)
+  : MetricFilter()
 {
   *this = jsonValue;
 }

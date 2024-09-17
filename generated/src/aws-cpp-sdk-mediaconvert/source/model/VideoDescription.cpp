@@ -48,33 +48,8 @@ VideoDescription::VideoDescription() :
 {
 }
 
-VideoDescription::VideoDescription(JsonView jsonValue) : 
-    m_afdSignaling(AfdSignaling::NOT_SET),
-    m_afdSignalingHasBeenSet(false),
-    m_antiAlias(AntiAlias::NOT_SET),
-    m_antiAliasHasBeenSet(false),
-    m_codecSettingsHasBeenSet(false),
-    m_colorMetadata(ColorMetadata::NOT_SET),
-    m_colorMetadataHasBeenSet(false),
-    m_cropHasBeenSet(false),
-    m_dropFrameTimecode(DropFrameTimecode::NOT_SET),
-    m_dropFrameTimecodeHasBeenSet(false),
-    m_fixedAfd(0),
-    m_fixedAfdHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_respondToAfd(RespondToAfd::NOT_SET),
-    m_respondToAfdHasBeenSet(false),
-    m_scalingBehavior(ScalingBehavior::NOT_SET),
-    m_scalingBehaviorHasBeenSet(false),
-    m_sharpness(0),
-    m_sharpnessHasBeenSet(false),
-    m_timecodeInsertion(VideoTimecodeInsertion::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false),
-    m_videoPreprocessorsHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
+VideoDescription::VideoDescription(JsonView jsonValue)
+  : VideoDescription()
 {
   *this = jsonValue;
 }

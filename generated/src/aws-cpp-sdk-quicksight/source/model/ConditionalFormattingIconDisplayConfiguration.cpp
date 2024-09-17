@@ -24,9 +24,8 @@ ConditionalFormattingIconDisplayConfiguration::ConditionalFormattingIconDisplayC
 {
 }
 
-ConditionalFormattingIconDisplayConfiguration::ConditionalFormattingIconDisplayConfiguration(JsonView jsonValue) : 
-    m_iconDisplayOption(ConditionalFormattingIconDisplayOption::NOT_SET),
-    m_iconDisplayOptionHasBeenSet(false)
+ConditionalFormattingIconDisplayConfiguration::ConditionalFormattingIconDisplayConfiguration(JsonView jsonValue)
+  : ConditionalFormattingIconDisplayConfiguration()
 {
   *this = jsonValue;
 }

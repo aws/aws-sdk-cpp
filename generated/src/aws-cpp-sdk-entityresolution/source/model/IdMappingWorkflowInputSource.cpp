@@ -20,13 +20,14 @@ namespace Model
 
 IdMappingWorkflowInputSource::IdMappingWorkflowInputSource() : 
     m_inputSourceARNHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+    m_schemaNameHasBeenSet(false),
+    m_type(IdNamespaceType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
-IdMappingWorkflowInputSource::IdMappingWorkflowInputSource(JsonView jsonValue) : 
-    m_inputSourceARNHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+IdMappingWorkflowInputSource::IdMappingWorkflowInputSource(JsonView jsonValue)
+  : IdMappingWorkflowInputSource()
 {
   *this = jsonValue;
 }
@@ -47,6 +48,13 @@ IdMappingWorkflowInputSource& IdMappingWorkflowInputSource::operator =(JsonView 
     m_schemaNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +72,11 @@ JsonValue IdMappingWorkflowInputSource::Jsonize() const
   {
    payload.WithString("schemaName", m_schemaName);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", IdNamespaceTypeMapper::GetNameForIdNamespaceType(m_type));
   }
 
   return payload;

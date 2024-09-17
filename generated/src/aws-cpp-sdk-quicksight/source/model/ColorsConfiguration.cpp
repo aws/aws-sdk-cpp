@@ -23,8 +23,8 @@ ColorsConfiguration::ColorsConfiguration() :
 {
 }
 
-ColorsConfiguration::ColorsConfiguration(JsonView jsonValue) : 
-    m_customColorsHasBeenSet(false)
+ColorsConfiguration::ColorsConfiguration(JsonView jsonValue)
+  : ColorsConfiguration()
 {
   *this = jsonValue;
 }

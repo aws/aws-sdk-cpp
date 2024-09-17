@@ -26,11 +26,8 @@ X12Details::X12Details() :
 {
 }
 
-X12Details::X12Details(JsonView jsonValue) : 
-    m_transactionSet(X12TransactionSet::NOT_SET),
-    m_transactionSetHasBeenSet(false),
-    m_version(X12Version::NOT_SET),
-    m_versionHasBeenSet(false)
+X12Details::X12Details(JsonView jsonValue)
+  : X12Details()
 {
   *this = jsonValue;
 }

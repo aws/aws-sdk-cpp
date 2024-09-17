@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the algorithm to delete.</p>
      */
     inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
-
-    /**
-     * <p>The name of the algorithm to delete.</p>
-     */
     inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
-
-    /**
-     * <p>The name of the algorithm to delete.</p>
-     */
     inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
-
-    /**
-     * <p>The name of the algorithm to delete.</p>
-     */
     inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
-
-    /**
-     * <p>The name of the algorithm to delete.</p>
-     */
     inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
-
-    /**
-     * <p>The name of the algorithm to delete.</p>
-     */
     inline DeleteAlgorithmRequest& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
-
-    /**
-     * <p>The name of the algorithm to delete.</p>
-     */
     inline DeleteAlgorithmRequest& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the algorithm to delete.</p>
-     */
     inline DeleteAlgorithmRequest& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_algorithmName;

@@ -28,11 +28,8 @@ WarningProperty::WarningProperty() :
 {
 }
 
-WarningProperty::WarningProperty(const XmlNode& xmlNode) : 
-    m_propertyPathHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+WarningProperty::WarningProperty(const XmlNode& xmlNode)
+  : WarningProperty()
 {
   *this = xmlNode;
 }

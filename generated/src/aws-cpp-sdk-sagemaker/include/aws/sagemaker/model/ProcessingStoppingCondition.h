@@ -37,26 +37,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the maximum runtime in seconds.</p>
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
-
-    /**
-     * <p>Specifies the maximum runtime in seconds.</p>
-     */
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
-
-    /**
-     * <p>Specifies the maximum runtime in seconds.</p>
-     */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
-
-    /**
-     * <p>Specifies the maximum runtime in seconds.</p>
-     */
     inline ProcessingStoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxRuntimeInSeconds;

@@ -77,6 +77,32 @@ namespace TrustedAdvisor
         virtual ~TrustedAdvisorClient();
 
         /**
+         * <p>Update one or more exclusion status for a list of recommendation
+         * resources</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateRecommendationResourceExclusionOutcome BatchUpdateRecommendationResourceExclusion(const Model::BatchUpdateRecommendationResourceExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateRecommendationResourceExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateRecommendationResourceExclusionRequestT = Model::BatchUpdateRecommendationResourceExclusionRequest>
+        Model::BatchUpdateRecommendationResourceExclusionOutcomeCallable BatchUpdateRecommendationResourceExclusionCallable(const BatchUpdateRecommendationResourceExclusionRequestT& request) const
+        {
+            return SubmitCallable(&TrustedAdvisorClient::BatchUpdateRecommendationResourceExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateRecommendationResourceExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateRecommendationResourceExclusionRequestT = Model::BatchUpdateRecommendationResourceExclusionRequest>
+        void BatchUpdateRecommendationResourceExclusionAsync(const BatchUpdateRecommendationResourceExclusionRequestT& request, const BatchUpdateRecommendationResourceExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TrustedAdvisorClient::BatchUpdateRecommendationResourceExclusion, request, handler, context);
+        }
+
+        /**
          * <p>Get a specific recommendation within an AWS Organizations organization. This
          * API supports only prioritized recommendations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetOrganizationRecommendation">AWS
@@ -132,13 +158,13 @@ namespace TrustedAdvisor
          * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListChecks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListChecksOutcome ListChecks(const Model::ListChecksRequest& request) const;
+        virtual Model::ListChecksOutcome ListChecks(const Model::ListChecksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListChecks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListChecksRequestT = Model::ListChecksRequest>
-        Model::ListChecksOutcomeCallable ListChecksCallable(const ListChecksRequestT& request) const
+        Model::ListChecksOutcomeCallable ListChecksCallable(const ListChecksRequestT& request = {}) const
         {
             return SubmitCallable(&TrustedAdvisorClient::ListChecks, request);
         }
@@ -147,7 +173,7 @@ namespace TrustedAdvisor
          * An Async wrapper for ListChecks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListChecksRequestT = Model::ListChecksRequest>
-        void ListChecksAsync(const ListChecksRequestT& request, const ListChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListChecksAsync(const ListChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListChecksRequestT& request = {}) const
         {
             return SubmitAsync(&TrustedAdvisorClient::ListChecks, request, handler, context);
         }
@@ -211,13 +237,13 @@ namespace TrustedAdvisor
          * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOrganizationRecommendationsOutcome ListOrganizationRecommendations(const Model::ListOrganizationRecommendationsRequest& request) const;
+        virtual Model::ListOrganizationRecommendationsOutcome ListOrganizationRecommendations(const Model::ListOrganizationRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOrganizationRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOrganizationRecommendationsRequestT = Model::ListOrganizationRecommendationsRequest>
-        Model::ListOrganizationRecommendationsOutcomeCallable ListOrganizationRecommendationsCallable(const ListOrganizationRecommendationsRequestT& request) const
+        Model::ListOrganizationRecommendationsOutcomeCallable ListOrganizationRecommendationsCallable(const ListOrganizationRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&TrustedAdvisorClient::ListOrganizationRecommendations, request);
         }
@@ -226,7 +252,7 @@ namespace TrustedAdvisor
          * An Async wrapper for ListOrganizationRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOrganizationRecommendationsRequestT = Model::ListOrganizationRecommendationsRequest>
-        void ListOrganizationRecommendationsAsync(const ListOrganizationRecommendationsRequestT& request, const ListOrganizationRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOrganizationRecommendationsAsync(const ListOrganizationRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOrganizationRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&TrustedAdvisorClient::ListOrganizationRecommendations, request, handler, context);
         }
@@ -261,13 +287,13 @@ namespace TrustedAdvisor
          * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request) const;
+        virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecommendationsRequestT = Model::ListRecommendationsRequest>
-        Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const ListRecommendationsRequestT& request) const
+        Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const ListRecommendationsRequestT& request = {}) const
         {
             return SubmitCallable(&TrustedAdvisorClient::ListRecommendations, request);
         }
@@ -276,14 +302,14 @@ namespace TrustedAdvisor
          * An Async wrapper for ListRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecommendationsRequestT = Model::ListRecommendationsRequest>
-        void ListRecommendationsAsync(const ListRecommendationsRequestT& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecommendationsAsync(const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecommendationsRequestT& request = {}) const
         {
             return SubmitAsync(&TrustedAdvisorClient::ListRecommendations, request, handler, context);
         }
 
         /**
-         * <p>Update the lifecyle of a Recommendation within an Organization. This API only
-         * supports prioritized recommendations. </p><p><h3>See Also:</h3>   <a
+         * <p>Update the lifecycle of a Recommendation within an Organization. This API
+         * only supports prioritized recommendations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateOrganizationRecommendationLifecycle">AWS
          * API Reference</a></p>
          */
@@ -341,7 +367,6 @@ namespace TrustedAdvisor
       void init(const TrustedAdvisorClientConfiguration& clientConfiguration);
 
       TrustedAdvisorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TrustedAdvisorEndpointProviderBase> m_endpointProvider;
   };
 

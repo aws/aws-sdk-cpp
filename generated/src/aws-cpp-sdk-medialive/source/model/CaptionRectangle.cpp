@@ -30,15 +30,8 @@ CaptionRectangle::CaptionRectangle() :
 {
 }
 
-CaptionRectangle::CaptionRectangle(JsonView jsonValue) : 
-    m_height(0.0),
-    m_heightHasBeenSet(false),
-    m_leftOffset(0.0),
-    m_leftOffsetHasBeenSet(false),
-    m_topOffset(0.0),
-    m_topOffsetHasBeenSet(false),
-    m_width(0.0),
-    m_widthHasBeenSet(false)
+CaptionRectangle::CaptionRectangle(JsonView jsonValue)
+  : CaptionRectangle()
 {
   *this = jsonValue;
 }

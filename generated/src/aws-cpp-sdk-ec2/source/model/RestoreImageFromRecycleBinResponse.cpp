@@ -22,8 +22,8 @@ RestoreImageFromRecycleBinResponse::RestoreImageFromRecycleBinResponse() :
 {
 }
 
-RestoreImageFromRecycleBinResponse::RestoreImageFromRecycleBinResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+RestoreImageFromRecycleBinResponse::RestoreImageFromRecycleBinResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RestoreImageFromRecycleBinResponse()
 {
   *this = result;
 }

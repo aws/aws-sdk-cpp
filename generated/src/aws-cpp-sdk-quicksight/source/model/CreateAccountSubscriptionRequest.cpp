@@ -26,10 +26,14 @@ CreateAccountSubscriptionRequest::CreateAccountSubscriptionRequest() :
     m_adminGroupHasBeenSet(false),
     m_authorGroupHasBeenSet(false),
     m_readerGroupHasBeenSet(false),
+    m_adminProGroupHasBeenSet(false),
+    m_authorProGroupHasBeenSet(false),
+    m_readerProGroupHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
-    m_contactNumberHasBeenSet(false)
+    m_contactNumberHasBeenSet(false),
+    m_iAMIdentityCenterInstanceArnHasBeenSet(false)
 {
 }
 
@@ -110,6 +114,39 @@ Aws::String CreateAccountSubscriptionRequest::SerializePayload() const
 
   }
 
+  if(m_adminProGroupHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> adminProGroupJsonList(m_adminProGroup.size());
+   for(unsigned adminProGroupIndex = 0; adminProGroupIndex < adminProGroupJsonList.GetLength(); ++adminProGroupIndex)
+   {
+     adminProGroupJsonList[adminProGroupIndex].AsString(m_adminProGroup[adminProGroupIndex]);
+   }
+   payload.WithArray("AdminProGroup", std::move(adminProGroupJsonList));
+
+  }
+
+  if(m_authorProGroupHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> authorProGroupJsonList(m_authorProGroup.size());
+   for(unsigned authorProGroupIndex = 0; authorProGroupIndex < authorProGroupJsonList.GetLength(); ++authorProGroupIndex)
+   {
+     authorProGroupJsonList[authorProGroupIndex].AsString(m_authorProGroup[authorProGroupIndex]);
+   }
+   payload.WithArray("AuthorProGroup", std::move(authorProGroupJsonList));
+
+  }
+
+  if(m_readerProGroupHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> readerProGroupJsonList(m_readerProGroup.size());
+   for(unsigned readerProGroupIndex = 0; readerProGroupIndex < readerProGroupJsonList.GetLength(); ++readerProGroupIndex)
+   {
+     readerProGroupJsonList[readerProGroupIndex].AsString(m_readerProGroup[readerProGroupIndex]);
+   }
+   payload.WithArray("ReaderProGroup", std::move(readerProGroupJsonList));
+
+  }
+
   if(m_firstNameHasBeenSet)
   {
    payload.WithString("FirstName", m_firstName);
@@ -131,6 +168,12 @@ Aws::String CreateAccountSubscriptionRequest::SerializePayload() const
   if(m_contactNumberHasBeenSet)
   {
    payload.WithString("ContactNumber", m_contactNumber);
+
+  }
+
+  if(m_iAMIdentityCenterInstanceArnHasBeenSet)
+  {
+   payload.WithString("IAMIdentityCenterInstanceArn", m_iAMIdentityCenterInstanceArn);
 
   }
 

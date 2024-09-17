@@ -37,70 +37,30 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
      * custom domain to your user pool.</p>
      */
     inline const Aws::String& GetCloudFrontDomain() const{ return m_cloudFrontDomain; }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
-     * custom domain to your user pool.</p>
-     */
     inline void SetCloudFrontDomain(const Aws::String& value) { m_cloudFrontDomain = value; }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
-     * custom domain to your user pool.</p>
-     */
     inline void SetCloudFrontDomain(Aws::String&& value) { m_cloudFrontDomain = std::move(value); }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
-     * custom domain to your user pool.</p>
-     */
     inline void SetCloudFrontDomain(const char* value) { m_cloudFrontDomain.assign(value); }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
-     * custom domain to your user pool.</p>
-     */
     inline UpdateUserPoolDomainResult& WithCloudFrontDomain(const Aws::String& value) { SetCloudFrontDomain(value); return *this;}
-
-    /**
-     * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
-     * custom domain to your user pool.</p>
-     */
     inline UpdateUserPoolDomainResult& WithCloudFrontDomain(Aws::String&& value) { SetCloudFrontDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
-     * custom domain to your user pool.</p>
-     */
     inline UpdateUserPoolDomainResult& WithCloudFrontDomain(const char* value) { SetCloudFrontDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUserPoolDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUserPoolDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUserPoolDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cloudFrontDomain;

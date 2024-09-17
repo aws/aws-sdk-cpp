@@ -26,11 +26,8 @@ EBSResourceUtilization::EBSResourceUtilization() :
 {
 }
 
-EBSResourceUtilization::EBSResourceUtilization(JsonView jsonValue) : 
-    m_ebsReadOpsPerSecondHasBeenSet(false),
-    m_ebsWriteOpsPerSecondHasBeenSet(false),
-    m_ebsReadBytesPerSecondHasBeenSet(false),
-    m_ebsWriteBytesPerSecondHasBeenSet(false)
+EBSResourceUtilization::EBSResourceUtilization(JsonView jsonValue)
+  : EBSResourceUtilization()
 {
   *this = jsonValue;
 }

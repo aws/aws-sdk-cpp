@@ -25,10 +25,8 @@ Query::Query() :
 {
 }
 
-Query::Query(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_pagesHasBeenSet(false)
+Query::Query(JsonView jsonValue)
+  : Query()
 {
   *this = jsonValue;
 }

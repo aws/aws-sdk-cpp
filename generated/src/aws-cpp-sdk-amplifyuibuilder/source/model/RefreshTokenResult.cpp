@@ -22,8 +22,8 @@ RefreshTokenResult::RefreshTokenResult() :
 {
 }
 
-RefreshTokenResult::RefreshTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expiresIn(0)
+RefreshTokenResult::RefreshTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RefreshTokenResult()
 {
   *this = result;
 }

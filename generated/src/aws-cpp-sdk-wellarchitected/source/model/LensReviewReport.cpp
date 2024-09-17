@@ -25,10 +25,8 @@ LensReviewReport::LensReviewReport() :
 {
 }
 
-LensReviewReport::LensReviewReport(JsonView jsonValue) : 
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_base64StringHasBeenSet(false)
+LensReviewReport::LensReviewReport(JsonView jsonValue)
+  : LensReviewReport()
 {
   *this = jsonValue;
 }

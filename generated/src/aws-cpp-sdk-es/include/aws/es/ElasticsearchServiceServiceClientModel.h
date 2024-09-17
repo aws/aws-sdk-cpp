@@ -66,6 +66,16 @@
 #include <aws/es/model/UpdatePackageResult.h>
 #include <aws/es/model/UpdateVpcEndpointResult.h>
 #include <aws/es/model/UpgradeElasticsearchDomainResult.h>
+#include <aws/es/model/DescribeReservedElasticsearchInstancesRequest.h>
+#include <aws/es/model/DescribeOutboundCrossClusterSearchConnectionsRequest.h>
+#include <aws/es/model/DescribeReservedElasticsearchInstanceOfferingsRequest.h>
+#include <aws/es/model/GetCompatibleElasticsearchVersionsRequest.h>
+#include <aws/es/model/DescribeInboundCrossClusterSearchConnectionsRequest.h>
+#include <aws/es/model/DescribePackagesRequest.h>
+#include <aws/es/model/ListDomainNamesRequest.h>
+#include <aws/es/model/ListElasticsearchVersionsRequest.h>
+#include <aws/es/model/DeleteElasticsearchServiceRoleRequest.h>
+#include <aws/es/model/ListVpcEndpointsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ElasticsearchServiceClient header */
 
@@ -100,7 +110,7 @@ namespace Aws
 
   namespace ElasticsearchService
   {
-    using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticsearchServiceEndpointProviderBase = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProviderBase;
     using ElasticsearchServiceEndpointProvider = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProvider;
 

@@ -23,8 +23,8 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_lexHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }

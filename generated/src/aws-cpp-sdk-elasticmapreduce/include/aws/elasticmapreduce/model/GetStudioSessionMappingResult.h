@@ -33,58 +33,28 @@ namespace Model
     AWS_EMR_API GetStudioSessionMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The session mapping details for the specified Amazon EMR Studio and identity,
      * including session policy ARN and creation time.</p>
      */
     inline const SessionMappingDetail& GetSessionMapping() const{ return m_sessionMapping; }
-
-    /**
-     * <p>The session mapping details for the specified Amazon EMR Studio and identity,
-     * including session policy ARN and creation time.</p>
-     */
     inline void SetSessionMapping(const SessionMappingDetail& value) { m_sessionMapping = value; }
-
-    /**
-     * <p>The session mapping details for the specified Amazon EMR Studio and identity,
-     * including session policy ARN and creation time.</p>
-     */
     inline void SetSessionMapping(SessionMappingDetail&& value) { m_sessionMapping = std::move(value); }
-
-    /**
-     * <p>The session mapping details for the specified Amazon EMR Studio and identity,
-     * including session policy ARN and creation time.</p>
-     */
     inline GetStudioSessionMappingResult& WithSessionMapping(const SessionMappingDetail& value) { SetSessionMapping(value); return *this;}
-
-    /**
-     * <p>The session mapping details for the specified Amazon EMR Studio and identity,
-     * including session policy ARN and creation time.</p>
-     */
     inline GetStudioSessionMappingResult& WithSessionMapping(SessionMappingDetail&& value) { SetSessionMapping(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStudioSessionMappingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStudioSessionMappingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStudioSessionMappingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SessionMappingDetail m_sessionMapping;

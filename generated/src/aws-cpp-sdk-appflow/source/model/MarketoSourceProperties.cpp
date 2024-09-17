@@ -23,8 +23,8 @@ MarketoSourceProperties::MarketoSourceProperties() :
 {
 }
 
-MarketoSourceProperties::MarketoSourceProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false)
+MarketoSourceProperties::MarketoSourceProperties(JsonView jsonValue)
+  : MarketoSourceProperties()
 {
   *this = jsonValue;
 }

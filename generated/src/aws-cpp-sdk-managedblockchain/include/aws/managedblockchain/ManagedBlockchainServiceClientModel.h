@@ -45,6 +45,9 @@
 #include <aws/managedblockchain/model/UpdateMemberResult.h>
 #include <aws/managedblockchain/model/UpdateNodeResult.h>
 #include <aws/managedblockchain/model/VoteOnProposalResult.h>
+#include <aws/managedblockchain/model/ListInvitationsRequest.h>
+#include <aws/managedblockchain/model/ListAccessorsRequest.h>
+#include <aws/managedblockchain/model/ListNetworksRequest.h>
 /* End of service model headers required in ManagedBlockchainClient header */
 
 namespace Aws
@@ -78,7 +81,7 @@ namespace Aws
 
   namespace ManagedBlockchain
   {
-    using ManagedBlockchainClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ManagedBlockchainClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ManagedBlockchainEndpointProviderBase = Aws::ManagedBlockchain::Endpoint::ManagedBlockchainEndpointProviderBase;
     using ManagedBlockchainEndpointProvider = Aws::ManagedBlockchain::Endpoint::ManagedBlockchainEndpointProvider;
 

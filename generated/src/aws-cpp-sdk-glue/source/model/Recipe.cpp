@@ -21,14 +21,13 @@ namespace Model
 Recipe::Recipe() : 
     m_nameHasBeenSet(false),
     m_inputsHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false)
+    m_recipeReferenceHasBeenSet(false),
+    m_recipeStepsHasBeenSet(false)
 {
 }
 
-Recipe::Recipe(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false)
+Recipe::Recipe(JsonView jsonValue)
+  : Recipe()
 {
   *this = jsonValue;
 }
@@ -59,6 +58,16 @@ Recipe& Recipe::operator =(JsonView jsonValue)
     m_recipeReferenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecipeSteps"))
+  {
+    Aws::Utils::Array<JsonView> recipeStepsJsonList = jsonValue.GetArray("RecipeSteps");
+    for(unsigned recipeStepsIndex = 0; recipeStepsIndex < recipeStepsJsonList.GetLength(); ++recipeStepsIndex)
+    {
+      m_recipeSteps.push_back(recipeStepsJsonList[recipeStepsIndex].AsObject());
+    }
+    m_recipeStepsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +95,17 @@ JsonValue Recipe::Jsonize() const
   if(m_recipeReferenceHasBeenSet)
   {
    payload.WithObject("RecipeReference", m_recipeReference.Jsonize());
+
+  }
+
+  if(m_recipeStepsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> recipeStepsJsonList(m_recipeSteps.size());
+   for(unsigned recipeStepsIndex = 0; recipeStepsIndex < recipeStepsJsonList.GetLength(); ++recipeStepsIndex)
+   {
+     recipeStepsJsonList[recipeStepsIndex].AsObject(m_recipeSteps[recipeStepsIndex].Jsonize());
+   }
+   payload.WithArray("RecipeSteps", std::move(recipeStepsJsonList));
 
   }
 

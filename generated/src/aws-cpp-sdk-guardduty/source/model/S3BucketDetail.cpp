@@ -26,19 +26,13 @@ S3BucketDetail::S3BucketDetail() :
     m_ownerHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_defaultServerSideEncryptionHasBeenSet(false),
-    m_publicAccessHasBeenSet(false)
+    m_publicAccessHasBeenSet(false),
+    m_s3ObjectDetailsHasBeenSet(false)
 {
 }
 
-S3BucketDetail::S3BucketDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultServerSideEncryptionHasBeenSet(false),
-    m_publicAccessHasBeenSet(false)
+S3BucketDetail::S3BucketDetail(JsonView jsonValue)
+  : S3BucketDetail()
 {
   *this = jsonValue;
 }
@@ -104,6 +98,16 @@ S3BucketDetail& S3BucketDetail::operator =(JsonView jsonValue)
     m_publicAccessHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3ObjectDetails"))
+  {
+    Aws::Utils::Array<JsonView> s3ObjectDetailsJsonList = jsonValue.GetArray("s3ObjectDetails");
+    for(unsigned s3ObjectDetailsIndex = 0; s3ObjectDetailsIndex < s3ObjectDetailsJsonList.GetLength(); ++s3ObjectDetailsIndex)
+    {
+      m_s3ObjectDetails.push_back(s3ObjectDetailsJsonList[s3ObjectDetailsIndex].AsObject());
+    }
+    m_s3ObjectDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +164,17 @@ JsonValue S3BucketDetail::Jsonize() const
   if(m_publicAccessHasBeenSet)
   {
    payload.WithObject("publicAccess", m_publicAccess.Jsonize());
+
+  }
+
+  if(m_s3ObjectDetailsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> s3ObjectDetailsJsonList(m_s3ObjectDetails.size());
+   for(unsigned s3ObjectDetailsIndex = 0; s3ObjectDetailsIndex < s3ObjectDetailsJsonList.GetLength(); ++s3ObjectDetailsIndex)
+   {
+     s3ObjectDetailsJsonList[s3ObjectDetailsIndex].AsObject(m_s3ObjectDetails[s3ObjectDetailsIndex].Jsonize());
+   }
+   payload.WithArray("s3ObjectDetails", std::move(s3ObjectDetailsJsonList));
 
   }
 

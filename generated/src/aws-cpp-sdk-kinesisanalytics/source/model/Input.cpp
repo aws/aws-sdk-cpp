@@ -28,13 +28,8 @@ Input::Input() :
 {
 }
 
-Input::Input(JsonView jsonValue) : 
-    m_namePrefixHasBeenSet(false),
-    m_inputProcessingConfigurationHasBeenSet(false),
-    m_kinesisStreamsInputHasBeenSet(false),
-    m_kinesisFirehoseInputHasBeenSet(false),
-    m_inputParallelismHasBeenSet(false),
-    m_inputSchemaHasBeenSet(false)
+Input::Input(JsonView jsonValue)
+  : Input()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ DescribeDataIngestionJobResult::DescribeDataIngestionJobResult() :
 {
 }
 
-DescribeDataIngestionJobResult::DescribeDataIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(IngestionJobStatus::NOT_SET),
-    m_ingestedDataSize(0)
+DescribeDataIngestionJobResult::DescribeDataIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDataIngestionJobResult()
 {
   *this = result;
 }

@@ -31,16 +31,8 @@ TTPsObservedDetail::TTPsObservedDetail() :
 {
 }
 
-TTPsObservedDetail::TTPsObservedDetail(JsonView jsonValue) : 
-    m_tacticHasBeenSet(false),
-    m_techniqueHasBeenSet(false),
-    m_procedureHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_aPINameHasBeenSet(false),
-    m_aPISuccessCount(0),
-    m_aPISuccessCountHasBeenSet(false),
-    m_aPIFailureCount(0),
-    m_aPIFailureCountHasBeenSet(false)
+TTPsObservedDetail::TTPsObservedDetail(JsonView jsonValue)
+  : TTPsObservedDetail()
 {
   *this = jsonValue;
 }

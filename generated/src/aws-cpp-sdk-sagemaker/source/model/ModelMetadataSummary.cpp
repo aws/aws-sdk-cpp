@@ -27,12 +27,8 @@ ModelMetadataSummary::ModelMetadataSummary() :
 {
 }
 
-ModelMetadataSummary::ModelMetadataSummary(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false)
+ModelMetadataSummary::ModelMetadataSummary(JsonView jsonValue)
+  : ModelMetadataSummary()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListServerNeighborsResult::ListServerNeighborsResult() :
 {
 }
 
-ListServerNeighborsResult::ListServerNeighborsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_knownDependencyCount(0)
+ListServerNeighborsResult::ListServerNeighborsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListServerNeighborsResult()
 {
   *this = result;
 }

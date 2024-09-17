@@ -24,9 +24,8 @@ BucketState::BucketState() :
 {
 }
 
-BucketState::BucketState(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BucketState::BucketState(JsonView jsonValue)
+  : BucketState()
 {
   *this = jsonValue;
 }

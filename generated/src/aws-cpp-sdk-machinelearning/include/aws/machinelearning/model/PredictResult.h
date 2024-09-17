@@ -33,43 +33,25 @@ namespace Model
     AWS_MACHINELEARNING_API PredictResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Prediction& GetPrediction() const{ return m_prediction; }
-
-    
     inline void SetPrediction(const Prediction& value) { m_prediction = value; }
-
-    
     inline void SetPrediction(Prediction&& value) { m_prediction = std::move(value); }
-
-    
     inline PredictResult& WithPrediction(const Prediction& value) { SetPrediction(value); return *this;}
-
-    
     inline PredictResult& WithPrediction(Prediction&& value) { SetPrediction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PredictResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PredictResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PredictResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Prediction m_prediction;

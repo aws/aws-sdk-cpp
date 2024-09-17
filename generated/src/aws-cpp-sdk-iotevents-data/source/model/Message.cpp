@@ -27,11 +27,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_inputNameHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

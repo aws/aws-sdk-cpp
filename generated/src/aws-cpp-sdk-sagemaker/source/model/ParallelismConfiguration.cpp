@@ -24,9 +24,8 @@ ParallelismConfiguration::ParallelismConfiguration() :
 {
 }
 
-ParallelismConfiguration::ParallelismConfiguration(JsonView jsonValue) : 
-    m_maxParallelExecutionSteps(0),
-    m_maxParallelExecutionStepsHasBeenSet(false)
+ParallelismConfiguration::ParallelismConfiguration(JsonView jsonValue)
+  : ParallelismConfiguration()
 {
   *this = jsonValue;
 }

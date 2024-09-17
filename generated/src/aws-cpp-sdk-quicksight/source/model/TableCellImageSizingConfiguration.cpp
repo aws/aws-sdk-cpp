@@ -24,9 +24,8 @@ TableCellImageSizingConfiguration::TableCellImageSizingConfiguration() :
 {
 }
 
-TableCellImageSizingConfiguration::TableCellImageSizingConfiguration(JsonView jsonValue) : 
-    m_tableCellImageScalingConfiguration(TableCellImageScalingConfiguration::NOT_SET),
-    m_tableCellImageScalingConfigurationHasBeenSet(false)
+TableCellImageSizingConfiguration::TableCellImageSizingConfiguration(JsonView jsonValue)
+  : TableCellImageSizingConfiguration()
 {
   *this = jsonValue;
 }

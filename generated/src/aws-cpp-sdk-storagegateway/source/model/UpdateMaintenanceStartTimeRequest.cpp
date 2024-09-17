@@ -21,7 +21,8 @@ UpdateMaintenanceStartTimeRequest::UpdateMaintenanceStartTimeRequest() :
     m_dayOfWeek(0),
     m_dayOfWeekHasBeenSet(false),
     m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false)
+    m_dayOfMonthHasBeenSet(false),
+    m_softwareUpdatePreferencesHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,12 @@ Aws::String UpdateMaintenanceStartTimeRequest::SerializePayload() const
   if(m_dayOfMonthHasBeenSet)
   {
    payload.WithInteger("DayOfMonth", m_dayOfMonth);
+
+  }
+
+  if(m_softwareUpdatePreferencesHasBeenSet)
+  {
+   payload.WithObject("SoftwareUpdatePreferences", m_softwareUpdatePreferences.Jsonize());
 
   }
 

@@ -201,11 +201,10 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
          * logging from Amazon Web Services services.</a> </p> <p>A delivery destination
          * can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery
-         * stream in Kinesis Data Firehose.</p> <p>To configure logs delivery between a
-         * supported Amazon Web Services service and a destination, you must do the
-         * following:</p> <ul> <li> <p>Create a delivery source, which is a logical object
-         * that represents the resource that is actually sending the logs. For more
-         * information, see <a
+         * stream in Firehose.</p> <p>To configure logs delivery between a supported Amazon
+         * Web Services service and a destination, you must do the following:</p> <ul> <li>
+         * <p>Create a delivery source, which is a logical object that represents the
+         * resource that is actually sending the logs. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
          * </li> <li> <p>Create a <i>delivery destination</i>, which is a logical object
          * that represents the actual delivery destination. For more information, see <a
@@ -767,13 +766,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DeleteResourcePolicy, request);
         }
@@ -782,7 +781,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourcePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DeleteResourcePolicy, request, handler, context);
         }
@@ -866,6 +865,35 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Use this operation to return the valid and default values that are used when
+         * creating delivery sources, delivery destinations, and deliveries. For more
+         * information about deliveries, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeConfigurationTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConfigurationTemplatesOutcome DescribeConfigurationTemplates(const Model::DescribeConfigurationTemplatesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeConfigurationTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeConfigurationTemplatesRequestT = Model::DescribeConfigurationTemplatesRequest>
+        Model::DescribeConfigurationTemplatesOutcomeCallable DescribeConfigurationTemplatesCallable(const DescribeConfigurationTemplatesRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DescribeConfigurationTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeConfigurationTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeConfigurationTemplatesRequestT = Model::DescribeConfigurationTemplatesRequest>
+        void DescribeConfigurationTemplatesAsync(const DescribeConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigurationTemplatesRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DescribeConfigurationTemplates, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a list of the deliveries that have been created in the account.</p>
          * <p>A <i>delivery</i> is a connection between a <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">
@@ -873,21 +901,21 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">
          * <i>delivery destination</i> </a>.</p> <p>A delivery source represents an Amazon
          * Web Services resource that sends logs to an logs delivery destination. The
-         * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only
-         * some Amazon Web Services services support being configured as a delivery source.
-         * These services are listed in <a
+         * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web
+         * Services services support being configured as a delivery source. These services
+         * are listed in <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
          * logging from Amazon Web Services services.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliveries">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDeliveriesOutcome DescribeDeliveries(const Model::DescribeDeliveriesRequest& request) const;
+        virtual Model::DescribeDeliveriesOutcome DescribeDeliveries(const Model::DescribeDeliveriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDeliveries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDeliveriesRequestT = Model::DescribeDeliveriesRequest>
-        Model::DescribeDeliveriesOutcomeCallable DescribeDeliveriesCallable(const DescribeDeliveriesRequestT& request) const
+        Model::DescribeDeliveriesOutcomeCallable DescribeDeliveriesCallable(const DescribeDeliveriesRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeDeliveries, request);
         }
@@ -896,7 +924,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeDeliveries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDeliveriesRequestT = Model::DescribeDeliveriesRequest>
-        void DescribeDeliveriesAsync(const DescribeDeliveriesRequestT& request, const DescribeDeliveriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDeliveriesAsync(const DescribeDeliveriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDeliveriesRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeDeliveries, request, handler, context);
         }
@@ -907,13 +935,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliveryDestinations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDeliveryDestinationsOutcome DescribeDeliveryDestinations(const Model::DescribeDeliveryDestinationsRequest& request) const;
+        virtual Model::DescribeDeliveryDestinationsOutcome DescribeDeliveryDestinations(const Model::DescribeDeliveryDestinationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDeliveryDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDeliveryDestinationsRequestT = Model::DescribeDeliveryDestinationsRequest>
-        Model::DescribeDeliveryDestinationsOutcomeCallable DescribeDeliveryDestinationsCallable(const DescribeDeliveryDestinationsRequestT& request) const
+        Model::DescribeDeliveryDestinationsOutcomeCallable DescribeDeliveryDestinationsCallable(const DescribeDeliveryDestinationsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeDeliveryDestinations, request);
         }
@@ -922,7 +950,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeDeliveryDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDeliveryDestinationsRequestT = Model::DescribeDeliveryDestinationsRequest>
-        void DescribeDeliveryDestinationsAsync(const DescribeDeliveryDestinationsRequestT& request, const DescribeDeliveryDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDeliveryDestinationsAsync(const DescribeDeliveryDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDeliveryDestinationsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeDeliveryDestinations, request, handler, context);
         }
@@ -933,13 +961,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliverySources">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDeliverySourcesOutcome DescribeDeliverySources(const Model::DescribeDeliverySourcesRequest& request) const;
+        virtual Model::DescribeDeliverySourcesOutcome DescribeDeliverySources(const Model::DescribeDeliverySourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDeliverySources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDeliverySourcesRequestT = Model::DescribeDeliverySourcesRequest>
-        Model::DescribeDeliverySourcesOutcomeCallable DescribeDeliverySourcesCallable(const DescribeDeliverySourcesRequestT& request) const
+        Model::DescribeDeliverySourcesOutcomeCallable DescribeDeliverySourcesCallable(const DescribeDeliverySourcesRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeDeliverySources, request);
         }
@@ -948,7 +976,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeDeliverySources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDeliverySourcesRequestT = Model::DescribeDeliverySourcesRequest>
-        void DescribeDeliverySourcesAsync(const DescribeDeliverySourcesRequestT& request, const DescribeDeliverySourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDeliverySourcesAsync(const DescribeDeliverySourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDeliverySourcesRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeDeliverySources, request, handler, context);
         }
@@ -959,13 +987,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDestinationsOutcome DescribeDestinations(const Model::DescribeDestinationsRequest& request) const;
+        virtual Model::DescribeDestinationsOutcome DescribeDestinations(const Model::DescribeDestinationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDestinationsRequestT = Model::DescribeDestinationsRequest>
-        Model::DescribeDestinationsOutcomeCallable DescribeDestinationsCallable(const DescribeDestinationsRequestT& request) const
+        Model::DescribeDestinationsOutcomeCallable DescribeDestinationsCallable(const DescribeDestinationsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeDestinations, request);
         }
@@ -974,7 +1002,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDestinationsRequestT = Model::DescribeDestinationsRequest>
-        void DescribeDestinationsAsync(const DescribeDestinationsRequestT& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDestinationsAsync(const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDestinationsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeDestinations, request, handler, context);
         }
@@ -986,13 +1014,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
+        virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeExportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeExportTasksRequestT = Model::DescribeExportTasksRequest>
-        Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const DescribeExportTasksRequestT& request) const
+        Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const DescribeExportTasksRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeExportTasks, request);
         }
@@ -1001,7 +1029,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeExportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeExportTasksRequestT = Model::DescribeExportTasksRequest>
-        void DescribeExportTasksAsync(const DescribeExportTasksRequestT& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeExportTasksAsync(const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeExportTasksRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeExportTasks, request, handler, context);
         }
@@ -1025,13 +1053,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLogGroupsOutcome DescribeLogGroups(const Model::DescribeLogGroupsRequest& request) const;
+        virtual Model::DescribeLogGroupsOutcome DescribeLogGroups(const Model::DescribeLogGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLogGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLogGroupsRequestT = Model::DescribeLogGroupsRequest>
-        Model::DescribeLogGroupsOutcomeCallable DescribeLogGroupsCallable(const DescribeLogGroupsRequestT& request) const
+        Model::DescribeLogGroupsOutcomeCallable DescribeLogGroupsCallable(const DescribeLogGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeLogGroups, request);
         }
@@ -1040,7 +1068,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeLogGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLogGroupsRequestT = Model::DescribeLogGroupsRequest>
-        void DescribeLogGroupsAsync(const DescribeLogGroupsRequestT& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLogGroupsAsync(const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLogGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeLogGroups, request, handler, context);
         }
@@ -1060,13 +1088,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLogStreamsOutcome DescribeLogStreams(const Model::DescribeLogStreamsRequest& request) const;
+        virtual Model::DescribeLogStreamsOutcome DescribeLogStreams(const Model::DescribeLogStreamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLogStreams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLogStreamsRequestT = Model::DescribeLogStreamsRequest>
-        Model::DescribeLogStreamsOutcomeCallable DescribeLogStreamsCallable(const DescribeLogStreamsRequestT& request) const
+        Model::DescribeLogStreamsOutcomeCallable DescribeLogStreamsCallable(const DescribeLogStreamsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeLogStreams, request);
         }
@@ -1075,7 +1103,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeLogStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLogStreamsRequestT = Model::DescribeLogStreamsRequest>
-        void DescribeLogStreamsAsync(const DescribeLogStreamsRequestT& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLogStreamsAsync(const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLogStreamsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeLogStreams, request, handler, context);
         }
@@ -1087,13 +1115,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeMetricFiltersOutcome DescribeMetricFilters(const Model::DescribeMetricFiltersRequest& request) const;
+        virtual Model::DescribeMetricFiltersOutcome DescribeMetricFilters(const Model::DescribeMetricFiltersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeMetricFilters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeMetricFiltersRequestT = Model::DescribeMetricFiltersRequest>
-        Model::DescribeMetricFiltersOutcomeCallable DescribeMetricFiltersCallable(const DescribeMetricFiltersRequestT& request) const
+        Model::DescribeMetricFiltersOutcomeCallable DescribeMetricFiltersCallable(const DescribeMetricFiltersRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeMetricFilters, request);
         }
@@ -1102,7 +1130,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeMetricFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeMetricFiltersRequestT = Model::DescribeMetricFiltersRequest>
-        void DescribeMetricFiltersAsync(const DescribeMetricFiltersRequestT& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeMetricFiltersAsync(const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMetricFiltersRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeMetricFilters, request, handler, context);
         }
@@ -1115,13 +1143,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeQueriesOutcome DescribeQueries(const Model::DescribeQueriesRequest& request) const;
+        virtual Model::DescribeQueriesOutcome DescribeQueries(const Model::DescribeQueriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeQueries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeQueriesRequestT = Model::DescribeQueriesRequest>
-        Model::DescribeQueriesOutcomeCallable DescribeQueriesCallable(const DescribeQueriesRequestT& request) const
+        Model::DescribeQueriesOutcomeCallable DescribeQueriesCallable(const DescribeQueriesRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeQueries, request);
         }
@@ -1130,7 +1158,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeQueriesRequestT = Model::DescribeQueriesRequest>
-        void DescribeQueriesAsync(const DescribeQueriesRequestT& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeQueriesAsync(const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeQueriesRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeQueries, request, handler, context);
         }
@@ -1145,13 +1173,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeQueryDefinitionsOutcome DescribeQueryDefinitions(const Model::DescribeQueryDefinitionsRequest& request) const;
+        virtual Model::DescribeQueryDefinitionsOutcome DescribeQueryDefinitions(const Model::DescribeQueryDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeQueryDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeQueryDefinitionsRequestT = Model::DescribeQueryDefinitionsRequest>
-        Model::DescribeQueryDefinitionsOutcomeCallable DescribeQueryDefinitionsCallable(const DescribeQueryDefinitionsRequestT& request) const
+        Model::DescribeQueryDefinitionsOutcomeCallable DescribeQueryDefinitionsCallable(const DescribeQueryDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeQueryDefinitions, request);
         }
@@ -1160,7 +1188,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeQueryDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeQueryDefinitionsRequestT = Model::DescribeQueryDefinitionsRequest>
-        void DescribeQueryDefinitionsAsync(const DescribeQueryDefinitionsRequestT& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeQueryDefinitionsAsync(const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeQueryDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeQueryDefinitions, request, handler, context);
         }
@@ -1170,13 +1198,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeResourcePoliciesOutcome DescribeResourcePolicies(const Model::DescribeResourcePoliciesRequest& request) const;
+        virtual Model::DescribeResourcePoliciesOutcome DescribeResourcePolicies(const Model::DescribeResourcePoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeResourcePoliciesRequestT = Model::DescribeResourcePoliciesRequest>
-        Model::DescribeResourcePoliciesOutcomeCallable DescribeResourcePoliciesCallable(const DescribeResourcePoliciesRequestT& request) const
+        Model::DescribeResourcePoliciesOutcomeCallable DescribeResourcePoliciesCallable(const DescribeResourcePoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DescribeResourcePolicies, request);
         }
@@ -1185,7 +1213,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DescribeResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeResourcePoliciesRequestT = Model::DescribeResourcePoliciesRequest>
-        void DescribeResourcePoliciesAsync(const DescribeResourcePoliciesRequestT& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeResourcePoliciesAsync(const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeResourcePoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DescribeResourcePolicies, request, handler, context);
         }
@@ -1241,13 +1269,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisassociateKmsKeyOutcome DisassociateKmsKey(const Model::DisassociateKmsKeyRequest& request) const;
+        virtual Model::DisassociateKmsKeyOutcome DisassociateKmsKey(const Model::DisassociateKmsKeyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisassociateKmsKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DisassociateKmsKeyRequestT = Model::DisassociateKmsKeyRequest>
-        Model::DisassociateKmsKeyOutcomeCallable DisassociateKmsKeyCallable(const DisassociateKmsKeyRequestT& request) const
+        Model::DisassociateKmsKeyOutcomeCallable DisassociateKmsKeyCallable(const DisassociateKmsKeyRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::DisassociateKmsKey, request);
         }
@@ -1256,7 +1284,7 @@ namespace CloudWatchLogs
          * An Async wrapper for DisassociateKmsKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DisassociateKmsKeyRequestT = Model::DisassociateKmsKeyRequest>
-        void DisassociateKmsKeyAsync(const DisassociateKmsKeyRequestT& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DisassociateKmsKeyAsync(const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisassociateKmsKeyRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DisassociateKmsKey, request, handler, context);
         }
@@ -1284,13 +1312,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::FilterLogEventsOutcome FilterLogEvents(const Model::FilterLogEventsRequest& request) const;
+        virtual Model::FilterLogEventsOutcome FilterLogEvents(const Model::FilterLogEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for FilterLogEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename FilterLogEventsRequestT = Model::FilterLogEventsRequest>
-        Model::FilterLogEventsOutcomeCallable FilterLogEventsCallable(const FilterLogEventsRequestT& request) const
+        Model::FilterLogEventsOutcomeCallable FilterLogEventsCallable(const FilterLogEventsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::FilterLogEvents, request);
         }
@@ -1299,7 +1327,7 @@ namespace CloudWatchLogs
          * An Async wrapper for FilterLogEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename FilterLogEventsRequestT = Model::FilterLogEventsRequest>
-        void FilterLogEventsAsync(const FilterLogEventsRequestT& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void FilterLogEventsAsync(const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const FilterLogEventsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::FilterLogEvents, request, handler, context);
         }
@@ -1338,9 +1366,9 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">
          * <i>delivery destination</i> </a>.</p> <p>A delivery source represents an Amazon
          * Web Services resource that sends logs to an logs delivery destination. The
-         * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only
-         * some Amazon Web Services services support being configured as a delivery source.
-         * These services are listed in <a
+         * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web
+         * Services services support being configured as a delivery source. These services
+         * are listed in <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
          * logging from Amazon Web Services services.</a> </p> <p>You need to specify the
          * delivery <code>id</code> in this operation. You can find the IDs of the
@@ -1535,13 +1563,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogGroupFields">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetLogGroupFieldsOutcome GetLogGroupFields(const Model::GetLogGroupFieldsRequest& request) const;
+        virtual Model::GetLogGroupFieldsOutcome GetLogGroupFields(const Model::GetLogGroupFieldsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetLogGroupFields that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetLogGroupFieldsRequestT = Model::GetLogGroupFieldsRequest>
-        Model::GetLogGroupFieldsOutcomeCallable GetLogGroupFieldsCallable(const GetLogGroupFieldsRequestT& request) const
+        Model::GetLogGroupFieldsOutcomeCallable GetLogGroupFieldsCallable(const GetLogGroupFieldsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::GetLogGroupFields, request);
         }
@@ -1550,7 +1578,7 @@ namespace CloudWatchLogs
          * An Async wrapper for GetLogGroupFields that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetLogGroupFieldsRequestT = Model::GetLogGroupFieldsRequest>
-        void GetLogGroupFieldsAsync(const GetLogGroupFieldsRequestT& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetLogGroupFieldsAsync(const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetLogGroupFieldsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::GetLogGroupFields, request, handler, context);
         }
@@ -1635,13 +1663,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAnomaliesOutcome ListAnomalies(const Model::ListAnomaliesRequest& request) const;
+        virtual Model::ListAnomaliesOutcome ListAnomalies(const Model::ListAnomaliesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAnomalies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAnomaliesRequestT = Model::ListAnomaliesRequest>
-        Model::ListAnomaliesOutcomeCallable ListAnomaliesCallable(const ListAnomaliesRequestT& request) const
+        Model::ListAnomaliesOutcomeCallable ListAnomaliesCallable(const ListAnomaliesRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::ListAnomalies, request);
         }
@@ -1650,7 +1678,7 @@ namespace CloudWatchLogs
          * An Async wrapper for ListAnomalies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAnomaliesRequestT = Model::ListAnomaliesRequest>
-        void ListAnomaliesAsync(const ListAnomaliesRequestT& request, const ListAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAnomaliesAsync(const ListAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAnomaliesRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::ListAnomalies, request, handler, context);
         }
@@ -1661,13 +1689,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogAnomalyDetectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLogAnomalyDetectorsOutcome ListLogAnomalyDetectors(const Model::ListLogAnomalyDetectorsRequest& request) const;
+        virtual Model::ListLogAnomalyDetectorsOutcome ListLogAnomalyDetectors(const Model::ListLogAnomalyDetectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLogAnomalyDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLogAnomalyDetectorsRequestT = Model::ListLogAnomalyDetectorsRequest>
-        Model::ListLogAnomalyDetectorsOutcomeCallable ListLogAnomalyDetectorsCallable(const ListLogAnomalyDetectorsRequestT& request) const
+        Model::ListLogAnomalyDetectorsOutcomeCallable ListLogAnomalyDetectorsCallable(const ListLogAnomalyDetectorsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::ListLogAnomalyDetectors, request);
         }
@@ -1676,7 +1704,7 @@ namespace CloudWatchLogs
          * An Async wrapper for ListLogAnomalyDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLogAnomalyDetectorsRequestT = Model::ListLogAnomalyDetectorsRequest>
-        void ListLogAnomalyDetectorsAsync(const ListLogAnomalyDetectorsRequestT& request, const ListLogAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLogAnomalyDetectorsAsync(const ListLogAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLogAnomalyDetectorsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::ListLogAnomalyDetectors, request, handler, context);
         }
@@ -1749,23 +1777,23 @@ namespace CloudWatchLogs
          * of log events from CloudWatch Logs to other Amazon Web Services services.
          * Account-level subscription filter policies apply to both existing log groups and
          * log groups that are created later in this account. Supported destinations are
-         * Kinesis Data Streams, Kinesis Data Firehose, and Lambda. When log events are
-         * sent to the receiving service, they are Base64 encoded and compressed with the
-         * GZIP format.</p> <p>The following destinations are supported for subscription
+         * Kinesis Data Streams, Firehose, and Lambda. When log events are sent to the
+         * receiving service, they are Base64 encoded and compressed with the GZIP
+         * format.</p> <p>The following destinations are supported for subscription
          * filters:</p> <ul> <li> <p>An Kinesis Data Streams data stream in the same
          * account as the subscription policy, for same-account delivery.</p> </li> <li>
-         * <p>An Kinesis Data Firehose data stream in the same account as the subscription
-         * policy, for same-account delivery.</p> </li> <li> <p>A Lambda function in the
-         * same account as the subscription policy, for same-account delivery.</p> </li>
-         * <li> <p>A logical destination in a different account created with <a
+         * <p>An Firehose data stream in the same account as the subscription policy, for
+         * same-account delivery.</p> </li> <li> <p>A Lambda function in the same account
+         * as the subscription policy, for same-account delivery.</p> </li> <li> <p>A
+         * logical destination in a different account created with <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-         * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-         * supported as logical destinations.</p> </li> </ul> <p>Each account can have one
-         * account-level subscription filter policy. If you are updating an existing
-         * filter, you must specify the correct name in <code>PolicyName</code>. To perform
-         * a <code>PutAccountPolicy</code> subscription filter operation for any
-         * destination except a Lambda function, you must also have the
-         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
+         * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+         * logical destinations.</p> </li> </ul> <p>Each account can have one account-level
+         * subscription filter policy per Region. If you are updating an existing filter,
+         * you must specify the correct name in <code>PolicyName</code>. To perform a
+         * <code>PutAccountPolicy</code> subscription filter operation for any destination
+         * except a Lambda function, you must also have the <code>iam:PassRole</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">AWS
          * API Reference</a></p>
          */
@@ -1845,11 +1873,11 @@ namespace CloudWatchLogs
          * <p>Creates or updates a logical <i>delivery destination</i>. A delivery
          * destination is an Amazon Web Services resource that represents an Amazon Web
          * Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and
-         * Kinesis Data Firehose are supported as logs delivery destinations.</p> <p>To
-         * configure logs delivery between a supported Amazon Web Services service and a
-         * destination, you must do the following:</p> <ul> <li> <p>Create a delivery
-         * source, which is a logical object that represents the resource that is actually
-         * sending the logs. For more information, see <a
+         * Firehose are supported as logs delivery destinations.</p> <p>To configure logs
+         * delivery between a supported Amazon Web Services service and a destination, you
+         * must do the following:</p> <ul> <li> <p>Create a delivery source, which is a
+         * logical object that represents the resource that is actually sending the logs.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
          * </li> <li> <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery
          * destination</i>, which is a logical object that represents the actual delivery
@@ -1946,12 +1974,12 @@ namespace CloudWatchLogs
         /**
          * <p>Creates or updates a logical <i>delivery source</i>. A delivery source
          * represents an Amazon Web Services resource that sends logs to an logs delivery
-         * destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis Data
-         * Firehose.</p> <p>To configure logs delivery between a delivery destination and
-         * an Amazon Web Services service that is supported as a delivery source, you must
-         * do the following:</p> <ul> <li> <p>Use <code>PutDeliverySource</code> to create
-         * a delivery source, which is a logical object that represents the resource that
-         * is actually sending the logs. </p> </li> <li> <p>Use
+         * destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.</p>
+         * <p>To configure logs delivery between a delivery destination and an Amazon Web
+         * Services service that is supported as a delivery source, you must do the
+         * following:</p> <ul> <li> <p>Use <code>PutDeliverySource</code> to create a
+         * delivery source, which is a logical object that represents the resource that is
+         * actually sending the logs. </p> </li> <li> <p>Use
          * <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>,
          * which is a logical object that represents the actual delivery destination. For
          * more information, see <a
@@ -2124,16 +2152,24 @@ namespace CloudWatchLogs
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>The maximum number of metric filters that can be associated with a log group
-         * is 100.</p> <p>When you create a metric filter, you can also optionally assign a
-         * unit and dimensions to the metric that is created.</p>  <p>Metrics
-         * extracted from log events are charged as custom metrics. To prevent unexpected
-         * high charges, do not specify high-cardinality fields such as
-         * <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different
-         * value found for a dimension is treated as a separate metric and accrues charges
-         * as a separate custom metric. </p> <p>CloudWatch Logs might disable a metric
-         * filter if it generates 1,000 different name/value pairs for your specified
-         * dimensions within one hour.</p> <p>You can also set up a billing alarm to alert
-         * you if your charges are higher than expected. For more information, see <a
+         * is 100.</p> <p>Using regular expressions to create metric filters is supported.
+         * For these filters, there is a quotas of quota of two regular expression patterns
+         * within a single filter pattern. There is also a quota of five regular expression
+         * patterns per log group. For more information about using regular expressions in
+         * metric filters, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+         * Filter pattern syntax for metric filters, subscription filters, filter log
+         * events, and Live Tail</a>.</p> <p>When you create a metric filter, you can also
+         * optionally assign a unit and dimensions to the metric that is created.</p>
+         *  <p>Metrics extracted from log events are charged as custom metrics.
+         * To prevent unexpected high charges, do not specify high-cardinality fields such
+         * as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each
+         * different value found for a dimension is treated as a separate metric and
+         * accrues charges as a separate custom metric. </p> <p>CloudWatch Logs might
+         * disable a metric filter if it generates 1,000 different name/value pairs for
+         * your specified dimensions within one hour.</p> <p>You can also set up a billing
+         * alarm to alert you if your charges are higher than expected. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
          * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
          * Charges</a>. </p> <p><h3>See Also:</h3>   <a
@@ -2205,13 +2241,13 @@ namespace CloudWatchLogs
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
-        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchLogsClient::PutResourcePolicy, request);
         }
@@ -2220,7 +2256,7 @@ namespace CloudWatchLogs
          * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
-        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutResourcePolicyAsync(const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutResourcePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchLogsClient::PutResourcePolicy, request, handler, context);
         }
@@ -2280,16 +2316,24 @@ namespace CloudWatchLogs
          * <p>A logical destination created with <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>
          * that belongs to a different account, for cross-account delivery. We currently
-         * support Kinesis Data Streams and Kinesis Data Firehose as logical
-         * destinations.</p> </li> <li> <p>An Amazon Kinesis Data Firehose delivery stream
-         * that belongs to the same account as the subscription filter, for same-account
-         * delivery.</p> </li> <li> <p>An Lambda function that belongs to the same account
-         * as the subscription filter, for same-account delivery.</p> </li> </ul> <p>Each
-         * log group can have up to two subscription filters associated with it. If you are
-         * updating an existing filter, you must specify the correct name in
-         * <code>filterName</code>. </p> <p>To perform a <code>PutSubscriptionFilter</code>
-         * operation for any destination except a Lambda function, you must also have the
-         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
+         * support Kinesis Data Streams and Firehose as logical destinations.</p> </li>
+         * <li> <p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same
+         * account as the subscription filter, for same-account delivery.</p> </li> <li>
+         * <p>An Lambda function that belongs to the same account as the subscription
+         * filter, for same-account delivery.</p> </li> </ul> <p>Each log group can have up
+         * to two subscription filters associated with it. If you are updating an existing
+         * filter, you must specify the correct name in <code>filterName</code>. </p>
+         * <p>Using regular expressions to create subscription filters is supported. For
+         * these filters, there is a quotas of quota of two regular expression patterns
+         * within a single filter pattern. There is also a quota of five regular expression
+         * patterns per log group. For more information about using regular expressions in
+         * subscription filters, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+         * Filter pattern syntax for metric filters, subscription filters, filter log
+         * events, and Live Tail</a>.</p> <p>To perform a
+         * <code>PutSubscriptionFilter</code> operation for any destination except a Lambda
+         * function, you must also have the <code>iam:PassRole</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          */
@@ -2336,10 +2380,10 @@ namespace CloudWatchLogs
          * CloudWatch Logs buffers up to 10 <code>LiveTailSessionUpdate</code> events or
          * 5000 log events, after which it starts dropping the oldest events.</p> </li>
          * <li> <p>A <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionStreamingException.html">SessionStreamingException</a>
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException">SessionStreamingException</a>
          * object is returned if an unknown error occurs on the server side.</p> </li> <li>
          * <p>A <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionTimeoutException.html">SessionTimeoutException</a>
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a>
          * object is returned when the session times out, after it has been kept open for
          * three hours.</p> </li> </ul>  <p>You can end a session before it
          * times out by closing the session stream or by closing the client that is
@@ -2574,6 +2618,35 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Use this operation to update the configuration of a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html">delivery</a>
+         * to change either the S3 path pattern or the format of the delivered logs. You
+         * can't use this operation to change the source or destination of the
+         * delivery.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateDeliveryConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDeliveryConfigurationOutcome UpdateDeliveryConfiguration(const Model::UpdateDeliveryConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDeliveryConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDeliveryConfigurationRequestT = Model::UpdateDeliveryConfigurationRequest>
+        Model::UpdateDeliveryConfigurationOutcomeCallable UpdateDeliveryConfigurationCallable(const UpdateDeliveryConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::UpdateDeliveryConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDeliveryConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDeliveryConfigurationRequestT = Model::UpdateDeliveryConfigurationRequest>
+        void UpdateDeliveryConfigurationAsync(const UpdateDeliveryConfigurationRequestT& request, const UpdateDeliveryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::UpdateDeliveryConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Updates an existing log anomaly detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">AWS
          * API Reference</a></p>
@@ -2606,7 +2679,6 @@ namespace CloudWatchLogs
       void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
       CloudWatchLogsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudWatchLogsEndpointProviderBase> m_endpointProvider;
   };
 

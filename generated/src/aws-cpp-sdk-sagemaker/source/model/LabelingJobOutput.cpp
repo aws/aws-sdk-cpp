@@ -24,9 +24,8 @@ LabelingJobOutput::LabelingJobOutput() :
 {
 }
 
-LabelingJobOutput::LabelingJobOutput(JsonView jsonValue) : 
-    m_outputDatasetS3UriHasBeenSet(false),
-    m_finalActiveLearningModelArnHasBeenSet(false)
+LabelingJobOutput::LabelingJobOutput(JsonView jsonValue)
+  : LabelingJobOutput()
 {
   *this = jsonValue;
 }

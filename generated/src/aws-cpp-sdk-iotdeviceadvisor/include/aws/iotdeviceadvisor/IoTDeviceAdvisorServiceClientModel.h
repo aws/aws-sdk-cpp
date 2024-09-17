@@ -32,6 +32,9 @@
 #include <aws/iotdeviceadvisor/model/TagResourceResult.h>
 #include <aws/iotdeviceadvisor/model/UntagResourceResult.h>
 #include <aws/iotdeviceadvisor/model/UpdateSuiteDefinitionResult.h>
+#include <aws/iotdeviceadvisor/model/GetEndpointRequest.h>
+#include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsRequest.h>
+#include <aws/iotdeviceadvisor/model/ListSuiteRunsRequest.h>
 /* End of service model headers required in IoTDeviceAdvisorClient header */
 
 namespace Aws
@@ -65,7 +68,7 @@ namespace Aws
 
   namespace IoTDeviceAdvisor
   {
-    using IoTDeviceAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTDeviceAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTDeviceAdvisorEndpointProviderBase = Aws::IoTDeviceAdvisor::Endpoint::IoTDeviceAdvisorEndpointProviderBase;
     using IoTDeviceAdvisorEndpointProvider = Aws::IoTDeviceAdvisor::Endpoint::IoTDeviceAdvisorEndpointProvider;
 

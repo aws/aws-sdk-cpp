@@ -24,9 +24,8 @@ CurrentMetricResult::CurrentMetricResult() :
 {
 }
 
-CurrentMetricResult::CurrentMetricResult(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_collectionsHasBeenSet(false)
+CurrentMetricResult::CurrentMetricResult(JsonView jsonValue)
+  : CurrentMetricResult()
 {
   *this = jsonValue;
 }

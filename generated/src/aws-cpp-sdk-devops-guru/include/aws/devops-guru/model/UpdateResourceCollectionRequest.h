@@ -33,61 +33,28 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> Specifies if the resource collection in the request is added or deleted to
      * the resource collection. </p>
      */
     inline const UpdateResourceCollectionAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p> Specifies if the resource collection in the request is added or deleted to
-     * the resource collection. </p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p> Specifies if the resource collection in the request is added or deleted to
-     * the resource collection. </p>
-     */
     inline void SetAction(const UpdateResourceCollectionAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p> Specifies if the resource collection in the request is added or deleted to
-     * the resource collection. </p>
-     */
     inline void SetAction(UpdateResourceCollectionAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p> Specifies if the resource collection in the request is added or deleted to
-     * the resource collection. </p>
-     */
     inline UpdateResourceCollectionRequest& WithAction(const UpdateResourceCollectionAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p> Specifies if the resource collection in the request is added or deleted to
-     * the resource collection. </p>
-     */
     inline UpdateResourceCollectionRequest& WithAction(UpdateResourceCollectionAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const UpdateResourceCollectionFilter& GetResourceCollection() const{ return m_resourceCollection; }
-
-    
     inline bool ResourceCollectionHasBeenSet() const { return m_resourceCollectionHasBeenSet; }
-
-    
     inline void SetResourceCollection(const UpdateResourceCollectionFilter& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = value; }
-
-    
     inline void SetResourceCollection(UpdateResourceCollectionFilter&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::move(value); }
-
-    
     inline UpdateResourceCollectionRequest& WithResourceCollection(const UpdateResourceCollectionFilter& value) { SetResourceCollection(value); return *this;}
-
-    
     inline UpdateResourceCollectionRequest& WithResourceCollection(UpdateResourceCollectionFilter&& value) { SetResourceCollection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UpdateResourceCollectionAction m_action;

@@ -26,11 +26,8 @@ DeploymentReadyOption::DeploymentReadyOption() :
 {
 }
 
-DeploymentReadyOption::DeploymentReadyOption(JsonView jsonValue) : 
-    m_actionOnTimeout(DeploymentReadyAction::NOT_SET),
-    m_actionOnTimeoutHasBeenSet(false),
-    m_waitTimeInMinutes(0),
-    m_waitTimeInMinutesHasBeenSet(false)
+DeploymentReadyOption::DeploymentReadyOption(JsonView jsonValue)
+  : DeploymentReadyOption()
 {
   *this = jsonValue;
 }

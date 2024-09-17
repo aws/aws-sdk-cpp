@@ -30,15 +30,8 @@ SlotCaptureSetting::SlotCaptureSetting() :
 {
 }
 
-SlotCaptureSetting::SlotCaptureSetting(JsonView jsonValue) : 
-    m_captureResponseHasBeenSet(false),
-    m_captureNextStepHasBeenSet(false),
-    m_captureConditionalHasBeenSet(false),
-    m_failureResponseHasBeenSet(false),
-    m_failureNextStepHasBeenSet(false),
-    m_failureConditionalHasBeenSet(false),
-    m_codeHookHasBeenSet(false),
-    m_elicitationCodeHookHasBeenSet(false)
+SlotCaptureSetting::SlotCaptureSetting(JsonView jsonValue)
+  : SlotCaptureSetting()
 {
   *this = jsonValue;
 }

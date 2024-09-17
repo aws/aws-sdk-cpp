@@ -39,54 +39,20 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Container for information about a particular server-side encryption
      * configuration rule.</p>
      */
     inline const Aws::Vector<ServerSideEncryptionRule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>Container for information about a particular server-side encryption
-     * configuration rule.</p>
-     */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-
-    /**
-     * <p>Container for information about a particular server-side encryption
-     * configuration rule.</p>
-     */
     inline void SetRules(const Aws::Vector<ServerSideEncryptionRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-
-    /**
-     * <p>Container for information about a particular server-side encryption
-     * configuration rule.</p>
-     */
     inline void SetRules(Aws::Vector<ServerSideEncryptionRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-
-    /**
-     * <p>Container for information about a particular server-side encryption
-     * configuration rule.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithRules(const Aws::Vector<ServerSideEncryptionRule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>Container for information about a particular server-side encryption
-     * configuration rule.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithRules(Aws::Vector<ServerSideEncryptionRule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>Container for information about a particular server-side encryption
-     * configuration rule.</p>
-     */
     inline ServerSideEncryptionConfiguration& AddRules(const ServerSideEncryptionRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>Container for information about a particular server-side encryption
-     * configuration rule.</p>
-     */
     inline ServerSideEncryptionConfiguration& AddRules(ServerSideEncryptionRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ServerSideEncryptionRule> m_rules;

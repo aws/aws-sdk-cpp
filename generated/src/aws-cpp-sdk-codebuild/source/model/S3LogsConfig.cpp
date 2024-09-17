@@ -29,14 +29,8 @@ S3LogsConfig::S3LogsConfig() :
 {
 }
 
-S3LogsConfig::S3LogsConfig(JsonView jsonValue) : 
-    m_status(LogsConfigStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
-    m_bucketOwnerAccessHasBeenSet(false)
+S3LogsConfig::S3LogsConfig(JsonView jsonValue)
+  : S3LogsConfig()
 {
   *this = jsonValue;
 }

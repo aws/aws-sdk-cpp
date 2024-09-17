@@ -35,103 +35,42 @@ namespace Model
     AWS_COSTEXPLORER_API GetUsageForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>How much you're forecasted to use over the forecast period.</p>
      */
     inline const MetricValue& GetTotal() const{ return m_total; }
-
-    /**
-     * <p>How much you're forecasted to use over the forecast period.</p>
-     */
     inline void SetTotal(const MetricValue& value) { m_total = value; }
-
-    /**
-     * <p>How much you're forecasted to use over the forecast period.</p>
-     */
     inline void SetTotal(MetricValue&& value) { m_total = std::move(value); }
-
-    /**
-     * <p>How much you're forecasted to use over the forecast period.</p>
-     */
     inline GetUsageForecastResult& WithTotal(const MetricValue& value) { SetTotal(value); return *this;}
-
-    /**
-     * <p>How much you're forecasted to use over the forecast period.</p>
-     */
     inline GetUsageForecastResult& WithTotal(MetricValue&& value) { SetTotal(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts,
      * this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of
      * months.</p>
      */
     inline const Aws::Vector<ForecastResult>& GetForecastResultsByTime() const{ return m_forecastResultsByTime; }
-
-    /**
-     * <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts,
-     * this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of
-     * months.</p>
-     */
     inline void SetForecastResultsByTime(const Aws::Vector<ForecastResult>& value) { m_forecastResultsByTime = value; }
-
-    /**
-     * <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts,
-     * this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of
-     * months.</p>
-     */
     inline void SetForecastResultsByTime(Aws::Vector<ForecastResult>&& value) { m_forecastResultsByTime = std::move(value); }
-
-    /**
-     * <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts,
-     * this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of
-     * months.</p>
-     */
     inline GetUsageForecastResult& WithForecastResultsByTime(const Aws::Vector<ForecastResult>& value) { SetForecastResultsByTime(value); return *this;}
-
-    /**
-     * <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts,
-     * this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of
-     * months.</p>
-     */
     inline GetUsageForecastResult& WithForecastResultsByTime(Aws::Vector<ForecastResult>&& value) { SetForecastResultsByTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts,
-     * this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of
-     * months.</p>
-     */
     inline GetUsageForecastResult& AddForecastResultsByTime(const ForecastResult& value) { m_forecastResultsByTime.push_back(value); return *this; }
-
-    /**
-     * <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts,
-     * this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of
-     * months.</p>
-     */
     inline GetUsageForecastResult& AddForecastResultsByTime(ForecastResult&& value) { m_forecastResultsByTime.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetUsageForecastResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetUsageForecastResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetUsageForecastResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MetricValue m_total;

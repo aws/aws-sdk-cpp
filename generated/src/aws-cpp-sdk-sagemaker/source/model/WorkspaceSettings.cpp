@@ -24,9 +24,8 @@ WorkspaceSettings::WorkspaceSettings() :
 {
 }
 
-WorkspaceSettings::WorkspaceSettings(JsonView jsonValue) : 
-    m_s3ArtifactPathHasBeenSet(false),
-    m_s3KmsKeyIdHasBeenSet(false)
+WorkspaceSettings::WorkspaceSettings(JsonView jsonValue)
+  : WorkspaceSettings()
 {
   *this = jsonValue;
 }

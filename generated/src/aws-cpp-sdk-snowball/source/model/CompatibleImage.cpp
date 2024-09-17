@@ -24,9 +24,8 @@ CompatibleImage::CompatibleImage() :
 {
 }
 
-CompatibleImage::CompatibleImage(JsonView jsonValue) : 
-    m_amiIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+CompatibleImage::CompatibleImage(JsonView jsonValue)
+  : CompatibleImage()
 {
   *this = jsonValue;
 }

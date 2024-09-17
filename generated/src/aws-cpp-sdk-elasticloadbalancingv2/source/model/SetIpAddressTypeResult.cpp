@@ -22,8 +22,8 @@ SetIpAddressTypeResult::SetIpAddressTypeResult() :
 {
 }
 
-SetIpAddressTypeResult::SetIpAddressTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_ipAddressType(IpAddressType::NOT_SET)
+SetIpAddressTypeResult::SetIpAddressTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : SetIpAddressTypeResult()
 {
   *this = result;
 }

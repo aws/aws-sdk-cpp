@@ -39,42 +39,18 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
      */
     inline const MonitoringState& GetState() const{ return m_state; }
-
-    /**
-     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
-     * is enabled.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
-     * is enabled.</p>
-     */
     inline void SetState(const MonitoringState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
-     * is enabled.</p>
-     */
     inline void SetState(MonitoringState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
-     * is enabled.</p>
-     */
     inline Monitoring& WithState(const MonitoringState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
-     * is enabled.</p>
-     */
     inline Monitoring& WithState(MonitoringState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MonitoringState m_state;

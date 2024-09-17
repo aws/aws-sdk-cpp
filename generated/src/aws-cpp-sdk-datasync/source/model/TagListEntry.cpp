@@ -24,9 +24,8 @@ TagListEntry::TagListEntry() :
 {
 }
 
-TagListEntry::TagListEntry(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TagListEntry::TagListEntry(JsonView jsonValue)
+  : TagListEntry()
 {
   *this = jsonValue;
 }

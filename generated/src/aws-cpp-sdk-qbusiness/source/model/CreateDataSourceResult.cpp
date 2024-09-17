@@ -29,15 +29,15 @@ CreateDataSourceResult::CreateDataSourceResult(const Aws::AmazonWebServiceResult
 CreateDataSourceResult& CreateDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("dataSourceArn"))
-  {
-    m_dataSourceArn = jsonValue.GetString("dataSourceArn");
-
-  }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
+
+  }
+
+  if(jsonValue.ValueExists("dataSourceArn"))
+  {
+    m_dataSourceArn = jsonValue.GetString("dataSourceArn");
 
   }
 

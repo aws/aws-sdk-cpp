@@ -24,9 +24,8 @@ StepDetail::StepDetail() :
 {
 }
 
-StepDetail::StepDetail(JsonView jsonValue) : 
-    m_stepConfigHasBeenSet(false),
-    m_executionStatusDetailHasBeenSet(false)
+StepDetail::StepDetail(JsonView jsonValue)
+  : StepDetail()
 {
   *this = jsonValue;
 }

@@ -29,13 +29,8 @@ ByteMatchTuple::ByteMatchTuple() :
 {
 }
 
-ByteMatchTuple::ByteMatchTuple(JsonView jsonValue) : 
-    m_fieldToMatchHasBeenSet(false),
-    m_targetStringHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false),
-    m_positionalConstraint(PositionalConstraint::NOT_SET),
-    m_positionalConstraintHasBeenSet(false)
+ByteMatchTuple::ByteMatchTuple(JsonView jsonValue)
+  : ByteMatchTuple()
 {
   *this = jsonValue;
 }

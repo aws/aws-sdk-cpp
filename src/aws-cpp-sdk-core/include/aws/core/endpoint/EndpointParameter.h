@@ -19,7 +19,8 @@ namespace Aws
             enum class ParameterType
             {
                 BOOLEAN,
-                STRING
+                STRING,
+                STRING_ARRAY
             };
             enum class ParameterOrigin
             {
@@ -49,6 +50,13 @@ namespace Aws
                       m_parameterOrigin(parameterOrigin),
                       m_name(std::move(name)),
                       m_stringValue(initialValue)
+            {}
+
+            EndpointParameter(Aws::String name, const Aws::Vector<Aws::String>& initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
+                    : m_storedType(ParameterType::STRING_ARRAY),
+                      m_parameterOrigin(parameterOrigin),
+                      m_name(std::move(name)),
+                      m_stringArrayValue(initialValue)
             {}
 
             EndpointParameter(ParameterType storedType, ParameterOrigin parameterOrigin, Aws::String name)
@@ -100,6 +108,14 @@ namespace Aws
                 return GetSetResult::SUCCESS;
             }
 
+            inline GetSetResult GetStringArray(Aws::Vector<Aws::String>& ioValue) const
+            {
+                if(m_storedType != ParameterType::STRING_ARRAY)
+                    return GetSetResult::ERROR_WRONG_TYPE;
+                ioValue = m_stringArrayValue;
+                return GetSetResult::SUCCESS;
+            }
+
             inline GetSetResult SetBool(bool iValue)
             {
                 if(m_storedType != ParameterType::BOOLEAN)
@@ -116,6 +132,22 @@ namespace Aws
                 return GetSetResult::SUCCESS;
             }
 
+            inline GetSetResult SetStringArray(const Aws::Vector<Aws::String>& iValue)
+            {
+                if(m_storedType != ParameterType::STRING_ARRAY)
+                    return GetSetResult::ERROR_WRONG_TYPE;
+                m_stringArrayValue = iValue;
+                return GetSetResult::SUCCESS;
+            }     
+
+            inline GetSetResult SetStringArray(Aws::Vector<Aws::String>&& iValue)
+            {
+                if(m_storedType != ParameterType::STRING_ARRAY)
+                    return GetSetResult::ERROR_WRONG_TYPE;
+                m_stringArrayValue = std::move(iValue);
+                return GetSetResult::SUCCESS;
+            }        
+
             bool GetBoolValueNoCheck() const
             {
                 return m_boolValue;
@@ -125,6 +157,11 @@ namespace Aws
                 return m_stringValue;
             }
 
+            const Aws::Vector<Aws::String>& GetStrArrayValueNoCheck() const
+            {
+                return m_stringArrayValue;
+            }
+
         protected:
             ParameterType m_storedType;
             ParameterOrigin m_parameterOrigin;
@@ -132,6 +169,7 @@ namespace Aws
 
             bool m_boolValue = false;
             Aws::String m_stringValue;
+            Aws::Vector<Aws::String> m_stringArrayValue;
         };
 
         using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;

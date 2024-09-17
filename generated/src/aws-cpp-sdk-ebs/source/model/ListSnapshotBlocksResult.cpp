@@ -23,9 +23,8 @@ ListSnapshotBlocksResult::ListSnapshotBlocksResult() :
 {
 }
 
-ListSnapshotBlocksResult::ListSnapshotBlocksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_volumeSize(0),
-    m_blockSize(0)
+ListSnapshotBlocksResult::ListSnapshotBlocksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListSnapshotBlocksResult()
 {
   *this = result;
 }

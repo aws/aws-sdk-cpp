@@ -25,10 +25,8 @@ SecurityControlsConfiguration::SecurityControlsConfiguration() :
 {
 }
 
-SecurityControlsConfiguration::SecurityControlsConfiguration(JsonView jsonValue) : 
-    m_enabledSecurityControlIdentifiersHasBeenSet(false),
-    m_disabledSecurityControlIdentifiersHasBeenSet(false),
-    m_securityControlCustomParametersHasBeenSet(false)
+SecurityControlsConfiguration::SecurityControlsConfiguration(JsonView jsonValue)
+  : SecurityControlsConfiguration()
 {
   *this = jsonValue;
 }

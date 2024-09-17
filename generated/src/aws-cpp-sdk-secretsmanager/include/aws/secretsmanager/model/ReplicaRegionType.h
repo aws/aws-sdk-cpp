@@ -38,111 +38,36 @@ namespace Model
     AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Region code. For a list of Region codes, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
      * and code of Regions</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>A Region code. For a list of Region codes, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
-     * and code of Regions</a>.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>A Region code. For a list of Region codes, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
-     * and code of Regions</a>.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>A Region code. For a list of Region codes, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
-     * and code of Regions</a>.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>A Region code. For a list of Region codes, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
-     * and code of Regions</a>.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>A Region code. For a list of Region codes, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
-     * and code of Regions</a>.</p>
-     */
     inline ReplicaRegionType& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>A Region code. For a list of Region codes, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
-     * and code of Regions</a>.</p>
-     */
     inline ReplicaRegionType& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>A Region code. For a list of Region codes, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name
-     * and code of Regions</a>.</p>
-     */
     inline ReplicaRegionType& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
      * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
-     * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
-     * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
-     * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
-     * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
-     * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
-     */
     inline ReplicaRegionType& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
-     * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
-     */
     inline ReplicaRegionType& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't
-     * include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
-     */
     inline ReplicaRegionType& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_region;

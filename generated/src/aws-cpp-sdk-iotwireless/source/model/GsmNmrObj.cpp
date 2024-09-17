@@ -29,14 +29,8 @@ GsmNmrObj::GsmNmrObj() :
 {
 }
 
-GsmNmrObj::GsmNmrObj(JsonView jsonValue) : 
-    m_bsic(0),
-    m_bsicHasBeenSet(false),
-    m_bcch(0),
-    m_bcchHasBeenSet(false),
-    m_rxLevel(0),
-    m_rxLevelHasBeenSet(false),
-    m_globalIdentityHasBeenSet(false)
+GsmNmrObj::GsmNmrObj(JsonView jsonValue)
+  : GsmNmrObj()
 {
   *this = jsonValue;
 }

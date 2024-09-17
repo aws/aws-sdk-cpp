@@ -24,9 +24,8 @@ NetworkFabricConfiguration::NetworkFabricConfiguration() :
 {
 }
 
-NetworkFabricConfiguration::NetworkFabricConfiguration(JsonView jsonValue) : 
-    m_edition(Edition::NOT_SET),
-    m_editionHasBeenSet(false)
+NetworkFabricConfiguration::NetworkFabricConfiguration(JsonView jsonValue)
+  : NetworkFabricConfiguration()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ValidityTerm::ValidityTerm() :
 {
 }
 
-ValidityTerm::ValidityTerm(JsonView jsonValue) : 
-    m_agreementDurationHasBeenSet(false),
-    m_agreementEndDateHasBeenSet(false),
-    m_agreementStartDateHasBeenSet(false),
-    m_typeHasBeenSet(false)
+ValidityTerm::ValidityTerm(JsonView jsonValue)
+  : ValidityTerm()
 {
   *this = jsonValue;
 }

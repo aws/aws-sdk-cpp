@@ -25,10 +25,8 @@ ProductViewAggregationValue::ProductViewAggregationValue() :
 {
 }
 
-ProductViewAggregationValue::ProductViewAggregationValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_approximateCount(0),
-    m_approximateCountHasBeenSet(false)
+ProductViewAggregationValue::ProductViewAggregationValue(JsonView jsonValue)
+  : ProductViewAggregationValue()
 {
   *this = jsonValue;
 }

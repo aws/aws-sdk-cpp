@@ -37,87 +37,33 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Error cause.</p>
      */
     inline const Aws::String& GetCause() const{ return m_cause; }
-
-    /**
-     * <p>Error cause.</p>
-     */
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-
-    /**
-     * <p>Error cause.</p>
-     */
     inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
-
-    /**
-     * <p>Error cause.</p>
-     */
     inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-
-    /**
-     * <p>Error cause.</p>
-     */
     inline void SetCause(const char* value) { m_causeHasBeenSet = true; m_cause.assign(value); }
-
-    /**
-     * <p>Error cause.</p>
-     */
     inline ErrorInfo& WithCause(const Aws::String& value) { SetCause(value); return *this;}
-
-    /**
-     * <p>Error cause.</p>
-     */
     inline ErrorInfo& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
-
-    /**
-     * <p>Error cause.</p>
-     */
     inline ErrorInfo& WithCause(const char* value) { SetCause(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error details.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>Error details.</p>
-     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p>Error details.</p>
-     */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p>Error details.</p>
-     */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p>Error details.</p>
-     */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-
-    /**
-     * <p>Error details.</p>
-     */
     inline ErrorInfo& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>Error details.</p>
-     */
     inline ErrorInfo& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>Error details.</p>
-     */
     inline ErrorInfo& WithDetails(const char* value) { SetDetails(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cause;

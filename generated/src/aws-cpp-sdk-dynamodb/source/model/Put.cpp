@@ -29,14 +29,8 @@ Put::Put() :
 {
 }
 
-Put::Put(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_conditionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
+Put::Put(JsonView jsonValue)
+  : Put()
 {
   *this = jsonValue;
 }

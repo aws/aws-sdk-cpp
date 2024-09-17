@@ -24,9 +24,8 @@ ItemCollectionMetrics::ItemCollectionMetrics() :
 {
 }
 
-ItemCollectionMetrics::ItemCollectionMetrics(JsonView jsonValue) : 
-    m_itemCollectionKeyHasBeenSet(false),
-    m_sizeEstimateRangeGBHasBeenSet(false)
+ItemCollectionMetrics::ItemCollectionMetrics(JsonView jsonValue)
+  : ItemCollectionMetrics()
 {
   *this = jsonValue;
 }

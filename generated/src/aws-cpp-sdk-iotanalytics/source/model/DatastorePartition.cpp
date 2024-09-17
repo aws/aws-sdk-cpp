@@ -24,9 +24,8 @@ DatastorePartition::DatastorePartition() :
 {
 }
 
-DatastorePartition::DatastorePartition(JsonView jsonValue) : 
-    m_attributePartitionHasBeenSet(false),
-    m_timestampPartitionHasBeenSet(false)
+DatastorePartition::DatastorePartition(JsonView jsonValue)
+  : DatastorePartition()
 {
   *this = jsonValue;
 }

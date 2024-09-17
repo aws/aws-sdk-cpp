@@ -40,98 +40,41 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Formatting configuration for string fields.</p>
      */
     inline const StringFormatConfiguration& GetStringFormatConfiguration() const{ return m_stringFormatConfiguration; }
-
-    /**
-     * <p>Formatting configuration for string fields.</p>
-     */
     inline bool StringFormatConfigurationHasBeenSet() const { return m_stringFormatConfigurationHasBeenSet; }
-
-    /**
-     * <p>Formatting configuration for string fields.</p>
-     */
     inline void SetStringFormatConfiguration(const StringFormatConfiguration& value) { m_stringFormatConfigurationHasBeenSet = true; m_stringFormatConfiguration = value; }
-
-    /**
-     * <p>Formatting configuration for string fields.</p>
-     */
     inline void SetStringFormatConfiguration(StringFormatConfiguration&& value) { m_stringFormatConfigurationHasBeenSet = true; m_stringFormatConfiguration = std::move(value); }
-
-    /**
-     * <p>Formatting configuration for string fields.</p>
-     */
     inline FormatConfiguration& WithStringFormatConfiguration(const StringFormatConfiguration& value) { SetStringFormatConfiguration(value); return *this;}
-
-    /**
-     * <p>Formatting configuration for string fields.</p>
-     */
     inline FormatConfiguration& WithStringFormatConfiguration(StringFormatConfiguration&& value) { SetStringFormatConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Formatting configuration for number fields.</p>
      */
     inline const NumberFormatConfiguration& GetNumberFormatConfiguration() const{ return m_numberFormatConfiguration; }
-
-    /**
-     * <p>Formatting configuration for number fields.</p>
-     */
     inline bool NumberFormatConfigurationHasBeenSet() const { return m_numberFormatConfigurationHasBeenSet; }
-
-    /**
-     * <p>Formatting configuration for number fields.</p>
-     */
     inline void SetNumberFormatConfiguration(const NumberFormatConfiguration& value) { m_numberFormatConfigurationHasBeenSet = true; m_numberFormatConfiguration = value; }
-
-    /**
-     * <p>Formatting configuration for number fields.</p>
-     */
     inline void SetNumberFormatConfiguration(NumberFormatConfiguration&& value) { m_numberFormatConfigurationHasBeenSet = true; m_numberFormatConfiguration = std::move(value); }
-
-    /**
-     * <p>Formatting configuration for number fields.</p>
-     */
     inline FormatConfiguration& WithNumberFormatConfiguration(const NumberFormatConfiguration& value) { SetNumberFormatConfiguration(value); return *this;}
-
-    /**
-     * <p>Formatting configuration for number fields.</p>
-     */
     inline FormatConfiguration& WithNumberFormatConfiguration(NumberFormatConfiguration&& value) { SetNumberFormatConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Formatting configuration for <code>DateTime</code> fields.</p>
      */
     inline const DateTimeFormatConfiguration& GetDateTimeFormatConfiguration() const{ return m_dateTimeFormatConfiguration; }
-
-    /**
-     * <p>Formatting configuration for <code>DateTime</code> fields.</p>
-     */
     inline bool DateTimeFormatConfigurationHasBeenSet() const { return m_dateTimeFormatConfigurationHasBeenSet; }
-
-    /**
-     * <p>Formatting configuration for <code>DateTime</code> fields.</p>
-     */
     inline void SetDateTimeFormatConfiguration(const DateTimeFormatConfiguration& value) { m_dateTimeFormatConfigurationHasBeenSet = true; m_dateTimeFormatConfiguration = value; }
-
-    /**
-     * <p>Formatting configuration for <code>DateTime</code> fields.</p>
-     */
     inline void SetDateTimeFormatConfiguration(DateTimeFormatConfiguration&& value) { m_dateTimeFormatConfigurationHasBeenSet = true; m_dateTimeFormatConfiguration = std::move(value); }
-
-    /**
-     * <p>Formatting configuration for <code>DateTime</code> fields.</p>
-     */
     inline FormatConfiguration& WithDateTimeFormatConfiguration(const DateTimeFormatConfiguration& value) { SetDateTimeFormatConfiguration(value); return *this;}
-
-    /**
-     * <p>Formatting configuration for <code>DateTime</code> fields.</p>
-     */
     inline FormatConfiguration& WithDateTimeFormatConfiguration(DateTimeFormatConfiguration&& value) { SetDateTimeFormatConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StringFormatConfiguration m_stringFormatConfiguration;

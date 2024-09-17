@@ -24,9 +24,8 @@ OpsItemInvalidParameterException::OpsItemInvalidParameterException() :
 {
 }
 
-OpsItemInvalidParameterException::OpsItemInvalidParameterException(JsonView jsonValue) : 
-    m_parameterNamesHasBeenSet(false),
-    m_messageHasBeenSet(false)
+OpsItemInvalidParameterException::OpsItemInvalidParameterException(JsonView jsonValue)
+  : OpsItemInvalidParameterException()
 {
   *this = jsonValue;
 }

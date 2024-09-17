@@ -35,6 +35,7 @@
 #include <aws/datapipeline/model/ReportTaskRunnerHeartbeatResult.h>
 #include <aws/datapipeline/model/SetTaskStatusResult.h>
 #include <aws/datapipeline/model/ValidatePipelineDefinitionResult.h>
+#include <aws/datapipeline/model/ListPipelinesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DataPipelineClient header */
 
@@ -69,7 +70,7 @@ namespace Aws
 
   namespace DataPipeline
   {
-    using DataPipelineClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DataPipelineClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DataPipelineEndpointProviderBase = Aws::DataPipeline::Endpoint::DataPipelineEndpointProviderBase;
     using DataPipelineEndpointProvider = Aws::DataPipeline::Endpoint::DataPipelineEndpointProvider;
 

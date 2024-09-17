@@ -28,13 +28,8 @@ InstanceConfig::InstanceConfig() :
 {
 }
 
-InstanceConfig::InstanceConfig(JsonView jsonValue) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_volumeSizeInGb(0),
-    m_volumeSizeInGbHasBeenSet(false)
+InstanceConfig::InstanceConfig(JsonView jsonValue)
+  : InstanceConfig()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteDeploymentResult::DeleteDeploymentResult() :
 {
 }
 
-DeleteDeploymentResult::DeleteDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DeploymentStatus::NOT_SET)
+DeleteDeploymentResult::DeleteDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDeploymentResult()
 {
   *this = result;
 }

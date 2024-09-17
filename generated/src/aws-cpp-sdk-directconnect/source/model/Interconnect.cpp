@@ -42,26 +42,8 @@ Interconnect::Interconnect() :
 {
 }
 
-Interconnect::Interconnect(JsonView jsonValue) : 
-    m_interconnectIdHasBeenSet(false),
-    m_interconnectNameHasBeenSet(false),
-    m_interconnectState(InterconnectState::NOT_SET),
-    m_interconnectStateHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_loaIssueTimeHasBeenSet(false),
-    m_lagIdHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Interconnect::Interconnect(JsonView jsonValue)
+  : Interconnect()
 {
   *this = jsonValue;
 }

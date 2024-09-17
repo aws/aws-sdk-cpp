@@ -19,39 +19,52 @@ namespace Model
 {
 
 PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParameters() : 
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_consumerGroupIDHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_topicNameHasBeenSet(false),
     m_startingPosition(MSKStartPosition::NOT_SET),
     m_startingPositionHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_batchSize(0),
+    m_batchSizeHasBeenSet(false),
+    m_maximumBatchingWindowInSeconds(0),
+    m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_consumerGroupIDHasBeenSet(false),
+    m_credentialsHasBeenSet(false)
 {
 }
 
-PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParameters(JsonView jsonValue) : 
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_consumerGroupIDHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
-    m_startingPosition(MSKStartPosition::NOT_SET),
-    m_startingPositionHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParameters(JsonView jsonValue)
+  : PipeSourceManagedStreamingKafkaParameters()
 {
   *this = jsonValue;
 }
 
 PipeSourceManagedStreamingKafkaParameters& PipeSourceManagedStreamingKafkaParameters::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("TopicName"))
+  {
+    m_topicName = jsonValue.GetString("TopicName");
+
+    m_topicNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartingPosition"))
+  {
+    m_startingPosition = MSKStartPositionMapper::GetMSKStartPositionForName(jsonValue.GetString("StartingPosition"));
+
+    m_startingPositionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
 
     m_batchSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
+  {
+    m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
+
+    m_maximumBatchingWindowInSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ConsumerGroupID"))
@@ -68,27 +81,6 @@ PipeSourceManagedStreamingKafkaParameters& PipeSourceManagedStreamingKafkaParame
     m_credentialsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
-  {
-    m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
-
-    m_maximumBatchingWindowInSecondsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("StartingPosition"))
-  {
-    m_startingPosition = MSKStartPositionMapper::GetMSKStartPositionForName(jsonValue.GetString("StartingPosition"));
-
-    m_startingPositionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("TopicName"))
-  {
-    m_topicName = jsonValue.GetString("TopicName");
-
-    m_topicNameHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -96,9 +88,26 @@ JsonValue PipeSourceManagedStreamingKafkaParameters::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_topicNameHasBeenSet)
+  {
+   payload.WithString("TopicName", m_topicName);
+
+  }
+
+  if(m_startingPositionHasBeenSet)
+  {
+   payload.WithString("StartingPosition", MSKStartPositionMapper::GetNameForMSKStartPosition(m_startingPosition));
+  }
+
   if(m_batchSizeHasBeenSet)
   {
    payload.WithInteger("BatchSize", m_batchSize);
+
+  }
+
+  if(m_maximumBatchingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
 
   }
 
@@ -111,23 +120,6 @@ JsonValue PipeSourceManagedStreamingKafkaParameters::Jsonize() const
   if(m_credentialsHasBeenSet)
   {
    payload.WithObject("Credentials", m_credentials.Jsonize());
-
-  }
-
-  if(m_maximumBatchingWindowInSecondsHasBeenSet)
-  {
-   payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
-
-  }
-
-  if(m_startingPositionHasBeenSet)
-  {
-   payload.WithString("StartingPosition", MSKStartPositionMapper::GetNameForMSKStartPosition(m_startingPosition));
-  }
-
-  if(m_topicNameHasBeenSet)
-  {
-   payload.WithString("TopicName", m_topicName);
 
   }
 

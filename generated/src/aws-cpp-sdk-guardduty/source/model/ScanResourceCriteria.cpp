@@ -24,9 +24,8 @@ ScanResourceCriteria::ScanResourceCriteria() :
 {
 }
 
-ScanResourceCriteria::ScanResourceCriteria(JsonView jsonValue) : 
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false)
+ScanResourceCriteria::ScanResourceCriteria(JsonView jsonValue)
+  : ScanResourceCriteria()
 {
   *this = jsonValue;
 }

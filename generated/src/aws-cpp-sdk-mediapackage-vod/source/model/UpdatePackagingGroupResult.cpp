@@ -22,8 +22,8 @@ UpdatePackagingGroupResult::UpdatePackagingGroupResult() :
 {
 }
 
-UpdatePackagingGroupResult::UpdatePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateAssetCount(0)
+UpdatePackagingGroupResult::UpdatePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdatePackagingGroupResult()
 {
   *this = result;
 }

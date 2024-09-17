@@ -24,9 +24,8 @@ BaseScreenshot::BaseScreenshot() :
 {
 }
 
-BaseScreenshot::BaseScreenshot(JsonView jsonValue) : 
-    m_screenshotNameHasBeenSet(false),
-    m_ignoreCoordinatesHasBeenSet(false)
+BaseScreenshot::BaseScreenshot(JsonView jsonValue)
+  : BaseScreenshot()
 {
   *this = jsonValue;
 }

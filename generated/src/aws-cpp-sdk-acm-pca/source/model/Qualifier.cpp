@@ -23,8 +23,8 @@ Qualifier::Qualifier() :
 {
 }
 
-Qualifier::Qualifier(JsonView jsonValue) : 
-    m_cpsUriHasBeenSet(false)
+Qualifier::Qualifier(JsonView jsonValue)
+  : Qualifier()
 {
   *this = jsonValue;
 }

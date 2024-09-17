@@ -26,11 +26,8 @@ AudioCodecOptions::AudioCodecOptions() :
 {
 }
 
-AudioCodecOptions::AudioCodecOptions(JsonView jsonValue) : 
-    m_profileHasBeenSet(false),
-    m_bitDepthHasBeenSet(false),
-    m_bitOrderHasBeenSet(false),
-    m_signedHasBeenSet(false)
+AudioCodecOptions::AudioCodecOptions(JsonView jsonValue)
+  : AudioCodecOptions()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ StateInfo::StateInfo() :
 {
 }
 
-StateInfo::StateInfo(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+StateInfo::StateInfo(JsonView jsonValue)
+  : StateInfo()
 {
   *this = jsonValue;
 }

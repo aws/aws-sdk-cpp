@@ -24,9 +24,8 @@ OrganizationS3LogsConfigurationResult::OrganizationS3LogsConfigurationResult() :
 {
 }
 
-OrganizationS3LogsConfigurationResult::OrganizationS3LogsConfigurationResult(JsonView jsonValue) : 
-    m_autoEnable(false),
-    m_autoEnableHasBeenSet(false)
+OrganizationS3LogsConfigurationResult::OrganizationS3LogsConfigurationResult(JsonView jsonValue)
+  : OrganizationS3LogsConfigurationResult()
 {
   *this = jsonValue;
 }

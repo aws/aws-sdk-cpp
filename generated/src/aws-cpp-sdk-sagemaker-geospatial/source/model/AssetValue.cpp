@@ -23,8 +23,8 @@ AssetValue::AssetValue() :
 {
 }
 
-AssetValue::AssetValue(JsonView jsonValue) : 
-    m_hrefHasBeenSet(false)
+AssetValue::AssetValue(JsonView jsonValue)
+  : AssetValue()
 {
   *this = jsonValue;
 }

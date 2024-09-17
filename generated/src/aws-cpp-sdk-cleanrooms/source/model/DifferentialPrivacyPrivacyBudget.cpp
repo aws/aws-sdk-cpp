@@ -25,10 +25,8 @@ DifferentialPrivacyPrivacyBudget::DifferentialPrivacyPrivacyBudget() :
 {
 }
 
-DifferentialPrivacyPrivacyBudget::DifferentialPrivacyPrivacyBudget(JsonView jsonValue) : 
-    m_aggregationsHasBeenSet(false),
-    m_epsilon(0),
-    m_epsilonHasBeenSet(false)
+DifferentialPrivacyPrivacyBudget::DifferentialPrivacyPrivacyBudget(JsonView jsonValue)
+  : DifferentialPrivacyPrivacyBudget()
 {
   *this = jsonValue;
 }

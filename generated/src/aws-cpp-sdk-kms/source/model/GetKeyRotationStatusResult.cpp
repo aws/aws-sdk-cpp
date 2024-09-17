@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetKeyRotationStatusResult::GetKeyRotationStatusResult() : 
-    m_keyRotationEnabled(false)
+    m_keyRotationEnabled(false),
+    m_rotationPeriodInDays(0)
 {
 }
 
-GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keyRotationEnabled(false)
+GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKeyRotationStatusResult()
 {
   *this = result;
 }
@@ -34,6 +35,30 @@ GetKeyRotationStatusResult& GetKeyRotationStatusResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("KeyRotationEnabled"))
   {
     m_keyRotationEnabled = jsonValue.GetBool("KeyRotationEnabled");
+
+  }
+
+  if(jsonValue.ValueExists("KeyId"))
+  {
+    m_keyId = jsonValue.GetString("KeyId");
+
+  }
+
+  if(jsonValue.ValueExists("RotationPeriodInDays"))
+  {
+    m_rotationPeriodInDays = jsonValue.GetInteger("RotationPeriodInDays");
+
+  }
+
+  if(jsonValue.ValueExists("NextRotationDate"))
+  {
+    m_nextRotationDate = jsonValue.GetDouble("NextRotationDate");
+
+  }
+
+  if(jsonValue.ValueExists("OnDemandRotationStartDate"))
+  {
+    m_onDemandRotationStartDate = jsonValue.GetDouble("OnDemandRotationStartDate");
 
   }
 

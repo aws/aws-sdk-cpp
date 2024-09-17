@@ -25,10 +25,8 @@ EventDetails::EventDetails() :
 {
 }
 
-EventDetails::EventDetails(JsonView jsonValue) : 
-    m_eventHasBeenSet(false),
-    m_eventDescriptionHasBeenSet(false),
-    m_eventMetadataHasBeenSet(false)
+EventDetails::EventDetails(JsonView jsonValue)
+  : EventDetails()
 {
   *this = jsonValue;
 }

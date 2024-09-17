@@ -44,29 +44,8 @@ LineChartConfiguration::LineChartConfiguration() :
 {
 }
 
-LineChartConfiguration::LineChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_forecastConfigurationsHasBeenSet(false),
-    m_type(LineChartType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_smallMultiplesOptionsHasBeenSet(false),
-    m_xAxisDisplayOptionsHasBeenSet(false),
-    m_xAxisLabelOptionsHasBeenSet(false),
-    m_primaryYAxisDisplayOptionsHasBeenSet(false),
-    m_primaryYAxisLabelOptionsHasBeenSet(false),
-    m_secondaryYAxisDisplayOptionsHasBeenSet(false),
-    m_secondaryYAxisLabelOptionsHasBeenSet(false),
-    m_singleAxisOptionsHasBeenSet(false),
-    m_defaultSeriesSettingsHasBeenSet(false),
-    m_seriesHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_referenceLinesHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+LineChartConfiguration::LineChartConfiguration(JsonView jsonValue)
+  : LineChartConfiguration()
 {
   *this = jsonValue;
 }

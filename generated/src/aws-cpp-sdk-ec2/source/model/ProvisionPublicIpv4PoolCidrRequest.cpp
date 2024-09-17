@@ -16,7 +16,8 @@ ProvisionPublicIpv4PoolCidrRequest::ProvisionPublicIpv4PoolCidrRequest() :
     m_ipamPoolIdHasBeenSet(false),
     m_poolIdHasBeenSet(false),
     m_netmaskLength(0),
-    m_netmaskLengthHasBeenSet(false)
+    m_netmaskLengthHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,11 @@ Aws::String ProvisionPublicIpv4PoolCidrRequest::SerializePayload() const
   if(m_netmaskLengthHasBeenSet)
   {
     ss << "NetmaskLength=" << m_netmaskLength << "&";
+  }
+
+  if(m_networkBorderGroupHasBeenSet)
+  {
+    ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -17,10 +17,10 @@ namespace MigrationHubOrchestrator
 {
   /**
    * <p>This API reference provides descriptions, syntax, and other details about
-   * each of the actions and data types for AWS Migration Hub Orchestrator. he topic
-   * for each action shows the API request parameters and the response.
-   * Alternatively, you can use one of the AWS SDKs to access an API that is tailored
-   * to the programming language or platform that you're using.</p>
+   * each of the actions and data types for AWS Migration Hub Orchestrator. The topic
+   * for each action shows the API request parameters and responses. Alternatively,
+   * you can use one of the AWS SDKs to access an API that is tailored to the
+   * programming language or platform that you're using.</p>
    */
   class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>
   {
@@ -79,6 +79,31 @@ namespace MigrationHubOrchestrator
 
         /* End of legacy constructors due deprecation */
         virtual ~MigrationHubOrchestratorClient();
+
+        /**
+         * <p>Creates a migration workflow template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTemplateOutcome CreateTemplate(const Model::CreateTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTemplateRequestT = Model::CreateTemplateRequest>
+        Model::CreateTemplateOutcomeCallable CreateTemplateCallable(const CreateTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MigrationHubOrchestratorClient::CreateTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTemplateRequestT = Model::CreateTemplateRequest>
+        void CreateTemplateAsync(const CreateTemplateRequestT& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MigrationHubOrchestratorClient::CreateTemplate, request, handler, context);
+        }
 
         /**
          * <p>Create a workflow to orchestrate your migrations.</p><p><h3>See Also:</h3>  
@@ -154,6 +179,31 @@ namespace MigrationHubOrchestrator
         void CreateWorkflowStepGroupAsync(const CreateWorkflowStepGroupRequestT& request, const CreateWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MigrationHubOrchestratorClient::CreateWorkflowStepGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a migration workflow template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTemplateOutcome DeleteTemplate(const Model::DeleteTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTemplateRequestT = Model::DeleteTemplateRequest>
+        Model::DeleteTemplateOutcomeCallable DeleteTemplateCallable(const DeleteTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MigrationHubOrchestratorClient::DeleteTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTemplateRequestT = Model::DeleteTemplateRequest>
+        void DeleteTemplateAsync(const DeleteTemplateRequestT& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MigrationHubOrchestratorClient::DeleteTemplate, request, handler, context);
         }
 
         /**
@@ -389,13 +439,13 @@ namespace MigrationHubOrchestrator
          * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListPlugins">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPluginsOutcome ListPlugins(const Model::ListPluginsRequest& request) const;
+        virtual Model::ListPluginsOutcome ListPlugins(const Model::ListPluginsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPlugins that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPluginsRequestT = Model::ListPluginsRequest>
-        Model::ListPluginsOutcomeCallable ListPluginsCallable(const ListPluginsRequestT& request) const
+        Model::ListPluginsOutcomeCallable ListPluginsCallable(const ListPluginsRequestT& request = {}) const
         {
             return SubmitCallable(&MigrationHubOrchestratorClient::ListPlugins, request);
         }
@@ -404,7 +454,7 @@ namespace MigrationHubOrchestrator
          * An Async wrapper for ListPlugins that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPluginsRequestT = Model::ListPluginsRequest>
-        void ListPluginsAsync(const ListPluginsRequestT& request, const ListPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPluginsAsync(const ListPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPluginsRequestT& request = {}) const
         {
             return SubmitAsync(&MigrationHubOrchestratorClient::ListPlugins, request, handler, context);
         }
@@ -490,13 +540,13 @@ namespace MigrationHubOrchestrator
          * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTemplatesOutcome ListTemplates(const Model::ListTemplatesRequest& request) const;
+        virtual Model::ListTemplatesOutcome ListTemplates(const Model::ListTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTemplatesRequestT = Model::ListTemplatesRequest>
-        Model::ListTemplatesOutcomeCallable ListTemplatesCallable(const ListTemplatesRequestT& request) const
+        Model::ListTemplatesOutcomeCallable ListTemplatesCallable(const ListTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&MigrationHubOrchestratorClient::ListTemplates, request);
         }
@@ -505,7 +555,7 @@ namespace MigrationHubOrchestrator
          * An Async wrapper for ListTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTemplatesRequestT = Model::ListTemplatesRequest>
-        void ListTemplatesAsync(const ListTemplatesRequestT& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTemplatesAsync(const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&MigrationHubOrchestratorClient::ListTemplates, request, handler, context);
         }
@@ -565,13 +615,13 @@ namespace MigrationHubOrchestrator
          * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListWorkflows">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
+        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request) const
+        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitCallable(&MigrationHubOrchestratorClient::ListWorkflows, request);
         }
@@ -580,7 +630,7 @@ namespace MigrationHubOrchestrator
          * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        void ListWorkflowsAsync(const ListWorkflowsRequestT& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkflowsAsync(const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&MigrationHubOrchestratorClient::ListWorkflows, request, handler, context);
         }
@@ -712,6 +762,31 @@ namespace MigrationHubOrchestrator
         }
 
         /**
+         * <p>Updates a migration workflow template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTemplateOutcome UpdateTemplate(const Model::UpdateTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTemplateRequestT = Model::UpdateTemplateRequest>
+        Model::UpdateTemplateOutcomeCallable UpdateTemplateCallable(const UpdateTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MigrationHubOrchestratorClient::UpdateTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTemplateRequestT = Model::UpdateTemplateRequest>
+        void UpdateTemplateAsync(const UpdateTemplateRequestT& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MigrationHubOrchestratorClient::UpdateTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Update a migration workflow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateWorkflow">AWS
          * API Reference</a></p>
@@ -794,7 +869,6 @@ namespace MigrationHubOrchestrator
       void init(const MigrationHubOrchestratorClientConfiguration& clientConfiguration);
 
       MigrationHubOrchestratorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase> m_endpointProvider;
   };
 

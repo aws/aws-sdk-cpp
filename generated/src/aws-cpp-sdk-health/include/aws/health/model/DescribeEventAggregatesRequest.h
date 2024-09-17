@@ -36,93 +36,42 @@ namespace Model
     AWS_HEALTH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Values to narrow the results returned.</p>
      */
     inline const EventFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline void SetFilter(const EventFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline void SetFilter(EventFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline DescribeEventAggregatesRequest& WithFilter(const EventFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline DescribeEventAggregatesRequest& WithFilter(EventFilter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
      */
     inline const EventAggregateField& GetAggregateField() const{ return m_aggregateField; }
-
-    /**
-     * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-     */
     inline bool AggregateFieldHasBeenSet() const { return m_aggregateFieldHasBeenSet; }
-
-    /**
-     * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-     */
     inline void SetAggregateField(const EventAggregateField& value) { m_aggregateFieldHasBeenSet = true; m_aggregateField = value; }
-
-    /**
-     * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-     */
     inline void SetAggregateField(EventAggregateField&& value) { m_aggregateFieldHasBeenSet = true; m_aggregateField = std::move(value); }
-
-    /**
-     * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-     */
     inline DescribeEventAggregatesRequest& WithAggregateField(const EventAggregateField& value) { SetAggregateField(value); return *this;}
-
-    /**
-     * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-     */
     inline DescribeEventAggregatesRequest& WithAggregateField(EventAggregateField&& value) { SetAggregateField(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
      * inclusive.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>
-     */
     inline DescribeEventAggregatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the results of a search are large, only a portion of the results are
      * returned, and a <code>nextToken</code> pagination token is returned in the
@@ -131,70 +80,14 @@ namespace Model
      * does not contain a pagination token value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline DescribeEventAggregatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline DescribeEventAggregatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline DescribeEventAggregatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     EventFilter m_filter;

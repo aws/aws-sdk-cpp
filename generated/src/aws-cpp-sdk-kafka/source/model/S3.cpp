@@ -26,11 +26,8 @@ S3::S3() :
 {
 }
 
-S3::S3(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+S3::S3(JsonView jsonValue)
+  : S3()
 {
   *this = jsonValue;
 }

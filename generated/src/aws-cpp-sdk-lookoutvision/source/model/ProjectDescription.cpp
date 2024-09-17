@@ -26,11 +26,8 @@ ProjectDescription::ProjectDescription() :
 {
 }
 
-ProjectDescription::ProjectDescription(JsonView jsonValue) : 
-    m_projectArnHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_datasetsHasBeenSet(false)
+ProjectDescription::ProjectDescription(JsonView jsonValue)
+  : ProjectDescription()
 {
   *this = jsonValue;
 }

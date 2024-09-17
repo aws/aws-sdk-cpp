@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int TABLE_HASH = HashingUtils::HashString("TABLE");
+        static const int ID_MAPPING_TABLE_HASH = HashingUtils::HashString("ID_MAPPING_TABLE");
 
 
         SchemaType GetSchemaTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == TABLE_HASH)
           {
             return SchemaType::TABLE;
+          }
+          else if (hashCode == ID_MAPPING_TABLE_HASH)
+          {
+            return SchemaType::ID_MAPPING_TABLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case SchemaType::TABLE:
             return "TABLE";
+          case SchemaType::ID_MAPPING_TABLE:
+            return "ID_MAPPING_TABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

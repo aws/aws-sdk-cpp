@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -99,7 +99,7 @@ namespace
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
-    static const char* URIESCAPE_KEY = "Esc ape+Me$";
+    static const char* URIESCAPE_KEY = "Esc a=pe+Me$";
     static const char* CUSTOM_ENDPOINT_OVERRIDE = "beta.example.com";
     static const char* TEST_BUCKET_TAG = "IntegrationTestResource";
 
@@ -150,22 +150,23 @@ namespace
         long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>&, long) const override { return 0; }
     };
 
-    class BucketAndObjectOperationTest : public ::testing::Test
+    class BucketAndObjectOperationTest : public Aws::Testing::AwsCppSdkGTestSuite
     {
-    public:
-        static std::shared_ptr<S3Client> Client;
-        static std::shared_ptr<S3Client> globalClient;
-        static std::shared_ptr<S3Client> oregonClient;
-        static std::shared_ptr<S3Client> retryClient;
-        static std::shared_ptr<HttpClientFactory> ClientFactory;
-        static std::shared_ptr<HttpClient> m_HttpClient;
-        static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> Limiter;
-
     protected:
+        std::shared_ptr<S3Client> Client;
+        std::shared_ptr<S3Client> globalClient;
+        std::shared_ptr<S3Client> oregonClient;
+        std::shared_ptr<S3Client> retryClient;
+        std::shared_ptr<HttpClientFactory> ClientFactory;
+        std::shared_ptr<HttpClient> m_HttpClient;
+        std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> Limiter;
+        Aws::UnorderedSet<Aws::String> m_bucketsToDelete;
 
-        static void SetUpTestCase()
+
+        void SetUp() override
         {
-            EnsureUniqueBucketNames();
+            static std::once_flag flag;
+            std::call_once(flag, EnsureUniqueBucketNames);
 
             Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
 
@@ -178,6 +179,7 @@ namespace
             config.readRateLimiter = Limiter;
             config.writeRateLimiter = Limiter;
             config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+            config.enableHttpClientTrace = true;
 
             //to use a proxy, uncomment the next two lines.
             if (USE_PROXY_FOR_TESTS)
@@ -208,25 +210,14 @@ namespace
             TestingMonitoringManager::InitTestingMonitoring();
         }
 
-        static void TearDownTestCase()
+        void TearDown() override
         {
             TestingMonitoringManager::CleanupTestingMonitoring();
-            DeleteBucket(CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_OBJECTS_NEWLINE_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_OBJECT_LOCK_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_ERRORS_TESTING_BUCKET.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str()));
-            DeleteBucket(CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str()));
+            for (const auto& bucketName : m_bucketsToDelete)
+            {
+                DeleteBucket(bucketName);
+            }
+            m_bucketsToDelete.clear();
             Limiter = nullptr;
             Client = nullptr;
             globalClient = nullptr;
@@ -261,9 +252,9 @@ namespace
             return streamPtr;
         }
 
-        static UploadPartOutcomeCallable MakeUploadPartOutcomeAndGetCallable(unsigned partNumber, const ByteBuffer& md5OfStream,
-                                                                             const std::shared_ptr<Aws::IOStream>& partStream,
-                                                                             const Aws::String& bucketName, const char* objectName, const Aws::String& uploadId)
+        UploadPartOutcomeCallable MakeUploadPartOutcomeAndGetCallable(unsigned partNumber, const ByteBuffer& md5OfStream,
+                                                                      const std::shared_ptr<Aws::IOStream>& partStream,
+                                                                      const Aws::String& bucketName, const char* objectName, const Aws::String& uploadId)
         {
             UploadPartRequest uploadPart1Request;
             uploadPart1Request.SetBucket(bucketName);
@@ -306,8 +297,13 @@ namespace
             AWS_ASSERT_SUCCESS(taggingOutcome);
         }
 
-        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const std::shared_ptr<S3Client>& client = Client)
+        bool WaitForBucketToPropagate(const Aws::String& bucketName, std::shared_ptr<S3Client>& client)
         {
+            if (!client)
+            {
+                client = Client;
+            }
+
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
@@ -325,7 +321,7 @@ namespace
             return false;
         }
 
-        static bool WaitForObjectToPropagate(const Aws::String& bucketName, const char* objectKey)
+        bool WaitForObjectToPropagate(const Aws::String& bucketName, const char* objectKey)
         {
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
@@ -345,7 +341,7 @@ namespace
             return false;
         }
 
-        static bool WaitForObjectWithSSECToPropagate(const Aws::String& bucketName, const char* objectKey, const ByteBuffer& sseKey)
+        bool WaitForObjectWithSSECToPropagate(const Aws::String& bucketName, const char* objectKey, const ByteBuffer& sseKey)
         {
             unsigned timeoutCount = 0;
             Aws::String strBuffer(reinterpret_cast<char*>(sseKey.GetUnderlyingData()), sseKey.GetLength());
@@ -369,7 +365,19 @@ namespace
             return false;
         }
 
-        static void EmptyBucket(const Aws::String& bucketName)
+        CreateBucketOutcome CreateBucket(const CreateBucketRequest& request, std::shared_ptr<S3Client> client = nullptr)
+        {
+            if (!client)
+            {
+                client = Client;
+            }
+            CreateBucketOutcome createBucketOutcome = Client->CreateBucket(request);
+            m_bucketsToDelete.insert(request.GetBucket());
+
+            return createBucketOutcome;
+        }
+
+        void EmptyBucket(const Aws::String& bucketName)
         {
             ListObjectsRequest listObjectsRequest;
             listObjectsRequest.SetBucket(bucketName);
@@ -389,7 +397,7 @@ namespace
             }
         }
 
-        static void WaitForBucketToEmpty(const Aws::String& bucketName)
+        void WaitForBucketToEmpty(const Aws::String& bucketName)
         {
             ListObjectsRequest listObjectsRequest;
             listObjectsRequest.SetBucket(bucketName);
@@ -398,7 +406,7 @@ namespace
             while (checkForObjectsCount++ < TIMEOUT_MAX)
             {
                 ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-                AWS_ASSERT_SUCCESS(listObjectsOutcome);
+                AWS_EXPECT_SUCCESS(listObjectsOutcome);
 
                 if (listObjectsOutcome.GetResult().GetContents().size() > 0)
                 {
@@ -411,7 +419,7 @@ namespace
             }
         }
 
-        static void DeleteBucket(const Aws::String& bucketName)
+        void DeleteBucket(const Aws::String& bucketName)
         {
             HeadBucketRequest headBucketRequest;
             headBucketRequest.SetBucket(bucketName);
@@ -426,7 +434,7 @@ namespace
                 deleteBucketRequest.SetBucket(bucketName);
 
                 auto deleteBucketOutcome = CallOperationWithUnconditionalRetry(Client.get(), &Aws::S3::S3Client::DeleteBucket, deleteBucketRequest);
-                AWS_ASSERT_SUCCESS(deleteBucketOutcome);
+                AWS_EXPECT_SUCCESS(deleteBucketOutcome);
             }
         }
 
@@ -435,22 +443,22 @@ namespace
             return Aws::Testing::GetAwsResourcePrefix() + bucketPrefix;
         }
 
-        static Aws::String PreparePresignedUrlTest()
+        Aws::String PreparePresignedUrlTest()
         {
             Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
             CreateBucketRequest createBucketRequest;
             createBucketRequest.SetBucket(fullBucketName);
             createBucketRequest.SetACL(BucketCannedACL::private_);
-            CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+            CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
             AWS_EXPECT_SUCCESS(createBucketOutcome);
             const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
             EXPECT_TRUE(!createBucketResult.GetLocation().empty());
-            EXPECT_TRUE(WaitForBucketToPropagate(fullBucketName));
+            EXPECT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
             TagTestBucket(fullBucketName, Client);
             return fullBucketName;
         }
 
-        static void DoPresignedUrlTest(const Aws::String& bucketName, std::shared_ptr<HttpRequest>& putRequest)
+        void DoPresignedUrlTest(const Aws::String& bucketName, std::shared_ptr<HttpRequest>& putRequest)
         {
             std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
             *objectStream << "Test Object";
@@ -487,7 +495,7 @@ namespace
             }
         }
 
-        static void CleanUpPresignedUrlTest()
+        void CleanUpPresignedUrlTest()
         {
             Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
             Aws::String presignedUrlDelete = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_DELETE);
@@ -606,7 +614,7 @@ namespace
                 ASSERT_NE(S3Errors::VALIDATION, getObjectOutcome.GetError().GetErrorType());
                 Aws::StringStream ss;
                 ss << "https://" << expectedEndpoint << "/fakeObjectKey";
-                if (ss.str() != TestingMonitoringMetrics::s_lastUriString) {
+                if (ss.str() != TestingMonitoringMetrics::s_lastUriString.c_str()) {
                     std::cout << "Error";
                 }
                 ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
@@ -658,15 +666,6 @@ namespace
 
     };
 
-
-    std::shared_ptr<S3Client> BucketAndObjectOperationTest::Client(nullptr);
-    std::shared_ptr<S3Client> BucketAndObjectOperationTest::globalClient(nullptr);
-    std::shared_ptr<S3Client> BucketAndObjectOperationTest::oregonClient(nullptr);
-    std::shared_ptr<S3Client> BucketAndObjectOperationTest::retryClient(nullptr);
-    std::shared_ptr<HttpClientFactory> BucketAndObjectOperationTest::ClientFactory(nullptr);
-    std::shared_ptr<HttpClient> BucketAndObjectOperationTest::m_HttpClient(nullptr);
-    std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> BucketAndObjectOperationTest::Limiter(nullptr);
-
     TEST_F(BucketAndObjectOperationTest, TestInterrupt)
     {
         const Aws::String fullBucketName = CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET.c_str());
@@ -675,11 +674,11 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -731,7 +730,7 @@ namespace
         ASSERT_EQ(headBucketOutcome.GetError().GetErrorType(), Aws::S3::S3Errors::MISSING_PARAMETER);
 
         CreateBucketRequest createBucketRequest;
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         ASSERT_FALSE(createBucketOutcome.IsSuccess());
         ASSERT_EQ(createBucketOutcome.GetError().GetErrorType(), Aws::S3::S3Errors::MISSING_PARAMETER);
     }
@@ -745,11 +744,11 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         ListBucketsOutcome listBucketsOutcome = Client->ListBuckets();
@@ -785,7 +784,7 @@ namespace
         bucketConfiguration.SetLocationConstraint(BucketLocationConstraint::us_west_2);
         createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
 
-        CreateBucketOutcome createBucketOutcome = oregonClient->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest, oregonClient);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_FALSE(createBucketResult.GetLocation().empty());
@@ -813,11 +812,11 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -839,11 +838,11 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         Aws::Vector<Aws::String> objectKeysWithNewlineCharacter;
@@ -908,11 +907,11 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -962,6 +961,7 @@ namespace
         ss.str("");
         ss << getObjectOutcome.GetResult().GetBody().rdbuf();
         ASSERT_STREQ("Test Object", ss.str().c_str());
+        EXPECT_TRUE(getObjectOutcome.GetResult().GetCacheControl().empty());
 
         HeadObjectRequest headObjectRequest;
         headObjectRequest.SetBucket(fullBucketName);
@@ -995,11 +995,11 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         //test unicode
@@ -1161,16 +1161,17 @@ namespace
     {
         const char* multipartKeyName = "MultiPartKey";
         const Aws::String fullBucketName = CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str());
+        m_bucketsToDelete.insert(fullBucketName);
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         CreateMultipartUploadRequest createMultipartUploadRequest;
@@ -1403,9 +1404,9 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         GetObjectRequest getObjectRequest;
@@ -1427,9 +1428,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -1463,9 +1464,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -1493,9 +1494,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         auto objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
@@ -1529,9 +1530,9 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         createBucketRequest.SetObjectLockEnabledForBucket(true);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -1575,9 +1576,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -1653,9 +1654,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -1728,9 +1729,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -1834,9 +1835,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -1906,7 +1907,7 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         WaitForBucketToPropagate(fullBucketName, Client);
         TagTestBucket(fullBucketName, Client);
@@ -1989,9 +1990,9 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         CreateMultipartUploadRequest createMultipartUploadRequest;
@@ -2075,7 +2076,7 @@ namespace
         bucketConfiguration.SetLocationConstraint(BucketLocationConstraint::us_west_2);
         createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
 
-        CreateBucketOutcome createBucketOutcome = oregonClient->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest, oregonClient);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
@@ -2394,11 +2395,11 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
 
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
-        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
         TagTestBucket(fullBucketName, Client);
 
         PutObjectRequest putObjectRequest;
@@ -2420,7 +2421,7 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
-        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
 
         Vector<ChecksumTestCase> testCases{

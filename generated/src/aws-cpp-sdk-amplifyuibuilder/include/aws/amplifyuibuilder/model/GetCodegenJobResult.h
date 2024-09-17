@@ -33,53 +33,27 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API GetCodegenJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The configuration settings for the code generation job.</p>
      */
     inline const CodegenJob& GetJob() const{ return m_job; }
-
-    /**
-     * <p>The configuration settings for the code generation job.</p>
-     */
     inline void SetJob(const CodegenJob& value) { m_job = value; }
-
-    /**
-     * <p>The configuration settings for the code generation job.</p>
-     */
     inline void SetJob(CodegenJob&& value) { m_job = std::move(value); }
-
-    /**
-     * <p>The configuration settings for the code generation job.</p>
-     */
     inline GetCodegenJobResult& WithJob(const CodegenJob& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>The configuration settings for the code generation job.</p>
-     */
     inline GetCodegenJobResult& WithJob(CodegenJob&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCodegenJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCodegenJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCodegenJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CodegenJob m_job;

@@ -38,30 +38,16 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of processes that Amazon AppFlow runs at the same time
      * when it retrieves your data from your SAP application.</p>
      */
     inline int GetMaxParallelism() const{ return m_maxParallelism; }
-
-    /**
-     * <p>The maximum number of processes that Amazon AppFlow runs at the same time
-     * when it retrieves your data from your SAP application.</p>
-     */
     inline bool MaxParallelismHasBeenSet() const { return m_maxParallelismHasBeenSet; }
-
-    /**
-     * <p>The maximum number of processes that Amazon AppFlow runs at the same time
-     * when it retrieves your data from your SAP application.</p>
-     */
     inline void SetMaxParallelism(int value) { m_maxParallelismHasBeenSet = true; m_maxParallelism = value; }
-
-    /**
-     * <p>The maximum number of processes that Amazon AppFlow runs at the same time
-     * when it retrieves your data from your SAP application.</p>
-     */
     inline SAPODataParallelismConfig& WithMaxParallelism(int value) { SetMaxParallelism(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxParallelism;

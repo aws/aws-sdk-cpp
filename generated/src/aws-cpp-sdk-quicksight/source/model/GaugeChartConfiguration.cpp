@@ -24,17 +24,13 @@ GaugeChartConfiguration::GaugeChartConfiguration() :
     m_dataLabelsHasBeenSet(false),
     m_tooltipOptionsHasBeenSet(false),
     m_visualPaletteHasBeenSet(false),
+    m_colorConfigurationHasBeenSet(false),
     m_interactionsHasBeenSet(false)
 {
 }
 
-GaugeChartConfiguration::GaugeChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_gaugeChartOptionsHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+GaugeChartConfiguration::GaugeChartConfiguration(JsonView jsonValue)
+  : GaugeChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -74,6 +70,13 @@ GaugeChartConfiguration& GaugeChartConfiguration::operator =(JsonView jsonValue)
     m_visualPalette = jsonValue.GetObject("VisualPalette");
 
     m_visualPaletteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ColorConfiguration"))
+  {
+    m_colorConfiguration = jsonValue.GetObject("ColorConfiguration");
+
+    m_colorConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Interactions"))
@@ -117,6 +120,12 @@ JsonValue GaugeChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_colorConfigurationHasBeenSet)
+  {
+   payload.WithObject("ColorConfiguration", m_colorConfiguration.Jsonize());
 
   }
 

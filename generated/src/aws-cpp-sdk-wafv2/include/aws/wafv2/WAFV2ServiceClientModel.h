@@ -72,6 +72,7 @@
 #include <aws/wafv2/model/UpdateRegexPatternSetResult.h>
 #include <aws/wafv2/model/UpdateRuleGroupResult.h>
 #include <aws/wafv2/model/UpdateWebACLResult.h>
+#include <aws/wafv2/model/GetRuleGroupRequest.h>
 /* End of service model headers required in WAFV2Client header */
 
 namespace Aws
@@ -105,7 +106,7 @@ namespace Aws
 
   namespace WAFV2
   {
-    using WAFV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WAFV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WAFV2EndpointProviderBase = Aws::WAFV2::Endpoint::WAFV2EndpointProviderBase;
     using WAFV2EndpointProvider = Aws::WAFV2::Endpoint::WAFV2EndpointProvider;
 

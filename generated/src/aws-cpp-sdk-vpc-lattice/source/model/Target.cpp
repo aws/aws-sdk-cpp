@@ -25,10 +25,8 @@ Target::Target() :
 {
 }
 
-Target::Target(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+Target::Target(JsonView jsonValue)
+  : Target()
 {
   *this = jsonValue;
 }

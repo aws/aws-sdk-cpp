@@ -22,8 +22,8 @@ GetIdMappingJobResult::GetIdMappingJobResult() :
 {
 }
 
-GetIdMappingJobResult::GetIdMappingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(JobStatus::NOT_SET)
+GetIdMappingJobResult::GetIdMappingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIdMappingJobResult()
 {
   *this = result;
 }
@@ -53,6 +53,15 @@ GetIdMappingJobResult& GetIdMappingJobResult::operator =(const Aws::AmazonWebSer
   {
     m_metrics = jsonValue.GetObject("metrics");
 
+  }
+
+  if(jsonValue.ValueExists("outputSourceConfig"))
+  {
+    Aws::Utils::Array<JsonView> outputSourceConfigJsonList = jsonValue.GetArray("outputSourceConfig");
+    for(unsigned outputSourceConfigIndex = 0; outputSourceConfigIndex < outputSourceConfigJsonList.GetLength(); ++outputSourceConfigIndex)
+    {
+      m_outputSourceConfig.push_back(outputSourceConfigJsonList[outputSourceConfigIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("startTime"))

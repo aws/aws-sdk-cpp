@@ -22,8 +22,8 @@ GetProfileResult::GetProfileResult() :
 {
 }
 
-GetProfileResult::GetProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_logging(Logging::NOT_SET)
+GetProfileResult::GetProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProfileResult()
 {
   *this = result;
 }

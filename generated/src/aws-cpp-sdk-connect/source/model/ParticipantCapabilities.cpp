@@ -24,9 +24,8 @@ ParticipantCapabilities::ParticipantCapabilities() :
 {
 }
 
-ParticipantCapabilities::ParticipantCapabilities(JsonView jsonValue) : 
-    m_video(VideoCapability::NOT_SET),
-    m_videoHasBeenSet(false)
+ParticipantCapabilities::ParticipantCapabilities(JsonView jsonValue)
+  : ParticipantCapabilities()
 {
   *this = jsonValue;
 }

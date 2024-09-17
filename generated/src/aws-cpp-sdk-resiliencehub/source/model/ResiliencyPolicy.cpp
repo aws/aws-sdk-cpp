@@ -34,19 +34,8 @@ ResiliencyPolicy::ResiliencyPolicy() :
 {
 }
 
-ResiliencyPolicy::ResiliencyPolicy(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_dataLocationConstraint(DataLocationConstraint::NOT_SET),
-    m_dataLocationConstraintHasBeenSet(false),
-    m_estimatedCostTier(EstimatedCostTier::NOT_SET),
-    m_estimatedCostTierHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_policyDescriptionHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tier(ResiliencyPolicyTier::NOT_SET),
-    m_tierHasBeenSet(false)
+ResiliencyPolicy::ResiliencyPolicy(JsonView jsonValue)
+  : ResiliencyPolicy()
 {
   *this = jsonValue;
 }

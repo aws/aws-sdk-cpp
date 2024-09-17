@@ -33,43 +33,28 @@ namespace Model
     AWS_DIRECTCONNECT_API AcceptDirectConnectGatewayAssociationProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>Information about an association between a Direct Connect gateway and a
+     * virtual gateway or transit gateway.</p>
+     */
     inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const{ return m_directConnectGatewayAssociation; }
-
-    
     inline void SetDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { m_directConnectGatewayAssociation = value; }
-
-    
     inline void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { m_directConnectGatewayAssociation = std::move(value); }
-
-    
     inline AcceptDirectConnectGatewayAssociationProposalResult& WithDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { SetDirectConnectGatewayAssociation(value); return *this;}
-
-    
     inline AcceptDirectConnectGatewayAssociationProposalResult& WithDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { SetDirectConnectGatewayAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AcceptDirectConnectGatewayAssociationProposalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AcceptDirectConnectGatewayAssociationProposalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AcceptDirectConnectGatewayAssociationProposalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DirectConnectGatewayAssociation m_directConnectGatewayAssociation;

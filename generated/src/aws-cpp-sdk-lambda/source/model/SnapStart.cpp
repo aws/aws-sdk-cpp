@@ -24,9 +24,8 @@ SnapStart::SnapStart() :
 {
 }
 
-SnapStart::SnapStart(JsonView jsonValue) : 
-    m_applyOn(SnapStartApplyOn::NOT_SET),
-    m_applyOnHasBeenSet(false)
+SnapStart::SnapStart(JsonView jsonValue)
+  : SnapStart()
 {
   *this = jsonValue;
 }

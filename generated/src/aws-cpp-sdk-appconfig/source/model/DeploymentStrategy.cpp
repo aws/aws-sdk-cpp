@@ -37,21 +37,8 @@ DeploymentStrategy::DeploymentStrategy() :
 {
 }
 
-DeploymentStrategy::DeploymentStrategy(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deploymentDurationInMinutes(0),
-    m_deploymentDurationInMinutesHasBeenSet(false),
-    m_growthType(GrowthType::NOT_SET),
-    m_growthTypeHasBeenSet(false),
-    m_growthFactor(0.0),
-    m_growthFactorHasBeenSet(false),
-    m_finalBakeTimeInMinutes(0),
-    m_finalBakeTimeInMinutesHasBeenSet(false),
-    m_replicateTo(ReplicateTo::NOT_SET),
-    m_replicateToHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DeploymentStrategy::DeploymentStrategy(JsonView jsonValue)
+  : DeploymentStrategy()
 {
   *this = jsonValue;
 }

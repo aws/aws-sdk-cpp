@@ -37,54 +37,20 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
      * launching a new instance during drill, recovery or failback.</p>
      */
     inline const Aws::String& GetLaunchIntoEC2InstanceID() const{ return m_launchIntoEC2InstanceID; }
-
-    /**
-     * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
-     * launching a new instance during drill, recovery or failback.</p>
-     */
     inline bool LaunchIntoEC2InstanceIDHasBeenSet() const { return m_launchIntoEC2InstanceIDHasBeenSet; }
-
-    /**
-     * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
-     * launching a new instance during drill, recovery or failback.</p>
-     */
     inline void SetLaunchIntoEC2InstanceID(const Aws::String& value) { m_launchIntoEC2InstanceIDHasBeenSet = true; m_launchIntoEC2InstanceID = value; }
-
-    /**
-     * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
-     * launching a new instance during drill, recovery or failback.</p>
-     */
     inline void SetLaunchIntoEC2InstanceID(Aws::String&& value) { m_launchIntoEC2InstanceIDHasBeenSet = true; m_launchIntoEC2InstanceID = std::move(value); }
-
-    /**
-     * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
-     * launching a new instance during drill, recovery or failback.</p>
-     */
     inline void SetLaunchIntoEC2InstanceID(const char* value) { m_launchIntoEC2InstanceIDHasBeenSet = true; m_launchIntoEC2InstanceID.assign(value); }
-
-    /**
-     * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
-     * launching a new instance during drill, recovery or failback.</p>
-     */
     inline LaunchIntoInstanceProperties& WithLaunchIntoEC2InstanceID(const Aws::String& value) { SetLaunchIntoEC2InstanceID(value); return *this;}
-
-    /**
-     * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
-     * launching a new instance during drill, recovery or failback.</p>
-     */
     inline LaunchIntoInstanceProperties& WithLaunchIntoEC2InstanceID(Aws::String&& value) { SetLaunchIntoEC2InstanceID(std::move(value)); return *this;}
-
-    /**
-     * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
-     * launching a new instance during drill, recovery or failback.</p>
-     */
     inline LaunchIntoInstanceProperties& WithLaunchIntoEC2InstanceID(const char* value) { SetLaunchIntoEC2InstanceID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_launchIntoEC2InstanceID;

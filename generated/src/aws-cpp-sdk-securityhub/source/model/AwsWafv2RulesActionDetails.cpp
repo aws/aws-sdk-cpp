@@ -26,11 +26,8 @@ AwsWafv2RulesActionDetails::AwsWafv2RulesActionDetails() :
 {
 }
 
-AwsWafv2RulesActionDetails::AwsWafv2RulesActionDetails(JsonView jsonValue) : 
-    m_allowHasBeenSet(false),
-    m_blockHasBeenSet(false),
-    m_captchaHasBeenSet(false),
-    m_countHasBeenSet(false)
+AwsWafv2RulesActionDetails::AwsWafv2RulesActionDetails(JsonView jsonValue)
+  : AwsWafv2RulesActionDetails()
 {
   *this = jsonValue;
 }

@@ -35,46 +35,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * Unique ID of the channel.
      */
     inline const Aws::String& GetChannelId() const{ return m_channelId; }
-
-    /**
-     * Unique ID of the channel.
-     */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-
-    /**
-     * Unique ID of the channel.
-     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-
-    /**
-     * Unique ID of the channel.
-     */
     inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-
-    /**
-     * Unique ID of the channel.
-     */
     inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-
-    /**
-     * Unique ID of the channel.
-     */
     inline DeleteChannelRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-
-    /**
-     * Unique ID of the channel.
-     */
     inline DeleteChannelRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-
-    /**
-     * Unique ID of the channel.
-     */
     inline DeleteChannelRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelId;

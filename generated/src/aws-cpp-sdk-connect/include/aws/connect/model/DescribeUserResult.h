@@ -33,53 +33,27 @@ namespace Model
     AWS_CONNECT_API DescribeUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the user account and configuration settings.</p>
      */
     inline const User& GetUser() const{ return m_user; }
-
-    /**
-     * <p>Information about the user account and configuration settings.</p>
-     */
     inline void SetUser(const User& value) { m_user = value; }
-
-    /**
-     * <p>Information about the user account and configuration settings.</p>
-     */
     inline void SetUser(User&& value) { m_user = std::move(value); }
-
-    /**
-     * <p>Information about the user account and configuration settings.</p>
-     */
     inline DescribeUserResult& WithUser(const User& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>Information about the user account and configuration settings.</p>
-     */
     inline DescribeUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     User m_user;

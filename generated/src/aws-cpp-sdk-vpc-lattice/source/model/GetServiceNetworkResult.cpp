@@ -24,10 +24,8 @@ GetServiceNetworkResult::GetServiceNetworkResult() :
 {
 }
 
-GetServiceNetworkResult::GetServiceNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authType(AuthType::NOT_SET),
-    m_numberOfAssociatedServices(0),
-    m_numberOfAssociatedVPCs(0)
+GetServiceNetworkResult::GetServiceNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetServiceNetworkResult()
 {
   *this = result;
 }

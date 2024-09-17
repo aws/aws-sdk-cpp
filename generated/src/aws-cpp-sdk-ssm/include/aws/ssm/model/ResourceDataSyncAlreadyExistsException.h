@@ -38,30 +38,17 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetSyncName() const{ return m_syncName; }
-
-    
     inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
-
-    
     inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
-
-    
     inline void SetSyncName(Aws::String&& value) { m_syncNameHasBeenSet = true; m_syncName = std::move(value); }
-
-    
     inline void SetSyncName(const char* value) { m_syncNameHasBeenSet = true; m_syncName.assign(value); }
-
-    
     inline ResourceDataSyncAlreadyExistsException& WithSyncName(const Aws::String& value) { SetSyncName(value); return *this;}
-
-    
     inline ResourceDataSyncAlreadyExistsException& WithSyncName(Aws::String&& value) { SetSyncName(std::move(value)); return *this;}
-
-    
     inline ResourceDataSyncAlreadyExistsException& WithSyncName(const char* value) { SetSyncName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_syncName;

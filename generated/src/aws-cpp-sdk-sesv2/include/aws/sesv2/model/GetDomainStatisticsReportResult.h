@@ -41,113 +41,44 @@ namespace Model
     AWS_SESV2_API GetDomainStatisticsReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains deliverability metrics for the domain that you
      * specified. The data in this object is a summary of all of the data that was
      * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
      */
     inline const OverallVolume& GetOverallVolume() const{ return m_overallVolume; }
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. The data in this object is a summary of all of the data that was
-     * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-     */
     inline void SetOverallVolume(const OverallVolume& value) { m_overallVolume = value; }
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. The data in this object is a summary of all of the data that was
-     * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-     */
     inline void SetOverallVolume(OverallVolume&& value) { m_overallVolume = std::move(value); }
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. The data in this object is a summary of all of the data that was
-     * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-     */
     inline GetDomainStatisticsReportResult& WithOverallVolume(const OverallVolume& value) { SetOverallVolume(value); return *this;}
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. The data in this object is a summary of all of the data that was
-     * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-     */
     inline GetDomainStatisticsReportResult& WithOverallVolume(OverallVolume&& value) { SetOverallVolume(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains deliverability metrics for the domain that you
      * specified. This object contains data for each day, starting on the
      * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
      */
     inline const Aws::Vector<DailyVolume>& GetDailyVolumes() const{ return m_dailyVolumes; }
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. This object contains data for each day, starting on the
-     * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-     */
     inline void SetDailyVolumes(const Aws::Vector<DailyVolume>& value) { m_dailyVolumes = value; }
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. This object contains data for each day, starting on the
-     * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-     */
     inline void SetDailyVolumes(Aws::Vector<DailyVolume>&& value) { m_dailyVolumes = std::move(value); }
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. This object contains data for each day, starting on the
-     * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-     */
     inline GetDomainStatisticsReportResult& WithDailyVolumes(const Aws::Vector<DailyVolume>& value) { SetDailyVolumes(value); return *this;}
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. This object contains data for each day, starting on the
-     * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-     */
     inline GetDomainStatisticsReportResult& WithDailyVolumes(Aws::Vector<DailyVolume>&& value) { SetDailyVolumes(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. This object contains data for each day, starting on the
-     * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-     */
     inline GetDomainStatisticsReportResult& AddDailyVolumes(const DailyVolume& value) { m_dailyVolumes.push_back(value); return *this; }
-
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. This object contains data for each day, starting on the
-     * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-     */
     inline GetDomainStatisticsReportResult& AddDailyVolumes(DailyVolume&& value) { m_dailyVolumes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDomainStatisticsReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDomainStatisticsReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDomainStatisticsReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OverallVolume m_overallVolume;

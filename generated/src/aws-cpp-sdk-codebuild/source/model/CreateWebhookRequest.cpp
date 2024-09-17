@@ -17,7 +17,10 @@ CreateWebhookRequest::CreateWebhookRequest() :
     m_branchFilterHasBeenSet(false),
     m_filterGroupsHasBeenSet(false),
     m_buildType(WebhookBuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false)
+    m_buildTypeHasBeenSet(false),
+    m_manualCreation(false),
+    m_manualCreationHasBeenSet(false),
+    m_scopeConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,6 +59,18 @@ Aws::String CreateWebhookRequest::SerializePayload() const
   if(m_buildTypeHasBeenSet)
   {
    payload.WithString("buildType", WebhookBuildTypeMapper::GetNameForWebhookBuildType(m_buildType));
+  }
+
+  if(m_manualCreationHasBeenSet)
+  {
+   payload.WithBool("manualCreation", m_manualCreation);
+
+  }
+
+  if(m_scopeConfigurationHasBeenSet)
+  {
+   payload.WithObject("scopeConfiguration", m_scopeConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

@@ -39,55 +39,27 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The egress filter rules for the service mesh.</p>
      */
     inline const EgressFilter& GetEgressFilter() const{ return m_egressFilter; }
-
-    /**
-     * <p>The egress filter rules for the service mesh.</p>
-     */
     inline bool EgressFilterHasBeenSet() const { return m_egressFilterHasBeenSet; }
-
-    /**
-     * <p>The egress filter rules for the service mesh.</p>
-     */
     inline void SetEgressFilter(const EgressFilter& value) { m_egressFilterHasBeenSet = true; m_egressFilter = value; }
-
-    /**
-     * <p>The egress filter rules for the service mesh.</p>
-     */
     inline void SetEgressFilter(EgressFilter&& value) { m_egressFilterHasBeenSet = true; m_egressFilter = std::move(value); }
-
-    /**
-     * <p>The egress filter rules for the service mesh.</p>
-     */
     inline MeshSpec& WithEgressFilter(const EgressFilter& value) { SetEgressFilter(value); return *this;}
-
-    /**
-     * <p>The egress filter rules for the service mesh.</p>
-     */
     inline MeshSpec& WithEgressFilter(EgressFilter&& value) { SetEgressFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const MeshServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
-
-    
     inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
-
-    
     inline void SetServiceDiscovery(const MeshServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
-
-    
     inline void SetServiceDiscovery(MeshServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
-
-    
     inline MeshSpec& WithServiceDiscovery(const MeshServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
-
-    
     inline MeshSpec& WithServiceDiscovery(MeshServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EgressFilter m_egressFilter;

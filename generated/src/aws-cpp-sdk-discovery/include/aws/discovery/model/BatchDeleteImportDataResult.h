@@ -34,70 +34,30 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Error messages returned for each import task that you deleted as a response
      * for this command.</p>
      */
     inline const Aws::Vector<BatchDeleteImportDataError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>Error messages returned for each import task that you deleted as a response
-     * for this command.</p>
-     */
     inline void SetErrors(const Aws::Vector<BatchDeleteImportDataError>& value) { m_errors = value; }
-
-    /**
-     * <p>Error messages returned for each import task that you deleted as a response
-     * for this command.</p>
-     */
     inline void SetErrors(Aws::Vector<BatchDeleteImportDataError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>Error messages returned for each import task that you deleted as a response
-     * for this command.</p>
-     */
     inline BatchDeleteImportDataResult& WithErrors(const Aws::Vector<BatchDeleteImportDataError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>Error messages returned for each import task that you deleted as a response
-     * for this command.</p>
-     */
     inline BatchDeleteImportDataResult& WithErrors(Aws::Vector<BatchDeleteImportDataError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Error messages returned for each import task that you deleted as a response
-     * for this command.</p>
-     */
     inline BatchDeleteImportDataResult& AddErrors(const BatchDeleteImportDataError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>Error messages returned for each import task that you deleted as a response
-     * for this command.</p>
-     */
     inline BatchDeleteImportDataResult& AddErrors(BatchDeleteImportDataError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchDeleteImportDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchDeleteImportDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchDeleteImportDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchDeleteImportDataError> m_errors;

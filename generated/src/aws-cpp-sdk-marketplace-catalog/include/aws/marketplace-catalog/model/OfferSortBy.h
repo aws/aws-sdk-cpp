@@ -19,6 +19,7 @@ namespace Model
     EntityId,
     Name,
     ProductId,
+    ResaleAuthorizationId,
     ReleaseDate,
     AvailabilityEndDate,
     BuyerAccounts,

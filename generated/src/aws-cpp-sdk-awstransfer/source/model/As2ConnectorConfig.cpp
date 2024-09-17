@@ -36,21 +36,8 @@ As2ConnectorConfig::As2ConnectorConfig() :
 {
 }
 
-As2ConnectorConfig::As2ConnectorConfig(JsonView jsonValue) : 
-    m_localProfileIdHasBeenSet(false),
-    m_partnerProfileIdHasBeenSet(false),
-    m_messageSubjectHasBeenSet(false),
-    m_compression(CompressionEnum::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_encryptionAlgorithm(EncryptionAlg::NOT_SET),
-    m_encryptionAlgorithmHasBeenSet(false),
-    m_signingAlgorithm(SigningAlg::NOT_SET),
-    m_signingAlgorithmHasBeenSet(false),
-    m_mdnSigningAlgorithm(MdnSigningAlg::NOT_SET),
-    m_mdnSigningAlgorithmHasBeenSet(false),
-    m_mdnResponse(MdnResponse::NOT_SET),
-    m_mdnResponseHasBeenSet(false),
-    m_basicAuthSecretIdHasBeenSet(false)
+As2ConnectorConfig::As2ConnectorConfig(JsonView jsonValue)
+  : As2ConnectorConfig()
 {
   *this = jsonValue;
 }

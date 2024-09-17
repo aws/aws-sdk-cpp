@@ -23,8 +23,8 @@ RealTimeContactAnalysisCategoryDetails::RealTimeContactAnalysisCategoryDetails()
 {
 }
 
-RealTimeContactAnalysisCategoryDetails::RealTimeContactAnalysisCategoryDetails(JsonView jsonValue) : 
-    m_pointsOfInterestHasBeenSet(false)
+RealTimeContactAnalysisCategoryDetails::RealTimeContactAnalysisCategoryDetails(JsonView jsonValue)
+  : RealTimeContactAnalysisCategoryDetails()
 {
   *this = jsonValue;
 }

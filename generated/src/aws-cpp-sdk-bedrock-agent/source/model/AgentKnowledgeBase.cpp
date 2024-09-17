@@ -21,24 +21,17 @@ namespace Model
 AgentKnowledgeBase::AgentKnowledgeBase() : 
     m_agentIdHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
-    m_knowledgeBaseStateHasBeenSet(false)
+    m_knowledgeBaseStateHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
-AgentKnowledgeBase::AgentKnowledgeBase(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
-    m_knowledgeBaseStateHasBeenSet(false)
+AgentKnowledgeBase::AgentKnowledgeBase(JsonView jsonValue)
+  : AgentKnowledgeBase()
 {
   *this = jsonValue;
 }
@@ -59,11 +52,11 @@ AgentKnowledgeBase& AgentKnowledgeBase::operator =(JsonView jsonValue)
     m_agentVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("knowledgeBaseId"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_createdAt = jsonValue.GetString("createdAt");
 
-    m_knowledgeBaseIdHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -73,18 +66,11 @@ AgentKnowledgeBase& AgentKnowledgeBase::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("knowledgeBaseId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
 
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-
-    m_updatedAtHasBeenSet = true;
+    m_knowledgeBaseIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("knowledgeBaseState"))
@@ -92,6 +78,13 @@ AgentKnowledgeBase& AgentKnowledgeBase::operator =(JsonView jsonValue)
     m_knowledgeBaseState = KnowledgeBaseStateMapper::GetKnowledgeBaseStateForName(jsonValue.GetString("knowledgeBaseState"));
 
     m_knowledgeBaseStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   return *this;
@@ -113,10 +106,9 @@ JsonValue AgentKnowledgeBase::Jsonize() const
 
   }
 
-  if(m_knowledgeBaseIdHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)
@@ -125,19 +117,20 @@ JsonValue AgentKnowledgeBase::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_knowledgeBaseIdHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_knowledgeBaseStateHasBeenSet)
   {
    payload.WithString("knowledgeBaseState", KnowledgeBaseStateMapper::GetNameForKnowledgeBaseState(m_knowledgeBaseState));
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

@@ -33,18 +33,8 @@ AcceptedTerm::AcceptedTerm() :
 {
 }
 
-AcceptedTerm::AcceptedTerm(JsonView jsonValue) : 
-    m_byolPricingTermHasBeenSet(false),
-    m_configurableUpfrontPricingTermHasBeenSet(false),
-    m_fixedUpfrontPricingTermHasBeenSet(false),
-    m_freeTrialPricingTermHasBeenSet(false),
-    m_legalTermHasBeenSet(false),
-    m_paymentScheduleTermHasBeenSet(false),
-    m_recurringPaymentTermHasBeenSet(false),
-    m_renewalTermHasBeenSet(false),
-    m_supportTermHasBeenSet(false),
-    m_usageBasedPricingTermHasBeenSet(false),
-    m_validityTermHasBeenSet(false)
+AcceptedTerm::AcceptedTerm(JsonView jsonValue)
+  : AcceptedTerm()
 {
   *this = jsonValue;
 }

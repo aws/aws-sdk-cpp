@@ -56,41 +56,8 @@ StreamingSession::StreamingSession() :
 {
 }
 
-StreamingSession::StreamingSession(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_automaticTerminationMode(AutomaticTerminationMode::NOT_SET),
-    m_automaticTerminationModeHasBeenSet(false),
-    m_backupMode(SessionBackupMode::NOT_SET),
-    m_backupModeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_ec2InstanceTypeHasBeenSet(false),
-    m_launchProfileIdHasBeenSet(false),
-    m_maxBackupsToRetain(0),
-    m_maxBackupsToRetainHasBeenSet(false),
-    m_ownedByHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sessionPersistenceMode(SessionPersistenceMode::NOT_SET),
-    m_sessionPersistenceModeHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_startedFromBackupIdHasBeenSet(false),
-    m_state(StreamingSessionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(StreamingSessionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_stopAtHasBeenSet(false),
-    m_stoppedAtHasBeenSet(false),
-    m_stoppedByHasBeenSet(false),
-    m_streamingImageIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_terminateAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_volumeConfigurationHasBeenSet(false),
-    m_volumeRetentionMode(VolumeRetentionMode::NOT_SET),
-    m_volumeRetentionModeHasBeenSet(false)
+StreamingSession::StreamingSession(JsonView jsonValue)
+  : StreamingSession()
 {
   *this = jsonValue;
 }

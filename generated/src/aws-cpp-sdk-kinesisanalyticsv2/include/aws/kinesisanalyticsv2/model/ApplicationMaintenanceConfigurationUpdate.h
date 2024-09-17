@@ -38,46 +38,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The updated start time for the maintenance window.</p>
      */
     inline const Aws::String& GetApplicationMaintenanceWindowStartTimeUpdate() const{ return m_applicationMaintenanceWindowStartTimeUpdate; }
-
-    /**
-     * <p>The updated start time for the maintenance window.</p>
-     */
     inline bool ApplicationMaintenanceWindowStartTimeUpdateHasBeenSet() const { return m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet; }
-
-    /**
-     * <p>The updated start time for the maintenance window.</p>
-     */
     inline void SetApplicationMaintenanceWindowStartTimeUpdate(const Aws::String& value) { m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet = true; m_applicationMaintenanceWindowStartTimeUpdate = value; }
-
-    /**
-     * <p>The updated start time for the maintenance window.</p>
-     */
     inline void SetApplicationMaintenanceWindowStartTimeUpdate(Aws::String&& value) { m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet = true; m_applicationMaintenanceWindowStartTimeUpdate = std::move(value); }
-
-    /**
-     * <p>The updated start time for the maintenance window.</p>
-     */
     inline void SetApplicationMaintenanceWindowStartTimeUpdate(const char* value) { m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet = true; m_applicationMaintenanceWindowStartTimeUpdate.assign(value); }
-
-    /**
-     * <p>The updated start time for the maintenance window.</p>
-     */
     inline ApplicationMaintenanceConfigurationUpdate& WithApplicationMaintenanceWindowStartTimeUpdate(const Aws::String& value) { SetApplicationMaintenanceWindowStartTimeUpdate(value); return *this;}
-
-    /**
-     * <p>The updated start time for the maintenance window.</p>
-     */
     inline ApplicationMaintenanceConfigurationUpdate& WithApplicationMaintenanceWindowStartTimeUpdate(Aws::String&& value) { SetApplicationMaintenanceWindowStartTimeUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>The updated start time for the maintenance window.</p>
-     */
     inline ApplicationMaintenanceConfigurationUpdate& WithApplicationMaintenanceWindowStartTimeUpdate(const char* value) { SetApplicationMaintenanceWindowStartTimeUpdate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationMaintenanceWindowStartTimeUpdate;

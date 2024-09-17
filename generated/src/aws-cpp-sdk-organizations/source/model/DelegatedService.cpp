@@ -24,9 +24,8 @@ DelegatedService::DelegatedService() :
 {
 }
 
-DelegatedService::DelegatedService(JsonView jsonValue) : 
-    m_servicePrincipalHasBeenSet(false),
-    m_delegationEnabledDateHasBeenSet(false)
+DelegatedService::DelegatedService(JsonView jsonValue)
+  : DelegatedService()
 {
   *this = jsonValue;
 }

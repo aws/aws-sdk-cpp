@@ -24,9 +24,8 @@ StateMachineVersionListItem::StateMachineVersionListItem() :
 {
 }
 
-StateMachineVersionListItem::StateMachineVersionListItem(JsonView jsonValue) : 
-    m_stateMachineVersionArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+StateMachineVersionListItem::StateMachineVersionListItem(JsonView jsonValue)
+  : StateMachineVersionListItem()
 {
   *this = jsonValue;
 }

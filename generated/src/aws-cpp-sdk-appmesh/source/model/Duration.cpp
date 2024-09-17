@@ -26,11 +26,8 @@ Duration::Duration() :
 {
 }
 
-Duration::Duration(JsonView jsonValue) : 
-    m_unit(DurationUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+Duration::Duration(JsonView jsonValue)
+  : Duration()
 {
   *this = jsonValue;
 }

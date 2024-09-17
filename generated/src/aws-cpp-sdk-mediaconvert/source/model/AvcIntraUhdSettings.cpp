@@ -24,9 +24,8 @@ AvcIntraUhdSettings::AvcIntraUhdSettings() :
 {
 }
 
-AvcIntraUhdSettings::AvcIntraUhdSettings(JsonView jsonValue) : 
-    m_qualityTuningLevel(AvcIntraUhdQualityTuningLevel::NOT_SET),
-    m_qualityTuningLevelHasBeenSet(false)
+AvcIntraUhdSettings::AvcIntraUhdSettings(JsonView jsonValue)
+  : AvcIntraUhdSettings()
 {
   *this = jsonValue;
 }

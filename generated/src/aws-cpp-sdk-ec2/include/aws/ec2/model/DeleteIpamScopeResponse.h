@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteIpamScopeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the results of the deletion.</p>
      */
     inline const IpamScope& GetIpamScope() const{ return m_ipamScope; }
-
-    /**
-     * <p>Information about the results of the deletion.</p>
-     */
     inline void SetIpamScope(const IpamScope& value) { m_ipamScope = value; }
-
-    /**
-     * <p>Information about the results of the deletion.</p>
-     */
     inline void SetIpamScope(IpamScope&& value) { m_ipamScope = std::move(value); }
-
-    /**
-     * <p>Information about the results of the deletion.</p>
-     */
     inline DeleteIpamScopeResponse& WithIpamScope(const IpamScope& value) { SetIpamScope(value); return *this;}
-
-    /**
-     * <p>Information about the results of the deletion.</p>
-     */
     inline DeleteIpamScopeResponse& WithIpamScope(IpamScope&& value) { SetIpamScope(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteIpamScopeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteIpamScopeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IpamScope m_ipamScope;

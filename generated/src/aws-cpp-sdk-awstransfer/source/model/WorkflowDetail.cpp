@@ -24,9 +24,8 @@ WorkflowDetail::WorkflowDetail() :
 {
 }
 
-WorkflowDetail::WorkflowDetail(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false),
-    m_executionRoleHasBeenSet(false)
+WorkflowDetail::WorkflowDetail(JsonView jsonValue)
+  : WorkflowDetail()
 {
   *this = jsonValue;
 }

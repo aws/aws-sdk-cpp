@@ -23,8 +23,8 @@ UsernameField::UsernameField() :
 {
 }
 
-UsernameField::UsernameField(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false)
+UsernameField::UsernameField(JsonView jsonValue)
+  : UsernameField()
 {
   *this = jsonValue;
 }

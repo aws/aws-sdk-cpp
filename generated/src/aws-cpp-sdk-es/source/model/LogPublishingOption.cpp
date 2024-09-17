@@ -25,10 +25,8 @@ LogPublishingOption::LogPublishingOption() :
 {
 }
 
-LogPublishingOption::LogPublishingOption(JsonView jsonValue) : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+LogPublishingOption::LogPublishingOption(JsonView jsonValue)
+  : LogPublishingOption()
 {
   *this = jsonValue;
 }

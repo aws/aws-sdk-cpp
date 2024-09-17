@@ -23,8 +23,8 @@ ImageFrameInformation::ImageFrameInformation() :
 {
 }
 
-ImageFrameInformation::ImageFrameInformation(JsonView jsonValue) : 
-    m_imageFrameIdHasBeenSet(false)
+ImageFrameInformation::ImageFrameInformation(JsonView jsonValue)
+  : ImageFrameInformation()
 {
   *this = jsonValue;
 }

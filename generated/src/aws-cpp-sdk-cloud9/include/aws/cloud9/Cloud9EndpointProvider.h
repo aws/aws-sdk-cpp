@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using Cloud9ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using Cloud9ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using Cloud9ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Cloud9BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -29,14 +29,8 @@ ResourceInventory::ResourceInventory() :
 {
 }
 
-ResourceInventory::ResourceInventory(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_resourceOwningAccountIdHasBeenSet(false)
+ResourceInventory::ResourceInventory(JsonView jsonValue)
+  : ResourceInventory()
 {
   *this = jsonValue;
 }

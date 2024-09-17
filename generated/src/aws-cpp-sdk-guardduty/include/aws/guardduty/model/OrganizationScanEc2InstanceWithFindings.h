@@ -38,42 +38,18 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
      * the organization.</p>
      */
     inline const OrganizationEbsVolumes& GetEbsVolumes() const{ return m_ebsVolumes; }
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline void SetEbsVolumes(const OrganizationEbsVolumes& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline void SetEbsVolumes(OrganizationEbsVolumes&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::move(value); }
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline OrganizationScanEc2InstanceWithFindings& WithEbsVolumes(const OrganizationEbsVolumes& value) { SetEbsVolumes(value); return *this;}
-
-    /**
-     * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
-     * the organization.</p>
-     */
     inline OrganizationScanEc2InstanceWithFindings& WithEbsVolumes(OrganizationEbsVolumes&& value) { SetEbsVolumes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OrganizationEbsVolumes m_ebsVolumes;

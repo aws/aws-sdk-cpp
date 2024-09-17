@@ -29,14 +29,8 @@ ThemeVersionSummary::ThemeVersionSummary() :
 {
 }
 
-ThemeVersionSummary::ThemeVersionSummary(JsonView jsonValue) : 
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ThemeVersionSummary::ThemeVersionSummary(JsonView jsonValue)
+  : ThemeVersionSummary()
 {
   *this = jsonValue;
 }

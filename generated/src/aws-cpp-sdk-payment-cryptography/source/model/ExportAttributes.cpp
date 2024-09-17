@@ -25,10 +25,8 @@ ExportAttributes::ExportAttributes() :
 {
 }
 
-ExportAttributes::ExportAttributes(JsonView jsonValue) : 
-    m_exportDukptInitialKeyHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false)
+ExportAttributes::ExportAttributes(JsonView jsonValue)
+  : ExportAttributes()
 {
   *this = jsonValue;
 }

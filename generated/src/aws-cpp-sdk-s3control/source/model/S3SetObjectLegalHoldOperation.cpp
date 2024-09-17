@@ -25,8 +25,8 @@ S3SetObjectLegalHoldOperation::S3SetObjectLegalHoldOperation() :
 {
 }
 
-S3SetObjectLegalHoldOperation::S3SetObjectLegalHoldOperation(const XmlNode& xmlNode) : 
-    m_legalHoldHasBeenSet(false)
+S3SetObjectLegalHoldOperation::S3SetObjectLegalHoldOperation(const XmlNode& xmlNode)
+  : S3SetObjectLegalHoldOperation()
 {
   *this = xmlNode;
 }

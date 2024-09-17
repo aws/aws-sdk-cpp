@@ -28,13 +28,8 @@ ImpersonationRole::ImpersonationRole() :
 {
 }
 
-ImpersonationRole::ImpersonationRole(JsonView jsonValue) : 
-    m_impersonationRoleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ImpersonationRoleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
+ImpersonationRole::ImpersonationRole(JsonView jsonValue)
+  : ImpersonationRole()
 {
   *this = jsonValue;
 }

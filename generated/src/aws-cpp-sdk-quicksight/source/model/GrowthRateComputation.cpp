@@ -28,13 +28,8 @@ GrowthRateComputation::GrowthRateComputation() :
 {
 }
 
-GrowthRateComputation::GrowthRateComputation(JsonView jsonValue) : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_periodSize(0),
-    m_periodSizeHasBeenSet(false)
+GrowthRateComputation::GrowthRateComputation(JsonView jsonValue)
+  : GrowthRateComputation()
 {
   *this = jsonValue;
 }

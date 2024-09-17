@@ -37,117 +37,45 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>One or more instance IDs. You can specify up to 50 instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline SetInstanceProtectionRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline SetInstanceProtectionRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline SetInstanceProtectionRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline SetInstanceProtectionRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more instance IDs. You can specify up to 50 instances.</p>
-     */
     inline SetInstanceProtectionRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline SetInstanceProtectionRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline SetInstanceProtectionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline SetInstanceProtectionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the instance is protected from termination by Amazon EC2
      * Auto Scaling when scaling in.</p>
      */
     inline bool GetProtectedFromScaleIn() const{ return m_protectedFromScaleIn; }
-
-    /**
-     * <p>Indicates whether the instance is protected from termination by Amazon EC2
-     * Auto Scaling when scaling in.</p>
-     */
     inline bool ProtectedFromScaleInHasBeenSet() const { return m_protectedFromScaleInHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the instance is protected from termination by Amazon EC2
-     * Auto Scaling when scaling in.</p>
-     */
     inline void SetProtectedFromScaleIn(bool value) { m_protectedFromScaleInHasBeenSet = true; m_protectedFromScaleIn = value; }
-
-    /**
-     * <p>Indicates whether the instance is protected from termination by Amazon EC2
-     * Auto Scaling when scaling in.</p>
-     */
     inline SetInstanceProtectionRequest& WithProtectedFromScaleIn(bool value) { SetProtectedFromScaleIn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;

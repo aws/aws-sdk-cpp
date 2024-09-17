@@ -39,6 +39,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -46,287 +47,94 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateFpgaImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
      * be a tarball.</p>
      */
     inline const StorageLocation& GetInputStorageLocation() const{ return m_inputStorageLocation; }
-
-    /**
-     * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
-     * be a tarball.</p>
-     */
     inline bool InputStorageLocationHasBeenSet() const { return m_inputStorageLocationHasBeenSet; }
-
-    /**
-     * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
-     * be a tarball.</p>
-     */
     inline void SetInputStorageLocation(const StorageLocation& value) { m_inputStorageLocationHasBeenSet = true; m_inputStorageLocation = value; }
-
-    /**
-     * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
-     * be a tarball.</p>
-     */
     inline void SetInputStorageLocation(StorageLocation&& value) { m_inputStorageLocationHasBeenSet = true; m_inputStorageLocation = std::move(value); }
-
-    /**
-     * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
-     * be a tarball.</p>
-     */
     inline CreateFpgaImageRequest& WithInputStorageLocation(const StorageLocation& value) { SetInputStorageLocation(value); return *this;}
-
-    /**
-     * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
-     * be a tarball.</p>
-     */
     inline CreateFpgaImageRequest& WithInputStorageLocation(StorageLocation&& value) { SetInputStorageLocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location in Amazon S3 for the output logs.</p>
      */
     inline const StorageLocation& GetLogsStorageLocation() const{ return m_logsStorageLocation; }
-
-    /**
-     * <p>The location in Amazon S3 for the output logs.</p>
-     */
     inline bool LogsStorageLocationHasBeenSet() const { return m_logsStorageLocationHasBeenSet; }
-
-    /**
-     * <p>The location in Amazon S3 for the output logs.</p>
-     */
     inline void SetLogsStorageLocation(const StorageLocation& value) { m_logsStorageLocationHasBeenSet = true; m_logsStorageLocation = value; }
-
-    /**
-     * <p>The location in Amazon S3 for the output logs.</p>
-     */
     inline void SetLogsStorageLocation(StorageLocation&& value) { m_logsStorageLocationHasBeenSet = true; m_logsStorageLocation = std::move(value); }
-
-    /**
-     * <p>The location in Amazon S3 for the output logs.</p>
-     */
     inline CreateFpgaImageRequest& WithLogsStorageLocation(const StorageLocation& value) { SetLogsStorageLocation(value); return *this;}
-
-    /**
-     * <p>The location in Amazon S3 for the output logs.</p>
-     */
     inline CreateFpgaImageRequest& WithLogsStorageLocation(StorageLocation&& value) { SetLogsStorageLocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description for the AFI.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the AFI.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description for the AFI.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the AFI.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the AFI.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for the AFI.</p>
-     */
     inline CreateFpgaImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the AFI.</p>
-     */
     inline CreateFpgaImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the AFI.</p>
-     */
     inline CreateFpgaImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A name for the AFI.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name for the AFI.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name for the AFI.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name for the AFI.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name for the AFI.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name for the AFI.</p>
-     */
     inline CreateFpgaImageRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name for the AFI.</p>
-     */
     inline CreateFpgaImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the AFI.</p>
-     */
     inline CreateFpgaImageRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline CreateFpgaImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline CreateFpgaImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
     inline CreateFpgaImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to apply to the FPGA image during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags to apply to the FPGA image during creation.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags to apply to the FPGA image during creation.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags to apply to the FPGA image during creation.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags to apply to the FPGA image during creation.</p>
-     */
     inline CreateFpgaImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags to apply to the FPGA image during creation.</p>
-     */
     inline CreateFpgaImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to apply to the FPGA image during creation.</p>
-     */
     inline CreateFpgaImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to apply to the FPGA image during creation.</p>
-     */
     inline CreateFpgaImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_dryRun;

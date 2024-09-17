@@ -23,8 +23,8 @@ BackendDefaults::BackendDefaults() :
 {
 }
 
-BackendDefaults::BackendDefaults(JsonView jsonValue) : 
-    m_clientPolicyHasBeenSet(false)
+BackendDefaults::BackendDefaults(JsonView jsonValue)
+  : BackendDefaults()
 {
   *this = jsonValue;
 }

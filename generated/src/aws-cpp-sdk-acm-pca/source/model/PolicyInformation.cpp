@@ -24,9 +24,8 @@ PolicyInformation::PolicyInformation() :
 {
 }
 
-PolicyInformation::PolicyInformation(JsonView jsonValue) : 
-    m_certPolicyIdHasBeenSet(false),
-    m_policyQualifiersHasBeenSet(false)
+PolicyInformation::PolicyInformation(JsonView jsonValue)
+  : PolicyInformation()
 {
   *this = jsonValue;
 }

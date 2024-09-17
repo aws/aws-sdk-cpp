@@ -5,12 +5,14 @@
     "endpointPrefix":"inspector2",
     "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceAbbreviation":"Inspector2",
     "serviceFullName":"Inspector2",
     "serviceId":"Inspector2",
     "signatureVersion":"v4",
     "signingName":"inspector2",
-    "uid":"inspector2-2020-06-08"
+    "uid":"inspector2-2020-06-08",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AssociateMember":{
@@ -400,6 +402,7 @@
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Retrieves a CIS scan report.</p>"
@@ -1058,7 +1061,7 @@
       "members":{
         "message":{"shape":"String"}
       },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
+      "documentation":"<p>You do not have sufficient access to perform this action.</p> <p> For <code>Enable</code>, you receive this error if you attempt to use a feature in an unsupported Amazon Web Services Region. </p>",
       "error":{
         "httpStatusCode":403,
         "senderFault":true
@@ -1116,6 +1119,14 @@
         "accountId":{
           "shape":"AccountId",
           "documentation":"<p>The Amazon Web Services account ID.</p>"
+        },
+        "exploitAvailableCount":{
+          "shape":"Long",
+          "documentation":"<p> The number of findings that have an exploit available. </p>"
+        },
+        "fixAvailableCount":{
+          "shape":"Long",
+          "documentation":"<p> Details about the number of fixes. </p>"
         },
         "severityCounts":{
           "shape":"SeverityCounts",
@@ -2045,6 +2056,13 @@
     "CisOwnerId":{
       "type":"string",
       "pattern":"^\\d{12}|o-[a-z0-9]{10,32}$"
+    },
+    "CisReportFormat":{
+      "type":"string",
+      "enum":[
+        "PDF",
+        "CSV"
+      ]
     },
     "CisReportStatus":{
       "type":"string",
@@ -3029,6 +3047,10 @@
           "shape":"CoverageStringFilterList",
           "documentation":"<p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>"
         },
+        "scanMode":{
+          "shape":"CoverageStringFilterList",
+          "documentation":"<p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>"
+        },
         "scanStatusCode":{
           "shape":"CoverageStringFilterList",
           "documentation":"<p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>"
@@ -3149,6 +3171,10 @@
         "resourceType":{
           "shape":"CoverageResourceType",
           "documentation":"<p>The type of the covered resource.</p>"
+        },
+        "scanMode":{
+          "shape":"ScanMode",
+          "documentation":"<p>The scan method that is applied to the instance.</p>"
         },
         "scanStatus":{
           "shape":"ScanStatus",
@@ -3731,6 +3757,27 @@
       "type":"double",
       "box":true
     },
+    "Ec2Configuration":{
+      "type":"structure",
+      "required":["scanMode"],
+      "members":{
+        "scanMode":{
+          "shape":"Ec2ScanMode",
+          "documentation":"<p>The scan method that is applied to the instance.</p>"
+        }
+      },
+      "documentation":"<p>Enables agent-based scanning, which scans instances that are not managed by SSM.</p>"
+    },
+    "Ec2ConfigurationState":{
+      "type":"structure",
+      "members":{
+        "scanModeState":{
+          "shape":"Ec2ScanModeState",
+          "documentation":"<p>An object that contains details about the state of the Amazon EC2 scan mode.</p>"
+        }
+      },
+      "documentation":"<p>Details about the state of the EC2 scan configuration for your environment.</p>"
+    },
     "Ec2DeepInspectionStatus":{
       "type":"string",
       "enum":[
@@ -3839,6 +3886,34 @@
         "LINUX",
         "UNKNOWN",
         "MACOS"
+      ]
+    },
+    "Ec2ScanMode":{
+      "type":"string",
+      "enum":[
+        "EC2_SSM_AGENT_BASED",
+        "EC2_HYBRID"
+      ]
+    },
+    "Ec2ScanModeState":{
+      "type":"structure",
+      "members":{
+        "scanMode":{
+          "shape":"Ec2ScanMode",
+          "documentation":"<p>The scan method that is applied to the instance.</p>"
+        },
+        "scanModeStatus":{
+          "shape":"Ec2ScanModeStatus",
+          "documentation":"<p>The status of the Amazon EC2 scan mode setting.</p>"
+        }
+      },
+      "documentation":"<p>The state of your Amazon EC2 scan mode configuration.</p>"
+    },
+    "Ec2ScanModeStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCESS",
+        "PENDING"
       ]
     },
     "EcrConfiguration":{
@@ -4059,7 +4134,9 @@
         "EVENTBRIDGE_THROTTLED",
         "RESOURCE_SCAN_NOT_DISABLED",
         "DISASSOCIATE_ALL_MEMBERS",
-        "ACCOUNT_IS_ISOLATED"
+        "ACCOUNT_IS_ISOLATED",
+        "EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED",
+        "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED"
       ]
     },
     "ErrorMessage":{"type":"string"},
@@ -4533,7 +4610,7 @@
         },
         "lastObservedAt":{
           "shape":"DateTimeTimestamp",
-          "documentation":"<p>The date and time that the finding was last observed.</p>"
+          "documentation":"<p> The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding is updated. </p>"
         },
         "networkReachabilityDetails":{
           "shape":"NetworkReachabilityDetails",
@@ -4728,6 +4805,14 @@
           "shape":"AccountId",
           "documentation":"<p>The ID of the Amazon Web Services account associated with the findings.</p>"
         },
+        "exploitAvailableCount":{
+          "shape":"Long",
+          "documentation":"<p>The number of findings that have an exploit available.</p>"
+        },
+        "fixAvailableCount":{
+          "shape":"Long",
+          "documentation":"<p> Details about the number of fixes. </p>"
+        },
         "severityCounts":{
           "shape":"SeverityCounts",
           "documentation":"<p>The value to sort results by.</p>"
@@ -4864,6 +4949,10 @@
       "type":"structure",
       "required":["scanArn"],
       "members":{
+        "reportFormat":{
+          "shape":"CisReportFormat",
+          "documentation":"<p> The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>. </p>"
+        },
         "scanArn":{
           "shape":"CisScanArn",
           "documentation":"<p>The scan ARN.</p>"
@@ -4883,7 +4972,7 @@
         },
         "url":{
           "shape":"String",
-          "documentation":"<p> The URL where the CIS scan report PDF can be downloaded. </p>"
+          "documentation":"<p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>"
         }
       }
     },
@@ -4956,6 +5045,10 @@
     "GetConfigurationResponse":{
       "type":"structure",
       "members":{
+        "ec2Configuration":{
+          "shape":"Ec2ConfigurationState",
+          "documentation":"<p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>"
+        },
         "ecrConfiguration":{
           "shape":"EcrConfigurationState",
           "documentation":"<p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>"
@@ -7098,6 +7191,13 @@
         "SPDX_2_3"
       ]
     },
+    "ScanMode":{
+      "type":"string",
+      "enum":[
+        "EC2_SSM_AGENT_BASED",
+        "EC2_AGENTLESS"
+      ]
+    },
     "ScanStatus":{
       "type":"structure",
       "required":[
@@ -7149,7 +7249,9 @@
         "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
         "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
         "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
-        "DEEP_INSPECTION_NO_INVENTORY"
+        "DEEP_INSPECTION_NO_INVENTORY",
+        "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED",
+        "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED"
       ]
     },
     "ScanType":{
@@ -7768,7 +7870,7 @@
     },
     "TagValueList":{
       "type":"list",
-      "member":{"shape":"String"},
+      "member":{"shape":"TargetResourceTagsValue"},
       "max":5,
       "min":1
     },
@@ -7789,9 +7891,20 @@
     },
     "TargetResourceTags":{
       "type":"map",
-      "key":{"shape":"NonEmptyString"},
+      "key":{"shape":"TargetResourceTagsKey"},
       "value":{"shape":"TagValueList"},
       "max":5,
+      "min":1
+    },
+    "TargetResourceTagsKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^[\\p{L}\\p{Z}\\p{N}_.:/=\\-@]*$"
+    },
+    "TargetResourceTagsValue":{
+      "type":"string",
+      "max":256,
       "min":1
     },
     "TargetStatusFilterList":{
@@ -8026,8 +8139,11 @@
     },
     "UpdateConfigurationRequest":{
       "type":"structure",
-      "required":["ecrConfiguration"],
       "members":{
+        "ec2Configuration":{
+          "shape":"Ec2Configuration",
+          "documentation":"<p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>"
+        },
         "ecrConfiguration":{
           "shape":"EcrConfiguration",
           "documentation":"<p>Specifies how the ECR automated re-scan will be updated for your environment.</p>"

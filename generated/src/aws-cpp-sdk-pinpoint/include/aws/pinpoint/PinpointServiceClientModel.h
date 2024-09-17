@@ -138,6 +138,9 @@
 #include <aws/pinpoint/model/UpdateVoiceChannelResult.h>
 #include <aws/pinpoint/model/UpdateVoiceTemplateResult.h>
 #include <aws/pinpoint/model/VerifyOTPMessageResult.h>
+#include <aws/pinpoint/model/ListTemplatesRequest.h>
+#include <aws/pinpoint/model/GetAppsRequest.h>
+#include <aws/pinpoint/model/GetRecommenderConfigurationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PinpointClient header */
 
@@ -172,7 +175,7 @@ namespace Aws
 
   namespace Pinpoint
   {
-    using PinpointClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PinpointClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PinpointEndpointProviderBase = Aws::Pinpoint::Endpoint::PinpointEndpointProviderBase;
     using PinpointEndpointProvider = Aws::Pinpoint::Endpoint::PinpointEndpointProvider;
 

@@ -23,9 +23,8 @@ RequestSenderIdResult::RequestSenderIdResult() :
 {
 }
 
-RequestSenderIdResult::RequestSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deletionProtectionEnabled(false),
-    m_registered(false)
+RequestSenderIdResult::RequestSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RequestSenderIdResult()
 {
   *this = result;
 }

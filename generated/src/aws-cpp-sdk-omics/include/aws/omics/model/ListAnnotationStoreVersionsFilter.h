@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> Use filters to focus the returned annotation store versions on a specific
-   * parameter, such as the status of the annotation store. </p><p><h3>See Also:</h3>
+   * <p>Use filters to focus the returned annotation store versions on a specific
+   * parameter, such as the status of the annotation store.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersionsFilter">AWS
    * API Reference</a></p>
@@ -39,36 +39,17 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p> The status of an annotation store version. </p>
+     * <p>The status of an annotation store version.</p>
      */
     inline const VersionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The status of an annotation store version. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The status of an annotation store version. </p>
-     */
     inline void SetStatus(const VersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The status of an annotation store version. </p>
-     */
     inline void SetStatus(VersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The status of an annotation store version. </p>
-     */
     inline ListAnnotationStoreVersionsFilter& WithStatus(const VersionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The status of an annotation store version. </p>
-     */
     inline ListAnnotationStoreVersionsFilter& WithStatus(VersionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VersionStatus m_status;

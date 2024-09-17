@@ -24,9 +24,8 @@ BadRequestException::BadRequestException() :
 {
 }
 
-BadRequestException::BadRequestException(JsonView jsonValue) : 
-    m_invalidParameterHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BadRequestException::BadRequestException(JsonView jsonValue)
+  : BadRequestException()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Integrations::Integrations() :
 {
 }
 
-Integrations::Integrations(JsonView jsonValue) : 
-    m_resourceGroupHasBeenSet(false),
-    m_applicationTagResourceGroupHasBeenSet(false)
+Integrations::Integrations(JsonView jsonValue)
+  : Integrations()
 {
   *this = jsonValue;
 }

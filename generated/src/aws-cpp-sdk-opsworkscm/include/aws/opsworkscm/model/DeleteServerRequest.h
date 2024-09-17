@@ -34,46 +34,19 @@ namespace Model
     AWS_OPSWORKSCM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the server to delete.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
-
-    /**
-     * <p>The ID of the server to delete.</p>
-     */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-
-    /**
-     * <p>The ID of the server to delete.</p>
-     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-
-    /**
-     * <p>The ID of the server to delete.</p>
-     */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-
-    /**
-     * <p>The ID of the server to delete.</p>
-     */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-
-    /**
-     * <p>The ID of the server to delete.</p>
-     */
     inline DeleteServerRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-
-    /**
-     * <p>The ID of the server to delete.</p>
-     */
     inline DeleteServerRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the server to delete.</p>
-     */
     inline DeleteServerRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverName;

@@ -31,16 +31,8 @@ VocabularySummary::VocabularySummary() :
 {
 }
 
-VocabularySummary::VocabularySummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_state(VocabularyState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+VocabularySummary::VocabularySummary(JsonView jsonValue)
+  : VocabularySummary()
 {
   *this = jsonValue;
 }

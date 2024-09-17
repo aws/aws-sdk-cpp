@@ -23,8 +23,8 @@ ArchiveRetainRule::ArchiveRetainRule() :
 {
 }
 
-ArchiveRetainRule::ArchiveRetainRule(JsonView jsonValue) : 
-    m_retentionArchiveTierHasBeenSet(false)
+ArchiveRetainRule::ArchiveRetainRule(JsonView jsonValue)
+  : ArchiveRetainRule()
 {
   *this = jsonValue;
 }

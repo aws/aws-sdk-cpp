@@ -34,54 +34,20 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of an existing webhook created with PutWebhook to register with a
      * supported third party. </p>
      */
     inline const Aws::String& GetWebhookName() const{ return m_webhookName; }
-
-    /**
-     * <p>The name of an existing webhook created with PutWebhook to register with a
-     * supported third party. </p>
-     */
     inline bool WebhookNameHasBeenSet() const { return m_webhookNameHasBeenSet; }
-
-    /**
-     * <p>The name of an existing webhook created with PutWebhook to register with a
-     * supported third party. </p>
-     */
     inline void SetWebhookName(const Aws::String& value) { m_webhookNameHasBeenSet = true; m_webhookName = value; }
-
-    /**
-     * <p>The name of an existing webhook created with PutWebhook to register with a
-     * supported third party. </p>
-     */
     inline void SetWebhookName(Aws::String&& value) { m_webhookNameHasBeenSet = true; m_webhookName = std::move(value); }
-
-    /**
-     * <p>The name of an existing webhook created with PutWebhook to register with a
-     * supported third party. </p>
-     */
     inline void SetWebhookName(const char* value) { m_webhookNameHasBeenSet = true; m_webhookName.assign(value); }
-
-    /**
-     * <p>The name of an existing webhook created with PutWebhook to register with a
-     * supported third party. </p>
-     */
     inline RegisterWebhookWithThirdPartyRequest& WithWebhookName(const Aws::String& value) { SetWebhookName(value); return *this;}
-
-    /**
-     * <p>The name of an existing webhook created with PutWebhook to register with a
-     * supported third party. </p>
-     */
     inline RegisterWebhookWithThirdPartyRequest& WithWebhookName(Aws::String&& value) { SetWebhookName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an existing webhook created with PutWebhook to register with a
-     * supported third party. </p>
-     */
     inline RegisterWebhookWithThirdPartyRequest& WithWebhookName(const char* value) { SetWebhookName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_webhookName;

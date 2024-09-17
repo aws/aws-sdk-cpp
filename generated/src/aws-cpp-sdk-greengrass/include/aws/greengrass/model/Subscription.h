@@ -37,217 +37,67 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A descriptive or arbitrary ID for the subscription. This value must be unique
      * within the subscription definition version. Max length is 128 characters with
      * pattern ''[a-zA-Z0-9:_-]+''.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * A descriptive or arbitrary ID for the subscription. This value must be unique
-     * within the subscription definition version. Max length is 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * A descriptive or arbitrary ID for the subscription. This value must be unique
-     * within the subscription definition version. Max length is 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * A descriptive or arbitrary ID for the subscription. This value must be unique
-     * within the subscription definition version. Max length is 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * A descriptive or arbitrary ID for the subscription. This value must be unique
-     * within the subscription definition version. Max length is 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * A descriptive or arbitrary ID for the subscription. This value must be unique
-     * within the subscription definition version. Max length is 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''.
-     */
     inline Subscription& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * A descriptive or arbitrary ID for the subscription. This value must be unique
-     * within the subscription definition version. Max length is 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''.
-     */
     inline Subscription& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * A descriptive or arbitrary ID for the subscription. This value must be unique
-     * within the subscription definition version. Max length is 128 characters with
-     * pattern ''[a-zA-Z0-9:_-]+''.
-     */
     inline Subscription& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
      * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
      * 'GGShadowService'.
      */
     inline const Aws::String& GetSource() const{ return m_source; }
-
-    /**
-     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-
-    /**
-     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline Subscription& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-
-    /**
-     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline Subscription& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-
-    /**
-     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline Subscription& WithSource(const char* value) { SetSource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The MQTT topic used to route the message.
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
-
-    /**
-     * The MQTT topic used to route the message.
-     */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-
-    /**
-     * The MQTT topic used to route the message.
-     */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-
-    /**
-     * The MQTT topic used to route the message.
-     */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-
-    /**
-     * The MQTT topic used to route the message.
-     */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-
-    /**
-     * The MQTT topic used to route the message.
-     */
     inline Subscription& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-
-    /**
-     * The MQTT topic used to route the message.
-     */
     inline Subscription& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-
-    /**
-     * The MQTT topic used to route the message.
-     */
     inline Subscription& WithSubject(const char* value) { SetSubject(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
      * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
      * 'GGShadowService'.
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
-
-    /**
-     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-
-    /**
-     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline Subscription& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-
-    /**
-     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline Subscription& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-
-    /**
-     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
-     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
-     * 'GGShadowService'.
-     */
     inline Subscription& WithTarget(const char* value) { SetTarget(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

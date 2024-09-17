@@ -39,46 +39,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Cluster logging configurations.</p>
      */
     inline const Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>& GetClusterLogging() const{ return m_clusterLogging; }
-
-    /**
-     * <p>Cluster logging configurations.</p>
-     */
     inline bool ClusterLoggingHasBeenSet() const { return m_clusterLoggingHasBeenSet; }
-
-    /**
-     * <p>Cluster logging configurations.</p>
-     */
     inline void SetClusterLogging(const Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = value; }
-
-    /**
-     * <p>Cluster logging configurations.</p>
-     */
     inline void SetClusterLogging(Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = std::move(value); }
-
-    /**
-     * <p>Cluster logging configurations.</p>
-     */
     inline AwsEksClusterLoggingDetails& WithClusterLogging(const Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>& value) { SetClusterLogging(value); return *this;}
-
-    /**
-     * <p>Cluster logging configurations.</p>
-     */
     inline AwsEksClusterLoggingDetails& WithClusterLogging(Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>&& value) { SetClusterLogging(std::move(value)); return *this;}
-
-    /**
-     * <p>Cluster logging configurations.</p>
-     */
     inline AwsEksClusterLoggingDetails& AddClusterLogging(const AwsEksClusterLoggingClusterLoggingDetails& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(value); return *this; }
-
-    /**
-     * <p>Cluster logging configurations.</p>
-     */
     inline AwsEksClusterLoggingDetails& AddClusterLogging(AwsEksClusterLoggingClusterLoggingDetails&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails> m_clusterLogging;

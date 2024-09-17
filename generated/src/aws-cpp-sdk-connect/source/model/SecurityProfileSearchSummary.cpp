@@ -28,13 +28,8 @@ SecurityProfileSearchSummary::SecurityProfileSearchSummary() :
 {
 }
 
-SecurityProfileSearchSummary::SecurityProfileSearchSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_organizationResourceIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SecurityProfileSearchSummary::SecurityProfileSearchSummary(JsonView jsonValue)
+  : SecurityProfileSearchSummary()
 {
   *this = jsonValue;
 }

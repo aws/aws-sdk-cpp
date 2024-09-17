@@ -25,10 +25,8 @@ PreconditionsFailedException::PreconditionsFailedException() :
 {
 }
 
-PreconditionsFailedException::PreconditionsFailedException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+PreconditionsFailedException::PreconditionsFailedException(JsonView jsonValue)
+  : PreconditionsFailedException()
 {
   *this = jsonValue;
 }

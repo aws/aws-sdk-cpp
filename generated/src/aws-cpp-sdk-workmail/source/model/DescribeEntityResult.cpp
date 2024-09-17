@@ -22,8 +22,8 @@ DescribeEntityResult::DescribeEntityResult() :
 {
 }
 
-DescribeEntityResult::DescribeEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(EntityType::NOT_SET)
+DescribeEntityResult::DescribeEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEntityResult()
 {
   *this = result;
 }

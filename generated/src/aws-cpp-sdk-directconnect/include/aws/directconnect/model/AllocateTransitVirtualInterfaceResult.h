@@ -33,43 +33,27 @@ namespace Model
     AWS_DIRECTCONNECT_API AllocateTransitVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>Information about the transit virtual interface.</p>
+     */
     inline const VirtualInterface& GetVirtualInterface() const{ return m_virtualInterface; }
-
-    
     inline void SetVirtualInterface(const VirtualInterface& value) { m_virtualInterface = value; }
-
-    
     inline void SetVirtualInterface(VirtualInterface&& value) { m_virtualInterface = std::move(value); }
-
-    
     inline AllocateTransitVirtualInterfaceResult& WithVirtualInterface(const VirtualInterface& value) { SetVirtualInterface(value); return *this;}
-
-    
     inline AllocateTransitVirtualInterfaceResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AllocateTransitVirtualInterfaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AllocateTransitVirtualInterfaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AllocateTransitVirtualInterfaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VirtualInterface m_virtualInterface;

@@ -35,20 +35,8 @@ ImportTaskDetails::ImportTaskDetails() :
 {
 }
 
-ImportTaskDetails::ImportTaskDetails(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_timeElapsedSeconds(0),
-    m_timeElapsedSecondsHasBeenSet(false),
-    m_progressPercentage(0),
-    m_progressPercentageHasBeenSet(false),
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_statementCount(0),
-    m_statementCountHasBeenSet(false),
-    m_dictionaryEntryCount(0),
-    m_dictionaryEntryCountHasBeenSet(false)
+ImportTaskDetails::ImportTaskDetails(JsonView jsonValue)
+  : ImportTaskDetails()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ OutputContext::OutputContext() :
 {
 }
 
-OutputContext::OutputContext(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_timeToLiveInSeconds(0),
-    m_timeToLiveInSecondsHasBeenSet(false),
-    m_turnsToLive(0),
-    m_turnsToLiveHasBeenSet(false)
+OutputContext::OutputContext(JsonView jsonValue)
+  : OutputContext()
 {
   *this = jsonValue;
 }

@@ -38,36 +38,17 @@ namespace Model
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Location information for the manifest file.</p>
      */
     inline const DatasetGroundTruthManifest& GetGroundTruthManifest() const{ return m_groundTruthManifest; }
-
-    /**
-     * <p>Location information for the manifest file.</p>
-     */
     inline bool GroundTruthManifestHasBeenSet() const { return m_groundTruthManifestHasBeenSet; }
-
-    /**
-     * <p>Location information for the manifest file.</p>
-     */
     inline void SetGroundTruthManifest(const DatasetGroundTruthManifest& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = value; }
-
-    /**
-     * <p>Location information for the manifest file.</p>
-     */
     inline void SetGroundTruthManifest(DatasetGroundTruthManifest&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::move(value); }
-
-    /**
-     * <p>Location information for the manifest file.</p>
-     */
     inline DatasetSource& WithGroundTruthManifest(const DatasetGroundTruthManifest& value) { SetGroundTruthManifest(value); return *this;}
-
-    /**
-     * <p>Location information for the manifest file.</p>
-     */
     inline DatasetSource& WithGroundTruthManifest(DatasetGroundTruthManifest&& value) { SetGroundTruthManifest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DatasetGroundTruthManifest m_groundTruthManifest;

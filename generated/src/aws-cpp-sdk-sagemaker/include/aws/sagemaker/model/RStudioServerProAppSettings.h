@@ -39,85 +39,32 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the current user has access to the
      * <code>RStudioServerPro</code> app.</p>
      */
     inline const RStudioServerProAccessStatus& GetAccessStatus() const{ return m_accessStatus; }
-
-    /**
-     * <p>Indicates whether the current user has access to the
-     * <code>RStudioServerPro</code> app.</p>
-     */
     inline bool AccessStatusHasBeenSet() const { return m_accessStatusHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the current user has access to the
-     * <code>RStudioServerPro</code> app.</p>
-     */
     inline void SetAccessStatus(const RStudioServerProAccessStatus& value) { m_accessStatusHasBeenSet = true; m_accessStatus = value; }
-
-    /**
-     * <p>Indicates whether the current user has access to the
-     * <code>RStudioServerPro</code> app.</p>
-     */
     inline void SetAccessStatus(RStudioServerProAccessStatus&& value) { m_accessStatusHasBeenSet = true; m_accessStatus = std::move(value); }
-
-    /**
-     * <p>Indicates whether the current user has access to the
-     * <code>RStudioServerPro</code> app.</p>
-     */
     inline RStudioServerProAppSettings& WithAccessStatus(const RStudioServerProAccessStatus& value) { SetAccessStatus(value); return *this;}
-
-    /**
-     * <p>Indicates whether the current user has access to the
-     * <code>RStudioServerPro</code> app.</p>
-     */
     inline RStudioServerProAppSettings& WithAccessStatus(RStudioServerProAccessStatus&& value) { SetAccessStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of permissions that the user has within the
      * <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin`
      * value allows the user access to the RStudio Administrative Dashboard.</p>
      */
     inline const RStudioServerProUserGroup& GetUserGroup() const{ return m_userGroup; }
-
-    /**
-     * <p>The level of permissions that the user has within the
-     * <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin`
-     * value allows the user access to the RStudio Administrative Dashboard.</p>
-     */
     inline bool UserGroupHasBeenSet() const { return m_userGroupHasBeenSet; }
-
-    /**
-     * <p>The level of permissions that the user has within the
-     * <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin`
-     * value allows the user access to the RStudio Administrative Dashboard.</p>
-     */
     inline void SetUserGroup(const RStudioServerProUserGroup& value) { m_userGroupHasBeenSet = true; m_userGroup = value; }
-
-    /**
-     * <p>The level of permissions that the user has within the
-     * <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin`
-     * value allows the user access to the RStudio Administrative Dashboard.</p>
-     */
     inline void SetUserGroup(RStudioServerProUserGroup&& value) { m_userGroupHasBeenSet = true; m_userGroup = std::move(value); }
-
-    /**
-     * <p>The level of permissions that the user has within the
-     * <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin`
-     * value allows the user access to the RStudio Administrative Dashboard.</p>
-     */
     inline RStudioServerProAppSettings& WithUserGroup(const RStudioServerProUserGroup& value) { SetUserGroup(value); return *this;}
-
-    /**
-     * <p>The level of permissions that the user has within the
-     * <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin`
-     * value allows the user access to the RStudio Administrative Dashboard.</p>
-     */
     inline RStudioServerProAppSettings& WithUserGroup(RStudioServerProUserGroup&& value) { SetUserGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RStudioServerProAccessStatus m_accessStatus;

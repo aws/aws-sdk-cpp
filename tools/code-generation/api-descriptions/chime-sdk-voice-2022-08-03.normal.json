@@ -4,11 +4,13 @@
     "apiVersion":"2022-08-03",
     "endpointPrefix":"voice-chime",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"Amazon Chime SDK Voice",
     "serviceId":"Chime SDK Voice",
     "signatureVersion":"v4",
     "signingName":"chime",
-    "uid":"chime-sdk-voice-2022-08-03"
+    "uid":"chime-sdk-voice-2022-08-03",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AssociatePhoneNumbersWithVoiceConnector":{
@@ -91,7 +93,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates one or more phone numbers.</p>"
+      "documentation":"<p>Updates phone number product types, calling names, or phone number names. You can update one attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type, the calling name, or phone name. </p> <note> <p>You cannot have a duplicate <code>phoneNumberId</code> in a request.</p> </note>"
     },
     "CreatePhoneNumberOrder":{
       "name":"CreatePhoneNumberOrder",
@@ -734,7 +736,9 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Gets the Alexa Skill configuration for the SIP media application.</p>"
+      "documentation":"<p>Gets the Alexa Skill configuration for the SIP media application.</p> <important> <p>Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the <a href=\"https://developer.amazon.com/en-US/alexa/alexasmartproperties\">Alexa Smart Properties</a> page.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties)."
     },
     "GetSipMediaApplicationLoggingConfiguration":{
       "name":"GetSipMediaApplicationLoggingConfiguration",
@@ -1310,7 +1314,9 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates the Alexa Skill configuration for the SIP media application.</p>"
+      "documentation":"<p>Updates the Alexa Skill configuration for the SIP media application.</p> <important> <p>Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the <a href=\"https://developer.amazon.com/en-US/alexa/alexasmartproperties\">Alexa Smart Properties</a> page.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties)."
     },
     "PutSipMediaApplicationLoggingConfiguration":{
       "name":"PutSipMediaApplicationLoggingConfiguration",
@@ -1680,7 +1686,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates phone number details, such as product type or calling name, for the specified phone number ID. You can update one phone number detail at a time. For example, you can update either the product type or the calling name in one action.</p> <p>For numbers outside the U.S., you must use the Amazon Chime SDK SIP Media Application Dial-In product type.</p> <p>Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>"
+      "documentation":"<p>Updates phone number details, such as product type, calling name, or phone number name for the specified phone number ID. You can update one phone number detail at a time. For example, you can update either the product type, calling name, or phone number name in one action.</p> <p>For numbers outside the U.S., you must use the Amazon Chime SDK SIP Media Application Dial-In product type.</p> <p>Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>"
     },
     "UpdatePhoneNumberSettings":{
       "name":"UpdatePhoneNumberSettings",
@@ -3348,7 +3354,7 @@
         },
         "VoiceToneAnalysisTaskId":{
           "shape":"NonEmptyString256",
-          "documentation":"<p>The ID of the voice tone anlysis task.</p>",
+          "documentation":"<p>The ID of the voice tone analysis task.</p>",
           "location":"uri",
           "locationName":"VoiceToneAnalysisTaskId"
         },
@@ -3801,7 +3807,7 @@
       "members":{
         "Disabled":{
           "shape":"Boolean",
-          "documentation":"<p>Denotes the configration as enabled or disabled.</p>"
+          "documentation":"<p>Denotes the configuration as enabled or disabled.</p>"
         },
         "ConfigurationArn":{
           "shape":"Arn",
@@ -4817,7 +4823,7 @@
           "documentation":"<p>The ID of the Alexa Skill configuration.</p>"
         }
       },
-      "documentation":"<p>The Alexa Skill configuration of a SIP media application.</p>"
+      "documentation":"<p>The Alexa Skill configuration of a SIP media application.</p> <important> <p>Due to changes made by the Amazon Alexa service, this data type is no longer available for use. For more information, refer to the <a href=\"https://developer.amazon.com/en-US/alexa/alexasmartproperties\">Alexa Smart Properties</a> page.</p> </important>"
     },
     "SipMediaApplicationCall":{
       "type":"structure",
@@ -5360,7 +5366,7 @@
         },
         "Name":{
           "shape":"PhoneNumberName",
-          "documentation":"<p>Specifies the name assigned to one or more phone numbers.</p>"
+          "documentation":"<p>Specifies the updated name assigned to one or more phone numbers.</p>"
         }
       }
     },
@@ -5706,7 +5712,7 @@
         },
         "Country":{
           "shape":"SensitiveNonEmptyString",
-          "documentation":"<p>The country in the address being validated.</p>"
+          "documentation":"<p>The country in the address being validated as two-letter country code in ISO 3166-1 alpha-2 format, such as <code>US</code>. For more information, see <a href=\"https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2\">ISO 3166-1 alpha-2</a> in Wikipedia.</p>"
         },
         "PostalCode":{
           "shape":"SensitiveNonEmptyString",
@@ -5719,7 +5725,7 @@
       "members":{
         "ValidationResult":{
           "shape":"ValidationResult",
-          "documentation":"<p>Number indicating the result of address validation. <code>0</code> means the address was perfect as-is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>"
+          "documentation":"<p>Number indicating the result of address validation.</p> <p>Each possible result is defined as follows:</p> <ul> <li> <p> <code>0</code> - Address validation succeeded.</p> </li> <li> <p> <code>1</code> - Address validation succeeded. The address was a close enough match and has been corrected as part of the address object.</p> </li> <li> <p> <code>2</code> - Address validation failed. You should re-submit the validation request with candidates from the <code>CandidateAddressList</code> result, if it's a close match.</p> </li> </ul>"
         },
         "AddressExternalId":{
           "shape":"String",

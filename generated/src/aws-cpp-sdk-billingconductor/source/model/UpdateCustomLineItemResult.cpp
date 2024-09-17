@@ -23,9 +23,8 @@ UpdateCustomLineItemResult::UpdateCustomLineItemResult() :
 {
 }
 
-UpdateCustomLineItemResult::UpdateCustomLineItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lastModifiedTime(0),
-    m_associationSize(0)
+UpdateCustomLineItemResult::UpdateCustomLineItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateCustomLineItemResult()
 {
   *this = result;
 }

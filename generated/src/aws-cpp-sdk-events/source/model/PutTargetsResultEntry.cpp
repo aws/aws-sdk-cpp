@@ -25,10 +25,8 @@ PutTargetsResultEntry::PutTargetsResultEntry() :
 {
 }
 
-PutTargetsResultEntry::PutTargetsResultEntry(JsonView jsonValue) : 
-    m_targetIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+PutTargetsResultEntry::PutTargetsResultEntry(JsonView jsonValue)
+  : PutTargetsResultEntry()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ MotionGraphicsSettings::MotionGraphicsSettings() :
 {
 }
 
-MotionGraphicsSettings::MotionGraphicsSettings(JsonView jsonValue) : 
-    m_htmlMotionGraphicsSettingsHasBeenSet(false)
+MotionGraphicsSettings::MotionGraphicsSettings(JsonView jsonValue)
+  : MotionGraphicsSettings()
 {
   *this = jsonValue;
 }

@@ -40,54 +40,20 @@ namespace Model
     AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of Parameter names and values for SageMaker Model Building Pipeline
      * execution.</p>
      */
     inline const Aws::Vector<SageMakerPipelineParameter>& GetPipelineParameterList() const{ return m_pipelineParameterList; }
-
-    /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
-     * execution.</p>
-     */
     inline bool PipelineParameterListHasBeenSet() const { return m_pipelineParameterListHasBeenSet; }
-
-    /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
-     * execution.</p>
-     */
     inline void SetPipelineParameterList(const Aws::Vector<SageMakerPipelineParameter>& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList = value; }
-
-    /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
-     * execution.</p>
-     */
     inline void SetPipelineParameterList(Aws::Vector<SageMakerPipelineParameter>&& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList = std::move(value); }
-
-    /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
-     * execution.</p>
-     */
     inline SageMakerPipelineParameters& WithPipelineParameterList(const Aws::Vector<SageMakerPipelineParameter>& value) { SetPipelineParameterList(value); return *this;}
-
-    /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
-     * execution.</p>
-     */
     inline SageMakerPipelineParameters& WithPipelineParameterList(Aws::Vector<SageMakerPipelineParameter>&& value) { SetPipelineParameterList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
-     * execution.</p>
-     */
     inline SageMakerPipelineParameters& AddPipelineParameterList(const SageMakerPipelineParameter& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList.push_back(value); return *this; }
-
-    /**
-     * <p>List of Parameter names and values for SageMaker Model Building Pipeline
-     * execution.</p>
-     */
     inline SageMakerPipelineParameters& AddPipelineParameterList(SageMakerPipelineParameter&& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SageMakerPipelineParameter> m_pipelineParameterList;

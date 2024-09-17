@@ -27,12 +27,8 @@ Maintenance::Maintenance() :
 {
 }
 
-Maintenance::Maintenance(JsonView jsonValue) : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceDeadlineHasBeenSet(false),
-    m_maintenanceScheduledDateHasBeenSet(false),
-    m_maintenanceStartHourHasBeenSet(false)
+Maintenance::Maintenance(JsonView jsonValue)
+  : Maintenance()
 {
   *this = jsonValue;
 }

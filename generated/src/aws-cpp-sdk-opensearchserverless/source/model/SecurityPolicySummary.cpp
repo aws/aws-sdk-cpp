@@ -31,16 +31,8 @@ SecurityPolicySummary::SecurityPolicySummary() :
 {
 }
 
-SecurityPolicySummary::SecurityPolicySummary(JsonView jsonValue) : 
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyVersionHasBeenSet(false),
-    m_type(SecurityPolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+SecurityPolicySummary::SecurityPolicySummary(JsonView jsonValue)
+  : SecurityPolicySummary()
 {
   *this = jsonValue;
 }

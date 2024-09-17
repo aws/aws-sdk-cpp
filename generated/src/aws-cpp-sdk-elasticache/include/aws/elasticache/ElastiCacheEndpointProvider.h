@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ElastiCacheClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ElastiCacheClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ElastiCacheClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElastiCacheBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

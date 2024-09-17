@@ -27,12 +27,8 @@ ExportFilter::ExportFilter() :
 {
 }
 
-ExportFilter::ExportFilter(JsonView jsonValue) : 
-    m_name(ExportFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(ExportFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+ExportFilter::ExportFilter(JsonView jsonValue)
+  : ExportFilter()
 {
   *this = jsonValue;
 }

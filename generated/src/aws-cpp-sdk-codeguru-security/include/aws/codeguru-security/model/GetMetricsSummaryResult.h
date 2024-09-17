@@ -33,53 +33,27 @@ namespace Model
     AWS_CODEGURUSECURITY_API GetMetricsSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The summary metrics from the specified date.</p>
      */
     inline const MetricsSummary& GetMetricsSummary() const{ return m_metricsSummary; }
-
-    /**
-     * <p>The summary metrics from the specified date.</p>
-     */
     inline void SetMetricsSummary(const MetricsSummary& value) { m_metricsSummary = value; }
-
-    /**
-     * <p>The summary metrics from the specified date.</p>
-     */
     inline void SetMetricsSummary(MetricsSummary&& value) { m_metricsSummary = std::move(value); }
-
-    /**
-     * <p>The summary metrics from the specified date.</p>
-     */
     inline GetMetricsSummaryResult& WithMetricsSummary(const MetricsSummary& value) { SetMetricsSummary(value); return *this;}
-
-    /**
-     * <p>The summary metrics from the specified date.</p>
-     */
     inline GetMetricsSummaryResult& WithMetricsSummary(MetricsSummary&& value) { SetMetricsSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMetricsSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMetricsSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMetricsSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MetricsSummary m_metricsSummary;

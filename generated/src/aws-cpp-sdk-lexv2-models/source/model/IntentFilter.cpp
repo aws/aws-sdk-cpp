@@ -27,12 +27,8 @@ IntentFilter::IntentFilter() :
 {
 }
 
-IntentFilter::IntentFilter(JsonView jsonValue) : 
-    m_name(IntentFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(IntentFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+IntentFilter::IntentFilter(JsonView jsonValue)
+  : IntentFilter()
 {
   *this = jsonValue;
 }

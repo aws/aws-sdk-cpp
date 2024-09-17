@@ -26,11 +26,8 @@ SchedulingPolicyDetail::SchedulingPolicyDetail() :
 {
 }
 
-SchedulingPolicyDetail::SchedulingPolicyDetail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_fairsharePolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SchedulingPolicyDetail::SchedulingPolicyDetail(JsonView jsonValue)
+  : SchedulingPolicyDetail()
 {
   *this = jsonValue;
 }

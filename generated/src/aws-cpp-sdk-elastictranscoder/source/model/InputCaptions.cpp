@@ -24,9 +24,8 @@ InputCaptions::InputCaptions() :
 {
 }
 
-InputCaptions::InputCaptions(JsonView jsonValue) : 
-    m_mergePolicyHasBeenSet(false),
-    m_captionSourcesHasBeenSet(false)
+InputCaptions::InputCaptions(JsonView jsonValue)
+  : InputCaptions()
 {
   *this = jsonValue;
 }

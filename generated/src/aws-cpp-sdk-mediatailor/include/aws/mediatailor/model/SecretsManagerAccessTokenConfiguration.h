@@ -41,104 +41,37 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the HTTP header used to supply the access token in requests to
      * the source location.</p>
      */
     inline const Aws::String& GetHeaderName() const{ return m_headerName; }
-
-    /**
-     * <p>The name of the HTTP header used to supply the access token in requests to
-     * the source location.</p>
-     */
     inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the HTTP header used to supply the access token in requests to
-     * the source location.</p>
-     */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
-
-    /**
-     * <p>The name of the HTTP header used to supply the access token in requests to
-     * the source location.</p>
-     */
     inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
-
-    /**
-     * <p>The name of the HTTP header used to supply the access token in requests to
-     * the source location.</p>
-     */
     inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
-
-    /**
-     * <p>The name of the HTTP header used to supply the access token in requests to
-     * the source location.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
-
-    /**
-     * <p>The name of the HTTP header used to supply the access token in requests to
-     * the source location.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the HTTP header used to supply the access token in requests to
-     * the source location.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
      * contains the access token.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the access token.</p>
-     */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the access token.</p>
-     */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the access token.</p>
-     */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the access token.</p>
-     */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the access token.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the access token.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the access token.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The AWS Secrets Manager <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
@@ -146,63 +79,14 @@ namespace Model
      * SecretString key and value pair containing the access token.</p>
      */
     inline const Aws::String& GetSecretStringKey() const{ return m_secretStringKey; }
-
-    /**
-     * <p>The AWS Secrets Manager <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
-     * key associated with the access token. MediaTailor uses the key to look up
-     * SecretString key and value pair containing the access token.</p>
-     */
     inline bool SecretStringKeyHasBeenSet() const { return m_secretStringKeyHasBeenSet; }
-
-    /**
-     * <p>The AWS Secrets Manager <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
-     * key associated with the access token. MediaTailor uses the key to look up
-     * SecretString key and value pair containing the access token.</p>
-     */
     inline void SetSecretStringKey(const Aws::String& value) { m_secretStringKeyHasBeenSet = true; m_secretStringKey = value; }
-
-    /**
-     * <p>The AWS Secrets Manager <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
-     * key associated with the access token. MediaTailor uses the key to look up
-     * SecretString key and value pair containing the access token.</p>
-     */
     inline void SetSecretStringKey(Aws::String&& value) { m_secretStringKeyHasBeenSet = true; m_secretStringKey = std::move(value); }
-
-    /**
-     * <p>The AWS Secrets Manager <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
-     * key associated with the access token. MediaTailor uses the key to look up
-     * SecretString key and value pair containing the access token.</p>
-     */
     inline void SetSecretStringKey(const char* value) { m_secretStringKeyHasBeenSet = true; m_secretStringKey.assign(value); }
-
-    /**
-     * <p>The AWS Secrets Manager <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
-     * key associated with the access token. MediaTailor uses the key to look up
-     * SecretString key and value pair containing the access token.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithSecretStringKey(const Aws::String& value) { SetSecretStringKey(value); return *this;}
-
-    /**
-     * <p>The AWS Secrets Manager <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
-     * key associated with the access token. MediaTailor uses the key to look up
-     * SecretString key and value pair containing the access token.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithSecretStringKey(Aws::String&& value) { SetSecretStringKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS Secrets Manager <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a>
-     * key associated with the access token. MediaTailor uses the key to look up
-     * SecretString key and value pair containing the access token.</p>
-     */
     inline SecretsManagerAccessTokenConfiguration& WithSecretStringKey(const char* value) { SetSecretStringKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_headerName;

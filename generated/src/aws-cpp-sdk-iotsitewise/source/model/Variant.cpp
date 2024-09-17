@@ -29,14 +29,8 @@ Variant::Variant() :
 {
 }
 
-Variant::Variant(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false)
+Variant::Variant(JsonView jsonValue)
+  : Variant()
 {
   *this = jsonValue;
 }

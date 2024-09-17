@@ -22,9 +22,6 @@ namespace Aws
 
         static const int AWS_Rekognition_DetectModerationLabels_Image_V3_HASH = HashingUtils::HashString("AWS/Rekognition/DetectModerationLabels/Image/V3");
         static const int AWS_Textract_AnalyzeDocument_Forms_V1_HASH = HashingUtils::HashString("AWS/Textract/AnalyzeDocument/Forms/V1");
-        static const int AWS_Textract_AnalyzeExpense_HASH = HashingUtils::HashString("AWS/Textract/AnalyzeExpense");
-        static const int AWS_Handshake_VerifyIdentity_HASH = HashingUtils::HashString("AWS/Handshake/VerifyIdentity");
-        static const int AWS_Bedrock_ModelEvaluation_HASH = HashingUtils::HashString("AWS/Bedrock/ModelEvaluation");
 
 
         AwsManagedHumanLoopRequestSource GetAwsManagedHumanLoopRequestSourceForName(const Aws::String& name)
@@ -37,18 +34,6 @@ namespace Aws
           else if (hashCode == AWS_Textract_AnalyzeDocument_Forms_V1_HASH)
           {
             return AwsManagedHumanLoopRequestSource::AWS_Textract_AnalyzeDocument_Forms_V1;
-          }
-          else if (hashCode == AWS_Textract_AnalyzeExpense_HASH)
-          {
-            return AwsManagedHumanLoopRequestSource::AWS_Textract_AnalyzeExpense;
-          }
-          else if (hashCode == AWS_Handshake_VerifyIdentity_HASH)
-          {
-            return AwsManagedHumanLoopRequestSource::AWS_Handshake_VerifyIdentity;
-          }
-          else if (hashCode == AWS_Bedrock_ModelEvaluation_HASH)
-          {
-            return AwsManagedHumanLoopRequestSource::AWS_Bedrock_ModelEvaluation;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,12 +55,6 @@ namespace Aws
             return "AWS/Rekognition/DetectModerationLabels/Image/V3";
           case AwsManagedHumanLoopRequestSource::AWS_Textract_AnalyzeDocument_Forms_V1:
             return "AWS/Textract/AnalyzeDocument/Forms/V1";
-          case AwsManagedHumanLoopRequestSource::AWS_Textract_AnalyzeExpense:
-            return "AWS/Textract/AnalyzeExpense";
-          case AwsManagedHumanLoopRequestSource::AWS_Handshake_VerifyIdentity:
-            return "AWS/Handshake/VerifyIdentity";
-          case AwsManagedHumanLoopRequestSource::AWS_Bedrock_ModelEvaluation:
-            return "AWS/Bedrock/ModelEvaluation";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

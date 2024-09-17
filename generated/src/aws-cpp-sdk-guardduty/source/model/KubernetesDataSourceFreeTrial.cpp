@@ -23,8 +23,8 @@ KubernetesDataSourceFreeTrial::KubernetesDataSourceFreeTrial() :
 {
 }
 
-KubernetesDataSourceFreeTrial::KubernetesDataSourceFreeTrial(JsonView jsonValue) : 
-    m_auditLogsHasBeenSet(false)
+KubernetesDataSourceFreeTrial::KubernetesDataSourceFreeTrial(JsonView jsonValue)
+  : KubernetesDataSourceFreeTrial()
 {
   *this = jsonValue;
 }

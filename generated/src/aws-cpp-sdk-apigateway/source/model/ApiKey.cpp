@@ -35,19 +35,8 @@ ApiKey::ApiKey() :
 {
 }
 
-ApiKey::ApiKey(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_customerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_stageKeysHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ApiKey::ApiKey(JsonView jsonValue)
+  : ApiKey()
 {
   *this = jsonValue;
 }

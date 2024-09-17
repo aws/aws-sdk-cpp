@@ -25,10 +25,8 @@ Suggestion::Suggestion() :
 {
 }
 
-Suggestion::Suggestion(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_sourceDocumentsHasBeenSet(false)
+Suggestion::Suggestion(JsonView jsonValue)
+  : Suggestion()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ChatChannel::ChatChannel() :
 {
 }
 
-ChatChannel::ChatChannel(JsonView jsonValue) : 
-    m_chatbotSnsHasBeenSet(false),
-    m_emptyHasBeenSet(false)
+ChatChannel::ChatChannel(JsonView jsonValue)
+  : ChatChannel()
 {
   *this = jsonValue;
 }

@@ -27,9 +27,11 @@
 #include <aws/connect/model/AssociateTrafficDistributionGroupUserResult.h>
 #include <aws/connect/model/BatchAssociateAnalyticsDataSetResult.h>
 #include <aws/connect/model/BatchDisassociateAnalyticsDataSetResult.h>
+#include <aws/connect/model/BatchGetAttachedFileMetadataResult.h>
 #include <aws/connect/model/BatchGetFlowAssociationResult.h>
 #include <aws/connect/model/BatchPutContactResult.h>
 #include <aws/connect/model/ClaimPhoneNumberResult.h>
+#include <aws/connect/model/CompleteAttachedFileUploadResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateContactFlowResult.h>
 #include <aws/connect/model/CreateContactFlowModuleResult.h>
@@ -54,6 +56,7 @@
 #include <aws/connect/model/CreateViewVersionResult.h>
 #include <aws/connect/model/CreateVocabularyResult.h>
 #include <aws/connect/model/DeactivateEvaluationFormResult.h>
+#include <aws/connect/model/DeleteAttachedFileResult.h>
 #include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
@@ -62,6 +65,7 @@
 #include <aws/connect/model/DeleteViewVersionResult.h>
 #include <aws/connect/model/DeleteVocabularyResult.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
+#include <aws/connect/model/DescribeAuthenticationProfileResult.h>
 #include <aws/connect/model/DescribeContactResult.h>
 #include <aws/connect/model/DescribeContactEvaluationResult.h>
 #include <aws/connect/model/DescribeContactFlowResult.h>
@@ -88,6 +92,7 @@
 #include <aws/connect/model/DisassociateFlowResult.h>
 #include <aws/connect/model/DisassociateTrafficDistributionGroupUserResult.h>
 #include <aws/connect/model/DismissUserContactResult.h>
+#include <aws/connect/model/GetAttachedFileResult.h>
 #include <aws/connect/model/GetContactAttributesResult.h>
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetCurrentUserDataResult.h>
@@ -102,6 +107,7 @@
 #include <aws/connect/model/ListAgentStatusesResult.h>
 #include <aws/connect/model/ListAnalyticsDataAssociationsResult.h>
 #include <aws/connect/model/ListApprovedOriginsResult.h>
+#include <aws/connect/model/ListAuthenticationProfilesResult.h>
 #include <aws/connect/model/ListBotsResult.h>
 #include <aws/connect/model/ListContactEvaluationsResult.h>
 #include <aws/connect/model/ListContactFlowModulesResult.h>
@@ -149,7 +155,10 @@
 #include <aws/connect/model/ReplicateInstanceResult.h>
 #include <aws/connect/model/ResumeContactResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
+#include <aws/connect/model/SearchAgentStatusesResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/connect/model/SearchContactFlowModulesResult.h>
+#include <aws/connect/model/SearchContactFlowsResult.h>
 #include <aws/connect/model/SearchContactsResult.h>
 #include <aws/connect/model/SearchHoursOfOperationsResult.h>
 #include <aws/connect/model/SearchPredefinedAttributesResult.h>
@@ -159,9 +168,11 @@
 #include <aws/connect/model/SearchResourceTagsResult.h>
 #include <aws/connect/model/SearchRoutingProfilesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
+#include <aws/connect/model/SearchUserHierarchyGroupsResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
 #include <aws/connect/model/SearchVocabulariesResult.h>
 #include <aws/connect/model/SendChatIntegrationEventResult.h>
+#include <aws/connect/model/StartAttachedFileUploadResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
 #include <aws/connect/model/StartContactEvaluationResult.h>
 #include <aws/connect/model/StartContactRecordingResult.h>
@@ -195,6 +206,9 @@
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
 #include <aws/connect/model/UpdateViewContentResult.h>
 #include <aws/connect/model/UpdateViewMetadataResult.h>
+#include <aws/connect/model/ListPhoneNumbersV2Request.h>
+#include <aws/connect/model/ListInstancesRequest.h>
+#include <aws/connect/model/ListTrafficDistributionGroupsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectClient header */
 
@@ -229,7 +243,7 @@ namespace Aws
 
   namespace Connect
   {
-    using ConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConnectEndpointProviderBase = Aws::Connect::Endpoint::ConnectEndpointProviderBase;
     using ConnectEndpointProvider = Aws::Connect::Endpoint::ConnectEndpointProvider;
 
@@ -253,9 +267,11 @@ namespace Aws
       class AssociateUserProficienciesRequest;
       class BatchAssociateAnalyticsDataSetRequest;
       class BatchDisassociateAnalyticsDataSetRequest;
+      class BatchGetAttachedFileMetadataRequest;
       class BatchGetFlowAssociationRequest;
       class BatchPutContactRequest;
       class ClaimPhoneNumberRequest;
+      class CompleteAttachedFileUploadRequest;
       class CreateAgentStatusRequest;
       class CreateContactFlowRequest;
       class CreateContactFlowModuleRequest;
@@ -281,6 +297,7 @@ namespace Aws
       class CreateViewVersionRequest;
       class CreateVocabularyRequest;
       class DeactivateEvaluationFormRequest;
+      class DeleteAttachedFileRequest;
       class DeleteContactEvaluationRequest;
       class DeleteContactFlowRequest;
       class DeleteContactFlowModuleRequest;
@@ -304,6 +321,7 @@ namespace Aws
       class DeleteViewVersionRequest;
       class DeleteVocabularyRequest;
       class DescribeAgentStatusRequest;
+      class DescribeAuthenticationProfileRequest;
       class DescribeContactRequest;
       class DescribeContactEvaluationRequest;
       class DescribeContactFlowRequest;
@@ -341,6 +359,7 @@ namespace Aws
       class DisassociateTrafficDistributionGroupUserRequest;
       class DisassociateUserProficienciesRequest;
       class DismissUserContactRequest;
+      class GetAttachedFileRequest;
       class GetContactAttributesRequest;
       class GetCurrentMetricDataRequest;
       class GetCurrentUserDataRequest;
@@ -355,6 +374,7 @@ namespace Aws
       class ListAgentStatusesRequest;
       class ListAnalyticsDataAssociationsRequest;
       class ListApprovedOriginsRequest;
+      class ListAuthenticationProfilesRequest;
       class ListBotsRequest;
       class ListContactEvaluationsRequest;
       class ListContactFlowModulesRequest;
@@ -403,7 +423,10 @@ namespace Aws
       class ReplicateInstanceRequest;
       class ResumeContactRequest;
       class ResumeContactRecordingRequest;
+      class SearchAgentStatusesRequest;
       class SearchAvailablePhoneNumbersRequest;
+      class SearchContactFlowModulesRequest;
+      class SearchContactFlowsRequest;
       class SearchContactsRequest;
       class SearchHoursOfOperationsRequest;
       class SearchPredefinedAttributesRequest;
@@ -413,9 +436,11 @@ namespace Aws
       class SearchResourceTagsRequest;
       class SearchRoutingProfilesRequest;
       class SearchSecurityProfilesRequest;
+      class SearchUserHierarchyGroupsRequest;
       class SearchUsersRequest;
       class SearchVocabulariesRequest;
       class SendChatIntegrationEventRequest;
+      class StartAttachedFileUploadRequest;
       class StartChatContactRequest;
       class StartContactEvaluationRequest;
       class StartContactRecordingRequest;
@@ -434,6 +459,7 @@ namespace Aws
       class UntagContactRequest;
       class UntagResourceRequest;
       class UpdateAgentStatusRequest;
+      class UpdateAuthenticationProfileRequest;
       class UpdateContactRequest;
       class UpdateContactAttributesRequest;
       class UpdateContactEvaluationRequest;
@@ -499,9 +525,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateUserProficienciesOutcome;
       typedef Aws::Utils::Outcome<BatchAssociateAnalyticsDataSetResult, ConnectError> BatchAssociateAnalyticsDataSetOutcome;
       typedef Aws::Utils::Outcome<BatchDisassociateAnalyticsDataSetResult, ConnectError> BatchDisassociateAnalyticsDataSetOutcome;
+      typedef Aws::Utils::Outcome<BatchGetAttachedFileMetadataResult, ConnectError> BatchGetAttachedFileMetadataOutcome;
       typedef Aws::Utils::Outcome<BatchGetFlowAssociationResult, ConnectError> BatchGetFlowAssociationOutcome;
       typedef Aws::Utils::Outcome<BatchPutContactResult, ConnectError> BatchPutContactOutcome;
       typedef Aws::Utils::Outcome<ClaimPhoneNumberResult, ConnectError> ClaimPhoneNumberOutcome;
+      typedef Aws::Utils::Outcome<CompleteAttachedFileUploadResult, ConnectError> CompleteAttachedFileUploadOutcome;
       typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
       typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
       typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateContactFlowModuleOutcome;
@@ -527,6 +555,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateViewVersionResult, ConnectError> CreateViewVersionOutcome;
       typedef Aws::Utils::Outcome<CreateVocabularyResult, ConnectError> CreateVocabularyOutcome;
       typedef Aws::Utils::Outcome<DeactivateEvaluationFormResult, ConnectError> DeactivateEvaluationFormOutcome;
+      typedef Aws::Utils::Outcome<DeleteAttachedFileResult, ConnectError> DeleteAttachedFileOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactEvaluationOutcome;
       typedef Aws::Utils::Outcome<DeleteContactFlowResult, ConnectError> DeleteContactFlowOutcome;
       typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
@@ -550,6 +579,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteViewVersionResult, ConnectError> DeleteViewVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteVocabularyResult, ConnectError> DeleteVocabularyOutcome;
       typedef Aws::Utils::Outcome<DescribeAgentStatusResult, ConnectError> DescribeAgentStatusOutcome;
+      typedef Aws::Utils::Outcome<DescribeAuthenticationProfileResult, ConnectError> DescribeAuthenticationProfileOutcome;
       typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContactOutcome;
       typedef Aws::Utils::Outcome<DescribeContactEvaluationResult, ConnectError> DescribeContactEvaluationOutcome;
       typedef Aws::Utils::Outcome<DescribeContactFlowResult, ConnectError> DescribeContactFlowOutcome;
@@ -587,6 +617,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateTrafficDistributionGroupUserResult, ConnectError> DisassociateTrafficDistributionGroupUserOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateUserProficienciesOutcome;
       typedef Aws::Utils::Outcome<DismissUserContactResult, ConnectError> DismissUserContactOutcome;
+      typedef Aws::Utils::Outcome<GetAttachedFileResult, ConnectError> GetAttachedFileOutcome;
       typedef Aws::Utils::Outcome<GetContactAttributesResult, ConnectError> GetContactAttributesOutcome;
       typedef Aws::Utils::Outcome<GetCurrentMetricDataResult, ConnectError> GetCurrentMetricDataOutcome;
       typedef Aws::Utils::Outcome<GetCurrentUserDataResult, ConnectError> GetCurrentUserDataOutcome;
@@ -601,6 +632,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAgentStatusesResult, ConnectError> ListAgentStatusesOutcome;
       typedef Aws::Utils::Outcome<ListAnalyticsDataAssociationsResult, ConnectError> ListAnalyticsDataAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListApprovedOriginsResult, ConnectError> ListApprovedOriginsOutcome;
+      typedef Aws::Utils::Outcome<ListAuthenticationProfilesResult, ConnectError> ListAuthenticationProfilesOutcome;
       typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
       typedef Aws::Utils::Outcome<ListContactEvaluationsResult, ConnectError> ListContactEvaluationsOutcome;
       typedef Aws::Utils::Outcome<ListContactFlowModulesResult, ConnectError> ListContactFlowModulesOutcome;
@@ -649,7 +681,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ReplicateInstanceResult, ConnectError> ReplicateInstanceOutcome;
       typedef Aws::Utils::Outcome<ResumeContactResult, ConnectError> ResumeContactOutcome;
       typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
+      typedef Aws::Utils::Outcome<SearchAgentStatusesResult, ConnectError> SearchAgentStatusesOutcome;
       typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
+      typedef Aws::Utils::Outcome<SearchContactFlowModulesResult, ConnectError> SearchContactFlowModulesOutcome;
+      typedef Aws::Utils::Outcome<SearchContactFlowsResult, ConnectError> SearchContactFlowsOutcome;
       typedef Aws::Utils::Outcome<SearchContactsResult, ConnectError> SearchContactsOutcome;
       typedef Aws::Utils::Outcome<SearchHoursOfOperationsResult, ConnectError> SearchHoursOfOperationsOutcome;
       typedef Aws::Utils::Outcome<SearchPredefinedAttributesResult, ConnectError> SearchPredefinedAttributesOutcome;
@@ -659,9 +694,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<SearchResourceTagsResult, ConnectError> SearchResourceTagsOutcome;
       typedef Aws::Utils::Outcome<SearchRoutingProfilesResult, ConnectError> SearchRoutingProfilesOutcome;
       typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
+      typedef Aws::Utils::Outcome<SearchUserHierarchyGroupsResult, ConnectError> SearchUserHierarchyGroupsOutcome;
       typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
       typedef Aws::Utils::Outcome<SearchVocabulariesResult, ConnectError> SearchVocabulariesOutcome;
       typedef Aws::Utils::Outcome<SendChatIntegrationEventResult, ConnectError> SendChatIntegrationEventOutcome;
+      typedef Aws::Utils::Outcome<StartAttachedFileUploadResult, ConnectError> StartAttachedFileUploadOutcome;
       typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
       typedef Aws::Utils::Outcome<StartContactEvaluationResult, ConnectError> StartContactEvaluationOutcome;
       typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
@@ -680,6 +717,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagContactResult, ConnectError> UntagContactOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAgentStatusOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAuthenticationProfileOutcome;
       typedef Aws::Utils::Outcome<UpdateContactResult, ConnectError> UpdateContactOutcome;
       typedef Aws::Utils::Outcome<UpdateContactAttributesResult, ConnectError> UpdateContactAttributesOutcome;
       typedef Aws::Utils::Outcome<UpdateContactEvaluationResult, ConnectError> UpdateContactEvaluationOutcome;
@@ -745,9 +783,11 @@ namespace Aws
       typedef std::future<AssociateUserProficienciesOutcome> AssociateUserProficienciesOutcomeCallable;
       typedef std::future<BatchAssociateAnalyticsDataSetOutcome> BatchAssociateAnalyticsDataSetOutcomeCallable;
       typedef std::future<BatchDisassociateAnalyticsDataSetOutcome> BatchDisassociateAnalyticsDataSetOutcomeCallable;
+      typedef std::future<BatchGetAttachedFileMetadataOutcome> BatchGetAttachedFileMetadataOutcomeCallable;
       typedef std::future<BatchGetFlowAssociationOutcome> BatchGetFlowAssociationOutcomeCallable;
       typedef std::future<BatchPutContactOutcome> BatchPutContactOutcomeCallable;
       typedef std::future<ClaimPhoneNumberOutcome> ClaimPhoneNumberOutcomeCallable;
+      typedef std::future<CompleteAttachedFileUploadOutcome> CompleteAttachedFileUploadOutcomeCallable;
       typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
       typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
       typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutcomeCallable;
@@ -773,6 +813,7 @@ namespace Aws
       typedef std::future<CreateViewVersionOutcome> CreateViewVersionOutcomeCallable;
       typedef std::future<CreateVocabularyOutcome> CreateVocabularyOutcomeCallable;
       typedef std::future<DeactivateEvaluationFormOutcome> DeactivateEvaluationFormOutcomeCallable;
+      typedef std::future<DeleteAttachedFileOutcome> DeleteAttachedFileOutcomeCallable;
       typedef std::future<DeleteContactEvaluationOutcome> DeleteContactEvaluationOutcomeCallable;
       typedef std::future<DeleteContactFlowOutcome> DeleteContactFlowOutcomeCallable;
       typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutcomeCallable;
@@ -796,6 +837,7 @@ namespace Aws
       typedef std::future<DeleteViewVersionOutcome> DeleteViewVersionOutcomeCallable;
       typedef std::future<DeleteVocabularyOutcome> DeleteVocabularyOutcomeCallable;
       typedef std::future<DescribeAgentStatusOutcome> DescribeAgentStatusOutcomeCallable;
+      typedef std::future<DescribeAuthenticationProfileOutcome> DescribeAuthenticationProfileOutcomeCallable;
       typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
       typedef std::future<DescribeContactEvaluationOutcome> DescribeContactEvaluationOutcomeCallable;
       typedef std::future<DescribeContactFlowOutcome> DescribeContactFlowOutcomeCallable;
@@ -833,6 +875,7 @@ namespace Aws
       typedef std::future<DisassociateTrafficDistributionGroupUserOutcome> DisassociateTrafficDistributionGroupUserOutcomeCallable;
       typedef std::future<DisassociateUserProficienciesOutcome> DisassociateUserProficienciesOutcomeCallable;
       typedef std::future<DismissUserContactOutcome> DismissUserContactOutcomeCallable;
+      typedef std::future<GetAttachedFileOutcome> GetAttachedFileOutcomeCallable;
       typedef std::future<GetContactAttributesOutcome> GetContactAttributesOutcomeCallable;
       typedef std::future<GetCurrentMetricDataOutcome> GetCurrentMetricDataOutcomeCallable;
       typedef std::future<GetCurrentUserDataOutcome> GetCurrentUserDataOutcomeCallable;
@@ -847,6 +890,7 @@ namespace Aws
       typedef std::future<ListAgentStatusesOutcome> ListAgentStatusesOutcomeCallable;
       typedef std::future<ListAnalyticsDataAssociationsOutcome> ListAnalyticsDataAssociationsOutcomeCallable;
       typedef std::future<ListApprovedOriginsOutcome> ListApprovedOriginsOutcomeCallable;
+      typedef std::future<ListAuthenticationProfilesOutcome> ListAuthenticationProfilesOutcomeCallable;
       typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
       typedef std::future<ListContactEvaluationsOutcome> ListContactEvaluationsOutcomeCallable;
       typedef std::future<ListContactFlowModulesOutcome> ListContactFlowModulesOutcomeCallable;
@@ -895,7 +939,10 @@ namespace Aws
       typedef std::future<ReplicateInstanceOutcome> ReplicateInstanceOutcomeCallable;
       typedef std::future<ResumeContactOutcome> ResumeContactOutcomeCallable;
       typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
+      typedef std::future<SearchAgentStatusesOutcome> SearchAgentStatusesOutcomeCallable;
       typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+      typedef std::future<SearchContactFlowModulesOutcome> SearchContactFlowModulesOutcomeCallable;
+      typedef std::future<SearchContactFlowsOutcome> SearchContactFlowsOutcomeCallable;
       typedef std::future<SearchContactsOutcome> SearchContactsOutcomeCallable;
       typedef std::future<SearchHoursOfOperationsOutcome> SearchHoursOfOperationsOutcomeCallable;
       typedef std::future<SearchPredefinedAttributesOutcome> SearchPredefinedAttributesOutcomeCallable;
@@ -905,9 +952,11 @@ namespace Aws
       typedef std::future<SearchResourceTagsOutcome> SearchResourceTagsOutcomeCallable;
       typedef std::future<SearchRoutingProfilesOutcome> SearchRoutingProfilesOutcomeCallable;
       typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
+      typedef std::future<SearchUserHierarchyGroupsOutcome> SearchUserHierarchyGroupsOutcomeCallable;
       typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
       typedef std::future<SearchVocabulariesOutcome> SearchVocabulariesOutcomeCallable;
       typedef std::future<SendChatIntegrationEventOutcome> SendChatIntegrationEventOutcomeCallable;
+      typedef std::future<StartAttachedFileUploadOutcome> StartAttachedFileUploadOutcomeCallable;
       typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
       typedef std::future<StartContactEvaluationOutcome> StartContactEvaluationOutcomeCallable;
       typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
@@ -926,6 +975,7 @@ namespace Aws
       typedef std::future<UntagContactOutcome> UntagContactOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAgentStatusOutcome> UpdateAgentStatusOutcomeCallable;
+      typedef std::future<UpdateAuthenticationProfileOutcome> UpdateAuthenticationProfileOutcomeCallable;
       typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
       typedef std::future<UpdateContactAttributesOutcome> UpdateContactAttributesOutcomeCallable;
       typedef std::future<UpdateContactEvaluationOutcome> UpdateContactEvaluationOutcomeCallable;
@@ -994,9 +1044,11 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::AssociateUserProficienciesRequest&, const Model::AssociateUserProficienciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateUserProficienciesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::BatchAssociateAnalyticsDataSetRequest&, const Model::BatchAssociateAnalyticsDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateAnalyticsDataSetResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::BatchDisassociateAnalyticsDataSetRequest&, const Model::BatchDisassociateAnalyticsDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateAnalyticsDataSetResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::BatchGetAttachedFileMetadataRequest&, const Model::BatchGetAttachedFileMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAttachedFileMetadataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::BatchGetFlowAssociationRequest&, const Model::BatchGetFlowAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFlowAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::BatchPutContactRequest&, const Model::BatchPutContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ClaimPhoneNumberRequest&, const Model::ClaimPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClaimPhoneNumberResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CompleteAttachedFileUploadRequest&, const Model::CompleteAttachedFileUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteAttachedFileUploadResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateAgentStatusRequest&, const Model::CreateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowRequest&, const Model::CreateContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowModuleRequest&, const Model::CreateContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowModuleResponseReceivedHandler;
@@ -1022,6 +1074,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::CreateViewVersionRequest&, const Model::CreateViewVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateViewVersionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateVocabularyRequest&, const Model::CreateVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeactivateEvaluationFormRequest&, const Model::DeactivateEvaluationFormOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateEvaluationFormResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteAttachedFileRequest&, const Model::DeleteAttachedFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttachedFileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactEvaluationRequest&, const Model::DeleteContactEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowRequest&, const Model::DeleteContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleRequest&, const Model::DeleteContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowModuleResponseReceivedHandler;
@@ -1045,6 +1098,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DeleteViewVersionRequest&, const Model::DeleteViewVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteViewVersionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteVocabularyRequest&, const Model::DeleteVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeAgentStatusRequest&, const Model::DescribeAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentStatusResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeAuthenticationProfileRequest&, const Model::DescribeAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuthenticationProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactRequest&, const Model::DescribeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactEvaluationRequest&, const Model::DescribeContactEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowRequest&, const Model::DescribeContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactFlowResponseReceivedHandler;
@@ -1082,6 +1136,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DisassociateTrafficDistributionGroupUserRequest&, const Model::DisassociateTrafficDistributionGroupUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrafficDistributionGroupUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateUserProficienciesRequest&, const Model::DisassociateUserProficienciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateUserProficienciesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DismissUserContactRequest&, const Model::DismissUserContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DismissUserContactResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::GetAttachedFileRequest&, const Model::GetAttachedFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttachedFileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetContactAttributesRequest&, const Model::GetContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactAttributesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetCurrentMetricDataRequest&, const Model::GetCurrentMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentMetricDataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetCurrentUserDataRequest&, const Model::GetCurrentUserDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentUserDataResponseReceivedHandler;
@@ -1096,6 +1151,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ListAgentStatusesRequest&, const Model::ListAgentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAgentStatusesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListAnalyticsDataAssociationsRequest&, const Model::ListAnalyticsDataAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalyticsDataAssociationsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListApprovedOriginsRequest&, const Model::ListApprovedOriginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovedOriginsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListAuthenticationProfilesRequest&, const Model::ListAuthenticationProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuthenticationProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactEvaluationsRequest&, const Model::ListContactEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactEvaluationsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModulesRequest&, const Model::ListContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowModulesResponseReceivedHandler;
@@ -1144,7 +1200,10 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ReplicateInstanceRequest&, const Model::ReplicateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRequest&, const Model::ResumeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchAgentStatusesRequest&, const Model::SearchAgentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAgentStatusesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchContactFlowModulesRequest&, const Model::SearchContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContactFlowModulesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchContactFlowsRequest&, const Model::SearchContactFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContactFlowsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchContactsRequest&, const Model::SearchContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContactsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchHoursOfOperationsRequest&, const Model::SearchHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchHoursOfOperationsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchPredefinedAttributesRequest&, const Model::SearchPredefinedAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPredefinedAttributesResponseReceivedHandler;
@@ -1154,9 +1213,11 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::SearchResourceTagsRequest&, const Model::SearchResourceTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResourceTagsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchRoutingProfilesRequest&, const Model::SearchRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchRoutingProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchSecurityProfilesRequest&, const Model::SearchSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSecurityProfilesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchUserHierarchyGroupsRequest&, const Model::SearchUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUserHierarchyGroupsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchVocabulariesRequest&, const Model::SearchVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchVocabulariesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SendChatIntegrationEventRequest&, const Model::SendChatIntegrationEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendChatIntegrationEventResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::StartAttachedFileUploadRequest&, const Model::StartAttachedFileUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAttachedFileUploadResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChatContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartContactEvaluationRequest&, const Model::StartContactEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartContactRecordingRequest&, const Model::StartContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactRecordingResponseReceivedHandler;
@@ -1175,6 +1236,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::UntagContactRequest&, const Model::UntagContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateAgentStatusRequest&, const Model::UpdateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentStatusResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateAuthenticationProfileRequest&, const Model::UpdateAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAuthenticationProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactRequest&, const Model::UpdateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactAttributesRequest&, const Model::UpdateContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactAttributesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactEvaluationRequest&, const Model::UpdateContactEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactEvaluationResponseReceivedHandler;

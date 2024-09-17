@@ -28,13 +28,8 @@ LineChartMarkerStyleSettings::LineChartMarkerStyleSettings() :
 {
 }
 
-LineChartMarkerStyleSettings::LineChartMarkerStyleSettings(JsonView jsonValue) : 
-    m_markerVisibility(Visibility::NOT_SET),
-    m_markerVisibilityHasBeenSet(false),
-    m_markerShape(LineChartMarkerShape::NOT_SET),
-    m_markerShapeHasBeenSet(false),
-    m_markerSizeHasBeenSet(false),
-    m_markerColorHasBeenSet(false)
+LineChartMarkerStyleSettings::LineChartMarkerStyleSettings(JsonView jsonValue)
+  : LineChartMarkerStyleSettings()
 {
   *this = jsonValue;
 }

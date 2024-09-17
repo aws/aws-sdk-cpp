@@ -33,58 +33,28 @@ namespace Model
     AWS_APPRUNNER_API DeleteVpcConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A description of the App Runner VPC connector that this request just
      * deleted.</p>
      */
     inline const VpcConnector& GetVpcConnector() const{ return m_vpcConnector; }
-
-    /**
-     * <p>A description of the App Runner VPC connector that this request just
-     * deleted.</p>
-     */
     inline void SetVpcConnector(const VpcConnector& value) { m_vpcConnector = value; }
-
-    /**
-     * <p>A description of the App Runner VPC connector that this request just
-     * deleted.</p>
-     */
     inline void SetVpcConnector(VpcConnector&& value) { m_vpcConnector = std::move(value); }
-
-    /**
-     * <p>A description of the App Runner VPC connector that this request just
-     * deleted.</p>
-     */
     inline DeleteVpcConnectorResult& WithVpcConnector(const VpcConnector& value) { SetVpcConnector(value); return *this;}
-
-    /**
-     * <p>A description of the App Runner VPC connector that this request just
-     * deleted.</p>
-     */
     inline DeleteVpcConnectorResult& WithVpcConnector(VpcConnector&& value) { SetVpcConnector(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteVpcConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteVpcConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteVpcConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VpcConnector m_vpcConnector;

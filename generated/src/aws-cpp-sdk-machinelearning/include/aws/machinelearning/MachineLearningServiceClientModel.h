@@ -46,6 +46,10 @@
 #include <aws/machinelearning/model/UpdateDataSourceResult.h>
 #include <aws/machinelearning/model/UpdateEvaluationResult.h>
 #include <aws/machinelearning/model/UpdateMLModelResult.h>
+#include <aws/machinelearning/model/DescribeDataSourcesRequest.h>
+#include <aws/machinelearning/model/DescribeMLModelsRequest.h>
+#include <aws/machinelearning/model/DescribeBatchPredictionsRequest.h>
+#include <aws/machinelearning/model/DescribeEvaluationsRequest.h>
 /* End of service model headers required in MachineLearningClient header */
 
 namespace Aws
@@ -79,7 +83,7 @@ namespace Aws
 
   namespace MachineLearning
   {
-    using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MachineLearningEndpointProviderBase = Aws::MachineLearning::Endpoint::MachineLearningEndpointProviderBase;
     using MachineLearningEndpointProvider = Aws::MachineLearning::Endpoint::MachineLearningEndpointProvider;
 

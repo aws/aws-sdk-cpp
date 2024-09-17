@@ -37,62 +37,21 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
      * group, but not both. To specify a single IPv4 address, use the /32 prefix
      * length.</p>
      */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
-
-    /**
-     * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
-     * group, but not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
     inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
-
-    /**
-     * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
-     * group, but not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
-
-    /**
-     * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
-     * group, but not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
     inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
-
-    /**
-     * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
-     * group, but not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
     inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
-
-    /**
-     * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
-     * group, but not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
     inline AwsEc2SecurityGroupIpRange& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
-
-    /**
-     * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
-     * group, but not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
     inline AwsEc2SecurityGroupIpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security
-     * group, but not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
     inline AwsEc2SecurityGroupIpRange& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidrIp;

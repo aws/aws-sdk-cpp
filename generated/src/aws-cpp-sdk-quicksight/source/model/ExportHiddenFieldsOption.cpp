@@ -24,9 +24,8 @@ ExportHiddenFieldsOption::ExportHiddenFieldsOption() :
 {
 }
 
-ExportHiddenFieldsOption::ExportHiddenFieldsOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+ExportHiddenFieldsOption::ExportHiddenFieldsOption(JsonView jsonValue)
+  : ExportHiddenFieldsOption()
 {
   *this = jsonValue;
 }

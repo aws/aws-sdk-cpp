@@ -25,10 +25,8 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
 {
 }
 
-ExecuteStatementRequest::ExecuteStatementRequest(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false),
-    m_statementHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+ExecuteStatementRequest::ExecuteStatementRequest(JsonView jsonValue)
+  : ExecuteStatementRequest()
 {
   *this = jsonValue;
 }

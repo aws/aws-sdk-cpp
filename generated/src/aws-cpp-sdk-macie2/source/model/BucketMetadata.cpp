@@ -22,6 +22,8 @@ BucketMetadata::BucketMetadata() :
     m_accountIdHasBeenSet(false),
     m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
     m_allowsUnencryptedObjectUploadsHasBeenSet(false),
+    m_automatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus::NOT_SET),
+    m_automatedDiscoveryMonitoringStatusHasBeenSet(false),
     m_bucketArnHasBeenSet(false),
     m_bucketCreatedAtHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
@@ -58,43 +60,8 @@ BucketMetadata::BucketMetadata() :
 {
 }
 
-BucketMetadata::BucketMetadata(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
-    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
-    m_bucketArnHasBeenSet(false),
-    m_bucketCreatedAtHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_classifiableObjectCount(0),
-    m_classifiableObjectCountHasBeenSet(false),
-    m_classifiableSizeInBytes(0),
-    m_classifiableSizeInBytesHasBeenSet(false),
-    m_errorCode(BucketMetadataErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_lastAutomatedDiscoveryTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_objectCount(0),
-    m_objectCountHasBeenSet(false),
-    m_objectCountByEncryptionTypeHasBeenSet(false),
-    m_publicAccessHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_replicationDetailsHasBeenSet(false),
-    m_sensitivityScore(0),
-    m_sensitivityScoreHasBeenSet(false),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_sharedAccess(SharedAccess::NOT_SET),
-    m_sharedAccessHasBeenSet(false),
-    m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false),
-    m_sizeInBytesCompressed(0),
-    m_sizeInBytesCompressedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_unclassifiableObjectCountHasBeenSet(false),
-    m_unclassifiableObjectSizeInBytesHasBeenSet(false),
-    m_versioning(false),
-    m_versioningHasBeenSet(false)
+BucketMetadata::BucketMetadata(JsonView jsonValue)
+  : BucketMetadata()
 {
   *this = jsonValue;
 }
@@ -113,6 +80,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_allowsUnencryptedObjectUploads = AllowsUnencryptedObjectUploadsMapper::GetAllowsUnencryptedObjectUploadsForName(jsonValue.GetString("allowsUnencryptedObjectUploads"));
 
     m_allowsUnencryptedObjectUploadsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("automatedDiscoveryMonitoringStatus"))
+  {
+    m_automatedDiscoveryMonitoringStatus = AutomatedDiscoveryMonitoringStatusMapper::GetAutomatedDiscoveryMonitoringStatusForName(jsonValue.GetString("automatedDiscoveryMonitoringStatus"));
+
+    m_automatedDiscoveryMonitoringStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bucketArn"))
@@ -302,6 +276,11 @@ JsonValue BucketMetadata::Jsonize() const
   if(m_allowsUnencryptedObjectUploadsHasBeenSet)
   {
    payload.WithString("allowsUnencryptedObjectUploads", AllowsUnencryptedObjectUploadsMapper::GetNameForAllowsUnencryptedObjectUploads(m_allowsUnencryptedObjectUploads));
+  }
+
+  if(m_automatedDiscoveryMonitoringStatusHasBeenSet)
+  {
+   payload.WithString("automatedDiscoveryMonitoringStatus", AutomatedDiscoveryMonitoringStatusMapper::GetNameForAutomatedDiscoveryMonitoringStatus(m_automatedDiscoveryMonitoringStatus));
   }
 
   if(m_bucketArnHasBeenSet)

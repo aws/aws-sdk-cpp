@@ -31,16 +31,8 @@ ListEarthObservationJobOutputConfig::ListEarthObservationJobOutputConfig() :
 {
 }
 
-ListEarthObservationJobOutputConfig::ListEarthObservationJobOutputConfig(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_operationTypeHasBeenSet(false),
-    m_status(EarthObservationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ListEarthObservationJobOutputConfig::ListEarthObservationJobOutputConfig(JsonView jsonValue)
+  : ListEarthObservationJobOutputConfig()
 {
   *this = jsonValue;
 }

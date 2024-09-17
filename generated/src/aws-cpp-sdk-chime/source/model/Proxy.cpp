@@ -28,13 +28,8 @@ Proxy::Proxy() :
 {
 }
 
-Proxy::Proxy(JsonView jsonValue) : 
-    m_defaultSessionExpiryMinutes(0),
-    m_defaultSessionExpiryMinutesHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_fallBackPhoneNumberHasBeenSet(false),
-    m_phoneNumberCountriesHasBeenSet(false)
+Proxy::Proxy(JsonView jsonValue)
+  : Proxy()
 {
   *this = jsonValue;
 }

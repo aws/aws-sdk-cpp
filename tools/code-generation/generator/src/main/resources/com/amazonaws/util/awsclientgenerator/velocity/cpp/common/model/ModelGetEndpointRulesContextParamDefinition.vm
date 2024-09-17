@@ -1,5 +1,5 @@
 ##This is a template generating property bag for from Shape's contextParam for CRT Endpoint Rules engine in Request's CPP
-#if($operation.request.shape.hasContextParam() || $operation.staticContextParams)
+#if($operation.request.shape.hasContextParam() || $operation.staticContextParams || $operation.operationContextParamsCode)
 
 ${typeInfo.className}::EndpointParameters ${typeInfo.className}::GetEndpointContextParams() const
 {
@@ -22,6 +22,23 @@ ${typeInfo.className}::EndpointParameters ${typeInfo.className}::GetEndpointCont
 #end
 #end##foreach($member in $shape.members.entrySet())
 #end
+#if($operation.operationContextParamsCode)
+    //operation context params go here
+#set($operationContextParam = $operation.operationContextParamsCode.entrySet().iterator().next())
+    parameters.emplace_back(Aws::String{"$operationContextParam.getKey()"}, this->GetOperationContextParams(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+#end
     return parameters;
+}
+#end
+#if($operation.operationContextParamsCode)
+//Accessor for dynamic context endpoint params
+#set($entry = $operation.operationContextParamsCode.entrySet().iterator().next())
+Aws::Vector<Aws::String> ${typeInfo.className}::GetOperationContextParams() const{
+#set($indentationPrefix = "  ")
+${indentationPrefix}Aws::Vector<Aws::String> result;
+#foreach($item in ${entry.getValue()})
+$indentationPrefix${item}
+#end
+${indentationPrefix}return result;
 }
 #end

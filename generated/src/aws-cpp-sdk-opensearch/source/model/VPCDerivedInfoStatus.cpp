@@ -24,9 +24,8 @@ VPCDerivedInfoStatus::VPCDerivedInfoStatus() :
 {
 }
 
-VPCDerivedInfoStatus::VPCDerivedInfoStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+VPCDerivedInfoStatus::VPCDerivedInfoStatus(JsonView jsonValue)
+  : VPCDerivedInfoStatus()
 {
   *this = jsonValue;
 }

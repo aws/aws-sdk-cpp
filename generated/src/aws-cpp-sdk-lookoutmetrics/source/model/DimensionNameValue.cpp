@@ -24,9 +24,8 @@ DimensionNameValue::DimensionNameValue() :
 {
 }
 
-DimensionNameValue::DimensionNameValue(JsonView jsonValue) : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueHasBeenSet(false)
+DimensionNameValue::DimensionNameValue(JsonView jsonValue)
+  : DimensionNameValue()
 {
   *this = jsonValue;
 }

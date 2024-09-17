@@ -40,92 +40,34 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The tag key-value pairs to remove from the on-premises instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The names of the on-premises instances from which to remove tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = std::move(value); }
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the on-premises instances from which to remove tags.</p>
-     */
     inline RemoveTagsFromOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_tags;

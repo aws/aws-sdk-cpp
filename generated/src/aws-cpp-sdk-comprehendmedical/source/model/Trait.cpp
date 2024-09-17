@@ -26,11 +26,8 @@ Trait::Trait() :
 {
 }
 
-Trait::Trait(JsonView jsonValue) : 
-    m_name(AttributeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+Trait::Trait(JsonView jsonValue)
+  : Trait()
 {
   *this = jsonValue;
 }

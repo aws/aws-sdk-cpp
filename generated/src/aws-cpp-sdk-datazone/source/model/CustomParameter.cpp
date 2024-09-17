@@ -30,15 +30,8 @@ CustomParameter::CustomParameter() :
 {
 }
 
-CustomParameter::CustomParameter(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_fieldTypeHasBeenSet(false),
-    m_isEditable(false),
-    m_isEditableHasBeenSet(false),
-    m_isOptional(false),
-    m_isOptionalHasBeenSet(false),
-    m_keyNameHasBeenSet(false)
+CustomParameter::CustomParameter(JsonView jsonValue)
+  : CustomParameter()
 {
   *this = jsonValue;
 }

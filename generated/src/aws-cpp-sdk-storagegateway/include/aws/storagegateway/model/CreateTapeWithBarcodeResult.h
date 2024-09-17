@@ -37,70 +37,30 @@ namespace Model
     AWS_STORAGEGATEWAY_API CreateTapeWithBarcodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
      * created.</p>
      */
     inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
-
-    /**
-     * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
-     * created.</p>
-     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARN = value; }
-
-    /**
-     * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
-     * created.</p>
-     */
     inline void SetTapeARN(Aws::String&& value) { m_tapeARN = std::move(value); }
-
-    /**
-     * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
-     * created.</p>
-     */
     inline void SetTapeARN(const char* value) { m_tapeARN.assign(value); }
-
-    /**
-     * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
-     * created.</p>
-     */
     inline CreateTapeWithBarcodeResult& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-
-    /**
-     * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
-     * created.</p>
-     */
     inline CreateTapeWithBarcodeResult& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
-     * created.</p>
-     */
     inline CreateTapeWithBarcodeResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTapeWithBarcodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTapeWithBarcodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTapeWithBarcodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tapeARN;

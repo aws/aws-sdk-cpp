@@ -39,63 +39,29 @@ namespace Model
     AWS_COGNITOSYNC_API UpdateRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A list of records that have been updated.
      */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
-
-    /**
-     * A list of records that have been updated.
-     */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_records = value; }
-
-    /**
-     * A list of records that have been updated.
-     */
     inline void SetRecords(Aws::Vector<Record>&& value) { m_records = std::move(value); }
-
-    /**
-     * A list of records that have been updated.
-     */
     inline UpdateRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
-
-    /**
-     * A list of records that have been updated.
-     */
     inline UpdateRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
-
-    /**
-     * A list of records that have been updated.
-     */
     inline UpdateRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
-
-    /**
-     * A list of records that have been updated.
-     */
     inline UpdateRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateRecordsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateRecordsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateRecordsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Record> m_records;

@@ -39,58 +39,28 @@ namespace Model
     AWS_AMPLIFY_API UpdateDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Describes a domain association, which associates a custom domain with an
      * Amplify app. </p>
      */
     inline const DomainAssociation& GetDomainAssociation() const{ return m_domainAssociation; }
-
-    /**
-     * <p> Describes a domain association, which associates a custom domain with an
-     * Amplify app. </p>
-     */
     inline void SetDomainAssociation(const DomainAssociation& value) { m_domainAssociation = value; }
-
-    /**
-     * <p> Describes a domain association, which associates a custom domain with an
-     * Amplify app. </p>
-     */
     inline void SetDomainAssociation(DomainAssociation&& value) { m_domainAssociation = std::move(value); }
-
-    /**
-     * <p> Describes a domain association, which associates a custom domain with an
-     * Amplify app. </p>
-     */
     inline UpdateDomainAssociationResult& WithDomainAssociation(const DomainAssociation& value) { SetDomainAssociation(value); return *this;}
-
-    /**
-     * <p> Describes a domain association, which associates a custom domain with an
-     * Amplify app. </p>
-     */
     inline UpdateDomainAssociationResult& WithDomainAssociation(DomainAssociation&& value) { SetDomainAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDomainAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDomainAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDomainAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainAssociation m_domainAssociation;

@@ -31,6 +31,7 @@
 #include <aws/healthlake/model/StartFHIRImportJobResult.h>
 #include <aws/healthlake/model/TagResourceResult.h>
 #include <aws/healthlake/model/UntagResourceResult.h>
+#include <aws/healthlake/model/ListFHIRDatastoresRequest.h>
 /* End of service model headers required in HealthLakeClient header */
 
 namespace Aws
@@ -64,7 +65,7 @@ namespace Aws
 
   namespace HealthLake
   {
-    using HealthLakeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using HealthLakeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using HealthLakeEndpointProviderBase = Aws::HealthLake::Endpoint::HealthLakeEndpointProviderBase;
     using HealthLakeEndpointProvider = Aws::HealthLake::Endpoint::HealthLakeEndpointProvider;
 

@@ -31,14 +31,8 @@ SSHPublicKey::SSHPublicKey() :
 {
 }
 
-SSHPublicKey::SSHPublicKey(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false),
-    m_sSHPublicKeyIdHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_sSHPublicKeyBodyHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadDateHasBeenSet(false)
+SSHPublicKey::SSHPublicKey(const XmlNode& xmlNode)
+  : SSHPublicKey()
 {
   *this = xmlNode;
 }

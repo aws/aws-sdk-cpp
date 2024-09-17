@@ -23,14 +23,16 @@ namespace Model
 SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation() : 
     m_associationIdHasBeenSet(false),
     m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockStateHasBeenSet(false)
+    m_ipv6CidrBlockStateHasBeenSet(false),
+    m_ipv6AddressAttribute(Ipv6AddressAttribute::NOT_SET),
+    m_ipv6AddressAttributeHasBeenSet(false),
+    m_ipSource(IpSource::NOT_SET),
+    m_ipSourceHasBeenSet(false)
 {
 }
 
-SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation(const XmlNode& xmlNode) : 
-    m_associationIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockStateHasBeenSet(false)
+SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation(const XmlNode& xmlNode)
+  : SubnetIpv6CidrBlockAssociation()
 {
   *this = xmlNode;
 }
@@ -59,6 +61,18 @@ SubnetIpv6CidrBlockAssociation& SubnetIpv6CidrBlockAssociation::operator =(const
       m_ipv6CidrBlockState = ipv6CidrBlockStateNode;
       m_ipv6CidrBlockStateHasBeenSet = true;
     }
+    XmlNode ipv6AddressAttributeNode = resultNode.FirstChild("ipv6AddressAttribute");
+    if(!ipv6AddressAttributeNode.IsNull())
+    {
+      m_ipv6AddressAttribute = Ipv6AddressAttributeMapper::GetIpv6AddressAttributeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressAttributeNode.GetText()).c_str()).c_str());
+      m_ipv6AddressAttributeHasBeenSet = true;
+    }
+    XmlNode ipSourceNode = resultNode.FirstChild("ipSource");
+    if(!ipSourceNode.IsNull())
+    {
+      m_ipSource = IpSourceMapper::GetIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipSourceNode.GetText()).c_str()).c_str());
+      m_ipSourceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +97,16 @@ void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const
       m_ipv6CidrBlockState.OutputToStream(oStream, ipv6CidrBlockStateLocationAndMemberSs.str().c_str());
   }
 
+  if(m_ipv6AddressAttributeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6AddressAttribute=" << Ipv6AddressAttributeMapper::GetNameForIpv6AddressAttribute(m_ipv6AddressAttribute) << "&";
+  }
+
+  if(m_ipSourceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpSource=" << IpSourceMapper::GetNameForIpSource(m_ipSource) << "&";
+  }
+
 }
 
 void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -100,6 +124,14 @@ void SubnetIpv6CidrBlockAssociation::OutputToStream(Aws::OStream& oStream, const
       Aws::String ipv6CidrBlockStateLocationAndMember(location);
       ipv6CidrBlockStateLocationAndMember += ".Ipv6CidrBlockState";
       m_ipv6CidrBlockState.OutputToStream(oStream, ipv6CidrBlockStateLocationAndMember.c_str());
+  }
+  if(m_ipv6AddressAttributeHasBeenSet)
+  {
+      oStream << location << ".Ipv6AddressAttribute=" << Ipv6AddressAttributeMapper::GetNameForIpv6AddressAttribute(m_ipv6AddressAttribute) << "&";
+  }
+  if(m_ipSourceHasBeenSet)
+  {
+      oStream << location << ".IpSource=" << IpSourceMapper::GetNameForIpSource(m_ipSource) << "&";
   }
 }
 

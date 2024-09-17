@@ -22,8 +22,8 @@ DeleteParallelDataResult::DeleteParallelDataResult() :
 {
 }
 
-DeleteParallelDataResult::DeleteParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ParallelDataStatus::NOT_SET)
+DeleteParallelDataResult::DeleteParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteParallelDataResult()
 {
   *this = result;
 }

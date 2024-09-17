@@ -23,8 +23,8 @@ VpcConnectivity::VpcConnectivity() :
 {
 }
 
-VpcConnectivity::VpcConnectivity(JsonView jsonValue) : 
-    m_clientAuthenticationHasBeenSet(false)
+VpcConnectivity::VpcConnectivity(JsonView jsonValue)
+  : VpcConnectivity()
 {
   *this = jsonValue;
 }

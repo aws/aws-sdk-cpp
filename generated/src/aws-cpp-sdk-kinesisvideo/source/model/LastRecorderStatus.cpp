@@ -27,12 +27,8 @@ LastRecorderStatus::LastRecorderStatus() :
 {
 }
 
-LastRecorderStatus::LastRecorderStatus(JsonView jsonValue) : 
-    m_jobStatusDetailsHasBeenSet(false),
-    m_lastCollectedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_recorderStatus(RecorderStatus::NOT_SET),
-    m_recorderStatusHasBeenSet(false)
+LastRecorderStatus::LastRecorderStatus(JsonView jsonValue)
+  : LastRecorderStatus()
 {
   *this = jsonValue;
 }

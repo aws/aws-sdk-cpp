@@ -111,6 +111,25 @@
 #include <aws/cloudfront/model/UpdateRealtimeLogConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateResponseHeadersPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateStreamingDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/ListCachePolicies2020_05_31Request.h>
+#include <aws/cloudfront/model/ListStreamingDistributions2020_05_31Request.h>
+#include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Request.h>
+#include <aws/cloudfront/model/ListRealtimeLogConfigs2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributions2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/ListFieldLevelEncryptionConfigs2020_05_31Request.h>
+#include <aws/cloudfront/model/ListFunctions2020_05_31Request.h>
+#include <aws/cloudfront/model/ListPublicKeys2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/ListKeyGroups2020_05_31Request.h>
+#include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
+#include <aws/cloudfront/model/ListResponseHeadersPolicies2020_05_31Request.h>
+#include <aws/cloudfront/model/ListFieldLevelEncryptionProfiles2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/ListContinuousDeploymentPolicies2020_05_31Request.h>
+#include <aws/cloudfront/model/ListOriginAccessControls2020_05_31Request.h>
+#include <aws/cloudfront/model/ListKeyValueStores2020_05_31Request.h>
+#include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Request.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudFrontClient header */
 
@@ -145,7 +164,7 @@ namespace Aws
 
   namespace CloudFront
   {
-    using CloudFrontClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudFrontClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudFrontEndpointProviderBase = Aws::CloudFront::Endpoint::CloudFrontEndpointProviderBase;
     using CloudFrontEndpointProvider = Aws::CloudFront::Endpoint::CloudFrontEndpointProvider;
 

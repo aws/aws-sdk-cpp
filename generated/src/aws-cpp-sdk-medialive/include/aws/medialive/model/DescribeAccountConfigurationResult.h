@@ -39,43 +39,25 @@ namespace Model
     AWS_MEDIALIVE_API DescribeAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const AccountConfiguration& GetAccountConfiguration() const{ return m_accountConfiguration; }
-
-    
     inline void SetAccountConfiguration(const AccountConfiguration& value) { m_accountConfiguration = value; }
-
-    
     inline void SetAccountConfiguration(AccountConfiguration&& value) { m_accountConfiguration = std::move(value); }
-
-    
     inline DescribeAccountConfigurationResult& WithAccountConfiguration(const AccountConfiguration& value) { SetAccountConfiguration(value); return *this;}
-
-    
     inline DescribeAccountConfigurationResult& WithAccountConfiguration(AccountConfiguration&& value) { SetAccountConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccountConfiguration m_accountConfiguration;

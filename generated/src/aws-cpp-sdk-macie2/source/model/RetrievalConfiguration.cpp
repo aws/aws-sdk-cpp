@@ -26,11 +26,8 @@ RetrievalConfiguration::RetrievalConfiguration() :
 {
 }
 
-RetrievalConfiguration::RetrievalConfiguration(JsonView jsonValue) : 
-    m_externalIdHasBeenSet(false),
-    m_retrievalMode(RetrievalMode::NOT_SET),
-    m_retrievalModeHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+RetrievalConfiguration::RetrievalConfiguration(JsonView jsonValue)
+  : RetrievalConfiguration()
 {
   *this = jsonValue;
 }

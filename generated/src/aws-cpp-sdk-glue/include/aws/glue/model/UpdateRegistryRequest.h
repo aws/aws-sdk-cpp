@@ -35,91 +35,33 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>This is a wrapper structure that may contain the registry name and Amazon
      * Resource Name (ARN).</p>
      */
     inline const RegistryId& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline void SetRegistryId(const RegistryId& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline void SetRegistryId(RegistryId&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline UpdateRegistryRequest& WithRegistryId(const RegistryId& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline UpdateRegistryRequest& WithRegistryId(RegistryId&& value) { SetRegistryId(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the registry. If description is not provided, this field
      * will not be updated.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the registry. If description is not provided, this field
-     * will not be updated.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the registry. If description is not provided, this field
-     * will not be updated.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the registry. If description is not provided, this field
-     * will not be updated.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the registry. If description is not provided, this field
-     * will not be updated.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the registry. If description is not provided, this field
-     * will not be updated.</p>
-     */
     inline UpdateRegistryRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the registry. If description is not provided, this field
-     * will not be updated.</p>
-     */
     inline UpdateRegistryRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the registry. If description is not provided, this field
-     * will not be updated.</p>
-     */
     inline UpdateRegistryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     RegistryId m_registryId;

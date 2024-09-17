@@ -33,18 +33,8 @@ ReviewTemplateLensReview::ReviewTemplateLensReview() :
 {
 }
 
-ReviewTemplateLensReview::ReviewTemplateLensReview(JsonView jsonValue) : 
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_lensNameHasBeenSet(false),
-    m_lensStatus(LensStatus::NOT_SET),
-    m_lensStatusHasBeenSet(false),
-    m_pillarReviewSummariesHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_questionCountsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+ReviewTemplateLensReview::ReviewTemplateLensReview(JsonView jsonValue)
+  : ReviewTemplateLensReview()
 {
   *this = jsonValue;
 }

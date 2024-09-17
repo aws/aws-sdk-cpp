@@ -73,14 +73,9 @@ namespace Endpoint
         }
     }
 
-    void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration<false>& config)
+    void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration& config)
     {
         return SetFromClientConfiguration(static_cast<const Client::ClientConfiguration&>(config));
-    }
-
-    void BuiltInParameters::SetFromClientConfiguration(const Client::GenericClientConfiguration<true>& config)
-    {
-        SetFromClientConfiguration(static_cast<const Client::ClientConfiguration&>(config));
     }
 
     const BuiltInParameters::EndpointParameter& BuiltInParameters::GetParameter(const Aws::String& name) const
@@ -123,6 +118,11 @@ namespace Endpoint
     }
 
     void BuiltInParameters::SetBooleanParameter(Aws::String name, bool value)
+    {
+        return SetParameter(EndpointParameter(std::move(name), value, EndpointParameter::ParameterOrigin::BUILT_IN));
+    }
+
+    void BuiltInParameters::SetStringArrayParameter(Aws::String name, const Aws::Vector<Aws::String>&& value)
     {
         return SetParameter(EndpointParameter(std::move(name), value, EndpointParameter::ParameterOrigin::BUILT_IN));
     }

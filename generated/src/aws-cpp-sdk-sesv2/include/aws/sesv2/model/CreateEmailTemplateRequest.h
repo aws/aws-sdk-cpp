@@ -39,83 +39,32 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the template.</p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the template.</p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The name of the template.</p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the template.</p>
-     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    /**
-     * <p>The name of the template.</p>
-     */
     inline CreateEmailTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the template.</p>
-     */
     inline CreateEmailTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the template.</p>
-     */
     inline CreateEmailTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The content of the email template, composed of a subject line, an HTML part,
      * and a text-only part.</p>
      */
     inline const EmailTemplateContent& GetTemplateContent() const{ return m_templateContent; }
-
-    /**
-     * <p>The content of the email template, composed of a subject line, an HTML part,
-     * and a text-only part.</p>
-     */
     inline bool TemplateContentHasBeenSet() const { return m_templateContentHasBeenSet; }
-
-    /**
-     * <p>The content of the email template, composed of a subject line, an HTML part,
-     * and a text-only part.</p>
-     */
     inline void SetTemplateContent(const EmailTemplateContent& value) { m_templateContentHasBeenSet = true; m_templateContent = value; }
-
-    /**
-     * <p>The content of the email template, composed of a subject line, an HTML part,
-     * and a text-only part.</p>
-     */
     inline void SetTemplateContent(EmailTemplateContent&& value) { m_templateContentHasBeenSet = true; m_templateContent = std::move(value); }
-
-    /**
-     * <p>The content of the email template, composed of a subject line, an HTML part,
-     * and a text-only part.</p>
-     */
     inline CreateEmailTemplateRequest& WithTemplateContent(const EmailTemplateContent& value) { SetTemplateContent(value); return *this;}
-
-    /**
-     * <p>The content of the email template, composed of a subject line, an HTML part,
-     * and a text-only part.</p>
-     */
     inline CreateEmailTemplateRequest& WithTemplateContent(EmailTemplateContent&& value) { SetTemplateContent(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateName;

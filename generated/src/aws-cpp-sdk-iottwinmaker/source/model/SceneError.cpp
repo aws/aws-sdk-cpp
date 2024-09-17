@@ -25,10 +25,8 @@ SceneError::SceneError() :
 {
 }
 
-SceneError::SceneError(JsonView jsonValue) : 
-    m_code(SceneErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SceneError::SceneError(JsonView jsonValue)
+  : SceneError()
 {
   *this = jsonValue;
 }

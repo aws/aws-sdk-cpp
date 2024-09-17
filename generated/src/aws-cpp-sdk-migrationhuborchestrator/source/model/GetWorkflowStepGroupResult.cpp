@@ -23,9 +23,8 @@ GetWorkflowStepGroupResult::GetWorkflowStepGroupResult() :
 {
 }
 
-GetWorkflowStepGroupResult::GetWorkflowStepGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StepGroupStatus::NOT_SET),
-    m_owner(Owner::NOT_SET)
+GetWorkflowStepGroupResult::GetWorkflowStepGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetWorkflowStepGroupResult()
 {
   *this = result;
 }

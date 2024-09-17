@@ -23,8 +23,8 @@ EdiType::EdiType() :
 {
 }
 
-EdiType::EdiType(JsonView jsonValue) : 
-    m_x12DetailsHasBeenSet(false)
+EdiType::EdiType(JsonView jsonValue)
+  : EdiType()
 {
   *this = jsonValue;
 }

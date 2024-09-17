@@ -43,46 +43,19 @@ namespace Model
     AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Valid storage options for your DB instance.</p>
      */
     inline const Aws::Vector<ValidStorageOptions>& GetStorage() const{ return m_storage; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline void SetStorage(const Aws::Vector<ValidStorageOptions>& value) { m_storageHasBeenSet = true; m_storage = value; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline void SetStorage(Aws::Vector<ValidStorageOptions>&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& WithStorage(const Aws::Vector<ValidStorageOptions>& value) { SetStorage(value); return *this;}
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& WithStorage(Aws::Vector<ValidStorageOptions>&& value) { SetStorage(std::move(value)); return *this;}
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& AddStorage(const ValidStorageOptions& value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& AddStorage(ValidStorageOptions&& value) { m_storageHasBeenSet = true; m_storage.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ValidStorageOptions> m_storage;

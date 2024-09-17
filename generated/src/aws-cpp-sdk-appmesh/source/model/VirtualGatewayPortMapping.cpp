@@ -26,11 +26,8 @@ VirtualGatewayPortMapping::VirtualGatewayPortMapping() :
 {
 }
 
-VirtualGatewayPortMapping::VirtualGatewayPortMapping(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(VirtualGatewayPortProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+VirtualGatewayPortMapping::VirtualGatewayPortMapping(JsonView jsonValue)
+  : VirtualGatewayPortMapping()
 {
   *this = jsonValue;
 }

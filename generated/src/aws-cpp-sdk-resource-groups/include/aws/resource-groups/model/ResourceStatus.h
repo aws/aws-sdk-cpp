@@ -40,36 +40,17 @@ namespace Model
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status.</p>
      */
     inline const ResourceStatusValue& GetName() const{ return m_name; }
-
-    /**
-     * <p>The current status.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The current status.</p>
-     */
     inline void SetName(const ResourceStatusValue& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The current status.</p>
-     */
     inline void SetName(ResourceStatusValue&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The current status.</p>
-     */
     inline ResourceStatus& WithName(const ResourceStatusValue& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The current status.</p>
-     */
     inline ResourceStatus& WithName(ResourceStatusValue&& value) { SetName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceStatusValue m_name;

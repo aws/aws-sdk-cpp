@@ -33,6 +33,7 @@ namespace Model
     AWS_QUICKSIGHT_API DescribeAccountSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your
      * Amazon QuickSight account name.</p> </li> <li> <p>The edition of Amazon
@@ -42,85 +43,31 @@ namespace Model
      * <p>The status of the Amazon QuickSight account's subscription.</p> </li> </ul>
      */
     inline const AccountInfo& GetAccountInfo() const{ return m_accountInfo; }
-
-    /**
-     * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your
-     * Amazon QuickSight account name.</p> </li> <li> <p>The edition of Amazon
-     * QuickSight that your account is using.</p> </li> <li> <p>The notification email
-     * address that is associated with the Amazon QuickSight account. </p> </li> <li>
-     * <p>The authentication type of the Amazon QuickSight account.</p> </li> <li>
-     * <p>The status of the Amazon QuickSight account's subscription.</p> </li> </ul>
-     */
     inline void SetAccountInfo(const AccountInfo& value) { m_accountInfo = value; }
-
-    /**
-     * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your
-     * Amazon QuickSight account name.</p> </li> <li> <p>The edition of Amazon
-     * QuickSight that your account is using.</p> </li> <li> <p>The notification email
-     * address that is associated with the Amazon QuickSight account. </p> </li> <li>
-     * <p>The authentication type of the Amazon QuickSight account.</p> </li> <li>
-     * <p>The status of the Amazon QuickSight account's subscription.</p> </li> </ul>
-     */
     inline void SetAccountInfo(AccountInfo&& value) { m_accountInfo = std::move(value); }
-
-    /**
-     * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your
-     * Amazon QuickSight account name.</p> </li> <li> <p>The edition of Amazon
-     * QuickSight that your account is using.</p> </li> <li> <p>The notification email
-     * address that is associated with the Amazon QuickSight account. </p> </li> <li>
-     * <p>The authentication type of the Amazon QuickSight account.</p> </li> <li>
-     * <p>The status of the Amazon QuickSight account's subscription.</p> </li> </ul>
-     */
     inline DescribeAccountSubscriptionResult& WithAccountInfo(const AccountInfo& value) { SetAccountInfo(value); return *this;}
-
-    /**
-     * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your
-     * Amazon QuickSight account name.</p> </li> <li> <p>The edition of Amazon
-     * QuickSight that your account is using.</p> </li> <li> <p>The notification email
-     * address that is associated with the Amazon QuickSight account. </p> </li> <li>
-     * <p>The authentication type of the Amazon QuickSight account.</p> </li> <li>
-     * <p>The status of the Amazon QuickSight account's subscription.</p> </li> </ul>
-     */
     inline DescribeAccountSubscriptionResult& WithAccountInfo(AccountInfo&& value) { SetAccountInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline DescribeAccountSubscriptionResult& WithStatus(int value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAccountSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAccountSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAccountSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccountInfo m_accountInfo;

@@ -31,24 +31,13 @@ NumericRangeFilter::NumericRangeFilter() :
     m_selectAllOptionsHasBeenSet(false),
     m_aggregationFunctionHasBeenSet(false),
     m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false)
+    m_nullOptionHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
 }
 
-NumericRangeFilter::NumericRangeFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_includeMinimum(false),
-    m_includeMinimumHasBeenSet(false),
-    m_includeMaximum(false),
-    m_includeMaximumHasBeenSet(false),
-    m_rangeMinimumHasBeenSet(false),
-    m_rangeMaximumHasBeenSet(false),
-    m_selectAllOptions(NumericFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false)
+NumericRangeFilter::NumericRangeFilter(JsonView jsonValue)
+  : NumericRangeFilter()
 {
   *this = jsonValue;
 }
@@ -118,6 +107,13 @@ NumericRangeFilter& NumericRangeFilter::operator =(JsonView jsonValue)
     m_nullOptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
+  {
+    m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
+
+    m_defaultFilterControlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -175,6 +171,12 @@ JsonValue NumericRangeFilter::Jsonize() const
   if(m_nullOptionHasBeenSet)
   {
    payload.WithString("NullOption", FilterNullOptionMapper::GetNameForFilterNullOption(m_nullOption));
+  }
+
+  if(m_defaultFilterControlConfigurationHasBeenSet)
+  {
+   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
+
   }
 
   return payload;

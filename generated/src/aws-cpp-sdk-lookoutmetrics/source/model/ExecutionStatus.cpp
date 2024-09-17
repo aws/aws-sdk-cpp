@@ -26,11 +26,8 @@ ExecutionStatus::ExecutionStatus() :
 {
 }
 
-ExecutionStatus::ExecutionStatus(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_status(AnomalyDetectionTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+ExecutionStatus::ExecutionStatus(JsonView jsonValue)
+  : ExecutionStatus()
 {
   *this = jsonValue;
 }

@@ -26,9 +26,8 @@ UserGroupsUpdateStatus::UserGroupsUpdateStatus() :
 {
 }
 
-UserGroupsUpdateStatus::UserGroupsUpdateStatus(const XmlNode& xmlNode) : 
-    m_userGroupIdsToAddHasBeenSet(false),
-    m_userGroupIdsToRemoveHasBeenSet(false)
+UserGroupsUpdateStatus::UserGroupsUpdateStatus(const XmlNode& xmlNode)
+  : UserGroupsUpdateStatus()
 {
   *this = xmlNode;
 }

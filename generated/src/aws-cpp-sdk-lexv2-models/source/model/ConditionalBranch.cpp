@@ -26,11 +26,8 @@ ConditionalBranch::ConditionalBranch() :
 {
 }
 
-ConditionalBranch::ConditionalBranch(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_nextStepHasBeenSet(false),
-    m_responseHasBeenSet(false)
+ConditionalBranch::ConditionalBranch(JsonView jsonValue)
+  : ConditionalBranch()
 {
   *this = jsonValue;
 }

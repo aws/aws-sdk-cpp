@@ -27,12 +27,8 @@ KerberosAttributes::KerberosAttributes() :
 {
 }
 
-KerberosAttributes::KerberosAttributes(JsonView jsonValue) : 
-    m_realmHasBeenSet(false),
-    m_kdcAdminPasswordHasBeenSet(false),
-    m_crossRealmTrustPrincipalPasswordHasBeenSet(false),
-    m_aDDomainJoinUserHasBeenSet(false),
-    m_aDDomainJoinPasswordHasBeenSet(false)
+KerberosAttributes::KerberosAttributes(JsonView jsonValue)
+  : KerberosAttributes()
 {
   *this = jsonValue;
 }

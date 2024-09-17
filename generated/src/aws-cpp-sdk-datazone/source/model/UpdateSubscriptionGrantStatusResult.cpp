@@ -22,8 +22,8 @@ UpdateSubscriptionGrantStatusResult::UpdateSubscriptionGrantStatusResult() :
 {
 }
 
-UpdateSubscriptionGrantStatusResult::UpdateSubscriptionGrantStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SubscriptionGrantOverallStatus::NOT_SET)
+UpdateSubscriptionGrantStatusResult::UpdateSubscriptionGrantStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSubscriptionGrantStatusResult()
 {
   *this = result;
 }
@@ -73,12 +73,6 @@ UpdateSubscriptionGrantStatusResult& UpdateSubscriptionGrantStatusResult::operat
   if(jsonValue.ValueExists("status"))
   {
     m_status = SubscriptionGrantOverallStatusMapper::GetSubscriptionGrantOverallStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("subscriptionId"))
-  {
-    m_subscriptionId = jsonValue.GetString("subscriptionId");
 
   }
 

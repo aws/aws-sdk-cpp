@@ -25,10 +25,8 @@ LifecycleExecutionResourceState::LifecycleExecutionResourceState() :
 {
 }
 
-LifecycleExecutionResourceState::LifecycleExecutionResourceState(JsonView jsonValue) : 
-    m_status(LifecycleExecutionResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+LifecycleExecutionResourceState::LifecycleExecutionResourceState(JsonView jsonValue)
+  : LifecycleExecutionResourceState()
 {
   *this = jsonValue;
 }

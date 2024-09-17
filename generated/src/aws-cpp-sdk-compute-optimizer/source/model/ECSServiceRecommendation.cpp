@@ -34,29 +34,13 @@ ECSServiceRecommendation::ECSServiceRecommendation() :
     m_serviceRecommendationOptionsHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false)
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
-ECSServiceRecommendation::ECSServiceRecommendation(JsonView jsonValue) : 
-    m_serviceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentServiceConfigurationHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_launchType(ECSServiceLaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_finding(ECSServiceRecommendationFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_serviceRecommendationOptionsHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false)
+ECSServiceRecommendation::ECSServiceRecommendation(JsonView jsonValue)
+  : ECSServiceRecommendation()
 {
   *this = jsonValue;
 }
@@ -149,6 +133,13 @@ ECSServiceRecommendation& ECSServiceRecommendation::operator =(JsonView jsonValu
     m_currentPerformanceRiskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -157,13 +148,6 @@ ECSServiceRecommendation& ECSServiceRecommendation::operator =(JsonView jsonValu
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
-  {
-    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-
-    m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
 
   return *this;
@@ -250,6 +234,12 @@ JsonValue ECSServiceRecommendation::Jsonize() const
    payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
   }
 
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -258,12 +248,6 @@ JsonValue ECSServiceRecommendation::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
-
-  }
-
-  if(m_effectiveRecommendationPreferencesHasBeenSet)
-  {
-   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
 
   }
 

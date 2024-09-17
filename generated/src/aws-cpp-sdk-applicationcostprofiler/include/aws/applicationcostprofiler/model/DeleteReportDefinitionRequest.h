@@ -32,46 +32,19 @@ namespace Model
     AWS_APPLICATIONCOSTPROFILER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Required. ID of the report to delete.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>Required. ID of the report to delete.</p>
-     */
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-
-    /**
-     * <p>Required. ID of the report to delete.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-
-    /**
-     * <p>Required. ID of the report to delete.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-
-    /**
-     * <p>Required. ID of the report to delete.</p>
-     */
     inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-
-    /**
-     * <p>Required. ID of the report to delete.</p>
-     */
     inline DeleteReportDefinitionRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>Required. ID of the report to delete.</p>
-     */
     inline DeleteReportDefinitionRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>Required. ID of the report to delete.</p>
-     */
     inline DeleteReportDefinitionRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

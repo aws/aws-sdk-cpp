@@ -33,53 +33,27 @@ namespace Model
     AWS_IOTANALYTICS_API DescribeLoggingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current settings of the IoT Analytics logging options.</p>
      */
     inline const LoggingOptions& GetLoggingOptions() const{ return m_loggingOptions; }
-
-    /**
-     * <p>The current settings of the IoT Analytics logging options.</p>
-     */
     inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptions = value; }
-
-    /**
-     * <p>The current settings of the IoT Analytics logging options.</p>
-     */
     inline void SetLoggingOptions(LoggingOptions&& value) { m_loggingOptions = std::move(value); }
-
-    /**
-     * <p>The current settings of the IoT Analytics logging options.</p>
-     */
     inline DescribeLoggingOptionsResult& WithLoggingOptions(const LoggingOptions& value) { SetLoggingOptions(value); return *this;}
-
-    /**
-     * <p>The current settings of the IoT Analytics logging options.</p>
-     */
     inline DescribeLoggingOptionsResult& WithLoggingOptions(LoggingOptions&& value) { SetLoggingOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeLoggingOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeLoggingOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeLoggingOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LoggingOptions m_loggingOptions;

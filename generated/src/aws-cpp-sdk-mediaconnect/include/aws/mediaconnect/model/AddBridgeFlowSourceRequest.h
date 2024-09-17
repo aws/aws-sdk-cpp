@@ -38,134 +38,47 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
      * bridge.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
-     */
     inline AddBridgeFlowSourceRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
-     */
     inline AddBridgeFlowSourceRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
-     * bridge.
-     */
     inline AddBridgeFlowSourceRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the VPC interface attachment to use for this source.
      */
     inline const VpcInterfaceAttachment& GetFlowVpcInterfaceAttachment() const{ return m_flowVpcInterfaceAttachment; }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline bool FlowVpcInterfaceAttachmentHasBeenSet() const { return m_flowVpcInterfaceAttachmentHasBeenSet; }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline void SetFlowVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { m_flowVpcInterfaceAttachmentHasBeenSet = true; m_flowVpcInterfaceAttachment = value; }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline void SetFlowVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { m_flowVpcInterfaceAttachmentHasBeenSet = true; m_flowVpcInterfaceAttachment = std::move(value); }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline AddBridgeFlowSourceRequest& WithFlowVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { SetFlowVpcInterfaceAttachment(value); return *this;}
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline AddBridgeFlowSourceRequest& WithFlowVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetFlowVpcInterfaceAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the flow source. This name is used to reference the source and must
      * be unique among sources in this bridge.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
-     */
     inline AddBridgeFlowSourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
-     */
     inline AddBridgeFlowSourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the flow source. This name is used to reference the source and must
-     * be unique among sources in this bridge.
-     */
     inline AddBridgeFlowSourceRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

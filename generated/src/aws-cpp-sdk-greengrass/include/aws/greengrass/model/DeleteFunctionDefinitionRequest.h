@@ -32,46 +32,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the Lambda function definition.
      */
     inline const Aws::String& GetFunctionDefinitionId() const{ return m_functionDefinitionId; }
-
-    /**
-     * The ID of the Lambda function definition.
-     */
     inline bool FunctionDefinitionIdHasBeenSet() const { return m_functionDefinitionIdHasBeenSet; }
-
-    /**
-     * The ID of the Lambda function definition.
-     */
     inline void SetFunctionDefinitionId(const Aws::String& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = value; }
-
-    /**
-     * The ID of the Lambda function definition.
-     */
     inline void SetFunctionDefinitionId(Aws::String&& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = std::move(value); }
-
-    /**
-     * The ID of the Lambda function definition.
-     */
     inline void SetFunctionDefinitionId(const char* value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId.assign(value); }
-
-    /**
-     * The ID of the Lambda function definition.
-     */
     inline DeleteFunctionDefinitionRequest& WithFunctionDefinitionId(const Aws::String& value) { SetFunctionDefinitionId(value); return *this;}
-
-    /**
-     * The ID of the Lambda function definition.
-     */
     inline DeleteFunctionDefinitionRequest& WithFunctionDefinitionId(Aws::String&& value) { SetFunctionDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the Lambda function definition.
-     */
     inline DeleteFunctionDefinitionRequest& WithFunctionDefinitionId(const char* value) { SetFunctionDefinitionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_functionDefinitionId;

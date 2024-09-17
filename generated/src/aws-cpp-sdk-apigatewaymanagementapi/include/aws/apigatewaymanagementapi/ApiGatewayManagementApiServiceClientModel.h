@@ -53,7 +53,7 @@ namespace Aws
 
   namespace ApiGatewayManagementApi
   {
-    using ApiGatewayManagementApiClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApiGatewayManagementApiClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApiGatewayManagementApiEndpointProviderBase = Aws::ApiGatewayManagementApi::Endpoint::ApiGatewayManagementApiEndpointProviderBase;
     using ApiGatewayManagementApiEndpointProvider = Aws::ApiGatewayManagementApi::Endpoint::ApiGatewayManagementApiEndpointProvider;
 

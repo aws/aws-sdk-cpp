@@ -25,10 +25,8 @@ SMSConfiguration::SMSConfiguration() :
 {
 }
 
-SMSConfiguration::SMSConfiguration(JsonView jsonValue) : 
-    m_senderIdHasBeenSet(false),
-    m_additionalMessageHasBeenSet(false),
-    m_recipientsHasBeenSet(false)
+SMSConfiguration::SMSConfiguration(JsonView jsonValue)
+  : SMSConfiguration()
 {
   *this = jsonValue;
 }

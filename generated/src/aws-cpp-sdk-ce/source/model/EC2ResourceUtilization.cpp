@@ -28,13 +28,8 @@ EC2ResourceUtilization::EC2ResourceUtilization() :
 {
 }
 
-EC2ResourceUtilization::EC2ResourceUtilization(JsonView jsonValue) : 
-    m_maxCpuUtilizationPercentageHasBeenSet(false),
-    m_maxMemoryUtilizationPercentageHasBeenSet(false),
-    m_maxStorageUtilizationPercentageHasBeenSet(false),
-    m_eBSResourceUtilizationHasBeenSet(false),
-    m_diskResourceUtilizationHasBeenSet(false),
-    m_networkResourceUtilizationHasBeenSet(false)
+EC2ResourceUtilization::EC2ResourceUtilization(JsonView jsonValue)
+  : EC2ResourceUtilization()
 {
   *this = jsonValue;
 }

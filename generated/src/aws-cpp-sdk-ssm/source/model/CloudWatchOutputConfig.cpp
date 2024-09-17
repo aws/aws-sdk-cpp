@@ -25,10 +25,8 @@ CloudWatchOutputConfig::CloudWatchOutputConfig() :
 {
 }
 
-CloudWatchOutputConfig::CloudWatchOutputConfig(JsonView jsonValue) : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_cloudWatchOutputEnabled(false),
-    m_cloudWatchOutputEnabledHasBeenSet(false)
+CloudWatchOutputConfig::CloudWatchOutputConfig(JsonView jsonValue)
+  : CloudWatchOutputConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ BulkDeployment::BulkDeployment() :
 {
 }
 
-BulkDeployment::BulkDeployment(JsonView jsonValue) : 
-    m_bulkDeploymentArnHasBeenSet(false),
-    m_bulkDeploymentIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+BulkDeployment::BulkDeployment(JsonView jsonValue)
+  : BulkDeployment()
 {
   *this = jsonValue;
 }

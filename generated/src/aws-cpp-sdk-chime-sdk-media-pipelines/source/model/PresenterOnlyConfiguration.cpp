@@ -24,9 +24,8 @@ PresenterOnlyConfiguration::PresenterOnlyConfiguration() :
 {
 }
 
-PresenterOnlyConfiguration::PresenterOnlyConfiguration(JsonView jsonValue) : 
-    m_presenterPosition(PresenterPosition::NOT_SET),
-    m_presenterPositionHasBeenSet(false)
+PresenterOnlyConfiguration::PresenterOnlyConfiguration(JsonView jsonValue)
+  : PresenterOnlyConfiguration()
 {
   *this = jsonValue;
 }

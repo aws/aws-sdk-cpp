@@ -39,77 +39,31 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error code associated with the batch request error.</p>
      */
     inline const BatchItemErrorCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error code associated with the batch request error.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error code associated with the batch request error.</p>
-     */
     inline void SetCode(const BatchItemErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error code associated with the batch request error.</p>
-     */
     inline void SetCode(BatchItemErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The error code associated with the batch request error.</p>
-     */
     inline BatchItemError& WithCode(const BatchItemErrorCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The error code associated with the batch request error.</p>
-     */
     inline BatchItemError& WithCode(BatchItemErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message with the reason for the batch request error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message with the reason for the batch request error.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message with the reason for the batch request error.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message with the reason for the batch request error.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message with the reason for the batch request error.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message with the reason for the batch request error.</p>
-     */
     inline BatchItemError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message with the reason for the batch request error.</p>
-     */
     inline BatchItemError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message with the reason for the batch request error.</p>
-     */
     inline BatchItemError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     BatchItemErrorCode m_code;

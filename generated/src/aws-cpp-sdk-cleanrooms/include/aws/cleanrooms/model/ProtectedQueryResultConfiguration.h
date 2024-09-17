@@ -38,36 +38,17 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration for protected query results.</p>
      */
     inline const ProtectedQueryOutputConfiguration& GetOutputConfiguration() const{ return m_outputConfiguration; }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline bool OutputConfigurationHasBeenSet() const { return m_outputConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline void SetOutputConfiguration(const ProtectedQueryOutputConfiguration& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = value; }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline void SetOutputConfiguration(ProtectedQueryOutputConfiguration&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline ProtectedQueryResultConfiguration& WithOutputConfiguration(const ProtectedQueryOutputConfiguration& value) { SetOutputConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration for protected query results.</p>
-     */
     inline ProtectedQueryResultConfiguration& WithOutputConfiguration(ProtectedQueryOutputConfiguration&& value) { SetOutputConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProtectedQueryOutputConfiguration m_outputConfiguration;

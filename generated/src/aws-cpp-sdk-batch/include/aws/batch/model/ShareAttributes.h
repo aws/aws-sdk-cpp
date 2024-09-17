@@ -39,6 +39,7 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
@@ -51,99 +52,16 @@ namespace Model
      * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
-
-    /**
-     * <p>A fair share identifier or fair share identifier prefix. If the string ends
-     * with an asterisk (*), this entry specifies the weight factor to use for fair
-     * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy can't overlap. For example, you can't have
-     * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
-     * another that specifies a <code>shareIdentifier</code> of
-     * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
-     * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, and can be followed by an asterisk (*).</p>
-     */
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
-
-    /**
-     * <p>A fair share identifier or fair share identifier prefix. If the string ends
-     * with an asterisk (*), this entry specifies the weight factor to use for fair
-     * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy can't overlap. For example, you can't have
-     * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
-     * another that specifies a <code>shareIdentifier</code> of
-     * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
-     * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, and can be followed by an asterisk (*).</p>
-     */
     inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
-
-    /**
-     * <p>A fair share identifier or fair share identifier prefix. If the string ends
-     * with an asterisk (*), this entry specifies the weight factor to use for fair
-     * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy can't overlap. For example, you can't have
-     * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
-     * another that specifies a <code>shareIdentifier</code> of
-     * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
-     * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, and can be followed by an asterisk (*).</p>
-     */
     inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
-
-    /**
-     * <p>A fair share identifier or fair share identifier prefix. If the string ends
-     * with an asterisk (*), this entry specifies the weight factor to use for fair
-     * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy can't overlap. For example, you can't have
-     * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
-     * another that specifies a <code>shareIdentifier</code> of
-     * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
-     * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, and can be followed by an asterisk (*).</p>
-     */
     inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
-
-    /**
-     * <p>A fair share identifier or fair share identifier prefix. If the string ends
-     * with an asterisk (*), this entry specifies the weight factor to use for fair
-     * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy can't overlap. For example, you can't have
-     * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
-     * another that specifies a <code>shareIdentifier</code> of
-     * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
-     * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, and can be followed by an asterisk (*).</p>
-     */
     inline ShareAttributes& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
-
-    /**
-     * <p>A fair share identifier or fair share identifier prefix. If the string ends
-     * with an asterisk (*), this entry specifies the weight factor to use for fair
-     * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy can't overlap. For example, you can't have
-     * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
-     * another that specifies a <code>shareIdentifier</code> of
-     * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
-     * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, and can be followed by an asterisk (*).</p>
-     */
     inline ShareAttributes& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A fair share identifier or fair share identifier prefix. If the string ends
-     * with an asterisk (*), this entry specifies the weight factor to use for fair
-     * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy can't overlap. For example, you can't have
-     * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
-     * another that specifies a <code>shareIdentifier</code> of
-     * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
-     * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, and can be followed by an asterisk (*).</p>
-     */
     inline ShareAttributes& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The weight factor for the fair share identifier. The default value is 1.0. A
      * lower value has a higher priority for compute resources. For example, jobs that
@@ -153,37 +71,10 @@ namespace Model
      * value is 999.9999.</p>
      */
     inline double GetWeightFactor() const{ return m_weightFactor; }
-
-    /**
-     * <p>The weight factor for the fair share identifier. The default value is 1.0. A
-     * lower value has a higher priority for compute resources. For example, jobs that
-     * use a share identifier with a weight factor of 0.125 (1/8) get 8 times the
-     * compute resources of jobs that use a share identifier with a weight factor of
-     * 1.</p> <p>The smallest supported value is 0.0001, and the largest supported
-     * value is 999.9999.</p>
-     */
     inline bool WeightFactorHasBeenSet() const { return m_weightFactorHasBeenSet; }
-
-    /**
-     * <p>The weight factor for the fair share identifier. The default value is 1.0. A
-     * lower value has a higher priority for compute resources. For example, jobs that
-     * use a share identifier with a weight factor of 0.125 (1/8) get 8 times the
-     * compute resources of jobs that use a share identifier with a weight factor of
-     * 1.</p> <p>The smallest supported value is 0.0001, and the largest supported
-     * value is 999.9999.</p>
-     */
     inline void SetWeightFactor(double value) { m_weightFactorHasBeenSet = true; m_weightFactor = value; }
-
-    /**
-     * <p>The weight factor for the fair share identifier. The default value is 1.0. A
-     * lower value has a higher priority for compute resources. For example, jobs that
-     * use a share identifier with a weight factor of 0.125 (1/8) get 8 times the
-     * compute resources of jobs that use a share identifier with a weight factor of
-     * 1.</p> <p>The smallest supported value is 0.0001, and the largest supported
-     * value is 999.9999.</p>
-     */
     inline ShareAttributes& WithWeightFactor(double value) { SetWeightFactor(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shareIdentifier;

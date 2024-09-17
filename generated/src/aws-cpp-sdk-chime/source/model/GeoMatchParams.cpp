@@ -24,9 +24,8 @@ GeoMatchParams::GeoMatchParams() :
 {
 }
 
-GeoMatchParams::GeoMatchParams(JsonView jsonValue) : 
-    m_countryHasBeenSet(false),
-    m_areaCodeHasBeenSet(false)
+GeoMatchParams::GeoMatchParams(JsonView jsonValue)
+  : GeoMatchParams()
 {
   *this = jsonValue;
 }

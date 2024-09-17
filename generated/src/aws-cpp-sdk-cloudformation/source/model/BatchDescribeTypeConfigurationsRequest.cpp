@@ -21,11 +21,18 @@ Aws::String BatchDescribeTypeConfigurationsRequest::SerializePayload() const
   ss << "Action=BatchDescribeTypeConfigurations&";
   if(m_typeConfigurationIdentifiersHasBeenSet)
   {
-    unsigned typeConfigurationIdentifiersCount = 1;
-    for(auto& item : m_typeConfigurationIdentifiers)
+    if (m_typeConfigurationIdentifiers.empty())
     {
-      item.OutputToStream(ss, "TypeConfigurationIdentifiers.member.", typeConfigurationIdentifiersCount, "");
-      typeConfigurationIdentifiersCount++;
+      ss << "TypeConfigurationIdentifiers=&";
+    }
+    else
+    {
+      unsigned typeConfigurationIdentifiersCount = 1;
+      for(auto& item : m_typeConfigurationIdentifiers)
+      {
+        item.OutputToStream(ss, "TypeConfigurationIdentifiers.member.", typeConfigurationIdentifiersCount, "");
+        typeConfigurationIdentifiersCount++;
+      }
     }
   }
 

@@ -26,11 +26,8 @@ CallDetails::CallDetails() :
 {
 }
 
-CallDetails::CallDetails(JsonView jsonValue) : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_isCaller(false),
-    m_isCallerHasBeenSet(false)
+CallDetails::CallDetails(JsonView jsonValue)
+  : CallDetails()
 {
   *this = jsonValue;
 }

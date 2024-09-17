@@ -38,46 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a customer's endpoint.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-
-    /**
-     * <p>The name of a customer's endpoint.</p>
-     */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-
-    /**
-     * <p>The name of a customer's endpoint.</p>
-     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-
-    /**
-     * <p>The name of a customer's endpoint.</p>
-     */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-
-    /**
-     * <p>The name of a customer's endpoint.</p>
-     */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-
-    /**
-     * <p>The name of a customer's endpoint.</p>
-     */
     inline EndpointInfo& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-
-    /**
-     * <p>The name of a customer's endpoint.</p>
-     */
     inline EndpointInfo& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a customer's endpoint.</p>
-     */
     inline EndpointInfo& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointName;

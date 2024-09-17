@@ -32,17 +32,8 @@ AccessPolicyDetail::AccessPolicyDetail() :
 {
 }
 
-AccessPolicyDetail::AccessPolicyDetail(JsonView jsonValue) : 
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_policyVersionHasBeenSet(false),
-    m_type(AccessPolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
+AccessPolicyDetail::AccessPolicyDetail(JsonView jsonValue)
+  : AccessPolicyDetail()
 {
   *this = jsonValue;
 }

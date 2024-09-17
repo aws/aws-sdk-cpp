@@ -28,13 +28,8 @@ ApiKey::ApiKey() :
 {
 }
 
-ApiKey::ApiKey(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expires(0),
-    m_expiresHasBeenSet(false),
-    m_deletes(0),
-    m_deletesHasBeenSet(false)
+ApiKey::ApiKey(JsonView jsonValue)
+  : ApiKey()
 {
   *this = jsonValue;
 }

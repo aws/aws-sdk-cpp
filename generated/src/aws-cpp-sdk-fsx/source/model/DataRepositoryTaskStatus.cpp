@@ -31,16 +31,8 @@ DataRepositoryTaskStatus::DataRepositoryTaskStatus() :
 {
 }
 
-DataRepositoryTaskStatus::DataRepositoryTaskStatus(JsonView jsonValue) : 
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_succeededCount(0),
-    m_succeededCountHasBeenSet(false),
-    m_failedCount(0),
-    m_failedCountHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_releasedCapacity(0),
-    m_releasedCapacityHasBeenSet(false)
+DataRepositoryTaskStatus::DataRepositoryTaskStatus(JsonView jsonValue)
+  : DataRepositoryTaskStatus()
 {
   *this = jsonValue;
 }

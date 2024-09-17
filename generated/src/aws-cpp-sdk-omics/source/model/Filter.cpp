@@ -20,13 +20,13 @@ namespace Model
 
 Filter::Filter() : 
     m_resourceArnsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
-Filter::Filter(JsonView jsonValue) : 
-    m_resourceArnsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+Filter::Filter(JsonView jsonValue)
+  : Filter()
 {
   *this = jsonValue;
 }
@@ -51,6 +51,16 @@ Filter& Filter::operator =(JsonView jsonValue)
       m_status.push_back(ShareStatusMapper::GetShareStatusForName(statusJsonList[statusIndex].AsString()));
     }
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    Aws::Utils::Array<JsonView> typeJsonList = jsonValue.GetArray("type");
+    for(unsigned typeIndex = 0; typeIndex < typeJsonList.GetLength(); ++typeIndex)
+    {
+      m_type.push_back(ShareResourceTypeMapper::GetShareResourceTypeForName(typeJsonList[typeIndex].AsString()));
+    }
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +89,17 @@ JsonValue Filter::Jsonize() const
      statusJsonList[statusIndex].AsString(ShareStatusMapper::GetNameForShareStatus(m_status[statusIndex]));
    }
    payload.WithArray("status", std::move(statusJsonList));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> typeJsonList(m_type.size());
+   for(unsigned typeIndex = 0; typeIndex < typeJsonList.GetLength(); ++typeIndex)
+   {
+     typeJsonList[typeIndex].AsString(ShareResourceTypeMapper::GetNameForShareResourceType(m_type[typeIndex]));
+   }
+   payload.WithArray("type", std::move(typeJsonList));
 
   }
 

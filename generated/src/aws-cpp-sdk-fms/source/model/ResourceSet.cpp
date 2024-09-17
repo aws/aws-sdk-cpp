@@ -30,15 +30,8 @@ ResourceSet::ResourceSet() :
 {
 }
 
-ResourceSet::ResourceSet(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updateTokenHasBeenSet(false),
-    m_resourceTypeListHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_resourceSetStatus(ResourceSetStatus::NOT_SET),
-    m_resourceSetStatusHasBeenSet(false)
+ResourceSet::ResourceSet(JsonView jsonValue)
+  : ResourceSet()
 {
   *this = jsonValue;
 }

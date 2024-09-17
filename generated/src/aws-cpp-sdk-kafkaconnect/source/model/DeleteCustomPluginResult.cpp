@@ -22,8 +22,8 @@ DeleteCustomPluginResult::DeleteCustomPluginResult() :
 {
 }
 
-DeleteCustomPluginResult::DeleteCustomPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_customPluginState(CustomPluginState::NOT_SET)
+DeleteCustomPluginResult::DeleteCustomPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteCustomPluginResult()
 {
   *this = result;
 }

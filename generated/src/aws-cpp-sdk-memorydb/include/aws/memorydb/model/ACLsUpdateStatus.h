@@ -37,46 +37,19 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of ACLs pending to be applied.</p>
      */
     inline const Aws::String& GetACLToApply() const{ return m_aCLToApply; }
-
-    /**
-     * <p>A list of ACLs pending to be applied.</p>
-     */
     inline bool ACLToApplyHasBeenSet() const { return m_aCLToApplyHasBeenSet; }
-
-    /**
-     * <p>A list of ACLs pending to be applied.</p>
-     */
     inline void SetACLToApply(const Aws::String& value) { m_aCLToApplyHasBeenSet = true; m_aCLToApply = value; }
-
-    /**
-     * <p>A list of ACLs pending to be applied.</p>
-     */
     inline void SetACLToApply(Aws::String&& value) { m_aCLToApplyHasBeenSet = true; m_aCLToApply = std::move(value); }
-
-    /**
-     * <p>A list of ACLs pending to be applied.</p>
-     */
     inline void SetACLToApply(const char* value) { m_aCLToApplyHasBeenSet = true; m_aCLToApply.assign(value); }
-
-    /**
-     * <p>A list of ACLs pending to be applied.</p>
-     */
     inline ACLsUpdateStatus& WithACLToApply(const Aws::String& value) { SetACLToApply(value); return *this;}
-
-    /**
-     * <p>A list of ACLs pending to be applied.</p>
-     */
     inline ACLsUpdateStatus& WithACLToApply(Aws::String&& value) { SetACLToApply(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of ACLs pending to be applied.</p>
-     */
     inline ACLsUpdateStatus& WithACLToApply(const char* value) { SetACLToApply(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aCLToApply;

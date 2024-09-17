@@ -24,9 +24,8 @@ AnalysisSourceTemplate::AnalysisSourceTemplate() :
 {
 }
 
-AnalysisSourceTemplate::AnalysisSourceTemplate(JsonView jsonValue) : 
-    m_dataSetReferencesHasBeenSet(false),
-    m_arnHasBeenSet(false)
+AnalysisSourceTemplate::AnalysisSourceTemplate(JsonView jsonValue)
+  : AnalysisSourceTemplate()
 {
   *this = jsonValue;
 }

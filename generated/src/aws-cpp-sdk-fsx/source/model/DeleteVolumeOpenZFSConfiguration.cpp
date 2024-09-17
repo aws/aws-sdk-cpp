@@ -23,8 +23,8 @@ DeleteVolumeOpenZFSConfiguration::DeleteVolumeOpenZFSConfiguration() :
 {
 }
 
-DeleteVolumeOpenZFSConfiguration::DeleteVolumeOpenZFSConfiguration(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false)
+DeleteVolumeOpenZFSConfiguration::DeleteVolumeOpenZFSConfiguration(JsonView jsonValue)
+  : DeleteVolumeOpenZFSConfiguration()
 {
   *this = jsonValue;
 }

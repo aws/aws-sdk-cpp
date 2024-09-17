@@ -26,11 +26,8 @@ DefaultNewSheetConfiguration::DefaultNewSheetConfiguration() :
 {
 }
 
-DefaultNewSheetConfiguration::DefaultNewSheetConfiguration(JsonView jsonValue) : 
-    m_interactiveLayoutConfigurationHasBeenSet(false),
-    m_paginatedLayoutConfigurationHasBeenSet(false),
-    m_sheetContentType(SheetContentType::NOT_SET),
-    m_sheetContentTypeHasBeenSet(false)
+DefaultNewSheetConfiguration::DefaultNewSheetConfiguration(JsonView jsonValue)
+  : DefaultNewSheetConfiguration()
 {
   *this = jsonValue;
 }

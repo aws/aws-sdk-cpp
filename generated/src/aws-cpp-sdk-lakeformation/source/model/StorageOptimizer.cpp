@@ -28,13 +28,8 @@ StorageOptimizer::StorageOptimizer() :
 {
 }
 
-StorageOptimizer::StorageOptimizer(JsonView jsonValue) : 
-    m_storageOptimizerType(OptimizerType::NOT_SET),
-    m_storageOptimizerTypeHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_warningsHasBeenSet(false),
-    m_lastRunDetailsHasBeenSet(false)
+StorageOptimizer::StorageOptimizer(JsonView jsonValue)
+  : StorageOptimizer()
 {
   *this = jsonValue;
 }

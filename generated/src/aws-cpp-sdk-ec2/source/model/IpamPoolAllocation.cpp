@@ -32,15 +32,8 @@ IpamPoolAllocation::IpamPoolAllocation() :
 {
 }
 
-IpamPoolAllocation::IpamPoolAllocation(const XmlNode& xmlNode) : 
-    m_cidrHasBeenSet(false),
-    m_ipamPoolAllocationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(IpamPoolAllocationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
+IpamPoolAllocation::IpamPoolAllocation(const XmlNode& xmlNode)
+  : IpamPoolAllocation()
 {
   *this = xmlNode;
 }

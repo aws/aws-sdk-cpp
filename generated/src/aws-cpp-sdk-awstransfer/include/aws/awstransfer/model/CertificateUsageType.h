@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SIGNING,
-    ENCRYPTION
+    ENCRYPTION,
+    TLS
   };
 
 namespace CertificateUsageTypeMapper

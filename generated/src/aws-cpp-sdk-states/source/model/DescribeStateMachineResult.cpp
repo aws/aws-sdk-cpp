@@ -23,9 +23,8 @@ DescribeStateMachineResult::DescribeStateMachineResult() :
 {
 }
 
-DescribeStateMachineResult::DescribeStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StateMachineStatus::NOT_SET),
-    m_type(StateMachineType::NOT_SET)
+DescribeStateMachineResult::DescribeStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeStateMachineResult()
 {
   *this = result;
 }
@@ -102,6 +101,12 @@ DescribeStateMachineResult& DescribeStateMachineResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("encryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
 
   }
 

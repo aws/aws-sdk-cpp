@@ -30,13 +30,8 @@ KeyGroupList::KeyGroupList() :
 {
 }
 
-KeyGroupList::KeyGroupList(const XmlNode& xmlNode) : 
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+KeyGroupList::KeyGroupList(const XmlNode& xmlNode)
+  : KeyGroupList()
 {
   *this = xmlNode;
 }

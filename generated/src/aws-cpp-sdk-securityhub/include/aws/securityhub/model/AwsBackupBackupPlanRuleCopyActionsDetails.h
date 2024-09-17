@@ -39,55 +39,22 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. </p>
      */
     inline const Aws::String& GetDestinationBackupVaultArn() const{ return m_destinationBackupVaultArn; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
-     * vault for the copied backup. </p>
-     */
     inline bool DestinationBackupVaultArnHasBeenSet() const { return m_destinationBackupVaultArnHasBeenSet; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
-     * vault for the copied backup. </p>
-     */
     inline void SetDestinationBackupVaultArn(const Aws::String& value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn = value; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
-     * vault for the copied backup. </p>
-     */
     inline void SetDestinationBackupVaultArn(Aws::String&& value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn = std::move(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
-     * vault for the copied backup. </p>
-     */
     inline void SetDestinationBackupVaultArn(const char* value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn.assign(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
-     * vault for the copied backup. </p>
-     */
     inline AwsBackupBackupPlanRuleCopyActionsDetails& WithDestinationBackupVaultArn(const Aws::String& value) { SetDestinationBackupVaultArn(value); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
-     * vault for the copied backup. </p>
-     */
     inline AwsBackupBackupPlanRuleCopyActionsDetails& WithDestinationBackupVaultArn(Aws::String&& value) { SetDestinationBackupVaultArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
-     * vault for the copied backup. </p>
-     */
     inline AwsBackupBackupPlanRuleCopyActionsDetails& WithDestinationBackupVaultArn(const char* value) { SetDestinationBackupVaultArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines when a protected resource is transitioned to cold storage and when it
      * expires. Backup transitions and expires backups automatically according to the
@@ -97,57 +64,12 @@ namespace Model
      * days.</p>
      */
     inline const AwsBackupBackupPlanLifecycleDetails& GetLifecycle() const{ return m_lifecycle; }
-
-    /**
-     * <p>Defines when a protected resource is transitioned to cold storage and when it
-     * expires. Backup transitions and expires backups automatically according to the
-     * lifecycle that you define. If you do not specify a lifecycle, Backup applies the
-     * lifecycle policy of the source backup to the destination backup.</p> <p>Backups
-     * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days.</p>
-     */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-
-    /**
-     * <p>Defines when a protected resource is transitioned to cold storage and when it
-     * expires. Backup transitions and expires backups automatically according to the
-     * lifecycle that you define. If you do not specify a lifecycle, Backup applies the
-     * lifecycle policy of the source backup to the destination backup.</p> <p>Backups
-     * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days.</p>
-     */
     inline void SetLifecycle(const AwsBackupBackupPlanLifecycleDetails& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-
-    /**
-     * <p>Defines when a protected resource is transitioned to cold storage and when it
-     * expires. Backup transitions and expires backups automatically according to the
-     * lifecycle that you define. If you do not specify a lifecycle, Backup applies the
-     * lifecycle policy of the source backup to the destination backup.</p> <p>Backups
-     * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days.</p>
-     */
     inline void SetLifecycle(AwsBackupBackupPlanLifecycleDetails&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-
-    /**
-     * <p>Defines when a protected resource is transitioned to cold storage and when it
-     * expires. Backup transitions and expires backups automatically according to the
-     * lifecycle that you define. If you do not specify a lifecycle, Backup applies the
-     * lifecycle policy of the source backup to the destination backup.</p> <p>Backups
-     * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days.</p>
-     */
     inline AwsBackupBackupPlanRuleCopyActionsDetails& WithLifecycle(const AwsBackupBackupPlanLifecycleDetails& value) { SetLifecycle(value); return *this;}
-
-    /**
-     * <p>Defines when a protected resource is transitioned to cold storage and when it
-     * expires. Backup transitions and expires backups automatically according to the
-     * lifecycle that you define. If you do not specify a lifecycle, Backup applies the
-     * lifecycle policy of the source backup to the destination backup.</p> <p>Backups
-     * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days.</p>
-     */
     inline AwsBackupBackupPlanRuleCopyActionsDetails& WithLifecycle(AwsBackupBackupPlanLifecycleDetails&& value) { SetLifecycle(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationBackupVaultArn;

@@ -33,73 +33,30 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const APNSVoipChannelRequest& GetAPNSVoipChannelRequest() const{ return m_aPNSVoipChannelRequest; }
-
-    
     inline bool APNSVoipChannelRequestHasBeenSet() const { return m_aPNSVoipChannelRequestHasBeenSet; }
-
-    
     inline void SetAPNSVoipChannelRequest(const APNSVoipChannelRequest& value) { m_aPNSVoipChannelRequestHasBeenSet = true; m_aPNSVoipChannelRequest = value; }
-
-    
     inline void SetAPNSVoipChannelRequest(APNSVoipChannelRequest&& value) { m_aPNSVoipChannelRequestHasBeenSet = true; m_aPNSVoipChannelRequest = std::move(value); }
-
-    
     inline UpdateApnsVoipChannelRequest& WithAPNSVoipChannelRequest(const APNSVoipChannelRequest& value) { SetAPNSVoipChannelRequest(value); return *this;}
-
-    
     inline UpdateApnsVoipChannelRequest& WithAPNSVoipChannelRequest(APNSVoipChannelRequest&& value) { SetAPNSVoipChannelRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateApnsVoipChannelRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateApnsVoipChannelRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateApnsVoipChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
-
+    ///@}
   private:
 
     APNSVoipChannelRequest m_aPNSVoipChannelRequest;

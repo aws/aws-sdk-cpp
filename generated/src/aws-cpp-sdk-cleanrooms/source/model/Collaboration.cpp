@@ -37,22 +37,8 @@ Collaboration::Collaboration() :
 {
 }
 
-Collaboration::Collaboration(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_creatorDisplayNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_memberStatus(MemberStatus::NOT_SET),
-    m_memberStatusHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_dataEncryptionMetadataHasBeenSet(false),
-    m_queryLogStatus(CollaborationQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false)
+Collaboration::Collaboration(JsonView jsonValue)
+  : Collaboration()
 {
   *this = jsonValue;
 }

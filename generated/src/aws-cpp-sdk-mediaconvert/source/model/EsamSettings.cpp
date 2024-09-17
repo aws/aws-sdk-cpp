@@ -26,11 +26,8 @@ EsamSettings::EsamSettings() :
 {
 }
 
-EsamSettings::EsamSettings(JsonView jsonValue) : 
-    m_manifestConfirmConditionNotificationHasBeenSet(false),
-    m_responseSignalPreroll(0),
-    m_responseSignalPrerollHasBeenSet(false),
-    m_signalProcessingNotificationHasBeenSet(false)
+EsamSettings::EsamSettings(JsonView jsonValue)
+  : EsamSettings()
 {
   *this = jsonValue;
 }

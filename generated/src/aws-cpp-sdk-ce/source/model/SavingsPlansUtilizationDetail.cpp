@@ -27,12 +27,8 @@ SavingsPlansUtilizationDetail::SavingsPlansUtilizationDetail() :
 {
 }
 
-SavingsPlansUtilizationDetail::SavingsPlansUtilizationDetail(JsonView jsonValue) : 
-    m_savingsPlanArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_utilizationHasBeenSet(false),
-    m_savingsHasBeenSet(false),
-    m_amortizedCommitmentHasBeenSet(false)
+SavingsPlansUtilizationDetail::SavingsPlansUtilizationDetail(JsonView jsonValue)
+  : SavingsPlansUtilizationDetail()
 {
   *this = jsonValue;
 }

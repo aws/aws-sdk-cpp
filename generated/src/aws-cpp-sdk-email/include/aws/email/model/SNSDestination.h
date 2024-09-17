@@ -44,6 +44,7 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
      * ARN of a topic by using the <a
@@ -53,77 +54,14 @@ namespace Model
      * SNS Developer Guide</a>.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
-
-    /**
-     * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
-     * ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
-     * ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
-
-    /**
-     * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
-     * ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
-     * ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
-
-    /**
-     * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
-     * ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline SNSDestination& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
-     * ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline SNSDestination& WithTopicARN(Aws::String&& value) { SetTopicARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon SNS topic for email sending events. You can find the
-     * ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * Amazon SNS operation.</p> <p>For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     * SNS Developer Guide</a>.</p>
-     */
     inline SNSDestination& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicARN;

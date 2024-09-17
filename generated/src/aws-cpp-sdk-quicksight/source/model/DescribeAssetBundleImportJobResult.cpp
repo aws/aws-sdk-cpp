@@ -24,10 +24,8 @@ DescribeAssetBundleImportJobResult::DescribeAssetBundleImportJobResult() :
 {
 }
 
-DescribeAssetBundleImportJobResult::DescribeAssetBundleImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(AssetBundleImportJobStatus::NOT_SET),
-    m_failureAction(AssetBundleImportFailureAction::NOT_SET),
-    m_status(0)
+DescribeAssetBundleImportJobResult::DescribeAssetBundleImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAssetBundleImportJobResult()
 {
   *this = result;
 }
@@ -117,6 +115,15 @@ DescribeAssetBundleImportJobResult& DescribeAssetBundleImportJobResult::operator
   {
     m_overrideValidationStrategy = jsonValue.GetObject("OverrideValidationStrategy");
 
+  }
+
+  if(jsonValue.ValueExists("Warnings"))
+  {
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
+    }
   }
 
 

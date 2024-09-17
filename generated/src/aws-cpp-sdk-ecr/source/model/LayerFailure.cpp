@@ -26,11 +26,8 @@ LayerFailure::LayerFailure() :
 {
 }
 
-LayerFailure::LayerFailure(JsonView jsonValue) : 
-    m_layerDigestHasBeenSet(false),
-    m_failureCode(LayerFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+LayerFailure::LayerFailure(JsonView jsonValue)
+  : LayerFailure()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SingleMasterConfiguration::SingleMasterConfiguration() :
 {
 }
 
-SingleMasterConfiguration::SingleMasterConfiguration(JsonView jsonValue) : 
-    m_messageTtlSeconds(0),
-    m_messageTtlSecondsHasBeenSet(false)
+SingleMasterConfiguration::SingleMasterConfiguration(JsonView jsonValue)
+  : SingleMasterConfiguration()
 {
   *this = jsonValue;
 }

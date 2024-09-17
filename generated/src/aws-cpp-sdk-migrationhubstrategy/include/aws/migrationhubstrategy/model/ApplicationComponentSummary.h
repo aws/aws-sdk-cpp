@@ -38,57 +38,27 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Contains the name of application types. </p>
      */
     inline const AppType& GetAppType() const{ return m_appType; }
-
-    /**
-     * <p> Contains the name of application types. </p>
-     */
     inline bool AppTypeHasBeenSet() const { return m_appTypeHasBeenSet; }
-
-    /**
-     * <p> Contains the name of application types. </p>
-     */
     inline void SetAppType(const AppType& value) { m_appTypeHasBeenSet = true; m_appType = value; }
-
-    /**
-     * <p> Contains the name of application types. </p>
-     */
     inline void SetAppType(AppType&& value) { m_appTypeHasBeenSet = true; m_appType = std::move(value); }
-
-    /**
-     * <p> Contains the name of application types. </p>
-     */
     inline ApplicationComponentSummary& WithAppType(const AppType& value) { SetAppType(value); return *this;}
-
-    /**
-     * <p> Contains the name of application types. </p>
-     */
     inline ApplicationComponentSummary& WithAppType(AppType&& value) { SetAppType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Contains the count of application type. </p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p> Contains the count of application type. </p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p> Contains the count of application type. </p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p> Contains the count of application type. </p>
-     */
     inline ApplicationComponentSummary& WithCount(int value) { SetCount(value); return *this;}
-
+    ///@}
   private:
 
     AppType m_appType;

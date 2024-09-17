@@ -35,20 +35,8 @@ Assignment::Assignment() :
 {
 }
 
-Assignment::Assignment(JsonView jsonValue) : 
-    m_assignmentIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_hITIdHasBeenSet(false),
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_assignmentStatusHasBeenSet(false),
-    m_autoApprovalTimeHasBeenSet(false),
-    m_acceptTimeHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_approvalTimeHasBeenSet(false),
-    m_rejectionTimeHasBeenSet(false),
-    m_deadlineHasBeenSet(false),
-    m_answerHasBeenSet(false),
-    m_requesterFeedbackHasBeenSet(false)
+Assignment::Assignment(JsonView jsonValue)
+  : Assignment()
 {
   *this = jsonValue;
 }

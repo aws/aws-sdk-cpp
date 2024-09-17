@@ -22,8 +22,8 @@ GetSegmentDetectionResult::GetSegmentDetectionResult() :
 {
 }
 
-GetSegmentDetectionResult::GetSegmentDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
+GetSegmentDetectionResult::GetSegmentDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSegmentDetectionResult()
 {
   *this = result;
 }

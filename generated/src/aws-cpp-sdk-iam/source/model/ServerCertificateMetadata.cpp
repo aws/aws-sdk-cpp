@@ -30,13 +30,8 @@ ServerCertificateMetadata::ServerCertificateMetadata() :
 {
 }
 
-ServerCertificateMetadata::ServerCertificateMetadata(const XmlNode& xmlNode) : 
-    m_pathHasBeenSet(false),
-    m_serverCertificateNameHasBeenSet(false),
-    m_serverCertificateIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_uploadDateHasBeenSet(false),
-    m_expirationHasBeenSet(false)
+ServerCertificateMetadata::ServerCertificateMetadata(const XmlNode& xmlNode)
+  : ServerCertificateMetadata()
 {
   *this = xmlNode;
 }

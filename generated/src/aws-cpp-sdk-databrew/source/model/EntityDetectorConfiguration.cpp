@@ -24,9 +24,8 @@ EntityDetectorConfiguration::EntityDetectorConfiguration() :
 {
 }
 
-EntityDetectorConfiguration::EntityDetectorConfiguration(JsonView jsonValue) : 
-    m_entityTypesHasBeenSet(false),
-    m_allowedStatisticsHasBeenSet(false)
+EntityDetectorConfiguration::EntityDetectorConfiguration(JsonView jsonValue)
+  : EntityDetectorConfiguration()
 {
   *this = jsonValue;
 }

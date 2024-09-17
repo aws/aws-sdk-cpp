@@ -23,8 +23,8 @@ MssEncryption::MssEncryption() :
 {
 }
 
-MssEncryption::MssEncryption(JsonView jsonValue) : 
-    m_spekeKeyProviderHasBeenSet(false)
+MssEncryption::MssEncryption(JsonView jsonValue)
+  : MssEncryption()
 {
   *this = jsonValue;
 }

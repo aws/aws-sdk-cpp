@@ -24,9 +24,8 @@ BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission() :
 {
 }
 
-BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false)
+BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission(JsonView jsonValue)
+  : BatchStopJobRunSuccessfulSubmission()
 {
   *this = jsonValue;
 }

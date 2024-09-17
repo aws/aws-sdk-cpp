@@ -24,9 +24,8 @@ SeriesItem::SeriesItem() :
 {
 }
 
-SeriesItem::SeriesItem(JsonView jsonValue) : 
-    m_fieldSeriesItemHasBeenSet(false),
-    m_dataFieldSeriesItemHasBeenSet(false)
+SeriesItem::SeriesItem(JsonView jsonValue)
+  : SeriesItem()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AwsVpcConfiguration::AwsVpcConfiguration() :
 {
 }
 
-AwsVpcConfiguration::AwsVpcConfiguration(JsonView jsonValue) : 
-    m_assignPublicIp(AssignPublicIp::NOT_SET),
-    m_assignPublicIpHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+AwsVpcConfiguration::AwsVpcConfiguration(JsonView jsonValue)
+  : AwsVpcConfiguration()
 {
   *this = jsonValue;
 }

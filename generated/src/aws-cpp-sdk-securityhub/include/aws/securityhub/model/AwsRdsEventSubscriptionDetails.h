@@ -39,332 +39,118 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the account that is associated with the event notification
      * subscription.</p>
      */
     inline const Aws::String& GetCustSubscriptionId() const{ return m_custSubscriptionId; }
-
-    /**
-     * <p>The identifier of the account that is associated with the event notification
-     * subscription.</p>
-     */
     inline bool CustSubscriptionIdHasBeenSet() const { return m_custSubscriptionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the account that is associated with the event notification
-     * subscription.</p>
-     */
     inline void SetCustSubscriptionId(const Aws::String& value) { m_custSubscriptionIdHasBeenSet = true; m_custSubscriptionId = value; }
-
-    /**
-     * <p>The identifier of the account that is associated with the event notification
-     * subscription.</p>
-     */
     inline void SetCustSubscriptionId(Aws::String&& value) { m_custSubscriptionIdHasBeenSet = true; m_custSubscriptionId = std::move(value); }
-
-    /**
-     * <p>The identifier of the account that is associated with the event notification
-     * subscription.</p>
-     */
     inline void SetCustSubscriptionId(const char* value) { m_custSubscriptionIdHasBeenSet = true; m_custSubscriptionId.assign(value); }
-
-    /**
-     * <p>The identifier of the account that is associated with the event notification
-     * subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithCustSubscriptionId(const Aws::String& value) { SetCustSubscriptionId(value); return *this;}
-
-    /**
-     * <p>The identifier of the account that is associated with the event notification
-     * subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithCustSubscriptionId(Aws::String&& value) { SetCustSubscriptionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the account that is associated with the event notification
-     * subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithCustSubscriptionId(const char* value) { SetCustSubscriptionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the event notification subscription.</p>
      */
     inline const Aws::String& GetCustomerAwsId() const{ return m_customerAwsId; }
-
-    /**
-     * <p>The identifier of the event notification subscription.</p>
-     */
     inline bool CustomerAwsIdHasBeenSet() const { return m_customerAwsIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the event notification subscription.</p>
-     */
     inline void SetCustomerAwsId(const Aws::String& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = value; }
-
-    /**
-     * <p>The identifier of the event notification subscription.</p>
-     */
     inline void SetCustomerAwsId(Aws::String&& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = std::move(value); }
-
-    /**
-     * <p>The identifier of the event notification subscription.</p>
-     */
     inline void SetCustomerAwsId(const char* value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId.assign(value); }
-
-    /**
-     * <p>The identifier of the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithCustomerAwsId(const Aws::String& value) { SetCustomerAwsId(value); return *this;}
-
-    /**
-     * <p>The identifier of the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithCustomerAwsId(Aws::String&& value) { SetCustomerAwsId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithCustomerAwsId(const char* value) { SetCustomerAwsId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the event notification subscription is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Whether the event notification subscription is enabled.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Whether the event notification subscription is enabled.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Whether the event notification subscription is enabled.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of event categories for the event notification subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategoriesList() const{ return m_eventCategoriesList; }
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline bool EventCategoriesListHasBeenSet() const { return m_eventCategoriesListHasBeenSet; }
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline void SetEventCategoriesList(const Aws::Vector<Aws::String>& value) { m_eventCategoriesListHasBeenSet = true; m_eventCategoriesList = value; }
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline void SetEventCategoriesList(Aws::Vector<Aws::String>&& value) { m_eventCategoriesListHasBeenSet = true; m_eventCategoriesList = std::move(value); }
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithEventCategoriesList(const Aws::Vector<Aws::String>& value) { SetEventCategoriesList(value); return *this;}
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithEventCategoriesList(Aws::Vector<Aws::String>&& value) { SetEventCategoriesList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& AddEventCategoriesList(const Aws::String& value) { m_eventCategoriesListHasBeenSet = true; m_eventCategoriesList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& AddEventCategoriesList(Aws::String&& value) { m_eventCategoriesListHasBeenSet = true; m_eventCategoriesList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of event categories for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& AddEventCategoriesList(const char* value) { m_eventCategoriesListHasBeenSet = true; m_eventCategoriesList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the event notification subscription.</p>
      */
     inline const Aws::String& GetEventSubscriptionArn() const{ return m_eventSubscriptionArn; }
-
-    /**
-     * <p>The ARN of the event notification subscription.</p>
-     */
     inline bool EventSubscriptionArnHasBeenSet() const { return m_eventSubscriptionArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the event notification subscription.</p>
-     */
     inline void SetEventSubscriptionArn(const Aws::String& value) { m_eventSubscriptionArnHasBeenSet = true; m_eventSubscriptionArn = value; }
-
-    /**
-     * <p>The ARN of the event notification subscription.</p>
-     */
     inline void SetEventSubscriptionArn(Aws::String&& value) { m_eventSubscriptionArnHasBeenSet = true; m_eventSubscriptionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the event notification subscription.</p>
-     */
     inline void SetEventSubscriptionArn(const char* value) { m_eventSubscriptionArnHasBeenSet = true; m_eventSubscriptionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithEventSubscriptionArn(const Aws::String& value) { SetEventSubscriptionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithEventSubscriptionArn(Aws::String&& value) { SetEventSubscriptionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithEventSubscriptionArn(const char* value) { SetEventSubscriptionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the SNS topic to post the event notifications to.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
-
-    /**
-     * <p>The ARN of the SNS topic to post the event notifications to.</p>
-     */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the SNS topic to post the event notifications to.</p>
-     */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-
-    /**
-     * <p>The ARN of the SNS topic to post the event notifications to.</p>
-     */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the SNS topic to post the event notifications to.</p>
-     */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-
-    /**
-     * <p>The ARN of the SNS topic to post the event notifications to.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the SNS topic to post the event notifications to.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the SNS topic to post the event notifications to.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of source identifiers for the event notification subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceIdsList() const{ return m_sourceIdsList; }
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline bool SourceIdsListHasBeenSet() const { return m_sourceIdsListHasBeenSet; }
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline void SetSourceIdsList(const Aws::Vector<Aws::String>& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList = value; }
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline void SetSourceIdsList(Aws::Vector<Aws::String>&& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList = std::move(value); }
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSourceIdsList(const Aws::Vector<Aws::String>& value) { SetSourceIdsList(value); return *this;}
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSourceIdsList(Aws::Vector<Aws::String>&& value) { SetSourceIdsList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& AddSourceIdsList(const Aws::String& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& AddSourceIdsList(Aws::String&& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of source identifiers for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& AddSourceIdsList(const char* value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source type for the event notification subscription.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p>The source type for the event notification subscription.</p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p>The source type for the event notification subscription.</p>
-     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p>The source type for the event notification subscription.</p>
-     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p>The source type for the event notification subscription.</p>
-     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-
-    /**
-     * <p>The source type for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p>The source type for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The source type for the event notification subscription.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the event notification subscription.</p> <p>Valid values:
      * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
@@ -372,144 +158,42 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the event notification subscription.</p> <p>Valid values:
-     * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
-     * </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the event notification subscription.</p> <p>Valid values:
-     * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
-     * </p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the event notification subscription.</p> <p>Valid values:
-     * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
-     * </p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the event notification subscription.</p> <p>Valid values:
-     * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
-     * </p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The status of the event notification subscription.</p> <p>Valid values:
-     * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
-     * </p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the event notification subscription.</p> <p>Valid values:
-     * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
-     * </p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the event notification subscription.</p> <p>Valid values:
-     * <code>creating</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
-     * </p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetSubscriptionCreationTime() const{ return m_subscriptionCreationTime; }
-
-    /**
-     * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline bool SubscriptionCreationTimeHasBeenSet() const { return m_subscriptionCreationTimeHasBeenSet; }
-
-    /**
-     * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetSubscriptionCreationTime(const Aws::String& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = value; }
-
-    /**
-     * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetSubscriptionCreationTime(Aws::String&& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = std::move(value); }
-
-    /**
-     * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetSubscriptionCreationTime(const char* value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime.assign(value); }
-
-    /**
-     * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSubscriptionCreationTime(const Aws::String& value) { SetSubscriptionCreationTime(value); return *this;}
-
-    /**
-     * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSubscriptionCreationTime(Aws::String&& value) { SetSubscriptionCreationTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The datetime when the event notification subscription was created.</p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsRdsEventSubscriptionDetails& WithSubscriptionCreationTime(const char* value) { SetSubscriptionCreationTime(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_custSubscriptionId;

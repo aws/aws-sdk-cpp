@@ -35,6 +35,7 @@ static const int POLICY_NOT_ATTACHABLE_HASH = HashingUtils::HashString("PolicyNo
 static const int DUPLICATE_CERTIFICATE_HASH = HashingUtils::HashString("DuplicateCertificate");
 static const int PASSWORD_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordPolicyViolation");
 static const int UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH = HashingUtils::HashString("UnrecognizedPublicKeyEncoding");
+static const int OPEN_ID_IDP_COMMUNICATION_ERROR_HASH = HashingUtils::HashString("OpenIdIdpCommunicationError");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
 static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("ReportInProgress");
 static const int CREDENTIAL_REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("ReportNotPresent");
@@ -118,6 +119,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::UNRECOGNIZED_PUBLIC_KEY_ENCODING), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == OPEN_ID_IDP_COMMUNICATION_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::OPEN_ID_IDP_COMMUNICATION_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {

@@ -33,58 +33,28 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
      * WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
      */
     inline const WrappedKey& GetWrappedKey() const{ return m_wrappedKey; }
-
-    /**
-     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
-     * WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
-     */
     inline void SetWrappedKey(const WrappedKey& value) { m_wrappedKey = value; }
-
-    /**
-     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
-     * WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
-     */
     inline void SetWrappedKey(WrappedKey&& value) { m_wrappedKey = std::move(value); }
-
-    /**
-     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
-     * WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
-     */
     inline ExportKeyResult& WithWrappedKey(const WrappedKey& value) { SetWrappedKey(value); return *this;}
-
-    /**
-     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
-     * WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
-     */
     inline ExportKeyResult& WithWrappedKey(WrappedKey&& value) { SetWrappedKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     WrappedKey m_wrappedKey;

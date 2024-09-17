@@ -35,130 +35,47 @@ namespace Model
     AWS_IDENTITYSTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The globally unique identifier for the identity store.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = value; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::move(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const char* value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId.assign(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetGroupMembershipIdRequest& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetGroupMembershipIdRequest& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetGroupMembershipIdRequest& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for a group in the identity store.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline GetGroupMembershipIdRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline GetGroupMembershipIdRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline GetGroupMembershipIdRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains the identifier of a group member. Setting the
      * <code>UserID</code> field to the specific identifier for a user indicates that
      * the user is a member of the group.</p>
      */
     inline const MemberId& GetMemberId() const{ return m_memberId; }
-
-    /**
-     * <p>An object that contains the identifier of a group member. Setting the
-     * <code>UserID</code> field to the specific identifier for a user indicates that
-     * the user is a member of the group.</p>
-     */
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
-
-    /**
-     * <p>An object that contains the identifier of a group member. Setting the
-     * <code>UserID</code> field to the specific identifier for a user indicates that
-     * the user is a member of the group.</p>
-     */
     inline void SetMemberId(const MemberId& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
-
-    /**
-     * <p>An object that contains the identifier of a group member. Setting the
-     * <code>UserID</code> field to the specific identifier for a user indicates that
-     * the user is a member of the group.</p>
-     */
     inline void SetMemberId(MemberId&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
-
-    /**
-     * <p>An object that contains the identifier of a group member. Setting the
-     * <code>UserID</code> field to the specific identifier for a user indicates that
-     * the user is a member of the group.</p>
-     */
     inline GetGroupMembershipIdRequest& WithMemberId(const MemberId& value) { SetMemberId(value); return *this;}
-
-    /**
-     * <p>An object that contains the identifier of a group member. Setting the
-     * <code>UserID</code> field to the specific identifier for a user indicates that
-     * the user is a member of the group.</p>
-     */
     inline GetGroupMembershipIdRequest& WithMemberId(MemberId&& value) { SetMemberId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityStoreId;

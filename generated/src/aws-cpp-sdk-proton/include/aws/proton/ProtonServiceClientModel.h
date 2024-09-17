@@ -105,6 +105,17 @@
 #include <aws/proton/model/UpdateServiceTemplateResult.h>
 #include <aws/proton/model/UpdateServiceTemplateVersionResult.h>
 #include <aws/proton/model/UpdateTemplateSyncConfigResult.h>
+#include <aws/proton/model/ListEnvironmentsRequest.h>
+#include <aws/proton/model/ListRepositoriesRequest.h>
+#include <aws/proton/model/ListEnvironmentTemplatesRequest.h>
+#include <aws/proton/model/ListServicesRequest.h>
+#include <aws/proton/model/UpdateAccountSettingsRequest.h>
+#include <aws/proton/model/GetAccountSettingsRequest.h>
+#include <aws/proton/model/ListDeploymentsRequest.h>
+#include <aws/proton/model/ListComponentsRequest.h>
+#include <aws/proton/model/ListServiceInstancesRequest.h>
+#include <aws/proton/model/ListServiceTemplatesRequest.h>
+#include <aws/proton/model/GetResourcesSummaryRequest.h>
 /* End of service model headers required in ProtonClient header */
 
 namespace Aws
@@ -138,7 +149,7 @@ namespace Aws
 
   namespace Proton
   {
-    using ProtonClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ProtonClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ProtonEndpointProviderBase = Aws::Proton::Endpoint::ProtonEndpointProviderBase;
     using ProtonEndpointProvider = Aws::Proton::Endpoint::ProtonEndpointProvider;
 

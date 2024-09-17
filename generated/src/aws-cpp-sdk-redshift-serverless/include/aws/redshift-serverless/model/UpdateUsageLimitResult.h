@@ -33,53 +33,27 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API UpdateUsageLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated usage limit object.</p>
      */
     inline const UsageLimit& GetUsageLimit() const{ return m_usageLimit; }
-
-    /**
-     * <p>The updated usage limit object.</p>
-     */
     inline void SetUsageLimit(const UsageLimit& value) { m_usageLimit = value; }
-
-    /**
-     * <p>The updated usage limit object.</p>
-     */
     inline void SetUsageLimit(UsageLimit&& value) { m_usageLimit = std::move(value); }
-
-    /**
-     * <p>The updated usage limit object.</p>
-     */
     inline UpdateUsageLimitResult& WithUsageLimit(const UsageLimit& value) { SetUsageLimit(value); return *this;}
-
-    /**
-     * <p>The updated usage limit object.</p>
-     */
     inline UpdateUsageLimitResult& WithUsageLimit(UsageLimit&& value) { SetUsageLimit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUsageLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUsageLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUsageLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     UsageLimit m_usageLimit;

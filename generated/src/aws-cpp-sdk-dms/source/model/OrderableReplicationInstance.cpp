@@ -36,21 +36,8 @@ OrderableReplicationInstance::OrderableReplicationInstance() :
 {
 }
 
-OrderableReplicationInstance::OrderableReplicationInstance(JsonView jsonValue) : 
-    m_engineVersionHasBeenSet(false),
-    m_replicationInstanceClassHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_minAllocatedStorage(0),
-    m_minAllocatedStorageHasBeenSet(false),
-    m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false),
-    m_defaultAllocatedStorage(0),
-    m_defaultAllocatedStorageHasBeenSet(false),
-    m_includedAllocatedStorage(0),
-    m_includedAllocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_releaseStatus(ReleaseStatusValues::NOT_SET),
-    m_releaseStatusHasBeenSet(false)
+OrderableReplicationInstance::OrderableReplicationInstance(JsonView jsonValue)
+  : OrderableReplicationInstance()
 {
   *this = jsonValue;
 }

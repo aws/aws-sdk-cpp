@@ -47,32 +47,8 @@ ReplicationJob::ReplicationJob() :
 {
 }
 
-ReplicationJob::ReplicationJob(JsonView jsonValue) : 
-    m_replicationJobIdHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_vmServerHasBeenSet(false),
-    m_seedReplicationTimeHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_runOnce(false),
-    m_runOnceHasBeenSet(false),
-    m_nextReplicationRunStartTimeHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_latestAmiIdHasBeenSet(false),
-    m_state(ReplicationJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_numberOfRecentAmisToKeep(0),
-    m_numberOfRecentAmisToKeepHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_replicationRunListHasBeenSet(false)
+ReplicationJob::ReplicationJob(JsonView jsonValue)
+  : ReplicationJob()
 {
   *this = jsonValue;
 }

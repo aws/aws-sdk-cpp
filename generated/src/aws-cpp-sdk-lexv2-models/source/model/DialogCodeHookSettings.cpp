@@ -24,9 +24,8 @@ DialogCodeHookSettings::DialogCodeHookSettings() :
 {
 }
 
-DialogCodeHookSettings::DialogCodeHookSettings(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+DialogCodeHookSettings::DialogCodeHookSettings(JsonView jsonValue)
+  : DialogCodeHookSettings()
 {
   *this = jsonValue;
 }

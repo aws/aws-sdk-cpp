@@ -38,36 +38,17 @@ namespace Model
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The recording format for storing a recording in Amazon S3.</p>
      */
     inline const RecordingConfigurationFormat& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>The recording format for storing a recording in Amazon S3.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>The recording format for storing a recording in Amazon S3.</p>
-     */
     inline void SetFormat(const RecordingConfigurationFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>The recording format for storing a recording in Amazon S3.</p>
-     */
     inline void SetFormat(RecordingConfigurationFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>The recording format for storing a recording in Amazon S3.</p>
-     */
     inline RecordingConfiguration& WithFormat(const RecordingConfigurationFormat& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>The recording format for storing a recording in Amazon S3.</p>
-     */
     inline RecordingConfiguration& WithFormat(RecordingConfigurationFormat&& value) { SetFormat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RecordingConfigurationFormat m_format;

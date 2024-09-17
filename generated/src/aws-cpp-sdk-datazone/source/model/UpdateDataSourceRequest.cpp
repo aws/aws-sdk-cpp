@@ -24,6 +24,8 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_publishOnImport(false),
     m_publishOnImportHasBeenSet(false),
     m_recommendationHasBeenSet(false),
+    m_retainPermissionsOnRevokeFailure(false),
+    m_retainPermissionsOnRevokeFailureHasBeenSet(false),
     m_scheduleHasBeenSet(false)
 {
 }
@@ -75,6 +77,12 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
   if(m_recommendationHasBeenSet)
   {
    payload.WithObject("recommendation", m_recommendation.Jsonize());
+
+  }
+
+  if(m_retainPermissionsOnRevokeFailureHasBeenSet)
+  {
+   payload.WithBool("retainPermissionsOnRevokeFailure", m_retainPermissionsOnRevokeFailure);
 
   }
 

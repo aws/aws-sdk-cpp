@@ -42,25 +42,8 @@ NetworkInsightsAnalysis::NetworkInsightsAnalysis() :
 {
 }
 
-NetworkInsightsAnalysis::NetworkInsightsAnalysis(const XmlNode& xmlNode) : 
-    m_networkInsightsAnalysisIdHasBeenSet(false),
-    m_networkInsightsAnalysisArnHasBeenSet(false),
-    m_networkInsightsPathIdHasBeenSet(false),
-    m_additionalAccountsHasBeenSet(false),
-    m_filterInArnsHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_status(AnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_warningMessageHasBeenSet(false),
-    m_networkPathFound(false),
-    m_networkPathFoundHasBeenSet(false),
-    m_forwardPathComponentsHasBeenSet(false),
-    m_returnPathComponentsHasBeenSet(false),
-    m_explanationsHasBeenSet(false),
-    m_alternatePathHintsHasBeenSet(false),
-    m_suggestedAccountsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+NetworkInsightsAnalysis::NetworkInsightsAnalysis(const XmlNode& xmlNode)
+  : NetworkInsightsAnalysis()
 {
   *this = xmlNode;
 }

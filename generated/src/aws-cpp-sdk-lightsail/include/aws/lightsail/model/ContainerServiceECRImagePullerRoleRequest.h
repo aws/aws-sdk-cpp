@@ -47,26 +47,15 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Boolean value that indicates whether to activate the role.</p>
      */
     inline bool GetIsActive() const{ return m_isActive; }
-
-    /**
-     * <p>A Boolean value that indicates whether to activate the role.</p>
-     */
     inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that indicates whether to activate the role.</p>
-     */
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
-
-    /**
-     * <p>A Boolean value that indicates whether to activate the role.</p>
-     */
     inline ContainerServiceECRImagePullerRoleRequest& WithIsActive(bool value) { SetIsActive(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isActive;

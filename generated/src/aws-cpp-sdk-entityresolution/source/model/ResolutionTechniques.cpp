@@ -26,11 +26,8 @@ ResolutionTechniques::ResolutionTechniques() :
 {
 }
 
-ResolutionTechniques::ResolutionTechniques(JsonView jsonValue) : 
-    m_providerPropertiesHasBeenSet(false),
-    m_resolutionType(ResolutionType::NOT_SET),
-    m_resolutionTypeHasBeenSet(false),
-    m_ruleBasedPropertiesHasBeenSet(false)
+ResolutionTechniques::ResolutionTechniques(JsonView jsonValue)
+  : ResolutionTechniques()
 {
   *this = jsonValue;
 }

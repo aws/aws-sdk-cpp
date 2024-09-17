@@ -41,126 +41,46 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action to perform when a specific event is raised.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action to perform when a specific event is raised.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action to perform when a specific event is raised.</p>
-     */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action to perform when a specific event is raised.</p>
-     */
     inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action to perform when a specific event is raised.</p>
-     */
     inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-
-    /**
-     * <p>The action to perform when a specific event is raised.</p>
-     */
     inline ComponentEvent& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action to perform when a specific event is raised.</p>
-     */
     inline ComponentEvent& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-
-    /**
-     * <p>The action to perform when a specific event is raised.</p>
-     */
     inline ComponentEvent& WithAction(const char* value) { SetAction(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes information about the action.</p>
      */
     inline const ActionParameters& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
     inline void SetParameters(const ActionParameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
     inline void SetParameters(ActionParameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
     inline ComponentEvent& WithParameters(const ActionParameters& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
     inline ComponentEvent& WithParameters(ActionParameters&& value) { SetParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Binds an event to an action on a component. When you specify a
      * <code>bindingEvent</code>, the event is called when the action is performed.</p>
      */
     inline const Aws::String& GetBindingEvent() const{ return m_bindingEvent; }
-
-    /**
-     * <p>Binds an event to an action on a component. When you specify a
-     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
-     */
     inline bool BindingEventHasBeenSet() const { return m_bindingEventHasBeenSet; }
-
-    /**
-     * <p>Binds an event to an action on a component. When you specify a
-     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
-     */
     inline void SetBindingEvent(const Aws::String& value) { m_bindingEventHasBeenSet = true; m_bindingEvent = value; }
-
-    /**
-     * <p>Binds an event to an action on a component. When you specify a
-     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
-     */
     inline void SetBindingEvent(Aws::String&& value) { m_bindingEventHasBeenSet = true; m_bindingEvent = std::move(value); }
-
-    /**
-     * <p>Binds an event to an action on a component. When you specify a
-     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
-     */
     inline void SetBindingEvent(const char* value) { m_bindingEventHasBeenSet = true; m_bindingEvent.assign(value); }
-
-    /**
-     * <p>Binds an event to an action on a component. When you specify a
-     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
-     */
     inline ComponentEvent& WithBindingEvent(const Aws::String& value) { SetBindingEvent(value); return *this;}
-
-    /**
-     * <p>Binds an event to an action on a component. When you specify a
-     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
-     */
     inline ComponentEvent& WithBindingEvent(Aws::String&& value) { SetBindingEvent(std::move(value)); return *this;}
-
-    /**
-     * <p>Binds an event to an action on a component. When you specify a
-     * <code>bindingEvent</code>, the event is called when the action is performed.</p>
-     */
     inline ComponentEvent& WithBindingEvent(const char* value) { SetBindingEvent(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_action;

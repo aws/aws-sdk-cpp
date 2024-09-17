@@ -24,9 +24,8 @@ AudioFeatures::AudioFeatures() :
 {
 }
 
-AudioFeatures::AudioFeatures(JsonView jsonValue) : 
-    m_echoReduction(MeetingFeatureStatus::NOT_SET),
-    m_echoReductionHasBeenSet(false)
+AudioFeatures::AudioFeatures(JsonView jsonValue)
+  : AudioFeatures()
 {
   *this = jsonValue;
 }

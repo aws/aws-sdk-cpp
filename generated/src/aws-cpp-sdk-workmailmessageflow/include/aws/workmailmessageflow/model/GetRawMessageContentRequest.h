@@ -32,46 +32,19 @@ namespace Model
     AWS_WORKMAILMESSAGEFLOW_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the email message to retrieve.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p>The identifier of the email message to retrieve.</p>
-     */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the email message to retrieve.</p>
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-
-    /**
-     * <p>The identifier of the email message to retrieve.</p>
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-
-    /**
-     * <p>The identifier of the email message to retrieve.</p>
-     */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-
-    /**
-     * <p>The identifier of the email message to retrieve.</p>
-     */
     inline GetRawMessageContentRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p>The identifier of the email message to retrieve.</p>
-     */
     inline GetRawMessageContentRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the email message to retrieve.</p>
-     */
     inline GetRawMessageContentRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

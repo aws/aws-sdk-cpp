@@ -28,14 +28,22 @@
 #include <aws/ssm-sap/model/ListApplicationsResult.h>
 #include <aws/ssm-sap/model/ListComponentsResult.h>
 #include <aws/ssm-sap/model/ListDatabasesResult.h>
+#include <aws/ssm-sap/model/ListOperationEventsResult.h>
 #include <aws/ssm-sap/model/ListOperationsResult.h>
 #include <aws/ssm-sap/model/ListTagsForResourceResult.h>
 #include <aws/ssm-sap/model/PutResourcePermissionResult.h>
 #include <aws/ssm-sap/model/RegisterApplicationResult.h>
+#include <aws/ssm-sap/model/StartApplicationResult.h>
 #include <aws/ssm-sap/model/StartApplicationRefreshResult.h>
+#include <aws/ssm-sap/model/StopApplicationResult.h>
 #include <aws/ssm-sap/model/TagResourceResult.h>
 #include <aws/ssm-sap/model/UntagResourceResult.h>
 #include <aws/ssm-sap/model/UpdateApplicationSettingsResult.h>
+#include <aws/ssm-sap/model/ListApplicationsRequest.h>
+#include <aws/ssm-sap/model/GetApplicationRequest.h>
+#include <aws/ssm-sap/model/ListDatabasesRequest.h>
+#include <aws/ssm-sap/model/GetDatabaseRequest.h>
+#include <aws/ssm-sap/model/ListComponentsRequest.h>
 /* End of service model headers required in SsmSapClient header */
 
 namespace Aws
@@ -69,7 +77,7 @@ namespace Aws
 
   namespace SsmSap
   {
-    using SsmSapClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SsmSapClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SsmSapEndpointProviderBase = Aws::SsmSap::Endpoint::SsmSapEndpointProviderBase;
     using SsmSapEndpointProvider = Aws::SsmSap::Endpoint::SsmSapEndpointProvider;
 
@@ -86,11 +94,14 @@ namespace Aws
       class ListApplicationsRequest;
       class ListComponentsRequest;
       class ListDatabasesRequest;
+      class ListOperationEventsRequest;
       class ListOperationsRequest;
       class ListTagsForResourceRequest;
       class PutResourcePermissionRequest;
       class RegisterApplicationRequest;
+      class StartApplicationRequest;
       class StartApplicationRefreshRequest;
+      class StopApplicationRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateApplicationSettingsRequest;
@@ -107,11 +118,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListApplicationsResult, SsmSapError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListComponentsResult, SsmSapError> ListComponentsOutcome;
       typedef Aws::Utils::Outcome<ListDatabasesResult, SsmSapError> ListDatabasesOutcome;
+      typedef Aws::Utils::Outcome<ListOperationEventsResult, SsmSapError> ListOperationEventsOutcome;
       typedef Aws::Utils::Outcome<ListOperationsResult, SsmSapError> ListOperationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, SsmSapError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutResourcePermissionResult, SsmSapError> PutResourcePermissionOutcome;
       typedef Aws::Utils::Outcome<RegisterApplicationResult, SsmSapError> RegisterApplicationOutcome;
+      typedef Aws::Utils::Outcome<StartApplicationResult, SsmSapError> StartApplicationOutcome;
       typedef Aws::Utils::Outcome<StartApplicationRefreshResult, SsmSapError> StartApplicationRefreshOutcome;
+      typedef Aws::Utils::Outcome<StopApplicationResult, SsmSapError> StopApplicationOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, SsmSapError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, SsmSapError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateApplicationSettingsResult, SsmSapError> UpdateApplicationSettingsOutcome;
@@ -128,11 +142,14 @@ namespace Aws
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
       typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
+      typedef std::future<ListOperationEventsOutcome> ListOperationEventsOutcomeCallable;
       typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutResourcePermissionOutcome> PutResourcePermissionOutcomeCallable;
       typedef std::future<RegisterApplicationOutcome> RegisterApplicationOutcomeCallable;
+      typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
       typedef std::future<StartApplicationRefreshOutcome> StartApplicationRefreshOutcomeCallable;
+      typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateApplicationSettingsOutcome> UpdateApplicationSettingsOutcomeCallable;
@@ -152,11 +169,14 @@ namespace Aws
     typedef std::function<void(const SsmSapClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::ListDatabasesRequest&, const Model::ListDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatabasesResponseReceivedHandler;
+    typedef std::function<void(const SsmSapClient*, const Model::ListOperationEventsRequest&, const Model::ListOperationEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationEventsResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::PutResourcePermissionRequest&, const Model::PutResourcePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePermissionResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::RegisterApplicationRequest&, const Model::RegisterApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterApplicationResponseReceivedHandler;
+    typedef std::function<void(const SsmSapClient*, const Model::StartApplicationRequest&, const Model::StartApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartApplicationResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::StartApplicationRefreshRequest&, const Model::StartApplicationRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartApplicationRefreshResponseReceivedHandler;
+    typedef std::function<void(const SsmSapClient*, const Model::StopApplicationRequest&, const Model::StopApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopApplicationResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::UpdateApplicationSettingsRequest&, const Model::UpdateApplicationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationSettingsResponseReceivedHandler;

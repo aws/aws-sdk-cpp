@@ -42,102 +42,36 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(std::move(value)); return *this;}
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-     */
     inline EnvironmentResponse& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error messages for environment variables that couldn't be applied.</p>
      */
     inline const EnvironmentError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Error messages for environment variables that couldn't be applied.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Error messages for environment variables that couldn't be applied.</p>
-     */
     inline void SetError(const EnvironmentError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Error messages for environment variables that couldn't be applied.</p>
-     */
     inline void SetError(EnvironmentError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Error messages for environment variables that couldn't be applied.</p>
-     */
     inline EnvironmentResponse& WithError(const EnvironmentError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Error messages for environment variables that couldn't be applied.</p>
-     */
     inline EnvironmentResponse& WithError(EnvironmentError&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_variables;

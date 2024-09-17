@@ -26,11 +26,8 @@ ErrorHandlingConfig::ErrorHandlingConfig() :
 {
 }
 
-ErrorHandlingConfig::ErrorHandlingConfig(JsonView jsonValue) : 
-    m_failOnFirstDestinationError(false),
-    m_failOnFirstDestinationErrorHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
+ErrorHandlingConfig::ErrorHandlingConfig(JsonView jsonValue)
+  : ErrorHandlingConfig()
 {
   *this = jsonValue;
 }

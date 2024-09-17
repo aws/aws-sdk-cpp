@@ -26,11 +26,8 @@ Input::Input() :
 {
 }
 
-Input::Input(JsonView jsonValue) : 
-    m_s3InputDefinitionHasBeenSet(false),
-    m_dataCatalogInputDefinitionHasBeenSet(false),
-    m_databaseInputDefinitionHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+Input::Input(JsonView jsonValue)
+  : Input()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ IpFilter::IpFilter() :
 {
 }
 
-IpFilter::IpFilter(JsonView jsonValue) : 
-    m_cidrHasBeenSet(false)
+IpFilter::IpFilter(JsonView jsonValue)
+  : IpFilter()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ CellOutput::CellOutput() :
 {
 }
 
-CellOutput::CellOutput(JsonView jsonValue) : 
-    m_cellArnHasBeenSet(false),
-    m_cellNameHasBeenSet(false),
-    m_cellsHasBeenSet(false),
-    m_parentReadinessScopesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CellOutput::CellOutput(JsonView jsonValue)
+  : CellOutput()
 {
   *this = jsonValue;
 }

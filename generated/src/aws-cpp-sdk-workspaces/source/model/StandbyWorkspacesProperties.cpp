@@ -26,11 +26,8 @@ StandbyWorkspacesProperties::StandbyWorkspacesProperties() :
 {
 }
 
-StandbyWorkspacesProperties::StandbyWorkspacesProperties(JsonView jsonValue) : 
-    m_standbyWorkspaceIdHasBeenSet(false),
-    m_dataReplication(DataReplication::NOT_SET),
-    m_dataReplicationHasBeenSet(false),
-    m_recoverySnapshotTimeHasBeenSet(false)
+StandbyWorkspacesProperties::StandbyWorkspacesProperties(JsonView jsonValue)
+  : StandbyWorkspacesProperties()
 {
   *this = jsonValue;
 }

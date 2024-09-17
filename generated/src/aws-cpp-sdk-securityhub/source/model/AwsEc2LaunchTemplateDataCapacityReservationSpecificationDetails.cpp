@@ -24,9 +24,8 @@ AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails::AwsEc2LaunchTem
 {
 }
 
-AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails(JsonView jsonValue) : 
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationTargetHasBeenSet(false)
+AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails()
 {
   *this = jsonValue;
 }

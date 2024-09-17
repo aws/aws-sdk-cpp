@@ -22,8 +22,8 @@ DeleteDomainResult::DeleteDomainResult() :
 {
 }
 
-DeleteDomainResult::DeleteDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DomainStatus::NOT_SET)
+DeleteDomainResult::DeleteDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDomainResult()
 {
   *this = result;
 }

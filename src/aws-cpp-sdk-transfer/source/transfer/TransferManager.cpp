@@ -57,6 +57,18 @@ namespace Aws
         TransferManager::TransferManager(const TransferManagerConfiguration& configuration) : m_transferConfig(configuration)
         {
             assert(m_transferConfig.s3Client);
+            if (!m_transferConfig.transferExecutor)
+            {
+                if(!m_transferConfig.spExecutor && m_transferConfig.executorCreateFn)
+                {
+                    m_transferConfig.spExecutor = m_transferConfig.executorCreateFn();
+                }
+                m_transferConfig.transferExecutor = m_transferConfig.spExecutor.get();
+            }
+            if (!m_transferConfig.transferExecutor)
+            {
+                AWS_LOGSTREAM_FATAL(CLASS_TAG, "Failed to init TransferManager: transferExecutor is null");
+            }
             assert(m_transferConfig.transferExecutor);
             m_transferConfig.s3Client->AppendToUserAgent("ft/s3-transfer");
             for (uint64_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)
@@ -127,7 +139,15 @@ namespace Aws
                                                                     const Aws::Map<Aws::String, Aws::String>& metadata,
                                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
-            return this->DoUploadFile(fileName, bucketName, keyName, contentType, metadata, context);
+            // destructor of FStream will close stream automatically (when out of scope), no need to call close explicitly
+#ifdef _MSC_VER
+            auto wide = Aws::Utils::StringUtils::ToWString(fileName.c_str());
+            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, wide.c_str(), std::ios_base::in | std::ios_base::binary);
+#else
+            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#endif
+            auto handle = CreateUploadFileHandle(fileStream.get(), bucketName, keyName, contentType, metadata, context, fileName);
+            return SubmitUpload(handle);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::UploadFile(const std::shared_ptr<Aws::IOStream>& fileStream,
@@ -136,7 +156,8 @@ namespace Aws
                                                                     const Aws::Map<Aws::String, Aws::String>& metadata,
                                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
-            return this->DoUploadFile(fileStream, bucketName, keyName, contentType, metadata, context);
+            auto handle = CreateUploadFileHandle(fileStream.get(), bucketName, keyName, contentType, metadata, context);
+            return SubmitUpload(handle, fileStream);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName,
@@ -542,6 +563,12 @@ namespace Aws
 
             auto buffer = m_bufferManager.Acquire();
 
+            //check if upload was canceled while waiting for buffer
+            if (!handle->ShouldContinue()) {
+                m_bufferManager.Release(buffer);
+                return;
+            }
+
             auto lengthToWrite = (std::min)(m_transferConfig.bufferSize, handle->GetBytesTotalSize());
             streamToPut->read((char*)buffer, lengthToWrite);
             auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
@@ -930,7 +957,7 @@ namespace Aws
 
         void TransferManager::DoDownload(const std::shared_ptr<TransferHandle>& handle)
         {
-            if (!InitializePartsForDownload(handle))
+            if (!handle->ShouldContinue() || !InitializePartsForDownload(handle))
             {
                 return;
             }
@@ -1448,35 +1475,6 @@ namespace Aws
                     });
             }
             return handle;
-        }
-
-        std::shared_ptr<TransferHandle> TransferManager::DoUploadFile(const std::shared_ptr<Aws::IOStream>& fileStream,
-                                                                      const Aws::String& bucketName,
-                                                                      const Aws::String& keyName,
-                                                                      const Aws::String& contentType,
-                                                                      const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
-        {
-            auto handle = CreateUploadFileHandle(fileStream.get(), bucketName, keyName, contentType, metadata, context);
-            return SubmitUpload(handle, fileStream);
-        }
-
-        std::shared_ptr<TransferHandle> TransferManager::DoUploadFile(const Aws::String& fileName,
-                                                                      const Aws::String& bucketName,
-                                                                      const Aws::String& keyName,
-                                                                      const Aws::String& contentType,
-                                                                      const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
-        {
-            // destructor of FStream will close stream automatically (when out of scope), no need to call close explicitly
-#ifdef _MSC_VER
-            auto wide = Aws::Utils::StringUtils::ToWString(fileName.c_str());
-            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, wide.c_str(), std::ios_base::in | std::ios_base::binary);
-#else
-            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
-#endif
-            auto handle = CreateUploadFileHandle(fileStream.get(), bucketName, keyName, contentType, metadata, context, fileName);
-            return SubmitUpload(handle);
         }
 
         void TransferManager::SetChecksumForAlgorithm(const std::shared_ptr<Aws::Transfer::PartState> state,

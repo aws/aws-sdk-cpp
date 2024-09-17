@@ -25,10 +25,8 @@ AwsXrayEncryptionConfigDetails::AwsXrayEncryptionConfigDetails() :
 {
 }
 
-AwsXrayEncryptionConfigDetails::AwsXrayEncryptionConfigDetails(JsonView jsonValue) : 
-    m_keyIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsXrayEncryptionConfigDetails::AwsXrayEncryptionConfigDetails(JsonView jsonValue)
+  : AwsXrayEncryptionConfigDetails()
 {
   *this = jsonValue;
 }

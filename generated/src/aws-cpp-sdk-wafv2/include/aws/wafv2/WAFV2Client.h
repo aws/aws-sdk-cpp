@@ -989,13 +989,13 @@ namespace WAFV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request) const;
+        virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRuleGroupRequestT = Model::GetRuleGroupRequest>
-        Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const GetRuleGroupRequestT& request) const
+        Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const GetRuleGroupRequestT& request = {}) const
         {
             return SubmitCallable(&WAFV2Client::GetRuleGroup, request);
         }
@@ -1004,7 +1004,7 @@ namespace WAFV2
          * An Async wrapper for GetRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRuleGroupRequestT = Model::GetRuleGroupRequest>
-        void GetRuleGroupAsync(const GetRuleGroupRequestT& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRuleGroupAsync(const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRuleGroupRequestT& request = {}) const
         {
             return SubmitAsync(&WAFV2Client::GetRuleGroup, request, handler, context);
         }
@@ -1552,14 +1552,18 @@ namespace WAFV2
         }
 
         /**
-         * <p>Attaches an IAM policy to the specified resource. Use this to share a rule
-         * group across accounts.</p> <p>You must be the owner of the rule group to perform
-         * this operation.</p> <p>This action is subject to the following restrictions:</p>
-         * <ul> <li> <p>You can attach only one policy with each
-         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the
+         * <p>Use this to share a rule group with other accounts.</p> <p>This action
+         * attaches an IAM policy to the specified resource. You must be the owner of the
+         * rule group to perform this operation.</p> <p>This action is subject to the
+         * following restrictions:</p> <ul> <li> <p>You can attach only one policy with
+         * each <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the
          * request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist
          * in the same Region.</p> </li> <li> <p>The user making the request must be the
-         * owner of the rule group.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * owner of the rule group.</p> </li> </ul> <p>If a rule group has been shared with
+         * your account, you can access it through the call <code>GetRuleGroup</code>, and
+         * you can reference it in <code>CreateWebACL</code> and <code>UpdateWebACL</code>.
+         * Rule groups that are shared with you don't appear in your WAF console rule
+         * groups listing. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">AWS
          * API Reference</a></p>
          */
@@ -1881,7 +1885,6 @@ namespace WAFV2
       void init(const WAFV2ClientConfiguration& clientConfiguration);
 
       WAFV2ClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<WAFV2EndpointProviderBase> m_endpointProvider;
   };
 

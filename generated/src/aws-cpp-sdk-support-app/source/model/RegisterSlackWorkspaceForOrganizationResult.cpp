@@ -22,8 +22,8 @@ RegisterSlackWorkspaceForOrganizationResult::RegisterSlackWorkspaceForOrganizati
 {
 }
 
-RegisterSlackWorkspaceForOrganizationResult::RegisterSlackWorkspaceForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_accountType(AccountType::NOT_SET)
+RegisterSlackWorkspaceForOrganizationResult::RegisterSlackWorkspaceForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RegisterSlackWorkspaceForOrganizationResult()
 {
   *this = result;
 }

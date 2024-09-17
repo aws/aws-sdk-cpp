@@ -26,11 +26,8 @@ InventoryFilter::InventoryFilter() :
 {
 }
 
-InventoryFilter::InventoryFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_type(InventoryQueryOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
+InventoryFilter::InventoryFilter(JsonView jsonValue)
+  : InventoryFilter()
 {
   *this = jsonValue;
 }

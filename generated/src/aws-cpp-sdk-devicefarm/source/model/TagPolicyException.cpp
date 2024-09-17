@@ -24,9 +24,8 @@ TagPolicyException::TagPolicyException() :
 {
 }
 
-TagPolicyException::TagPolicyException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+TagPolicyException::TagPolicyException(JsonView jsonValue)
+  : TagPolicyException()
 {
   *this = jsonValue;
 }

@@ -38,87 +38,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerArn() const{ return m_loadBalancerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(Aws::String&& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(const char* value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerArn(const Aws::String& value) { SetLoadBalancerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerArn(Aws::String&& value) { SetLoadBalancerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The load balancer attributes.</p>
      */
     inline const Aws::Vector<LoadBalancerAttribute>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The load balancer attributes.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>The load balancer attributes.</p>
-     */
     inline void SetAttributes(const Aws::Vector<LoadBalancerAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>The load balancer attributes.</p>
-     */
     inline void SetAttributes(Aws::Vector<LoadBalancerAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>The load balancer attributes.</p>
-     */
     inline ModifyLoadBalancerAttributesRequest& WithAttributes(const Aws::Vector<LoadBalancerAttribute>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The load balancer attributes.</p>
-     */
     inline ModifyLoadBalancerAttributesRequest& WithAttributes(Aws::Vector<LoadBalancerAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The load balancer attributes.</p>
-     */
     inline ModifyLoadBalancerAttributesRequest& AddAttributes(const LoadBalancerAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>The load balancer attributes.</p>
-     */
     inline ModifyLoadBalancerAttributesRequest& AddAttributes(LoadBalancerAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerArn;

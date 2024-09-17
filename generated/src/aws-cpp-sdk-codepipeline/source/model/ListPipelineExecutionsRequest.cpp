@@ -16,6 +16,7 @@ ListPipelineExecutionsRequest::ListPipelineExecutionsRequest() :
     m_pipelineNameHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_filterHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -33,6 +34,12 @@ Aws::String ListPipelineExecutionsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
 
   }
 

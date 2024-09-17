@@ -23,8 +23,8 @@ ExplainerConfig::ExplainerConfig() :
 {
 }
 
-ExplainerConfig::ExplainerConfig(JsonView jsonValue) : 
-    m_clarifyExplainerConfigHasBeenSet(false)
+ExplainerConfig::ExplainerConfig(JsonView jsonValue)
+  : ExplainerConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResourceUnavailableException::ResourceUnavailableException() :
 {
 }
 
-ResourceUnavailableException::ResourceUnavailableException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+ResourceUnavailableException::ResourceUnavailableException(JsonView jsonValue)
+  : ResourceUnavailableException()
 {
   *this = jsonValue;
 }

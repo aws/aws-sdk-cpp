@@ -25,10 +25,8 @@ SemanticEntityType::SemanticEntityType() :
 {
 }
 
-SemanticEntityType::SemanticEntityType(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_subTypeNameHasBeenSet(false),
-    m_typeParametersHasBeenSet(false)
+SemanticEntityType::SemanticEntityType(JsonView jsonValue)
+  : SemanticEntityType()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SignInConfig::SignInConfig() :
 {
 }
 
-SignInConfig::SignInConfig(JsonView jsonValue) : 
-    m_distributionsHasBeenSet(false)
+SignInConfig::SignInConfig(JsonView jsonValue)
+  : SignInConfig()
 {
   *this = jsonValue;
 }

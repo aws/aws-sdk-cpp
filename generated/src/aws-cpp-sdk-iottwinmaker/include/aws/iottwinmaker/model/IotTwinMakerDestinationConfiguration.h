@@ -38,46 +38,19 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IoT TwinMaker workspace.</p>
      */
     inline const Aws::String& GetWorkspace() const{ return m_workspace; }
-
-    /**
-     * <p>The IoT TwinMaker workspace.</p>
-     */
     inline bool WorkspaceHasBeenSet() const { return m_workspaceHasBeenSet; }
-
-    /**
-     * <p>The IoT TwinMaker workspace.</p>
-     */
     inline void SetWorkspace(const Aws::String& value) { m_workspaceHasBeenSet = true; m_workspace = value; }
-
-    /**
-     * <p>The IoT TwinMaker workspace.</p>
-     */
     inline void SetWorkspace(Aws::String&& value) { m_workspaceHasBeenSet = true; m_workspace = std::move(value); }
-
-    /**
-     * <p>The IoT TwinMaker workspace.</p>
-     */
     inline void SetWorkspace(const char* value) { m_workspaceHasBeenSet = true; m_workspace.assign(value); }
-
-    /**
-     * <p>The IoT TwinMaker workspace.</p>
-     */
     inline IotTwinMakerDestinationConfiguration& WithWorkspace(const Aws::String& value) { SetWorkspace(value); return *this;}
-
-    /**
-     * <p>The IoT TwinMaker workspace.</p>
-     */
     inline IotTwinMakerDestinationConfiguration& WithWorkspace(Aws::String&& value) { SetWorkspace(std::move(value)); return *this;}
-
-    /**
-     * <p>The IoT TwinMaker workspace.</p>
-     */
     inline IotTwinMakerDestinationConfiguration& WithWorkspace(const char* value) { SetWorkspace(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workspace;

@@ -40,67 +40,29 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Describes the FPGAs for the instance type.</p>
      */
     inline const Aws::Vector<FpgaDeviceInfo>& GetFpgas() const{ return m_fpgas; }
-
-    /**
-     * <p>Describes the FPGAs for the instance type.</p>
-     */
     inline bool FpgasHasBeenSet() const { return m_fpgasHasBeenSet; }
-
-    /**
-     * <p>Describes the FPGAs for the instance type.</p>
-     */
     inline void SetFpgas(const Aws::Vector<FpgaDeviceInfo>& value) { m_fpgasHasBeenSet = true; m_fpgas = value; }
-
-    /**
-     * <p>Describes the FPGAs for the instance type.</p>
-     */
     inline void SetFpgas(Aws::Vector<FpgaDeviceInfo>&& value) { m_fpgasHasBeenSet = true; m_fpgas = std::move(value); }
-
-    /**
-     * <p>Describes the FPGAs for the instance type.</p>
-     */
     inline FpgaInfo& WithFpgas(const Aws::Vector<FpgaDeviceInfo>& value) { SetFpgas(value); return *this;}
-
-    /**
-     * <p>Describes the FPGAs for the instance type.</p>
-     */
     inline FpgaInfo& WithFpgas(Aws::Vector<FpgaDeviceInfo>&& value) { SetFpgas(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the FPGAs for the instance type.</p>
-     */
     inline FpgaInfo& AddFpgas(const FpgaDeviceInfo& value) { m_fpgasHasBeenSet = true; m_fpgas.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the FPGAs for the instance type.</p>
-     */
     inline FpgaInfo& AddFpgas(FpgaDeviceInfo&& value) { m_fpgasHasBeenSet = true; m_fpgas.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total memory of all FPGA accelerators for the instance type.</p>
      */
     inline int GetTotalFpgaMemoryInMiB() const{ return m_totalFpgaMemoryInMiB; }
-
-    /**
-     * <p>The total memory of all FPGA accelerators for the instance type.</p>
-     */
     inline bool TotalFpgaMemoryInMiBHasBeenSet() const { return m_totalFpgaMemoryInMiBHasBeenSet; }
-
-    /**
-     * <p>The total memory of all FPGA accelerators for the instance type.</p>
-     */
     inline void SetTotalFpgaMemoryInMiB(int value) { m_totalFpgaMemoryInMiBHasBeenSet = true; m_totalFpgaMemoryInMiB = value; }
-
-    /**
-     * <p>The total memory of all FPGA accelerators for the instance type.</p>
-     */
     inline FpgaInfo& WithTotalFpgaMemoryInMiB(int value) { SetTotalFpgaMemoryInMiB(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FpgaDeviceInfo> m_fpgas;

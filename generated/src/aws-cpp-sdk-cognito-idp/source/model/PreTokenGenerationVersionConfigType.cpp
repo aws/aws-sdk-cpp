@@ -25,10 +25,8 @@ PreTokenGenerationVersionConfigType::PreTokenGenerationVersionConfigType() :
 {
 }
 
-PreTokenGenerationVersionConfigType::PreTokenGenerationVersionConfigType(JsonView jsonValue) : 
-    m_lambdaVersion(PreTokenGenerationLambdaVersionType::NOT_SET),
-    m_lambdaVersionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false)
+PreTokenGenerationVersionConfigType::PreTokenGenerationVersionConfigType(JsonView jsonValue)
+  : PreTokenGenerationVersionConfigType()
 {
   *this = jsonValue;
 }

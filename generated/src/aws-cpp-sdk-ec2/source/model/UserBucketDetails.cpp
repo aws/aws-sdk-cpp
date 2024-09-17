@@ -26,9 +26,8 @@ UserBucketDetails::UserBucketDetails() :
 {
 }
 
-UserBucketDetails::UserBucketDetails(const XmlNode& xmlNode) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
+UserBucketDetails::UserBucketDetails(const XmlNode& xmlNode)
+  : UserBucketDetails()
 {
   *this = xmlNode;
 }

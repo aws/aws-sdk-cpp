@@ -28,13 +28,8 @@ AvailabilityMeasurement::AvailabilityMeasurement() :
 {
 }
 
-AvailabilityMeasurement::AvailabilityMeasurement(JsonView jsonValue) : 
-    m_experienceScore(0.0),
-    m_experienceScoreHasBeenSet(false),
-    m_percentOfTotalTrafficImpacted(0.0),
-    m_percentOfTotalTrafficImpactedHasBeenSet(false),
-    m_percentOfClientLocationImpacted(0.0),
-    m_percentOfClientLocationImpactedHasBeenSet(false)
+AvailabilityMeasurement::AvailabilityMeasurement(JsonView jsonValue)
+  : AvailabilityMeasurement()
 {
   *this = jsonValue;
 }

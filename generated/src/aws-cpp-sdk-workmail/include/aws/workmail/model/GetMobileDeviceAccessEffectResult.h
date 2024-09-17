@@ -35,106 +35,43 @@ namespace Model
     AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
      * after evaluating mobile device access rules in the WorkMail organization for the
      * simulated user parameters.</p>
      */
     inline const MobileDeviceAccessRuleEffect& GetEffect() const{ return m_effect; }
-
-    /**
-     * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the WorkMail organization for the
-     * simulated user parameters.</p>
-     */
     inline void SetEffect(const MobileDeviceAccessRuleEffect& value) { m_effect = value; }
-
-    /**
-     * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the WorkMail organization for the
-     * simulated user parameters.</p>
-     */
     inline void SetEffect(MobileDeviceAccessRuleEffect&& value) { m_effect = std::move(value); }
-
-    /**
-     * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the WorkMail organization for the
-     * simulated user parameters.</p>
-     */
     inline GetMobileDeviceAccessEffectResult& WithEffect(const MobileDeviceAccessRuleEffect& value) { SetEffect(value); return *this;}
-
-    /**
-     * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the WorkMail organization for the
-     * simulated user parameters.</p>
-     */
     inline GetMobileDeviceAccessEffectResult& WithEffect(MobileDeviceAccessRuleEffect&& value) { SetEffect(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the rules which matched the simulated user input and produced the
      * effect.</p>
      */
     inline const Aws::Vector<MobileDeviceAccessMatchedRule>& GetMatchedRules() const{ return m_matchedRules; }
-
-    /**
-     * <p>A list of the rules which matched the simulated user input and produced the
-     * effect.</p>
-     */
     inline void SetMatchedRules(const Aws::Vector<MobileDeviceAccessMatchedRule>& value) { m_matchedRules = value; }
-
-    /**
-     * <p>A list of the rules which matched the simulated user input and produced the
-     * effect.</p>
-     */
     inline void SetMatchedRules(Aws::Vector<MobileDeviceAccessMatchedRule>&& value) { m_matchedRules = std::move(value); }
-
-    /**
-     * <p>A list of the rules which matched the simulated user input and produced the
-     * effect.</p>
-     */
     inline GetMobileDeviceAccessEffectResult& WithMatchedRules(const Aws::Vector<MobileDeviceAccessMatchedRule>& value) { SetMatchedRules(value); return *this;}
-
-    /**
-     * <p>A list of the rules which matched the simulated user input and produced the
-     * effect.</p>
-     */
     inline GetMobileDeviceAccessEffectResult& WithMatchedRules(Aws::Vector<MobileDeviceAccessMatchedRule>&& value) { SetMatchedRules(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the rules which matched the simulated user input and produced the
-     * effect.</p>
-     */
     inline GetMobileDeviceAccessEffectResult& AddMatchedRules(const MobileDeviceAccessMatchedRule& value) { m_matchedRules.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the rules which matched the simulated user input and produced the
-     * effect.</p>
-     */
     inline GetMobileDeviceAccessEffectResult& AddMatchedRules(MobileDeviceAccessMatchedRule&& value) { m_matchedRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMobileDeviceAccessEffectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMobileDeviceAccessEffectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMobileDeviceAccessEffectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MobileDeviceAccessRuleEffect m_effect;

@@ -26,11 +26,8 @@ DeliveryChannelStatus::DeliveryChannelStatus() :
 {
 }
 
-DeliveryChannelStatus::DeliveryChannelStatus(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_configSnapshotDeliveryInfoHasBeenSet(false),
-    m_configHistoryDeliveryInfoHasBeenSet(false),
-    m_configStreamDeliveryInfoHasBeenSet(false)
+DeliveryChannelStatus::DeliveryChannelStatus(JsonView jsonValue)
+  : DeliveryChannelStatus()
 {
   *this = jsonValue;
 }

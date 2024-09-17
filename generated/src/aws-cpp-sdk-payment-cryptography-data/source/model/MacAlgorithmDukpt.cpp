@@ -19,31 +19,27 @@ namespace Model
 {
 
 MacAlgorithmDukpt::MacAlgorithmDukpt() : 
-    m_dukptDerivationType(DukptDerivationType::NOT_SET),
-    m_dukptDerivationTypeHasBeenSet(false),
+    m_keySerialNumberHasBeenSet(false),
     m_dukptKeyVariant(DukptKeyVariant::NOT_SET),
     m_dukptKeyVariantHasBeenSet(false),
-    m_keySerialNumberHasBeenSet(false)
+    m_dukptDerivationType(DukptDerivationType::NOT_SET),
+    m_dukptDerivationTypeHasBeenSet(false)
 {
 }
 
-MacAlgorithmDukpt::MacAlgorithmDukpt(JsonView jsonValue) : 
-    m_dukptDerivationType(DukptDerivationType::NOT_SET),
-    m_dukptDerivationTypeHasBeenSet(false),
-    m_dukptKeyVariant(DukptKeyVariant::NOT_SET),
-    m_dukptKeyVariantHasBeenSet(false),
-    m_keySerialNumberHasBeenSet(false)
+MacAlgorithmDukpt::MacAlgorithmDukpt(JsonView jsonValue)
+  : MacAlgorithmDukpt()
 {
   *this = jsonValue;
 }
 
 MacAlgorithmDukpt& MacAlgorithmDukpt::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DukptDerivationType"))
+  if(jsonValue.ValueExists("KeySerialNumber"))
   {
-    m_dukptDerivationType = DukptDerivationTypeMapper::GetDukptDerivationTypeForName(jsonValue.GetString("DukptDerivationType"));
+    m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
 
-    m_dukptDerivationTypeHasBeenSet = true;
+    m_keySerialNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DukptKeyVariant"))
@@ -53,11 +49,11 @@ MacAlgorithmDukpt& MacAlgorithmDukpt::operator =(JsonView jsonValue)
     m_dukptKeyVariantHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KeySerialNumber"))
+  if(jsonValue.ValueExists("DukptDerivationType"))
   {
-    m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
+    m_dukptDerivationType = DukptDerivationTypeMapper::GetDukptDerivationTypeForName(jsonValue.GetString("DukptDerivationType"));
 
-    m_keySerialNumberHasBeenSet = true;
+    m_dukptDerivationTypeHasBeenSet = true;
   }
 
   return *this;
@@ -67,9 +63,10 @@ JsonValue MacAlgorithmDukpt::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dukptDerivationTypeHasBeenSet)
+  if(m_keySerialNumberHasBeenSet)
   {
-   payload.WithString("DukptDerivationType", DukptDerivationTypeMapper::GetNameForDukptDerivationType(m_dukptDerivationType));
+   payload.WithString("KeySerialNumber", m_keySerialNumber);
+
   }
 
   if(m_dukptKeyVariantHasBeenSet)
@@ -77,10 +74,9 @@ JsonValue MacAlgorithmDukpt::Jsonize() const
    payload.WithString("DukptKeyVariant", DukptKeyVariantMapper::GetNameForDukptKeyVariant(m_dukptKeyVariant));
   }
 
-  if(m_keySerialNumberHasBeenSet)
+  if(m_dukptDerivationTypeHasBeenSet)
   {
-   payload.WithString("KeySerialNumber", m_keySerialNumber);
-
+   payload.WithString("DukptDerivationType", DukptDerivationTypeMapper::GetNameForDukptDerivationType(m_dukptDerivationType));
   }
 
   return payload;

@@ -39,53 +39,27 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API DeletePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p><code>PackageDetails</code></p>
      */
     inline const PackageDetails& GetPackageDetails() const{ return m_packageDetails; }
-
-    /**
-     * <p><code>PackageDetails</code></p>
-     */
     inline void SetPackageDetails(const PackageDetails& value) { m_packageDetails = value; }
-
-    /**
-     * <p><code>PackageDetails</code></p>
-     */
     inline void SetPackageDetails(PackageDetails&& value) { m_packageDetails = std::move(value); }
-
-    /**
-     * <p><code>PackageDetails</code></p>
-     */
     inline DeletePackageResult& WithPackageDetails(const PackageDetails& value) { SetPackageDetails(value); return *this;}
-
-    /**
-     * <p><code>PackageDetails</code></p>
-     */
     inline DeletePackageResult& WithPackageDetails(PackageDetails&& value) { SetPackageDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeletePackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeletePackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeletePackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PackageDetails m_packageDetails;

@@ -27,10 +27,8 @@ AvailableCapacity::AvailableCapacity() :
 {
 }
 
-AvailableCapacity::AvailableCapacity(const XmlNode& xmlNode) : 
-    m_availableInstanceCapacityHasBeenSet(false),
-    m_availableVCpus(0),
-    m_availableVCpusHasBeenSet(false)
+AvailableCapacity::AvailableCapacity(const XmlNode& xmlNode)
+  : AvailableCapacity()
 {
   *this = xmlNode;
 }

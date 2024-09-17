@@ -24,9 +24,8 @@ ResponseResourceMetricKey::ResponseResourceMetricKey() :
 {
 }
 
-ResponseResourceMetricKey::ResponseResourceMetricKey(JsonView jsonValue) : 
-    m_metricHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+ResponseResourceMetricKey::ResponseResourceMetricKey(JsonView jsonValue)
+  : ResponseResourceMetricKey()
 {
   *this = jsonValue;
 }

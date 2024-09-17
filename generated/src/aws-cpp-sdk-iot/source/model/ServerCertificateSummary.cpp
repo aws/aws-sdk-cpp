@@ -26,11 +26,8 @@ ServerCertificateSummary::ServerCertificateSummary() :
 {
 }
 
-ServerCertificateSummary::ServerCertificateSummary(JsonView jsonValue) : 
-    m_serverCertificateArnHasBeenSet(false),
-    m_serverCertificateStatus(ServerCertificateStatus::NOT_SET),
-    m_serverCertificateStatusHasBeenSet(false),
-    m_serverCertificateStatusDetailHasBeenSet(false)
+ServerCertificateSummary::ServerCertificateSummary(JsonView jsonValue)
+  : ServerCertificateSummary()
 {
   *this = jsonValue;
 }

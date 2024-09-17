@@ -24,9 +24,8 @@ UserFeedback::UserFeedback() :
 {
 }
 
-UserFeedback::UserFeedback(JsonView jsonValue) : 
-    m_type(FeedbackType::NOT_SET),
-    m_typeHasBeenSet(false)
+UserFeedback::UserFeedback(JsonView jsonValue)
+  : UserFeedback()
 {
   *this = jsonValue;
 }

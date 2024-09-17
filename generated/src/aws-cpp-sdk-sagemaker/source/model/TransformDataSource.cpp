@@ -23,8 +23,8 @@ TransformDataSource::TransformDataSource() :
 {
 }
 
-TransformDataSource::TransformDataSource(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false)
+TransformDataSource::TransformDataSource(JsonView jsonValue)
+  : TransformDataSource()
 {
   *this = jsonValue;
 }

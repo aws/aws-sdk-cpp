@@ -39,46 +39,19 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the IoT thing that represents the client device to associate.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * <p>The name of the IoT thing that represents the client device to associate.</p>
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * <p>The name of the IoT thing that represents the client device to associate.</p>
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * <p>The name of the IoT thing that represents the client device to associate.</p>
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * <p>The name of the IoT thing that represents the client device to associate.</p>
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * <p>The name of the IoT thing that represents the client device to associate.</p>
-     */
     inline AssociateClientDeviceWithCoreDeviceEntry& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * <p>The name of the IoT thing that represents the client device to associate.</p>
-     */
     inline AssociateClientDeviceWithCoreDeviceEntry& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IoT thing that represents the client device to associate.</p>
-     */
     inline AssociateClientDeviceWithCoreDeviceEntry& WithThingName(const char* value) { SetThingName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingName;

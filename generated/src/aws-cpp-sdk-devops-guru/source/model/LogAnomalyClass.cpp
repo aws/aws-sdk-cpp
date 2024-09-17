@@ -31,16 +31,8 @@ LogAnomalyClass::LogAnomalyClass() :
 {
 }
 
-LogAnomalyClass::LogAnomalyClass(JsonView jsonValue) : 
-    m_logStreamNameHasBeenSet(false),
-    m_logAnomalyType(LogAnomalyType::NOT_SET),
-    m_logAnomalyTypeHasBeenSet(false),
-    m_logAnomalyTokenHasBeenSet(false),
-    m_logEventIdHasBeenSet(false),
-    m_explanationHasBeenSet(false),
-    m_numberOfLogLinesOccurrences(0),
-    m_numberOfLogLinesOccurrencesHasBeenSet(false),
-    m_logEventTimestampHasBeenSet(false)
+LogAnomalyClass::LogAnomalyClass(JsonView jsonValue)
+  : LogAnomalyClass()
 {
   *this = jsonValue;
 }

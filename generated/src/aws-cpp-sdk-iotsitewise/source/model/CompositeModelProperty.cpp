@@ -27,12 +27,8 @@ CompositeModelProperty::CompositeModelProperty() :
 {
 }
 
-CompositeModelProperty::CompositeModelProperty(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_assetPropertyHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+CompositeModelProperty::CompositeModelProperty(JsonView jsonValue)
+  : CompositeModelProperty()
 {
   *this = jsonValue;
 }

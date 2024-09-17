@@ -30,6 +30,7 @@
 #include <aws/serverlessrepo/model/ListApplicationsResult.h>
 #include <aws/serverlessrepo/model/PutApplicationPolicyResult.h>
 #include <aws/serverlessrepo/model/UpdateApplicationResult.h>
+#include <aws/serverlessrepo/model/ListApplicationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ServerlessApplicationRepositoryClient header */
 
@@ -64,7 +65,7 @@ namespace Aws
 
   namespace ServerlessApplicationRepository
   {
-    using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ServerlessApplicationRepositoryEndpointProviderBase = Aws::ServerlessApplicationRepository::Endpoint::ServerlessApplicationRepositoryEndpointProviderBase;
     using ServerlessApplicationRepositoryEndpointProvider = Aws::ServerlessApplicationRepository::Endpoint::ServerlessApplicationRepositoryEndpointProvider;
 

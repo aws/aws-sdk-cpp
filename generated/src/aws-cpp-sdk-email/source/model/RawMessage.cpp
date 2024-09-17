@@ -26,8 +26,8 @@ RawMessage::RawMessage() :
 {
 }
 
-RawMessage::RawMessage(const XmlNode& xmlNode) : 
-    m_dataHasBeenSet(false)
+RawMessage::RawMessage(const XmlNode& xmlNode)
+  : RawMessage()
 {
   *this = xmlNode;
 }

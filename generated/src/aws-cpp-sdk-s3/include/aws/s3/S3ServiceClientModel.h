@@ -78,6 +78,8 @@
 #include <aws/s3/model/RestoreObjectResult.h>
 #include <aws/s3/model/UploadPartResult.h>
 #include <aws/s3/model/UploadPartCopyResult.h>
+#include <aws/s3/model/ListDirectoryBucketsRequest.h>
+#include <aws/s3/model/ListBucketsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in S3Client header */
 
@@ -176,6 +178,7 @@ namespace Aws
       class ListBucketIntelligentTieringConfigurationsRequest;
       class ListBucketInventoryConfigurationsRequest;
       class ListBucketMetricsConfigurationsRequest;
+      class ListBucketsRequest;
       class ListDirectoryBucketsRequest;
       class ListMultipartUploadsRequest;
       class ListObjectVersionsRequest;
@@ -472,7 +475,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::ListBucketIntelligentTieringConfigurationsRequest&, const Model::ListBucketIntelligentTieringConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketIntelligentTieringConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketInventoryConfigurationsRequest&, const Model::ListBucketInventoryConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketInventoryConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketMetricsConfigurationsRequest&, const Model::ListBucketMetricsConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketMetricsConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const S3Client*, const Model::ListBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketsResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::ListBucketsRequest&, const Model::ListBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListDirectoryBucketsRequest&, const Model::ListDirectoryBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDirectoryBucketsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultipartUploadsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListObjectVersionsRequest&, const Model::ListObjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectVersionsResponseReceivedHandler;

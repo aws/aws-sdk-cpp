@@ -41,42 +41,18 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized
      * execution environment when you publish a function version.</p>
      */
     inline const SnapStartApplyOn& GetApplyOn() const{ return m_applyOn; }
-
-    /**
-     * <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized
-     * execution environment when you publish a function version.</p>
-     */
     inline bool ApplyOnHasBeenSet() const { return m_applyOnHasBeenSet; }
-
-    /**
-     * <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized
-     * execution environment when you publish a function version.</p>
-     */
     inline void SetApplyOn(const SnapStartApplyOn& value) { m_applyOnHasBeenSet = true; m_applyOn = value; }
-
-    /**
-     * <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized
-     * execution environment when you publish a function version.</p>
-     */
     inline void SetApplyOn(SnapStartApplyOn&& value) { m_applyOnHasBeenSet = true; m_applyOn = std::move(value); }
-
-    /**
-     * <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized
-     * execution environment when you publish a function version.</p>
-     */
     inline SnapStart& WithApplyOn(const SnapStartApplyOn& value) { SetApplyOn(value); return *this;}
-
-    /**
-     * <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized
-     * execution environment when you publish a function version.</p>
-     */
     inline SnapStart& WithApplyOn(SnapStartApplyOn&& value) { SetApplyOn(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SnapStartApplyOn m_applyOn;

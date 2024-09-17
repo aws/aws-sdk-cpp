@@ -33,58 +33,28 @@ namespace Model
     AWS_APPRUNNER_API UpdateVpcIngressConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A description of the App Runner VPC Ingress Connection resource that's
      * updated by this request.</p>
      */
     inline const VpcIngressConnection& GetVpcIngressConnection() const{ return m_vpcIngressConnection; }
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection resource that's
-     * updated by this request.</p>
-     */
     inline void SetVpcIngressConnection(const VpcIngressConnection& value) { m_vpcIngressConnection = value; }
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection resource that's
-     * updated by this request.</p>
-     */
     inline void SetVpcIngressConnection(VpcIngressConnection&& value) { m_vpcIngressConnection = std::move(value); }
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection resource that's
-     * updated by this request.</p>
-     */
     inline UpdateVpcIngressConnectionResult& WithVpcIngressConnection(const VpcIngressConnection& value) { SetVpcIngressConnection(value); return *this;}
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection resource that's
-     * updated by this request.</p>
-     */
     inline UpdateVpcIngressConnectionResult& WithVpcIngressConnection(VpcIngressConnection&& value) { SetVpcIngressConnection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateVpcIngressConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateVpcIngressConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateVpcIngressConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VpcIngressConnection m_vpcIngressConnection;

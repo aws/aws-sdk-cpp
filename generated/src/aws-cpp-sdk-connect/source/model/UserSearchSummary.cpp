@@ -32,17 +32,8 @@ UserSearchSummary::UserSearchSummary() :
 {
 }
 
-UserSearchSummary::UserSearchSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_directoryUserIdHasBeenSet(false),
-    m_hierarchyGroupIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_identityInfoHasBeenSet(false),
-    m_phoneConfigHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false),
-    m_securityProfileIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+UserSearchSummary::UserSearchSummary(JsonView jsonValue)
+  : UserSearchSummary()
 {
   *this = jsonValue;
 }

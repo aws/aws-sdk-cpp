@@ -39,119 +39,51 @@ namespace Model
     AWS_RDS_API DownloadDBLogFilePortionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Entries from the specified log file.</p>
      */
     inline const Aws::String& GetLogFileData() const{ return m_logFileData; }
-
-    /**
-     * <p>Entries from the specified log file.</p>
-     */
     inline void SetLogFileData(const Aws::String& value) { m_logFileData = value; }
-
-    /**
-     * <p>Entries from the specified log file.</p>
-     */
     inline void SetLogFileData(Aws::String&& value) { m_logFileData = std::move(value); }
-
-    /**
-     * <p>Entries from the specified log file.</p>
-     */
     inline void SetLogFileData(const char* value) { m_logFileData.assign(value); }
-
-    /**
-     * <p>Entries from the specified log file.</p>
-     */
     inline DownloadDBLogFilePortionResult& WithLogFileData(const Aws::String& value) { SetLogFileData(value); return *this;}
-
-    /**
-     * <p>Entries from the specified log file.</p>
-     */
     inline DownloadDBLogFilePortionResult& WithLogFileData(Aws::String&& value) { SetLogFileData(std::move(value)); return *this;}
-
-    /**
-     * <p>Entries from the specified log file.</p>
-     */
     inline DownloadDBLogFilePortionResult& WithLogFileData(const char* value) { SetLogFileData(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token that can be used in a later
      * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>A pagination token that can be used in a later
-     * <code>DownloadDBLogFilePortion</code> request.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>A pagination token that can be used in a later
-     * <code>DownloadDBLogFilePortion</code> request.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>A pagination token that can be used in a later
-     * <code>DownloadDBLogFilePortion</code> request.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>A pagination token that can be used in a later
-     * <code>DownloadDBLogFilePortion</code> request.</p>
-     */
     inline DownloadDBLogFilePortionResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>A pagination token that can be used in a later
-     * <code>DownloadDBLogFilePortion</code> request.</p>
-     */
     inline DownloadDBLogFilePortionResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that can be used in a later
-     * <code>DownloadDBLogFilePortion</code> request.</p>
-     */
     inline DownloadDBLogFilePortionResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value that, if true, indicates there is more data to be
      * downloaded.</p>
      */
     inline bool GetAdditionalDataPending() const{ return m_additionalDataPending; }
-
-    /**
-     * <p>A Boolean value that, if true, indicates there is more data to be
-     * downloaded.</p>
-     */
     inline void SetAdditionalDataPending(bool value) { m_additionalDataPending = value; }
-
-    /**
-     * <p>A Boolean value that, if true, indicates there is more data to be
-     * downloaded.</p>
-     */
     inline DownloadDBLogFilePortionResult& WithAdditionalDataPending(bool value) { SetAdditionalDataPending(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DownloadDBLogFilePortionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DownloadDBLogFilePortionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logFileData;

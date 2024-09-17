@@ -25,10 +25,8 @@ AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails::AwsCodeBuildProjectEn
 {
 }
 
-AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails(JsonView jsonValue)
+  : AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails()
 {
   *this = jsonValue;
 }

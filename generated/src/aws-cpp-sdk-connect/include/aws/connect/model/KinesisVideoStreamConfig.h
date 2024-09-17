@@ -39,106 +39,43 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The prefix of the video stream.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix of the video stream.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix of the video stream.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix of the video stream.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix of the video stream.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix of the video stream.</p>
-     */
     inline KinesisVideoStreamConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix of the video stream.</p>
-     */
     inline KinesisVideoStreamConfig& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix of the video stream.</p>
-     */
     inline KinesisVideoStreamConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of hours data is retained in the stream. Kinesis Video Streams
      * retains the data in a data store that is associated with the stream.</p> <p>The
      * default value is 0, indicating that the stream does not persist data.</p>
      */
     inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
-
-    /**
-     * <p>The number of hours data is retained in the stream. Kinesis Video Streams
-     * retains the data in a data store that is associated with the stream.</p> <p>The
-     * default value is 0, indicating that the stream does not persist data.</p>
-     */
     inline bool RetentionPeriodHoursHasBeenSet() const { return m_retentionPeriodHoursHasBeenSet; }
-
-    /**
-     * <p>The number of hours data is retained in the stream. Kinesis Video Streams
-     * retains the data in a data store that is associated with the stream.</p> <p>The
-     * default value is 0, indicating that the stream does not persist data.</p>
-     */
     inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
-
-    /**
-     * <p>The number of hours data is retained in the stream. Kinesis Video Streams
-     * retains the data in a data store that is associated with the stream.</p> <p>The
-     * default value is 0, indicating that the stream does not persist data.</p>
-     */
     inline KinesisVideoStreamConfig& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The encryption configuration.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
-
-    /**
-     * <p>The encryption configuration.</p>
-     */
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-
-    /**
-     * <p>The encryption configuration.</p>
-     */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-
-    /**
-     * <p>The encryption configuration.</p>
-     */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-
-    /**
-     * <p>The encryption configuration.</p>
-     */
     inline KinesisVideoStreamConfig& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-
-    /**
-     * <p>The encryption configuration.</p>
-     */
     inline KinesisVideoStreamConfig& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_prefix;

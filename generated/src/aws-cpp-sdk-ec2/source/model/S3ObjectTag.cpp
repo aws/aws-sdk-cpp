@@ -26,9 +26,8 @@ S3ObjectTag::S3ObjectTag() :
 {
 }
 
-S3ObjectTag::S3ObjectTag(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+S3ObjectTag::S3ObjectTag(const XmlNode& xmlNode)
+  : S3ObjectTag()
 {
   *this = xmlNode;
 }

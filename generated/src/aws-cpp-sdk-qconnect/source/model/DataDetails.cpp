@@ -5,6 +5,7 @@
 
 #include <aws/qconnect/model/DataDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/GenerativeDataDetails.h>
 
 #include <utility>
 
@@ -25,13 +26,18 @@ DataDetails::DataDetails() :
 {
 }
 
-DataDetails::DataDetails(JsonView jsonValue) : 
-    m_contentDataHasBeenSet(false),
-    m_generativeDataHasBeenSet(false),
-    m_sourceContentDataHasBeenSet(false)
+DataDetails::DataDetails(JsonView jsonValue)
+  : DataDetails()
 {
   *this = jsonValue;
 }
+
+const GenerativeDataDetails& DataDetails::GetGenerativeData() const{ return *m_generativeData; }
+bool DataDetails::GenerativeDataHasBeenSet() const { return m_generativeDataHasBeenSet; }
+void DataDetails::SetGenerativeData(const GenerativeDataDetails& value) { m_generativeDataHasBeenSet = true; m_generativeData = Aws::MakeShared<GenerativeDataDetails>("DataDetails", value); }
+void DataDetails::SetGenerativeData(GenerativeDataDetails&& value) { m_generativeDataHasBeenSet = true; m_generativeData = Aws::MakeShared<GenerativeDataDetails>("DataDetails", std::move(value)); }
+DataDetails& DataDetails::WithGenerativeData(const GenerativeDataDetails& value) { SetGenerativeData(value); return *this;}
+DataDetails& DataDetails::WithGenerativeData(GenerativeDataDetails&& value) { SetGenerativeData(std::move(value)); return *this;}
 
 DataDetails& DataDetails::operator =(JsonView jsonValue)
 {
@@ -44,7 +50,7 @@ DataDetails& DataDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("generativeData"))
   {
-    m_generativeData = jsonValue.GetObject("generativeData");
+    m_generativeData = Aws::MakeShared<GenerativeDataDetails>("DataDetails", jsonValue.GetObject("generativeData"));
 
     m_generativeDataHasBeenSet = true;
   }
@@ -71,7 +77,7 @@ JsonValue DataDetails::Jsonize() const
 
   if(m_generativeDataHasBeenSet)
   {
-   payload.WithObject("generativeData", m_generativeData.Jsonize());
+   payload.WithObject("generativeData", m_generativeData->Jsonize());
 
   }
 

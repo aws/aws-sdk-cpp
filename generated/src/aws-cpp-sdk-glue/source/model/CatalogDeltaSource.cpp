@@ -27,12 +27,8 @@ CatalogDeltaSource::CatalogDeltaSource() :
 {
 }
 
-CatalogDeltaSource::CatalogDeltaSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_additionalDeltaOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+CatalogDeltaSource::CatalogDeltaSource(JsonView jsonValue)
+  : CatalogDeltaSource()
 {
   *this = jsonValue;
 }

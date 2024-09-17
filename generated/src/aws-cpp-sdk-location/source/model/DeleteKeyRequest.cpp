@@ -16,9 +16,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeleteKeyRequest::DeleteKeyRequest() : 
+    m_keyNameHasBeenSet(false),
     m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false),
-    m_keyNameHasBeenSet(false)
+    m_forceDeleteHasBeenSet(false)
 {
 }
 

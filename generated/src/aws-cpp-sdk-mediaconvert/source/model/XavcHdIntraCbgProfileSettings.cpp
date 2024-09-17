@@ -24,9 +24,8 @@ XavcHdIntraCbgProfileSettings::XavcHdIntraCbgProfileSettings() :
 {
 }
 
-XavcHdIntraCbgProfileSettings::XavcHdIntraCbgProfileSettings(JsonView jsonValue) : 
-    m_xavcClass(XavcHdIntraCbgProfileClass::NOT_SET),
-    m_xavcClassHasBeenSet(false)
+XavcHdIntraCbgProfileSettings::XavcHdIntraCbgProfileSettings(JsonView jsonValue)
+  : XavcHdIntraCbgProfileSettings()
 {
   *this = jsonValue;
 }

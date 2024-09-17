@@ -39,103 +39,35 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The code provided by the connector when it has been authenticated via the
      * connected app. </p>
      */
     inline const Aws::String& GetAuthCode() const{ return m_authCode; }
-
-    /**
-     * <p> The code provided by the connector when it has been authenticated via the
-     * connected app. </p>
-     */
     inline bool AuthCodeHasBeenSet() const { return m_authCodeHasBeenSet; }
-
-    /**
-     * <p> The code provided by the connector when it has been authenticated via the
-     * connected app. </p>
-     */
     inline void SetAuthCode(const Aws::String& value) { m_authCodeHasBeenSet = true; m_authCode = value; }
-
-    /**
-     * <p> The code provided by the connector when it has been authenticated via the
-     * connected app. </p>
-     */
     inline void SetAuthCode(Aws::String&& value) { m_authCodeHasBeenSet = true; m_authCode = std::move(value); }
-
-    /**
-     * <p> The code provided by the connector when it has been authenticated via the
-     * connected app. </p>
-     */
     inline void SetAuthCode(const char* value) { m_authCodeHasBeenSet = true; m_authCode.assign(value); }
-
-    /**
-     * <p> The code provided by the connector when it has been authenticated via the
-     * connected app. </p>
-     */
     inline ConnectorOAuthRequest& WithAuthCode(const Aws::String& value) { SetAuthCode(value); return *this;}
-
-    /**
-     * <p> The code provided by the connector when it has been authenticated via the
-     * connected app. </p>
-     */
     inline ConnectorOAuthRequest& WithAuthCode(Aws::String&& value) { SetAuthCode(std::move(value)); return *this;}
-
-    /**
-     * <p> The code provided by the connector when it has been authenticated via the
-     * connected app. </p>
-     */
     inline ConnectorOAuthRequest& WithAuthCode(const char* value) { SetAuthCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The URL to which the authentication server redirects the browser after
      * authorization has been granted. </p>
      */
     inline const Aws::String& GetRedirectUri() const{ return m_redirectUri; }
-
-    /**
-     * <p> The URL to which the authentication server redirects the browser after
-     * authorization has been granted. </p>
-     */
     inline bool RedirectUriHasBeenSet() const { return m_redirectUriHasBeenSet; }
-
-    /**
-     * <p> The URL to which the authentication server redirects the browser after
-     * authorization has been granted. </p>
-     */
     inline void SetRedirectUri(const Aws::String& value) { m_redirectUriHasBeenSet = true; m_redirectUri = value; }
-
-    /**
-     * <p> The URL to which the authentication server redirects the browser after
-     * authorization has been granted. </p>
-     */
     inline void SetRedirectUri(Aws::String&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::move(value); }
-
-    /**
-     * <p> The URL to which the authentication server redirects the browser after
-     * authorization has been granted. </p>
-     */
     inline void SetRedirectUri(const char* value) { m_redirectUriHasBeenSet = true; m_redirectUri.assign(value); }
-
-    /**
-     * <p> The URL to which the authentication server redirects the browser after
-     * authorization has been granted. </p>
-     */
     inline ConnectorOAuthRequest& WithRedirectUri(const Aws::String& value) { SetRedirectUri(value); return *this;}
-
-    /**
-     * <p> The URL to which the authentication server redirects the browser after
-     * authorization has been granted. </p>
-     */
     inline ConnectorOAuthRequest& WithRedirectUri(Aws::String&& value) { SetRedirectUri(std::move(value)); return *this;}
-
-    /**
-     * <p> The URL to which the authentication server redirects the browser after
-     * authorization has been granted. </p>
-     */
     inline ConnectorOAuthRequest& WithRedirectUri(const char* value) { SetRedirectUri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_authCode;

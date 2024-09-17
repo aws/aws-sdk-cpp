@@ -26,11 +26,8 @@ InclusionProtectionGroupFilters::InclusionProtectionGroupFilters() :
 {
 }
 
-InclusionProtectionGroupFilters::InclusionProtectionGroupFilters(JsonView jsonValue) : 
-    m_protectionGroupIdsHasBeenSet(false),
-    m_patternsHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_aggregationsHasBeenSet(false)
+InclusionProtectionGroupFilters::InclusionProtectionGroupFilters(JsonView jsonValue)
+  : InclusionProtectionGroupFilters()
 {
   *this = jsonValue;
 }

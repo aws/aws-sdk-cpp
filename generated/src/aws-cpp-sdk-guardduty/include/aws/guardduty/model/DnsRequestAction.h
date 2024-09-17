@@ -38,165 +38,61 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The domain information for the DNS query.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>The domain information for the DNS query.</p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p>The domain information for the DNS query.</p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p>The domain information for the DNS query.</p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p>The domain information for the DNS query.</p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p>The domain information for the DNS query.</p>
-     */
     inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>The domain information for the DNS query.</p>
-     */
     inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain information for the DNS query.</p>
-     */
     inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network connection protocol observed in the activity that prompted
      * GuardDuty to generate the finding.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The network connection protocol observed in the activity that prompted
-     * GuardDuty to generate the finding.</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The network connection protocol observed in the activity that prompted
-     * GuardDuty to generate the finding.</p>
-     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The network connection protocol observed in the activity that prompted
-     * GuardDuty to generate the finding.</p>
-     */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The network connection protocol observed in the activity that prompted
-     * GuardDuty to generate the finding.</p>
-     */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-
-    /**
-     * <p>The network connection protocol observed in the activity that prompted
-     * GuardDuty to generate the finding.</p>
-     */
     inline DnsRequestAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The network connection protocol observed in the activity that prompted
-     * GuardDuty to generate the finding.</p>
-     */
     inline DnsRequestAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-
-    /**
-     * <p>The network connection protocol observed in the activity that prompted
-     * GuardDuty to generate the finding.</p>
-     */
     inline DnsRequestAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the targeted port is blocked.</p>
      */
     inline bool GetBlocked() const{ return m_blocked; }
-
-    /**
-     * <p>Indicates whether the targeted port is blocked.</p>
-     */
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the targeted port is blocked.</p>
-     */
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
-
-    /**
-     * <p>Indicates whether the targeted port is blocked.</p>
-     */
     inline DnsRequestAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline const Aws::String& GetDomainWithSuffix() const{ return m_domainWithSuffix; }
-
-    /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
-     */
     inline bool DomainWithSuffixHasBeenSet() const { return m_domainWithSuffixHasBeenSet; }
-
-    /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
-     */
     inline void SetDomainWithSuffix(const Aws::String& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = value; }
-
-    /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
-     */
     inline void SetDomainWithSuffix(Aws::String&& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = std::move(value); }
-
-    /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
-     */
     inline void SetDomainWithSuffix(const char* value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix.assign(value); }
-
-    /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
-     */
     inline DnsRequestAction& WithDomainWithSuffix(const Aws::String& value) { SetDomainWithSuffix(value); return *this;}
-
-    /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
-     */
     inline DnsRequestAction& WithDomainWithSuffix(Aws::String&& value) { SetDomainWithSuffix(std::move(value)); return *this;}
-
-    /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
-     */
     inline DnsRequestAction& WithDomainWithSuffix(const char* value) { SetDomainWithSuffix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domain;

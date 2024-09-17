@@ -29,14 +29,8 @@ TunnelSummary::TunnelSummary() :
 {
 }
 
-TunnelSummary::TunnelSummary(JsonView jsonValue) : 
-    m_tunnelIdHasBeenSet(false),
-    m_tunnelArnHasBeenSet(false),
-    m_status(TunnelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+TunnelSummary::TunnelSummary(JsonView jsonValue)
+  : TunnelSummary()
 {
   *this = jsonValue;
 }

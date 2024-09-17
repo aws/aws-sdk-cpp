@@ -35,68 +35,35 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows key for encryption and decryption.</p>
      */
     inline bool GetDecrypt() const{ return m_decrypt; }
-
-    /**
-     * <p>Allows key for encryption and decryption.</p>
-     */
     inline bool DecryptHasBeenSet() const { return m_decryptHasBeenSet; }
-
-    /**
-     * <p>Allows key for encryption and decryption.</p>
-     */
     inline void SetDecrypt(bool value) { m_decryptHasBeenSet = true; m_decrypt = value; }
-
-    /**
-     * <p>Allows key for encryption and decryption.</p>
-     */
     inline KeyUsagePropertyFlags& WithDecrypt(bool value) { SetDecrypt(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows key exchange without encryption.</p>
      */
     inline bool GetKeyAgreement() const{ return m_keyAgreement; }
-
-    /**
-     * <p>Allows key exchange without encryption.</p>
-     */
     inline bool KeyAgreementHasBeenSet() const { return m_keyAgreementHasBeenSet; }
-
-    /**
-     * <p>Allows key exchange without encryption.</p>
-     */
     inline void SetKeyAgreement(bool value) { m_keyAgreementHasBeenSet = true; m_keyAgreement = value; }
-
-    /**
-     * <p>Allows key exchange without encryption.</p>
-     */
     inline KeyUsagePropertyFlags& WithKeyAgreement(bool value) { SetKeyAgreement(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allow key use for digital signature.</p>
      */
     inline bool GetSign() const{ return m_sign; }
-
-    /**
-     * <p>Allow key use for digital signature.</p>
-     */
     inline bool SignHasBeenSet() const { return m_signHasBeenSet; }
-
-    /**
-     * <p>Allow key use for digital signature.</p>
-     */
     inline void SetSign(bool value) { m_signHasBeenSet = true; m_sign = value; }
-
-    /**
-     * <p>Allow key use for digital signature.</p>
-     */
     inline KeyUsagePropertyFlags& WithSign(bool value) { SetSign(value); return *this;}
-
+    ///@}
   private:
 
     bool m_decrypt;

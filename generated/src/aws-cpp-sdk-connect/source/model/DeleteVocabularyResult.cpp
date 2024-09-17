@@ -22,8 +22,8 @@ DeleteVocabularyResult::DeleteVocabularyResult() :
 {
 }
 
-DeleteVocabularyResult::DeleteVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(VocabularyState::NOT_SET)
+DeleteVocabularyResult::DeleteVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteVocabularyResult()
 {
   *this = result;
 }

@@ -33,77 +33,31 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The health check configuration.</p>
      */
     inline const HealthCheckConfig& GetHealthCheck() const{ return m_healthCheck; }
-
-    /**
-     * <p>The health check configuration.</p>
-     */
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-
-    /**
-     * <p>The health check configuration.</p>
-     */
     inline void SetHealthCheck(const HealthCheckConfig& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-
-    /**
-     * <p>The health check configuration.</p>
-     */
     inline void SetHealthCheck(HealthCheckConfig&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-
-    /**
-     * <p>The health check configuration.</p>
-     */
     inline UpdateTargetGroupRequest& WithHealthCheck(const HealthCheckConfig& value) { SetHealthCheck(value); return *this;}
-
-    /**
-     * <p>The health check configuration.</p>
-     */
     inline UpdateTargetGroupRequest& WithHealthCheck(HealthCheckConfig&& value) { SetHealthCheck(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupIdentifier() const{ return m_targetGroupIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(const Aws::String& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(Aws::String&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(const char* value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline UpdateTargetGroupRequest& WithTargetGroupIdentifier(const Aws::String& value) { SetTargetGroupIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline UpdateTargetGroupRequest& WithTargetGroupIdentifier(Aws::String&& value) { SetTargetGroupIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline UpdateTargetGroupRequest& WithTargetGroupIdentifier(const char* value) { SetTargetGroupIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     HealthCheckConfig m_healthCheck;

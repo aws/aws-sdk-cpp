@@ -25,10 +25,8 @@ EgressEndpoint::EgressEndpoint() :
 {
 }
 
-EgressEndpoint::EgressEndpoint(JsonView jsonValue) : 
-    m_packagingConfigurationIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_urlHasBeenSet(false)
+EgressEndpoint::EgressEndpoint(JsonView jsonValue)
+  : EgressEndpoint()
 {
   *this = jsonValue;
 }

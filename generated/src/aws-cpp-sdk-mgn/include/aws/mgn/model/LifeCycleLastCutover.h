@@ -39,98 +39,41 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Lifecycle Cutover finalized date and time.</p>
      */
     inline const LifeCycleLastCutoverFinalized& GetFinalized() const{ return m_finalized; }
-
-    /**
-     * <p>Lifecycle Cutover finalized date and time.</p>
-     */
     inline bool FinalizedHasBeenSet() const { return m_finalizedHasBeenSet; }
-
-    /**
-     * <p>Lifecycle Cutover finalized date and time.</p>
-     */
     inline void SetFinalized(const LifeCycleLastCutoverFinalized& value) { m_finalizedHasBeenSet = true; m_finalized = value; }
-
-    /**
-     * <p>Lifecycle Cutover finalized date and time.</p>
-     */
     inline void SetFinalized(LifeCycleLastCutoverFinalized&& value) { m_finalizedHasBeenSet = true; m_finalized = std::move(value); }
-
-    /**
-     * <p>Lifecycle Cutover finalized date and time.</p>
-     */
     inline LifeCycleLastCutover& WithFinalized(const LifeCycleLastCutoverFinalized& value) { SetFinalized(value); return *this;}
-
-    /**
-     * <p>Lifecycle Cutover finalized date and time.</p>
-     */
     inline LifeCycleLastCutover& WithFinalized(LifeCycleLastCutoverFinalized&& value) { SetFinalized(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lifecycle last Cutover initiated.</p>
      */
     inline const LifeCycleLastCutoverInitiated& GetInitiated() const{ return m_initiated; }
-
-    /**
-     * <p>Lifecycle last Cutover initiated.</p>
-     */
     inline bool InitiatedHasBeenSet() const { return m_initiatedHasBeenSet; }
-
-    /**
-     * <p>Lifecycle last Cutover initiated.</p>
-     */
     inline void SetInitiated(const LifeCycleLastCutoverInitiated& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
-
-    /**
-     * <p>Lifecycle last Cutover initiated.</p>
-     */
     inline void SetInitiated(LifeCycleLastCutoverInitiated&& value) { m_initiatedHasBeenSet = true; m_initiated = std::move(value); }
-
-    /**
-     * <p>Lifecycle last Cutover initiated.</p>
-     */
     inline LifeCycleLastCutover& WithInitiated(const LifeCycleLastCutoverInitiated& value) { SetInitiated(value); return *this;}
-
-    /**
-     * <p>Lifecycle last Cutover initiated.</p>
-     */
     inline LifeCycleLastCutover& WithInitiated(LifeCycleLastCutoverInitiated&& value) { SetInitiated(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lifecycle last Cutover reverted.</p>
      */
     inline const LifeCycleLastCutoverReverted& GetReverted() const{ return m_reverted; }
-
-    /**
-     * <p>Lifecycle last Cutover reverted.</p>
-     */
     inline bool RevertedHasBeenSet() const { return m_revertedHasBeenSet; }
-
-    /**
-     * <p>Lifecycle last Cutover reverted.</p>
-     */
     inline void SetReverted(const LifeCycleLastCutoverReverted& value) { m_revertedHasBeenSet = true; m_reverted = value; }
-
-    /**
-     * <p>Lifecycle last Cutover reverted.</p>
-     */
     inline void SetReverted(LifeCycleLastCutoverReverted&& value) { m_revertedHasBeenSet = true; m_reverted = std::move(value); }
-
-    /**
-     * <p>Lifecycle last Cutover reverted.</p>
-     */
     inline LifeCycleLastCutover& WithReverted(const LifeCycleLastCutoverReverted& value) { SetReverted(value); return *this;}
-
-    /**
-     * <p>Lifecycle last Cutover reverted.</p>
-     */
     inline LifeCycleLastCutover& WithReverted(LifeCycleLastCutoverReverted&& value) { SetReverted(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LifeCycleLastCutoverFinalized m_finalized;

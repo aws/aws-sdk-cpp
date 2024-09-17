@@ -38,218 +38,58 @@ namespace Model
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Key-pair ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>Key-pair ARN.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>Key-pair ARN.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>Key-pair ARN.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>Key-pair ARN.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>Key-pair ARN.</p>
-     */
     inline PlaybackKeyPairSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>Key-pair ARN.</p>
-     */
     inline PlaybackKeyPairSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Key-pair ARN.</p>
-     */
     inline PlaybackKeyPairSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
     inline PlaybackKeyPairSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
     inline PlaybackKeyPairSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
     inline PlaybackKeyPairSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
      * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
+     * practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag
+     * Editor</i> for details, including restrictions that apply to tags and "Tag
+     * naming limits and requirements"; Amazon IVS has no service-specific constraints
+     * beyond what is documented there.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
-     * <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * Amazon Web Services Resources</a> for more information, including restrictions
-     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
-     * service-specific constraints beyond what is documented there.</p>
-     */
     inline PlaybackKeyPairSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_arn;

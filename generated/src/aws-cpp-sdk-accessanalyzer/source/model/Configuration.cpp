@@ -30,23 +30,14 @@ Configuration::Configuration() :
     m_s3BucketHasBeenSet(false),
     m_snsTopicHasBeenSet(false),
     m_sqsQueueHasBeenSet(false),
-    m_s3ExpressDirectoryBucketHasBeenSet(false)
+    m_s3ExpressDirectoryBucketHasBeenSet(false),
+    m_dynamodbStreamHasBeenSet(false),
+    m_dynamodbTableHasBeenSet(false)
 {
 }
 
-Configuration::Configuration(JsonView jsonValue) : 
-    m_ebsSnapshotHasBeenSet(false),
-    m_ecrRepositoryHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_efsFileSystemHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_rdsDbClusterSnapshotHasBeenSet(false),
-    m_rdsDbSnapshotHasBeenSet(false),
-    m_secretsManagerSecretHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_snsTopicHasBeenSet(false),
-    m_sqsQueueHasBeenSet(false),
-    m_s3ExpressDirectoryBucketHasBeenSet(false)
+Configuration::Configuration(JsonView jsonValue)
+  : Configuration()
 {
   *this = jsonValue;
 }
@@ -137,6 +128,20 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_s3ExpressDirectoryBucketHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dynamodbStream"))
+  {
+    m_dynamodbStream = jsonValue.GetObject("dynamodbStream");
+
+    m_dynamodbStreamHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamodbTable"))
+  {
+    m_dynamodbTable = jsonValue.GetObject("dynamodbTable");
+
+    m_dynamodbTableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +218,18 @@ JsonValue Configuration::Jsonize() const
   if(m_s3ExpressDirectoryBucketHasBeenSet)
   {
    payload.WithObject("s3ExpressDirectoryBucket", m_s3ExpressDirectoryBucket.Jsonize());
+
+  }
+
+  if(m_dynamodbStreamHasBeenSet)
+  {
+   payload.WithObject("dynamodbStream", m_dynamodbStream.Jsonize());
+
+  }
+
+  if(m_dynamodbTableHasBeenSet)
+  {
+   payload.WithObject("dynamodbTable", m_dynamodbTable.Jsonize());
 
   }
 

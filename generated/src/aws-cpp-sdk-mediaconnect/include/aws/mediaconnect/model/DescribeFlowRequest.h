@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the flow that you want to describe.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The ARN of the flow that you want to describe.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The ARN of the flow that you want to describe.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The ARN of the flow that you want to describe.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The ARN of the flow that you want to describe.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The ARN of the flow that you want to describe.
-     */
     inline DescribeFlowRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The ARN of the flow that you want to describe.
-     */
     inline DescribeFlowRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the flow that you want to describe.
-     */
     inline DescribeFlowRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

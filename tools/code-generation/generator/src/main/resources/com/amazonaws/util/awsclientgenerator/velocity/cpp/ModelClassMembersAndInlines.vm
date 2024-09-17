@@ -59,6 +59,10 @@
 #set($adderWithCopy = ";")
 #set($adderWithMove = ";")
 #set($inline = "$exportMacro ")
+#elseif($member.value.isChecksumMember())
+#set($getterBody = "{ return ${memberVariableName}; }")
+#set($setterWithCopy = " { ${required}${memberVariableName} = value; SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#set($setterWithMove = " { ${required}${memberVariableName} = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
 #else
 #set($getterBody = "{ return ${memberVariableName}; }")
 #set($setterWithCopy = " { ${required}${memberVariableName} = value; }")
@@ -68,21 +72,15 @@
 #if($getterFunctionName == ${member.value.shape.name})
 #set($getterFunctionName = "Get${getterFunctionName}")
 #end
+    ///@{
+    $memberDocumentation
 #if($isStream)
-    $memberDocumentation
     ${inline}Aws::IOStream& ${getterFunctionName}() const { return ${memberVariableName}.GetUnderlyingStream(); }
-
-    $memberDocumentation
     ${inline}void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
 
 #elseif ($isEventStreamInput)
-    $memberDocumentation
     ${exportMacro} std::shared_ptr<${member.value.shape.name}> ${getterFunctionName}() const ${getterBody}
-
-    $memberDocumentation
     ${exportMacro} void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${setterWithCopy}
-
-    $memberDocumentation
     ${exportMacro} ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${witherWithCopy}
 
 #else
@@ -93,41 +91,27 @@
 #if($shape.request)
 #set($getterFunctionName = $CppViewHelper.checkForCollision($getterFunctionName, "GetMember", $memberKeyWithFirstLetterCapitalized))
 #end
-    $memberDocumentation
     ${inline}${returnType} ${getterFunctionName}() const$override${getterBody}
-
 #end
 #if(!$isStream && !$isEventStreamInput)
 #if(!$member.value.required && $useRequiredField)
-    $memberDocumentation
     ${inline}bool ${memberKeyWithFirstLetterCapitalized}HasBeenSet() const${hasBeenSetBody}
-
 #end
-    $memberDocumentation
     ${inline}void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value)${setterWithCopy}
-
 #if(!$subShape.primitive)
-    $memberDocumentation
     ${inline}void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value)${setterWithMove}
-
 #end
-#if($member.value.shape.string)
-    $memberDocumentation
+#if($member.value.shape.string && !$member.value.isChecksumMember())
     ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); }
-
+#elseif($member.value.shape.string && $member.value.isChecksumMember())
+    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }
 #end
-    $memberDocumentation
     ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${cppType} value)${witherWithCopy}
-
 #if(!$subShape.primitive)
-    $memberDocumentation
     ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${moveType} value)${witherWithMove}
-
 #end
 #if($member.value.shape.string)
-    $memberDocumentation
     ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const char* value)${witherWithCopy}
-
 #end
 #end
 #if($member.value.shape.map)##TODO: replace Adder functions with $adderWithCopy for map type.
@@ -144,44 +128,30 @@
 #set($valueType = "const ${rawValueType}&")
 #set($valueMoveType = "${rawValueType}&&")
 #end
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(key, value); return *this; }
-
 #if(!$mapMember.mapKey.shape.primitive)
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(std::move(key), value); return *this; }
-
 #end
 #if(!$mapMember.mapValue.shape.primitive)
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(key, std::move(value)); return *this; }
-
 #end
 #if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapValue.shape.primitive)
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(std::move(key), std::move(value)); return *this; }
-
 #end
 #if($mapMember.mapKey.shape.string || $mapMember.mapValue.shape.string)
 #if($mapMember.mapKey.shape.string)
 #set($keyType = 'const char*')
 #if(!$mapMember.mapValue.shape.primitive)
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(key, std::move(value)); return *this; }
-
 #end
 #end
 #if($mapMember.mapValue.shape.string)
 #set($valueType = 'const char*')
 #if(!$mapMember.mapKey.shape.primitive)
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(std::move(key), value); return *this; }
-
 #end
 #end
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(key, value); return *this; }
-
 #end
 #end
 #if($member.value.shape.list)
@@ -192,21 +162,16 @@
 #set($valueType = "const ${rawValueType}&")
 #set($moveValueType = "${rawValueType}&&")
 #end
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
-
 #if(!$listMember.listMember.shape.primitive)
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${moveValueType} value)$adderWithMove
-
 #end
 #if($listMember.listMember.shape.string)
 #set($valueType = 'const char*')
-    $memberDocumentation
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value) { ${required}${memberVariableName}.push_back(value); return *this; }
-
 #end
 #end
+    ///@}
 #end##if(!((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.request))
 #end##foreach($member in $shape.members.entrySet())
 #if($shape.members.size() > 0)##next contains private only

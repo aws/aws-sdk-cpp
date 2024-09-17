@@ -27,12 +27,8 @@ Status::Status() :
 {
 }
 
-Status::Status(JsonView jsonValue) : 
-    m_documentIdHasBeenSet(false),
-    m_documentStatus(DocumentStatus::NOT_SET),
-    m_documentStatusHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+Status::Status(JsonView jsonValue)
+  : Status()
 {
   *this = jsonValue;
 }

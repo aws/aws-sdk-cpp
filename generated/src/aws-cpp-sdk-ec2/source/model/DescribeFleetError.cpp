@@ -29,12 +29,8 @@ DescribeFleetError::DescribeFleetError() :
 {
 }
 
-DescribeFleetError::DescribeFleetError(const XmlNode& xmlNode) : 
-    m_launchTemplateAndOverridesHasBeenSet(false),
-    m_lifecycle(InstanceLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+DescribeFleetError::DescribeFleetError(const XmlNode& xmlNode)
+  : DescribeFleetError()
 {
   *this = xmlNode;
 }

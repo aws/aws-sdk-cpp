@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/S3Location.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace IoT
+{
+namespace Model
+{
+
+  /**
+   * <p>The Amazon S3 location for the software bill of materials associated with a
+   * software package version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Sbom">AWS API
+   * Reference</a></p>
+   */
+  class Sbom
+  {
+  public:
+    AWS_IOT_API Sbom();
+    AWS_IOT_API Sbom(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Sbom& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    
+    inline const S3Location& GetS3Location() const{ return m_s3Location; }
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
+    inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
+    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
+    inline Sbom& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
+    inline Sbom& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    S3Location m_s3Location;
+    bool m_s3LocationHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

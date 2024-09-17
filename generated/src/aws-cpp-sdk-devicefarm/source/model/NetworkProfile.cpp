@@ -43,28 +43,8 @@ NetworkProfile::NetworkProfile() :
 {
 }
 
-NetworkProfile::NetworkProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(NetworkProfileType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_uplinkBandwidthBits(0),
-    m_uplinkBandwidthBitsHasBeenSet(false),
-    m_downlinkBandwidthBits(0),
-    m_downlinkBandwidthBitsHasBeenSet(false),
-    m_uplinkDelayMs(0),
-    m_uplinkDelayMsHasBeenSet(false),
-    m_downlinkDelayMs(0),
-    m_downlinkDelayMsHasBeenSet(false),
-    m_uplinkJitterMs(0),
-    m_uplinkJitterMsHasBeenSet(false),
-    m_downlinkJitterMs(0),
-    m_downlinkJitterMsHasBeenSet(false),
-    m_uplinkLossPercent(0),
-    m_uplinkLossPercentHasBeenSet(false),
-    m_downlinkLossPercent(0),
-    m_downlinkLossPercentHasBeenSet(false)
+NetworkProfile::NetworkProfile(JsonView jsonValue)
+  : NetworkProfile()
 {
   *this = jsonValue;
 }

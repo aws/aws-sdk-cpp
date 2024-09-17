@@ -23,8 +23,8 @@ AnywhereConfiguration::AnywhereConfiguration() :
 {
 }
 
-AnywhereConfiguration::AnywhereConfiguration(JsonView jsonValue) : 
-    m_costHasBeenSet(false)
+AnywhereConfiguration::AnywhereConfiguration(JsonView jsonValue)
+  : AnywhereConfiguration()
 {
   *this = jsonValue;
 }

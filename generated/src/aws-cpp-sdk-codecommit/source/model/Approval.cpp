@@ -25,10 +25,8 @@ Approval::Approval() :
 {
 }
 
-Approval::Approval(JsonView jsonValue) : 
-    m_userArnHasBeenSet(false),
-    m_approvalState(ApprovalState::NOT_SET),
-    m_approvalStateHasBeenSet(false)
+Approval::Approval(JsonView jsonValue)
+  : Approval()
 {
   *this = jsonValue;
 }

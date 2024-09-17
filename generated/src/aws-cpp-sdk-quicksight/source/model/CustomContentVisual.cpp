@@ -28,13 +28,8 @@ CustomContentVisual::CustomContentVisual() :
 {
 }
 
-CustomContentVisual::CustomContentVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_dataSetIdentifierHasBeenSet(false)
+CustomContentVisual::CustomContentVisual(JsonView jsonValue)
+  : CustomContentVisual()
 {
   *this = jsonValue;
 }

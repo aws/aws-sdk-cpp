@@ -34,87 +34,33 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon EBS volume ID.</p>
      */
     inline const Aws::String& GetEc2VolumeId() const{ return m_ec2VolumeId; }
-
-    /**
-     * <p>The Amazon EBS volume ID.</p>
-     */
     inline bool Ec2VolumeIdHasBeenSet() const { return m_ec2VolumeIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon EBS volume ID.</p>
-     */
     inline void SetEc2VolumeId(const Aws::String& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
-
-    /**
-     * <p>The Amazon EBS volume ID.</p>
-     */
     inline void SetEc2VolumeId(Aws::String&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = std::move(value); }
-
-    /**
-     * <p>The Amazon EBS volume ID.</p>
-     */
     inline void SetEc2VolumeId(const char* value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId.assign(value); }
-
-    /**
-     * <p>The Amazon EBS volume ID.</p>
-     */
     inline RegisterVolumeRequest& WithEc2VolumeId(const Aws::String& value) { SetEc2VolumeId(value); return *this;}
-
-    /**
-     * <p>The Amazon EBS volume ID.</p>
-     */
     inline RegisterVolumeRequest& WithEc2VolumeId(Aws::String&& value) { SetEc2VolumeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon EBS volume ID.</p>
-     */
     inline RegisterVolumeRequest& WithEc2VolumeId(const char* value) { SetEc2VolumeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline RegisterVolumeRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline RegisterVolumeRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline RegisterVolumeRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ec2VolumeId;

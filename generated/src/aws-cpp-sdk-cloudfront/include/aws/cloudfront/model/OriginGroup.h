@@ -44,120 +44,45 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The origin group's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The origin group's ID.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The origin group's ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The origin group's ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The origin group's ID.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The origin group's ID.</p>
-     */
     inline OriginGroup& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The origin group's ID.</p>
-     */
     inline OriginGroup& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The origin group's ID.</p>
-     */
     inline OriginGroup& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains information about the failover criteria for an
      * origin group.</p>
      */
     inline const OriginGroupFailoverCriteria& GetFailoverCriteria() const{ return m_failoverCriteria; }
-
-    /**
-     * <p>A complex type that contains information about the failover criteria for an
-     * origin group.</p>
-     */
     inline bool FailoverCriteriaHasBeenSet() const { return m_failoverCriteriaHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains information about the failover criteria for an
-     * origin group.</p>
-     */
     inline void SetFailoverCriteria(const OriginGroupFailoverCriteria& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = value; }
-
-    /**
-     * <p>A complex type that contains information about the failover criteria for an
-     * origin group.</p>
-     */
     inline void SetFailoverCriteria(OriginGroupFailoverCriteria&& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = std::move(value); }
-
-    /**
-     * <p>A complex type that contains information about the failover criteria for an
-     * origin group.</p>
-     */
     inline OriginGroup& WithFailoverCriteria(const OriginGroupFailoverCriteria& value) { SetFailoverCriteria(value); return *this;}
-
-    /**
-     * <p>A complex type that contains information about the failover criteria for an
-     * origin group.</p>
-     */
     inline OriginGroup& WithFailoverCriteria(OriginGroupFailoverCriteria&& value) { SetFailoverCriteria(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains information about the origins in an origin
      * group.</p>
      */
     inline const OriginGroupMembers& GetMembers() const{ return m_members; }
-
-    /**
-     * <p>A complex type that contains information about the origins in an origin
-     * group.</p>
-     */
     inline bool MembersHasBeenSet() const { return m_membersHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains information about the origins in an origin
-     * group.</p>
-     */
     inline void SetMembers(const OriginGroupMembers& value) { m_membersHasBeenSet = true; m_members = value; }
-
-    /**
-     * <p>A complex type that contains information about the origins in an origin
-     * group.</p>
-     */
     inline void SetMembers(OriginGroupMembers&& value) { m_membersHasBeenSet = true; m_members = std::move(value); }
-
-    /**
-     * <p>A complex type that contains information about the origins in an origin
-     * group.</p>
-     */
     inline OriginGroup& WithMembers(const OriginGroupMembers& value) { SetMembers(value); return *this;}
-
-    /**
-     * <p>A complex type that contains information about the origins in an origin
-     * group.</p>
-     */
     inline OriginGroup& WithMembers(OriginGroupMembers&& value) { SetMembers(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

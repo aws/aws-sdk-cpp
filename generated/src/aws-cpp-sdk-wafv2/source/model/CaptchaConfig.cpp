@@ -23,8 +23,8 @@ CaptchaConfig::CaptchaConfig() :
 {
 }
 
-CaptchaConfig::CaptchaConfig(JsonView jsonValue) : 
-    m_immunityTimePropertyHasBeenSet(false)
+CaptchaConfig::CaptchaConfig(JsonView jsonValue)
+  : CaptchaConfig()
 {
   *this = jsonValue;
 }

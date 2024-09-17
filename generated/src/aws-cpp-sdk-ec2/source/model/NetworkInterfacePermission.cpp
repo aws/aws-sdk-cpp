@@ -31,14 +31,8 @@ NetworkInterfacePermission::NetworkInterfacePermission() :
 {
 }
 
-NetworkInterfacePermission::NetworkInterfacePermission(const XmlNode& xmlNode) : 
-    m_networkInterfacePermissionIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_permission(InterfacePermissionType::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_permissionStateHasBeenSet(false)
+NetworkInterfacePermission::NetworkInterfacePermission(const XmlNode& xmlNode)
+  : NetworkInterfacePermission()
 {
   *this = xmlNode;
 }

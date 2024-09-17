@@ -39,55 +39,22 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
      * </p>
      */
     inline const Aws::String& GetTopicName() const{ return m_topicName; }
-
-    /**
-     * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
-     * </p>
-     */
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-
-    /**
-     * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
-     * </p>
-     */
     inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-
-    /**
-     * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
-     * </p>
-     */
     inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-
-    /**
-     * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
-     * </p>
-     */
     inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-
-    /**
-     * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
-     * </p>
-     */
     inline MessageSignal& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-
-    /**
-     * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
-     * </p>
-     */
     inline MessageSignal& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-
-    /**
-     * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
-     * </p>
-     */
     inline MessageSignal& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The structured message for the message signal. It can be defined with either
      * a <code>primitiveMessageDefinition</code>,
@@ -95,47 +62,12 @@ namespace Model
      * <code>structuredMessageDefinition</code> recursively.</p>
      */
     inline const StructuredMessage& GetStructuredMessage() const{ return m_structuredMessage; }
-
-    /**
-     * <p>The structured message for the message signal. It can be defined with either
-     * a <code>primitiveMessageDefinition</code>,
-     * <code>structuredMessageListDefinition</code>, or
-     * <code>structuredMessageDefinition</code> recursively.</p>
-     */
     inline bool StructuredMessageHasBeenSet() const { return m_structuredMessageHasBeenSet; }
-
-    /**
-     * <p>The structured message for the message signal. It can be defined with either
-     * a <code>primitiveMessageDefinition</code>,
-     * <code>structuredMessageListDefinition</code>, or
-     * <code>structuredMessageDefinition</code> recursively.</p>
-     */
     inline void SetStructuredMessage(const StructuredMessage& value) { m_structuredMessageHasBeenSet = true; m_structuredMessage = value; }
-
-    /**
-     * <p>The structured message for the message signal. It can be defined with either
-     * a <code>primitiveMessageDefinition</code>,
-     * <code>structuredMessageListDefinition</code>, or
-     * <code>structuredMessageDefinition</code> recursively.</p>
-     */
     inline void SetStructuredMessage(StructuredMessage&& value) { m_structuredMessageHasBeenSet = true; m_structuredMessage = std::move(value); }
-
-    /**
-     * <p>The structured message for the message signal. It can be defined with either
-     * a <code>primitiveMessageDefinition</code>,
-     * <code>structuredMessageListDefinition</code>, or
-     * <code>structuredMessageDefinition</code> recursively.</p>
-     */
     inline MessageSignal& WithStructuredMessage(const StructuredMessage& value) { SetStructuredMessage(value); return *this;}
-
-    /**
-     * <p>The structured message for the message signal. It can be defined with either
-     * a <code>primitiveMessageDefinition</code>,
-     * <code>structuredMessageListDefinition</code>, or
-     * <code>structuredMessageDefinition</code> recursively.</p>
-     */
     inline MessageSignal& WithStructuredMessage(StructuredMessage&& value) { SetStructuredMessage(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicName;

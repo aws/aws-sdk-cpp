@@ -27,12 +27,8 @@ SelectValidation::SelectValidation() :
 {
 }
 
-SelectValidation::SelectValidation(JsonView jsonValue) : 
-    m_minChoices(0),
-    m_minChoicesHasBeenSet(false),
-    m_maxChoices(0),
-    m_maxChoicesHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+SelectValidation::SelectValidation(JsonView jsonValue)
+  : SelectValidation()
 {
   *this = jsonValue;
 }

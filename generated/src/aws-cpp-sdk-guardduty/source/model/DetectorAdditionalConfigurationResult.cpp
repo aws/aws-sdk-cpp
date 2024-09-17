@@ -27,12 +27,8 @@ DetectorAdditionalConfigurationResult::DetectorAdditionalConfigurationResult() :
 {
 }
 
-DetectorAdditionalConfigurationResult::DetectorAdditionalConfigurationResult(JsonView jsonValue) : 
-    m_name(FeatureAdditionalConfiguration::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DetectorAdditionalConfigurationResult::DetectorAdditionalConfigurationResult(JsonView jsonValue)
+  : DetectorAdditionalConfigurationResult()
 {
   *this = jsonValue;
 }

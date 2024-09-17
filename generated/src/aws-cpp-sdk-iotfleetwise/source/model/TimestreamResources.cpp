@@ -24,9 +24,8 @@ TimestreamResources::TimestreamResources() :
 {
 }
 
-TimestreamResources::TimestreamResources(JsonView jsonValue) : 
-    m_timestreamDatabaseNameHasBeenSet(false),
-    m_timestreamTableNameHasBeenSet(false)
+TimestreamResources::TimestreamResources(JsonView jsonValue)
+  : TimestreamResources()
 {
   *this = jsonValue;
 }

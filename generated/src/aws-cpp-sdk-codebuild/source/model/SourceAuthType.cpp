@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int OAUTH_HASH = HashingUtils::HashString("OAUTH");
+        static const int CODECONNECTIONS_HASH = HashingUtils::HashString("CODECONNECTIONS");
+        static const int SECRETS_MANAGER_HASH = HashingUtils::HashString("SECRETS_MANAGER");
 
 
         SourceAuthType GetSourceAuthTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == OAUTH_HASH)
           {
             return SourceAuthType::OAUTH;
+          }
+          else if (hashCode == CODECONNECTIONS_HASH)
+          {
+            return SourceAuthType::CODECONNECTIONS;
+          }
+          else if (hashCode == SECRETS_MANAGER_HASH)
+          {
+            return SourceAuthType::SECRETS_MANAGER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case SourceAuthType::OAUTH:
             return "OAUTH";
+          case SourceAuthType::CODECONNECTIONS:
+            return "CODECONNECTIONS";
+          case SourceAuthType::SECRETS_MANAGER:
+            return "SECRETS_MANAGER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -40,25 +40,8 @@ ObdSignal::ObdSignal() :
 {
 }
 
-ObdSignal::ObdSignal(JsonView jsonValue) : 
-    m_pidResponseLength(0),
-    m_pidResponseLengthHasBeenSet(false),
-    m_serviceMode(0),
-    m_serviceModeHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_scaling(0.0),
-    m_scalingHasBeenSet(false),
-    m_offset(0.0),
-    m_offsetHasBeenSet(false),
-    m_startByte(0),
-    m_startByteHasBeenSet(false),
-    m_byteLength(0),
-    m_byteLengthHasBeenSet(false),
-    m_bitRightShift(0),
-    m_bitRightShiftHasBeenSet(false),
-    m_bitMaskLength(0),
-    m_bitMaskLengthHasBeenSet(false)
+ObdSignal::ObdSignal(JsonView jsonValue)
+  : ObdSignal()
 {
   *this = jsonValue;
 }

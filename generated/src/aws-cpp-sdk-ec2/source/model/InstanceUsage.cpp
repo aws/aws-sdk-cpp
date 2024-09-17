@@ -27,10 +27,8 @@ InstanceUsage::InstanceUsage() :
 {
 }
 
-InstanceUsage::InstanceUsage(const XmlNode& xmlNode) : 
-    m_accountIdHasBeenSet(false),
-    m_usedInstanceCount(0),
-    m_usedInstanceCountHasBeenSet(false)
+InstanceUsage::InstanceUsage(const XmlNode& xmlNode)
+  : InstanceUsage()
 {
   *this = xmlNode;
 }

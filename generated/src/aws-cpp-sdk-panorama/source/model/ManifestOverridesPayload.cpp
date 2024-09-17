@@ -23,8 +23,8 @@ ManifestOverridesPayload::ManifestOverridesPayload() :
 {
 }
 
-ManifestOverridesPayload::ManifestOverridesPayload(JsonView jsonValue) : 
-    m_payloadDataHasBeenSet(false)
+ManifestOverridesPayload::ManifestOverridesPayload(JsonView jsonValue)
+  : ManifestOverridesPayload()
 {
   *this = jsonValue;
 }

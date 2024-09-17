@@ -29,14 +29,8 @@ CommentMetadata::CommentMetadata() :
 {
 }
 
-CommentMetadata::CommentMetadata(JsonView jsonValue) : 
-    m_commentIdHasBeenSet(false),
-    m_contributorHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_commentStatus(CommentStatusType::NOT_SET),
-    m_commentStatusHasBeenSet(false),
-    m_recipientIdHasBeenSet(false),
-    m_contributorIdHasBeenSet(false)
+CommentMetadata::CommentMetadata(JsonView jsonValue)
+  : CommentMetadata()
 {
   *this = jsonValue;
 }

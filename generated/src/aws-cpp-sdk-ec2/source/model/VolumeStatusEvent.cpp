@@ -30,13 +30,8 @@ VolumeStatusEvent::VolumeStatusEvent() :
 {
 }
 
-VolumeStatusEvent::VolumeStatusEvent(const XmlNode& xmlNode) : 
-    m_descriptionHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+VolumeStatusEvent::VolumeStatusEvent(const XmlNode& xmlNode)
+  : VolumeStatusEvent()
 {
   *this = xmlNode;
 }

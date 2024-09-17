@@ -25,10 +25,8 @@ DecoderManifestValidationException::DecoderManifestValidationException() :
 {
 }
 
-DecoderManifestValidationException::DecoderManifestValidationException(JsonView jsonValue) : 
-    m_invalidSignalsHasBeenSet(false),
-    m_invalidNetworkInterfacesHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DecoderManifestValidationException::DecoderManifestValidationException(JsonView jsonValue)
+  : DecoderManifestValidationException()
 {
   *this = jsonValue;
 }

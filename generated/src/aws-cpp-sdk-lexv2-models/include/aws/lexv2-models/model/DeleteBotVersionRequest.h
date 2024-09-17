@@ -38,88 +38,35 @@ namespace Model
     AWS_LEXMODELSV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the bot that contains the version.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
     inline DeleteBotVersionRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
     inline DeleteBotVersionRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the bot that contains the version.</p>
-     */
     inline DeleteBotVersionRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the bot to delete.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
     inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
     inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
     inline DeleteBotVersionRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
     inline DeleteBotVersionRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the bot to delete.</p>
-     */
     inline DeleteBotVersionRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
      * network, is using the bot version before it is deleted and throws a
@@ -128,34 +75,10 @@ namespace Model
      * remove the version even if it is being used by another resource.</p>
      */
     inline bool GetSkipResourceInUseCheck() const{ return m_skipResourceInUseCheck; }
-
-    /**
-     * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
-     * network, is using the bot version before it is deleted and throws a
-     * <code>ResourceInUseException</code> exception if the version is being used by
-     * another resource. Set this parameter to <code>true</code> to skip this check and
-     * remove the version even if it is being used by another resource.</p>
-     */
     inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
-
-    /**
-     * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
-     * network, is using the bot version before it is deleted and throws a
-     * <code>ResourceInUseException</code> exception if the version is being used by
-     * another resource. Set this parameter to <code>true</code> to skip this check and
-     * remove the version even if it is being used by another resource.</p>
-     */
     inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
-
-    /**
-     * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
-     * network, is using the bot version before it is deleted and throws a
-     * <code>ResourceInUseException</code> exception if the version is being used by
-     * another resource. Set this parameter to <code>true</code> to skip this check and
-     * remove the version even if it is being used by another resource.</p>
-     */
     inline DeleteBotVersionRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botId;

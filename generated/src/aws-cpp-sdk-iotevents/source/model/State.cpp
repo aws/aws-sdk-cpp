@@ -26,11 +26,8 @@ State::State() :
 {
 }
 
-State::State(JsonView jsonValue) : 
-    m_stateNameHasBeenSet(false),
-    m_onInputHasBeenSet(false),
-    m_onEnterHasBeenSet(false),
-    m_onExitHasBeenSet(false)
+State::State(JsonView jsonValue)
+  : State()
 {
   *this = jsonValue;
 }

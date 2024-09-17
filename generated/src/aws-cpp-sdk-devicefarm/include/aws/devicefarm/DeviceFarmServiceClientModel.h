@@ -95,6 +95,18 @@
 #include <aws/devicefarm/model/UpdateTestGridProjectResult.h>
 #include <aws/devicefarm/model/UpdateUploadResult.h>
 #include <aws/devicefarm/model/UpdateVPCEConfigurationResult.h>
+#include <aws/devicefarm/model/ListDevicesRequest.h>
+#include <aws/devicefarm/model/ListOfferingsRequest.h>
+#include <aws/devicefarm/model/ListProjectsRequest.h>
+#include <aws/devicefarm/model/ListVPCEConfigurationsRequest.h>
+#include <aws/devicefarm/model/GetOfferingStatusRequest.h>
+#include <aws/devicefarm/model/GetTestGridSessionRequest.h>
+#include <aws/devicefarm/model/ListTestGridProjectsRequest.h>
+#include <aws/devicefarm/model/GetAccountSettingsRequest.h>
+#include <aws/devicefarm/model/ListInstanceProfilesRequest.h>
+#include <aws/devicefarm/model/ListOfferingTransactionsRequest.h>
+#include <aws/devicefarm/model/ListOfferingPromotionsRequest.h>
+#include <aws/devicefarm/model/ListDeviceInstancesRequest.h>
 /* End of service model headers required in DeviceFarmClient header */
 
 namespace Aws
@@ -128,7 +140,7 @@ namespace Aws
 
   namespace DeviceFarm
   {
-    using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DeviceFarmEndpointProviderBase = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProviderBase;
     using DeviceFarmEndpointProvider = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProvider;
 

@@ -35,20 +35,8 @@ InstanceGroupConfig::InstanceGroupConfig() :
 {
 }
 
-InstanceGroupConfig::InstanceGroupConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_instanceRole(InstanceRoleType::NOT_SET),
-    m_instanceRoleHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_ebsConfigurationHasBeenSet(false),
-    m_autoScalingPolicyHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+InstanceGroupConfig::InstanceGroupConfig(JsonView jsonValue)
+  : InstanceGroupConfig()
 {
   *this = jsonValue;
 }

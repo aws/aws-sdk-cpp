@@ -24,9 +24,8 @@ ServerError::ServerError() :
 {
 }
 
-ServerError::ServerError(JsonView jsonValue) : 
-    m_serverErrorCategory(ServerErrorCategory::NOT_SET),
-    m_serverErrorCategoryHasBeenSet(false)
+ServerError::ServerError(JsonView jsonValue)
+  : ServerError()
 {
   *this = jsonValue;
 }

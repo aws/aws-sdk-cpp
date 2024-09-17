@@ -38,6 +38,7 @@ namespace Model
     AWS_SNS_API CheckIfPhoneNumberIsOptedOutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether the phone number is opted out:</p> <ul> <li> <p>
      * <code>true</code> – The phone number is opted out, meaning you cannot publish
@@ -45,39 +46,18 @@ namespace Model
      * opted in, meaning you can publish SMS messages to it.</p> </li> </ul>
      */
     inline bool GetIsOptedOut() const{ return m_isOptedOut; }
-
-    /**
-     * <p>Indicates whether the phone number is opted out:</p> <ul> <li> <p>
-     * <code>true</code> – The phone number is opted out, meaning you cannot publish
-     * SMS messages to it.</p> </li> <li> <p> <code>false</code> – The phone number is
-     * opted in, meaning you can publish SMS messages to it.</p> </li> </ul>
-     */
     inline void SetIsOptedOut(bool value) { m_isOptedOut = value; }
-
-    /**
-     * <p>Indicates whether the phone number is opted out:</p> <ul> <li> <p>
-     * <code>true</code> – The phone number is opted out, meaning you cannot publish
-     * SMS messages to it.</p> </li> <li> <p> <code>false</code> – The phone number is
-     * opted in, meaning you can publish SMS messages to it.</p> </li> </ul>
-     */
     inline CheckIfPhoneNumberIsOptedOutResult& WithIsOptedOut(bool value) { SetIsOptedOut(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CheckIfPhoneNumberIsOptedOutResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CheckIfPhoneNumberIsOptedOutResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_isOptedOut;

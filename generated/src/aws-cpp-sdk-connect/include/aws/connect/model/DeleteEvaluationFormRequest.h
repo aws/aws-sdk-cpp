@@ -38,124 +38,45 @@ namespace Model
     AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DeleteEvaluationFormRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DeleteEvaluationFormRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DeleteEvaluationFormRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the evaluation form.</p>
      */
     inline const Aws::String& GetEvaluationFormId() const{ return m_evaluationFormId; }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline bool EvaluationFormIdHasBeenSet() const { return m_evaluationFormIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline void SetEvaluationFormId(const Aws::String& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = value; }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline void SetEvaluationFormId(Aws::String&& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline void SetEvaluationFormId(const char* value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline DeleteEvaluationFormRequest& WithEvaluationFormId(const Aws::String& value) { SetEvaluationFormId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline DeleteEvaluationFormRequest& WithEvaluationFormId(Aws::String&& value) { SetEvaluationFormId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline DeleteEvaluationFormRequest& WithEvaluationFormId(const char* value) { SetEvaluationFormId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the evaluation form.</p>
      */
     inline int GetEvaluationFormVersion() const{ return m_evaluationFormVersion; }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline bool EvaluationFormVersionHasBeenSet() const { return m_evaluationFormVersionHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline void SetEvaluationFormVersion(int value) { m_evaluationFormVersionHasBeenSet = true; m_evaluationFormVersion = value; }
-
-    /**
-     * <p>The unique identifier for the evaluation form.</p>
-     */
     inline DeleteEvaluationFormRequest& WithEvaluationFormVersion(int value) { SetEvaluationFormVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

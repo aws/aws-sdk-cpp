@@ -27,12 +27,8 @@ ConnectionHealth::ConnectionHealth() :
 {
 }
 
-ConnectionHealth::ConnectionHealth(JsonView jsonValue) : 
-    m_type(ConnectionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+ConnectionHealth::ConnectionHealth(JsonView jsonValue)
+  : ConnectionHealth()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ResourceUtilization::ResourceUtilization() :
 {
 }
 
-ResourceUtilization::ResourceUtilization(JsonView jsonValue) : 
-    m_eC2ResourceUtilizationHasBeenSet(false)
+ResourceUtilization::ResourceUtilization(JsonView jsonValue)
+  : ResourceUtilization()
 {
   *this = jsonValue;
 }

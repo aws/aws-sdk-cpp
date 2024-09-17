@@ -23,8 +23,8 @@ PutMetadataFlagBody::PutMetadataFlagBody() :
 {
 }
 
-PutMetadataFlagBody::PutMetadataFlagBody(JsonView jsonValue) : 
-    m_newValueHasBeenSet(false)
+PutMetadataFlagBody::PutMetadataFlagBody(JsonView jsonValue)
+  : PutMetadataFlagBody()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ SystemInstanceDescription::SystemInstanceDescription() :
 {
 }
 
-SystemInstanceDescription::SystemInstanceDescription(JsonView jsonValue) : 
-    m_summaryHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_metricsConfigurationHasBeenSet(false),
-    m_validatedNamespaceVersion(0),
-    m_validatedNamespaceVersionHasBeenSet(false),
-    m_validatedDependencyRevisionsHasBeenSet(false),
-    m_flowActionsRoleArnHasBeenSet(false)
+SystemInstanceDescription::SystemInstanceDescription(JsonView jsonValue)
+  : SystemInstanceDescription()
 {
   *this = jsonValue;
 }

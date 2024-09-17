@@ -23,8 +23,8 @@ PerformanceInsightsReferenceMetric::PerformanceInsightsReferenceMetric() :
 {
 }
 
-PerformanceInsightsReferenceMetric::PerformanceInsightsReferenceMetric(JsonView jsonValue) : 
-    m_metricQueryHasBeenSet(false)
+PerformanceInsightsReferenceMetric::PerformanceInsightsReferenceMetric(JsonView jsonValue)
+  : PerformanceInsightsReferenceMetric()
 {
   *this = jsonValue;
 }

@@ -33,58 +33,28 @@ namespace Model
     AWS_ROUTE53RESOLVER_API DeleteResolverRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the <code>DeleteResolverRule</code> request, including the
      * status of the request.</p>
      */
     inline const ResolverRule& GetResolverRule() const{ return m_resolverRule; }
-
-    /**
-     * <p>Information about the <code>DeleteResolverRule</code> request, including the
-     * status of the request.</p>
-     */
     inline void SetResolverRule(const ResolverRule& value) { m_resolverRule = value; }
-
-    /**
-     * <p>Information about the <code>DeleteResolverRule</code> request, including the
-     * status of the request.</p>
-     */
     inline void SetResolverRule(ResolverRule&& value) { m_resolverRule = std::move(value); }
-
-    /**
-     * <p>Information about the <code>DeleteResolverRule</code> request, including the
-     * status of the request.</p>
-     */
     inline DeleteResolverRuleResult& WithResolverRule(const ResolverRule& value) { SetResolverRule(value); return *this;}
-
-    /**
-     * <p>Information about the <code>DeleteResolverRule</code> request, including the
-     * status of the request.</p>
-     */
     inline DeleteResolverRuleResult& WithResolverRule(ResolverRule&& value) { SetResolverRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteResolverRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteResolverRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteResolverRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResolverRule m_resolverRule;

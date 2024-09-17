@@ -37,22 +37,8 @@ Dataset::Dataset() :
 {
 }
 
-Dataset::Dataset(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_format(InputFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_source(Source::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_pathOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+Dataset::Dataset(JsonView jsonValue)
+  : Dataset()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SidewalkResourceTypeEventConfiguration::SidewalkResourceTypeEventConfiguration()
 {
 }
 
-SidewalkResourceTypeEventConfiguration::SidewalkResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_wirelessDeviceEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceEventTopicHasBeenSet(false)
+SidewalkResourceTypeEventConfiguration::SidewalkResourceTypeEventConfiguration(JsonView jsonValue)
+  : SidewalkResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

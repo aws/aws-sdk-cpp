@@ -27,12 +27,8 @@ DestinationFlowConfig::DestinationFlowConfig() :
 {
 }
 
-DestinationFlowConfig::DestinationFlowConfig(JsonView jsonValue) : 
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_apiVersionHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false),
-    m_destinationConnectorPropertiesHasBeenSet(false)
+DestinationFlowConfig::DestinationFlowConfig(JsonView jsonValue)
+  : DestinationFlowConfig()
 {
   *this = jsonValue;
 }

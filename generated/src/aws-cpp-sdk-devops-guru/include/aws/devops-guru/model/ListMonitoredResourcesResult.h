@@ -34,120 +34,45 @@ namespace Model
     AWS_DEVOPSGURU_API ListMonitoredResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Information about the resource that is being monitored, including the name
      * of the resource, the type of resource, and whether or not permission is given to
      * DevOps Guru to access that resource. </p>
      */
     inline const Aws::Vector<MonitoredResourceIdentifier>& GetMonitoredResourceIdentifiers() const{ return m_monitoredResourceIdentifiers; }
-
-    /**
-     * <p> Information about the resource that is being monitored, including the name
-     * of the resource, the type of resource, and whether or not permission is given to
-     * DevOps Guru to access that resource. </p>
-     */
     inline void SetMonitoredResourceIdentifiers(const Aws::Vector<MonitoredResourceIdentifier>& value) { m_monitoredResourceIdentifiers = value; }
-
-    /**
-     * <p> Information about the resource that is being monitored, including the name
-     * of the resource, the type of resource, and whether or not permission is given to
-     * DevOps Guru to access that resource. </p>
-     */
     inline void SetMonitoredResourceIdentifiers(Aws::Vector<MonitoredResourceIdentifier>&& value) { m_monitoredResourceIdentifiers = std::move(value); }
-
-    /**
-     * <p> Information about the resource that is being monitored, including the name
-     * of the resource, the type of resource, and whether or not permission is given to
-     * DevOps Guru to access that resource. </p>
-     */
     inline ListMonitoredResourcesResult& WithMonitoredResourceIdentifiers(const Aws::Vector<MonitoredResourceIdentifier>& value) { SetMonitoredResourceIdentifiers(value); return *this;}
-
-    /**
-     * <p> Information about the resource that is being monitored, including the name
-     * of the resource, the type of resource, and whether or not permission is given to
-     * DevOps Guru to access that resource. </p>
-     */
     inline ListMonitoredResourcesResult& WithMonitoredResourceIdentifiers(Aws::Vector<MonitoredResourceIdentifier>&& value) { SetMonitoredResourceIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p> Information about the resource that is being monitored, including the name
-     * of the resource, the type of resource, and whether or not permission is given to
-     * DevOps Guru to access that resource. </p>
-     */
     inline ListMonitoredResourcesResult& AddMonitoredResourceIdentifiers(const MonitoredResourceIdentifier& value) { m_monitoredResourceIdentifiers.push_back(value); return *this; }
-
-    /**
-     * <p> Information about the resource that is being monitored, including the name
-     * of the resource, the type of resource, and whether or not permission is given to
-     * DevOps Guru to access that resource. </p>
-     */
     inline ListMonitoredResourcesResult& AddMonitoredResourceIdentifiers(MonitoredResourceIdentifier&& value) { m_monitoredResourceIdentifiers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline ListMonitoredResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline ListMonitoredResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline ListMonitoredResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMonitoredResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMonitoredResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMonitoredResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MonitoredResourceIdentifier> m_monitoredResourceIdentifiers;

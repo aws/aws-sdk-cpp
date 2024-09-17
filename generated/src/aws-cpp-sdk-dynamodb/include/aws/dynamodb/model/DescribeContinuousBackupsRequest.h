@@ -34,54 +34,21 @@ namespace Model
     AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
+     * backups and point in time recovery settings.</p> <p>You can also provide the
+     * Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
-     */
     inline DescribeContinuousBackupsRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
-     */
     inline DescribeContinuousBackupsRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the table for which the customer wants to check the continuous
-     * backups and point in time recovery settings.</p>
-     */
     inline DescribeContinuousBackupsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableName;

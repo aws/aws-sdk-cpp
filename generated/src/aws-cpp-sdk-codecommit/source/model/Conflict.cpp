@@ -24,9 +24,8 @@ Conflict::Conflict() :
 {
 }
 
-Conflict::Conflict(JsonView jsonValue) : 
-    m_conflictMetadataHasBeenSet(false),
-    m_mergeHunksHasBeenSet(false)
+Conflict::Conflict(JsonView jsonValue)
+  : Conflict()
 {
   *this = jsonValue;
 }

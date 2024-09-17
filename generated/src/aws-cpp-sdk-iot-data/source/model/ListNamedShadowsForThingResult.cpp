@@ -22,8 +22,8 @@ ListNamedShadowsForThingResult::ListNamedShadowsForThingResult() :
 {
 }
 
-ListNamedShadowsForThingResult::ListNamedShadowsForThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_timestamp(0)
+ListNamedShadowsForThingResult::ListNamedShadowsForThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListNamedShadowsForThingResult()
 {
   *this = result;
 }

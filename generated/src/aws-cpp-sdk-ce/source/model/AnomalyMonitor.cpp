@@ -34,19 +34,8 @@ AnomalyMonitor::AnomalyMonitor() :
 {
 }
 
-AnomalyMonitor::AnomalyMonitor(JsonView jsonValue) : 
-    m_monitorArnHasBeenSet(false),
-    m_monitorNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_lastEvaluatedDateHasBeenSet(false),
-    m_monitorType(MonitorType::NOT_SET),
-    m_monitorTypeHasBeenSet(false),
-    m_monitorDimension(MonitorDimension::NOT_SET),
-    m_monitorDimensionHasBeenSet(false),
-    m_monitorSpecificationHasBeenSet(false),
-    m_dimensionalValueCount(0),
-    m_dimensionalValueCountHasBeenSet(false)
+AnomalyMonitor::AnomalyMonitor(JsonView jsonValue)
+  : AnomalyMonitor()
 {
   *this = jsonValue;
 }

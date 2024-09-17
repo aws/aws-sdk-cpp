@@ -25,10 +25,8 @@ ResourceConflict::ResourceConflict() :
 {
 }
 
-ResourceConflict::ResourceConflict(JsonView jsonValue) : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+ResourceConflict::ResourceConflict(JsonView jsonValue)
+  : ResourceConflict()
 {
   *this = jsonValue;
 }

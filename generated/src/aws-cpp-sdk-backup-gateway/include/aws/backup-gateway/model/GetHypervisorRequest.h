@@ -34,46 +34,19 @@ namespace Model
     AWS_BACKUPGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
      */
     inline const Aws::String& GetHypervisorArn() const{ return m_hypervisorArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-     */
     inline bool HypervisorArnHasBeenSet() const { return m_hypervisorArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-     */
     inline void SetHypervisorArn(const Aws::String& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-     */
     inline void SetHypervisorArn(Aws::String&& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-     */
     inline void SetHypervisorArn(const char* value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-     */
     inline GetHypervisorRequest& WithHypervisorArn(const Aws::String& value) { SetHypervisorArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-     */
     inline GetHypervisorRequest& WithHypervisorArn(Aws::String&& value) { SetHypervisorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-     */
     inline GetHypervisorRequest& WithHypervisorArn(const char* value) { SetHypervisorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hypervisorArn;

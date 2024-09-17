@@ -25,10 +25,8 @@ ImageBuilderStateChangeReason::ImageBuilderStateChangeReason() :
 {
 }
 
-ImageBuilderStateChangeReason::ImageBuilderStateChangeReason(JsonView jsonValue) : 
-    m_code(ImageBuilderStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ImageBuilderStateChangeReason::ImageBuilderStateChangeReason(JsonView jsonValue)
+  : ImageBuilderStateChangeReason()
 {
   *this = jsonValue;
 }

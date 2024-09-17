@@ -1049,13 +1049,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
+        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
-        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request) const
+        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::GetAccountSettings, request);
         }
@@ -1064,7 +1064,7 @@ namespace Proton
          * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
-        void GetAccountSettingsAsync(const GetAccountSettingsRequestT& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::GetAccountSettings, request, handler, context);
         }
@@ -1304,13 +1304,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetResourcesSummaryOutcome GetResourcesSummary(const Model::GetResourcesSummaryRequest& request) const;
+        virtual Model::GetResourcesSummaryOutcome GetResourcesSummary(const Model::GetResourcesSummaryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetResourcesSummary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetResourcesSummaryRequestT = Model::GetResourcesSummaryRequest>
-        Model::GetResourcesSummaryOutcomeCallable GetResourcesSummaryCallable(const GetResourcesSummaryRequestT& request) const
+        Model::GetResourcesSummaryOutcomeCallable GetResourcesSummaryCallable(const GetResourcesSummaryRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::GetResourcesSummary, request);
         }
@@ -1319,7 +1319,7 @@ namespace Proton
          * An Async wrapper for GetResourcesSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetResourcesSummaryRequestT = Model::GetResourcesSummaryRequest>
-        void GetResourcesSummaryAsync(const GetResourcesSummaryRequestT& request, const GetResourcesSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetResourcesSummaryAsync(const GetResourcesSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetResourcesSummaryRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::GetResourcesSummary, request, handler, context);
         }
@@ -1620,13 +1620,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
+        virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListComponentsRequestT = Model::ListComponentsRequest>
-        Model::ListComponentsOutcomeCallable ListComponentsCallable(const ListComponentsRequestT& request) const
+        Model::ListComponentsOutcomeCallable ListComponentsCallable(const ListComponentsRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListComponents, request);
         }
@@ -1635,7 +1635,7 @@ namespace Proton
          * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListComponentsRequestT = Model::ListComponentsRequest>
-        void ListComponentsAsync(const ListComponentsRequestT& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListComponentsAsync(const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListComponentsRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListComponents, request, handler, context);
         }
@@ -1646,13 +1646,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
+        virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
-        Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const ListDeploymentsRequestT& request) const
+        Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const ListDeploymentsRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListDeployments, request);
         }
@@ -1661,7 +1661,7 @@ namespace Proton
          * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
-        void ListDeploymentsAsync(const ListDeploymentsRequestT& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDeploymentsAsync(const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeploymentsRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListDeployments, request, handler, context);
         }
@@ -1778,13 +1778,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEnvironmentTemplatesOutcome ListEnvironmentTemplates(const Model::ListEnvironmentTemplatesRequest& request) const;
+        virtual Model::ListEnvironmentTemplatesOutcome ListEnvironmentTemplates(const Model::ListEnvironmentTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEnvironmentTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEnvironmentTemplatesRequestT = Model::ListEnvironmentTemplatesRequest>
-        Model::ListEnvironmentTemplatesOutcomeCallable ListEnvironmentTemplatesCallable(const ListEnvironmentTemplatesRequestT& request) const
+        Model::ListEnvironmentTemplatesOutcomeCallable ListEnvironmentTemplatesCallable(const ListEnvironmentTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListEnvironmentTemplates, request);
         }
@@ -1793,7 +1793,7 @@ namespace Proton
          * An Async wrapper for ListEnvironmentTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEnvironmentTemplatesRequestT = Model::ListEnvironmentTemplatesRequest>
-        void ListEnvironmentTemplatesAsync(const ListEnvironmentTemplatesRequestT& request, const ListEnvironmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEnvironmentTemplatesAsync(const ListEnvironmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEnvironmentTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListEnvironmentTemplates, request, handler, context);
         }
@@ -1803,13 +1803,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
+        virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEnvironmentsRequestT = Model::ListEnvironmentsRequest>
-        Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const ListEnvironmentsRequestT& request) const
+        Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const ListEnvironmentsRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListEnvironments, request);
         }
@@ -1818,7 +1818,7 @@ namespace Proton
          * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEnvironmentsRequestT = Model::ListEnvironmentsRequest>
-        void ListEnvironmentsAsync(const ListEnvironmentsRequestT& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEnvironmentsAsync(const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEnvironmentsRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListEnvironments, request, handler, context);
         }
@@ -1828,13 +1828,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request) const;
+        virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRepositoriesRequestT = Model::ListRepositoriesRequest>
-        Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const ListRepositoriesRequestT& request) const
+        Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const ListRepositoriesRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListRepositories, request);
         }
@@ -1843,7 +1843,7 @@ namespace Proton
          * An Async wrapper for ListRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRepositoriesRequestT = Model::ListRepositoriesRequest>
-        void ListRepositoriesAsync(const ListRepositoriesRequestT& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRepositoriesAsync(const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRepositoriesRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListRepositories, request, handler, context);
         }
@@ -1933,13 +1933,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceInstancesOutcome ListServiceInstances(const Model::ListServiceInstancesRequest& request) const;
+        virtual Model::ListServiceInstancesOutcome ListServiceInstances(const Model::ListServiceInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceInstancesRequestT = Model::ListServiceInstancesRequest>
-        Model::ListServiceInstancesOutcomeCallable ListServiceInstancesCallable(const ListServiceInstancesRequestT& request) const
+        Model::ListServiceInstancesOutcomeCallable ListServiceInstancesCallable(const ListServiceInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListServiceInstances, request);
         }
@@ -1948,7 +1948,7 @@ namespace Proton
          * An Async wrapper for ListServiceInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceInstancesRequestT = Model::ListServiceInstancesRequest>
-        void ListServiceInstancesAsync(const ListServiceInstancesRequestT& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceInstancesAsync(const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListServiceInstances, request, handler, context);
         }
@@ -2036,13 +2036,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceTemplatesOutcome ListServiceTemplates(const Model::ListServiceTemplatesRequest& request) const;
+        virtual Model::ListServiceTemplatesOutcome ListServiceTemplates(const Model::ListServiceTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceTemplatesRequestT = Model::ListServiceTemplatesRequest>
-        Model::ListServiceTemplatesOutcomeCallable ListServiceTemplatesCallable(const ListServiceTemplatesRequestT& request) const
+        Model::ListServiceTemplatesOutcomeCallable ListServiceTemplatesCallable(const ListServiceTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListServiceTemplates, request);
         }
@@ -2051,7 +2051,7 @@ namespace Proton
          * An Async wrapper for ListServiceTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceTemplatesRequestT = Model::ListServiceTemplatesRequest>
-        void ListServiceTemplatesAsync(const ListServiceTemplatesRequestT& request, const ListServiceTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceTemplatesAsync(const ListServiceTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListServiceTemplates, request, handler, context);
         }
@@ -2061,13 +2061,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
+        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request) const
+        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::ListServices, request);
         }
@@ -2076,7 +2076,7 @@ namespace Proton
          * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        void ListServicesAsync(const ListServicesRequestT& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServicesAsync(const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServicesRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::ListServices, request, handler, context);
         }
@@ -2234,13 +2234,13 @@ namespace Proton
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
+        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
-        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request) const
+        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&ProtonClient::UpdateAccountSettings, request);
         }
@@ -2249,7 +2249,7 @@ namespace Proton
          * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
-        void UpdateAccountSettingsAsync(const UpdateAccountSettingsRequestT& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountSettingsAsync(const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&ProtonClient::UpdateAccountSettings, request, handler, context);
         }
@@ -2676,7 +2676,6 @@ namespace Proton
       void init(const ProtonClientConfiguration& clientConfiguration);
 
       ProtonClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ProtonEndpointProviderBase> m_endpointProvider;
   };
 

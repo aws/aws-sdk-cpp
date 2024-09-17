@@ -25,10 +25,8 @@ TagCriterionForJob::TagCriterionForJob() :
 {
 }
 
-TagCriterionForJob::TagCriterionForJob(JsonView jsonValue) : 
-    m_comparator(JobComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+TagCriterionForJob::TagCriterionForJob(JsonView jsonValue)
+  : TagCriterionForJob()
 {
   *this = jsonValue;
 }

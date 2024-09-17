@@ -38,36 +38,17 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Updated DNS properties for the private DNS namespace.</p>
      */
     inline const PrivateDnsPropertiesMutableChange& GetDnsProperties() const{ return m_dnsProperties; }
-
-    /**
-     * <p>Updated DNS properties for the private DNS namespace.</p>
-     */
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
-
-    /**
-     * <p>Updated DNS properties for the private DNS namespace.</p>
-     */
     inline void SetDnsProperties(const PrivateDnsPropertiesMutableChange& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
-
-    /**
-     * <p>Updated DNS properties for the private DNS namespace.</p>
-     */
     inline void SetDnsProperties(PrivateDnsPropertiesMutableChange&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
-
-    /**
-     * <p>Updated DNS properties for the private DNS namespace.</p>
-     */
     inline PrivateDnsNamespacePropertiesChange& WithDnsProperties(const PrivateDnsPropertiesMutableChange& value) { SetDnsProperties(value); return *this;}
-
-    /**
-     * <p>Updated DNS properties for the private DNS namespace.</p>
-     */
     inline PrivateDnsNamespacePropertiesChange& WithDnsProperties(PrivateDnsPropertiesMutableChange&& value) { SetDnsProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PrivateDnsPropertiesMutableChange m_dnsProperties;

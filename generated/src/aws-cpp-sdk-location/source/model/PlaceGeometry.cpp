@@ -23,8 +23,8 @@ PlaceGeometry::PlaceGeometry() :
 {
 }
 
-PlaceGeometry::PlaceGeometry(JsonView jsonValue) : 
-    m_pointHasBeenSet(false)
+PlaceGeometry::PlaceGeometry(JsonView jsonValue)
+  : PlaceGeometry()
 {
   *this = jsonValue;
 }

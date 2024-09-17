@@ -6,6 +6,7 @@
 #include <aws/s3/model/GetObjectTorrentRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -57,7 +58,7 @@ Aws::Http::HeaderValueCollection GetObjectTorrentRequest::GetRequestSpecificHead
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }

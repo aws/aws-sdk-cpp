@@ -28,13 +28,8 @@ EntityTypesEvaluationMetrics::EntityTypesEvaluationMetrics() :
 {
 }
 
-EntityTypesEvaluationMetrics::EntityTypesEvaluationMetrics(JsonView jsonValue) : 
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_recall(0.0),
-    m_recallHasBeenSet(false),
-    m_f1Score(0.0),
-    m_f1ScoreHasBeenSet(false)
+EntityTypesEvaluationMetrics::EntityTypesEvaluationMetrics(JsonView jsonValue)
+  : EntityTypesEvaluationMetrics()
 {
   *this = jsonValue;
 }

@@ -35,28 +35,14 @@ JobFlowInstancesDetail::JobFlowInstancesDetail() :
     m_keepJobFlowAliveWhenNoStepsHasBeenSet(false),
     m_terminationProtected(false),
     m_terminationProtectedHasBeenSet(false),
+    m_unhealthyNodeReplacement(false),
+    m_unhealthyNodeReplacementHasBeenSet(false),
     m_hadoopVersionHasBeenSet(false)
 {
 }
 
-JobFlowInstancesDetail::JobFlowInstancesDetail(JsonView jsonValue) : 
-    m_masterInstanceTypeHasBeenSet(false),
-    m_masterPublicDnsNameHasBeenSet(false),
-    m_masterInstanceIdHasBeenSet(false),
-    m_slaveInstanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
-    m_normalizedInstanceHours(0),
-    m_normalizedInstanceHoursHasBeenSet(false),
-    m_ec2KeyNameHasBeenSet(false),
-    m_ec2SubnetIdHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_keepJobFlowAliveWhenNoSteps(false),
-    m_keepJobFlowAliveWhenNoStepsHasBeenSet(false),
-    m_terminationProtected(false),
-    m_terminationProtectedHasBeenSet(false),
-    m_hadoopVersionHasBeenSet(false)
+JobFlowInstancesDetail::JobFlowInstancesDetail(JsonView jsonValue)
+  : JobFlowInstancesDetail()
 {
   *this = jsonValue;
 }
@@ -150,6 +136,13 @@ JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(JsonView jsonValue)
     m_terminationProtectedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UnhealthyNodeReplacement"))
+  {
+    m_unhealthyNodeReplacement = jsonValue.GetBool("UnhealthyNodeReplacement");
+
+    m_unhealthyNodeReplacementHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("HadoopVersion"))
   {
     m_hadoopVersion = jsonValue.GetString("HadoopVersion");
@@ -238,6 +231,12 @@ JsonValue JobFlowInstancesDetail::Jsonize() const
   if(m_terminationProtectedHasBeenSet)
   {
    payload.WithBool("TerminationProtected", m_terminationProtected);
+
+  }
+
+  if(m_unhealthyNodeReplacementHasBeenSet)
+  {
+   payload.WithBool("UnhealthyNodeReplacement", m_unhealthyNodeReplacement);
 
   }
 

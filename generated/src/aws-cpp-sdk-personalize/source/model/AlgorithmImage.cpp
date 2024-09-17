@@ -24,9 +24,8 @@ AlgorithmImage::AlgorithmImage() :
 {
 }
 
-AlgorithmImage::AlgorithmImage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_dockerURIHasBeenSet(false)
+AlgorithmImage::AlgorithmImage(JsonView jsonValue)
+  : AlgorithmImage()
 {
   *this = jsonValue;
 }

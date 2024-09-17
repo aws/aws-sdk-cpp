@@ -41,49 +41,21 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Match all of the elements. See also <code>MatchScope</code> in
      * <a>JsonBody</a>. </p> <p>You must specify either this setting or the
      * <code>IncludedPaths</code> setting, but not both.</p>
      */
     inline const All& GetAll() const{ return m_all; }
-
-    /**
-     * <p>Match all of the elements. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>You must specify either this setting or the
-     * <code>IncludedPaths</code> setting, but not both.</p>
-     */
     inline bool AllHasBeenSet() const { return m_allHasBeenSet; }
-
-    /**
-     * <p>Match all of the elements. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>You must specify either this setting or the
-     * <code>IncludedPaths</code> setting, but not both.</p>
-     */
     inline void SetAll(const All& value) { m_allHasBeenSet = true; m_all = value; }
-
-    /**
-     * <p>Match all of the elements. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>You must specify either this setting or the
-     * <code>IncludedPaths</code> setting, but not both.</p>
-     */
     inline void SetAll(All&& value) { m_allHasBeenSet = true; m_all = std::move(value); }
-
-    /**
-     * <p>Match all of the elements. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>You must specify either this setting or the
-     * <code>IncludedPaths</code> setting, but not both.</p>
-     */
     inline JsonMatchPattern& WithAll(const All& value) { SetAll(value); return *this;}
-
-    /**
-     * <p>Match all of the elements. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>You must specify either this setting or the
-     * <code>IncludedPaths</code> setting, but not both.</p>
-     */
     inline JsonMatchPattern& WithAll(All&& value) { SetAll(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Match only the specified include paths. See also <code>MatchScope</code> in
      * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
@@ -95,103 +67,15 @@ namespace Model
      * include all paths. Instead, use the <code>All</code> setting. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetIncludedPaths() const{ return m_includedPaths; }
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline bool IncludedPathsHasBeenSet() const { return m_includedPathsHasBeenSet; }
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline void SetIncludedPaths(const Aws::Vector<Aws::String>& value) { m_includedPathsHasBeenSet = true; m_includedPaths = value; }
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline void SetIncludedPaths(Aws::Vector<Aws::String>&& value) { m_includedPathsHasBeenSet = true; m_includedPaths = std::move(value); }
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline JsonMatchPattern& WithIncludedPaths(const Aws::Vector<Aws::String>& value) { SetIncludedPaths(value); return *this;}
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline JsonMatchPattern& WithIncludedPaths(Aws::Vector<Aws::String>&& value) { SetIncludedPaths(std::move(value)); return *this;}
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline JsonMatchPattern& AddIncludedPaths(const Aws::String& value) { m_includedPathsHasBeenSet = true; m_includedPaths.push_back(value); return *this; }
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline JsonMatchPattern& AddIncludedPaths(Aws::String&& value) { m_includedPathsHasBeenSet = true; m_includedPaths.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Match only the specified include paths. See also <code>MatchScope</code> in
-     * <a>JsonBody</a>. </p> <p>Provide the include paths using JSON Pointer syntax.
-     * For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For
-     * information about this syntax, see the Internet Engineering Task Force (IETF)
-     * documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object
-     * Notation (JSON) Pointer</a>. </p> <p>You must specify either this setting or the
-     * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
-     * include all paths. Instead, use the <code>All</code> setting. </p> 
-     */
     inline JsonMatchPattern& AddIncludedPaths(const char* value) { m_includedPathsHasBeenSet = true; m_includedPaths.push_back(value); return *this; }
-
+    ///@}
   private:
 
     All m_all;

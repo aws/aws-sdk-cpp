@@ -30,15 +30,8 @@ BatchGetMetricDataQuery::BatchGetMetricDataQuery() :
 {
 }
 
-BatchGetMetricDataQuery::BatchGetMetricDataQuery(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_namespace(MetricNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_metric(Metric::NOT_SET),
-    m_metricHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
+BatchGetMetricDataQuery::BatchGetMetricDataQuery(JsonView jsonValue)
+  : BatchGetMetricDataQuery()
 {
   *this = jsonValue;
 }

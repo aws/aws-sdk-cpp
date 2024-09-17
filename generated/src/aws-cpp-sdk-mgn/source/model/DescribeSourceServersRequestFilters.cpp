@@ -28,13 +28,8 @@ DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() :
 {
 }
 
-DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue) : 
-    m_applicationIDsHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_lifeCycleStatesHasBeenSet(false),
-    m_replicationTypesHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false)
+DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue)
+  : DescribeSourceServersRequestFilters()
 {
   *this = jsonValue;
 }

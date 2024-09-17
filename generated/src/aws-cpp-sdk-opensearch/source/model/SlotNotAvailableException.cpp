@@ -23,8 +23,8 @@ SlotNotAvailableException::SlotNotAvailableException() :
 {
 }
 
-SlotNotAvailableException::SlotNotAvailableException(JsonView jsonValue) : 
-    m_slotSuggestionsHasBeenSet(false)
+SlotNotAvailableException::SlotNotAvailableException(JsonView jsonValue)
+  : SlotNotAvailableException()
 {
   *this = jsonValue;
 }

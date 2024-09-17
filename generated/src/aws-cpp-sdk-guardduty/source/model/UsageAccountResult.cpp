@@ -24,9 +24,8 @@ UsageAccountResult::UsageAccountResult() :
 {
 }
 
-UsageAccountResult::UsageAccountResult(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_totalHasBeenSet(false)
+UsageAccountResult::UsageAccountResult(JsonView jsonValue)
+  : UsageAccountResult()
 {
   *this = jsonValue;
 }

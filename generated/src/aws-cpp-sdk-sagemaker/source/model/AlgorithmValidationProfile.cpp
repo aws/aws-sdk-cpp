@@ -25,10 +25,8 @@ AlgorithmValidationProfile::AlgorithmValidationProfile() :
 {
 }
 
-AlgorithmValidationProfile::AlgorithmValidationProfile(JsonView jsonValue) : 
-    m_profileNameHasBeenSet(false),
-    m_trainingJobDefinitionHasBeenSet(false),
-    m_transformJobDefinitionHasBeenSet(false)
+AlgorithmValidationProfile::AlgorithmValidationProfile(JsonView jsonValue)
+  : AlgorithmValidationProfile()
 {
   *this = jsonValue;
 }

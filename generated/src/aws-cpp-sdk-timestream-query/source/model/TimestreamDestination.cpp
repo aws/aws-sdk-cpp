@@ -24,9 +24,8 @@ TimestreamDestination::TimestreamDestination() :
 {
 }
 
-TimestreamDestination::TimestreamDestination(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+TimestreamDestination::TimestreamDestination(JsonView jsonValue)
+  : TimestreamDestination()
 {
   *this = jsonValue;
 }

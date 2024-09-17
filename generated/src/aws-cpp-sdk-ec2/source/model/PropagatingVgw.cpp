@@ -25,8 +25,8 @@ PropagatingVgw::PropagatingVgw() :
 {
 }
 
-PropagatingVgw::PropagatingVgw(const XmlNode& xmlNode) : 
-    m_gatewayIdHasBeenSet(false)
+PropagatingVgw::PropagatingVgw(const XmlNode& xmlNode)
+  : PropagatingVgw()
 {
   *this = xmlNode;
 }

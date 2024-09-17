@@ -24,9 +24,8 @@ MedicalScribeOutput::MedicalScribeOutput() :
 {
 }
 
-MedicalScribeOutput::MedicalScribeOutput(JsonView jsonValue) : 
-    m_transcriptFileUriHasBeenSet(false),
-    m_clinicalDocumentUriHasBeenSet(false)
+MedicalScribeOutput::MedicalScribeOutput(JsonView jsonValue)
+  : MedicalScribeOutput()
 {
   *this = jsonValue;
 }

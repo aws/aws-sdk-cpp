@@ -26,11 +26,8 @@ ColumnSort::ColumnSort() :
 {
 }
 
-ColumnSort::ColumnSort(JsonView jsonValue) : 
-    m_sortByHasBeenSet(false),
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false)
+ColumnSort::ColumnSort(JsonView jsonValue)
+  : ColumnSort()
 {
   *this = jsonValue;
 }

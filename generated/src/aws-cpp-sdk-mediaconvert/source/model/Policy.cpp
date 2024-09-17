@@ -28,13 +28,8 @@ Policy::Policy() :
 {
 }
 
-Policy::Policy(JsonView jsonValue) : 
-    m_httpInputs(InputPolicy::NOT_SET),
-    m_httpInputsHasBeenSet(false),
-    m_httpsInputs(InputPolicy::NOT_SET),
-    m_httpsInputsHasBeenSet(false),
-    m_s3Inputs(InputPolicy::NOT_SET),
-    m_s3InputsHasBeenSet(false)
+Policy::Policy(JsonView jsonValue)
+  : Policy()
 {
   *this = jsonValue;
 }

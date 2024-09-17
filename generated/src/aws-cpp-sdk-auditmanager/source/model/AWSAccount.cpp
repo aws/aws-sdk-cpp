@@ -25,10 +25,8 @@ AWSAccount::AWSAccount() :
 {
 }
 
-AWSAccount::AWSAccount(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AWSAccount::AWSAccount(JsonView jsonValue)
+  : AWSAccount()
 {
   *this = jsonValue;
 }

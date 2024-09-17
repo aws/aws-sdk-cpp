@@ -23,8 +23,8 @@ VirtualGatewayListenerTlsAcmCertificate::VirtualGatewayListenerTlsAcmCertificate
 {
 }
 
-VirtualGatewayListenerTlsAcmCertificate::VirtualGatewayListenerTlsAcmCertificate(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false)
+VirtualGatewayListenerTlsAcmCertificate::VirtualGatewayListenerTlsAcmCertificate(JsonView jsonValue)
+  : VirtualGatewayListenerTlsAcmCertificate()
 {
   *this = jsonValue;
 }

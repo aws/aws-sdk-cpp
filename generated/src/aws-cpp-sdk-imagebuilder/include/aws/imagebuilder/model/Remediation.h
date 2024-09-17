@@ -37,42 +37,18 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains information about the recommended course of action to
      * remediate the finding.</p>
      */
     inline const RemediationRecommendation& GetRecommendation() const{ return m_recommendation; }
-
-    /**
-     * <p>An object that contains information about the recommended course of action to
-     * remediate the finding.</p>
-     */
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-
-    /**
-     * <p>An object that contains information about the recommended course of action to
-     * remediate the finding.</p>
-     */
     inline void SetRecommendation(const RemediationRecommendation& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-
-    /**
-     * <p>An object that contains information about the recommended course of action to
-     * remediate the finding.</p>
-     */
     inline void SetRecommendation(RemediationRecommendation&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-
-    /**
-     * <p>An object that contains information about the recommended course of action to
-     * remediate the finding.</p>
-     */
     inline Remediation& WithRecommendation(const RemediationRecommendation& value) { SetRecommendation(value); return *this;}
-
-    /**
-     * <p>An object that contains information about the recommended course of action to
-     * remediate the finding.</p>
-     */
     inline Remediation& WithRecommendation(RemediationRecommendation&& value) { SetRecommendation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RemediationRecommendation m_recommendation;

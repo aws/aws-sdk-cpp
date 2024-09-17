@@ -24,9 +24,8 @@ QueueQuickConnectConfig::QueueQuickConnectConfig() :
 {
 }
 
-QueueQuickConnectConfig::QueueQuickConnectConfig(JsonView jsonValue) : 
-    m_queueIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false)
+QueueQuickConnectConfig::QueueQuickConnectConfig(JsonView jsonValue)
+  : QueueQuickConnectConfig()
 {
   *this = jsonValue;
 }

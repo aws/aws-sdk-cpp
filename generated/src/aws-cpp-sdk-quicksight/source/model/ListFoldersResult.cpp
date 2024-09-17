@@ -22,8 +22,8 @@ ListFoldersResult::ListFoldersResult() :
 {
 }
 
-ListFoldersResult::ListFoldersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListFoldersResult::ListFoldersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListFoldersResult()
 {
   *this = result;
 }

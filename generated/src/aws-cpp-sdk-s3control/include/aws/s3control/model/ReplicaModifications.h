@@ -47,42 +47,18 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies whether S3 on Outposts replicates modifications to object metadata
      * on replicas.</p>
      */
     inline const ReplicaModificationsStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies whether S3 on Outposts replicates modifications to object metadata
-     * on replicas.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Specifies whether S3 on Outposts replicates modifications to object metadata
-     * on replicas.</p>
-     */
     inline void SetStatus(const ReplicaModificationsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Specifies whether S3 on Outposts replicates modifications to object metadata
-     * on replicas.</p>
-     */
     inline void SetStatus(ReplicaModificationsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Specifies whether S3 on Outposts replicates modifications to object metadata
-     * on replicas.</p>
-     */
     inline ReplicaModifications& WithStatus(const ReplicaModificationsStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies whether S3 on Outposts replicates modifications to object metadata
-     * on replicas.</p>
-     */
     inline ReplicaModifications& WithStatus(ReplicaModificationsStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReplicaModificationsStatus m_status;

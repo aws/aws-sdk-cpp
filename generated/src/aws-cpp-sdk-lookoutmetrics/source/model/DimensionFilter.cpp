@@ -24,9 +24,8 @@ DimensionFilter::DimensionFilter() :
 {
 }
 
-DimensionFilter::DimensionFilter(JsonView jsonValue) : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueListHasBeenSet(false)
+DimensionFilter::DimensionFilter(JsonView jsonValue)
+  : DimensionFilter()
 {
   *this = jsonValue;
 }

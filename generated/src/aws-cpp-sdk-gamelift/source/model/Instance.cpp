@@ -35,20 +35,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_type(EC2InstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }

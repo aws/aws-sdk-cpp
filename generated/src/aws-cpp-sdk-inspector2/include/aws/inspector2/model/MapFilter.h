@@ -39,118 +39,45 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The operator to use when comparing values in the filter.</p>
      */
     inline const MapComparison& GetComparison() const{ return m_comparison; }
-
-    /**
-     * <p>The operator to use when comparing values in the filter.</p>
-     */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-
-    /**
-     * <p>The operator to use when comparing values in the filter.</p>
-     */
     inline void SetComparison(const MapComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-
-    /**
-     * <p>The operator to use when comparing values in the filter.</p>
-     */
     inline void SetComparison(MapComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-
-    /**
-     * <p>The operator to use when comparing values in the filter.</p>
-     */
     inline MapFilter& WithComparison(const MapComparison& value) { SetComparison(value); return *this;}
-
-    /**
-     * <p>The operator to use when comparing values in the filter.</p>
-     */
     inline MapFilter& WithComparison(MapComparison&& value) { SetComparison(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag key used in the filter.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The tag key used in the filter.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The tag key used in the filter.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The tag key used in the filter.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The tag key used in the filter.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The tag key used in the filter.</p>
-     */
     inline MapFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The tag key used in the filter.</p>
-     */
     inline MapFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag key used in the filter.</p>
-     */
     inline MapFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag value used in the filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The tag value used in the filter.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The tag value used in the filter.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The tag value used in the filter.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The tag value used in the filter.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The tag value used in the filter.</p>
-     */
     inline MapFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The tag value used in the filter.</p>
-     */
     inline MapFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag value used in the filter.</p>
-     */
     inline MapFilter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     MapComparison m_comparison;

@@ -24,9 +24,8 @@ ResaleAuthorizationLastModifiedDateFilterDateRange::ResaleAuthorizationLastModif
 {
 }
 
-ResaleAuthorizationLastModifiedDateFilterDateRange::ResaleAuthorizationLastModifiedDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+ResaleAuthorizationLastModifiedDateFilterDateRange::ResaleAuthorizationLastModifiedDateFilterDateRange(JsonView jsonValue)
+  : ResaleAuthorizationLastModifiedDateFilterDateRange()
 {
   *this = jsonValue;
 }

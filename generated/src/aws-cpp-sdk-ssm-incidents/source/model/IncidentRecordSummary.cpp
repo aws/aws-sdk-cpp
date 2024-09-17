@@ -31,16 +31,8 @@ IncidentRecordSummary::IncidentRecordSummary() :
 {
 }
 
-IncidentRecordSummary::IncidentRecordSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_impact(0),
-    m_impactHasBeenSet(false),
-    m_incidentRecordSourceHasBeenSet(false),
-    m_resolvedTimeHasBeenSet(false),
-    m_status(IncidentRecordStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false)
+IncidentRecordSummary::IncidentRecordSummary(JsonView jsonValue)
+  : IncidentRecordSummary()
 {
   *this = jsonValue;
 }

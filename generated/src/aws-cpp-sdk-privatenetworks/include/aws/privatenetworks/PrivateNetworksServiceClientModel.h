@@ -44,6 +44,8 @@
 #include <aws/privatenetworks/model/UntagResourceResult.h>
 #include <aws/privatenetworks/model/UpdateNetworkSiteResult.h>
 #include <aws/privatenetworks/model/UpdateNetworkSitePlanResult.h>
+#include <aws/privatenetworks/model/PingRequest.h>
+#include <aws/privatenetworks/model/ListNetworksRequest.h>
 /* End of service model headers required in PrivateNetworksClient header */
 
 namespace Aws
@@ -77,7 +79,7 @@ namespace Aws
 
   namespace PrivateNetworks
   {
-    using PrivateNetworksClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PrivateNetworksClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PrivateNetworksEndpointProviderBase = Aws::PrivateNetworks::Endpoint::PrivateNetworksEndpointProviderBase;
     using PrivateNetworksEndpointProvider = Aws::PrivateNetworks::Endpoint::PrivateNetworksEndpointProvider;
 

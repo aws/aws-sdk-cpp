@@ -26,11 +26,8 @@ RowLevelPermissionTagRule::RowLevelPermissionTagRule() :
 {
 }
 
-RowLevelPermissionTagRule::RowLevelPermissionTagRule(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_columnNameHasBeenSet(false),
-    m_tagMultiValueDelimiterHasBeenSet(false),
-    m_matchAllValueHasBeenSet(false)
+RowLevelPermissionTagRule::RowLevelPermissionTagRule(JsonView jsonValue)
+  : RowLevelPermissionTagRule()
 {
   *this = jsonValue;
 }

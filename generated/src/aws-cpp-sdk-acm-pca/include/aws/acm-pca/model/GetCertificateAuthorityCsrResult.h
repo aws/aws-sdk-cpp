@@ -32,70 +32,30 @@ namespace Model
     AWS_ACMPCA_API GetCertificateAuthorityCsrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
      * certificate.</p>
      */
     inline const Aws::String& GetCsr() const{ return m_csr; }
-
-    /**
-     * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-     * certificate.</p>
-     */
     inline void SetCsr(const Aws::String& value) { m_csr = value; }
-
-    /**
-     * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-     * certificate.</p>
-     */
     inline void SetCsr(Aws::String&& value) { m_csr = std::move(value); }
-
-    /**
-     * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-     * certificate.</p>
-     */
     inline void SetCsr(const char* value) { m_csr.assign(value); }
-
-    /**
-     * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-     * certificate.</p>
-     */
     inline GetCertificateAuthorityCsrResult& WithCsr(const Aws::String& value) { SetCsr(value); return *this;}
-
-    /**
-     * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-     * certificate.</p>
-     */
     inline GetCertificateAuthorityCsrResult& WithCsr(Aws::String&& value) { SetCsr(std::move(value)); return *this;}
-
-    /**
-     * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-     * certificate.</p>
-     */
     inline GetCertificateAuthorityCsrResult& WithCsr(const char* value) { SetCsr(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCertificateAuthorityCsrResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCertificateAuthorityCsrResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCertificateAuthorityCsrResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_csr;

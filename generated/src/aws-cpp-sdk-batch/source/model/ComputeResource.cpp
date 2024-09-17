@@ -44,29 +44,8 @@ ComputeResource::ComputeResource() :
 {
 }
 
-ComputeResource::ComputeResource(JsonView jsonValue) : 
-    m_type(CRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_allocationStrategy(CRAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_minvCpus(0),
-    m_minvCpusHasBeenSet(false),
-    m_maxvCpus(0),
-    m_maxvCpusHasBeenSet(false),
-    m_desiredvCpus(0),
-    m_desiredvCpusHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_ec2KeyPairHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_placementGroupHasBeenSet(false),
-    m_bidPercentage(0),
-    m_bidPercentageHasBeenSet(false),
-    m_spotIamFleetRoleHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_ec2ConfigurationHasBeenSet(false)
+ComputeResource::ComputeResource(JsonView jsonValue)
+  : ComputeResource()
 {
   *this = jsonValue;
 }

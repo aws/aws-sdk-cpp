@@ -23,8 +23,8 @@ AreaOfInterest::AreaOfInterest() :
 {
 }
 
-AreaOfInterest::AreaOfInterest(JsonView jsonValue) : 
-    m_areaOfInterestGeometryHasBeenSet(false)
+AreaOfInterest::AreaOfInterest(JsonView jsonValue)
+  : AreaOfInterest()
 {
   *this = jsonValue;
 }

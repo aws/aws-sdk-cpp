@@ -37,151 +37,50 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline PutNotificationConfigurationRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline PutNotificationConfigurationRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline PutNotificationConfigurationRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline PutNotificationConfigurationRequest& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline PutNotificationConfigurationRequest& WithTopicARN(Aws::String&& value) { SetTopicARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline PutNotificationConfigurationRequest& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of event that causes the notification to be sent. To query the
      * notification types supported by Amazon EC2 Auto Scaling, call the
      * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationTypes() const{ return m_notificationTypes; }
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline bool NotificationTypesHasBeenSet() const { return m_notificationTypesHasBeenSet; }
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline void SetNotificationTypes(const Aws::Vector<Aws::String>& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes = value; }
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline void SetNotificationTypes(Aws::Vector<Aws::String>&& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes = std::move(value); }
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline PutNotificationConfigurationRequest& WithNotificationTypes(const Aws::Vector<Aws::String>& value) { SetNotificationTypes(value); return *this;}
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline PutNotificationConfigurationRequest& WithNotificationTypes(Aws::Vector<Aws::String>&& value) { SetNotificationTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline PutNotificationConfigurationRequest& AddNotificationTypes(const Aws::String& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline PutNotificationConfigurationRequest& AddNotificationTypes(Aws::String&& value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
-     */
     inline PutNotificationConfigurationRequest& AddNotificationTypes(const char* value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

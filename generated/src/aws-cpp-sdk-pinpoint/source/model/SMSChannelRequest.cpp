@@ -26,11 +26,8 @@ SMSChannelRequest::SMSChannelRequest() :
 {
 }
 
-SMSChannelRequest::SMSChannelRequest(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_shortCodeHasBeenSet(false)
+SMSChannelRequest::SMSChannelRequest(JsonView jsonValue)
+  : SMSChannelRequest()
 {
   *this = jsonValue;
 }

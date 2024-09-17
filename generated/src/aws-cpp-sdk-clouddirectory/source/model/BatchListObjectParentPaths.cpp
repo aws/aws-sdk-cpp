@@ -26,11 +26,8 @@ BatchListObjectParentPaths::BatchListObjectParentPaths() :
 {
 }
 
-BatchListObjectParentPaths::BatchListObjectParentPaths(JsonView jsonValue) : 
-    m_objectReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+BatchListObjectParentPaths::BatchListObjectParentPaths(JsonView jsonValue)
+  : BatchListObjectParentPaths()
 {
   *this = jsonValue;
 }

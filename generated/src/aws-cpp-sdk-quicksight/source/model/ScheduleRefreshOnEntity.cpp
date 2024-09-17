@@ -25,10 +25,8 @@ ScheduleRefreshOnEntity::ScheduleRefreshOnEntity() :
 {
 }
 
-ScheduleRefreshOnEntity::ScheduleRefreshOnEntity(JsonView jsonValue) : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_dayOfMonthHasBeenSet(false)
+ScheduleRefreshOnEntity::ScheduleRefreshOnEntity(JsonView jsonValue)
+  : ScheduleRefreshOnEntity()
 {
   *this = jsonValue;
 }

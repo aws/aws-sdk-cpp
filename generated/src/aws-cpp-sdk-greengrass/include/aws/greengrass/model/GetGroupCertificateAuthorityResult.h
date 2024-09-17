@@ -32,135 +32,55 @@ namespace Model
     AWS_GREENGRASS_API GetGroupCertificateAuthorityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The ARN of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityArn() const{ return m_groupCertificateAuthorityArn; }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArn = value; }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityArn(Aws::String&& value) { m_groupCertificateAuthorityArn = std::move(value); }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityArn(const char* value) { m_groupCertificateAuthorityArn.assign(value); }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const Aws::String& value) { SetGroupCertificateAuthorityArn(value); return *this;}
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(Aws::String&& value) { SetGroupCertificateAuthorityArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityId() const{ return m_groupCertificateAuthorityId; }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityId(const Aws::String& value) { m_groupCertificateAuthorityId = value; }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityId(Aws::String&& value) { m_groupCertificateAuthorityId = std::move(value); }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityId(const char* value) { m_groupCertificateAuthorityId.assign(value); }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(const Aws::String& value) { SetGroupCertificateAuthorityId(value); return *this;}
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(Aws::String&& value) { SetGroupCertificateAuthorityId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(const char* value) { SetGroupCertificateAuthorityId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The PEM encoded certificate for the group.
      */
     inline const Aws::String& GetPemEncodedCertificate() const{ return m_pemEncodedCertificate; }
-
-    /**
-     * The PEM encoded certificate for the group.
-     */
     inline void SetPemEncodedCertificate(const Aws::String& value) { m_pemEncodedCertificate = value; }
-
-    /**
-     * The PEM encoded certificate for the group.
-     */
     inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = std::move(value); }
-
-    /**
-     * The PEM encoded certificate for the group.
-     */
     inline void SetPemEncodedCertificate(const char* value) { m_pemEncodedCertificate.assign(value); }
-
-    /**
-     * The PEM encoded certificate for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(const Aws::String& value) { SetPemEncodedCertificate(value); return *this;}
-
-    /**
-     * The PEM encoded certificate for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(std::move(value)); return *this;}
-
-    /**
-     * The PEM encoded certificate for the group.
-     */
     inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetGroupCertificateAuthorityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetGroupCertificateAuthorityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetGroupCertificateAuthorityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupCertificateAuthorityArn;

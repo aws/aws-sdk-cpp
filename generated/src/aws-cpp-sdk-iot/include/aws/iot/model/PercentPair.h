@@ -35,47 +35,25 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percentile.</p>
      */
     inline double GetPercent() const{ return m_percent; }
-
-    /**
-     * <p>The percentile.</p>
-     */
     inline bool PercentHasBeenSet() const { return m_percentHasBeenSet; }
-
-    /**
-     * <p>The percentile.</p>
-     */
     inline void SetPercent(double value) { m_percentHasBeenSet = true; m_percent = value; }
-
-    /**
-     * <p>The percentile.</p>
-     */
     inline PercentPair& WithPercent(double value) { SetPercent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the percentile.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the percentile.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the percentile.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the percentile.</p>
-     */
     inline PercentPair& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_percent;

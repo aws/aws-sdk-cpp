@@ -49,6 +49,17 @@
 #include <aws/securitylake/model/UpdateDataLakeExceptionSubscriptionResult.h>
 #include <aws/securitylake/model/UpdateSubscriberResult.h>
 #include <aws/securitylake/model/UpdateSubscriberNotificationResult.h>
+#include <aws/securitylake/model/DeleteDataLakeExceptionSubscriptionRequest.h>
+#include <aws/securitylake/model/ListSubscribersRequest.h>
+#include <aws/securitylake/model/GetDataLakeExceptionSubscriptionRequest.h>
+#include <aws/securitylake/model/GetDataLakeOrganizationConfigurationRequest.h>
+#include <aws/securitylake/model/DeleteDataLakeOrganizationConfigurationRequest.h>
+#include <aws/securitylake/model/DeregisterDataLakeDelegatedAdministratorRequest.h>
+#include <aws/securitylake/model/CreateDataLakeOrganizationConfigurationRequest.h>
+#include <aws/securitylake/model/ListDataLakesRequest.h>
+#include <aws/securitylake/model/ListLogSourcesRequest.h>
+#include <aws/securitylake/model/GetDataLakeSourcesRequest.h>
+#include <aws/securitylake/model/ListDataLakeExceptionsRequest.h>
 /* End of service model headers required in SecurityLakeClient header */
 
 namespace Aws
@@ -82,7 +93,7 @@ namespace Aws
 
   namespace SecurityLake
   {
-    using SecurityLakeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SecurityLakeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SecurityLakeEndpointProviderBase = Aws::SecurityLake::Endpoint::SecurityLakeEndpointProviderBase;
     using SecurityLakeEndpointProvider = Aws::SecurityLake::Endpoint::SecurityLakeEndpointProvider;
 

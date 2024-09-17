@@ -42,27 +42,8 @@ RadarChartConfiguration::RadarChartConfiguration() :
 {
 }
 
-RadarChartConfiguration::RadarChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_shape(RadarChartShape::NOT_SET),
-    m_shapeHasBeenSet(false),
-    m_baseSeriesSettingsHasBeenSet(false),
-    m_startAngle(0.0),
-    m_startAngleHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_alternateBandColorsVisibility(Visibility::NOT_SET),
-    m_alternateBandColorsVisibilityHasBeenSet(false),
-    m_alternateBandEvenColorHasBeenSet(false),
-    m_alternateBandOddColorHasBeenSet(false),
-    m_categoryAxisHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_colorAxisHasBeenSet(false),
-    m_colorLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_axesRangeScale(RadarChartAxesRangeScale::NOT_SET),
-    m_axesRangeScaleHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+RadarChartConfiguration::RadarChartConfiguration(JsonView jsonValue)
+  : RadarChartConfiguration()
 {
   *this = jsonValue;
 }

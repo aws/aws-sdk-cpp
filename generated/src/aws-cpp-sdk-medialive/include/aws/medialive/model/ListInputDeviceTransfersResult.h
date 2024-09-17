@@ -40,99 +40,42 @@ namespace Model
     AWS_MEDIALIVE_API ListInputDeviceTransfersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The list of devices that you are transferring or are being transferred to you.
      */
     inline const Aws::Vector<TransferringInputDeviceSummary>& GetInputDeviceTransfers() const{ return m_inputDeviceTransfers; }
-
-    /**
-     * The list of devices that you are transferring or are being transferred to you.
-     */
     inline void SetInputDeviceTransfers(const Aws::Vector<TransferringInputDeviceSummary>& value) { m_inputDeviceTransfers = value; }
-
-    /**
-     * The list of devices that you are transferring or are being transferred to you.
-     */
     inline void SetInputDeviceTransfers(Aws::Vector<TransferringInputDeviceSummary>&& value) { m_inputDeviceTransfers = std::move(value); }
-
-    /**
-     * The list of devices that you are transferring or are being transferred to you.
-     */
     inline ListInputDeviceTransfersResult& WithInputDeviceTransfers(const Aws::Vector<TransferringInputDeviceSummary>& value) { SetInputDeviceTransfers(value); return *this;}
-
-    /**
-     * The list of devices that you are transferring or are being transferred to you.
-     */
     inline ListInputDeviceTransfersResult& WithInputDeviceTransfers(Aws::Vector<TransferringInputDeviceSummary>&& value) { SetInputDeviceTransfers(std::move(value)); return *this;}
-
-    /**
-     * The list of devices that you are transferring or are being transferred to you.
-     */
     inline ListInputDeviceTransfersResult& AddInputDeviceTransfers(const TransferringInputDeviceSummary& value) { m_inputDeviceTransfers.push_back(value); return *this; }
-
-    /**
-     * The list of devices that you are transferring or are being transferred to you.
-     */
     inline ListInputDeviceTransfersResult& AddInputDeviceTransfers(TransferringInputDeviceSummary&& value) { m_inputDeviceTransfers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * A token to get additional list results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A token to get additional list results.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * A token to get additional list results.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * A token to get additional list results.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * A token to get additional list results.
-     */
     inline ListInputDeviceTransfersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A token to get additional list results.
-     */
     inline ListInputDeviceTransfersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A token to get additional list results.
-     */
     inline ListInputDeviceTransfersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListInputDeviceTransfersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListInputDeviceTransfersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListInputDeviceTransfersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TransferringInputDeviceSummary> m_inputDeviceTransfers;

@@ -28,8 +28,8 @@ namespace Model
    * specific Amazon Web Services account using bring your own IP addresses (BYOIP).
    * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Configuring
-   * your BYOIP address range</a> in the <i>Amazon Elastic Compute Cloud User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * your BYOIP address range</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CidrAuthorizationContext">AWS
    * API Reference</a></p>
    */
@@ -44,87 +44,33 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The plain-text authorization message for the prefix and account.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The plain-text authorization message for the prefix and account.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The plain-text authorization message for the prefix and account.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The plain-text authorization message for the prefix and account.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The plain-text authorization message for the prefix and account.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The plain-text authorization message for the prefix and account.</p>
-     */
     inline CidrAuthorizationContext& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The plain-text authorization message for the prefix and account.</p>
-     */
     inline CidrAuthorizationContext& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The plain-text authorization message for the prefix and account.</p>
-     */
     inline CidrAuthorizationContext& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The signed authorization message for the prefix and account.</p>
      */
     inline const Aws::String& GetSignature() const{ return m_signature; }
-
-    /**
-     * <p>The signed authorization message for the prefix and account.</p>
-     */
     inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
-
-    /**
-     * <p>The signed authorization message for the prefix and account.</p>
-     */
     inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
-
-    /**
-     * <p>The signed authorization message for the prefix and account.</p>
-     */
     inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
-
-    /**
-     * <p>The signed authorization message for the prefix and account.</p>
-     */
     inline void SetSignature(const char* value) { m_signatureHasBeenSet = true; m_signature.assign(value); }
-
-    /**
-     * <p>The signed authorization message for the prefix and account.</p>
-     */
     inline CidrAuthorizationContext& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
-
-    /**
-     * <p>The signed authorization message for the prefix and account.</p>
-     */
     inline CidrAuthorizationContext& WithSignature(Aws::String&& value) { SetSignature(std::move(value)); return *this;}
-
-    /**
-     * <p>The signed authorization message for the prefix and account.</p>
-     */
     inline CidrAuthorizationContext& WithSignature(const char* value) { SetSignature(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

@@ -24,9 +24,8 @@ SftpConnectorConfig::SftpConnectorConfig() :
 {
 }
 
-SftpConnectorConfig::SftpConnectorConfig(JsonView jsonValue) : 
-    m_userSecretIdHasBeenSet(false),
-    m_trustedHostKeysHasBeenSet(false)
+SftpConnectorConfig::SftpConnectorConfig(JsonView jsonValue)
+  : SftpConnectorConfig()
 {
   *this = jsonValue;
 }

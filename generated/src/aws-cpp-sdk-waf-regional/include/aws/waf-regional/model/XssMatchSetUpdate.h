@@ -48,91 +48,33 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
      * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
-     * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
-     * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
-     * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-     */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
-     * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-     */
     inline XssMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
-     * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-     */
     inline XssMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for
      * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
      * name of the header.</p>
      */
     inline const XssMatchTuple& GetXssMatchTuple() const{ return m_xssMatchTuple; }
-
-    /**
-     * <p>Specifies the part of a web request that you want AWS WAF to inspect for
-     * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
-     * name of the header.</p>
-     */
     inline bool XssMatchTupleHasBeenSet() const { return m_xssMatchTupleHasBeenSet; }
-
-    /**
-     * <p>Specifies the part of a web request that you want AWS WAF to inspect for
-     * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
-     * name of the header.</p>
-     */
     inline void SetXssMatchTuple(const XssMatchTuple& value) { m_xssMatchTupleHasBeenSet = true; m_xssMatchTuple = value; }
-
-    /**
-     * <p>Specifies the part of a web request that you want AWS WAF to inspect for
-     * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
-     * name of the header.</p>
-     */
     inline void SetXssMatchTuple(XssMatchTuple&& value) { m_xssMatchTupleHasBeenSet = true; m_xssMatchTuple = std::move(value); }
-
-    /**
-     * <p>Specifies the part of a web request that you want AWS WAF to inspect for
-     * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
-     * name of the header.</p>
-     */
     inline XssMatchSetUpdate& WithXssMatchTuple(const XssMatchTuple& value) { SetXssMatchTuple(value); return *this;}
-
-    /**
-     * <p>Specifies the part of a web request that you want AWS WAF to inspect for
-     * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
-     * name of the header.</p>
-     */
     inline XssMatchSetUpdate& WithXssMatchTuple(XssMatchTuple&& value) { SetXssMatchTuple(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChangeAction m_action;

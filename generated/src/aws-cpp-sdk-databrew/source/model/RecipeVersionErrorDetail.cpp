@@ -25,10 +25,8 @@ RecipeVersionErrorDetail::RecipeVersionErrorDetail() :
 {
 }
 
-RecipeVersionErrorDetail::RecipeVersionErrorDetail(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_recipeVersionHasBeenSet(false)
+RecipeVersionErrorDetail::RecipeVersionErrorDetail(JsonView jsonValue)
+  : RecipeVersionErrorDetail()
 {
   *this = jsonValue;
 }

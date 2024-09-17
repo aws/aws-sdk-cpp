@@ -18,16 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetConfiguredAudienceModelResult::GetConfiguredAudienceModelResult() : 
-    m_childResourceTagOnCreatePolicy(TagOnCreatePolicy::NOT_SET),
+    m_status(ConfiguredAudienceModelStatus::NOT_SET),
     m_minMatchingSeedSize(0),
-    m_status(ConfiguredAudienceModelStatus::NOT_SET)
+    m_childResourceTagOnCreatePolicy(TagOnCreatePolicy::NOT_SET)
 {
 }
 
-GetConfiguredAudienceModelResult::GetConfiguredAudienceModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_childResourceTagOnCreatePolicy(TagOnCreatePolicy::NOT_SET),
-    m_minMatchingSeedSize(0),
-    m_status(ConfiguredAudienceModelStatus::NOT_SET)
+GetConfiguredAudienceModelResult::GetConfiguredAudienceModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetConfiguredAudienceModelResult()
 {
   *this = result;
 }
@@ -35,21 +33,15 @@ GetConfiguredAudienceModelResult::GetConfiguredAudienceModelResult(const Aws::Am
 GetConfiguredAudienceModelResult& GetConfiguredAudienceModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("audienceModelArn"))
+  if(jsonValue.ValueExists("createTime"))
   {
-    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
+    m_createTime = jsonValue.GetString("createTime");
 
   }
 
-  if(jsonValue.ValueExists("audienceSizeConfig"))
+  if(jsonValue.ValueExists("updateTime"))
   {
-    m_audienceSizeConfig = jsonValue.GetObject("audienceSizeConfig");
-
-  }
-
-  if(jsonValue.ValueExists("childResourceTagOnCreatePolicy"))
-  {
-    m_childResourceTagOnCreatePolicy = TagOnCreatePolicyMapper::GetTagOnCreatePolicyForName(jsonValue.GetString("childResourceTagOnCreatePolicy"));
+    m_updateTime = jsonValue.GetString("updateTime");
 
   }
 
@@ -59,9 +51,21 @@ GetConfiguredAudienceModelResult& GetConfiguredAudienceModelResult::operator =(c
 
   }
 
-  if(jsonValue.ValueExists("createTime"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_createTime = jsonValue.GetString("createTime");
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("audienceModelArn"))
+  {
+    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
+
+  }
+
+  if(jsonValue.ValueExists("outputConfig"))
+  {
+    m_outputConfig = jsonValue.GetObject("outputConfig");
 
   }
 
@@ -71,21 +75,9 @@ GetConfiguredAudienceModelResult& GetConfiguredAudienceModelResult::operator =(c
 
   }
 
-  if(jsonValue.ValueExists("minMatchingSeedSize"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_minMatchingSeedSize = jsonValue.GetInteger("minMatchingSeedSize");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-  }
-
-  if(jsonValue.ValueExists("outputConfig"))
-  {
-    m_outputConfig = jsonValue.GetObject("outputConfig");
+    m_status = ConfiguredAudienceModelStatusMapper::GetConfiguredAudienceModelStatusForName(jsonValue.GetString("status"));
 
   }
 
@@ -98,9 +90,15 @@ GetConfiguredAudienceModelResult& GetConfiguredAudienceModelResult::operator =(c
     }
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("minMatchingSeedSize"))
   {
-    m_status = ConfiguredAudienceModelStatusMapper::GetConfiguredAudienceModelStatusForName(jsonValue.GetString("status"));
+    m_minMatchingSeedSize = jsonValue.GetInteger("minMatchingSeedSize");
+
+  }
+
+  if(jsonValue.ValueExists("audienceSizeConfig"))
+  {
+    m_audienceSizeConfig = jsonValue.GetObject("audienceSizeConfig");
 
   }
 
@@ -113,9 +111,9 @@ GetConfiguredAudienceModelResult& GetConfiguredAudienceModelResult::operator =(c
     }
   }
 
-  if(jsonValue.ValueExists("updateTime"))
+  if(jsonValue.ValueExists("childResourceTagOnCreatePolicy"))
   {
-    m_updateTime = jsonValue.GetString("updateTime");
+    m_childResourceTagOnCreatePolicy = TagOnCreatePolicyMapper::GetTagOnCreatePolicyForName(jsonValue.GetString("childResourceTagOnCreatePolicy"));
 
   }
 

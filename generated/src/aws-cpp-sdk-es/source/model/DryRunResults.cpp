@@ -24,9 +24,8 @@ DryRunResults::DryRunResults() :
 {
 }
 
-DryRunResults::DryRunResults(JsonView jsonValue) : 
-    m_deploymentTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DryRunResults::DryRunResults(JsonView jsonValue)
+  : DryRunResults()
 {
   *this = jsonValue;
 }

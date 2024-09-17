@@ -36,30 +36,16 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The offset in milliseconds from the start of the VOD source at which an ad
      * marker was detected.</p>
      */
     inline long long GetOffsetMillis() const{ return m_offsetMillis; }
-
-    /**
-     * <p>The offset in milliseconds from the start of the VOD source at which an ad
-     * marker was detected.</p>
-     */
     inline bool OffsetMillisHasBeenSet() const { return m_offsetMillisHasBeenSet; }
-
-    /**
-     * <p>The offset in milliseconds from the start of the VOD source at which an ad
-     * marker was detected.</p>
-     */
     inline void SetOffsetMillis(long long value) { m_offsetMillisHasBeenSet = true; m_offsetMillis = value; }
-
-    /**
-     * <p>The offset in milliseconds from the start of the VOD source at which an ad
-     * marker was detected.</p>
-     */
     inline AdBreakOpportunity& WithOffsetMillis(long long value) { SetOffsetMillis(value); return *this;}
-
+    ///@}
   private:
 
     long long m_offsetMillis;

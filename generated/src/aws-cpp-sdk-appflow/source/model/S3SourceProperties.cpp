@@ -25,10 +25,8 @@ S3SourceProperties::S3SourceProperties() :
 {
 }
 
-S3SourceProperties::S3SourceProperties(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_s3InputFormatConfigHasBeenSet(false)
+S3SourceProperties::S3SourceProperties(JsonView jsonValue)
+  : S3SourceProperties()
 {
   *this = jsonValue;
 }

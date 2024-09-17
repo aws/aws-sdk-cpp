@@ -24,9 +24,8 @@ RelationshipValue::RelationshipValue() :
 {
 }
 
-RelationshipValue::RelationshipValue(JsonView jsonValue) : 
-    m_targetEntityIdHasBeenSet(false),
-    m_targetComponentNameHasBeenSet(false)
+RelationshipValue::RelationshipValue(JsonView jsonValue)
+  : RelationshipValue()
 {
   *this = jsonValue;
 }

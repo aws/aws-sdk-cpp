@@ -20,13 +20,15 @@ namespace Model
 
 NodePropertyOverride::NodePropertyOverride() : 
     m_targetNodesHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false)
+    m_containerOverridesHasBeenSet(false),
+    m_ecsPropertiesOverrideHasBeenSet(false),
+    m_instanceTypesHasBeenSet(false),
+    m_eksPropertiesOverrideHasBeenSet(false)
 {
 }
 
-NodePropertyOverride::NodePropertyOverride(JsonView jsonValue) : 
-    m_targetNodesHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false)
+NodePropertyOverride::NodePropertyOverride(JsonView jsonValue)
+  : NodePropertyOverride()
 {
   *this = jsonValue;
 }
@@ -47,6 +49,30 @@ NodePropertyOverride& NodePropertyOverride::operator =(JsonView jsonValue)
     m_containerOverridesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ecsPropertiesOverride"))
+  {
+    m_ecsPropertiesOverride = jsonValue.GetObject("ecsPropertiesOverride");
+
+    m_ecsPropertiesOverrideHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceTypes"))
+  {
+    Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
+    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
+    {
+      m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
+    }
+    m_instanceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eksPropertiesOverride"))
+  {
+    m_eksPropertiesOverride = jsonValue.GetObject("eksPropertiesOverride");
+
+    m_eksPropertiesOverrideHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +89,29 @@ JsonValue NodePropertyOverride::Jsonize() const
   if(m_containerOverridesHasBeenSet)
   {
    payload.WithObject("containerOverrides", m_containerOverrides.Jsonize());
+
+  }
+
+  if(m_ecsPropertiesOverrideHasBeenSet)
+  {
+   payload.WithObject("ecsPropertiesOverride", m_ecsPropertiesOverride.Jsonize());
+
+  }
+
+  if(m_instanceTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+   for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
+   {
+     instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
+   }
+   payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
+
+  }
+
+  if(m_eksPropertiesOverrideHasBeenSet)
+  {
+   payload.WithObject("eksPropertiesOverride", m_eksPropertiesOverride.Jsonize());
 
   }
 

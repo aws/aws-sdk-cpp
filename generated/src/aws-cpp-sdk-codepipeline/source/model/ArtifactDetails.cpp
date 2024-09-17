@@ -26,11 +26,8 @@ ArtifactDetails::ArtifactDetails() :
 {
 }
 
-ArtifactDetails::ArtifactDetails(JsonView jsonValue) : 
-    m_minimumCount(0),
-    m_minimumCountHasBeenSet(false),
-    m_maximumCount(0),
-    m_maximumCountHasBeenSet(false)
+ArtifactDetails::ArtifactDetails(JsonView jsonValue)
+  : ArtifactDetails()
 {
   *this = jsonValue;
 }

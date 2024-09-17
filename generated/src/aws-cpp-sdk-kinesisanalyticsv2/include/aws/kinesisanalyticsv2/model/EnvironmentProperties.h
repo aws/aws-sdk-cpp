@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
+   * <p>Describes execution properties for a Managed Service for Apache Flink
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/EnvironmentProperties">AWS
    * API Reference</a></p>
@@ -39,46 +39,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the execution property groups.</p>
      */
     inline const Aws::Vector<PropertyGroup>& GetPropertyGroups() const{ return m_propertyGroups; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline bool PropertyGroupsHasBeenSet() const { return m_propertyGroupsHasBeenSet; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline void SetPropertyGroups(const Aws::Vector<PropertyGroup>& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = value; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline void SetPropertyGroups(Aws::Vector<PropertyGroup>&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = std::move(value); }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentProperties& WithPropertyGroups(const Aws::Vector<PropertyGroup>& value) { SetPropertyGroups(value); return *this;}
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentProperties& WithPropertyGroups(Aws::Vector<PropertyGroup>&& value) { SetPropertyGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentProperties& AddPropertyGroups(const PropertyGroup& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentProperties& AddPropertyGroups(PropertyGroup&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PropertyGroup> m_propertyGroups;

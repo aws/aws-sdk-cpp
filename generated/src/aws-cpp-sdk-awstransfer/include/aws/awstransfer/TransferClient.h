@@ -155,7 +155,7 @@ namespace Transfer
          * externally hosted AS2 server. For SFTP, the connector is required when sending
          * files to an SFTP server or receiving files from an SFTP server. For more details
          * about connectors, see <a
-         * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-as2-connector.html">Configure
          * AS2 connectors</a> and <a
          * href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
          * SFTP connectors</a>.</p>  <p>You must specify exactly one configuration
@@ -219,13 +219,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request) const;
+        virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateServerRequestT = Model::CreateServerRequest>
-        Model::CreateServerOutcomeCallable CreateServerCallable(const CreateServerRequestT& request) const
+        Model::CreateServerOutcomeCallable CreateServerCallable(const CreateServerRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::CreateServer, request);
         }
@@ -234,7 +234,7 @@ namespace Transfer
          * An Async wrapper for CreateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateServerRequestT = Model::CreateServerRequest>
-        void CreateServerAsync(const CreateServerRequestT& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateServerAsync(const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateServerRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::CreateServer, request, handler, context);
         }
@@ -750,11 +750,13 @@ namespace Transfer
         }
 
         /**
-         * <p>Describes the security policy that is attached to your file transfer
-         * protocol-enabled server. The response contains a description of the security
-         * policy's properties. For more information about security policies, see <a
+         * <p>Describes the security policy that is attached to your server or SFTP
+         * connector. The response contains a description of the security policy's
+         * properties. For more information about security policies, see <a
          * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-         * with security policies</a>.</p><p><h3>See Also:</h3>   <a
+         * with security policies for servers</a> or <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+         * with security policies for SFTP connectors</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">AWS
          * API Reference</a></p>
          */
@@ -1008,13 +1010,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
+        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request) const
+        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListCertificates, request);
         }
@@ -1023,7 +1025,7 @@ namespace Transfer
          * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        void ListCertificatesAsync(const ListCertificatesRequestT& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCertificatesAsync(const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListCertificates, request, handler, context);
         }
@@ -1033,13 +1035,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
+        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request) const
+        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListConnectors, request);
         }
@@ -1048,7 +1050,7 @@ namespace Transfer
          * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        void ListConnectorsAsync(const ListConnectorsRequestT& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConnectorsAsync(const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectorsRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListConnectors, request, handler, context);
         }
@@ -1115,13 +1117,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request) const;
+        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request) const
+        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListProfiles, request);
         }
@@ -1130,24 +1132,28 @@ namespace Transfer
          * An Async wrapper for ListProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        void ListProfilesAsync(const ListProfilesRequestT& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProfilesAsync(const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListProfiles, request, handler, context);
         }
 
         /**
-         * <p>Lists the security policies that are attached to your file transfer
-         * protocol-enabled servers.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the security policies that are attached to your servers and SFTP
+         * connectors. For more information about security policies, see <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+         * with security policies for servers</a> or <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+         * with security policies for SFTP connectors</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSecurityPoliciesOutcome ListSecurityPolicies(const Model::ListSecurityPoliciesRequest& request) const;
+        virtual Model::ListSecurityPoliciesOutcome ListSecurityPolicies(const Model::ListSecurityPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSecurityPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSecurityPoliciesRequestT = Model::ListSecurityPoliciesRequest>
-        Model::ListSecurityPoliciesOutcomeCallable ListSecurityPoliciesCallable(const ListSecurityPoliciesRequestT& request) const
+        Model::ListSecurityPoliciesOutcomeCallable ListSecurityPoliciesCallable(const ListSecurityPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListSecurityPolicies, request);
         }
@@ -1156,7 +1162,7 @@ namespace Transfer
          * An Async wrapper for ListSecurityPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSecurityPoliciesRequestT = Model::ListSecurityPoliciesRequest>
-        void ListSecurityPoliciesAsync(const ListSecurityPoliciesRequestT& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSecurityPoliciesAsync(const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSecurityPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListSecurityPolicies, request, handler, context);
         }
@@ -1167,13 +1173,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request) const;
+        virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServersRequestT = Model::ListServersRequest>
-        Model::ListServersOutcomeCallable ListServersCallable(const ListServersRequestT& request) const
+        Model::ListServersOutcomeCallable ListServersCallable(const ListServersRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListServers, request);
         }
@@ -1182,7 +1188,7 @@ namespace Transfer
          * An Async wrapper for ListServers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServersRequestT = Model::ListServersRequest>
-        void ListServersAsync(const ListServersRequestT& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServersAsync(const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServersRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListServers, request, handler, context);
         }
@@ -1246,13 +1252,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
+        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request) const
+        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListWorkflows, request);
         }
@@ -1261,7 +1267,7 @@ namespace Transfer
          * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        void ListWorkflowsAsync(const ListWorkflowsRequestT& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkflowsAsync(const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListWorkflows, request, handler, context);
         }
@@ -1296,6 +1302,58 @@ namespace Transfer
         }
 
         /**
+         * <p>Retrieves a list of the contents of a directory from a remote SFTP server.
+         * You specify the connector ID, the output path, and the remote directory path.
+         * You can also specify the optional <code>MaxItems</code> value to control the
+         * maximum number of items that are listed from the remote directory. This API
+         * returns a list of all files and directories in the remote directory (up to the
+         * maximum value), but does not return files or folders in sub-directories. That
+         * is, it only returns a list of files and directories one-level deep.</p> <p>After
+         * you receive the listing file, you can provide the files that you want to
+         * transfer to the <code>RetrieveFilePaths</code> parameter of the
+         * <code>StartFileTransfer</code> API call.</p> <p>The naming convention for the
+         * output file is <code> <i>connector-ID</i>-<i>listing-ID</i>.json</code>. The
+         * output file contains the following information:</p> <ul> <li> <p>
+         * <code>filePath</code>: the complete path of a remote file, relative to the
+         * directory of the listing request for your SFTP connector on the remote
+         * server.</p> </li> <li> <p> <code>modifiedTimestamp</code>: the last time the
+         * file was modified, in UTC time format. This field is optional. If the remote
+         * file attributes don't contain a timestamp, it is omitted from the file
+         * listing.</p> </li> <li> <p> <code>size</code>: the size of the file, in bytes.
+         * This field is optional. If the remote file attributes don't contain a file size,
+         * it is omitted from the file listing.</p> </li> <li> <p> <code>path</code>: the
+         * complete path of a remote directory, relative to the directory of the listing
+         * request for your SFTP connector on the remote server.</p> </li> <li> <p>
+         * <code>truncated</code>: a flag indicating whether the list output contains all
+         * of the items contained in the remote directory or not. If your
+         * <code>Truncated</code> output value is true, you can increase the value provided
+         * in the optional <code>max-items</code> input attribute to be able to list more
+         * items (up to the maximum allowed list size of 10,000 items).</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartDirectoryListing">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDirectoryListingOutcome StartDirectoryListing(const Model::StartDirectoryListingRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDirectoryListing that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDirectoryListingRequestT = Model::StartDirectoryListingRequest>
+        Model::StartDirectoryListingOutcomeCallable StartDirectoryListingCallable(const StartDirectoryListingRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::StartDirectoryListing, request);
+        }
+
+        /**
+         * An Async wrapper for StartDirectoryListing that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDirectoryListingRequestT = Model::StartDirectoryListingRequest>
+        void StartDirectoryListingAsync(const StartDirectoryListingRequestT& request, const StartDirectoryListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::StartDirectoryListing, request, handler, context);
+        }
+
+        /**
          * <p>Begins a file transfer between local Amazon Web Services storage and a remote
          * AS2 or SFTP server.</p> <ul> <li> <p>For an AS2 connector, you specify the
          * <code>ConnectorId</code> and one or more <code>SendFilePaths</code> to identify
@@ -1304,7 +1362,7 @@ namespace Transfer
          * <code>ConnectorId</code>. Depending on the direction of the transfer, you also
          * specify the following items:</p> <ul> <li> <p>If you are transferring file from
          * a partner's SFTP server to Amazon Web Services storage, you specify one or more
-         * <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a
+         * <code>RetrieveFilePaths</code> to identify the files you want to transfer, and a
          * <code>LocalDirectoryPath</code> to specify the destination folder.</p> </li>
          * <li> <p>If you are transferring file to a partner's SFTP server from Amazon Web
          * Services storage, you specify one or more <code>SendFilePaths</code> to identify
@@ -1730,7 +1788,18 @@ namespace Transfer
          * the following: the home directory, role, and policy for the
          * <code>UserName</code> and <code>ServerId</code> you specify.</p> <p>The response
          * returns the <code>ServerId</code> and the <code>UserName</code> for the updated
-         * user.</p><p><h3>See Also:</h3>   <a
+         * user.</p> <p>In the console, you can select <i>Restricted</i> when you create or
+         * update a user. This ensures that the user can't access anything outside of their
+         * home directory. The programmatic way to configure this behavior is to update the
+         * user. Set their <code>HomeDirectoryType</code> to <code>LOGICAL</code>, and
+         * specify <code>HomeDirectoryMappings</code> with <code>Entry</code> as root
+         * (<code>/</code>) and <code>Target</code> as their home directory.</p> <p>For
+         * example, if the user's home directory is <code>/test/admin-user</code>, the
+         * following command updates the user so that their configuration in the console
+         * shows the <i>Restricted</i> flag as selected.</p> <p> <code> aws transfer
+         * update-user --server-id &lt;server-id&gt; --user-name admin-user
+         * --home-directory-type LOGICAL --home-directory-mappings "[{\"Entry\":\"/\",
+         * \"Target\":\"/test/admin-user\"}]"</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">AWS
          * API Reference</a></p>
          */
@@ -1762,7 +1831,6 @@ namespace Transfer
       void init(const TransferClientConfiguration& clientConfiguration);
 
       TransferClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TransferEndpointProviderBase> m_endpointProvider;
   };
 

@@ -27,12 +27,8 @@ NotificationSpecification::NotificationSpecification() :
 {
 }
 
-NotificationSpecification::NotificationSpecification(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_transport(NotificationTransport::NOT_SET),
-    m_transportHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_eventTypesHasBeenSet(false)
+NotificationSpecification::NotificationSpecification(JsonView jsonValue)
+  : NotificationSpecification()
 {
   *this = jsonValue;
 }

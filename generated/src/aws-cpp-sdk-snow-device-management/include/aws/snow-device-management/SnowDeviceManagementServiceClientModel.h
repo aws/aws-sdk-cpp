@@ -29,6 +29,8 @@
 #include <aws/snow-device-management/model/ListExecutionsResult.h>
 #include <aws/snow-device-management/model/ListTagsForResourceResult.h>
 #include <aws/snow-device-management/model/ListTasksResult.h>
+#include <aws/snow-device-management/model/ListDevicesRequest.h>
+#include <aws/snow-device-management/model/ListTasksRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SnowDeviceManagementClient header */
 
@@ -63,7 +65,7 @@ namespace Aws
 
   namespace SnowDeviceManagement
   {
-    using SnowDeviceManagementClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SnowDeviceManagementClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SnowDeviceManagementEndpointProviderBase = Aws::SnowDeviceManagement::Endpoint::SnowDeviceManagementEndpointProviderBase;
     using SnowDeviceManagementEndpointProvider = Aws::SnowDeviceManagement::Endpoint::SnowDeviceManagementEndpointProvider;
 

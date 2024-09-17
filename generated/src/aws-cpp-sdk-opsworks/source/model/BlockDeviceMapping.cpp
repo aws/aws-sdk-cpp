@@ -26,11 +26,8 @@ BlockDeviceMapping::BlockDeviceMapping() :
 {
 }
 
-BlockDeviceMapping::BlockDeviceMapping(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_ebsHasBeenSet(false)
+BlockDeviceMapping::BlockDeviceMapping(JsonView jsonValue)
+  : BlockDeviceMapping()
 {
   *this = jsonValue;
 }

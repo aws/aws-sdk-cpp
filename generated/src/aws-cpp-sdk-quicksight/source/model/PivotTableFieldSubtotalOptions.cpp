@@ -23,8 +23,8 @@ PivotTableFieldSubtotalOptions::PivotTableFieldSubtotalOptions() :
 {
 }
 
-PivotTableFieldSubtotalOptions::PivotTableFieldSubtotalOptions(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false)
+PivotTableFieldSubtotalOptions::PivotTableFieldSubtotalOptions(JsonView jsonValue)
+  : PivotTableFieldSubtotalOptions()
 {
   *this = jsonValue;
 }

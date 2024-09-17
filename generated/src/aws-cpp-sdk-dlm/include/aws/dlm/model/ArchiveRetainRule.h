@@ -38,6 +38,7 @@ namespace Model
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about retention period in the Amazon EBS Snapshots Archive. For
      * more information, see <a
@@ -45,47 +46,12 @@ namespace Model
      * Amazon EBS snapshots</a>.</p>
      */
     inline const RetentionArchiveTier& GetRetentionArchiveTier() const{ return m_retentionArchiveTier; }
-
-    /**
-     * <p>Information about retention period in the Amazon EBS Snapshots Archive. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
-     * Amazon EBS snapshots</a>.</p>
-     */
     inline bool RetentionArchiveTierHasBeenSet() const { return m_retentionArchiveTierHasBeenSet; }
-
-    /**
-     * <p>Information about retention period in the Amazon EBS Snapshots Archive. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
-     * Amazon EBS snapshots</a>.</p>
-     */
     inline void SetRetentionArchiveTier(const RetentionArchiveTier& value) { m_retentionArchiveTierHasBeenSet = true; m_retentionArchiveTier = value; }
-
-    /**
-     * <p>Information about retention period in the Amazon EBS Snapshots Archive. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
-     * Amazon EBS snapshots</a>.</p>
-     */
     inline void SetRetentionArchiveTier(RetentionArchiveTier&& value) { m_retentionArchiveTierHasBeenSet = true; m_retentionArchiveTier = std::move(value); }
-
-    /**
-     * <p>Information about retention period in the Amazon EBS Snapshots Archive. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
-     * Amazon EBS snapshots</a>.</p>
-     */
     inline ArchiveRetainRule& WithRetentionArchiveTier(const RetentionArchiveTier& value) { SetRetentionArchiveTier(value); return *this;}
-
-    /**
-     * <p>Information about retention period in the Amazon EBS Snapshots Archive. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
-     * Amazon EBS snapshots</a>.</p>
-     */
     inline ArchiveRetainRule& WithRetentionArchiveTier(RetentionArchiveTier&& value) { SetRetentionArchiveTier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RetentionArchiveTier m_retentionArchiveTier;

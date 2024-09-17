@@ -25,6 +25,7 @@ namespace Aws
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int UPDATED_OPTIMIZING_HASH = HashingUtils::HashString("UPDATED_OPTIMIZING");
+        static const int OPTIMIZING_HASH = HashingUtils::HashString("OPTIMIZING");
 
 
         Status GetStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == UPDATED_OPTIMIZING_HASH)
           {
             return Status::UPDATED_OPTIMIZING;
+          }
+          else if (hashCode == OPTIMIZING_HASH)
+          {
+            return Status::OPTIMIZING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "COMPLETED";
           case Status::UPDATED_OPTIMIZING:
             return "UPDATED_OPTIMIZING";
+          case Status::OPTIMIZING:
+            return "OPTIMIZING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

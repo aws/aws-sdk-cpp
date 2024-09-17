@@ -24,9 +24,8 @@ LifecyclePolicyPreviewSummary::LifecyclePolicyPreviewSummary() :
 {
 }
 
-LifecyclePolicyPreviewSummary::LifecyclePolicyPreviewSummary(JsonView jsonValue) : 
-    m_expiringImageTotalCount(0),
-    m_expiringImageTotalCountHasBeenSet(false)
+LifecyclePolicyPreviewSummary::LifecyclePolicyPreviewSummary(JsonView jsonValue)
+  : LifecyclePolicyPreviewSummary()
 {
   *this = jsonValue;
 }

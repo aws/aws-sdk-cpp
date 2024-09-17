@@ -45,6 +45,7 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
      * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
@@ -52,88 +53,26 @@ namespace Model
      * value of the specified tag key.</p>
      */
     inline const CostCategoryInheritedValueDimensionName& GetDimensionName() const{ return m_dimensionName; }
-
-    /**
-     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
-     * name. If you specify <code>TAG</code>, the cost category value is based on the
-     * value of the specified tag key.</p>
-     */
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
-     * name. If you specify <code>TAG</code>, the cost category value is based on the
-     * value of the specified tag key.</p>
-     */
     inline void SetDimensionName(const CostCategoryInheritedValueDimensionName& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
-
-    /**
-     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
-     * name. If you specify <code>TAG</code>, the cost category value is based on the
-     * value of the specified tag key.</p>
-     */
     inline void SetDimensionName(CostCategoryInheritedValueDimensionName&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
-
-    /**
-     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
-     * name. If you specify <code>TAG</code>, the cost category value is based on the
-     * value of the specified tag key.</p>
-     */
     inline CostCategoryInheritedValueDimension& WithDimensionName(const CostCategoryInheritedValueDimensionName& value) { SetDimensionName(value); return *this;}
-
-    /**
-     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
-     * name. If you specify <code>TAG</code>, the cost category value is based on the
-     * value of the specified tag key.</p>
-     */
     inline CostCategoryInheritedValueDimension& WithDimensionName(CostCategoryInheritedValueDimensionName&& value) { SetDimensionName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key to extract cost category values.</p>
      */
     inline const Aws::String& GetDimensionKey() const{ return m_dimensionKey; }
-
-    /**
-     * <p>The key to extract cost category values.</p>
-     */
     inline bool DimensionKeyHasBeenSet() const { return m_dimensionKeyHasBeenSet; }
-
-    /**
-     * <p>The key to extract cost category values.</p>
-     */
     inline void SetDimensionKey(const Aws::String& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = value; }
-
-    /**
-     * <p>The key to extract cost category values.</p>
-     */
     inline void SetDimensionKey(Aws::String&& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = std::move(value); }
-
-    /**
-     * <p>The key to extract cost category values.</p>
-     */
     inline void SetDimensionKey(const char* value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey.assign(value); }
-
-    /**
-     * <p>The key to extract cost category values.</p>
-     */
     inline CostCategoryInheritedValueDimension& WithDimensionKey(const Aws::String& value) { SetDimensionKey(value); return *this;}
-
-    /**
-     * <p>The key to extract cost category values.</p>
-     */
     inline CostCategoryInheritedValueDimension& WithDimensionKey(Aws::String&& value) { SetDimensionKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key to extract cost category values.</p>
-     */
     inline CostCategoryInheritedValueDimension& WithDimensionKey(const char* value) { SetDimensionKey(value); return *this;}
-
+    ///@}
   private:
 
     CostCategoryInheritedValueDimensionName m_dimensionName;

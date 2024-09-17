@@ -33,53 +33,27 @@ namespace Model
     AWS_SERVICECATALOG_API DescribeTagOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the TagOption.</p>
      */
     inline const TagOptionDetail& GetTagOptionDetail() const{ return m_tagOptionDetail; }
-
-    /**
-     * <p>Information about the TagOption.</p>
-     */
     inline void SetTagOptionDetail(const TagOptionDetail& value) { m_tagOptionDetail = value; }
-
-    /**
-     * <p>Information about the TagOption.</p>
-     */
     inline void SetTagOptionDetail(TagOptionDetail&& value) { m_tagOptionDetail = std::move(value); }
-
-    /**
-     * <p>Information about the TagOption.</p>
-     */
     inline DescribeTagOptionResult& WithTagOptionDetail(const TagOptionDetail& value) { SetTagOptionDetail(value); return *this;}
-
-    /**
-     * <p>Information about the TagOption.</p>
-     */
     inline DescribeTagOptionResult& WithTagOptionDetail(TagOptionDetail&& value) { SetTagOptionDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTagOptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTagOptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTagOptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TagOptionDetail m_tagOptionDetail;

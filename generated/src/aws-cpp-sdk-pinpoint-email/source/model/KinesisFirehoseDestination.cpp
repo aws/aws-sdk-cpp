@@ -24,9 +24,8 @@ KinesisFirehoseDestination::KinesisFirehoseDestination() :
 {
 }
 
-KinesisFirehoseDestination::KinesisFirehoseDestination(JsonView jsonValue) : 
-    m_iamRoleArnHasBeenSet(false),
-    m_deliveryStreamArnHasBeenSet(false)
+KinesisFirehoseDestination::KinesisFirehoseDestination(JsonView jsonValue)
+  : KinesisFirehoseDestination()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult() :
 {
 }
 
-GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoLaunch(false)
+GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAppLaunchConfigurationResult()
 {
   *this = result;
 }

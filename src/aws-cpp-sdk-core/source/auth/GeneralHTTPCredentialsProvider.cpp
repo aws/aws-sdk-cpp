@@ -14,7 +14,6 @@
 
 using namespace Aws::Auth;
 
-static const int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
 static const char GEN_HTTP_LOG_TAG[] = "GeneralHTTPCredentialsProvider";
 
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[] = "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE";
@@ -121,8 +120,13 @@ bool GeneralHTTPCredentialsProvider::ShouldCreateGeneralHTTPProvider(const Aws::
                 std::unique_lock<std::mutex> lock(hostResolverMutex);
                 shouldAllow = !addresses.empty();
                 hostResolved = true;
+                hostResolverCV.notify_one();
               }
-              hostResolverCV.notify_one();
+              else
+              {
+                std::unique_lock<std::mutex> lock(hostResolverMutex);
+                hostResolverCV.notify_one();
+              }
             };
           pHostResolver->ResolveHost(authority.c_str(), onHostResolved);
           std::unique_lock<std::mutex> lock(hostResolverMutex);

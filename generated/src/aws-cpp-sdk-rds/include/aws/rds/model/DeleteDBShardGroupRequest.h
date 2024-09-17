@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Teh name of the DB shard group to delete.</p>
      */
     inline const Aws::String& GetDBShardGroupIdentifier() const{ return m_dBShardGroupIdentifier; }
-
-    /**
-     * <p>Teh name of the DB shard group to delete.</p>
-     */
     inline bool DBShardGroupIdentifierHasBeenSet() const { return m_dBShardGroupIdentifierHasBeenSet; }
-
-    /**
-     * <p>Teh name of the DB shard group to delete.</p>
-     */
     inline void SetDBShardGroupIdentifier(const Aws::String& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = value; }
-
-    /**
-     * <p>Teh name of the DB shard group to delete.</p>
-     */
     inline void SetDBShardGroupIdentifier(Aws::String&& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = std::move(value); }
-
-    /**
-     * <p>Teh name of the DB shard group to delete.</p>
-     */
     inline void SetDBShardGroupIdentifier(const char* value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier.assign(value); }
-
-    /**
-     * <p>Teh name of the DB shard group to delete.</p>
-     */
     inline DeleteDBShardGroupRequest& WithDBShardGroupIdentifier(const Aws::String& value) { SetDBShardGroupIdentifier(value); return *this;}
-
-    /**
-     * <p>Teh name of the DB shard group to delete.</p>
-     */
     inline DeleteDBShardGroupRequest& WithDBShardGroupIdentifier(Aws::String&& value) { SetDBShardGroupIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Teh name of the DB shard group to delete.</p>
-     */
     inline DeleteDBShardGroupRequest& WithDBShardGroupIdentifier(const char* value) { SetDBShardGroupIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBShardGroupIdentifier;

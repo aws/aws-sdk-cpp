@@ -39,106 +39,43 @@ namespace Model
     AWS_IOT_API ListThingTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The thing types.</p>
      */
     inline const Aws::Vector<ThingTypeDefinition>& GetThingTypes() const{ return m_thingTypes; }
-
-    /**
-     * <p>The thing types.</p>
-     */
     inline void SetThingTypes(const Aws::Vector<ThingTypeDefinition>& value) { m_thingTypes = value; }
-
-    /**
-     * <p>The thing types.</p>
-     */
     inline void SetThingTypes(Aws::Vector<ThingTypeDefinition>&& value) { m_thingTypes = std::move(value); }
-
-    /**
-     * <p>The thing types.</p>
-     */
     inline ListThingTypesResult& WithThingTypes(const Aws::Vector<ThingTypeDefinition>& value) { SetThingTypes(value); return *this;}
-
-    /**
-     * <p>The thing types.</p>
-     */
     inline ListThingTypesResult& WithThingTypes(Aws::Vector<ThingTypeDefinition>&& value) { SetThingTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The thing types.</p>
-     */
     inline ListThingTypesResult& AddThingTypes(const ThingTypeDefinition& value) { m_thingTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The thing types.</p>
-     */
     inline ListThingTypesResult& AddThingTypes(ThingTypeDefinition&& value) { m_thingTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results. Will not be returned if operation has
      * returned all results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results. Will not be returned if operation has
-     * returned all results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results. Will not be returned if operation has
-     * returned all results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results. Will not be returned if operation has
-     * returned all results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results. Will not be returned if operation has
-     * returned all results.</p>
-     */
     inline ListThingTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results. Will not be returned if operation has
-     * returned all results.</p>
-     */
     inline ListThingTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results. Will not be returned if operation has
-     * returned all results.</p>
-     */
     inline ListThingTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListThingTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListThingTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListThingTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ThingTypeDefinition> m_thingTypes;

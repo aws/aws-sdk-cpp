@@ -38,6 +38,7 @@ namespace Model
     AWS_PINPOINTEMAIL_API SendEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
      * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
@@ -46,83 +47,24 @@ namespace Model
      * email that contains invalid personalization content, for example.</p> 
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
-     * a message without sending it. This can happen when the message you're trying to
-     * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> 
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
-
-    /**
-     * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
-     * a message without sending it. This can happen when the message you're trying to
-     * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> 
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
-     * a message without sending it. This can happen when the message you're trying to
-     * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> 
-     */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
-     * a message without sending it. This can happen when the message you're trying to
-     * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> 
-     */
     inline SendEmailResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
-     * a message without sending it. This can happen when the message you're trying to
-     * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> 
-     */
     inline SendEmailResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
-     * a message without sending it. This can happen when the message you're trying to
-     * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> 
-     */
     inline SendEmailResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendEmailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendEmailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendEmailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

@@ -25,10 +25,8 @@ Datapoint::Datapoint() :
 {
 }
 
-Datapoint::Datapoint(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+Datapoint::Datapoint(JsonView jsonValue)
+  : Datapoint()
 {
   *this = jsonValue;
 }

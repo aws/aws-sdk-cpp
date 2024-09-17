@@ -24,9 +24,8 @@ TableFieldURLConfiguration::TableFieldURLConfiguration() :
 {
 }
 
-TableFieldURLConfiguration::TableFieldURLConfiguration(JsonView jsonValue) : 
-    m_linkConfigurationHasBeenSet(false),
-    m_imageConfigurationHasBeenSet(false)
+TableFieldURLConfiguration::TableFieldURLConfiguration(JsonView jsonValue)
+  : TableFieldURLConfiguration()
 {
   *this = jsonValue;
 }

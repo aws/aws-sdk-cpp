@@ -35,26 +35,15 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of pages that are detected in the document.</p>
      */
     inline int GetPages() const{ return m_pages; }
-
-    /**
-     * <p>The number of pages that are detected in the document.</p>
-     */
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-
-    /**
-     * <p>The number of pages that are detected in the document.</p>
-     */
     inline void SetPages(int value) { m_pagesHasBeenSet = true; m_pages = value; }
-
-    /**
-     * <p>The number of pages that are detected in the document.</p>
-     */
     inline DocumentMetadata& WithPages(int value) { SetPages(value); return *this;}
-
+    ///@}
   private:
 
     int m_pages;

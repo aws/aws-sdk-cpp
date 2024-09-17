@@ -46,31 +46,8 @@ Hdr10Metadata::Hdr10Metadata() :
 {
 }
 
-Hdr10Metadata::Hdr10Metadata(JsonView jsonValue) : 
-    m_bluePrimaryX(0),
-    m_bluePrimaryXHasBeenSet(false),
-    m_bluePrimaryY(0),
-    m_bluePrimaryYHasBeenSet(false),
-    m_greenPrimaryX(0),
-    m_greenPrimaryXHasBeenSet(false),
-    m_greenPrimaryY(0),
-    m_greenPrimaryYHasBeenSet(false),
-    m_maxContentLightLevel(0),
-    m_maxContentLightLevelHasBeenSet(false),
-    m_maxFrameAverageLightLevel(0),
-    m_maxFrameAverageLightLevelHasBeenSet(false),
-    m_maxLuminance(0),
-    m_maxLuminanceHasBeenSet(false),
-    m_minLuminance(0),
-    m_minLuminanceHasBeenSet(false),
-    m_redPrimaryX(0),
-    m_redPrimaryXHasBeenSet(false),
-    m_redPrimaryY(0),
-    m_redPrimaryYHasBeenSet(false),
-    m_whitePointX(0),
-    m_whitePointXHasBeenSet(false),
-    m_whitePointY(0),
-    m_whitePointYHasBeenSet(false)
+Hdr10Metadata::Hdr10Metadata(JsonView jsonValue)
+  : Hdr10Metadata()
 {
   *this = jsonValue;
 }

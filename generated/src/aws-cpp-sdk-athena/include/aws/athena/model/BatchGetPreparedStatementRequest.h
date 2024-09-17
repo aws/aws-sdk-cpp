@@ -35,92 +35,34 @@ namespace Model
     AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A list of prepared statement names to return.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPreparedStatementNames() const{ return m_preparedStatementNames; }
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline bool PreparedStatementNamesHasBeenSet() const { return m_preparedStatementNamesHasBeenSet; }
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline void SetPreparedStatementNames(const Aws::Vector<Aws::String>& value) { m_preparedStatementNamesHasBeenSet = true; m_preparedStatementNames = value; }
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline void SetPreparedStatementNames(Aws::Vector<Aws::String>&& value) { m_preparedStatementNamesHasBeenSet = true; m_preparedStatementNames = std::move(value); }
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline BatchGetPreparedStatementRequest& WithPreparedStatementNames(const Aws::Vector<Aws::String>& value) { SetPreparedStatementNames(value); return *this;}
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline BatchGetPreparedStatementRequest& WithPreparedStatementNames(Aws::Vector<Aws::String>&& value) { SetPreparedStatementNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline BatchGetPreparedStatementRequest& AddPreparedStatementNames(const Aws::String& value) { m_preparedStatementNamesHasBeenSet = true; m_preparedStatementNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline BatchGetPreparedStatementRequest& AddPreparedStatementNames(Aws::String&& value) { m_preparedStatementNamesHasBeenSet = true; m_preparedStatementNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of prepared statement names to return.</p>
-     */
     inline BatchGetPreparedStatementRequest& AddPreparedStatementNames(const char* value) { m_preparedStatementNamesHasBeenSet = true; m_preparedStatementNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the workgroup to which the prepared statements belong.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
-
-    /**
-     * <p>The name of the workgroup to which the prepared statements belong.</p>
-     */
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-
-    /**
-     * <p>The name of the workgroup to which the prepared statements belong.</p>
-     */
     inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-
-    /**
-     * <p>The name of the workgroup to which the prepared statements belong.</p>
-     */
     inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-
-    /**
-     * <p>The name of the workgroup to which the prepared statements belong.</p>
-     */
     inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-
-    /**
-     * <p>The name of the workgroup to which the prepared statements belong.</p>
-     */
     inline BatchGetPreparedStatementRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-
-    /**
-     * <p>The name of the workgroup to which the prepared statements belong.</p>
-     */
     inline BatchGetPreparedStatementRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workgroup to which the prepared statements belong.</p>
-     */
     inline BatchGetPreparedStatementRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_preparedStatementNames;

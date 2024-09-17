@@ -86,7 +86,8 @@ namespace CodeGuruSecurity
         virtual ~CodeGuruSecurityClient();
 
         /**
-         * <p>Returns a list of all requested findings.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of requested findings from standard scans.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/BatchGetFindings">AWS
          * API Reference</a></p>
          */
@@ -111,8 +112,8 @@ namespace CodeGuruSecurity
         }
 
         /**
-         * <p>Use to create a scan using code uploaded to an S3 bucket.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Use to create a scan using code uploaded to an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/CreateScan">AWS
          * API Reference</a></p>
          */
@@ -137,9 +138,10 @@ namespace CodeGuruSecurity
         }
 
         /**
-         * <p>Generates a pre-signed URL and request headers used to upload a code
-         * resource.</p> <p>You can upload your code resource to the URL and add the
-         * request headers using any HTTP client.</p><p><h3>See Also:</h3>   <a
+         * <p>Generates a pre-signed URL, request headers used to upload a code resource,
+         * and code artifact identifier for the uploaded resource.</p> <p>You can upload
+         * your code resource to the URL with the request headers using any HTTP
+         * client.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/CreateUploadUrl">AWS
          * API Reference</a></p>
          */
@@ -164,17 +166,18 @@ namespace CodeGuruSecurity
         }
 
         /**
-         * <p>Use to get account level configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Use to get the encryption configuration for an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetAccountConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration(const Model::GetAccountConfigurationRequest& request) const;
+        virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration(const Model::GetAccountConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountConfigurationRequestT = Model::GetAccountConfigurationRequest>
-        Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable(const GetAccountConfigurationRequestT& request) const
+        Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable(const GetAccountConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&CodeGuruSecurityClient::GetAccountConfiguration, request);
         }
@@ -183,7 +186,7 @@ namespace CodeGuruSecurity
          * An Async wrapper for GetAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountConfigurationRequestT = Model::GetAccountConfigurationRequest>
-        void GetAccountConfigurationAsync(const GetAccountConfigurationRequestT& request, const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountConfigurationAsync(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&CodeGuruSecurityClient::GetAccountConfiguration, request, handler, context);
         }
@@ -215,7 +218,7 @@ namespace CodeGuruSecurity
         }
 
         /**
-         * <p>Returns top level metrics about an account from a specified date, including
+         * <p>Returns a summary of metrics for an account from a specified date, including
          * number of open findings, the categories with most findings, the scans with most
          * open findings, and scans with most open critical findings. </p><p><h3>See
          * Also:</h3>   <a
@@ -295,18 +298,18 @@ namespace CodeGuruSecurity
         }
 
         /**
-         * <p>Returns a list of all the standard scans in an account. Does not return
-         * express scans.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all scans in an account. Does not return
+         * <code>EXPRESS</code> scans.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListScans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScansOutcome ListScans(const Model::ListScansRequest& request) const;
+        virtual Model::ListScansOutcome ListScans(const Model::ListScansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScansRequestT = Model::ListScansRequest>
-        Model::ListScansOutcomeCallable ListScansCallable(const ListScansRequestT& request) const
+        Model::ListScansOutcomeCallable ListScansCallable(const ListScansRequestT& request = {}) const
         {
             return SubmitCallable(&CodeGuruSecurityClient::ListScans, request);
         }
@@ -315,7 +318,7 @@ namespace CodeGuruSecurity
          * An Async wrapper for ListScans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScansRequestT = Model::ListScansRequest>
-        void ListScansAsync(const ListScansRequestT& request, const ListScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScansAsync(const ListScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScansRequestT& request = {}) const
         {
             return SubmitAsync(&CodeGuruSecurityClient::ListScans, request, handler, context);
         }
@@ -399,8 +402,8 @@ namespace CodeGuruSecurity
         }
 
         /**
-         * <p>Use to update account-level configuration with an encryption
-         * key.</p><p><h3>See Also:</h3>   <a
+         * <p>Use to update the encryption configuration for an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/UpdateAccountConfiguration">AWS
          * API Reference</a></p>
          */
@@ -432,7 +435,6 @@ namespace CodeGuruSecurity
       void init(const CodeGuruSecurityClientConfiguration& clientConfiguration);
 
       CodeGuruSecurityClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeGuruSecurityEndpointProviderBase> m_endpointProvider;
   };
 

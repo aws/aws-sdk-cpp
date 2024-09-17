@@ -25,7 +25,9 @@ namespace Model
     MEDIACONNECT,
     INPUT_DEVICE,
     AWS_CDI,
-    TS_FILE
+    TS_FILE,
+    SRT_CALLER,
+    MULTICAST
   };
 
 namespace InputTypeMapper

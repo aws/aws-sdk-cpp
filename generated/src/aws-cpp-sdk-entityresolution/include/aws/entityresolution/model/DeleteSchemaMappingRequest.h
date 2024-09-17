@@ -32,46 +32,19 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the schema to delete.</p>
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
-
-    /**
-     * <p>The name of the schema to delete.</p>
-     */
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-
-    /**
-     * <p>The name of the schema to delete.</p>
-     */
     inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-
-    /**
-     * <p>The name of the schema to delete.</p>
-     */
     inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-
-    /**
-     * <p>The name of the schema to delete.</p>
-     */
     inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-
-    /**
-     * <p>The name of the schema to delete.</p>
-     */
     inline DeleteSchemaMappingRequest& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-
-    /**
-     * <p>The name of the schema to delete.</p>
-     */
     inline DeleteSchemaMappingRequest& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema to delete.</p>
-     */
     inline DeleteSchemaMappingRequest& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_schemaName;

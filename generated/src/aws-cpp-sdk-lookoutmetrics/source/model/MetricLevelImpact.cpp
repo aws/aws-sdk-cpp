@@ -26,11 +26,8 @@ MetricLevelImpact::MetricLevelImpact() :
 {
 }
 
-MetricLevelImpact::MetricLevelImpact(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_numTimeSeries(0),
-    m_numTimeSeriesHasBeenSet(false),
-    m_contributionMatrixHasBeenSet(false)
+MetricLevelImpact::MetricLevelImpact(JsonView jsonValue)
+  : MetricLevelImpact()
 {
   *this = jsonValue;
 }

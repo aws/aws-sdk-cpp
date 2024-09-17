@@ -26,11 +26,8 @@ AccessConfigResponse::AccessConfigResponse() :
 {
 }
 
-AccessConfigResponse::AccessConfigResponse(JsonView jsonValue) : 
-    m_bootstrapClusterCreatorAdminPermissions(false),
-    m_bootstrapClusterCreatorAdminPermissionsHasBeenSet(false),
-    m_authenticationMode(AuthenticationMode::NOT_SET),
-    m_authenticationModeHasBeenSet(false)
+AccessConfigResponse::AccessConfigResponse(JsonView jsonValue)
+  : AccessConfigResponse()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails::AwsEcsTaskD
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails(JsonView jsonValue) : 
-    m_containerPathHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails()
 {
   *this = jsonValue;
 }

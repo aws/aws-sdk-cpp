@@ -26,11 +26,8 @@ AccountEntityAggregate::AccountEntityAggregate() :
 {
 }
 
-AccountEntityAggregate::AccountEntityAggregate(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_statusesHasBeenSet(false)
+AccountEntityAggregate::AccountEntityAggregate(JsonView jsonValue)
+  : AccountEntityAggregate()
 {
   *this = jsonValue;
 }

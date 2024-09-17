@@ -6,6 +6,9 @@
     #set($hasNoResult = true)
 #end
 #end
+#foreach($RequestImport in $RequestlessOperations)
+\#include <aws/$metadata.projectName/model/${RequestImport}Request.h>
+#end
 #if($hasNoResult)
 \#include <aws/core/NoResult.h>
 #end

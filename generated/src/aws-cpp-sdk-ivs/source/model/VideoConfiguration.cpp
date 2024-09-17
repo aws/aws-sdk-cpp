@@ -19,8 +19,8 @@ namespace Model
 {
 
 VideoConfiguration::VideoConfiguration() : 
-    m_avcLevelHasBeenSet(false),
     m_avcProfileHasBeenSet(false),
+    m_avcLevelHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_encoderHasBeenSet(false),
     m_targetBitrate(0),
@@ -34,37 +34,26 @@ VideoConfiguration::VideoConfiguration() :
 {
 }
 
-VideoConfiguration::VideoConfiguration(JsonView jsonValue) : 
-    m_avcLevelHasBeenSet(false),
-    m_avcProfileHasBeenSet(false),
-    m_codecHasBeenSet(false),
-    m_encoderHasBeenSet(false),
-    m_targetBitrate(0),
-    m_targetBitrateHasBeenSet(false),
-    m_targetFramerate(0),
-    m_targetFramerateHasBeenSet(false),
-    m_videoHeight(0),
-    m_videoHeightHasBeenSet(false),
-    m_videoWidth(0),
-    m_videoWidthHasBeenSet(false)
+VideoConfiguration::VideoConfiguration(JsonView jsonValue)
+  : VideoConfiguration()
 {
   *this = jsonValue;
 }
 
 VideoConfiguration& VideoConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("avcLevel"))
-  {
-    m_avcLevel = jsonValue.GetString("avcLevel");
-
-    m_avcLevelHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("avcProfile"))
   {
     m_avcProfile = jsonValue.GetString("avcProfile");
 
     m_avcProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("avcLevel"))
+  {
+    m_avcLevel = jsonValue.GetString("avcLevel");
+
+    m_avcLevelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codec"))
@@ -116,15 +105,15 @@ JsonValue VideoConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_avcLevelHasBeenSet)
-  {
-   payload.WithString("avcLevel", m_avcLevel);
-
-  }
-
   if(m_avcProfileHasBeenSet)
   {
    payload.WithString("avcProfile", m_avcProfile);
+
+  }
+
+  if(m_avcLevelHasBeenSet)
+  {
+   payload.WithString("avcLevel", m_avcLevel);
 
   }
 

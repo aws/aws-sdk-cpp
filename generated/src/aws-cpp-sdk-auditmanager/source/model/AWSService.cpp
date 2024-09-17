@@ -23,8 +23,8 @@ AWSService::AWSService() :
 {
 }
 
-AWSService::AWSService(JsonView jsonValue) : 
-    m_serviceNameHasBeenSet(false)
+AWSService::AWSService(JsonView jsonValue)
+  : AWSService()
 {
   *this = jsonValue;
 }

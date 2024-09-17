@@ -26,11 +26,8 @@ BatchStatementError::BatchStatementError() :
 {
 }
 
-BatchStatementError::BatchStatementError(JsonView jsonValue) : 
-    m_code(BatchStatementErrorCodeEnum::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_itemHasBeenSet(false)
+BatchStatementError::BatchStatementError(JsonView jsonValue)
+  : BatchStatementError()
 {
   *this = jsonValue;
 }

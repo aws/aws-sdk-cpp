@@ -25,10 +25,8 @@ GetSolVnfcResourceInfoMetadata::GetSolVnfcResourceInfoMetadata() :
 {
 }
 
-GetSolVnfcResourceInfoMetadata::GetSolVnfcResourceInfoMetadata(JsonView jsonValue) : 
-    m_clusterHasBeenSet(false),
-    m_helmChartHasBeenSet(false),
-    m_nodeGroupHasBeenSet(false)
+GetSolVnfcResourceInfoMetadata::GetSolVnfcResourceInfoMetadata(JsonView jsonValue)
+  : GetSolVnfcResourceInfoMetadata()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ FileSystemLimitExceeded::FileSystemLimitExceeded() :
 {
 }
 
-FileSystemLimitExceeded::FileSystemLimitExceeded(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+FileSystemLimitExceeded::FileSystemLimitExceeded(JsonView jsonValue)
+  : FileSystemLimitExceeded()
 {
   *this = jsonValue;
 }

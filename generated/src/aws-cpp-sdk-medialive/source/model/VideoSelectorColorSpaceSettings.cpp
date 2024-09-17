@@ -23,8 +23,8 @@ VideoSelectorColorSpaceSettings::VideoSelectorColorSpaceSettings() :
 {
 }
 
-VideoSelectorColorSpaceSettings::VideoSelectorColorSpaceSettings(JsonView jsonValue) : 
-    m_hdr10SettingsHasBeenSet(false)
+VideoSelectorColorSpaceSettings::VideoSelectorColorSpaceSettings(JsonView jsonValue)
+  : VideoSelectorColorSpaceSettings()
 {
   *this = jsonValue;
 }

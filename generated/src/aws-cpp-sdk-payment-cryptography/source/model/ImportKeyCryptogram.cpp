@@ -19,44 +19,24 @@ namespace Model
 {
 
 ImportKeyCryptogram::ImportKeyCryptogram() : 
+    m_keyAttributesHasBeenSet(false),
     m_exportable(false),
     m_exportableHasBeenSet(false),
-    m_importTokenHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false),
     m_wrappedKeyCryptogramHasBeenSet(false),
+    m_importTokenHasBeenSet(false),
     m_wrappingSpec(WrappingKeySpec::NOT_SET),
     m_wrappingSpecHasBeenSet(false)
 {
 }
 
-ImportKeyCryptogram::ImportKeyCryptogram(JsonView jsonValue) : 
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
-    m_importTokenHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false),
-    m_wrappedKeyCryptogramHasBeenSet(false),
-    m_wrappingSpec(WrappingKeySpec::NOT_SET),
-    m_wrappingSpecHasBeenSet(false)
+ImportKeyCryptogram::ImportKeyCryptogram(JsonView jsonValue)
+  : ImportKeyCryptogram()
 {
   *this = jsonValue;
 }
 
 ImportKeyCryptogram& ImportKeyCryptogram::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Exportable"))
-  {
-    m_exportable = jsonValue.GetBool("Exportable");
-
-    m_exportableHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ImportToken"))
-  {
-    m_importToken = jsonValue.GetString("ImportToken");
-
-    m_importTokenHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("KeyAttributes"))
   {
     m_keyAttributes = jsonValue.GetObject("KeyAttributes");
@@ -64,11 +44,25 @@ ImportKeyCryptogram& ImportKeyCryptogram::operator =(JsonView jsonValue)
     m_keyAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Exportable"))
+  {
+    m_exportable = jsonValue.GetBool("Exportable");
+
+    m_exportableHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("WrappedKeyCryptogram"))
   {
     m_wrappedKeyCryptogram = jsonValue.GetString("WrappedKeyCryptogram");
 
     m_wrappedKeyCryptogramHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImportToken"))
+  {
+    m_importToken = jsonValue.GetString("ImportToken");
+
+    m_importTokenHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("WrappingSpec"))
@@ -85,27 +79,27 @@ JsonValue ImportKeyCryptogram::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_exportableHasBeenSet)
-  {
-   payload.WithBool("Exportable", m_exportable);
-
-  }
-
-  if(m_importTokenHasBeenSet)
-  {
-   payload.WithString("ImportToken", m_importToken);
-
-  }
-
   if(m_keyAttributesHasBeenSet)
   {
    payload.WithObject("KeyAttributes", m_keyAttributes.Jsonize());
 
   }
 
+  if(m_exportableHasBeenSet)
+  {
+   payload.WithBool("Exportable", m_exportable);
+
+  }
+
   if(m_wrappedKeyCryptogramHasBeenSet)
   {
    payload.WithString("WrappedKeyCryptogram", m_wrappedKeyCryptogram);
+
+  }
+
+  if(m_importTokenHasBeenSet)
+  {
+   payload.WithString("ImportToken", m_importToken);
 
   }
 

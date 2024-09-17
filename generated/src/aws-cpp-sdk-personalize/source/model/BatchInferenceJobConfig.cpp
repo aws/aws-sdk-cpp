@@ -23,8 +23,8 @@ BatchInferenceJobConfig::BatchInferenceJobConfig() :
 {
 }
 
-BatchInferenceJobConfig::BatchInferenceJobConfig(JsonView jsonValue) : 
-    m_itemExplorationConfigHasBeenSet(false)
+BatchInferenceJobConfig::BatchInferenceJobConfig(JsonView jsonValue)
+  : BatchInferenceJobConfig()
 {
   *this = jsonValue;
 }

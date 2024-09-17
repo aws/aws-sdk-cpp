@@ -35,20 +35,8 @@ MediaAnalysisJobDescription::MediaAnalysisJobDescription() :
 {
 }
 
-MediaAnalysisJobDescription::MediaAnalysisJobDescription(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_operationsConfigHasBeenSet(false),
-    m_status(MediaAnalysisJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_completionTimestampHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resultsHasBeenSet(false),
-    m_manifestSummaryHasBeenSet(false)
+MediaAnalysisJobDescription::MediaAnalysisJobDescription(JsonView jsonValue)
+  : MediaAnalysisJobDescription()
 {
   *this = jsonValue;
 }

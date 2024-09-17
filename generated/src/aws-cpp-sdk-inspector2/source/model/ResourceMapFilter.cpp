@@ -26,11 +26,8 @@ ResourceMapFilter::ResourceMapFilter() :
 {
 }
 
-ResourceMapFilter::ResourceMapFilter(JsonView jsonValue) : 
-    m_comparison(ResourceMapComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ResourceMapFilter::ResourceMapFilter(JsonView jsonValue)
+  : ResourceMapFilter()
 {
   *this = jsonValue;
 }

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using TransferClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TransferClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using TransferClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TransferBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

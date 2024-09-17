@@ -27,12 +27,8 @@ ExperimentTemplateAction::ExperimentTemplateAction() :
 {
 }
 
-ExperimentTemplateAction::ExperimentTemplateAction(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_startAfterHasBeenSet(false)
+ExperimentTemplateAction::ExperimentTemplateAction(JsonView jsonValue)
+  : ExperimentTemplateAction()
 {
   *this = jsonValue;
 }

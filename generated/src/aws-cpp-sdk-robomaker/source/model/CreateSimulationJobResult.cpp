@@ -26,12 +26,8 @@ CreateSimulationJobResult::CreateSimulationJobResult() :
 {
 }
 
-CreateSimulationJobResult::CreateSimulationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SimulationJobStatus::NOT_SET),
-    m_failureBehavior(FailureBehavior::NOT_SET),
-    m_failureCode(SimulationJobErrorCode::NOT_SET),
-    m_maxJobDurationInSeconds(0),
-    m_simulationTimeMillis(0)
+CreateSimulationJobResult::CreateSimulationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSimulationJobResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ KinesisVideoStreamStartSelector::KinesisVideoStreamStartSelector() :
 {
 }
 
-KinesisVideoStreamStartSelector::KinesisVideoStreamStartSelector(JsonView jsonValue) : 
-    m_producerTimestamp(0),
-    m_producerTimestampHasBeenSet(false),
-    m_fragmentNumberHasBeenSet(false)
+KinesisVideoStreamStartSelector::KinesisVideoStreamStartSelector(JsonView jsonValue)
+  : KinesisVideoStreamStartSelector()
 {
   *this = jsonValue;
 }

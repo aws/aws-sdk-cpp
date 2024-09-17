@@ -56,41 +56,8 @@ Eac3AtmosSettings::Eac3AtmosSettings() :
 {
 }
 
-Eac3AtmosSettings::Eac3AtmosSettings(JsonView jsonValue) : 
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_bitstreamMode(Eac3AtmosBitstreamMode::NOT_SET),
-    m_bitstreamModeHasBeenSet(false),
-    m_codingMode(Eac3AtmosCodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_dialogueIntelligence(Eac3AtmosDialogueIntelligence::NOT_SET),
-    m_dialogueIntelligenceHasBeenSet(false),
-    m_downmixControl(Eac3AtmosDownmixControl::NOT_SET),
-    m_downmixControlHasBeenSet(false),
-    m_dynamicRangeCompressionLine(Eac3AtmosDynamicRangeCompressionLine::NOT_SET),
-    m_dynamicRangeCompressionLineHasBeenSet(false),
-    m_dynamicRangeCompressionRf(Eac3AtmosDynamicRangeCompressionRf::NOT_SET),
-    m_dynamicRangeCompressionRfHasBeenSet(false),
-    m_dynamicRangeControl(Eac3AtmosDynamicRangeControl::NOT_SET),
-    m_dynamicRangeControlHasBeenSet(false),
-    m_loRoCenterMixLevel(0.0),
-    m_loRoCenterMixLevelHasBeenSet(false),
-    m_loRoSurroundMixLevel(0.0),
-    m_loRoSurroundMixLevelHasBeenSet(false),
-    m_ltRtCenterMixLevel(0.0),
-    m_ltRtCenterMixLevelHasBeenSet(false),
-    m_ltRtSurroundMixLevel(0.0),
-    m_ltRtSurroundMixLevelHasBeenSet(false),
-    m_meteringMode(Eac3AtmosMeteringMode::NOT_SET),
-    m_meteringModeHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_speechThreshold(0),
-    m_speechThresholdHasBeenSet(false),
-    m_stereoDownmix(Eac3AtmosStereoDownmix::NOT_SET),
-    m_stereoDownmixHasBeenSet(false),
-    m_surroundExMode(Eac3AtmosSurroundExMode::NOT_SET),
-    m_surroundExModeHasBeenSet(false)
+Eac3AtmosSettings::Eac3AtmosSettings(JsonView jsonValue)
+  : Eac3AtmosSettings()
 {
   *this = jsonValue;
 }

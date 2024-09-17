@@ -29,12 +29,8 @@ IdentityMailFromDomainAttributes::IdentityMailFromDomainAttributes() :
 {
 }
 
-IdentityMailFromDomainAttributes::IdentityMailFromDomainAttributes(const XmlNode& xmlNode) : 
-    m_mailFromDomainHasBeenSet(false),
-    m_mailFromDomainStatus(CustomMailFromStatus::NOT_SET),
-    m_mailFromDomainStatusHasBeenSet(false),
-    m_behaviorOnMXFailure(BehaviorOnMXFailure::NOT_SET),
-    m_behaviorOnMXFailureHasBeenSet(false)
+IdentityMailFromDomainAttributes::IdentityMailFromDomainAttributes(const XmlNode& xmlNode)
+  : IdentityMailFromDomainAttributes()
 {
   *this = xmlNode;
 }

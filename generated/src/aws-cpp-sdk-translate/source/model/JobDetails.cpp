@@ -28,13 +28,8 @@ JobDetails::JobDetails() :
 {
 }
 
-JobDetails::JobDetails(JsonView jsonValue) : 
-    m_translatedDocumentsCount(0),
-    m_translatedDocumentsCountHasBeenSet(false),
-    m_documentsWithErrorsCount(0),
-    m_documentsWithErrorsCountHasBeenSet(false),
-    m_inputDocumentsCount(0),
-    m_inputDocumentsCountHasBeenSet(false)
+JobDetails::JobDetails(JsonView jsonValue)
+  : JobDetails()
 {
   *this = jsonValue;
 }

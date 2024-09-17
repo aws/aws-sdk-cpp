@@ -39,106 +39,43 @@ namespace Model
     AWS_GROUNDSTATION_API ListGroundStationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of ground stations.</p>
      */
     inline const Aws::Vector<GroundStationData>& GetGroundStationList() const{ return m_groundStationList; }
-
-    /**
-     * <p>List of ground stations.</p>
-     */
     inline void SetGroundStationList(const Aws::Vector<GroundStationData>& value) { m_groundStationList = value; }
-
-    /**
-     * <p>List of ground stations.</p>
-     */
     inline void SetGroundStationList(Aws::Vector<GroundStationData>&& value) { m_groundStationList = std::move(value); }
-
-    /**
-     * <p>List of ground stations.</p>
-     */
     inline ListGroundStationsResult& WithGroundStationList(const Aws::Vector<GroundStationData>& value) { SetGroundStationList(value); return *this;}
-
-    /**
-     * <p>List of ground stations.</p>
-     */
     inline ListGroundStationsResult& WithGroundStationList(Aws::Vector<GroundStationData>&& value) { SetGroundStationList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of ground stations.</p>
-     */
     inline ListGroundStationsResult& AddGroundStationList(const GroundStationData& value) { m_groundStationList.push_back(value); return *this; }
-
-    /**
-     * <p>List of ground stations.</p>
-     */
     inline ListGroundStationsResult& AddGroundStationList(GroundStationData&& value) { m_groundStationList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token that can be supplied in the next call to get the next page of
      * ground stations.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline ListGroundStationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline ListGroundStationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline ListGroundStationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListGroundStationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListGroundStationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListGroundStationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<GroundStationData> m_groundStationList;

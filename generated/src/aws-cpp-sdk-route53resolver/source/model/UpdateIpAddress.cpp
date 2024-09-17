@@ -24,9 +24,8 @@ UpdateIpAddress::UpdateIpAddress() :
 {
 }
 
-UpdateIpAddress::UpdateIpAddress(JsonView jsonValue) : 
-    m_ipIdHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+UpdateIpAddress::UpdateIpAddress(JsonView jsonValue)
+  : UpdateIpAddress()
 {
   *this = jsonValue;
 }

@@ -40,131 +40,60 @@ namespace Model
     AWS_COGNITOSYNC_API ListIdentityPoolUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * Usage information for the identity pools.
      */
     inline const Aws::Vector<IdentityPoolUsage>& GetIdentityPoolUsages() const{ return m_identityPoolUsages; }
-
-    /**
-     * Usage information for the identity pools.
-     */
     inline void SetIdentityPoolUsages(const Aws::Vector<IdentityPoolUsage>& value) { m_identityPoolUsages = value; }
-
-    /**
-     * Usage information for the identity pools.
-     */
     inline void SetIdentityPoolUsages(Aws::Vector<IdentityPoolUsage>&& value) { m_identityPoolUsages = std::move(value); }
-
-    /**
-     * Usage information for the identity pools.
-     */
     inline ListIdentityPoolUsageResult& WithIdentityPoolUsages(const Aws::Vector<IdentityPoolUsage>& value) { SetIdentityPoolUsages(value); return *this;}
-
-    /**
-     * Usage information for the identity pools.
-     */
     inline ListIdentityPoolUsageResult& WithIdentityPoolUsages(Aws::Vector<IdentityPoolUsage>&& value) { SetIdentityPoolUsages(std::move(value)); return *this;}
-
-    /**
-     * Usage information for the identity pools.
-     */
     inline ListIdentityPoolUsageResult& AddIdentityPoolUsages(const IdentityPoolUsage& value) { m_identityPoolUsages.push_back(value); return *this; }
-
-    /**
-     * Usage information for the identity pools.
-     */
     inline ListIdentityPoolUsageResult& AddIdentityPoolUsages(IdentityPoolUsage&& value) { m_identityPoolUsages.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * The maximum number of results to be returned.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * The maximum number of results to be returned.
-     */
     inline void SetMaxResults(int value) { m_maxResults = value; }
-
-    /**
-     * The maximum number of results to be returned.
-     */
     inline ListIdentityPoolUsageResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Total number of identities for the identity pool.
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * Total number of identities for the identity pool.
-     */
     inline void SetCount(int value) { m_count = value; }
-
-    /**
-     * Total number of identities for the identity pool.
-     */
     inline ListIdentityPoolUsageResult& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A pagination token for obtaining the next page of results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline ListIdentityPoolUsageResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline ListIdentityPoolUsageResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline ListIdentityPoolUsageResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListIdentityPoolUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListIdentityPoolUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListIdentityPoolUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<IdentityPoolUsage> m_identityPoolUsages;

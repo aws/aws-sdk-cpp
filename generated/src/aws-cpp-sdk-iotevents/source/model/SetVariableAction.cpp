@@ -24,9 +24,8 @@ SetVariableAction::SetVariableAction() :
 {
 }
 
-SetVariableAction::SetVariableAction(JsonView jsonValue) : 
-    m_variableNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SetVariableAction::SetVariableAction(JsonView jsonValue)
+  : SetVariableAction()
 {
   *this = jsonValue;
 }

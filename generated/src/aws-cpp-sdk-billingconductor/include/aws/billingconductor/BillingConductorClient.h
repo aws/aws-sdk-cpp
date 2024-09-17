@@ -500,13 +500,13 @@ namespace BillingConductor
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccountAssociationsOutcome ListAccountAssociations(const Model::ListAccountAssociationsRequest& request) const;
+        virtual Model::ListAccountAssociationsOutcome ListAccountAssociations(const Model::ListAccountAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccountAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccountAssociationsRequestT = Model::ListAccountAssociationsRequest>
-        Model::ListAccountAssociationsOutcomeCallable ListAccountAssociationsCallable(const ListAccountAssociationsRequestT& request) const
+        Model::ListAccountAssociationsOutcomeCallable ListAccountAssociationsCallable(const ListAccountAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&BillingConductorClient::ListAccountAssociations, request);
         }
@@ -515,7 +515,7 @@ namespace BillingConductor
          * An Async wrapper for ListAccountAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccountAssociationsRequestT = Model::ListAccountAssociationsRequest>
-        void ListAccountAssociationsAsync(const ListAccountAssociationsRequestT& request, const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccountAssociationsAsync(const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&BillingConductorClient::ListAccountAssociations, request, handler, context);
         }
@@ -527,13 +527,13 @@ namespace BillingConductor
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBillingGroupCostReportsOutcome ListBillingGroupCostReports(const Model::ListBillingGroupCostReportsRequest& request) const;
+        virtual Model::ListBillingGroupCostReportsOutcome ListBillingGroupCostReports(const Model::ListBillingGroupCostReportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBillingGroupCostReports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBillingGroupCostReportsRequestT = Model::ListBillingGroupCostReportsRequest>
-        Model::ListBillingGroupCostReportsOutcomeCallable ListBillingGroupCostReportsCallable(const ListBillingGroupCostReportsRequestT& request) const
+        Model::ListBillingGroupCostReportsOutcomeCallable ListBillingGroupCostReportsCallable(const ListBillingGroupCostReportsRequestT& request = {}) const
         {
             return SubmitCallable(&BillingConductorClient::ListBillingGroupCostReports, request);
         }
@@ -542,7 +542,7 @@ namespace BillingConductor
          * An Async wrapper for ListBillingGroupCostReports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBillingGroupCostReportsRequestT = Model::ListBillingGroupCostReportsRequest>
-        void ListBillingGroupCostReportsAsync(const ListBillingGroupCostReportsRequestT& request, const ListBillingGroupCostReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBillingGroupCostReportsAsync(const ListBillingGroupCostReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBillingGroupCostReportsRequestT& request = {}) const
         {
             return SubmitAsync(&BillingConductorClient::ListBillingGroupCostReports, request, handler, context);
         }
@@ -554,13 +554,13 @@ namespace BillingConductor
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBillingGroupsOutcome ListBillingGroups(const Model::ListBillingGroupsRequest& request) const;
+        virtual Model::ListBillingGroupsOutcome ListBillingGroups(const Model::ListBillingGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBillingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBillingGroupsRequestT = Model::ListBillingGroupsRequest>
-        Model::ListBillingGroupsOutcomeCallable ListBillingGroupsCallable(const ListBillingGroupsRequestT& request) const
+        Model::ListBillingGroupsOutcomeCallable ListBillingGroupsCallable(const ListBillingGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&BillingConductorClient::ListBillingGroups, request);
         }
@@ -569,7 +569,7 @@ namespace BillingConductor
          * An Async wrapper for ListBillingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBillingGroupsRequestT = Model::ListBillingGroupsRequest>
-        void ListBillingGroupsAsync(const ListBillingGroupsRequestT& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBillingGroupsAsync(const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBillingGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&BillingConductorClient::ListBillingGroups, request, handler, context);
         }
@@ -607,13 +607,13 @@ namespace BillingConductor
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItems">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCustomLineItemsOutcome ListCustomLineItems(const Model::ListCustomLineItemsRequest& request) const;
+        virtual Model::ListCustomLineItemsOutcome ListCustomLineItems(const Model::ListCustomLineItemsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCustomLineItems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCustomLineItemsRequestT = Model::ListCustomLineItemsRequest>
-        Model::ListCustomLineItemsOutcomeCallable ListCustomLineItemsCallable(const ListCustomLineItemsRequestT& request) const
+        Model::ListCustomLineItemsOutcomeCallable ListCustomLineItemsCallable(const ListCustomLineItemsRequestT& request = {}) const
         {
             return SubmitCallable(&BillingConductorClient::ListCustomLineItems, request);
         }
@@ -622,7 +622,7 @@ namespace BillingConductor
          * An Async wrapper for ListCustomLineItems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCustomLineItemsRequestT = Model::ListCustomLineItemsRequest>
-        void ListCustomLineItemsAsync(const ListCustomLineItemsRequestT& request, const ListCustomLineItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCustomLineItemsAsync(const ListCustomLineItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomLineItemsRequestT& request = {}) const
         {
             return SubmitAsync(&BillingConductorClient::ListCustomLineItems, request, handler, context);
         }
@@ -634,13 +634,13 @@ namespace BillingConductor
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPricingPlansOutcome ListPricingPlans(const Model::ListPricingPlansRequest& request) const;
+        virtual Model::ListPricingPlansOutcome ListPricingPlans(const Model::ListPricingPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPricingPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPricingPlansRequestT = Model::ListPricingPlansRequest>
-        Model::ListPricingPlansOutcomeCallable ListPricingPlansCallable(const ListPricingPlansRequestT& request) const
+        Model::ListPricingPlansOutcomeCallable ListPricingPlansCallable(const ListPricingPlansRequestT& request = {}) const
         {
             return SubmitCallable(&BillingConductorClient::ListPricingPlans, request);
         }
@@ -649,7 +649,7 @@ namespace BillingConductor
          * An Async wrapper for ListPricingPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPricingPlansRequestT = Model::ListPricingPlansRequest>
-        void ListPricingPlansAsync(const ListPricingPlansRequestT& request, const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPricingPlansAsync(const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPricingPlansRequestT& request = {}) const
         {
             return SubmitAsync(&BillingConductorClient::ListPricingPlans, request, handler, context);
         }
@@ -686,13 +686,13 @@ namespace BillingConductor
          * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPricingRulesOutcome ListPricingRules(const Model::ListPricingRulesRequest& request) const;
+        virtual Model::ListPricingRulesOutcome ListPricingRules(const Model::ListPricingRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPricingRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPricingRulesRequestT = Model::ListPricingRulesRequest>
-        Model::ListPricingRulesOutcomeCallable ListPricingRulesCallable(const ListPricingRulesRequestT& request) const
+        Model::ListPricingRulesOutcomeCallable ListPricingRulesCallable(const ListPricingRulesRequestT& request = {}) const
         {
             return SubmitCallable(&BillingConductorClient::ListPricingRules, request);
         }
@@ -701,7 +701,7 @@ namespace BillingConductor
          * An Async wrapper for ListPricingRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPricingRulesRequestT = Model::ListPricingRulesRequest>
-        void ListPricingRulesAsync(const ListPricingRulesRequestT& request, const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPricingRulesAsync(const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPricingRulesRequestT& request = {}) const
         {
             return SubmitAsync(&BillingConductorClient::ListPricingRules, request, handler, context);
         }
@@ -944,7 +944,6 @@ namespace BillingConductor
       void init(const BillingConductorClientConfiguration& clientConfiguration);
 
       BillingConductorClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BillingConductorEndpointProviderBase> m_endpointProvider;
   };
 

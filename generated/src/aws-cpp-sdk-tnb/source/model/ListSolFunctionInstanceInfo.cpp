@@ -31,16 +31,8 @@ ListSolFunctionInstanceInfo::ListSolFunctionInstanceInfo() :
 {
 }
 
-ListSolFunctionInstanceInfo::ListSolFunctionInstanceInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_instantiatedVnfInfoHasBeenSet(false),
-    m_instantiationState(VnfInstantiationState::NOT_SET),
-    m_instantiationStateHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nsInstanceIdHasBeenSet(false),
-    m_vnfPkgIdHasBeenSet(false),
-    m_vnfPkgNameHasBeenSet(false)
+ListSolFunctionInstanceInfo::ListSolFunctionInstanceInfo(JsonView jsonValue)
+  : ListSolFunctionInstanceInfo()
 {
   *this = jsonValue;
 }

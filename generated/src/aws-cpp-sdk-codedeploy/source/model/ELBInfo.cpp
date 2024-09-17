@@ -23,8 +23,8 @@ ELBInfo::ELBInfo() :
 {
 }
 
-ELBInfo::ELBInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+ELBInfo::ELBInfo(JsonView jsonValue)
+  : ELBInfo()
 {
   *this = jsonValue;
 }

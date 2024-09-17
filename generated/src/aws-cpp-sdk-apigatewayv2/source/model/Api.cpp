@@ -42,27 +42,8 @@ Api::Api() :
 {
 }
 
-Api::Api(JsonView jsonValue) : 
-    m_apiEndpointHasBeenSet(false),
-    m_apiGatewayManaged(false),
-    m_apiGatewayManagedHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_apiKeySelectionExpressionHasBeenSet(false),
-    m_corsConfigurationHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_disableSchemaValidation(false),
-    m_disableSchemaValidationHasBeenSet(false),
-    m_disableExecuteApiEndpoint(false),
-    m_disableExecuteApiEndpointHasBeenSet(false),
-    m_importInfoHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_protocolType(ProtocolType::NOT_SET),
-    m_protocolTypeHasBeenSet(false),
-    m_routeSelectionExpressionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+Api::Api(JsonView jsonValue)
+  : Api()
 {
   *this = jsonValue;
 }

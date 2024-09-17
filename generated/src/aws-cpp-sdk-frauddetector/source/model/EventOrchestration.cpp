@@ -24,9 +24,8 @@ EventOrchestration::EventOrchestration() :
 {
 }
 
-EventOrchestration::EventOrchestration(JsonView jsonValue) : 
-    m_eventBridgeEnabled(false),
-    m_eventBridgeEnabledHasBeenSet(false)
+EventOrchestration::EventOrchestration(JsonView jsonValue)
+  : EventOrchestration()
 {
   *this = jsonValue;
 }

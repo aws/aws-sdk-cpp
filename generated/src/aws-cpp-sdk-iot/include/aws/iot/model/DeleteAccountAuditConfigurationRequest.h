@@ -36,26 +36,15 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>If true, all scheduled audits are deleted.</p>
      */
     inline bool GetDeleteScheduledAudits() const{ return m_deleteScheduledAudits; }
-
-    /**
-     * <p>If true, all scheduled audits are deleted.</p>
-     */
     inline bool DeleteScheduledAuditsHasBeenSet() const { return m_deleteScheduledAuditsHasBeenSet; }
-
-    /**
-     * <p>If true, all scheduled audits are deleted.</p>
-     */
     inline void SetDeleteScheduledAudits(bool value) { m_deleteScheduledAuditsHasBeenSet = true; m_deleteScheduledAudits = value; }
-
-    /**
-     * <p>If true, all scheduled audits are deleted.</p>
-     */
     inline DeleteAccountAuditConfigurationRequest& WithDeleteScheduledAudits(bool value) { SetDeleteScheduledAudits(value); return *this;}
-
+    ///@}
   private:
 
     bool m_deleteScheduledAudits;

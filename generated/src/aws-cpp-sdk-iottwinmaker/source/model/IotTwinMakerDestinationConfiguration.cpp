@@ -23,8 +23,8 @@ IotTwinMakerDestinationConfiguration::IotTwinMakerDestinationConfiguration() :
 {
 }
 
-IotTwinMakerDestinationConfiguration::IotTwinMakerDestinationConfiguration(JsonView jsonValue) : 
-    m_workspaceHasBeenSet(false)
+IotTwinMakerDestinationConfiguration::IotTwinMakerDestinationConfiguration(JsonView jsonValue)
+  : IotTwinMakerDestinationConfiguration()
 {
   *this = jsonValue;
 }

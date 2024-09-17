@@ -25,10 +25,8 @@ ScheduleAction::ScheduleAction() :
 {
 }
 
-ScheduleAction::ScheduleAction(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_scheduleActionSettingsHasBeenSet(false),
-    m_scheduleActionStartSettingsHasBeenSet(false)
+ScheduleAction::ScheduleAction(JsonView jsonValue)
+  : ScheduleAction()
 {
   *this = jsonValue;
 }

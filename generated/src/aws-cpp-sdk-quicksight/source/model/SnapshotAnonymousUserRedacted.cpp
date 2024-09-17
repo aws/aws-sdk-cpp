@@ -23,8 +23,8 @@ SnapshotAnonymousUserRedacted::SnapshotAnonymousUserRedacted() :
 {
 }
 
-SnapshotAnonymousUserRedacted::SnapshotAnonymousUserRedacted(JsonView jsonValue) : 
-    m_rowLevelPermissionTagKeysHasBeenSet(false)
+SnapshotAnonymousUserRedacted::SnapshotAnonymousUserRedacted(JsonView jsonValue)
+  : SnapshotAnonymousUserRedacted()
 {
   *this = jsonValue;
 }

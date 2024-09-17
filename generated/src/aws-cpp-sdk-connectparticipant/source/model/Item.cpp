@@ -36,21 +36,8 @@ Item::Item() :
 {
 }
 
-Item::Item(JsonView jsonValue) : 
-    m_absoluteTimeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(ChatItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_messageMetadataHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false)
+Item::Item(JsonView jsonValue)
+  : Item()
 {
   *this = jsonValue;
 }

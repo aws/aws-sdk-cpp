@@ -35,20 +35,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_setVariableHasBeenSet(false),
-    m_snsHasBeenSet(false),
-    m_iotTopicPublishHasBeenSet(false),
-    m_setTimerHasBeenSet(false),
-    m_clearTimerHasBeenSet(false),
-    m_resetTimerHasBeenSet(false),
-    m_lambdaHasBeenSet(false),
-    m_iotEventsHasBeenSet(false),
-    m_sqsHasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_dynamoDBHasBeenSet(false),
-    m_dynamoDBv2HasBeenSet(false),
-    m_iotSiteWiseHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

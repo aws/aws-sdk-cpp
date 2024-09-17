@@ -29,14 +29,8 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_featureHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_variationHasBeenSet(false)
+EvaluationResult::EvaluationResult(JsonView jsonValue)
+  : EvaluationResult()
 {
   *this = jsonValue;
 }

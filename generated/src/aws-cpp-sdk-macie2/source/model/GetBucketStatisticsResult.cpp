@@ -27,13 +27,8 @@ GetBucketStatisticsResult::GetBucketStatisticsResult() :
 {
 }
 
-GetBucketStatisticsResult::GetBucketStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_bucketCount(0),
-    m_classifiableObjectCount(0),
-    m_classifiableSizeInBytes(0),
-    m_objectCount(0),
-    m_sizeInBytes(0),
-    m_sizeInBytesCompressed(0)
+GetBucketStatisticsResult::GetBucketStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetBucketStatisticsResult()
 {
   *this = result;
 }

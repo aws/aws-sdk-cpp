@@ -29,14 +29,8 @@ EcsTaskOverride::EcsTaskOverride() :
 {
 }
 
-EcsTaskOverride::EcsTaskOverride(JsonView jsonValue) : 
-    m_containerOverridesHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_inferenceAcceleratorOverridesHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false)
+EcsTaskOverride::EcsTaskOverride(JsonView jsonValue)
+  : EcsTaskOverride()
 {
   *this = jsonValue;
 }

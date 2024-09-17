@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The fill styles (solid, transparent) of the box plot.</p>
      */
     inline const BoxPlotFillStyle& GetFillStyle() const{ return m_fillStyle; }
-
-    /**
-     * <p>The fill styles (solid, transparent) of the box plot.</p>
-     */
     inline bool FillStyleHasBeenSet() const { return m_fillStyleHasBeenSet; }
-
-    /**
-     * <p>The fill styles (solid, transparent) of the box plot.</p>
-     */
     inline void SetFillStyle(const BoxPlotFillStyle& value) { m_fillStyleHasBeenSet = true; m_fillStyle = value; }
-
-    /**
-     * <p>The fill styles (solid, transparent) of the box plot.</p>
-     */
     inline void SetFillStyle(BoxPlotFillStyle&& value) { m_fillStyleHasBeenSet = true; m_fillStyle = std::move(value); }
-
-    /**
-     * <p>The fill styles (solid, transparent) of the box plot.</p>
-     */
     inline BoxPlotStyleOptions& WithFillStyle(const BoxPlotFillStyle& value) { SetFillStyle(value); return *this;}
-
-    /**
-     * <p>The fill styles (solid, transparent) of the box plot.</p>
-     */
     inline BoxPlotStyleOptions& WithFillStyle(BoxPlotFillStyle&& value) { SetFillStyle(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BoxPlotFillStyle m_fillStyle;

@@ -16,14 +16,20 @@ namespace Aws
 namespace AppIntegrationsService
 {
   /**
-   * <p>The Amazon AppIntegrations service enables you to configure and reuse
-   * connections to external applications.</p> <p>For information about how you can
-   * use external applications with Amazon Connect, see <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/crm.html">Set up
-   * pre-built integrations</a> and <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-wisdom.html">Deliver
-   * information to agents using Amazon Connect Wisdom</a> in the <i>Amazon Connect
-   * Administrator Guide</i>.</p>
+   * <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_AppIntegrations_Service.html">Amazon
+   * AppIntegrations actions</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_AppIntegrations_Service.html">Amazon
+   * AppIntegrations data types</a> </p> </li> </ul> <p>The Amazon AppIntegrations
+   * service enables you to configure and reuse connections to external
+   * applications.</p> <p>For information about how you can use external applications
+   * with Amazon Connect, see the following topics in the <i>Amazon Connect
+   * Administrator Guide</i>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/3p-apps.html">Third-party
+   * applications (3p apps) in the agent workspace</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-q-connect.html">Use
+   * Amazon Q in Connect for generative AI–powered agent assistance in real-time</a>
+   * </p> </li> </ul>
    */
   class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>
   {
@@ -84,8 +90,7 @@ namespace AppIntegrationsService
         virtual ~AppIntegrationsServiceClient();
 
         /**
-         * <p>This API is in preview release and subject to change.</p> <p>Creates and
-         * persists an Application resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates and persists an Application resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -136,6 +141,32 @@ namespace AppIntegrationsService
         void CreateDataIntegrationAsync(const CreateDataIntegrationRequestT& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppIntegrationsServiceClient::CreateDataIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Creates and persists a DataIntegrationAssociation resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegrationAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataIntegrationAssociationOutcome CreateDataIntegrationAssociation(const Model::CreateDataIntegrationAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataIntegrationAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataIntegrationAssociationRequestT = Model::CreateDataIntegrationAssociationRequest>
+        Model::CreateDataIntegrationAssociationOutcomeCallable CreateDataIntegrationAssociationCallable(const CreateDataIntegrationAssociationRequestT& request) const
+        {
+            return SubmitCallable(&AppIntegrationsServiceClient::CreateDataIntegrationAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataIntegrationAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataIntegrationAssociationRequestT = Model::CreateDataIntegrationAssociationRequest>
+        void CreateDataIntegrationAssociationAsync(const CreateDataIntegrationAssociationRequestT& request, const CreateDataIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppIntegrationsServiceClient::CreateDataIntegrationAssociation, request, handler, context);
         }
 
         /**
@@ -252,8 +283,7 @@ namespace AppIntegrationsService
         }
 
         /**
-         * <p>This API is in preview release and subject to change.</p> <p>Get an
-         * Application resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Get an Application resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetApplication">AWS
          * API Reference</a></p>
          */
@@ -360,18 +390,17 @@ namespace AppIntegrationsService
         }
 
         /**
-         * <p>This API is in preview release and subject to change.</p> <p>Lists
-         * applications in the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists applications in the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppIntegrationsServiceClient::ListApplications, request);
         }
@@ -380,7 +409,7 @@ namespace AppIntegrationsService
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppIntegrationsServiceClient::ListApplications, request, handler, context);
         }
@@ -425,13 +454,13 @@ namespace AppIntegrationsService
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataIntegrationsOutcome ListDataIntegrations(const Model::ListDataIntegrationsRequest& request) const;
+        virtual Model::ListDataIntegrationsOutcome ListDataIntegrations(const Model::ListDataIntegrationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataIntegrationsRequestT = Model::ListDataIntegrationsRequest>
-        Model::ListDataIntegrationsOutcomeCallable ListDataIntegrationsCallable(const ListDataIntegrationsRequestT& request) const
+        Model::ListDataIntegrationsOutcomeCallable ListDataIntegrationsCallable(const ListDataIntegrationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppIntegrationsServiceClient::ListDataIntegrations, request);
         }
@@ -440,7 +469,7 @@ namespace AppIntegrationsService
          * An Async wrapper for ListDataIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataIntegrationsRequestT = Model::ListDataIntegrationsRequest>
-        void ListDataIntegrationsAsync(const ListDataIntegrationsRequestT& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataIntegrationsAsync(const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataIntegrationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppIntegrationsServiceClient::ListDataIntegrations, request, handler, context);
         }
@@ -477,13 +506,13 @@ namespace AppIntegrationsService
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventIntegrationsOutcome ListEventIntegrations(const Model::ListEventIntegrationsRequest& request) const;
+        virtual Model::ListEventIntegrationsOutcome ListEventIntegrations(const Model::ListEventIntegrationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventIntegrationsRequestT = Model::ListEventIntegrationsRequest>
-        Model::ListEventIntegrationsOutcomeCallable ListEventIntegrationsCallable(const ListEventIntegrationsRequestT& request) const
+        Model::ListEventIntegrationsOutcomeCallable ListEventIntegrationsCallable(const ListEventIntegrationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppIntegrationsServiceClient::ListEventIntegrations, request);
         }
@@ -492,7 +521,7 @@ namespace AppIntegrationsService
          * An Async wrapper for ListEventIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventIntegrationsRequestT = Model::ListEventIntegrationsRequest>
-        void ListEventIntegrationsAsync(const ListEventIntegrationsRequestT& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventIntegrationsAsync(const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventIntegrationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppIntegrationsServiceClient::ListEventIntegrations, request, handler, context);
         }
@@ -575,8 +604,7 @@ namespace AppIntegrationsService
         }
 
         /**
-         * <p>This API is in preview release and subject to change.</p> <p>Updates and
-         * persists an Application resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates and persists an Application resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateApplication">AWS
          * API Reference</a></p>
          */
@@ -631,6 +659,33 @@ namespace AppIntegrationsService
         }
 
         /**
+         * <p>Updates and persists a DataIntegrationAssociation resource.</p>  <p>
+         * Updating a DataIntegrationAssociation with ExecutionConfiguration will rerun the
+         * on-demand job. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegrationAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDataIntegrationAssociationOutcome UpdateDataIntegrationAssociation(const Model::UpdateDataIntegrationAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataIntegrationAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDataIntegrationAssociationRequestT = Model::UpdateDataIntegrationAssociationRequest>
+        Model::UpdateDataIntegrationAssociationOutcomeCallable UpdateDataIntegrationAssociationCallable(const UpdateDataIntegrationAssociationRequestT& request) const
+        {
+            return SubmitCallable(&AppIntegrationsServiceClient::UpdateDataIntegrationAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataIntegrationAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDataIntegrationAssociationRequestT = Model::UpdateDataIntegrationAssociationRequest>
+        void UpdateDataIntegrationAssociationAsync(const UpdateDataIntegrationAssociationRequestT& request, const UpdateDataIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppIntegrationsServiceClient::UpdateDataIntegrationAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Updates the description of an event integration.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateEventIntegration">AWS
@@ -664,7 +719,6 @@ namespace AppIntegrationsService
       void init(const AppIntegrationsServiceClientConfiguration& clientConfiguration);
 
       AppIntegrationsServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> m_endpointProvider;
   };
 

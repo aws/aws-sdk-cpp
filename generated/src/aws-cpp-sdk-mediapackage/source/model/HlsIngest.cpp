@@ -23,8 +23,8 @@ HlsIngest::HlsIngest() :
 {
 }
 
-HlsIngest::HlsIngest(JsonView jsonValue) : 
-    m_ingestEndpointsHasBeenSet(false)
+HlsIngest::HlsIngest(JsonView jsonValue)
+  : HlsIngest()
 {
   *this = jsonValue;
 }

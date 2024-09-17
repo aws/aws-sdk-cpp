@@ -25,10 +25,8 @@ ResourceLimitExceededException::ResourceLimitExceededException() :
 {
 }
 
-ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue) : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue)
+  : ResourceLimitExceededException()
 {
   *this = jsonValue;
 }

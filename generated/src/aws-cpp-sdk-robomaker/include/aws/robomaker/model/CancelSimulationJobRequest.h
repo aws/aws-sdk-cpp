@@ -32,46 +32,19 @@ namespace Model
     AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The simulation job ARN to cancel.</p>
      */
     inline const Aws::String& GetJob() const{ return m_job; }
-
-    /**
-     * <p>The simulation job ARN to cancel.</p>
-     */
     inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
-
-    /**
-     * <p>The simulation job ARN to cancel.</p>
-     */
     inline void SetJob(const Aws::String& value) { m_jobHasBeenSet = true; m_job = value; }
-
-    /**
-     * <p>The simulation job ARN to cancel.</p>
-     */
     inline void SetJob(Aws::String&& value) { m_jobHasBeenSet = true; m_job = std::move(value); }
-
-    /**
-     * <p>The simulation job ARN to cancel.</p>
-     */
     inline void SetJob(const char* value) { m_jobHasBeenSet = true; m_job.assign(value); }
-
-    /**
-     * <p>The simulation job ARN to cancel.</p>
-     */
     inline CancelSimulationJobRequest& WithJob(const Aws::String& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>The simulation job ARN to cancel.</p>
-     */
     inline CancelSimulationJobRequest& WithJob(Aws::String&& value) { SetJob(std::move(value)); return *this;}
-
-    /**
-     * <p>The simulation job ARN to cancel.</p>
-     */
     inline CancelSimulationJobRequest& WithJob(const char* value) { SetJob(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_job;

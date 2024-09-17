@@ -26,11 +26,8 @@ LedgerEncryptionDescription::LedgerEncryptionDescription() :
 {
 }
 
-LedgerEncryptionDescription::LedgerEncryptionDescription(JsonView jsonValue) : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_encryptionStatus(EncryptionStatus::NOT_SET),
-    m_encryptionStatusHasBeenSet(false),
-    m_inaccessibleKmsKeyDateTimeHasBeenSet(false)
+LedgerEncryptionDescription::LedgerEncryptionDescription(JsonView jsonValue)
+  : LedgerEncryptionDescription()
 {
   *this = jsonValue;
 }

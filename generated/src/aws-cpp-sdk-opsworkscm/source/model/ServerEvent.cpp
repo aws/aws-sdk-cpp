@@ -26,11 +26,8 @@ ServerEvent::ServerEvent() :
 {
 }
 
-ServerEvent::ServerEvent(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_logUrlHasBeenSet(false)
+ServerEvent::ServerEvent(JsonView jsonValue)
+  : ServerEvent()
 {
   *this = jsonValue;
 }

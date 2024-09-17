@@ -32,87 +32,33 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the feature to delete.</p>
      */
     inline const Aws::String& GetFeature() const{ return m_feature; }
-
-    /**
-     * <p>The name of the feature to delete.</p>
-     */
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-
-    /**
-     * <p>The name of the feature to delete.</p>
-     */
     inline void SetFeature(const Aws::String& value) { m_featureHasBeenSet = true; m_feature = value; }
-
-    /**
-     * <p>The name of the feature to delete.</p>
-     */
     inline void SetFeature(Aws::String&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-
-    /**
-     * <p>The name of the feature to delete.</p>
-     */
     inline void SetFeature(const char* value) { m_featureHasBeenSet = true; m_feature.assign(value); }
-
-    /**
-     * <p>The name of the feature to delete.</p>
-     */
     inline DeleteFeatureRequest& WithFeature(const Aws::String& value) { SetFeature(value); return *this;}
-
-    /**
-     * <p>The name of the feature to delete.</p>
-     */
     inline DeleteFeatureRequest& WithFeature(Aws::String&& value) { SetFeature(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the feature to delete.</p>
-     */
     inline DeleteFeatureRequest& WithFeature(const char* value) { SetFeature(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name or ARN of the project that contains the feature to delete.</p>
      */
     inline const Aws::String& GetProject() const{ return m_project; }
-
-    /**
-     * <p>The name or ARN of the project that contains the feature to delete.</p>
-     */
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-
-    /**
-     * <p>The name or ARN of the project that contains the feature to delete.</p>
-     */
     inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-
-    /**
-     * <p>The name or ARN of the project that contains the feature to delete.</p>
-     */
     inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-
-    /**
-     * <p>The name or ARN of the project that contains the feature to delete.</p>
-     */
     inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-
-    /**
-     * <p>The name or ARN of the project that contains the feature to delete.</p>
-     */
     inline DeleteFeatureRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-
-    /**
-     * <p>The name or ARN of the project that contains the feature to delete.</p>
-     */
     inline DeleteFeatureRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or ARN of the project that contains the feature to delete.</p>
-     */
     inline DeleteFeatureRequest& WithProject(const char* value) { SetProject(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_feature;

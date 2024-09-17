@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSYNC_API UpdateTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated <code>Type</code> object.</p>
      */
     inline const Type& GetType() const{ return m_type; }
-
-    /**
-     * <p>The updated <code>Type</code> object.</p>
-     */
     inline void SetType(const Type& value) { m_type = value; }
-
-    /**
-     * <p>The updated <code>Type</code> object.</p>
-     */
     inline void SetType(Type&& value) { m_type = std::move(value); }
-
-    /**
-     * <p>The updated <code>Type</code> object.</p>
-     */
     inline UpdateTypeResult& WithType(const Type& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The updated <code>Type</code> object.</p>
-     */
     inline UpdateTypeResult& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Type m_type;

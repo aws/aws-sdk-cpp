@@ -40,136 +40,48 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Duration of the free trial period (5–31 days). </p>
      */
     inline const Aws::String& GetDuration() const{ return m_duration; }
-
-    /**
-     * <p>Duration of the free trial period (5–31 days). </p>
-     */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-
-    /**
-     * <p>Duration of the free trial period (5–31 days). </p>
-     */
     inline void SetDuration(const Aws::String& value) { m_durationHasBeenSet = true; m_duration = value; }
-
-    /**
-     * <p>Duration of the free trial period (5–31 days). </p>
-     */
     inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
-
-    /**
-     * <p>Duration of the free trial period (5–31 days). </p>
-     */
     inline void SetDuration(const char* value) { m_durationHasBeenSet = true; m_duration.assign(value); }
-
-    /**
-     * <p>Duration of the free trial period (5–31 days). </p>
-     */
     inline FreeTrialPricingTerm& WithDuration(const Aws::String& value) { SetDuration(value); return *this;}
-
-    /**
-     * <p>Duration of the free trial period (5–31 days). </p>
-     */
     inline FreeTrialPricingTerm& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
-
-    /**
-     * <p>Duration of the free trial period (5–31 days). </p>
-     */
     inline FreeTrialPricingTerm& WithDuration(const char* value) { SetDuration(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
      * execution.</p>
      */
     inline const Aws::Vector<GrantItem>& GetGrants() const{ return m_grants; }
-
-    /**
-     * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
-     * execution.</p>
-     */
     inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }
-
-    /**
-     * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
-     * execution.</p>
-     */
     inline void SetGrants(const Aws::Vector<GrantItem>& value) { m_grantsHasBeenSet = true; m_grants = value; }
-
-    /**
-     * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
-     * execution.</p>
-     */
     inline void SetGrants(Aws::Vector<GrantItem>&& value) { m_grantsHasBeenSet = true; m_grants = std::move(value); }
-
-    /**
-     * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
-     * execution.</p>
-     */
     inline FreeTrialPricingTerm& WithGrants(const Aws::Vector<GrantItem>& value) { SetGrants(value); return *this;}
-
-    /**
-     * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
-     * execution.</p>
-     */
     inline FreeTrialPricingTerm& WithGrants(Aws::Vector<GrantItem>&& value) { SetGrants(std::move(value)); return *this;}
-
-    /**
-     * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
-     * execution.</p>
-     */
     inline FreeTrialPricingTerm& AddGrants(const GrantItem& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
-
-    /**
-     * <p>Entitlements granted to the acceptor of a free trial as part of an agreement
-     * execution.</p>
-     */
     inline FreeTrialPricingTerm& AddGrants(GrantItem&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Category of the term.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline FreeTrialPricingTerm& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline FreeTrialPricingTerm& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline FreeTrialPricingTerm& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_duration;

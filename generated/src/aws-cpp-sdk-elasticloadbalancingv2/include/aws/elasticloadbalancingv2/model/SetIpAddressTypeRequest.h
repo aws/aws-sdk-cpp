@@ -37,95 +37,45 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerArn() const{ return m_loadBalancerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(Aws::String&& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(const char* value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline SetIpAddressTypeRequest& WithLoadBalancerArn(const Aws::String& value) { SetLoadBalancerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline SetIpAddressTypeRequest& WithLoadBalancerArn(Aws::String&& value) { SetLoadBalancerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline SetIpAddressTypeRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
-     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener.</p>
+     * <p>Note: Internal load balancers must use the <code>ipv4</code> IP address
+     * type.</p> <p>[Application Load Balancers] The IP address type. The possible
+     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
+     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+     * <p>Note: Application Load Balancer authentication only supports IPv4 addresses
+     * when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint.
+     * Without a public IPv4 address the load balancer cannot complete the
+     * authentication process, resulting in HTTP 500 errors.</p> <p>[Network Load
+     * Balancers] The IP address type. The possible values are <code>ipv4</code> (for
+     * only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * You can’t specify <code>dualstack</code> for a load balancer with a UDP or
+     * TCP_UDP listener.</p> <p>[Gateway Load Balancers] The IP address type. The
+     * possible values are <code>ipv4</code> (for only IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
-
-    /**
-     * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
-     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener.</p>
-     */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-
-    /**
-     * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
-     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener.</p>
-     */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-
-    /**
-     * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
-     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener.</p>
-     */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-
-    /**
-     * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
-     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener.</p>
-     */
     inline SetIpAddressTypeRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
-
-    /**
-     * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
-     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener.</p>
-     */
     inline SetIpAddressTypeRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerArn;

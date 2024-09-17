@@ -37,59 +37,34 @@ namespace Model
     AWS_WELLARCHITECTED_API CreateMilestoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-
-    
     inline CreateMilestoneResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline CreateMilestoneResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline CreateMilestoneResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
-
-    
     inline void SetMilestoneNumber(int value) { m_milestoneNumber = value; }
-
-    
     inline CreateMilestoneResult& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMilestoneResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMilestoneResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMilestoneResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

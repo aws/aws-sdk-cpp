@@ -38,79 +38,31 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides the condition that must be met in order to apply the routing
      * rule.</p>
      */
     inline const AwsS3BucketWebsiteConfigurationRoutingRuleCondition& GetCondition() const{ return m_condition; }
-
-    /**
-     * <p>Provides the condition that must be met in order to apply the routing
-     * rule.</p>
-     */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-
-    /**
-     * <p>Provides the condition that must be met in order to apply the routing
-     * rule.</p>
-     */
     inline void SetCondition(const AwsS3BucketWebsiteConfigurationRoutingRuleCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-
-    /**
-     * <p>Provides the condition that must be met in order to apply the routing
-     * rule.</p>
-     */
     inline void SetCondition(AwsS3BucketWebsiteConfigurationRoutingRuleCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-
-    /**
-     * <p>Provides the condition that must be met in order to apply the routing
-     * rule.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRoutingRule& WithCondition(const AwsS3BucketWebsiteConfigurationRoutingRuleCondition& value) { SetCondition(value); return *this;}
-
-    /**
-     * <p>Provides the condition that must be met in order to apply the routing
-     * rule.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRoutingRule& WithCondition(AwsS3BucketWebsiteConfigurationRoutingRuleCondition&& value) { SetCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides the rules to redirect the request if the condition in
      * <code>Condition</code> is met.</p>
      */
     inline const AwsS3BucketWebsiteConfigurationRoutingRuleRedirect& GetRedirect() const{ return m_redirect; }
-
-    /**
-     * <p>Provides the rules to redirect the request if the condition in
-     * <code>Condition</code> is met.</p>
-     */
     inline bool RedirectHasBeenSet() const { return m_redirectHasBeenSet; }
-
-    /**
-     * <p>Provides the rules to redirect the request if the condition in
-     * <code>Condition</code> is met.</p>
-     */
     inline void SetRedirect(const AwsS3BucketWebsiteConfigurationRoutingRuleRedirect& value) { m_redirectHasBeenSet = true; m_redirect = value; }
-
-    /**
-     * <p>Provides the rules to redirect the request if the condition in
-     * <code>Condition</code> is met.</p>
-     */
     inline void SetRedirect(AwsS3BucketWebsiteConfigurationRoutingRuleRedirect&& value) { m_redirectHasBeenSet = true; m_redirect = std::move(value); }
-
-    /**
-     * <p>Provides the rules to redirect the request if the condition in
-     * <code>Condition</code> is met.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRoutingRule& WithRedirect(const AwsS3BucketWebsiteConfigurationRoutingRuleRedirect& value) { SetRedirect(value); return *this;}
-
-    /**
-     * <p>Provides the rules to redirect the request if the condition in
-     * <code>Condition</code> is met.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRoutingRule& WithRedirect(AwsS3BucketWebsiteConfigurationRoutingRuleRedirect&& value) { SetRedirect(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsS3BucketWebsiteConfigurationRoutingRuleCondition m_condition;

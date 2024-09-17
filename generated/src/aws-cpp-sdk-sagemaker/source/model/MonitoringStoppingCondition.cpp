@@ -24,9 +24,8 @@ MonitoringStoppingCondition::MonitoringStoppingCondition() :
 {
 }
 
-MonitoringStoppingCondition::MonitoringStoppingCondition(JsonView jsonValue) : 
-    m_maxRuntimeInSeconds(0),
-    m_maxRuntimeInSecondsHasBeenSet(false)
+MonitoringStoppingCondition::MonitoringStoppingCondition(JsonView jsonValue)
+  : MonitoringStoppingCondition()
 {
   *this = jsonValue;
 }

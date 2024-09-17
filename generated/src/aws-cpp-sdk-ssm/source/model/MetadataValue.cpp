@@ -23,8 +23,8 @@ MetadataValue::MetadataValue() :
 {
 }
 
-MetadataValue::MetadataValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+MetadataValue::MetadataValue(JsonView jsonValue)
+  : MetadataValue()
 {
   *this = jsonValue;
 }

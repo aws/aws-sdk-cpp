@@ -47,32 +47,8 @@ FileSystem::FileSystem() :
 {
 }
 
-FileSystem::FileSystem(JsonView jsonValue) : 
-    m_ownerIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_fileSystemType(FileSystemType::NOT_SET),
-    m_fileSystemTypeHasBeenSet(false),
-    m_lifecycle(FileSystemLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
+FileSystem::FileSystem(JsonView jsonValue)
+  : FileSystem()
 {
   *this = jsonValue;
 }

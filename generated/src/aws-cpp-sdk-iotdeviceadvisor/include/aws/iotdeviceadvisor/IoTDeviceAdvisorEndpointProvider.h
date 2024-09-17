@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTDeviceAdvisorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTDeviceAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTDeviceAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTDeviceAdvisorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

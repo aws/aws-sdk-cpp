@@ -23,8 +23,8 @@ JourneyPushMessage::JourneyPushMessage() :
 {
 }
 
-JourneyPushMessage::JourneyPushMessage(JsonView jsonValue) : 
-    m_timeToLiveHasBeenSet(false)
+JourneyPushMessage::JourneyPushMessage(JsonView jsonValue)
+  : JourneyPushMessage()
 {
   *this = jsonValue;
 }

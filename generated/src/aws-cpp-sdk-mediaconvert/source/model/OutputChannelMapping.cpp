@@ -24,9 +24,8 @@ OutputChannelMapping::OutputChannelMapping() :
 {
 }
 
-OutputChannelMapping::OutputChannelMapping(JsonView jsonValue) : 
-    m_inputChannelsHasBeenSet(false),
-    m_inputChannelsFineTuneHasBeenSet(false)
+OutputChannelMapping::OutputChannelMapping(JsonView jsonValue)
+  : OutputChannelMapping()
 {
   *this = jsonValue;
 }

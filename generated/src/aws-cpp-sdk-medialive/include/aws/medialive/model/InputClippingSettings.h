@@ -40,98 +40,41 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The source of the timecodes in the source being clipped.
      */
     inline const InputTimecodeSource& GetInputTimecodeSource() const{ return m_inputTimecodeSource; }
-
-    /**
-     * The source of the timecodes in the source being clipped.
-     */
     inline bool InputTimecodeSourceHasBeenSet() const { return m_inputTimecodeSourceHasBeenSet; }
-
-    /**
-     * The source of the timecodes in the source being clipped.
-     */
     inline void SetInputTimecodeSource(const InputTimecodeSource& value) { m_inputTimecodeSourceHasBeenSet = true; m_inputTimecodeSource = value; }
-
-    /**
-     * The source of the timecodes in the source being clipped.
-     */
     inline void SetInputTimecodeSource(InputTimecodeSource&& value) { m_inputTimecodeSourceHasBeenSet = true; m_inputTimecodeSource = std::move(value); }
-
-    /**
-     * The source of the timecodes in the source being clipped.
-     */
     inline InputClippingSettings& WithInputTimecodeSource(const InputTimecodeSource& value) { SetInputTimecodeSource(value); return *this;}
-
-    /**
-     * The source of the timecodes in the source being clipped.
-     */
     inline InputClippingSettings& WithInputTimecodeSource(InputTimecodeSource&& value) { SetInputTimecodeSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Settings to identify the start of the clip.
      */
     inline const StartTimecode& GetStartTimecode() const{ return m_startTimecode; }
-
-    /**
-     * Settings to identify the start of the clip.
-     */
     inline bool StartTimecodeHasBeenSet() const { return m_startTimecodeHasBeenSet; }
-
-    /**
-     * Settings to identify the start of the clip.
-     */
     inline void SetStartTimecode(const StartTimecode& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = value; }
-
-    /**
-     * Settings to identify the start of the clip.
-     */
     inline void SetStartTimecode(StartTimecode&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::move(value); }
-
-    /**
-     * Settings to identify the start of the clip.
-     */
     inline InputClippingSettings& WithStartTimecode(const StartTimecode& value) { SetStartTimecode(value); return *this;}
-
-    /**
-     * Settings to identify the start of the clip.
-     */
     inline InputClippingSettings& WithStartTimecode(StartTimecode&& value) { SetStartTimecode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Settings to identify the end of the clip.
      */
     inline const StopTimecode& GetStopTimecode() const{ return m_stopTimecode; }
-
-    /**
-     * Settings to identify the end of the clip.
-     */
     inline bool StopTimecodeHasBeenSet() const { return m_stopTimecodeHasBeenSet; }
-
-    /**
-     * Settings to identify the end of the clip.
-     */
     inline void SetStopTimecode(const StopTimecode& value) { m_stopTimecodeHasBeenSet = true; m_stopTimecode = value; }
-
-    /**
-     * Settings to identify the end of the clip.
-     */
     inline void SetStopTimecode(StopTimecode&& value) { m_stopTimecodeHasBeenSet = true; m_stopTimecode = std::move(value); }
-
-    /**
-     * Settings to identify the end of the clip.
-     */
     inline InputClippingSettings& WithStopTimecode(const StopTimecode& value) { SetStopTimecode(value); return *this;}
-
-    /**
-     * Settings to identify the end of the clip.
-     */
     inline InputClippingSettings& WithStopTimecode(StopTimecode&& value) { SetStopTimecode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InputTimecodeSource m_inputTimecodeSource;

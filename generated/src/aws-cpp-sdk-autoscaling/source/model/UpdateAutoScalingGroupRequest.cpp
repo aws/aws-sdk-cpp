@@ -91,12 +91,19 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-    unsigned availabilityZonesCount = 1;
-    for(auto& item : m_availabilityZones)
+    if (m_availabilityZones.empty())
     {
-      ss << "AvailabilityZones.member." << availabilityZonesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      availabilityZonesCount++;
+      ss << "AvailabilityZones=&";
+    }
+    else
+    {
+      unsigned availabilityZonesCount = 1;
+      for(auto& item : m_availabilityZones)
+      {
+        ss << "AvailabilityZones.member." << availabilityZonesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        availabilityZonesCount++;
+      }
     }
   }
 
@@ -122,12 +129,19 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
 
   if(m_terminationPoliciesHasBeenSet)
   {
-    unsigned terminationPoliciesCount = 1;
-    for(auto& item : m_terminationPolicies)
+    if (m_terminationPolicies.empty())
     {
-      ss << "TerminationPolicies.member." << terminationPoliciesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      terminationPoliciesCount++;
+      ss << "TerminationPolicies=&";
+    }
+    else
+    {
+      unsigned terminationPoliciesCount = 1;
+      for(auto& item : m_terminationPolicies)
+      {
+        ss << "TerminationPolicies.member." << terminationPoliciesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        terminationPoliciesCount++;
+      }
     }
   }
 

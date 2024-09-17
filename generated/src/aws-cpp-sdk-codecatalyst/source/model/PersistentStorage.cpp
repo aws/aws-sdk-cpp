@@ -24,9 +24,8 @@ PersistentStorage::PersistentStorage() :
 {
 }
 
-PersistentStorage::PersistentStorage(JsonView jsonValue) : 
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false)
+PersistentStorage::PersistentStorage(JsonView jsonValue)
+  : PersistentStorage()
 {
   *this = jsonValue;
 }

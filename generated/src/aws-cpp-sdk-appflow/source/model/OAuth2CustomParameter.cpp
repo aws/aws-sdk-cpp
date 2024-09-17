@@ -32,17 +32,8 @@ OAuth2CustomParameter::OAuth2CustomParameter() :
 {
 }
 
-OAuth2CustomParameter::OAuth2CustomParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isSensitiveField(false),
-    m_isSensitiveFieldHasBeenSet(false),
-    m_connectorSuppliedValuesHasBeenSet(false),
-    m_type(OAuth2CustomPropType::NOT_SET),
-    m_typeHasBeenSet(false)
+OAuth2CustomParameter::OAuth2CustomParameter(JsonView jsonValue)
+  : OAuth2CustomParameter()
 {
   *this = jsonValue;
 }

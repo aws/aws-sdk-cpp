@@ -33,18 +33,8 @@ SchemaAttributeType::SchemaAttributeType() :
 {
 }
 
-SchemaAttributeType::SchemaAttributeType(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributeDataType(AttributeDataType::NOT_SET),
-    m_attributeDataTypeHasBeenSet(false),
-    m_developerOnlyAttribute(false),
-    m_developerOnlyAttributeHasBeenSet(false),
-    m_mutable(false),
-    m_mutableHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_numberAttributeConstraintsHasBeenSet(false),
-    m_stringAttributeConstraintsHasBeenSet(false)
+SchemaAttributeType::SchemaAttributeType(JsonView jsonValue)
+  : SchemaAttributeType()
 {
   *this = jsonValue;
 }

@@ -73,6 +73,13 @@
 #include <aws/chime/model/UpdateRoomResult.h>
 #include <aws/chime/model/UpdateRoomMembershipResult.h>
 #include <aws/chime/model/UpdateUserResult.h>
+#include <aws/chime/model/ListPhoneNumbersRequest.h>
+#include <aws/chime/model/SearchAvailablePhoneNumbersRequest.h>
+#include <aws/chime/model/GetPhoneNumberSettingsRequest.h>
+#include <aws/chime/model/ListAccountsRequest.h>
+#include <aws/chime/model/ListPhoneNumberOrdersRequest.h>
+#include <aws/chime/model/UpdateGlobalSettingsRequest.h>
+#include <aws/chime/model/GetGlobalSettingsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ChimeClient header */
 
@@ -107,7 +114,7 @@ namespace Aws
 
   namespace Chime
   {
-    using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ChimeEndpointProviderBase = Aws::Chime::Endpoint::ChimeEndpointProviderBase;
     using ChimeEndpointProvider = Aws::Chime::Endpoint::ChimeEndpointProvider;
 

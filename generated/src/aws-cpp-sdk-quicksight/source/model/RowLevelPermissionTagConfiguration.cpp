@@ -26,11 +26,8 @@ RowLevelPermissionTagConfiguration::RowLevelPermissionTagConfiguration() :
 {
 }
 
-RowLevelPermissionTagConfiguration::RowLevelPermissionTagConfiguration(JsonView jsonValue) : 
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagRulesHasBeenSet(false),
-    m_tagRuleConfigurationsHasBeenSet(false)
+RowLevelPermissionTagConfiguration::RowLevelPermissionTagConfiguration(JsonView jsonValue)
+  : RowLevelPermissionTagConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ AssetBundleExportJobThemeOverrideProperties::AssetBundleExportJobThemeOverridePr
 {
 }
 
-AssetBundleExportJobThemeOverrideProperties::AssetBundleExportJobThemeOverrideProperties(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+AssetBundleExportJobThemeOverrideProperties::AssetBundleExportJobThemeOverrideProperties(JsonView jsonValue)
+  : AssetBundleExportJobThemeOverrideProperties()
 {
   *this = jsonValue;
 }

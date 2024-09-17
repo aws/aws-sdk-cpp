@@ -26,11 +26,8 @@ CategoricalValues::CategoricalValues() :
 {
 }
 
-CategoricalValues::CategoricalValues(JsonView jsonValue) : 
-    m_status(StatisticalIssueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_numberOfCategory(0),
-    m_numberOfCategoryHasBeenSet(false)
+CategoricalValues::CategoricalValues(JsonView jsonValue)
+  : CategoricalValues()
 {
   *this = jsonValue;
 }

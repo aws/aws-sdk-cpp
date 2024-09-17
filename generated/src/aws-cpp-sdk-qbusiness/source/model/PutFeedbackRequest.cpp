@@ -17,11 +17,11 @@ using namespace Aws::Http;
 
 PutFeedbackRequest::PutFeedbackRequest() : 
     m_applicationIdHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_conversationIdHasBeenSet(false),
-    m_messageCopiedAtHasBeenSet(false),
     m_messageIdHasBeenSet(false),
-    m_messageUsefulnessHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_messageCopiedAtHasBeenSet(false),
+    m_messageUsefulnessHasBeenSet(false)
 {
 }
 

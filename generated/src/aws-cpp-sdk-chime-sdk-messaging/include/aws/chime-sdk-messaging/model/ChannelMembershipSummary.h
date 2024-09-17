@@ -38,36 +38,17 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A member's summary data.</p>
      */
     inline const Identity& GetMember() const{ return m_member; }
-
-    /**
-     * <p>A member's summary data.</p>
-     */
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-
-    /**
-     * <p>A member's summary data.</p>
-     */
     inline void SetMember(const Identity& value) { m_memberHasBeenSet = true; m_member = value; }
-
-    /**
-     * <p>A member's summary data.</p>
-     */
     inline void SetMember(Identity&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-
-    /**
-     * <p>A member's summary data.</p>
-     */
     inline ChannelMembershipSummary& WithMember(const Identity& value) { SetMember(value); return *this;}
-
-    /**
-     * <p>A member's summary data.</p>
-     */
     inline ChannelMembershipSummary& WithMember(Identity&& value) { SetMember(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Identity m_member;

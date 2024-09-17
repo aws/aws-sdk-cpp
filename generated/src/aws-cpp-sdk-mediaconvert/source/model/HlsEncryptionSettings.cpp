@@ -33,18 +33,8 @@ HlsEncryptionSettings::HlsEncryptionSettings() :
 {
 }
 
-HlsEncryptionSettings::HlsEncryptionSettings(JsonView jsonValue) : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethod(HlsEncryptionType::NOT_SET),
-    m_encryptionMethodHasBeenSet(false),
-    m_initializationVectorInManifest(HlsInitializationVectorInManifest::NOT_SET),
-    m_initializationVectorInManifestHasBeenSet(false),
-    m_offlineEncrypted(HlsOfflineEncrypted::NOT_SET),
-    m_offlineEncryptedHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false),
-    m_staticKeyProviderHasBeenSet(false),
-    m_type(HlsKeyProviderType::NOT_SET),
-    m_typeHasBeenSet(false)
+HlsEncryptionSettings::HlsEncryptionSettings(JsonView jsonValue)
+  : HlsEncryptionSettings()
 {
   *this = jsonValue;
 }

@@ -32,46 +32,19 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Uniquely identifies a stored backup plan template.</p>
      */
     inline const Aws::String& GetBackupPlanTemplateId() const{ return m_backupPlanTemplateId; }
-
-    /**
-     * <p>Uniquely identifies a stored backup plan template.</p>
-     */
     inline bool BackupPlanTemplateIdHasBeenSet() const { return m_backupPlanTemplateIdHasBeenSet; }
-
-    /**
-     * <p>Uniquely identifies a stored backup plan template.</p>
-     */
     inline void SetBackupPlanTemplateId(const Aws::String& value) { m_backupPlanTemplateIdHasBeenSet = true; m_backupPlanTemplateId = value; }
-
-    /**
-     * <p>Uniquely identifies a stored backup plan template.</p>
-     */
     inline void SetBackupPlanTemplateId(Aws::String&& value) { m_backupPlanTemplateIdHasBeenSet = true; m_backupPlanTemplateId = std::move(value); }
-
-    /**
-     * <p>Uniquely identifies a stored backup plan template.</p>
-     */
     inline void SetBackupPlanTemplateId(const char* value) { m_backupPlanTemplateIdHasBeenSet = true; m_backupPlanTemplateId.assign(value); }
-
-    /**
-     * <p>Uniquely identifies a stored backup plan template.</p>
-     */
     inline GetBackupPlanFromTemplateRequest& WithBackupPlanTemplateId(const Aws::String& value) { SetBackupPlanTemplateId(value); return *this;}
-
-    /**
-     * <p>Uniquely identifies a stored backup plan template.</p>
-     */
     inline GetBackupPlanFromTemplateRequest& WithBackupPlanTemplateId(Aws::String&& value) { SetBackupPlanTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>Uniquely identifies a stored backup plan template.</p>
-     */
     inline GetBackupPlanFromTemplateRequest& WithBackupPlanTemplateId(const char* value) { SetBackupPlanTemplateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupPlanTemplateId;

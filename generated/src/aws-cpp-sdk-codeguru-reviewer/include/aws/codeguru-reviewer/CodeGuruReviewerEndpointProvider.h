@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeGuruReviewerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeGuruReviewerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeGuruReviewerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeGuruReviewerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

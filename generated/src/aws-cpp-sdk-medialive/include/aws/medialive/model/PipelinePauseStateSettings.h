@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
      */
     inline const PipelineId& GetPipelineId() const{ return m_pipelineId; }
-
-    /**
-     * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-     */
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-
-    /**
-     * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-     */
     inline void SetPipelineId(const PipelineId& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-
-    /**
-     * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-     */
     inline void SetPipelineId(PipelineId&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-
-    /**
-     * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-     */
     inline PipelinePauseStateSettings& WithPipelineId(const PipelineId& value) { SetPipelineId(value); return *this;}
-
-    /**
-     * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-     */
     inline PipelinePauseStateSettings& WithPipelineId(PipelineId&& value) { SetPipelineId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PipelineId m_pipelineId;

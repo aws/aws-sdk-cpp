@@ -32,17 +32,8 @@ Application::Application() :
 {
 }
 
-Application::Application(JsonView jsonValue) : 
-    m_applicationAccountHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_applicationProviderArnHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_portalOptionsHasBeenSet(false),
-    m_status(ApplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+Application::Application(JsonView jsonValue)
+  : Application()
 {
   *this = jsonValue;
 }

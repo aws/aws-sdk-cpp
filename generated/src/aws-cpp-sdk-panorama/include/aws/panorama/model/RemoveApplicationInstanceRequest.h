@@ -32,46 +32,19 @@ namespace Model
     AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An application instance ID.</p>
      */
     inline const Aws::String& GetApplicationInstanceId() const{ return m_applicationInstanceId; }
-
-    /**
-     * <p>An application instance ID.</p>
-     */
     inline bool ApplicationInstanceIdHasBeenSet() const { return m_applicationInstanceIdHasBeenSet; }
-
-    /**
-     * <p>An application instance ID.</p>
-     */
     inline void SetApplicationInstanceId(const Aws::String& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = value; }
-
-    /**
-     * <p>An application instance ID.</p>
-     */
     inline void SetApplicationInstanceId(Aws::String&& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = std::move(value); }
-
-    /**
-     * <p>An application instance ID.</p>
-     */
     inline void SetApplicationInstanceId(const char* value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId.assign(value); }
-
-    /**
-     * <p>An application instance ID.</p>
-     */
     inline RemoveApplicationInstanceRequest& WithApplicationInstanceId(const Aws::String& value) { SetApplicationInstanceId(value); return *this;}
-
-    /**
-     * <p>An application instance ID.</p>
-     */
     inline RemoveApplicationInstanceRequest& WithApplicationInstanceId(Aws::String&& value) { SetApplicationInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>An application instance ID.</p>
-     */
     inline RemoveApplicationInstanceRequest& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationInstanceId;

@@ -32,17 +32,8 @@ ResourceIdentifier::ResourceIdentifier() :
 {
 }
 
-ResourceIdentifier::ResourceIdentifier(JsonView jsonValue) : 
-    m_deviceCertificateIdHasBeenSet(false),
-    m_caCertificateIdHasBeenSet(false),
-    m_cognitoIdentityPoolIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_policyVersionIdentifierHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_roleAliasArnHasBeenSet(false),
-    m_issuerCertificateIdentifierHasBeenSet(false),
-    m_deviceCertificateArnHasBeenSet(false)
+ResourceIdentifier::ResourceIdentifier(JsonView jsonValue)
+  : ResourceIdentifier()
 {
   *this = jsonValue;
 }

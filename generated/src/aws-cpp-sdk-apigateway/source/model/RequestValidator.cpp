@@ -30,14 +30,8 @@ RequestValidator::RequestValidator() :
 {
 }
 
-RequestValidator::RequestValidator(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_validateRequestBody(false),
-    m_validateRequestBodyHasBeenSet(false),
-    m_validateRequestParameters(false),
-    m_validateRequestParametersHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+RequestValidator::RequestValidator(JsonView jsonValue)
+  : RequestValidator()
 {
   *this = jsonValue;
 }

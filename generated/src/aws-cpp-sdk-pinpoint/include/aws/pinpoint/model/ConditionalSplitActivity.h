@@ -47,183 +47,62 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The conditions that define the paths for the activity, and the relationship
      * between the conditions.</p>
      */
     inline const Condition& GetCondition() const{ return m_condition; }
-
-    /**
-     * <p>The conditions that define the paths for the activity, and the relationship
-     * between the conditions.</p>
-     */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-
-    /**
-     * <p>The conditions that define the paths for the activity, and the relationship
-     * between the conditions.</p>
-     */
     inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-
-    /**
-     * <p>The conditions that define the paths for the activity, and the relationship
-     * between the conditions.</p>
-     */
     inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-
-    /**
-     * <p>The conditions that define the paths for the activity, and the relationship
-     * between the conditions.</p>
-     */
     inline ConditionalSplitActivity& WithCondition(const Condition& value) { SetCondition(value); return *this;}
-
-    /**
-     * <p>The conditions that define the paths for the activity, and the relationship
-     * between the conditions.</p>
-     */
     inline ConditionalSplitActivity& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of time to wait before determining whether the conditions are met,
      * or the date and time when Amazon Pinpoint determines whether the conditions are
      * met.</p>
      */
     inline const WaitTime& GetEvaluationWaitTime() const{ return m_evaluationWaitTime; }
-
-    /**
-     * <p>The amount of time to wait before determining whether the conditions are met,
-     * or the date and time when Amazon Pinpoint determines whether the conditions are
-     * met.</p>
-     */
     inline bool EvaluationWaitTimeHasBeenSet() const { return m_evaluationWaitTimeHasBeenSet; }
-
-    /**
-     * <p>The amount of time to wait before determining whether the conditions are met,
-     * or the date and time when Amazon Pinpoint determines whether the conditions are
-     * met.</p>
-     */
     inline void SetEvaluationWaitTime(const WaitTime& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = value; }
-
-    /**
-     * <p>The amount of time to wait before determining whether the conditions are met,
-     * or the date and time when Amazon Pinpoint determines whether the conditions are
-     * met.</p>
-     */
     inline void SetEvaluationWaitTime(WaitTime&& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = std::move(value); }
-
-    /**
-     * <p>The amount of time to wait before determining whether the conditions are met,
-     * or the date and time when Amazon Pinpoint determines whether the conditions are
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithEvaluationWaitTime(const WaitTime& value) { SetEvaluationWaitTime(value); return *this;}
-
-    /**
-     * <p>The amount of time to wait before determining whether the conditions are met,
-     * or the date and time when Amazon Pinpoint determines whether the conditions are
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithEvaluationWaitTime(WaitTime&& value) { SetEvaluationWaitTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline const Aws::String& GetFalseActivity() const{ return m_falseActivity; }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions aren't
-     * met.</p>
-     */
     inline bool FalseActivityHasBeenSet() const { return m_falseActivityHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions aren't
-     * met.</p>
-     */
     inline void SetFalseActivity(const Aws::String& value) { m_falseActivityHasBeenSet = true; m_falseActivity = value; }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions aren't
-     * met.</p>
-     */
     inline void SetFalseActivity(Aws::String&& value) { m_falseActivityHasBeenSet = true; m_falseActivity = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions aren't
-     * met.</p>
-     */
     inline void SetFalseActivity(const char* value) { m_falseActivityHasBeenSet = true; m_falseActivity.assign(value); }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions aren't
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithFalseActivity(const Aws::String& value) { SetFalseActivity(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions aren't
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithFalseActivity(Aws::String&& value) { SetFalseActivity(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions aren't
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithFalseActivity(const char* value) { SetFalseActivity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline const Aws::String& GetTrueActivity() const{ return m_trueActivity; }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions are
-     * met.</p>
-     */
     inline bool TrueActivityHasBeenSet() const { return m_trueActivityHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions are
-     * met.</p>
-     */
     inline void SetTrueActivity(const Aws::String& value) { m_trueActivityHasBeenSet = true; m_trueActivity = value; }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions are
-     * met.</p>
-     */
     inline void SetTrueActivity(Aws::String&& value) { m_trueActivityHasBeenSet = true; m_trueActivity = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions are
-     * met.</p>
-     */
     inline void SetTrueActivity(const char* value) { m_trueActivityHasBeenSet = true; m_trueActivity.assign(value); }
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions are
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithTrueActivity(const Aws::String& value) { SetTrueActivity(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions are
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithTrueActivity(Aws::String&& value) { SetTrueActivity(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the activity to perform if the conditions are
-     * met.</p>
-     */
     inline ConditionalSplitActivity& WithTrueActivity(const char* value) { SetTrueActivity(value); return *this;}
-
+    ///@}
   private:
 
     Condition m_condition;

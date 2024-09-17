@@ -20,31 +20,30 @@ namespace Model
 {
 
 AttachmentInput::AttachmentInput() : 
-    m_dataHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
-AttachmentInput::AttachmentInput(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AttachmentInput::AttachmentInput(JsonView jsonValue)
+  : AttachmentInput()
 {
   *this = jsonValue;
 }
 
 AttachmentInput& AttachmentInput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("data"))
-  {
-    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
-    m_dataHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("data"))
+  {
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
+    m_dataHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +53,15 @@ JsonValue AttachmentInput::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("data", HashingUtils::Base64Encode(m_data));
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
   return payload;

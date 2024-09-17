@@ -6,6 +6,7 @@
 #include <aws/s3control/model/CreateBucketRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -51,7 +52,7 @@ Aws::Http::HeaderValueCollection CreateBucketRequest::GetRequestSpecificHeaders(
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_aCLHasBeenSet)
+  if(m_aCLHasBeenSet && m_aCL != BucketCannedACL::NOT_SET)
   {
     headers.emplace("x-amz-acl", BucketCannedACLMapper::GetNameForBucketCannedACL(m_aCL));
   }

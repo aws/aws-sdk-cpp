@@ -71,7 +71,7 @@ namespace Aws
 
   namespace SWF
   {
-    using SWFClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SWFClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SWFEndpointProviderBase = Aws::SWF::Endpoint::SWFEndpointProviderBase;
     using SWFEndpointProvider = Aws::SWF::Endpoint::SWFEndpointProvider;
 
@@ -82,6 +82,8 @@ namespace Aws
       class CountOpenWorkflowExecutionsRequest;
       class CountPendingActivityTasksRequest;
       class CountPendingDecisionTasksRequest;
+      class DeleteActivityTypeRequest;
+      class DeleteWorkflowTypeRequest;
       class DeprecateActivityTypeRequest;
       class DeprecateDomainRequest;
       class DeprecateWorkflowTypeRequest;
@@ -122,6 +124,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CountOpenWorkflowExecutionsResult, SWFError> CountOpenWorkflowExecutionsOutcome;
       typedef Aws::Utils::Outcome<CountPendingActivityTasksResult, SWFError> CountPendingActivityTasksOutcome;
       typedef Aws::Utils::Outcome<CountPendingDecisionTasksResult, SWFError> CountPendingDecisionTasksOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeleteActivityTypeOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeleteWorkflowTypeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeprecateActivityTypeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeprecateDomainOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeprecateWorkflowTypeOutcome;
@@ -162,6 +166,8 @@ namespace Aws
       typedef std::future<CountOpenWorkflowExecutionsOutcome> CountOpenWorkflowExecutionsOutcomeCallable;
       typedef std::future<CountPendingActivityTasksOutcome> CountPendingActivityTasksOutcomeCallable;
       typedef std::future<CountPendingDecisionTasksOutcome> CountPendingDecisionTasksOutcomeCallable;
+      typedef std::future<DeleteActivityTypeOutcome> DeleteActivityTypeOutcomeCallable;
+      typedef std::future<DeleteWorkflowTypeOutcome> DeleteWorkflowTypeOutcomeCallable;
       typedef std::future<DeprecateActivityTypeOutcome> DeprecateActivityTypeOutcomeCallable;
       typedef std::future<DeprecateDomainOutcome> DeprecateDomainOutcomeCallable;
       typedef std::future<DeprecateWorkflowTypeOutcome> DeprecateWorkflowTypeOutcomeCallable;
@@ -205,6 +211,8 @@ namespace Aws
     typedef std::function<void(const SWFClient*, const Model::CountOpenWorkflowExecutionsRequest&, const Model::CountOpenWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountOpenWorkflowExecutionsResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::CountPendingActivityTasksRequest&, const Model::CountPendingActivityTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountPendingActivityTasksResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::CountPendingDecisionTasksRequest&, const Model::CountPendingDecisionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountPendingDecisionTasksResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::DeleteActivityTypeRequest&, const Model::DeleteActivityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteActivityTypeResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::DeleteWorkflowTypeRequest&, const Model::DeleteWorkflowTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowTypeResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::DeprecateActivityTypeRequest&, const Model::DeprecateActivityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprecateActivityTypeResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::DeprecateDomainRequest&, const Model::DeprecateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprecateDomainResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::DeprecateWorkflowTypeRequest&, const Model::DeprecateWorkflowTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprecateWorkflowTypeResponseReceivedHandler;

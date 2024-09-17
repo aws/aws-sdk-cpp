@@ -23,8 +23,8 @@ Certificate::Certificate() :
 {
 }
 
-Certificate::Certificate(JsonView jsonValue) : 
-    m_dataHasBeenSet(false)
+Certificate::Certificate(JsonView jsonValue)
+  : Certificate()
 {
   *this = jsonValue;
 }

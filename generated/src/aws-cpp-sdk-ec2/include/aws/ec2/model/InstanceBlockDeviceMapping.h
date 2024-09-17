@@ -40,91 +40,33 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The device name (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
-
-    /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
-     */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-
-    /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
-     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-
-    /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
-     */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-
-    /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
-     */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-
-    /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
-     */
     inline InstanceBlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
-     */
     inline InstanceBlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
-     */
     inline InstanceBlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
     inline const EbsInstanceBlockDevice& GetEbs() const{ return m_ebs; }
-
-    /**
-     * <p>Parameters used to automatically set up EBS volumes when the instance is
-     * launched.</p>
-     */
     inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
-
-    /**
-     * <p>Parameters used to automatically set up EBS volumes when the instance is
-     * launched.</p>
-     */
     inline void SetEbs(const EbsInstanceBlockDevice& value) { m_ebsHasBeenSet = true; m_ebs = value; }
-
-    /**
-     * <p>Parameters used to automatically set up EBS volumes when the instance is
-     * launched.</p>
-     */
     inline void SetEbs(EbsInstanceBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
-
-    /**
-     * <p>Parameters used to automatically set up EBS volumes when the instance is
-     * launched.</p>
-     */
     inline InstanceBlockDeviceMapping& WithEbs(const EbsInstanceBlockDevice& value) { SetEbs(value); return *this;}
-
-    /**
-     * <p>Parameters used to automatically set up EBS volumes when the instance is
-     * launched.</p>
-     */
     inline InstanceBlockDeviceMapping& WithEbs(EbsInstanceBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceName;

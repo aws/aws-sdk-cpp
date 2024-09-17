@@ -26,9 +26,8 @@ PeeringAttachmentStatus::PeeringAttachmentStatus() :
 {
 }
 
-PeeringAttachmentStatus::PeeringAttachmentStatus(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+PeeringAttachmentStatus::PeeringAttachmentStatus(const XmlNode& xmlNode)
+  : PeeringAttachmentStatus()
 {
   *this = xmlNode;
 }

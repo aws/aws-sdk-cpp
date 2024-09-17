@@ -33,18 +33,8 @@ VulnerablePackage::VulnerablePackage() :
 {
 }
 
-VulnerablePackage::VulnerablePackage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_sourceLayerHashHasBeenSet(false),
-    m_epoch(0),
-    m_epochHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_archHasBeenSet(false),
-    m_packageManagerHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_fixedInVersionHasBeenSet(false),
-    m_remediationHasBeenSet(false)
+VulnerablePackage::VulnerablePackage(JsonView jsonValue)
+  : VulnerablePackage()
 {
   *this = jsonValue;
 }

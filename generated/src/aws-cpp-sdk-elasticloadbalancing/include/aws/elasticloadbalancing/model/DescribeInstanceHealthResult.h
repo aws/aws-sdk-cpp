@@ -39,57 +39,27 @@ namespace Model
     AWS_ELASTICLOADBALANCING_API DescribeInstanceHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the health of the instances.</p>
      */
     inline const Aws::Vector<InstanceState>& GetInstanceStates() const{ return m_instanceStates; }
-
-    /**
-     * <p>Information about the health of the instances.</p>
-     */
     inline void SetInstanceStates(const Aws::Vector<InstanceState>& value) { m_instanceStates = value; }
-
-    /**
-     * <p>Information about the health of the instances.</p>
-     */
     inline void SetInstanceStates(Aws::Vector<InstanceState>&& value) { m_instanceStates = std::move(value); }
-
-    /**
-     * <p>Information about the health of the instances.</p>
-     */
     inline DescribeInstanceHealthResult& WithInstanceStates(const Aws::Vector<InstanceState>& value) { SetInstanceStates(value); return *this;}
-
-    /**
-     * <p>Information about the health of the instances.</p>
-     */
     inline DescribeInstanceHealthResult& WithInstanceStates(Aws::Vector<InstanceState>&& value) { SetInstanceStates(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the health of the instances.</p>
-     */
     inline DescribeInstanceHealthResult& AddInstanceStates(const InstanceState& value) { m_instanceStates.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the health of the instances.</p>
-     */
     inline DescribeInstanceHealthResult& AddInstanceStates(InstanceState&& value) { m_instanceStates.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeInstanceHealthResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeInstanceHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InstanceState> m_instanceStates;

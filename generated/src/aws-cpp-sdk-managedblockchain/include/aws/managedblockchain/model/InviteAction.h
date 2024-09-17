@@ -40,46 +40,19 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID to invite.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
-
-    /**
-     * <p>The Amazon Web Services account ID to invite.</p>
-     */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID to invite.</p>
-     */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID to invite.</p>
-     */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID to invite.</p>
-     */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID to invite.</p>
-     */
     inline InviteAction& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID to invite.</p>
-     */
     inline InviteAction& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID to invite.</p>
-     */
     inline InviteAction& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_principal;

@@ -29,15 +29,8 @@ UpdateReplicationConfigurationResult::UpdateReplicationConfigurationResult() :
 {
 }
 
-UpdateReplicationConfigurationResult::UpdateReplicationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_associateDefaultSecurityGroup(false),
-    m_autoReplicateNewDisks(false),
-    m_bandwidthThrottling(0),
-    m_createPublicIP(false),
-    m_dataPlaneRouting(ReplicationConfigurationDataPlaneRouting::NOT_SET),
-    m_defaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET),
-    m_ebsEncryption(ReplicationConfigurationEbsEncryption::NOT_SET),
-    m_useDedicatedReplicationServer(false)
+UpdateReplicationConfigurationResult::UpdateReplicationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateReplicationConfigurationResult()
 {
   *this = result;
 }

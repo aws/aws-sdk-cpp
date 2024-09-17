@@ -22,8 +22,8 @@ GetTimeSeriesServiceStatisticsResult::GetTimeSeriesServiceStatisticsResult() :
 {
 }
 
-GetTimeSeriesServiceStatisticsResult::GetTimeSeriesServiceStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_containsOldGroupVersions(false)
+GetTimeSeriesServiceStatisticsResult::GetTimeSeriesServiceStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTimeSeriesServiceStatisticsResult()
 {
   *this = result;
 }

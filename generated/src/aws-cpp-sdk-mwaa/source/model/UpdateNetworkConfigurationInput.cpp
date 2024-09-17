@@ -23,8 +23,8 @@ UpdateNetworkConfigurationInput::UpdateNetworkConfigurationInput() :
 {
 }
 
-UpdateNetworkConfigurationInput::UpdateNetworkConfigurationInput(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false)
+UpdateNetworkConfigurationInput::UpdateNetworkConfigurationInput(JsonView jsonValue)
+  : UpdateNetworkConfigurationInput()
 {
   *this = jsonValue;
 }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/ExecuteCommandConfiguration.h>
+#include <aws/ecs/model/ManagedStorageConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -24,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The execute command configuration for the cluster.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The execute command and managed storage configuration for the
+   * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ClusterConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,40 +39,36 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details of the execute command configuration.</p>
      */
     inline const ExecuteCommandConfiguration& GetExecuteCommandConfiguration() const{ return m_executeCommandConfiguration; }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline bool ExecuteCommandConfigurationHasBeenSet() const { return m_executeCommandConfigurationHasBeenSet; }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline void SetExecuteCommandConfiguration(const ExecuteCommandConfiguration& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = value; }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline void SetExecuteCommandConfiguration(ExecuteCommandConfiguration&& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = std::move(value); }
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline ClusterConfiguration& WithExecuteCommandConfiguration(const ExecuteCommandConfiguration& value) { SetExecuteCommandConfiguration(value); return *this;}
-
-    /**
-     * <p>The details of the execute command configuration.</p>
-     */
     inline ClusterConfiguration& WithExecuteCommandConfiguration(ExecuteCommandConfiguration&& value) { SetExecuteCommandConfiguration(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The details of the managed storage configuration.</p>
+     */
+    inline const ManagedStorageConfiguration& GetManagedStorageConfiguration() const{ return m_managedStorageConfiguration; }
+    inline bool ManagedStorageConfigurationHasBeenSet() const { return m_managedStorageConfigurationHasBeenSet; }
+    inline void SetManagedStorageConfiguration(const ManagedStorageConfiguration& value) { m_managedStorageConfigurationHasBeenSet = true; m_managedStorageConfiguration = value; }
+    inline void SetManagedStorageConfiguration(ManagedStorageConfiguration&& value) { m_managedStorageConfigurationHasBeenSet = true; m_managedStorageConfiguration = std::move(value); }
+    inline ClusterConfiguration& WithManagedStorageConfiguration(const ManagedStorageConfiguration& value) { SetManagedStorageConfiguration(value); return *this;}
+    inline ClusterConfiguration& WithManagedStorageConfiguration(ManagedStorageConfiguration&& value) { SetManagedStorageConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     ExecuteCommandConfiguration m_executeCommandConfiguration;
     bool m_executeCommandConfigurationHasBeenSet = false;
+
+    ManagedStorageConfiguration m_managedStorageConfiguration;
+    bool m_managedStorageConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

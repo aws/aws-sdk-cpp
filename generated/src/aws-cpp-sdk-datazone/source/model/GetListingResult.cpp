@@ -22,8 +22,8 @@ GetListingResult::GetListingResult() :
 {
 }
 
-GetListingResult::GetListingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ListingStatus::NOT_SET)
+GetListingResult::GetListingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetListingResult()
 {
   *this = result;
 }

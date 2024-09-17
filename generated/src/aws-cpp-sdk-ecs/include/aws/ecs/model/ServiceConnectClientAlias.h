@@ -47,6 +47,7 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The listening port number for the Service Connect proxy. This port is
      * available inside of all of the tasks within the same namespace.</p> <p>To avoid
@@ -56,38 +57,12 @@ namespace Model
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The listening port number for the Service Connect proxy. This port is
-     * available inside of all of the tasks within the same namespace.</p> <p>To avoid
-     * changing your applications in client Amazon ECS services, set this to the same
-     * port that the client application uses by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The listening port number for the Service Connect proxy. This port is
-     * available inside of all of the tasks within the same namespace.</p> <p>To avoid
-     * changing your applications in client Amazon ECS services, set this to the same
-     * port that the client application uses by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The listening port number for the Service Connect proxy. This port is
-     * available inside of all of the tasks within the same namespace.</p> <p>To avoid
-     * changing your applications in client Amazon ECS services, set this to the same
-     * port that the client application uses by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline ServiceConnectClientAlias& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>dnsName</code> is the name that you use in the applications of
      * client tasks to connect to this service. The name must be a valid DNS name but
@@ -106,140 +81,14 @@ namespace Model
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
-
-    /**
-     * <p>The <code>dnsName</code> is the name that you use in the applications of
-     * client tasks to connect to this service. The name must be a valid DNS name but
-     * doesn't need to be fully-qualified. The name can include up to 127 characters.
-     * The name can include lowercase letters, numbers, underscores (_), hyphens (-),
-     * and periods (.). The name can't start with a hyphen.</p> <p>If this parameter
-     * isn't specified, the default value of <code>discoveryName.namespace</code> is
-     * used. If the <code>discoveryName</code> isn't specified, the port mapping name
-     * from the task definition is used in <code>portName.namespace</code>.</p> <p>To
-     * avoid changing your applications in client Amazon ECS services, set this to the
-     * same name that the client application uses by default. For example, a few common
-     * names are <code>database</code>, <code>db</code>, or the lowercase name of a
-     * database, such as <code>mysql</code> or <code>redis</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-
-    /**
-     * <p>The <code>dnsName</code> is the name that you use in the applications of
-     * client tasks to connect to this service. The name must be a valid DNS name but
-     * doesn't need to be fully-qualified. The name can include up to 127 characters.
-     * The name can include lowercase letters, numbers, underscores (_), hyphens (-),
-     * and periods (.). The name can't start with a hyphen.</p> <p>If this parameter
-     * isn't specified, the default value of <code>discoveryName.namespace</code> is
-     * used. If the <code>discoveryName</code> isn't specified, the port mapping name
-     * from the task definition is used in <code>portName.namespace</code>.</p> <p>To
-     * avoid changing your applications in client Amazon ECS services, set this to the
-     * same name that the client application uses by default. For example, a few common
-     * names are <code>database</code>, <code>db</code>, or the lowercase name of a
-     * database, such as <code>mysql</code> or <code>redis</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-
-    /**
-     * <p>The <code>dnsName</code> is the name that you use in the applications of
-     * client tasks to connect to this service. The name must be a valid DNS name but
-     * doesn't need to be fully-qualified. The name can include up to 127 characters.
-     * The name can include lowercase letters, numbers, underscores (_), hyphens (-),
-     * and periods (.). The name can't start with a hyphen.</p> <p>If this parameter
-     * isn't specified, the default value of <code>discoveryName.namespace</code> is
-     * used. If the <code>discoveryName</code> isn't specified, the port mapping name
-     * from the task definition is used in <code>portName.namespace</code>.</p> <p>To
-     * avoid changing your applications in client Amazon ECS services, set this to the
-     * same name that the client application uses by default. For example, a few common
-     * names are <code>database</code>, <code>db</code>, or the lowercase name of a
-     * database, such as <code>mysql</code> or <code>redis</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-
-    /**
-     * <p>The <code>dnsName</code> is the name that you use in the applications of
-     * client tasks to connect to this service. The name must be a valid DNS name but
-     * doesn't need to be fully-qualified. The name can include up to 127 characters.
-     * The name can include lowercase letters, numbers, underscores (_), hyphens (-),
-     * and periods (.). The name can't start with a hyphen.</p> <p>If this parameter
-     * isn't specified, the default value of <code>discoveryName.namespace</code> is
-     * used. If the <code>discoveryName</code> isn't specified, the port mapping name
-     * from the task definition is used in <code>portName.namespace</code>.</p> <p>To
-     * avoid changing your applications in client Amazon ECS services, set this to the
-     * same name that the client application uses by default. For example, a few common
-     * names are <code>database</code>, <code>db</code>, or the lowercase name of a
-     * database, such as <code>mysql</code> or <code>redis</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-
-    /**
-     * <p>The <code>dnsName</code> is the name that you use in the applications of
-     * client tasks to connect to this service. The name must be a valid DNS name but
-     * doesn't need to be fully-qualified. The name can include up to 127 characters.
-     * The name can include lowercase letters, numbers, underscores (_), hyphens (-),
-     * and periods (.). The name can't start with a hyphen.</p> <p>If this parameter
-     * isn't specified, the default value of <code>discoveryName.namespace</code> is
-     * used. If the <code>discoveryName</code> isn't specified, the port mapping name
-     * from the task definition is used in <code>portName.namespace</code>.</p> <p>To
-     * avoid changing your applications in client Amazon ECS services, set this to the
-     * same name that the client application uses by default. For example, a few common
-     * names are <code>database</code>, <code>db</code>, or the lowercase name of a
-     * database, such as <code>mysql</code> or <code>redis</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline ServiceConnectClientAlias& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-
-    /**
-     * <p>The <code>dnsName</code> is the name that you use in the applications of
-     * client tasks to connect to this service. The name must be a valid DNS name but
-     * doesn't need to be fully-qualified. The name can include up to 127 characters.
-     * The name can include lowercase letters, numbers, underscores (_), hyphens (-),
-     * and periods (.). The name can't start with a hyphen.</p> <p>If this parameter
-     * isn't specified, the default value of <code>discoveryName.namespace</code> is
-     * used. If the <code>discoveryName</code> isn't specified, the port mapping name
-     * from the task definition is used in <code>portName.namespace</code>.</p> <p>To
-     * avoid changing your applications in client Amazon ECS services, set this to the
-     * same name that the client application uses by default. For example, a few common
-     * names are <code>database</code>, <code>db</code>, or the lowercase name of a
-     * database, such as <code>mysql</code> or <code>redis</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline ServiceConnectClientAlias& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>dnsName</code> is the name that you use in the applications of
-     * client tasks to connect to this service. The name must be a valid DNS name but
-     * doesn't need to be fully-qualified. The name can include up to 127 characters.
-     * The name can include lowercase letters, numbers, underscores (_), hyphens (-),
-     * and periods (.). The name can't start with a hyphen.</p> <p>If this parameter
-     * isn't specified, the default value of <code>discoveryName.namespace</code> is
-     * used. If the <code>discoveryName</code> isn't specified, the port mapping name
-     * from the task definition is used in <code>portName.namespace</code>.</p> <p>To
-     * avoid changing your applications in client Amazon ECS services, set this to the
-     * same name that the client application uses by default. For example, a few common
-     * names are <code>database</code>, <code>db</code>, or the lowercase name of a
-     * database, such as <code>mysql</code> or <code>redis</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-     */
     inline ServiceConnectClientAlias& WithDnsName(const char* value) { SetDnsName(value); return *this;}
-
+    ///@}
   private:
 
     int m_port;

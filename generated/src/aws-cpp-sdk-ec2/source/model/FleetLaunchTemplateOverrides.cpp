@@ -36,19 +36,8 @@ FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides() :
 {
 }
 
-FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides(const XmlNode& xmlNode) : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_maxPriceHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false),
-    m_priority(0.0),
-    m_priorityHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides(const XmlNode& xmlNode)
+  : FleetLaunchTemplateOverrides()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ S3Bucket::S3Bucket() :
 {
 }
 
-S3Bucket::S3Bucket(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+S3Bucket::S3Bucket(JsonView jsonValue)
+  : S3Bucket()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ NetworkFirewallMissingExpectedRoutesViolation::NetworkFirewallMissingExpectedRou
 {
 }
 
-NetworkFirewallMissingExpectedRoutesViolation::NetworkFirewallMissingExpectedRoutesViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_expectedRoutesHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+NetworkFirewallMissingExpectedRoutesViolation::NetworkFirewallMissingExpectedRoutesViolation(JsonView jsonValue)
+  : NetworkFirewallMissingExpectedRoutesViolation()
 {
   *this = jsonValue;
 }

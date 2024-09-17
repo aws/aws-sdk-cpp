@@ -36,46 +36,19 @@ namespace Model
     AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID for an Amplify app. </p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
-
-    /**
-     * <p>The unique ID for an Amplify app. </p>
-     */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID for an Amplify app. </p>
-     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-
-    /**
-     * <p>The unique ID for an Amplify app. </p>
-     */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-
-    /**
-     * <p>The unique ID for an Amplify app. </p>
-     */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-
-    /**
-     * <p>The unique ID for an Amplify app. </p>
-     */
     inline DeleteAppRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-
-    /**
-     * <p>The unique ID for an Amplify app. </p>
-     */
     inline DeleteAppRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for an Amplify app. </p>
-     */
     inline DeleteAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appId;

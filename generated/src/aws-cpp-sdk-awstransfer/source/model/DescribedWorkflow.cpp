@@ -28,13 +28,8 @@ DescribedWorkflow::DescribedWorkflow() :
 {
 }
 
-DescribedWorkflow::DescribedWorkflow(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_onExceptionStepsHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DescribedWorkflow::DescribedWorkflow(JsonView jsonValue)
+  : DescribedWorkflow()
 {
   *this = jsonValue;
 }

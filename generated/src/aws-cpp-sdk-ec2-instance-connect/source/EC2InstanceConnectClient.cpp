@@ -57,7 +57,6 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const EC2InstanceConnect::EC2
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -73,7 +72,6 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const AWSCredentials& credent
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -89,7 +87,6 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -104,7 +101,6 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -119,7 +115,6 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const AWSCredentials& credent
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -134,7 +129,6 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const std::shared_ptr<AWSCred
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -154,6 +148,14 @@ std::shared_ptr<EC2InstanceConnectEndpointProviderBase>& EC2InstanceConnectClien
 void EC2InstanceConnectClient::init(const EC2InstanceConnect::EC2InstanceConnectClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("EC2 Instance Connect");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

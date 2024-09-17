@@ -34,46 +34,21 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
-     * <p>The address range, in CIDR notation.</p>
+     * <p>The address range, in CIDR notation.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline WithdrawByoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline WithdrawByoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline WithdrawByoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidr;

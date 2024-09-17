@@ -33,53 +33,27 @@ namespace Model
     AWS_IVS_API CreatePlaybackRestrictionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const PlaybackRestrictionPolicy& GetPlaybackRestrictionPolicy() const{ return m_playbackRestrictionPolicy; }
-
-    /**
-     * <p/>
-     */
     inline void SetPlaybackRestrictionPolicy(const PlaybackRestrictionPolicy& value) { m_playbackRestrictionPolicy = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetPlaybackRestrictionPolicy(PlaybackRestrictionPolicy&& value) { m_playbackRestrictionPolicy = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline CreatePlaybackRestrictionPolicyResult& WithPlaybackRestrictionPolicy(const PlaybackRestrictionPolicy& value) { SetPlaybackRestrictionPolicy(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline CreatePlaybackRestrictionPolicyResult& WithPlaybackRestrictionPolicy(PlaybackRestrictionPolicy&& value) { SetPlaybackRestrictionPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePlaybackRestrictionPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePlaybackRestrictionPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePlaybackRestrictionPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PlaybackRestrictionPolicy m_playbackRestrictionPolicy;

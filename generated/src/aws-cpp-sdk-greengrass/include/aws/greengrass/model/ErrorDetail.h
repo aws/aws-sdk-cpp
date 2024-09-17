@@ -37,87 +37,33 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A detailed error code.
      */
     inline const Aws::String& GetDetailedErrorCode() const{ return m_detailedErrorCode; }
-
-    /**
-     * A detailed error code.
-     */
     inline bool DetailedErrorCodeHasBeenSet() const { return m_detailedErrorCodeHasBeenSet; }
-
-    /**
-     * A detailed error code.
-     */
     inline void SetDetailedErrorCode(const Aws::String& value) { m_detailedErrorCodeHasBeenSet = true; m_detailedErrorCode = value; }
-
-    /**
-     * A detailed error code.
-     */
     inline void SetDetailedErrorCode(Aws::String&& value) { m_detailedErrorCodeHasBeenSet = true; m_detailedErrorCode = std::move(value); }
-
-    /**
-     * A detailed error code.
-     */
     inline void SetDetailedErrorCode(const char* value) { m_detailedErrorCodeHasBeenSet = true; m_detailedErrorCode.assign(value); }
-
-    /**
-     * A detailed error code.
-     */
     inline ErrorDetail& WithDetailedErrorCode(const Aws::String& value) { SetDetailedErrorCode(value); return *this;}
-
-    /**
-     * A detailed error code.
-     */
     inline ErrorDetail& WithDetailedErrorCode(Aws::String&& value) { SetDetailedErrorCode(std::move(value)); return *this;}
-
-    /**
-     * A detailed error code.
-     */
     inline ErrorDetail& WithDetailedErrorCode(const char* value) { SetDetailedErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A detailed error message.
      */
     inline const Aws::String& GetDetailedErrorMessage() const{ return m_detailedErrorMessage; }
-
-    /**
-     * A detailed error message.
-     */
     inline bool DetailedErrorMessageHasBeenSet() const { return m_detailedErrorMessageHasBeenSet; }
-
-    /**
-     * A detailed error message.
-     */
     inline void SetDetailedErrorMessage(const Aws::String& value) { m_detailedErrorMessageHasBeenSet = true; m_detailedErrorMessage = value; }
-
-    /**
-     * A detailed error message.
-     */
     inline void SetDetailedErrorMessage(Aws::String&& value) { m_detailedErrorMessageHasBeenSet = true; m_detailedErrorMessage = std::move(value); }
-
-    /**
-     * A detailed error message.
-     */
     inline void SetDetailedErrorMessage(const char* value) { m_detailedErrorMessageHasBeenSet = true; m_detailedErrorMessage.assign(value); }
-
-    /**
-     * A detailed error message.
-     */
     inline ErrorDetail& WithDetailedErrorMessage(const Aws::String& value) { SetDetailedErrorMessage(value); return *this;}
-
-    /**
-     * A detailed error message.
-     */
     inline ErrorDetail& WithDetailedErrorMessage(Aws::String&& value) { SetDetailedErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * A detailed error message.
-     */
     inline ErrorDetail& WithDetailedErrorMessage(const char* value) { SetDetailedErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detailedErrorCode;

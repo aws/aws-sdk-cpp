@@ -32,63 +32,29 @@ namespace Model
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The base64-encoded SDP answer content.</p>
      */
     inline const Aws::String& GetAnswer() const{ return m_answer; }
-
-    /**
-     * <p>The base64-encoded SDP answer content.</p>
-     */
     inline void SetAnswer(const Aws::String& value) { m_answer = value; }
-
-    /**
-     * <p>The base64-encoded SDP answer content.</p>
-     */
     inline void SetAnswer(Aws::String&& value) { m_answer = std::move(value); }
-
-    /**
-     * <p>The base64-encoded SDP answer content.</p>
-     */
     inline void SetAnswer(const char* value) { m_answer.assign(value); }
-
-    /**
-     * <p>The base64-encoded SDP answer content.</p>
-     */
     inline SendAlexaOfferToMasterResult& WithAnswer(const Aws::String& value) { SetAnswer(value); return *this;}
-
-    /**
-     * <p>The base64-encoded SDP answer content.</p>
-     */
     inline SendAlexaOfferToMasterResult& WithAnswer(Aws::String&& value) { SetAnswer(std::move(value)); return *this;}
-
-    /**
-     * <p>The base64-encoded SDP answer content.</p>
-     */
     inline SendAlexaOfferToMasterResult& WithAnswer(const char* value) { SetAnswer(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendAlexaOfferToMasterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendAlexaOfferToMasterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendAlexaOfferToMasterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_answer;

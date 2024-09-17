@@ -24,9 +24,8 @@ ReplicaUpdate::ReplicaUpdate() :
 {
 }
 
-ReplicaUpdate::ReplicaUpdate(JsonView jsonValue) : 
-    m_createHasBeenSet(false),
-    m_deleteHasBeenSet(false)
+ReplicaUpdate::ReplicaUpdate(JsonView jsonValue)
+  : ReplicaUpdate()
 {
   *this = jsonValue;
 }

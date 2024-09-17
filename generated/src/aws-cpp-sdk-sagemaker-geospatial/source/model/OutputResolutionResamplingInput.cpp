@@ -23,8 +23,8 @@ OutputResolutionResamplingInput::OutputResolutionResamplingInput() :
 {
 }
 
-OutputResolutionResamplingInput::OutputResolutionResamplingInput(JsonView jsonValue) : 
-    m_userDefinedHasBeenSet(false)
+OutputResolutionResamplingInput::OutputResolutionResamplingInput(JsonView jsonValue)
+  : OutputResolutionResamplingInput()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ GitSubmodulesConfig::GitSubmodulesConfig() :
 {
 }
 
-GitSubmodulesConfig::GitSubmodulesConfig(JsonView jsonValue) : 
-    m_fetchSubmodules(false),
-    m_fetchSubmodulesHasBeenSet(false)
+GitSubmodulesConfig::GitSubmodulesConfig(JsonView jsonValue)
+  : GitSubmodulesConfig()
 {
   *this = jsonValue;
 }

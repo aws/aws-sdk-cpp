@@ -30,15 +30,8 @@ LayerVersionsListItem::LayerVersionsListItem() :
 {
 }
 
-LayerVersionsListItem::LayerVersionsListItem(JsonView jsonValue) : 
-    m_layerVersionArnHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_compatibleRuntimesHasBeenSet(false),
-    m_licenseInfoHasBeenSet(false),
-    m_compatibleArchitecturesHasBeenSet(false)
+LayerVersionsListItem::LayerVersionsListItem(JsonView jsonValue)
+  : LayerVersionsListItem()
 {
   *this = jsonValue;
 }

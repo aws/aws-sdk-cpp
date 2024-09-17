@@ -107,13 +107,13 @@ namespace Pricing
          * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest& request) const;
+        virtual Model::DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeServicesRequestT = Model::DescribeServicesRequest>
-        Model::DescribeServicesOutcomeCallable DescribeServicesCallable(const DescribeServicesRequestT& request) const
+        Model::DescribeServicesOutcomeCallable DescribeServicesCallable(const DescribeServicesRequestT& request = {}) const
         {
             return SubmitCallable(&PricingClient::DescribeServices, request);
         }
@@ -122,7 +122,7 @@ namespace Pricing
          * An Async wrapper for DescribeServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeServicesRequestT = Model::DescribeServicesRequest>
-        void DescribeServicesAsync(const DescribeServicesRequestT& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeServicesAsync(const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServicesRequestT& request = {}) const
         {
             return SubmitAsync(&PricingClient::DescribeServices, request, handler, context);
         }
@@ -264,7 +264,6 @@ namespace Pricing
       void init(const PricingClientConfiguration& clientConfiguration);
 
       PricingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PricingEndpointProviderBase> m_endpointProvider;
   };
 

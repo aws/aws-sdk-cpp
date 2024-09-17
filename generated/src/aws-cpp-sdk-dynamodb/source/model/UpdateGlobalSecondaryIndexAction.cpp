@@ -20,13 +20,13 @@ namespace Model
 
 UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction() : 
     m_indexNameHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false)
+    m_provisionedThroughputHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
 }
 
-UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false)
+UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction(JsonView jsonValue)
+  : UpdateGlobalSecondaryIndexAction()
 {
   *this = jsonValue;
 }
@@ -47,6 +47,13 @@ UpdateGlobalSecondaryIndexAction& UpdateGlobalSecondaryIndexAction::operator =(J
     m_provisionedThroughputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnDemandThroughput"))
+  {
+    m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
+
+    m_onDemandThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +70,12 @@ JsonValue UpdateGlobalSecondaryIndexAction::Jsonize() const
   if(m_provisionedThroughputHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 

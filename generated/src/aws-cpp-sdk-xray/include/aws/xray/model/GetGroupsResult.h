@@ -34,99 +34,42 @@ namespace Model
     AWS_XRAY_API GetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The collection of all active groups.</p>
      */
     inline const Aws::Vector<GroupSummary>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>The collection of all active groups.</p>
-     */
     inline void SetGroups(const Aws::Vector<GroupSummary>& value) { m_groups = value; }
-
-    /**
-     * <p>The collection of all active groups.</p>
-     */
     inline void SetGroups(Aws::Vector<GroupSummary>&& value) { m_groups = std::move(value); }
-
-    /**
-     * <p>The collection of all active groups.</p>
-     */
     inline GetGroupsResult& WithGroups(const Aws::Vector<GroupSummary>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>The collection of all active groups.</p>
-     */
     inline GetGroupsResult& WithGroups(Aws::Vector<GroupSummary>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The collection of all active groups.</p>
-     */
     inline GetGroupsResult& AddGroups(const GroupSummary& value) { m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>The collection of all active groups.</p>
-     */
     inline GetGroupsResult& AddGroups(GroupSummary&& value) { m_groups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<GroupSummary> m_groups;

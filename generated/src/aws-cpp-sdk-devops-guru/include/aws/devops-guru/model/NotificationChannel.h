@@ -52,83 +52,32 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The ID of a notification channel. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p> The ID of a notification channel. </p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p> The ID of a notification channel. </p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p> The ID of a notification channel. </p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p> The ID of a notification channel. </p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p> The ID of a notification channel. </p>
-     */
     inline NotificationChannel& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p> The ID of a notification channel. </p>
-     */
     inline NotificationChannel& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of a notification channel. </p>
-     */
     inline NotificationChannel& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A <code>NotificationChannelConfig</code> object that contains information
      * about configured notification channels. </p>
      */
     inline const NotificationChannelConfig& GetConfig() const{ return m_config; }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that contains information
-     * about configured notification channels. </p>
-     */
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that contains information
-     * about configured notification channels. </p>
-     */
     inline void SetConfig(const NotificationChannelConfig& value) { m_configHasBeenSet = true; m_config = value; }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that contains information
-     * about configured notification channels. </p>
-     */
     inline void SetConfig(NotificationChannelConfig&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that contains information
-     * about configured notification channels. </p>
-     */
     inline NotificationChannel& WithConfig(const NotificationChannelConfig& value) { SetConfig(value); return *this;}
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that contains information
-     * about configured notification channels. </p>
-     */
     inline NotificationChannel& WithConfig(NotificationChannelConfig&& value) { SetConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

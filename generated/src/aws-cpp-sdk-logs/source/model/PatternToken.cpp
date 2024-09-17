@@ -28,13 +28,8 @@ PatternToken::PatternToken() :
 {
 }
 
-PatternToken::PatternToken(JsonView jsonValue) : 
-    m_dynamicTokenPosition(0),
-    m_dynamicTokenPositionHasBeenSet(false),
-    m_isDynamic(false),
-    m_isDynamicHasBeenSet(false),
-    m_tokenStringHasBeenSet(false),
-    m_enumerationsHasBeenSet(false)
+PatternToken::PatternToken(JsonView jsonValue)
+  : PatternToken()
 {
   *this = jsonValue;
 }

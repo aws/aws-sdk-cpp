@@ -24,6 +24,7 @@ namespace Aws
         static const int PINECONE_HASH = HashingUtils::HashString("PINECONE");
         static const int REDIS_ENTERPRISE_CLOUD_HASH = HashingUtils::HashString("REDIS_ENTERPRISE_CLOUD");
         static const int RDS_HASH = HashingUtils::HashString("RDS");
+        static const int MONGO_DB_ATLAS_HASH = HashingUtils::HashString("MONGO_DB_ATLAS");
 
 
         KnowledgeBaseStorageType GetKnowledgeBaseStorageTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == RDS_HASH)
           {
             return KnowledgeBaseStorageType::RDS;
+          }
+          else if (hashCode == MONGO_DB_ATLAS_HASH)
+          {
+            return KnowledgeBaseStorageType::MONGO_DB_ATLAS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "REDIS_ENTERPRISE_CLOUD";
           case KnowledgeBaseStorageType::RDS:
             return "RDS";
+          case KnowledgeBaseStorageType::MONGO_DB_ATLAS:
+            return "MONGO_DB_ATLAS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

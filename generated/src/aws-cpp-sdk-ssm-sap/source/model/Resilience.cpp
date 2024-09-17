@@ -31,16 +31,8 @@ Resilience::Resilience() :
 {
 }
 
-Resilience::Resilience(JsonView jsonValue) : 
-    m_hsrTierHasBeenSet(false),
-    m_hsrReplicationMode(ReplicationMode::NOT_SET),
-    m_hsrReplicationModeHasBeenSet(false),
-    m_hsrOperationMode(OperationMode::NOT_SET),
-    m_hsrOperationModeHasBeenSet(false),
-    m_clusterStatus(ClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false),
-    m_enqueueReplication(false),
-    m_enqueueReplicationHasBeenSet(false)
+Resilience::Resilience(JsonView jsonValue)
+  : Resilience()
 {
   *this = jsonValue;
 }

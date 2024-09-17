@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EntityResolutionClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EntityResolutionClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EntityResolutionClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EntityResolutionBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -38,105 +38,35 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * If you specify a StopTimecode in an input (in order to clip the file), you can
      * specify if you want the clip to exclude (the default) or include the frame
      * specified by the timecode.
      */
     inline const LastFrameClippingBehavior& GetLastFrameClippingBehavior() const{ return m_lastFrameClippingBehavior; }
-
-    /**
-     * If you specify a StopTimecode in an input (in order to clip the file), you can
-     * specify if you want the clip to exclude (the default) or include the frame
-     * specified by the timecode.
-     */
     inline bool LastFrameClippingBehaviorHasBeenSet() const { return m_lastFrameClippingBehaviorHasBeenSet; }
-
-    /**
-     * If you specify a StopTimecode in an input (in order to clip the file), you can
-     * specify if you want the clip to exclude (the default) or include the frame
-     * specified by the timecode.
-     */
     inline void SetLastFrameClippingBehavior(const LastFrameClippingBehavior& value) { m_lastFrameClippingBehaviorHasBeenSet = true; m_lastFrameClippingBehavior = value; }
-
-    /**
-     * If you specify a StopTimecode in an input (in order to clip the file), you can
-     * specify if you want the clip to exclude (the default) or include the frame
-     * specified by the timecode.
-     */
     inline void SetLastFrameClippingBehavior(LastFrameClippingBehavior&& value) { m_lastFrameClippingBehaviorHasBeenSet = true; m_lastFrameClippingBehavior = std::move(value); }
-
-    /**
-     * If you specify a StopTimecode in an input (in order to clip the file), you can
-     * specify if you want the clip to exclude (the default) or include the frame
-     * specified by the timecode.
-     */
     inline StopTimecode& WithLastFrameClippingBehavior(const LastFrameClippingBehavior& value) { SetLastFrameClippingBehavior(value); return *this;}
-
-    /**
-     * If you specify a StopTimecode in an input (in order to clip the file), you can
-     * specify if you want the clip to exclude (the default) or include the frame
-     * specified by the timecode.
-     */
     inline StopTimecode& WithLastFrameClippingBehavior(LastFrameClippingBehavior&& value) { SetLastFrameClippingBehavior(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The timecode for the frame where you want to stop the clip. Optional; if not
      * specified, the clip continues to the end of the file. Enter the timecode as
      * HH:MM:SS:FF or HH:MM:SS;FF.
      */
     inline const Aws::String& GetTimecode() const{ return m_timecode; }
-
-    /**
-     * The timecode for the frame where you want to stop the clip. Optional; if not
-     * specified, the clip continues to the end of the file. Enter the timecode as
-     * HH:MM:SS:FF or HH:MM:SS;FF.
-     */
     inline bool TimecodeHasBeenSet() const { return m_timecodeHasBeenSet; }
-
-    /**
-     * The timecode for the frame where you want to stop the clip. Optional; if not
-     * specified, the clip continues to the end of the file. Enter the timecode as
-     * HH:MM:SS:FF or HH:MM:SS;FF.
-     */
     inline void SetTimecode(const Aws::String& value) { m_timecodeHasBeenSet = true; m_timecode = value; }
-
-    /**
-     * The timecode for the frame where you want to stop the clip. Optional; if not
-     * specified, the clip continues to the end of the file. Enter the timecode as
-     * HH:MM:SS:FF or HH:MM:SS;FF.
-     */
     inline void SetTimecode(Aws::String&& value) { m_timecodeHasBeenSet = true; m_timecode = std::move(value); }
-
-    /**
-     * The timecode for the frame where you want to stop the clip. Optional; if not
-     * specified, the clip continues to the end of the file. Enter the timecode as
-     * HH:MM:SS:FF or HH:MM:SS;FF.
-     */
     inline void SetTimecode(const char* value) { m_timecodeHasBeenSet = true; m_timecode.assign(value); }
-
-    /**
-     * The timecode for the frame where you want to stop the clip. Optional; if not
-     * specified, the clip continues to the end of the file. Enter the timecode as
-     * HH:MM:SS:FF or HH:MM:SS;FF.
-     */
     inline StopTimecode& WithTimecode(const Aws::String& value) { SetTimecode(value); return *this;}
-
-    /**
-     * The timecode for the frame where you want to stop the clip. Optional; if not
-     * specified, the clip continues to the end of the file. Enter the timecode as
-     * HH:MM:SS:FF or HH:MM:SS;FF.
-     */
     inline StopTimecode& WithTimecode(Aws::String&& value) { SetTimecode(std::move(value)); return *this;}
-
-    /**
-     * The timecode for the frame where you want to stop the clip. Optional; if not
-     * specified, the clip continues to the end of the file. Enter the timecode as
-     * HH:MM:SS:FF or HH:MM:SS;FF.
-     */
     inline StopTimecode& WithTimecode(const char* value) { SetTimecode(value); return *this;}
-
+    ///@}
   private:
 
     LastFrameClippingBehavior m_lastFrameClippingBehavior;

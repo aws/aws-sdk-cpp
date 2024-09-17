@@ -27,12 +27,8 @@ DirectoryConfig::DirectoryConfig() :
 {
 }
 
-DirectoryConfig::DirectoryConfig(JsonView jsonValue) : 
-    m_directoryNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNamesHasBeenSet(false),
-    m_serviceAccountCredentialsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_certificateBasedAuthPropertiesHasBeenSet(false)
+DirectoryConfig::DirectoryConfig(JsonView jsonValue)
+  : DirectoryConfig()
 {
   *this = jsonValue;
 }

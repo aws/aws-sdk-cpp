@@ -25,10 +25,8 @@ CommentContent::CommentContent() :
 {
 }
 
-CommentContent::CommentContent(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_contentType(CommentBodyTextType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
+CommentContent::CommentContent(JsonView jsonValue)
+  : CommentContent()
 {
   *this = jsonValue;
 }

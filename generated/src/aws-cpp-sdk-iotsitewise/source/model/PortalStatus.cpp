@@ -25,10 +25,8 @@ PortalStatus::PortalStatus() :
 {
 }
 
-PortalStatus::PortalStatus(JsonView jsonValue) : 
-    m_state(PortalState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
+PortalStatus::PortalStatus(JsonView jsonValue)
+  : PortalStatus()
 {
   *this = jsonValue;
 }

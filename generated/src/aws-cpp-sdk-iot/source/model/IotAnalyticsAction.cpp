@@ -27,12 +27,8 @@ IotAnalyticsAction::IotAnalyticsAction() :
 {
 }
 
-IotAnalyticsAction::IotAnalyticsAction(JsonView jsonValue) : 
-    m_channelArnHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+IotAnalyticsAction::IotAnalyticsAction(JsonView jsonValue)
+  : IotAnalyticsAction()
 {
   *this = jsonValue;
 }

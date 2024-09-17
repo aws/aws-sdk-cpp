@@ -25,10 +25,8 @@ StreamingConfiguration::StreamingConfiguration() :
 {
 }
 
-StreamingConfiguration::StreamingConfiguration(JsonView jsonValue) : 
-    m_dataType(MessagingDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+StreamingConfiguration::StreamingConfiguration(JsonView jsonValue)
+  : StreamingConfiguration()
 {
   *this = jsonValue;
 }

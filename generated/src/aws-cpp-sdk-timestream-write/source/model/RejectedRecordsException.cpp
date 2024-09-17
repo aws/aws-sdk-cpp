@@ -24,9 +24,8 @@ RejectedRecordsException::RejectedRecordsException() :
 {
 }
 
-RejectedRecordsException::RejectedRecordsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_rejectedRecordsHasBeenSet(false)
+RejectedRecordsException::RejectedRecordsException(JsonView jsonValue)
+  : RejectedRecordsException()
 {
   *this = jsonValue;
 }

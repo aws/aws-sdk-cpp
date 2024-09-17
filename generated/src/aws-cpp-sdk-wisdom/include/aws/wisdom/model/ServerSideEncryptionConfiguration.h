@@ -38,6 +38,7 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The customer managed key used for encryption. For more information about
      * setting up a customer managed key for Wisdom, see <a
@@ -48,84 +49,14 @@ namespace Model
      * identifiers (KeyId)</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Wisdom, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
-     * Amazon Connect Wisdom for your instance</a>. For information about valid ID
-     * values, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a>.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Wisdom, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
-     * Amazon Connect Wisdom for your instance</a>. For information about valid ID
-     * values, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a>.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Wisdom, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
-     * Amazon Connect Wisdom for your instance</a>. For information about valid ID
-     * values, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a>.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Wisdom, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
-     * Amazon Connect Wisdom for your instance</a>. For information about valid ID
-     * values, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a>.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Wisdom, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
-     * Amazon Connect Wisdom for your instance</a>. For information about valid ID
-     * values, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a>.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Wisdom, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
-     * Amazon Connect Wisdom for your instance</a>. For information about valid ID
-     * values, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a>.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Wisdom, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
-     * Amazon Connect Wisdom for your instance</a>. For information about valid ID
-     * values, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
-     * identifiers (KeyId)</a>.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

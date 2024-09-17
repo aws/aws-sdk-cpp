@@ -25,10 +25,8 @@ UpdateWirelessGatewayTaskEntry::UpdateWirelessGatewayTaskEntry() :
 {
 }
 
-UpdateWirelessGatewayTaskEntry::UpdateWirelessGatewayTaskEntry(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_arnHasBeenSet(false)
+UpdateWirelessGatewayTaskEntry::UpdateWirelessGatewayTaskEntry(JsonView jsonValue)
+  : UpdateWirelessGatewayTaskEntry()
 {
   *this = jsonValue;
 }

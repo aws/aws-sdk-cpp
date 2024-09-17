@@ -21,16 +21,13 @@ namespace Model
 PineconeConfiguration::PineconeConfiguration() : 
     m_connectionStringHasBeenSet(false),
     m_credentialsSecretArnHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false)
+    m_fieldMappingHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
 }
 
-PineconeConfiguration::PineconeConfiguration(JsonView jsonValue) : 
-    m_connectionStringHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false)
+PineconeConfiguration::PineconeConfiguration(JsonView jsonValue)
+  : PineconeConfiguration()
 {
   *this = jsonValue;
 }
@@ -51,18 +48,18 @@ PineconeConfiguration& PineconeConfiguration::operator =(JsonView jsonValue)
     m_credentialsSecretArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("namespace"))
-  {
-    m_namespace = jsonValue.GetString("namespace");
-
-    m_namespaceHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("fieldMapping"))
   {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
 
     m_fieldMappingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("namespace"))
+  {
+    m_namespace = jsonValue.GetString("namespace");
+
+    m_namespaceHasBeenSet = true;
   }
 
   return *this;
@@ -84,15 +81,15 @@ JsonValue PineconeConfiguration::Jsonize() const
 
   }
 
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("namespace", m_namespace);
-
-  }
-
   if(m_fieldMappingHasBeenSet)
   {
    payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
+
+  }
+
+  if(m_namespaceHasBeenSet)
+  {
+   payload.WithString("namespace", m_namespace);
 
   }
 

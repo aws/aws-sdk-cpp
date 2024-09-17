@@ -24,9 +24,8 @@ FollowUpPrompt::FollowUpPrompt() :
 {
 }
 
-FollowUpPrompt::FollowUpPrompt(JsonView jsonValue) : 
-    m_promptHasBeenSet(false),
-    m_rejectionStatementHasBeenSet(false)
+FollowUpPrompt::FollowUpPrompt(JsonView jsonValue)
+  : FollowUpPrompt()
 {
   *this = jsonValue;
 }

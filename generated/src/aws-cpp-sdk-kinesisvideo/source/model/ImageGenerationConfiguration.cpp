@@ -36,21 +36,8 @@ ImageGenerationConfiguration::ImageGenerationConfiguration() :
 {
 }
 
-ImageGenerationConfiguration::ImageGenerationConfiguration(JsonView jsonValue) : 
-    m_status(ConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_imageSelectorType(ImageSelectorType::NOT_SET),
-    m_imageSelectorTypeHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_samplingInterval(0),
-    m_samplingIntervalHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_formatConfigHasBeenSet(false),
-    m_widthPixels(0),
-    m_widthPixelsHasBeenSet(false),
-    m_heightPixels(0),
-    m_heightPixelsHasBeenSet(false)
+ImageGenerationConfiguration::ImageGenerationConfiguration(JsonView jsonValue)
+  : ImageGenerationConfiguration()
 {
   *this = jsonValue;
 }

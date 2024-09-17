@@ -40,79 +40,31 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether updated drivers or other components are available for the
      * specified WorkSpace image.</p>
      */
     inline bool GetUpdateAvailable() const{ return m_updateAvailable; }
-
-    /**
-     * <p>Indicates whether updated drivers or other components are available for the
-     * specified WorkSpace image.</p>
-     */
     inline bool UpdateAvailableHasBeenSet() const { return m_updateAvailableHasBeenSet; }
-
-    /**
-     * <p>Indicates whether updated drivers or other components are available for the
-     * specified WorkSpace image.</p>
-     */
     inline void SetUpdateAvailable(bool value) { m_updateAvailableHasBeenSet = true; m_updateAvailable = value; }
-
-    /**
-     * <p>Indicates whether updated drivers or other components are available for the
-     * specified WorkSpace image.</p>
-     */
     inline UpdateResult& WithUpdateAvailable(bool value) { SetUpdateAvailable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of whether updates for the WorkSpace image are pending or
      * available.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of whether updates for the WorkSpace image are pending or
-     * available.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of whether updates for the WorkSpace image are pending or
-     * available.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of whether updates for the WorkSpace image are pending or
-     * available.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of whether updates for the WorkSpace image are pending or
-     * available.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of whether updates for the WorkSpace image are pending or
-     * available.</p>
-     */
     inline UpdateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of whether updates for the WorkSpace image are pending or
-     * available.</p>
-     */
     inline UpdateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of whether updates for the WorkSpace image are pending or
-     * available.</p>
-     */
     inline UpdateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     bool m_updateAvailable;

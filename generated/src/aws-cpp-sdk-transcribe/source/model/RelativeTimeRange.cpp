@@ -30,15 +30,8 @@ RelativeTimeRange::RelativeTimeRange() :
 {
 }
 
-RelativeTimeRange::RelativeTimeRange(JsonView jsonValue) : 
-    m_startPercentage(0),
-    m_startPercentageHasBeenSet(false),
-    m_endPercentage(0),
-    m_endPercentageHasBeenSet(false),
-    m_first(0),
-    m_firstHasBeenSet(false),
-    m_last(0),
-    m_lastHasBeenSet(false)
+RelativeTimeRange::RelativeTimeRange(JsonView jsonValue)
+  : RelativeTimeRange()
 {
   *this = jsonValue;
 }

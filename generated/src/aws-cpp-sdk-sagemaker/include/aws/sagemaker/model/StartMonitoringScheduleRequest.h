@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the schedule to start.</p>
      */
     inline const Aws::String& GetMonitoringScheduleName() const{ return m_monitoringScheduleName; }
-
-    /**
-     * <p>The name of the schedule to start.</p>
-     */
     inline bool MonitoringScheduleNameHasBeenSet() const { return m_monitoringScheduleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the schedule to start.</p>
-     */
     inline void SetMonitoringScheduleName(const Aws::String& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = value; }
-
-    /**
-     * <p>The name of the schedule to start.</p>
-     */
     inline void SetMonitoringScheduleName(Aws::String&& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = std::move(value); }
-
-    /**
-     * <p>The name of the schedule to start.</p>
-     */
     inline void SetMonitoringScheduleName(const char* value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName.assign(value); }
-
-    /**
-     * <p>The name of the schedule to start.</p>
-     */
     inline StartMonitoringScheduleRequest& WithMonitoringScheduleName(const Aws::String& value) { SetMonitoringScheduleName(value); return *this;}
-
-    /**
-     * <p>The name of the schedule to start.</p>
-     */
     inline StartMonitoringScheduleRequest& WithMonitoringScheduleName(Aws::String&& value) { SetMonitoringScheduleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schedule to start.</p>
-     */
     inline StartMonitoringScheduleRequest& WithMonitoringScheduleName(const char* value) { SetMonitoringScheduleName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitoringScheduleName;

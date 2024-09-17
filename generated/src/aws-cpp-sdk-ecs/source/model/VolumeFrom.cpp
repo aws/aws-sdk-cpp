@@ -25,10 +25,8 @@ VolumeFrom::VolumeFrom() :
 {
 }
 
-VolumeFrom::VolumeFrom(JsonView jsonValue) : 
-    m_sourceContainerHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
+VolumeFrom::VolumeFrom(JsonView jsonValue)
+  : VolumeFrom()
 {
   *this = jsonValue;
 }

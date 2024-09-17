@@ -37,6 +37,7 @@ namespace Aws
         static const int ManifestFileLocation_HASH = HashingUtils::HashString("ManifestFileLocation");
         static const int Warehouse_HASH = HashingUtils::HashString("Warehouse");
         static const int RoleArn_HASH = HashingUtils::HashString("RoleArn");
+        static const int ProductType_HASH = HashingUtils::HashString("ProductType");
 
 
         AssetBundleExportJobDataSourcePropertyToOverride GetAssetBundleExportJobDataSourcePropertyToOverrideForName(const Aws::String& name)
@@ -110,6 +111,10 @@ namespace Aws
           {
             return AssetBundleExportJobDataSourcePropertyToOverride::RoleArn;
           }
+          else if (hashCode == ProductType_HASH)
+          {
+            return AssetBundleExportJobDataSourcePropertyToOverride::ProductType;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -160,6 +165,8 @@ namespace Aws
             return "Warehouse";
           case AssetBundleExportJobDataSourcePropertyToOverride::RoleArn:
             return "RoleArn";
+          case AssetBundleExportJobDataSourcePropertyToOverride::ProductType:
+            return "ProductType";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

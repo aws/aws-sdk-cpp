@@ -25,10 +25,8 @@ Child::Child() :
 {
 }
 
-Child::Child(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(ChildType::NOT_SET),
-    m_typeHasBeenSet(false)
+Child::Child(JsonView jsonValue)
+  : Child()
 {
   *this = jsonValue;
 }

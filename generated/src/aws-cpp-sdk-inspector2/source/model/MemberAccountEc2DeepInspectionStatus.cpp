@@ -25,10 +25,8 @@ MemberAccountEc2DeepInspectionStatus::MemberAccountEc2DeepInspectionStatus() :
 {
 }
 
-MemberAccountEc2DeepInspectionStatus::MemberAccountEc2DeepInspectionStatus(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_activateDeepInspection(false),
-    m_activateDeepInspectionHasBeenSet(false)
+MemberAccountEc2DeepInspectionStatus::MemberAccountEc2DeepInspectionStatus(JsonView jsonValue)
+  : MemberAccountEc2DeepInspectionStatus()
 {
   *this = jsonValue;
 }

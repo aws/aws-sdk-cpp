@@ -28,11 +28,8 @@ AvailabilityZone::AvailabilityZone() :
 {
 }
 
-AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
-    m_zoneNameHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_outpostIdHasBeenSet(false),
-    m_loadBalancerAddressesHasBeenSet(false)
+AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
+  : AvailabilityZone()
 {
   *this = xmlNode;
 }

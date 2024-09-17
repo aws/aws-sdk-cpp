@@ -39,93 +39,40 @@ namespace Model
     AWS_CLOUDFORMATION_API CreateChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the change set.</p>
-     */
     inline void SetId(const Aws::String& value) { m_id = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the change set.</p>
-     */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the change set.</p>
-     */
     inline void SetId(const char* value) { m_id.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the change set.</p>
-     */
     inline CreateChangeSetResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the change set.</p>
-     */
     inline CreateChangeSetResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the change set.</p>
-     */
     inline CreateChangeSetResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID of the stack.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
-
-    /**
-     * <p>The unique ID of the stack.</p>
-     */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
-
-    /**
-     * <p>The unique ID of the stack.</p>
-     */
     inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the stack.</p>
-     */
     inline void SetStackId(const char* value) { m_stackId.assign(value); }
-
-    /**
-     * <p>The unique ID of the stack.</p>
-     */
     inline CreateChangeSetResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the stack.</p>
-     */
     inline CreateChangeSetResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the stack.</p>
-     */
     inline CreateChangeSetResult& WithStackId(const char* value) { SetStackId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateChangeSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateChangeSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

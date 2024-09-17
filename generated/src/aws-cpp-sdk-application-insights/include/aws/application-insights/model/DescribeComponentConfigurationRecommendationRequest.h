@@ -36,190 +36,71 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the resource group.</p>
      */
     inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the component.</p>
      */
     inline const Aws::String& GetComponentName() const{ return m_componentName; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tier of the application component.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
-
-    /**
-     * <p>The tier of the application component.</p>
-     */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-
-    /**
-     * <p>The tier of the application component.</p>
-     */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
-
-    /**
-     * <p>The tier of the application component.</p>
-     */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-
-    /**
-     * <p>The tier of the application component.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
-
-    /**
-     * <p>The tier of the application component.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the workload.</p>
      */
     inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
-
-    /**
-     * <p>The name of the workload.</p>
-     */
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-
-    /**
-     * <p>The name of the workload.</p>
-     */
     inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-
-    /**
-     * <p>The name of the workload.</p>
-     */
     inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-
-    /**
-     * <p>The name of the workload.</p>
-     */
     inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-
-    /**
-     * <p>The name of the workload.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-
-    /**
-     * <p>The name of the workload.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workload.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The recommended configuration type.</p>
      */
     inline const RecommendationType& GetRecommendationType() const{ return m_recommendationType; }
-
-    /**
-     * <p>The recommended configuration type.</p>
-     */
     inline bool RecommendationTypeHasBeenSet() const { return m_recommendationTypeHasBeenSet; }
-
-    /**
-     * <p>The recommended configuration type.</p>
-     */
     inline void SetRecommendationType(const RecommendationType& value) { m_recommendationTypeHasBeenSet = true; m_recommendationType = value; }
-
-    /**
-     * <p>The recommended configuration type.</p>
-     */
     inline void SetRecommendationType(RecommendationType&& value) { m_recommendationTypeHasBeenSet = true; m_recommendationType = std::move(value); }
-
-    /**
-     * <p>The recommended configuration type.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithRecommendationType(const RecommendationType& value) { SetRecommendationType(value); return *this;}
-
-    /**
-     * <p>The recommended configuration type.</p>
-     */
     inline DescribeComponentConfigurationRecommendationRequest& WithRecommendationType(RecommendationType&& value) { SetRecommendationType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceGroupName;

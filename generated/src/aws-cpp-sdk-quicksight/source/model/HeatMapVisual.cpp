@@ -28,13 +28,8 @@ HeatMapVisual::HeatMapVisual() :
 {
 }
 
-HeatMapVisual::HeatMapVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+HeatMapVisual::HeatMapVisual(JsonView jsonValue)
+  : HeatMapVisual()
 {
   *this = jsonValue;
 }

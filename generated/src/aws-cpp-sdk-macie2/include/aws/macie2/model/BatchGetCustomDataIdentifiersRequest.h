@@ -33,60 +33,21 @@ namespace Model
     AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An array of custom data identifier IDs, one for each custom data identifier
      * to retrieve information about.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline BatchGetCustomDataIdentifiersRequest& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline BatchGetCustomDataIdentifiersRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline BatchGetCustomDataIdentifiersRequest& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline BatchGetCustomDataIdentifiersRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of custom data identifier IDs, one for each custom data identifier
-     * to retrieve information about.</p>
-     */
     inline BatchGetCustomDataIdentifiersRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_ids;

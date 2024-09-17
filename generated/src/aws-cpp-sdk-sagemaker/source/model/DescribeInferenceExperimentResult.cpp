@@ -23,9 +23,8 @@ DescribeInferenceExperimentResult::DescribeInferenceExperimentResult() :
 {
 }
 
-DescribeInferenceExperimentResult::DescribeInferenceExperimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(InferenceExperimentType::NOT_SET),
-    m_status(InferenceExperimentStatus::NOT_SET)
+DescribeInferenceExperimentResult::DescribeInferenceExperimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeInferenceExperimentResult()
 {
   *this = result;
 }

@@ -25,11 +25,8 @@ UpdateSlackChannelConfigurationResult::UpdateSlackChannelConfigurationResult() :
 {
 }
 
-UpdateSlackChannelConfigurationResult::UpdateSlackChannelConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_notifyOnAddCorrespondenceToCase(false),
-    m_notifyOnCaseSeverity(NotificationSeverityLevel::NOT_SET),
-    m_notifyOnCreateOrReopenCase(false),
-    m_notifyOnResolveCase(false)
+UpdateSlackChannelConfigurationResult::UpdateSlackChannelConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateSlackChannelConfigurationResult()
 {
   *this = result;
 }

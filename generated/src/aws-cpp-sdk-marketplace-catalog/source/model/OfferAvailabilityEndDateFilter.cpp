@@ -23,8 +23,8 @@ OfferAvailabilityEndDateFilter::OfferAvailabilityEndDateFilter() :
 {
 }
 
-OfferAvailabilityEndDateFilter::OfferAvailabilityEndDateFilter(JsonView jsonValue) : 
-    m_dateRangeHasBeenSet(false)
+OfferAvailabilityEndDateFilter::OfferAvailabilityEndDateFilter(JsonView jsonValue)
+  : OfferAvailabilityEndDateFilter()
 {
   *this = jsonValue;
 }

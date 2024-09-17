@@ -24,9 +24,8 @@ S3RecordingDetails::S3RecordingDetails() :
 {
 }
 
-S3RecordingDetails::S3RecordingDetails(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_keyTemplateHasBeenSet(false)
+S3RecordingDetails::S3RecordingDetails(JsonView jsonValue)
+  : S3RecordingDetails()
 {
   *this = jsonValue;
 }

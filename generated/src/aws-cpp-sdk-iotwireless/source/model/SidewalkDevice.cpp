@@ -31,16 +31,8 @@ SidewalkDevice::SidewalkDevice() :
 {
 }
 
-SidewalkDevice::SidewalkDevice(JsonView jsonValue) : 
-    m_amazonIdHasBeenSet(false),
-    m_sidewalkIdHasBeenSet(false),
-    m_sidewalkManufacturingSnHasBeenSet(false),
-    m_deviceCertificatesHasBeenSet(false),
-    m_privateKeysHasBeenSet(false),
-    m_deviceProfileIdHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_status(WirelessDeviceSidewalkStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SidewalkDevice::SidewalkDevice(JsonView jsonValue)
+  : SidewalkDevice()
 {
   *this = jsonValue;
 }

@@ -52,6 +52,16 @@
 #include <aws/codedeploy/model/TagResourceResult.h>
 #include <aws/codedeploy/model/UntagResourceResult.h>
 #include <aws/codedeploy/model/UpdateDeploymentGroupResult.h>
+#include <aws/codedeploy/model/DeleteResourcesByExternalIdRequest.h>
+#include <aws/codedeploy/model/PutLifecycleEventHookExecutionStatusRequest.h>
+#include <aws/codedeploy/model/ListOnPremisesInstancesRequest.h>
+#include <aws/codedeploy/model/DeleteGitHubAccountTokenRequest.h>
+#include <aws/codedeploy/model/ListApplicationsRequest.h>
+#include <aws/codedeploy/model/ListGitHubAccountTokenNamesRequest.h>
+#include <aws/codedeploy/model/ContinueDeploymentRequest.h>
+#include <aws/codedeploy/model/ListDeploymentsRequest.h>
+#include <aws/codedeploy/model/ListDeploymentConfigsRequest.h>
+#include <aws/codedeploy/model/UpdateApplicationRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CodeDeployClient header */
 
@@ -86,7 +96,7 @@ namespace Aws
 
   namespace CodeDeploy
   {
-    using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeDeployEndpointProviderBase = Aws::CodeDeploy::Endpoint::CodeDeployEndpointProviderBase;
     using CodeDeployEndpointProvider = Aws::CodeDeploy::Endpoint::CodeDeployEndpointProvider;
 

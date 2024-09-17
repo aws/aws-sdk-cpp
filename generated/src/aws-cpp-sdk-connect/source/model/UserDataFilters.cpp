@@ -27,12 +27,8 @@ UserDataFilters::UserDataFilters() :
 {
 }
 
-UserDataFilters::UserDataFilters(JsonView jsonValue) : 
-    m_queuesHasBeenSet(false),
-    m_contactFilterHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false),
-    m_agentsHasBeenSet(false),
-    m_userHierarchyGroupsHasBeenSet(false)
+UserDataFilters::UserDataFilters(JsonView jsonValue)
+  : UserDataFilters()
 {
   *this = jsonValue;
 }

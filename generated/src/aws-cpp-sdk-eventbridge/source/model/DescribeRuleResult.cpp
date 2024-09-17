@@ -22,8 +22,8 @@ DescribeRuleResult::DescribeRuleResult() :
 {
 }
 
-DescribeRuleResult::DescribeRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(RuleState::NOT_SET)
+DescribeRuleResult::DescribeRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeRuleResult()
 {
   *this = result;
 }

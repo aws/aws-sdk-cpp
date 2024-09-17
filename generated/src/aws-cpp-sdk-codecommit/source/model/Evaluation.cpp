@@ -28,13 +28,8 @@ Evaluation::Evaluation() :
 {
 }
 
-Evaluation::Evaluation(JsonView jsonValue) : 
-    m_approved(false),
-    m_approvedHasBeenSet(false),
-    m_overridden(false),
-    m_overriddenHasBeenSet(false),
-    m_approvalRulesSatisfiedHasBeenSet(false),
-    m_approvalRulesNotSatisfiedHasBeenSet(false)
+Evaluation::Evaluation(JsonView jsonValue)
+  : Evaluation()
 {
   *this = jsonValue;
 }

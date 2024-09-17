@@ -22,8 +22,8 @@ GetGlossaryTermResult::GetGlossaryTermResult() :
 {
 }
 
-GetGlossaryTermResult::GetGlossaryTermResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GlossaryTermStatus::NOT_SET)
+GetGlossaryTermResult::GetGlossaryTermResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetGlossaryTermResult()
 {
   *this = result;
 }

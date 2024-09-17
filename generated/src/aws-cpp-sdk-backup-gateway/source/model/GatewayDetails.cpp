@@ -31,16 +31,8 @@ GatewayDetails::GatewayDetails() :
 {
 }
 
-GatewayDetails::GatewayDetails(JsonView jsonValue) : 
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayDisplayNameHasBeenSet(false),
-    m_gatewayType(GatewayType::NOT_SET),
-    m_gatewayTypeHasBeenSet(false),
-    m_hypervisorIdHasBeenSet(false),
-    m_lastSeenTimeHasBeenSet(false),
-    m_maintenanceStartTimeHasBeenSet(false),
-    m_nextUpdateAvailabilityTimeHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false)
+GatewayDetails::GatewayDetails(JsonView jsonValue)
+  : GatewayDetails()
 {
   *this = jsonValue;
 }

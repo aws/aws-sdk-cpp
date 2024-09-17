@@ -95,6 +95,15 @@ GetAssetResult& GetAssetResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("latestTimeSeriesDataPointFormsOutput"))
+  {
+    Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsOutputJsonList = jsonValue.GetArray("latestTimeSeriesDataPointFormsOutput");
+    for(unsigned latestTimeSeriesDataPointFormsOutputIndex = 0; latestTimeSeriesDataPointFormsOutputIndex < latestTimeSeriesDataPointFormsOutputJsonList.GetLength(); ++latestTimeSeriesDataPointFormsOutputIndex)
+    {
+      m_latestTimeSeriesDataPointFormsOutput.push_back(latestTimeSeriesDataPointFormsOutputJsonList[latestTimeSeriesDataPointFormsOutputIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("listing"))
   {
     m_listing = jsonValue.GetObject("listing");

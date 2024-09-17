@@ -27,20 +27,13 @@ PodIdentityAssociation::PodIdentityAssociation() :
     m_associationIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+    m_modifiedAtHasBeenSet(false),
+    m_ownerArnHasBeenSet(false)
 {
 }
 
-PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_serviceAccountHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue)
+  : PodIdentityAssociation()
 {
   *this = jsonValue;
 }
@@ -113,6 +106,13 @@ PodIdentityAssociation& PodIdentityAssociation::operator =(JsonView jsonValue)
     m_modifiedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ownerArn"))
+  {
+    m_ownerArn = jsonValue.GetString("ownerArn");
+
+    m_ownerArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -175,6 +175,12 @@ JsonValue PodIdentityAssociation::Jsonize() const
   if(m_modifiedAtHasBeenSet)
   {
    payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_ownerArnHasBeenSet)
+  {
+   payload.WithString("ownerArn", m_ownerArn);
+
   }
 
   return payload;

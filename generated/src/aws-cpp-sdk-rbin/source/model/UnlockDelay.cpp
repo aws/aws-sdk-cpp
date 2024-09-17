@@ -26,11 +26,8 @@ UnlockDelay::UnlockDelay() :
 {
 }
 
-UnlockDelay::UnlockDelay(JsonView jsonValue) : 
-    m_unlockDelayValue(0),
-    m_unlockDelayValueHasBeenSet(false),
-    m_unlockDelayUnit(UnlockDelayUnit::NOT_SET),
-    m_unlockDelayUnitHasBeenSet(false)
+UnlockDelay::UnlockDelay(JsonView jsonValue)
+  : UnlockDelay()
 {
   *this = jsonValue;
 }

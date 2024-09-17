@@ -28,11 +28,8 @@ TransitGatewayPrefixListAttachment::TransitGatewayPrefixListAttachment() :
 {
 }
 
-TransitGatewayPrefixListAttachment::TransitGatewayPrefixListAttachment(const XmlNode& xmlNode) : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+TransitGatewayPrefixListAttachment::TransitGatewayPrefixListAttachment(const XmlNode& xmlNode)
+  : TransitGatewayPrefixListAttachment()
 {
   *this = xmlNode;
 }

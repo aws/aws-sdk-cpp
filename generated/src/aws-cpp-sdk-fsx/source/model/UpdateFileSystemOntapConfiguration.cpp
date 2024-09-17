@@ -30,23 +30,14 @@ UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration() :
     m_addRouteTableIdsHasBeenSet(false),
     m_removeRouteTableIdsHasBeenSet(false),
     m_throughputCapacityPerHAPair(0),
-    m_throughputCapacityPerHAPairHasBeenSet(false)
+    m_throughputCapacityPerHAPairHasBeenSet(false),
+    m_hAPairs(0),
+    m_hAPairsHasBeenSet(false)
 {
 }
 
-UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration(JsonView jsonValue) : 
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_fsxAdminPasswordHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_addRouteTableIdsHasBeenSet(false),
-    m_removeRouteTableIdsHasBeenSet(false),
-    m_throughputCapacityPerHAPair(0),
-    m_throughputCapacityPerHAPairHasBeenSet(false)
+UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration(JsonView jsonValue)
+  : UpdateFileSystemOntapConfiguration()
 {
   *this = jsonValue;
 }
@@ -122,6 +113,13 @@ UpdateFileSystemOntapConfiguration& UpdateFileSystemOntapConfiguration::operator
     m_throughputCapacityPerHAPairHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HAPairs"))
+  {
+    m_hAPairs = jsonValue.GetInteger("HAPairs");
+
+    m_hAPairsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +188,12 @@ JsonValue UpdateFileSystemOntapConfiguration::Jsonize() const
   if(m_throughputCapacityPerHAPairHasBeenSet)
   {
    payload.WithInteger("ThroughputCapacityPerHAPair", m_throughputCapacityPerHAPair);
+
+  }
+
+  if(m_hAPairsHasBeenSet)
+  {
+   payload.WithInteger("HAPairs", m_hAPairs);
 
   }
 

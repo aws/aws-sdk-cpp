@@ -34,77 +34,31 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The platform to use to resolve compatible components.</p>
      */
     inline const ComponentPlatform& GetPlatform() const{ return m_platform; }
-
-    /**
-     * <p>The platform to use to resolve compatible components.</p>
-     */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-
-    /**
-     * <p>The platform to use to resolve compatible components.</p>
-     */
     inline void SetPlatform(const ComponentPlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
-
-    /**
-     * <p>The platform to use to resolve compatible components.</p>
-     */
     inline void SetPlatform(ComponentPlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-
-    /**
-     * <p>The platform to use to resolve compatible components.</p>
-     */
     inline ResolveComponentCandidatesRequest& WithPlatform(const ComponentPlatform& value) { SetPlatform(value); return *this;}
-
-    /**
-     * <p>The platform to use to resolve compatible components.</p>
-     */
     inline ResolveComponentCandidatesRequest& WithPlatform(ComponentPlatform&& value) { SetPlatform(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of components to resolve.</p>
      */
     inline const Aws::Vector<ComponentCandidate>& GetComponentCandidates() const{ return m_componentCandidates; }
-
-    /**
-     * <p>The list of components to resolve.</p>
-     */
     inline bool ComponentCandidatesHasBeenSet() const { return m_componentCandidatesHasBeenSet; }
-
-    /**
-     * <p>The list of components to resolve.</p>
-     */
     inline void SetComponentCandidates(const Aws::Vector<ComponentCandidate>& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates = value; }
-
-    /**
-     * <p>The list of components to resolve.</p>
-     */
     inline void SetComponentCandidates(Aws::Vector<ComponentCandidate>&& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates = std::move(value); }
-
-    /**
-     * <p>The list of components to resolve.</p>
-     */
     inline ResolveComponentCandidatesRequest& WithComponentCandidates(const Aws::Vector<ComponentCandidate>& value) { SetComponentCandidates(value); return *this;}
-
-    /**
-     * <p>The list of components to resolve.</p>
-     */
     inline ResolveComponentCandidatesRequest& WithComponentCandidates(Aws::Vector<ComponentCandidate>&& value) { SetComponentCandidates(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of components to resolve.</p>
-     */
     inline ResolveComponentCandidatesRequest& AddComponentCandidates(const ComponentCandidate& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates.push_back(value); return *this; }
-
-    /**
-     * <p>The list of components to resolve.</p>
-     */
     inline ResolveComponentCandidatesRequest& AddComponentCandidates(ComponentCandidate&& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ComponentPlatform m_platform;

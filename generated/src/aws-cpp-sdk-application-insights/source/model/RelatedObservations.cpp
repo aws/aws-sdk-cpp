@@ -23,8 +23,8 @@ RelatedObservations::RelatedObservations() :
 {
 }
 
-RelatedObservations::RelatedObservations(JsonView jsonValue) : 
-    m_observationListHasBeenSet(false)
+RelatedObservations::RelatedObservations(JsonView jsonValue)
+  : RelatedObservations()
 {
   *this = jsonValue;
 }

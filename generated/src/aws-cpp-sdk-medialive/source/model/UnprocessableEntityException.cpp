@@ -24,9 +24,8 @@ UnprocessableEntityException::UnprocessableEntityException() :
 {
 }
 
-UnprocessableEntityException::UnprocessableEntityException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_validationErrorsHasBeenSet(false)
+UnprocessableEntityException::UnprocessableEntityException(JsonView jsonValue)
+  : UnprocessableEntityException()
 {
   *this = jsonValue;
 }

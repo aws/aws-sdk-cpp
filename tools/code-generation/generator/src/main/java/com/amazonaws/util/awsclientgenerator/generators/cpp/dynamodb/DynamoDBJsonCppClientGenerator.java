@@ -52,7 +52,7 @@ public class DynamoDBJsonCppClientGenerator extends JsonCppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
         switch(shapeEntry.getKey()) {
             case "AttributeValue": {
                 Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/dynamodb/AttributeValueSource.vm");

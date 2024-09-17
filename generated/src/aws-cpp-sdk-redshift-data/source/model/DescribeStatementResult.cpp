@@ -28,14 +28,8 @@ DescribeStatementResult::DescribeStatementResult() :
 {
 }
 
-DescribeStatementResult::DescribeStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_duration(0),
-    m_hasResultSet(false),
-    m_redshiftPid(0),
-    m_redshiftQueryId(0),
-    m_resultRows(0),
-    m_resultSize(0),
-    m_status(StatusString::NOT_SET)
+DescribeStatementResult::DescribeStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeStatementResult()
 {
   *this = result;
 }
@@ -133,6 +127,12 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
+
+  }
+
+  if(jsonValue.ValueExists("SessionId"))
+  {
+    m_sessionId = jsonValue.GetString("SessionId");
 
   }
 

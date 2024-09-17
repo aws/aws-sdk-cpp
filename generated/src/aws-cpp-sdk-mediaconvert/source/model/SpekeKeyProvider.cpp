@@ -26,11 +26,8 @@ SpekeKeyProvider::SpekeKeyProvider() :
 {
 }
 
-SpekeKeyProvider::SpekeKeyProvider(JsonView jsonValue) : 
-    m_certificateArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_systemIdsHasBeenSet(false),
-    m_urlHasBeenSet(false)
+SpekeKeyProvider::SpekeKeyProvider(JsonView jsonValue)
+  : SpekeKeyProvider()
 {
   *this = jsonValue;
 }

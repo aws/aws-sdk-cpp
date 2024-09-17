@@ -40,59 +40,28 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum latency value that is allowed for any player, in milliseconds.
      * All policies must have a value set for this property.</p>
      */
     inline int GetMaximumIndividualPlayerLatencyMilliseconds() const{ return m_maximumIndividualPlayerLatencyMilliseconds; }
-
-    /**
-     * <p>The maximum latency value that is allowed for any player, in milliseconds.
-     * All policies must have a value set for this property.</p>
-     */
     inline bool MaximumIndividualPlayerLatencyMillisecondsHasBeenSet() const { return m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum latency value that is allowed for any player, in milliseconds.
-     * All policies must have a value set for this property.</p>
-     */
     inline void SetMaximumIndividualPlayerLatencyMilliseconds(int value) { m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = true; m_maximumIndividualPlayerLatencyMilliseconds = value; }
-
-    /**
-     * <p>The maximum latency value that is allowed for any player, in milliseconds.
-     * All policies must have a value set for this property.</p>
-     */
     inline PlayerLatencyPolicy& WithMaximumIndividualPlayerLatencyMilliseconds(int value) { SetMaximumIndividualPlayerLatencyMilliseconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The length of time, in seconds, that the policy is enforced while placing a
      * new game session. A null value for this property means that the policy is
      * enforced until the queue times out.</p>
      */
     inline int GetPolicyDurationSeconds() const{ return m_policyDurationSeconds; }
-
-    /**
-     * <p>The length of time, in seconds, that the policy is enforced while placing a
-     * new game session. A null value for this property means that the policy is
-     * enforced until the queue times out.</p>
-     */
     inline bool PolicyDurationSecondsHasBeenSet() const { return m_policyDurationSecondsHasBeenSet; }
-
-    /**
-     * <p>The length of time, in seconds, that the policy is enforced while placing a
-     * new game session. A null value for this property means that the policy is
-     * enforced until the queue times out.</p>
-     */
     inline void SetPolicyDurationSeconds(int value) { m_policyDurationSecondsHasBeenSet = true; m_policyDurationSeconds = value; }
-
-    /**
-     * <p>The length of time, in seconds, that the policy is enforced while placing a
-     * new game session. A null value for this property means that the policy is
-     * enforced until the queue times out.</p>
-     */
     inline PlayerLatencyPolicy& WithPolicyDurationSeconds(int value) { SetPolicyDurationSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumIndividualPlayerLatencyMilliseconds;

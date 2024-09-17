@@ -24,9 +24,8 @@ AwsRdsDbParameterGroup::AwsRdsDbParameterGroup() :
 {
 }
 
-AwsRdsDbParameterGroup::AwsRdsDbParameterGroup(JsonView jsonValue) : 
-    m_dbParameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false)
+AwsRdsDbParameterGroup::AwsRdsDbParameterGroup(JsonView jsonValue)
+  : AwsRdsDbParameterGroup()
 {
   *this = jsonValue;
 }

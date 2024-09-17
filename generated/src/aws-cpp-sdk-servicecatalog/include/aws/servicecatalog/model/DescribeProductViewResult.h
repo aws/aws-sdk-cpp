@@ -35,89 +35,40 @@ namespace Model
     AWS_SERVICECATALOG_API DescribeProductViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Summary information about the product.</p>
      */
     inline const ProductViewSummary& GetProductViewSummary() const{ return m_productViewSummary; }
-
-    /**
-     * <p>Summary information about the product.</p>
-     */
     inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummary = value; }
-
-    /**
-     * <p>Summary information about the product.</p>
-     */
     inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummary = std::move(value); }
-
-    /**
-     * <p>Summary information about the product.</p>
-     */
     inline DescribeProductViewResult& WithProductViewSummary(const ProductViewSummary& value) { SetProductViewSummary(value); return *this;}
-
-    /**
-     * <p>Summary information about the product.</p>
-     */
     inline DescribeProductViewResult& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the provisioning artifacts for the product.</p>
      */
     inline const Aws::Vector<ProvisioningArtifact>& GetProvisioningArtifacts() const{ return m_provisioningArtifacts; }
-
-    /**
-     * <p>Information about the provisioning artifacts for the product.</p>
-     */
     inline void SetProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { m_provisioningArtifacts = value; }
-
-    /**
-     * <p>Information about the provisioning artifacts for the product.</p>
-     */
     inline void SetProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { m_provisioningArtifacts = std::move(value); }
-
-    /**
-     * <p>Information about the provisioning artifacts for the product.</p>
-     */
     inline DescribeProductViewResult& WithProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { SetProvisioningArtifacts(value); return *this;}
-
-    /**
-     * <p>Information about the provisioning artifacts for the product.</p>
-     */
     inline DescribeProductViewResult& WithProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { SetProvisioningArtifacts(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the provisioning artifacts for the product.</p>
-     */
     inline DescribeProductViewResult& AddProvisioningArtifacts(const ProvisioningArtifact& value) { m_provisioningArtifacts.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the provisioning artifacts for the product.</p>
-     */
     inline DescribeProductViewResult& AddProvisioningArtifacts(ProvisioningArtifact&& value) { m_provisioningArtifacts.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeProductViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeProductViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeProductViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProductViewSummary m_productViewSummary;

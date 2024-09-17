@@ -50,41 +50,14 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_tagListHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false)
+    m_dbClusterResourceIdHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
-DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) : 
-    m_availabilityZonesHasBeenSet(false),
-    m_dBClusterSnapshotIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dBClusterSnapshotArnHasBeenSet(false),
-    m_sourceDBClusterSnapshotArnHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false)
+DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode)
+  : DBClusterSnapshot()
 {
   *this = xmlNode;
 }
@@ -257,6 +230,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_dbClusterResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dbClusterResourceIdNode.GetText());
       m_dbClusterResourceIdHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -399,6 +378,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -512,6 +496,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_dbClusterResourceIdHasBeenSet)
   {
       oStream << location << ".DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 }
 

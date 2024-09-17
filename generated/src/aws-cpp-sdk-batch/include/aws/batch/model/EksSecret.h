@@ -40,6 +40,7 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
      * more information, see <a
@@ -47,84 +48,24 @@ namespace Model
      * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
      */
     inline const Aws::String& GetSecretName() const{ return m_secretName; }
-
-    /**
-     * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
-     * more information, see <a
-     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
-     * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-     */
     inline bool SecretNameHasBeenSet() const { return m_secretNameHasBeenSet; }
-
-    /**
-     * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
-     * more information, see <a
-     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
-     * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-     */
     inline void SetSecretName(const Aws::String& value) { m_secretNameHasBeenSet = true; m_secretName = value; }
-
-    /**
-     * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
-     * more information, see <a
-     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
-     * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-     */
     inline void SetSecretName(Aws::String&& value) { m_secretNameHasBeenSet = true; m_secretName = std::move(value); }
-
-    /**
-     * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
-     * more information, see <a
-     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
-     * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-     */
     inline void SetSecretName(const char* value) { m_secretNameHasBeenSet = true; m_secretName.assign(value); }
-
-    /**
-     * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
-     * more information, see <a
-     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
-     * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-     */
     inline EksSecret& WithSecretName(const Aws::String& value) { SetSecretName(value); return *this;}
-
-    /**
-     * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
-     * more information, see <a
-     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
-     * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-     */
     inline EksSecret& WithSecretName(Aws::String&& value) { SetSecretName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the secret. The name must be allowed as a DNS subdomain name. For
-     * more information, see <a
-     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
-     * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-     */
     inline EksSecret& WithSecretName(const char* value) { SetSecretName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the secret or the secret's keys must be defined.</p>
      */
     inline bool GetOptional() const{ return m_optional; }
-
-    /**
-     * <p>Specifies whether the secret or the secret's keys must be defined.</p>
-     */
     inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the secret or the secret's keys must be defined.</p>
-     */
     inline void SetOptional(bool value) { m_optionalHasBeenSet = true; m_optional = value; }
-
-    /**
-     * <p>Specifies whether the secret or the secret's keys must be defined.</p>
-     */
     inline EksSecret& WithOptional(bool value) { SetOptional(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_secretName;

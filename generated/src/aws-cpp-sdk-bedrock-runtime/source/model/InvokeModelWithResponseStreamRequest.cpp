@@ -18,8 +18,19 @@ using namespace Aws;
 InvokeModelWithResponseStreamRequest::InvokeModelWithResponseStreamRequest() : 
     m_acceptHasBeenSet(false),
     m_modelIdHasBeenSet(false),
+    m_trace(Trace::NOT_SET),
+    m_traceHasBeenSet(false),
+    m_guardrailIdentifierHasBeenSet(false),
+    m_guardrailVersionHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
+    AmazonWebServiceRequest::SetHeadersReceivedEventHandler([this](const Http::HttpRequest*, Http::HttpResponse* response)
+    {
+        auto& initialResponseHandler = m_handler.GetInitialResponseCallbackEx();
+        if (initialResponseHandler) {
+            initialResponseHandler(InvokeModelWithResponseStreamInitialResponse(response->GetHeaders()), Utils::Event::InitialResponseType::ON_RESPONSE);
+        }
+    });
 }
 
 
@@ -32,6 +43,25 @@ Aws::Http::HeaderValueCollection InvokeModelWithResponseStreamRequest::GetReques
   {
     ss << m_accept;
     headers.emplace("x-amzn-bedrock-accept",  ss.str());
+    ss.str("");
+  }
+
+  if(m_traceHasBeenSet && m_trace != Trace::NOT_SET)
+  {
+    headers.emplace("x-amzn-bedrock-trace", TraceMapper::GetNameForTrace(m_trace));
+  }
+
+  if(m_guardrailIdentifierHasBeenSet)
+  {
+    ss << m_guardrailIdentifier;
+    headers.emplace("x-amzn-bedrock-guardrailidentifier",  ss.str());
+    ss.str("");
+  }
+
+  if(m_guardrailVersionHasBeenSet)
+  {
+    ss << m_guardrailVersion;
+    headers.emplace("x-amzn-bedrock-guardrailversion",  ss.str());
     ss.str("");
   }
 

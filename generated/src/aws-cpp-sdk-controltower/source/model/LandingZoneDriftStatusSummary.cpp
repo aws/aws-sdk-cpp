@@ -24,9 +24,8 @@ LandingZoneDriftStatusSummary::LandingZoneDriftStatusSummary() :
 {
 }
 
-LandingZoneDriftStatusSummary::LandingZoneDriftStatusSummary(JsonView jsonValue) : 
-    m_status(LandingZoneDriftStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+LandingZoneDriftStatusSummary::LandingZoneDriftStatusSummary(JsonView jsonValue)
+  : LandingZoneDriftStatusSummary()
 {
   *this = jsonValue;
 }

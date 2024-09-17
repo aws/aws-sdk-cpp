@@ -35,169 +35,61 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The AWS Region assigned to the SIP media application.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
-
-    /**
-     * <p>The AWS Region assigned to the SIP media application.</p>
-     */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-
-    /**
-     * <p>The AWS Region assigned to the SIP media application.</p>
-     */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-
-    /**
-     * <p>The AWS Region assigned to the SIP media application.</p>
-     */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-
-    /**
-     * <p>The AWS Region assigned to the SIP media application.</p>
-     */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-
-    /**
-     * <p>The AWS Region assigned to the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-
-    /**
-     * <p>The AWS Region assigned to the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS Region assigned to the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The SIP media application's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The SIP media application's name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The SIP media application's name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The SIP media application's name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The SIP media application's name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The SIP media application's name.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The SIP media application's name.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The SIP media application's name.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
      */
     inline const Aws::Vector<SipMediaApplicationEndpoint>& GetEndpoints() const{ return m_endpoints; }
-
-    /**
-     * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-     */
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-
-    /**
-     * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-     */
     inline void SetEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-
-    /**
-     * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-     */
     inline void SetEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-
-    /**
-     * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { SetEndpoints(value); return *this;}
-
-    /**
-     * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-
-    /**
-     * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& AddEndpoints(const SipMediaApplicationEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-
-    /**
-     * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& AddEndpoints(SipMediaApplicationEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags assigned to the SIP media application.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags assigned to the SIP media application.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags assigned to the SIP media application.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags assigned to the SIP media application.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags assigned to the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags assigned to the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags assigned to the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags assigned to the SIP media application.</p>
-     */
     inline CreateSipMediaApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_awsRegion;

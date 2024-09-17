@@ -21,8 +21,8 @@ TestDNSAnswerResult::TestDNSAnswerResult() :
 {
 }
 
-TestDNSAnswerResult::TestDNSAnswerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_recordType(RRType::NOT_SET)
+TestDNSAnswerResult::TestDNSAnswerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : TestDNSAnswerResult()
 {
   *this = result;
 }

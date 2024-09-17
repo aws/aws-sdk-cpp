@@ -22,8 +22,8 @@ RetryWorkflowStepResult::RetryWorkflowStepResult() :
 {
 }
 
-RetryWorkflowStepResult::RetryWorkflowStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StepStatus::NOT_SET)
+RetryWorkflowStepResult::RetryWorkflowStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RetryWorkflowStepResult()
 {
   *this = result;
 }

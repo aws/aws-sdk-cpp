@@ -38,42 +38,18 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates whether there is a potential data issue related to having multiple
      * operating modes. </p>
      */
     inline const StatisticalIssueStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to having multiple
-     * operating modes. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to having multiple
-     * operating modes. </p>
-     */
     inline void SetStatus(const StatisticalIssueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to having multiple
-     * operating modes. </p>
-     */
     inline void SetStatus(StatisticalIssueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to having multiple
-     * operating modes. </p>
-     */
     inline MultipleOperatingModes& WithStatus(const StatisticalIssueStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Indicates whether there is a potential data issue related to having multiple
-     * operating modes. </p>
-     */
     inline MultipleOperatingModes& WithStatus(StatisticalIssueStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StatisticalIssueStatus m_status;

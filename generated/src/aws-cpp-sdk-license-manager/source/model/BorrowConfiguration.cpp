@@ -26,11 +26,8 @@ BorrowConfiguration::BorrowConfiguration() :
 {
 }
 
-BorrowConfiguration::BorrowConfiguration(JsonView jsonValue) : 
-    m_allowEarlyCheckIn(false),
-    m_allowEarlyCheckInHasBeenSet(false),
-    m_maxTimeToLiveInMinutes(0),
-    m_maxTimeToLiveInMinutesHasBeenSet(false)
+BorrowConfiguration::BorrowConfiguration(JsonView jsonValue)
+  : BorrowConfiguration()
 {
   *this = jsonValue;
 }

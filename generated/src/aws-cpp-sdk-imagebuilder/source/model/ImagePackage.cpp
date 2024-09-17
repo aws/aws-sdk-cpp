@@ -24,9 +24,8 @@ ImagePackage::ImagePackage() :
 {
 }
 
-ImagePackage::ImagePackage(JsonView jsonValue) : 
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false)
+ImagePackage::ImagePackage(JsonView jsonValue)
+  : ImagePackage()
 {
   *this = jsonValue;
 }

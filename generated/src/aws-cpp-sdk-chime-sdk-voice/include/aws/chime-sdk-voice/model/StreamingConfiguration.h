@@ -42,119 +42,51 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of time, in hours, to the Kinesis data.</p>
      */
     inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
-
-    /**
-     * <p>The amount of time, in hours, to the Kinesis data.</p>
-     */
     inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
-
-    /**
-     * <p>The amount of time, in hours, to the Kinesis data.</p>
-     */
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
-
-    /**
-     * <p>The amount of time, in hours, to the Kinesis data.</p>
-     */
     inline StreamingConfiguration& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When true, streaming to Kinesis is off.</p>
      */
     inline bool GetDisabled() const{ return m_disabled; }
-
-    /**
-     * <p>When true, streaming to Kinesis is off.</p>
-     */
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
-
-    /**
-     * <p>When true, streaming to Kinesis is off.</p>
-     */
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
-
-    /**
-     * <p>When true, streaming to Kinesis is off.</p>
-     */
     inline StreamingConfiguration& WithDisabled(bool value) { SetDisabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The streaming notification targets.</p>
      */
     inline const Aws::Vector<StreamingNotificationTarget>& GetStreamingNotificationTargets() const{ return m_streamingNotificationTargets; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline bool StreamingNotificationTargetsHasBeenSet() const { return m_streamingNotificationTargetsHasBeenSet; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline void SetStreamingNotificationTargets(const Aws::Vector<StreamingNotificationTarget>& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets = value; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline void SetStreamingNotificationTargets(Aws::Vector<StreamingNotificationTarget>&& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets = std::move(value); }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& WithStreamingNotificationTargets(const Aws::Vector<StreamingNotificationTarget>& value) { SetStreamingNotificationTargets(value); return *this;}
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& WithStreamingNotificationTargets(Aws::Vector<StreamingNotificationTarget>&& value) { SetStreamingNotificationTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& AddStreamingNotificationTargets(const StreamingNotificationTarget& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets.push_back(value); return *this; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& AddStreamingNotificationTargets(StreamingNotificationTarget&& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The call analytics configuration.</p>
      */
     inline const MediaInsightsConfiguration& GetMediaInsightsConfiguration() const{ return m_mediaInsightsConfiguration; }
-
-    /**
-     * <p>The call analytics configuration.</p>
-     */
     inline bool MediaInsightsConfigurationHasBeenSet() const { return m_mediaInsightsConfigurationHasBeenSet; }
-
-    /**
-     * <p>The call analytics configuration.</p>
-     */
     inline void SetMediaInsightsConfiguration(const MediaInsightsConfiguration& value) { m_mediaInsightsConfigurationHasBeenSet = true; m_mediaInsightsConfiguration = value; }
-
-    /**
-     * <p>The call analytics configuration.</p>
-     */
     inline void SetMediaInsightsConfiguration(MediaInsightsConfiguration&& value) { m_mediaInsightsConfigurationHasBeenSet = true; m_mediaInsightsConfiguration = std::move(value); }
-
-    /**
-     * <p>The call analytics configuration.</p>
-     */
     inline StreamingConfiguration& WithMediaInsightsConfiguration(const MediaInsightsConfiguration& value) { SetMediaInsightsConfiguration(value); return *this;}
-
-    /**
-     * <p>The call analytics configuration.</p>
-     */
     inline StreamingConfiguration& WithMediaInsightsConfiguration(MediaInsightsConfiguration&& value) { SetMediaInsightsConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_dataRetentionInHours;

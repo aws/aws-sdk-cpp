@@ -33,77 +33,31 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * Configuration for telemetry service.
      */
     inline const TelemetryConfigurationUpdate& GetTelemetryConfiguration() const{ return m_telemetryConfiguration; }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline bool TelemetryConfigurationHasBeenSet() const { return m_telemetryConfigurationHasBeenSet; }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline void SetTelemetryConfiguration(const TelemetryConfigurationUpdate& value) { m_telemetryConfigurationHasBeenSet = true; m_telemetryConfiguration = value; }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline void SetTelemetryConfiguration(TelemetryConfigurationUpdate&& value) { m_telemetryConfigurationHasBeenSet = true; m_telemetryConfiguration = std::move(value); }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline UpdateThingRuntimeConfigurationRequest& WithTelemetryConfiguration(const TelemetryConfigurationUpdate& value) { SetTelemetryConfiguration(value); return *this;}
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline UpdateThingRuntimeConfigurationRequest& WithTelemetryConfiguration(TelemetryConfigurationUpdate&& value) { SetTelemetryConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The thing name.
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * The thing name.
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * The thing name.
-     */
     inline UpdateThingRuntimeConfigurationRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * The thing name.
-     */
     inline UpdateThingRuntimeConfigurationRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * The thing name.
-     */
     inline UpdateThingRuntimeConfigurationRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
-
+    ///@}
   private:
 
     TelemetryConfigurationUpdate m_telemetryConfiguration;

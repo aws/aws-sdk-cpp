@@ -19,12 +19,14 @@ namespace Model
 {
 
 VectorIngestionConfiguration::VectorIngestionConfiguration() : 
-    m_chunkingConfigurationHasBeenSet(false)
+    m_chunkingConfigurationHasBeenSet(false),
+    m_customTransformationConfigurationHasBeenSet(false),
+    m_parsingConfigurationHasBeenSet(false)
 {
 }
 
-VectorIngestionConfiguration::VectorIngestionConfiguration(JsonView jsonValue) : 
-    m_chunkingConfigurationHasBeenSet(false)
+VectorIngestionConfiguration::VectorIngestionConfiguration(JsonView jsonValue)
+  : VectorIngestionConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,6 +40,20 @@ VectorIngestionConfiguration& VectorIngestionConfiguration::operator =(JsonView 
     m_chunkingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customTransformationConfiguration"))
+  {
+    m_customTransformationConfiguration = jsonValue.GetObject("customTransformationConfiguration");
+
+    m_customTransformationConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parsingConfiguration"))
+  {
+    m_parsingConfiguration = jsonValue.GetObject("parsingConfiguration");
+
+    m_parsingConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +64,18 @@ JsonValue VectorIngestionConfiguration::Jsonize() const
   if(m_chunkingConfigurationHasBeenSet)
   {
    payload.WithObject("chunkingConfiguration", m_chunkingConfiguration.Jsonize());
+
+  }
+
+  if(m_customTransformationConfigurationHasBeenSet)
+  {
+   payload.WithObject("customTransformationConfiguration", m_customTransformationConfiguration.Jsonize());
+
+  }
+
+  if(m_parsingConfigurationHasBeenSet)
+  {
+   payload.WithObject("parsingConfiguration", m_parsingConfiguration.Jsonize());
 
   }
 

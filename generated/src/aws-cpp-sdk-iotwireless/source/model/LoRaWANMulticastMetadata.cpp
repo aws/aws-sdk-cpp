@@ -24,9 +24,8 @@ LoRaWANMulticastMetadata::LoRaWANMulticastMetadata() :
 {
 }
 
-LoRaWANMulticastMetadata::LoRaWANMulticastMetadata(JsonView jsonValue) : 
-    m_fPort(0),
-    m_fPortHasBeenSet(false)
+LoRaWANMulticastMetadata::LoRaWANMulticastMetadata(JsonView jsonValue)
+  : LoRaWANMulticastMetadata()
 {
   *this = jsonValue;
 }

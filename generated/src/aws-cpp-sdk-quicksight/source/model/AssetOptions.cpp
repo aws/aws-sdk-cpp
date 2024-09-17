@@ -25,10 +25,8 @@ AssetOptions::AssetOptions() :
 {
 }
 
-AssetOptions::AssetOptions(JsonView jsonValue) : 
-    m_timezoneHasBeenSet(false),
-    m_weekStart(DayOfTheWeek::NOT_SET),
-    m_weekStartHasBeenSet(false)
+AssetOptions::AssetOptions(JsonView jsonValue)
+  : AssetOptions()
 {
   *this = jsonValue;
 }

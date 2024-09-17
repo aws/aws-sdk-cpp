@@ -42,25 +42,8 @@ CacheBehavior::CacheBehavior() :
 {
 }
 
-CacheBehavior::CacheBehavior(const XmlNode& xmlNode) : 
-    m_pathPatternHasBeenSet(false),
-    m_targetOriginIdHasBeenSet(false),
-    m_trustedSignersHasBeenSet(false),
-    m_trustedKeyGroupsHasBeenSet(false),
-    m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
-    m_viewerProtocolPolicyHasBeenSet(false),
-    m_allowedMethodsHasBeenSet(false),
-    m_smoothStreaming(false),
-    m_smoothStreamingHasBeenSet(false),
-    m_compress(false),
-    m_compressHasBeenSet(false),
-    m_lambdaFunctionAssociationsHasBeenSet(false),
-    m_functionAssociationsHasBeenSet(false),
-    m_fieldLevelEncryptionIdHasBeenSet(false),
-    m_realtimeLogConfigArnHasBeenSet(false),
-    m_cachePolicyIdHasBeenSet(false),
-    m_originRequestPolicyIdHasBeenSet(false),
-    m_responseHeadersPolicyIdHasBeenSet(false)
+CacheBehavior::CacheBehavior(const XmlNode& xmlNode)
+  : CacheBehavior()
 {
   *this = xmlNode;
 }

@@ -34,87 +34,33 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
      */
     inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
-
-    /**
-     * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-     */
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-     */
     inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-
-    /**
-     * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-     */
     inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-     */
     inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-     */
     inline BatchCreateAttendeeRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-     */
     inline BatchCreateAttendeeRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-     */
     inline BatchCreateAttendeeRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attendee information, including attendees' IDs and join tokens.</p>
      */
     inline const Aws::Vector<CreateAttendeeRequestItem>& GetAttendees() const{ return m_attendees; }
-
-    /**
-     * <p>The attendee information, including attendees' IDs and join tokens.</p>
-     */
     inline bool AttendeesHasBeenSet() const { return m_attendeesHasBeenSet; }
-
-    /**
-     * <p>The attendee information, including attendees' IDs and join tokens.</p>
-     */
     inline void SetAttendees(const Aws::Vector<CreateAttendeeRequestItem>& value) { m_attendeesHasBeenSet = true; m_attendees = value; }
-
-    /**
-     * <p>The attendee information, including attendees' IDs and join tokens.</p>
-     */
     inline void SetAttendees(Aws::Vector<CreateAttendeeRequestItem>&& value) { m_attendeesHasBeenSet = true; m_attendees = std::move(value); }
-
-    /**
-     * <p>The attendee information, including attendees' IDs and join tokens.</p>
-     */
     inline BatchCreateAttendeeRequest& WithAttendees(const Aws::Vector<CreateAttendeeRequestItem>& value) { SetAttendees(value); return *this;}
-
-    /**
-     * <p>The attendee information, including attendees' IDs and join tokens.</p>
-     */
     inline BatchCreateAttendeeRequest& WithAttendees(Aws::Vector<CreateAttendeeRequestItem>&& value) { SetAttendees(std::move(value)); return *this;}
-
-    /**
-     * <p>The attendee information, including attendees' IDs and join tokens.</p>
-     */
     inline BatchCreateAttendeeRequest& AddAttendees(const CreateAttendeeRequestItem& value) { m_attendeesHasBeenSet = true; m_attendees.push_back(value); return *this; }
-
-    /**
-     * <p>The attendee information, including attendees' IDs and join tokens.</p>
-     */
     inline BatchCreateAttendeeRequest& AddAttendees(CreateAttendeeRequestItem&& value) { m_attendeesHasBeenSet = true; m_attendees.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_meetingId;

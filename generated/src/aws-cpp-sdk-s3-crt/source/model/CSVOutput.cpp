@@ -30,13 +30,8 @@ CSVOutput::CSVOutput() :
 {
 }
 
-CSVOutput::CSVOutput(const XmlNode& xmlNode) : 
-    m_quoteFields(QuoteFields::NOT_SET),
-    m_quoteFieldsHasBeenSet(false),
-    m_quoteEscapeCharacterHasBeenSet(false),
-    m_recordDelimiterHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
+CSVOutput::CSVOutput(const XmlNode& xmlNode)
+  : CSVOutput()
 {
   *this = xmlNode;
 }

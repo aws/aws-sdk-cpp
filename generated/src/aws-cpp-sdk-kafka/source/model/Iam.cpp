@@ -24,9 +24,8 @@ Iam::Iam() :
 {
 }
 
-Iam::Iam(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+Iam::Iam(JsonView jsonValue)
+  : Iam()
 {
   *this = jsonValue;
 }

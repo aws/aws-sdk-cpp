@@ -43,60 +43,21 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of comma seperated strings that identifies user groups in your OIDC
      * IdP. Each user group is made up of a group of private workers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline OidcMemberDefinition& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline OidcMemberDefinition& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline OidcMemberDefinition& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline OidcMemberDefinition& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of comma seperated strings that identifies user groups in your OIDC
-     * IdP. Each user group is made up of a group of private workers.</p>
-     */
     inline OidcMemberDefinition& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_groups;

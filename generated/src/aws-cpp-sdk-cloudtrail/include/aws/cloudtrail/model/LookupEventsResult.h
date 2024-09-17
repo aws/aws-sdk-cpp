@@ -39,56 +39,22 @@ namespace Model
     AWS_CLOUDTRAIL_API LookupEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of events returned based on the lookup attributes specified and the
      * CloudTrail event. The events list is sorted by time. The most recent event is
      * listed first.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>A list of events returned based on the lookup attributes specified and the
-     * CloudTrail event. The events list is sorted by time. The most recent event is
-     * listed first.</p>
-     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
-
-    /**
-     * <p>A list of events returned based on the lookup attributes specified and the
-     * CloudTrail event. The events list is sorted by time. The most recent event is
-     * listed first.</p>
-     */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_events = std::move(value); }
-
-    /**
-     * <p>A list of events returned based on the lookup attributes specified and the
-     * CloudTrail event. The events list is sorted by time. The most recent event is
-     * listed first.</p>
-     */
     inline LookupEventsResult& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>A list of events returned based on the lookup attributes specified and the
-     * CloudTrail event. The events list is sorted by time. The most recent event is
-     * listed first.</p>
-     */
     inline LookupEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of events returned based on the lookup attributes specified and the
-     * CloudTrail event. The events list is sorted by time. The most recent event is
-     * listed first.</p>
-     */
     inline LookupEventsResult& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
-
-    /**
-     * <p>A list of events returned based on the lookup attributes specified and the
-     * CloudTrail event. The events list is sorted by time. The most recent event is
-     * listed first.</p>
-     */
     inline LookupEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to get the next page of results after a previous API call.
      * If the token does not appear, there are no more results to return. The token
@@ -97,83 +63,24 @@ namespace Model
      * 'root', the call with NextToken should include those same parameters.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * If the token does not appear, there are no more results to return. The token
-     * must be passed in with the same parameters as the previous call. For example, if
-     * the original call specified an AttributeKey of 'Username' with a value of
-     * 'root', the call with NextToken should include those same parameters.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * If the token does not appear, there are no more results to return. The token
-     * must be passed in with the same parameters as the previous call. For example, if
-     * the original call specified an AttributeKey of 'Username' with a value of
-     * 'root', the call with NextToken should include those same parameters.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * If the token does not appear, there are no more results to return. The token
-     * must be passed in with the same parameters as the previous call. For example, if
-     * the original call specified an AttributeKey of 'Username' with a value of
-     * 'root', the call with NextToken should include those same parameters.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * If the token does not appear, there are no more results to return. The token
-     * must be passed in with the same parameters as the previous call. For example, if
-     * the original call specified an AttributeKey of 'Username' with a value of
-     * 'root', the call with NextToken should include those same parameters.</p>
-     */
     inline LookupEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * If the token does not appear, there are no more results to return. The token
-     * must be passed in with the same parameters as the previous call. For example, if
-     * the original call specified an AttributeKey of 'Username' with a value of
-     * 'root', the call with NextToken should include those same parameters.</p>
-     */
     inline LookupEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * If the token does not appear, there are no more results to return. The token
-     * must be passed in with the same parameters as the previous call. For example, if
-     * the original call specified an AttributeKey of 'Username' with a value of
-     * 'root', the call with NextToken should include those same parameters.</p>
-     */
     inline LookupEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline LookupEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline LookupEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline LookupEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Event> m_events;

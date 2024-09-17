@@ -29,14 +29,8 @@ IngestedEventStatistics::IngestedEventStatistics() :
 {
 }
 
-IngestedEventStatistics::IngestedEventStatistics(JsonView jsonValue) : 
-    m_numberOfEvents(0),
-    m_numberOfEventsHasBeenSet(false),
-    m_eventDataSizeInBytes(0),
-    m_eventDataSizeInBytesHasBeenSet(false),
-    m_leastRecentEventHasBeenSet(false),
-    m_mostRecentEventHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+IngestedEventStatistics::IngestedEventStatistics(JsonView jsonValue)
+  : IngestedEventStatistics()
 {
   *this = jsonValue;
 }

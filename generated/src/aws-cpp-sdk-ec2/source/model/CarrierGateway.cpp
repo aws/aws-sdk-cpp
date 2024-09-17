@@ -30,13 +30,8 @@ CarrierGateway::CarrierGateway() :
 {
 }
 
-CarrierGateway::CarrierGateway(const XmlNode& xmlNode) : 
-    m_carrierGatewayIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_state(CarrierGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CarrierGateway::CarrierGateway(const XmlNode& xmlNode)
+  : CarrierGateway()
 {
   *this = xmlNode;
 }

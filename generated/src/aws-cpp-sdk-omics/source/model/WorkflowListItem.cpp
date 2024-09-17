@@ -32,17 +32,8 @@ WorkflowListItem::WorkflowListItem() :
 {
 }
 
-WorkflowListItem::WorkflowListItem(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(WorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_digestHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+WorkflowListItem::WorkflowListItem(JsonView jsonValue)
+  : WorkflowListItem()
 {
   *this = jsonValue;
 }

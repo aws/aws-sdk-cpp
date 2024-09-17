@@ -26,9 +26,8 @@ CreateBucketConfiguration::CreateBucketConfiguration() :
 {
 }
 
-CreateBucketConfiguration::CreateBucketConfiguration(const XmlNode& xmlNode) : 
-    m_locationConstraint(BucketLocationConstraint::NOT_SET),
-    m_locationConstraintHasBeenSet(false)
+CreateBucketConfiguration::CreateBucketConfiguration(const XmlNode& xmlNode)
+  : CreateBucketConfiguration()
 {
   *this = xmlNode;
 }

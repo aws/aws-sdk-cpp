@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/S3Identifier.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/S3Identifier.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the API Schema for the Action Group</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains details about the OpenAPI schema for the action group. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+   * group OpenAPI schemas</a>. You can either include the schema directly in the
+   * <code>payload</code> field or you can upload it to an S3 bucket and specify the
+   * S3 bucket location in the <code>s3</code> field.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/APISchema">AWS
    * API Reference</a></p>
    */
@@ -39,56 +43,44 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
-    inline const S3Identifier& GetS3() const{ return m_s3; }
-
-    
-    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    
-    inline void SetS3(const S3Identifier& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    
-    inline void SetS3(S3Identifier&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    
-    inline APISchema& WithS3(const S3Identifier& value) { SetS3(value); return *this;}
-
-    
-    inline APISchema& WithS3(S3Identifier&& value) { SetS3(std::move(value)); return *this;}
-
-
-    
+    ///@{
+    /**
+     * <p>The JSON or YAML-formatted payload defining the OpenAPI schema for the action
+     * group. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+     * group OpenAPI schemas</a>.</p>
+     */
     inline const Aws::String& GetPayload() const{ return m_payload; }
-
-    
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-
-    
     inline void SetPayload(const Aws::String& value) { m_payloadHasBeenSet = true; m_payload = value; }
-
-    
     inline void SetPayload(Aws::String&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-
-    
     inline void SetPayload(const char* value) { m_payloadHasBeenSet = true; m_payload.assign(value); }
-
-    
     inline APISchema& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
-
-    
     inline APISchema& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
-
-    
     inline APISchema& WithPayload(const char* value) { SetPayload(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Contains details about the S3 object containing the OpenAPI schema for the
+     * action group. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+     * group OpenAPI schemas</a>.</p>
+     */
+    inline const S3Identifier& GetS3() const{ return m_s3; }
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+    inline void SetS3(const S3Identifier& value) { m_s3HasBeenSet = true; m_s3 = value; }
+    inline void SetS3(S3Identifier&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
+    inline APISchema& WithS3(const S3Identifier& value) { SetS3(value); return *this;}
+    inline APISchema& WithS3(S3Identifier&& value) { SetS3(std::move(value)); return *this;}
+    ///@}
   private:
-
-    S3Identifier m_s3;
-    bool m_s3HasBeenSet = false;
 
     Aws::String m_payload;
     bool m_payloadHasBeenSet = false;
+
+    S3Identifier m_s3;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

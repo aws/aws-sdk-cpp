@@ -26,11 +26,8 @@ DataPathColor::DataPathColor() :
 {
 }
 
-DataPathColor::DataPathColor(JsonView jsonValue) : 
-    m_elementHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false)
+DataPathColor::DataPathColor(JsonView jsonValue)
+  : DataPathColor()
 {
   *this = jsonValue;
 }

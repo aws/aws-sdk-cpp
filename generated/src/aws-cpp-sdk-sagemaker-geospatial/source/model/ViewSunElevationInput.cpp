@@ -26,11 +26,8 @@ ViewSunElevationInput::ViewSunElevationInput() :
 {
 }
 
-ViewSunElevationInput::ViewSunElevationInput(JsonView jsonValue) : 
-    m_lowerBound(0.0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0.0),
-    m_upperBoundHasBeenSet(false)
+ViewSunElevationInput::ViewSunElevationInput(JsonView jsonValue)
+  : ViewSunElevationInput()
 {
   *this = jsonValue;
 }

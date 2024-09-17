@@ -28,13 +28,8 @@ PostLaunchActions::PostLaunchActions() :
 {
 }
 
-PostLaunchActions::PostLaunchActions(JsonView jsonValue) : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_deployment(PostLaunchActionsDeploymentType::NOT_SET),
-    m_deploymentHasBeenSet(false),
-    m_s3LogBucketHasBeenSet(false),
-    m_s3OutputKeyPrefixHasBeenSet(false),
-    m_ssmDocumentsHasBeenSet(false)
+PostLaunchActions::PostLaunchActions(JsonView jsonValue)
+  : PostLaunchActions()
 {
   *this = jsonValue;
 }

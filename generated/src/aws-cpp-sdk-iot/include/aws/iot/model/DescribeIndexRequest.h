@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The index name.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The index name.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The index name.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The index name.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The index name.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The index name.</p>
-     */
     inline DescribeIndexRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The index name.</p>
-     */
     inline DescribeIndexRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The index name.</p>
-     */
     inline DescribeIndexRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexName;

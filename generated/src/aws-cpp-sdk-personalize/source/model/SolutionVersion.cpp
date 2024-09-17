@@ -38,31 +38,14 @@ SolutionVersion::SolutionVersion() :
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_trainingType(TrainingType::NOT_SET),
+    m_trainingTypeHasBeenSet(false)
 {
 }
 
-SolutionVersion::SolutionVersion(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_performHPO(false),
-    m_performHPOHasBeenSet(false),
-    m_performAutoML(false),
-    m_performAutoMLHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_solutionConfigHasBeenSet(false),
-    m_trainingHours(0.0),
-    m_trainingHoursHasBeenSet(false),
-    m_trainingMode(TrainingMode::NOT_SET),
-    m_trainingModeHasBeenSet(false),
-    m_tunedHPOParamsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+SolutionVersion::SolutionVersion(JsonView jsonValue)
+  : SolutionVersion()
 {
   *this = jsonValue;
 }
@@ -181,6 +164,13 @@ SolutionVersion& SolutionVersion::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trainingType"))
+  {
+    m_trainingType = TrainingTypeMapper::GetTrainingTypeForName(jsonValue.GetString("trainingType"));
+
+    m_trainingTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -279,6 +269,11 @@ JsonValue SolutionVersion::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_trainingTypeHasBeenSet)
+  {
+   payload.WithString("trainingType", TrainingTypeMapper::GetNameForTrainingType(m_trainingType));
   }
 
   return payload;

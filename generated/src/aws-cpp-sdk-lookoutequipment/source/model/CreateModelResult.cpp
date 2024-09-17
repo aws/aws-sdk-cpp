@@ -22,8 +22,8 @@ CreateModelResult::CreateModelResult() :
 {
 }
 
-CreateModelResult::CreateModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelStatus::NOT_SET)
+CreateModelResult::CreateModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateModelResult()
 {
   *this = result;
 }

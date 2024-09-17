@@ -38,21 +38,8 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() :
 {
 }
 
-ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(const XmlNode& xmlNode) : 
-    m_primaryClusterIdHasBeenSet(false),
-    m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverStatusHasBeenSet(false),
-    m_reshardingHasBeenSet(false),
-    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false),
-    m_clusterMode(ClusterMode::NOT_SET),
-    m_clusterModeHasBeenSet(false)
+ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(const XmlNode& xmlNode)
+  : ReplicationGroupPendingModifiedValues()
 {
   *this = xmlNode;
 }

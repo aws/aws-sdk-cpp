@@ -38,87 +38,33 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The exact host name to match on.</p>
      */
     inline const Aws::String& GetExact() const{ return m_exact; }
-
-    /**
-     * <p>The exact host name to match on.</p>
-     */
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-
-    /**
-     * <p>The exact host name to match on.</p>
-     */
     inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-
-    /**
-     * <p>The exact host name to match on.</p>
-     */
     inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-
-    /**
-     * <p>The exact host name to match on.</p>
-     */
     inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-
-    /**
-     * <p>The exact host name to match on.</p>
-     */
     inline GatewayRouteHostnameMatch& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-
-    /**
-     * <p>The exact host name to match on.</p>
-     */
     inline GatewayRouteHostnameMatch& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-
-    /**
-     * <p>The exact host name to match on.</p>
-     */
     inline GatewayRouteHostnameMatch& WithExact(const char* value) { SetExact(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specified ending characters of the host name to match on.</p>
      */
     inline const Aws::String& GetSuffix() const{ return m_suffix; }
-
-    /**
-     * <p>The specified ending characters of the host name to match on.</p>
-     */
     inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
-
-    /**
-     * <p>The specified ending characters of the host name to match on.</p>
-     */
     inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
-
-    /**
-     * <p>The specified ending characters of the host name to match on.</p>
-     */
     inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = std::move(value); }
-
-    /**
-     * <p>The specified ending characters of the host name to match on.</p>
-     */
     inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
-
-    /**
-     * <p>The specified ending characters of the host name to match on.</p>
-     */
     inline GatewayRouteHostnameMatch& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
-
-    /**
-     * <p>The specified ending characters of the host name to match on.</p>
-     */
     inline GatewayRouteHostnameMatch& WithSuffix(Aws::String&& value) { SetSuffix(std::move(value)); return *this;}
-
-    /**
-     * <p>The specified ending characters of the host name to match on.</p>
-     */
     inline GatewayRouteHostnameMatch& WithSuffix(const char* value) { SetSuffix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exact;

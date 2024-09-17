@@ -33,43 +33,25 @@ namespace Model
     AWS_EKS_API RegisterClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Cluster& GetCluster() const{ return m_cluster; }
-
-    
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
-
-    
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-
-    
     inline RegisterClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-
-    
     inline RegisterClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Cluster m_cluster;

@@ -17,18 +17,26 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConnectionResult::CreateConnectionResult()
+CreateConnectionResult::CreateConnectionResult() : 
+    m_createConnectionStatus(ConnectionStatus::NOT_SET)
 {
 }
 
 CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateConnectionResult()
 {
   *this = result;
 }
 
 CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("CreateConnectionStatus"))
+  {
+    m_createConnectionStatus = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("CreateConnectionStatus"));
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

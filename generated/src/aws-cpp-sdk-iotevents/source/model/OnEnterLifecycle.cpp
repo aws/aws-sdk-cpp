@@ -23,8 +23,8 @@ OnEnterLifecycle::OnEnterLifecycle() :
 {
 }
 
-OnEnterLifecycle::OnEnterLifecycle(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false)
+OnEnterLifecycle::OnEnterLifecycle(JsonView jsonValue)
+  : OnEnterLifecycle()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ InsightResourceDetail::InsightResourceDetail() :
 {
 }
 
-InsightResourceDetail::InsightResourceDetail(JsonView jsonValue) : 
-    m_insightStatusHasBeenSet(false),
-    m_kubernetesResourceUriHasBeenSet(false),
-    m_arnHasBeenSet(false)
+InsightResourceDetail::InsightResourceDetail(JsonView jsonValue)
+  : InsightResourceDetail()
 {
   *this = jsonValue;
 }

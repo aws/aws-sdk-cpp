@@ -32,47 +32,21 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The search index name.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The search index name.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The search index name.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The search index name.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The search index name.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The search index name.</p>
-     */
     inline SearchIndexRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The search index name.</p>
-     */
     inline SearchIndexRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The search index name.</p>
-     */
     inline SearchIndexRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The search query string. For more information about the search query syntax,
      * see <a
@@ -80,178 +54,58 @@ namespace Model
      * syntax</a>.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
-
-    /**
-     * <p>The search query string. For more information about the search query syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
-     * syntax</a>.</p>
-     */
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-
-    /**
-     * <p>The search query string. For more information about the search query syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
-     * syntax</a>.</p>
-     */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-
-    /**
-     * <p>The search query string. For more information about the search query syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
-     * syntax</a>.</p>
-     */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-
-    /**
-     * <p>The search query string. For more information about the search query syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
-     * syntax</a>.</p>
-     */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-
-    /**
-     * <p>The search query string. For more information about the search query syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
-     * syntax</a>.</p>
-     */
     inline SearchIndexRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-
-    /**
-     * <p>The search query string. For more information about the search query syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
-     * syntax</a>.</p>
-     */
     inline SearchIndexRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-
-    /**
-     * <p>The search query string. For more information about the search query syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
-     * syntax</a>.</p>
-     */
     inline SearchIndexRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token used to get the next set of results, or <code>null</code> if there
      * are no additional results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token used to get the next set of results, or <code>null</code> if there
-     * are no additional results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token used to get the next set of results, or <code>null</code> if there
-     * are no additional results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token used to get the next set of results, or <code>null</code> if there
-     * are no additional results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token used to get the next set of results, or <code>null</code> if there
-     * are no additional results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token used to get the next set of results, or <code>null</code> if there
-     * are no additional results.</p>
-     */
     inline SearchIndexRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token used to get the next set of results, or <code>null</code> if there
-     * are no additional results.</p>
-     */
     inline SearchIndexRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token used to get the next set of results, or <code>null</code> if there
-     * are no additional results.</p>
-     */
     inline SearchIndexRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
+     * <p>The maximum number of results to return per page at one time. This maximum
+     * number cannot exceed 100. The response might contain fewer results but will
+     * never contain more. You can use <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html#iot-SearchIndex-request-nextToken">
+     * <code>nextToken</code> </a> to retrieve the next set of results until
+     * <code>nextToken</code> returns <code>NULL</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return per page at one time. The response
-     * might contain fewer results but will never contain more.</p>
-     */
     inline SearchIndexRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The query version.</p>
      */
     inline const Aws::String& GetQueryVersion() const{ return m_queryVersion; }
-
-    /**
-     * <p>The query version.</p>
-     */
     inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
-
-    /**
-     * <p>The query version.</p>
-     */
     inline void SetQueryVersion(const Aws::String& value) { m_queryVersionHasBeenSet = true; m_queryVersion = value; }
-
-    /**
-     * <p>The query version.</p>
-     */
     inline void SetQueryVersion(Aws::String&& value) { m_queryVersionHasBeenSet = true; m_queryVersion = std::move(value); }
-
-    /**
-     * <p>The query version.</p>
-     */
     inline void SetQueryVersion(const char* value) { m_queryVersionHasBeenSet = true; m_queryVersion.assign(value); }
-
-    /**
-     * <p>The query version.</p>
-     */
     inline SearchIndexRequest& WithQueryVersion(const Aws::String& value) { SetQueryVersion(value); return *this;}
-
-    /**
-     * <p>The query version.</p>
-     */
     inline SearchIndexRequest& WithQueryVersion(Aws::String&& value) { SetQueryVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The query version.</p>
-     */
     inline SearchIndexRequest& WithQueryVersion(const char* value) { SetQueryVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexName;

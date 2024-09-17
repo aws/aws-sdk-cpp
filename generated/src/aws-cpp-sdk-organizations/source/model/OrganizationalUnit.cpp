@@ -25,10 +25,8 @@ OrganizationalUnit::OrganizationalUnit() :
 {
 }
 
-OrganizationalUnit::OrganizationalUnit(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+OrganizationalUnit::OrganizationalUnit(JsonView jsonValue)
+  : OrganizationalUnit()
 {
   *this = jsonValue;
 }

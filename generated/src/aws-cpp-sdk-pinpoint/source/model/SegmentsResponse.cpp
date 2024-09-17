@@ -24,9 +24,8 @@ SegmentsResponse::SegmentsResponse() :
 {
 }
 
-SegmentsResponse::SegmentsResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+SegmentsResponse::SegmentsResponse(JsonView jsonValue)
+  : SegmentsResponse()
 {
   *this = jsonValue;
 }

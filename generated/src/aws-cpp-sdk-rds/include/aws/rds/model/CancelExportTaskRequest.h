@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier of the snapshot or cluster export task to cancel.</p>
      */
     inline const Aws::String& GetExportTaskIdentifier() const{ return m_exportTaskIdentifier; }
-
-    /**
-     * <p>The identifier of the snapshot or cluster export task to cancel.</p>
-     */
     inline bool ExportTaskIdentifierHasBeenSet() const { return m_exportTaskIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the snapshot or cluster export task to cancel.</p>
-     */
     inline void SetExportTaskIdentifier(const Aws::String& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = value; }
-
-    /**
-     * <p>The identifier of the snapshot or cluster export task to cancel.</p>
-     */
     inline void SetExportTaskIdentifier(Aws::String&& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the snapshot or cluster export task to cancel.</p>
-     */
     inline void SetExportTaskIdentifier(const char* value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the snapshot or cluster export task to cancel.</p>
-     */
     inline CancelExportTaskRequest& WithExportTaskIdentifier(const Aws::String& value) { SetExportTaskIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the snapshot or cluster export task to cancel.</p>
-     */
     inline CancelExportTaskRequest& WithExportTaskIdentifier(Aws::String&& value) { SetExportTaskIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the snapshot or cluster export task to cancel.</p>
-     */
     inline CancelExportTaskRequest& WithExportTaskIdentifier(const char* value) { SetExportTaskIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exportTaskIdentifier;

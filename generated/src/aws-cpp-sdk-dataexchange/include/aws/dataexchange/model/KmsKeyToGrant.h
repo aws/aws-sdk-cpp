@@ -38,6 +38,7 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
      * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
@@ -45,63 +46,14 @@ namespace Model
      * is encrypted using this KMS key specified.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
-     * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
-     * for each subscriber to allow them to access and decrypt their entitled data that
-     * is encrypted using this KMS key specified.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
-     * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
-     * for each subscriber to allow them to access and decrypt their entitled data that
-     * is encrypted using this KMS key specified.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
-     * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
-     * for each subscriber to allow them to access and decrypt their entitled data that
-     * is encrypted using this KMS key specified.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
-     * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
-     * for each subscriber to allow them to access and decrypt their entitled data that
-     * is encrypted using this KMS key specified.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
-     * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
-     * for each subscriber to allow them to access and decrypt their entitled data that
-     * is encrypted using this KMS key specified.</p>
-     */
     inline KmsKeyToGrant& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
-     * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
-     * for each subscriber to allow them to access and decrypt their entitled data that
-     * is encrypted using this KMS key specified.</p>
-     */
     inline KmsKeyToGrant& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt
-     * S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant
-     * for each subscriber to allow them to access and decrypt their entitled data that
-     * is encrypted using this KMS key specified.</p>
-     */
     inline KmsKeyToGrant& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyArn;

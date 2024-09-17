@@ -36,21 +36,8 @@ ConnectorDetail::ConnectorDetail() :
 {
 }
 
-ConnectorDetail::ConnectorDetail(JsonView jsonValue) : 
-    m_connectorDescriptionHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectorOwnerHasBeenSet(false),
-    m_connectorVersionHasBeenSet(false),
-    m_applicationTypeHasBeenSet(false),
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_connectorLabelHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
-    m_connectorProvisioningTypeHasBeenSet(false),
-    m_connectorModesHasBeenSet(false),
-    m_supportedDataTransferTypesHasBeenSet(false)
+ConnectorDetail::ConnectorDetail(JsonView jsonValue)
+  : ConnectorDetail()
 {
   *this = jsonValue;
 }

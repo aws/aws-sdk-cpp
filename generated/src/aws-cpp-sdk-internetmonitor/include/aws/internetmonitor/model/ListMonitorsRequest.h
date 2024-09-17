@@ -38,76 +38,32 @@ namespace Model
     AWS_INTERNETMONITOR_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The token for the next set of results. You receive this token from a previous
      * call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline ListMonitorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline ListMonitorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline ListMonitorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of monitor objects that you want to return with this call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The number of monitor objects that you want to return with this call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The number of monitor objects that you want to return with this call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The number of monitor objects that you want to return with this call.</p>
-     */
     inline ListMonitorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of a monitor. This includes the status of the data processing for
      * the monitor and the status of the monitor itself.</p> <p>For information about
@@ -116,70 +72,31 @@ namespace Model
      * Monitor</a>.</p>
      */
     inline const Aws::String& GetMonitorStatus() const{ return m_monitorStatus; }
-
-    /**
-     * <p>The status of a monitor. This includes the status of the data processing for
-     * the monitor and the status of the monitor itself.</p> <p>For information about
-     * the statuses for a monitor, see <a
-     * href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html">
-     * Monitor</a>.</p>
-     */
     inline bool MonitorStatusHasBeenSet() const { return m_monitorStatusHasBeenSet; }
-
-    /**
-     * <p>The status of a monitor. This includes the status of the data processing for
-     * the monitor and the status of the monitor itself.</p> <p>For information about
-     * the statuses for a monitor, see <a
-     * href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html">
-     * Monitor</a>.</p>
-     */
     inline void SetMonitorStatus(const Aws::String& value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = value; }
-
-    /**
-     * <p>The status of a monitor. This includes the status of the data processing for
-     * the monitor and the status of the monitor itself.</p> <p>For information about
-     * the statuses for a monitor, see <a
-     * href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html">
-     * Monitor</a>.</p>
-     */
     inline void SetMonitorStatus(Aws::String&& value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = std::move(value); }
-
-    /**
-     * <p>The status of a monitor. This includes the status of the data processing for
-     * the monitor and the status of the monitor itself.</p> <p>For information about
-     * the statuses for a monitor, see <a
-     * href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html">
-     * Monitor</a>.</p>
-     */
     inline void SetMonitorStatus(const char* value) { m_monitorStatusHasBeenSet = true; m_monitorStatus.assign(value); }
-
-    /**
-     * <p>The status of a monitor. This includes the status of the data processing for
-     * the monitor and the status of the monitor itself.</p> <p>For information about
-     * the statuses for a monitor, see <a
-     * href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html">
-     * Monitor</a>.</p>
-     */
     inline ListMonitorsRequest& WithMonitorStatus(const Aws::String& value) { SetMonitorStatus(value); return *this;}
-
-    /**
-     * <p>The status of a monitor. This includes the status of the data processing for
-     * the monitor and the status of the monitor itself.</p> <p>For information about
-     * the statuses for a monitor, see <a
-     * href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html">
-     * Monitor</a>.</p>
-     */
     inline ListMonitorsRequest& WithMonitorStatus(Aws::String&& value) { SetMonitorStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of a monitor. This includes the status of the data processing for
-     * the monitor and the status of the monitor itself.</p> <p>For information about
-     * the statuses for a monitor, see <a
-     * href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html">
-     * Monitor</a>.</p>
-     */
     inline ListMonitorsRequest& WithMonitorStatus(const char* value) { SetMonitorStatus(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>A boolean option that you can set to <code>TRUE</code> to include monitors
+     * for linked accounts in a list of monitors, when you've set up cross-account
+     * sharing in Amazon CloudWatch Internet Monitor. You configure cross-account
+     * sharing by using Amazon CloudWatch Observability Access Manager. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
+     */
+    inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
+    inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
+    inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
+    inline ListMonitorsRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_nextToken;
@@ -190,6 +107,9 @@ namespace Model
 
     Aws::String m_monitorStatus;
     bool m_monitorStatusHasBeenSet = false;
+
+    bool m_includeLinkedAccounts;
+    bool m_includeLinkedAccountsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails::Aws
 {
 }
 
-AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails(JsonView jsonValue) : 
-    m_accessPointIdHasBeenSet(false),
-    m_iamHasBeenSet(false)
+AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails()
 {
   *this = jsonValue;
 }

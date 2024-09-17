@@ -25,10 +25,8 @@ FailureByQueryException::FailureByQueryException() :
 {
 }
 
-FailureByQueryException::FailureByQueryException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+FailureByQueryException::FailureByQueryException(JsonView jsonValue)
+  : FailureByQueryException()
 {
   *this = jsonValue;
 }

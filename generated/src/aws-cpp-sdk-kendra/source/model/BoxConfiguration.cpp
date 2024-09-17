@@ -39,24 +39,8 @@ BoxConfiguration::BoxConfiguration() :
 {
 }
 
-BoxConfiguration::BoxConfiguration(JsonView jsonValue) : 
-    m_enterpriseIdHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_crawlComments(false),
-    m_crawlCommentsHasBeenSet(false),
-    m_crawlTasks(false),
-    m_crawlTasksHasBeenSet(false),
-    m_crawlWebLinks(false),
-    m_crawlWebLinksHasBeenSet(false),
-    m_fileFieldMappingsHasBeenSet(false),
-    m_taskFieldMappingsHasBeenSet(false),
-    m_commentFieldMappingsHasBeenSet(false),
-    m_webLinkFieldMappingsHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+BoxConfiguration::BoxConfiguration(JsonView jsonValue)
+  : BoxConfiguration()
 {
   *this = jsonValue;
 }

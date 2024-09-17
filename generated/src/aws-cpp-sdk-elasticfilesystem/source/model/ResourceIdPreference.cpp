@@ -25,10 +25,8 @@ ResourceIdPreference::ResourceIdPreference() :
 {
 }
 
-ResourceIdPreference::ResourceIdPreference(JsonView jsonValue) : 
-    m_resourceIdType(ResourceIdType::NOT_SET),
-    m_resourceIdTypeHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+ResourceIdPreference::ResourceIdPreference(JsonView jsonValue)
+  : ResourceIdPreference()
 {
   *this = jsonValue;
 }

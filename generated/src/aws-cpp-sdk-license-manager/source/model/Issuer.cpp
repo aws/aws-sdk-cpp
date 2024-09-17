@@ -24,9 +24,8 @@ Issuer::Issuer() :
 {
 }
 
-Issuer::Issuer(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_signKeyHasBeenSet(false)
+Issuer::Issuer(JsonView jsonValue)
+  : Issuer()
 {
   *this = jsonValue;
 }

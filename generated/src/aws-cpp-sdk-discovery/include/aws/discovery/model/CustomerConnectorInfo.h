@@ -36,152 +36,75 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of active discovery connectors.</p>
      */
     inline int GetActiveConnectors() const{ return m_activeConnectors; }
-
-    /**
-     * <p>Number of active discovery connectors.</p>
-     */
     inline bool ActiveConnectorsHasBeenSet() const { return m_activeConnectorsHasBeenSet; }
-
-    /**
-     * <p>Number of active discovery connectors.</p>
-     */
     inline void SetActiveConnectors(int value) { m_activeConnectorsHasBeenSet = true; m_activeConnectors = value; }
-
-    /**
-     * <p>Number of active discovery connectors.</p>
-     */
     inline CustomerConnectorInfo& WithActiveConnectors(int value) { SetActiveConnectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of healthy discovery connectors.</p>
      */
     inline int GetHealthyConnectors() const{ return m_healthyConnectors; }
-
-    /**
-     * <p>Number of healthy discovery connectors.</p>
-     */
     inline bool HealthyConnectorsHasBeenSet() const { return m_healthyConnectorsHasBeenSet; }
-
-    /**
-     * <p>Number of healthy discovery connectors.</p>
-     */
     inline void SetHealthyConnectors(int value) { m_healthyConnectorsHasBeenSet = true; m_healthyConnectors = value; }
-
-    /**
-     * <p>Number of healthy discovery connectors.</p>
-     */
     inline CustomerConnectorInfo& WithHealthyConnectors(int value) { SetHealthyConnectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of blacklisted discovery connectors.</p>
      */
     inline int GetBlackListedConnectors() const{ return m_blackListedConnectors; }
-
-    /**
-     * <p>Number of blacklisted discovery connectors.</p>
-     */
     inline bool BlackListedConnectorsHasBeenSet() const { return m_blackListedConnectorsHasBeenSet; }
-
-    /**
-     * <p>Number of blacklisted discovery connectors.</p>
-     */
     inline void SetBlackListedConnectors(int value) { m_blackListedConnectorsHasBeenSet = true; m_blackListedConnectors = value; }
-
-    /**
-     * <p>Number of blacklisted discovery connectors.</p>
-     */
     inline CustomerConnectorInfo& WithBlackListedConnectors(int value) { SetBlackListedConnectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of discovery connectors with status SHUTDOWN,</p>
      */
     inline int GetShutdownConnectors() const{ return m_shutdownConnectors; }
-
-    /**
-     * <p>Number of discovery connectors with status SHUTDOWN,</p>
-     */
     inline bool ShutdownConnectorsHasBeenSet() const { return m_shutdownConnectorsHasBeenSet; }
-
-    /**
-     * <p>Number of discovery connectors with status SHUTDOWN,</p>
-     */
     inline void SetShutdownConnectors(int value) { m_shutdownConnectorsHasBeenSet = true; m_shutdownConnectors = value; }
-
-    /**
-     * <p>Number of discovery connectors with status SHUTDOWN,</p>
-     */
     inline CustomerConnectorInfo& WithShutdownConnectors(int value) { SetShutdownConnectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of unhealthy discovery connectors.</p>
      */
     inline int GetUnhealthyConnectors() const{ return m_unhealthyConnectors; }
-
-    /**
-     * <p>Number of unhealthy discovery connectors.</p>
-     */
     inline bool UnhealthyConnectorsHasBeenSet() const { return m_unhealthyConnectorsHasBeenSet; }
-
-    /**
-     * <p>Number of unhealthy discovery connectors.</p>
-     */
     inline void SetUnhealthyConnectors(int value) { m_unhealthyConnectorsHasBeenSet = true; m_unhealthyConnectors = value; }
-
-    /**
-     * <p>Number of unhealthy discovery connectors.</p>
-     */
     inline CustomerConnectorInfo& WithUnhealthyConnectors(int value) { SetUnhealthyConnectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Total number of discovery connectors.</p>
      */
     inline int GetTotalConnectors() const{ return m_totalConnectors; }
-
-    /**
-     * <p>Total number of discovery connectors.</p>
-     */
     inline bool TotalConnectorsHasBeenSet() const { return m_totalConnectorsHasBeenSet; }
-
-    /**
-     * <p>Total number of discovery connectors.</p>
-     */
     inline void SetTotalConnectors(int value) { m_totalConnectorsHasBeenSet = true; m_totalConnectors = value; }
-
-    /**
-     * <p>Total number of discovery connectors.</p>
-     */
     inline CustomerConnectorInfo& WithTotalConnectors(int value) { SetTotalConnectors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of unknown discovery connectors.</p>
      */
     inline int GetUnknownConnectors() const{ return m_unknownConnectors; }
-
-    /**
-     * <p>Number of unknown discovery connectors.</p>
-     */
     inline bool UnknownConnectorsHasBeenSet() const { return m_unknownConnectorsHasBeenSet; }
-
-    /**
-     * <p>Number of unknown discovery connectors.</p>
-     */
     inline void SetUnknownConnectors(int value) { m_unknownConnectorsHasBeenSet = true; m_unknownConnectors = value; }
-
-    /**
-     * <p>Number of unknown discovery connectors.</p>
-     */
     inline CustomerConnectorInfo& WithUnknownConnectors(int value) { SetUnknownConnectors(value); return *this;}
-
+    ///@}
   private:
 
     int m_activeConnectors;

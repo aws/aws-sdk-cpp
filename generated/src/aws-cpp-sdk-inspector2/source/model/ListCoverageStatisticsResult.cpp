@@ -22,8 +22,8 @@ ListCoverageStatisticsResult::ListCoverageStatisticsResult() :
 {
 }
 
-ListCoverageStatisticsResult::ListCoverageStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalCounts(0)
+ListCoverageStatisticsResult::ListCoverageStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListCoverageStatisticsResult()
 {
   *this = result;
 }

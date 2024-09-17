@@ -35,20 +35,8 @@ DataValue::DataValue() :
 {
 }
 
-DataValue::DataValue(JsonView jsonValue) : 
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_listValueHasBeenSet(false),
-    m_mapValueHasBeenSet(false),
-    m_relationshipValueHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+DataValue::DataValue(JsonView jsonValue)
+  : DataValue()
 {
   *this = jsonValue;
 }

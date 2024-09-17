@@ -39,58 +39,28 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API DescribeUserPoolClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The user pool client from a server response to describe the user pool
      * client.</p>
      */
     inline const UserPoolClientType& GetUserPoolClient() const{ return m_userPoolClient; }
-
-    /**
-     * <p>The user pool client from a server response to describe the user pool
-     * client.</p>
-     */
     inline void SetUserPoolClient(const UserPoolClientType& value) { m_userPoolClient = value; }
-
-    /**
-     * <p>The user pool client from a server response to describe the user pool
-     * client.</p>
-     */
     inline void SetUserPoolClient(UserPoolClientType&& value) { m_userPoolClient = std::move(value); }
-
-    /**
-     * <p>The user pool client from a server response to describe the user pool
-     * client.</p>
-     */
     inline DescribeUserPoolClientResult& WithUserPoolClient(const UserPoolClientType& value) { SetUserPoolClient(value); return *this;}
-
-    /**
-     * <p>The user pool client from a server response to describe the user pool
-     * client.</p>
-     */
     inline DescribeUserPoolClientResult& WithUserPoolClient(UserPoolClientType&& value) { SetUserPoolClient(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeUserPoolClientResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeUserPoolClientResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeUserPoolClientResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     UserPoolClientType m_userPoolClient;

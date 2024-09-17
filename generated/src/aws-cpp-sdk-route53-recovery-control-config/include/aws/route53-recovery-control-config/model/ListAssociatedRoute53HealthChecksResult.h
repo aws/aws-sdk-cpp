@@ -33,104 +33,43 @@ namespace Model
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API ListAssociatedRoute53HealthChecksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Identifiers for the health checks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHealthCheckIds() const{ return m_healthCheckIds; }
-
-    /**
-     * <p>Identifiers for the health checks.</p>
-     */
     inline void SetHealthCheckIds(const Aws::Vector<Aws::String>& value) { m_healthCheckIds = value; }
-
-    /**
-     * <p>Identifiers for the health checks.</p>
-     */
     inline void SetHealthCheckIds(Aws::Vector<Aws::String>&& value) { m_healthCheckIds = std::move(value); }
-
-    /**
-     * <p>Identifiers for the health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& WithHealthCheckIds(const Aws::Vector<Aws::String>& value) { SetHealthCheckIds(value); return *this;}
-
-    /**
-     * <p>Identifiers for the health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& WithHealthCheckIds(Aws::Vector<Aws::String>&& value) { SetHealthCheckIds(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifiers for the health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& AddHealthCheckIds(const Aws::String& value) { m_healthCheckIds.push_back(value); return *this; }
-
-    /**
-     * <p>Identifiers for the health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& AddHealthCheckIds(Aws::String&& value) { m_healthCheckIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Identifiers for the health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& AddHealthCheckIds(const char* value) { m_healthCheckIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token for listing health checks.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token for listing health checks.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Next token for listing health checks.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token for listing health checks.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token for listing health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token for listing health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token for listing health checks.</p>
-     */
     inline ListAssociatedRoute53HealthChecksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAssociatedRoute53HealthChecksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAssociatedRoute53HealthChecksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAssociatedRoute53HealthChecksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_healthCheckIds;

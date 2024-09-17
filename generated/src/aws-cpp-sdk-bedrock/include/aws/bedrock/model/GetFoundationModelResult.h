@@ -33,53 +33,27 @@ namespace Model
     AWS_BEDROCK_API GetFoundationModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the foundation model.</p>
      */
     inline const FoundationModelDetails& GetModelDetails() const{ return m_modelDetails; }
-
-    /**
-     * <p>Information about the foundation model.</p>
-     */
     inline void SetModelDetails(const FoundationModelDetails& value) { m_modelDetails = value; }
-
-    /**
-     * <p>Information about the foundation model.</p>
-     */
     inline void SetModelDetails(FoundationModelDetails&& value) { m_modelDetails = std::move(value); }
-
-    /**
-     * <p>Information about the foundation model.</p>
-     */
     inline GetFoundationModelResult& WithModelDetails(const FoundationModelDetails& value) { SetModelDetails(value); return *this;}
-
-    /**
-     * <p>Information about the foundation model.</p>
-     */
     inline GetFoundationModelResult& WithModelDetails(FoundationModelDetails&& value) { SetModelDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetFoundationModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetFoundationModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetFoundationModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FoundationModelDetails m_modelDetails;

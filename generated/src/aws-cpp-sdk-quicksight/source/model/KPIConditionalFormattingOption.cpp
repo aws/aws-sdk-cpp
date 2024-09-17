@@ -26,11 +26,8 @@ KPIConditionalFormattingOption::KPIConditionalFormattingOption() :
 {
 }
 
-KPIConditionalFormattingOption::KPIConditionalFormattingOption(JsonView jsonValue) : 
-    m_primaryValueHasBeenSet(false),
-    m_progressBarHasBeenSet(false),
-    m_actualValueHasBeenSet(false),
-    m_comparisonValueHasBeenSet(false)
+KPIConditionalFormattingOption::KPIConditionalFormattingOption(JsonView jsonValue)
+  : KPIConditionalFormattingOption()
 {
   *this = jsonValue;
 }

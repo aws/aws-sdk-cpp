@@ -23,8 +23,8 @@ CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAt
 {
 }
 
-CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
-    m_resultHasBeenSet(false)
+CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAttributes(JsonView jsonValue)
+  : CompleteWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }

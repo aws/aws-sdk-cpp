@@ -26,11 +26,8 @@ ContainerProductSort::ContainerProductSort() :
 {
 }
 
-ContainerProductSort::ContainerProductSort(JsonView jsonValue) : 
-    m_sortBy(ContainerProductSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+ContainerProductSort::ContainerProductSort(JsonView jsonValue)
+  : ContainerProductSort()
 {
   *this = jsonValue;
 }

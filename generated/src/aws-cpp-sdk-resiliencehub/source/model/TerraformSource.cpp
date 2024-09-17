@@ -23,8 +23,8 @@ TerraformSource::TerraformSource() :
 {
 }
 
-TerraformSource::TerraformSource(JsonView jsonValue) : 
-    m_s3StateFileUrlHasBeenSet(false)
+TerraformSource::TerraformSource(JsonView jsonValue)
+  : TerraformSource()
 {
   *this = jsonValue;
 }

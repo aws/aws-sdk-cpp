@@ -40,70 +40,30 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API GetCompatibleVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
      * upgrade them to.</p>
      */
     inline const Aws::Vector<CompatibleVersionsMap>& GetCompatibleVersions() const{ return m_compatibleVersions; }
-
-    /**
-     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
-     * upgrade them to.</p>
-     */
     inline void SetCompatibleVersions(const Aws::Vector<CompatibleVersionsMap>& value) { m_compatibleVersions = value; }
-
-    /**
-     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
-     * upgrade them to.</p>
-     */
     inline void SetCompatibleVersions(Aws::Vector<CompatibleVersionsMap>&& value) { m_compatibleVersions = std::move(value); }
-
-    /**
-     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
-     * upgrade them to.</p>
-     */
     inline GetCompatibleVersionsResult& WithCompatibleVersions(const Aws::Vector<CompatibleVersionsMap>& value) { SetCompatibleVersions(value); return *this;}
-
-    /**
-     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
-     * upgrade them to.</p>
-     */
     inline GetCompatibleVersionsResult& WithCompatibleVersions(Aws::Vector<CompatibleVersionsMap>&& value) { SetCompatibleVersions(std::move(value)); return *this;}
-
-    /**
-     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
-     * upgrade them to.</p>
-     */
     inline GetCompatibleVersionsResult& AddCompatibleVersions(const CompatibleVersionsMap& value) { m_compatibleVersions.push_back(value); return *this; }
-
-    /**
-     * <p>A map of OpenSearch or Elasticsearch versions and the versions you can
-     * upgrade them to.</p>
-     */
     inline GetCompatibleVersionsResult& AddCompatibleVersions(CompatibleVersionsMap&& value) { m_compatibleVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCompatibleVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCompatibleVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCompatibleVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CompatibleVersionsMap> m_compatibleVersions;

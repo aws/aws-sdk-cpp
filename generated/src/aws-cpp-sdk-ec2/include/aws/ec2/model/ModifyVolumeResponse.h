@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API ModifyVolumeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the volume modification.</p>
      */
     inline const VolumeModification& GetVolumeModification() const{ return m_volumeModification; }
-
-    /**
-     * <p>Information about the volume modification.</p>
-     */
     inline void SetVolumeModification(const VolumeModification& value) { m_volumeModification = value; }
-
-    /**
-     * <p>Information about the volume modification.</p>
-     */
     inline void SetVolumeModification(VolumeModification&& value) { m_volumeModification = std::move(value); }
-
-    /**
-     * <p>Information about the volume modification.</p>
-     */
     inline ModifyVolumeResponse& WithVolumeModification(const VolumeModification& value) { SetVolumeModification(value); return *this;}
-
-    /**
-     * <p>Information about the volume modification.</p>
-     */
     inline ModifyVolumeResponse& WithVolumeModification(VolumeModification&& value) { SetVolumeModification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyVolumeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyVolumeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VolumeModification m_volumeModification;

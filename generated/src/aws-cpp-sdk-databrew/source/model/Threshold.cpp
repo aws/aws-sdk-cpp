@@ -28,13 +28,8 @@ Threshold::Threshold() :
 {
 }
 
-Threshold::Threshold(JsonView jsonValue) : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_type(ThresholdType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_unit(ThresholdUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+Threshold::Threshold(JsonView jsonValue)
+  : Threshold()
 {
   *this = jsonValue;
 }

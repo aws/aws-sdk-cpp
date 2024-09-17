@@ -1,0 +1,97 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/apptest/AppTest_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/apptest/model/M2ManagedActionType.h>
+#include <aws/apptest/model/M2ManagedActionProperties.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace AppTest
+{
+namespace Model
+{
+
+  /**
+   * <p>Specifies the AWS Mainframe Modernization managed application
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/M2ManagedApplicationAction">AWS
+   * API Reference</a></p>
+   */
+  class M2ManagedApplicationAction
+  {
+  public:
+    AWS_APPTEST_API M2ManagedApplicationAction();
+    AWS_APPTEST_API M2ManagedApplicationAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPTEST_API M2ManagedApplicationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>The resource of the AWS Mainframe Modernization managed application
+     * action.</p>
+     */
+    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
+    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
+    inline M2ManagedApplicationAction& WithResource(const Aws::String& value) { SetResource(value); return *this;}
+    inline M2ManagedApplicationAction& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
+    inline M2ManagedApplicationAction& WithResource(const char* value) { SetResource(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The action type of the AWS Mainframe Modernization managed application
+     * action.</p>
+     */
+    inline const M2ManagedActionType& GetActionType() const{ return m_actionType; }
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
+    inline void SetActionType(const M2ManagedActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline void SetActionType(M2ManagedActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
+    inline M2ManagedApplicationAction& WithActionType(const M2ManagedActionType& value) { SetActionType(value); return *this;}
+    inline M2ManagedApplicationAction& WithActionType(M2ManagedActionType&& value) { SetActionType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The properties of the AWS Mainframe Modernization managed application
+     * action.</p>
+     */
+    inline const M2ManagedActionProperties& GetProperties() const{ return m_properties; }
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+    inline void SetProperties(const M2ManagedActionProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
+    inline void SetProperties(M2ManagedActionProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
+    inline M2ManagedApplicationAction& WithProperties(const M2ManagedActionProperties& value) { SetProperties(value); return *this;}
+    inline M2ManagedApplicationAction& WithProperties(M2ManagedActionProperties&& value) { SetProperties(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    Aws::String m_resource;
+    bool m_resourceHasBeenSet = false;
+
+    M2ManagedActionType m_actionType;
+    bool m_actionTypeHasBeenSet = false;
+
+    M2ManagedActionProperties m_properties;
+    bool m_propertiesHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace AppTest
+} // namespace Aws

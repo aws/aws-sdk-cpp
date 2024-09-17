@@ -38,54 +38,20 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
      * plan.</p>
      */
     inline const Aws::String& GetRestoreTestingPlanArn() const{ return m_restoreTestingPlanArn; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
-     * plan.</p>
-     */
     inline bool RestoreTestingPlanArnHasBeenSet() const { return m_restoreTestingPlanArnHasBeenSet; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
-     * plan.</p>
-     */
     inline void SetRestoreTestingPlanArn(const Aws::String& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = value; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
-     * plan.</p>
-     */
     inline void SetRestoreTestingPlanArn(Aws::String&& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = std::move(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
-     * plan.</p>
-     */
     inline void SetRestoreTestingPlanArn(const char* value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn.assign(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
-     * plan.</p>
-     */
     inline RestoreJobCreator& WithRestoreTestingPlanArn(const Aws::String& value) { SetRestoreTestingPlanArn(value); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
-     * plan.</p>
-     */
     inline RestoreJobCreator& WithRestoreTestingPlanArn(Aws::String&& value) { SetRestoreTestingPlanArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
-     * plan.</p>
-     */
     inline RestoreJobCreator& WithRestoreTestingPlanArn(const char* value) { SetRestoreTestingPlanArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restoreTestingPlanArn;

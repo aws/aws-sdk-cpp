@@ -25,10 +25,8 @@ OSInfo::OSInfo() :
 {
 }
 
-OSInfo::OSInfo(JsonView jsonValue) : 
-    m_type(OSType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+OSInfo::OSInfo(JsonView jsonValue)
+  : OSInfo()
 {
   *this = jsonValue;
 }

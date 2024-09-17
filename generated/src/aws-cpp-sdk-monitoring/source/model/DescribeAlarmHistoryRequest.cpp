@@ -36,12 +36,19 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
 
   if(m_alarmTypesHasBeenSet)
   {
-    unsigned alarmTypesCount = 1;
-    for(auto& item : m_alarmTypes)
+    if (m_alarmTypes.empty())
     {
-      ss << "AlarmTypes.member." << alarmTypesCount << "="
-          << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(item).c_str()) << "&";
-      alarmTypesCount++;
+      ss << "AlarmTypes=&";
+    }
+    else
+    {
+      unsigned alarmTypesCount = 1;
+      for(auto& item : m_alarmTypes)
+      {
+        ss << "AlarmTypes.member." << alarmTypesCount << "="
+            << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(item).c_str()) << "&";
+        alarmTypesCount++;
+      }
     }
   }
 

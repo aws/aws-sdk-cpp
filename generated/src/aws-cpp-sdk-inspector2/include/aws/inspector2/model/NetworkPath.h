@@ -39,46 +39,19 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details on the steps in the network path.</p>
      */
     inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
-
-    /**
-     * <p>The details on the steps in the network path.</p>
-     */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-
-    /**
-     * <p>The details on the steps in the network path.</p>
-     */
     inline void SetSteps(const Aws::Vector<Step>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-
-    /**
-     * <p>The details on the steps in the network path.</p>
-     */
     inline void SetSteps(Aws::Vector<Step>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-
-    /**
-     * <p>The details on the steps in the network path.</p>
-     */
     inline NetworkPath& WithSteps(const Aws::Vector<Step>& value) { SetSteps(value); return *this;}
-
-    /**
-     * <p>The details on the steps in the network path.</p>
-     */
     inline NetworkPath& WithSteps(Aws::Vector<Step>&& value) { SetSteps(std::move(value)); return *this;}
-
-    /**
-     * <p>The details on the steps in the network path.</p>
-     */
     inline NetworkPath& AddSteps(const Step& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-
-    /**
-     * <p>The details on the steps in the network path.</p>
-     */
     inline NetworkPath& AddSteps(Step&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Step> m_steps;

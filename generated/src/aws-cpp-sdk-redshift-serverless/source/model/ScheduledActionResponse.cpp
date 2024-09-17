@@ -34,19 +34,8 @@ ScheduledActionResponse::ScheduledActionResponse() :
 {
 }
 
-ScheduledActionResponse::ScheduledActionResponse(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_nextInvocationsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_scheduledActionDescriptionHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false),
-    m_scheduledActionUuidHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_targetActionHasBeenSet(false)
+ScheduledActionResponse::ScheduledActionResponse(JsonView jsonValue)
+  : ScheduledActionResponse()
 {
   *this = jsonValue;
 }

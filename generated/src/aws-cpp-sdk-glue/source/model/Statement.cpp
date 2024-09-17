@@ -34,19 +34,8 @@ Statement::Statement() :
 {
 }
 
-Statement::Statement(JsonView jsonValue) : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_state(StatementState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_progress(0.0),
-    m_progressHasBeenSet(false),
-    m_startedOn(0),
-    m_startedOnHasBeenSet(false),
-    m_completedOn(0),
-    m_completedOnHasBeenSet(false)
+Statement::Statement(JsonView jsonValue)
+  : Statement()
 {
   *this = jsonValue;
 }

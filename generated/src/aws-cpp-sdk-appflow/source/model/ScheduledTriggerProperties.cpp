@@ -33,18 +33,8 @@ ScheduledTriggerProperties::ScheduledTriggerProperties() :
 {
 }
 
-ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue) : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_dataPullMode(DataPullMode::NOT_SET),
-    m_dataPullModeHasBeenSet(false),
-    m_scheduleStartTimeHasBeenSet(false),
-    m_scheduleEndTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_scheduleOffset(0),
-    m_scheduleOffsetHasBeenSet(false),
-    m_firstExecutionFromHasBeenSet(false),
-    m_flowErrorDeactivationThreshold(0),
-    m_flowErrorDeactivationThresholdHasBeenSet(false)
+ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue)
+  : ScheduledTriggerProperties()
 {
   *this = jsonValue;
 }

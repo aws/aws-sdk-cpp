@@ -28,13 +28,8 @@ Limitation::Limitation() :
 {
 }
 
-Limitation::Limitation(JsonView jsonValue) : 
-    m_databaseIdHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_impactHasBeenSet(false),
-    m_typeHasBeenSet(false)
+Limitation::Limitation(JsonView jsonValue)
+  : Limitation()
 {
   *this = jsonValue;
 }

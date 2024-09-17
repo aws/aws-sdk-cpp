@@ -30,14 +30,8 @@ IntegrationResponse::IntegrationResponse() :
 {
 }
 
-IntegrationResponse::IntegrationResponse(JsonView jsonValue) : 
-    m_statusCodeHasBeenSet(false),
-    m_selectionPatternHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseTemplatesHasBeenSet(false),
-    m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+IntegrationResponse::IntegrationResponse(JsonView jsonValue)
+  : IntegrationResponse()
 {
   *this = jsonValue;
 }

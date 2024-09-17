@@ -27,10 +27,8 @@ NotificationConfiguration::NotificationConfiguration() :
 {
 }
 
-NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode) : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_topicARNHasBeenSet(false),
-    m_notificationTypeHasBeenSet(false)
+NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode)
+  : NotificationConfiguration()
 {
   *this = xmlNode;
 }

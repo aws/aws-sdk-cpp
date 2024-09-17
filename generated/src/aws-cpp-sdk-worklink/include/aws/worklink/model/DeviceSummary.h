@@ -38,77 +38,31 @@ namespace Model
     AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the device.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline DeviceSummary& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline DeviceSummary& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline DeviceSummary& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the device.</p>
      */
     inline const DeviceStatus& GetDeviceStatus() const{ return m_deviceStatus; }
-
-    /**
-     * <p>The status of the device.</p>
-     */
     inline bool DeviceStatusHasBeenSet() const { return m_deviceStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the device.</p>
-     */
     inline void SetDeviceStatus(const DeviceStatus& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
-
-    /**
-     * <p>The status of the device.</p>
-     */
     inline void SetDeviceStatus(DeviceStatus&& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = std::move(value); }
-
-    /**
-     * <p>The status of the device.</p>
-     */
     inline DeviceSummary& WithDeviceStatus(const DeviceStatus& value) { SetDeviceStatus(value); return *this;}
-
-    /**
-     * <p>The status of the device.</p>
-     */
     inline DeviceSummary& WithDeviceStatus(DeviceStatus&& value) { SetDeviceStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

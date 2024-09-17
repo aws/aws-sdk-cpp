@@ -23,8 +23,8 @@ TargetGroupInfo::TargetGroupInfo() :
 {
 }
 
-TargetGroupInfo::TargetGroupInfo(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+TargetGroupInfo::TargetGroupInfo(JsonView jsonValue)
+  : TargetGroupInfo()
 {
   *this = jsonValue;
 }

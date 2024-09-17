@@ -26,11 +26,8 @@ ExportAssetsToS3RequestDetails::ExportAssetsToS3RequestDetails() :
 {
 }
 
-ExportAssetsToS3RequestDetails::ExportAssetsToS3RequestDetails(JsonView jsonValue) : 
-    m_assetDestinationsHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+ExportAssetsToS3RequestDetails::ExportAssetsToS3RequestDetails(JsonView jsonValue)
+  : ExportAssetsToS3RequestDetails()
 {
   *this = jsonValue;
 }

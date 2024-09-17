@@ -22,8 +22,8 @@ StartBotRecommendationResult::StartBotRecommendationResult() :
 {
 }
 
-StartBotRecommendationResult::StartBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botRecommendationStatus(BotRecommendationStatus::NOT_SET)
+StartBotRecommendationResult::StartBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartBotRecommendationResult()
 {
   *this = result;
 }

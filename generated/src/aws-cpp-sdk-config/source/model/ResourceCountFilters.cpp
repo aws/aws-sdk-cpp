@@ -26,11 +26,8 @@ ResourceCountFilters::ResourceCountFilters() :
 {
 }
 
-ResourceCountFilters::ResourceCountFilters(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+ResourceCountFilters::ResourceCountFilters(JsonView jsonValue)
+  : ResourceCountFilters()
 {
   *this = jsonValue;
 }

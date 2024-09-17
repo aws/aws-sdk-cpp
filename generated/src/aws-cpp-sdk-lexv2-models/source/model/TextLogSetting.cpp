@@ -27,12 +27,8 @@ TextLogSetting::TextLogSetting() :
 {
 }
 
-TextLogSetting::TextLogSetting(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_selectiveLoggingEnabled(false),
-    m_selectiveLoggingEnabledHasBeenSet(false)
+TextLogSetting::TextLogSetting(JsonView jsonValue)
+  : TextLogSetting()
 {
   *this = jsonValue;
 }

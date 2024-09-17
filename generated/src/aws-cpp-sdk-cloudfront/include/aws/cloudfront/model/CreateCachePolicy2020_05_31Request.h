@@ -32,36 +32,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A cache policy configuration.</p>
      */
     inline const CachePolicyConfig& GetCachePolicyConfig() const{ return m_cachePolicyConfig; }
-
-    /**
-     * <p>A cache policy configuration.</p>
-     */
     inline bool CachePolicyConfigHasBeenSet() const { return m_cachePolicyConfigHasBeenSet; }
-
-    /**
-     * <p>A cache policy configuration.</p>
-     */
     inline void SetCachePolicyConfig(const CachePolicyConfig& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = value; }
-
-    /**
-     * <p>A cache policy configuration.</p>
-     */
     inline void SetCachePolicyConfig(CachePolicyConfig&& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = std::move(value); }
-
-    /**
-     * <p>A cache policy configuration.</p>
-     */
     inline CreateCachePolicy2020_05_31Request& WithCachePolicyConfig(const CachePolicyConfig& value) { SetCachePolicyConfig(value); return *this;}
-
-    /**
-     * <p>A cache policy configuration.</p>
-     */
     inline CreateCachePolicy2020_05_31Request& WithCachePolicyConfig(CachePolicyConfig&& value) { SetCachePolicyConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CachePolicyConfig m_cachePolicyConfig;

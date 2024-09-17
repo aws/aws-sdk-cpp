@@ -27,12 +27,8 @@ IceServer::IceServer() :
 {
 }
 
-IceServer::IceServer(JsonView jsonValue) : 
-    m_urisHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_ttl(0),
-    m_ttlHasBeenSet(false)
+IceServer::IceServer(JsonView jsonValue)
+  : IceServer()
 {
   *this = jsonValue;
 }

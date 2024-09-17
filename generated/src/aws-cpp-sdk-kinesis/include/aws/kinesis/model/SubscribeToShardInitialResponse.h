@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
+#include <aws/core/http/HttpTypes.h>
 
 namespace Aws
 {
@@ -27,6 +28,7 @@ namespace Model
     AWS_KINESIS_API SubscribeToShardInitialResponse();
     AWS_KINESIS_API SubscribeToShardInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API SubscribeToShardInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API SubscribeToShardInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

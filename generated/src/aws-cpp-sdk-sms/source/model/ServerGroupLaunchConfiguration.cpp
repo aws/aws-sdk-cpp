@@ -26,11 +26,8 @@ ServerGroupLaunchConfiguration::ServerGroupLaunchConfiguration() :
 {
 }
 
-ServerGroupLaunchConfiguration::ServerGroupLaunchConfiguration(JsonView jsonValue) : 
-    m_serverGroupIdHasBeenSet(false),
-    m_launchOrder(0),
-    m_launchOrderHasBeenSet(false),
-    m_serverLaunchConfigurationsHasBeenSet(false)
+ServerGroupLaunchConfiguration::ServerGroupLaunchConfiguration(JsonView jsonValue)
+  : ServerGroupLaunchConfiguration()
 {
   *this = jsonValue;
 }

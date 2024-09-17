@@ -25,10 +25,8 @@ PutProjectEventsResultEntry::PutProjectEventsResultEntry() :
 {
 }
 
-PutProjectEventsResultEntry::PutProjectEventsResultEntry(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+PutProjectEventsResultEntry::PutProjectEventsResultEntry(JsonView jsonValue)
+  : PutProjectEventsResultEntry()
 {
   *this = jsonValue;
 }

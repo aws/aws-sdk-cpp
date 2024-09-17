@@ -24,9 +24,8 @@ GlobalSecondaryIndexAutoScalingUpdate::GlobalSecondaryIndexAutoScalingUpdate() :
 {
 }
 
-GlobalSecondaryIndexAutoScalingUpdate::GlobalSecondaryIndexAutoScalingUpdate(JsonView jsonValue) : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet(false)
+GlobalSecondaryIndexAutoScalingUpdate::GlobalSecondaryIndexAutoScalingUpdate(JsonView jsonValue)
+  : GlobalSecondaryIndexAutoScalingUpdate()
 {
   *this = jsonValue;
 }

@@ -25,9 +25,8 @@ DataSummary::DataSummary() :
 {
 }
 
-DataSummary::DataSummary(JsonView jsonValue) : 
-    m_detailsHasBeenSet(false),
-    m_referenceHasBeenSet(false)
+DataSummary::DataSummary(JsonView jsonValue)
+  : DataSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FrameMetric::FrameMetric() :
 {
 }
 
-FrameMetric::FrameMetric(JsonView jsonValue) : 
-    m_frameNameHasBeenSet(false),
-    m_threadStatesHasBeenSet(false),
-    m_type(MetricType::NOT_SET),
-    m_typeHasBeenSet(false)
+FrameMetric::FrameMetric(JsonView jsonValue)
+  : FrameMetric()
 {
   *this = jsonValue;
 }

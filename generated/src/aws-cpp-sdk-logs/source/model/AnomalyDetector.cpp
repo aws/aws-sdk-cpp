@@ -37,22 +37,8 @@ AnomalyDetector::AnomalyDetector() :
 {
 }
 
-AnomalyDetector::AnomalyDetector(JsonView jsonValue) : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_detectorNameHasBeenSet(false),
-    m_logGroupArnListHasBeenSet(false),
-    m_evaluationFrequency(EvaluationFrequency::NOT_SET),
-    m_evaluationFrequencyHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_anomalyDetectorStatus(AnomalyDetectorStatus::NOT_SET),
-    m_anomalyDetectorStatusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_creationTimeStamp(0),
-    m_creationTimeStampHasBeenSet(false),
-    m_lastModifiedTimeStamp(0),
-    m_lastModifiedTimeStampHasBeenSet(false),
-    m_anomalyVisibilityTime(0),
-    m_anomalyVisibilityTimeHasBeenSet(false)
+AnomalyDetector::AnomalyDetector(JsonView jsonValue)
+  : AnomalyDetector()
 {
   *this = jsonValue;
 }

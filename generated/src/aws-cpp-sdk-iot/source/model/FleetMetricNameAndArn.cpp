@@ -24,9 +24,8 @@ FleetMetricNameAndArn::FleetMetricNameAndArn() :
 {
 }
 
-FleetMetricNameAndArn::FleetMetricNameAndArn(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_metricArnHasBeenSet(false)
+FleetMetricNameAndArn::FleetMetricNameAndArn(JsonView jsonValue)
+  : FleetMetricNameAndArn()
 {
   *this = jsonValue;
 }

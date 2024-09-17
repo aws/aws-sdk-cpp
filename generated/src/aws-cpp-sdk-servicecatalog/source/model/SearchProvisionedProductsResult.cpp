@@ -22,8 +22,8 @@ SearchProvisionedProductsResult::SearchProvisionedProductsResult() :
 {
 }
 
-SearchProvisionedProductsResult::SearchProvisionedProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalResultsCount(0)
+SearchProvisionedProductsResult::SearchProvisionedProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchProvisionedProductsResult()
 {
   *this = result;
 }

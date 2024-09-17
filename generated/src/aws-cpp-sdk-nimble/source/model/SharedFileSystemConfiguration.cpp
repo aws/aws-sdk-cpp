@@ -27,12 +27,8 @@ SharedFileSystemConfiguration::SharedFileSystemConfiguration() :
 {
 }
 
-SharedFileSystemConfiguration::SharedFileSystemConfiguration(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_linuxMountPointHasBeenSet(false),
-    m_shareNameHasBeenSet(false),
-    m_windowsMountDriveHasBeenSet(false)
+SharedFileSystemConfiguration::SharedFileSystemConfiguration(JsonView jsonValue)
+  : SharedFileSystemConfiguration()
 {
   *this = jsonValue;
 }

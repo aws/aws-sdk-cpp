@@ -24,9 +24,8 @@ TimestampPartition::TimestampPartition() :
 {
 }
 
-TimestampPartition::TimestampPartition(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false)
+TimestampPartition::TimestampPartition(JsonView jsonValue)
+  : TimestampPartition()
 {
   *this = jsonValue;
 }

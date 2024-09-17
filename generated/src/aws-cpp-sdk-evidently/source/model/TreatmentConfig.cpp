@@ -26,11 +26,8 @@ TreatmentConfig::TreatmentConfig() :
 {
 }
 
-TreatmentConfig::TreatmentConfig(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_featureHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_variationHasBeenSet(false)
+TreatmentConfig::TreatmentConfig(JsonView jsonValue)
+  : TreatmentConfig()
 {
   *this = jsonValue;
 }

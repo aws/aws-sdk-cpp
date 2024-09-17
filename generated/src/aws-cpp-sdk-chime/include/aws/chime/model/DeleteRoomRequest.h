@@ -32,87 +32,33 @@ namespace Model
     AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Chime account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline DeleteRoomRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline DeleteRoomRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime account ID.</p>
-     */
     inline DeleteRoomRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The chat room ID.</p>
      */
     inline const Aws::String& GetRoomId() const{ return m_roomId; }
-
-    /**
-     * <p>The chat room ID.</p>
-     */
     inline bool RoomIdHasBeenSet() const { return m_roomIdHasBeenSet; }
-
-    /**
-     * <p>The chat room ID.</p>
-     */
     inline void SetRoomId(const Aws::String& value) { m_roomIdHasBeenSet = true; m_roomId = value; }
-
-    /**
-     * <p>The chat room ID.</p>
-     */
     inline void SetRoomId(Aws::String&& value) { m_roomIdHasBeenSet = true; m_roomId = std::move(value); }
-
-    /**
-     * <p>The chat room ID.</p>
-     */
     inline void SetRoomId(const char* value) { m_roomIdHasBeenSet = true; m_roomId.assign(value); }
-
-    /**
-     * <p>The chat room ID.</p>
-     */
     inline DeleteRoomRequest& WithRoomId(const Aws::String& value) { SetRoomId(value); return *this;}
-
-    /**
-     * <p>The chat room ID.</p>
-     */
     inline DeleteRoomRequest& WithRoomId(Aws::String&& value) { SetRoomId(std::move(value)); return *this;}
-
-    /**
-     * <p>The chat room ID.</p>
-     */
     inline DeleteRoomRequest& WithRoomId(const char* value) { SetRoomId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

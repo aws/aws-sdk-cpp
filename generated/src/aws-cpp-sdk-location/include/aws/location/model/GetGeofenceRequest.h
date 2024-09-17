@@ -32,87 +32,33 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The geofence collection storing the target geofence.</p>
      */
     inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
-
-    /**
-     * <p>The geofence collection storing the target geofence.</p>
-     */
     inline bool CollectionNameHasBeenSet() const { return m_collectionNameHasBeenSet; }
-
-    /**
-     * <p>The geofence collection storing the target geofence.</p>
-     */
     inline void SetCollectionName(const Aws::String& value) { m_collectionNameHasBeenSet = true; m_collectionName = value; }
-
-    /**
-     * <p>The geofence collection storing the target geofence.</p>
-     */
     inline void SetCollectionName(Aws::String&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::move(value); }
-
-    /**
-     * <p>The geofence collection storing the target geofence.</p>
-     */
     inline void SetCollectionName(const char* value) { m_collectionNameHasBeenSet = true; m_collectionName.assign(value); }
-
-    /**
-     * <p>The geofence collection storing the target geofence.</p>
-     */
     inline GetGeofenceRequest& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
-
-    /**
-     * <p>The geofence collection storing the target geofence.</p>
-     */
     inline GetGeofenceRequest& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The geofence collection storing the target geofence.</p>
-     */
     inline GetGeofenceRequest& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The geofence you're retrieving details for.</p>
      */
     inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
-
-    /**
-     * <p>The geofence you're retrieving details for.</p>
-     */
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-
-    /**
-     * <p>The geofence you're retrieving details for.</p>
-     */
     inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-
-    /**
-     * <p>The geofence you're retrieving details for.</p>
-     */
     inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-
-    /**
-     * <p>The geofence you're retrieving details for.</p>
-     */
     inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-
-    /**
-     * <p>The geofence you're retrieving details for.</p>
-     */
     inline GetGeofenceRequest& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-
-    /**
-     * <p>The geofence you're retrieving details for.</p>
-     */
     inline GetGeofenceRequest& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The geofence you're retrieving details for.</p>
-     */
     inline GetGeofenceRequest& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_collectionName;

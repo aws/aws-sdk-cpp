@@ -23,8 +23,8 @@ TaskList::TaskList() :
 {
 }
 
-TaskList::TaskList(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+TaskList::TaskList(JsonView jsonValue)
+  : TaskList()
 {
   *this = jsonValue;
 }

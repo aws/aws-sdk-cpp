@@ -44,171 +44,84 @@ namespace Model
     AWS_EC2_API DescribeNetworkInterfaceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The attachment (if any) of the network interface.</p>
      */
     inline const NetworkInterfaceAttachment& GetAttachment() const{ return m_attachment; }
-
-    /**
-     * <p>The attachment (if any) of the network interface.</p>
-     */
     inline void SetAttachment(const NetworkInterfaceAttachment& value) { m_attachment = value; }
-
-    /**
-     * <p>The attachment (if any) of the network interface.</p>
-     */
     inline void SetAttachment(NetworkInterfaceAttachment&& value) { m_attachment = std::move(value); }
-
-    /**
-     * <p>The attachment (if any) of the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithAttachment(const NetworkInterfaceAttachment& value) { SetAttachment(value); return *this;}
-
-    /**
-     * <p>The attachment (if any) of the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the network interface.</p>
      */
     inline const AttributeValue& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the network interface.</p>
-     */
     inline void SetDescription(const AttributeValue& value) { m_description = value; }
-
-    /**
-     * <p>The description of the network interface.</p>
-     */
     inline void SetDescription(AttributeValue&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The description of the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The security groups associated with the network interface.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>The security groups associated with the network interface.</p>
-     */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
-
-    /**
-     * <p>The security groups associated with the network interface.</p>
-     */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
-
-    /**
-     * <p>The security groups associated with the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>The security groups associated with the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The security groups associated with the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>The security groups associated with the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceId = value; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
-
-    /**
-     * <p>Indicates whether source/destination checking is enabled.</p>
-     */
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheck = value; }
-
-    /**
-     * <p>Indicates whether source/destination checking is enabled.</p>
-     */
     inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = std::move(value); }
-
-    /**
-     * <p>Indicates whether source/destination checking is enabled.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
-
-    /**
-     * <p>Indicates whether source/destination checking is enabled.</p>
-     */
     inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddress = value; }
+    inline DescribeNetworkInterfaceAttributeResponse& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+    ///@}
 
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeNetworkInterfaceAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeNetworkInterfaceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NetworkInterfaceAttachment m_attachment;
@@ -220,6 +133,8 @@ namespace Model
     Aws::String m_networkInterfaceId;
 
     AttributeBooleanValue m_sourceDestCheck;
+
+    bool m_associatePublicIpAddress;
 
     ResponseMetadata m_responseMetadata;
   };

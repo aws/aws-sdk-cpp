@@ -38,77 +38,31 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Unique identifier of a field.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline Sort& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline Sort& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline Sort& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structured set of sort terms</p>
      */
     inline const Order& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>A structured set of sort terms</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>A structured set of sort terms</p>
-     */
     inline void SetSortOrder(const Order& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>A structured set of sort terms</p>
-     */
     inline void SetSortOrder(Order&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>A structured set of sort terms</p>
-     */
     inline Sort& WithSortOrder(const Order& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>A structured set of sort terms</p>
-     */
     inline Sort& WithSortOrder(Order&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

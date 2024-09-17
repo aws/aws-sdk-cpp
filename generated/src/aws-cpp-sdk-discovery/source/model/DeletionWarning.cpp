@@ -26,11 +26,8 @@ DeletionWarning::DeletionWarning() :
 {
 }
 
-DeletionWarning::DeletionWarning(JsonView jsonValue) : 
-    m_configurationIdHasBeenSet(false),
-    m_warningCode(0),
-    m_warningCodeHasBeenSet(false),
-    m_warningTextHasBeenSet(false)
+DeletionWarning::DeletionWarning(JsonView jsonValue)
+  : DeletionWarning()
 {
   *this = jsonValue;
 }

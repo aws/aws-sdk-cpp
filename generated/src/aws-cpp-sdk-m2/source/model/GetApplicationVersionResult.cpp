@@ -23,9 +23,8 @@ GetApplicationVersionResult::GetApplicationVersionResult() :
 {
 }
 
-GetApplicationVersionResult::GetApplicationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersion(0),
-    m_status(ApplicationVersionLifecycle::NOT_SET)
+GetApplicationVersionResult::GetApplicationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetApplicationVersionResult()
 {
   *this = result;
 }

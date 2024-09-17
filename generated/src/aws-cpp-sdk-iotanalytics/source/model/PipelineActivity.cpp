@@ -32,17 +32,8 @@ PipelineActivity::PipelineActivity() :
 {
 }
 
-PipelineActivity::PipelineActivity(JsonView jsonValue) : 
-    m_channelHasBeenSet(false),
-    m_lambdaHasBeenSet(false),
-    m_datastoreHasBeenSet(false),
-    m_addAttributesHasBeenSet(false),
-    m_removeAttributesHasBeenSet(false),
-    m_selectAttributesHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_mathHasBeenSet(false),
-    m_deviceRegistryEnrichHasBeenSet(false),
-    m_deviceShadowEnrichHasBeenSet(false)
+PipelineActivity::PipelineActivity(JsonView jsonValue)
+  : PipelineActivity()
 {
   *this = jsonValue;
 }

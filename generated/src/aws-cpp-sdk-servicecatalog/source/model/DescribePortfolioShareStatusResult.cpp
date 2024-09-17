@@ -22,8 +22,8 @@ DescribePortfolioShareStatusResult::DescribePortfolioShareStatusResult() :
 {
 }
 
-DescribePortfolioShareStatusResult::DescribePortfolioShareStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ShareStatus::NOT_SET)
+DescribePortfolioShareStatusResult::DescribePortfolioShareStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePortfolioShareStatusResult()
 {
   *this = result;
 }

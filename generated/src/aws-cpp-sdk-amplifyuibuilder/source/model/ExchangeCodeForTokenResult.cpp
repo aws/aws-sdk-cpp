@@ -22,8 +22,8 @@ ExchangeCodeForTokenResult::ExchangeCodeForTokenResult() :
 {
 }
 
-ExchangeCodeForTokenResult::ExchangeCodeForTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expiresIn(0)
+ExchangeCodeForTokenResult::ExchangeCodeForTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ExchangeCodeForTokenResult()
 {
   *this = result;
 }

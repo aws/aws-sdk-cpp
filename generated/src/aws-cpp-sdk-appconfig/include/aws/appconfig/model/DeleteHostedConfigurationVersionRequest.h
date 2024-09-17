@@ -32,108 +32,43 @@ namespace Model
     AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The application ID.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline DeleteHostedConfigurationVersionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline DeleteHostedConfigurationVersionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline DeleteHostedConfigurationVersionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration profile ID.</p>
      */
     inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline DeleteHostedConfigurationVersionRequest& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline DeleteHostedConfigurationVersionRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline DeleteHostedConfigurationVersionRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The versions number to delete.</p>
      */
     inline int GetVersionNumber() const{ return m_versionNumber; }
-
-    /**
-     * <p>The versions number to delete.</p>
-     */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
-
-    /**
-     * <p>The versions number to delete.</p>
-     */
     inline void SetVersionNumber(int value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
-
-    /**
-     * <p>The versions number to delete.</p>
-     */
     inline DeleteHostedConfigurationVersionRequest& WithVersionNumber(int value) { SetVersionNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

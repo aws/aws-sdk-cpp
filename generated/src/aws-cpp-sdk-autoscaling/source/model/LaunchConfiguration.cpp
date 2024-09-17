@@ -46,29 +46,8 @@ LaunchConfiguration::LaunchConfiguration() :
 {
 }
 
-LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) : 
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchConfigurationARNHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_classicLinkVPCIdHasBeenSet(false),
-    m_classicLinkVPCSecurityGroupsHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_instanceMonitoringHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode)
+  : LaunchConfiguration()
 {
   *this = xmlNode;
 }

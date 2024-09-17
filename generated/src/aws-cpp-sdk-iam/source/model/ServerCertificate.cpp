@@ -28,11 +28,8 @@ ServerCertificate::ServerCertificate() :
 {
 }
 
-ServerCertificate::ServerCertificate(const XmlNode& xmlNode) : 
-    m_serverCertificateMetadataHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ServerCertificate::ServerCertificate(const XmlNode& xmlNode)
+  : ServerCertificate()
 {
   *this = xmlNode;
 }

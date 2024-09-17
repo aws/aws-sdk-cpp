@@ -25,10 +25,8 @@ TransformS3DataSource::TransformS3DataSource() :
 {
 }
 
-TransformS3DataSource::TransformS3DataSource(JsonView jsonValue) : 
-    m_s3DataType(S3DataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+TransformS3DataSource::TransformS3DataSource(JsonView jsonValue)
+  : TransformS3DataSource()
 {
   *this = jsonValue;
 }

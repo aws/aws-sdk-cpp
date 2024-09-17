@@ -38,36 +38,17 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The information about the Amazon EKS cluster.</p>
      */
     inline const EksInfo& GetEksInfo() const{ return m_eksInfo; }
-
-    /**
-     * <p>The information about the Amazon EKS cluster.</p>
-     */
     inline bool EksInfoHasBeenSet() const { return m_eksInfoHasBeenSet; }
-
-    /**
-     * <p>The information about the Amazon EKS cluster.</p>
-     */
     inline void SetEksInfo(const EksInfo& value) { m_eksInfoHasBeenSet = true; m_eksInfo = value; }
-
-    /**
-     * <p>The information about the Amazon EKS cluster.</p>
-     */
     inline void SetEksInfo(EksInfo&& value) { m_eksInfoHasBeenSet = true; m_eksInfo = std::move(value); }
-
-    /**
-     * <p>The information about the Amazon EKS cluster.</p>
-     */
     inline ContainerInfo& WithEksInfo(const EksInfo& value) { SetEksInfo(value); return *this;}
-
-    /**
-     * <p>The information about the Amazon EKS cluster.</p>
-     */
     inline ContainerInfo& WithEksInfo(EksInfo&& value) { SetEksInfo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EksInfo m_eksInfo;

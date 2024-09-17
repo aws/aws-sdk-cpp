@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChatTokenRequest::CreateChatTokenRequest() : 
-    m_attributesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
     m_roomIdentifierHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false),
     m_sessionDurationInMinutes(0),
     m_sessionDurationInMinutesHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_attributesHasBeenSet(false)
 {
 }
 
@@ -26,14 +26,15 @@ Aws::String CreateChatTokenRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_attributesHasBeenSet)
+  if(m_roomIdentifierHasBeenSet)
   {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
-   }
-   payload.WithObject("attributes", std::move(attributesJsonMap));
+   payload.WithString("roomIdentifier", m_roomIdentifier);
+
+  }
+
+  if(m_userIdHasBeenSet)
+  {
+   payload.WithString("userId", m_userId);
 
   }
 
@@ -48,21 +49,20 @@ Aws::String CreateChatTokenRequest::SerializePayload() const
 
   }
 
-  if(m_roomIdentifierHasBeenSet)
-  {
-   payload.WithString("roomIdentifier", m_roomIdentifier);
-
-  }
-
   if(m_sessionDurationInMinutesHasBeenSet)
   {
    payload.WithInteger("sessionDurationInMinutes", m_sessionDurationInMinutes);
 
   }
 
-  if(m_userIdHasBeenSet)
+  if(m_attributesHasBeenSet)
   {
-   payload.WithString("userId", m_userId);
+   JsonValue attributesJsonMap;
+   for(auto& attributesItem : m_attributes)
+   {
+     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+   }
+   payload.WithObject("attributes", std::move(attributesJsonMap));
 
   }
 

@@ -43,114 +43,44 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines limits on how the term can be configured by acceptors.</p>
      */
     inline const Constraints& GetConstraints() const{ return m_constraints; }
-
-    /**
-     * <p>Defines limits on how the term can be configured by acceptors.</p>
-     */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
-
-    /**
-     * <p>Defines limits on how the term can be configured by acceptors.</p>
-     */
     inline void SetConstraints(const Constraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
-
-    /**
-     * <p>Defines limits on how the term can be configured by acceptors.</p>
-     */
     inline void SetConstraints(Constraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
-
-    /**
-     * <p>Defines limits on how the term can be configured by acceptors.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& WithConstraints(const Constraints& value) { SetConstraints(value); return *this;}
-
-    /**
-     * <p>Defines limits on how the term can be configured by acceptors.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& WithConstraints(Constraints&& value) { SetConstraints(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the per unit rates for product dimensions.</p>
      */
     inline const Aws::Vector<RateCardItem>& GetRateCard() const{ return m_rateCard; }
-
-    /**
-     * <p>Defines the per unit rates for product dimensions.</p>
-     */
     inline bool RateCardHasBeenSet() const { return m_rateCardHasBeenSet; }
-
-    /**
-     * <p>Defines the per unit rates for product dimensions.</p>
-     */
     inline void SetRateCard(const Aws::Vector<RateCardItem>& value) { m_rateCardHasBeenSet = true; m_rateCard = value; }
-
-    /**
-     * <p>Defines the per unit rates for product dimensions.</p>
-     */
     inline void SetRateCard(Aws::Vector<RateCardItem>&& value) { m_rateCardHasBeenSet = true; m_rateCard = std::move(value); }
-
-    /**
-     * <p>Defines the per unit rates for product dimensions.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& WithRateCard(const Aws::Vector<RateCardItem>& value) { SetRateCard(value); return *this;}
-
-    /**
-     * <p>Defines the per unit rates for product dimensions.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& WithRateCard(Aws::Vector<RateCardItem>&& value) { SetRateCard(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines the per unit rates for product dimensions.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& AddRateCard(const RateCardItem& value) { m_rateCardHasBeenSet = true; m_rateCard.push_back(value); return *this; }
-
-    /**
-     * <p>Defines the per unit rates for product dimensions.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& AddRateCard(RateCardItem&& value) { m_rateCardHasBeenSet = true; m_rateCard.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Differentiates between the mutually exclusive rate cards in the same pricing
      * term to be selected by the buyer.</p>
      */
     inline const Selector& GetSelector() const{ return m_selector; }
-
-    /**
-     * <p>Differentiates between the mutually exclusive rate cards in the same pricing
-     * term to be selected by the buyer.</p>
-     */
     inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
-
-    /**
-     * <p>Differentiates between the mutually exclusive rate cards in the same pricing
-     * term to be selected by the buyer.</p>
-     */
     inline void SetSelector(const Selector& value) { m_selectorHasBeenSet = true; m_selector = value; }
-
-    /**
-     * <p>Differentiates between the mutually exclusive rate cards in the same pricing
-     * term to be selected by the buyer.</p>
-     */
     inline void SetSelector(Selector&& value) { m_selectorHasBeenSet = true; m_selector = std::move(value); }
-
-    /**
-     * <p>Differentiates between the mutually exclusive rate cards in the same pricing
-     * term to be selected by the buyer.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& WithSelector(const Selector& value) { SetSelector(value); return *this;}
-
-    /**
-     * <p>Differentiates between the mutually exclusive rate cards in the same pricing
-     * term to be selected by the buyer.</p>
-     */
     inline ConfigurableUpfrontRateCardItem& WithSelector(Selector&& value) { SetSelector(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Constraints m_constraints;

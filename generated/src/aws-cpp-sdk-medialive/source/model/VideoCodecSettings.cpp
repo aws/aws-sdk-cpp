@@ -22,15 +22,13 @@ VideoCodecSettings::VideoCodecSettings() :
     m_frameCaptureSettingsHasBeenSet(false),
     m_h264SettingsHasBeenSet(false),
     m_h265SettingsHasBeenSet(false),
-    m_mpeg2SettingsHasBeenSet(false)
+    m_mpeg2SettingsHasBeenSet(false),
+    m_av1SettingsHasBeenSet(false)
 {
 }
 
-VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) : 
-    m_frameCaptureSettingsHasBeenSet(false),
-    m_h264SettingsHasBeenSet(false),
-    m_h265SettingsHasBeenSet(false),
-    m_mpeg2SettingsHasBeenSet(false)
+VideoCodecSettings::VideoCodecSettings(JsonView jsonValue)
+  : VideoCodecSettings()
 {
   *this = jsonValue;
 }
@@ -65,6 +63,13 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_mpeg2SettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("av1Settings"))
+  {
+    m_av1Settings = jsonValue.GetObject("av1Settings");
+
+    m_av1SettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +98,12 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_mpeg2SettingsHasBeenSet)
   {
    payload.WithObject("mpeg2Settings", m_mpeg2Settings.Jsonize());
+
+  }
+
+  if(m_av1SettingsHasBeenSet)
+  {
+   payload.WithObject("av1Settings", m_av1Settings.Jsonize());
 
   }
 

@@ -360,6 +360,122 @@ namespace ConnectCases
         }
 
         /**
+         * <p>Deletes a field from a cases template. You can delete up to 100 fields per
+         * domain.</p> <p>After a field is deleted:</p> <ul> <li> <p>You can still retrieve
+         * the field by calling <code>BatchGetField</code>.</p> </li> <li> <p>You cannot
+         * update a deleted field by calling <code>UpdateField</code>; it throws a
+         * <code>ValidationException</code>.</p> </li> <li> <p>Deleted fields are not
+         * included in the <code>ListFields</code> response.</p> </li> <li> <p>Calling
+         * <code>CreateCase</code> with a deleted field throws a
+         * <code>ValidationException</code> denoting which field IDs in the request have
+         * been deleted.</p> </li> <li> <p>Calling <code>GetCase</code> with a deleted
+         * field ID returns the deleted field's value if one exists.</p> </li> <li>
+         * <p>Calling <code>UpdateCase</code> with a deleted field ID throws a
+         * <code>ValidationException</code> if the case does not already contain a value
+         * for the deleted field. Otherwise it succeeds, allowing you to update or remove
+         * (using <code>emptyValue: {}</code>) the field's value from the case.</p> </li>
+         * <li> <p> <code>GetTemplate</code> does not return field IDs for deleted
+         * fields.</p> </li> <li> <p> <code>GetLayout</code> does not return field IDs for
+         * deleted fields.</p> </li> <li> <p>Calling <code>SearchCases</code> with the
+         * deleted field ID as a filter returns any cases that have a value for the deleted
+         * field that matches the filter criteria.</p> </li> <li> <p>Calling
+         * <code>SearchCases</code> with a <code>searchTerm</code> value that matches a
+         * deleted field's value on a case returns the case in the response.</p> </li> <li>
+         * <p>Calling <code>BatchPutFieldOptions</code> with a deleted field ID throw a
+         * <code>ValidationException</code>.</p> </li> <li> <p>Calling
+         * <code>GetCaseEventConfiguration</code> does not return field IDs for deleted
+         * fields.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteField">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFieldOutcome DeleteField(const Model::DeleteFieldRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteField that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFieldRequestT = Model::DeleteFieldRequest>
+        Model::DeleteFieldOutcomeCallable DeleteFieldCallable(const DeleteFieldRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::DeleteField, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteField that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFieldRequestT = Model::DeleteFieldRequest>
+        void DeleteFieldAsync(const DeleteFieldRequestT& request, const DeleteFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::DeleteField, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a layout from a cases template. You can delete up to 100 layouts per
+         * domain.</p> <pre><code> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt;
+         * &lt;li&gt; &lt;p&gt;You can still retrieve the layout by calling
+         * &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+         * &lt;p&gt;You cannot update a deleted layout by calling
+         * &lt;code&gt;UpdateLayout&lt;/code&gt;; it throws a
+         * &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+         * &lt;p&gt;Deleted layouts are not included in the
+         * &lt;code&gt;ListLayouts&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
+         * </code></pre><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLayoutOutcome DeleteLayout(const Model::DeleteLayoutRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLayout that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLayoutRequestT = Model::DeleteLayoutRequest>
+        Model::DeleteLayoutOutcomeCallable DeleteLayoutCallable(const DeleteLayoutRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::DeleteLayout, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLayout that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLayoutRequestT = Model::DeleteLayoutRequest>
+        void DeleteLayoutAsync(const DeleteLayoutRequestT& request, const DeleteLayoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::DeleteLayout, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a cases template. You can delete up to 100 templates per domain.</p>
+         * <pre><code> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt;
+         * &lt;li&gt; &lt;p&gt;You can still retrieve the template by calling
+         * &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+         * &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+         * &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt;
+         * &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the
+         * &lt;code&gt;ListTemplates&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt;
+         * &lt;/ul&gt; </code></pre><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTemplateOutcome DeleteTemplate(const Model::DeleteTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTemplateRequestT = Model::DeleteTemplateRequest>
+        Model::DeleteTemplateOutcomeCallable DeleteTemplateCallable(const DeleteTemplateRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::DeleteTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTemplateRequestT = Model::DeleteTemplateRequest>
+        void DeleteTemplateAsync(const DeleteTemplateRequestT& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::DeleteTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about a specific case if it exists. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCase">AWS
@@ -545,13 +661,13 @@ namespace ConnectCases
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListDomains">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
+        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request) const
+        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request = {}) const
         {
             return SubmitCallable(&ConnectCasesClient::ListDomains, request);
         }
@@ -560,7 +676,7 @@ namespace ConnectCases
          * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainsAsync(const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainsRequestT& request = {}) const
         {
             return SubmitAsync(&ConnectCasesClient::ListDomains, request, handler, context);
         }
@@ -955,7 +1071,6 @@ namespace ConnectCases
       void init(const ConnectCasesClientConfiguration& clientConfiguration);
 
       ConnectCasesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectCasesEndpointProviderBase> m_endpointProvider;
   };
 

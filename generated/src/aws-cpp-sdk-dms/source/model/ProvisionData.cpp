@@ -30,15 +30,8 @@ ProvisionData::ProvisionData() :
 {
 }
 
-ProvisionData::ProvisionData(JsonView jsonValue) : 
-    m_provisionStateHasBeenSet(false),
-    m_provisionedCapacityUnits(0),
-    m_provisionedCapacityUnitsHasBeenSet(false),
-    m_dateProvisionedHasBeenSet(false),
-    m_isNewProvisioningAvailable(false),
-    m_isNewProvisioningAvailableHasBeenSet(false),
-    m_dateNewProvisioningDataAvailableHasBeenSet(false),
-    m_reasonForNewProvisioningDataHasBeenSet(false)
+ProvisionData::ProvisionData(JsonView jsonValue)
+  : ProvisionData()
 {
   *this = jsonValue;
 }

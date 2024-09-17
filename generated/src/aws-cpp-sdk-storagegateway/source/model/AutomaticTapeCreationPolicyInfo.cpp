@@ -24,9 +24,8 @@ AutomaticTapeCreationPolicyInfo::AutomaticTapeCreationPolicyInfo() :
 {
 }
 
-AutomaticTapeCreationPolicyInfo::AutomaticTapeCreationPolicyInfo(JsonView jsonValue) : 
-    m_automaticTapeCreationRulesHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
+AutomaticTapeCreationPolicyInfo::AutomaticTapeCreationPolicyInfo(JsonView jsonValue)
+  : AutomaticTapeCreationPolicyInfo()
 {
   *this = jsonValue;
 }

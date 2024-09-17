@@ -25,10 +25,8 @@ AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails::AwsEcsServiceNetwor
 {
 }
 
-AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails(JsonView jsonValue) : 
-    m_assignPublicIpHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails(JsonView jsonValue)
+  : AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails()
 {
   *this = jsonValue;
 }

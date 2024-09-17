@@ -42,25 +42,8 @@ ScheduledInstance::ScheduledInstance() :
 {
 }
 
-ScheduledInstance::ScheduledInstance(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_networkPlatformHasBeenSet(false),
-    m_nextSlotStartTimeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_previousSlotEndTimeHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_scheduledInstanceIdHasBeenSet(false),
-    m_slotDurationInHours(0),
-    m_slotDurationInHoursHasBeenSet(false),
-    m_termEndDateHasBeenSet(false),
-    m_termStartDateHasBeenSet(false),
-    m_totalScheduledInstanceHours(0),
-    m_totalScheduledInstanceHoursHasBeenSet(false)
+ScheduledInstance::ScheduledInstance(const XmlNode& xmlNode)
+  : ScheduledInstance()
 {
   *this = xmlNode;
 }

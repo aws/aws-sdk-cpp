@@ -24,9 +24,8 @@ CostEstimationResourceCollectionFilter::CostEstimationResourceCollectionFilter()
 {
 }
 
-CostEstimationResourceCollectionFilter::CostEstimationResourceCollectionFilter(JsonView jsonValue) : 
-    m_cloudFormationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CostEstimationResourceCollectionFilter::CostEstimationResourceCollectionFilter(JsonView jsonValue)
+  : CostEstimationResourceCollectionFilter()
 {
   *this = jsonValue;
 }

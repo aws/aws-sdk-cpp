@@ -23,8 +23,8 @@ Validator::Validator() :
 {
 }
 
-Validator::Validator(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+Validator::Validator(JsonView jsonValue)
+  : Validator()
 {
   *this = jsonValue;
 }

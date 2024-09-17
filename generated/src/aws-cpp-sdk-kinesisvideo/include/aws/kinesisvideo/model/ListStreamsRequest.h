@@ -33,31 +33,18 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of streams to return in the response. The default is
      * 10,000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of streams to return in the response. The default is
-     * 10,000.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of streams to return in the response. The default is
-     * 10,000.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of streams to return in the response. The default is
-     * 10,000.</p>
-     */
     inline ListStreamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
      * operation is truncated, the call returns the <code>NextToken</code> in the
@@ -65,100 +52,27 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-     * operation is truncated, the call returns the <code>NextToken</code> in the
-     * response. To get another batch of streams, provide this token in your next
-     * request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-     * operation is truncated, the call returns the <code>NextToken</code> in the
-     * response. To get another batch of streams, provide this token in your next
-     * request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-     * operation is truncated, the call returns the <code>NextToken</code> in the
-     * response. To get another batch of streams, provide this token in your next
-     * request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-     * operation is truncated, the call returns the <code>NextToken</code> in the
-     * response. To get another batch of streams, provide this token in your next
-     * request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-     * operation is truncated, the call returns the <code>NextToken</code> in the
-     * response. To get another batch of streams, provide this token in your next
-     * request.</p>
-     */
     inline ListStreamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-     * operation is truncated, the call returns the <code>NextToken</code> in the
-     * response. To get another batch of streams, provide this token in your next
-     * request.</p>
-     */
     inline ListStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-     * operation is truncated, the call returns the <code>NextToken</code> in the
-     * response. To get another batch of streams, provide this token in your next
-     * request.</p>
-     */
     inline ListStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional: Returns only streams that satisfy a specific condition. Currently,
      * you can specify only the prefix of a stream name as a condition. </p>
      */
     inline const StreamNameCondition& GetStreamNameCondition() const{ return m_streamNameCondition; }
-
-    /**
-     * <p>Optional: Returns only streams that satisfy a specific condition. Currently,
-     * you can specify only the prefix of a stream name as a condition. </p>
-     */
     inline bool StreamNameConditionHasBeenSet() const { return m_streamNameConditionHasBeenSet; }
-
-    /**
-     * <p>Optional: Returns only streams that satisfy a specific condition. Currently,
-     * you can specify only the prefix of a stream name as a condition. </p>
-     */
     inline void SetStreamNameCondition(const StreamNameCondition& value) { m_streamNameConditionHasBeenSet = true; m_streamNameCondition = value; }
-
-    /**
-     * <p>Optional: Returns only streams that satisfy a specific condition. Currently,
-     * you can specify only the prefix of a stream name as a condition. </p>
-     */
     inline void SetStreamNameCondition(StreamNameCondition&& value) { m_streamNameConditionHasBeenSet = true; m_streamNameCondition = std::move(value); }
-
-    /**
-     * <p>Optional: Returns only streams that satisfy a specific condition. Currently,
-     * you can specify only the prefix of a stream name as a condition. </p>
-     */
     inline ListStreamsRequest& WithStreamNameCondition(const StreamNameCondition& value) { SetStreamNameCondition(value); return *this;}
-
-    /**
-     * <p>Optional: Returns only streams that satisfy a specific condition. Currently,
-     * you can specify only the prefix of a stream name as a condition. </p>
-     */
     inline ListStreamsRequest& WithStreamNameCondition(StreamNameCondition&& value) { SetStreamNameCondition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

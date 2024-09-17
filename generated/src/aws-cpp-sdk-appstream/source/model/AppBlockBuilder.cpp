@@ -39,24 +39,8 @@ AppBlockBuilder::AppBlockBuilder() :
 {
 }
 
-AppBlockBuilder::AppBlockBuilder(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(AppBlockBuilderPlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_state(AppBlockBuilderState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_appBlockBuilderErrorsHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+AppBlockBuilder::AppBlockBuilder(JsonView jsonValue)
+  : AppBlockBuilder()
 {
   *this = jsonValue;
 }

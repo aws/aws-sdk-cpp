@@ -25,10 +25,8 @@ SavingsOpportunity::SavingsOpportunity() :
 {
 }
 
-SavingsOpportunity::SavingsOpportunity(JsonView jsonValue) : 
-    m_savingsOpportunityPercentage(0.0),
-    m_savingsOpportunityPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
+SavingsOpportunity::SavingsOpportunity(JsonView jsonValue)
+  : SavingsOpportunity()
 {
   *this = jsonValue;
 }

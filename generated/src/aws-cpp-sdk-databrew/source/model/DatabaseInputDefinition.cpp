@@ -26,11 +26,8 @@ DatabaseInputDefinition::DatabaseInputDefinition() :
 {
 }
 
-DatabaseInputDefinition::DatabaseInputDefinition(JsonView jsonValue) : 
-    m_glueConnectionNameHasBeenSet(false),
-    m_databaseTableNameHasBeenSet(false),
-    m_tempDirectoryHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
+DatabaseInputDefinition::DatabaseInputDefinition(JsonView jsonValue)
+  : DatabaseInputDefinition()
 {
   *this = jsonValue;
 }

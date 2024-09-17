@@ -24,9 +24,8 @@ BandMathConfigInput::BandMathConfigInput() :
 {
 }
 
-BandMathConfigInput::BandMathConfigInput(JsonView jsonValue) : 
-    m_customIndicesHasBeenSet(false),
-    m_predefinedIndicesHasBeenSet(false)
+BandMathConfigInput::BandMathConfigInput(JsonView jsonValue)
+  : BandMathConfigInput()
 {
   *this = jsonValue;
 }

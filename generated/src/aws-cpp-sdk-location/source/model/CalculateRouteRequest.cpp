@@ -16,48 +16,31 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 CalculateRouteRequest::CalculateRouteRequest() : 
-    m_arrivalTimeHasBeenSet(false),
     m_calculatorNameHasBeenSet(false),
-    m_carModeOptionsHasBeenSet(false),
+    m_departurePositionHasBeenSet(false),
+    m_destinationPositionHasBeenSet(false),
+    m_waypointPositionsHasBeenSet(false),
+    m_travelMode(TravelMode::NOT_SET),
+    m_travelModeHasBeenSet(false),
+    m_departureTimeHasBeenSet(false),
     m_departNow(false),
     m_departNowHasBeenSet(false),
-    m_departurePositionHasBeenSet(false),
-    m_departureTimeHasBeenSet(false),
-    m_destinationPositionHasBeenSet(false),
     m_distanceUnit(DistanceUnit::NOT_SET),
     m_distanceUnitHasBeenSet(false),
     m_includeLegGeometry(false),
     m_includeLegGeometryHasBeenSet(false),
-    m_keyHasBeenSet(false),
+    m_carModeOptionsHasBeenSet(false),
+    m_truckModeOptionsHasBeenSet(false),
+    m_arrivalTimeHasBeenSet(false),
     m_optimizeFor(OptimizationMode::NOT_SET),
     m_optimizeForHasBeenSet(false),
-    m_travelMode(TravelMode::NOT_SET),
-    m_travelModeHasBeenSet(false),
-    m_truckModeOptionsHasBeenSet(false),
-    m_waypointPositionsHasBeenSet(false)
+    m_keyHasBeenSet(false)
 {
 }
 
 Aws::String CalculateRouteRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_arrivalTimeHasBeenSet)
-  {
-   payload.WithString("ArrivalTime", m_arrivalTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_carModeOptionsHasBeenSet)
-  {
-   payload.WithObject("CarModeOptions", m_carModeOptions.Jsonize());
-
-  }
-
-  if(m_departNowHasBeenSet)
-  {
-   payload.WithBool("DepartNow", m_departNow);
-
-  }
 
   if(m_departurePositionHasBeenSet)
   {
@@ -70,11 +53,6 @@ Aws::String CalculateRouteRequest::SerializePayload() const
 
   }
 
-  if(m_departureTimeHasBeenSet)
-  {
-   payload.WithString("DepartureTime", m_departureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_destinationPositionHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> destinationPositionJsonList(m_destinationPosition.size());
@@ -83,33 +61,6 @@ Aws::String CalculateRouteRequest::SerializePayload() const
      destinationPositionJsonList[destinationPositionIndex].AsDouble(m_destinationPosition[destinationPositionIndex]);
    }
    payload.WithArray("DestinationPosition", std::move(destinationPositionJsonList));
-
-  }
-
-  if(m_distanceUnitHasBeenSet)
-  {
-   payload.WithString("DistanceUnit", DistanceUnitMapper::GetNameForDistanceUnit(m_distanceUnit));
-  }
-
-  if(m_includeLegGeometryHasBeenSet)
-  {
-   payload.WithBool("IncludeLegGeometry", m_includeLegGeometry);
-
-  }
-
-  if(m_optimizeForHasBeenSet)
-  {
-   payload.WithString("OptimizeFor", OptimizationModeMapper::GetNameForOptimizationMode(m_optimizeFor));
-  }
-
-  if(m_travelModeHasBeenSet)
-  {
-   payload.WithString("TravelMode", TravelModeMapper::GetNameForTravelMode(m_travelMode));
-  }
-
-  if(m_truckModeOptionsHasBeenSet)
-  {
-   payload.WithObject("TruckModeOptions", m_truckModeOptions.Jsonize());
 
   }
 
@@ -127,6 +78,55 @@ Aws::String CalculateRouteRequest::SerializePayload() const
    }
    payload.WithArray("WaypointPositions", std::move(waypointPositionsJsonList));
 
+  }
+
+  if(m_travelModeHasBeenSet)
+  {
+   payload.WithString("TravelMode", TravelModeMapper::GetNameForTravelMode(m_travelMode));
+  }
+
+  if(m_departureTimeHasBeenSet)
+  {
+   payload.WithString("DepartureTime", m_departureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_departNowHasBeenSet)
+  {
+   payload.WithBool("DepartNow", m_departNow);
+
+  }
+
+  if(m_distanceUnitHasBeenSet)
+  {
+   payload.WithString("DistanceUnit", DistanceUnitMapper::GetNameForDistanceUnit(m_distanceUnit));
+  }
+
+  if(m_includeLegGeometryHasBeenSet)
+  {
+   payload.WithBool("IncludeLegGeometry", m_includeLegGeometry);
+
+  }
+
+  if(m_carModeOptionsHasBeenSet)
+  {
+   payload.WithObject("CarModeOptions", m_carModeOptions.Jsonize());
+
+  }
+
+  if(m_truckModeOptionsHasBeenSet)
+  {
+   payload.WithObject("TruckModeOptions", m_truckModeOptions.Jsonize());
+
+  }
+
+  if(m_arrivalTimeHasBeenSet)
+  {
+   payload.WithString("ArrivalTime", m_arrivalTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_optimizeForHasBeenSet)
+  {
+   payload.WithString("OptimizeFor", OptimizationModeMapper::GetNameForOptimizationMode(m_optimizeFor));
   }
 
   return payload.View().WriteReadable();

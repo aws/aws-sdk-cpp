@@ -33,18 +33,8 @@ Transcript::Transcript() :
 {
 }
 
-Transcript::Transcript(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_participantRoleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_sentiment(SentimentValue::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_issuesDetectedHasBeenSet(false)
+Transcript::Transcript(JsonView jsonValue)
+  : Transcript()
 {
   *this = jsonValue;
 }

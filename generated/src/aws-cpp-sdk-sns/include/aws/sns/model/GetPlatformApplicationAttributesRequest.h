@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Input for GetPlatformApplicationAttributes action.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Input for <code>GetPlatformApplicationAttributes</code> action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributesInput">AWS
    * API Reference</a></p>
    */
@@ -40,46 +40,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * GetPlatformApplicationAttributesInput.</p>
      */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
-
-    /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-     */
     inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
-
-    /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
-
-    /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-     */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
-
-    /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-     */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
-
-    /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-     */
     inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
-
-    /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-     */
     inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-     */
     inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_platformApplicationArn;

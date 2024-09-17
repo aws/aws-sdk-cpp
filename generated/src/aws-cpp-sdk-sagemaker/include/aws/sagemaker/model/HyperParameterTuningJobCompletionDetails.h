@@ -38,77 +38,31 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of training jobs launched by a tuning job that are not improving
      * (1% or less) as measured by model performance evaluated against an objective
      * function.</p>
      */
     inline int GetNumberOfTrainingJobsObjectiveNotImproving() const{ return m_numberOfTrainingJobsObjectiveNotImproving; }
-
-    /**
-     * <p>The number of training jobs launched by a tuning job that are not improving
-     * (1% or less) as measured by model performance evaluated against an objective
-     * function.</p>
-     */
     inline bool NumberOfTrainingJobsObjectiveNotImprovingHasBeenSet() const { return m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet; }
-
-    /**
-     * <p>The number of training jobs launched by a tuning job that are not improving
-     * (1% or less) as measured by model performance evaluated against an objective
-     * function.</p>
-     */
     inline void SetNumberOfTrainingJobsObjectiveNotImproving(int value) { m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet = true; m_numberOfTrainingJobsObjectiveNotImproving = value; }
-
-    /**
-     * <p>The number of training jobs launched by a tuning job that are not improving
-     * (1% or less) as measured by model performance evaluated against an objective
-     * function.</p>
-     */
     inline HyperParameterTuningJobCompletionDetails& WithNumberOfTrainingJobsObjectiveNotImproving(int value) { SetNumberOfTrainingJobsObjectiveNotImproving(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time in timestamp format that AMT detected model convergence, as defined
      * by a lack of significant improvement over time based on criteria developed over
      * a wide range of diverse benchmarking tests.</p>
      */
     inline const Aws::Utils::DateTime& GetConvergenceDetectedTime() const{ return m_convergenceDetectedTime; }
-
-    /**
-     * <p>The time in timestamp format that AMT detected model convergence, as defined
-     * by a lack of significant improvement over time based on criteria developed over
-     * a wide range of diverse benchmarking tests.</p>
-     */
     inline bool ConvergenceDetectedTimeHasBeenSet() const { return m_convergenceDetectedTimeHasBeenSet; }
-
-    /**
-     * <p>The time in timestamp format that AMT detected model convergence, as defined
-     * by a lack of significant improvement over time based on criteria developed over
-     * a wide range of diverse benchmarking tests.</p>
-     */
     inline void SetConvergenceDetectedTime(const Aws::Utils::DateTime& value) { m_convergenceDetectedTimeHasBeenSet = true; m_convergenceDetectedTime = value; }
-
-    /**
-     * <p>The time in timestamp format that AMT detected model convergence, as defined
-     * by a lack of significant improvement over time based on criteria developed over
-     * a wide range of diverse benchmarking tests.</p>
-     */
     inline void SetConvergenceDetectedTime(Aws::Utils::DateTime&& value) { m_convergenceDetectedTimeHasBeenSet = true; m_convergenceDetectedTime = std::move(value); }
-
-    /**
-     * <p>The time in timestamp format that AMT detected model convergence, as defined
-     * by a lack of significant improvement over time based on criteria developed over
-     * a wide range of diverse benchmarking tests.</p>
-     */
     inline HyperParameterTuningJobCompletionDetails& WithConvergenceDetectedTime(const Aws::Utils::DateTime& value) { SetConvergenceDetectedTime(value); return *this;}
-
-    /**
-     * <p>The time in timestamp format that AMT detected model convergence, as defined
-     * by a lack of significant improvement over time based on criteria developed over
-     * a wide range of diverse benchmarking tests.</p>
-     */
     inline HyperParameterTuningJobCompletionDetails& WithConvergenceDetectedTime(Aws::Utils::DateTime&& value) { SetConvergenceDetectedTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_numberOfTrainingJobsObjectiveNotImproving;

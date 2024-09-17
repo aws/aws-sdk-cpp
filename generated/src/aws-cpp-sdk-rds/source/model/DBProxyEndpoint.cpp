@@ -38,21 +38,8 @@ DBProxyEndpoint::DBProxyEndpoint() :
 {
 }
 
-DBProxyEndpoint::DBProxyEndpoint(const XmlNode& xmlNode) : 
-    m_dBProxyEndpointNameHasBeenSet(false),
-    m_dBProxyEndpointArnHasBeenSet(false),
-    m_dBProxyNameHasBeenSet(false),
-    m_status(DBProxyEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_vpcSubnetIdsHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_targetRole(DBProxyEndpointTargetRole::NOT_SET),
-    m_targetRoleHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+DBProxyEndpoint::DBProxyEndpoint(const XmlNode& xmlNode)
+  : DBProxyEndpoint()
 {
   *this = xmlNode;
 }

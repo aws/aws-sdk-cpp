@@ -23,8 +23,8 @@ EvaluationNote::EvaluationNote() :
 {
 }
 
-EvaluationNote::EvaluationNote(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+EvaluationNote::EvaluationNote(JsonView jsonValue)
+  : EvaluationNote()
 {
   *this = jsonValue;
 }

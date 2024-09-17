@@ -39,78 +39,33 @@ namespace Model
     AWS_IAM_API GetRolePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The role the policy is associated with.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
-
-    /**
-     * <p>The role the policy is associated with.</p>
-     */
     inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
-
-    /**
-     * <p>The role the policy is associated with.</p>
-     */
     inline void SetRoleName(Aws::String&& value) { m_roleName = std::move(value); }
-
-    /**
-     * <p>The role the policy is associated with.</p>
-     */
     inline void SetRoleName(const char* value) { m_roleName.assign(value); }
-
-    /**
-     * <p>The role the policy is associated with.</p>
-     */
     inline GetRolePolicyResult& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-
-    /**
-     * <p>The role the policy is associated with.</p>
-     */
     inline GetRolePolicyResult& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The role the policy is associated with.</p>
-     */
     inline GetRolePolicyResult& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyName = std::move(value); }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline GetRolePolicyResult& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline GetRolePolicyResult& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the policy.</p>
-     */
     inline GetRolePolicyResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
      * resources that were created using CloudFormation templates can be formatted in
@@ -118,71 +73,22 @@ namespace Model
      * submitting it to IAM.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-
-    /**
-     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
-     * resources that were created using CloudFormation templates can be formatted in
-     * YAML. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to IAM.</p>
-     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
-
-    /**
-     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
-     * resources that were created using CloudFormation templates can be formatted in
-     * YAML. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to IAM.</p>
-     */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
-
-    /**
-     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
-     * resources that were created using CloudFormation templates can be formatted in
-     * YAML. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to IAM.</p>
-     */
     inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
-
-    /**
-     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
-     * resources that were created using CloudFormation templates can be formatted in
-     * YAML. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to IAM.</p>
-     */
     inline GetRolePolicyResult& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-
-    /**
-     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
-     * resources that were created using CloudFormation templates can be formatted in
-     * YAML. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to IAM.</p>
-     */
     inline GetRolePolicyResult& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
-     * resources that were created using CloudFormation templates can be formatted in
-     * YAML. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to IAM.</p>
-     */
     inline GetRolePolicyResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetRolePolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetRolePolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleName;

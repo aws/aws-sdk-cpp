@@ -37,46 +37,19 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>OS full string.</p>
      */
     inline const Aws::String& GetFullString() const{ return m_fullString; }
-
-    /**
-     * <p>OS full string.</p>
-     */
     inline bool FullStringHasBeenSet() const { return m_fullStringHasBeenSet; }
-
-    /**
-     * <p>OS full string.</p>
-     */
     inline void SetFullString(const Aws::String& value) { m_fullStringHasBeenSet = true; m_fullString = value; }
-
-    /**
-     * <p>OS full string.</p>
-     */
     inline void SetFullString(Aws::String&& value) { m_fullStringHasBeenSet = true; m_fullString = std::move(value); }
-
-    /**
-     * <p>OS full string.</p>
-     */
     inline void SetFullString(const char* value) { m_fullStringHasBeenSet = true; m_fullString.assign(value); }
-
-    /**
-     * <p>OS full string.</p>
-     */
     inline OS& WithFullString(const Aws::String& value) { SetFullString(value); return *this;}
-
-    /**
-     * <p>OS full string.</p>
-     */
     inline OS& WithFullString(Aws::String&& value) { SetFullString(std::move(value)); return *this;}
-
-    /**
-     * <p>OS full string.</p>
-     */
     inline OS& WithFullString(const char* value) { SetFullString(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fullString;

@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the dashboard to be described.</p>
      */
     inline const Aws::String& GetDashboardName() const{ return m_dashboardName; }
-
-    /**
-     * <p>The name of the dashboard to be described.</p>
-     */
     inline bool DashboardNameHasBeenSet() const { return m_dashboardNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dashboard to be described.</p>
-     */
     inline void SetDashboardName(const Aws::String& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = value; }
-
-    /**
-     * <p>The name of the dashboard to be described.</p>
-     */
     inline void SetDashboardName(Aws::String&& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = std::move(value); }
-
-    /**
-     * <p>The name of the dashboard to be described.</p>
-     */
     inline void SetDashboardName(const char* value) { m_dashboardNameHasBeenSet = true; m_dashboardName.assign(value); }
-
-    /**
-     * <p>The name of the dashboard to be described.</p>
-     */
     inline GetDashboardRequest& WithDashboardName(const Aws::String& value) { SetDashboardName(value); return *this;}
-
-    /**
-     * <p>The name of the dashboard to be described.</p>
-     */
     inline GetDashboardRequest& WithDashboardName(Aws::String&& value) { SetDashboardName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dashboard to be described.</p>
-     */
     inline GetDashboardRequest& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dashboardName;

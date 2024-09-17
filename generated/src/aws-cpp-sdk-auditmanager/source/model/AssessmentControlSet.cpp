@@ -33,18 +33,8 @@ AssessmentControlSet::AssessmentControlSet() :
 {
 }
 
-AssessmentControlSet::AssessmentControlSet(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ControlSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_rolesHasBeenSet(false),
-    m_controlsHasBeenSet(false),
-    m_delegationsHasBeenSet(false),
-    m_systemEvidenceCount(0),
-    m_systemEvidenceCountHasBeenSet(false),
-    m_manualEvidenceCount(0),
-    m_manualEvidenceCountHasBeenSet(false)
+AssessmentControlSet::AssessmentControlSet(JsonView jsonValue)
+  : AssessmentControlSet()
 {
   *this = jsonValue;
 }

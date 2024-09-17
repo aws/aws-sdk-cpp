@@ -25,10 +25,8 @@ BlockedPhrasesConfigurationUpdate::BlockedPhrasesConfigurationUpdate() :
 {
 }
 
-BlockedPhrasesConfigurationUpdate::BlockedPhrasesConfigurationUpdate(JsonView jsonValue) : 
-    m_blockedPhrasesToCreateOrUpdateHasBeenSet(false),
-    m_blockedPhrasesToDeleteHasBeenSet(false),
-    m_systemMessageOverrideHasBeenSet(false)
+BlockedPhrasesConfigurationUpdate::BlockedPhrasesConfigurationUpdate(JsonView jsonValue)
+  : BlockedPhrasesConfigurationUpdate()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ AddThingsToThingGroupParams::AddThingsToThingGroupParams() :
 {
 }
 
-AddThingsToThingGroupParams::AddThingsToThingGroupParams(JsonView jsonValue) : 
-    m_thingGroupNamesHasBeenSet(false),
-    m_overrideDynamicGroups(false),
-    m_overrideDynamicGroupsHasBeenSet(false)
+AddThingsToThingGroupParams::AddThingsToThingGroupParams(JsonView jsonValue)
+  : AddThingsToThingGroupParams()
 {
   *this = jsonValue;
 }

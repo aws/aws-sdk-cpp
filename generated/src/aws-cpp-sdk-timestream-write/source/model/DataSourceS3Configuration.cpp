@@ -24,9 +24,8 @@ DataSourceS3Configuration::DataSourceS3Configuration() :
 {
 }
 
-DataSourceS3Configuration::DataSourceS3Configuration(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false)
+DataSourceS3Configuration::DataSourceS3Configuration(JsonView jsonValue)
+  : DataSourceS3Configuration()
 {
   *this = jsonValue;
 }

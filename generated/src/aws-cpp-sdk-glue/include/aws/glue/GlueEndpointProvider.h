@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GlueClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GlueClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GlueClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlueBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

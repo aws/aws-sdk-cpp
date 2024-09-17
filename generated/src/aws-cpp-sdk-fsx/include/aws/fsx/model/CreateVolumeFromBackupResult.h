@@ -33,58 +33,28 @@ namespace Model
     AWS_FSX_API CreateVolumeFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returned after a successful <code>CreateVolumeFromBackup</code> API
      * operation, describing the volume just created.</p>
      */
     inline const Volume& GetVolume() const{ return m_volume; }
-
-    /**
-     * <p>Returned after a successful <code>CreateVolumeFromBackup</code> API
-     * operation, describing the volume just created.</p>
-     */
     inline void SetVolume(const Volume& value) { m_volume = value; }
-
-    /**
-     * <p>Returned after a successful <code>CreateVolumeFromBackup</code> API
-     * operation, describing the volume just created.</p>
-     */
     inline void SetVolume(Volume&& value) { m_volume = std::move(value); }
-
-    /**
-     * <p>Returned after a successful <code>CreateVolumeFromBackup</code> API
-     * operation, describing the volume just created.</p>
-     */
     inline CreateVolumeFromBackupResult& WithVolume(const Volume& value) { SetVolume(value); return *this;}
-
-    /**
-     * <p>Returned after a successful <code>CreateVolumeFromBackup</code> API
-     * operation, describing the volume just created.</p>
-     */
     inline CreateVolumeFromBackupResult& WithVolume(Volume&& value) { SetVolume(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateVolumeFromBackupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateVolumeFromBackupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateVolumeFromBackupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Volume m_volume;

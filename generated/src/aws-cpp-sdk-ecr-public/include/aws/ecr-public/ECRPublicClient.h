@@ -323,13 +323,13 @@ namespace ECRPublic
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRegistries">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRegistriesOutcome DescribeRegistries(const Model::DescribeRegistriesRequest& request) const;
+        virtual Model::DescribeRegistriesOutcome DescribeRegistries(const Model::DescribeRegistriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRegistries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRegistriesRequestT = Model::DescribeRegistriesRequest>
-        Model::DescribeRegistriesOutcomeCallable DescribeRegistriesCallable(const DescribeRegistriesRequestT& request) const
+        Model::DescribeRegistriesOutcomeCallable DescribeRegistriesCallable(const DescribeRegistriesRequestT& request = {}) const
         {
             return SubmitCallable(&ECRPublicClient::DescribeRegistries, request);
         }
@@ -338,7 +338,7 @@ namespace ECRPublic
          * An Async wrapper for DescribeRegistries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRegistriesRequestT = Model::DescribeRegistriesRequest>
-        void DescribeRegistriesAsync(const DescribeRegistriesRequestT& request, const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRegistriesAsync(const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRegistriesRequestT& request = {}) const
         {
             return SubmitAsync(&ECRPublicClient::DescribeRegistries, request, handler, context);
         }
@@ -349,13 +349,13 @@ namespace ECRPublic
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRepositories">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRepositoriesOutcome DescribeRepositories(const Model::DescribeRepositoriesRequest& request) const;
+        virtual Model::DescribeRepositoriesOutcome DescribeRepositories(const Model::DescribeRepositoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRepositoriesRequestT = Model::DescribeRepositoriesRequest>
-        Model::DescribeRepositoriesOutcomeCallable DescribeRepositoriesCallable(const DescribeRepositoriesRequestT& request) const
+        Model::DescribeRepositoriesOutcomeCallable DescribeRepositoriesCallable(const DescribeRepositoriesRequestT& request = {}) const
         {
             return SubmitCallable(&ECRPublicClient::DescribeRepositories, request);
         }
@@ -364,7 +364,7 @@ namespace ECRPublic
          * An Async wrapper for DescribeRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRepositoriesRequestT = Model::DescribeRepositoriesRequest>
-        void DescribeRepositoriesAsync(const DescribeRepositoriesRequestT& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRepositoriesAsync(const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRepositoriesRequestT& request = {}) const
         {
             return SubmitAsync(&ECRPublicClient::DescribeRepositories, request, handler, context);
         }
@@ -379,13 +379,13 @@ namespace ECRPublic
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetAuthorizationToken">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request) const;
+        virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAuthorizationToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAuthorizationTokenRequestT = Model::GetAuthorizationTokenRequest>
-        Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const GetAuthorizationTokenRequestT& request) const
+        Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const GetAuthorizationTokenRequestT& request = {}) const
         {
             return SubmitCallable(&ECRPublicClient::GetAuthorizationToken, request);
         }
@@ -394,7 +394,7 @@ namespace ECRPublic
          * An Async wrapper for GetAuthorizationToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAuthorizationTokenRequestT = Model::GetAuthorizationTokenRequest>
-        void GetAuthorizationTokenAsync(const GetAuthorizationTokenRequestT& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAuthorizationTokenAsync(const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAuthorizationTokenRequestT& request = {}) const
         {
             return SubmitAsync(&ECRPublicClient::GetAuthorizationToken, request, handler, context);
         }
@@ -405,13 +405,13 @@ namespace ECRPublic
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/GetRegistryCatalogData">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRegistryCatalogDataOutcome GetRegistryCatalogData(const Model::GetRegistryCatalogDataRequest& request) const;
+        virtual Model::GetRegistryCatalogDataOutcome GetRegistryCatalogData(const Model::GetRegistryCatalogDataRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRegistryCatalogData that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRegistryCatalogDataRequestT = Model::GetRegistryCatalogDataRequest>
-        Model::GetRegistryCatalogDataOutcomeCallable GetRegistryCatalogDataCallable(const GetRegistryCatalogDataRequestT& request) const
+        Model::GetRegistryCatalogDataOutcomeCallable GetRegistryCatalogDataCallable(const GetRegistryCatalogDataRequestT& request = {}) const
         {
             return SubmitCallable(&ECRPublicClient::GetRegistryCatalogData, request);
         }
@@ -420,7 +420,7 @@ namespace ECRPublic
          * An Async wrapper for GetRegistryCatalogData that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRegistryCatalogDataRequestT = Model::GetRegistryCatalogDataRequest>
-        void GetRegistryCatalogDataAsync(const GetRegistryCatalogDataRequestT& request, const GetRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRegistryCatalogDataAsync(const GetRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRegistryCatalogDataRequestT& request = {}) const
         {
             return SubmitAsync(&ECRPublicClient::GetRegistryCatalogData, request, handler, context);
         }
@@ -572,13 +572,13 @@ namespace ECRPublic
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRegistryCatalogData">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutRegistryCatalogDataOutcome PutRegistryCatalogData(const Model::PutRegistryCatalogDataRequest& request) const;
+        virtual Model::PutRegistryCatalogDataOutcome PutRegistryCatalogData(const Model::PutRegistryCatalogDataRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutRegistryCatalogData that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutRegistryCatalogDataRequestT = Model::PutRegistryCatalogDataRequest>
-        Model::PutRegistryCatalogDataOutcomeCallable PutRegistryCatalogDataCallable(const PutRegistryCatalogDataRequestT& request) const
+        Model::PutRegistryCatalogDataOutcomeCallable PutRegistryCatalogDataCallable(const PutRegistryCatalogDataRequestT& request = {}) const
         {
             return SubmitCallable(&ECRPublicClient::PutRegistryCatalogData, request);
         }
@@ -587,7 +587,7 @@ namespace ECRPublic
          * An Async wrapper for PutRegistryCatalogData that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutRegistryCatalogDataRequestT = Model::PutRegistryCatalogDataRequest>
-        void PutRegistryCatalogDataAsync(const PutRegistryCatalogDataRequestT& request, const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutRegistryCatalogDataAsync(const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutRegistryCatalogDataRequestT& request = {}) const
         {
             return SubmitAsync(&ECRPublicClient::PutRegistryCatalogData, request, handler, context);
         }
@@ -739,7 +739,6 @@ namespace ECRPublic
       void init(const ECRPublicClientConfiguration& clientConfiguration);
 
       ECRPublicClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ECRPublicEndpointProviderBase> m_endpointProvider;
   };
 

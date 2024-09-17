@@ -25,10 +25,8 @@ VpcOutputSettings::VpcOutputSettings() :
 {
 }
 
-VpcOutputSettings::VpcOutputSettings(JsonView jsonValue) : 
-    m_publicAddressAllocationIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+VpcOutputSettings::VpcOutputSettings(JsonView jsonValue)
+  : VpcOutputSettings()
 {
   *this = jsonValue;
 }

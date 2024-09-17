@@ -24,9 +24,8 @@ AwsIamAttachedManagedPolicy::AwsIamAttachedManagedPolicy() :
 {
 }
 
-AwsIamAttachedManagedPolicy::AwsIamAttachedManagedPolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
+AwsIamAttachedManagedPolicy::AwsIamAttachedManagedPolicy(JsonView jsonValue)
+  : AwsIamAttachedManagedPolicy()
 {
   *this = jsonValue;
 }

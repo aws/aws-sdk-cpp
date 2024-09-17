@@ -34,83 +34,31 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The number of <code>JobListEntry</code> objects to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The number of <code>JobListEntry</code> objects to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The number of <code>JobListEntry</code> objects to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The number of <code>JobListEntry</code> objects to return.</p>
-     */
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list
      * of <code>JobListEntry</code> objects, you have the option of specifying
      * <code>NextToken</code> as the starting point for your returned list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of <code>JobListEntry</code> objects, you have the option of specifying
-     * <code>NextToken</code> as the starting point for your returned list.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of <code>JobListEntry</code> objects, you have the option of specifying
-     * <code>NextToken</code> as the starting point for your returned list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of <code>JobListEntry</code> objects, you have the option of specifying
-     * <code>NextToken</code> as the starting point for your returned list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of <code>JobListEntry</code> objects, you have the option of specifying
-     * <code>NextToken</code> as the starting point for your returned list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of <code>JobListEntry</code> objects, you have the option of specifying
-     * <code>NextToken</code> as the starting point for your returned list.</p>
-     */
     inline ListJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of <code>JobListEntry</code> objects, you have the option of specifying
-     * <code>NextToken</code> as the starting point for your returned list.</p>
-     */
     inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of <code>JobListEntry</code> objects, you have the option of specifying
-     * <code>NextToken</code> as the starting point for your returned list.</p>
-     */
     inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

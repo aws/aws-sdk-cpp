@@ -32,54 +32,20 @@ namespace Model
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
      * </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
-     * </p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
-     * </p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
-     * </p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
-     * </p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
-     * </p>
-     */
     inline GetResourcePolicyRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
-     * </p>
-     */
     inline GetResourcePolicyRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource associated with the policy.
-     * </p>
-     */
     inline GetResourcePolicyRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

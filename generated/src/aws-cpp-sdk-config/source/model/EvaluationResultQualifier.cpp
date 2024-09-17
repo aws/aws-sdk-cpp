@@ -27,12 +27,8 @@ EvaluationResultQualifier::EvaluationResultQualifier() :
 {
 }
 
-EvaluationResultQualifier::EvaluationResultQualifier(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false)
+EvaluationResultQualifier::EvaluationResultQualifier(JsonView jsonValue)
+  : EvaluationResultQualifier()
 {
   *this = jsonValue;
 }

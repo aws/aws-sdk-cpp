@@ -28,13 +28,8 @@ OutputUpdate::OutputUpdate() :
 {
 }
 
-OutputUpdate::OutputUpdate(JsonView jsonValue) : 
-    m_outputIdHasBeenSet(false),
-    m_nameUpdateHasBeenSet(false),
-    m_kinesisStreamsOutputUpdateHasBeenSet(false),
-    m_kinesisFirehoseOutputUpdateHasBeenSet(false),
-    m_lambdaOutputUpdateHasBeenSet(false),
-    m_destinationSchemaUpdateHasBeenSet(false)
+OutputUpdate::OutputUpdate(JsonView jsonValue)
+  : OutputUpdate()
 {
   *this = jsonValue;
 }

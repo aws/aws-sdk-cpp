@@ -24,9 +24,8 @@ UserTurnIntentOutput::UserTurnIntentOutput() :
 {
 }
 
-UserTurnIntentOutput::UserTurnIntentOutput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_slotsHasBeenSet(false)
+UserTurnIntentOutput::UserTurnIntentOutput(JsonView jsonValue)
+  : UserTurnIntentOutput()
 {
   *this = jsonValue;
 }

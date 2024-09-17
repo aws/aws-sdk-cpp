@@ -118,7 +118,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
         Shape shape = shapeEntry.getValue();
         if (shape.isException() && !shape.isXmlModeledException())
             return null;
@@ -157,6 +157,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("RequestlessOperations", requestlessOperations);
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());

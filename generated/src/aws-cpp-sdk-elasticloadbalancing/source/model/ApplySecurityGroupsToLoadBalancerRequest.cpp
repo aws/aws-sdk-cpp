@@ -27,12 +27,19 @@ Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
 
   if(m_securityGroupsHasBeenSet)
   {
-    unsigned securityGroupsCount = 1;
-    for(auto& item : m_securityGroups)
+    if (m_securityGroups.empty())
     {
-      ss << "SecurityGroups.member." << securityGroupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      securityGroupsCount++;
+      ss << "SecurityGroups=&";
+    }
+    else
+    {
+      unsigned securityGroupsCount = 1;
+      for(auto& item : m_securityGroups)
+      {
+        ss << "SecurityGroups.member." << securityGroupsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        securityGroupsCount++;
+      }
     }
   }
 

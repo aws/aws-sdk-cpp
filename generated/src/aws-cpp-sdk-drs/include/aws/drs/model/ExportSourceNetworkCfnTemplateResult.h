@@ -32,70 +32,30 @@ namespace Model
     AWS_DRS_API ExportSourceNetworkCfnTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>S3 bucket URL where the Source Network CloudFormation template was exported
      * to.</p>
      */
     inline const Aws::String& GetS3DestinationUrl() const{ return m_s3DestinationUrl; }
-
-    /**
-     * <p>S3 bucket URL where the Source Network CloudFormation template was exported
-     * to.</p>
-     */
     inline void SetS3DestinationUrl(const Aws::String& value) { m_s3DestinationUrl = value; }
-
-    /**
-     * <p>S3 bucket URL where the Source Network CloudFormation template was exported
-     * to.</p>
-     */
     inline void SetS3DestinationUrl(Aws::String&& value) { m_s3DestinationUrl = std::move(value); }
-
-    /**
-     * <p>S3 bucket URL where the Source Network CloudFormation template was exported
-     * to.</p>
-     */
     inline void SetS3DestinationUrl(const char* value) { m_s3DestinationUrl.assign(value); }
-
-    /**
-     * <p>S3 bucket URL where the Source Network CloudFormation template was exported
-     * to.</p>
-     */
     inline ExportSourceNetworkCfnTemplateResult& WithS3DestinationUrl(const Aws::String& value) { SetS3DestinationUrl(value); return *this;}
-
-    /**
-     * <p>S3 bucket URL where the Source Network CloudFormation template was exported
-     * to.</p>
-     */
     inline ExportSourceNetworkCfnTemplateResult& WithS3DestinationUrl(Aws::String&& value) { SetS3DestinationUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>S3 bucket URL where the Source Network CloudFormation template was exported
-     * to.</p>
-     */
     inline ExportSourceNetworkCfnTemplateResult& WithS3DestinationUrl(const char* value) { SetS3DestinationUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportSourceNetworkCfnTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportSourceNetworkCfnTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportSourceNetworkCfnTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3DestinationUrl;

@@ -26,11 +26,8 @@ DataProcessing::DataProcessing() :
 {
 }
 
-DataProcessing::DataProcessing(JsonView jsonValue) : 
-    m_inputFilterHasBeenSet(false),
-    m_outputFilterHasBeenSet(false),
-    m_joinSource(JoinSource::NOT_SET),
-    m_joinSourceHasBeenSet(false)
+DataProcessing::DataProcessing(JsonView jsonValue)
+  : DataProcessing()
 {
   *this = jsonValue;
 }

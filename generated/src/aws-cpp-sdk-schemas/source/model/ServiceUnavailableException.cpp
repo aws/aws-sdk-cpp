@@ -24,9 +24,8 @@ ServiceUnavailableException::ServiceUnavailableException() :
 {
 }
 
-ServiceUnavailableException::ServiceUnavailableException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ServiceUnavailableException::ServiceUnavailableException(JsonView jsonValue)
+  : ServiceUnavailableException()
 {
   *this = jsonValue;
 }

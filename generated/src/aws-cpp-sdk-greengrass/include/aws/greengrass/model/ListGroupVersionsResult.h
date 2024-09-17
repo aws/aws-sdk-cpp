@@ -34,106 +34,43 @@ namespace Model
     AWS_GREENGRASS_API ListGroupVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The token for the next set of results, or ''null'' if there are no additional
      * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline ListGroupVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline ListGroupVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline ListGroupVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Information about a version.
      */
     inline const Aws::Vector<VersionInformation>& GetVersions() const{ return m_versions; }
-
-    /**
-     * Information about a version.
-     */
     inline void SetVersions(const Aws::Vector<VersionInformation>& value) { m_versions = value; }
-
-    /**
-     * Information about a version.
-     */
     inline void SetVersions(Aws::Vector<VersionInformation>&& value) { m_versions = std::move(value); }
-
-    /**
-     * Information about a version.
-     */
     inline ListGroupVersionsResult& WithVersions(const Aws::Vector<VersionInformation>& value) { SetVersions(value); return *this;}
-
-    /**
-     * Information about a version.
-     */
     inline ListGroupVersionsResult& WithVersions(Aws::Vector<VersionInformation>&& value) { SetVersions(std::move(value)); return *this;}
-
-    /**
-     * Information about a version.
-     */
     inline ListGroupVersionsResult& AddVersions(const VersionInformation& value) { m_versions.push_back(value); return *this; }
-
-    /**
-     * Information about a version.
-     */
     inline ListGroupVersionsResult& AddVersions(VersionInformation&& value) { m_versions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListGroupVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListGroupVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListGroupVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

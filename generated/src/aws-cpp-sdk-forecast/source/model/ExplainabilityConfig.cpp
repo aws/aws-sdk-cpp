@@ -26,11 +26,8 @@ ExplainabilityConfig::ExplainabilityConfig() :
 {
 }
 
-ExplainabilityConfig::ExplainabilityConfig(JsonView jsonValue) : 
-    m_timeSeriesGranularity(TimeSeriesGranularity::NOT_SET),
-    m_timeSeriesGranularityHasBeenSet(false),
-    m_timePointGranularity(TimePointGranularity::NOT_SET),
-    m_timePointGranularityHasBeenSet(false)
+ExplainabilityConfig::ExplainabilityConfig(JsonView jsonValue)
+  : ExplainabilityConfig()
 {
   *this = jsonValue;
 }

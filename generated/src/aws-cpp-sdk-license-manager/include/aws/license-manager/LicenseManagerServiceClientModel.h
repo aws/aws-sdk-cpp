@@ -68,6 +68,18 @@
 #include <aws/license-manager/model/UpdateLicenseManagerReportGeneratorResult.h>
 #include <aws/license-manager/model/UpdateLicenseSpecificationsForResourceResult.h>
 #include <aws/license-manager/model/UpdateServiceSettingsResult.h>
+#include <aws/license-manager/model/GetServiceSettingsRequest.h>
+#include <aws/license-manager/model/ListReceivedLicensesForOrganizationRequest.h>
+#include <aws/license-manager/model/ListReceivedGrantsRequest.h>
+#include <aws/license-manager/model/ListDistributedGrantsRequest.h>
+#include <aws/license-manager/model/ListLicensesRequest.h>
+#include <aws/license-manager/model/ListLicenseManagerReportGeneratorsRequest.h>
+#include <aws/license-manager/model/ListTokensRequest.h>
+#include <aws/license-manager/model/ListReceivedLicensesRequest.h>
+#include <aws/license-manager/model/ListResourceInventoryRequest.h>
+#include <aws/license-manager/model/ListLicenseConversionTasksRequest.h>
+#include <aws/license-manager/model/ListLicenseConfigurationsRequest.h>
+#include <aws/license-manager/model/UpdateServiceSettingsRequest.h>
 /* End of service model headers required in LicenseManagerClient header */
 
 namespace Aws
@@ -101,7 +113,7 @@ namespace Aws
 
   namespace LicenseManager
   {
-    using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LicenseManagerEndpointProviderBase = Aws::LicenseManager::Endpoint::LicenseManagerEndpointProviderBase;
     using LicenseManagerEndpointProvider = Aws::LicenseManager::Endpoint::LicenseManagerEndpointProvider;
 

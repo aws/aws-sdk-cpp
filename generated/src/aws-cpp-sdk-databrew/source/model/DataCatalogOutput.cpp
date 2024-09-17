@@ -29,14 +29,8 @@ DataCatalogOutput::DataCatalogOutput() :
 {
 }
 
-DataCatalogOutput::DataCatalogOutput(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_s3OptionsHasBeenSet(false),
-    m_databaseOptionsHasBeenSet(false),
-    m_overwrite(false),
-    m_overwriteHasBeenSet(false)
+DataCatalogOutput::DataCatalogOutput(JsonView jsonValue)
+  : DataCatalogOutput()
 {
   *this = jsonValue;
 }

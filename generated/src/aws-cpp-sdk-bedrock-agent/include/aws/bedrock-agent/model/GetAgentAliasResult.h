@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Get Agent Alias Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentAliasResponse">AWS
-   * API Reference</a></p>
-   */
   class GetAgentAliasResult
   {
   public:
@@ -38,43 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>Contains information about the alias.</p>
+     */
     inline const AgentAlias& GetAgentAlias() const{ return m_agentAlias; }
-
-    
     inline void SetAgentAlias(const AgentAlias& value) { m_agentAlias = value; }
-
-    
     inline void SetAgentAlias(AgentAlias&& value) { m_agentAlias = std::move(value); }
-
-    
     inline GetAgentAliasResult& WithAgentAlias(const AgentAlias& value) { SetAgentAlias(value); return *this;}
-
-    
     inline GetAgentAliasResult& WithAgentAlias(AgentAlias&& value) { SetAgentAlias(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAgentAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAgentAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAgentAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AgentAlias m_agentAlias;

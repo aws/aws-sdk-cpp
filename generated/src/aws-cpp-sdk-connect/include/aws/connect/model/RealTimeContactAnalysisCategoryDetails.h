@@ -39,46 +39,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
      */
     inline const Aws::Vector<RealTimeContactAnalysisPointOfInterest>& GetPointsOfInterest() const{ return m_pointsOfInterest; }
-
-    /**
-     * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-     */
     inline bool PointsOfInterestHasBeenSet() const { return m_pointsOfInterestHasBeenSet; }
-
-    /**
-     * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-     */
     inline void SetPointsOfInterest(const Aws::Vector<RealTimeContactAnalysisPointOfInterest>& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest = value; }
-
-    /**
-     * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-     */
     inline void SetPointsOfInterest(Aws::Vector<RealTimeContactAnalysisPointOfInterest>&& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest = std::move(value); }
-
-    /**
-     * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-     */
     inline RealTimeContactAnalysisCategoryDetails& WithPointsOfInterest(const Aws::Vector<RealTimeContactAnalysisPointOfInterest>& value) { SetPointsOfInterest(value); return *this;}
-
-    /**
-     * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-     */
     inline RealTimeContactAnalysisCategoryDetails& WithPointsOfInterest(Aws::Vector<RealTimeContactAnalysisPointOfInterest>&& value) { SetPointsOfInterest(std::move(value)); return *this;}
-
-    /**
-     * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-     */
     inline RealTimeContactAnalysisCategoryDetails& AddPointsOfInterest(const RealTimeContactAnalysisPointOfInterest& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest.push_back(value); return *this; }
-
-    /**
-     * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-     */
     inline RealTimeContactAnalysisCategoryDetails& AddPointsOfInterest(RealTimeContactAnalysisPointOfInterest&& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RealTimeContactAnalysisPointOfInterest> m_pointsOfInterest;

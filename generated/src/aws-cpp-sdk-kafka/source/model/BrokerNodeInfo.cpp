@@ -29,14 +29,8 @@ BrokerNodeInfo::BrokerNodeInfo() :
 {
 }
 
-BrokerNodeInfo::BrokerNodeInfo(JsonView jsonValue) : 
-    m_attachedENIIdHasBeenSet(false),
-    m_brokerId(0.0),
-    m_brokerIdHasBeenSet(false),
-    m_clientSubnetHasBeenSet(false),
-    m_clientVpcIpAddressHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
+BrokerNodeInfo::BrokerNodeInfo(JsonView jsonValue)
+  : BrokerNodeInfo()
 {
   *this = jsonValue;
 }

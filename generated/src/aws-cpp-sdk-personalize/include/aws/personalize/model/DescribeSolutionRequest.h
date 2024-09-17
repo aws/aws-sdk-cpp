@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
      */
     inline const Aws::String& GetSolutionArn() const{ return m_solutionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-     */
     inline bool SolutionArnHasBeenSet() const { return m_solutionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-     */
     inline void SetSolutionArn(const Aws::String& value) { m_solutionArnHasBeenSet = true; m_solutionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-     */
     inline void SetSolutionArn(Aws::String&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-     */
     inline void SetSolutionArn(const char* value) { m_solutionArnHasBeenSet = true; m_solutionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-     */
     inline DescribeSolutionRequest& WithSolutionArn(const Aws::String& value) { SetSolutionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-     */
     inline DescribeSolutionRequest& WithSolutionArn(Aws::String&& value) { SetSolutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-     */
     inline DescribeSolutionRequest& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_solutionArn;

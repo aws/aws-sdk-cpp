@@ -24,9 +24,8 @@ AthenaParameters::AthenaParameters() :
 {
 }
 
-AthenaParameters::AthenaParameters(JsonView jsonValue) : 
-    m_workGroupHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+AthenaParameters::AthenaParameters(JsonView jsonValue)
+  : AthenaParameters()
 {
   *this = jsonValue;
 }

@@ -33,16 +33,8 @@ TransitGateway::TransitGateway() :
 {
 }
 
-TransitGateway::TransitGateway(const XmlNode& xmlNode) : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false),
-    m_state(TransitGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGateway::TransitGateway(const XmlNode& xmlNode)
+  : TransitGateway()
 {
   *this = xmlNode;
 }

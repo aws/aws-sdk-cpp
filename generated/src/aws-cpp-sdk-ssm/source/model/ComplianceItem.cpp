@@ -33,18 +33,8 @@ ComplianceItem::ComplianceItem() :
 {
 }
 
-ComplianceItem::ComplianceItem(JsonView jsonValue) : 
-    m_complianceTypeHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_severity(ComplianceSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_executionSummaryHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+ComplianceItem::ComplianceItem(JsonView jsonValue)
+  : ComplianceItem()
 {
   *this = jsonValue;
 }

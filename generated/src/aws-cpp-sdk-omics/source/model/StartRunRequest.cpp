@@ -32,7 +32,10 @@ StartRunRequest::StartRunRequest() :
     m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_retentionMode(RunRetentionMode::NOT_SET),
-    m_retentionModeHasBeenSet(false)
+    m_retentionModeHasBeenSet(false),
+    m_storageType(StorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false),
+    m_workflowOwnerIdHasBeenSet(false)
 {
 }
 
@@ -126,6 +129,17 @@ Aws::String StartRunRequest::SerializePayload() const
   if(m_retentionModeHasBeenSet)
   {
    payload.WithString("retentionMode", RunRetentionModeMapper::GetNameForRunRetentionMode(m_retentionMode));
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("storageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
+  }
+
+  if(m_workflowOwnerIdHasBeenSet)
+  {
+   payload.WithString("workflowOwnerId", m_workflowOwnerId);
+
   }
 
   return payload.View().WriteReadable();

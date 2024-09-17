@@ -39,6 +39,7 @@ namespace Model
     AWS_CODEGURUPROFILER_API UpdateProfilingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A <a
      * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
@@ -46,61 +47,22 @@ namespace Model
      * returned updated profiling group. </p>
      */
     inline const ProfilingGroupDescription& GetProfilingGroup() const{ return m_profilingGroup; }
-
-    /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-     * <code>ProfilingGroupDescription</code> </a> that contains information about the
-     * returned updated profiling group. </p>
-     */
     inline void SetProfilingGroup(const ProfilingGroupDescription& value) { m_profilingGroup = value; }
-
-    /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-     * <code>ProfilingGroupDescription</code> </a> that contains information about the
-     * returned updated profiling group. </p>
-     */
     inline void SetProfilingGroup(ProfilingGroupDescription&& value) { m_profilingGroup = std::move(value); }
-
-    /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-     * <code>ProfilingGroupDescription</code> </a> that contains information about the
-     * returned updated profiling group. </p>
-     */
     inline UpdateProfilingGroupResult& WithProfilingGroup(const ProfilingGroupDescription& value) { SetProfilingGroup(value); return *this;}
-
-    /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-     * <code>ProfilingGroupDescription</code> </a> that contains information about the
-     * returned updated profiling group. </p>
-     */
     inline UpdateProfilingGroupResult& WithProfilingGroup(ProfilingGroupDescription&& value) { SetProfilingGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateProfilingGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateProfilingGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateProfilingGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProfilingGroupDescription m_profilingGroup;

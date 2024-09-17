@@ -32,46 +32,26 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API StopQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>This is true if the query was stopped by the <code>StopQuery</code>
      * operation.</p>
      */
     inline bool GetSuccess() const{ return m_success; }
-
-    /**
-     * <p>This is true if the query was stopped by the <code>StopQuery</code>
-     * operation.</p>
-     */
     inline void SetSuccess(bool value) { m_success = value; }
-
-    /**
-     * <p>This is true if the query was stopped by the <code>StopQuery</code>
-     * operation.</p>
-     */
     inline StopQueryResult& WithSuccess(bool value) { SetSuccess(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_success;

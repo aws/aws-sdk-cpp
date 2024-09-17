@@ -33,26 +33,13 @@ Flow::Flow() :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_vpcInterfacesHasBeenSet(false),
-    m_maintenanceHasBeenSet(false)
+    m_maintenanceHasBeenSet(false),
+    m_sourceMonitoringConfigHasBeenSet(false)
 {
 }
 
-Flow::Flow(JsonView jsonValue) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_egressIpHasBeenSet(false),
-    m_entitlementsHasBeenSet(false),
-    m_flowArnHasBeenSet(false),
-    m_mediaStreamsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourceFailoverConfigHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false),
-    m_maintenanceHasBeenSet(false)
+Flow::Flow(JsonView jsonValue)
+  : Flow()
 {
   *this = jsonValue;
 }
@@ -172,6 +159,13 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_maintenanceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceMonitoringConfig"))
+  {
+    m_sourceMonitoringConfig = jsonValue.GetObject("sourceMonitoringConfig");
+
+    m_sourceMonitoringConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -284,6 +278,12 @@ JsonValue Flow::Jsonize() const
   if(m_maintenanceHasBeenSet)
   {
    payload.WithObject("maintenance", m_maintenance.Jsonize());
+
+  }
+
+  if(m_sourceMonitoringConfigHasBeenSet)
+  {
+   payload.WithObject("sourceMonitoringConfig", m_sourceMonitoringConfig.Jsonize());
 
   }
 

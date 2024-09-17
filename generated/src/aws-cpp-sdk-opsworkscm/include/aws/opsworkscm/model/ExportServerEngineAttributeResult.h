@@ -33,89 +33,40 @@ namespace Model
     AWS_OPSWORKSCM_API ExportServerEngineAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested engine attribute pair with attribute name and value.</p>
      */
     inline const EngineAttribute& GetEngineAttribute() const{ return m_engineAttribute; }
-
-    /**
-     * <p>The requested engine attribute pair with attribute name and value.</p>
-     */
     inline void SetEngineAttribute(const EngineAttribute& value) { m_engineAttribute = value; }
-
-    /**
-     * <p>The requested engine attribute pair with attribute name and value.</p>
-     */
     inline void SetEngineAttribute(EngineAttribute&& value) { m_engineAttribute = std::move(value); }
-
-    /**
-     * <p>The requested engine attribute pair with attribute name and value.</p>
-     */
     inline ExportServerEngineAttributeResult& WithEngineAttribute(const EngineAttribute& value) { SetEngineAttribute(value); return *this;}
-
-    /**
-     * <p>The requested engine attribute pair with attribute name and value.</p>
-     */
     inline ExportServerEngineAttributeResult& WithEngineAttribute(EngineAttribute&& value) { SetEngineAttribute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The server name used in the request.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
-
-    /**
-     * <p>The server name used in the request.</p>
-     */
     inline void SetServerName(const Aws::String& value) { m_serverName = value; }
-
-    /**
-     * <p>The server name used in the request.</p>
-     */
     inline void SetServerName(Aws::String&& value) { m_serverName = std::move(value); }
-
-    /**
-     * <p>The server name used in the request.</p>
-     */
     inline void SetServerName(const char* value) { m_serverName.assign(value); }
-
-    /**
-     * <p>The server name used in the request.</p>
-     */
     inline ExportServerEngineAttributeResult& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-
-    /**
-     * <p>The server name used in the request.</p>
-     */
     inline ExportServerEngineAttributeResult& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The server name used in the request.</p>
-     */
     inline ExportServerEngineAttributeResult& WithServerName(const char* value) { SetServerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportServerEngineAttributeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportServerEngineAttributeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportServerEngineAttributeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EngineAttribute m_engineAttribute;

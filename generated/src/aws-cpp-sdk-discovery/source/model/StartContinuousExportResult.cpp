@@ -22,8 +22,8 @@ StartContinuousExportResult::StartContinuousExportResult() :
 {
 }
 
-StartContinuousExportResult::StartContinuousExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dataSource(DataSource::NOT_SET)
+StartContinuousExportResult::StartContinuousExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartContinuousExportResult()
 {
   *this = result;
 }

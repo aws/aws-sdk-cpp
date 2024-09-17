@@ -25,10 +25,8 @@ ResponseInspectionJson::ResponseInspectionJson() :
 {
 }
 
-ResponseInspectionJson::ResponseInspectionJson(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_successValuesHasBeenSet(false),
-    m_failureValuesHasBeenSet(false)
+ResponseInspectionJson::ResponseInspectionJson(JsonView jsonValue)
+  : ResponseInspectionJson()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AssetDetails::AssetDetails() :
 {
 }
 
-AssetDetails::AssetDetails(JsonView jsonValue) : 
-    m_s3SnapshotAssetHasBeenSet(false),
-    m_redshiftDataShareAssetHasBeenSet(false),
-    m_apiGatewayApiAssetHasBeenSet(false),
-    m_s3DataAccessAssetHasBeenSet(false),
-    m_lakeFormationDataPermissionAssetHasBeenSet(false)
+AssetDetails::AssetDetails(JsonView jsonValue)
+  : AssetDetails()
 {
   *this = jsonValue;
 }

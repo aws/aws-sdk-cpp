@@ -25,7 +25,13 @@ namespace Model
 {
 
   /**
-   * <p>Ephemeris data in Orbit Ephemeris Message (OEM) format.</p><p><h3>See
+   * <p> Ephemeris data in Orbit Ephemeris Message (OEM) format. </p> <p> AWS Ground
+   * Station processes OEM Customer Provided Ephemerides according to the <a
+   * href="https://public.ccsds.org/Pubs/502x0b3e1.pdf">CCSDS standard</a> with some
+   * extra restrictions. OEM files should be in KVN format. For more detail about the
+   * OEM format that AWS Ground Station supports, see <a
+   * href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-custom-ephemeris-data.html#oem-ephemeris-format">OEM
+   * ephemeris format</a> in the AWS Ground Station user guide. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/OEMEphemeris">AWS
    * API Reference</a></p>
@@ -39,85 +45,32 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data for an OEM ephemeris, supplied directly in the request rather than
      * through an S3 object.</p>
      */
     inline const Aws::String& GetOemData() const{ return m_oemData; }
-
-    /**
-     * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-     * through an S3 object.</p>
-     */
     inline bool OemDataHasBeenSet() const { return m_oemDataHasBeenSet; }
-
-    /**
-     * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-     * through an S3 object.</p>
-     */
     inline void SetOemData(const Aws::String& value) { m_oemDataHasBeenSet = true; m_oemData = value; }
-
-    /**
-     * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-     * through an S3 object.</p>
-     */
     inline void SetOemData(Aws::String&& value) { m_oemDataHasBeenSet = true; m_oemData = std::move(value); }
-
-    /**
-     * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-     * through an S3 object.</p>
-     */
     inline void SetOemData(const char* value) { m_oemDataHasBeenSet = true; m_oemData.assign(value); }
-
-    /**
-     * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-     * through an S3 object.</p>
-     */
     inline OEMEphemeris& WithOemData(const Aws::String& value) { SetOemData(value); return *this;}
-
-    /**
-     * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-     * through an S3 object.</p>
-     */
     inline OEMEphemeris& WithOemData(Aws::String&& value) { SetOemData(std::move(value)); return *this;}
-
-    /**
-     * <p>The data for an OEM ephemeris, supplied directly in the request rather than
-     * through an S3 object.</p>
-     */
     inline OEMEphemeris& WithOemData(const char* value) { SetOemData(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifies the S3 object to be used as the ephemeris.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
-
-    /**
-     * <p>Identifies the S3 object to be used as the ephemeris.</p>
-     */
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-
-    /**
-     * <p>Identifies the S3 object to be used as the ephemeris.</p>
-     */
     inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-
-    /**
-     * <p>Identifies the S3 object to be used as the ephemeris.</p>
-     */
     inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-
-    /**
-     * <p>Identifies the S3 object to be used as the ephemeris.</p>
-     */
     inline OEMEphemeris& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-
-    /**
-     * <p>Identifies the S3 object to be used as the ephemeris.</p>
-     */
     inline OEMEphemeris& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_oemData;

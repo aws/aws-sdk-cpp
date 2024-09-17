@@ -40,6 +40,7 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The initial <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
@@ -47,63 +48,14 @@ namespace Model
      * purposes as you use your predictor and the metrics change.</p>
      */
     inline const Aws::Vector<BaselineMetric>& GetBaselineMetrics() const{ return m_baselineMetrics; }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor. Use these metrics as a baseline for comparison
-     * purposes as you use your predictor and the metrics change.</p>
-     */
     inline bool BaselineMetricsHasBeenSet() const { return m_baselineMetricsHasBeenSet; }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor. Use these metrics as a baseline for comparison
-     * purposes as you use your predictor and the metrics change.</p>
-     */
     inline void SetBaselineMetrics(const Aws::Vector<BaselineMetric>& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics = value; }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor. Use these metrics as a baseline for comparison
-     * purposes as you use your predictor and the metrics change.</p>
-     */
     inline void SetBaselineMetrics(Aws::Vector<BaselineMetric>&& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics = std::move(value); }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor. Use these metrics as a baseline for comparison
-     * purposes as you use your predictor and the metrics change.</p>
-     */
     inline PredictorBaseline& WithBaselineMetrics(const Aws::Vector<BaselineMetric>& value) { SetBaselineMetrics(value); return *this;}
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor. Use these metrics as a baseline for comparison
-     * purposes as you use your predictor and the metrics change.</p>
-     */
     inline PredictorBaseline& WithBaselineMetrics(Aws::Vector<BaselineMetric>&& value) { SetBaselineMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor. Use these metrics as a baseline for comparison
-     * purposes as you use your predictor and the metrics change.</p>
-     */
     inline PredictorBaseline& AddBaselineMetrics(const BaselineMetric& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics.push_back(value); return *this; }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor. Use these metrics as a baseline for comparison
-     * purposes as you use your predictor and the metrics change.</p>
-     */
     inline PredictorBaseline& AddBaselineMetrics(BaselineMetric&& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<BaselineMetric> m_baselineMetrics;

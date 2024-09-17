@@ -24,9 +24,8 @@ EventReference::EventReference() :
 {
 }
 
-EventReference::EventReference(JsonView jsonValue) : 
-    m_relatedItemIdHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+EventReference::EventReference(JsonView jsonValue)
+  : EventReference()
 {
   *this = jsonValue;
 }

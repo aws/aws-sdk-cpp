@@ -36,6 +36,10 @@
 #include <aws/translate/model/TranslateTextResult.h>
 #include <aws/translate/model/UntagResourceResult.h>
 #include <aws/translate/model/UpdateParallelDataResult.h>
+#include <aws/translate/model/ListTerminologiesRequest.h>
+#include <aws/translate/model/ListLanguagesRequest.h>
+#include <aws/translate/model/ListParallelDataRequest.h>
+#include <aws/translate/model/ListTextTranslationJobsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TranslateClient header */
 
@@ -70,7 +74,7 @@ namespace Aws
 
   namespace Translate
   {
-    using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TranslateEndpointProviderBase = Aws::Translate::Endpoint::TranslateEndpointProviderBase;
     using TranslateEndpointProvider = Aws::Translate::Endpoint::TranslateEndpointProvider;
 

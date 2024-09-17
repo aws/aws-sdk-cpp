@@ -39,43 +39,25 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FunctionIsolationMode& GetIsolationMode() const{ return m_isolationMode; }
-
-    
     inline bool IsolationModeHasBeenSet() const { return m_isolationModeHasBeenSet; }
-
-    
     inline void SetIsolationMode(const FunctionIsolationMode& value) { m_isolationModeHasBeenSet = true; m_isolationMode = value; }
-
-    
     inline void SetIsolationMode(FunctionIsolationMode&& value) { m_isolationModeHasBeenSet = true; m_isolationMode = std::move(value); }
-
-    
     inline FunctionExecutionConfig& WithIsolationMode(const FunctionIsolationMode& value) { SetIsolationMode(value); return *this;}
-
-    
     inline FunctionExecutionConfig& WithIsolationMode(FunctionIsolationMode&& value) { SetIsolationMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const FunctionRunAsConfig& GetRunAs() const{ return m_runAs; }
-
-    
     inline bool RunAsHasBeenSet() const { return m_runAsHasBeenSet; }
-
-    
     inline void SetRunAs(const FunctionRunAsConfig& value) { m_runAsHasBeenSet = true; m_runAs = value; }
-
-    
     inline void SetRunAs(FunctionRunAsConfig&& value) { m_runAsHasBeenSet = true; m_runAs = std::move(value); }
-
-    
     inline FunctionExecutionConfig& WithRunAs(const FunctionRunAsConfig& value) { SetRunAs(value); return *this;}
-
-    
     inline FunctionExecutionConfig& WithRunAs(FunctionRunAsConfig&& value) { SetRunAs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FunctionIsolationMode m_isolationMode;

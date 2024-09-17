@@ -38,42 +38,18 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents a single property to match with when searching a raster data
      * collection.</p>
      */
     inline const Property& GetProperty() const{ return m_property; }
-
-    /**
-     * <p>Represents a single property to match with when searching a raster data
-     * collection.</p>
-     */
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
-
-    /**
-     * <p>Represents a single property to match with when searching a raster data
-     * collection.</p>
-     */
     inline void SetProperty(const Property& value) { m_propertyHasBeenSet = true; m_property = value; }
-
-    /**
-     * <p>Represents a single property to match with when searching a raster data
-     * collection.</p>
-     */
     inline void SetProperty(Property&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
-
-    /**
-     * <p>Represents a single property to match with when searching a raster data
-     * collection.</p>
-     */
     inline PropertyFilter& WithProperty(const Property& value) { SetProperty(value); return *this;}
-
-    /**
-     * <p>Represents a single property to match with when searching a raster data
-     * collection.</p>
-     */
     inline PropertyFilter& WithProperty(Property&& value) { SetProperty(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Property m_property;

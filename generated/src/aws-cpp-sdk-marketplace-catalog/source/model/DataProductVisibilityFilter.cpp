@@ -23,8 +23,8 @@ DataProductVisibilityFilter::DataProductVisibilityFilter() :
 {
 }
 
-DataProductVisibilityFilter::DataProductVisibilityFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+DataProductVisibilityFilter::DataProductVisibilityFilter(JsonView jsonValue)
+  : DataProductVisibilityFilter()
 {
   *this = jsonValue;
 }

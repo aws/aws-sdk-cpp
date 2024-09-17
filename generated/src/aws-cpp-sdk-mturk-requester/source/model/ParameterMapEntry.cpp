@@ -24,9 +24,8 @@ ParameterMapEntry::ParameterMapEntry() :
 {
 }
 
-ParameterMapEntry::ParameterMapEntry(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ParameterMapEntry::ParameterMapEntry(JsonView jsonValue)
+  : ParameterMapEntry()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ListImportsRequestFilters::ListImportsRequestFilters() :
 {
 }
 
-ListImportsRequestFilters::ListImportsRequestFilters(JsonView jsonValue) : 
-    m_importIDsHasBeenSet(false)
+ListImportsRequestFilters::ListImportsRequestFilters(JsonView jsonValue)
+  : ListImportsRequestFilters()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ UploadDocumentsResult::UploadDocumentsResult() :
 {
 }
 
-UploadDocumentsResult::UploadDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_adds(0),
-    m_deletes(0)
+UploadDocumentsResult::UploadDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UploadDocumentsResult()
 {
   *this = result;
 }

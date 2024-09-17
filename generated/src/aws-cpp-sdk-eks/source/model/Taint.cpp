@@ -26,11 +26,8 @@ Taint::Taint() :
 {
 }
 
-Taint::Taint(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_effect(TaintEffect::NOT_SET),
-    m_effectHasBeenSet(false)
+Taint::Taint(JsonView jsonValue)
+  : Taint()
 {
   *this = jsonValue;
 }

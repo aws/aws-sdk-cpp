@@ -24,9 +24,8 @@ VirtualGatewayHttp2ConnectionPool::VirtualGatewayHttp2ConnectionPool() :
 {
 }
 
-VirtualGatewayHttp2ConnectionPool::VirtualGatewayHttp2ConnectionPool(JsonView jsonValue) : 
-    m_maxRequests(0),
-    m_maxRequestsHasBeenSet(false)
+VirtualGatewayHttp2ConnectionPool::VirtualGatewayHttp2ConnectionPool(JsonView jsonValue)
+  : VirtualGatewayHttp2ConnectionPool()
 {
   *this = jsonValue;
 }

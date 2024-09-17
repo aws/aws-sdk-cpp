@@ -33,58 +33,28 @@ namespace Model
     AWS_ACCOUNT_API GetContactInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains the details of the primary contact information associated with an
      * Amazon Web Services account.</p>
      */
     inline const ContactInformation& GetContactInformation() const{ return m_contactInformation; }
-
-    /**
-     * <p>Contains the details of the primary contact information associated with an
-     * Amazon Web Services account.</p>
-     */
     inline void SetContactInformation(const ContactInformation& value) { m_contactInformation = value; }
-
-    /**
-     * <p>Contains the details of the primary contact information associated with an
-     * Amazon Web Services account.</p>
-     */
     inline void SetContactInformation(ContactInformation&& value) { m_contactInformation = std::move(value); }
-
-    /**
-     * <p>Contains the details of the primary contact information associated with an
-     * Amazon Web Services account.</p>
-     */
     inline GetContactInformationResult& WithContactInformation(const ContactInformation& value) { SetContactInformation(value); return *this;}
-
-    /**
-     * <p>Contains the details of the primary contact information associated with an
-     * Amazon Web Services account.</p>
-     */
     inline GetContactInformationResult& WithContactInformation(ContactInformation&& value) { SetContactInformation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetContactInformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetContactInformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetContactInformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ContactInformation m_contactInformation;

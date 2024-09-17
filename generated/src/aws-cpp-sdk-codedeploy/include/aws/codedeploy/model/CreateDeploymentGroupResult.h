@@ -38,63 +38,29 @@ namespace Model
     AWS_CODEDEPLOY_API CreateDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique deployment group ID.</p>
      */
     inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
-
-    /**
-     * <p>A unique deployment group ID.</p>
-     */
     inline void SetDeploymentGroupId(const Aws::String& value) { m_deploymentGroupId = value; }
-
-    /**
-     * <p>A unique deployment group ID.</p>
-     */
     inline void SetDeploymentGroupId(Aws::String&& value) { m_deploymentGroupId = std::move(value); }
-
-    /**
-     * <p>A unique deployment group ID.</p>
-     */
     inline void SetDeploymentGroupId(const char* value) { m_deploymentGroupId.assign(value); }
-
-    /**
-     * <p>A unique deployment group ID.</p>
-     */
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
-
-    /**
-     * <p>A unique deployment group ID.</p>
-     */
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(Aws::String&& value) { SetDeploymentGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique deployment group ID.</p>
-     */
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(const char* value) { SetDeploymentGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDeploymentGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDeploymentGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDeploymentGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deploymentGroupId;

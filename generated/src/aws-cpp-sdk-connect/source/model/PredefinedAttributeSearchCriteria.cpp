@@ -25,10 +25,8 @@ PredefinedAttributeSearchCriteria::PredefinedAttributeSearchCriteria() :
 {
 }
 
-PredefinedAttributeSearchCriteria::PredefinedAttributeSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
+PredefinedAttributeSearchCriteria::PredefinedAttributeSearchCriteria(JsonView jsonValue)
+  : PredefinedAttributeSearchCriteria()
 {
   *this = jsonValue;
 }

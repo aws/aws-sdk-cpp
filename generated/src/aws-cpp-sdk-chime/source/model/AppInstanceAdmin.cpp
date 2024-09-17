@@ -25,10 +25,8 @@ AppInstanceAdmin::AppInstanceAdmin() :
 {
 }
 
-AppInstanceAdmin::AppInstanceAdmin(JsonView jsonValue) : 
-    m_adminHasBeenSet(false),
-    m_appInstanceArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+AppInstanceAdmin::AppInstanceAdmin(JsonView jsonValue)
+  : AppInstanceAdmin()
 {
   *this = jsonValue;
 }

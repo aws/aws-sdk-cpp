@@ -26,11 +26,8 @@ DefaultDetection::DefaultDetection() :
 {
 }
 
-DefaultDetection::DefaultDetection(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_occurrencesHasBeenSet(false),
-    m_typeHasBeenSet(false)
+DefaultDetection::DefaultDetection(JsonView jsonValue)
+  : DefaultDetection()
 {
   *this = jsonValue;
 }

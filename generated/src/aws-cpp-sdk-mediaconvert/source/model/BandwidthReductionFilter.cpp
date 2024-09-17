@@ -26,11 +26,8 @@ BandwidthReductionFilter::BandwidthReductionFilter() :
 {
 }
 
-BandwidthReductionFilter::BandwidthReductionFilter(JsonView jsonValue) : 
-    m_sharpening(BandwidthReductionFilterSharpening::NOT_SET),
-    m_sharpeningHasBeenSet(false),
-    m_strength(BandwidthReductionFilterStrength::NOT_SET),
-    m_strengthHasBeenSet(false)
+BandwidthReductionFilter::BandwidthReductionFilter(JsonView jsonValue)
+  : BandwidthReductionFilter()
 {
   *this = jsonValue;
 }

@@ -20,7 +20,10 @@ namespace Model
     AUTHOR,
     READER,
     RESTRICTED_AUTHOR,
-    RESTRICTED_READER
+    RESTRICTED_READER,
+    ADMIN_PRO,
+    AUTHOR_PRO,
+    READER_PRO
   };
 
 namespace UserRoleMapper

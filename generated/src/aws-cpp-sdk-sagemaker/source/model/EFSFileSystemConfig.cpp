@@ -24,9 +24,8 @@ EFSFileSystemConfig::EFSFileSystemConfig() :
 {
 }
 
-EFSFileSystemConfig::EFSFileSystemConfig(JsonView jsonValue) : 
-    m_fileSystemIdHasBeenSet(false),
-    m_fileSystemPathHasBeenSet(false)
+EFSFileSystemConfig::EFSFileSystemConfig(JsonView jsonValue)
+  : EFSFileSystemConfig()
 {
   *this = jsonValue;
 }

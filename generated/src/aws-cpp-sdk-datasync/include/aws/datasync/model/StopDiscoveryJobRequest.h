@@ -34,54 +34,20 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
      * to stop. </p>
      */
     inline const Aws::String& GetDiscoveryJobArn() const{ return m_discoveryJobArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to stop. </p>
-     */
     inline bool DiscoveryJobArnHasBeenSet() const { return m_discoveryJobArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to stop. </p>
-     */
     inline void SetDiscoveryJobArn(const Aws::String& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to stop. </p>
-     */
     inline void SetDiscoveryJobArn(Aws::String&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to stop. </p>
-     */
     inline void SetDiscoveryJobArn(const char* value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to stop. </p>
-     */
     inline StopDiscoveryJobRequest& WithDiscoveryJobArn(const Aws::String& value) { SetDiscoveryJobArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to stop. </p>
-     */
     inline StopDiscoveryJobRequest& WithDiscoveryJobArn(Aws::String&& value) { SetDiscoveryJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to stop. </p>
-     */
     inline StopDiscoveryJobRequest& WithDiscoveryJobArn(const char* value) { SetDiscoveryJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_discoveryJobArn;

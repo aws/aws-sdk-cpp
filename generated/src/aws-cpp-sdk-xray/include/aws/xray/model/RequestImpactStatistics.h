@@ -36,68 +36,35 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of requests that have resulted in a fault,</p>
      */
     inline long long GetFaultCount() const{ return m_faultCount; }
-
-    /**
-     * <p>The number of requests that have resulted in a fault,</p>
-     */
     inline bool FaultCountHasBeenSet() const { return m_faultCountHasBeenSet; }
-
-    /**
-     * <p>The number of requests that have resulted in a fault,</p>
-     */
     inline void SetFaultCount(long long value) { m_faultCountHasBeenSet = true; m_faultCount = value; }
-
-    /**
-     * <p>The number of requests that have resulted in a fault,</p>
-     */
     inline RequestImpactStatistics& WithFaultCount(long long value) { SetFaultCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of successful requests.</p>
      */
     inline long long GetOkCount() const{ return m_okCount; }
-
-    /**
-     * <p>The number of successful requests.</p>
-     */
     inline bool OkCountHasBeenSet() const { return m_okCountHasBeenSet; }
-
-    /**
-     * <p>The number of successful requests.</p>
-     */
     inline void SetOkCount(long long value) { m_okCountHasBeenSet = true; m_okCount = value; }
-
-    /**
-     * <p>The number of successful requests.</p>
-     */
     inline RequestImpactStatistics& WithOkCount(long long value) { SetOkCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of requests to the service.</p>
      */
     inline long long GetTotalCount() const{ return m_totalCount; }
-
-    /**
-     * <p>The total number of requests to the service.</p>
-     */
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
-
-    /**
-     * <p>The total number of requests to the service.</p>
-     */
     inline void SetTotalCount(long long value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
-
-    /**
-     * <p>The total number of requests to the service.</p>
-     */
     inline RequestImpactStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_faultCount;

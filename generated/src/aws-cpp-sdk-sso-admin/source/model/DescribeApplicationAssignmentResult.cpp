@@ -22,8 +22,8 @@ DescribeApplicationAssignmentResult::DescribeApplicationAssignmentResult() :
 {
 }
 
-DescribeApplicationAssignmentResult::DescribeApplicationAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_principalType(PrincipalType::NOT_SET)
+DescribeApplicationAssignmentResult::DescribeApplicationAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeApplicationAssignmentResult()
 {
   *this = result;
 }

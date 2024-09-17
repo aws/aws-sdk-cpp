@@ -27,12 +27,19 @@ Aws::String DeleteLoadBalancerListenersRequest::SerializePayload() const
 
   if(m_loadBalancerPortsHasBeenSet)
   {
-    unsigned loadBalancerPortsCount = 1;
-    for(auto& item : m_loadBalancerPorts)
+    if (m_loadBalancerPorts.empty())
     {
-      ss << "LoadBalancerPorts.member." << loadBalancerPortsCount << "="
-          << item << "&";
-      loadBalancerPortsCount++;
+      ss << "LoadBalancerPorts=&";
+    }
+    else
+    {
+      unsigned loadBalancerPortsCount = 1;
+      for(auto& item : m_loadBalancerPorts)
+      {
+        ss << "LoadBalancerPorts.member." << loadBalancerPortsCount << "="
+            << item << "&";
+        loadBalancerPortsCount++;
+      }
     }
   }
 

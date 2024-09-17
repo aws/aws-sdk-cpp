@@ -23,8 +23,8 @@ VirtualGatewayLogging::VirtualGatewayLogging() :
 {
 }
 
-VirtualGatewayLogging::VirtualGatewayLogging(JsonView jsonValue) : 
-    m_accessLogHasBeenSet(false)
+VirtualGatewayLogging::VirtualGatewayLogging(JsonView jsonValue)
+  : VirtualGatewayLogging()
 {
   *this = jsonValue;
 }

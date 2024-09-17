@@ -22,8 +22,8 @@ DescribeTemplateResult::DescribeTemplateResult() :
 {
 }
 
-DescribeTemplateResult::DescribeTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeTemplateResult::DescribeTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTemplateResult()
 {
   *this = result;
 }

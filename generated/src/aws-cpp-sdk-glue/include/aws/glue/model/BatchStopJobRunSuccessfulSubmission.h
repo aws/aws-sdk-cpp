@@ -38,87 +38,33 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the job definition used in the job run that was stopped.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
-
-    /**
-     * <p>The name of the job definition used in the job run that was stopped.</p>
-     */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the job definition used in the job run that was stopped.</p>
-     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-
-    /**
-     * <p>The name of the job definition used in the job run that was stopped.</p>
-     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-
-    /**
-     * <p>The name of the job definition used in the job run that was stopped.</p>
-     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-
-    /**
-     * <p>The name of the job definition used in the job run that was stopped.</p>
-     */
     inline BatchStopJobRunSuccessfulSubmission& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>The name of the job definition used in the job run that was stopped.</p>
-     */
     inline BatchStopJobRunSuccessfulSubmission& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the job definition used in the job run that was stopped.</p>
-     */
     inline BatchStopJobRunSuccessfulSubmission& WithJobName(const char* value) { SetJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-     */
     inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-     */
     inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-     */
     inline void SetJobRunId(Aws::String&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::move(value); }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-     */
     inline void SetJobRunId(const char* value) { m_jobRunIdHasBeenSet = true; m_jobRunId.assign(value); }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-     */
     inline BatchStopJobRunSuccessfulSubmission& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-     */
     inline BatchStopJobRunSuccessfulSubmission& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-     */
     inline BatchStopJobRunSuccessfulSubmission& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobName;

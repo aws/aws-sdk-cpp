@@ -24,9 +24,8 @@ SubscriptionLimits::SubscriptionLimits() :
 {
 }
 
-SubscriptionLimits::SubscriptionLimits(JsonView jsonValue) : 
-    m_protectionLimitsHasBeenSet(false),
-    m_protectionGroupLimitsHasBeenSet(false)
+SubscriptionLimits::SubscriptionLimits(JsonView jsonValue)
+  : SubscriptionLimits()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RuleGroupMetadata::RuleGroupMetadata() :
 {
 }
 
-RuleGroupMetadata::RuleGroupMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+RuleGroupMetadata::RuleGroupMetadata(JsonView jsonValue)
+  : RuleGroupMetadata()
 {
   *this = jsonValue;
 }

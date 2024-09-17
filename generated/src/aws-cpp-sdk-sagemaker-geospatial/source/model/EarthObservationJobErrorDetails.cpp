@@ -25,10 +25,8 @@ EarthObservationJobErrorDetails::EarthObservationJobErrorDetails() :
 {
 }
 
-EarthObservationJobErrorDetails::EarthObservationJobErrorDetails(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_type(EarthObservationJobErrorType::NOT_SET),
-    m_typeHasBeenSet(false)
+EarthObservationJobErrorDetails::EarthObservationJobErrorDetails(JsonView jsonValue)
+  : EarthObservationJobErrorDetails()
 {
   *this = jsonValue;
 }

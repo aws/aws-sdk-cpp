@@ -24,9 +24,8 @@ RenameColumnOperation::RenameColumnOperation() :
 {
 }
 
-RenameColumnOperation::RenameColumnOperation(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_newColumnNameHasBeenSet(false)
+RenameColumnOperation::RenameColumnOperation(JsonView jsonValue)
+  : RenameColumnOperation()
 {
   *this = jsonValue;
 }

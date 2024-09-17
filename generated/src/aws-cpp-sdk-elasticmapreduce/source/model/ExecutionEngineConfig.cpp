@@ -27,12 +27,8 @@ ExecutionEngineConfig::ExecutionEngineConfig() :
 {
 }
 
-ExecutionEngineConfig::ExecutionEngineConfig(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(ExecutionEngineType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_masterInstanceSecurityGroupIdHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
+ExecutionEngineConfig::ExecutionEngineConfig(JsonView jsonValue)
+  : ExecutionEngineConfig()
 {
   *this = jsonValue;
 }

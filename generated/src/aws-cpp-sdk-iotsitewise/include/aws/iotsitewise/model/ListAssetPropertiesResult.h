@@ -34,113 +34,44 @@ namespace Model
     AWS_IOTSITEWISE_API ListAssetPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that summarizes the properties associated with the specified
      * asset.</p>
      */
     inline const Aws::Vector<AssetPropertySummary>& GetAssetPropertySummaries() const{ return m_assetPropertySummaries; }
-
-    /**
-     * <p>A list that summarizes the properties associated with the specified
-     * asset.</p>
-     */
     inline void SetAssetPropertySummaries(const Aws::Vector<AssetPropertySummary>& value) { m_assetPropertySummaries = value; }
-
-    /**
-     * <p>A list that summarizes the properties associated with the specified
-     * asset.</p>
-     */
     inline void SetAssetPropertySummaries(Aws::Vector<AssetPropertySummary>&& value) { m_assetPropertySummaries = std::move(value); }
-
-    /**
-     * <p>A list that summarizes the properties associated with the specified
-     * asset.</p>
-     */
     inline ListAssetPropertiesResult& WithAssetPropertySummaries(const Aws::Vector<AssetPropertySummary>& value) { SetAssetPropertySummaries(value); return *this;}
-
-    /**
-     * <p>A list that summarizes the properties associated with the specified
-     * asset.</p>
-     */
     inline ListAssetPropertiesResult& WithAssetPropertySummaries(Aws::Vector<AssetPropertySummary>&& value) { SetAssetPropertySummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that summarizes the properties associated with the specified
-     * asset.</p>
-     */
     inline ListAssetPropertiesResult& AddAssetPropertySummaries(const AssetPropertySummary& value) { m_assetPropertySummaries.push_back(value); return *this; }
-
-    /**
-     * <p>A list that summarizes the properties associated with the specified
-     * asset.</p>
-     */
     inline ListAssetPropertiesResult& AddAssetPropertySummaries(AssetPropertySummary&& value) { m_assetPropertySummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetPropertiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetPropertiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetPropertiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAssetPropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAssetPropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAssetPropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AssetPropertySummary> m_assetPropertySummaries;

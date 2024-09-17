@@ -39,77 +39,31 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The ARN of the bridge feeding this flow.
      */
     inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
-
-    /**
-     * The ARN of the bridge feeding this flow.
-     */
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-
-    /**
-     * The ARN of the bridge feeding this flow.
-     */
     inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-
-    /**
-     * The ARN of the bridge feeding this flow.
-     */
     inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-
-    /**
-     * The ARN of the bridge feeding this flow.
-     */
     inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-
-    /**
-     * The ARN of the bridge feeding this flow.
-     */
     inline SetGatewayBridgeSourceRequest& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-
-    /**
-     * The ARN of the bridge feeding this flow.
-     */
     inline SetGatewayBridgeSourceRequest& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the bridge feeding this flow.
-     */
     inline SetGatewayBridgeSourceRequest& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the VPC interface attachment to use for this bridge source.
      */
     inline const VpcInterfaceAttachment& GetVpcInterfaceAttachment() const{ return m_vpcInterfaceAttachment; }
-
-    /**
-     * The name of the VPC interface attachment to use for this bridge source.
-     */
     inline bool VpcInterfaceAttachmentHasBeenSet() const { return m_vpcInterfaceAttachmentHasBeenSet; }
-
-    /**
-     * The name of the VPC interface attachment to use for this bridge source.
-     */
     inline void SetVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { m_vpcInterfaceAttachmentHasBeenSet = true; m_vpcInterfaceAttachment = value; }
-
-    /**
-     * The name of the VPC interface attachment to use for this bridge source.
-     */
     inline void SetVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { m_vpcInterfaceAttachmentHasBeenSet = true; m_vpcInterfaceAttachment = std::move(value); }
-
-    /**
-     * The name of the VPC interface attachment to use for this bridge source.
-     */
     inline SetGatewayBridgeSourceRequest& WithVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { SetVpcInterfaceAttachment(value); return *this;}
-
-    /**
-     * The name of the VPC interface attachment to use for this bridge source.
-     */
     inline SetGatewayBridgeSourceRequest& WithVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetVpcInterfaceAttachment(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bridgeArn;

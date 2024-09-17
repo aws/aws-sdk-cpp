@@ -27,12 +27,8 @@ IdentityProviderOAuthSetting::IdentityProviderOAuthSetting() :
 {
 }
 
-IdentityProviderOAuthSetting::IdentityProviderOAuthSetting(JsonView jsonValue) : 
-    m_dataSourceName(DataSourceName::NOT_SET),
-    m_dataSourceNameHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+IdentityProviderOAuthSetting::IdentityProviderOAuthSetting(JsonView jsonValue)
+  : IdentityProviderOAuthSetting()
 {
   *this = jsonValue;
 }

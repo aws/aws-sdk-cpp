@@ -30,15 +30,8 @@ ActivatedRule::ActivatedRule() :
 {
 }
 
-ActivatedRule::ActivatedRule(JsonView jsonValue) : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_overrideActionHasBeenSet(false),
-    m_type(WafRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false)
+ActivatedRule::ActivatedRule(JsonView jsonValue)
+  : ActivatedRule()
 {
   *this = jsonValue;
 }

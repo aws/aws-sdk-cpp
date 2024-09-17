@@ -38,112 +38,44 @@ namespace Model
     AWS_CHIMESDKVOICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Voice Connector ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline const Aws::String& GetVoiceToneAnalysisTaskId() const{ return m_voiceToneAnalysisTaskId; }
-
-    /**
-     * <p>The ID of the voice tone anlysis task.</p>
-     */
     inline bool VoiceToneAnalysisTaskIdHasBeenSet() const { return m_voiceToneAnalysisTaskIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the voice tone anlysis task.</p>
-     */
     inline void SetVoiceToneAnalysisTaskId(const Aws::String& value) { m_voiceToneAnalysisTaskIdHasBeenSet = true; m_voiceToneAnalysisTaskId = value; }
-
-    /**
-     * <p>The ID of the voice tone anlysis task.</p>
-     */
     inline void SetVoiceToneAnalysisTaskId(Aws::String&& value) { m_voiceToneAnalysisTaskIdHasBeenSet = true; m_voiceToneAnalysisTaskId = std::move(value); }
-
-    /**
-     * <p>The ID of the voice tone anlysis task.</p>
-     */
     inline void SetVoiceToneAnalysisTaskId(const char* value) { m_voiceToneAnalysisTaskIdHasBeenSet = true; m_voiceToneAnalysisTaskId.assign(value); }
-
-    /**
-     * <p>The ID of the voice tone anlysis task.</p>
-     */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceToneAnalysisTaskId(const Aws::String& value) { SetVoiceToneAnalysisTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the voice tone anlysis task.</p>
-     */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceToneAnalysisTaskId(Aws::String&& value) { SetVoiceToneAnalysisTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the voice tone anlysis task.</p>
-     */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceToneAnalysisTaskId(const char* value) { SetVoiceToneAnalysisTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the voice being analyzed is the caller (originator) or the
      * callee (responder).</p>
      */
     inline bool GetIsCaller() const{ return m_isCaller; }
-
-    /**
-     * <p>Specifies whether the voice being analyzed is the caller (originator) or the
-     * callee (responder).</p>
-     */
     inline bool IsCallerHasBeenSet() const { return m_isCallerHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the voice being analyzed is the caller (originator) or the
-     * callee (responder).</p>
-     */
     inline void SetIsCaller(bool value) { m_isCallerHasBeenSet = true; m_isCaller = value; }
-
-    /**
-     * <p>Specifies whether the voice being analyzed is the caller (originator) or the
-     * callee (responder).</p>
-     */
     inline GetVoiceToneAnalysisTaskRequest& WithIsCaller(bool value) { SetIsCaller(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;

@@ -34,6 +34,7 @@ namespace Model
     AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
      * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
@@ -45,91 +46,14 @@ namespace Model
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
-
-    /**
-     * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
-     * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
-     * Services account, you must use the key ARN.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
-     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-     */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-
-    /**
-     * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
-     * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
-     * Services account, you must use the key ARN.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
-     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-
-    /**
-     * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
-     * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
-     * Services account, you must use the key ARN.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
-     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-     */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-
-    /**
-     * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
-     * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
-     * Services account, you must use the key ARN.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
-     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-     */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-
-    /**
-     * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
-     * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
-     * Services account, you must use the key ARN.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
-     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-     */
     inline GetKeyRotationStatusRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-
-    /**
-     * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
-     * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
-     * Services account, you must use the key ARN.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
-     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-     */
     inline GetKeyRotationStatusRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>Gets the rotation status for the specified KMS key.</p> <p>Specify the key ID
-     * or key ARN of the KMS key. To specify a KMS key in a different Amazon Web
-     * Services account, you must use the key ARN.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
-     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-     */
     inline GetKeyRotationStatusRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyId;

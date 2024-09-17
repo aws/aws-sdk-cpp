@@ -23,8 +23,8 @@ ChannelsResponse::ChannelsResponse() :
 {
 }
 
-ChannelsResponse::ChannelsResponse(JsonView jsonValue) : 
-    m_channelsHasBeenSet(false)
+ChannelsResponse::ChannelsResponse(JsonView jsonValue)
+  : ChannelsResponse()
 {
   *this = jsonValue;
 }

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/Pipe.h>
 #include <utility>
 
@@ -34,6 +34,20 @@ namespace Model
     AWS_PIPES_API ListPipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline const Aws::Vector<Pipe>& GetPipes() const{ return m_pipes; }
+    inline void SetPipes(const Aws::Vector<Pipe>& value) { m_pipes = value; }
+    inline void SetPipes(Aws::Vector<Pipe>&& value) { m_pipes = std::move(value); }
+    inline ListPipesResult& WithPipes(const Aws::Vector<Pipe>& value) { SetPipes(value); return *this;}
+    inline ListPipesResult& WithPipes(Aws::Vector<Pipe>&& value) { SetPipes(std::move(value)); return *this;}
+    inline ListPipesResult& AddPipes(const Pipe& value) { m_pipes.push_back(value); return *this; }
+    inline ListPipesResult& AddPipes(Pipe&& value) { m_pipes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     /**
      * <p>If <code>nextToken</code> is returned, there are more results available. The
      * value of <code>nextToken</code> is a unique pagination token for each page. Make
@@ -42,124 +56,29 @@ namespace Model
      * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-     */
     inline ListPipesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-     */
     inline ListPipesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-     */
     inline ListPipesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline const Aws::Vector<Pipe>& GetPipes() const{ return m_pipes; }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline void SetPipes(const Aws::Vector<Pipe>& value) { m_pipes = value; }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline void SetPipes(Aws::Vector<Pipe>&& value) { m_pipes = std::move(value); }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& WithPipes(const Aws::Vector<Pipe>& value) { SetPipes(value); return *this;}
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& WithPipes(Aws::Vector<Pipe>&& value) { SetPipes(std::move(value)); return *this;}
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& AddPipes(const Pipe& value) { m_pipes.push_back(value); return *this; }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& AddPipes(Pipe&& value) { m_pipes.push_back(std::move(value)); return *this; }
-
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListPipesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListPipesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListPipesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Pipe> m_pipes;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

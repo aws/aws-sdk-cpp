@@ -26,11 +26,8 @@ AwsAppSyncGraphQlApiUserPoolConfigDetails::AwsAppSyncGraphQlApiUserPoolConfigDet
 {
 }
 
-AwsAppSyncGraphQlApiUserPoolConfigDetails::AwsAppSyncGraphQlApiUserPoolConfigDetails(JsonView jsonValue) : 
-    m_appIdClientRegexHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false)
+AwsAppSyncGraphQlApiUserPoolConfigDetails::AwsAppSyncGraphQlApiUserPoolConfigDetails(JsonView jsonValue)
+  : AwsAppSyncGraphQlApiUserPoolConfigDetails()
 {
   *this = jsonValue;
 }

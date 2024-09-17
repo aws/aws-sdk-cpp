@@ -25,10 +25,8 @@ ClusterInstanceStatusDetails::ClusterInstanceStatusDetails() :
 {
 }
 
-ClusterInstanceStatusDetails::ClusterInstanceStatusDetails(JsonView jsonValue) : 
-    m_status(ClusterInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ClusterInstanceStatusDetails::ClusterInstanceStatusDetails(JsonView jsonValue)
+  : ClusterInstanceStatusDetails()
 {
   *this = jsonValue;
 }

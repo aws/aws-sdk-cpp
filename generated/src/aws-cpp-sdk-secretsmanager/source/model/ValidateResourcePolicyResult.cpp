@@ -22,8 +22,8 @@ ValidateResourcePolicyResult::ValidateResourcePolicyResult() :
 {
 }
 
-ValidateResourcePolicyResult::ValidateResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_policyValidationPassed(false)
+ValidateResourcePolicyResult::ValidateResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidateResourcePolicyResult()
 {
   *this = result;
 }

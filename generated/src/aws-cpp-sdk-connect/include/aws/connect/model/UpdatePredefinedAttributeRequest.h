@@ -33,126 +33,46 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can find the instance ID
      * in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the predefined attribute.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the predefined attribute.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the predefined attribute.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the predefined attribute.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the predefined attribute.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the predefined attribute.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the predefined attribute.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the predefined attribute.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values of the predefined attribute.</p>
      */
     inline const PredefinedAttributeValues& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The values of the predefined attribute.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The values of the predefined attribute.</p>
-     */
     inline void SetValues(const PredefinedAttributeValues& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The values of the predefined attribute.</p>
-     */
     inline void SetValues(PredefinedAttributeValues&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The values of the predefined attribute.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithValues(const PredefinedAttributeValues& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The values of the predefined attribute.</p>
-     */
     inline UpdatePredefinedAttributeRequest& WithValues(PredefinedAttributeValues&& value) { SetValues(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

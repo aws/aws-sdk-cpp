@@ -24,15 +24,14 @@ MutualAuthenticationAttributes::MutualAuthenticationAttributes() :
     m_modeHasBeenSet(false),
     m_trustStoreArnHasBeenSet(false),
     m_ignoreClientCertificateExpiry(false),
-    m_ignoreClientCertificateExpiryHasBeenSet(false)
+    m_ignoreClientCertificateExpiryHasBeenSet(false),
+    m_trustStoreAssociationStatus(TrustStoreAssociationStatusEnum::NOT_SET),
+    m_trustStoreAssociationStatusHasBeenSet(false)
 {
 }
 
-MutualAuthenticationAttributes::MutualAuthenticationAttributes(const XmlNode& xmlNode) : 
-    m_modeHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false),
-    m_ignoreClientCertificateExpiry(false),
-    m_ignoreClientCertificateExpiryHasBeenSet(false)
+MutualAuthenticationAttributes::MutualAuthenticationAttributes(const XmlNode& xmlNode)
+  : MutualAuthenticationAttributes()
 {
   *this = xmlNode;
 }
@@ -61,6 +60,12 @@ MutualAuthenticationAttributes& MutualAuthenticationAttributes::operator =(const
       m_ignoreClientCertificateExpiry = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ignoreClientCertificateExpiryNode.GetText()).c_str()).c_str());
       m_ignoreClientCertificateExpiryHasBeenSet = true;
     }
+    XmlNode trustStoreAssociationStatusNode = resultNode.FirstChild("TrustStoreAssociationStatus");
+    if(!trustStoreAssociationStatusNode.IsNull())
+    {
+      m_trustStoreAssociationStatus = TrustStoreAssociationStatusEnumMapper::GetTrustStoreAssociationStatusEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustStoreAssociationStatusNode.GetText()).c_str()).c_str());
+      m_trustStoreAssociationStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +88,11 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
       oStream << location << index << locationValue << ".IgnoreClientCertificateExpiry=" << std::boolalpha << m_ignoreClientCertificateExpiry << "&";
   }
 
+  if(m_trustStoreAssociationStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TrustStoreAssociationStatus=" << TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus) << "&";
+  }
+
 }
 
 void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,6 +108,10 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
   if(m_ignoreClientCertificateExpiryHasBeenSet)
   {
       oStream << location << ".IgnoreClientCertificateExpiry=" << std::boolalpha << m_ignoreClientCertificateExpiry << "&";
+  }
+  if(m_trustStoreAssociationStatusHasBeenSet)
+  {
+      oStream << location << ".TrustStoreAssociationStatus=" << TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus) << "&";
   }
 }
 

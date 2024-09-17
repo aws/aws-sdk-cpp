@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudTrailDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudTrailDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudTrailDataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudTrailDataBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

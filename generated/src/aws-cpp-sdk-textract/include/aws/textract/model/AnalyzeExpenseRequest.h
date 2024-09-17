@@ -34,24 +34,15 @@ namespace Model
     AWS_TEXTRACT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Document& GetDocument() const{ return m_document; }
-
-    
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-
-    
     inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
-
-    
     inline void SetDocument(Document&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-
-    
     inline AnalyzeExpenseRequest& WithDocument(const Document& value) { SetDocument(value); return *this;}
-
-    
     inline AnalyzeExpenseRequest& WithDocument(Document&& value) { SetDocument(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Document m_document;

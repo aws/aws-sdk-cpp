@@ -24,9 +24,8 @@ CustomConnectorProfileProperties::CustomConnectorProfileProperties() :
 {
 }
 
-CustomConnectorProfileProperties::CustomConnectorProfileProperties(JsonView jsonValue) : 
-    m_profilePropertiesHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false)
+CustomConnectorProfileProperties::CustomConnectorProfileProperties(JsonView jsonValue)
+  : CustomConnectorProfileProperties()
 {
   *this = jsonValue;
 }

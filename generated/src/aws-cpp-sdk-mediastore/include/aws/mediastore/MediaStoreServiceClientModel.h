@@ -39,6 +39,8 @@
 #include <aws/mediastore/model/StopAccessLoggingResult.h>
 #include <aws/mediastore/model/TagResourceResult.h>
 #include <aws/mediastore/model/UntagResourceResult.h>
+#include <aws/mediastore/model/DescribeContainerRequest.h>
+#include <aws/mediastore/model/ListContainersRequest.h>
 /* End of service model headers required in MediaStoreClient header */
 
 namespace Aws
@@ -72,7 +74,7 @@ namespace Aws
 
   namespace MediaStore
   {
-    using MediaStoreClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaStoreEndpointProviderBase = Aws::MediaStore::Endpoint::MediaStoreEndpointProviderBase;
     using MediaStoreEndpointProvider = Aws::MediaStore::Endpoint::MediaStoreEndpointProvider;
 

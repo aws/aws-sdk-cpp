@@ -24,9 +24,8 @@ CampaignState::CampaignState() :
 {
 }
 
-CampaignState::CampaignState(JsonView jsonValue) : 
-    m_campaignStatus(CampaignStatus::NOT_SET),
-    m_campaignStatusHasBeenSet(false)
+CampaignState::CampaignState(JsonView jsonValue)
+  : CampaignState()
 {
   *this = jsonValue;
 }

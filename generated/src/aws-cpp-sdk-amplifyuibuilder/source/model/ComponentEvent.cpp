@@ -25,10 +25,8 @@ ComponentEvent::ComponentEvent() :
 {
 }
 
-ComponentEvent::ComponentEvent(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_bindingEventHasBeenSet(false)
+ComponentEvent::ComponentEvent(JsonView jsonValue)
+  : ComponentEvent()
 {
   *this = jsonValue;
 }

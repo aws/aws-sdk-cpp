@@ -24,9 +24,8 @@ S3SnapshotAsset::S3SnapshotAsset() :
 {
 }
 
-S3SnapshotAsset::S3SnapshotAsset(JsonView jsonValue) : 
-    m_size(0.0),
-    m_sizeHasBeenSet(false)
+S3SnapshotAsset::S3SnapshotAsset(JsonView jsonValue)
+  : S3SnapshotAsset()
 {
   *this = jsonValue;
 }

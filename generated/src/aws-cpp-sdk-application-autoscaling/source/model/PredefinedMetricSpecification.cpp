@@ -25,10 +25,8 @@ PredefinedMetricSpecification::PredefinedMetricSpecification() :
 {
 }
 
-PredefinedMetricSpecification::PredefinedMetricSpecification(JsonView jsonValue) : 
-    m_predefinedMetricType(MetricType::NOT_SET),
-    m_predefinedMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
+PredefinedMetricSpecification::PredefinedMetricSpecification(JsonView jsonValue)
+  : PredefinedMetricSpecification()
 {
   *this = jsonValue;
 }

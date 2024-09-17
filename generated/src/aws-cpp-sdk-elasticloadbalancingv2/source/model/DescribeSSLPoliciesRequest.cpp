@@ -26,12 +26,19 @@ Aws::String DescribeSSLPoliciesRequest::SerializePayload() const
   ss << "Action=DescribeSSLPolicies&";
   if(m_namesHasBeenSet)
   {
-    unsigned namesCount = 1;
-    for(auto& item : m_names)
+    if (m_names.empty())
     {
-      ss << "Names.member." << namesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      namesCount++;
+      ss << "Names=&";
+    }
+    else
+    {
+      unsigned namesCount = 1;
+      for(auto& item : m_names)
+      {
+        ss << "Names.member." << namesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        namesCount++;
+      }
     }
   }
 

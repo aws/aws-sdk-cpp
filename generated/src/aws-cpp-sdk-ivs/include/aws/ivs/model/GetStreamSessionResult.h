@@ -33,53 +33,27 @@ namespace Model
     AWS_IVS_API GetStreamSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of stream details.</p>
      */
     inline const StreamSession& GetStreamSession() const{ return m_streamSession; }
-
-    /**
-     * <p>List of stream details.</p>
-     */
     inline void SetStreamSession(const StreamSession& value) { m_streamSession = value; }
-
-    /**
-     * <p>List of stream details.</p>
-     */
     inline void SetStreamSession(StreamSession&& value) { m_streamSession = std::move(value); }
-
-    /**
-     * <p>List of stream details.</p>
-     */
     inline GetStreamSessionResult& WithStreamSession(const StreamSession& value) { SetStreamSession(value); return *this;}
-
-    /**
-     * <p>List of stream details.</p>
-     */
     inline GetStreamSessionResult& WithStreamSession(StreamSession&& value) { SetStreamSession(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStreamSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStreamSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStreamSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StreamSession m_streamSession;

@@ -33,18 +33,8 @@ PIIDetection::PIIDetection() :
 {
 }
 
-PIIDetection::PIIDetection(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_piiType(PiiType::NOT_SET),
-    m_piiTypeHasBeenSet(false),
-    m_entityTypesToDetectHasBeenSet(false),
-    m_outputColumnNameHasBeenSet(false),
-    m_sampleFraction(0.0),
-    m_sampleFractionHasBeenSet(false),
-    m_thresholdFraction(0.0),
-    m_thresholdFractionHasBeenSet(false),
-    m_maskValueHasBeenSet(false)
+PIIDetection::PIIDetection(JsonView jsonValue)
+  : PIIDetection()
 {
   *this = jsonValue;
 }

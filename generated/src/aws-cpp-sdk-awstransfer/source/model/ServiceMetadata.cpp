@@ -23,8 +23,8 @@ ServiceMetadata::ServiceMetadata() :
 {
 }
 
-ServiceMetadata::ServiceMetadata(JsonView jsonValue) : 
-    m_userDetailsHasBeenSet(false)
+ServiceMetadata::ServiceMetadata(JsonView jsonValue)
+  : ServiceMetadata()
 {
   *this = jsonValue;
 }

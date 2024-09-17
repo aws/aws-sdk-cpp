@@ -26,11 +26,8 @@ HttpAction::HttpAction() :
 {
 }
 
-HttpAction::HttpAction(JsonView jsonValue) : 
-    m_urlHasBeenSet(false),
-    m_confirmationUrlHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_authHasBeenSet(false)
+HttpAction::HttpAction(JsonView jsonValue)
+  : HttpAction()
 {
   *this = jsonValue;
 }

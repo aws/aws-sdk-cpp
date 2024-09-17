@@ -39,85 +39,32 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details of an Amazon MSK Cluster.</p>
      */
     inline const AmazonMskCluster& GetAmazonMskCluster() const{ return m_amazonMskCluster; }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline bool AmazonMskClusterHasBeenSet() const { return m_amazonMskClusterHasBeenSet; }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline void SetAmazonMskCluster(const AmazonMskCluster& value) { m_amazonMskClusterHasBeenSet = true; m_amazonMskCluster = value; }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline void SetAmazonMskCluster(AmazonMskCluster&& value) { m_amazonMskClusterHasBeenSet = true; m_amazonMskCluster = std::move(value); }
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline KafkaClusterSummary& WithAmazonMskCluster(const AmazonMskCluster& value) { SetAmazonMskCluster(value); return *this;}
-
-    /**
-     * <p>Details of an Amazon MSK Cluster.</p>
-     */
     inline KafkaClusterSummary& WithAmazonMskCluster(AmazonMskCluster&& value) { SetAmazonMskCluster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The alias of the Kafka cluster. Used to prefix names of replicated
      * topics.</p> 
      */
     inline const Aws::String& GetKafkaClusterAlias() const{ return m_kafkaClusterAlias; }
-
-    /**
-     * <p>The alias of the Kafka cluster. Used to prefix names of replicated
-     * topics.</p> 
-     */
     inline bool KafkaClusterAliasHasBeenSet() const { return m_kafkaClusterAliasHasBeenSet; }
-
-    /**
-     * <p>The alias of the Kafka cluster. Used to prefix names of replicated
-     * topics.</p> 
-     */
     inline void SetKafkaClusterAlias(const Aws::String& value) { m_kafkaClusterAliasHasBeenSet = true; m_kafkaClusterAlias = value; }
-
-    /**
-     * <p>The alias of the Kafka cluster. Used to prefix names of replicated
-     * topics.</p> 
-     */
     inline void SetKafkaClusterAlias(Aws::String&& value) { m_kafkaClusterAliasHasBeenSet = true; m_kafkaClusterAlias = std::move(value); }
-
-    /**
-     * <p>The alias of the Kafka cluster. Used to prefix names of replicated
-     * topics.</p> 
-     */
     inline void SetKafkaClusterAlias(const char* value) { m_kafkaClusterAliasHasBeenSet = true; m_kafkaClusterAlias.assign(value); }
-
-    /**
-     * <p>The alias of the Kafka cluster. Used to prefix names of replicated
-     * topics.</p> 
-     */
     inline KafkaClusterSummary& WithKafkaClusterAlias(const Aws::String& value) { SetKafkaClusterAlias(value); return *this;}
-
-    /**
-     * <p>The alias of the Kafka cluster. Used to prefix names of replicated
-     * topics.</p> 
-     */
     inline KafkaClusterSummary& WithKafkaClusterAlias(Aws::String&& value) { SetKafkaClusterAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>The alias of the Kafka cluster. Used to prefix names of replicated
-     * topics.</p> 
-     */
     inline KafkaClusterSummary& WithKafkaClusterAlias(const char* value) { SetKafkaClusterAlias(value); return *this;}
-
+    ///@}
   private:
 
     AmazonMskCluster m_amazonMskCluster;

@@ -31,16 +31,8 @@ ResourceChange::ResourceChange() :
 {
 }
 
-ResourceChange::ResourceChange(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_replacement(Replacement::NOT_SET),
-    m_replacementHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+ResourceChange::ResourceChange(JsonView jsonValue)
+  : ResourceChange()
 {
   *this = jsonValue;
 }

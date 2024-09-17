@@ -24,9 +24,8 @@ ImpersonationMatchedRule::ImpersonationMatchedRule() :
 {
 }
 
-ImpersonationMatchedRule::ImpersonationMatchedRule(JsonView jsonValue) : 
-    m_impersonationRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ImpersonationMatchedRule::ImpersonationMatchedRule(JsonView jsonValue)
+  : ImpersonationMatchedRule()
 {
   *this = jsonValue;
 }

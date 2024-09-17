@@ -24,9 +24,8 @@ ActionRequired::ActionRequired() :
 {
 }
 
-ActionRequired::ActionRequired(JsonView jsonValue) : 
-    m_actionRequiredCodeHasBeenSet(false),
-    m_actionRequiredInfoHasBeenSet(false)
+ActionRequired::ActionRequired(JsonView jsonValue)
+  : ActionRequired()
 {
   *this = jsonValue;
 }

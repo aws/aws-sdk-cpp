@@ -34,95 +34,34 @@ namespace Model
     AWS_CLOUD9_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the environment to delete the environment member from.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The ID of the environment to delete the environment member from.</p>
-     */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the environment to delete the environment member from.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-
-    /**
-     * <p>The ID of the environment to delete the environment member from.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the environment to delete the environment member from.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-
-    /**
-     * <p>The ID of the environment to delete the environment member from.</p>
-     */
     inline DeleteEnvironmentMembershipRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the environment to delete the environment member from.</p>
-     */
     inline DeleteEnvironmentMembershipRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the environment to delete the environment member from.</p>
-     */
     inline DeleteEnvironmentMembershipRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
      * environment.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-     * environment.</p>
-     */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-     * environment.</p>
-     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-     * environment.</p>
-     */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-     * environment.</p>
-     */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-     * environment.</p>
-     */
     inline DeleteEnvironmentMembershipRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-     * environment.</p>
-     */
     inline DeleteEnvironmentMembershipRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-     * environment.</p>
-     */
     inline DeleteEnvironmentMembershipRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentId;

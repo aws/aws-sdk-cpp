@@ -37,24 +37,15 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     
     inline const LoggingEnabled& GetLoggingEnabled() const{ return m_loggingEnabled; }
-
-    
     inline bool LoggingEnabledHasBeenSet() const { return m_loggingEnabledHasBeenSet; }
-
-    
     inline void SetLoggingEnabled(const LoggingEnabled& value) { m_loggingEnabledHasBeenSet = true; m_loggingEnabled = value; }
-
-    
     inline void SetLoggingEnabled(LoggingEnabled&& value) { m_loggingEnabledHasBeenSet = true; m_loggingEnabled = std::move(value); }
-
-    
     inline BucketLoggingStatus& WithLoggingEnabled(const LoggingEnabled& value) { SetLoggingEnabled(value); return *this;}
-
-    
     inline BucketLoggingStatus& WithLoggingEnabled(LoggingEnabled&& value) { SetLoggingEnabled(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoggingEnabled m_loggingEnabled;

@@ -39,73 +39,34 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p> The threshold value used for the specified metric parameter. </p>
+     * <p> The threshold value used for the specified metric parameter. </p> 
+     * <p>You can only specify the threshold value for CPU utilization.</p> 
      */
     inline const CustomizableMetricThreshold& GetThreshold() const{ return m_threshold; }
-
-    /**
-     * <p> The threshold value used for the specified metric parameter. </p>
-     */
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
-
-    /**
-     * <p> The threshold value used for the specified metric parameter. </p>
-     */
     inline void SetThreshold(const CustomizableMetricThreshold& value) { m_thresholdHasBeenSet = true; m_threshold = value; }
-
-    /**
-     * <p> The threshold value used for the specified metric parameter. </p>
-     */
     inline void SetThreshold(CustomizableMetricThreshold&& value) { m_thresholdHasBeenSet = true; m_threshold = std::move(value); }
-
-    /**
-     * <p> The threshold value used for the specified metric parameter. </p>
-     */
     inline CustomizableMetricParameters& WithThreshold(const CustomizableMetricThreshold& value) { SetThreshold(value); return *this;}
-
-    /**
-     * <p> The threshold value used for the specified metric parameter. </p>
-     */
     inline CustomizableMetricParameters& WithThreshold(CustomizableMetricThreshold&& value) { SetThreshold(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p> The headroom threshold value in percentage used for the specified metric
-     * parameter. </p>
+     * <p> The headroom value in percentage used for the specified metric parameter.
+     * </p> <p>The following lists the valid values for CPU and memory utilization.</p>
+     * <ul> <li> <p>CPU utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_0</code>
+     * </p> </li> <li> <p>Memory utilization: <code>PERCENT_30 | PERCENT_20 |
+     * PERCENT_10</code> </p> </li> </ul>
      */
     inline const CustomizableMetricHeadroom& GetHeadroom() const{ return m_headroom; }
-
-    /**
-     * <p> The headroom threshold value in percentage used for the specified metric
-     * parameter. </p>
-     */
     inline bool HeadroomHasBeenSet() const { return m_headroomHasBeenSet; }
-
-    /**
-     * <p> The headroom threshold value in percentage used for the specified metric
-     * parameter. </p>
-     */
     inline void SetHeadroom(const CustomizableMetricHeadroom& value) { m_headroomHasBeenSet = true; m_headroom = value; }
-
-    /**
-     * <p> The headroom threshold value in percentage used for the specified metric
-     * parameter. </p>
-     */
     inline void SetHeadroom(CustomizableMetricHeadroom&& value) { m_headroomHasBeenSet = true; m_headroom = std::move(value); }
-
-    /**
-     * <p> The headroom threshold value in percentage used for the specified metric
-     * parameter. </p>
-     */
     inline CustomizableMetricParameters& WithHeadroom(const CustomizableMetricHeadroom& value) { SetHeadroom(value); return *this;}
-
-    /**
-     * <p> The headroom threshold value in percentage used for the specified metric
-     * parameter. </p>
-     */
     inline CustomizableMetricParameters& WithHeadroom(CustomizableMetricHeadroom&& value) { SetHeadroom(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CustomizableMetricThreshold m_threshold;

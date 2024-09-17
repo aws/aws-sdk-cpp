@@ -30,15 +30,8 @@ DomainEndpointOptions::DomainEndpointOptions() :
 {
 }
 
-DomainEndpointOptions::DomainEndpointOptions(JsonView jsonValue) : 
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_tLSSecurityPolicy(TLSSecurityPolicy::NOT_SET),
-    m_tLSSecurityPolicyHasBeenSet(false),
-    m_customEndpointEnabled(false),
-    m_customEndpointEnabledHasBeenSet(false),
-    m_customEndpointHasBeenSet(false),
-    m_customEndpointCertificateArnHasBeenSet(false)
+DomainEndpointOptions::DomainEndpointOptions(JsonView jsonValue)
+  : DomainEndpointOptions()
 {
   *this = jsonValue;
 }

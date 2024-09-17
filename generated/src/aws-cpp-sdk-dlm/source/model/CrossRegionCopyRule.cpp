@@ -31,16 +31,8 @@ CrossRegionCopyRule::CrossRegionCopyRule() :
 {
 }
 
-CrossRegionCopyRule::CrossRegionCopyRule(JsonView jsonValue) : 
-    m_targetRegionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_cmkArnHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_retainRuleHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false)
+CrossRegionCopyRule::CrossRegionCopyRule(JsonView jsonValue)
+  : CrossRegionCopyRule()
 {
   *this = jsonValue;
 }

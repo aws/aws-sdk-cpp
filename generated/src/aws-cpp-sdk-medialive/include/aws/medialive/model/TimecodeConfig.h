@@ -37,6 +37,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Identifies the source for the timecode that will be associated with the events
      * outputs.
@@ -49,73 +50,14 @@ namespace Model
      * will be 00:00:00:00.
      */
     inline const TimecodeConfigSource& GetSource() const{ return m_source; }
-
-    /**
-     * Identifies the source for the timecode that will be associated with the events
-     * outputs.
--Embedded (embedded): Initialize the output timecode with timecode from
-     * the the source.  If no embedded timecode is detected in the source, the system
-     * falls back to using "Start at 0" (zerobased).
--System Clock (systemclock): Use
-     * the UTC time.
--Start at 0 (zerobased): The time of the first frame of the event
-     * will be 00:00:00:00.
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * Identifies the source for the timecode that will be associated with the events
-     * outputs.
--Embedded (embedded): Initialize the output timecode with timecode from
-     * the the source.  If no embedded timecode is detected in the source, the system
-     * falls back to using "Start at 0" (zerobased).
--System Clock (systemclock): Use
-     * the UTC time.
--Start at 0 (zerobased): The time of the first frame of the event
-     * will be 00:00:00:00.
-     */
     inline void SetSource(const TimecodeConfigSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * Identifies the source for the timecode that will be associated with the events
-     * outputs.
--Embedded (embedded): Initialize the output timecode with timecode from
-     * the the source.  If no embedded timecode is detected in the source, the system
-     * falls back to using "Start at 0" (zerobased).
--System Clock (systemclock): Use
-     * the UTC time.
--Start at 0 (zerobased): The time of the first frame of the event
-     * will be 00:00:00:00.
-     */
     inline void SetSource(TimecodeConfigSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * Identifies the source for the timecode that will be associated with the events
-     * outputs.
--Embedded (embedded): Initialize the output timecode with timecode from
-     * the the source.  If no embedded timecode is detected in the source, the system
-     * falls back to using "Start at 0" (zerobased).
--System Clock (systemclock): Use
-     * the UTC time.
--Start at 0 (zerobased): The time of the first frame of the event
-     * will be 00:00:00:00.
-     */
     inline TimecodeConfig& WithSource(const TimecodeConfigSource& value) { SetSource(value); return *this;}
-
-    /**
-     * Identifies the source for the timecode that will be associated with the events
-     * outputs.
--Embedded (embedded): Initialize the output timecode with timecode from
-     * the the source.  If no embedded timecode is detected in the source, the system
-     * falls back to using "Start at 0" (zerobased).
--System Clock (systemclock): Use
-     * the UTC time.
--Start at 0 (zerobased): The time of the first frame of the event
-     * will be 00:00:00:00.
-     */
     inline TimecodeConfig& WithSource(TimecodeConfigSource&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Threshold in frames beyond which output timecode is resynchronized to the input
      * timecode. Discrepancies below this threshold are permitted to avoid unnecessary
@@ -123,31 +65,10 @@ namespace Model
      * specified.
      */
     inline int GetSyncThreshold() const{ return m_syncThreshold; }
-
-    /**
-     * Threshold in frames beyond which output timecode is resynchronized to the input
-     * timecode. Discrepancies below this threshold are permitted to avoid unnecessary
-     * discontinuities in the output timecode. No timecode sync when this is not
-     * specified.
-     */
     inline bool SyncThresholdHasBeenSet() const { return m_syncThresholdHasBeenSet; }
-
-    /**
-     * Threshold in frames beyond which output timecode is resynchronized to the input
-     * timecode. Discrepancies below this threshold are permitted to avoid unnecessary
-     * discontinuities in the output timecode. No timecode sync when this is not
-     * specified.
-     */
     inline void SetSyncThreshold(int value) { m_syncThresholdHasBeenSet = true; m_syncThreshold = value; }
-
-    /**
-     * Threshold in frames beyond which output timecode is resynchronized to the input
-     * timecode. Discrepancies below this threshold are permitted to avoid unnecessary
-     * discontinuities in the output timecode. No timecode sync when this is not
-     * specified.
-     */
     inline TimecodeConfig& WithSyncThreshold(int value) { SetSyncThreshold(value); return *this;}
-
+    ///@}
   private:
 
     TimecodeConfigSource m_source;

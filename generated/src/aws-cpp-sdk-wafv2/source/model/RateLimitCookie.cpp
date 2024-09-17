@@ -24,9 +24,8 @@ RateLimitCookie::RateLimitCookie() :
 {
 }
 
-RateLimitCookie::RateLimitCookie(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+RateLimitCookie::RateLimitCookie(JsonView jsonValue)
+  : RateLimitCookie()
 {
   *this = jsonValue;
 }

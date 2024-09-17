@@ -22,8 +22,8 @@ ImportFirewallDomainsResult::ImportFirewallDomainsResult() :
 {
 }
 
-ImportFirewallDomainsResult::ImportFirewallDomainsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(FirewallDomainListStatus::NOT_SET)
+ImportFirewallDomainsResult::ImportFirewallDomainsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ImportFirewallDomainsResult()
 {
   *this = result;
 }

@@ -33,53 +33,27 @@ namespace Model
     AWS_EKS_API UpdateClusterVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full description of the specified update</p>
      */
     inline const Update& GetUpdate() const{ return m_update; }
-
-    /**
-     * <p>The full description of the specified update</p>
-     */
     inline void SetUpdate(const Update& value) { m_update = value; }
-
-    /**
-     * <p>The full description of the specified update</p>
-     */
     inline void SetUpdate(Update&& value) { m_update = std::move(value); }
-
-    /**
-     * <p>The full description of the specified update</p>
-     */
     inline UpdateClusterVersionResult& WithUpdate(const Update& value) { SetUpdate(value); return *this;}
-
-    /**
-     * <p>The full description of the specified update</p>
-     */
     inline UpdateClusterVersionResult& WithUpdate(Update&& value) { SetUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateClusterVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateClusterVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateClusterVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Update m_update;

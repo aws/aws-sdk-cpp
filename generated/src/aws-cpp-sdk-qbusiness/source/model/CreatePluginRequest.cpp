@@ -14,14 +14,15 @@ using namespace Aws::Utils;
 
 CreatePluginRequest::CreatePluginRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_authConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
     m_displayNameHasBeenSet(false),
-    m_serverUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_type(PluginType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_authConfigurationHasBeenSet(false),
+    m_serverUrlHasBeenSet(false),
+    m_customPluginConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -29,27 +30,32 @@ Aws::String CreatePluginRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authConfigurationHasBeenSet)
-  {
-   payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
 
   }
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", PluginTypeMapper::GetNameForPluginType(m_type));
+  }
+
+  if(m_authConfigurationHasBeenSet)
+  {
+   payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
+
+  }
+
   if(m_serverUrlHasBeenSet)
   {
    payload.WithString("serverUrl", m_serverUrl);
+
+  }
+
+  if(m_customPluginConfigurationHasBeenSet)
+  {
+   payload.WithObject("customPluginConfiguration", m_customPluginConfiguration.Jsonize());
 
   }
 
@@ -64,9 +70,10 @@ Aws::String CreatePluginRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("type", PluginTypeMapper::GetNameForPluginType(m_type));
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

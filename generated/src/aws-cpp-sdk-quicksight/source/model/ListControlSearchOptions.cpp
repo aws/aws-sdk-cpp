@@ -24,9 +24,8 @@ ListControlSearchOptions::ListControlSearchOptions() :
 {
 }
 
-ListControlSearchOptions::ListControlSearchOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+ListControlSearchOptions::ListControlSearchOptions(JsonView jsonValue)
+  : ListControlSearchOptions()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ NamespaceError::NamespaceError() :
 {
 }
 
-NamespaceError::NamespaceError(JsonView jsonValue) : 
-    m_type(NamespaceErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+NamespaceError::NamespaceError(JsonView jsonValue)
+  : NamespaceError()
 {
   *this = jsonValue;
 }

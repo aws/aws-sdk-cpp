@@ -24,9 +24,8 @@ ScriptBootstrapActionConfig::ScriptBootstrapActionConfig() :
 {
 }
 
-ScriptBootstrapActionConfig::ScriptBootstrapActionConfig(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_argsHasBeenSet(false)
+ScriptBootstrapActionConfig::ScriptBootstrapActionConfig(JsonView jsonValue)
+  : ScriptBootstrapActionConfig()
 {
   *this = jsonValue;
 }

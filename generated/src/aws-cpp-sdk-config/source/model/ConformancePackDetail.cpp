@@ -31,16 +31,8 @@ ConformancePackDetail::ConformancePackDetail() :
 {
 }
 
-ConformancePackDetail::ConformancePackDetail(JsonView jsonValue) : 
-    m_conformancePackNameHasBeenSet(false),
-    m_conformancePackArnHasBeenSet(false),
-    m_conformancePackIdHasBeenSet(false),
-    m_deliveryS3BucketHasBeenSet(false),
-    m_deliveryS3KeyPrefixHasBeenSet(false),
-    m_conformancePackInputParametersHasBeenSet(false),
-    m_lastUpdateRequestedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_templateSSMDocumentDetailsHasBeenSet(false)
+ConformancePackDetail::ConformancePackDetail(JsonView jsonValue)
+  : ConformancePackDetail()
 {
   *this = jsonValue;
 }

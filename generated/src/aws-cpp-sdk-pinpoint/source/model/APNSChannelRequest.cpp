@@ -31,16 +31,8 @@ APNSChannelRequest::APNSChannelRequest() :
 {
 }
 
-APNSChannelRequest::APNSChannelRequest(JsonView jsonValue) : 
-    m_bundleIdHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_defaultAuthenticationMethodHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_tokenKeyHasBeenSet(false),
-    m_tokenKeyIdHasBeenSet(false)
+APNSChannelRequest::APNSChannelRequest(JsonView jsonValue)
+  : APNSChannelRequest()
 {
   *this = jsonValue;
 }

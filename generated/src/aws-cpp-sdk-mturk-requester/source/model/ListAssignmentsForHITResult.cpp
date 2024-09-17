@@ -22,8 +22,8 @@ ListAssignmentsForHITResult::ListAssignmentsForHITResult() :
 {
 }
 
-ListAssignmentsForHITResult::ListAssignmentsForHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numResults(0)
+ListAssignmentsForHITResult::ListAssignmentsForHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListAssignmentsForHITResult()
 {
   *this = result;
 }

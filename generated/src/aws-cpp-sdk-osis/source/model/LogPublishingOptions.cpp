@@ -25,10 +25,8 @@ LogPublishingOptions::LogPublishingOptions() :
 {
 }
 
-LogPublishingOptions::LogPublishingOptions(JsonView jsonValue) : 
-    m_isLoggingEnabled(false),
-    m_isLoggingEnabledHasBeenSet(false),
-    m_cloudWatchLogDestinationHasBeenSet(false)
+LogPublishingOptions::LogPublishingOptions(JsonView jsonValue)
+  : LogPublishingOptions()
 {
   *this = jsonValue;
 }

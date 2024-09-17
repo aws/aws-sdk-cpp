@@ -23,8 +23,8 @@ UpdateAttributesRequest::UpdateAttributesRequest() :
 {
 }
 
-UpdateAttributesRequest::UpdateAttributesRequest(JsonView jsonValue) : 
-    m_blacklistHasBeenSet(false)
+UpdateAttributesRequest::UpdateAttributesRequest(JsonView jsonValue)
+  : UpdateAttributesRequest()
 {
   *this = jsonValue;
 }

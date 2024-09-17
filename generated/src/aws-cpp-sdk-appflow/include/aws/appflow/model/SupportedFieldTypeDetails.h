@@ -39,42 +39,18 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The initial supported version for <code>fieldType</code>. If this is later
      * changed to a different version, v2 will be introduced. </p>
      */
     inline const FieldTypeDetails& GetV1() const{ return m_v1; }
-
-    /**
-     * <p> The initial supported version for <code>fieldType</code>. If this is later
-     * changed to a different version, v2 will be introduced. </p>
-     */
     inline bool V1HasBeenSet() const { return m_v1HasBeenSet; }
-
-    /**
-     * <p> The initial supported version for <code>fieldType</code>. If this is later
-     * changed to a different version, v2 will be introduced. </p>
-     */
     inline void SetV1(const FieldTypeDetails& value) { m_v1HasBeenSet = true; m_v1 = value; }
-
-    /**
-     * <p> The initial supported version for <code>fieldType</code>. If this is later
-     * changed to a different version, v2 will be introduced. </p>
-     */
     inline void SetV1(FieldTypeDetails&& value) { m_v1HasBeenSet = true; m_v1 = std::move(value); }
-
-    /**
-     * <p> The initial supported version for <code>fieldType</code>. If this is later
-     * changed to a different version, v2 will be introduced. </p>
-     */
     inline SupportedFieldTypeDetails& WithV1(const FieldTypeDetails& value) { SetV1(value); return *this;}
-
-    /**
-     * <p> The initial supported version for <code>fieldType</code>. If this is later
-     * changed to a different version, v2 will be introduced. </p>
-     */
     inline SupportedFieldTypeDetails& WithV1(FieldTypeDetails&& value) { SetV1(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FieldTypeDetails m_v1;

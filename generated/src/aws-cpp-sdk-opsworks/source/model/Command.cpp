@@ -33,18 +33,8 @@ Command::Command() :
 {
 }
 
-Command::Command(JsonView jsonValue) : 
-    m_commandIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_acknowledgedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_logUrlHasBeenSet(false),
-    m_typeHasBeenSet(false)
+Command::Command(JsonView jsonValue)
+  : Command()
 {
   *this = jsonValue;
 }

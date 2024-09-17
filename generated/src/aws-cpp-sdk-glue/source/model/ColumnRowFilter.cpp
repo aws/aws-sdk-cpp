@@ -24,9 +24,8 @@ ColumnRowFilter::ColumnRowFilter() :
 {
 }
 
-ColumnRowFilter::ColumnRowFilter(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_rowFilterExpressionHasBeenSet(false)
+ColumnRowFilter::ColumnRowFilter(JsonView jsonValue)
+  : ColumnRowFilter()
 {
   *this = jsonValue;
 }

@@ -51,36 +51,8 @@ DevEndpoint::DevEndpoint() :
 {
 }
 
-DevEndpoint::DevEndpoint(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_yarnEndpointAddressHasBeenSet(false),
-    m_privateAddressHasBeenSet(false),
-    m_zeppelinRemoteSparkInterpreterPort(0),
-    m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
-    m_publicAddressHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_extraPythonLibsS3PathHasBeenSet(false),
-    m_extraJarsS3PathHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_lastUpdateStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_publicKeysHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
+DevEndpoint::DevEndpoint(JsonView jsonValue)
+  : DevEndpoint()
 {
   *this = jsonValue;
 }

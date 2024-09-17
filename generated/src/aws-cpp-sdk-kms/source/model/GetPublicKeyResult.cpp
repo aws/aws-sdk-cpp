@@ -24,9 +24,8 @@ GetPublicKeyResult::GetPublicKeyResult() :
 {
 }
 
-GetPublicKeyResult::GetPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_keySpec(KeySpec::NOT_SET),
-    m_keyUsage(KeyUsageType::NOT_SET)
+GetPublicKeyResult::GetPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPublicKeyResult()
 {
   *this = result;
 }
@@ -72,6 +71,15 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
     for(unsigned signingAlgorithmsIndex = 0; signingAlgorithmsIndex < signingAlgorithmsJsonList.GetLength(); ++signingAlgorithmsIndex)
     {
       m_signingAlgorithms.push_back(SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString()));
+    }
+  }
+
+  if(jsonValue.ValueExists("KeyAgreementAlgorithms"))
+  {
+    Aws::Utils::Array<JsonView> keyAgreementAlgorithmsJsonList = jsonValue.GetArray("KeyAgreementAlgorithms");
+    for(unsigned keyAgreementAlgorithmsIndex = 0; keyAgreementAlgorithmsIndex < keyAgreementAlgorithmsJsonList.GetLength(); ++keyAgreementAlgorithmsIndex)
+    {
+      m_keyAgreementAlgorithms.push_back(KeyAgreementAlgorithmSpecMapper::GetKeyAgreementAlgorithmSpecForName(keyAgreementAlgorithmsJsonList[keyAgreementAlgorithmsIndex].AsString()));
     }
   }
 

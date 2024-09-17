@@ -39,6 +39,7 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
      * resource record set that has the specified values.</p> </li> <li> <p>
@@ -55,123 +56,24 @@ namespace Model
      * with the values in the request.</p> </li> </ul>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-     * resource record set that has the specified values.</p> </li> <li> <p>
-     * <code>DELETE</code>: Deletes a existing resource record set.</p> 
-     * <p>To delete the resource record set that is associated with a traffic policy
-     * instance, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>.
-     * Amazon Route 53 will delete the resource record set automatically. If you delete
-     * the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to
-     * be charged for it even though it's no longer in use. </p>  </li>
-     * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
-     * Route 53 creates it. If a resource record set does exist, Route 53 updates it
-     * with the values in the request.</p> </li> </ul>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-     * resource record set that has the specified values.</p> </li> <li> <p>
-     * <code>DELETE</code>: Deletes a existing resource record set.</p> 
-     * <p>To delete the resource record set that is associated with a traffic policy
-     * instance, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>.
-     * Amazon Route 53 will delete the resource record set automatically. If you delete
-     * the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to
-     * be charged for it even though it's no longer in use. </p>  </li>
-     * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
-     * Route 53 creates it. If a resource record set does exist, Route 53 updates it
-     * with the values in the request.</p> </li> </ul>
-     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-     * resource record set that has the specified values.</p> </li> <li> <p>
-     * <code>DELETE</code>: Deletes a existing resource record set.</p> 
-     * <p>To delete the resource record set that is associated with a traffic policy
-     * instance, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>.
-     * Amazon Route 53 will delete the resource record set automatically. If you delete
-     * the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to
-     * be charged for it even though it's no longer in use. </p>  </li>
-     * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
-     * Route 53 creates it. If a resource record set does exist, Route 53 updates it
-     * with the values in the request.</p> </li> </ul>
-     */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-     * resource record set that has the specified values.</p> </li> <li> <p>
-     * <code>DELETE</code>: Deletes a existing resource record set.</p> 
-     * <p>To delete the resource record set that is associated with a traffic policy
-     * instance, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>.
-     * Amazon Route 53 will delete the resource record set automatically. If you delete
-     * the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to
-     * be charged for it even though it's no longer in use. </p>  </li>
-     * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
-     * Route 53 creates it. If a resource record set does exist, Route 53 updates it
-     * with the values in the request.</p> </li> </ul>
-     */
     inline Change& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-     * resource record set that has the specified values.</p> </li> <li> <p>
-     * <code>DELETE</code>: Deletes a existing resource record set.</p> 
-     * <p>To delete the resource record set that is associated with a traffic policy
-     * instance, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>.
-     * Amazon Route 53 will delete the resource record set automatically. If you delete
-     * the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to
-     * be charged for it even though it's no longer in use. </p>  </li>
-     * <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist,
-     * Route 53 creates it. If a resource record set does exist, Route 53 updates it
-     * with the values in the request.</p> </li> </ul>
-     */
     inline Change& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the resource record set to create, delete, or update.</p>
      */
     inline const ResourceRecordSet& GetResourceRecordSet() const{ return m_resourceRecordSet; }
-
-    /**
-     * <p>Information about the resource record set to create, delete, or update.</p>
-     */
     inline bool ResourceRecordSetHasBeenSet() const { return m_resourceRecordSetHasBeenSet; }
-
-    /**
-     * <p>Information about the resource record set to create, delete, or update.</p>
-     */
     inline void SetResourceRecordSet(const ResourceRecordSet& value) { m_resourceRecordSetHasBeenSet = true; m_resourceRecordSet = value; }
-
-    /**
-     * <p>Information about the resource record set to create, delete, or update.</p>
-     */
     inline void SetResourceRecordSet(ResourceRecordSet&& value) { m_resourceRecordSetHasBeenSet = true; m_resourceRecordSet = std::move(value); }
-
-    /**
-     * <p>Information about the resource record set to create, delete, or update.</p>
-     */
     inline Change& WithResourceRecordSet(const ResourceRecordSet& value) { SetResourceRecordSet(value); return *this;}
-
-    /**
-     * <p>Information about the resource record set to create, delete, or update.</p>
-     */
     inline Change& WithResourceRecordSet(ResourceRecordSet&& value) { SetResourceRecordSet(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChangeAction m_action;

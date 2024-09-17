@@ -31,16 +31,8 @@ DetectedProperties::DetectedProperties() :
 {
 }
 
-DetectedProperties::DetectedProperties(JsonView jsonValue) : 
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false)
+DetectedProperties::DetectedProperties(JsonView jsonValue)
+  : DetectedProperties()
 {
   *this = jsonValue;
 }

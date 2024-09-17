@@ -29,14 +29,8 @@ EndpointOutputConfiguration::EndpointOutputConfiguration() :
 {
 }
 
-EndpointOutputConfiguration::EndpointOutputConfiguration(JsonView jsonValue) : 
-    m_endpointNameHasBeenSet(false),
-    m_variantNameHasBeenSet(false),
-    m_instanceType(ProductionVariantInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_initialInstanceCount(0),
-    m_initialInstanceCountHasBeenSet(false),
-    m_serverlessConfigHasBeenSet(false)
+EndpointOutputConfiguration::EndpointOutputConfiguration(JsonView jsonValue)
+  : EndpointOutputConfiguration()
 {
   *this = jsonValue;
 }

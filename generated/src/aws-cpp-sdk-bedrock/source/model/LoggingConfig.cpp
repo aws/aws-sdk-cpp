@@ -30,15 +30,8 @@ LoggingConfig::LoggingConfig() :
 {
 }
 
-LoggingConfig::LoggingConfig(JsonView jsonValue) : 
-    m_cloudWatchConfigHasBeenSet(false),
-    m_s3ConfigHasBeenSet(false),
-    m_textDataDeliveryEnabled(false),
-    m_textDataDeliveryEnabledHasBeenSet(false),
-    m_imageDataDeliveryEnabled(false),
-    m_imageDataDeliveryEnabledHasBeenSet(false),
-    m_embeddingDataDeliveryEnabled(false),
-    m_embeddingDataDeliveryEnabledHasBeenSet(false)
+LoggingConfig::LoggingConfig(JsonView jsonValue)
+  : LoggingConfig()
 {
   *this = jsonValue;
 }

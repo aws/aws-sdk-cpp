@@ -25,10 +25,8 @@ BatchGetCommitsError::BatchGetCommitsError() :
 {
 }
 
-BatchGetCommitsError::BatchGetCommitsError(JsonView jsonValue) : 
-    m_commitIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchGetCommitsError::BatchGetCommitsError(JsonView jsonValue)
+  : BatchGetCommitsError()
 {
   *this = jsonValue;
 }

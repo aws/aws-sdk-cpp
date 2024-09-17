@@ -39,22 +39,8 @@ ManagedPolicyDetail::ManagedPolicyDetail() :
 {
 }
 
-ManagedPolicyDetail::ManagedPolicyDetail(const XmlNode& xmlNode) : 
-    m_policyNameHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_defaultVersionIdHasBeenSet(false),
-    m_attachmentCount(0),
-    m_attachmentCountHasBeenSet(false),
-    m_permissionsBoundaryUsageCount(0),
-    m_permissionsBoundaryUsageCountHasBeenSet(false),
-    m_isAttachable(false),
-    m_isAttachableHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_policyVersionListHasBeenSet(false)
+ManagedPolicyDetail::ManagedPolicyDetail(const XmlNode& xmlNode)
+  : ManagedPolicyDetail()
 {
   *this = xmlNode;
 }

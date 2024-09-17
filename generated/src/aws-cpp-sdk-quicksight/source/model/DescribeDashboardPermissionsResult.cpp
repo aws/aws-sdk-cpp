@@ -22,8 +22,8 @@ DescribeDashboardPermissionsResult::DescribeDashboardPermissionsResult() :
 {
 }
 
-DescribeDashboardPermissionsResult::DescribeDashboardPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeDashboardPermissionsResult::DescribeDashboardPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDashboardPermissionsResult()
 {
   *this = result;
 }

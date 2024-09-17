@@ -24,9 +24,8 @@ UpdateCustomLineItemPercentageChargeDetails::UpdateCustomLineItemPercentageCharg
 {
 }
 
-UpdateCustomLineItemPercentageChargeDetails::UpdateCustomLineItemPercentageChargeDetails(JsonView jsonValue) : 
-    m_percentageValue(0.0),
-    m_percentageValueHasBeenSet(false)
+UpdateCustomLineItemPercentageChargeDetails::UpdateCustomLineItemPercentageChargeDetails(JsonView jsonValue)
+  : UpdateCustomLineItemPercentageChargeDetails()
 {
   *this = jsonValue;
 }

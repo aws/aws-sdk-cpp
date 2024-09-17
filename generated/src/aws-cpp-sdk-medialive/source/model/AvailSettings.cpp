@@ -25,10 +25,8 @@ AvailSettings::AvailSettings() :
 {
 }
 
-AvailSettings::AvailSettings(JsonView jsonValue) : 
-    m_esamHasBeenSet(false),
-    m_scte35SpliceInsertHasBeenSet(false),
-    m_scte35TimeSignalAposHasBeenSet(false)
+AvailSettings::AvailSettings(JsonView jsonValue)
+  : AvailSettings()
 {
   *this = jsonValue;
 }

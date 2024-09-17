@@ -23,8 +23,8 @@ PackageVersionInputConfig::PackageVersionInputConfig() :
 {
 }
 
-PackageVersionInputConfig::PackageVersionInputConfig(JsonView jsonValue) : 
-    m_s3LocationHasBeenSet(false)
+PackageVersionInputConfig::PackageVersionInputConfig(JsonView jsonValue)
+  : PackageVersionInputConfig()
 {
   *this = jsonValue;
 }

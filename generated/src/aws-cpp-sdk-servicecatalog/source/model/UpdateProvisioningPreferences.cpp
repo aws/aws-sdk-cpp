@@ -34,19 +34,8 @@ UpdateProvisioningPreferences::UpdateProvisioningPreferences() :
 {
 }
 
-UpdateProvisioningPreferences::UpdateProvisioningPreferences(JsonView jsonValue) : 
-    m_stackSetAccountsHasBeenSet(false),
-    m_stackSetRegionsHasBeenSet(false),
-    m_stackSetFailureToleranceCount(0),
-    m_stackSetFailureToleranceCountHasBeenSet(false),
-    m_stackSetFailureTolerancePercentage(0),
-    m_stackSetFailureTolerancePercentageHasBeenSet(false),
-    m_stackSetMaxConcurrencyCount(0),
-    m_stackSetMaxConcurrencyCountHasBeenSet(false),
-    m_stackSetMaxConcurrencyPercentage(0),
-    m_stackSetMaxConcurrencyPercentageHasBeenSet(false),
-    m_stackSetOperationType(StackSetOperationType::NOT_SET),
-    m_stackSetOperationTypeHasBeenSet(false)
+UpdateProvisioningPreferences::UpdateProvisioningPreferences(JsonView jsonValue)
+  : UpdateProvisioningPreferences()
 {
   *this = jsonValue;
 }

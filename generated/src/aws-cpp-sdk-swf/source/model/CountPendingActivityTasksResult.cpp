@@ -23,9 +23,8 @@ CountPendingActivityTasksResult::CountPendingActivityTasksResult() :
 {
 }
 
-CountPendingActivityTasksResult::CountPendingActivityTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0),
-    m_truncated(false)
+CountPendingActivityTasksResult::CountPendingActivityTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CountPendingActivityTasksResult()
 {
   *this = result;
 }

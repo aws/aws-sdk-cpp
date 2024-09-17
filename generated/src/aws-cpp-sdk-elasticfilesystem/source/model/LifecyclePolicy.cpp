@@ -28,13 +28,8 @@ LifecyclePolicy::LifecyclePolicy() :
 {
 }
 
-LifecyclePolicy::LifecyclePolicy(JsonView jsonValue) : 
-    m_transitionToIA(TransitionToIARules::NOT_SET),
-    m_transitionToIAHasBeenSet(false),
-    m_transitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules::NOT_SET),
-    m_transitionToPrimaryStorageClassHasBeenSet(false),
-    m_transitionToArchive(TransitionToArchiveRules::NOT_SET),
-    m_transitionToArchiveHasBeenSet(false)
+LifecyclePolicy::LifecyclePolicy(JsonView jsonValue)
+  : LifecyclePolicy()
 {
   *this = jsonValue;
 }

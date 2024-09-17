@@ -28,13 +28,8 @@ MlResourceDefinition::MlResourceDefinition() :
 {
 }
 
-MlResourceDefinition::MlResourceDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_cloudwatchLogUrlHasBeenSet(false)
+MlResourceDefinition::MlResourceDefinition(JsonView jsonValue)
+  : MlResourceDefinition()
 {
   *this = jsonValue;
 }

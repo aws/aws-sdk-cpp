@@ -23,8 +23,8 @@ ChallengeAction::ChallengeAction() :
 {
 }
 
-ChallengeAction::ChallengeAction(JsonView jsonValue) : 
-    m_customRequestHandlingHasBeenSet(false)
+ChallengeAction::ChallengeAction(JsonView jsonValue)
+  : ChallengeAction()
 {
   *this = jsonValue;
 }

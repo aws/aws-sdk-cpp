@@ -40,140 +40,48 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The comparison operator that you want to use as a filter, for example
      * <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is
      * <code>StartsWith</code>.</p>
      */
     inline const GroupFilterOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The comparison operator that you want to use as a filter, for example
-     * <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is
-     * <code>StartsWith</code>.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The comparison operator that you want to use as a filter, for example
-     * <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is
-     * <code>StartsWith</code>.</p>
-     */
     inline void SetOperator(const GroupFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The comparison operator that you want to use as a filter, for example
-     * <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is
-     * <code>StartsWith</code>.</p>
-     */
     inline void SetOperator(GroupFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The comparison operator that you want to use as a filter, for example
-     * <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is
-     * <code>StartsWith</code>.</p>
-     */
     inline GroupSearchFilter& WithOperator(const GroupFilterOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The comparison operator that you want to use as a filter, for example
-     * <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is
-     * <code>StartsWith</code>.</p>
-     */
     inline GroupSearchFilter& WithOperator(GroupFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the value that you want to use as a filter, for example
      * <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is
      * <code>GROUP_NAME</code>.</p>
      */
     inline const GroupFilterAttribute& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the value that you want to use as a filter, for example
-     * <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is
-     * <code>GROUP_NAME</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the value that you want to use as a filter, for example
-     * <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is
-     * <code>GROUP_NAME</code>.</p>
-     */
     inline void SetName(const GroupFilterAttribute& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the value that you want to use as a filter, for example
-     * <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is
-     * <code>GROUP_NAME</code>.</p>
-     */
     inline void SetName(GroupFilterAttribute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the value that you want to use as a filter, for example
-     * <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is
-     * <code>GROUP_NAME</code>.</p>
-     */
     inline GroupSearchFilter& WithName(const GroupFilterAttribute& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the value that you want to use as a filter, for example
-     * <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is
-     * <code>GROUP_NAME</code>.</p>
-     */
     inline GroupSearchFilter& WithName(GroupFilterAttribute&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
      * want to use as a filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
-     * want to use as a filter.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
-     * want to use as a filter.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
-     * want to use as a filter.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
-     * want to use as a filter.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
-     * want to use as a filter.</p>
-     */
     inline GroupSearchFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
-     * want to use as a filter.</p>
-     */
     inline GroupSearchFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
-     * want to use as a filter.</p>
-     */
     inline GroupSearchFilter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     GroupFilterOperator m_operator;

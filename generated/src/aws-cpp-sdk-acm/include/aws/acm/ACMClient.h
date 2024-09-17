@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/ACMServiceClientModel.h>
-#include <aws/acm/model/GetAccountConfigurationRequest.h>
 
 namespace Aws
 {
@@ -241,10 +240,12 @@ namespace ACM
         }
 
         /**
-         * <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain
-         * consists of the certificate of the issuing CA and the intermediate certificates
-         * of any other subordinate CAs. All of the certificates are base64 encoded. You
-         * can use <a
+         * <p>Retrieves a certificate and its certificate chain. The certificate may be
+         * either a public or private certificate issued using the ACM
+         * <code>RequestCertificate</code> action, or a certificate imported into ACM using
+         * the <code>ImportCertificate</code> action. The chain consists of the certificate
+         * of the issuing CA and the intermediate certificates of any other subordinate
+         * CAs. All of the certificates are base64 encoded. You can use <a
          * href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to
          * decode the certificates and inspect individual fields.</p><p><h3>See Also:</h3> 
          * <a
@@ -289,10 +290,7 @@ namespace ACM
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
          * that is protected by a password or a passphrase.</p> </li> <li> <p>The private
-         * key must be no larger than 5 KB (5,120 bytes).</p> </li> <li> <p>If the
-         * certificate you are importing is not self-signed, you must enter its certificate
-         * chain.</p> </li> <li> <p>If a certificate chain is included, the issuer must be
-         * the subject of one of the certificates in the chain.</p> </li> <li> <p>The
+         * key must be no larger than 5 KB (5,120 bytes).</p> </li> <li> <p>The
          * certificate, private key, and certificate chain must be PEM-encoded.</p> </li>
          * <li> <p>The current time must be between the <code>Not Before</code> and
          * <code>Not After</code> certificate fields.</p> </li> <li> <p>The
@@ -340,21 +338,24 @@ namespace ACM
         }
 
         /**
-         * <p>Retrieves a list of certificate ARNs and domain names. You can request that
-         * only certificates that match a specific status be listed. You can also filter by
-         * specific attributes of the certificate. Default filtering returns only
-         * <code>RSA_2048</code> certificates. For more information, see
-         * <a>Filters</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of certificate ARNs and domain names. By default, the API
+         * returns RSA_2048 certificates. To return all certificates in the account,
+         * include the <code>keyType</code> filter with the values <code>[RSA_1024,
+         * RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1,
+         * EC_secp521r1]</code>.</p> <p>In addition to <code>keyType</code>, you can also
+         * filter by the <code>CertificateStatuses</code>, <code>keyUsage</code>, and
+         * <code>extendedKeyUsage</code> attributes on the certificate. For more
+         * information, see <a>Filters</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
+        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request) const
+        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&ACMClient::ListCertificates, request);
         }
@@ -363,7 +364,7 @@ namespace ACM
          * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        void ListCertificatesAsync(const ListCertificatesRequestT& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCertificatesAsync(const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&ACMClient::ListCertificates, request, handler, context);
         }
@@ -608,7 +609,6 @@ namespace ACM
       void init(const ACMClientConfiguration& clientConfiguration);
 
       ACMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ACMEndpointProviderBase> m_endpointProvider;
   };
 

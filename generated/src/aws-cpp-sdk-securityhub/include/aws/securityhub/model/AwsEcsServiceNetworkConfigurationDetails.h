@@ -38,36 +38,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The VPC subnet and security group configuration.</p>
      */
     inline const AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& GetAwsVpcConfiguration() const{ return m_awsVpcConfiguration; }
-
-    /**
-     * <p>The VPC subnet and security group configuration.</p>
-     */
     inline bool AwsVpcConfigurationHasBeenSet() const { return m_awsVpcConfigurationHasBeenSet; }
-
-    /**
-     * <p>The VPC subnet and security group configuration.</p>
-     */
     inline void SetAwsVpcConfiguration(const AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& value) { m_awsVpcConfigurationHasBeenSet = true; m_awsVpcConfiguration = value; }
-
-    /**
-     * <p>The VPC subnet and security group configuration.</p>
-     */
     inline void SetAwsVpcConfiguration(AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails&& value) { m_awsVpcConfigurationHasBeenSet = true; m_awsVpcConfiguration = std::move(value); }
-
-    /**
-     * <p>The VPC subnet and security group configuration.</p>
-     */
     inline AwsEcsServiceNetworkConfigurationDetails& WithAwsVpcConfiguration(const AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& value) { SetAwsVpcConfiguration(value); return *this;}
-
-    /**
-     * <p>The VPC subnet and security group configuration.</p>
-     */
     inline AwsEcsServiceNetworkConfigurationDetails& WithAwsVpcConfiguration(AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails&& value) { SetAwsVpcConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails m_awsVpcConfiguration;

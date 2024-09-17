@@ -26,11 +26,8 @@ InstanceFleetStatus::InstanceFleetStatus() :
 {
 }
 
-InstanceFleetStatus::InstanceFleetStatus(JsonView jsonValue) : 
-    m_state(InstanceFleetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false)
+InstanceFleetStatus::InstanceFleetStatus(JsonView jsonValue)
+  : InstanceFleetStatus()
 {
   *this = jsonValue;
 }

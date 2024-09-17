@@ -288,7 +288,14 @@ namespace Keyspaces
          * automatically in response to application traffic. For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
          * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
-         * <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>Amazon Keyspaces Developer Guide</i>.</p>  <p>
+         * <code>GetTableAutoScalingSettings</code> can't be used as an action in an IAM
+         * policy.</p>  <p>To define permissions for
+         * <code>GetTableAutoScalingSettings</code>, you must allow the following two
+         * actions in the IAM policy statement's <code>Action</code> element:</p> <ul> <li>
+         * <p> <code>application-autoscaling:DescribeScalableTargets</code> </p> </li> <li>
+         * <p> <code>application-autoscaling:DescribeScalingPolicies</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings">AWS
          * API Reference</a></p>
          */
@@ -317,13 +324,13 @@ namespace Keyspaces
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListKeyspaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKeyspacesOutcome ListKeyspaces(const Model::ListKeyspacesRequest& request) const;
+        virtual Model::ListKeyspacesOutcome ListKeyspaces(const Model::ListKeyspacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKeyspaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKeyspacesRequestT = Model::ListKeyspacesRequest>
-        Model::ListKeyspacesOutcomeCallable ListKeyspacesCallable(const ListKeyspacesRequestT& request) const
+        Model::ListKeyspacesOutcomeCallable ListKeyspacesCallable(const ListKeyspacesRequestT& request = {}) const
         {
             return SubmitCallable(&KeyspacesClient::ListKeyspaces, request);
         }
@@ -332,7 +339,7 @@ namespace Keyspaces
          * An Async wrapper for ListKeyspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKeyspacesRequestT = Model::ListKeyspacesRequest>
-        void ListKeyspacesAsync(const ListKeyspacesRequestT& request, const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKeyspacesAsync(const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKeyspacesRequestT& request = {}) const
         {
             return SubmitAsync(&KeyspacesClient::ListKeyspaces, request, handler, context);
         }
@@ -536,7 +543,6 @@ namespace Keyspaces
       void init(const KeyspacesClientConfiguration& clientConfiguration);
 
       KeyspacesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KeyspacesEndpointProviderBase> m_endpointProvider;
   };
 

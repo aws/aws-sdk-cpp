@@ -29,14 +29,8 @@ AdapterVersionOverview::AdapterVersionOverview() :
 {
 }
 
-AdapterVersionOverview::AdapterVersionOverview(JsonView jsonValue) : 
-    m_adapterIdHasBeenSet(false),
-    m_adapterVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_featureTypesHasBeenSet(false),
-    m_status(AdapterVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+AdapterVersionOverview::AdapterVersionOverview(JsonView jsonValue)
+  : AdapterVersionOverview()
 {
   *this = jsonValue;
 }

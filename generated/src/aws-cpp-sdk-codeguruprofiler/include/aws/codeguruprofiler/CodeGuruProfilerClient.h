@@ -258,13 +258,13 @@ namespace CodeGuruProfiler
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetFindingsReportAccountSummary">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetFindingsReportAccountSummaryOutcome GetFindingsReportAccountSummary(const Model::GetFindingsReportAccountSummaryRequest& request) const;
+        virtual Model::GetFindingsReportAccountSummaryOutcome GetFindingsReportAccountSummary(const Model::GetFindingsReportAccountSummaryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetFindingsReportAccountSummary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetFindingsReportAccountSummaryRequestT = Model::GetFindingsReportAccountSummaryRequest>
-        Model::GetFindingsReportAccountSummaryOutcomeCallable GetFindingsReportAccountSummaryCallable(const GetFindingsReportAccountSummaryRequestT& request) const
+        Model::GetFindingsReportAccountSummaryOutcomeCallable GetFindingsReportAccountSummaryCallable(const GetFindingsReportAccountSummaryRequestT& request = {}) const
         {
             return SubmitCallable(&CodeGuruProfilerClient::GetFindingsReportAccountSummary, request);
         }
@@ -273,7 +273,7 @@ namespace CodeGuruProfiler
          * An Async wrapper for GetFindingsReportAccountSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetFindingsReportAccountSummaryRequestT = Model::GetFindingsReportAccountSummaryRequest>
-        void GetFindingsReportAccountSummaryAsync(const GetFindingsReportAccountSummaryRequestT& request, const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetFindingsReportAccountSummaryAsync(const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetFindingsReportAccountSummaryRequestT& request = {}) const
         {
             return SubmitAsync(&CodeGuruProfilerClient::GetFindingsReportAccountSummary, request, handler, context);
         }
@@ -487,13 +487,13 @@ namespace CodeGuruProfiler
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProfilingGroupsOutcome ListProfilingGroups(const Model::ListProfilingGroupsRequest& request) const;
+        virtual Model::ListProfilingGroupsOutcome ListProfilingGroups(const Model::ListProfilingGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProfilingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProfilingGroupsRequestT = Model::ListProfilingGroupsRequest>
-        Model::ListProfilingGroupsOutcomeCallable ListProfilingGroupsCallable(const ListProfilingGroupsRequestT& request) const
+        Model::ListProfilingGroupsOutcomeCallable ListProfilingGroupsCallable(const ListProfilingGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeGuruProfilerClient::ListProfilingGroups, request);
         }
@@ -502,7 +502,7 @@ namespace CodeGuruProfiler
          * An Async wrapper for ListProfilingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProfilingGroupsRequestT = Model::ListProfilingGroupsRequest>
-        void ListProfilingGroupsAsync(const ListProfilingGroupsRequestT& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProfilingGroupsAsync(const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProfilingGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeGuruProfilerClient::ListProfilingGroups, request, handler, context);
         }
@@ -778,7 +778,6 @@ namespace CodeGuruProfiler
       void init(const CodeGuruProfilerClientConfiguration& clientConfiguration);
 
       CodeGuruProfilerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeGuruProfilerEndpointProviderBase> m_endpointProvider;
   };
 

@@ -37,22 +37,8 @@ AwsOpenSearchServiceDomainDetails::AwsOpenSearchServiceDomainDetails() :
 {
 }
 
-AwsOpenSearchServiceDomainDetails::AwsOpenSearchServiceDomainDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_accessPoliciesHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_domainEndpointHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false),
-    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_serviceSoftwareOptionsHasBeenSet(false),
-    m_clusterConfigHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false),
-    m_vpcOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+AwsOpenSearchServiceDomainDetails::AwsOpenSearchServiceDomainDetails(JsonView jsonValue)
+  : AwsOpenSearchServiceDomainDetails()
 {
   *this = jsonValue;
 }

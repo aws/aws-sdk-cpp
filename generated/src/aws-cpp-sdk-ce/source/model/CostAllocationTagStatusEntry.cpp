@@ -25,10 +25,8 @@ CostAllocationTagStatusEntry::CostAllocationTagStatusEntry() :
 {
 }
 
-CostAllocationTagStatusEntry::CostAllocationTagStatusEntry(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_status(CostAllocationTagStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+CostAllocationTagStatusEntry::CostAllocationTagStatusEntry(JsonView jsonValue)
+  : CostAllocationTagStatusEntry()
 {
   *this = jsonValue;
 }

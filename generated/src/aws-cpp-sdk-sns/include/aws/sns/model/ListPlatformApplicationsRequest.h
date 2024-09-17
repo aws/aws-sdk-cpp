@@ -17,7 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Input for ListPlatformApplications action.</p><p><h3>See Also:</h3>   <a
+   * <p>Input for <code>ListPlatformApplications</code> action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplicationsInput">AWS
    * API Reference</a></p>
    */
@@ -39,54 +40,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is used when calling
+     * <code>ListPlatformApplications</code> action to retrieve additional records that
+     * are available after the first page results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
-     */
     inline ListPlatformApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
-     */
     inline ListPlatformApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>NextToken string is used when calling ListPlatformApplications action to
-     * retrieve additional records that are available after the first page results.</p>
-     */
     inline ListPlatformApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

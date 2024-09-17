@@ -24,9 +24,8 @@ EnvironmentTemplateFilter::EnvironmentTemplateFilter() :
 {
 }
 
-EnvironmentTemplateFilter::EnvironmentTemplateFilter(JsonView jsonValue) : 
-    m_majorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+EnvironmentTemplateFilter::EnvironmentTemplateFilter(JsonView jsonValue)
+  : EnvironmentTemplateFilter()
 {
   *this = jsonValue;
 }

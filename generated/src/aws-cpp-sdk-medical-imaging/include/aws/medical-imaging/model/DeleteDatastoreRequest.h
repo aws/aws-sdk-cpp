@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline DeleteDatastoreRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline DeleteDatastoreRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline DeleteDatastoreRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreId;

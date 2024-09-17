@@ -37,22 +37,8 @@ ExecutionListItem::ExecutionListItem() :
 {
 }
 
-ExecutionListItem::ExecutionListItem(JsonView jsonValue) : 
-    m_executionArnHasBeenSet(false),
-    m_stateMachineArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_stopDateHasBeenSet(false),
-    m_mapRunArnHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_stateMachineVersionArnHasBeenSet(false),
-    m_stateMachineAliasArnHasBeenSet(false),
-    m_redriveCount(0),
-    m_redriveCountHasBeenSet(false),
-    m_redriveDateHasBeenSet(false)
+ExecutionListItem::ExecutionListItem(JsonView jsonValue)
+  : ExecutionListItem()
 {
   *this = jsonValue;
 }

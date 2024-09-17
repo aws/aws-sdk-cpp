@@ -27,12 +27,8 @@ ScheduleAdBreak::ScheduleAdBreak() :
 {
 }
 
-ScheduleAdBreak::ScheduleAdBreak(JsonView jsonValue) : 
-    m_approximateDurationSeconds(0),
-    m_approximateDurationSecondsHasBeenSet(false),
-    m_approximateStartTimeHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
+ScheduleAdBreak::ScheduleAdBreak(JsonView jsonValue)
+  : ScheduleAdBreak()
 {
   *this = jsonValue;
 }

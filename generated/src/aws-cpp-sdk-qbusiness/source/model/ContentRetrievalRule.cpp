@@ -23,8 +23,8 @@ ContentRetrievalRule::ContentRetrievalRule() :
 {
 }
 
-ContentRetrievalRule::ContentRetrievalRule(JsonView jsonValue) : 
-    m_eligibleDataSourcesHasBeenSet(false)
+ContentRetrievalRule::ContentRetrievalRule(JsonView jsonValue)
+  : ContentRetrievalRule()
 {
   *this = jsonValue;
 }

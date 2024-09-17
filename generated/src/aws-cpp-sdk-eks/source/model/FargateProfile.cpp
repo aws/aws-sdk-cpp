@@ -28,21 +28,13 @@ FargateProfile::FargateProfile() :
     m_selectorsHasBeenSet(false),
     m_status(FargateProfileStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_healthHasBeenSet(false)
 {
 }
 
-FargateProfile::FargateProfile(JsonView jsonValue) : 
-    m_fargateProfileNameHasBeenSet(false),
-    m_fargateProfileArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_podExecutionRoleArnHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_selectorsHasBeenSet(false),
-    m_status(FargateProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+FargateProfile::FargateProfile(JsonView jsonValue)
+  : FargateProfile()
 {
   *this = jsonValue;
 }
@@ -121,6 +113,13 @@ FargateProfile& FargateProfile::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("health"))
+  {
+    m_health = jsonValue.GetObject("health");
+
+    m_healthHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +191,12 @@ JsonValue FargateProfile::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_healthHasBeenSet)
+  {
+   payload.WithObject("health", m_health.Jsonize());
 
   }
 

@@ -25,10 +25,8 @@ HoldoutActivity::HoldoutActivity() :
 {
 }
 
-HoldoutActivity::HoldoutActivity(JsonView jsonValue) : 
-    m_nextActivityHasBeenSet(false),
-    m_percentage(0),
-    m_percentageHasBeenSet(false)
+HoldoutActivity::HoldoutActivity(JsonView jsonValue)
+  : HoldoutActivity()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ StatefulEngineOptions::StatefulEngineOptions() :
 {
 }
 
-StatefulEngineOptions::StatefulEngineOptions(JsonView jsonValue) : 
-    m_ruleOrder(RuleOrder::NOT_SET),
-    m_ruleOrderHasBeenSet(false),
-    m_streamExceptionPolicy(StreamExceptionPolicy::NOT_SET),
-    m_streamExceptionPolicyHasBeenSet(false)
+StatefulEngineOptions::StatefulEngineOptions(JsonView jsonValue)
+  : StatefulEngineOptions()
 {
   *this = jsonValue;
 }

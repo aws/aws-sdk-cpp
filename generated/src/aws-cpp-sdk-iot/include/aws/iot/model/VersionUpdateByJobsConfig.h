@@ -41,83 +41,31 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the Job is enabled or not.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Indicates whether the Job is enabled or not.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the Job is enabled or not.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Indicates whether the Job is enabled or not.</p>
-     */
     inline VersionUpdateByJobsConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
      * jobs service to update the reserved named shadow when the job successfully
      * completes.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
-     * jobs service to update the reserved named shadow when the job successfully
-     * completes.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
-     * jobs service to update the reserved named shadow when the job successfully
-     * completes.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
-     * jobs service to update the reserved named shadow when the job successfully
-     * completes.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
-     * jobs service to update the reserved named shadow when the job successfully
-     * completes.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
-     * jobs service to update the reserved named shadow when the job successfully
-     * completes.</p>
-     */
     inline VersionUpdateByJobsConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
-     * jobs service to update the reserved named shadow when the job successfully
-     * completes.</p>
-     */
     inline VersionUpdateByJobsConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT
-     * jobs service to update the reserved named shadow when the job successfully
-     * completes.</p>
-     */
     inline VersionUpdateByJobsConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

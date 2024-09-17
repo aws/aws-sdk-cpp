@@ -29,14 +29,8 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(JsonView jsonValue) : 
-    m_evaluationResultIdentifierHasBeenSet(false),
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_resultRecordedTimeHasBeenSet(false),
-    m_configRuleInvokedTimeHasBeenSet(false),
-    m_annotationHasBeenSet(false),
-    m_resultTokenHasBeenSet(false)
+EvaluationResult::EvaluationResult(JsonView jsonValue)
+  : EvaluationResult()
 {
   *this = jsonValue;
 }

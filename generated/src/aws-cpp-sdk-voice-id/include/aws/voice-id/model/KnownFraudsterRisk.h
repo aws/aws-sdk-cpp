@@ -38,83 +38,31 @@ namespace Model
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the fraudster that is the closest match to the speaker. If
      * there are no fraudsters registered in a given domain, or if there are no
      * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
      */
     inline const Aws::String& GetGeneratedFraudsterId() const{ return m_generatedFraudsterId; }
-
-    /**
-     * <p>The identifier of the fraudster that is the closest match to the speaker. If
-     * there are no fraudsters registered in a given domain, or if there are no
-     * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-     */
     inline bool GeneratedFraudsterIdHasBeenSet() const { return m_generatedFraudsterIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the fraudster that is the closest match to the speaker. If
-     * there are no fraudsters registered in a given domain, or if there are no
-     * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-     */
     inline void SetGeneratedFraudsterId(const Aws::String& value) { m_generatedFraudsterIdHasBeenSet = true; m_generatedFraudsterId = value; }
-
-    /**
-     * <p>The identifier of the fraudster that is the closest match to the speaker. If
-     * there are no fraudsters registered in a given domain, or if there are no
-     * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-     */
     inline void SetGeneratedFraudsterId(Aws::String&& value) { m_generatedFraudsterIdHasBeenSet = true; m_generatedFraudsterId = std::move(value); }
-
-    /**
-     * <p>The identifier of the fraudster that is the closest match to the speaker. If
-     * there are no fraudsters registered in a given domain, or if there are no
-     * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-     */
     inline void SetGeneratedFraudsterId(const char* value) { m_generatedFraudsterIdHasBeenSet = true; m_generatedFraudsterId.assign(value); }
-
-    /**
-     * <p>The identifier of the fraudster that is the closest match to the speaker. If
-     * there are no fraudsters registered in a given domain, or if there are no
-     * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-     */
     inline KnownFraudsterRisk& WithGeneratedFraudsterId(const Aws::String& value) { SetGeneratedFraudsterId(value); return *this;}
-
-    /**
-     * <p>The identifier of the fraudster that is the closest match to the speaker. If
-     * there are no fraudsters registered in a given domain, or if there are no
-     * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-     */
     inline KnownFraudsterRisk& WithGeneratedFraudsterId(Aws::String&& value) { SetGeneratedFraudsterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the fraudster that is the closest match to the speaker. If
-     * there are no fraudsters registered in a given domain, or if there are no
-     * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-     */
     inline KnownFraudsterRisk& WithGeneratedFraudsterId(const char* value) { SetGeneratedFraudsterId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The score indicating the likelihood the speaker is a known fraudster.</p>
      */
     inline int GetRiskScore() const{ return m_riskScore; }
-
-    /**
-     * <p>The score indicating the likelihood the speaker is a known fraudster.</p>
-     */
     inline bool RiskScoreHasBeenSet() const { return m_riskScoreHasBeenSet; }
-
-    /**
-     * <p>The score indicating the likelihood the speaker is a known fraudster.</p>
-     */
     inline void SetRiskScore(int value) { m_riskScoreHasBeenSet = true; m_riskScore = value; }
-
-    /**
-     * <p>The score indicating the likelihood the speaker is a known fraudster.</p>
-     */
     inline KnownFraudsterRisk& WithRiskScore(int value) { SetRiskScore(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_generatedFraudsterId;

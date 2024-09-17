@@ -47,32 +47,8 @@ InstanceGroup::InstanceGroup() :
 {
 }
 
-InstanceGroup::InstanceGroup(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_instanceGroupType(InstanceGroupType::NOT_SET),
-    m_instanceGroupTypeHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_requestedInstanceCount(0),
-    m_requestedInstanceCountHasBeenSet(false),
-    m_runningInstanceCount(0),
-    m_runningInstanceCountHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_configurationsVersion(0),
-    m_configurationsVersionHasBeenSet(false),
-    m_lastSuccessfullyAppliedConfigurationsHasBeenSet(false),
-    m_lastSuccessfullyAppliedConfigurationsVersion(0),
-    m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet(false),
-    m_ebsBlockDevicesHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_shrinkPolicyHasBeenSet(false),
-    m_autoScalingPolicyHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
+InstanceGroup::InstanceGroup(JsonView jsonValue)
+  : InstanceGroup()
 {
   *this = jsonValue;
 }

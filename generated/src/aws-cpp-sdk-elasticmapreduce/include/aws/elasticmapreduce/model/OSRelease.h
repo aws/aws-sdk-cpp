@@ -38,6 +38,7 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
      * The format is as shown in <a
@@ -45,63 +46,14 @@ namespace Model
      * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
-
-    /**
-     * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
-     * The format is as shown in <a
-     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">
-     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-     */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-
-    /**
-     * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
-     * The format is as shown in <a
-     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">
-     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-
-    /**
-     * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
-     * The format is as shown in <a
-     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">
-     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-     */
     inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-
-    /**
-     * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
-     * The format is as shown in <a
-     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">
-     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-     */
     inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-
-    /**
-     * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
-     * The format is as shown in <a
-     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">
-     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-     */
     inline OSRelease& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-
-    /**
-     * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
-     * The format is as shown in <a
-     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">
-     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-     */
     inline OSRelease& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Linux release specified for a cluster in the RunJobFlow request.
-     * The format is as shown in <a
-     * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">
-     * <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-     */
     inline OSRelease& WithLabel(const char* value) { SetLabel(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_label;

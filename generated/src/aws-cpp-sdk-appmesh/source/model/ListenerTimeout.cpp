@@ -26,11 +26,8 @@ ListenerTimeout::ListenerTimeout() :
 {
 }
 
-ListenerTimeout::ListenerTimeout(JsonView jsonValue) : 
-    m_grpcHasBeenSet(false),
-    m_httpHasBeenSet(false),
-    m_http2HasBeenSet(false),
-    m_tcpHasBeenSet(false)
+ListenerTimeout::ListenerTimeout(JsonView jsonValue)
+  : ListenerTimeout()
 {
   *this = jsonValue;
 }

@@ -40,34 +40,17 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens
      * metrics is enabled. A value of <code>true</code> indicates that CloudWatch
      * publishing for S3 Storage Lens metrics is enabled.</p>
      */
     inline bool GetIsEnabled() const{ return m_isEnabled; }
-
-    /**
-     * <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens
-     * metrics is enabled. A value of <code>true</code> indicates that CloudWatch
-     * publishing for S3 Storage Lens metrics is enabled.</p>
-     */
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
-
-    /**
-     * <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens
-     * metrics is enabled. A value of <code>true</code> indicates that CloudWatch
-     * publishing for S3 Storage Lens metrics is enabled.</p>
-     */
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
-
-    /**
-     * <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens
-     * metrics is enabled. A value of <code>true</code> indicates that CloudWatch
-     * publishing for S3 Storage Lens metrics is enabled.</p>
-     */
     inline CloudWatchMetrics& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isEnabled;

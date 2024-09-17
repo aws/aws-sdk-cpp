@@ -37,36 +37,17 @@ namespace Model
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for a schema on a tabular Dataset.</p>
      */
     inline const SchemaDefinition& GetTabularSchemaConfig() const{ return m_tabularSchemaConfig; }
-
-    /**
-     * <p>The configuration for a schema on a tabular Dataset.</p>
-     */
     inline bool TabularSchemaConfigHasBeenSet() const { return m_tabularSchemaConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration for a schema on a tabular Dataset.</p>
-     */
     inline void SetTabularSchemaConfig(const SchemaDefinition& value) { m_tabularSchemaConfigHasBeenSet = true; m_tabularSchemaConfig = value; }
-
-    /**
-     * <p>The configuration for a schema on a tabular Dataset.</p>
-     */
     inline void SetTabularSchemaConfig(SchemaDefinition&& value) { m_tabularSchemaConfigHasBeenSet = true; m_tabularSchemaConfig = std::move(value); }
-
-    /**
-     * <p>The configuration for a schema on a tabular Dataset.</p>
-     */
     inline SchemaUnion& WithTabularSchemaConfig(const SchemaDefinition& value) { SetTabularSchemaConfig(value); return *this;}
-
-    /**
-     * <p>The configuration for a schema on a tabular Dataset.</p>
-     */
     inline SchemaUnion& WithTabularSchemaConfig(SchemaDefinition&& value) { SetTabularSchemaConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SchemaDefinition m_tabularSchemaConfig;

@@ -26,11 +26,8 @@ Group::Group() :
 {
 }
 
-Group::Group(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+Group::Group(JsonView jsonValue)
+  : Group()
 {
   *this = jsonValue;
 }

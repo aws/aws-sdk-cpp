@@ -25,10 +25,8 @@ WorkflowState::WorkflowState() :
 {
 }
 
-WorkflowState::WorkflowState(JsonView jsonValue) : 
-    m_status(WorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+WorkflowState::WorkflowState(JsonView jsonValue)
+  : WorkflowState()
 {
   *this = jsonValue;
 }

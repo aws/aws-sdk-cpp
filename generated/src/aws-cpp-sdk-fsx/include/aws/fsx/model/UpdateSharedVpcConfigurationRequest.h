@@ -35,87 +35,33 @@ namespace Model
     AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
      * systems in shared subnets. Set to <code>true</code> to enable or
      * <code>false</code> to disable.</p>
      */
     inline const Aws::String& GetEnableFsxRouteTableUpdatesFromParticipantAccounts() const{ return m_enableFsxRouteTableUpdatesFromParticipantAccounts; }
-
-    /**
-     * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets. Set to <code>true</code> to enable or
-     * <code>false</code> to disable.</p>
-     */
     inline bool EnableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet() const { return m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets. Set to <code>true</code> to enable or
-     * <code>false</code> to disable.</p>
-     */
     inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts = value; }
-
-    /**
-     * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets. Set to <code>true</code> to enable or
-     * <code>false</code> to disable.</p>
-     */
     inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts = std::move(value); }
-
-    /**
-     * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets. Set to <code>true</code> to enable or
-     * <code>false</code> to disable.</p>
-     */
     inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts.assign(value); }
-
-    /**
-     * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets. Set to <code>true</code> to enable or
-     * <code>false</code> to disable.</p>
-     */
     inline UpdateSharedVpcConfigurationRequest& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
-
-    /**
-     * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets. Set to <code>true</code> to enable or
-     * <code>false</code> to disable.</p>
-     */
     inline UpdateSharedVpcConfigurationRequest& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file
-     * systems in shared subnets. Set to <code>true</code> to enable or
-     * <code>false</code> to disable.</p>
-     */
     inline UpdateSharedVpcConfigurationRequest& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    
     inline UpdateSharedVpcConfigurationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    
     inline UpdateSharedVpcConfigurationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    
     inline UpdateSharedVpcConfigurationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_enableFsxRouteTableUpdatesFromParticipantAccounts;

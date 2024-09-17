@@ -32,87 +32,33 @@ namespace Model
     AWS_DATAZONE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the domain in which this blueprint exists.</p>
      */
     inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
-
-    /**
-     * <p>The identifier of the domain in which this blueprint exists.</p>
-     */
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the domain in which this blueprint exists.</p>
-     */
     inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-
-    /**
-     * <p>The identifier of the domain in which this blueprint exists.</p>
-     */
     inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the domain in which this blueprint exists.</p>
-     */
     inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the domain in which this blueprint exists.</p>
-     */
     inline GetEnvironmentBlueprintRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the domain in which this blueprint exists.</p>
-     */
     inline GetEnvironmentBlueprintRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the domain in which this blueprint exists.</p>
-     */
     inline GetEnvironmentBlueprintRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of this Amazon DataZone blueprint.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The ID of this Amazon DataZone blueprint.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The ID of this Amazon DataZone blueprint.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The ID of this Amazon DataZone blueprint.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The ID of this Amazon DataZone blueprint.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The ID of this Amazon DataZone blueprint.</p>
-     */
     inline GetEnvironmentBlueprintRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of this Amazon DataZone blueprint.</p>
-     */
     inline GetEnvironmentBlueprintRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of this Amazon DataZone blueprint.</p>
-     */
     inline GetEnvironmentBlueprintRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainIdentifier;

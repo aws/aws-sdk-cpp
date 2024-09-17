@@ -34,91 +34,36 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>If the previous response was truncated, you will receive this token. Use it
      * in your next request to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline ListDomainsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline ListDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline ListDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
+     * <p>This parameter defines the maximum number of results that can be return in a
+     * single response. The <code>MaxResults</code> parameter is an upper bound, not a
+     * target. If there are more results available than the value specified, a
+     * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
+     * indicates that the user should get the next set of results by providing this
+     * token as a part of a subsequent call. The default value for
+     * <code>MaxResults</code> is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
-     */
     inline ListDomainsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

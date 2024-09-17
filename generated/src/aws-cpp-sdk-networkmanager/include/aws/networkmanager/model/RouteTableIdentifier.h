@@ -7,6 +7,7 @@
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/networkmanager/model/CoreNetworkSegmentEdgeIdentifier.h>
+#include <aws/networkmanager/model/CoreNetworkNetworkFunctionGroupIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -38,93 +39,45 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the transit gateway route table for the attachment request. For
      * example, <code>"TransitGatewayRouteTableArn":
      * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline const Aws::String& GetTransitGatewayRouteTableArn() const{ return m_transitGatewayRouteTableArn; }
-
-    /**
-     * <p>The ARN of the transit gateway route table for the attachment request. For
-     * example, <code>"TransitGatewayRouteTableArn":
-     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-     */
     inline bool TransitGatewayRouteTableArnHasBeenSet() const { return m_transitGatewayRouteTableArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the transit gateway route table for the attachment request. For
-     * example, <code>"TransitGatewayRouteTableArn":
-     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-     */
     inline void SetTransitGatewayRouteTableArn(const Aws::String& value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn = value; }
-
-    /**
-     * <p>The ARN of the transit gateway route table for the attachment request. For
-     * example, <code>"TransitGatewayRouteTableArn":
-     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-     */
     inline void SetTransitGatewayRouteTableArn(Aws::String&& value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the transit gateway route table for the attachment request. For
-     * example, <code>"TransitGatewayRouteTableArn":
-     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-     */
     inline void SetTransitGatewayRouteTableArn(const char* value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn.assign(value); }
-
-    /**
-     * <p>The ARN of the transit gateway route table for the attachment request. For
-     * example, <code>"TransitGatewayRouteTableArn":
-     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-     */
     inline RouteTableIdentifier& WithTransitGatewayRouteTableArn(const Aws::String& value) { SetTransitGatewayRouteTableArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the transit gateway route table for the attachment request. For
-     * example, <code>"TransitGatewayRouteTableArn":
-     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-     */
     inline RouteTableIdentifier& WithTransitGatewayRouteTableArn(Aws::String&& value) { SetTransitGatewayRouteTableArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the transit gateway route table for the attachment request. For
-     * example, <code>"TransitGatewayRouteTableArn":
-     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-     */
     inline RouteTableIdentifier& WithTransitGatewayRouteTableArn(const char* value) { SetTransitGatewayRouteTableArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The segment edge in a core network.</p>
      */
     inline const CoreNetworkSegmentEdgeIdentifier& GetCoreNetworkSegmentEdge() const{ return m_coreNetworkSegmentEdge; }
-
-    /**
-     * <p>The segment edge in a core network.</p>
-     */
     inline bool CoreNetworkSegmentEdgeHasBeenSet() const { return m_coreNetworkSegmentEdgeHasBeenSet; }
-
-    /**
-     * <p>The segment edge in a core network.</p>
-     */
     inline void SetCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { m_coreNetworkSegmentEdgeHasBeenSet = true; m_coreNetworkSegmentEdge = value; }
-
-    /**
-     * <p>The segment edge in a core network.</p>
-     */
     inline void SetCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { m_coreNetworkSegmentEdgeHasBeenSet = true; m_coreNetworkSegmentEdge = std::move(value); }
-
-    /**
-     * <p>The segment edge in a core network.</p>
-     */
     inline RouteTableIdentifier& WithCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { SetCoreNetworkSegmentEdge(value); return *this;}
-
-    /**
-     * <p>The segment edge in a core network.</p>
-     */
     inline RouteTableIdentifier& WithCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { SetCoreNetworkSegmentEdge(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The route table identifier associated with the network function group.</p>
+     */
+    inline const CoreNetworkNetworkFunctionGroupIdentifier& GetCoreNetworkNetworkFunctionGroup() const{ return m_coreNetworkNetworkFunctionGroup; }
+    inline bool CoreNetworkNetworkFunctionGroupHasBeenSet() const { return m_coreNetworkNetworkFunctionGroupHasBeenSet; }
+    inline void SetCoreNetworkNetworkFunctionGroup(const CoreNetworkNetworkFunctionGroupIdentifier& value) { m_coreNetworkNetworkFunctionGroupHasBeenSet = true; m_coreNetworkNetworkFunctionGroup = value; }
+    inline void SetCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupIdentifier&& value) { m_coreNetworkNetworkFunctionGroupHasBeenSet = true; m_coreNetworkNetworkFunctionGroup = std::move(value); }
+    inline RouteTableIdentifier& WithCoreNetworkNetworkFunctionGroup(const CoreNetworkNetworkFunctionGroupIdentifier& value) { SetCoreNetworkNetworkFunctionGroup(value); return *this;}
+    inline RouteTableIdentifier& WithCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupIdentifier&& value) { SetCoreNetworkNetworkFunctionGroup(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_transitGatewayRouteTableArn;
@@ -132,6 +85,9 @@ namespace Model
 
     CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
     bool m_coreNetworkSegmentEdgeHasBeenSet = false;
+
+    CoreNetworkNetworkFunctionGroupIdentifier m_coreNetworkNetworkFunctionGroup;
+    bool m_coreNetworkNetworkFunctionGroupHasBeenSet = false;
   };
 
 } // namespace Model

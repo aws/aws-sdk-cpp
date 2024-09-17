@@ -24,9 +24,8 @@ RetryPolicyConfiguration::RetryPolicyConfiguration() :
 {
 }
 
-RetryPolicyConfiguration::RetryPolicyConfiguration(JsonView jsonValue) : 
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false)
+RetryPolicyConfiguration::RetryPolicyConfiguration(JsonView jsonValue)
+  : RetryPolicyConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ OrgConfiguration::OrgConfiguration() :
 {
 }
 
-OrgConfiguration::OrgConfiguration(JsonView jsonValue) : 
-    m_aWSServiceAccessStatus(AWSServiceAccessStatus::NOT_SET),
-    m_aWSServiceAccessStatusHasBeenSet(false),
-    m_serviceLinkedRoleHasBeenSet(false)
+OrgConfiguration::OrgConfiguration(JsonView jsonValue)
+  : OrgConfiguration()
 {
   *this = jsonValue;
 }

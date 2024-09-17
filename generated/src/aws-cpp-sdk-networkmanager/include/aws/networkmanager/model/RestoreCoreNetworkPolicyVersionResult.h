@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API RestoreCoreNetworkPolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes the restored core network policy.</p>
      */
     inline const CoreNetworkPolicy& GetCoreNetworkPolicy() const{ return m_coreNetworkPolicy; }
-
-    /**
-     * <p>Describes the restored core network policy.</p>
-     */
     inline void SetCoreNetworkPolicy(const CoreNetworkPolicy& value) { m_coreNetworkPolicy = value; }
-
-    /**
-     * <p>Describes the restored core network policy.</p>
-     */
     inline void SetCoreNetworkPolicy(CoreNetworkPolicy&& value) { m_coreNetworkPolicy = std::move(value); }
-
-    /**
-     * <p>Describes the restored core network policy.</p>
-     */
     inline RestoreCoreNetworkPolicyVersionResult& WithCoreNetworkPolicy(const CoreNetworkPolicy& value) { SetCoreNetworkPolicy(value); return *this;}
-
-    /**
-     * <p>Describes the restored core network policy.</p>
-     */
     inline RestoreCoreNetworkPolicyVersionResult& WithCoreNetworkPolicy(CoreNetworkPolicy&& value) { SetCoreNetworkPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RestoreCoreNetworkPolicyVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RestoreCoreNetworkPolicyVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RestoreCoreNetworkPolicyVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CoreNetworkPolicy m_coreNetworkPolicy;

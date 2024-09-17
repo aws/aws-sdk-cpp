@@ -23,16 +23,15 @@ namespace Model
 DataStorage::DataStorage() : 
     m_maximum(0),
     m_maximumHasBeenSet(false),
+    m_minimum(0),
+    m_minimumHasBeenSet(false),
     m_unit(DataStorageUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
 }
 
-DataStorage::DataStorage(const XmlNode& xmlNode) : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_unit(DataStorageUnit::NOT_SET),
-    m_unitHasBeenSet(false)
+DataStorage::DataStorage(const XmlNode& xmlNode)
+  : DataStorage()
 {
   *this = xmlNode;
 }
@@ -48,6 +47,12 @@ DataStorage& DataStorage::operator =(const XmlNode& xmlNode)
     {
       m_maximum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
+    }
+    XmlNode minimumNode = resultNode.FirstChild("Minimum");
+    if(!minimumNode.IsNull())
+    {
+      m_minimum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
+      m_minimumHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
@@ -67,6 +72,11 @@ void DataStorage::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".Maximum=" << m_maximum << "&";
   }
 
+  if(m_minimumHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Minimum=" << m_minimum << "&";
+  }
+
   if(m_unitHasBeenSet)
   {
       oStream << location << index << locationValue << ".Unit=" << DataStorageUnitMapper::GetNameForDataStorageUnit(m_unit) << "&";
@@ -79,6 +89,10 @@ void DataStorage::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_maximumHasBeenSet)
   {
       oStream << location << ".Maximum=" << m_maximum << "&";
+  }
+  if(m_minimumHasBeenSet)
+  {
+      oStream << location << ".Minimum=" << m_minimum << "&";
   }
   if(m_unitHasBeenSet)
   {

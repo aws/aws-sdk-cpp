@@ -30,15 +30,8 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(JsonView jsonValue) : 
-    m_catalogHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_tableWithColumnsHasBeenSet(false),
-    m_dataLocationHasBeenSet(false),
-    m_dataCellsFilterHasBeenSet(false),
-    m_lFTagHasBeenSet(false),
-    m_lFTagPolicyHasBeenSet(false)
+Resource::Resource(JsonView jsonValue)
+  : Resource()
 {
   *this = jsonValue;
 }

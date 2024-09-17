@@ -25,10 +25,8 @@ DynamicDefaultValue::DynamicDefaultValue() :
 {
 }
 
-DynamicDefaultValue::DynamicDefaultValue(JsonView jsonValue) : 
-    m_userNameColumnHasBeenSet(false),
-    m_groupNameColumnHasBeenSet(false),
-    m_defaultValueColumnHasBeenSet(false)
+DynamicDefaultValue::DynamicDefaultValue(JsonView jsonValue)
+  : DynamicDefaultValue()
 {
   *this = jsonValue;
 }

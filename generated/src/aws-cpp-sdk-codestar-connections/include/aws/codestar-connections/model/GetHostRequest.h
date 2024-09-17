@@ -34,46 +34,19 @@ namespace Model
     AWS_CODESTARCONNECTIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the requested host.</p>
      */
     inline const Aws::String& GetHostArn() const{ return m_hostArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the requested host.</p>
-     */
     inline bool HostArnHasBeenSet() const { return m_hostArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the requested host.</p>
-     */
     inline void SetHostArn(const Aws::String& value) { m_hostArnHasBeenSet = true; m_hostArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the requested host.</p>
-     */
     inline void SetHostArn(Aws::String&& value) { m_hostArnHasBeenSet = true; m_hostArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the requested host.</p>
-     */
     inline void SetHostArn(const char* value) { m_hostArnHasBeenSet = true; m_hostArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the requested host.</p>
-     */
     inline GetHostRequest& WithHostArn(const Aws::String& value) { SetHostArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the requested host.</p>
-     */
     inline GetHostRequest& WithHostArn(Aws::String&& value) { SetHostArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the requested host.</p>
-     */
     inline GetHostRequest& WithHostArn(const char* value) { SetHostArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hostArn;

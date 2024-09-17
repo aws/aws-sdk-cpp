@@ -28,13 +28,8 @@ BatchCreateIndex::BatchCreateIndex() :
 {
 }
 
-BatchCreateIndex::BatchCreateIndex(JsonView jsonValue) : 
-    m_orderedIndexedAttributeListHasBeenSet(false),
-    m_isUnique(false),
-    m_isUniqueHasBeenSet(false),
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false),
-    m_batchReferenceNameHasBeenSet(false)
+BatchCreateIndex::BatchCreateIndex(JsonView jsonValue)
+  : BatchCreateIndex()
 {
   *this = jsonValue;
 }

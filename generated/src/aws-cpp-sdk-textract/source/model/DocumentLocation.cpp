@@ -23,8 +23,8 @@ DocumentLocation::DocumentLocation() :
 {
 }
 
-DocumentLocation::DocumentLocation(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false)
+DocumentLocation::DocumentLocation(JsonView jsonValue)
+  : DocumentLocation()
 {
   *this = jsonValue;
 }

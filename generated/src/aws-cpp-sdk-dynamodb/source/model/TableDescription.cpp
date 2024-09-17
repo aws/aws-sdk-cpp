@@ -45,38 +45,13 @@ TableDescription::TableDescription() :
     m_archivalSummaryHasBeenSet(false),
     m_tableClassSummaryHasBeenSet(false),
     m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
 }
 
-TableDescription::TableDescription(JsonView jsonValue) : 
-    m_attributeDefinitionsHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_tableStatus(TableStatus::NOT_SET),
-    m_tableStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_tableSizeBytes(0),
-    m_tableSizeBytesHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_billingModeSummaryHasBeenSet(false),
-    m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false),
-    m_latestStreamLabelHasBeenSet(false),
-    m_latestStreamArnHasBeenSet(false),
-    m_globalTableVersionHasBeenSet(false),
-    m_replicasHasBeenSet(false),
-    m_restoreSummaryHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false),
-    m_archivalSummaryHasBeenSet(false),
-    m_tableClassSummaryHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+TableDescription::TableDescription(JsonView jsonValue)
+  : TableDescription()
 {
   *this = jsonValue;
 }
@@ -259,6 +234,13 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     m_deletionProtectionEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnDemandThroughput"))
+  {
+    m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
+
+    m_onDemandThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -424,6 +406,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_deletionProtectionEnabledHasBeenSet)
   {
    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 

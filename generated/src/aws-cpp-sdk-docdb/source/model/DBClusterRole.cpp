@@ -26,9 +26,8 @@ DBClusterRole::DBClusterRole() :
 {
 }
 
-DBClusterRole::DBClusterRole(const XmlNode& xmlNode) : 
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+DBClusterRole::DBClusterRole(const XmlNode& xmlNode)
+  : DBClusterRole()
 {
   *this = xmlNode;
 }

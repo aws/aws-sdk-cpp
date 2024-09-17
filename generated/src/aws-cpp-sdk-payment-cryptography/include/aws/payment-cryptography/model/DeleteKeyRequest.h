@@ -34,74 +34,36 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    /**
-     * <p>The waiting period for key deletion. The default value is seven days.</p>
-     */
-    inline int GetDeleteKeyInDays() const{ return m_deleteKeyInDays; }
-
-    /**
-     * <p>The waiting period for key deletion. The default value is seven days.</p>
-     */
-    inline bool DeleteKeyInDaysHasBeenSet() const { return m_deleteKeyInDaysHasBeenSet; }
-
-    /**
-     * <p>The waiting period for key deletion. The default value is seven days.</p>
-     */
-    inline void SetDeleteKeyInDays(int value) { m_deleteKeyInDaysHasBeenSet = true; m_deleteKeyInDays = value; }
-
-    /**
-     * <p>The waiting period for key deletion. The default value is seven days.</p>
-     */
-    inline DeleteKeyRequest& WithDeleteKeyInDays(int value) { SetDeleteKeyInDays(value); return *this;}
-
-
+    ///@{
     /**
      * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
      */
     inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline DeleteKeyRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline DeleteKeyRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline DeleteKeyRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The waiting period for key deletion. The default value is seven days.</p>
+     */
+    inline int GetDeleteKeyInDays() const{ return m_deleteKeyInDays; }
+    inline bool DeleteKeyInDaysHasBeenSet() const { return m_deleteKeyInDaysHasBeenSet; }
+    inline void SetDeleteKeyInDays(int value) { m_deleteKeyInDaysHasBeenSet = true; m_deleteKeyInDays = value; }
+    inline DeleteKeyRequest& WithDeleteKeyInDays(int value) { SetDeleteKeyInDays(value); return *this;}
+    ///@}
   private:
-
-    int m_deleteKeyInDays;
-    bool m_deleteKeyInDaysHasBeenSet = false;
 
     Aws::String m_keyIdentifier;
     bool m_keyIdentifierHasBeenSet = false;
+
+    int m_deleteKeyInDays;
+    bool m_deleteKeyInDaysHasBeenSet = false;
   };
 
 } // namespace Model

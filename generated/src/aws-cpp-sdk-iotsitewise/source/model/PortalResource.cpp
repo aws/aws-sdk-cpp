@@ -23,8 +23,8 @@ PortalResource::PortalResource() :
 {
 }
 
-PortalResource::PortalResource(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+PortalResource::PortalResource(JsonView jsonValue)
+  : PortalResource()
 {
   *this = jsonValue;
 }

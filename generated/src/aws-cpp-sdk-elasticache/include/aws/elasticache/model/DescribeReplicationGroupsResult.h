@@ -41,100 +41,41 @@ namespace Model
     AWS_ELASTICACHE_API DescribeReplicationGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeReplicationGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeReplicationGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeReplicationGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of replication groups. Each item in the list contains detailed
      * information about one replication group.</p>
      */
     inline const Aws::Vector<ReplicationGroup>& GetReplicationGroups() const{ return m_replicationGroups; }
-
-    /**
-     * <p>A list of replication groups. Each item in the list contains detailed
-     * information about one replication group.</p>
-     */
     inline void SetReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { m_replicationGroups = value; }
-
-    /**
-     * <p>A list of replication groups. Each item in the list contains detailed
-     * information about one replication group.</p>
-     */
     inline void SetReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { m_replicationGroups = std::move(value); }
-
-    /**
-     * <p>A list of replication groups. Each item in the list contains detailed
-     * information about one replication group.</p>
-     */
     inline DescribeReplicationGroupsResult& WithReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { SetReplicationGroups(value); return *this;}
-
-    /**
-     * <p>A list of replication groups. Each item in the list contains detailed
-     * information about one replication group.</p>
-     */
     inline DescribeReplicationGroupsResult& WithReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { SetReplicationGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of replication groups. Each item in the list contains detailed
-     * information about one replication group.</p>
-     */
     inline DescribeReplicationGroupsResult& AddReplicationGroups(const ReplicationGroup& value) { m_replicationGroups.push_back(value); return *this; }
-
-    /**
-     * <p>A list of replication groups. Each item in the list contains detailed
-     * information about one replication group.</p>
-     */
     inline DescribeReplicationGroupsResult& AddReplicationGroups(ReplicationGroup&& value) { m_replicationGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeReplicationGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeReplicationGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

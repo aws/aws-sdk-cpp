@@ -28,13 +28,8 @@ ImportFailureListItem::ImportFailureListItem() :
 {
 }
 
-ImportFailureListItem::ImportFailureListItem(JsonView jsonValue) : 
-    m_locationHasBeenSet(false),
-    m_status(ImportFailureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+ImportFailureListItem::ImportFailureListItem(JsonView jsonValue)
+  : ImportFailureListItem()
 {
   *this = jsonValue;
 }

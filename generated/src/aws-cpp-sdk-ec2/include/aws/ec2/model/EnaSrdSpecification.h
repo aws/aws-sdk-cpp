@@ -49,57 +49,27 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether ENA Express is enabled for the network interface.</p>
      */
     inline bool GetEnaSrdEnabled() const{ return m_enaSrdEnabled; }
-
-    /**
-     * <p>Indicates whether ENA Express is enabled for the network interface.</p>
-     */
     inline bool EnaSrdEnabledHasBeenSet() const { return m_enaSrdEnabledHasBeenSet; }
-
-    /**
-     * <p>Indicates whether ENA Express is enabled for the network interface.</p>
-     */
     inline void SetEnaSrdEnabled(bool value) { m_enaSrdEnabledHasBeenSet = true; m_enaSrdEnabled = value; }
-
-    /**
-     * <p>Indicates whether ENA Express is enabled for the network interface.</p>
-     */
     inline EnaSrdSpecification& WithEnaSrdEnabled(bool value) { SetEnaSrdEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configures ENA Express for UDP network traffic.</p>
      */
     inline const EnaSrdUdpSpecification& GetEnaSrdUdpSpecification() const{ return m_enaSrdUdpSpecification; }
-
-    /**
-     * <p>Configures ENA Express for UDP network traffic.</p>
-     */
     inline bool EnaSrdUdpSpecificationHasBeenSet() const { return m_enaSrdUdpSpecificationHasBeenSet; }
-
-    /**
-     * <p>Configures ENA Express for UDP network traffic.</p>
-     */
     inline void SetEnaSrdUdpSpecification(const EnaSrdUdpSpecification& value) { m_enaSrdUdpSpecificationHasBeenSet = true; m_enaSrdUdpSpecification = value; }
-
-    /**
-     * <p>Configures ENA Express for UDP network traffic.</p>
-     */
     inline void SetEnaSrdUdpSpecification(EnaSrdUdpSpecification&& value) { m_enaSrdUdpSpecificationHasBeenSet = true; m_enaSrdUdpSpecification = std::move(value); }
-
-    /**
-     * <p>Configures ENA Express for UDP network traffic.</p>
-     */
     inline EnaSrdSpecification& WithEnaSrdUdpSpecification(const EnaSrdUdpSpecification& value) { SetEnaSrdUdpSpecification(value); return *this;}
-
-    /**
-     * <p>Configures ENA Express for UDP network traffic.</p>
-     */
     inline EnaSrdSpecification& WithEnaSrdUdpSpecification(EnaSrdUdpSpecification&& value) { SetEnaSrdUdpSpecification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_enaSrdEnabled;

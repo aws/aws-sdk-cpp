@@ -38,105 +38,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The built-in aggregation functions for attributes.</p> <ul> <li> <p>
      * <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by
      * the dimension fields.</p> </li> </ul>
      */
     inline const SimpleAttributeAggregationFunction& GetSimpleAttributeAggregation() const{ return m_simpleAttributeAggregation; }
-
-    /**
-     * <p>The built-in aggregation functions for attributes.</p> <ul> <li> <p>
-     * <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by
-     * the dimension fields.</p> </li> </ul>
-     */
     inline bool SimpleAttributeAggregationHasBeenSet() const { return m_simpleAttributeAggregationHasBeenSet; }
-
-    /**
-     * <p>The built-in aggregation functions for attributes.</p> <ul> <li> <p>
-     * <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by
-     * the dimension fields.</p> </li> </ul>
-     */
     inline void SetSimpleAttributeAggregation(const SimpleAttributeAggregationFunction& value) { m_simpleAttributeAggregationHasBeenSet = true; m_simpleAttributeAggregation = value; }
-
-    /**
-     * <p>The built-in aggregation functions for attributes.</p> <ul> <li> <p>
-     * <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by
-     * the dimension fields.</p> </li> </ul>
-     */
     inline void SetSimpleAttributeAggregation(SimpleAttributeAggregationFunction&& value) { m_simpleAttributeAggregationHasBeenSet = true; m_simpleAttributeAggregation = std::move(value); }
-
-    /**
-     * <p>The built-in aggregation functions for attributes.</p> <ul> <li> <p>
-     * <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by
-     * the dimension fields.</p> </li> </ul>
-     */
     inline AttributeAggregationFunction& WithSimpleAttributeAggregation(const SimpleAttributeAggregationFunction& value) { SetSimpleAttributeAggregation(value); return *this;}
-
-    /**
-     * <p>The built-in aggregation functions for attributes.</p> <ul> <li> <p>
-     * <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by
-     * the dimension fields.</p> </li> </ul>
-     */
     inline AttributeAggregationFunction& WithSimpleAttributeAggregation(SimpleAttributeAggregationFunction&& value) { SetSimpleAttributeAggregation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
      * multiple values for the field used by the aggregation, the value for this
      * property will be returned instead. Defaults to '*'.</p>
      */
     inline const Aws::String& GetValueForMultipleValues() const{ return m_valueForMultipleValues; }
-
-    /**
-     * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
-     * multiple values for the field used by the aggregation, the value for this
-     * property will be returned instead. Defaults to '*'.</p>
-     */
     inline bool ValueForMultipleValuesHasBeenSet() const { return m_valueForMultipleValuesHasBeenSet; }
-
-    /**
-     * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
-     * multiple values for the field used by the aggregation, the value for this
-     * property will be returned instead. Defaults to '*'.</p>
-     */
     inline void SetValueForMultipleValues(const Aws::String& value) { m_valueForMultipleValuesHasBeenSet = true; m_valueForMultipleValues = value; }
-
-    /**
-     * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
-     * multiple values for the field used by the aggregation, the value for this
-     * property will be returned instead. Defaults to '*'.</p>
-     */
     inline void SetValueForMultipleValues(Aws::String&& value) { m_valueForMultipleValuesHasBeenSet = true; m_valueForMultipleValues = std::move(value); }
-
-    /**
-     * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
-     * multiple values for the field used by the aggregation, the value for this
-     * property will be returned instead. Defaults to '*'.</p>
-     */
     inline void SetValueForMultipleValues(const char* value) { m_valueForMultipleValuesHasBeenSet = true; m_valueForMultipleValues.assign(value); }
-
-    /**
-     * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
-     * multiple values for the field used by the aggregation, the value for this
-     * property will be returned instead. Defaults to '*'.</p>
-     */
     inline AttributeAggregationFunction& WithValueForMultipleValues(const Aws::String& value) { SetValueForMultipleValues(value); return *this;}
-
-    /**
-     * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
-     * multiple values for the field used by the aggregation, the value for this
-     * property will be returned instead. Defaults to '*'.</p>
-     */
     inline AttributeAggregationFunction& WithValueForMultipleValues(Aws::String&& value) { SetValueForMultipleValues(std::move(value)); return *this;}
-
-    /**
-     * <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are
-     * multiple values for the field used by the aggregation, the value for this
-     * property will be returned instead. Defaults to '*'.</p>
-     */
     inline AttributeAggregationFunction& WithValueForMultipleValues(const char* value) { SetValueForMultipleValues(value); return *this;}
-
+    ///@}
   private:
 
     SimpleAttributeAggregationFunction m_simpleAttributeAggregation;

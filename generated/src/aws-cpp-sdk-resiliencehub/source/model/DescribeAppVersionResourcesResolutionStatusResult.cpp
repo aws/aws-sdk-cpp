@@ -22,8 +22,8 @@ DescribeAppVersionResourcesResolutionStatusResult::DescribeAppVersionResourcesRe
 {
 }
 
-DescribeAppVersionResourcesResolutionStatusResult::DescribeAppVersionResourcesResolutionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ResourceResolutionStatusType::NOT_SET)
+DescribeAppVersionResourcesResolutionStatusResult::DescribeAppVersionResourcesResolutionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAppVersionResourcesResolutionStatusResult()
 {
   *this = result;
 }

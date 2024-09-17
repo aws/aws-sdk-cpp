@@ -23,8 +23,8 @@ ContentBlockerRule::ContentBlockerRule() :
 {
 }
 
-ContentBlockerRule::ContentBlockerRule(JsonView jsonValue) : 
-    m_systemMessageOverrideHasBeenSet(false)
+ContentBlockerRule::ContentBlockerRule(JsonView jsonValue)
+  : ContentBlockerRule()
 {
   *this = jsonValue;
 }

@@ -37,37 +37,23 @@ namespace Model
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline double GetActionThresholdValue() const{ return m_actionThresholdValue; }
-
-    
     inline bool ActionThresholdValueHasBeenSet() const { return m_actionThresholdValueHasBeenSet; }
-
-    
     inline void SetActionThresholdValue(double value) { m_actionThresholdValueHasBeenSet = true; m_actionThresholdValue = value; }
-
-    
     inline ActionThreshold& WithActionThresholdValue(double value) { SetActionThresholdValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ThresholdType& GetActionThresholdType() const{ return m_actionThresholdType; }
-
-    
     inline bool ActionThresholdTypeHasBeenSet() const { return m_actionThresholdTypeHasBeenSet; }
-
-    
     inline void SetActionThresholdType(const ThresholdType& value) { m_actionThresholdTypeHasBeenSet = true; m_actionThresholdType = value; }
-
-    
     inline void SetActionThresholdType(ThresholdType&& value) { m_actionThresholdTypeHasBeenSet = true; m_actionThresholdType = std::move(value); }
-
-    
     inline ActionThreshold& WithActionThresholdType(const ThresholdType& value) { SetActionThresholdType(value); return *this;}
-
-    
     inline ActionThreshold& WithActionThresholdType(ThresholdType&& value) { SetActionThresholdType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_actionThresholdValue;

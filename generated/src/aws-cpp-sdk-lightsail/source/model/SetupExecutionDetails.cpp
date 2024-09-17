@@ -30,15 +30,8 @@ SetupExecutionDetails::SetupExecutionDetails() :
 {
 }
 
-SetupExecutionDetails::SetupExecutionDetails(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_dateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SetupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_standardErrorHasBeenSet(false),
-    m_standardOutputHasBeenSet(false),
-    m_versionHasBeenSet(false)
+SetupExecutionDetails::SetupExecutionDetails(JsonView jsonValue)
+  : SetupExecutionDetails()
 {
   *this = jsonValue;
 }

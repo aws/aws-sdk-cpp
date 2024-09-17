@@ -22,8 +22,8 @@ UnarchiveWaveResult::UnarchiveWaveResult() :
 {
 }
 
-UnarchiveWaveResult::UnarchiveWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+UnarchiveWaveResult::UnarchiveWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UnarchiveWaveResult()
 {
   *this = result;
 }

@@ -34,131 +34,55 @@ namespace Model
     AWS_KMS_API ListGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of grants.</p>
      */
     inline const Aws::Vector<GrantListEntry>& GetGrants() const{ return m_grants; }
-
-    /**
-     * <p>A list of grants.</p>
-     */
     inline void SetGrants(const Aws::Vector<GrantListEntry>& value) { m_grants = value; }
-
-    /**
-     * <p>A list of grants.</p>
-     */
     inline void SetGrants(Aws::Vector<GrantListEntry>&& value) { m_grants = std::move(value); }
-
-    /**
-     * <p>A list of grants.</p>
-     */
     inline ListGrantsResult& WithGrants(const Aws::Vector<GrantListEntry>& value) { SetGrants(value); return *this;}
-
-    /**
-     * <p>A list of grants.</p>
-     */
     inline ListGrantsResult& WithGrants(Aws::Vector<GrantListEntry>&& value) { SetGrants(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of grants.</p>
-     */
     inline ListGrantsResult& AddGrants(const GrantListEntry& value) { m_grants.push_back(value); return *this; }
-
-    /**
-     * <p>A list of grants.</p>
-     */
     inline ListGrantsResult& AddGrants(GrantListEntry&& value) { m_grants.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>When <code>Truncated</code> is true, this element is present and contains the
-     * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-
-    /**
-     * <p>When <code>Truncated</code> is true, this element is present and contains the
-     * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-
-    /**
-     * <p>When <code>Truncated</code> is true, this element is present and contains the
-     * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-
-    /**
-     * <p>When <code>Truncated</code> is true, this element is present and contains the
-     * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline ListGrantsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>When <code>Truncated</code> is true, this element is present and contains the
-     * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline ListGrantsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>When <code>Truncated</code> is true, this element is present and contains the
-     * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline ListGrantsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in thisresponse to the
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
-
-    /**
-     * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in thisresponse to the
-     * <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline void SetTruncated(bool value) { m_truncated = value; }
-
-    /**
-     * <p>A flag that indicates whether there are more items in the list. When this
-     * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in thisresponse to the
-     * <code>Marker</code> parameter in a subsequent request.</p>
-     */
     inline ListGrantsResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListGrantsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListGrantsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListGrantsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<GrantListEntry> m_grants;

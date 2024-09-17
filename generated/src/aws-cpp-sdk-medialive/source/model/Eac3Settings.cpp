@@ -62,47 +62,8 @@ Eac3Settings::Eac3Settings() :
 {
 }
 
-Eac3Settings::Eac3Settings(JsonView jsonValue) : 
-    m_attenuationControl(Eac3AttenuationControl::NOT_SET),
-    m_attenuationControlHasBeenSet(false),
-    m_bitrate(0.0),
-    m_bitrateHasBeenSet(false),
-    m_bitstreamMode(Eac3BitstreamMode::NOT_SET),
-    m_bitstreamModeHasBeenSet(false),
-    m_codingMode(Eac3CodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_dcFilter(Eac3DcFilter::NOT_SET),
-    m_dcFilterHasBeenSet(false),
-    m_dialnorm(0),
-    m_dialnormHasBeenSet(false),
-    m_drcLine(Eac3DrcLine::NOT_SET),
-    m_drcLineHasBeenSet(false),
-    m_drcRf(Eac3DrcRf::NOT_SET),
-    m_drcRfHasBeenSet(false),
-    m_lfeControl(Eac3LfeControl::NOT_SET),
-    m_lfeControlHasBeenSet(false),
-    m_lfeFilter(Eac3LfeFilter::NOT_SET),
-    m_lfeFilterHasBeenSet(false),
-    m_loRoCenterMixLevel(0.0),
-    m_loRoCenterMixLevelHasBeenSet(false),
-    m_loRoSurroundMixLevel(0.0),
-    m_loRoSurroundMixLevelHasBeenSet(false),
-    m_ltRtCenterMixLevel(0.0),
-    m_ltRtCenterMixLevelHasBeenSet(false),
-    m_ltRtSurroundMixLevel(0.0),
-    m_ltRtSurroundMixLevelHasBeenSet(false),
-    m_metadataControl(Eac3MetadataControl::NOT_SET),
-    m_metadataControlHasBeenSet(false),
-    m_passthroughControl(Eac3PassthroughControl::NOT_SET),
-    m_passthroughControlHasBeenSet(false),
-    m_phaseControl(Eac3PhaseControl::NOT_SET),
-    m_phaseControlHasBeenSet(false),
-    m_stereoDownmix(Eac3StereoDownmix::NOT_SET),
-    m_stereoDownmixHasBeenSet(false),
-    m_surroundExMode(Eac3SurroundExMode::NOT_SET),
-    m_surroundExModeHasBeenSet(false),
-    m_surroundMode(Eac3SurroundMode::NOT_SET),
-    m_surroundModeHasBeenSet(false)
+Eac3Settings::Eac3Settings(JsonView jsonValue)
+  : Eac3Settings()
 {
   *this = jsonValue;
 }

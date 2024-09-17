@@ -24,8 +24,8 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_fileShareIdHasBeenSet(false),
     m_fileShareStatusHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
+    m_encryptionType(EncryptionType::NOT_SET),
+    m_encryptionTypeHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -51,36 +51,8 @@ NFSFileShareInfo::NFSFileShareInfo() :
 {
 }
 
-NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) : 
-    m_nFSFileShareDefaultsHasBeenSet(false),
-    m_fileShareARNHasBeenSet(false),
-    m_fileShareIdHasBeenSet(false),
-    m_fileShareStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_defaultStorageClassHasBeenSet(false),
-    m_objectACL(ObjectACL::NOT_SET),
-    m_objectACLHasBeenSet(false),
-    m_clientListHasBeenSet(false),
-    m_squashHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_guessMIMETypeEnabled(false),
-    m_guessMIMETypeEnabledHasBeenSet(false),
-    m_requesterPays(false),
-    m_requesterPaysHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false),
-    m_vPCEndpointDNSNameHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false)
+NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue)
+  : NFSFileShareInfo()
 {
   *this = jsonValue;
 }
@@ -122,11 +94,11 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
     m_gatewayARNHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KMSEncrypted"))
+  if(jsonValue.ValueExists("EncryptionType"))
   {
-    m_kMSEncrypted = jsonValue.GetBool("KMSEncrypted");
+    m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
 
-    m_kMSEncryptedHasBeenSet = true;
+    m_encryptionTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KMSKey"))
@@ -298,10 +270,9 @@ JsonValue NFSFileShareInfo::Jsonize() const
 
   }
 
-  if(m_kMSEncryptedHasBeenSet)
+  if(m_encryptionTypeHasBeenSet)
   {
-   payload.WithBool("KMSEncrypted", m_kMSEncrypted);
-
+   payload.WithString("EncryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
   }
 
   if(m_kMSKeyHasBeenSet)

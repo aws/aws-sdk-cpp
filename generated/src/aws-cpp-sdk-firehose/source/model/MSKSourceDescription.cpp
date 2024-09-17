@@ -22,15 +22,13 @@ MSKSourceDescription::MSKSourceDescription() :
     m_mSKClusterARNHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_authenticationConfigurationHasBeenSet(false),
-    m_deliveryStartTimestampHasBeenSet(false)
+    m_deliveryStartTimestampHasBeenSet(false),
+    m_readFromTimestampHasBeenSet(false)
 {
 }
 
-MSKSourceDescription::MSKSourceDescription(JsonView jsonValue) : 
-    m_mSKClusterARNHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false),
-    m_deliveryStartTimestampHasBeenSet(false)
+MSKSourceDescription::MSKSourceDescription(JsonView jsonValue)
+  : MSKSourceDescription()
 {
   *this = jsonValue;
 }
@@ -65,6 +63,13 @@ MSKSourceDescription& MSKSourceDescription::operator =(JsonView jsonValue)
     m_deliveryStartTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReadFromTimestamp"))
+  {
+    m_readFromTimestamp = jsonValue.GetDouble("ReadFromTimestamp");
+
+    m_readFromTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +98,11 @@ JsonValue MSKSourceDescription::Jsonize() const
   if(m_deliveryStartTimestampHasBeenSet)
   {
    payload.WithDouble("DeliveryStartTimestamp", m_deliveryStartTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_readFromTimestampHasBeenSet)
+  {
+   payload.WithDouble("ReadFromTimestamp", m_readFromTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

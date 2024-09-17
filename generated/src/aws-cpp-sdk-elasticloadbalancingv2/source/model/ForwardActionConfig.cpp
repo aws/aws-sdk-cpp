@@ -26,9 +26,8 @@ ForwardActionConfig::ForwardActionConfig() :
 {
 }
 
-ForwardActionConfig::ForwardActionConfig(const XmlNode& xmlNode) : 
-    m_targetGroupsHasBeenSet(false),
-    m_targetGroupStickinessConfigHasBeenSet(false)
+ForwardActionConfig::ForwardActionConfig(const XmlNode& xmlNode)
+  : ForwardActionConfig()
 {
   *this = xmlNode;
 }

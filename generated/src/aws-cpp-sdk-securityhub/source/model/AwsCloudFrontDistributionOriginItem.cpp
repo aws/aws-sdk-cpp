@@ -27,12 +27,8 @@ AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem() :
 {
 }
 
-AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_originPathHasBeenSet(false),
-    m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false)
+AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginItem()
 {
   *this = jsonValue;
 }

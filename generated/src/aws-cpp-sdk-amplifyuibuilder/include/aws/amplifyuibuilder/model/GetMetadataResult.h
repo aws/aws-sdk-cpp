@@ -33,88 +33,34 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API GetMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the configuration settings for the features metadata.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFeatures() const{ return m_features; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline void SetFeatures(const Aws::Map<Aws::String, Aws::String>& value) { m_features = value; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline void SetFeatures(Aws::Map<Aws::String, Aws::String>&& value) { m_features = std::move(value); }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& WithFeatures(const Aws::Map<Aws::String, Aws::String>& value) { SetFeatures(value); return *this;}
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& WithFeatures(Aws::Map<Aws::String, Aws::String>&& value) { SetFeatures(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& AddFeatures(const Aws::String& key, const Aws::String& value) { m_features.emplace(key, value); return *this; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& AddFeatures(Aws::String&& key, const Aws::String& value) { m_features.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& AddFeatures(const Aws::String& key, Aws::String&& value) { m_features.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& AddFeatures(Aws::String&& key, Aws::String&& value) { m_features.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& AddFeatures(const char* key, Aws::String&& value) { m_features.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& AddFeatures(Aws::String&& key, const char* value) { m_features.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Represents the configuration settings for the features metadata.</p>
-     */
     inline GetMetadataResult& AddFeatures(const char* key, const char* value) { m_features.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_features;

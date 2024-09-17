@@ -24,9 +24,8 @@ HoneycodeDestinationProperties::HoneycodeDestinationProperties() :
 {
 }
 
-HoneycodeDestinationProperties::HoneycodeDestinationProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
+HoneycodeDestinationProperties::HoneycodeDestinationProperties(JsonView jsonValue)
+  : HoneycodeDestinationProperties()
 {
   *this = jsonValue;
 }

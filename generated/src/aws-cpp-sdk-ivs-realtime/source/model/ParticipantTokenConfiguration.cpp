@@ -19,26 +19,36 @@ namespace Model
 {
 
 ParticipantTokenConfiguration::ParticipantTokenConfiguration() : 
-    m_attributesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_attributesHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
 }
 
-ParticipantTokenConfiguration::ParticipantTokenConfiguration(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+ParticipantTokenConfiguration::ParticipantTokenConfiguration(JsonView jsonValue)
+  : ParticipantTokenConfiguration()
 {
   *this = jsonValue;
 }
 
 ParticipantTokenConfiguration& ParticipantTokenConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("duration"))
+  {
+    m_duration = jsonValue.GetInteger("duration");
+
+    m_durationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("userId"))
+  {
+    m_userId = jsonValue.GetString("userId");
+
+    m_userIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -59,26 +69,24 @@ ParticipantTokenConfiguration& ParticipantTokenConfiguration::operator =(JsonVie
     m_capabilitiesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("duration"))
-  {
-    m_duration = jsonValue.GetInteger("duration");
-
-    m_durationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("userId"))
-  {
-    m_userId = jsonValue.GetString("userId");
-
-    m_userIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue ParticipantTokenConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_durationHasBeenSet)
+  {
+   payload.WithInteger("duration", m_duration);
+
+  }
+
+  if(m_userIdHasBeenSet)
+  {
+   payload.WithString("userId", m_userId);
+
+  }
 
   if(m_attributesHasBeenSet)
   {
@@ -99,18 +107,6 @@ JsonValue ParticipantTokenConfiguration::Jsonize() const
      capabilitiesJsonList[capabilitiesIndex].AsString(ParticipantTokenCapabilityMapper::GetNameForParticipantTokenCapability(m_capabilities[capabilitiesIndex]));
    }
    payload.WithArray("capabilities", std::move(capabilitiesJsonList));
-
-  }
-
-  if(m_durationHasBeenSet)
-  {
-   payload.WithInteger("duration", m_duration);
-
-  }
-
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("userId", m_userId);
 
   }
 

@@ -40,112 +40,38 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
      * update the specified stack.</p>
      */
     inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
-     * update the specified stack.</p>
-     */
     inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
-     * update the specified stack.</p>
-     */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
-     * update the specified stack.</p>
-     */
     inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
-     * update the specified stack.</p>
-     */
     inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
-     * update the specified stack.</p>
-     */
     inline ExecuteChangeSetRequest& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
-     * update the specified stack.</p>
-     */
     inline ExecuteChangeSetRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want use to
-     * update the specified stack.</p>
-     */
     inline ExecuteChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If you specified the name of a change set, specify the stack name or Amazon
      * Resource Name (ARN) that's associated with the change set you want to
      * execute.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>If you specified the name of a change set, specify the stack name or Amazon
-     * Resource Name (ARN) that's associated with the change set you want to
-     * execute.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>If you specified the name of a change set, specify the stack name or Amazon
-     * Resource Name (ARN) that's associated with the change set you want to
-     * execute.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>If you specified the name of a change set, specify the stack name or Amazon
-     * Resource Name (ARN) that's associated with the change set you want to
-     * execute.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>If you specified the name of a change set, specify the stack name or Amazon
-     * Resource Name (ARN) that's associated with the change set you want to
-     * execute.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>If you specified the name of a change set, specify the stack name or Amazon
-     * Resource Name (ARN) that's associated with the change set you want to
-     * execute.</p>
-     */
     inline ExecuteChangeSetRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>If you specified the name of a change set, specify the stack name or Amazon
-     * Resource Name (ARN) that's associated with the change set you want to
-     * execute.</p>
-     */
     inline ExecuteChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>If you specified the name of a change set, specify the stack name or Amazon
-     * Resource Name (ARN) that's associated with the change set you want to
-     * execute.</p>
-     */
     inline ExecuteChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
      * this token if you plan to retry requests so that CloudFormation knows that
@@ -154,71 +80,16 @@ namespace Model
      * CloudFormation successfully received them.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    /**
-     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to execute a change set to update a stack with the same
-     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
-     * CloudFormation successfully received them.</p>
-     */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to execute a change set to update a stack with the same
-     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
-     * CloudFormation successfully received them.</p>
-     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    /**
-     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to execute a change set to update a stack with the same
-     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
-     * CloudFormation successfully received them.</p>
-     */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    /**
-     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to execute a change set to update a stack with the same
-     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
-     * CloudFormation successfully received them.</p>
-     */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    /**
-     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to execute a change set to update a stack with the same
-     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
-     * CloudFormation successfully received them.</p>
-     */
     inline ExecuteChangeSetRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    /**
-     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to execute a change set to update a stack with the same
-     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
-     * CloudFormation successfully received them.</p>
-     */
     inline ExecuteChangeSetRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
-     * this token if you plan to retry requests so that CloudFormation knows that
-     * you're not attempting to execute a change set to update a stack with the same
-     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
-     * CloudFormation successfully received them.</p>
-     */
     inline ExecuteChangeSetRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Preserves the state of previously provisioned resources when an operation
      * fails. This parameter can't be specified when the <code>OnStackFailure</code>
@@ -235,87 +106,22 @@ namespace Model
      * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
      */
     inline bool GetDisableRollback() const{ return m_disableRollback; }
-
-    /**
-     * <p>Preserves the state of previously provisioned resources when an operation
-     * fails. This parameter can't be specified when the <code>OnStackFailure</code>
-     * parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation was specified.</p> <ul> <li> <p> <code>True</code> - if the stack
-     * creation fails, do nothing. This is equivalent to specifying
-     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>False</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying
-     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
-     */
     inline bool DisableRollbackHasBeenSet() const { return m_disableRollbackHasBeenSet; }
-
-    /**
-     * <p>Preserves the state of previously provisioned resources when an operation
-     * fails. This parameter can't be specified when the <code>OnStackFailure</code>
-     * parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation was specified.</p> <ul> <li> <p> <code>True</code> - if the stack
-     * creation fails, do nothing. This is equivalent to specifying
-     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>False</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying
-     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
-     */
     inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
-
-    /**
-     * <p>Preserves the state of previously provisioned resources when an operation
-     * fails. This parameter can't be specified when the <code>OnStackFailure</code>
-     * parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation was specified.</p> <ul> <li> <p> <code>True</code> - if the stack
-     * creation fails, do nothing. This is equivalent to specifying
-     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>False</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying
-     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
-     */
     inline ExecuteChangeSetRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When set to <code>true</code>, newly created resources are deleted when the
      * operation rolls back. This includes newly created resources marked with a
      * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
-
-    /**
-     * <p>When set to <code>true</code>, newly created resources are deleted when the
-     * operation rolls back. This includes newly created resources marked with a
-     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
-     */
     inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
-
-    /**
-     * <p>When set to <code>true</code>, newly created resources are deleted when the
-     * operation rolls back. This includes newly created resources marked with a
-     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
-     */
     inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
-
-    /**
-     * <p>When set to <code>true</code>, newly created resources are deleted when the
-     * operation rolls back. This includes newly created resources marked with a
-     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
-     */
     inline ExecuteChangeSetRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_changeSetName;

@@ -24,9 +24,8 @@ PathMatchType::PathMatchType() :
 {
 }
 
-PathMatchType::PathMatchType(JsonView jsonValue) : 
-    m_exactHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+PathMatchType::PathMatchType(JsonView jsonValue)
+  : PathMatchType()
 {
   *this = jsonValue;
 }

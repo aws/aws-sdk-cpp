@@ -33,37 +33,23 @@ namespace Model
     AWS_RDS_API DeleteDBSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const DBSnapshot& GetDBSnapshot() const{ return m_dBSnapshot; }
-
-    
     inline void SetDBSnapshot(const DBSnapshot& value) { m_dBSnapshot = value; }
-
-    
     inline void SetDBSnapshot(DBSnapshot&& value) { m_dBSnapshot = std::move(value); }
-
-    
     inline DeleteDBSnapshotResult& WithDBSnapshot(const DBSnapshot& value) { SetDBSnapshot(value); return *this;}
-
-    
     inline DeleteDBSnapshotResult& WithDBSnapshot(DBSnapshot&& value) { SetDBSnapshot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteDBSnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteDBSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DBSnapshot m_dBSnapshot;

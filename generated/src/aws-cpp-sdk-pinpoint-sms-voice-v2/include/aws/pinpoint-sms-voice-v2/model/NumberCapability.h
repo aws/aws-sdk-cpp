@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SMS,
-    VOICE
+    VOICE,
+    MMS
   };
 
 namespace NumberCapabilityMapper

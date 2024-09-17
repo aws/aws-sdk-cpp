@@ -27,12 +27,8 @@ FirewallPolicyDetails::FirewallPolicyDetails() :
 {
 }
 
-FirewallPolicyDetails::FirewallPolicyDetails(JsonView jsonValue) : 
-    m_statefulRuleGroupReferencesHasBeenSet(false),
-    m_statelessCustomActionsHasBeenSet(false),
-    m_statelessDefaultActionsHasBeenSet(false),
-    m_statelessFragmentDefaultActionsHasBeenSet(false),
-    m_statelessRuleGroupReferencesHasBeenSet(false)
+FirewallPolicyDetails::FirewallPolicyDetails(JsonView jsonValue)
+  : FirewallPolicyDetails()
 {
   *this = jsonValue;
 }

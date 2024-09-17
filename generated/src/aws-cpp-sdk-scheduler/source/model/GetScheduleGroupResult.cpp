@@ -22,8 +22,8 @@ GetScheduleGroupResult::GetScheduleGroupResult() :
 {
 }
 
-GetScheduleGroupResult::GetScheduleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ScheduleGroupState::NOT_SET)
+GetScheduleGroupResult::GetScheduleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetScheduleGroupResult()
 {
   *this = result;
 }

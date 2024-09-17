@@ -25,10 +25,8 @@ OnPremiseConfiguration::OnPremiseConfiguration() :
 {
 }
 
-OnPremiseConfiguration::OnPremiseConfiguration(JsonView jsonValue) : 
-    m_hostUrlHasBeenSet(false),
-    m_organizationNameHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false)
+OnPremiseConfiguration::OnPremiseConfiguration(JsonView jsonValue)
+  : OnPremiseConfiguration()
 {
   *this = jsonValue;
 }

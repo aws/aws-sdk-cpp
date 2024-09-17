@@ -25,10 +25,8 @@ ExportErrorDetailsOutput::ExportErrorDetailsOutput() :
 {
 }
 
-ExportErrorDetailsOutput::ExportErrorDetailsOutput(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_type(ExportErrorType::NOT_SET),
-    m_typeHasBeenSet(false)
+ExportErrorDetailsOutput::ExportErrorDetailsOutput(JsonView jsonValue)
+  : ExportErrorDetailsOutput()
 {
   *this = jsonValue;
 }

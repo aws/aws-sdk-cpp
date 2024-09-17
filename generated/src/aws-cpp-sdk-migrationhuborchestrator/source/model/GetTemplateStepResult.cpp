@@ -22,8 +22,8 @@ GetTemplateStepResult::GetTemplateStepResult() :
 {
 }
 
-GetTemplateStepResult::GetTemplateStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_stepActionType(StepActionType::NOT_SET)
+GetTemplateStepResult::GetTemplateStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTemplateStepResult()
 {
   *this = result;
 }

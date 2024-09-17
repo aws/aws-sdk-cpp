@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResult() : 
+    m_autoEnableOrganizationMembers(AutoEnableMode::NOT_SET),
     m_status(AutomatedDiscoveryStatus::NOT_SET)
 {
 }
 
-GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AutomatedDiscoveryStatus::NOT_SET)
+GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAutomatedDiscoveryConfigurationResult()
 {
   *this = result;
 }
@@ -31,6 +32,12 @@ GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResu
 GetAutomatedDiscoveryConfigurationResult& GetAutomatedDiscoveryConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("autoEnableOrganizationMembers"))
+  {
+    m_autoEnableOrganizationMembers = AutoEnableModeMapper::GetAutoEnableModeForName(jsonValue.GetString("autoEnableOrganizationMembers"));
+
+  }
+
   if(jsonValue.ValueExists("classificationScopeId"))
   {
     m_classificationScopeId = jsonValue.GetString("classificationScopeId");

@@ -33,127 +33,55 @@ namespace Model
     AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+     * <p> The ID or ARN of the Outpost. </p>
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
-
-    /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-     */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
-
-    /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-     */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
-
-    /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-     */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
-
-    /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-     */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
-
-    /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-     */
     inline UpdateOutpostRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
-
-    /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-     */
     inline UpdateOutpostRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-     */
     inline UpdateOutpostRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetName() const{ return m_name; }
-
-    
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    
     inline UpdateOutpostRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    
     inline UpdateOutpostRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    
     inline UpdateOutpostRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    
     inline UpdateOutpostRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    
     inline UpdateOutpostRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    
     inline UpdateOutpostRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The type of hardware for this Outpost. </p>
      */
     inline const SupportedHardwareType& GetSupportedHardwareType() const{ return m_supportedHardwareType; }
-
-    /**
-     * <p> The type of hardware for this Outpost. </p>
-     */
     inline bool SupportedHardwareTypeHasBeenSet() const { return m_supportedHardwareTypeHasBeenSet; }
-
-    /**
-     * <p> The type of hardware for this Outpost. </p>
-     */
     inline void SetSupportedHardwareType(const SupportedHardwareType& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
-
-    /**
-     * <p> The type of hardware for this Outpost. </p>
-     */
     inline void SetSupportedHardwareType(SupportedHardwareType&& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = std::move(value); }
-
-    /**
-     * <p> The type of hardware for this Outpost. </p>
-     */
     inline UpdateOutpostRequest& WithSupportedHardwareType(const SupportedHardwareType& value) { SetSupportedHardwareType(value); return *this;}
-
-    /**
-     * <p> The type of hardware for this Outpost. </p>
-     */
     inline UpdateOutpostRequest& WithSupportedHardwareType(SupportedHardwareType&& value) { SetSupportedHardwareType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_outpostId;

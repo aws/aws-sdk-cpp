@@ -22,8 +22,8 @@ GetChatControlsConfigurationResult::GetChatControlsConfigurationResult() :
 {
 }
 
-GetChatControlsConfigurationResult::GetChatControlsConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_responseScope(ResponseScope::NOT_SET)
+GetChatControlsConfigurationResult::GetChatControlsConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetChatControlsConfigurationResult()
 {
   *this = result;
 }
@@ -31,21 +31,15 @@ GetChatControlsConfigurationResult::GetChatControlsConfigurationResult(const Aws
 GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("blockedPhrases"))
-  {
-    m_blockedPhrases = jsonValue.GetObject("blockedPhrases");
-
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("responseScope"))
   {
     m_responseScope = ResponseScopeMapper::GetResponseScopeForName(jsonValue.GetString("responseScope"));
+
+  }
+
+  if(jsonValue.ValueExists("blockedPhrases"))
+  {
+    m_blockedPhrases = jsonValue.GetObject("blockedPhrases");
 
   }
 
@@ -56,6 +50,18 @@ GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator
     {
       m_topicConfigurations.push_back(topicConfigurationsJsonList[topicConfigurationsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("creatorModeConfiguration"))
+  {
+    m_creatorModeConfiguration = jsonValue.GetObject("creatorModeConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

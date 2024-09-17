@@ -25,10 +25,8 @@ SameSheetTargetVisualConfiguration::SameSheetTargetVisualConfiguration() :
 {
 }
 
-SameSheetTargetVisualConfiguration::SameSheetTargetVisualConfiguration(JsonView jsonValue) : 
-    m_targetVisualsHasBeenSet(false),
-    m_targetVisualOptions(TargetVisualOptions::NOT_SET),
-    m_targetVisualOptionsHasBeenSet(false)
+SameSheetTargetVisualConfiguration::SameSheetTargetVisualConfiguration(JsonView jsonValue)
+  : SameSheetTargetVisualConfiguration()
 {
   *this = jsonValue;
 }

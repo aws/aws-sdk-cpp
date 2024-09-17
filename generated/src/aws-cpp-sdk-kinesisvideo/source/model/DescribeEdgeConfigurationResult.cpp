@@ -22,8 +22,8 @@ DescribeEdgeConfigurationResult::DescribeEdgeConfigurationResult() :
 {
 }
 
-DescribeEdgeConfigurationResult::DescribeEdgeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_syncStatus(SyncStatus::NOT_SET)
+DescribeEdgeConfigurationResult::DescribeEdgeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeEdgeConfigurationResult()
 {
   *this = result;
 }

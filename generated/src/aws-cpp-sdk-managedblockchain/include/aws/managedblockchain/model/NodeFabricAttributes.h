@@ -38,103 +38,35 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The endpoint that identifies the peer node for all services except peer
      * channel-based event services.</p>
      */
     inline const Aws::String& GetPeerEndpoint() const{ return m_peerEndpoint; }
-
-    /**
-     * <p>The endpoint that identifies the peer node for all services except peer
-     * channel-based event services.</p>
-     */
     inline bool PeerEndpointHasBeenSet() const { return m_peerEndpointHasBeenSet; }
-
-    /**
-     * <p>The endpoint that identifies the peer node for all services except peer
-     * channel-based event services.</p>
-     */
     inline void SetPeerEndpoint(const Aws::String& value) { m_peerEndpointHasBeenSet = true; m_peerEndpoint = value; }
-
-    /**
-     * <p>The endpoint that identifies the peer node for all services except peer
-     * channel-based event services.</p>
-     */
     inline void SetPeerEndpoint(Aws::String&& value) { m_peerEndpointHasBeenSet = true; m_peerEndpoint = std::move(value); }
-
-    /**
-     * <p>The endpoint that identifies the peer node for all services except peer
-     * channel-based event services.</p>
-     */
     inline void SetPeerEndpoint(const char* value) { m_peerEndpointHasBeenSet = true; m_peerEndpoint.assign(value); }
-
-    /**
-     * <p>The endpoint that identifies the peer node for all services except peer
-     * channel-based event services.</p>
-     */
     inline NodeFabricAttributes& WithPeerEndpoint(const Aws::String& value) { SetPeerEndpoint(value); return *this;}
-
-    /**
-     * <p>The endpoint that identifies the peer node for all services except peer
-     * channel-based event services.</p>
-     */
     inline NodeFabricAttributes& WithPeerEndpoint(Aws::String&& value) { SetPeerEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The endpoint that identifies the peer node for all services except peer
-     * channel-based event services.</p>
-     */
     inline NodeFabricAttributes& WithPeerEndpoint(const char* value) { SetPeerEndpoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The endpoint that identifies the peer node for peer channel-based event
      * services.</p>
      */
     inline const Aws::String& GetPeerEventEndpoint() const{ return m_peerEventEndpoint; }
-
-    /**
-     * <p>The endpoint that identifies the peer node for peer channel-based event
-     * services.</p>
-     */
     inline bool PeerEventEndpointHasBeenSet() const { return m_peerEventEndpointHasBeenSet; }
-
-    /**
-     * <p>The endpoint that identifies the peer node for peer channel-based event
-     * services.</p>
-     */
     inline void SetPeerEventEndpoint(const Aws::String& value) { m_peerEventEndpointHasBeenSet = true; m_peerEventEndpoint = value; }
-
-    /**
-     * <p>The endpoint that identifies the peer node for peer channel-based event
-     * services.</p>
-     */
     inline void SetPeerEventEndpoint(Aws::String&& value) { m_peerEventEndpointHasBeenSet = true; m_peerEventEndpoint = std::move(value); }
-
-    /**
-     * <p>The endpoint that identifies the peer node for peer channel-based event
-     * services.</p>
-     */
     inline void SetPeerEventEndpoint(const char* value) { m_peerEventEndpointHasBeenSet = true; m_peerEventEndpoint.assign(value); }
-
-    /**
-     * <p>The endpoint that identifies the peer node for peer channel-based event
-     * services.</p>
-     */
     inline NodeFabricAttributes& WithPeerEventEndpoint(const Aws::String& value) { SetPeerEventEndpoint(value); return *this;}
-
-    /**
-     * <p>The endpoint that identifies the peer node for peer channel-based event
-     * services.</p>
-     */
     inline NodeFabricAttributes& WithPeerEventEndpoint(Aws::String&& value) { SetPeerEventEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The endpoint that identifies the peer node for peer channel-based event
-     * services.</p>
-     */
     inline NodeFabricAttributes& WithPeerEventEndpoint(const char* value) { SetPeerEventEndpoint(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_peerEndpoint;

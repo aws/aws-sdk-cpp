@@ -38,128 +38,47 @@ namespace Model
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The full name of the metric.</p>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
-
-    /**
-     * <p>The full name of the metric.</p>
-     */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-
-    /**
-     * <p>The full name of the metric.</p>
-     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-
-    /**
-     * <p>The full name of the metric.</p>
-     */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-
-    /**
-     * <p>The full name of the metric.</p>
-     */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-
-    /**
-     * <p>The full name of the metric.</p>
-     */
     inline ResponseResourceMetric& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-
-    /**
-     * <p>The full name of the metric.</p>
-     */
     inline ResponseResourceMetric& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-
-    /**
-     * <p>The full name of the metric.</p>
-     */
     inline ResponseResourceMetric& WithMetric(const char* value) { SetMetric(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the metric.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the metric.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the metric.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the metric.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the metric.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the metric.</p>
-     */
     inline ResponseResourceMetric& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the metric.</p>
-     */
     inline ResponseResourceMetric& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the metric.</p>
-     */
     inline ResponseResourceMetric& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of the metric.</p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit of the metric.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit of the metric.</p>
-     */
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit of the metric.</p>
-     */
     inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit of the metric.</p>
-     */
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-
-    /**
-     * <p>The unit of the metric.</p>
-     */
     inline ResponseResourceMetric& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit of the metric.</p>
-     */
     inline ResponseResourceMetric& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-
-    /**
-     * <p>The unit of the metric.</p>
-     */
     inline ResponseResourceMetric& WithUnit(const char* value) { SetUnit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metric;

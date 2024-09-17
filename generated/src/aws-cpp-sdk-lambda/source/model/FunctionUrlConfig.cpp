@@ -31,16 +31,8 @@ FunctionUrlConfig::FunctionUrlConfig() :
 {
 }
 
-FunctionUrlConfig::FunctionUrlConfig(JsonView jsonValue) : 
-    m_functionUrlHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_corsHasBeenSet(false),
-    m_authType(FunctionUrlAuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_invokeMode(InvokeMode::NOT_SET),
-    m_invokeModeHasBeenSet(false)
+FunctionUrlConfig::FunctionUrlConfig(JsonView jsonValue)
+  : FunctionUrlConfig()
 {
   *this = jsonValue;
 }

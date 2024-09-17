@@ -43,87 +43,33 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the user name for your storage system's management interface.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
-
-    /**
-     * <p>Specifies the user name for your storage system's management interface.</p>
-     */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-
-    /**
-     * <p>Specifies the user name for your storage system's management interface.</p>
-     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-
-    /**
-     * <p>Specifies the user name for your storage system's management interface.</p>
-     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-
-    /**
-     * <p>Specifies the user name for your storage system's management interface.</p>
-     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-
-    /**
-     * <p>Specifies the user name for your storage system's management interface.</p>
-     */
     inline Credentials& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-
-    /**
-     * <p>Specifies the user name for your storage system's management interface.</p>
-     */
     inline Credentials& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the user name for your storage system's management interface.</p>
-     */
     inline Credentials& WithUsername(const char* value) { SetUsername(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the password for your storage system's management interface.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
-
-    /**
-     * <p>Specifies the password for your storage system's management interface.</p>
-     */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-
-    /**
-     * <p>Specifies the password for your storage system's management interface.</p>
-     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-
-    /**
-     * <p>Specifies the password for your storage system's management interface.</p>
-     */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-
-    /**
-     * <p>Specifies the password for your storage system's management interface.</p>
-     */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-
-    /**
-     * <p>Specifies the password for your storage system's management interface.</p>
-     */
     inline Credentials& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-
-    /**
-     * <p>Specifies the password for your storage system's management interface.</p>
-     */
     inline Credentials& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the password for your storage system's management interface.</p>
-     */
     inline Credentials& WithPassword(const char* value) { SetPassword(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_username;

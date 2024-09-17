@@ -19,45 +19,45 @@ namespace Model
 {
 
 AgentAlias::AgentAlias() : 
-    m_agentIdHasBeenSet(false),
+    m_agentAliasArnHasBeenSet(false),
+    m_agentAliasHistoryEventsHasBeenSet(false),
     m_agentAliasIdHasBeenSet(false),
     m_agentAliasNameHasBeenSet(false),
-    m_agentAliasArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_agentAliasHistoryEventsHasBeenSet(false),
     m_agentAliasStatus(AgentAliasStatus::NOT_SET),
-    m_agentAliasStatusHasBeenSet(false)
+    m_agentAliasStatusHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_failureReasonsHasBeenSet(false),
+    m_routingConfigurationHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
-AgentAlias::AgentAlias(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_agentAliasIdHasBeenSet(false),
-    m_agentAliasNameHasBeenSet(false),
-    m_agentAliasArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_agentAliasHistoryEventsHasBeenSet(false),
-    m_agentAliasStatus(AgentAliasStatus::NOT_SET),
-    m_agentAliasStatusHasBeenSet(false)
+AgentAlias::AgentAlias(JsonView jsonValue)
+  : AgentAlias()
 {
   *this = jsonValue;
 }
 
 AgentAlias& AgentAlias::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("agentId"))
+  if(jsonValue.ValueExists("agentAliasArn"))
   {
-    m_agentId = jsonValue.GetString("agentId");
+    m_agentAliasArn = jsonValue.GetString("agentAliasArn");
 
-    m_agentIdHasBeenSet = true;
+    m_agentAliasArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentAliasHistoryEvents"))
+  {
+    Aws::Utils::Array<JsonView> agentAliasHistoryEventsJsonList = jsonValue.GetArray("agentAliasHistoryEvents");
+    for(unsigned agentAliasHistoryEventsIndex = 0; agentAliasHistoryEventsIndex < agentAliasHistoryEventsJsonList.GetLength(); ++agentAliasHistoryEventsIndex)
+    {
+      m_agentAliasHistoryEvents.push_back(agentAliasHistoryEventsJsonList[agentAliasHistoryEventsIndex].AsObject());
+    }
+    m_agentAliasHistoryEventsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("agentAliasId"))
@@ -74,11 +74,18 @@ AgentAlias& AgentAlias::operator =(JsonView jsonValue)
     m_agentAliasNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("agentAliasArn"))
+  if(jsonValue.ValueExists("agentAliasStatus"))
   {
-    m_agentAliasArn = jsonValue.GetString("agentAliasArn");
+    m_agentAliasStatus = AgentAliasStatusMapper::GetAgentAliasStatusForName(jsonValue.GetString("agentAliasStatus"));
 
-    m_agentAliasArnHasBeenSet = true;
+    m_agentAliasStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentId"))
+  {
+    m_agentId = jsonValue.GetString("agentId");
+
+    m_agentIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clientToken"))
@@ -88,11 +95,28 @@ AgentAlias& AgentAlias::operator =(JsonView jsonValue)
     m_clientTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureReasons"))
+  {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+    {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
+    }
+    m_failureReasonsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("routingConfiguration"))
@@ -105,35 +129,11 @@ AgentAlias& AgentAlias::operator =(JsonView jsonValue)
     m_routingConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
 
     m_updatedAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("agentAliasHistoryEvents"))
-  {
-    Aws::Utils::Array<JsonView> agentAliasHistoryEventsJsonList = jsonValue.GetArray("agentAliasHistoryEvents");
-    for(unsigned agentAliasHistoryEventsIndex = 0; agentAliasHistoryEventsIndex < agentAliasHistoryEventsJsonList.GetLength(); ++agentAliasHistoryEventsIndex)
-    {
-      m_agentAliasHistoryEvents.push_back(agentAliasHistoryEventsJsonList[agentAliasHistoryEventsIndex].AsObject());
-    }
-    m_agentAliasHistoryEventsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("agentAliasStatus"))
-  {
-    m_agentAliasStatus = AgentAliasStatusMapper::GetAgentAliasStatusForName(jsonValue.GetString("agentAliasStatus"));
-
-    m_agentAliasStatusHasBeenSet = true;
   }
 
   return *this;
@@ -143,9 +143,20 @@ JsonValue AgentAlias::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_agentIdHasBeenSet)
+  if(m_agentAliasArnHasBeenSet)
   {
-   payload.WithString("agentId", m_agentId);
+   payload.WithString("agentAliasArn", m_agentAliasArn);
+
+  }
+
+  if(m_agentAliasHistoryEventsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> agentAliasHistoryEventsJsonList(m_agentAliasHistoryEvents.size());
+   for(unsigned agentAliasHistoryEventsIndex = 0; agentAliasHistoryEventsIndex < agentAliasHistoryEventsJsonList.GetLength(); ++agentAliasHistoryEventsIndex)
+   {
+     agentAliasHistoryEventsJsonList[agentAliasHistoryEventsIndex].AsObject(m_agentAliasHistoryEvents[agentAliasHistoryEventsIndex].Jsonize());
+   }
+   payload.WithArray("agentAliasHistoryEvents", std::move(agentAliasHistoryEventsJsonList));
 
   }
 
@@ -161,9 +172,14 @@ JsonValue AgentAlias::Jsonize() const
 
   }
 
-  if(m_agentAliasArnHasBeenSet)
+  if(m_agentAliasStatusHasBeenSet)
   {
-   payload.WithString("agentAliasArn", m_agentAliasArn);
+   payload.WithString("agentAliasStatus", AgentAliasStatusMapper::GetNameForAgentAliasStatus(m_agentAliasStatus));
+  }
+
+  if(m_agentIdHasBeenSet)
+  {
+   payload.WithString("agentId", m_agentId);
 
   }
 
@@ -173,9 +189,25 @@ JsonValue AgentAlias::Jsonize() const
 
   }
 
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_failureReasonsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> failureReasonsJsonList(m_failureReasons.size());
+   for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+   {
+     failureReasonsJsonList[failureReasonsIndex].AsString(m_failureReasons[failureReasonsIndex]);
+   }
+   payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
 
   }
 
@@ -190,30 +222,9 @@ JsonValue AgentAlias::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_agentAliasHistoryEventsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> agentAliasHistoryEventsJsonList(m_agentAliasHistoryEvents.size());
-   for(unsigned agentAliasHistoryEventsIndex = 0; agentAliasHistoryEventsIndex < agentAliasHistoryEventsJsonList.GetLength(); ++agentAliasHistoryEventsIndex)
-   {
-     agentAliasHistoryEventsJsonList[agentAliasHistoryEventsIndex].AsObject(m_agentAliasHistoryEvents[agentAliasHistoryEventsIndex].Jsonize());
-   }
-   payload.WithArray("agentAliasHistoryEvents", std::move(agentAliasHistoryEventsJsonList));
-
-  }
-
-  if(m_agentAliasStatusHasBeenSet)
-  {
-   payload.WithString("agentAliasStatus", AgentAliasStatusMapper::GetNameForAgentAliasStatus(m_agentAliasStatus));
   }
 
   return payload;

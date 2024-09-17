@@ -23,9 +23,8 @@ FinalizeCutoverResult::FinalizeCutoverResult() :
 {
 }
 
-FinalizeCutoverResult::FinalizeCutoverResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false),
-    m_replicationType(ReplicationType::NOT_SET)
+FinalizeCutoverResult::FinalizeCutoverResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : FinalizeCutoverResult()
 {
   *this = result;
 }

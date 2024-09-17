@@ -50,34 +50,8 @@ GlacierJobDescription::GlacierJobDescription() :
 {
 }
 
-GlacierJobDescription::GlacierJobDescription(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobDescriptionHasBeenSet(false),
-    m_action(ActionCode::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_archiveIdHasBeenSet(false),
-    m_vaultARNHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completed(false),
-    m_completedHasBeenSet(false),
-    m_statusCode(StatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_archiveSizeInBytes(0),
-    m_archiveSizeInBytesHasBeenSet(false),
-    m_inventorySizeInBytes(0),
-    m_inventorySizeInBytesHasBeenSet(false),
-    m_sNSTopicHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_sHA256TreeHashHasBeenSet(false),
-    m_archiveSHA256TreeHashHasBeenSet(false),
-    m_retrievalByteRangeHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_inventoryRetrievalParametersHasBeenSet(false),
-    m_jobOutputPathHasBeenSet(false),
-    m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+GlacierJobDescription::GlacierJobDescription(JsonView jsonValue)
+  : GlacierJobDescription()
 {
   *this = jsonValue;
 }

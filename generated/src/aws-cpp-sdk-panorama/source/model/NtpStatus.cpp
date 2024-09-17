@@ -26,11 +26,8 @@ NtpStatus::NtpStatus() :
 {
 }
 
-NtpStatus::NtpStatus(JsonView jsonValue) : 
-    m_connectionStatus(NetworkConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_ntpServerNameHasBeenSet(false)
+NtpStatus::NtpStatus(JsonView jsonValue)
+  : NtpStatus()
 {
   *this = jsonValue;
 }

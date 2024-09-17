@@ -38,166 +38,62 @@ namespace Model
     AWS_APPCONFIG_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The application ID.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application ID.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration profile ID.</p>
      */
     inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration profile ID.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token to start the list. Use this token to get the next set of results.
      * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token to start the list. Use this token to get the next set of results.
-     * </p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional filter that can be used to specify the version label of an
      * AppConfig hosted configuration version. This parameter supports filtering by
@@ -205,63 +101,14 @@ namespace Model
      * the end of the value, only an exact match is returned.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
-
-    /**
-     * <p>An optional filter that can be used to specify the version label of an
-     * AppConfig hosted configuration version. This parameter supports filtering by
-     * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
-     * the end of the value, only an exact match is returned.</p>
-     */
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-
-    /**
-     * <p>An optional filter that can be used to specify the version label of an
-     * AppConfig hosted configuration version. This parameter supports filtering by
-     * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
-     * the end of the value, only an exact match is returned.</p>
-     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-
-    /**
-     * <p>An optional filter that can be used to specify the version label of an
-     * AppConfig hosted configuration version. This parameter supports filtering by
-     * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
-     * the end of the value, only an exact match is returned.</p>
-     */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-
-    /**
-     * <p>An optional filter that can be used to specify the version label of an
-     * AppConfig hosted configuration version. This parameter supports filtering by
-     * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
-     * the end of the value, only an exact match is returned.</p>
-     */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-
-    /**
-     * <p>An optional filter that can be used to specify the version label of an
-     * AppConfig hosted configuration version. This parameter supports filtering by
-     * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
-     * the end of the value, only an exact match is returned.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-
-    /**
-     * <p>An optional filter that can be used to specify the version label of an
-     * AppConfig hosted configuration version. This parameter supports filtering by
-     * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
-     * the end of the value, only an exact match is returned.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional filter that can be used to specify the version label of an
-     * AppConfig hosted configuration version. This parameter supports filtering by
-     * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
-     * the end of the value, only an exact match is returned.</p>
-     */
     inline ListHostedConfigurationVersionsRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

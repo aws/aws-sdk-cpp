@@ -51,36 +51,8 @@ RelationalDatabase::RelationalDatabase() :
 {
 }
 
-RelationalDatabase::RelationalDatabase(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_relationalDatabaseBlueprintIdHasBeenSet(false),
-    m_relationalDatabaseBundleIdHasBeenSet(false),
-    m_masterDatabaseNameHasBeenSet(false),
-    m_hardwareHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_backupRetentionEnabled(false),
-    m_backupRetentionEnabledHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_latestRestorableTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_masterEndpointHasBeenSet(false),
-    m_pendingMaintenanceActionsHasBeenSet(false),
-    m_caCertificateIdentifierHasBeenSet(false)
+RelationalDatabase::RelationalDatabase(JsonView jsonValue)
+  : RelationalDatabase()
 {
   *this = jsonValue;
 }

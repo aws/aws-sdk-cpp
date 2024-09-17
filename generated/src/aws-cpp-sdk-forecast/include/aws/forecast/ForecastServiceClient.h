@@ -1580,13 +1580,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request) const;
+        virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetGroupsRequestT = Model::ListDatasetGroupsRequest>
-        Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const ListDatasetGroupsRequestT& request) const
+        Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const ListDatasetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListDatasetGroups, request);
         }
@@ -1595,7 +1595,7 @@ namespace ForecastService
          * An Async wrapper for ListDatasetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetGroupsRequestT = Model::ListDatasetGroupsRequest>
-        void ListDatasetGroupsAsync(const ListDatasetGroupsRequestT& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetGroupsAsync(const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListDatasetGroups, request, handler, context);
         }
@@ -1613,13 +1613,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasetImportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request) const;
+        virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetImportJobsRequestT = Model::ListDatasetImportJobsRequest>
-        Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const ListDatasetImportJobsRequestT& request) const
+        Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const ListDatasetImportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListDatasetImportJobs, request);
         }
@@ -1628,7 +1628,7 @@ namespace ForecastService
          * An Async wrapper for ListDatasetImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetImportJobsRequestT = Model::ListDatasetImportJobsRequest>
-        void ListDatasetImportJobsAsync(const ListDatasetImportJobsRequestT& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetImportJobsAsync(const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetImportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListDatasetImportJobs, request, handler, context);
         }
@@ -1644,13 +1644,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListDatasets, request);
         }
@@ -1659,7 +1659,7 @@ namespace ForecastService
          * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListDatasets, request, handler, context);
         }
@@ -1674,13 +1674,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExplainabilitiesOutcome ListExplainabilities(const Model::ListExplainabilitiesRequest& request) const;
+        virtual Model::ListExplainabilitiesOutcome ListExplainabilities(const Model::ListExplainabilitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExplainabilities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExplainabilitiesRequestT = Model::ListExplainabilitiesRequest>
-        Model::ListExplainabilitiesOutcomeCallable ListExplainabilitiesCallable(const ListExplainabilitiesRequestT& request) const
+        Model::ListExplainabilitiesOutcomeCallable ListExplainabilitiesCallable(const ListExplainabilitiesRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListExplainabilities, request);
         }
@@ -1689,7 +1689,7 @@ namespace ForecastService
          * An Async wrapper for ListExplainabilities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExplainabilitiesRequestT = Model::ListExplainabilitiesRequest>
-        void ListExplainabilitiesAsync(const ListExplainabilitiesRequestT& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExplainabilitiesAsync(const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExplainabilitiesRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListExplainabilities, request, handler, context);
         }
@@ -1704,13 +1704,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExplainabilityExportsOutcome ListExplainabilityExports(const Model::ListExplainabilityExportsRequest& request) const;
+        virtual Model::ListExplainabilityExportsOutcome ListExplainabilityExports(const Model::ListExplainabilityExportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExplainabilityExports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExplainabilityExportsRequestT = Model::ListExplainabilityExportsRequest>
-        Model::ListExplainabilityExportsOutcomeCallable ListExplainabilityExportsCallable(const ListExplainabilityExportsRequestT& request) const
+        Model::ListExplainabilityExportsOutcomeCallable ListExplainabilityExportsCallable(const ListExplainabilityExportsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListExplainabilityExports, request);
         }
@@ -1719,7 +1719,7 @@ namespace ForecastService
          * An Async wrapper for ListExplainabilityExports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExplainabilityExportsRequestT = Model::ListExplainabilityExportsRequest>
-        void ListExplainabilityExportsAsync(const ListExplainabilityExportsRequestT& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExplainabilityExportsAsync(const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExplainabilityExportsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListExplainabilityExports, request, handler, context);
         }
@@ -1734,13 +1734,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListForecastExportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListForecastExportJobsOutcome ListForecastExportJobs(const Model::ListForecastExportJobsRequest& request) const;
+        virtual Model::ListForecastExportJobsOutcome ListForecastExportJobs(const Model::ListForecastExportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListForecastExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListForecastExportJobsRequestT = Model::ListForecastExportJobsRequest>
-        Model::ListForecastExportJobsOutcomeCallable ListForecastExportJobsCallable(const ListForecastExportJobsRequestT& request) const
+        Model::ListForecastExportJobsOutcomeCallable ListForecastExportJobsCallable(const ListForecastExportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListForecastExportJobs, request);
         }
@@ -1749,7 +1749,7 @@ namespace ForecastService
          * An Async wrapper for ListForecastExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListForecastExportJobsRequestT = Model::ListForecastExportJobsRequest>
-        void ListForecastExportJobsAsync(const ListForecastExportJobsRequestT& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListForecastExportJobsAsync(const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListForecastExportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListForecastExportJobs, request, handler, context);
         }
@@ -1764,13 +1764,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListForecasts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListForecastsOutcome ListForecasts(const Model::ListForecastsRequest& request) const;
+        virtual Model::ListForecastsOutcome ListForecasts(const Model::ListForecastsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListForecasts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListForecastsRequestT = Model::ListForecastsRequest>
-        Model::ListForecastsOutcomeCallable ListForecastsCallable(const ListForecastsRequestT& request) const
+        Model::ListForecastsOutcomeCallable ListForecastsCallable(const ListForecastsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListForecasts, request);
         }
@@ -1779,7 +1779,7 @@ namespace ForecastService
          * An Async wrapper for ListForecasts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListForecastsRequestT = Model::ListForecastsRequest>
-        void ListForecastsAsync(const ListForecastsRequestT& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListForecastsAsync(const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListForecastsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListForecasts, request, handler, context);
         }
@@ -1824,13 +1824,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMonitorsOutcome ListMonitors(const Model::ListMonitorsRequest& request) const;
+        virtual Model::ListMonitorsOutcome ListMonitors(const Model::ListMonitorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMonitorsRequestT = Model::ListMonitorsRequest>
-        Model::ListMonitorsOutcomeCallable ListMonitorsCallable(const ListMonitorsRequestT& request) const
+        Model::ListMonitorsOutcomeCallable ListMonitorsCallable(const ListMonitorsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListMonitors, request);
         }
@@ -1839,7 +1839,7 @@ namespace ForecastService
          * An Async wrapper for ListMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMonitorsRequestT = Model::ListMonitorsRequest>
-        void ListMonitorsAsync(const ListMonitorsRequestT& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMonitorsAsync(const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMonitorsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListMonitors, request, handler, context);
         }
@@ -1855,13 +1855,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictorBacktestExportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPredictorBacktestExportJobsOutcome ListPredictorBacktestExportJobs(const Model::ListPredictorBacktestExportJobsRequest& request) const;
+        virtual Model::ListPredictorBacktestExportJobsOutcome ListPredictorBacktestExportJobs(const Model::ListPredictorBacktestExportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPredictorBacktestExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPredictorBacktestExportJobsRequestT = Model::ListPredictorBacktestExportJobsRequest>
-        Model::ListPredictorBacktestExportJobsOutcomeCallable ListPredictorBacktestExportJobsCallable(const ListPredictorBacktestExportJobsRequestT& request) const
+        Model::ListPredictorBacktestExportJobsOutcomeCallable ListPredictorBacktestExportJobsCallable(const ListPredictorBacktestExportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListPredictorBacktestExportJobs, request);
         }
@@ -1870,7 +1870,7 @@ namespace ForecastService
          * An Async wrapper for ListPredictorBacktestExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPredictorBacktestExportJobsRequestT = Model::ListPredictorBacktestExportJobsRequest>
-        void ListPredictorBacktestExportJobsAsync(const ListPredictorBacktestExportJobsRequestT& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPredictorBacktestExportJobsAsync(const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPredictorBacktestExportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListPredictorBacktestExportJobs, request, handler, context);
         }
@@ -1886,13 +1886,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPredictorsOutcome ListPredictors(const Model::ListPredictorsRequest& request) const;
+        virtual Model::ListPredictorsOutcome ListPredictors(const Model::ListPredictorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPredictors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPredictorsRequestT = Model::ListPredictorsRequest>
-        Model::ListPredictorsOutcomeCallable ListPredictorsCallable(const ListPredictorsRequestT& request) const
+        Model::ListPredictorsOutcomeCallable ListPredictorsCallable(const ListPredictorsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListPredictors, request);
         }
@@ -1901,7 +1901,7 @@ namespace ForecastService
          * An Async wrapper for ListPredictors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPredictorsRequestT = Model::ListPredictorsRequest>
-        void ListPredictorsAsync(const ListPredictorsRequestT& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPredictorsAsync(const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPredictorsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListPredictors, request, handler, context);
         }
@@ -1941,13 +1941,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfAnalyses">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWhatIfAnalysesOutcome ListWhatIfAnalyses(const Model::ListWhatIfAnalysesRequest& request) const;
+        virtual Model::ListWhatIfAnalysesOutcome ListWhatIfAnalyses(const Model::ListWhatIfAnalysesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWhatIfAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWhatIfAnalysesRequestT = Model::ListWhatIfAnalysesRequest>
-        Model::ListWhatIfAnalysesOutcomeCallable ListWhatIfAnalysesCallable(const ListWhatIfAnalysesRequestT& request) const
+        Model::ListWhatIfAnalysesOutcomeCallable ListWhatIfAnalysesCallable(const ListWhatIfAnalysesRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListWhatIfAnalyses, request);
         }
@@ -1956,7 +1956,7 @@ namespace ForecastService
          * An Async wrapper for ListWhatIfAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWhatIfAnalysesRequestT = Model::ListWhatIfAnalysesRequest>
-        void ListWhatIfAnalysesAsync(const ListWhatIfAnalysesRequestT& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWhatIfAnalysesAsync(const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWhatIfAnalysesRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListWhatIfAnalyses, request, handler, context);
         }
@@ -1971,13 +1971,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecastExports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWhatIfForecastExportsOutcome ListWhatIfForecastExports(const Model::ListWhatIfForecastExportsRequest& request) const;
+        virtual Model::ListWhatIfForecastExportsOutcome ListWhatIfForecastExports(const Model::ListWhatIfForecastExportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWhatIfForecastExports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWhatIfForecastExportsRequestT = Model::ListWhatIfForecastExportsRequest>
-        Model::ListWhatIfForecastExportsOutcomeCallable ListWhatIfForecastExportsCallable(const ListWhatIfForecastExportsRequestT& request) const
+        Model::ListWhatIfForecastExportsOutcomeCallable ListWhatIfForecastExportsCallable(const ListWhatIfForecastExportsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListWhatIfForecastExports, request);
         }
@@ -1986,7 +1986,7 @@ namespace ForecastService
          * An Async wrapper for ListWhatIfForecastExports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWhatIfForecastExportsRequestT = Model::ListWhatIfForecastExportsRequest>
-        void ListWhatIfForecastExportsAsync(const ListWhatIfForecastExportsRequestT& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWhatIfForecastExportsAsync(const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWhatIfForecastExportsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListWhatIfForecastExports, request, handler, context);
         }
@@ -2001,13 +2001,13 @@ namespace ForecastService
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecasts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWhatIfForecastsOutcome ListWhatIfForecasts(const Model::ListWhatIfForecastsRequest& request) const;
+        virtual Model::ListWhatIfForecastsOutcome ListWhatIfForecasts(const Model::ListWhatIfForecastsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWhatIfForecasts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWhatIfForecastsRequestT = Model::ListWhatIfForecastsRequest>
-        Model::ListWhatIfForecastsOutcomeCallable ListWhatIfForecastsCallable(const ListWhatIfForecastsRequestT& request) const
+        Model::ListWhatIfForecastsOutcomeCallable ListWhatIfForecastsCallable(const ListWhatIfForecastsRequestT& request = {}) const
         {
             return SubmitCallable(&ForecastServiceClient::ListWhatIfForecasts, request);
         }
@@ -2016,7 +2016,7 @@ namespace ForecastService
          * An Async wrapper for ListWhatIfForecasts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWhatIfForecastsRequestT = Model::ListWhatIfForecastsRequest>
-        void ListWhatIfForecastsAsync(const ListWhatIfForecastsRequestT& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWhatIfForecastsAsync(const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWhatIfForecastsRequestT& request = {}) const
         {
             return SubmitAsync(&ForecastServiceClient::ListWhatIfForecasts, request, handler, context);
         }
@@ -2170,7 +2170,6 @@ namespace ForecastService
       void init(const ForecastServiceClientConfiguration& clientConfiguration);
 
       ForecastServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ForecastServiceEndpointProviderBase> m_endpointProvider;
   };
 

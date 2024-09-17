@@ -38,42 +38,18 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the template to be applied. The only supported value is
      * <code>BLANK_POLICY</code>.</p>
      */
     inline const PolicyTemplateName& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the template to be applied. The only supported value is
-     * <code>BLANK_POLICY</code>.</p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the template to be applied. The only supported value is
-     * <code>BLANK_POLICY</code>.</p>
-     */
     inline void SetTemplateName(const PolicyTemplateName& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The name of the template to be applied. The only supported value is
-     * <code>BLANK_POLICY</code>.</p>
-     */
     inline void SetTemplateName(PolicyTemplateName&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the template to be applied. The only supported value is
-     * <code>BLANK_POLICY</code>.</p>
-     */
     inline ReplaceDefaultPolicyVersionParams& WithTemplateName(const PolicyTemplateName& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the template to be applied. The only supported value is
-     * <code>BLANK_POLICY</code>.</p>
-     */
     inline ReplaceDefaultPolicyVersionParams& WithTemplateName(PolicyTemplateName&& value) { SetTemplateName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PolicyTemplateName m_templateName;

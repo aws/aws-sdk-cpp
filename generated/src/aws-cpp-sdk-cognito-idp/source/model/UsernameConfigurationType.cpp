@@ -24,9 +24,8 @@ UsernameConfigurationType::UsernameConfigurationType() :
 {
 }
 
-UsernameConfigurationType::UsernameConfigurationType(JsonView jsonValue) : 
-    m_caseSensitive(false),
-    m_caseSensitiveHasBeenSet(false)
+UsernameConfigurationType::UsernameConfigurationType(JsonView jsonValue)
+  : UsernameConfigurationType()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateChannelResult::UpdateChannelResult() :
 {
 }
 
-UpdateChannelResult::UpdateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_channelState(ChannelState::NOT_SET)
+UpdateChannelResult::UpdateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateChannelResult()
 {
   *this = result;
 }
@@ -35,6 +35,15 @@ UpdateChannelResult& UpdateChannelResult::operator =(const Aws::AmazonWebService
   {
     m_arn = jsonValue.GetString("Arn");
 
+  }
+
+  if(jsonValue.ValueExists("Audiences"))
+  {
+    Aws::Utils::Array<JsonView> audiencesJsonList = jsonValue.GetArray("Audiences");
+    for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
+    {
+      m_audiences.push_back(audiencesJsonList[audiencesIndex].AsString());
+    }
   }
 
   if(jsonValue.ValueExists("ChannelName"))

@@ -26,11 +26,8 @@ WirelessGatewayEventLogOption::WirelessGatewayEventLogOption() :
 {
 }
 
-WirelessGatewayEventLogOption::WirelessGatewayEventLogOption(JsonView jsonValue) : 
-    m_event(WirelessGatewayEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+WirelessGatewayEventLogOption::WirelessGatewayEventLogOption(JsonView jsonValue)
+  : WirelessGatewayEventLogOption()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteTagsResult::DeleteTagsResult() :
 {
 }
 
-DeleteTagsResult::DeleteTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(TaggableResourceType::NOT_SET)
+DeleteTagsResult::DeleteTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteTagsResult()
 {
   *this = result;
 }

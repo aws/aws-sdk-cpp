@@ -32,17 +32,8 @@ ResourceComplianceSummaryItem::ResourceComplianceSummaryItem() :
 {
 }
 
-ResourceComplianceSummaryItem::ResourceComplianceSummaryItem(JsonView jsonValue) : 
-    m_complianceTypeHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_overallSeverity(ComplianceSeverity::NOT_SET),
-    m_overallSeverityHasBeenSet(false),
-    m_executionSummaryHasBeenSet(false),
-    m_compliantSummaryHasBeenSet(false),
-    m_nonCompliantSummaryHasBeenSet(false)
+ResourceComplianceSummaryItem::ResourceComplianceSummaryItem(JsonView jsonValue)
+  : ResourceComplianceSummaryItem()
 {
   *this = jsonValue;
 }

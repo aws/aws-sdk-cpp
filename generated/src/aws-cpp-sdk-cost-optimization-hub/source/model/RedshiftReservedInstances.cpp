@@ -24,9 +24,8 @@ RedshiftReservedInstances::RedshiftReservedInstances() :
 {
 }
 
-RedshiftReservedInstances::RedshiftReservedInstances(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+RedshiftReservedInstances::RedshiftReservedInstances(JsonView jsonValue)
+  : RedshiftReservedInstances()
 {
   *this = jsonValue;
 }

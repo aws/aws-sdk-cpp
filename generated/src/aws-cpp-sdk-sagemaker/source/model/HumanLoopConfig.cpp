@@ -34,19 +34,8 @@ HumanLoopConfig::HumanLoopConfig() :
 {
 }
 
-HumanLoopConfig::HumanLoopConfig(JsonView jsonValue) : 
-    m_workteamArnHasBeenSet(false),
-    m_humanTaskUiArnHasBeenSet(false),
-    m_taskTitleHasBeenSet(false),
-    m_taskDescriptionHasBeenSet(false),
-    m_taskCount(0),
-    m_taskCountHasBeenSet(false),
-    m_taskAvailabilityLifetimeInSeconds(0),
-    m_taskAvailabilityLifetimeInSecondsHasBeenSet(false),
-    m_taskTimeLimitInSeconds(0),
-    m_taskTimeLimitInSecondsHasBeenSet(false),
-    m_taskKeywordsHasBeenSet(false),
-    m_publicWorkforceTaskPriceHasBeenSet(false)
+HumanLoopConfig::HumanLoopConfig(JsonView jsonValue)
+  : HumanLoopConfig()
 {
   *this = jsonValue;
 }

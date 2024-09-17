@@ -24,9 +24,8 @@ QueryExecutionContext::QueryExecutionContext() :
 {
 }
 
-QueryExecutionContext::QueryExecutionContext(JsonView jsonValue) : 
-    m_databaseHasBeenSet(false),
-    m_catalogHasBeenSet(false)
+QueryExecutionContext::QueryExecutionContext(JsonView jsonValue)
+  : QueryExecutionContext()
 {
   *this = jsonValue;
 }

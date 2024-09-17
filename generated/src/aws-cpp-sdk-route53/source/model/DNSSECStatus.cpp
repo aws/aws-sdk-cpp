@@ -26,9 +26,8 @@ DNSSECStatus::DNSSECStatus() :
 {
 }
 
-DNSSECStatus::DNSSECStatus(const XmlNode& xmlNode) : 
-    m_serveSignatureHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+DNSSECStatus::DNSSECStatus(const XmlNode& xmlNode)
+  : DNSSECStatus()
 {
   *this = xmlNode;
 }

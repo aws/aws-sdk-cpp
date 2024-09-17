@@ -28,13 +28,8 @@ MonitorSummary::MonitorSummary() :
 {
 }
 
-MonitorSummary::MonitorSummary(JsonView jsonValue) : 
-    m_monitorArnHasBeenSet(false),
-    m_monitorNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+MonitorSummary::MonitorSummary(JsonView jsonValue)
+  : MonitorSummary()
 {
   *this = jsonValue;
 }

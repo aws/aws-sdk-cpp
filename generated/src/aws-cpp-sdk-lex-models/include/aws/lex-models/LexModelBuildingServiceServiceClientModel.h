@@ -51,6 +51,12 @@
 #include <aws/lex-models/model/StartMigrationResult.h>
 #include <aws/lex-models/model/TagResourceResult.h>
 #include <aws/lex-models/model/UntagResourceResult.h>
+#include <aws/lex-models/model/GetBotsRequest.h>
+#include <aws/lex-models/model/GetIntentsRequest.h>
+#include <aws/lex-models/model/GetSlotTypesRequest.h>
+#include <aws/lex-models/model/GetMigrationsRequest.h>
+#include <aws/lex-models/model/GetBuiltinIntentsRequest.h>
+#include <aws/lex-models/model/GetBuiltinSlotTypesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in LexModelBuildingServiceClient header */
 
@@ -85,7 +91,7 @@ namespace Aws
 
   namespace LexModelBuildingService
   {
-    using LexModelBuildingServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LexModelBuildingServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LexModelBuildingServiceEndpointProviderBase = Aws::LexModelBuildingService::Endpoint::LexModelBuildingServiceEndpointProviderBase;
     using LexModelBuildingServiceEndpointProvider = Aws::LexModelBuildingService::Endpoint::LexModelBuildingServiceEndpointProvider;
 

@@ -26,9 +26,8 @@ NumberSubmittedItemsExceeded::NumberSubmittedItemsExceeded() :
 {
 }
 
-NumberSubmittedItemsExceeded::NumberSubmittedItemsExceeded(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+NumberSubmittedItemsExceeded::NumberSubmittedItemsExceeded(const XmlNode& xmlNode)
+  : NumberSubmittedItemsExceeded()
 {
   *this = xmlNode;
 }

@@ -34,245 +34,96 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A name for the group.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name for the group.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name for the group.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name for the group.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name for the group.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name for the group.</p>
-     */
     inline CreateRunGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name for the group.</p>
-     */
     inline CreateRunGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the group.</p>
-     */
     inline CreateRunGroupRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The maximum number of CPUs to use in the group.</p>
+     * <p>The maximum number of CPUs that can run concurrently across all active runs
+     * in the run group.</p>
      */
     inline int GetMaxCpus() const{ return m_maxCpus; }
-
-    /**
-     * <p>The maximum number of CPUs to use in the group.</p>
-     */
     inline bool MaxCpusHasBeenSet() const { return m_maxCpusHasBeenSet; }
-
-    /**
-     * <p>The maximum number of CPUs to use in the group.</p>
-     */
     inline void SetMaxCpus(int value) { m_maxCpusHasBeenSet = true; m_maxCpus = value; }
-
-    /**
-     * <p>The maximum number of CPUs to use in the group.</p>
-     */
     inline CreateRunGroupRequest& WithMaxCpus(int value) { SetMaxCpus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The maximum number of concurrent runs for the group.</p>
+     * <p>The maximum number of runs that can be running at the same time.</p>
      */
     inline int GetMaxRuns() const{ return m_maxRuns; }
-
-    /**
-     * <p>The maximum number of concurrent runs for the group.</p>
-     */
     inline bool MaxRunsHasBeenSet() const { return m_maxRunsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of concurrent runs for the group.</p>
-     */
     inline void SetMaxRuns(int value) { m_maxRunsHasBeenSet = true; m_maxRuns = value; }
-
-    /**
-     * <p>The maximum number of concurrent runs for the group.</p>
-     */
     inline CreateRunGroupRequest& WithMaxRuns(int value) { SetMaxRuns(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>A maximum run time for the group in minutes.</p>
+     * <p>The maximum time for each run (in minutes). If a run exceeds the maximum run
+     * time, the run fails automatically.</p>
      */
     inline int GetMaxDuration() const{ return m_maxDuration; }
-
-    /**
-     * <p>A maximum run time for the group in minutes.</p>
-     */
     inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
-
-    /**
-     * <p>A maximum run time for the group in minutes.</p>
-     */
     inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
-
-    /**
-     * <p>A maximum run time for the group in minutes.</p>
-     */
     inline CreateRunGroupRequest& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Tags for the group.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags for the group.</p>
-     */
     inline CreateRunGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>To ensure that requests don't run multiple times, specify a unique ID for
      * each request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
     inline CreateRunGroupRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
     inline CreateRunGroupRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
-     */
     inline CreateRunGroupRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p> The maximum GPUs that can be used by a run group. </p>
+     * <p>The maximum number of GPUs that can run concurrently across all active runs
+     * in the run group.</p>
      */
     inline int GetMaxGpus() const{ return m_maxGpus; }
-
-    /**
-     * <p> The maximum GPUs that can be used by a run group. </p>
-     */
     inline bool MaxGpusHasBeenSet() const { return m_maxGpusHasBeenSet; }
-
-    /**
-     * <p> The maximum GPUs that can be used by a run group. </p>
-     */
     inline void SetMaxGpus(int value) { m_maxGpusHasBeenSet = true; m_maxGpus = value; }
-
-    /**
-     * <p> The maximum GPUs that can be used by a run group. </p>
-     */
     inline CreateRunGroupRequest& WithMaxGpus(int value) { SetMaxGpus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

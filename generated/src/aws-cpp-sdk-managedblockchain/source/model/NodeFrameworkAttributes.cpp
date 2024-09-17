@@ -24,9 +24,8 @@ NodeFrameworkAttributes::NodeFrameworkAttributes() :
 {
 }
 
-NodeFrameworkAttributes::NodeFrameworkAttributes(JsonView jsonValue) : 
-    m_fabricHasBeenSet(false),
-    m_ethereumHasBeenSet(false)
+NodeFrameworkAttributes::NodeFrameworkAttributes(JsonView jsonValue)
+  : NodeFrameworkAttributes()
 {
   *this = jsonValue;
 }

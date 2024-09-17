@@ -27,10 +27,8 @@ InstanceRequirementsWithMetadataRequest::InstanceRequirementsWithMetadataRequest
 {
 }
 
-InstanceRequirementsWithMetadataRequest::InstanceRequirementsWithMetadataRequest(const XmlNode& xmlNode) : 
-    m_architectureTypesHasBeenSet(false),
-    m_virtualizationTypesHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+InstanceRequirementsWithMetadataRequest::InstanceRequirementsWithMetadataRequest(const XmlNode& xmlNode)
+  : InstanceRequirementsWithMetadataRequest()
 {
   *this = xmlNode;
 }

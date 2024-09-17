@@ -35,24 +35,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const AccountConfiguration& GetAccountConfiguration() const{ return m_accountConfiguration; }
-
-    
     inline bool AccountConfigurationHasBeenSet() const { return m_accountConfigurationHasBeenSet; }
-
-    
     inline void SetAccountConfiguration(const AccountConfiguration& value) { m_accountConfigurationHasBeenSet = true; m_accountConfiguration = value; }
-
-    
     inline void SetAccountConfiguration(AccountConfiguration&& value) { m_accountConfigurationHasBeenSet = true; m_accountConfiguration = std::move(value); }
-
-    
     inline UpdateAccountConfigurationRequest& WithAccountConfiguration(const AccountConfiguration& value) { SetAccountConfiguration(value); return *this;}
-
-    
     inline UpdateAccountConfigurationRequest& WithAccountConfiguration(AccountConfiguration&& value) { SetAccountConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AccountConfiguration m_accountConfiguration;

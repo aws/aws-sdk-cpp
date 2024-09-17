@@ -23,9 +23,8 @@ GetStatusResult::GetStatusResult() :
 {
 }
 
-GetStatusResult::GetStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_jobType(JobType::NOT_SET),
-    m_errorCount(0)
+GetStatusResult::GetStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetStatusResult()
 {
   *this = result;
 }

@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     FIXED_SIZE,
-    NONE
+    NONE,
+    HIERARCHICAL,
+    SEMANTIC
   };
 
 namespace ChunkingStrategyMapper

@@ -23,16 +23,14 @@ WorkerConfigurationSummary::WorkerConfigurationSummary() :
     m_descriptionHasBeenSet(false),
     m_latestRevisionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_workerConfigurationArnHasBeenSet(false)
+    m_workerConfigurationArnHasBeenSet(false),
+    m_workerConfigurationState(WorkerConfigurationState::NOT_SET),
+    m_workerConfigurationStateHasBeenSet(false)
 {
 }
 
-WorkerConfigurationSummary::WorkerConfigurationSummary(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_workerConfigurationArnHasBeenSet(false)
+WorkerConfigurationSummary::WorkerConfigurationSummary(JsonView jsonValue)
+  : WorkerConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -74,6 +72,13 @@ WorkerConfigurationSummary& WorkerConfigurationSummary::operator =(JsonView json
     m_workerConfigurationArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("workerConfigurationState"))
+  {
+    m_workerConfigurationState = WorkerConfigurationStateMapper::GetWorkerConfigurationStateForName(jsonValue.GetString("workerConfigurationState"));
+
+    m_workerConfigurationStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +113,11 @@ JsonValue WorkerConfigurationSummary::Jsonize() const
   {
    payload.WithString("workerConfigurationArn", m_workerConfigurationArn);
 
+  }
+
+  if(m_workerConfigurationStateHasBeenSet)
+  {
+   payload.WithString("workerConfigurationState", WorkerConfigurationStateMapper::GetNameForWorkerConfigurationState(m_workerConfigurationState));
   }
 
   return payload;

@@ -24,9 +24,8 @@ EnabledControlParameterSummary::EnabledControlParameterSummary() :
 {
 }
 
-EnabledControlParameterSummary::EnabledControlParameterSummary(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EnabledControlParameterSummary::EnabledControlParameterSummary(JsonView jsonValue)
+  : EnabledControlParameterSummary()
 {
   *this = jsonValue;
 }

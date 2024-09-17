@@ -36,68 +36,35 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of manual snapshots allowed.</p>
      */
     inline int GetManualSnapshotsLimit() const{ return m_manualSnapshotsLimit; }
-
-    /**
-     * <p>The maximum number of manual snapshots allowed.</p>
-     */
     inline bool ManualSnapshotsLimitHasBeenSet() const { return m_manualSnapshotsLimitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of manual snapshots allowed.</p>
-     */
     inline void SetManualSnapshotsLimit(int value) { m_manualSnapshotsLimitHasBeenSet = true; m_manualSnapshotsLimit = value; }
-
-    /**
-     * <p>The maximum number of manual snapshots allowed.</p>
-     */
     inline SnapshotLimits& WithManualSnapshotsLimit(int value) { SetManualSnapshotsLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current number of manual snapshots of the directory.</p>
      */
     inline int GetManualSnapshotsCurrentCount() const{ return m_manualSnapshotsCurrentCount; }
-
-    /**
-     * <p>The current number of manual snapshots of the directory.</p>
-     */
     inline bool ManualSnapshotsCurrentCountHasBeenSet() const { return m_manualSnapshotsCurrentCountHasBeenSet; }
-
-    /**
-     * <p>The current number of manual snapshots of the directory.</p>
-     */
     inline void SetManualSnapshotsCurrentCount(int value) { m_manualSnapshotsCurrentCountHasBeenSet = true; m_manualSnapshotsCurrentCount = value; }
-
-    /**
-     * <p>The current number of manual snapshots of the directory.</p>
-     */
     inline SnapshotLimits& WithManualSnapshotsCurrentCount(int value) { SetManualSnapshotsCurrentCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates if the manual snapshot limit has been reached.</p>
      */
     inline bool GetManualSnapshotsLimitReached() const{ return m_manualSnapshotsLimitReached; }
-
-    /**
-     * <p>Indicates if the manual snapshot limit has been reached.</p>
-     */
     inline bool ManualSnapshotsLimitReachedHasBeenSet() const { return m_manualSnapshotsLimitReachedHasBeenSet; }
-
-    /**
-     * <p>Indicates if the manual snapshot limit has been reached.</p>
-     */
     inline void SetManualSnapshotsLimitReached(bool value) { m_manualSnapshotsLimitReachedHasBeenSet = true; m_manualSnapshotsLimitReached = value; }
-
-    /**
-     * <p>Indicates if the manual snapshot limit has been reached.</p>
-     */
     inline SnapshotLimits& WithManualSnapshotsLimitReached(bool value) { SetManualSnapshotsLimitReached(value); return *this;}
-
+    ///@}
   private:
 
     int m_manualSnapshotsLimit;

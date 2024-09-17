@@ -38,97 +38,35 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of user names being removed from the ACL</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserNamesToRemove() const{ return m_userNamesToRemove; }
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline bool UserNamesToRemoveHasBeenSet() const { return m_userNamesToRemoveHasBeenSet; }
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline void SetUserNamesToRemove(const Aws::Vector<Aws::String>& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove = value; }
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline void SetUserNamesToRemove(Aws::Vector<Aws::String>&& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove = std::move(value); }
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline ACLPendingChanges& WithUserNamesToRemove(const Aws::Vector<Aws::String>& value) { SetUserNamesToRemove(value); return *this;}
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline ACLPendingChanges& WithUserNamesToRemove(Aws::Vector<Aws::String>&& value) { SetUserNamesToRemove(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline ACLPendingChanges& AddUserNamesToRemove(const Aws::String& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove.push_back(value); return *this; }
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline ACLPendingChanges& AddUserNamesToRemove(Aws::String&& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of user names being removed from the ACL</p>
-     */
     inline ACLPendingChanges& AddUserNamesToRemove(const char* value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of users being added to the ACL</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserNamesToAdd() const{ return m_userNamesToAdd; }
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline bool UserNamesToAddHasBeenSet() const { return m_userNamesToAddHasBeenSet; }
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline void SetUserNamesToAdd(const Aws::Vector<Aws::String>& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd = value; }
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline void SetUserNamesToAdd(Aws::Vector<Aws::String>&& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd = std::move(value); }
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline ACLPendingChanges& WithUserNamesToAdd(const Aws::Vector<Aws::String>& value) { SetUserNamesToAdd(value); return *this;}
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline ACLPendingChanges& WithUserNamesToAdd(Aws::Vector<Aws::String>&& value) { SetUserNamesToAdd(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline ACLPendingChanges& AddUserNamesToAdd(const Aws::String& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd.push_back(value); return *this; }
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline ACLPendingChanges& AddUserNamesToAdd(Aws::String&& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of users being added to the ACL</p>
-     */
     inline ACLPendingChanges& AddUserNamesToAdd(const char* value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_userNamesToRemove;

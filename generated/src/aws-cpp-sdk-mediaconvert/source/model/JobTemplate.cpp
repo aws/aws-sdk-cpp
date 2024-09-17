@@ -38,23 +38,8 @@ JobTemplate::JobTemplate() :
 {
 }
 
-JobTemplate::JobTemplate(JsonView jsonValue) : 
-    m_accelerationSettingsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hopDestinationsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
-    m_statusUpdateIntervalHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+JobTemplate::JobTemplate(JsonView jsonValue)
+  : JobTemplate()
 {
   *this = jsonValue;
 }

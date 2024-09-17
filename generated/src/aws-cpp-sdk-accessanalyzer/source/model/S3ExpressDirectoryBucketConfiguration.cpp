@@ -23,8 +23,8 @@ S3ExpressDirectoryBucketConfiguration::S3ExpressDirectoryBucketConfiguration() :
 {
 }
 
-S3ExpressDirectoryBucketConfiguration::S3ExpressDirectoryBucketConfiguration(JsonView jsonValue) : 
-    m_bucketPolicyHasBeenSet(false)
+S3ExpressDirectoryBucketConfiguration::S3ExpressDirectoryBucketConfiguration(JsonView jsonValue)
+  : S3ExpressDirectoryBucketConfiguration()
 {
   *this = jsonValue;
 }

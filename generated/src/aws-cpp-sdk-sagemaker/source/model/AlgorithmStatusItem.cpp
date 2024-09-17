@@ -26,11 +26,8 @@ AlgorithmStatusItem::AlgorithmStatusItem() :
 {
 }
 
-AlgorithmStatusItem::AlgorithmStatusItem(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_status(DetailedAlgorithmStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+AlgorithmStatusItem::AlgorithmStatusItem(JsonView jsonValue)
+  : AlgorithmStatusItem()
 {
   *this = jsonValue;
 }

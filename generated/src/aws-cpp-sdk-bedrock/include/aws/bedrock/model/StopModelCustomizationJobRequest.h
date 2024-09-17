@@ -32,46 +32,19 @@ namespace Model
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Job identifier of the job to stop.</p>
      */
     inline const Aws::String& GetJobIdentifier() const{ return m_jobIdentifier; }
-
-    /**
-     * <p>Job identifier of the job to stop.</p>
-     */
     inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
-
-    /**
-     * <p>Job identifier of the job to stop.</p>
-     */
     inline void SetJobIdentifier(const Aws::String& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = value; }
-
-    /**
-     * <p>Job identifier of the job to stop.</p>
-     */
     inline void SetJobIdentifier(Aws::String&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::move(value); }
-
-    /**
-     * <p>Job identifier of the job to stop.</p>
-     */
     inline void SetJobIdentifier(const char* value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier.assign(value); }
-
-    /**
-     * <p>Job identifier of the job to stop.</p>
-     */
     inline StopModelCustomizationJobRequest& WithJobIdentifier(const Aws::String& value) { SetJobIdentifier(value); return *this;}
-
-    /**
-     * <p>Job identifier of the job to stop.</p>
-     */
     inline StopModelCustomizationJobRequest& WithJobIdentifier(Aws::String&& value) { SetJobIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Job identifier of the job to stop.</p>
-     */
     inline StopModelCustomizationJobRequest& WithJobIdentifier(const char* value) { SetJobIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobIdentifier;

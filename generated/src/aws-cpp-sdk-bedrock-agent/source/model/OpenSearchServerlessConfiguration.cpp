@@ -20,15 +20,13 @@ namespace Model
 
 OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration() : 
     m_collectionArnHasBeenSet(false),
-    m_vectorIndexNameHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false)
+    m_fieldMappingHasBeenSet(false),
+    m_vectorIndexNameHasBeenSet(false)
 {
 }
 
-OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration(JsonView jsonValue) : 
-    m_collectionArnHasBeenSet(false),
-    m_vectorIndexNameHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false)
+OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration(JsonView jsonValue)
+  : OpenSearchServerlessConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,18 +40,18 @@ OpenSearchServerlessConfiguration& OpenSearchServerlessConfiguration::operator =
     m_collectionArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("vectorIndexName"))
-  {
-    m_vectorIndexName = jsonValue.GetString("vectorIndexName");
-
-    m_vectorIndexNameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("fieldMapping"))
   {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
 
     m_fieldMappingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vectorIndexName"))
+  {
+    m_vectorIndexName = jsonValue.GetString("vectorIndexName");
+
+    m_vectorIndexNameHasBeenSet = true;
   }
 
   return *this;
@@ -69,15 +67,15 @@ JsonValue OpenSearchServerlessConfiguration::Jsonize() const
 
   }
 
-  if(m_vectorIndexNameHasBeenSet)
-  {
-   payload.WithString("vectorIndexName", m_vectorIndexName);
-
-  }
-
   if(m_fieldMappingHasBeenSet)
   {
    payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
+
+  }
+
+  if(m_vectorIndexNameHasBeenSet)
+  {
+   payload.WithString("vectorIndexName", m_vectorIndexName);
 
   }
 

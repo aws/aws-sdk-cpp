@@ -10,9 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
-#include <aws/directconnect/model/DescribeLocationsRequest.h>
-#include <aws/directconnect/model/DescribeCustomerMetadataRequest.h>
-#include <aws/directconnect/model/DescribeVirtualGatewaysRequest.h>
 
 namespace Aws
 {
@@ -412,13 +409,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">AWS
          * API Reference</a></p>
          */
-        virtual Model::ConfirmCustomerAgreementOutcome ConfirmCustomerAgreement(const Model::ConfirmCustomerAgreementRequest& request) const;
+        virtual Model::ConfirmCustomerAgreementOutcome ConfirmCustomerAgreement(const Model::ConfirmCustomerAgreementRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ConfirmCustomerAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ConfirmCustomerAgreementRequestT = Model::ConfirmCustomerAgreementRequest>
-        Model::ConfirmCustomerAgreementOutcomeCallable ConfirmCustomerAgreementCallable(const ConfirmCustomerAgreementRequestT& request) const
+        Model::ConfirmCustomerAgreementOutcomeCallable ConfirmCustomerAgreementCallable(const ConfirmCustomerAgreementRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::ConfirmCustomerAgreement, request);
         }
@@ -427,7 +424,7 @@ namespace DirectConnect
          * An Async wrapper for ConfirmCustomerAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ConfirmCustomerAgreementRequestT = Model::ConfirmCustomerAgreementRequest>
-        void ConfirmCustomerAgreementAsync(const ConfirmCustomerAgreementRequestT& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ConfirmCustomerAgreementAsync(const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ConfirmCustomerAgreementRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::ConfirmCustomerAgreement, request, handler, context);
         }
@@ -538,13 +535,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateBGPPeerOutcome CreateBGPPeer(const Model::CreateBGPPeerRequest& request) const;
+        virtual Model::CreateBGPPeerOutcome CreateBGPPeer(const Model::CreateBGPPeerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateBGPPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateBGPPeerRequestT = Model::CreateBGPPeerRequest>
-        Model::CreateBGPPeerOutcomeCallable CreateBGPPeerCallable(const CreateBGPPeerRequestT& request) const
+        Model::CreateBGPPeerOutcomeCallable CreateBGPPeerCallable(const CreateBGPPeerRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::CreateBGPPeer, request);
         }
@@ -553,7 +550,7 @@ namespace DirectConnect
          * An Async wrapper for CreateBGPPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateBGPPeerRequestT = Model::CreateBGPPeerRequest>
-        void CreateBGPPeerAsync(const CreateBGPPeerRequestT& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateBGPPeerAsync(const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateBGPPeerRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::CreateBGPPeer, request, handler, context);
         }
@@ -728,21 +725,21 @@ namespace DirectConnect
          * Direct Connect location. A LAG is a logical interface that uses the Link
          * Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling
          * you to treat them as a single interface.</p> <p>All connections in a LAG must
-         * use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same
-         * Direct Connect endpoint.</p> <p>You can have up to 10 dedicated connections per
-         * LAG. Regardless of this limit, if you request more connections for the LAG than
-         * Direct Connect can allocate on a single endpoint, no LAG is created.</p> <p>You
-         * can specify an existing physical dedicated connection or interconnect to include
-         * in the LAG (which counts towards the total number of connections). Doing so
-         * interrupts the current physical dedicated connection, and re-establishes them as
-         * a member of the LAG. The LAG will be created on the same Direct Connect endpoint
-         * to which the dedicated connection terminates. Any virtual interfaces associated
-         * with the dedicated connection are automatically disassociated and re-associated
-         * with the LAG. The connection ID does not change.</p> <p>If the Amazon Web
-         * Services account used to create a LAG is a registered Direct Connect Partner,
-         * the LAG is automatically enabled to host sub-connections. For a LAG owned by a
-         * partner, any associated virtual interfaces cannot be directly
-         * configured.</p><p><h3>See Also:</h3>   <a
+         * use the same bandwidth (either 1Gbps, 10Gbps, 100Gbps, or 400Gbps) and must
+         * terminate at the same Direct Connect endpoint.</p> <p>You can have up to 10
+         * dedicated connections per location. Regardless of this limit, if you request
+         * more connections for the LAG than Direct Connect can allocate on a single
+         * endpoint, no LAG is created..</p> <p>You can specify an existing physical
+         * dedicated connection or interconnect to include in the LAG (which counts towards
+         * the total number of connections). Doing so interrupts the current physical
+         * dedicated connection, and re-establishes them as a member of the LAG. The LAG
+         * will be created on the same Direct Connect endpoint to which the dedicated
+         * connection terminates. Any virtual interfaces associated with the dedicated
+         * connection are automatically disassociated and re-associated with the LAG. The
+         * connection ID does not change.</p> <p>If the Amazon Web Services account used to
+         * create a LAG is a registered Direct Connect Partner, the LAG is automatically
+         * enabled to host sub-connections. For a LAG owned by a partner, any associated
+         * virtual interfaces cannot be directly configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">AWS
          * API Reference</a></p>
          */
@@ -774,7 +771,7 @@ namespace DirectConnect
          * possibility for connecting to multiple VPCs, including VPCs in different Amazon
          * Web Services Regions. Connecting the private virtual interface to a VGW only
          * provides access to a single VPC within the same Region.</p> <p>Setting the MTU
-         * of a virtual interface to 9001 (jumbo frames) can cause an update to the
+         * of a virtual interface to 8500 (jumbo frames) can cause an update to the
          * underlying physical connection if it wasn't updated to support jumbo frames.
          * Updating the connection disrupts network connectivity for all virtual interfaces
          * associated with the connection for up to 30 seconds. To check whether your
@@ -883,13 +880,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteBGPPeerOutcome DeleteBGPPeer(const Model::DeleteBGPPeerRequest& request) const;
+        virtual Model::DeleteBGPPeerOutcome DeleteBGPPeer(const Model::DeleteBGPPeerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteBGPPeer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteBGPPeerRequestT = Model::DeleteBGPPeerRequest>
-        Model::DeleteBGPPeerOutcomeCallable DeleteBGPPeerCallable(const DeleteBGPPeerRequestT& request) const
+        Model::DeleteBGPPeerOutcomeCallable DeleteBGPPeerCallable(const DeleteBGPPeerRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DeleteBGPPeer, request);
         }
@@ -898,7 +895,7 @@ namespace DirectConnect
          * An Async wrapper for DeleteBGPPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteBGPPeerRequestT = Model::DeleteBGPPeerRequest>
-        void DeleteBGPPeerAsync(const DeleteBGPPeerRequestT& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteBGPPeerAsync(const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteBGPPeerRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DeleteBGPPeer, request, handler, context);
         }
@@ -969,13 +966,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteDirectConnectGatewayAssociationOutcome DeleteDirectConnectGatewayAssociation(const Model::DeleteDirectConnectGatewayAssociationRequest& request) const;
+        virtual Model::DeleteDirectConnectGatewayAssociationOutcome DeleteDirectConnectGatewayAssociation(const Model::DeleteDirectConnectGatewayAssociationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteDirectConnectGatewayAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteDirectConnectGatewayAssociationRequestT = Model::DeleteDirectConnectGatewayAssociationRequest>
-        Model::DeleteDirectConnectGatewayAssociationOutcomeCallable DeleteDirectConnectGatewayAssociationCallable(const DeleteDirectConnectGatewayAssociationRequestT& request) const
+        Model::DeleteDirectConnectGatewayAssociationOutcomeCallable DeleteDirectConnectGatewayAssociationCallable(const DeleteDirectConnectGatewayAssociationRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DeleteDirectConnectGatewayAssociation, request);
         }
@@ -984,7 +981,7 @@ namespace DirectConnect
          * An Async wrapper for DeleteDirectConnectGatewayAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteDirectConnectGatewayAssociationRequestT = Model::DeleteDirectConnectGatewayAssociationRequest>
-        void DeleteDirectConnectGatewayAssociationAsync(const DeleteDirectConnectGatewayAssociationRequestT& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteDirectConnectGatewayAssociationAsync(const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteDirectConnectGatewayAssociationRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DeleteDirectConnectGatewayAssociation, request, handler, context);
         }
@@ -1100,13 +1097,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConnectionsOutcome DescribeConnections(const Model::DescribeConnectionsRequest& request) const;
+        virtual Model::DescribeConnectionsOutcome DescribeConnections(const Model::DescribeConnectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConnectionsRequestT = Model::DescribeConnectionsRequest>
-        Model::DescribeConnectionsOutcomeCallable DescribeConnectionsCallable(const DescribeConnectionsRequestT& request) const
+        Model::DescribeConnectionsOutcomeCallable DescribeConnectionsCallable(const DescribeConnectionsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeConnections, request);
         }
@@ -1115,7 +1112,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConnectionsRequestT = Model::DescribeConnectionsRequest>
-        void DescribeConnectionsAsync(const DescribeConnectionsRequestT& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConnectionsAsync(const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConnectionsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeConnections, request, handler, context);
         }
@@ -1154,13 +1151,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociationProposals">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDirectConnectGatewayAssociationProposalsOutcome DescribeDirectConnectGatewayAssociationProposals(const Model::DescribeDirectConnectGatewayAssociationProposalsRequest& request) const;
+        virtual Model::DescribeDirectConnectGatewayAssociationProposalsOutcome DescribeDirectConnectGatewayAssociationProposals(const Model::DescribeDirectConnectGatewayAssociationProposalsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDirectConnectGatewayAssociationProposals that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDirectConnectGatewayAssociationProposalsRequestT = Model::DescribeDirectConnectGatewayAssociationProposalsRequest>
-        Model::DescribeDirectConnectGatewayAssociationProposalsOutcomeCallable DescribeDirectConnectGatewayAssociationProposalsCallable(const DescribeDirectConnectGatewayAssociationProposalsRequestT& request) const
+        Model::DescribeDirectConnectGatewayAssociationProposalsOutcomeCallable DescribeDirectConnectGatewayAssociationProposalsCallable(const DescribeDirectConnectGatewayAssociationProposalsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeDirectConnectGatewayAssociationProposals, request);
         }
@@ -1169,7 +1166,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeDirectConnectGatewayAssociationProposals that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDirectConnectGatewayAssociationProposalsRequestT = Model::DescribeDirectConnectGatewayAssociationProposalsRequest>
-        void DescribeDirectConnectGatewayAssociationProposalsAsync(const DescribeDirectConnectGatewayAssociationProposalsRequestT& request, const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDirectConnectGatewayAssociationProposalsAsync(const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDirectConnectGatewayAssociationProposalsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeDirectConnectGatewayAssociationProposals, request, handler, context);
         }
@@ -1190,13 +1187,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDirectConnectGatewayAssociationsOutcome DescribeDirectConnectGatewayAssociations(const Model::DescribeDirectConnectGatewayAssociationsRequest& request) const;
+        virtual Model::DescribeDirectConnectGatewayAssociationsOutcome DescribeDirectConnectGatewayAssociations(const Model::DescribeDirectConnectGatewayAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDirectConnectGatewayAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDirectConnectGatewayAssociationsRequestT = Model::DescribeDirectConnectGatewayAssociationsRequest>
-        Model::DescribeDirectConnectGatewayAssociationsOutcomeCallable DescribeDirectConnectGatewayAssociationsCallable(const DescribeDirectConnectGatewayAssociationsRequestT& request) const
+        Model::DescribeDirectConnectGatewayAssociationsOutcomeCallable DescribeDirectConnectGatewayAssociationsCallable(const DescribeDirectConnectGatewayAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeDirectConnectGatewayAssociations, request);
         }
@@ -1205,7 +1202,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeDirectConnectGatewayAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDirectConnectGatewayAssociationsRequestT = Model::DescribeDirectConnectGatewayAssociationsRequest>
-        void DescribeDirectConnectGatewayAssociationsAsync(const DescribeDirectConnectGatewayAssociationsRequestT& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDirectConnectGatewayAssociationsAsync(const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDirectConnectGatewayAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeDirectConnectGatewayAssociations, request, handler, context);
         }
@@ -1222,13 +1219,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDirectConnectGatewayAttachmentsOutcome DescribeDirectConnectGatewayAttachments(const Model::DescribeDirectConnectGatewayAttachmentsRequest& request) const;
+        virtual Model::DescribeDirectConnectGatewayAttachmentsOutcome DescribeDirectConnectGatewayAttachments(const Model::DescribeDirectConnectGatewayAttachmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDirectConnectGatewayAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDirectConnectGatewayAttachmentsRequestT = Model::DescribeDirectConnectGatewayAttachmentsRequest>
-        Model::DescribeDirectConnectGatewayAttachmentsOutcomeCallable DescribeDirectConnectGatewayAttachmentsCallable(const DescribeDirectConnectGatewayAttachmentsRequestT& request) const
+        Model::DescribeDirectConnectGatewayAttachmentsOutcomeCallable DescribeDirectConnectGatewayAttachmentsCallable(const DescribeDirectConnectGatewayAttachmentsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeDirectConnectGatewayAttachments, request);
         }
@@ -1237,7 +1234,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeDirectConnectGatewayAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDirectConnectGatewayAttachmentsRequestT = Model::DescribeDirectConnectGatewayAttachmentsRequest>
-        void DescribeDirectConnectGatewayAttachmentsAsync(const DescribeDirectConnectGatewayAttachmentsRequestT& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDirectConnectGatewayAttachmentsAsync(const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDirectConnectGatewayAttachmentsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeDirectConnectGatewayAttachments, request, handler, context);
         }
@@ -1249,13 +1246,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDirectConnectGatewaysOutcome DescribeDirectConnectGateways(const Model::DescribeDirectConnectGatewaysRequest& request) const;
+        virtual Model::DescribeDirectConnectGatewaysOutcome DescribeDirectConnectGateways(const Model::DescribeDirectConnectGatewaysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDirectConnectGateways that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDirectConnectGatewaysRequestT = Model::DescribeDirectConnectGatewaysRequest>
-        Model::DescribeDirectConnectGatewaysOutcomeCallable DescribeDirectConnectGatewaysCallable(const DescribeDirectConnectGatewaysRequestT& request) const
+        Model::DescribeDirectConnectGatewaysOutcomeCallable DescribeDirectConnectGatewaysCallable(const DescribeDirectConnectGatewaysRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeDirectConnectGateways, request);
         }
@@ -1264,7 +1261,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeDirectConnectGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDirectConnectGatewaysRequestT = Model::DescribeDirectConnectGatewaysRequest>
-        void DescribeDirectConnectGatewaysAsync(const DescribeDirectConnectGatewaysRequestT& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDirectConnectGatewaysAsync(const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDirectConnectGatewaysRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeDirectConnectGateways, request, handler, context);
         }
@@ -1302,13 +1299,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeInterconnectsOutcome DescribeInterconnects(const Model::DescribeInterconnectsRequest& request) const;
+        virtual Model::DescribeInterconnectsOutcome DescribeInterconnects(const Model::DescribeInterconnectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeInterconnects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeInterconnectsRequestT = Model::DescribeInterconnectsRequest>
-        Model::DescribeInterconnectsOutcomeCallable DescribeInterconnectsCallable(const DescribeInterconnectsRequestT& request) const
+        Model::DescribeInterconnectsOutcomeCallable DescribeInterconnectsCallable(const DescribeInterconnectsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeInterconnects, request);
         }
@@ -1317,7 +1314,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeInterconnects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeInterconnectsRequestT = Model::DescribeInterconnectsRequest>
-        void DescribeInterconnectsAsync(const DescribeInterconnectsRequestT& request, const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeInterconnectsAsync(const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeInterconnectsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeInterconnects, request, handler, context);
         }
@@ -1328,13 +1325,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLagsOutcome DescribeLags(const Model::DescribeLagsRequest& request) const;
+        virtual Model::DescribeLagsOutcome DescribeLags(const Model::DescribeLagsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLags that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLagsRequestT = Model::DescribeLagsRequest>
-        Model::DescribeLagsOutcomeCallable DescribeLagsCallable(const DescribeLagsRequestT& request) const
+        Model::DescribeLagsOutcomeCallable DescribeLagsCallable(const DescribeLagsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeLags, request);
         }
@@ -1343,7 +1340,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeLags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLagsRequestT = Model::DescribeLagsRequest>
-        void DescribeLagsAsync(const DescribeLagsRequestT& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLagsAsync(const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLagsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeLags, request, handler, context);
         }
@@ -1459,9 +1456,12 @@ namespace DirectConnect
         }
 
         /**
-         * <p>Lists the virtual private gateways owned by the Amazon Web Services
-         * account.</p> <p>You can create one or more Direct Connect private virtual
-         * interfaces linked to a virtual private gateway.</p><p><h3>See Also:</h3>   <a
+         *  <p>Deprecated. Use <code>DescribeVpnGateways</code> instead. See <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html">DescribeVPNGateways</a>
+         * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>  <p>Lists
+         * the virtual private gateways owned by the Amazon Web Services account.</p>
+         * <p>You can create one or more Direct Connect private virtual interfaces linked
+         * to a virtual private gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
          * API Reference</a></p>
          */
@@ -1496,13 +1496,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeVirtualInterfacesOutcome DescribeVirtualInterfaces(const Model::DescribeVirtualInterfacesRequest& request) const;
+        virtual Model::DescribeVirtualInterfacesOutcome DescribeVirtualInterfaces(const Model::DescribeVirtualInterfacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeVirtualInterfaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeVirtualInterfacesRequestT = Model::DescribeVirtualInterfacesRequest>
-        Model::DescribeVirtualInterfacesOutcomeCallable DescribeVirtualInterfacesCallable(const DescribeVirtualInterfacesRequestT& request) const
+        Model::DescribeVirtualInterfacesOutcomeCallable DescribeVirtualInterfacesCallable(const DescribeVirtualInterfacesRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::DescribeVirtualInterfaces, request);
         }
@@ -1511,7 +1511,7 @@ namespace DirectConnect
          * An Async wrapper for DescribeVirtualInterfaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeVirtualInterfacesRequestT = Model::DescribeVirtualInterfacesRequest>
-        void DescribeVirtualInterfacesAsync(const DescribeVirtualInterfacesRequestT& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeVirtualInterfacesAsync(const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVirtualInterfacesRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::DescribeVirtualInterfaces, request, handler, context);
         }
@@ -1583,13 +1583,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVirtualInterfaceTestHistoryOutcome ListVirtualInterfaceTestHistory(const Model::ListVirtualInterfaceTestHistoryRequest& request) const;
+        virtual Model::ListVirtualInterfaceTestHistoryOutcome ListVirtualInterfaceTestHistory(const Model::ListVirtualInterfaceTestHistoryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVirtualInterfaceTestHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVirtualInterfaceTestHistoryRequestT = Model::ListVirtualInterfaceTestHistoryRequest>
-        Model::ListVirtualInterfaceTestHistoryOutcomeCallable ListVirtualInterfaceTestHistoryCallable(const ListVirtualInterfaceTestHistoryRequestT& request) const
+        Model::ListVirtualInterfaceTestHistoryOutcomeCallable ListVirtualInterfaceTestHistoryCallable(const ListVirtualInterfaceTestHistoryRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::ListVirtualInterfaceTestHistory, request);
         }
@@ -1598,7 +1598,7 @@ namespace DirectConnect
          * An Async wrapper for ListVirtualInterfaceTestHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVirtualInterfaceTestHistoryRequestT = Model::ListVirtualInterfaceTestHistoryRequest>
-        void ListVirtualInterfaceTestHistoryAsync(const ListVirtualInterfaceTestHistoryRequestT& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVirtualInterfaceTestHistoryAsync(const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVirtualInterfaceTestHistoryRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::ListVirtualInterfaceTestHistory, request, handler, context);
         }
@@ -1777,13 +1777,13 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGatewayAssociation">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateDirectConnectGatewayAssociationOutcome UpdateDirectConnectGatewayAssociation(const Model::UpdateDirectConnectGatewayAssociationRequest& request) const;
+        virtual Model::UpdateDirectConnectGatewayAssociationOutcome UpdateDirectConnectGatewayAssociation(const Model::UpdateDirectConnectGatewayAssociationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateDirectConnectGatewayAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateDirectConnectGatewayAssociationRequestT = Model::UpdateDirectConnectGatewayAssociationRequest>
-        Model::UpdateDirectConnectGatewayAssociationOutcomeCallable UpdateDirectConnectGatewayAssociationCallable(const UpdateDirectConnectGatewayAssociationRequestT& request) const
+        Model::UpdateDirectConnectGatewayAssociationOutcomeCallable UpdateDirectConnectGatewayAssociationCallable(const UpdateDirectConnectGatewayAssociationRequestT& request = {}) const
         {
             return SubmitCallable(&DirectConnectClient::UpdateDirectConnectGatewayAssociation, request);
         }
@@ -1792,7 +1792,7 @@ namespace DirectConnect
          * An Async wrapper for UpdateDirectConnectGatewayAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateDirectConnectGatewayAssociationRequestT = Model::UpdateDirectConnectGatewayAssociationRequest>
-        void UpdateDirectConnectGatewayAssociationAsync(const UpdateDirectConnectGatewayAssociationRequestT& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateDirectConnectGatewayAssociationAsync(const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateDirectConnectGatewayAssociationRequestT& request = {}) const
         {
             return SubmitAsync(&DirectConnectClient::UpdateDirectConnectGatewayAssociation, request, handler, context);
         }
@@ -1833,7 +1833,7 @@ namespace DirectConnect
 
         /**
          * <p>Updates the specified attributes of the specified virtual private
-         * interface.</p> <p>Setting the MTU of a virtual interface to 9001 (jumbo frames)
+         * interface.</p> <p>Setting the MTU of a virtual interface to 8500 (jumbo frames)
          * can cause an update to the underlying physical connection if it wasn't updated
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
@@ -1872,7 +1872,6 @@ namespace DirectConnect
       void init(const DirectConnectClientConfiguration& clientConfiguration);
 
       DirectConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DirectConnectEndpointProviderBase> m_endpointProvider;
   };
 

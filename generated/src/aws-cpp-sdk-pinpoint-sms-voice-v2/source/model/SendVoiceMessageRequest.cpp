@@ -26,7 +26,8 @@ SendVoiceMessageRequest::SendVoiceMessageRequest() :
     m_timeToLiveHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_protectConfigurationIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,12 @@ Aws::String SendVoiceMessageRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
    payload.WithBool("DryRun", m_dryRun);
+
+  }
+
+  if(m_protectConfigurationIdHasBeenSet)
+  {
+   payload.WithString("ProtectConfigurationId", m_protectConfigurationId);
 
   }
 

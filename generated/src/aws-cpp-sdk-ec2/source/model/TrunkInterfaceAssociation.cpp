@@ -34,17 +34,8 @@ TrunkInterfaceAssociation::TrunkInterfaceAssociation() :
 {
 }
 
-TrunkInterfaceAssociation::TrunkInterfaceAssociation(const XmlNode& xmlNode) : 
-    m_associationIdHasBeenSet(false),
-    m_branchInterfaceIdHasBeenSet(false),
-    m_trunkInterfaceIdHasBeenSet(false),
-    m_interfaceProtocol(InterfaceProtocolType::NOT_SET),
-    m_interfaceProtocolHasBeenSet(false),
-    m_vlanId(0),
-    m_vlanIdHasBeenSet(false),
-    m_greKey(0),
-    m_greKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TrunkInterfaceAssociation::TrunkInterfaceAssociation(const XmlNode& xmlNode)
+  : TrunkInterfaceAssociation()
 {
   *this = xmlNode;
 }

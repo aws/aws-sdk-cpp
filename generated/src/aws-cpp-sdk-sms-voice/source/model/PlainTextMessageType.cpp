@@ -25,10 +25,8 @@ PlainTextMessageType::PlainTextMessageType() :
 {
 }
 
-PlainTextMessageType::PlainTextMessageType(JsonView jsonValue) : 
-    m_languageCodeHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
+PlainTextMessageType::PlainTextMessageType(JsonView jsonValue)
+  : PlainTextMessageType()
 {
   *this = jsonValue;
 }

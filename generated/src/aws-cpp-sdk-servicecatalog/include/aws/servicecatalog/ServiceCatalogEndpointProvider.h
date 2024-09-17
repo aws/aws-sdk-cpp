@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ServiceCatalogClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ServiceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ServiceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ServiceCatalogBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

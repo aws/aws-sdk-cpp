@@ -38,148 +38,58 @@ namespace Model
 
     AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+    AWS_S3_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
     AWS_S3_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
      * retrieve.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
-     * retrieve.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
-     * retrieve.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
-     * retrieve.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
-     * retrieve.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
-     * retrieve.</p>
-     */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
-     * retrieve.</p>
-     */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket whose configuration you want to modify or
-     * retrieve.</p>
-     */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>ContinuationToken</code> that represents a placeholder from where
      * this request should begin.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
-
-    /**
-     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
-     * this request should begin.</p>
-     */
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-
-    /**
-     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
-     * this request should begin.</p>
-     */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-
-    /**
-     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
-     * this request should begin.</p>
-     */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-
-    /**
-     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
-     * this request should begin.</p>
-     */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-
-    /**
-     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
-     * this request should begin.</p>
-     */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-
-    /**
-     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
-     * this request should begin.</p>
-     */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ContinuationToken</code> that represents a placeholder from where
-     * this request should begin.</p>
-     */
     inline ListBucketIntelligentTieringConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
-
-    
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-
-    
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-
-    
     inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-
-    
     inline ListBucketIntelligentTieringConfigurationsRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_bucket;

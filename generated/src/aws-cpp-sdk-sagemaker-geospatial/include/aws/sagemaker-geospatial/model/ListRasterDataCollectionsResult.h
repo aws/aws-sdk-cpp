@@ -34,106 +34,43 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API ListRasterDataCollectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If the previous response was truncated, you receive this token. Use it in
      * your next request to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListRasterDataCollectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListRasterDataCollectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListRasterDataCollectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains summary information about the raster data collection.</p>
      */
     inline const Aws::Vector<RasterDataCollectionMetadata>& GetRasterDataCollectionSummaries() const{ return m_rasterDataCollectionSummaries; }
-
-    /**
-     * <p>Contains summary information about the raster data collection.</p>
-     */
     inline void SetRasterDataCollectionSummaries(const Aws::Vector<RasterDataCollectionMetadata>& value) { m_rasterDataCollectionSummaries = value; }
-
-    /**
-     * <p>Contains summary information about the raster data collection.</p>
-     */
     inline void SetRasterDataCollectionSummaries(Aws::Vector<RasterDataCollectionMetadata>&& value) { m_rasterDataCollectionSummaries = std::move(value); }
-
-    /**
-     * <p>Contains summary information about the raster data collection.</p>
-     */
     inline ListRasterDataCollectionsResult& WithRasterDataCollectionSummaries(const Aws::Vector<RasterDataCollectionMetadata>& value) { SetRasterDataCollectionSummaries(value); return *this;}
-
-    /**
-     * <p>Contains summary information about the raster data collection.</p>
-     */
     inline ListRasterDataCollectionsResult& WithRasterDataCollectionSummaries(Aws::Vector<RasterDataCollectionMetadata>&& value) { SetRasterDataCollectionSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains summary information about the raster data collection.</p>
-     */
     inline ListRasterDataCollectionsResult& AddRasterDataCollectionSummaries(const RasterDataCollectionMetadata& value) { m_rasterDataCollectionSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Contains summary information about the raster data collection.</p>
-     */
     inline ListRasterDataCollectionsResult& AddRasterDataCollectionSummaries(RasterDataCollectionMetadata&& value) { m_rasterDataCollectionSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRasterDataCollectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRasterDataCollectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRasterDataCollectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

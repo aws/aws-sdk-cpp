@@ -25,10 +25,8 @@ OutputBand::OutputBand() :
 {
 }
 
-OutputBand::OutputBand(JsonView jsonValue) : 
-    m_bandNameHasBeenSet(false),
-    m_outputDataType(OutputType::NOT_SET),
-    m_outputDataTypeHasBeenSet(false)
+OutputBand::OutputBand(JsonView jsonValue)
+  : OutputBand()
 {
   *this = jsonValue;
 }

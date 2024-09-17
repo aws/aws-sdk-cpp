@@ -26,11 +26,8 @@ BatchStartViewerSessionRevocationViewerSession::BatchStartViewerSessionRevocatio
 {
 }
 
-BatchStartViewerSessionRevocationViewerSession::BatchStartViewerSessionRevocationViewerSession(JsonView jsonValue) : 
-    m_channelArnHasBeenSet(false),
-    m_viewerIdHasBeenSet(false),
-    m_viewerSessionVersionsLessThanOrEqualTo(0),
-    m_viewerSessionVersionsLessThanOrEqualToHasBeenSet(false)
+BatchStartViewerSessionRevocationViewerSession::BatchStartViewerSessionRevocationViewerSession(JsonView jsonValue)
+  : BatchStartViewerSessionRevocationViewerSession()
 {
   *this = jsonValue;
 }

@@ -34,17 +34,8 @@ EvaluationResult::EvaluationResult() :
 {
 }
 
-EvaluationResult::EvaluationResult(const XmlNode& xmlNode) : 
-    m_evalActionNameHasBeenSet(false),
-    m_evalResourceNameHasBeenSet(false),
-    m_evalDecision(PolicyEvaluationDecisionType::NOT_SET),
-    m_evalDecisionHasBeenSet(false),
-    m_matchedStatementsHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false),
-    m_organizationsDecisionDetailHasBeenSet(false),
-    m_permissionsBoundaryDecisionDetailHasBeenSet(false),
-    m_evalDecisionDetailsHasBeenSet(false),
-    m_resourceSpecificResultsHasBeenSet(false)
+EvaluationResult::EvaluationResult(const XmlNode& xmlNode)
+  : EvaluationResult()
 {
   *this = xmlNode;
 }

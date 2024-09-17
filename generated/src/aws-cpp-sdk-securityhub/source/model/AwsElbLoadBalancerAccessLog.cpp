@@ -28,13 +28,8 @@ AwsElbLoadBalancerAccessLog::AwsElbLoadBalancerAccessLog() :
 {
 }
 
-AwsElbLoadBalancerAccessLog::AwsElbLoadBalancerAccessLog(JsonView jsonValue) : 
-    m_emitInterval(0),
-    m_emitIntervalHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3BucketPrefixHasBeenSet(false)
+AwsElbLoadBalancerAccessLog::AwsElbLoadBalancerAccessLog(JsonView jsonValue)
+  : AwsElbLoadBalancerAccessLog()
 {
   *this = jsonValue;
 }

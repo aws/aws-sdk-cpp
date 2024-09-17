@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 StartJobRunRequest::StartJobRunRequest() : 
     m_jobNameHasBeenSet(false),
+    m_jobRunQueuingEnabled(false),
+    m_jobRunQueuingEnabledHasBeenSet(false),
     m_jobRunIdHasBeenSet(false),
     m_argumentsHasBeenSet(false),
     m_timeout(0),
@@ -38,6 +40,12 @@ Aws::String StartJobRunRequest::SerializePayload() const
   if(m_jobNameHasBeenSet)
   {
    payload.WithString("JobName", m_jobName);
+
+  }
+
+  if(m_jobRunQueuingEnabledHasBeenSet)
+  {
+   payload.WithBool("JobRunQueuingEnabled", m_jobRunQueuingEnabled);
 
   }
 

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ARCZonalShiftClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ARCZonalShiftClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ARCZonalShiftClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ARCZonalShiftBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

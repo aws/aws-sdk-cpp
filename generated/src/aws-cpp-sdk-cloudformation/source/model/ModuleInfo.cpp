@@ -26,9 +26,8 @@ ModuleInfo::ModuleInfo() :
 {
 }
 
-ModuleInfo::ModuleInfo(const XmlNode& xmlNode) : 
-    m_typeHierarchyHasBeenSet(false),
-    m_logicalIdHierarchyHasBeenSet(false)
+ModuleInfo::ModuleInfo(const XmlNode& xmlNode)
+  : ModuleInfo()
 {
   *this = xmlNode;
 }

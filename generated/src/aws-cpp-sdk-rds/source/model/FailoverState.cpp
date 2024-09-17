@@ -30,13 +30,8 @@ FailoverState::FailoverState() :
 {
 }
 
-FailoverState::FailoverState(const XmlNode& xmlNode) : 
-    m_status(FailoverStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fromDbClusterArnHasBeenSet(false),
-    m_toDbClusterArnHasBeenSet(false),
-    m_isDataLossAllowed(false),
-    m_isDataLossAllowedHasBeenSet(false)
+FailoverState::FailoverState(const XmlNode& xmlNode)
+  : FailoverState()
 {
   *this = xmlNode;
 }

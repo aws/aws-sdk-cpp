@@ -29,12 +29,8 @@ CidrCollection::CidrCollection() :
 {
 }
 
-CidrCollection::CidrCollection(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+CidrCollection::CidrCollection(const XmlNode& xmlNode)
+  : CidrCollection()
 {
   *this = xmlNode;
 }

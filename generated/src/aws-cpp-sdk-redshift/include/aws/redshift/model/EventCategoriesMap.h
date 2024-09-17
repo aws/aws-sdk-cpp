@@ -41,95 +41,34 @@ namespace Model
     AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The source type, such as cluster or cluster-snapshot, that the returned
      * categories belong to.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
-     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
-     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
-     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-
-    /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
-     */
     inline EventCategoriesMap& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
-     */
     inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
-     */
     inline EventCategoriesMap& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The events in the event category.</p>
      */
     inline const Aws::Vector<EventInfoMap>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>The events in the event category.</p>
-     */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-
-    /**
-     * <p>The events in the event category.</p>
-     */
     inline void SetEvents(const Aws::Vector<EventInfoMap>& value) { m_eventsHasBeenSet = true; m_events = value; }
-
-    /**
-     * <p>The events in the event category.</p>
-     */
     inline void SetEvents(Aws::Vector<EventInfoMap>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-
-    /**
-     * <p>The events in the event category.</p>
-     */
     inline EventCategoriesMap& WithEvents(const Aws::Vector<EventInfoMap>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>The events in the event category.</p>
-     */
     inline EventCategoriesMap& WithEvents(Aws::Vector<EventInfoMap>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>The events in the event category.</p>
-     */
     inline EventCategoriesMap& AddEvents(const EventInfoMap& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-
-    /**
-     * <p>The events in the event category.</p>
-     */
     inline EventCategoriesMap& AddEvents(EventInfoMap&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_sourceType;

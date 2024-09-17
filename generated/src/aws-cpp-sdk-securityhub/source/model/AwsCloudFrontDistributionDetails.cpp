@@ -34,19 +34,8 @@ AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails() :
 {
 }
 
-AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails(JsonView jsonValue) : 
-    m_cacheBehaviorsHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_defaultRootObjectHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_originsHasBeenSet(false),
-    m_originGroupsHasBeenSet(false),
-    m_viewerCertificateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_webAclIdHasBeenSet(false)
+AwsCloudFrontDistributionDetails::AwsCloudFrontDistributionDetails(JsonView jsonValue)
+  : AwsCloudFrontDistributionDetails()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResourceServerScopeDetails::ResourceServerScopeDetails() :
 {
 }
 
-ResourceServerScopeDetails::ResourceServerScopeDetails(JsonView jsonValue) : 
-    m_detailedTitleHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false)
+ResourceServerScopeDetails::ResourceServerScopeDetails(JsonView jsonValue)
+  : ResourceServerScopeDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ BulkLoadIdNotFoundException::BulkLoadIdNotFoundException() :
 {
 }
 
-BulkLoadIdNotFoundException::BulkLoadIdNotFoundException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+BulkLoadIdNotFoundException::BulkLoadIdNotFoundException(JsonView jsonValue)
+  : BulkLoadIdNotFoundException()
 {
   *this = jsonValue;
 }

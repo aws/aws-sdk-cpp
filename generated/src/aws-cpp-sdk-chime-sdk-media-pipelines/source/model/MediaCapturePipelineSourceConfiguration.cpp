@@ -24,9 +24,8 @@ MediaCapturePipelineSourceConfiguration::MediaCapturePipelineSourceConfiguration
 {
 }
 
-MediaCapturePipelineSourceConfiguration::MediaCapturePipelineSourceConfiguration(JsonView jsonValue) : 
-    m_mediaPipelineArnHasBeenSet(false),
-    m_chimeSdkMeetingConfigurationHasBeenSet(false)
+MediaCapturePipelineSourceConfiguration::MediaCapturePipelineSourceConfiguration(JsonView jsonValue)
+  : MediaCapturePipelineSourceConfiguration()
 {
   *this = jsonValue;
 }

@@ -93,20 +93,20 @@ namespace CloudWatchRUM
          * CloudWatch. These default metrics are listed in <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
          * metrics that you can collect with CloudWatch RUM</a>.</p> <p>In addition to
-         * these default metrics, you can choose to send extended metrics or custom metrics
-         * or both.</p> <ul> <li> <p>Extended metrics enable you to send metrics with
-         * additional dimensions not included in the default metrics. You can also send
-         * extended metrics to Evidently as well as CloudWatch. The valid dimension names
-         * for the additional dimensions for extended metrics are <code>BrowserName</code>,
+         * these default metrics, you can choose to send extended metrics, custom metrics,
+         * or both.</p> <ul> <li> <p>Extended metrics let you send metrics with additional
+         * dimensions that aren't included in the default metrics. You can also send
+         * extended metrics to both Evidently and CloudWatch. The valid dimension names for
+         * the additional dimensions for extended metrics are <code>BrowserName</code>,
          * <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>,
          * <code>OSName</code>, and <code>PageId</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
          * Extended metrics that you can send to CloudWatch and CloudWatch
          * Evidently</a>.</p> </li> <li> <p>Custom metrics are metrics that you define. You
-         * can send custom metrics to CloudWatch or to CloudWatch Evidently or to both.
-         * With custom metrics, you can use any metric name and namespace, and to derive
-         * the metrics you can use any custom events, built-in events, custom attributes,
-         * or default attributes. </p> <p>You can't send custom metrics to the
+         * can send custom metrics to CloudWatch. CloudWatch Evidently, or both. With
+         * custom metrics, you can use any metric name and namespace. To derive the
+         * metrics, you can use any custom events, built-in events, custom attributes, or
+         * default attributes. </p> <p>You can't send custom metrics to the
          * <code>AWS/RUM</code> namespace. You must send custom metrics to a custom
          * namespace that you define. The namespace that you use can't start with
          * <code>AWS/</code>. CloudWatch RUM prepends <code>RUM/CustomMetrics/</code> to
@@ -355,13 +355,13 @@ namespace CloudWatchRUM
          * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListAppMonitors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppMonitorsOutcome ListAppMonitors(const Model::ListAppMonitorsRequest& request) const;
+        virtual Model::ListAppMonitorsOutcome ListAppMonitors(const Model::ListAppMonitorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAppMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppMonitorsRequestT = Model::ListAppMonitorsRequest>
-        Model::ListAppMonitorsOutcomeCallable ListAppMonitorsCallable(const ListAppMonitorsRequestT& request) const
+        Model::ListAppMonitorsOutcomeCallable ListAppMonitorsCallable(const ListAppMonitorsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchRUMClient::ListAppMonitors, request);
         }
@@ -370,7 +370,7 @@ namespace CloudWatchRUM
          * An Async wrapper for ListAppMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppMonitorsRequestT = Model::ListAppMonitorsRequest>
-        void ListAppMonitorsAsync(const ListAppMonitorsRequestT& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppMonitorsAsync(const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppMonitorsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchRUMClient::ListAppMonitors, request, handler, context);
         }
@@ -626,7 +626,6 @@ namespace CloudWatchRUM
       void init(const CloudWatchRUMClientConfiguration& clientConfiguration);
 
       CloudWatchRUMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudWatchRUMEndpointProviderBase> m_endpointProvider;
   };
 

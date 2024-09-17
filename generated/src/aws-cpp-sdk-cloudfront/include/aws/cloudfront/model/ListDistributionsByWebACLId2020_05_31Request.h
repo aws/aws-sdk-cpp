@@ -42,6 +42,7 @@ namespace Model
     AWS_CLOUDFRONT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
      * results. If you have more than <code>MaxItems</code> distributions that satisfy
@@ -51,183 +52,49 @@ namespace Model
      * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
-     * results. If you have more than <code>MaxItems</code> distributions that satisfy
-     * the request, the response includes a <code>NextMarker</code> element. To get the
-     * next page of results, submit another request. For the value of
-     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.)</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
-     * results. If you have more than <code>MaxItems</code> distributions that satisfy
-     * the request, the response includes a <code>NextMarker</code> element. To get the
-     * next page of results, submit another request. For the value of
-     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.)</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
-     * results. If you have more than <code>MaxItems</code> distributions that satisfy
-     * the request, the response includes a <code>NextMarker</code> element. To get the
-     * next page of results, submit another request. For the value of
-     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.)</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
-     * results. If you have more than <code>MaxItems</code> distributions that satisfy
-     * the request, the response includes a <code>NextMarker</code> element. To get the
-     * next page of results, submit another request. For the value of
-     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.)</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
-     * results. If you have more than <code>MaxItems</code> distributions that satisfy
-     * the request, the response includes a <code>NextMarker</code> element. To get the
-     * next page of results, submit another request. For the value of
-     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.)</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
-     * results. If you have more than <code>MaxItems</code> distributions that satisfy
-     * the request, the response includes a <code>NextMarker</code> element. To get the
-     * next page of results, submit another request. For the value of
-     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.)</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
-     * results. If you have more than <code>MaxItems</code> distributions that satisfy
-     * the request, the response includes a <code>NextMarker</code> element. To get the
-     * next page of results, submit another request. For the value of
-     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.)</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of distributions that you want CloudFront to return in the
      * response body. The maximum and default values are both 100.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
-
-    /**
-     * <p>The maximum number of distributions that you want CloudFront to return in the
-     * response body. The maximum and default values are both 100.</p>
-     */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of distributions that you want CloudFront to return in the
-     * response body. The maximum and default values are both 100.</p>
-     */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-
-    /**
-     * <p>The maximum number of distributions that you want CloudFront to return in the
-     * response body. The maximum and default values are both 100.</p>
-     */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-
-    /**
-     * <p>The maximum number of distributions that you want CloudFront to return in the
-     * response body. The maximum and default values are both 100.</p>
-     */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-
-    /**
-     * <p>The maximum number of distributions that you want CloudFront to return in the
-     * response body. The maximum and default values are both 100.</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-
-    /**
-     * <p>The maximum number of distributions that you want CloudFront to return in the
-     * response body. The maximum and default values are both 100.</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum number of distributions that you want CloudFront to return in the
-     * response body. The maximum and default values are both 100.</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
-
-    /**
-     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
-     * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
-     */
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
-     * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
-     */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-
-    /**
-     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
-     * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
-     */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-
-    /**
-     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
-     * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
-     */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-
-    /**
-     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
-     * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-
-    /**
-     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
-     * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the WAF web ACL that you want to list the associated distributions.
-     * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
-     */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

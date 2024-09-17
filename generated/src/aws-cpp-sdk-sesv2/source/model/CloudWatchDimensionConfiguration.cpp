@@ -26,11 +26,8 @@ CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration() :
 {
 }
 
-CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(JsonView jsonValue) : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueSource(DimensionValueSource::NOT_SET),
-    m_dimensionValueSourceHasBeenSet(false),
-    m_defaultDimensionValueHasBeenSet(false)
+CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(JsonView jsonValue)
+  : CloudWatchDimensionConfiguration()
 {
   *this = jsonValue;
 }

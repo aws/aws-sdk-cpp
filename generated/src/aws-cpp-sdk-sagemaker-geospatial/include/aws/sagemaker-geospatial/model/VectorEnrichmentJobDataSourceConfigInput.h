@@ -38,42 +38,18 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The input structure for the Amazon S3 data that represents the Amazon S3
      * location of the input data objects.</p>
      */
     inline const VectorEnrichmentJobS3Data& GetS3Data() const{ return m_s3Data; }
-
-    /**
-     * <p>The input structure for the Amazon S3 data that represents the Amazon S3
-     * location of the input data objects.</p>
-     */
     inline bool S3DataHasBeenSet() const { return m_s3DataHasBeenSet; }
-
-    /**
-     * <p>The input structure for the Amazon S3 data that represents the Amazon S3
-     * location of the input data objects.</p>
-     */
     inline void SetS3Data(const VectorEnrichmentJobS3Data& value) { m_s3DataHasBeenSet = true; m_s3Data = value; }
-
-    /**
-     * <p>The input structure for the Amazon S3 data that represents the Amazon S3
-     * location of the input data objects.</p>
-     */
     inline void SetS3Data(VectorEnrichmentJobS3Data&& value) { m_s3DataHasBeenSet = true; m_s3Data = std::move(value); }
-
-    /**
-     * <p>The input structure for the Amazon S3 data that represents the Amazon S3
-     * location of the input data objects.</p>
-     */
     inline VectorEnrichmentJobDataSourceConfigInput& WithS3Data(const VectorEnrichmentJobS3Data& value) { SetS3Data(value); return *this;}
-
-    /**
-     * <p>The input structure for the Amazon S3 data that represents the Amazon S3
-     * location of the input data objects.</p>
-     */
     inline VectorEnrichmentJobDataSourceConfigInput& WithS3Data(VectorEnrichmentJobS3Data&& value) { SetS3Data(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VectorEnrichmentJobS3Data m_s3Data;

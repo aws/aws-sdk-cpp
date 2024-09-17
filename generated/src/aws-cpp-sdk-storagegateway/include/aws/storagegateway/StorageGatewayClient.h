@@ -1290,8 +1290,9 @@ namespace StorageGateway
         }
 
         /**
-         * <p>Returns your gateway's weekly maintenance start time including the day and
-         * time of the week. Note that values are in terms of the gateway's time
+         * <p>Returns your gateway's maintenance window schedule information, with values
+         * for monthly or weekly cadence, specific day and time to begin maintenance, and
+         * which types of updates to apply. Time values returned are for the gateway's time
          * zone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">AWS
          * API Reference</a></p>
@@ -1463,13 +1464,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeTapeArchivesOutcome DescribeTapeArchives(const Model::DescribeTapeArchivesRequest& request) const;
+        virtual Model::DescribeTapeArchivesOutcome DescribeTapeArchives(const Model::DescribeTapeArchivesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeTapeArchives that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeTapeArchivesRequestT = Model::DescribeTapeArchivesRequest>
-        Model::DescribeTapeArchivesOutcomeCallable DescribeTapeArchivesCallable(const DescribeTapeArchivesRequestT& request) const
+        Model::DescribeTapeArchivesOutcomeCallable DescribeTapeArchivesCallable(const DescribeTapeArchivesRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::DescribeTapeArchives, request);
         }
@@ -1478,7 +1479,7 @@ namespace StorageGateway
          * An Async wrapper for DescribeTapeArchives that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeTapeArchivesRequestT = Model::DescribeTapeArchivesRequest>
-        void DescribeTapeArchivesAsync(const DescribeTapeArchivesRequestT& request, const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeTapeArchivesAsync(const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeTapeArchivesRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::DescribeTapeArchives, request, handler, context);
         }
@@ -1766,13 +1767,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListAutomaticTapeCreationPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAutomaticTapeCreationPoliciesOutcome ListAutomaticTapeCreationPolicies(const Model::ListAutomaticTapeCreationPoliciesRequest& request) const;
+        virtual Model::ListAutomaticTapeCreationPoliciesOutcome ListAutomaticTapeCreationPolicies(const Model::ListAutomaticTapeCreationPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAutomaticTapeCreationPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAutomaticTapeCreationPoliciesRequestT = Model::ListAutomaticTapeCreationPoliciesRequest>
-        Model::ListAutomaticTapeCreationPoliciesOutcomeCallable ListAutomaticTapeCreationPoliciesCallable(const ListAutomaticTapeCreationPoliciesRequestT& request) const
+        Model::ListAutomaticTapeCreationPoliciesOutcomeCallable ListAutomaticTapeCreationPoliciesCallable(const ListAutomaticTapeCreationPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::ListAutomaticTapeCreationPolicies, request);
         }
@@ -1781,7 +1782,7 @@ namespace StorageGateway
          * An Async wrapper for ListAutomaticTapeCreationPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAutomaticTapeCreationPoliciesRequestT = Model::ListAutomaticTapeCreationPoliciesRequest>
-        void ListAutomaticTapeCreationPoliciesAsync(const ListAutomaticTapeCreationPoliciesRequestT& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAutomaticTapeCreationPoliciesAsync(const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAutomaticTapeCreationPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::ListAutomaticTapeCreationPolicies, request, handler, context);
         }
@@ -1793,13 +1794,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFileSharesOutcome ListFileShares(const Model::ListFileSharesRequest& request) const;
+        virtual Model::ListFileSharesOutcome ListFileShares(const Model::ListFileSharesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFileShares that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFileSharesRequestT = Model::ListFileSharesRequest>
-        Model::ListFileSharesOutcomeCallable ListFileSharesCallable(const ListFileSharesRequestT& request) const
+        Model::ListFileSharesOutcomeCallable ListFileSharesCallable(const ListFileSharesRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::ListFileShares, request);
         }
@@ -1808,7 +1809,7 @@ namespace StorageGateway
          * An Async wrapper for ListFileShares that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFileSharesRequestT = Model::ListFileSharesRequest>
-        void ListFileSharesAsync(const ListFileSharesRequestT& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFileSharesAsync(const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFileSharesRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::ListFileShares, request, handler, context);
         }
@@ -1820,13 +1821,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFileSystemAssociationsOutcome ListFileSystemAssociations(const Model::ListFileSystemAssociationsRequest& request) const;
+        virtual Model::ListFileSystemAssociationsOutcome ListFileSystemAssociations(const Model::ListFileSystemAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFileSystemAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFileSystemAssociationsRequestT = Model::ListFileSystemAssociationsRequest>
-        Model::ListFileSystemAssociationsOutcomeCallable ListFileSystemAssociationsCallable(const ListFileSystemAssociationsRequestT& request) const
+        Model::ListFileSystemAssociationsOutcomeCallable ListFileSystemAssociationsCallable(const ListFileSystemAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::ListFileSystemAssociations, request);
         }
@@ -1835,7 +1836,7 @@ namespace StorageGateway
          * An Async wrapper for ListFileSystemAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFileSystemAssociationsRequestT = Model::ListFileSystemAssociationsRequest>
-        void ListFileSystemAssociationsAsync(const ListFileSystemAssociationsRequestT& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFileSystemAssociationsAsync(const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFileSystemAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::ListFileSystemAssociations, request, handler, context);
         }
@@ -1853,13 +1854,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
+        virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGateways that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGatewaysRequestT = Model::ListGatewaysRequest>
-        Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const ListGatewaysRequestT& request) const
+        Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const ListGatewaysRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::ListGateways, request);
         }
@@ -1868,7 +1869,7 @@ namespace StorageGateway
          * An Async wrapper for ListGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGatewaysRequestT = Model::ListGatewaysRequest>
-        void ListGatewaysAsync(const ListGatewaysRequestT& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGatewaysAsync(const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGatewaysRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::ListGateways, request, handler, context);
         }
@@ -1944,13 +1945,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapePools">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTapePoolsOutcome ListTapePools(const Model::ListTapePoolsRequest& request) const;
+        virtual Model::ListTapePoolsOutcome ListTapePools(const Model::ListTapePoolsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTapePools that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTapePoolsRequestT = Model::ListTapePoolsRequest>
-        Model::ListTapePoolsOutcomeCallable ListTapePoolsCallable(const ListTapePoolsRequestT& request) const
+        Model::ListTapePoolsOutcomeCallable ListTapePoolsCallable(const ListTapePoolsRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::ListTapePools, request);
         }
@@ -1959,7 +1960,7 @@ namespace StorageGateway
          * An Async wrapper for ListTapePools that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTapePoolsRequestT = Model::ListTapePoolsRequest>
-        void ListTapePoolsAsync(const ListTapePoolsRequestT& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTapePoolsAsync(const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTapePoolsRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::ListTapePools, request, handler, context);
         }
@@ -1978,13 +1979,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTapesOutcome ListTapes(const Model::ListTapesRequest& request) const;
+        virtual Model::ListTapesOutcome ListTapes(const Model::ListTapesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTapes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTapesRequestT = Model::ListTapesRequest>
-        Model::ListTapesOutcomeCallable ListTapesCallable(const ListTapesRequestT& request) const
+        Model::ListTapesOutcomeCallable ListTapesCallable(const ListTapesRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::ListTapes, request);
         }
@@ -1993,7 +1994,7 @@ namespace StorageGateway
          * An Async wrapper for ListTapes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTapesRequestT = Model::ListTapesRequest>
-        void ListTapesAsync(const ListTapesRequestT& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTapesAsync(const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTapesRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::ListTapes, request, handler, context);
         }
@@ -2072,13 +2073,13 @@ namespace StorageGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVolumesOutcome ListVolumes(const Model::ListVolumesRequest& request) const;
+        virtual Model::ListVolumesOutcome ListVolumes(const Model::ListVolumesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVolumesRequestT = Model::ListVolumesRequest>
-        Model::ListVolumesOutcomeCallable ListVolumesCallable(const ListVolumesRequestT& request) const
+        Model::ListVolumesOutcomeCallable ListVolumesCallable(const ListVolumesRequestT& request = {}) const
         {
             return SubmitCallable(&StorageGatewayClient::ListVolumes, request);
         }
@@ -2087,7 +2088,7 @@ namespace StorageGateway
          * An Async wrapper for ListVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVolumesRequestT = Model::ListVolumesRequest>
-        void ListVolumesAsync(const ListVolumesRequestT& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVolumesAsync(const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVolumesRequestT& request = {}) const
         {
             return SubmitAsync(&StorageGatewayClient::ListVolumes, request, handler, context);
         }
@@ -2629,12 +2630,12 @@ namespace StorageGateway
         }
 
         /**
-         * <p>Updates a gateway's metadata, which includes the gateway's name and time
-         * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
-         * the gateway in your request.</p>  <p>For gateways activated after
-         * September 2, 2015, the gateway's ARN contains the gateway ID rather than the
-         * gateway name. However, changing the name of the gateway has no effect on the
-         * gateway's ARN.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates a gateway's metadata, which includes the gateway's name, time zone,
+         * and metadata cache size. To specify which gateway to update, use the Amazon
+         * Resource Name (ARN) of the gateway in your request.</p>  <p>For gateways
+         * activated after September 2, 2015, the gateway's ARN contains the gateway ID
+         * rather than the gateway name. However, changing the name of the gateway has no
+         * effect on the gateway's ARN.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">AWS
          * API Reference</a></p>
          */
@@ -2697,9 +2698,19 @@ namespace StorageGateway
         }
 
         /**
-         * <p>Updates a gateway's weekly maintenance start time information, including day
-         * and time of the week. The maintenance time is the time in your gateway's time
-         * zone.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a gateway's maintenance window schedule, with settings for monthly or
+         * weekly cadence, specific day and time to begin maintenance, and which types of
+         * updates to apply. Time configuration uses the gateway's time zone. You can pass
+         * values for a complete maintenance schedule, or update policy, or both. Previous
+         * values will persist for whichever setting you choose not to modify. If an
+         * incomplete or invalid maintenance schedule is passed, the entire request will be
+         * rejected with an error and no changes will occur.</p> <p>A complete maintenance
+         * schedule must include values for <i>both</i> <code>MinuteOfHour</code> and
+         * <code>HourOfDay</code>, and <i>either</i> <code>DayOfMonth</code> <i>or</i>
+         * <code>DayOfWeek</code>.</p>  <p>We recommend keeping maintenance updates
+         * turned on, except in specific use cases where the brief disruptions caused by
+         * updating the gateway could critically impact your deployment.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">AWS
          * API Reference</a></p>
          */
@@ -2847,9 +2858,13 @@ namespace StorageGateway
         }
 
         /**
-         * <p>Updates the SMB security strategy on a file gateway. This action is only
-         * supported in file gateways.</p>  <p>This API is called Security level in
-         * the User Guide.</p> <p>A higher security level can affect performance of the
+         * <p>Updates the SMB security strategy level for an Amazon S3 file gateway. This
+         * action is only supported for Amazon S3 file gateways.</p>  <p>For
+         * information about configuring this setting using the Amazon Web Services
+         * console, see <a
+         * href="https://docs.aws.amazon.com/filegateway/latest/files3/security-strategy.html">Setting
+         * a security level for your gateway</a> in the <i>Amazon S3 File Gateway User
+         * Guide</i>.</p> <p>A higher security strategy level can affect performance of the
          * gateway.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">AWS
          * API Reference</a></p>
@@ -2943,7 +2958,6 @@ namespace StorageGateway
       void init(const StorageGatewayClientConfiguration& clientConfiguration);
 
       StorageGatewayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<StorageGatewayEndpointProviderBase> m_endpointProvider;
   };
 

@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateLakeFormationIdentityCenterConfigurationRequest::CreateLakeFormationIdentityCenterConfigurationRequest() : 
     m_catalogIdHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
-    m_externalFilteringHasBeenSet(false)
+    m_externalFilteringHasBeenSet(false),
+    m_shareRecipientsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,17 @@ Aws::String CreateLakeFormationIdentityCenterConfigurationRequest::SerializePayl
   if(m_externalFilteringHasBeenSet)
   {
    payload.WithObject("ExternalFiltering", m_externalFiltering.Jsonize());
+
+  }
+
+  if(m_shareRecipientsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> shareRecipientsJsonList(m_shareRecipients.size());
+   for(unsigned shareRecipientsIndex = 0; shareRecipientsIndex < shareRecipientsJsonList.GetLength(); ++shareRecipientsIndex)
+   {
+     shareRecipientsJsonList[shareRecipientsIndex].AsObject(m_shareRecipients[shareRecipientsIndex].Jsonize());
+   }
+   payload.WithArray("ShareRecipients", std::move(shareRecipientsJsonList));
 
   }
 

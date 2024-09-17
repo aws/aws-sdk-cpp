@@ -109,8 +109,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Creates a new backend environment for an Amplify app. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new backend environment for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend is created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to Amplify Gen 2 applications. When you deploy an application with
+         * Amplify Gen 2, you provision the app's backend infrastructure using Typescript
+         * code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">AWS
          * API Reference</a></p>
          */
@@ -190,8 +194,8 @@ namespace Amplify
         }
 
         /**
-         * <p> Creates a new domain association for an Amplify app. This action associates
-         * a custom domain with the Amplify app </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new domain association for an Amplify app. This action associates a
+         * custom domain with the Amplify app </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">AWS
          * API Reference</a></p>
          */
@@ -267,8 +271,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Deletes a backend environment for an Amplify app. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a backend environment for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend is created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to Amplify Gen 2 applications. When you deploy an application with
+         * Amplify Gen 2, you provision the app's backend infrastructure using Typescript
+         * code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">AWS
          * API Reference</a></p>
          */
@@ -318,7 +326,7 @@ namespace Amplify
         }
 
         /**
-         * <p> Deletes a domain association for an Amplify app. </p><p><h3>See Also:</h3>  
+         * <p>Deletes a domain association for an Amplify app. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteDomainAssociation">AWS
          * API Reference</a></p>
@@ -472,8 +480,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Returns a backend environment for an Amplify app. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a backend environment for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend is created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to Amplify Gen 2 applications. When you deploy an application with
+         * Amplify Gen 2, you provision the app's backend infrastructure using Typescript
+         * code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">AWS
          * API Reference</a></p>
          */
@@ -523,7 +535,7 @@ namespace Amplify
         }
 
         /**
-         * <p> Returns the domain information for an Amplify app. </p><p><h3>See Also:</h3>
+         * <p>Returns the domain information for an Amplify app. </p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation">AWS
          * API Reference</a></p>
@@ -604,13 +616,13 @@ namespace Amplify
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request) const;
+        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request) const
+        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request = {}) const
         {
             return SubmitCallable(&AmplifyClient::ListApps, request);
         }
@@ -619,7 +631,7 @@ namespace Amplify
          * An Async wrapper for ListApps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        void ListAppsAsync(const ListAppsRequestT& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppsAsync(const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppsRequestT& request = {}) const
         {
             return SubmitAsync(&AmplifyClient::ListApps, request, handler, context);
         }
@@ -651,8 +663,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Lists the backend environments for an Amplify app. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the backend environments for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend is created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to Amplify Gen 2 applications. When you deploy an application with
+         * Amplify Gen 2, you provision the app's backend infrastructure using Typescript
+         * code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">AWS
          * API Reference</a></p>
          */
@@ -702,8 +718,8 @@ namespace Amplify
         }
 
         /**
-         * <p> Returns the domain associations for an Amplify app. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the domain associations for an Amplify app. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations">AWS
          * API Reference</a></p>
          */
@@ -986,8 +1002,8 @@ namespace Amplify
         }
 
         /**
-         * <p> Creates a new domain association for an Amplify app.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new domain association for an Amplify app.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">AWS
          * API Reference</a></p>
          */
@@ -1044,7 +1060,6 @@ namespace Amplify
       void init(const AmplifyClientConfiguration& clientConfiguration);
 
       AmplifyClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AmplifyEndpointProviderBase> m_endpointProvider;
   };
 

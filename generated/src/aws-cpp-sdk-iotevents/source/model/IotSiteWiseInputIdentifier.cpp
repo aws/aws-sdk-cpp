@@ -23,8 +23,8 @@ IotSiteWiseInputIdentifier::IotSiteWiseInputIdentifier() :
 {
 }
 
-IotSiteWiseInputIdentifier::IotSiteWiseInputIdentifier(JsonView jsonValue) : 
-    m_iotSiteWiseAssetModelPropertyIdentifierHasBeenSet(false)
+IotSiteWiseInputIdentifier::IotSiteWiseInputIdentifier(JsonView jsonValue)
+  : IotSiteWiseInputIdentifier()
 {
   *this = jsonValue;
 }

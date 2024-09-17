@@ -38,77 +38,31 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The organization node type.</p>
      */
     inline const OrganizationNodeType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The organization node type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The organization node type.</p>
-     */
     inline void SetType(const OrganizationNodeType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The organization node type.</p>
-     */
     inline void SetType(OrganizationNodeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The organization node type.</p>
-     */
     inline OrganizationNode& WithType(const OrganizationNodeType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The organization node type.</p>
-     */
     inline OrganizationNode& WithType(OrganizationNodeType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the organization node.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The identifier of the organization node.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The identifier of the organization node.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The identifier of the organization node.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The identifier of the organization node.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The identifier of the organization node.</p>
-     */
     inline OrganizationNode& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The identifier of the organization node.</p>
-     */
     inline OrganizationNode& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the organization node.</p>
-     */
     inline OrganizationNode& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     OrganizationNodeType m_type;

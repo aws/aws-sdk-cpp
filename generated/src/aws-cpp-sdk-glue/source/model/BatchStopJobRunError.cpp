@@ -25,10 +25,8 @@ BatchStopJobRunError::BatchStopJobRunError() :
 {
 }
 
-BatchStopJobRunError::BatchStopJobRunError(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
+BatchStopJobRunError::BatchStopJobRunError(JsonView jsonValue)
+  : BatchStopJobRunError()
 {
   *this = jsonValue;
 }

@@ -40,46 +40,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
      */
     inline const Aws::String& GetBestRecipeArn() const{ return m_bestRecipeArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-     */
     inline bool BestRecipeArnHasBeenSet() const { return m_bestRecipeArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-     */
     inline void SetBestRecipeArn(const Aws::String& value) { m_bestRecipeArnHasBeenSet = true; m_bestRecipeArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-     */
     inline void SetBestRecipeArn(Aws::String&& value) { m_bestRecipeArnHasBeenSet = true; m_bestRecipeArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-     */
     inline void SetBestRecipeArn(const char* value) { m_bestRecipeArnHasBeenSet = true; m_bestRecipeArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-     */
     inline AutoMLResult& WithBestRecipeArn(const Aws::String& value) { SetBestRecipeArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-     */
     inline AutoMLResult& WithBestRecipeArn(Aws::String&& value) { SetBestRecipeArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-     */
     inline AutoMLResult& WithBestRecipeArn(const char* value) { SetBestRecipeArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bestRecipeArn;

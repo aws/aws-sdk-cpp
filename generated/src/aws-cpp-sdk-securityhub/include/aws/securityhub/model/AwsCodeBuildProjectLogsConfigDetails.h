@@ -38,67 +38,29 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about CloudWatch Logs for the build project.</p>
      */
     inline const AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
-
-    /**
-     * <p>Information about CloudWatch Logs for the build project.</p>
-     */
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-
-    /**
-     * <p>Information about CloudWatch Logs for the build project.</p>
-     */
     inline void SetCloudWatchLogs(const AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-
-    /**
-     * <p>Information about CloudWatch Logs for the build project.</p>
-     */
     inline void SetCloudWatchLogs(AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-
-    /**
-     * <p>Information about CloudWatch Logs for the build project.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigDetails& WithCloudWatchLogs(const AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& value) { SetCloudWatchLogs(value); return *this;}
-
-    /**
-     * <p>Information about CloudWatch Logs for the build project.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigDetails& WithCloudWatchLogs(AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about logs built to an S3 bucket for a build project.</p>
      */
     inline const AwsCodeBuildProjectLogsConfigS3LogsDetails& GetS3Logs() const{ return m_s3Logs; }
-
-    /**
-     * <p>Information about logs built to an S3 bucket for a build project.</p>
-     */
     inline bool S3LogsHasBeenSet() const { return m_s3LogsHasBeenSet; }
-
-    /**
-     * <p>Information about logs built to an S3 bucket for a build project.</p>
-     */
     inline void SetS3Logs(const AwsCodeBuildProjectLogsConfigS3LogsDetails& value) { m_s3LogsHasBeenSet = true; m_s3Logs = value; }
-
-    /**
-     * <p>Information about logs built to an S3 bucket for a build project.</p>
-     */
     inline void SetS3Logs(AwsCodeBuildProjectLogsConfigS3LogsDetails&& value) { m_s3LogsHasBeenSet = true; m_s3Logs = std::move(value); }
-
-    /**
-     * <p>Information about logs built to an S3 bucket for a build project.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigDetails& WithS3Logs(const AwsCodeBuildProjectLogsConfigS3LogsDetails& value) { SetS3Logs(value); return *this;}
-
-    /**
-     * <p>Information about logs built to an S3 bucket for a build project.</p>
-     */
     inline AwsCodeBuildProjectLogsConfigDetails& WithS3Logs(AwsCodeBuildProjectLogsConfigS3LogsDetails&& value) { SetS3Logs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails m_cloudWatchLogs;

@@ -38,128 +38,47 @@ namespace Model
     AWS_DATAZONE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
-
-    /**
-     * <p/>
-     */
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p/>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p/>
+     * <p>The revision of the listing.</p>
      */
     inline const Aws::String& GetListingRevision() const{ return m_listingRevision; }
-
-    /**
-     * <p/>
-     */
     inline bool ListingRevisionHasBeenSet() const { return m_listingRevisionHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetListingRevision(const Aws::String& value) { m_listingRevisionHasBeenSet = true; m_listingRevision = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetListingRevision(Aws::String&& value) { m_listingRevisionHasBeenSet = true; m_listingRevision = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetListingRevision(const char* value) { m_listingRevisionHasBeenSet = true; m_listingRevision.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithListingRevision(const Aws::String& value) { SetListingRevision(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithListingRevision(Aws::String&& value) { SetListingRevision(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetListingRequest& WithListingRevision(const char* value) { SetListingRevision(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainIdentifier;

@@ -35,91 +35,33 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the monitoring schedule. The name must be unique within an Amazon
      * Web Services Region within an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetMonitoringScheduleName() const{ return m_monitoringScheduleName; }
-
-    /**
-     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
-     * Web Services Region within an Amazon Web Services account.</p>
-     */
     inline bool MonitoringScheduleNameHasBeenSet() const { return m_monitoringScheduleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
-     * Web Services Region within an Amazon Web Services account.</p>
-     */
     inline void SetMonitoringScheduleName(const Aws::String& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = value; }
-
-    /**
-     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
-     * Web Services Region within an Amazon Web Services account.</p>
-     */
     inline void SetMonitoringScheduleName(Aws::String&& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = std::move(value); }
-
-    /**
-     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
-     * Web Services Region within an Amazon Web Services account.</p>
-     */
     inline void SetMonitoringScheduleName(const char* value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName.assign(value); }
-
-    /**
-     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
-     * Web Services Region within an Amazon Web Services account.</p>
-     */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleName(const Aws::String& value) { SetMonitoringScheduleName(value); return *this;}
-
-    /**
-     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
-     * Web Services Region within an Amazon Web Services account.</p>
-     */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleName(Aws::String&& value) { SetMonitoringScheduleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
-     * Web Services Region within an Amazon Web Services account.</p>
-     */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleName(const char* value) { SetMonitoringScheduleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration object that specifies the monitoring schedule and defines
      * the monitoring job.</p>
      */
     inline const MonitoringScheduleConfig& GetMonitoringScheduleConfig() const{ return m_monitoringScheduleConfig; }
-
-    /**
-     * <p>The configuration object that specifies the monitoring schedule and defines
-     * the monitoring job.</p>
-     */
     inline bool MonitoringScheduleConfigHasBeenSet() const { return m_monitoringScheduleConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration object that specifies the monitoring schedule and defines
-     * the monitoring job.</p>
-     */
     inline void SetMonitoringScheduleConfig(const MonitoringScheduleConfig& value) { m_monitoringScheduleConfigHasBeenSet = true; m_monitoringScheduleConfig = value; }
-
-    /**
-     * <p>The configuration object that specifies the monitoring schedule and defines
-     * the monitoring job.</p>
-     */
     inline void SetMonitoringScheduleConfig(MonitoringScheduleConfig&& value) { m_monitoringScheduleConfigHasBeenSet = true; m_monitoringScheduleConfig = std::move(value); }
-
-    /**
-     * <p>The configuration object that specifies the monitoring schedule and defines
-     * the monitoring job.</p>
-     */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleConfig(const MonitoringScheduleConfig& value) { SetMonitoringScheduleConfig(value); return *this;}
-
-    /**
-     * <p>The configuration object that specifies the monitoring schedule and defines
-     * the monitoring job.</p>
-     */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleConfig(MonitoringScheduleConfig&& value) { SetMonitoringScheduleConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitoringScheduleName;

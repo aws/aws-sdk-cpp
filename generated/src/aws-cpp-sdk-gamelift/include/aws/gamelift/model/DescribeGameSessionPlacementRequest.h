@@ -34,46 +34,19 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a game session placement to retrieve.</p>
      */
     inline const Aws::String& GetPlacementId() const{ return m_placementId; }
-
-    /**
-     * <p>A unique identifier for a game session placement to retrieve.</p>
-     */
     inline bool PlacementIdHasBeenSet() const { return m_placementIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a game session placement to retrieve.</p>
-     */
     inline void SetPlacementId(const Aws::String& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
-
-    /**
-     * <p>A unique identifier for a game session placement to retrieve.</p>
-     */
     inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a game session placement to retrieve.</p>
-     */
     inline void SetPlacementId(const char* value) { m_placementIdHasBeenSet = true; m_placementId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a game session placement to retrieve.</p>
-     */
     inline DescribeGameSessionPlacementRequest& WithPlacementId(const Aws::String& value) { SetPlacementId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a game session placement to retrieve.</p>
-     */
     inline DescribeGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a game session placement to retrieve.</p>
-     */
     inline DescribeGameSessionPlacementRequest& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_placementId;

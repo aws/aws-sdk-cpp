@@ -25,10 +25,8 @@ DimensionField::DimensionField() :
 {
 }
 
-DimensionField::DimensionField(JsonView jsonValue) : 
-    m_numericalDimensionFieldHasBeenSet(false),
-    m_categoricalDimensionFieldHasBeenSet(false),
-    m_dateDimensionFieldHasBeenSet(false)
+DimensionField::DimensionField(JsonView jsonValue)
+  : DimensionField()
 {
   *this = jsonValue;
 }

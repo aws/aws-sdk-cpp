@@ -19,34 +19,32 @@ namespace Model
 {
 
 DestinationConfiguration::DestinationConfiguration() : 
-    m_channelHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_channelHasBeenSet(false),
     m_s3HasBeenSet(false)
 {
 }
 
-DestinationConfiguration::DestinationConfiguration(JsonView jsonValue) : 
-    m_channelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_s3HasBeenSet(false)
+DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
+  : DestinationConfiguration()
 {
   *this = jsonValue;
 }
 
 DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("channel"))
-  {
-    m_channel = jsonValue.GetObject("channel");
-
-    m_channelHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("channel"))
+  {
+    m_channel = jsonValue.GetObject("channel");
+
+    m_channelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("s3"))
@@ -63,15 +61,15 @@ JsonValue DestinationConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_channelHasBeenSet)
-  {
-   payload.WithObject("channel", m_channel.Jsonize());
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_channelHasBeenSet)
+  {
+   payload.WithObject("channel", m_channel.Jsonize());
 
   }
 

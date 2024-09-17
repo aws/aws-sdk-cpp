@@ -34,87 +34,33 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The list of client devices to associate.</p>
      */
     inline const Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry>& GetEntries() const{ return m_entries; }
-
-    /**
-     * <p>The list of client devices to associate.</p>
-     */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-
-    /**
-     * <p>The list of client devices to associate.</p>
-     */
     inline void SetEntries(const Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-
-    /**
-     * <p>The list of client devices to associate.</p>
-     */
     inline void SetEntries(Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-
-    /**
-     * <p>The list of client devices to associate.</p>
-     */
     inline BatchAssociateClientDeviceWithCoreDeviceRequest& WithEntries(const Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry>& value) { SetEntries(value); return *this;}
-
-    /**
-     * <p>The list of client devices to associate.</p>
-     */
     inline BatchAssociateClientDeviceWithCoreDeviceRequest& WithEntries(Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry>&& value) { SetEntries(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of client devices to associate.</p>
-     */
     inline BatchAssociateClientDeviceWithCoreDeviceRequest& AddEntries(const AssociateClientDeviceWithCoreDeviceEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-
-    /**
-     * <p>The list of client devices to associate.</p>
-     */
     inline BatchAssociateClientDeviceWithCoreDeviceRequest& AddEntries(AssociateClientDeviceWithCoreDeviceEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline const Aws::String& GetCoreDeviceThingName() const{ return m_coreDeviceThingName; }
-
-    /**
-     * <p>The name of the core device. This is also the name of the IoT thing.</p>
-     */
     inline bool CoreDeviceThingNameHasBeenSet() const { return m_coreDeviceThingNameHasBeenSet; }
-
-    /**
-     * <p>The name of the core device. This is also the name of the IoT thing.</p>
-     */
     inline void SetCoreDeviceThingName(const Aws::String& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = value; }
-
-    /**
-     * <p>The name of the core device. This is also the name of the IoT thing.</p>
-     */
     inline void SetCoreDeviceThingName(Aws::String&& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = std::move(value); }
-
-    /**
-     * <p>The name of the core device. This is also the name of the IoT thing.</p>
-     */
     inline void SetCoreDeviceThingName(const char* value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName.assign(value); }
-
-    /**
-     * <p>The name of the core device. This is also the name of the IoT thing.</p>
-     */
     inline BatchAssociateClientDeviceWithCoreDeviceRequest& WithCoreDeviceThingName(const Aws::String& value) { SetCoreDeviceThingName(value); return *this;}
-
-    /**
-     * <p>The name of the core device. This is also the name of the IoT thing.</p>
-     */
     inline BatchAssociateClientDeviceWithCoreDeviceRequest& WithCoreDeviceThingName(Aws::String&& value) { SetCoreDeviceThingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the core device. This is also the name of the IoT thing.</p>
-     */
     inline BatchAssociateClientDeviceWithCoreDeviceRequest& WithCoreDeviceThingName(const char* value) { SetCoreDeviceThingName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry> m_entries;

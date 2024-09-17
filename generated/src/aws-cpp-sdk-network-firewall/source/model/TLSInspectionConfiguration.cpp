@@ -23,8 +23,8 @@ TLSInspectionConfiguration::TLSInspectionConfiguration() :
 {
 }
 
-TLSInspectionConfiguration::TLSInspectionConfiguration(JsonView jsonValue) : 
-    m_serverCertificateConfigurationsHasBeenSet(false)
+TLSInspectionConfiguration::TLSInspectionConfiguration(JsonView jsonValue)
+  : TLSInspectionConfiguration()
 {
   *this = jsonValue;
 }

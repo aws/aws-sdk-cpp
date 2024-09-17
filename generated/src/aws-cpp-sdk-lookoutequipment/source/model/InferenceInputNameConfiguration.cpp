@@ -24,9 +24,8 @@ InferenceInputNameConfiguration::InferenceInputNameConfiguration() :
 {
 }
 
-InferenceInputNameConfiguration::InferenceInputNameConfiguration(JsonView jsonValue) : 
-    m_timestampFormatHasBeenSet(false),
-    m_componentTimestampDelimiterHasBeenSet(false)
+InferenceInputNameConfiguration::InferenceInputNameConfiguration(JsonView jsonValue)
+  : InferenceInputNameConfiguration()
 {
   *this = jsonValue;
 }

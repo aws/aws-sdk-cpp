@@ -23,8 +23,8 @@ FastResetToken::FastResetToken() :
 {
 }
 
-FastResetToken::FastResetToken(JsonView jsonValue) : 
-    m_tokenHasBeenSet(false)
+FastResetToken::FastResetToken(JsonView jsonValue)
+  : FastResetToken()
 {
   *this = jsonValue;
 }

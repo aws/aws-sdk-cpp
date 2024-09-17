@@ -24,9 +24,8 @@ S3DataRepositoryConfiguration::S3DataRepositoryConfiguration() :
 {
 }
 
-S3DataRepositoryConfiguration::S3DataRepositoryConfiguration(JsonView jsonValue) : 
-    m_autoImportPolicyHasBeenSet(false),
-    m_autoExportPolicyHasBeenSet(false)
+S3DataRepositoryConfiguration::S3DataRepositoryConfiguration(JsonView jsonValue)
+  : S3DataRepositoryConfiguration()
 {
   *this = jsonValue;
 }

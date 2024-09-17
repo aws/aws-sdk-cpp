@@ -39,91 +39,33 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The group owner of the resource. This is the name of an existing Linux OS group
      * on the system or a GID. The group's permissions are added to the Lambda process.
      */
     inline const Aws::String& GetGroupOwner() const{ return m_groupOwner; }
-
-    /**
-     * The group owner of the resource. This is the name of an existing Linux OS group
-     * on the system or a GID. The group's permissions are added to the Lambda process.
-     */
     inline bool GroupOwnerHasBeenSet() const { return m_groupOwnerHasBeenSet; }
-
-    /**
-     * The group owner of the resource. This is the name of an existing Linux OS group
-     * on the system or a GID. The group's permissions are added to the Lambda process.
-     */
     inline void SetGroupOwner(const Aws::String& value) { m_groupOwnerHasBeenSet = true; m_groupOwner = value; }
-
-    /**
-     * The group owner of the resource. This is the name of an existing Linux OS group
-     * on the system or a GID. The group's permissions are added to the Lambda process.
-     */
     inline void SetGroupOwner(Aws::String&& value) { m_groupOwnerHasBeenSet = true; m_groupOwner = std::move(value); }
-
-    /**
-     * The group owner of the resource. This is the name of an existing Linux OS group
-     * on the system or a GID. The group's permissions are added to the Lambda process.
-     */
     inline void SetGroupOwner(const char* value) { m_groupOwnerHasBeenSet = true; m_groupOwner.assign(value); }
-
-    /**
-     * The group owner of the resource. This is the name of an existing Linux OS group
-     * on the system or a GID. The group's permissions are added to the Lambda process.
-     */
     inline ResourceDownloadOwnerSetting& WithGroupOwner(const Aws::String& value) { SetGroupOwner(value); return *this;}
-
-    /**
-     * The group owner of the resource. This is the name of an existing Linux OS group
-     * on the system or a GID. The group's permissions are added to the Lambda process.
-     */
     inline ResourceDownloadOwnerSetting& WithGroupOwner(Aws::String&& value) { SetGroupOwner(std::move(value)); return *this;}
-
-    /**
-     * The group owner of the resource. This is the name of an existing Linux OS group
-     * on the system or a GID. The group's permissions are added to the Lambda process.
-     */
     inline ResourceDownloadOwnerSetting& WithGroupOwner(const char* value) { SetGroupOwner(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The permissions that the group owner has to the resource. Valid values are
      * ''rw'' (read/write) or ''ro'' (read-only).
      */
     inline const Permission& GetGroupPermission() const{ return m_groupPermission; }
-
-    /**
-     * The permissions that the group owner has to the resource. Valid values are
-     * ''rw'' (read/write) or ''ro'' (read-only).
-     */
     inline bool GroupPermissionHasBeenSet() const { return m_groupPermissionHasBeenSet; }
-
-    /**
-     * The permissions that the group owner has to the resource. Valid values are
-     * ''rw'' (read/write) or ''ro'' (read-only).
-     */
     inline void SetGroupPermission(const Permission& value) { m_groupPermissionHasBeenSet = true; m_groupPermission = value; }
-
-    /**
-     * The permissions that the group owner has to the resource. Valid values are
-     * ''rw'' (read/write) or ''ro'' (read-only).
-     */
     inline void SetGroupPermission(Permission&& value) { m_groupPermissionHasBeenSet = true; m_groupPermission = std::move(value); }
-
-    /**
-     * The permissions that the group owner has to the resource. Valid values are
-     * ''rw'' (read/write) or ''ro'' (read-only).
-     */
     inline ResourceDownloadOwnerSetting& WithGroupPermission(const Permission& value) { SetGroupPermission(value); return *this;}
-
-    /**
-     * The permissions that the group owner has to the resource. Valid values are
-     * ''rw'' (read/write) or ''ro'' (read-only).
-     */
     inline ResourceDownloadOwnerSetting& WithGroupPermission(Permission&& value) { SetGroupPermission(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupOwner;

@@ -24,9 +24,8 @@ HttpGatewayRoute::HttpGatewayRoute() :
 {
 }
 
-HttpGatewayRoute::HttpGatewayRoute(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false)
+HttpGatewayRoute::HttpGatewayRoute(JsonView jsonValue)
+  : HttpGatewayRoute()
 {
   *this = jsonValue;
 }

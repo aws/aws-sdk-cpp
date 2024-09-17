@@ -27,12 +27,8 @@ ContextDataType::ContextDataType() :
 {
 }
 
-ContextDataType::ContextDataType(JsonView jsonValue) : 
-    m_ipAddressHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serverPathHasBeenSet(false),
-    m_httpHeadersHasBeenSet(false),
-    m_encodedDataHasBeenSet(false)
+ContextDataType::ContextDataType(JsonView jsonValue)
+  : ContextDataType()
 {
   *this = jsonValue;
 }

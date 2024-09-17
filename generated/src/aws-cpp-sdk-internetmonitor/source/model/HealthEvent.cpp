@@ -37,22 +37,8 @@ HealthEvent::HealthEvent() :
 {
 }
 
-HealthEvent::HealthEvent(JsonView jsonValue) : 
-    m_eventArnHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_impactedLocationsHasBeenSet(false),
-    m_status(HealthEventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_percentOfTotalTrafficImpacted(0.0),
-    m_percentOfTotalTrafficImpactedHasBeenSet(false),
-    m_impactType(HealthEventImpactType::NOT_SET),
-    m_impactTypeHasBeenSet(false),
-    m_healthScoreThreshold(0.0),
-    m_healthScoreThresholdHasBeenSet(false)
+HealthEvent::HealthEvent(JsonView jsonValue)
+  : HealthEvent()
 {
   *this = jsonValue;
 }

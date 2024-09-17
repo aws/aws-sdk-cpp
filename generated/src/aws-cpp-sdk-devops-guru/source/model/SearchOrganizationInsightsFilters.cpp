@@ -26,11 +26,8 @@ SearchOrganizationInsightsFilters::SearchOrganizationInsightsFilters() :
 {
 }
 
-SearchOrganizationInsightsFilters::SearchOrganizationInsightsFilters(JsonView jsonValue) : 
-    m_severitiesHasBeenSet(false),
-    m_statusesHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_serviceCollectionHasBeenSet(false)
+SearchOrganizationInsightsFilters::SearchOrganizationInsightsFilters(JsonView jsonValue)
+  : SearchOrganizationInsightsFilters()
 {
   *this = jsonValue;
 }

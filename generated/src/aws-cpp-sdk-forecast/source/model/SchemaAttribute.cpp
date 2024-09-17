@@ -25,10 +25,8 @@ SchemaAttribute::SchemaAttribute() :
 {
 }
 
-SchemaAttribute::SchemaAttribute(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeType(AttributeType::NOT_SET),
-    m_attributeTypeHasBeenSet(false)
+SchemaAttribute::SchemaAttribute(JsonView jsonValue)
+  : SchemaAttribute()
 {
   *this = jsonValue;
 }

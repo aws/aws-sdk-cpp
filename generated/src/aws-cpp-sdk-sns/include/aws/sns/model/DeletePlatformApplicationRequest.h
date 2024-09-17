@@ -17,7 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Input for DeletePlatformApplication action.</p><p><h3>See Also:</h3>   <a
+   * <p>Input for <code>DeletePlatformApplication</code> action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplicationInput">AWS
    * API Reference</a></p>
    */
@@ -39,46 +40,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     * <p> <code>PlatformApplicationArn</code> of platform application object to
+     * delete.</p>
      */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
-
-    /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
-     */
     inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
-
-    /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
-     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
-
-    /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
-     */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
-
-    /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
-     */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
-
-    /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
-     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
-
-    /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
-     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>PlatformApplicationArn of platform application object to delete.</p>
-     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_platformApplicationArn;

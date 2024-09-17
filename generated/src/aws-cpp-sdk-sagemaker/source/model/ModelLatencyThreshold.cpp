@@ -25,10 +25,8 @@ ModelLatencyThreshold::ModelLatencyThreshold() :
 {
 }
 
-ModelLatencyThreshold::ModelLatencyThreshold(JsonView jsonValue) : 
-    m_percentileHasBeenSet(false),
-    m_valueInMilliseconds(0),
-    m_valueInMillisecondsHasBeenSet(false)
+ModelLatencyThreshold::ModelLatencyThreshold(JsonView jsonValue)
+  : ModelLatencyThreshold()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions() :
 {
 }
 
-ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(JsonView jsonValue) : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_pendingMaintenanceActionDetailsHasBeenSet(false)
+ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(JsonView jsonValue)
+  : ResourcePendingMaintenanceActions()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ JwtBearerGrant::JwtBearerGrant() :
 {
 }
 
-JwtBearerGrant::JwtBearerGrant(JsonView jsonValue) : 
-    m_authorizedTokenIssuersHasBeenSet(false)
+JwtBearerGrant::JwtBearerGrant(JsonView jsonValue)
+  : JwtBearerGrant()
 {
   *this = jsonValue;
 }

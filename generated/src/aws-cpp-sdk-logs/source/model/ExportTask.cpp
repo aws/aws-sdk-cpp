@@ -33,18 +33,8 @@ ExportTask::ExportTask() :
 {
 }
 
-ExportTask::ExportTask(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_taskNameHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPrefixHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_executionInfoHasBeenSet(false)
+ExportTask::ExportTask(JsonView jsonValue)
+  : ExportTask()
 {
   *this = jsonValue;
 }

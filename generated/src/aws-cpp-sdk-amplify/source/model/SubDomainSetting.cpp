@@ -24,9 +24,8 @@ SubDomainSetting::SubDomainSetting() :
 {
 }
 
-SubDomainSetting::SubDomainSetting(JsonView jsonValue) : 
-    m_prefixHasBeenSet(false),
-    m_branchNameHasBeenSet(false)
+SubDomainSetting::SubDomainSetting(JsonView jsonValue)
+  : SubDomainSetting()
 {
   *this = jsonValue;
 }

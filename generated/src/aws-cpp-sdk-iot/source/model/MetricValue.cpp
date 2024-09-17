@@ -30,15 +30,8 @@ MetricValue::MetricValue() :
 {
 }
 
-MetricValue::MetricValue(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_portsHasBeenSet(false),
-    m_number(0.0),
-    m_numberHasBeenSet(false),
-    m_numbersHasBeenSet(false),
-    m_stringsHasBeenSet(false)
+MetricValue::MetricValue(JsonView jsonValue)
+  : MetricValue()
 {
   *this = jsonValue;
 }

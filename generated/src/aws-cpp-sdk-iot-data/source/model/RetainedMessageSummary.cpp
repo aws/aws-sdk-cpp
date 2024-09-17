@@ -29,14 +29,8 @@ RetainedMessageSummary::RetainedMessageSummary() :
 {
 }
 
-RetainedMessageSummary::RetainedMessageSummary(JsonView jsonValue) : 
-    m_topicHasBeenSet(false),
-    m_payloadSize(0),
-    m_payloadSizeHasBeenSet(false),
-    m_qos(0),
-    m_qosHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+RetainedMessageSummary::RetainedMessageSummary(JsonView jsonValue)
+  : RetainedMessageSummary()
 {
   *this = jsonValue;
 }

@@ -16,7 +16,30 @@ namespace Aws
 namespace QBusiness
 {
   /**
-   * <p> </p>
+   * <p>This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a
+   * fully managed, generative-AI powered enterprise chat assistant that you can
+   * deploy within your organization. Amazon Q Business enhances employee
+   * productivity by supporting key tasks such as question-answering, knowledge
+   * discovery, writing email messages, summarizing text, drafting document outlines,
+   * and brainstorming ideas. Users ask questions of Amazon Q Business and get
+   * answers that are presented in a conversational manner. For an introduction to
+   * the service, see the <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html">
+   * <i>Amazon Q Business User Guide</i> </a>.</p> <p>For an overview of the Amazon Q
+   * Business APIs, see <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview">Overview
+   * of Amazon Q Business API operations</a>.</p> <p>For information about the IAM
+   * access control permissions you need to use this API, see <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html">IAM
+   * roles for Amazon Q Business</a> in the <i>Amazon Q Business User Guide</i>.</p>
+   * <p>The following resources provide additional information about using the Amazon
+   * Q Business API:</p> <ul> <li> <p> <i> <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/setting-up.html">Setting
+   * up for Amazon Q Business</a> </i> </p> </li> <li> <p> <i> <a
+   * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/qbusiness/index.html">Amazon
+   * Q Business CLI Reference</a> </i> </p> </li> <li> <p> <i> <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/amazonq.html">Amazon Web
+   * Services General Reference</a> </i> </p> </li> </ul>
    */
   class AWS_QBUSINESS_API QBusinessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>
   {
@@ -78,9 +101,9 @@ namespace QBusiness
 
         /**
          * <p>Asynchronously deletes one or more documents added using the
-         * <code>BatchPutDocument</code> API from an Amazon Q index.</p> <p>You can see the
-         * progress of the deletion, and any error messages related to the process, by
-         * using CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * <code>BatchPutDocument</code> API from an Amazon Q Business index.</p> <p>You
+         * can see the progress of the deletion, and any error messages related to the
+         * process, by using CloudWatch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BatchDeleteDocument">AWS
          * API Reference</a></p>
          */
@@ -105,14 +128,14 @@ namespace QBusiness
         }
 
         /**
-         * <p>Adds one or more documents to an Amazon Q index.</p> <p>You use this API
-         * to:</p> <ul> <li> <p>ingest your structured and unstructured documents and
-         * documents stored in an Amazon S3 bucket into an Amazon Q index.</p> </li> <li>
-         * <p>add custom attributes to documents in an Amazon Q index.</p> </li> <li>
-         * <p>attach an access control list to the documents added to an Amazon Q
-         * index.</p> </li> </ul> <p>You can see the progress of the deletion, and any
-         * error messages related to the process, by using CloudWatch.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds one or more documents to an Amazon Q Business index.</p> <p>You use this
+         * API to:</p> <ul> <li> <p>ingest your structured and unstructured documents and
+         * documents stored in an Amazon S3 bucket into an Amazon Q Business index.</p>
+         * </li> <li> <p>add custom attributes to documents in an Amazon Q Business
+         * index.</p> </li> <li> <p>attach an access control list to the documents added to
+         * an Amazon Q Business index.</p> </li> </ul> <p>You can see the progress of the
+         * deletion, and any error messages related to the process, by using
+         * CloudWatch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BatchPutDocument">AWS
          * API Reference</a></p>
          */
@@ -137,8 +160,23 @@ namespace QBusiness
         }
 
         /**
-         * <p>Starts or continues a non-streaming Amazon Q conversation.</p><p><h3>See
+         * <p>Starts or continues a streaming Amazon Q Business conversation.</p><p><h3>See
          * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Chat">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor.
+         * The streamReadyHandler is triggered when the stream is ready to be written to.
+         * The handler is triggered when the request is finished.
+         */
+        virtual void ChatAsync(Model::ChatRequest& request,
+                const ChatStreamReadyHandler& streamReadyHandler,
+                const ChatResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+        /**
+         * <p>Starts or continues a non-streaming Amazon Q Business
+         * conversation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ChatSync">AWS
          * API Reference</a></p>
          */
@@ -163,7 +201,13 @@ namespace QBusiness
         }
 
         /**
-         * <p>Creates an Amazon Q application.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q Business application.</p>  <p>There are new tiers
+         * for Amazon Q Business. Not all features in Amazon Q Business Pro are also
+         * available in Amazon Q Business Lite. For information on what's included in
+         * Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
+         * Q Business tiers</a>. You must use the Amazon Q Business console to assign
+         * subscription tiers to users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -188,7 +232,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Creates a data source connector for an Amazon Q application.</p> <p>
+         * <p>Creates a data source connector for an Amazon Q Business application.</p> <p>
          * <code>CreateDataSource</code> is a synchronous operation. The operation returns
          * 200 if the data source was successfully created. Otherwise, an exception is
          * raised.</p><p><h3>See Also:</h3>   <a
@@ -216,14 +260,14 @@ namespace QBusiness
         }
 
         /**
-         * <p>Creates an Amazon Q index.</p> <p>To determine if index creation has
+         * <p>Creates an Amazon Q Business index.</p> <p>To determine if index creation has
          * completed, check the <code>Status</code> field returned from a call to
          * <code>DescribeIndex</code>. The <code>Status</code> field is set to
          * <code>ACTIVE</code> when the index is ready to use.</p> <p>Once the index is
          * active, you can index your documents using the <a
-         * href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_BatchPutDocument.html">
+         * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html">
          * <code>BatchPutDocument</code> </a> API or the <a
-         * href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html">
+         * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html">
          * <code>CreateDataSource</code> </a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateIndex">AWS
          * API Reference</a></p>
@@ -249,7 +293,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Creates an Amazon Q plugin.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q Business plugin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreatePlugin">AWS
          * API Reference</a></p>
          */
@@ -274,7 +318,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Adds a retriever to your Amazon Q application.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a retriever to your Amazon Q Business application.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateRetriever">AWS
          * API Reference</a></p>
          */
@@ -325,7 +370,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Creates an Amazon Q web experience.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q Business web experience.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateWebExperience">AWS
          * API Reference</a></p>
          */
@@ -350,7 +395,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes an Amazon Q application.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Q Business application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteApplication">AWS
          * API Reference</a></p>
          */
@@ -375,7 +420,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes chat controls configured for an existing Amazon Q
+         * <p>Deletes chat controls configured for an existing Amazon Q Business
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatControlsConfiguration">AWS
          * API Reference</a></p>
@@ -401,8 +446,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes an Amazon Q web experience conversation.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes an Amazon Q Business web experience conversation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteConversation">AWS
          * API Reference</a></p>
          */
@@ -427,8 +472,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes an Amazon Q data source connector. While the data source is being
-         * deleted, the <code>Status</code> field returned by a call to the
+         * <p>Deletes an Amazon Q Business data source connector. While the data source is
+         * being deleted, the <code>Status</code> field returned by a call to the
          * <code>DescribeDataSource</code> API is set to <code>DELETING</code>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataSource">AWS
@@ -489,7 +534,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes an Amazon Q index.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Q Business index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteIndex">AWS
          * API Reference</a></p>
          */
@@ -514,7 +559,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes an Amazon Q plugin.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Q Business plugin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeletePlugin">AWS
          * API Reference</a></p>
          */
@@ -539,7 +584,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes the retriever used by an Amazon Q application.</p><p><h3>See
+         * <p>Deletes the retriever used by an Amazon Q Business application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteRetriever">AWS
          * API Reference</a></p>
@@ -590,7 +635,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Deletes an Amazon Q web experience.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Q Business web experience.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteWebExperience">AWS
          * API Reference</a></p>
          */
@@ -615,8 +660,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets information about an existing Amazon Q application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about an existing Amazon Q Business
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetApplication">AWS
          * API Reference</a></p>
          */
@@ -642,7 +687,7 @@ namespace QBusiness
 
         /**
          * <p>Gets information about an chat controls configured for an existing Amazon Q
-         * application.</p><p><h3>See Also:</h3>   <a
+         * Business application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatControlsConfiguration">AWS
          * API Reference</a></p>
          */
@@ -667,7 +712,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets information about an existing Amazon Q data source
+         * <p>Gets information about an existing Amazon Q Business data source
          * connector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataSource">AWS
          * API Reference</a></p>
@@ -718,8 +763,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets information about an existing Amazon Q index.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about an existing Amazon Q Business index.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetIndex">AWS
          * API Reference</a></p>
          */
@@ -744,8 +789,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets information about an existing Amazon Q plugin.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Gets information about an existing Amazon Q Business plugin.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPlugin">AWS
          * API Reference</a></p>
          */
@@ -770,7 +815,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets information about an existing retriever used by an Amazon Q
+         * <p>Gets information about an existing retriever used by an Amazon Q Business
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetRetriever">AWS
          * API Reference</a></p>
@@ -822,8 +867,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets information about an existing Amazon Q web experience.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about an existing Amazon Q Business web
+         * experience.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetWebExperience">AWS
          * API Reference</a></p>
          */
@@ -848,17 +893,17 @@ namespace QBusiness
         }
 
         /**
-         * <p>Lists Amazon Q applications.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists Amazon Q Business applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&QBusinessClient::ListApplications, request);
         }
@@ -867,13 +912,14 @@ namespace QBusiness
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&QBusinessClient::ListApplications, request, handler, context);
         }
 
         /**
-         * <p>Lists one or more Amazon Q conversations.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists one or more Amazon Q Business conversations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListConversations">AWS
          * API Reference</a></p>
          */
@@ -898,7 +944,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Get information about an Amazon Q data source connector
+         * <p>Get information about an Amazon Q Business data source connector
          * synchronization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataSourceSyncJobs">AWS
          * API Reference</a></p>
@@ -924,7 +970,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Lists the Amazon Q data source connectors that you have
+         * <p>Lists the Amazon Q Business data source connectors that you have
          * created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataSources">AWS
          * API Reference</a></p>
@@ -1001,7 +1047,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Lists the Amazon Q indices you have created.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon Q Business indices you have created.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListIndices">AWS
          * API Reference</a></p>
          */
@@ -1026,7 +1073,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets a list of messages associated with an Amazon Q web
+         * <p>Gets a list of messages associated with an Amazon Q Business web
          * experience.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListMessages">AWS
          * API Reference</a></p>
@@ -1052,7 +1099,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Lists configured Amazon Q plugins.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists configured Amazon Q Business plugins.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPlugins">AWS
          * API Reference</a></p>
          */
@@ -1077,8 +1124,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Lists the retriever used by an Amazon Q application.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Lists the retriever used by an Amazon Q Business application.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListRetrievers">AWS
          * API Reference</a></p>
          */
@@ -1103,7 +1150,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Gets a list of tags associated with a specified resource. Amazon Q
+         * <p>Gets a list of tags associated with a specified resource. Amazon Q Business
          * applications and data sources can have tags associated with them.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListTagsForResource">AWS
@@ -1130,7 +1177,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Lists one or more Amazon Q Web Experiences.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists one or more Amazon Q Business Web Experiences.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListWebExperiences">AWS
          * API Reference</a></p>
          */
@@ -1155,8 +1203,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Enables your end user to to provide feedback on their Amazon Q generated chat
-         * responses.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables your end user to provide feedback on their Amazon Q Business
+         * generated chat responses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/PutFeedback">AWS
          * API Reference</a></p>
          */
@@ -1187,7 +1235,7 @@ namespace QBusiness
          * "Engineering". These sub groups include their own list of users or people who
          * work in these teams. Only users who work in research and engineering, and
          * therefore belong in the intellectual property group, can see top-secret company
-         * documents in their Amazon Q chat results.</p><p><h3>See Also:</h3>   <a
+         * documents in their Amazon Q Business chat results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/PutGroup">AWS
          * API Reference</a></p>
          */
@@ -1213,7 +1261,7 @@ namespace QBusiness
 
         /**
          * <p>Starts a data source connector synchronization job. If a synchronization job
-         * is already in progress, Amazon Q returns a
+         * is already in progress, Amazon Q Business returns a
          * <code>ConflictException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/StartDataSourceSyncJob">AWS
          * API Reference</a></p>
@@ -1239,8 +1287,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Stops an Amazon Q data source connector synchronization job already in
-         * progress.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops an Amazon Q Business data source connector synchronization job already
+         * in progress.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/StopDataSourceSyncJob">AWS
          * API Reference</a></p>
          */
@@ -1265,9 +1313,9 @@ namespace QBusiness
         }
 
         /**
-         * <p>Adds the specified tag to the specified Amazon Q application or data source
-         * resource. If the tag already exists, the existing value is replaced with the new
-         * value.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified tag to the specified Amazon Q Business application or data
+         * source resource. If the tag already exists, the existing value is replaced with
+         * the new value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1292,8 +1340,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Removes a tag from an Amazon Q application or a data source.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes a tag from an Amazon Q Business application or a data
+         * source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1318,7 +1366,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an existing Amazon Q application.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon Q Business application.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateApplication">AWS
          * API Reference</a></p>
          */
@@ -1343,7 +1392,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an set of chat controls configured for an existing Amazon Q
+         * <p>Updates an set of chat controls configured for an existing Amazon Q Business
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatControlsConfiguration">AWS
          * API Reference</a></p>
@@ -1369,8 +1418,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an existing Amazon Q data source connector.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Updates an existing Amazon Q Business data source connector.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataSource">AWS
          * API Reference</a></p>
          */
@@ -1395,7 +1444,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an Amazon Q index.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Q Business index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateIndex">AWS
          * API Reference</a></p>
          */
@@ -1420,7 +1469,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an Amazon Q plugin.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Q Business plugin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdatePlugin">AWS
          * API Reference</a></p>
          */
@@ -1445,8 +1494,8 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates the retriever used for your Amazon Q application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the retriever used for your Amazon Q Business
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateRetriever">AWS
          * API Reference</a></p>
          */
@@ -1497,7 +1546,7 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an Amazon Q web experience. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Q Business web experience. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateWebExperience">AWS
          * API Reference</a></p>
          */
@@ -1529,7 +1578,6 @@ namespace QBusiness
       void init(const QBusinessClientConfiguration& clientConfiguration);
 
       QBusinessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QBusinessEndpointProviderBase> m_endpointProvider;
   };
 

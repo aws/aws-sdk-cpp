@@ -22,8 +22,8 @@ ListTagsForStreamResult::ListTagsForStreamResult() :
 {
 }
 
-ListTagsForStreamResult::ListTagsForStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasMoreTags(false)
+ListTagsForStreamResult::ListTagsForStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListTagsForStreamResult()
 {
   *this = result;
 }

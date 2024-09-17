@@ -25,10 +25,8 @@ RangedConnectionDetails::RangedConnectionDetails() :
 {
 }
 
-RangedConnectionDetails::RangedConnectionDetails(JsonView jsonValue) : 
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_socketAddressHasBeenSet(false)
+RangedConnectionDetails::RangedConnectionDetails(JsonView jsonValue)
+  : RangedConnectionDetails()
 {
   *this = jsonValue;
 }

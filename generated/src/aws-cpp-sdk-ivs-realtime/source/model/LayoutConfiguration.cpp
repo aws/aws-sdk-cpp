@@ -19,12 +19,13 @@ namespace Model
 {
 
 LayoutConfiguration::LayoutConfiguration() : 
-    m_gridHasBeenSet(false)
+    m_gridHasBeenSet(false),
+    m_pipHasBeenSet(false)
 {
 }
 
-LayoutConfiguration::LayoutConfiguration(JsonView jsonValue) : 
-    m_gridHasBeenSet(false)
+LayoutConfiguration::LayoutConfiguration(JsonView jsonValue)
+  : LayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ LayoutConfiguration& LayoutConfiguration::operator =(JsonView jsonValue)
     m_gridHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pip"))
+  {
+    m_pip = jsonValue.GetObject("pip");
+
+    m_pipHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue LayoutConfiguration::Jsonize() const
   if(m_gridHasBeenSet)
   {
    payload.WithObject("grid", m_grid.Jsonize());
+
+  }
+
+  if(m_pipHasBeenSet)
+  {
+   payload.WithObject("pip", m_pip.Jsonize());
 
   }
 

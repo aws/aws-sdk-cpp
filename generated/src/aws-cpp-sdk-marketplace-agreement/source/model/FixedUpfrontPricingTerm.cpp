@@ -27,12 +27,8 @@ FixedUpfrontPricingTerm::FixedUpfrontPricingTerm() :
 {
 }
 
-FixedUpfrontPricingTerm::FixedUpfrontPricingTerm(JsonView jsonValue) : 
-    m_currencyCodeHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_grantsHasBeenSet(false),
-    m_priceHasBeenSet(false),
-    m_typeHasBeenSet(false)
+FixedUpfrontPricingTerm::FixedUpfrontPricingTerm(JsonView jsonValue)
+  : FixedUpfrontPricingTerm()
 {
   *this = jsonValue;
 }

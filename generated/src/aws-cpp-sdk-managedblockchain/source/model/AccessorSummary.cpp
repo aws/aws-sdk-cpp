@@ -31,16 +31,8 @@ AccessorSummary::AccessorSummary() :
 {
 }
 
-AccessorSummary::AccessorSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(AccessorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(AccessorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_networkType(AccessorNetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
+AccessorSummary::AccessorSummary(JsonView jsonValue)
+  : AccessorSummary()
 {
   *this = jsonValue;
 }

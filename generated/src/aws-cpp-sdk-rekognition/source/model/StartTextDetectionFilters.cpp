@@ -24,9 +24,8 @@ StartTextDetectionFilters::StartTextDetectionFilters() :
 {
 }
 
-StartTextDetectionFilters::StartTextDetectionFilters(JsonView jsonValue) : 
-    m_wordFilterHasBeenSet(false),
-    m_regionsOfInterestHasBeenSet(false)
+StartTextDetectionFilters::StartTextDetectionFilters(JsonView jsonValue)
+  : StartTextDetectionFilters()
 {
   *this = jsonValue;
 }

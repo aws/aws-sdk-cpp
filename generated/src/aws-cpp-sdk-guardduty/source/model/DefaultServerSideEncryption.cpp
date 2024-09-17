@@ -24,9 +24,8 @@ DefaultServerSideEncryption::DefaultServerSideEncryption() :
 {
 }
 
-DefaultServerSideEncryption::DefaultServerSideEncryption(JsonView jsonValue) : 
-    m_encryptionTypeHasBeenSet(false),
-    m_kmsMasterKeyArnHasBeenSet(false)
+DefaultServerSideEncryption::DefaultServerSideEncryption(JsonView jsonValue)
+  : DefaultServerSideEncryption()
 {
   *this = jsonValue;
 }

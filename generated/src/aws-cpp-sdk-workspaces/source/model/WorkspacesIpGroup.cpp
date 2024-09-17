@@ -26,11 +26,8 @@ WorkspacesIpGroup::WorkspacesIpGroup() :
 {
 }
 
-WorkspacesIpGroup::WorkspacesIpGroup(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupDescHasBeenSet(false),
-    m_userRulesHasBeenSet(false)
+WorkspacesIpGroup::WorkspacesIpGroup(JsonView jsonValue)
+  : WorkspacesIpGroup()
 {
   *this = jsonValue;
 }

@@ -19,12 +19,13 @@ namespace Model
 {
 
 MetadataUpdates::MetadataUpdates() : 
-    m_dICOMUpdatesHasBeenSet(false)
+    m_dICOMUpdatesHasBeenSet(false),
+    m_revertToVersionIdHasBeenSet(false)
 {
 }
 
-MetadataUpdates::MetadataUpdates(JsonView jsonValue) : 
-    m_dICOMUpdatesHasBeenSet(false)
+MetadataUpdates::MetadataUpdates(JsonView jsonValue)
+  : MetadataUpdates()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ MetadataUpdates& MetadataUpdates::operator =(JsonView jsonValue)
     m_dICOMUpdatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("revertToVersionId"))
+  {
+    m_revertToVersionId = jsonValue.GetString("revertToVersionId");
+
+    m_revertToVersionIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue MetadataUpdates::Jsonize() const
   if(m_dICOMUpdatesHasBeenSet)
   {
    payload.WithObject("DICOMUpdates", m_dICOMUpdates.Jsonize());
+
+  }
+
+  if(m_revertToVersionIdHasBeenSet)
+  {
+   payload.WithString("revertToVersionId", m_revertToVersionId);
 
   }
 

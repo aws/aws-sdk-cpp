@@ -38,67 +38,29 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Filters for read set uploads after a specified time. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
-
-    /**
-     * <p> Filters for read set uploads after a specified time. </p>
-     */
     inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }
-
-    /**
-     * <p> Filters for read set uploads after a specified time. </p>
-     */
     inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
-
-    /**
-     * <p> Filters for read set uploads after a specified time. </p>
-     */
     inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::move(value); }
-
-    /**
-     * <p> Filters for read set uploads after a specified time. </p>
-     */
     inline ReadSetUploadPartListFilter& WithCreatedAfter(const Aws::Utils::DateTime& value) { SetCreatedAfter(value); return *this;}
-
-    /**
-     * <p> Filters for read set uploads after a specified time. </p>
-     */
     inline ReadSetUploadPartListFilter& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Filters for read set part uploads before a specified time. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
-
-    /**
-     * <p> Filters for read set part uploads before a specified time. </p>
-     */
     inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
-
-    /**
-     * <p> Filters for read set part uploads before a specified time. </p>
-     */
     inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
-
-    /**
-     * <p> Filters for read set part uploads before a specified time. </p>
-     */
     inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::move(value); }
-
-    /**
-     * <p> Filters for read set part uploads before a specified time. </p>
-     */
     inline ReadSetUploadPartListFilter& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
-
-    /**
-     * <p> Filters for read set part uploads before a specified time. </p>
-     */
     inline ReadSetUploadPartListFilter& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_createdAfter;

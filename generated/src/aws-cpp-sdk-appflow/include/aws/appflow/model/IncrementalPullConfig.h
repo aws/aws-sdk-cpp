@@ -38,54 +38,20 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A field that specifies the date time or timestamp field as the criteria to
      * use when importing incremental records from the source. </p>
      */
     inline const Aws::String& GetDatetimeTypeFieldName() const{ return m_datetimeTypeFieldName; }
-
-    /**
-     * <p> A field that specifies the date time or timestamp field as the criteria to
-     * use when importing incremental records from the source. </p>
-     */
     inline bool DatetimeTypeFieldNameHasBeenSet() const { return m_datetimeTypeFieldNameHasBeenSet; }
-
-    /**
-     * <p> A field that specifies the date time or timestamp field as the criteria to
-     * use when importing incremental records from the source. </p>
-     */
     inline void SetDatetimeTypeFieldName(const Aws::String& value) { m_datetimeTypeFieldNameHasBeenSet = true; m_datetimeTypeFieldName = value; }
-
-    /**
-     * <p> A field that specifies the date time or timestamp field as the criteria to
-     * use when importing incremental records from the source. </p>
-     */
     inline void SetDatetimeTypeFieldName(Aws::String&& value) { m_datetimeTypeFieldNameHasBeenSet = true; m_datetimeTypeFieldName = std::move(value); }
-
-    /**
-     * <p> A field that specifies the date time or timestamp field as the criteria to
-     * use when importing incremental records from the source. </p>
-     */
     inline void SetDatetimeTypeFieldName(const char* value) { m_datetimeTypeFieldNameHasBeenSet = true; m_datetimeTypeFieldName.assign(value); }
-
-    /**
-     * <p> A field that specifies the date time or timestamp field as the criteria to
-     * use when importing incremental records from the source. </p>
-     */
     inline IncrementalPullConfig& WithDatetimeTypeFieldName(const Aws::String& value) { SetDatetimeTypeFieldName(value); return *this;}
-
-    /**
-     * <p> A field that specifies the date time or timestamp field as the criteria to
-     * use when importing incremental records from the source. </p>
-     */
     inline IncrementalPullConfig& WithDatetimeTypeFieldName(Aws::String&& value) { SetDatetimeTypeFieldName(std::move(value)); return *this;}
-
-    /**
-     * <p> A field that specifies the date time or timestamp field as the criteria to
-     * use when importing incremental records from the source. </p>
-     */
     inline IncrementalPullConfig& WithDatetimeTypeFieldName(const char* value) { SetDatetimeTypeFieldName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datetimeTypeFieldName;

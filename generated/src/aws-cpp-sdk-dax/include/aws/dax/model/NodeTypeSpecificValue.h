@@ -38,87 +38,33 @@ namespace Model
     AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A node type to which the parameter value applies.</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
-
-    /**
-     * <p>A node type to which the parameter value applies.</p>
-     */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-
-    /**
-     * <p>A node type to which the parameter value applies.</p>
-     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-
-    /**
-     * <p>A node type to which the parameter value applies.</p>
-     */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-
-    /**
-     * <p>A node type to which the parameter value applies.</p>
-     */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
-
-    /**
-     * <p>A node type to which the parameter value applies.</p>
-     */
     inline NodeTypeSpecificValue& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
-
-    /**
-     * <p>A node type to which the parameter value applies.</p>
-     */
     inline NodeTypeSpecificValue& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
-
-    /**
-     * <p>A node type to which the parameter value applies.</p>
-     */
     inline NodeTypeSpecificValue& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameter value for this node type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The parameter value for this node type.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The parameter value for this node type.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The parameter value for this node type.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The parameter value for this node type.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The parameter value for this node type.</p>
-     */
     inline NodeTypeSpecificValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The parameter value for this node type.</p>
-     */
     inline NodeTypeSpecificValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameter value for this node type.</p>
-     */
     inline NodeTypeSpecificValue& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nodeType;

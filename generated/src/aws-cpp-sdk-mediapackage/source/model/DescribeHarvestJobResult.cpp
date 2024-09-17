@@ -22,8 +22,8 @@ DescribeHarvestJobResult::DescribeHarvestJobResult() :
 {
 }
 
-DescribeHarvestJobResult::DescribeHarvestJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+DescribeHarvestJobResult::DescribeHarvestJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHarvestJobResult()
 {
   *this = result;
 }

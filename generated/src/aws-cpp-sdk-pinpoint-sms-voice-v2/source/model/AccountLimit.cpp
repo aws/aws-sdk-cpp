@@ -28,13 +28,8 @@ AccountLimit::AccountLimit() :
 {
 }
 
-AccountLimit::AccountLimit(JsonView jsonValue) : 
-    m_name(AccountLimitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+AccountLimit::AccountLimit(JsonView jsonValue)
+  : AccountLimit()
 {
   *this = jsonValue;
 }

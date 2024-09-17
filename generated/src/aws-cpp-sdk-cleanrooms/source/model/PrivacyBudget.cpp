@@ -23,8 +23,8 @@ PrivacyBudget::PrivacyBudget() :
 {
 }
 
-PrivacyBudget::PrivacyBudget(JsonView jsonValue) : 
-    m_differentialPrivacyHasBeenSet(false)
+PrivacyBudget::PrivacyBudget(JsonView jsonValue)
+  : PrivacyBudget()
 {
   *this = jsonValue;
 }

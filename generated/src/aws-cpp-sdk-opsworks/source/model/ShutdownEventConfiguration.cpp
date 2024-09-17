@@ -26,11 +26,8 @@ ShutdownEventConfiguration::ShutdownEventConfiguration() :
 {
 }
 
-ShutdownEventConfiguration::ShutdownEventConfiguration(JsonView jsonValue) : 
-    m_executionTimeout(0),
-    m_executionTimeoutHasBeenSet(false),
-    m_delayUntilElbConnectionsDrained(false),
-    m_delayUntilElbConnectionsDrainedHasBeenSet(false)
+ShutdownEventConfiguration::ShutdownEventConfiguration(JsonView jsonValue)
+  : ShutdownEventConfiguration()
 {
   *this = jsonValue;
 }

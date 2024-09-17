@@ -39,87 +39,33 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time the OpsData was captured.</p>
      */
     inline const Aws::String& GetCaptureTime() const{ return m_captureTime; }
-
-    /**
-     * <p>The time the OpsData was captured.</p>
-     */
     inline bool CaptureTimeHasBeenSet() const { return m_captureTimeHasBeenSet; }
-
-    /**
-     * <p>The time the OpsData was captured.</p>
-     */
     inline void SetCaptureTime(const Aws::String& value) { m_captureTimeHasBeenSet = true; m_captureTime = value; }
-
-    /**
-     * <p>The time the OpsData was captured.</p>
-     */
     inline void SetCaptureTime(Aws::String&& value) { m_captureTimeHasBeenSet = true; m_captureTime = std::move(value); }
-
-    /**
-     * <p>The time the OpsData was captured.</p>
-     */
     inline void SetCaptureTime(const char* value) { m_captureTimeHasBeenSet = true; m_captureTime.assign(value); }
-
-    /**
-     * <p>The time the OpsData was captured.</p>
-     */
     inline OpsEntityItem& WithCaptureTime(const Aws::String& value) { SetCaptureTime(value); return *this;}
-
-    /**
-     * <p>The time the OpsData was captured.</p>
-     */
     inline OpsEntityItem& WithCaptureTime(Aws::String&& value) { SetCaptureTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The time the OpsData was captured.</p>
-     */
     inline OpsEntityItem& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of an OpsData summary.</p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The details of an OpsData summary.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The details of an OpsData summary.</p>
-     */
     inline void SetContent(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The details of an OpsData summary.</p>
-     */
     inline void SetContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The details of an OpsData summary.</p>
-     */
     inline OpsEntityItem& WithContent(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The details of an OpsData summary.</p>
-     */
     inline OpsEntityItem& WithContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The details of an OpsData summary.</p>
-     */
     inline OpsEntityItem& AddContent(const Aws::Map<Aws::String, Aws::String>& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
-
-    /**
-     * <p>The details of an OpsData summary.</p>
-     */
     inline OpsEntityItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_captureTime;

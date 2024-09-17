@@ -23,8 +23,8 @@ EgressAccessLogs::EgressAccessLogs() :
 {
 }
 
-EgressAccessLogs::EgressAccessLogs(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false)
+EgressAccessLogs::EgressAccessLogs(JsonView jsonValue)
+  : EgressAccessLogs()
 {
   *this = jsonValue;
 }

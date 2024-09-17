@@ -39,52 +39,26 @@ namespace Model
     AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The newly-configured availability options. Indicates whether Multi-AZ is
      * enabled for the domain. </p>
      */
     inline const AvailabilityOptionsStatus& GetAvailabilityOptions() const{ return m_availabilityOptions; }
-
-    /**
-     * <p>The newly-configured availability options. Indicates whether Multi-AZ is
-     * enabled for the domain. </p>
-     */
     inline void SetAvailabilityOptions(const AvailabilityOptionsStatus& value) { m_availabilityOptions = value; }
-
-    /**
-     * <p>The newly-configured availability options. Indicates whether Multi-AZ is
-     * enabled for the domain. </p>
-     */
     inline void SetAvailabilityOptions(AvailabilityOptionsStatus&& value) { m_availabilityOptions = std::move(value); }
-
-    /**
-     * <p>The newly-configured availability options. Indicates whether Multi-AZ is
-     * enabled for the domain. </p>
-     */
     inline UpdateAvailabilityOptionsResult& WithAvailabilityOptions(const AvailabilityOptionsStatus& value) { SetAvailabilityOptions(value); return *this;}
-
-    /**
-     * <p>The newly-configured availability options. Indicates whether Multi-AZ is
-     * enabled for the domain. </p>
-     */
     inline UpdateAvailabilityOptionsResult& WithAvailabilityOptions(AvailabilityOptionsStatus&& value) { SetAvailabilityOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UpdateAvailabilityOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UpdateAvailabilityOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AvailabilityOptionsStatus m_availabilityOptions;

@@ -35,20 +35,8 @@ UserTurnResult::UserTurnResult() :
 {
 }
 
-UserTurnResult::UserTurnResult(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_expectedOutputHasBeenSet(false),
-    m_actualOutputHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false),
-    m_intentMatchResult(TestResultMatchStatus::NOT_SET),
-    m_intentMatchResultHasBeenSet(false),
-    m_slotMatchResult(TestResultMatchStatus::NOT_SET),
-    m_slotMatchResultHasBeenSet(false),
-    m_speechTranscriptionResult(TestResultMatchStatus::NOT_SET),
-    m_speechTranscriptionResultHasBeenSet(false),
-    m_conversationLevelResultHasBeenSet(false)
+UserTurnResult::UserTurnResult(JsonView jsonValue)
+  : UserTurnResult()
 {
   *this = jsonValue;
 }

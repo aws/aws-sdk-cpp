@@ -26,11 +26,8 @@ EntityLabel::EntityLabel() :
 {
 }
 
-EntityLabel::EntityLabel(JsonView jsonValue) : 
-    m_name(PiiEntityType::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+EntityLabel::EntityLabel(JsonView jsonValue)
+  : EntityLabel()
 {
   *this = jsonValue;
 }

@@ -24,19 +24,14 @@ ApplicationConfigurationUpdate::ApplicationConfigurationUpdate() :
     m_flinkApplicationConfigurationUpdateHasBeenSet(false),
     m_environmentPropertyUpdatesHasBeenSet(false),
     m_applicationSnapshotConfigurationUpdateHasBeenSet(false),
+    m_applicationSystemRollbackConfigurationUpdateHasBeenSet(false),
     m_vpcConfigurationUpdatesHasBeenSet(false),
     m_zeppelinApplicationConfigurationUpdateHasBeenSet(false)
 {
 }
 
-ApplicationConfigurationUpdate::ApplicationConfigurationUpdate(JsonView jsonValue) : 
-    m_sqlApplicationConfigurationUpdateHasBeenSet(false),
-    m_applicationCodeConfigurationUpdateHasBeenSet(false),
-    m_flinkApplicationConfigurationUpdateHasBeenSet(false),
-    m_environmentPropertyUpdatesHasBeenSet(false),
-    m_applicationSnapshotConfigurationUpdateHasBeenSet(false),
-    m_vpcConfigurationUpdatesHasBeenSet(false),
-    m_zeppelinApplicationConfigurationUpdateHasBeenSet(false)
+ApplicationConfigurationUpdate::ApplicationConfigurationUpdate(JsonView jsonValue)
+  : ApplicationConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -76,6 +71,13 @@ ApplicationConfigurationUpdate& ApplicationConfigurationUpdate::operator =(JsonV
     m_applicationSnapshotConfigurationUpdate = jsonValue.GetObject("ApplicationSnapshotConfigurationUpdate");
 
     m_applicationSnapshotConfigurationUpdateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationSystemRollbackConfigurationUpdate"))
+  {
+    m_applicationSystemRollbackConfigurationUpdate = jsonValue.GetObject("ApplicationSystemRollbackConfigurationUpdate");
+
+    m_applicationSystemRollbackConfigurationUpdateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VpcConfigurationUpdates"))
@@ -129,6 +131,12 @@ JsonValue ApplicationConfigurationUpdate::Jsonize() const
   if(m_applicationSnapshotConfigurationUpdateHasBeenSet)
   {
    payload.WithObject("ApplicationSnapshotConfigurationUpdate", m_applicationSnapshotConfigurationUpdate.Jsonize());
+
+  }
+
+  if(m_applicationSystemRollbackConfigurationUpdateHasBeenSet)
+  {
+   payload.WithObject("ApplicationSystemRollbackConfigurationUpdate", m_applicationSystemRollbackConfigurationUpdate.Jsonize());
 
   }
 

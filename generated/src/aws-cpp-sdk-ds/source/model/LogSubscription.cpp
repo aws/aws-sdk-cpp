@@ -25,10 +25,8 @@ LogSubscription::LogSubscription() :
 {
 }
 
-LogSubscription::LogSubscription(JsonView jsonValue) : 
-    m_directoryIdHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_subscriptionCreatedDateTimeHasBeenSet(false)
+LogSubscription::LogSubscription(JsonView jsonValue)
+  : LogSubscription()
 {
   *this = jsonValue;
 }

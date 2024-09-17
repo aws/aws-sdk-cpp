@@ -36,21 +36,8 @@ Service::Service() :
 {
 }
 
-Service::Service(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pipelineHasBeenSet(false),
-    m_repositoryConnectionArnHasBeenSet(false),
-    m_repositoryIdHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_status(ServiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+Service::Service(JsonView jsonValue)
+  : Service()
 {
   *this = jsonValue;
 }

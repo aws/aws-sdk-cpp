@@ -33,16 +33,8 @@ LogDeliveryConfigurationRequest::LogDeliveryConfigurationRequest() :
 {
 }
 
-LogDeliveryConfigurationRequest::LogDeliveryConfigurationRequest(const XmlNode& xmlNode) : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_destinationType(DestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_destinationDetailsHasBeenSet(false),
-    m_logFormat(LogFormat::NOT_SET),
-    m_logFormatHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+LogDeliveryConfigurationRequest::LogDeliveryConfigurationRequest(const XmlNode& xmlNode)
+  : LogDeliveryConfigurationRequest()
 {
   *this = xmlNode;
 }

@@ -38,103 +38,35 @@ namespace Model
      */
     AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p> The name of the Storage Lens group that you're trying to retrieve the
      * configuration details for. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p> The name of the Storage Lens group that you're trying to retrieve the
-     * configuration details for. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> The name of the Storage Lens group that you're trying to retrieve the
-     * configuration details for. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> The name of the Storage Lens group that you're trying to retrieve the
-     * configuration details for. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> The name of the Storage Lens group that you're trying to retrieve the
-     * configuration details for. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p> The name of the Storage Lens group that you're trying to retrieve the
-     * configuration details for. </p>
-     */
     inline GetStorageLensGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p> The name of the Storage Lens group that you're trying to retrieve the
-     * configuration details for. </p>
-     */
     inline GetStorageLensGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the Storage Lens group that you're trying to retrieve the
-     * configuration details for. </p>
-     */
     inline GetStorageLensGroupRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The Amazon Web Services account ID associated with the Storage Lens group
      * that you're trying to retrieve the details for. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p> The Amazon Web Services account ID associated with the Storage Lens group
-     * that you're trying to retrieve the details for. </p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p> The Amazon Web Services account ID associated with the Storage Lens group
-     * that you're trying to retrieve the details for. </p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p> The Amazon Web Services account ID associated with the Storage Lens group
-     * that you're trying to retrieve the details for. </p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p> The Amazon Web Services account ID associated with the Storage Lens group
-     * that you're trying to retrieve the details for. </p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p> The Amazon Web Services account ID associated with the Storage Lens group
-     * that you're trying to retrieve the details for. </p>
-     */
     inline GetStorageLensGroupRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p> The Amazon Web Services account ID associated with the Storage Lens group
-     * that you're trying to retrieve the details for. </p>
-     */
     inline GetStorageLensGroupRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Web Services account ID associated with the Storage Lens group
-     * that you're trying to retrieve the details for. </p>
-     */
     inline GetStorageLensGroupRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

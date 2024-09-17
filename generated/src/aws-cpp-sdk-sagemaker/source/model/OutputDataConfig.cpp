@@ -26,11 +26,8 @@ OutputDataConfig::OutputDataConfig() :
 {
 }
 
-OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_compressionType(OutputCompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false)
+OutputDataConfig::OutputDataConfig(JsonView jsonValue)
+  : OutputDataConfig()
 {
   *this = jsonValue;
 }

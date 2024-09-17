@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API WithdrawByoipCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the address pool.</p>
      */
     inline const ByoipCidr& GetByoipCidr() const{ return m_byoipCidr; }
-
-    /**
-     * <p>Information about the address pool.</p>
-     */
     inline void SetByoipCidr(const ByoipCidr& value) { m_byoipCidr = value; }
-
-    /**
-     * <p>Information about the address pool.</p>
-     */
     inline void SetByoipCidr(ByoipCidr&& value) { m_byoipCidr = std::move(value); }
-
-    /**
-     * <p>Information about the address pool.</p>
-     */
     inline WithdrawByoipCidrResponse& WithByoipCidr(const ByoipCidr& value) { SetByoipCidr(value); return *this;}
-
-    /**
-     * <p>Information about the address pool.</p>
-     */
     inline WithdrawByoipCidrResponse& WithByoipCidr(ByoipCidr&& value) { SetByoipCidr(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline WithdrawByoipCidrResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline WithdrawByoipCidrResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ByoipCidr m_byoipCidr;

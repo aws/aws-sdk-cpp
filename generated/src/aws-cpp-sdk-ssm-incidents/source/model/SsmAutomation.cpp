@@ -29,14 +29,8 @@ SsmAutomation::SsmAutomation() :
 {
 }
 
-SsmAutomation::SsmAutomation(JsonView jsonValue) : 
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_dynamicParametersHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_targetAccount(SsmTargetAccount::NOT_SET),
-    m_targetAccountHasBeenSet(false)
+SsmAutomation::SsmAutomation(JsonView jsonValue)
+  : SsmAutomation()
 {
   *this = jsonValue;
 }

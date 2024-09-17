@@ -25,10 +25,8 @@ ParticipatingResource::ParticipatingResource() :
 {
 }
 
-ParticipatingResource::ParticipatingResource(JsonView jsonValue) : 
-    m_launchStatus(LaunchStatus::NOT_SET),
-    m_launchStatusHasBeenSet(false),
-    m_participatingResourceIDHasBeenSet(false)
+ParticipatingResource::ParticipatingResource(JsonView jsonValue)
+  : ParticipatingResource()
 {
   *this = jsonValue;
 }

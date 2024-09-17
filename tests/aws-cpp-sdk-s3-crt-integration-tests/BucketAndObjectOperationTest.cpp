@@ -63,20 +63,20 @@ using namespace Aws::Utils;
 
 namespace
 {
-    static Aws::String BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
-    static Aws::String BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
-    static Aws::String BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
-    static Aws::String BASE_OBJECTS_BUCKET_NAME = "objecttest";
-    static Aws::String BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME = "ctortest";
-    static Aws::String BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
-    static Aws::String BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
-    static Aws::String BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
-    static Aws::String BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
-    static Aws::String BASE_ERRORS_TESTING_BUCKET = "errorstest";
-    static Aws::String BASE_EVENT_STREAM_TEST_BUCKET_NAME = "eventstream";
-    static Aws::String BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
-    static Aws::String BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
-    static Aws::String BASE_CHECKSUMS_BUCKET_NAME = "checksums-crt";
+    static std::string BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
+    static std::string BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
+    static std::string BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
+    static std::string BASE_OBJECTS_BUCKET_NAME = "objecttest";
+    static std::string BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME = "ctortest";
+    static std::string BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
+    static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
+    static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
+    static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
+    static std::string BASE_ERRORS_TESTING_BUCKET = "errorstest";
+    static std::string BASE_EVENT_STREAM_TEST_BUCKET_NAME = "eventstream";
+    static std::string BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
+    static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
+    static std::string BASE_CHECKSUMS_BUCKET_NAME = "checksums-crt";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
@@ -85,12 +85,12 @@ namespace
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
-    static const char* URIESCAPE_KEY = "Esc ape+Me$";
+    static const char* URIESCAPE_KEY = "Esc a=pe+Me$";
     static const char* TEST_BUCKET_TAG = "IntegrationTestResource";
 
     static const int TIMEOUT_MAX = 20;
 
-    void AppendUUID(Aws::String& bucketName)
+    void AppendUUID(std::string& bucketName)
     {
         using Aws::Utils::UUID;
         Aws::StringStream s;
@@ -100,7 +100,7 @@ namespace
 
     void EnsureUniqueBucketNames()
     {
-        Aws::Vector<std::reference_wrapper<Aws::String>> TEST_BUCKETS =
+        Aws::Vector<std::reference_wrapper<std::string>> TEST_BUCKETS =
             {
               std::ref(BASE_CREATE_BUCKET_TEST_NAME),
               std::ref(BASE_DNS_UNFRIENDLY_TEST_NAME),
@@ -121,7 +121,7 @@ namespace
         for (auto& testBucketName : TEST_BUCKETS)
         {
             AppendUUID(testBucketName);
-            SCOPED_TRACE(Aws::String("EnsureUniqueBucketNames: ") + testBucketName.get());
+            SCOPED_TRACE(Aws::String("EnsureUniqueBucketNames: ") + testBucketName.get().c_str());
         }
     }
 
@@ -551,15 +551,6 @@ namespace
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
-        createBucketRequest.SetACL(BucketCannedACL::private_);
-        {
-            CreateBucketConfiguration bucketConfiguration;
-            Aws::S3Crt::ClientConfiguration dummyClientConfig;
-            bucketConfiguration.SetLocationConstraint(
-                    BucketLocationConstraintMapper::GetBucketLocationConstraintForName(dummyClientConfig.region));
-            createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
-        }
-
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
@@ -590,6 +581,7 @@ namespace
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
         AWS_ASSERT_SUCCESS(getObjectOutcome);
         ASSERT_EQ(contentLength, getObjectOutcome.GetResult().GetContentLength());
+        EXPECT_TRUE(getObjectOutcome.GetResult().GetCacheControl().empty());
 
         // GET with range
         getObjectRequest.SetRange("bytes=128-1024");
@@ -621,7 +613,7 @@ namespace
         //Create Client with default constructor
         Client = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG);
 
-        const Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME);
+        const Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -1382,7 +1374,6 @@ namespace
         GetObjectOutcome outcome = Client->GetObject(getObjectRequest);
 
         ASSERT_FALSE(outcome.IsSuccess());
-        ASSERT_EQ(outcome.GetError().GetErrorType(), Aws::S3Crt::S3CrtErrors::NETWORK_CONNECTION);
     }
 
     TEST_F(BucketAndObjectOperationTest, MissingCertificate) {

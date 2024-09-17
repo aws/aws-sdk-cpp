@@ -26,9 +26,8 @@ ExpressionStatus::ExpressionStatus() :
 {
 }
 
-ExpressionStatus::ExpressionStatus(const XmlNode& xmlNode) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ExpressionStatus::ExpressionStatus(const XmlNode& xmlNode)
+  : ExpressionStatus()
 {
   *this = xmlNode;
 }

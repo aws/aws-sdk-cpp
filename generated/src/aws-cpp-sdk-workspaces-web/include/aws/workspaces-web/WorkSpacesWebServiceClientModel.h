@@ -76,6 +76,14 @@
 #include <aws/workspaces-web/model/UpdateTrustStoreResult.h>
 #include <aws/workspaces-web/model/UpdateUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/UpdateUserSettingsResult.h>
+#include <aws/workspaces-web/model/ListTrustStoresRequest.h>
+#include <aws/workspaces-web/model/ListUserAccessLoggingSettingsRequest.h>
+#include <aws/workspaces-web/model/ListNetworkSettingsRequest.h>
+#include <aws/workspaces-web/model/CreatePortalRequest.h>
+#include <aws/workspaces-web/model/ListUserSettingsRequest.h>
+#include <aws/workspaces-web/model/ListBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/ListPortalsRequest.h>
+#include <aws/workspaces-web/model/ListIpAccessSettingsRequest.h>
 /* End of service model headers required in WorkSpacesWebClient header */
 
 namespace Aws
@@ -109,7 +117,7 @@ namespace Aws
 
   namespace WorkSpacesWeb
   {
-    using WorkSpacesWebClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkSpacesWebClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkSpacesWebEndpointProviderBase = Aws::WorkSpacesWeb::Endpoint::WorkSpacesWebEndpointProviderBase;
     using WorkSpacesWebEndpointProvider = Aws::WorkSpacesWeb::Endpoint::WorkSpacesWebEndpointProvider;
 

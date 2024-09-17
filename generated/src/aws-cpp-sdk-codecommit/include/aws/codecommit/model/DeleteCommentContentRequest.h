@@ -34,54 +34,20 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique, system-generated ID of the comment. To get this ID, use
      * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
      */
     inline const Aws::String& GetCommentId() const{ return m_commentId; }
-
-    /**
-     * <p>The unique, system-generated ID of the comment. To get this ID, use
-     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
-     */
     inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
-
-    /**
-     * <p>The unique, system-generated ID of the comment. To get this ID, use
-     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
-     */
     inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
-
-    /**
-     * <p>The unique, system-generated ID of the comment. To get this ID, use
-     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
-     */
     inline void SetCommentId(Aws::String&& value) { m_commentIdHasBeenSet = true; m_commentId = std::move(value); }
-
-    /**
-     * <p>The unique, system-generated ID of the comment. To get this ID, use
-     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
-     */
     inline void SetCommentId(const char* value) { m_commentIdHasBeenSet = true; m_commentId.assign(value); }
-
-    /**
-     * <p>The unique, system-generated ID of the comment. To get this ID, use
-     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
-     */
     inline DeleteCommentContentRequest& WithCommentId(const Aws::String& value) { SetCommentId(value); return *this;}
-
-    /**
-     * <p>The unique, system-generated ID of the comment. To get this ID, use
-     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
-     */
     inline DeleteCommentContentRequest& WithCommentId(Aws::String&& value) { SetCommentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique, system-generated ID of the comment. To get this ID, use
-     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
-     */
     inline DeleteCommentContentRequest& WithCommentId(const char* value) { SetCommentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_commentId;

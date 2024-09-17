@@ -22,8 +22,8 @@ ConfirmPublicVirtualInterfaceResult::ConfirmPublicVirtualInterfaceResult() :
 {
 }
 
-ConfirmPublicVirtualInterfaceResult::ConfirmPublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
+ConfirmPublicVirtualInterfaceResult::ConfirmPublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ConfirmPublicVirtualInterfaceResult()
 {
   *this = result;
 }

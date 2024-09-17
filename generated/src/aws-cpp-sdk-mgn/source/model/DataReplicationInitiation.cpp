@@ -25,10 +25,8 @@ DataReplicationInitiation::DataReplicationInitiation() :
 {
 }
 
-DataReplicationInitiation::DataReplicationInitiation(JsonView jsonValue) : 
-    m_nextAttemptDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_stepsHasBeenSet(false)
+DataReplicationInitiation::DataReplicationInitiation(JsonView jsonValue)
+  : DataReplicationInitiation()
 {
   *this = jsonValue;
 }

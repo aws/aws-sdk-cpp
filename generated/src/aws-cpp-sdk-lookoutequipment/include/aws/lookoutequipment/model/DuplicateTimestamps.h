@@ -36,26 +36,15 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates the total number of duplicate timestamps. </p>
      */
     inline int GetTotalNumberOfDuplicateTimestamps() const{ return m_totalNumberOfDuplicateTimestamps; }
-
-    /**
-     * <p> Indicates the total number of duplicate timestamps. </p>
-     */
     inline bool TotalNumberOfDuplicateTimestampsHasBeenSet() const { return m_totalNumberOfDuplicateTimestampsHasBeenSet; }
-
-    /**
-     * <p> Indicates the total number of duplicate timestamps. </p>
-     */
     inline void SetTotalNumberOfDuplicateTimestamps(int value) { m_totalNumberOfDuplicateTimestampsHasBeenSet = true; m_totalNumberOfDuplicateTimestamps = value; }
-
-    /**
-     * <p> Indicates the total number of duplicate timestamps. </p>
-     */
     inline DuplicateTimestamps& WithTotalNumberOfDuplicateTimestamps(int value) { SetTotalNumberOfDuplicateTimestamps(value); return *this;}
-
+    ///@}
   private:
 
     int m_totalNumberOfDuplicateTimestamps;

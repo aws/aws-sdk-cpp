@@ -24,9 +24,8 @@ FileConfiguration::FileConfiguration() :
 {
 }
 
-FileConfiguration::FileConfiguration(JsonView jsonValue) : 
-    m_foldersHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+FileConfiguration::FileConfiguration(JsonView jsonValue)
+  : FileConfiguration()
 {
   *this = jsonValue;
 }

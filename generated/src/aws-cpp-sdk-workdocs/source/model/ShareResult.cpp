@@ -30,15 +30,8 @@ ShareResult::ShareResult() :
 {
 }
 
-ShareResult::ShareResult(JsonView jsonValue) : 
-    m_principalIdHasBeenSet(false),
-    m_inviteePrincipalIdHasBeenSet(false),
-    m_role(RoleType::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_status(ShareStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_shareIdHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ShareResult::ShareResult(JsonView jsonValue)
+  : ShareResult()
 {
   *this = jsonValue;
 }

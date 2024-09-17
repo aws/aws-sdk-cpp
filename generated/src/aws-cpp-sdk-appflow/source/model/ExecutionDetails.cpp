@@ -26,11 +26,8 @@ ExecutionDetails::ExecutionDetails() :
 {
 }
 
-ExecutionDetails::ExecutionDetails(JsonView jsonValue) : 
-    m_mostRecentExecutionMessageHasBeenSet(false),
-    m_mostRecentExecutionTimeHasBeenSet(false),
-    m_mostRecentExecutionStatus(ExecutionStatus::NOT_SET),
-    m_mostRecentExecutionStatusHasBeenSet(false)
+ExecutionDetails::ExecutionDetails(JsonView jsonValue)
+  : ExecutionDetails()
 {
   *this = jsonValue;
 }

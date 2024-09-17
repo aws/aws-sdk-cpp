@@ -25,10 +25,8 @@ BrokerLogs::BrokerLogs() :
 {
 }
 
-BrokerLogs::BrokerLogs(JsonView jsonValue) : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_s3HasBeenSet(false)
+BrokerLogs::BrokerLogs(JsonView jsonValue)
+  : BrokerLogs()
 {
   *this = jsonValue;
 }

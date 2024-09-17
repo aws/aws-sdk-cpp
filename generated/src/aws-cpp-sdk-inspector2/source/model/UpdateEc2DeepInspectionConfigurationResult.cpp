@@ -22,8 +22,8 @@ UpdateEc2DeepInspectionConfigurationResult::UpdateEc2DeepInspectionConfiguration
 {
 }
 
-UpdateEc2DeepInspectionConfigurationResult::UpdateEc2DeepInspectionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Ec2DeepInspectionStatus::NOT_SET)
+UpdateEc2DeepInspectionConfigurationResult::UpdateEc2DeepInspectionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateEc2DeepInspectionConfigurationResult()
 {
   *this = result;
 }

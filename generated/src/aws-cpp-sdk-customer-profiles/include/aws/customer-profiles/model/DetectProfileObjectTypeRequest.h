@@ -33,92 +33,34 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A string that is serialized from a JSON object.</p>
      */
     inline const Aws::Vector<Aws::String>& GetObjects() const{ return m_objects; }
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline bool ObjectsHasBeenSet() const { return m_objectsHasBeenSet; }
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline void SetObjects(const Aws::Vector<Aws::String>& value) { m_objectsHasBeenSet = true; m_objects = value; }
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline void SetObjects(Aws::Vector<Aws::String>&& value) { m_objectsHasBeenSet = true; m_objects = std::move(value); }
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline DetectProfileObjectTypeRequest& WithObjects(const Aws::Vector<Aws::String>& value) { SetObjects(value); return *this;}
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline DetectProfileObjectTypeRequest& WithObjects(Aws::Vector<Aws::String>&& value) { SetObjects(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline DetectProfileObjectTypeRequest& AddObjects(const Aws::String& value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline DetectProfileObjectTypeRequest& AddObjects(Aws::String&& value) { m_objectsHasBeenSet = true; m_objects.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A string that is serialized from a JSON object.</p>
-     */
     inline DetectProfileObjectTypeRequest& AddObjects(const char* value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline DetectProfileObjectTypeRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline DetectProfileObjectTypeRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of the domain.</p>
-     */
     inline DetectProfileObjectTypeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_objects;

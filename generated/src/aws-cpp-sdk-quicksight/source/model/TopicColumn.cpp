@@ -46,31 +46,8 @@ TopicColumn::TopicColumn() :
 {
 }
 
-TopicColumn::TopicColumn(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_columnFriendlyNameHasBeenSet(false),
-    m_columnDescriptionHasBeenSet(false),
-    m_columnSynonymsHasBeenSet(false),
-    m_columnDataRole(ColumnDataRole::NOT_SET),
-    m_columnDataRoleHasBeenSet(false),
-    m_aggregation(DefaultAggregation::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_isIncludedInTopic(false),
-    m_isIncludedInTopicHasBeenSet(false),
-    m_disableIndexing(false),
-    m_disableIndexingHasBeenSet(false),
-    m_comparativeOrderHasBeenSet(false),
-    m_semanticTypeHasBeenSet(false),
-    m_timeGranularity(TopicTimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_allowedAggregationsHasBeenSet(false),
-    m_notAllowedAggregationsHasBeenSet(false),
-    m_defaultFormattingHasBeenSet(false),
-    m_neverAggregateInFilter(false),
-    m_neverAggregateInFilterHasBeenSet(false),
-    m_cellValueSynonymsHasBeenSet(false),
-    m_nonAdditive(false),
-    m_nonAdditiveHasBeenSet(false)
+TopicColumn::TopicColumn(JsonView jsonValue)
+  : TopicColumn()
 {
   *this = jsonValue;
 }

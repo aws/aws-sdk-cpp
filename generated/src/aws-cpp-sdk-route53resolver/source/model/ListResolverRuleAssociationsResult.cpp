@@ -22,8 +22,8 @@ ListResolverRuleAssociationsResult::ListResolverRuleAssociationsResult() :
 {
 }
 
-ListResolverRuleAssociationsResult::ListResolverRuleAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maxResults(0)
+ListResolverRuleAssociationsResult::ListResolverRuleAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListResolverRuleAssociationsResult()
 {
   *this = result;
 }

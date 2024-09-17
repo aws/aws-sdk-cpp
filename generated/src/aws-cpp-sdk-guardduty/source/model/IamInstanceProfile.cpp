@@ -24,9 +24,8 @@ IamInstanceProfile::IamInstanceProfile() :
 {
 }
 
-IamInstanceProfile::IamInstanceProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false)
+IamInstanceProfile::IamInstanceProfile(JsonView jsonValue)
+  : IamInstanceProfile()
 {
   *this = jsonValue;
 }

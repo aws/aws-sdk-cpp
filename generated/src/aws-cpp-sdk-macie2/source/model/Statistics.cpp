@@ -26,11 +26,8 @@ Statistics::Statistics() :
 {
 }
 
-Statistics::Statistics(JsonView jsonValue) : 
-    m_approximateNumberOfObjectsToProcess(0.0),
-    m_approximateNumberOfObjectsToProcessHasBeenSet(false),
-    m_numberOfRuns(0.0),
-    m_numberOfRunsHasBeenSet(false)
+Statistics::Statistics(JsonView jsonValue)
+  : Statistics()
 {
   *this = jsonValue;
 }

@@ -37,22 +37,8 @@ EndpointProperties::EndpointProperties() :
 {
 }
 
-EndpointProperties::EndpointProperties(JsonView jsonValue) : 
-    m_endpointArnHasBeenSet(false),
-    m_status(EndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_desiredModelArnHasBeenSet(false),
-    m_desiredInferenceUnits(0),
-    m_desiredInferenceUnitsHasBeenSet(false),
-    m_currentInferenceUnits(0),
-    m_currentInferenceUnitsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_desiredDataAccessRoleArnHasBeenSet(false),
-    m_flywheelArnHasBeenSet(false)
+EndpointProperties::EndpointProperties(JsonView jsonValue)
+  : EndpointProperties()
 {
   *this = jsonValue;
 }

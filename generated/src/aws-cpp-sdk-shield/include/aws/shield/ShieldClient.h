@@ -315,13 +315,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateSubscriptionOutcome CreateSubscription(const Model::CreateSubscriptionRequest& request) const;
+        virtual Model::CreateSubscriptionOutcome CreateSubscription(const Model::CreateSubscriptionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateSubscriptionRequestT = Model::CreateSubscriptionRequest>
-        Model::CreateSubscriptionOutcomeCallable CreateSubscriptionCallable(const CreateSubscriptionRequestT& request) const
+        Model::CreateSubscriptionOutcomeCallable CreateSubscriptionCallable(const CreateSubscriptionRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::CreateSubscription, request);
         }
@@ -330,7 +330,7 @@ namespace Shield
          * An Async wrapper for CreateSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateSubscriptionRequestT = Model::CreateSubscriptionRequest>
-        void CreateSubscriptionAsync(const CreateSubscriptionRequestT& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateSubscriptionAsync(const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateSubscriptionRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::CreateSubscription, request, handler, context);
         }
@@ -425,13 +425,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAttackStatisticsOutcome DescribeAttackStatistics(const Model::DescribeAttackStatisticsRequest& request) const;
+        virtual Model::DescribeAttackStatisticsOutcome DescribeAttackStatistics(const Model::DescribeAttackStatisticsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAttackStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAttackStatisticsRequestT = Model::DescribeAttackStatisticsRequest>
-        Model::DescribeAttackStatisticsOutcomeCallable DescribeAttackStatisticsCallable(const DescribeAttackStatisticsRequestT& request) const
+        Model::DescribeAttackStatisticsOutcomeCallable DescribeAttackStatisticsCallable(const DescribeAttackStatisticsRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::DescribeAttackStatistics, request);
         }
@@ -440,7 +440,7 @@ namespace Shield
          * An Async wrapper for DescribeAttackStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAttackStatisticsRequestT = Model::DescribeAttackStatisticsRequest>
-        void DescribeAttackStatisticsAsync(const DescribeAttackStatisticsRequestT& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAttackStatisticsAsync(const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAttackStatisticsRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::DescribeAttackStatistics, request, handler, context);
         }
@@ -452,13 +452,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDRTAccessOutcome DescribeDRTAccess(const Model::DescribeDRTAccessRequest& request) const;
+        virtual Model::DescribeDRTAccessOutcome DescribeDRTAccess(const Model::DescribeDRTAccessRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDRTAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDRTAccessRequestT = Model::DescribeDRTAccessRequest>
-        Model::DescribeDRTAccessOutcomeCallable DescribeDRTAccessCallable(const DescribeDRTAccessRequestT& request) const
+        Model::DescribeDRTAccessOutcomeCallable DescribeDRTAccessCallable(const DescribeDRTAccessRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::DescribeDRTAccess, request);
         }
@@ -467,7 +467,7 @@ namespace Shield
          * An Async wrapper for DescribeDRTAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDRTAccessRequestT = Model::DescribeDRTAccessRequest>
-        void DescribeDRTAccessAsync(const DescribeDRTAccessRequestT& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDRTAccessAsync(const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDRTAccessRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::DescribeDRTAccess, request, handler, context);
         }
@@ -480,13 +480,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEmergencyContactSettingsOutcome DescribeEmergencyContactSettings(const Model::DescribeEmergencyContactSettingsRequest& request) const;
+        virtual Model::DescribeEmergencyContactSettingsOutcome DescribeEmergencyContactSettings(const Model::DescribeEmergencyContactSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEmergencyContactSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEmergencyContactSettingsRequestT = Model::DescribeEmergencyContactSettingsRequest>
-        Model::DescribeEmergencyContactSettingsOutcomeCallable DescribeEmergencyContactSettingsCallable(const DescribeEmergencyContactSettingsRequestT& request) const
+        Model::DescribeEmergencyContactSettingsOutcomeCallable DescribeEmergencyContactSettingsCallable(const DescribeEmergencyContactSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::DescribeEmergencyContactSettings, request);
         }
@@ -495,7 +495,7 @@ namespace Shield
          * An Async wrapper for DescribeEmergencyContactSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEmergencyContactSettingsRequestT = Model::DescribeEmergencyContactSettingsRequest>
-        void DescribeEmergencyContactSettingsAsync(const DescribeEmergencyContactSettingsRequestT& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEmergencyContactSettingsAsync(const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEmergencyContactSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::DescribeEmergencyContactSettings, request, handler, context);
         }
@@ -506,13 +506,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProtectionOutcome DescribeProtection(const Model::DescribeProtectionRequest& request) const;
+        virtual Model::DescribeProtectionOutcome DescribeProtection(const Model::DescribeProtectionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProtection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProtectionRequestT = Model::DescribeProtectionRequest>
-        Model::DescribeProtectionOutcomeCallable DescribeProtectionCallable(const DescribeProtectionRequestT& request) const
+        Model::DescribeProtectionOutcomeCallable DescribeProtectionCallable(const DescribeProtectionRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::DescribeProtection, request);
         }
@@ -521,7 +521,7 @@ namespace Shield
          * An Async wrapper for DescribeProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProtectionRequestT = Model::DescribeProtectionRequest>
-        void DescribeProtectionAsync(const DescribeProtectionRequestT& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProtectionAsync(const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProtectionRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::DescribeProtection, request, handler, context);
         }
@@ -558,13 +558,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSubscriptionOutcome DescribeSubscription(const Model::DescribeSubscriptionRequest& request) const;
+        virtual Model::DescribeSubscriptionOutcome DescribeSubscription(const Model::DescribeSubscriptionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSubscriptionRequestT = Model::DescribeSubscriptionRequest>
-        Model::DescribeSubscriptionOutcomeCallable DescribeSubscriptionCallable(const DescribeSubscriptionRequestT& request) const
+        Model::DescribeSubscriptionOutcomeCallable DescribeSubscriptionCallable(const DescribeSubscriptionRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::DescribeSubscription, request);
         }
@@ -573,7 +573,7 @@ namespace Shield
          * An Async wrapper for DescribeSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSubscriptionRequestT = Model::DescribeSubscriptionRequest>
-        void DescribeSubscriptionAsync(const DescribeSubscriptionRequestT& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSubscriptionAsync(const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSubscriptionRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::DescribeSubscription, request, handler, context);
         }
@@ -613,13 +613,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableProactiveEngagementOutcome DisableProactiveEngagement(const Model::DisableProactiveEngagementRequest& request) const;
+        virtual Model::DisableProactiveEngagementOutcome DisableProactiveEngagement(const Model::DisableProactiveEngagementRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisableProactiveEngagement that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DisableProactiveEngagementRequestT = Model::DisableProactiveEngagementRequest>
-        Model::DisableProactiveEngagementOutcomeCallable DisableProactiveEngagementCallable(const DisableProactiveEngagementRequestT& request) const
+        Model::DisableProactiveEngagementOutcomeCallable DisableProactiveEngagementCallable(const DisableProactiveEngagementRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::DisableProactiveEngagement, request);
         }
@@ -628,7 +628,7 @@ namespace Shield
          * An Async wrapper for DisableProactiveEngagement that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DisableProactiveEngagementRequestT = Model::DisableProactiveEngagementRequest>
-        void DisableProactiveEngagementAsync(const DisableProactiveEngagementRequestT& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DisableProactiveEngagementAsync(const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableProactiveEngagementRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::DisableProactiveEngagement, request, handler, context);
         }
@@ -666,13 +666,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisassociateDRTRoleOutcome DisassociateDRTRole(const Model::DisassociateDRTRoleRequest& request) const;
+        virtual Model::DisassociateDRTRoleOutcome DisassociateDRTRole(const Model::DisassociateDRTRoleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisassociateDRTRole that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DisassociateDRTRoleRequestT = Model::DisassociateDRTRoleRequest>
-        Model::DisassociateDRTRoleOutcomeCallable DisassociateDRTRoleCallable(const DisassociateDRTRoleRequestT& request) const
+        Model::DisassociateDRTRoleOutcomeCallable DisassociateDRTRoleCallable(const DisassociateDRTRoleRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::DisassociateDRTRole, request);
         }
@@ -681,7 +681,7 @@ namespace Shield
          * An Async wrapper for DisassociateDRTRole that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DisassociateDRTRoleRequestT = Model::DisassociateDRTRoleRequest>
-        void DisassociateDRTRoleAsync(const DisassociateDRTRoleRequestT& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DisassociateDRTRoleAsync(const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisassociateDRTRoleRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::DisassociateDRTRole, request, handler, context);
         }
@@ -774,13 +774,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement">AWS
          * API Reference</a></p>
          */
-        virtual Model::EnableProactiveEngagementOutcome EnableProactiveEngagement(const Model::EnableProactiveEngagementRequest& request) const;
+        virtual Model::EnableProactiveEngagementOutcome EnableProactiveEngagement(const Model::EnableProactiveEngagementRequest& request = {}) const;
 
         /**
          * A Callable wrapper for EnableProactiveEngagement that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename EnableProactiveEngagementRequestT = Model::EnableProactiveEngagementRequest>
-        Model::EnableProactiveEngagementOutcomeCallable EnableProactiveEngagementCallable(const EnableProactiveEngagementRequestT& request) const
+        Model::EnableProactiveEngagementOutcomeCallable EnableProactiveEngagementCallable(const EnableProactiveEngagementRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::EnableProactiveEngagement, request);
         }
@@ -789,7 +789,7 @@ namespace Shield
          * An Async wrapper for EnableProactiveEngagement that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename EnableProactiveEngagementRequestT = Model::EnableProactiveEngagementRequest>
-        void EnableProactiveEngagementAsync(const EnableProactiveEngagementRequestT& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void EnableProactiveEngagementAsync(const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableProactiveEngagementRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::EnableProactiveEngagement, request, handler, context);
         }
@@ -800,13 +800,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSubscriptionStateOutcome GetSubscriptionState(const Model::GetSubscriptionStateRequest& request) const;
+        virtual Model::GetSubscriptionStateOutcome GetSubscriptionState(const Model::GetSubscriptionStateRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSubscriptionState that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSubscriptionStateRequestT = Model::GetSubscriptionStateRequest>
-        Model::GetSubscriptionStateOutcomeCallable GetSubscriptionStateCallable(const GetSubscriptionStateRequestT& request) const
+        Model::GetSubscriptionStateOutcomeCallable GetSubscriptionStateCallable(const GetSubscriptionStateRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::GetSubscriptionState, request);
         }
@@ -815,7 +815,7 @@ namespace Shield
          * An Async wrapper for GetSubscriptionState that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSubscriptionStateRequestT = Model::GetSubscriptionStateRequest>
-        void GetSubscriptionStateAsync(const GetSubscriptionStateRequestT& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSubscriptionStateAsync(const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSubscriptionStateRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::GetSubscriptionState, request, handler, context);
         }
@@ -826,13 +826,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAttacksOutcome ListAttacks(const Model::ListAttacksRequest& request) const;
+        virtual Model::ListAttacksOutcome ListAttacks(const Model::ListAttacksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAttacks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAttacksRequestT = Model::ListAttacksRequest>
-        Model::ListAttacksOutcomeCallable ListAttacksCallable(const ListAttacksRequestT& request) const
+        Model::ListAttacksOutcomeCallable ListAttacksCallable(const ListAttacksRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::ListAttacks, request);
         }
@@ -841,7 +841,7 @@ namespace Shield
          * An Async wrapper for ListAttacks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAttacksRequestT = Model::ListAttacksRequest>
-        void ListAttacksAsync(const ListAttacksRequestT& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAttacksAsync(const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAttacksRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::ListAttacks, request, handler, context);
         }
@@ -854,13 +854,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProtectionGroupsOutcome ListProtectionGroups(const Model::ListProtectionGroupsRequest& request) const;
+        virtual Model::ListProtectionGroupsOutcome ListProtectionGroups(const Model::ListProtectionGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProtectionGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProtectionGroupsRequestT = Model::ListProtectionGroupsRequest>
-        Model::ListProtectionGroupsOutcomeCallable ListProtectionGroupsCallable(const ListProtectionGroupsRequestT& request) const
+        Model::ListProtectionGroupsOutcomeCallable ListProtectionGroupsCallable(const ListProtectionGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::ListProtectionGroups, request);
         }
@@ -869,7 +869,7 @@ namespace Shield
          * An Async wrapper for ListProtectionGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProtectionGroupsRequestT = Model::ListProtectionGroupsRequest>
-        void ListProtectionGroupsAsync(const ListProtectionGroupsRequestT& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProtectionGroupsAsync(const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProtectionGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::ListProtectionGroups, request, handler, context);
         }
@@ -881,13 +881,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProtectionsOutcome ListProtections(const Model::ListProtectionsRequest& request) const;
+        virtual Model::ListProtectionsOutcome ListProtections(const Model::ListProtectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProtections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProtectionsRequestT = Model::ListProtectionsRequest>
-        Model::ListProtectionsOutcomeCallable ListProtectionsCallable(const ListProtectionsRequestT& request) const
+        Model::ListProtectionsOutcomeCallable ListProtectionsCallable(const ListProtectionsRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::ListProtections, request);
         }
@@ -896,7 +896,7 @@ namespace Shield
          * An Async wrapper for ListProtections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProtectionsRequestT = Model::ListProtectionsRequest>
-        void ListProtectionsAsync(const ListProtectionsRequestT& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProtectionsAsync(const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProtectionsRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::ListProtections, request, handler, context);
         }
@@ -1038,13 +1038,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateEmergencyContactSettingsOutcome UpdateEmergencyContactSettings(const Model::UpdateEmergencyContactSettingsRequest& request) const;
+        virtual Model::UpdateEmergencyContactSettingsOutcome UpdateEmergencyContactSettings(const Model::UpdateEmergencyContactSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateEmergencyContactSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateEmergencyContactSettingsRequestT = Model::UpdateEmergencyContactSettingsRequest>
-        Model::UpdateEmergencyContactSettingsOutcomeCallable UpdateEmergencyContactSettingsCallable(const UpdateEmergencyContactSettingsRequestT& request) const
+        Model::UpdateEmergencyContactSettingsOutcomeCallable UpdateEmergencyContactSettingsCallable(const UpdateEmergencyContactSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::UpdateEmergencyContactSettings, request);
         }
@@ -1053,7 +1053,7 @@ namespace Shield
          * An Async wrapper for UpdateEmergencyContactSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateEmergencyContactSettingsRequestT = Model::UpdateEmergencyContactSettingsRequest>
-        void UpdateEmergencyContactSettingsAsync(const UpdateEmergencyContactSettingsRequestT& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateEmergencyContactSettingsAsync(const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateEmergencyContactSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::UpdateEmergencyContactSettings, request, handler, context);
         }
@@ -1096,13 +1096,13 @@ namespace Shield
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateSubscription">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateSubscriptionOutcome UpdateSubscription(const Model::UpdateSubscriptionRequest& request) const;
+        virtual Model::UpdateSubscriptionOutcome UpdateSubscription(const Model::UpdateSubscriptionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateSubscriptionRequestT = Model::UpdateSubscriptionRequest>
-        Model::UpdateSubscriptionOutcomeCallable UpdateSubscriptionCallable(const UpdateSubscriptionRequestT& request) const
+        Model::UpdateSubscriptionOutcomeCallable UpdateSubscriptionCallable(const UpdateSubscriptionRequestT& request = {}) const
         {
             return SubmitCallable(&ShieldClient::UpdateSubscription, request);
         }
@@ -1111,7 +1111,7 @@ namespace Shield
          * An Async wrapper for UpdateSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateSubscriptionRequestT = Model::UpdateSubscriptionRequest>
-        void UpdateSubscriptionAsync(const UpdateSubscriptionRequestT& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateSubscriptionAsync(const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateSubscriptionRequestT& request = {}) const
         {
             return SubmitAsync(&ShieldClient::UpdateSubscription, request, handler, context);
         }
@@ -1124,7 +1124,6 @@ namespace Shield
       void init(const ShieldClientConfiguration& clientConfiguration);
 
       ShieldClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ShieldEndpointProviderBase> m_endpointProvider;
   };
 

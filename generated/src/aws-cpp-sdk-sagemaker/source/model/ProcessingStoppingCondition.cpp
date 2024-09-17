@@ -24,9 +24,8 @@ ProcessingStoppingCondition::ProcessingStoppingCondition() :
 {
 }
 
-ProcessingStoppingCondition::ProcessingStoppingCondition(JsonView jsonValue) : 
-    m_maxRuntimeInSeconds(0),
-    m_maxRuntimeInSecondsHasBeenSet(false)
+ProcessingStoppingCondition::ProcessingStoppingCondition(JsonView jsonValue)
+  : ProcessingStoppingCondition()
 {
   *this = jsonValue;
 }

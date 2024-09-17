@@ -37,103 +37,35 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The MQTT topic that Device Defender Detect should publish messages to for
      * metrics export.</p>
      */
     inline const Aws::String& GetMqttTopic() const{ return m_mqttTopic; }
-
-    /**
-     * <p>The MQTT topic that Device Defender Detect should publish messages to for
-     * metrics export.</p>
-     */
     inline bool MqttTopicHasBeenSet() const { return m_mqttTopicHasBeenSet; }
-
-    /**
-     * <p>The MQTT topic that Device Defender Detect should publish messages to for
-     * metrics export.</p>
-     */
     inline void SetMqttTopic(const Aws::String& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = value; }
-
-    /**
-     * <p>The MQTT topic that Device Defender Detect should publish messages to for
-     * metrics export.</p>
-     */
     inline void SetMqttTopic(Aws::String&& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = std::move(value); }
-
-    /**
-     * <p>The MQTT topic that Device Defender Detect should publish messages to for
-     * metrics export.</p>
-     */
     inline void SetMqttTopic(const char* value) { m_mqttTopicHasBeenSet = true; m_mqttTopic.assign(value); }
-
-    /**
-     * <p>The MQTT topic that Device Defender Detect should publish messages to for
-     * metrics export.</p>
-     */
     inline MetricsExportConfig& WithMqttTopic(const Aws::String& value) { SetMqttTopic(value); return *this;}
-
-    /**
-     * <p>The MQTT topic that Device Defender Detect should publish messages to for
-     * metrics export.</p>
-     */
     inline MetricsExportConfig& WithMqttTopic(Aws::String&& value) { SetMqttTopic(std::move(value)); return *this;}
-
-    /**
-     * <p>The MQTT topic that Device Defender Detect should publish messages to for
-     * metrics export.</p>
-     */
     inline MetricsExportConfig& WithMqttTopic(const char* value) { SetMqttTopic(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This role ARN has permission to publish MQTT messages, after which Device
      * Defender Detect can assume the role and publish messages on your behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>This role ARN has permission to publish MQTT messages, after which Device
-     * Defender Detect can assume the role and publish messages on your behalf.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>This role ARN has permission to publish MQTT messages, after which Device
-     * Defender Detect can assume the role and publish messages on your behalf.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>This role ARN has permission to publish MQTT messages, after which Device
-     * Defender Detect can assume the role and publish messages on your behalf.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>This role ARN has permission to publish MQTT messages, after which Device
-     * Defender Detect can assume the role and publish messages on your behalf.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>This role ARN has permission to publish MQTT messages, after which Device
-     * Defender Detect can assume the role and publish messages on your behalf.</p>
-     */
     inline MetricsExportConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>This role ARN has permission to publish MQTT messages, after which Device
-     * Defender Detect can assume the role and publish messages on your behalf.</p>
-     */
     inline MetricsExportConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>This role ARN has permission to publish MQTT messages, after which Device
-     * Defender Detect can assume the role and publish messages on your behalf.</p>
-     */
     inline MetricsExportConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mqttTopic;

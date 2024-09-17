@@ -39,105 +39,49 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A count of the applicable resource types with a high performance risk
      * rating.</p>
      */
     inline long long GetHigh() const{ return m_high; }
-
-    /**
-     * <p>A count of the applicable resource types with a high performance risk
-     * rating.</p>
-     */
     inline bool HighHasBeenSet() const { return m_highHasBeenSet; }
-
-    /**
-     * <p>A count of the applicable resource types with a high performance risk
-     * rating.</p>
-     */
     inline void SetHigh(long long value) { m_highHasBeenSet = true; m_high = value; }
-
-    /**
-     * <p>A count of the applicable resource types with a high performance risk
-     * rating.</p>
-     */
     inline CurrentPerformanceRiskRatings& WithHigh(long long value) { SetHigh(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A count of the applicable resource types with a medium performance risk
      * rating.</p>
      */
     inline long long GetMedium() const{ return m_medium; }
-
-    /**
-     * <p>A count of the applicable resource types with a medium performance risk
-     * rating.</p>
-     */
     inline bool MediumHasBeenSet() const { return m_mediumHasBeenSet; }
-
-    /**
-     * <p>A count of the applicable resource types with a medium performance risk
-     * rating.</p>
-     */
     inline void SetMedium(long long value) { m_mediumHasBeenSet = true; m_medium = value; }
-
-    /**
-     * <p>A count of the applicable resource types with a medium performance risk
-     * rating.</p>
-     */
     inline CurrentPerformanceRiskRatings& WithMedium(long long value) { SetMedium(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A count of the applicable resource types with a low performance risk
      * rating.</p>
      */
     inline long long GetLow() const{ return m_low; }
-
-    /**
-     * <p>A count of the applicable resource types with a low performance risk
-     * rating.</p>
-     */
     inline bool LowHasBeenSet() const { return m_lowHasBeenSet; }
-
-    /**
-     * <p>A count of the applicable resource types with a low performance risk
-     * rating.</p>
-     */
     inline void SetLow(long long value) { m_lowHasBeenSet = true; m_low = value; }
-
-    /**
-     * <p>A count of the applicable resource types with a low performance risk
-     * rating.</p>
-     */
     inline CurrentPerformanceRiskRatings& WithLow(long long value) { SetLow(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A count of the applicable resource types with a very low performance risk
      * rating.</p>
      */
     inline long long GetVeryLow() const{ return m_veryLow; }
-
-    /**
-     * <p>A count of the applicable resource types with a very low performance risk
-     * rating.</p>
-     */
     inline bool VeryLowHasBeenSet() const { return m_veryLowHasBeenSet; }
-
-    /**
-     * <p>A count of the applicable resource types with a very low performance risk
-     * rating.</p>
-     */
     inline void SetVeryLow(long long value) { m_veryLowHasBeenSet = true; m_veryLow = value; }
-
-    /**
-     * <p>A count of the applicable resource types with a very low performance risk
-     * rating.</p>
-     */
     inline CurrentPerformanceRiskRatings& WithVeryLow(long long value) { SetVeryLow(value); return *this;}
-
+    ///@}
   private:
 
     long long m_high;

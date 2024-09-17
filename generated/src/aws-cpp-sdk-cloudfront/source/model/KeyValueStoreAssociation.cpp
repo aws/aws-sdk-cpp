@@ -25,8 +25,8 @@ KeyValueStoreAssociation::KeyValueStoreAssociation() :
 {
 }
 
-KeyValueStoreAssociation::KeyValueStoreAssociation(const XmlNode& xmlNode) : 
-    m_keyValueStoreARNHasBeenSet(false)
+KeyValueStoreAssociation::KeyValueStoreAssociation(const XmlNode& xmlNode)
+  : KeyValueStoreAssociation()
 {
   *this = xmlNode;
 }

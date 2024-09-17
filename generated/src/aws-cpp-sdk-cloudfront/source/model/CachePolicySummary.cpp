@@ -27,10 +27,8 @@ CachePolicySummary::CachePolicySummary() :
 {
 }
 
-CachePolicySummary::CachePolicySummary(const XmlNode& xmlNode) : 
-    m_type(CachePolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_cachePolicyHasBeenSet(false)
+CachePolicySummary::CachePolicySummary(const XmlNode& xmlNode)
+  : CachePolicySummary()
 {
   *this = xmlNode;
 }

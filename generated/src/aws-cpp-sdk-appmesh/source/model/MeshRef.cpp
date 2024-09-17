@@ -30,15 +30,8 @@ MeshRef::MeshRef() :
 {
 }
 
-MeshRef::MeshRef(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+MeshRef::MeshRef(JsonView jsonValue)
+  : MeshRef()
 {
   *this = jsonValue;
 }

@@ -25,18 +25,13 @@ TimeEqualityFilter::TimeEqualityFilter() :
     m_parameterNameHasBeenSet(false),
     m_timeGranularity(TimeGranularity::NOT_SET),
     m_timeGranularityHasBeenSet(false),
-    m_rollingDateHasBeenSet(false)
+    m_rollingDateHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
 }
 
-TimeEqualityFilter::TimeEqualityFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_rollingDateHasBeenSet(false)
+TimeEqualityFilter::TimeEqualityFilter(JsonView jsonValue)
+  : TimeEqualityFilter()
 {
   *this = jsonValue;
 }
@@ -85,6 +80,13 @@ TimeEqualityFilter& TimeEqualityFilter::operator =(JsonView jsonValue)
     m_rollingDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
+  {
+    m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
+
+    m_defaultFilterControlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +125,12 @@ JsonValue TimeEqualityFilter::Jsonize() const
   if(m_rollingDateHasBeenSet)
   {
    payload.WithObject("RollingDate", m_rollingDate.Jsonize());
+
+  }
+
+  if(m_defaultFilterControlConfigurationHasBeenSet)
+  {
+   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
 
   }
 

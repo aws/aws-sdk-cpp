@@ -39,54 +39,20 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Lists the attributes that are configured for ABAC in the specified IAM
      * Identity Center instance.</p>
      */
     inline const Aws::Vector<AccessControlAttribute>& GetAccessControlAttributes() const{ return m_accessControlAttributes; }
-
-    /**
-     * <p>Lists the attributes that are configured for ABAC in the specified IAM
-     * Identity Center instance.</p>
-     */
     inline bool AccessControlAttributesHasBeenSet() const { return m_accessControlAttributesHasBeenSet; }
-
-    /**
-     * <p>Lists the attributes that are configured for ABAC in the specified IAM
-     * Identity Center instance.</p>
-     */
     inline void SetAccessControlAttributes(const Aws::Vector<AccessControlAttribute>& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes = value; }
-
-    /**
-     * <p>Lists the attributes that are configured for ABAC in the specified IAM
-     * Identity Center instance.</p>
-     */
     inline void SetAccessControlAttributes(Aws::Vector<AccessControlAttribute>&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes = std::move(value); }
-
-    /**
-     * <p>Lists the attributes that are configured for ABAC in the specified IAM
-     * Identity Center instance.</p>
-     */
     inline InstanceAccessControlAttributeConfiguration& WithAccessControlAttributes(const Aws::Vector<AccessControlAttribute>& value) { SetAccessControlAttributes(value); return *this;}
-
-    /**
-     * <p>Lists the attributes that are configured for ABAC in the specified IAM
-     * Identity Center instance.</p>
-     */
     inline InstanceAccessControlAttributeConfiguration& WithAccessControlAttributes(Aws::Vector<AccessControlAttribute>&& value) { SetAccessControlAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the attributes that are configured for ABAC in the specified IAM
-     * Identity Center instance.</p>
-     */
     inline InstanceAccessControlAttributeConfiguration& AddAccessControlAttributes(const AccessControlAttribute& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes.push_back(value); return *this; }
-
-    /**
-     * <p>Lists the attributes that are configured for ABAC in the specified IAM
-     * Identity Center instance.</p>
-     */
     inline InstanceAccessControlAttributeConfiguration& AddAccessControlAttributes(AccessControlAttribute&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AccessControlAttribute> m_accessControlAttributes;

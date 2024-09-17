@@ -30,15 +30,8 @@ RecommendationData::RecommendationData() :
 {
 }
 
-RecommendationData::RecommendationData(JsonView jsonValue) : 
-    m_documentHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_relevanceLevel(RelevanceLevel::NOT_SET),
-    m_relevanceLevelHasBeenSet(false),
-    m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false),
-    m_type(RecommendationType::NOT_SET),
-    m_typeHasBeenSet(false)
+RecommendationData::RecommendationData(JsonView jsonValue)
+  : RecommendationData()
 {
   *this = jsonValue;
 }

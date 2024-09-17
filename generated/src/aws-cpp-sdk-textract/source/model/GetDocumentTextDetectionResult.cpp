@@ -22,8 +22,8 @@ GetDocumentTextDetectionResult::GetDocumentTextDetectionResult() :
 {
 }
 
-GetDocumentTextDetectionResult::GetDocumentTextDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+GetDocumentTextDetectionResult::GetDocumentTextDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDocumentTextDetectionResult()
 {
   *this = result;
 }

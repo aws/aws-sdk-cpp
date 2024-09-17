@@ -33,18 +33,8 @@ BrokerSummary::BrokerSummary() :
 {
 }
 
-BrokerSummary::BrokerSummary(JsonView jsonValue) : 
-    m_brokerArnHasBeenSet(false),
-    m_brokerIdHasBeenSet(false),
-    m_brokerNameHasBeenSet(false),
-    m_brokerState(BrokerState::NOT_SET),
-    m_brokerStateHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_deploymentMode(DeploymentMode::NOT_SET),
-    m_deploymentModeHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_hostInstanceTypeHasBeenSet(false)
+BrokerSummary::BrokerSummary(JsonView jsonValue)
+  : BrokerSummary()
 {
   *this = jsonValue;
 }

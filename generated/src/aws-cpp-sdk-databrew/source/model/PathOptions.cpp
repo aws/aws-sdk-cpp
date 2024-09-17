@@ -25,10 +25,8 @@ PathOptions::PathOptions() :
 {
 }
 
-PathOptions::PathOptions(JsonView jsonValue) : 
-    m_lastModifiedDateConditionHasBeenSet(false),
-    m_filesLimitHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+PathOptions::PathOptions(JsonView jsonValue)
+  : PathOptions()
 {
   *this = jsonValue;
 }

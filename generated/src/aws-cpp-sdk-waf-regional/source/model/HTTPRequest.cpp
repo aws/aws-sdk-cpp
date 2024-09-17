@@ -28,13 +28,8 @@ HTTPRequest::HTTPRequest() :
 {
 }
 
-HTTPRequest::HTTPRequest(JsonView jsonValue) : 
-    m_clientIPHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_uRIHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_hTTPVersionHasBeenSet(false),
-    m_headersHasBeenSet(false)
+HTTPRequest::HTTPRequest(JsonView jsonValue)
+  : HTTPRequest()
 {
   *this = jsonValue;
 }

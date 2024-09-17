@@ -32,25 +32,14 @@ Schema::Schema() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_type(SchemaType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_schemaStatusDetailsHasBeenSet(false),
+    m_schemaTypePropertiesHasBeenSet(false)
 {
 }
 
-Schema::Schema(JsonView jsonValue) : 
-    m_columnsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_analysisRuleTypesHasBeenSet(false),
-    m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_type(SchemaType::NOT_SET),
-    m_typeHasBeenSet(false)
+Schema::Schema(JsonView jsonValue)
+  : Schema()
 {
   *this = jsonValue;
 }
@@ -150,6 +139,23 @@ Schema& Schema::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("schemaStatusDetails"))
+  {
+    Aws::Utils::Array<JsonView> schemaStatusDetailsJsonList = jsonValue.GetArray("schemaStatusDetails");
+    for(unsigned schemaStatusDetailsIndex = 0; schemaStatusDetailsIndex < schemaStatusDetailsJsonList.GetLength(); ++schemaStatusDetailsIndex)
+    {
+      m_schemaStatusDetails.push_back(schemaStatusDetailsJsonList[schemaStatusDetailsIndex].AsObject());
+    }
+    m_schemaStatusDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schemaTypeProperties"))
+  {
+    m_schemaTypeProperties = jsonValue.GetObject("schemaTypeProperties");
+
+    m_schemaTypePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -238,6 +244,23 @@ JsonValue Schema::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", SchemaTypeMapper::GetNameForSchemaType(m_type));
+  }
+
+  if(m_schemaStatusDetailsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> schemaStatusDetailsJsonList(m_schemaStatusDetails.size());
+   for(unsigned schemaStatusDetailsIndex = 0; schemaStatusDetailsIndex < schemaStatusDetailsJsonList.GetLength(); ++schemaStatusDetailsIndex)
+   {
+     schemaStatusDetailsJsonList[schemaStatusDetailsIndex].AsObject(m_schemaStatusDetails[schemaStatusDetailsIndex].Jsonize());
+   }
+   payload.WithArray("schemaStatusDetails", std::move(schemaStatusDetailsJsonList));
+
+  }
+
+  if(m_schemaTypePropertiesHasBeenSet)
+  {
+   payload.WithObject("schemaTypeProperties", m_schemaTypeProperties.Jsonize());
+
   }
 
   return payload;

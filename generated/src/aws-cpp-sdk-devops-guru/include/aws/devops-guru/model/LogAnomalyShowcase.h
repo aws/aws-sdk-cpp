@@ -39,46 +39,19 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A list of anomalous log events that may be related. </p>
      */
     inline const Aws::Vector<LogAnomalyClass>& GetLogAnomalyClasses() const{ return m_logAnomalyClasses; }
-
-    /**
-     * <p> A list of anomalous log events that may be related. </p>
-     */
     inline bool LogAnomalyClassesHasBeenSet() const { return m_logAnomalyClassesHasBeenSet; }
-
-    /**
-     * <p> A list of anomalous log events that may be related. </p>
-     */
     inline void SetLogAnomalyClasses(const Aws::Vector<LogAnomalyClass>& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses = value; }
-
-    /**
-     * <p> A list of anomalous log events that may be related. </p>
-     */
     inline void SetLogAnomalyClasses(Aws::Vector<LogAnomalyClass>&& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses = std::move(value); }
-
-    /**
-     * <p> A list of anomalous log events that may be related. </p>
-     */
     inline LogAnomalyShowcase& WithLogAnomalyClasses(const Aws::Vector<LogAnomalyClass>& value) { SetLogAnomalyClasses(value); return *this;}
-
-    /**
-     * <p> A list of anomalous log events that may be related. </p>
-     */
     inline LogAnomalyShowcase& WithLogAnomalyClasses(Aws::Vector<LogAnomalyClass>&& value) { SetLogAnomalyClasses(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of anomalous log events that may be related. </p>
-     */
     inline LogAnomalyShowcase& AddLogAnomalyClasses(const LogAnomalyClass& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses.push_back(value); return *this; }
-
-    /**
-     * <p> A list of anomalous log events that may be related. </p>
-     */
     inline LogAnomalyShowcase& AddLogAnomalyClasses(LogAnomalyClass&& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<LogAnomalyClass> m_logAnomalyClasses;

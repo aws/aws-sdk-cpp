@@ -26,11 +26,8 @@ CustomRoutingAcceleratorAttributes::CustomRoutingAcceleratorAttributes() :
 {
 }
 
-CustomRoutingAcceleratorAttributes::CustomRoutingAcceleratorAttributes(JsonView jsonValue) : 
-    m_flowLogsEnabled(false),
-    m_flowLogsEnabledHasBeenSet(false),
-    m_flowLogsS3BucketHasBeenSet(false),
-    m_flowLogsS3PrefixHasBeenSet(false)
+CustomRoutingAcceleratorAttributes::CustomRoutingAcceleratorAttributes(JsonView jsonValue)
+  : CustomRoutingAcceleratorAttributes()
 {
   *this = jsonValue;
 }

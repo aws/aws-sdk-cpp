@@ -38,6 +38,15 @@
 #include <aws/resource-explorer-2/model/UntagResourceResult.h>
 #include <aws/resource-explorer-2/model/UpdateIndexTypeResult.h>
 #include <aws/resource-explorer-2/model/UpdateViewResult.h>
+#include <aws/resource-explorer-2/model/GetAccountLevelServiceConfigurationRequest.h>
+#include <aws/resource-explorer-2/model/GetDefaultViewRequest.h>
+#include <aws/resource-explorer-2/model/ListSupportedResourceTypesRequest.h>
+#include <aws/resource-explorer-2/model/CreateIndexRequest.h>
+#include <aws/resource-explorer-2/model/ListIndexesRequest.h>
+#include <aws/resource-explorer-2/model/ListViewsRequest.h>
+#include <aws/resource-explorer-2/model/DisassociateDefaultViewRequest.h>
+#include <aws/resource-explorer-2/model/BatchGetViewRequest.h>
+#include <aws/resource-explorer-2/model/GetIndexRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ResourceExplorer2Client header */
 
@@ -72,7 +81,7 @@ namespace Aws
 
   namespace ResourceExplorer2
   {
-    using ResourceExplorer2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ResourceExplorer2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ResourceExplorer2EndpointProviderBase = Aws::ResourceExplorer2::Endpoint::ResourceExplorer2EndpointProviderBase;
     using ResourceExplorer2EndpointProvider = Aws::ResourceExplorer2::Endpoint::ResourceExplorer2EndpointProvider;
 

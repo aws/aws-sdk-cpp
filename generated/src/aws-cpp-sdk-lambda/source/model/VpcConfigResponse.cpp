@@ -27,12 +27,8 @@ VpcConfigResponse::VpcConfigResponse() :
 {
 }
 
-VpcConfigResponse::VpcConfigResponse(JsonView jsonValue) : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ipv6AllowedForDualStack(false),
-    m_ipv6AllowedForDualStackHasBeenSet(false)
+VpcConfigResponse::VpcConfigResponse(JsonView jsonValue)
+  : VpcConfigResponse()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetRegionOptStatusResult::GetRegionOptStatusResult() :
 {
 }
 
-GetRegionOptStatusResult::GetRegionOptStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_regionOptStatus(RegionOptStatus::NOT_SET)
+GetRegionOptStatusResult::GetRegionOptStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRegionOptStatusResult()
 {
   *this = result;
 }

@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API RestorePhoneNumberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The restored phone number.</p>
      */
     inline const PhoneNumber& GetPhoneNumber() const{ return m_phoneNumber; }
-
-    /**
-     * <p>The restored phone number.</p>
-     */
     inline void SetPhoneNumber(const PhoneNumber& value) { m_phoneNumber = value; }
-
-    /**
-     * <p>The restored phone number.</p>
-     */
     inline void SetPhoneNumber(PhoneNumber&& value) { m_phoneNumber = std::move(value); }
-
-    /**
-     * <p>The restored phone number.</p>
-     */
     inline RestorePhoneNumberResult& WithPhoneNumber(const PhoneNumber& value) { SetPhoneNumber(value); return *this;}
-
-    /**
-     * <p>The restored phone number.</p>
-     */
     inline RestorePhoneNumberResult& WithPhoneNumber(PhoneNumber&& value) { SetPhoneNumber(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RestorePhoneNumberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RestorePhoneNumberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RestorePhoneNumberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PhoneNumber m_phoneNumber;

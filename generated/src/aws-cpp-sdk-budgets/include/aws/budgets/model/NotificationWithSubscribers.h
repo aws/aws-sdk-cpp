@@ -41,77 +41,31 @@ namespace Model
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The notification that's associated with a budget.</p>
      */
     inline const Notification& GetNotification() const{ return m_notification; }
-
-    /**
-     * <p>The notification that's associated with a budget.</p>
-     */
     inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
-
-    /**
-     * <p>The notification that's associated with a budget.</p>
-     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
-
-    /**
-     * <p>The notification that's associated with a budget.</p>
-     */
     inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
-
-    /**
-     * <p>The notification that's associated with a budget.</p>
-     */
     inline NotificationWithSubscribers& WithNotification(const Notification& value) { SetNotification(value); return *this;}
-
-    /**
-     * <p>The notification that's associated with a budget.</p>
-     */
     inline NotificationWithSubscribers& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of subscribers who are subscribed to this notification.</p>
      */
     inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
-
-    /**
-     * <p>A list of subscribers who are subscribed to this notification.</p>
-     */
     inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }
-
-    /**
-     * <p>A list of subscribers who are subscribed to this notification.</p>
-     */
     inline void SetSubscribers(const Aws::Vector<Subscriber>& value) { m_subscribersHasBeenSet = true; m_subscribers = value; }
-
-    /**
-     * <p>A list of subscribers who are subscribed to this notification.</p>
-     */
     inline void SetSubscribers(Aws::Vector<Subscriber>&& value) { m_subscribersHasBeenSet = true; m_subscribers = std::move(value); }
-
-    /**
-     * <p>A list of subscribers who are subscribed to this notification.</p>
-     */
     inline NotificationWithSubscribers& WithSubscribers(const Aws::Vector<Subscriber>& value) { SetSubscribers(value); return *this;}
-
-    /**
-     * <p>A list of subscribers who are subscribed to this notification.</p>
-     */
     inline NotificationWithSubscribers& WithSubscribers(Aws::Vector<Subscriber>&& value) { SetSubscribers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of subscribers who are subscribed to this notification.</p>
-     */
     inline NotificationWithSubscribers& AddSubscribers(const Subscriber& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of subscribers who are subscribed to this notification.</p>
-     */
     inline NotificationWithSubscribers& AddSubscribers(Subscriber&& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Notification m_notification;

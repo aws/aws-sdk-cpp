@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIME_API ResetPersonalPINResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The user details and new personal meeting PIN.</p>
      */
     inline const User& GetUser() const{ return m_user; }
-
-    /**
-     * <p>The user details and new personal meeting PIN.</p>
-     */
     inline void SetUser(const User& value) { m_user = value; }
-
-    /**
-     * <p>The user details and new personal meeting PIN.</p>
-     */
     inline void SetUser(User&& value) { m_user = std::move(value); }
-
-    /**
-     * <p>The user details and new personal meeting PIN.</p>
-     */
     inline ResetPersonalPINResult& WithUser(const User& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>The user details and new personal meeting PIN.</p>
-     */
     inline ResetPersonalPINResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ResetPersonalPINResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ResetPersonalPINResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ResetPersonalPINResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     User m_user;

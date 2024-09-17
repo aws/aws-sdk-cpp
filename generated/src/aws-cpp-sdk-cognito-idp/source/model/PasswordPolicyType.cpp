@@ -29,24 +29,15 @@ PasswordPolicyType::PasswordPolicyType() :
     m_requireNumbersHasBeenSet(false),
     m_requireSymbols(false),
     m_requireSymbolsHasBeenSet(false),
+    m_passwordHistorySize(0),
+    m_passwordHistorySizeHasBeenSet(false),
     m_temporaryPasswordValidityDays(0),
     m_temporaryPasswordValidityDaysHasBeenSet(false)
 {
 }
 
-PasswordPolicyType::PasswordPolicyType(JsonView jsonValue) : 
-    m_minimumLength(0),
-    m_minimumLengthHasBeenSet(false),
-    m_requireUppercase(false),
-    m_requireUppercaseHasBeenSet(false),
-    m_requireLowercase(false),
-    m_requireLowercaseHasBeenSet(false),
-    m_requireNumbers(false),
-    m_requireNumbersHasBeenSet(false),
-    m_requireSymbols(false),
-    m_requireSymbolsHasBeenSet(false),
-    m_temporaryPasswordValidityDays(0),
-    m_temporaryPasswordValidityDaysHasBeenSet(false)
+PasswordPolicyType::PasswordPolicyType(JsonView jsonValue)
+  : PasswordPolicyType()
 {
   *this = jsonValue;
 }
@@ -86,6 +77,13 @@ PasswordPolicyType& PasswordPolicyType::operator =(JsonView jsonValue)
     m_requireSymbols = jsonValue.GetBool("RequireSymbols");
 
     m_requireSymbolsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PasswordHistorySize"))
+  {
+    m_passwordHistorySize = jsonValue.GetInteger("PasswordHistorySize");
+
+    m_passwordHistorySizeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TemporaryPasswordValidityDays"))
@@ -129,6 +127,12 @@ JsonValue PasswordPolicyType::Jsonize() const
   if(m_requireSymbolsHasBeenSet)
   {
    payload.WithBool("RequireSymbols", m_requireSymbols);
+
+  }
+
+  if(m_passwordHistorySizeHasBeenSet)
+  {
+   payload.WithInteger("PasswordHistorySize", m_passwordHistorySize);
 
   }
 

@@ -22,8 +22,8 @@ DisassociateEnclaveCertificateIamRoleResponse::DisassociateEnclaveCertificateIam
 {
 }
 
-DisassociateEnclaveCertificateIamRoleResponse::DisassociateEnclaveCertificateIamRoleResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DisassociateEnclaveCertificateIamRoleResponse::DisassociateEnclaveCertificateIamRoleResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DisassociateEnclaveCertificateIamRoleResponse()
 {
   *this = result;
 }

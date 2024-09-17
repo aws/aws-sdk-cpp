@@ -34,95 +34,34 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The system-generated ID of the pull request. To get this ID, use
      * <a>ListPullRequests</a>.</p>
      */
     inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline UpdatePullRequestTitleRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline UpdatePullRequestTitleRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline UpdatePullRequestTitleRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The updated title of the pull request. This replaces the existing title.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
-
-    /**
-     * <p>The updated title of the pull request. This replaces the existing title.</p>
-     */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-
-    /**
-     * <p>The updated title of the pull request. This replaces the existing title.</p>
-     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-
-    /**
-     * <p>The updated title of the pull request. This replaces the existing title.</p>
-     */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-
-    /**
-     * <p>The updated title of the pull request. This replaces the existing title.</p>
-     */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-
-    /**
-     * <p>The updated title of the pull request. This replaces the existing title.</p>
-     */
     inline UpdatePullRequestTitleRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-
-    /**
-     * <p>The updated title of the pull request. This replaces the existing title.</p>
-     */
     inline UpdatePullRequestTitleRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-
-    /**
-     * <p>The updated title of the pull request. This replaces the existing title.</p>
-     */
     inline UpdatePullRequestTitleRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pullRequestId;

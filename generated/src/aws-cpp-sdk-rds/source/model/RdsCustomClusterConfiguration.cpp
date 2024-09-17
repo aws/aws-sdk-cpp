@@ -28,11 +28,8 @@ RdsCustomClusterConfiguration::RdsCustomClusterConfiguration() :
 {
 }
 
-RdsCustomClusterConfiguration::RdsCustomClusterConfiguration(const XmlNode& xmlNode) : 
-    m_interconnectSubnetIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_replicaMode(ReplicaMode::NOT_SET),
-    m_replicaModeHasBeenSet(false)
+RdsCustomClusterConfiguration::RdsCustomClusterConfiguration(const XmlNode& xmlNode)
+  : RdsCustomClusterConfiguration()
 {
   *this = xmlNode;
 }

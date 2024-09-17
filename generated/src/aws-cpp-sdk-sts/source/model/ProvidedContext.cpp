@@ -26,9 +26,8 @@ ProvidedContext::ProvidedContext() :
 {
 }
 
-ProvidedContext::ProvidedContext(const XmlNode& xmlNode) : 
-    m_providerArnHasBeenSet(false),
-    m_contextAssertionHasBeenSet(false)
+ProvidedContext::ProvidedContext(const XmlNode& xmlNode)
+  : ProvidedContext()
 {
   *this = xmlNode;
 }

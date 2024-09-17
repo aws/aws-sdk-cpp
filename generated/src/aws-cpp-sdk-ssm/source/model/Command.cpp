@@ -54,39 +54,8 @@ Command::Command() :
 {
 }
 
-Command::Command(JsonView jsonValue) : 
-    m_commandIdHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_expiresAfterHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_requestedDateTimeHasBeenSet(false),
-    m_status(CommandStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_outputS3RegionHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_targetCount(0),
-    m_targetCountHasBeenSet(false),
-    m_completedCount(0),
-    m_completedCountHasBeenSet(false),
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_deliveryTimedOutCount(0),
-    m_deliveryTimedOutCountHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
+Command::Command(JsonView jsonValue)
+  : Command()
 {
   *this = jsonValue;
 }

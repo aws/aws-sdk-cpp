@@ -24,9 +24,8 @@ CloudWatchConfig::CloudWatchConfig() :
 {
 }
 
-CloudWatchConfig::CloudWatchConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_backTestConfigurationHasBeenSet(false)
+CloudWatchConfig::CloudWatchConfig(JsonView jsonValue)
+  : CloudWatchConfig()
 {
   *this = jsonValue;
 }

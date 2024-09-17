@@ -33,53 +33,27 @@ namespace Model
     AWS_CODECOMMIT_API UpdatePullRequestStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the pull request.</p>
      */
     inline const PullRequest& GetPullRequest() const{ return m_pullRequest; }
-
-    /**
-     * <p>Information about the pull request.</p>
-     */
     inline void SetPullRequest(const PullRequest& value) { m_pullRequest = value; }
-
-    /**
-     * <p>Information about the pull request.</p>
-     */
     inline void SetPullRequest(PullRequest&& value) { m_pullRequest = std::move(value); }
-
-    /**
-     * <p>Information about the pull request.</p>
-     */
     inline UpdatePullRequestStatusResult& WithPullRequest(const PullRequest& value) { SetPullRequest(value); return *this;}
-
-    /**
-     * <p>Information about the pull request.</p>
-     */
     inline UpdatePullRequestStatusResult& WithPullRequest(PullRequest&& value) { SetPullRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePullRequestStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePullRequestStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePullRequestStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PullRequest m_pullRequest;

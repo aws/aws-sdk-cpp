@@ -26,11 +26,8 @@ UnprocessedStandardsControlAssociationUpdate::UnprocessedStandardsControlAssocia
 {
 }
 
-UnprocessedStandardsControlAssociationUpdate::UnprocessedStandardsControlAssociationUpdate(JsonView jsonValue) : 
-    m_standardsControlAssociationUpdateHasBeenSet(false),
-    m_errorCode(UnprocessedErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorReasonHasBeenSet(false)
+UnprocessedStandardsControlAssociationUpdate::UnprocessedStandardsControlAssociationUpdate(JsonView jsonValue)
+  : UnprocessedStandardsControlAssociationUpdate()
 {
   *this = jsonValue;
 }

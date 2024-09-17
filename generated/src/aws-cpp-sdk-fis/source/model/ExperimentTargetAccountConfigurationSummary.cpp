@@ -25,10 +25,8 @@ ExperimentTargetAccountConfigurationSummary::ExperimentTargetAccountConfiguratio
 {
 }
 
-ExperimentTargetAccountConfigurationSummary::ExperimentTargetAccountConfigurationSummary(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ExperimentTargetAccountConfigurationSummary::ExperimentTargetAccountConfigurationSummary(JsonView jsonValue)
+  : ExperimentTargetAccountConfigurationSummary()
 {
   *this = jsonValue;
 }

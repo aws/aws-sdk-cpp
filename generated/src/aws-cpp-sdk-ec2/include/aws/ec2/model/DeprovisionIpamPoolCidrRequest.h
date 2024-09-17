@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A check for whether you have the required permissions for the action without
      * actually making the request and provides an error response. If you have the
@@ -43,113 +44,38 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeprovisionIpamPoolCidrRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
      */
     inline const Aws::String& GetIpamPoolId() const{ return m_ipamPoolId; }
-
-    /**
-     * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-     */
     inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-     */
     inline void SetIpamPoolId(const Aws::String& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = value; }
-
-    /**
-     * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-     */
     inline void SetIpamPoolId(Aws::String&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::move(value); }
-
-    /**
-     * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-     */
     inline void SetIpamPoolId(const char* value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId.assign(value); }
-
-    /**
-     * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-     */
     inline DeprovisionIpamPoolCidrRequest& WithIpamPoolId(const Aws::String& value) { SetIpamPoolId(value); return *this;}
-
-    /**
-     * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-     */
     inline DeprovisionIpamPoolCidrRequest& WithIpamPoolId(Aws::String&& value) { SetIpamPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-     */
     inline DeprovisionIpamPoolCidrRequest& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CIDR which you want to deprovision from the pool.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>The CIDR which you want to deprovision from the pool.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>The CIDR which you want to deprovision from the pool.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>The CIDR which you want to deprovision from the pool.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>The CIDR which you want to deprovision from the pool.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>The CIDR which you want to deprovision from the pool.</p>
-     */
     inline DeprovisionIpamPoolCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>The CIDR which you want to deprovision from the pool.</p>
-     */
     inline DeprovisionIpamPoolCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR which you want to deprovision from the pool.</p>
-     */
     inline DeprovisionIpamPoolCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

@@ -30,13 +30,8 @@ VpcPeeringConnection::VpcPeeringConnection() :
 {
 }
 
-VpcPeeringConnection::VpcPeeringConnection(const XmlNode& xmlNode) : 
-    m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_requesterVpcInfoHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+VpcPeeringConnection::VpcPeeringConnection(const XmlNode& xmlNode)
+  : VpcPeeringConnection()
 {
   *this = xmlNode;
 }

@@ -37,87 +37,33 @@ namespace Model
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the thing.</p>
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
-
-    /**
-     * <p>The ARN of the thing.</p>
-     */
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the thing.</p>
-     */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-
-    /**
-     * <p>The ARN of the thing.</p>
-     */
     inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the thing.</p>
-     */
     inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-
-    /**
-     * <p>The ARN of the thing.</p>
-     */
     inline Thing& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the thing.</p>
-     */
     inline Thing& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the thing.</p>
-     */
     inline Thing& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the thing.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline Thing& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline Thing& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline Thing& WithThingName(const char* value) { SetThingName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingArn;

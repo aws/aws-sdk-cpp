@@ -31,16 +31,8 @@ AwsEcsTaskDetails::AwsEcsTaskDetails() :
 {
 }
 
-AwsEcsTaskDetails::AwsEcsTaskDetails(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_containersHasBeenSet(false)
+AwsEcsTaskDetails::AwsEcsTaskDetails(JsonView jsonValue)
+  : AwsEcsTaskDetails()
 {
   *this = jsonValue;
 }

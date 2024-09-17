@@ -27,12 +27,8 @@ AvailableNumberSummary::AvailableNumberSummary() :
 {
 }
 
-AvailableNumberSummary::AvailableNumberSummary(JsonView jsonValue) : 
-    m_phoneNumberHasBeenSet(false),
-    m_phoneNumberCountryCode(PhoneNumberCountryCode::NOT_SET),
-    m_phoneNumberCountryCodeHasBeenSet(false),
-    m_phoneNumberType(PhoneNumberType::NOT_SET),
-    m_phoneNumberTypeHasBeenSet(false)
+AvailableNumberSummary::AvailableNumberSummary(JsonView jsonValue)
+  : AvailableNumberSummary()
 {
   *this = jsonValue;
 }

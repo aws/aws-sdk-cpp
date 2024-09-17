@@ -22,6 +22,7 @@
 #include <aws/route53-recovery-cluster/model/ListRoutingControlsResult.h>
 #include <aws/route53-recovery-cluster/model/UpdateRoutingControlStateResult.h>
 #include <aws/route53-recovery-cluster/model/UpdateRoutingControlStatesResult.h>
+#include <aws/route53-recovery-cluster/model/ListRoutingControlsRequest.h>
 /* End of service model headers required in Route53RecoveryClusterClient header */
 
 namespace Aws
@@ -55,7 +56,7 @@ namespace Aws
 
   namespace Route53RecoveryCluster
   {
-    using Route53RecoveryClusterClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53RecoveryClusterClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53RecoveryClusterEndpointProviderBase = Aws::Route53RecoveryCluster::Endpoint::Route53RecoveryClusterEndpointProviderBase;
     using Route53RecoveryClusterEndpointProvider = Aws::Route53RecoveryCluster::Endpoint::Route53RecoveryClusterEndpointProvider;
 

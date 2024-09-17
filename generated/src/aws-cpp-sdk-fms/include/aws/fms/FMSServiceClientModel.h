@@ -51,6 +51,15 @@
 #include <aws/fms/model/PutResourceSetResult.h>
 #include <aws/fms/model/TagResourceResult.h>
 #include <aws/fms/model/UntagResourceResult.h>
+#include <aws/fms/model/ListAdminAccountsForOrganizationRequest.h>
+#include <aws/fms/model/ListPoliciesRequest.h>
+#include <aws/fms/model/ListResourceSetsRequest.h>
+#include <aws/fms/model/GetAdminAccountRequest.h>
+#include <aws/fms/model/ListAdminsManagingAccountRequest.h>
+#include <aws/fms/model/DisassociateAdminAccountRequest.h>
+#include <aws/fms/model/ListMemberAccountsRequest.h>
+#include <aws/fms/model/DeleteNotificationChannelRequest.h>
+#include <aws/fms/model/GetNotificationChannelRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in FMSClient header */
 
@@ -85,7 +94,7 @@ namespace Aws
 
   namespace FMS
   {
-    using FMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FMSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FMSEndpointProviderBase = Aws::FMS::Endpoint::FMSEndpointProviderBase;
     using FMSEndpointProvider = Aws::FMS::Endpoint::FMSEndpointProvider;
 

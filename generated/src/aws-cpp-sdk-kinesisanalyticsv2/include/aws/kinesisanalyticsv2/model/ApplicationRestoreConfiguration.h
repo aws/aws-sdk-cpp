@@ -39,37 +39,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies how the application should be restored.</p>
      */
     inline const ApplicationRestoreType& GetApplicationRestoreType() const{ return m_applicationRestoreType; }
-
-    /**
-     * <p>Specifies how the application should be restored.</p>
-     */
     inline bool ApplicationRestoreTypeHasBeenSet() const { return m_applicationRestoreTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies how the application should be restored.</p>
-     */
     inline void SetApplicationRestoreType(const ApplicationRestoreType& value) { m_applicationRestoreTypeHasBeenSet = true; m_applicationRestoreType = value; }
-
-    /**
-     * <p>Specifies how the application should be restored.</p>
-     */
     inline void SetApplicationRestoreType(ApplicationRestoreType&& value) { m_applicationRestoreTypeHasBeenSet = true; m_applicationRestoreType = std::move(value); }
-
-    /**
-     * <p>Specifies how the application should be restored.</p>
-     */
     inline ApplicationRestoreConfiguration& WithApplicationRestoreType(const ApplicationRestoreType& value) { SetApplicationRestoreType(value); return *this;}
-
-    /**
-     * <p>Specifies how the application should be restored.</p>
-     */
     inline ApplicationRestoreConfiguration& WithApplicationRestoreType(ApplicationRestoreType&& value) { SetApplicationRestoreType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of an existing snapshot of application state to use to restart
      * an application. The application uses this value if
@@ -77,63 +59,14 @@ namespace Model
      * <code>ApplicationRestoreType</code>.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
-
-    /**
-     * <p>The identifier of an existing snapshot of application state to use to restart
-     * an application. The application uses this value if
-     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
-     * <code>ApplicationRestoreType</code>.</p>
-     */
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-
-    /**
-     * <p>The identifier of an existing snapshot of application state to use to restart
-     * an application. The application uses this value if
-     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
-     * <code>ApplicationRestoreType</code>.</p>
-     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-
-    /**
-     * <p>The identifier of an existing snapshot of application state to use to restart
-     * an application. The application uses this value if
-     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
-     * <code>ApplicationRestoreType</code>.</p>
-     */
     inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-
-    /**
-     * <p>The identifier of an existing snapshot of application state to use to restart
-     * an application. The application uses this value if
-     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
-     * <code>ApplicationRestoreType</code>.</p>
-     */
     inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-
-    /**
-     * <p>The identifier of an existing snapshot of application state to use to restart
-     * an application. The application uses this value if
-     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
-     * <code>ApplicationRestoreType</code>.</p>
-     */
     inline ApplicationRestoreConfiguration& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-
-    /**
-     * <p>The identifier of an existing snapshot of application state to use to restart
-     * an application. The application uses this value if
-     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
-     * <code>ApplicationRestoreType</code>.</p>
-     */
     inline ApplicationRestoreConfiguration& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of an existing snapshot of application state to use to restart
-     * an application. The application uses this value if
-     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
-     * <code>ApplicationRestoreType</code>.</p>
-     */
     inline ApplicationRestoreConfiguration& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationRestoreType m_applicationRestoreType;

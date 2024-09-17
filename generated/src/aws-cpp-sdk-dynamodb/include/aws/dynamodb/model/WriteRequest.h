@@ -42,67 +42,29 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A request to perform a <code>PutItem</code> operation.</p>
      */
     inline const PutRequest& GetPutRequest() const{ return m_putRequest; }
-
-    /**
-     * <p>A request to perform a <code>PutItem</code> operation.</p>
-     */
     inline bool PutRequestHasBeenSet() const { return m_putRequestHasBeenSet; }
-
-    /**
-     * <p>A request to perform a <code>PutItem</code> operation.</p>
-     */
     inline void SetPutRequest(const PutRequest& value) { m_putRequestHasBeenSet = true; m_putRequest = value; }
-
-    /**
-     * <p>A request to perform a <code>PutItem</code> operation.</p>
-     */
     inline void SetPutRequest(PutRequest&& value) { m_putRequestHasBeenSet = true; m_putRequest = std::move(value); }
-
-    /**
-     * <p>A request to perform a <code>PutItem</code> operation.</p>
-     */
     inline WriteRequest& WithPutRequest(const PutRequest& value) { SetPutRequest(value); return *this;}
-
-    /**
-     * <p>A request to perform a <code>PutItem</code> operation.</p>
-     */
     inline WriteRequest& WithPutRequest(PutRequest&& value) { SetPutRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A request to perform a <code>DeleteItem</code> operation.</p>
      */
     inline const DeleteRequest& GetDeleteRequest() const{ return m_deleteRequest; }
-
-    /**
-     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
-     */
     inline bool DeleteRequestHasBeenSet() const { return m_deleteRequestHasBeenSet; }
-
-    /**
-     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
-     */
     inline void SetDeleteRequest(const DeleteRequest& value) { m_deleteRequestHasBeenSet = true; m_deleteRequest = value; }
-
-    /**
-     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
-     */
     inline void SetDeleteRequest(DeleteRequest&& value) { m_deleteRequestHasBeenSet = true; m_deleteRequest = std::move(value); }
-
-    /**
-     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
-     */
     inline WriteRequest& WithDeleteRequest(const DeleteRequest& value) { SetDeleteRequest(value); return *this;}
-
-    /**
-     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
-     */
     inline WriteRequest& WithDeleteRequest(DeleteRequest&& value) { SetDeleteRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PutRequest m_putRequest;

@@ -24,9 +24,8 @@ AuthRequest::AuthRequest() :
 {
 }
 
-AuthRequest::AuthRequest(JsonView jsonValue) : 
-    m_redirectUriHasBeenSet(false),
-    m_codeHasBeenSet(false)
+AuthRequest::AuthRequest(JsonView jsonValue)
+  : AuthRequest()
 {
   *this = jsonValue;
 }

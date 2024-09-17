@@ -39,108 +39,43 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of a choice.</p>
      */
     inline const ChoiceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of a choice.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of a choice.</p>
-     */
     inline void SetStatus(const ChoiceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of a choice.</p>
-     */
     inline void SetStatus(ChoiceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of a choice.</p>
-     */
     inline ChoiceUpdate& WithStatus(const ChoiceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of a choice.</p>
-     */
     inline ChoiceUpdate& WithStatus(ChoiceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason why a choice is non-applicable to a question in your workload.</p>
      */
     inline const ChoiceReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
-     */
     inline void SetReason(const ChoiceReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
-     */
     inline void SetReason(ChoiceReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
-     */
     inline ChoiceUpdate& WithReason(const ChoiceReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
-     */
     inline ChoiceUpdate& WithReason(ChoiceReason&& value) { SetReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The notes associated with a choice.</p>
      */
     inline const Aws::String& GetNotes() const{ return m_notes; }
-
-    /**
-     * <p>The notes associated with a choice.</p>
-     */
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-
-    /**
-     * <p>The notes associated with a choice.</p>
-     */
     inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-
-    /**
-     * <p>The notes associated with a choice.</p>
-     */
     inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-
-    /**
-     * <p>The notes associated with a choice.</p>
-     */
     inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-
-    /**
-     * <p>The notes associated with a choice.</p>
-     */
     inline ChoiceUpdate& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-
-    /**
-     * <p>The notes associated with a choice.</p>
-     */
     inline ChoiceUpdate& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-
-    /**
-     * <p>The notes associated with a choice.</p>
-     */
     inline ChoiceUpdate& WithNotes(const char* value) { SetNotes(value); return *this;}
-
+    ///@}
   private:
 
     ChoiceStatus m_status;

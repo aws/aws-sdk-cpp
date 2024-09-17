@@ -40,24 +40,15 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ScheduledAutoTuneDetails& GetScheduledAutoTuneDetails() const{ return m_scheduledAutoTuneDetails; }
-
-    
     inline bool ScheduledAutoTuneDetailsHasBeenSet() const { return m_scheduledAutoTuneDetailsHasBeenSet; }
-
-    
     inline void SetScheduledAutoTuneDetails(const ScheduledAutoTuneDetails& value) { m_scheduledAutoTuneDetailsHasBeenSet = true; m_scheduledAutoTuneDetails = value; }
-
-    
     inline void SetScheduledAutoTuneDetails(ScheduledAutoTuneDetails&& value) { m_scheduledAutoTuneDetailsHasBeenSet = true; m_scheduledAutoTuneDetails = std::move(value); }
-
-    
     inline AutoTuneDetails& WithScheduledAutoTuneDetails(const ScheduledAutoTuneDetails& value) { SetScheduledAutoTuneDetails(value); return *this;}
-
-    
     inline AutoTuneDetails& WithScheduledAutoTuneDetails(ScheduledAutoTuneDetails&& value) { SetScheduledAutoTuneDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScheduledAutoTuneDetails m_scheduledAutoTuneDetails;

@@ -24,9 +24,8 @@ StandardsSubscriptionRequest::StandardsSubscriptionRequest() :
 {
 }
 
-StandardsSubscriptionRequest::StandardsSubscriptionRequest(JsonView jsonValue) : 
-    m_standardsArnHasBeenSet(false),
-    m_standardsInputHasBeenSet(false)
+StandardsSubscriptionRequest::StandardsSubscriptionRequest(JsonView jsonValue)
+  : StandardsSubscriptionRequest()
 {
   *this = jsonValue;
 }

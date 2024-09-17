@@ -26,11 +26,8 @@ FaceOccluded::FaceOccluded() :
 {
 }
 
-FaceOccluded::FaceOccluded(JsonView jsonValue) : 
-    m_value(false),
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+FaceOccluded::FaceOccluded(JsonView jsonValue)
+  : FaceOccluded()
 {
   *this = jsonValue;
 }

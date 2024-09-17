@@ -24,9 +24,8 @@ DirectoryInDesiredStateException::DirectoryInDesiredStateException() :
 {
 }
 
-DirectoryInDesiredStateException::DirectoryInDesiredStateException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+DirectoryInDesiredStateException::DirectoryInDesiredStateException(JsonView jsonValue)
+  : DirectoryInDesiredStateException()
 {
   *this = jsonValue;
 }

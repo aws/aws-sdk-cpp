@@ -24,9 +24,8 @@ StringParameter::StringParameter() :
 {
 }
 
-StringParameter::StringParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+StringParameter::StringParameter(JsonView jsonValue)
+  : StringParameter()
 {
   *this = jsonValue;
 }

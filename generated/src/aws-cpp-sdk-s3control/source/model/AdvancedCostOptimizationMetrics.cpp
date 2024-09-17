@@ -26,9 +26,8 @@ AdvancedCostOptimizationMetrics::AdvancedCostOptimizationMetrics() :
 {
 }
 
-AdvancedCostOptimizationMetrics::AdvancedCostOptimizationMetrics(const XmlNode& xmlNode) : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
+AdvancedCostOptimizationMetrics::AdvancedCostOptimizationMetrics(const XmlNode& xmlNode)
+  : AdvancedCostOptimizationMetrics()
 {
   *this = xmlNode;
 }

@@ -37,20 +37,8 @@ StreamingDistributionSummary::StreamingDistributionSummary() :
 {
 }
 
-StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_s3OriginHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_trustedSignersHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode)
+  : StreamingDistributionSummary()
 {
   *this = xmlNode;
 }

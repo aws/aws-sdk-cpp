@@ -24,9 +24,8 @@ ScpActionDefinition::ScpActionDefinition() :
 {
 }
 
-ScpActionDefinition::ScpActionDefinition(JsonView jsonValue) : 
-    m_policyIdHasBeenSet(false),
-    m_targetIdsHasBeenSet(false)
+ScpActionDefinition::ScpActionDefinition(JsonView jsonValue)
+  : ScpActionDefinition()
 {
   *this = jsonValue;
 }

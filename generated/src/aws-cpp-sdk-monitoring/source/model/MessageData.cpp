@@ -26,9 +26,8 @@ MessageData::MessageData() :
 {
 }
 
-MessageData::MessageData(const XmlNode& xmlNode) : 
-    m_codeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+MessageData::MessageData(const XmlNode& xmlNode)
+  : MessageData()
 {
   *this = xmlNode;
 }

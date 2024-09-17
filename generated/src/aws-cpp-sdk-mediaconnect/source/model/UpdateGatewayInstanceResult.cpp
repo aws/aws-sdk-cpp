@@ -22,8 +22,8 @@ UpdateGatewayInstanceResult::UpdateGatewayInstanceResult() :
 {
 }
 
-UpdateGatewayInstanceResult::UpdateGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_bridgePlacement(BridgePlacement::NOT_SET)
+UpdateGatewayInstanceResult::UpdateGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateGatewayInstanceResult()
 {
   *this = result;
 }

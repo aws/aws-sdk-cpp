@@ -41,70 +41,30 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API DescribeDomainNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
      * details about the all nodes on the requested domain.</p>
      */
     inline const Aws::Vector<DomainNodesStatus>& GetDomainNodesStatusList() const{ return m_domainNodesStatusList; }
-
-    /**
-     * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
-     * details about the all nodes on the requested domain.</p>
-     */
     inline void SetDomainNodesStatusList(const Aws::Vector<DomainNodesStatus>& value) { m_domainNodesStatusList = value; }
-
-    /**
-     * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
-     * details about the all nodes on the requested domain.</p>
-     */
     inline void SetDomainNodesStatusList(Aws::Vector<DomainNodesStatus>&& value) { m_domainNodesStatusList = std::move(value); }
-
-    /**
-     * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
-     * details about the all nodes on the requested domain.</p>
-     */
     inline DescribeDomainNodesResult& WithDomainNodesStatusList(const Aws::Vector<DomainNodesStatus>& value) { SetDomainNodesStatusList(value); return *this;}
-
-    /**
-     * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
-     * details about the all nodes on the requested domain.</p>
-     */
     inline DescribeDomainNodesResult& WithDomainNodesStatusList(Aws::Vector<DomainNodesStatus>&& value) { SetDomainNodesStatusList(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
-     * details about the all nodes on the requested domain.</p>
-     */
     inline DescribeDomainNodesResult& AddDomainNodesStatusList(const DomainNodesStatus& value) { m_domainNodesStatusList.push_back(value); return *this; }
-
-    /**
-     * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
-     * details about the all nodes on the requested domain.</p>
-     */
     inline DescribeDomainNodesResult& AddDomainNodesStatusList(DomainNodesStatus&& value) { m_domainNodesStatusList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDomainNodesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDomainNodesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDomainNodesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DomainNodesStatus> m_domainNodesStatusList;

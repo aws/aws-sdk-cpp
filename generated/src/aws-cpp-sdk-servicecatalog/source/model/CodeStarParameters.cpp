@@ -26,11 +26,8 @@ CodeStarParameters::CodeStarParameters() :
 {
 }
 
-CodeStarParameters::CodeStarParameters(JsonView jsonValue) : 
-    m_connectionArnHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_branchHasBeenSet(false),
-    m_artifactPathHasBeenSet(false)
+CodeStarParameters::CodeStarParameters(JsonView jsonValue)
+  : CodeStarParameters()
 {
   *this = jsonValue;
 }

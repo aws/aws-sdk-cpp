@@ -24,9 +24,8 @@ ExpiryEventsConfiguration::ExpiryEventsConfiguration() :
 {
 }
 
-ExpiryEventsConfiguration::ExpiryEventsConfiguration(JsonView jsonValue) : 
-    m_daysBeforeExpiry(0),
-    m_daysBeforeExpiryHasBeenSet(false)
+ExpiryEventsConfiguration::ExpiryEventsConfiguration(JsonView jsonValue)
+  : ExpiryEventsConfiguration()
 {
   *this = jsonValue;
 }

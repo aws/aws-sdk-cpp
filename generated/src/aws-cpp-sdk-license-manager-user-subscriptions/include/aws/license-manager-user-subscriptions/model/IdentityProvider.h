@@ -37,36 +37,17 @@ namespace Model
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that details an Active Directory identity provider.</p>
      */
     inline const ActiveDirectoryIdentityProvider& GetActiveDirectoryIdentityProvider() const{ return m_activeDirectoryIdentityProvider; }
-
-    /**
-     * <p>An object that details an Active Directory identity provider.</p>
-     */
     inline bool ActiveDirectoryIdentityProviderHasBeenSet() const { return m_activeDirectoryIdentityProviderHasBeenSet; }
-
-    /**
-     * <p>An object that details an Active Directory identity provider.</p>
-     */
     inline void SetActiveDirectoryIdentityProvider(const ActiveDirectoryIdentityProvider& value) { m_activeDirectoryIdentityProviderHasBeenSet = true; m_activeDirectoryIdentityProvider = value; }
-
-    /**
-     * <p>An object that details an Active Directory identity provider.</p>
-     */
     inline void SetActiveDirectoryIdentityProvider(ActiveDirectoryIdentityProvider&& value) { m_activeDirectoryIdentityProviderHasBeenSet = true; m_activeDirectoryIdentityProvider = std::move(value); }
-
-    /**
-     * <p>An object that details an Active Directory identity provider.</p>
-     */
     inline IdentityProvider& WithActiveDirectoryIdentityProvider(const ActiveDirectoryIdentityProvider& value) { SetActiveDirectoryIdentityProvider(value); return *this;}
-
-    /**
-     * <p>An object that details an Active Directory identity provider.</p>
-     */
     inline IdentityProvider& WithActiveDirectoryIdentityProvider(ActiveDirectoryIdentityProvider&& value) { SetActiveDirectoryIdentityProvider(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ActiveDirectoryIdentityProvider m_activeDirectoryIdentityProvider;

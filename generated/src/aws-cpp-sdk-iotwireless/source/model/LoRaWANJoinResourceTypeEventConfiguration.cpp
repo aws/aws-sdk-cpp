@@ -24,9 +24,8 @@ LoRaWANJoinResourceTypeEventConfiguration::LoRaWANJoinResourceTypeEventConfigura
 {
 }
 
-LoRaWANJoinResourceTypeEventConfiguration::LoRaWANJoinResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_wirelessDeviceEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceEventTopicHasBeenSet(false)
+LoRaWANJoinResourceTypeEventConfiguration::LoRaWANJoinResourceTypeEventConfiguration(JsonView jsonValue)
+  : LoRaWANJoinResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

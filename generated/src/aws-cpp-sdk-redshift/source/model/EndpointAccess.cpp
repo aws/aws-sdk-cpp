@@ -35,18 +35,8 @@ EndpointAccess::EndpointAccess() :
 {
 }
 
-EndpointAccess::EndpointAccess(const XmlNode& xmlNode) : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_subnetGroupNameHasBeenSet(false),
-    m_endpointStatusHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_endpointCreateTimeHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false)
+EndpointAccess::EndpointAccess(const XmlNode& xmlNode)
+  : EndpointAccess()
 {
   *this = xmlNode;
 }

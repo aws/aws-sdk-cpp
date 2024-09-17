@@ -25,8 +25,8 @@ LicenseConfigurationRequest::LicenseConfigurationRequest() :
 {
 }
 
-LicenseConfigurationRequest::LicenseConfigurationRequest(const XmlNode& xmlNode) : 
-    m_licenseConfigurationArnHasBeenSet(false)
+LicenseConfigurationRequest::LicenseConfigurationRequest(const XmlNode& xmlNode)
+  : LicenseConfigurationRequest()
 {
   *this = xmlNode;
 }

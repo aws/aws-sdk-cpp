@@ -32,46 +32,19 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the invitation to reject.</p>
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
-
-    /**
-     * <p>The unique identifier of the invitation to reject.</p>
-     */
     inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the invitation to reject.</p>
-     */
     inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
-
-    /**
-     * <p>The unique identifier of the invitation to reject.</p>
-     */
     inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the invitation to reject.</p>
-     */
     inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the invitation to reject.</p>
-     */
     inline RejectInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the invitation to reject.</p>
-     */
     inline RejectInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the invitation to reject.</p>
-     */
     inline RejectInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_invitationId;

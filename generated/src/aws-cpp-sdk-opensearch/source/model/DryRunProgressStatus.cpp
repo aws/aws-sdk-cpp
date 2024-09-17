@@ -27,12 +27,8 @@ DryRunProgressStatus::DryRunProgressStatus() :
 {
 }
 
-DryRunProgressStatus::DryRunProgressStatus(JsonView jsonValue) : 
-    m_dryRunIdHasBeenSet(false),
-    m_dryRunStatusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_validationFailuresHasBeenSet(false)
+DryRunProgressStatus::DryRunProgressStatus(JsonView jsonValue)
+  : DryRunProgressStatus()
 {
   *this = jsonValue;
 }

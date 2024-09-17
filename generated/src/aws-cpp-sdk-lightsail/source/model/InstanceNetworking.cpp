@@ -24,9 +24,8 @@ InstanceNetworking::InstanceNetworking() :
 {
 }
 
-InstanceNetworking::InstanceNetworking(JsonView jsonValue) : 
-    m_monthlyTransferHasBeenSet(false),
-    m_portsHasBeenSet(false)
+InstanceNetworking::InstanceNetworking(JsonView jsonValue)
+  : InstanceNetworking()
 {
   *this = jsonValue;
 }

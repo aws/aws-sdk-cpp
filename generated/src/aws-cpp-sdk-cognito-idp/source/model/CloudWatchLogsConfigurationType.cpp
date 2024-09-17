@@ -23,8 +23,8 @@ CloudWatchLogsConfigurationType::CloudWatchLogsConfigurationType() :
 {
 }
 
-CloudWatchLogsConfigurationType::CloudWatchLogsConfigurationType(JsonView jsonValue) : 
-    m_logGroupArnHasBeenSet(false)
+CloudWatchLogsConfigurationType::CloudWatchLogsConfigurationType(JsonView jsonValue)
+  : CloudWatchLogsConfigurationType()
 {
   *this = jsonValue;
 }

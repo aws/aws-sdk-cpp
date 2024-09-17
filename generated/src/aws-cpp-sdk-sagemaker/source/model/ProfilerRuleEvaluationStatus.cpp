@@ -28,13 +28,8 @@ ProfilerRuleEvaluationStatus::ProfilerRuleEvaluationStatus() :
 {
 }
 
-ProfilerRuleEvaluationStatus::ProfilerRuleEvaluationStatus(JsonView jsonValue) : 
-    m_ruleConfigurationNameHasBeenSet(false),
-    m_ruleEvaluationJobArnHasBeenSet(false),
-    m_ruleEvaluationStatus(RuleEvaluationStatus::NOT_SET),
-    m_ruleEvaluationStatusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ProfilerRuleEvaluationStatus::ProfilerRuleEvaluationStatus(JsonView jsonValue)
+  : ProfilerRuleEvaluationStatus()
 {
   *this = jsonValue;
 }

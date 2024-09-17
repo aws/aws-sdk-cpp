@@ -24,9 +24,8 @@ AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute::AwsRdsDbClusterSnapshotDbClus
 {
 }
 
-AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValuesHasBeenSet(false)
+AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute(JsonView jsonValue)
+  : AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute()
 {
   *this = jsonValue;
 }

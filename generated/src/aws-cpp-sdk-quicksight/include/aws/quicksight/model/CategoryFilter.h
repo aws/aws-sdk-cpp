@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/ColumnIdentifier.h>
 #include <aws/quicksight/model/CategoryFilterConfiguration.h>
+#include <aws/quicksight/model/DefaultFilterControlConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -43,116 +44,57 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
      * or template.</p>
      */
     inline const Aws::String& GetFilterId() const{ return m_filterId; }
-
-    /**
-     * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
-     * or template.</p>
-     */
     inline bool FilterIdHasBeenSet() const { return m_filterIdHasBeenSet; }
-
-    /**
-     * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
-     * or template.</p>
-     */
     inline void SetFilterId(const Aws::String& value) { m_filterIdHasBeenSet = true; m_filterId = value; }
-
-    /**
-     * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
-     * or template.</p>
-     */
     inline void SetFilterId(Aws::String&& value) { m_filterIdHasBeenSet = true; m_filterId = std::move(value); }
-
-    /**
-     * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
-     * or template.</p>
-     */
     inline void SetFilterId(const char* value) { m_filterIdHasBeenSet = true; m_filterId.assign(value); }
-
-    /**
-     * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
-     * or template.</p>
-     */
     inline CategoryFilter& WithFilterId(const Aws::String& value) { SetFilterId(value); return *this;}
-
-    /**
-     * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
-     * or template.</p>
-     */
     inline CategoryFilter& WithFilterId(Aws::String&& value) { SetFilterId(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
-     * or template.</p>
-     */
     inline CategoryFilter& WithFilterId(const char* value) { SetFilterId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The column that the filter is applied to.</p>
      */
     inline const ColumnIdentifier& GetColumn() const{ return m_column; }
-
-    /**
-     * <p>The column that the filter is applied to.</p>
-     */
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-
-    /**
-     * <p>The column that the filter is applied to.</p>
-     */
     inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-
-    /**
-     * <p>The column that the filter is applied to.</p>
-     */
     inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-
-    /**
-     * <p>The column that the filter is applied to.</p>
-     */
     inline CategoryFilter& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-
-    /**
-     * <p>The column that the filter is applied to.</p>
-     */
     inline CategoryFilter& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration for a <code>CategoryFilter</code>.</p>
      */
     inline const CategoryFilterConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The configuration for a <code>CategoryFilter</code>.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The configuration for a <code>CategoryFilter</code>.</p>
-     */
     inline void SetConfiguration(const CategoryFilterConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The configuration for a <code>CategoryFilter</code>.</p>
-     */
     inline void SetConfiguration(CategoryFilterConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The configuration for a <code>CategoryFilter</code>.</p>
-     */
     inline CategoryFilter& WithConfiguration(const CategoryFilterConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration for a <code>CategoryFilter</code>.</p>
-     */
     inline CategoryFilter& WithConfiguration(CategoryFilterConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline const DefaultFilterControlConfiguration& GetDefaultFilterControlConfiguration() const{ return m_defaultFilterControlConfiguration; }
+    inline bool DefaultFilterControlConfigurationHasBeenSet() const { return m_defaultFilterControlConfigurationHasBeenSet; }
+    inline void SetDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = value; }
+    inline void SetDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = std::move(value); }
+    inline CategoryFilter& WithDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { SetDefaultFilterControlConfiguration(value); return *this;}
+    inline CategoryFilter& WithDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { SetDefaultFilterControlConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_filterId;
@@ -163,6 +105,9 @@ namespace Model
 
     CategoryFilterConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+    bool m_defaultFilterControlConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

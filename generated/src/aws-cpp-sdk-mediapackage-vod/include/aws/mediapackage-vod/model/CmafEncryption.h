@@ -38,81 +38,31 @@ namespace Model
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * An optional 128-bit, 16-byte hex value represented by a 32-character string,
      * used in conjunction with the key for encrypting blocks. If you don't specify a
      * value, then MediaPackage creates the constant initialization vector (IV).
      */
     inline const Aws::String& GetConstantInitializationVector() const{ return m_constantInitializationVector; }
-
-    /**
-     * An optional 128-bit, 16-byte hex value represented by a 32-character string,
-     * used in conjunction with the key for encrypting blocks. If you don't specify a
-     * value, then MediaPackage creates the constant initialization vector (IV).
-     */
     inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
-
-    /**
-     * An optional 128-bit, 16-byte hex value represented by a 32-character string,
-     * used in conjunction with the key for encrypting blocks. If you don't specify a
-     * value, then MediaPackage creates the constant initialization vector (IV).
-     */
     inline void SetConstantInitializationVector(const Aws::String& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = value; }
-
-    /**
-     * An optional 128-bit, 16-byte hex value represented by a 32-character string,
-     * used in conjunction with the key for encrypting blocks. If you don't specify a
-     * value, then MediaPackage creates the constant initialization vector (IV).
-     */
     inline void SetConstantInitializationVector(Aws::String&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::move(value); }
-
-    /**
-     * An optional 128-bit, 16-byte hex value represented by a 32-character string,
-     * used in conjunction with the key for encrypting blocks. If you don't specify a
-     * value, then MediaPackage creates the constant initialization vector (IV).
-     */
     inline void SetConstantInitializationVector(const char* value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector.assign(value); }
-
-    /**
-     * An optional 128-bit, 16-byte hex value represented by a 32-character string,
-     * used in conjunction with the key for encrypting blocks. If you don't specify a
-     * value, then MediaPackage creates the constant initialization vector (IV).
-     */
     inline CmafEncryption& WithConstantInitializationVector(const Aws::String& value) { SetConstantInitializationVector(value); return *this;}
-
-    /**
-     * An optional 128-bit, 16-byte hex value represented by a 32-character string,
-     * used in conjunction with the key for encrypting blocks. If you don't specify a
-     * value, then MediaPackage creates the constant initialization vector (IV).
-     */
     inline CmafEncryption& WithConstantInitializationVector(Aws::String&& value) { SetConstantInitializationVector(std::move(value)); return *this;}
-
-    /**
-     * An optional 128-bit, 16-byte hex value represented by a 32-character string,
-     * used in conjunction with the key for encrypting blocks. If you don't specify a
-     * value, then MediaPackage creates the constant initialization vector (IV).
-     */
     inline CmafEncryption& WithConstantInitializationVector(const char* value) { SetConstantInitializationVector(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
-
-    
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-
-    
     inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-
-    
     inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-
-    
     inline CmafEncryption& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-
-    
     inline CmafEncryption& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_constantInitializationVector;

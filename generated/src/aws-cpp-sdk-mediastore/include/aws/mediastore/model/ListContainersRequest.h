@@ -34,6 +34,7 @@ namespace Model
     AWS_MEDIASTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Only if you used <code>MaxResults</code> in the first command, enter the
      * token (which was included in the previous response) to obtain the next set of
@@ -41,88 +42,25 @@ namespace Model
      * containers to list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
-     * token (which was included in the previous response) to obtain the next set of
-     * containers. This token is included in a response only if there actually are more
-     * containers to list.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
-     * token (which was included in the previous response) to obtain the next set of
-     * containers. This token is included in a response only if there actually are more
-     * containers to list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
-     * token (which was included in the previous response) to obtain the next set of
-     * containers. This token is included in a response only if there actually are more
-     * containers to list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
-     * token (which was included in the previous response) to obtain the next set of
-     * containers. This token is included in a response only if there actually are more
-     * containers to list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
-     * token (which was included in the previous response) to obtain the next set of
-     * containers. This token is included in a response only if there actually are more
-     * containers to list.</p>
-     */
     inline ListContainersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
-     * token (which was included in the previous response) to obtain the next set of
-     * containers. This token is included in a response only if there actually are more
-     * containers to list.</p>
-     */
     inline ListContainersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
-     * token (which was included in the previous response) to obtain the next set of
-     * containers. This token is included in a response only if there actually are more
-     * containers to list.</p>
-     */
     inline ListContainersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enter the maximum number of containers in the response. Use from 1 to 255
      * characters. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Enter the maximum number of containers in the response. Use from 1 to 255
-     * characters. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Enter the maximum number of containers in the response. Use from 1 to 255
-     * characters. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Enter the maximum number of containers in the response. Use from 1 to 255
-     * characters. </p>
-     */
     inline ListContainersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

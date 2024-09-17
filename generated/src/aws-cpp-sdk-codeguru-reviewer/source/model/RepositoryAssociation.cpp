@@ -36,21 +36,8 @@ RepositoryAssociation::RepositoryAssociation() :
 {
 }
 
-RepositoryAssociation::RepositoryAssociation(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_state(RepositoryAssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_lastUpdatedTimeStampHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_kMSKeyDetailsHasBeenSet(false),
-    m_s3RepositoryDetailsHasBeenSet(false)
+RepositoryAssociation::RepositoryAssociation(JsonView jsonValue)
+  : RepositoryAssociation()
 {
   *this = jsonValue;
 }

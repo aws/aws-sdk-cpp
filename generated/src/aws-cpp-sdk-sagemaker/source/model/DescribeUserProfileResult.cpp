@@ -22,8 +22,8 @@ DescribeUserProfileResult::DescribeUserProfileResult() :
 {
 }
 
-DescribeUserProfileResult::DescribeUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(UserProfileStatus::NOT_SET)
+DescribeUserProfileResult::DescribeUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeUserProfileResult()
 {
   *this = result;
 }

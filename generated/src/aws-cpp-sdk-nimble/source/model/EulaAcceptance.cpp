@@ -27,12 +27,8 @@ EulaAcceptance::EulaAcceptance() :
 {
 }
 
-EulaAcceptance::EulaAcceptance(JsonView jsonValue) : 
-    m_acceptedAtHasBeenSet(false),
-    m_acceptedByHasBeenSet(false),
-    m_accepteeIdHasBeenSet(false),
-    m_eulaAcceptanceIdHasBeenSet(false),
-    m_eulaIdHasBeenSet(false)
+EulaAcceptance::EulaAcceptance(JsonView jsonValue)
+  : EulaAcceptance()
 {
   *this = jsonValue;
 }

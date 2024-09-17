@@ -35,58 +35,29 @@ namespace Model
     AWS_GREENGRASSV2_API GetComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The format of the recipe.</p>
      */
     inline const RecipeOutputFormat& GetRecipeOutputFormat() const{ return m_recipeOutputFormat; }
-
-    /**
-     * <p>The format of the recipe.</p>
-     */
     inline void SetRecipeOutputFormat(const RecipeOutputFormat& value) { m_recipeOutputFormat = value; }
-
-    /**
-     * <p>The format of the recipe.</p>
-     */
     inline void SetRecipeOutputFormat(RecipeOutputFormat&& value) { m_recipeOutputFormat = std::move(value); }
-
-    /**
-     * <p>The format of the recipe.</p>
-     */
     inline GetComponentResult& WithRecipeOutputFormat(const RecipeOutputFormat& value) { SetRecipeOutputFormat(value); return *this;}
-
-    /**
-     * <p>The format of the recipe.</p>
-     */
     inline GetComponentResult& WithRecipeOutputFormat(RecipeOutputFormat&& value) { SetRecipeOutputFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The recipe of the component version.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetRecipe() const{ return m_recipe; }
-
-    /**
-     * <p>The recipe of the component version.</p>
-     */
     inline void SetRecipe(const Aws::Utils::ByteBuffer& value) { m_recipe = value; }
-
-    /**
-     * <p>The recipe of the component version.</p>
-     */
     inline void SetRecipe(Aws::Utils::ByteBuffer&& value) { m_recipe = std::move(value); }
-
-    /**
-     * <p>The recipe of the component version.</p>
-     */
     inline GetComponentResult& WithRecipe(const Aws::Utils::ByteBuffer& value) { SetRecipe(value); return *this;}
-
-    /**
-     * <p>The recipe of the component version.</p>
-     */
     inline GetComponentResult& WithRecipe(Aws::Utils::ByteBuffer&& value) { SetRecipe(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
@@ -94,117 +65,29 @@ namespace Model
      * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the resource. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline GetComponentResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RecipeOutputFormat m_recipeOutputFormat;

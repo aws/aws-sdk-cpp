@@ -25,10 +25,8 @@ EncryptionSetting::EncryptionSetting() :
 {
 }
 
-EncryptionSetting::EncryptionSetting(JsonView jsonValue) : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_botLocaleExportPasswordHasBeenSet(false),
-    m_associatedTranscriptsPasswordHasBeenSet(false)
+EncryptionSetting::EncryptionSetting(JsonView jsonValue)
+  : EncryptionSetting()
 {
   *this = jsonValue;
 }

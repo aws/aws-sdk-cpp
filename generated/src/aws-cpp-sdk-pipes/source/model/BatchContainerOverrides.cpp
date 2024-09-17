@@ -26,11 +26,8 @@ BatchContainerOverrides::BatchContainerOverrides() :
 {
 }
 
-BatchContainerOverrides::BatchContainerOverrides(JsonView jsonValue) : 
-    m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+BatchContainerOverrides::BatchContainerOverrides(JsonView jsonValue)
+  : BatchContainerOverrides()
 {
   *this = jsonValue;
 }

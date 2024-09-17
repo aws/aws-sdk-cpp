@@ -36,30 +36,16 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether input or output was included in the response. Always
      * <code>true</code> for API calls. </p>
      */
     inline bool GetIncluded() const{ return m_included; }
-
-    /**
-     * <p>Indicates whether input or output was included in the response. Always
-     * <code>true</code> for API calls. </p>
-     */
     inline bool IncludedHasBeenSet() const { return m_includedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether input or output was included in the response. Always
-     * <code>true</code> for API calls. </p>
-     */
     inline void SetIncluded(bool value) { m_includedHasBeenSet = true; m_included = value; }
-
-    /**
-     * <p>Indicates whether input or output was included in the response. Always
-     * <code>true</code> for API calls. </p>
-     */
     inline CloudWatchEventsExecutionDataDetails& WithIncluded(bool value) { SetIncluded(value); return *this;}
-
+    ///@}
   private:
 
     bool m_included;

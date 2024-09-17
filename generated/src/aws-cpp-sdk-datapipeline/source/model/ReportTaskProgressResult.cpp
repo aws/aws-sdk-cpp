@@ -22,8 +22,8 @@ ReportTaskProgressResult::ReportTaskProgressResult() :
 {
 }
 
-ReportTaskProgressResult::ReportTaskProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_canceled(false)
+ReportTaskProgressResult::ReportTaskProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ReportTaskProgressResult()
 {
   *this = result;
 }

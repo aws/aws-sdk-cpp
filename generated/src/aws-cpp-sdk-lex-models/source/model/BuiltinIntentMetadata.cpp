@@ -24,9 +24,8 @@ BuiltinIntentMetadata::BuiltinIntentMetadata() :
 {
 }
 
-BuiltinIntentMetadata::BuiltinIntentMetadata(JsonView jsonValue) : 
-    m_signatureHasBeenSet(false),
-    m_supportedLocalesHasBeenSet(false)
+BuiltinIntentMetadata::BuiltinIntentMetadata(JsonView jsonValue)
+  : BuiltinIntentMetadata()
 {
   *this = jsonValue;
 }

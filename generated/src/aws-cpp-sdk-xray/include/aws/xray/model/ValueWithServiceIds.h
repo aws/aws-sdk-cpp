@@ -39,77 +39,31 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Values of the annotation.</p>
      */
     inline const AnnotationValue& GetAnnotationValue() const{ return m_annotationValue; }
-
-    /**
-     * <p>Values of the annotation.</p>
-     */
     inline bool AnnotationValueHasBeenSet() const { return m_annotationValueHasBeenSet; }
-
-    /**
-     * <p>Values of the annotation.</p>
-     */
     inline void SetAnnotationValue(const AnnotationValue& value) { m_annotationValueHasBeenSet = true; m_annotationValue = value; }
-
-    /**
-     * <p>Values of the annotation.</p>
-     */
     inline void SetAnnotationValue(AnnotationValue&& value) { m_annotationValueHasBeenSet = true; m_annotationValue = std::move(value); }
-
-    /**
-     * <p>Values of the annotation.</p>
-     */
     inline ValueWithServiceIds& WithAnnotationValue(const AnnotationValue& value) { SetAnnotationValue(value); return *this;}
-
-    /**
-     * <p>Values of the annotation.</p>
-     */
     inline ValueWithServiceIds& WithAnnotationValue(AnnotationValue&& value) { SetAnnotationValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Services to which the annotation applies.</p>
      */
     inline const Aws::Vector<ServiceId>& GetServiceIds() const{ return m_serviceIds; }
-
-    /**
-     * <p>Services to which the annotation applies.</p>
-     */
     inline bool ServiceIdsHasBeenSet() const { return m_serviceIdsHasBeenSet; }
-
-    /**
-     * <p>Services to which the annotation applies.</p>
-     */
     inline void SetServiceIds(const Aws::Vector<ServiceId>& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = value; }
-
-    /**
-     * <p>Services to which the annotation applies.</p>
-     */
     inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::move(value); }
-
-    /**
-     * <p>Services to which the annotation applies.</p>
-     */
     inline ValueWithServiceIds& WithServiceIds(const Aws::Vector<ServiceId>& value) { SetServiceIds(value); return *this;}
-
-    /**
-     * <p>Services to which the annotation applies.</p>
-     */
     inline ValueWithServiceIds& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>Services to which the annotation applies.</p>
-     */
     inline ValueWithServiceIds& AddServiceIds(const ServiceId& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
-
-    /**
-     * <p>Services to which the annotation applies.</p>
-     */
     inline ValueWithServiceIds& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AnnotationValue m_annotationValue;

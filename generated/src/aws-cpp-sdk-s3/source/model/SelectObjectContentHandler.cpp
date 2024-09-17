@@ -26,10 +26,11 @@ namespace Model
 
     SelectObjectContentHandler::SelectObjectContentHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const SelectObjectContentInitialResponse&)
+        m_onInitialResponse = [&](const SelectObjectContentInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
-                "SelectObjectContent initial response received.");
+                "SelectObjectContent initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onRecordsEvent = [&](const RecordsEvent&)
@@ -112,7 +113,7 @@ namespace Model
         switch (SelectObjectContentEventMapper::GetSelectObjectContentEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
 
-        case SelectObjectContentEventType::INITIAL_RESPONSE: 
+        case SelectObjectContentEventType::INITIAL_RESPONSE:
         {
             auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
             if (!xmlDoc.WasParseSuccessful())
@@ -121,7 +122,7 @@ namespace Model
                 break;
             }
             SelectObjectContentInitialResponse event(xmlDoc.GetRootElement());
-            m_onInitialResponse(event);
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
         case SelectObjectContentEventType::RECORDS:

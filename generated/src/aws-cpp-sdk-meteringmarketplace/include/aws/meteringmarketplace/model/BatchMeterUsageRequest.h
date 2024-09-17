@@ -41,111 +41,36 @@ namespace Model
     AWS_MARKETPLACEMETERING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
      * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
     inline const Aws::Vector<UsageRecord>& GetUsageRecords() const{ return m_usageRecords; }
-
-    /**
-     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
-     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
-     */
     inline bool UsageRecordsHasBeenSet() const { return m_usageRecordsHasBeenSet; }
-
-    /**
-     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
-     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
-     */
     inline void SetUsageRecords(const Aws::Vector<UsageRecord>& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = value; }
-
-    /**
-     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
-     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
-     */
     inline void SetUsageRecords(Aws::Vector<UsageRecord>&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = std::move(value); }
-
-    /**
-     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
-     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
-     */
     inline BatchMeterUsageRequest& WithUsageRecords(const Aws::Vector<UsageRecord>& value) { SetUsageRecords(value); return *this;}
-
-    /**
-     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
-     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
-     */
     inline BatchMeterUsageRequest& WithUsageRecords(Aws::Vector<UsageRecord>&& value) { SetUsageRecords(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
-     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
-     */
     inline BatchMeterUsageRequest& AddUsageRecords(const UsageRecord& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.push_back(value); return *this; }
-
-    /**
-     * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
-     * accepts up to 25 <code>UsageRecords</code> at a time.</p>
-     */
     inline BatchMeterUsageRequest& AddUsageRecords(UsageRecord&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
      * product code should be the same as the one used during the publishing of a new
      * product.</p>
      */
     inline const Aws::String& GetProductCode() const{ return m_productCode; }
-
-    /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
-     */
     inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
-
-    /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
-     */
     inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
-
-    /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
-     */
     inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = std::move(value); }
-
-    /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
-     */
     inline void SetProductCode(const char* value) { m_productCodeHasBeenSet = true; m_productCode.assign(value); }
-
-    /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
-     */
     inline BatchMeterUsageRequest& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
-
-    /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
-     */
     inline BatchMeterUsageRequest& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
-     * product code should be the same as the one used during the publishing of a new
-     * product.</p>
-     */
     inline BatchMeterUsageRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UsageRecord> m_usageRecords;

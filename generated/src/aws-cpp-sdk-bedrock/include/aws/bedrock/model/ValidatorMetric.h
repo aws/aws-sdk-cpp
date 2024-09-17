@@ -35,26 +35,15 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The validation loss associated with this validator.</p>
      */
     inline double GetValidationLoss() const{ return m_validationLoss; }
-
-    /**
-     * <p>The validation loss associated with this validator.</p>
-     */
     inline bool ValidationLossHasBeenSet() const { return m_validationLossHasBeenSet; }
-
-    /**
-     * <p>The validation loss associated with this validator.</p>
-     */
     inline void SetValidationLoss(double value) { m_validationLossHasBeenSet = true; m_validationLoss = value; }
-
-    /**
-     * <p>The validation loss associated with this validator.</p>
-     */
     inline ValidatorMetric& WithValidationLoss(double value) { SetValidationLoss(value); return *this;}
-
+    ///@}
   private:
 
     double m_validationLoss;

@@ -28,13 +28,8 @@ Invite::Invite() :
 {
 }
 
-Invite::Invite(JsonView jsonValue) : 
-    m_inviteIdHasBeenSet(false),
-    m_status(InviteStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_emailStatus(EmailStatus::NOT_SET),
-    m_emailStatusHasBeenSet(false)
+Invite::Invite(JsonView jsonValue)
+  : Invite()
 {
   *this = jsonValue;
 }

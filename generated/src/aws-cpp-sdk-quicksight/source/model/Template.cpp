@@ -28,13 +28,8 @@ Template::Template() :
 {
 }
 
-Template::Template(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+Template::Template(JsonView jsonValue)
+  : Template()
 {
   *this = jsonValue;
 }

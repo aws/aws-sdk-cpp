@@ -26,11 +26,8 @@ VariableImpactExplanation::VariableImpactExplanation() :
 {
 }
 
-VariableImpactExplanation::VariableImpactExplanation(JsonView jsonValue) : 
-    m_eventVariableNameHasBeenSet(false),
-    m_relativeImpactHasBeenSet(false),
-    m_logOddsImpact(0.0),
-    m_logOddsImpactHasBeenSet(false)
+VariableImpactExplanation::VariableImpactExplanation(JsonView jsonValue)
+  : VariableImpactExplanation()
 {
   *this = jsonValue;
 }

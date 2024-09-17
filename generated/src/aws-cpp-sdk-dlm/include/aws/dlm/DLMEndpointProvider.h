@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DLMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DLMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DLMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DLMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
      */
     inline const Aws::String& GetGeneratedTemplateName() const{ return m_generatedTemplateName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-     */
     inline bool GeneratedTemplateNameHasBeenSet() const { return m_generatedTemplateNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-     */
     inline void SetGeneratedTemplateName(const Aws::String& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-     */
     inline void SetGeneratedTemplateName(Aws::String&& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-     */
     inline void SetGeneratedTemplateName(const char* value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-     */
     inline DeleteGeneratedTemplateRequest& WithGeneratedTemplateName(const Aws::String& value) { SetGeneratedTemplateName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-     */
     inline DeleteGeneratedTemplateRequest& WithGeneratedTemplateName(Aws::String&& value) { SetGeneratedTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-     */
     inline DeleteGeneratedTemplateRequest& WithGeneratedTemplateName(const char* value) { SetGeneratedTemplateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_generatedTemplateName;

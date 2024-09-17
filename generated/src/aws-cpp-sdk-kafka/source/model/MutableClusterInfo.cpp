@@ -33,26 +33,13 @@ MutableClusterInfo::MutableClusterInfo() :
     m_encryptionInfoHasBeenSet(false),
     m_connectivityInfoHasBeenSet(false),
     m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false)
+    m_storageModeHasBeenSet(false),
+    m_brokerCountUpdateInfoHasBeenSet(false)
 {
 }
 
-MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) : 
-    m_brokerEBSVolumeInfoHasBeenSet(false),
-    m_configurationInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false)
+MutableClusterInfo::MutableClusterInfo(JsonView jsonValue)
+  : MutableClusterInfo()
 {
   *this = jsonValue;
 }
@@ -146,6 +133,13 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_storageModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("brokerCountUpdateInfo"))
+  {
+    m_brokerCountUpdateInfo = jsonValue.GetObject("brokerCountUpdateInfo");
+
+    m_brokerCountUpdateInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +220,12 @@ JsonValue MutableClusterInfo::Jsonize() const
   if(m_storageModeHasBeenSet)
   {
    payload.WithString("storageMode", StorageModeMapper::GetNameForStorageMode(m_storageMode));
+  }
+
+  if(m_brokerCountUpdateInfoHasBeenSet)
+  {
+   payload.WithObject("brokerCountUpdateInfo", m_brokerCountUpdateInfo.Jsonize());
+
   }
 
   return payload;

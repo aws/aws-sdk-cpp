@@ -26,9 +26,8 @@ RequestProgress::RequestProgress() :
 {
 }
 
-RequestProgress::RequestProgress(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+RequestProgress::RequestProgress(const XmlNode& xmlNode)
+  : RequestProgress()
 {
   *this = xmlNode;
 }

@@ -41,46 +41,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Tags for an Elastic IP address.</p>
      */
     inline const Aws::Vector<IpamPublicAddressTag>& GetEipTags() const{ return m_eipTags; }
-
-    /**
-     * <p>Tags for an Elastic IP address.</p>
-     */
     inline bool EipTagsHasBeenSet() const { return m_eipTagsHasBeenSet; }
-
-    /**
-     * <p>Tags for an Elastic IP address.</p>
-     */
     inline void SetEipTags(const Aws::Vector<IpamPublicAddressTag>& value) { m_eipTagsHasBeenSet = true; m_eipTags = value; }
-
-    /**
-     * <p>Tags for an Elastic IP address.</p>
-     */
     inline void SetEipTags(Aws::Vector<IpamPublicAddressTag>&& value) { m_eipTagsHasBeenSet = true; m_eipTags = std::move(value); }
-
-    /**
-     * <p>Tags for an Elastic IP address.</p>
-     */
     inline IpamPublicAddressTags& WithEipTags(const Aws::Vector<IpamPublicAddressTag>& value) { SetEipTags(value); return *this;}
-
-    /**
-     * <p>Tags for an Elastic IP address.</p>
-     */
     inline IpamPublicAddressTags& WithEipTags(Aws::Vector<IpamPublicAddressTag>&& value) { SetEipTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags for an Elastic IP address.</p>
-     */
     inline IpamPublicAddressTags& AddEipTags(const IpamPublicAddressTag& value) { m_eipTagsHasBeenSet = true; m_eipTags.push_back(value); return *this; }
-
-    /**
-     * <p>Tags for an Elastic IP address.</p>
-     */
     inline IpamPublicAddressTags& AddEipTags(IpamPublicAddressTag&& value) { m_eipTagsHasBeenSet = true; m_eipTags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<IpamPublicAddressTag> m_eipTags;

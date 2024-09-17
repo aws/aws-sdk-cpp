@@ -26,11 +26,8 @@ AwsS3BucketWebsiteConfiguration::AwsS3BucketWebsiteConfiguration() :
 {
 }
 
-AwsS3BucketWebsiteConfiguration::AwsS3BucketWebsiteConfiguration(JsonView jsonValue) : 
-    m_errorDocumentHasBeenSet(false),
-    m_indexDocumentSuffixHasBeenSet(false),
-    m_redirectAllRequestsToHasBeenSet(false),
-    m_routingRulesHasBeenSet(false)
+AwsS3BucketWebsiteConfiguration::AwsS3BucketWebsiteConfiguration(JsonView jsonValue)
+  : AwsS3BucketWebsiteConfiguration()
 {
   *this = jsonValue;
 }

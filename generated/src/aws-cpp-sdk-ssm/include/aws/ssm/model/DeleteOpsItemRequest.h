@@ -34,46 +34,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the OpsItem that you want to delete.</p>
      */
     inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
-
-    /**
-     * <p>The ID of the OpsItem that you want to delete.</p>
-     */
     inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the OpsItem that you want to delete.</p>
-     */
     inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
-
-    /**
-     * <p>The ID of the OpsItem that you want to delete.</p>
-     */
     inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
-
-    /**
-     * <p>The ID of the OpsItem that you want to delete.</p>
-     */
     inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
-
-    /**
-     * <p>The ID of the OpsItem that you want to delete.</p>
-     */
     inline DeleteOpsItemRequest& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
-
-    /**
-     * <p>The ID of the OpsItem that you want to delete.</p>
-     */
     inline DeleteOpsItemRequest& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the OpsItem that you want to delete.</p>
-     */
     inline DeleteOpsItemRequest& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_opsItemId;

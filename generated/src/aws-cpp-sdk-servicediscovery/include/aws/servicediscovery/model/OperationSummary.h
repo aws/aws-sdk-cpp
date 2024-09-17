@@ -41,47 +41,21 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID for an operation.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID for an operation.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID for an operation.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID for an operation.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID for an operation.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID for an operation.</p>
-     */
     inline OperationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID for an operation.</p>
-     */
     inline OperationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for an operation.</p>
-     */
     inline OperationSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
@@ -91,57 +65,12 @@ namespace Model
      * <code>ErrorMessage</code>.</p> </li> </ul>
      */
     inline const OperationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
-     */
     inline void SetStatus(const OperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
-     */
     inline void SetStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
-     */
     inline OperationSummary& WithStatus(const OperationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
-     */
     inline OperationSummary& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

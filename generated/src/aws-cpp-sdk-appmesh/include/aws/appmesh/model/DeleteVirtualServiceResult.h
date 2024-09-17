@@ -38,53 +38,27 @@ namespace Model
     AWS_APPMESH_API DeleteVirtualServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The virtual service that was deleted.</p>
      */
     inline const VirtualServiceData& GetVirtualService() const{ return m_virtualService; }
-
-    /**
-     * <p>The virtual service that was deleted.</p>
-     */
     inline void SetVirtualService(const VirtualServiceData& value) { m_virtualService = value; }
-
-    /**
-     * <p>The virtual service that was deleted.</p>
-     */
     inline void SetVirtualService(VirtualServiceData&& value) { m_virtualService = std::move(value); }
-
-    /**
-     * <p>The virtual service that was deleted.</p>
-     */
     inline DeleteVirtualServiceResult& WithVirtualService(const VirtualServiceData& value) { SetVirtualService(value); return *this;}
-
-    /**
-     * <p>The virtual service that was deleted.</p>
-     */
     inline DeleteVirtualServiceResult& WithVirtualService(VirtualServiceData&& value) { SetVirtualService(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteVirtualServiceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteVirtualServiceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteVirtualServiceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VirtualServiceData m_virtualService;

@@ -6,6 +6,7 @@
 #include <aws/s3/model/CopyObjectRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -76,21 +77,18 @@ bool CopyObjectRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const
 {
   // Header is unused
-  (void) header;
+  AWS_UNREFERENCED_PARAM(header);
 
   auto readPointer = body.tellg();
-  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
-
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
   if (!doc.WasParseSuccessful()) {
-    body.seekg(readPointer);
     return false;
   }
 
   if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
-    body.seekg(readPointer);
     return true;
   }
-  body.seekg(readPointer);
   return false;
 }
 
@@ -125,7 +123,7 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_aCLHasBeenSet)
+  if(m_aCLHasBeenSet && m_aCL != ObjectCannedACL::NOT_SET)
   {
     headers.emplace("x-amz-acl", ObjectCannedACLMapper::GetNameForObjectCannedACL(m_aCL));
   }
@@ -137,7 +135,7 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet)
+  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
   {
     headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
@@ -244,22 +242,22 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     }
   }
 
-  if(m_metadataDirectiveHasBeenSet)
+  if(m_metadataDirectiveHasBeenSet && m_metadataDirective != MetadataDirective::NOT_SET)
   {
     headers.emplace("x-amz-metadata-directive", MetadataDirectiveMapper::GetNameForMetadataDirective(m_metadataDirective));
   }
 
-  if(m_taggingDirectiveHasBeenSet)
+  if(m_taggingDirectiveHasBeenSet && m_taggingDirective != TaggingDirective::NOT_SET)
   {
     headers.emplace("x-amz-tagging-directive", TaggingDirectiveMapper::GetNameForTaggingDirective(m_taggingDirective));
   }
 
-  if(m_serverSideEncryptionHasBeenSet)
+  if(m_serverSideEncryptionHasBeenSet && m_serverSideEncryption != ServerSideEncryption::NOT_SET)
   {
     headers.emplace("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
   }
 
-  if(m_storageClassHasBeenSet)
+  if(m_storageClassHasBeenSet && m_storageClass != StorageClass::NOT_SET)
   {
     headers.emplace("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass));
   }
@@ -334,7 +332,7 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     ss.str("");
   }
 
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
@@ -346,7 +344,7 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     ss.str("");
   }
 
-  if(m_objectLockModeHasBeenSet)
+  if(m_objectLockModeHasBeenSet && m_objectLockMode != ObjectLockMode::NOT_SET)
   {
     headers.emplace("x-amz-object-lock-mode", ObjectLockModeMapper::GetNameForObjectLockMode(m_objectLockMode));
   }
@@ -356,7 +354,7 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_objectLockLegalHoldStatusHasBeenSet)
+  if(m_objectLockLegalHoldStatusHasBeenSet && m_objectLockLegalHoldStatus != ObjectLockLegalHoldStatus::NOT_SET)
   {
     headers.emplace("x-amz-object-lock-legal-hold", ObjectLockLegalHoldStatusMapper::GetNameForObjectLockLegalHoldStatus(m_objectLockLegalHoldStatus));
   }
@@ -386,6 +384,12 @@ CopyObjectRequest::EndpointParameters CopyObjectRequest::GetEndpointContextParam
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (CopySourceHasBeenSet()) {
+        parameters.emplace_back(Aws::String("CopySource"), this->GetCopySource(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (KeyHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Key"), this->GetKey(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
     return parameters;
 }

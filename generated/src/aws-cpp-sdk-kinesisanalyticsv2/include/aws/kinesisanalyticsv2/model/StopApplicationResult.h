@@ -32,28 +32,32 @@ namespace Model
     AWS_KINESISANALYTICSV2_API StopApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
+    /**
+     * Operation ID for tracking StopApplication request
+     */
+    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
+    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
+    inline StopApplicationResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
+    inline StopApplicationResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
+    inline StopApplicationResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
+
+    Aws::String m_operationId;
 
     Aws::String m_requestId;
   };

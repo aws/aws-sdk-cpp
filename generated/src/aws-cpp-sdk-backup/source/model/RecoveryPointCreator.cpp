@@ -26,11 +26,8 @@ RecoveryPointCreator::RecoveryPointCreator() :
 {
 }
 
-RecoveryPointCreator::RecoveryPointCreator(JsonView jsonValue) : 
-    m_backupPlanIdHasBeenSet(false),
-    m_backupPlanArnHasBeenSet(false),
-    m_backupPlanVersionHasBeenSet(false),
-    m_backupRuleIdHasBeenSet(false)
+RecoveryPointCreator::RecoveryPointCreator(JsonView jsonValue)
+  : RecoveryPointCreator()
 {
   *this = jsonValue;
 }

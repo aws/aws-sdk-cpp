@@ -23,8 +23,8 @@ ResourceTagsSearchCriteria::ResourceTagsSearchCriteria() :
 {
 }
 
-ResourceTagsSearchCriteria::ResourceTagsSearchCriteria(JsonView jsonValue) : 
-    m_tagSearchConditionHasBeenSet(false)
+ResourceTagsSearchCriteria::ResourceTagsSearchCriteria(JsonView jsonValue)
+  : ResourceTagsSearchCriteria()
 {
   *this = jsonValue;
 }

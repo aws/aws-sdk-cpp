@@ -54,6 +54,10 @@
 #include <aws/states/model/UpdateMapRunResult.h>
 #include <aws/states/model/UpdateStateMachineResult.h>
 #include <aws/states/model/UpdateStateMachineAliasResult.h>
+#include <aws/states/model/ValidateStateMachineDefinitionResult.h>
+#include <aws/states/model/ListStateMachinesRequest.h>
+#include <aws/states/model/ListExecutionsRequest.h>
+#include <aws/states/model/ListActivitiesRequest.h>
 /* End of service model headers required in SFNClient header */
 
 namespace Aws
@@ -87,7 +91,7 @@ namespace Aws
 
   namespace SFN
   {
-    using SFNClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SFNClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SFNEndpointProviderBase = Aws::SFN::Endpoint::SFNEndpointProviderBase;
     using SFNEndpointProvider = Aws::SFN::Endpoint::SFNEndpointProvider;
 
@@ -130,6 +134,7 @@ namespace Aws
       class UpdateMapRunRequest;
       class UpdateStateMachineRequest;
       class UpdateStateMachineAliasRequest;
+      class ValidateStateMachineDefinitionRequest;
       /* End of service model forward declarations required in SFNClient header */
 
       /* Service model Outcome class definitions */
@@ -169,6 +174,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateMapRunResult, SFNError> UpdateMapRunOutcome;
       typedef Aws::Utils::Outcome<UpdateStateMachineResult, SFNError> UpdateStateMachineOutcome;
       typedef Aws::Utils::Outcome<UpdateStateMachineAliasResult, SFNError> UpdateStateMachineAliasOutcome;
+      typedef Aws::Utils::Outcome<ValidateStateMachineDefinitionResult, SFNError> ValidateStateMachineDefinitionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -208,6 +214,7 @@ namespace Aws
       typedef std::future<UpdateMapRunOutcome> UpdateMapRunOutcomeCallable;
       typedef std::future<UpdateStateMachineOutcome> UpdateStateMachineOutcomeCallable;
       typedef std::future<UpdateStateMachineAliasOutcome> UpdateStateMachineAliasOutcomeCallable;
+      typedef std::future<ValidateStateMachineDefinitionOutcome> ValidateStateMachineDefinitionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -250,6 +257,7 @@ namespace Aws
     typedef std::function<void(const SFNClient*, const Model::UpdateMapRunRequest&, const Model::UpdateMapRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMapRunResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::UpdateStateMachineRequest&, const Model::UpdateStateMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStateMachineResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::UpdateStateMachineAliasRequest&, const Model::UpdateStateMachineAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStateMachineAliasResponseReceivedHandler;
+    typedef std::function<void(const SFNClient*, const Model::ValidateStateMachineDefinitionRequest&, const Model::ValidateStateMachineDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateStateMachineDefinitionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace SFN
 } // namespace Aws

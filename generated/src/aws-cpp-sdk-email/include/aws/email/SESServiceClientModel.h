@@ -81,6 +81,19 @@
 #include <aws/email/model/VerifyDomainDkimResult.h>
 #include <aws/email/model/VerifyDomainIdentityResult.h>
 #include <aws/email/model/VerifyEmailIdentityResult.h>
+#include <aws/email/model/UpdateAccountSendingEnabledRequest.h>
+#include <aws/email/model/DescribeActiveReceiptRuleSetRequest.h>
+#include <aws/email/model/ListVerifiedEmailAddressesRequest.h>
+#include <aws/email/model/SetActiveReceiptRuleSetRequest.h>
+#include <aws/email/model/GetSendStatisticsRequest.h>
+#include <aws/email/model/ListCustomVerificationEmailTemplatesRequest.h>
+#include <aws/email/model/GetAccountSendingEnabledRequest.h>
+#include <aws/email/model/ListTemplatesRequest.h>
+#include <aws/email/model/ListReceiptRuleSetsRequest.h>
+#include <aws/email/model/GetSendQuotaRequest.h>
+#include <aws/email/model/ListConfigurationSetsRequest.h>
+#include <aws/email/model/ListReceiptFiltersRequest.h>
+#include <aws/email/model/ListIdentitiesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SESClient header */
 
@@ -115,7 +128,7 @@ namespace Aws
 
   namespace SES
   {
-    using SESClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SESClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SESEndpointProviderBase = Aws::SES::Endpoint::SESEndpointProviderBase;
     using SESEndpointProvider = Aws::SES::Endpoint::SESEndpointProvider;
 

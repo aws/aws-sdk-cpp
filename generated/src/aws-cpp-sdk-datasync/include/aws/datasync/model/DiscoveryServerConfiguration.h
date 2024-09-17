@@ -38,75 +38,30 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The domain name or IP address of your storage system's management
      * interface.</p>
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
-
-    /**
-     * <p>The domain name or IP address of your storage system's management
-     * interface.</p>
-     */
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
-
-    /**
-     * <p>The domain name or IP address of your storage system's management
-     * interface.</p>
-     */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
-
-    /**
-     * <p>The domain name or IP address of your storage system's management
-     * interface.</p>
-     */
     inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
-
-    /**
-     * <p>The domain name or IP address of your storage system's management
-     * interface.</p>
-     */
     inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
-
-    /**
-     * <p>The domain name or IP address of your storage system's management
-     * interface.</p>
-     */
     inline DiscoveryServerConfiguration& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
-
-    /**
-     * <p>The domain name or IP address of your storage system's management
-     * interface.</p>
-     */
     inline DiscoveryServerConfiguration& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name or IP address of your storage system's management
-     * interface.</p>
-     */
     inline DiscoveryServerConfiguration& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network port for accessing the storage system's management interface.</p>
      */
     inline int GetServerPort() const{ return m_serverPort; }
-
-    /**
-     * <p>The network port for accessing the storage system's management interface.</p>
-     */
     inline bool ServerPortHasBeenSet() const { return m_serverPortHasBeenSet; }
-
-    /**
-     * <p>The network port for accessing the storage system's management interface.</p>
-     */
     inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
-
-    /**
-     * <p>The network port for accessing the storage system's management interface.</p>
-     */
     inline DiscoveryServerConfiguration& WithServerPort(int value) { SetServerPort(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverHostname;

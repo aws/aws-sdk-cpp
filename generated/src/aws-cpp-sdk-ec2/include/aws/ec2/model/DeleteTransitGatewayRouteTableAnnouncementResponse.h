@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteTransitGatewayRouteTableAnnouncementResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Provides details about a deleted transit gateway route table.</p>
      */
     inline const TransitGatewayRouteTableAnnouncement& GetTransitGatewayRouteTableAnnouncement() const{ return m_transitGatewayRouteTableAnnouncement; }
-
-    /**
-     * <p>Provides details about a deleted transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableAnnouncement(const TransitGatewayRouteTableAnnouncement& value) { m_transitGatewayRouteTableAnnouncement = value; }
-
-    /**
-     * <p>Provides details about a deleted transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableAnnouncement(TransitGatewayRouteTableAnnouncement&& value) { m_transitGatewayRouteTableAnnouncement = std::move(value); }
-
-    /**
-     * <p>Provides details about a deleted transit gateway route table.</p>
-     */
     inline DeleteTransitGatewayRouteTableAnnouncementResponse& WithTransitGatewayRouteTableAnnouncement(const TransitGatewayRouteTableAnnouncement& value) { SetTransitGatewayRouteTableAnnouncement(value); return *this;}
-
-    /**
-     * <p>Provides details about a deleted transit gateway route table.</p>
-     */
     inline DeleteTransitGatewayRouteTableAnnouncementResponse& WithTransitGatewayRouteTableAnnouncement(TransitGatewayRouteTableAnnouncement&& value) { SetTransitGatewayRouteTableAnnouncement(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteTransitGatewayRouteTableAnnouncementResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteTransitGatewayRouteTableAnnouncementResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayRouteTableAnnouncement m_transitGatewayRouteTableAnnouncement;

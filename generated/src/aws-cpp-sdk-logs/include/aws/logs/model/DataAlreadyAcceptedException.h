@@ -41,30 +41,17 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetExpectedSequenceToken() const{ return m_expectedSequenceToken; }
-
-    
     inline bool ExpectedSequenceTokenHasBeenSet() const { return m_expectedSequenceTokenHasBeenSet; }
-
-    
     inline void SetExpectedSequenceToken(const Aws::String& value) { m_expectedSequenceTokenHasBeenSet = true; m_expectedSequenceToken = value; }
-
-    
     inline void SetExpectedSequenceToken(Aws::String&& value) { m_expectedSequenceTokenHasBeenSet = true; m_expectedSequenceToken = std::move(value); }
-
-    
     inline void SetExpectedSequenceToken(const char* value) { m_expectedSequenceTokenHasBeenSet = true; m_expectedSequenceToken.assign(value); }
-
-    
     inline DataAlreadyAcceptedException& WithExpectedSequenceToken(const Aws::String& value) { SetExpectedSequenceToken(value); return *this;}
-
-    
     inline DataAlreadyAcceptedException& WithExpectedSequenceToken(Aws::String&& value) { SetExpectedSequenceToken(std::move(value)); return *this;}
-
-    
     inline DataAlreadyAcceptedException& WithExpectedSequenceToken(const char* value) { SetExpectedSequenceToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_expectedSequenceToken;

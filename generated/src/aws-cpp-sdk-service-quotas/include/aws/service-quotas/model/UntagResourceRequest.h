@@ -35,6 +35,7 @@ namespace Model
     AWS_SERVICEQUOTAS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
      * You can get this information by using the Service Quotas console, or by listing
@@ -45,130 +46,29 @@ namespace Model
      * Amazon Web Services API operation.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
-     * You can get this information by using the Service Quotas console, or by listing
-     * the quotas using the <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * CLI command or the <a
-     * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * Amazon Web Services API operation.</p>
-     */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
-     * You can get this information by using the Service Quotas console, or by listing
-     * the quotas using the <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * CLI command or the <a
-     * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * Amazon Web Services API operation.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
-     * You can get this information by using the Service Quotas console, or by listing
-     * the quotas using the <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * CLI command or the <a
-     * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * Amazon Web Services API operation.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
-     * You can get this information by using the Service Quotas console, or by listing
-     * the quotas using the <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * CLI command or the <a
-     * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * Amazon Web Services API operation.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
-     * You can get this information by using the Service Quotas console, or by listing
-     * the quotas using the <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * CLI command or the <a
-     * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * Amazon Web Services API operation.</p>
-     */
     inline UntagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
-     * You can get this information by using the Service Quotas console, or by listing
-     * the quotas using the <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * CLI command or the <a
-     * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * Amazon Web Services API operation.</p>
-     */
     inline UntagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag.
-     * You can get this information by using the Service Quotas console, or by listing
-     * the quotas using the <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * CLI command or the <a
-     * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * Amazon Web Services API operation.</p>
-     */
     inline UntagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The keys of the tags that you want to remove from the resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The keys of the tags that you want to remove from the resource.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

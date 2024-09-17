@@ -26,11 +26,8 @@ ExpenseDetection::ExpenseDetection() :
 {
 }
 
-ExpenseDetection::ExpenseDetection(JsonView jsonValue) : 
-    m_textHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+ExpenseDetection::ExpenseDetection(JsonView jsonValue)
+  : ExpenseDetection()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ListSSHPublicKeysResult::ListSSHPublicKeysResult() :
 {
 }
 
-ListSSHPublicKeysResult::ListSSHPublicKeysResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListSSHPublicKeysResult::ListSSHPublicKeysResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListSSHPublicKeysResult()
 {
   *this = result;
 }

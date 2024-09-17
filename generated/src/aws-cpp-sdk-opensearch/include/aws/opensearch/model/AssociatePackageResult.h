@@ -39,53 +39,27 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API AssociatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about a package that is associated with a domain.</p>
      */
     inline const DomainPackageDetails& GetDomainPackageDetails() const{ return m_domainPackageDetails; }
-
-    /**
-     * <p>Information about a package that is associated with a domain.</p>
-     */
     inline void SetDomainPackageDetails(const DomainPackageDetails& value) { m_domainPackageDetails = value; }
-
-    /**
-     * <p>Information about a package that is associated with a domain.</p>
-     */
     inline void SetDomainPackageDetails(DomainPackageDetails&& value) { m_domainPackageDetails = std::move(value); }
-
-    /**
-     * <p>Information about a package that is associated with a domain.</p>
-     */
     inline AssociatePackageResult& WithDomainPackageDetails(const DomainPackageDetails& value) { SetDomainPackageDetails(value); return *this;}
-
-    /**
-     * <p>Information about a package that is associated with a domain.</p>
-     */
     inline AssociatePackageResult& WithDomainPackageDetails(DomainPackageDetails&& value) { SetDomainPackageDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociatePackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociatePackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociatePackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainPackageDetails m_domainPackageDetails;

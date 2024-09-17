@@ -30,15 +30,8 @@ OperatingSystem::OperatingSystem() :
 {
 }
 
-OperatingSystem::OperatingSystem(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_configurationManagersHasBeenSet(false),
-    m_reportedNameHasBeenSet(false),
-    m_reportedVersionHasBeenSet(false),
-    m_supported(false),
-    m_supportedHasBeenSet(false)
+OperatingSystem::OperatingSystem(JsonView jsonValue)
+  : OperatingSystem()
 {
   *this = jsonValue;
 }

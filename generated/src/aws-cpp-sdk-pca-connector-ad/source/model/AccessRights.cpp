@@ -26,11 +26,8 @@ AccessRights::AccessRights() :
 {
 }
 
-AccessRights::AccessRights(JsonView jsonValue) : 
-    m_autoEnroll(AccessRight::NOT_SET),
-    m_autoEnrollHasBeenSet(false),
-    m_enroll(AccessRight::NOT_SET),
-    m_enrollHasBeenSet(false)
+AccessRights::AccessRights(JsonView jsonValue)
+  : AccessRights()
 {
   *this = jsonValue;
 }

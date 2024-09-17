@@ -40,63 +40,23 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>A number describing the error programmatically.</p>
          
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * 
-            <p>A number describing the error programmatically.</p>
-         
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * 
-            <p>A number describing the error programmatically.</p>
-         
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * 
-            <p>A number describing the error programmatically.</p>
-         
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * 
-            <p>A number describing the error programmatically.</p>
-         
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * 
-            <p>A number describing the error programmatically.</p>
-         
-     */
     inline ErrorInfo& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * 
-            <p>A number describing the error programmatically.</p>
-         
-     */
     inline ErrorInfo& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>A number describing the error programmatically.</p>
-         
-     */
     inline ErrorInfo& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>An optional field to provide more details about the error.</p>
@@ -104,63 +64,14 @@ namespace Model
      *        
      */
     inline const Aws::String& GetErrorString() const{ return m_errorString; }
-
-    /**
-     * 
-            <p>An optional field to provide more details about the error.</p>
- 
-     *        
-     */
     inline bool ErrorStringHasBeenSet() const { return m_errorStringHasBeenSet; }
-
-    /**
-     * 
-            <p>An optional field to provide more details about the error.</p>
- 
-     *        
-     */
     inline void SetErrorString(const Aws::String& value) { m_errorStringHasBeenSet = true; m_errorString = value; }
-
-    /**
-     * 
-            <p>An optional field to provide more details about the error.</p>
- 
-     *        
-     */
     inline void SetErrorString(Aws::String&& value) { m_errorStringHasBeenSet = true; m_errorString = std::move(value); }
-
-    /**
-     * 
-            <p>An optional field to provide more details about the error.</p>
- 
-     *        
-     */
     inline void SetErrorString(const char* value) { m_errorStringHasBeenSet = true; m_errorString.assign(value); }
-
-    /**
-     * 
-            <p>An optional field to provide more details about the error.</p>
- 
-     *        
-     */
     inline ErrorInfo& WithErrorString(const Aws::String& value) { SetErrorString(value); return *this;}
-
-    /**
-     * 
-            <p>An optional field to provide more details about the error.</p>
- 
-     *        
-     */
     inline ErrorInfo& WithErrorString(Aws::String&& value) { SetErrorString(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>An optional field to provide more details about the error.</p>
- 
-     *        
-     */
     inline ErrorInfo& WithErrorString(const char* value) { SetErrorString(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_errorCode;

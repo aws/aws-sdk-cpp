@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ChimeSDKIdentityClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChimeSDKIdentityClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ChimeSDKIdentityClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKIdentityBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

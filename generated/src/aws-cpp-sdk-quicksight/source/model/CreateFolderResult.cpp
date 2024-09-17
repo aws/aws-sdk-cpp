@@ -22,8 +22,8 @@ CreateFolderResult::CreateFolderResult() :
 {
 }
 
-CreateFolderResult::CreateFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateFolderResult::CreateFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateFolderResult()
 {
   *this = result;
 }

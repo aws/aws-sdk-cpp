@@ -23,8 +23,8 @@ AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails::AwsEc2LaunchTemplateD
 {
 }
 
-AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails()
 {
   *this = jsonValue;
 }

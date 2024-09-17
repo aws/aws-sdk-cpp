@@ -33,26 +33,13 @@ RelativeDatesFilter::RelativeDatesFilter() :
     m_parameterNameHasBeenSet(false),
     m_nullOption(FilterNullOption::NOT_SET),
     m_nullOptionHasBeenSet(false),
-    m_excludePeriodConfigurationHasBeenSet(false)
+    m_excludePeriodConfigurationHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
 }
 
-RelativeDatesFilter::RelativeDatesFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_anchorDateConfigurationHasBeenSet(false),
-    m_minimumGranularity(TimeGranularity::NOT_SET),
-    m_minimumGranularityHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_relativeDateType(RelativeDateType::NOT_SET),
-    m_relativeDateTypeHasBeenSet(false),
-    m_relativeDateValue(0),
-    m_relativeDateValueHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false),
-    m_excludePeriodConfigurationHasBeenSet(false)
+RelativeDatesFilter::RelativeDatesFilter(JsonView jsonValue)
+  : RelativeDatesFilter()
 {
   *this = jsonValue;
 }
@@ -129,6 +116,13 @@ RelativeDatesFilter& RelativeDatesFilter::operator =(JsonView jsonValue)
     m_excludePeriodConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
+  {
+    m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
+
+    m_defaultFilterControlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -189,6 +183,12 @@ JsonValue RelativeDatesFilter::Jsonize() const
   if(m_excludePeriodConfigurationHasBeenSet)
   {
    payload.WithObject("ExcludePeriodConfiguration", m_excludePeriodConfiguration.Jsonize());
+
+  }
+
+  if(m_defaultFilterControlConfigurationHasBeenSet)
+  {
+   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
 
   }
 

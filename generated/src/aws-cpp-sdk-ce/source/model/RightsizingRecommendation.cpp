@@ -29,14 +29,8 @@ RightsizingRecommendation::RightsizingRecommendation() :
 {
 }
 
-RightsizingRecommendation::RightsizingRecommendation(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_currentInstanceHasBeenSet(false),
-    m_rightsizingType(RightsizingType::NOT_SET),
-    m_rightsizingTypeHasBeenSet(false),
-    m_modifyRecommendationDetailHasBeenSet(false),
-    m_terminateRecommendationDetailHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false)
+RightsizingRecommendation::RightsizingRecommendation(JsonView jsonValue)
+  : RightsizingRecommendation()
 {
   *this = jsonValue;
 }

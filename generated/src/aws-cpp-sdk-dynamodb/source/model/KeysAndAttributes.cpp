@@ -28,13 +28,8 @@ KeysAndAttributes::KeysAndAttributes() :
 {
 }
 
-KeysAndAttributes::KeysAndAttributes(JsonView jsonValue) : 
-    m_keysHasBeenSet(false),
-    m_attributesToGetHasBeenSet(false),
-    m_consistentRead(false),
-    m_consistentReadHasBeenSet(false),
-    m_projectionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false)
+KeysAndAttributes::KeysAndAttributes(JsonView jsonValue)
+  : KeysAndAttributes()
 {
   *this = jsonValue;
 }

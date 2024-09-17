@@ -33,58 +33,28 @@ namespace Model
     AWS_S3_API GetPublicAccessBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The <code>PublicAccessBlock</code> configuration currently in effect for this
      * Amazon S3 bucket.</p>
      */
     inline const PublicAccessBlockConfiguration& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
-
-    /**
-     * <p>The <code>PublicAccessBlock</code> configuration currently in effect for this
-     * Amazon S3 bucket.</p>
-     */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfiguration = value; }
-
-    /**
-     * <p>The <code>PublicAccessBlock</code> configuration currently in effect for this
-     * Amazon S3 bucket.</p>
-     */
     inline void SetPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockConfiguration = std::move(value); }
-
-    /**
-     * <p>The <code>PublicAccessBlock</code> configuration currently in effect for this
-     * Amazon S3 bucket.</p>
-     */
     inline GetPublicAccessBlockResult& WithPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlockConfiguration(value); return *this;}
-
-    /**
-     * <p>The <code>PublicAccessBlock</code> configuration currently in effect for this
-     * Amazon S3 bucket.</p>
-     */
     inline GetPublicAccessBlockResult& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPublicAccessBlockResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPublicAccessBlockResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPublicAccessBlockResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;

@@ -16,7 +16,8 @@ PutLogEventsRequest::PutLogEventsRequest() :
     m_logGroupNameHasBeenSet(false),
     m_logStreamNameHasBeenSet(false),
     m_logEventsHasBeenSet(false),
-    m_sequenceTokenHasBeenSet(false)
+    m_sequenceTokenHasBeenSet(false),
+    m_entityHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String PutLogEventsRequest::SerializePayload() const
   if(m_sequenceTokenHasBeenSet)
   {
    payload.WithString("sequenceToken", m_sequenceToken);
+
+  }
+
+  if(m_entityHasBeenSet)
+  {
+   payload.WithObject("entity", m_entity.Jsonize());
 
   }
 

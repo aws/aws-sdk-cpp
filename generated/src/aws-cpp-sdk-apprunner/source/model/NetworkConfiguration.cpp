@@ -26,11 +26,8 @@ NetworkConfiguration::NetworkConfiguration() :
 {
 }
 
-NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) : 
-    m_egressConfigurationHasBeenSet(false),
-    m_ingressConfigurationHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
+  : NetworkConfiguration()
 {
   *this = jsonValue;
 }

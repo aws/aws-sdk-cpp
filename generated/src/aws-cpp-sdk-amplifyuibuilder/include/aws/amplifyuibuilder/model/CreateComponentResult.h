@@ -33,53 +33,27 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API CreateComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes the configuration of the new component.</p>
      */
     inline const Component& GetEntity() const{ return m_entity; }
-
-    /**
-     * <p>Describes the configuration of the new component.</p>
-     */
     inline void SetEntity(const Component& value) { m_entity = value; }
-
-    /**
-     * <p>Describes the configuration of the new component.</p>
-     */
     inline void SetEntity(Component&& value) { m_entity = std::move(value); }
-
-    /**
-     * <p>Describes the configuration of the new component.</p>
-     */
     inline CreateComponentResult& WithEntity(const Component& value) { SetEntity(value); return *this;}
-
-    /**
-     * <p>Describes the configuration of the new component.</p>
-     */
     inline CreateComponentResult& WithEntity(Component&& value) { SetEntity(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Component m_entity;

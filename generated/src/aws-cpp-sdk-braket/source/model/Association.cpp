@@ -25,10 +25,8 @@ Association::Association() :
 {
 }
 
-Association::Association(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_type(AssociationType::NOT_SET),
-    m_typeHasBeenSet(false)
+Association::Association(JsonView jsonValue)
+  : Association()
 {
   *this = jsonValue;
 }

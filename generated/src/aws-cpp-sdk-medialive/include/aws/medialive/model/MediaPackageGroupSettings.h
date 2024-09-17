@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * MediaPackage channel destination.
      */
     inline const OutputLocationRef& GetDestination() const{ return m_destination; }
-
-    /**
-     * MediaPackage channel destination.
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * MediaPackage channel destination.
-     */
     inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * MediaPackage channel destination.
-     */
     inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * MediaPackage channel destination.
-     */
     inline MediaPackageGroupSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-
-    /**
-     * MediaPackage channel destination.
-     */
     inline MediaPackageGroupSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OutputLocationRef m_destination;

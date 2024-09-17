@@ -25,10 +25,8 @@ GeneratorDetails::GeneratorDetails() :
 {
 }
 
-GeneratorDetails::GeneratorDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+GeneratorDetails::GeneratorDetails(JsonView jsonValue)
+  : GeneratorDetails()
 {
   *this = jsonValue;
 }

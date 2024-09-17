@@ -40,87 +40,33 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      */
     inline const Aws::String& GetId3() const{ return m_id3; }
-
-    /**
-     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-     */
     inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }
-
-    /**
-     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-     */
     inline void SetId3(const Aws::String& value) { m_id3HasBeenSet = true; m_id3 = value; }
-
-    /**
-     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-     */
     inline void SetId3(Aws::String&& value) { m_id3HasBeenSet = true; m_id3 = std::move(value); }
-
-    /**
-     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-     */
     inline void SetId3(const char* value) { m_id3HasBeenSet = true; m_id3.assign(value); }
-
-    /**
-     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-     */
     inline Id3Insertion& WithId3(const Aws::String& value) { SetId3(value); return *this;}
-
-    /**
-     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-     */
     inline Id3Insertion& WithId3(Aws::String&& value) { SetId3(std::move(value)); return *this;}
-
-    /**
-     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-     */
     inline Id3Insertion& WithId3(const char* value) { SetId3(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      */
     inline const Aws::String& GetTimecode() const{ return m_timecode; }
-
-    /**
-     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-     */
     inline bool TimecodeHasBeenSet() const { return m_timecodeHasBeenSet; }
-
-    /**
-     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-     */
     inline void SetTimecode(const Aws::String& value) { m_timecodeHasBeenSet = true; m_timecode = value; }
-
-    /**
-     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-     */
     inline void SetTimecode(Aws::String&& value) { m_timecodeHasBeenSet = true; m_timecode = std::move(value); }
-
-    /**
-     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-     */
     inline void SetTimecode(const char* value) { m_timecodeHasBeenSet = true; m_timecode.assign(value); }
-
-    /**
-     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-     */
     inline Id3Insertion& WithTimecode(const Aws::String& value) { SetTimecode(value); return *this;}
-
-    /**
-     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-     */
     inline Id3Insertion& WithTimecode(Aws::String&& value) { SetTimecode(std::move(value)); return *this;}
-
-    /**
-     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-     */
     inline Id3Insertion& WithTimecode(const char* value) { SetTimecode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id3;

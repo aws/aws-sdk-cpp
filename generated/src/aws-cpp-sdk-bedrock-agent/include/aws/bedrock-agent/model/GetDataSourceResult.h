@@ -33,43 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API GetDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>Contains details about the data source.</p>
+     */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
-
-    
     inline void SetDataSource(const DataSource& value) { m_dataSource = value; }
-
-    
     inline void SetDataSource(DataSource&& value) { m_dataSource = std::move(value); }
-
-    
     inline GetDataSourceResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-
-    
     inline GetDataSourceResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDataSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDataSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDataSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DataSource m_dataSource;

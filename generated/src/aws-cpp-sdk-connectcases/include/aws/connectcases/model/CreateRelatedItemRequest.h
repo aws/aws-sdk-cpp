@@ -35,180 +35,69 @@ namespace Model
     AWS_CONNECTCASES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier of the case.</p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline CreateRelatedItemRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline CreateRelatedItemRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline CreateRelatedItemRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The content of a related item to be created.</p>
      */
     inline const RelatedItemInputContent& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The content of a related item to be created.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The content of a related item to be created.</p>
-     */
     inline void SetContent(const RelatedItemInputContent& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The content of a related item to be created.</p>
-     */
     inline void SetContent(RelatedItemInputContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The content of a related item to be created.</p>
-     */
     inline CreateRelatedItemRequest& WithContent(const RelatedItemInputContent& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The content of a related item to be created.</p>
-     */
     inline CreateRelatedItemRequest& WithContent(RelatedItemInputContent&& value) { SetContent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline CreateRelatedItemRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline CreateRelatedItemRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline CreateRelatedItemRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the creator of the related item.</p>
      */
     inline const UserUnion& GetPerformedBy() const{ return m_performedBy; }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline void SetPerformedBy(const UserUnion& value) { m_performedByHasBeenSet = true; m_performedBy = value; }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline void SetPerformedBy(UserUnion&& value) { m_performedByHasBeenSet = true; m_performedBy = std::move(value); }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline CreateRelatedItemRequest& WithPerformedBy(const UserUnion& value) { SetPerformedBy(value); return *this;}
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline CreateRelatedItemRequest& WithPerformedBy(UserUnion&& value) { SetPerformedBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of a related item.</p>
      */
     inline const RelatedItemType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of a related item.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of a related item.</p>
-     */
     inline void SetType(const RelatedItemType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of a related item.</p>
-     */
     inline void SetType(RelatedItemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of a related item.</p>
-     */
     inline CreateRelatedItemRequest& WithType(const RelatedItemType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of a related item.</p>
-     */
     inline CreateRelatedItemRequest& WithType(RelatedItemType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_caseId;

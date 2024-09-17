@@ -37,83 +37,32 @@ namespace Model
     AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> Specifies whether profiling is enabled or disabled for a profiling group.
      * </p>
      */
     inline const AgentOrchestrationConfig& GetAgentOrchestrationConfig() const{ return m_agentOrchestrationConfig; }
-
-    /**
-     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
-     * </p>
-     */
     inline bool AgentOrchestrationConfigHasBeenSet() const { return m_agentOrchestrationConfigHasBeenSet; }
-
-    /**
-     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
-     * </p>
-     */
     inline void SetAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = value; }
-
-    /**
-     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
-     * </p>
-     */
     inline void SetAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = std::move(value); }
-
-    /**
-     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
-     * </p>
-     */
     inline UpdateProfilingGroupRequest& WithAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { SetAgentOrchestrationConfig(value); return *this;}
-
-    /**
-     * <p> Specifies whether profiling is enabled or disabled for a profiling group.
-     * </p>
-     */
     inline UpdateProfilingGroupRequest& WithAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { SetAgentOrchestrationConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the profiling group to update.</p>
      */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
-
-    /**
-     * <p>The name of the profiling group to update.</p>
-     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the profiling group to update.</p>
-     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-
-    /**
-     * <p>The name of the profiling group to update.</p>
-     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the profiling group to update.</p>
-     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the profiling group to update.</p>
-     */
     inline UpdateProfilingGroupRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the profiling group to update.</p>
-     */
     inline UpdateProfilingGroupRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the profiling group to update.</p>
-     */
     inline UpdateProfilingGroupRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
-
+    ///@}
   private:
 
     AgentOrchestrationConfig m_agentOrchestrationConfig;

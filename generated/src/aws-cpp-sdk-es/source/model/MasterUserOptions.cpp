@@ -25,10 +25,8 @@ MasterUserOptions::MasterUserOptions() :
 {
 }
 
-MasterUserOptions::MasterUserOptions(JsonView jsonValue) : 
-    m_masterUserARNHasBeenSet(false),
-    m_masterUserNameHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false)
+MasterUserOptions::MasterUserOptions(JsonView jsonValue)
+  : MasterUserOptions()
 {
   *this = jsonValue;
 }

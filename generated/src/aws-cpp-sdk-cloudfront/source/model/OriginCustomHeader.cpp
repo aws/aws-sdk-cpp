@@ -26,9 +26,8 @@ OriginCustomHeader::OriginCustomHeader() :
 {
 }
 
-OriginCustomHeader::OriginCustomHeader(const XmlNode& xmlNode) : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
+OriginCustomHeader::OriginCustomHeader(const XmlNode& xmlNode)
+  : OriginCustomHeader()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ PolicyVersionIdentifier::PolicyVersionIdentifier() :
 {
 }
 
-PolicyVersionIdentifier::PolicyVersionIdentifier(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_policyVersionIdHasBeenSet(false)
+PolicyVersionIdentifier::PolicyVersionIdentifier(JsonView jsonValue)
+  : PolicyVersionIdentifier()
 {
   *this = jsonValue;
 }

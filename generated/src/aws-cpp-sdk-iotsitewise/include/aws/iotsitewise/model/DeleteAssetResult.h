@@ -33,58 +33,28 @@ namespace Model
     AWS_IOTSITEWISE_API DeleteAssetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the asset, which contains a state (<code>DELETING</code> after
      * successfully calling this operation) and any error message.</p>
      */
     inline const AssetStatus& GetAssetStatus() const{ return m_assetStatus; }
-
-    /**
-     * <p>The status of the asset, which contains a state (<code>DELETING</code> after
-     * successfully calling this operation) and any error message.</p>
-     */
     inline void SetAssetStatus(const AssetStatus& value) { m_assetStatus = value; }
-
-    /**
-     * <p>The status of the asset, which contains a state (<code>DELETING</code> after
-     * successfully calling this operation) and any error message.</p>
-     */
     inline void SetAssetStatus(AssetStatus&& value) { m_assetStatus = std::move(value); }
-
-    /**
-     * <p>The status of the asset, which contains a state (<code>DELETING</code> after
-     * successfully calling this operation) and any error message.</p>
-     */
     inline DeleteAssetResult& WithAssetStatus(const AssetStatus& value) { SetAssetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the asset, which contains a state (<code>DELETING</code> after
-     * successfully calling this operation) and any error message.</p>
-     */
     inline DeleteAssetResult& WithAssetStatus(AssetStatus&& value) { SetAssetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteAssetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteAssetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteAssetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AssetStatus m_assetStatus;

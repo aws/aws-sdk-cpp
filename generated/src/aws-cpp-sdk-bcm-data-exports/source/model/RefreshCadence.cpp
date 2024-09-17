@@ -24,9 +24,8 @@ RefreshCadence::RefreshCadence() :
 {
 }
 
-RefreshCadence::RefreshCadence(JsonView jsonValue) : 
-    m_frequency(FrequencyOption::NOT_SET),
-    m_frequencyHasBeenSet(false)
+RefreshCadence::RefreshCadence(JsonView jsonValue)
+  : RefreshCadence()
 {
   *this = jsonValue;
 }

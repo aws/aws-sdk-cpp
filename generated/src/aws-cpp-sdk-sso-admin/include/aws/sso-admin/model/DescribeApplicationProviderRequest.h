@@ -34,46 +34,19 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the application provider for which you want details.</p>
      */
     inline const Aws::String& GetApplicationProviderArn() const{ return m_applicationProviderArn; }
-
-    /**
-     * <p>Specifies the ARN of the application provider for which you want details.</p>
-     */
     inline bool ApplicationProviderArnHasBeenSet() const { return m_applicationProviderArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the application provider for which you want details.</p>
-     */
     inline void SetApplicationProviderArn(const Aws::String& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the application provider for which you want details.</p>
-     */
     inline void SetApplicationProviderArn(Aws::String&& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the application provider for which you want details.</p>
-     */
     inline void SetApplicationProviderArn(const char* value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the application provider for which you want details.</p>
-     */
     inline DescribeApplicationProviderRequest& WithApplicationProviderArn(const Aws::String& value) { SetApplicationProviderArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application provider for which you want details.</p>
-     */
     inline DescribeApplicationProviderRequest& WithApplicationProviderArn(Aws::String&& value) { SetApplicationProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application provider for which you want details.</p>
-     */
     inline DescribeApplicationProviderRequest& WithApplicationProviderArn(const char* value) { SetApplicationProviderArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationProviderArn;

@@ -5,6 +5,7 @@
 
 #include <aws/glue/model/Table.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/TableStatus.h>
 
 #include <utility>
 
@@ -41,37 +42,26 @@ Table::Table() :
     m_targetTableHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
     m_versionIdHasBeenSet(false),
-    m_federatedTableHasBeenSet(false)
+    m_federatedTableHasBeenSet(false),
+    m_viewDefinitionHasBeenSet(false),
+    m_isMultiDialectView(false),
+    m_isMultiDialectViewHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
-Table::Table(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false),
-    m_retention(0),
-    m_retentionHasBeenSet(false),
-    m_storageDescriptorHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_viewOriginalTextHasBeenSet(false),
-    m_viewExpandedTextHasBeenSet(false),
-    m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_federatedTableHasBeenSet(false)
+Table::Table(JsonView jsonValue)
+  : Table()
 {
   *this = jsonValue;
 }
+
+const TableStatus& Table::GetStatus() const{ return *m_status; }
+bool Table::StatusHasBeenSet() const { return m_statusHasBeenSet; }
+void Table::SetStatus(const TableStatus& value) { m_statusHasBeenSet = true; m_status = Aws::MakeShared<TableStatus>("Table", value); }
+void Table::SetStatus(TableStatus&& value) { m_statusHasBeenSet = true; m_status = Aws::MakeShared<TableStatus>("Table", std::move(value)); }
+Table& Table::WithStatus(const TableStatus& value) { SetStatus(value); return *this;}
+Table& Table::WithStatus(TableStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 Table& Table::operator =(JsonView jsonValue)
 {
@@ -228,6 +218,27 @@ Table& Table::operator =(JsonView jsonValue)
     m_federatedTableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ViewDefinition"))
+  {
+    m_viewDefinition = jsonValue.GetObject("ViewDefinition");
+
+    m_viewDefinitionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsMultiDialectView"))
+  {
+    m_isMultiDialectView = jsonValue.GetBool("IsMultiDialectView");
+
+    m_isMultiDialectViewHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = Aws::MakeShared<TableStatus>("Table", jsonValue.GetObject("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -364,6 +375,24 @@ JsonValue Table::Jsonize() const
   if(m_federatedTableHasBeenSet)
   {
    payload.WithObject("FederatedTable", m_federatedTable.Jsonize());
+
+  }
+
+  if(m_viewDefinitionHasBeenSet)
+  {
+   payload.WithObject("ViewDefinition", m_viewDefinition.Jsonize());
+
+  }
+
+  if(m_isMultiDialectViewHasBeenSet)
+  {
+   payload.WithBool("IsMultiDialectView", m_isMultiDialectView);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithObject("Status", m_status->Jsonize());
 
   }
 

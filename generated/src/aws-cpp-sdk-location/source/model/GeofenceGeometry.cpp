@@ -5,6 +5,7 @@
 
 #include <aws/location/model/GeofenceGeometry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -19,27 +20,20 @@ namespace Model
 {
 
 GeofenceGeometry::GeofenceGeometry() : 
+    m_polygonHasBeenSet(false),
     m_circleHasBeenSet(false),
-    m_polygonHasBeenSet(false)
+    m_geobufHasBeenSet(false)
 {
 }
 
-GeofenceGeometry::GeofenceGeometry(JsonView jsonValue) : 
-    m_circleHasBeenSet(false),
-    m_polygonHasBeenSet(false)
+GeofenceGeometry::GeofenceGeometry(JsonView jsonValue)
+  : GeofenceGeometry()
 {
   *this = jsonValue;
 }
 
 GeofenceGeometry& GeofenceGeometry::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Circle"))
-  {
-    m_circle = jsonValue.GetObject("Circle");
-
-    m_circleHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Polygon"))
   {
     Aws::Utils::Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
@@ -64,18 +58,25 @@ GeofenceGeometry& GeofenceGeometry::operator =(JsonView jsonValue)
     m_polygonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Circle"))
+  {
+    m_circle = jsonValue.GetObject("Circle");
+
+    m_circleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Geobuf"))
+  {
+    m_geobuf = HashingUtils::Base64Decode(jsonValue.GetString("Geobuf"));
+    m_geobufHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue GeofenceGeometry::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_circleHasBeenSet)
-  {
-   payload.WithObject("Circle", m_circle.Jsonize());
-
-  }
 
   if(m_polygonHasBeenSet)
   {
@@ -96,6 +97,17 @@ JsonValue GeofenceGeometry::Jsonize() const
    }
    payload.WithArray("Polygon", std::move(polygonJsonList));
 
+  }
+
+  if(m_circleHasBeenSet)
+  {
+   payload.WithObject("Circle", m_circle.Jsonize());
+
+  }
+
+  if(m_geobufHasBeenSet)
+  {
+   payload.WithString("Geobuf", HashingUtils::Base64Encode(m_geobuf));
   }
 
   return payload;

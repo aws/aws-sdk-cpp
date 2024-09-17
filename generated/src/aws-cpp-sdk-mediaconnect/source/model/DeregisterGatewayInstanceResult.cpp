@@ -22,8 +22,8 @@ DeregisterGatewayInstanceResult::DeregisterGatewayInstanceResult() :
 {
 }
 
-DeregisterGatewayInstanceResult::DeregisterGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_instanceState(InstanceState::NOT_SET)
+DeregisterGatewayInstanceResult::DeregisterGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeregisterGatewayInstanceResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ BatchDetachFromIndex::BatchDetachFromIndex() :
 {
 }
 
-BatchDetachFromIndex::BatchDetachFromIndex(JsonView jsonValue) : 
-    m_indexReferenceHasBeenSet(false),
-    m_targetReferenceHasBeenSet(false)
+BatchDetachFromIndex::BatchDetachFromIndex(JsonView jsonValue)
+  : BatchDetachFromIndex()
 {
   *this = jsonValue;
 }

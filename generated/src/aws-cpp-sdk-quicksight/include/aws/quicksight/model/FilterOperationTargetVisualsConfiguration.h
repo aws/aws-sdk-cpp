@@ -39,42 +39,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration of the same-sheet target visuals that you want to be
      * filtered.</p>
      */
     inline const SameSheetTargetVisualConfiguration& GetSameSheetTargetVisualConfiguration() const{ return m_sameSheetTargetVisualConfiguration; }
-
-    /**
-     * <p>The configuration of the same-sheet target visuals that you want to be
-     * filtered.</p>
-     */
     inline bool SameSheetTargetVisualConfigurationHasBeenSet() const { return m_sameSheetTargetVisualConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration of the same-sheet target visuals that you want to be
-     * filtered.</p>
-     */
     inline void SetSameSheetTargetVisualConfiguration(const SameSheetTargetVisualConfiguration& value) { m_sameSheetTargetVisualConfigurationHasBeenSet = true; m_sameSheetTargetVisualConfiguration = value; }
-
-    /**
-     * <p>The configuration of the same-sheet target visuals that you want to be
-     * filtered.</p>
-     */
     inline void SetSameSheetTargetVisualConfiguration(SameSheetTargetVisualConfiguration&& value) { m_sameSheetTargetVisualConfigurationHasBeenSet = true; m_sameSheetTargetVisualConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration of the same-sheet target visuals that you want to be
-     * filtered.</p>
-     */
     inline FilterOperationTargetVisualsConfiguration& WithSameSheetTargetVisualConfiguration(const SameSheetTargetVisualConfiguration& value) { SetSameSheetTargetVisualConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration of the same-sheet target visuals that you want to be
-     * filtered.</p>
-     */
     inline FilterOperationTargetVisualsConfiguration& WithSameSheetTargetVisualConfiguration(SameSheetTargetVisualConfiguration&& value) { SetSameSheetTargetVisualConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SameSheetTargetVisualConfiguration m_sameSheetTargetVisualConfiguration;

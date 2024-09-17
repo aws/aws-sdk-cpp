@@ -46,36 +46,17 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the ranges of valid values for the hyperparameters.</p>
      */
     inline const ParameterRanges& GetParameterRanges() const{ return m_parameterRanges; }
-
-    /**
-     * <p>Specifies the ranges of valid values for the hyperparameters.</p>
-     */
     inline bool ParameterRangesHasBeenSet() const { return m_parameterRangesHasBeenSet; }
-
-    /**
-     * <p>Specifies the ranges of valid values for the hyperparameters.</p>
-     */
     inline void SetParameterRanges(const ParameterRanges& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = value; }
-
-    /**
-     * <p>Specifies the ranges of valid values for the hyperparameters.</p>
-     */
     inline void SetParameterRanges(ParameterRanges&& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = std::move(value); }
-
-    /**
-     * <p>Specifies the ranges of valid values for the hyperparameters.</p>
-     */
     inline HyperParameterTuningJobConfig& WithParameterRanges(const ParameterRanges& value) { SetParameterRanges(value); return *this;}
-
-    /**
-     * <p>Specifies the ranges of valid values for the hyperparameters.</p>
-     */
     inline HyperParameterTuningJobConfig& WithParameterRanges(ParameterRanges&& value) { SetParameterRanges(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ParameterRanges m_parameterRanges;

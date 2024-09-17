@@ -23,8 +23,8 @@ ProtectedQueryResultConfiguration::ProtectedQueryResultConfiguration() :
 {
 }
 
-ProtectedQueryResultConfiguration::ProtectedQueryResultConfiguration(JsonView jsonValue) : 
-    m_outputConfigurationHasBeenSet(false)
+ProtectedQueryResultConfiguration::ProtectedQueryResultConfiguration(JsonView jsonValue)
+  : ProtectedQueryResultConfiguration()
 {
   *this = jsonValue;
 }

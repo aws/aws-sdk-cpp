@@ -32,17 +32,8 @@ ServiceUpdate::ServiceUpdate() :
 {
 }
 
-ServiceUpdate::ServiceUpdate(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ServiceUpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(ServiceUpdateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nodesUpdatedHasBeenSet(false),
-    m_autoUpdateStartDateHasBeenSet(false)
+ServiceUpdate::ServiceUpdate(JsonView jsonValue)
+  : ServiceUpdate()
 {
   *this = jsonValue;
 }

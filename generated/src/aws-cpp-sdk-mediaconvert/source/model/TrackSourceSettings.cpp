@@ -24,9 +24,8 @@ TrackSourceSettings::TrackSourceSettings() :
 {
 }
 
-TrackSourceSettings::TrackSourceSettings(JsonView jsonValue) : 
-    m_trackNumber(0),
-    m_trackNumberHasBeenSet(false)
+TrackSourceSettings::TrackSourceSettings(JsonView jsonValue)
+  : TrackSourceSettings()
 {
   *this = jsonValue;
 }

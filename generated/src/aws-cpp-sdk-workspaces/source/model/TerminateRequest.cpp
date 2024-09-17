@@ -23,8 +23,8 @@ TerminateRequest::TerminateRequest() :
 {
 }
 
-TerminateRequest::TerminateRequest(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false)
+TerminateRequest::TerminateRequest(JsonView jsonValue)
+  : TerminateRequest()
 {
   *this = jsonValue;
 }

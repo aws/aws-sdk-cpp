@@ -26,11 +26,8 @@ ParameterTextFieldControl::ParameterTextFieldControl() :
 {
 }
 
-ParameterTextFieldControl::ParameterTextFieldControl(JsonView jsonValue) : 
-    m_parameterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+ParameterTextFieldControl::ParameterTextFieldControl(JsonView jsonValue)
+  : ParameterTextFieldControl()
 {
   *this = jsonValue;
 }

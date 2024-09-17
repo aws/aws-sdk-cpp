@@ -34,19 +34,8 @@ InstanceAccessDetails::InstanceAccessDetails() :
 {
 }
 
-InstanceAccessDetails::InstanceAccessDetails(JsonView jsonValue) : 
-    m_certKeyHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_passwordDataHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_protocol(InstanceAccessProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_hostKeysHasBeenSet(false)
+InstanceAccessDetails::InstanceAccessDetails(JsonView jsonValue)
+  : InstanceAccessDetails()
 {
   *this = jsonValue;
 }

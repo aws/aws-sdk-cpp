@@ -24,9 +24,8 @@ LFTagError::LFTagError() :
 {
 }
 
-LFTagError::LFTagError(JsonView jsonValue) : 
-    m_lFTagHasBeenSet(false),
-    m_errorHasBeenSet(false)
+LFTagError::LFTagError(JsonView jsonValue)
+  : LFTagError()
 {
   *this = jsonValue;
 }

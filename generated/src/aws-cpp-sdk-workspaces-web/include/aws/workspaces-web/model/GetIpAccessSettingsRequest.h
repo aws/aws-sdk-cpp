@@ -32,46 +32,19 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the IP access settings.</p>
      */
     inline const Aws::String& GetIpAccessSettingsArn() const{ return m_ipAccessSettingsArn; }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline void SetIpAccessSettingsArn(const Aws::String& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline void SetIpAccessSettingsArn(Aws::String&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline void SetIpAccessSettingsArn(const char* value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline GetIpAccessSettingsRequest& WithIpAccessSettingsArn(const Aws::String& value) { SetIpAccessSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline GetIpAccessSettingsRequest& WithIpAccessSettingsArn(Aws::String&& value) { SetIpAccessSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline GetIpAccessSettingsRequest& WithIpAccessSettingsArn(const char* value) { SetIpAccessSettingsArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipAccessSettingsArn;

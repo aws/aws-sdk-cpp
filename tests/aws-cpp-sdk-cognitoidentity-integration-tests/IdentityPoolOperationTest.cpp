@@ -57,6 +57,7 @@ public:
     {}
 
     std::shared_ptr<CognitoIdentityClient> client;
+    Aws::String testTrace;
 
 protected:
     void SetUp()
@@ -72,6 +73,11 @@ protected:
     void TearDown()
     {
         client = nullptr;
+        if (::testing::Test::HasFailure())
+        {
+            std::cout << "Test traces: " << testTrace << "\n";
+        }
+        testTrace.erase();
     }
 
     static bool WaitForIdentitiesToBeActive(const Aws::String& identityPoolId, const std::shared_ptr<CognitoIdentityClient>& client)
@@ -138,6 +144,7 @@ protected:
 
     const Aws::Vector<IdentityPoolShortDescription> GetAllPoolsWithPrefix(Aws::String prefix)
     {
+        std::this_thread::sleep_for(std::chrono::seconds(1)); // let previous operations to complete
         ListIdentityPoolsRequest request;
         request.WithMaxResults(50);
         ListIdentityPoolsOutcome outcome = client->ListIdentityPools(request);
@@ -150,8 +157,11 @@ protected:
         auto& identityPools = outcome.GetResult().GetIdentityPools();
         Aws::Vector<IdentityPoolShortDescription> pools;
         std::copy_if(identityPools.begin(), identityPools.end(), std::back_inserter(pools), [&](const IdentityPoolShortDescription& pool) {
-            return pool.GetIdentityPoolName().find(prefix) == 0;
+            return pool.GetIdentityPoolName().rfind(prefix, 0) == 0; // if starts_with
         });
+        Aws::String res = "GetAllPoolsWithPrefix result: ";
+        for (auto &pool: pools) { res += pool.GetIdentityPoolName() + ":" + pool.GetIdentityPoolId() + "; "; }
+        testTrace += std::move(res) + "\n";
         return pools;
     }
 
@@ -179,6 +189,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
         createIdentityPoolOutcome.GetResult().GetSupportedLoginProviders().find("www.amazon.com")->second);
 
     Aws::String identityPoolId = createIdentityPoolOutcome.GetResult().GetIdentityPoolId();
+    SCOPED_TRACE(Aws::String("identityPoolId ") + identityPoolId);
     EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
 
     DescribeIdentityPoolRequest describeIdentityPoolRequest;
@@ -249,6 +260,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
 
     AWS_ASSERT_SUCCESS(createIdentityPoolOutcome);
     Aws::String identityPoolId = createIdentityPoolOutcome.GetResult().GetIdentityPoolId();
+    SCOPED_TRACE(Aws::String("identityPoolId ") + identityPoolId);
     EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
 
     GetIdRequest getIdRequest;

@@ -26,9 +26,8 @@ Signer::Signer() :
 {
 }
 
-Signer::Signer(const XmlNode& xmlNode) : 
-    m_awsAccountNumberHasBeenSet(false),
-    m_keyPairIdsHasBeenSet(false)
+Signer::Signer(const XmlNode& xmlNode)
+  : Signer()
 {
   *this = xmlNode;
 }

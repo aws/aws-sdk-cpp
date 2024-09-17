@@ -22,8 +22,8 @@ DeleteDashboardResult::DeleteDashboardResult() :
 {
 }
 
-DeleteDashboardResult::DeleteDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteDashboardResult::DeleteDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteDashboardResult()
 {
   *this = result;
 }

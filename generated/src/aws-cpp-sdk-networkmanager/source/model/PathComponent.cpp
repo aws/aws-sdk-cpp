@@ -26,11 +26,8 @@ PathComponent::PathComponent() :
 {
 }
 
-PathComponent::PathComponent(JsonView jsonValue) : 
-    m_sequence(0),
-    m_sequenceHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false)
+PathComponent::PathComponent(JsonView jsonValue)
+  : PathComponent()
 {
   *this = jsonValue;
 }

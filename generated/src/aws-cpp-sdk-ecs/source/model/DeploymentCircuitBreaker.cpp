@@ -26,11 +26,8 @@ DeploymentCircuitBreaker::DeploymentCircuitBreaker() :
 {
 }
 
-DeploymentCircuitBreaker::DeploymentCircuitBreaker(JsonView jsonValue) : 
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_rollback(false),
-    m_rollbackHasBeenSet(false)
+DeploymentCircuitBreaker::DeploymentCircuitBreaker(JsonView jsonValue)
+  : DeploymentCircuitBreaker()
 {
   *this = jsonValue;
 }

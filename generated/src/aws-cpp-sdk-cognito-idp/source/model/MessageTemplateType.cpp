@@ -25,10 +25,8 @@ MessageTemplateType::MessageTemplateType() :
 {
 }
 
-MessageTemplateType::MessageTemplateType(JsonView jsonValue) : 
-    m_sMSMessageHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_emailSubjectHasBeenSet(false)
+MessageTemplateType::MessageTemplateType(JsonView jsonValue)
+  : MessageTemplateType()
 {
   *this = jsonValue;
 }

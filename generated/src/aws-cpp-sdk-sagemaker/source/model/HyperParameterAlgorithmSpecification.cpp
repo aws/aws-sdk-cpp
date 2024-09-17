@@ -27,12 +27,8 @@ HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification() :
 {
 }
 
-HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification(JsonView jsonValue) : 
-    m_trainingImageHasBeenSet(false),
-    m_trainingInputMode(TrainingInputMode::NOT_SET),
-    m_trainingInputModeHasBeenSet(false),
-    m_algorithmNameHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false)
+HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification(JsonView jsonValue)
+  : HyperParameterAlgorithmSpecification()
 {
   *this = jsonValue;
 }

@@ -45,85 +45,32 @@ namespace Model
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The encryption algorithm that KMS should use with the public key for an
      * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
      * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
      */
     inline const KeyEncryptionMechanism& GetKeyEncryptionAlgorithm() const{ return m_keyEncryptionAlgorithm; }
-
-    /**
-     * <p>The encryption algorithm that KMS should use with the public key for an
-     * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
-     * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-     */
     inline bool KeyEncryptionAlgorithmHasBeenSet() const { return m_keyEncryptionAlgorithmHasBeenSet; }
-
-    /**
-     * <p>The encryption algorithm that KMS should use with the public key for an
-     * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
-     * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-     */
     inline void SetKeyEncryptionAlgorithm(const KeyEncryptionMechanism& value) { m_keyEncryptionAlgorithmHasBeenSet = true; m_keyEncryptionAlgorithm = value; }
-
-    /**
-     * <p>The encryption algorithm that KMS should use with the public key for an
-     * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
-     * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-     */
     inline void SetKeyEncryptionAlgorithm(KeyEncryptionMechanism&& value) { m_keyEncryptionAlgorithmHasBeenSet = true; m_keyEncryptionAlgorithm = std::move(value); }
-
-    /**
-     * <p>The encryption algorithm that KMS should use with the public key for an
-     * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
-     * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-     */
     inline RecipientInfo& WithKeyEncryptionAlgorithm(const KeyEncryptionMechanism& value) { SetKeyEncryptionAlgorithm(value); return *this;}
-
-    /**
-     * <p>The encryption algorithm that KMS should use with the public key for an
-     * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
-     * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-     */
     inline RecipientInfo& WithKeyEncryptionAlgorithm(KeyEncryptionMechanism&& value) { SetKeyEncryptionAlgorithm(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
      * document includes the enclave's public key.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetAttestationDocument() const{ return m_attestationDocument; }
-
-    /**
-     * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
-     * document includes the enclave's public key.</p>
-     */
     inline bool AttestationDocumentHasBeenSet() const { return m_attestationDocumentHasBeenSet; }
-
-    /**
-     * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
-     * document includes the enclave's public key.</p>
-     */
     inline void SetAttestationDocument(const Aws::Utils::ByteBuffer& value) { m_attestationDocumentHasBeenSet = true; m_attestationDocument = value; }
-
-    /**
-     * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
-     * document includes the enclave's public key.</p>
-     */
     inline void SetAttestationDocument(Aws::Utils::ByteBuffer&& value) { m_attestationDocumentHasBeenSet = true; m_attestationDocument = std::move(value); }
-
-    /**
-     * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
-     * document includes the enclave's public key.</p>
-     */
     inline RecipientInfo& WithAttestationDocument(const Aws::Utils::ByteBuffer& value) { SetAttestationDocument(value); return *this;}
-
-    /**
-     * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
-     * document includes the enclave's public key.</p>
-     */
     inline RecipientInfo& WithAttestationDocument(Aws::Utils::ByteBuffer&& value) { SetAttestationDocument(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KeyEncryptionMechanism m_keyEncryptionAlgorithm;

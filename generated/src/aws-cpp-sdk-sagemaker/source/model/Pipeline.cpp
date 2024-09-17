@@ -36,21 +36,8 @@ Pipeline::Pipeline() :
 {
 }
 
-Pipeline::Pipeline(JsonView jsonValue) : 
-    m_pipelineArnHasBeenSet(false),
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineDisplayNameHasBeenSet(false),
-    m_pipelineDescriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_pipelineStatus(PipelineStatus::NOT_SET),
-    m_pipelineStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastRunTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_parallelismConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Pipeline::Pipeline(JsonView jsonValue)
+  : Pipeline()
 {
   *this = jsonValue;
 }

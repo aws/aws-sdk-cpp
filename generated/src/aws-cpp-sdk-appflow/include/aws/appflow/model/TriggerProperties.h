@@ -39,42 +39,18 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies the configuration details of a schedule-triggered flow as defined
      * by the user. </p>
      */
     inline const ScheduledTriggerProperties& GetScheduled() const{ return m_scheduled; }
-
-    /**
-     * <p> Specifies the configuration details of a schedule-triggered flow as defined
-     * by the user. </p>
-     */
     inline bool ScheduledHasBeenSet() const { return m_scheduledHasBeenSet; }
-
-    /**
-     * <p> Specifies the configuration details of a schedule-triggered flow as defined
-     * by the user. </p>
-     */
     inline void SetScheduled(const ScheduledTriggerProperties& value) { m_scheduledHasBeenSet = true; m_scheduled = value; }
-
-    /**
-     * <p> Specifies the configuration details of a schedule-triggered flow as defined
-     * by the user. </p>
-     */
     inline void SetScheduled(ScheduledTriggerProperties&& value) { m_scheduledHasBeenSet = true; m_scheduled = std::move(value); }
-
-    /**
-     * <p> Specifies the configuration details of a schedule-triggered flow as defined
-     * by the user. </p>
-     */
     inline TriggerProperties& WithScheduled(const ScheduledTriggerProperties& value) { SetScheduled(value); return *this;}
-
-    /**
-     * <p> Specifies the configuration details of a schedule-triggered flow as defined
-     * by the user. </p>
-     */
     inline TriggerProperties& WithScheduled(ScheduledTriggerProperties&& value) { SetScheduled(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScheduledTriggerProperties m_scheduled;

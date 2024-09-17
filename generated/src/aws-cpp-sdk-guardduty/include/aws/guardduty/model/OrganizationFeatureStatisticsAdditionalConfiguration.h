@@ -38,57 +38,27 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the additional configuration within a feature.</p>
      */
     inline const OrgFeatureAdditionalConfiguration& GetName() const{ return m_name; }
-
-    /**
-     * <p>Name of the additional configuration within a feature.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Name of the additional configuration within a feature.</p>
-     */
     inline void SetName(const OrgFeatureAdditionalConfiguration& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Name of the additional configuration within a feature.</p>
-     */
     inline void SetName(OrgFeatureAdditionalConfiguration&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Name of the additional configuration within a feature.</p>
-     */
     inline OrganizationFeatureStatisticsAdditionalConfiguration& WithName(const OrgFeatureAdditionalConfiguration& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Name of the additional configuration within a feature.</p>
-     */
     inline OrganizationFeatureStatisticsAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Total number of accounts that have enabled the additional configuration.</p>
      */
     inline int GetEnabledAccountsCount() const{ return m_enabledAccountsCount; }
-
-    /**
-     * <p>Total number of accounts that have enabled the additional configuration.</p>
-     */
     inline bool EnabledAccountsCountHasBeenSet() const { return m_enabledAccountsCountHasBeenSet; }
-
-    /**
-     * <p>Total number of accounts that have enabled the additional configuration.</p>
-     */
     inline void SetEnabledAccountsCount(int value) { m_enabledAccountsCountHasBeenSet = true; m_enabledAccountsCount = value; }
-
-    /**
-     * <p>Total number of accounts that have enabled the additional configuration.</p>
-     */
     inline OrganizationFeatureStatisticsAdditionalConfiguration& WithEnabledAccountsCount(int value) { SetEnabledAccountsCount(value); return *this;}
-
+    ///@}
   private:
 
     OrgFeatureAdditionalConfiguration m_name;

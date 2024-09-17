@@ -34,106 +34,43 @@ namespace Model
     AWS_IOT1CLICKPROJECTS_API ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object containing the list of projects.</p>
      */
     inline const Aws::Vector<ProjectSummary>& GetProjects() const{ return m_projects; }
-
-    /**
-     * <p>An object containing the list of projects.</p>
-     */
     inline void SetProjects(const Aws::Vector<ProjectSummary>& value) { m_projects = value; }
-
-    /**
-     * <p>An object containing the list of projects.</p>
-     */
     inline void SetProjects(Aws::Vector<ProjectSummary>&& value) { m_projects = std::move(value); }
-
-    /**
-     * <p>An object containing the list of projects.</p>
-     */
     inline ListProjectsResult& WithProjects(const Aws::Vector<ProjectSummary>& value) { SetProjects(value); return *this;}
-
-    /**
-     * <p>An object containing the list of projects.</p>
-     */
     inline ListProjectsResult& WithProjects(Aws::Vector<ProjectSummary>&& value) { SetProjects(std::move(value)); return *this;}
-
-    /**
-     * <p>An object containing the list of projects.</p>
-     */
     inline ListProjectsResult& AddProjects(const ProjectSummary& value) { m_projects.push_back(value); return *this; }
-
-    /**
-     * <p>An object containing the list of projects.</p>
-     */
     inline ListProjectsResult& AddProjects(ProjectSummary&& value) { m_projects.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token used to retrieve the next set of results - will be effectively
      * empty if there are no further results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token used to retrieve the next set of results - will be effectively
-     * empty if there are no further results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token used to retrieve the next set of results - will be effectively
-     * empty if there are no further results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token used to retrieve the next set of results - will be effectively
-     * empty if there are no further results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token used to retrieve the next set of results - will be effectively
-     * empty if there are no further results.</p>
-     */
     inline ListProjectsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token used to retrieve the next set of results - will be effectively
-     * empty if there are no further results.</p>
-     */
     inline ListProjectsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token used to retrieve the next set of results - will be effectively
-     * empty if there are no further results.</p>
-     */
     inline ListProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListProjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListProjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListProjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ProjectSummary> m_projects;

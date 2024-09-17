@@ -24,9 +24,8 @@ MaintenanceWindowFilter::MaintenanceWindowFilter() :
 {
 }
 
-MaintenanceWindowFilter::MaintenanceWindowFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+MaintenanceWindowFilter::MaintenanceWindowFilter(JsonView jsonValue)
+  : MaintenanceWindowFilter()
 {
   *this = jsonValue;
 }

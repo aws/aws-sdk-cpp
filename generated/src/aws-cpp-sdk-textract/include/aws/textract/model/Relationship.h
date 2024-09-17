@@ -43,6 +43,7 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of relationship between the blocks in the IDs array and the current
      * block. The following list describes the relationship types that can be returned.
@@ -60,152 +61,28 @@ namespace Model
      * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
     inline const RelationshipType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of relationship between the blocks in the IDs array and the current
-     * block. The following list describes the relationship types that can be returned.
-     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
-     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
-     * object. For example, WORD blocks have a CHILD relationship to the LINE block
-     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
-     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
-     * list that contains the ID of the QUERY_RESULT block that’s associated with the
-     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
-     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
-     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
-     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
-     * TABLE_FOOTER block types in a table. </p> </li> </ul>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of relationship between the blocks in the IDs array and the current
-     * block. The following list describes the relationship types that can be returned.
-     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
-     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
-     * object. For example, WORD blocks have a CHILD relationship to the LINE block
-     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
-     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
-     * list that contains the ID of the QUERY_RESULT block that’s associated with the
-     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
-     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
-     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
-     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
-     * TABLE_FOOTER block types in a table. </p> </li> </ul>
-     */
     inline void SetType(const RelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of relationship between the blocks in the IDs array and the current
-     * block. The following list describes the relationship types that can be returned.
-     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
-     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
-     * object. For example, WORD blocks have a CHILD relationship to the LINE block
-     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
-     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
-     * list that contains the ID of the QUERY_RESULT block that’s associated with the
-     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
-     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
-     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
-     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
-     * TABLE_FOOTER block types in a table. </p> </li> </ul>
-     */
     inline void SetType(RelationshipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of relationship between the blocks in the IDs array and the current
-     * block. The following list describes the relationship types that can be returned.
-     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
-     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
-     * object. For example, WORD blocks have a CHILD relationship to the LINE block
-     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
-     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
-     * list that contains the ID of the QUERY_RESULT block that’s associated with the
-     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
-     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
-     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
-     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
-     * TABLE_FOOTER block types in a table. </p> </li> </ul>
-     */
     inline Relationship& WithType(const RelationshipType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of relationship between the blocks in the IDs array and the current
-     * block. The following list describes the relationship types that can be returned.
-     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
-     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
-     * object. For example, WORD blocks have a CHILD relationship to the LINE block
-     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
-     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
-     * list that contains the ID of the QUERY_RESULT block that’s associated with the
-     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
-     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
-     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
-     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
-     * TABLE_FOOTER block types in a table. </p> </li> </ul>
-     */
     inline Relationship& WithType(RelationshipType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of IDs for related blocks. You can get the type of the relationship
      * from the <code>Type</code> element.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline Relationship& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline Relationship& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline Relationship& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline Relationship& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of IDs for related blocks. You can get the type of the relationship
-     * from the <code>Type</code> element.</p>
-     */
     inline Relationship& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-
+    ///@}
   private:
 
     RelationshipType m_type;

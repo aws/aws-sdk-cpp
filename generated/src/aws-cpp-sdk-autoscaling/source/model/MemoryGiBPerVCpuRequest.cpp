@@ -28,11 +28,8 @@ MemoryGiBPerVCpuRequest::MemoryGiBPerVCpuRequest() :
 {
 }
 
-MemoryGiBPerVCpuRequest::MemoryGiBPerVCpuRequest(const XmlNode& xmlNode) : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
+MemoryGiBPerVCpuRequest::MemoryGiBPerVCpuRequest(const XmlNode& xmlNode)
+  : MemoryGiBPerVCpuRequest()
 {
   *this = xmlNode;
 }

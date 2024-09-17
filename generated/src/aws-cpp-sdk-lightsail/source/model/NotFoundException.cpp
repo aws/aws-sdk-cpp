@@ -26,11 +26,8 @@ NotFoundException::NotFoundException() :
 {
 }
 
-NotFoundException::NotFoundException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_docsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_tipHasBeenSet(false)
+NotFoundException::NotFoundException(JsonView jsonValue)
+  : NotFoundException()
 {
   *this = jsonValue;
 }

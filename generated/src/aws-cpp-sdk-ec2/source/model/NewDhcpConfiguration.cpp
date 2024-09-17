@@ -26,9 +26,8 @@ NewDhcpConfiguration::NewDhcpConfiguration() :
 {
 }
 
-NewDhcpConfiguration::NewDhcpConfiguration(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+NewDhcpConfiguration::NewDhcpConfiguration(const XmlNode& xmlNode)
+  : NewDhcpConfiguration()
 {
   *this = xmlNode;
 }
@@ -39,7 +38,7 @@ NewDhcpConfiguration& NewDhcpConfiguration::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode keyNode = resultNode.FirstChild("key");
+    XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());

@@ -39,36 +39,17 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
      */
     inline const MatchingBucket& GetMatchingBucket() const{ return m_matchingBucket; }
-
-    /**
-     * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-     */
     inline bool MatchingBucketHasBeenSet() const { return m_matchingBucketHasBeenSet; }
-
-    /**
-     * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-     */
     inline void SetMatchingBucket(const MatchingBucket& value) { m_matchingBucketHasBeenSet = true; m_matchingBucket = value; }
-
-    /**
-     * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-     */
     inline void SetMatchingBucket(MatchingBucket&& value) { m_matchingBucketHasBeenSet = true; m_matchingBucket = std::move(value); }
-
-    /**
-     * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-     */
     inline MatchingResource& WithMatchingBucket(const MatchingBucket& value) { SetMatchingBucket(value); return *this;}
-
-    /**
-     * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-     */
     inline MatchingResource& WithMatchingBucket(MatchingBucket&& value) { SetMatchingBucket(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MatchingBucket m_matchingBucket;

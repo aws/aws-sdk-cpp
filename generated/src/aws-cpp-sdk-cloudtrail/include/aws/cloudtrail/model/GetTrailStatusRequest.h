@@ -38,6 +38,7 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
      * requesting status. To get the status of a shadow trail (a replication of the
@@ -46,70 +47,14 @@ namespace Model
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
-     * requesting status. To get the status of a shadow trail (a replication of the
-     * trail in another Region), you must specify its ARN. The following is the format
-     * of a trail ARN.</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
-     * requesting status. To get the status of a shadow trail (a replication of the
-     * trail in another Region), you must specify its ARN. The following is the format
-     * of a trail ARN.</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
-     * requesting status. To get the status of a shadow trail (a replication of the
-     * trail in another Region), you must specify its ARN. The following is the format
-     * of a trail ARN.</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
-     * requesting status. To get the status of a shadow trail (a replication of the
-     * trail in another Region), you must specify its ARN. The following is the format
-     * of a trail ARN.</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
-     * requesting status. To get the status of a shadow trail (a replication of the
-     * trail in another Region), you must specify its ARN. The following is the format
-     * of a trail ARN.</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     */
     inline GetTrailStatusRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
-     * requesting status. To get the status of a shadow trail (a replication of the
-     * trail in another Region), you must specify its ARN. The following is the format
-     * of a trail ARN.</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     */
     inline GetTrailStatusRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
-     * requesting status. To get the status of a shadow trail (a replication of the
-     * trail in another Region), you must specify its ARN. The following is the format
-     * of a trail ARN.</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     */
     inline GetTrailStatusRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

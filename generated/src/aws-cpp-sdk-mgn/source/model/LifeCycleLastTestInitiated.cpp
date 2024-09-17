@@ -24,9 +24,8 @@ LifeCycleLastTestInitiated::LifeCycleLastTestInitiated() :
 {
 }
 
-LifeCycleLastTestInitiated::LifeCycleLastTestInitiated(JsonView jsonValue) : 
-    m_apiCallDateTimeHasBeenSet(false),
-    m_jobIDHasBeenSet(false)
+LifeCycleLastTestInitiated::LifeCycleLastTestInitiated(JsonView jsonValue)
+  : LifeCycleLastTestInitiated()
 {
   *this = jsonValue;
 }

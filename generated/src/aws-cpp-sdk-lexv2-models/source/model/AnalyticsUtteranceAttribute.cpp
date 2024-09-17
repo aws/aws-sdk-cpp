@@ -24,9 +24,8 @@ AnalyticsUtteranceAttribute::AnalyticsUtteranceAttribute() :
 {
 }
 
-AnalyticsUtteranceAttribute::AnalyticsUtteranceAttribute(JsonView jsonValue) : 
-    m_name(AnalyticsUtteranceAttributeName::NOT_SET),
-    m_nameHasBeenSet(false)
+AnalyticsUtteranceAttribute::AnalyticsUtteranceAttribute(JsonView jsonValue)
+  : AnalyticsUtteranceAttribute()
 {
   *this = jsonValue;
 }

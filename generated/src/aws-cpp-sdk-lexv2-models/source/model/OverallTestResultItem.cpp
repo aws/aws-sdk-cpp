@@ -28,13 +28,8 @@ OverallTestResultItem::OverallTestResultItem() :
 {
 }
 
-OverallTestResultItem::OverallTestResultItem(JsonView jsonValue) : 
-    m_multiTurnConversation(false),
-    m_multiTurnConversationHasBeenSet(false),
-    m_totalResultCount(0),
-    m_totalResultCountHasBeenSet(false),
-    m_speechTranscriptionResultCountsHasBeenSet(false),
-    m_endToEndResultCountsHasBeenSet(false)
+OverallTestResultItem::OverallTestResultItem(JsonView jsonValue)
+  : OverallTestResultItem()
 {
   *this = jsonValue;
 }

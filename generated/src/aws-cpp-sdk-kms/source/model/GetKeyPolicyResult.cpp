@@ -35,6 +35,12 @@ GetKeyPolicyResult& GetKeyPolicyResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("PolicyName"))
+  {
+    m_policyName = jsonValue.GetString("PolicyName");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -29,14 +29,8 @@ GroupOrderingIdSummary::GroupOrderingIdSummary() :
 {
 }
 
-GroupOrderingIdSummary::GroupOrderingIdSummary(JsonView jsonValue) : 
-    m_status(PrincipalMappingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_receivedAtHasBeenSet(false),
-    m_orderingId(0),
-    m_orderingIdHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+GroupOrderingIdSummary::GroupOrderingIdSummary(JsonView jsonValue)
+  : GroupOrderingIdSummary()
 {
   *this = jsonValue;
 }

@@ -163,7 +163,6 @@ namespace SagemakerEdgeManager
       void init(const SagemakerEdgeManagerClientConfiguration& clientConfiguration);
 
       SagemakerEdgeManagerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> m_endpointProvider;
   };
 

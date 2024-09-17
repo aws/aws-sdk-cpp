@@ -24,9 +24,8 @@ DeleteFileSystemWindowsResponse::DeleteFileSystemWindowsResponse() :
 {
 }
 
-DeleteFileSystemWindowsResponse::DeleteFileSystemWindowsResponse(JsonView jsonValue) : 
-    m_finalBackupIdHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+DeleteFileSystemWindowsResponse::DeleteFileSystemWindowsResponse(JsonView jsonValue)
+  : DeleteFileSystemWindowsResponse()
 {
   *this = jsonValue;
 }

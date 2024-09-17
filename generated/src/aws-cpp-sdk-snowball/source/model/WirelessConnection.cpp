@@ -24,9 +24,8 @@ WirelessConnection::WirelessConnection() :
 {
 }
 
-WirelessConnection::WirelessConnection(JsonView jsonValue) : 
-    m_isWifiEnabled(false),
-    m_isWifiEnabledHasBeenSet(false)
+WirelessConnection::WirelessConnection(JsonView jsonValue)
+  : WirelessConnection()
 {
   *this = jsonValue;
 }

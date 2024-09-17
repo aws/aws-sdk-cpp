@@ -24,9 +24,8 @@ S3DestinationConfig::S3DestinationConfig() :
 {
 }
 
-S3DestinationConfig::S3DestinationConfig(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
+S3DestinationConfig::S3DestinationConfig(JsonView jsonValue)
+  : S3DestinationConfig()
 {
   *this = jsonValue;
 }

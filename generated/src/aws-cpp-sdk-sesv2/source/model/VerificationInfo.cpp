@@ -27,12 +27,8 @@ VerificationInfo::VerificationInfo() :
 {
 }
 
-VerificationInfo::VerificationInfo(JsonView jsonValue) : 
-    m_lastCheckedTimestampHasBeenSet(false),
-    m_lastSuccessTimestampHasBeenSet(false),
-    m_errorType(VerificationError::NOT_SET),
-    m_errorTypeHasBeenSet(false),
-    m_sOARecordHasBeenSet(false)
+VerificationInfo::VerificationInfo(JsonView jsonValue)
+  : VerificationInfo()
 {
   *this = jsonValue;
 }

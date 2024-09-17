@@ -38,62 +38,21 @@ namespace Model
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
      * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
+     * <code>/aws/vendedlogs/OpenSearchService/pipelines</code>.</p>
      */
     inline const Aws::String& GetLogGroup() const{ return m_logGroup; }
-
-    /**
-     * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
-     * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-     */
     inline bool LogGroupHasBeenSet() const { return m_logGroupHasBeenSet; }
-
-    /**
-     * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
-     * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-     */
     inline void SetLogGroup(const Aws::String& value) { m_logGroupHasBeenSet = true; m_logGroup = value; }
-
-    /**
-     * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
-     * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-     */
     inline void SetLogGroup(Aws::String&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::move(value); }
-
-    /**
-     * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
-     * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-     */
     inline void SetLogGroup(const char* value) { m_logGroupHasBeenSet = true; m_logGroup.assign(value); }
-
-    /**
-     * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
-     * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-     */
     inline CloudWatchLogDestination& WithLogGroup(const Aws::String& value) { SetLogGroup(value); return *this;}
-
-    /**
-     * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
-     * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-     */
     inline CloudWatchLogDestination& WithLogGroup(Aws::String&& value) { SetLogGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the CloudWatch Logs group to send pipeline logs to. You can
-     * specify an existing log group or create a new one. For example,
-     * <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-     */
     inline CloudWatchLogDestination& WithLogGroup(const char* value) { SetLogGroup(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logGroup;

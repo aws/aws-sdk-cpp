@@ -27,12 +27,8 @@ RecommendationJobStoppingConditions::RecommendationJobStoppingConditions() :
 {
 }
 
-RecommendationJobStoppingConditions::RecommendationJobStoppingConditions(JsonView jsonValue) : 
-    m_maxInvocations(0),
-    m_maxInvocationsHasBeenSet(false),
-    m_modelLatencyThresholdsHasBeenSet(false),
-    m_flatInvocations(FlatInvocations::NOT_SET),
-    m_flatInvocationsHasBeenSet(false)
+RecommendationJobStoppingConditions::RecommendationJobStoppingConditions(JsonView jsonValue)
+  : RecommendationJobStoppingConditions()
 {
   *this = jsonValue;
 }

@@ -49,85 +49,32 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-     */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-     */
     inline RegexPatternSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-     */
     inline RegexPatternSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
      * search for, such as <code>B[a@]dB[o0]t</code>.</p>
      */
     inline const Aws::String& GetRegexPatternString() const{ return m_regexPatternString; }
-
-    /**
-     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
-     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
-     */
     inline bool RegexPatternStringHasBeenSet() const { return m_regexPatternStringHasBeenSet; }
-
-    /**
-     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
-     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
-     */
     inline void SetRegexPatternString(const Aws::String& value) { m_regexPatternStringHasBeenSet = true; m_regexPatternString = value; }
-
-    /**
-     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
-     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
-     */
     inline void SetRegexPatternString(Aws::String&& value) { m_regexPatternStringHasBeenSet = true; m_regexPatternString = std::move(value); }
-
-    /**
-     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
-     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
-     */
     inline void SetRegexPatternString(const char* value) { m_regexPatternStringHasBeenSet = true; m_regexPatternString.assign(value); }
-
-    /**
-     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
-     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
-     */
     inline RegexPatternSetUpdate& WithRegexPatternString(const Aws::String& value) { SetRegexPatternString(value); return *this;}
-
-    /**
-     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
-     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
-     */
     inline RegexPatternSetUpdate& WithRegexPatternString(Aws::String&& value) { SetRegexPatternString(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
-     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
-     */
     inline RegexPatternSetUpdate& WithRegexPatternString(const char* value) { SetRegexPatternString(value); return *this;}
-
+    ///@}
   private:
 
     ChangeAction m_action;

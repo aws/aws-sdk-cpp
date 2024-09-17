@@ -39,93 +39,33 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
      * alias ARN is a combination of state machine ARN and the alias name separated by
      * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
      */
     inline const Aws::String& GetStateMachineAliasArn() const{ return m_stateMachineAliasArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
-     * alias ARN is a combination of state machine ARN and the alias name separated by
-     * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
-     */
     inline bool StateMachineAliasArnHasBeenSet() const { return m_stateMachineAliasArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
-     * alias ARN is a combination of state machine ARN and the alias name separated by
-     * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
-     */
     inline void SetStateMachineAliasArn(const Aws::String& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
-     * alias ARN is a combination of state machine ARN and the alias name separated by
-     * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
-     */
     inline void SetStateMachineAliasArn(Aws::String&& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
-     * alias ARN is a combination of state machine ARN and the alias name separated by
-     * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
-     */
     inline void SetStateMachineAliasArn(const char* value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
-     * alias ARN is a combination of state machine ARN and the alias name separated by
-     * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
-     */
     inline StateMachineAliasListItem& WithStateMachineAliasArn(const Aws::String& value) { SetStateMachineAliasArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
-     * alias ARN is a combination of state machine ARN and the alias name separated by
-     * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
-     */
     inline StateMachineAliasListItem& WithStateMachineAliasArn(Aws::String&& value) { SetStateMachineAliasArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The
-     * alias ARN is a combination of state machine ARN and the alias name separated by
-     * a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
-     */
     inline StateMachineAliasListItem& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creation date of a state machine alias.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The creation date of a state machine alias.</p>
-     */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-
-    /**
-     * <p>The creation date of a state machine alias.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-
-    /**
-     * <p>The creation date of a state machine alias.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-
-    /**
-     * <p>The creation date of a state machine alias.</p>
-     */
     inline StateMachineAliasListItem& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The creation date of a state machine alias.</p>
-     */
     inline StateMachineAliasListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stateMachineAliasArn;

@@ -23,9 +23,8 @@ CreateThemeResult::CreateThemeResult() :
 {
 }
 
-CreateThemeResult::CreateThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+CreateThemeResult::CreateThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateThemeResult()
 {
   *this = result;
 }

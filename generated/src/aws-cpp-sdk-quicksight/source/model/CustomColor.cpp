@@ -26,11 +26,8 @@ CustomColor::CustomColor() :
 {
 }
 
-CustomColor::CustomColor(JsonView jsonValue) : 
-    m_fieldValueHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_specialValue(SpecialValue::NOT_SET),
-    m_specialValueHasBeenSet(false)
+CustomColor::CustomColor(JsonView jsonValue)
+  : CustomColor()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteGroupMembershipResult::DeleteGroupMembershipResult() :
 {
 }
 
-DeleteGroupMembershipResult::DeleteGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteGroupMembershipResult::DeleteGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteGroupMembershipResult()
 {
   *this = result;
 }

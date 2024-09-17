@@ -27,12 +27,8 @@ RedshiftSource::RedshiftSource() :
 {
 }
 
-RedshiftSource::RedshiftSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_redshiftTmpDirHasBeenSet(false),
-    m_tmpDirIAMRoleHasBeenSet(false)
+RedshiftSource::RedshiftSource(JsonView jsonValue)
+  : RedshiftSource()
 {
   *this = jsonValue;
 }

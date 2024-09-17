@@ -32,17 +32,8 @@ DomainMaintenanceDetails::DomainMaintenanceDetails() :
 {
 }
 
-DomainMaintenanceDetails::DomainMaintenanceDetails(JsonView jsonValue) : 
-    m_maintenanceIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_action(MaintenanceType::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_status(MaintenanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DomainMaintenanceDetails::DomainMaintenanceDetails(JsonView jsonValue)
+  : DomainMaintenanceDetails()
 {
   *this = jsonValue;
 }

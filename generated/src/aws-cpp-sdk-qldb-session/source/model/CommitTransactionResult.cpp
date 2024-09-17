@@ -27,11 +27,8 @@ CommitTransactionResult::CommitTransactionResult() :
 {
 }
 
-CommitTransactionResult::CommitTransactionResult(JsonView jsonValue) : 
-    m_transactionIdHasBeenSet(false),
-    m_commitDigestHasBeenSet(false),
-    m_timingInformationHasBeenSet(false),
-    m_consumedIOsHasBeenSet(false)
+CommitTransactionResult::CommitTransactionResult(JsonView jsonValue)
+  : CommitTransactionResult()
 {
   *this = jsonValue;
 }

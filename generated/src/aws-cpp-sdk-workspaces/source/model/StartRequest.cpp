@@ -23,8 +23,8 @@ StartRequest::StartRequest() :
 {
 }
 
-StartRequest::StartRequest(JsonView jsonValue) : 
-    m_workspaceIdHasBeenSet(false)
+StartRequest::StartRequest(JsonView jsonValue)
+  : StartRequest()
 {
   *this = jsonValue;
 }

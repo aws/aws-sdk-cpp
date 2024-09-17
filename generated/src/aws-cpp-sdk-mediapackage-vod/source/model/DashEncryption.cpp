@@ -23,8 +23,8 @@ DashEncryption::DashEncryption() :
 {
 }
 
-DashEncryption::DashEncryption(JsonView jsonValue) : 
-    m_spekeKeyProviderHasBeenSet(false)
+DashEncryption::DashEncryption(JsonView jsonValue)
+  : DashEncryption()
 {
   *this = jsonValue;
 }

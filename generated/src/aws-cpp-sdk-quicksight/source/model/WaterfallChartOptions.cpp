@@ -23,8 +23,8 @@ WaterfallChartOptions::WaterfallChartOptions() :
 {
 }
 
-WaterfallChartOptions::WaterfallChartOptions(JsonView jsonValue) : 
-    m_totalBarLabelHasBeenSet(false)
+WaterfallChartOptions::WaterfallChartOptions(JsonView jsonValue)
+  : WaterfallChartOptions()
 {
   *this = jsonValue;
 }

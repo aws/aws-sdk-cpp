@@ -24,9 +24,8 @@ CopyDestinationImageSet::CopyDestinationImageSet() :
 {
 }
 
-CopyDestinationImageSet::CopyDestinationImageSet(JsonView jsonValue) : 
-    m_imageSetIdHasBeenSet(false),
-    m_latestVersionIdHasBeenSet(false)
+CopyDestinationImageSet::CopyDestinationImageSet(JsonView jsonValue)
+  : CopyDestinationImageSet()
 {
   *this = jsonValue;
 }

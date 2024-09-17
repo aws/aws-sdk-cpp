@@ -29,14 +29,8 @@ ESInstanceDetails::ESInstanceDetails() :
 {
 }
 
-ESInstanceDetails::ESInstanceDetails(JsonView jsonValue) : 
-    m_instanceClassHasBeenSet(false),
-    m_instanceSizeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
+ESInstanceDetails::ESInstanceDetails(JsonView jsonValue)
+  : ESInstanceDetails()
 {
   *this = jsonValue;
 }

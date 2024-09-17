@@ -38,77 +38,31 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source file's location in Amazon S3.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The source file's location in Amazon S3.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The source file's location in Amazon S3.</p>
-     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The source file's location in Amazon S3.</p>
-     */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The source file's location in Amazon S3.</p>
-     */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-
-    /**
-     * <p>The source file's location in Amazon S3.</p>
-     */
     inline AnnotationImportItemDetail& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The source file's location in Amazon S3.</p>
-     */
     inline AnnotationImportItemDetail& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The source file's location in Amazon S3.</p>
-     */
     inline AnnotationImportItemDetail& WithSource(const char* value) { SetSource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The item's job status.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-
-    /**
-     * <p>The item's job status.</p>
-     */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-
-    /**
-     * <p>The item's job status.</p>
-     */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-
-    /**
-     * <p>The item's job status.</p>
-     */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-
-    /**
-     * <p>The item's job status.</p>
-     */
     inline AnnotationImportItemDetail& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-
-    /**
-     * <p>The item's job status.</p>
-     */
     inline AnnotationImportItemDetail& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_source;

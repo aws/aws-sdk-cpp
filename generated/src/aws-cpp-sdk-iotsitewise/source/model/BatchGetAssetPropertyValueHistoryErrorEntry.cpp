@@ -26,11 +26,8 @@ BatchGetAssetPropertyValueHistoryErrorEntry::BatchGetAssetPropertyValueHistoryEr
 {
 }
 
-BatchGetAssetPropertyValueHistoryErrorEntry::BatchGetAssetPropertyValueHistoryErrorEntry(JsonView jsonValue) : 
-    m_errorCode(BatchGetAssetPropertyValueHistoryErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_entryIdHasBeenSet(false)
+BatchGetAssetPropertyValueHistoryErrorEntry::BatchGetAssetPropertyValueHistoryErrorEntry(JsonView jsonValue)
+  : BatchGetAssetPropertyValueHistoryErrorEntry()
 {
   *this = jsonValue;
 }

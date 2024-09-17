@@ -20,6 +20,11 @@
 
 #include <memory>
 
+namespace smithy
+{
+    class AwsSigV4Signer;
+}
+
 namespace Aws
 {
     namespace Http
@@ -165,7 +170,7 @@ namespace Aws
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationInSeconds = 0) const override;
 
-            virtual Aws::Auth::AWSCredentials GetCredentials(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) const;
+            virtual Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
 
             Aws::String GetServiceName() const { return m_serviceName; }
             Aws::String GetRegion() const { return m_region; }
@@ -178,7 +183,6 @@ namespace Aws
             bool m_includeSha256HashHeader;
 
         private:
-
             Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
                     const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& region,
                     const Aws::String& serviceName) const;
@@ -193,12 +197,18 @@ namespace Aws
             bool SignRequestWithSigV4a(Aws::Http::HttpRequest& request, const char* region, const char* serviceName,
                     bool signBody, long long expirationTimeInSeconds, Aws::Crt::Auth::SignatureType signatureType) const;
 
+            friend class smithy::AwsSigV4Signer;
+            /**
+             * Temporary method added for migration to the smithy architecture. Please do not use.
+             */
+            bool SignRequestWithCreds(Aws::Http::HttpRequest& request, const Auth::AWSCredentials& credentials,
+                                      const char* region, const char* serviceName, bool signBody) const;
+
+
             Aws::Auth::AWSSigningAlgorithm m_signingAlgorithm;
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             const Aws::String m_serviceName;
             const Aws::String m_region;
-            Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
-            Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
 
             Aws::Set<Aws::String> m_unsignedHeaders;
 

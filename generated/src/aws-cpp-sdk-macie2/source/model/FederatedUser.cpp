@@ -27,12 +27,8 @@ FederatedUser::FederatedUser() :
 {
 }
 
-FederatedUser::FederatedUser(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
+FederatedUser::FederatedUser(JsonView jsonValue)
+  : FederatedUser()
 {
   *this = jsonValue;
 }

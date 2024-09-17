@@ -19,29 +19,26 @@ namespace Model
 {
 
 SessionKeyMastercard::SessionKeyMastercard() : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
     m_primaryAccountNumberHasBeenSet(false),
+    m_panSequenceNumberHasBeenSet(false),
+    m_applicationTransactionCounterHasBeenSet(false),
     m_unpredictableNumberHasBeenSet(false)
 {
 }
 
-SessionKeyMastercard::SessionKeyMastercard(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
+SessionKeyMastercard::SessionKeyMastercard(JsonView jsonValue)
+  : SessionKeyMastercard()
 {
   *this = jsonValue;
 }
 
 SessionKeyMastercard& SessionKeyMastercard::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
+  if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
-    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
+    m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
 
-    m_applicationTransactionCounterHasBeenSet = true;
+    m_primaryAccountNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PanSequenceNumber"))
@@ -51,11 +48,11 @@ SessionKeyMastercard& SessionKeyMastercard::operator =(JsonView jsonValue)
     m_panSequenceNumberHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PrimaryAccountNumber"))
+  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
-    m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
+    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
 
-    m_primaryAccountNumberHasBeenSet = true;
+    m_applicationTransactionCounterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UnpredictableNumber"))
@@ -72,9 +69,9 @@ JsonValue SessionKeyMastercard::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_applicationTransactionCounterHasBeenSet)
+  if(m_primaryAccountNumberHasBeenSet)
   {
-   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
+   payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
 
   }
 
@@ -84,9 +81,9 @@ JsonValue SessionKeyMastercard::Jsonize() const
 
   }
 
-  if(m_primaryAccountNumberHasBeenSet)
+  if(m_applicationTransactionCounterHasBeenSet)
   {
-   payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
+   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
 
   }
 

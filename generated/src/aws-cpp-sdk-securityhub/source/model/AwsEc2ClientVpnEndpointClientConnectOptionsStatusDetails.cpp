@@ -24,9 +24,8 @@ AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails::AwsEc2ClientVpnEndpoin
 {
 }
 
-AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails(JsonView jsonValue)
+  : AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails()
 {
   *this = jsonValue;
 }

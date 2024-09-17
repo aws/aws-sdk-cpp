@@ -34,113 +34,42 @@ namespace Model
     AWS_BACKUP_API ListRecoveryPointsByLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
+     * <p>The recovery points.</p>
      */
     inline const Aws::Vector<RecoveryPointMember>& GetRecoveryPoints() const{ return m_recoveryPoints; }
-
-    /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
-     */
     inline void SetRecoveryPoints(const Aws::Vector<RecoveryPointMember>& value) { m_recoveryPoints = value; }
-
-    /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
-     */
     inline void SetRecoveryPoints(Aws::Vector<RecoveryPointMember>&& value) { m_recoveryPoints = std::move(value); }
-
-    /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
-     */
     inline ListRecoveryPointsByLegalHoldResult& WithRecoveryPoints(const Aws::Vector<RecoveryPointMember>& value) { SetRecoveryPoints(value); return *this;}
-
-    /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
-     */
     inline ListRecoveryPointsByLegalHoldResult& WithRecoveryPoints(Aws::Vector<RecoveryPointMember>&& value) { SetRecoveryPoints(std::move(value)); return *this;}
-
-    /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
-     */
     inline ListRecoveryPointsByLegalHoldResult& AddRecoveryPoints(const RecoveryPointMember& value) { m_recoveryPoints.push_back(value); return *this; }
-
-    /**
-     * <p>This is a list of the recovery points returned by
-     * <code>ListRecoveryPointsByLegalHold</code>.</p>
-     */
     inline ListRecoveryPointsByLegalHoldResult& AddRecoveryPoints(RecoveryPointMember&& value) { m_recoveryPoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
+     * <p>The next item following a partial list of returned resources.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
-     */
     inline ListRecoveryPointsByLegalHoldResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
-     */
     inline ListRecoveryPointsByLegalHoldResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>This return is the next item following a partial list of returned
-     * resources.</p>
-     */
     inline ListRecoveryPointsByLegalHoldResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRecoveryPointsByLegalHoldResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRecoveryPointsByLegalHoldResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRecoveryPointsByLegalHoldResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RecoveryPointMember> m_recoveryPoints;

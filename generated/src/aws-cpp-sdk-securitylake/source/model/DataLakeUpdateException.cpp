@@ -24,9 +24,8 @@ DataLakeUpdateException::DataLakeUpdateException() :
 {
 }
 
-DataLakeUpdateException::DataLakeUpdateException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+DataLakeUpdateException::DataLakeUpdateException(JsonView jsonValue)
+  : DataLakeUpdateException()
 {
   *this = jsonValue;
 }

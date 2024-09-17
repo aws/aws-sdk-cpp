@@ -31,16 +31,8 @@ ReportDefinition::ReportDefinition() :
 {
 }
 
-ReportDefinition::ReportDefinition(JsonView jsonValue) : 
-    m_reportIdHasBeenSet(false),
-    m_reportDescriptionHasBeenSet(false),
-    m_reportFrequency(ReportFrequency::NOT_SET),
-    m_reportFrequencyHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_destinationS3LocationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+ReportDefinition::ReportDefinition(JsonView jsonValue)
+  : ReportDefinition()
 {
   *this = jsonValue;
 }

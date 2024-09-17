@@ -28,13 +28,8 @@ InboundConnection::InboundConnection() :
 {
 }
 
-InboundConnection::InboundConnection(JsonView jsonValue) : 
-    m_localDomainInfoHasBeenSet(false),
-    m_remoteDomainInfoHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false),
-    m_connectionMode(ConnectionMode::NOT_SET),
-    m_connectionModeHasBeenSet(false)
+InboundConnection::InboundConnection(JsonView jsonValue)
+  : InboundConnection()
 {
   *this = jsonValue;
 }

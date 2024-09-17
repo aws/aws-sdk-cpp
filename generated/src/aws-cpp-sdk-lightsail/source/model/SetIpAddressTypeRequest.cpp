@@ -17,7 +17,9 @@ SetIpAddressTypeRequest::SetIpAddressTypeRequest() :
     m_resourceTypeHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_acceptBundleUpdate(false),
+    m_acceptBundleUpdateHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,12 @@ Aws::String SetIpAddressTypeRequest::SerializePayload() const
   if(m_ipAddressTypeHasBeenSet)
   {
    payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
+  if(m_acceptBundleUpdateHasBeenSet)
+  {
+   payload.WithBool("acceptBundleUpdate", m_acceptBundleUpdate);
+
   }
 
   return payload.View().WriteReadable();

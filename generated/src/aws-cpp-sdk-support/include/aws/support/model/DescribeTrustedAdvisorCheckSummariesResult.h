@@ -41,63 +41,29 @@ namespace Model
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The summary information for the requested Trusted Advisor checks.</p>
      */
     inline const Aws::Vector<TrustedAdvisorCheckSummary>& GetSummaries() const{ return m_summaries; }
-
-    /**
-     * <p>The summary information for the requested Trusted Advisor checks.</p>
-     */
     inline void SetSummaries(const Aws::Vector<TrustedAdvisorCheckSummary>& value) { m_summaries = value; }
-
-    /**
-     * <p>The summary information for the requested Trusted Advisor checks.</p>
-     */
     inline void SetSummaries(Aws::Vector<TrustedAdvisorCheckSummary>&& value) { m_summaries = std::move(value); }
-
-    /**
-     * <p>The summary information for the requested Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckSummariesResult& WithSummaries(const Aws::Vector<TrustedAdvisorCheckSummary>& value) { SetSummaries(value); return *this;}
-
-    /**
-     * <p>The summary information for the requested Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckSummariesResult& WithSummaries(Aws::Vector<TrustedAdvisorCheckSummary>&& value) { SetSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>The summary information for the requested Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckSummariesResult& AddSummaries(const TrustedAdvisorCheckSummary& value) { m_summaries.push_back(value); return *this; }
-
-    /**
-     * <p>The summary information for the requested Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckSummariesResult& AddSummaries(TrustedAdvisorCheckSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTrustedAdvisorCheckSummariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTrustedAdvisorCheckSummariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTrustedAdvisorCheckSummariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TrustedAdvisorCheckSummary> m_summaries;

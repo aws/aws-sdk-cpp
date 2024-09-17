@@ -37,48 +37,19 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The container of the <code>Timestamp</code> of the blockchain instant.</p>
      *  <p>This <code>timestamp</code> will only be recorded up to the
      * second.</p> 
      */
     inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
-
-    /**
-     * <p>The container of the <code>Timestamp</code> of the blockchain instant.</p>
-     *  <p>This <code>timestamp</code> will only be recorded up to the
-     * second.</p> 
-     */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-
-    /**
-     * <p>The container of the <code>Timestamp</code> of the blockchain instant.</p>
-     *  <p>This <code>timestamp</code> will only be recorded up to the
-     * second.</p> 
-     */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
-
-    /**
-     * <p>The container of the <code>Timestamp</code> of the blockchain instant.</p>
-     *  <p>This <code>timestamp</code> will only be recorded up to the
-     * second.</p> 
-     */
     inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-
-    /**
-     * <p>The container of the <code>Timestamp</code> of the blockchain instant.</p>
-     *  <p>This <code>timestamp</code> will only be recorded up to the
-     * second.</p> 
-     */
     inline BlockchainInstant& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
-
-    /**
-     * <p>The container of the <code>Timestamp</code> of the blockchain instant.</p>
-     *  <p>This <code>timestamp</code> will only be recorded up to the
-     * second.</p> 
-     */
     inline BlockchainInstant& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_time;

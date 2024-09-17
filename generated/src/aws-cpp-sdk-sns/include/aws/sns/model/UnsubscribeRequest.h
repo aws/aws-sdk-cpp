@@ -39,46 +39,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the subscription to be deleted.</p>
      */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
-
-    /**
-     * <p>The ARN of the subscription to be deleted.</p>
-     */
     inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the subscription to be deleted.</p>
-     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
-
-    /**
-     * <p>The ARN of the subscription to be deleted.</p>
-     */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the subscription to be deleted.</p>
-     */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the subscription to be deleted.</p>
-     */
     inline UnsubscribeRequest& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the subscription to be deleted.</p>
-     */
     inline UnsubscribeRequest& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the subscription to be deleted.</p>
-     */
     inline UnsubscribeRequest& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subscriptionArn;

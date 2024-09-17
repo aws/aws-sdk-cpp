@@ -25,10 +25,8 @@ LambdaConfiguration::LambdaConfiguration() :
 {
 }
 
-LambdaConfiguration::LambdaConfiguration(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
+LambdaConfiguration::LambdaConfiguration(JsonView jsonValue)
+  : LambdaConfiguration()
 {
   *this = jsonValue;
 }

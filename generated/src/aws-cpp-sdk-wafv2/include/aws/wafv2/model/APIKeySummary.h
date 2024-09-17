@@ -46,152 +46,57 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The token domains that are defined in this API key. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline APIKeySummary& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline APIKeySummary& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline APIKeySummary& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline APIKeySummary& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The token domains that are defined in this API key. </p>
-     */
     inline APIKeySummary& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
      * JavaScript CAPTCHA integration. </p>
      */
     inline const Aws::String& GetAPIKey() const{ return m_aPIKey; }
-
-    /**
-     * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p>
-     */
     inline bool APIKeyHasBeenSet() const { return m_aPIKeyHasBeenSet; }
-
-    /**
-     * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p>
-     */
     inline void SetAPIKey(const Aws::String& value) { m_aPIKeyHasBeenSet = true; m_aPIKey = value; }
-
-    /**
-     * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p>
-     */
     inline void SetAPIKey(Aws::String&& value) { m_aPIKeyHasBeenSet = true; m_aPIKey = std::move(value); }
-
-    /**
-     * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p>
-     */
     inline void SetAPIKey(const char* value) { m_aPIKeyHasBeenSet = true; m_aPIKey.assign(value); }
-
-    /**
-     * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p>
-     */
     inline APIKeySummary& WithAPIKey(const Aws::String& value) { SetAPIKey(value); return *this;}
-
-    /**
-     * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p>
-     */
     inline APIKeySummary& WithAPIKey(Aws::String&& value) { SetAPIKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p>
-     */
     inline APIKeySummary& WithAPIKey(const char* value) { SetAPIKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the key was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
-
-    /**
-     * <p>The date and time that the key was created. </p>
-     */
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
-
-    /**
-     * <p>The date and time that the key was created. </p>
-     */
     inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
-
-    /**
-     * <p>The date and time that the key was created. </p>
-     */
     inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
-
-    /**
-     * <p>The date and time that the key was created. </p>
-     */
     inline APIKeySummary& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time that the key was created. </p>
-     */
     inline APIKeySummary& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Internal value used by WAF to manage the key. </p>
      */
     inline int GetVersion() const{ return m_version; }
-
-    /**
-     * <p>Internal value used by WAF to manage the key. </p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>Internal value used by WAF to manage the key. </p>
-     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>Internal value used by WAF to manage the key. </p>
-     */
     inline APIKeySummary& WithVersion(int value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_tokenDomains;

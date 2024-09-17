@@ -27,12 +27,8 @@ TargetFailure::TargetFailure() :
 {
 }
 
-TargetFailure::TargetFailure(JsonView jsonValue) : 
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+TargetFailure::TargetFailure(JsonView jsonValue)
+  : TargetFailure()
 {
   *this = jsonValue;
 }

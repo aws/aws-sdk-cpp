@@ -56,41 +56,8 @@ LoRaWANDeviceProfile::LoRaWANDeviceProfile() :
 {
 }
 
-LoRaWANDeviceProfile::LoRaWANDeviceProfile(JsonView jsonValue) : 
-    m_supportsClassB(false),
-    m_supportsClassBHasBeenSet(false),
-    m_classBTimeout(0),
-    m_classBTimeoutHasBeenSet(false),
-    m_pingSlotPeriod(0),
-    m_pingSlotPeriodHasBeenSet(false),
-    m_pingSlotDr(0),
-    m_pingSlotDrHasBeenSet(false),
-    m_pingSlotFreq(0),
-    m_pingSlotFreqHasBeenSet(false),
-    m_supportsClassC(false),
-    m_supportsClassCHasBeenSet(false),
-    m_classCTimeout(0),
-    m_classCTimeoutHasBeenSet(false),
-    m_macVersionHasBeenSet(false),
-    m_regParamsRevisionHasBeenSet(false),
-    m_rxDelay1(0),
-    m_rxDelay1HasBeenSet(false),
-    m_rxDrOffset1(0),
-    m_rxDrOffset1HasBeenSet(false),
-    m_rxDataRate2(0),
-    m_rxDataRate2HasBeenSet(false),
-    m_rxFreq2(0),
-    m_rxFreq2HasBeenSet(false),
-    m_factoryPresetFreqsListHasBeenSet(false),
-    m_maxEirp(0),
-    m_maxEirpHasBeenSet(false),
-    m_maxDutyCycle(0),
-    m_maxDutyCycleHasBeenSet(false),
-    m_rfRegionHasBeenSet(false),
-    m_supportsJoin(false),
-    m_supportsJoinHasBeenSet(false),
-    m_supports32BitFCnt(false),
-    m_supports32BitFCntHasBeenSet(false)
+LoRaWANDeviceProfile::LoRaWANDeviceProfile(JsonView jsonValue)
+  : LoRaWANDeviceProfile()
 {
   *this = jsonValue;
 }

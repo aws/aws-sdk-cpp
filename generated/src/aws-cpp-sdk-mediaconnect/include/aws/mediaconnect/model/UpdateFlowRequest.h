@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/UpdateFailoverConfig.h>
 #include <aws/mediaconnect/model/UpdateMaintenance.h>
+#include <aws/mediaconnect/model/MonitoringConfig.h>
 #include <utility>
 
 namespace Aws
@@ -37,84 +38,49 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The flow that you want to update.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The flow that you want to update.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The flow that you want to update.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The flow that you want to update.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The flow that you want to update.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The flow that you want to update.
-     */
     inline UpdateFlowRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The flow that you want to update.
-     */
     inline UpdateFlowRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The flow that you want to update.
-     */
     inline UpdateFlowRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const UpdateFailoverConfig& GetSourceFailoverConfig() const{ return m_sourceFailoverConfig; }
-
-    
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
-
-    
     inline void SetSourceFailoverConfig(const UpdateFailoverConfig& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = value; }
-
-    
     inline void SetSourceFailoverConfig(UpdateFailoverConfig&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::move(value); }
-
-    
     inline UpdateFlowRequest& WithSourceFailoverConfig(const UpdateFailoverConfig& value) { SetSourceFailoverConfig(value); return *this;}
-
-    
     inline UpdateFlowRequest& WithSourceFailoverConfig(UpdateFailoverConfig&& value) { SetSourceFailoverConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const UpdateMaintenance& GetMaintenance() const{ return m_maintenance; }
-
-    
     inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
-
-    
     inline void SetMaintenance(const UpdateMaintenance& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
-
-    
     inline void SetMaintenance(UpdateMaintenance&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
-
-    
     inline UpdateFlowRequest& WithMaintenance(const UpdateMaintenance& value) { SetMaintenance(value); return *this;}
-
-    
     inline UpdateFlowRequest& WithMaintenance(UpdateMaintenance&& value) { SetMaintenance(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    
+    inline const MonitoringConfig& GetSourceMonitoringConfig() const{ return m_sourceMonitoringConfig; }
+    inline bool SourceMonitoringConfigHasBeenSet() const { return m_sourceMonitoringConfigHasBeenSet; }
+    inline void SetSourceMonitoringConfig(const MonitoringConfig& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = value; }
+    inline void SetSourceMonitoringConfig(MonitoringConfig&& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = std::move(value); }
+    inline UpdateFlowRequest& WithSourceMonitoringConfig(const MonitoringConfig& value) { SetSourceMonitoringConfig(value); return *this;}
+    inline UpdateFlowRequest& WithSourceMonitoringConfig(MonitoringConfig&& value) { SetSourceMonitoringConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_flowArn;
@@ -125,6 +91,9 @@ namespace Model
 
     UpdateMaintenance m_maintenance;
     bool m_maintenanceHasBeenSet = false;
+
+    MonitoringConfig m_sourceMonitoringConfig;
+    bool m_sourceMonitoringConfigHasBeenSet = false;
   };
 
 } // namespace Model

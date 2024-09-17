@@ -26,11 +26,8 @@ CPU::CPU() :
 {
 }
 
-CPU::CPU(JsonView jsonValue) : 
-    m_frequencyHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_clock(0.0),
-    m_clockHasBeenSet(false)
+CPU::CPU(JsonView jsonValue)
+  : CPU()
 {
   *this = jsonValue;
 }

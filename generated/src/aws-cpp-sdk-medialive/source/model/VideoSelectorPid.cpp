@@ -24,9 +24,8 @@ VideoSelectorPid::VideoSelectorPid() :
 {
 }
 
-VideoSelectorPid::VideoSelectorPid(JsonView jsonValue) : 
-    m_pid(0),
-    m_pidHasBeenSet(false)
+VideoSelectorPid::VideoSelectorPid(JsonView jsonValue)
+  : VideoSelectorPid()
 {
   *this = jsonValue;
 }

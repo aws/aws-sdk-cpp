@@ -28,13 +28,8 @@ VolumeConfiguration::VolumeConfiguration() :
 {
 }
 
-VolumeConfiguration::VolumeConfiguration(JsonView jsonValue) : 
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
+VolumeConfiguration::VolumeConfiguration(JsonView jsonValue)
+  : VolumeConfiguration()
 {
   *this = jsonValue;
 }

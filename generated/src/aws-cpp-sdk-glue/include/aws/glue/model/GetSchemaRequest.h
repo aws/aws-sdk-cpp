@@ -34,6 +34,7 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>This is a wrapper structure to contain schema identity fields. The structure
      * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
@@ -44,62 +45,12 @@ namespace Model
      * </li> </ul>
      */
     inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and
-     * <code>RegistryName</code> has to be provided.</p> </li> <li>
-     * <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or
-     * <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-     * </li> </ul>
-     */
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and
-     * <code>RegistryName</code> has to be provided.</p> </li> <li>
-     * <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or
-     * <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-     * </li> </ul>
-     */
     inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and
-     * <code>RegistryName</code> has to be provided.</p> </li> <li>
-     * <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or
-     * <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-     * </li> </ul>
-     */
     inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and
-     * <code>RegistryName</code> has to be provided.</p> </li> <li>
-     * <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or
-     * <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-     * </li> </ul>
-     */
     inline GetSchemaRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and
-     * <code>RegistryName</code> has to be provided.</p> </li> <li>
-     * <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or
-     * <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-     * </li> </ul>
-     */
     inline GetSchemaRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SchemaId m_schemaId;

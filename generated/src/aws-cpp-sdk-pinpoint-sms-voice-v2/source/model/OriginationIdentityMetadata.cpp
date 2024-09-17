@@ -27,12 +27,8 @@ OriginationIdentityMetadata::OriginationIdentityMetadata() :
 {
 }
 
-OriginationIdentityMetadata::OriginationIdentityMetadata(JsonView jsonValue) : 
-    m_originationIdentityArnHasBeenSet(false),
-    m_originationIdentityHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+OriginationIdentityMetadata::OriginationIdentityMetadata(JsonView jsonValue)
+  : OriginationIdentityMetadata()
 {
   *this = jsonValue;
 }

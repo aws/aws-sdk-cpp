@@ -37,46 +37,19 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The replication config to delete.</p>
      */
     inline const Aws::String& GetReplicationConfigArn() const{ return m_replicationConfigArn; }
-
-    /**
-     * <p>The replication config to delete.</p>
-     */
     inline bool ReplicationConfigArnHasBeenSet() const { return m_replicationConfigArnHasBeenSet; }
-
-    /**
-     * <p>The replication config to delete.</p>
-     */
     inline void SetReplicationConfigArn(const Aws::String& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = value; }
-
-    /**
-     * <p>The replication config to delete.</p>
-     */
     inline void SetReplicationConfigArn(Aws::String&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::move(value); }
-
-    /**
-     * <p>The replication config to delete.</p>
-     */
     inline void SetReplicationConfigArn(const char* value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn.assign(value); }
-
-    /**
-     * <p>The replication config to delete.</p>
-     */
     inline DeleteReplicationConfigRequest& WithReplicationConfigArn(const Aws::String& value) { SetReplicationConfigArn(value); return *this;}
-
-    /**
-     * <p>The replication config to delete.</p>
-     */
     inline DeleteReplicationConfigRequest& WithReplicationConfigArn(Aws::String&& value) { SetReplicationConfigArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The replication config to delete.</p>
-     */
     inline DeleteReplicationConfigRequest& WithReplicationConfigArn(const char* value) { SetReplicationConfigArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationConfigArn;

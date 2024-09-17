@@ -26,11 +26,8 @@ ConfluenceSpaceToIndexFieldMapping::ConfluenceSpaceToIndexFieldMapping() :
 {
 }
 
-ConfluenceSpaceToIndexFieldMapping::ConfluenceSpaceToIndexFieldMapping(JsonView jsonValue) : 
-    m_dataSourceFieldName(ConfluenceSpaceFieldName::NOT_SET),
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
+ConfluenceSpaceToIndexFieldMapping::ConfluenceSpaceToIndexFieldMapping(JsonView jsonValue)
+  : ConfluenceSpaceToIndexFieldMapping()
 {
   *this = jsonValue;
 }

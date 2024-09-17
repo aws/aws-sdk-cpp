@@ -24,9 +24,8 @@ ProvisioningArtifactView::ProvisioningArtifactView() :
 {
 }
 
-ProvisioningArtifactView::ProvisioningArtifactView(JsonView jsonValue) : 
-    m_productViewSummaryHasBeenSet(false),
-    m_provisioningArtifactHasBeenSet(false)
+ProvisioningArtifactView::ProvisioningArtifactView(JsonView jsonValue)
+  : ProvisioningArtifactView()
 {
   *this = jsonValue;
 }

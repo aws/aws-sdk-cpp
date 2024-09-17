@@ -39,43 +39,20 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Describes the format of the specified job's manifest. If the manifest is in
      * CSV format, also describes the columns contained within the manifest.</p>
      */
     inline const JobManifestSpec& GetSpec() const{ return m_spec; }
-
-    /**
-     * <p>Describes the format of the specified job's manifest. If the manifest is in
-     * CSV format, also describes the columns contained within the manifest.</p>
-     */
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
-
-    /**
-     * <p>Describes the format of the specified job's manifest. If the manifest is in
-     * CSV format, also describes the columns contained within the manifest.</p>
-     */
     inline void SetSpec(const JobManifestSpec& value) { m_specHasBeenSet = true; m_spec = value; }
-
-    /**
-     * <p>Describes the format of the specified job's manifest. If the manifest is in
-     * CSV format, also describes the columns contained within the manifest.</p>
-     */
     inline void SetSpec(JobManifestSpec&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
-
-    /**
-     * <p>Describes the format of the specified job's manifest. If the manifest is in
-     * CSV format, also describes the columns contained within the manifest.</p>
-     */
     inline JobManifest& WithSpec(const JobManifestSpec& value) { SetSpec(value); return *this;}
-
-    /**
-     * <p>Describes the format of the specified job's manifest. If the manifest is in
-     * CSV format, also describes the columns contained within the manifest.</p>
-     */
     inline JobManifest& WithSpec(JobManifestSpec&& value) { SetSpec(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the information required to locate the specified job's manifest.
      * Manifests can't be imported from directory buckets. For more information, see <a
@@ -83,47 +60,12 @@ namespace Model
      * buckets</a>.</p>
      */
     inline const JobManifestLocation& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>Contains the information required to locate the specified job's manifest.
-     * Manifests can't be imported from directory buckets. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
-     * buckets</a>.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>Contains the information required to locate the specified job's manifest.
-     * Manifests can't be imported from directory buckets. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
-     * buckets</a>.</p>
-     */
     inline void SetLocation(const JobManifestLocation& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>Contains the information required to locate the specified job's manifest.
-     * Manifests can't be imported from directory buckets. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
-     * buckets</a>.</p>
-     */
     inline void SetLocation(JobManifestLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>Contains the information required to locate the specified job's manifest.
-     * Manifests can't be imported from directory buckets. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
-     * buckets</a>.</p>
-     */
     inline JobManifest& WithLocation(const JobManifestLocation& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>Contains the information required to locate the specified job's manifest.
-     * Manifests can't be imported from directory buckets. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
-     * buckets</a>.</p>
-     */
     inline JobManifest& WithLocation(JobManifestLocation&& value) { SetLocation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     JobManifestSpec m_spec;

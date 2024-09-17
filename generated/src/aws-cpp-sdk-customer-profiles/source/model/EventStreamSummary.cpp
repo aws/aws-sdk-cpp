@@ -30,15 +30,8 @@ EventStreamSummary::EventStreamSummary() :
 {
 }
 
-EventStreamSummary::EventStreamSummary(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_eventStreamNameHasBeenSet(false),
-    m_eventStreamArnHasBeenSet(false),
-    m_state(EventStreamState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stoppedSinceHasBeenSet(false),
-    m_destinationSummaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EventStreamSummary::EventStreamSummary(JsonView jsonValue)
+  : EventStreamSummary()
 {
   *this = jsonValue;
 }

@@ -38,67 +38,30 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) and "greater than" (GT)
+     * comparisons are supported.</p>
      */
     inline const Aws::String& GetComparison() const{ return m_comparison; }
-
-    /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-     */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-
-    /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-     */
     inline void SetComparison(const Aws::String& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-
-    /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-     */
     inline void SetComparison(Aws::String&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-
-    /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-     */
     inline void SetComparison(const char* value) { m_comparisonHasBeenSet = true; m_comparison.assign(value); }
-
-    /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-     */
     inline ThresholdV2& WithComparison(const Aws::String& value) { SetComparison(value); return *this;}
-
-    /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-     */
     inline ThresholdV2& WithComparison(Aws::String&& value) { SetComparison(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-     */
     inline ThresholdV2& WithComparison(const char* value) { SetComparison(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The threshold value to compare.</p>
      */
     inline double GetThresholdValue() const{ return m_thresholdValue; }
-
-    /**
-     * <p>The threshold value to compare.</p>
-     */
     inline bool ThresholdValueHasBeenSet() const { return m_thresholdValueHasBeenSet; }
-
-    /**
-     * <p>The threshold value to compare.</p>
-     */
     inline void SetThresholdValue(double value) { m_thresholdValueHasBeenSet = true; m_thresholdValue = value; }
-
-    /**
-     * <p>The threshold value to compare.</p>
-     */
     inline ThresholdV2& WithThresholdValue(double value) { SetThresholdValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_comparison;

@@ -38,46 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL of the Git repository.</p>
      */
     inline const Aws::String& GetRepositoryUrl() const{ return m_repositoryUrl; }
-
-    /**
-     * <p>The URL of the Git repository.</p>
-     */
     inline bool RepositoryUrlHasBeenSet() const { return m_repositoryUrlHasBeenSet; }
-
-    /**
-     * <p>The URL of the Git repository.</p>
-     */
     inline void SetRepositoryUrl(const Aws::String& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = value; }
-
-    /**
-     * <p>The URL of the Git repository.</p>
-     */
     inline void SetRepositoryUrl(Aws::String&& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = std::move(value); }
-
-    /**
-     * <p>The URL of the Git repository.</p>
-     */
     inline void SetRepositoryUrl(const char* value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl.assign(value); }
-
-    /**
-     * <p>The URL of the Git repository.</p>
-     */
     inline CodeRepository& WithRepositoryUrl(const Aws::String& value) { SetRepositoryUrl(value); return *this;}
-
-    /**
-     * <p>The URL of the Git repository.</p>
-     */
     inline CodeRepository& WithRepositoryUrl(Aws::String&& value) { SetRepositoryUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of the Git repository.</p>
-     */
     inline CodeRepository& WithRepositoryUrl(const char* value) { SetRepositoryUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryUrl;

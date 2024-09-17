@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The details of the volume status.</p>
      */
     inline const Aws::Vector<VolumeStatusDetails>& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>The details of the volume status.</p>
-     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p>The details of the volume status.</p>
-     */
     inline void SetDetails(const Aws::Vector<VolumeStatusDetails>& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p>The details of the volume status.</p>
-     */
     inline void SetDetails(Aws::Vector<VolumeStatusDetails>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p>The details of the volume status.</p>
-     */
     inline VolumeStatusInfo& WithDetails(const Aws::Vector<VolumeStatusDetails>& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>The details of the volume status.</p>
-     */
     inline VolumeStatusInfo& WithDetails(Aws::Vector<VolumeStatusDetails>&& value) { SetDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>The details of the volume status.</p>
-     */
     inline VolumeStatusInfo& AddDetails(const VolumeStatusDetails& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
-
-    /**
-     * <p>The details of the volume status.</p>
-     */
     inline VolumeStatusInfo& AddDetails(VolumeStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the volume.</p>
      */
     inline const VolumeStatusInfoStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the volume.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the volume.</p>
-     */
     inline void SetStatus(const VolumeStatusInfoStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the volume.</p>
-     */
     inline void SetStatus(VolumeStatusInfoStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the volume.</p>
-     */
     inline VolumeStatusInfo& WithStatus(const VolumeStatusInfoStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the volume.</p>
-     */
     inline VolumeStatusInfo& WithStatus(VolumeStatusInfoStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<VolumeStatusDetails> m_details;

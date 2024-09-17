@@ -24,9 +24,8 @@ EC2ThrottledException::EC2ThrottledException() :
 {
 }
 
-EC2ThrottledException::EC2ThrottledException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EC2ThrottledException::EC2ThrottledException(JsonView jsonValue)
+  : EC2ThrottledException()
 {
   *this = jsonValue;
 }

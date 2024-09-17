@@ -39,99 +39,42 @@ namespace Model
     AWS_ACCESSANALYZER_API ListArchiveRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of archive rules created for the specified analyzer.</p>
      */
     inline const Aws::Vector<ArchiveRuleSummary>& GetArchiveRules() const{ return m_archiveRules; }
-
-    /**
-     * <p>A list of archive rules created for the specified analyzer.</p>
-     */
     inline void SetArchiveRules(const Aws::Vector<ArchiveRuleSummary>& value) { m_archiveRules = value; }
-
-    /**
-     * <p>A list of archive rules created for the specified analyzer.</p>
-     */
     inline void SetArchiveRules(Aws::Vector<ArchiveRuleSummary>&& value) { m_archiveRules = std::move(value); }
-
-    /**
-     * <p>A list of archive rules created for the specified analyzer.</p>
-     */
     inline ListArchiveRulesResult& WithArchiveRules(const Aws::Vector<ArchiveRuleSummary>& value) { SetArchiveRules(value); return *this;}
-
-    /**
-     * <p>A list of archive rules created for the specified analyzer.</p>
-     */
     inline ListArchiveRulesResult& WithArchiveRules(Aws::Vector<ArchiveRuleSummary>&& value) { SetArchiveRules(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of archive rules created for the specified analyzer.</p>
-     */
     inline ListArchiveRulesResult& AddArchiveRules(const ArchiveRuleSummary& value) { m_archiveRules.push_back(value); return *this; }
-
-    /**
-     * <p>A list of archive rules created for the specified analyzer.</p>
-     */
     inline ListArchiveRulesResult& AddArchiveRules(ArchiveRuleSummary&& value) { m_archiveRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token used for pagination of results returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListArchiveRulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListArchiveRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListArchiveRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListArchiveRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListArchiveRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListArchiveRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ArchiveRuleSummary> m_archiveRules;

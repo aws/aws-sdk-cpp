@@ -37,87 +37,33 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The image set identifier for the destination image set.</p>
      */
     inline const Aws::String& GetImageSetId() const{ return m_imageSetId; }
-
-    /**
-     * <p>The image set identifier for the destination image set.</p>
-     */
     inline bool ImageSetIdHasBeenSet() const { return m_imageSetIdHasBeenSet; }
-
-    /**
-     * <p>The image set identifier for the destination image set.</p>
-     */
     inline void SetImageSetId(const Aws::String& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = value; }
-
-    /**
-     * <p>The image set identifier for the destination image set.</p>
-     */
     inline void SetImageSetId(Aws::String&& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = std::move(value); }
-
-    /**
-     * <p>The image set identifier for the destination image set.</p>
-     */
     inline void SetImageSetId(const char* value) { m_imageSetIdHasBeenSet = true; m_imageSetId.assign(value); }
-
-    /**
-     * <p>The image set identifier for the destination image set.</p>
-     */
     inline CopyDestinationImageSet& WithImageSetId(const Aws::String& value) { SetImageSetId(value); return *this;}
-
-    /**
-     * <p>The image set identifier for the destination image set.</p>
-     */
     inline CopyDestinationImageSet& WithImageSetId(Aws::String&& value) { SetImageSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The image set identifier for the destination image set.</p>
-     */
     inline CopyDestinationImageSet& WithImageSetId(const char* value) { SetImageSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest version identifier for the destination image set.</p>
      */
     inline const Aws::String& GetLatestVersionId() const{ return m_latestVersionId; }
-
-    /**
-     * <p>The latest version identifier for the destination image set.</p>
-     */
     inline bool LatestVersionIdHasBeenSet() const { return m_latestVersionIdHasBeenSet; }
-
-    /**
-     * <p>The latest version identifier for the destination image set.</p>
-     */
     inline void SetLatestVersionId(const Aws::String& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = value; }
-
-    /**
-     * <p>The latest version identifier for the destination image set.</p>
-     */
     inline void SetLatestVersionId(Aws::String&& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = std::move(value); }
-
-    /**
-     * <p>The latest version identifier for the destination image set.</p>
-     */
     inline void SetLatestVersionId(const char* value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId.assign(value); }
-
-    /**
-     * <p>The latest version identifier for the destination image set.</p>
-     */
     inline CopyDestinationImageSet& WithLatestVersionId(const Aws::String& value) { SetLatestVersionId(value); return *this;}
-
-    /**
-     * <p>The latest version identifier for the destination image set.</p>
-     */
     inline CopyDestinationImageSet& WithLatestVersionId(Aws::String&& value) { SetLatestVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The latest version identifier for the destination image set.</p>
-     */
     inline CopyDestinationImageSet& WithLatestVersionId(const char* value) { SetLatestVersionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageSetId;

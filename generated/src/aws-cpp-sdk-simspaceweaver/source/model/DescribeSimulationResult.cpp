@@ -23,9 +23,8 @@ DescribeSimulationResult::DescribeSimulationResult() :
 {
 }
 
-DescribeSimulationResult::DescribeSimulationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SimulationStatus::NOT_SET),
-    m_targetStatus(SimulationTargetStatus::NOT_SET)
+DescribeSimulationResult::DescribeSimulationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSimulationResult()
 {
   *this = result;
 }

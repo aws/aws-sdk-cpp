@@ -65,6 +65,19 @@
 #include <aws/forecast/model/TagResourceResult.h>
 #include <aws/forecast/model/UntagResourceResult.h>
 #include <aws/forecast/model/UpdateDatasetGroupResult.h>
+#include <aws/forecast/model/ListDatasetGroupsRequest.h>
+#include <aws/forecast/model/ListDatasetImportJobsRequest.h>
+#include <aws/forecast/model/ListExplainabilityExportsRequest.h>
+#include <aws/forecast/model/ListExplainabilitiesRequest.h>
+#include <aws/forecast/model/ListForecastExportJobsRequest.h>
+#include <aws/forecast/model/ListForecastsRequest.h>
+#include <aws/forecast/model/ListWhatIfForecastExportsRequest.h>
+#include <aws/forecast/model/ListWhatIfAnalysesRequest.h>
+#include <aws/forecast/model/ListDatasetsRequest.h>
+#include <aws/forecast/model/ListWhatIfForecastsRequest.h>
+#include <aws/forecast/model/ListPredictorBacktestExportJobsRequest.h>
+#include <aws/forecast/model/ListPredictorsRequest.h>
+#include <aws/forecast/model/ListMonitorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ForecastServiceClient header */
 
@@ -99,7 +112,7 @@ namespace Aws
 
   namespace ForecastService
   {
-    using ForecastServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ForecastServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ForecastServiceEndpointProviderBase = Aws::ForecastService::Endpoint::ForecastServiceEndpointProviderBase;
     using ForecastServiceEndpointProvider = Aws::ForecastService::Endpoint::ForecastServiceEndpointProvider;
 

@@ -36,21 +36,8 @@ ApplicationDetail::ApplicationDetail() :
 {
 }
 
-ApplicationDetail::ApplicationDetail(JsonView jsonValue) : 
-    m_applicationNameHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_applicationARNHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_inputDescriptionsHasBeenSet(false),
-    m_outputDescriptionsHasBeenSet(false),
-    m_referenceDataSourceDescriptionsHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
-    m_applicationCodeHasBeenSet(false),
-    m_applicationVersionId(0),
-    m_applicationVersionIdHasBeenSet(false)
+ApplicationDetail::ApplicationDetail(JsonView jsonValue)
+  : ApplicationDetail()
 {
   *this = jsonValue;
 }

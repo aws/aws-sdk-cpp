@@ -24,9 +24,8 @@ ProductionVariantCoreDumpConfig::ProductionVariantCoreDumpConfig() :
 {
 }
 
-ProductionVariantCoreDumpConfig::ProductionVariantCoreDumpConfig(JsonView jsonValue) : 
-    m_destinationS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+ProductionVariantCoreDumpConfig::ProductionVariantCoreDumpConfig(JsonView jsonValue)
+  : ProductionVariantCoreDumpConfig()
 {
   *this = jsonValue;
 }

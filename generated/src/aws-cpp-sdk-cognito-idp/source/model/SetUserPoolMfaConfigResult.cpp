@@ -22,8 +22,8 @@ SetUserPoolMfaConfigResult::SetUserPoolMfaConfigResult() :
 {
 }
 
-SetUserPoolMfaConfigResult::SetUserPoolMfaConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_mfaConfiguration(UserPoolMfaType::NOT_SET)
+SetUserPoolMfaConfigResult::SetUserPoolMfaConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetUserPoolMfaConfigResult()
 {
   *this = result;
 }
@@ -40,6 +40,12 @@ SetUserPoolMfaConfigResult& SetUserPoolMfaConfigResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("SoftwareTokenMfaConfiguration"))
   {
     m_softwareTokenMfaConfiguration = jsonValue.GetObject("SoftwareTokenMfaConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("EmailMfaConfiguration"))
+  {
+    m_emailMfaConfiguration = jsonValue.GetObject("EmailMfaConfiguration");
 
   }
 

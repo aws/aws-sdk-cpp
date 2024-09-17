@@ -23,16 +23,13 @@ RealtimeContactAnalysisSegment::RealtimeContactAnalysisSegment() :
     m_categoriesHasBeenSet(false),
     m_issuesHasBeenSet(false),
     m_eventHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_postContactSummaryHasBeenSet(false)
 {
 }
 
-RealtimeContactAnalysisSegment::RealtimeContactAnalysisSegment(JsonView jsonValue) : 
-    m_transcriptHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_issuesHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+RealtimeContactAnalysisSegment::RealtimeContactAnalysisSegment(JsonView jsonValue)
+  : RealtimeContactAnalysisSegment()
 {
   *this = jsonValue;
 }
@@ -74,6 +71,13 @@ RealtimeContactAnalysisSegment& RealtimeContactAnalysisSegment::operator =(JsonV
     m_attachmentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PostContactSummary"))
+  {
+    m_postContactSummary = jsonValue.GetObject("PostContactSummary");
+
+    m_postContactSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +112,12 @@ JsonValue RealtimeContactAnalysisSegment::Jsonize() const
   if(m_attachmentsHasBeenSet)
   {
    payload.WithObject("Attachments", m_attachments.Jsonize());
+
+  }
+
+  if(m_postContactSummaryHasBeenSet)
+  {
+   payload.WithObject("PostContactSummary", m_postContactSummary.Jsonize());
 
   }
 

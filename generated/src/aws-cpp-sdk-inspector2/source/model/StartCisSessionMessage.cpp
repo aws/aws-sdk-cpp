@@ -23,8 +23,8 @@ StartCisSessionMessage::StartCisSessionMessage() :
 {
 }
 
-StartCisSessionMessage::StartCisSessionMessage(JsonView jsonValue) : 
-    m_sessionTokenHasBeenSet(false)
+StartCisSessionMessage::StartCisSessionMessage(JsonView jsonValue)
+  : StartCisSessionMessage()
 {
   *this = jsonValue;
 }

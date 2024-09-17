@@ -25,10 +25,8 @@ DomainInfo::DomainInfo() :
 {
 }
 
-DomainInfo::DomainInfo(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false)
+DomainInfo::DomainInfo(JsonView jsonValue)
+  : DomainInfo()
 {
   *this = jsonValue;
 }

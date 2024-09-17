@@ -37,20 +37,8 @@ TransitGatewayRouteTableAnnouncement::TransitGatewayRouteTableAnnouncement() :
 {
 }
 
-TransitGatewayRouteTableAnnouncement::TransitGatewayRouteTableAnnouncement(const XmlNode& xmlNode) : 
-    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_peerTransitGatewayIdHasBeenSet(false),
-    m_peerCoreNetworkIdHasBeenSet(false),
-    m_peeringAttachmentIdHasBeenSet(false),
-    m_announcementDirection(TransitGatewayRouteTableAnnouncementDirection::NOT_SET),
-    m_announcementDirectionHasBeenSet(false),
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_state(TransitGatewayRouteTableAnnouncementState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayRouteTableAnnouncement::TransitGatewayRouteTableAnnouncement(const XmlNode& xmlNode)
+  : TransitGatewayRouteTableAnnouncement()
 {
   *this = xmlNode;
 }

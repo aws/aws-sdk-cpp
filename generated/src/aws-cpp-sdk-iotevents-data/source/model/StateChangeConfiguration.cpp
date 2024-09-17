@@ -24,9 +24,8 @@ StateChangeConfiguration::StateChangeConfiguration() :
 {
 }
 
-StateChangeConfiguration::StateChangeConfiguration(JsonView jsonValue) : 
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false)
+StateChangeConfiguration::StateChangeConfiguration(JsonView jsonValue)
+  : StateChangeConfiguration()
 {
   *this = jsonValue;
 }

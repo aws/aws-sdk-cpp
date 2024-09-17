@@ -40,77 +40,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The error code.</p>
      */
     inline const DeleteFleetErrorCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetCode(const DeleteFleetErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetCode(DeleteFleetErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline DeleteFleetError& WithCode(const DeleteFleetErrorCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The error code.</p>
-     */
     inline DeleteFleetError& WithCode(DeleteFleetErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description for the error code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The description for the error code.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The description for the error code.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The description for the error code.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The description for the error code.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The description for the error code.</p>
-     */
     inline DeleteFleetError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The description for the error code.</p>
-     */
     inline DeleteFleetError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The description for the error code.</p>
-     */
     inline DeleteFleetError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     DeleteFleetErrorCode m_code;

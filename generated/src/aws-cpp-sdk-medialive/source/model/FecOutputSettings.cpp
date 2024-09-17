@@ -28,13 +28,8 @@ FecOutputSettings::FecOutputSettings() :
 {
 }
 
-FecOutputSettings::FecOutputSettings(JsonView jsonValue) : 
-    m_columnDepth(0),
-    m_columnDepthHasBeenSet(false),
-    m_includeFec(FecOutputIncludeFec::NOT_SET),
-    m_includeFecHasBeenSet(false),
-    m_rowLength(0),
-    m_rowLengthHasBeenSet(false)
+FecOutputSettings::FecOutputSettings(JsonView jsonValue)
+  : FecOutputSettings()
 {
   *this = jsonValue;
 }

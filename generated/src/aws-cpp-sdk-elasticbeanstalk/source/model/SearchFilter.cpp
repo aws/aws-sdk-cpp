@@ -27,10 +27,8 @@ SearchFilter::SearchFilter() :
 {
 }
 
-SearchFilter::SearchFilter(const XmlNode& xmlNode) : 
-    m_attributeHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+SearchFilter::SearchFilter(const XmlNode& xmlNode)
+  : SearchFilter()
 {
   *this = xmlNode;
 }

@@ -23,8 +23,8 @@ StatisticalThreshold::StatisticalThreshold() :
 {
 }
 
-StatisticalThreshold::StatisticalThreshold(JsonView jsonValue) : 
-    m_statisticHasBeenSet(false)
+StatisticalThreshold::StatisticalThreshold(JsonView jsonValue)
+  : StatisticalThreshold()
 {
   *this = jsonValue;
 }

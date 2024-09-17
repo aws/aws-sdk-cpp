@@ -26,11 +26,8 @@ ContainerProvider::ContainerProvider() :
 {
 }
 
-ContainerProvider::ContainerProvider(JsonView jsonValue) : 
-    m_type(ContainerProviderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_infoHasBeenSet(false)
+ContainerProvider::ContainerProvider(JsonView jsonValue)
+  : ContainerProvider()
 {
   *this = jsonValue;
 }

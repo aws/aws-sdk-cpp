@@ -44,6 +44,13 @@
 #include <aws/greengrassv2/model/TagResourceResult.h>
 #include <aws/greengrassv2/model/UntagResourceResult.h>
 #include <aws/greengrassv2/model/UpdateConnectivityInfoResult.h>
+#include <aws/greengrassv2/model/DisassociateServiceRoleFromAccountRequest.h>
+#include <aws/greengrassv2/model/ListCoreDevicesRequest.h>
+#include <aws/greengrassv2/model/ListDeploymentsRequest.h>
+#include <aws/greengrassv2/model/ResolveComponentCandidatesRequest.h>
+#include <aws/greengrassv2/model/CreateComponentVersionRequest.h>
+#include <aws/greengrassv2/model/GetServiceRoleForAccountRequest.h>
+#include <aws/greengrassv2/model/ListComponentsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in GreengrassV2Client header */
 
@@ -78,7 +85,7 @@ namespace Aws
 
   namespace GreengrassV2
   {
-    using GreengrassV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GreengrassV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GreengrassV2EndpointProviderBase = Aws::GreengrassV2::Endpoint::GreengrassV2EndpointProviderBase;
     using GreengrassV2EndpointProvider = Aws::GreengrassV2::Endpoint::GreengrassV2EndpointProvider;
 

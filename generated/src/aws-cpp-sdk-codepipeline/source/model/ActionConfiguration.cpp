@@ -23,8 +23,8 @@ ActionConfiguration::ActionConfiguration() :
 {
 }
 
-ActionConfiguration::ActionConfiguration(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false)
+ActionConfiguration::ActionConfiguration(JsonView jsonValue)
+  : ActionConfiguration()
 {
   *this = jsonValue;
 }

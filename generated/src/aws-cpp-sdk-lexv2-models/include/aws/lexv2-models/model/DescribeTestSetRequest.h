@@ -32,46 +32,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The test set Id for the test set request.</p>
      */
     inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
-
-    /**
-     * <p>The test set Id for the test set request.</p>
-     */
     inline bool TestSetIdHasBeenSet() const { return m_testSetIdHasBeenSet; }
-
-    /**
-     * <p>The test set Id for the test set request.</p>
-     */
     inline void SetTestSetId(const Aws::String& value) { m_testSetIdHasBeenSet = true; m_testSetId = value; }
-
-    /**
-     * <p>The test set Id for the test set request.</p>
-     */
     inline void SetTestSetId(Aws::String&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::move(value); }
-
-    /**
-     * <p>The test set Id for the test set request.</p>
-     */
     inline void SetTestSetId(const char* value) { m_testSetIdHasBeenSet = true; m_testSetId.assign(value); }
-
-    /**
-     * <p>The test set Id for the test set request.</p>
-     */
     inline DescribeTestSetRequest& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-
-    /**
-     * <p>The test set Id for the test set request.</p>
-     */
     inline DescribeTestSetRequest& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The test set Id for the test set request.</p>
-     */
     inline DescribeTestSetRequest& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_testSetId;

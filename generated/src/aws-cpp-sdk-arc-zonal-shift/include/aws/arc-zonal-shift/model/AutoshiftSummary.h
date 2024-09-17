@@ -49,179 +49,60 @@ namespace Model
     AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
+     * <p>The Availability Zone (for example, <code>use1-az1</code>) that traffic is
+     * shifted away from for a resource when Amazon Web Services starts an autoshift.
+     * Until the autoshift ends, traffic for the resource is instead directed to other
+     * Availability Zones in the Amazon Web Services Region. An autoshift can end for a
+     * resource, for example, when Amazon Web Services ends the autoshift for the
+     * Availability Zone or when you disable zonal autoshift for the resource.</p>
      */
     inline const Aws::String& GetAwayFrom() const{ return m_awayFrom; }
-
-    /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
-     */
     inline bool AwayFromHasBeenSet() const { return m_awayFromHasBeenSet; }
-
-    /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
-     */
     inline void SetAwayFrom(const Aws::String& value) { m_awayFromHasBeenSet = true; m_awayFrom = value; }
-
-    /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
-     */
     inline void SetAwayFrom(Aws::String&& value) { m_awayFromHasBeenSet = true; m_awayFrom = std::move(value); }
-
-    /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
-     */
     inline void SetAwayFrom(const char* value) { m_awayFromHasBeenSet = true; m_awayFrom.assign(value); }
-
-    /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
-     */
     inline AutoshiftSummary& WithAwayFrom(const Aws::String& value) { SetAwayFrom(value); return *this;}
-
-    /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
-     */
     inline AutoshiftSummary& WithAwayFrom(Aws::String&& value) { SetAwayFrom(std::move(value)); return *this;}
-
-    /**
-     * <p>The Availability Zone that traffic is shifted away from for a resource when
-     * Amazon Web Services starts an autoshift. Until the autoshift ends, traffic for
-     * the resource is instead directed to other Availability Zones in the Amazon Web
-     * Services Region. An autoshift can end for a resource, for example, when Amazon
-     * Web Services ends the autoshift for the Availability Zone or when you disable
-     * zonal autoshift for the resource.</p>
-     */
     inline AutoshiftSummary& WithAwayFrom(const char* value) { SetAwayFrom(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time (in UTC) when the autoshift ended.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The time (in UTC) when the autoshift ended.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The time (in UTC) when the autoshift ended.</p>
-     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The time (in UTC) when the autoshift ended.</p>
-     */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>The time (in UTC) when the autoshift ended.</p>
-     */
     inline AutoshiftSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The time (in UTC) when the autoshift ended.</p>
-     */
     inline AutoshiftSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time (in UTC) when the autoshift started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The time (in UTC) when the autoshift started.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The time (in UTC) when the autoshift started.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The time (in UTC) when the autoshift started.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The time (in UTC) when the autoshift started.</p>
-     */
     inline AutoshiftSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The time (in UTC) when the autoshift started.</p>
-     */
     inline AutoshiftSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status for an autoshift. </p>
      */
     inline const AutoshiftExecutionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status for an autoshift. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status for an autoshift. </p>
-     */
     inline void SetStatus(const AutoshiftExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status for an autoshift. </p>
-     */
     inline void SetStatus(AutoshiftExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status for an autoshift. </p>
-     */
     inline AutoshiftSummary& WithStatus(const AutoshiftExecutionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status for an autoshift. </p>
-     */
     inline AutoshiftSummary& WithStatus(AutoshiftExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awayFrom;

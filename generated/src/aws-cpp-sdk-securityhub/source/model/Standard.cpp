@@ -28,13 +28,8 @@ Standard::Standard() :
 {
 }
 
-Standard::Standard(JsonView jsonValue) : 
-    m_standardsArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enabledByDefault(false),
-    m_enabledByDefaultHasBeenSet(false),
-    m_standardsManagedByHasBeenSet(false)
+Standard::Standard(JsonView jsonValue)
+  : Standard()
 {
   *this = jsonValue;
 }

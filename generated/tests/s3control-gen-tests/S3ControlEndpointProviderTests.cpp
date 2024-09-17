@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class S3ControlEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct S3ControlEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct S3ControlEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES = {
+class S3ControlEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<S3ControlEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<S3ControlEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<S3ControlEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<S3ControlEndpointProviderEndpointTestCase>> S3ControlEndpointProviderTests::TEST_CASES;
+const size_t S3ControlEndpointProviderTests::TEST_CASES_SZ = 112;
+
+Aws::Vector<S3ControlEndpointProviderEndpointTestCase> S3ControlEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<S3ControlEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"Vanilla outposts without ARN region + access point ARN@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
@@ -1030,7 +1053,9 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3 Snow does not support DualStack"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -1125,9 +1150,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const S3ControlEndpo
 TEST_P(S3ControlEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const S3ControlEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const S3ControlEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/S3ControlEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<S3ControlEndpointProvider> endpointProvider = Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize S3ControlEndpointProvider";
@@ -1169,4 +1195,4 @@ TEST_P(S3ControlEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          S3ControlEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, S3ControlEndpointProviderTests::TEST_CASES_SZ));

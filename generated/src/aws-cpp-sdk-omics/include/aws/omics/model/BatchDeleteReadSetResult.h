@@ -34,63 +34,29 @@ namespace Model
     AWS_OMICS_API BatchDeleteReadSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Errors returned by individual delete operations.</p>
      */
     inline const Aws::Vector<ReadSetBatchError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>Errors returned by individual delete operations.</p>
-     */
     inline void SetErrors(const Aws::Vector<ReadSetBatchError>& value) { m_errors = value; }
-
-    /**
-     * <p>Errors returned by individual delete operations.</p>
-     */
     inline void SetErrors(Aws::Vector<ReadSetBatchError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>Errors returned by individual delete operations.</p>
-     */
     inline BatchDeleteReadSetResult& WithErrors(const Aws::Vector<ReadSetBatchError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>Errors returned by individual delete operations.</p>
-     */
     inline BatchDeleteReadSetResult& WithErrors(Aws::Vector<ReadSetBatchError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Errors returned by individual delete operations.</p>
-     */
     inline BatchDeleteReadSetResult& AddErrors(const ReadSetBatchError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>Errors returned by individual delete operations.</p>
-     */
     inline BatchDeleteReadSetResult& AddErrors(ReadSetBatchError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchDeleteReadSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchDeleteReadSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchDeleteReadSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ReadSetBatchError> m_errors;

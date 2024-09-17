@@ -23,8 +23,8 @@ PaymentConfiguration::PaymentConfiguration() :
 {
 }
 
-PaymentConfiguration::PaymentConfiguration(JsonView jsonValue) : 
-    m_queryComputeHasBeenSet(false)
+PaymentConfiguration::PaymentConfiguration(JsonView jsonValue)
+  : PaymentConfiguration()
 {
   *this = jsonValue;
 }

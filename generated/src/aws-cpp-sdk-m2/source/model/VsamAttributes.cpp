@@ -28,13 +28,8 @@ VsamAttributes::VsamAttributes() :
 {
 }
 
-VsamAttributes::VsamAttributes(JsonView jsonValue) : 
-    m_alternateKeysHasBeenSet(false),
-    m_compressed(false),
-    m_compressedHasBeenSet(false),
-    m_encodingHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false)
+VsamAttributes::VsamAttributes(JsonView jsonValue)
+  : VsamAttributes()
 {
   *this = jsonValue;
 }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/model/SoftwareUpdatePreferences.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +27,9 @@ namespace Model
 {
   /**
    * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-   * <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> </p> </li> <li> <p>
-   * <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p>
+   * <a>DescribeMaintenanceStartTimeOutput$SoftwareUpdatePreferences</a> </p> </li>
+   * <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> </p> </li> <li>
+   * <p> <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$Timezone</a> </p> </li> </ul><p><h3>See
@@ -43,180 +45,105 @@ namespace Model
     AWS_STORAGEGATEWAY_API DescribeMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-
-    
     inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline DescribeMaintenanceStartTimeResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The hour component of the maintenance start time represented as <i>hh</i>,
      * where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone
      * of the gateway.</p>
      */
     inline int GetHourOfDay() const{ return m_hourOfDay; }
-
-    /**
-     * <p>The hour component of the maintenance start time represented as <i>hh</i>,
-     * where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone
-     * of the gateway.</p>
-     */
     inline void SetHourOfDay(int value) { m_hourOfDay = value; }
-
-    /**
-     * <p>The hour component of the maintenance start time represented as <i>hh</i>,
-     * where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone
-     * of the gateway.</p>
-     */
     inline DescribeMaintenanceStartTimeResult& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minute component of the maintenance start time represented as <i>mm</i>,
      * where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time
      * zone of the gateway.</p>
      */
     inline int GetMinuteOfHour() const{ return m_minuteOfHour; }
-
-    /**
-     * <p>The minute component of the maintenance start time represented as <i>mm</i>,
-     * where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time
-     * zone of the gateway.</p>
-     */
     inline void SetMinuteOfHour(int value) { m_minuteOfHour = value; }
-
-    /**
-     * <p>The minute component of the maintenance start time represented as <i>mm</i>,
-     * where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time
-     * zone of the gateway.</p>
-     */
     inline DescribeMaintenanceStartTimeResult& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An ordinal number between 0 and 6 that represents the day of the week, where
      * 0 represents Sunday and 6 represents Saturday. The day of week is in the time
      * zone of the gateway.</p>
      */
     inline int GetDayOfWeek() const{ return m_dayOfWeek; }
-
-    /**
-     * <p>An ordinal number between 0 and 6 that represents the day of the week, where
-     * 0 represents Sunday and 6 represents Saturday. The day of week is in the time
-     * zone of the gateway.</p>
-     */
     inline void SetDayOfWeek(int value) { m_dayOfWeek = value; }
-
-    /**
-     * <p>An ordinal number between 0 and 6 that represents the day of the week, where
-     * 0 represents Sunday and 6 represents Saturday. The day of week is in the time
-     * zone of the gateway.</p>
-     */
     inline DescribeMaintenanceStartTimeResult& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The day of the month component of the maintenance start time represented as
-     * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p>
+     * an ordinal number from 1 to 28, where 1 represents the first day of the month.
+     * It is not possible to set the maintenance schedule to start on days 29 through
+     * 31.</p>
      */
     inline int GetDayOfMonth() const{ return m_dayOfMonth; }
-
-    /**
-     * <p>The day of the month component of the maintenance start time represented as
-     * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p>
-     */
     inline void SetDayOfMonth(int value) { m_dayOfMonth = value; }
-
-    /**
-     * <p>The day of the month component of the maintenance start time represented as
-     * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p>
-     */
     inline DescribeMaintenanceStartTimeResult& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A value that indicates the time zone that is set for the gateway. The start
      * time and day of week specified should be in the time zone of the gateway.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
-
-    /**
-     * <p>A value that indicates the time zone that is set for the gateway. The start
-     * time and day of week specified should be in the time zone of the gateway.</p>
-     */
     inline void SetTimezone(const Aws::String& value) { m_timezone = value; }
-
-    /**
-     * <p>A value that indicates the time zone that is set for the gateway. The start
-     * time and day of week specified should be in the time zone of the gateway.</p>
-     */
     inline void SetTimezone(Aws::String&& value) { m_timezone = std::move(value); }
-
-    /**
-     * <p>A value that indicates the time zone that is set for the gateway. The start
-     * time and day of week specified should be in the time zone of the gateway.</p>
-     */
     inline void SetTimezone(const char* value) { m_timezone.assign(value); }
-
-    /**
-     * <p>A value that indicates the time zone that is set for the gateway. The start
-     * time and day of week specified should be in the time zone of the gateway.</p>
-     */
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-
-    /**
-     * <p>A value that indicates the time zone that is set for the gateway. The start
-     * time and day of week specified should be in the time zone of the gateway.</p>
-     */
     inline DescribeMaintenanceStartTimeResult& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-
-    /**
-     * <p>A value that indicates the time zone that is set for the gateway. The start
-     * time and day of week specified should be in the time zone of the gateway.</p>
-     */
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>A set of variables indicating the software update preferences for the
+     * gateway.</p> <p>Includes <code>AutomaticUpdatePolicy</code> parameter with the
+     * following inputs:</p> <p> <code>ALL_VERSIONS</code> - Enables regular gateway
+     * maintenance updates.</p> <p> <code>EMERGENCY_VERSIONS_ONLY</code> - Disables
+     * regular gateway maintenance updates. The gateway will still receive emergency
+     * version updates on rare occasions if necessary to remedy highly critical
+     * security or durability issues. You will be notified before an emergency version
+     * update is applied. These updates are applied during your gateway's scheduled
+     * maintenance window.</p>
+     */
+    inline const SoftwareUpdatePreferences& GetSoftwareUpdatePreferences() const{ return m_softwareUpdatePreferences; }
+    inline void SetSoftwareUpdatePreferences(const SoftwareUpdatePreferences& value) { m_softwareUpdatePreferences = value; }
+    inline void SetSoftwareUpdatePreferences(SoftwareUpdatePreferences&& value) { m_softwareUpdatePreferences = std::move(value); }
+    inline DescribeMaintenanceStartTimeResult& WithSoftwareUpdatePreferences(const SoftwareUpdatePreferences& value) { SetSoftwareUpdatePreferences(value); return *this;}
+    inline DescribeMaintenanceStartTimeResult& WithSoftwareUpdatePreferences(SoftwareUpdatePreferences&& value) { SetSoftwareUpdatePreferences(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeMaintenanceStartTimeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeMaintenanceStartTimeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeMaintenanceStartTimeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;
@@ -230,6 +157,8 @@ namespace Model
     int m_dayOfMonth;
 
     Aws::String m_timezone;
+
+    SoftwareUpdatePreferences m_softwareUpdatePreferences;
 
     Aws::String m_requestId;
   };

@@ -21,8 +21,12 @@
 #include <aws/grafana/model/AssociateLicenseResult.h>
 #include <aws/grafana/model/CreateWorkspaceResult.h>
 #include <aws/grafana/model/CreateWorkspaceApiKeyResult.h>
+#include <aws/grafana/model/CreateWorkspaceServiceAccountResult.h>
+#include <aws/grafana/model/CreateWorkspaceServiceAccountTokenResult.h>
 #include <aws/grafana/model/DeleteWorkspaceResult.h>
 #include <aws/grafana/model/DeleteWorkspaceApiKeyResult.h>
+#include <aws/grafana/model/DeleteWorkspaceServiceAccountResult.h>
+#include <aws/grafana/model/DeleteWorkspaceServiceAccountTokenResult.h>
 #include <aws/grafana/model/DescribeWorkspaceResult.h>
 #include <aws/grafana/model/DescribeWorkspaceAuthenticationResult.h>
 #include <aws/grafana/model/DescribeWorkspaceConfigurationResult.h>
@@ -30,6 +34,8 @@
 #include <aws/grafana/model/ListPermissionsResult.h>
 #include <aws/grafana/model/ListTagsForResourceResult.h>
 #include <aws/grafana/model/ListVersionsResult.h>
+#include <aws/grafana/model/ListWorkspaceServiceAccountTokensResult.h>
+#include <aws/grafana/model/ListWorkspaceServiceAccountsResult.h>
 #include <aws/grafana/model/ListWorkspacesResult.h>
 #include <aws/grafana/model/TagResourceResult.h>
 #include <aws/grafana/model/UntagResourceResult.h>
@@ -37,6 +43,8 @@
 #include <aws/grafana/model/UpdateWorkspaceResult.h>
 #include <aws/grafana/model/UpdateWorkspaceAuthenticationResult.h>
 #include <aws/grafana/model/UpdateWorkspaceConfigurationResult.h>
+#include <aws/grafana/model/ListWorkspacesRequest.h>
+#include <aws/grafana/model/ListVersionsRequest.h>
 /* End of service model headers required in ManagedGrafanaClient header */
 
 namespace Aws
@@ -70,7 +78,7 @@ namespace Aws
 
   namespace ManagedGrafana
   {
-    using ManagedGrafanaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ManagedGrafanaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ManagedGrafanaEndpointProviderBase = Aws::ManagedGrafana::Endpoint::ManagedGrafanaEndpointProviderBase;
     using ManagedGrafanaEndpointProvider = Aws::ManagedGrafana::Endpoint::ManagedGrafanaEndpointProvider;
 
@@ -80,8 +88,12 @@ namespace Aws
       class AssociateLicenseRequest;
       class CreateWorkspaceRequest;
       class CreateWorkspaceApiKeyRequest;
+      class CreateWorkspaceServiceAccountRequest;
+      class CreateWorkspaceServiceAccountTokenRequest;
       class DeleteWorkspaceRequest;
       class DeleteWorkspaceApiKeyRequest;
+      class DeleteWorkspaceServiceAccountRequest;
+      class DeleteWorkspaceServiceAccountTokenRequest;
       class DescribeWorkspaceRequest;
       class DescribeWorkspaceAuthenticationRequest;
       class DescribeWorkspaceConfigurationRequest;
@@ -89,6 +101,8 @@ namespace Aws
       class ListPermissionsRequest;
       class ListTagsForResourceRequest;
       class ListVersionsRequest;
+      class ListWorkspaceServiceAccountTokensRequest;
+      class ListWorkspaceServiceAccountsRequest;
       class ListWorkspacesRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -102,8 +116,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateLicenseResult, ManagedGrafanaError> AssociateLicenseOutcome;
       typedef Aws::Utils::Outcome<CreateWorkspaceResult, ManagedGrafanaError> CreateWorkspaceOutcome;
       typedef Aws::Utils::Outcome<CreateWorkspaceApiKeyResult, ManagedGrafanaError> CreateWorkspaceApiKeyOutcome;
+      typedef Aws::Utils::Outcome<CreateWorkspaceServiceAccountResult, ManagedGrafanaError> CreateWorkspaceServiceAccountOutcome;
+      typedef Aws::Utils::Outcome<CreateWorkspaceServiceAccountTokenResult, ManagedGrafanaError> CreateWorkspaceServiceAccountTokenOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkspaceResult, ManagedGrafanaError> DeleteWorkspaceOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkspaceApiKeyResult, ManagedGrafanaError> DeleteWorkspaceApiKeyOutcome;
+      typedef Aws::Utils::Outcome<DeleteWorkspaceServiceAccountResult, ManagedGrafanaError> DeleteWorkspaceServiceAccountOutcome;
+      typedef Aws::Utils::Outcome<DeleteWorkspaceServiceAccountTokenResult, ManagedGrafanaError> DeleteWorkspaceServiceAccountTokenOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspaceResult, ManagedGrafanaError> DescribeWorkspaceOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspaceAuthenticationResult, ManagedGrafanaError> DescribeWorkspaceAuthenticationOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspaceConfigurationResult, ManagedGrafanaError> DescribeWorkspaceConfigurationOutcome;
@@ -111,6 +129,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPermissionsResult, ManagedGrafanaError> ListPermissionsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ManagedGrafanaError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListVersionsResult, ManagedGrafanaError> ListVersionsOutcome;
+      typedef Aws::Utils::Outcome<ListWorkspaceServiceAccountTokensResult, ManagedGrafanaError> ListWorkspaceServiceAccountTokensOutcome;
+      typedef Aws::Utils::Outcome<ListWorkspaceServiceAccountsResult, ManagedGrafanaError> ListWorkspaceServiceAccountsOutcome;
       typedef Aws::Utils::Outcome<ListWorkspacesResult, ManagedGrafanaError> ListWorkspacesOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ManagedGrafanaError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ManagedGrafanaError> UntagResourceOutcome;
@@ -124,8 +144,12 @@ namespace Aws
       typedef std::future<AssociateLicenseOutcome> AssociateLicenseOutcomeCallable;
       typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
       typedef std::future<CreateWorkspaceApiKeyOutcome> CreateWorkspaceApiKeyOutcomeCallable;
+      typedef std::future<CreateWorkspaceServiceAccountOutcome> CreateWorkspaceServiceAccountOutcomeCallable;
+      typedef std::future<CreateWorkspaceServiceAccountTokenOutcome> CreateWorkspaceServiceAccountTokenOutcomeCallable;
       typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
       typedef std::future<DeleteWorkspaceApiKeyOutcome> DeleteWorkspaceApiKeyOutcomeCallable;
+      typedef std::future<DeleteWorkspaceServiceAccountOutcome> DeleteWorkspaceServiceAccountOutcomeCallable;
+      typedef std::future<DeleteWorkspaceServiceAccountTokenOutcome> DeleteWorkspaceServiceAccountTokenOutcomeCallable;
       typedef std::future<DescribeWorkspaceOutcome> DescribeWorkspaceOutcomeCallable;
       typedef std::future<DescribeWorkspaceAuthenticationOutcome> DescribeWorkspaceAuthenticationOutcomeCallable;
       typedef std::future<DescribeWorkspaceConfigurationOutcome> DescribeWorkspaceConfigurationOutcomeCallable;
@@ -133,6 +157,8 @@ namespace Aws
       typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
+      typedef std::future<ListWorkspaceServiceAccountTokensOutcome> ListWorkspaceServiceAccountTokensOutcomeCallable;
+      typedef std::future<ListWorkspaceServiceAccountsOutcome> ListWorkspaceServiceAccountsOutcomeCallable;
       typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -149,8 +175,12 @@ namespace Aws
     typedef std::function<void(const ManagedGrafanaClient*, const Model::AssociateLicenseRequest&, const Model::AssociateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLicenseResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceApiKeyRequest&, const Model::CreateWorkspaceApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceApiKeyResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceServiceAccountRequest&, const Model::CreateWorkspaceServiceAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceServiceAccountResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceServiceAccountTokenRequest&, const Model::CreateWorkspaceServiceAccountTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceServiceAccountTokenResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceApiKeyRequest&, const Model::DeleteWorkspaceApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceApiKeyResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceServiceAccountRequest&, const Model::DeleteWorkspaceServiceAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceServiceAccountResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceServiceAccountTokenRequest&, const Model::DeleteWorkspaceServiceAccountTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceServiceAccountTokenResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceRequest&, const Model::DescribeWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceAuthenticationRequest&, const Model::DescribeWorkspaceAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceAuthenticationResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceConfigurationRequest&, const Model::DescribeWorkspaceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceConfigurationResponseReceivedHandler;
@@ -158,6 +188,8 @@ namespace Aws
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::ListWorkspaceServiceAccountTokensRequest&, const Model::ListWorkspaceServiceAccountTokensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspaceServiceAccountTokensResponseReceivedHandler;
+    typedef std::function<void(const ManagedGrafanaClient*, const Model::ListWorkspaceServiceAccountsRequest&, const Model::ListWorkspaceServiceAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspaceServiceAccountsResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::ListWorkspacesRequest&, const Model::ListWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspacesResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ManagedGrafanaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

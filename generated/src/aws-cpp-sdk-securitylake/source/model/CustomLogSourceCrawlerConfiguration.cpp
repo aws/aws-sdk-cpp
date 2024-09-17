@@ -23,8 +23,8 @@ CustomLogSourceCrawlerConfiguration::CustomLogSourceCrawlerConfiguration() :
 {
 }
 
-CustomLogSourceCrawlerConfiguration::CustomLogSourceCrawlerConfiguration(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false)
+CustomLogSourceCrawlerConfiguration::CustomLogSourceCrawlerConfiguration(JsonView jsonValue)
+  : CustomLogSourceCrawlerConfiguration()
 {
   *this = jsonValue;
 }

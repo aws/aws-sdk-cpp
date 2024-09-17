@@ -32,87 +32,34 @@ namespace Model
     AWS_QBUSINESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
-     */
     inline GetWebExperienceRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
-     */
     inline GetWebExperienceRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
-     */
     inline GetWebExperienceRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The identifier of the Amazon Q web experience. </p>
+     * <p>The identifier of the Amazon Q Business web experience. </p>
      */
     inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
-
-    /**
-     * <p>The identifier of the Amazon Q web experience. </p>
-     */
     inline bool WebExperienceIdHasBeenSet() const { return m_webExperienceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q web experience. </p>
-     */
     inline void SetWebExperienceId(const Aws::String& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q web experience. </p>
-     */
     inline void SetWebExperienceId(Aws::String&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q web experience. </p>
-     */
     inline void SetWebExperienceId(const char* value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q web experience. </p>
-     */
     inline GetWebExperienceRequest& WithWebExperienceId(const Aws::String& value) { SetWebExperienceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q web experience. </p>
-     */
     inline GetWebExperienceRequest& WithWebExperienceId(Aws::String&& value) { SetWebExperienceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q web experience. </p>
-     */
     inline GetWebExperienceRequest& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

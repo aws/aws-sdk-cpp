@@ -25,10 +25,8 @@ EntityItem::EntityItem() :
 {
 }
 
-EntityItem::EntityItem(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_parentsHasBeenSet(false)
+EntityItem::EntityItem(JsonView jsonValue)
+  : EntityItem()
 {
   *this = jsonValue;
 }

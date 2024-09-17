@@ -24,9 +24,8 @@ ScopeDetails::ScopeDetails() :
 {
 }
 
-ScopeDetails::ScopeDetails(JsonView jsonValue) : 
-    m_authorizedTargetsHasBeenSet(false),
-    m_scopeHasBeenSet(false)
+ScopeDetails::ScopeDetails(JsonView jsonValue)
+  : ScopeDetails()
 {
   *this = jsonValue;
 }

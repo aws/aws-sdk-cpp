@@ -23,8 +23,8 @@ CrawlerNodeDetails::CrawlerNodeDetails() :
 {
 }
 
-CrawlerNodeDetails::CrawlerNodeDetails(JsonView jsonValue) : 
-    m_crawlsHasBeenSet(false)
+CrawlerNodeDetails::CrawlerNodeDetails(JsonView jsonValue)
+  : CrawlerNodeDetails()
 {
   *this = jsonValue;
 }

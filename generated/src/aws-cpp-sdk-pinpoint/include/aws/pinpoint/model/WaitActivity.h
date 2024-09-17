@@ -41,91 +41,33 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the next activity to perform, after performing the
      * wait activity.</p>
      */
     inline const Aws::String& GetNextActivity() const{ return m_nextActivity; }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after performing the
-     * wait activity.</p>
-     */
     inline bool NextActivityHasBeenSet() const { return m_nextActivityHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after performing the
-     * wait activity.</p>
-     */
     inline void SetNextActivity(const Aws::String& value) { m_nextActivityHasBeenSet = true; m_nextActivity = value; }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after performing the
-     * wait activity.</p>
-     */
     inline void SetNextActivity(Aws::String&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after performing the
-     * wait activity.</p>
-     */
     inline void SetNextActivity(const char* value) { m_nextActivityHasBeenSet = true; m_nextActivity.assign(value); }
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after performing the
-     * wait activity.</p>
-     */
     inline WaitActivity& WithNextActivity(const Aws::String& value) { SetNextActivity(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after performing the
-     * wait activity.</p>
-     */
     inline WaitActivity& WithNextActivity(Aws::String&& value) { SetNextActivity(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the next activity to perform, after performing the
-     * wait activity.</p>
-     */
     inline WaitActivity& WithNextActivity(const char* value) { SetNextActivity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of time to wait or the date and time when the activity moves
      * participants to the next activity in the journey.</p>
      */
     inline const WaitTime& GetWaitTime() const{ return m_waitTime; }
-
-    /**
-     * <p>The amount of time to wait or the date and time when the activity moves
-     * participants to the next activity in the journey.</p>
-     */
     inline bool WaitTimeHasBeenSet() const { return m_waitTimeHasBeenSet; }
-
-    /**
-     * <p>The amount of time to wait or the date and time when the activity moves
-     * participants to the next activity in the journey.</p>
-     */
     inline void SetWaitTime(const WaitTime& value) { m_waitTimeHasBeenSet = true; m_waitTime = value; }
-
-    /**
-     * <p>The amount of time to wait or the date and time when the activity moves
-     * participants to the next activity in the journey.</p>
-     */
     inline void SetWaitTime(WaitTime&& value) { m_waitTimeHasBeenSet = true; m_waitTime = std::move(value); }
-
-    /**
-     * <p>The amount of time to wait or the date and time when the activity moves
-     * participants to the next activity in the journey.</p>
-     */
     inline WaitActivity& WithWaitTime(const WaitTime& value) { SetWaitTime(value); return *this;}
-
-    /**
-     * <p>The amount of time to wait or the date and time when the activity moves
-     * participants to the next activity in the journey.</p>
-     */
     inline WaitActivity& WithWaitTime(WaitTime&& value) { SetWaitTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextActivity;

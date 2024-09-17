@@ -35,20 +35,8 @@ SpeakerEnrollmentJob::SpeakerEnrollmentJob() :
 {
 }
 
-SpeakerEnrollmentJob::SpeakerEnrollmentJob(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_enrollmentConfigHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobProgressHasBeenSet(false),
-    m_jobStatus(SpeakerEnrollmentJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
+SpeakerEnrollmentJob::SpeakerEnrollmentJob(JsonView jsonValue)
+  : SpeakerEnrollmentJob()
 {
   *this = jsonValue;
 }

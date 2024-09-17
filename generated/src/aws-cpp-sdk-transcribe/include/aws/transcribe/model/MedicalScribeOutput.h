@@ -40,87 +40,33 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Holds the Amazon S3 URI for the Transcript.</p>
      */
     inline const Aws::String& GetTranscriptFileUri() const{ return m_transcriptFileUri; }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Transcript.</p>
-     */
     inline bool TranscriptFileUriHasBeenSet() const { return m_transcriptFileUriHasBeenSet; }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Transcript.</p>
-     */
     inline void SetTranscriptFileUri(const Aws::String& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = value; }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Transcript.</p>
-     */
     inline void SetTranscriptFileUri(Aws::String&& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = std::move(value); }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Transcript.</p>
-     */
     inline void SetTranscriptFileUri(const char* value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri.assign(value); }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Transcript.</p>
-     */
     inline MedicalScribeOutput& WithTranscriptFileUri(const Aws::String& value) { SetTranscriptFileUri(value); return *this;}
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Transcript.</p>
-     */
     inline MedicalScribeOutput& WithTranscriptFileUri(Aws::String&& value) { SetTranscriptFileUri(std::move(value)); return *this;}
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Transcript.</p>
-     */
     inline MedicalScribeOutput& WithTranscriptFileUri(const char* value) { SetTranscriptFileUri(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
      */
     inline const Aws::String& GetClinicalDocumentUri() const{ return m_clinicalDocumentUri; }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-     */
     inline bool ClinicalDocumentUriHasBeenSet() const { return m_clinicalDocumentUriHasBeenSet; }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-     */
     inline void SetClinicalDocumentUri(const Aws::String& value) { m_clinicalDocumentUriHasBeenSet = true; m_clinicalDocumentUri = value; }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-     */
     inline void SetClinicalDocumentUri(Aws::String&& value) { m_clinicalDocumentUriHasBeenSet = true; m_clinicalDocumentUri = std::move(value); }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-     */
     inline void SetClinicalDocumentUri(const char* value) { m_clinicalDocumentUriHasBeenSet = true; m_clinicalDocumentUri.assign(value); }
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-     */
     inline MedicalScribeOutput& WithClinicalDocumentUri(const Aws::String& value) { SetClinicalDocumentUri(value); return *this;}
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-     */
     inline MedicalScribeOutput& WithClinicalDocumentUri(Aws::String&& value) { SetClinicalDocumentUri(std::move(value)); return *this;}
-
-    /**
-     * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-     */
     inline MedicalScribeOutput& WithClinicalDocumentUri(const char* value) { SetClinicalDocumentUri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transcriptFileUri;

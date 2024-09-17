@@ -25,10 +25,8 @@ CoreNetworkPolicyError::CoreNetworkPolicyError() :
 {
 }
 
-CoreNetworkPolicyError::CoreNetworkPolicyError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_pathHasBeenSet(false)
+CoreNetworkPolicyError::CoreNetworkPolicyError(JsonView jsonValue)
+  : CoreNetworkPolicyError()
 {
   *this = jsonValue;
 }

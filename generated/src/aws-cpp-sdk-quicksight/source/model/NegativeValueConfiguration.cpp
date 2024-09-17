@@ -24,9 +24,8 @@ NegativeValueConfiguration::NegativeValueConfiguration() :
 {
 }
 
-NegativeValueConfiguration::NegativeValueConfiguration(JsonView jsonValue) : 
-    m_displayMode(NegativeValueDisplayMode::NOT_SET),
-    m_displayModeHasBeenSet(false)
+NegativeValueConfiguration::NegativeValueConfiguration(JsonView jsonValue)
+  : NegativeValueConfiguration()
 {
   *this = jsonValue;
 }

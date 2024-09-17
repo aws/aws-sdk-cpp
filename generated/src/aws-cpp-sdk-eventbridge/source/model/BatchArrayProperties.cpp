@@ -24,9 +24,8 @@ BatchArrayProperties::BatchArrayProperties() :
 {
 }
 
-BatchArrayProperties::BatchArrayProperties(JsonView jsonValue) : 
-    m_size(0),
-    m_sizeHasBeenSet(false)
+BatchArrayProperties::BatchArrayProperties(JsonView jsonValue)
+  : BatchArrayProperties()
 {
   *this = jsonValue;
 }

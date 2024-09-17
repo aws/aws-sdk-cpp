@@ -51,36 +51,8 @@ Job::Job() :
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_targetSelection(TargetSelection::NOT_SET),
-    m_targetSelectionHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_forceCanceled(false),
-    m_forceCanceledHasBeenSet(false),
-    m_reasonCodeHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_presignedUrlConfigHasBeenSet(false),
-    m_jobExecutionsRolloutConfigHasBeenSet(false),
-    m_abortConfigHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_jobProcessDetailsHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false),
-    m_jobTemplateArnHasBeenSet(false),
-    m_jobExecutionsRetryConfigHasBeenSet(false),
-    m_documentParametersHasBeenSet(false),
-    m_isConcurrent(false),
-    m_isConcurrentHasBeenSet(false),
-    m_schedulingConfigHasBeenSet(false),
-    m_scheduledJobRolloutsHasBeenSet(false),
-    m_destinationPackageVersionsHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }

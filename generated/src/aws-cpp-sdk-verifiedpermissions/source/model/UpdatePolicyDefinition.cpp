@@ -23,8 +23,8 @@ UpdatePolicyDefinition::UpdatePolicyDefinition() :
 {
 }
 
-UpdatePolicyDefinition::UpdatePolicyDefinition(JsonView jsonValue) : 
-    m_staticHasBeenSet(false)
+UpdatePolicyDefinition::UpdatePolicyDefinition(JsonView jsonValue)
+  : UpdatePolicyDefinition()
 {
   *this = jsonValue;
 }

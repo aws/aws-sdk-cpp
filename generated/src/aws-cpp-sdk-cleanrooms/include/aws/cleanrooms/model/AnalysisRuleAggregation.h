@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/JoinRequiredOption.h>
+#include <aws/cleanrooms/model/AdditionalAnalyses.h>
 #include <aws/cleanrooms/model/AggregateColumn.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/JoinOperator.h>
@@ -44,340 +45,125 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The columns that query runners are allowed to use in aggregation queries.</p>
      */
     inline const Aws::Vector<AggregateColumn>& GetAggregateColumns() const{ return m_aggregateColumns; }
-
-    /**
-     * <p>The columns that query runners are allowed to use in aggregation queries.</p>
-     */
     inline bool AggregateColumnsHasBeenSet() const { return m_aggregateColumnsHasBeenSet; }
-
-    /**
-     * <p>The columns that query runners are allowed to use in aggregation queries.</p>
-     */
     inline void SetAggregateColumns(const Aws::Vector<AggregateColumn>& value) { m_aggregateColumnsHasBeenSet = true; m_aggregateColumns = value; }
-
-    /**
-     * <p>The columns that query runners are allowed to use in aggregation queries.</p>
-     */
     inline void SetAggregateColumns(Aws::Vector<AggregateColumn>&& value) { m_aggregateColumnsHasBeenSet = true; m_aggregateColumns = std::move(value); }
-
-    /**
-     * <p>The columns that query runners are allowed to use in aggregation queries.</p>
-     */
     inline AnalysisRuleAggregation& WithAggregateColumns(const Aws::Vector<AggregateColumn>& value) { SetAggregateColumns(value); return *this;}
-
-    /**
-     * <p>The columns that query runners are allowed to use in aggregation queries.</p>
-     */
     inline AnalysisRuleAggregation& WithAggregateColumns(Aws::Vector<AggregateColumn>&& value) { SetAggregateColumns(std::move(value)); return *this;}
-
-    /**
-     * <p>The columns that query runners are allowed to use in aggregation queries.</p>
-     */
     inline AnalysisRuleAggregation& AddAggregateColumns(const AggregateColumn& value) { m_aggregateColumnsHasBeenSet = true; m_aggregateColumns.push_back(value); return *this; }
-
-    /**
-     * <p>The columns that query runners are allowed to use in aggregation queries.</p>
-     */
     inline AnalysisRuleAggregation& AddAggregateColumns(AggregateColumn&& value) { m_aggregateColumnsHasBeenSet = true; m_aggregateColumns.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Columns in configured table that can be used in join statements and/or as
      * aggregate columns. They can never be outputted directly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJoinColumns() const{ return m_joinColumns; }
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline bool JoinColumnsHasBeenSet() const { return m_joinColumnsHasBeenSet; }
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline void SetJoinColumns(const Aws::Vector<Aws::String>& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = value; }
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline void SetJoinColumns(Aws::Vector<Aws::String>&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = std::move(value); }
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline AnalysisRuleAggregation& WithJoinColumns(const Aws::Vector<Aws::String>& value) { SetJoinColumns(value); return *this;}
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline AnalysisRuleAggregation& WithJoinColumns(Aws::Vector<Aws::String>&& value) { SetJoinColumns(std::move(value)); return *this;}
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline AnalysisRuleAggregation& AddJoinColumns(const Aws::String& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(value); return *this; }
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline AnalysisRuleAggregation& AddJoinColumns(Aws::String&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Columns in configured table that can be used in join statements and/or as
-     * aggregate columns. They can never be outputted directly.</p>
-     */
     inline AnalysisRuleAggregation& AddJoinColumns(const char* value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Control that requires member who runs query to do a join with their
      * configured table and/or other configured table in query.</p>
      */
     inline const JoinRequiredOption& GetJoinRequired() const{ return m_joinRequired; }
-
-    /**
-     * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query.</p>
-     */
     inline bool JoinRequiredHasBeenSet() const { return m_joinRequiredHasBeenSet; }
-
-    /**
-     * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query.</p>
-     */
     inline void SetJoinRequired(const JoinRequiredOption& value) { m_joinRequiredHasBeenSet = true; m_joinRequired = value; }
-
-    /**
-     * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query.</p>
-     */
     inline void SetJoinRequired(JoinRequiredOption&& value) { m_joinRequiredHasBeenSet = true; m_joinRequired = std::move(value); }
-
-    /**
-     * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query.</p>
-     */
     inline AnalysisRuleAggregation& WithJoinRequired(const JoinRequiredOption& value) { SetJoinRequired(value); return *this;}
-
-    /**
-     * <p>Control that requires member who runs query to do a join with their
-     * configured table and/or other configured table in query.</p>
-     */
     inline AnalysisRuleAggregation& WithJoinRequired(JoinRequiredOption&& value) { SetJoinRequired(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Which logical operators (if any) are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline const Aws::Vector<JoinOperator>& GetAllowedJoinOperators() const{ return m_allowedJoinOperators; }
-
-    /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
-     * condition. Default is <code>AND</code>.</p>
-     */
     inline bool AllowedJoinOperatorsHasBeenSet() const { return m_allowedJoinOperatorsHasBeenSet; }
-
-    /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
-     * condition. Default is <code>AND</code>.</p>
-     */
     inline void SetAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = value; }
-
-    /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
-     * condition. Default is <code>AND</code>.</p>
-     */
     inline void SetAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = std::move(value); }
-
-    /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
-     * condition. Default is <code>AND</code>.</p>
-     */
     inline AnalysisRuleAggregation& WithAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { SetAllowedJoinOperators(value); return *this;}
-
-    /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
-     * condition. Default is <code>AND</code>.</p>
-     */
     inline AnalysisRuleAggregation& WithAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { SetAllowedJoinOperators(std::move(value)); return *this;}
-
-    /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
-     * condition. Default is <code>AND</code>.</p>
-     */
     inline AnalysisRuleAggregation& AddAllowedJoinOperators(const JoinOperator& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(value); return *this; }
-
-    /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
-     * condition. Default is <code>AND</code>.</p>
-     */
     inline AnalysisRuleAggregation& AddAllowedJoinOperators(JoinOperator&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The columns that query runners are allowed to select, group by, or filter
      * by.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDimensionColumns() const{ return m_dimensionColumns; }
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline bool DimensionColumnsHasBeenSet() const { return m_dimensionColumnsHasBeenSet; }
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline void SetDimensionColumns(const Aws::Vector<Aws::String>& value) { m_dimensionColumnsHasBeenSet = true; m_dimensionColumns = value; }
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline void SetDimensionColumns(Aws::Vector<Aws::String>&& value) { m_dimensionColumnsHasBeenSet = true; m_dimensionColumns = std::move(value); }
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline AnalysisRuleAggregation& WithDimensionColumns(const Aws::Vector<Aws::String>& value) { SetDimensionColumns(value); return *this;}
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline AnalysisRuleAggregation& WithDimensionColumns(Aws::Vector<Aws::String>&& value) { SetDimensionColumns(std::move(value)); return *this;}
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline AnalysisRuleAggregation& AddDimensionColumns(const Aws::String& value) { m_dimensionColumnsHasBeenSet = true; m_dimensionColumns.push_back(value); return *this; }
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline AnalysisRuleAggregation& AddDimensionColumns(Aws::String&& value) { m_dimensionColumnsHasBeenSet = true; m_dimensionColumns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The columns that query runners are allowed to select, group by, or filter
-     * by.</p>
-     */
     inline AnalysisRuleAggregation& AddDimensionColumns(const char* value) { m_dimensionColumnsHasBeenSet = true; m_dimensionColumns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set of scalar functions that are allowed to be used on dimension columns and
      * the output of aggregation of metrics.</p>
      */
     inline const Aws::Vector<ScalarFunctions>& GetScalarFunctions() const{ return m_scalarFunctions; }
-
-    /**
-     * <p>Set of scalar functions that are allowed to be used on dimension columns and
-     * the output of aggregation of metrics.</p>
-     */
     inline bool ScalarFunctionsHasBeenSet() const { return m_scalarFunctionsHasBeenSet; }
-
-    /**
-     * <p>Set of scalar functions that are allowed to be used on dimension columns and
-     * the output of aggregation of metrics.</p>
-     */
     inline void SetScalarFunctions(const Aws::Vector<ScalarFunctions>& value) { m_scalarFunctionsHasBeenSet = true; m_scalarFunctions = value; }
-
-    /**
-     * <p>Set of scalar functions that are allowed to be used on dimension columns and
-     * the output of aggregation of metrics.</p>
-     */
     inline void SetScalarFunctions(Aws::Vector<ScalarFunctions>&& value) { m_scalarFunctionsHasBeenSet = true; m_scalarFunctions = std::move(value); }
-
-    /**
-     * <p>Set of scalar functions that are allowed to be used on dimension columns and
-     * the output of aggregation of metrics.</p>
-     */
     inline AnalysisRuleAggregation& WithScalarFunctions(const Aws::Vector<ScalarFunctions>& value) { SetScalarFunctions(value); return *this;}
-
-    /**
-     * <p>Set of scalar functions that are allowed to be used on dimension columns and
-     * the output of aggregation of metrics.</p>
-     */
     inline AnalysisRuleAggregation& WithScalarFunctions(Aws::Vector<ScalarFunctions>&& value) { SetScalarFunctions(std::move(value)); return *this;}
-
-    /**
-     * <p>Set of scalar functions that are allowed to be used on dimension columns and
-     * the output of aggregation of metrics.</p>
-     */
     inline AnalysisRuleAggregation& AddScalarFunctions(const ScalarFunctions& value) { m_scalarFunctionsHasBeenSet = true; m_scalarFunctions.push_back(value); return *this; }
-
-    /**
-     * <p>Set of scalar functions that are allowed to be used on dimension columns and
-     * the output of aggregation of metrics.</p>
-     */
     inline AnalysisRuleAggregation& AddScalarFunctions(ScalarFunctions&& value) { m_scalarFunctionsHasBeenSet = true; m_scalarFunctions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Columns that must meet a specific threshold value (after an aggregation
      * function is applied to it) for each output row to be returned.</p>
      */
     inline const Aws::Vector<AggregationConstraint>& GetOutputConstraints() const{ return m_outputConstraints; }
-
-    /**
-     * <p>Columns that must meet a specific threshold value (after an aggregation
-     * function is applied to it) for each output row to be returned.</p>
-     */
     inline bool OutputConstraintsHasBeenSet() const { return m_outputConstraintsHasBeenSet; }
-
-    /**
-     * <p>Columns that must meet a specific threshold value (after an aggregation
-     * function is applied to it) for each output row to be returned.</p>
-     */
     inline void SetOutputConstraints(const Aws::Vector<AggregationConstraint>& value) { m_outputConstraintsHasBeenSet = true; m_outputConstraints = value; }
-
-    /**
-     * <p>Columns that must meet a specific threshold value (after an aggregation
-     * function is applied to it) for each output row to be returned.</p>
-     */
     inline void SetOutputConstraints(Aws::Vector<AggregationConstraint>&& value) { m_outputConstraintsHasBeenSet = true; m_outputConstraints = std::move(value); }
-
-    /**
-     * <p>Columns that must meet a specific threshold value (after an aggregation
-     * function is applied to it) for each output row to be returned.</p>
-     */
     inline AnalysisRuleAggregation& WithOutputConstraints(const Aws::Vector<AggregationConstraint>& value) { SetOutputConstraints(value); return *this;}
-
-    /**
-     * <p>Columns that must meet a specific threshold value (after an aggregation
-     * function is applied to it) for each output row to be returned.</p>
-     */
     inline AnalysisRuleAggregation& WithOutputConstraints(Aws::Vector<AggregationConstraint>&& value) { SetOutputConstraints(std::move(value)); return *this;}
-
-    /**
-     * <p>Columns that must meet a specific threshold value (after an aggregation
-     * function is applied to it) for each output row to be returned.</p>
-     */
     inline AnalysisRuleAggregation& AddOutputConstraints(const AggregationConstraint& value) { m_outputConstraintsHasBeenSet = true; m_outputConstraints.push_back(value); return *this; }
-
-    /**
-     * <p>Columns that must meet a specific threshold value (after an aggregation
-     * function is applied to it) for each output row to be returned.</p>
-     */
     inline AnalysisRuleAggregation& AddOutputConstraints(AggregationConstraint&& value) { m_outputConstraintsHasBeenSet = true; m_outputConstraints.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
+    /**
+     * <p> An indicator as to whether additional analyses (such as Clean Rooms ML) can
+     * be applied to the output of the direct query. </p> <p>The
+     * <code>additionalAnalyses</code> parameter is currently supported for the list
+     * analysis rule (<code>AnalysisRuleList</code>) and the custom analysis rule
+     * (<code>AnalysisRuleCustom</code>).</p>
+     */
+    inline const AdditionalAnalyses& GetAdditionalAnalyses() const{ return m_additionalAnalyses; }
+    inline bool AdditionalAnalysesHasBeenSet() const { return m_additionalAnalysesHasBeenSet; }
+    inline void SetAdditionalAnalyses(const AdditionalAnalyses& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
+    inline void SetAdditionalAnalyses(AdditionalAnalyses&& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = std::move(value); }
+    inline AnalysisRuleAggregation& WithAdditionalAnalyses(const AdditionalAnalyses& value) { SetAdditionalAnalyses(value); return *this;}
+    inline AnalysisRuleAggregation& WithAdditionalAnalyses(AdditionalAnalyses&& value) { SetAdditionalAnalyses(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<AggregateColumn> m_aggregateColumns;
@@ -400,6 +186,9 @@ namespace Model
 
     Aws::Vector<AggregationConstraint> m_outputConstraints;
     bool m_outputConstraintsHasBeenSet = false;
+
+    AdditionalAnalyses m_additionalAnalyses;
+    bool m_additionalAnalysesHasBeenSet = false;
   };
 
 } // namespace Model

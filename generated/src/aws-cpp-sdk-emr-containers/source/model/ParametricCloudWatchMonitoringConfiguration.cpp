@@ -24,9 +24,8 @@ ParametricCloudWatchMonitoringConfiguration::ParametricCloudWatchMonitoringConfi
 {
 }
 
-ParametricCloudWatchMonitoringConfiguration::ParametricCloudWatchMonitoringConfiguration(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNamePrefixHasBeenSet(false)
+ParametricCloudWatchMonitoringConfiguration::ParametricCloudWatchMonitoringConfiguration(JsonView jsonValue)
+  : ParametricCloudWatchMonitoringConfiguration()
 {
   *this = jsonValue;
 }

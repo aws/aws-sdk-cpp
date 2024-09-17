@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
      * get runtime details.</p>
      */
     inline const Aws::String& GetLifecycleExecutionId() const{ return m_lifecycleExecutionId; }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-     * get runtime details.</p>
-     */
     inline bool LifecycleExecutionIdHasBeenSet() const { return m_lifecycleExecutionIdHasBeenSet; }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-     * get runtime details.</p>
-     */
     inline void SetLifecycleExecutionId(const Aws::String& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = value; }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-     * get runtime details.</p>
-     */
     inline void SetLifecycleExecutionId(Aws::String&& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = std::move(value); }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-     * get runtime details.</p>
-     */
     inline void SetLifecycleExecutionId(const char* value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId.assign(value); }
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-     * get runtime details.</p>
-     */
     inline GetLifecycleExecutionRequest& WithLifecycleExecutionId(const Aws::String& value) { SetLifecycleExecutionId(value); return *this;}
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-     * get runtime details.</p>
-     */
     inline GetLifecycleExecutionRequest& WithLifecycleExecutionId(Aws::String&& value) { SetLifecycleExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>Use the unique identifier for a runtime instance of the lifecycle policy to
-     * get runtime details.</p>
-     */
     inline GetLifecycleExecutionRequest& WithLifecycleExecutionId(const char* value) { SetLifecycleExecutionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lifecycleExecutionId;

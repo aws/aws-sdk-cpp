@@ -17,7 +17,11 @@ using namespace Aws;
 
 InvokeModelRequest::InvokeModelRequest() : 
     m_acceptHasBeenSet(false),
-    m_modelIdHasBeenSet(false)
+    m_modelIdHasBeenSet(false),
+    m_trace(Trace::NOT_SET),
+    m_traceHasBeenSet(false),
+    m_guardrailIdentifierHasBeenSet(false),
+    m_guardrailVersionHasBeenSet(false)
 {
 }
 
@@ -31,6 +35,25 @@ Aws::Http::HeaderValueCollection InvokeModelRequest::GetRequestSpecificHeaders()
   {
     ss << m_accept;
     headers.emplace("accept",  ss.str());
+    ss.str("");
+  }
+
+  if(m_traceHasBeenSet && m_trace != Trace::NOT_SET)
+  {
+    headers.emplace("x-amzn-bedrock-trace", TraceMapper::GetNameForTrace(m_trace));
+  }
+
+  if(m_guardrailIdentifierHasBeenSet)
+  {
+    ss << m_guardrailIdentifier;
+    headers.emplace("x-amzn-bedrock-guardrailidentifier",  ss.str());
+    ss.str("");
+  }
+
+  if(m_guardrailVersionHasBeenSet)
+  {
+    ss << m_guardrailVersion;
+    headers.emplace("x-amzn-bedrock-guardrailversion",  ss.str());
     ss.str("");
   }
 

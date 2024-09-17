@@ -5,6 +5,7 @@
 
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -13,14 +14,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteEnvironmentRequest::DeleteEnvironmentRequest() : 
+    m_environmentIdHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
+    m_deletionProtectionCheck(DeletionProtectionCheck::NOT_SET),
+    m_deletionProtectionCheckHasBeenSet(false)
 {
 }
 
 Aws::String DeleteEnvironmentRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection DeleteEnvironmentRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_deletionProtectionCheckHasBeenSet && m_deletionProtectionCheck != DeletionProtectionCheck::NOT_SET)
+  {
+    headers.emplace("x-amzn-deletion-protection-check", DeletionProtectionCheckMapper::GetNameForDeletionProtectionCheck(m_deletionProtectionCheck));
+  }
+
+  return headers;
+
 }
 
 

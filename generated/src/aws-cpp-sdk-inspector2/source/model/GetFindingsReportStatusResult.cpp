@@ -23,9 +23,8 @@ GetFindingsReportStatusResult::GetFindingsReportStatusResult() :
 {
 }
 
-GetFindingsReportStatusResult::GetFindingsReportStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_errorCode(ReportingErrorCode::NOT_SET),
-    m_status(ExternalReportStatus::NOT_SET)
+GetFindingsReportStatusResult::GetFindingsReportStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFindingsReportStatusResult()
 {
   *this = result;
 }

@@ -22,8 +22,8 @@ RunStatementResult::RunStatementResult() :
 {
 }
 
-RunStatementResult::RunStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_id(0)
+RunStatementResult::RunStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RunStatementResult()
 {
   *this = result;
 }

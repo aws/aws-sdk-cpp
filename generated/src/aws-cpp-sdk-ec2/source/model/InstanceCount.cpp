@@ -28,11 +28,8 @@ InstanceCount::InstanceCount() :
 {
 }
 
-InstanceCount::InstanceCount(const XmlNode& xmlNode) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_state(ListingState::NOT_SET),
-    m_stateHasBeenSet(false)
+InstanceCount::InstanceCount(const XmlNode& xmlNode)
+  : InstanceCount()
 {
   *this = xmlNode;
 }

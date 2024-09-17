@@ -39,42 +39,18 @@ namespace Model
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that contains the configuration of encryption settings for canary
      * artifacts that are stored in Amazon S3. </p>
      */
     inline const S3EncryptionConfig& GetS3Encryption() const{ return m_s3Encryption; }
-
-    /**
-     * <p>A structure that contains the configuration of encryption settings for canary
-     * artifacts that are stored in Amazon S3. </p>
-     */
     inline bool S3EncryptionHasBeenSet() const { return m_s3EncryptionHasBeenSet; }
-
-    /**
-     * <p>A structure that contains the configuration of encryption settings for canary
-     * artifacts that are stored in Amazon S3. </p>
-     */
     inline void SetS3Encryption(const S3EncryptionConfig& value) { m_s3EncryptionHasBeenSet = true; m_s3Encryption = value; }
-
-    /**
-     * <p>A structure that contains the configuration of encryption settings for canary
-     * artifacts that are stored in Amazon S3. </p>
-     */
     inline void SetS3Encryption(S3EncryptionConfig&& value) { m_s3EncryptionHasBeenSet = true; m_s3Encryption = std::move(value); }
-
-    /**
-     * <p>A structure that contains the configuration of encryption settings for canary
-     * artifacts that are stored in Amazon S3. </p>
-     */
     inline ArtifactConfigOutput& WithS3Encryption(const S3EncryptionConfig& value) { SetS3Encryption(value); return *this;}
-
-    /**
-     * <p>A structure that contains the configuration of encryption settings for canary
-     * artifacts that are stored in Amazon S3. </p>
-     */
     inline ArtifactConfigOutput& WithS3Encryption(S3EncryptionConfig&& value) { SetS3Encryption(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3EncryptionConfig m_s3Encryption;

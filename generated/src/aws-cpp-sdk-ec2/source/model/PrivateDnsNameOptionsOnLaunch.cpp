@@ -30,13 +30,8 @@ PrivateDnsNameOptionsOnLaunch::PrivateDnsNameOptionsOnLaunch() :
 {
 }
 
-PrivateDnsNameOptionsOnLaunch::PrivateDnsNameOptionsOnLaunch(const XmlNode& xmlNode) : 
-    m_hostnameType(HostnameType::NOT_SET),
-    m_hostnameTypeHasBeenSet(false),
-    m_enableResourceNameDnsARecord(false),
-    m_enableResourceNameDnsARecordHasBeenSet(false),
-    m_enableResourceNameDnsAAAARecord(false),
-    m_enableResourceNameDnsAAAARecordHasBeenSet(false)
+PrivateDnsNameOptionsOnLaunch::PrivateDnsNameOptionsOnLaunch(const XmlNode& xmlNode)
+  : PrivateDnsNameOptionsOnLaunch()
 {
   *this = xmlNode;
 }

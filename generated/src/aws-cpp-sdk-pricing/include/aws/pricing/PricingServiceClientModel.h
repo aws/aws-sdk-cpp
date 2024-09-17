@@ -23,6 +23,7 @@
 #include <aws/pricing/model/GetPriceListFileUrlResult.h>
 #include <aws/pricing/model/GetProductsResult.h>
 #include <aws/pricing/model/ListPriceListsResult.h>
+#include <aws/pricing/model/DescribeServicesRequest.h>
 /* End of service model headers required in PricingClient header */
 
 namespace Aws
@@ -56,7 +57,7 @@ namespace Aws
 
   namespace Pricing
   {
-    using PricingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PricingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PricingEndpointProviderBase = Aws::Pricing::Endpoint::PricingEndpointProviderBase;
     using PricingEndpointProvider = Aws::Pricing::Endpoint::PricingEndpointProvider;
 

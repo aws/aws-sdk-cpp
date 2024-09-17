@@ -34,19 +34,8 @@ ProtectedQuery::ProtectedQuery() :
 {
 }
 
-ProtectedQuery::ProtectedQuery(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_sqlParametersHasBeenSet(false),
-    m_status(ProtectedQueryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resultConfigurationHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_differentialPrivacyHasBeenSet(false)
+ProtectedQuery::ProtectedQuery(JsonView jsonValue)
+  : ProtectedQuery()
 {
   *this = jsonValue;
 }

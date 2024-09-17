@@ -30,6 +30,8 @@
 #include <aws/bcm-data-exports/model/TagResourceResult.h>
 #include <aws/bcm-data-exports/model/UntagResourceResult.h>
 #include <aws/bcm-data-exports/model/UpdateExportResult.h>
+#include <aws/bcm-data-exports/model/ListTablesRequest.h>
+#include <aws/bcm-data-exports/model/ListExportsRequest.h>
 /* End of service model headers required in BCMDataExportsClient header */
 
 namespace Aws
@@ -63,7 +65,7 @@ namespace Aws
 
   namespace BCMDataExports
   {
-    using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BCMDataExportsEndpointProviderBase = Aws::BCMDataExports::Endpoint::BCMDataExportsEndpointProviderBase;
     using BCMDataExportsEndpointProvider = Aws::BCMDataExports::Endpoint::BCMDataExportsEndpointProvider;
 

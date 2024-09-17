@@ -27,12 +27,8 @@ ProvisioningTemplateVersionSummary::ProvisioningTemplateVersionSummary() :
 {
 }
 
-ProvisioningTemplateVersionSummary::ProvisioningTemplateVersionSummary(JsonView jsonValue) : 
-    m_versionId(0),
-    m_versionIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false)
+ProvisioningTemplateVersionSummary::ProvisioningTemplateVersionSummary(JsonView jsonValue)
+  : ProvisioningTemplateVersionSummary()
 {
   *this = jsonValue;
 }

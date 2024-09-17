@@ -24,9 +24,8 @@ RunCommandTarget::RunCommandTarget() :
 {
 }
 
-RunCommandTarget::RunCommandTarget(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RunCommandTarget::RunCommandTarget(JsonView jsonValue)
+  : RunCommandTarget()
 {
   *this = jsonValue;
 }

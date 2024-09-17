@@ -24,9 +24,8 @@ ElicitSubSlot::ElicitSubSlot() :
 {
 }
 
-ElicitSubSlot::ElicitSubSlot(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_subSlotToElicitHasBeenSet(false)
+ElicitSubSlot::ElicitSubSlot(JsonView jsonValue)
+  : ElicitSubSlot()
 {
   *this = jsonValue;
 }

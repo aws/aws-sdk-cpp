@@ -27,12 +27,19 @@ Aws::String AttachLoadBalancerTargetGroupsRequest::SerializePayload() const
 
   if(m_targetGroupARNsHasBeenSet)
   {
-    unsigned targetGroupARNsCount = 1;
-    for(auto& item : m_targetGroupARNs)
+    if (m_targetGroupARNs.empty())
     {
-      ss << "TargetGroupARNs.member." << targetGroupARNsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      targetGroupARNsCount++;
+      ss << "TargetGroupARNs=&";
+    }
+    else
+    {
+      unsigned targetGroupARNsCount = 1;
+      for(auto& item : m_targetGroupARNs)
+      {
+        ss << "TargetGroupARNs.member." << targetGroupARNsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        targetGroupARNsCount++;
+      }
     }
   }
 

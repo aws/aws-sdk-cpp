@@ -24,9 +24,8 @@ NodeTypeSpecificValue::NodeTypeSpecificValue() :
 {
 }
 
-NodeTypeSpecificValue::NodeTypeSpecificValue(JsonView jsonValue) : 
-    m_nodeTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+NodeTypeSpecificValue::NodeTypeSpecificValue(JsonView jsonValue)
+  : NodeTypeSpecificValue()
 {
   *this = jsonValue;
 }

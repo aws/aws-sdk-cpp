@@ -34,19 +34,8 @@ EnvironmentTemplateVersion::EnvironmentTemplateVersion() :
 {
 }
 
-EnvironmentTemplateVersion::EnvironmentTemplateVersion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_majorVersionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_recommendedMinorVersionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_status(TemplateVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+EnvironmentTemplateVersion::EnvironmentTemplateVersion(JsonView jsonValue)
+  : EnvironmentTemplateVersion()
 {
   *this = jsonValue;
 }

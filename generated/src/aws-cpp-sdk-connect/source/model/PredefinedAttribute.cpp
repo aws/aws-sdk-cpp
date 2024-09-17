@@ -26,11 +26,8 @@ PredefinedAttribute::PredefinedAttribute() :
 {
 }
 
-PredefinedAttribute::PredefinedAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+PredefinedAttribute::PredefinedAttribute(JsonView jsonValue)
+  : PredefinedAttribute()
 {
   *this = jsonValue;
 }

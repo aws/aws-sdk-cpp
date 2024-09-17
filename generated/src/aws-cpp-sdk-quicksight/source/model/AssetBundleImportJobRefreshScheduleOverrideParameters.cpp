@@ -25,10 +25,8 @@ AssetBundleImportJobRefreshScheduleOverrideParameters::AssetBundleImportJobRefre
 {
 }
 
-AssetBundleImportJobRefreshScheduleOverrideParameters::AssetBundleImportJobRefreshScheduleOverrideParameters(JsonView jsonValue) : 
-    m_dataSetIdHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false),
-    m_startAfterDateTimeHasBeenSet(false)
+AssetBundleImportJobRefreshScheduleOverrideParameters::AssetBundleImportJobRefreshScheduleOverrideParameters(JsonView jsonValue)
+  : AssetBundleImportJobRefreshScheduleOverrideParameters()
 {
   *this = jsonValue;
 }

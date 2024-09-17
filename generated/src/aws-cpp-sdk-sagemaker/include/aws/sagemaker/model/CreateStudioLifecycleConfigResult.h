@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateStudioLifecycleConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of your created Lifecycle Configuration.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigArn() const{ return m_studioLifecycleConfigArn; }
-
-    /**
-     * <p>The ARN of your created Lifecycle Configuration.</p>
-     */
     inline void SetStudioLifecycleConfigArn(const Aws::String& value) { m_studioLifecycleConfigArn = value; }
-
-    /**
-     * <p>The ARN of your created Lifecycle Configuration.</p>
-     */
     inline void SetStudioLifecycleConfigArn(Aws::String&& value) { m_studioLifecycleConfigArn = std::move(value); }
-
-    /**
-     * <p>The ARN of your created Lifecycle Configuration.</p>
-     */
     inline void SetStudioLifecycleConfigArn(const char* value) { m_studioLifecycleConfigArn.assign(value); }
-
-    /**
-     * <p>The ARN of your created Lifecycle Configuration.</p>
-     */
     inline CreateStudioLifecycleConfigResult& WithStudioLifecycleConfigArn(const Aws::String& value) { SetStudioLifecycleConfigArn(value); return *this;}
-
-    /**
-     * <p>The ARN of your created Lifecycle Configuration.</p>
-     */
     inline CreateStudioLifecycleConfigResult& WithStudioLifecycleConfigArn(Aws::String&& value) { SetStudioLifecycleConfigArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of your created Lifecycle Configuration.</p>
-     */
     inline CreateStudioLifecycleConfigResult& WithStudioLifecycleConfigArn(const char* value) { SetStudioLifecycleConfigArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateStudioLifecycleConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateStudioLifecycleConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateStudioLifecycleConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_studioLifecycleConfigArn;

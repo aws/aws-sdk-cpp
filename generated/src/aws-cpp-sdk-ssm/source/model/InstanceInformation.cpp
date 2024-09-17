@@ -48,33 +48,8 @@ InstanceInformation::InstanceInformation() :
 {
 }
 
-InstanceInformation::InstanceInformation(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_pingStatus(PingStatus::NOT_SET),
-    m_pingStatusHasBeenSet(false),
-    m_lastPingDateTimeHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_isLatestVersion(false),
-    m_isLatestVersionHasBeenSet(false),
-    m_platformType(PlatformType::NOT_SET),
-    m_platformTypeHasBeenSet(false),
-    m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_activationIdHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_registrationDateHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_iPAddressHasBeenSet(false),
-    m_computerNameHasBeenSet(false),
-    m_associationStatusHasBeenSet(false),
-    m_lastAssociationExecutionDateHasBeenSet(false),
-    m_lastSuccessfulAssociationExecutionDateHasBeenSet(false),
-    m_associationOverviewHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+InstanceInformation::InstanceInformation(JsonView jsonValue)
+  : InstanceInformation()
 {
   *this = jsonValue;
 }

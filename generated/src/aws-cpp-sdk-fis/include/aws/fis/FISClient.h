@@ -16,11 +16,11 @@ namespace Aws
 namespace FIS
 {
   /**
-   * <p>Fault Injection Simulator is a managed service that enables you to perform
-   * fault injection experiments on your Amazon Web Services workloads. For more
-   * information, see the <a
-   * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection
-   * Simulator User Guide</a>.</p>
+   * <p>Amazon Web Services Fault Injection Service is a managed service that enables
+   * you to perform fault injection experiments on your Amazon Web Services
+   * workloads. For more information, see the <a
+   * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service
+   * User Guide</a>.</p>
    */
   class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FISClient>
   {
@@ -92,7 +92,7 @@ namespace FIS
          * the experiment is automatically stopped. You can define a stop condition as a
          * CloudWatch alarm.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
-         * templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
+         * templates</a> in the <i>Fault Injection Service User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">AWS
          * API Reference</a></p>
@@ -123,7 +123,7 @@ namespace FIS
          * <code>experimentOptions</code> is set to <code>multi-account</code>. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
-         * options</a> in the <i>Fault Injection Simulator User Guide</i>. </p><p><h3>See
+         * options</a> in the <i>Fault Injection Service User Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration">AWS
          * API Reference</a></p>
@@ -303,6 +303,32 @@ namespace FIS
         }
 
         /**
+         * <p> Gets information about the specified safety lever. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSafetyLeverOutcome GetSafetyLever(const Model::GetSafetyLeverRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSafetyLever that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSafetyLeverRequestT = Model::GetSafetyLeverRequest>
+        Model::GetSafetyLeverOutcomeCallable GetSafetyLeverCallable(const GetSafetyLeverRequestT& request) const
+        {
+            return SubmitCallable(&FISClient::GetSafetyLever, request);
+        }
+
+        /**
+         * An Async wrapper for GetSafetyLever that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSafetyLeverRequestT = Model::GetSafetyLeverRequest>
+        void GetSafetyLeverAsync(const GetSafetyLeverRequestT& request, const GetSafetyLeverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FISClient::GetSafetyLever, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about the specified target account configuration of the
          * experiment template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration">AWS
@@ -359,13 +385,13 @@ namespace FIS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListActions">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request) const;
+        virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListActionsRequestT = Model::ListActionsRequest>
-        Model::ListActionsOutcomeCallable ListActionsCallable(const ListActionsRequestT& request) const
+        Model::ListActionsOutcomeCallable ListActionsCallable(const ListActionsRequestT& request = {}) const
         {
             return SubmitCallable(&FISClient::ListActions, request);
         }
@@ -374,7 +400,7 @@ namespace FIS
          * An Async wrapper for ListActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListActionsRequestT = Model::ListActionsRequest>
-        void ListActionsAsync(const ListActionsRequestT& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListActionsAsync(const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListActionsRequestT& request = {}) const
         {
             return SubmitAsync(&FISClient::ListActions, request, handler, context);
         }
@@ -436,13 +462,13 @@ namespace FIS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExperimentTemplatesOutcome ListExperimentTemplates(const Model::ListExperimentTemplatesRequest& request) const;
+        virtual Model::ListExperimentTemplatesOutcome ListExperimentTemplates(const Model::ListExperimentTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExperimentTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExperimentTemplatesRequestT = Model::ListExperimentTemplatesRequest>
-        Model::ListExperimentTemplatesOutcomeCallable ListExperimentTemplatesCallable(const ListExperimentTemplatesRequestT& request) const
+        Model::ListExperimentTemplatesOutcomeCallable ListExperimentTemplatesCallable(const ListExperimentTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&FISClient::ListExperimentTemplates, request);
         }
@@ -451,7 +477,7 @@ namespace FIS
          * An Async wrapper for ListExperimentTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExperimentTemplatesRequestT = Model::ListExperimentTemplatesRequest>
-        void ListExperimentTemplatesAsync(const ListExperimentTemplatesRequestT& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExperimentTemplatesAsync(const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExperimentTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&FISClient::ListExperimentTemplates, request, handler, context);
         }
@@ -461,13 +487,13 @@ namespace FIS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperiments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request) const;
+        virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExperimentsRequestT = Model::ListExperimentsRequest>
-        Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const ListExperimentsRequestT& request) const
+        Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const ListExperimentsRequestT& request = {}) const
         {
             return SubmitCallable(&FISClient::ListExperiments, request);
         }
@@ -476,7 +502,7 @@ namespace FIS
          * An Async wrapper for ListExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExperimentsRequestT = Model::ListExperimentsRequest>
-        void ListExperimentsAsync(const ListExperimentsRequestT& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExperimentsAsync(const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExperimentsRequestT& request = {}) const
         {
             return SubmitAsync(&FISClient::ListExperiments, request, handler, context);
         }
@@ -537,13 +563,13 @@ namespace FIS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTargetResourceTypesOutcome ListTargetResourceTypes(const Model::ListTargetResourceTypesRequest& request) const;
+        virtual Model::ListTargetResourceTypesOutcome ListTargetResourceTypes(const Model::ListTargetResourceTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTargetResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTargetResourceTypesRequestT = Model::ListTargetResourceTypesRequest>
-        Model::ListTargetResourceTypesOutcomeCallable ListTargetResourceTypesCallable(const ListTargetResourceTypesRequestT& request) const
+        Model::ListTargetResourceTypesOutcomeCallable ListTargetResourceTypesCallable(const ListTargetResourceTypesRequestT& request = {}) const
         {
             return SubmitCallable(&FISClient::ListTargetResourceTypes, request);
         }
@@ -552,7 +578,7 @@ namespace FIS
          * An Async wrapper for ListTargetResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTargetResourceTypesRequestT = Model::ListTargetResourceTypesRequest>
-        void ListTargetResourceTypesAsync(const ListTargetResourceTypesRequestT& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTargetResourceTypesAsync(const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTargetResourceTypesRequestT& request = {}) const
         {
             return SubmitAsync(&FISClient::ListTargetResourceTypes, request, handler, context);
         }
@@ -686,6 +712,31 @@ namespace FIS
         }
 
         /**
+         * <p> Updates the specified safety lever state. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSafetyLeverStateOutcome UpdateSafetyLeverState(const Model::UpdateSafetyLeverStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSafetyLeverState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSafetyLeverStateRequestT = Model::UpdateSafetyLeverStateRequest>
+        Model::UpdateSafetyLeverStateOutcomeCallable UpdateSafetyLeverStateCallable(const UpdateSafetyLeverStateRequestT& request) const
+        {
+            return SubmitCallable(&FISClient::UpdateSafetyLeverState, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSafetyLeverState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSafetyLeverStateRequestT = Model::UpdateSafetyLeverStateRequest>
+        void UpdateSafetyLeverStateAsync(const UpdateSafetyLeverStateRequestT& request, const UpdateSafetyLeverStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FISClient::UpdateSafetyLeverState, request, handler, context);
+        }
+
+        /**
          * <p>Updates the target account configuration for the specified experiment
          * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration">AWS
@@ -719,7 +770,6 @@ namespace FIS
       void init(const FISClientConfiguration& clientConfiguration);
 
       FISClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<FISEndpointProviderBase> m_endpointProvider;
   };
 

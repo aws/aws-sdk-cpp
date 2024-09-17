@@ -25,10 +25,8 @@ AppInstanceStreamingConfiguration::AppInstanceStreamingConfiguration() :
 {
 }
 
-AppInstanceStreamingConfiguration::AppInstanceStreamingConfiguration(JsonView jsonValue) : 
-    m_appInstanceDataType(AppInstanceDataType::NOT_SET),
-    m_appInstanceDataTypeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+AppInstanceStreamingConfiguration::AppInstanceStreamingConfiguration(JsonView jsonValue)
+  : AppInstanceStreamingConfiguration()
 {
   *this = jsonValue;
 }

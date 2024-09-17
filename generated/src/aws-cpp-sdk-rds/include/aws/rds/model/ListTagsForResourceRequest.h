@@ -41,6 +41,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a
@@ -48,104 +49,28 @@ namespace Model
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This parameter isn't currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline ListTagsForResourceRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline ListTagsForResourceRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline ListTagsForResourceRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline ListTagsForResourceRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

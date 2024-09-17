@@ -19,33 +19,22 @@ namespace Model
 {
 
 Rule::Rule() : 
-    m_excludedUsersAndGroupsHasBeenSet(false),
     m_includedUsersAndGroupsHasBeenSet(false),
-    m_ruleConfigurationHasBeenSet(false),
+    m_excludedUsersAndGroupsHasBeenSet(false),
     m_ruleType(RuleType::NOT_SET),
-    m_ruleTypeHasBeenSet(false)
+    m_ruleTypeHasBeenSet(false),
+    m_ruleConfigurationHasBeenSet(false)
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_excludedUsersAndGroupsHasBeenSet(false),
-    m_includedUsersAndGroupsHasBeenSet(false),
-    m_ruleConfigurationHasBeenSet(false),
-    m_ruleType(RuleType::NOT_SET),
-    m_ruleTypeHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }
 
 Rule& Rule::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("excludedUsersAndGroups"))
-  {
-    m_excludedUsersAndGroups = jsonValue.GetObject("excludedUsersAndGroups");
-
-    m_excludedUsersAndGroupsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("includedUsersAndGroups"))
   {
     m_includedUsersAndGroups = jsonValue.GetObject("includedUsersAndGroups");
@@ -53,11 +42,11 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_includedUsersAndGroupsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ruleConfiguration"))
+  if(jsonValue.ValueExists("excludedUsersAndGroups"))
   {
-    m_ruleConfiguration = jsonValue.GetObject("ruleConfiguration");
+    m_excludedUsersAndGroups = jsonValue.GetObject("excludedUsersAndGroups");
 
-    m_ruleConfigurationHasBeenSet = true;
+    m_excludedUsersAndGroupsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ruleType"))
@@ -67,6 +56,13 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_ruleTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ruleConfiguration"))
+  {
+    m_ruleConfiguration = jsonValue.GetObject("ruleConfiguration");
+
+    m_ruleConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,27 +70,27 @@ JsonValue Rule::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_excludedUsersAndGroupsHasBeenSet)
-  {
-   payload.WithObject("excludedUsersAndGroups", m_excludedUsersAndGroups.Jsonize());
-
-  }
-
   if(m_includedUsersAndGroupsHasBeenSet)
   {
    payload.WithObject("includedUsersAndGroups", m_includedUsersAndGroups.Jsonize());
 
   }
 
-  if(m_ruleConfigurationHasBeenSet)
+  if(m_excludedUsersAndGroupsHasBeenSet)
   {
-   payload.WithObject("ruleConfiguration", m_ruleConfiguration.Jsonize());
+   payload.WithObject("excludedUsersAndGroups", m_excludedUsersAndGroups.Jsonize());
 
   }
 
   if(m_ruleTypeHasBeenSet)
   {
    payload.WithString("ruleType", RuleTypeMapper::GetNameForRuleType(m_ruleType));
+  }
+
+  if(m_ruleConfigurationHasBeenSet)
+  {
+   payload.WithObject("ruleConfiguration", m_ruleConfiguration.Jsonize());
+
   }
 
   return payload;

@@ -26,11 +26,8 @@ TeradataParameters::TeradataParameters() :
 {
 }
 
-TeradataParameters::TeradataParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+TeradataParameters::TeradataParameters(JsonView jsonValue)
+  : TeradataParameters()
 {
   *this = jsonValue;
 }

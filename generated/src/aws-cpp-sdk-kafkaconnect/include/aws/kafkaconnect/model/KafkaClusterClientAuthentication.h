@@ -38,42 +38,18 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of client authentication used to connect to the Apache Kafka
      * cluster. Value NONE means that no client authentication is used.</p>
      */
     inline const KafkaClusterClientAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
-
-    /**
-     * <p>The type of client authentication used to connect to the Apache Kafka
-     * cluster. Value NONE means that no client authentication is used.</p>
-     */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-
-    /**
-     * <p>The type of client authentication used to connect to the Apache Kafka
-     * cluster. Value NONE means that no client authentication is used.</p>
-     */
     inline void SetAuthenticationType(const KafkaClusterClientAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-
-    /**
-     * <p>The type of client authentication used to connect to the Apache Kafka
-     * cluster. Value NONE means that no client authentication is used.</p>
-     */
     inline void SetAuthenticationType(KafkaClusterClientAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-
-    /**
-     * <p>The type of client authentication used to connect to the Apache Kafka
-     * cluster. Value NONE means that no client authentication is used.</p>
-     */
     inline KafkaClusterClientAuthentication& WithAuthenticationType(const KafkaClusterClientAuthenticationType& value) { SetAuthenticationType(value); return *this;}
-
-    /**
-     * <p>The type of client authentication used to connect to the Apache Kafka
-     * cluster. Value NONE means that no client authentication is used.</p>
-     */
     inline KafkaClusterClientAuthentication& WithAuthenticationType(KafkaClusterClientAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KafkaClusterClientAuthenticationType m_authenticationType;

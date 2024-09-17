@@ -30,15 +30,8 @@ FunnelChartConfiguration::FunnelChartConfiguration() :
 {
 }
 
-FunnelChartConfiguration::FunnelChartConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_valueLabelOptionsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_dataLabelOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+FunnelChartConfiguration::FunnelChartConfiguration(JsonView jsonValue)
+  : FunnelChartConfiguration()
 {
   *this = jsonValue;
 }

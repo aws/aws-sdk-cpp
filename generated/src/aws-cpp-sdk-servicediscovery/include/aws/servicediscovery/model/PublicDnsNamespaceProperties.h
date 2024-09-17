@@ -37,36 +37,17 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>DNS properties for the public DNS namespace.</p>
      */
     inline const PublicDnsPropertiesMutable& GetDnsProperties() const{ return m_dnsProperties; }
-
-    /**
-     * <p>DNS properties for the public DNS namespace.</p>
-     */
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
-
-    /**
-     * <p>DNS properties for the public DNS namespace.</p>
-     */
     inline void SetDnsProperties(const PublicDnsPropertiesMutable& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
-
-    /**
-     * <p>DNS properties for the public DNS namespace.</p>
-     */
     inline void SetDnsProperties(PublicDnsPropertiesMutable&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
-
-    /**
-     * <p>DNS properties for the public DNS namespace.</p>
-     */
     inline PublicDnsNamespaceProperties& WithDnsProperties(const PublicDnsPropertiesMutable& value) { SetDnsProperties(value); return *this;}
-
-    /**
-     * <p>DNS properties for the public DNS namespace.</p>
-     */
     inline PublicDnsNamespaceProperties& WithDnsProperties(PublicDnsPropertiesMutable&& value) { SetDnsProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PublicDnsPropertiesMutable m_dnsProperties;

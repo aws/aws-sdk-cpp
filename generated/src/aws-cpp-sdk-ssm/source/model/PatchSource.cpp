@@ -25,10 +25,8 @@ PatchSource::PatchSource() :
 {
 }
 
-PatchSource::PatchSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_productsHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+PatchSource::PatchSource(JsonView jsonValue)
+  : PatchSource()
 {
   *this = jsonValue;
 }

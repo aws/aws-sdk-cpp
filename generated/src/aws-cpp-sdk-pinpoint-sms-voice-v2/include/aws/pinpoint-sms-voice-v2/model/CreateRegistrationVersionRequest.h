@@ -34,46 +34,19 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the registration.</p>
      */
     inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
-
-    /**
-     * <p>The unique identifier for the registration.</p>
-     */
     inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the registration.</p>
-     */
     inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
-
-    /**
-     * <p>The unique identifier for the registration.</p>
-     */
     inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the registration.</p>
-     */
     inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the registration.</p>
-     */
     inline CreateRegistrationVersionRequest& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the registration.</p>
-     */
     inline CreateRegistrationVersionRequest& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the registration.</p>
-     */
     inline CreateRegistrationVersionRequest& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registrationId;

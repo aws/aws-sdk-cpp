@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Get Action Group Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentActionGroupResponse">AWS
-   * API Reference</a></p>
-   */
   class GetAgentActionGroupResult
   {
   public:
@@ -38,43 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentActionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>Contains details about the action group.</p>
+     */
     inline const AgentActionGroup& GetAgentActionGroup() const{ return m_agentActionGroup; }
-
-    
     inline void SetAgentActionGroup(const AgentActionGroup& value) { m_agentActionGroup = value; }
-
-    
     inline void SetAgentActionGroup(AgentActionGroup&& value) { m_agentActionGroup = std::move(value); }
-
-    
     inline GetAgentActionGroupResult& WithAgentActionGroup(const AgentActionGroup& value) { SetAgentActionGroup(value); return *this;}
-
-    
     inline GetAgentActionGroupResult& WithAgentActionGroup(AgentActionGroup&& value) { SetAgentActionGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAgentActionGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAgentActionGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAgentActionGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AgentActionGroup m_agentActionGroup;

@@ -39,108 +39,43 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The CIS rule details for the CIS session message.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCisRuleDetails() const{ return m_cisRuleDetails; }
-
-    /**
-     * <p>The CIS rule details for the CIS session message.</p>
-     */
     inline bool CisRuleDetailsHasBeenSet() const { return m_cisRuleDetailsHasBeenSet; }
-
-    /**
-     * <p>The CIS rule details for the CIS session message.</p>
-     */
     inline void SetCisRuleDetails(const Aws::Utils::ByteBuffer& value) { m_cisRuleDetailsHasBeenSet = true; m_cisRuleDetails = value; }
-
-    /**
-     * <p>The CIS rule details for the CIS session message.</p>
-     */
     inline void SetCisRuleDetails(Aws::Utils::ByteBuffer&& value) { m_cisRuleDetailsHasBeenSet = true; m_cisRuleDetails = std::move(value); }
-
-    /**
-     * <p>The CIS rule details for the CIS session message.</p>
-     */
     inline CisSessionMessage& WithCisRuleDetails(const Aws::Utils::ByteBuffer& value) { SetCisRuleDetails(value); return *this;}
-
-    /**
-     * <p>The CIS rule details for the CIS session message.</p>
-     */
     inline CisSessionMessage& WithCisRuleDetails(Aws::Utils::ByteBuffer&& value) { SetCisRuleDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule ID for the CIS session message.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
-
-    /**
-     * <p>The rule ID for the CIS session message.</p>
-     */
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-
-    /**
-     * <p>The rule ID for the CIS session message.</p>
-     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-
-    /**
-     * <p>The rule ID for the CIS session message.</p>
-     */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-
-    /**
-     * <p>The rule ID for the CIS session message.</p>
-     */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-
-    /**
-     * <p>The rule ID for the CIS session message.</p>
-     */
     inline CisSessionMessage& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-
-    /**
-     * <p>The rule ID for the CIS session message.</p>
-     */
     inline CisSessionMessage& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule ID for the CIS session message.</p>
-     */
     inline CisSessionMessage& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the CIS session message.</p>
      */
     inline const CisRuleStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the CIS session message.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the CIS session message.</p>
-     */
     inline void SetStatus(const CisRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the CIS session message.</p>
-     */
     inline void SetStatus(CisRuleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the CIS session message.</p>
-     */
     inline CisSessionMessage& WithStatus(const CisRuleStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the CIS session message.</p>
-     */
     inline CisSessionMessage& WithStatus(CisRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_cisRuleDetails;

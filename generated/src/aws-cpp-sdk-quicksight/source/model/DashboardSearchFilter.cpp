@@ -27,12 +27,8 @@ DashboardSearchFilter::DashboardSearchFilter() :
 {
 }
 
-DashboardSearchFilter::DashboardSearchFilter(JsonView jsonValue) : 
-    m_operator(FilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(DashboardFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DashboardSearchFilter::DashboardSearchFilter(JsonView jsonValue)
+  : DashboardSearchFilter()
 {
   *this = jsonValue;
 }

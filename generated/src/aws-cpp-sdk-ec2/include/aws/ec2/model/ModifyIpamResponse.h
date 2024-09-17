@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API ModifyIpamResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The results of the modification.</p>
      */
     inline const Ipam& GetIpam() const{ return m_ipam; }
-
-    /**
-     * <p>The results of the modification.</p>
-     */
     inline void SetIpam(const Ipam& value) { m_ipam = value; }
-
-    /**
-     * <p>The results of the modification.</p>
-     */
     inline void SetIpam(Ipam&& value) { m_ipam = std::move(value); }
-
-    /**
-     * <p>The results of the modification.</p>
-     */
     inline ModifyIpamResponse& WithIpam(const Ipam& value) { SetIpam(value); return *this;}
-
-    /**
-     * <p>The results of the modification.</p>
-     */
     inline ModifyIpamResponse& WithIpam(Ipam&& value) { SetIpam(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyIpamResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyIpamResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Ipam m_ipam;

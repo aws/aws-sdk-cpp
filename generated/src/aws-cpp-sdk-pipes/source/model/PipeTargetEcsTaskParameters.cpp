@@ -19,56 +19,79 @@ namespace Model
 {
 
 PipeTargetEcsTaskParameters::PipeTargetEcsTaskParameters() : 
+    m_taskDefinitionArnHasBeenSet(false),
+    m_taskCount(0),
+    m_taskCountHasBeenSet(false),
+    m_launchType(LaunchType::NOT_SET),
+    m_launchTypeHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
+    m_groupHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
     m_enableExecuteCommand(false),
     m_enableExecuteCommandHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_overridesHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
     m_propagateTagsHasBeenSet(false),
     m_referenceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskCount(0),
-    m_taskCountHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false)
+    m_overridesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
-PipeTargetEcsTaskParameters::PipeTargetEcsTaskParameters(JsonView jsonValue) : 
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_enableECSManagedTags(false),
-    m_enableECSManagedTagsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskCount(0),
-    m_taskCountHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false)
+PipeTargetEcsTaskParameters::PipeTargetEcsTaskParameters(JsonView jsonValue)
+  : PipeTargetEcsTaskParameters()
 {
   *this = jsonValue;
 }
 
 PipeTargetEcsTaskParameters& PipeTargetEcsTaskParameters::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("TaskDefinitionArn"))
+  {
+    m_taskDefinitionArn = jsonValue.GetString("TaskDefinitionArn");
+
+    m_taskDefinitionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TaskCount"))
+  {
+    m_taskCount = jsonValue.GetInteger("TaskCount");
+
+    m_taskCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LaunchType"))
+  {
+    m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("LaunchType"));
+
+    m_launchTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
+
+    m_networkConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlatformVersion"))
+  {
+    m_platformVersion = jsonValue.GetString("PlatformVersion");
+
+    m_platformVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Group"))
+  {
+    m_group = jsonValue.GetString("Group");
+
+    m_groupHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CapacityProviderStrategy"))
   {
     Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
@@ -93,34 +116,6 @@ PipeTargetEcsTaskParameters& PipeTargetEcsTaskParameters::operator =(JsonView js
     m_enableExecuteCommandHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Group"))
-  {
-    m_group = jsonValue.GetString("Group");
-
-    m_groupHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("LaunchType"))
-  {
-    m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("LaunchType"));
-
-    m_launchTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("NetworkConfiguration"))
-  {
-    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
-
-    m_networkConfigurationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Overrides"))
-  {
-    m_overrides = jsonValue.GetObject("Overrides");
-
-    m_overridesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("PlacementConstraints"))
   {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
@@ -141,13 +136,6 @@ PipeTargetEcsTaskParameters& PipeTargetEcsTaskParameters::operator =(JsonView js
     m_placementStrategyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PlatformVersion"))
-  {
-    m_platformVersion = jsonValue.GetString("PlatformVersion");
-
-    m_platformVersionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("PropagateTags"))
   {
     m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("PropagateTags"));
@@ -162,6 +150,13 @@ PipeTargetEcsTaskParameters& PipeTargetEcsTaskParameters::operator =(JsonView js
     m_referenceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Overrides"))
+  {
+    m_overrides = jsonValue.GetObject("Overrides");
+
+    m_overridesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -172,26 +167,47 @@ PipeTargetEcsTaskParameters& PipeTargetEcsTaskParameters::operator =(JsonView js
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TaskCount"))
-  {
-    m_taskCount = jsonValue.GetInteger("TaskCount");
-
-    m_taskCountHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("TaskDefinitionArn"))
-  {
-    m_taskDefinitionArn = jsonValue.GetString("TaskDefinitionArn");
-
-    m_taskDefinitionArnHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue PipeTargetEcsTaskParameters::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_taskDefinitionArnHasBeenSet)
+  {
+   payload.WithString("TaskDefinitionArn", m_taskDefinitionArn);
+
+  }
+
+  if(m_taskCountHasBeenSet)
+  {
+   payload.WithInteger("TaskCount", m_taskCount);
+
+  }
+
+  if(m_launchTypeHasBeenSet)
+  {
+   payload.WithString("LaunchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+   payload.WithString("PlatformVersion", m_platformVersion);
+
+  }
+
+  if(m_groupHasBeenSet)
+  {
+   payload.WithString("Group", m_group);
+
+  }
 
   if(m_capacityProviderStrategyHasBeenSet)
   {
@@ -213,29 +229,6 @@ JsonValue PipeTargetEcsTaskParameters::Jsonize() const
   if(m_enableExecuteCommandHasBeenSet)
   {
    payload.WithBool("EnableExecuteCommand", m_enableExecuteCommand);
-
-  }
-
-  if(m_groupHasBeenSet)
-  {
-   payload.WithString("Group", m_group);
-
-  }
-
-  if(m_launchTypeHasBeenSet)
-  {
-   payload.WithString("LaunchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
-  }
-
-  if(m_networkConfigurationHasBeenSet)
-  {
-   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
-
-  }
-
-  if(m_overridesHasBeenSet)
-  {
-   payload.WithObject("Overrides", m_overrides.Jsonize());
 
   }
 
@@ -261,12 +254,6 @@ JsonValue PipeTargetEcsTaskParameters::Jsonize() const
 
   }
 
-  if(m_platformVersionHasBeenSet)
-  {
-   payload.WithString("PlatformVersion", m_platformVersion);
-
-  }
-
   if(m_propagateTagsHasBeenSet)
   {
    payload.WithString("PropagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
@@ -278,6 +265,12 @@ JsonValue PipeTargetEcsTaskParameters::Jsonize() const
 
   }
 
+  if(m_overridesHasBeenSet)
+  {
+   payload.WithObject("Overrides", m_overrides.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -286,18 +279,6 @@ JsonValue PipeTargetEcsTaskParameters::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
-
-  }
-
-  if(m_taskCountHasBeenSet)
-  {
-   payload.WithInteger("TaskCount", m_taskCount);
-
-  }
-
-  if(m_taskDefinitionArnHasBeenSet)
-  {
-   payload.WithString("TaskDefinitionArn", m_taskDefinitionArn);
 
   }
 

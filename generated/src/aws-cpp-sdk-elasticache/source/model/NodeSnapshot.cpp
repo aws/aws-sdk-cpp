@@ -31,14 +31,8 @@ NodeSnapshot::NodeSnapshot() :
 {
 }
 
-NodeSnapshot::NodeSnapshot(const XmlNode& xmlNode) : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_nodeGroupIdHasBeenSet(false),
-    m_cacheNodeIdHasBeenSet(false),
-    m_nodeGroupConfigurationHasBeenSet(false),
-    m_cacheSizeHasBeenSet(false),
-    m_cacheNodeCreateTimeHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false)
+NodeSnapshot::NodeSnapshot(const XmlNode& xmlNode)
+  : NodeSnapshot()
 {
   *this = xmlNode;
 }

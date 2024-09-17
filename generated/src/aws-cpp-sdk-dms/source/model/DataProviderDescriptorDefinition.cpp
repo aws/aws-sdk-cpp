@@ -25,10 +25,8 @@ DataProviderDescriptorDefinition::DataProviderDescriptorDefinition() :
 {
 }
 
-DataProviderDescriptorDefinition::DataProviderDescriptorDefinition(JsonView jsonValue) : 
-    m_dataProviderIdentifierHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false)
+DataProviderDescriptorDefinition::DataProviderDescriptorDefinition(JsonView jsonValue)
+  : DataProviderDescriptorDefinition()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,11 @@ WorkspaceSummary::WorkspaceSummary() :
     m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_grafanaTokenHasBeenSet(false),
     m_grafanaVersionHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_licenseType(LicenseType::NOT_SET),
+    m_licenseTypeHasBeenSet(false),
     m_modifiedHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_notificationDestinationsHasBeenSet(false),
@@ -34,19 +37,8 @@ WorkspaceSummary::WorkspaceSummary() :
 {
 }
 
-WorkspaceSummary::WorkspaceSummary(JsonView jsonValue) : 
-    m_authenticationHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_grafanaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_notificationDestinationsHasBeenSet(false),
-    m_status(WorkspaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+WorkspaceSummary::WorkspaceSummary(JsonView jsonValue)
+  : WorkspaceSummary()
 {
   *this = jsonValue;
 }
@@ -81,6 +73,13 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     m_endpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("grafanaToken"))
+  {
+    m_grafanaToken = jsonValue.GetString("grafanaToken");
+
+    m_grafanaTokenHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("grafanaVersion"))
   {
     m_grafanaVersion = jsonValue.GetString("grafanaVersion");
@@ -93,6 +92,13 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("licenseType"))
+  {
+    m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
+
+    m_licenseTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("modified"))
@@ -166,6 +172,12 @@ JsonValue WorkspaceSummary::Jsonize() const
 
   }
 
+  if(m_grafanaTokenHasBeenSet)
+  {
+   payload.WithString("grafanaToken", m_grafanaToken);
+
+  }
+
   if(m_grafanaVersionHasBeenSet)
   {
    payload.WithString("grafanaVersion", m_grafanaVersion);
@@ -176,6 +188,11 @@ JsonValue WorkspaceSummary::Jsonize() const
   {
    payload.WithString("id", m_id);
 
+  }
+
+  if(m_licenseTypeHasBeenSet)
+  {
+   payload.WithString("licenseType", LicenseTypeMapper::GetNameForLicenseType(m_licenseType));
   }
 
   if(m_modifiedHasBeenSet)

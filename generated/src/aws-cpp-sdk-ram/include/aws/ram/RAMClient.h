@@ -420,13 +420,13 @@ namespace RAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::EnableSharingWithAwsOrganizationOutcome EnableSharingWithAwsOrganization(const Model::EnableSharingWithAwsOrganizationRequest& request) const;
+        virtual Model::EnableSharingWithAwsOrganizationOutcome EnableSharingWithAwsOrganization(const Model::EnableSharingWithAwsOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for EnableSharingWithAwsOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename EnableSharingWithAwsOrganizationRequestT = Model::EnableSharingWithAwsOrganizationRequest>
-        Model::EnableSharingWithAwsOrganizationOutcomeCallable EnableSharingWithAwsOrganizationCallable(const EnableSharingWithAwsOrganizationRequestT& request) const
+        Model::EnableSharingWithAwsOrganizationOutcomeCallable EnableSharingWithAwsOrganizationCallable(const EnableSharingWithAwsOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&RAMClient::EnableSharingWithAwsOrganization, request);
         }
@@ -435,7 +435,7 @@ namespace RAM
          * An Async wrapper for EnableSharingWithAwsOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename EnableSharingWithAwsOrganizationRequestT = Model::EnableSharingWithAwsOrganizationRequest>
-        void EnableSharingWithAwsOrganizationAsync(const EnableSharingWithAwsOrganizationRequestT& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void EnableSharingWithAwsOrganizationAsync(const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableSharingWithAwsOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&RAMClient::EnableSharingWithAwsOrganization, request, handler, context);
         }
@@ -524,13 +524,13 @@ namespace RAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetResourceShareInvitationsOutcome GetResourceShareInvitations(const Model::GetResourceShareInvitationsRequest& request) const;
+        virtual Model::GetResourceShareInvitationsOutcome GetResourceShareInvitations(const Model::GetResourceShareInvitationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetResourceShareInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetResourceShareInvitationsRequestT = Model::GetResourceShareInvitationsRequest>
-        Model::GetResourceShareInvitationsOutcomeCallable GetResourceShareInvitationsCallable(const GetResourceShareInvitationsRequestT& request) const
+        Model::GetResourceShareInvitationsOutcomeCallable GetResourceShareInvitationsCallable(const GetResourceShareInvitationsRequestT& request = {}) const
         {
             return SubmitCallable(&RAMClient::GetResourceShareInvitations, request);
         }
@@ -539,7 +539,7 @@ namespace RAM
          * An Async wrapper for GetResourceShareInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetResourceShareInvitationsRequestT = Model::GetResourceShareInvitationsRequest>
-        void GetResourceShareInvitationsAsync(const GetResourceShareInvitationsRequestT& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetResourceShareInvitationsAsync(const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetResourceShareInvitationsRequestT& request = {}) const
         {
             return SubmitAsync(&RAMClient::GetResourceShareInvitations, request, handler, context);
         }
@@ -606,13 +606,13 @@ namespace RAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPermissionAssociationsOutcome ListPermissionAssociations(const Model::ListPermissionAssociationsRequest& request) const;
+        virtual Model::ListPermissionAssociationsOutcome ListPermissionAssociations(const Model::ListPermissionAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPermissionAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPermissionAssociationsRequestT = Model::ListPermissionAssociationsRequest>
-        Model::ListPermissionAssociationsOutcomeCallable ListPermissionAssociationsCallable(const ListPermissionAssociationsRequestT& request) const
+        Model::ListPermissionAssociationsOutcomeCallable ListPermissionAssociationsCallable(const ListPermissionAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&RAMClient::ListPermissionAssociations, request);
         }
@@ -621,7 +621,7 @@ namespace RAM
          * An Async wrapper for ListPermissionAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPermissionAssociationsRequestT = Model::ListPermissionAssociationsRequest>
-        void ListPermissionAssociationsAsync(const ListPermissionAssociationsRequestT& request, const ListPermissionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPermissionAssociationsAsync(const ListPermissionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPermissionAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&RAMClient::ListPermissionAssociations, request, handler, context);
         }
@@ -658,13 +658,13 @@ namespace RAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest& request) const;
+        virtual Model::ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPermissionsRequestT = Model::ListPermissionsRequest>
-        Model::ListPermissionsOutcomeCallable ListPermissionsCallable(const ListPermissionsRequestT& request) const
+        Model::ListPermissionsOutcomeCallable ListPermissionsCallable(const ListPermissionsRequestT& request = {}) const
         {
             return SubmitCallable(&RAMClient::ListPermissions, request);
         }
@@ -673,7 +673,7 @@ namespace RAM
          * An Async wrapper for ListPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPermissionsRequestT = Model::ListPermissionsRequest>
-        void ListPermissionsAsync(const ListPermissionsRequestT& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPermissionsAsync(const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPermissionsRequestT& request = {}) const
         {
             return SubmitAsync(&RAMClient::ListPermissions, request, handler, context);
         }
@@ -711,13 +711,13 @@ namespace RAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReplacePermissionAssociationsWorkOutcome ListReplacePermissionAssociationsWork(const Model::ListReplacePermissionAssociationsWorkRequest& request) const;
+        virtual Model::ListReplacePermissionAssociationsWorkOutcome ListReplacePermissionAssociationsWork(const Model::ListReplacePermissionAssociationsWorkRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReplacePermissionAssociationsWork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReplacePermissionAssociationsWorkRequestT = Model::ListReplacePermissionAssociationsWorkRequest>
-        Model::ListReplacePermissionAssociationsWorkOutcomeCallable ListReplacePermissionAssociationsWorkCallable(const ListReplacePermissionAssociationsWorkRequestT& request) const
+        Model::ListReplacePermissionAssociationsWorkOutcomeCallable ListReplacePermissionAssociationsWorkCallable(const ListReplacePermissionAssociationsWorkRequestT& request = {}) const
         {
             return SubmitCallable(&RAMClient::ListReplacePermissionAssociationsWork, request);
         }
@@ -726,7 +726,7 @@ namespace RAM
          * An Async wrapper for ListReplacePermissionAssociationsWork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReplacePermissionAssociationsWorkRequestT = Model::ListReplacePermissionAssociationsWorkRequest>
-        void ListReplacePermissionAssociationsWorkAsync(const ListReplacePermissionAssociationsWorkRequestT& request, const ListReplacePermissionAssociationsWorkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReplacePermissionAssociationsWorkAsync(const ListReplacePermissionAssociationsWorkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReplacePermissionAssociationsWorkRequestT& request = {}) const
         {
             return SubmitAsync(&RAMClient::ListReplacePermissionAssociationsWork, request, handler, context);
         }
@@ -763,13 +763,13 @@ namespace RAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResourceTypesOutcome ListResourceTypes(const Model::ListResourceTypesRequest& request) const;
+        virtual Model::ListResourceTypesOutcome ListResourceTypes(const Model::ListResourceTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResourceTypesRequestT = Model::ListResourceTypesRequest>
-        Model::ListResourceTypesOutcomeCallable ListResourceTypesCallable(const ListResourceTypesRequestT& request) const
+        Model::ListResourceTypesOutcomeCallable ListResourceTypesCallable(const ListResourceTypesRequestT& request = {}) const
         {
             return SubmitCallable(&RAMClient::ListResourceTypes, request);
         }
@@ -778,7 +778,7 @@ namespace RAM
          * An Async wrapper for ListResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResourceTypesRequestT = Model::ListResourceTypesRequest>
-        void ListResourceTypesAsync(const ListResourceTypesRequestT& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResourceTypesAsync(const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourceTypesRequestT& request = {}) const
         {
             return SubmitAsync(&RAMClient::ListResourceTypes, request, handler, context);
         }
@@ -1079,7 +1079,6 @@ namespace RAM
       void init(const RAMClientConfiguration& clientConfiguration);
 
       RAMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RAMEndpointProviderBase> m_endpointProvider;
   };
 

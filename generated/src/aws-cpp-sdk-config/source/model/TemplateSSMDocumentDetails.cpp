@@ -24,9 +24,8 @@ TemplateSSMDocumentDetails::TemplateSSMDocumentDetails() :
 {
 }
 
-TemplateSSMDocumentDetails::TemplateSSMDocumentDetails(JsonView jsonValue) : 
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false)
+TemplateSSMDocumentDetails::TemplateSSMDocumentDetails(JsonView jsonValue)
+  : TemplateSSMDocumentDetails()
 {
   *this = jsonValue;
 }

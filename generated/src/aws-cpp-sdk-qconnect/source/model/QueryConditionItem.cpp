@@ -27,12 +27,8 @@ QueryConditionItem::QueryConditionItem() :
 {
 }
 
-QueryConditionItem::QueryConditionItem(JsonView jsonValue) : 
-    m_comparator(QueryConditionComparisonOperator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_field(QueryConditionFieldName::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_valueHasBeenSet(false)
+QueryConditionItem::QueryConditionItem(JsonView jsonValue)
+  : QueryConditionItem()
 {
   *this = jsonValue;
 }

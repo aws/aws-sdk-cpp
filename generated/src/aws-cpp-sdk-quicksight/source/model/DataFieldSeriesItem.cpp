@@ -27,12 +27,8 @@ DataFieldSeriesItem::DataFieldSeriesItem() :
 {
 }
 
-DataFieldSeriesItem::DataFieldSeriesItem(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_fieldValueHasBeenSet(false),
-    m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+DataFieldSeriesItem::DataFieldSeriesItem(JsonView jsonValue)
+  : DataFieldSeriesItem()
 {
   *this = jsonValue;
 }

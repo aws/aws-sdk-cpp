@@ -30,15 +30,8 @@ ClarifyShapConfig::ClarifyShapConfig() :
 {
 }
 
-ClarifyShapConfig::ClarifyShapConfig(JsonView jsonValue) : 
-    m_shapBaselineConfigHasBeenSet(false),
-    m_numberOfSamples(0),
-    m_numberOfSamplesHasBeenSet(false),
-    m_useLogit(false),
-    m_useLogitHasBeenSet(false),
-    m_seed(0),
-    m_seedHasBeenSet(false),
-    m_textConfigHasBeenSet(false)
+ClarifyShapConfig::ClarifyShapConfig(JsonView jsonValue)
+  : ClarifyShapConfig()
 {
   *this = jsonValue;
 }

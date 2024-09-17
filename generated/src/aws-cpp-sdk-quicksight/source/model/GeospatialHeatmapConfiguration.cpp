@@ -23,8 +23,8 @@ GeospatialHeatmapConfiguration::GeospatialHeatmapConfiguration() :
 {
 }
 
-GeospatialHeatmapConfiguration::GeospatialHeatmapConfiguration(JsonView jsonValue) : 
-    m_heatmapColorHasBeenSet(false)
+GeospatialHeatmapConfiguration::GeospatialHeatmapConfiguration(JsonView jsonValue)
+  : GeospatialHeatmapConfiguration()
 {
   *this = jsonValue;
 }

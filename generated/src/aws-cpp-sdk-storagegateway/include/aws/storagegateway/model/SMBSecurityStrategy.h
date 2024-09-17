@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ClientSpecified,
     MandatorySigning,
-    MandatoryEncryption
+    MandatoryEncryption,
+    MandatoryEncryptionNoAes128
   };
 
 namespace SMBSecurityStrategyMapper

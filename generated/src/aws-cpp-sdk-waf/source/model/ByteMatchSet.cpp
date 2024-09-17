@@ -25,10 +25,8 @@ ByteMatchSet::ByteMatchSet() :
 {
 }
 
-ByteMatchSet::ByteMatchSet(JsonView jsonValue) : 
-    m_byteMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_byteMatchTuplesHasBeenSet(false)
+ByteMatchSet::ByteMatchSet(JsonView jsonValue)
+  : ByteMatchSet()
 {
   *this = jsonValue;
 }

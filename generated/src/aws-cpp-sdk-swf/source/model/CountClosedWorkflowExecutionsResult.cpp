@@ -23,9 +23,8 @@ CountClosedWorkflowExecutionsResult::CountClosedWorkflowExecutionsResult() :
 {
 }
 
-CountClosedWorkflowExecutionsResult::CountClosedWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_count(0),
-    m_truncated(false)
+CountClosedWorkflowExecutionsResult::CountClosedWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CountClosedWorkflowExecutionsResult()
 {
   *this = result;
 }

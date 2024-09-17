@@ -23,8 +23,8 @@ PrioritizeBusinessGoals::PrioritizeBusinessGoals() :
 {
 }
 
-PrioritizeBusinessGoals::PrioritizeBusinessGoals(JsonView jsonValue) : 
-    m_businessGoalsHasBeenSet(false)
+PrioritizeBusinessGoals::PrioritizeBusinessGoals(JsonView jsonValue)
+  : PrioritizeBusinessGoals()
 {
   *this = jsonValue;
 }

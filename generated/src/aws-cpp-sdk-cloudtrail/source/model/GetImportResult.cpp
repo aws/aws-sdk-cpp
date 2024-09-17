@@ -22,8 +22,8 @@ GetImportResult::GetImportResult() :
 {
 }
 
-GetImportResult::GetImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_importStatus(ImportStatus::NOT_SET)
+GetImportResult::GetImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImportResult()
 {
   *this = result;
 }

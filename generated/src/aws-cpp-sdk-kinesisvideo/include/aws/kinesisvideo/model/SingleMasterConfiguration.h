@@ -36,30 +36,16 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The period of time a signaling channel retains undelivered messages before
      * they are discarded.</p>
      */
     inline int GetMessageTtlSeconds() const{ return m_messageTtlSeconds; }
-
-    /**
-     * <p>The period of time a signaling channel retains undelivered messages before
-     * they are discarded.</p>
-     */
     inline bool MessageTtlSecondsHasBeenSet() const { return m_messageTtlSecondsHasBeenSet; }
-
-    /**
-     * <p>The period of time a signaling channel retains undelivered messages before
-     * they are discarded.</p>
-     */
     inline void SetMessageTtlSeconds(int value) { m_messageTtlSecondsHasBeenSet = true; m_messageTtlSeconds = value; }
-
-    /**
-     * <p>The period of time a signaling channel retains undelivered messages before
-     * they are discarded.</p>
-     */
     inline SingleMasterConfiguration& WithMessageTtlSeconds(int value) { SetMessageTtlSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_messageTtlSeconds;

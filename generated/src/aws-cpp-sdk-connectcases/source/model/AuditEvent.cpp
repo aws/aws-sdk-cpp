@@ -30,15 +30,8 @@ AuditEvent::AuditEvent() :
 {
 }
 
-AuditEvent::AuditEvent(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_performedByHasBeenSet(false),
-    m_performedTimeHasBeenSet(false),
-    m_relatedItemType(RelatedItemType::NOT_SET),
-    m_relatedItemTypeHasBeenSet(false),
-    m_type(AuditEventType::NOT_SET),
-    m_typeHasBeenSet(false)
+AuditEvent::AuditEvent(JsonView jsonValue)
+  : AuditEvent()
 {
   *this = jsonValue;
 }

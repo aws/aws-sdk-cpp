@@ -26,11 +26,8 @@ TuningJobCompletionCriteria::TuningJobCompletionCriteria() :
 {
 }
 
-TuningJobCompletionCriteria::TuningJobCompletionCriteria(JsonView jsonValue) : 
-    m_targetObjectiveMetricValue(0.0),
-    m_targetObjectiveMetricValueHasBeenSet(false),
-    m_bestObjectiveNotImprovingHasBeenSet(false),
-    m_convergenceDetectedHasBeenSet(false)
+TuningJobCompletionCriteria::TuningJobCompletionCriteria(JsonView jsonValue)
+  : TuningJobCompletionCriteria()
 {
   *this = jsonValue;
 }

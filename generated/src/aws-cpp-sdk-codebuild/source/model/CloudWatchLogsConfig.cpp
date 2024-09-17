@@ -26,11 +26,8 @@ CloudWatchLogsConfig::CloudWatchLogsConfig() :
 {
 }
 
-CloudWatchLogsConfig::CloudWatchLogsConfig(JsonView jsonValue) : 
-    m_status(LogsConfigStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+CloudWatchLogsConfig::CloudWatchLogsConfig(JsonView jsonValue)
+  : CloudWatchLogsConfig()
 {
   *this = jsonValue;
 }

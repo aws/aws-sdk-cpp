@@ -41,6 +41,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>JSON expressing use-case specific conditions declaratively. If any condition
      * is matched, atomic tasks are created against the configured work team. The set
@@ -51,84 +52,14 @@ namespace Model
      * <i>Amazon SageMaker Developer Guide</i>.</p>
      */
     inline const Aws::String& GetHumanLoopActivationConditions() const{ return m_humanLoopActivationConditions; }
-
-    /**
-     * <p>JSON expressing use-case specific conditions declaratively. If any condition
-     * is matched, atomic tasks are created against the configured work team. The set
-     * of conditions is different for Rekognition and Textract. For more information
-     * about how to structure the JSON, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
-     * Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the
-     * <i>Amazon SageMaker Developer Guide</i>.</p>
-     */
     inline bool HumanLoopActivationConditionsHasBeenSet() const { return m_humanLoopActivationConditionsHasBeenSet; }
-
-    /**
-     * <p>JSON expressing use-case specific conditions declaratively. If any condition
-     * is matched, atomic tasks are created against the configured work team. The set
-     * of conditions is different for Rekognition and Textract. For more information
-     * about how to structure the JSON, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
-     * Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the
-     * <i>Amazon SageMaker Developer Guide</i>.</p>
-     */
     inline void SetHumanLoopActivationConditions(const Aws::String& value) { m_humanLoopActivationConditionsHasBeenSet = true; m_humanLoopActivationConditions = value; }
-
-    /**
-     * <p>JSON expressing use-case specific conditions declaratively. If any condition
-     * is matched, atomic tasks are created against the configured work team. The set
-     * of conditions is different for Rekognition and Textract. For more information
-     * about how to structure the JSON, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
-     * Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the
-     * <i>Amazon SageMaker Developer Guide</i>.</p>
-     */
     inline void SetHumanLoopActivationConditions(Aws::String&& value) { m_humanLoopActivationConditionsHasBeenSet = true; m_humanLoopActivationConditions = std::move(value); }
-
-    /**
-     * <p>JSON expressing use-case specific conditions declaratively. If any condition
-     * is matched, atomic tasks are created against the configured work team. The set
-     * of conditions is different for Rekognition and Textract. For more information
-     * about how to structure the JSON, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
-     * Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the
-     * <i>Amazon SageMaker Developer Guide</i>.</p>
-     */
     inline void SetHumanLoopActivationConditions(const char* value) { m_humanLoopActivationConditionsHasBeenSet = true; m_humanLoopActivationConditions.assign(value); }
-
-    /**
-     * <p>JSON expressing use-case specific conditions declaratively. If any condition
-     * is matched, atomic tasks are created against the configured work team. The set
-     * of conditions is different for Rekognition and Textract. For more information
-     * about how to structure the JSON, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
-     * Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the
-     * <i>Amazon SageMaker Developer Guide</i>.</p>
-     */
     inline HumanLoopActivationConditionsConfig& WithHumanLoopActivationConditions(const Aws::String& value) { SetHumanLoopActivationConditions(value); return *this;}
-
-    /**
-     * <p>JSON expressing use-case specific conditions declaratively. If any condition
-     * is matched, atomic tasks are created against the configured work team. The set
-     * of conditions is different for Rekognition and Textract. For more information
-     * about how to structure the JSON, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
-     * Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the
-     * <i>Amazon SageMaker Developer Guide</i>.</p>
-     */
     inline HumanLoopActivationConditionsConfig& WithHumanLoopActivationConditions(Aws::String&& value) { SetHumanLoopActivationConditions(std::move(value)); return *this;}
-
-    /**
-     * <p>JSON expressing use-case specific conditions declaratively. If any condition
-     * is matched, atomic tasks are created against the configured work team. The set
-     * of conditions is different for Rekognition and Textract. For more information
-     * about how to structure the JSON, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
-     * Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the
-     * <i>Amazon SageMaker Developer Guide</i>.</p>
-     */
     inline HumanLoopActivationConditionsConfig& WithHumanLoopActivationConditions(const char* value) { SetHumanLoopActivationConditions(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_humanLoopActivationConditions;

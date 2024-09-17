@@ -35,139 +35,48 @@ namespace Model
     AWS_MEMORYDB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the parameter group to reset.</p>
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
-
-    /**
-     * <p>The name of the parameter group to reset.</p>
-     */
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the parameter group to reset.</p>
-     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-
-    /**
-     * <p>The name of the parameter group to reset.</p>
-     */
     inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the parameter group to reset.</p>
-     */
     inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-
-    /**
-     * <p>The name of the parameter group to reset.</p>
-     */
     inline ResetParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the parameter group to reset.</p>
-     */
     inline ResetParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the parameter group to reset.</p>
-     */
     inline ResetParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If true, all parameters in the parameter group are reset to their default
      * values. If false, only the parameters listed by ParameterNames are reset to
      * their default values.</p>
      */
     inline bool GetAllParameters() const{ return m_allParameters; }
-
-    /**
-     * <p>If true, all parameters in the parameter group are reset to their default
-     * values. If false, only the parameters listed by ParameterNames are reset to
-     * their default values.</p>
-     */
     inline bool AllParametersHasBeenSet() const { return m_allParametersHasBeenSet; }
-
-    /**
-     * <p>If true, all parameters in the parameter group are reset to their default
-     * values. If false, only the parameters listed by ParameterNames are reset to
-     * their default values.</p>
-     */
     inline void SetAllParameters(bool value) { m_allParametersHasBeenSet = true; m_allParameters = value; }
-
-    /**
-     * <p>If true, all parameters in the parameter group are reset to their default
-     * values. If false, only the parameters listed by ParameterNames are reset to
-     * their default values.</p>
-     */
     inline ResetParameterGroupRequest& WithAllParameters(bool value) { SetAllParameters(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of parameter names to reset to their default values. If
      * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
      * must specify the name of at least one parameter to reset.</p>
      */
     inline const Aws::Vector<Aws::String>& GetParameterNames() const{ return m_parameterNames; }
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline bool ParameterNamesHasBeenSet() const { return m_parameterNamesHasBeenSet; }
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline void SetParameterNames(const Aws::Vector<Aws::String>& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = value; }
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline void SetParameterNames(Aws::Vector<Aws::String>&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = std::move(value); }
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline ResetParameterGroupRequest& WithParameterNames(const Aws::Vector<Aws::String>& value) { SetParameterNames(value); return *this;}
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline ResetParameterGroupRequest& WithParameterNames(Aws::Vector<Aws::String>&& value) { SetParameterNames(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline ResetParameterGroupRequest& AddParameterNames(const Aws::String& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(value); return *this; }
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline ResetParameterGroupRequest& AddParameterNames(Aws::String&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of parameter names to reset to their default values. If
-     * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
-     * must specify the name of at least one parameter to reset.</p>
-     */
     inline ResetParameterGroupRequest& AddParameterNames(const char* value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_parameterGroupName;

@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateAgentAliasRequest::UpdateAgentAliasRequest() : 
-    m_agentIdHasBeenSet(false),
     m_agentAliasIdHasBeenSet(false),
     m_agentAliasNameHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routingConfigurationHasBeenSet(false)
 {

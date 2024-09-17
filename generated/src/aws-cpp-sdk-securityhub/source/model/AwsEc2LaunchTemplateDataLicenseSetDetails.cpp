@@ -23,8 +23,8 @@ AwsEc2LaunchTemplateDataLicenseSetDetails::AwsEc2LaunchTemplateDataLicenseSetDet
 {
 }
 
-AwsEc2LaunchTemplateDataLicenseSetDetails::AwsEc2LaunchTemplateDataLicenseSetDetails(JsonView jsonValue) : 
-    m_licenseConfigurationArnHasBeenSet(false)
+AwsEc2LaunchTemplateDataLicenseSetDetails::AwsEc2LaunchTemplateDataLicenseSetDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataLicenseSetDetails()
 {
   *this = jsonValue;
 }

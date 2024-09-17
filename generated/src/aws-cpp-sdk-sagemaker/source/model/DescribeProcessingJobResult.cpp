@@ -22,8 +22,8 @@ DescribeProcessingJobResult::DescribeProcessingJobResult() :
 {
 }
 
-DescribeProcessingJobResult::DescribeProcessingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_processingJobStatus(ProcessingJobStatus::NOT_SET)
+DescribeProcessingJobResult::DescribeProcessingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeProcessingJobResult()
 {
   *this = result;
 }

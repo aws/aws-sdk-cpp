@@ -39,6 +39,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
@@ -47,71 +48,16 @@ namespace Model
      * consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-
-    /**
-     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
-     */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
-     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-
-    /**
-     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
-     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
-     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
-     */
     inline DeleteClusterRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
-     */
     inline DeleteClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
-     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul>
-     */
     inline DeleteClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether a final snapshot of the cluster is created before Amazon
      * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
@@ -121,38 +67,12 @@ namespace Model
      * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline bool GetSkipFinalClusterSnapshot() const{ return m_skipFinalClusterSnapshot; }
-
-    /**
-     * <p>Determines whether a final snapshot of the cluster is created before Amazon
-     * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
-     * not created. If <code>false</code>, a final cluster snapshot is created before
-     * the cluster is deleted. </p>  <p>The <i>FinalClusterSnapshotIdentifier</i>
-     * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
-     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
-     */
     inline bool SkipFinalClusterSnapshotHasBeenSet() const { return m_skipFinalClusterSnapshotHasBeenSet; }
-
-    /**
-     * <p>Determines whether a final snapshot of the cluster is created before Amazon
-     * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
-     * not created. If <code>false</code>, a final cluster snapshot is created before
-     * the cluster is deleted. </p>  <p>The <i>FinalClusterSnapshotIdentifier</i>
-     * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
-     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
-     */
     inline void SetSkipFinalClusterSnapshot(bool value) { m_skipFinalClusterSnapshotHasBeenSet = true; m_skipFinalClusterSnapshot = value; }
-
-    /**
-     * <p>Determines whether a final snapshot of the cluster is created before Amazon
-     * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
-     * not created. If <code>false</code>, a final cluster snapshot is created before
-     * the cluster is deleted. </p>  <p>The <i>FinalClusterSnapshotIdentifier</i>
-     * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
-     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
-     */
     inline DeleteClusterRequest& WithSkipFinalClusterSnapshot(bool value) { SetSkipFinalClusterSnapshot(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the final snapshot that is to be created immediately before
      * deleting the cluster. If this parameter is provided,
@@ -162,106 +82,26 @@ namespace Model
      * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetFinalClusterSnapshotIdentifier() const{ return m_finalClusterSnapshotIdentifier; }
-
-    /**
-     * <p>The identifier of the final snapshot that is to be created immediately before
-     * deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
-     */
     inline bool FinalClusterSnapshotIdentifierHasBeenSet() const { return m_finalClusterSnapshotIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the final snapshot that is to be created immediately before
-     * deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
-     */
     inline void SetFinalClusterSnapshotIdentifier(const Aws::String& value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier = value; }
-
-    /**
-     * <p>The identifier of the final snapshot that is to be created immediately before
-     * deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
-     */
     inline void SetFinalClusterSnapshotIdentifier(Aws::String&& value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the final snapshot that is to be created immediately before
-     * deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
-     */
     inline void SetFinalClusterSnapshotIdentifier(const char* value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the final snapshot that is to be created immediately before
-     * deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
-     */
     inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(const Aws::String& value) { SetFinalClusterSnapshotIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the final snapshot that is to be created immediately before
-     * deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
-     */
     inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(Aws::String&& value) { SetFinalClusterSnapshotIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the final snapshot that is to be created immediately before
-     * deleting the cluster. If this parameter is provided,
-     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
-     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
-     */
     inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(const char* value) { SetFinalClusterSnapshotIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of days that a manual snapshot is retained. If the value is -1,
      * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
      * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
      */
     inline int GetFinalClusterSnapshotRetentionPeriod() const{ return m_finalClusterSnapshotRetentionPeriod; }
-
-    /**
-     * <p>The number of days that a manual snapshot is retained. If the value is -1,
-     * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
-     * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
-     */
     inline bool FinalClusterSnapshotRetentionPeriodHasBeenSet() const { return m_finalClusterSnapshotRetentionPeriodHasBeenSet; }
-
-    /**
-     * <p>The number of days that a manual snapshot is retained. If the value is -1,
-     * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
-     * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
-     */
     inline void SetFinalClusterSnapshotRetentionPeriod(int value) { m_finalClusterSnapshotRetentionPeriodHasBeenSet = true; m_finalClusterSnapshotRetentionPeriod = value; }
-
-    /**
-     * <p>The number of days that a manual snapshot is retained. If the value is -1,
-     * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
-     * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
-     */
     inline DeleteClusterRequest& WithFinalClusterSnapshotRetentionPeriod(int value) { SetFinalClusterSnapshotRetentionPeriod(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterIdentifier;

@@ -26,11 +26,8 @@ AcknowledgeAlarmActionRequest::AcknowledgeAlarmActionRequest() :
 {
 }
 
-AcknowledgeAlarmActionRequest::AcknowledgeAlarmActionRequest(JsonView jsonValue) : 
-    m_requestIdHasBeenSet(false),
-    m_alarmModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_noteHasBeenSet(false)
+AcknowledgeAlarmActionRequest::AcknowledgeAlarmActionRequest(JsonView jsonValue)
+  : AcknowledgeAlarmActionRequest()
 {
   *this = jsonValue;
 }

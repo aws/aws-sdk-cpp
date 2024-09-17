@@ -24,9 +24,8 @@ UniqueTagResourceIdentifier::UniqueTagResourceIdentifier() :
 {
 }
 
-UniqueTagResourceIdentifier::UniqueTagResourceIdentifier(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+UniqueTagResourceIdentifier::UniqueTagResourceIdentifier(JsonView jsonValue)
+  : UniqueTagResourceIdentifier()
 {
   *this = jsonValue;
 }

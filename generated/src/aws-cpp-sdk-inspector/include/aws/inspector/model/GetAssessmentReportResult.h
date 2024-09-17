@@ -33,96 +33,41 @@ namespace Model
     AWS_INSPECTOR_API GetAssessmentReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the status of the request to generate an assessment report. </p>
      */
     inline const ReportStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies the status of the request to generate an assessment report. </p>
-     */
     inline void SetStatus(const ReportStatus& value) { m_status = value; }
-
-    /**
-     * <p>Specifies the status of the request to generate an assessment report. </p>
-     */
     inline void SetStatus(ReportStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>Specifies the status of the request to generate an assessment report. </p>
-     */
     inline GetAssessmentReportResult& WithStatus(const ReportStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies the status of the request to generate an assessment report. </p>
-     */
     inline GetAssessmentReportResult& WithStatus(ReportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the URL where you can find the generated assessment report. This
      * parameter is only returned if the report is successfully generated.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
-
-    /**
-     * <p>Specifies the URL where you can find the generated assessment report. This
-     * parameter is only returned if the report is successfully generated.</p>
-     */
     inline void SetUrl(const Aws::String& value) { m_url = value; }
-
-    /**
-     * <p>Specifies the URL where you can find the generated assessment report. This
-     * parameter is only returned if the report is successfully generated.</p>
-     */
     inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-
-    /**
-     * <p>Specifies the URL where you can find the generated assessment report. This
-     * parameter is only returned if the report is successfully generated.</p>
-     */
     inline void SetUrl(const char* value) { m_url.assign(value); }
-
-    /**
-     * <p>Specifies the URL where you can find the generated assessment report. This
-     * parameter is only returned if the report is successfully generated.</p>
-     */
     inline GetAssessmentReportResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-
-    /**
-     * <p>Specifies the URL where you can find the generated assessment report. This
-     * parameter is only returned if the report is successfully generated.</p>
-     */
     inline GetAssessmentReportResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the URL where you can find the generated assessment report. This
-     * parameter is only returned if the report is successfully generated.</p>
-     */
     inline GetAssessmentReportResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAssessmentReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAssessmentReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAssessmentReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReportStatus m_status;

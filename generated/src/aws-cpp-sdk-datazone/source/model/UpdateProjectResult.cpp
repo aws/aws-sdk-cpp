@@ -22,8 +22,8 @@ UpdateProjectResult::UpdateProjectResult() :
 {
 }
 
-UpdateProjectResult::UpdateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_projectStatus(ProjectStatus::NOT_SET)
+UpdateProjectResult::UpdateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateProjectResult()
 {
   *this = result;
 }
@@ -52,6 +52,12 @@ UpdateProjectResult& UpdateProjectResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
+
+  }
+
+  if(jsonValue.ValueExists("domainUnitId"))
+  {
+    m_domainUnitId = jsonValue.GetString("domainUnitId");
 
   }
 

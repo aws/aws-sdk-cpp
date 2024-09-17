@@ -35,97 +35,34 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The system-generated ID of the pull request. To get this ID, use
      * <a>ListPullRequests</a>.</p>
      */
     inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline UpdatePullRequestStatusRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline UpdatePullRequestStatusRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated ID of the pull request. To get this ID, use
-     * <a>ListPullRequests</a>.</p>
-     */
     inline UpdatePullRequestStatusRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the pull request. The only valid operations are to update the
      * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
      * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
      */
     inline const PullRequestStatusEnum& GetPullRequestStatus() const{ return m_pullRequestStatus; }
-
-    /**
-     * <p>The status of the pull request. The only valid operations are to update the
-     * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-     */
     inline bool PullRequestStatusHasBeenSet() const { return m_pullRequestStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the pull request. The only valid operations are to update the
-     * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-     */
     inline void SetPullRequestStatus(const PullRequestStatusEnum& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = value; }
-
-    /**
-     * <p>The status of the pull request. The only valid operations are to update the
-     * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-     */
     inline void SetPullRequestStatus(PullRequestStatusEnum&& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = std::move(value); }
-
-    /**
-     * <p>The status of the pull request. The only valid operations are to update the
-     * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-     */
     inline UpdatePullRequestStatusRequest& WithPullRequestStatus(const PullRequestStatusEnum& value) { SetPullRequestStatus(value); return *this;}
-
-    /**
-     * <p>The status of the pull request. The only valid operations are to update the
-     * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-     */
     inline UpdatePullRequestStatusRequest& WithPullRequestStatus(PullRequestStatusEnum&& value) { SetPullRequestStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pullRequestId;

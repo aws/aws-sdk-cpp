@@ -24,9 +24,8 @@ RdsLoginAttemptAction::RdsLoginAttemptAction() :
 {
 }
 
-RdsLoginAttemptAction::RdsLoginAttemptAction(JsonView jsonValue) : 
-    m_remoteIpDetailsHasBeenSet(false),
-    m_loginAttributesHasBeenSet(false)
+RdsLoginAttemptAction::RdsLoginAttemptAction(JsonView jsonValue)
+  : RdsLoginAttemptAction()
 {
   *this = jsonValue;
 }

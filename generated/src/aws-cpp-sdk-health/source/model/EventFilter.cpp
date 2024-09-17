@@ -35,20 +35,8 @@ EventFilter::EventFilter() :
 {
 }
 
-EventFilter::EventFilter(JsonView jsonValue) : 
-    m_eventArnsHasBeenSet(false),
-    m_eventTypeCodesHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_startTimesHasBeenSet(false),
-    m_endTimesHasBeenSet(false),
-    m_lastUpdatedTimesHasBeenSet(false),
-    m_entityArnsHasBeenSet(false),
-    m_entityValuesHasBeenSet(false),
-    m_eventTypeCategoriesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eventStatusCodesHasBeenSet(false)
+EventFilter::EventFilter(JsonView jsonValue)
+  : EventFilter()
 {
   *this = jsonValue;
 }

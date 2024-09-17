@@ -27,12 +27,8 @@ LatestDeviceJob::LatestDeviceJob() :
 {
 }
 
-LatestDeviceJob::LatestDeviceJob(JsonView jsonValue) : 
-    m_imageVersionHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_status(UpdateProgress::NOT_SET),
-    m_statusHasBeenSet(false)
+LatestDeviceJob::LatestDeviceJob(JsonView jsonValue)
+  : LatestDeviceJob()
 {
   *this = jsonValue;
 }

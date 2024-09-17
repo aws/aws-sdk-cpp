@@ -19,9 +19,9 @@ namespace Model
 {
 
 PlaybackRestrictionPolicy::PlaybackRestrictionPolicy() : 
+    m_arnHasBeenSet(false),
     m_allowedCountriesHasBeenSet(false),
     m_allowedOriginsHasBeenSet(false),
-    m_arnHasBeenSet(false),
     m_enableStrictOriginEnforcement(false),
     m_enableStrictOriginEnforcementHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -29,20 +29,21 @@ PlaybackRestrictionPolicy::PlaybackRestrictionPolicy() :
 {
 }
 
-PlaybackRestrictionPolicy::PlaybackRestrictionPolicy(JsonView jsonValue) : 
-    m_allowedCountriesHasBeenSet(false),
-    m_allowedOriginsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_enableStrictOriginEnforcement(false),
-    m_enableStrictOriginEnforcementHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+PlaybackRestrictionPolicy::PlaybackRestrictionPolicy(JsonView jsonValue)
+  : PlaybackRestrictionPolicy()
 {
   *this = jsonValue;
 }
 
 PlaybackRestrictionPolicy& PlaybackRestrictionPolicy::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("allowedCountries"))
   {
     Aws::Utils::Array<JsonView> allowedCountriesJsonList = jsonValue.GetArray("allowedCountries");
@@ -61,13 +62,6 @@ PlaybackRestrictionPolicy& PlaybackRestrictionPolicy::operator =(JsonView jsonVa
       m_allowedOrigins.push_back(allowedOriginsJsonList[allowedOriginsIndex].AsString());
     }
     m_allowedOriginsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("enableStrictOriginEnforcement"))
@@ -101,6 +95,12 @@ JsonValue PlaybackRestrictionPolicy::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
+
   if(m_allowedCountriesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> allowedCountriesJsonList(m_allowedCountries.size());
@@ -120,12 +120,6 @@ JsonValue PlaybackRestrictionPolicy::Jsonize() const
      allowedOriginsJsonList[allowedOriginsIndex].AsString(m_allowedOrigins[allowedOriginsIndex]);
    }
    payload.WithArray("allowedOrigins", std::move(allowedOriginsJsonList));
-
-  }
-
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
 
   }
 

@@ -34,54 +34,20 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID assigned to the managed node when you registered it using the
      * activation process. </p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID assigned to the managed node when you registered it using the
-     * activation process. </p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The ID assigned to the managed node when you registered it using the
-     * activation process. </p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID assigned to the managed node when you registered it using the
-     * activation process. </p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID assigned to the managed node when you registered it using the
-     * activation process. </p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID assigned to the managed node when you registered it using the
-     * activation process. </p>
-     */
     inline DeregisterManagedInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID assigned to the managed node when you registered it using the
-     * activation process. </p>
-     */
     inline DeregisterManagedInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID assigned to the managed node when you registered it using the
-     * activation process. </p>
-     */
     inline DeregisterManagedInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

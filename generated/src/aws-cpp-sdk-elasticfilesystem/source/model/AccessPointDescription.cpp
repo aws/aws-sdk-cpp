@@ -35,19 +35,8 @@ AccessPointDescription::AccessPointDescription() :
 {
 }
 
-AccessPointDescription::AccessPointDescription(JsonView jsonValue) : 
-    m_clientTokenHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_accessPointIdHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_posixUserHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_lifeCycleState(LifeCycleState::NOT_SET),
-    m_lifeCycleStateHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+AccessPointDescription::AccessPointDescription(JsonView jsonValue)
+  : AccessPointDescription()
 {
   *this = jsonValue;
 }

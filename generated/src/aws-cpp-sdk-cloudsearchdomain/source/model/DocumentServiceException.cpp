@@ -24,9 +24,8 @@ DocumentServiceException::DocumentServiceException() :
 {
 }
 
-DocumentServiceException::DocumentServiceException(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DocumentServiceException::DocumentServiceException(JsonView jsonValue)
+  : DocumentServiceException()
 {
   *this = jsonValue;
 }

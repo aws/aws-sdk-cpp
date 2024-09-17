@@ -37,128 +37,47 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email address of the superuser.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
-
-    /**
-     * <p>The email address of the superuser.</p>
-     */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-
-    /**
-     * <p>The email address of the superuser.</p>
-     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-
-    /**
-     * <p>The email address of the superuser.</p>
-     */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-
-    /**
-     * <p>The email address of the superuser.</p>
-     */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-
-    /**
-     * <p>The email address of the superuser.</p>
-     */
     inline SuperuserParameters& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-
-    /**
-     * <p>The email address of the superuser.</p>
-     */
     inline SuperuserParameters& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address of the superuser.</p>
-     */
     inline SuperuserParameters& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The first name of the superuser.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
-
-    /**
-     * <p>The first name of the superuser.</p>
-     */
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
-
-    /**
-     * <p>The first name of the superuser.</p>
-     */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-
-    /**
-     * <p>The first name of the superuser.</p>
-     */
     inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
-
-    /**
-     * <p>The first name of the superuser.</p>
-     */
     inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-
-    /**
-     * <p>The first name of the superuser.</p>
-     */
     inline SuperuserParameters& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-
-    /**
-     * <p>The first name of the superuser.</p>
-     */
     inline SuperuserParameters& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
-
-    /**
-     * <p>The first name of the superuser.</p>
-     */
     inline SuperuserParameters& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last name of the superuser.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
-
-    /**
-     * <p>The last name of the superuser.</p>
-     */
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
-
-    /**
-     * <p>The last name of the superuser.</p>
-     */
     inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-
-    /**
-     * <p>The last name of the superuser.</p>
-     */
     inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
-
-    /**
-     * <p>The last name of the superuser.</p>
-     */
     inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-
-    /**
-     * <p>The last name of the superuser.</p>
-     */
     inline SuperuserParameters& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-
-    /**
-     * <p>The last name of the superuser.</p>
-     */
     inline SuperuserParameters& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
-
-    /**
-     * <p>The last name of the superuser.</p>
-     */
     inline SuperuserParameters& WithLastName(const char* value) { SetLastName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailAddress;

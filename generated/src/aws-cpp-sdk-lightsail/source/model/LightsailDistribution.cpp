@@ -42,35 +42,13 @@ LightsailDistribution::LightsailDistribution() :
     m_ableToUpdateBundleHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_viewerMinimumTlsProtocolVersionHasBeenSet(false)
 {
 }
 
-LightsailDistribution::LightsailDistribution(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_alternativeDomainNamesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_originPublicDNSHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_cacheBehaviorSettingsHasBeenSet(false),
-    m_cacheBehaviorsHasBeenSet(false),
-    m_ableToUpdateBundle(false),
-    m_ableToUpdateBundleHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LightsailDistribution::LightsailDistribution(JsonView jsonValue)
+  : LightsailDistribution()
 {
   *this = jsonValue;
 }
@@ -226,6 +204,13 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("viewerMinimumTlsProtocolVersion"))
+  {
+    m_viewerMinimumTlsProtocolVersion = jsonValue.GetString("viewerMinimumTlsProtocolVersion");
+
+    m_viewerMinimumTlsProtocolVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -362,6 +347,12 @@ JsonValue LightsailDistribution::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_viewerMinimumTlsProtocolVersionHasBeenSet)
+  {
+   payload.WithString("viewerMinimumTlsProtocolVersion", m_viewerMinimumTlsProtocolVersion);
 
   }
 

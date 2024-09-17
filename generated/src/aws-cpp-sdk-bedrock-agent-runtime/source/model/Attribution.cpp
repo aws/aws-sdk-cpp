@@ -23,8 +23,8 @@ Attribution::Attribution() :
 {
 }
 
-Attribution::Attribution(JsonView jsonValue) : 
-    m_citationsHasBeenSet(false)
+Attribution::Attribution(JsonView jsonValue)
+  : Attribution()
 {
   *this = jsonValue;
 }

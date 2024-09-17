@@ -23,8 +23,8 @@ PipelineStatusReason::PipelineStatusReason() :
 {
 }
 
-PipelineStatusReason::PipelineStatusReason(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false)
+PipelineStatusReason::PipelineStatusReason(JsonView jsonValue)
+  : PipelineStatusReason()
 {
   *this = jsonValue;
 }

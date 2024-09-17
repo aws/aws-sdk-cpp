@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API StartExperimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A timestamp that indicates when the experiment started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedTime() const{ return m_startedTime; }
-
-    /**
-     * <p>A timestamp that indicates when the experiment started.</p>
-     */
     inline void SetStartedTime(const Aws::Utils::DateTime& value) { m_startedTime = value; }
-
-    /**
-     * <p>A timestamp that indicates when the experiment started.</p>
-     */
     inline void SetStartedTime(Aws::Utils::DateTime&& value) { m_startedTime = std::move(value); }
-
-    /**
-     * <p>A timestamp that indicates when the experiment started.</p>
-     */
     inline StartExperimentResult& WithStartedTime(const Aws::Utils::DateTime& value) { SetStartedTime(value); return *this;}
-
-    /**
-     * <p>A timestamp that indicates when the experiment started.</p>
-     */
     inline StartExperimentResult& WithStartedTime(Aws::Utils::DateTime&& value) { SetStartedTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartExperimentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartExperimentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartExperimentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startedTime;

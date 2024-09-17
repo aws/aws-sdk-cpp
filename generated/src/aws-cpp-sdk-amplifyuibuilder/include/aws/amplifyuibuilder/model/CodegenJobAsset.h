@@ -37,46 +37,19 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL to use to access the asset.</p>
      */
     inline const Aws::String& GetDownloadUrl() const{ return m_downloadUrl; }
-
-    /**
-     * <p>The URL to use to access the asset.</p>
-     */
     inline bool DownloadUrlHasBeenSet() const { return m_downloadUrlHasBeenSet; }
-
-    /**
-     * <p>The URL to use to access the asset.</p>
-     */
     inline void SetDownloadUrl(const Aws::String& value) { m_downloadUrlHasBeenSet = true; m_downloadUrl = value; }
-
-    /**
-     * <p>The URL to use to access the asset.</p>
-     */
     inline void SetDownloadUrl(Aws::String&& value) { m_downloadUrlHasBeenSet = true; m_downloadUrl = std::move(value); }
-
-    /**
-     * <p>The URL to use to access the asset.</p>
-     */
     inline void SetDownloadUrl(const char* value) { m_downloadUrlHasBeenSet = true; m_downloadUrl.assign(value); }
-
-    /**
-     * <p>The URL to use to access the asset.</p>
-     */
     inline CodegenJobAsset& WithDownloadUrl(const Aws::String& value) { SetDownloadUrl(value); return *this;}
-
-    /**
-     * <p>The URL to use to access the asset.</p>
-     */
     inline CodegenJobAsset& WithDownloadUrl(Aws::String&& value) { SetDownloadUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL to use to access the asset.</p>
-     */
     inline CodegenJobAsset& WithDownloadUrl(const char* value) { SetDownloadUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_downloadUrl;

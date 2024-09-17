@@ -26,11 +26,8 @@ ChangedBlock::ChangedBlock() :
 {
 }
 
-ChangedBlock::ChangedBlock(JsonView jsonValue) : 
-    m_blockIndex(0),
-    m_blockIndexHasBeenSet(false),
-    m_firstBlockTokenHasBeenSet(false),
-    m_secondBlockTokenHasBeenSet(false)
+ChangedBlock::ChangedBlock(JsonView jsonValue)
+  : ChangedBlock()
 {
   *this = jsonValue;
 }

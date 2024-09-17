@@ -46,29 +46,8 @@ IpamDiscoveredPublicAddress::IpamDiscoveredPublicAddress() :
 {
 }
 
-IpamDiscoveredPublicAddress::IpamDiscoveredPublicAddress(const XmlNode& xmlNode) : 
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_addressRegionHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_addressOwnerIdHasBeenSet(false),
-    m_addressAllocationIdHasBeenSet(false),
-    m_associationStatus(IpamPublicAddressAssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_addressType(IpamPublicAddressType::NOT_SET),
-    m_addressTypeHasBeenSet(false),
-    m_service(IpamPublicAddressAwsService::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_serviceResourceHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_publicIpv4PoolIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfaceDescriptionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false)
+IpamDiscoveredPublicAddress::IpamDiscoveredPublicAddress(const XmlNode& xmlNode)
+  : IpamDiscoveredPublicAddress()
 {
   *this = xmlNode;
 }

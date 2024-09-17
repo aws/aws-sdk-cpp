@@ -38,23 +38,8 @@ NetworkFirewallInternetTrafficNotInspectedViolation::NetworkFirewallInternetTraf
 {
 }
 
-NetworkFirewallInternetTrafficNotInspectedViolation::NetworkFirewallInternetTrafficNotInspectedViolation(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_violatingRoutesHasBeenSet(false),
-    m_isRouteTableUsedInDifferentAZ(false),
-    m_isRouteTableUsedInDifferentAZHasBeenSet(false),
-    m_currentFirewallSubnetRouteTableHasBeenSet(false),
-    m_expectedFirewallEndpointHasBeenSet(false),
-    m_firewallSubnetIdHasBeenSet(false),
-    m_expectedFirewallSubnetRoutesHasBeenSet(false),
-    m_actualFirewallSubnetRoutesHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_currentInternetGatewayRouteTableHasBeenSet(false),
-    m_expectedInternetGatewayRoutesHasBeenSet(false),
-    m_actualInternetGatewayRoutesHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+NetworkFirewallInternetTrafficNotInspectedViolation::NetworkFirewallInternetTrafficNotInspectedViolation(JsonView jsonValue)
+  : NetworkFirewallInternetTrafficNotInspectedViolation()
 {
   *this = jsonValue;
 }

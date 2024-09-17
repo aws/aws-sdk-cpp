@@ -38,46 +38,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the input Kinesis data stream to read.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The ARN of the input Kinesis data stream to read.</p>
-     */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the input Kinesis data stream to read.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p>The ARN of the input Kinesis data stream to read.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the input Kinesis data stream to read.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p>The ARN of the input Kinesis data stream to read.</p>
-     */
     inline KinesisStreamsInput& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the input Kinesis data stream to read.</p>
-     */
     inline KinesisStreamsInput& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the input Kinesis data stream to read.</p>
-     */
     inline KinesisStreamsInput& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

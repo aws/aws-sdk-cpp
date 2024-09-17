@@ -26,11 +26,8 @@ EyeOpen::EyeOpen() :
 {
 }
 
-EyeOpen::EyeOpen(JsonView jsonValue) : 
-    m_value(false),
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+EyeOpen::EyeOpen(JsonView jsonValue)
+  : EyeOpen()
 {
   *this = jsonValue;
 }

@@ -30,6 +30,8 @@
 #include <aws/scheduler/model/TagResourceResult.h>
 #include <aws/scheduler/model/UntagResourceResult.h>
 #include <aws/scheduler/model/UpdateScheduleResult.h>
+#include <aws/scheduler/model/ListSchedulesRequest.h>
+#include <aws/scheduler/model/ListScheduleGroupsRequest.h>
 /* End of service model headers required in SchedulerClient header */
 
 namespace Aws
@@ -63,7 +65,7 @@ namespace Aws
 
   namespace Scheduler
   {
-    using SchedulerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SchedulerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SchedulerEndpointProviderBase = Aws::Scheduler::Endpoint::SchedulerEndpointProviderBase;
     using SchedulerEndpointProvider = Aws::Scheduler::Endpoint::SchedulerEndpointProvider;
 

@@ -33,63 +33,29 @@ namespace Model
     AWS_WAFREGIONAL_API GetWebACLForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the web ACL that you specified in the
      * <code>GetWebACLForResource</code> request. If there is no associated resource, a
      * null WebACLSummary is returned.</p>
      */
     inline const WebACLSummary& GetWebACLSummary() const{ return m_webACLSummary; }
-
-    /**
-     * <p>Information about the web ACL that you specified in the
-     * <code>GetWebACLForResource</code> request. If there is no associated resource, a
-     * null WebACLSummary is returned.</p>
-     */
     inline void SetWebACLSummary(const WebACLSummary& value) { m_webACLSummary = value; }
-
-    /**
-     * <p>Information about the web ACL that you specified in the
-     * <code>GetWebACLForResource</code> request. If there is no associated resource, a
-     * null WebACLSummary is returned.</p>
-     */
     inline void SetWebACLSummary(WebACLSummary&& value) { m_webACLSummary = std::move(value); }
-
-    /**
-     * <p>Information about the web ACL that you specified in the
-     * <code>GetWebACLForResource</code> request. If there is no associated resource, a
-     * null WebACLSummary is returned.</p>
-     */
     inline GetWebACLForResourceResult& WithWebACLSummary(const WebACLSummary& value) { SetWebACLSummary(value); return *this;}
-
-    /**
-     * <p>Information about the web ACL that you specified in the
-     * <code>GetWebACLForResource</code> request. If there is no associated resource, a
-     * null WebACLSummary is returned.</p>
-     */
     inline GetWebACLForResourceResult& WithWebACLSummary(WebACLSummary&& value) { SetWebACLSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWebACLForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWebACLForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWebACLForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     WebACLSummary m_webACLSummary;

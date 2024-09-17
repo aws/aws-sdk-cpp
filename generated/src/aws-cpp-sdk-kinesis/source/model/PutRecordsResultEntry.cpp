@@ -26,11 +26,8 @@ PutRecordsResultEntry::PutRecordsResultEntry() :
 {
 }
 
-PutRecordsResultEntry::PutRecordsResultEntry(JsonView jsonValue) : 
-    m_sequenceNumberHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+PutRecordsResultEntry::PutRecordsResultEntry(JsonView jsonValue)
+  : PutRecordsResultEntry()
 {
   *this = jsonValue;
 }

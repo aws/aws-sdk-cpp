@@ -28,11 +28,8 @@ HistoryRecordEntry::HistoryRecordEntry() :
 {
 }
 
-HistoryRecordEntry::HistoryRecordEntry(const XmlNode& xmlNode) : 
-    m_eventInformationHasBeenSet(false),
-    m_eventType(FleetEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+HistoryRecordEntry::HistoryRecordEntry(const XmlNode& xmlNode)
+  : HistoryRecordEntry()
 {
   *this = xmlNode;
 }

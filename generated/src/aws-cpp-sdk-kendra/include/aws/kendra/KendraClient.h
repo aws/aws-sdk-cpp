@@ -697,10 +697,10 @@ namespace kendra
         }
 
         /**
-         * <p>Deletes an existing Amazon Kendra index. An exception is not thrown if the
-         * index is already being deleted. While the index is being deleted, the
-         * <code>Status</code> field returned by a call to the <code>DescribeIndex</code>
-         * API is set to <code>DELETING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Kendra index. An exception is not thrown if the index is
+         * already being deleted. While the index is being deleted, the <code>Status</code>
+         * field returned by a call to the <code>DescribeIndex</code> API is set to
+         * <code>DELETING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteIndex">AWS
          * API Reference</a></p>
          */
@@ -792,7 +792,7 @@ namespace kendra
         }
 
         /**
-         * <p>Deletes an existing Amazon Kendra thesaurus. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Kendra thesaurus. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">AWS
          * API Reference</a></p>
          */
@@ -954,8 +954,7 @@ namespace kendra
         }
 
         /**
-         * <p>Gets information about an existing Amazon Kendra index.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about an Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">AWS
          * API Reference</a></p>
          */
@@ -1069,8 +1068,8 @@ namespace kendra
         }
 
         /**
-         * <p>Gets information about an existing Amazon Kendra thesaurus.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about an Amazon Kendra thesaurus.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">AWS
          * API Reference</a></p>
          */
@@ -1460,13 +1459,13 @@ namespace kendra
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request) const;
+        virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIndices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIndicesRequestT = Model::ListIndicesRequest>
-        Model::ListIndicesOutcomeCallable ListIndicesCallable(const ListIndicesRequestT& request) const
+        Model::ListIndicesOutcomeCallable ListIndicesCallable(const ListIndicesRequestT& request = {}) const
         {
             return SubmitCallable(&KendraClient::ListIndices, request);
         }
@@ -1475,7 +1474,7 @@ namespace kendra
          * An Async wrapper for ListIndices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIndicesRequestT = Model::ListIndicesRequest>
-        void ListIndicesAsync(const ListIndicesRequestT& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIndicesAsync(const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIndicesRequestT& request = {}) const
         {
             return SubmitAsync(&KendraClient::ListIndices, request, handler, context);
         }
@@ -1879,8 +1878,7 @@ namespace kendra
         }
 
         /**
-         * <p>Updates an existing Amazon Kendra data source connector.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an Amazon Kendra data source connector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">AWS
          * API Reference</a></p>
          */
@@ -1962,7 +1960,7 @@ namespace kendra
         }
 
         /**
-         * <p>Updates an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">AWS
          * API Reference</a></p>
          */
@@ -2086,7 +2084,6 @@ namespace kendra
       void init(const KendraClientConfiguration& clientConfiguration);
 
       KendraClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<KendraEndpointProviderBase> m_endpointProvider;
   };
 

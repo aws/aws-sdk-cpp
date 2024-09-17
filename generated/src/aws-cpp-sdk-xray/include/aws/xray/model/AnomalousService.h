@@ -38,24 +38,15 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ServiceId& GetServiceId() const{ return m_serviceId; }
-
-    
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-
-    
     inline void SetServiceId(const ServiceId& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-
-    
     inline void SetServiceId(ServiceId&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-
-    
     inline AnomalousService& WithServiceId(const ServiceId& value) { SetServiceId(value); return *this;}
-
-    
     inline AnomalousService& WithServiceId(ServiceId&& value) { SetServiceId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServiceId m_serviceId;

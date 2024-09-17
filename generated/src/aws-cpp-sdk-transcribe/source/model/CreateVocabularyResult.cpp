@@ -23,9 +23,8 @@ CreateVocabularyResult::CreateVocabularyResult() :
 {
 }
 
-CreateVocabularyResult::CreateVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_vocabularyState(VocabularyState::NOT_SET)
+CreateVocabularyResult::CreateVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateVocabularyResult()
 {
   *this = result;
 }

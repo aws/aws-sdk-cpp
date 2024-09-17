@@ -33,68 +33,30 @@ namespace Model
     AWS_NEPTUNEDATA_API ListMLEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A page from the list of inference endpoint IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
-
-    /**
-     * <p>A page from the list of inference endpoint IDs.</p>
-     */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_ids = value; }
-
-    /**
-     * <p>A page from the list of inference endpoint IDs.</p>
-     */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_ids = std::move(value); }
-
-    /**
-     * <p>A page from the list of inference endpoint IDs.</p>
-     */
     inline ListMLEndpointsResult& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-
-    /**
-     * <p>A page from the list of inference endpoint IDs.</p>
-     */
     inline ListMLEndpointsResult& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A page from the list of inference endpoint IDs.</p>
-     */
     inline ListMLEndpointsResult& AddIds(const Aws::String& value) { m_ids.push_back(value); return *this; }
-
-    /**
-     * <p>A page from the list of inference endpoint IDs.</p>
-     */
     inline ListMLEndpointsResult& AddIds(Aws::String&& value) { m_ids.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A page from the list of inference endpoint IDs.</p>
-     */
     inline ListMLEndpointsResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMLEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMLEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMLEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_ids;

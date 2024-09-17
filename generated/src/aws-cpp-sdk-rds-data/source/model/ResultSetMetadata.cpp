@@ -25,10 +25,8 @@ ResultSetMetadata::ResultSetMetadata() :
 {
 }
 
-ResultSetMetadata::ResultSetMetadata(JsonView jsonValue) : 
-    m_columnCount(0),
-    m_columnCountHasBeenSet(false),
-    m_columnMetadataHasBeenSet(false)
+ResultSetMetadata::ResultSetMetadata(JsonView jsonValue)
+  : ResultSetMetadata()
 {
   *this = jsonValue;
 }

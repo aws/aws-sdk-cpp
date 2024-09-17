@@ -32,17 +32,8 @@ DashboardPublishOptions::DashboardPublishOptions() :
 {
 }
 
-DashboardPublishOptions::DashboardPublishOptions(JsonView jsonValue) : 
-    m_adHocFilteringOptionHasBeenSet(false),
-    m_exportToCSVOptionHasBeenSet(false),
-    m_sheetControlsOptionHasBeenSet(false),
-    m_sheetLayoutElementMaximizationOptionHasBeenSet(false),
-    m_visualMenuOptionHasBeenSet(false),
-    m_visualAxisSortOptionHasBeenSet(false),
-    m_exportWithHiddenFieldsOptionHasBeenSet(false),
-    m_dataPointDrillUpDownOptionHasBeenSet(false),
-    m_dataPointMenuLabelOptionHasBeenSet(false),
-    m_dataPointTooltipOptionHasBeenSet(false)
+DashboardPublishOptions::DashboardPublishOptions(JsonView jsonValue)
+  : DashboardPublishOptions()
 {
   *this = jsonValue;
 }

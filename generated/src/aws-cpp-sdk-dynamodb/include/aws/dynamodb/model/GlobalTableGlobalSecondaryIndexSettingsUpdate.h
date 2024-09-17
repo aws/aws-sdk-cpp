@@ -39,116 +39,44 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the global secondary index. The name must be unique among all
      * other indexes on this table.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The name of the global secondary index. The name must be unique among all
-     * other indexes on this table.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The name of the global secondary index. The name must be unique among all
-     * other indexes on this table.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The name of the global secondary index. The name must be unique among all
-     * other indexes on this table.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the global secondary index. The name must be unique among all
-     * other indexes on this table.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the global secondary index. The name must be unique among all
-     * other indexes on this table.</p>
-     */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the global secondary index. The name must be unique among all
-     * other indexes on this table.</p>
-     */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the global secondary index. The name must be unique among all
-     * other indexes on this table.</p>
-     */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException.</code> </p>
      */
     inline long long GetProvisionedWriteCapacityUnits() const{ return m_provisionedWriteCapacityUnits; }
-
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException.</code> </p>
-     */
     inline bool ProvisionedWriteCapacityUnitsHasBeenSet() const { return m_provisionedWriteCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException.</code> </p>
-     */
     inline void SetProvisionedWriteCapacityUnits(long long value) { m_provisionedWriteCapacityUnitsHasBeenSet = true; m_provisionedWriteCapacityUnits = value; }
-
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException.</code> </p>
-     */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityUnits(long long value) { SetProvisionedWriteCapacityUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
     inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_provisionedWriteCapacityAutoScalingSettingsUpdate; }
-
-    /**
-     * <p>Auto scaling settings for managing a global secondary index's write capacity
-     * units.</p>
-     */
     inline bool ProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet; }
-
-    /**
-     * <p>Auto scaling settings for managing a global secondary index's write capacity
-     * units.</p>
-     */
     inline void SetProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettingsUpdate = value; }
-
-    /**
-     * <p>Auto scaling settings for managing a global secondary index's write capacity
-     * units.</p>
-     */
     inline void SetProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettingsUpdate = std::move(value); }
-
-    /**
-     * <p>Auto scaling settings for managing a global secondary index's write capacity
-     * units.</p>
-     */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedWriteCapacityAutoScalingSettingsUpdate(value); return *this;}
-
-    /**
-     * <p>Auto scaling settings for managing a global secondary index's write capacity
-     * units.</p>
-     */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedWriteCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexName;

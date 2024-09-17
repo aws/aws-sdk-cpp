@@ -22,8 +22,8 @@ SendChatIntegrationEventResult::SendChatIntegrationEventResult() :
 {
 }
 
-SendChatIntegrationEventResult::SendChatIntegrationEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_newChatCreated(false)
+SendChatIntegrationEventResult::SendChatIntegrationEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SendChatIntegrationEventResult()
 {
   *this = result;
 }

@@ -30,15 +30,8 @@ FinalAutoMLJobObjectiveMetric::FinalAutoMLJobObjectiveMetric() :
 {
 }
 
-FinalAutoMLJobObjectiveMetric::FinalAutoMLJobObjectiveMetric(JsonView jsonValue) : 
-    m_type(AutoMLJobObjectiveType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_metricName(AutoMLMetricEnum::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_standardMetricName(AutoMLMetricEnum::NOT_SET),
-    m_standardMetricNameHasBeenSet(false)
+FinalAutoMLJobObjectiveMetric::FinalAutoMLJobObjectiveMetric(JsonView jsonValue)
+  : FinalAutoMLJobObjectiveMetric()
 {
   *this = jsonValue;
 }

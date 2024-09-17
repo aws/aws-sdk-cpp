@@ -26,11 +26,8 @@ RealTimeInferenceRecommendation::RealTimeInferenceRecommendation() :
 {
 }
 
-RealTimeInferenceRecommendation::RealTimeInferenceRecommendation(JsonView jsonValue) : 
-    m_recommendationIdHasBeenSet(false),
-    m_instanceType(ProductionVariantInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+RealTimeInferenceRecommendation::RealTimeInferenceRecommendation(JsonView jsonValue)
+  : RealTimeInferenceRecommendation()
 {
   *this = jsonValue;
 }

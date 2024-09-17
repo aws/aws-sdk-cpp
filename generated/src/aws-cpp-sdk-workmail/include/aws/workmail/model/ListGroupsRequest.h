@@ -35,153 +35,57 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier for the organization under which the groups exist.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The identifier for the organization under which the groups exist.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the organization under which the groups exist.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The identifier for the organization under which the groups exist.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The identifier for the organization under which the groups exist.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The identifier for the organization under which the groups exist.</p>
-     */
     inline ListGroupsRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The identifier for the organization under which the groups exist.</p>
-     */
     inline ListGroupsRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the organization under which the groups exist.</p>
-     */
     inline ListGroupsRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results. The first call does
      * not contain any tokens.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The first call does
-     * not contain any tokens.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The first call does
-     * not contain any tokens.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The first call does
-     * not contain any tokens.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The first call does
-     * not contain any tokens.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The first call does
-     * not contain any tokens.</p>
-     */
     inline ListGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The first call does
-     * not contain any tokens.</p>
-     */
     inline ListGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. The first call does
-     * not contain any tokens.</p>
-     */
     inline ListGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in a single call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in a single call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in a single call.</p>
-     */
     inline ListGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Limit the search results based on the filter criteria. Only one filter per
      * request is supported.</p>
      */
     inline const ListGroupsFilters& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Limit the search results based on the filter criteria. Only one filter per
-     * request is supported.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Limit the search results based on the filter criteria. Only one filter per
-     * request is supported.</p>
-     */
     inline void SetFilters(const ListGroupsFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Limit the search results based on the filter criteria. Only one filter per
-     * request is supported.</p>
-     */
     inline void SetFilters(ListGroupsFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Limit the search results based on the filter criteria. Only one filter per
-     * request is supported.</p>
-     */
     inline ListGroupsRequest& WithFilters(const ListGroupsFilters& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Limit the search results based on the filter criteria. Only one filter per
-     * request is supported.</p>
-     */
     inline ListGroupsRequest& WithFilters(ListGroupsFilters&& value) { SetFilters(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

@@ -29,14 +29,8 @@ AccessLogSubscriptionSummary::AccessLogSubscriptionSummary() :
 {
 }
 
-AccessLogSubscriptionSummary::AccessLogSubscriptionSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+AccessLogSubscriptionSummary::AccessLogSubscriptionSummary(JsonView jsonValue)
+  : AccessLogSubscriptionSummary()
 {
   *this = jsonValue;
 }

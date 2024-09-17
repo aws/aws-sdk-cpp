@@ -33,89 +33,40 @@ namespace Model
     AWS_APPFLOW_API StopFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The flow's Amazon Resource Name (ARN). </p>
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * <p> The flow's Amazon Resource Name (ARN). </p>
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-
-    /**
-     * <p> The flow's Amazon Resource Name (ARN). </p>
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-
-    /**
-     * <p> The flow's Amazon Resource Name (ARN). </p>
-     */
     inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-
-    /**
-     * <p> The flow's Amazon Resource Name (ARN). </p>
-     */
     inline StopFlowResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * <p> The flow's Amazon Resource Name (ARN). </p>
-     */
     inline StopFlowResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The flow's Amazon Resource Name (ARN). </p>
-     */
     inline StopFlowResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates the current status of the flow. </p>
      */
     inline const FlowStatus& GetFlowStatus() const{ return m_flowStatus; }
-
-    /**
-     * <p> Indicates the current status of the flow. </p>
-     */
     inline void SetFlowStatus(const FlowStatus& value) { m_flowStatus = value; }
-
-    /**
-     * <p> Indicates the current status of the flow. </p>
-     */
     inline void SetFlowStatus(FlowStatus&& value) { m_flowStatus = std::move(value); }
-
-    /**
-     * <p> Indicates the current status of the flow. </p>
-     */
     inline StopFlowResult& WithFlowStatus(const FlowStatus& value) { SetFlowStatus(value); return *this;}
-
-    /**
-     * <p> Indicates the current status of the flow. </p>
-     */
     inline StopFlowResult& WithFlowStatus(FlowStatus&& value) { SetFlowStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StopFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StopFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StopFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

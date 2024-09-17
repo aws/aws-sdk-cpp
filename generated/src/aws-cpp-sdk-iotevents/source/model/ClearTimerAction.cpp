@@ -23,8 +23,8 @@ ClearTimerAction::ClearTimerAction() :
 {
 }
 
-ClearTimerAction::ClearTimerAction(JsonView jsonValue) : 
-    m_timerNameHasBeenSet(false)
+ClearTimerAction::ClearTimerAction(JsonView jsonValue)
+  : ClearTimerAction()
 {
   *this = jsonValue;
 }

@@ -24,10 +24,8 @@ GetReadSetMetadataResult::GetReadSetMetadataResult() :
 {
 }
 
-GetReadSetMetadataResult::GetReadSetMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ReadSetStatus::NOT_SET),
-    m_fileType(FileType::NOT_SET),
-    m_creationType(CreationType::NOT_SET)
+GetReadSetMetadataResult::GetReadSetMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetReadSetMetadataResult()
 {
   *this = result;
 }
@@ -128,6 +126,12 @@ GetReadSetMetadataResult& GetReadSetMetadataResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("etag"))
   {
     m_etag = jsonValue.GetObject("etag");
+
+  }
+
+  if(jsonValue.ValueExists("creationJobId"))
+  {
+    m_creationJobId = jsonValue.GetString("creationJobId");
 
   }
 

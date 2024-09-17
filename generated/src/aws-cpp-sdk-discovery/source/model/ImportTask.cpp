@@ -40,25 +40,8 @@ ImportTask::ImportTask() :
 {
 }
 
-ImportTask::ImportTask(JsonView jsonValue) : 
-    m_importTaskIdHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_importUrlHasBeenSet(false),
-    m_status(ImportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_importRequestTimeHasBeenSet(false),
-    m_importCompletionTimeHasBeenSet(false),
-    m_importDeletedTimeHasBeenSet(false),
-    m_serverImportSuccess(0),
-    m_serverImportSuccessHasBeenSet(false),
-    m_serverImportFailure(0),
-    m_serverImportFailureHasBeenSet(false),
-    m_applicationImportSuccess(0),
-    m_applicationImportSuccessHasBeenSet(false),
-    m_applicationImportFailure(0),
-    m_applicationImportFailureHasBeenSet(false),
-    m_errorsAndFailedEntriesZipHasBeenSet(false)
+ImportTask::ImportTask(JsonView jsonValue)
+  : ImportTask()
 {
   *this = jsonValue;
 }

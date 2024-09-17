@@ -22,8 +22,8 @@ GetDestinationResult::GetDestinationResult() :
 {
 }
 
-GetDestinationResult::GetDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expressionType(ExpressionType::NOT_SET)
+GetDestinationResult::GetDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDestinationResult()
 {
   *this = result;
 }

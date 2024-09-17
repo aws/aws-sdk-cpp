@@ -31,16 +31,8 @@ GetLowLatencyHlsManifestConfiguration::GetLowLatencyHlsManifestConfiguration() :
 {
 }
 
-GetLowLatencyHlsManifestConfiguration::GetLowLatencyHlsManifestConfiguration(JsonView jsonValue) : 
-    m_manifestNameHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_childManifestNameHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_scteHlsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false)
+GetLowLatencyHlsManifestConfiguration::GetLowLatencyHlsManifestConfiguration(JsonView jsonValue)
+  : GetLowLatencyHlsManifestConfiguration()
 {
   *this = jsonValue;
 }

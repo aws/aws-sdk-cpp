@@ -24,9 +24,8 @@ NumberValidateRequest::NumberValidateRequest() :
 {
 }
 
-NumberValidateRequest::NumberValidateRequest(JsonView jsonValue) : 
-    m_isoCountryCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+NumberValidateRequest::NumberValidateRequest(JsonView jsonValue)
+  : NumberValidateRequest()
 {
   *this = jsonValue;
 }

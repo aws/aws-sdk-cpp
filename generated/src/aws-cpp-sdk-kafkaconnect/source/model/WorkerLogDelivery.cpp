@@ -25,10 +25,8 @@ WorkerLogDelivery::WorkerLogDelivery() :
 {
 }
 
-WorkerLogDelivery::WorkerLogDelivery(JsonView jsonValue) : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_s3HasBeenSet(false)
+WorkerLogDelivery::WorkerLogDelivery(JsonView jsonValue)
+  : WorkerLogDelivery()
 {
   *this = jsonValue;
 }

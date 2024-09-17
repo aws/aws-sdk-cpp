@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API GetTableVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested table version.</p>
      */
     inline const TableVersion& GetTableVersion() const{ return m_tableVersion; }
-
-    /**
-     * <p>The requested table version.</p>
-     */
     inline void SetTableVersion(const TableVersion& value) { m_tableVersion = value; }
-
-    /**
-     * <p>The requested table version.</p>
-     */
     inline void SetTableVersion(TableVersion&& value) { m_tableVersion = std::move(value); }
-
-    /**
-     * <p>The requested table version.</p>
-     */
     inline GetTableVersionResult& WithTableVersion(const TableVersion& value) { SetTableVersion(value); return *this;}
-
-    /**
-     * <p>The requested table version.</p>
-     */
     inline GetTableVersionResult& WithTableVersion(TableVersion&& value) { SetTableVersion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTableVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTableVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTableVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TableVersion m_tableVersion;

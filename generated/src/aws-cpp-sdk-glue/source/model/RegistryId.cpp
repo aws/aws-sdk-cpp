@@ -24,9 +24,8 @@ RegistryId::RegistryId() :
 {
 }
 
-RegistryId::RegistryId(JsonView jsonValue) : 
-    m_registryNameHasBeenSet(false),
-    m_registryArnHasBeenSet(false)
+RegistryId::RegistryId(JsonView jsonValue)
+  : RegistryId()
 {
   *this = jsonValue;
 }

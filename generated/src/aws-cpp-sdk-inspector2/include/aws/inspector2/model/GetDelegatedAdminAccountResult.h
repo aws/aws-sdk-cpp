@@ -33,58 +33,28 @@ namespace Model
     AWS_INSPECTOR2_API GetDelegatedAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID of the Amazon Inspector delegated
      * administrator.</p>
      */
     inline const DelegatedAdmin& GetDelegatedAdmin() const{ return m_delegatedAdmin; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the Amazon Inspector delegated
-     * administrator.</p>
-     */
     inline void SetDelegatedAdmin(const DelegatedAdmin& value) { m_delegatedAdmin = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the Amazon Inspector delegated
-     * administrator.</p>
-     */
     inline void SetDelegatedAdmin(DelegatedAdmin&& value) { m_delegatedAdmin = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the Amazon Inspector delegated
-     * administrator.</p>
-     */
     inline GetDelegatedAdminAccountResult& WithDelegatedAdmin(const DelegatedAdmin& value) { SetDelegatedAdmin(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the Amazon Inspector delegated
-     * administrator.</p>
-     */
     inline GetDelegatedAdminAccountResult& WithDelegatedAdmin(DelegatedAdmin&& value) { SetDelegatedAdmin(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDelegatedAdminAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDelegatedAdminAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDelegatedAdminAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DelegatedAdmin m_delegatedAdmin;

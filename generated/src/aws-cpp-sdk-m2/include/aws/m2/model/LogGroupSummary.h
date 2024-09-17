@@ -39,87 +39,33 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-
-    /**
-     * <p>The name of the log group.</p>
-     */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the log group.</p>
-     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-
-    /**
-     * <p>The name of the log group.</p>
-     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the log group.</p>
-     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-
-    /**
-     * <p>The name of the log group.</p>
-     */
     inline LogGroupSummary& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the log group.</p>
-     */
     inline LogGroupSummary& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the log group.</p>
-     */
     inline LogGroupSummary& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of log.</p>
      */
     inline const Aws::String& GetLogType() const{ return m_logType; }
-
-    /**
-     * <p>The type of log.</p>
-     */
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
-
-    /**
-     * <p>The type of log.</p>
-     */
     inline void SetLogType(const Aws::String& value) { m_logTypeHasBeenSet = true; m_logType = value; }
-
-    /**
-     * <p>The type of log.</p>
-     */
     inline void SetLogType(Aws::String&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
-
-    /**
-     * <p>The type of log.</p>
-     */
     inline void SetLogType(const char* value) { m_logTypeHasBeenSet = true; m_logType.assign(value); }
-
-    /**
-     * <p>The type of log.</p>
-     */
     inline LogGroupSummary& WithLogType(const Aws::String& value) { SetLogType(value); return *this;}
-
-    /**
-     * <p>The type of log.</p>
-     */
     inline LogGroupSummary& WithLogType(Aws::String&& value) { SetLogType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of log.</p>
-     */
     inline LogGroupSummary& WithLogType(const char* value) { SetLogType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logGroupName;

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RekognitionClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RekognitionClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RekognitionClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RekognitionBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -32,87 +32,33 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the connector definition.
      */
     inline const Aws::String& GetConnectorDefinitionId() const{ return m_connectorDefinitionId; }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline bool ConnectorDefinitionIdHasBeenSet() const { return m_connectorDefinitionIdHasBeenSet; }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline void SetConnectorDefinitionId(const Aws::String& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = value; }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline void SetConnectorDefinitionId(Aws::String&& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = std::move(value); }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline void SetConnectorDefinitionId(const char* value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId.assign(value); }
-
-    /**
-     * The ID of the connector definition.
-     */
     inline UpdateConnectorDefinitionRequest& WithConnectorDefinitionId(const Aws::String& value) { SetConnectorDefinitionId(value); return *this;}
-
-    /**
-     * The ID of the connector definition.
-     */
     inline UpdateConnectorDefinitionRequest& WithConnectorDefinitionId(Aws::String&& value) { SetConnectorDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the connector definition.
-     */
     inline UpdateConnectorDefinitionRequest& WithConnectorDefinitionId(const char* value) { SetConnectorDefinitionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the definition.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateConnectorDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateConnectorDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateConnectorDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectorDefinitionId;

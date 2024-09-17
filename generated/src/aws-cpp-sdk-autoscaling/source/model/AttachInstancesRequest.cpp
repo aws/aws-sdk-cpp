@@ -22,12 +22,19 @@ Aws::String AttachInstancesRequest::SerializePayload() const
   ss << "Action=AttachInstances&";
   if(m_instanceIdsHasBeenSet)
   {
-    unsigned instanceIdsCount = 1;
-    for(auto& item : m_instanceIds)
+    if (m_instanceIds.empty())
     {
-      ss << "InstanceIds.member." << instanceIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      instanceIdsCount++;
+      ss << "InstanceIds=&";
+    }
+    else
+    {
+      unsigned instanceIdsCount = 1;
+      for(auto& item : m_instanceIds)
+      {
+        ss << "InstanceIds.member." << instanceIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        instanceIdsCount++;
+      }
     }
   }
 

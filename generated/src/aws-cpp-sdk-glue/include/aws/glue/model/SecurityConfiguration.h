@@ -39,108 +39,43 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the security configuration.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline SecurityConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline SecurityConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the security configuration.</p>
-     */
     inline SecurityConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which this security configuration was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimeStamp() const{ return m_createdTimeStamp; }
-
-    /**
-     * <p>The time at which this security configuration was created.</p>
-     */
     inline bool CreatedTimeStampHasBeenSet() const { return m_createdTimeStampHasBeenSet; }
-
-    /**
-     * <p>The time at which this security configuration was created.</p>
-     */
     inline void SetCreatedTimeStamp(const Aws::Utils::DateTime& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = value; }
-
-    /**
-     * <p>The time at which this security configuration was created.</p>
-     */
     inline void SetCreatedTimeStamp(Aws::Utils::DateTime&& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = std::move(value); }
-
-    /**
-     * <p>The time at which this security configuration was created.</p>
-     */
     inline SecurityConfiguration& WithCreatedTimeStamp(const Aws::Utils::DateTime& value) { SetCreatedTimeStamp(value); return *this;}
-
-    /**
-     * <p>The time at which this security configuration was created.</p>
-     */
     inline SecurityConfiguration& WithCreatedTimeStamp(Aws::Utils::DateTime&& value) { SetCreatedTimeStamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The encryption configuration associated with this security configuration.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
-
-    /**
-     * <p>The encryption configuration associated with this security configuration.</p>
-     */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-
-    /**
-     * <p>The encryption configuration associated with this security configuration.</p>
-     */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-
-    /**
-     * <p>The encryption configuration associated with this security configuration.</p>
-     */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-
-    /**
-     * <p>The encryption configuration associated with this security configuration.</p>
-     */
     inline SecurityConfiguration& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-
-    /**
-     * <p>The encryption configuration associated with this security configuration.</p>
-     */
     inline SecurityConfiguration& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

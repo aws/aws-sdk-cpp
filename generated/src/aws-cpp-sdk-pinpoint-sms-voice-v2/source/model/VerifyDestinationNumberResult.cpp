@@ -22,8 +22,8 @@ VerifyDestinationNumberResult::VerifyDestinationNumberResult() :
 {
 }
 
-VerifyDestinationNumberResult::VerifyDestinationNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(VerificationStatus::NOT_SET)
+VerifyDestinationNumberResult::VerifyDestinationNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : VerifyDestinationNumberResult()
 {
   *this = result;
 }

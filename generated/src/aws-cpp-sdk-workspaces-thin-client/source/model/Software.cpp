@@ -24,9 +24,8 @@ Software::Software() :
 {
 }
 
-Software::Software(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+Software::Software(JsonView jsonValue)
+  : Software()
 {
   *this = jsonValue;
 }

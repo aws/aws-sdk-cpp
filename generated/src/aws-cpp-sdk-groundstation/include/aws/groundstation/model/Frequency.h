@@ -37,61 +37,28 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Frequency units.</p>
      */
     inline const FrequencyUnits& GetUnits() const{ return m_units; }
-
-    /**
-     * <p>Frequency units.</p>
-     */
     inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-
-    /**
-     * <p>Frequency units.</p>
-     */
     inline void SetUnits(const FrequencyUnits& value) { m_unitsHasBeenSet = true; m_units = value; }
-
-    /**
-     * <p>Frequency units.</p>
-     */
     inline void SetUnits(FrequencyUnits&& value) { m_unitsHasBeenSet = true; m_units = std::move(value); }
-
-    /**
-     * <p>Frequency units.</p>
-     */
     inline Frequency& WithUnits(const FrequencyUnits& value) { SetUnits(value); return *this;}
-
-    /**
-     * <p>Frequency units.</p>
-     */
     inline Frequency& WithUnits(FrequencyUnits&& value) { SetUnits(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
      * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
-     * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
-     * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
-     * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-     */
     inline Frequency& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     FrequencyUnits m_units;

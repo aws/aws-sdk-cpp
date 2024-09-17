@@ -22,8 +22,8 @@ ListTagsForResourceResult::ListTagsForResourceResult() :
 {
 }
 
-ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListTagsForResourceResult()
 {
   *this = result;
 }

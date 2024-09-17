@@ -30,15 +30,8 @@ Search::Search() :
 {
 }
 
-Search::Search(JsonView jsonValue) : 
-    m_facetable(false),
-    m_facetableHasBeenSet(false),
-    m_searchable(false),
-    m_searchableHasBeenSet(false),
-    m_displayable(false),
-    m_displayableHasBeenSet(false),
-    m_sortable(false),
-    m_sortableHasBeenSet(false)
+Search::Search(JsonView jsonValue)
+  : Search()
 {
   *this = jsonValue;
 }

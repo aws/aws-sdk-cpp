@@ -26,11 +26,8 @@ ServerProcess::ServerProcess() :
 {
 }
 
-ServerProcess::ServerProcess(JsonView jsonValue) : 
-    m_launchPathHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_concurrentExecutions(0),
-    m_concurrentExecutionsHasBeenSet(false)
+ServerProcess::ServerProcess(JsonView jsonValue)
+  : ServerProcess()
 {
   *this = jsonValue;
 }

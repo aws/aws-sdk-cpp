@@ -29,14 +29,8 @@ WorkflowStep::WorkflowStep() :
 {
 }
 
-WorkflowStep::WorkflowStep(JsonView jsonValue) : 
-    m_type(WorkflowStepType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_copyStepDetailsHasBeenSet(false),
-    m_customStepDetailsHasBeenSet(false),
-    m_deleteStepDetailsHasBeenSet(false),
-    m_tagStepDetailsHasBeenSet(false),
-    m_decryptStepDetailsHasBeenSet(false)
+WorkflowStep::WorkflowStep(JsonView jsonValue)
+  : WorkflowStep()
 {
   *this = jsonValue;
 }

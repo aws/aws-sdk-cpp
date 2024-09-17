@@ -27,10 +27,8 @@ VerifiedAccessSseSpecificationRequest::VerifiedAccessSseSpecificationRequest() :
 {
 }
 
-VerifiedAccessSseSpecificationRequest::VerifiedAccessSseSpecificationRequest(const XmlNode& xmlNode) : 
-    m_customerManagedKeyEnabled(false),
-    m_customerManagedKeyEnabledHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+VerifiedAccessSseSpecificationRequest::VerifiedAccessSseSpecificationRequest(const XmlNode& xmlNode)
+  : VerifiedAccessSseSpecificationRequest()
 {
   *this = xmlNode;
 }

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RolesAnywhereClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RolesAnywhereClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RolesAnywhereClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RolesAnywhereBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

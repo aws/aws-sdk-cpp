@@ -23,8 +23,8 @@ ServiceConnectTlsCertificateAuthority::ServiceConnectTlsCertificateAuthority() :
 {
 }
 
-ServiceConnectTlsCertificateAuthority::ServiceConnectTlsCertificateAuthority(JsonView jsonValue) : 
-    m_awsPcaAuthorityArnHasBeenSet(false)
+ServiceConnectTlsCertificateAuthority::ServiceConnectTlsCertificateAuthority(JsonView jsonValue)
+  : ServiceConnectTlsCertificateAuthority()
 {
   *this = jsonValue;
 }

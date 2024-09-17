@@ -23,8 +23,8 @@ CloudFormationProperties::CloudFormationProperties() :
 {
 }
 
-CloudFormationProperties::CloudFormationProperties(JsonView jsonValue) : 
-    m_templateUrlHasBeenSet(false)
+CloudFormationProperties::CloudFormationProperties(JsonView jsonValue)
+  : CloudFormationProperties()
 {
   *this = jsonValue;
 }

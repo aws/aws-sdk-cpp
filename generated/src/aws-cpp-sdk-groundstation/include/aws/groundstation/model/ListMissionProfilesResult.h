@@ -39,106 +39,43 @@ namespace Model
     AWS_GROUNDSTATION_API ListMissionProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of mission profiles.</p>
      */
     inline const Aws::Vector<MissionProfileListItem>& GetMissionProfileList() const{ return m_missionProfileList; }
-
-    /**
-     * <p>List of mission profiles.</p>
-     */
     inline void SetMissionProfileList(const Aws::Vector<MissionProfileListItem>& value) { m_missionProfileList = value; }
-
-    /**
-     * <p>List of mission profiles.</p>
-     */
     inline void SetMissionProfileList(Aws::Vector<MissionProfileListItem>&& value) { m_missionProfileList = std::move(value); }
-
-    /**
-     * <p>List of mission profiles.</p>
-     */
     inline ListMissionProfilesResult& WithMissionProfileList(const Aws::Vector<MissionProfileListItem>& value) { SetMissionProfileList(value); return *this;}
-
-    /**
-     * <p>List of mission profiles.</p>
-     */
     inline ListMissionProfilesResult& WithMissionProfileList(Aws::Vector<MissionProfileListItem>&& value) { SetMissionProfileList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of mission profiles.</p>
-     */
     inline ListMissionProfilesResult& AddMissionProfileList(const MissionProfileListItem& value) { m_missionProfileList.push_back(value); return *this; }
-
-    /**
-     * <p>List of mission profiles.</p>
-     */
     inline ListMissionProfilesResult& AddMissionProfileList(MissionProfileListItem&& value) { m_missionProfileList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token returned in the response of a previous
      * <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token returned in the response of a previous
-     * <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Next token returned in the response of a previous
-     * <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token returned in the response of a previous
-     * <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token returned in the response of a previous
-     * <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-     */
     inline ListMissionProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token returned in the response of a previous
-     * <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-     */
     inline ListMissionProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token returned in the response of a previous
-     * <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-     */
     inline ListMissionProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMissionProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMissionProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMissionProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MissionProfileListItem> m_missionProfileList;

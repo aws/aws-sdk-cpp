@@ -136,6 +136,7 @@
 #include <aws/rds/model/ModifyDBSubnetGroupResult.h>
 #include <aws/rds/model/ModifyEventSubscriptionResult.h>
 #include <aws/rds/model/ModifyGlobalClusterResult.h>
+#include <aws/rds/model/ModifyIntegrationResult.h>
 #include <aws/rds/model/ModifyOptionGroupResult.h>
 #include <aws/rds/model/ModifyTenantDatabaseResult.h>
 #include <aws/rds/model/PromoteReadReplicaResult.h>
@@ -168,6 +169,44 @@
 #include <aws/rds/model/SwitchoverBlueGreenDeploymentResult.h>
 #include <aws/rds/model/SwitchoverGlobalClusterResult.h>
 #include <aws/rds/model/SwitchoverReadReplicaResult.h>
+#include <aws/rds/model/DescribeIntegrationsRequest.h>
+#include <aws/rds/model/ModifyGlobalClusterRequest.h>
+#include <aws/rds/model/DescribeDBProxyEndpointsRequest.h>
+#include <aws/rds/model/DescribeDBInstancesRequest.h>
+#include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
+#include <aws/rds/model/DescribeCertificatesRequest.h>
+#include <aws/rds/model/DescribeDBClustersRequest.h>
+#include <aws/rds/model/DescribeEventCategoriesRequest.h>
+#include <aws/rds/model/DescribeDBClusterAutomatedBackupsRequest.h>
+#include <aws/rds/model/DescribeDBEngineVersionsRequest.h>
+#include <aws/rds/model/DescribePendingMaintenanceActionsRequest.h>
+#include <aws/rds/model/DescribeExportTasksRequest.h>
+#include <aws/rds/model/DescribeOptionGroupsRequest.h>
+#include <aws/rds/model/ModifyCertificatesRequest.h>
+#include <aws/rds/model/DescribeBlueGreenDeploymentsRequest.h>
+#include <aws/rds/model/DescribeDBSecurityGroupsRequest.h>
+#include <aws/rds/model/DescribeGlobalClustersRequest.h>
+#include <aws/rds/model/DescribeSourceRegionsRequest.h>
+#include <aws/rds/model/DescribeEventSubscriptionsRequest.h>
+#include <aws/rds/model/DescribeDBProxiesRequest.h>
+#include <aws/rds/model/DescribeAccountAttributesRequest.h>
+#include <aws/rds/model/DeleteDBInstanceAutomatedBackupRequest.h>
+#include <aws/rds/model/DescribeDBRecommendationsRequest.h>
+#include <aws/rds/model/DescribeDBShardGroupsRequest.h>
+#include <aws/rds/model/DescribeDBClusterParameterGroupsRequest.h>
+#include <aws/rds/model/DescribeDBSnapshotTenantDatabasesRequest.h>
+#include <aws/rds/model/CreateGlobalClusterRequest.h>
+#include <aws/rds/model/DescribeEventsRequest.h>
+#include <aws/rds/model/DescribeDBClusterEndpointsRequest.h>
+#include <aws/rds/model/DescribeDBSnapshotsRequest.h>
+#include <aws/rds/model/DescribeTenantDatabasesRequest.h>
+#include <aws/rds/model/DescribeDBParameterGroupsRequest.h>
+#include <aws/rds/model/DescribeDBSubnetGroupsRequest.h>
+#include <aws/rds/model/ModifyActivityStreamRequest.h>
+#include <aws/rds/model/RemoveFromGlobalClusterRequest.h>
+#include <aws/rds/model/DescribeDBClusterSnapshotsRequest.h>
+#include <aws/rds/model/DescribeReservedDBInstancesOfferingsRequest.h>
+#include <aws/rds/model/DescribeDBInstanceAutomatedBackupsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in RDSClient header */
 
@@ -202,7 +241,7 @@ namespace Aws
 
   namespace RDS
   {
-    using RDSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RDSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RDSEndpointProviderBase = Aws::RDS::Endpoint::RDSEndpointProviderBase;
     using RDSEndpointProvider = Aws::RDS::Endpoint::RDSEndpointProvider;
 
@@ -335,6 +374,7 @@ namespace Aws
       class ModifyDBSubnetGroupRequest;
       class ModifyEventSubscriptionRequest;
       class ModifyGlobalClusterRequest;
+      class ModifyIntegrationRequest;
       class ModifyOptionGroupRequest;
       class ModifyTenantDatabaseRequest;
       class PromoteReadReplicaRequest;
@@ -499,6 +539,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, RDSError> ModifyDBSubnetGroupOutcome;
       typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, RDSError> ModifyEventSubscriptionOutcome;
       typedef Aws::Utils::Outcome<ModifyGlobalClusterResult, RDSError> ModifyGlobalClusterOutcome;
+      typedef Aws::Utils::Outcome<ModifyIntegrationResult, RDSError> ModifyIntegrationOutcome;
       typedef Aws::Utils::Outcome<ModifyOptionGroupResult, RDSError> ModifyOptionGroupOutcome;
       typedef Aws::Utils::Outcome<ModifyTenantDatabaseResult, RDSError> ModifyTenantDatabaseOutcome;
       typedef Aws::Utils::Outcome<PromoteReadReplicaResult, RDSError> PromoteReadReplicaOutcome;
@@ -663,6 +704,7 @@ namespace Aws
       typedef std::future<ModifyDBSubnetGroupOutcome> ModifyDBSubnetGroupOutcomeCallable;
       typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
       typedef std::future<ModifyGlobalClusterOutcome> ModifyGlobalClusterOutcomeCallable;
+      typedef std::future<ModifyIntegrationOutcome> ModifyIntegrationOutcomeCallable;
       typedef std::future<ModifyOptionGroupOutcome> ModifyOptionGroupOutcomeCallable;
       typedef std::future<ModifyTenantDatabaseOutcome> ModifyTenantDatabaseOutcomeCallable;
       typedef std::future<PromoteReadReplicaOutcome> PromoteReadReplicaOutcomeCallable;
@@ -830,6 +872,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::ModifyDBSubnetGroupRequest&, const Model::ModifyDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyGlobalClusterRequest&, const Model::ModifyGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyGlobalClusterResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::ModifyIntegrationRequest&, const Model::ModifyIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIntegrationResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyOptionGroupRequest&, const Model::ModifyOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyOptionGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyTenantDatabaseRequest&, const Model::ModifyTenantDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTenantDatabaseResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::PromoteReadReplicaRequest&, const Model::PromoteReadReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteReadReplicaResponseReceivedHandler;

@@ -38,67 +38,29 @@ namespace Model
     AWS_IMAGEBUILDER_API GetInfrastructureConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline GetInfrastructureConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline GetInfrastructureConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline GetInfrastructureConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The infrastructure configuration object.</p>
      */
     inline const InfrastructureConfiguration& GetInfrastructureConfiguration() const{ return m_infrastructureConfiguration; }
-
-    /**
-     * <p>The infrastructure configuration object.</p>
-     */
     inline void SetInfrastructureConfiguration(const InfrastructureConfiguration& value) { m_infrastructureConfiguration = value; }
-
-    /**
-     * <p>The infrastructure configuration object.</p>
-     */
     inline void SetInfrastructureConfiguration(InfrastructureConfiguration&& value) { m_infrastructureConfiguration = std::move(value); }
-
-    /**
-     * <p>The infrastructure configuration object.</p>
-     */
     inline GetInfrastructureConfigurationResult& WithInfrastructureConfiguration(const InfrastructureConfiguration& value) { SetInfrastructureConfiguration(value); return *this;}
-
-    /**
-     * <p>The infrastructure configuration object.</p>
-     */
     inline GetInfrastructureConfigurationResult& WithInfrastructureConfiguration(InfrastructureConfiguration&& value) { SetInfrastructureConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestId;

@@ -24,10 +24,8 @@ DescribeIndexResult::DescribeIndexResult() :
 {
 }
 
-DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_edition(IndexEdition::NOT_SET),
-    m_status(IndexStatus::NOT_SET),
-    m_userContextPolicy(UserContextPolicy::NOT_SET)
+DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeIndexResult()
 {
   *this = result;
 }

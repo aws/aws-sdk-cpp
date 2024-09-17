@@ -26,11 +26,8 @@ MicrosoftSQLServerCatalogTarget::MicrosoftSQLServerCatalogTarget() :
 {
 }
 
-MicrosoftSQLServerCatalogTarget::MicrosoftSQLServerCatalogTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+MicrosoftSQLServerCatalogTarget::MicrosoftSQLServerCatalogTarget(JsonView jsonValue)
+  : MicrosoftSQLServerCatalogTarget()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ AudioCodecSettings::AudioCodecSettings() :
 {
 }
 
-AudioCodecSettings::AudioCodecSettings(JsonView jsonValue) : 
-    m_aacSettingsHasBeenSet(false),
-    m_ac3SettingsHasBeenSet(false),
-    m_eac3AtmosSettingsHasBeenSet(false),
-    m_eac3SettingsHasBeenSet(false),
-    m_mp2SettingsHasBeenSet(false),
-    m_passThroughSettingsHasBeenSet(false),
-    m_wavSettingsHasBeenSet(false)
+AudioCodecSettings::AudioCodecSettings(JsonView jsonValue)
+  : AudioCodecSettings()
 {
   *this = jsonValue;
 }

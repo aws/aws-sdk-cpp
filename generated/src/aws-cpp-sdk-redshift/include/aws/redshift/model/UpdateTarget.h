@@ -42,128 +42,47 @@ namespace Model
     AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the new maintenance track.</p>
      */
     inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
-
-    /**
-     * <p>The name of the new maintenance track.</p>
-     */
     inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
-
-    /**
-     * <p>The name of the new maintenance track.</p>
-     */
     inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
-
-    /**
-     * <p>The name of the new maintenance track.</p>
-     */
     inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
-
-    /**
-     * <p>The name of the new maintenance track.</p>
-     */
     inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
-
-    /**
-     * <p>The name of the new maintenance track.</p>
-     */
     inline UpdateTarget& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
-
-    /**
-     * <p>The name of the new maintenance track.</p>
-     */
     inline UpdateTarget& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the new maintenance track.</p>
-     */
     inline UpdateTarget& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cluster version for the new maintenance track.</p>
      */
     inline const Aws::String& GetDatabaseVersion() const{ return m_databaseVersion; }
-
-    /**
-     * <p>The cluster version for the new maintenance track.</p>
-     */
     inline bool DatabaseVersionHasBeenSet() const { return m_databaseVersionHasBeenSet; }
-
-    /**
-     * <p>The cluster version for the new maintenance track.</p>
-     */
     inline void SetDatabaseVersion(const Aws::String& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = value; }
-
-    /**
-     * <p>The cluster version for the new maintenance track.</p>
-     */
     inline void SetDatabaseVersion(Aws::String&& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = std::move(value); }
-
-    /**
-     * <p>The cluster version for the new maintenance track.</p>
-     */
     inline void SetDatabaseVersion(const char* value) { m_databaseVersionHasBeenSet = true; m_databaseVersion.assign(value); }
-
-    /**
-     * <p>The cluster version for the new maintenance track.</p>
-     */
     inline UpdateTarget& WithDatabaseVersion(const Aws::String& value) { SetDatabaseVersion(value); return *this;}
-
-    /**
-     * <p>The cluster version for the new maintenance track.</p>
-     */
     inline UpdateTarget& WithDatabaseVersion(Aws::String&& value) { SetDatabaseVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster version for the new maintenance track.</p>
-     */
     inline UpdateTarget& WithDatabaseVersion(const char* value) { SetDatabaseVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of operations supported by the maintenance track.</p>
      */
     inline const Aws::Vector<SupportedOperation>& GetSupportedOperations() const{ return m_supportedOperations; }
-
-    /**
-     * <p>A list of operations supported by the maintenance track.</p>
-     */
     inline bool SupportedOperationsHasBeenSet() const { return m_supportedOperationsHasBeenSet; }
-
-    /**
-     * <p>A list of operations supported by the maintenance track.</p>
-     */
     inline void SetSupportedOperations(const Aws::Vector<SupportedOperation>& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations = value; }
-
-    /**
-     * <p>A list of operations supported by the maintenance track.</p>
-     */
     inline void SetSupportedOperations(Aws::Vector<SupportedOperation>&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations = std::move(value); }
-
-    /**
-     * <p>A list of operations supported by the maintenance track.</p>
-     */
     inline UpdateTarget& WithSupportedOperations(const Aws::Vector<SupportedOperation>& value) { SetSupportedOperations(value); return *this;}
-
-    /**
-     * <p>A list of operations supported by the maintenance track.</p>
-     */
     inline UpdateTarget& WithSupportedOperations(Aws::Vector<SupportedOperation>&& value) { SetSupportedOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of operations supported by the maintenance track.</p>
-     */
     inline UpdateTarget& AddSupportedOperations(const SupportedOperation& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations.push_back(value); return *this; }
-
-    /**
-     * <p>A list of operations supported by the maintenance track.</p>
-     */
     inline UpdateTarget& AddSupportedOperations(SupportedOperation&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_maintenanceTrackName;

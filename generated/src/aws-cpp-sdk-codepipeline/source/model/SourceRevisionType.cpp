@@ -23,6 +23,7 @@ namespace Aws
         static const int COMMIT_ID_HASH = HashingUtils::HashString("COMMIT_ID");
         static const int IMAGE_DIGEST_HASH = HashingUtils::HashString("IMAGE_DIGEST");
         static const int S3_OBJECT_VERSION_ID_HASH = HashingUtils::HashString("S3_OBJECT_VERSION_ID");
+        static const int S3_OBJECT_KEY_HASH = HashingUtils::HashString("S3_OBJECT_KEY");
 
 
         SourceRevisionType GetSourceRevisionTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == S3_OBJECT_VERSION_ID_HASH)
           {
             return SourceRevisionType::S3_OBJECT_VERSION_ID;
+          }
+          else if (hashCode == S3_OBJECT_KEY_HASH)
+          {
+            return SourceRevisionType::S3_OBJECT_KEY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "IMAGE_DIGEST";
           case SourceRevisionType::S3_OBJECT_VERSION_ID:
             return "S3_OBJECT_VERSION_ID";
+          case SourceRevisionType::S3_OBJECT_KEY:
+            return "S3_OBJECT_KEY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

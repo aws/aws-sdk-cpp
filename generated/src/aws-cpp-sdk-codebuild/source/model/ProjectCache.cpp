@@ -26,11 +26,8 @@ ProjectCache::ProjectCache() :
 {
 }
 
-ProjectCache::ProjectCache(JsonView jsonValue) : 
-    m_type(CacheType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_modesHasBeenSet(false)
+ProjectCache::ProjectCache(JsonView jsonValue)
+  : ProjectCache()
 {
   *this = jsonValue;
 }

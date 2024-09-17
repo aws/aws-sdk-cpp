@@ -19,27 +19,19 @@ namespace Model
 {
 
 ResourceCostCalculation::ResourceCostCalculation() : 
-    m_pricingHasBeenSet(false),
-    m_usagesHasBeenSet(false)
+    m_usagesHasBeenSet(false),
+    m_pricingHasBeenSet(false)
 {
 }
 
-ResourceCostCalculation::ResourceCostCalculation(JsonView jsonValue) : 
-    m_pricingHasBeenSet(false),
-    m_usagesHasBeenSet(false)
+ResourceCostCalculation::ResourceCostCalculation(JsonView jsonValue)
+  : ResourceCostCalculation()
 {
   *this = jsonValue;
 }
 
 ResourceCostCalculation& ResourceCostCalculation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("pricing"))
-  {
-    m_pricing = jsonValue.GetObject("pricing");
-
-    m_pricingHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("usages"))
   {
     Aws::Utils::Array<JsonView> usagesJsonList = jsonValue.GetArray("usages");
@@ -50,18 +42,19 @@ ResourceCostCalculation& ResourceCostCalculation::operator =(JsonView jsonValue)
     m_usagesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pricing"))
+  {
+    m_pricing = jsonValue.GetObject("pricing");
+
+    m_pricingHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ResourceCostCalculation::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_pricingHasBeenSet)
-  {
-   payload.WithObject("pricing", m_pricing.Jsonize());
-
-  }
 
   if(m_usagesHasBeenSet)
   {
@@ -71,6 +64,12 @@ JsonValue ResourceCostCalculation::Jsonize() const
      usagesJsonList[usagesIndex].AsObject(m_usages[usagesIndex].Jsonize());
    }
    payload.WithArray("usages", std::move(usagesJsonList));
+
+  }
+
+  if(m_pricingHasBeenSet)
+  {
+   payload.WithObject("pricing", m_pricing.Jsonize());
 
   }
 

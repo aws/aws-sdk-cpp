@@ -32,46 +32,19 @@ namespace Model
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The model identifier. </p>
      */
     inline const Aws::String& GetModelIdentifier() const{ return m_modelIdentifier; }
-
-    /**
-     * <p>The model identifier. </p>
-     */
     inline bool ModelIdentifierHasBeenSet() const { return m_modelIdentifierHasBeenSet; }
-
-    /**
-     * <p>The model identifier. </p>
-     */
     inline void SetModelIdentifier(const Aws::String& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = value; }
-
-    /**
-     * <p>The model identifier. </p>
-     */
     inline void SetModelIdentifier(Aws::String&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::move(value); }
-
-    /**
-     * <p>The model identifier. </p>
-     */
     inline void SetModelIdentifier(const char* value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier.assign(value); }
-
-    /**
-     * <p>The model identifier. </p>
-     */
     inline GetFoundationModelRequest& WithModelIdentifier(const Aws::String& value) { SetModelIdentifier(value); return *this;}
-
-    /**
-     * <p>The model identifier. </p>
-     */
     inline GetFoundationModelRequest& WithModelIdentifier(Aws::String&& value) { SetModelIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The model identifier. </p>
-     */
     inline GetFoundationModelRequest& WithModelIdentifier(const char* value) { SetModelIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelIdentifier;

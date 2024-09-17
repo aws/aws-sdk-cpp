@@ -24,9 +24,8 @@ UpdateReplicationSetAction::UpdateReplicationSetAction() :
 {
 }
 
-UpdateReplicationSetAction::UpdateReplicationSetAction(JsonView jsonValue) : 
-    m_addRegionActionHasBeenSet(false),
-    m_deleteRegionActionHasBeenSet(false)
+UpdateReplicationSetAction::UpdateReplicationSetAction(JsonView jsonValue)
+  : UpdateReplicationSetAction()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ Csv::Csv() :
 {
 }
 
-Csv::Csv(JsonView jsonValue) : 
-    m_columnNamesHasBeenSet(false)
+Csv::Csv(JsonView jsonValue)
+  : Csv()
 {
   *this = jsonValue;
 }

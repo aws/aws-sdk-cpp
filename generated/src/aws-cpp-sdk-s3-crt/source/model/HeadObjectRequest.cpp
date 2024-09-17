@@ -6,6 +6,7 @@
 #include <aws/s3-crt/model/HeadObjectRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -24,6 +25,12 @@ HeadObjectRequest::HeadObjectRequest() :
     m_ifUnmodifiedSinceHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_rangeHasBeenSet(false),
+    m_responseCacheControlHasBeenSet(false),
+    m_responseContentDispositionHasBeenSet(false),
+    m_responseContentEncodingHasBeenSet(false),
+    m_responseContentLanguageHasBeenSet(false),
+    m_responseContentTypeHasBeenSet(false),
+    m_responseExpiresHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_sSECustomerAlgorithmHasBeenSet(false),
     m_sSECustomerKeyHasBeenSet(false),
@@ -39,6 +46,25 @@ HeadObjectRequest::HeadObjectRequest() :
 {
 }
 
+bool HeadObjectRequest::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  AWS_UNREFERENCED_PARAM(header);
+
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+  return false;
+}
+
 Aws::String HeadObjectRequest::SerializePayload() const
 {
   return {};
@@ -47,6 +73,48 @@ Aws::String HeadObjectRequest::SerializePayload() const
 void HeadObjectRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_responseCacheControlHasBeenSet)
+    {
+      ss << m_responseCacheControl;
+      uri.AddQueryStringParameter("response-cache-control", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentDispositionHasBeenSet)
+    {
+      ss << m_responseContentDisposition;
+      uri.AddQueryStringParameter("response-content-disposition", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentEncodingHasBeenSet)
+    {
+      ss << m_responseContentEncoding;
+      uri.AddQueryStringParameter("response-content-encoding", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentLanguageHasBeenSet)
+    {
+      ss << m_responseContentLanguage;
+      uri.AddQueryStringParameter("response-content-language", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseContentTypeHasBeenSet)
+    {
+      ss << m_responseContentType;
+      uri.AddQueryStringParameter("response-content-type", ss.str());
+      ss.str("");
+    }
+
+    if(m_responseExpiresHasBeenSet)
+    {
+      ss << m_responseExpires.ToGmtString(Aws::Utils::DateFormat::RFC822);
+      uri.AddQueryStringParameter("response-expires", ss.str());
+      ss.str("");
+    }
+
     if(m_versionIdHasBeenSet)
     {
       ss << m_versionId;
@@ -136,7 +204,7 @@ Aws::Http::HeaderValueCollection HeadObjectRequest::GetRequestSpecificHeaders() 
     ss.str("");
   }
 
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
@@ -148,7 +216,7 @@ Aws::Http::HeaderValueCollection HeadObjectRequest::GetRequestSpecificHeaders() 
     ss.str("");
   }
 
-  if(m_checksumModeHasBeenSet)
+  if(m_checksumModeHasBeenSet && m_checksumMode != ChecksumMode::NOT_SET)
   {
     headers.emplace("x-amz-checksum-mode", ChecksumModeMapper::GetNameForChecksumMode(m_checksumMode));
   }

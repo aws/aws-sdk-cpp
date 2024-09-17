@@ -26,11 +26,8 @@ JobSummary::JobSummary() :
 {
 }
 
-JobSummary::JobSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+JobSummary::JobSummary(JsonView jsonValue)
+  : JobSummary()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FileCacheDataRepositoryAssociation::FileCacheDataRepositoryAssociation() :
 {
 }
 
-FileCacheDataRepositoryAssociation::FileCacheDataRepositoryAssociation(JsonView jsonValue) : 
-    m_fileCachePathHasBeenSet(false),
-    m_dataRepositoryPathHasBeenSet(false),
-    m_dataRepositorySubdirectoriesHasBeenSet(false),
-    m_nFSHasBeenSet(false)
+FileCacheDataRepositoryAssociation::FileCacheDataRepositoryAssociation(JsonView jsonValue)
+  : FileCacheDataRepositoryAssociation()
 {
   *this = jsonValue;
 }

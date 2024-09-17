@@ -25,10 +25,8 @@ ListRulesOutput::ListRulesOutput() :
 {
 }
 
-ListRulesOutput::ListRulesOutput(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_ruleDescriptionHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+ListRulesOutput::ListRulesOutput(JsonView jsonValue)
+  : ListRulesOutput()
 {
   *this = jsonValue;
 }

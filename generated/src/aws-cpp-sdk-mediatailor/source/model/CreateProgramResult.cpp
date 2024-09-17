@@ -22,8 +22,8 @@ CreateProgramResult::CreateProgramResult() :
 {
 }
 
-CreateProgramResult::CreateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationMillis(0)
+CreateProgramResult::CreateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateProgramResult()
 {
   *this = result;
 }
@@ -44,6 +44,15 @@ CreateProgramResult& CreateProgramResult::operator =(const Aws::AmazonWebService
   {
     m_arn = jsonValue.GetString("Arn");
 
+  }
+
+  if(jsonValue.ValueExists("AudienceMedia"))
+  {
+    Aws::Utils::Array<JsonView> audienceMediaJsonList = jsonValue.GetArray("AudienceMedia");
+    for(unsigned audienceMediaIndex = 0; audienceMediaIndex < audienceMediaJsonList.GetLength(); ++audienceMediaIndex)
+    {
+      m_audienceMedia.push_back(audienceMediaJsonList[audienceMediaIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("ChannelName"))

@@ -40,91 +40,33 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The overall health status of the container instance. This is an aggregate
      * status of all container instance health checks.</p>
      */
     inline const InstanceHealthCheckState& GetOverallStatus() const{ return m_overallStatus; }
-
-    /**
-     * <p>The overall health status of the container instance. This is an aggregate
-     * status of all container instance health checks.</p>
-     */
     inline bool OverallStatusHasBeenSet() const { return m_overallStatusHasBeenSet; }
-
-    /**
-     * <p>The overall health status of the container instance. This is an aggregate
-     * status of all container instance health checks.</p>
-     */
     inline void SetOverallStatus(const InstanceHealthCheckState& value) { m_overallStatusHasBeenSet = true; m_overallStatus = value; }
-
-    /**
-     * <p>The overall health status of the container instance. This is an aggregate
-     * status of all container instance health checks.</p>
-     */
     inline void SetOverallStatus(InstanceHealthCheckState&& value) { m_overallStatusHasBeenSet = true; m_overallStatus = std::move(value); }
-
-    /**
-     * <p>The overall health status of the container instance. This is an aggregate
-     * status of all container instance health checks.</p>
-     */
     inline ContainerInstanceHealthStatus& WithOverallStatus(const InstanceHealthCheckState& value) { SetOverallStatus(value); return *this;}
-
-    /**
-     * <p>The overall health status of the container instance. This is an aggregate
-     * status of all container instance health checks.</p>
-     */
     inline ContainerInstanceHealthStatus& WithOverallStatus(InstanceHealthCheckState&& value) { SetOverallStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of objects representing the details of the container instance health
      * status.</p>
      */
     inline const Aws::Vector<InstanceHealthCheckResult>& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>An array of objects representing the details of the container instance health
-     * status.</p>
-     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p>An array of objects representing the details of the container instance health
-     * status.</p>
-     */
     inline void SetDetails(const Aws::Vector<InstanceHealthCheckResult>& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p>An array of objects representing the details of the container instance health
-     * status.</p>
-     */
     inline void SetDetails(Aws::Vector<InstanceHealthCheckResult>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p>An array of objects representing the details of the container instance health
-     * status.</p>
-     */
     inline ContainerInstanceHealthStatus& WithDetails(const Aws::Vector<InstanceHealthCheckResult>& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>An array of objects representing the details of the container instance health
-     * status.</p>
-     */
     inline ContainerInstanceHealthStatus& WithDetails(Aws::Vector<InstanceHealthCheckResult>&& value) { SetDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects representing the details of the container instance health
-     * status.</p>
-     */
     inline ContainerInstanceHealthStatus& AddDetails(const InstanceHealthCheckResult& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects representing the details of the container instance health
-     * status.</p>
-     */
     inline ContainerInstanceHealthStatus& AddDetails(InstanceHealthCheckResult&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     InstanceHealthCheckState m_overallStatus;

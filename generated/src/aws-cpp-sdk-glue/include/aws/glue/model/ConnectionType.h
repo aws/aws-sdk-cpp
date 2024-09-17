@@ -22,7 +22,10 @@ namespace Model
     KAFKA,
     NETWORK,
     MARKETPLACE,
-    CUSTOM
+    CUSTOM,
+    SALESFORCE,
+    VIEW_VALIDATION_REDSHIFT,
+    VIEW_VALIDATION_ATHENA
   };
 
 namespace ConnectionTypeMapper

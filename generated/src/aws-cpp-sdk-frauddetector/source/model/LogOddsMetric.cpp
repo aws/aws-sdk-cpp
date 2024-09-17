@@ -26,11 +26,8 @@ LogOddsMetric::LogOddsMetric() :
 {
 }
 
-LogOddsMetric::LogOddsMetric(JsonView jsonValue) : 
-    m_variableNameHasBeenSet(false),
-    m_variableTypeHasBeenSet(false),
-    m_variableImportance(0.0),
-    m_variableImportanceHasBeenSet(false)
+LogOddsMetric::LogOddsMetric(JsonView jsonValue)
+  : LogOddsMetric()
 {
   *this = jsonValue;
 }

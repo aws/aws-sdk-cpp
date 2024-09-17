@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetApplicationDateRangeKpiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ApplicationDateRangeKpiResponse& GetApplicationDateRangeKpiResponse() const{ return m_applicationDateRangeKpiResponse; }
-
-    
     inline void SetApplicationDateRangeKpiResponse(const ApplicationDateRangeKpiResponse& value) { m_applicationDateRangeKpiResponse = value; }
-
-    
     inline void SetApplicationDateRangeKpiResponse(ApplicationDateRangeKpiResponse&& value) { m_applicationDateRangeKpiResponse = std::move(value); }
-
-    
     inline GetApplicationDateRangeKpiResult& WithApplicationDateRangeKpiResponse(const ApplicationDateRangeKpiResponse& value) { SetApplicationDateRangeKpiResponse(value); return *this;}
-
-    
     inline GetApplicationDateRangeKpiResult& WithApplicationDateRangeKpiResponse(ApplicationDateRangeKpiResponse&& value) { SetApplicationDateRangeKpiResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetApplicationDateRangeKpiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetApplicationDateRangeKpiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetApplicationDateRangeKpiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationDateRangeKpiResponse m_applicationDateRangeKpiResponse;

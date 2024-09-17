@@ -38,53 +38,27 @@ namespace Model
     AWS_APPMESH_API UpdateRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A full description of the route that was updated.</p>
      */
     inline const RouteData& GetRoute() const{ return m_route; }
-
-    /**
-     * <p>A full description of the route that was updated.</p>
-     */
     inline void SetRoute(const RouteData& value) { m_route = value; }
-
-    /**
-     * <p>A full description of the route that was updated.</p>
-     */
     inline void SetRoute(RouteData&& value) { m_route = std::move(value); }
-
-    /**
-     * <p>A full description of the route that was updated.</p>
-     */
     inline UpdateRouteResult& WithRoute(const RouteData& value) { SetRoute(value); return *this;}
-
-    /**
-     * <p>A full description of the route that was updated.</p>
-     */
     inline UpdateRouteResult& WithRoute(RouteData&& value) { SetRoute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateRouteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateRouteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateRouteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RouteData m_route;

@@ -24,6 +24,7 @@
 #include <aws/iot-data/model/ListNamedShadowsForThingResult.h>
 #include <aws/iot-data/model/ListRetainedMessagesResult.h>
 #include <aws/iot-data/model/UpdateThingShadowResult.h>
+#include <aws/iot-data/model/ListRetainedMessagesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IoTDataPlaneClient header */
 
@@ -58,7 +59,7 @@ namespace Aws
 
   namespace IoTDataPlane
   {
-    using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTDataPlaneEndpointProviderBase = Aws::IoTDataPlane::Endpoint::IoTDataPlaneEndpointProviderBase;
     using IoTDataPlaneEndpointProvider = Aws::IoTDataPlane::Endpoint::IoTDataPlaneEndpointProvider;
 

@@ -33,18 +33,8 @@ ConfiguredTable::ConfiguredTable() :
 {
 }
 
-ConfiguredTable::ConfiguredTable(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tableReferenceHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_analysisRuleTypesHasBeenSet(false),
-    m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false),
-    m_allowedColumnsHasBeenSet(false)
+ConfiguredTable::ConfiguredTable(JsonView jsonValue)
+  : ConfiguredTable()
 {
   *this = jsonValue;
 }

@@ -38,36 +38,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The compliance status details for the patch.</p>
      */
     inline const AwsSsmComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
-
-    /**
-     * <p>The compliance status details for the patch.</p>
-     */
     inline bool ComplianceSummaryHasBeenSet() const { return m_complianceSummaryHasBeenSet; }
-
-    /**
-     * <p>The compliance status details for the patch.</p>
-     */
     inline void SetComplianceSummary(const AwsSsmComplianceSummary& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = value; }
-
-    /**
-     * <p>The compliance status details for the patch.</p>
-     */
     inline void SetComplianceSummary(AwsSsmComplianceSummary&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::move(value); }
-
-    /**
-     * <p>The compliance status details for the patch.</p>
-     */
     inline AwsSsmPatch& WithComplianceSummary(const AwsSsmComplianceSummary& value) { SetComplianceSummary(value); return *this;}
-
-    /**
-     * <p>The compliance status details for the patch.</p>
-     */
     inline AwsSsmPatch& WithComplianceSummary(AwsSsmComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsSsmComplianceSummary m_complianceSummary;

@@ -33,69 +33,22 @@ namespace Model
     AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of account IDs of the Amazon Web Services accounts that sent
      * invitations to the current member account that you want to delete invitations
      * from.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline DeleteInvitationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline DeleteInvitationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline DeleteInvitationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline DeleteInvitationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of account IDs of the Amazon Web Services accounts that sent
-     * invitations to the current member account that you want to delete invitations
-     * from.</p>
-     */
     inline DeleteInvitationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;

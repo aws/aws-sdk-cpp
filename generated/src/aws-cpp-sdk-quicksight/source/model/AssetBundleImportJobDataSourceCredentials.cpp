@@ -24,9 +24,8 @@ AssetBundleImportJobDataSourceCredentials::AssetBundleImportJobDataSourceCredent
 {
 }
 
-AssetBundleImportJobDataSourceCredentials::AssetBundleImportJobDataSourceCredentials(JsonView jsonValue) : 
-    m_credentialPairHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+AssetBundleImportJobDataSourceCredentials::AssetBundleImportJobDataSourceCredentials(JsonView jsonValue)
+  : AssetBundleImportJobDataSourceCredentials()
 {
   *this = jsonValue;
 }

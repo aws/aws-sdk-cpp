@@ -40,122 +40,46 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The domain name of the device that the entity used to perform the action on
      * the affected resource.</p>
      */
     inline const DomainDetails& GetDomainDetails() const{ return m_domainDetails; }
-
-    /**
-     * <p>The domain name of the device that the entity used to perform the action on
-     * the affected resource.</p>
-     */
     inline bool DomainDetailsHasBeenSet() const { return m_domainDetailsHasBeenSet; }
-
-    /**
-     * <p>The domain name of the device that the entity used to perform the action on
-     * the affected resource.</p>
-     */
     inline void SetDomainDetails(const DomainDetails& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = value; }
-
-    /**
-     * <p>The domain name of the device that the entity used to perform the action on
-     * the affected resource.</p>
-     */
     inline void SetDomainDetails(DomainDetails&& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = std::move(value); }
-
-    /**
-     * <p>The domain name of the device that the entity used to perform the action on
-     * the affected resource.</p>
-     */
     inline FindingActor& WithDomainDetails(const DomainDetails& value) { SetDomainDetails(value); return *this;}
-
-    /**
-     * <p>The domain name of the device that the entity used to perform the action on
-     * the affected resource.</p>
-     */
     inline FindingActor& WithDomainDetails(DomainDetails&& value) { SetDomainDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The IP address of the device that the entity used to perform the action on
-     * the affected resource. This object also provides information such as the owner
-     * and geographic location for the IP address.</p>
+     * <p>The IP address and related details about the device that the entity used to
+     * perform the action on the affected resource. The details can include information
+     * such as the owner and geographic location of the IP address.</p>
      */
     inline const IpAddressDetails& GetIpAddressDetails() const{ return m_ipAddressDetails; }
-
-    /**
-     * <p>The IP address of the device that the entity used to perform the action on
-     * the affected resource. This object also provides information such as the owner
-     * and geographic location for the IP address.</p>
-     */
     inline bool IpAddressDetailsHasBeenSet() const { return m_ipAddressDetailsHasBeenSet; }
-
-    /**
-     * <p>The IP address of the device that the entity used to perform the action on
-     * the affected resource. This object also provides information such as the owner
-     * and geographic location for the IP address.</p>
-     */
     inline void SetIpAddressDetails(const IpAddressDetails& value) { m_ipAddressDetailsHasBeenSet = true; m_ipAddressDetails = value; }
-
-    /**
-     * <p>The IP address of the device that the entity used to perform the action on
-     * the affected resource. This object also provides information such as the owner
-     * and geographic location for the IP address.</p>
-     */
     inline void SetIpAddressDetails(IpAddressDetails&& value) { m_ipAddressDetailsHasBeenSet = true; m_ipAddressDetails = std::move(value); }
-
-    /**
-     * <p>The IP address of the device that the entity used to perform the action on
-     * the affected resource. This object also provides information such as the owner
-     * and geographic location for the IP address.</p>
-     */
     inline FindingActor& WithIpAddressDetails(const IpAddressDetails& value) { SetIpAddressDetails(value); return *this;}
-
-    /**
-     * <p>The IP address of the device that the entity used to perform the action on
-     * the affected resource. This object also provides information such as the owner
-     * and geographic location for the IP address.</p>
-     */
     inline FindingActor& WithIpAddressDetails(IpAddressDetails&& value) { SetIpAddressDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type and other characteristics of the entity that performed the action on
-     * the affected resource.</p>
+     * the affected resource. This value is null if the action was performed by an
+     * anonymous (unauthenticated) entity.</p>
      */
     inline const UserIdentity& GetUserIdentity() const{ return m_userIdentity; }
-
-    /**
-     * <p>The type and other characteristics of the entity that performed the action on
-     * the affected resource.</p>
-     */
     inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }
-
-    /**
-     * <p>The type and other characteristics of the entity that performed the action on
-     * the affected resource.</p>
-     */
     inline void SetUserIdentity(const UserIdentity& value) { m_userIdentityHasBeenSet = true; m_userIdentity = value; }
-
-    /**
-     * <p>The type and other characteristics of the entity that performed the action on
-     * the affected resource.</p>
-     */
     inline void SetUserIdentity(UserIdentity&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::move(value); }
-
-    /**
-     * <p>The type and other characteristics of the entity that performed the action on
-     * the affected resource.</p>
-     */
     inline FindingActor& WithUserIdentity(const UserIdentity& value) { SetUserIdentity(value); return *this;}
-
-    /**
-     * <p>The type and other characteristics of the entity that performed the action on
-     * the affected resource.</p>
-     */
     inline FindingActor& WithUserIdentity(UserIdentity&& value) { SetUserIdentity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DomainDetails m_domainDetails;

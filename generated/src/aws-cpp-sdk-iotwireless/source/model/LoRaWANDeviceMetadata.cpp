@@ -27,20 +27,13 @@ LoRaWANDeviceMetadata::LoRaWANDeviceMetadata() :
     m_frequency(0),
     m_frequencyHasBeenSet(false),
     m_timestampHasBeenSet(false),
-    m_gatewaysHasBeenSet(false)
+    m_gatewaysHasBeenSet(false),
+    m_publicGatewaysHasBeenSet(false)
 {
 }
 
-LoRaWANDeviceMetadata::LoRaWANDeviceMetadata(JsonView jsonValue) : 
-    m_devEuiHasBeenSet(false),
-    m_fPort(0),
-    m_fPortHasBeenSet(false),
-    m_dataRate(0),
-    m_dataRateHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_gatewaysHasBeenSet(false)
+LoRaWANDeviceMetadata::LoRaWANDeviceMetadata(JsonView jsonValue)
+  : LoRaWANDeviceMetadata()
 {
   *this = jsonValue;
 }
@@ -92,6 +85,16 @@ LoRaWANDeviceMetadata& LoRaWANDeviceMetadata::operator =(JsonView jsonValue)
     m_gatewaysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PublicGateways"))
+  {
+    Aws::Utils::Array<JsonView> publicGatewaysJsonList = jsonValue.GetArray("PublicGateways");
+    for(unsigned publicGatewaysIndex = 0; publicGatewaysIndex < publicGatewaysJsonList.GetLength(); ++publicGatewaysIndex)
+    {
+      m_publicGateways.push_back(publicGatewaysJsonList[publicGatewaysIndex].AsObject());
+    }
+    m_publicGatewaysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +140,17 @@ JsonValue LoRaWANDeviceMetadata::Jsonize() const
      gatewaysJsonList[gatewaysIndex].AsObject(m_gateways[gatewaysIndex].Jsonize());
    }
    payload.WithArray("Gateways", std::move(gatewaysJsonList));
+
+  }
+
+  if(m_publicGatewaysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> publicGatewaysJsonList(m_publicGateways.size());
+   for(unsigned publicGatewaysIndex = 0; publicGatewaysIndex < publicGatewaysJsonList.GetLength(); ++publicGatewaysIndex)
+   {
+     publicGatewaysJsonList[publicGatewaysIndex].AsObject(m_publicGateways[publicGatewaysIndex].Jsonize());
+   }
+   payload.WithArray("PublicGateways", std::move(publicGatewaysJsonList));
 
   }
 

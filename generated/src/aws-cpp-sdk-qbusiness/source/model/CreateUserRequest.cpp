@@ -14,10 +14,10 @@ using namespace Aws::Utils;
 
 CreateUserRequest::CreateUserRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
+    m_userIdHasBeenSet(false),
     m_userAliasesHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -25,9 +25,9 @@ Aws::String CreateUserRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_userIdHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("userId", m_userId);
 
   }
 
@@ -42,9 +42,9 @@ Aws::String CreateUserRequest::SerializePayload() const
 
   }
 
-  if(m_userIdHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("userId", m_userId);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

@@ -24,9 +24,8 @@ DateAxisOptions::DateAxisOptions() :
 {
 }
 
-DateAxisOptions::DateAxisOptions(JsonView jsonValue) : 
-    m_missingDateVisibility(Visibility::NOT_SET),
-    m_missingDateVisibilityHasBeenSet(false)
+DateAxisOptions::DateAxisOptions(JsonView jsonValue)
+  : DateAxisOptions()
 {
   *this = jsonValue;
 }

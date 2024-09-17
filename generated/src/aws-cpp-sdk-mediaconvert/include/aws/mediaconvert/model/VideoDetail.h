@@ -35,47 +35,25 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Height in pixels for the output
      */
     inline int GetHeightInPx() const{ return m_heightInPx; }
-
-    /**
-     * Height in pixels for the output
-     */
     inline bool HeightInPxHasBeenSet() const { return m_heightInPxHasBeenSet; }
-
-    /**
-     * Height in pixels for the output
-     */
     inline void SetHeightInPx(int value) { m_heightInPxHasBeenSet = true; m_heightInPx = value; }
-
-    /**
-     * Height in pixels for the output
-     */
     inline VideoDetail& WithHeightInPx(int value) { SetHeightInPx(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Width in pixels for the output
      */
     inline int GetWidthInPx() const{ return m_widthInPx; }
-
-    /**
-     * Width in pixels for the output
-     */
     inline bool WidthInPxHasBeenSet() const { return m_widthInPxHasBeenSet; }
-
-    /**
-     * Width in pixels for the output
-     */
     inline void SetWidthInPx(int value) { m_widthInPxHasBeenSet = true; m_widthInPx = value; }
-
-    /**
-     * Width in pixels for the output
-     */
     inline VideoDetail& WithWidthInPx(int value) { SetWidthInPx(value); return *this;}
-
+    ///@}
   private:
 
     int m_heightInPx;

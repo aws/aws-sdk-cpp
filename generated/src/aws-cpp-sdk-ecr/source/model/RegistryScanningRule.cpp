@@ -25,10 +25,8 @@ RegistryScanningRule::RegistryScanningRule() :
 {
 }
 
-RegistryScanningRule::RegistryScanningRule(JsonView jsonValue) : 
-    m_scanFrequency(ScanFrequency::NOT_SET),
-    m_scanFrequencyHasBeenSet(false),
-    m_repositoryFiltersHasBeenSet(false)
+RegistryScanningRule::RegistryScanningRule(JsonView jsonValue)
+  : RegistryScanningRule()
 {
   *this = jsonValue;
 }

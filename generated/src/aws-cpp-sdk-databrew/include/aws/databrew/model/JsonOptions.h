@@ -36,30 +36,16 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A value that specifies whether JSON input contains embedded new line
      * characters.</p>
      */
     inline bool GetMultiLine() const{ return m_multiLine; }
-
-    /**
-     * <p>A value that specifies whether JSON input contains embedded new line
-     * characters.</p>
-     */
     inline bool MultiLineHasBeenSet() const { return m_multiLineHasBeenSet; }
-
-    /**
-     * <p>A value that specifies whether JSON input contains embedded new line
-     * characters.</p>
-     */
     inline void SetMultiLine(bool value) { m_multiLineHasBeenSet = true; m_multiLine = value; }
-
-    /**
-     * <p>A value that specifies whether JSON input contains embedded new line
-     * characters.</p>
-     */
     inline JsonOptions& WithMultiLine(bool value) { SetMultiLine(value); return *this;}
-
+    ///@}
   private:
 
     bool m_multiLine;

@@ -29,14 +29,8 @@ RecipeSummary::RecipeSummary() :
 {
 }
 
-RecipeSummary::RecipeSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false)
+RecipeSummary::RecipeSummary(JsonView jsonValue)
+  : RecipeSummary()
 {
   *this = jsonValue;
 }

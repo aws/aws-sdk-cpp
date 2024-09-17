@@ -35,26 +35,13 @@ TrafficMirrorFilterRule::TrafficMirrorFilterRule() :
     m_sourcePortRangeHasBeenSet(false),
     m_destinationCidrBlockHasBeenSet(false),
     m_sourceCidrBlockHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
-TrafficMirrorFilterRule::TrafficMirrorFilterRule(const XmlNode& xmlNode) : 
-    m_trafficMirrorFilterRuleIdHasBeenSet(false),
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_trafficDirection(TrafficDirection::NOT_SET),
-    m_trafficDirectionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false),
-    m_ruleAction(TrafficMirrorRuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_protocol(0),
-    m_protocolHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_sourceCidrBlockHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+TrafficMirrorFilterRule::TrafficMirrorFilterRule(const XmlNode& xmlNode)
+  : TrafficMirrorFilterRule()
 {
   *this = xmlNode;
 }
@@ -131,6 +118,18 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -197,6 +196,17 @@ void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -248,6 +258,16 @@ void TrafficMirrorFilterRule::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

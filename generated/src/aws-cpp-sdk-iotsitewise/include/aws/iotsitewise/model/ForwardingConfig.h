@@ -38,36 +38,17 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The forwarding state for the given property. </p>
      */
     inline const ForwardingConfigState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The forwarding state for the given property. </p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The forwarding state for the given property. </p>
-     */
     inline void SetState(const ForwardingConfigState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The forwarding state for the given property. </p>
-     */
     inline void SetState(ForwardingConfigState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The forwarding state for the given property. </p>
-     */
     inline ForwardingConfig& WithState(const ForwardingConfigState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The forwarding state for the given property. </p>
-     */
     inline ForwardingConfig& WithState(ForwardingConfigState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ForwardingConfigState m_state;

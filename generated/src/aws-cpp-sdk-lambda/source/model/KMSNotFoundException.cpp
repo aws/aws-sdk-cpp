@@ -24,9 +24,8 @@ KMSNotFoundException::KMSNotFoundException() :
 {
 }
 
-KMSNotFoundException::KMSNotFoundException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+KMSNotFoundException::KMSNotFoundException(JsonView jsonValue)
+  : KMSNotFoundException()
 {
   *this = jsonValue;
 }

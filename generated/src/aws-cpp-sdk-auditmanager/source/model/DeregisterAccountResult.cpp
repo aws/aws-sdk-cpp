@@ -22,8 +22,8 @@ DeregisterAccountResult::DeregisterAccountResult() :
 {
 }
 
-DeregisterAccountResult::DeregisterAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AccountStatus::NOT_SET)
+DeregisterAccountResult::DeregisterAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeregisterAccountResult()
 {
   *this = result;
 }

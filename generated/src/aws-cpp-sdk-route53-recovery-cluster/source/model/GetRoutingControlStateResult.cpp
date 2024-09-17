@@ -22,8 +22,8 @@ GetRoutingControlStateResult::GetRoutingControlStateResult() :
 {
 }
 
-GetRoutingControlStateResult::GetRoutingControlStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_routingControlState(RoutingControlState::NOT_SET)
+GetRoutingControlStateResult::GetRoutingControlStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRoutingControlStateResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ TimeToLiveSpecification::TimeToLiveSpecification() :
 {
 }
 
-TimeToLiveSpecification::TimeToLiveSpecification(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
+TimeToLiveSpecification::TimeToLiveSpecification(JsonView jsonValue)
+  : TimeToLiveSpecification()
 {
   *this = jsonValue;
 }

@@ -19,38 +19,27 @@ namespace Model
 {
 
 ListMapsResponseEntry::ListMapsResponseEntry() : 
-    m_createTimeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_mapNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_dataSourceHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
 
-ListMapsResponseEntry::ListMapsResponseEntry(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_mapNameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListMapsResponseEntry::ListMapsResponseEntry(JsonView jsonValue)
+  : ListMapsResponseEntry()
 {
   *this = jsonValue;
 }
 
 ListMapsResponseEntry& ListMapsResponseEntry::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("MapName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_mapName = jsonValue.GetString("MapName");
 
-    m_createTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DataSource"))
-  {
-    m_dataSource = jsonValue.GetString("DataSource");
-
-    m_dataSourceHasBeenSet = true;
+    m_mapNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -60,11 +49,18 @@ ListMapsResponseEntry& ListMapsResponseEntry::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("MapName"))
+  if(jsonValue.ValueExists("DataSource"))
   {
-    m_mapName = jsonValue.GetString("MapName");
+    m_dataSource = jsonValue.GetString("DataSource");
 
-    m_mapNameHasBeenSet = true;
+    m_dataSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
+
+    m_createTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -81,14 +77,9 @@ JsonValue ListMapsResponseEntry::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createTimeHasBeenSet)
+  if(m_mapNameHasBeenSet)
   {
-   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_dataSourceHasBeenSet)
-  {
-   payload.WithString("DataSource", m_dataSource);
+   payload.WithString("MapName", m_mapName);
 
   }
 
@@ -98,10 +89,15 @@ JsonValue ListMapsResponseEntry::Jsonize() const
 
   }
 
-  if(m_mapNameHasBeenSet)
+  if(m_dataSourceHasBeenSet)
   {
-   payload.WithString("MapName", m_mapName);
+   payload.WithString("DataSource", m_dataSource);
 
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updateTimeHasBeenSet)

@@ -32,15 +32,8 @@ Destination::Destination() :
 {
 }
 
-Destination::Destination(const XmlNode& xmlNode) : 
-    m_accountHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_replicationTimeHasBeenSet(false),
-    m_accessControlTranslationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_storageClass(ReplicationStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+Destination::Destination(const XmlNode& xmlNode)
+  : Destination()
 {
   *this = xmlNode;
 }

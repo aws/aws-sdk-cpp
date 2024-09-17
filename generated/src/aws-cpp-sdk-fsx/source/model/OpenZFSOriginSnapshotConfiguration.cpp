@@ -25,10 +25,8 @@ OpenZFSOriginSnapshotConfiguration::OpenZFSOriginSnapshotConfiguration() :
 {
 }
 
-OpenZFSOriginSnapshotConfiguration::OpenZFSOriginSnapshotConfiguration(JsonView jsonValue) : 
-    m_snapshotARNHasBeenSet(false),
-    m_copyStrategy(OpenZFSCopyStrategy::NOT_SET),
-    m_copyStrategyHasBeenSet(false)
+OpenZFSOriginSnapshotConfiguration::OpenZFSOriginSnapshotConfiguration(JsonView jsonValue)
+  : OpenZFSOriginSnapshotConfiguration()
 {
   *this = jsonValue;
 }

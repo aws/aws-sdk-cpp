@@ -38,36 +38,17 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the instance.</p>
      */
     inline const InstanceConfiguration& GetInstance() const{ return m_instance; }
-
-    /**
-     * <p>Details about the instance.</p>
-     */
     inline bool InstanceHasBeenSet() const { return m_instanceHasBeenSet; }
-
-    /**
-     * <p>Details about the instance.</p>
-     */
     inline void SetInstance(const InstanceConfiguration& value) { m_instanceHasBeenSet = true; m_instance = value; }
-
-    /**
-     * <p>Details about the instance.</p>
-     */
     inline void SetInstance(InstanceConfiguration&& value) { m_instanceHasBeenSet = true; m_instance = std::move(value); }
-
-    /**
-     * <p>Details about the instance.</p>
-     */
     inline Ec2AutoScalingGroupConfiguration& WithInstance(const InstanceConfiguration& value) { SetInstance(value); return *this;}
-
-    /**
-     * <p>Details about the instance.</p>
-     */
     inline Ec2AutoScalingGroupConfiguration& WithInstance(InstanceConfiguration&& value) { SetInstance(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceConfiguration m_instance;

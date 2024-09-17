@@ -24,9 +24,8 @@ SupportedResourceType::SupportedResourceType() :
 {
 }
 
-SupportedResourceType::SupportedResourceType(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_serviceHasBeenSet(false)
+SupportedResourceType::SupportedResourceType(JsonView jsonValue)
+  : SupportedResourceType()
 {
   *this = jsonValue;
 }

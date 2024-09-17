@@ -33,18 +33,8 @@ PackageDetails::PackageDetails() :
 {
 }
 
-PackageDetails::PackageDetails(JsonView jsonValue) : 
-    m_packageIDHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_packageDescriptionHasBeenSet(false),
-    m_packageStatus(PackageStatus::NOT_SET),
-    m_packageStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_availablePackageVersionHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+PackageDetails::PackageDetails(JsonView jsonValue)
+  : PackageDetails()
 {
   *this = jsonValue;
 }

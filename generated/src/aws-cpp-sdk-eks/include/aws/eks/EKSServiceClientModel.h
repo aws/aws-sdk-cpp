@@ -74,6 +74,10 @@
 #include <aws/eks/model/UpdateNodegroupConfigResult.h>
 #include <aws/eks/model/UpdateNodegroupVersionResult.h>
 #include <aws/eks/model/UpdatePodIdentityAssociationResult.h>
+#include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
+#include <aws/eks/model/ListAccessPoliciesRequest.h>
+#include <aws/eks/model/ListClustersRequest.h>
+#include <aws/eks/model/DescribeAddonVersionsRequest.h>
 /* End of service model headers required in EKSClient header */
 
 namespace Aws
@@ -107,7 +111,7 @@ namespace Aws
 
   namespace EKS
   {
-    using EKSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EKSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EKSEndpointProviderBase = Aws::EKS::Endpoint::EKSEndpointProviderBase;
     using EKSEndpointProvider = Aws::EKS::Endpoint::EKSEndpointProvider;
 

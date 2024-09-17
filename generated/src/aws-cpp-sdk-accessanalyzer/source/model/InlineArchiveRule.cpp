@@ -24,9 +24,8 @@ InlineArchiveRule::InlineArchiveRule() :
 {
 }
 
-InlineArchiveRule::InlineArchiveRule(JsonView jsonValue) : 
-    m_ruleNameHasBeenSet(false),
-    m_filterHasBeenSet(false)
+InlineArchiveRule::InlineArchiveRule(JsonView jsonValue)
+  : InlineArchiveRule()
 {
   *this = jsonValue;
 }

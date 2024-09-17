@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetChannelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ChannelsResponse& GetChannelsResponse() const{ return m_channelsResponse; }
-
-    
     inline void SetChannelsResponse(const ChannelsResponse& value) { m_channelsResponse = value; }
-
-    
     inline void SetChannelsResponse(ChannelsResponse&& value) { m_channelsResponse = std::move(value); }
-
-    
     inline GetChannelsResult& WithChannelsResponse(const ChannelsResponse& value) { SetChannelsResponse(value); return *this;}
-
-    
     inline GetChannelsResult& WithChannelsResponse(ChannelsResponse&& value) { SetChannelsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetChannelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetChannelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetChannelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChannelsResponse m_channelsResponse;

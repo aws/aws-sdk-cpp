@@ -29,14 +29,8 @@ AutoScalingGroupConfiguration::AutoScalingGroupConfiguration() :
 {
 }
 
-AutoScalingGroupConfiguration::AutoScalingGroupConfiguration(JsonView jsonValue) : 
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+AutoScalingGroupConfiguration::AutoScalingGroupConfiguration(JsonView jsonValue)
+  : AutoScalingGroupConfiguration()
 {
   *this = jsonValue;
 }

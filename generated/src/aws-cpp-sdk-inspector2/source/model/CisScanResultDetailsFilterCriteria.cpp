@@ -27,12 +27,8 @@ CisScanResultDetailsFilterCriteria::CisScanResultDetailsFilterCriteria() :
 {
 }
 
-CisScanResultDetailsFilterCriteria::CisScanResultDetailsFilterCriteria(JsonView jsonValue) : 
-    m_checkIdFiltersHasBeenSet(false),
-    m_findingArnFiltersHasBeenSet(false),
-    m_findingStatusFiltersHasBeenSet(false),
-    m_securityLevelFiltersHasBeenSet(false),
-    m_titleFiltersHasBeenSet(false)
+CisScanResultDetailsFilterCriteria::CisScanResultDetailsFilterCriteria(JsonView jsonValue)
+  : CisScanResultDetailsFilterCriteria()
 {
   *this = jsonValue;
 }

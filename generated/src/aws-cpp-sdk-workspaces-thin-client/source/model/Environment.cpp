@@ -42,35 +42,13 @@ Environment::Environment() :
     m_updatedAtHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deviceCreationTagsHasBeenSet(false)
 {
 }
 
-Environment::Environment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_desktopArnHasBeenSet(false),
-    m_desktopEndpointHasBeenSet(false),
-    m_desktopType(DesktopType::NOT_SET),
-    m_desktopTypeHasBeenSet(false),
-    m_activationCodeHasBeenSet(false),
-    m_registeredDevicesCount(0),
-    m_registeredDevicesCountHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_softwareSetUpdateMode(SoftwareSetUpdateMode::NOT_SET),
-    m_softwareSetUpdateModeHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetVersionHasBeenSet(false),
-    m_softwareSetComplianceStatus(EnvironmentSoftwareSetComplianceStatus::NOT_SET),
-    m_softwareSetComplianceStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Environment::Environment(JsonView jsonValue)
+  : Environment()
 {
   *this = jsonValue;
 }
@@ -205,9 +183,22 @@ Environment& Environment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    m_tags = jsonValue.GetObject("tags");
-
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceCreationTags"))
+  {
+    Aws::Map<Aws::String, JsonView> deviceCreationTagsJsonMap = jsonValue.GetObject("deviceCreationTags").GetAllObjects();
+    for(auto& deviceCreationTagsItem : deviceCreationTagsJsonMap)
+    {
+      m_deviceCreationTags[deviceCreationTagsItem.first] = deviceCreationTagsItem.second.AsString();
+    }
+    m_deviceCreationTagsHasBeenSet = true;
   }
 
   return *this;
@@ -321,7 +312,23 @@ JsonValue Environment::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   payload.WithObject("tags", m_tags.Jsonize());
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_deviceCreationTagsHasBeenSet)
+  {
+   JsonValue deviceCreationTagsJsonMap;
+   for(auto& deviceCreationTagsItem : m_deviceCreationTags)
+   {
+     deviceCreationTagsJsonMap.WithString(deviceCreationTagsItem.first, deviceCreationTagsItem.second);
+   }
+   payload.WithObject("deviceCreationTags", std::move(deviceCreationTagsJsonMap));
 
   }
 

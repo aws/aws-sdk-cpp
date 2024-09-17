@@ -32,15 +32,8 @@ EbsInstanceBlockDevice::EbsInstanceBlockDevice() :
 {
 }
 
-EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode) : 
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false),
-    m_volumeOwnerIdHasBeenSet(false)
+EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode)
+  : EbsInstanceBlockDevice()
 {
   *this = xmlNode;
 }

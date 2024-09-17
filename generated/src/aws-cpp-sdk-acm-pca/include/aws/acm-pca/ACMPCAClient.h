@@ -117,7 +117,7 @@ namespace ACMPCA
          * policies for CRLs in Amazon S3</a>.</p>  <p>Amazon Web Services Private
          * CA assets that are stored in Amazon S3 can be protected with encryption. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
+         * href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#crl-encryption">Encrypting
          * Your CRLs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthority">AWS
          * API Reference</a></p>
@@ -707,13 +707,13 @@ namespace ACMPCA
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListCertificateAuthorities">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCertificateAuthoritiesOutcome ListCertificateAuthorities(const Model::ListCertificateAuthoritiesRequest& request) const;
+        virtual Model::ListCertificateAuthoritiesOutcome ListCertificateAuthorities(const Model::ListCertificateAuthoritiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCertificateAuthorities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCertificateAuthoritiesRequestT = Model::ListCertificateAuthoritiesRequest>
-        Model::ListCertificateAuthoritiesOutcomeCallable ListCertificateAuthoritiesCallable(const ListCertificateAuthoritiesRequestT& request) const
+        Model::ListCertificateAuthoritiesOutcomeCallable ListCertificateAuthoritiesCallable(const ListCertificateAuthoritiesRequestT& request = {}) const
         {
             return SubmitCallable(&ACMPCAClient::ListCertificateAuthorities, request);
         }
@@ -722,7 +722,7 @@ namespace ACMPCA
          * An Async wrapper for ListCertificateAuthorities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCertificateAuthoritiesRequestT = Model::ListCertificateAuthoritiesRequest>
-        void ListCertificateAuthoritiesAsync(const ListCertificateAuthoritiesRequestT& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCertificateAuthoritiesAsync(const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCertificateAuthoritiesRequestT& request = {}) const
         {
             return SubmitAsync(&ACMPCAClient::ListCertificateAuthorities, request, handler, context);
         }
@@ -1062,7 +1062,6 @@ namespace ACMPCA
       void init(const ACMPCAClientConfiguration& clientConfiguration);
 
       ACMPCAClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ACMPCAEndpointProviderBase> m_endpointProvider;
   };
 

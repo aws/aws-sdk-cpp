@@ -23,8 +23,8 @@ AnomalyUnusual::AnomalyUnusual() :
 {
 }
 
-AnomalyUnusual::AnomalyUnusual(JsonView jsonValue) : 
-    m_behaviorHasBeenSet(false)
+AnomalyUnusual::AnomalyUnusual(JsonView jsonValue)
+  : AnomalyUnusual()
 {
   *this = jsonValue;
 }

@@ -23,23 +23,37 @@ Aws::String BatchStopUpdateActionRequest::SerializePayload() const
   ss << "Action=BatchStopUpdateAction&";
   if(m_replicationGroupIdsHasBeenSet)
   {
-    unsigned replicationGroupIdsCount = 1;
-    for(auto& item : m_replicationGroupIds)
+    if (m_replicationGroupIds.empty())
     {
-      ss << "ReplicationGroupIds.member." << replicationGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      replicationGroupIdsCount++;
+      ss << "ReplicationGroupIds=&";
+    }
+    else
+    {
+      unsigned replicationGroupIdsCount = 1;
+      for(auto& item : m_replicationGroupIds)
+      {
+        ss << "ReplicationGroupIds.member." << replicationGroupIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        replicationGroupIdsCount++;
+      }
     }
   }
 
   if(m_cacheClusterIdsHasBeenSet)
   {
-    unsigned cacheClusterIdsCount = 1;
-    for(auto& item : m_cacheClusterIds)
+    if (m_cacheClusterIds.empty())
     {
-      ss << "CacheClusterIds.member." << cacheClusterIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      cacheClusterIdsCount++;
+      ss << "CacheClusterIds=&";
+    }
+    else
+    {
+      unsigned cacheClusterIdsCount = 1;
+      for(auto& item : m_cacheClusterIds)
+      {
+        ss << "CacheClusterIds.member." << cacheClusterIdsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        cacheClusterIdsCount++;
+      }
     }
   }
 

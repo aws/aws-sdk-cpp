@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
      */
     inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-     */
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-     */
     inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-     */
     inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-     */
     inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-     */
     inline DescribeDatasetGroupRequest& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-     */
     inline DescribeDatasetGroupRequest& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group to describe.</p>
-     */
     inline DescribeDatasetGroupRequest& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetGroupArn;

@@ -24,9 +24,8 @@ OnlineAbDefinition::OnlineAbDefinition() :
 {
 }
 
-OnlineAbDefinition::OnlineAbDefinition(JsonView jsonValue) : 
-    m_controlTreatmentNameHasBeenSet(false),
-    m_treatmentWeightsHasBeenSet(false)
+OnlineAbDefinition::OnlineAbDefinition(JsonView jsonValue)
+  : OnlineAbDefinition()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ MutualTlsAuthentication::MutualTlsAuthentication() :
 {
 }
 
-MutualTlsAuthentication::MutualTlsAuthentication(JsonView jsonValue) : 
-    m_truststoreUriHasBeenSet(false),
-    m_truststoreVersionHasBeenSet(false),
-    m_truststoreWarningsHasBeenSet(false)
+MutualTlsAuthentication::MutualTlsAuthentication(JsonView jsonValue)
+  : MutualTlsAuthentication()
 {
   *this = jsonValue;
 }

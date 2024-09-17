@@ -38,94 +38,40 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline ValidationExceptionField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline ValidationExceptionField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
-    inline ValidationExceptionField& WithMessage(const char* value) { SetMessage(value); return *this;}
-
-
+    ///@{
     /**
      * <p>The request was denied due to an invalid request error.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
     inline ValidationExceptionField& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The request was denied due to an invalid request error.</p>
-     */
     inline ValidationExceptionField& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
+    inline ValidationExceptionField& WithPath(const char* value) { SetPath(value); return *this;}
+    ///@}
 
+    ///@{
     /**
      * <p>The request was denied due to an invalid request error.</p>
      */
-    inline ValidationExceptionField& WithPath(const char* value) { SetPath(value); return *this;}
-
+    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+    inline ValidationExceptionField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline ValidationExceptionField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline ValidationExceptionField& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
 
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

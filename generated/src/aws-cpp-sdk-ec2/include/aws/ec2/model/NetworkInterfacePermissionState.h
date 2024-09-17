@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The state of the permission.</p>
      */
     inline const NetworkInterfacePermissionStateCode& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the permission.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the permission.</p>
-     */
     inline void SetState(const NetworkInterfacePermissionStateCode& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the permission.</p>
-     */
     inline void SetState(NetworkInterfacePermissionStateCode&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the permission.</p>
-     */
     inline NetworkInterfacePermissionState& WithState(const NetworkInterfacePermissionStateCode& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the permission.</p>
-     */
     inline NetworkInterfacePermissionState& WithState(NetworkInterfacePermissionStateCode&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A status message, if applicable.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>A status message, if applicable.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>A status message, if applicable.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>A status message, if applicable.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>A status message, if applicable.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>A status message, if applicable.</p>
-     */
     inline NetworkInterfacePermissionState& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>A status message, if applicable.</p>
-     */
     inline NetworkInterfacePermissionState& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A status message, if applicable.</p>
-     */
     inline NetworkInterfacePermissionState& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     NetworkInterfacePermissionStateCode m_state;

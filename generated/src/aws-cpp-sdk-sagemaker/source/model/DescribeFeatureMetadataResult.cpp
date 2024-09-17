@@ -22,8 +22,8 @@ DescribeFeatureMetadataResult::DescribeFeatureMetadataResult() :
 {
 }
 
-DescribeFeatureMetadataResult::DescribeFeatureMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_featureType(FeatureType::NOT_SET)
+DescribeFeatureMetadataResult::DescribeFeatureMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFeatureMetadataResult()
 {
   *this = result;
 }

@@ -41,98 +41,41 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies which permission update caused the error.</p>
      */
     inline const UpdateInstruction& GetCausedBy() const{ return m_causedBy; }
-
-    /**
-     * <p>Specifies which permission update caused the error.</p>
-     */
     inline bool CausedByHasBeenSet() const { return m_causedByHasBeenSet; }
-
-    /**
-     * <p>Specifies which permission update caused the error.</p>
-     */
     inline void SetCausedBy(const UpdateInstruction& value) { m_causedByHasBeenSet = true; m_causedBy = value; }
-
-    /**
-     * <p>Specifies which permission update caused the error.</p>
-     */
     inline void SetCausedBy(UpdateInstruction&& value) { m_causedByHasBeenSet = true; m_causedBy = std::move(value); }
-
-    /**
-     * <p>Specifies which permission update caused the error.</p>
-     */
     inline UpdateError& WithCausedBy(const UpdateInstruction& value) { SetCausedBy(value); return *this;}
-
-    /**
-     * <p>Specifies which permission update caused the error.</p>
-     */
     inline UpdateError& WithCausedBy(UpdateInstruction&& value) { SetCausedBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code.</p>
      */
     inline int GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline UpdateError& WithCode(int value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message for this error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message for this error.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The message for this error.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The message for this error.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The message for this error.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The message for this error.</p>
-     */
     inline UpdateError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message for this error.</p>
-     */
     inline UpdateError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message for this error.</p>
-     */
     inline UpdateError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     UpdateInstruction m_causedBy;

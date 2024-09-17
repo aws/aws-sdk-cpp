@@ -27,12 +27,8 @@ S3Action::S3Action() :
 {
 }
 
-S3Action::S3Action(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_cannedAcl(CannedAccessControlList::NOT_SET),
-    m_cannedAclHasBeenSet(false)
+S3Action::S3Action(JsonView jsonValue)
+  : S3Action()
 {
   *this = jsonValue;
 }

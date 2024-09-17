@@ -24,9 +24,8 @@ ConvergenceDetected::ConvergenceDetected() :
 {
 }
 
-ConvergenceDetected::ConvergenceDetected(JsonView jsonValue) : 
-    m_completeOnConvergence(CompleteOnConvergence::NOT_SET),
-    m_completeOnConvergenceHasBeenSet(false)
+ConvergenceDetected::ConvergenceDetected(JsonView jsonValue)
+  : ConvergenceDetected()
 {
   *this = jsonValue;
 }

@@ -40,127 +40,39 @@ namespace Model
      */
     AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
      * Point.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline GetMultiRegionAccessPointPolicyStatusRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline GetMultiRegionAccessPointPolicyStatusRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
-     * Point.</p>
-     */
     inline GetMultiRegionAccessPointPolicyStatusRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
      * Point is different from the alias. For more information about the distinction
      * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
-     * Point is different from the alias. For more information about the distinction
-     * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
-     * Point is different from the alias. For more information about the distinction
-     * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
-     * Point is different from the alias. For more information about the distinction
-     * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
-     * Point is different from the alias. For more information about the distinction
-     * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
-     * Point is different from the alias. For more information about the distinction
-     * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline GetMultiRegionAccessPointPolicyStatusRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
-     * Point is different from the alias. For more information about the distinction
-     * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline GetMultiRegionAccessPointPolicyStatusRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access
-     * Point is different from the alias. For more information about the distinction
-     * between the name and the alias of an Multi-Region Access Point, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline GetMultiRegionAccessPointPolicyStatusRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

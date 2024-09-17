@@ -27,12 +27,8 @@ Ulimit::Ulimit() :
 {
 }
 
-Ulimit::Ulimit(JsonView jsonValue) : 
-    m_hardLimit(0),
-    m_hardLimitHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_softLimit(0),
-    m_softLimitHasBeenSet(false)
+Ulimit::Ulimit(JsonView jsonValue)
+  : Ulimit()
 {
   *this = jsonValue;
 }

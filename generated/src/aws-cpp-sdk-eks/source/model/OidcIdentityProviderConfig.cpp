@@ -35,20 +35,8 @@ OidcIdentityProviderConfig::OidcIdentityProviderConfig() :
 {
 }
 
-OidcIdentityProviderConfig::OidcIdentityProviderConfig(JsonView jsonValue) : 
-    m_identityProviderConfigNameHasBeenSet(false),
-    m_identityProviderConfigArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_issuerUrlHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_usernameClaimHasBeenSet(false),
-    m_usernamePrefixHasBeenSet(false),
-    m_groupsClaimHasBeenSet(false),
-    m_groupsPrefixHasBeenSet(false),
-    m_requiredClaimsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_status(ConfigStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+OidcIdentityProviderConfig::OidcIdentityProviderConfig(JsonView jsonValue)
+  : OidcIdentityProviderConfig()
 {
   *this = jsonValue;
 }

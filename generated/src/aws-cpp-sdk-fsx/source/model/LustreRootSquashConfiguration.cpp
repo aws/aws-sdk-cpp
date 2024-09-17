@@ -24,9 +24,8 @@ LustreRootSquashConfiguration::LustreRootSquashConfiguration() :
 {
 }
 
-LustreRootSquashConfiguration::LustreRootSquashConfiguration(JsonView jsonValue) : 
-    m_rootSquashHasBeenSet(false),
-    m_noSquashNidsHasBeenSet(false)
+LustreRootSquashConfiguration::LustreRootSquashConfiguration(JsonView jsonValue)
+  : LustreRootSquashConfiguration()
 {
   *this = jsonValue;
 }

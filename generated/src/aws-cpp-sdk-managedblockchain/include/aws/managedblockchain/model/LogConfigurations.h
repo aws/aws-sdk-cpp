@@ -37,36 +37,17 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
      */
     inline const LogConfiguration& GetCloudwatch() const{ return m_cloudwatch; }
-
-    /**
-     * <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-     */
     inline bool CloudwatchHasBeenSet() const { return m_cloudwatchHasBeenSet; }
-
-    /**
-     * <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-     */
     inline void SetCloudwatch(const LogConfiguration& value) { m_cloudwatchHasBeenSet = true; m_cloudwatch = value; }
-
-    /**
-     * <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-     */
     inline void SetCloudwatch(LogConfiguration&& value) { m_cloudwatchHasBeenSet = true; m_cloudwatch = std::move(value); }
-
-    /**
-     * <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-     */
     inline LogConfigurations& WithCloudwatch(const LogConfiguration& value) { SetCloudwatch(value); return *this;}
-
-    /**
-     * <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-     */
     inline LogConfigurations& WithCloudwatch(LogConfiguration&& value) { SetCloudwatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LogConfiguration m_cloudwatch;

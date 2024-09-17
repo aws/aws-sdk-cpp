@@ -19,12 +19,16 @@ namespace Model
 {
 
 BedrockModelSpecification::BedrockModelSpecification() : 
-    m_modelArnHasBeenSet(false)
+    m_modelArnHasBeenSet(false),
+    m_guardrailHasBeenSet(false),
+    m_traceStatus(BedrockTraceStatus::NOT_SET),
+    m_traceStatusHasBeenSet(false),
+    m_customPromptHasBeenSet(false)
 {
 }
 
-BedrockModelSpecification::BedrockModelSpecification(JsonView jsonValue) : 
-    m_modelArnHasBeenSet(false)
+BedrockModelSpecification::BedrockModelSpecification(JsonView jsonValue)
+  : BedrockModelSpecification()
 {
   *this = jsonValue;
 }
@@ -38,6 +42,27 @@ BedrockModelSpecification& BedrockModelSpecification::operator =(JsonView jsonVa
     m_modelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("guardrail"))
+  {
+    m_guardrail = jsonValue.GetObject("guardrail");
+
+    m_guardrailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("traceStatus"))
+  {
+    m_traceStatus = BedrockTraceStatusMapper::GetBedrockTraceStatusForName(jsonValue.GetString("traceStatus"));
+
+    m_traceStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customPrompt"))
+  {
+    m_customPrompt = jsonValue.GetString("customPrompt");
+
+    m_customPromptHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +73,23 @@ JsonValue BedrockModelSpecification::Jsonize() const
   if(m_modelArnHasBeenSet)
   {
    payload.WithString("modelArn", m_modelArn);
+
+  }
+
+  if(m_guardrailHasBeenSet)
+  {
+   payload.WithObject("guardrail", m_guardrail.Jsonize());
+
+  }
+
+  if(m_traceStatusHasBeenSet)
+  {
+   payload.WithString("traceStatus", BedrockTraceStatusMapper::GetNameForBedrockTraceStatus(m_traceStatus));
+  }
+
+  if(m_customPromptHasBeenSet)
+  {
+   payload.WithString("customPrompt", m_customPrompt);
 
   }
 

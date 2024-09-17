@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     UPDATE,
     DELETE_,
-    CREATE
+    CREATE,
+    RESET_VALUE
   };
 
 namespace PropertyUpdateTypeMapper

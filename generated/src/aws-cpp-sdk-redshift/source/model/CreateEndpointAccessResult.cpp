@@ -22,8 +22,8 @@ CreateEndpointAccessResult::CreateEndpointAccessResult() :
 {
 }
 
-CreateEndpointAccessResult::CreateEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_port(0)
+CreateEndpointAccessResult::CreateEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateEndpointAccessResult()
 {
   *this = result;
 }

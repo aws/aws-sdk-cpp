@@ -34,54 +34,20 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
      * to find the values for PoolId and PoolArn .</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
-
-    /**
-     * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
-     * to find the values for PoolId and PoolArn .</p>
-     */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-
-    /**
-     * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
-     * to find the values for PoolId and PoolArn .</p>
-     */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-
-    /**
-     * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
-     * to find the values for PoolId and PoolArn .</p>
-     */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-
-    /**
-     * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
-     * to find the values for PoolId and PoolArn .</p>
-     */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-
-    /**
-     * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
-     * to find the values for PoolId and PoolArn .</p>
-     */
     inline DeletePoolRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-
-    /**
-     * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
-     * to find the values for PoolId and PoolArn .</p>
-     */
     inline DeletePoolRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The PoolId or PoolArn of the pool to delete. You can use <a>DescribePools</a>
-     * to find the values for PoolId and PoolArn .</p>
-     */
     inline DeletePoolRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_poolId;

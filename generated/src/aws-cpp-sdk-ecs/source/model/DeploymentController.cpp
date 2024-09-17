@@ -24,9 +24,8 @@ DeploymentController::DeploymentController() :
 {
 }
 
-DeploymentController::DeploymentController(JsonView jsonValue) : 
-    m_type(DeploymentControllerType::NOT_SET),
-    m_typeHasBeenSet(false)
+DeploymentController::DeploymentController(JsonView jsonValue)
+  : DeploymentController()
 {
   *this = jsonValue;
 }

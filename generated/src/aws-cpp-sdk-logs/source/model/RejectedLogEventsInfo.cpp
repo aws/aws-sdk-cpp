@@ -28,13 +28,8 @@ RejectedLogEventsInfo::RejectedLogEventsInfo() :
 {
 }
 
-RejectedLogEventsInfo::RejectedLogEventsInfo(JsonView jsonValue) : 
-    m_tooNewLogEventStartIndex(0),
-    m_tooNewLogEventStartIndexHasBeenSet(false),
-    m_tooOldLogEventEndIndex(0),
-    m_tooOldLogEventEndIndexHasBeenSet(false),
-    m_expiredLogEventEndIndex(0),
-    m_expiredLogEventEndIndexHasBeenSet(false)
+RejectedLogEventsInfo::RejectedLogEventsInfo(JsonView jsonValue)
+  : RejectedLogEventsInfo()
 {
   *this = jsonValue;
 }

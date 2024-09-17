@@ -24,10 +24,8 @@ LockRuleResult::LockRuleResult() :
 {
 }
 
-LockRuleResult::LockRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET),
-    m_lockState(LockState::NOT_SET)
+LockRuleResult::LockRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : LockRuleResult()
 {
   *this = result;
 }

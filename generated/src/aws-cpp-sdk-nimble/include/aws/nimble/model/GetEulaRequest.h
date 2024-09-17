@@ -32,46 +32,19 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The EULA ID.</p>
      */
     inline const Aws::String& GetEulaId() const{ return m_eulaId; }
-
-    /**
-     * <p>The EULA ID.</p>
-     */
     inline bool EulaIdHasBeenSet() const { return m_eulaIdHasBeenSet; }
-
-    /**
-     * <p>The EULA ID.</p>
-     */
     inline void SetEulaId(const Aws::String& value) { m_eulaIdHasBeenSet = true; m_eulaId = value; }
-
-    /**
-     * <p>The EULA ID.</p>
-     */
     inline void SetEulaId(Aws::String&& value) { m_eulaIdHasBeenSet = true; m_eulaId = std::move(value); }
-
-    /**
-     * <p>The EULA ID.</p>
-     */
     inline void SetEulaId(const char* value) { m_eulaIdHasBeenSet = true; m_eulaId.assign(value); }
-
-    /**
-     * <p>The EULA ID.</p>
-     */
     inline GetEulaRequest& WithEulaId(const Aws::String& value) { SetEulaId(value); return *this;}
-
-    /**
-     * <p>The EULA ID.</p>
-     */
     inline GetEulaRequest& WithEulaId(Aws::String&& value) { SetEulaId(std::move(value)); return *this;}
-
-    /**
-     * <p>The EULA ID.</p>
-     */
     inline GetEulaRequest& WithEulaId(const char* value) { SetEulaId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eulaId;

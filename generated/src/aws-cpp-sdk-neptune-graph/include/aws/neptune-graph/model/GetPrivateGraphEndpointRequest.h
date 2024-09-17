@@ -36,87 +36,33 @@ namespace Model
      */
     AWS_NEPTUNEGRAPH_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
     inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetPrivateGraphEndpointRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetPrivateGraphEndpointRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetPrivateGraphEndpointRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the VPC where the private endpoint is located.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC where the private endpoint is located.</p>
-     */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPC where the private endpoint is located.</p>
-     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC where the private endpoint is located.</p>
-     */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC where the private endpoint is located.</p>
-     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC where the private endpoint is located.</p>
-     */
     inline GetPrivateGraphEndpointRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC where the private endpoint is located.</p>
-     */
     inline GetPrivateGraphEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC where the private endpoint is located.</p>
-     */
     inline GetPrivateGraphEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_graphIdentifier;

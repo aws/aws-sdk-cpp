@@ -23,8 +23,8 @@ TileStyle::TileStyle() :
 {
 }
 
-TileStyle::TileStyle(JsonView jsonValue) : 
-    m_borderHasBeenSet(false)
+TileStyle::TileStyle(JsonView jsonValue)
+  : TileStyle()
 {
   *this = jsonValue;
 }

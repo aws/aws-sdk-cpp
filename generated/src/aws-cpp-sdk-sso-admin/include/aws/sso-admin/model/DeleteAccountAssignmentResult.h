@@ -33,53 +33,27 @@ namespace Model
     AWS_SSOADMIN_API DeleteAccountAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status object for the account assignment deletion operation.</p>
      */
     inline const AccountAssignmentOperationStatus& GetAccountAssignmentDeletionStatus() const{ return m_accountAssignmentDeletionStatus; }
-
-    /**
-     * <p>The status object for the account assignment deletion operation.</p>
-     */
     inline void SetAccountAssignmentDeletionStatus(const AccountAssignmentOperationStatus& value) { m_accountAssignmentDeletionStatus = value; }
-
-    /**
-     * <p>The status object for the account assignment deletion operation.</p>
-     */
     inline void SetAccountAssignmentDeletionStatus(AccountAssignmentOperationStatus&& value) { m_accountAssignmentDeletionStatus = std::move(value); }
-
-    /**
-     * <p>The status object for the account assignment deletion operation.</p>
-     */
     inline DeleteAccountAssignmentResult& WithAccountAssignmentDeletionStatus(const AccountAssignmentOperationStatus& value) { SetAccountAssignmentDeletionStatus(value); return *this;}
-
-    /**
-     * <p>The status object for the account assignment deletion operation.</p>
-     */
     inline DeleteAccountAssignmentResult& WithAccountAssignmentDeletionStatus(AccountAssignmentOperationStatus&& value) { SetAccountAssignmentDeletionStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteAccountAssignmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteAccountAssignmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteAccountAssignmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccountAssignmentOperationStatus m_accountAssignmentDeletionStatus;

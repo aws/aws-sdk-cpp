@@ -28,13 +28,8 @@ RuleGroupSourceStatefulRulesHeaderDetails::RuleGroupSourceStatefulRulesHeaderDet
 {
 }
 
-RuleGroupSourceStatefulRulesHeaderDetails::RuleGroupSourceStatefulRulesHeaderDetails(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_destinationPortHasBeenSet(false),
-    m_directionHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourcePortHasBeenSet(false)
+RuleGroupSourceStatefulRulesHeaderDetails::RuleGroupSourceStatefulRulesHeaderDetails(JsonView jsonValue)
+  : RuleGroupSourceStatefulRulesHeaderDetails()
 {
   *this = jsonValue;
 }

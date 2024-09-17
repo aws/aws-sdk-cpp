@@ -25,10 +25,8 @@ UpdateBackendAuthPasswordPolicyConfig::UpdateBackendAuthPasswordPolicyConfig() :
 {
 }
 
-UpdateBackendAuthPasswordPolicyConfig::UpdateBackendAuthPasswordPolicyConfig(JsonView jsonValue) : 
-    m_additionalConstraintsHasBeenSet(false),
-    m_minimumLength(0.0),
-    m_minimumLengthHasBeenSet(false)
+UpdateBackendAuthPasswordPolicyConfig::UpdateBackendAuthPasswordPolicyConfig(JsonView jsonValue)
+  : UpdateBackendAuthPasswordPolicyConfig()
 {
   *this = jsonValue;
 }

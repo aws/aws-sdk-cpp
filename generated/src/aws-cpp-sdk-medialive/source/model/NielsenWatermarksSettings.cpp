@@ -26,11 +26,8 @@ NielsenWatermarksSettings::NielsenWatermarksSettings() :
 {
 }
 
-NielsenWatermarksSettings::NielsenWatermarksSettings(JsonView jsonValue) : 
-    m_nielsenCbetSettingsHasBeenSet(false),
-    m_nielsenDistributionType(NielsenWatermarksDistributionTypes::NOT_SET),
-    m_nielsenDistributionTypeHasBeenSet(false),
-    m_nielsenNaesIiNwSettingsHasBeenSet(false)
+NielsenWatermarksSettings::NielsenWatermarksSettings(JsonView jsonValue)
+  : NielsenWatermarksSettings()
 {
   *this = jsonValue;
 }

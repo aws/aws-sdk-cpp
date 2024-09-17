@@ -24,9 +24,8 @@ CustomizationFeatureContentModerationConfig::CustomizationFeatureContentModerati
 {
 }
 
-CustomizationFeatureContentModerationConfig::CustomizationFeatureContentModerationConfig(JsonView jsonValue) : 
-    m_confidenceThreshold(0.0),
-    m_confidenceThresholdHasBeenSet(false)
+CustomizationFeatureContentModerationConfig::CustomizationFeatureContentModerationConfig(JsonView jsonValue)
+  : CustomizationFeatureContentModerationConfig()
 {
   *this = jsonValue;
 }

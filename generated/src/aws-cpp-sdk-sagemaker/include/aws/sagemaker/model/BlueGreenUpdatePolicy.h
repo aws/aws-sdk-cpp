@@ -43,68 +43,31 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the traffic routing strategy to shift traffic from the old fleet to
      * the new fleet during an endpoint deployment.</p>
      */
     inline const TrafficRoutingConfig& GetTrafficRoutingConfiguration() const{ return m_trafficRoutingConfiguration; }
-
-    /**
-     * <p>Defines the traffic routing strategy to shift traffic from the old fleet to
-     * the new fleet during an endpoint deployment.</p>
-     */
     inline bool TrafficRoutingConfigurationHasBeenSet() const { return m_trafficRoutingConfigurationHasBeenSet; }
-
-    /**
-     * <p>Defines the traffic routing strategy to shift traffic from the old fleet to
-     * the new fleet during an endpoint deployment.</p>
-     */
     inline void SetTrafficRoutingConfiguration(const TrafficRoutingConfig& value) { m_trafficRoutingConfigurationHasBeenSet = true; m_trafficRoutingConfiguration = value; }
-
-    /**
-     * <p>Defines the traffic routing strategy to shift traffic from the old fleet to
-     * the new fleet during an endpoint deployment.</p>
-     */
     inline void SetTrafficRoutingConfiguration(TrafficRoutingConfig&& value) { m_trafficRoutingConfigurationHasBeenSet = true; m_trafficRoutingConfiguration = std::move(value); }
-
-    /**
-     * <p>Defines the traffic routing strategy to shift traffic from the old fleet to
-     * the new fleet during an endpoint deployment.</p>
-     */
     inline BlueGreenUpdatePolicy& WithTrafficRoutingConfiguration(const TrafficRoutingConfig& value) { SetTrafficRoutingConfiguration(value); return *this;}
-
-    /**
-     * <p>Defines the traffic routing strategy to shift traffic from the old fleet to
-     * the new fleet during an endpoint deployment.</p>
-     */
     inline BlueGreenUpdatePolicy& WithTrafficRoutingConfiguration(TrafficRoutingConfig&& value) { SetTrafficRoutingConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional waiting time in seconds after the completion of an endpoint
      * deployment before terminating the old endpoint fleet. Default is 0.</p>
      */
     inline int GetTerminationWaitInSeconds() const{ return m_terminationWaitInSeconds; }
-
-    /**
-     * <p>Additional waiting time in seconds after the completion of an endpoint
-     * deployment before terminating the old endpoint fleet. Default is 0.</p>
-     */
     inline bool TerminationWaitInSecondsHasBeenSet() const { return m_terminationWaitInSecondsHasBeenSet; }
-
-    /**
-     * <p>Additional waiting time in seconds after the completion of an endpoint
-     * deployment before terminating the old endpoint fleet. Default is 0.</p>
-     */
     inline void SetTerminationWaitInSeconds(int value) { m_terminationWaitInSecondsHasBeenSet = true; m_terminationWaitInSeconds = value; }
-
-    /**
-     * <p>Additional waiting time in seconds after the completion of an endpoint
-     * deployment before terminating the old endpoint fleet. Default is 0.</p>
-     */
     inline BlueGreenUpdatePolicy& WithTerminationWaitInSeconds(int value) { SetTerminationWaitInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum execution timeout for the deployment. Note that the timeout value
      * should be larger than the total waiting time specified in
@@ -112,31 +75,10 @@ namespace Model
      * <code>WaitIntervalInSeconds</code>.</p>
      */
     inline int GetMaximumExecutionTimeoutInSeconds() const{ return m_maximumExecutionTimeoutInSeconds; }
-
-    /**
-     * <p>Maximum execution timeout for the deployment. Note that the timeout value
-     * should be larger than the total waiting time specified in
-     * <code>TerminationWaitInSeconds</code> and
-     * <code>WaitIntervalInSeconds</code>.</p>
-     */
     inline bool MaximumExecutionTimeoutInSecondsHasBeenSet() const { return m_maximumExecutionTimeoutInSecondsHasBeenSet; }
-
-    /**
-     * <p>Maximum execution timeout for the deployment. Note that the timeout value
-     * should be larger than the total waiting time specified in
-     * <code>TerminationWaitInSeconds</code> and
-     * <code>WaitIntervalInSeconds</code>.</p>
-     */
     inline void SetMaximumExecutionTimeoutInSeconds(int value) { m_maximumExecutionTimeoutInSecondsHasBeenSet = true; m_maximumExecutionTimeoutInSeconds = value; }
-
-    /**
-     * <p>Maximum execution timeout for the deployment. Note that the timeout value
-     * should be larger than the total waiting time specified in
-     * <code>TerminationWaitInSeconds</code> and
-     * <code>WaitIntervalInSeconds</code>.</p>
-     */
     inline BlueGreenUpdatePolicy& WithMaximumExecutionTimeoutInSeconds(int value) { SetMaximumExecutionTimeoutInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     TrafficRoutingConfig m_trafficRoutingConfiguration;

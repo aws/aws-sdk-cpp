@@ -28,13 +28,8 @@ Revision::Revision() :
 {
 }
 
-Revision::Revision(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_directoryHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_shaHasBeenSet(false)
+Revision::Revision(JsonView jsonValue)
+  : Revision()
 {
   *this = jsonValue;
 }

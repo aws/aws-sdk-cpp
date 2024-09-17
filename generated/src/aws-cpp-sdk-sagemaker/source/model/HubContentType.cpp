@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Model_HASH = HashingUtils::HashString("Model");
         static const int Notebook_HASH = HashingUtils::HashString("Notebook");
+        static const int ModelReference_HASH = HashingUtils::HashString("ModelReference");
 
 
         HubContentType GetHubContentTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Notebook_HASH)
           {
             return HubContentType::Notebook;
+          }
+          else if (hashCode == ModelReference_HASH)
+          {
+            return HubContentType::ModelReference;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "Model";
           case HubContentType::Notebook:
             return "Notebook";
+          case HubContentType::ModelReference:
+            return "ModelReference";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

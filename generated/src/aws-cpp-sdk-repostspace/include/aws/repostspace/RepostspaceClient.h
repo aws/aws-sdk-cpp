@@ -193,13 +193,13 @@ namespace repostspace
          * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListSpaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSpacesOutcome ListSpaces(const Model::ListSpacesRequest& request) const;
+        virtual Model::ListSpacesOutcome ListSpaces(const Model::ListSpacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSpaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSpacesRequestT = Model::ListSpacesRequest>
-        Model::ListSpacesOutcomeCallable ListSpacesCallable(const ListSpacesRequestT& request) const
+        Model::ListSpacesOutcomeCallable ListSpacesCallable(const ListSpacesRequestT& request = {}) const
         {
             return SubmitCallable(&RepostspaceClient::ListSpaces, request);
         }
@@ -208,7 +208,7 @@ namespace repostspace
          * An Async wrapper for ListSpaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSpacesRequestT = Model::ListSpacesRequest>
-        void ListSpacesAsync(const ListSpacesRequestT& request, const ListSpacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSpacesAsync(const ListSpacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSpacesRequestT& request = {}) const
         {
             return SubmitAsync(&RepostspaceClient::ListSpaces, request, handler, context);
         }
@@ -382,7 +382,6 @@ namespace repostspace
       void init(const RepostspaceClientConfiguration& clientConfiguration);
 
       RepostspaceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<RepostspaceEndpointProviderBase> m_endpointProvider;
   };
 

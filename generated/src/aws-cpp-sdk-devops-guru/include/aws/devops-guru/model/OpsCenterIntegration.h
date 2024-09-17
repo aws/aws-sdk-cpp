@@ -39,42 +39,18 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems
      * Manager OpsItem for each created insight. </p>
      */
     inline const OptInStatus& GetOptInStatus() const{ return m_optInStatus; }
-
-    /**
-     * <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems
-     * Manager OpsItem for each created insight. </p>
-     */
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
-
-    /**
-     * <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems
-     * Manager OpsItem for each created insight. </p>
-     */
     inline void SetOptInStatus(const OptInStatus& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
-
-    /**
-     * <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems
-     * Manager OpsItem for each created insight. </p>
-     */
     inline void SetOptInStatus(OptInStatus&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
-
-    /**
-     * <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems
-     * Manager OpsItem for each created insight. </p>
-     */
     inline OpsCenterIntegration& WithOptInStatus(const OptInStatus& value) { SetOptInStatus(value); return *this;}
-
-    /**
-     * <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems
-     * Manager OpsItem for each created insight. </p>
-     */
     inline OpsCenterIntegration& WithOptInStatus(OptInStatus&& value) { SetOptInStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OptInStatus m_optInStatus;

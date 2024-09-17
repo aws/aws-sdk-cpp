@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudHSMV2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudHSMV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudHSMV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudHSMV2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

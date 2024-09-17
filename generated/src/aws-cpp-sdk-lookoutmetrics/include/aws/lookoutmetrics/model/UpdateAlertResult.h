@@ -32,63 +32,29 @@ namespace Model
     AWS_LOOKOUTMETRICS_API UpdateAlertResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the updated alert.</p>
      */
     inline const Aws::String& GetAlertArn() const{ return m_alertArn; }
-
-    /**
-     * <p>The ARN of the updated alert.</p>
-     */
     inline void SetAlertArn(const Aws::String& value) { m_alertArn = value; }
-
-    /**
-     * <p>The ARN of the updated alert.</p>
-     */
     inline void SetAlertArn(Aws::String&& value) { m_alertArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the updated alert.</p>
-     */
     inline void SetAlertArn(const char* value) { m_alertArn.assign(value); }
-
-    /**
-     * <p>The ARN of the updated alert.</p>
-     */
     inline UpdateAlertResult& WithAlertArn(const Aws::String& value) { SetAlertArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the updated alert.</p>
-     */
     inline UpdateAlertResult& WithAlertArn(Aws::String&& value) { SetAlertArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the updated alert.</p>
-     */
     inline UpdateAlertResult& WithAlertArn(const char* value) { SetAlertArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAlertResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAlertResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAlertResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alertArn;

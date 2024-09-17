@@ -38,6 +38,7 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
      * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
@@ -48,136 +49,29 @@ namespace Model
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIdList() const{ return m_resourceIdList; }
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline bool ResourceIdListHasBeenSet() const { return m_resourceIdListHasBeenSet; }
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline void SetResourceIdList(const Aws::Vector<Aws::String>& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = value; }
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline void SetResourceIdList(Aws::Vector<Aws::String>&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = std::move(value); }
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline ListTagsRequest& WithResourceIdList(const Aws::Vector<Aws::String>& value) { SetResourceIdList(value); return *this;}
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline ListTagsRequest& WithResourceIdList(Aws::Vector<Aws::String>&& value) { SetResourceIdList(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline ListTagsRequest& AddResourceIdList(const Aws::String& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline ListTagsRequest& AddResourceIdList(Aws::String&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>Example channel ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline ListTagsRequest& AddResourceIdList(const char* value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListTagsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListTagsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_resourceIdList;

@@ -283,13 +283,13 @@ namespace DAX
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
+        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request) const
+        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request = {}) const
         {
             return SubmitCallable(&DAXClient::DescribeClusters, request);
         }
@@ -298,7 +298,7 @@ namespace DAX
          * An Async wrapper for DescribeClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        void DescribeClustersAsync(const DescribeClustersRequestT& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeClustersAsync(const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeClustersRequestT& request = {}) const
         {
             return SubmitAsync(&DAXClient::DescribeClusters, request, handler, context);
         }
@@ -309,13 +309,13 @@ namespace DAX
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDefaultParametersOutcome DescribeDefaultParameters(const Model::DescribeDefaultParametersRequest& request) const;
+        virtual Model::DescribeDefaultParametersOutcome DescribeDefaultParameters(const Model::DescribeDefaultParametersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDefaultParameters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDefaultParametersRequestT = Model::DescribeDefaultParametersRequest>
-        Model::DescribeDefaultParametersOutcomeCallable DescribeDefaultParametersCallable(const DescribeDefaultParametersRequestT& request) const
+        Model::DescribeDefaultParametersOutcomeCallable DescribeDefaultParametersCallable(const DescribeDefaultParametersRequestT& request = {}) const
         {
             return SubmitCallable(&DAXClient::DescribeDefaultParameters, request);
         }
@@ -324,7 +324,7 @@ namespace DAX
          * An Async wrapper for DescribeDefaultParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDefaultParametersRequestT = Model::DescribeDefaultParametersRequest>
-        void DescribeDefaultParametersAsync(const DescribeDefaultParametersRequestT& request, const DescribeDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDefaultParametersAsync(const DescribeDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDefaultParametersRequestT& request = {}) const
         {
             return SubmitAsync(&DAXClient::DescribeDefaultParameters, request, handler, context);
         }
@@ -338,13 +338,13 @@ namespace DAX
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request) const
+        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request = {}) const
         {
             return SubmitCallable(&DAXClient::DescribeEvents, request);
         }
@@ -353,7 +353,7 @@ namespace DAX
          * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        void DescribeEventsAsync(const DescribeEventsRequestT& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsRequestT& request = {}) const
         {
             return SubmitAsync(&DAXClient::DescribeEvents, request, handler, context);
         }
@@ -365,13 +365,13 @@ namespace DAX
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeParameterGroupsOutcome DescribeParameterGroups(const Model::DescribeParameterGroupsRequest& request) const;
+        virtual Model::DescribeParameterGroupsOutcome DescribeParameterGroups(const Model::DescribeParameterGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeParameterGroupsRequestT = Model::DescribeParameterGroupsRequest>
-        Model::DescribeParameterGroupsOutcomeCallable DescribeParameterGroupsCallable(const DescribeParameterGroupsRequestT& request) const
+        Model::DescribeParameterGroupsOutcomeCallable DescribeParameterGroupsCallable(const DescribeParameterGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&DAXClient::DescribeParameterGroups, request);
         }
@@ -380,7 +380,7 @@ namespace DAX
          * An Async wrapper for DescribeParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeParameterGroupsRequestT = Model::DescribeParameterGroupsRequest>
-        void DescribeParameterGroupsAsync(const DescribeParameterGroupsRequestT& request, const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeParameterGroupsAsync(const DescribeParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeParameterGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&DAXClient::DescribeParameterGroups, request, handler, context);
         }
@@ -418,13 +418,13 @@ namespace DAX
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSubnetGroupsOutcome DescribeSubnetGroups(const Model::DescribeSubnetGroupsRequest& request) const;
+        virtual Model::DescribeSubnetGroupsOutcome DescribeSubnetGroups(const Model::DescribeSubnetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSubnetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSubnetGroupsRequestT = Model::DescribeSubnetGroupsRequest>
-        Model::DescribeSubnetGroupsOutcomeCallable DescribeSubnetGroupsCallable(const DescribeSubnetGroupsRequestT& request) const
+        Model::DescribeSubnetGroupsOutcomeCallable DescribeSubnetGroupsCallable(const DescribeSubnetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&DAXClient::DescribeSubnetGroups, request);
         }
@@ -433,7 +433,7 @@ namespace DAX
          * An Async wrapper for DescribeSubnetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSubnetGroupsRequestT = Model::DescribeSubnetGroupsRequest>
-        void DescribeSubnetGroupsAsync(const DescribeSubnetGroupsRequestT& request, const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSubnetGroupsAsync(const DescribeSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSubnetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&DAXClient::DescribeSubnetGroups, request, handler, context);
         }
@@ -658,7 +658,6 @@ namespace DAX
       void init(const DAXClientConfiguration& clientConfiguration);
 
       DAXClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DAXEndpointProviderBase> m_endpointProvider;
   };
 

@@ -29,14 +29,8 @@ RestoreTestingRecoveryPointSelection::RestoreTestingRecoveryPointSelection() :
 {
 }
 
-RestoreTestingRecoveryPointSelection::RestoreTestingRecoveryPointSelection(JsonView jsonValue) : 
-    m_algorithm(RestoreTestingRecoveryPointSelectionAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_excludeVaultsHasBeenSet(false),
-    m_includeVaultsHasBeenSet(false),
-    m_recoveryPointTypesHasBeenSet(false),
-    m_selectionWindowDays(0),
-    m_selectionWindowDaysHasBeenSet(false)
+RestoreTestingRecoveryPointSelection::RestoreTestingRecoveryPointSelection(JsonView jsonValue)
+  : RestoreTestingRecoveryPointSelection()
 {
   *this = jsonValue;
 }

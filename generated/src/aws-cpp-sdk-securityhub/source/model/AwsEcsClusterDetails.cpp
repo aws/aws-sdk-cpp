@@ -35,20 +35,8 @@ AwsEcsClusterDetails::AwsEcsClusterDetails() :
 {
 }
 
-AwsEcsClusterDetails::AwsEcsClusterDetails(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false),
-    m_capacityProvidersHasBeenSet(false),
-    m_clusterSettingsHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_registeredContainerInstancesCount(0),
-    m_registeredContainerInstancesCountHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsEcsClusterDetails::AwsEcsClusterDetails(JsonView jsonValue)
+  : AwsEcsClusterDetails()
 {
   *this = jsonValue;
 }

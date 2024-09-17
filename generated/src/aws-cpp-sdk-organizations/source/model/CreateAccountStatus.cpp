@@ -32,17 +32,8 @@ CreateAccountStatus::CreateAccountStatus() :
 {
 }
 
-CreateAccountStatus::CreateAccountStatus(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_state(CreateAccountState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_requestedTimestampHasBeenSet(false),
-    m_completedTimestampHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_govCloudAccountIdHasBeenSet(false),
-    m_failureReason(CreateAccountFailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false)
+CreateAccountStatus::CreateAccountStatus(JsonView jsonValue)
+  : CreateAccountStatus()
 {
   *this = jsonValue;
 }

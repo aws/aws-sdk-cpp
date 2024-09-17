@@ -36,26 +36,15 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Activate or deactivate Amazon Web Services Free Tier. </p>
      */
     inline bool GetActivated() const{ return m_activated; }
-
-    /**
-     * <p> Activate or deactivate Amazon Web Services Free Tier. </p>
-     */
     inline bool ActivatedHasBeenSet() const { return m_activatedHasBeenSet; }
-
-    /**
-     * <p> Activate or deactivate Amazon Web Services Free Tier. </p>
-     */
     inline void SetActivated(bool value) { m_activatedHasBeenSet = true; m_activated = value; }
-
-    /**
-     * <p> Activate or deactivate Amazon Web Services Free Tier. </p>
-     */
     inline CreateFreeTierConfig& WithActivated(bool value) { SetActivated(value); return *this;}
-
+    ///@}
   private:
 
     bool m_activated;

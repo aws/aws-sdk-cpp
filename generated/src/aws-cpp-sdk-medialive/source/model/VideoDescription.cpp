@@ -34,19 +34,8 @@ VideoDescription::VideoDescription() :
 {
 }
 
-VideoDescription::VideoDescription(JsonView jsonValue) : 
-    m_codecSettingsHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_respondToAfd(VideoDescriptionRespondToAfd::NOT_SET),
-    m_respondToAfdHasBeenSet(false),
-    m_scalingBehavior(VideoDescriptionScalingBehavior::NOT_SET),
-    m_scalingBehaviorHasBeenSet(false),
-    m_sharpness(0),
-    m_sharpnessHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
+VideoDescription::VideoDescription(JsonView jsonValue)
+  : VideoDescription()
 {
   *this = jsonValue;
 }

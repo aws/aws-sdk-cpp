@@ -38,103 +38,35 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
      * sent.</p>
      */
     inline const Aws::String& GetAlertTargetArn() const{ return m_alertTargetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
-     * sent.</p>
-     */
     inline bool AlertTargetArnHasBeenSet() const { return m_alertTargetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
-     * sent.</p>
-     */
     inline void SetAlertTargetArn(const Aws::String& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
-     * sent.</p>
-     */
     inline void SetAlertTargetArn(Aws::String&& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
-     * sent.</p>
-     */
     inline void SetAlertTargetArn(const char* value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
-     * sent.</p>
-     */
     inline AlertTarget& WithAlertTargetArn(const Aws::String& value) { SetAlertTargetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
-     * sent.</p>
-     */
     inline AlertTarget& WithAlertTargetArn(Aws::String&& value) { SetAlertTargetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
-     * sent.</p>
-     */
     inline AlertTarget& WithAlertTargetArn(const char* value) { SetAlertTargetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the role that grants permission to send alerts to the notification
      * target.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the role that grants permission to send alerts to the notification
-     * target.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the role that grants permission to send alerts to the notification
-     * target.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the role that grants permission to send alerts to the notification
-     * target.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the role that grants permission to send alerts to the notification
-     * target.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the role that grants permission to send alerts to the notification
-     * target.</p>
-     */
     inline AlertTarget& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the role that grants permission to send alerts to the notification
-     * target.</p>
-     */
     inline AlertTarget& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the role that grants permission to send alerts to the notification
-     * target.</p>
-     */
     inline AlertTarget& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alertTargetArn;

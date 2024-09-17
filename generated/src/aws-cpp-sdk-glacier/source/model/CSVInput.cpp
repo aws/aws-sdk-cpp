@@ -29,14 +29,8 @@ CSVInput::CSVInput() :
 {
 }
 
-CSVInput::CSVInput(JsonView jsonValue) : 
-    m_fileHeaderInfo(FileHeaderInfo::NOT_SET),
-    m_fileHeaderInfoHasBeenSet(false),
-    m_commentsHasBeenSet(false),
-    m_quoteEscapeCharacterHasBeenSet(false),
-    m_recordDelimiterHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
+CSVInput::CSVInput(JsonView jsonValue)
+  : CSVInput()
 {
   *this = jsonValue;
 }

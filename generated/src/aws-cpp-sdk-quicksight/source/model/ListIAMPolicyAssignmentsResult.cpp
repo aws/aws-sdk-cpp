@@ -22,8 +22,8 @@ ListIAMPolicyAssignmentsResult::ListIAMPolicyAssignmentsResult() :
 {
 }
 
-ListIAMPolicyAssignmentsResult::ListIAMPolicyAssignmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListIAMPolicyAssignmentsResult::ListIAMPolicyAssignmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListIAMPolicyAssignmentsResult()
 {
   *this = result;
 }

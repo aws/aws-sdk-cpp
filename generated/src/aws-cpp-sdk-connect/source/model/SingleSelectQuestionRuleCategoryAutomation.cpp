@@ -26,11 +26,8 @@ SingleSelectQuestionRuleCategoryAutomation::SingleSelectQuestionRuleCategoryAuto
 {
 }
 
-SingleSelectQuestionRuleCategoryAutomation::SingleSelectQuestionRuleCategoryAutomation(JsonView jsonValue) : 
-    m_categoryHasBeenSet(false),
-    m_condition(SingleSelectQuestionRuleCategoryAutomationCondition::NOT_SET),
-    m_conditionHasBeenSet(false),
-    m_optionRefIdHasBeenSet(false)
+SingleSelectQuestionRuleCategoryAutomation::SingleSelectQuestionRuleCategoryAutomation(JsonView jsonValue)
+  : SingleSelectQuestionRuleCategoryAutomation()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CertificateLimitExceededException::CertificateLimitExceededException() :
 {
 }
 
-CertificateLimitExceededException::CertificateLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+CertificateLimitExceededException::CertificateLimitExceededException(JsonView jsonValue)
+  : CertificateLimitExceededException()
 {
   *this = jsonValue;
 }

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ChimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -28,13 +28,8 @@ AncillarySourceSettings::AncillarySourceSettings() :
 {
 }
 
-AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue) : 
-    m_convert608To708(AncillaryConvert608To708::NOT_SET),
-    m_convert608To708HasBeenSet(false),
-    m_sourceAncillaryChannelNumber(0),
-    m_sourceAncillaryChannelNumberHasBeenSet(false),
-    m_terminateCaptions(AncillaryTerminateCaptions::NOT_SET),
-    m_terminateCaptionsHasBeenSet(false)
+AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue)
+  : AncillarySourceSettings()
 {
   *this = jsonValue;
 }

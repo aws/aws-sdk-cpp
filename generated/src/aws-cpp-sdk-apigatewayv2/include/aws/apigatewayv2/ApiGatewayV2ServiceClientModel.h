@@ -73,6 +73,9 @@
 #include <aws/apigatewayv2/model/UpdateRouteResponseResult.h>
 #include <aws/apigatewayv2/model/UpdateStageResult.h>
 #include <aws/apigatewayv2/model/UpdateVpcLinkResult.h>
+#include <aws/apigatewayv2/model/GetDomainNamesRequest.h>
+#include <aws/apigatewayv2/model/GetApisRequest.h>
+#include <aws/apigatewayv2/model/GetVpcLinksRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ApiGatewayV2Client header */
 
@@ -107,7 +110,7 @@ namespace Aws
 
   namespace ApiGatewayV2
   {
-    using ApiGatewayV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApiGatewayV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApiGatewayV2EndpointProviderBase = Aws::ApiGatewayV2::Endpoint::ApiGatewayV2EndpointProviderBase;
     using ApiGatewayV2EndpointProvider = Aws::ApiGatewayV2::Endpoint::ApiGatewayV2EndpointProvider;
 

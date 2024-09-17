@@ -25,10 +25,8 @@ MemberGroup::MemberGroup() :
 {
 }
 
-MemberGroup::MemberGroup(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_type(MembershipType::NOT_SET),
-    m_typeHasBeenSet(false)
+MemberGroup::MemberGroup(JsonView jsonValue)
+  : MemberGroup()
 {
   *this = jsonValue;
 }

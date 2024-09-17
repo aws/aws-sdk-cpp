@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 ListFleetsRequest::ListFleetsRequest() : 
     m_buildIdHasBeenSet(false),
     m_scriptIdHasBeenSet(false),
+    m_containerGroupDefinitionNameHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -34,6 +35,12 @@ Aws::String ListFleetsRequest::SerializePayload() const
   if(m_scriptIdHasBeenSet)
   {
    payload.WithString("ScriptId", m_scriptId);
+
+  }
+
+  if(m_containerGroupDefinitionNameHasBeenSet)
+  {
+   payload.WithString("ContainerGroupDefinitionName", m_containerGroupDefinitionName);
 
   }
 

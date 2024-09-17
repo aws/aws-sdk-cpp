@@ -22,8 +22,8 @@ DescribeOrganizationResult::DescribeOrganizationResult() :
 {
 }
 
-DescribeOrganizationResult::DescribeOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_interoperabilityEnabled(false)
+DescribeOrganizationResult::DescribeOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeOrganizationResult()
 {
   *this = result;
 }

@@ -39,133 +39,48 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The entry point for the Spark submit job run.</p>
      */
     inline const Aws::String& GetEntryPoint() const{ return m_entryPoint; }
-
-    /**
-     * <p>The entry point for the Spark submit job run.</p>
-     */
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-
-    /**
-     * <p>The entry point for the Spark submit job run.</p>
-     */
     inline void SetEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-
-    /**
-     * <p>The entry point for the Spark submit job run.</p>
-     */
     inline void SetEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-
-    /**
-     * <p>The entry point for the Spark submit job run.</p>
-     */
     inline void SetEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.assign(value); }
-
-    /**
-     * <p>The entry point for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithEntryPoint(const Aws::String& value) { SetEntryPoint(value); return *this;}
-
-    /**
-     * <p>The entry point for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithEntryPoint(Aws::String&& value) { SetEntryPoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The entry point for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithEntryPoint(const char* value) { SetEntryPoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The arguments for the Spark submit job run.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntryPointArguments() const{ return m_entryPointArguments; }
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline bool EntryPointArgumentsHasBeenSet() const { return m_entryPointArgumentsHasBeenSet; }
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline void SetEntryPointArguments(const Aws::Vector<Aws::String>& value) { m_entryPointArgumentsHasBeenSet = true; m_entryPointArguments = value; }
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline void SetEntryPointArguments(Aws::Vector<Aws::String>&& value) { m_entryPointArgumentsHasBeenSet = true; m_entryPointArguments = std::move(value); }
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithEntryPointArguments(const Aws::Vector<Aws::String>& value) { SetEntryPointArguments(value); return *this;}
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithEntryPointArguments(Aws::Vector<Aws::String>&& value) { SetEntryPointArguments(std::move(value)); return *this;}
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline SparkSubmit& AddEntryPointArguments(const Aws::String& value) { m_entryPointArgumentsHasBeenSet = true; m_entryPointArguments.push_back(value); return *this; }
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline SparkSubmit& AddEntryPointArguments(Aws::String&& value) { m_entryPointArgumentsHasBeenSet = true; m_entryPointArguments.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The arguments for the Spark submit job run.</p>
-     */
     inline SparkSubmit& AddEntryPointArguments(const char* value) { m_entryPointArgumentsHasBeenSet = true; m_entryPointArguments.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for the Spark submit job run.</p>
      */
     inline const Aws::String& GetSparkSubmitParameters() const{ return m_sparkSubmitParameters; }
-
-    /**
-     * <p>The parameters for the Spark submit job run.</p>
-     */
     inline bool SparkSubmitParametersHasBeenSet() const { return m_sparkSubmitParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for the Spark submit job run.</p>
-     */
     inline void SetSparkSubmitParameters(const Aws::String& value) { m_sparkSubmitParametersHasBeenSet = true; m_sparkSubmitParameters = value; }
-
-    /**
-     * <p>The parameters for the Spark submit job run.</p>
-     */
     inline void SetSparkSubmitParameters(Aws::String&& value) { m_sparkSubmitParametersHasBeenSet = true; m_sparkSubmitParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for the Spark submit job run.</p>
-     */
     inline void SetSparkSubmitParameters(const char* value) { m_sparkSubmitParametersHasBeenSet = true; m_sparkSubmitParameters.assign(value); }
-
-    /**
-     * <p>The parameters for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithSparkSubmitParameters(const Aws::String& value) { SetSparkSubmitParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithSparkSubmitParameters(Aws::String&& value) { SetSparkSubmitParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameters for the Spark submit job run.</p>
-     */
     inline SparkSubmit& WithSparkSubmitParameters(const char* value) { SetSparkSubmitParameters(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_entryPoint;

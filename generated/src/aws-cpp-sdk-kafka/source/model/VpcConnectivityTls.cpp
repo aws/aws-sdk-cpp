@@ -24,9 +24,8 @@ VpcConnectivityTls::VpcConnectivityTls() :
 {
 }
 
-VpcConnectivityTls::VpcConnectivityTls(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+VpcConnectivityTls::VpcConnectivityTls(JsonView jsonValue)
+  : VpcConnectivityTls()
 {
   *this = jsonValue;
 }

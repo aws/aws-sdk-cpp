@@ -25,10 +25,8 @@ BatchSuccessfulResultModel::BatchSuccessfulResultModel() :
 {
 }
 
-BatchSuccessfulResultModel::BatchSuccessfulResultModel(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_stateHasBeenSet(false)
+BatchSuccessfulResultModel::BatchSuccessfulResultModel(JsonView jsonValue)
+  : BatchSuccessfulResultModel()
 {
   *this = jsonValue;
 }

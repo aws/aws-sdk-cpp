@@ -30,13 +30,8 @@ TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery() :
 {
 }
 
-TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_metricStatHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_returnData(false),
-    m_returnDataHasBeenSet(false)
+TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery(const XmlNode& xmlNode)
+  : TargetTrackingMetricDataQuery()
 {
   *this = xmlNode;
 }

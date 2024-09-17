@@ -26,11 +26,8 @@ InvalidParameterException::InvalidParameterException() :
 {
 }
 
-InvalidParameterException::InvalidParameterException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(ValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
+InvalidParameterException::InvalidParameterException(JsonView jsonValue)
+  : InvalidParameterException()
 {
   *this = jsonValue;
 }

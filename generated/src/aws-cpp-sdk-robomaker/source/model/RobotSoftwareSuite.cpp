@@ -26,11 +26,8 @@ RobotSoftwareSuite::RobotSoftwareSuite() :
 {
 }
 
-RobotSoftwareSuite::RobotSoftwareSuite(JsonView jsonValue) : 
-    m_name(RobotSoftwareSuiteType::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_version(RobotSoftwareSuiteVersionType::NOT_SET),
-    m_versionHasBeenSet(false)
+RobotSoftwareSuite::RobotSoftwareSuite(JsonView jsonValue)
+  : RobotSoftwareSuite()
 {
   *this = jsonValue;
 }

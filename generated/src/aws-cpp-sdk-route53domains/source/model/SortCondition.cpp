@@ -26,11 +26,8 @@ SortCondition::SortCondition() :
 {
 }
 
-SortCondition::SortCondition(JsonView jsonValue) : 
-    m_name(ListDomainsAttributeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+SortCondition::SortCondition(JsonView jsonValue)
+  : SortCondition()
 {
   *this = jsonValue;
 }

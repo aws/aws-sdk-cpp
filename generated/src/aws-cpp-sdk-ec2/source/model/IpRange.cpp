@@ -26,9 +26,8 @@ IpRange::IpRange() :
 {
 }
 
-IpRange::IpRange(const XmlNode& xmlNode) : 
-    m_cidrIpHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+IpRange::IpRange(const XmlNode& xmlNode)
+  : IpRange()
 {
   *this = xmlNode;
 }

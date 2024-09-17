@@ -34,19 +34,8 @@ Resource::Resource() :
 {
 }
 
-Resource::Resource(JsonView jsonValue) : 
-    m_accessKeyDetailsHasBeenSet(false),
-    m_s3BucketDetailsHasBeenSet(false),
-    m_instanceDetailsHasBeenSet(false),
-    m_eksClusterDetailsHasBeenSet(false),
-    m_kubernetesDetailsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_ebsVolumeDetailsHasBeenSet(false),
-    m_ecsClusterDetailsHasBeenSet(false),
-    m_containerDetailsHasBeenSet(false),
-    m_rdsDbInstanceDetailsHasBeenSet(false),
-    m_rdsDbUserDetailsHasBeenSet(false),
-    m_lambdaDetailsHasBeenSet(false)
+Resource::Resource(JsonView jsonValue)
+  : Resource()
 {
   *this = jsonValue;
 }

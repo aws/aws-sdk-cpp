@@ -27,12 +27,8 @@ ConnectionOAuthResponseParameters::ConnectionOAuthResponseParameters() :
 {
 }
 
-ConnectionOAuthResponseParameters::ConnectionOAuthResponseParameters(JsonView jsonValue) : 
-    m_clientParametersHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_httpMethod(ConnectionOAuthHttpMethod::NOT_SET),
-    m_httpMethodHasBeenSet(false),
-    m_oAuthHttpParametersHasBeenSet(false)
+ConnectionOAuthResponseParameters::ConnectionOAuthResponseParameters(JsonView jsonValue)
+  : ConnectionOAuthResponseParameters()
 {
   *this = jsonValue;
 }

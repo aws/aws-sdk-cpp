@@ -34,6 +34,9 @@
 #include <aws/workspaces-thin-client/model/UpdateDeviceResult.h>
 #include <aws/workspaces-thin-client/model/UpdateEnvironmentResult.h>
 #include <aws/workspaces-thin-client/model/UpdateSoftwareSetResult.h>
+#include <aws/workspaces-thin-client/model/ListEnvironmentsRequest.h>
+#include <aws/workspaces-thin-client/model/ListDevicesRequest.h>
+#include <aws/workspaces-thin-client/model/ListSoftwareSetsRequest.h>
 /* End of service model headers required in WorkSpacesThinClientClient header */
 
 namespace Aws
@@ -67,7 +70,7 @@ namespace Aws
 
   namespace WorkSpacesThinClient
   {
-    using WorkSpacesThinClientClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkSpacesThinClientClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WorkSpacesThinClientEndpointProviderBase = Aws::WorkSpacesThinClient::Endpoint::WorkSpacesThinClientEndpointProviderBase;
     using WorkSpacesThinClientEndpointProvider = Aws::WorkSpacesThinClient::Endpoint::WorkSpacesThinClientEndpointProvider;
 

@@ -24,9 +24,8 @@ EBSSavingsEstimationMode::EBSSavingsEstimationMode() :
 {
 }
 
-EBSSavingsEstimationMode::EBSSavingsEstimationMode(JsonView jsonValue) : 
-    m_source(EBSSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+EBSSavingsEstimationMode::EBSSavingsEstimationMode(JsonView jsonValue)
+  : EBSSavingsEstimationMode()
 {
   *this = jsonValue;
 }

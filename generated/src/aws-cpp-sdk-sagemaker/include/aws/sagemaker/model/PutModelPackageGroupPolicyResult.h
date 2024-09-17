@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API PutModelPackageGroupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the model package group.</p>
      */
     inline const Aws::String& GetModelPackageGroupArn() const{ return m_modelPackageGroupArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model package group.</p>
-     */
     inline void SetModelPackageGroupArn(const Aws::String& value) { m_modelPackageGroupArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model package group.</p>
-     */
     inline void SetModelPackageGroupArn(Aws::String&& value) { m_modelPackageGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model package group.</p>
-     */
     inline void SetModelPackageGroupArn(const char* value) { m_modelPackageGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model package group.</p>
-     */
     inline PutModelPackageGroupPolicyResult& WithModelPackageGroupArn(const Aws::String& value) { SetModelPackageGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model package group.</p>
-     */
     inline PutModelPackageGroupPolicyResult& WithModelPackageGroupArn(Aws::String&& value) { SetModelPackageGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model package group.</p>
-     */
     inline PutModelPackageGroupPolicyResult& WithModelPackageGroupArn(const char* value) { SetModelPackageGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutModelPackageGroupPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutModelPackageGroupPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutModelPackageGroupPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelPackageGroupArn;

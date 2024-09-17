@@ -38,6 +38,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state code. The initial state of the load balancer is provisioning.</p>
      * <p>After the load balancer is fully set up and ready to route traffic, its state
@@ -45,104 +46,28 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The state code. The initial state of the load balancer is provisioning.</p>
-     * <p>After the load balancer is fully set up and ready to route traffic, its state
-     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
-     * </p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The state code. The initial state of the load balancer is provisioning.</p>
-     * <p>After the load balancer is fully set up and ready to route traffic, its state
-     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
-     * </p>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The state code. The initial state of the load balancer is provisioning.</p>
-     * <p>After the load balancer is fully set up and ready to route traffic, its state
-     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
-     * </p>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The state code. The initial state of the load balancer is provisioning.</p>
-     * <p>After the load balancer is fully set up and ready to route traffic, its state
-     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
-     * </p>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>The state code. The initial state of the load balancer is provisioning.</p>
-     * <p>After the load balancer is fully set up and ready to route traffic, its state
-     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
-     * </p>
-     */
     inline LoadBalancerState& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The state code. The initial state of the load balancer is provisioning.</p>
-     * <p>After the load balancer is fully set up and ready to route traffic, its state
-     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
-     * </p>
-     */
     inline LoadBalancerState& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The state code. The initial state of the load balancer is provisioning.</p>
-     * <p>After the load balancer is fully set up and ready to route traffic, its state
-     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
-     * </p>
-     */
     inline LoadBalancerState& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the state.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>A description of the state.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>A description of the state.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>A description of the state.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>A description of the state.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>A description of the state.</p>
-     */
     inline LoadBalancerState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>A description of the state.</p>
-     */
     inline LoadBalancerState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the state.</p>
-     */
     inline LoadBalancerState& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_code;

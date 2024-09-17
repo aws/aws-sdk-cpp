@@ -386,13 +386,13 @@ namespace BackupGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListGateways">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
+        virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGateways that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGatewaysRequestT = Model::ListGatewaysRequest>
-        Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const ListGatewaysRequestT& request) const
+        Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const ListGatewaysRequestT& request = {}) const
         {
             return SubmitCallable(&BackupGatewayClient::ListGateways, request);
         }
@@ -401,7 +401,7 @@ namespace BackupGateway
          * An Async wrapper for ListGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGatewaysRequestT = Model::ListGatewaysRequest>
-        void ListGatewaysAsync(const ListGatewaysRequestT& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGatewaysAsync(const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGatewaysRequestT& request = {}) const
         {
             return SubmitAsync(&BackupGatewayClient::ListGateways, request, handler, context);
         }
@@ -411,13 +411,13 @@ namespace BackupGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListHypervisors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHypervisorsOutcome ListHypervisors(const Model::ListHypervisorsRequest& request) const;
+        virtual Model::ListHypervisorsOutcome ListHypervisors(const Model::ListHypervisorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHypervisors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHypervisorsRequestT = Model::ListHypervisorsRequest>
-        Model::ListHypervisorsOutcomeCallable ListHypervisorsCallable(const ListHypervisorsRequestT& request) const
+        Model::ListHypervisorsOutcomeCallable ListHypervisorsCallable(const ListHypervisorsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupGatewayClient::ListHypervisors, request);
         }
@@ -426,7 +426,7 @@ namespace BackupGateway
          * An Async wrapper for ListHypervisors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHypervisorsRequestT = Model::ListHypervisorsRequest>
-        void ListHypervisorsAsync(const ListHypervisorsRequestT& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHypervisorsAsync(const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHypervisorsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupGatewayClient::ListHypervisors, request, handler, context);
         }
@@ -462,13 +462,13 @@ namespace BackupGateway
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListVirtualMachines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVirtualMachinesOutcome ListVirtualMachines(const Model::ListVirtualMachinesRequest& request) const;
+        virtual Model::ListVirtualMachinesOutcome ListVirtualMachines(const Model::ListVirtualMachinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVirtualMachines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVirtualMachinesRequestT = Model::ListVirtualMachinesRequest>
-        Model::ListVirtualMachinesOutcomeCallable ListVirtualMachinesCallable(const ListVirtualMachinesRequestT& request) const
+        Model::ListVirtualMachinesOutcomeCallable ListVirtualMachinesCallable(const ListVirtualMachinesRequestT& request = {}) const
         {
             return SubmitCallable(&BackupGatewayClient::ListVirtualMachines, request);
         }
@@ -477,7 +477,7 @@ namespace BackupGateway
          * An Async wrapper for ListVirtualMachines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVirtualMachinesRequestT = Model::ListVirtualMachinesRequest>
-        void ListVirtualMachinesAsync(const ListVirtualMachinesRequestT& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVirtualMachinesAsync(const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVirtualMachinesRequestT& request = {}) const
         {
             return SubmitAsync(&BackupGatewayClient::ListVirtualMachines, request, handler, context);
         }
@@ -755,7 +755,6 @@ namespace BackupGateway
       void init(const BackupGatewayClientConfiguration& clientConfiguration);
 
       BackupGatewayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<BackupGatewayEndpointProviderBase> m_endpointProvider;
   };
 

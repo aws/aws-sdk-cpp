@@ -36,21 +36,8 @@ AwsS3BucketDetails::AwsS3BucketDetails() :
 {
 }
 
-AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) : 
-    m_ownerIdHasBeenSet(false),
-    m_ownerNameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_bucketLifecycleConfigurationHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_bucketLoggingConfigurationHasBeenSet(false),
-    m_bucketWebsiteConfigurationHasBeenSet(false),
-    m_bucketNotificationConfigurationHasBeenSet(false),
-    m_bucketVersioningConfigurationHasBeenSet(false),
-    m_objectLockConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue)
+  : AwsS3BucketDetails()
 {
   *this = jsonValue;
 }

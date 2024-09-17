@@ -25,10 +25,8 @@ BatchGetSchemaError::BatchGetSchemaError() :
 {
 }
 
-BatchGetSchemaError::BatchGetSchemaError(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchGetSchemaError::BatchGetSchemaError(JsonView jsonValue)
+  : BatchGetSchemaError()
 {
   *this = jsonValue;
 }

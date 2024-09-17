@@ -24,9 +24,8 @@ DataLocationResource::DataLocationResource() :
 {
 }
 
-DataLocationResource::DataLocationResource(JsonView jsonValue) : 
-    m_catalogIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+DataLocationResource::DataLocationResource(JsonView jsonValue)
+  : DataLocationResource()
 {
   *this = jsonValue;
 }

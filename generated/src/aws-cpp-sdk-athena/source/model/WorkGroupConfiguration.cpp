@@ -39,24 +39,8 @@ WorkGroupConfiguration::WorkGroupConfiguration() :
 {
 }
 
-WorkGroupConfiguration::WorkGroupConfiguration(JsonView jsonValue) : 
-    m_resultConfigurationHasBeenSet(false),
-    m_enforceWorkGroupConfiguration(false),
-    m_enforceWorkGroupConfigurationHasBeenSet(false),
-    m_publishCloudWatchMetricsEnabled(false),
-    m_publishCloudWatchMetricsEnabledHasBeenSet(false),
-    m_bytesScannedCutoffPerQuery(0),
-    m_bytesScannedCutoffPerQueryHasBeenSet(false),
-    m_requesterPaysEnabled(false),
-    m_requesterPaysEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_additionalConfigurationHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_customerContentEncryptionConfigurationHasBeenSet(false),
-    m_enableMinimumEncryptionConfiguration(false),
-    m_enableMinimumEncryptionConfigurationHasBeenSet(false),
-    m_identityCenterConfigurationHasBeenSet(false),
-    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
+WorkGroupConfiguration::WorkGroupConfiguration(JsonView jsonValue)
+  : WorkGroupConfiguration()
 {
   *this = jsonValue;
 }

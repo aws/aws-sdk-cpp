@@ -31,16 +31,8 @@ EdgePackagingJobSummary::EdgePackagingJobSummary() :
 {
 }
 
-EdgePackagingJobSummary::EdgePackagingJobSummary(JsonView jsonValue) : 
-    m_edgePackagingJobArnHasBeenSet(false),
-    m_edgePackagingJobNameHasBeenSet(false),
-    m_edgePackagingJobStatus(EdgePackagingJobStatus::NOT_SET),
-    m_edgePackagingJobStatusHasBeenSet(false),
-    m_compilationJobNameHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+EdgePackagingJobSummary::EdgePackagingJobSummary(JsonView jsonValue)
+  : EdgePackagingJobSummary()
 {
   *this = jsonValue;
 }

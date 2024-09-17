@@ -25,10 +25,8 @@ AttributeValueUpdate::AttributeValueUpdate() :
 {
 }
 
-AttributeValueUpdate::AttributeValueUpdate(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_action(AttributeAction::NOT_SET),
-    m_actionHasBeenSet(false)
+AttributeValueUpdate::AttributeValueUpdate(JsonView jsonValue)
+  : AttributeValueUpdate()
 {
   *this = jsonValue;
 }

@@ -43,203 +43,79 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about a node specified as a branch.</p>  <p>A group of
      * signals that are defined in a hierarchical structure.</p> 
      */
     inline const Branch& GetBranch() const{ return m_branch; }
-
-    /**
-     * <p>Information about a node specified as a branch.</p>  <p>A group of
-     * signals that are defined in a hierarchical structure.</p> 
-     */
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
-
-    /**
-     * <p>Information about a node specified as a branch.</p>  <p>A group of
-     * signals that are defined in a hierarchical structure.</p> 
-     */
     inline void SetBranch(const Branch& value) { m_branchHasBeenSet = true; m_branch = value; }
-
-    /**
-     * <p>Information about a node specified as a branch.</p>  <p>A group of
-     * signals that are defined in a hierarchical structure.</p> 
-     */
     inline void SetBranch(Branch&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
-
-    /**
-     * <p>Information about a node specified as a branch.</p>  <p>A group of
-     * signals that are defined in a hierarchical structure.</p> 
-     */
     inline Node& WithBranch(const Branch& value) { SetBranch(value); return *this;}
-
-    /**
-     * <p>Information about a node specified as a branch.</p>  <p>A group of
-     * signals that are defined in a hierarchical structure.</p> 
-     */
     inline Node& WithBranch(Branch&& value) { SetBranch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Sensor& GetSensor() const{ return m_sensor; }
-
-    
     inline bool SensorHasBeenSet() const { return m_sensorHasBeenSet; }
-
-    
     inline void SetSensor(const Sensor& value) { m_sensorHasBeenSet = true; m_sensor = value; }
-
-    
     inline void SetSensor(Sensor&& value) { m_sensorHasBeenSet = true; m_sensor = std::move(value); }
-
-    
     inline Node& WithSensor(const Sensor& value) { SetSensor(value); return *this;}
-
-    
     inline Node& WithSensor(Sensor&& value) { SetSensor(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a node specified as an actuator.</p>  <p>An actuator
      * is a digital representation of a vehicle device.</p> 
      */
     inline const Actuator& GetActuator() const{ return m_actuator; }
-
-    /**
-     * <p>Information about a node specified as an actuator.</p>  <p>An actuator
-     * is a digital representation of a vehicle device.</p> 
-     */
     inline bool ActuatorHasBeenSet() const { return m_actuatorHasBeenSet; }
-
-    /**
-     * <p>Information about a node specified as an actuator.</p>  <p>An actuator
-     * is a digital representation of a vehicle device.</p> 
-     */
     inline void SetActuator(const Actuator& value) { m_actuatorHasBeenSet = true; m_actuator = value; }
-
-    /**
-     * <p>Information about a node specified as an actuator.</p>  <p>An actuator
-     * is a digital representation of a vehicle device.</p> 
-     */
     inline void SetActuator(Actuator&& value) { m_actuatorHasBeenSet = true; m_actuator = std::move(value); }
-
-    /**
-     * <p>Information about a node specified as an actuator.</p>  <p>An actuator
-     * is a digital representation of a vehicle device.</p> 
-     */
     inline Node& WithActuator(const Actuator& value) { SetActuator(value); return *this;}
-
-    /**
-     * <p>Information about a node specified as an actuator.</p>  <p>An actuator
-     * is a digital representation of a vehicle device.</p> 
-     */
     inline Node& WithActuator(Actuator&& value) { SetActuator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a node specified as an attribute.</p>  <p>An
      * attribute represents static information about a vehicle.</p> 
      */
     inline const Attribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>Information about a node specified as an attribute.</p>  <p>An
-     * attribute represents static information about a vehicle.</p> 
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>Information about a node specified as an attribute.</p>  <p>An
-     * attribute represents static information about a vehicle.</p> 
-     */
     inline void SetAttribute(const Attribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>Information about a node specified as an attribute.</p>  <p>An
-     * attribute represents static information about a vehicle.</p> 
-     */
     inline void SetAttribute(Attribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>Information about a node specified as an attribute.</p>  <p>An
-     * attribute represents static information about a vehicle.</p> 
-     */
     inline Node& WithAttribute(const Attribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>Information about a node specified as an attribute.</p>  <p>An
-     * attribute represents static information about a vehicle.</p> 
-     */
     inline Node& WithAttribute(Attribute&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents a complex or higher-order data structure.</p>
      */
     inline const CustomStruct& GetStruct() const{ return m_struct; }
-
-    /**
-     * <p>Represents a complex or higher-order data structure.</p>
-     */
     inline bool StructHasBeenSet() const { return m_structHasBeenSet; }
-
-    /**
-     * <p>Represents a complex or higher-order data structure.</p>
-     */
     inline void SetStruct(const CustomStruct& value) { m_structHasBeenSet = true; m_struct = value; }
-
-    /**
-     * <p>Represents a complex or higher-order data structure.</p>
-     */
     inline void SetStruct(CustomStruct&& value) { m_structHasBeenSet = true; m_struct = std::move(value); }
-
-    /**
-     * <p>Represents a complex or higher-order data structure.</p>
-     */
     inline Node& WithStruct(const CustomStruct& value) { SetStruct(value); return *this;}
-
-    /**
-     * <p>Represents a complex or higher-order data structure.</p>
-     */
     inline Node& WithStruct(CustomStruct&& value) { SetStruct(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents a member of the complex data structure. The <code>datatype</code>
      * of the property can be either primitive or another <code>struct</code>.</p>
      */
     inline const CustomProperty& GetProperty() const{ return m_property; }
-
-    /**
-     * <p>Represents a member of the complex data structure. The <code>datatype</code>
-     * of the property can be either primitive or another <code>struct</code>.</p>
-     */
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
-
-    /**
-     * <p>Represents a member of the complex data structure. The <code>datatype</code>
-     * of the property can be either primitive or another <code>struct</code>.</p>
-     */
     inline void SetProperty(const CustomProperty& value) { m_propertyHasBeenSet = true; m_property = value; }
-
-    /**
-     * <p>Represents a member of the complex data structure. The <code>datatype</code>
-     * of the property can be either primitive or another <code>struct</code>.</p>
-     */
     inline void SetProperty(CustomProperty&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
-
-    /**
-     * <p>Represents a member of the complex data structure. The <code>datatype</code>
-     * of the property can be either primitive or another <code>struct</code>.</p>
-     */
     inline Node& WithProperty(const CustomProperty& value) { SetProperty(value); return *this;}
-
-    /**
-     * <p>Represents a member of the complex data structure. The <code>datatype</code>
-     * of the property can be either primitive or another <code>struct</code>.</p>
-     */
     inline Node& WithProperty(CustomProperty&& value) { SetProperty(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Branch m_branch;

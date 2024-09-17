@@ -44,29 +44,8 @@ SpaceData::SpaceData() :
 {
 }
 
-SpaceData::SpaceData(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_configurationStatus(ConfigurationStatus::NOT_SET),
-    m_configurationStatusHasBeenSet(false),
-    m_contentSize(0),
-    m_contentSizeHasBeenSet(false),
-    m_createDateTimeHasBeenSet(false),
-    m_deleteDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_randomDomainHasBeenSet(false),
-    m_spaceIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_storageLimit(0),
-    m_storageLimitHasBeenSet(false),
-    m_tier(TierLevel::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_userCount(0),
-    m_userCountHasBeenSet(false),
-    m_userKMSKeyHasBeenSet(false),
-    m_vanityDomainHasBeenSet(false),
-    m_vanityDomainStatus(VanityDomainStatus::NOT_SET),
-    m_vanityDomainStatusHasBeenSet(false)
+SpaceData::SpaceData(JsonView jsonValue)
+  : SpaceData()
 {
   *this = jsonValue;
 }

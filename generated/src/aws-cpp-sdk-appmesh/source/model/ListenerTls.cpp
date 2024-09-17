@@ -26,11 +26,8 @@ ListenerTls::ListenerTls() :
 {
 }
 
-ListenerTls::ListenerTls(JsonView jsonValue) : 
-    m_certificateHasBeenSet(false),
-    m_mode(ListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_validationHasBeenSet(false)
+ListenerTls::ListenerTls(JsonView jsonValue)
+  : ListenerTls()
 {
   *this = jsonValue;
 }

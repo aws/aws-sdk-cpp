@@ -29,14 +29,8 @@ LandingZoneDetail::LandingZoneDetail() :
 {
 }
 
-LandingZoneDetail::LandingZoneDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_driftStatusHasBeenSet(false),
-    m_latestAvailableVersionHasBeenSet(false),
-    m_manifestHasBeenSet(false),
-    m_status(LandingZoneStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_versionHasBeenSet(false)
+LandingZoneDetail::LandingZoneDetail(JsonView jsonValue)
+  : LandingZoneDetail()
 {
   *this = jsonValue;
 }

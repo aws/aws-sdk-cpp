@@ -35,141 +35,56 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline CreateRequestValidatorRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline CreateRequestValidatorRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline CreateRequestValidatorRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the to-be-created RequestValidator.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the to-be-created RequestValidator.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the to-be-created RequestValidator.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the to-be-created RequestValidator.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the to-be-created RequestValidator.</p>
-     */
     inline CreateRequestValidatorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the to-be-created RequestValidator.</p>
-     */
     inline CreateRequestValidatorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the to-be-created RequestValidator.</p>
-     */
     inline CreateRequestValidatorRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean flag to indicate whether to validate request body according to the
      * configured model schema for the method (<code>true</code>) or not
      * (<code>false</code>).</p>
      */
     inline bool GetValidateRequestBody() const{ return m_validateRequestBody; }
-
-    /**
-     * <p>A Boolean flag to indicate whether to validate request body according to the
-     * configured model schema for the method (<code>true</code>) or not
-     * (<code>false</code>).</p>
-     */
     inline bool ValidateRequestBodyHasBeenSet() const { return m_validateRequestBodyHasBeenSet; }
-
-    /**
-     * <p>A Boolean flag to indicate whether to validate request body according to the
-     * configured model schema for the method (<code>true</code>) or not
-     * (<code>false</code>).</p>
-     */
     inline void SetValidateRequestBody(bool value) { m_validateRequestBodyHasBeenSet = true; m_validateRequestBody = value; }
-
-    /**
-     * <p>A Boolean flag to indicate whether to validate request body according to the
-     * configured model schema for the method (<code>true</code>) or not
-     * (<code>false</code>).</p>
-     */
     inline CreateRequestValidatorRequest& WithValidateRequestBody(bool value) { SetValidateRequestBody(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean flag to indicate whether to validate request parameters,
      * <code>true</code>, or not <code>false</code>.</p>
      */
     inline bool GetValidateRequestParameters() const{ return m_validateRequestParameters; }
-
-    /**
-     * <p>A Boolean flag to indicate whether to validate request parameters,
-     * <code>true</code>, or not <code>false</code>.</p>
-     */
     inline bool ValidateRequestParametersHasBeenSet() const { return m_validateRequestParametersHasBeenSet; }
-
-    /**
-     * <p>A Boolean flag to indicate whether to validate request parameters,
-     * <code>true</code>, or not <code>false</code>.</p>
-     */
     inline void SetValidateRequestParameters(bool value) { m_validateRequestParametersHasBeenSet = true; m_validateRequestParameters = value; }
-
-    /**
-     * <p>A Boolean flag to indicate whether to validate request parameters,
-     * <code>true</code>, or not <code>false</code>.</p>
-     */
     inline CreateRequestValidatorRequest& WithValidateRequestParameters(bool value) { SetValidateRequestParameters(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

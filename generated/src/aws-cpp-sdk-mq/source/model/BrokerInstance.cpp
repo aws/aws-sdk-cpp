@@ -25,10 +25,8 @@ BrokerInstance::BrokerInstance() :
 {
 }
 
-BrokerInstance::BrokerInstance(JsonView jsonValue) : 
-    m_consoleURLHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+BrokerInstance::BrokerInstance(JsonView jsonValue)
+  : BrokerInstance()
 {
   *this = jsonValue;
 }

@@ -38,36 +38,17 @@ namespace Model
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Settings that determine when a clip begins and how long it lasts.</p>
      */
     inline const TimeSpan& GetTimeSpan() const{ return m_timeSpan; }
-
-    /**
-     * <p>Settings that determine when a clip begins and how long it lasts.</p>
-     */
     inline bool TimeSpanHasBeenSet() const { return m_timeSpanHasBeenSet; }
-
-    /**
-     * <p>Settings that determine when a clip begins and how long it lasts.</p>
-     */
     inline void SetTimeSpan(const TimeSpan& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
-
-    /**
-     * <p>Settings that determine when a clip begins and how long it lasts.</p>
-     */
     inline void SetTimeSpan(TimeSpan&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = std::move(value); }
-
-    /**
-     * <p>Settings that determine when a clip begins and how long it lasts.</p>
-     */
     inline Clip& WithTimeSpan(const TimeSpan& value) { SetTimeSpan(value); return *this;}
-
-    /**
-     * <p>Settings that determine when a clip begins and how long it lasts.</p>
-     */
     inline Clip& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TimeSpan m_timeSpan;

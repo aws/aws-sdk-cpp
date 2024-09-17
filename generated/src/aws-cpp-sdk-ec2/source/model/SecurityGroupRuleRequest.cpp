@@ -34,17 +34,8 @@ SecurityGroupRuleRequest::SecurityGroupRuleRequest() :
 {
 }
 
-SecurityGroupRuleRequest::SecurityGroupRuleRequest(const XmlNode& xmlNode) : 
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_cidrIpv4HasBeenSet(false),
-    m_cidrIpv6HasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_referencedGroupIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+SecurityGroupRuleRequest::SecurityGroupRuleRequest(const XmlNode& xmlNode)
+  : SecurityGroupRuleRequest()
 {
   *this = xmlNode;
 }

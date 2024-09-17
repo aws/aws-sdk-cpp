@@ -30,15 +30,8 @@ UriPathRouteInput::UriPathRouteInput() :
 {
 }
 
-UriPathRouteInput::UriPathRouteInput(JsonView jsonValue) : 
-    m_activationState(RouteActivationState::NOT_SET),
-    m_activationStateHasBeenSet(false),
-    m_appendSourcePath(false),
-    m_appendSourcePathHasBeenSet(false),
-    m_includeChildPaths(false),
-    m_includeChildPathsHasBeenSet(false),
-    m_methodsHasBeenSet(false),
-    m_sourcePathHasBeenSet(false)
+UriPathRouteInput::UriPathRouteInput(JsonView jsonValue)
+  : UriPathRouteInput()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ GetProbeResult::GetProbeResult() :
 {
 }
 
-GetProbeResult::GetProbeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_destinationPort(0),
-    m_protocol(Protocol::NOT_SET),
-    m_packetSize(0),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_state(ProbeState::NOT_SET)
+GetProbeResult::GetProbeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProbeResult()
 {
   *this = result;
 }

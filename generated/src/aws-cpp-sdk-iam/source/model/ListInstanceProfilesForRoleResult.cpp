@@ -22,8 +22,8 @@ ListInstanceProfilesForRoleResult::ListInstanceProfilesForRoleResult() :
 {
 }
 
-ListInstanceProfilesForRoleResult::ListInstanceProfilesForRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListInstanceProfilesForRoleResult::ListInstanceProfilesForRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListInstanceProfilesForRoleResult()
 {
   *this = result;
 }

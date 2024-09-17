@@ -22,13 +22,14 @@ namespace Model
 
 ECPUPerSecond::ECPUPerSecond() : 
     m_maximum(0),
-    m_maximumHasBeenSet(false)
+    m_maximumHasBeenSet(false),
+    m_minimum(0),
+    m_minimumHasBeenSet(false)
 {
 }
 
-ECPUPerSecond::ECPUPerSecond(const XmlNode& xmlNode) : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false)
+ECPUPerSecond::ECPUPerSecond(const XmlNode& xmlNode)
+  : ECPUPerSecond()
 {
   *this = xmlNode;
 }
@@ -45,6 +46,12 @@ ECPUPerSecond& ECPUPerSecond::operator =(const XmlNode& xmlNode)
       m_maximum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
     }
+    XmlNode minimumNode = resultNode.FirstChild("Minimum");
+    if(!minimumNode.IsNull())
+    {
+      m_minimum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
+      m_minimumHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +64,11 @@ void ECPUPerSecond::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Maximum=" << m_maximum << "&";
   }
 
+  if(m_minimumHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Minimum=" << m_minimum << "&";
+  }
+
 }
 
 void ECPUPerSecond::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -64,6 +76,10 @@ void ECPUPerSecond::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_maximumHasBeenSet)
   {
       oStream << location << ".Maximum=" << m_maximum << "&";
+  }
+  if(m_minimumHasBeenSet)
+  {
+      oStream << location << ".Minimum=" << m_minimum << "&";
   }
 }
 

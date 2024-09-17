@@ -27,12 +27,8 @@ InventoryRetrievalJobDescription::InventoryRetrievalJobDescription() :
 {
 }
 
-InventoryRetrievalJobDescription::InventoryRetrievalJobDescription(JsonView jsonValue) : 
-    m_formatHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
+InventoryRetrievalJobDescription::InventoryRetrievalJobDescription(JsonView jsonValue)
+  : InventoryRetrievalJobDescription()
 {
   *this = jsonValue;
 }

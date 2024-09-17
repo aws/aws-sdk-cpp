@@ -32,46 +32,19 @@ namespace Model
     AWS_BRAKET_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the device to retrieve.</p>
      */
     inline const Aws::String& GetDeviceArn() const{ return m_deviceArn; }
-
-    /**
-     * <p>The ARN of the device to retrieve.</p>
-     */
     inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the device to retrieve.</p>
-     */
     inline void SetDeviceArn(const Aws::String& value) { m_deviceArnHasBeenSet = true; m_deviceArn = value; }
-
-    /**
-     * <p>The ARN of the device to retrieve.</p>
-     */
     inline void SetDeviceArn(Aws::String&& value) { m_deviceArnHasBeenSet = true; m_deviceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the device to retrieve.</p>
-     */
     inline void SetDeviceArn(const char* value) { m_deviceArnHasBeenSet = true; m_deviceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the device to retrieve.</p>
-     */
     inline GetDeviceRequest& WithDeviceArn(const Aws::String& value) { SetDeviceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the device to retrieve.</p>
-     */
     inline GetDeviceRequest& WithDeviceArn(Aws::String&& value) { SetDeviceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the device to retrieve.</p>
-     */
     inline GetDeviceRequest& WithDeviceArn(const char* value) { SetDeviceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceArn;

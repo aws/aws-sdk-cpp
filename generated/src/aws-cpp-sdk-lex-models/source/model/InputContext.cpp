@@ -23,8 +23,8 @@ InputContext::InputContext() :
 {
 }
 
-InputContext::InputContext(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+InputContext::InputContext(JsonView jsonValue)
+  : InputContext()
 {
   *this = jsonValue;
 }

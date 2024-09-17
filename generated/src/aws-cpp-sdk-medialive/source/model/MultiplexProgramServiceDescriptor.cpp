@@ -24,9 +24,8 @@ MultiplexProgramServiceDescriptor::MultiplexProgramServiceDescriptor() :
 {
 }
 
-MultiplexProgramServiceDescriptor::MultiplexProgramServiceDescriptor(JsonView jsonValue) : 
-    m_providerNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+MultiplexProgramServiceDescriptor::MultiplexProgramServiceDescriptor(JsonView jsonValue)
+  : MultiplexProgramServiceDescriptor()
 {
   *this = jsonValue;
 }

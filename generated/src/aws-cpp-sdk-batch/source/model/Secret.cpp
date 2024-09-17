@@ -24,9 +24,8 @@ Secret::Secret() :
 {
 }
 
-Secret::Secret(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueFromHasBeenSet(false)
+Secret::Secret(JsonView jsonValue)
+  : Secret()
 {
   *this = jsonValue;
 }

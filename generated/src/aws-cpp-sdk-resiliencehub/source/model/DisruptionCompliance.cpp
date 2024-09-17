@@ -37,22 +37,8 @@ DisruptionCompliance::DisruptionCompliance() :
 {
 }
 
-DisruptionCompliance::DisruptionCompliance(JsonView jsonValue) : 
-    m_achievableRpoInSecs(0),
-    m_achievableRpoInSecsHasBeenSet(false),
-    m_achievableRtoInSecs(0),
-    m_achievableRtoInSecsHasBeenSet(false),
-    m_complianceStatus(ComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_currentRpoInSecs(0),
-    m_currentRpoInSecsHasBeenSet(false),
-    m_currentRtoInSecs(0),
-    m_currentRtoInSecsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_rpoDescriptionHasBeenSet(false),
-    m_rpoReferenceIdHasBeenSet(false),
-    m_rtoDescriptionHasBeenSet(false),
-    m_rtoReferenceIdHasBeenSet(false)
+DisruptionCompliance::DisruptionCompliance(JsonView jsonValue)
+  : DisruptionCompliance()
 {
   *this = jsonValue;
 }

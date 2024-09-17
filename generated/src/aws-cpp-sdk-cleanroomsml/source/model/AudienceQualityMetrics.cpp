@@ -19,12 +19,14 @@ namespace Model
 {
 
 AudienceQualityMetrics::AudienceQualityMetrics() : 
-    m_relevanceMetricsHasBeenSet(false)
+    m_relevanceMetricsHasBeenSet(false),
+    m_recallMetric(0.0),
+    m_recallMetricHasBeenSet(false)
 {
 }
 
-AudienceQualityMetrics::AudienceQualityMetrics(JsonView jsonValue) : 
-    m_relevanceMetricsHasBeenSet(false)
+AudienceQualityMetrics::AudienceQualityMetrics(JsonView jsonValue)
+  : AudienceQualityMetrics()
 {
   *this = jsonValue;
 }
@@ -39,6 +41,13 @@ AudienceQualityMetrics& AudienceQualityMetrics::operator =(JsonView jsonValue)
       m_relevanceMetrics.push_back(relevanceMetricsJsonList[relevanceMetricsIndex].AsObject());
     }
     m_relevanceMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recallMetric"))
+  {
+    m_recallMetric = jsonValue.GetDouble("recallMetric");
+
+    m_recallMetricHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +65,12 @@ JsonValue AudienceQualityMetrics::Jsonize() const
      relevanceMetricsJsonList[relevanceMetricsIndex].AsObject(m_relevanceMetrics[relevanceMetricsIndex].Jsonize());
    }
    payload.WithArray("relevanceMetrics", std::move(relevanceMetricsJsonList));
+
+  }
+
+  if(m_recallMetricHasBeenSet)
+  {
+   payload.WithDouble("recallMetric", m_recallMetric);
 
   }
 

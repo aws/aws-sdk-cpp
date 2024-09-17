@@ -29,14 +29,8 @@ CapacitySpecificationSummary::CapacitySpecificationSummary() :
 {
 }
 
-CapacitySpecificationSummary::CapacitySpecificationSummary(JsonView jsonValue) : 
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_throughputModeHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false),
-    m_lastUpdateToPayPerRequestTimestampHasBeenSet(false)
+CapacitySpecificationSummary::CapacitySpecificationSummary(JsonView jsonValue)
+  : CapacitySpecificationSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ User::User() :
 {
 }
 
-User::User(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(UserType::NOT_SET),
-    m_typeHasBeenSet(false)
+User::User(JsonView jsonValue)
+  : User()
 {
   *this = jsonValue;
 }

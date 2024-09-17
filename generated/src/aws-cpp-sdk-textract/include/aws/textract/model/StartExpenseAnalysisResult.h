@@ -32,77 +32,31 @@ namespace Model
     AWS_TEXTRACT_API StartExpenseAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique identifier for the text detection job. The <code>JobId</code> is
      * returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is
      * only valid for 7 days.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>A unique identifier for the text detection job. The <code>JobId</code> is
-     * returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is
-     * only valid for 7 days.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-
-    /**
-     * <p>A unique identifier for the text detection job. The <code>JobId</code> is
-     * returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is
-     * only valid for 7 days.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the text detection job. The <code>JobId</code> is
-     * returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is
-     * only valid for 7 days.</p>
-     */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the text detection job. The <code>JobId</code> is
-     * returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is
-     * only valid for 7 days.</p>
-     */
     inline StartExpenseAnalysisResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the text detection job. The <code>JobId</code> is
-     * returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is
-     * only valid for 7 days.</p>
-     */
     inline StartExpenseAnalysisResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the text detection job. The <code>JobId</code> is
-     * returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is
-     * only valid for 7 days.</p>
-     */
     inline StartExpenseAnalysisResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartExpenseAnalysisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartExpenseAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartExpenseAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

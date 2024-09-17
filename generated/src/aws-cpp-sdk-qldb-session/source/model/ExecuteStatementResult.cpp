@@ -25,10 +25,8 @@ ExecuteStatementResult::ExecuteStatementResult() :
 {
 }
 
-ExecuteStatementResult::ExecuteStatementResult(JsonView jsonValue) : 
-    m_firstPageHasBeenSet(false),
-    m_timingInformationHasBeenSet(false),
-    m_consumedIOsHasBeenSet(false)
+ExecuteStatementResult::ExecuteStatementResult(JsonView jsonValue)
+  : ExecuteStatementResult()
 {
   *this = jsonValue;
 }

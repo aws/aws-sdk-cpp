@@ -24,9 +24,8 @@ RemoteAccessConfig::RemoteAccessConfig() :
 {
 }
 
-RemoteAccessConfig::RemoteAccessConfig(JsonView jsonValue) : 
-    m_ec2SshKeyHasBeenSet(false),
-    m_sourceSecurityGroupsHasBeenSet(false)
+RemoteAccessConfig::RemoteAccessConfig(JsonView jsonValue)
+  : RemoteAccessConfig()
 {
   *this = jsonValue;
 }

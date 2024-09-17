@@ -22,8 +22,8 @@ GetPullRequestOverrideStateResult::GetPullRequestOverrideStateResult() :
 {
 }
 
-GetPullRequestOverrideStateResult::GetPullRequestOverrideStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_overridden(false)
+GetPullRequestOverrideStateResult::GetPullRequestOverrideStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPullRequestOverrideStateResult()
 {
   *this = result;
 }

@@ -23,9 +23,8 @@ CreateTemplateResult::CreateTemplateResult() :
 {
 }
 
-CreateTemplateResult::CreateTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+CreateTemplateResult::CreateTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTemplateResult()
 {
   *this = result;
 }

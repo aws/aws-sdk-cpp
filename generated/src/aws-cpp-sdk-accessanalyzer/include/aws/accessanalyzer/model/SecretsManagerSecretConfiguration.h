@@ -52,95 +52,34 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-     */
     inline SecretsManagerSecretConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-     */
     inline SecretsManagerSecretConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-     */
     inline SecretsManagerSecretConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The proposed resource policy defining who can access or manage the
      * secret.</p>
      */
     inline const Aws::String& GetSecretPolicy() const{ return m_secretPolicy; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the
-     * secret.</p>
-     */
     inline bool SecretPolicyHasBeenSet() const { return m_secretPolicyHasBeenSet; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the
-     * secret.</p>
-     */
     inline void SetSecretPolicy(const Aws::String& value) { m_secretPolicyHasBeenSet = true; m_secretPolicy = value; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the
-     * secret.</p>
-     */
     inline void SetSecretPolicy(Aws::String&& value) { m_secretPolicyHasBeenSet = true; m_secretPolicy = std::move(value); }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the
-     * secret.</p>
-     */
     inline void SetSecretPolicy(const char* value) { m_secretPolicyHasBeenSet = true; m_secretPolicy.assign(value); }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the
-     * secret.</p>
-     */
     inline SecretsManagerSecretConfiguration& WithSecretPolicy(const Aws::String& value) { SetSecretPolicy(value); return *this;}
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the
-     * secret.</p>
-     */
     inline SecretsManagerSecretConfiguration& WithSecretPolicy(Aws::String&& value) { SetSecretPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the
-     * secret.</p>
-     */
     inline SecretsManagerSecretConfiguration& WithSecretPolicy(const char* value) { SetSecretPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

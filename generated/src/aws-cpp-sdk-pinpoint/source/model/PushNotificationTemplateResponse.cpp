@@ -38,23 +38,8 @@ PushNotificationTemplateResponse::PushNotificationTemplateResponse() :
 {
 }
 
-PushNotificationTemplateResponse::PushNotificationTemplateResponse(JsonView jsonValue) : 
-    m_aDMHasBeenSet(false),
-    m_aPNSHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_baiduHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_defaultHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_gCMHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_versionHasBeenSet(false)
+PushNotificationTemplateResponse::PushNotificationTemplateResponse(JsonView jsonValue)
+  : PushNotificationTemplateResponse()
 {
   *this = jsonValue;
 }

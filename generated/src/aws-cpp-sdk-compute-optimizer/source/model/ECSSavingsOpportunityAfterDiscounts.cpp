@@ -25,10 +25,8 @@ ECSSavingsOpportunityAfterDiscounts::ECSSavingsOpportunityAfterDiscounts() :
 {
 }
 
-ECSSavingsOpportunityAfterDiscounts::ECSSavingsOpportunityAfterDiscounts(JsonView jsonValue) : 
-    m_savingsOpportunityPercentage(0.0),
-    m_savingsOpportunityPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
+ECSSavingsOpportunityAfterDiscounts::ECSSavingsOpportunityAfterDiscounts(JsonView jsonValue)
+  : ECSSavingsOpportunityAfterDiscounts()
 {
   *this = jsonValue;
 }

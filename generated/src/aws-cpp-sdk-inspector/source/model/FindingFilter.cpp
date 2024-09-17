@@ -30,15 +30,8 @@ FindingFilter::FindingFilter() :
 {
 }
 
-FindingFilter::FindingFilter(JsonView jsonValue) : 
-    m_agentIdsHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_ruleNamesHasBeenSet(false),
-    m_severitiesHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_userAttributesHasBeenSet(false),
-    m_creationTimeRangeHasBeenSet(false)
+FindingFilter::FindingFilter(JsonView jsonValue)
+  : FindingFilter()
 {
   *this = jsonValue;
 }

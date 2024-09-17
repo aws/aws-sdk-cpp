@@ -34,113 +34,44 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API DescribePhoneNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of PhoneNumberInformation objects that contain the details for the
      * requested phone numbers.</p>
      */
     inline const Aws::Vector<PhoneNumberInformation>& GetPhoneNumbers() const{ return m_phoneNumbers; }
-
-    /**
-     * <p>An array of PhoneNumberInformation objects that contain the details for the
-     * requested phone numbers.</p>
-     */
     inline void SetPhoneNumbers(const Aws::Vector<PhoneNumberInformation>& value) { m_phoneNumbers = value; }
-
-    /**
-     * <p>An array of PhoneNumberInformation objects that contain the details for the
-     * requested phone numbers.</p>
-     */
     inline void SetPhoneNumbers(Aws::Vector<PhoneNumberInformation>&& value) { m_phoneNumbers = std::move(value); }
-
-    /**
-     * <p>An array of PhoneNumberInformation objects that contain the details for the
-     * requested phone numbers.</p>
-     */
     inline DescribePhoneNumbersResult& WithPhoneNumbers(const Aws::Vector<PhoneNumberInformation>& value) { SetPhoneNumbers(value); return *this;}
-
-    /**
-     * <p>An array of PhoneNumberInformation objects that contain the details for the
-     * requested phone numbers.</p>
-     */
     inline DescribePhoneNumbersResult& WithPhoneNumbers(Aws::Vector<PhoneNumberInformation>&& value) { SetPhoneNumbers(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of PhoneNumberInformation objects that contain the details for the
-     * requested phone numbers.</p>
-     */
     inline DescribePhoneNumbersResult& AddPhoneNumbers(const PhoneNumberInformation& value) { m_phoneNumbers.push_back(value); return *this; }
-
-    /**
-     * <p>An array of PhoneNumberInformation objects that contain the details for the
-     * requested phone numbers.</p>
-     */
     inline DescribePhoneNumbersResult& AddPhoneNumbers(PhoneNumberInformation&& value) { m_phoneNumbers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to be used for the next set of paginated results. If this field is
      * empty then there are no more results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. If this field is
-     * empty then there are no more results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. If this field is
-     * empty then there are no more results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. If this field is
-     * empty then there are no more results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. If this field is
-     * empty then there are no more results.</p>
-     */
     inline DescribePhoneNumbersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to be used for the next set of paginated results. If this field is
-     * empty then there are no more results.</p>
-     */
     inline DescribePhoneNumbersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to be used for the next set of paginated results. If this field is
-     * empty then there are no more results.</p>
-     */
     inline DescribePhoneNumbersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribePhoneNumbersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribePhoneNumbersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribePhoneNumbersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PhoneNumberInformation> m_phoneNumbers;

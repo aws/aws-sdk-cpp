@@ -30,15 +30,8 @@ MediaConcatenationPipeline::MediaConcatenationPipeline() :
 {
 }
 
-MediaConcatenationPipeline::MediaConcatenationPipeline(JsonView jsonValue) : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_sinksHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+MediaConcatenationPipeline::MediaConcatenationPipeline(JsonView jsonValue)
+  : MediaConcatenationPipeline()
 {
   *this = jsonValue;
 }

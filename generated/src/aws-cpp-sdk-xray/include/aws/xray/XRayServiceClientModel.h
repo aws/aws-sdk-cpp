@@ -48,6 +48,15 @@
 #include <aws/xray/model/UntagResourceResult.h>
 #include <aws/xray/model/UpdateGroupResult.h>
 #include <aws/xray/model/UpdateSamplingRuleResult.h>
+#include <aws/xray/model/GetGroupRequest.h>
+#include <aws/xray/model/ListResourcePoliciesRequest.h>
+#include <aws/xray/model/DeleteSamplingRuleRequest.h>
+#include <aws/xray/model/GetSamplingStatisticSummariesRequest.h>
+#include <aws/xray/model/GetEncryptionConfigRequest.h>
+#include <aws/xray/model/DeleteGroupRequest.h>
+#include <aws/xray/model/GetSamplingRulesRequest.h>
+#include <aws/xray/model/GetGroupsRequest.h>
+#include <aws/xray/model/UpdateGroupRequest.h>
 /* End of service model headers required in XRayClient header */
 
 namespace Aws
@@ -81,7 +90,7 @@ namespace Aws
 
   namespace XRay
   {
-    using XRayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using XRayClientConfiguration = Aws::Client::GenericClientConfiguration;
     using XRayEndpointProviderBase = Aws::XRay::Endpoint::XRayEndpointProviderBase;
     using XRayEndpointProvider = Aws::XRay::Endpoint::XRayEndpointProvider;
 

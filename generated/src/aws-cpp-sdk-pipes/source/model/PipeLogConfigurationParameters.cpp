@@ -19,33 +19,28 @@ namespace Model
 {
 
 PipeLogConfigurationParameters::PipeLogConfigurationParameters() : 
-    m_cloudwatchLogsLogDestinationHasBeenSet(false),
+    m_s3LogDestinationHasBeenSet(false),
     m_firehoseLogDestinationHasBeenSet(false),
-    m_includeExecutionDataHasBeenSet(false),
+    m_cloudwatchLogsLogDestinationHasBeenSet(false),
     m_level(LogLevel::NOT_SET),
     m_levelHasBeenSet(false),
-    m_s3LogDestinationHasBeenSet(false)
+    m_includeExecutionDataHasBeenSet(false)
 {
 }
 
-PipeLogConfigurationParameters::PipeLogConfigurationParameters(JsonView jsonValue) : 
-    m_cloudwatchLogsLogDestinationHasBeenSet(false),
-    m_firehoseLogDestinationHasBeenSet(false),
-    m_includeExecutionDataHasBeenSet(false),
-    m_level(LogLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_s3LogDestinationHasBeenSet(false)
+PipeLogConfigurationParameters::PipeLogConfigurationParameters(JsonView jsonValue)
+  : PipeLogConfigurationParameters()
 {
   *this = jsonValue;
 }
 
 PipeLogConfigurationParameters& PipeLogConfigurationParameters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CloudwatchLogsLogDestination"))
+  if(jsonValue.ValueExists("S3LogDestination"))
   {
-    m_cloudwatchLogsLogDestination = jsonValue.GetObject("CloudwatchLogsLogDestination");
+    m_s3LogDestination = jsonValue.GetObject("S3LogDestination");
 
-    m_cloudwatchLogsLogDestinationHasBeenSet = true;
+    m_s3LogDestinationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FirehoseLogDestination"))
@@ -53,6 +48,20 @@ PipeLogConfigurationParameters& PipeLogConfigurationParameters::operator =(JsonV
     m_firehoseLogDestination = jsonValue.GetObject("FirehoseLogDestination");
 
     m_firehoseLogDestinationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudwatchLogsLogDestination"))
+  {
+    m_cloudwatchLogsLogDestination = jsonValue.GetObject("CloudwatchLogsLogDestination");
+
+    m_cloudwatchLogsLogDestinationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Level"))
+  {
+    m_level = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("Level"));
+
+    m_levelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IncludeExecutionData"))
@@ -65,20 +74,6 @@ PipeLogConfigurationParameters& PipeLogConfigurationParameters::operator =(JsonV
     m_includeExecutionDataHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Level"))
-  {
-    m_level = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("Level"));
-
-    m_levelHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("S3LogDestination"))
-  {
-    m_s3LogDestination = jsonValue.GetObject("S3LogDestination");
-
-    m_s3LogDestinationHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -86,9 +81,9 @@ JsonValue PipeLogConfigurationParameters::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_cloudwatchLogsLogDestinationHasBeenSet)
+  if(m_s3LogDestinationHasBeenSet)
   {
-   payload.WithObject("CloudwatchLogsLogDestination", m_cloudwatchLogsLogDestination.Jsonize());
+   payload.WithObject("S3LogDestination", m_s3LogDestination.Jsonize());
 
   }
 
@@ -96,6 +91,17 @@ JsonValue PipeLogConfigurationParameters::Jsonize() const
   {
    payload.WithObject("FirehoseLogDestination", m_firehoseLogDestination.Jsonize());
 
+  }
+
+  if(m_cloudwatchLogsLogDestinationHasBeenSet)
+  {
+   payload.WithObject("CloudwatchLogsLogDestination", m_cloudwatchLogsLogDestination.Jsonize());
+
+  }
+
+  if(m_levelHasBeenSet)
+  {
+   payload.WithString("Level", LogLevelMapper::GetNameForLogLevel(m_level));
   }
 
   if(m_includeExecutionDataHasBeenSet)
@@ -106,17 +112,6 @@ JsonValue PipeLogConfigurationParameters::Jsonize() const
      includeExecutionDataJsonList[includeExecutionDataIndex].AsString(IncludeExecutionDataOptionMapper::GetNameForIncludeExecutionDataOption(m_includeExecutionData[includeExecutionDataIndex]));
    }
    payload.WithArray("IncludeExecutionData", std::move(includeExecutionDataJsonList));
-
-  }
-
-  if(m_levelHasBeenSet)
-  {
-   payload.WithString("Level", LogLevelMapper::GetNameForLogLevel(m_level));
-  }
-
-  if(m_s3LogDestinationHasBeenSet)
-  {
-   payload.WithObject("S3LogDestination", m_s3LogDestination.Jsonize());
 
   }
 

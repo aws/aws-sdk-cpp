@@ -40,24 +40,15 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const NetworkArtifactMeta& GetNsd() const{ return m_nsd; }
-
-    
     inline bool NsdHasBeenSet() const { return m_nsdHasBeenSet; }
-
-    
     inline void SetNsd(const NetworkArtifactMeta& value) { m_nsdHasBeenSet = true; m_nsd = value; }
-
-    
     inline void SetNsd(NetworkArtifactMeta&& value) { m_nsdHasBeenSet = true; m_nsd = std::move(value); }
-
-    
     inline ValidateSolNetworkPackageContentMetadata& WithNsd(const NetworkArtifactMeta& value) { SetNsd(value); return *this;}
-
-    
     inline ValidateSolNetworkPackageContentMetadata& WithNsd(NetworkArtifactMeta&& value) { SetNsd(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NetworkArtifactMeta m_nsd;

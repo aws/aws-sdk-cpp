@@ -24,9 +24,8 @@ DateReference::DateReference() :
 {
 }
 
-DateReference::DateReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+DateReference::DateReference(JsonView jsonValue)
+  : DateReference()
 {
   *this = jsonValue;
 }

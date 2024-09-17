@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables using the slot values as a custom vocabulary for recognizing user
      * utterances.</p>
      */
     inline const AudioRecognitionStrategy& GetAudioRecognitionStrategy() const{ return m_audioRecognitionStrategy; }
-
-    /**
-     * <p>Enables using the slot values as a custom vocabulary for recognizing user
-     * utterances.</p>
-     */
     inline bool AudioRecognitionStrategyHasBeenSet() const { return m_audioRecognitionStrategyHasBeenSet; }
-
-    /**
-     * <p>Enables using the slot values as a custom vocabulary for recognizing user
-     * utterances.</p>
-     */
     inline void SetAudioRecognitionStrategy(const AudioRecognitionStrategy& value) { m_audioRecognitionStrategyHasBeenSet = true; m_audioRecognitionStrategy = value; }
-
-    /**
-     * <p>Enables using the slot values as a custom vocabulary for recognizing user
-     * utterances.</p>
-     */
     inline void SetAudioRecognitionStrategy(AudioRecognitionStrategy&& value) { m_audioRecognitionStrategyHasBeenSet = true; m_audioRecognitionStrategy = std::move(value); }
-
-    /**
-     * <p>Enables using the slot values as a custom vocabulary for recognizing user
-     * utterances.</p>
-     */
     inline AdvancedRecognitionSetting& WithAudioRecognitionStrategy(const AudioRecognitionStrategy& value) { SetAudioRecognitionStrategy(value); return *this;}
-
-    /**
-     * <p>Enables using the slot values as a custom vocabulary for recognizing user
-     * utterances.</p>
-     */
     inline AdvancedRecognitionSetting& WithAudioRecognitionStrategy(AudioRecognitionStrategy&& value) { SetAudioRecognitionStrategy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AudioRecognitionStrategy m_audioRecognitionStrategy;

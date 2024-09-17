@@ -47,6 +47,7 @@ namespace Model
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> <b>[Custom snapshot policies that target instances only]</b> Indicates
      * whether to exclude the root volume from multi-volume snapshot sets. The default
@@ -55,35 +56,12 @@ namespace Model
      * sets created by the policy.</p>
      */
     inline bool GetExcludeBootVolume() const{ return m_excludeBootVolume; }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> Indicates
-     * whether to exclude the root volume from multi-volume snapshot sets. The default
-     * is <code>false</code>. If you specify <code>true</code>, then the root volumes
-     * attached to targeted instances will be excluded from the multi-volume snapshot
-     * sets created by the policy.</p>
-     */
     inline bool ExcludeBootVolumeHasBeenSet() const { return m_excludeBootVolumeHasBeenSet; }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> Indicates
-     * whether to exclude the root volume from multi-volume snapshot sets. The default
-     * is <code>false</code>. If you specify <code>true</code>, then the root volumes
-     * attached to targeted instances will be excluded from the multi-volume snapshot
-     * sets created by the policy.</p>
-     */
     inline void SetExcludeBootVolume(bool value) { m_excludeBootVolumeHasBeenSet = true; m_excludeBootVolume = value; }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> Indicates
-     * whether to exclude the root volume from multi-volume snapshot sets. The default
-     * is <code>false</code>. If you specify <code>true</code>, then the root volumes
-     * attached to targeted instances will be excluded from the multi-volume snapshot
-     * sets created by the policy.</p>
-     */
     inline Parameters& WithExcludeBootVolume(bool value) { SetExcludeBootVolume(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <b>[Custom AMI policies only]</b> Indicates whether targeted instances are
      * rebooted when the lifecycle policy runs. <code>true</code> indicates that
@@ -92,35 +70,12 @@ namespace Model
      * is <code>true</code> (instances are not rebooted).</p>
      */
     inline bool GetNoReboot() const{ return m_noReboot; }
-
-    /**
-     * <p> <b>[Custom AMI policies only]</b> Indicates whether targeted instances are
-     * rebooted when the lifecycle policy runs. <code>true</code> indicates that
-     * targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default
-     * is <code>true</code> (instances are not rebooted).</p>
-     */
     inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
-
-    /**
-     * <p> <b>[Custom AMI policies only]</b> Indicates whether targeted instances are
-     * rebooted when the lifecycle policy runs. <code>true</code> indicates that
-     * targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default
-     * is <code>true</code> (instances are not rebooted).</p>
-     */
     inline void SetNoReboot(bool value) { m_noRebootHasBeenSet = true; m_noReboot = value; }
-
-    /**
-     * <p> <b>[Custom AMI policies only]</b> Indicates whether targeted instances are
-     * rebooted when the lifecycle policy runs. <code>true</code> indicates that
-     * targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default
-     * is <code>true</code> (instances are not rebooted).</p>
-     */
     inline Parameters& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
      * to identify data (non-root) volumes to exclude from multi-volume snapshot
@@ -130,77 +85,14 @@ namespace Model
      * multi-volume snapshot sets created by the policy.</p>
      */
     inline const Aws::Vector<Tag>& GetExcludeDataVolumeTags() const{ return m_excludeDataVolumeTags; }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
-     * to identify data (non-root) volumes to exclude from multi-volume snapshot
-     * sets.</p> <p>If you create a snapshot lifecycle policy that targets instances
-     * and you specify tags for this parameter, then data volumes with the specified
-     * tags that are attached to targeted instances will be excluded from the
-     * multi-volume snapshot sets created by the policy.</p>
-     */
     inline bool ExcludeDataVolumeTagsHasBeenSet() const { return m_excludeDataVolumeTagsHasBeenSet; }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
-     * to identify data (non-root) volumes to exclude from multi-volume snapshot
-     * sets.</p> <p>If you create a snapshot lifecycle policy that targets instances
-     * and you specify tags for this parameter, then data volumes with the specified
-     * tags that are attached to targeted instances will be excluded from the
-     * multi-volume snapshot sets created by the policy.</p>
-     */
     inline void SetExcludeDataVolumeTags(const Aws::Vector<Tag>& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags = value; }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
-     * to identify data (non-root) volumes to exclude from multi-volume snapshot
-     * sets.</p> <p>If you create a snapshot lifecycle policy that targets instances
-     * and you specify tags for this parameter, then data volumes with the specified
-     * tags that are attached to targeted instances will be excluded from the
-     * multi-volume snapshot sets created by the policy.</p>
-     */
     inline void SetExcludeDataVolumeTags(Aws::Vector<Tag>&& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags = std::move(value); }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
-     * to identify data (non-root) volumes to exclude from multi-volume snapshot
-     * sets.</p> <p>If you create a snapshot lifecycle policy that targets instances
-     * and you specify tags for this parameter, then data volumes with the specified
-     * tags that are attached to targeted instances will be excluded from the
-     * multi-volume snapshot sets created by the policy.</p>
-     */
     inline Parameters& WithExcludeDataVolumeTags(const Aws::Vector<Tag>& value) { SetExcludeDataVolumeTags(value); return *this;}
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
-     * to identify data (non-root) volumes to exclude from multi-volume snapshot
-     * sets.</p> <p>If you create a snapshot lifecycle policy that targets instances
-     * and you specify tags for this parameter, then data volumes with the specified
-     * tags that are attached to targeted instances will be excluded from the
-     * multi-volume snapshot sets created by the policy.</p>
-     */
     inline Parameters& WithExcludeDataVolumeTags(Aws::Vector<Tag>&& value) { SetExcludeDataVolumeTags(std::move(value)); return *this;}
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
-     * to identify data (non-root) volumes to exclude from multi-volume snapshot
-     * sets.</p> <p>If you create a snapshot lifecycle policy that targets instances
-     * and you specify tags for this parameter, then data volumes with the specified
-     * tags that are attached to targeted instances will be excluded from the
-     * multi-volume snapshot sets created by the policy.</p>
-     */
     inline Parameters& AddExcludeDataVolumeTags(const Tag& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags.push_back(value); return *this; }
-
-    /**
-     * <p> <b>[Custom snapshot policies that target instances only]</b> The tags used
-     * to identify data (non-root) volumes to exclude from multi-volume snapshot
-     * sets.</p> <p>If you create a snapshot lifecycle policy that targets instances
-     * and you specify tags for this parameter, then data volumes with the specified
-     * tags that are attached to targeted instances will be excluded from the
-     * multi-volume snapshot sets created by the policy.</p>
-     */
     inline Parameters& AddExcludeDataVolumeTags(Tag&& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_excludeBootVolume;

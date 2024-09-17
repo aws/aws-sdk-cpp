@@ -26,11 +26,8 @@ MssPackage::MssPackage() :
 {
 }
 
-MssPackage::MssPackage(JsonView jsonValue) : 
-    m_encryptionHasBeenSet(false),
-    m_mssManifestsHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false)
+MssPackage::MssPackage(JsonView jsonValue)
+  : MssPackage()
 {
   *this = jsonValue;
 }

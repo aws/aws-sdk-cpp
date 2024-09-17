@@ -26,9 +26,8 @@ Owner::Owner() :
 {
 }
 
-Owner::Owner(const XmlNode& xmlNode) : 
-    m_displayNameHasBeenSet(false),
-    m_iDHasBeenSet(false)
+Owner::Owner(const XmlNode& xmlNode)
+  : Owner()
 {
   *this = xmlNode;
 }

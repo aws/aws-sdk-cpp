@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the batch transform job to stop.</p>
      */
     inline const Aws::String& GetTransformJobName() const{ return m_transformJobName; }
-
-    /**
-     * <p>The name of the batch transform job to stop.</p>
-     */
     inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the batch transform job to stop.</p>
-     */
     inline void SetTransformJobName(const Aws::String& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = value; }
-
-    /**
-     * <p>The name of the batch transform job to stop.</p>
-     */
     inline void SetTransformJobName(Aws::String&& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = std::move(value); }
-
-    /**
-     * <p>The name of the batch transform job to stop.</p>
-     */
     inline void SetTransformJobName(const char* value) { m_transformJobNameHasBeenSet = true; m_transformJobName.assign(value); }
-
-    /**
-     * <p>The name of the batch transform job to stop.</p>
-     */
     inline StopTransformJobRequest& WithTransformJobName(const Aws::String& value) { SetTransformJobName(value); return *this;}
-
-    /**
-     * <p>The name of the batch transform job to stop.</p>
-     */
     inline StopTransformJobRequest& WithTransformJobName(Aws::String&& value) { SetTransformJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the batch transform job to stop.</p>
-     */
     inline StopTransformJobRequest& WithTransformJobName(const char* value) { SetTransformJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transformJobName;

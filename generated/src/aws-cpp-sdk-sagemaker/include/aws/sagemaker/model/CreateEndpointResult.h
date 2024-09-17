@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-     */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-     */
     inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-     */
     inline CreateEndpointResult& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-     */
     inline CreateEndpointResult& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-     */
     inline CreateEndpointResult& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointArn;

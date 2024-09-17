@@ -22,8 +22,8 @@ GetAccountStatusResult::GetAccountStatusResult() :
 {
 }
 
-GetAccountStatusResult::GetAccountStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AccountStatus::NOT_SET)
+GetAccountStatusResult::GetAccountStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAccountStatusResult()
 {
   *this = result;
 }

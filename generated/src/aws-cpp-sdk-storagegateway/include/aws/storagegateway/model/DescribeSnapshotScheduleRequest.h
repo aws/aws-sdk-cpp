@@ -38,54 +38,20 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
      */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.</p>
-     */
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.</p>
-     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.</p>
-     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.</p>
-     */
     inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.</p>
-     */
     inline DescribeSnapshotScheduleRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.</p>
-     */
     inline DescribeSnapshotScheduleRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
-     * operation to return a list of gateway volumes.</p>
-     */
     inline DescribeSnapshotScheduleRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_volumeARN;

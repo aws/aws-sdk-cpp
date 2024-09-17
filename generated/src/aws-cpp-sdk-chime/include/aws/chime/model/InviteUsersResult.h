@@ -34,63 +34,29 @@ namespace Model
     AWS_CHIME_API InviteUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The email invitation details.</p>
      */
     inline const Aws::Vector<Invite>& GetInvites() const{ return m_invites; }
-
-    /**
-     * <p>The email invitation details.</p>
-     */
     inline void SetInvites(const Aws::Vector<Invite>& value) { m_invites = value; }
-
-    /**
-     * <p>The email invitation details.</p>
-     */
     inline void SetInvites(Aws::Vector<Invite>&& value) { m_invites = std::move(value); }
-
-    /**
-     * <p>The email invitation details.</p>
-     */
     inline InviteUsersResult& WithInvites(const Aws::Vector<Invite>& value) { SetInvites(value); return *this;}
-
-    /**
-     * <p>The email invitation details.</p>
-     */
     inline InviteUsersResult& WithInvites(Aws::Vector<Invite>&& value) { SetInvites(std::move(value)); return *this;}
-
-    /**
-     * <p>The email invitation details.</p>
-     */
     inline InviteUsersResult& AddInvites(const Invite& value) { m_invites.push_back(value); return *this; }
-
-    /**
-     * <p>The email invitation details.</p>
-     */
     inline InviteUsersResult& AddInvites(Invite&& value) { m_invites.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline InviteUsersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline InviteUsersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline InviteUsersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Invite> m_invites;

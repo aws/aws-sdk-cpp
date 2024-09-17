@@ -46,31 +46,8 @@ ComputeResourceUpdate::ComputeResourceUpdate() :
 {
 }
 
-ComputeResourceUpdate::ComputeResourceUpdate(JsonView jsonValue) : 
-    m_minvCpus(0),
-    m_minvCpusHasBeenSet(false),
-    m_maxvCpus(0),
-    m_maxvCpusHasBeenSet(false),
-    m_desiredvCpus(0),
-    m_desiredvCpusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_allocationStrategy(CRUpdateAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_ec2KeyPairHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_placementGroupHasBeenSet(false),
-    m_bidPercentage(0),
-    m_bidPercentageHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_ec2ConfigurationHasBeenSet(false),
-    m_updateToLatestImageVersion(false),
-    m_updateToLatestImageVersionHasBeenSet(false),
-    m_type(CRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+ComputeResourceUpdate::ComputeResourceUpdate(JsonView jsonValue)
+  : ComputeResourceUpdate()
 {
   *this = jsonValue;
 }

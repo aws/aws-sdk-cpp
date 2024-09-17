@@ -24,9 +24,8 @@ SuccessfulRequest::SuccessfulRequest() :
 {
 }
 
-SuccessfulRequest::SuccessfulRequest(JsonView jsonValue) : 
-    m_clientTokenHasBeenSet(false),
-    m_idHasBeenSet(false)
+SuccessfulRequest::SuccessfulRequest(JsonView jsonValue)
+  : SuccessfulRequest()
 {
   *this = jsonValue;
 }

@@ -34,23 +34,37 @@ Aws::String DeregisterDBProxyTargetsRequest::SerializePayload() const
 
   if(m_dBInstanceIdentifiersHasBeenSet)
   {
-    unsigned dBInstanceIdentifiersCount = 1;
-    for(auto& item : m_dBInstanceIdentifiers)
+    if (m_dBInstanceIdentifiers.empty())
     {
-      ss << "DBInstanceIdentifiers.member." << dBInstanceIdentifiersCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      dBInstanceIdentifiersCount++;
+      ss << "DBInstanceIdentifiers=&";
+    }
+    else
+    {
+      unsigned dBInstanceIdentifiersCount = 1;
+      for(auto& item : m_dBInstanceIdentifiers)
+      {
+        ss << "DBInstanceIdentifiers.member." << dBInstanceIdentifiersCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        dBInstanceIdentifiersCount++;
+      }
     }
   }
 
   if(m_dBClusterIdentifiersHasBeenSet)
   {
-    unsigned dBClusterIdentifiersCount = 1;
-    for(auto& item : m_dBClusterIdentifiers)
+    if (m_dBClusterIdentifiers.empty())
     {
-      ss << "DBClusterIdentifiers.member." << dBClusterIdentifiersCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      dBClusterIdentifiersCount++;
+      ss << "DBClusterIdentifiers=&";
+    }
+    else
+    {
+      unsigned dBClusterIdentifiersCount = 1;
+      for(auto& item : m_dBClusterIdentifiers)
+      {
+        ss << "DBClusterIdentifiers.member." << dBClusterIdentifiersCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        dBClusterIdentifiersCount++;
+      }
     }
   }
 

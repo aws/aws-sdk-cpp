@@ -29,14 +29,8 @@ JsonBody::JsonBody() :
 {
 }
 
-JsonBody::JsonBody(JsonView jsonValue) : 
-    m_matchPatternHasBeenSet(false),
-    m_matchScope(JsonMatchScope::NOT_SET),
-    m_matchScopeHasBeenSet(false),
-    m_invalidFallbackBehavior(BodyParsingFallbackBehavior::NOT_SET),
-    m_invalidFallbackBehaviorHasBeenSet(false),
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
+JsonBody::JsonBody(JsonView jsonValue)
+  : JsonBody()
 {
   *this = jsonValue;
 }

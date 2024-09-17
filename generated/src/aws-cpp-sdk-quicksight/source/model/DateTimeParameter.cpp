@@ -24,9 +24,8 @@ DateTimeParameter::DateTimeParameter() :
 {
 }
 
-DateTimeParameter::DateTimeParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+DateTimeParameter::DateTimeParameter(JsonView jsonValue)
+  : DateTimeParameter()
 {
   *this = jsonValue;
 }

@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>Specifies where to store data classification results, and the encryption
    * settings to use when storing results in that location. The location must be an
-   * S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * S3 general purpose bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationExportConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,18 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 bucket to store data classification results in, and the encryption
      * settings to use when storing results in that bucket.</p>
      */
     inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
-
-    /**
-     * <p>The S3 bucket to store data classification results in, and the encryption
-     * settings to use when storing results in that bucket.</p>
-     */
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-
-    /**
-     * <p>The S3 bucket to store data classification results in, and the encryption
-     * settings to use when storing results in that bucket.</p>
-     */
     inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-
-    /**
-     * <p>The S3 bucket to store data classification results in, and the encryption
-     * settings to use when storing results in that bucket.</p>
-     */
     inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-
-    /**
-     * <p>The S3 bucket to store data classification results in, and the encryption
-     * settings to use when storing results in that bucket.</p>
-     */
     inline ClassificationExportConfiguration& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-
-    /**
-     * <p>The S3 bucket to store data classification results in, and the encryption
-     * settings to use when storing results in that bucket.</p>
-     */
     inline ClassificationExportConfiguration& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Destination m_s3Destination;

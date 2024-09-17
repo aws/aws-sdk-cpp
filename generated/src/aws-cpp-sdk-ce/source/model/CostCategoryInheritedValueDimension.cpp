@@ -25,10 +25,8 @@ CostCategoryInheritedValueDimension::CostCategoryInheritedValueDimension() :
 {
 }
 
-CostCategoryInheritedValueDimension::CostCategoryInheritedValueDimension(JsonView jsonValue) : 
-    m_dimensionName(CostCategoryInheritedValueDimensionName::NOT_SET),
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionKeyHasBeenSet(false)
+CostCategoryInheritedValueDimension::CostCategoryInheritedValueDimension(JsonView jsonValue)
+  : CostCategoryInheritedValueDimension()
 {
   *this = jsonValue;
 }

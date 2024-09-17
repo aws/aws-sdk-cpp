@@ -24,9 +24,8 @@ AssetBundleExportJobValidationStrategy::AssetBundleExportJobValidationStrategy()
 {
 }
 
-AssetBundleExportJobValidationStrategy::AssetBundleExportJobValidationStrategy(JsonView jsonValue) : 
-    m_strictModeForAllResources(false),
-    m_strictModeForAllResourcesHasBeenSet(false)
+AssetBundleExportJobValidationStrategy::AssetBundleExportJobValidationStrategy(JsonView jsonValue)
+  : AssetBundleExportJobValidationStrategy()
 {
   *this = jsonValue;
 }

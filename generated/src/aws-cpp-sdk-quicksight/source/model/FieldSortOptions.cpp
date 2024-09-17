@@ -24,9 +24,8 @@ FieldSortOptions::FieldSortOptions() :
 {
 }
 
-FieldSortOptions::FieldSortOptions(JsonView jsonValue) : 
-    m_fieldSortHasBeenSet(false),
-    m_columnSortHasBeenSet(false)
+FieldSortOptions::FieldSortOptions(JsonView jsonValue)
+  : FieldSortOptions()
 {
   *this = jsonValue;
 }

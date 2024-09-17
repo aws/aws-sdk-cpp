@@ -24,9 +24,8 @@ ClientException::ClientException() :
 {
 }
 
-ClientException::ClientException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+ClientException::ClientException(JsonView jsonValue)
+  : ClientException()
 {
   *this = jsonValue;
 }

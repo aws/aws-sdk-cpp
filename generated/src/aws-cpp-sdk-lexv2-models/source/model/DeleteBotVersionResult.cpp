@@ -22,8 +22,8 @@ DeleteBotVersionResult::DeleteBotVersionResult() :
 {
 }
 
-DeleteBotVersionResult::DeleteBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botStatus(BotStatus::NOT_SET)
+DeleteBotVersionResult::DeleteBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteBotVersionResult()
 {
   *this = result;
 }

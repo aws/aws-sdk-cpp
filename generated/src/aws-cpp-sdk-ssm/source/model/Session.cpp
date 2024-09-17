@@ -34,19 +34,8 @@ Session::Session() :
 {
 }
 
-Session::Session(JsonView jsonValue) : 
-    m_sessionIdHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_status(SessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_outputUrlHasBeenSet(false),
-    m_maxSessionDurationHasBeenSet(false)
+Session::Session(JsonView jsonValue)
+  : Session()
 {
   *this = jsonValue;
 }

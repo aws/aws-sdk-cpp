@@ -38,42 +38,18 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the position of the presenter video tile. Default:
      * <code>TopRight</code>.</p>
      */
     inline const PresenterPosition& GetPresenterPosition() const{ return m_presenterPosition; }
-
-    /**
-     * <p>Defines the position of the presenter video tile. Default:
-     * <code>TopRight</code>.</p>
-     */
     inline bool PresenterPositionHasBeenSet() const { return m_presenterPositionHasBeenSet; }
-
-    /**
-     * <p>Defines the position of the presenter video tile. Default:
-     * <code>TopRight</code>.</p>
-     */
     inline void SetPresenterPosition(const PresenterPosition& value) { m_presenterPositionHasBeenSet = true; m_presenterPosition = value; }
-
-    /**
-     * <p>Defines the position of the presenter video tile. Default:
-     * <code>TopRight</code>.</p>
-     */
     inline void SetPresenterPosition(PresenterPosition&& value) { m_presenterPositionHasBeenSet = true; m_presenterPosition = std::move(value); }
-
-    /**
-     * <p>Defines the position of the presenter video tile. Default:
-     * <code>TopRight</code>.</p>
-     */
     inline PresenterOnlyConfiguration& WithPresenterPosition(const PresenterPosition& value) { SetPresenterPosition(value); return *this;}
-
-    /**
-     * <p>Defines the position of the presenter video tile. Default:
-     * <code>TopRight</code>.</p>
-     */
     inline PresenterOnlyConfiguration& WithPresenterPosition(PresenterPosition&& value) { SetPresenterPosition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PresenterPosition m_presenterPosition;

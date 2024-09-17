@@ -30,15 +30,8 @@ ConfiguredTableAssociationSummary::ConfiguredTableAssociationSummary() :
 {
 }
 
-ConfiguredTableAssociationSummary::ConfiguredTableAssociationSummary(JsonView jsonValue) : 
-    m_configuredTableIdHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+ConfiguredTableAssociationSummary::ConfiguredTableAssociationSummary(JsonView jsonValue)
+  : ConfiguredTableAssociationSummary()
 {
   *this = jsonValue;
 }

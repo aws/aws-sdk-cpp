@@ -32,17 +32,8 @@ DatastoreSummary::DatastoreSummary() :
 {
 }
 
-DatastoreSummary::DatastoreSummary(JsonView jsonValue) : 
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStorageHasBeenSet(false),
-    m_status(DatastoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false),
-    m_fileFormatType(FileFormatType::NOT_SET),
-    m_fileFormatTypeHasBeenSet(false),
-    m_datastorePartitionsHasBeenSet(false)
+DatastoreSummary::DatastoreSummary(JsonView jsonValue)
+  : DatastoreSummary()
 {
   *this = jsonValue;
 }

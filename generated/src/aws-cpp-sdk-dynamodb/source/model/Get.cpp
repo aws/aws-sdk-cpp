@@ -26,11 +26,8 @@ Get::Get() :
 {
 }
 
-Get::Get(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_projectionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false)
+Get::Get(JsonView jsonValue)
+  : Get()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ RecipeAction::RecipeAction() :
 {
 }
 
-RecipeAction::RecipeAction(JsonView jsonValue) : 
-    m_operationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+RecipeAction::RecipeAction(JsonView jsonValue)
+  : RecipeAction()
 {
   *this = jsonValue;
 }

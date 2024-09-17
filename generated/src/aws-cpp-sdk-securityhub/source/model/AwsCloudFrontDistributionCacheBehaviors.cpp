@@ -23,8 +23,8 @@ AwsCloudFrontDistributionCacheBehaviors::AwsCloudFrontDistributionCacheBehaviors
 {
 }
 
-AwsCloudFrontDistributionCacheBehaviors::AwsCloudFrontDistributionCacheBehaviors(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+AwsCloudFrontDistributionCacheBehaviors::AwsCloudFrontDistributionCacheBehaviors(JsonView jsonValue)
+  : AwsCloudFrontDistributionCacheBehaviors()
 {
   *this = jsonValue;
 }

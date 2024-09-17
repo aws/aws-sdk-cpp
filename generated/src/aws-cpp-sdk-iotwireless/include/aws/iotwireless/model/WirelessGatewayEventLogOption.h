@@ -41,43 +41,25 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const WirelessGatewayEvent& GetEvent() const{ return m_event; }
-
-    
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-
-    
     inline void SetEvent(const WirelessGatewayEvent& value) { m_eventHasBeenSet = true; m_event = value; }
-
-    
     inline void SetEvent(WirelessGatewayEvent&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-
-    
     inline WirelessGatewayEventLogOption& WithEvent(const WirelessGatewayEvent& value) { SetEvent(value); return *this;}
-
-    
     inline WirelessGatewayEventLogOption& WithEvent(WirelessGatewayEvent&& value) { SetEvent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-
-    
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-
-    
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-
-    
     inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-
-    
     inline WirelessGatewayEventLogOption& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-
-    
     inline WirelessGatewayEventLogOption& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WirelessGatewayEvent m_event;

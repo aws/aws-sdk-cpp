@@ -24,9 +24,8 @@ FacetAttributeReference::FacetAttributeReference() :
 {
 }
 
-FacetAttributeReference::FacetAttributeReference(JsonView jsonValue) : 
-    m_targetFacetNameHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false)
+FacetAttributeReference::FacetAttributeReference(JsonView jsonValue)
+  : FacetAttributeReference()
 {
   *this = jsonValue;
 }

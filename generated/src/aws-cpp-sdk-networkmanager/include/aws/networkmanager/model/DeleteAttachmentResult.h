@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API DeleteAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the deleted attachment.</p>
      */
     inline const Attachment& GetAttachment() const{ return m_attachment; }
-
-    /**
-     * <p>Information about the deleted attachment.</p>
-     */
     inline void SetAttachment(const Attachment& value) { m_attachment = value; }
-
-    /**
-     * <p>Information about the deleted attachment.</p>
-     */
     inline void SetAttachment(Attachment&& value) { m_attachment = std::move(value); }
-
-    /**
-     * <p>Information about the deleted attachment.</p>
-     */
     inline DeleteAttachmentResult& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
-
-    /**
-     * <p>Information about the deleted attachment.</p>
-     */
     inline DeleteAttachmentResult& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Attachment m_attachment;

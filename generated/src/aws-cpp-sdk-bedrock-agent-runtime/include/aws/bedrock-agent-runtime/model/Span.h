@@ -22,7 +22,14 @@ namespace Model
 {
 
   /**
-   * <p>Span of text</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about where the text with a citation begins and ends in
+   * the generated output.</p> <p>This data type is used in the following API
+   * operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+   * response</a> – in the <code>span</code> field</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent
+   * response</a> – in the <code>span</code> field</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Span">AWS
    * API Reference</a></p>
    */
@@ -35,54 +42,32 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Start of span</p>
-     */
-    inline int GetStart() const{ return m_start; }
-
-    /**
-     * <p>Start of span</p>
-     */
-    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-
-    /**
-     * <p>Start of span</p>
-     */
-    inline void SetStart(int value) { m_startHasBeenSet = true; m_start = value; }
-
-    /**
-     * <p>Start of span</p>
-     */
-    inline Span& WithStart(int value) { SetStart(value); return *this;}
-
-
-    /**
-     * <p>End of span</p>
+     * <p>Where the text with a citation ends in the generated output.</p>
      */
     inline int GetEnd() const{ return m_end; }
-
-    /**
-     * <p>End of span</p>
-     */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>End of span</p>
-     */
     inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>End of span</p>
-     */
     inline Span& WithEnd(int value) { SetEnd(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Where the text with a citation starts in the generated output.</p>
+     */
+    inline int GetStart() const{ return m_start; }
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
+    inline void SetStart(int value) { m_startHasBeenSet = true; m_start = value; }
+    inline Span& WithStart(int value) { SetStart(value); return *this;}
+    ///@}
   private:
-
-    int m_start;
-    bool m_startHasBeenSet = false;
 
     int m_end;
     bool m_endHasBeenSet = false;
+
+    int m_start;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

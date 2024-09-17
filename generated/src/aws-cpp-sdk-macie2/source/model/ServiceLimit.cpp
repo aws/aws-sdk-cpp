@@ -28,13 +28,8 @@ ServiceLimit::ServiceLimit() :
 {
 }
 
-ServiceLimit::ServiceLimit(JsonView jsonValue) : 
-    m_isServiceLimited(false),
-    m_isServiceLimitedHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
+ServiceLimit::ServiceLimit(JsonView jsonValue)
+  : ServiceLimit()
 {
   *this = jsonValue;
 }

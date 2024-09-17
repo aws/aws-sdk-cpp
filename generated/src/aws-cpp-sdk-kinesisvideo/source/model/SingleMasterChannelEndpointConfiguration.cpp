@@ -25,10 +25,8 @@ SingleMasterChannelEndpointConfiguration::SingleMasterChannelEndpointConfigurati
 {
 }
 
-SingleMasterChannelEndpointConfiguration::SingleMasterChannelEndpointConfiguration(JsonView jsonValue) : 
-    m_protocolsHasBeenSet(false),
-    m_role(ChannelRole::NOT_SET),
-    m_roleHasBeenSet(false)
+SingleMasterChannelEndpointConfiguration::SingleMasterChannelEndpointConfiguration(JsonView jsonValue)
+  : SingleMasterChannelEndpointConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ KeyGroup::KeyGroup() :
 {
 }
 
-KeyGroup::KeyGroup(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_keyGroupConfigHasBeenSet(false)
+KeyGroup::KeyGroup(const XmlNode& xmlNode)
+  : KeyGroup()
 {
   *this = xmlNode;
 }

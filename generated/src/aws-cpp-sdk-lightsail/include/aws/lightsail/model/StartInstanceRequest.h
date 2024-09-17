@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the instance (a virtual private server) to start.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
-
-    /**
-     * <p>The name of the instance (a virtual private server) to start.</p>
-     */
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the instance (a virtual private server) to start.</p>
-     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-
-    /**
-     * <p>The name of the instance (a virtual private server) to start.</p>
-     */
     inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-
-    /**
-     * <p>The name of the instance (a virtual private server) to start.</p>
-     */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-
-    /**
-     * <p>The name of the instance (a virtual private server) to start.</p>
-     */
     inline StartInstanceRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-
-    /**
-     * <p>The name of the instance (a virtual private server) to start.</p>
-     */
     inline StartInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the instance (a virtual private server) to start.</p>
-     */
     inline StartInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceName;

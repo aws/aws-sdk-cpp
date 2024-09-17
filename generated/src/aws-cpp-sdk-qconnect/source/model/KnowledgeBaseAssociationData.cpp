@@ -24,9 +24,8 @@ KnowledgeBaseAssociationData::KnowledgeBaseAssociationData() :
 {
 }
 
-KnowledgeBaseAssociationData::KnowledgeBaseAssociationData(JsonView jsonValue) : 
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
+KnowledgeBaseAssociationData::KnowledgeBaseAssociationData(JsonView jsonValue)
+  : KnowledgeBaseAssociationData()
 {
   *this = jsonValue;
 }

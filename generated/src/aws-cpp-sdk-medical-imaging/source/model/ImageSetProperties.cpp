@@ -28,21 +28,13 @@ ImageSetProperties::ImageSetProperties() :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_deletedAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_overridesHasBeenSet(false)
 {
 }
 
-ImageSetProperties::ImageSetProperties(JsonView jsonValue) : 
-    m_imageSetIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetStateHasBeenSet(false),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET),
-    m_imageSetWorkflowStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ImageSetProperties::ImageSetProperties(JsonView jsonValue)
+  : ImageSetProperties()
 {
   *this = jsonValue;
 }
@@ -105,6 +97,13 @@ ImageSetProperties& ImageSetProperties::operator =(JsonView jsonValue)
     m_messageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("overrides"))
+  {
+    m_overrides = jsonValue.GetObject("overrides");
+
+    m_overridesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +151,12 @@ JsonValue ImageSetProperties::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
+
+  }
+
+  if(m_overridesHasBeenSet)
+  {
+   payload.WithObject("overrides", m_overrides.Jsonize());
 
   }
 

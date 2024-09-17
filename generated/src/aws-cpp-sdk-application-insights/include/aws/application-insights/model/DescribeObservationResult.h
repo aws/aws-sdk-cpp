@@ -33,53 +33,27 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API DescribeObservationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the observation.</p>
      */
     inline const Observation& GetObservation() const{ return m_observation; }
-
-    /**
-     * <p>Information about the observation.</p>
-     */
     inline void SetObservation(const Observation& value) { m_observation = value; }
-
-    /**
-     * <p>Information about the observation.</p>
-     */
     inline void SetObservation(Observation&& value) { m_observation = std::move(value); }
-
-    /**
-     * <p>Information about the observation.</p>
-     */
     inline DescribeObservationResult& WithObservation(const Observation& value) { SetObservation(value); return *this;}
-
-    /**
-     * <p>Information about the observation.</p>
-     */
     inline DescribeObservationResult& WithObservation(Observation&& value) { SetObservation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeObservationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeObservationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeObservationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Observation m_observation;

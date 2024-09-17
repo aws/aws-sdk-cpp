@@ -18,6 +18,8 @@ namespace Model
     NOT_SET,
     SINGLE_AZ_1,
     SINGLE_AZ_2,
+    SINGLE_AZ_HA_1,
+    SINGLE_AZ_HA_2,
     MULTI_AZ_1
   };
 

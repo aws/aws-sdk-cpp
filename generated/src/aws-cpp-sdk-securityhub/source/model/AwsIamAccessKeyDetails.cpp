@@ -31,16 +31,8 @@ AwsIamAccessKeyDetails::AwsIamAccessKeyDetails() :
 {
 }
 
-AwsIamAccessKeyDetails::AwsIamAccessKeyDetails(JsonView jsonValue) : 
-    m_status(AwsIamAccessKeyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalTypeHasBeenSet(false),
-    m_principalNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
+AwsIamAccessKeyDetails::AwsIamAccessKeyDetails(JsonView jsonValue)
+  : AwsIamAccessKeyDetails()
 {
   *this = jsonValue;
 }

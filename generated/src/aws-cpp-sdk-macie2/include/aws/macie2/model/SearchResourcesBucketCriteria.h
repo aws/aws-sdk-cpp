@@ -39,79 +39,31 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The property- and tag-based conditions that determine which buckets to
      * exclude from the results.</p>
      */
     inline const SearchResourcesCriteriaBlock& GetExcludes() const{ return m_excludes; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the results.</p>
-     */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the results.</p>
-     */
     inline void SetExcludes(const SearchResourcesCriteriaBlock& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the results.</p>
-     */
     inline void SetExcludes(SearchResourcesCriteriaBlock&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the results.</p>
-     */
     inline SearchResourcesBucketCriteria& WithExcludes(const SearchResourcesCriteriaBlock& value) { SetExcludes(value); return *this;}
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * exclude from the results.</p>
-     */
     inline SearchResourcesBucketCriteria& WithExcludes(SearchResourcesCriteriaBlock&& value) { SetExcludes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The property- and tag-based conditions that determine which buckets to
      * include in the results.</p>
      */
     inline const SearchResourcesCriteriaBlock& GetIncludes() const{ return m_includes; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the results.</p>
-     */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the results.</p>
-     */
     inline void SetIncludes(const SearchResourcesCriteriaBlock& value) { m_includesHasBeenSet = true; m_includes = value; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the results.</p>
-     */
     inline void SetIncludes(SearchResourcesCriteriaBlock&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the results.</p>
-     */
     inline SearchResourcesBucketCriteria& WithIncludes(const SearchResourcesCriteriaBlock& value) { SetIncludes(value); return *this;}
-
-    /**
-     * <p>The property- and tag-based conditions that determine which buckets to
-     * include in the results.</p>
-     */
     inline SearchResourcesBucketCriteria& WithIncludes(SearchResourcesCriteriaBlock&& value) { SetIncludes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SearchResourcesCriteriaBlock m_excludes;

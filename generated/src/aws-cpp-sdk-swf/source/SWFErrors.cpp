@@ -20,6 +20,7 @@ namespace SWFErrorMapper
 
 static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceededFault");
 static const int OPERATION_NOT_PERMITTED_FAULT_HASH = HashingUtils::HashString("OperationNotPermittedFault");
+static const int TYPE_NOT_DEPRECATED_FAULT_HASH = HashingUtils::HashString("TypeNotDeprecatedFault");
 static const int UNKNOWN_RESOURCE_FAULT_HASH = HashingUtils::HashString("UnknownResourceFault");
 static const int TYPE_DEPRECATED_FAULT_HASH = HashingUtils::HashString("TypeDeprecatedFault");
 static const int DEFAULT_UNDEFINED_FAULT_HASH = HashingUtils::HashString("DefaultUndefinedFault");
@@ -41,6 +42,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == OPERATION_NOT_PERMITTED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::OPERATION_NOT_PERMITTED_FAULT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == TYPE_NOT_DEPRECATED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_NOT_DEPRECATED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNKNOWN_RESOURCE_FAULT_HASH)
   {

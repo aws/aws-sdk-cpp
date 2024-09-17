@@ -23,9 +23,8 @@ DescribeExportResult::DescribeExportResult() :
 {
 }
 
-DescribeExportResult::DescribeExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_fileFormat(ImportExportFileFormat::NOT_SET),
-    m_exportStatus(ExportStatus::NOT_SET)
+DescribeExportResult::DescribeExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeExportResult()
 {
   *this = result;
 }

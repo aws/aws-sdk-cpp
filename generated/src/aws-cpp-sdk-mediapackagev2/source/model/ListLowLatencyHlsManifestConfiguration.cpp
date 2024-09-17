@@ -25,10 +25,8 @@ ListLowLatencyHlsManifestConfiguration::ListLowLatencyHlsManifestConfiguration()
 {
 }
 
-ListLowLatencyHlsManifestConfiguration::ListLowLatencyHlsManifestConfiguration(JsonView jsonValue) : 
-    m_manifestNameHasBeenSet(false),
-    m_childManifestNameHasBeenSet(false),
-    m_urlHasBeenSet(false)
+ListLowLatencyHlsManifestConfiguration::ListLowLatencyHlsManifestConfiguration(JsonView jsonValue)
+  : ListLowLatencyHlsManifestConfiguration()
 {
   *this = jsonValue;
 }

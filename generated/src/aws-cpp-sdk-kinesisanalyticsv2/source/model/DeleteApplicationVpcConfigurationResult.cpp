@@ -22,8 +22,8 @@ DeleteApplicationVpcConfigurationResult::DeleteApplicationVpcConfigurationResult
 {
 }
 
-DeleteApplicationVpcConfigurationResult::DeleteApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+DeleteApplicationVpcConfigurationResult::DeleteApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteApplicationVpcConfigurationResult()
 {
   *this = result;
 }
@@ -40,6 +40,12 @@ DeleteApplicationVpcConfigurationResult& DeleteApplicationVpcConfigurationResult
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
+
+  }
+
+  if(jsonValue.ValueExists("OperationId"))
+  {
+    m_operationId = jsonValue.GetString("OperationId");
 
   }
 

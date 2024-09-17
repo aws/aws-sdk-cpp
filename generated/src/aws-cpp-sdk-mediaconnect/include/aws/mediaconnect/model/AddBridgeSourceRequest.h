@@ -38,43 +38,25 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const AddBridgeFlowSourceRequest& GetFlowSource() const{ return m_flowSource; }
-
-    
     inline bool FlowSourceHasBeenSet() const { return m_flowSourceHasBeenSet; }
-
-    
     inline void SetFlowSource(const AddBridgeFlowSourceRequest& value) { m_flowSourceHasBeenSet = true; m_flowSource = value; }
-
-    
     inline void SetFlowSource(AddBridgeFlowSourceRequest&& value) { m_flowSourceHasBeenSet = true; m_flowSource = std::move(value); }
-
-    
     inline AddBridgeSourceRequest& WithFlowSource(const AddBridgeFlowSourceRequest& value) { SetFlowSource(value); return *this;}
-
-    
     inline AddBridgeSourceRequest& WithFlowSource(AddBridgeFlowSourceRequest&& value) { SetFlowSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AddBridgeNetworkSourceRequest& GetNetworkSource() const{ return m_networkSource; }
-
-    
     inline bool NetworkSourceHasBeenSet() const { return m_networkSourceHasBeenSet; }
-
-    
     inline void SetNetworkSource(const AddBridgeNetworkSourceRequest& value) { m_networkSourceHasBeenSet = true; m_networkSource = value; }
-
-    
     inline void SetNetworkSource(AddBridgeNetworkSourceRequest&& value) { m_networkSourceHasBeenSet = true; m_networkSource = std::move(value); }
-
-    
     inline AddBridgeSourceRequest& WithNetworkSource(const AddBridgeNetworkSourceRequest& value) { SetNetworkSource(value); return *this;}
-
-    
     inline AddBridgeSourceRequest& WithNetworkSource(AddBridgeNetworkSourceRequest&& value) { SetNetworkSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AddBridgeFlowSourceRequest m_flowSource;

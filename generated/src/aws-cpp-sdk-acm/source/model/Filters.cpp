@@ -25,10 +25,8 @@ Filters::Filters() :
 {
 }
 
-Filters::Filters(JsonView jsonValue) : 
-    m_extendedKeyUsageHasBeenSet(false),
-    m_keyUsageHasBeenSet(false),
-    m_keyTypesHasBeenSet(false)
+Filters::Filters(JsonView jsonValue)
+  : Filters()
 {
   *this = jsonValue;
 }

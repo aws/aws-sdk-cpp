@@ -35,30 +35,12 @@ DeviceSummary::DeviceSummary() :
     m_lastPostureAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
 }
 
-DeviceSummary::DeviceSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_status(DeviceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_currentSoftwareSetIdHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetIdHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_lastConnectedAtHasBeenSet(false),
-    m_lastPostureAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DeviceSummary::DeviceSummary(JsonView jsonValue)
+  : DeviceSummary()
 {
   *this = jsonValue;
 }
@@ -170,13 +152,6 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("tags"))
-  {
-    m_tags = jsonValue.GetObject("tags");
-
-    m_tagsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -265,12 +240,6 @@ JsonValue DeviceSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   payload.WithObject("tags", m_tags.Jsonize());
 
   }
 

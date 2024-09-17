@@ -32,46 +32,19 @@ namespace Model
     AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The ID of the order. </p>
      */
     inline const Aws::String& GetOrderId() const{ return m_orderId; }
-
-    /**
-     * <p> The ID of the order. </p>
-     */
     inline bool OrderIdHasBeenSet() const { return m_orderIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the order. </p>
-     */
     inline void SetOrderId(const Aws::String& value) { m_orderIdHasBeenSet = true; m_orderId = value; }
-
-    /**
-     * <p> The ID of the order. </p>
-     */
     inline void SetOrderId(Aws::String&& value) { m_orderIdHasBeenSet = true; m_orderId = std::move(value); }
-
-    /**
-     * <p> The ID of the order. </p>
-     */
     inline void SetOrderId(const char* value) { m_orderIdHasBeenSet = true; m_orderId.assign(value); }
-
-    /**
-     * <p> The ID of the order. </p>
-     */
     inline CancelOrderRequest& WithOrderId(const Aws::String& value) { SetOrderId(value); return *this;}
-
-    /**
-     * <p> The ID of the order. </p>
-     */
     inline CancelOrderRequest& WithOrderId(Aws::String&& value) { SetOrderId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the order. </p>
-     */
     inline CancelOrderRequest& WithOrderId(const char* value) { SetOrderId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_orderId;

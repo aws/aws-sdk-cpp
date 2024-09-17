@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/NotificationConfiguration.h>
+#include <aws/sagemaker/model/WorkerAccessConfiguration.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <utility>
 
@@ -41,47 +42,21 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the work team.</p>
      */
     inline const Aws::String& GetWorkteamName() const{ return m_workteamName; }
-
-    /**
-     * <p>The name of the work team.</p>
-     */
     inline bool WorkteamNameHasBeenSet() const { return m_workteamNameHasBeenSet; }
-
-    /**
-     * <p>The name of the work team.</p>
-     */
     inline void SetWorkteamName(const Aws::String& value) { m_workteamNameHasBeenSet = true; m_workteamName = value; }
-
-    /**
-     * <p>The name of the work team.</p>
-     */
     inline void SetWorkteamName(Aws::String&& value) { m_workteamNameHasBeenSet = true; m_workteamName = std::move(value); }
-
-    /**
-     * <p>The name of the work team.</p>
-     */
     inline void SetWorkteamName(const char* value) { m_workteamNameHasBeenSet = true; m_workteamName.assign(value); }
-
-    /**
-     * <p>The name of the work team.</p>
-     */
     inline Workteam& WithWorkteamName(const Aws::String& value) { SetWorkteamName(value); return *this;}
-
-    /**
-     * <p>The name of the work team.</p>
-     */
     inline Workteam& WithWorkteamName(Aws::String&& value) { SetWorkteamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the work team.</p>
-     */
     inline Workteam& WithWorkteamName(const char* value) { SetWorkteamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the workers that make up the work team. </p> <p>Workforces can be
@@ -91,394 +66,136 @@ namespace Model
      * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
      */
     inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
-
-    /**
-     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the workers that make up the work team. </p> <p>Workforces can be
-     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-     * private workforces created using Amazon Cognito use
-     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
-     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-     */
     inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the workers that make up the work team. </p> <p>Workforces can be
-     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-     * private workforces created using Amazon Cognito use
-     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
-     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-     */
     inline void SetMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = value; }
-
-    /**
-     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the workers that make up the work team. </p> <p>Workforces can be
-     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-     * private workforces created using Amazon Cognito use
-     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
-     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-     */
     inline void SetMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = std::move(value); }
-
-    /**
-     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the workers that make up the work team. </p> <p>Workforces can be
-     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-     * private workforces created using Amazon Cognito use
-     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
-     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-     */
     inline Workteam& WithMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { SetMemberDefinitions(value); return *this;}
-
-    /**
-     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the workers that make up the work team. </p> <p>Workforces can be
-     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-     * private workforces created using Amazon Cognito use
-     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
-     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-     */
     inline Workteam& WithMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { SetMemberDefinitions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the workers that make up the work team. </p> <p>Workforces can be
-     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-     * private workforces created using Amazon Cognito use
-     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
-     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-     */
     inline Workteam& AddMemberDefinitions(const MemberDefinition& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the workers that make up the work team. </p> <p>Workforces can be
-     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-     * private workforces created using Amazon Cognito use
-     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
-     * identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-     */
     inline Workteam& AddMemberDefinitions(MemberDefinition&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
      */
     inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-     */
     inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-     */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-     */
     inline void SetWorkteamArn(Aws::String&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-     */
     inline void SetWorkteamArn(const char* value) { m_workteamArnHasBeenSet = true; m_workteamArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-     */
     inline Workteam& WithWorkteamArn(const Aws::String& value) { SetWorkteamArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-     */
     inline Workteam& WithWorkteamArn(Aws::String&& value) { SetWorkteamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-     */
     inline Workteam& WithWorkteamArn(const char* value) { SetWorkteamArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the workforce.</p>
      */
     inline const Aws::String& GetWorkforceArn() const{ return m_workforceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
-     */
     inline bool WorkforceArnHasBeenSet() const { return m_workforceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
-     */
     inline void SetWorkforceArn(const Aws::String& value) { m_workforceArnHasBeenSet = true; m_workforceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
-     */
     inline void SetWorkforceArn(Aws::String&& value) { m_workforceArnHasBeenSet = true; m_workforceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
-     */
     inline void SetWorkforceArn(const char* value) { m_workforceArnHasBeenSet = true; m_workforceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
-     */
     inline Workteam& WithWorkforceArn(const Aws::String& value) { SetWorkforceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
-     */
     inline Workteam& WithWorkforceArn(Aws::String&& value) { SetWorkforceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
-     */
     inline Workteam& WithWorkforceArn(const char* value) { SetWorkforceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductListingIds() const{ return m_productListingIds; }
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline bool ProductListingIdsHasBeenSet() const { return m_productListingIdsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline void SetProductListingIds(const Aws::Vector<Aws::String>& value) { m_productListingIdsHasBeenSet = true; m_productListingIds = value; }
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline void SetProductListingIds(Aws::Vector<Aws::String>&& value) { m_productListingIdsHasBeenSet = true; m_productListingIds = std::move(value); }
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline Workteam& WithProductListingIds(const Aws::Vector<Aws::String>& value) { SetProductListingIds(value); return *this;}
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline Workteam& WithProductListingIds(Aws::Vector<Aws::String>&& value) { SetProductListingIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline Workteam& AddProductListingIds(const Aws::String& value) { m_productListingIdsHasBeenSet = true; m_productListingIds.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline Workteam& AddProductListingIds(Aws::String&& value) { m_productListingIdsHasBeenSet = true; m_productListingIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-     */
     inline Workteam& AddProductListingIds(const char* value) { m_productListingIdsHasBeenSet = true; m_productListingIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the work team.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the work team.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the work team.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the work team.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the work team.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the work team.</p>
-     */
     inline Workteam& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the work team.</p>
-     */
     inline Workteam& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the work team.</p>
-     */
     inline Workteam& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URI of the labeling job's user interface. Workers open this URI to start
      * labeling your data objects.</p>
      */
     inline const Aws::String& GetSubDomain() const{ return m_subDomain; }
-
-    /**
-     * <p>The URI of the labeling job's user interface. Workers open this URI to start
-     * labeling your data objects.</p>
-     */
     inline bool SubDomainHasBeenSet() const { return m_subDomainHasBeenSet; }
-
-    /**
-     * <p>The URI of the labeling job's user interface. Workers open this URI to start
-     * labeling your data objects.</p>
-     */
     inline void SetSubDomain(const Aws::String& value) { m_subDomainHasBeenSet = true; m_subDomain = value; }
-
-    /**
-     * <p>The URI of the labeling job's user interface. Workers open this URI to start
-     * labeling your data objects.</p>
-     */
     inline void SetSubDomain(Aws::String&& value) { m_subDomainHasBeenSet = true; m_subDomain = std::move(value); }
-
-    /**
-     * <p>The URI of the labeling job's user interface. Workers open this URI to start
-     * labeling your data objects.</p>
-     */
     inline void SetSubDomain(const char* value) { m_subDomainHasBeenSet = true; m_subDomain.assign(value); }
-
-    /**
-     * <p>The URI of the labeling job's user interface. Workers open this URI to start
-     * labeling your data objects.</p>
-     */
     inline Workteam& WithSubDomain(const Aws::String& value) { SetSubDomain(value); return *this;}
-
-    /**
-     * <p>The URI of the labeling job's user interface. Workers open this URI to start
-     * labeling your data objects.</p>
-     */
     inline Workteam& WithSubDomain(Aws::String&& value) { SetSubDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The URI of the labeling job's user interface. Workers open this URI to start
-     * labeling your data objects.</p>
-     */
     inline Workteam& WithSubDomain(const char* value) { SetSubDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the work team was created (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
-
-    /**
-     * <p>The date and time that the work team was created (timestamp).</p>
-     */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-
-    /**
-     * <p>The date and time that the work team was created (timestamp).</p>
-     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-
-    /**
-     * <p>The date and time that the work team was created (timestamp).</p>
-     */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-
-    /**
-     * <p>The date and time that the work team was created (timestamp).</p>
-     */
     inline Workteam& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-
-    /**
-     * <p>The date and time that the work team was created (timestamp).</p>
-     */
     inline Workteam& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the work team was last updated (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
-
-    /**
-     * <p>The date and time that the work team was last updated (timestamp).</p>
-     */
     inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
-
-    /**
-     * <p>The date and time that the work team was last updated (timestamp).</p>
-     */
     inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
-
-    /**
-     * <p>The date and time that the work team was last updated (timestamp).</p>
-     */
     inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::move(value); }
-
-    /**
-     * <p>The date and time that the work team was last updated (timestamp).</p>
-     */
     inline Workteam& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-
-    /**
-     * <p>The date and time that the work team was last updated (timestamp).</p>
-     */
     inline Workteam& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configures SNS notifications of available or expiring work items for work
      * teams.</p>
      */
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
-
-    /**
-     * <p>Configures SNS notifications of available or expiring work items for work
-     * teams.</p>
-     */
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configures SNS notifications of available or expiring work items for work
-     * teams.</p>
-     */
     inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
-
-    /**
-     * <p>Configures SNS notifications of available or expiring work items for work
-     * teams.</p>
-     */
     inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
-
-    /**
-     * <p>Configures SNS notifications of available or expiring work items for work
-     * teams.</p>
-     */
     inline Workteam& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
-
-    /**
-     * <p>Configures SNS notifications of available or expiring work items for work
-     * teams.</p>
-     */
     inline Workteam& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Describes any access constraints that have been defined for Amazon S3
+     * resources.</p>
+     */
+    inline const WorkerAccessConfiguration& GetWorkerAccessConfiguration() const{ return m_workerAccessConfiguration; }
+    inline bool WorkerAccessConfigurationHasBeenSet() const { return m_workerAccessConfigurationHasBeenSet; }
+    inline void SetWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = value; }
+    inline void SetWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = std::move(value); }
+    inline Workteam& WithWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { SetWorkerAccessConfiguration(value); return *this;}
+    inline Workteam& WithWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { SetWorkerAccessConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_workteamName;
@@ -510,6 +227,9 @@ namespace Model
 
     NotificationConfiguration m_notificationConfiguration;
     bool m_notificationConfigurationHasBeenSet = false;
+
+    WorkerAccessConfiguration m_workerAccessConfiguration;
+    bool m_workerAccessConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,26 +40,15 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of attendees allowed into the meeting.</p>
      */
     inline int GetMaxCount() const{ return m_maxCount; }
-
-    /**
-     * <p>The maximum number of attendees allowed into the meeting.</p>
-     */
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of attendees allowed into the meeting.</p>
-     */
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
-
-    /**
-     * <p>The maximum number of attendees allowed into the meeting.</p>
-     */
     inline AttendeeFeatures& WithMaxCount(int value) { SetMaxCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxCount;

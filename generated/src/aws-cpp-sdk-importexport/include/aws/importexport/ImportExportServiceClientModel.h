@@ -24,6 +24,7 @@
 #include <aws/importexport/model/GetStatusResult.h>
 #include <aws/importexport/model/ListJobsResult.h>
 #include <aws/importexport/model/UpdateJobResult.h>
+#include <aws/importexport/model/ListJobsRequest.h>
 /* End of service model headers required in ImportExportClient header */
 
 namespace Aws
@@ -57,7 +58,7 @@ namespace Aws
 
   namespace ImportExport
   {
-    using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ImportExportEndpointProviderBase = Aws::ImportExport::Endpoint::ImportExportEndpointProviderBase;
     using ImportExportEndpointProvider = Aws::ImportExport::Endpoint::ImportExportEndpointProvider;
 

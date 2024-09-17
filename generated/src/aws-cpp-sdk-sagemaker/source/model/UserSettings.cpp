@@ -35,28 +35,15 @@ UserSettings::UserSettings() :
     m_studioWebPortal(StudioWebPortal::NOT_SET),
     m_studioWebPortalHasBeenSet(false),
     m_customPosixUserConfigHasBeenSet(false),
-    m_customFileSystemConfigsHasBeenSet(false)
+    m_customFileSystemConfigsHasBeenSet(false),
+    m_studioWebPortalSettingsHasBeenSet(false),
+    m_autoMountHomeEFS(AutoMountHomeEFS::NOT_SET),
+    m_autoMountHomeEFSHasBeenSet(false)
 {
 }
 
-UserSettings::UserSettings(JsonView jsonValue) : 
-    m_executionRoleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sharingSettingsHasBeenSet(false),
-    m_jupyterServerAppSettingsHasBeenSet(false),
-    m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_tensorBoardAppSettingsHasBeenSet(false),
-    m_rStudioServerProAppSettingsHasBeenSet(false),
-    m_rSessionAppSettingsHasBeenSet(false),
-    m_canvasAppSettingsHasBeenSet(false),
-    m_codeEditorAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false),
-    m_defaultLandingUriHasBeenSet(false),
-    m_studioWebPortal(StudioWebPortal::NOT_SET),
-    m_studioWebPortalHasBeenSet(false),
-    m_customPosixUserConfigHasBeenSet(false),
-    m_customFileSystemConfigsHasBeenSet(false)
+UserSettings::UserSettings(JsonView jsonValue)
+  : UserSettings()
 {
   *this = jsonValue;
 }
@@ -181,6 +168,20 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_customFileSystemConfigsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StudioWebPortalSettings"))
+  {
+    m_studioWebPortalSettings = jsonValue.GetObject("StudioWebPortalSettings");
+
+    m_studioWebPortalSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutoMountHomeEFS"))
+  {
+    m_autoMountHomeEFS = AutoMountHomeEFSMapper::GetAutoMountHomeEFSForName(jsonValue.GetString("AutoMountHomeEFS"));
+
+    m_autoMountHomeEFSHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -291,6 +292,17 @@ JsonValue UserSettings::Jsonize() const
    }
    payload.WithArray("CustomFileSystemConfigs", std::move(customFileSystemConfigsJsonList));
 
+  }
+
+  if(m_studioWebPortalSettingsHasBeenSet)
+  {
+   payload.WithObject("StudioWebPortalSettings", m_studioWebPortalSettings.Jsonize());
+
+  }
+
+  if(m_autoMountHomeEFSHasBeenSet)
+  {
+   payload.WithString("AutoMountHomeEFS", AutoMountHomeEFSMapper::GetNameForAutoMountHomeEFS(m_autoMountHomeEFS));
   }
 
   return payload;

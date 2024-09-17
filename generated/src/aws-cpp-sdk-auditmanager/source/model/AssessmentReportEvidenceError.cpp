@@ -25,10 +25,8 @@ AssessmentReportEvidenceError::AssessmentReportEvidenceError() :
 {
 }
 
-AssessmentReportEvidenceError::AssessmentReportEvidenceError(JsonView jsonValue) : 
-    m_evidenceIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+AssessmentReportEvidenceError::AssessmentReportEvidenceError(JsonView jsonValue)
+  : AssessmentReportEvidenceError()
 {
   *this = jsonValue;
 }

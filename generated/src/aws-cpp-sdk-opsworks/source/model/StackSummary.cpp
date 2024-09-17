@@ -30,15 +30,8 @@ StackSummary::StackSummary() :
 {
 }
 
-StackSummary::StackSummary(JsonView jsonValue) : 
-    m_stackIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_layersCount(0),
-    m_layersCountHasBeenSet(false),
-    m_appsCount(0),
-    m_appsCountHasBeenSet(false),
-    m_instancesCountHasBeenSet(false)
+StackSummary::StackSummary(JsonView jsonValue)
+  : StackSummary()
 {
   *this = jsonValue;
 }

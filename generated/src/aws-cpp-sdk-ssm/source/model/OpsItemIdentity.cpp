@@ -23,8 +23,8 @@ OpsItemIdentity::OpsItemIdentity() :
 {
 }
 
-OpsItemIdentity::OpsItemIdentity(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+OpsItemIdentity::OpsItemIdentity(JsonView jsonValue)
+  : OpsItemIdentity()
 {
   *this = jsonValue;
 }

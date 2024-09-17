@@ -24,9 +24,8 @@ VersionStatus::VersionStatus() :
 {
 }
 
-VersionStatus::VersionStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+VersionStatus::VersionStatus(JsonView jsonValue)
+  : VersionStatus()
 {
   *this = jsonValue;
 }

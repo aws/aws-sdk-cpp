@@ -25,10 +25,8 @@ InstanceFleetTimeline::InstanceFleetTimeline() :
 {
 }
 
-InstanceFleetTimeline::InstanceFleetTimeline(JsonView jsonValue) : 
-    m_creationDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+InstanceFleetTimeline::InstanceFleetTimeline(JsonView jsonValue)
+  : InstanceFleetTimeline()
 {
   *this = jsonValue;
 }

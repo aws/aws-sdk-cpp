@@ -19,6 +19,9 @@ namespace Model
 {
 
 ProfileDetail::ProfileDetail() : 
+    m_acceptRoleSessionName(false),
+    m_acceptRoleSessionNameHasBeenSet(false),
+    m_attributeMappingsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_durationSeconds(0),
@@ -37,28 +40,31 @@ ProfileDetail::ProfileDetail() :
 {
 }
 
-ProfileDetail::ProfileDetail(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_managedPolicyArnsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_requireInstanceProperties(false),
-    m_requireInstancePropertiesHasBeenSet(false),
-    m_roleArnsHasBeenSet(false),
-    m_sessionPolicyHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ProfileDetail::ProfileDetail(JsonView jsonValue)
+  : ProfileDetail()
 {
   *this = jsonValue;
 }
 
 ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("acceptRoleSessionName"))
+  {
+    m_acceptRoleSessionName = jsonValue.GetBool("acceptRoleSessionName");
+
+    m_acceptRoleSessionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("attributeMappings"))
+  {
+    Aws::Utils::Array<JsonView> attributeMappingsJsonList = jsonValue.GetArray("attributeMappings");
+    for(unsigned attributeMappingsIndex = 0; attributeMappingsIndex < attributeMappingsJsonList.GetLength(); ++attributeMappingsIndex)
+    {
+      m_attributeMappings.push_back(attributeMappingsJsonList[attributeMappingsIndex].AsObject());
+    }
+    m_attributeMappingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -155,6 +161,23 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 JsonValue ProfileDetail::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_acceptRoleSessionNameHasBeenSet)
+  {
+   payload.WithBool("acceptRoleSessionName", m_acceptRoleSessionName);
+
+  }
+
+  if(m_attributeMappingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> attributeMappingsJsonList(m_attributeMappings.size());
+   for(unsigned attributeMappingsIndex = 0; attributeMappingsIndex < attributeMappingsJsonList.GetLength(); ++attributeMappingsIndex)
+   {
+     attributeMappingsJsonList[attributeMappingsIndex].AsObject(m_attributeMappings[attributeMappingsIndex].Jsonize());
+   }
+   payload.WithArray("attributeMappings", std::move(attributeMappingsJsonList));
+
+  }
 
   if(m_createdAtHasBeenSet)
   {

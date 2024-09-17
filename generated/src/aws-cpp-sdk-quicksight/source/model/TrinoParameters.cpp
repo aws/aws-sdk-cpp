@@ -26,11 +26,8 @@ TrinoParameters::TrinoParameters() :
 {
 }
 
-TrinoParameters::TrinoParameters(JsonView jsonValue) : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_catalogHasBeenSet(false)
+TrinoParameters::TrinoParameters(JsonView jsonValue)
+  : TrinoParameters()
 {
   *this = jsonValue;
 }

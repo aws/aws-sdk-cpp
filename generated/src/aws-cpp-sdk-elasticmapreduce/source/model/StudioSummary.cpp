@@ -30,15 +30,8 @@ StudioSummary::StudioSummary() :
 {
 }
 
-StudioSummary::StudioSummary(JsonView jsonValue) : 
-    m_studioIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_authMode(AuthMode::NOT_SET),
-    m_authModeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+StudioSummary::StudioSummary(JsonView jsonValue)
+  : StudioSummary()
 {
   *this = jsonValue;
 }

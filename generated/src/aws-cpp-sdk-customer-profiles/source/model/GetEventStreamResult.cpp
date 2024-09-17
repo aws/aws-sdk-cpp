@@ -22,8 +22,8 @@ GetEventStreamResult::GetEventStreamResult() :
 {
 }
 
-GetEventStreamResult::GetEventStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EventStreamState::NOT_SET)
+GetEventStreamResult::GetEventStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEventStreamResult()
 {
   *this = result;
 }

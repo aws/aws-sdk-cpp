@@ -26,10 +26,8 @@ MqttContext::MqttContext() :
 {
 }
 
-MqttContext::MqttContext(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+MqttContext::MqttContext(JsonView jsonValue)
+  : MqttContext()
 {
   *this = jsonValue;
 }

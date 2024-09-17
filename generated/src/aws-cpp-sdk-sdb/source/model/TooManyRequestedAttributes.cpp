@@ -26,9 +26,8 @@ TooManyRequestedAttributes::TooManyRequestedAttributes() :
 {
 }
 
-TooManyRequestedAttributes::TooManyRequestedAttributes(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+TooManyRequestedAttributes::TooManyRequestedAttributes(const XmlNode& xmlNode)
+  : TooManyRequestedAttributes()
 {
   *this = xmlNode;
 }

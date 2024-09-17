@@ -22,8 +22,8 @@ SendSerialConsoleSSHPublicKeyResult::SendSerialConsoleSSHPublicKeyResult() :
 {
 }
 
-SendSerialConsoleSSHPublicKeyResult::SendSerialConsoleSSHPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_success(false)
+SendSerialConsoleSSHPublicKeyResult::SendSerialConsoleSSHPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SendSerialConsoleSSHPublicKeyResult()
 {
   *this = result;
 }

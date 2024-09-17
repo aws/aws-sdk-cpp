@@ -29,22 +29,16 @@ SyncConfiguration::SyncConfiguration() :
     m_resourceNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false)
+    m_syncTypeHasBeenSet(false),
+    m_publishDeploymentStatus(PublishDeploymentStatus::NOT_SET),
+    m_publishDeploymentStatusHasBeenSet(false),
+    m_triggerResourceUpdateOn(TriggerResourceUpdateOn::NOT_SET),
+    m_triggerResourceUpdateOnHasBeenSet(false)
 {
 }
 
-SyncConfiguration::SyncConfiguration(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_configFileHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_repositoryLinkIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false)
+SyncConfiguration::SyncConfiguration(JsonView jsonValue)
+  : SyncConfiguration()
 {
   *this = jsonValue;
 }
@@ -114,6 +108,20 @@ SyncConfiguration& SyncConfiguration::operator =(JsonView jsonValue)
     m_syncTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PublishDeploymentStatus"))
+  {
+    m_publishDeploymentStatus = PublishDeploymentStatusMapper::GetPublishDeploymentStatusForName(jsonValue.GetString("PublishDeploymentStatus"));
+
+    m_publishDeploymentStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TriggerResourceUpdateOn"))
+  {
+    m_triggerResourceUpdateOn = TriggerResourceUpdateOnMapper::GetTriggerResourceUpdateOnForName(jsonValue.GetString("TriggerResourceUpdateOn"));
+
+    m_triggerResourceUpdateOnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,6 +179,16 @@ JsonValue SyncConfiguration::Jsonize() const
   if(m_syncTypeHasBeenSet)
   {
    payload.WithString("SyncType", SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType));
+  }
+
+  if(m_publishDeploymentStatusHasBeenSet)
+  {
+   payload.WithString("PublishDeploymentStatus", PublishDeploymentStatusMapper::GetNameForPublishDeploymentStatus(m_publishDeploymentStatus));
+  }
+
+  if(m_triggerResourceUpdateOnHasBeenSet)
+  {
+   payload.WithString("TriggerResourceUpdateOn", TriggerResourceUpdateOnMapper::GetNameForTriggerResourceUpdateOn(m_triggerResourceUpdateOn));
   }
 
   return payload;

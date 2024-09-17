@@ -33,77 +33,32 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>The ID of the video stream pool.</p>
+     * <p>The unique identifier of the requested resource. Valid values include the
+     * name and ARN of the media pipeline Kinesis Video Stream pool.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The ID of the video stream pool.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the video stream pool.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The ID of the video stream pool.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The ID of the video stream pool.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The ID of the video stream pool.</p>
-     */
     inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the video stream pool.</p>
-     */
     inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the video stream pool.</p>
-     */
     inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration settings for the video stream.</p>
      */
     inline const KinesisVideoStreamConfigurationUpdate& GetStreamConfiguration() const{ return m_streamConfiguration; }
-
-    /**
-     * <p>The configuration settings for the video stream.</p>
-     */
     inline bool StreamConfigurationHasBeenSet() const { return m_streamConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration settings for the video stream.</p>
-     */
     inline void SetStreamConfiguration(const KinesisVideoStreamConfigurationUpdate& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = value; }
-
-    /**
-     * <p>The configuration settings for the video stream.</p>
-     */
     inline void SetStreamConfiguration(KinesisVideoStreamConfigurationUpdate&& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration settings for the video stream.</p>
-     */
     inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(const KinesisVideoStreamConfigurationUpdate& value) { SetStreamConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration settings for the video stream.</p>
-     */
     inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(KinesisVideoStreamConfigurationUpdate&& value) { SetStreamConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

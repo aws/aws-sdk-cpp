@@ -23,8 +23,8 @@ SchemaDefinition::SchemaDefinition() :
 {
 }
 
-SchemaDefinition::SchemaDefinition(JsonView jsonValue) : 
-    m_cedarJsonHasBeenSet(false)
+SchemaDefinition::SchemaDefinition(JsonView jsonValue)
+  : SchemaDefinition()
 {
   *this = jsonValue;
 }

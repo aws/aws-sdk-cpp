@@ -30,15 +30,8 @@ LicenseRecommendationOption::LicenseRecommendationOption() :
 {
 }
 
-LicenseRecommendationOption::LicenseRecommendationOption(JsonView jsonValue) : 
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_licenseEdition(LicenseEdition::NOT_SET),
-    m_licenseEditionHasBeenSet(false),
-    m_licenseModel(LicenseModel::NOT_SET),
-    m_licenseModelHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false)
+LicenseRecommendationOption::LicenseRecommendationOption(JsonView jsonValue)
+  : LicenseRecommendationOption()
 {
   *this = jsonValue;
 }

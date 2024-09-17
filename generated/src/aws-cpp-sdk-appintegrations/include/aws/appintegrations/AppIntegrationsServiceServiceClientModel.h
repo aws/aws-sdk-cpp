@@ -20,6 +20,7 @@
 /* Service model headers required in AppIntegrationsServiceClient header */
 #include <aws/appintegrations/model/CreateApplicationResult.h>
 #include <aws/appintegrations/model/CreateDataIntegrationResult.h>
+#include <aws/appintegrations/model/CreateDataIntegrationAssociationResult.h>
 #include <aws/appintegrations/model/CreateEventIntegrationResult.h>
 #include <aws/appintegrations/model/DeleteApplicationResult.h>
 #include <aws/appintegrations/model/DeleteDataIntegrationResult.h>
@@ -38,7 +39,11 @@
 #include <aws/appintegrations/model/UntagResourceResult.h>
 #include <aws/appintegrations/model/UpdateApplicationResult.h>
 #include <aws/appintegrations/model/UpdateDataIntegrationResult.h>
+#include <aws/appintegrations/model/UpdateDataIntegrationAssociationResult.h>
 #include <aws/appintegrations/model/UpdateEventIntegrationResult.h>
+#include <aws/appintegrations/model/ListDataIntegrationsRequest.h>
+#include <aws/appintegrations/model/ListApplicationsRequest.h>
+#include <aws/appintegrations/model/ListEventIntegrationsRequest.h>
 /* End of service model headers required in AppIntegrationsServiceClient header */
 
 namespace Aws
@@ -72,7 +77,7 @@ namespace Aws
 
   namespace AppIntegrationsService
   {
-    using AppIntegrationsServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppIntegrationsServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppIntegrationsServiceEndpointProviderBase = Aws::AppIntegrationsService::Endpoint::AppIntegrationsServiceEndpointProviderBase;
     using AppIntegrationsServiceEndpointProvider = Aws::AppIntegrationsService::Endpoint::AppIntegrationsServiceEndpointProvider;
 
@@ -81,6 +86,7 @@ namespace Aws
       /* Service model forward declarations required in AppIntegrationsServiceClient header */
       class CreateApplicationRequest;
       class CreateDataIntegrationRequest;
+      class CreateDataIntegrationAssociationRequest;
       class CreateEventIntegrationRequest;
       class DeleteApplicationRequest;
       class DeleteDataIntegrationRequest;
@@ -99,12 +105,14 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateApplicationRequest;
       class UpdateDataIntegrationRequest;
+      class UpdateDataIntegrationAssociationRequest;
       class UpdateEventIntegrationRequest;
       /* End of service model forward declarations required in AppIntegrationsServiceClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateApplicationResult, AppIntegrationsServiceError> CreateApplicationOutcome;
       typedef Aws::Utils::Outcome<CreateDataIntegrationResult, AppIntegrationsServiceError> CreateDataIntegrationOutcome;
+      typedef Aws::Utils::Outcome<CreateDataIntegrationAssociationResult, AppIntegrationsServiceError> CreateDataIntegrationAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateEventIntegrationResult, AppIntegrationsServiceError> CreateEventIntegrationOutcome;
       typedef Aws::Utils::Outcome<DeleteApplicationResult, AppIntegrationsServiceError> DeleteApplicationOutcome;
       typedef Aws::Utils::Outcome<DeleteDataIntegrationResult, AppIntegrationsServiceError> DeleteDataIntegrationOutcome;
@@ -123,12 +131,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, AppIntegrationsServiceError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateApplicationResult, AppIntegrationsServiceError> UpdateApplicationOutcome;
       typedef Aws::Utils::Outcome<UpdateDataIntegrationResult, AppIntegrationsServiceError> UpdateDataIntegrationOutcome;
+      typedef Aws::Utils::Outcome<UpdateDataIntegrationAssociationResult, AppIntegrationsServiceError> UpdateDataIntegrationAssociationOutcome;
       typedef Aws::Utils::Outcome<UpdateEventIntegrationResult, AppIntegrationsServiceError> UpdateEventIntegrationOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
       typedef std::future<CreateDataIntegrationOutcome> CreateDataIntegrationOutcomeCallable;
+      typedef std::future<CreateDataIntegrationAssociationOutcome> CreateDataIntegrationAssociationOutcomeCallable;
       typedef std::future<CreateEventIntegrationOutcome> CreateEventIntegrationOutcomeCallable;
       typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
       typedef std::future<DeleteDataIntegrationOutcome> DeleteDataIntegrationOutcomeCallable;
@@ -147,6 +157,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
       typedef std::future<UpdateDataIntegrationOutcome> UpdateDataIntegrationOutcomeCallable;
+      typedef std::future<UpdateDataIntegrationAssociationOutcome> UpdateDataIntegrationAssociationOutcomeCallable;
       typedef std::future<UpdateEventIntegrationOutcome> UpdateEventIntegrationOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -156,6 +167,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateDataIntegrationRequest&, const Model::CreateDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataIntegrationResponseReceivedHandler;
+    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateDataIntegrationAssociationRequest&, const Model::CreateDataIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataIntegrationAssociationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateEventIntegrationRequest&, const Model::CreateEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventIntegrationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::DeleteDataIntegrationRequest&, const Model::DeleteDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataIntegrationResponseReceivedHandler;
@@ -174,6 +186,7 @@ namespace Aws
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UpdateDataIntegrationRequest&, const Model::UpdateDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataIntegrationResponseReceivedHandler;
+    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UpdateDataIntegrationAssociationRequest&, const Model::UpdateDataIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataIntegrationAssociationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UpdateEventIntegrationRequest&, const Model::UpdateEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventIntegrationResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace AppIntegrationsService

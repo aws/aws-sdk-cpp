@@ -24,9 +24,8 @@ SnapshotOptionsStatus::SnapshotOptionsStatus() :
 {
 }
 
-SnapshotOptionsStatus::SnapshotOptionsStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+SnapshotOptionsStatus::SnapshotOptionsStatus(JsonView jsonValue)
+  : SnapshotOptionsStatus()
 {
   *this = jsonValue;
 }

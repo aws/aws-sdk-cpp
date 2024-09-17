@@ -23,8 +23,8 @@ RuntimeHintValue::RuntimeHintValue() :
 {
 }
 
-RuntimeHintValue::RuntimeHintValue(JsonView jsonValue) : 
-    m_phraseHasBeenSet(false)
+RuntimeHintValue::RuntimeHintValue(JsonView jsonValue)
+  : RuntimeHintValue()
 {
   *this = jsonValue;
 }

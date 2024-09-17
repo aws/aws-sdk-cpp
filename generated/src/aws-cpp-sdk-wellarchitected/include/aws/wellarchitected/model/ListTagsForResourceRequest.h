@@ -32,30 +32,17 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadArn() const{ return m_workloadArn; }
-
-    
     inline bool WorkloadArnHasBeenSet() const { return m_workloadArnHasBeenSet; }
-
-    
     inline void SetWorkloadArn(const Aws::String& value) { m_workloadArnHasBeenSet = true; m_workloadArn = value; }
-
-    
     inline void SetWorkloadArn(Aws::String&& value) { m_workloadArnHasBeenSet = true; m_workloadArn = std::move(value); }
-
-    
     inline void SetWorkloadArn(const char* value) { m_workloadArnHasBeenSet = true; m_workloadArn.assign(value); }
-
-    
     inline ListTagsForResourceRequest& WithWorkloadArn(const Aws::String& value) { SetWorkloadArn(value); return *this;}
-
-    
     inline ListTagsForResourceRequest& WithWorkloadArn(Aws::String&& value) { SetWorkloadArn(std::move(value)); return *this;}
-
-    
     inline ListTagsForResourceRequest& WithWorkloadArn(const char* value) { SetWorkloadArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadArn;

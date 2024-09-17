@@ -30,15 +30,8 @@ ClusterOperationV2Summary::ClusterOperationV2Summary() :
 {
 }
 
-ClusterOperationV2Summary::ClusterOperationV2Summary(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterType(ClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_operationArnHasBeenSet(false),
-    m_operationStateHasBeenSet(false),
-    m_operationTypeHasBeenSet(false)
+ClusterOperationV2Summary::ClusterOperationV2Summary(JsonView jsonValue)
+  : ClusterOperationV2Summary()
 {
   *this = jsonValue;
 }

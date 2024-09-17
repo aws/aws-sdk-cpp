@@ -24,9 +24,8 @@ BackTestConfiguration::BackTestConfiguration() :
 {
 }
 
-BackTestConfiguration::BackTestConfiguration(JsonView jsonValue) : 
-    m_runBackTestMode(false),
-    m_runBackTestModeHasBeenSet(false)
+BackTestConfiguration::BackTestConfiguration(JsonView jsonValue)
+  : BackTestConfiguration()
 {
   *this = jsonValue;
 }

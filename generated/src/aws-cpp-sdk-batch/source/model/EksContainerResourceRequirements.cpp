@@ -24,9 +24,8 @@ EksContainerResourceRequirements::EksContainerResourceRequirements() :
 {
 }
 
-EksContainerResourceRequirements::EksContainerResourceRequirements(JsonView jsonValue) : 
-    m_limitsHasBeenSet(false),
-    m_requestsHasBeenSet(false)
+EksContainerResourceRequirements::EksContainerResourceRequirements(JsonView jsonValue)
+  : EksContainerResourceRequirements()
 {
   *this = jsonValue;
 }

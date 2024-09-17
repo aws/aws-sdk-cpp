@@ -25,10 +25,8 @@ AvailMatchingCriteria::AvailMatchingCriteria() :
 {
 }
 
-AvailMatchingCriteria::AvailMatchingCriteria(JsonView jsonValue) : 
-    m_dynamicVariableHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
+AvailMatchingCriteria::AvailMatchingCriteria(JsonView jsonValue)
+  : AvailMatchingCriteria()
 {
   *this = jsonValue;
 }

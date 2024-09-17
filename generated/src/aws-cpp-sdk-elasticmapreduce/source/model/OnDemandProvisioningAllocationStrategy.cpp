@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int lowest_price_HASH = HashingUtils::HashString("lowest-price");
+        static const int prioritized_HASH = HashingUtils::HashString("prioritized");
 
 
         OnDemandProvisioningAllocationStrategy GetOnDemandProvisioningAllocationStrategyForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == lowest_price_HASH)
           {
             return OnDemandProvisioningAllocationStrategy::lowest_price;
+          }
+          else if (hashCode == prioritized_HASH)
+          {
+            return OnDemandProvisioningAllocationStrategy::prioritized;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case OnDemandProvisioningAllocationStrategy::lowest_price:
             return "lowest-price";
+          case OnDemandProvisioningAllocationStrategy::prioritized:
+            return "prioritized";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

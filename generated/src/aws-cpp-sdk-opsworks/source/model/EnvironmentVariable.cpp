@@ -26,11 +26,8 @@ EnvironmentVariable::EnvironmentVariable() :
 {
 }
 
-EnvironmentVariable::EnvironmentVariable(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_secure(false),
-    m_secureHasBeenSet(false)
+EnvironmentVariable::EnvironmentVariable(JsonView jsonValue)
+  : EnvironmentVariable()
 {
   *this = jsonValue;
 }

@@ -21,14 +21,13 @@ namespace Model
 SourceCloudProperties::SourceCloudProperties() : 
     m_originAccountIDHasBeenSet(false),
     m_originAvailabilityZoneHasBeenSet(false),
-    m_originRegionHasBeenSet(false)
+    m_originRegionHasBeenSet(false),
+    m_sourceOutpostArnHasBeenSet(false)
 {
 }
 
-SourceCloudProperties::SourceCloudProperties(JsonView jsonValue) : 
-    m_originAccountIDHasBeenSet(false),
-    m_originAvailabilityZoneHasBeenSet(false),
-    m_originRegionHasBeenSet(false)
+SourceCloudProperties::SourceCloudProperties(JsonView jsonValue)
+  : SourceCloudProperties()
 {
   *this = jsonValue;
 }
@@ -56,6 +55,13 @@ SourceCloudProperties& SourceCloudProperties::operator =(JsonView jsonValue)
     m_originRegionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceOutpostArn"))
+  {
+    m_sourceOutpostArn = jsonValue.GetString("sourceOutpostArn");
+
+    m_sourceOutpostArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +84,12 @@ JsonValue SourceCloudProperties::Jsonize() const
   if(m_originRegionHasBeenSet)
   {
    payload.WithString("originRegion", m_originRegion);
+
+  }
+
+  if(m_sourceOutpostArnHasBeenSet)
+  {
+   payload.WithString("sourceOutpostArn", m_sourceOutpostArn);
 
   }
 

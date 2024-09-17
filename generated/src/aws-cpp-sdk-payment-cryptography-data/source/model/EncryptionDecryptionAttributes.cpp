@@ -19,22 +19,28 @@ namespace Model
 {
 
 EncryptionDecryptionAttributes::EncryptionDecryptionAttributes() : 
+    m_symmetricHasBeenSet(false),
     m_asymmetricHasBeenSet(false),
     m_dukptHasBeenSet(false),
-    m_symmetricHasBeenSet(false)
+    m_emvHasBeenSet(false)
 {
 }
 
-EncryptionDecryptionAttributes::EncryptionDecryptionAttributes(JsonView jsonValue) : 
-    m_asymmetricHasBeenSet(false),
-    m_dukptHasBeenSet(false),
-    m_symmetricHasBeenSet(false)
+EncryptionDecryptionAttributes::EncryptionDecryptionAttributes(JsonView jsonValue)
+  : EncryptionDecryptionAttributes()
 {
   *this = jsonValue;
 }
 
 EncryptionDecryptionAttributes& EncryptionDecryptionAttributes::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Symmetric"))
+  {
+    m_symmetric = jsonValue.GetObject("Symmetric");
+
+    m_symmetricHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Asymmetric"))
   {
     m_asymmetric = jsonValue.GetObject("Asymmetric");
@@ -49,11 +55,11 @@ EncryptionDecryptionAttributes& EncryptionDecryptionAttributes::operator =(JsonV
     m_dukptHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Symmetric"))
+  if(jsonValue.ValueExists("Emv"))
   {
-    m_symmetric = jsonValue.GetObject("Symmetric");
+    m_emv = jsonValue.GetObject("Emv");
 
-    m_symmetricHasBeenSet = true;
+    m_emvHasBeenSet = true;
   }
 
   return *this;
@@ -62,6 +68,12 @@ EncryptionDecryptionAttributes& EncryptionDecryptionAttributes::operator =(JsonV
 JsonValue EncryptionDecryptionAttributes::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_symmetricHasBeenSet)
+  {
+   payload.WithObject("Symmetric", m_symmetric.Jsonize());
+
+  }
 
   if(m_asymmetricHasBeenSet)
   {
@@ -75,9 +87,9 @@ JsonValue EncryptionDecryptionAttributes::Jsonize() const
 
   }
 
-  if(m_symmetricHasBeenSet)
+  if(m_emvHasBeenSet)
   {
-   payload.WithObject("Symmetric", m_symmetric.Jsonize());
+   payload.WithObject("Emv", m_emv.Jsonize());
 
   }
 

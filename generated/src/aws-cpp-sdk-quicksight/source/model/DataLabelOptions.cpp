@@ -39,24 +39,8 @@ DataLabelOptions::DataLabelOptions() :
 {
 }
 
-DataLabelOptions::DataLabelOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_categoryLabelVisibility(Visibility::NOT_SET),
-    m_categoryLabelVisibilityHasBeenSet(false),
-    m_measureLabelVisibility(Visibility::NOT_SET),
-    m_measureLabelVisibilityHasBeenSet(false),
-    m_dataLabelTypesHasBeenSet(false),
-    m_position(DataLabelPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_labelContent(DataLabelContent::NOT_SET),
-    m_labelContentHasBeenSet(false),
-    m_labelFontConfigurationHasBeenSet(false),
-    m_labelColorHasBeenSet(false),
-    m_overlap(DataLabelOverlap::NOT_SET),
-    m_overlapHasBeenSet(false),
-    m_totalsVisibility(Visibility::NOT_SET),
-    m_totalsVisibilityHasBeenSet(false)
+DataLabelOptions::DataLabelOptions(JsonView jsonValue)
+  : DataLabelOptions()
 {
   *this = jsonValue;
 }

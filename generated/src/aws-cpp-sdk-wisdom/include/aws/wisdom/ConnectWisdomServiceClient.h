@@ -645,13 +645,13 @@ namespace ConnectWisdomService
          * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListAssistants">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAssistantsOutcome ListAssistants(const Model::ListAssistantsRequest& request) const;
+        virtual Model::ListAssistantsOutcome ListAssistants(const Model::ListAssistantsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAssistants that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAssistantsRequestT = Model::ListAssistantsRequest>
-        Model::ListAssistantsOutcomeCallable ListAssistantsCallable(const ListAssistantsRequestT& request) const
+        Model::ListAssistantsOutcomeCallable ListAssistantsCallable(const ListAssistantsRequestT& request = {}) const
         {
             return SubmitCallable(&ConnectWisdomServiceClient::ListAssistants, request);
         }
@@ -660,7 +660,7 @@ namespace ConnectWisdomService
          * An Async wrapper for ListAssistants that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAssistantsRequestT = Model::ListAssistantsRequest>
-        void ListAssistantsAsync(const ListAssistantsRequestT& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAssistantsAsync(const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAssistantsRequestT& request = {}) const
         {
             return SubmitAsync(&ConnectWisdomServiceClient::ListAssistants, request, handler, context);
         }
@@ -720,13 +720,13 @@ namespace ConnectWisdomService
          * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListKnowledgeBases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKnowledgeBasesOutcome ListKnowledgeBases(const Model::ListKnowledgeBasesRequest& request) const;
+        virtual Model::ListKnowledgeBasesOutcome ListKnowledgeBases(const Model::ListKnowledgeBasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKnowledgeBases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKnowledgeBasesRequestT = Model::ListKnowledgeBasesRequest>
-        Model::ListKnowledgeBasesOutcomeCallable ListKnowledgeBasesCallable(const ListKnowledgeBasesRequestT& request) const
+        Model::ListKnowledgeBasesOutcomeCallable ListKnowledgeBasesCallable(const ListKnowledgeBasesRequestT& request = {}) const
         {
             return SubmitCallable(&ConnectWisdomServiceClient::ListKnowledgeBases, request);
         }
@@ -735,7 +735,7 @@ namespace ConnectWisdomService
          * An Async wrapper for ListKnowledgeBases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKnowledgeBasesRequestT = Model::ListKnowledgeBasesRequest>
-        void ListKnowledgeBasesAsync(const ListKnowledgeBasesRequestT& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKnowledgeBasesAsync(const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKnowledgeBasesRequestT& request = {}) const
         {
             return SubmitAsync(&ConnectWisdomServiceClient::ListKnowledgeBases, request, handler, context);
         }
@@ -1127,7 +1127,6 @@ namespace ConnectWisdomService
       void init(const ConnectWisdomServiceClientConfiguration& clientConfiguration);
 
       ConnectWisdomServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> m_endpointProvider;
   };
 

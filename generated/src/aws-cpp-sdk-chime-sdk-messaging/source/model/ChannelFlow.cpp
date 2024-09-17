@@ -27,12 +27,8 @@ ChannelFlow::ChannelFlow() :
 {
 }
 
-ChannelFlow::ChannelFlow(JsonView jsonValue) : 
-    m_channelFlowArnHasBeenSet(false),
-    m_processorsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+ChannelFlow::ChannelFlow(JsonView jsonValue)
+  : ChannelFlow()
 {
   *this = jsonValue;
 }

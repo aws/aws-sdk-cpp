@@ -38,144 +38,49 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the repository that contains the pull request.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository that contains the pull request.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository that contains the pull request.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository that contains the pull request.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository that contains the pull request.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository that contains the pull request.</p>
-     */
     inline Target& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository that contains the pull request.</p>
-     */
     inline Target& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository that contains the pull request.</p>
-     */
     inline Target& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The branch of the repository that contains the changes for the pull request.
      * Also known as the source branch.</p>
      */
     inline const Aws::String& GetSourceReference() const{ return m_sourceReference; }
-
-    /**
-     * <p>The branch of the repository that contains the changes for the pull request.
-     * Also known as the source branch.</p>
-     */
     inline bool SourceReferenceHasBeenSet() const { return m_sourceReferenceHasBeenSet; }
-
-    /**
-     * <p>The branch of the repository that contains the changes for the pull request.
-     * Also known as the source branch.</p>
-     */
     inline void SetSourceReference(const Aws::String& value) { m_sourceReferenceHasBeenSet = true; m_sourceReference = value; }
-
-    /**
-     * <p>The branch of the repository that contains the changes for the pull request.
-     * Also known as the source branch.</p>
-     */
     inline void SetSourceReference(Aws::String&& value) { m_sourceReferenceHasBeenSet = true; m_sourceReference = std::move(value); }
-
-    /**
-     * <p>The branch of the repository that contains the changes for the pull request.
-     * Also known as the source branch.</p>
-     */
     inline void SetSourceReference(const char* value) { m_sourceReferenceHasBeenSet = true; m_sourceReference.assign(value); }
-
-    /**
-     * <p>The branch of the repository that contains the changes for the pull request.
-     * Also known as the source branch.</p>
-     */
     inline Target& WithSourceReference(const Aws::String& value) { SetSourceReference(value); return *this;}
-
-    /**
-     * <p>The branch of the repository that contains the changes for the pull request.
-     * Also known as the source branch.</p>
-     */
     inline Target& WithSourceReference(Aws::String&& value) { SetSourceReference(std::move(value)); return *this;}
-
-    /**
-     * <p>The branch of the repository that contains the changes for the pull request.
-     * Also known as the source branch.</p>
-     */
     inline Target& WithSourceReference(const char* value) { SetSourceReference(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The branch of the repository where the pull request changes are merged. Also
      * known as the destination branch.</p>
      */
     inline const Aws::String& GetDestinationReference() const{ return m_destinationReference; }
-
-    /**
-     * <p>The branch of the repository where the pull request changes are merged. Also
-     * known as the destination branch.</p>
-     */
     inline bool DestinationReferenceHasBeenSet() const { return m_destinationReferenceHasBeenSet; }
-
-    /**
-     * <p>The branch of the repository where the pull request changes are merged. Also
-     * known as the destination branch.</p>
-     */
     inline void SetDestinationReference(const Aws::String& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = value; }
-
-    /**
-     * <p>The branch of the repository where the pull request changes are merged. Also
-     * known as the destination branch.</p>
-     */
     inline void SetDestinationReference(Aws::String&& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = std::move(value); }
-
-    /**
-     * <p>The branch of the repository where the pull request changes are merged. Also
-     * known as the destination branch.</p>
-     */
     inline void SetDestinationReference(const char* value) { m_destinationReferenceHasBeenSet = true; m_destinationReference.assign(value); }
-
-    /**
-     * <p>The branch of the repository where the pull request changes are merged. Also
-     * known as the destination branch.</p>
-     */
     inline Target& WithDestinationReference(const Aws::String& value) { SetDestinationReference(value); return *this;}
-
-    /**
-     * <p>The branch of the repository where the pull request changes are merged. Also
-     * known as the destination branch.</p>
-     */
     inline Target& WithDestinationReference(Aws::String&& value) { SetDestinationReference(std::move(value)); return *this;}
-
-    /**
-     * <p>The branch of the repository where the pull request changes are merged. Also
-     * known as the destination branch.</p>
-     */
     inline Target& WithDestinationReference(const char* value) { SetDestinationReference(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

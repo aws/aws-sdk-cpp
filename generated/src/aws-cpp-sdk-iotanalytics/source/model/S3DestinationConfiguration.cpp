@@ -26,11 +26,8 @@ S3DestinationConfiguration::S3DestinationConfiguration() :
 {
 }
 
-S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_glueConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
+  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }

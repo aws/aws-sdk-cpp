@@ -26,11 +26,8 @@ ResolvedArtifact::ResolvedArtifact() :
 {
 }
 
-ResolvedArtifact::ResolvedArtifact(JsonView jsonValue) : 
-    m_type(ArtifactsType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_identifierHasBeenSet(false)
+ResolvedArtifact::ResolvedArtifact(JsonView jsonValue)
+  : ResolvedArtifact()
 {
   *this = jsonValue;
 }

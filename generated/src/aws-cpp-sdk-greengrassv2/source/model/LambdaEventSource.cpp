@@ -25,10 +25,8 @@ LambdaEventSource::LambdaEventSource() :
 {
 }
 
-LambdaEventSource::LambdaEventSource(JsonView jsonValue) : 
-    m_topicHasBeenSet(false),
-    m_type(LambdaEventSourceType::NOT_SET),
-    m_typeHasBeenSet(false)
+LambdaEventSource::LambdaEventSource(JsonView jsonValue)
+  : LambdaEventSource()
 {
   *this = jsonValue;
 }

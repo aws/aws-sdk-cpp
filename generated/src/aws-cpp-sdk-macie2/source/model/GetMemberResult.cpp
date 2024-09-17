@@ -22,8 +22,8 @@ GetMemberResult::GetMemberResult() :
 {
 }
 
-GetMemberResult::GetMemberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_relationshipStatus(RelationshipStatus::NOT_SET)
+GetMemberResult::GetMemberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMemberResult()
 {
   *this = result;
 }

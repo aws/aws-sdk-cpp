@@ -22,6 +22,7 @@ OfferFilters::OfferFilters() :
     m_entityIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_resaleAuthorizationIdHasBeenSet(false),
     m_releaseDateHasBeenSet(false),
     m_availabilityEndDateHasBeenSet(false),
     m_buyerAccountsHasBeenSet(false),
@@ -31,16 +32,8 @@ OfferFilters::OfferFilters() :
 {
 }
 
-OfferFilters::OfferFilters(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_availabilityEndDateHasBeenSet(false),
-    m_buyerAccountsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_targetingHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+OfferFilters::OfferFilters(JsonView jsonValue)
+  : OfferFilters()
 {
   *this = jsonValue;
 }
@@ -66,6 +59,13 @@ OfferFilters& OfferFilters::operator =(JsonView jsonValue)
     m_productId = jsonValue.GetObject("ProductId");
 
     m_productIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResaleAuthorizationId"))
+  {
+    m_resaleAuthorizationId = jsonValue.GetObject("ResaleAuthorizationId");
+
+    m_resaleAuthorizationIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReleaseDate"))
@@ -132,6 +132,12 @@ JsonValue OfferFilters::Jsonize() const
   if(m_productIdHasBeenSet)
   {
    payload.WithObject("ProductId", m_productId.Jsonize());
+
+  }
+
+  if(m_resaleAuthorizationIdHasBeenSet)
+  {
+   payload.WithObject("ResaleAuthorizationId", m_resaleAuthorizationId.Jsonize());
 
   }
 

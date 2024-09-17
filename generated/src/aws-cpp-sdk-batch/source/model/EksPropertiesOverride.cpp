@@ -23,8 +23,8 @@ EksPropertiesOverride::EksPropertiesOverride() :
 {
 }
 
-EksPropertiesOverride::EksPropertiesOverride(JsonView jsonValue) : 
-    m_podPropertiesHasBeenSet(false)
+EksPropertiesOverride::EksPropertiesOverride(JsonView jsonValue)
+  : EksPropertiesOverride()
 {
   *this = jsonValue;
 }

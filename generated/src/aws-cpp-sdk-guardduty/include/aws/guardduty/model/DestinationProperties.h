@@ -39,103 +39,35 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
      * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
      * </p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
-
-    /**
-     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
-     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
-     * </p>
-     */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
-     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
-     * </p>
-     */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-
-    /**
-     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
-     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
-     * </p>
-     */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
-     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
-     * </p>
-     */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
-     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
-     * </p>
-     */
     inline DestinationProperties& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
-     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
-     * </p>
-     */
     inline DestinationProperties& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
-     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
-     * </p>
-     */
     inline DestinationProperties& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the KMS key to use for encryption.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The ARN of the KMS key to use for encryption.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the KMS key to use for encryption.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The ARN of the KMS key to use for encryption.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the KMS key to use for encryption.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The ARN of the KMS key to use for encryption.</p>
-     */
     inline DestinationProperties& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key to use for encryption.</p>
-     */
     inline DestinationProperties& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key to use for encryption.</p>
-     */
     inline DestinationProperties& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationArn;

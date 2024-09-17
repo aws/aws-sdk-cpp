@@ -29,14 +29,8 @@ AssetPropertySummary::AssetPropertySummary() :
 {
 }
 
-AssetPropertySummary::AssetPropertySummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_assetCompositeModelIdHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+AssetPropertySummary::AssetPropertySummary(JsonView jsonValue)
+  : AssetPropertySummary()
 {
   *this = jsonValue;
 }

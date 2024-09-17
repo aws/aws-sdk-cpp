@@ -28,13 +28,8 @@ LargeTimestampGaps::LargeTimestampGaps() :
 {
 }
 
-LargeTimestampGaps::LargeTimestampGaps(JsonView jsonValue) : 
-    m_status(StatisticalIssueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_numberOfLargeTimestampGaps(0),
-    m_numberOfLargeTimestampGapsHasBeenSet(false),
-    m_maxTimestampGapInDays(0),
-    m_maxTimestampGapInDaysHasBeenSet(false)
+LargeTimestampGaps::LargeTimestampGaps(JsonView jsonValue)
+  : LargeTimestampGaps()
 {
   *this = jsonValue;
 }

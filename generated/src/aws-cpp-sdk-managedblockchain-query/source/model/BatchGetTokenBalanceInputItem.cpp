@@ -25,10 +25,8 @@ BatchGetTokenBalanceInputItem::BatchGetTokenBalanceInputItem() :
 {
 }
 
-BatchGetTokenBalanceInputItem::BatchGetTokenBalanceInputItem(JsonView jsonValue) : 
-    m_tokenIdentifierHasBeenSet(false),
-    m_ownerIdentifierHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false)
+BatchGetTokenBalanceInputItem::BatchGetTokenBalanceInputItem(JsonView jsonValue)
+  : BatchGetTokenBalanceInputItem()
 {
   *this = jsonValue;
 }

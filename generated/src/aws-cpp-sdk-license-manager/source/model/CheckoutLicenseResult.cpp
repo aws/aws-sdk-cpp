@@ -22,8 +22,8 @@ CheckoutLicenseResult::CheckoutLicenseResult() :
 {
 }
 
-CheckoutLicenseResult::CheckoutLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_checkoutType(CheckoutType::NOT_SET)
+CheckoutLicenseResult::CheckoutLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CheckoutLicenseResult()
 {
   *this = result;
 }

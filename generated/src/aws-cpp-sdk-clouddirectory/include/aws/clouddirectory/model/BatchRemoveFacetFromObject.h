@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The facet to remove from the object.</p>
      */
     inline const SchemaFacet& GetSchemaFacet() const{ return m_schemaFacet; }
-
-    /**
-     * <p>The facet to remove from the object.</p>
-     */
     inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
-
-    /**
-     * <p>The facet to remove from the object.</p>
-     */
     inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
-
-    /**
-     * <p>The facet to remove from the object.</p>
-     */
     inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
-
-    /**
-     * <p>The facet to remove from the object.</p>
-     */
     inline BatchRemoveFacetFromObject& WithSchemaFacet(const SchemaFacet& value) { SetSchemaFacet(value); return *this;}
-
-    /**
-     * <p>The facet to remove from the object.</p>
-     */
     inline BatchRemoveFacetFromObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to the object whose facet will be removed.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
-
-    /**
-     * <p>A reference to the object whose facet will be removed.</p>
-     */
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to the object whose facet will be removed.</p>
-     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-
-    /**
-     * <p>A reference to the object whose facet will be removed.</p>
-     */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-
-    /**
-     * <p>A reference to the object whose facet will be removed.</p>
-     */
     inline BatchRemoveFacetFromObject& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-
-    /**
-     * <p>A reference to the object whose facet will be removed.</p>
-     */
     inline BatchRemoveFacetFromObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SchemaFacet m_schemaFacet;

@@ -40,99 +40,42 @@ namespace Model
     AWS_CODEDEPLOY_API BatchGetDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the deployment groups.</p>
      */
     inline const Aws::Vector<DeploymentGroupInfo>& GetDeploymentGroupsInfo() const{ return m_deploymentGroupsInfo; }
-
-    /**
-     * <p>Information about the deployment groups.</p>
-     */
     inline void SetDeploymentGroupsInfo(const Aws::Vector<DeploymentGroupInfo>& value) { m_deploymentGroupsInfo = value; }
-
-    /**
-     * <p>Information about the deployment groups.</p>
-     */
     inline void SetDeploymentGroupsInfo(Aws::Vector<DeploymentGroupInfo>&& value) { m_deploymentGroupsInfo = std::move(value); }
-
-    /**
-     * <p>Information about the deployment groups.</p>
-     */
     inline BatchGetDeploymentGroupsResult& WithDeploymentGroupsInfo(const Aws::Vector<DeploymentGroupInfo>& value) { SetDeploymentGroupsInfo(value); return *this;}
-
-    /**
-     * <p>Information about the deployment groups.</p>
-     */
     inline BatchGetDeploymentGroupsResult& WithDeploymentGroupsInfo(Aws::Vector<DeploymentGroupInfo>&& value) { SetDeploymentGroupsInfo(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the deployment groups.</p>
-     */
     inline BatchGetDeploymentGroupsResult& AddDeploymentGroupsInfo(const DeploymentGroupInfo& value) { m_deploymentGroupsInfo.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the deployment groups.</p>
-     */
     inline BatchGetDeploymentGroupsResult& AddDeploymentGroupsInfo(DeploymentGroupInfo&& value) { m_deploymentGroupsInfo.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline BatchGetDeploymentGroupsResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline BatchGetDeploymentGroupsResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline BatchGetDeploymentGroupsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetDeploymentGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetDeploymentGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetDeploymentGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DeploymentGroupInfo> m_deploymentGroupsInfo;

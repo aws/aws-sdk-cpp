@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateMultiplexRequest::UpdateMultiplexRequest() : 
     m_multiplexIdHasBeenSet(false),
     m_multiplexSettingsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_packetIdentifiersMappingHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String UpdateMultiplexRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_packetIdentifiersMappingHasBeenSet)
+  {
+   JsonValue packetIdentifiersMappingJsonMap;
+   for(auto& packetIdentifiersMappingItem : m_packetIdentifiersMapping)
+   {
+     packetIdentifiersMappingJsonMap.WithObject(packetIdentifiersMappingItem.first, packetIdentifiersMappingItem.second.Jsonize());
+   }
+   payload.WithObject("packetIdentifiersMapping", std::move(packetIdentifiersMappingJsonMap));
 
   }
 

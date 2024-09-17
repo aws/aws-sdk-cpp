@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
      */
     inline const Aws::String& GetDatasetExportJobArn() const{ return m_datasetExportJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-     */
     inline bool DatasetExportJobArnHasBeenSet() const { return m_datasetExportJobArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-     */
     inline void SetDatasetExportJobArn(const Aws::String& value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-     */
     inline void SetDatasetExportJobArn(Aws::String&& value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-     */
     inline void SetDatasetExportJobArn(const char* value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-     */
     inline DescribeDatasetExportJobRequest& WithDatasetExportJobArn(const Aws::String& value) { SetDatasetExportJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-     */
     inline DescribeDatasetExportJobRequest& WithDatasetExportJobArn(Aws::String&& value) { SetDatasetExportJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-     */
     inline DescribeDatasetExportJobRequest& WithDatasetExportJobArn(const char* value) { SetDatasetExportJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetExportJobArn;

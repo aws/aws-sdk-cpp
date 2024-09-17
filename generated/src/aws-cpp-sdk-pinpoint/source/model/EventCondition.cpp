@@ -24,9 +24,8 @@ EventCondition::EventCondition() :
 {
 }
 
-EventCondition::EventCondition(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_messageActivityHasBeenSet(false)
+EventCondition::EventCondition(JsonView jsonValue)
+  : EventCondition()
 {
   *this = jsonValue;
 }

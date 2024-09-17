@@ -23,9 +23,8 @@ StartTestExecutionResult::StartTestExecutionResult() :
 {
 }
 
-StartTestExecutionResult::StartTestExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiMode(TestExecutionApiMode::NOT_SET),
-    m_testExecutionModality(TestExecutionModality::NOT_SET)
+StartTestExecutionResult::StartTestExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartTestExecutionResult()
 {
   *this = result;
 }

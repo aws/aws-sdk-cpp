@@ -33,58 +33,28 @@ namespace Model
     AWS_FMS_API DisassociateThirdPartyFirewallResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current status for the disassociation of a Firewall Manager
      * administrators account with a third-party firewall.</p>
      */
     inline const ThirdPartyFirewallAssociationStatus& GetThirdPartyFirewallStatus() const{ return m_thirdPartyFirewallStatus; }
-
-    /**
-     * <p>The current status for the disassociation of a Firewall Manager
-     * administrators account with a third-party firewall.</p>
-     */
     inline void SetThirdPartyFirewallStatus(const ThirdPartyFirewallAssociationStatus& value) { m_thirdPartyFirewallStatus = value; }
-
-    /**
-     * <p>The current status for the disassociation of a Firewall Manager
-     * administrators account with a third-party firewall.</p>
-     */
     inline void SetThirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus&& value) { m_thirdPartyFirewallStatus = std::move(value); }
-
-    /**
-     * <p>The current status for the disassociation of a Firewall Manager
-     * administrators account with a third-party firewall.</p>
-     */
     inline DisassociateThirdPartyFirewallResult& WithThirdPartyFirewallStatus(const ThirdPartyFirewallAssociationStatus& value) { SetThirdPartyFirewallStatus(value); return *this;}
-
-    /**
-     * <p>The current status for the disassociation of a Firewall Manager
-     * administrators account with a third-party firewall.</p>
-     */
     inline DisassociateThirdPartyFirewallResult& WithThirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus&& value) { SetThirdPartyFirewallStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateThirdPartyFirewallResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateThirdPartyFirewallResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateThirdPartyFirewallResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ThirdPartyFirewallAssociationStatus m_thirdPartyFirewallStatus;

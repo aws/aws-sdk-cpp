@@ -23,8 +23,8 @@ QuickResponseContentProvider::QuickResponseContentProvider() :
 {
 }
 
-QuickResponseContentProvider::QuickResponseContentProvider(JsonView jsonValue) : 
-    m_contentHasBeenSet(false)
+QuickResponseContentProvider::QuickResponseContentProvider(JsonView jsonValue)
+  : QuickResponseContentProvider()
 {
   *this = jsonValue;
 }

@@ -17,7 +17,8 @@ CreateVirtualClusterRequest::CreateVirtualClusterRequest() :
     m_containerProviderHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_securityConfigurationIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,12 @@ Aws::String CreateVirtualClusterRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_securityConfigurationIdHasBeenSet)
+  {
+   payload.WithString("securityConfigurationId", m_securityConfigurationId);
 
   }
 

@@ -28,13 +28,8 @@ VpcInfoPeeringOptionsDetails::VpcInfoPeeringOptionsDetails() :
 {
 }
 
-VpcInfoPeeringOptionsDetails::VpcInfoPeeringOptionsDetails(JsonView jsonValue) : 
-    m_allowDnsResolutionFromRemoteVpc(false),
-    m_allowDnsResolutionFromRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpc(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLink(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet(false)
+VpcInfoPeeringOptionsDetails::VpcInfoPeeringOptionsDetails(JsonView jsonValue)
+  : VpcInfoPeeringOptionsDetails()
 {
   *this = jsonValue;
 }

@@ -34,70 +34,30 @@ namespace Model
     AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains a list of errors, along with information to help you
      * identify the self-service action.</p>
      */
     inline const Aws::Vector<FailedServiceActionAssociation>& GetFailedServiceActionAssociations() const{ return m_failedServiceActionAssociations; }
-
-    /**
-     * <p>An object that contains a list of errors, along with information to help you
-     * identify the self-service action.</p>
-     */
     inline void SetFailedServiceActionAssociations(const Aws::Vector<FailedServiceActionAssociation>& value) { m_failedServiceActionAssociations = value; }
-
-    /**
-     * <p>An object that contains a list of errors, along with information to help you
-     * identify the self-service action.</p>
-     */
     inline void SetFailedServiceActionAssociations(Aws::Vector<FailedServiceActionAssociation>&& value) { m_failedServiceActionAssociations = std::move(value); }
-
-    /**
-     * <p>An object that contains a list of errors, along with information to help you
-     * identify the self-service action.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithFailedServiceActionAssociations(const Aws::Vector<FailedServiceActionAssociation>& value) { SetFailedServiceActionAssociations(value); return *this;}
-
-    /**
-     * <p>An object that contains a list of errors, along with information to help you
-     * identify the self-service action.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithFailedServiceActionAssociations(Aws::Vector<FailedServiceActionAssociation>&& value) { SetFailedServiceActionAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that contains a list of errors, along with information to help you
-     * identify the self-service action.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactResult& AddFailedServiceActionAssociations(const FailedServiceActionAssociation& value) { m_failedServiceActionAssociations.push_back(value); return *this; }
-
-    /**
-     * <p>An object that contains a list of errors, along with information to help you
-     * identify the self-service action.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactResult& AddFailedServiceActionAssociations(FailedServiceActionAssociation&& value) { m_failedServiceActionAssociations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FailedServiceActionAssociation> m_failedServiceActionAssociations;

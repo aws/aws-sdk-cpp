@@ -118,13 +118,13 @@ namespace CostandUsageReportService
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeReportDefinitionsOutcome DescribeReportDefinitions(const Model::DescribeReportDefinitionsRequest& request) const;
+        virtual Model::DescribeReportDefinitionsOutcome DescribeReportDefinitions(const Model::DescribeReportDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeReportDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeReportDefinitionsRequestT = Model::DescribeReportDefinitionsRequest>
-        Model::DescribeReportDefinitionsOutcomeCallable DescribeReportDefinitionsCallable(const DescribeReportDefinitionsRequestT& request) const
+        Model::DescribeReportDefinitionsOutcomeCallable DescribeReportDefinitionsCallable(const DescribeReportDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&CostandUsageReportServiceClient::DescribeReportDefinitions, request);
         }
@@ -133,7 +133,7 @@ namespace CostandUsageReportService
          * An Async wrapper for DescribeReportDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeReportDefinitionsRequestT = Model::DescribeReportDefinitionsRequest>
-        void DescribeReportDefinitionsAsync(const DescribeReportDefinitionsRequestT& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeReportDefinitionsAsync(const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeReportDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&CostandUsageReportServiceClient::DescribeReportDefinitions, request, handler, context);
         }
@@ -275,7 +275,6 @@ namespace CostandUsageReportService
       void init(const CostandUsageReportServiceClientConfiguration& clientConfiguration);
 
       CostandUsageReportServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> m_endpointProvider;
   };
 

@@ -25,10 +25,8 @@ InputFileConfig::InputFileConfig() :
 {
 }
 
-InputFileConfig::InputFileConfig(JsonView jsonValue) : 
-    m_channelNameHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
+InputFileConfig::InputFileConfig(JsonView jsonValue)
+  : InputFileConfig()
 {
   *this = jsonValue;
 }

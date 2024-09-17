@@ -19,7 +19,8 @@ AllocateAddressRequest::AllocateAddressRequest() :
     m_customerOwnedIpv4PoolHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_ipamPoolIdHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,11 @@ Aws::String AllocateAddressRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_ipamPoolIdHasBeenSet)
+  {
+    ss << "IpamPoolId=" << StringUtils::URLEncode(m_ipamPoolId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

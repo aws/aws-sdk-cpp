@@ -28,13 +28,8 @@ SetupHistory::SetupHistory() :
 {
 }
 
-SetupHistory::SetupHistory(JsonView jsonValue) : 
-    m_operationIdHasBeenSet(false),
-    m_requestHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_executionDetailsHasBeenSet(false),
-    m_status(SetupStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+SetupHistory::SetupHistory(JsonView jsonValue)
+  : SetupHistory()
 {
   *this = jsonValue;
 }

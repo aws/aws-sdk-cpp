@@ -1,0 +1,119 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/pcs/model/UpdateComputeNodeGroupRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::PCS::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+UpdateComputeNodeGroupRequest::UpdateComputeNodeGroupRequest() : 
+    m_clusterIdentifierHasBeenSet(false),
+    m_computeNodeGroupIdentifierHasBeenSet(false),
+    m_amiIdHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
+    m_customLaunchTemplateHasBeenSet(false),
+    m_purchaseOption(PurchaseOption::NOT_SET),
+    m_purchaseOptionHasBeenSet(false),
+    m_spotOptionsHasBeenSet(false),
+    m_scalingConfigurationHasBeenSet(false),
+    m_iamInstanceProfileArnHasBeenSet(false),
+    m_slurmConfigurationHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
+{
+}
+
+Aws::String UpdateComputeNodeGroupRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_clusterIdentifierHasBeenSet)
+  {
+   payload.WithString("clusterIdentifier", m_clusterIdentifier);
+
+  }
+
+  if(m_computeNodeGroupIdentifierHasBeenSet)
+  {
+   payload.WithString("computeNodeGroupIdentifier", m_computeNodeGroupIdentifier);
+
+  }
+
+  if(m_amiIdHasBeenSet)
+  {
+   payload.WithString("amiId", m_amiId);
+
+  }
+
+  if(m_subnetIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
+   {
+     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+   }
+   payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_customLaunchTemplateHasBeenSet)
+  {
+   payload.WithObject("customLaunchTemplate", m_customLaunchTemplate.Jsonize());
+
+  }
+
+  if(m_purchaseOptionHasBeenSet)
+  {
+   payload.WithString("purchaseOption", PurchaseOptionMapper::GetNameForPurchaseOption(m_purchaseOption));
+  }
+
+  if(m_spotOptionsHasBeenSet)
+  {
+   payload.WithObject("spotOptions", m_spotOptions.Jsonize());
+
+  }
+
+  if(m_scalingConfigurationHasBeenSet)
+  {
+   payload.WithObject("scalingConfiguration", m_scalingConfiguration.Jsonize());
+
+  }
+
+  if(m_iamInstanceProfileArnHasBeenSet)
+  {
+   payload.WithString("iamInstanceProfileArn", m_iamInstanceProfileArn);
+
+  }
+
+  if(m_slurmConfigurationHasBeenSet)
+  {
+   payload.WithObject("slurmConfiguration", m_slurmConfiguration.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection UpdateComputeNodeGroupRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSParallelComputingService.UpdateComputeNodeGroup"));
+  return headers;
+
+}
+
+
+
+

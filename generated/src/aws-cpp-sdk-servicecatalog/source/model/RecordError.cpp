@@ -24,9 +24,8 @@ RecordError::RecordError() :
 {
 }
 
-RecordError::RecordError(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+RecordError::RecordError(JsonView jsonValue)
+  : RecordError()
 {
   *this = jsonValue;
 }

@@ -24,11 +24,8 @@ CreateMultipartUploadResult::CreateMultipartUploadResult() :
 {
 }
 
-CreateMultipartUploadResult::CreateMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
+CreateMultipartUploadResult::CreateMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : CreateMultipartUploadResult()
 {
   *this = result;
 }
@@ -61,7 +58,11 @@ CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Aws::
   const auto& abortDateIter = headers.find("x-amz-abort-date");
   if(abortDateIter != headers.end())
   {
-    m_abortDate = DateTime(abortDateIter->second, Aws::Utils::DateFormat::RFC822);
+    m_abortDate = DateTime(abortDateIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
+    if(!m_abortDate.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3Crt::CreateMultipartUploadResult", "Failed to parse abortDate header as an RFC822 timestamp: " << abortDateIter->second.c_str());
+    }
   }
 
   const auto& abortRuleIdIter = headers.find("x-amz-abort-rule-id");

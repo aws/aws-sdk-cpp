@@ -31,16 +31,8 @@ CheckSummary::CheckSummary() :
 {
 }
 
-CheckSummary::CheckSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_awsServicesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pillarsHasBeenSet(false),
-    m_source(RecommendationSource::NOT_SET),
-    m_sourceHasBeenSet(false)
+CheckSummary::CheckSummary(JsonView jsonValue)
+  : CheckSummary()
 {
   *this = jsonValue;
 }

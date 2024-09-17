@@ -28,6 +28,7 @@
 #include <aws/mwaa/model/TagResourceResult.h>
 #include <aws/mwaa/model/UntagResourceResult.h>
 #include <aws/mwaa/model/UpdateEnvironmentResult.h>
+#include <aws/mwaa/model/ListEnvironmentsRequest.h>
 /* End of service model headers required in MWAAClient header */
 
 namespace Aws
@@ -61,7 +62,7 @@ namespace Aws
 
   namespace MWAA
   {
-    using MWAAClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MWAAClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MWAAEndpointProviderBase = Aws::MWAA::Endpoint::MWAAEndpointProviderBase;
     using MWAAEndpointProvider = Aws::MWAA::Endpoint::MWAAEndpointProvider;
 

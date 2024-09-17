@@ -37,36 +37,17 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The allowed data types that the column has as it's value.</p>
      */
     inline const ScalarType& GetScalarType() const{ return m_scalarType; }
-
-    /**
-     * <p>The allowed data types that the column has as it's value.</p>
-     */
     inline bool ScalarTypeHasBeenSet() const { return m_scalarTypeHasBeenSet; }
-
-    /**
-     * <p>The allowed data types that the column has as it's value.</p>
-     */
     inline void SetScalarType(const ScalarType& value) { m_scalarTypeHasBeenSet = true; m_scalarType = value; }
-
-    /**
-     * <p>The allowed data types that the column has as it's value.</p>
-     */
     inline void SetScalarType(ScalarType&& value) { m_scalarTypeHasBeenSet = true; m_scalarType = std::move(value); }
-
-    /**
-     * <p>The allowed data types that the column has as it's value.</p>
-     */
     inline ColumnType& WithScalarType(const ScalarType& value) { SetScalarType(value); return *this;}
-
-    /**
-     * <p>The allowed data types that the column has as it's value.</p>
-     */
     inline ColumnType& WithScalarType(ScalarType&& value) { SetScalarType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScalarType m_scalarType;

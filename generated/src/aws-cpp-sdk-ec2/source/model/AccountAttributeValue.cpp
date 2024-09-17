@@ -25,8 +25,8 @@ AccountAttributeValue::AccountAttributeValue() :
 {
 }
 
-AccountAttributeValue::AccountAttributeValue(const XmlNode& xmlNode) : 
-    m_attributeValueHasBeenSet(false)
+AccountAttributeValue::AccountAttributeValue(const XmlNode& xmlNode)
+  : AccountAttributeValue()
 {
   *this = xmlNode;
 }

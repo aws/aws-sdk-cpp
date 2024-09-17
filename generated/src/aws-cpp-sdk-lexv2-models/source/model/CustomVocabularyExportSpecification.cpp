@@ -25,10 +25,8 @@ CustomVocabularyExportSpecification::CustomVocabularyExportSpecification() :
 {
 }
 
-CustomVocabularyExportSpecification::CustomVocabularyExportSpecification(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+CustomVocabularyExportSpecification::CustomVocabularyExportSpecification(JsonView jsonValue)
+  : CustomVocabularyExportSpecification()
 {
   *this = jsonValue;
 }

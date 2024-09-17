@@ -24,9 +24,8 @@ ConfigurableActionParameter::ConfigurableActionParameter() :
 {
 }
 
-ConfigurableActionParameter::ConfigurableActionParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ConfigurableActionParameter::ConfigurableActionParameter(JsonView jsonValue)
+  : ConfigurableActionParameter()
 {
   *this = jsonValue;
 }

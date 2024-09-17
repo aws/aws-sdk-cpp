@@ -26,11 +26,8 @@ ReplicationTaskAssessmentRunProgress::ReplicationTaskAssessmentRunProgress() :
 {
 }
 
-ReplicationTaskAssessmentRunProgress::ReplicationTaskAssessmentRunProgress(JsonView jsonValue) : 
-    m_individualAssessmentCount(0),
-    m_individualAssessmentCountHasBeenSet(false),
-    m_individualAssessmentCompletedCount(0),
-    m_individualAssessmentCompletedCountHasBeenSet(false)
+ReplicationTaskAssessmentRunProgress::ReplicationTaskAssessmentRunProgress(JsonView jsonValue)
+  : ReplicationTaskAssessmentRunProgress()
 {
   *this = jsonValue;
 }

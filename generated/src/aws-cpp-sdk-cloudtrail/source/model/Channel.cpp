@@ -24,9 +24,8 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(JsonView jsonValue) : 
-    m_channelArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+Channel::Channel(JsonView jsonValue)
+  : Channel()
 {
   *this = jsonValue;
 }

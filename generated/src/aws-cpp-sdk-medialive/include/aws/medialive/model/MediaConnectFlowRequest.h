@@ -37,46 +37,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The ARN of the MediaConnect Flow that you want to use as a source.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The ARN of the MediaConnect Flow that you want to use as a source.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The ARN of the MediaConnect Flow that you want to use as a source.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The ARN of the MediaConnect Flow that you want to use as a source.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The ARN of the MediaConnect Flow that you want to use as a source.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The ARN of the MediaConnect Flow that you want to use as a source.
-     */
     inline MediaConnectFlowRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The ARN of the MediaConnect Flow that you want to use as a source.
-     */
     inline MediaConnectFlowRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the MediaConnect Flow that you want to use as a source.
-     */
     inline MediaConnectFlowRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

@@ -33,47 +33,26 @@ namespace Model
     AWS_EC2_API ModifyTrafficMirrorFilterRuleResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
-     * <p>Modifies a Traffic Mirror rule.</p>
+     *  <p>Tags are not returned for ModifyTrafficMirrorFilterRule.</p> 
+     * <p>A Traffic Mirror rule.</p>
      */
     inline const TrafficMirrorFilterRule& GetTrafficMirrorFilterRule() const{ return m_trafficMirrorFilterRule; }
-
-    /**
-     * <p>Modifies a Traffic Mirror rule.</p>
-     */
     inline void SetTrafficMirrorFilterRule(const TrafficMirrorFilterRule& value) { m_trafficMirrorFilterRule = value; }
-
-    /**
-     * <p>Modifies a Traffic Mirror rule.</p>
-     */
     inline void SetTrafficMirrorFilterRule(TrafficMirrorFilterRule&& value) { m_trafficMirrorFilterRule = std::move(value); }
-
-    /**
-     * <p>Modifies a Traffic Mirror rule.</p>
-     */
     inline ModifyTrafficMirrorFilterRuleResponse& WithTrafficMirrorFilterRule(const TrafficMirrorFilterRule& value) { SetTrafficMirrorFilterRule(value); return *this;}
-
-    /**
-     * <p>Modifies a Traffic Mirror rule.</p>
-     */
     inline ModifyTrafficMirrorFilterRuleResponse& WithTrafficMirrorFilterRule(TrafficMirrorFilterRule&& value) { SetTrafficMirrorFilterRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyTrafficMirrorFilterRuleResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyTrafficMirrorFilterRuleResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TrafficMirrorFilterRule m_trafficMirrorFilterRule;

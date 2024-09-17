@@ -42,49 +42,27 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline DefineAnalysisSchemeRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline DefineAnalysisSchemeRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline DefineAnalysisSchemeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AnalysisScheme& GetAnalysisScheme() const{ return m_analysisScheme; }
-
-    
     inline bool AnalysisSchemeHasBeenSet() const { return m_analysisSchemeHasBeenSet; }
-
-    
     inline void SetAnalysisScheme(const AnalysisScheme& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = value; }
-
-    
     inline void SetAnalysisScheme(AnalysisScheme&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = std::move(value); }
-
-    
     inline DefineAnalysisSchemeRequest& WithAnalysisScheme(const AnalysisScheme& value) { SetAnalysisScheme(value); return *this;}
-
-    
     inline DefineAnalysisSchemeRequest& WithAnalysisScheme(AnalysisScheme&& value) { SetAnalysisScheme(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

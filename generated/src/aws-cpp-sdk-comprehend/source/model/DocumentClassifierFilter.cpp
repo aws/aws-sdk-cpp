@@ -27,12 +27,8 @@ DocumentClassifierFilter::DocumentClassifierFilter() :
 {
 }
 
-DocumentClassifierFilter::DocumentClassifierFilter(JsonView jsonValue) : 
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_documentClassifierNameHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+DocumentClassifierFilter::DocumentClassifierFilter(JsonView jsonValue)
+  : DocumentClassifierFilter()
 {
   *this = jsonValue;
 }

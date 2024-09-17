@@ -28,13 +28,8 @@ ServiceSyncConfig::ServiceSyncConfig() :
 {
 }
 
-ServiceSyncConfig::ServiceSyncConfig(JsonView jsonValue) : 
-    m_branchHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+ServiceSyncConfig::ServiceSyncConfig(JsonView jsonValue)
+  : ServiceSyncConfig()
 {
   *this = jsonValue;
 }

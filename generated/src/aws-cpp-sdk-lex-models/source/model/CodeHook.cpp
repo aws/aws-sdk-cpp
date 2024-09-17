@@ -24,9 +24,8 @@ CodeHook::CodeHook() :
 {
 }
 
-CodeHook::CodeHook(JsonView jsonValue) : 
-    m_uriHasBeenSet(false),
-    m_messageVersionHasBeenSet(false)
+CodeHook::CodeHook(JsonView jsonValue)
+  : CodeHook()
 {
   *this = jsonValue;
 }

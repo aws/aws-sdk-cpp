@@ -41,73 +41,30 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of an existing image. Specify this parameter to keep an existing
      * image.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of an existing image. Specify this parameter to keep an existing
-     * image.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of an existing image. Specify this parameter to keep an existing
-     * image.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of an existing image. Specify this parameter to keep an existing
-     * image.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of an existing image. Specify this parameter to keep an existing
-     * image.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of an existing image. Specify this parameter to keep an existing
-     * image.</p>
-     */
     inline Image& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of an existing image. Specify this parameter to keep an existing
-     * image.</p>
-     */
     inline Image& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of an existing image. Specify this parameter to keep an existing
-     * image.</p>
-     */
     inline Image& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ImageFile& GetFile() const{ return m_file; }
-
-    
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-
-    
     inline void SetFile(const ImageFile& value) { m_fileHasBeenSet = true; m_file = value; }
-
-    
     inline void SetFile(ImageFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-
-    
     inline Image& WithFile(const ImageFile& value) { SetFile(value); return *this;}
-
-    
     inline Image& WithFile(ImageFile&& value) { SetFile(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

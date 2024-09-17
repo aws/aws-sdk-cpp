@@ -41,59 +41,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
-     * activated for a user, the user will be prompted for MFA during all sign-in
-     * attempts, unless device tracking is turned on and the device has been
-     * trusted.</p>
+     * <p>Specifies whether SMS message MFA is activated. If an MFA type is activated
+     * for a user, the user will be prompted for MFA during all sign-in attempts,
+     * unless device tracking is turned on and the device has been trusted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
-     * activated for a user, the user will be prompted for MFA during all sign-in
-     * attempts, unless device tracking is turned on and the device has been
-     * trusted.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
-     * activated for a user, the user will be prompted for MFA during all sign-in
-     * attempts, unless device tracking is turned on and the device has been
-     * trusted.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether SMS text message MFA is activated. If an MFA type is
-     * activated for a user, the user will be prompted for MFA during all sign-in
-     * attempts, unless device tracking is turned on and the device has been
-     * trusted.</p>
-     */
     inline SMSMfaSettingsType& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether SMS is the preferred MFA method.</p>
      */
     inline bool GetPreferredMfa() const{ return m_preferredMfa; }
-
-    /**
-     * <p>Specifies whether SMS is the preferred MFA method.</p>
-     */
     inline bool PreferredMfaHasBeenSet() const { return m_preferredMfaHasBeenSet; }
-
-    /**
-     * <p>Specifies whether SMS is the preferred MFA method.</p>
-     */
     inline void SetPreferredMfa(bool value) { m_preferredMfaHasBeenSet = true; m_preferredMfa = value; }
-
-    /**
-     * <p>Specifies whether SMS is the preferred MFA method.</p>
-     */
     inline SMSMfaSettingsType& WithPreferredMfa(bool value) { SetPreferredMfa(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

@@ -34,6 +34,9 @@
 #include <aws/mediapackage/model/RotateIngestEndpointCredentialsResult.h>
 #include <aws/mediapackage/model/UpdateChannelResult.h>
 #include <aws/mediapackage/model/UpdateOriginEndpointResult.h>
+#include <aws/mediapackage/model/ListChannelsRequest.h>
+#include <aws/mediapackage/model/ListOriginEndpointsRequest.h>
+#include <aws/mediapackage/model/ListHarvestJobsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in MediaPackageClient header */
 
@@ -68,7 +71,7 @@ namespace Aws
 
   namespace MediaPackage
   {
-    using MediaPackageClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaPackageClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaPackageEndpointProviderBase = Aws::MediaPackage::Endpoint::MediaPackageEndpointProviderBase;
     using MediaPackageEndpointProvider = Aws::MediaPackage::Endpoint::MediaPackageEndpointProvider;
 

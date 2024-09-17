@@ -37,88 +37,39 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum number of characters for the text field.</p>
      */
     inline int GetMinLength() const{ return m_minLength; }
-
-    /**
-     * <p>The minimum number of characters for the text field.</p>
-     */
     inline bool MinLengthHasBeenSet() const { return m_minLengthHasBeenSet; }
-
-    /**
-     * <p>The minimum number of characters for the text field.</p>
-     */
     inline void SetMinLength(int value) { m_minLengthHasBeenSet = true; m_minLength = value; }
-
-    /**
-     * <p>The minimum number of characters for the text field.</p>
-     */
     inline TextValidation& WithMinLength(int value) { SetMinLength(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of characters for the text field.</p>
      */
     inline int GetMaxLength() const{ return m_maxLength; }
-
-    /**
-     * <p>The maximum number of characters for the text field.</p>
-     */
     inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
-
-    /**
-     * <p>The maximum number of characters for the text field.</p>
-     */
     inline void SetMaxLength(int value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
-
-    /**
-     * <p>The maximum number of characters for the text field.</p>
-     */
     inline TextValidation& WithMaxLength(int value) { SetMaxLength(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The regular expression used to validate the text field.</p>
      */
     inline const Aws::String& GetPattern() const{ return m_pattern; }
-
-    /**
-     * <p>The regular expression used to validate the text field.</p>
-     */
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-
-    /**
-     * <p>The regular expression used to validate the text field.</p>
-     */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-
-    /**
-     * <p>The regular expression used to validate the text field.</p>
-     */
     inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-
-    /**
-     * <p>The regular expression used to validate the text field.</p>
-     */
     inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-
-    /**
-     * <p>The regular expression used to validate the text field.</p>
-     */
     inline TextValidation& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-
-    /**
-     * <p>The regular expression used to validate the text field.</p>
-     */
     inline TextValidation& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-
-    /**
-     * <p>The regular expression used to validate the text field.</p>
-     */
     inline TextValidation& WithPattern(const char* value) { SetPattern(value); return *this;}
-
+    ///@}
   private:
 
     int m_minLength;

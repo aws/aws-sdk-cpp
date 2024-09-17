@@ -25,10 +25,8 @@ TFIModelPerformance::TFIModelPerformance() :
 {
 }
 
-TFIModelPerformance::TFIModelPerformance(JsonView jsonValue) : 
-    m_auc(0.0),
-    m_aucHasBeenSet(false),
-    m_uncertaintyRangeHasBeenSet(false)
+TFIModelPerformance::TFIModelPerformance(JsonView jsonValue)
+  : TFIModelPerformance()
 {
   *this = jsonValue;
 }

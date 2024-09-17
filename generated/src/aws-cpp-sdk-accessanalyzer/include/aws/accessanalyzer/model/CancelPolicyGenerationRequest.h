@@ -32,6 +32,7 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The <code>JobId</code> that is returned by the
      * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
@@ -40,70 +41,14 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
     inline CancelPolicyGenerationRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
     inline CancelPolicyGenerationRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>JobId</code> that is returned by the
-     * <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used
-     * with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used
-     * with <code>CancelPolicyGeneration</code> to cancel the policy generation
-     * request.</p>
-     */
     inline CancelPolicyGenerationRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

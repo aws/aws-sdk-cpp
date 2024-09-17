@@ -21,14 +21,13 @@ namespace Model
 WorkerResourceConfig::WorkerResourceConfig() : 
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_diskHasBeenSet(false)
+    m_diskHasBeenSet(false),
+    m_diskTypeHasBeenSet(false)
 {
 }
 
-WorkerResourceConfig::WorkerResourceConfig(JsonView jsonValue) : 
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_diskHasBeenSet(false)
+WorkerResourceConfig::WorkerResourceConfig(JsonView jsonValue)
+  : WorkerResourceConfig()
 {
   *this = jsonValue;
 }
@@ -56,6 +55,13 @@ WorkerResourceConfig& WorkerResourceConfig::operator =(JsonView jsonValue)
     m_diskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("diskType"))
+  {
+    m_diskType = jsonValue.GetString("diskType");
+
+    m_diskTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +84,12 @@ JsonValue WorkerResourceConfig::Jsonize() const
   if(m_diskHasBeenSet)
   {
    payload.WithString("disk", m_disk);
+
+  }
+
+  if(m_diskTypeHasBeenSet)
+  {
+   payload.WithString("diskType", m_diskType);
 
   }
 

@@ -23,8 +23,8 @@ VpcInfoCidrBlockSetDetails::VpcInfoCidrBlockSetDetails() :
 {
 }
 
-VpcInfoCidrBlockSetDetails::VpcInfoCidrBlockSetDetails(JsonView jsonValue) : 
-    m_cidrBlockHasBeenSet(false)
+VpcInfoCidrBlockSetDetails::VpcInfoCidrBlockSetDetails(JsonView jsonValue)
+  : VpcInfoCidrBlockSetDetails()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ DataSetSummary::DataSetSummary() :
 {
 }
 
-DataSetSummary::DataSetSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_importMode(DataSetImportMode::NOT_SET),
-    m_importModeHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false),
-    m_rowLevelPermissionTagConfigurationApplied(false),
-    m_rowLevelPermissionTagConfigurationAppliedHasBeenSet(false),
-    m_columnLevelPermissionRulesApplied(false),
-    m_columnLevelPermissionRulesAppliedHasBeenSet(false)
+DataSetSummary::DataSetSummary(JsonView jsonValue)
+  : DataSetSummary()
 {
   *this = jsonValue;
 }

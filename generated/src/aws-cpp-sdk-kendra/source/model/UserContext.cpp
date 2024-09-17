@@ -26,11 +26,8 @@ UserContext::UserContext() :
 {
 }
 
-UserContext::UserContext(JsonView jsonValue) : 
-    m_tokenHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_dataSourceGroupsHasBeenSet(false)
+UserContext::UserContext(JsonView jsonValue)
+  : UserContext()
 {
   *this = jsonValue;
 }

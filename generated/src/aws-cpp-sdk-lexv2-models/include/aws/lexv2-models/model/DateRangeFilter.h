@@ -38,67 +38,29 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A timestamp indicating the start date for the date range filter.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
-
-    /**
-     * <p>A timestamp indicating the start date for the date range filter.</p>
-     */
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
-
-    /**
-     * <p>A timestamp indicating the start date for the date range filter.</p>
-     */
     inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
-
-    /**
-     * <p>A timestamp indicating the start date for the date range filter.</p>
-     */
     inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
-
-    /**
-     * <p>A timestamp indicating the start date for the date range filter.</p>
-     */
     inline DateRangeFilter& WithStartDateTime(const Aws::Utils::DateTime& value) { SetStartDateTime(value); return *this;}
-
-    /**
-     * <p>A timestamp indicating the start date for the date range filter.</p>
-     */
     inline DateRangeFilter& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A timestamp indicating the end date for the date range filter.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
-
-    /**
-     * <p>A timestamp indicating the end date for the date range filter.</p>
-     */
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-
-    /**
-     * <p>A timestamp indicating the end date for the date range filter.</p>
-     */
     inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-
-    /**
-     * <p>A timestamp indicating the end date for the date range filter.</p>
-     */
     inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-
-    /**
-     * <p>A timestamp indicating the end date for the date range filter.</p>
-     */
     inline DateRangeFilter& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
-
-    /**
-     * <p>A timestamp indicating the end date for the date range filter.</p>
-     */
     inline DateRangeFilter& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startDateTime;

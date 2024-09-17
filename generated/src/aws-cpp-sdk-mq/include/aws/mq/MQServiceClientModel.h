@@ -39,6 +39,10 @@
 #include <aws/mq/model/UpdateBrokerResult.h>
 #include <aws/mq/model/UpdateConfigurationResult.h>
 #include <aws/mq/model/UpdateUserResult.h>
+#include <aws/mq/model/ListBrokersRequest.h>
+#include <aws/mq/model/DescribeBrokerEngineTypesRequest.h>
+#include <aws/mq/model/ListConfigurationsRequest.h>
+#include <aws/mq/model/DescribeBrokerInstanceOptionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in MQClient header */
 
@@ -73,7 +77,7 @@ namespace Aws
 
   namespace MQ
   {
-    using MQClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MQClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MQEndpointProviderBase = Aws::MQ::Endpoint::MQEndpointProviderBase;
     using MQEndpointProvider = Aws::MQ::Endpoint::MQEndpointProvider;
 

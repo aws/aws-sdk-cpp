@@ -36,97 +36,47 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of space that's being used in a storage system resource.</p>
      */
     inline long long GetUsed() const{ return m_used; }
-
-    /**
-     * <p>The amount of space that's being used in a storage system resource.</p>
-     */
     inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
-
-    /**
-     * <p>The amount of space that's being used in a storage system resource.</p>
-     */
     inline void SetUsed(long long value) { m_usedHasBeenSet = true; m_used = value; }
-
-    /**
-     * <p>The amount of space that's being used in a storage system resource.</p>
-     */
     inline Capacity& WithUsed(long long value) { SetUsed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total amount of space available in a storage system resource.</p>
      */
     inline long long GetProvisioned() const{ return m_provisioned; }
-
-    /**
-     * <p>The total amount of space available in a storage system resource.</p>
-     */
     inline bool ProvisionedHasBeenSet() const { return m_provisionedHasBeenSet; }
-
-    /**
-     * <p>The total amount of space available in a storage system resource.</p>
-     */
     inline void SetProvisioned(long long value) { m_provisionedHasBeenSet = true; m_provisioned = value; }
-
-    /**
-     * <p>The total amount of space available in a storage system resource.</p>
-     */
     inline Capacity& WithProvisioned(long long value) { SetProvisioned(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of space that's being used in a storage system resource without
      * accounting for compression or deduplication.</p>
      */
     inline long long GetLogicalUsed() const{ return m_logicalUsed; }
-
-    /**
-     * <p>The amount of space that's being used in a storage system resource without
-     * accounting for compression or deduplication.</p>
-     */
     inline bool LogicalUsedHasBeenSet() const { return m_logicalUsedHasBeenSet; }
-
-    /**
-     * <p>The amount of space that's being used in a storage system resource without
-     * accounting for compression or deduplication.</p>
-     */
     inline void SetLogicalUsed(long long value) { m_logicalUsedHasBeenSet = true; m_logicalUsed = value; }
-
-    /**
-     * <p>The amount of space that's being used in a storage system resource without
-     * accounting for compression or deduplication.</p>
-     */
     inline Capacity& WithLogicalUsed(long long value) { SetLogicalUsed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of space in the cluster that's in cloud storage (for example, if
      * you're using data tiering).</p>
      */
     inline long long GetClusterCloudStorageUsed() const{ return m_clusterCloudStorageUsed; }
-
-    /**
-     * <p>The amount of space in the cluster that's in cloud storage (for example, if
-     * you're using data tiering).</p>
-     */
     inline bool ClusterCloudStorageUsedHasBeenSet() const { return m_clusterCloudStorageUsedHasBeenSet; }
-
-    /**
-     * <p>The amount of space in the cluster that's in cloud storage (for example, if
-     * you're using data tiering).</p>
-     */
     inline void SetClusterCloudStorageUsed(long long value) { m_clusterCloudStorageUsedHasBeenSet = true; m_clusterCloudStorageUsed = value; }
-
-    /**
-     * <p>The amount of space in the cluster that's in cloud storage (for example, if
-     * you're using data tiering).</p>
-     */
     inline Capacity& WithClusterCloudStorageUsed(long long value) { SetClusterCloudStorageUsed(value); return *this;}
-
+    ///@}
   private:
 
     long long m_used;

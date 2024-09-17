@@ -23,8 +23,8 @@ AwsGuardDutyDetectorDataSourcesKubernetesDetails::AwsGuardDutyDetectorDataSource
 {
 }
 
-AwsGuardDutyDetectorDataSourcesKubernetesDetails::AwsGuardDutyDetectorDataSourcesKubernetesDetails(JsonView jsonValue) : 
-    m_auditLogsHasBeenSet(false)
+AwsGuardDutyDetectorDataSourcesKubernetesDetails::AwsGuardDutyDetectorDataSourcesKubernetesDetails(JsonView jsonValue)
+  : AwsGuardDutyDetectorDataSourcesKubernetesDetails()
 {
   *this = jsonValue;
 }

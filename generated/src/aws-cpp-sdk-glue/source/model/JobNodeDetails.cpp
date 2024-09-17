@@ -23,8 +23,8 @@ JobNodeDetails::JobNodeDetails() :
 {
 }
 
-JobNodeDetails::JobNodeDetails(JsonView jsonValue) : 
-    m_jobRunsHasBeenSet(false)
+JobNodeDetails::JobNodeDetails(JsonView jsonValue)
+  : JobNodeDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ IpAddressRequest::IpAddressRequest() :
 {
 }
 
-IpAddressRequest::IpAddressRequest(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false),
-    m_ipHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+IpAddressRequest::IpAddressRequest(JsonView jsonValue)
+  : IpAddressRequest()
 {
   *this = jsonValue;
 }

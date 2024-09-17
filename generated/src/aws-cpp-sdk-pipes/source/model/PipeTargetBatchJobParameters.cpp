@@ -19,35 +19,50 @@ namespace Model
 {
 
 PipeTargetBatchJobParameters::PipeTargetBatchJobParameters() : 
-    m_arrayPropertiesHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
     m_jobDefinitionHasBeenSet(false),
     m_jobNameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_arrayPropertiesHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
+    m_containerOverridesHasBeenSet(false),
+    m_dependsOnHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
-PipeTargetBatchJobParameters::PipeTargetBatchJobParameters(JsonView jsonValue) : 
-    m_arrayPropertiesHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_jobDefinitionHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+PipeTargetBatchJobParameters::PipeTargetBatchJobParameters(JsonView jsonValue)
+  : PipeTargetBatchJobParameters()
 {
   *this = jsonValue;
 }
 
 PipeTargetBatchJobParameters& PipeTargetBatchJobParameters::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("JobDefinition"))
+  {
+    m_jobDefinition = jsonValue.GetString("JobDefinition");
+
+    m_jobDefinitionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobName"))
+  {
+    m_jobName = jsonValue.GetString("JobName");
+
+    m_jobNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ArrayProperties"))
   {
     m_arrayProperties = jsonValue.GetObject("ArrayProperties");
 
     m_arrayPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
+
+    m_retryStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ContainerOverrides"))
@@ -67,20 +82,6 @@ PipeTargetBatchJobParameters& PipeTargetBatchJobParameters::operator =(JsonView 
     m_dependsOnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("JobDefinition"))
-  {
-    m_jobDefinition = jsonValue.GetString("JobDefinition");
-
-    m_jobDefinitionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("JobName"))
-  {
-    m_jobName = jsonValue.GetString("JobName");
-
-    m_jobNameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -91,13 +92,6 @@ PipeTargetBatchJobParameters& PipeTargetBatchJobParameters::operator =(JsonView 
     m_parametersHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RetryStrategy"))
-  {
-    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
-
-    m_retryStrategyHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -105,9 +99,27 @@ JsonValue PipeTargetBatchJobParameters::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_jobDefinitionHasBeenSet)
+  {
+   payload.WithString("JobDefinition", m_jobDefinition);
+
+  }
+
+  if(m_jobNameHasBeenSet)
+  {
+   payload.WithString("JobName", m_jobName);
+
+  }
+
   if(m_arrayPropertiesHasBeenSet)
   {
    payload.WithObject("ArrayProperties", m_arrayProperties.Jsonize());
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 
@@ -128,18 +140,6 @@ JsonValue PipeTargetBatchJobParameters::Jsonize() const
 
   }
 
-  if(m_jobDefinitionHasBeenSet)
-  {
-   payload.WithString("JobDefinition", m_jobDefinition);
-
-  }
-
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
-  }
-
   if(m_parametersHasBeenSet)
   {
    JsonValue parametersJsonMap;
@@ -148,12 +148,6 @@ JsonValue PipeTargetBatchJobParameters::Jsonize() const
      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
-
-  }
-
-  if(m_retryStrategyHasBeenSet)
-  {
-   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 

@@ -24,9 +24,8 @@ CustomerAgreement::CustomerAgreement() :
 {
 }
 
-CustomerAgreement::CustomerAgreement(JsonView jsonValue) : 
-    m_agreementNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+CustomerAgreement::CustomerAgreement(JsonView jsonValue)
+  : CustomerAgreement()
 {
   *this = jsonValue;
 }

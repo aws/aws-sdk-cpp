@@ -33,53 +33,27 @@ namespace Model
     AWS_LAUNCHWIZARD_API GetDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that details the deployment.</p>
      */
     inline const DeploymentData& GetDeployment() const{ return m_deployment; }
-
-    /**
-     * <p>An object that details the deployment.</p>
-     */
     inline void SetDeployment(const DeploymentData& value) { m_deployment = value; }
-
-    /**
-     * <p>An object that details the deployment.</p>
-     */
     inline void SetDeployment(DeploymentData&& value) { m_deployment = std::move(value); }
-
-    /**
-     * <p>An object that details the deployment.</p>
-     */
     inline GetDeploymentResult& WithDeployment(const DeploymentData& value) { SetDeployment(value); return *this;}
-
-    /**
-     * <p>An object that details the deployment.</p>
-     */
     inline GetDeploymentResult& WithDeployment(DeploymentData&& value) { SetDeployment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DeploymentData m_deployment;

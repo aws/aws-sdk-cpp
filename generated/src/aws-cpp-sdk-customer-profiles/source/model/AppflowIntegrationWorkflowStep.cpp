@@ -32,17 +32,8 @@ AppflowIntegrationWorkflowStep::AppflowIntegrationWorkflowStep() :
 {
 }
 
-AppflowIntegrationWorkflowStep::AppflowIntegrationWorkflowStep(JsonView jsonValue) : 
-    m_flowNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_executionMessageHasBeenSet(false),
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_batchRecordsStartTimeHasBeenSet(false),
-    m_batchRecordsEndTimeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+AppflowIntegrationWorkflowStep::AppflowIntegrationWorkflowStep(JsonView jsonValue)
+  : AppflowIntegrationWorkflowStep()
 {
   *this = jsonValue;
 }

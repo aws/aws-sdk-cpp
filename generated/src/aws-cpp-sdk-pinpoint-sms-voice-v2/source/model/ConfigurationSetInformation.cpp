@@ -25,18 +25,13 @@ ConfigurationSetInformation::ConfigurationSetInformation() :
     m_defaultMessageType(MessageType::NOT_SET),
     m_defaultMessageTypeHasBeenSet(false),
     m_defaultSenderIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+    m_createdTimestampHasBeenSet(false),
+    m_protectConfigurationIdHasBeenSet(false)
 {
 }
 
-ConfigurationSetInformation::ConfigurationSetInformation(JsonView jsonValue) : 
-    m_configurationSetArnHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationsHasBeenSet(false),
-    m_defaultMessageType(MessageType::NOT_SET),
-    m_defaultMessageTypeHasBeenSet(false),
-    m_defaultSenderIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+ConfigurationSetInformation::ConfigurationSetInformation(JsonView jsonValue)
+  : ConfigurationSetInformation()
 {
   *this = jsonValue;
 }
@@ -88,6 +83,13 @@ ConfigurationSetInformation& ConfigurationSetInformation::operator =(JsonView js
     m_createdTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProtectConfigurationId"))
+  {
+    m_protectConfigurationId = jsonValue.GetString("ProtectConfigurationId");
+
+    m_protectConfigurationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +134,12 @@ JsonValue ConfigurationSetInformation::Jsonize() const
   if(m_createdTimestampHasBeenSet)
   {
    payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_protectConfigurationIdHasBeenSet)
+  {
+   payload.WithString("ProtectConfigurationId", m_protectConfigurationId);
+
   }
 
   return payload;

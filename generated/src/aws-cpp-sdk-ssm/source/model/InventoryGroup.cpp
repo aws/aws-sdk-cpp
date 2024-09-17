@@ -24,9 +24,8 @@ InventoryGroup::InventoryGroup() :
 {
 }
 
-InventoryGroup::InventoryGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+InventoryGroup::InventoryGroup(JsonView jsonValue)
+  : InventoryGroup()
 {
   *this = jsonValue;
 }

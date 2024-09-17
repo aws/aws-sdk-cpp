@@ -30,15 +30,8 @@ ListWorkflowsItem::ListWorkflowsItem() :
 {
 }
 
-ListWorkflowsItem::ListWorkflowsItem(JsonView jsonValue) : 
-    m_workflowType(WorkflowType::NOT_SET),
-    m_workflowTypeHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDescriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+ListWorkflowsItem::ListWorkflowsItem(JsonView jsonValue)
+  : ListWorkflowsItem()
 {
   *this = jsonValue;
 }

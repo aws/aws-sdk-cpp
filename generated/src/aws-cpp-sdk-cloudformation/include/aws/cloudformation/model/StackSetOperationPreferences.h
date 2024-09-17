@@ -46,107 +46,37 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The concurrency type of deploying StackSets operations in Regions, could be
      * in parallel or one Region at a time.</p>
      */
     inline const RegionConcurrencyType& GetRegionConcurrencyType() const{ return m_regionConcurrencyType; }
-
-    /**
-     * <p>The concurrency type of deploying StackSets operations in Regions, could be
-     * in parallel or one Region at a time.</p>
-     */
     inline bool RegionConcurrencyTypeHasBeenSet() const { return m_regionConcurrencyTypeHasBeenSet; }
-
-    /**
-     * <p>The concurrency type of deploying StackSets operations in Regions, could be
-     * in parallel or one Region at a time.</p>
-     */
     inline void SetRegionConcurrencyType(const RegionConcurrencyType& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = value; }
-
-    /**
-     * <p>The concurrency type of deploying StackSets operations in Regions, could be
-     * in parallel or one Region at a time.</p>
-     */
     inline void SetRegionConcurrencyType(RegionConcurrencyType&& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = std::move(value); }
-
-    /**
-     * <p>The concurrency type of deploying StackSets operations in Regions, could be
-     * in parallel or one Region at a time.</p>
-     */
     inline StackSetOperationPreferences& WithRegionConcurrencyType(const RegionConcurrencyType& value) { SetRegionConcurrencyType(value); return *this;}
-
-    /**
-     * <p>The concurrency type of deploying StackSets operations in Regions, could be
-     * in parallel or one Region at a time.</p>
-     */
     inline StackSetOperationPreferences& WithRegionConcurrencyType(RegionConcurrencyType&& value) { SetRegionConcurrencyType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
      *  <p> <code>RegionOrder</code> isn't followed if
      * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetRegionOrder() const{ return m_regionOrder; }
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline bool RegionOrderHasBeenSet() const { return m_regionOrderHasBeenSet; }
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline void SetRegionOrder(const Aws::Vector<Aws::String>& value) { m_regionOrderHasBeenSet = true; m_regionOrder = value; }
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline void SetRegionOrder(Aws::Vector<Aws::String>&& value) { m_regionOrderHasBeenSet = true; m_regionOrder = std::move(value); }
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline StackSetOperationPreferences& WithRegionOrder(const Aws::Vector<Aws::String>& value) { SetRegionOrder(value); return *this;}
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline StackSetOperationPreferences& WithRegionOrder(Aws::Vector<Aws::String>&& value) { SetRegionOrder(std::move(value)); return *this;}
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline StackSetOperationPreferences& AddRegionOrder(const Aws::String& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline StackSetOperationPreferences& AddRegionOrder(Aws::String&& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The order of the Regions where you want to perform the stack operation.</p>
-     *  <p> <code>RegionOrder</code> isn't followed if
-     * <code>AutoDeployment</code> is enabled.</p> 
-     */
     inline StackSetOperationPreferences& AddRegionOrder(const char* value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of accounts, per Region, for which this operation can fail before
      * CloudFormation stops the operation in that Region. If the operation is stopped
@@ -156,38 +86,12 @@ namespace Model
      * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline int GetFailureToleranceCount() const{ return m_failureToleranceCount; }
-
-    /**
-     * <p>The number of accounts, per Region, for which this operation can fail before
-     * CloudFormation stops the operation in that Region. If the operation is stopped
-     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
-     * Regions.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
-     */
     inline bool FailureToleranceCountHasBeenSet() const { return m_failureToleranceCountHasBeenSet; }
-
-    /**
-     * <p>The number of accounts, per Region, for which this operation can fail before
-     * CloudFormation stops the operation in that Region. If the operation is stopped
-     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
-     * Regions.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
-     */
     inline void SetFailureToleranceCount(int value) { m_failureToleranceCountHasBeenSet = true; m_failureToleranceCount = value; }
-
-    /**
-     * <p>The number of accounts, per Region, for which this operation can fail before
-     * CloudFormation stops the operation in that Region. If the operation is stopped
-     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
-     * Regions.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
-     */
     inline StackSetOperationPreferences& WithFailureToleranceCount(int value) { SetFailureToleranceCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of accounts, per Region, for which this stack operation can
      * fail before CloudFormation stops the operation in that Region. If the operation
@@ -199,44 +103,12 @@ namespace Model
      * but not both.</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline int GetFailureTolerancePercentage() const{ return m_failureTolerancePercentage; }
-
-    /**
-     * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before CloudFormation stops the operation in that Region. If the operation
-     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
-     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
-     * number.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
-     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
-     */
     inline bool FailureTolerancePercentageHasBeenSet() const { return m_failureTolerancePercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before CloudFormation stops the operation in that Region. If the operation
-     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
-     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
-     * number.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
-     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
-     */
     inline void SetFailureTolerancePercentage(int value) { m_failureTolerancePercentageHasBeenSet = true; m_failureTolerancePercentage = value; }
-
-    /**
-     * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before CloudFormation stops the operation in that Region. If the operation
-     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
-     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
-     * number.</p> <p>Conditional: You must specify either
-     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
-     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
-     */
     inline StackSetOperationPreferences& WithFailureTolerancePercentage(int value) { SetFailureTolerancePercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of accounts in which to perform this operation at one
      * time. This can depend on the value of <code>FailureToleranceCount</code>
@@ -250,50 +122,12 @@ namespace Model
      * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline int GetMaxConcurrentCount() const{ return m_maxConcurrentCount; }
-
-    /**
-     * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This can depend on the value of <code>FailureToleranceCount</code>
-     * depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code>
-     * is at most one more than the <code>FailureToleranceCount</code> if you're using
-     * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
-     * specify the <i>maximum</i> for operations. For large deployments, under certain
-     * circumstances the actual number of accounts acted upon concurrently may be lower
-     * due to service throttling.</p> <p>Conditional: You must specify either
-     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p> <p>By default, <code>1</code> is specified.</p>
-     */
     inline bool MaxConcurrentCountHasBeenSet() const { return m_maxConcurrentCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This can depend on the value of <code>FailureToleranceCount</code>
-     * depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code>
-     * is at most one more than the <code>FailureToleranceCount</code> if you're using
-     * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
-     * specify the <i>maximum</i> for operations. For large deployments, under certain
-     * circumstances the actual number of accounts acted upon concurrently may be lower
-     * due to service throttling.</p> <p>Conditional: You must specify either
-     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p> <p>By default, <code>1</code> is specified.</p>
-     */
     inline void SetMaxConcurrentCount(int value) { m_maxConcurrentCountHasBeenSet = true; m_maxConcurrentCount = value; }
-
-    /**
-     * <p>The maximum number of accounts in which to perform this operation at one
-     * time. This can depend on the value of <code>FailureToleranceCount</code>
-     * depending on your <code>ConcurrencyMode</code>. <code>MaxConcurrentCount</code>
-     * is at most one more than the <code>FailureToleranceCount</code> if you're using
-     * <code>STRICT_FAILURE_TOLERANCE</code>.</p> <p>Note that this setting lets you
-     * specify the <i>maximum</i> for operations. For large deployments, under certain
-     * circumstances the actual number of accounts acted upon concurrently may be lower
-     * due to service throttling.</p> <p>Conditional: You must specify either
-     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p> <p>By default, <code>1</code> is specified.</p>
-     */
     inline StackSetOperationPreferences& WithMaxConcurrentCount(int value) { SetMaxConcurrentCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
@@ -307,158 +141,36 @@ namespace Model
      * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline int GetMaxConcurrentPercentage() const{ return m_maxConcurrentPercentage; }
-
-    /**
-     * <p>The maximum percentage of accounts in which to perform this operation at one
-     * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, CloudFormation rounds down to the next whole number. This is true
-     * except in cases where rounding down would result is zero. In this case,
-     * CloudFormation sets the number as one instead.</p> <p>Note that this setting
-     * lets you specify the <i>maximum</i> for operations. For large deployments, under
-     * certain circumstances the actual number of accounts acted upon concurrently may
-     * be lower due to service throttling.</p> <p>Conditional: You must specify either
-     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p> <p>By default, <code>1</code> is specified.</p>
-     */
     inline bool MaxConcurrentPercentageHasBeenSet() const { return m_maxConcurrentPercentageHasBeenSet; }
-
-    /**
-     * <p>The maximum percentage of accounts in which to perform this operation at one
-     * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, CloudFormation rounds down to the next whole number. This is true
-     * except in cases where rounding down would result is zero. In this case,
-     * CloudFormation sets the number as one instead.</p> <p>Note that this setting
-     * lets you specify the <i>maximum</i> for operations. For large deployments, under
-     * certain circumstances the actual number of accounts acted upon concurrently may
-     * be lower due to service throttling.</p> <p>Conditional: You must specify either
-     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p> <p>By default, <code>1</code> is specified.</p>
-     */
     inline void SetMaxConcurrentPercentage(int value) { m_maxConcurrentPercentageHasBeenSet = true; m_maxConcurrentPercentage = value; }
-
-    /**
-     * <p>The maximum percentage of accounts in which to perform this operation at one
-     * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, CloudFormation rounds down to the next whole number. This is true
-     * except in cases where rounding down would result is zero. In this case,
-     * CloudFormation sets the number as one instead.</p> <p>Note that this setting
-     * lets you specify the <i>maximum</i> for operations. For large deployments, under
-     * certain circumstances the actual number of accounts acted upon concurrently may
-     * be lower due to service throttling.</p> <p>Conditional: You must specify either
-     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p> <p>By default, <code>1</code> is specified.</p>
-     */
     inline StackSetOperationPreferences& WithMaxConcurrentPercentage(int value) { SetMaxConcurrentPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies how the concurrency level behaves during the operation
      * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: This option
      * dynamically lowers the concurrency level to ensure the number of failed accounts
      * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
+     * <code>MaxConcurrentCount</code>, or the value of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced
+     * proportionally by the number of failures. This is the default behavior.</p>
+     * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
+     * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
+     * This option decouples <code>FailureToleranceCount</code> from the actual
+     * concurrency. This allows stack set operations to run at the concurrency level
+     * set by the <code>MaxConcurrentCount</code> value, or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
      */
     inline const ConcurrencyMode& GetConcurrencyMode() const{ return m_concurrencyMode; }
-
-    /**
-     * <p>Specifies how the concurrency level behaves during the operation
-     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: This option
-     * dynamically lowers the concurrency level to ensure the number of failed accounts
-     * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
-     * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
-     */
     inline bool ConcurrencyModeHasBeenSet() const { return m_concurrencyModeHasBeenSet; }
-
-    /**
-     * <p>Specifies how the concurrency level behaves during the operation
-     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: This option
-     * dynamically lowers the concurrency level to ensure the number of failed accounts
-     * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
-     * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
-     */
     inline void SetConcurrencyMode(const ConcurrencyMode& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = value; }
-
-    /**
-     * <p>Specifies how the concurrency level behaves during the operation
-     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: This option
-     * dynamically lowers the concurrency level to ensure the number of failed accounts
-     * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
-     * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
-     */
     inline void SetConcurrencyMode(ConcurrencyMode&& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = std::move(value); }
-
-    /**
-     * <p>Specifies how the concurrency level behaves during the operation
-     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: This option
-     * dynamically lowers the concurrency level to ensure the number of failed accounts
-     * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
-     * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
-     */
     inline StackSetOperationPreferences& WithConcurrencyMode(const ConcurrencyMode& value) { SetConcurrencyMode(value); return *this;}
-
-    /**
-     * <p>Specifies how the concurrency level behaves during the operation
-     * execution.</p> <ul> <li> <p> <code>STRICT_FAILURE_TOLERANCE</code>: This option
-     * dynamically lowers the concurrency level to ensure the number of failed accounts
-     * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
-     * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
-     */
     inline StackSetOperationPreferences& WithConcurrencyMode(ConcurrencyMode&& value) { SetConcurrencyMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RegionConcurrencyType m_regionConcurrencyType;

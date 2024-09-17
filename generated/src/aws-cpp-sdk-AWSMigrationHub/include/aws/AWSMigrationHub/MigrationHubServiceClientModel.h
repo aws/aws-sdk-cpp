@@ -35,6 +35,9 @@
 #include <aws/AWSMigrationHub/model/NotifyApplicationStateResult.h>
 #include <aws/AWSMigrationHub/model/NotifyMigrationTaskStateResult.h>
 #include <aws/AWSMigrationHub/model/PutResourceAttributesResult.h>
+#include <aws/AWSMigrationHub/model/ListMigrationTasksRequest.h>
+#include <aws/AWSMigrationHub/model/ListApplicationStatesRequest.h>
+#include <aws/AWSMigrationHub/model/ListProgressUpdateStreamsRequest.h>
 /* End of service model headers required in MigrationHubClient header */
 
 namespace Aws
@@ -68,7 +71,7 @@ namespace Aws
 
   namespace MigrationHub
   {
-    using MigrationHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MigrationHubClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MigrationHubEndpointProviderBase = Aws::MigrationHub::Endpoint::MigrationHubEndpointProviderBase;
     using MigrationHubEndpointProvider = Aws::MigrationHub::Endpoint::MigrationHubEndpointProvider;
 

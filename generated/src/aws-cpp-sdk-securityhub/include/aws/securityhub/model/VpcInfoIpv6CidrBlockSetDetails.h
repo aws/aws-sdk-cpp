@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IPv6 CIDR block for the VPC. </p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
-
-    /**
-     * <p>The IPv6 CIDR block for the VPC. </p>
-     */
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv6 CIDR block for the VPC. </p>
-     */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
-
-    /**
-     * <p>The IPv6 CIDR block for the VPC. </p>
-     */
     inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv6 CIDR block for the VPC. </p>
-     */
     inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv6 CIDR block for the VPC. </p>
-     */
     inline VpcInfoIpv6CidrBlockSetDetails& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv6 CIDR block for the VPC. </p>
-     */
     inline VpcInfoIpv6CidrBlockSetDetails& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv6 CIDR block for the VPC. </p>
-     */
     inline VpcInfoIpv6CidrBlockSetDetails& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipv6CidrBlock;

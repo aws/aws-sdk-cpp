@@ -26,11 +26,8 @@ ApiCallDetails::ApiCallDetails() :
 {
 }
 
-ApiCallDetails::ApiCallDetails(JsonView jsonValue) : 
-    m_apiHasBeenSet(false),
-    m_apiServiceNameHasBeenSet(false),
-    m_firstSeenHasBeenSet(false),
-    m_lastSeenHasBeenSet(false)
+ApiCallDetails::ApiCallDetails(JsonView jsonValue)
+  : ApiCallDetails()
 {
   *this = jsonValue;
 }

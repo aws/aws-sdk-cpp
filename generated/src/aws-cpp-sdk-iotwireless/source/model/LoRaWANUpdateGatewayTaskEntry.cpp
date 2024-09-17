@@ -24,9 +24,8 @@ LoRaWANUpdateGatewayTaskEntry::LoRaWANUpdateGatewayTaskEntry() :
 {
 }
 
-LoRaWANUpdateGatewayTaskEntry::LoRaWANUpdateGatewayTaskEntry(JsonView jsonValue) : 
-    m_currentVersionHasBeenSet(false),
-    m_updateVersionHasBeenSet(false)
+LoRaWANUpdateGatewayTaskEntry::LoRaWANUpdateGatewayTaskEntry(JsonView jsonValue)
+  : LoRaWANUpdateGatewayTaskEntry()
 {
   *this = jsonValue;
 }

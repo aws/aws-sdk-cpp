@@ -5,6 +5,10 @@
 #set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
+#if ($typeInfo.shape.isEvent() && $typeInfo.className.endsWith("InitialResponse"))
+\#include <aws/core/utils/StringUtils.h>
+\#include <aws/core/utils/UnreferencedParam.h>
+#end
 #foreach($header in $typeInfo.sourceIncludes)
 \#include $header
 #end
@@ -27,7 +31,10 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
 
-${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)$initializers
+${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
 {
   *this = jsonValue;
 }
@@ -43,6 +50,14 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(JsonView jsonValue)
   return *this;
 }
 
+#if ($typeInfo.shape.isEvent() && $typeInfo.className.endsWith("InitialResponse"))
+${typeInfo.className}::${typeInfo.className}(const Http::HeaderValueCollection& headers) : ${typeInfo.className}()
+{
+#set($ResultClassHeadersDeserializeDoNotGetHeaders = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ResultClassHeadersDeserialize.vm")
+}
+
+#end
 JsonValue ${typeInfo.className}::Jsonize() const
 {
   JsonValue payload;

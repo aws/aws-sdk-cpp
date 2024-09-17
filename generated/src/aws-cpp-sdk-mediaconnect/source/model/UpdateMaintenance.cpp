@@ -26,11 +26,8 @@ UpdateMaintenance::UpdateMaintenance() :
 {
 }
 
-UpdateMaintenance::UpdateMaintenance(JsonView jsonValue) : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceScheduledDateHasBeenSet(false),
-    m_maintenanceStartHourHasBeenSet(false)
+UpdateMaintenance::UpdateMaintenance(JsonView jsonValue)
+  : UpdateMaintenance()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ Collector::Collector() :
 {
 }
 
-Collector::Collector(JsonView jsonValue) : 
-    m_collectorHealth(CollectorHealth::NOT_SET),
-    m_collectorHealthHasBeenSet(false),
-    m_collectorIdHasBeenSet(false),
-    m_collectorVersionHasBeenSet(false),
-    m_configurationSummaryHasBeenSet(false),
-    m_hostNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_lastActivityTimeStampHasBeenSet(false),
-    m_registeredTimeStampHasBeenSet(false)
+Collector::Collector(JsonView jsonValue)
+  : Collector()
 {
   *this = jsonValue;
 }

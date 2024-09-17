@@ -33,89 +33,40 @@ namespace Model
     AWS_ECR_API DescribeRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>The ID of the registry.</p>
+     * <p>The registry ID associated with the request.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline DescribeRegistryResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline DescribeRegistryResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the registry.</p>
-     */
     inline DescribeRegistryResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The replication configuration for the registry.</p>
      */
     inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
-
-    /**
-     * <p>The replication configuration for the registry.</p>
-     */
     inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfiguration = value; }
-
-    /**
-     * <p>The replication configuration for the registry.</p>
-     */
     inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfiguration = std::move(value); }
-
-    /**
-     * <p>The replication configuration for the registry.</p>
-     */
     inline DescribeRegistryResult& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
-
-    /**
-     * <p>The replication configuration for the registry.</p>
-     */
     inline DescribeRegistryResult& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRegistryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRegistryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRegistryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryId;

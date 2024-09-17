@@ -23,17 +23,13 @@ DescribeModelVersionResult::DescribeModelVersionResult() :
     m_sourceType(ModelVersionSourceType::NOT_SET),
     m_importedDataSizeInBytes(0),
     m_retrainingAvailableDataInDays(0),
-    m_autoPromotionResult(AutoPromotionResult::NOT_SET)
+    m_autoPromotionResult(AutoPromotionResult::NOT_SET),
+    m_modelQuality(ModelQuality::NOT_SET)
 {
 }
 
-DescribeModelVersionResult::DescribeModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelVersion(0),
-    m_status(ModelVersionStatus::NOT_SET),
-    m_sourceType(ModelVersionSourceType::NOT_SET),
-    m_importedDataSizeInBytes(0),
-    m_retrainingAvailableDataInDays(0),
-    m_autoPromotionResult(AutoPromotionResult::NOT_SET)
+DescribeModelVersionResult::DescribeModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelVersionResult()
 {
   *this = result;
 }
@@ -230,6 +226,24 @@ DescribeModelVersionResult& DescribeModelVersionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("AutoPromotionResultReason"))
   {
     m_autoPromotionResultReason = jsonValue.GetString("AutoPromotionResultReason");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDiagnosticsOutputConfiguration"))
+  {
+    m_modelDiagnosticsOutputConfiguration = jsonValue.GetObject("ModelDiagnosticsOutputConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDiagnosticsResultsObject"))
+  {
+    m_modelDiagnosticsResultsObject = jsonValue.GetObject("ModelDiagnosticsResultsObject");
+
+  }
+
+  if(jsonValue.ValueExists("ModelQuality"))
+  {
+    m_modelQuality = ModelQualityMapper::GetModelQualityForName(jsonValue.GetString("ModelQuality"));
 
   }
 

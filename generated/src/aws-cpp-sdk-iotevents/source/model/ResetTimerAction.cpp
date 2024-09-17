@@ -23,8 +23,8 @@ ResetTimerAction::ResetTimerAction() :
 {
 }
 
-ResetTimerAction::ResetTimerAction(JsonView jsonValue) : 
-    m_timerNameHasBeenSet(false)
+ResetTimerAction::ResetTimerAction(JsonView jsonValue)
+  : ResetTimerAction()
 {
   *this = jsonValue;
 }

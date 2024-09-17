@@ -28,13 +28,8 @@ ServerValidationConfiguration::ServerValidationConfiguration() :
 {
 }
 
-ServerValidationConfiguration::ServerValidationConfiguration(JsonView jsonValue) : 
-    m_serverHasBeenSet(false),
-    m_validationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverValidationStrategy(ServerValidationStrategy::NOT_SET),
-    m_serverValidationStrategyHasBeenSet(false),
-    m_userDataValidationParametersHasBeenSet(false)
+ServerValidationConfiguration::ServerValidationConfiguration(JsonView jsonValue)
+  : ServerValidationConfiguration()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ EvaluationMetric::EvaluationMetric() :
 {
 }
 
-EvaluationMetric::EvaluationMetric(JsonView jsonValue) : 
-    m_f1Score(0.0),
-    m_f1ScoreHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_recall(0.0),
-    m_recallHasBeenSet(false)
+EvaluationMetric::EvaluationMetric(JsonView jsonValue)
+  : EvaluationMetric()
 {
   *this = jsonValue;
 }

@@ -39,7 +39,10 @@ namespace Model
     NeptuneReaderAverageCPUUtilization,
     SageMakerVariantProvisionedConcurrencyUtilization,
     ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
-    SageMakerInferenceComponentInvocationsPerCopy
+    SageMakerInferenceComponentInvocationsPerCopy,
+    WorkSpacesAverageUserSessionsCapacityUtilization,
+    SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution,
+    SageMakerVariantConcurrentRequestsPerModelHighResolution
   };
 
 namespace MetricTypeMapper

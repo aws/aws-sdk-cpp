@@ -37,57 +37,27 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The estimated size of the resource, in bytes.</p>
      */
     inline double GetEstimatedSizeInBytes() const{ return m_estimatedSizeInBytes; }
-
-    /**
-     * <p>The estimated size of the resource, in bytes.</p>
-     */
     inline bool EstimatedSizeInBytesHasBeenSet() const { return m_estimatedSizeInBytesHasBeenSet; }
-
-    /**
-     * <p>The estimated size of the resource, in bytes.</p>
-     */
     inline void SetEstimatedSizeInBytes(double value) { m_estimatedSizeInBytesHasBeenSet = true; m_estimatedSizeInBytes = value; }
-
-    /**
-     * <p>The estimated size of the resource, in bytes.</p>
-     */
     inline EstimatedResourceSize& WithEstimatedSizeInBytes(double value) { SetEstimatedSizeInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the estimate of the size of the resource was made.</p>
      */
     inline const Aws::Utils::DateTime& GetEstimatedOn() const{ return m_estimatedOn; }
-
-    /**
-     * <p>The time when the estimate of the size of the resource was made.</p>
-     */
     inline bool EstimatedOnHasBeenSet() const { return m_estimatedOnHasBeenSet; }
-
-    /**
-     * <p>The time when the estimate of the size of the resource was made.</p>
-     */
     inline void SetEstimatedOn(const Aws::Utils::DateTime& value) { m_estimatedOnHasBeenSet = true; m_estimatedOn = value; }
-
-    /**
-     * <p>The time when the estimate of the size of the resource was made.</p>
-     */
     inline void SetEstimatedOn(Aws::Utils::DateTime&& value) { m_estimatedOnHasBeenSet = true; m_estimatedOn = std::move(value); }
-
-    /**
-     * <p>The time when the estimate of the size of the resource was made.</p>
-     */
     inline EstimatedResourceSize& WithEstimatedOn(const Aws::Utils::DateTime& value) { SetEstimatedOn(value); return *this;}
-
-    /**
-     * <p>The time when the estimate of the size of the resource was made.</p>
-     */
     inline EstimatedResourceSize& WithEstimatedOn(Aws::Utils::DateTime&& value) { SetEstimatedOn(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_estimatedSizeInBytes;

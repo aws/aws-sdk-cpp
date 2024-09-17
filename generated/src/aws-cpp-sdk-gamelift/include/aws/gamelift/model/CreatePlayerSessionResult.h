@@ -33,53 +33,27 @@ namespace Model
     AWS_GAMELIFT_API CreatePlayerSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Object that describes the newly created player session record.</p>
      */
     inline const PlayerSession& GetPlayerSession() const{ return m_playerSession; }
-
-    /**
-     * <p>Object that describes the newly created player session record.</p>
-     */
     inline void SetPlayerSession(const PlayerSession& value) { m_playerSession = value; }
-
-    /**
-     * <p>Object that describes the newly created player session record.</p>
-     */
     inline void SetPlayerSession(PlayerSession&& value) { m_playerSession = std::move(value); }
-
-    /**
-     * <p>Object that describes the newly created player session record.</p>
-     */
     inline CreatePlayerSessionResult& WithPlayerSession(const PlayerSession& value) { SetPlayerSession(value); return *this;}
-
-    /**
-     * <p>Object that describes the newly created player session record.</p>
-     */
     inline CreatePlayerSessionResult& WithPlayerSession(PlayerSession&& value) { SetPlayerSession(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePlayerSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePlayerSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePlayerSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PlayerSession m_playerSession;

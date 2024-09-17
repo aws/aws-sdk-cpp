@@ -33,53 +33,27 @@ namespace Model
     AWS_ATHENA_API GetQueryRuntimeStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Runtime statistics about the query execution.</p>
      */
     inline const QueryRuntimeStatistics& GetQueryRuntimeStatistics() const{ return m_queryRuntimeStatistics; }
-
-    /**
-     * <p>Runtime statistics about the query execution.</p>
-     */
     inline void SetQueryRuntimeStatistics(const QueryRuntimeStatistics& value) { m_queryRuntimeStatistics = value; }
-
-    /**
-     * <p>Runtime statistics about the query execution.</p>
-     */
     inline void SetQueryRuntimeStatistics(QueryRuntimeStatistics&& value) { m_queryRuntimeStatistics = std::move(value); }
-
-    /**
-     * <p>Runtime statistics about the query execution.</p>
-     */
     inline GetQueryRuntimeStatisticsResult& WithQueryRuntimeStatistics(const QueryRuntimeStatistics& value) { SetQueryRuntimeStatistics(value); return *this;}
-
-    /**
-     * <p>Runtime statistics about the query execution.</p>
-     */
     inline GetQueryRuntimeStatisticsResult& WithQueryRuntimeStatistics(QueryRuntimeStatistics&& value) { SetQueryRuntimeStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetQueryRuntimeStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetQueryRuntimeStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetQueryRuntimeStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     QueryRuntimeStatistics m_queryRuntimeStatistics;

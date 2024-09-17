@@ -28,13 +28,8 @@ SAPODataDestinationProperties::SAPODataDestinationProperties() :
 {
 }
 
-SAPODataDestinationProperties::SAPODataDestinationProperties(JsonView jsonValue) : 
-    m_objectPathHasBeenSet(false),
-    m_successResponseHandlingConfigHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false)
+SAPODataDestinationProperties::SAPODataDestinationProperties(JsonView jsonValue)
+  : SAPODataDestinationProperties()
 {
   *this = jsonValue;
 }

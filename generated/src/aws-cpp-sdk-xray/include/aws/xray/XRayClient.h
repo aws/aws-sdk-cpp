@@ -170,13 +170,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
+        virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteGroupRequestT = Model::DeleteGroupRequest>
-        Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const DeleteGroupRequestT& request) const
+        Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const DeleteGroupRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::DeleteGroup, request);
         }
@@ -185,7 +185,7 @@ namespace XRay
          * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteGroupRequestT = Model::DeleteGroupRequest>
-        void DeleteGroupAsync(const DeleteGroupRequestT& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteGroupAsync(const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteGroupRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::DeleteGroup, request, handler, context);
         }
@@ -221,13 +221,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteSamplingRuleOutcome DeleteSamplingRule(const Model::DeleteSamplingRuleRequest& request) const;
+        virtual Model::DeleteSamplingRuleOutcome DeleteSamplingRule(const Model::DeleteSamplingRuleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteSamplingRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteSamplingRuleRequestT = Model::DeleteSamplingRuleRequest>
-        Model::DeleteSamplingRuleOutcomeCallable DeleteSamplingRuleCallable(const DeleteSamplingRuleRequestT& request) const
+        Model::DeleteSamplingRuleOutcomeCallable DeleteSamplingRuleCallable(const DeleteSamplingRuleRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::DeleteSamplingRule, request);
         }
@@ -236,7 +236,7 @@ namespace XRay
          * An Async wrapper for DeleteSamplingRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteSamplingRuleRequestT = Model::DeleteSamplingRuleRequest>
-        void DeleteSamplingRuleAsync(const DeleteSamplingRuleRequestT& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteSamplingRuleAsync(const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteSamplingRuleRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::DeleteSamplingRule, request, handler, context);
         }
@@ -247,13 +247,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEncryptionConfigOutcome GetEncryptionConfig(const Model::GetEncryptionConfigRequest& request) const;
+        virtual Model::GetEncryptionConfigOutcome GetEncryptionConfig(const Model::GetEncryptionConfigRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEncryptionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetEncryptionConfigRequestT = Model::GetEncryptionConfigRequest>
-        Model::GetEncryptionConfigOutcomeCallable GetEncryptionConfigCallable(const GetEncryptionConfigRequestT& request) const
+        Model::GetEncryptionConfigOutcomeCallable GetEncryptionConfigCallable(const GetEncryptionConfigRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::GetEncryptionConfig, request);
         }
@@ -262,7 +262,7 @@ namespace XRay
          * An Async wrapper for GetEncryptionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetEncryptionConfigRequestT = Model::GetEncryptionConfigRequest>
-        void GetEncryptionConfigAsync(const GetEncryptionConfigRequestT& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetEncryptionConfigAsync(const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEncryptionConfigRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::GetEncryptionConfig, request, handler, context);
         }
@@ -272,13 +272,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">AWS API
          * Reference</a></p>
          */
-        virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
+        virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetGroupRequestT = Model::GetGroupRequest>
-        Model::GetGroupOutcomeCallable GetGroupCallable(const GetGroupRequestT& request) const
+        Model::GetGroupOutcomeCallable GetGroupCallable(const GetGroupRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::GetGroup, request);
         }
@@ -287,7 +287,7 @@ namespace XRay
          * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetGroupRequestT = Model::GetGroupRequest>
-        void GetGroupAsync(const GetGroupRequestT& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetGroupAsync(const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGroupRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::GetGroup, request, handler, context);
         }
@@ -297,13 +297,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">AWS API
          * Reference</a></p>
          */
-        virtual Model::GetGroupsOutcome GetGroups(const Model::GetGroupsRequest& request) const;
+        virtual Model::GetGroupsOutcome GetGroups(const Model::GetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetGroupsRequestT = Model::GetGroupsRequest>
-        Model::GetGroupsOutcomeCallable GetGroupsCallable(const GetGroupsRequestT& request) const
+        Model::GetGroupsOutcomeCallable GetGroupsCallable(const GetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::GetGroups, request);
         }
@@ -312,7 +312,7 @@ namespace XRay
          * An Async wrapper for GetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetGroupsRequestT = Model::GetGroupsRequest>
-        void GetGroupsAsync(const GetGroupsRequestT& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetGroupsAsync(const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::GetGroups, request, handler, context);
         }
@@ -431,13 +431,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSamplingRulesOutcome GetSamplingRules(const Model::GetSamplingRulesRequest& request) const;
+        virtual Model::GetSamplingRulesOutcome GetSamplingRules(const Model::GetSamplingRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSamplingRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSamplingRulesRequestT = Model::GetSamplingRulesRequest>
-        Model::GetSamplingRulesOutcomeCallable GetSamplingRulesCallable(const GetSamplingRulesRequestT& request) const
+        Model::GetSamplingRulesOutcomeCallable GetSamplingRulesCallable(const GetSamplingRulesRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::GetSamplingRules, request);
         }
@@ -446,7 +446,7 @@ namespace XRay
          * An Async wrapper for GetSamplingRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSamplingRulesRequestT = Model::GetSamplingRulesRequest>
-        void GetSamplingRulesAsync(const GetSamplingRulesRequestT& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSamplingRulesAsync(const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSamplingRulesRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::GetSamplingRules, request, handler, context);
         }
@@ -457,13 +457,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSamplingStatisticSummariesOutcome GetSamplingStatisticSummaries(const Model::GetSamplingStatisticSummariesRequest& request) const;
+        virtual Model::GetSamplingStatisticSummariesOutcome GetSamplingStatisticSummaries(const Model::GetSamplingStatisticSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSamplingStatisticSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSamplingStatisticSummariesRequestT = Model::GetSamplingStatisticSummariesRequest>
-        Model::GetSamplingStatisticSummariesOutcomeCallable GetSamplingStatisticSummariesCallable(const GetSamplingStatisticSummariesRequestT& request) const
+        Model::GetSamplingStatisticSummariesOutcomeCallable GetSamplingStatisticSummariesCallable(const GetSamplingStatisticSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::GetSamplingStatisticSummaries, request);
         }
@@ -472,7 +472,7 @@ namespace XRay
          * An Async wrapper for GetSamplingStatisticSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSamplingStatisticSummariesRequestT = Model::GetSamplingStatisticSummariesRequest>
-        void GetSamplingStatisticSummariesAsync(const GetSamplingStatisticSummariesRequestT& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSamplingStatisticSummariesAsync(const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSamplingStatisticSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::GetSamplingStatisticSummaries, request, handler, context);
         }
@@ -630,13 +630,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListResourcePolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResourcePoliciesOutcome ListResourcePolicies(const Model::ListResourcePoliciesRequest& request) const;
+        virtual Model::ListResourcePoliciesOutcome ListResourcePolicies(const Model::ListResourcePoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResourcePoliciesRequestT = Model::ListResourcePoliciesRequest>
-        Model::ListResourcePoliciesOutcomeCallable ListResourcePoliciesCallable(const ListResourcePoliciesRequestT& request) const
+        Model::ListResourcePoliciesOutcomeCallable ListResourcePoliciesCallable(const ListResourcePoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::ListResourcePolicies, request);
         }
@@ -645,7 +645,7 @@ namespace XRay
          * An Async wrapper for ListResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResourcePoliciesRequestT = Model::ListResourcePoliciesRequest>
-        void ListResourcePoliciesAsync(const ListResourcePoliciesRequestT& request, const ListResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResourcePoliciesAsync(const ListResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourcePoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::ListResourcePolicies, request, handler, context);
         }
@@ -875,13 +875,13 @@ namespace XRay
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
+        virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateGroupRequestT = Model::UpdateGroupRequest>
-        Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const UpdateGroupRequestT& request) const
+        Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const UpdateGroupRequestT& request = {}) const
         {
             return SubmitCallable(&XRayClient::UpdateGroup, request);
         }
@@ -890,7 +890,7 @@ namespace XRay
          * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateGroupRequestT = Model::UpdateGroupRequest>
-        void UpdateGroupAsync(const UpdateGroupRequestT& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateGroupAsync(const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateGroupRequestT& request = {}) const
         {
             return SubmitAsync(&XRayClient::UpdateGroup, request, handler, context);
         }
@@ -928,7 +928,6 @@ namespace XRay
       void init(const XRayClientConfiguration& clientConfiguration);
 
       XRayClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<XRayEndpointProviderBase> m_endpointProvider;
   };
 

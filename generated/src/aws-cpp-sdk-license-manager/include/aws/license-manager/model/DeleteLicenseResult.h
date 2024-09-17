@@ -33,89 +33,40 @@ namespace Model
     AWS_LICENSEMANAGER_API DeleteLicenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>License status.</p>
      */
     inline const LicenseDeletionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>License status.</p>
-     */
     inline void SetStatus(const LicenseDeletionStatus& value) { m_status = value; }
-
-    /**
-     * <p>License status.</p>
-     */
     inline void SetStatus(LicenseDeletionStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>License status.</p>
-     */
     inline DeleteLicenseResult& WithStatus(const LicenseDeletionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>License status.</p>
-     */
     inline DeleteLicenseResult& WithStatus(LicenseDeletionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Date when the license is deleted.</p>
      */
     inline const Aws::String& GetDeletionDate() const{ return m_deletionDate; }
-
-    /**
-     * <p>Date when the license is deleted.</p>
-     */
     inline void SetDeletionDate(const Aws::String& value) { m_deletionDate = value; }
-
-    /**
-     * <p>Date when the license is deleted.</p>
-     */
     inline void SetDeletionDate(Aws::String&& value) { m_deletionDate = std::move(value); }
-
-    /**
-     * <p>Date when the license is deleted.</p>
-     */
     inline void SetDeletionDate(const char* value) { m_deletionDate.assign(value); }
-
-    /**
-     * <p>Date when the license is deleted.</p>
-     */
     inline DeleteLicenseResult& WithDeletionDate(const Aws::String& value) { SetDeletionDate(value); return *this;}
-
-    /**
-     * <p>Date when the license is deleted.</p>
-     */
     inline DeleteLicenseResult& WithDeletionDate(Aws::String&& value) { SetDeletionDate(std::move(value)); return *this;}
-
-    /**
-     * <p>Date when the license is deleted.</p>
-     */
     inline DeleteLicenseResult& WithDeletionDate(const char* value) { SetDeletionDate(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteLicenseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteLicenseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteLicenseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LicenseDeletionStatus m_status;

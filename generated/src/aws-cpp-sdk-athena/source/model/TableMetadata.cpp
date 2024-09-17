@@ -29,14 +29,8 @@ TableMetadata::TableMetadata() :
 {
 }
 
-TableMetadata::TableMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_tableTypeHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+TableMetadata::TableMetadata(JsonView jsonValue)
+  : TableMetadata()
 {
   *this = jsonValue;
 }

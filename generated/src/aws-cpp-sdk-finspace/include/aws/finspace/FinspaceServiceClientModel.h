@@ -27,6 +27,7 @@
 #include <aws/finspace/model/CreateKxUserResult.h>
 #include <aws/finspace/model/CreateKxVolumeResult.h>
 #include <aws/finspace/model/DeleteKxClusterResult.h>
+#include <aws/finspace/model/DeleteKxClusterNodeResult.h>
 #include <aws/finspace/model/DeleteKxDatabaseResult.h>
 #include <aws/finspace/model/DeleteKxDataviewResult.h>
 #include <aws/finspace/model/DeleteKxEnvironmentResult.h>
@@ -62,6 +63,7 @@
 #include <aws/finspace/model/UpdateKxEnvironmentNetworkResult.h>
 #include <aws/finspace/model/UpdateKxUserResult.h>
 #include <aws/finspace/model/UpdateKxVolumeResult.h>
+#include <aws/finspace/model/ListKxEnvironmentsRequest.h>
 /* End of service model headers required in FinspaceClient header */
 
 namespace Aws
@@ -95,7 +97,7 @@ namespace Aws
 
   namespace finspace
   {
-    using FinspaceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FinspaceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FinspaceEndpointProviderBase = Aws::finspace::Endpoint::FinspaceEndpointProviderBase;
     using FinspaceEndpointProvider = Aws::finspace::Endpoint::FinspaceEndpointProvider;
 
@@ -111,6 +113,7 @@ namespace Aws
       class CreateKxUserRequest;
       class CreateKxVolumeRequest;
       class DeleteKxClusterRequest;
+      class DeleteKxClusterNodeRequest;
       class DeleteKxDatabaseRequest;
       class DeleteKxDataviewRequest;
       class DeleteKxEnvironmentRequest;
@@ -158,6 +161,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateKxUserResult, FinspaceError> CreateKxUserOutcome;
       typedef Aws::Utils::Outcome<CreateKxVolumeResult, FinspaceError> CreateKxVolumeOutcome;
       typedef Aws::Utils::Outcome<DeleteKxClusterResult, FinspaceError> DeleteKxClusterOutcome;
+      typedef Aws::Utils::Outcome<DeleteKxClusterNodeResult, FinspaceError> DeleteKxClusterNodeOutcome;
       typedef Aws::Utils::Outcome<DeleteKxDatabaseResult, FinspaceError> DeleteKxDatabaseOutcome;
       typedef Aws::Utils::Outcome<DeleteKxDataviewResult, FinspaceError> DeleteKxDataviewOutcome;
       typedef Aws::Utils::Outcome<DeleteKxEnvironmentResult, FinspaceError> DeleteKxEnvironmentOutcome;
@@ -205,6 +209,7 @@ namespace Aws
       typedef std::future<CreateKxUserOutcome> CreateKxUserOutcomeCallable;
       typedef std::future<CreateKxVolumeOutcome> CreateKxVolumeOutcomeCallable;
       typedef std::future<DeleteKxClusterOutcome> DeleteKxClusterOutcomeCallable;
+      typedef std::future<DeleteKxClusterNodeOutcome> DeleteKxClusterNodeOutcomeCallable;
       typedef std::future<DeleteKxDatabaseOutcome> DeleteKxDatabaseOutcomeCallable;
       typedef std::future<DeleteKxDataviewOutcome> DeleteKxDataviewOutcomeCallable;
       typedef std::future<DeleteKxEnvironmentOutcome> DeleteKxEnvironmentOutcomeCallable;
@@ -255,6 +260,7 @@ namespace Aws
     typedef std::function<void(const FinspaceClient*, const Model::CreateKxUserRequest&, const Model::CreateKxUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKxUserResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::CreateKxVolumeRequest&, const Model::CreateKxVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKxVolumeResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::DeleteKxClusterRequest&, const Model::DeleteKxClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKxClusterResponseReceivedHandler;
+    typedef std::function<void(const FinspaceClient*, const Model::DeleteKxClusterNodeRequest&, const Model::DeleteKxClusterNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKxClusterNodeResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::DeleteKxDatabaseRequest&, const Model::DeleteKxDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKxDatabaseResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::DeleteKxDataviewRequest&, const Model::DeleteKxDataviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKxDataviewResponseReceivedHandler;
     typedef std::function<void(const FinspaceClient*, const Model::DeleteKxEnvironmentRequest&, const Model::DeleteKxEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKxEnvironmentResponseReceivedHandler;

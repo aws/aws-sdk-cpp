@@ -33,43 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API StartIngestionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>An object containing information about the ingestion job.</p>
+     */
     inline const IngestionJob& GetIngestionJob() const{ return m_ingestionJob; }
-
-    
     inline void SetIngestionJob(const IngestionJob& value) { m_ingestionJob = value; }
-
-    
     inline void SetIngestionJob(IngestionJob&& value) { m_ingestionJob = std::move(value); }
-
-    
     inline StartIngestionJobResult& WithIngestionJob(const IngestionJob& value) { SetIngestionJob(value); return *this;}
-
-    
     inline StartIngestionJobResult& WithIngestionJob(IngestionJob&& value) { SetIngestionJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartIngestionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartIngestionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartIngestionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IngestionJob m_ingestionJob;

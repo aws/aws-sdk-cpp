@@ -22,8 +22,8 @@ DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSource
 {
 }
 
-DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteApplicationReferenceDataSourceResult()
 {
   *this = result;
 }

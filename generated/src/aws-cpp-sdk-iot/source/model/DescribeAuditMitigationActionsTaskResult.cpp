@@ -22,8 +22,8 @@ DescribeAuditMitigationActionsTaskResult::DescribeAuditMitigationActionsTaskResu
 {
 }
 
-DescribeAuditMitigationActionsTaskResult::DescribeAuditMitigationActionsTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_taskStatus(AuditMitigationActionsTaskStatus::NOT_SET)
+DescribeAuditMitigationActionsTaskResult::DescribeAuditMitigationActionsTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAuditMitigationActionsTaskResult()
 {
   *this = result;
 }

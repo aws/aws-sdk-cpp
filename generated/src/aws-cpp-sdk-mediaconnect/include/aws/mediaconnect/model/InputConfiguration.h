@@ -39,98 +39,41 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The IP address that the flow listens on for incoming content for a media stream.
      */
     inline const Aws::String& GetInputIp() const{ return m_inputIp; }
-
-    /**
-     * The IP address that the flow listens on for incoming content for a media stream.
-     */
     inline bool InputIpHasBeenSet() const { return m_inputIpHasBeenSet; }
-
-    /**
-     * The IP address that the flow listens on for incoming content for a media stream.
-     */
     inline void SetInputIp(const Aws::String& value) { m_inputIpHasBeenSet = true; m_inputIp = value; }
-
-    /**
-     * The IP address that the flow listens on for incoming content for a media stream.
-     */
     inline void SetInputIp(Aws::String&& value) { m_inputIpHasBeenSet = true; m_inputIp = std::move(value); }
-
-    /**
-     * The IP address that the flow listens on for incoming content for a media stream.
-     */
     inline void SetInputIp(const char* value) { m_inputIpHasBeenSet = true; m_inputIp.assign(value); }
-
-    /**
-     * The IP address that the flow listens on for incoming content for a media stream.
-     */
     inline InputConfiguration& WithInputIp(const Aws::String& value) { SetInputIp(value); return *this;}
-
-    /**
-     * The IP address that the flow listens on for incoming content for a media stream.
-     */
     inline InputConfiguration& WithInputIp(Aws::String&& value) { SetInputIp(std::move(value)); return *this;}
-
-    /**
-     * The IP address that the flow listens on for incoming content for a media stream.
-     */
     inline InputConfiguration& WithInputIp(const char* value) { SetInputIp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The port that the flow listens on for an incoming media stream.
      */
     inline int GetInputPort() const{ return m_inputPort; }
-
-    /**
-     * The port that the flow listens on for an incoming media stream.
-     */
     inline bool InputPortHasBeenSet() const { return m_inputPortHasBeenSet; }
-
-    /**
-     * The port that the flow listens on for an incoming media stream.
-     */
     inline void SetInputPort(int value) { m_inputPortHasBeenSet = true; m_inputPort = value; }
-
-    /**
-     * The port that the flow listens on for an incoming media stream.
-     */
     inline InputConfiguration& WithInputPort(int value) { SetInputPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The VPC interface where the media stream comes in from.
      */
     inline const Interface& GetInterface() const{ return m_interface; }
-
-    /**
-     * The VPC interface where the media stream comes in from.
-     */
     inline bool InterfaceHasBeenSet() const { return m_interfaceHasBeenSet; }
-
-    /**
-     * The VPC interface where the media stream comes in from.
-     */
     inline void SetInterface(const Interface& value) { m_interfaceHasBeenSet = true; m_interface = value; }
-
-    /**
-     * The VPC interface where the media stream comes in from.
-     */
     inline void SetInterface(Interface&& value) { m_interfaceHasBeenSet = true; m_interface = std::move(value); }
-
-    /**
-     * The VPC interface where the media stream comes in from.
-     */
     inline InputConfiguration& WithInterface(const Interface& value) { SetInterface(value); return *this;}
-
-    /**
-     * The VPC interface where the media stream comes in from.
-     */
     inline InputConfiguration& WithInterface(Interface&& value) { SetInterface(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inputIp;

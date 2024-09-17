@@ -38,36 +38,17 @@ namespace Model
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about an audit log destination configuration.</p>
      */
     inline const AuditLogDestinationConfiguration& GetAuditLog() const{ return m_auditLog; }
-
-    /**
-     * <p>Contains information about an audit log destination configuration.</p>
-     */
     inline bool AuditLogHasBeenSet() const { return m_auditLogHasBeenSet; }
-
-    /**
-     * <p>Contains information about an audit log destination configuration.</p>
-     */
     inline void SetAuditLog(const AuditLogDestinationConfiguration& value) { m_auditLogHasBeenSet = true; m_auditLog = value; }
-
-    /**
-     * <p>Contains information about an audit log destination configuration.</p>
-     */
     inline void SetAuditLog(AuditLogDestinationConfiguration&& value) { m_auditLogHasBeenSet = true; m_auditLog = std::move(value); }
-
-    /**
-     * <p>Contains information about an audit log destination configuration.</p>
-     */
     inline DestinationConfiguration& WithAuditLog(const AuditLogDestinationConfiguration& value) { SetAuditLog(value); return *this;}
-
-    /**
-     * <p>Contains information about an audit log destination configuration.</p>
-     */
     inline DestinationConfiguration& WithAuditLog(AuditLogDestinationConfiguration&& value) { SetAuditLog(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AuditLogDestinationConfiguration m_auditLog;

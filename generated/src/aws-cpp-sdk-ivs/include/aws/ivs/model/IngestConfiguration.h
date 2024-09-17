@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/ivs/model/AudioConfiguration.h>
 #include <aws/ivs/model/VideoConfiguration.h>
+#include <aws/ivs/model/AudioConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -39,74 +39,36 @@ namespace Model
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>Encoder settings for audio.</p>
-     */
-    inline const AudioConfiguration& GetAudio() const{ return m_audio; }
-
-    /**
-     * <p>Encoder settings for audio.</p>
-     */
-    inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-
-    /**
-     * <p>Encoder settings for audio.</p>
-     */
-    inline void SetAudio(const AudioConfiguration& value) { m_audioHasBeenSet = true; m_audio = value; }
-
-    /**
-     * <p>Encoder settings for audio.</p>
-     */
-    inline void SetAudio(AudioConfiguration&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-
-    /**
-     * <p>Encoder settings for audio.</p>
-     */
-    inline IngestConfiguration& WithAudio(const AudioConfiguration& value) { SetAudio(value); return *this;}
-
-    /**
-     * <p>Encoder settings for audio.</p>
-     */
-    inline IngestConfiguration& WithAudio(AudioConfiguration&& value) { SetAudio(std::move(value)); return *this;}
-
-
+    ///@{
     /**
      * <p>Encoder settings for video.</p>
      */
     inline const VideoConfiguration& GetVideo() const{ return m_video; }
-
-    /**
-     * <p>Encoder settings for video.</p>
-     */
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-
-    /**
-     * <p>Encoder settings for video.</p>
-     */
     inline void SetVideo(const VideoConfiguration& value) { m_videoHasBeenSet = true; m_video = value; }
-
-    /**
-     * <p>Encoder settings for video.</p>
-     */
     inline void SetVideo(VideoConfiguration&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-
-    /**
-     * <p>Encoder settings for video.</p>
-     */
     inline IngestConfiguration& WithVideo(const VideoConfiguration& value) { SetVideo(value); return *this;}
-
-    /**
-     * <p>Encoder settings for video.</p>
-     */
     inline IngestConfiguration& WithVideo(VideoConfiguration&& value) { SetVideo(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Encoder settings for audio.</p>
+     */
+    inline const AudioConfiguration& GetAudio() const{ return m_audio; }
+    inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
+    inline void SetAudio(const AudioConfiguration& value) { m_audioHasBeenSet = true; m_audio = value; }
+    inline void SetAudio(AudioConfiguration&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
+    inline IngestConfiguration& WithAudio(const AudioConfiguration& value) { SetAudio(value); return *this;}
+    inline IngestConfiguration& WithAudio(AudioConfiguration&& value) { SetAudio(std::move(value)); return *this;}
+    ///@}
   private:
-
-    AudioConfiguration m_audio;
-    bool m_audioHasBeenSet = false;
 
     VideoConfiguration m_video;
     bool m_videoHasBeenSet = false;
+
+    AudioConfiguration m_audio;
+    bool m_audioHasBeenSet = false;
   };
 
 } // namespace Model

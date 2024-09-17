@@ -46,10 +46,10 @@ namespace Model
    * You cannot be record the global IAM resouce types in Regions supported by Config
    * after February 2022. This list where you cannot record the global IAM resource
    * types includes the following Regions:</p> <ul> <li> <p>Asia Pacific
-   * (Hyderabad)</p> </li> <li> <p>Asia Pacific (Melbourne)</p> </li> <li> <p>Europe
-   * (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel (Tel
-   * Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> <p><h3>See
-   * Also:</h3>   <a
+   * (Hyderabad)</p> </li> <li> <p>Asia Pacific (Melbourne)</p> </li> <li> <p>Canada
+   * West (Calgary)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
+   * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
+   * (UAE)</p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ExclusionByResourceTypes">AWS
    * API Reference</a></p>
    */
@@ -62,54 +62,20 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A comma-separated list of resource types to exclude from recording by the
      * configuration recorder.</p>
      */
     inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>A comma-separated list of resource types to exclude from recording by the
-     * configuration recorder.</p>
-     */
     inline ExclusionByResourceTypes& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ResourceType> m_resourceTypes;

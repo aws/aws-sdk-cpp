@@ -25,10 +25,8 @@ LocalVolumeResourceData::LocalVolumeResourceData() :
 {
 }
 
-LocalVolumeResourceData::LocalVolumeResourceData(JsonView jsonValue) : 
-    m_destinationPathHasBeenSet(false),
-    m_groupOwnerSettingHasBeenSet(false),
-    m_sourcePathHasBeenSet(false)
+LocalVolumeResourceData::LocalVolumeResourceData(JsonView jsonValue)
+  : LocalVolumeResourceData()
 {
   *this = jsonValue;
 }

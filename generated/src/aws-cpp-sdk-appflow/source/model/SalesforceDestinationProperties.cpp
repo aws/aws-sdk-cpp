@@ -29,14 +29,8 @@ SalesforceDestinationProperties::SalesforceDestinationProperties() :
 {
 }
 
-SalesforceDestinationProperties::SalesforceDestinationProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false),
-    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
-    m_dataTransferApiHasBeenSet(false)
+SalesforceDestinationProperties::SalesforceDestinationProperties(JsonView jsonValue)
+  : SalesforceDestinationProperties()
 {
   *this = jsonValue;
 }

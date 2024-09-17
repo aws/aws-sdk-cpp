@@ -19,13 +19,13 @@ using namespace Aws;
 
 GetSolNetworkOperationResult::GetSolNetworkOperationResult() : 
     m_lcmOperationType(LcmOperationType::NOT_SET),
-    m_operationState(NsLcmOperationState::NOT_SET)
+    m_operationState(NsLcmOperationState::NOT_SET),
+    m_updateType(UpdateSolNetworkType::NOT_SET)
 {
 }
 
-GetSolNetworkOperationResult::GetSolNetworkOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lcmOperationType(LcmOperationType::NOT_SET),
-    m_operationState(NsLcmOperationState::NOT_SET)
+GetSolNetworkOperationResult::GetSolNetworkOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSolNetworkOperationResult()
 {
   *this = result;
 }
@@ -91,6 +91,12 @@ GetSolNetworkOperationResult& GetSolNetworkOperationResult::operator =(const Aws
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("updateType"))
+  {
+    m_updateType = UpdateSolNetworkTypeMapper::GetUpdateSolNetworkTypeForName(jsonValue.GetString("updateType"));
+
   }
 
 

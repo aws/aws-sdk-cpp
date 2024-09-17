@@ -38,6 +38,13 @@ StartCallAnalyticsStreamTranscriptionRequest::StartCallAnalyticsStreamTranscript
     m_piiEntityTypesHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
+    AmazonWebServiceRequest::SetHeadersReceivedEventHandler([this](const Http::HttpRequest*, Http::HttpResponse* response)
+    {
+        auto& initialResponseHandler = m_handler.GetInitialResponseCallbackEx();
+        if (initialResponseHandler) {
+            initialResponseHandler(StartCallAnalyticsStreamTranscriptionInitialResponse(response->GetHeaders()), Utils::Event::InitialResponseType::ON_RESPONSE);
+        }
+    });
 }
 
 std::shared_ptr<Aws::IOStream> StartCallAnalyticsStreamTranscriptionRequest::GetBody() const
@@ -51,7 +58,7 @@ Aws::Http::HeaderValueCollection StartCallAnalyticsStreamTranscriptionRequest::G
   Aws::Http::HeaderValueCollection headers;
   headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_EVENTSTREAM_CONTENT_TYPE);
   Aws::StringStream ss;
-  if(m_languageCodeHasBeenSet)
+  if(m_languageCodeHasBeenSet && m_languageCode != CallAnalyticsLanguageCode::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-language-code", CallAnalyticsLanguageCodeMapper::GetNameForCallAnalyticsLanguageCode(m_languageCode));
   }
@@ -63,7 +70,7 @@ Aws::Http::HeaderValueCollection StartCallAnalyticsStreamTranscriptionRequest::G
     ss.str("");
   }
 
-  if(m_mediaEncodingHasBeenSet)
+  if(m_mediaEncodingHasBeenSet && m_mediaEncoding != MediaEncoding::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-media-encoding", MediaEncodingMapper::GetNameForMediaEncoding(m_mediaEncoding));
   }
@@ -89,7 +96,7 @@ Aws::Http::HeaderValueCollection StartCallAnalyticsStreamTranscriptionRequest::G
     ss.str("");
   }
 
-  if(m_vocabularyFilterMethodHasBeenSet)
+  if(m_vocabularyFilterMethodHasBeenSet && m_vocabularyFilterMethod != VocabularyFilterMethod::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-vocabulary-filter-method", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
   }
@@ -108,17 +115,17 @@ Aws::Http::HeaderValueCollection StartCallAnalyticsStreamTranscriptionRequest::G
     ss.str("");
   }
 
-  if(m_partialResultsStabilityHasBeenSet)
+  if(m_partialResultsStabilityHasBeenSet && m_partialResultsStability != PartialResultsStability::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-partial-results-stability", PartialResultsStabilityMapper::GetNameForPartialResultsStability(m_partialResultsStability));
   }
 
-  if(m_contentIdentificationTypeHasBeenSet)
+  if(m_contentIdentificationTypeHasBeenSet && m_contentIdentificationType != ContentIdentificationType::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-content-identification-type", ContentIdentificationTypeMapper::GetNameForContentIdentificationType(m_contentIdentificationType));
   }
 
-  if(m_contentRedactionTypeHasBeenSet)
+  if(m_contentRedactionTypeHasBeenSet && m_contentRedactionType != ContentRedactionType::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-content-redaction-type", ContentRedactionTypeMapper::GetNameForContentRedactionType(m_contentRedactionType));
   }

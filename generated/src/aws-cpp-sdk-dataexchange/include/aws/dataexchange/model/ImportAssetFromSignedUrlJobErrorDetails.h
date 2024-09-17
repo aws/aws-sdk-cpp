@@ -37,46 +37,19 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the job error.</p>
      */
     inline const Aws::String& GetAssetName() const{ return m_assetName; }
-
-    /**
-     * <p>Details about the job error.</p>
-     */
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
-
-    /**
-     * <p>Details about the job error.</p>
-     */
     inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
-
-    /**
-     * <p>Details about the job error.</p>
-     */
     inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
-
-    /**
-     * <p>Details about the job error.</p>
-     */
     inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
-
-    /**
-     * <p>Details about the job error.</p>
-     */
     inline ImportAssetFromSignedUrlJobErrorDetails& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
-
-    /**
-     * <p>Details about the job error.</p>
-     */
     inline ImportAssetFromSignedUrlJobErrorDetails& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Details about the job error.</p>
-     */
     inline ImportAssetFromSignedUrlJobErrorDetails& WithAssetName(const char* value) { SetAssetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assetName;

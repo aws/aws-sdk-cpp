@@ -25,18 +25,13 @@ ImportReferenceSourceItem::ImportReferenceSourceItem() :
     m_statusMessageHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_referenceIdHasBeenSet(false)
 {
 }
 
-ImportReferenceSourceItem::ImportReferenceSourceItem(JsonView jsonValue) : 
-    m_sourceFileHasBeenSet(false),
-    m_status(ReferenceImportJobItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ImportReferenceSourceItem::ImportReferenceSourceItem(JsonView jsonValue)
+  : ImportReferenceSourceItem()
 {
   *this = jsonValue;
 }
@@ -88,6 +83,13 @@ ImportReferenceSourceItem& ImportReferenceSourceItem::operator =(JsonView jsonVa
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("referenceId"))
+  {
+    m_referenceId = jsonValue.GetString("referenceId");
+
+    m_referenceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +134,12 @@ JsonValue ImportReferenceSourceItem::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_referenceIdHasBeenSet)
+  {
+   payload.WithString("referenceId", m_referenceId);
 
   }
 

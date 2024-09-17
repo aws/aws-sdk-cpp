@@ -27,12 +27,8 @@ ExpenseDocument::ExpenseDocument() :
 {
 }
 
-ExpenseDocument::ExpenseDocument(JsonView jsonValue) : 
-    m_expenseIndex(0),
-    m_expenseIndexHasBeenSet(false),
-    m_summaryFieldsHasBeenSet(false),
-    m_lineItemGroupsHasBeenSet(false),
-    m_blocksHasBeenSet(false)
+ExpenseDocument::ExpenseDocument(JsonView jsonValue)
+  : ExpenseDocument()
 {
   *this = jsonValue;
 }

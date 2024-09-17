@@ -35,6 +35,7 @@ namespace Model
     AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
@@ -42,71 +43,15 @@ namespace Model
      * specify up to 10 task definitions as a comma separated list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTaskDefinitions() const{ return m_taskDefinitions; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline bool TaskDefinitionsHasBeenSet() const { return m_taskDefinitionsHasBeenSet; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline void SetTaskDefinitions(const Aws::Vector<Aws::String>& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions = value; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline void SetTaskDefinitions(Aws::Vector<Aws::String>&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions = std::move(value); }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline DeleteTaskDefinitionsRequest& WithTaskDefinitions(const Aws::Vector<Aws::String>& value) { SetTaskDefinitions(value); return *this;}
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline DeleteTaskDefinitionsRequest& WithTaskDefinitions(Aws::Vector<Aws::String>&& value) { SetTaskDefinitions(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline DeleteTaskDefinitionsRequest& AddTaskDefinitions(const Aws::String& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.push_back(value); return *this; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline DeleteTaskDefinitionsRequest& AddTaskDefinitions(Aws::String&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
-     * specify up to 10 task definitions as a comma separated list.</p>
-     */
     inline DeleteTaskDefinitionsRequest& AddTaskDefinitions(const char* value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_taskDefinitions;

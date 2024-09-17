@@ -56,6 +56,7 @@
 #include <aws/appmesh/model/UpdateVirtualNodeResult.h>
 #include <aws/appmesh/model/UpdateVirtualRouterResult.h>
 #include <aws/appmesh/model/UpdateVirtualServiceResult.h>
+#include <aws/appmesh/model/ListMeshesRequest.h>
 /* End of service model headers required in AppMeshClient header */
 
 namespace Aws
@@ -89,7 +90,7 @@ namespace Aws
 
   namespace AppMesh
   {
-    using AppMeshClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppMeshClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppMeshEndpointProviderBase = Aws::AppMesh::Endpoint::AppMeshEndpointProviderBase;
     using AppMeshEndpointProvider = Aws::AppMesh::Endpoint::AppMeshEndpointProvider;
 

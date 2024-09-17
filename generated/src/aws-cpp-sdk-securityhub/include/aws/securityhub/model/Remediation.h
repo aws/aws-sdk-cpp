@@ -38,42 +38,18 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A recommendation on the steps to take to remediate the issue identified by a
      * finding.</p>
      */
     inline const Recommendation& GetRecommendation() const{ return m_recommendation; }
-
-    /**
-     * <p>A recommendation on the steps to take to remediate the issue identified by a
-     * finding.</p>
-     */
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-
-    /**
-     * <p>A recommendation on the steps to take to remediate the issue identified by a
-     * finding.</p>
-     */
     inline void SetRecommendation(const Recommendation& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-
-    /**
-     * <p>A recommendation on the steps to take to remediate the issue identified by a
-     * finding.</p>
-     */
     inline void SetRecommendation(Recommendation&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-
-    /**
-     * <p>A recommendation on the steps to take to remediate the issue identified by a
-     * finding.</p>
-     */
     inline Remediation& WithRecommendation(const Recommendation& value) { SetRecommendation(value); return *this;}
-
-    /**
-     * <p>A recommendation on the steps to take to remediate the issue identified by a
-     * finding.</p>
-     */
     inline Remediation& WithRecommendation(Recommendation&& value) { SetRecommendation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Recommendation m_recommendation;

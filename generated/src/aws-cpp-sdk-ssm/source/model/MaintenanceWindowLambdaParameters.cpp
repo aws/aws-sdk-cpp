@@ -26,10 +26,8 @@ MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters() :
 {
 }
 
-MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(JsonView jsonValue) : 
-    m_clientContextHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(JsonView jsonValue)
+  : MaintenanceWindowLambdaParameters()
 {
   *this = jsonValue;
 }

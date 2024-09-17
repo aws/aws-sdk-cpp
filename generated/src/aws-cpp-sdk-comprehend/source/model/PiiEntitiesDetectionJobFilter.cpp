@@ -27,12 +27,8 @@ PiiEntitiesDetectionJobFilter::PiiEntitiesDetectionJobFilter() :
 {
 }
 
-PiiEntitiesDetectionJobFilter::PiiEntitiesDetectionJobFilter(JsonView jsonValue) : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
+PiiEntitiesDetectionJobFilter::PiiEntitiesDetectionJobFilter(JsonView jsonValue)
+  : PiiEntitiesDetectionJobFilter()
 {
   *this = jsonValue;
 }

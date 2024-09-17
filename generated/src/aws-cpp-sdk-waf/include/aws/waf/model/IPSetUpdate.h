@@ -47,79 +47,31 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether to insert or delete an IP address with
      * <a>UpdateIPSet</a>.</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>Specifies whether to insert or delete an IP address with
-     * <a>UpdateIPSet</a>.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to insert or delete an IP address with
-     * <a>UpdateIPSet</a>.</p>
-     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>Specifies whether to insert or delete an IP address with
-     * <a>UpdateIPSet</a>.</p>
-     */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>Specifies whether to insert or delete an IP address with
-     * <a>UpdateIPSet</a>.</p>
-     */
     inline IPSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>Specifies whether to insert or delete an IP address with
-     * <a>UpdateIPSet</a>.</p>
-     */
     inline IPSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from.</p>
      */
     inline const IPSetDescriptor& GetIPSetDescriptor() const{ return m_iPSetDescriptor; }
-
-    /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
-     */
     inline bool IPSetDescriptorHasBeenSet() const { return m_iPSetDescriptorHasBeenSet; }
-
-    /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
-     */
     inline void SetIPSetDescriptor(const IPSetDescriptor& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = value; }
-
-    /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
-     */
     inline void SetIPSetDescriptor(IPSetDescriptor&& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = std::move(value); }
-
-    /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
-     */
     inline IPSetUpdate& WithIPSetDescriptor(const IPSetDescriptor& value) { SetIPSetDescriptor(value); return *this;}
-
-    /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
-     */
     inline IPSetUpdate& WithIPSetDescriptor(IPSetDescriptor&& value) { SetIPSetDescriptor(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChangeAction m_action;

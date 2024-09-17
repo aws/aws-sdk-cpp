@@ -25,10 +25,8 @@ LifeCycleLastCutover::LifeCycleLastCutover() :
 {
 }
 
-LifeCycleLastCutover::LifeCycleLastCutover(JsonView jsonValue) : 
-    m_finalizedHasBeenSet(false),
-    m_initiatedHasBeenSet(false),
-    m_revertedHasBeenSet(false)
+LifeCycleLastCutover::LifeCycleLastCutover(JsonView jsonValue)
+  : LifeCycleLastCutover()
 {
   *this = jsonValue;
 }

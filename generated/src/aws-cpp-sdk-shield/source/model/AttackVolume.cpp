@@ -25,10 +25,8 @@ AttackVolume::AttackVolume() :
 {
 }
 
-AttackVolume::AttackVolume(JsonView jsonValue) : 
-    m_bitsPerSecondHasBeenSet(false),
-    m_packetsPerSecondHasBeenSet(false),
-    m_requestsPerSecondHasBeenSet(false)
+AttackVolume::AttackVolume(JsonView jsonValue)
+  : AttackVolume()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ExpenseCurrency::ExpenseCurrency() :
 {
 }
 
-ExpenseCurrency::ExpenseCurrency(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+ExpenseCurrency::ExpenseCurrency(JsonView jsonValue)
+  : ExpenseCurrency()
 {
   *this = jsonValue;
 }

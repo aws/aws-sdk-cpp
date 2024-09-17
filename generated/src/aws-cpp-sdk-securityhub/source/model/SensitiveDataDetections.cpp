@@ -26,11 +26,8 @@ SensitiveDataDetections::SensitiveDataDetections() :
 {
 }
 
-SensitiveDataDetections::SensitiveDataDetections(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_occurrencesHasBeenSet(false)
+SensitiveDataDetections::SensitiveDataDetections(JsonView jsonValue)
+  : SensitiveDataDetections()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ EngineVersion::EngineVersion() :
 {
 }
 
-EngineVersion::EngineVersion(JsonView jsonValue) : 
-    m_selectedEngineVersionHasBeenSet(false),
-    m_effectiveEngineVersionHasBeenSet(false)
+EngineVersion::EngineVersion(JsonView jsonValue)
+  : EngineVersion()
 {
   *this = jsonValue;
 }

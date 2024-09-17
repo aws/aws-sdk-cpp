@@ -27,12 +27,8 @@ Headers::Headers() :
 {
 }
 
-Headers::Headers(JsonView jsonValue) : 
-    m_matchPatternHasBeenSet(false),
-    m_matchScope(MapMatchScope::NOT_SET),
-    m_matchScopeHasBeenSet(false),
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
+Headers::Headers(JsonView jsonValue)
+  : Headers()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ConfigurationErrorDetails::ConfigurationErrorDetails() :
 {
 }
 
-ConfigurationErrorDetails::ConfigurationErrorDetails(JsonView jsonValue) : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ConfigurationErrorDetails::ConfigurationErrorDetails(JsonView jsonValue)
+  : ConfigurationErrorDetails()
 {
   *this = jsonValue;
 }

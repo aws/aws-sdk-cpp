@@ -25,10 +25,8 @@ MLUserDataEncryption::MLUserDataEncryption() :
 {
 }
 
-MLUserDataEncryption::MLUserDataEncryption(JsonView jsonValue) : 
-    m_mlUserDataEncryptionMode(MLUserDataEncryptionModeString::NOT_SET),
-    m_mlUserDataEncryptionModeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+MLUserDataEncryption::MLUserDataEncryption(JsonView jsonValue)
+  : MLUserDataEncryption()
 {
   *this = jsonValue;
 }

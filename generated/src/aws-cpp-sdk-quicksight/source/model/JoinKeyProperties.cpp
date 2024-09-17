@@ -24,9 +24,8 @@ JoinKeyProperties::JoinKeyProperties() :
 {
 }
 
-JoinKeyProperties::JoinKeyProperties(JsonView jsonValue) : 
-    m_uniqueKey(false),
-    m_uniqueKeyHasBeenSet(false)
+JoinKeyProperties::JoinKeyProperties(JsonView jsonValue)
+  : JoinKeyProperties()
 {
   *this = jsonValue;
 }

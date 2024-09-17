@@ -22,8 +22,8 @@ DescribeCustomVocabularyMetadataResult::DescribeCustomVocabularyMetadataResult()
 {
 }
 
-DescribeCustomVocabularyMetadataResult::DescribeCustomVocabularyMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_customVocabularyStatus(CustomVocabularyStatus::NOT_SET)
+DescribeCustomVocabularyMetadataResult::DescribeCustomVocabularyMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCustomVocabularyMetadataResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ SlotTypeStatistics::SlotTypeStatistics() :
 {
 }
 
-SlotTypeStatistics::SlotTypeStatistics(JsonView jsonValue) : 
-    m_discoveredSlotTypeCount(0),
-    m_discoveredSlotTypeCountHasBeenSet(false)
+SlotTypeStatistics::SlotTypeStatistics(JsonView jsonValue)
+  : SlotTypeStatistics()
 {
   *this = jsonValue;
 }

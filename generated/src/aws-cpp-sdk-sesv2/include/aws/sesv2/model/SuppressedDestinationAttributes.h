@@ -39,103 +39,35 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the email message that caused the email address to
      * be added to the suppression list for your account.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p>The unique identifier of the email message that caused the email address to
-     * be added to the suppression list for your account.</p>
-     */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the email message that caused the email address to
-     * be added to the suppression list for your account.</p>
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-
-    /**
-     * <p>The unique identifier of the email message that caused the email address to
-     * be added to the suppression list for your account.</p>
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the email message that caused the email address to
-     * be added to the suppression list for your account.</p>
-     */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the email message that caused the email address to
-     * be added to the suppression list for your account.</p>
-     */
     inline SuppressedDestinationAttributes& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the email message that caused the email address to
-     * be added to the suppression list for your account.</p>
-     */
     inline SuppressedDestinationAttributes& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the email message that caused the email address to
-     * be added to the suppression list for your account.</p>
-     */
     inline SuppressedDestinationAttributes& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier that's generated when an email address is added to the
      * suppression list for your account.</p>
      */
     inline const Aws::String& GetFeedbackId() const{ return m_feedbackId; }
-
-    /**
-     * <p>A unique identifier that's generated when an email address is added to the
-     * suppression list for your account.</p>
-     */
     inline bool FeedbackIdHasBeenSet() const { return m_feedbackIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier that's generated when an email address is added to the
-     * suppression list for your account.</p>
-     */
     inline void SetFeedbackId(const Aws::String& value) { m_feedbackIdHasBeenSet = true; m_feedbackId = value; }
-
-    /**
-     * <p>A unique identifier that's generated when an email address is added to the
-     * suppression list for your account.</p>
-     */
     inline void SetFeedbackId(Aws::String&& value) { m_feedbackIdHasBeenSet = true; m_feedbackId = std::move(value); }
-
-    /**
-     * <p>A unique identifier that's generated when an email address is added to the
-     * suppression list for your account.</p>
-     */
     inline void SetFeedbackId(const char* value) { m_feedbackIdHasBeenSet = true; m_feedbackId.assign(value); }
-
-    /**
-     * <p>A unique identifier that's generated when an email address is added to the
-     * suppression list for your account.</p>
-     */
     inline SuppressedDestinationAttributes& WithFeedbackId(const Aws::String& value) { SetFeedbackId(value); return *this;}
-
-    /**
-     * <p>A unique identifier that's generated when an email address is added to the
-     * suppression list for your account.</p>
-     */
     inline SuppressedDestinationAttributes& WithFeedbackId(Aws::String&& value) { SetFeedbackId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier that's generated when an email address is added to the
-     * suppression list for your account.</p>
-     */
     inline SuppressedDestinationAttributes& WithFeedbackId(const char* value) { SetFeedbackId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

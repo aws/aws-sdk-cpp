@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/tnb/model/InstantiateMetadata.h>
+#include <aws/tnb/model/ModifyVnfInfoMetadata.h>
+#include <aws/tnb/model/UpdateNsMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -39,74 +42,88 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date that the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline GetSolNetworkOperationMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline GetSolNetworkOperationMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Metadata related to the network operation occurrence for network
+     * instantiation. This is populated only if the lcmOperationType is
+     * <code>INSTANTIATE</code>.</p>
+     */
+    inline const InstantiateMetadata& GetInstantiateMetadata() const{ return m_instantiateMetadata; }
+    inline bool InstantiateMetadataHasBeenSet() const { return m_instantiateMetadataHasBeenSet; }
+    inline void SetInstantiateMetadata(const InstantiateMetadata& value) { m_instantiateMetadataHasBeenSet = true; m_instantiateMetadata = value; }
+    inline void SetInstantiateMetadata(InstantiateMetadata&& value) { m_instantiateMetadataHasBeenSet = true; m_instantiateMetadata = std::move(value); }
+    inline GetSolNetworkOperationMetadata& WithInstantiateMetadata(const InstantiateMetadata& value) { SetInstantiateMetadata(value); return *this;}
+    inline GetSolNetworkOperationMetadata& WithInstantiateMetadata(InstantiateMetadata&& value) { SetInstantiateMetadata(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
     /**
      * <p>The date that the resource was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline GetSolNetworkOperationMetadata& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline GetSolNetworkOperationMetadata& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Metadata related to the network operation occurrence for network function
+     * updates in a network instance. This is populated only if the lcmOperationType is
+     * <code>UPDATE</code> and the updateType is
+     * <code>MODIFY_VNF_INFORMATION</code>.</p>
+     */
+    inline const ModifyVnfInfoMetadata& GetModifyVnfInfoMetadata() const{ return m_modifyVnfInfoMetadata; }
+    inline bool ModifyVnfInfoMetadataHasBeenSet() const { return m_modifyVnfInfoMetadataHasBeenSet; }
+    inline void SetModifyVnfInfoMetadata(const ModifyVnfInfoMetadata& value) { m_modifyVnfInfoMetadataHasBeenSet = true; m_modifyVnfInfoMetadata = value; }
+    inline void SetModifyVnfInfoMetadata(ModifyVnfInfoMetadata&& value) { m_modifyVnfInfoMetadataHasBeenSet = true; m_modifyVnfInfoMetadata = std::move(value); }
+    inline GetSolNetworkOperationMetadata& WithModifyVnfInfoMetadata(const ModifyVnfInfoMetadata& value) { SetModifyVnfInfoMetadata(value); return *this;}
+    inline GetSolNetworkOperationMetadata& WithModifyVnfInfoMetadata(ModifyVnfInfoMetadata&& value) { SetModifyVnfInfoMetadata(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Metadata related to the network operation occurrence for network instance
+     * updates. This is populated only if the lcmOperationType is <code>UPDATE</code>
+     * and the updateType is <code>UPDATE_NS</code>.</p>
+     */
+    inline const UpdateNsMetadata& GetUpdateNsMetadata() const{ return m_updateNsMetadata; }
+    inline bool UpdateNsMetadataHasBeenSet() const { return m_updateNsMetadataHasBeenSet; }
+    inline void SetUpdateNsMetadata(const UpdateNsMetadata& value) { m_updateNsMetadataHasBeenSet = true; m_updateNsMetadata = value; }
+    inline void SetUpdateNsMetadata(UpdateNsMetadata&& value) { m_updateNsMetadataHasBeenSet = true; m_updateNsMetadata = std::move(value); }
+    inline GetSolNetworkOperationMetadata& WithUpdateNsMetadata(const UpdateNsMetadata& value) { SetUpdateNsMetadata(value); return *this;}
+    inline GetSolNetworkOperationMetadata& WithUpdateNsMetadata(UpdateNsMetadata&& value) { SetUpdateNsMetadata(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
+    InstantiateMetadata m_instantiateMetadata;
+    bool m_instantiateMetadataHasBeenSet = false;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet = false;
+
+    ModifyVnfInfoMetadata m_modifyVnfInfoMetadata;
+    bool m_modifyVnfInfoMetadataHasBeenSet = false;
+
+    UpdateNsMetadata m_updateNsMetadata;
+    bool m_updateNsMetadataHasBeenSet = false;
   };
 
 } // namespace Model

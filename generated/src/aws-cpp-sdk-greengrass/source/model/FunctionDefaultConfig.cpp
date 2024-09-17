@@ -23,8 +23,8 @@ FunctionDefaultConfig::FunctionDefaultConfig() :
 {
 }
 
-FunctionDefaultConfig::FunctionDefaultConfig(JsonView jsonValue) : 
-    m_executionHasBeenSet(false)
+FunctionDefaultConfig::FunctionDefaultConfig(JsonView jsonValue)
+  : FunctionDefaultConfig()
 {
   *this = jsonValue;
 }

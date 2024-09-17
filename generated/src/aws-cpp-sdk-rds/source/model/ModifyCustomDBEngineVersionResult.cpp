@@ -23,21 +23,15 @@ ModifyCustomDBEngineVersionResult::ModifyCustomDBEngineVersionResult() :
     m_supportsParallelQuery(false),
     m_supportsGlobalDatabases(false),
     m_supportsBabelfish(false),
+    m_supportsLimitlessDatabase(false),
     m_supportsCertificateRotationWithoutRestart(false),
     m_supportsLocalWriteForwarding(false),
     m_supportsIntegrations(false)
 {
 }
 
-ModifyCustomDBEngineVersionResult::ModifyCustomDBEngineVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsReadReplica(false),
-    m_supportsParallelQuery(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsBabelfish(false),
-    m_supportsCertificateRotationWithoutRestart(false),
-    m_supportsLocalWriteForwarding(false),
-    m_supportsIntegrations(false)
+ModifyCustomDBEngineVersionResult::ModifyCustomDBEngineVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyCustomDBEngineVersionResult()
 {
   *this = result;
 }
@@ -246,6 +240,11 @@ ModifyCustomDBEngineVersionResult& ModifyCustomDBEngineVersionResult::operator =
     if(!customDBEngineVersionManifestNode.IsNull())
     {
       m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
+    }
+    XmlNode supportsLimitlessDatabaseNode = resultNode.FirstChild("SupportsLimitlessDatabase");
+    if(!supportsLimitlessDatabaseNode.IsNull())
+    {
+      m_supportsLimitlessDatabase = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLimitlessDatabaseNode.GetText()).c_str()).c_str());
     }
     XmlNode supportsCertificateRotationWithoutRestartNode = resultNode.FirstChild("SupportsCertificateRotationWithoutRestart");
     if(!supportsCertificateRotationWithoutRestartNode.IsNull())

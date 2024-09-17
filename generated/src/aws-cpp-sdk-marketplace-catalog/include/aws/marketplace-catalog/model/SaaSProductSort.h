@@ -39,73 +39,30 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Field to sort the SaaS products by.</p>
      */
     inline const SaaSProductSortBy& GetSortBy() const{ return m_sortBy; }
-
-    /**
-     * <p>Field to sort the SaaS products by.</p>
-     */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-
-    /**
-     * <p>Field to sort the SaaS products by.</p>
-     */
     inline void SetSortBy(const SaaSProductSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-
-    /**
-     * <p>Field to sort the SaaS products by.</p>
-     */
     inline void SetSortBy(SaaSProductSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-
-    /**
-     * <p>Field to sort the SaaS products by.</p>
-     */
     inline SaaSProductSort& WithSortBy(const SaaSProductSortBy& value) { SetSortBy(value); return *this;}
-
-    /**
-     * <p>Field to sort the SaaS products by.</p>
-     */
     inline SaaSProductSort& WithSortBy(SaaSProductSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>.
      * The default value is <code>DESCENDING</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>.
-     * The default value is <code>DESCENDING</code>.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>.
-     * The default value is <code>DESCENDING</code>.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>.
-     * The default value is <code>DESCENDING</code>.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>.
-     * The default value is <code>DESCENDING</code>.</p>
-     */
     inline SaaSProductSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>.
-     * The default value is <code>DESCENDING</code>.</p>
-     */
     inline SaaSProductSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SaaSProductSortBy m_sortBy;

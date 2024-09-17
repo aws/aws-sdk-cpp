@@ -30,15 +30,8 @@ ApiGatewayProxySummary::ApiGatewayProxySummary() :
 {
 }
 
-ApiGatewayProxySummary::ApiGatewayProxySummary(JsonView jsonValue) : 
-    m_apiGatewayIdHasBeenSet(false),
-    m_endpointType(ApiGatewayEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_nlbArnHasBeenSet(false),
-    m_nlbNameHasBeenSet(false),
-    m_proxyUrlHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_vpcLinkIdHasBeenSet(false)
+ApiGatewayProxySummary::ApiGatewayProxySummary(JsonView jsonValue)
+  : ApiGatewayProxySummary()
 {
   *this = jsonValue;
 }

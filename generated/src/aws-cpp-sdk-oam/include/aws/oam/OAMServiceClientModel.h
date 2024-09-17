@@ -33,6 +33,8 @@
 #include <aws/oam/model/TagResourceResult.h>
 #include <aws/oam/model/UntagResourceResult.h>
 #include <aws/oam/model/UpdateLinkResult.h>
+#include <aws/oam/model/ListLinksRequest.h>
+#include <aws/oam/model/ListSinksRequest.h>
 /* End of service model headers required in OAMClient header */
 
 namespace Aws
@@ -66,7 +68,7 @@ namespace Aws
 
   namespace OAM
   {
-    using OAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OAMClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OAMEndpointProviderBase = Aws::OAM::Endpoint::OAMEndpointProviderBase;
     using OAMEndpointProvider = Aws::OAM::Endpoint::OAMEndpointProvider;
 

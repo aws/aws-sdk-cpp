@@ -32,17 +32,8 @@ MemberSummary::MemberSummary() :
 {
 }
 
-MemberSummary::MemberSummary(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_abilitiesHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_paymentConfigurationHasBeenSet(false)
+MemberSummary::MemberSummary(JsonView jsonValue)
+  : MemberSummary()
 {
   *this = jsonValue;
 }

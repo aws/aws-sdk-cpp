@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A built in aggregation function for total values.</p>
      */
     inline const SimpleTotalAggregationFunction& GetSimpleTotalAggregationFunction() const{ return m_simpleTotalAggregationFunction; }
-
-    /**
-     * <p>A built in aggregation function for total values.</p>
-     */
     inline bool SimpleTotalAggregationFunctionHasBeenSet() const { return m_simpleTotalAggregationFunctionHasBeenSet; }
-
-    /**
-     * <p>A built in aggregation function for total values.</p>
-     */
     inline void SetSimpleTotalAggregationFunction(const SimpleTotalAggregationFunction& value) { m_simpleTotalAggregationFunctionHasBeenSet = true; m_simpleTotalAggregationFunction = value; }
-
-    /**
-     * <p>A built in aggregation function for total values.</p>
-     */
     inline void SetSimpleTotalAggregationFunction(SimpleTotalAggregationFunction&& value) { m_simpleTotalAggregationFunctionHasBeenSet = true; m_simpleTotalAggregationFunction = std::move(value); }
-
-    /**
-     * <p>A built in aggregation function for total values.</p>
-     */
     inline TotalAggregationFunction& WithSimpleTotalAggregationFunction(const SimpleTotalAggregationFunction& value) { SetSimpleTotalAggregationFunction(value); return *this;}
-
-    /**
-     * <p>A built in aggregation function for total values.</p>
-     */
     inline TotalAggregationFunction& WithSimpleTotalAggregationFunction(SimpleTotalAggregationFunction&& value) { SetSimpleTotalAggregationFunction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SimpleTotalAggregationFunction m_simpleTotalAggregationFunction;

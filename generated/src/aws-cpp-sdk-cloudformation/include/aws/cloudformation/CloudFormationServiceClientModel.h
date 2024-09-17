@@ -71,6 +71,7 @@
 #include <aws/cloudformation/model/ListStackInstanceResourceDriftsResult.h>
 #include <aws/cloudformation/model/ListStackInstancesResult.h>
 #include <aws/cloudformation/model/ListStackResourcesResult.h>
+#include <aws/cloudformation/model/ListStackSetAutoDeploymentTargetsResult.h>
 #include <aws/cloudformation/model/ListStackSetOperationResultsResult.h>
 #include <aws/cloudformation/model/ListStackSetOperationsResult.h>
 #include <aws/cloudformation/model/ListStackSetsResult.h>
@@ -94,6 +95,35 @@
 #include <aws/cloudformation/model/UpdateStackSetResult.h>
 #include <aws/cloudformation/model/UpdateTerminationProtectionResult.h>
 #include <aws/cloudformation/model/ValidateTemplateResult.h>
+#include <aws/cloudformation/model/DescribeOrganizationsAccessRequest.h>
+#include <aws/cloudformation/model/DescribeTypeRequest.h>
+#include <aws/cloudformation/model/ListStacksRequest.h>
+#include <aws/cloudformation/model/DeactivateOrganizationsAccessRequest.h>
+#include <aws/cloudformation/model/ListTypeVersionsRequest.h>
+#include <aws/cloudformation/model/DeactivateTypeRequest.h>
+#include <aws/cloudformation/model/ValidateTemplateRequest.h>
+#include <aws/cloudformation/model/SetTypeDefaultVersionRequest.h>
+#include <aws/cloudformation/model/TestTypeRequest.h>
+#include <aws/cloudformation/model/GetTemplateSummaryRequest.h>
+#include <aws/cloudformation/model/PublishTypeRequest.h>
+#include <aws/cloudformation/model/DeregisterTypeRequest.h>
+#include <aws/cloudformation/model/RegisterPublisherRequest.h>
+#include <aws/cloudformation/model/ListTypeRegistrationsRequest.h>
+#include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
+#include <aws/cloudformation/model/DescribeStackEventsRequest.h>
+#include <aws/cloudformation/model/ListExportsRequest.h>
+#include <aws/cloudformation/model/StartResourceScanRequest.h>
+#include <aws/cloudformation/model/DescribePublisherRequest.h>
+#include <aws/cloudformation/model/ListResourceScansRequest.h>
+#include <aws/cloudformation/model/DescribeStacksRequest.h>
+#include <aws/cloudformation/model/GetTemplateRequest.h>
+#include <aws/cloudformation/model/ListStackSetsRequest.h>
+#include <aws/cloudformation/model/DescribeStackResourcesRequest.h>
+#include <aws/cloudformation/model/ActivateOrganizationsAccessRequest.h>
+#include <aws/cloudformation/model/ActivateTypeRequest.h>
+#include <aws/cloudformation/model/ListTypesRequest.h>
+#include <aws/cloudformation/model/EstimateTemplateCostRequest.h>
+#include <aws/cloudformation/model/ListGeneratedTemplatesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudFormationClient header */
 
@@ -128,7 +158,7 @@ namespace Aws
 
   namespace CloudFormation
   {
-    using CloudFormationClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudFormationClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudFormationEndpointProviderBase = Aws::CloudFormation::Endpoint::CloudFormationEndpointProviderBase;
     using CloudFormationEndpointProvider = Aws::CloudFormation::Endpoint::CloudFormationEndpointProvider;
 
@@ -191,6 +221,7 @@ namespace Aws
       class ListStackInstanceResourceDriftsRequest;
       class ListStackInstancesRequest;
       class ListStackResourcesRequest;
+      class ListStackSetAutoDeploymentTargetsRequest;
       class ListStackSetOperationResultsRequest;
       class ListStackSetOperationsRequest;
       class ListStackSetsRequest;
@@ -275,6 +306,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListStackInstanceResourceDriftsResult, CloudFormationError> ListStackInstanceResourceDriftsOutcome;
       typedef Aws::Utils::Outcome<ListStackInstancesResult, CloudFormationError> ListStackInstancesOutcome;
       typedef Aws::Utils::Outcome<ListStackResourcesResult, CloudFormationError> ListStackResourcesOutcome;
+      typedef Aws::Utils::Outcome<ListStackSetAutoDeploymentTargetsResult, CloudFormationError> ListStackSetAutoDeploymentTargetsOutcome;
       typedef Aws::Utils::Outcome<ListStackSetOperationResultsResult, CloudFormationError> ListStackSetOperationResultsOutcome;
       typedef Aws::Utils::Outcome<ListStackSetOperationsResult, CloudFormationError> ListStackSetOperationsOutcome;
       typedef Aws::Utils::Outcome<ListStackSetsResult, CloudFormationError> ListStackSetsOutcome;
@@ -359,6 +391,7 @@ namespace Aws
       typedef std::future<ListStackInstanceResourceDriftsOutcome> ListStackInstanceResourceDriftsOutcomeCallable;
       typedef std::future<ListStackInstancesOutcome> ListStackInstancesOutcomeCallable;
       typedef std::future<ListStackResourcesOutcome> ListStackResourcesOutcomeCallable;
+      typedef std::future<ListStackSetAutoDeploymentTargetsOutcome> ListStackSetAutoDeploymentTargetsOutcomeCallable;
       typedef std::future<ListStackSetOperationResultsOutcome> ListStackSetOperationResultsOutcomeCallable;
       typedef std::future<ListStackSetOperationsOutcome> ListStackSetOperationsOutcomeCallable;
       typedef std::future<ListStackSetsOutcome> ListStackSetsOutcomeCallable;
@@ -446,6 +479,7 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackInstanceResourceDriftsRequest&, const Model::ListStackInstanceResourceDriftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackInstanceResourceDriftsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackInstancesRequest&, const Model::ListStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackInstancesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackResourcesRequest&, const Model::ListStackResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackResourcesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetAutoDeploymentTargetsRequest&, const Model::ListStackSetAutoDeploymentTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetAutoDeploymentTargetsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetOperationResultsRequest&, const Model::ListStackSetOperationResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetOperationResultsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetOperationsRequest&, const Model::ListStackSetOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetOperationsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetsRequest&, const Model::ListStackSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetsResponseReceivedHandler;

@@ -34,185 +34,63 @@ namespace Model
     AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the data catalog that contains the database and table metadata to
      * return.</p>
      */
     inline const Aws::String& GetCatalogName() const{ return m_catalogName; }
-
-    /**
-     * <p>The name of the data catalog that contains the database and table metadata to
-     * return.</p>
-     */
     inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
-
-    /**
-     * <p>The name of the data catalog that contains the database and table metadata to
-     * return.</p>
-     */
     inline void SetCatalogName(const Aws::String& value) { m_catalogNameHasBeenSet = true; m_catalogName = value; }
-
-    /**
-     * <p>The name of the data catalog that contains the database and table metadata to
-     * return.</p>
-     */
     inline void SetCatalogName(Aws::String&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::move(value); }
-
-    /**
-     * <p>The name of the data catalog that contains the database and table metadata to
-     * return.</p>
-     */
     inline void SetCatalogName(const char* value) { m_catalogNameHasBeenSet = true; m_catalogName.assign(value); }
-
-    /**
-     * <p>The name of the data catalog that contains the database and table metadata to
-     * return.</p>
-     */
     inline GetTableMetadataRequest& WithCatalogName(const Aws::String& value) { SetCatalogName(value); return *this;}
-
-    /**
-     * <p>The name of the data catalog that contains the database and table metadata to
-     * return.</p>
-     */
     inline GetTableMetadataRequest& WithCatalogName(Aws::String&& value) { SetCatalogName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the data catalog that contains the database and table metadata to
-     * return.</p>
-     */
     inline GetTableMetadataRequest& WithCatalogName(const char* value) { SetCatalogName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the database that contains the table metadata to return.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-
-    /**
-     * <p>The name of the database that contains the table metadata to return.</p>
-     */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of the database that contains the table metadata to return.</p>
-     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-
-    /**
-     * <p>The name of the database that contains the table metadata to return.</p>
-     */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-
-    /**
-     * <p>The name of the database that contains the table metadata to return.</p>
-     */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-
-    /**
-     * <p>The name of the database that contains the table metadata to return.</p>
-     */
     inline GetTableMetadataRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of the database that contains the table metadata to return.</p>
-     */
     inline GetTableMetadataRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database that contains the table metadata to return.</p>
-     */
     inline GetTableMetadataRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the table for which metadata is returned.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the table for which metadata is returned.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the table for which metadata is returned.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the table for which metadata is returned.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the table for which metadata is returned.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the table for which metadata is returned.</p>
-     */
     inline GetTableMetadataRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the table for which metadata is returned.</p>
-     */
     inline GetTableMetadataRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the table for which metadata is returned.</p>
-     */
     inline GetTableMetadataRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the workgroup for which the metadata is being fetched. Required
      * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
-
-    /**
-     * <p>The name of the workgroup for which the metadata is being fetched. Required
-     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
-     */
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-
-    /**
-     * <p>The name of the workgroup for which the metadata is being fetched. Required
-     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
-     */
     inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-
-    /**
-     * <p>The name of the workgroup for which the metadata is being fetched. Required
-     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
-     */
     inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-
-    /**
-     * <p>The name of the workgroup for which the metadata is being fetched. Required
-     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
-     */
     inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-
-    /**
-     * <p>The name of the workgroup for which the metadata is being fetched. Required
-     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
-     */
     inline GetTableMetadataRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-
-    /**
-     * <p>The name of the workgroup for which the metadata is being fetched. Required
-     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
-     */
     inline GetTableMetadataRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workgroup for which the metadata is being fetched. Required
-     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
-     */
     inline GetTableMetadataRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_catalogName;

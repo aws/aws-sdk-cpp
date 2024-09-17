@@ -20,19 +20,15 @@ namespace Model
 
 ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry() : 
     m_calculatorNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_dataSourceHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
 
-ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry(JsonView jsonValue) : 
-    m_calculatorNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry(JsonView jsonValue)
+  : ListRouteCalculatorsResponseEntry()
 {
   *this = jsonValue;
 }
@@ -46,11 +42,11 @@ ListRouteCalculatorsResponseEntry& ListRouteCalculatorsResponseEntry::operator =
     m_calculatorNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("Description"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_description = jsonValue.GetString("Description");
 
-    m_createTimeHasBeenSet = true;
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DataSource"))
@@ -60,11 +56,11 @@ ListRouteCalculatorsResponseEntry& ListRouteCalculatorsResponseEntry::operator =
     m_dataSourceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Description"))
+  if(jsonValue.ValueExists("CreateTime"))
   {
-    m_description = jsonValue.GetString("Description");
+    m_createTime = jsonValue.GetString("CreateTime");
 
-    m_descriptionHasBeenSet = true;
+    m_createTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -87,9 +83,10 @@ JsonValue ListRouteCalculatorsResponseEntry::Jsonize() const
 
   }
 
-  if(m_createTimeHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("Description", m_description);
+
   }
 
   if(m_dataSourceHasBeenSet)
@@ -98,10 +95,9 @@ JsonValue ListRouteCalculatorsResponseEntry::Jsonize() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_createTimeHasBeenSet)
   {
-   payload.WithString("Description", m_description);
-
+   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updateTimeHasBeenSet)

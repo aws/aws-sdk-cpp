@@ -26,6 +26,7 @@
 #include <aws/iotfleethub/model/TagResourceResult.h>
 #include <aws/iotfleethub/model/UntagResourceResult.h>
 #include <aws/iotfleethub/model/UpdateApplicationResult.h>
+#include <aws/iotfleethub/model/ListApplicationsRequest.h>
 /* End of service model headers required in IoTFleetHubClient header */
 
 namespace Aws
@@ -59,7 +60,7 @@ namespace Aws
 
   namespace IoTFleetHub
   {
-    using IoTFleetHubClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTFleetHubClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTFleetHubEndpointProviderBase = Aws::IoTFleetHub::Endpoint::IoTFleetHubEndpointProviderBase;
     using IoTFleetHubEndpointProvider = Aws::IoTFleetHub::Endpoint::IoTFleetHubEndpointProvider;
 

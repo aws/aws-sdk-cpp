@@ -40,46 +40,19 @@ namespace Model
     AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>A list of scopes set up for Lake Formation integration.</p>
      */
     inline const Aws::Vector<LakeFormationScopeUnion>& GetLakeFormation() const{ return m_lakeFormation; }
-
-    /**
-     * <p>A list of scopes set up for Lake Formation integration.</p>
-     */
     inline bool LakeFormationHasBeenSet() const { return m_lakeFormationHasBeenSet; }
-
-    /**
-     * <p>A list of scopes set up for Lake Formation integration.</p>
-     */
     inline void SetLakeFormation(const Aws::Vector<LakeFormationScopeUnion>& value) { m_lakeFormationHasBeenSet = true; m_lakeFormation = value; }
-
-    /**
-     * <p>A list of scopes set up for Lake Formation integration.</p>
-     */
     inline void SetLakeFormation(Aws::Vector<LakeFormationScopeUnion>&& value) { m_lakeFormationHasBeenSet = true; m_lakeFormation = std::move(value); }
-
-    /**
-     * <p>A list of scopes set up for Lake Formation integration.</p>
-     */
     inline ServiceIntegrationsUnion& WithLakeFormation(const Aws::Vector<LakeFormationScopeUnion>& value) { SetLakeFormation(value); return *this;}
-
-    /**
-     * <p>A list of scopes set up for Lake Formation integration.</p>
-     */
     inline ServiceIntegrationsUnion& WithLakeFormation(Aws::Vector<LakeFormationScopeUnion>&& value) { SetLakeFormation(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of scopes set up for Lake Formation integration.</p>
-     */
     inline ServiceIntegrationsUnion& AddLakeFormation(const LakeFormationScopeUnion& value) { m_lakeFormationHasBeenSet = true; m_lakeFormation.push_back(value); return *this; }
-
-    /**
-     * <p>A list of scopes set up for Lake Formation integration.</p>
-     */
     inline ServiceIntegrationsUnion& AddLakeFormation(LakeFormationScopeUnion&& value) { m_lakeFormationHasBeenSet = true; m_lakeFormation.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<LakeFormationScopeUnion> m_lakeFormation;

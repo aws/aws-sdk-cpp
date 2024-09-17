@@ -40,48 +40,19 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> If enabled, exported data includes EC2 instance type matches for on-premises
      * servers discovered through Amazon Web Services Application Discovery Service.
      * </p>
      */
     inline const Ec2RecommendationsExportPreferences& GetEc2RecommendationsPreferences() const{ return m_ec2RecommendationsPreferences; }
-
-    /**
-     * <p> If enabled, exported data includes EC2 instance type matches for on-premises
-     * servers discovered through Amazon Web Services Application Discovery Service.
-     * </p>
-     */
     inline bool Ec2RecommendationsPreferencesHasBeenSet() const { return m_ec2RecommendationsPreferencesHasBeenSet; }
-
-    /**
-     * <p> If enabled, exported data includes EC2 instance type matches for on-premises
-     * servers discovered through Amazon Web Services Application Discovery Service.
-     * </p>
-     */
     inline void SetEc2RecommendationsPreferences(const Ec2RecommendationsExportPreferences& value) { m_ec2RecommendationsPreferencesHasBeenSet = true; m_ec2RecommendationsPreferences = value; }
-
-    /**
-     * <p> If enabled, exported data includes EC2 instance type matches for on-premises
-     * servers discovered through Amazon Web Services Application Discovery Service.
-     * </p>
-     */
     inline void SetEc2RecommendationsPreferences(Ec2RecommendationsExportPreferences&& value) { m_ec2RecommendationsPreferencesHasBeenSet = true; m_ec2RecommendationsPreferences = std::move(value); }
-
-    /**
-     * <p> If enabled, exported data includes EC2 instance type matches for on-premises
-     * servers discovered through Amazon Web Services Application Discovery Service.
-     * </p>
-     */
     inline ExportPreferences& WithEc2RecommendationsPreferences(const Ec2RecommendationsExportPreferences& value) { SetEc2RecommendationsPreferences(value); return *this;}
-
-    /**
-     * <p> If enabled, exported data includes EC2 instance type matches for on-premises
-     * servers discovered through Amazon Web Services Application Discovery Service.
-     * </p>
-     */
     inline ExportPreferences& WithEc2RecommendationsPreferences(Ec2RecommendationsExportPreferences&& value) { SetEc2RecommendationsPreferences(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Ec2RecommendationsExportPreferences m_ec2RecommendationsPreferences;

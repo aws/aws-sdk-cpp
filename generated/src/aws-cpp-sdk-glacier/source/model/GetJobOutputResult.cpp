@@ -52,8 +52,8 @@ GetJobOutputResult& GetJobOutputResult::operator=(GetJobOutputResult&& toMove)
    return *this;
 }
 
-GetJobOutputResult::GetJobOutputResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_status(0)
+GetJobOutputResult::GetJobOutputResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : GetJobOutputResult()
 {
   *this = std::move(result);
 }

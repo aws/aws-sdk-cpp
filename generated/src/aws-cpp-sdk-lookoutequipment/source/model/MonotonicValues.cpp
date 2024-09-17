@@ -26,11 +26,8 @@ MonotonicValues::MonotonicValues() :
 {
 }
 
-MonotonicValues::MonotonicValues(JsonView jsonValue) : 
-    m_status(StatisticalIssueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_monotonicity(Monotonicity::NOT_SET),
-    m_monotonicityHasBeenSet(false)
+MonotonicValues::MonotonicValues(JsonView jsonValue)
+  : MonotonicValues()
 {
   *this = jsonValue;
 }

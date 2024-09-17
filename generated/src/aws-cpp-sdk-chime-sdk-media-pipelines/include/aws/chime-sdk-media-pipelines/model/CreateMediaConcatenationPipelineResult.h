@@ -33,63 +33,29 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaConcatenationPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A media concatenation pipeline object, the ID, source type,
      * <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline
      * object.</p>
      */
     inline const MediaConcatenationPipeline& GetMediaConcatenationPipeline() const{ return m_mediaConcatenationPipeline; }
-
-    /**
-     * <p>A media concatenation pipeline object, the ID, source type,
-     * <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline
-     * object.</p>
-     */
     inline void SetMediaConcatenationPipeline(const MediaConcatenationPipeline& value) { m_mediaConcatenationPipeline = value; }
-
-    /**
-     * <p>A media concatenation pipeline object, the ID, source type,
-     * <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline
-     * object.</p>
-     */
     inline void SetMediaConcatenationPipeline(MediaConcatenationPipeline&& value) { m_mediaConcatenationPipeline = std::move(value); }
-
-    /**
-     * <p>A media concatenation pipeline object, the ID, source type,
-     * <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline
-     * object.</p>
-     */
     inline CreateMediaConcatenationPipelineResult& WithMediaConcatenationPipeline(const MediaConcatenationPipeline& value) { SetMediaConcatenationPipeline(value); return *this;}
-
-    /**
-     * <p>A media concatenation pipeline object, the ID, source type,
-     * <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline
-     * object.</p>
-     */
     inline CreateMediaConcatenationPipelineResult& WithMediaConcatenationPipeline(MediaConcatenationPipeline&& value) { SetMediaConcatenationPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMediaConcatenationPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMediaConcatenationPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMediaConcatenationPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MediaConcatenationPipeline m_mediaConcatenationPipeline;

@@ -41,54 +41,20 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The statements to combine with AND logic. You can use any statements that can
      * be nested. </p>
      */
     inline const Aws::Vector<Statement>& GetStatements() const{ return m_statements; }
-
-    /**
-     * <p>The statements to combine with AND logic. You can use any statements that can
-     * be nested. </p>
-     */
     inline bool StatementsHasBeenSet() const { return m_statementsHasBeenSet; }
-
-    /**
-     * <p>The statements to combine with AND logic. You can use any statements that can
-     * be nested. </p>
-     */
     inline void SetStatements(const Aws::Vector<Statement>& value) { m_statementsHasBeenSet = true; m_statements = value; }
-
-    /**
-     * <p>The statements to combine with AND logic. You can use any statements that can
-     * be nested. </p>
-     */
     inline void SetStatements(Aws::Vector<Statement>&& value) { m_statementsHasBeenSet = true; m_statements = std::move(value); }
-
-    /**
-     * <p>The statements to combine with AND logic. You can use any statements that can
-     * be nested. </p>
-     */
     inline AndStatement& WithStatements(const Aws::Vector<Statement>& value) { SetStatements(value); return *this;}
-
-    /**
-     * <p>The statements to combine with AND logic. You can use any statements that can
-     * be nested. </p>
-     */
     inline AndStatement& WithStatements(Aws::Vector<Statement>&& value) { SetStatements(std::move(value)); return *this;}
-
-    /**
-     * <p>The statements to combine with AND logic. You can use any statements that can
-     * be nested. </p>
-     */
     inline AndStatement& AddStatements(const Statement& value) { m_statementsHasBeenSet = true; m_statements.push_back(value); return *this; }
-
-    /**
-     * <p>The statements to combine with AND logic. You can use any statements that can
-     * be nested. </p>
-     */
     inline AndStatement& AddStatements(Statement&& value) { m_statementsHasBeenSet = true; m_statements.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Statement> m_statements;

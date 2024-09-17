@@ -32,6 +32,7 @@
 #include <aws/codeguru-reviewer/model/PutRecommendationFeedbackResult.h>
 #include <aws/codeguru-reviewer/model/TagResourceResult.h>
 #include <aws/codeguru-reviewer/model/UntagResourceResult.h>
+#include <aws/codeguru-reviewer/model/ListRepositoryAssociationsRequest.h>
 /* End of service model headers required in CodeGuruReviewerClient header */
 
 namespace Aws
@@ -65,7 +66,7 @@ namespace Aws
 
   namespace CodeGuruReviewer
   {
-    using CodeGuruReviewerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeGuruReviewerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CodeGuruReviewerEndpointProviderBase = Aws::CodeGuruReviewer::Endpoint::CodeGuruReviewerEndpointProviderBase;
     using CodeGuruReviewerEndpointProvider = Aws::CodeGuruReviewer::Endpoint::CodeGuruReviewerEndpointProvider;
 

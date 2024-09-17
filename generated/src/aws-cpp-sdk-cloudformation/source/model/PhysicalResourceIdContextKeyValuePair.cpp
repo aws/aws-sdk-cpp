@@ -26,9 +26,8 @@ PhysicalResourceIdContextKeyValuePair::PhysicalResourceIdContextKeyValuePair() :
 {
 }
 
-PhysicalResourceIdContextKeyValuePair::PhysicalResourceIdContextKeyValuePair(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+PhysicalResourceIdContextKeyValuePair::PhysicalResourceIdContextKeyValuePair(const XmlNode& xmlNode)
+  : PhysicalResourceIdContextKeyValuePair()
 {
   *this = xmlNode;
 }

@@ -9,6 +9,7 @@
 #include <aws/tnb/model/UpdateSolNetworkModify.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/tnb/model/UpdateSolNetworkServiceData.h>
 #include <aws/tnb/model/UpdateSolNetworkType.h>
 #include <utility>
 
@@ -35,219 +36,87 @@ namespace Model
     AWS_TNB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Identifies the network function information parameters and/or the
-     * configurable properties of the network function to be modified.</p>
+     * configurable properties of the network function to be modified.</p> <p>Include
+     * this property only if the update type is
+     * <code>MODIFY_VNF_INFORMATION</code>.</p>
      */
     inline const UpdateSolNetworkModify& GetModifyVnfInfoData() const{ return m_modifyVnfInfoData; }
-
-    /**
-     * <p>Identifies the network function information parameters and/or the
-     * configurable properties of the network function to be modified.</p>
-     */
     inline bool ModifyVnfInfoDataHasBeenSet() const { return m_modifyVnfInfoDataHasBeenSet; }
-
-    /**
-     * <p>Identifies the network function information parameters and/or the
-     * configurable properties of the network function to be modified.</p>
-     */
     inline void SetModifyVnfInfoData(const UpdateSolNetworkModify& value) { m_modifyVnfInfoDataHasBeenSet = true; m_modifyVnfInfoData = value; }
-
-    /**
-     * <p>Identifies the network function information parameters and/or the
-     * configurable properties of the network function to be modified.</p>
-     */
     inline void SetModifyVnfInfoData(UpdateSolNetworkModify&& value) { m_modifyVnfInfoDataHasBeenSet = true; m_modifyVnfInfoData = std::move(value); }
-
-    /**
-     * <p>Identifies the network function information parameters and/or the
-     * configurable properties of the network function to be modified.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithModifyVnfInfoData(const UpdateSolNetworkModify& value) { SetModifyVnfInfoData(value); return *this;}
-
-    /**
-     * <p>Identifies the network function information parameters and/or the
-     * configurable properties of the network function to be modified.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithModifyVnfInfoData(UpdateSolNetworkModify&& value) { SetModifyVnfInfoData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ID of the network instance.</p>
      */
     inline const Aws::String& GetNsInstanceId() const{ return m_nsInstanceId; }
-
-    /**
-     * <p>ID of the network instance.</p>
-     */
     inline bool NsInstanceIdHasBeenSet() const { return m_nsInstanceIdHasBeenSet; }
-
-    /**
-     * <p>ID of the network instance.</p>
-     */
     inline void SetNsInstanceId(const Aws::String& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = value; }
-
-    /**
-     * <p>ID of the network instance.</p>
-     */
     inline void SetNsInstanceId(Aws::String&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::move(value); }
-
-    /**
-     * <p>ID of the network instance.</p>
-     */
     inline void SetNsInstanceId(const char* value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId.assign(value); }
-
-    /**
-     * <p>ID of the network instance.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithNsInstanceId(const Aws::String& value) { SetNsInstanceId(value); return *this;}
-
-    /**
-     * <p>ID of the network instance.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithNsInstanceId(Aws::String&& value) { SetNsInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the network instance.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithNsInstanceId(const char* value) { SetNsInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
+     * only applied to the network operation that is created. These tags are not
+     * applied to the network instance. Use tags to search and filter your resources or
+     * track your Amazon Web Services costs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. When you use this API, the tags are
-     * transferred to the network operation that is created. Use tags to search and
-     * filter your resources or track your Amazon Web Services costs.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The type of update.</p>
+     * <p>Identifies the network service descriptor and the configurable properties of
+     * the descriptor, to be used for the update.</p> <p>Include this property only if
+     * the update type is <code>UPDATE_NS</code>.</p>
+     */
+    inline const UpdateSolNetworkServiceData& GetUpdateNs() const{ return m_updateNs; }
+    inline bool UpdateNsHasBeenSet() const { return m_updateNsHasBeenSet; }
+    inline void SetUpdateNs(const UpdateSolNetworkServiceData& value) { m_updateNsHasBeenSet = true; m_updateNs = value; }
+    inline void SetUpdateNs(UpdateSolNetworkServiceData&& value) { m_updateNsHasBeenSet = true; m_updateNs = std::move(value); }
+    inline UpdateSolNetworkInstanceRequest& WithUpdateNs(const UpdateSolNetworkServiceData& value) { SetUpdateNs(value); return *this;}
+    inline UpdateSolNetworkInstanceRequest& WithUpdateNs(UpdateSolNetworkServiceData&& value) { SetUpdateNs(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of update.</p> <ul> <li> <p>Use the
+     * <code>MODIFY_VNF_INFORMATION</code> update type, to update a specific network
+     * function configuration, in the network instance.</p> </li> <li> <p>Use the
+     * <code>UPDATE_NS</code> update type, to update the network instance to a new
+     * network service descriptor.</p> </li> </ul>
      */
     inline const UpdateSolNetworkType& GetUpdateType() const{ return m_updateType; }
-
-    /**
-     * <p>The type of update.</p>
-     */
     inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-
-    /**
-     * <p>The type of update.</p>
-     */
     inline void SetUpdateType(const UpdateSolNetworkType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-
-    /**
-     * <p>The type of update.</p>
-     */
     inline void SetUpdateType(UpdateSolNetworkType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-
-    /**
-     * <p>The type of update.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithUpdateType(const UpdateSolNetworkType& value) { SetUpdateType(value); return *this;}
-
-    /**
-     * <p>The type of update.</p>
-     */
     inline UpdateSolNetworkInstanceRequest& WithUpdateType(UpdateSolNetworkType&& value) { SetUpdateType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UpdateSolNetworkModify m_modifyVnfInfoData;
@@ -258,6 +127,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    UpdateSolNetworkServiceData m_updateNs;
+    bool m_updateNsHasBeenSet = false;
 
     UpdateSolNetworkType m_updateType;
     bool m_updateTypeHasBeenSet = false;

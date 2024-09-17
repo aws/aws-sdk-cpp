@@ -34,69 +34,36 @@ namespace Model
     AWS_ECRPUBLIC_API CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The repository that was created.</p>
      */
     inline const Repository& GetRepository() const{ return m_repository; }
-
-    /**
-     * <p>The repository that was created.</p>
-     */
     inline void SetRepository(const Repository& value) { m_repository = value; }
-
-    /**
-     * <p>The repository that was created.</p>
-     */
     inline void SetRepository(Repository&& value) { m_repository = std::move(value); }
-
-    /**
-     * <p>The repository that was created.</p>
-     */
     inline CreateRepositoryResult& WithRepository(const Repository& value) { SetRepository(value); return *this;}
-
-    /**
-     * <p>The repository that was created.</p>
-     */
     inline CreateRepositoryResult& WithRepository(Repository&& value) { SetRepository(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const RepositoryCatalogData& GetCatalogData() const{ return m_catalogData; }
-
-    
     inline void SetCatalogData(const RepositoryCatalogData& value) { m_catalogData = value; }
-
-    
     inline void SetCatalogData(RepositoryCatalogData&& value) { m_catalogData = std::move(value); }
-
-    
     inline CreateRepositoryResult& WithCatalogData(const RepositoryCatalogData& value) { SetCatalogData(value); return *this;}
-
-    
     inline CreateRepositoryResult& WithCatalogData(RepositoryCatalogData&& value) { SetCatalogData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Repository m_repository;

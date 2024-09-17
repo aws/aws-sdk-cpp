@@ -27,12 +27,8 @@ GroupSearchFilter::GroupSearchFilter() :
 {
 }
 
-GroupSearchFilter::GroupSearchFilter(JsonView jsonValue) : 
-    m_operator(GroupFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(GroupFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+GroupSearchFilter::GroupSearchFilter(JsonView jsonValue)
+  : GroupSearchFilter()
 {
   *this = jsonValue;
 }

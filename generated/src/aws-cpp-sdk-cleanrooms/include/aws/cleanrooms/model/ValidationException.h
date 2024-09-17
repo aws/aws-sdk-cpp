@@ -41,102 +41,43 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reason code for the exception.</p>
      */
     inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline void SetReason(const ValidationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline void SetReason(ValidationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline ValidationException& WithReason(const ValidationExceptionReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline ValidationException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Validation errors for specific input parameters.</p>
      */
     inline const Aws::Vector<ValidationExceptionField>& GetFieldList() const{ return m_fieldList; }
-
-    /**
-     * <p>Validation errors for specific input parameters.</p>
-     */
     inline bool FieldListHasBeenSet() const { return m_fieldListHasBeenSet; }
-
-    /**
-     * <p>Validation errors for specific input parameters.</p>
-     */
     inline void SetFieldList(const Aws::Vector<ValidationExceptionField>& value) { m_fieldListHasBeenSet = true; m_fieldList = value; }
-
-    /**
-     * <p>Validation errors for specific input parameters.</p>
-     */
     inline void SetFieldList(Aws::Vector<ValidationExceptionField>&& value) { m_fieldListHasBeenSet = true; m_fieldList = std::move(value); }
-
-    /**
-     * <p>Validation errors for specific input parameters.</p>
-     */
     inline ValidationException& WithFieldList(const Aws::Vector<ValidationExceptionField>& value) { SetFieldList(value); return *this;}
-
-    /**
-     * <p>Validation errors for specific input parameters.</p>
-     */
     inline ValidationException& WithFieldList(Aws::Vector<ValidationExceptionField>&& value) { SetFieldList(std::move(value)); return *this;}
-
-    /**
-     * <p>Validation errors for specific input parameters.</p>
-     */
     inline ValidationException& AddFieldList(const ValidationExceptionField& value) { m_fieldListHasBeenSet = true; m_fieldList.push_back(value); return *this; }
-
-    /**
-     * <p>Validation errors for specific input parameters.</p>
-     */
     inline ValidationException& AddFieldList(ValidationExceptionField&& value) { m_fieldListHasBeenSet = true; m_fieldList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

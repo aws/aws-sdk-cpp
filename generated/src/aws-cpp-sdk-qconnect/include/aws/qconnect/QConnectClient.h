@@ -24,14 +24,15 @@ namespace QConnect
    * (AI).</p>  <p>Amazon Q in Connect is a generative AI customer service
    * assistant. It is an LLM-enhanced evolution of Amazon Connect Wisdom that
    * delivers real-time recommendations to help contact center agents resolve
-   * customer issues quickly and accurately.</p> <p>Amazon Q automatically detects
-   * customer intent during calls and chats using conversational analytics and
-   * natural language understanding (NLU). It then provides agents with immediate,
-   * real-time generative responses and suggested actions, and links to relevant
-   * documents and articles. Agents can also query Amazon Q directly using natural
-   * language or keywords to answer customer requests.</p> <p>Use the Amazon Q in
-   * Connect APIs to create an assistant and a knowledge base, for example, or manage
-   * content by uploading custom files.</p> <p>For more information, see <a
+   * customer issues quickly and accurately.</p> <p>Amazon Q in Connect automatically
+   * detects customer intent during calls and chats using conversational analytics
+   * and natural language understanding (NLU). It then provides agents with
+   * immediate, real-time generative responses and suggested actions, and links to
+   * relevant documents and articles. Agents can also query Amazon Q in Connect
+   * directly using natural language or keywords to answer customer requests.</p>
+   * <p>Use the Amazon Q in Connect APIs to create an assistant and a knowledge base,
+   * for example, or manage content by uploading custom files.</p> <p>For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-q-connect.html">Use
    * Amazon Q in Connect for generative AI powered agent assistance in real-time</a>
    * in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -147,7 +148,7 @@ namespace QConnect
         }
 
         /**
-         * <p>Creates Amazon Q content. Before to calling this API, use <a
+         * <p>Creates Amazon Q in Connect content. Before to calling this API, use <a
          * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
          * to upload an asset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContent">AWS
@@ -171,6 +172,45 @@ namespace QConnect
         void CreateContentAsync(const CreateContentRequestT& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QConnectClient::CreateContent, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an association between a content resource in a knowledge base and <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/step-by-step-guided-experiences.html">step-by-step
+         * guides</a>. Step-by-step guides offer instructions to agents for resolving
+         * common customer issues. You create a content association to integrate Amazon Q
+         * in Connect and step-by-step guides. </p> <p>After you integrate Amazon Q and
+         * step-by-step guides, when Amazon Q provides a recommendation to an agent based
+         * on the intent that it's detected, it also provides them with the option to start
+         * the step-by-step guide that you have associated with the content.</p> <p>Note
+         * the following limitations:</p> <ul> <li> <p>You can create only one content
+         * association for each content resource in a knowledge base.</p> </li> <li> <p>You
+         * can associate a step-by-step guide with multiple content resources.</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+         * Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect
+         * Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContentAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContentAssociationOutcome CreateContentAssociation(const Model::CreateContentAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateContentAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateContentAssociationRequestT = Model::CreateContentAssociationRequest>
+        Model::CreateContentAssociationOutcomeCallable CreateContentAssociationCallable(const CreateContentAssociationRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::CreateContentAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateContentAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateContentAssociationRequestT = Model::CreateContentAssociationRequest>
+        void CreateContentAssociationAsync(const CreateContentAssociationRequestT& request, const CreateContentAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::CreateContentAssociation, request, handler, context);
         }
 
         /**
@@ -214,7 +254,7 @@ namespace QConnect
         }
 
         /**
-         * <p>Creates an Amazon Q quick response.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q in Connect quick response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateQuickResponse">AWS
          * API Reference</a></p>
          */
@@ -240,8 +280,9 @@ namespace QConnect
 
         /**
          * <p>Creates a session. A session is a contextual container used for generating
-         * recommendations. Amazon Connect creates a new Amazon Q session for each contact
-         * on which Amazon Q is enabled.</p><p><h3>See Also:</h3>   <a
+         * recommendations. Amazon Connect creates a new Amazon Q in Connect session for
+         * each contact on which Amazon Q in Connect is enabled.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateSession">AWS
          * API Reference</a></p>
          */
@@ -338,6 +379,35 @@ namespace QConnect
         void DeleteContentAsync(const DeleteContentRequestT& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QConnectClient::DeleteContent, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the content association. </p> <p>For more information about content
+         * associations--what they are and when they are used--see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+         * Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect
+         * Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteContentAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContentAssociationOutcome DeleteContentAssociation(const Model::DeleteContentAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteContentAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteContentAssociationRequestT = Model::DeleteContentAssociationRequest>
+        Model::DeleteContentAssociationOutcomeCallable DeleteContentAssociationCallable(const DeleteContentAssociationRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::DeleteContentAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteContentAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteContentAssociationRequestT = Model::DeleteContentAssociationRequest>
+        void DeleteContentAssociationAsync(const DeleteContentAssociationRequestT& request, const DeleteContentAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::DeleteContentAssociation, request, handler, context);
         }
 
         /**
@@ -504,6 +574,35 @@ namespace QConnect
         }
 
         /**
+         * <p>Returns the content association.</p> <p>For more information about content
+         * associations--what they are and when they are used--see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+         * Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect
+         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContentAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContentAssociationOutcome GetContentAssociation(const Model::GetContentAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetContentAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetContentAssociationRequestT = Model::GetContentAssociationRequest>
+        Model::GetContentAssociationOutcomeCallable GetContentAssociationCallable(const GetContentAssociationRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::GetContentAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetContentAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetContentAssociationRequestT = Model::GetContentAssociationRequest>
+        void GetContentAssociationAsync(const GetContentAssociationRequestT& request, const GetContentAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::GetContentAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves summary information about the content.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContentSummary">AWS
@@ -659,13 +758,13 @@ namespace QConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAssistants">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAssistantsOutcome ListAssistants(const Model::ListAssistantsRequest& request) const;
+        virtual Model::ListAssistantsOutcome ListAssistants(const Model::ListAssistantsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAssistants that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAssistantsRequestT = Model::ListAssistantsRequest>
-        Model::ListAssistantsOutcomeCallable ListAssistantsCallable(const ListAssistantsRequestT& request) const
+        Model::ListAssistantsOutcomeCallable ListAssistantsCallable(const ListAssistantsRequestT& request = {}) const
         {
             return SubmitCallable(&QConnectClient::ListAssistants, request);
         }
@@ -674,9 +773,38 @@ namespace QConnect
          * An Async wrapper for ListAssistants that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAssistantsRequestT = Model::ListAssistantsRequest>
-        void ListAssistantsAsync(const ListAssistantsRequestT& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAssistantsAsync(const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAssistantsRequestT& request = {}) const
         {
             return SubmitAsync(&QConnectClient::ListAssistants, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the content associations.</p> <p>For more information about content
+         * associations--what they are and when they are used--see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+         * Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect
+         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListContentAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContentAssociationsOutcome ListContentAssociations(const Model::ListContentAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListContentAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListContentAssociationsRequestT = Model::ListContentAssociationsRequest>
+        Model::ListContentAssociationsOutcomeCallable ListContentAssociationsCallable(const ListContentAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::ListContentAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListContentAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListContentAssociationsRequestT = Model::ListContentAssociationsRequest>
+        void ListContentAssociationsAsync(const ListContentAssociationsRequestT& request, const ListContentAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::ListContentAssociations, request, handler, context);
         }
 
         /**
@@ -734,13 +862,13 @@ namespace QConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListKnowledgeBases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKnowledgeBasesOutcome ListKnowledgeBases(const Model::ListKnowledgeBasesRequest& request) const;
+        virtual Model::ListKnowledgeBasesOutcome ListKnowledgeBases(const Model::ListKnowledgeBasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKnowledgeBases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKnowledgeBasesRequestT = Model::ListKnowledgeBasesRequest>
-        Model::ListKnowledgeBasesOutcomeCallable ListKnowledgeBasesCallable(const ListKnowledgeBasesRequestT& request) const
+        Model::ListKnowledgeBasesOutcomeCallable ListKnowledgeBasesCallable(const ListKnowledgeBasesRequestT& request = {}) const
         {
             return SubmitCallable(&QConnectClient::ListKnowledgeBases, request);
         }
@@ -749,7 +877,7 @@ namespace QConnect
          * An Async wrapper for ListKnowledgeBases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKnowledgeBasesRequestT = Model::ListKnowledgeBasesRequest>
-        void ListKnowledgeBasesAsync(const ListKnowledgeBasesRequestT& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKnowledgeBasesAsync(const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKnowledgeBasesRequestT& request = {}) const
         {
             return SubmitAsync(&QConnectClient::ListKnowledgeBases, request, handler, context);
         }
@@ -911,8 +1039,8 @@ namespace QConnect
         }
 
         /**
-         * <p>Searches existing Amazon Q quick responses in an Amazon Q knowledge
-         * base.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches existing Amazon Q in Connect quick responses in an Amazon Q in
+         * Connect knowledge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchQuickResponses">AWS
          * API Reference</a></p>
          */
@@ -994,13 +1122,13 @@ namespace QConnect
         }
 
         /**
-         * <p>Start an asynchronous job to import Amazon Q resources from an uploaded
-         * source file. Before calling this API, use <a
+         * <p>Start an asynchronous job to import Amazon Q in Connect resources from an
+         * uploaded source file. Before calling this API, use <a
          * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
          * to upload an asset that contains the resource data.</p> <ul> <li> <p>For
-         * importing Amazon Q quick responses, you need to upload a csv file including the
-         * quick responses. For information about how to format the csv file for importing
-         * quick responses, see <a
+         * importing Amazon Q in Connect quick responses, you need to upload a csv file
+         * including the quick responses. For information about how to format the csv file
+         * for importing quick responses, see <a
          * href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
          * quick responses</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/StartImportJob">AWS
@@ -1106,8 +1234,8 @@ namespace QConnect
         /**
          * <p>Updates the template URI of a knowledge base. This is only supported for
          * knowledge bases of type EXTERNAL. Include a single variable in
-         * <code>${variable}</code> format; this interpolated by Amazon Q using ingested
-         * content. For example, if you ingest a Salesforce article, it has an
+         * <code>${variable}</code> format; this interpolated by Amazon Q in Connect using
+         * ingested content. For example, if you ingest a Salesforce article, it has an
          * <code>Id</code> value, and you can set the template URI to
          * <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/ *${Id}* /view</code>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1135,7 +1263,8 @@ namespace QConnect
         }
 
         /**
-         * <p>Updates an existing Amazon Q quick response.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon Q in Connect quick response.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateQuickResponse">AWS
          * API Reference</a></p>
          */
@@ -1159,6 +1288,34 @@ namespace QConnect
             return SubmitAsync(&QConnectClient::UpdateQuickResponse, request, handler, context);
         }
 
+        /**
+         * <p>Updates a session. A session is a contextual container used for generating
+         * recommendations. Amazon Connect updates the existing Amazon Q in Connect session
+         * for each contact on which Amazon Q in Connect is enabled.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSessionOutcome UpdateSession(const Model::UpdateSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSessionRequestT = Model::UpdateSessionRequest>
+        Model::UpdateSessionOutcomeCallable UpdateSessionCallable(const UpdateSessionRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::UpdateSession, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSessionRequestT = Model::UpdateSessionRequest>
+        void UpdateSessionAsync(const UpdateSessionRequestT& request, const UpdateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::UpdateSession, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<QConnectEndpointProviderBase>& accessEndpointProvider();
@@ -1167,7 +1324,6 @@ namespace QConnect
       void init(const QConnectClientConfiguration& clientConfiguration);
 
       QConnectClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QConnectEndpointProviderBase> m_endpointProvider;
   };
 

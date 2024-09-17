@@ -25,10 +25,8 @@ SqlApplicationConfigurationDescription::SqlApplicationConfigurationDescription()
 {
 }
 
-SqlApplicationConfigurationDescription::SqlApplicationConfigurationDescription(JsonView jsonValue) : 
-    m_inputDescriptionsHasBeenSet(false),
-    m_outputDescriptionsHasBeenSet(false),
-    m_referenceDataSourceDescriptionsHasBeenSet(false)
+SqlApplicationConfigurationDescription::SqlApplicationConfigurationDescription(JsonView jsonValue)
+  : SqlApplicationConfigurationDescription()
 {
   *this = jsonValue;
 }

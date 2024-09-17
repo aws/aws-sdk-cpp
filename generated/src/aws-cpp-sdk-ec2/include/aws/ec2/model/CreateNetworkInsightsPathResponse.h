@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateNetworkInsightsPathResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the path.</p>
      */
     inline const NetworkInsightsPath& GetNetworkInsightsPath() const{ return m_networkInsightsPath; }
-
-    /**
-     * <p>Information about the path.</p>
-     */
     inline void SetNetworkInsightsPath(const NetworkInsightsPath& value) { m_networkInsightsPath = value; }
-
-    /**
-     * <p>Information about the path.</p>
-     */
     inline void SetNetworkInsightsPath(NetworkInsightsPath&& value) { m_networkInsightsPath = std::move(value); }
-
-    /**
-     * <p>Information about the path.</p>
-     */
     inline CreateNetworkInsightsPathResponse& WithNetworkInsightsPath(const NetworkInsightsPath& value) { SetNetworkInsightsPath(value); return *this;}
-
-    /**
-     * <p>Information about the path.</p>
-     */
     inline CreateNetworkInsightsPathResponse& WithNetworkInsightsPath(NetworkInsightsPath&& value) { SetNetworkInsightsPath(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateNetworkInsightsPathResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateNetworkInsightsPathResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NetworkInsightsPath m_networkInsightsPath;

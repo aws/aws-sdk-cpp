@@ -25,10 +25,8 @@ ResourceUri::ResourceUri() :
 {
 }
 
-ResourceUri::ResourceUri(JsonView jsonValue) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_uriHasBeenSet(false)
+ResourceUri::ResourceUri(JsonView jsonValue)
+  : ResourceUri()
 {
   *this = jsonValue;
 }

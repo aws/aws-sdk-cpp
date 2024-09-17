@@ -26,11 +26,8 @@ WeeklyStartTime::WeeklyStartTime() :
 {
 }
 
-WeeklyStartTime::WeeklyStartTime(JsonView jsonValue) : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_timeOfDayHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+WeeklyStartTime::WeeklyStartTime(JsonView jsonValue)
+  : WeeklyStartTime()
 {
   *this = jsonValue;
 }

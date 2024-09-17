@@ -26,11 +26,8 @@ InventoryData::InventoryData() :
 {
 }
 
-InventoryData::InventoryData(JsonView jsonValue) : 
-    m_numberOfDatabases(0),
-    m_numberOfDatabasesHasBeenSet(false),
-    m_numberOfSchemas(0),
-    m_numberOfSchemasHasBeenSet(false)
+InventoryData::InventoryData(JsonView jsonValue)
+  : InventoryData()
 {
   *this = jsonValue;
 }

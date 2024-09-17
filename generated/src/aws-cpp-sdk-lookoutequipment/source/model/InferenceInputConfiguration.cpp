@@ -25,10 +25,8 @@ InferenceInputConfiguration::InferenceInputConfiguration() :
 {
 }
 
-InferenceInputConfiguration::InferenceInputConfiguration(JsonView jsonValue) : 
-    m_s3InputConfigurationHasBeenSet(false),
-    m_inputTimeZoneOffsetHasBeenSet(false),
-    m_inferenceInputNameConfigurationHasBeenSet(false)
+InferenceInputConfiguration::InferenceInputConfiguration(JsonView jsonValue)
+  : InferenceInputConfiguration()
 {
   *this = jsonValue;
 }

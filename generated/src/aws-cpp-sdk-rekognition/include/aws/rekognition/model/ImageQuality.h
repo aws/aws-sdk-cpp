@@ -36,59 +36,28 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Value representing brightness of the face. The service returns a value
      * between 0 and 100 (inclusive). A higher value indicates a brighter face
      * image.</p>
      */
     inline double GetBrightness() const{ return m_brightness; }
-
-    /**
-     * <p>Value representing brightness of the face. The service returns a value
-     * between 0 and 100 (inclusive). A higher value indicates a brighter face
-     * image.</p>
-     */
     inline bool BrightnessHasBeenSet() const { return m_brightnessHasBeenSet; }
-
-    /**
-     * <p>Value representing brightness of the face. The service returns a value
-     * between 0 and 100 (inclusive). A higher value indicates a brighter face
-     * image.</p>
-     */
     inline void SetBrightness(double value) { m_brightnessHasBeenSet = true; m_brightness = value; }
-
-    /**
-     * <p>Value representing brightness of the face. The service returns a value
-     * between 0 and 100 (inclusive). A higher value indicates a brighter face
-     * image.</p>
-     */
     inline ImageQuality& WithBrightness(double value) { SetBrightness(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Value representing sharpness of the face. The service returns a value between
      * 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
      */
     inline double GetSharpness() const{ return m_sharpness; }
-
-    /**
-     * <p>Value representing sharpness of the face. The service returns a value between
-     * 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
-     */
     inline bool SharpnessHasBeenSet() const { return m_sharpnessHasBeenSet; }
-
-    /**
-     * <p>Value representing sharpness of the face. The service returns a value between
-     * 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
-     */
     inline void SetSharpness(double value) { m_sharpnessHasBeenSet = true; m_sharpness = value; }
-
-    /**
-     * <p>Value representing sharpness of the face. The service returns a value between
-     * 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
-     */
     inline ImageQuality& WithSharpness(double value) { SetSharpness(value); return *this;}
-
+    ///@}
   private:
 
     double m_brightness;

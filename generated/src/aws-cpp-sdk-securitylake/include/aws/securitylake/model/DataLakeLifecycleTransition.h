@@ -38,79 +38,31 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of days before data transitions to a different S3 Storage Class in the
      * Amazon Security Lake object.</p>
      */
     inline int GetDays() const{ return m_days; }
-
-    /**
-     * <p>Number of days before data transitions to a different S3 Storage Class in the
-     * Amazon Security Lake object.</p>
-     */
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
-
-    /**
-     * <p>Number of days before data transitions to a different S3 Storage Class in the
-     * Amazon Security Lake object.</p>
-     */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
-
-    /**
-     * <p>Number of days before data transitions to a different S3 Storage Class in the
-     * Amazon Security Lake object.</p>
-     */
     inline DataLakeLifecycleTransition& WithDays(int value) { SetDays(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The range of storage classes that you can choose from based on the data
      * access, resiliency, and cost requirements of your workloads.</p>
      */
     inline const Aws::String& GetStorageClass() const{ return m_storageClass; }
-
-    /**
-     * <p>The range of storage classes that you can choose from based on the data
-     * access, resiliency, and cost requirements of your workloads.</p>
-     */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-
-    /**
-     * <p>The range of storage classes that you can choose from based on the data
-     * access, resiliency, and cost requirements of your workloads.</p>
-     */
     inline void SetStorageClass(const Aws::String& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-
-    /**
-     * <p>The range of storage classes that you can choose from based on the data
-     * access, resiliency, and cost requirements of your workloads.</p>
-     */
     inline void SetStorageClass(Aws::String&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-
-    /**
-     * <p>The range of storage classes that you can choose from based on the data
-     * access, resiliency, and cost requirements of your workloads.</p>
-     */
     inline void SetStorageClass(const char* value) { m_storageClassHasBeenSet = true; m_storageClass.assign(value); }
-
-    /**
-     * <p>The range of storage classes that you can choose from based on the data
-     * access, resiliency, and cost requirements of your workloads.</p>
-     */
     inline DataLakeLifecycleTransition& WithStorageClass(const Aws::String& value) { SetStorageClass(value); return *this;}
-
-    /**
-     * <p>The range of storage classes that you can choose from based on the data
-     * access, resiliency, and cost requirements of your workloads.</p>
-     */
     inline DataLakeLifecycleTransition& WithStorageClass(Aws::String&& value) { SetStorageClass(std::move(value)); return *this;}
-
-    /**
-     * <p>The range of storage classes that you can choose from based on the data
-     * access, resiliency, and cost requirements of your workloads.</p>
-     */
     inline DataLakeLifecycleTransition& WithStorageClass(const char* value) { SetStorageClass(value); return *this;}
-
+    ///@}
   private:
 
     int m_days;

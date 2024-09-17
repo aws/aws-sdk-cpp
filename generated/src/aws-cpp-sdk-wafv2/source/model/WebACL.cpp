@@ -41,26 +41,8 @@ WebACL::WebACL() :
 {
 }
 
-WebACL::WebACL(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_preProcessFirewallManagerRuleGroupsHasBeenSet(false),
-    m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
-    m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false),
-    m_challengeConfigHasBeenSet(false),
-    m_tokenDomainsHasBeenSet(false),
-    m_associationConfigHasBeenSet(false)
+WebACL::WebACL(JsonView jsonValue)
+  : WebACL()
 {
   *this = jsonValue;
 }

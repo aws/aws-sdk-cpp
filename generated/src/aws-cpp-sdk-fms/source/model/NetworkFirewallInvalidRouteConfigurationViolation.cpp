@@ -39,24 +39,8 @@ NetworkFirewallInvalidRouteConfigurationViolation::NetworkFirewallInvalidRouteCo
 {
 }
 
-NetworkFirewallInvalidRouteConfigurationViolation::NetworkFirewallInvalidRouteConfigurationViolation(JsonView jsonValue) : 
-    m_affectedSubnetsHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_isRouteTableUsedInDifferentAZ(false),
-    m_isRouteTableUsedInDifferentAZHasBeenSet(false),
-    m_violatingRouteHasBeenSet(false),
-    m_currentFirewallSubnetRouteTableHasBeenSet(false),
-    m_expectedFirewallEndpointHasBeenSet(false),
-    m_actualFirewallEndpointHasBeenSet(false),
-    m_expectedFirewallSubnetIdHasBeenSet(false),
-    m_actualFirewallSubnetIdHasBeenSet(false),
-    m_expectedFirewallSubnetRoutesHasBeenSet(false),
-    m_actualFirewallSubnetRoutesHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_currentInternetGatewayRouteTableHasBeenSet(false),
-    m_expectedInternetGatewayRoutesHasBeenSet(false),
-    m_actualInternetGatewayRoutesHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+NetworkFirewallInvalidRouteConfigurationViolation::NetworkFirewallInvalidRouteConfigurationViolation(JsonView jsonValue)
+  : NetworkFirewallInvalidRouteConfigurationViolation()
 {
   *this = jsonValue;
 }

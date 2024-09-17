@@ -25,10 +25,8 @@ KPIFieldWells::KPIFieldWells() :
 {
 }
 
-KPIFieldWells::KPIFieldWells(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false),
-    m_targetValuesHasBeenSet(false),
-    m_trendGroupsHasBeenSet(false)
+KPIFieldWells::KPIFieldWells(JsonView jsonValue)
+  : KPIFieldWells()
 {
   *this = jsonValue;
 }

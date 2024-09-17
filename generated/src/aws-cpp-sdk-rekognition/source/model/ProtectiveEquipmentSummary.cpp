@@ -25,10 +25,8 @@ ProtectiveEquipmentSummary::ProtectiveEquipmentSummary() :
 {
 }
 
-ProtectiveEquipmentSummary::ProtectiveEquipmentSummary(JsonView jsonValue) : 
-    m_personsWithRequiredEquipmentHasBeenSet(false),
-    m_personsWithoutRequiredEquipmentHasBeenSet(false),
-    m_personsIndeterminateHasBeenSet(false)
+ProtectiveEquipmentSummary::ProtectiveEquipmentSummary(JsonView jsonValue)
+  : ProtectiveEquipmentSummary()
 {
   *this = jsonValue;
 }

@@ -19,28 +19,32 @@ namespace Model
 {
 
 Application::Application() : 
+    m_displayNameHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
     m_status(ApplicationStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_identityType(IdentityType::NOT_SET),
+    m_identityTypeHasBeenSet(false)
 {
 }
 
-Application::Application(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_status(ApplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Application::Application(JsonView jsonValue)
+  : Application()
 {
   *this = jsonValue;
 }
 
 Application& Application::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
@@ -55,11 +59,11 @@ Application& Application::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("displayName"))
+  if(jsonValue.ValueExists("updatedAt"))
   {
-    m_displayName = jsonValue.GetString("displayName");
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
 
-    m_displayNameHasBeenSet = true;
+    m_updatedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -69,11 +73,11 @@ Application& Application::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("identityType"))
   {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_identityType = IdentityTypeMapper::GetIdentityTypeForName(jsonValue.GetString("identityType"));
 
-    m_updatedAtHasBeenSet = true;
+    m_identityTypeHasBeenSet = true;
   }
 
   return *this;
@@ -82,6 +86,12 @@ Application& Application::operator =(JsonView jsonValue)
 JsonValue Application::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
 
   if(m_applicationIdHasBeenSet)
   {
@@ -94,10 +104,9 @@ JsonValue Application::Jsonize() const
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_displayNameHasBeenSet)
+  if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("displayName", m_displayName);
-
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)
@@ -105,9 +114,9 @@ JsonValue Application::Jsonize() const
    payload.WithString("status", ApplicationStatusMapper::GetNameForApplicationStatus(m_status));
   }
 
-  if(m_updatedAtHasBeenSet)
+  if(m_identityTypeHasBeenSet)
   {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+   payload.WithString("identityType", IdentityTypeMapper::GetNameForIdentityType(m_identityType));
   }
 
   return payload;

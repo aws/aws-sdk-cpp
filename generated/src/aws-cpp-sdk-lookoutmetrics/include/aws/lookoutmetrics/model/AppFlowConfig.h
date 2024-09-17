@@ -38,95 +38,34 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
      * flow.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
-     * flow.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
-     * flow.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
-     * flow.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
-     * flow.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
-     * flow.</p>
-     */
     inline AppFlowConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
-     * flow.</p>
-     */
     inline AppFlowConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
-     * flow.</p>
-     */
     inline AppFlowConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> name of the flow.</p>
      */
     inline const Aws::String& GetFlowName() const{ return m_flowName; }
-
-    /**
-     * <p> name of the flow.</p>
-     */
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
-
-    /**
-     * <p> name of the flow.</p>
-     */
     inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
-
-    /**
-     * <p> name of the flow.</p>
-     */
     inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
-
-    /**
-     * <p> name of the flow.</p>
-     */
     inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
-
-    /**
-     * <p> name of the flow.</p>
-     */
     inline AppFlowConfig& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
-
-    /**
-     * <p> name of the flow.</p>
-     */
     inline AppFlowConfig& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
-
-    /**
-     * <p> name of the flow.</p>
-     */
     inline AppFlowConfig& WithFlowName(const char* value) { SetFlowName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

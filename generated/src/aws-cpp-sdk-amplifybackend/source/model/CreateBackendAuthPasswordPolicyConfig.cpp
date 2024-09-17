@@ -25,10 +25,8 @@ CreateBackendAuthPasswordPolicyConfig::CreateBackendAuthPasswordPolicyConfig() :
 {
 }
 
-CreateBackendAuthPasswordPolicyConfig::CreateBackendAuthPasswordPolicyConfig(JsonView jsonValue) : 
-    m_additionalConstraintsHasBeenSet(false),
-    m_minimumLength(0.0),
-    m_minimumLengthHasBeenSet(false)
+CreateBackendAuthPasswordPolicyConfig::CreateBackendAuthPasswordPolicyConfig(JsonView jsonValue)
+  : CreateBackendAuthPasswordPolicyConfig()
 {
   *this = jsonValue;
 }

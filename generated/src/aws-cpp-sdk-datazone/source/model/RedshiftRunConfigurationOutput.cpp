@@ -28,13 +28,8 @@ RedshiftRunConfigurationOutput::RedshiftRunConfigurationOutput() :
 {
 }
 
-RedshiftRunConfigurationOutput::RedshiftRunConfigurationOutput(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_dataAccessRoleHasBeenSet(false),
-    m_redshiftCredentialConfigurationHasBeenSet(false),
-    m_redshiftStorageHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
+RedshiftRunConfigurationOutput::RedshiftRunConfigurationOutput(JsonView jsonValue)
+  : RedshiftRunConfigurationOutput()
 {
   *this = jsonValue;
 }

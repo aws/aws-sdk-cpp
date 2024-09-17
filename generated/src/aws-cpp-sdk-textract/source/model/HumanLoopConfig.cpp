@@ -25,10 +25,8 @@ HumanLoopConfig::HumanLoopConfig() :
 {
 }
 
-HumanLoopConfig::HumanLoopConfig(JsonView jsonValue) : 
-    m_humanLoopNameHasBeenSet(false),
-    m_flowDefinitionArnHasBeenSet(false),
-    m_dataAttributesHasBeenSet(false)
+HumanLoopConfig::HumanLoopConfig(JsonView jsonValue)
+  : HumanLoopConfig()
 {
   *this = jsonValue;
 }

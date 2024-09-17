@@ -25,10 +25,8 @@ Origination::Origination() :
 {
 }
 
-Origination::Origination(JsonView jsonValue) : 
-    m_routesHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false)
+Origination::Origination(JsonView jsonValue)
+  : Origination()
 {
   *this = jsonValue;
 }

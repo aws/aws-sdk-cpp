@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateInferenceRecommendationsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-     */
     inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-     */
     inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-     */
     inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-     */
     inline CreateInferenceRecommendationsJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-     */
     inline CreateInferenceRecommendationsJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-     */
     inline CreateInferenceRecommendationsJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateInferenceRecommendationsJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateInferenceRecommendationsJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateInferenceRecommendationsJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobArn;

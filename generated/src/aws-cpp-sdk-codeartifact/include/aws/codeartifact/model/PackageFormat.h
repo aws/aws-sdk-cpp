@@ -21,7 +21,9 @@ namespace Model
     maven,
     nuget,
     generic,
-    swift
+    ruby,
+    swift,
+    cargo
   };
 
 namespace PackageFormatMapper

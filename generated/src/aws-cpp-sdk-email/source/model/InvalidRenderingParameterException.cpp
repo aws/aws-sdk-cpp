@@ -25,8 +25,8 @@ InvalidRenderingParameterException::InvalidRenderingParameterException() :
 {
 }
 
-InvalidRenderingParameterException::InvalidRenderingParameterException(const XmlNode& xmlNode) : 
-    m_templateNameHasBeenSet(false)
+InvalidRenderingParameterException::InvalidRenderingParameterException(const XmlNode& xmlNode)
+  : InvalidRenderingParameterException()
 {
   *this = xmlNode;
 }

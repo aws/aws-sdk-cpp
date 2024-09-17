@@ -32,63 +32,29 @@ namespace Model
     AWS_WORKMAIL_API CreateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The identifier of the group.</p>
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupId = value; }
-
-    /**
-     * <p>The identifier of the group.</p>
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupId = std::move(value); }
-
-    /**
-     * <p>The identifier of the group.</p>
-     */
     inline void SetGroupId(const char* value) { m_groupId.assign(value); }
-
-    /**
-     * <p>The identifier of the group.</p>
-     */
     inline CreateGroupResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier of the group.</p>
-     */
     inline CreateGroupResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the group.</p>
-     */
     inline CreateGroupResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupId;

@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in TrustedAdvisorClient header */
+#include <aws/trustedadvisor/model/BatchUpdateRecommendationResourceExclusionResult.h>
 #include <aws/trustedadvisor/model/GetOrganizationRecommendationResult.h>
 #include <aws/trustedadvisor/model/GetRecommendationResult.h>
 #include <aws/trustedadvisor/model/ListChecksResult.h>
@@ -26,6 +27,9 @@
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationsResult.h>
 #include <aws/trustedadvisor/model/ListRecommendationResourcesResult.h>
 #include <aws/trustedadvisor/model/ListRecommendationsResult.h>
+#include <aws/trustedadvisor/model/ListRecommendationsRequest.h>
+#include <aws/trustedadvisor/model/ListOrganizationRecommendationsRequest.h>
+#include <aws/trustedadvisor/model/ListChecksRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TrustedAdvisorClient header */
 
@@ -60,13 +64,14 @@ namespace Aws
 
   namespace TrustedAdvisor
   {
-    using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TrustedAdvisorEndpointProviderBase = Aws::TrustedAdvisor::Endpoint::TrustedAdvisorEndpointProviderBase;
     using TrustedAdvisorEndpointProvider = Aws::TrustedAdvisor::Endpoint::TrustedAdvisorEndpointProvider;
 
     namespace Model
     {
       /* Service model forward declarations required in TrustedAdvisorClient header */
+      class BatchUpdateRecommendationResourceExclusionRequest;
       class GetOrganizationRecommendationRequest;
       class GetRecommendationRequest;
       class ListChecksRequest;
@@ -80,6 +85,7 @@ namespace Aws
       /* End of service model forward declarations required in TrustedAdvisorClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchUpdateRecommendationResourceExclusionResult, TrustedAdvisorError> BatchUpdateRecommendationResourceExclusionOutcome;
       typedef Aws::Utils::Outcome<GetOrganizationRecommendationResult, TrustedAdvisorError> GetOrganizationRecommendationOutcome;
       typedef Aws::Utils::Outcome<GetRecommendationResult, TrustedAdvisorError> GetRecommendationOutcome;
       typedef Aws::Utils::Outcome<ListChecksResult, TrustedAdvisorError> ListChecksOutcome;
@@ -93,6 +99,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchUpdateRecommendationResourceExclusionOutcome> BatchUpdateRecommendationResourceExclusionOutcomeCallable;
       typedef std::future<GetOrganizationRecommendationOutcome> GetOrganizationRecommendationOutcomeCallable;
       typedef std::future<GetRecommendationOutcome> GetRecommendationOutcomeCallable;
       typedef std::future<ListChecksOutcome> ListChecksOutcomeCallable;
@@ -109,6 +116,7 @@ namespace Aws
     class TrustedAdvisorClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const TrustedAdvisorClient*, const Model::BatchUpdateRecommendationResourceExclusionRequest&, const Model::BatchUpdateRecommendationResourceExclusionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateRecommendationResourceExclusionResponseReceivedHandler;
     typedef std::function<void(const TrustedAdvisorClient*, const Model::GetOrganizationRecommendationRequest&, const Model::GetOrganizationRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationRecommendationResponseReceivedHandler;
     typedef std::function<void(const TrustedAdvisorClient*, const Model::GetRecommendationRequest&, const Model::GetRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationResponseReceivedHandler;
     typedef std::function<void(const TrustedAdvisorClient*, const Model::ListChecksRequest&, const Model::ListChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChecksResponseReceivedHandler;

@@ -29,14 +29,8 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
 {
 }
 
-PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue) : 
-    m_pipelineExecutionArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
-    m_pipelineExecutionStatusHasBeenSet(false),
-    m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false),
-    m_pipelineExecutionFailureReasonHasBeenSet(false)
+PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue)
+  : PipelineExecutionSummary()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CustomerManagedChannelS3StorageSummary::CustomerManagedChannelS3StorageSummary()
 {
 }
 
-CustomerManagedChannelS3StorageSummary::CustomerManagedChannelS3StorageSummary(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+CustomerManagedChannelS3StorageSummary::CustomerManagedChannelS3StorageSummary(JsonView jsonValue)
+  : CustomerManagedChannelS3StorageSummary()
 {
   *this = jsonValue;
 }

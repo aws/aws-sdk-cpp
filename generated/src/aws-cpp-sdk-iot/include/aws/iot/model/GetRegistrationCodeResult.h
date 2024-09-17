@@ -38,63 +38,29 @@ namespace Model
     AWS_IOT_API GetRegistrationCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The CA certificate registration code.</p>
      */
     inline const Aws::String& GetRegistrationCode() const{ return m_registrationCode; }
-
-    /**
-     * <p>The CA certificate registration code.</p>
-     */
     inline void SetRegistrationCode(const Aws::String& value) { m_registrationCode = value; }
-
-    /**
-     * <p>The CA certificate registration code.</p>
-     */
     inline void SetRegistrationCode(Aws::String&& value) { m_registrationCode = std::move(value); }
-
-    /**
-     * <p>The CA certificate registration code.</p>
-     */
     inline void SetRegistrationCode(const char* value) { m_registrationCode.assign(value); }
-
-    /**
-     * <p>The CA certificate registration code.</p>
-     */
     inline GetRegistrationCodeResult& WithRegistrationCode(const Aws::String& value) { SetRegistrationCode(value); return *this;}
-
-    /**
-     * <p>The CA certificate registration code.</p>
-     */
     inline GetRegistrationCodeResult& WithRegistrationCode(Aws::String&& value) { SetRegistrationCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The CA certificate registration code.</p>
-     */
     inline GetRegistrationCodeResult& WithRegistrationCode(const char* value) { SetRegistrationCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRegistrationCodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRegistrationCodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRegistrationCodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registrationCode;

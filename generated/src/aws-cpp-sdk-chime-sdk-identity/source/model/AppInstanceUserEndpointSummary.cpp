@@ -30,15 +30,8 @@ AppInstanceUserEndpointSummary::AppInstanceUserEndpointSummary() :
 {
 }
 
-AppInstanceUserEndpointSummary::AppInstanceUserEndpointSummary(JsonView jsonValue) : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(AppInstanceUserEndpointType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_allowMessages(AllowMessages::NOT_SET),
-    m_allowMessagesHasBeenSet(false),
-    m_endpointStateHasBeenSet(false)
+AppInstanceUserEndpointSummary::AppInstanceUserEndpointSummary(JsonView jsonValue)
+  : AppInstanceUserEndpointSummary()
 {
   *this = jsonValue;
 }

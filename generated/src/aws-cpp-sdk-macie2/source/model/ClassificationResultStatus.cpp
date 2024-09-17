@@ -24,9 +24,8 @@ ClassificationResultStatus::ClassificationResultStatus() :
 {
 }
 
-ClassificationResultStatus::ClassificationResultStatus(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+ClassificationResultStatus::ClassificationResultStatus(JsonView jsonValue)
+  : ClassificationResultStatus()
 {
   *this = jsonValue;
 }

@@ -52,37 +52,8 @@ AwsSsmComplianceSummary::AwsSsmComplianceSummary() :
 {
 }
 
-AwsSsmComplianceSummary::AwsSsmComplianceSummary(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_compliantCriticalCount(0),
-    m_compliantCriticalCountHasBeenSet(false),
-    m_compliantHighCount(0),
-    m_compliantHighCountHasBeenSet(false),
-    m_compliantMediumCount(0),
-    m_compliantMediumCountHasBeenSet(false),
-    m_executionTypeHasBeenSet(false),
-    m_nonCompliantCriticalCount(0),
-    m_nonCompliantCriticalCountHasBeenSet(false),
-    m_compliantInformationalCount(0),
-    m_compliantInformationalCountHasBeenSet(false),
-    m_nonCompliantInformationalCount(0),
-    m_nonCompliantInformationalCountHasBeenSet(false),
-    m_compliantUnspecifiedCount(0),
-    m_compliantUnspecifiedCountHasBeenSet(false),
-    m_nonCompliantLowCount(0),
-    m_nonCompliantLowCountHasBeenSet(false),
-    m_nonCompliantHighCount(0),
-    m_nonCompliantHighCountHasBeenSet(false),
-    m_compliantLowCount(0),
-    m_compliantLowCountHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false),
-    m_patchBaselineIdHasBeenSet(false),
-    m_overallSeverityHasBeenSet(false),
-    m_nonCompliantMediumCount(0),
-    m_nonCompliantMediumCountHasBeenSet(false),
-    m_nonCompliantUnspecifiedCount(0),
-    m_nonCompliantUnspecifiedCountHasBeenSet(false),
-    m_patchGroupHasBeenSet(false)
+AwsSsmComplianceSummary::AwsSsmComplianceSummary(JsonView jsonValue)
+  : AwsSsmComplianceSummary()
 {
   *this = jsonValue;
 }

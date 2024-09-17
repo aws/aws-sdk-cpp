@@ -42,27 +42,8 @@ NetworkResource::NetworkResource() :
 {
 }
 
-NetworkResource::NetworkResource(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_commitmentInformationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_health(HealthStatus::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkResourceArnHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false),
-    m_orderArnHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_returnInformationHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_status(NetworkResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_type(NetworkResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vendorHasBeenSet(false)
+NetworkResource::NetworkResource(JsonView jsonValue)
+  : NetworkResource()
 {
   *this = jsonValue;
 }

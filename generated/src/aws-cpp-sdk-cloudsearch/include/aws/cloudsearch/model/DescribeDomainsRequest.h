@@ -43,51 +43,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDomainNames() const{ return m_domainNames; }
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline DescribeDomainsRequest& WithDomainNames(const Aws::Vector<Aws::String>& value) { SetDomainNames(value); return *this;}
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline DescribeDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline DescribeDomainsRequest& AddDomainNames(const Aws::String& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline DescribeDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the domains you want to include in the response.</p>
-     */
     inline DescribeDomainsRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_domainNames;

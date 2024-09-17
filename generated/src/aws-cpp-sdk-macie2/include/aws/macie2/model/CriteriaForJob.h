@@ -40,79 +40,31 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A property-based condition that defines a property, operator, and one or more
      * values for including or excluding buckets from the job.</p>
      */
     inline const SimpleCriterionForJob& GetSimpleCriterion() const{ return m_simpleCriterion; }
-
-    /**
-     * <p>A property-based condition that defines a property, operator, and one or more
-     * values for including or excluding buckets from the job.</p>
-     */
     inline bool SimpleCriterionHasBeenSet() const { return m_simpleCriterionHasBeenSet; }
-
-    /**
-     * <p>A property-based condition that defines a property, operator, and one or more
-     * values for including or excluding buckets from the job.</p>
-     */
     inline void SetSimpleCriterion(const SimpleCriterionForJob& value) { m_simpleCriterionHasBeenSet = true; m_simpleCriterion = value; }
-
-    /**
-     * <p>A property-based condition that defines a property, operator, and one or more
-     * values for including or excluding buckets from the job.</p>
-     */
     inline void SetSimpleCriterion(SimpleCriterionForJob&& value) { m_simpleCriterionHasBeenSet = true; m_simpleCriterion = std::move(value); }
-
-    /**
-     * <p>A property-based condition that defines a property, operator, and one or more
-     * values for including or excluding buckets from the job.</p>
-     */
     inline CriteriaForJob& WithSimpleCriterion(const SimpleCriterionForJob& value) { SetSimpleCriterion(value); return *this;}
-
-    /**
-     * <p>A property-based condition that defines a property, operator, and one or more
-     * values for including or excluding buckets from the job.</p>
-     */
     inline CriteriaForJob& WithSimpleCriterion(SimpleCriterionForJob&& value) { SetSimpleCriterion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A tag-based condition that defines an operator and tag keys, tag values, or
      * tag key and value pairs for including or excluding buckets from the job.</p>
      */
     inline const TagCriterionForJob& GetTagCriterion() const{ return m_tagCriterion; }
-
-    /**
-     * <p>A tag-based condition that defines an operator and tag keys, tag values, or
-     * tag key and value pairs for including or excluding buckets from the job.</p>
-     */
     inline bool TagCriterionHasBeenSet() const { return m_tagCriterionHasBeenSet; }
-
-    /**
-     * <p>A tag-based condition that defines an operator and tag keys, tag values, or
-     * tag key and value pairs for including or excluding buckets from the job.</p>
-     */
     inline void SetTagCriterion(const TagCriterionForJob& value) { m_tagCriterionHasBeenSet = true; m_tagCriterion = value; }
-
-    /**
-     * <p>A tag-based condition that defines an operator and tag keys, tag values, or
-     * tag key and value pairs for including or excluding buckets from the job.</p>
-     */
     inline void SetTagCriterion(TagCriterionForJob&& value) { m_tagCriterionHasBeenSet = true; m_tagCriterion = std::move(value); }
-
-    /**
-     * <p>A tag-based condition that defines an operator and tag keys, tag values, or
-     * tag key and value pairs for including or excluding buckets from the job.</p>
-     */
     inline CriteriaForJob& WithTagCriterion(const TagCriterionForJob& value) { SetTagCriterion(value); return *this;}
-
-    /**
-     * <p>A tag-based condition that defines an operator and tag keys, tag values, or
-     * tag key and value pairs for including or excluding buckets from the job.</p>
-     */
     inline CriteriaForJob& WithTagCriterion(TagCriterionForJob&& value) { SetTagCriterion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SimpleCriterionForJob m_simpleCriterion;

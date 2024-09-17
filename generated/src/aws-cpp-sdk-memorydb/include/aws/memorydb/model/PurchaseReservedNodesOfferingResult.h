@@ -33,58 +33,28 @@ namespace Model
     AWS_MEMORYDB_API PurchaseReservedNodesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the output of a <code>PurchaseReservedNodesOffering</code>
      * operation.</p>
      */
     inline const ReservedNode& GetReservedNode() const{ return m_reservedNode; }
-
-    /**
-     * <p>Represents the output of a <code>PurchaseReservedNodesOffering</code>
-     * operation.</p>
-     */
     inline void SetReservedNode(const ReservedNode& value) { m_reservedNode = value; }
-
-    /**
-     * <p>Represents the output of a <code>PurchaseReservedNodesOffering</code>
-     * operation.</p>
-     */
     inline void SetReservedNode(ReservedNode&& value) { m_reservedNode = std::move(value); }
-
-    /**
-     * <p>Represents the output of a <code>PurchaseReservedNodesOffering</code>
-     * operation.</p>
-     */
     inline PurchaseReservedNodesOfferingResult& WithReservedNode(const ReservedNode& value) { SetReservedNode(value); return *this;}
-
-    /**
-     * <p>Represents the output of a <code>PurchaseReservedNodesOffering</code>
-     * operation.</p>
-     */
     inline PurchaseReservedNodesOfferingResult& WithReservedNode(ReservedNode&& value) { SetReservedNode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PurchaseReservedNodesOfferingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PurchaseReservedNodesOfferingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PurchaseReservedNodesOfferingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReservedNode m_reservedNode;

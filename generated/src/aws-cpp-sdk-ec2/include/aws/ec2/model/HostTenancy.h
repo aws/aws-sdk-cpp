@@ -16,6 +16,7 @@ namespace Model
   enum class HostTenancy
   {
     NOT_SET,
+    default_,
     dedicated,
     host
   };

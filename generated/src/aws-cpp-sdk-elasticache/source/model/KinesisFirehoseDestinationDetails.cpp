@@ -25,8 +25,8 @@ KinesisFirehoseDestinationDetails::KinesisFirehoseDestinationDetails() :
 {
 }
 
-KinesisFirehoseDestinationDetails::KinesisFirehoseDestinationDetails(const XmlNode& xmlNode) : 
-    m_deliveryStreamHasBeenSet(false)
+KinesisFirehoseDestinationDetails::KinesisFirehoseDestinationDetails(const XmlNode& xmlNode)
+  : KinesisFirehoseDestinationDetails()
 {
   *this = xmlNode;
 }

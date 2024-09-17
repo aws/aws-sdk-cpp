@@ -170,7 +170,7 @@ public class Shape {
     }
 
     public boolean hasMember(String member) {
-        return members.keySet().stream().anyMatch(key -> key.equals(member));
+        return members != null && members.keySet().stream().anyMatch(key -> key.equals(member));
     }
 
     public ShapeMember getMemberByLocationName(String locationName) {
@@ -221,11 +221,37 @@ public class Shape {
       return "null";
     }
 
-    private Set<String> getAllChildrenShapeNames() {
+    /**
+     * This method gets all shapes included into type tree below this Shape, except itself and shapes in toIgnore
+     *   (to avoid infinite recursions).
+     * This method performs naive memoization / caching,
+     *   (if Shape tree is changed after calling this method - the result is invalid).
+     * @return Set of all Shape names below this, except self and toIgnore
+     */
+    private Set<String> getAllChildrenShapeNamesExceptIgnored(Set<String> toIgnore) {
         Set<String> collected = new HashSet<String>();
-
         if (members == null || members.isEmpty()) {
-            return collected;
+            allChildrenShapeNamesMemoized = collected;
+            return allChildrenShapeNamesMemoized;
+        }
+
+        toIgnore.add(this.getName());
+        if (allChildrenShapeNamesMemoizedPending != null && !allChildrenShapeNamesMemoizedPending.isEmpty()) {
+            List<Shape> grandChildrenPending = members.values().stream()
+                    .map(value -> value.getShape())
+                    .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape) //if references through a list container
+                    .filter(memberShape -> !toIgnore.contains(memberShape.getName()))
+                    .collect(Collectors.toList());
+
+            collected.addAll(
+                    grandChildrenPending.stream()
+                            .flatMap(memberShape -> memberShape.getAllChildrenShapeNamesExceptIgnored(toIgnore).stream())
+                            .collect(Collectors.toSet()));
+
+            allChildrenShapeNamesMemoizedPending.removeIf(shapeName -> !toIgnore.contains(shapeName));
+
+            allChildrenShapeNamesMemoized.addAll(collected);
+            return allChildrenShapeNamesMemoized;
         }
 
         collected.addAll(members.values().parallelStream()
@@ -234,55 +260,64 @@ public class Shape {
                 .map(memberShape -> memberShape.getName())
                 .collect(Collectors.toSet()));
 
-        Map<String, Shape> toVisit = new HashMap<>(); // map to avoid Shape hashing quirks
-        toVisit.putAll(members.values().parallelStream()
-               .map(ShapeMember::getShape)
-               .collect(Collectors.toMap(shape -> shape.getName(), shape->shape, (shape1, shape2) -> shape1)));
+        // toIgnore, Shape
+        Map<Boolean, List<Shape>> grandChildren = members.values().stream()
+                .map(value -> value.getShape())
+                .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape) //if references through a list container
+                .collect(Collectors.partitioningBy(memberShape -> toIgnore.contains(memberShape.getName())));
 
-        while(!toVisit.isEmpty())
-        {
-            Shape visited = toVisit.entrySet().iterator().next().getValue();
-
-            if (visited.members != null && !visited.members.isEmpty()) {
-
-                Map<String, Shape> children = visited.members.values().parallelStream()
-                        .map(value -> value.getShape())
-                        .filter(shape -> !collected.contains(shape.getName()))
-                        .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape) //if references through a list container
-                        .collect(Collectors.toMap(
-                                shape -> shape.getName(), shape -> shape,
-                                (shape1, shape2) -> shape1));
-
-                collected.addAll(children.keySet());
-                toVisit.putAll(children);
+        if (null != grandChildren.get(true)) {
+            if (allChildrenShapeNamesMemoizedPending == null) {
+                allChildrenShapeNamesMemoizedPending = new HashSet<String>();
             }
-            toVisit.remove(visited.getName());
+            allChildrenShapeNamesMemoizedPending.addAll(
+                    grandChildren.get(true).stream()
+                            .map(memberShape -> memberShape.getName())
+                            .collect(Collectors.toSet()));
         }
 
-        return collected;
-    }
-
-    private Set<String> thisAndAllChildrenShapeNamesMemoized;
-    private Set<String> getThisAndAllChildrenShapeNames() {
-        if (thisAndAllChildrenShapeNamesMemoized != null && !thisAndAllChildrenShapeNamesMemoized.isEmpty()) {
-            // this method is called for at least shape count ^ 2 times
-            return thisAndAllChildrenShapeNamesMemoized;
+        if (null != grandChildren.get(false)) {
+            collected.addAll(grandChildren.get(false).stream()
+                    .flatMap(memberShape -> memberShape.getAllChildrenShapeNamesExceptIgnored(toIgnore).stream())
+                    .collect(Collectors.toSet()));
         }
-        Set<String> shapes = getAllChildrenShapeNames();
 
-        thisAndAllChildrenShapeNamesMemoized = shapes;
-        thisAndAllChildrenShapeNamesMemoized.add(getName());
-        return thisAndAllChildrenShapeNamesMemoized;
+        allChildrenShapeNamesMemoized = collected;
+
+        return allChildrenShapeNamesMemoized;
     }
+
+    /**
+     * This method gets all shapes included into type tree below this Shape.
+     * This method performs naive memoization, if Shape tree is changed after calling this method - the result is invalid
+     * @return Set of all Shape names below this
+     */
+    private Set<String> getAllChildrenShapeNames() {
+        if (allChildrenShapeNamesMemoized != null && (allChildrenShapeNamesMemoizedPending == null || allChildrenShapeNamesMemoizedPending.isEmpty())) {
+            return allChildrenShapeNamesMemoized;
+        }
+
+        if (members == null || members.isEmpty()) {
+            allChildrenShapeNamesMemoized = new HashSet<String>();
+            return allChildrenShapeNamesMemoized;
+        }
+
+        Set<String> toIgnore = new HashSet<String>();
+        return getAllChildrenShapeNamesExceptIgnored(toIgnore);
+    }
+
+    private Set<String> allChildrenShapeNamesMemoized;
+    private Set<String> allChildrenShapeNamesMemoizedPending;
 
     // Some shapes are mutually referenced with each other, e.g. Statement and NotStatement in wafv2.
     public boolean isMutuallyReferencedWith(Shape otherShape) {
         if (otherShape == null || otherShape.members == null || members == null || !isStructure() || !otherShape.isStructure() || name.equals(otherShape.getName())) return false;
 
-        Set<String> thisShapes = this.getThisAndAllChildrenShapeNames();
-        Set<String> otherShapes = otherShape.getThisAndAllChildrenShapeNames();
+        Set<String> thisShapes = this.getAllChildrenShapeNames();
+        Set<String> otherShapes = otherShape.getAllChildrenShapeNames();
 
-        return thisShapes.contains(otherShape.getName()) && otherShapes.contains(this.getName());
+        return otherShape.getName() == this.getName() ||
+                (thisShapes.contains(otherShape.getName()) && otherShapes.contains(this.getName()));
     }
 
     public boolean hasContextParam() {

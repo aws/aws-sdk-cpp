@@ -20,6 +20,7 @@
 /* Service model headers required in RolesAnywhereClient header */
 #include <aws/rolesanywhere/model/CreateProfileResult.h>
 #include <aws/rolesanywhere/model/CreateTrustAnchorResult.h>
+#include <aws/rolesanywhere/model/DeleteAttributeMappingResult.h>
 #include <aws/rolesanywhere/model/DeleteCrlResult.h>
 #include <aws/rolesanywhere/model/DeleteProfileResult.h>
 #include <aws/rolesanywhere/model/DeleteTrustAnchorResult.h>
@@ -39,6 +40,7 @@
 #include <aws/rolesanywhere/model/ListSubjectsResult.h>
 #include <aws/rolesanywhere/model/ListTagsForResourceResult.h>
 #include <aws/rolesanywhere/model/ListTrustAnchorsResult.h>
+#include <aws/rolesanywhere/model/PutAttributeMappingResult.h>
 #include <aws/rolesanywhere/model/PutNotificationSettingsResult.h>
 #include <aws/rolesanywhere/model/ResetNotificationSettingsResult.h>
 #include <aws/rolesanywhere/model/TagResourceResult.h>
@@ -46,6 +48,10 @@
 #include <aws/rolesanywhere/model/UpdateCrlResult.h>
 #include <aws/rolesanywhere/model/UpdateProfileResult.h>
 #include <aws/rolesanywhere/model/UpdateTrustAnchorResult.h>
+#include <aws/rolesanywhere/model/ListSubjectsRequest.h>
+#include <aws/rolesanywhere/model/ListCrlsRequest.h>
+#include <aws/rolesanywhere/model/ListTrustAnchorsRequest.h>
+#include <aws/rolesanywhere/model/ListProfilesRequest.h>
 /* End of service model headers required in RolesAnywhereClient header */
 
 namespace Aws
@@ -79,7 +85,7 @@ namespace Aws
 
   namespace RolesAnywhere
   {
-    using RolesAnywhereClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RolesAnywhereClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RolesAnywhereEndpointProviderBase = Aws::RolesAnywhere::Endpoint::RolesAnywhereEndpointProviderBase;
     using RolesAnywhereEndpointProvider = Aws::RolesAnywhere::Endpoint::RolesAnywhereEndpointProvider;
 
@@ -88,6 +94,7 @@ namespace Aws
       /* Service model forward declarations required in RolesAnywhereClient header */
       class CreateProfileRequest;
       class CreateTrustAnchorRequest;
+      class DeleteAttributeMappingRequest;
       class DeleteCrlRequest;
       class DeleteProfileRequest;
       class DeleteTrustAnchorRequest;
@@ -107,6 +114,7 @@ namespace Aws
       class ListSubjectsRequest;
       class ListTagsForResourceRequest;
       class ListTrustAnchorsRequest;
+      class PutAttributeMappingRequest;
       class PutNotificationSettingsRequest;
       class ResetNotificationSettingsRequest;
       class TagResourceRequest;
@@ -119,6 +127,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateProfileResult, RolesAnywhereError> CreateProfileOutcome;
       typedef Aws::Utils::Outcome<CreateTrustAnchorResult, RolesAnywhereError> CreateTrustAnchorOutcome;
+      typedef Aws::Utils::Outcome<DeleteAttributeMappingResult, RolesAnywhereError> DeleteAttributeMappingOutcome;
       typedef Aws::Utils::Outcome<DeleteCrlResult, RolesAnywhereError> DeleteCrlOutcome;
       typedef Aws::Utils::Outcome<DeleteProfileResult, RolesAnywhereError> DeleteProfileOutcome;
       typedef Aws::Utils::Outcome<DeleteTrustAnchorResult, RolesAnywhereError> DeleteTrustAnchorOutcome;
@@ -138,6 +147,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListSubjectsResult, RolesAnywhereError> ListSubjectsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, RolesAnywhereError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTrustAnchorsResult, RolesAnywhereError> ListTrustAnchorsOutcome;
+      typedef Aws::Utils::Outcome<PutAttributeMappingResult, RolesAnywhereError> PutAttributeMappingOutcome;
       typedef Aws::Utils::Outcome<PutNotificationSettingsResult, RolesAnywhereError> PutNotificationSettingsOutcome;
       typedef Aws::Utils::Outcome<ResetNotificationSettingsResult, RolesAnywhereError> ResetNotificationSettingsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, RolesAnywhereError> TagResourceOutcome;
@@ -150,6 +160,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
       typedef std::future<CreateTrustAnchorOutcome> CreateTrustAnchorOutcomeCallable;
+      typedef std::future<DeleteAttributeMappingOutcome> DeleteAttributeMappingOutcomeCallable;
       typedef std::future<DeleteCrlOutcome> DeleteCrlOutcomeCallable;
       typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
       typedef std::future<DeleteTrustAnchorOutcome> DeleteTrustAnchorOutcomeCallable;
@@ -169,6 +180,7 @@ namespace Aws
       typedef std::future<ListSubjectsOutcome> ListSubjectsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTrustAnchorsOutcome> ListTrustAnchorsOutcomeCallable;
+      typedef std::future<PutAttributeMappingOutcome> PutAttributeMappingOutcomeCallable;
       typedef std::future<PutNotificationSettingsOutcome> PutNotificationSettingsOutcomeCallable;
       typedef std::future<ResetNotificationSettingsOutcome> ResetNotificationSettingsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -184,6 +196,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const RolesAnywhereClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::CreateTrustAnchorRequest&, const Model::CreateTrustAnchorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrustAnchorResponseReceivedHandler;
+    typedef std::function<void(const RolesAnywhereClient*, const Model::DeleteAttributeMappingRequest&, const Model::DeleteAttributeMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttributeMappingResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::DeleteCrlRequest&, const Model::DeleteCrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCrlResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::DeleteTrustAnchorRequest&, const Model::DeleteTrustAnchorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrustAnchorResponseReceivedHandler;
@@ -203,6 +216,7 @@ namespace Aws
     typedef std::function<void(const RolesAnywhereClient*, const Model::ListSubjectsRequest&, const Model::ListSubjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubjectsResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::ListTrustAnchorsRequest&, const Model::ListTrustAnchorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrustAnchorsResponseReceivedHandler;
+    typedef std::function<void(const RolesAnywhereClient*, const Model::PutAttributeMappingRequest&, const Model::PutAttributeMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAttributeMappingResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::PutNotificationSettingsRequest&, const Model::PutNotificationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationSettingsResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::ResetNotificationSettingsRequest&, const Model::ResetNotificationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetNotificationSettingsResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

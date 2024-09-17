@@ -9,6 +9,8 @@
 
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/Types.h>
 #include <memory>
 #include <cassert>
 #include <cstring>
@@ -38,7 +40,8 @@ namespace Aws
              * Create new empty array of size arraySize. Default argument is 0. If it is empty then no allocation happens.
              */
             Array(size_t arraySize = 0) :
-                m_size(arraySize),
+                m_capacity(arraySize),
+                m_length(arraySize),
                 m_data(arraySize > 0 ? Aws::MakeUniqueArray<T>(arraySize, ARRAY_ALLOCATION_TAG) : nullptr)
             {
             }
@@ -47,15 +50,27 @@ namespace Aws
              * Create new array and initialize it to a raw array
              */
             Array(const T* arrayToCopy, size_t arraySize) :
-                m_size(arraySize),
+                m_capacity(arraySize),
+                m_length(arraySize),
                 m_data(nullptr)
             {
-                if (arrayToCopy != nullptr && m_size > 0)
+                if (arrayToCopy != nullptr && m_capacity > 0)
                 {
-                    m_data.reset(Aws::NewArray<T>(m_size, ARRAY_ALLOCATION_TAG));
-
+                    m_data.reset(Aws::NewArray<T>(m_capacity, ARRAY_ALLOCATION_TAG));
                     std::copy(arrayToCopy, arrayToCopy + arraySize, m_data.get());
                 }
+            }
+
+            /**
+             * Create new array with a pointer and its dimensions.
+             */
+            Array(size_t capacity,
+                  size_t length,
+                  UniqueArrayPtr<T> data)
+                : m_capacity(capacity),
+                  m_length(length),
+                  m_data(std::move(data))
+            {
             }
 
             /**
@@ -66,43 +81,45 @@ namespace Aws
                 size_t totalSize = 0;
                 for(auto& array : toMerge)
                 {
-                    totalSize += array->m_size;
+                    totalSize += array->m_length;
                 }
 
-                m_size = totalSize;
-                m_data.reset(Aws::NewArray<T>(m_size, ARRAY_ALLOCATION_TAG));
+                m_capacity = totalSize;
+                m_data.reset(Aws::NewArray<T>(m_capacity, ARRAY_ALLOCATION_TAG));
 
                 size_t location = 0;
                 for(auto& arr : toMerge)
                 {
-                    if(arr->m_size > 0 && arr->m_data)
+                    if(arr->m_capacity > 0 && arr->m_data)
                     {
-                        size_t arraySize = arr->m_size;
+                        size_t arraySize = arr->m_length;
                         std::copy(arr->m_data.get(), arr->m_data.get() + arraySize, m_data.get() + location);
                         location += arraySize;
                     }
                 }
+                m_length = location;
             }
 
             Array(const Array& other)
             {
-                m_size = other.m_size;
+                m_capacity = other.m_capacity;
+                m_length = other.m_length;
                 m_data = nullptr;
 
-                if (m_size > 0)
+                if (m_capacity > 0)
                 {
-                    m_data.reset(Aws::NewArray<T>(m_size, ARRAY_ALLOCATION_TAG));
-
-                    std::copy(other.m_data.get(), other.m_data.get() + other.m_size, m_data.get());
+                    m_data.reset(Aws::NewArray<T>(m_capacity, ARRAY_ALLOCATION_TAG));
+                    std::copy(other.m_data.get(), other.m_data.get() + other.m_capacity, m_data.get());
                 }
             }
 
             //move c_tor
-            Array(Array&& other) :
-                m_size(other.m_size),
+            Array(Array&& other) noexcept:
+                m_capacity(other.m_capacity),
+                m_length(other.m_length),
                 m_data(std::move(other.m_data))
             {
-                other.m_size = 0;
+                other.m_capacity = 0;
                 other.m_data = nullptr;
             }
 
@@ -115,25 +132,35 @@ namespace Aws
                     return *this;
                 }
 
-                m_size = other.m_size;
+                m_capacity = other.m_capacity;
+                m_length = other.m_length;
                 m_data = nullptr;
 
-                if (m_size > 0)
+                if (m_capacity > 0)
                 {
-                    m_data.reset(Aws::NewArray<T>(m_size, ARRAY_ALLOCATION_TAG));
-
-                    std::copy(other.m_data.get(), other.m_data.get() + other.m_size, m_data.get());
+                    m_data.reset(Aws::NewArray<T>(m_capacity, ARRAY_ALLOCATION_TAG));
+                    std::copy(other.m_data.get(), other.m_data.get() + other.m_length, m_data.get());
                 }
 
                 return *this;
             }
 
-            Array& operator=(Array&& other)
+            Array& operator=(Array&& other) noexcept
             {
-                m_size = other.m_size;
+                m_capacity = other.m_capacity;
+                m_length = other.m_length;
                 m_data = std::move(other.m_data);
 
                 return *this;
+            }
+
+            Array(const Aws::String& string):
+                m_capacity(string.capacity()),
+                m_length(string.length()),
+                m_data(nullptr)
+            {
+                m_data.reset(Aws::NewArray<unsigned char>(m_capacity, ARRAY_ALLOCATION_TAG));
+                std::copy(string.c_str(), string.c_str() + string.length(), m_data.get());
             }
 
             bool operator==(const Array& other) const
@@ -141,14 +168,19 @@ namespace Aws
                 if (this == &other)
                     return true;
 
-                if (m_size == 0 && other.m_size == 0)
+                if (m_capacity == 0 && other.m_capacity == 0)
                 {
                     return true;
                 }
 
-                if (m_size == other.m_size && m_data && other.m_data)
+                if (m_length != other.m_length)
                 {
-                    for (unsigned i = 0; i < m_size; ++i)
+                    return false;
+                }
+
+                if (m_length == other.m_length && m_capacity == other.m_capacity && m_data && other.m_data)
+                {
+                    for (unsigned i = 0; i < m_length; ++i)
                     {
                         if (m_data.get()[i] != other.m_data.get()[i])
                             return false;
@@ -167,13 +199,13 @@ namespace Aws
 
             T const& GetItem(size_t index) const
             {
-                assert(index < m_size);
+                assert(index < m_length);
                 return m_data.get()[index];
             }
 
             T& GetItem(size_t index)
             {
-                assert(index < m_size);
+                assert(index < m_length);
                 return m_data.get()[index];
             }
 
@@ -189,7 +221,12 @@ namespace Aws
 
             inline size_t GetLength() const
             {
-                return m_size;
+                return m_length;
+            }
+
+            inline size_t GetSize() const
+            {
+                return m_capacity;
             }
 
             inline T* GetUnderlyingData() const
@@ -197,9 +234,14 @@ namespace Aws
                 return m_data.get();
             }
 
-        protected:
-            size_t m_size;
+            inline void SetLength(size_t len)
+            {
+                m_length = len;
+            }
 
+        protected:
+            size_t m_capacity = 0;
+            size_t m_length = 0;
             Aws::UniqueArrayPtr<T> m_data;
         };
 
@@ -218,12 +260,41 @@ namespace Aws
             CryptoBuffer(const ByteBuffer& other) : ByteBuffer(other) {}
             CryptoBuffer(const CryptoBuffer& other) : ByteBuffer(other) {}
             CryptoBuffer(CryptoBuffer&& other) : ByteBuffer(std::move(other)) {}
-            CryptoBuffer& operator=(const CryptoBuffer&) = default;
-            CryptoBuffer& operator=(CryptoBuffer&& other) { ByteBuffer::operator=(std::move(other)); return *this; }
+            CryptoBuffer& operator=(const CryptoBuffer& other) { Zero(); ByteBuffer::operator=(other); return *this; }
+            CryptoBuffer& operator=(CryptoBuffer&& other) { Zero(); ByteBuffer::operator=(std::move(other)); return *this; }
+
+            CryptoBuffer(Crt::ByteBuf&& other) noexcept : ByteBuffer(
+                other.len,
+                other.len,
+                nullptr)
+            {
+                // Crt::ByteBuf must be allocated using SDK not CRT allocator
+                assert(get_aws_allocator() == other.allocator);
+                m_data.reset(other.buffer);
+                other.capacity = 0;
+                other.len = 0;
+                other.allocator = nullptr;
+                other.buffer = nullptr;
+            }
+
+            CryptoBuffer& operator=(Crt::ByteBuf&& other) noexcept
+            {
+                // Crt::ByteBuf must be allocated using SDK not CRT allocator
+                assert(get_aws_allocator() == other.allocator);
+                m_capacity = other.len;
+                m_length = other.len;
+                m_data.reset(other.buffer);
+                other.capacity = 0;
+                other.len = 0;
+                other.allocator = nullptr;
+                other.buffer = nullptr;
+                return *this;
+            }
+
             bool operator==(const CryptoBuffer& other) const { return ByteBuffer::operator==(other); }
             bool operator!=(const CryptoBuffer& other) const { return ByteBuffer::operator!=(other); }
 
-            ~CryptoBuffer() { Zero(); }
+            ~CryptoBuffer() override { Zero(); }
 
             Array<CryptoBuffer> Slice(size_t sizeOfSlice) const;
             CryptoBuffer& operator^(const CryptoBuffer& operand);

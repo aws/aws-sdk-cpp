@@ -39,53 +39,27 @@ namespace Model
     AWS_ROUTE53_API UpdateTrafficPolicyCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains settings for the specified traffic policy.</p>
      */
     inline const TrafficPolicy& GetTrafficPolicy() const{ return m_trafficPolicy; }
-
-    /**
-     * <p>A complex type that contains settings for the specified traffic policy.</p>
-     */
     inline void SetTrafficPolicy(const TrafficPolicy& value) { m_trafficPolicy = value; }
-
-    /**
-     * <p>A complex type that contains settings for the specified traffic policy.</p>
-     */
     inline void SetTrafficPolicy(TrafficPolicy&& value) { m_trafficPolicy = std::move(value); }
-
-    /**
-     * <p>A complex type that contains settings for the specified traffic policy.</p>
-     */
     inline UpdateTrafficPolicyCommentResult& WithTrafficPolicy(const TrafficPolicy& value) { SetTrafficPolicy(value); return *this;}
-
-    /**
-     * <p>A complex type that contains settings for the specified traffic policy.</p>
-     */
     inline UpdateTrafficPolicyCommentResult& WithTrafficPolicy(TrafficPolicy&& value) { SetTrafficPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTrafficPolicyCommentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTrafficPolicyCommentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTrafficPolicyCommentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TrafficPolicy m_trafficPolicy;

@@ -39,73 +39,30 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Encryption configuration for the auto export job.</p>
      */
     inline const ExportServerSideEncryption& GetEncryption() const{ return m_encryption; }
-
-    /**
-     * <p>Encryption configuration for the auto export job.</p>
-     */
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-
-    /**
-     * <p>Encryption configuration for the auto export job.</p>
-     */
     inline void SetEncryption(const ExportServerSideEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-
-    /**
-     * <p>Encryption configuration for the auto export job.</p>
-     */
     inline void SetEncryption(ExportServerSideEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-
-    /**
-     * <p>Encryption configuration for the auto export job.</p>
-     */
     inline AutoExportRevisionToS3RequestDetails& WithEncryption(const ExportServerSideEncryption& value) { SetEncryption(value); return *this;}
-
-    /**
-     * <p>Encryption configuration for the auto export job.</p>
-     */
     inline AutoExportRevisionToS3RequestDetails& WithEncryption(ExportServerSideEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A revision destination is the Amazon S3 bucket folder destination to where
      * the export will be sent.</p>
      */
     inline const AutoExportRevisionDestinationEntry& GetRevisionDestination() const{ return m_revisionDestination; }
-
-    /**
-     * <p>A revision destination is the Amazon S3 bucket folder destination to where
-     * the export will be sent.</p>
-     */
     inline bool RevisionDestinationHasBeenSet() const { return m_revisionDestinationHasBeenSet; }
-
-    /**
-     * <p>A revision destination is the Amazon S3 bucket folder destination to where
-     * the export will be sent.</p>
-     */
     inline void SetRevisionDestination(const AutoExportRevisionDestinationEntry& value) { m_revisionDestinationHasBeenSet = true; m_revisionDestination = value; }
-
-    /**
-     * <p>A revision destination is the Amazon S3 bucket folder destination to where
-     * the export will be sent.</p>
-     */
     inline void SetRevisionDestination(AutoExportRevisionDestinationEntry&& value) { m_revisionDestinationHasBeenSet = true; m_revisionDestination = std::move(value); }
-
-    /**
-     * <p>A revision destination is the Amazon S3 bucket folder destination to where
-     * the export will be sent.</p>
-     */
     inline AutoExportRevisionToS3RequestDetails& WithRevisionDestination(const AutoExportRevisionDestinationEntry& value) { SetRevisionDestination(value); return *this;}
-
-    /**
-     * <p>A revision destination is the Amazon S3 bucket folder destination to where
-     * the export will be sent.</p>
-     */
     inline AutoExportRevisionToS3RequestDetails& WithRevisionDestination(AutoExportRevisionDestinationEntry&& value) { SetRevisionDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExportServerSideEncryption m_encryption;

@@ -39,24 +39,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
 {
 }
 
-DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) : 
-    m_s3ConfigurationHasBeenSet(false),
-    m_sharePointConfigurationHasBeenSet(false),
-    m_databaseConfigurationHasBeenSet(false),
-    m_salesforceConfigurationHasBeenSet(false),
-    m_oneDriveConfigurationHasBeenSet(false),
-    m_serviceNowConfigurationHasBeenSet(false),
-    m_confluenceConfigurationHasBeenSet(false),
-    m_googleDriveConfigurationHasBeenSet(false),
-    m_webCrawlerConfigurationHasBeenSet(false),
-    m_workDocsConfigurationHasBeenSet(false),
-    m_fsxConfigurationHasBeenSet(false),
-    m_slackConfigurationHasBeenSet(false),
-    m_boxConfigurationHasBeenSet(false),
-    m_quipConfigurationHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false),
-    m_gitHubConfigurationHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false)
+DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
+  : DataSourceConfiguration()
 {
   *this = jsonValue;
 }

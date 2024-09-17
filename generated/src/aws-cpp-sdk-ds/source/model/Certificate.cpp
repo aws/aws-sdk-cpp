@@ -32,17 +32,8 @@ Certificate::Certificate() :
 {
 }
 
-Certificate::Certificate(JsonView jsonValue) : 
-    m_certificateIdHasBeenSet(false),
-    m_state(CertificateState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_registeredDateTimeHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_clientCertAuthSettingsHasBeenSet(false)
+Certificate::Certificate(JsonView jsonValue)
+  : Certificate()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ModelExplainabilityBaselineConfig::ModelExplainabilityBaselineConfig() :
 {
 }
 
-ModelExplainabilityBaselineConfig::ModelExplainabilityBaselineConfig(JsonView jsonValue) : 
-    m_baseliningJobNameHasBeenSet(false),
-    m_constraintsResourceHasBeenSet(false)
+ModelExplainabilityBaselineConfig::ModelExplainabilityBaselineConfig(JsonView jsonValue)
+  : ModelExplainabilityBaselineConfig()
 {
   *this = jsonValue;
 }

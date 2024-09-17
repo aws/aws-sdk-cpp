@@ -41,95 +41,34 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Amazon Web Services service that should allowed or denied
      * access to an Amazon Lex action.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
-
-    /**
-     * <p>The name of the Amazon Web Services service that should allowed or denied
-     * access to an Amazon Lex action.</p>
-     */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Services service that should allowed or denied
-     * access to an Amazon Lex action.</p>
-     */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-
-    /**
-     * <p>The name of the Amazon Web Services service that should allowed or denied
-     * access to an Amazon Lex action.</p>
-     */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services service that should allowed or denied
-     * access to an Amazon Lex action.</p>
-     */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services service that should allowed or denied
-     * access to an Amazon Lex action.</p>
-     */
     inline Principal& WithService(const Aws::String& value) { SetService(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services service that should allowed or denied
-     * access to an Amazon Lex action.</p>
-     */
     inline Principal& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services service that should allowed or denied
-     * access to an Amazon Lex action.</p>
-     */
     inline Principal& WithService(const char* value) { SetService(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the principal.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the principal.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the principal.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the principal.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the principal.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the principal.</p>
-     */
     inline Principal& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the principal.</p>
-     */
     inline Principal& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the principal.</p>
-     */
     inline Principal& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_service;

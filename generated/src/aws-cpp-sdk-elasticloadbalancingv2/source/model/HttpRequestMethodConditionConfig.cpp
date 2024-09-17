@@ -25,8 +25,8 @@ HttpRequestMethodConditionConfig::HttpRequestMethodConditionConfig() :
 {
 }
 
-HttpRequestMethodConditionConfig::HttpRequestMethodConditionConfig(const XmlNode& xmlNode) : 
-    m_valuesHasBeenSet(false)
+HttpRequestMethodConditionConfig::HttpRequestMethodConditionConfig(const XmlNode& xmlNode)
+  : HttpRequestMethodConditionConfig()
 {
   *this = xmlNode;
 }

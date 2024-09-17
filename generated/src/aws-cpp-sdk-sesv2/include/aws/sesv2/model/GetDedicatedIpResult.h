@@ -38,53 +38,27 @@ namespace Model
     AWS_SESV2_API GetDedicatedIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains information about a dedicated IP address.</p>
      */
     inline const DedicatedIp& GetDedicatedIp() const{ return m_dedicatedIp; }
-
-    /**
-     * <p>An object that contains information about a dedicated IP address.</p>
-     */
     inline void SetDedicatedIp(const DedicatedIp& value) { m_dedicatedIp = value; }
-
-    /**
-     * <p>An object that contains information about a dedicated IP address.</p>
-     */
     inline void SetDedicatedIp(DedicatedIp&& value) { m_dedicatedIp = std::move(value); }
-
-    /**
-     * <p>An object that contains information about a dedicated IP address.</p>
-     */
     inline GetDedicatedIpResult& WithDedicatedIp(const DedicatedIp& value) { SetDedicatedIp(value); return *this;}
-
-    /**
-     * <p>An object that contains information about a dedicated IP address.</p>
-     */
     inline GetDedicatedIpResult& WithDedicatedIp(DedicatedIp&& value) { SetDedicatedIp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDedicatedIpResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDedicatedIpResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDedicatedIpResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DedicatedIp m_dedicatedIp;

@@ -28,13 +28,8 @@ Phase::Phase() :
 {
 }
 
-Phase::Phase(JsonView jsonValue) : 
-    m_initialNumberOfUsers(0),
-    m_initialNumberOfUsersHasBeenSet(false),
-    m_spawnRate(0),
-    m_spawnRateHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
+Phase::Phase(JsonView jsonValue)
+  : Phase()
 {
   *this = jsonValue;
 }

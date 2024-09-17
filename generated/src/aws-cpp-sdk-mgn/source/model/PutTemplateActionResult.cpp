@@ -26,12 +26,8 @@ PutTemplateActionResult::PutTemplateActionResult() :
 {
 }
 
-PutTemplateActionResult::PutTemplateActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_active(false),
-    m_category(ActionCategory::NOT_SET),
-    m_mustSucceedForCutover(false),
-    m_order(0),
-    m_timeoutSeconds(0)
+PutTemplateActionResult::PutTemplateActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutTemplateActionResult()
 {
   *this = result;
 }

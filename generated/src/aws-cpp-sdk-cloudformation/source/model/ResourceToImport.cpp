@@ -27,10 +27,8 @@ ResourceToImport::ResourceToImport() :
 {
 }
 
-ResourceToImport::ResourceToImport(const XmlNode& xmlNode) : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
+ResourceToImport::ResourceToImport(const XmlNode& xmlNode)
+  : ResourceToImport()
 {
   *this = xmlNode;
 }

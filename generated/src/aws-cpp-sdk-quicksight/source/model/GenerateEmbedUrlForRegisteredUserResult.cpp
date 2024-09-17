@@ -22,8 +22,8 @@ GenerateEmbedUrlForRegisteredUserResult::GenerateEmbedUrlForRegisteredUserResult
 {
 }
 
-GenerateEmbedUrlForRegisteredUserResult::GenerateEmbedUrlForRegisteredUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+GenerateEmbedUrlForRegisteredUserResult::GenerateEmbedUrlForRegisteredUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GenerateEmbedUrlForRegisteredUserResult()
 {
   *this = result;
 }

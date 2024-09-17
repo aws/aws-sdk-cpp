@@ -24,9 +24,8 @@ LambdaOutputDescription::LambdaOutputDescription() :
 {
 }
 
-LambdaOutputDescription::LambdaOutputDescription(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+LambdaOutputDescription::LambdaOutputDescription(JsonView jsonValue)
+  : LambdaOutputDescription()
 {
   *this = jsonValue;
 }

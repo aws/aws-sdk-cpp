@@ -30,13 +30,8 @@ DiskInfo::DiskInfo() :
 {
 }
 
-DiskInfo::DiskInfo(const XmlNode& xmlNode) : 
-    m_sizeInGB(0),
-    m_sizeInGBHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_type(DiskType::NOT_SET),
-    m_typeHasBeenSet(false)
+DiskInfo::DiskInfo(const XmlNode& xmlNode)
+  : DiskInfo()
 {
   *this = xmlNode;
 }

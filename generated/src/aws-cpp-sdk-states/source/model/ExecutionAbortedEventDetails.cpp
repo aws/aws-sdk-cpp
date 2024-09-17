@@ -24,9 +24,8 @@ ExecutionAbortedEventDetails::ExecutionAbortedEventDetails() :
 {
 }
 
-ExecutionAbortedEventDetails::ExecutionAbortedEventDetails(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
+ExecutionAbortedEventDetails::ExecutionAbortedEventDetails(JsonView jsonValue)
+  : ExecutionAbortedEventDetails()
 {
   *this = jsonValue;
 }

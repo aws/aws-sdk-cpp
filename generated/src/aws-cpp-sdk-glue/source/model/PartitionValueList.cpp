@@ -23,8 +23,8 @@ PartitionValueList::PartitionValueList() :
 {
 }
 
-PartitionValueList::PartitionValueList(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+PartitionValueList::PartitionValueList(JsonView jsonValue)
+  : PartitionValueList()
 {
   *this = jsonValue;
 }

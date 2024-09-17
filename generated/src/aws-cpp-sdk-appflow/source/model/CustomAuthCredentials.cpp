@@ -24,9 +24,8 @@ CustomAuthCredentials::CustomAuthCredentials() :
 {
 }
 
-CustomAuthCredentials::CustomAuthCredentials(JsonView jsonValue) : 
-    m_customAuthenticationTypeHasBeenSet(false),
-    m_credentialsMapHasBeenSet(false)
+CustomAuthCredentials::CustomAuthCredentials(JsonView jsonValue)
+  : CustomAuthCredentials()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ Ec2InstanceConfiguration::Ec2InstanceConfiguration() :
 {
 }
 
-Ec2InstanceConfiguration::Ec2InstanceConfiguration(JsonView jsonValue) : 
-    m_instanceHasBeenSet(false)
+Ec2InstanceConfiguration::Ec2InstanceConfiguration(JsonView jsonValue)
+  : Ec2InstanceConfiguration()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ AwsRedshiftClusterLoggingStatus::AwsRedshiftClusterLoggingStatus() :
 {
 }
 
-AwsRedshiftClusterLoggingStatus::AwsRedshiftClusterLoggingStatus(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_lastFailureTimeHasBeenSet(false),
-    m_lastSuccessfulDeliveryTimeHasBeenSet(false),
-    m_loggingEnabled(false),
-    m_loggingEnabledHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
+AwsRedshiftClusterLoggingStatus::AwsRedshiftClusterLoggingStatus(JsonView jsonValue)
+  : AwsRedshiftClusterLoggingStatus()
 {
   *this = jsonValue;
 }

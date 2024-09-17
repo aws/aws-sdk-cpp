@@ -56,6 +56,12 @@
 #include <aws/lookoutequipment/model/TagResourceResult.h>
 #include <aws/lookoutequipment/model/UntagResourceResult.h>
 #include <aws/lookoutequipment/model/UpdateActiveModelVersionResult.h>
+#include <aws/lookoutequipment/model/ListLabelGroupsRequest.h>
+#include <aws/lookoutequipment/model/ListModelsRequest.h>
+#include <aws/lookoutequipment/model/ListDataIngestionJobsRequest.h>
+#include <aws/lookoutequipment/model/ListRetrainingSchedulersRequest.h>
+#include <aws/lookoutequipment/model/ListDatasetsRequest.h>
+#include <aws/lookoutequipment/model/ListInferenceSchedulersRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in LookoutEquipmentClient header */
 
@@ -90,7 +96,7 @@ namespace Aws
 
   namespace LookoutEquipment
   {
-    using LookoutEquipmentClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LookoutEquipmentClientConfiguration = Aws::Client::GenericClientConfiguration;
     using LookoutEquipmentEndpointProviderBase = Aws::LookoutEquipment::Endpoint::LookoutEquipmentEndpointProviderBase;
     using LookoutEquipmentEndpointProvider = Aws::LookoutEquipment::Endpoint::LookoutEquipmentEndpointProvider;
 

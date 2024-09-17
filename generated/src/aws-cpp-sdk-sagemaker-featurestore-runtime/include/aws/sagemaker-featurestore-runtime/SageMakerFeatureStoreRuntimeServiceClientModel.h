@@ -54,7 +54,7 @@ namespace Aws
 
   namespace SageMakerFeatureStoreRuntime
   {
-    using SageMakerFeatureStoreRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SageMakerFeatureStoreRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SageMakerFeatureStoreRuntimeEndpointProviderBase = Aws::SageMakerFeatureStoreRuntime::Endpoint::SageMakerFeatureStoreRuntimeEndpointProviderBase;
     using SageMakerFeatureStoreRuntimeEndpointProvider = Aws::SageMakerFeatureStoreRuntime::Endpoint::SageMakerFeatureStoreRuntimeEndpointProvider;
 

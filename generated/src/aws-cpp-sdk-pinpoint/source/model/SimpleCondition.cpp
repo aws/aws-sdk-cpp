@@ -25,10 +25,8 @@ SimpleCondition::SimpleCondition() :
 {
 }
 
-SimpleCondition::SimpleCondition(JsonView jsonValue) : 
-    m_eventConditionHasBeenSet(false),
-    m_segmentConditionHasBeenSet(false),
-    m_segmentDimensionsHasBeenSet(false)
+SimpleCondition::SimpleCondition(JsonView jsonValue)
+  : SimpleCondition()
 {
   *this = jsonValue;
 }

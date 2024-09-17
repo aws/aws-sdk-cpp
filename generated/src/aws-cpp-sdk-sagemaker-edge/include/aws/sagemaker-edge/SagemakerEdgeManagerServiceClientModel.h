@@ -54,7 +54,7 @@ namespace Aws
 
   namespace SagemakerEdgeManager
   {
-    using SagemakerEdgeManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SagemakerEdgeManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SagemakerEdgeManagerEndpointProviderBase = Aws::SagemakerEdgeManager::Endpoint::SagemakerEdgeManagerEndpointProviderBase;
     using SagemakerEdgeManagerEndpointProvider = Aws::SagemakerEdgeManager::Endpoint::SagemakerEdgeManagerEndpointProvider;
 

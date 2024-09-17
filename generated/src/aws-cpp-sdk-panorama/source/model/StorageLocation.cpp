@@ -27,12 +27,8 @@ StorageLocation::StorageLocation() :
 {
 }
 
-StorageLocation::StorageLocation(JsonView jsonValue) : 
-    m_binaryPrefixLocationHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_generatedPrefixLocationHasBeenSet(false),
-    m_manifestPrefixLocationHasBeenSet(false),
-    m_repoPrefixLocationHasBeenSet(false)
+StorageLocation::StorageLocation(JsonView jsonValue)
+  : StorageLocation()
 {
   *this = jsonValue;
 }

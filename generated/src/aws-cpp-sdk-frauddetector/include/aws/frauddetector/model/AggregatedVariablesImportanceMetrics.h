@@ -44,46 +44,19 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> List of variables' metrics. </p>
      */
     inline const Aws::Vector<AggregatedLogOddsMetric>& GetLogOddsMetrics() const{ return m_logOddsMetrics; }
-
-    /**
-     * <p> List of variables' metrics. </p>
-     */
     inline bool LogOddsMetricsHasBeenSet() const { return m_logOddsMetricsHasBeenSet; }
-
-    /**
-     * <p> List of variables' metrics. </p>
-     */
     inline void SetLogOddsMetrics(const Aws::Vector<AggregatedLogOddsMetric>& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics = value; }
-
-    /**
-     * <p> List of variables' metrics. </p>
-     */
     inline void SetLogOddsMetrics(Aws::Vector<AggregatedLogOddsMetric>&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics = std::move(value); }
-
-    /**
-     * <p> List of variables' metrics. </p>
-     */
     inline AggregatedVariablesImportanceMetrics& WithLogOddsMetrics(const Aws::Vector<AggregatedLogOddsMetric>& value) { SetLogOddsMetrics(value); return *this;}
-
-    /**
-     * <p> List of variables' metrics. </p>
-     */
     inline AggregatedVariablesImportanceMetrics& WithLogOddsMetrics(Aws::Vector<AggregatedLogOddsMetric>&& value) { SetLogOddsMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p> List of variables' metrics. </p>
-     */
     inline AggregatedVariablesImportanceMetrics& AddLogOddsMetrics(const AggregatedLogOddsMetric& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics.push_back(value); return *this; }
-
-    /**
-     * <p> List of variables' metrics. </p>
-     */
     inline AggregatedVariablesImportanceMetrics& AddLogOddsMetrics(AggregatedLogOddsMetric&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AggregatedLogOddsMetric> m_logOddsMetrics;

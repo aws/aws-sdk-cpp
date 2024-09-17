@@ -38,34 +38,34 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The configuration for the maximum number of ECPUs the cache can consume per
      * second.</p>
      */
     inline int GetMaximum() const{ return m_maximum; }
-
-    /**
-     * <p>The configuration for the maximum number of ECPUs the cache can consume per
-     * second.</p>
-     */
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-
-    /**
-     * <p>The configuration for the maximum number of ECPUs the cache can consume per
-     * second.</p>
-     */
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
-
-    /**
-     * <p>The configuration for the maximum number of ECPUs the cache can consume per
-     * second.</p>
-     */
     inline ECPUPerSecond& WithMaximum(int value) { SetMaximum(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The configuration for the minimum number of ECPUs the cache should be able
+     * consume per second.</p>
+     */
+    inline int GetMinimum() const{ return m_minimum; }
+    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
+    inline void SetMinimum(int value) { m_minimumHasBeenSet = true; m_minimum = value; }
+    inline ECPUPerSecond& WithMinimum(int value) { SetMinimum(value); return *this;}
+    ///@}
   private:
 
     int m_maximum;
     bool m_maximumHasBeenSet = false;
+
+    int m_minimum;
+    bool m_minimumHasBeenSet = false;
   };
 
 } // namespace Model

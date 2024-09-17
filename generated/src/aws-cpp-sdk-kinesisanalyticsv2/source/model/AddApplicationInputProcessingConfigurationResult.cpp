@@ -22,8 +22,8 @@ AddApplicationInputProcessingConfigurationResult::AddApplicationInputProcessingC
 {
 }
 
-AddApplicationInputProcessingConfigurationResult::AddApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+AddApplicationInputProcessingConfigurationResult::AddApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddApplicationInputProcessingConfigurationResult()
 {
   *this = result;
 }

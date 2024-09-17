@@ -27,12 +27,8 @@ CreateExperimentTemplateActionInput::CreateExperimentTemplateActionInput() :
 {
 }
 
-CreateExperimentTemplateActionInput::CreateExperimentTemplateActionInput(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_startAfterHasBeenSet(false)
+CreateExperimentTemplateActionInput::CreateExperimentTemplateActionInput(JsonView jsonValue)
+  : CreateExperimentTemplateActionInput()
 {
   *this = jsonValue;
 }

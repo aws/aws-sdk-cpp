@@ -32,46 +32,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the insight to delete.</p>
      */
     inline const Aws::String& GetInsightArn() const{ return m_insightArn; }
-
-    /**
-     * <p>The ARN of the insight to delete.</p>
-     */
     inline bool InsightArnHasBeenSet() const { return m_insightArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the insight to delete.</p>
-     */
     inline void SetInsightArn(const Aws::String& value) { m_insightArnHasBeenSet = true; m_insightArn = value; }
-
-    /**
-     * <p>The ARN of the insight to delete.</p>
-     */
     inline void SetInsightArn(Aws::String&& value) { m_insightArnHasBeenSet = true; m_insightArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the insight to delete.</p>
-     */
     inline void SetInsightArn(const char* value) { m_insightArnHasBeenSet = true; m_insightArn.assign(value); }
-
-    /**
-     * <p>The ARN of the insight to delete.</p>
-     */
     inline DeleteInsightRequest& WithInsightArn(const Aws::String& value) { SetInsightArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the insight to delete.</p>
-     */
     inline DeleteInsightRequest& WithInsightArn(Aws::String&& value) { SetInsightArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the insight to delete.</p>
-     */
     inline DeleteInsightRequest& WithInsightArn(const char* value) { SetInsightArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_insightArn;

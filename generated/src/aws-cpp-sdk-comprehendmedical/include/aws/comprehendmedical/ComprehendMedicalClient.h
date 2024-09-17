@@ -367,13 +367,13 @@ namespace ComprehendMedical
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListEntitiesDetectionV2Jobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEntitiesDetectionV2JobsOutcome ListEntitiesDetectionV2Jobs(const Model::ListEntitiesDetectionV2JobsRequest& request) const;
+        virtual Model::ListEntitiesDetectionV2JobsOutcome ListEntitiesDetectionV2Jobs(const Model::ListEntitiesDetectionV2JobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEntitiesDetectionV2Jobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEntitiesDetectionV2JobsRequestT = Model::ListEntitiesDetectionV2JobsRequest>
-        Model::ListEntitiesDetectionV2JobsOutcomeCallable ListEntitiesDetectionV2JobsCallable(const ListEntitiesDetectionV2JobsRequestT& request) const
+        Model::ListEntitiesDetectionV2JobsOutcomeCallable ListEntitiesDetectionV2JobsCallable(const ListEntitiesDetectionV2JobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendMedicalClient::ListEntitiesDetectionV2Jobs, request);
         }
@@ -382,7 +382,7 @@ namespace ComprehendMedical
          * An Async wrapper for ListEntitiesDetectionV2Jobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEntitiesDetectionV2JobsRequestT = Model::ListEntitiesDetectionV2JobsRequest>
-        void ListEntitiesDetectionV2JobsAsync(const ListEntitiesDetectionV2JobsRequestT& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEntitiesDetectionV2JobsAsync(const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEntitiesDetectionV2JobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendMedicalClient::ListEntitiesDetectionV2Jobs, request, handler, context);
         }
@@ -393,13 +393,13 @@ namespace ComprehendMedical
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListICD10CMInferenceJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListICD10CMInferenceJobsOutcome ListICD10CMInferenceJobs(const Model::ListICD10CMInferenceJobsRequest& request) const;
+        virtual Model::ListICD10CMInferenceJobsOutcome ListICD10CMInferenceJobs(const Model::ListICD10CMInferenceJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListICD10CMInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListICD10CMInferenceJobsRequestT = Model::ListICD10CMInferenceJobsRequest>
-        Model::ListICD10CMInferenceJobsOutcomeCallable ListICD10CMInferenceJobsCallable(const ListICD10CMInferenceJobsRequestT& request) const
+        Model::ListICD10CMInferenceJobsOutcomeCallable ListICD10CMInferenceJobsCallable(const ListICD10CMInferenceJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendMedicalClient::ListICD10CMInferenceJobs, request);
         }
@@ -408,7 +408,7 @@ namespace ComprehendMedical
          * An Async wrapper for ListICD10CMInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListICD10CMInferenceJobsRequestT = Model::ListICD10CMInferenceJobsRequest>
-        void ListICD10CMInferenceJobsAsync(const ListICD10CMInferenceJobsRequestT& request, const ListICD10CMInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListICD10CMInferenceJobsAsync(const ListICD10CMInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListICD10CMInferenceJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendMedicalClient::ListICD10CMInferenceJobs, request, handler, context);
         }
@@ -419,13 +419,13 @@ namespace ComprehendMedical
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListPHIDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPHIDetectionJobsOutcome ListPHIDetectionJobs(const Model::ListPHIDetectionJobsRequest& request) const;
+        virtual Model::ListPHIDetectionJobsOutcome ListPHIDetectionJobs(const Model::ListPHIDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPHIDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPHIDetectionJobsRequestT = Model::ListPHIDetectionJobsRequest>
-        Model::ListPHIDetectionJobsOutcomeCallable ListPHIDetectionJobsCallable(const ListPHIDetectionJobsRequestT& request) const
+        Model::ListPHIDetectionJobsOutcomeCallable ListPHIDetectionJobsCallable(const ListPHIDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendMedicalClient::ListPHIDetectionJobs, request);
         }
@@ -434,7 +434,7 @@ namespace ComprehendMedical
          * An Async wrapper for ListPHIDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPHIDetectionJobsRequestT = Model::ListPHIDetectionJobsRequest>
-        void ListPHIDetectionJobsAsync(const ListPHIDetectionJobsRequestT& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPHIDetectionJobsAsync(const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPHIDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendMedicalClient::ListPHIDetectionJobs, request, handler, context);
         }
@@ -445,13 +445,13 @@ namespace ComprehendMedical
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRxNormInferenceJobsOutcome ListRxNormInferenceJobs(const Model::ListRxNormInferenceJobsRequest& request) const;
+        virtual Model::ListRxNormInferenceJobsOutcome ListRxNormInferenceJobs(const Model::ListRxNormInferenceJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRxNormInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRxNormInferenceJobsRequestT = Model::ListRxNormInferenceJobsRequest>
-        Model::ListRxNormInferenceJobsOutcomeCallable ListRxNormInferenceJobsCallable(const ListRxNormInferenceJobsRequestT& request) const
+        Model::ListRxNormInferenceJobsOutcomeCallable ListRxNormInferenceJobsCallable(const ListRxNormInferenceJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendMedicalClient::ListRxNormInferenceJobs, request);
         }
@@ -460,7 +460,7 @@ namespace ComprehendMedical
          * An Async wrapper for ListRxNormInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRxNormInferenceJobsRequestT = Model::ListRxNormInferenceJobsRequest>
-        void ListRxNormInferenceJobsAsync(const ListRxNormInferenceJobsRequestT& request, const ListRxNormInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRxNormInferenceJobsAsync(const ListRxNormInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRxNormInferenceJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendMedicalClient::ListRxNormInferenceJobs, request, handler, context);
         }
@@ -471,13 +471,13 @@ namespace ComprehendMedical
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListSNOMEDCTInferenceJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSNOMEDCTInferenceJobsOutcome ListSNOMEDCTInferenceJobs(const Model::ListSNOMEDCTInferenceJobsRequest& request) const;
+        virtual Model::ListSNOMEDCTInferenceJobsOutcome ListSNOMEDCTInferenceJobs(const Model::ListSNOMEDCTInferenceJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSNOMEDCTInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSNOMEDCTInferenceJobsRequestT = Model::ListSNOMEDCTInferenceJobsRequest>
-        Model::ListSNOMEDCTInferenceJobsOutcomeCallable ListSNOMEDCTInferenceJobsCallable(const ListSNOMEDCTInferenceJobsRequestT& request) const
+        Model::ListSNOMEDCTInferenceJobsOutcomeCallable ListSNOMEDCTInferenceJobsCallable(const ListSNOMEDCTInferenceJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendMedicalClient::ListSNOMEDCTInferenceJobs, request);
         }
@@ -486,7 +486,7 @@ namespace ComprehendMedical
          * An Async wrapper for ListSNOMEDCTInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSNOMEDCTInferenceJobsRequestT = Model::ListSNOMEDCTInferenceJobsRequest>
-        void ListSNOMEDCTInferenceJobsAsync(const ListSNOMEDCTInferenceJobsRequestT& request, const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSNOMEDCTInferenceJobsAsync(const ListSNOMEDCTInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSNOMEDCTInferenceJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendMedicalClient::ListSNOMEDCTInferenceJobs, request, handler, context);
         }
@@ -763,7 +763,6 @@ namespace ComprehendMedical
       void init(const ComprehendMedicalClientConfiguration& clientConfiguration);
 
       ComprehendMedicalClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ComprehendMedicalEndpointProviderBase> m_endpointProvider;
   };
 

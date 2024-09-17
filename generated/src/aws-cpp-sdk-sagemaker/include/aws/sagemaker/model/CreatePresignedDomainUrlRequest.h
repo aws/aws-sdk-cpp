@@ -34,175 +34,70 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The domain ID.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the UserProfile to sign-in as.</p>
      */
     inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
-
-    /**
-     * <p>The name of the UserProfile to sign-in as.</p>
-     */
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
-
-    /**
-     * <p>The name of the UserProfile to sign-in as.</p>
-     */
     inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
-
-    /**
-     * <p>The name of the UserProfile to sign-in as.</p>
-     */
     inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
-
-    /**
-     * <p>The name of the UserProfile to sign-in as.</p>
-     */
     inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
-
-    /**
-     * <p>The name of the UserProfile to sign-in as.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
-
-    /**
-     * <p>The name of the UserProfile to sign-in as.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the UserProfile to sign-in as.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline int GetSessionExpirationDurationInSeconds() const{ return m_sessionExpirationDurationInSeconds; }
-
-    /**
-     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-     */
     inline bool SessionExpirationDurationInSecondsHasBeenSet() const { return m_sessionExpirationDurationInSecondsHasBeenSet; }
-
-    /**
-     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-     */
     inline void SetSessionExpirationDurationInSeconds(int value) { m_sessionExpirationDurationInSecondsHasBeenSet = true; m_sessionExpirationDurationInSeconds = value; }
-
-    /**
-     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithSessionExpirationDurationInSeconds(int value) { SetSessionExpirationDurationInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of seconds until the pre-signed URL expires. This value defaults
      * to 300.</p>
      */
     inline int GetExpiresInSeconds() const{ return m_expiresInSeconds; }
-
-    /**
-     * <p>The number of seconds until the pre-signed URL expires. This value defaults
-     * to 300.</p>
-     */
     inline bool ExpiresInSecondsHasBeenSet() const { return m_expiresInSecondsHasBeenSet; }
-
-    /**
-     * <p>The number of seconds until the pre-signed URL expires. This value defaults
-     * to 300.</p>
-     */
     inline void SetExpiresInSeconds(int value) { m_expiresInSecondsHasBeenSet = true; m_expiresInSeconds = value; }
-
-    /**
-     * <p>The number of seconds until the pre-signed URL expires. This value defaults
-     * to 300.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the space.</p>
      */
     inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline CreatePresignedDomainUrlRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The landing page that the user is directed to when accessing the presigned
      * URL. Using this value, users can access Studio or Studio Classic, even if it is
@@ -220,133 +115,14 @@ namespace Model
      * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline const Aws::String& GetLandingUri() const{ return m_landingUri; }
-
-    /**
-     * <p>The landing page that the user is directed to when accessing the presigned
-     * URL. Using this value, users can access Studio or Studio Classic, even if it is
-     * not the default experience for the domain. The supported values are:</p> <ul>
-     * <li> <p> <code>studio::relative/path</code>: Directs users to the relative path
-     * in Studio.</p> </li> <li> <p> <code>app:JupyterServer:relative/path</code>:
-     * Directs users to the relative path in the Studio Classic application.</p> </li>
-     * <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the
-     * relative path in the JupyterLab application.</p> </li> <li> <p>
-     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
-     * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
-     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
-     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
-     * users to the relative path in the Canvas application.</p> </li> </ul>
-     */
     inline bool LandingUriHasBeenSet() const { return m_landingUriHasBeenSet; }
-
-    /**
-     * <p>The landing page that the user is directed to when accessing the presigned
-     * URL. Using this value, users can access Studio or Studio Classic, even if it is
-     * not the default experience for the domain. The supported values are:</p> <ul>
-     * <li> <p> <code>studio::relative/path</code>: Directs users to the relative path
-     * in Studio.</p> </li> <li> <p> <code>app:JupyterServer:relative/path</code>:
-     * Directs users to the relative path in the Studio Classic application.</p> </li>
-     * <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the
-     * relative path in the JupyterLab application.</p> </li> <li> <p>
-     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
-     * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
-     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
-     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
-     * users to the relative path in the Canvas application.</p> </li> </ul>
-     */
     inline void SetLandingUri(const Aws::String& value) { m_landingUriHasBeenSet = true; m_landingUri = value; }
-
-    /**
-     * <p>The landing page that the user is directed to when accessing the presigned
-     * URL. Using this value, users can access Studio or Studio Classic, even if it is
-     * not the default experience for the domain. The supported values are:</p> <ul>
-     * <li> <p> <code>studio::relative/path</code>: Directs users to the relative path
-     * in Studio.</p> </li> <li> <p> <code>app:JupyterServer:relative/path</code>:
-     * Directs users to the relative path in the Studio Classic application.</p> </li>
-     * <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the
-     * relative path in the JupyterLab application.</p> </li> <li> <p>
-     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
-     * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
-     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
-     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
-     * users to the relative path in the Canvas application.</p> </li> </ul>
-     */
     inline void SetLandingUri(Aws::String&& value) { m_landingUriHasBeenSet = true; m_landingUri = std::move(value); }
-
-    /**
-     * <p>The landing page that the user is directed to when accessing the presigned
-     * URL. Using this value, users can access Studio or Studio Classic, even if it is
-     * not the default experience for the domain. The supported values are:</p> <ul>
-     * <li> <p> <code>studio::relative/path</code>: Directs users to the relative path
-     * in Studio.</p> </li> <li> <p> <code>app:JupyterServer:relative/path</code>:
-     * Directs users to the relative path in the Studio Classic application.</p> </li>
-     * <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the
-     * relative path in the JupyterLab application.</p> </li> <li> <p>
-     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
-     * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
-     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
-     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
-     * users to the relative path in the Canvas application.</p> </li> </ul>
-     */
     inline void SetLandingUri(const char* value) { m_landingUriHasBeenSet = true; m_landingUri.assign(value); }
-
-    /**
-     * <p>The landing page that the user is directed to when accessing the presigned
-     * URL. Using this value, users can access Studio or Studio Classic, even if it is
-     * not the default experience for the domain. The supported values are:</p> <ul>
-     * <li> <p> <code>studio::relative/path</code>: Directs users to the relative path
-     * in Studio.</p> </li> <li> <p> <code>app:JupyterServer:relative/path</code>:
-     * Directs users to the relative path in the Studio Classic application.</p> </li>
-     * <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the
-     * relative path in the JupyterLab application.</p> </li> <li> <p>
-     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
-     * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
-     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
-     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
-     * users to the relative path in the Canvas application.</p> </li> </ul>
-     */
     inline CreatePresignedDomainUrlRequest& WithLandingUri(const Aws::String& value) { SetLandingUri(value); return *this;}
-
-    /**
-     * <p>The landing page that the user is directed to when accessing the presigned
-     * URL. Using this value, users can access Studio or Studio Classic, even if it is
-     * not the default experience for the domain. The supported values are:</p> <ul>
-     * <li> <p> <code>studio::relative/path</code>: Directs users to the relative path
-     * in Studio.</p> </li> <li> <p> <code>app:JupyterServer:relative/path</code>:
-     * Directs users to the relative path in the Studio Classic application.</p> </li>
-     * <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the
-     * relative path in the JupyterLab application.</p> </li> <li> <p>
-     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
-     * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
-     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
-     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
-     * users to the relative path in the Canvas application.</p> </li> </ul>
-     */
     inline CreatePresignedDomainUrlRequest& WithLandingUri(Aws::String&& value) { SetLandingUri(std::move(value)); return *this;}
-
-    /**
-     * <p>The landing page that the user is directed to when accessing the presigned
-     * URL. Using this value, users can access Studio or Studio Classic, even if it is
-     * not the default experience for the domain. The supported values are:</p> <ul>
-     * <li> <p> <code>studio::relative/path</code>: Directs users to the relative path
-     * in Studio.</p> </li> <li> <p> <code>app:JupyterServer:relative/path</code>:
-     * Directs users to the relative path in the Studio Classic application.</p> </li>
-     * <li> <p> <code>app:JupyterLab:relative/path</code>: Directs users to the
-     * relative path in the JupyterLab application.</p> </li> <li> <p>
-     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
-     * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
-     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
-     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
-     * users to the relative path in the Canvas application.</p> </li> </ul>
-     */
     inline CreatePresignedDomainUrlRequest& WithLandingUri(const char* value) { SetLandingUri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainId;

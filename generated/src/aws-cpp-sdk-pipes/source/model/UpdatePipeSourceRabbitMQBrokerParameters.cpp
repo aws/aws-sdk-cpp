@@ -19,38 +19,34 @@ namespace Model
 {
 
 UpdatePipeSourceRabbitMQBrokerParameters::UpdatePipeSourceRabbitMQBrokerParameters() : 
+    m_credentialsHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false)
 {
 }
 
-UpdatePipeSourceRabbitMQBrokerParameters::UpdatePipeSourceRabbitMQBrokerParameters(JsonView jsonValue) : 
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
+UpdatePipeSourceRabbitMQBrokerParameters::UpdatePipeSourceRabbitMQBrokerParameters(JsonView jsonValue)
+  : UpdatePipeSourceRabbitMQBrokerParameters()
 {
   *this = jsonValue;
 }
 
 UpdatePipeSourceRabbitMQBrokerParameters& UpdatePipeSourceRabbitMQBrokerParameters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("BatchSize"))
-  {
-    m_batchSize = jsonValue.GetInteger("BatchSize");
-
-    m_batchSizeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
 
     m_credentialsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BatchSize"))
+  {
+    m_batchSize = jsonValue.GetInteger("BatchSize");
+
+    m_batchSizeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
@@ -67,15 +63,15 @@ JsonValue UpdatePipeSourceRabbitMQBrokerParameters::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_batchSizeHasBeenSet)
-  {
-   payload.WithInteger("BatchSize", m_batchSize);
-
-  }
-
   if(m_credentialsHasBeenSet)
   {
    payload.WithObject("Credentials", m_credentials.Jsonize());
+
+  }
+
+  if(m_batchSizeHasBeenSet)
+  {
+   payload.WithInteger("BatchSize", m_batchSize);
 
   }
 

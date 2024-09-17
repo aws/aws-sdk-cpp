@@ -25,10 +25,8 @@ StepExecutionFilter::StepExecutionFilter() :
 {
 }
 
-StepExecutionFilter::StepExecutionFilter(JsonView jsonValue) : 
-    m_key(StepExecutionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+StepExecutionFilter::StepExecutionFilter(JsonView jsonValue)
+  : StepExecutionFilter()
 {
   *this = jsonValue;
 }

@@ -27,10 +27,8 @@ InstanceStatusSummary::InstanceStatusSummary() :
 {
 }
 
-InstanceStatusSummary::InstanceStatusSummary(const XmlNode& xmlNode) : 
-    m_detailsHasBeenSet(false),
-    m_status(SummaryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+InstanceStatusSummary::InstanceStatusSummary(const XmlNode& xmlNode)
+  : InstanceStatusSummary()
 {
   *this = xmlNode;
 }

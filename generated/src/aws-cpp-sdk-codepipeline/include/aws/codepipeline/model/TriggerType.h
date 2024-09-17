@@ -22,7 +22,9 @@ namespace Model
     Webhook,
     CloudWatchEvent,
     PutActionRevision,
-    WebhookV2
+    WebhookV2,
+    ManualRollback,
+    AutomatedRollback
   };
 
 namespace TriggerTypeMapper

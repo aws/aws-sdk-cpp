@@ -19,26 +19,70 @@ namespace Model
 {
 
 FindingStatistics::FindingStatistics() : 
-    m_countBySeverityHasBeenSet(false)
+    m_groupedByAccountHasBeenSet(false),
+    m_groupedByDateHasBeenSet(false),
+    m_groupedByFindingTypeHasBeenSet(false),
+    m_groupedByResourceHasBeenSet(false),
+    m_groupedBySeverityHasBeenSet(false)
 {
 }
 
-FindingStatistics::FindingStatistics(JsonView jsonValue) : 
-    m_countBySeverityHasBeenSet(false)
+FindingStatistics::FindingStatistics(JsonView jsonValue)
+  : FindingStatistics()
 {
   *this = jsonValue;
 }
 
 FindingStatistics& FindingStatistics::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("countBySeverity"))
+  if(jsonValue.ValueExists("groupedByAccount"))
   {
-    Aws::Map<Aws::String, JsonView> countBySeverityJsonMap = jsonValue.GetObject("countBySeverity").GetAllObjects();
-    for(auto& countBySeverityItem : countBySeverityJsonMap)
+    Aws::Utils::Array<JsonView> groupedByAccountJsonList = jsonValue.GetArray("groupedByAccount");
+    for(unsigned groupedByAccountIndex = 0; groupedByAccountIndex < groupedByAccountJsonList.GetLength(); ++groupedByAccountIndex)
     {
-      m_countBySeverity[countBySeverityItem.first] = countBySeverityItem.second.AsInteger();
+      m_groupedByAccount.push_back(groupedByAccountJsonList[groupedByAccountIndex].AsObject());
     }
-    m_countBySeverityHasBeenSet = true;
+    m_groupedByAccountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("groupedByDate"))
+  {
+    Aws::Utils::Array<JsonView> groupedByDateJsonList = jsonValue.GetArray("groupedByDate");
+    for(unsigned groupedByDateIndex = 0; groupedByDateIndex < groupedByDateJsonList.GetLength(); ++groupedByDateIndex)
+    {
+      m_groupedByDate.push_back(groupedByDateJsonList[groupedByDateIndex].AsObject());
+    }
+    m_groupedByDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("groupedByFindingType"))
+  {
+    Aws::Utils::Array<JsonView> groupedByFindingTypeJsonList = jsonValue.GetArray("groupedByFindingType");
+    for(unsigned groupedByFindingTypeIndex = 0; groupedByFindingTypeIndex < groupedByFindingTypeJsonList.GetLength(); ++groupedByFindingTypeIndex)
+    {
+      m_groupedByFindingType.push_back(groupedByFindingTypeJsonList[groupedByFindingTypeIndex].AsObject());
+    }
+    m_groupedByFindingTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("groupedByResource"))
+  {
+    Aws::Utils::Array<JsonView> groupedByResourceJsonList = jsonValue.GetArray("groupedByResource");
+    for(unsigned groupedByResourceIndex = 0; groupedByResourceIndex < groupedByResourceJsonList.GetLength(); ++groupedByResourceIndex)
+    {
+      m_groupedByResource.push_back(groupedByResourceJsonList[groupedByResourceIndex].AsObject());
+    }
+    m_groupedByResourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("groupedBySeverity"))
+  {
+    Aws::Utils::Array<JsonView> groupedBySeverityJsonList = jsonValue.GetArray("groupedBySeverity");
+    for(unsigned groupedBySeverityIndex = 0; groupedBySeverityIndex < groupedBySeverityJsonList.GetLength(); ++groupedBySeverityIndex)
+    {
+      m_groupedBySeverity.push_back(groupedBySeverityJsonList[groupedBySeverityIndex].AsObject());
+    }
+    m_groupedBySeverityHasBeenSet = true;
   }
 
   return *this;
@@ -48,14 +92,58 @@ JsonValue FindingStatistics::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_countBySeverityHasBeenSet)
+  if(m_groupedByAccountHasBeenSet)
   {
-   JsonValue countBySeverityJsonMap;
-   for(auto& countBySeverityItem : m_countBySeverity)
+   Aws::Utils::Array<JsonValue> groupedByAccountJsonList(m_groupedByAccount.size());
+   for(unsigned groupedByAccountIndex = 0; groupedByAccountIndex < groupedByAccountJsonList.GetLength(); ++groupedByAccountIndex)
    {
-     countBySeverityJsonMap.WithInteger(countBySeverityItem.first, countBySeverityItem.second);
+     groupedByAccountJsonList[groupedByAccountIndex].AsObject(m_groupedByAccount[groupedByAccountIndex].Jsonize());
    }
-   payload.WithObject("countBySeverity", std::move(countBySeverityJsonMap));
+   payload.WithArray("groupedByAccount", std::move(groupedByAccountJsonList));
+
+  }
+
+  if(m_groupedByDateHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> groupedByDateJsonList(m_groupedByDate.size());
+   for(unsigned groupedByDateIndex = 0; groupedByDateIndex < groupedByDateJsonList.GetLength(); ++groupedByDateIndex)
+   {
+     groupedByDateJsonList[groupedByDateIndex].AsObject(m_groupedByDate[groupedByDateIndex].Jsonize());
+   }
+   payload.WithArray("groupedByDate", std::move(groupedByDateJsonList));
+
+  }
+
+  if(m_groupedByFindingTypeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> groupedByFindingTypeJsonList(m_groupedByFindingType.size());
+   for(unsigned groupedByFindingTypeIndex = 0; groupedByFindingTypeIndex < groupedByFindingTypeJsonList.GetLength(); ++groupedByFindingTypeIndex)
+   {
+     groupedByFindingTypeJsonList[groupedByFindingTypeIndex].AsObject(m_groupedByFindingType[groupedByFindingTypeIndex].Jsonize());
+   }
+   payload.WithArray("groupedByFindingType", std::move(groupedByFindingTypeJsonList));
+
+  }
+
+  if(m_groupedByResourceHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> groupedByResourceJsonList(m_groupedByResource.size());
+   for(unsigned groupedByResourceIndex = 0; groupedByResourceIndex < groupedByResourceJsonList.GetLength(); ++groupedByResourceIndex)
+   {
+     groupedByResourceJsonList[groupedByResourceIndex].AsObject(m_groupedByResource[groupedByResourceIndex].Jsonize());
+   }
+   payload.WithArray("groupedByResource", std::move(groupedByResourceJsonList));
+
+  }
+
+  if(m_groupedBySeverityHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> groupedBySeverityJsonList(m_groupedBySeverity.size());
+   for(unsigned groupedBySeverityIndex = 0; groupedBySeverityIndex < groupedBySeverityJsonList.GetLength(); ++groupedBySeverityIndex)
+   {
+     groupedBySeverityJsonList[groupedBySeverityIndex].AsObject(m_groupedBySeverity[groupedBySeverityIndex].Jsonize());
+   }
+   payload.WithArray("groupedBySeverity", std::move(groupedBySeverityJsonList));
 
   }
 

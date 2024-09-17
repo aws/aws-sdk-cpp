@@ -39,95 +39,34 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The email identity.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline DeleteEmailIdentityPolicyRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline DeleteEmailIdentityPolicyRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline DeleteEmailIdentityPolicyRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
      * and can only include alphanumeric characters, dashes, and underscores.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline DeleteEmailIdentityPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline DeleteEmailIdentityPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline DeleteEmailIdentityPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailIdentity;

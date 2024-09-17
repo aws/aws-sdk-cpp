@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using OutpostsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OutpostsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

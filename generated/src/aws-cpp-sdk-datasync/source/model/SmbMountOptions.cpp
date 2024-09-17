@@ -24,9 +24,8 @@ SmbMountOptions::SmbMountOptions() :
 {
 }
 
-SmbMountOptions::SmbMountOptions(JsonView jsonValue) : 
-    m_version(SmbVersion::NOT_SET),
-    m_versionHasBeenSet(false)
+SmbMountOptions::SmbMountOptions(JsonView jsonValue)
+  : SmbMountOptions()
 {
   *this = jsonValue;
 }

@@ -31,16 +31,8 @@ GridViewConfiguration::GridViewConfiguration() :
 {
 }
 
-GridViewConfiguration::GridViewConfiguration(JsonView jsonValue) : 
-    m_contentShareLayout(ContentShareLayoutOption::NOT_SET),
-    m_contentShareLayoutHasBeenSet(false),
-    m_presenterOnlyConfigurationHasBeenSet(false),
-    m_activeSpeakerOnlyConfigurationHasBeenSet(false),
-    m_horizontalLayoutConfigurationHasBeenSet(false),
-    m_verticalLayoutConfigurationHasBeenSet(false),
-    m_videoAttributeHasBeenSet(false),
-    m_canvasOrientation(CanvasOrientation::NOT_SET),
-    m_canvasOrientationHasBeenSet(false)
+GridViewConfiguration::GridViewConfiguration(JsonView jsonValue)
+  : GridViewConfiguration()
 {
   *this = jsonValue;
 }

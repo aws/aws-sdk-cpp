@@ -23,8 +23,8 @@ CatalogConfiguration::CatalogConfiguration() :
 {
 }
 
-CatalogConfiguration::CatalogConfiguration(JsonView jsonValue) : 
-    m_glueDataCatalogConfigurationHasBeenSet(false)
+CatalogConfiguration::CatalogConfiguration(JsonView jsonValue)
+  : CatalogConfiguration()
 {
   *this = jsonValue;
 }

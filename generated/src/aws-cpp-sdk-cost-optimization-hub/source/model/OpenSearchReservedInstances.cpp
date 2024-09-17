@@ -24,9 +24,8 @@ OpenSearchReservedInstances::OpenSearchReservedInstances() :
 {
 }
 
-OpenSearchReservedInstances::OpenSearchReservedInstances(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
+OpenSearchReservedInstances::OpenSearchReservedInstances(JsonView jsonValue)
+  : OpenSearchReservedInstances()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterVal
 {
 }
 
-MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterValueExpression(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterValueExpression(JsonView jsonValue)
+  : MaintenanceWindowTaskParameterValueExpression()
 {
   *this = jsonValue;
 }

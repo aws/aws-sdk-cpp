@@ -24,9 +24,8 @@ UpdateBackendAuthIdentityPoolConfig::UpdateBackendAuthIdentityPoolConfig() :
 {
 }
 
-UpdateBackendAuthIdentityPoolConfig::UpdateBackendAuthIdentityPoolConfig(JsonView jsonValue) : 
-    m_unauthenticatedLogin(false),
-    m_unauthenticatedLoginHasBeenSet(false)
+UpdateBackendAuthIdentityPoolConfig::UpdateBackendAuthIdentityPoolConfig(JsonView jsonValue)
+  : UpdateBackendAuthIdentityPoolConfig()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ MonitoringAlertHistorySummary::MonitoringAlertHistorySummary() :
 {
 }
 
-MonitoringAlertHistorySummary::MonitoringAlertHistorySummary(JsonView jsonValue) : 
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringAlertNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_alertStatus(MonitoringAlertStatus::NOT_SET),
-    m_alertStatusHasBeenSet(false)
+MonitoringAlertHistorySummary::MonitoringAlertHistorySummary(JsonView jsonValue)
+  : MonitoringAlertHistorySummary()
 {
   *this = jsonValue;
 }

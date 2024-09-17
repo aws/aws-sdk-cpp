@@ -36,95 +36,34 @@ namespace Model
     AWS_BCMDATAEXPORTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The unique identifier for the resource.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the resource.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The unique identifier for the resource.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the resource.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The unique identifier for the resource.</p>
-     */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the resource.</p>
-     */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the resource.</p>
-     */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to associate with the resource. Each tag consists of a key and a
      * value, and each key must be unique for the resource.</p>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
-
-    /**
-     * <p>The tags to associate with the resource. Each tag consists of a key and a
-     * value, and each key must be unique for the resource.</p>
-     */
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-
-    /**
-     * <p>The tags to associate with the resource. Each tag consists of a key and a
-     * value, and each key must be unique for the resource.</p>
-     */
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-
-    /**
-     * <p>The tags to associate with the resource. Each tag consists of a key and a
-     * value, and each key must be unique for the resource.</p>
-     */
     inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-
-    /**
-     * <p>The tags to associate with the resource. Each tag consists of a key and a
-     * value, and each key must be unique for the resource.</p>
-     */
     inline TagResourceRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-
-    /**
-     * <p>The tags to associate with the resource. Each tag consists of a key and a
-     * value, and each key must be unique for the resource.</p>
-     */
     inline TagResourceRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to associate with the resource. Each tag consists of a key and a
-     * value, and each key must be unique for the resource.</p>
-     */
     inline TagResourceRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to associate with the resource. Each tag consists of a key and a
-     * value, and each key must be unique for the resource.</p>
-     */
     inline TagResourceRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

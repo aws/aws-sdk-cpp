@@ -24,9 +24,8 @@ BatchListObjectPoliciesResponse::BatchListObjectPoliciesResponse() :
 {
 }
 
-BatchListObjectPoliciesResponse::BatchListObjectPoliciesResponse(JsonView jsonValue) : 
-    m_attachedPolicyIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+BatchListObjectPoliciesResponse::BatchListObjectPoliciesResponse(JsonView jsonValue)
+  : BatchListObjectPoliciesResponse()
 {
   *this = jsonValue;
 }

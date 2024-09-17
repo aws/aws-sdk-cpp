@@ -28,13 +28,8 @@ EvaluationFormSection::EvaluationFormSection() :
 {
 }
 
-EvaluationFormSection::EvaluationFormSection(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_refIdHasBeenSet(false),
-    m_instructionsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_weight(0.0),
-    m_weightHasBeenSet(false)
+EvaluationFormSection::EvaluationFormSection(JsonView jsonValue)
+  : EvaluationFormSection()
 {
   *this = jsonValue;
 }

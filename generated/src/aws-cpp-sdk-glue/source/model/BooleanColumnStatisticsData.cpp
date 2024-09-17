@@ -28,13 +28,8 @@ BooleanColumnStatisticsData::BooleanColumnStatisticsData() :
 {
 }
 
-BooleanColumnStatisticsData::BooleanColumnStatisticsData(JsonView jsonValue) : 
-    m_numberOfTrues(0),
-    m_numberOfTruesHasBeenSet(false),
-    m_numberOfFalses(0),
-    m_numberOfFalsesHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false)
+BooleanColumnStatisticsData::BooleanColumnStatisticsData(JsonView jsonValue)
+  : BooleanColumnStatisticsData()
 {
   *this = jsonValue;
 }

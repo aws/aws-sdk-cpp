@@ -34,27 +34,17 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The maximum number of CloudTrail channels to display on a single page. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> The maximum number of CloudTrail channels to display on a single page. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> The maximum number of CloudTrail channels to display on a single page. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> The maximum number of CloudTrail channels to display on a single page. </p>
-     */
     inline ListChannelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to get the next page of results after a previous API call.
      * This token must be passed in with the same parameters that were specified in the
@@ -63,70 +53,14 @@ namespace Model
      * same parameters.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * This token must be passed in with the same parameters that were specified in the
-     * original call. For example, if the original call specified an AttributeKey of
-     * 'Username' with a value of 'root', the call with NextToken should include those
-     * same parameters.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * This token must be passed in with the same parameters that were specified in the
-     * original call. For example, if the original call specified an AttributeKey of
-     * 'Username' with a value of 'root', the call with NextToken should include those
-     * same parameters.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * This token must be passed in with the same parameters that were specified in the
-     * original call. For example, if the original call specified an AttributeKey of
-     * 'Username' with a value of 'root', the call with NextToken should include those
-     * same parameters.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * This token must be passed in with the same parameters that were specified in the
-     * original call. For example, if the original call specified an AttributeKey of
-     * 'Username' with a value of 'root', the call with NextToken should include those
-     * same parameters.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * This token must be passed in with the same parameters that were specified in the
-     * original call. For example, if the original call specified an AttributeKey of
-     * 'Username' with a value of 'root', the call with NextToken should include those
-     * same parameters.</p>
-     */
     inline ListChannelsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * This token must be passed in with the same parameters that were specified in the
-     * original call. For example, if the original call specified an AttributeKey of
-     * 'Username' with a value of 'root', the call with NextToken should include those
-     * same parameters.</p>
-     */
     inline ListChannelsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to get the next page of results after a previous API call.
-     * This token must be passed in with the same parameters that were specified in the
-     * original call. For example, if the original call specified an AttributeKey of
-     * 'Username' with a value of 'root', the call with NextToken should include those
-     * same parameters.</p>
-     */
     inline ListChannelsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

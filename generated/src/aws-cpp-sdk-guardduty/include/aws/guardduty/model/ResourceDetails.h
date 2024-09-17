@@ -38,46 +38,19 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
+     * <p>Instance ARN that was scanned in the scan entry.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
-
-    /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
-     */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-
-    /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
-     */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-
-    /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
-     */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-
-    /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
-     */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-
-    /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
-     */
     inline ResourceDetails& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-
-    /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
-     */
     inline ResourceDetails& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>InstanceArn that was scanned in the scan entry.</p>
-     */
     inline ResourceDetails& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceArn;

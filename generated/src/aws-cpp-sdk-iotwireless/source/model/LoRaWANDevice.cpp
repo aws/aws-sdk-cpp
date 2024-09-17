@@ -30,15 +30,8 @@ LoRaWANDevice::LoRaWANDevice() :
 {
 }
 
-LoRaWANDevice::LoRaWANDevice(JsonView jsonValue) : 
-    m_devEuiHasBeenSet(false),
-    m_deviceProfileIdHasBeenSet(false),
-    m_serviceProfileIdHasBeenSet(false),
-    m_otaaV1_1HasBeenSet(false),
-    m_otaaV1_0_xHasBeenSet(false),
-    m_abpV1_1HasBeenSet(false),
-    m_abpV1_0_xHasBeenSet(false),
-    m_fPortsHasBeenSet(false)
+LoRaWANDevice::LoRaWANDevice(JsonView jsonValue)
+  : LoRaWANDevice()
 {
   *this = jsonValue;
 }

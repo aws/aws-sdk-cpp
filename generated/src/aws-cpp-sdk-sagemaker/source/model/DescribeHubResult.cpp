@@ -22,8 +22,8 @@ DescribeHubResult::DescribeHubResult() :
 {
 }
 
-DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hubStatus(HubStatus::NOT_SET)
+DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHubResult()
 {
   *this = result;
 }

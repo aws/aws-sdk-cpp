@@ -24,9 +24,8 @@ ExportErrorDetails::ExportErrorDetails() :
 {
 }
 
-ExportErrorDetails::ExportErrorDetails(JsonView jsonValue) : 
-    m_exportResultsHasBeenSet(false),
-    m_exportSourceImagesHasBeenSet(false)
+ExportErrorDetails::ExportErrorDetails(JsonView jsonValue)
+  : ExportErrorDetails()
 {
   *this = jsonValue;
 }

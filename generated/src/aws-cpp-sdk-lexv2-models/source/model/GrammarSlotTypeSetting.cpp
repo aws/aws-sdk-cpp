@@ -23,8 +23,8 @@ GrammarSlotTypeSetting::GrammarSlotTypeSetting() :
 {
 }
 
-GrammarSlotTypeSetting::GrammarSlotTypeSetting(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false)
+GrammarSlotTypeSetting::GrammarSlotTypeSetting(JsonView jsonValue)
+  : GrammarSlotTypeSetting()
 {
   *this = jsonValue;
 }

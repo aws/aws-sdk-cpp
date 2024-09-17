@@ -24,9 +24,8 @@ AccessPoliciesStatus::AccessPoliciesStatus() :
 {
 }
 
-AccessPoliciesStatus::AccessPoliciesStatus(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AccessPoliciesStatus::AccessPoliciesStatus(JsonView jsonValue)
+  : AccessPoliciesStatus()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ LiveTailSessionLogEvent::LiveTailSessionLogEvent() :
 {
 }
 
-LiveTailSessionLogEvent::LiveTailSessionLogEvent(JsonView jsonValue) : 
-    m_logStreamNameHasBeenSet(false),
-    m_logGroupIdentifierHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_ingestionTime(0),
-    m_ingestionTimeHasBeenSet(false)
+LiveTailSessionLogEvent::LiveTailSessionLogEvent(JsonView jsonValue)
+  : LiveTailSessionLogEvent()
 {
   *this = jsonValue;
 }

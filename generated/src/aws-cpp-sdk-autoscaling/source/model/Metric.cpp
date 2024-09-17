@@ -27,10 +27,8 @@ Metric::Metric() :
 {
 }
 
-Metric::Metric(const XmlNode& xmlNode) : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+Metric::Metric(const XmlNode& xmlNode)
+  : Metric()
 {
   *this = xmlNode;
 }

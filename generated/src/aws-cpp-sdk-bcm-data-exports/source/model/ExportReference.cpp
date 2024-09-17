@@ -25,10 +25,8 @@ ExportReference::ExportReference() :
 {
 }
 
-ExportReference::ExportReference(JsonView jsonValue) : 
-    m_exportArnHasBeenSet(false),
-    m_exportNameHasBeenSet(false),
-    m_exportStatusHasBeenSet(false)
+ExportReference::ExportReference(JsonView jsonValue)
+  : ExportReference()
 {
   *this = jsonValue;
 }

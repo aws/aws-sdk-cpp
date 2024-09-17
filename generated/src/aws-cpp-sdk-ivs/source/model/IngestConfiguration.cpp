@@ -19,32 +19,31 @@ namespace Model
 {
 
 IngestConfiguration::IngestConfiguration() : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false)
+    m_videoHasBeenSet(false),
+    m_audioHasBeenSet(false)
 {
 }
 
-IngestConfiguration::IngestConfiguration(JsonView jsonValue) : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false)
+IngestConfiguration::IngestConfiguration(JsonView jsonValue)
+  : IngestConfiguration()
 {
   *this = jsonValue;
 }
 
 IngestConfiguration& IngestConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("audio"))
-  {
-    m_audio = jsonValue.GetObject("audio");
-
-    m_audioHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("video"))
   {
     m_video = jsonValue.GetObject("video");
 
     m_videoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audio"))
+  {
+    m_audio = jsonValue.GetObject("audio");
+
+    m_audioHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +53,15 @@ JsonValue IngestConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_audioHasBeenSet)
-  {
-   payload.WithObject("audio", m_audio.Jsonize());
-
-  }
-
   if(m_videoHasBeenSet)
   {
    payload.WithObject("video", m_video.Jsonize());
+
+  }
+
+  if(m_audioHasBeenSet)
+  {
+   payload.WithObject("audio", m_audio.Jsonize());
 
   }
 

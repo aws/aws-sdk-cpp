@@ -24,9 +24,8 @@ SnapshotLimitExceededException::SnapshotLimitExceededException() :
 {
 }
 
-SnapshotLimitExceededException::SnapshotLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+SnapshotLimitExceededException::SnapshotLimitExceededException(JsonView jsonValue)
+  : SnapshotLimitExceededException()
 {
   *this = jsonValue;
 }

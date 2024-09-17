@@ -23,8 +23,8 @@ AuditContext::AuditContext() :
 {
 }
 
-AuditContext::AuditContext(JsonView jsonValue) : 
-    m_additionalAuditContextHasBeenSet(false)
+AuditContext::AuditContext(JsonView jsonValue)
+  : AuditContext()
 {
   *this = jsonValue;
 }

@@ -32,6 +32,8 @@
 #include <aws/pca-connector-ad/model/ListTagsForResourceResult.h>
 #include <aws/pca-connector-ad/model/ListTemplateGroupAccessControlEntriesResult.h>
 #include <aws/pca-connector-ad/model/ListTemplatesResult.h>
+#include <aws/pca-connector-ad/model/ListDirectoryRegistrationsRequest.h>
+#include <aws/pca-connector-ad/model/ListConnectorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PcaConnectorAdClient header */
 
@@ -66,7 +68,7 @@ namespace Aws
 
   namespace PcaConnectorAd
   {
-    using PcaConnectorAdClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PcaConnectorAdClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PcaConnectorAdEndpointProviderBase = Aws::PcaConnectorAd::Endpoint::PcaConnectorAdEndpointProviderBase;
     using PcaConnectorAdEndpointProvider = Aws::PcaConnectorAd::Endpoint::PcaConnectorAdEndpointProvider;
 

@@ -19,35 +19,23 @@ namespace Model
 {
 
 SearchForTextResult::SearchForTextResult() : 
+    m_placeHasBeenSet(false),
     m_distance(0.0),
     m_distanceHasBeenSet(false),
-    m_placeHasBeenSet(false),
-    m_placeIdHasBeenSet(false),
     m_relevance(0.0),
-    m_relevanceHasBeenSet(false)
+    m_relevanceHasBeenSet(false),
+    m_placeIdHasBeenSet(false)
 {
 }
 
-SearchForTextResult::SearchForTextResult(JsonView jsonValue) : 
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_placeHasBeenSet(false),
-    m_placeIdHasBeenSet(false),
-    m_relevance(0.0),
-    m_relevanceHasBeenSet(false)
+SearchForTextResult::SearchForTextResult(JsonView jsonValue)
+  : SearchForTextResult()
 {
   *this = jsonValue;
 }
 
 SearchForTextResult& SearchForTextResult::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Distance"))
-  {
-    m_distance = jsonValue.GetDouble("Distance");
-
-    m_distanceHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
@@ -55,11 +43,11 @@ SearchForTextResult& SearchForTextResult::operator =(JsonView jsonValue)
     m_placeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PlaceId"))
+  if(jsonValue.ValueExists("Distance"))
   {
-    m_placeId = jsonValue.GetString("PlaceId");
+    m_distance = jsonValue.GetDouble("Distance");
 
-    m_placeIdHasBeenSet = true;
+    m_distanceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Relevance"))
@@ -69,6 +57,13 @@ SearchForTextResult& SearchForTextResult::operator =(JsonView jsonValue)
     m_relevanceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PlaceId"))
+  {
+    m_placeId = jsonValue.GetString("PlaceId");
+
+    m_placeIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,27 +71,27 @@ JsonValue SearchForTextResult::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_distanceHasBeenSet)
-  {
-   payload.WithDouble("Distance", m_distance);
-
-  }
-
   if(m_placeHasBeenSet)
   {
    payload.WithObject("Place", m_place.Jsonize());
 
   }
 
-  if(m_placeIdHasBeenSet)
+  if(m_distanceHasBeenSet)
   {
-   payload.WithString("PlaceId", m_placeId);
+   payload.WithDouble("Distance", m_distance);
 
   }
 
   if(m_relevanceHasBeenSet)
   {
    payload.WithDouble("Relevance", m_relevance);
+
+  }
+
+  if(m_placeIdHasBeenSet)
+  {
+   payload.WithString("PlaceId", m_placeId);
 
   }
 

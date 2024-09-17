@@ -23,8 +23,8 @@ AwsCertificateManagerCertificateKeyUsage::AwsCertificateManagerCertificateKeyUsa
 {
 }
 
-AwsCertificateManagerCertificateKeyUsage::AwsCertificateManagerCertificateKeyUsage(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+AwsCertificateManagerCertificateKeyUsage::AwsCertificateManagerCertificateKeyUsage(JsonView jsonValue)
+  : AwsCertificateManagerCertificateKeyUsage()
 {
   *this = jsonValue;
 }

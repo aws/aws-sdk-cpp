@@ -24,9 +24,8 @@ HttpTimeout::HttpTimeout() :
 {
 }
 
-HttpTimeout::HttpTimeout(JsonView jsonValue) : 
-    m_idleHasBeenSet(false),
-    m_perRequestHasBeenSet(false)
+HttpTimeout::HttpTimeout(JsonView jsonValue)
+  : HttpTimeout()
 {
   *this = jsonValue;
 }

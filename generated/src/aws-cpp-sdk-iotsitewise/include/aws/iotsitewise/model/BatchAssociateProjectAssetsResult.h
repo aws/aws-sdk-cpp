@@ -34,63 +34,29 @@ namespace Model
     AWS_IOTSITEWISE_API BatchAssociateProjectAssetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of associated error information, if any.</p>
      */
     inline const Aws::Vector<AssetErrorDetails>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of associated error information, if any.</p>
-     */
     inline void SetErrors(const Aws::Vector<AssetErrorDetails>& value) { m_errors = value; }
-
-    /**
-     * <p>A list of associated error information, if any.</p>
-     */
     inline void SetErrors(Aws::Vector<AssetErrorDetails>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A list of associated error information, if any.</p>
-     */
     inline BatchAssociateProjectAssetsResult& WithErrors(const Aws::Vector<AssetErrorDetails>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of associated error information, if any.</p>
-     */
     inline BatchAssociateProjectAssetsResult& WithErrors(Aws::Vector<AssetErrorDetails>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of associated error information, if any.</p>
-     */
     inline BatchAssociateProjectAssetsResult& AddErrors(const AssetErrorDetails& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of associated error information, if any.</p>
-     */
     inline BatchAssociateProjectAssetsResult& AddErrors(AssetErrorDetails&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchAssociateProjectAssetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchAssociateProjectAssetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchAssociateProjectAssetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AssetErrorDetails> m_errors;

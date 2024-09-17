@@ -22,8 +22,8 @@ ModifyClientVpnEndpointResponse::ModifyClientVpnEndpointResponse() :
 {
 }
 
-ModifyClientVpnEndpointResponse::ModifyClientVpnEndpointResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyClientVpnEndpointResponse::ModifyClientVpnEndpointResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyClientVpnEndpointResponse()
 {
   *this = result;
 }

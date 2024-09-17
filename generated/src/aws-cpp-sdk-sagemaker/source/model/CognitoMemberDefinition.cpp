@@ -25,10 +25,8 @@ CognitoMemberDefinition::CognitoMemberDefinition() :
 {
 }
 
-CognitoMemberDefinition::CognitoMemberDefinition(JsonView jsonValue) : 
-    m_userPoolHasBeenSet(false),
-    m_userGroupHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+CognitoMemberDefinition::CognitoMemberDefinition(JsonView jsonValue)
+  : CognitoMemberDefinition()
 {
   *this = jsonValue;
 }

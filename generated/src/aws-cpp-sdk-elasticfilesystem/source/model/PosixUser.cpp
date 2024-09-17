@@ -27,12 +27,8 @@ PosixUser::PosixUser() :
 {
 }
 
-PosixUser::PosixUser(JsonView jsonValue) : 
-    m_uid(0),
-    m_uidHasBeenSet(false),
-    m_gid(0),
-    m_gidHasBeenSet(false),
-    m_secondaryGidsHasBeenSet(false)
+PosixUser::PosixUser(JsonView jsonValue)
+  : PosixUser()
 {
   *this = jsonValue;
 }

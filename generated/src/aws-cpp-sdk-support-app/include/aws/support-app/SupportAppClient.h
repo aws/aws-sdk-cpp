@@ -150,13 +150,13 @@ namespace SupportApp
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteAccountAlias">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteAccountAliasOutcome DeleteAccountAlias(const Model::DeleteAccountAliasRequest& request) const;
+        virtual Model::DeleteAccountAliasOutcome DeleteAccountAlias(const Model::DeleteAccountAliasRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteAccountAlias that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteAccountAliasRequestT = Model::DeleteAccountAliasRequest>
-        Model::DeleteAccountAliasOutcomeCallable DeleteAccountAliasCallable(const DeleteAccountAliasRequestT& request) const
+        Model::DeleteAccountAliasOutcomeCallable DeleteAccountAliasCallable(const DeleteAccountAliasRequestT& request = {}) const
         {
             return SubmitCallable(&SupportAppClient::DeleteAccountAlias, request);
         }
@@ -165,7 +165,7 @@ namespace SupportApp
          * An Async wrapper for DeleteAccountAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteAccountAliasRequestT = Model::DeleteAccountAliasRequest>
-        void DeleteAccountAliasAsync(const DeleteAccountAliasRequestT& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteAccountAliasAsync(const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteAccountAliasRequestT& request = {}) const
         {
             return SubmitAsync(&SupportAppClient::DeleteAccountAlias, request, handler, context);
         }
@@ -231,13 +231,13 @@ namespace SupportApp
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/GetAccountAlias">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountAliasOutcome GetAccountAlias(const Model::GetAccountAliasRequest& request) const;
+        virtual Model::GetAccountAliasOutcome GetAccountAlias(const Model::GetAccountAliasRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountAlias that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountAliasRequestT = Model::GetAccountAliasRequest>
-        Model::GetAccountAliasOutcomeCallable GetAccountAliasCallable(const GetAccountAliasRequestT& request) const
+        Model::GetAccountAliasOutcomeCallable GetAccountAliasCallable(const GetAccountAliasRequestT& request = {}) const
         {
             return SubmitCallable(&SupportAppClient::GetAccountAlias, request);
         }
@@ -246,7 +246,7 @@ namespace SupportApp
          * An Async wrapper for GetAccountAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountAliasRequestT = Model::GetAccountAliasRequest>
-        void GetAccountAliasAsync(const GetAccountAliasRequestT& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountAliasAsync(const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountAliasRequestT& request = {}) const
         {
             return SubmitAsync(&SupportAppClient::GetAccountAlias, request, handler, context);
         }
@@ -257,13 +257,13 @@ namespace SupportApp
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackChannelConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSlackChannelConfigurationsOutcome ListSlackChannelConfigurations(const Model::ListSlackChannelConfigurationsRequest& request) const;
+        virtual Model::ListSlackChannelConfigurationsOutcome ListSlackChannelConfigurations(const Model::ListSlackChannelConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSlackChannelConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSlackChannelConfigurationsRequestT = Model::ListSlackChannelConfigurationsRequest>
-        Model::ListSlackChannelConfigurationsOutcomeCallable ListSlackChannelConfigurationsCallable(const ListSlackChannelConfigurationsRequestT& request) const
+        Model::ListSlackChannelConfigurationsOutcomeCallable ListSlackChannelConfigurationsCallable(const ListSlackChannelConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&SupportAppClient::ListSlackChannelConfigurations, request);
         }
@@ -272,7 +272,7 @@ namespace SupportApp
          * An Async wrapper for ListSlackChannelConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSlackChannelConfigurationsRequestT = Model::ListSlackChannelConfigurationsRequest>
-        void ListSlackChannelConfigurationsAsync(const ListSlackChannelConfigurationsRequestT& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSlackChannelConfigurationsAsync(const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSlackChannelConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&SupportAppClient::ListSlackChannelConfigurations, request, handler, context);
         }
@@ -283,13 +283,13 @@ namespace SupportApp
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackWorkspaceConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSlackWorkspaceConfigurationsOutcome ListSlackWorkspaceConfigurations(const Model::ListSlackWorkspaceConfigurationsRequest& request) const;
+        virtual Model::ListSlackWorkspaceConfigurationsOutcome ListSlackWorkspaceConfigurations(const Model::ListSlackWorkspaceConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSlackWorkspaceConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSlackWorkspaceConfigurationsRequestT = Model::ListSlackWorkspaceConfigurationsRequest>
-        Model::ListSlackWorkspaceConfigurationsOutcomeCallable ListSlackWorkspaceConfigurationsCallable(const ListSlackWorkspaceConfigurationsRequestT& request) const
+        Model::ListSlackWorkspaceConfigurationsOutcomeCallable ListSlackWorkspaceConfigurationsCallable(const ListSlackWorkspaceConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&SupportAppClient::ListSlackWorkspaceConfigurations, request);
         }
@@ -298,7 +298,7 @@ namespace SupportApp
          * An Async wrapper for ListSlackWorkspaceConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSlackWorkspaceConfigurationsRequestT = Model::ListSlackWorkspaceConfigurationsRequest>
-        void ListSlackWorkspaceConfigurationsAsync(const ListSlackWorkspaceConfigurationsRequestT& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSlackWorkspaceConfigurationsAsync(const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSlackWorkspaceConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&SupportAppClient::ListSlackWorkspaceConfigurations, request, handler, context);
         }
@@ -415,7 +415,6 @@ namespace SupportApp
       void init(const SupportAppClientConfiguration& clientConfiguration);
 
       SupportAppClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SupportAppEndpointProviderBase> m_endpointProvider;
   };
 

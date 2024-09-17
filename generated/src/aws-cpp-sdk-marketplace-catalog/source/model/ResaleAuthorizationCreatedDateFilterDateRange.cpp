@@ -24,9 +24,8 @@ ResaleAuthorizationCreatedDateFilterDateRange::ResaleAuthorizationCreatedDateFil
 {
 }
 
-ResaleAuthorizationCreatedDateFilterDateRange::ResaleAuthorizationCreatedDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+ResaleAuthorizationCreatedDateFilterDateRange::ResaleAuthorizationCreatedDateFilterDateRange(JsonView jsonValue)
+  : ResaleAuthorizationCreatedDateFilterDateRange()
 {
   *this = jsonValue;
 }

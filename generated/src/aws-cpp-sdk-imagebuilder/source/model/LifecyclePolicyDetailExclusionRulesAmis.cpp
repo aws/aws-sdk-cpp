@@ -28,13 +28,8 @@ LifecyclePolicyDetailExclusionRulesAmis::LifecyclePolicyDetailExclusionRulesAmis
 {
 }
 
-LifecyclePolicyDetailExclusionRulesAmis::LifecyclePolicyDetailExclusionRulesAmis(JsonView jsonValue) : 
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_sharedAccountsHasBeenSet(false),
-    m_lastLaunchedHasBeenSet(false),
-    m_tagMapHasBeenSet(false)
+LifecyclePolicyDetailExclusionRulesAmis::LifecyclePolicyDetailExclusionRulesAmis(JsonView jsonValue)
+  : LifecyclePolicyDetailExclusionRulesAmis()
 {
   *this = jsonValue;
 }

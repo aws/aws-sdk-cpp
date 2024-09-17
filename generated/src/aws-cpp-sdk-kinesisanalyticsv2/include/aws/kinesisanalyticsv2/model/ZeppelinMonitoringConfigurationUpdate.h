@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Updates to the monitoring configuration for Apache Zeppelin within a Kinesis
-   * Data Analytics Studio notebook.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates to the monitoring configuration for Apache Zeppelin within a Managed
+   * Service for Apache Flink Studio notebook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinMonitoringConfigurationUpdate">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,18 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data
-     * Analytics Studio notebook.</p>
+     * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
+     * Apache Flink Studio notebook.</p>
      */
     inline const LogLevel& GetLogLevelUpdate() const{ return m_logLevelUpdate; }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data
-     * Analytics Studio notebook.</p>
-     */
     inline bool LogLevelUpdateHasBeenSet() const { return m_logLevelUpdateHasBeenSet; }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data
-     * Analytics Studio notebook.</p>
-     */
     inline void SetLogLevelUpdate(const LogLevel& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = value; }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data
-     * Analytics Studio notebook.</p>
-     */
     inline void SetLogLevelUpdate(LogLevel&& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = std::move(value); }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data
-     * Analytics Studio notebook.</p>
-     */
     inline ZeppelinMonitoringConfigurationUpdate& WithLogLevelUpdate(const LogLevel& value) { SetLogLevelUpdate(value); return *this;}
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data
-     * Analytics Studio notebook.</p>
-     */
     inline ZeppelinMonitoringConfigurationUpdate& WithLogLevelUpdate(LogLevel&& value) { SetLogLevelUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LogLevel m_logLevelUpdate;

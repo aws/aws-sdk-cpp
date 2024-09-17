@@ -25,10 +25,8 @@ DataViewErrorInfo::DataViewErrorInfo() :
 {
 }
 
-DataViewErrorInfo::DataViewErrorInfo(JsonView jsonValue) : 
-    m_errorMessageHasBeenSet(false),
-    m_errorCategory(ErrorCategory::NOT_SET),
-    m_errorCategoryHasBeenSet(false)
+DataViewErrorInfo::DataViewErrorInfo(JsonView jsonValue)
+  : DataViewErrorInfo()
 {
   *this = jsonValue;
 }

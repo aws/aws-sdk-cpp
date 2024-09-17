@@ -24,9 +24,8 @@ JsonMatchPattern::JsonMatchPattern() :
 {
 }
 
-JsonMatchPattern::JsonMatchPattern(JsonView jsonValue) : 
-    m_allHasBeenSet(false),
-    m_includedPathsHasBeenSet(false)
+JsonMatchPattern::JsonMatchPattern(JsonView jsonValue)
+  : JsonMatchPattern()
 {
   *this = jsonValue;
 }

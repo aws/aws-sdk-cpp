@@ -32,87 +32,33 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the source location associated with this VOD Source.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
-
-    /**
-     * <p>The name of the source location associated with this VOD Source.</p>
-     */
     inline bool SourceLocationNameHasBeenSet() const { return m_sourceLocationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the source location associated with this VOD Source.</p>
-     */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = value; }
-
-    /**
-     * <p>The name of the source location associated with this VOD Source.</p>
-     */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::move(value); }
-
-    /**
-     * <p>The name of the source location associated with this VOD Source.</p>
-     */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName.assign(value); }
-
-    /**
-     * <p>The name of the source location associated with this VOD Source.</p>
-     */
     inline DescribeVodSourceRequest& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
-
-    /**
-     * <p>The name of the source location associated with this VOD Source.</p>
-     */
     inline DescribeVodSourceRequest& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source location associated with this VOD Source.</p>
-     */
     inline DescribeVodSourceRequest& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the VOD Source.</p>
      */
     inline const Aws::String& GetVodSourceName() const{ return m_vodSourceName; }
-
-    /**
-     * <p>The name of the VOD Source.</p>
-     */
     inline bool VodSourceNameHasBeenSet() const { return m_vodSourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the VOD Source.</p>
-     */
     inline void SetVodSourceName(const Aws::String& value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName = value; }
-
-    /**
-     * <p>The name of the VOD Source.</p>
-     */
     inline void SetVodSourceName(Aws::String&& value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName = std::move(value); }
-
-    /**
-     * <p>The name of the VOD Source.</p>
-     */
     inline void SetVodSourceName(const char* value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName.assign(value); }
-
-    /**
-     * <p>The name of the VOD Source.</p>
-     */
     inline DescribeVodSourceRequest& WithVodSourceName(const Aws::String& value) { SetVodSourceName(value); return *this;}
-
-    /**
-     * <p>The name of the VOD Source.</p>
-     */
     inline DescribeVodSourceRequest& WithVodSourceName(Aws::String&& value) { SetVodSourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the VOD Source.</p>
-     */
     inline DescribeVodSourceRequest& WithVodSourceName(const char* value) { SetVodSourceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceLocationName;

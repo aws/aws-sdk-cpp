@@ -28,13 +28,8 @@ AnalyticsBinBySpecification::AnalyticsBinBySpecification() :
 {
 }
 
-AnalyticsBinBySpecification::AnalyticsBinBySpecification(JsonView jsonValue) : 
-    m_name(AnalyticsBinByName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_interval(AnalyticsInterval::NOT_SET),
-    m_intervalHasBeenSet(false),
-    m_order(AnalyticsSortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+AnalyticsBinBySpecification::AnalyticsBinBySpecification(JsonView jsonValue)
+  : AnalyticsBinBySpecification()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ BatchSegmentJobSummary::BatchSegmentJobSummary() :
 {
 }
 
-BatchSegmentJobSummary::BatchSegmentJobSummary(JsonView jsonValue) : 
-    m_batchSegmentJobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false)
+BatchSegmentJobSummary::BatchSegmentJobSummary(JsonView jsonValue)
+  : BatchSegmentJobSummary()
 {
   *this = jsonValue;
 }

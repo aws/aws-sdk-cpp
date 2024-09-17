@@ -20,13 +20,13 @@ namespace Model
 
 CognitoUserPoolConfiguration::CognitoUserPoolConfiguration() : 
     m_userPoolArnHasBeenSet(false),
-    m_clientIdsHasBeenSet(false)
+    m_clientIdsHasBeenSet(false),
+    m_groupConfigurationHasBeenSet(false)
 {
 }
 
-CognitoUserPoolConfiguration::CognitoUserPoolConfiguration(JsonView jsonValue) : 
-    m_userPoolArnHasBeenSet(false),
-    m_clientIdsHasBeenSet(false)
+CognitoUserPoolConfiguration::CognitoUserPoolConfiguration(JsonView jsonValue)
+  : CognitoUserPoolConfiguration()
 {
   *this = jsonValue;
 }
@@ -50,6 +50,13 @@ CognitoUserPoolConfiguration& CognitoUserPoolConfiguration::operator =(JsonView 
     m_clientIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("groupConfiguration"))
+  {
+    m_groupConfiguration = jsonValue.GetObject("groupConfiguration");
+
+    m_groupConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +78,12 @@ JsonValue CognitoUserPoolConfiguration::Jsonize() const
      clientIdsJsonList[clientIdsIndex].AsString(m_clientIds[clientIdsIndex]);
    }
    payload.WithArray("clientIds", std::move(clientIdsJsonList));
+
+  }
+
+  if(m_groupConfigurationHasBeenSet)
+  {
+   payload.WithObject("groupConfiguration", m_groupConfiguration.Jsonize());
 
   }
 

@@ -36,21 +36,8 @@ CustomerMeCollectorInfo::CustomerMeCollectorInfo() :
 {
 }
 
-CustomerMeCollectorInfo::CustomerMeCollectorInfo(JsonView jsonValue) : 
-    m_activeMeCollectors(0),
-    m_activeMeCollectorsHasBeenSet(false),
-    m_healthyMeCollectors(0),
-    m_healthyMeCollectorsHasBeenSet(false),
-    m_denyListedMeCollectors(0),
-    m_denyListedMeCollectorsHasBeenSet(false),
-    m_shutdownMeCollectors(0),
-    m_shutdownMeCollectorsHasBeenSet(false),
-    m_unhealthyMeCollectors(0),
-    m_unhealthyMeCollectorsHasBeenSet(false),
-    m_totalMeCollectors(0),
-    m_totalMeCollectorsHasBeenSet(false),
-    m_unknownMeCollectors(0),
-    m_unknownMeCollectorsHasBeenSet(false)
+CustomerMeCollectorInfo::CustomerMeCollectorInfo(JsonView jsonValue)
+  : CustomerMeCollectorInfo()
 {
   *this = jsonValue;
 }

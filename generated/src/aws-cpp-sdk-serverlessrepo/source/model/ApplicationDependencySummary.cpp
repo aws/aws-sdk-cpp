@@ -24,9 +24,8 @@ ApplicationDependencySummary::ApplicationDependencySummary() :
 {
 }
 
-ApplicationDependencySummary::ApplicationDependencySummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false)
+ApplicationDependencySummary::ApplicationDependencySummary(JsonView jsonValue)
+  : ApplicationDependencySummary()
 {
   *this = jsonValue;
 }

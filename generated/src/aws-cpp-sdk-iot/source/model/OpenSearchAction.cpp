@@ -27,12 +27,8 @@ OpenSearchAction::OpenSearchAction() :
 {
 }
 
-OpenSearchAction::OpenSearchAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_indexHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false)
+OpenSearchAction::OpenSearchAction(JsonView jsonValue)
+  : OpenSearchAction()
 {
   *this = jsonValue;
 }

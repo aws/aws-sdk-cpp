@@ -24,9 +24,8 @@ TrialComponentArtifact::TrialComponentArtifact() :
 {
 }
 
-TrialComponentArtifact::TrialComponentArtifact(JsonView jsonValue) : 
-    m_mediaTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+TrialComponentArtifact::TrialComponentArtifact(JsonView jsonValue)
+  : TrialComponentArtifact()
 {
   *this = jsonValue;
 }

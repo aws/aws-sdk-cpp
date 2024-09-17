@@ -60,6 +60,16 @@
 #include <aws/events/model/UpdateApiDestinationResult.h>
 #include <aws/events/model/UpdateArchiveResult.h>
 #include <aws/events/model/UpdateConnectionResult.h>
+#include <aws/events/model/DescribeEventBusRequest.h>
+#include <aws/events/model/ListReplaysRequest.h>
+#include <aws/events/model/PutPermissionRequest.h>
+#include <aws/events/model/ListArchivesRequest.h>
+#include <aws/events/model/ListApiDestinationsRequest.h>
+#include <aws/events/model/ListEventBusesRequest.h>
+#include <aws/events/model/ListEventSourcesRequest.h>
+#include <aws/events/model/ListConnectionsRequest.h>
+#include <aws/events/model/ListRulesRequest.h>
+#include <aws/events/model/RemovePermissionRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudWatchEventsClient header */
 
@@ -94,7 +104,7 @@ namespace Aws
 
   namespace CloudWatchEvents
   {
-    using CloudWatchEventsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchEventsEndpointProviderBase = Aws::CloudWatchEvents::Endpoint::CloudWatchEventsEndpointProviderBase;
     using CloudWatchEventsEndpointProvider = Aws::CloudWatchEvents::Endpoint::CloudWatchEventsEndpointProvider;
 

@@ -30,15 +30,8 @@ PipelineSummary::PipelineSummary() :
 {
 }
 
-PipelineSummary::PipelineSummary(JsonView jsonValue) : 
-    m_pipelineArnHasBeenSet(false),
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineDisplayNameHasBeenSet(false),
-    m_pipelineDescriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastExecutionTimeHasBeenSet(false)
+PipelineSummary::PipelineSummary(JsonView jsonValue)
+  : PipelineSummary()
 {
   *this = jsonValue;
 }

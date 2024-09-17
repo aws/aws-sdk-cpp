@@ -27,12 +27,8 @@ RulesPackage::RulesPackage() :
 {
 }
 
-RulesPackage::RulesPackage(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+RulesPackage::RulesPackage(JsonView jsonValue)
+  : RulesPackage()
 {
   *this = jsonValue;
 }

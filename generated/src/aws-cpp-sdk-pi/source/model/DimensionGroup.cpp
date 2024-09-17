@@ -26,11 +26,8 @@ DimensionGroup::DimensionGroup() :
 {
 }
 
-DimensionGroup::DimensionGroup(JsonView jsonValue) : 
-    m_groupHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
+DimensionGroup::DimensionGroup(JsonView jsonValue)
+  : DimensionGroup()
 {
   *this = jsonValue;
 }

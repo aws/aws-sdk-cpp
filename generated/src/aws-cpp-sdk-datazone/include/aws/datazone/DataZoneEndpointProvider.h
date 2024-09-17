@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DataZoneClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DataZoneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DataZoneClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataZoneBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

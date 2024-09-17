@@ -25,10 +25,8 @@ KernelGatewayAppSettings::KernelGatewayAppSettings() :
 {
 }
 
-KernelGatewayAppSettings::KernelGatewayAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
+KernelGatewayAppSettings::KernelGatewayAppSettings(JsonView jsonValue)
+  : KernelGatewayAppSettings()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ ProgressUpdateStreamSummary::ProgressUpdateStreamSummary() :
 {
 }
 
-ProgressUpdateStreamSummary::ProgressUpdateStreamSummary(JsonView jsonValue) : 
-    m_progressUpdateStreamNameHasBeenSet(false)
+ProgressUpdateStreamSummary::ProgressUpdateStreamSummary(JsonView jsonValue)
+  : ProgressUpdateStreamSummary()
 {
   *this = jsonValue;
 }

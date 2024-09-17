@@ -25,10 +25,8 @@ ResolvedTarget::ResolvedTarget() :
 {
 }
 
-ResolvedTarget::ResolvedTarget(JsonView jsonValue) : 
-    m_resourceTypeHasBeenSet(false),
-    m_targetNameHasBeenSet(false),
-    m_targetInformationHasBeenSet(false)
+ResolvedTarget::ResolvedTarget(JsonView jsonValue)
+  : ResolvedTarget()
 {
   *this = jsonValue;
 }

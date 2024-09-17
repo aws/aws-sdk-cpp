@@ -24,9 +24,8 @@ VpcPeeringConnectionStatus::VpcPeeringConnectionStatus() :
 {
 }
 
-VpcPeeringConnectionStatus::VpcPeeringConnectionStatus(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+VpcPeeringConnectionStatus::VpcPeeringConnectionStatus(JsonView jsonValue)
+  : VpcPeeringConnectionStatus()
 {
   *this = jsonValue;
 }

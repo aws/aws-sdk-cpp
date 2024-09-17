@@ -36,55 +36,27 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
      * with all hosts in upstream cluster.</p>
      */
     inline int GetMaxConnections() const{ return m_maxConnections; }
-
-    /**
-     * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
-     * with all hosts in upstream cluster.</p>
-     */
     inline bool MaxConnectionsHasBeenSet() const { return m_maxConnectionsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
-     * with all hosts in upstream cluster.</p>
-     */
     inline void SetMaxConnections(int value) { m_maxConnectionsHasBeenSet = true; m_maxConnections = value; }
-
-    /**
-     * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
-     * with all hosts in upstream cluster.</p>
-     */
     inline VirtualNodeHttpConnectionPool& WithMaxConnections(int value) { SetMaxConnections(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of overflowing requests after <code>max_connections</code> Envoy will
      * queue to upstream cluster.</p>
      */
     inline int GetMaxPendingRequests() const{ return m_maxPendingRequests; }
-
-    /**
-     * <p>Number of overflowing requests after <code>max_connections</code> Envoy will
-     * queue to upstream cluster.</p>
-     */
     inline bool MaxPendingRequestsHasBeenSet() const { return m_maxPendingRequestsHasBeenSet; }
-
-    /**
-     * <p>Number of overflowing requests after <code>max_connections</code> Envoy will
-     * queue to upstream cluster.</p>
-     */
     inline void SetMaxPendingRequests(int value) { m_maxPendingRequestsHasBeenSet = true; m_maxPendingRequests = value; }
-
-    /**
-     * <p>Number of overflowing requests after <code>max_connections</code> Envoy will
-     * queue to upstream cluster.</p>
-     */
     inline VirtualNodeHttpConnectionPool& WithMaxPendingRequests(int value) { SetMaxPendingRequests(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxConnections;

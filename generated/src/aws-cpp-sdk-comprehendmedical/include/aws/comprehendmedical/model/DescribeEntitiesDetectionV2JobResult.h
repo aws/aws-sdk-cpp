@@ -33,53 +33,27 @@ namespace Model
     AWS_COMPREHENDMEDICAL_API DescribeEntitiesDetectionV2JobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains the properties associated with a detection job.</p>
      */
     inline const ComprehendMedicalAsyncJobProperties& GetComprehendMedicalAsyncJobProperties() const{ return m_comprehendMedicalAsyncJobProperties; }
-
-    /**
-     * <p>An object that contains the properties associated with a detection job.</p>
-     */
     inline void SetComprehendMedicalAsyncJobProperties(const ComprehendMedicalAsyncJobProperties& value) { m_comprehendMedicalAsyncJobProperties = value; }
-
-    /**
-     * <p>An object that contains the properties associated with a detection job.</p>
-     */
     inline void SetComprehendMedicalAsyncJobProperties(ComprehendMedicalAsyncJobProperties&& value) { m_comprehendMedicalAsyncJobProperties = std::move(value); }
-
-    /**
-     * <p>An object that contains the properties associated with a detection job.</p>
-     */
     inline DescribeEntitiesDetectionV2JobResult& WithComprehendMedicalAsyncJobProperties(const ComprehendMedicalAsyncJobProperties& value) { SetComprehendMedicalAsyncJobProperties(value); return *this;}
-
-    /**
-     * <p>An object that contains the properties associated with a detection job.</p>
-     */
     inline DescribeEntitiesDetectionV2JobResult& WithComprehendMedicalAsyncJobProperties(ComprehendMedicalAsyncJobProperties&& value) { SetComprehendMedicalAsyncJobProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeEntitiesDetectionV2JobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeEntitiesDetectionV2JobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeEntitiesDetectionV2JobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ComprehendMedicalAsyncJobProperties m_comprehendMedicalAsyncJobProperties;

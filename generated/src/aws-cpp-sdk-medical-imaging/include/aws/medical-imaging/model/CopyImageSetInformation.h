@@ -38,67 +38,29 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source image set.</p>
      */
     inline const CopySourceImageSetInformation& GetSourceImageSet() const{ return m_sourceImageSet; }
-
-    /**
-     * <p>The source image set.</p>
-     */
     inline bool SourceImageSetHasBeenSet() const { return m_sourceImageSetHasBeenSet; }
-
-    /**
-     * <p>The source image set.</p>
-     */
     inline void SetSourceImageSet(const CopySourceImageSetInformation& value) { m_sourceImageSetHasBeenSet = true; m_sourceImageSet = value; }
-
-    /**
-     * <p>The source image set.</p>
-     */
     inline void SetSourceImageSet(CopySourceImageSetInformation&& value) { m_sourceImageSetHasBeenSet = true; m_sourceImageSet = std::move(value); }
-
-    /**
-     * <p>The source image set.</p>
-     */
     inline CopyImageSetInformation& WithSourceImageSet(const CopySourceImageSetInformation& value) { SetSourceImageSet(value); return *this;}
-
-    /**
-     * <p>The source image set.</p>
-     */
     inline CopyImageSetInformation& WithSourceImageSet(CopySourceImageSetInformation&& value) { SetSourceImageSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination image set.</p>
      */
     inline const CopyDestinationImageSet& GetDestinationImageSet() const{ return m_destinationImageSet; }
-
-    /**
-     * <p>The destination image set.</p>
-     */
     inline bool DestinationImageSetHasBeenSet() const { return m_destinationImageSetHasBeenSet; }
-
-    /**
-     * <p>The destination image set.</p>
-     */
     inline void SetDestinationImageSet(const CopyDestinationImageSet& value) { m_destinationImageSetHasBeenSet = true; m_destinationImageSet = value; }
-
-    /**
-     * <p>The destination image set.</p>
-     */
     inline void SetDestinationImageSet(CopyDestinationImageSet&& value) { m_destinationImageSetHasBeenSet = true; m_destinationImageSet = std::move(value); }
-
-    /**
-     * <p>The destination image set.</p>
-     */
     inline CopyImageSetInformation& WithDestinationImageSet(const CopyDestinationImageSet& value) { SetDestinationImageSet(value); return *this;}
-
-    /**
-     * <p>The destination image set.</p>
-     */
     inline CopyImageSetInformation& WithDestinationImageSet(CopyDestinationImageSet&& value) { SetDestinationImageSet(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CopySourceImageSetInformation m_sourceImageSet;

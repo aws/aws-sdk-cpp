@@ -36,26 +36,15 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the configuration for scanning EBS volumes as data source.</p>
      */
     inline bool GetEbsVolumes() const{ return m_ebsVolumes; }
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes as data source.</p>
-     */
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes as data source.</p>
-     */
     inline void SetEbsVolumes(bool value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
-
-    /**
-     * <p>Describes the configuration for scanning EBS volumes as data source.</p>
-     */
     inline ScanEc2InstanceWithFindings& WithEbsVolumes(bool value) { SetEbsVolumes(value); return *this;}
-
+    ///@}
   private:
 
     bool m_ebsVolumes;

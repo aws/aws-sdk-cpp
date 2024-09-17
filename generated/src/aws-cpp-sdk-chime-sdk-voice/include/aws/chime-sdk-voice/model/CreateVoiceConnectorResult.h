@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API CreateVoiceConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the Voice Connector.</p>
      */
     inline const VoiceConnector& GetVoiceConnector() const{ return m_voiceConnector; }
-
-    /**
-     * <p>The details of the Voice Connector.</p>
-     */
     inline void SetVoiceConnector(const VoiceConnector& value) { m_voiceConnector = value; }
-
-    /**
-     * <p>The details of the Voice Connector.</p>
-     */
     inline void SetVoiceConnector(VoiceConnector&& value) { m_voiceConnector = std::move(value); }
-
-    /**
-     * <p>The details of the Voice Connector.</p>
-     */
     inline CreateVoiceConnectorResult& WithVoiceConnector(const VoiceConnector& value) { SetVoiceConnector(value); return *this;}
-
-    /**
-     * <p>The details of the Voice Connector.</p>
-     */
     inline CreateVoiceConnectorResult& WithVoiceConnector(VoiceConnector&& value) { SetVoiceConnector(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateVoiceConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateVoiceConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateVoiceConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VoiceConnector m_voiceConnector;

@@ -23,9 +23,8 @@ UpdateDashboardResult::UpdateDashboardResult() :
 {
 }
 
-UpdateDashboardResult::UpdateDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
+UpdateDashboardResult::UpdateDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDashboardResult()
 {
   *this = result;
 }

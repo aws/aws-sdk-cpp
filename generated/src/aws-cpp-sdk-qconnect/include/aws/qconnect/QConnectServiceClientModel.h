@@ -21,18 +21,21 @@
 #include <aws/qconnect/model/CreateAssistantResult.h>
 #include <aws/qconnect/model/CreateAssistantAssociationResult.h>
 #include <aws/qconnect/model/CreateContentResult.h>
+#include <aws/qconnect/model/CreateContentAssociationResult.h>
 #include <aws/qconnect/model/CreateKnowledgeBaseResult.h>
 #include <aws/qconnect/model/CreateQuickResponseResult.h>
 #include <aws/qconnect/model/CreateSessionResult.h>
 #include <aws/qconnect/model/DeleteAssistantResult.h>
 #include <aws/qconnect/model/DeleteAssistantAssociationResult.h>
 #include <aws/qconnect/model/DeleteContentResult.h>
+#include <aws/qconnect/model/DeleteContentAssociationResult.h>
 #include <aws/qconnect/model/DeleteImportJobResult.h>
 #include <aws/qconnect/model/DeleteKnowledgeBaseResult.h>
 #include <aws/qconnect/model/DeleteQuickResponseResult.h>
 #include <aws/qconnect/model/GetAssistantResult.h>
 #include <aws/qconnect/model/GetAssistantAssociationResult.h>
 #include <aws/qconnect/model/GetContentResult.h>
+#include <aws/qconnect/model/GetContentAssociationResult.h>
 #include <aws/qconnect/model/GetContentSummaryResult.h>
 #include <aws/qconnect/model/GetImportJobResult.h>
 #include <aws/qconnect/model/GetKnowledgeBaseResult.h>
@@ -40,6 +43,7 @@
 #include <aws/qconnect/model/GetSessionResult.h>
 #include <aws/qconnect/model/ListAssistantAssociationsResult.h>
 #include <aws/qconnect/model/ListAssistantsResult.h>
+#include <aws/qconnect/model/ListContentAssociationsResult.h>
 #include <aws/qconnect/model/ListContentsResult.h>
 #include <aws/qconnect/model/ListImportJobsResult.h>
 #include <aws/qconnect/model/ListKnowledgeBasesResult.h>
@@ -58,6 +62,9 @@
 #include <aws/qconnect/model/UpdateContentResult.h>
 #include <aws/qconnect/model/UpdateKnowledgeBaseTemplateUriResult.h>
 #include <aws/qconnect/model/UpdateQuickResponseResult.h>
+#include <aws/qconnect/model/UpdateSessionResult.h>
+#include <aws/qconnect/model/ListKnowledgeBasesRequest.h>
+#include <aws/qconnect/model/ListAssistantsRequest.h>
 /* End of service model headers required in QConnectClient header */
 
 namespace Aws
@@ -91,7 +98,7 @@ namespace Aws
 
   namespace QConnect
   {
-    using QConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
     using QConnectEndpointProviderBase = Aws::QConnect::Endpoint::QConnectEndpointProviderBase;
     using QConnectEndpointProvider = Aws::QConnect::Endpoint::QConnectEndpointProvider;
 
@@ -101,18 +108,21 @@ namespace Aws
       class CreateAssistantRequest;
       class CreateAssistantAssociationRequest;
       class CreateContentRequest;
+      class CreateContentAssociationRequest;
       class CreateKnowledgeBaseRequest;
       class CreateQuickResponseRequest;
       class CreateSessionRequest;
       class DeleteAssistantRequest;
       class DeleteAssistantAssociationRequest;
       class DeleteContentRequest;
+      class DeleteContentAssociationRequest;
       class DeleteImportJobRequest;
       class DeleteKnowledgeBaseRequest;
       class DeleteQuickResponseRequest;
       class GetAssistantRequest;
       class GetAssistantAssociationRequest;
       class GetContentRequest;
+      class GetContentAssociationRequest;
       class GetContentSummaryRequest;
       class GetImportJobRequest;
       class GetKnowledgeBaseRequest;
@@ -120,6 +130,7 @@ namespace Aws
       class GetSessionRequest;
       class ListAssistantAssociationsRequest;
       class ListAssistantsRequest;
+      class ListContentAssociationsRequest;
       class ListContentsRequest;
       class ListImportJobsRequest;
       class ListKnowledgeBasesRequest;
@@ -138,24 +149,28 @@ namespace Aws
       class UpdateContentRequest;
       class UpdateKnowledgeBaseTemplateUriRequest;
       class UpdateQuickResponseRequest;
+      class UpdateSessionRequest;
       /* End of service model forward declarations required in QConnectClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateAssistantResult, QConnectError> CreateAssistantOutcome;
       typedef Aws::Utils::Outcome<CreateAssistantAssociationResult, QConnectError> CreateAssistantAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateContentResult, QConnectError> CreateContentOutcome;
+      typedef Aws::Utils::Outcome<CreateContentAssociationResult, QConnectError> CreateContentAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateKnowledgeBaseResult, QConnectError> CreateKnowledgeBaseOutcome;
       typedef Aws::Utils::Outcome<CreateQuickResponseResult, QConnectError> CreateQuickResponseOutcome;
       typedef Aws::Utils::Outcome<CreateSessionResult, QConnectError> CreateSessionOutcome;
       typedef Aws::Utils::Outcome<DeleteAssistantResult, QConnectError> DeleteAssistantOutcome;
       typedef Aws::Utils::Outcome<DeleteAssistantAssociationResult, QConnectError> DeleteAssistantAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteContentResult, QConnectError> DeleteContentOutcome;
+      typedef Aws::Utils::Outcome<DeleteContentAssociationResult, QConnectError> DeleteContentAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteImportJobResult, QConnectError> DeleteImportJobOutcome;
       typedef Aws::Utils::Outcome<DeleteKnowledgeBaseResult, QConnectError> DeleteKnowledgeBaseOutcome;
       typedef Aws::Utils::Outcome<DeleteQuickResponseResult, QConnectError> DeleteQuickResponseOutcome;
       typedef Aws::Utils::Outcome<GetAssistantResult, QConnectError> GetAssistantOutcome;
       typedef Aws::Utils::Outcome<GetAssistantAssociationResult, QConnectError> GetAssistantAssociationOutcome;
       typedef Aws::Utils::Outcome<GetContentResult, QConnectError> GetContentOutcome;
+      typedef Aws::Utils::Outcome<GetContentAssociationResult, QConnectError> GetContentAssociationOutcome;
       typedef Aws::Utils::Outcome<GetContentSummaryResult, QConnectError> GetContentSummaryOutcome;
       typedef Aws::Utils::Outcome<GetImportJobResult, QConnectError> GetImportJobOutcome;
       typedef Aws::Utils::Outcome<GetKnowledgeBaseResult, QConnectError> GetKnowledgeBaseOutcome;
@@ -163,6 +178,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetSessionResult, QConnectError> GetSessionOutcome;
       typedef Aws::Utils::Outcome<ListAssistantAssociationsResult, QConnectError> ListAssistantAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListAssistantsResult, QConnectError> ListAssistantsOutcome;
+      typedef Aws::Utils::Outcome<ListContentAssociationsResult, QConnectError> ListContentAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListContentsResult, QConnectError> ListContentsOutcome;
       typedef Aws::Utils::Outcome<ListImportJobsResult, QConnectError> ListImportJobsOutcome;
       typedef Aws::Utils::Outcome<ListKnowledgeBasesResult, QConnectError> ListKnowledgeBasesOutcome;
@@ -181,24 +197,28 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateContentResult, QConnectError> UpdateContentOutcome;
       typedef Aws::Utils::Outcome<UpdateKnowledgeBaseTemplateUriResult, QConnectError> UpdateKnowledgeBaseTemplateUriOutcome;
       typedef Aws::Utils::Outcome<UpdateQuickResponseResult, QConnectError> UpdateQuickResponseOutcome;
+      typedef Aws::Utils::Outcome<UpdateSessionResult, QConnectError> UpdateSessionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateAssistantOutcome> CreateAssistantOutcomeCallable;
       typedef std::future<CreateAssistantAssociationOutcome> CreateAssistantAssociationOutcomeCallable;
       typedef std::future<CreateContentOutcome> CreateContentOutcomeCallable;
+      typedef std::future<CreateContentAssociationOutcome> CreateContentAssociationOutcomeCallable;
       typedef std::future<CreateKnowledgeBaseOutcome> CreateKnowledgeBaseOutcomeCallable;
       typedef std::future<CreateQuickResponseOutcome> CreateQuickResponseOutcomeCallable;
       typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
       typedef std::future<DeleteAssistantOutcome> DeleteAssistantOutcomeCallable;
       typedef std::future<DeleteAssistantAssociationOutcome> DeleteAssistantAssociationOutcomeCallable;
       typedef std::future<DeleteContentOutcome> DeleteContentOutcomeCallable;
+      typedef std::future<DeleteContentAssociationOutcome> DeleteContentAssociationOutcomeCallable;
       typedef std::future<DeleteImportJobOutcome> DeleteImportJobOutcomeCallable;
       typedef std::future<DeleteKnowledgeBaseOutcome> DeleteKnowledgeBaseOutcomeCallable;
       typedef std::future<DeleteQuickResponseOutcome> DeleteQuickResponseOutcomeCallable;
       typedef std::future<GetAssistantOutcome> GetAssistantOutcomeCallable;
       typedef std::future<GetAssistantAssociationOutcome> GetAssistantAssociationOutcomeCallable;
       typedef std::future<GetContentOutcome> GetContentOutcomeCallable;
+      typedef std::future<GetContentAssociationOutcome> GetContentAssociationOutcomeCallable;
       typedef std::future<GetContentSummaryOutcome> GetContentSummaryOutcomeCallable;
       typedef std::future<GetImportJobOutcome> GetImportJobOutcomeCallable;
       typedef std::future<GetKnowledgeBaseOutcome> GetKnowledgeBaseOutcomeCallable;
@@ -206,6 +226,7 @@ namespace Aws
       typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
       typedef std::future<ListAssistantAssociationsOutcome> ListAssistantAssociationsOutcomeCallable;
       typedef std::future<ListAssistantsOutcome> ListAssistantsOutcomeCallable;
+      typedef std::future<ListContentAssociationsOutcome> ListContentAssociationsOutcomeCallable;
       typedef std::future<ListContentsOutcome> ListContentsOutcomeCallable;
       typedef std::future<ListImportJobsOutcome> ListImportJobsOutcomeCallable;
       typedef std::future<ListKnowledgeBasesOutcome> ListKnowledgeBasesOutcomeCallable;
@@ -224,6 +245,7 @@ namespace Aws
       typedef std::future<UpdateContentOutcome> UpdateContentOutcomeCallable;
       typedef std::future<UpdateKnowledgeBaseTemplateUriOutcome> UpdateKnowledgeBaseTemplateUriOutcomeCallable;
       typedef std::future<UpdateQuickResponseOutcome> UpdateQuickResponseOutcomeCallable;
+      typedef std::future<UpdateSessionOutcome> UpdateSessionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -233,18 +255,21 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::CreateAssistantRequest&, const Model::CreateAssistantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssistantResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateAssistantAssociationRequest&, const Model::CreateAssistantAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssistantAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateContentRequest&, const Model::CreateContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContentResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::CreateContentAssociationRequest&, const Model::CreateContentAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContentAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateKnowledgeBaseRequest&, const Model::CreateKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKnowledgeBaseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateQuickResponseRequest&, const Model::CreateQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickResponseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateSessionRequest&, const Model::CreateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSessionResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteAssistantRequest&, const Model::DeleteAssistantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssistantResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteAssistantAssociationRequest&, const Model::DeleteAssistantAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssistantAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteContentRequest&, const Model::DeleteContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContentResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::DeleteContentAssociationRequest&, const Model::DeleteContentAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContentAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteImportJobRequest&, const Model::DeleteImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportJobResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteKnowledgeBaseRequest&, const Model::DeleteKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKnowledgeBaseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteQuickResponseRequest&, const Model::DeleteQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickResponseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetAssistantRequest&, const Model::GetAssistantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssistantResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetAssistantAssociationRequest&, const Model::GetAssistantAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssistantAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetContentRequest&, const Model::GetContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContentResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::GetContentAssociationRequest&, const Model::GetContentAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContentAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetContentSummaryRequest&, const Model::GetContentSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContentSummaryResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetImportJobRequest&, const Model::GetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportJobResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetKnowledgeBaseRequest&, const Model::GetKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKnowledgeBaseResponseReceivedHandler;
@@ -252,6 +277,7 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListAssistantAssociationsRequest&, const Model::ListAssistantAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssistantAssociationsResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListAssistantsRequest&, const Model::ListAssistantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssistantsResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::ListContentAssociationsRequest&, const Model::ListContentAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContentAssociationsResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListContentsRequest&, const Model::ListContentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContentsResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListImportJobsRequest&, const Model::ListImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportJobsResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListKnowledgeBasesRequest&, const Model::ListKnowledgeBasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKnowledgeBasesResponseReceivedHandler;
@@ -270,6 +296,7 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::UpdateContentRequest&, const Model::UpdateContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateKnowledgeBaseTemplateUriRequest&, const Model::UpdateKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKnowledgeBaseTemplateUriResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateQuickResponseRequest&, const Model::UpdateQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickResponseResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::UpdateSessionRequest&, const Model::UpdateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSessionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace QConnect
 } // namespace Aws

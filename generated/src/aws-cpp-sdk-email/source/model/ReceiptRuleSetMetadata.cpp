@@ -26,9 +26,8 @@ ReceiptRuleSetMetadata::ReceiptRuleSetMetadata() :
 {
 }
 
-ReceiptRuleSetMetadata::ReceiptRuleSetMetadata(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+ReceiptRuleSetMetadata::ReceiptRuleSetMetadata(const XmlNode& xmlNode)
+  : ReceiptRuleSetMetadata()
 {
   *this = xmlNode;
 }

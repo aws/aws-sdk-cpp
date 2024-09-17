@@ -28,13 +28,8 @@ UploadListElement::UploadListElement() :
 {
 }
 
-UploadListElement::UploadListElement(JsonView jsonValue) : 
-    m_multipartUploadIdHasBeenSet(false),
-    m_vaultARNHasBeenSet(false),
-    m_archiveDescriptionHasBeenSet(false),
-    m_partSizeInBytes(0),
-    m_partSizeInBytesHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+UploadListElement::UploadListElement(JsonView jsonValue)
+  : UploadListElement()
 {
   *this = jsonValue;
 }

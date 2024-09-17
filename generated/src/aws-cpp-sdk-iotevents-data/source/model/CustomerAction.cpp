@@ -29,14 +29,8 @@ CustomerAction::CustomerAction() :
 {
 }
 
-CustomerAction::CustomerAction(JsonView jsonValue) : 
-    m_actionName(CustomerActionName::NOT_SET),
-    m_actionNameHasBeenSet(false),
-    m_snoozeActionConfigurationHasBeenSet(false),
-    m_enableActionConfigurationHasBeenSet(false),
-    m_disableActionConfigurationHasBeenSet(false),
-    m_acknowledgeActionConfigurationHasBeenSet(false),
-    m_resetActionConfigurationHasBeenSet(false)
+CustomerAction::CustomerAction(JsonView jsonValue)
+  : CustomerAction()
 {
   *this = jsonValue;
 }

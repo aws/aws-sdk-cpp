@@ -27,12 +27,8 @@ RouteResponse::RouteResponse() :
 {
 }
 
-RouteResponse::RouteResponse(JsonView jsonValue) : 
-    m_modelSelectionExpressionHasBeenSet(false),
-    m_responseModelsHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_routeResponseIdHasBeenSet(false),
-    m_routeResponseKeyHasBeenSet(false)
+RouteResponse::RouteResponse(JsonView jsonValue)
+  : RouteResponse()
 {
   *this = jsonValue;
 }

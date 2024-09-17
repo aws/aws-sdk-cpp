@@ -30,13 +30,8 @@ CacheSubnetGroup::CacheSubnetGroup() :
 {
 }
 
-CacheSubnetGroup::CacheSubnetGroup(const XmlNode& xmlNode) : 
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_cacheSubnetGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
+CacheSubnetGroup::CacheSubnetGroup(const XmlNode& xmlNode)
+  : CacheSubnetGroup()
 {
   *this = xmlNode;
 }

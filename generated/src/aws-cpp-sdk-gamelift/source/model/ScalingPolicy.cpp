@@ -45,30 +45,8 @@ ScalingPolicy::ScalingPolicy() :
 {
 }
 
-ScalingPolicy::ScalingPolicy(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ScalingStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false),
-    m_scalingAdjustmentType(ScalingAdjustmentType::NOT_SET),
-    m_scalingAdjustmentTypeHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperatorType::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false),
-    m_updateStatus(LocationUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_locationHasBeenSet(false)
+ScalingPolicy::ScalingPolicy(JsonView jsonValue)
+  : ScalingPolicy()
 {
   *this = jsonValue;
 }

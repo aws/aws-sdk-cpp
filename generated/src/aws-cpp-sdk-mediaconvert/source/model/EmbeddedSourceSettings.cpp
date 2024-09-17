@@ -30,15 +30,8 @@ EmbeddedSourceSettings::EmbeddedSourceSettings() :
 {
 }
 
-EmbeddedSourceSettings::EmbeddedSourceSettings(JsonView jsonValue) : 
-    m_convert608To708(EmbeddedConvert608To708::NOT_SET),
-    m_convert608To708HasBeenSet(false),
-    m_source608ChannelNumber(0),
-    m_source608ChannelNumberHasBeenSet(false),
-    m_source608TrackNumber(0),
-    m_source608TrackNumberHasBeenSet(false),
-    m_terminateCaptions(EmbeddedTerminateCaptions::NOT_SET),
-    m_terminateCaptionsHasBeenSet(false)
+EmbeddedSourceSettings::EmbeddedSourceSettings(JsonView jsonValue)
+  : EmbeddedSourceSettings()
 {
   *this = jsonValue;
 }

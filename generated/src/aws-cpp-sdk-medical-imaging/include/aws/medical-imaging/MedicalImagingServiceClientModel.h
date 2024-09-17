@@ -36,6 +36,7 @@
 #include <aws/medical-imaging/model/TagResourceResult.h>
 #include <aws/medical-imaging/model/UntagResourceResult.h>
 #include <aws/medical-imaging/model/UpdateImageSetMetadataResult.h>
+#include <aws/medical-imaging/model/ListDatastoresRequest.h>
 /* End of service model headers required in MedicalImagingClient header */
 
 namespace Aws
@@ -69,7 +70,7 @@ namespace Aws
 
   namespace MedicalImaging
   {
-    using MedicalImagingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MedicalImagingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MedicalImagingEndpointProviderBase = Aws::MedicalImaging::Endpoint::MedicalImagingEndpointProviderBase;
     using MedicalImagingEndpointProvider = Aws::MedicalImaging::Endpoint::MedicalImagingEndpointProvider;
 

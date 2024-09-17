@@ -26,11 +26,8 @@ RightsizingRecommendationSummary::RightsizingRecommendationSummary() :
 {
 }
 
-RightsizingRecommendationSummary::RightsizingRecommendationSummary(JsonView jsonValue) : 
-    m_totalRecommendationCountHasBeenSet(false),
-    m_estimatedTotalMonthlySavingsAmountHasBeenSet(false),
-    m_savingsCurrencyCodeHasBeenSet(false),
-    m_savingsPercentageHasBeenSet(false)
+RightsizingRecommendationSummary::RightsizingRecommendationSummary(JsonView jsonValue)
+  : RightsizingRecommendationSummary()
 {
   *this = jsonValue;
 }

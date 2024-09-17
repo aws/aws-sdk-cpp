@@ -38,54 +38,20 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the timestamp ranges (start time through end time) of matched
      * categories and rules.</p>
      */
     inline const Aws::Vector<TimestampRange>& GetTimestampRanges() const{ return m_timestampRanges; }
-
-    /**
-     * <p>Contains the timestamp ranges (start time through end time) of matched
-     * categories and rules.</p>
-     */
     inline bool TimestampRangesHasBeenSet() const { return m_timestampRangesHasBeenSet; }
-
-    /**
-     * <p>Contains the timestamp ranges (start time through end time) of matched
-     * categories and rules.</p>
-     */
     inline void SetTimestampRanges(const Aws::Vector<TimestampRange>& value) { m_timestampRangesHasBeenSet = true; m_timestampRanges = value; }
-
-    /**
-     * <p>Contains the timestamp ranges (start time through end time) of matched
-     * categories and rules.</p>
-     */
     inline void SetTimestampRanges(Aws::Vector<TimestampRange>&& value) { m_timestampRangesHasBeenSet = true; m_timestampRanges = std::move(value); }
-
-    /**
-     * <p>Contains the timestamp ranges (start time through end time) of matched
-     * categories and rules.</p>
-     */
     inline PointsOfInterest& WithTimestampRanges(const Aws::Vector<TimestampRange>& value) { SetTimestampRanges(value); return *this;}
-
-    /**
-     * <p>Contains the timestamp ranges (start time through end time) of matched
-     * categories and rules.</p>
-     */
     inline PointsOfInterest& WithTimestampRanges(Aws::Vector<TimestampRange>&& value) { SetTimestampRanges(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the timestamp ranges (start time through end time) of matched
-     * categories and rules.</p>
-     */
     inline PointsOfInterest& AddTimestampRanges(const TimestampRange& value) { m_timestampRangesHasBeenSet = true; m_timestampRanges.push_back(value); return *this; }
-
-    /**
-     * <p>Contains the timestamp ranges (start time through end time) of matched
-     * categories and rules.</p>
-     */
     inline PointsOfInterest& AddTimestampRanges(TimestampRange&& value) { m_timestampRangesHasBeenSet = true; m_timestampRanges.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TimestampRange> m_timestampRanges;

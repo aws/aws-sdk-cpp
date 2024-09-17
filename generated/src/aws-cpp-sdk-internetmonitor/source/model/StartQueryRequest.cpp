@@ -18,7 +18,8 @@ StartQueryRequest::StartQueryRequest() :
     m_endTimeHasBeenSet(false),
     m_queryType(QueryType::NOT_SET),
     m_queryTypeHasBeenSet(false),
-    m_filterParametersHasBeenSet(false)
+    m_filterParametersHasBeenSet(false),
+    m_linkedAccountIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,12 @@ Aws::String StartQueryRequest::SerializePayload() const
      filterParametersJsonList[filterParametersIndex].AsObject(m_filterParameters[filterParametersIndex].Jsonize());
    }
    payload.WithArray("FilterParameters", std::move(filterParametersJsonList));
+
+  }
+
+  if(m_linkedAccountIdHasBeenSet)
+  {
+   payload.WithString("LinkedAccountId", m_linkedAccountId);
 
   }
 

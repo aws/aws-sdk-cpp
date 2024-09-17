@@ -39,24 +39,8 @@ CommandInvocation::CommandInvocation() :
 {
 }
 
-CommandInvocation::CommandInvocation(JsonView jsonValue) : 
-    m_commandIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_requestedDateTimeHasBeenSet(false),
-    m_status(CommandInvocationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_traceOutputHasBeenSet(false),
-    m_standardOutputUrlHasBeenSet(false),
-    m_standardErrorUrlHasBeenSet(false),
-    m_commandPluginsHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false)
+CommandInvocation::CommandInvocation(JsonView jsonValue)
+  : CommandInvocation()
 {
   *this = jsonValue;
 }

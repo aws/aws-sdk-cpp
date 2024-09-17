@@ -37,36 +37,17 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The event action.</p>
      */
     inline const CompromisedCredentialsEventActionType& GetEventAction() const{ return m_eventAction; }
-
-    /**
-     * <p>The event action.</p>
-     */
     inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }
-
-    /**
-     * <p>The event action.</p>
-     */
     inline void SetEventAction(const CompromisedCredentialsEventActionType& value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
-
-    /**
-     * <p>The event action.</p>
-     */
     inline void SetEventAction(CompromisedCredentialsEventActionType&& value) { m_eventActionHasBeenSet = true; m_eventAction = std::move(value); }
-
-    /**
-     * <p>The event action.</p>
-     */
     inline CompromisedCredentialsActionsType& WithEventAction(const CompromisedCredentialsEventActionType& value) { SetEventAction(value); return *this;}
-
-    /**
-     * <p>The event action.</p>
-     */
     inline CompromisedCredentialsActionsType& WithEventAction(CompromisedCredentialsEventActionType&& value) { SetEventAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CompromisedCredentialsEventActionType m_eventAction;

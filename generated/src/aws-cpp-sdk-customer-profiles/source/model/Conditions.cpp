@@ -26,11 +26,8 @@ Conditions::Conditions() :
 {
 }
 
-Conditions::Conditions(JsonView jsonValue) : 
-    m_rangeHasBeenSet(false),
-    m_objectCount(0),
-    m_objectCountHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
+Conditions::Conditions(JsonView jsonValue)
+  : Conditions()
 {
   *this = jsonValue;
 }

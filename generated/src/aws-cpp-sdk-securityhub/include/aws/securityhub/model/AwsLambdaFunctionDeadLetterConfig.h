@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
-
-    /**
-     * <p>The ARN of an SQS queue or SNS topic.</p>
-     */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of an SQS queue or SNS topic.</p>
-     */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-
-    /**
-     * <p>The ARN of an SQS queue or SNS topic.</p>
-     */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of an SQS queue or SNS topic.</p>
-     */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-
-    /**
-     * <p>The ARN of an SQS queue or SNS topic.</p>
-     */
     inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of an SQS queue or SNS topic.</p>
-     */
     inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of an SQS queue or SNS topic.</p>
-     */
     inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetArn;

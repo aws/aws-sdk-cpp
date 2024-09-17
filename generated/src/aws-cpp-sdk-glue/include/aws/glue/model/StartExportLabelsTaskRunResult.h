@@ -32,63 +32,29 @@ namespace Model
     AWS_GLUE_API StartExportLabelsTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for the task run.</p>
      */
     inline const Aws::String& GetTaskRunId() const{ return m_taskRunId; }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline void SetTaskRunId(const Aws::String& value) { m_taskRunId = value; }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline void SetTaskRunId(Aws::String&& value) { m_taskRunId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline void SetTaskRunId(const char* value) { m_taskRunId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline StartExportLabelsTaskRunResult& WithTaskRunId(const Aws::String& value) { SetTaskRunId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline StartExportLabelsTaskRunResult& WithTaskRunId(Aws::String&& value) { SetTaskRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline StartExportLabelsTaskRunResult& WithTaskRunId(const char* value) { SetTaskRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartExportLabelsTaskRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartExportLabelsTaskRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartExportLabelsTaskRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskRunId;

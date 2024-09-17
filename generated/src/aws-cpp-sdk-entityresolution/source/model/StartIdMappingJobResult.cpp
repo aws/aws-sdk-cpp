@@ -35,6 +35,15 @@ StartIdMappingJobResult& StartIdMappingJobResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("outputSourceConfig"))
+  {
+    Aws::Utils::Array<JsonView> outputSourceConfigJsonList = jsonValue.GetArray("outputSourceConfig");
+    for(unsigned outputSourceConfigIndex = 0; outputSourceConfigIndex < outputSourceConfigJsonList.GetLength(); ++outputSourceConfigIndex)
+    {
+      m_outputSourceConfig.push_back(outputSourceConfigJsonList[outputSourceConfigIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

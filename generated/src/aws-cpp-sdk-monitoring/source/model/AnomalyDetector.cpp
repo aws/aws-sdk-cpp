@@ -24,17 +24,14 @@ AnomalyDetector::AnomalyDetector() :
     m_configurationHasBeenSet(false),
     m_stateValue(AnomalyDetectorStateValue::NOT_SET),
     m_stateValueHasBeenSet(false),
+    m_metricCharacteristicsHasBeenSet(false),
     m_singleMetricAnomalyDetectorHasBeenSet(false),
     m_metricMathAnomalyDetectorHasBeenSet(false)
 {
 }
 
-AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode) : 
-    m_configurationHasBeenSet(false),
-    m_stateValue(AnomalyDetectorStateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_singleMetricAnomalyDetectorHasBeenSet(false),
-    m_metricMathAnomalyDetectorHasBeenSet(false)
+AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode)
+  : AnomalyDetector()
 {
   *this = xmlNode;
 }
@@ -56,6 +53,12 @@ AnomalyDetector& AnomalyDetector::operator =(const XmlNode& xmlNode)
     {
       m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
       m_stateValueHasBeenSet = true;
+    }
+    XmlNode metricCharacteristicsNode = resultNode.FirstChild("MetricCharacteristics");
+    if(!metricCharacteristicsNode.IsNull())
+    {
+      m_metricCharacteristics = metricCharacteristicsNode;
+      m_metricCharacteristicsHasBeenSet = true;
     }
     XmlNode singleMetricAnomalyDetectorNode = resultNode.FirstChild("SingleMetricAnomalyDetector");
     if(!singleMetricAnomalyDetectorNode.IsNull())
@@ -88,6 +91,13 @@ void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".StateValue=" << AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue) << "&";
   }
 
+  if(m_metricCharacteristicsHasBeenSet)
+  {
+      Aws::StringStream metricCharacteristicsLocationAndMemberSs;
+      metricCharacteristicsLocationAndMemberSs << location << index << locationValue << ".MetricCharacteristics";
+      m_metricCharacteristics.OutputToStream(oStream, metricCharacteristicsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_singleMetricAnomalyDetectorHasBeenSet)
   {
       Aws::StringStream singleMetricAnomalyDetectorLocationAndMemberSs;
@@ -115,6 +125,12 @@ void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_stateValueHasBeenSet)
   {
       oStream << location << ".StateValue=" << AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue) << "&";
+  }
+  if(m_metricCharacteristicsHasBeenSet)
+  {
+      Aws::String metricCharacteristicsLocationAndMember(location);
+      metricCharacteristicsLocationAndMember += ".MetricCharacteristics";
+      m_metricCharacteristics.OutputToStream(oStream, metricCharacteristicsLocationAndMember.c_str());
   }
   if(m_singleMetricAnomalyDetectorHasBeenSet)
   {

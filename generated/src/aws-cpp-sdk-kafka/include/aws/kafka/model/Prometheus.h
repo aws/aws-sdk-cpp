@@ -40,6 +40,7 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Indicates whether you want to turn on or turn off the JMX
@@ -47,48 +48,14 @@ namespace Model
          
      */
     inline const JmxExporter& GetJmxExporter() const{ return m_jmxExporter; }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the JMX
-     * Exporter.</p>
-         
-     */
     inline bool JmxExporterHasBeenSet() const { return m_jmxExporterHasBeenSet; }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the JMX
-     * Exporter.</p>
-         
-     */
     inline void SetJmxExporter(const JmxExporter& value) { m_jmxExporterHasBeenSet = true; m_jmxExporter = value; }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the JMX
-     * Exporter.</p>
-         
-     */
     inline void SetJmxExporter(JmxExporter&& value) { m_jmxExporterHasBeenSet = true; m_jmxExporter = std::move(value); }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the JMX
-     * Exporter.</p>
-         
-     */
     inline Prometheus& WithJmxExporter(const JmxExporter& value) { SetJmxExporter(value); return *this;}
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the JMX
-     * Exporter.</p>
-         
-     */
     inline Prometheus& WithJmxExporter(JmxExporter&& value) { SetJmxExporter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>Indicates whether you want to turn on or turn off the Node
@@ -96,47 +63,12 @@ namespace Model
          
      */
     inline const NodeExporter& GetNodeExporter() const{ return m_nodeExporter; }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the Node
-     * Exporter.</p>
-         
-     */
     inline bool NodeExporterHasBeenSet() const { return m_nodeExporterHasBeenSet; }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the Node
-     * Exporter.</p>
-         
-     */
     inline void SetNodeExporter(const NodeExporter& value) { m_nodeExporterHasBeenSet = true; m_nodeExporter = value; }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the Node
-     * Exporter.</p>
-         
-     */
     inline void SetNodeExporter(NodeExporter&& value) { m_nodeExporterHasBeenSet = true; m_nodeExporter = std::move(value); }
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the Node
-     * Exporter.</p>
-         
-     */
     inline Prometheus& WithNodeExporter(const NodeExporter& value) { SetNodeExporter(value); return *this;}
-
-    /**
-     * 
-            <p>Indicates whether you want to turn on or turn off the Node
-     * Exporter.</p>
-         
-     */
     inline Prometheus& WithNodeExporter(NodeExporter&& value) { SetNodeExporter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     JmxExporter m_jmxExporter;

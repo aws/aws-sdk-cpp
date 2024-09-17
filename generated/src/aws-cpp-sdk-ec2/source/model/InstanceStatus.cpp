@@ -27,18 +27,13 @@ InstanceStatus::InstanceStatus() :
     m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
-    m_systemStatusHasBeenSet(false)
+    m_systemStatusHasBeenSet(false),
+    m_attachedEbsStatusHasBeenSet(false)
 {
 }
 
-InstanceStatus::InstanceStatus(const XmlNode& xmlNode) : 
-    m_availabilityZoneHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false),
-    m_systemStatusHasBeenSet(false)
+InstanceStatus::InstanceStatus(const XmlNode& xmlNode)
+  : InstanceStatus()
 {
   *this = xmlNode;
 }
@@ -97,6 +92,12 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
       m_systemStatus = systemStatusNode;
       m_systemStatusHasBeenSet = true;
     }
+    XmlNode attachedEbsStatusNode = resultNode.FirstChild("attachedEbsStatus");
+    if(!attachedEbsStatusNode.IsNull())
+    {
+      m_attachedEbsStatus = attachedEbsStatusNode;
+      m_attachedEbsStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -151,6 +152,13 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
       m_systemStatus.OutputToStream(oStream, systemStatusLocationAndMemberSs.str().c_str());
   }
 
+  if(m_attachedEbsStatusHasBeenSet)
+  {
+      Aws::StringStream attachedEbsStatusLocationAndMemberSs;
+      attachedEbsStatusLocationAndMemberSs << location << index << locationValue << ".AttachedEbsStatus";
+      m_attachedEbsStatus.OutputToStream(oStream, attachedEbsStatusLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -194,6 +202,12 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location)
       Aws::String systemStatusLocationAndMember(location);
       systemStatusLocationAndMember += ".SystemStatus";
       m_systemStatus.OutputToStream(oStream, systemStatusLocationAndMember.c_str());
+  }
+  if(m_attachedEbsStatusHasBeenSet)
+  {
+      Aws::String attachedEbsStatusLocationAndMember(location);
+      attachedEbsStatusLocationAndMember += ".AttachedEbsStatus";
+      m_attachedEbsStatus.OutputToStream(oStream, attachedEbsStatusLocationAndMember.c_str());
   }
 }
 

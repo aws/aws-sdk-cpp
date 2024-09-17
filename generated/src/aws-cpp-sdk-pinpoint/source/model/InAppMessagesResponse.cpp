@@ -23,8 +23,8 @@ InAppMessagesResponse::InAppMessagesResponse() :
 {
 }
 
-InAppMessagesResponse::InAppMessagesResponse(JsonView jsonValue) : 
-    m_inAppMessageCampaignsHasBeenSet(false)
+InAppMessagesResponse::InAppMessagesResponse(JsonView jsonValue)
+  : InAppMessagesResponse()
 {
   *this = jsonValue;
 }

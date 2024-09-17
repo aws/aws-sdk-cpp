@@ -43,60 +43,21 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
      * can include a maximum of three sitemap URLs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSiteMaps() const{ return m_siteMaps; }
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline bool SiteMapsHasBeenSet() const { return m_siteMapsHasBeenSet; }
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline void SetSiteMaps(const Aws::Vector<Aws::String>& value) { m_siteMapsHasBeenSet = true; m_siteMaps = value; }
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline void SetSiteMaps(Aws::Vector<Aws::String>&& value) { m_siteMapsHasBeenSet = true; m_siteMaps = std::move(value); }
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline SiteMapsConfiguration& WithSiteMaps(const Aws::Vector<Aws::String>& value) { SetSiteMaps(value); return *this;}
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline SiteMapsConfiguration& WithSiteMaps(Aws::Vector<Aws::String>&& value) { SetSiteMaps(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline SiteMapsConfiguration& AddSiteMaps(const Aws::String& value) { m_siteMapsHasBeenSet = true; m_siteMaps.push_back(value); return *this; }
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline SiteMapsConfiguration& AddSiteMaps(Aws::String&& value) { m_siteMapsHasBeenSet = true; m_siteMaps.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
-     * can include a maximum of three sitemap URLs.</p>
-     */
     inline SiteMapsConfiguration& AddSiteMaps(const char* value) { m_siteMapsHasBeenSet = true; m_siteMaps.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_siteMaps;

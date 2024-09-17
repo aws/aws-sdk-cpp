@@ -25,10 +25,8 @@ Target::Target() :
 {
 }
 
-Target::Target(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceReferenceHasBeenSet(false),
-    m_destinationReferenceHasBeenSet(false)
+Target::Target(JsonView jsonValue)
+  : Target()
 {
   *this = jsonValue;
 }

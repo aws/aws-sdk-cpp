@@ -38,139 +38,55 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The network source multicast IP.
      */
     inline const Aws::String& GetMulticastIp() const{ return m_multicastIp; }
-
-    /**
-     * The network source multicast IP.
-     */
     inline bool MulticastIpHasBeenSet() const { return m_multicastIpHasBeenSet; }
-
-    /**
-     * The network source multicast IP.
-     */
     inline void SetMulticastIp(const Aws::String& value) { m_multicastIpHasBeenSet = true; m_multicastIp = value; }
-
-    /**
-     * The network source multicast IP.
-     */
     inline void SetMulticastIp(Aws::String&& value) { m_multicastIpHasBeenSet = true; m_multicastIp = std::move(value); }
-
-    /**
-     * The network source multicast IP.
-     */
     inline void SetMulticastIp(const char* value) { m_multicastIpHasBeenSet = true; m_multicastIp.assign(value); }
-
-    /**
-     * The network source multicast IP.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithMulticastIp(const Aws::String& value) { SetMulticastIp(value); return *this;}
-
-    /**
-     * The network source multicast IP.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithMulticastIp(Aws::String&& value) { SetMulticastIp(std::move(value)); return *this;}
-
-    /**
-     * The network source multicast IP.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithMulticastIp(const char* value) { SetMulticastIp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The network source's gateway network name.
      */
     inline const Aws::String& GetNetworkName() const{ return m_networkName; }
-
-    /**
-     * The network source's gateway network name.
-     */
     inline bool NetworkNameHasBeenSet() const { return m_networkNameHasBeenSet; }
-
-    /**
-     * The network source's gateway network name.
-     */
     inline void SetNetworkName(const Aws::String& value) { m_networkNameHasBeenSet = true; m_networkName = value; }
-
-    /**
-     * The network source's gateway network name.
-     */
     inline void SetNetworkName(Aws::String&& value) { m_networkNameHasBeenSet = true; m_networkName = std::move(value); }
-
-    /**
-     * The network source's gateway network name.
-     */
     inline void SetNetworkName(const char* value) { m_networkNameHasBeenSet = true; m_networkName.assign(value); }
-
-    /**
-     * The network source's gateway network name.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithNetworkName(const Aws::String& value) { SetNetworkName(value); return *this;}
-
-    /**
-     * The network source's gateway network name.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithNetworkName(Aws::String&& value) { SetNetworkName(std::move(value)); return *this;}
-
-    /**
-     * The network source's gateway network name.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithNetworkName(const char* value) { SetNetworkName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The network source port.
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * The network source port.
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * The network source port.
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * The network source port.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The network source protocol.
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * The network source protocol.
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * The network source protocol.
-     */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * The network source protocol.
-     */
     inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * The network source protocol.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-
-    /**
-     * The network source protocol.
-     */
     inline UpdateBridgeNetworkSourceRequest& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_multicastIp;

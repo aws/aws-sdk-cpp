@@ -30,15 +30,8 @@ BlockPublicAccess::BlockPublicAccess() :
 {
 }
 
-BlockPublicAccess::BlockPublicAccess(JsonView jsonValue) : 
-    m_blockPublicAcls(false),
-    m_blockPublicAclsHasBeenSet(false),
-    m_blockPublicPolicy(false),
-    m_blockPublicPolicyHasBeenSet(false),
-    m_ignorePublicAcls(false),
-    m_ignorePublicAclsHasBeenSet(false),
-    m_restrictPublicBuckets(false),
-    m_restrictPublicBucketsHasBeenSet(false)
+BlockPublicAccess::BlockPublicAccess(JsonView jsonValue)
+  : BlockPublicAccess()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ PoolInfo::PoolInfo() :
 {
 }
 
-PoolInfo::PoolInfo(JsonView jsonValue) : 
-    m_poolARNHasBeenSet(false),
-    m_poolNameHasBeenSet(false),
-    m_storageClass(TapeStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_retentionLockType(RetentionLockType::NOT_SET),
-    m_retentionLockTypeHasBeenSet(false),
-    m_retentionLockTimeInDays(0),
-    m_retentionLockTimeInDaysHasBeenSet(false),
-    m_poolStatus(PoolStatus::NOT_SET),
-    m_poolStatusHasBeenSet(false)
+PoolInfo::PoolInfo(JsonView jsonValue)
+  : PoolInfo()
 {
   *this = jsonValue;
 }

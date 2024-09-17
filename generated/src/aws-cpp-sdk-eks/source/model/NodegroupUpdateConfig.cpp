@@ -26,11 +26,8 @@ NodegroupUpdateConfig::NodegroupUpdateConfig() :
 {
 }
 
-NodegroupUpdateConfig::NodegroupUpdateConfig(JsonView jsonValue) : 
-    m_maxUnavailable(0),
-    m_maxUnavailableHasBeenSet(false),
-    m_maxUnavailablePercentage(0),
-    m_maxUnavailablePercentageHasBeenSet(false)
+NodegroupUpdateConfig::NodegroupUpdateConfig(JsonView jsonValue)
+  : NodegroupUpdateConfig()
 {
   *this = jsonValue;
 }

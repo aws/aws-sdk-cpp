@@ -26,9 +26,8 @@ ApplicationResourceLifecycleConfig::ApplicationResourceLifecycleConfig() :
 {
 }
 
-ApplicationResourceLifecycleConfig::ApplicationResourceLifecycleConfig(const XmlNode& xmlNode) : 
-    m_serviceRoleHasBeenSet(false),
-    m_versionLifecycleConfigHasBeenSet(false)
+ApplicationResourceLifecycleConfig::ApplicationResourceLifecycleConfig(const XmlNode& xmlNode)
+  : ApplicationResourceLifecycleConfig()
 {
   *this = xmlNode;
 }

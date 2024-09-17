@@ -35,6 +35,24 @@ CreateEventBusResult& CreateEventBusResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyIdentifier"))
+  {
+    m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
+
+  }
+
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

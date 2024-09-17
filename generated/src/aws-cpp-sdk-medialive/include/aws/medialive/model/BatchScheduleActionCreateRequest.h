@@ -39,46 +39,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A list of schedule actions to create.
      */
     inline const Aws::Vector<ScheduleAction>& GetScheduleActions() const{ return m_scheduleActions; }
-
-    /**
-     * A list of schedule actions to create.
-     */
     inline bool ScheduleActionsHasBeenSet() const { return m_scheduleActionsHasBeenSet; }
-
-    /**
-     * A list of schedule actions to create.
-     */
     inline void SetScheduleActions(const Aws::Vector<ScheduleAction>& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = value; }
-
-    /**
-     * A list of schedule actions to create.
-     */
     inline void SetScheduleActions(Aws::Vector<ScheduleAction>&& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = std::move(value); }
-
-    /**
-     * A list of schedule actions to create.
-     */
     inline BatchScheduleActionCreateRequest& WithScheduleActions(const Aws::Vector<ScheduleAction>& value) { SetScheduleActions(value); return *this;}
-
-    /**
-     * A list of schedule actions to create.
-     */
     inline BatchScheduleActionCreateRequest& WithScheduleActions(Aws::Vector<ScheduleAction>&& value) { SetScheduleActions(std::move(value)); return *this;}
-
-    /**
-     * A list of schedule actions to create.
-     */
     inline BatchScheduleActionCreateRequest& AddScheduleActions(const ScheduleAction& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions.push_back(value); return *this; }
-
-    /**
-     * A list of schedule actions to create.
-     */
     inline BatchScheduleActionCreateRequest& AddScheduleActions(ScheduleAction&& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ScheduleAction> m_scheduleActions;

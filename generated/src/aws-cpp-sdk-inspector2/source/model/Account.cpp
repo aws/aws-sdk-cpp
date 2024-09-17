@@ -26,11 +26,8 @@ Account::Account() :
 {
 }
 
-Account::Account(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+Account::Account(JsonView jsonValue)
+  : Account()
 {
   *this = jsonValue;
 }

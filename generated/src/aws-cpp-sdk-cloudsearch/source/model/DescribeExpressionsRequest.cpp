@@ -29,12 +29,19 @@ Aws::String DescribeExpressionsRequest::SerializePayload() const
 
   if(m_expressionNamesHasBeenSet)
   {
-    unsigned expressionNamesCount = 1;
-    for(auto& item : m_expressionNames)
+    if (m_expressionNames.empty())
     {
-      ss << "ExpressionNames.member." << expressionNamesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      expressionNamesCount++;
+      ss << "ExpressionNames=&";
+    }
+    else
+    {
+      unsigned expressionNamesCount = 1;
+      for(auto& item : m_expressionNames)
+      {
+        ss << "ExpressionNames.member." << expressionNamesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        expressionNamesCount++;
+      }
     }
   }
 

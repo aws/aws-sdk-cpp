@@ -19,29 +19,20 @@ namespace Model
 {
 
 DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode() : 
-    m_applicationTransactionCounterHasBeenSet(false),
     m_cardExpiryDateHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
+    m_unpredictableNumberHasBeenSet(false),
+    m_applicationTransactionCounterHasBeenSet(false)
 {
 }
 
-DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_cardExpiryDateHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
+DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode(JsonView jsonValue)
+  : DiscoverDynamicCardVerificationCode()
 {
   *this = jsonValue;
 }
 
 DiscoverDynamicCardVerificationCode& DiscoverDynamicCardVerificationCode::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
-  {
-    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
-    m_applicationTransactionCounterHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("CardExpiryDate"))
   {
     m_cardExpiryDate = jsonValue.GetString("CardExpiryDate");
@@ -56,18 +47,19 @@ DiscoverDynamicCardVerificationCode& DiscoverDynamicCardVerificationCode::operat
     m_unpredictableNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
+  {
+    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
+
+    m_applicationTransactionCounterHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue DiscoverDynamicCardVerificationCode::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_applicationTransactionCounterHasBeenSet)
-  {
-   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
-
-  }
 
   if(m_cardExpiryDateHasBeenSet)
   {
@@ -78,6 +70,12 @@ JsonValue DiscoverDynamicCardVerificationCode::Jsonize() const
   if(m_unpredictableNumberHasBeenSet)
   {
    payload.WithString("UnpredictableNumber", m_unpredictableNumber);
+
+  }
+
+  if(m_applicationTransactionCounterHasBeenSet)
+  {
+   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
 
   }
 

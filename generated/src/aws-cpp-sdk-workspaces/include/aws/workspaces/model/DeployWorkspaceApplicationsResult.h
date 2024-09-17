@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACES_API DeployWorkspaceApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of deployed associations and information about them.</p>
      */
     inline const WorkSpaceApplicationDeployment& GetDeployment() const{ return m_deployment; }
-
-    /**
-     * <p>The list of deployed associations and information about them.</p>
-     */
     inline void SetDeployment(const WorkSpaceApplicationDeployment& value) { m_deployment = value; }
-
-    /**
-     * <p>The list of deployed associations and information about them.</p>
-     */
     inline void SetDeployment(WorkSpaceApplicationDeployment&& value) { m_deployment = std::move(value); }
-
-    /**
-     * <p>The list of deployed associations and information about them.</p>
-     */
     inline DeployWorkspaceApplicationsResult& WithDeployment(const WorkSpaceApplicationDeployment& value) { SetDeployment(value); return *this;}
-
-    /**
-     * <p>The list of deployed associations and information about them.</p>
-     */
     inline DeployWorkspaceApplicationsResult& WithDeployment(WorkSpaceApplicationDeployment&& value) { SetDeployment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeployWorkspaceApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeployWorkspaceApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeployWorkspaceApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     WorkSpaceApplicationDeployment m_deployment;

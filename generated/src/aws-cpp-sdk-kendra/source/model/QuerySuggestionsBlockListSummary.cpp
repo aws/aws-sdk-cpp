@@ -30,15 +30,8 @@ QuerySuggestionsBlockListSummary::QuerySuggestionsBlockListSummary() :
 {
 }
 
-QuerySuggestionsBlockListSummary::QuerySuggestionsBlockListSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(QuerySuggestionsBlockListStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false)
+QuerySuggestionsBlockListSummary::QuerySuggestionsBlockListSummary(JsonView jsonValue)
+  : QuerySuggestionsBlockListSummary()
 {
   *this = jsonValue;
 }

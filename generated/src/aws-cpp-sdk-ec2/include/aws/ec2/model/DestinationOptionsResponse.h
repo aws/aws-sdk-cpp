@@ -40,82 +40,38 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The format for the flow log.</p>
      */
     inline const DestinationFileFormat& GetFileFormat() const{ return m_fileFormat; }
-
-    /**
-     * <p>The format for the flow log.</p>
-     */
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-
-    /**
-     * <p>The format for the flow log.</p>
-     */
     inline void SetFileFormat(const DestinationFileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-
-    /**
-     * <p>The format for the flow log.</p>
-     */
     inline void SetFileFormat(DestinationFileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-
-    /**
-     * <p>The format for the flow log.</p>
-     */
     inline DestinationOptionsResponse& WithFileFormat(const DestinationFileFormat& value) { SetFileFormat(value); return *this;}
-
-    /**
-     * <p>The format for the flow log.</p>
-     */
     inline DestinationOptionsResponse& WithFileFormat(DestinationFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in
      * Amazon S3.</p>
      */
     inline bool GetHiveCompatiblePartitions() const{ return m_hiveCompatiblePartitions; }
-
-    /**
-     * <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in
-     * Amazon S3.</p>
-     */
     inline bool HiveCompatiblePartitionsHasBeenSet() const { return m_hiveCompatiblePartitionsHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in
-     * Amazon S3.</p>
-     */
     inline void SetHiveCompatiblePartitions(bool value) { m_hiveCompatiblePartitionsHasBeenSet = true; m_hiveCompatiblePartitions = value; }
-
-    /**
-     * <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in
-     * Amazon S3.</p>
-     */
     inline DestinationOptionsResponse& WithHiveCompatiblePartitions(bool value) { SetHiveCompatiblePartitions(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to partition the flow log per hour.</p>
      */
     inline bool GetPerHourPartition() const{ return m_perHourPartition; }
-
-    /**
-     * <p>Indicates whether to partition the flow log per hour.</p>
-     */
     inline bool PerHourPartitionHasBeenSet() const { return m_perHourPartitionHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to partition the flow log per hour.</p>
-     */
     inline void SetPerHourPartition(bool value) { m_perHourPartitionHasBeenSet = true; m_perHourPartition = value; }
-
-    /**
-     * <p>Indicates whether to partition the flow log per hour.</p>
-     */
     inline DestinationOptionsResponse& WithPerHourPartition(bool value) { SetPerHourPartition(value); return *this;}
-
+    ///@}
   private:
 
     DestinationFileFormat m_fileFormat;

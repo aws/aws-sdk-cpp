@@ -77,6 +77,23 @@
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
 #include <aws/directconnect/model/UpdateLagResult.h>
 #include <aws/directconnect/model/UpdateVirtualInterfaceAttributesResult.h>
+#include <aws/directconnect/model/DeleteBGPPeerRequest.h>
+#include <aws/directconnect/model/DescribeLocationsRequest.h>
+#include <aws/directconnect/model/DescribeConnectionsRequest.h>
+#include <aws/directconnect/model/DescribeCustomerMetadataRequest.h>
+#include <aws/directconnect/model/DescribeVirtualGatewaysRequest.h>
+#include <aws/directconnect/model/DescribeDirectConnectGatewayAssociationProposalsRequest.h>
+#include <aws/directconnect/model/DescribeDirectConnectGatewayAttachmentsRequest.h>
+#include <aws/directconnect/model/DescribeLagsRequest.h>
+#include <aws/directconnect/model/CreateBGPPeerRequest.h>
+#include <aws/directconnect/model/DescribeDirectConnectGatewaysRequest.h>
+#include <aws/directconnect/model/ConfirmCustomerAgreementRequest.h>
+#include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationRequest.h>
+#include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
+#include <aws/directconnect/model/DescribeInterconnectsRequest.h>
+#include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
+#include <aws/directconnect/model/DeleteDirectConnectGatewayAssociationRequest.h>
+#include <aws/directconnect/model/DescribeDirectConnectGatewayAssociationsRequest.h>
 /* End of service model headers required in DirectConnectClient header */
 
 namespace Aws
@@ -110,7 +127,7 @@ namespace Aws
 
   namespace DirectConnect
   {
-    using DirectConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DirectConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DirectConnectEndpointProviderBase = Aws::DirectConnect::Endpoint::DirectConnectEndpointProviderBase;
     using DirectConnectEndpointProvider = Aws::DirectConnect::Endpoint::DirectConnectEndpointProvider;
 

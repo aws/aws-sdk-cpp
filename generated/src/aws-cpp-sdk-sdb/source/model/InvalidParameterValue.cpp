@@ -26,9 +26,8 @@ InvalidParameterValue::InvalidParameterValue() :
 {
 }
 
-InvalidParameterValue::InvalidParameterValue(const XmlNode& xmlNode) : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
+InvalidParameterValue::InvalidParameterValue(const XmlNode& xmlNode)
+  : InvalidParameterValue()
 {
   *this = xmlNode;
 }

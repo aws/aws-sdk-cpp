@@ -68,6 +68,8 @@ namespace Model
     EffectiveRecommendationPreferencesCpuVendorArchitectures,
     EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
     EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    EffectiveRecommendationPreferencesPreferredResources,
+    EffectiveRecommendationPreferencesLookBackPeriod,
     InferredWorkloadTypes,
     RecommendationOptionsMigrationEffort,
     CurrentInstanceGpuInfo,
@@ -79,9 +81,7 @@ namespace Model
     EffectiveRecommendationPreferencesSavingsEstimationMode,
     RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
     RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
-    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
-    EffectiveRecommendationPreferencesPreferredResources,
-    EffectiveRecommendationPreferencesLookBackPeriod
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
   };
 
 namespace ExportableAutoScalingGroupFieldMapper

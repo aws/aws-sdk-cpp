@@ -34,95 +34,34 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
      */
     inline const Aws::String& GetVPCId() const{ return m_vPCId; }
-
-    /**
-     * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-     */
     inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-     */
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
-
-    /**
-     * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-     */
     inline void SetVPCId(Aws::String&& value) { m_vPCIdHasBeenSet = true; m_vPCId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-     */
     inline void SetVPCId(const char* value) { m_vPCIdHasBeenSet = true; m_vPCId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-     */
     inline DisassociateResolverRuleRequest& WithVPCId(const Aws::String& value) { SetVPCId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-     */
     inline DisassociateResolverRuleRequest& WithVPCId(Aws::String&& value) { SetVPCId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-     */
     inline DisassociateResolverRuleRequest& WithVPCId(const char* value) { SetVPCId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Resolver rule that you want to disassociate from the specified
      * VPC.</p>
      */
     inline const Aws::String& GetResolverRuleId() const{ return m_resolverRuleId; }
-
-    /**
-     * <p>The ID of the Resolver rule that you want to disassociate from the specified
-     * VPC.</p>
-     */
     inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Resolver rule that you want to disassociate from the specified
-     * VPC.</p>
-     */
     inline void SetResolverRuleId(const Aws::String& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = value; }
-
-    /**
-     * <p>The ID of the Resolver rule that you want to disassociate from the specified
-     * VPC.</p>
-     */
     inline void SetResolverRuleId(Aws::String&& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = std::move(value); }
-
-    /**
-     * <p>The ID of the Resolver rule that you want to disassociate from the specified
-     * VPC.</p>
-     */
     inline void SetResolverRuleId(const char* value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId.assign(value); }
-
-    /**
-     * <p>The ID of the Resolver rule that you want to disassociate from the specified
-     * VPC.</p>
-     */
     inline DisassociateResolverRuleRequest& WithResolverRuleId(const Aws::String& value) { SetResolverRuleId(value); return *this;}
-
-    /**
-     * <p>The ID of the Resolver rule that you want to disassociate from the specified
-     * VPC.</p>
-     */
     inline DisassociateResolverRuleRequest& WithResolverRuleId(Aws::String&& value) { SetResolverRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Resolver rule that you want to disassociate from the specified
-     * VPC.</p>
-     */
     inline DisassociateResolverRuleRequest& WithResolverRuleId(const char* value) { SetResolverRuleId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vPCId;

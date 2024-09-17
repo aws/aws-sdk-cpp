@@ -25,10 +25,8 @@ FieldOptionError::FieldOptionError() :
 {
 }
 
-FieldOptionError::FieldOptionError(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_valueHasBeenSet(false)
+FieldOptionError::FieldOptionError(JsonView jsonValue)
+  : FieldOptionError()
 {
   *this = jsonValue;
 }

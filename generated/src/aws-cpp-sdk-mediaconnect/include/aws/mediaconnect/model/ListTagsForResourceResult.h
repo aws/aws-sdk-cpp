@@ -33,100 +33,35 @@ namespace Model
     AWS_MEDIACONNECT_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A map from tag keys to values. Tag keys can have a maximum character length of
      * 128 characters, and tag values can have a maximum length of 256 characters.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * A map from tag keys to values. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.
-     */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTagsForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTagsForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTagsForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;

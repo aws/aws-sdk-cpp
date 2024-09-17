@@ -23,8 +23,8 @@ OnFailure::OnFailure() :
 {
 }
 
-OnFailure::OnFailure(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+OnFailure::OnFailure(JsonView jsonValue)
+  : OnFailure()
 {
   *this = jsonValue;
 }

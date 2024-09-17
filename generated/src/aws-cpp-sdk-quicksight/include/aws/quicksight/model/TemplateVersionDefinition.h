@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/AnalysisDefaults.h>
 #include <aws/quicksight/model/AssetOptions.h>
+#include <aws/quicksight/model/QueryExecutionOptions.h>
 #include <aws/quicksight/model/DataSetConfiguration.h>
 #include <aws/quicksight/model/SheetDefinition.h>
 #include <aws/quicksight/model/CalculatedField.h>
@@ -45,137 +46,50 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of dataset configurations. These configurations define the required
      * columns for each dataset used within a template.</p>
      */
     inline const Aws::Vector<DataSetConfiguration>& GetDataSetConfigurations() const{ return m_dataSetConfigurations; }
-
-    /**
-     * <p>An array of dataset configurations. These configurations define the required
-     * columns for each dataset used within a template.</p>
-     */
     inline bool DataSetConfigurationsHasBeenSet() const { return m_dataSetConfigurationsHasBeenSet; }
-
-    /**
-     * <p>An array of dataset configurations. These configurations define the required
-     * columns for each dataset used within a template.</p>
-     */
     inline void SetDataSetConfigurations(const Aws::Vector<DataSetConfiguration>& value) { m_dataSetConfigurationsHasBeenSet = true; m_dataSetConfigurations = value; }
-
-    /**
-     * <p>An array of dataset configurations. These configurations define the required
-     * columns for each dataset used within a template.</p>
-     */
     inline void SetDataSetConfigurations(Aws::Vector<DataSetConfiguration>&& value) { m_dataSetConfigurationsHasBeenSet = true; m_dataSetConfigurations = std::move(value); }
-
-    /**
-     * <p>An array of dataset configurations. These configurations define the required
-     * columns for each dataset used within a template.</p>
-     */
     inline TemplateVersionDefinition& WithDataSetConfigurations(const Aws::Vector<DataSetConfiguration>& value) { SetDataSetConfigurations(value); return *this;}
-
-    /**
-     * <p>An array of dataset configurations. These configurations define the required
-     * columns for each dataset used within a template.</p>
-     */
     inline TemplateVersionDefinition& WithDataSetConfigurations(Aws::Vector<DataSetConfiguration>&& value) { SetDataSetConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of dataset configurations. These configurations define the required
-     * columns for each dataset used within a template.</p>
-     */
     inline TemplateVersionDefinition& AddDataSetConfigurations(const DataSetConfiguration& value) { m_dataSetConfigurationsHasBeenSet = true; m_dataSetConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>An array of dataset configurations. These configurations define the required
-     * columns for each dataset used within a template.</p>
-     */
     inline TemplateVersionDefinition& AddDataSetConfigurations(DataSetConfiguration&& value) { m_dataSetConfigurationsHasBeenSet = true; m_dataSetConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of sheet definitions for a template.</p>
      */
     inline const Aws::Vector<SheetDefinition>& GetSheets() const{ return m_sheets; }
-
-    /**
-     * <p>An array of sheet definitions for a template.</p>
-     */
     inline bool SheetsHasBeenSet() const { return m_sheetsHasBeenSet; }
-
-    /**
-     * <p>An array of sheet definitions for a template.</p>
-     */
     inline void SetSheets(const Aws::Vector<SheetDefinition>& value) { m_sheetsHasBeenSet = true; m_sheets = value; }
-
-    /**
-     * <p>An array of sheet definitions for a template.</p>
-     */
     inline void SetSheets(Aws::Vector<SheetDefinition>&& value) { m_sheetsHasBeenSet = true; m_sheets = std::move(value); }
-
-    /**
-     * <p>An array of sheet definitions for a template.</p>
-     */
     inline TemplateVersionDefinition& WithSheets(const Aws::Vector<SheetDefinition>& value) { SetSheets(value); return *this;}
-
-    /**
-     * <p>An array of sheet definitions for a template.</p>
-     */
     inline TemplateVersionDefinition& WithSheets(Aws::Vector<SheetDefinition>&& value) { SetSheets(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of sheet definitions for a template.</p>
-     */
     inline TemplateVersionDefinition& AddSheets(const SheetDefinition& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(value); return *this; }
-
-    /**
-     * <p>An array of sheet definitions for a template.</p>
-     */
     inline TemplateVersionDefinition& AddSheets(SheetDefinition&& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of calculated field definitions for the template.</p>
      */
     inline const Aws::Vector<CalculatedField>& GetCalculatedFields() const{ return m_calculatedFields; }
-
-    /**
-     * <p>An array of calculated field definitions for the template.</p>
-     */
     inline bool CalculatedFieldsHasBeenSet() const { return m_calculatedFieldsHasBeenSet; }
-
-    /**
-     * <p>An array of calculated field definitions for the template.</p>
-     */
     inline void SetCalculatedFields(const Aws::Vector<CalculatedField>& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = value; }
-
-    /**
-     * <p>An array of calculated field definitions for the template.</p>
-     */
     inline void SetCalculatedFields(Aws::Vector<CalculatedField>&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = std::move(value); }
-
-    /**
-     * <p>An array of calculated field definitions for the template.</p>
-     */
     inline TemplateVersionDefinition& WithCalculatedFields(const Aws::Vector<CalculatedField>& value) { SetCalculatedFields(value); return *this;}
-
-    /**
-     * <p>An array of calculated field definitions for the template.</p>
-     */
     inline TemplateVersionDefinition& WithCalculatedFields(Aws::Vector<CalculatedField>&& value) { SetCalculatedFields(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of calculated field definitions for the template.</p>
-     */
     inline TemplateVersionDefinition& AddCalculatedFields(const CalculatedField& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.push_back(value); return *this; }
-
-    /**
-     * <p>An array of calculated field definitions for the template.</p>
-     */
     inline TemplateVersionDefinition& AddCalculatedFields(CalculatedField&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
      * are named variables that can transfer a value for use by an action or an
@@ -184,234 +98,78 @@ namespace Model
      * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
      */
     inline const Aws::Vector<ParameterDeclaration>& GetParameterDeclarations() const{ return m_parameterDeclarations; }
-
-    /**
-     * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
-     * are named variables that can transfer a value for use by an action or an
-     * object.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline bool ParameterDeclarationsHasBeenSet() const { return m_parameterDeclarationsHasBeenSet; }
-
-    /**
-     * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
-     * are named variables that can transfer a value for use by an action or an
-     * object.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline void SetParameterDeclarations(const Aws::Vector<ParameterDeclaration>& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations = value; }
-
-    /**
-     * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
-     * are named variables that can transfer a value for use by an action or an
-     * object.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline void SetParameterDeclarations(Aws::Vector<ParameterDeclaration>&& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations = std::move(value); }
-
-    /**
-     * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
-     * are named variables that can transfer a value for use by an action or an
-     * object.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& WithParameterDeclarations(const Aws::Vector<ParameterDeclaration>& value) { SetParameterDeclarations(value); return *this;}
-
-    /**
-     * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
-     * are named variables that can transfer a value for use by an action or an
-     * object.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& WithParameterDeclarations(Aws::Vector<ParameterDeclaration>&& value) { SetParameterDeclarations(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
-     * are named variables that can transfer a value for use by an action or an
-     * object.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& AddParameterDeclarations(const ParameterDeclaration& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations.push_back(value); return *this; }
-
-    /**
-     * <p>An array of parameter declarations for a template.</p> <p> <i>Parameters</i>
-     * are named variables that can transfer a value for use by an action or an
-     * object.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& AddParameterDeclarations(ParameterDeclaration&& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter definitions for a template.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
      * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
      */
     inline const Aws::Vector<FilterGroup>& GetFilterGroups() const{ return m_filterGroups; }
-
-    /**
-     * <p>Filter definitions for a template.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
-
-    /**
-     * <p>Filter definitions for a template.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline void SetFilterGroups(const Aws::Vector<FilterGroup>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
-
-    /**
-     * <p>Filter definitions for a template.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline void SetFilterGroups(Aws::Vector<FilterGroup>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::move(value); }
-
-    /**
-     * <p>Filter definitions for a template.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& WithFilterGroups(const Aws::Vector<FilterGroup>& value) { SetFilterGroups(value); return *this;}
-
-    /**
-     * <p>Filter definitions for a template.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& WithFilterGroups(Aws::Vector<FilterGroup>&& value) { SetFilterGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Filter definitions for a template.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& AddFilterGroups(const FilterGroup& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(value); return *this; }
-
-    /**
-     * <p>Filter definitions for a template.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
-     */
     inline TemplateVersionDefinition& AddFilterGroups(FilterGroup&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> An array of template-level column configurations. Column configurations are
      * used to set default formatting for a column that's used throughout a template.
      * </p>
      */
     inline const Aws::Vector<ColumnConfiguration>& GetColumnConfigurations() const{ return m_columnConfigurations; }
-
-    /**
-     * <p> An array of template-level column configurations. Column configurations are
-     * used to set default formatting for a column that's used throughout a template.
-     * </p>
-     */
     inline bool ColumnConfigurationsHasBeenSet() const { return m_columnConfigurationsHasBeenSet; }
-
-    /**
-     * <p> An array of template-level column configurations. Column configurations are
-     * used to set default formatting for a column that's used throughout a template.
-     * </p>
-     */
     inline void SetColumnConfigurations(const Aws::Vector<ColumnConfiguration>& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations = value; }
-
-    /**
-     * <p> An array of template-level column configurations. Column configurations are
-     * used to set default formatting for a column that's used throughout a template.
-     * </p>
-     */
     inline void SetColumnConfigurations(Aws::Vector<ColumnConfiguration>&& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations = std::move(value); }
-
-    /**
-     * <p> An array of template-level column configurations. Column configurations are
-     * used to set default formatting for a column that's used throughout a template.
-     * </p>
-     */
     inline TemplateVersionDefinition& WithColumnConfigurations(const Aws::Vector<ColumnConfiguration>& value) { SetColumnConfigurations(value); return *this;}
-
-    /**
-     * <p> An array of template-level column configurations. Column configurations are
-     * used to set default formatting for a column that's used throughout a template.
-     * </p>
-     */
     inline TemplateVersionDefinition& WithColumnConfigurations(Aws::Vector<ColumnConfiguration>&& value) { SetColumnConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p> An array of template-level column configurations. Column configurations are
-     * used to set default formatting for a column that's used throughout a template.
-     * </p>
-     */
     inline TemplateVersionDefinition& AddColumnConfigurations(const ColumnConfiguration& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p> An array of template-level column configurations. Column configurations are
-     * used to set default formatting for a column that's used throughout a template.
-     * </p>
-     */
     inline TemplateVersionDefinition& AddColumnConfigurations(ColumnConfiguration&& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const AnalysisDefaults& GetAnalysisDefaults() const{ return m_analysisDefaults; }
-
-    
     inline bool AnalysisDefaultsHasBeenSet() const { return m_analysisDefaultsHasBeenSet; }
-
-    
     inline void SetAnalysisDefaults(const AnalysisDefaults& value) { m_analysisDefaultsHasBeenSet = true; m_analysisDefaults = value; }
-
-    
     inline void SetAnalysisDefaults(AnalysisDefaults&& value) { m_analysisDefaultsHasBeenSet = true; m_analysisDefaults = std::move(value); }
-
-    
     inline TemplateVersionDefinition& WithAnalysisDefaults(const AnalysisDefaults& value) { SetAnalysisDefaults(value); return *this;}
-
-    
     inline TemplateVersionDefinition& WithAnalysisDefaults(AnalysisDefaults&& value) { SetAnalysisDefaults(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of option definitions for a template.</p>
      */
     inline const AssetOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>An array of option definitions for a template.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>An array of option definitions for a template.</p>
-     */
     inline void SetOptions(const AssetOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>An array of option definitions for a template.</p>
-     */
     inline void SetOptions(AssetOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>An array of option definitions for a template.</p>
-     */
     inline TemplateVersionDefinition& WithOptions(const AssetOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>An array of option definitions for a template.</p>
-     */
     inline TemplateVersionDefinition& WithOptions(AssetOptions&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    
+    inline const QueryExecutionOptions& GetQueryExecutionOptions() const{ return m_queryExecutionOptions; }
+    inline bool QueryExecutionOptionsHasBeenSet() const { return m_queryExecutionOptionsHasBeenSet; }
+    inline void SetQueryExecutionOptions(const QueryExecutionOptions& value) { m_queryExecutionOptionsHasBeenSet = true; m_queryExecutionOptions = value; }
+    inline void SetQueryExecutionOptions(QueryExecutionOptions&& value) { m_queryExecutionOptionsHasBeenSet = true; m_queryExecutionOptions = std::move(value); }
+    inline TemplateVersionDefinition& WithQueryExecutionOptions(const QueryExecutionOptions& value) { SetQueryExecutionOptions(value); return *this;}
+    inline TemplateVersionDefinition& WithQueryExecutionOptions(QueryExecutionOptions&& value) { SetQueryExecutionOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<DataSetConfiguration> m_dataSetConfigurations;
@@ -437,6 +195,9 @@ namespace Model
 
     AssetOptions m_options;
     bool m_optionsHasBeenSet = false;
+
+    QueryExecutionOptions m_queryExecutionOptions;
+    bool m_queryExecutionOptionsHasBeenSet = false;
   };
 
 } // namespace Model

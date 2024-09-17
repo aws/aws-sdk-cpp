@@ -22,8 +22,8 @@ PutFeedbackResult::PutFeedbackResult() :
 {
 }
 
-PutFeedbackResult::PutFeedbackResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_targetType(TargetType::NOT_SET)
+PutFeedbackResult::PutFeedbackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutFeedbackResult()
 {
   *this = result;
 }

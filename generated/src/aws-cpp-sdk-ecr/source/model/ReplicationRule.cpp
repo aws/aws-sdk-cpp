@@ -24,9 +24,8 @@ ReplicationRule::ReplicationRule() :
 {
 }
 
-ReplicationRule::ReplicationRule(JsonView jsonValue) : 
-    m_destinationsHasBeenSet(false),
-    m_repositoryFiltersHasBeenSet(false)
+ReplicationRule::ReplicationRule(JsonView jsonValue)
+  : ReplicationRule()
 {
   *this = jsonValue;
 }

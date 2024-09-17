@@ -24,9 +24,8 @@ ListAnnotationStoreVersionsFilter::ListAnnotationStoreVersionsFilter() :
 {
 }
 
-ListAnnotationStoreVersionsFilter::ListAnnotationStoreVersionsFilter(JsonView jsonValue) : 
-    m_status(VersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ListAnnotationStoreVersionsFilter::ListAnnotationStoreVersionsFilter(JsonView jsonValue)
+  : ListAnnotationStoreVersionsFilter()
 {
   *this = jsonValue;
 }

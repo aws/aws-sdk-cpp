@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/SubscribedAssetListing.h>
+#include <aws/datazone/model/SubscribedProductListing.h>
 #include <utility>
 
 namespace Aws
@@ -38,40 +39,36 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The asset for which the subscription grant is created.</p>
      */
     inline const SubscribedAssetListing& GetAssetListing() const{ return m_assetListing; }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline bool AssetListingHasBeenSet() const { return m_assetListingHasBeenSet; }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline void SetAssetListing(const SubscribedAssetListing& value) { m_assetListingHasBeenSet = true; m_assetListing = value; }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline void SetAssetListing(SubscribedAssetListing&& value) { m_assetListingHasBeenSet = true; m_assetListing = std::move(value); }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline SubscribedListingItem& WithAssetListing(const SubscribedAssetListing& value) { SetAssetListing(value); return *this;}
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline SubscribedListingItem& WithAssetListing(SubscribedAssetListing&& value) { SetAssetListing(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The data product listing.</p>
+     */
+    inline const SubscribedProductListing& GetProductListing() const{ return m_productListing; }
+    inline bool ProductListingHasBeenSet() const { return m_productListingHasBeenSet; }
+    inline void SetProductListing(const SubscribedProductListing& value) { m_productListingHasBeenSet = true; m_productListing = value; }
+    inline void SetProductListing(SubscribedProductListing&& value) { m_productListingHasBeenSet = true; m_productListing = std::move(value); }
+    inline SubscribedListingItem& WithProductListing(const SubscribedProductListing& value) { SetProductListing(value); return *this;}
+    inline SubscribedListingItem& WithProductListing(SubscribedProductListing&& value) { SetProductListing(std::move(value)); return *this;}
+    ///@}
   private:
 
     SubscribedAssetListing m_assetListing;
     bool m_assetListingHasBeenSet = false;
+
+    SubscribedProductListing m_productListing;
+    bool m_productListingHasBeenSet = false;
   };
 
 } // namespace Model

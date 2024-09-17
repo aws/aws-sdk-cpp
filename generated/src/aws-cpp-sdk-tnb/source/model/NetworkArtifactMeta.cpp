@@ -23,8 +23,8 @@ NetworkArtifactMeta::NetworkArtifactMeta() :
 {
 }
 
-NetworkArtifactMeta::NetworkArtifactMeta(JsonView jsonValue) : 
-    m_overridesHasBeenSet(false)
+NetworkArtifactMeta::NetworkArtifactMeta(JsonView jsonValue)
+  : NetworkArtifactMeta()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateAccountCustomizationResult::UpdateAccountCustomizationResult() :
 {
 }
 
-UpdateAccountCustomizationResult::UpdateAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateAccountCustomizationResult::UpdateAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateAccountCustomizationResult()
 {
   *this = result;
 }

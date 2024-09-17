@@ -25,8 +25,8 @@ ThroughResourcesStatement::ThroughResourcesStatement() :
 {
 }
 
-ThroughResourcesStatement::ThroughResourcesStatement(const XmlNode& xmlNode) : 
-    m_resourceStatementHasBeenSet(false)
+ThroughResourcesStatement::ThroughResourcesStatement(const XmlNode& xmlNode)
+  : ThroughResourcesStatement()
 {
   *this = xmlNode;
 }

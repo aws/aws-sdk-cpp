@@ -38,6 +38,7 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data provider of traffic and road network data used to calculate the
      * routes. Indicates one of the available providers:</p> <ul> <li> <p>
@@ -48,182 +49,62 @@ namespace Model
      * Location Service data providers</a>.</p>
      */
     inline const Aws::String& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>The data provider of traffic and road network data used to calculate the
-     * routes. Indicates one of the available providers:</p> <ul> <li> <p>
-     * <code>Esri</code> </p> </li> <li> <p> <code>Grab</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
-     */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>The data provider of traffic and road network data used to calculate the
-     * routes. Indicates one of the available providers:</p> <ul> <li> <p>
-     * <code>Esri</code> </p> </li> <li> <p> <code>Grab</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
-     */
     inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>The data provider of traffic and road network data used to calculate the
-     * routes. Indicates one of the available providers:</p> <ul> <li> <p>
-     * <code>Esri</code> </p> </li> <li> <p> <code>Grab</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
-     */
     inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>The data provider of traffic and road network data used to calculate the
-     * routes. Indicates one of the available providers:</p> <ul> <li> <p>
-     * <code>Esri</code> </p> </li> <li> <p> <code>Grab</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
-     */
     inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
-
-    /**
-     * <p>The data provider of traffic and road network data used to calculate the
-     * routes. Indicates one of the available providers:</p> <ul> <li> <p>
-     * <code>Esri</code> </p> </li> <li> <p> <code>Grab</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
-     */
     inline CalculateRouteMatrixSummary& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>The data provider of traffic and road network data used to calculate the
-     * routes. Indicates one of the available providers:</p> <ul> <li> <p>
-     * <code>Esri</code> </p> </li> <li> <p> <code>Grab</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
-     */
     inline CalculateRouteMatrixSummary& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The data provider of traffic and road network data used to calculate the
-     * routes. Indicates one of the available providers:</p> <ul> <li> <p>
-     * <code>Esri</code> </p> </li> <li> <p> <code>Grab</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
-     */
     inline CalculateRouteMatrixSummary& WithDataSource(const char* value) { SetDataSource(value); return *this;}
+    ///@}
 
-
-    /**
-     * <p>The unit of measurement for route distances.</p>
-     */
-    inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
-
-    /**
-     * <p>The unit of measurement for route distances.</p>
-     */
-    inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
-
-    /**
-     * <p>The unit of measurement for route distances.</p>
-     */
-    inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
-
-    /**
-     * <p>The unit of measurement for route distances.</p>
-     */
-    inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
-
-    /**
-     * <p>The unit of measurement for route distances.</p>
-     */
-    inline CalculateRouteMatrixSummary& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
-
-    /**
-     * <p>The unit of measurement for route distances.</p>
-     */
-    inline CalculateRouteMatrixSummary& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline int GetErrorCount() const{ return m_errorCount; }
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline void SetErrorCount(int value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline CalculateRouteMatrixSummary& WithErrorCount(int value) { SetErrorCount(value); return *this;}
-
-
+    ///@{
     /**
      * <p>The count of cells in the route matrix. Equal to the number of
      * <code>DeparturePositions</code> multiplied by the number of
      * <code>DestinationPositions</code>.</p>
      */
     inline int GetRouteCount() const{ return m_routeCount; }
-
-    /**
-     * <p>The count of cells in the route matrix. Equal to the number of
-     * <code>DeparturePositions</code> multiplied by the number of
-     * <code>DestinationPositions</code>.</p>
-     */
     inline bool RouteCountHasBeenSet() const { return m_routeCountHasBeenSet; }
-
-    /**
-     * <p>The count of cells in the route matrix. Equal to the number of
-     * <code>DeparturePositions</code> multiplied by the number of
-     * <code>DestinationPositions</code>.</p>
-     */
     inline void SetRouteCount(int value) { m_routeCountHasBeenSet = true; m_routeCount = value; }
-
-    /**
-     * <p>The count of cells in the route matrix. Equal to the number of
-     * <code>DeparturePositions</code> multiplied by the number of
-     * <code>DestinationPositions</code>.</p>
-     */
     inline CalculateRouteMatrixSummary& WithRouteCount(int value) { SetRouteCount(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The count of error results in the route matrix. If this number is 0, all
+     * routes were calculated successfully.</p>
+     */
+    inline int GetErrorCount() const{ return m_errorCount; }
+    inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
+    inline void SetErrorCount(int value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
+    inline CalculateRouteMatrixSummary& WithErrorCount(int value) { SetErrorCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unit of measurement for route distances.</p>
+     */
+    inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
+    inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
+    inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
+    inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
+    inline CalculateRouteMatrixSummary& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
+    inline CalculateRouteMatrixSummary& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet = false;
+    int m_routeCount;
+    bool m_routeCountHasBeenSet = false;
 
     int m_errorCount;
     bool m_errorCountHasBeenSet = false;
 
-    int m_routeCount;
-    bool m_routeCountHasBeenSet = false;
+    DistanceUnit m_distanceUnit;
+    bool m_distanceUnitHasBeenSet = false;
   };
 
 } // namespace Model

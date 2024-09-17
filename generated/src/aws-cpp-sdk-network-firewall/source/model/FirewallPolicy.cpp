@@ -31,16 +31,8 @@ FirewallPolicy::FirewallPolicy() :
 {
 }
 
-FirewallPolicy::FirewallPolicy(JsonView jsonValue) : 
-    m_statelessRuleGroupReferencesHasBeenSet(false),
-    m_statelessDefaultActionsHasBeenSet(false),
-    m_statelessFragmentDefaultActionsHasBeenSet(false),
-    m_statelessCustomActionsHasBeenSet(false),
-    m_statefulRuleGroupReferencesHasBeenSet(false),
-    m_statefulDefaultActionsHasBeenSet(false),
-    m_statefulEngineOptionsHasBeenSet(false),
-    m_tLSInspectionConfigurationArnHasBeenSet(false),
-    m_policyVariablesHasBeenSet(false)
+FirewallPolicy::FirewallPolicy(JsonView jsonValue)
+  : FirewallPolicy()
 {
   *this = jsonValue;
 }

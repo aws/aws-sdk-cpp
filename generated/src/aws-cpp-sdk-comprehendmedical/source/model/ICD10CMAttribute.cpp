@@ -40,25 +40,8 @@ ICD10CMAttribute::ICD10CMAttribute() :
 {
 }
 
-ICD10CMAttribute::ICD10CMAttribute(JsonView jsonValue) : 
-    m_type(ICD10CMAttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_relationshipScore(0.0),
-    m_relationshipScoreHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_traitsHasBeenSet(false),
-    m_category(ICD10CMEntityType::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_relationshipType(ICD10CMRelationshipType::NOT_SET),
-    m_relationshipTypeHasBeenSet(false)
+ICD10CMAttribute::ICD10CMAttribute(JsonView jsonValue)
+  : ICD10CMAttribute()
 {
   *this = jsonValue;
 }

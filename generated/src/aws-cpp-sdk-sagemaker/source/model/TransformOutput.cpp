@@ -27,12 +27,8 @@ TransformOutput::TransformOutput() :
 {
 }
 
-TransformOutput::TransformOutput(JsonView jsonValue) : 
-    m_s3OutputPathHasBeenSet(false),
-    m_acceptHasBeenSet(false),
-    m_assembleWith(AssemblyType::NOT_SET),
-    m_assembleWithHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+TransformOutput::TransformOutput(JsonView jsonValue)
+  : TransformOutput()
 {
   *this = jsonValue;
 }

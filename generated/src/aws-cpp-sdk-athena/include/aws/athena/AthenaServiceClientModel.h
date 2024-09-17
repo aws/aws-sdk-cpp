@@ -86,6 +86,13 @@
 #include <aws/athena/model/UpdateNotebookMetadataResult.h>
 #include <aws/athena/model/UpdatePreparedStatementResult.h>
 #include <aws/athena/model/UpdateWorkGroupResult.h>
+#include <aws/athena/model/ListCapacityReservationsRequest.h>
+#include <aws/athena/model/ListDataCatalogsRequest.h>
+#include <aws/athena/model/ListEngineVersionsRequest.h>
+#include <aws/athena/model/ListWorkGroupsRequest.h>
+#include <aws/athena/model/ListApplicationDPUSizesRequest.h>
+#include <aws/athena/model/ListQueryExecutionsRequest.h>
+#include <aws/athena/model/ListNamedQueriesRequest.h>
 /* End of service model headers required in AthenaClient header */
 
 namespace Aws
@@ -119,7 +126,7 @@ namespace Aws
 
   namespace Athena
   {
-    using AthenaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AthenaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AthenaEndpointProviderBase = Aws::Athena::Endpoint::AthenaEndpointProviderBase;
     using AthenaEndpointProvider = Aws::Athena::Endpoint::AthenaEndpointProvider;
 

@@ -26,11 +26,8 @@ InstancePatchStateFilter::InstancePatchStateFilter() :
 {
 }
 
-InstancePatchStateFilter::InstancePatchStateFilter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_type(InstancePatchStateOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
+InstancePatchStateFilter::InstancePatchStateFilter(JsonView jsonValue)
+  : InstancePatchStateFilter()
 {
   *this = jsonValue;
 }

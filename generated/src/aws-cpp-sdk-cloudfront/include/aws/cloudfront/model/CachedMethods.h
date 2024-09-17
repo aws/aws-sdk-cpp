@@ -45,6 +45,7 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The number of HTTP methods for which you want CloudFront to cache responses.
      * Valid values are <code>2</code> (for caching responses to <code>GET</code> and
@@ -52,80 +53,28 @@ namespace Model
      * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of HTTP methods for which you want CloudFront to cache responses.
-     * Valid values are <code>2</code> (for caching responses to <code>GET</code> and
-     * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
-     * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of HTTP methods for which you want CloudFront to cache responses.
-     * Valid values are <code>2</code> (for caching responses to <code>GET</code> and
-     * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
-     * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of HTTP methods for which you want CloudFront to cache responses.
-     * Valid values are <code>2</code> (for caching responses to <code>GET</code> and
-     * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
-     * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
-     */
     inline CachedMethods& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
+     * cache responses to. Valid values for <code>CachedMethods</code> include
+     * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>, depending on
+     * which caching option you choose. For more information, see the preceding
+     * section.</p>
      */
     inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
-     */
     inline void SetItems(const Aws::Vector<Method>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
-     */
     inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
-     */
     inline CachedMethods& WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
-     */
     inline CachedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
-     */
     inline CachedMethods& AddItems(const Method& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>A complex type that contains the HTTP methods that you want CloudFront to
-     * cache responses to.</p>
-     */
     inline CachedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_quantity;

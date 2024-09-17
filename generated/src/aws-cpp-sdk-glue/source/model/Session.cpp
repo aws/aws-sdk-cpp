@@ -45,38 +45,13 @@ Session::Session() :
     m_dPUSeconds(0.0),
     m_dPUSecondsHasBeenSet(false),
     m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
+    m_idleTimeoutHasBeenSet(false),
+    m_profileNameHasBeenSet(false)
 {
 }
 
-Session::Session(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_status(SessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_defaultArgumentsHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_progress(0.0),
-    m_progressHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_executionTime(0.0),
-    m_executionTimeHasBeenSet(false),
-    m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false),
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
+Session::Session(JsonView jsonValue)
+  : Session()
 {
   *this = jsonValue;
 }
@@ -219,6 +194,13 @@ Session& Session::operator =(JsonView jsonValue)
     m_idleTimeoutHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProfileName"))
+  {
+    m_profileName = jsonValue.GetString("ProfileName");
+
+    m_profileNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -338,6 +320,12 @@ JsonValue Session::Jsonize() const
   if(m_idleTimeoutHasBeenSet)
   {
    payload.WithInteger("IdleTimeout", m_idleTimeout);
+
+  }
+
+  if(m_profileNameHasBeenSet)
+  {
+   payload.WithString("ProfileName", m_profileName);
 
   }
 

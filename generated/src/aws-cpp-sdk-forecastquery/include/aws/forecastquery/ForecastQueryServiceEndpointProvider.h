@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ForecastQueryServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ForecastQueryServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ForecastQueryServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ForecastQueryServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

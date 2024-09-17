@@ -33,18 +33,8 @@ Datastore::Datastore() :
 {
 }
 
-Datastore::Datastore(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(DatastoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false),
-    m_fileFormatConfigurationHasBeenSet(false),
-    m_datastorePartitionsHasBeenSet(false)
+Datastore::Datastore(JsonView jsonValue)
+  : Datastore()
 {
   *this = jsonValue;
 }

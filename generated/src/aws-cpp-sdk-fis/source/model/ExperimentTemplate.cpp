@@ -20,6 +20,7 @@ namespace Model
 
 ExperimentTemplate::ExperimentTemplate() : 
     m_idHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_actionsHasBeenSet(false),
@@ -35,20 +36,8 @@ ExperimentTemplate::ExperimentTemplate() :
 {
 }
 
-ExperimentTemplate::ExperimentTemplate(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_stopConditionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_experimentOptionsHasBeenSet(false),
-    m_targetAccountConfigurationsCount(0),
-    m_targetAccountConfigurationsCountHasBeenSet(false)
+ExperimentTemplate::ExperimentTemplate(JsonView jsonValue)
+  : ExperimentTemplate()
 {
   *this = jsonValue;
 }
@@ -60,6 +49,13 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -161,6 +157,12 @@ JsonValue ExperimentTemplate::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

@@ -25,10 +25,8 @@ SignInDistribution::SignInDistribution() :
 {
 }
 
-SignInDistribution::SignInDistribution(JsonView jsonValue) : 
-    m_regionHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+SignInDistribution::SignInDistribution(JsonView jsonValue)
+  : SignInDistribution()
 {
   *this = jsonValue;
 }

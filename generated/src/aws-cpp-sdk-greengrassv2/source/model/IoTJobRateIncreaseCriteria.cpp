@@ -26,11 +26,8 @@ IoTJobRateIncreaseCriteria::IoTJobRateIncreaseCriteria() :
 {
 }
 
-IoTJobRateIncreaseCriteria::IoTJobRateIncreaseCriteria(JsonView jsonValue) : 
-    m_numberOfNotifiedThings(0),
-    m_numberOfNotifiedThingsHasBeenSet(false),
-    m_numberOfSucceededThings(0),
-    m_numberOfSucceededThingsHasBeenSet(false)
+IoTJobRateIncreaseCriteria::IoTJobRateIncreaseCriteria(JsonView jsonValue)
+  : IoTJobRateIncreaseCriteria()
 {
   *this = jsonValue;
 }

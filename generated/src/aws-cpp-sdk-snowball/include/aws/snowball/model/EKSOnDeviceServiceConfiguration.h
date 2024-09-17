@@ -38,87 +38,33 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
      */
     inline const Aws::String& GetKubernetesVersion() const{ return m_kubernetesVersion; }
-
-    /**
-     * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-     */
     inline bool KubernetesVersionHasBeenSet() const { return m_kubernetesVersionHasBeenSet; }
-
-    /**
-     * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-     */
     inline void SetKubernetesVersion(const Aws::String& value) { m_kubernetesVersionHasBeenSet = true; m_kubernetesVersion = value; }
-
-    /**
-     * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-     */
     inline void SetKubernetesVersion(Aws::String&& value) { m_kubernetesVersionHasBeenSet = true; m_kubernetesVersion = std::move(value); }
-
-    /**
-     * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-     */
     inline void SetKubernetesVersion(const char* value) { m_kubernetesVersionHasBeenSet = true; m_kubernetesVersion.assign(value); }
-
-    /**
-     * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-     */
     inline EKSOnDeviceServiceConfiguration& WithKubernetesVersion(const Aws::String& value) { SetKubernetesVersion(value); return *this;}
-
-    /**
-     * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-     */
     inline EKSOnDeviceServiceConfiguration& WithKubernetesVersion(Aws::String&& value) { SetKubernetesVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-     */
     inline EKSOnDeviceServiceConfiguration& WithKubernetesVersion(const char* value) { SetKubernetesVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
+     * <p>The optional version of EKS Anywhere on the Snow Family device.</p>
      */
     inline const Aws::String& GetEKSAnywhereVersion() const{ return m_eKSAnywhereVersion; }
-
-    /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
-     */
     inline bool EKSAnywhereVersionHasBeenSet() const { return m_eKSAnywhereVersionHasBeenSet; }
-
-    /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
-     */
     inline void SetEKSAnywhereVersion(const Aws::String& value) { m_eKSAnywhereVersionHasBeenSet = true; m_eKSAnywhereVersion = value; }
-
-    /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
-     */
     inline void SetEKSAnywhereVersion(Aws::String&& value) { m_eKSAnywhereVersionHasBeenSet = true; m_eKSAnywhereVersion = std::move(value); }
-
-    /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
-     */
     inline void SetEKSAnywhereVersion(const char* value) { m_eKSAnywhereVersionHasBeenSet = true; m_eKSAnywhereVersion.assign(value); }
-
-    /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
-     */
     inline EKSOnDeviceServiceConfiguration& WithEKSAnywhereVersion(const Aws::String& value) { SetEKSAnywhereVersion(value); return *this;}
-
-    /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
-     */
     inline EKSOnDeviceServiceConfiguration& WithEKSAnywhereVersion(Aws::String&& value) { SetEKSAnywhereVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of EKS Anywhere on the Snow Family device.</p>
-     */
     inline EKSOnDeviceServiceConfiguration& WithEKSAnywhereVersion(const char* value) { SetEKSAnywhereVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kubernetesVersion;

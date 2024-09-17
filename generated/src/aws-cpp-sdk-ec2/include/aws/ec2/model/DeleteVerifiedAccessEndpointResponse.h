@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteVerifiedAccessEndpointResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Details about the Verified Access endpoint.</p>
      */
     inline const VerifiedAccessEndpoint& GetVerifiedAccessEndpoint() const{ return m_verifiedAccessEndpoint; }
-
-    /**
-     * <p>Details about the Verified Access endpoint.</p>
-     */
     inline void SetVerifiedAccessEndpoint(const VerifiedAccessEndpoint& value) { m_verifiedAccessEndpoint = value; }
-
-    /**
-     * <p>Details about the Verified Access endpoint.</p>
-     */
     inline void SetVerifiedAccessEndpoint(VerifiedAccessEndpoint&& value) { m_verifiedAccessEndpoint = std::move(value); }
-
-    /**
-     * <p>Details about the Verified Access endpoint.</p>
-     */
     inline DeleteVerifiedAccessEndpointResponse& WithVerifiedAccessEndpoint(const VerifiedAccessEndpoint& value) { SetVerifiedAccessEndpoint(value); return *this;}
-
-    /**
-     * <p>Details about the Verified Access endpoint.</p>
-     */
     inline DeleteVerifiedAccessEndpointResponse& WithVerifiedAccessEndpoint(VerifiedAccessEndpoint&& value) { SetVerifiedAccessEndpoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteVerifiedAccessEndpointResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteVerifiedAccessEndpointResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VerifiedAccessEndpoint m_verifiedAccessEndpoint;

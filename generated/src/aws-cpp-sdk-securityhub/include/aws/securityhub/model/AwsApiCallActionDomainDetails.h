@@ -39,46 +39,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The name of the DNS domain that issued the API call.</p>
+     * <p>The name of the DNS domain that issued the API call.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>The name of the DNS domain that issued the API call.</p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p>The name of the DNS domain that issued the API call.</p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p>The name of the DNS domain that issued the API call.</p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p>The name of the DNS domain that issued the API call.</p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p>The name of the DNS domain that issued the API call.</p>
-     */
     inline AwsApiCallActionDomainDetails& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>The name of the DNS domain that issued the API call.</p>
-     */
     inline AwsApiCallActionDomainDetails& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DNS domain that issued the API call.</p>
-     */
     inline AwsApiCallActionDomainDetails& WithDomain(const char* value) { SetDomain(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domain;

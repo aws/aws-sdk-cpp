@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SMS_MFA_HASH = HashingUtils::HashString("SMS_MFA");
+        static const int EMAIL_OTP_HASH = HashingUtils::HashString("EMAIL_OTP");
         static const int SOFTWARE_TOKEN_MFA_HASH = HashingUtils::HashString("SOFTWARE_TOKEN_MFA");
         static const int SELECT_MFA_TYPE_HASH = HashingUtils::HashString("SELECT_MFA_TYPE");
         static const int MFA_SETUP_HASH = HashingUtils::HashString("MFA_SETUP");
@@ -38,6 +39,10 @@ namespace Aws
           if (hashCode == SMS_MFA_HASH)
           {
             return ChallengeNameType::SMS_MFA;
+          }
+          else if (hashCode == EMAIL_OTP_HASH)
+          {
+            return ChallengeNameType::EMAIL_OTP;
           }
           else if (hashCode == SOFTWARE_TOKEN_MFA_HASH)
           {
@@ -93,6 +98,8 @@ namespace Aws
             return {};
           case ChallengeNameType::SMS_MFA:
             return "SMS_MFA";
+          case ChallengeNameType::EMAIL_OTP:
+            return "EMAIL_OTP";
           case ChallengeNameType::SOFTWARE_TOKEN_MFA:
             return "SOFTWARE_TOKEN_MFA";
           case ChallengeNameType::SELECT_MFA_TYPE:

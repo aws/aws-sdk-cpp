@@ -44,6 +44,7 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
      * codes that you can use in your custom responses, see <a
@@ -51,32 +52,12 @@ namespace Model
      * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline int GetResponseCode() const{ return m_responseCode; }
-
-    /**
-     * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
-
-    /**
-     * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
-
-    /**
-     * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom responses, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline CustomResponse& WithResponseCode(int value) { SetResponseCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>References the response body that you want WAF to return to the web request
      * client. You can define a custom response for a rule action or a default web ACL
@@ -87,85 +68,16 @@ namespace Model
      * body using this key. </p>
      */
     inline const Aws::String& GetCustomResponseBodyKey() const{ return m_customResponseBodyKey; }
-
-    /**
-     * <p>References the response body that you want WAF to return to the web request
-     * client. You can define a custom response for a rule action or a default web ACL
-     * action that is set to block. To do this, you first define the response body key
-     * and value in the <code>CustomResponseBodies</code> setting for the <a>WebACL</a>
-     * or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web
-     * ACL default action <code>BlockAction</code> setting, you reference the response
-     * body using this key. </p>
-     */
     inline bool CustomResponseBodyKeyHasBeenSet() const { return m_customResponseBodyKeyHasBeenSet; }
-
-    /**
-     * <p>References the response body that you want WAF to return to the web request
-     * client. You can define a custom response for a rule action or a default web ACL
-     * action that is set to block. To do this, you first define the response body key
-     * and value in the <code>CustomResponseBodies</code> setting for the <a>WebACL</a>
-     * or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web
-     * ACL default action <code>BlockAction</code> setting, you reference the response
-     * body using this key. </p>
-     */
     inline void SetCustomResponseBodyKey(const Aws::String& value) { m_customResponseBodyKeyHasBeenSet = true; m_customResponseBodyKey = value; }
-
-    /**
-     * <p>References the response body that you want WAF to return to the web request
-     * client. You can define a custom response for a rule action or a default web ACL
-     * action that is set to block. To do this, you first define the response body key
-     * and value in the <code>CustomResponseBodies</code> setting for the <a>WebACL</a>
-     * or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web
-     * ACL default action <code>BlockAction</code> setting, you reference the response
-     * body using this key. </p>
-     */
     inline void SetCustomResponseBodyKey(Aws::String&& value) { m_customResponseBodyKeyHasBeenSet = true; m_customResponseBodyKey = std::move(value); }
-
-    /**
-     * <p>References the response body that you want WAF to return to the web request
-     * client. You can define a custom response for a rule action or a default web ACL
-     * action that is set to block. To do this, you first define the response body key
-     * and value in the <code>CustomResponseBodies</code> setting for the <a>WebACL</a>
-     * or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web
-     * ACL default action <code>BlockAction</code> setting, you reference the response
-     * body using this key. </p>
-     */
     inline void SetCustomResponseBodyKey(const char* value) { m_customResponseBodyKeyHasBeenSet = true; m_customResponseBodyKey.assign(value); }
-
-    /**
-     * <p>References the response body that you want WAF to return to the web request
-     * client. You can define a custom response for a rule action or a default web ACL
-     * action that is set to block. To do this, you first define the response body key
-     * and value in the <code>CustomResponseBodies</code> setting for the <a>WebACL</a>
-     * or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web
-     * ACL default action <code>BlockAction</code> setting, you reference the response
-     * body using this key. </p>
-     */
     inline CustomResponse& WithCustomResponseBodyKey(const Aws::String& value) { SetCustomResponseBodyKey(value); return *this;}
-
-    /**
-     * <p>References the response body that you want WAF to return to the web request
-     * client. You can define a custom response for a rule action or a default web ACL
-     * action that is set to block. To do this, you first define the response body key
-     * and value in the <code>CustomResponseBodies</code> setting for the <a>WebACL</a>
-     * or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web
-     * ACL default action <code>BlockAction</code> setting, you reference the response
-     * body using this key. </p>
-     */
     inline CustomResponse& WithCustomResponseBodyKey(Aws::String&& value) { SetCustomResponseBodyKey(std::move(value)); return *this;}
-
-    /**
-     * <p>References the response body that you want WAF to return to the web request
-     * client. You can define a custom response for a rule action or a default web ACL
-     * action that is set to block. To do this, you first define the response body key
-     * and value in the <code>CustomResponseBodies</code> setting for the <a>WebACL</a>
-     * or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web
-     * ACL default action <code>BlockAction</code> setting, you reference the response
-     * body using this key. </p>
-     */
     inline CustomResponse& WithCustomResponseBodyKey(const char* value) { SetCustomResponseBodyKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP headers to use in the response. You can specify any header name
      * except for <code>content-type</code>. Duplicate header names are not
@@ -175,77 +87,14 @@ namespace Model
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline const Aws::Vector<CustomHTTPHeader>& GetResponseHeaders() const{ return m_responseHeaders; }
-
-    /**
-     * <p>The HTTP headers to use in the response. You can specify any header name
-     * except for <code>content-type</code>. Duplicate header names are not
-     * allowed.</p> <p>For information about the limits on count and size for custom
-     * request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline bool ResponseHeadersHasBeenSet() const { return m_responseHeadersHasBeenSet; }
-
-    /**
-     * <p>The HTTP headers to use in the response. You can specify any header name
-     * except for <code>content-type</code>. Duplicate header names are not
-     * allowed.</p> <p>For information about the limits on count and size for custom
-     * request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline void SetResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = value; }
-
-    /**
-     * <p>The HTTP headers to use in the response. You can specify any header name
-     * except for <code>content-type</code>. Duplicate header names are not
-     * allowed.</p> <p>For information about the limits on count and size for custom
-     * request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline void SetResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = std::move(value); }
-
-    /**
-     * <p>The HTTP headers to use in the response. You can specify any header name
-     * except for <code>content-type</code>. Duplicate header names are not
-     * allowed.</p> <p>For information about the limits on count and size for custom
-     * request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline CustomResponse& WithResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { SetResponseHeaders(value); return *this;}
-
-    /**
-     * <p>The HTTP headers to use in the response. You can specify any header name
-     * except for <code>content-type</code>. Duplicate header names are not
-     * allowed.</p> <p>For information about the limits on count and size for custom
-     * request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline CustomResponse& WithResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { SetResponseHeaders(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP headers to use in the response. You can specify any header name
-     * except for <code>content-type</code>. Duplicate header names are not
-     * allowed.</p> <p>For information about the limits on count and size for custom
-     * request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline CustomResponse& AddResponseHeaders(const CustomHTTPHeader& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.push_back(value); return *this; }
-
-    /**
-     * <p>The HTTP headers to use in the response. You can specify any header name
-     * except for <code>content-type</code>. Duplicate header names are not
-     * allowed.</p> <p>For information about the limits on count and size for custom
-     * request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
-     */
     inline CustomResponse& AddResponseHeaders(CustomHTTPHeader&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_responseCode;

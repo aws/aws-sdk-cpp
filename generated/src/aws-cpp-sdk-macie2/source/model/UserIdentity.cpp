@@ -30,15 +30,8 @@ UserIdentity::UserIdentity() :
 {
 }
 
-UserIdentity::UserIdentity(JsonView jsonValue) : 
-    m_assumedRoleHasBeenSet(false),
-    m_awsAccountHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_federatedUserHasBeenSet(false),
-    m_iamUserHasBeenSet(false),
-    m_rootHasBeenSet(false),
-    m_type(UserIdentityType::NOT_SET),
-    m_typeHasBeenSet(false)
+UserIdentity::UserIdentity(JsonView jsonValue)
+  : UserIdentity()
 {
   *this = jsonValue;
 }

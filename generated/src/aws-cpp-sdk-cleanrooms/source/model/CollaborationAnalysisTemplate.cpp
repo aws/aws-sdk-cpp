@@ -32,25 +32,13 @@ CollaborationAnalysisTemplate::CollaborationAnalysisTemplate() :
     m_format(AnalysisFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_analysisParametersHasBeenSet(false)
+    m_analysisParametersHasBeenSet(false),
+    m_validationsHasBeenSet(false)
 {
 }
 
-CollaborationAnalysisTemplate::CollaborationAnalysisTemplate(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_format(AnalysisFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_analysisParametersHasBeenSet(false)
+CollaborationAnalysisTemplate::CollaborationAnalysisTemplate(JsonView jsonValue)
+  : CollaborationAnalysisTemplate()
 {
   *this = jsonValue;
 }
@@ -151,6 +139,16 @@ CollaborationAnalysisTemplate& CollaborationAnalysisTemplate::operator =(JsonVie
     m_analysisParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("validations"))
+  {
+    Aws::Utils::Array<JsonView> validationsJsonList = jsonValue.GetArray("validations");
+    for(unsigned validationsIndex = 0; validationsIndex < validationsJsonList.GetLength(); ++validationsIndex)
+    {
+      m_validations.push_back(validationsJsonList[validationsIndex].AsObject());
+    }
+    m_validationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,6 +233,17 @@ JsonValue CollaborationAnalysisTemplate::Jsonize() const
      analysisParametersJsonList[analysisParametersIndex].AsObject(m_analysisParameters[analysisParametersIndex].Jsonize());
    }
    payload.WithArray("analysisParameters", std::move(analysisParametersJsonList));
+
+  }
+
+  if(m_validationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> validationsJsonList(m_validations.size());
+   for(unsigned validationsIndex = 0; validationsIndex < validationsJsonList.GetLength(); ++validationsIndex)
+   {
+     validationsJsonList[validationsIndex].AsObject(m_validations[validationsIndex].Jsonize());
+   }
+   payload.WithArray("validations", std::move(validationsJsonList));
 
   }
 

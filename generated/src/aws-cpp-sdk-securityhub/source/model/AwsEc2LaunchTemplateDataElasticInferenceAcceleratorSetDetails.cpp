@@ -25,10 +25,8 @@ AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails::AwsEc2LaunchTempl
 {
 }
 
-AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails(JsonView jsonValue) : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails()
 {
   *this = jsonValue;
 }

@@ -39,77 +39,31 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A detailed message describing the error in an Earth Observation job.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A detailed message describing the error in an Earth Observation job.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A detailed message describing the error in an Earth Observation job.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A detailed message describing the error in an Earth Observation job.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A detailed message describing the error in an Earth Observation job.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A detailed message describing the error in an Earth Observation job.</p>
-     */
     inline EarthObservationJobErrorDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A detailed message describing the error in an Earth Observation job.</p>
-     */
     inline EarthObservationJobErrorDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A detailed message describing the error in an Earth Observation job.</p>
-     */
     inline EarthObservationJobErrorDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of error in an Earth Observation job.</p>
      */
     inline const EarthObservationJobErrorType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of error in an Earth Observation job.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of error in an Earth Observation job.</p>
-     */
     inline void SetType(const EarthObservationJobErrorType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of error in an Earth Observation job.</p>
-     */
     inline void SetType(EarthObservationJobErrorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of error in an Earth Observation job.</p>
-     */
     inline EarthObservationJobErrorDetails& WithType(const EarthObservationJobErrorType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of error in an Earth Observation job.</p>
-     */
     inline EarthObservationJobErrorDetails& WithType(EarthObservationJobErrorType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

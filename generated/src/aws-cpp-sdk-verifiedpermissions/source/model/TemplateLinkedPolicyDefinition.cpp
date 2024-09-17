@@ -25,10 +25,8 @@ TemplateLinkedPolicyDefinition::TemplateLinkedPolicyDefinition() :
 {
 }
 
-TemplateLinkedPolicyDefinition::TemplateLinkedPolicyDefinition(JsonView jsonValue) : 
-    m_policyTemplateIdHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+TemplateLinkedPolicyDefinition::TemplateLinkedPolicyDefinition(JsonView jsonValue)
+  : TemplateLinkedPolicyDefinition()
 {
   *this = jsonValue;
 }

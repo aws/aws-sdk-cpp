@@ -22,19 +22,15 @@ CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction() :
     m_regionNameHasBeenSet(false),
     m_kMSMasterKeyIdHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
+    m_onDemandThroughputOverrideHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_tableClassOverride(TableClass::NOT_SET),
     m_tableClassOverrideHasBeenSet(false)
 {
 }
 
-CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false),
-    m_kMSMasterKeyIdHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_tableClassOverride(TableClass::NOT_SET),
-    m_tableClassOverrideHasBeenSet(false)
+CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction(JsonView jsonValue)
+  : CreateReplicationGroupMemberAction()
 {
   *this = jsonValue;
 }
@@ -60,6 +56,13 @@ CreateReplicationGroupMemberAction& CreateReplicationGroupMemberAction::operator
     m_provisionedThroughputOverride = jsonValue.GetObject("ProvisionedThroughputOverride");
 
     m_provisionedThroughputOverrideHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnDemandThroughputOverride"))
+  {
+    m_onDemandThroughputOverride = jsonValue.GetObject("OnDemandThroughputOverride");
+
+    m_onDemandThroughputOverrideHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
@@ -101,6 +104,12 @@ JsonValue CreateReplicationGroupMemberAction::Jsonize() const
   if(m_provisionedThroughputOverrideHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
+
+  }
+
+  if(m_onDemandThroughputOverrideHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughputOverride", m_onDemandThroughputOverride.Jsonize());
 
   }
 

@@ -22,8 +22,8 @@ CreateGroupResult::CreateGroupResult() :
 {
 }
 
-CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGroupResult()
 {
   *this = result;
 }

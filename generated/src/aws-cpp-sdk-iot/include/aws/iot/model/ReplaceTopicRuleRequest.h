@@ -36,77 +36,31 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the rule.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline ReplaceTopicRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline ReplaceTopicRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the rule.</p>
-     */
     inline ReplaceTopicRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule payload.</p>
      */
     inline const TopicRulePayload& GetTopicRulePayload() const{ return m_topicRulePayload; }
-
-    /**
-     * <p>The rule payload.</p>
-     */
     inline bool TopicRulePayloadHasBeenSet() const { return m_topicRulePayloadHasBeenSet; }
-
-    /**
-     * <p>The rule payload.</p>
-     */
     inline void SetTopicRulePayload(const TopicRulePayload& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = value; }
-
-    /**
-     * <p>The rule payload.</p>
-     */
     inline void SetTopicRulePayload(TopicRulePayload&& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = std::move(value); }
-
-    /**
-     * <p>The rule payload.</p>
-     */
     inline ReplaceTopicRuleRequest& WithTopicRulePayload(const TopicRulePayload& value) { SetTopicRulePayload(value); return *this;}
-
-    /**
-     * <p>The rule payload.</p>
-     */
     inline ReplaceTopicRuleRequest& WithTopicRulePayload(TopicRulePayload&& value) { SetTopicRulePayload(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleName;

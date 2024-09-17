@@ -24,9 +24,8 @@ AggregateComplianceCount::AggregateComplianceCount() :
 {
 }
 
-AggregateComplianceCount::AggregateComplianceCount(JsonView jsonValue) : 
-    m_groupNameHasBeenSet(false),
-    m_complianceSummaryHasBeenSet(false)
+AggregateComplianceCount::AggregateComplianceCount(JsonView jsonValue)
+  : AggregateComplianceCount()
 {
   *this = jsonValue;
 }

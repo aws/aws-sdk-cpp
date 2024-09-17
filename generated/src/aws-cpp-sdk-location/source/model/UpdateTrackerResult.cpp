@@ -29,15 +29,15 @@ UpdateTrackerResult::UpdateTrackerResult(const Aws::AmazonWebServiceResult<JsonV
 UpdateTrackerResult& UpdateTrackerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TrackerArn"))
-  {
-    m_trackerArn = jsonValue.GetString("TrackerArn");
-
-  }
-
   if(jsonValue.ValueExists("TrackerName"))
   {
     m_trackerName = jsonValue.GetString("TrackerName");
+
+  }
+
+  if(jsonValue.ValueExists("TrackerArn"))
+  {
+    m_trackerArn = jsonValue.GetString("TrackerArn");
 
   }
 

@@ -25,8 +25,8 @@ TrustStoreAssociation::TrustStoreAssociation() :
 {
 }
 
-TrustStoreAssociation::TrustStoreAssociation(const XmlNode& xmlNode) : 
-    m_resourceArnHasBeenSet(false)
+TrustStoreAssociation::TrustStoreAssociation(const XmlNode& xmlNode)
+  : TrustStoreAssociation()
 {
   *this = xmlNode;
 }

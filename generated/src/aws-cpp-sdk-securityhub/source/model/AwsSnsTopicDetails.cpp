@@ -33,18 +33,8 @@ AwsSnsTopicDetails::AwsSnsTopicDetails() :
 {
 }
 
-AwsSnsTopicDetails::AwsSnsTopicDetails(JsonView jsonValue) : 
-    m_kmsMasterKeyIdHasBeenSet(false),
-    m_subscriptionHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_sqsSuccessFeedbackRoleArnHasBeenSet(false),
-    m_sqsFailureFeedbackRoleArnHasBeenSet(false),
-    m_applicationSuccessFeedbackRoleArnHasBeenSet(false),
-    m_firehoseSuccessFeedbackRoleArnHasBeenSet(false),
-    m_firehoseFailureFeedbackRoleArnHasBeenSet(false),
-    m_httpSuccessFeedbackRoleArnHasBeenSet(false),
-    m_httpFailureFeedbackRoleArnHasBeenSet(false)
+AwsSnsTopicDetails::AwsSnsTopicDetails(JsonView jsonValue)
+  : AwsSnsTopicDetails()
 {
   *this = jsonValue;
 }

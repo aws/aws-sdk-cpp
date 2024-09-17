@@ -38,75 +38,31 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
      */
     inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-     */
     inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-     */
     inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-     */
     inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-     */
     inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-     */
     inline MapRunRedrivenEventDetails& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-     */
     inline MapRunRedrivenEventDetails& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-     */
     inline MapRunRedrivenEventDetails& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of times the Map Run has been redriven at this point in the
      * execution's history including this event. The redrive count for a redriven Map
      * Run is always greater than 0.</p>
      */
     inline int GetRedriveCount() const{ return m_redriveCount; }
-
-    /**
-     * <p>The number of times the Map Run has been redriven at this point in the
-     * execution's history including this event. The redrive count for a redriven Map
-     * Run is always greater than 0.</p>
-     */
     inline bool RedriveCountHasBeenSet() const { return m_redriveCountHasBeenSet; }
-
-    /**
-     * <p>The number of times the Map Run has been redriven at this point in the
-     * execution's history including this event. The redrive count for a redriven Map
-     * Run is always greater than 0.</p>
-     */
     inline void SetRedriveCount(int value) { m_redriveCountHasBeenSet = true; m_redriveCount = value; }
-
-    /**
-     * <p>The number of times the Map Run has been redriven at this point in the
-     * execution's history including this event. The redrive count for a redriven Map
-     * Run is always greater than 0.</p>
-     */
     inline MapRunRedrivenEventDetails& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mapRunArn;

@@ -34,42 +34,20 @@ namespace Model
     AWS_ORGANIZATIONS_API ListAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of objects in the organization.</p>
      */
     inline const Aws::Vector<Account>& GetAccounts() const{ return m_accounts; }
-
-    /**
-     * <p>A list of objects in the organization.</p>
-     */
     inline void SetAccounts(const Aws::Vector<Account>& value) { m_accounts = value; }
-
-    /**
-     * <p>A list of objects in the organization.</p>
-     */
     inline void SetAccounts(Aws::Vector<Account>&& value) { m_accounts = std::move(value); }
-
-    /**
-     * <p>A list of objects in the organization.</p>
-     */
     inline ListAccountsResult& WithAccounts(const Aws::Vector<Account>& value) { SetAccounts(value); return *this;}
-
-    /**
-     * <p>A list of objects in the organization.</p>
-     */
     inline ListAccountsResult& WithAccounts(Aws::Vector<Account>&& value) { SetAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of objects in the organization.</p>
-     */
     inline ListAccountsResult& AddAccounts(const Account& value) { m_accounts.push_back(value); return *this; }
-
-    /**
-     * <p>A list of objects in the organization.</p>
-     */
     inline ListAccountsResult& AddAccounts(Account&& value) { m_accounts.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If present, indicates that more output is available than is included in the
      * current response. Use this value in the <code>NextToken</code> request parameter
@@ -78,83 +56,24 @@ namespace Model
      * as <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline ListAccountsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline ListAccountsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
-     */
     inline ListAccountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAccountsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAccountsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAccountsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Account> m_accounts;

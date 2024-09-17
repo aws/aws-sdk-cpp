@@ -33,12 +33,19 @@ Aws::String ComposeEnvironmentsRequest::SerializePayload() const
 
   if(m_versionLabelsHasBeenSet)
   {
-    unsigned versionLabelsCount = 1;
-    for(auto& item : m_versionLabels)
+    if (m_versionLabels.empty())
     {
-      ss << "VersionLabels.member." << versionLabelsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      versionLabelsCount++;
+      ss << "VersionLabels=&";
+    }
+    else
+    {
+      unsigned versionLabelsCount = 1;
+      for(auto& item : m_versionLabels)
+      {
+        ss << "VersionLabels.member." << versionLabelsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        versionLabelsCount++;
+      }
     }
   }
 

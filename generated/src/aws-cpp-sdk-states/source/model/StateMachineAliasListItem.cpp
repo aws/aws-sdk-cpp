@@ -24,9 +24,8 @@ StateMachineAliasListItem::StateMachineAliasListItem() :
 {
 }
 
-StateMachineAliasListItem::StateMachineAliasListItem(JsonView jsonValue) : 
-    m_stateMachineAliasArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+StateMachineAliasListItem::StateMachineAliasListItem(JsonView jsonValue)
+  : StateMachineAliasListItem()
 {
   *this = jsonValue;
 }

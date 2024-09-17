@@ -44,29 +44,8 @@ PropertygraphSummary::PropertygraphSummary() :
 {
 }
 
-PropertygraphSummary::PropertygraphSummary(JsonView jsonValue) : 
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_numEdges(0),
-    m_numEdgesHasBeenSet(false),
-    m_numNodeLabels(0),
-    m_numNodeLabelsHasBeenSet(false),
-    m_numEdgeLabels(0),
-    m_numEdgeLabelsHasBeenSet(false),
-    m_nodeLabelsHasBeenSet(false),
-    m_edgeLabelsHasBeenSet(false),
-    m_numNodeProperties(0),
-    m_numNodePropertiesHasBeenSet(false),
-    m_numEdgeProperties(0),
-    m_numEdgePropertiesHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_edgePropertiesHasBeenSet(false),
-    m_totalNodePropertyValues(0),
-    m_totalNodePropertyValuesHasBeenSet(false),
-    m_totalEdgePropertyValues(0),
-    m_totalEdgePropertyValuesHasBeenSet(false),
-    m_nodeStructuresHasBeenSet(false),
-    m_edgeStructuresHasBeenSet(false)
+PropertygraphSummary::PropertygraphSummary(JsonView jsonValue)
+  : PropertygraphSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UpdateTaintsPayload::UpdateTaintsPayload() :
 {
 }
 
-UpdateTaintsPayload::UpdateTaintsPayload(JsonView jsonValue) : 
-    m_addOrUpdateTaintsHasBeenSet(false),
-    m_removeTaintsHasBeenSet(false)
+UpdateTaintsPayload::UpdateTaintsPayload(JsonView jsonValue)
+  : UpdateTaintsPayload()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SubscribedProject::SubscribedProject() :
 {
 }
 
-SubscribedProject::SubscribedProject(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+SubscribedProject::SubscribedProject(JsonView jsonValue)
+  : SubscribedProject()
 {
   *this = jsonValue;
 }

@@ -32,46 +32,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the completed test execution.</p>
      */
     inline const Aws::String& GetTestExecutionId() const{ return m_testExecutionId; }
-
-    /**
-     * <p>The unique identifier of the completed test execution.</p>
-     */
     inline bool TestExecutionIdHasBeenSet() const { return m_testExecutionIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the completed test execution.</p>
-     */
     inline void SetTestExecutionId(const Aws::String& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = value; }
-
-    /**
-     * <p>The unique identifier of the completed test execution.</p>
-     */
     inline void SetTestExecutionId(Aws::String&& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the completed test execution.</p>
-     */
     inline void SetTestExecutionId(const char* value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the completed test execution.</p>
-     */
     inline GetTestExecutionArtifactsUrlRequest& WithTestExecutionId(const Aws::String& value) { SetTestExecutionId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the completed test execution.</p>
-     */
     inline GetTestExecutionArtifactsUrlRequest& WithTestExecutionId(Aws::String&& value) { SetTestExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the completed test execution.</p>
-     */
     inline GetTestExecutionArtifactsUrlRequest& WithTestExecutionId(const char* value) { SetTestExecutionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_testExecutionId;

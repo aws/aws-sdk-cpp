@@ -37,22 +37,8 @@ Framework::Framework() :
 {
 }
 
-Framework::Framework(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(FrameworkType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_logoHasBeenSet(false),
-    m_controlSourcesHasBeenSet(false),
-    m_controlSetsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Framework::Framework(JsonView jsonValue)
+  : Framework()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DescribeFlowDefinitionResult::DescribeFlowDefinitionResult() :
 {
 }
 
-DescribeFlowDefinitionResult::DescribeFlowDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_flowDefinitionStatus(FlowDefinitionStatus::NOT_SET)
+DescribeFlowDefinitionResult::DescribeFlowDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFlowDefinitionResult()
 {
   *this = result;
 }

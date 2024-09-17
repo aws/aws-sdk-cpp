@@ -25,10 +25,8 @@ RuleUpdate::RuleUpdate() :
 {
 }
 
-RuleUpdate::RuleUpdate(JsonView jsonValue) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_predicateHasBeenSet(false)
+RuleUpdate::RuleUpdate(JsonView jsonValue)
+  : RuleUpdate()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ GroupInformation::GroupInformation() :
 {
 }
 
-GroupInformation::GroupInformation(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_latestVersionHasBeenSet(false),
-    m_latestVersionArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+GroupInformation::GroupInformation(JsonView jsonValue)
+  : GroupInformation()
 {
   *this = jsonValue;
 }

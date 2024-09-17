@@ -27,12 +27,8 @@ Promotion::Promotion() :
 {
 }
 
-Promotion::Promotion(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_percentPromotedItems(0),
-    m_percentPromotedItemsHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
+Promotion::Promotion(JsonView jsonValue)
+  : Promotion()
 {
   *this = jsonValue;
 }

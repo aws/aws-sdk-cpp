@@ -26,6 +26,7 @@ static const int SERIAL_CONSOLE_ACCESS_DISABLED_HASH = HashingUtils::HashString(
 static const int E_C2_INSTANCE_UNAVAILABLE_HASH = HashingUtils::HashString("EC2InstanceUnavailableException");
 static const int E_C2_INSTANCE_TYPE_INVALID_HASH = HashingUtils::HashString("EC2InstanceTypeInvalidException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
+static const int SERIAL_CONSOLE_SESSION_UNSUPPORTED_HASH = HashingUtils::HashString("SerialConsoleSessionUnsupportedException");
 static const int AUTH_HASH = HashingUtils::HashString("AuthException");
 static const int E_C2_INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("EC2InstanceNotFoundException");
 
@@ -65,6 +66,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EC2InstanceConnectErrors::SERVICE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == SERIAL_CONSOLE_SESSION_UNSUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EC2InstanceConnectErrors::SERIAL_CONSOLE_SESSION_UNSUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTH_HASH)
   {

@@ -25,10 +25,8 @@ InstanceIdFilter::InstanceIdFilter() :
 {
 }
 
-InstanceIdFilter::InstanceIdFilter(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_operator(InstanceIdFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+InstanceIdFilter::InstanceIdFilter(JsonView jsonValue)
+  : InstanceIdFilter()
 {
   *this = jsonValue;
 }

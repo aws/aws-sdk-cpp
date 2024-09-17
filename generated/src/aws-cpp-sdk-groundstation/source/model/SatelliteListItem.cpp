@@ -28,13 +28,8 @@ SatelliteListItem::SatelliteListItem() :
 {
 }
 
-SatelliteListItem::SatelliteListItem(JsonView jsonValue) : 
-    m_currentEphemerisHasBeenSet(false),
-    m_groundStationsHasBeenSet(false),
-    m_noradSatelliteID(0),
-    m_noradSatelliteIDHasBeenSet(false),
-    m_satelliteArnHasBeenSet(false),
-    m_satelliteIdHasBeenSet(false)
+SatelliteListItem::SatelliteListItem(JsonView jsonValue)
+  : SatelliteListItem()
 {
   *this = jsonValue;
 }

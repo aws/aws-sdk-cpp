@@ -108,6 +108,24 @@
 #include <aws/greengrass/model/UpdateResourceDefinitionResult.h>
 #include <aws/greengrass/model/UpdateSubscriptionDefinitionResult.h>
 #include <aws/greengrass/model/UpdateThingRuntimeConfigurationResult.h>
+#include <aws/greengrass/model/ListConnectorDefinitionsRequest.h>
+#include <aws/greengrass/model/ListLoggerDefinitionsRequest.h>
+#include <aws/greengrass/model/CreateConnectorDefinitionRequest.h>
+#include <aws/greengrass/model/ListGroupsRequest.h>
+#include <aws/greengrass/model/CreateSubscriptionDefinitionRequest.h>
+#include <aws/greengrass/model/CreateLoggerDefinitionRequest.h>
+#include <aws/greengrass/model/CreateDeviceDefinitionRequest.h>
+#include <aws/greengrass/model/ListDeviceDefinitionsRequest.h>
+#include <aws/greengrass/model/CreateCoreDefinitionRequest.h>
+#include <aws/greengrass/model/CreateFunctionDefinitionRequest.h>
+#include <aws/greengrass/model/DisassociateServiceRoleFromAccountRequest.h>
+#include <aws/greengrass/model/ListSubscriptionDefinitionsRequest.h>
+#include <aws/greengrass/model/ListBulkDeploymentsRequest.h>
+#include <aws/greengrass/model/CreateResourceDefinitionRequest.h>
+#include <aws/greengrass/model/ListResourceDefinitionsRequest.h>
+#include <aws/greengrass/model/ListCoreDefinitionsRequest.h>
+#include <aws/greengrass/model/ListFunctionDefinitionsRequest.h>
+#include <aws/greengrass/model/GetServiceRoleForAccountRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in GreengrassClient header */
 
@@ -142,7 +160,7 @@ namespace Aws
 
   namespace Greengrass
   {
-    using GreengrassClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GreengrassClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GreengrassEndpointProviderBase = Aws::Greengrass::Endpoint::GreengrassEndpointProviderBase;
     using GreengrassEndpointProvider = Aws::Greengrass::Endpoint::GreengrassEndpointProvider;
 

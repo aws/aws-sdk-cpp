@@ -26,11 +26,8 @@ EventFeedbackType::EventFeedbackType() :
 {
 }
 
-EventFeedbackType::EventFeedbackType(JsonView jsonValue) : 
-    m_feedbackValue(FeedbackValueType::NOT_SET),
-    m_feedbackValueHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_feedbackDateHasBeenSet(false)
+EventFeedbackType::EventFeedbackType(JsonView jsonValue)
+  : EventFeedbackType()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ DataChannelConcatenationConfiguration::DataChannelConcatenationConfiguration() :
 {
 }
 
-DataChannelConcatenationConfiguration::DataChannelConcatenationConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
+DataChannelConcatenationConfiguration::DataChannelConcatenationConfiguration(JsonView jsonValue)
+  : DataChannelConcatenationConfiguration()
 {
   *this = jsonValue;
 }

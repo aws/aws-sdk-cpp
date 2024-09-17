@@ -34,70 +34,30 @@ namespace Model
     AWS_GLUE_API BatchDeleteTableVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of errors encountered while trying to delete the specified table
      * versions.</p>
      */
     inline const Aws::Vector<TableVersionError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of errors encountered while trying to delete the specified table
-     * versions.</p>
-     */
     inline void SetErrors(const Aws::Vector<TableVersionError>& value) { m_errors = value; }
-
-    /**
-     * <p>A list of errors encountered while trying to delete the specified table
-     * versions.</p>
-     */
     inline void SetErrors(Aws::Vector<TableVersionError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A list of errors encountered while trying to delete the specified table
-     * versions.</p>
-     */
     inline BatchDeleteTableVersionResult& WithErrors(const Aws::Vector<TableVersionError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of errors encountered while trying to delete the specified table
-     * versions.</p>
-     */
     inline BatchDeleteTableVersionResult& WithErrors(Aws::Vector<TableVersionError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of errors encountered while trying to delete the specified table
-     * versions.</p>
-     */
     inline BatchDeleteTableVersionResult& AddErrors(const TableVersionError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of errors encountered while trying to delete the specified table
-     * versions.</p>
-     */
     inline BatchDeleteTableVersionResult& AddErrors(TableVersionError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchDeleteTableVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchDeleteTableVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchDeleteTableVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TableVersionError> m_errors;

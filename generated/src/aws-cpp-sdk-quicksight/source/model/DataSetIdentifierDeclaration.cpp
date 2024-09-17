@@ -24,9 +24,8 @@ DataSetIdentifierDeclaration::DataSetIdentifierDeclaration() :
 {
 }
 
-DataSetIdentifierDeclaration::DataSetIdentifierDeclaration(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_dataSetArnHasBeenSet(false)
+DataSetIdentifierDeclaration::DataSetIdentifierDeclaration(JsonView jsonValue)
+  : DataSetIdentifierDeclaration()
 {
   *this = jsonValue;
 }

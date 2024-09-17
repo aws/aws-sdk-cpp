@@ -44,110 +44,43 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time, in milliseconds from the beginning of the video, that the person
      * was matched in the video.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The time, in milliseconds from the beginning of the video, that the person
-     * was matched in the video.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds from the beginning of the video, that the person
-     * was matched in the video.</p>
-     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The time, in milliseconds from the beginning of the video, that the person
-     * was matched in the video.</p>
-     */
     inline PersonMatch& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the matched person.</p>
      */
     inline const PersonDetail& GetPerson() const{ return m_person; }
-
-    /**
-     * <p>Information about the matched person.</p>
-     */
     inline bool PersonHasBeenSet() const { return m_personHasBeenSet; }
-
-    /**
-     * <p>Information about the matched person.</p>
-     */
     inline void SetPerson(const PersonDetail& value) { m_personHasBeenSet = true; m_person = value; }
-
-    /**
-     * <p>Information about the matched person.</p>
-     */
     inline void SetPerson(PersonDetail&& value) { m_personHasBeenSet = true; m_person = std::move(value); }
-
-    /**
-     * <p>Information about the matched person.</p>
-     */
     inline PersonMatch& WithPerson(const PersonDetail& value) { SetPerson(value); return *this;}
-
-    /**
-     * <p>Information about the matched person.</p>
-     */
     inline PersonMatch& WithPerson(PersonDetail&& value) { SetPerson(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the faces in the input collection that match the face of a
      * person in the video.</p>
      */
     inline const Aws::Vector<FaceMatch>& GetFaceMatches() const{ return m_faceMatches; }
-
-    /**
-     * <p>Information about the faces in the input collection that match the face of a
-     * person in the video.</p>
-     */
     inline bool FaceMatchesHasBeenSet() const { return m_faceMatchesHasBeenSet; }
-
-    /**
-     * <p>Information about the faces in the input collection that match the face of a
-     * person in the video.</p>
-     */
     inline void SetFaceMatches(const Aws::Vector<FaceMatch>& value) { m_faceMatchesHasBeenSet = true; m_faceMatches = value; }
-
-    /**
-     * <p>Information about the faces in the input collection that match the face of a
-     * person in the video.</p>
-     */
     inline void SetFaceMatches(Aws::Vector<FaceMatch>&& value) { m_faceMatchesHasBeenSet = true; m_faceMatches = std::move(value); }
-
-    /**
-     * <p>Information about the faces in the input collection that match the face of a
-     * person in the video.</p>
-     */
     inline PersonMatch& WithFaceMatches(const Aws::Vector<FaceMatch>& value) { SetFaceMatches(value); return *this;}
-
-    /**
-     * <p>Information about the faces in the input collection that match the face of a
-     * person in the video.</p>
-     */
     inline PersonMatch& WithFaceMatches(Aws::Vector<FaceMatch>&& value) { SetFaceMatches(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the faces in the input collection that match the face of a
-     * person in the video.</p>
-     */
     inline PersonMatch& AddFaceMatches(const FaceMatch& value) { m_faceMatchesHasBeenSet = true; m_faceMatches.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the faces in the input collection that match the face of a
-     * person in the video.</p>
-     */
     inline PersonMatch& AddFaceMatches(FaceMatch&& value) { m_faceMatchesHasBeenSet = true; m_faceMatches.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     long long m_timestamp;

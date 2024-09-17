@@ -19,30 +19,19 @@ namespace Model
 {
 
 SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc() : 
-    m_securityGroupHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_securityGroupHasBeenSet(false)
 {
 }
 
-SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc(JsonView jsonValue) : 
-    m_securityGroupHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc(JsonView jsonValue)
+  : SelfManagedKafkaAccessConfigurationVpc()
 {
   *this = jsonValue;
 }
 
 SelfManagedKafkaAccessConfigurationVpc& SelfManagedKafkaAccessConfigurationVpc::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("SecurityGroup"))
-  {
-    Aws::Utils::Array<JsonView> securityGroupJsonList = jsonValue.GetArray("SecurityGroup");
-    for(unsigned securityGroupIndex = 0; securityGroupIndex < securityGroupJsonList.GetLength(); ++securityGroupIndex)
-    {
-      m_securityGroup.push_back(securityGroupJsonList[securityGroupIndex].AsString());
-    }
-    m_securityGroupHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -53,23 +42,22 @@ SelfManagedKafkaAccessConfigurationVpc& SelfManagedKafkaAccessConfigurationVpc::
     m_subnetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityGroup"))
+  {
+    Aws::Utils::Array<JsonView> securityGroupJsonList = jsonValue.GetArray("SecurityGroup");
+    for(unsigned securityGroupIndex = 0; securityGroupIndex < securityGroupJsonList.GetLength(); ++securityGroupIndex)
+    {
+      m_securityGroup.push_back(securityGroupJsonList[securityGroupIndex].AsString());
+    }
+    m_securityGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue SelfManagedKafkaAccessConfigurationVpc::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_securityGroupHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupJsonList(m_securityGroup.size());
-   for(unsigned securityGroupIndex = 0; securityGroupIndex < securityGroupJsonList.GetLength(); ++securityGroupIndex)
-   {
-     securityGroupJsonList[securityGroupIndex].AsString(m_securityGroup[securityGroupIndex]);
-   }
-   payload.WithArray("SecurityGroup", std::move(securityGroupJsonList));
-
-  }
 
   if(m_subnetsHasBeenSet)
   {
@@ -79,6 +67,17 @@ JsonValue SelfManagedKafkaAccessConfigurationVpc::Jsonize() const
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
    }
    payload.WithArray("Subnets", std::move(subnetsJsonList));
+
+  }
+
+  if(m_securityGroupHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> securityGroupJsonList(m_securityGroup.size());
+   for(unsigned securityGroupIndex = 0; securityGroupIndex < securityGroupJsonList.GetLength(); ++securityGroupIndex)
+   {
+     securityGroupJsonList[securityGroupIndex].AsString(m_securityGroup[securityGroupIndex]);
+   }
+   payload.WithArray("SecurityGroup", std::move(securityGroupJsonList));
 
   }
 

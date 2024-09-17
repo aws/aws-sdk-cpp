@@ -40,77 +40,31 @@ namespace Model
     AWS_OPSWORKS_API DescribeAgentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The agent versions for the specified stack or configuration manager. Note
      * that this value is the complete version number, not the abbreviated number used
      * by the console.</p>
      */
     inline const Aws::Vector<AgentVersion>& GetAgentVersions() const{ return m_agentVersions; }
-
-    /**
-     * <p>The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated number used
-     * by the console.</p>
-     */
     inline void SetAgentVersions(const Aws::Vector<AgentVersion>& value) { m_agentVersions = value; }
-
-    /**
-     * <p>The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated number used
-     * by the console.</p>
-     */
     inline void SetAgentVersions(Aws::Vector<AgentVersion>&& value) { m_agentVersions = std::move(value); }
-
-    /**
-     * <p>The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated number used
-     * by the console.</p>
-     */
     inline DescribeAgentVersionsResult& WithAgentVersions(const Aws::Vector<AgentVersion>& value) { SetAgentVersions(value); return *this;}
-
-    /**
-     * <p>The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated number used
-     * by the console.</p>
-     */
     inline DescribeAgentVersionsResult& WithAgentVersions(Aws::Vector<AgentVersion>&& value) { SetAgentVersions(std::move(value)); return *this;}
-
-    /**
-     * <p>The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated number used
-     * by the console.</p>
-     */
     inline DescribeAgentVersionsResult& AddAgentVersions(const AgentVersion& value) { m_agentVersions.push_back(value); return *this; }
-
-    /**
-     * <p>The agent versions for the specified stack or configuration manager. Note
-     * that this value is the complete version number, not the abbreviated number used
-     * by the console.</p>
-     */
     inline DescribeAgentVersionsResult& AddAgentVersions(AgentVersion&& value) { m_agentVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAgentVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAgentVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAgentVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AgentVersion> m_agentVersions;

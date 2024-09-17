@@ -33,53 +33,27 @@ namespace Model
     AWS_CONNECT_API DescribeInstanceStorageConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A valid storage type.</p>
      */
     inline const InstanceStorageConfig& GetStorageConfig() const{ return m_storageConfig; }
-
-    /**
-     * <p>A valid storage type.</p>
-     */
     inline void SetStorageConfig(const InstanceStorageConfig& value) { m_storageConfig = value; }
-
-    /**
-     * <p>A valid storage type.</p>
-     */
     inline void SetStorageConfig(InstanceStorageConfig&& value) { m_storageConfig = std::move(value); }
-
-    /**
-     * <p>A valid storage type.</p>
-     */
     inline DescribeInstanceStorageConfigResult& WithStorageConfig(const InstanceStorageConfig& value) { SetStorageConfig(value); return *this;}
-
-    /**
-     * <p>A valid storage type.</p>
-     */
     inline DescribeInstanceStorageConfigResult& WithStorageConfig(InstanceStorageConfig&& value) { SetStorageConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeInstanceStorageConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeInstanceStorageConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeInstanceStorageConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InstanceStorageConfig m_storageConfig;

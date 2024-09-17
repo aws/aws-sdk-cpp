@@ -41,125 +41,46 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The names of the load balancers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeLoadBalancersRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeLoadBalancersRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeLoadBalancersRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeLoadBalancersRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeLoadBalancersRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline DescribeLoadBalancersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline DescribeLoadBalancersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker for the next set of results. (You received this marker from a
-     * previous call.)</p>
-     */
     inline DescribeLoadBalancersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return with this call (a number from 1 to
      * 400). The default is 400.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The maximum number of results to return with this call (a number from 1 to
-     * 400). The default is 400.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return with this call (a number from 1 to
-     * 400). The default is 400.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The maximum number of results to return with this call (a number from 1 to
-     * 400). The default is 400.</p>
-     */
     inline DescribeLoadBalancersRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_loadBalancerNames;

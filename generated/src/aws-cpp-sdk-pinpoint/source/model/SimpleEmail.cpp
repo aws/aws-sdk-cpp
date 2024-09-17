@@ -21,14 +21,13 @@ namespace Model
 SimpleEmail::SimpleEmail() : 
     m_htmlPartHasBeenSet(false),
     m_subjectHasBeenSet(false),
-    m_textPartHasBeenSet(false)
+    m_textPartHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
 }
 
-SimpleEmail::SimpleEmail(JsonView jsonValue) : 
-    m_htmlPartHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_textPartHasBeenSet(false)
+SimpleEmail::SimpleEmail(JsonView jsonValue)
+  : SimpleEmail()
 {
   *this = jsonValue;
 }
@@ -56,6 +55,16 @@ SimpleEmail& SimpleEmail::operator =(JsonView jsonValue)
     m_textPartHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Headers"))
+  {
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
+    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+    {
+      m_headers.push_back(headersJsonList[headersIndex].AsObject());
+    }
+    m_headersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,17 @@ JsonValue SimpleEmail::Jsonize() const
   if(m_textPartHasBeenSet)
   {
    payload.WithObject("TextPart", m_textPart.Jsonize());
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+   {
+     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+   }
+   payload.WithArray("Headers", std::move(headersJsonList));
 
   }
 

@@ -41,88 +41,40 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total storage size (in bytes) or number of objects that Amazon Macie
      * can't analyze because the objects don't have a file name extension for a
      * supported file or storage format.</p>
      */
     inline long long GetFileType() const{ return m_fileType; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects don't have a file name extension for a
-     * supported file or storage format.</p>
-     */
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects don't have a file name extension for a
-     * supported file or storage format.</p>
-     */
     inline void SetFileType(long long value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects don't have a file name extension for a
-     * supported file or storage format.</p>
-     */
     inline ObjectLevelStatistics& WithFileType(long long value) { SetFileType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total storage size (in bytes) or number of objects that Amazon Macie
      * can't analyze because the objects use an unsupported storage class.</p>
      */
     inline long long GetStorageClass() const{ return m_storageClass; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects use an unsupported storage class.</p>
-     */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects use an unsupported storage class.</p>
-     */
     inline void SetStorageClass(long long value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects use an unsupported storage class.</p>
-     */
     inline ObjectLevelStatistics& WithStorageClass(long long value) { SetStorageClass(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total storage size (in bytes) or number of objects that Amazon Macie
      * can't analyze because the objects use an unsupported storage class or don't have
      * a file name extension for a supported file or storage format.</p>
      */
     inline long long GetTotal() const{ return m_total; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects use an unsupported storage class or don't have
-     * a file name extension for a supported file or storage format.</p>
-     */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects use an unsupported storage class or don't have
-     * a file name extension for a supported file or storage format.</p>
-     */
     inline void SetTotal(long long value) { m_totalHasBeenSet = true; m_total = value; }
-
-    /**
-     * <p>The total storage size (in bytes) or number of objects that Amazon Macie
-     * can't analyze because the objects use an unsupported storage class or don't have
-     * a file name extension for a supported file or storage format.</p>
-     */
     inline ObjectLevelStatistics& WithTotal(long long value) { SetTotal(value); return *this;}
-
+    ///@}
   private:
 
     long long m_fileType;

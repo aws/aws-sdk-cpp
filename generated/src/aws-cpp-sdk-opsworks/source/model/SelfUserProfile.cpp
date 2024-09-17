@@ -26,11 +26,8 @@ SelfUserProfile::SelfUserProfile() :
 {
 }
 
-SelfUserProfile::SelfUserProfile(JsonView jsonValue) : 
-    m_iamUserArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sshUsernameHasBeenSet(false),
-    m_sshPublicKeyHasBeenSet(false)
+SelfUserProfile::SelfUserProfile(JsonView jsonValue)
+  : SelfUserProfile()
 {
   *this = jsonValue;
 }

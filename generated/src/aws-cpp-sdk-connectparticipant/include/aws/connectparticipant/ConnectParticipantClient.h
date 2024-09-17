@@ -87,8 +87,9 @@ namespace ConnectParticipant
 
         /**
          * <p>Allows you to confirm that the attachment has been uploaded using the
-         * pre-signed URL provided in StartAttachmentUpload API. </p>  <p>
-         * <code>ConnectionToken</code> is used for invoking this API instead of
+         * pre-signed URL provided in StartAttachmentUpload API. A conflict exception is
+         * thrown when an attachment with that identifier is already being uploaded.</p>
+         *  <p> <code>ConnectionToken</code> is used for invoking this API instead of
          * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
          * Service APIs do not use <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
@@ -257,9 +258,20 @@ namespace ConnectParticipant
          * attachments. For information about accessing past chat contact transcripts for a
          * persistent chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
-         * persistent chat</a>. </p>  <p> <code>ConnectionToken</code> is used for
-         * invoking this API instead of <code>ParticipantToken</code>.</p>  <p>The
-         * Amazon Connect Participant Service APIs do not use <a
+         * persistent chat</a>. </p> <p>If you have a process that consumes events in the
+         * transcript of an chat that has ended, note that chat transcripts contain the
+         * following event content types if the event has occurred during the chat
+         * session:</p> <ul> <li> <p>
+         * <code>application/vnd.amazonaws.connect.event.participant.left</code> </p> </li>
+         * <li> <p> <code>application/vnd.amazonaws.connect.event.participant.joined</code>
+         * </p> </li> <li> <p>
+         * <code>application/vnd.amazonaws.connect.event.chat.ended</code> </p> </li> <li>
+         * <p> <code>application/vnd.amazonaws.connect.event.transfer.succeeded</code> </p>
+         * </li> <li> <p>
+         * <code>application/vnd.amazonaws.connect.event.transfer.failed</code> </p> </li>
+         * </ul>  <p> <code>ConnectionToken</code> is used for invoking this API
+         * instead of <code>ParticipantToken</code>.</p>  <p>The Amazon Connect
+         * Participant Service APIs do not use <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetTranscript">AWS
@@ -286,9 +298,18 @@ namespace ConnectParticipant
         }
 
         /**
-         * <p>Sends an event. </p>  <p> <code>ConnectionToken</code> is used for
-         * invoking this API instead of <code>ParticipantToken</code>.</p>  <p>The
-         * Amazon Connect Participant Service APIs do not use <a
+         *  <p>The
+         * <code>application/vnd.amazonaws.connect.event.connection.acknowledged</code>
+         * ContentType will no longer be supported starting December 31, 2024. This event
+         * has been migrated to the <a
+         * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+         * API using the <code>ConnectParticipant</code> field.</p>  <p>Sends an
+         * event. Message receipts are not supported when there are more than two active
+         * participants in the chat. Using the SendEvent API for message receipts when a
+         * supervisor is barged-in will result in a conflict exception.</p>  <p>
+         * <code>ConnectionToken</code> is used for invoking this API instead of
+         * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendEvent">AWS
@@ -381,7 +402,6 @@ namespace ConnectParticipant
       void init(const ConnectParticipantClientConfiguration& clientConfiguration);
 
       ConnectParticipantClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectParticipantEndpointProviderBase> m_endpointProvider;
   };
 

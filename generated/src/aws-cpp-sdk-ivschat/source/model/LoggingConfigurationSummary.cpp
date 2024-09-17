@@ -20,27 +20,19 @@ namespace Model
 
 LoggingConfigurationSummary::LoggingConfigurationSummary() : 
     m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_destinationConfigurationHasBeenSet(false),
     m_state(LoggingConfigurationState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
-LoggingConfigurationSummary::LoggingConfigurationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(LoggingConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+LoggingConfigurationSummary::LoggingConfigurationSummary(JsonView jsonValue)
+  : LoggingConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -54,20 +46,6 @@ LoggingConfigurationSummary& LoggingConfigurationSummary::operator =(JsonView js
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createTime"))
-  {
-    m_createTime = jsonValue.GetString("createTime");
-
-    m_createTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("destinationConfiguration"))
-  {
-    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
-
-    m_destinationConfigurationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -75,11 +53,32 @@ LoggingConfigurationSummary& LoggingConfigurationSummary::operator =(JsonView js
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createTime"))
+  {
+    m_createTime = jsonValue.GetString("createTime");
+
+    m_createTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
+
+    m_updateTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("destinationConfiguration"))
+  {
+    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
+
+    m_destinationConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -99,13 +98,6 @@ LoggingConfigurationSummary& LoggingConfigurationSummary::operator =(JsonView js
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updateTime"))
-  {
-    m_updateTime = jsonValue.GetString("updateTime");
-
-    m_updateTimeHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -119,26 +111,31 @@ JsonValue LoggingConfigurationSummary::Jsonize() const
 
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_destinationConfigurationHasBeenSet)
-  {
-   payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
+  if(m_createTimeHasBeenSet)
+  {
+   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updateTimeHasBeenSet)
+  {
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_destinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
 
   }
 
@@ -156,11 +153,6 @@ JsonValue LoggingConfigurationSummary::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
-  }
-
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

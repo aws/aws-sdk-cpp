@@ -23,8 +23,8 @@ OfferStateFilter::OfferStateFilter() :
 {
 }
 
-OfferStateFilter::OfferStateFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+OfferStateFilter::OfferStateFilter(JsonView jsonValue)
+  : OfferStateFilter()
 {
   *this = jsonValue;
 }

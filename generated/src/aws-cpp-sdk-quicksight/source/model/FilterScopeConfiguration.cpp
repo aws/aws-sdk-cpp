@@ -24,9 +24,8 @@ FilterScopeConfiguration::FilterScopeConfiguration() :
 {
 }
 
-FilterScopeConfiguration::FilterScopeConfiguration(JsonView jsonValue) : 
-    m_selectedSheetsHasBeenSet(false),
-    m_allSheetsHasBeenSet(false)
+FilterScopeConfiguration::FilterScopeConfiguration(JsonView jsonValue)
+  : FilterScopeConfiguration()
 {
   *this = jsonValue;
 }

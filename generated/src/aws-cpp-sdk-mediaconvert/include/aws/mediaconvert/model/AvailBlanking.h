@@ -42,54 +42,20 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Blanking image to be used. Leave empty for solid black. Only bmp and png images
      * are supported.
      */
     inline const Aws::String& GetAvailBlankingImage() const{ return m_availBlankingImage; }
-
-    /**
-     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
-     * are supported.
-     */
     inline bool AvailBlankingImageHasBeenSet() const { return m_availBlankingImageHasBeenSet; }
-
-    /**
-     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
-     * are supported.
-     */
     inline void SetAvailBlankingImage(const Aws::String& value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage = value; }
-
-    /**
-     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
-     * are supported.
-     */
     inline void SetAvailBlankingImage(Aws::String&& value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage = std::move(value); }
-
-    /**
-     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
-     * are supported.
-     */
     inline void SetAvailBlankingImage(const char* value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage.assign(value); }
-
-    /**
-     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
-     * are supported.
-     */
     inline AvailBlanking& WithAvailBlankingImage(const Aws::String& value) { SetAvailBlankingImage(value); return *this;}
-
-    /**
-     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
-     * are supported.
-     */
     inline AvailBlanking& WithAvailBlankingImage(Aws::String&& value) { SetAvailBlankingImage(std::move(value)); return *this;}
-
-    /**
-     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
-     * are supported.
-     */
     inline AvailBlanking& WithAvailBlankingImage(const char* value) { SetAvailBlankingImage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_availBlankingImage;

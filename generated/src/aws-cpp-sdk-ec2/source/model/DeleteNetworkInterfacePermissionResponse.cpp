@@ -22,8 +22,8 @@ DeleteNetworkInterfacePermissionResponse::DeleteNetworkInterfacePermissionRespon
 {
 }
 
-DeleteNetworkInterfacePermissionResponse::DeleteNetworkInterfacePermissionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+DeleteNetworkInterfacePermissionResponse::DeleteNetworkInterfacePermissionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DeleteNetworkInterfacePermissionResponse()
 {
   *this = result;
 }

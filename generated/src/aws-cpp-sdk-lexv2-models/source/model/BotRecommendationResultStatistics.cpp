@@ -24,9 +24,8 @@ BotRecommendationResultStatistics::BotRecommendationResultStatistics() :
 {
 }
 
-BotRecommendationResultStatistics::BotRecommendationResultStatistics(JsonView jsonValue) : 
-    m_intentsHasBeenSet(false),
-    m_slotTypesHasBeenSet(false)
+BotRecommendationResultStatistics::BotRecommendationResultStatistics(JsonView jsonValue)
+  : BotRecommendationResultStatistics()
 {
   *this = jsonValue;
 }

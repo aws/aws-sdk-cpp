@@ -40,110 +40,43 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The permissions settings of the access control list (ACL) for the bucket.
      * This value is null if an ACL hasn't been defined for the bucket.</p>
      */
     inline const AccessControlList& GetAccessControlList() const{ return m_accessControlList; }
-
-    /**
-     * <p>The permissions settings of the access control list (ACL) for the bucket.
-     * This value is null if an ACL hasn't been defined for the bucket.</p>
-     */
     inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
-
-    /**
-     * <p>The permissions settings of the access control list (ACL) for the bucket.
-     * This value is null if an ACL hasn't been defined for the bucket.</p>
-     */
     inline void SetAccessControlList(const AccessControlList& value) { m_accessControlListHasBeenSet = true; m_accessControlList = value; }
-
-    /**
-     * <p>The permissions settings of the access control list (ACL) for the bucket.
-     * This value is null if an ACL hasn't been defined for the bucket.</p>
-     */
     inline void SetAccessControlList(AccessControlList&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::move(value); }
-
-    /**
-     * <p>The permissions settings of the access control list (ACL) for the bucket.
-     * This value is null if an ACL hasn't been defined for the bucket.</p>
-     */
     inline BucketLevelPermissions& WithAccessControlList(const AccessControlList& value) { SetAccessControlList(value); return *this;}
-
-    /**
-     * <p>The permissions settings of the access control list (ACL) for the bucket.
-     * This value is null if an ACL hasn't been defined for the bucket.</p>
-     */
     inline BucketLevelPermissions& WithAccessControlList(AccessControlList&& value) { SetAccessControlList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The block public access settings for the bucket.</p>
      */
     inline const BlockPublicAccess& GetBlockPublicAccess() const{ return m_blockPublicAccess; }
-
-    /**
-     * <p>The block public access settings for the bucket.</p>
-     */
     inline bool BlockPublicAccessHasBeenSet() const { return m_blockPublicAccessHasBeenSet; }
-
-    /**
-     * <p>The block public access settings for the bucket.</p>
-     */
     inline void SetBlockPublicAccess(const BlockPublicAccess& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = value; }
-
-    /**
-     * <p>The block public access settings for the bucket.</p>
-     */
     inline void SetBlockPublicAccess(BlockPublicAccess&& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = std::move(value); }
-
-    /**
-     * <p>The block public access settings for the bucket.</p>
-     */
     inline BucketLevelPermissions& WithBlockPublicAccess(const BlockPublicAccess& value) { SetBlockPublicAccess(value); return *this;}
-
-    /**
-     * <p>The block public access settings for the bucket.</p>
-     */
     inline BucketLevelPermissions& WithBlockPublicAccess(BlockPublicAccess&& value) { SetBlockPublicAccess(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The permissions settings of the bucket policy for the bucket. This value is
      * null if a bucket policy hasn't been defined for the bucket.</p>
      */
     inline const BucketPolicy& GetBucketPolicy() const{ return m_bucketPolicy; }
-
-    /**
-     * <p>The permissions settings of the bucket policy for the bucket. This value is
-     * null if a bucket policy hasn't been defined for the bucket.</p>
-     */
     inline bool BucketPolicyHasBeenSet() const { return m_bucketPolicyHasBeenSet; }
-
-    /**
-     * <p>The permissions settings of the bucket policy for the bucket. This value is
-     * null if a bucket policy hasn't been defined for the bucket.</p>
-     */
     inline void SetBucketPolicy(const BucketPolicy& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = value; }
-
-    /**
-     * <p>The permissions settings of the bucket policy for the bucket. This value is
-     * null if a bucket policy hasn't been defined for the bucket.</p>
-     */
     inline void SetBucketPolicy(BucketPolicy&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::move(value); }
-
-    /**
-     * <p>The permissions settings of the bucket policy for the bucket. This value is
-     * null if a bucket policy hasn't been defined for the bucket.</p>
-     */
     inline BucketLevelPermissions& WithBucketPolicy(const BucketPolicy& value) { SetBucketPolicy(value); return *this;}
-
-    /**
-     * <p>The permissions settings of the bucket policy for the bucket. This value is
-     * null if a bucket policy hasn't been defined for the bucket.</p>
-     */
     inline BucketLevelPermissions& WithBucketPolicy(BucketPolicy&& value) { SetBucketPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AccessControlList m_accessControlList;

@@ -31,16 +31,8 @@ PricingPlan::PricingPlan() :
 {
 }
 
-PricingPlan::PricingPlan(JsonView jsonValue) : 
-    m_billableEntityCount(0),
-    m_billableEntityCountHasBeenSet(false),
-    m_bundleInformationHasBeenSet(false),
-    m_effectiveDateTimeHasBeenSet(false),
-    m_pricingMode(PricingMode::NOT_SET),
-    m_pricingModeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_updateReason(UpdateReason::NOT_SET),
-    m_updateReasonHasBeenSet(false)
+PricingPlan::PricingPlan(JsonView jsonValue)
+  : PricingPlan()
 {
   *this = jsonValue;
 }

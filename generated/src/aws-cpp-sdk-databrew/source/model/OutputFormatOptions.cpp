@@ -23,8 +23,8 @@ OutputFormatOptions::OutputFormatOptions() :
 {
 }
 
-OutputFormatOptions::OutputFormatOptions(JsonView jsonValue) : 
-    m_csvHasBeenSet(false)
+OutputFormatOptions::OutputFormatOptions(JsonView jsonValue)
+  : OutputFormatOptions()
 {
   *this = jsonValue;
 }

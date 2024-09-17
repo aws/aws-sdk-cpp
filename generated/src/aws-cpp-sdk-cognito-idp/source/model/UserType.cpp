@@ -31,16 +31,8 @@ UserType::UserType() :
 {
 }
 
-UserType::UserType(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_userCreateDateHasBeenSet(false),
-    m_userLastModifiedDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_userStatus(UserStatusType::NOT_SET),
-    m_userStatusHasBeenSet(false),
-    m_mFAOptionsHasBeenSet(false)
+UserType::UserType(JsonView jsonValue)
+  : UserType()
 {
   *this = jsonValue;
 }

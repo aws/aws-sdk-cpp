@@ -28,13 +28,8 @@ StudioComponentInitializationScript::StudioComponentInitializationScript() :
 {
 }
 
-StudioComponentInitializationScript::StudioComponentInitializationScript(JsonView jsonValue) : 
-    m_launchProfileProtocolVersionHasBeenSet(false),
-    m_platform(LaunchProfilePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_runContext(StudioComponentInitializationScriptRunContext::NOT_SET),
-    m_runContextHasBeenSet(false),
-    m_scriptHasBeenSet(false)
+StudioComponentInitializationScript::StudioComponentInitializationScript(JsonView jsonValue)
+  : StudioComponentInitializationScript()
 {
   *this = jsonValue;
 }

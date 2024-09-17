@@ -34,54 +34,20 @@ namespace Model
     AWS_COSTANDUSAGEREPORTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The report name of the report definition that tags are to be returned
      * for.</p>
      */
     inline const Aws::String& GetReportName() const{ return m_reportName; }
-
-    /**
-     * <p>The report name of the report definition that tags are to be returned
-     * for.</p>
-     */
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
-
-    /**
-     * <p>The report name of the report definition that tags are to be returned
-     * for.</p>
-     */
     inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
-
-    /**
-     * <p>The report name of the report definition that tags are to be returned
-     * for.</p>
-     */
     inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
-
-    /**
-     * <p>The report name of the report definition that tags are to be returned
-     * for.</p>
-     */
     inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
-
-    /**
-     * <p>The report name of the report definition that tags are to be returned
-     * for.</p>
-     */
     inline ListTagsForResourceRequest& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
-
-    /**
-     * <p>The report name of the report definition that tags are to be returned
-     * for.</p>
-     */
     inline ListTagsForResourceRequest& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
-
-    /**
-     * <p>The report name of the report definition that tags are to be returned
-     * for.</p>
-     */
     inline ListTagsForResourceRequest& WithReportName(const char* value) { SetReportName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportName;

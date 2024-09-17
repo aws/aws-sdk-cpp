@@ -63,54 +63,14 @@ Image::Image() :
     m_deprecationTimeHasBeenSet(false),
     m_imdsSupport(ImdsSupportValues::NOT_SET),
     m_imdsSupportHasBeenSet(false),
-    m_sourceInstanceIdHasBeenSet(false)
+    m_sourceInstanceIdHasBeenSet(false),
+    m_deregistrationProtectionHasBeenSet(false),
+    m_lastLaunchedTimeHasBeenSet(false)
 {
 }
 
-Image::Image(const XmlNode& xmlNode) : 
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageLocationHasBeenSet(false),
-    m_imageType(ImageTypeValues::NOT_SET),
-    m_imageTypeHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_platformDetailsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enaSupport(false),
-    m_enaSupportHasBeenSet(false),
-    m_hypervisor(HypervisorType::NOT_SET),
-    m_hypervisorHasBeenSet(false),
-    m_imageOwnerAliasHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_rootDeviceType(DeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_tpmSupport(TpmSupportValues::NOT_SET),
-    m_tpmSupportHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false),
-    m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false),
-    m_sourceInstanceIdHasBeenSet(false)
+Image::Image(const XmlNode& xmlNode)
+  : Image()
 {
   *this = xmlNode;
 }
@@ -325,6 +285,18 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_sourceInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceInstanceIdNode.GetText());
       m_sourceInstanceIdHasBeenSet = true;
     }
+    XmlNode deregistrationProtectionNode = resultNode.FirstChild("deregistrationProtection");
+    if(!deregistrationProtectionNode.IsNull())
+    {
+      m_deregistrationProtection = Aws::Utils::Xml::DecodeEscapedXmlText(deregistrationProtectionNode.GetText());
+      m_deregistrationProtectionHasBeenSet = true;
+    }
+    XmlNode lastLaunchedTimeNode = resultNode.FirstChild("lastLaunchedTime");
+    if(!lastLaunchedTimeNode.IsNull())
+    {
+      m_lastLaunchedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastLaunchedTimeNode.GetText());
+      m_lastLaunchedTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -507,6 +479,16 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".SourceInstanceId=" << StringUtils::URLEncode(m_sourceInstanceId.c_str()) << "&";
   }
 
+  if(m_deregistrationProtectionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeregistrationProtection=" << StringUtils::URLEncode(m_deregistrationProtection.c_str()) << "&";
+  }
+
+  if(m_lastLaunchedTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
+  }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -654,6 +636,14 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sourceInstanceIdHasBeenSet)
   {
       oStream << location << ".SourceInstanceId=" << StringUtils::URLEncode(m_sourceInstanceId.c_str()) << "&";
+  }
+  if(m_deregistrationProtectionHasBeenSet)
+  {
+      oStream << location << ".DeregistrationProtection=" << StringUtils::URLEncode(m_deregistrationProtection.c_str()) << "&";
+  }
+  if(m_lastLaunchedTimeHasBeenSet)
+  {
+      oStream << location << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
   }
 }
 

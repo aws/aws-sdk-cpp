@@ -24,9 +24,8 @@ NetworkConfiguration::NetworkConfiguration() :
 {
 }
 
-NetworkConfiguration::NetworkConfiguration(JsonView jsonValue) : 
-    m_assignPublicIp(AssignPublicIp::NOT_SET),
-    m_assignPublicIpHasBeenSet(false)
+NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
+  : NetworkConfiguration()
 {
   *this = jsonValue;
 }

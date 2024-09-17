@@ -24,6 +24,7 @@
 #include <aws/autoscaling-plans/model/DescribeScalingPlansResult.h>
 #include <aws/autoscaling-plans/model/GetScalingPlanResourceForecastDataResult.h>
 #include <aws/autoscaling-plans/model/UpdateScalingPlanResult.h>
+#include <aws/autoscaling-plans/model/DescribeScalingPlansRequest.h>
 /* End of service model headers required in AutoScalingPlansClient header */
 
 namespace Aws
@@ -57,7 +58,7 @@ namespace Aws
 
   namespace AutoScalingPlans
   {
-    using AutoScalingPlansClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AutoScalingPlansClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AutoScalingPlansEndpointProviderBase = Aws::AutoScalingPlans::Endpoint::AutoScalingPlansEndpointProviderBase;
     using AutoScalingPlansEndpointProvider = Aws::AutoScalingPlans::Endpoint::AutoScalingPlansEndpointProvider;
 

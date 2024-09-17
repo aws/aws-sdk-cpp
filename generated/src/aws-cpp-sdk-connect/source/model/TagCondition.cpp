@@ -24,9 +24,8 @@ TagCondition::TagCondition() :
 {
 }
 
-TagCondition::TagCondition(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false)
+TagCondition::TagCondition(JsonView jsonValue)
+  : TagCondition()
 {
   *this = jsonValue;
 }

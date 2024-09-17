@@ -24,9 +24,8 @@ EncryptionInfo::EncryptionInfo() :
 {
 }
 
-EncryptionInfo::EncryptionInfo(JsonView jsonValue) : 
-    m_encryptionAtRestHasBeenSet(false),
-    m_encryptionInTransitHasBeenSet(false)
+EncryptionInfo::EncryptionInfo(JsonView jsonValue)
+  : EncryptionInfo()
 {
   *this = jsonValue;
 }

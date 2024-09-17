@@ -34,19 +34,8 @@ LensSummary::LensSummary() :
 {
 }
 
-LensSummary::LensSummary(JsonView jsonValue) : 
-    m_lensArnHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_lensNameHasBeenSet(false),
-    m_lensType(LensType::NOT_SET),
-    m_lensTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_lensStatus(LensStatus::NOT_SET),
-    m_lensStatusHasBeenSet(false)
+LensSummary::LensSummary(JsonView jsonValue)
+  : LensSummary()
 {
   *this = jsonValue;
 }

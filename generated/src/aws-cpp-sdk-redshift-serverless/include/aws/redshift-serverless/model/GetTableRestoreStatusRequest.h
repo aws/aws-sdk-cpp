@@ -34,54 +34,20 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
      * for.</p>
      */
     inline const Aws::String& GetTableRestoreRequestId() const{ return m_tableRestoreRequestId; }
-
-    /**
-     * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
-     * for.</p>
-     */
     inline bool TableRestoreRequestIdHasBeenSet() const { return m_tableRestoreRequestIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
-     * for.</p>
-     */
     inline void SetTableRestoreRequestId(const Aws::String& value) { m_tableRestoreRequestIdHasBeenSet = true; m_tableRestoreRequestId = value; }
-
-    /**
-     * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
-     * for.</p>
-     */
     inline void SetTableRestoreRequestId(Aws::String&& value) { m_tableRestoreRequestIdHasBeenSet = true; m_tableRestoreRequestId = std::move(value); }
-
-    /**
-     * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
-     * for.</p>
-     */
     inline void SetTableRestoreRequestId(const char* value) { m_tableRestoreRequestIdHasBeenSet = true; m_tableRestoreRequestId.assign(value); }
-
-    /**
-     * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
-     * for.</p>
-     */
     inline GetTableRestoreStatusRequest& WithTableRestoreRequestId(const Aws::String& value) { SetTableRestoreRequestId(value); return *this;}
-
-    /**
-     * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
-     * for.</p>
-     */
     inline GetTableRestoreStatusRequest& WithTableRestoreRequestId(Aws::String&& value) { SetTableRestoreRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status
-     * for.</p>
-     */
     inline GetTableRestoreStatusRequest& WithTableRestoreRequestId(const char* value) { SetTableRestoreRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableRestoreRequestId;

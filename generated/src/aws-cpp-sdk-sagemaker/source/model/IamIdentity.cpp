@@ -25,10 +25,8 @@ IamIdentity::IamIdentity() :
 {
 }
 
-IamIdentity::IamIdentity(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_sourceIdentityHasBeenSet(false)
+IamIdentity::IamIdentity(JsonView jsonValue)
+  : IamIdentity()
 {
   *this = jsonValue;
 }

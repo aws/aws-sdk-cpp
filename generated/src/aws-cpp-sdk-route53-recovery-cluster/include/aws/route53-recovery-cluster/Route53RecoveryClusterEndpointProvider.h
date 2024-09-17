@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using Route53RecoveryClusterClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using Route53RecoveryClusterClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using Route53RecoveryClusterClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Route53RecoveryClusterBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

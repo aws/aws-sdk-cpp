@@ -22,8 +22,8 @@ UploadLayerPartResult::UploadLayerPartResult() :
 {
 }
 
-UploadLayerPartResult::UploadLayerPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lastByteReceived(0)
+UploadLayerPartResult::UploadLayerPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UploadLayerPartResult()
 {
   *this = result;
 }

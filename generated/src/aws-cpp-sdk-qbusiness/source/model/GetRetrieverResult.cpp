@@ -18,14 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetRetrieverResult::GetRetrieverResult() : 
-    m_status(RetrieverStatus::NOT_SET),
-    m_type(RetrieverType::NOT_SET)
+    m_type(RetrieverType::NOT_SET),
+    m_status(RetrieverStatus::NOT_SET)
 {
 }
 
-GetRetrieverResult::GetRetrieverResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RetrieverStatus::NOT_SET),
-    m_type(RetrieverType::NOT_SET)
+GetRetrieverResult::GetRetrieverResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRetrieverResult()
 {
   *this = result;
 }
@@ -39,21 +38,9 @@ GetRetrieverResult& GetRetrieverResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("configuration"))
+  if(jsonValue.ValueExists("retrieverId"))
   {
-    m_configuration = jsonValue.GetObject("configuration");
-
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
+    m_retrieverId = jsonValue.GetString("retrieverId");
 
   }
 
@@ -63,15 +50,9 @@ GetRetrieverResult& GetRetrieverResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("retrieverId"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_retrieverId = jsonValue.GetString("retrieverId");
-
-  }
-
-  if(jsonValue.ValueExists("roleArn"))
-  {
-    m_roleArn = jsonValue.GetString("roleArn");
+    m_type = RetrieverTypeMapper::GetRetrieverTypeForName(jsonValue.GetString("type"));
 
   }
 
@@ -81,9 +62,27 @@ GetRetrieverResult& GetRetrieverResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("displayName"))
   {
-    m_type = RetrieverTypeMapper::GetRetrieverTypeForName(jsonValue.GetString("type"));
+    m_displayName = jsonValue.GetString("displayName");
+
+  }
+
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
+
+  }
+
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
 
   }
 

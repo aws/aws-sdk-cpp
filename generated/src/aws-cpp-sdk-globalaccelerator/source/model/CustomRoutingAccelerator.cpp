@@ -34,19 +34,8 @@ CustomRoutingAccelerator::CustomRoutingAccelerator() :
 {
 }
 
-CustomRoutingAccelerator::CustomRoutingAccelerator(JsonView jsonValue) : 
-    m_acceleratorArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ipSetsHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_status(CustomRoutingAcceleratorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+CustomRoutingAccelerator::CustomRoutingAccelerator(JsonView jsonValue)
+  : CustomRoutingAccelerator()
 {
   *this = jsonValue;
 }

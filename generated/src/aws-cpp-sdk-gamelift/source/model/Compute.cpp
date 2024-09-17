@@ -33,26 +33,15 @@ Compute::Compute() :
     m_operatingSystemHasBeenSet(false),
     m_type(EC2InstanceType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_gameLiftServiceSdkEndpointHasBeenSet(false)
+    m_gameLiftServiceSdkEndpointHasBeenSet(false),
+    m_gameLiftAgentEndpointHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_containerAttributesHasBeenSet(false)
 {
 }
 
-Compute::Compute(JsonView jsonValue) : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_computeNameHasBeenSet(false),
-    m_computeArnHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_computeStatus(ComputeStatus::NOT_SET),
-    m_computeStatusHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_type(EC2InstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_gameLiftServiceSdkEndpointHasBeenSet(false)
+Compute::Compute(JsonView jsonValue)
+  : Compute()
 {
   *this = jsonValue;
 }
@@ -143,6 +132,27 @@ Compute& Compute::operator =(JsonView jsonValue)
     m_gameLiftServiceSdkEndpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GameLiftAgentEndpoint"))
+  {
+    m_gameLiftAgentEndpoint = jsonValue.GetString("GameLiftAgentEndpoint");
+
+    m_gameLiftAgentEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceId"))
+  {
+    m_instanceId = jsonValue.GetString("InstanceId");
+
+    m_instanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ContainerAttributes"))
+  {
+    m_containerAttributes = jsonValue.GetObject("ContainerAttributes");
+
+    m_containerAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -215,6 +225,24 @@ JsonValue Compute::Jsonize() const
   if(m_gameLiftServiceSdkEndpointHasBeenSet)
   {
    payload.WithString("GameLiftServiceSdkEndpoint", m_gameLiftServiceSdkEndpoint);
+
+  }
+
+  if(m_gameLiftAgentEndpointHasBeenSet)
+  {
+   payload.WithString("GameLiftAgentEndpoint", m_gameLiftAgentEndpoint);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_containerAttributesHasBeenSet)
+  {
+   payload.WithObject("ContainerAttributes", m_containerAttributes.Jsonize());
 
   }
 

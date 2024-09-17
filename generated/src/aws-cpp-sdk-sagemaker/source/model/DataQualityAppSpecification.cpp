@@ -28,13 +28,8 @@ DataQualityAppSpecification::DataQualityAppSpecification() :
 {
 }
 
-DataQualityAppSpecification::DataQualityAppSpecification(JsonView jsonValue) : 
-    m_imageUriHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false),
-    m_recordPreprocessorSourceUriHasBeenSet(false),
-    m_postAnalyticsProcessorSourceUriHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+DataQualityAppSpecification::DataQualityAppSpecification(JsonView jsonValue)
+  : DataQualityAppSpecification()
 {
   *this = jsonValue;
 }

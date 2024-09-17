@@ -24,9 +24,8 @@ RouteAnalysisEndpointOptionsSpecification::RouteAnalysisEndpointOptionsSpecifica
 {
 }
 
-RouteAnalysisEndpointOptionsSpecification::RouteAnalysisEndpointOptionsSpecification(JsonView jsonValue) : 
-    m_transitGatewayAttachmentArnHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
+RouteAnalysisEndpointOptionsSpecification::RouteAnalysisEndpointOptionsSpecification(JsonView jsonValue)
+  : RouteAnalysisEndpointOptionsSpecification()
 {
   *this = jsonValue;
 }

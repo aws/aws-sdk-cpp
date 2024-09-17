@@ -80,6 +80,19 @@
 #include <aws/auditmanager/model/UpdateControlResult.h>
 #include <aws/auditmanager/model/UpdateSettingsResult.h>
 #include <aws/auditmanager/model/ValidateAssessmentReportIntegrityResult.h>
+#include <aws/auditmanager/model/ListAssessmentsRequest.h>
+#include <aws/auditmanager/model/DeregisterAccountRequest.h>
+#include <aws/auditmanager/model/GetOrganizationAdminAccountRequest.h>
+#include <aws/auditmanager/model/ListControlDomainInsightsRequest.h>
+#include <aws/auditmanager/model/GetDelegationsRequest.h>
+#include <aws/auditmanager/model/UpdateSettingsRequest.h>
+#include <aws/auditmanager/model/ListNotificationsRequest.h>
+#include <aws/auditmanager/model/ListAssessmentReportsRequest.h>
+#include <aws/auditmanager/model/DeregisterOrganizationAdminAccountRequest.h>
+#include <aws/auditmanager/model/GetServicesInScopeRequest.h>
+#include <aws/auditmanager/model/GetInsightsRequest.h>
+#include <aws/auditmanager/model/RegisterAccountRequest.h>
+#include <aws/auditmanager/model/GetAccountStatusRequest.h>
 /* End of service model headers required in AuditManagerClient header */
 
 namespace Aws
@@ -113,7 +126,7 @@ namespace Aws
 
   namespace AuditManager
   {
-    using AuditManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AuditManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AuditManagerEndpointProviderBase = Aws::AuditManager::Endpoint::AuditManagerEndpointProviderBase;
     using AuditManagerEndpointProvider = Aws::AuditManager::Endpoint::AuditManagerEndpointProvider;
 

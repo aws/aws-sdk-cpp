@@ -25,10 +25,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails::AwsS
 {
 }
 
-AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails(JsonView jsonValue) : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_typeHasBeenSet(false)
+AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails(JsonView jsonValue)
+  : AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails()
 {
   *this = jsonValue;
 }

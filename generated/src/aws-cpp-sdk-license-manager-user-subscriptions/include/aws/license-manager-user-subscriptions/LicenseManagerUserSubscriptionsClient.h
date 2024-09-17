@@ -167,13 +167,13 @@ namespace LicenseManagerUserSubscriptions
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListIdentityProviders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIdentityProvidersOutcome ListIdentityProviders(const Model::ListIdentityProvidersRequest& request) const;
+        virtual Model::ListIdentityProvidersOutcome ListIdentityProviders(const Model::ListIdentityProvidersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIdentityProviders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIdentityProvidersRequestT = Model::ListIdentityProvidersRequest>
-        Model::ListIdentityProvidersOutcomeCallable ListIdentityProvidersCallable(const ListIdentityProvidersRequestT& request) const
+        Model::ListIdentityProvidersOutcomeCallable ListIdentityProvidersCallable(const ListIdentityProvidersRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerUserSubscriptionsClient::ListIdentityProviders, request);
         }
@@ -182,7 +182,7 @@ namespace LicenseManagerUserSubscriptions
          * An Async wrapper for ListIdentityProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIdentityProvidersRequestT = Model::ListIdentityProvidersRequest>
-        void ListIdentityProvidersAsync(const ListIdentityProvidersRequestT& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIdentityProvidersAsync(const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIdentityProvidersRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerUserSubscriptionsClient::ListIdentityProviders, request, handler, context);
         }
@@ -193,13 +193,13 @@ namespace LicenseManagerUserSubscriptions
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
+        virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInstancesRequestT = Model::ListInstancesRequest>
-        Model::ListInstancesOutcomeCallable ListInstancesCallable(const ListInstancesRequestT& request) const
+        Model::ListInstancesOutcomeCallable ListInstancesCallable(const ListInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerUserSubscriptionsClient::ListInstances, request);
         }
@@ -208,7 +208,7 @@ namespace LicenseManagerUserSubscriptions
          * An Async wrapper for ListInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInstancesRequestT = Model::ListInstancesRequest>
-        void ListInstancesAsync(const ListInstancesRequestT& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInstancesAsync(const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerUserSubscriptionsClient::ListInstances, request, handler, context);
         }
@@ -383,7 +383,6 @@ namespace LicenseManagerUserSubscriptions
       void init(const LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration);
 
       LicenseManagerUserSubscriptionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> m_endpointProvider;
   };
 

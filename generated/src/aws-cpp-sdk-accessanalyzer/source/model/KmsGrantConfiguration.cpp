@@ -27,12 +27,8 @@ KmsGrantConfiguration::KmsGrantConfiguration() :
 {
 }
 
-KmsGrantConfiguration::KmsGrantConfiguration(JsonView jsonValue) : 
-    m_operationsHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false),
-    m_constraintsHasBeenSet(false),
-    m_issuingAccountHasBeenSet(false)
+KmsGrantConfiguration::KmsGrantConfiguration(JsonView jsonValue)
+  : KmsGrantConfiguration()
 {
   *this = jsonValue;
 }

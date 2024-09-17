@@ -27,10 +27,8 @@ RestoreStatus::RestoreStatus() :
 {
 }
 
-RestoreStatus::RestoreStatus(const XmlNode& xmlNode) : 
-    m_isRestoreInProgress(false),
-    m_isRestoreInProgressHasBeenSet(false),
-    m_restoreExpiryDateHasBeenSet(false)
+RestoreStatus::RestoreStatus(const XmlNode& xmlNode)
+  : RestoreStatus()
 {
   *this = xmlNode;
 }

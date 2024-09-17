@@ -26,11 +26,8 @@ TableObject::TableObject() :
 {
 }
 
-TableObject::TableObject(JsonView jsonValue) : 
-    m_uriHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+TableObject::TableObject(JsonView jsonValue)
+  : TableObject()
 {
   *this = jsonValue;
 }

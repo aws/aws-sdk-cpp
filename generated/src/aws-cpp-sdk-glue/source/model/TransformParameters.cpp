@@ -25,10 +25,8 @@ TransformParameters::TransformParameters() :
 {
 }
 
-TransformParameters::TransformParameters(JsonView jsonValue) : 
-    m_transformType(TransformType::NOT_SET),
-    m_transformTypeHasBeenSet(false),
-    m_findMatchesParametersHasBeenSet(false)
+TransformParameters::TransformParameters(JsonView jsonValue)
+  : TransformParameters()
 {
   *this = jsonValue;
 }

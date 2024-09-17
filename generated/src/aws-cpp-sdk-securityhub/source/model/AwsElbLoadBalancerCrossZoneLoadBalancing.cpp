@@ -24,9 +24,8 @@ AwsElbLoadBalancerCrossZoneLoadBalancing::AwsElbLoadBalancerCrossZoneLoadBalanci
 {
 }
 
-AwsElbLoadBalancerCrossZoneLoadBalancing::AwsElbLoadBalancerCrossZoneLoadBalancing(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AwsElbLoadBalancerCrossZoneLoadBalancing::AwsElbLoadBalancerCrossZoneLoadBalancing(JsonView jsonValue)
+  : AwsElbLoadBalancerCrossZoneLoadBalancing()
 {
   *this = jsonValue;
 }

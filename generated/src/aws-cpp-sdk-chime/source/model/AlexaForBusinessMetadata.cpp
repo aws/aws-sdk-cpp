@@ -25,10 +25,8 @@ AlexaForBusinessMetadata::AlexaForBusinessMetadata() :
 {
 }
 
-AlexaForBusinessMetadata::AlexaForBusinessMetadata(JsonView jsonValue) : 
-    m_isAlexaForBusinessEnabled(false),
-    m_isAlexaForBusinessEnabledHasBeenSet(false),
-    m_alexaForBusinessRoomArnHasBeenSet(false)
+AlexaForBusinessMetadata::AlexaForBusinessMetadata(JsonView jsonValue)
+  : AlexaForBusinessMetadata()
 {
   *this = jsonValue;
 }

@@ -41,108 +41,43 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-     */
     inline SAMLProviderListEntry& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-     */
     inline SAMLProviderListEntry& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-     */
     inline SAMLProviderListEntry& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
-
-    /**
-     * <p>The expiration date and time for the SAML provider.</p>
-     */
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
-
-    /**
-     * <p>The expiration date and time for the SAML provider.</p>
-     */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
-
-    /**
-     * <p>The expiration date and time for the SAML provider.</p>
-     */
     inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
-
-    /**
-     * <p>The expiration date and time for the SAML provider.</p>
-     */
     inline SAMLProviderListEntry& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
-
-    /**
-     * <p>The expiration date and time for the SAML provider.</p>
-     */
     inline SAMLProviderListEntry& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
-
-    /**
-     * <p>The date and time when the SAML provider was created.</p>
-     */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the SAML provider was created.</p>
-     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-
-    /**
-     * <p>The date and time when the SAML provider was created.</p>
-     */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-
-    /**
-     * <p>The date and time when the SAML provider was created.</p>
-     */
     inline SAMLProviderListEntry& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the SAML provider was created.</p>
-     */
     inline SAMLProviderListEntry& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

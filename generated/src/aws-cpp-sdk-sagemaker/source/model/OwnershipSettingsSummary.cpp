@@ -23,8 +23,8 @@ OwnershipSettingsSummary::OwnershipSettingsSummary() :
 {
 }
 
-OwnershipSettingsSummary::OwnershipSettingsSummary(JsonView jsonValue) : 
-    m_ownerUserProfileNameHasBeenSet(false)
+OwnershipSettingsSummary::OwnershipSettingsSummary(JsonView jsonValue)
+  : OwnershipSettingsSummary()
 {
   *this = jsonValue;
 }

@@ -32,62 +32,21 @@ namespace Model
     AWS_RESOURCEEXPLORER2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the view that you want information about.</p>
      */
     inline const Aws::String& GetViewArn() const{ return m_viewArn; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want information about.</p>
-     */
     inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want information about.</p>
-     */
     inline void SetViewArn(const Aws::String& value) { m_viewArnHasBeenSet = true; m_viewArn = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want information about.</p>
-     */
     inline void SetViewArn(Aws::String&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want information about.</p>
-     */
     inline void SetViewArn(const char* value) { m_viewArnHasBeenSet = true; m_viewArn.assign(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want information about.</p>
-     */
     inline GetViewRequest& WithViewArn(const Aws::String& value) { SetViewArn(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want information about.</p>
-     */
     inline GetViewRequest& WithViewArn(Aws::String&& value) { SetViewArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want information about.</p>
-     */
     inline GetViewRequest& WithViewArn(const char* value) { SetViewArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_viewArn;

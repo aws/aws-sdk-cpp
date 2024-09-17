@@ -32,77 +32,31 @@ namespace Model
     AWS_KAFKA_API PutClusterPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * 
             <p>The policy version.</p>
          
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
-
-    /**
-     * 
-            <p>The policy version.</p>
-         
-     */
     inline void SetCurrentVersion(const Aws::String& value) { m_currentVersion = value; }
-
-    /**
-     * 
-            <p>The policy version.</p>
-         
-     */
     inline void SetCurrentVersion(Aws::String&& value) { m_currentVersion = std::move(value); }
-
-    /**
-     * 
-            <p>The policy version.</p>
-         
-     */
     inline void SetCurrentVersion(const char* value) { m_currentVersion.assign(value); }
-
-    /**
-     * 
-            <p>The policy version.</p>
-         
-     */
     inline PutClusterPolicyResult& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-
-    /**
-     * 
-            <p>The policy version.</p>
-         
-     */
     inline PutClusterPolicyResult& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The policy version.</p>
-         
-     */
     inline PutClusterPolicyResult& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutClusterPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutClusterPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutClusterPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_currentVersion;

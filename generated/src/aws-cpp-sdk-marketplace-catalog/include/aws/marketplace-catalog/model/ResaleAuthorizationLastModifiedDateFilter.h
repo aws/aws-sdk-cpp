@@ -38,42 +38,18 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows filtering on the <code>LastModifiedDate</code> of a
      * ResaleAuthorization with date range as input.</p>
      */
     inline const ResaleAuthorizationLastModifiedDateFilterDateRange& GetDateRange() const{ return m_dateRange; }
-
-    /**
-     * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-     * ResaleAuthorization with date range as input.</p>
-     */
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-
-    /**
-     * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-     * ResaleAuthorization with date range as input.</p>
-     */
     inline void SetDateRange(const ResaleAuthorizationLastModifiedDateFilterDateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-
-    /**
-     * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-     * ResaleAuthorization with date range as input.</p>
-     */
     inline void SetDateRange(ResaleAuthorizationLastModifiedDateFilterDateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-
-    /**
-     * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-     * ResaleAuthorization with date range as input.</p>
-     */
     inline ResaleAuthorizationLastModifiedDateFilter& WithDateRange(const ResaleAuthorizationLastModifiedDateFilterDateRange& value) { SetDateRange(value); return *this;}
-
-    /**
-     * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-     * ResaleAuthorization with date range as input.</p>
-     */
     inline ResaleAuthorizationLastModifiedDateFilter& WithDateRange(ResaleAuthorizationLastModifiedDateFilterDateRange&& value) { SetDateRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResaleAuthorizationLastModifiedDateFilterDateRange m_dateRange;

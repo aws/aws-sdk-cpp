@@ -33,18 +33,8 @@ DirectConnectGatewayAssociation::DirectConnectGatewayAssociation() :
 {
 }
 
-DirectConnectGatewayAssociation::DirectConnectGatewayAssociation(JsonView jsonValue) : 
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_directConnectGatewayOwnerAccountHasBeenSet(false),
-    m_associationState(DirectConnectGatewayAssociationState::NOT_SET),
-    m_associationStateHasBeenSet(false),
-    m_stateChangeErrorHasBeenSet(false),
-    m_associatedGatewayHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_allowedPrefixesToDirectConnectGatewayHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false),
-    m_virtualGatewayRegionHasBeenSet(false),
-    m_virtualGatewayOwnerAccountHasBeenSet(false)
+DirectConnectGatewayAssociation::DirectConnectGatewayAssociation(JsonView jsonValue)
+  : DirectConnectGatewayAssociation()
 {
   *this = jsonValue;
 }

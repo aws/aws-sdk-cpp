@@ -25,8 +25,8 @@ CustomVerificationEmailTemplateAlreadyExistsException::CustomVerificationEmailTe
 {
 }
 
-CustomVerificationEmailTemplateAlreadyExistsException::CustomVerificationEmailTemplateAlreadyExistsException(const XmlNode& xmlNode) : 
-    m_customVerificationEmailTemplateNameHasBeenSet(false)
+CustomVerificationEmailTemplateAlreadyExistsException::CustomVerificationEmailTemplateAlreadyExistsException(const XmlNode& xmlNode)
+  : CustomVerificationEmailTemplateAlreadyExistsException()
 {
   *this = xmlNode;
 }

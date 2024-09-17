@@ -28,13 +28,8 @@ BotLocaleImportSpecification::BotLocaleImportSpecification() :
 {
 }
 
-BotLocaleImportSpecification::BotLocaleImportSpecification(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_nluIntentConfidenceThreshold(0.0),
-    m_nluIntentConfidenceThresholdHasBeenSet(false),
-    m_voiceSettingsHasBeenSet(false)
+BotLocaleImportSpecification::BotLocaleImportSpecification(JsonView jsonValue)
+  : BotLocaleImportSpecification()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SuppressionListDestination::SuppressionListDestination() :
 {
 }
 
-SuppressionListDestination::SuppressionListDestination(JsonView jsonValue) : 
-    m_suppressionListImportAction(SuppressionListImportAction::NOT_SET),
-    m_suppressionListImportActionHasBeenSet(false)
+SuppressionListDestination::SuppressionListDestination(JsonView jsonValue)
+  : SuppressionListDestination()
 {
   *this = jsonValue;
 }

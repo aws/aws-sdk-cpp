@@ -26,19 +26,14 @@ OidcConfig::OidcConfig() :
     m_tokenEndpointHasBeenSet(false),
     m_userInfoEndpointHasBeenSet(false),
     m_logoutEndpointHasBeenSet(false),
-    m_jwksUriHasBeenSet(false)
+    m_jwksUriHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_authenticationRequestExtraParamsHasBeenSet(false)
 {
 }
 
-OidcConfig::OidcConfig(JsonView jsonValue) : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_logoutEndpointHasBeenSet(false),
-    m_jwksUriHasBeenSet(false)
+OidcConfig::OidcConfig(JsonView jsonValue)
+  : OidcConfig()
 {
   *this = jsonValue;
 }
@@ -101,6 +96,23 @@ OidcConfig& OidcConfig::operator =(JsonView jsonValue)
     m_jwksUriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Scope"))
+  {
+    m_scope = jsonValue.GetString("Scope");
+
+    m_scopeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuthenticationRequestExtraParams"))
+  {
+    Aws::Map<Aws::String, JsonView> authenticationRequestExtraParamsJsonMap = jsonValue.GetObject("AuthenticationRequestExtraParams").GetAllObjects();
+    for(auto& authenticationRequestExtraParamsItem : authenticationRequestExtraParamsJsonMap)
+    {
+      m_authenticationRequestExtraParams[authenticationRequestExtraParamsItem.first] = authenticationRequestExtraParamsItem.second.AsString();
+    }
+    m_authenticationRequestExtraParamsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +165,23 @@ JsonValue OidcConfig::Jsonize() const
   if(m_jwksUriHasBeenSet)
   {
    payload.WithString("JwksUri", m_jwksUri);
+
+  }
+
+  if(m_scopeHasBeenSet)
+  {
+   payload.WithString("Scope", m_scope);
+
+  }
+
+  if(m_authenticationRequestExtraParamsHasBeenSet)
+  {
+   JsonValue authenticationRequestExtraParamsJsonMap;
+   for(auto& authenticationRequestExtraParamsItem : m_authenticationRequestExtraParams)
+   {
+     authenticationRequestExtraParamsJsonMap.WithString(authenticationRequestExtraParamsItem.first, authenticationRequestExtraParamsItem.second);
+   }
+   payload.WithObject("AuthenticationRequestExtraParams", std::move(authenticationRequestExtraParamsJsonMap));
 
   }
 

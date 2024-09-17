@@ -24,9 +24,8 @@ Epss::Epss() :
 {
 }
 
-Epss::Epss(JsonView jsonValue) : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+Epss::Epss(JsonView jsonValue)
+  : Epss()
 {
   *this = jsonValue;
 }

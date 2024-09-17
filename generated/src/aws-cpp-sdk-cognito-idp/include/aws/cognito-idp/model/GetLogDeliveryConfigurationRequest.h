@@ -34,54 +34,20 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
+     * <p>The ID of the user pool that has the logging configuration that you want to
+     * view.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
-
-    /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
-     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
-     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-
-    /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
-     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-
-    /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
-     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-
-    /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
-     */
     inline GetLogDeliveryConfigurationRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-
-    /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
-     */
     inline GetLogDeliveryConfigurationRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the user pool where you want to view detailed activity logging
-     * configuration.</p>
-     */
     inline GetLogDeliveryConfigurationRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userPoolId;

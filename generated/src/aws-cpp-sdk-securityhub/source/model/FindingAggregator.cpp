@@ -23,8 +23,8 @@ FindingAggregator::FindingAggregator() :
 {
 }
 
-FindingAggregator::FindingAggregator(JsonView jsonValue) : 
-    m_findingAggregatorArnHasBeenSet(false)
+FindingAggregator::FindingAggregator(JsonView jsonValue)
+  : FindingAggregator()
 {
   *this = jsonValue;
 }

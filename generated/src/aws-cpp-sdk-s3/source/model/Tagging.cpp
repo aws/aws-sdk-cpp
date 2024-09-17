@@ -25,8 +25,8 @@ Tagging::Tagging() :
 {
 }
 
-Tagging::Tagging(const XmlNode& xmlNode) : 
-    m_tagSetHasBeenSet(false)
+Tagging::Tagging(const XmlNode& xmlNode)
+  : Tagging()
 {
   *this = xmlNode;
 }

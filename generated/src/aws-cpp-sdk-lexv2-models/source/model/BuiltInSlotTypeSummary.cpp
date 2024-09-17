@@ -24,9 +24,8 @@ BuiltInSlotTypeSummary::BuiltInSlotTypeSummary() :
 {
 }
 
-BuiltInSlotTypeSummary::BuiltInSlotTypeSummary(JsonView jsonValue) : 
-    m_slotTypeSignatureHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+BuiltInSlotTypeSummary::BuiltInSlotTypeSummary(JsonView jsonValue)
+  : BuiltInSlotTypeSummary()
 {
   *this = jsonValue;
 }

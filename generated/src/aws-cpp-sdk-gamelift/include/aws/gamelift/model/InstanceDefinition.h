@@ -43,37 +43,19 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon EC2 instance type designation.</p>
      */
     inline const GameServerGroupInstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>An Amazon EC2 instance type designation.</p>
-     */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-
-    /**
-     * <p>An Amazon EC2 instance type designation.</p>
-     */
     inline void SetInstanceType(const GameServerGroupInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>An Amazon EC2 instance type designation.</p>
-     */
     inline void SetInstanceType(GameServerGroupInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>An Amazon EC2 instance type designation.</p>
-     */
     inline InstanceDefinition& WithInstanceType(const GameServerGroupInstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>An Amazon EC2 instance type designation.</p>
-     */
     inline InstanceDefinition& WithInstanceType(GameServerGroupInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
      * the total capacity of a game server group. Instance weights are used by Amazon
@@ -85,91 +67,14 @@ namespace Model
      * Guide</i>. Default value is "1".</p>
      */
     inline const Aws::String& GetWeightedCapacity() const{ return m_weightedCapacity; }
-
-    /**
-     * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by Amazon
-     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
-     * identify the most cost-effective options. For detailed information on weighting
-     * instance capacity, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
-     * Guide</i>. Default value is "1".</p>
-     */
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
-
-    /**
-     * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by Amazon
-     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
-     * identify the most cost-effective options. For detailed information on weighting
-     * instance capacity, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
-     * Guide</i>. Default value is "1".</p>
-     */
     inline void SetWeightedCapacity(const Aws::String& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
-
-    /**
-     * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by Amazon
-     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
-     * identify the most cost-effective options. For detailed information on weighting
-     * instance capacity, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
-     * Guide</i>. Default value is "1".</p>
-     */
     inline void SetWeightedCapacity(Aws::String&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::move(value); }
-
-    /**
-     * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by Amazon
-     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
-     * identify the most cost-effective options. For detailed information on weighting
-     * instance capacity, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
-     * Guide</i>. Default value is "1".</p>
-     */
     inline void SetWeightedCapacity(const char* value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity.assign(value); }
-
-    /**
-     * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by Amazon
-     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
-     * identify the most cost-effective options. For detailed information on weighting
-     * instance capacity, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
-     * Guide</i>. Default value is "1".</p>
-     */
     inline InstanceDefinition& WithWeightedCapacity(const Aws::String& value) { SetWeightedCapacity(value); return *this;}
-
-    /**
-     * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by Amazon
-     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
-     * identify the most cost-effective options. For detailed information on weighting
-     * instance capacity, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
-     * Guide</i>. Default value is "1".</p>
-     */
     inline InstanceDefinition& WithWeightedCapacity(Aws::String&& value) { SetWeightedCapacity(std::move(value)); return *this;}
-
-    /**
-     * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by Amazon
-     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
-     * identify the most cost-effective options. For detailed information on weighting
-     * instance capacity, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
-     * Guide</i>. Default value is "1".</p>
-     */
     inline InstanceDefinition& WithWeightedCapacity(const char* value) { SetWeightedCapacity(value); return *this;}
-
+    ///@}
   private:
 
     GameServerGroupInstanceType m_instanceType;

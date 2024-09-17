@@ -24,9 +24,8 @@ SoftwareUpdateOptions::SoftwareUpdateOptions() :
 {
 }
 
-SoftwareUpdateOptions::SoftwareUpdateOptions(JsonView jsonValue) : 
-    m_autoSoftwareUpdateEnabled(false),
-    m_autoSoftwareUpdateEnabledHasBeenSet(false)
+SoftwareUpdateOptions::SoftwareUpdateOptions(JsonView jsonValue)
+  : SoftwareUpdateOptions()
 {
   *this = jsonValue;
 }

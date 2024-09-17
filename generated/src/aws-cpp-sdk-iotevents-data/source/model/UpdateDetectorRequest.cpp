@@ -26,11 +26,8 @@ UpdateDetectorRequest::UpdateDetectorRequest() :
 {
 }
 
-UpdateDetectorRequest::UpdateDetectorRequest(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_stateHasBeenSet(false)
+UpdateDetectorRequest::UpdateDetectorRequest(JsonView jsonValue)
+  : UpdateDetectorRequest()
 {
   *this = jsonValue;
 }

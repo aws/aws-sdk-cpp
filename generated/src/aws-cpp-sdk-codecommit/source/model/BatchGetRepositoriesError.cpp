@@ -27,12 +27,8 @@ BatchGetRepositoriesError::BatchGetRepositoriesError() :
 {
 }
 
-BatchGetRepositoriesError::BatchGetRepositoriesError(JsonView jsonValue) : 
-    m_repositoryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_errorCode(BatchGetRepositoriesErrorCodeEnum::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchGetRepositoriesError::BatchGetRepositoriesError(JsonView jsonValue)
+  : BatchGetRepositoriesError()
 {
   *this = jsonValue;
 }

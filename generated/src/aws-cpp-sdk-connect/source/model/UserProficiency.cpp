@@ -26,11 +26,8 @@ UserProficiency::UserProficiency() :
 {
 }
 
-UserProficiency::UserProficiency(JsonView jsonValue) : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false),
-    m_level(0.0),
-    m_levelHasBeenSet(false)
+UserProficiency::UserProficiency(JsonView jsonValue)
+  : UserProficiency()
 {
   *this = jsonValue;
 }

@@ -40,103 +40,35 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of attribute items specified in the mathematical expression.</p>
      */
     inline const Aws::Vector<AttributeItem>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>A list of attribute items specified in the mathematical expression.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>A list of attribute items specified in the mathematical expression.</p>
-     */
     inline void SetAttributes(const Aws::Vector<AttributeItem>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>A list of attribute items specified in the mathematical expression.</p>
-     */
     inline void SetAttributes(Aws::Vector<AttributeItem>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>A list of attribute items specified in the mathematical expression.</p>
-     */
     inline AttributeDetails& WithAttributes(const Aws::Vector<AttributeItem>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>A list of attribute items specified in the mathematical expression.</p>
-     */
     inline AttributeDetails& WithAttributes(Aws::Vector<AttributeItem>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of attribute items specified in the mathematical expression.</p>
-     */
     inline AttributeDetails& AddAttributes(const AttributeItem& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>A list of attribute items specified in the mathematical expression.</p>
-     */
     inline AttributeDetails& AddAttributes(AttributeItem&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Mathematical expression that is performed on attribute items provided in the
      * attribute list. Each element in the expression should follow the structure of
      * \"{ObjectTypeName.AttributeName}\".</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
-
-    /**
-     * <p>Mathematical expression that is performed on attribute items provided in the
-     * attribute list. Each element in the expression should follow the structure of
-     * \"{ObjectTypeName.AttributeName}\".</p>
-     */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-
-    /**
-     * <p>Mathematical expression that is performed on attribute items provided in the
-     * attribute list. Each element in the expression should follow the structure of
-     * \"{ObjectTypeName.AttributeName}\".</p>
-     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-
-    /**
-     * <p>Mathematical expression that is performed on attribute items provided in the
-     * attribute list. Each element in the expression should follow the structure of
-     * \"{ObjectTypeName.AttributeName}\".</p>
-     */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-
-    /**
-     * <p>Mathematical expression that is performed on attribute items provided in the
-     * attribute list. Each element in the expression should follow the structure of
-     * \"{ObjectTypeName.AttributeName}\".</p>
-     */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-
-    /**
-     * <p>Mathematical expression that is performed on attribute items provided in the
-     * attribute list. Each element in the expression should follow the structure of
-     * \"{ObjectTypeName.AttributeName}\".</p>
-     */
     inline AttributeDetails& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-
-    /**
-     * <p>Mathematical expression that is performed on attribute items provided in the
-     * attribute list. Each element in the expression should follow the structure of
-     * \"{ObjectTypeName.AttributeName}\".</p>
-     */
     inline AttributeDetails& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>Mathematical expression that is performed on attribute items provided in the
-     * attribute list. Each element in the expression should follow the structure of
-     * \"{ObjectTypeName.AttributeName}\".</p>
-     */
     inline AttributeDetails& WithExpression(const char* value) { SetExpression(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AttributeItem> m_attributes;

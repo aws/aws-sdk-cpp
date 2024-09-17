@@ -39,6 +39,7 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
      * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
@@ -46,88 +47,26 @@ namespace Model
      * S3.</p> </li> </ul>
      */
     inline const MLUserDataEncryptionModeString& GetMlUserDataEncryptionMode() const{ return m_mlUserDataEncryptionMode; }
-
-    /**
-     * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
-     * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.</p> </li> </ul>
-     */
     inline bool MlUserDataEncryptionModeHasBeenSet() const { return m_mlUserDataEncryptionModeHasBeenSet; }
-
-    /**
-     * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
-     * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.</p> </li> </ul>
-     */
     inline void SetMlUserDataEncryptionMode(const MLUserDataEncryptionModeString& value) { m_mlUserDataEncryptionModeHasBeenSet = true; m_mlUserDataEncryptionMode = value; }
-
-    /**
-     * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
-     * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.</p> </li> </ul>
-     */
     inline void SetMlUserDataEncryptionMode(MLUserDataEncryptionModeString&& value) { m_mlUserDataEncryptionModeHasBeenSet = true; m_mlUserDataEncryptionMode = std::move(value); }
-
-    /**
-     * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
-     * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.</p> </li> </ul>
-     */
     inline MLUserDataEncryption& WithMlUserDataEncryptionMode(const MLUserDataEncryptionModeString& value) { SetMlUserDataEncryptionMode(value); return *this;}
-
-    /**
-     * <p>The encryption mode applied to user data. Valid values are:</p> <ul> <li>
-     * <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side
-     * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.</p> </li> </ul>
-     */
     inline MLUserDataEncryption& WithMlUserDataEncryptionMode(MLUserDataEncryptionModeString&& value) { SetMlUserDataEncryptionMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID for the customer-provided KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The ID for the customer-provided KMS key.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the customer-provided KMS key.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The ID for the customer-provided KMS key.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The ID for the customer-provided KMS key.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The ID for the customer-provided KMS key.</p>
-     */
     inline MLUserDataEncryption& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The ID for the customer-provided KMS key.</p>
-     */
     inline MLUserDataEncryption& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the customer-provided KMS key.</p>
-     */
     inline MLUserDataEncryption& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     MLUserDataEncryptionModeString m_mlUserDataEncryptionMode;

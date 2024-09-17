@@ -23,8 +23,8 @@ CancelTimerDecisionAttributes::CancelTimerDecisionAttributes() :
 {
 }
 
-CancelTimerDecisionAttributes::CancelTimerDecisionAttributes(JsonView jsonValue) : 
-    m_timerIdHasBeenSet(false)
+CancelTimerDecisionAttributes::CancelTimerDecisionAttributes(JsonView jsonValue)
+  : CancelTimerDecisionAttributes()
 {
   *this = jsonValue;
 }

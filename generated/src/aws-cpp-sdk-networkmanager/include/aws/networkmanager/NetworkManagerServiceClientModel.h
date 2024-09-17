@@ -103,6 +103,13 @@
 #include <aws/networkmanager/model/UpdateNetworkResourceMetadataResult.h>
 #include <aws/networkmanager/model/UpdateSiteResult.h>
 #include <aws/networkmanager/model/UpdateVpcAttachmentResult.h>
+#include <aws/networkmanager/model/DescribeGlobalNetworksRequest.h>
+#include <aws/networkmanager/model/ListAttachmentsRequest.h>
+#include <aws/networkmanager/model/ListOrganizationServiceAccessStatusRequest.h>
+#include <aws/networkmanager/model/CreateGlobalNetworkRequest.h>
+#include <aws/networkmanager/model/ListConnectPeersRequest.h>
+#include <aws/networkmanager/model/ListPeeringsRequest.h>
+#include <aws/networkmanager/model/ListCoreNetworksRequest.h>
 /* End of service model headers required in NetworkManagerClient header */
 
 namespace Aws
@@ -136,7 +143,7 @@ namespace Aws
 
   namespace NetworkManager
   {
-    using NetworkManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NetworkManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NetworkManagerEndpointProviderBase = Aws::NetworkManager::Endpoint::NetworkManagerEndpointProviderBase;
     using NetworkManagerEndpointProvider = Aws::NetworkManager::Endpoint::NetworkManagerEndpointProvider;
 

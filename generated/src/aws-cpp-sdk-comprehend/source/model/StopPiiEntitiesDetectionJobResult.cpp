@@ -22,8 +22,8 @@ StopPiiEntitiesDetectionJobResult::StopPiiEntitiesDetectionJobResult() :
 {
 }
 
-StopPiiEntitiesDetectionJobResult::StopPiiEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+StopPiiEntitiesDetectionJobResult::StopPiiEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopPiiEntitiesDetectionJobResult()
 {
   *this = result;
 }

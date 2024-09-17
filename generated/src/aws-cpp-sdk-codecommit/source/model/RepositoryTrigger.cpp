@@ -27,12 +27,8 @@ RepositoryTrigger::RepositoryTrigger() :
 {
 }
 
-RepositoryTrigger::RepositoryTrigger(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_customDataHasBeenSet(false),
-    m_branchesHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+RepositoryTrigger::RepositoryTrigger(JsonView jsonValue)
+  : RepositoryTrigger()
 {
   *this = jsonValue;
 }

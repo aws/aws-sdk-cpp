@@ -26,11 +26,8 @@ PlayerLatencyPolicy::PlayerLatencyPolicy() :
 {
 }
 
-PlayerLatencyPolicy::PlayerLatencyPolicy(JsonView jsonValue) : 
-    m_maximumIndividualPlayerLatencyMilliseconds(0),
-    m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet(false),
-    m_policyDurationSeconds(0),
-    m_policyDurationSecondsHasBeenSet(false)
+PlayerLatencyPolicy::PlayerLatencyPolicy(JsonView jsonValue)
+  : PlayerLatencyPolicy()
 {
   *this = jsonValue;
 }

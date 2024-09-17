@@ -32,17 +32,8 @@ Member::Member() :
 {
 }
 
-Member::Member(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_administratorAccountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_masterAccountIdHasBeenSet(false),
-    m_relationshipStatus(RelationshipStatus::NOT_SET),
-    m_relationshipStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+Member::Member(JsonView jsonValue)
+  : Member()
 {
   *this = jsonValue;
 }

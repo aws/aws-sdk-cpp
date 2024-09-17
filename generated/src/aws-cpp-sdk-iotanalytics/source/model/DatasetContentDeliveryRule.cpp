@@ -24,9 +24,8 @@ DatasetContentDeliveryRule::DatasetContentDeliveryRule() :
 {
 }
 
-DatasetContentDeliveryRule::DatasetContentDeliveryRule(JsonView jsonValue) : 
-    m_entryNameHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+DatasetContentDeliveryRule::DatasetContentDeliveryRule(JsonView jsonValue)
+  : DatasetContentDeliveryRule()
 {
   *this = jsonValue;
 }

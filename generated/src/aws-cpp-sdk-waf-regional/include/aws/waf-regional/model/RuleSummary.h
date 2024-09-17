@@ -46,6 +46,7 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
      * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
@@ -56,133 +57,29 @@ namespace Model
      * and by <a>ListRules</a>.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline RuleSummary& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline RuleSummary& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
-     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
-     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
-     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
-     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
-     * and by <a>ListRules</a>.</p>
-     */
     inline RuleSummary& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
      * of a <code>Rule</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
-     * of a <code>Rule</code> after you create it.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
-     * of a <code>Rule</code> after you create it.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
-     * of a <code>Rule</code> after you create it.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
-     * of a <code>Rule</code> after you create it.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
-     * of a <code>Rule</code> after you create it.</p>
-     */
     inline RuleSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
-     * of a <code>Rule</code> after you create it.</p>
-     */
     inline RuleSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
-     * of a <code>Rule</code> after you create it.</p>
-     */
     inline RuleSummary& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleId;

@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionInferenceAcceleratorsDetails::AwsEcsTaskDefinitionInferenceA
 {
 }
 
-AwsEcsTaskDefinitionInferenceAcceleratorsDetails::AwsEcsTaskDefinitionInferenceAcceleratorsDetails(JsonView jsonValue) : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+AwsEcsTaskDefinitionInferenceAcceleratorsDetails::AwsEcsTaskDefinitionInferenceAcceleratorsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionInferenceAcceleratorsDetails()
 {
   *this = jsonValue;
 }

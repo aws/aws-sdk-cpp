@@ -26,11 +26,8 @@ TestSetSortBy::TestSetSortBy() :
 {
 }
 
-TestSetSortBy::TestSetSortBy(JsonView jsonValue) : 
-    m_attribute(TestSetSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+TestSetSortBy::TestSetSortBy(JsonView jsonValue)
+  : TestSetSortBy()
 {
   *this = jsonValue;
 }

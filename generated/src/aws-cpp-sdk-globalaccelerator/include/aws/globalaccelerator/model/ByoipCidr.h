@@ -71,126 +71,48 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The address range, in CIDR notation.</p>
+     * <p>The address range, in CIDR notation.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline ByoipCidr& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline ByoipCidr& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>The address range, in CIDR notation.</p>
-     */
     inline ByoipCidr& WithCidr(const char* value) { SetCidr(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the address pool.</p>
      */
     inline const ByoipCidrState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the address pool.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the address pool.</p>
-     */
     inline void SetState(const ByoipCidrState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the address pool.</p>
-     */
     inline void SetState(ByoipCidrState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the address pool.</p>
-     */
     inline ByoipCidr& WithState(const ByoipCidrState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the address pool.</p>
-     */
     inline ByoipCidr& WithState(ByoipCidrState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A history of status changes for an IP address range that you bring to Global
      * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline const Aws::Vector<ByoipCidrEvent>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>A history of status changes for an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-
-    /**
-     * <p>A history of status changes for an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline void SetEvents(const Aws::Vector<ByoipCidrEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
-
-    /**
-     * <p>A history of status changes for an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline void SetEvents(Aws::Vector<ByoipCidrEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-
-    /**
-     * <p>A history of status changes for an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidr& WithEvents(const Aws::Vector<ByoipCidrEvent>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>A history of status changes for an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidr& WithEvents(Aws::Vector<ByoipCidrEvent>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>A history of status changes for an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidr& AddEvents(const ByoipCidrEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-
-    /**
-     * <p>A history of status changes for an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidr& AddEvents(ByoipCidrEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_cidr;

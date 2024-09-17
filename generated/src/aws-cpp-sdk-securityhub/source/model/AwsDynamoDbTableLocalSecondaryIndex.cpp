@@ -26,11 +26,8 @@ AwsDynamoDbTableLocalSecondaryIndex::AwsDynamoDbTableLocalSecondaryIndex() :
 {
 }
 
-AwsDynamoDbTableLocalSecondaryIndex::AwsDynamoDbTableLocalSecondaryIndex(JsonView jsonValue) : 
-    m_indexArnHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false)
+AwsDynamoDbTableLocalSecondaryIndex::AwsDynamoDbTableLocalSecondaryIndex(JsonView jsonValue)
+  : AwsDynamoDbTableLocalSecondaryIndex()
 {
   *this = jsonValue;
 }

@@ -42,104 +42,42 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Information about the event.</p>
      */
     inline const EventInformation& GetEventInformation() const{ return m_eventInformation; }
-
-    /**
-     * <p>Information about the event.</p>
-     */
     inline bool EventInformationHasBeenSet() const { return m_eventInformationHasBeenSet; }
-
-    /**
-     * <p>Information about the event.</p>
-     */
     inline void SetEventInformation(const EventInformation& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
-
-    /**
-     * <p>Information about the event.</p>
-     */
     inline void SetEventInformation(EventInformation&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = std::move(value); }
-
-    /**
-     * <p>Information about the event.</p>
-     */
     inline HistoryRecordEntry& WithEventInformation(const EventInformation& value) { SetEventInformation(value); return *this;}
-
-    /**
-     * <p>Information about the event.</p>
-     */
     inline HistoryRecordEntry& WithEventInformation(EventInformation&& value) { SetEventInformation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The event type.</p>
      */
     inline const FleetEventType& GetEventType() const{ return m_eventType; }
-
-    /**
-     * <p>The event type.</p>
-     */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-
-    /**
-     * <p>The event type.</p>
-     */
     inline void SetEventType(const FleetEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-
-    /**
-     * <p>The event type.</p>
-     */
     inline void SetEventType(FleetEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-
-    /**
-     * <p>The event type.</p>
-     */
     inline HistoryRecordEntry& WithEventType(const FleetEventType& value) { SetEventType(value); return *this;}
-
-    /**
-     * <p>The event type.</p>
-     */
     inline HistoryRecordEntry& WithEventType(FleetEventType&& value) { SetEventType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time of the event, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline HistoryRecordEntry& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
     inline HistoryRecordEntry& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EventInformation m_eventInformation;

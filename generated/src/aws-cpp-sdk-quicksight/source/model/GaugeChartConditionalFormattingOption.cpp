@@ -24,9 +24,8 @@ GaugeChartConditionalFormattingOption::GaugeChartConditionalFormattingOption() :
 {
 }
 
-GaugeChartConditionalFormattingOption::GaugeChartConditionalFormattingOption(JsonView jsonValue) : 
-    m_primaryValueHasBeenSet(false),
-    m_arcHasBeenSet(false)
+GaugeChartConditionalFormattingOption::GaugeChartConditionalFormattingOption(JsonView jsonValue)
+  : GaugeChartConditionalFormattingOption()
 {
   *this = jsonValue;
 }

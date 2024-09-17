@@ -25,10 +25,8 @@ ParameterInlinePolicy::ParameterInlinePolicy() :
 {
 }
 
-ParameterInlinePolicy::ParameterInlinePolicy(JsonView jsonValue) : 
-    m_policyTextHasBeenSet(false),
-    m_policyTypeHasBeenSet(false),
-    m_policyStatusHasBeenSet(false)
+ParameterInlinePolicy::ParameterInlinePolicy(JsonView jsonValue)
+  : ParameterInlinePolicy()
 {
   *this = jsonValue;
 }

@@ -34,57 +34,27 @@ namespace Model
     AWS_EC2_API DescribeSecurityGroupReferencesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the VPCs with the referencing security groups.</p>
      */
     inline const Aws::Vector<SecurityGroupReference>& GetSecurityGroupReferenceSet() const{ return m_securityGroupReferenceSet; }
-
-    /**
-     * <p>Information about the VPCs with the referencing security groups.</p>
-     */
     inline void SetSecurityGroupReferenceSet(const Aws::Vector<SecurityGroupReference>& value) { m_securityGroupReferenceSet = value; }
-
-    /**
-     * <p>Information about the VPCs with the referencing security groups.</p>
-     */
     inline void SetSecurityGroupReferenceSet(Aws::Vector<SecurityGroupReference>&& value) { m_securityGroupReferenceSet = std::move(value); }
-
-    /**
-     * <p>Information about the VPCs with the referencing security groups.</p>
-     */
     inline DescribeSecurityGroupReferencesResponse& WithSecurityGroupReferenceSet(const Aws::Vector<SecurityGroupReference>& value) { SetSecurityGroupReferenceSet(value); return *this;}
-
-    /**
-     * <p>Information about the VPCs with the referencing security groups.</p>
-     */
     inline DescribeSecurityGroupReferencesResponse& WithSecurityGroupReferenceSet(Aws::Vector<SecurityGroupReference>&& value) { SetSecurityGroupReferenceSet(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the VPCs with the referencing security groups.</p>
-     */
     inline DescribeSecurityGroupReferencesResponse& AddSecurityGroupReferenceSet(const SecurityGroupReference& value) { m_securityGroupReferenceSet.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the VPCs with the referencing security groups.</p>
-     */
     inline DescribeSecurityGroupReferencesResponse& AddSecurityGroupReferenceSet(SecurityGroupReference&& value) { m_securityGroupReferenceSet.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeSecurityGroupReferencesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeSecurityGroupReferencesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SecurityGroupReference> m_securityGroupReferenceSet;

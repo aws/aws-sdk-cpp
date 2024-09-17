@@ -26,11 +26,8 @@ IamActionDefinition::IamActionDefinition() :
 {
 }
 
-IamActionDefinition::IamActionDefinition(JsonView jsonValue) : 
-    m_policyArnHasBeenSet(false),
-    m_rolesHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_usersHasBeenSet(false)
+IamActionDefinition::IamActionDefinition(JsonView jsonValue)
+  : IamActionDefinition()
 {
   *this = jsonValue;
 }

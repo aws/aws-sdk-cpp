@@ -26,11 +26,8 @@ DestinationConfigurationRequest::DestinationConfigurationRequest() :
 {
 }
 
-DestinationConfigurationRequest::DestinationConfigurationRequest(JsonView jsonValue) : 
-    m_destinationIpHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_interfaceHasBeenSet(false)
+DestinationConfigurationRequest::DestinationConfigurationRequest(JsonView jsonValue)
+  : DestinationConfigurationRequest()
 {
   *this = jsonValue;
 }

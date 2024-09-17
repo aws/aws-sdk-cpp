@@ -28,13 +28,8 @@ MetricSource::MetricSource() :
 {
 }
 
-MetricSource::MetricSource(JsonView jsonValue) : 
-    m_s3SourceConfigHasBeenSet(false),
-    m_appFlowConfigHasBeenSet(false),
-    m_cloudWatchConfigHasBeenSet(false),
-    m_rDSSourceConfigHasBeenSet(false),
-    m_redshiftSourceConfigHasBeenSet(false),
-    m_athenaSourceConfigHasBeenSet(false)
+MetricSource::MetricSource(JsonView jsonValue)
+  : MetricSource()
 {
   *this = jsonValue;
 }

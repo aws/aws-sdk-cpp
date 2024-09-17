@@ -39,79 +39,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p> The type of elastic inference accelerator. The possible values are
      * eia1.medium, eia1.large, and eia1.xlarge. </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p> The type of elastic inference accelerator. The possible values are
-     * eia1.medium, eia1.large, and eia1.xlarge. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> The type of elastic inference accelerator. The possible values are
-     * eia1.medium, eia1.large, and eia1.xlarge. </p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> The type of elastic inference accelerator. The possible values are
-     * eia1.medium, eia1.large, and eia1.xlarge. </p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> The type of elastic inference accelerator. The possible values are
-     * eia1.medium, eia1.large, and eia1.xlarge. </p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p> The type of elastic inference accelerator. The possible values are
-     * eia1.medium, eia1.large, and eia1.xlarge. </p>
-     */
     inline LaunchTemplateElasticInferenceAcceleratorResponse& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p> The type of elastic inference accelerator. The possible values are
-     * eia1.medium, eia1.large, and eia1.xlarge. </p>
-     */
     inline LaunchTemplateElasticInferenceAcceleratorResponse& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p> The type of elastic inference accelerator. The possible values are
-     * eia1.medium, eia1.large, and eia1.xlarge. </p>
-     */
     inline LaunchTemplateElasticInferenceAcceleratorResponse& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of elastic inference accelerators to attach to the instance. </p>
      * <p>Default: 1</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p> The number of elastic inference accelerators to attach to the instance. </p>
-     * <p>Default: 1</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p> The number of elastic inference accelerators to attach to the instance. </p>
-     * <p>Default: 1</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p> The number of elastic inference accelerators to attach to the instance. </p>
-     * <p>Default: 1</p>
-     */
     inline LaunchTemplateElasticInferenceAcceleratorResponse& WithCount(int value) { SetCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

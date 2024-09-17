@@ -39,6 +39,7 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
      * case of a <code>DELETE</code> action, if the current value does not match the
@@ -51,98 +52,14 @@ namespace Model
      * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
     inline ResourceRecord& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
     inline ResourceRecord& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
-     * case of a <code>DELETE</code> action, if the current value does not match the
-     * actual value, an error is returned. For descriptions about how to format
-     * <code>Value</code> for different record types, see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
-     * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-     * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> 
-     */
     inline ResourceRecord& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

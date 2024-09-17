@@ -22,6 +22,8 @@ JobRunSummary::JobRunSummary() :
     m_applicationIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_mode(JobRunMode::NOT_SET),
+    m_modeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -31,24 +33,16 @@ JobRunSummary::JobRunSummary() :
     m_stateHasBeenSet(false),
     m_stateDetailsHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_attempt(0),
+    m_attemptHasBeenSet(false),
+    m_attemptCreatedAtHasBeenSet(false),
+    m_attemptUpdatedAtHasBeenSet(false)
 {
 }
 
-JobRunSummary::JobRunSummary(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false)
+JobRunSummary::JobRunSummary(JsonView jsonValue)
+  : JobRunSummary()
 {
   *this = jsonValue;
 }
@@ -74,6 +68,13 @@ JobRunSummary& JobRunSummary::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mode"))
+  {
+    m_mode = JobRunModeMapper::GetJobRunModeForName(jsonValue.GetString("mode"));
+
+    m_modeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arn"))
@@ -139,6 +140,27 @@ JobRunSummary& JobRunSummary::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("attempt"))
+  {
+    m_attempt = jsonValue.GetInteger("attempt");
+
+    m_attemptHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("attemptCreatedAt"))
+  {
+    m_attemptCreatedAt = jsonValue.GetDouble("attemptCreatedAt");
+
+    m_attemptCreatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("attemptUpdatedAt"))
+  {
+    m_attemptUpdatedAt = jsonValue.GetDouble("attemptUpdatedAt");
+
+    m_attemptUpdatedAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -162,6 +184,11 @@ JsonValue JobRunSummary::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("mode", JobRunModeMapper::GetNameForJobRunMode(m_mode));
   }
 
   if(m_arnHasBeenSet)
@@ -213,6 +240,22 @@ JsonValue JobRunSummary::Jsonize() const
   {
    payload.WithString("type", m_type);
 
+  }
+
+  if(m_attemptHasBeenSet)
+  {
+   payload.WithInteger("attempt", m_attempt);
+
+  }
+
+  if(m_attemptCreatedAtHasBeenSet)
+  {
+   payload.WithDouble("attemptCreatedAt", m_attemptCreatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_attemptUpdatedAtHasBeenSet)
+  {
+   payload.WithDouble("attemptUpdatedAt", m_attemptUpdatedAt.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -14,6 +14,10 @@ using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
     m_nameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
+    m_jobRunQueuingEnabled(false),
+    m_jobRunQueuingEnabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -39,7 +43,8 @@ CreateJobRequest::CreateJobRequest() :
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+    m_sourceControlDetailsHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
 }
 
@@ -50,6 +55,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_jobModeHasBeenSet)
+  {
+   payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
+  }
+
+  if(m_jobRunQueuingEnabledHasBeenSet)
+  {
+   payload.WithBool("JobRunQueuingEnabled", m_jobRunQueuingEnabled);
 
   }
 
@@ -188,6 +204,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_sourceControlDetailsHasBeenSet)
   {
    payload.WithObject("SourceControlDetails", m_sourceControlDetails.Jsonize());
+
+  }
+
+  if(m_maintenanceWindowHasBeenSet)
+  {
+   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
 
   }
 

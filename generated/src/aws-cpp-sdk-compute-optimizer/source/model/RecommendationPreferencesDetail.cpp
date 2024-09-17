@@ -36,21 +36,8 @@ RecommendationPreferencesDetail::RecommendationPreferencesDetail() :
 {
 }
 
-RecommendationPreferencesDetail::RecommendationPreferencesDetail(JsonView jsonValue) : 
-    m_scopeHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false),
-    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_externalMetricsPreferenceHasBeenSet(false),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
-    m_lookBackPeriodHasBeenSet(false),
-    m_utilizationPreferencesHasBeenSet(false),
-    m_preferredResourcesHasBeenSet(false),
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
-    m_savingsEstimationModeHasBeenSet(false)
+RecommendationPreferencesDetail::RecommendationPreferencesDetail(JsonView jsonValue)
+  : RecommendationPreferencesDetail()
 {
   *this = jsonValue;
 }

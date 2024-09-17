@@ -24,9 +24,8 @@ AwsEcsTaskVolumeDetails::AwsEcsTaskVolumeDetails() :
 {
 }
 
-AwsEcsTaskVolumeDetails::AwsEcsTaskVolumeDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_hostHasBeenSet(false)
+AwsEcsTaskVolumeDetails::AwsEcsTaskVolumeDetails(JsonView jsonValue)
+  : AwsEcsTaskVolumeDetails()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ImportAssetFromSignedUrlResponseDetails::ImportAssetFromSignedUrlResponseDetails
 {
 }
 
-ImportAssetFromSignedUrlResponseDetails::ImportAssetFromSignedUrlResponseDetails(JsonView jsonValue) : 
-    m_assetNameHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_md5HashHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_signedUrlHasBeenSet(false),
-    m_signedUrlExpiresAtHasBeenSet(false)
+ImportAssetFromSignedUrlResponseDetails::ImportAssetFromSignedUrlResponseDetails(JsonView jsonValue)
+  : ImportAssetFromSignedUrlResponseDetails()
 {
   *this = jsonValue;
 }

@@ -38,23 +38,8 @@ ContactDetail::ContactDetail() :
 {
 }
 
-ContactDetail::ContactDetail(JsonView jsonValue) : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_contactType(ContactType::NOT_SET),
-    m_contactTypeHasBeenSet(false),
-    m_organizationNameHasBeenSet(false),
-    m_addressLine1HasBeenSet(false),
-    m_addressLine2HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_countryCode(CountryCode::NOT_SET),
-    m_countryCodeHasBeenSet(false),
-    m_zipCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_faxHasBeenSet(false),
-    m_extraParamsHasBeenSet(false)
+ContactDetail::ContactDetail(JsonView jsonValue)
+  : ContactDetail()
 {
   *this = jsonValue;
 }

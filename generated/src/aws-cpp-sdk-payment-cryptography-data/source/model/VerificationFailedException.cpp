@@ -19,34 +19,32 @@ namespace Model
 {
 
 VerificationFailedException::VerificationFailedException() : 
-    m_messageHasBeenSet(false),
     m_reason(VerificationFailedReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
-VerificationFailedException::VerificationFailedException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(VerificationFailedReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+VerificationFailedException::VerificationFailedException(JsonView jsonValue)
+  : VerificationFailedException()
 {
   *this = jsonValue;
 }
 
 VerificationFailedException& VerificationFailedException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Message"))
-  {
-    m_message = jsonValue.GetString("Message");
-
-    m_messageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = VerificationFailedReasonMapper::GetVerificationFailedReasonForName(jsonValue.GetString("Reason"));
 
     m_reasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+
+    m_messageHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +54,15 @@ JsonValue VerificationFailedException::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", VerificationFailedReasonMapper::GetNameForVerificationFailedReason(m_reason));
+  }
+
   if(m_messageHasBeenSet)
   {
    payload.WithString("Message", m_message);
 
-  }
-
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", VerificationFailedReasonMapper::GetNameForVerificationFailedReason(m_reason));
   }
 
   return payload;

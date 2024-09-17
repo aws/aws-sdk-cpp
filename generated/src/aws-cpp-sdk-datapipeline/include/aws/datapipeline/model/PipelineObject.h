@@ -41,128 +41,47 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the object.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the object.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the object.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the object.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the object.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the object.</p>
-     */
     inline PipelineObject& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the object.</p>
-     */
     inline PipelineObject& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the object.</p>
-     */
     inline PipelineObject& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the object.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the object.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the object.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the object.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the object.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the object.</p>
-     */
     inline PipelineObject& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the object.</p>
-     */
     inline PipelineObject& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the object.</p>
-     */
     inline PipelineObject& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key-value pairs that define the properties of the object.</p>
      */
     inline const Aws::Vector<Field>& GetFields() const{ return m_fields; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the object.</p>
-     */
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the object.</p>
-     */
     inline void SetFields(const Aws::Vector<Field>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the object.</p>
-     */
     inline void SetFields(Aws::Vector<Field>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-
-    /**
-     * <p>Key-value pairs that define the properties of the object.</p>
-     */
     inline PipelineObject& WithFields(const Aws::Vector<Field>& value) { SetFields(value); return *this;}
-
-    /**
-     * <p>Key-value pairs that define the properties of the object.</p>
-     */
     inline PipelineObject& WithFields(Aws::Vector<Field>&& value) { SetFields(std::move(value)); return *this;}
-
-    /**
-     * <p>Key-value pairs that define the properties of the object.</p>
-     */
     inline PipelineObject& AddFields(const Field& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-
-    /**
-     * <p>Key-value pairs that define the properties of the object.</p>
-     */
     inline PipelineObject& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_id;

@@ -24,9 +24,8 @@ NetworkFrameworkAttributes::NetworkFrameworkAttributes() :
 {
 }
 
-NetworkFrameworkAttributes::NetworkFrameworkAttributes(JsonView jsonValue) : 
-    m_fabricHasBeenSet(false),
-    m_ethereumHasBeenSet(false)
+NetworkFrameworkAttributes::NetworkFrameworkAttributes(JsonView jsonValue)
+  : NetworkFrameworkAttributes()
 {
   *this = jsonValue;
 }

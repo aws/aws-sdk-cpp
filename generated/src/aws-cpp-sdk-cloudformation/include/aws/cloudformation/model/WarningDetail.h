@@ -42,6 +42,7 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The type of this warning. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
@@ -64,163 +65,26 @@ namespace Model
      * provider schema.</p> 
      */
     inline const WarningType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of this warning. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
-     * generator and write-only properties</a> in the <i>CloudFormation User
-     * Guide</i>.</p> <ul> <li> <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The
-     * resource requires mutually-exclusive write-only properties. The IaC generator
-     * selects one set of mutually exclusive properties and converts the included
-     * properties into parameters. The parameter names have a suffix <code>OneOf</code>
-     * and the parameter descriptions indicate that the corresponding property can be
-     * replaced with other exclusive properties.</p> </li> <li> <p>
-     * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
-     * resource. One example of unsupported properties would be a required write-only
-     * property that is an array, because a parameter cannot be an array. Another
-     * example is an optional write-only property.</p> </li> <li> <p>
-     * <code>MUTUALLY_EXCLUSIVE_TYPES</code> - One or more required write-only
-     * properties are found in the resource, and the type of that property can be any
-     * of several types.</p> </li> </ul>  <p>Currently the resource and property
-     * reference documentation does not indicate if a property uses a type of
-     * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
-     * provider schema.</p> 
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of this warning. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
-     * generator and write-only properties</a> in the <i>CloudFormation User
-     * Guide</i>.</p> <ul> <li> <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The
-     * resource requires mutually-exclusive write-only properties. The IaC generator
-     * selects one set of mutually exclusive properties and converts the included
-     * properties into parameters. The parameter names have a suffix <code>OneOf</code>
-     * and the parameter descriptions indicate that the corresponding property can be
-     * replaced with other exclusive properties.</p> </li> <li> <p>
-     * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
-     * resource. One example of unsupported properties would be a required write-only
-     * property that is an array, because a parameter cannot be an array. Another
-     * example is an optional write-only property.</p> </li> <li> <p>
-     * <code>MUTUALLY_EXCLUSIVE_TYPES</code> - One or more required write-only
-     * properties are found in the resource, and the type of that property can be any
-     * of several types.</p> </li> </ul>  <p>Currently the resource and property
-     * reference documentation does not indicate if a property uses a type of
-     * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
-     * provider schema.</p> 
-     */
     inline void SetType(const WarningType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of this warning. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
-     * generator and write-only properties</a> in the <i>CloudFormation User
-     * Guide</i>.</p> <ul> <li> <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The
-     * resource requires mutually-exclusive write-only properties. The IaC generator
-     * selects one set of mutually exclusive properties and converts the included
-     * properties into parameters. The parameter names have a suffix <code>OneOf</code>
-     * and the parameter descriptions indicate that the corresponding property can be
-     * replaced with other exclusive properties.</p> </li> <li> <p>
-     * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
-     * resource. One example of unsupported properties would be a required write-only
-     * property that is an array, because a parameter cannot be an array. Another
-     * example is an optional write-only property.</p> </li> <li> <p>
-     * <code>MUTUALLY_EXCLUSIVE_TYPES</code> - One or more required write-only
-     * properties are found in the resource, and the type of that property can be any
-     * of several types.</p> </li> </ul>  <p>Currently the resource and property
-     * reference documentation does not indicate if a property uses a type of
-     * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
-     * provider schema.</p> 
-     */
     inline void SetType(WarningType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of this warning. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
-     * generator and write-only properties</a> in the <i>CloudFormation User
-     * Guide</i>.</p> <ul> <li> <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The
-     * resource requires mutually-exclusive write-only properties. The IaC generator
-     * selects one set of mutually exclusive properties and converts the included
-     * properties into parameters. The parameter names have a suffix <code>OneOf</code>
-     * and the parameter descriptions indicate that the corresponding property can be
-     * replaced with other exclusive properties.</p> </li> <li> <p>
-     * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
-     * resource. One example of unsupported properties would be a required write-only
-     * property that is an array, because a parameter cannot be an array. Another
-     * example is an optional write-only property.</p> </li> <li> <p>
-     * <code>MUTUALLY_EXCLUSIVE_TYPES</code> - One or more required write-only
-     * properties are found in the resource, and the type of that property can be any
-     * of several types.</p> </li> </ul>  <p>Currently the resource and property
-     * reference documentation does not indicate if a property uses a type of
-     * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
-     * provider schema.</p> 
-     */
     inline WarningDetail& WithType(const WarningType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of this warning. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
-     * generator and write-only properties</a> in the <i>CloudFormation User
-     * Guide</i>.</p> <ul> <li> <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The
-     * resource requires mutually-exclusive write-only properties. The IaC generator
-     * selects one set of mutually exclusive properties and converts the included
-     * properties into parameters. The parameter names have a suffix <code>OneOf</code>
-     * and the parameter descriptions indicate that the corresponding property can be
-     * replaced with other exclusive properties.</p> </li> <li> <p>
-     * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
-     * resource. One example of unsupported properties would be a required write-only
-     * property that is an array, because a parameter cannot be an array. Another
-     * example is an optional write-only property.</p> </li> <li> <p>
-     * <code>MUTUALLY_EXCLUSIVE_TYPES</code> - One or more required write-only
-     * properties are found in the resource, and the type of that property can be any
-     * of several types.</p> </li> </ul>  <p>Currently the resource and property
-     * reference documentation does not indicate if a property uses a type of
-     * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
-     * provider schema.</p> 
-     */
     inline WarningDetail& WithType(WarningType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The properties of the resource that are impacted by this warning.</p>
      */
     inline const Aws::Vector<WarningProperty>& GetProperties() const{ return m_properties; }
-
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
     inline void SetProperties(const Aws::Vector<WarningProperty>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
     inline void SetProperties(Aws::Vector<WarningProperty>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
     inline WarningDetail& WithProperties(const Aws::Vector<WarningProperty>& value) { SetProperties(value); return *this;}
-
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
     inline WarningDetail& WithProperties(Aws::Vector<WarningProperty>&& value) { SetProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
     inline WarningDetail& AddProperties(const WarningProperty& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-
-    /**
-     * <p>The properties of the resource that are impacted by this warning.</p>
-     */
     inline WarningDetail& AddProperties(WarningProperty&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     WarningType m_type;

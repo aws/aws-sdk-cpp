@@ -36,46 +36,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The id of the Input Security Group to describe
      */
     inline const Aws::String& GetInputSecurityGroupId() const{ return m_inputSecurityGroupId; }
-
-    /**
-     * The id of the Input Security Group to describe
-     */
     inline bool InputSecurityGroupIdHasBeenSet() const { return m_inputSecurityGroupIdHasBeenSet; }
-
-    /**
-     * The id of the Input Security Group to describe
-     */
     inline void SetInputSecurityGroupId(const Aws::String& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = value; }
-
-    /**
-     * The id of the Input Security Group to describe
-     */
     inline void SetInputSecurityGroupId(Aws::String&& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = std::move(value); }
-
-    /**
-     * The id of the Input Security Group to describe
-     */
     inline void SetInputSecurityGroupId(const char* value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId.assign(value); }
-
-    /**
-     * The id of the Input Security Group to describe
-     */
     inline DescribeInputSecurityGroupRequest& WithInputSecurityGroupId(const Aws::String& value) { SetInputSecurityGroupId(value); return *this;}
-
-    /**
-     * The id of the Input Security Group to describe
-     */
     inline DescribeInputSecurityGroupRequest& WithInputSecurityGroupId(Aws::String&& value) { SetInputSecurityGroupId(std::move(value)); return *this;}
-
-    /**
-     * The id of the Input Security Group to describe
-     */
     inline DescribeInputSecurityGroupRequest& WithInputSecurityGroupId(const char* value) { SetInputSecurityGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inputSecurityGroupId;

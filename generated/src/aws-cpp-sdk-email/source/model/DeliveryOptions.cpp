@@ -26,9 +26,8 @@ DeliveryOptions::DeliveryOptions() :
 {
 }
 
-DeliveryOptions::DeliveryOptions(const XmlNode& xmlNode) : 
-    m_tlsPolicy(TlsPolicy::NOT_SET),
-    m_tlsPolicyHasBeenSet(false)
+DeliveryOptions::DeliveryOptions(const XmlNode& xmlNode)
+  : DeliveryOptions()
 {
   *this = xmlNode;
 }

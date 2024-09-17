@@ -18,14 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateRoomResult::UpdateRoomResult() : 
-    m_maximumMessageLength(0),
-    m_maximumMessageRatePerSecond(0)
+    m_maximumMessageRatePerSecond(0),
+    m_maximumMessageLength(0)
 {
 }
 
-UpdateRoomResult::UpdateRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maximumMessageLength(0),
-    m_maximumMessageRatePerSecond(0)
+UpdateRoomResult::UpdateRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateRoomResult()
 {
   *this = result;
 }
@@ -39,30 +38,27 @@ UpdateRoomResult& UpdateRoomResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
-  if(jsonValue.ValueExists("createTime"))
-  {
-    m_createTime = jsonValue.GetString("createTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
   }
 
-  if(jsonValue.ValueExists("loggingConfigurationIdentifiers"))
+  if(jsonValue.ValueExists("name"))
   {
-    Aws::Utils::Array<JsonView> loggingConfigurationIdentifiersJsonList = jsonValue.GetArray("loggingConfigurationIdentifiers");
-    for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
-    {
-      m_loggingConfigurationIdentifiers.push_back(loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString());
-    }
+    m_name = jsonValue.GetString("name");
+
   }
 
-  if(jsonValue.ValueExists("maximumMessageLength"))
+  if(jsonValue.ValueExists("createTime"))
   {
-    m_maximumMessageLength = jsonValue.GetInteger("maximumMessageLength");
+    m_createTime = jsonValue.GetString("createTime");
+
+  }
+
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
 
   }
 
@@ -72,15 +68,15 @@ UpdateRoomResult& UpdateRoomResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
-  if(jsonValue.ValueExists("messageReviewHandler"))
+  if(jsonValue.ValueExists("maximumMessageLength"))
   {
-    m_messageReviewHandler = jsonValue.GetObject("messageReviewHandler");
+    m_maximumMessageLength = jsonValue.GetInteger("maximumMessageLength");
 
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("messageReviewHandler"))
   {
-    m_name = jsonValue.GetString("name");
+    m_messageReviewHandler = jsonValue.GetObject("messageReviewHandler");
 
   }
 
@@ -93,10 +89,13 @@ UpdateRoomResult& UpdateRoomResult::operator =(const Aws::AmazonWebServiceResult
     }
   }
 
-  if(jsonValue.ValueExists("updateTime"))
+  if(jsonValue.ValueExists("loggingConfigurationIdentifiers"))
   {
-    m_updateTime = jsonValue.GetString("updateTime");
-
+    Aws::Utils::Array<JsonView> loggingConfigurationIdentifiersJsonList = jsonValue.GetArray("loggingConfigurationIdentifiers");
+    for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
+    {
+      m_loggingConfigurationIdentifiers.push_back(loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString());
+    }
   }
 
 

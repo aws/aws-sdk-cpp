@@ -17,11 +17,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse()
+DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse() : 
+    m_associatePublicIpAddress(false)
 {
 }
 
 DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeNetworkInterfaceAttributeResponse()
 {
   *this = result;
 }
@@ -68,6 +70,11 @@ DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResp
     if(!sourceDestCheckNode.IsNull())
     {
       m_sourceDestCheck = sourceDestCheckNode;
+    }
+    XmlNode associatePublicIpAddressNode = resultNode.FirstChild("associatePublicIpAddress");
+    if(!associatePublicIpAddressNode.IsNull())
+    {
+      m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatePublicIpAddressNode.GetText()).c_str()).c_str());
     }
   }
 

@@ -31,16 +31,8 @@ LabelDetection::LabelDetection() :
 {
 }
 
-LabelDetection::LabelDetection(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_startTimestampMillis(0),
-    m_startTimestampMillisHasBeenSet(false),
-    m_endTimestampMillis(0),
-    m_endTimestampMillisHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false)
+LabelDetection::LabelDetection(JsonView jsonValue)
+  : LabelDetection()
 {
   *this = jsonValue;
 }

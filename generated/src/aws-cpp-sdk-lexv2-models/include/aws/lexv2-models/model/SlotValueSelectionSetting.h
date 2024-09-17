@@ -40,6 +40,7 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
      * type values. The field can be set to one of the following values:</p> <ul> <li>
@@ -52,146 +53,38 @@ namespace Model
      * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline const SlotValueResolutionStrategy& GetResolutionStrategy() const{ return m_resolutionStrategy; }
-
-    /**
-     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
-     * type values. The field can be set to one of the following values:</p> <ul> <li>
-     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
-     * user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
-     * the first value in the resolution list as the slot type value. If there is no
-     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
-     * <code>valueSelectionStrategy</code>, the default is
-     * <code>ORIGINAL_VALUE</code>.</p>
-     */
     inline bool ResolutionStrategyHasBeenSet() const { return m_resolutionStrategyHasBeenSet; }
-
-    /**
-     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
-     * type values. The field can be set to one of the following values:</p> <ul> <li>
-     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
-     * user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
-     * the first value in the resolution list as the slot type value. If there is no
-     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
-     * <code>valueSelectionStrategy</code>, the default is
-     * <code>ORIGINAL_VALUE</code>.</p>
-     */
     inline void SetResolutionStrategy(const SlotValueResolutionStrategy& value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = value; }
-
-    /**
-     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
-     * type values. The field can be set to one of the following values:</p> <ul> <li>
-     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
-     * user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
-     * the first value in the resolution list as the slot type value. If there is no
-     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
-     * <code>valueSelectionStrategy</code>, the default is
-     * <code>ORIGINAL_VALUE</code>.</p>
-     */
     inline void SetResolutionStrategy(SlotValueResolutionStrategy&& value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = std::move(value); }
-
-    /**
-     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
-     * type values. The field can be set to one of the following values:</p> <ul> <li>
-     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
-     * user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
-     * the first value in the resolution list as the slot type value. If there is no
-     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
-     * <code>valueSelectionStrategy</code>, the default is
-     * <code>ORIGINAL_VALUE</code>.</p>
-     */
     inline SlotValueSelectionSetting& WithResolutionStrategy(const SlotValueResolutionStrategy& value) { SetResolutionStrategy(value); return *this;}
-
-    /**
-     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
-     * type values. The field can be set to one of the following values:</p> <ul> <li>
-     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
-     * user value is similar to the slot value.</p> </li> <li> <p>
-     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
-     * the first value in the resolution list as the slot type value. If there is no
-     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
-     * <code>valueSelectionStrategy</code>, the default is
-     * <code>ORIGINAL_VALUE</code>.</p>
-     */
     inline SlotValueSelectionSetting& WithResolutionStrategy(SlotValueResolutionStrategy&& value) { SetResolutionStrategy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A regular expression used to validate the value of a slot.</p>
      */
     inline const SlotValueRegexFilter& GetRegexFilter() const{ return m_regexFilter; }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline bool RegexFilterHasBeenSet() const { return m_regexFilterHasBeenSet; }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline void SetRegexFilter(const SlotValueRegexFilter& value) { m_regexFilterHasBeenSet = true; m_regexFilter = value; }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline void SetRegexFilter(SlotValueRegexFilter&& value) { m_regexFilterHasBeenSet = true; m_regexFilter = std::move(value); }
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline SlotValueSelectionSetting& WithRegexFilter(const SlotValueRegexFilter& value) { SetRegexFilter(value); return *this;}
-
-    /**
-     * <p>A regular expression used to validate the value of a slot.</p>
-     */
     inline SlotValueSelectionSetting& WithRegexFilter(SlotValueRegexFilter&& value) { SetRegexFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides settings that enable advanced recognition settings for slot values.
      * You can use this to enable using slot values as a custom vocabulary for
      * recognizing user utterances.</p>
      */
     inline const AdvancedRecognitionSetting& GetAdvancedRecognitionSetting() const{ return m_advancedRecognitionSetting; }
-
-    /**
-     * <p>Provides settings that enable advanced recognition settings for slot values.
-     * You can use this to enable using slot values as a custom vocabulary for
-     * recognizing user utterances.</p>
-     */
     inline bool AdvancedRecognitionSettingHasBeenSet() const { return m_advancedRecognitionSettingHasBeenSet; }
-
-    /**
-     * <p>Provides settings that enable advanced recognition settings for slot values.
-     * You can use this to enable using slot values as a custom vocabulary for
-     * recognizing user utterances.</p>
-     */
     inline void SetAdvancedRecognitionSetting(const AdvancedRecognitionSetting& value) { m_advancedRecognitionSettingHasBeenSet = true; m_advancedRecognitionSetting = value; }
-
-    /**
-     * <p>Provides settings that enable advanced recognition settings for slot values.
-     * You can use this to enable using slot values as a custom vocabulary for
-     * recognizing user utterances.</p>
-     */
     inline void SetAdvancedRecognitionSetting(AdvancedRecognitionSetting&& value) { m_advancedRecognitionSettingHasBeenSet = true; m_advancedRecognitionSetting = std::move(value); }
-
-    /**
-     * <p>Provides settings that enable advanced recognition settings for slot values.
-     * You can use this to enable using slot values as a custom vocabulary for
-     * recognizing user utterances.</p>
-     */
     inline SlotValueSelectionSetting& WithAdvancedRecognitionSetting(const AdvancedRecognitionSetting& value) { SetAdvancedRecognitionSetting(value); return *this;}
-
-    /**
-     * <p>Provides settings that enable advanced recognition settings for slot values.
-     * You can use this to enable using slot values as a custom vocabulary for
-     * recognizing user utterances.</p>
-     */
     inline SlotValueSelectionSetting& WithAdvancedRecognitionSetting(AdvancedRecognitionSetting&& value) { SetAdvancedRecognitionSetting(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SlotValueResolutionStrategy m_resolutionStrategy;

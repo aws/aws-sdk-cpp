@@ -32,6 +32,7 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
      * uses the unique scan name to track revisions across multiple scans of the same
@@ -39,63 +40,14 @@ namespace Model
      * on the code resource you upload to this URL.</p>
      */
     inline const Aws::String& GetScanName() const{ return m_scanName; }
-
-    /**
-     * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
-     * uses the unique scan name to track revisions across multiple scans of the same
-     * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
-     * on the code resource you upload to this URL.</p>
-     */
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-
-    /**
-     * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
-     * uses the unique scan name to track revisions across multiple scans of the same
-     * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
-     * on the code resource you upload to this URL.</p>
-     */
     inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-
-    /**
-     * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
-     * uses the unique scan name to track revisions across multiple scans of the same
-     * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
-     * on the code resource you upload to this URL.</p>
-     */
     inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-
-    /**
-     * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
-     * uses the unique scan name to track revisions across multiple scans of the same
-     * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
-     * on the code resource you upload to this URL.</p>
-     */
     inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-
-    /**
-     * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
-     * uses the unique scan name to track revisions across multiple scans of the same
-     * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
-     * on the code resource you upload to this URL.</p>
-     */
     inline CreateUploadUrlRequest& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-
-    /**
-     * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
-     * uses the unique scan name to track revisions across multiple scans of the same
-     * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
-     * on the code resource you upload to this URL.</p>
-     */
     inline CreateUploadUrlRequest& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the scan that will use the uploaded resource. CodeGuru Security
-     * uses the unique scan name to track revisions across multiple scans of the same
-     * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
-     * on the code resource you upload to this URL.</p>
-     */
     inline CreateUploadUrlRequest& WithScanName(const char* value) { SetScanName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scanName;

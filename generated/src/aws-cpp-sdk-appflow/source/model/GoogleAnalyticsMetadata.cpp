@@ -23,8 +23,8 @@ GoogleAnalyticsMetadata::GoogleAnalyticsMetadata() :
 {
 }
 
-GoogleAnalyticsMetadata::GoogleAnalyticsMetadata(JsonView jsonValue) : 
-    m_oAuthScopesHasBeenSet(false)
+GoogleAnalyticsMetadata::GoogleAnalyticsMetadata(JsonView jsonValue)
+  : GoogleAnalyticsMetadata()
 {
   *this = jsonValue;
 }

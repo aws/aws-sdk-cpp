@@ -38,6 +38,11 @@
 #include <aws/elasticfilesystem/model/PutLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemResult.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemProtectionResult.h>
+#include <aws/elasticfilesystem/model/DescribeAccessPointsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeAccountPreferencesRequest.h>
+#include <aws/elasticfilesystem/model/DescribeReplicationConfigurationsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeFileSystemsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in EFSClient header */
 
@@ -72,7 +77,7 @@ namespace Aws
 
   namespace EFS
   {
-    using EFSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EFSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EFSEndpointProviderBase = Aws::EFS::Endpoint::EFSEndpointProviderBase;
     using EFSEndpointProvider = Aws::EFS::Endpoint::EFSEndpointProvider;
 

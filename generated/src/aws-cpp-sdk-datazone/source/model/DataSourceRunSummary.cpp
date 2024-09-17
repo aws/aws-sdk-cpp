@@ -35,20 +35,8 @@ DataSourceRunSummary::DataSourceRunSummary() :
 {
 }
 
-DataSourceRunSummary::DataSourceRunSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_runStatisticsForAssetsHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(DataSourceRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_stoppedAtHasBeenSet(false),
-    m_type(DataSourceRunType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DataSourceRunSummary::DataSourceRunSummary(JsonView jsonValue)
+  : DataSourceRunSummary()
 {
   *this = jsonValue;
 }

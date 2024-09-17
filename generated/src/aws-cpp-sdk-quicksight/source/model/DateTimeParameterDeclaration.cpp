@@ -28,13 +28,8 @@ DateTimeParameterDeclaration::DateTimeParameterDeclaration() :
 {
 }
 
-DateTimeParameterDeclaration::DateTimeParameterDeclaration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_valueWhenUnsetHasBeenSet(false),
-    m_mappedDataSetParametersHasBeenSet(false)
+DateTimeParameterDeclaration::DateTimeParameterDeclaration(JsonView jsonValue)
+  : DateTimeParameterDeclaration()
 {
   *this = jsonValue;
 }

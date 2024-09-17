@@ -19,32 +19,31 @@ namespace Model
 {
 
 SessionKeyVisa::SessionKeyVisa() : 
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+    m_primaryAccountNumberHasBeenSet(false),
+    m_panSequenceNumberHasBeenSet(false)
 {
 }
 
-SessionKeyVisa::SessionKeyVisa(JsonView jsonValue) : 
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+SessionKeyVisa::SessionKeyVisa(JsonView jsonValue)
+  : SessionKeyVisa()
 {
   *this = jsonValue;
 }
 
 SessionKeyVisa& SessionKeyVisa::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("PanSequenceNumber"))
-  {
-    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
-    m_panSequenceNumberHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
 
     m_primaryAccountNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PanSequenceNumber"))
+  {
+    m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
+
+    m_panSequenceNumberHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +53,15 @@ JsonValue SessionKeyVisa::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_panSequenceNumberHasBeenSet)
-  {
-   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
-
-  }
-
   if(m_primaryAccountNumberHasBeenSet)
   {
    payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
+
+  }
+
+  if(m_panSequenceNumberHasBeenSet)
+  {
+   payload.WithString("PanSequenceNumber", m_panSequenceNumber);
 
   }
 

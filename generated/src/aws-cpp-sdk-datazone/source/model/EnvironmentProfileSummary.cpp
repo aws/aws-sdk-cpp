@@ -33,18 +33,8 @@ EnvironmentProfileSummary::EnvironmentProfileSummary() :
 {
 }
 
-EnvironmentProfileSummary::EnvironmentProfileSummary(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsAccountRegionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_environmentBlueprintIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EnvironmentProfileSummary::EnvironmentProfileSummary(JsonView jsonValue)
+  : EnvironmentProfileSummary()
 {
   *this = jsonValue;
 }

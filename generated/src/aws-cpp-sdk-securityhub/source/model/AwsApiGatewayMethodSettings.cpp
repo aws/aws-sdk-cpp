@@ -42,27 +42,8 @@ AwsApiGatewayMethodSettings::AwsApiGatewayMethodSettings() :
 {
 }
 
-AwsApiGatewayMethodSettings::AwsApiGatewayMethodSettings(JsonView jsonValue) : 
-    m_metricsEnabled(false),
-    m_metricsEnabledHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_dataTraceEnabled(false),
-    m_dataTraceEnabledHasBeenSet(false),
-    m_throttlingBurstLimit(0),
-    m_throttlingBurstLimitHasBeenSet(false),
-    m_throttlingRateLimit(0.0),
-    m_throttlingRateLimitHasBeenSet(false),
-    m_cachingEnabled(false),
-    m_cachingEnabledHasBeenSet(false),
-    m_cacheTtlInSeconds(0),
-    m_cacheTtlInSecondsHasBeenSet(false),
-    m_cacheDataEncrypted(false),
-    m_cacheDataEncryptedHasBeenSet(false),
-    m_requireAuthorizationForCacheControl(false),
-    m_requireAuthorizationForCacheControlHasBeenSet(false),
-    m_unauthorizedCacheControlHeaderStrategyHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_resourcePathHasBeenSet(false)
+AwsApiGatewayMethodSettings::AwsApiGatewayMethodSettings(JsonView jsonValue)
+  : AwsApiGatewayMethodSettings()
 {
   *this = jsonValue;
 }

@@ -38,6 +38,7 @@ namespace Model
     AWS_SNS_API SubscribeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the subscription if it is confirmed, or the string "pending
      * confirmation" if the subscription requires confirmation. However, if the API
@@ -45,71 +46,22 @@ namespace Model
      * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
-
-    /**
-     * <p>The ARN of the subscription if it is confirmed, or the string "pending
-     * confirmation" if the subscription requires confirmation. However, if the API
-     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
-     * always the subscription ARN, even if the subscription requires confirmation.</p>
-     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
-
-    /**
-     * <p>The ARN of the subscription if it is confirmed, or the string "pending
-     * confirmation" if the subscription requires confirmation. However, if the API
-     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
-     * always the subscription ARN, even if the subscription requires confirmation.</p>
-     */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the subscription if it is confirmed, or the string "pending
-     * confirmation" if the subscription requires confirmation. However, if the API
-     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
-     * always the subscription ARN, even if the subscription requires confirmation.</p>
-     */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the subscription if it is confirmed, or the string "pending
-     * confirmation" if the subscription requires confirmation. However, if the API
-     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
-     * always the subscription ARN, even if the subscription requires confirmation.</p>
-     */
     inline SubscribeResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the subscription if it is confirmed, or the string "pending
-     * confirmation" if the subscription requires confirmation. However, if the API
-     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
-     * always the subscription ARN, even if the subscription requires confirmation.</p>
-     */
     inline SubscribeResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the subscription if it is confirmed, or the string "pending
-     * confirmation" if the subscription requires confirmation. However, if the API
-     * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
-     * always the subscription ARN, even if the subscription requires confirmation.</p>
-     */
     inline SubscribeResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline SubscribeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline SubscribeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subscriptionArn;

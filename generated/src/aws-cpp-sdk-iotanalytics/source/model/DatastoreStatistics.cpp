@@ -23,8 +23,8 @@ DatastoreStatistics::DatastoreStatistics() :
 {
 }
 
-DatastoreStatistics::DatastoreStatistics(JsonView jsonValue) : 
-    m_sizeHasBeenSet(false)
+DatastoreStatistics::DatastoreStatistics(JsonView jsonValue)
+  : DatastoreStatistics()
 {
   *this = jsonValue;
 }

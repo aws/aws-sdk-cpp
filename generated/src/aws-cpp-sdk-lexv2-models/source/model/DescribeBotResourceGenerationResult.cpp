@@ -22,8 +22,8 @@ DescribeBotResourceGenerationResult::DescribeBotResourceGenerationResult() :
 {
 }
 
-DescribeBotResourceGenerationResult::DescribeBotResourceGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_generationStatus(GenerationStatus::NOT_SET)
+DescribeBotResourceGenerationResult::DescribeBotResourceGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeBotResourceGenerationResult()
 {
   *this = result;
 }

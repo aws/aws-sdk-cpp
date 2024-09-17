@@ -132,123 +132,13 @@ DBInstance::DBInstance() :
     m_isStorageConfigUpgradeAvailable(false),
     m_isStorageConfigUpgradeAvailableHasBeenSet(false),
     m_multiTenant(false),
-    m_multiTenantHasBeenSet(false)
+    m_multiTenantHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
 }
 
-DBInstance::DBInstance(const XmlNode& xmlNode) : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_dBInstanceStatusHasBeenSet(false),
-    m_automaticRestartTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dBNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTimeHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_dBSecurityGroupsHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_dBParameterGroupsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_dBSubnetGroupHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_latestRestorableTimeHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
-    m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
-    m_readReplicaDBClusterIdentifiersHasBeenSet(false),
-    m_replicaMode(ReplicaMode::NOT_SET),
-    m_replicaModeHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupMembershipsHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_ncharCharacterSetNameHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_statusInfosHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_dbInstancePort(0),
-    m_dbInstancePortHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false),
-    m_enhancedMonitoringResourceArnHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false),
-    m_dBInstanceArnHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_performanceInsightsEnabled(false),
-    m_performanceInsightsEnabledHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_performanceInsightsRetentionPeriod(0),
-    m_performanceInsightsRetentionPeriodHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false),
-    m_listenerEndpointHasBeenSet(false),
-    m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
-    m_customerOwnedIpEnabled(false),
-    m_customerOwnedIpEnabledHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_activityStreamStatus(ActivityStreamStatus::NOT_SET),
-    m_activityStreamStatusHasBeenSet(false),
-    m_activityStreamKmsKeyIdHasBeenSet(false),
-    m_activityStreamKinesisStreamNameHasBeenSet(false),
-    m_activityStreamMode(ActivityStreamMode::NOT_SET),
-    m_activityStreamModeHasBeenSet(false),
-    m_activityStreamEngineNativeAuditFieldsIncluded(false),
-    m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet(false),
-    m_automationMode(AutomationMode::NOT_SET),
-    m_automationModeHasBeenSet(false),
-    m_resumeFullAutomationModeTimeHasBeenSet(false),
-    m_customIamInstanceProfileHasBeenSet(false),
-    m_backupTargetHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_activityStreamPolicyStatus(ActivityStreamPolicyStatus::NOT_SET),
-    m_activityStreamPolicyStatusHasBeenSet(false),
-    m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false),
-    m_masterUserSecretHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false),
-    m_readReplicaSourceDBClusterIdentifierHasBeenSet(false),
-    m_percentProgressHasBeenSet(false),
-    m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false),
-    m_isStorageConfigUpgradeAvailable(false),
-    m_isStorageConfigUpgradeAvailableHasBeenSet(false),
-    m_multiTenant(false),
-    m_multiTenantHasBeenSet(false)
+DBInstance::DBInstance(const XmlNode& xmlNode)
+  : DBInstance()
 {
   *this = xmlNode;
 }
@@ -847,6 +737,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
       m_multiTenantHasBeenSet = true;
     }
+    XmlNode engineLifecycleSupportNode = resultNode.FirstChild("EngineLifecycleSupport");
+    if(!engineLifecycleSupportNode.IsNull())
+    {
+      m_engineLifecycleSupport = Aws::Utils::Xml::DecodeEscapedXmlText(engineLifecycleSupportNode.GetText());
+      m_engineLifecycleSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1363,6 +1259,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1790,6 +1691,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_multiTenantHasBeenSet)
   {
       oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 }
 

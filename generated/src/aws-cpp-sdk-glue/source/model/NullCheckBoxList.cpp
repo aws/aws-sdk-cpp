@@ -28,13 +28,8 @@ NullCheckBoxList::NullCheckBoxList() :
 {
 }
 
-NullCheckBoxList::NullCheckBoxList(JsonView jsonValue) : 
-    m_isEmpty(false),
-    m_isEmptyHasBeenSet(false),
-    m_isNullString(false),
-    m_isNullStringHasBeenSet(false),
-    m_isNegOne(false),
-    m_isNegOneHasBeenSet(false)
+NullCheckBoxList::NullCheckBoxList(JsonView jsonValue)
+  : NullCheckBoxList()
 {
   *this = jsonValue;
 }

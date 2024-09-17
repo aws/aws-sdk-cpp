@@ -23,8 +23,8 @@ HiveJsonSerDe::HiveJsonSerDe() :
 {
 }
 
-HiveJsonSerDe::HiveJsonSerDe(JsonView jsonValue) : 
-    m_timestampFormatsHasBeenSet(false)
+HiveJsonSerDe::HiveJsonSerDe(JsonView jsonValue)
+  : HiveJsonSerDe()
 {
   *this = jsonValue;
 }

@@ -39,36 +39,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the S3 location of ML model data to deploy.</p>
      */
     inline const S3ModelDataSource& GetS3DataSource() const{ return m_s3DataSource; }
-
-    /**
-     * <p>Specifies the S3 location of ML model data to deploy.</p>
-     */
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
-
-    /**
-     * <p>Specifies the S3 location of ML model data to deploy.</p>
-     */
     inline void SetS3DataSource(const S3ModelDataSource& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
-
-    /**
-     * <p>Specifies the S3 location of ML model data to deploy.</p>
-     */
     inline void SetS3DataSource(S3ModelDataSource&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::move(value); }
-
-    /**
-     * <p>Specifies the S3 location of ML model data to deploy.</p>
-     */
     inline ModelDataSource& WithS3DataSource(const S3ModelDataSource& value) { SetS3DataSource(value); return *this;}
-
-    /**
-     * <p>Specifies the S3 location of ML model data to deploy.</p>
-     */
     inline ModelDataSource& WithS3DataSource(S3ModelDataSource&& value) { SetS3DataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ModelDataSource m_s3DataSource;

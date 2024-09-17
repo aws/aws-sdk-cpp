@@ -28,13 +28,8 @@ ProtocolDetails::ProtocolDetails() :
 {
 }
 
-ProtocolDetails::ProtocolDetails(JsonView jsonValue) : 
-    m_passiveIpHasBeenSet(false),
-    m_tlsSessionResumptionMode(TlsSessionResumptionMode::NOT_SET),
-    m_tlsSessionResumptionModeHasBeenSet(false),
-    m_setStatOption(SetStatOption::NOT_SET),
-    m_setStatOptionHasBeenSet(false),
-    m_as2TransportsHasBeenSet(false)
+ProtocolDetails::ProtocolDetails(JsonView jsonValue)
+  : ProtocolDetails()
 {
   *this = jsonValue;
 }

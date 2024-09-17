@@ -22,8 +22,8 @@ ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult() :
 {
 }
 
-ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isAlreadyVerified(false)
+ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ResendContactReachabilityEmailResult()
 {
   *this = result;
 }

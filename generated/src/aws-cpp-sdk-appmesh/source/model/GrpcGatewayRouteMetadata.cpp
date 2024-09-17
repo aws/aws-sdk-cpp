@@ -26,11 +26,8 @@ GrpcGatewayRouteMetadata::GrpcGatewayRouteMetadata() :
 {
 }
 
-GrpcGatewayRouteMetadata::GrpcGatewayRouteMetadata(JsonView jsonValue) : 
-    m_invert(false),
-    m_invertHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false)
+GrpcGatewayRouteMetadata::GrpcGatewayRouteMetadata(JsonView jsonValue)
+  : GrpcGatewayRouteMetadata()
 {
   *this = jsonValue;
 }

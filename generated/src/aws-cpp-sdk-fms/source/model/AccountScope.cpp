@@ -27,12 +27,8 @@ AccountScope::AccountScope() :
 {
 }
 
-AccountScope::AccountScope(JsonView jsonValue) : 
-    m_accountsHasBeenSet(false),
-    m_allAccountsEnabled(false),
-    m_allAccountsEnabledHasBeenSet(false),
-    m_excludeSpecifiedAccounts(false),
-    m_excludeSpecifiedAccountsHasBeenSet(false)
+AccountScope::AccountScope(JsonView jsonValue)
+  : AccountScope()
 {
   *this = jsonValue;
 }

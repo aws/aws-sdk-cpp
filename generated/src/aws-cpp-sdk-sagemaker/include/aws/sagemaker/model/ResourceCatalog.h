@@ -43,159 +43,59 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
      */
     inline const Aws::String& GetResourceCatalogArn() const{ return m_resourceCatalogArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-     */
     inline bool ResourceCatalogArnHasBeenSet() const { return m_resourceCatalogArnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetResourceCatalogArn(const Aws::String& value) { m_resourceCatalogArnHasBeenSet = true; m_resourceCatalogArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetResourceCatalogArn(Aws::String&& value) { m_resourceCatalogArnHasBeenSet = true; m_resourceCatalogArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetResourceCatalogArn(const char* value) { m_resourceCatalogArnHasBeenSet = true; m_resourceCatalogArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithResourceCatalogArn(const Aws::String& value) { SetResourceCatalogArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithResourceCatalogArn(Aws::String&& value) { SetResourceCatalogArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithResourceCatalogArn(const char* value) { SetResourceCatalogArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The name of the <code>ResourceCatalog</code>. </p>
      */
     inline const Aws::String& GetResourceCatalogName() const{ return m_resourceCatalogName; }
-
-    /**
-     * <p> The name of the <code>ResourceCatalog</code>. </p>
-     */
     inline bool ResourceCatalogNameHasBeenSet() const { return m_resourceCatalogNameHasBeenSet; }
-
-    /**
-     * <p> The name of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetResourceCatalogName(const Aws::String& value) { m_resourceCatalogNameHasBeenSet = true; m_resourceCatalogName = value; }
-
-    /**
-     * <p> The name of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetResourceCatalogName(Aws::String&& value) { m_resourceCatalogNameHasBeenSet = true; m_resourceCatalogName = std::move(value); }
-
-    /**
-     * <p> The name of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetResourceCatalogName(const char* value) { m_resourceCatalogNameHasBeenSet = true; m_resourceCatalogName.assign(value); }
-
-    /**
-     * <p> The name of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithResourceCatalogName(const Aws::String& value) { SetResourceCatalogName(value); return *this;}
-
-    /**
-     * <p> The name of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithResourceCatalogName(Aws::String&& value) { SetResourceCatalogName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithResourceCatalogName(const char* value) { SetResourceCatalogName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A free form description of the <code>ResourceCatalog</code>. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p> A free form description of the <code>ResourceCatalog</code>. </p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p> A free form description of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p> A free form description of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p> A free form description of the <code>ResourceCatalog</code>. </p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p> A free form description of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p> A free form description of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p> A free form description of the <code>ResourceCatalog</code>. </p>
-     */
     inline ResourceCatalog& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The time the <code>ResourceCatalog</code> was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p> The time the <code>ResourceCatalog</code> was created. </p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p> The time the <code>ResourceCatalog</code> was created. </p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p> The time the <code>ResourceCatalog</code> was created. </p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p> The time the <code>ResourceCatalog</code> was created. </p>
-     */
     inline ResourceCatalog& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p> The time the <code>ResourceCatalog</code> was created. </p>
-     */
     inline ResourceCatalog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceCatalogArn;

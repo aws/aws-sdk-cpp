@@ -45,47 +45,21 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name (friendly name, not ARN) identifying the role.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
-
-    /**
-     * <p>The name (friendly name, not ARN) identifying the role.</p>
-     */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-
-    /**
-     * <p>The name (friendly name, not ARN) identifying the role.</p>
-     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-
-    /**
-     * <p>The name (friendly name, not ARN) identifying the role.</p>
-     */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-
-    /**
-     * <p>The name (friendly name, not ARN) identifying the role.</p>
-     */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-
-    /**
-     * <p>The name (friendly name, not ARN) identifying the role.</p>
-     */
     inline PolicyRole& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-
-    /**
-     * <p>The name (friendly name, not ARN) identifying the role.</p>
-     */
     inline PolicyRole& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name (friendly name, not ARN) identifying the role.</p>
-     */
     inline PolicyRole& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
@@ -93,63 +67,14 @@ namespace Model
      * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetRoleId() const{ return m_roleId; }
-
-    /**
-     * <p>The stable and unique string identifying the role. For more information about
-     * IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline bool RoleIdHasBeenSet() const { return m_roleIdHasBeenSet; }
-
-    /**
-     * <p>The stable and unique string identifying the role. For more information about
-     * IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline void SetRoleId(const Aws::String& value) { m_roleIdHasBeenSet = true; m_roleId = value; }
-
-    /**
-     * <p>The stable and unique string identifying the role. For more information about
-     * IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline void SetRoleId(Aws::String&& value) { m_roleIdHasBeenSet = true; m_roleId = std::move(value); }
-
-    /**
-     * <p>The stable and unique string identifying the role. For more information about
-     * IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline void SetRoleId(const char* value) { m_roleIdHasBeenSet = true; m_roleId.assign(value); }
-
-    /**
-     * <p>The stable and unique string identifying the role. For more information about
-     * IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline PolicyRole& WithRoleId(const Aws::String& value) { SetRoleId(value); return *this;}
-
-    /**
-     * <p>The stable and unique string identifying the role. For more information about
-     * IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline PolicyRole& WithRoleId(Aws::String&& value) { SetRoleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The stable and unique string identifying the role. For more information about
-     * IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline PolicyRole& WithRoleId(const char* value) { SetRoleId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleName;

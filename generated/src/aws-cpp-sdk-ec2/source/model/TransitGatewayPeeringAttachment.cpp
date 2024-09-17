@@ -34,17 +34,8 @@ TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment() :
 {
 }
 
-TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment(const XmlNode& xmlNode) : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_accepterTransitGatewayAttachmentIdHasBeenSet(false),
-    m_requesterTgwInfoHasBeenSet(false),
-    m_accepterTgwInfoHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_state(TransitGatewayAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment(const XmlNode& xmlNode)
+  : TransitGatewayPeeringAttachment()
 {
   *this = xmlNode;
 }

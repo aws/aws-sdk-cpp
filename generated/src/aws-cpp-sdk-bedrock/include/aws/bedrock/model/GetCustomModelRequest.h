@@ -32,46 +32,19 @@ namespace Model
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>Name or ARN of the custom model.</p>
+     * <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline const Aws::String& GetModelIdentifier() const{ return m_modelIdentifier; }
-
-    /**
-     * <p>Name or ARN of the custom model.</p>
-     */
     inline bool ModelIdentifierHasBeenSet() const { return m_modelIdentifierHasBeenSet; }
-
-    /**
-     * <p>Name or ARN of the custom model.</p>
-     */
     inline void SetModelIdentifier(const Aws::String& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = value; }
-
-    /**
-     * <p>Name or ARN of the custom model.</p>
-     */
     inline void SetModelIdentifier(Aws::String&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::move(value); }
-
-    /**
-     * <p>Name or ARN of the custom model.</p>
-     */
     inline void SetModelIdentifier(const char* value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier.assign(value); }
-
-    /**
-     * <p>Name or ARN of the custom model.</p>
-     */
     inline GetCustomModelRequest& WithModelIdentifier(const Aws::String& value) { SetModelIdentifier(value); return *this;}
-
-    /**
-     * <p>Name or ARN of the custom model.</p>
-     */
     inline GetCustomModelRequest& WithModelIdentifier(Aws::String&& value) { SetModelIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Name or ARN of the custom model.</p>
-     */
     inline GetCustomModelRequest& WithModelIdentifier(const char* value) { SetModelIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelIdentifier;

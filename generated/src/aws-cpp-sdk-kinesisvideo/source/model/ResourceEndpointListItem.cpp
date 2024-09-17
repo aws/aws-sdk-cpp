@@ -25,10 +25,8 @@ ResourceEndpointListItem::ResourceEndpointListItem() :
 {
 }
 
-ResourceEndpointListItem::ResourceEndpointListItem(JsonView jsonValue) : 
-    m_protocol(ChannelProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_resourceEndpointHasBeenSet(false)
+ResourceEndpointListItem::ResourceEndpointListItem(JsonView jsonValue)
+  : ResourceEndpointListItem()
 {
   *this = jsonValue;
 }

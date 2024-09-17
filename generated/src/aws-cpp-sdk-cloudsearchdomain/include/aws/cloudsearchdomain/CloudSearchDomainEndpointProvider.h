@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CloudSearchDomainClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudSearchDomainClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CloudSearchDomainClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudSearchDomainBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

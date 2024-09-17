@@ -37,43 +37,25 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const EphemerisDescription& GetOem() const{ return m_oem; }
-
-    
     inline bool OemHasBeenSet() const { return m_oemHasBeenSet; }
-
-    
     inline void SetOem(const EphemerisDescription& value) { m_oemHasBeenSet = true; m_oem = value; }
-
-    
     inline void SetOem(EphemerisDescription&& value) { m_oemHasBeenSet = true; m_oem = std::move(value); }
-
-    
     inline EphemerisTypeDescription& WithOem(const EphemerisDescription& value) { SetOem(value); return *this;}
-
-    
     inline EphemerisTypeDescription& WithOem(EphemerisDescription&& value) { SetOem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const EphemerisDescription& GetTle() const{ return m_tle; }
-
-    
     inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
-
-    
     inline void SetTle(const EphemerisDescription& value) { m_tleHasBeenSet = true; m_tle = value; }
-
-    
     inline void SetTle(EphemerisDescription&& value) { m_tleHasBeenSet = true; m_tle = std::move(value); }
-
-    
     inline EphemerisTypeDescription& WithTle(const EphemerisDescription& value) { SetTle(value); return *this;}
-
-    
     inline EphemerisTypeDescription& WithTle(EphemerisDescription&& value) { SetTle(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EphemerisDescription m_oem;

@@ -31,16 +31,8 @@ AggregatedUtterancesSummary::AggregatedUtterancesSummary() :
 {
 }
 
-AggregatedUtterancesSummary::AggregatedUtterancesSummary(JsonView jsonValue) : 
-    m_utteranceHasBeenSet(false),
-    m_hitCount(0),
-    m_hitCountHasBeenSet(false),
-    m_missedCount(0),
-    m_missedCountHasBeenSet(false),
-    m_utteranceFirstRecordedInAggregationDurationHasBeenSet(false),
-    m_utteranceLastRecordedInAggregationDurationHasBeenSet(false),
-    m_containsDataFromDeletedResources(false),
-    m_containsDataFromDeletedResourcesHasBeenSet(false)
+AggregatedUtterancesSummary::AggregatedUtterancesSummary(JsonView jsonValue)
+  : AggregatedUtterancesSummary()
 {
   *this = jsonValue;
 }

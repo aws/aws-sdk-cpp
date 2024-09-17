@@ -39,61 +39,29 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ConflictException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ConflictException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ConflictException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of ConflictException.</p>
      */
     inline const ConflictExceptionType& GetConflictExceptionType() const{ return m_conflictExceptionType; }
-
-    /**
-     * <p>The type of ConflictException.</p>
-     */
     inline bool ConflictExceptionTypeHasBeenSet() const { return m_conflictExceptionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of ConflictException.</p>
-     */
     inline void SetConflictExceptionType(const ConflictExceptionType& value) { m_conflictExceptionTypeHasBeenSet = true; m_conflictExceptionType = value; }
-
-    /**
-     * <p>The type of ConflictException.</p>
-     */
     inline void SetConflictExceptionType(ConflictExceptionType&& value) { m_conflictExceptionTypeHasBeenSet = true; m_conflictExceptionType = std::move(value); }
-
-    /**
-     * <p>The type of ConflictException.</p>
-     */
     inline ConflictException& WithConflictExceptionType(const ConflictExceptionType& value) { SetConflictExceptionType(value); return *this;}
-
-    /**
-     * <p>The type of ConflictException.</p>
-     */
     inline ConflictException& WithConflictExceptionType(ConflictExceptionType&& value) { SetConflictExceptionType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

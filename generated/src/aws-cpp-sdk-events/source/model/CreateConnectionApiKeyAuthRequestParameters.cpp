@@ -24,9 +24,8 @@ CreateConnectionApiKeyAuthRequestParameters::CreateConnectionApiKeyAuthRequestPa
 {
 }
 
-CreateConnectionApiKeyAuthRequestParameters::CreateConnectionApiKeyAuthRequestParameters(JsonView jsonValue) : 
-    m_apiKeyNameHasBeenSet(false),
-    m_apiKeyValueHasBeenSet(false)
+CreateConnectionApiKeyAuthRequestParameters::CreateConnectionApiKeyAuthRequestParameters(JsonView jsonValue)
+  : CreateConnectionApiKeyAuthRequestParameters()
 {
   *this = jsonValue;
 }

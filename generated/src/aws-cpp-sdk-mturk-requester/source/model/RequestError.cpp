@@ -24,9 +24,8 @@ RequestError::RequestError() :
 {
 }
 
-RequestError::RequestError(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_turkErrorCodeHasBeenSet(false)
+RequestError::RequestError(JsonView jsonValue)
+  : RequestError()
 {
   *this = jsonValue;
 }

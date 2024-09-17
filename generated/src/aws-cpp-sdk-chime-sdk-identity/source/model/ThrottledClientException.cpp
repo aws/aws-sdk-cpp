@@ -25,10 +25,8 @@ ThrottledClientException::ThrottledClientException() :
 {
 }
 
-ThrottledClientException::ThrottledClientException(JsonView jsonValue) : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ThrottledClientException::ThrottledClientException(JsonView jsonValue)
+  : ThrottledClientException()
 {
   *this = jsonValue;
 }

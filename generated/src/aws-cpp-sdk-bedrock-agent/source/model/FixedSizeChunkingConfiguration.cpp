@@ -26,11 +26,8 @@ FixedSizeChunkingConfiguration::FixedSizeChunkingConfiguration() :
 {
 }
 
-FixedSizeChunkingConfiguration::FixedSizeChunkingConfiguration(JsonView jsonValue) : 
-    m_maxTokens(0),
-    m_maxTokensHasBeenSet(false),
-    m_overlapPercentage(0),
-    m_overlapPercentageHasBeenSet(false)
+FixedSizeChunkingConfiguration::FixedSizeChunkingConfiguration(JsonView jsonValue)
+  : FixedSizeChunkingConfiguration()
 {
   *this = jsonValue;
 }

@@ -24,17 +24,13 @@ DataQualityRuleResult::DataQualityRuleResult() :
     m_evaluationMessageHasBeenSet(false),
     m_result(DataQualityRuleResultStatus::NOT_SET),
     m_resultHasBeenSet(false),
-    m_evaluatedMetricsHasBeenSet(false)
+    m_evaluatedMetricsHasBeenSet(false),
+    m_evaluatedRuleHasBeenSet(false)
 {
 }
 
-DataQualityRuleResult::DataQualityRuleResult(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_evaluationMessageHasBeenSet(false),
-    m_result(DataQualityRuleResultStatus::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_evaluatedMetricsHasBeenSet(false)
+DataQualityRuleResult::DataQualityRuleResult(JsonView jsonValue)
+  : DataQualityRuleResult()
 {
   *this = jsonValue;
 }
@@ -79,6 +75,13 @@ DataQualityRuleResult& DataQualityRuleResult::operator =(JsonView jsonValue)
     m_evaluatedMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EvaluatedRule"))
+  {
+    m_evaluatedRule = jsonValue.GetString("EvaluatedRule");
+
+    m_evaluatedRuleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +120,12 @@ JsonValue DataQualityRuleResult::Jsonize() const
      evaluatedMetricsJsonMap.WithDouble(evaluatedMetricsItem.first, evaluatedMetricsItem.second);
    }
    payload.WithObject("EvaluatedMetrics", std::move(evaluatedMetricsJsonMap));
+
+  }
+
+  if(m_evaluatedRuleHasBeenSet)
+  {
+   payload.WithString("EvaluatedRule", m_evaluatedRule);
 
   }
 

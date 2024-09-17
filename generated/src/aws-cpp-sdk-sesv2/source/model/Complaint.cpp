@@ -24,9 +24,8 @@ Complaint::Complaint() :
 {
 }
 
-Complaint::Complaint(JsonView jsonValue) : 
-    m_complaintSubTypeHasBeenSet(false),
-    m_complaintFeedbackTypeHasBeenSet(false)
+Complaint::Complaint(JsonView jsonValue)
+  : Complaint()
 {
   *this = jsonValue;
 }

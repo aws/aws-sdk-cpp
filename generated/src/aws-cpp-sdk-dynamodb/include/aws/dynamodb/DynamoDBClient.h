@@ -96,11 +96,13 @@ namespace DynamoDB
          * DynamoDB, using PartiQL. Each read statement in a
          * <code>BatchExecuteStatement</code> must specify an equality condition on all key
          * attributes. This enforces that each <code>SELECT</code> statement in a batch
-         * returns at most a single item.</p>  <p>The entire batch must consist of
-         * either read statements or write statements, you cannot mix both in one
-         * batch.</p>   <p>A HTTP 200 response does not mean that all
-         * statements in the BatchExecuteStatement succeeded. Error details for individual
-         * statements can be found under the <a
+         * returns at most a single item. For more information, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+         * batch operations with PartiQL for DynamoDB </a>.</p>  <p>The entire batch
+         * must consist of either read statements or write statements, you cannot mix both
+         * in one batch.</p>   <p>A HTTP 200 response does not mean that
+         * all statements in the BatchExecuteStatement succeeded. Error details for
+         * individual statements can be found under the <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error">Error</a>
          * field of the <code>BatchStatementResponse</code> for each statement.</p>
          * <p><h3>See Also:</h3>   <a
@@ -219,17 +221,20 @@ namespace DynamoDB
          * You can investigate and optionally resend the requests. Typically, you would
          * call <code>BatchWriteItem</code> in a loop. Each iteration would check for
          * unprocessed items and submit a new <code>BatchWriteItem</code> request with
-         * those unprocessed items until all items have been processed.</p> <p>If
-         * <i>none</i> of the items can be processed due to insufficient provisioned
-         * throughput on all of the tables in the request, then <code>BatchWriteItem</code>
-         * returns a <code>ProvisionedThroughputExceededException</code>.</p> 
-         * <p>If DynamoDB returns any unprocessed items, you should retry the batch
-         * operation on those items. However, <i>we strongly recommend that you use an
-         * exponential backoff algorithm</i>. If you retry the batch operation immediately,
-         * the underlying read or write requests can still fail due to throttling on the
-         * individual tables. If you delay the batch operation using exponential backoff,
-         * the individual requests in the batch are much more likely to succeed.</p> <p>For
-         * more information, see <a
+         * those unprocessed items until all items have been processed.</p> <p>For tables
+         * and indexes with provisioned capacity, if none of the items can be processed due
+         * to insufficient provisioned throughput on all of the tables in the request, then
+         * <code>BatchWriteItem</code> returns a
+         * <code>ProvisionedThroughputExceededException</code>. For all tables and indexes,
+         * if none of the items can be processed due to other throttling scenarios (such as
+         * exceeding partition level limits), then <code>BatchWriteItem</code> returns a
+         * <code>ThrottlingException</code>.</p>  <p>If DynamoDB returns any
+         * unprocessed items, you should retry the batch operation on those items. However,
+         * <i>we strongly recommend that you use an exponential backoff algorithm</i>. If
+         * you retry the batch operation immediately, the underlying read or write requests
+         * can still fail due to throttling on the individual tables. If you delay the
+         * batch operation using exponential backoff, the individual requests in the batch
+         * are much more likely to succeed.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#Programming.Errors.BatchOperations">Batch
          * Operations and Error Handling</a> in the <i>Amazon DynamoDB Developer
          * Guide</i>.</p>  <p>With <code>BatchWriteItem</code>, you can
@@ -261,7 +266,9 @@ namespace DynamoDB
          * (which essentially is two put operations). </p> </li> <li> <p>There are more
          * than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a batch
          * exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16 MB.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>Any individual items with keys exceeding the key length limits.
+         * For a partition key, the limit is 2048 bytes and for a sort key, the limit is
+         * 1024 bytes.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
          * API Reference</a></p>
          */
@@ -330,41 +337,39 @@ namespace DynamoDB
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p>  <p>This operation only applies to
-         * <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * name in the provided Regions. </p>  <p>This documentation is for
+         * version 2017.11.29 (Legacy) of global tables, which should be avoided for new
+         * global tables. Customers should use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+         * Tables version 2019.11.21 (Current)</a> when possible, because it provides
+         * greater flexibility, higher efficiency, and consumes less write capacity than
+         * 2017.11.29 (Legacy).</p> <p>To determine which version you're using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-         * the version</a>. To update existing global tables from version 2017.11.29
-         * (Legacy) to version 2019.11.21 (Current), see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-         * Updating global tables</a>. </p>  <p>If you want to add a new
-         * replica table to a global table, each of the following conditions must be
-         * true:</p> <ul> <li> <p>The table must have the same primary key as all of the
-         * other replicas.</p> </li> <li> <p>The table must have the same name as all of
-         * the other replicas.</p> </li> <li> <p>The table must have DynamoDB Streams
-         * enabled, with the stream containing both the new and the old images of the
-         * item.</p> </li> <li> <p>None of the replica tables in the global table can
-         * contain any data.</p> </li> </ul> <p> If global secondary indexes are specified,
-         * then the following conditions must also be met: </p> <ul> <li> <p> The global
-         * secondary indexes must have the same name. </p> </li> <li> <p> The global
-         * secondary indexes must have the same hash key and sort key (if present). </p>
-         * </li> </ul> <p> If local secondary indexes are specified, then the following
-         * conditions must also be met: </p> <ul> <li> <p> The local secondary indexes must
-         * have the same name. </p> </li> <li> <p> The local secondary indexes must have
-         * the same hash key and sort key (if present). </p> </li> </ul>  <p>
-         * Write capacity settings should be set consistently across your replica tables
-         * and secondary indexes. DynamoDB strongly recommends enabling auto scaling to
-         * manage the write capacity settings for all of your global tables replicas and
-         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
-         * should provision equal replicated write capacity units to your replica tables.
-         * You should also provision equal replicated write capacity units to matching
-         * secondary indexes across your global table. </p> <p><h3>See
-         * Also:</h3>   <a
+         * the global table version you are using</a>. To update existing global tables
+         * from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+         * global tables</a>.</p>  <p>If you want to add a new replica table to
+         * a global table, each of the following conditions must be true:</p> <ul> <li>
+         * <p>The table must have the same primary key as all of the other replicas.</p>
+         * </li> <li> <p>The table must have the same name as all of the other
+         * replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled, with
+         * the stream containing both the new and the old images of the item.</p> </li>
+         * <li> <p>None of the replica tables in the global table can contain any data.</p>
+         * </li> </ul> <p> If global secondary indexes are specified, then the following
+         * conditions must also be met: </p> <ul> <li> <p> The global secondary indexes
+         * must have the same name. </p> </li> <li> <p> The global secondary indexes must
+         * have the same hash key and sort key (if present). </p> </li> </ul> <p> If local
+         * secondary indexes are specified, then the following conditions must also be met:
+         * </p> <ul> <li> <p> The local secondary indexes must have the same name. </p>
+         * </li> <li> <p> The local secondary indexes must have the same hash key and sort
+         * key (if present). </p> </li> </ul>  <p> Write capacity settings
+         * should be set consistently across your replica tables and secondary indexes.
+         * DynamoDB strongly recommends enabling auto scaling to manage the write capacity
+         * settings for all of your global tables replicas and indexes. </p> <p> If you
+         * prefer to manage write capacity settings manually, you should provision equal
+         * replicated write capacity units to your replica tables. You should also
+         * provision equal replicated write capacity units to matching secondary indexes
+         * across your global table. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -489,6 +494,46 @@ namespace DynamoDB
         }
 
         /**
+         * <p>Deletes the resource-based policy attached to the resource, which can be a
+         * table or stream.</p> <p> <code>DeleteResourcePolicy</code> is an idempotent
+         * operation; running it multiple times on the same resource <i>doesn't</i> result
+         * in an error response, unless you specify an <code>ExpectedRevisionId</code>,
+         * which will then return a <code>PolicyNotFoundException</code>.</p> 
+         * <p>To make sure that you don't inadvertently lock yourself out of your own
+         * resources, the root principal in your Amazon Web Services account can perform
+         * <code>DeleteResourcePolicy</code> requests, even if your resource-based policy
+         * explicitly denies the root principal's access. </p>   <p>
+         * <code>DeleteResourcePolicy</code> is an asynchronous operation. If you issue a
+         * <code>GetResourcePolicy</code> request immediately after running the
+         * <code>DeleteResourcePolicy</code> request, DynamoDB might still return the
+         * deleted policy. This is because the policy for your resource might not have been
+         * deleted yet. Wait for a few seconds, and then try the
+         * <code>GetResourcePolicy</code> request again.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>The <code>DeleteTable</code> operation deletes a table and all of its items.
          * After a <code>DeleteTable</code> request, the specified table is in the
          * <code>DELETING</code> state until DynamoDB completes the deletion. If the table
@@ -497,16 +542,16 @@ namespace DynamoDB
          * <code>ResourceInUseException</code>. If the specified table does not exist,
          * DynamoDB returns a <code>ResourceNotFoundException</code>. If table is already
          * in the <code>DELETING</code> state, no error is returned. </p> 
-         * <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p>   <p>DynamoDB
-         * might continue to accept data read and write operations, such as
-         * <code>GetItem</code> and <code>PutItem</code>, on a table in the
-         * <code>DELETING</code> state until the table deletion is complete.</p> 
-         * <p>When you delete a table, any indexes on that table are also deleted.</p>
-         * <p>If you have DynamoDB Streams enabled on the table, then the corresponding
-         * stream on that table goes into the <code>DISABLED</code> state, and the stream
-         * is automatically deleted after 24 hours.</p> <p>Use the
+         * <p>For global tables, this operation only applies to global tables using Version
+         * 2019.11.21 (Current version). </p>   <p>DynamoDB might
+         * continue to accept data read and write operations, such as <code>GetItem</code>
+         * and <code>PutItem</code>, on a table in the <code>DELETING</code> state until
+         * the table deletion is complete. For the full list of table states, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.</p>
+         *  <p>When you delete a table, any indexes on that table are also
+         * deleted.</p> <p>If you have DynamoDB Streams enabled on the table, then the
+         * corresponding stream on that table goes into the <code>DISABLED</code> state,
+         * and the stream is automatically deleted after 24 hours.</p> <p>Use the
          * <code>DescribeTable</code> action to check the status of the table.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">AWS
@@ -628,13 +673,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
+        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request) const
+        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::DescribeEndpoints, request);
         }
@@ -643,7 +688,7 @@ namespace DynamoDB
          * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        void DescribeEndpointsAsync(const DescribeEndpointsRequestT& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEndpointsAsync(const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::DescribeEndpoints, request, handler, context);
         }
@@ -675,18 +720,17 @@ namespace DynamoDB
 
         /**
          * <p>Returns information about the specified global table.</p>  <p>This
-         * operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * documentation is for version 2017.11.29 (Legacy) of global tables, which should
+         * be avoided for new global tables. Customers should use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+         * Tables version 2019.11.21 (Current)</a> when possible, because it provides
+         * greater flexibility, higher efficiency, and consumes less write capacity than
+         * 2017.11.29 (Legacy).</p> <p>To determine which version you're using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-         * the version</a>. To update existing global tables from version 2017.11.29
-         * (Legacy) to version 2019.11.21 (Current), see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
+         * the global table version you are using</a>. To update existing global tables
+         * from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+         * global tables</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -712,18 +756,17 @@ namespace DynamoDB
 
         /**
          * <p>Describes Region-specific settings for a global table.</p> 
-         * <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * <p>This documentation is for version 2017.11.29 (Legacy) of global tables, which
+         * should be avoided for new global tables. Customers should use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+         * Tables version 2019.11.21 (Current)</a> when possible, because it provides
+         * greater flexibility, higher efficiency, and consumes less write capacity than
+         * 2017.11.29 (Legacy).</p> <p>To determine which version you're using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-         * the version</a>. To update existing global tables from version 2017.11.29
-         * (Legacy) to version 2019.11.21 (Current), see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
+         * the global table version you are using</a>. To update existing global tables
+         * from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+         * global tables</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          */
@@ -844,13 +887,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
+        virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLimits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLimitsRequestT = Model::DescribeLimitsRequest>
-        Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const DescribeLimitsRequestT& request) const
+        Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const DescribeLimitsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::DescribeLimits, request);
         }
@@ -859,7 +902,7 @@ namespace DynamoDB
          * An Async wrapper for DescribeLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLimitsRequestT = Model::DescribeLimitsRequest>
-        void DescribeLimitsAsync(const DescribeLimitsRequestT& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLimitsAsync(const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLimitsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::DescribeLimits, request, handler, context);
         }
@@ -867,10 +910,9 @@ namespace DynamoDB
         /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
-         * table.</p>  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p>   <p>If you
-         * issue a <code>DescribeTable</code> request immediately after a
+         * table.</p>  <p>For global tables, this operation only applies to
+         * global tables using Version 2019.11.21 (Current version). </p> 
+         *  <p>If you issue a <code>DescribeTable</code> request immediately after a
          * <code>CreateTable</code> request, DynamoDB might return a
          * <code>ResourceNotFoundException</code>. This is because
          * <code>DescribeTable</code> uses an eventually consistent query, and the metadata
@@ -902,10 +944,9 @@ namespace DynamoDB
 
         /**
          * <p>Describes auto scaling settings across replicas of the global table at
-         * once.</p>  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables.</p> <p><h3>See Also:</h3>
-         * <a
+         * once.</p>  <p>For global tables, this operation only applies to
+         * global tables using Version 2019.11.21 (Current version).</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */
@@ -1138,6 +1179,57 @@ namespace DynamoDB
         }
 
         /**
+         * <p>Returns the resource-based policy document attached to the resource, which
+         * can be a table or stream, in JSON format.</p> <p> <code>GetResourcePolicy</code>
+         * follows an <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <i>eventually consistent</i> </a> model. The following list describes the
+         * outcomes when you issue the <code>GetResourcePolicy</code> request immediately
+         * after issuing another request:</p> <ul> <li> <p>If you issue a
+         * <code>GetResourcePolicy</code> request immediately after a
+         * <code>PutResourcePolicy</code> request, DynamoDB might return a
+         * <code>PolicyNotFoundException</code>.</p> </li> <li> <p>If you issue a
+         * <code>GetResourcePolicy</code>request immediately after a
+         * <code>DeleteResourcePolicy</code> request, DynamoDB might return the policy that
+         * was present before the deletion request.</p> </li> <li> <p>If you issue a
+         * <code>GetResourcePolicy</code> request immediately after a
+         * <code>CreateTable</code> request, which includes a resource-based policy,
+         * DynamoDB might return a <code>ResourceNotFoundException</code> or a
+         * <code>PolicyNotFoundException</code>.</p> </li> </ul> <p>Because
+         * <code>GetResourcePolicy</code> uses an <i>eventually consistent</i> query, the
+         * metadata for your policy or table might not be available at that moment. Wait
+         * for a few seconds, and then retry the <code>GetResourcePolicy</code>
+         * request.</p> <p>After a <code>GetResourcePolicy</code> request returns a policy
+         * created using the <code>PutResourcePolicy</code> request, the policy will be
+         * applied in the authorization of requests to the resource. Because this process
+         * is eventually consistent, it will take some time to apply the policy to all
+         * requests to a resource. Policies that you attach while creating a table using
+         * the <code>CreateTable</code> request will always be applied to all requests for
+         * that table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::GetResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p> Imports table data from an S3 bucket. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">AWS
          * API Reference</a></p>
@@ -1178,13 +1270,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBackupsOutcome ListBackups(const Model::ListBackupsRequest& request) const;
+        virtual Model::ListBackupsOutcome ListBackups(const Model::ListBackupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBackups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBackupsRequestT = Model::ListBackupsRequest>
-        Model::ListBackupsOutcomeCallable ListBackupsCallable(const ListBackupsRequestT& request) const
+        Model::ListBackupsOutcomeCallable ListBackupsCallable(const ListBackupsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListBackups, request);
         }
@@ -1193,7 +1285,7 @@ namespace DynamoDB
          * An Async wrapper for ListBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBackupsRequestT = Model::ListBackupsRequest>
-        void ListBackupsAsync(const ListBackupsRequestT& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBackupsAsync(const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBackupsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListBackups, request, handler, context);
         }
@@ -1204,13 +1296,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListContributorInsightsOutcome ListContributorInsights(const Model::ListContributorInsightsRequest& request) const;
+        virtual Model::ListContributorInsightsOutcome ListContributorInsights(const Model::ListContributorInsightsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListContributorInsights that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListContributorInsightsRequestT = Model::ListContributorInsightsRequest>
-        Model::ListContributorInsightsOutcomeCallable ListContributorInsightsCallable(const ListContributorInsightsRequestT& request) const
+        Model::ListContributorInsightsOutcomeCallable ListContributorInsightsCallable(const ListContributorInsightsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListContributorInsights, request);
         }
@@ -1219,7 +1311,7 @@ namespace DynamoDB
          * An Async wrapper for ListContributorInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListContributorInsightsRequestT = Model::ListContributorInsightsRequest>
-        void ListContributorInsightsAsync(const ListContributorInsightsRequestT& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListContributorInsightsAsync(const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContributorInsightsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListContributorInsights, request, handler, context);
         }
@@ -1230,13 +1322,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
+        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExportsRequestT = Model::ListExportsRequest>
-        Model::ListExportsOutcomeCallable ListExportsCallable(const ListExportsRequestT& request) const
+        Model::ListExportsOutcomeCallable ListExportsCallable(const ListExportsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListExports, request);
         }
@@ -1245,35 +1337,34 @@ namespace DynamoDB
          * An Async wrapper for ListExports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExportsRequestT = Model::ListExportsRequest>
-        void ListExportsAsync(const ListExportsRequestT& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExportsAsync(const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExportsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListExports, request, handler, context);
         }
 
         /**
          * <p>Lists all global tables that have a replica in the specified Region.</p>
-         *  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         *  <p>This documentation is for version 2017.11.29 (Legacy) of global
+         * tables, which should be avoided for new global tables. Customers should use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+         * Tables version 2019.11.21 (Current)</a> when possible, because it provides
+         * greater flexibility, higher efficiency, and consumes less write capacity than
+         * 2017.11.29 (Legacy).</p> <p>To determine which version you're using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-         * the version</a>. To update existing global tables from version 2017.11.29
-         * (Legacy) to version 2019.11.21 (Current), see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
+         * the global table version you are using</a>. To update existing global tables
+         * from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+         * global tables</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request) const;
+        virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGlobalTables that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGlobalTablesRequestT = Model::ListGlobalTablesRequest>
-        Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const ListGlobalTablesRequestT& request) const
+        Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const ListGlobalTablesRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListGlobalTables, request);
         }
@@ -1282,7 +1373,7 @@ namespace DynamoDB
          * An Async wrapper for ListGlobalTables that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGlobalTablesRequestT = Model::ListGlobalTablesRequest>
-        void ListGlobalTablesAsync(const ListGlobalTablesRequestT& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGlobalTablesAsync(const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGlobalTablesRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListGlobalTables, request, handler, context);
         }
@@ -1293,13 +1384,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
+        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListImportsRequestT = Model::ListImportsRequest>
-        Model::ListImportsOutcomeCallable ListImportsCallable(const ListImportsRequestT& request) const
+        Model::ListImportsOutcomeCallable ListImportsCallable(const ListImportsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListImports, request);
         }
@@ -1308,7 +1399,7 @@ namespace DynamoDB
          * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListImportsRequestT = Model::ListImportsRequest>
-        void ListImportsAsync(const ListImportsRequestT& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListImportsAsync(const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListImportsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListImports, request, handler, context);
         }
@@ -1320,13 +1411,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
+        virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTables that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTablesRequestT = Model::ListTablesRequest>
-        Model::ListTablesOutcomeCallable ListTablesCallable(const ListTablesRequestT& request) const
+        Model::ListTablesOutcomeCallable ListTablesCallable(const ListTablesRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListTables, request);
         }
@@ -1335,7 +1426,7 @@ namespace DynamoDB
          * An Async wrapper for ListTables that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTablesRequestT = Model::ListTablesRequest>
-        void ListTablesAsync(const ListTablesRequestT& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTablesAsync(const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTablesRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListTables, request, handler, context);
         }
@@ -1413,6 +1504,48 @@ namespace DynamoDB
         void PutItemAsync(const PutItemRequestT& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DynamoDBClient::PutItem, request, handler, context);
+        }
+
+        /**
+         * <p>Attaches a resource-based policy document to the resource, which can be a
+         * table or stream. When you attach a resource-based policy using this API, the
+         * policy application is <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <i>eventually consistent</i> </a>.</p> <p> <code>PutResourcePolicy</code> is an
+         * idempotent operation; running it multiple times on the same resource using the
+         * same policy document will return the same revision ID. If you specify an
+         * <code>ExpectedRevisionId</code> that doesn't match the current policy's
+         * <code>RevisionId</code>, the <code>PolicyNotFoundException</code> will be
+         * returned.</p>  <p> <code>PutResourcePolicy</code> is an asynchronous
+         * operation. If you issue a <code>GetResourcePolicy</code> request immediately
+         * after a <code>PutResourcePolicy</code> request, DynamoDB might return your
+         * previous policy, if there was one, or return the
+         * <code>PolicyNotFoundException</code>. This is because
+         * <code>GetResourcePolicy</code> uses an eventually consistent query, and the
+         * metadata for your policy or table might not be available at that moment. Wait
+         * for a few seconds, and then try the <code>GetResourcePolicy</code> request
+         * again.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::PutResourcePolicy, request, handler, context);
         }
 
         /**
@@ -1627,7 +1760,17 @@ namespace DynamoDB
          * <p>Associate a set of tags with an Amazon DynamoDB resource. You can then
          * activate these user-defined tags so that they appear on the Billing and Cost
          * Management console for cost allocation tracking. You can call TagResource up to
-         * five times per second, per account. </p> <p>For an overview on tagging DynamoDB
+         * five times per second, per account. </p> <ul> <li> <p> <code>TagResource</code>
+         * is an asynchronous operation. If you issue a <a>ListTagsOfResource</a> request
+         * immediately after a <code>TagResource</code> request, DynamoDB might return your
+         * previous tag set, if there was one, or an empty tag set. This is because
+         * <code>ListTagsOfResource</code> uses an eventually consistent query, and the
+         * metadata for your tags or table might not be available at that moment. Wait for
+         * a few seconds, and then try the <code>ListTagsOfResource</code> request
+         * again.</p> </li> <li> <p>The application or removal of tags using
+         * <code>TagResource</code> and <code>UntagResource</code> APIs is eventually
+         * consistent. <code>ListTagsOfResource</code> API will only reflect the changes
+         * after a few seconds.</p> </li> </ul> <p>For an overview on tagging DynamoDB
          * resources, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
          * for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
@@ -1761,7 +1904,18 @@ namespace DynamoDB
         /**
          * <p>Removes the association of tags from an Amazon DynamoDB resource. You can
          * call <code>UntagResource</code> up to five times per second, per account. </p>
-         * <p>For an overview on tagging DynamoDB resources, see <a
+         * <ul> <li> <p> <code>UntagResource</code> is an asynchronous operation. If you
+         * issue a <a>ListTagsOfResource</a> request immediately after an
+         * <code>UntagResource</code> request, DynamoDB might return your previous tag set,
+         * if there was one, or an empty tag set. This is because
+         * <code>ListTagsOfResource</code> uses an eventually consistent query, and the
+         * metadata for your tags or table might not be available at that moment. Wait for
+         * a few seconds, and then try the <code>ListTagsOfResource</code> request
+         * again.</p> </li> <li> <p>The application or removal of tags using
+         * <code>TagResource</code> and <code>UntagResource</code> APIs is eventually
+         * consistent. <code>ListTagsOfResource</code> API will only reflect the changes
+         * after a few seconds.</p> </li> </ul> <p>For an overview on tagging DynamoDB
+         * resources, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
          * for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1861,24 +2015,23 @@ namespace DynamoDB
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, have the same name as the global table, have the same key schema, have
          * DynamoDB Streams enabled, and have the same provisioned and maximum write
-         * capacity units.</p>  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * capacity units.</p>  <p>This documentation is for version 2017.11.29
+         * (Legacy) of global tables, which should be avoided for new global tables.
+         * Customers should use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+         * Tables version 2019.11.21 (Current)</a> when possible, because it provides
+         * greater flexibility, higher efficiency, and consumes less write capacity than
+         * 2017.11.29 (Legacy).</p> <p>To determine which version you're using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-         * the version</a>. To update existing global tables from version 2017.11.29
-         * (Legacy) to version 2019.11.21 (Current), see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-         * Updating global tables</a>. </p>   <p> This operation only
-         * applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables. If you are using global tables <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * the global table version you are using</a>. To update existing global tables
+         * from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+         * global tables</a>.</p>   <p> For global tables, this operation
+         * only applies to global tables using Version 2019.11.21 (Current version). If you
+         * are using global tables <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
          * 2019.11.21</a> you can use <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
          * instead. </p> <p> Although you can use <code>UpdateGlobalTable</code> to add
          * replicas and remove replicas in a single request, for simplicity we recommend
          * that you issue separate requests for adding or removing replicas. </p> 
@@ -1912,19 +2065,18 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Updates settings for a global table.</p>  <p>This operation only
-         * applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * <p>Updates settings for a global table.</p>  <p>This documentation is
+         * for version 2017.11.29 (Legacy) of global tables, which should be avoided for
+         * new global tables. Customers should use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+         * Tables version 2019.11.21 (Current)</a> when possible, because it provides
+         * greater flexibility, higher efficiency, and consumes less write capacity than
+         * 2017.11.29 (Legacy).</p> <p>To determine which version you're using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-         * the version</a>. To update existing global tables from version 2017.11.29
-         * (Legacy) to version 2019.11.21 (Current), see <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
+         * the global table version you are using</a>. To update existing global tables
+         * from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+         * global tables</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">AWS
          * API Reference</a></p>
          */
@@ -2007,20 +2159,18 @@ namespace DynamoDB
 
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
-         * DynamoDB Streams settings for a given table.</p>  <p>This operation
-         * only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p>  <p>You can only
-         * perform one of the following operations at once:</p> <ul> <li> <p>Modify the
-         * provisioned throughput settings of the table.</p> </li> <li> <p>Remove a global
-         * secondary index from the table.</p> </li> <li> <p>Create a new global secondary
-         * index on the table. After the index begins backfilling, you can use
-         * <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p>
-         * <code>UpdateTable</code> is an asynchronous operation; while it is executing,
-         * the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>.
-         * While it is <code>UPDATING</code>, you cannot issue another
-         * <code>UpdateTable</code> request. When the table returns to the
-         * <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is
+         * DynamoDB Streams settings for a given table.</p>  <p>For global
+         * tables, this operation only applies to global tables using Version 2019.11.21
+         * (Current version). </p>  <p>You can only perform one of the
+         * following operations at once:</p> <ul> <li> <p>Modify the provisioned throughput
+         * settings of the table.</p> </li> <li> <p>Remove a global secondary index from
+         * the table.</p> </li> <li> <p>Create a new global secondary index on the table.
+         * After the index begins backfilling, you can use <code>UpdateTable</code> to
+         * perform other operations.</p> </li> </ul> <p> <code>UpdateTable</code> is an
+         * asynchronous operation; while it's executing, the table status changes from
+         * <code>ACTIVE</code> to <code>UPDATING</code>. While it's <code>UPDATING</code>,
+         * you can't issue another <code>UpdateTable</code> request. When the table returns
+         * to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is
          * complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
          * API Reference</a></p>
@@ -2047,10 +2197,8 @@ namespace DynamoDB
 
         /**
          * <p>Updates auto scaling settings on your global tables at once.</p> 
-         * <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>For global tables, this operation only applies to global tables using Version
+         * 2019.11.21 (Current version). </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */
@@ -2129,7 +2277,6 @@ namespace DynamoDB
 
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
       DynamoDBClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DynamoDBEndpointProviderBase> m_endpointProvider;
   };
 

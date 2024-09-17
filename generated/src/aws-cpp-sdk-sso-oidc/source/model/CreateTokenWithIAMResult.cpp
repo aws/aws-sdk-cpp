@@ -22,8 +22,8 @@ CreateTokenWithIAMResult::CreateTokenWithIAMResult() :
 {
 }
 
-CreateTokenWithIAMResult::CreateTokenWithIAMResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expiresIn(0)
+CreateTokenWithIAMResult::CreateTokenWithIAMResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateTokenWithIAMResult()
 {
   *this = result;
 }

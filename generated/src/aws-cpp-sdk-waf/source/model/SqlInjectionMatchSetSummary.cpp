@@ -24,9 +24,8 @@ SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary() :
 {
 }
 
-SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary(JsonView jsonValue) : 
-    m_sqlInjectionMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary(JsonView jsonValue)
+  : SqlInjectionMatchSetSummary()
 {
   *this = jsonValue;
 }

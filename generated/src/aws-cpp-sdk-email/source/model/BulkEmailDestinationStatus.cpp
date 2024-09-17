@@ -28,11 +28,8 @@ BulkEmailDestinationStatus::BulkEmailDestinationStatus() :
 {
 }
 
-BulkEmailDestinationStatus::BulkEmailDestinationStatus(const XmlNode& xmlNode) : 
-    m_status(BulkEmailStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_messageIdHasBeenSet(false)
+BulkEmailDestinationStatus::BulkEmailDestinationStatus(const XmlNode& xmlNode)
+  : BulkEmailDestinationStatus()
 {
   *this = xmlNode;
 }

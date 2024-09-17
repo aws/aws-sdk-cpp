@@ -27,12 +27,8 @@ DashboardSummary::DashboardSummary() :
 {
 }
 
-DashboardSummary::DashboardSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false)
+DashboardSummary::DashboardSummary(JsonView jsonValue)
+  : DashboardSummary()
 {
   *this = jsonValue;
 }

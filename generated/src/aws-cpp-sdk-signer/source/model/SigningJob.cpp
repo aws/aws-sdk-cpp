@@ -38,23 +38,8 @@ SigningJob::SigningJob() :
 {
 }
 
-SigningJob::SigningJob(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_signedObjectHasBeenSet(false),
-    m_signingMaterialHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(SigningStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_isRevoked(false),
-    m_isRevokedHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_platformIdHasBeenSet(false),
-    m_platformDisplayNameHasBeenSet(false),
-    m_signatureExpiresAtHasBeenSet(false),
-    m_jobOwnerHasBeenSet(false),
-    m_jobInvokerHasBeenSet(false)
+SigningJob::SigningJob(JsonView jsonValue)
+  : SigningJob()
 {
   *this = jsonValue;
 }

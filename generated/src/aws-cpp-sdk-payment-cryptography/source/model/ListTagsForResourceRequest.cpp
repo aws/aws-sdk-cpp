@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -24,9 +24,9 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
+  if(m_resourceArnHasBeenSet)
   {
-   payload.WithInteger("MaxResults", m_maxResults);
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 
@@ -36,9 +36,9 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 
   }
 
-  if(m_resourceArnHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithString("ResourceArn", m_resourceArn);
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

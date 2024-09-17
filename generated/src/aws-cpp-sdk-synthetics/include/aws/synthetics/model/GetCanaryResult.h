@@ -33,53 +33,27 @@ namespace Model
     AWS_SYNTHETICS_API GetCanaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains the full information about the canary.</p>
      */
     inline const Canary& GetCanary() const{ return m_canary; }
-
-    /**
-     * <p>A structure that contains the full information about the canary.</p>
-     */
     inline void SetCanary(const Canary& value) { m_canary = value; }
-
-    /**
-     * <p>A structure that contains the full information about the canary.</p>
-     */
     inline void SetCanary(Canary&& value) { m_canary = std::move(value); }
-
-    /**
-     * <p>A structure that contains the full information about the canary.</p>
-     */
     inline GetCanaryResult& WithCanary(const Canary& value) { SetCanary(value); return *this;}
-
-    /**
-     * <p>A structure that contains the full information about the canary.</p>
-     */
     inline GetCanaryResult& WithCanary(Canary&& value) { SetCanary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCanaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCanaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCanaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Canary m_canary;

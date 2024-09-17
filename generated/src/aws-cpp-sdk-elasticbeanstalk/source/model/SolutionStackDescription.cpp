@@ -26,9 +26,8 @@ SolutionStackDescription::SolutionStackDescription() :
 {
 }
 
-SolutionStackDescription::SolutionStackDescription(const XmlNode& xmlNode) : 
-    m_solutionStackNameHasBeenSet(false),
-    m_permittedFileTypesHasBeenSet(false)
+SolutionStackDescription::SolutionStackDescription(const XmlNode& xmlNode)
+  : SolutionStackDescription()
 {
   *this = xmlNode;
 }

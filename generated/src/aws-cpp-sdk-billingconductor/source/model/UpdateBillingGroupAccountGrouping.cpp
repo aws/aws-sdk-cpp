@@ -24,9 +24,8 @@ UpdateBillingGroupAccountGrouping::UpdateBillingGroupAccountGrouping() :
 {
 }
 
-UpdateBillingGroupAccountGrouping::UpdateBillingGroupAccountGrouping(JsonView jsonValue) : 
-    m_autoAssociate(false),
-    m_autoAssociateHasBeenSet(false)
+UpdateBillingGroupAccountGrouping::UpdateBillingGroupAccountGrouping(JsonView jsonValue)
+  : UpdateBillingGroupAccountGrouping()
 {
   *this = jsonValue;
 }

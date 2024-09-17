@@ -40,25 +40,8 @@ S3JsonSource::S3JsonSource() :
 {
 }
 
-S3JsonSource::S3JsonSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_groupSizeHasBeenSet(false),
-    m_groupFilesHasBeenSet(false),
-    m_recurse(false),
-    m_recurseHasBeenSet(false),
-    m_maxBand(0),
-    m_maxBandHasBeenSet(false),
-    m_maxFilesInBand(0),
-    m_maxFilesInBandHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_jsonPathHasBeenSet(false),
-    m_multiline(false),
-    m_multilineHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+S3JsonSource::S3JsonSource(JsonView jsonValue)
+  : S3JsonSource()
 {
   *this = jsonValue;
 }

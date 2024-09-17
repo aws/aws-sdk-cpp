@@ -35,164 +35,72 @@ namespace Model
     AWS_EBS_API ListChangedBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of objects containing information about the changed blocks.</p>
      */
     inline const Aws::Vector<ChangedBlock>& GetChangedBlocks() const{ return m_changedBlocks; }
-
-    /**
-     * <p>An array of objects containing information about the changed blocks.</p>
-     */
     inline void SetChangedBlocks(const Aws::Vector<ChangedBlock>& value) { m_changedBlocks = value; }
-
-    /**
-     * <p>An array of objects containing information about the changed blocks.</p>
-     */
     inline void SetChangedBlocks(Aws::Vector<ChangedBlock>&& value) { m_changedBlocks = std::move(value); }
-
-    /**
-     * <p>An array of objects containing information about the changed blocks.</p>
-     */
     inline ListChangedBlocksResult& WithChangedBlocks(const Aws::Vector<ChangedBlock>& value) { SetChangedBlocks(value); return *this;}
-
-    /**
-     * <p>An array of objects containing information about the changed blocks.</p>
-     */
     inline ListChangedBlocksResult& WithChangedBlocks(Aws::Vector<ChangedBlock>&& value) { SetChangedBlocks(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects containing information about the changed blocks.</p>
-     */
     inline ListChangedBlocksResult& AddChangedBlocks(const ChangedBlock& value) { m_changedBlocks.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects containing information about the changed blocks.</p>
-     */
     inline ListChangedBlocksResult& AddChangedBlocks(ChangedBlock&& value) { m_changedBlocks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the <code>BlockToken</code> expires.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
-
-    /**
-     * <p>The time when the <code>BlockToken</code> expires.</p>
-     */
     inline void SetExpiryTime(const Aws::Utils::DateTime& value) { m_expiryTime = value; }
-
-    /**
-     * <p>The time when the <code>BlockToken</code> expires.</p>
-     */
     inline void SetExpiryTime(Aws::Utils::DateTime&& value) { m_expiryTime = std::move(value); }
-
-    /**
-     * <p>The time when the <code>BlockToken</code> expires.</p>
-     */
     inline ListChangedBlocksResult& WithExpiryTime(const Aws::Utils::DateTime& value) { SetExpiryTime(value); return *this;}
-
-    /**
-     * <p>The time when the <code>BlockToken</code> expires.</p>
-     */
     inline ListChangedBlocksResult& WithExpiryTime(Aws::Utils::DateTime&& value) { SetExpiryTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The size of the volume in GB.</p>
      */
     inline long long GetVolumeSize() const{ return m_volumeSize; }
-
-    /**
-     * <p>The size of the volume in GB.</p>
-     */
     inline void SetVolumeSize(long long value) { m_volumeSize = value; }
-
-    /**
-     * <p>The size of the volume in GB.</p>
-     */
     inline ListChangedBlocksResult& WithVolumeSize(long long value) { SetVolumeSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The size of the blocks in the snapshot, in bytes.</p>
      */
     inline int GetBlockSize() const{ return m_blockSize; }
-
-    /**
-     * <p>The size of the blocks in the snapshot, in bytes.</p>
-     */
     inline void SetBlockSize(int value) { m_blockSize = value; }
-
-    /**
-     * <p>The size of the blocks in the snapshot, in bytes.</p>
-     */
     inline ListChangedBlocksResult& WithBlockSize(int value) { SetBlockSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
-     */
     inline ListChangedBlocksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
-     */
     inline ListChangedBlocksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
-     */
     inline ListChangedBlocksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListChangedBlocksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListChangedBlocksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListChangedBlocksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ChangedBlock> m_changedBlocks;

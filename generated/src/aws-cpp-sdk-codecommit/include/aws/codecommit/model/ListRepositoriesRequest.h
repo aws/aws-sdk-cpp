@@ -40,6 +40,7 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
@@ -47,125 +48,38 @@ namespace Model
      * retrieved.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline ListRepositoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline ListRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline ListRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The criteria used to sort the results of a list repositories operation.</p>
      */
     inline const SortByEnum& GetSortBy() const{ return m_sortBy; }
-
-    /**
-     * <p>The criteria used to sort the results of a list repositories operation.</p>
-     */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-
-    /**
-     * <p>The criteria used to sort the results of a list repositories operation.</p>
-     */
     inline void SetSortBy(const SortByEnum& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-
-    /**
-     * <p>The criteria used to sort the results of a list repositories operation.</p>
-     */
     inline void SetSortBy(SortByEnum&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-
-    /**
-     * <p>The criteria used to sort the results of a list repositories operation.</p>
-     */
     inline ListRepositoriesRequest& WithSortBy(const SortByEnum& value) { SetSortBy(value); return *this;}
-
-    /**
-     * <p>The criteria used to sort the results of a list repositories operation.</p>
-     */
     inline ListRepositoriesRequest& WithSortBy(SortByEnum&& value) { SetSortBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order in which to sort the results of a list repositories operation.</p>
      */
     inline const OrderEnum& GetOrder() const{ return m_order; }
-
-    /**
-     * <p>The order in which to sort the results of a list repositories operation.</p>
-     */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-
-    /**
-     * <p>The order in which to sort the results of a list repositories operation.</p>
-     */
     inline void SetOrder(const OrderEnum& value) { m_orderHasBeenSet = true; m_order = value; }
-
-    /**
-     * <p>The order in which to sort the results of a list repositories operation.</p>
-     */
     inline void SetOrder(OrderEnum&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-
-    /**
-     * <p>The order in which to sort the results of a list repositories operation.</p>
-     */
     inline ListRepositoriesRequest& WithOrder(const OrderEnum& value) { SetOrder(value); return *this;}
-
-    /**
-     * <p>The order in which to sort the results of a list repositories operation.</p>
-     */
     inline ListRepositoriesRequest& WithOrder(OrderEnum&& value) { SetOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

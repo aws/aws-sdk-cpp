@@ -38,77 +38,31 @@ namespace Model
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the slot that should be elicited from the user.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the slot that should be elicited from the user.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the slot that should be elicited from the user.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the slot that should be elicited from the user.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the slot that should be elicited from the user.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the slot that should be elicited from the user.</p>
-     */
     inline ElicitSubSlot& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the slot that should be elicited from the user.</p>
-     */
     inline ElicitSubSlot& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the slot that should be elicited from the user.</p>
-     */
     inline ElicitSubSlot& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field is not supported.</p>
      */
     AWS_LEXRUNTIMEV2_API const ElicitSubSlot& GetSubSlotToElicit() const;
-
-    /**
-     * <p>The field is not supported.</p>
-     */
     AWS_LEXRUNTIMEV2_API bool SubSlotToElicitHasBeenSet() const;
-
-    /**
-     * <p>The field is not supported.</p>
-     */
     AWS_LEXRUNTIMEV2_API void SetSubSlotToElicit(const ElicitSubSlot& value);
-
-    /**
-     * <p>The field is not supported.</p>
-     */
     AWS_LEXRUNTIMEV2_API void SetSubSlotToElicit(ElicitSubSlot&& value);
-
-    /**
-     * <p>The field is not supported.</p>
-     */
     AWS_LEXRUNTIMEV2_API ElicitSubSlot& WithSubSlotToElicit(const ElicitSubSlot& value);
-
-    /**
-     * <p>The field is not supported.</p>
-     */
     AWS_LEXRUNTIMEV2_API ElicitSubSlot& WithSubSlotToElicit(ElicitSubSlot&& value);
-
+    ///@}
   private:
 
     Aws::String m_name;

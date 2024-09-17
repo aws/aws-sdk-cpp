@@ -26,11 +26,8 @@ CisSecurityLevelFilter::CisSecurityLevelFilter() :
 {
 }
 
-CisSecurityLevelFilter::CisSecurityLevelFilter(JsonView jsonValue) : 
-    m_comparison(CisSecurityLevelComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_value(CisSecurityLevel::NOT_SET),
-    m_valueHasBeenSet(false)
+CisSecurityLevelFilter::CisSecurityLevelFilter(JsonView jsonValue)
+  : CisSecurityLevelFilter()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ DeleteBackupResult::DeleteBackupResult() :
 {
 }
 
-DeleteBackupResult::DeleteBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lifecycle(BackupLifecycle::NOT_SET)
+DeleteBackupResult::DeleteBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteBackupResult()
 {
   *this = result;
 }

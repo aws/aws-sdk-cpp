@@ -28,13 +28,8 @@ InputDeviceNetworkSettings::InputDeviceNetworkSettings() :
 {
 }
 
-InputDeviceNetworkSettings::InputDeviceNetworkSettings(JsonView jsonValue) : 
-    m_dnsAddressesHasBeenSet(false),
-    m_gatewayHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_ipScheme(InputDeviceIpScheme::NOT_SET),
-    m_ipSchemeHasBeenSet(false),
-    m_subnetMaskHasBeenSet(false)
+InputDeviceNetworkSettings::InputDeviceNetworkSettings(JsonView jsonValue)
+  : InputDeviceNetworkSettings()
 {
   *this = jsonValue;
 }

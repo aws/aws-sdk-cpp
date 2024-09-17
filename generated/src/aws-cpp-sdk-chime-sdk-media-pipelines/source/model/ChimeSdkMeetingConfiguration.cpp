@@ -24,9 +24,8 @@ ChimeSdkMeetingConfiguration::ChimeSdkMeetingConfiguration() :
 {
 }
 
-ChimeSdkMeetingConfiguration::ChimeSdkMeetingConfiguration(JsonView jsonValue) : 
-    m_sourceConfigurationHasBeenSet(false),
-    m_artifactsConfigurationHasBeenSet(false)
+ChimeSdkMeetingConfiguration::ChimeSdkMeetingConfiguration(JsonView jsonValue)
+  : ChimeSdkMeetingConfiguration()
 {
   *this = jsonValue;
 }

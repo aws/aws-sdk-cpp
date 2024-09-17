@@ -33,161 +33,59 @@ namespace Model
     AWS_DETECTIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>The ARN of the behavior graph.</p>
+     * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
     inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline StartInvestigationRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline StartInvestigationRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the behavior graph.</p>
-     */
     inline StartInvestigationRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
      */
     inline const Aws::String& GetEntityArn() const{ return m_entityArn; }
-
-    /**
-     * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-     */
     inline bool EntityArnHasBeenSet() const { return m_entityArnHasBeenSet; }
-
-    /**
-     * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-     */
     inline void SetEntityArn(const Aws::String& value) { m_entityArnHasBeenSet = true; m_entityArn = value; }
-
-    /**
-     * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-     */
     inline void SetEntityArn(Aws::String&& value) { m_entityArnHasBeenSet = true; m_entityArn = std::move(value); }
-
-    /**
-     * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-     */
     inline void SetEntityArn(const char* value) { m_entityArnHasBeenSet = true; m_entityArn.assign(value); }
-
-    /**
-     * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-     */
     inline StartInvestigationRequest& WithEntityArn(const Aws::String& value) { SetEntityArn(value); return *this;}
-
-    /**
-     * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-     */
     inline StartInvestigationRequest& WithEntityArn(Aws::String&& value) { SetEntityArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
-     */
     inline StartInvestigationRequest& WithEntityArn(const char* value) { SetEntityArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data and time when the investigation began. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetScopeStartTime() const{ return m_scopeStartTime; }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline bool ScopeStartTimeHasBeenSet() const { return m_scopeStartTimeHasBeenSet; }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline void SetScopeStartTime(const Aws::Utils::DateTime& value) { m_scopeStartTimeHasBeenSet = true; m_scopeStartTime = value; }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline void SetScopeStartTime(Aws::Utils::DateTime&& value) { m_scopeStartTimeHasBeenSet = true; m_scopeStartTime = std::move(value); }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline StartInvestigationRequest& WithScopeStartTime(const Aws::Utils::DateTime& value) { SetScopeStartTime(value); return *this;}
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline StartInvestigationRequest& WithScopeStartTime(Aws::Utils::DateTime&& value) { SetScopeStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
+     * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetScopeEndTime() const{ return m_scopeEndTime; }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline bool ScopeEndTimeHasBeenSet() const { return m_scopeEndTimeHasBeenSet; }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline void SetScopeEndTime(const Aws::Utils::DateTime& value) { m_scopeEndTimeHasBeenSet = true; m_scopeEndTime = value; }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline void SetScopeEndTime(Aws::Utils::DateTime&& value) { m_scopeEndTimeHasBeenSet = true; m_scopeEndTime = std::move(value); }
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline StartInvestigationRequest& WithScopeEndTime(const Aws::Utils::DateTime& value) { SetScopeEndTime(value); return *this;}
-
-    /**
-     * <p>The data and time when the investigation began. The value is an UTC ISO8601
-     * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline StartInvestigationRequest& WithScopeEndTime(Aws::Utils::DateTime&& value) { SetScopeEndTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_graphArn;

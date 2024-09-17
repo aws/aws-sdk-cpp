@@ -25,10 +25,8 @@ RetentionConfiguration::RetentionConfiguration() :
 {
 }
 
-RetentionConfiguration::RetentionConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_retentionPeriodInDays(0),
-    m_retentionPeriodInDaysHasBeenSet(false)
+RetentionConfiguration::RetentionConfiguration(JsonView jsonValue)
+  : RetentionConfiguration()
 {
   *this = jsonValue;
 }

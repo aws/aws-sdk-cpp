@@ -74,7 +74,7 @@ namespace Aws
          * Abstract AWS Client. Contains most of the functionality necessary to build an http request, get it signed, and send it across the wire.
          */
         class AWS_CORE_API AWSClient
-        {
+        { 
         public:
             /**
              * configuration will be used for http client settings, retry strategy, throttles, and signing information.
@@ -168,6 +168,8 @@ namespace Aws
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
                                              const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0,
                                              const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter = {}) const;
+
+            const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() const { return m_httpClient; }
 
             /**
              * Stop all requests immediately.

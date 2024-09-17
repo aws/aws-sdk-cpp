@@ -25,10 +25,8 @@ UnsuccessfulFaceDisassociation::UnsuccessfulFaceDisassociation() :
 {
 }
 
-UnsuccessfulFaceDisassociation::UnsuccessfulFaceDisassociation(JsonView jsonValue) : 
-    m_faceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
+UnsuccessfulFaceDisassociation::UnsuccessfulFaceDisassociation(JsonView jsonValue)
+  : UnsuccessfulFaceDisassociation()
 {
   *this = jsonValue;
 }

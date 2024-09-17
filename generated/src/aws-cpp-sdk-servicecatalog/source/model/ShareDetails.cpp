@@ -24,9 +24,8 @@ ShareDetails::ShareDetails() :
 {
 }
 
-ShareDetails::ShareDetails(JsonView jsonValue) : 
-    m_successfulSharesHasBeenSet(false),
-    m_shareErrorsHasBeenSet(false)
+ShareDetails::ShareDetails(JsonView jsonValue)
+  : ShareDetails()
 {
   *this = jsonValue;
 }

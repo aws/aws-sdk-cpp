@@ -34,91 +34,34 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The instance ID.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The instance ID.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The instance ID.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The instance ID.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The instance ID.</p>
-     */
     inline StopInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The instance ID.</p>
-     */
     inline StopInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The instance ID.</p>
-     */
     inline StopInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to force an instance to stop. If the instance's root device
      * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
+     * to the <code>StopInstances</code> API call disassociates the OpsWorks Stacks
      * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
      * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
+     * troubleshooting and replacing the OpsWorks Stacks instance with a new one.</p>
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p>Specifies whether to force an instance to stop. If the instance's root device
-     * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
-     * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
-     * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to force an instance to stop. If the instance's root device
-     * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
-     * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
-     * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p>Specifies whether to force an instance to stop. If the instance's root device
-     * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
-     * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
-     * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
-     */
     inline StopInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

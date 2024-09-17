@@ -24,9 +24,8 @@ OverrideAction::OverrideAction() :
 {
 }
 
-OverrideAction::OverrideAction(JsonView jsonValue) : 
-    m_countHasBeenSet(false),
-    m_noneHasBeenSet(false)
+OverrideAction::OverrideAction(JsonView jsonValue)
+  : OverrideAction()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ ResourceServerScopeType::ResourceServerScopeType() :
 {
 }
 
-ResourceServerScopeType::ResourceServerScopeType(JsonView jsonValue) : 
-    m_scopeNameHasBeenSet(false),
-    m_scopeDescriptionHasBeenSet(false)
+ResourceServerScopeType::ResourceServerScopeType(JsonView jsonValue)
+  : ResourceServerScopeType()
 {
   *this = jsonValue;
 }

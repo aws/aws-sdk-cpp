@@ -23,8 +23,8 @@ AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails::AwsStepFunct
 {
 }
 
-AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails(JsonView jsonValue) : 
-    m_cloudWatchLogsLogGroupHasBeenSet(false)
+AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails(JsonView jsonValue)
+  : AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails()
 {
   *this = jsonValue;
 }

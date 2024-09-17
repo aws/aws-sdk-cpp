@@ -62,6 +62,11 @@ namespace Aws
         static const int KAFKA_SASL_GSSAPI_KRB5_CONF_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_KRB5_CONF");
         static const int KAFKA_SASL_GSSAPI_SERVICE_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_SERVICE");
         static const int KAFKA_SASL_GSSAPI_PRINCIPAL_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_PRINCIPAL");
+        static const int ROLE_ARN_HASH = HashingUtils::HashString("ROLE_ARN");
+        static const int REGION_HASH = HashingUtils::HashString("REGION");
+        static const int WORKGROUP_NAME_HASH = HashingUtils::HashString("WORKGROUP_NAME");
+        static const int CLUSTER_IDENTIFIER_HASH = HashingUtils::HashString("CLUSTER_IDENTIFIER");
+        static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -235,6 +240,26 @@ namespace Aws
           {
             return ConnectionPropertyKey::KAFKA_SASL_GSSAPI_PRINCIPAL;
           }
+          else if (hashCode == ROLE_ARN_HASH)
+          {
+            return ConnectionPropertyKey::ROLE_ARN;
+          }
+          else if (hashCode == REGION_HASH)
+          {
+            return ConnectionPropertyKey::REGION;
+          }
+          else if (hashCode == WORKGROUP_NAME_HASH)
+          {
+            return ConnectionPropertyKey::WORKGROUP_NAME;
+          }
+          else if (hashCode == CLUSTER_IDENTIFIER_HASH)
+          {
+            return ConnectionPropertyKey::CLUSTER_IDENTIFIER;
+          }
+          else if (hashCode == DATABASE_HASH)
+          {
+            return ConnectionPropertyKey::DATABASE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -335,6 +360,16 @@ namespace Aws
             return "KAFKA_SASL_GSSAPI_SERVICE";
           case ConnectionPropertyKey::KAFKA_SASL_GSSAPI_PRINCIPAL:
             return "KAFKA_SASL_GSSAPI_PRINCIPAL";
+          case ConnectionPropertyKey::ROLE_ARN:
+            return "ROLE_ARN";
+          case ConnectionPropertyKey::REGION:
+            return "REGION";
+          case ConnectionPropertyKey::WORKGROUP_NAME:
+            return "WORKGROUP_NAME";
+          case ConnectionPropertyKey::CLUSTER_IDENTIFIER:
+            return "CLUSTER_IDENTIFIER";
+          case ConnectionPropertyKey::DATABASE:
+            return "DATABASE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -23,8 +23,8 @@ TimestampForCollection::TimestampForCollection() :
 {
 }
 
-TimestampForCollection::TimestampForCollection(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false)
+TimestampForCollection::TimestampForCollection(JsonView jsonValue)
+  : TimestampForCollection()
 {
   *this = jsonValue;
 }

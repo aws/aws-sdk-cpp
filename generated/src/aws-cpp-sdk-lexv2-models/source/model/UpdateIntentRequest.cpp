@@ -29,7 +29,8 @@ UpdateIntentRequest::UpdateIntentRequest() :
     m_botIdHasBeenSet(false),
     m_botVersionHasBeenSet(false),
     m_localeIdHasBeenSet(false),
-    m_initialResponseSettingHasBeenSet(false)
+    m_initialResponseSettingHasBeenSet(false),
+    m_qnAIntentConfigurationHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,12 @@ Aws::String UpdateIntentRequest::SerializePayload() const
   if(m_initialResponseSettingHasBeenSet)
   {
    payload.WithObject("initialResponseSetting", m_initialResponseSetting.Jsonize());
+
+  }
+
+  if(m_qnAIntentConfigurationHasBeenSet)
+  {
+   payload.WithObject("qnAIntentConfiguration", m_qnAIntentConfiguration.Jsonize());
 
   }
 

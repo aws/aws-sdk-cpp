@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/AdvancedSecurityModeType.h>
+#include <aws/cognito-idp/model/AdvancedSecurityAdditionalFlowsType.h>
 #include <utility>
 
 namespace Aws
@@ -43,40 +44,39 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
+     * <p>The operating mode of advanced security features for standard authentication
+     * types in your user pool, including username-password and secure remote password
+     * (SRP) authentication. </p>
      */
     inline const AdvancedSecurityModeType& GetAdvancedSecurityMode() const{ return m_advancedSecurityMode; }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline bool AdvancedSecurityModeHasBeenSet() const { return m_advancedSecurityModeHasBeenSet; }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline void SetAdvancedSecurityMode(const AdvancedSecurityModeType& value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = value; }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline void SetAdvancedSecurityMode(AdvancedSecurityModeType&& value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = std::move(value); }
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline UserPoolAddOnsType& WithAdvancedSecurityMode(const AdvancedSecurityModeType& value) { SetAdvancedSecurityMode(value); return *this;}
-
-    /**
-     * <p>The operating mode of advanced security features in your user pool.</p>
-     */
     inline UserPoolAddOnsType& WithAdvancedSecurityMode(AdvancedSecurityModeType&& value) { SetAdvancedSecurityMode(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Advanced security configuration options for additional authentication types
+     * in your user pool, including custom authentication. </p>
+     */
+    inline const AdvancedSecurityAdditionalFlowsType& GetAdvancedSecurityAdditionalFlows() const{ return m_advancedSecurityAdditionalFlows; }
+    inline bool AdvancedSecurityAdditionalFlowsHasBeenSet() const { return m_advancedSecurityAdditionalFlowsHasBeenSet; }
+    inline void SetAdvancedSecurityAdditionalFlows(const AdvancedSecurityAdditionalFlowsType& value) { m_advancedSecurityAdditionalFlowsHasBeenSet = true; m_advancedSecurityAdditionalFlows = value; }
+    inline void SetAdvancedSecurityAdditionalFlows(AdvancedSecurityAdditionalFlowsType&& value) { m_advancedSecurityAdditionalFlowsHasBeenSet = true; m_advancedSecurityAdditionalFlows = std::move(value); }
+    inline UserPoolAddOnsType& WithAdvancedSecurityAdditionalFlows(const AdvancedSecurityAdditionalFlowsType& value) { SetAdvancedSecurityAdditionalFlows(value); return *this;}
+    inline UserPoolAddOnsType& WithAdvancedSecurityAdditionalFlows(AdvancedSecurityAdditionalFlowsType&& value) { SetAdvancedSecurityAdditionalFlows(std::move(value)); return *this;}
+    ///@}
   private:
 
     AdvancedSecurityModeType m_advancedSecurityMode;
     bool m_advancedSecurityModeHasBeenSet = false;
+
+    AdvancedSecurityAdditionalFlowsType m_advancedSecurityAdditionalFlows;
+    bool m_advancedSecurityAdditionalFlowsHasBeenSet = false;
   };
 
 } // namespace Model

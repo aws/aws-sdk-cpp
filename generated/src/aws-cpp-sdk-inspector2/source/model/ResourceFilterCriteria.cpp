@@ -30,15 +30,8 @@ ResourceFilterCriteria::ResourceFilterCriteria() :
 {
 }
 
-ResourceFilterCriteria::ResourceFilterCriteria(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_ec2InstanceTagsHasBeenSet(false),
-    m_ecrImageTagsHasBeenSet(false),
-    m_ecrRepositoryNameHasBeenSet(false),
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_lambdaFunctionTagsHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+ResourceFilterCriteria::ResourceFilterCriteria(JsonView jsonValue)
+  : ResourceFilterCriteria()
 {
   *this = jsonValue;
 }

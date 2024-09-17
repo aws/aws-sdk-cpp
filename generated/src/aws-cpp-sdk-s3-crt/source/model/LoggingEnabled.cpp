@@ -28,11 +28,8 @@ LoggingEnabled::LoggingEnabled() :
 {
 }
 
-LoggingEnabled::LoggingEnabled(const XmlNode& xmlNode) : 
-    m_targetBucketHasBeenSet(false),
-    m_targetGrantsHasBeenSet(false),
-    m_targetPrefixHasBeenSet(false),
-    m_targetObjectKeyFormatHasBeenSet(false)
+LoggingEnabled::LoggingEnabled(const XmlNode& xmlNode)
+  : LoggingEnabled()
 {
   *this = xmlNode;
 }

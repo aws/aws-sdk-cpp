@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateMapRequest::UpdateMapRequest() : 
-    m_configurationUpdateHasBeenSet(false),
+    m_mapNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_mapNameHasBeenSet(false)
+    m_configurationUpdateHasBeenSet(false)
 {
 }
 
@@ -23,15 +23,15 @@ Aws::String UpdateMapRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_configurationUpdateHasBeenSet)
-  {
-   payload.WithObject("ConfigurationUpdate", m_configurationUpdate.Jsonize());
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_configurationUpdateHasBeenSet)
+  {
+   payload.WithObject("ConfigurationUpdate", m_configurationUpdate.Jsonize());
 
   }
 

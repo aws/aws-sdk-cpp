@@ -28,21 +28,13 @@ DestinationDescription::DestinationDescription() :
     m_splunkDestinationDescriptionHasBeenSet(false),
     m_httpEndpointDestinationDescriptionHasBeenSet(false),
     m_snowflakeDestinationDescriptionHasBeenSet(false),
-    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false)
+    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false),
+    m_icebergDestinationDescriptionHasBeenSet(false)
 {
 }
 
-DestinationDescription::DestinationDescription(JsonView jsonValue) : 
-    m_destinationIdHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false),
-    m_extendedS3DestinationDescriptionHasBeenSet(false),
-    m_redshiftDestinationDescriptionHasBeenSet(false),
-    m_elasticsearchDestinationDescriptionHasBeenSet(false),
-    m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
-    m_splunkDestinationDescriptionHasBeenSet(false),
-    m_httpEndpointDestinationDescriptionHasBeenSet(false),
-    m_snowflakeDestinationDescriptionHasBeenSet(false),
-    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false)
+DestinationDescription::DestinationDescription(JsonView jsonValue)
+  : DestinationDescription()
 {
   *this = jsonValue;
 }
@@ -119,6 +111,13 @@ DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
     m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IcebergDestinationDescription"))
+  {
+    m_icebergDestinationDescription = jsonValue.GetObject("IcebergDestinationDescription");
+
+    m_icebergDestinationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +182,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet)
   {
    payload.WithObject("AmazonOpenSearchServerlessDestinationDescription", m_amazonOpenSearchServerlessDestinationDescription.Jsonize());
+
+  }
+
+  if(m_icebergDestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("IcebergDestinationDescription", m_icebergDestinationDescription.Jsonize());
 
   }
 

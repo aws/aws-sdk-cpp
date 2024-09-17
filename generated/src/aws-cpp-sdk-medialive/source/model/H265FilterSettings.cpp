@@ -23,8 +23,8 @@ H265FilterSettings::H265FilterSettings() :
 {
 }
 
-H265FilterSettings::H265FilterSettings(JsonView jsonValue) : 
-    m_temporalFilterSettingsHasBeenSet(false)
+H265FilterSettings::H265FilterSettings(JsonView jsonValue)
+  : H265FilterSettings()
 {
   *this = jsonValue;
 }

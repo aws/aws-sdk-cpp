@@ -25,10 +25,8 @@ CloudWatchLogsLogDeliveryDescription::CloudWatchLogsLogDeliveryDescription() :
 {
 }
 
-CloudWatchLogsLogDeliveryDescription::CloudWatchLogsLogDeliveryDescription(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logGroupHasBeenSet(false)
+CloudWatchLogsLogDeliveryDescription::CloudWatchLogsLogDeliveryDescription(JsonView jsonValue)
+  : CloudWatchLogsLogDeliveryDescription()
 {
   *this = jsonValue;
 }

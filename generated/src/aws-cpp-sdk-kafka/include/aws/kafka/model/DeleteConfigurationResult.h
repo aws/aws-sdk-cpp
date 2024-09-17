@@ -33,6 +33,7 @@ namespace Model
     AWS_KAFKA_API DeleteConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * 
             <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
@@ -40,56 +41,15 @@ namespace Model
          
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration.</p>
-         
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration.</p>
-         
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration.</p>
-         
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration.</p>
-         
-     */
     inline DeleteConfigurationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration.</p>
-         
-     */
     inline DeleteConfigurationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration.</p>
-         
-     */
     inline DeleteConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>The state of the configuration. The possible states are ACTIVE,
@@ -97,61 +57,22 @@ namespace Model
          
      */
     inline const ConfigurationState& GetState() const{ return m_state; }
-
-    /**
-     * 
-            <p>The state of the configuration. The possible states are ACTIVE,
-     * DELETING, and DELETE_FAILED. </p>
-         
-     */
     inline void SetState(const ConfigurationState& value) { m_state = value; }
-
-    /**
-     * 
-            <p>The state of the configuration. The possible states are ACTIVE,
-     * DELETING, and DELETE_FAILED. </p>
-         
-     */
     inline void SetState(ConfigurationState&& value) { m_state = std::move(value); }
-
-    /**
-     * 
-            <p>The state of the configuration. The possible states are ACTIVE,
-     * DELETING, and DELETE_FAILED. </p>
-         
-     */
     inline DeleteConfigurationResult& WithState(const ConfigurationState& value) { SetState(value); return *this;}
-
-    /**
-     * 
-            <p>The state of the configuration. The possible states are ACTIVE,
-     * DELETING, and DELETE_FAILED. </p>
-         
-     */
     inline DeleteConfigurationResult& WithState(ConfigurationState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

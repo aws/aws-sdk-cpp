@@ -40,33 +40,13 @@ Application::Application() :
     m_imageConfigurationHasBeenSet(false),
     m_workerTypeSpecificationsHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
+    m_monitoringConfigurationHasBeenSet(false),
+    m_interactiveConfigurationHasBeenSet(false)
 {
 }
 
-Application::Application(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_state(ApplicationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_initialCapacityHasBeenSet(false),
-    m_maximumCapacityHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_autoStartConfigurationHasBeenSet(false),
-    m_autoStopConfigurationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_imageConfigurationHasBeenSet(false),
-    m_workerTypeSpecificationsHasBeenSet(false),
-    m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
+Application::Application(JsonView jsonValue)
+  : Application()
 {
   *this = jsonValue;
 }
@@ -225,6 +205,13 @@ Application& Application::operator =(JsonView jsonValue)
     m_monitoringConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("interactiveConfiguration"))
+  {
+    m_interactiveConfiguration = jsonValue.GetObject("interactiveConfiguration");
+
+    m_interactiveConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -365,6 +352,12 @@ JsonValue Application::Jsonize() const
   if(m_monitoringConfigurationHasBeenSet)
   {
    payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
+
+  }
+
+  if(m_interactiveConfigurationHasBeenSet)
+  {
+   payload.WithObject("interactiveConfiguration", m_interactiveConfiguration.Jsonize());
 
   }
 

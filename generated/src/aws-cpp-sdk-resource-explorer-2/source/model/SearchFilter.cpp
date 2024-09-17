@@ -23,8 +23,8 @@ SearchFilter::SearchFilter() :
 {
 }
 
-SearchFilter::SearchFilter(JsonView jsonValue) : 
-    m_filterStringHasBeenSet(false)
+SearchFilter::SearchFilter(JsonView jsonValue)
+  : SearchFilter()
 {
   *this = jsonValue;
 }

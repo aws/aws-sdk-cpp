@@ -27,12 +27,8 @@ ListedProfile::ListedProfile() :
 {
 }
 
-ListedProfile::ListedProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_as2IdHasBeenSet(false),
-    m_profileType(ProfileType::NOT_SET),
-    m_profileTypeHasBeenSet(false)
+ListedProfile::ListedProfile(JsonView jsonValue)
+  : ListedProfile()
 {
   *this = jsonValue;
 }

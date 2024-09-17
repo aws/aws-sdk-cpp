@@ -37,57 +37,27 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file ID.</p>
      */
     inline int GetFileId() const{ return m_fileId; }
-
-    /**
-     * <p>The file ID.</p>
-     */
     inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
-
-    /**
-     * <p>The file ID.</p>
-     */
     inline void SetFileId(int value) { m_fileIdHasBeenSet = true; m_fileId = value; }
-
-    /**
-     * <p>The file ID.</p>
-     */
     inline StreamFile& WithFileId(int value) { SetFileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the file in S3.</p>
      */
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
-
-    /**
-     * <p>The location of the file in S3.</p>
-     */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-
-    /**
-     * <p>The location of the file in S3.</p>
-     */
     inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-
-    /**
-     * <p>The location of the file in S3.</p>
-     */
     inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-
-    /**
-     * <p>The location of the file in S3.</p>
-     */
     inline StreamFile& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-
-    /**
-     * <p>The location of the file in S3.</p>
-     */
     inline StreamFile& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_fileId;

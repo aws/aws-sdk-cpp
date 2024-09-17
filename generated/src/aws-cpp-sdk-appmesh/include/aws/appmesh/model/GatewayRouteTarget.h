@@ -38,57 +38,27 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The port number of the gateway route target.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port number of the gateway route target.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port number of the gateway route target.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port number of the gateway route target.</p>
-     */
     inline GatewayRouteTarget& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that represents a virtual service gateway route target.</p>
      */
     inline const GatewayRouteVirtualService& GetVirtualService() const{ return m_virtualService; }
-
-    /**
-     * <p>An object that represents a virtual service gateway route target.</p>
-     */
     inline bool VirtualServiceHasBeenSet() const { return m_virtualServiceHasBeenSet; }
-
-    /**
-     * <p>An object that represents a virtual service gateway route target.</p>
-     */
     inline void SetVirtualService(const GatewayRouteVirtualService& value) { m_virtualServiceHasBeenSet = true; m_virtualService = value; }
-
-    /**
-     * <p>An object that represents a virtual service gateway route target.</p>
-     */
     inline void SetVirtualService(GatewayRouteVirtualService&& value) { m_virtualServiceHasBeenSet = true; m_virtualService = std::move(value); }
-
-    /**
-     * <p>An object that represents a virtual service gateway route target.</p>
-     */
     inline GatewayRouteTarget& WithVirtualService(const GatewayRouteVirtualService& value) { SetVirtualService(value); return *this;}
-
-    /**
-     * <p>An object that represents a virtual service gateway route target.</p>
-     */
     inline GatewayRouteTarget& WithVirtualService(GatewayRouteVirtualService&& value) { SetVirtualService(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_port;

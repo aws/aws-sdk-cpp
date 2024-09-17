@@ -30,15 +30,8 @@ BehaviorModelTrainingSummary::BehaviorModelTrainingSummary() :
 {
 }
 
-BehaviorModelTrainingSummary::BehaviorModelTrainingSummary(JsonView jsonValue) : 
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorNameHasBeenSet(false),
-    m_trainingDataCollectionStartDateHasBeenSet(false),
-    m_modelStatus(ModelStatus::NOT_SET),
-    m_modelStatusHasBeenSet(false),
-    m_datapointsCollectionPercentage(0.0),
-    m_datapointsCollectionPercentageHasBeenSet(false),
-    m_lastModelRefreshDateHasBeenSet(false)
+BehaviorModelTrainingSummary::BehaviorModelTrainingSummary(JsonView jsonValue)
+  : BehaviorModelTrainingSummary()
 {
   *this = jsonValue;
 }

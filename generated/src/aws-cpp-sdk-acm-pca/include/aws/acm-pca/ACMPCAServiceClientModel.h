@@ -30,6 +30,7 @@
 #include <aws/acm-pca/model/ListCertificateAuthoritiesResult.h>
 #include <aws/acm-pca/model/ListPermissionsResult.h>
 #include <aws/acm-pca/model/ListTagsResult.h>
+#include <aws/acm-pca/model/ListCertificateAuthoritiesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ACMPCAClient header */
 
@@ -64,7 +65,7 @@ namespace Aws
 
   namespace ACMPCA
   {
-    using ACMPCAClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ACMPCAClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ACMPCAEndpointProviderBase = Aws::ACMPCA::Endpoint::ACMPCAEndpointProviderBase;
     using ACMPCAEndpointProvider = Aws::ACMPCA::Endpoint::ACMPCAEndpointProvider;
 

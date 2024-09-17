@@ -28,13 +28,8 @@ AwsIamInstanceProfile::AwsIamInstanceProfile() :
 {
 }
 
-AwsIamInstanceProfile::AwsIamInstanceProfile(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_instanceProfileIdHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_rolesHasBeenSet(false)
+AwsIamInstanceProfile::AwsIamInstanceProfile(JsonView jsonValue)
+  : AwsIamInstanceProfile()
 {
   *this = jsonValue;
 }

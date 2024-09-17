@@ -34,108 +34,43 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The TagOption identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The TagOption identifier.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The TagOption identifier.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The TagOption identifier.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The TagOption identifier.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The TagOption identifier.</p>
-     */
     inline UpdateTagOptionRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The TagOption identifier.</p>
-     */
     inline UpdateTagOptionRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The TagOption identifier.</p>
-     */
     inline UpdateTagOptionRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The updated value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The updated value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The updated value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The updated value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The updated value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The updated value.</p>
-     */
     inline UpdateTagOptionRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The updated value.</p>
-     */
     inline UpdateTagOptionRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The updated value.</p>
-     */
     inline UpdateTagOptionRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The updated active state.</p>
      */
     inline bool GetActive() const{ return m_active; }
-
-    /**
-     * <p>The updated active state.</p>
-     */
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
-
-    /**
-     * <p>The updated active state.</p>
-     */
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
-
-    /**
-     * <p>The updated active state.</p>
-     */
     inline UpdateTagOptionRequest& WithActive(bool value) { SetActive(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

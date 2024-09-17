@@ -23,8 +23,8 @@ AwsLambdaFunctionDeadLetterConfig::AwsLambdaFunctionDeadLetterConfig() :
 {
 }
 
-AwsLambdaFunctionDeadLetterConfig::AwsLambdaFunctionDeadLetterConfig(JsonView jsonValue) : 
-    m_targetArnHasBeenSet(false)
+AwsLambdaFunctionDeadLetterConfig::AwsLambdaFunctionDeadLetterConfig(JsonView jsonValue)
+  : AwsLambdaFunctionDeadLetterConfig()
 {
   *this = jsonValue;
 }

@@ -33,89 +33,40 @@ namespace Model
     AWS_EBS_API PutSnapshotBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
-
-    /**
-     * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-     */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-
-    /**
-     * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-     */
     inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-
-    /**
-     * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-     */
     inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-
-    /**
-     * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-     */
     inline PutSnapshotBlockResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-
-    /**
-     * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-     */
     inline PutSnapshotBlockResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-
-    /**
-     * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-     */
     inline PutSnapshotBlockResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The algorithm used by Amazon EBS to generate the checksum.</p>
      */
     inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
-
-    /**
-     * <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-     */
     inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithm = value; }
-
-    /**
-     * <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-     */
     inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithm = std::move(value); }
-
-    /**
-     * <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-     */
     inline PutSnapshotBlockResult& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
-
-    /**
-     * <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-     */
     inline PutSnapshotBlockResult& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutSnapshotBlockResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutSnapshotBlockResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutSnapshotBlockResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_checksum;

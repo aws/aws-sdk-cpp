@@ -18,7 +18,8 @@ UpdateContactRoutingDataRequest::UpdateContactRoutingDataRequest() :
     m_queueTimeAdjustmentSeconds(0),
     m_queueTimeAdjustmentSecondsHasBeenSet(false),
     m_queuePriority(0),
-    m_queuePriorityHasBeenSet(false)
+    m_queuePriorityHasBeenSet(false),
+    m_routingCriteriaHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,12 @@ Aws::String UpdateContactRoutingDataRequest::SerializePayload() const
   if(m_queuePriorityHasBeenSet)
   {
    payload.WithInt64("QueuePriority", m_queuePriority);
+
+  }
+
+  if(m_routingCriteriaHasBeenSet)
+  {
+   payload.WithObject("RoutingCriteria", m_routingCriteria.Jsonize());
 
   }
 

@@ -26,11 +26,8 @@ BatchGetRecordError::BatchGetRecordError() :
 {
 }
 
-BatchGetRecordError::BatchGetRecordError(JsonView jsonValue) : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchGetRecordError::BatchGetRecordError(JsonView jsonValue)
+  : BatchGetRecordError()
 {
   *this = jsonValue;
 }

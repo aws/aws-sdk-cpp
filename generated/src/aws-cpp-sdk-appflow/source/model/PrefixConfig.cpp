@@ -27,12 +27,8 @@ PrefixConfig::PrefixConfig() :
 {
 }
 
-PrefixConfig::PrefixConfig(JsonView jsonValue) : 
-    m_prefixType(PrefixType::NOT_SET),
-    m_prefixTypeHasBeenSet(false),
-    m_prefixFormat(PrefixFormat::NOT_SET),
-    m_prefixFormatHasBeenSet(false),
-    m_pathPrefixHierarchyHasBeenSet(false)
+PrefixConfig::PrefixConfig(JsonView jsonValue)
+  : PrefixConfig()
 {
   *this = jsonValue;
 }

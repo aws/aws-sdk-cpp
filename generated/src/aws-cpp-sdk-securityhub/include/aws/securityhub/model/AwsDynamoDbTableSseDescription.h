@@ -38,209 +38,75 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * key was inaccessible.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetInaccessibleEncryptionDateTime() const{ return m_inaccessibleEncryptionDateTime; }
-
-    /**
-     * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline bool InaccessibleEncryptionDateTimeHasBeenSet() const { return m_inaccessibleEncryptionDateTimeHasBeenSet; }
-
-    /**
-     * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetInaccessibleEncryptionDateTime(const Aws::String& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = value; }
-
-    /**
-     * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetInaccessibleEncryptionDateTime(Aws::String&& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = std::move(value); }
-
-    /**
-     * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline void SetInaccessibleEncryptionDateTime(const char* value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime.assign(value); }
-
-    /**
-     * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(const Aws::String& value) { SetInaccessibleEncryptionDateTime(value); return *this;}
-
-    /**
-     * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(Aws::String&& value) { SetInaccessibleEncryptionDateTime(std::move(value)); return *this;}
-
-    /**
-     * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
-     * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
-     * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
-     * time should be separated by <code>T</code>. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(const char* value) { SetInaccessibleEncryptionDateTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the server-side encryption.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the server-side encryption.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the server-side encryption.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the server-side encryption.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the server-side encryption.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The status of the server-side encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the server-side encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the server-side encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of server-side encryption.</p>
      */
     inline const Aws::String& GetSseType() const{ return m_sseType; }
-
-    /**
-     * <p>The type of server-side encryption.</p>
-     */
     inline bool SseTypeHasBeenSet() const { return m_sseTypeHasBeenSet; }
-
-    /**
-     * <p>The type of server-side encryption.</p>
-     */
     inline void SetSseType(const Aws::String& value) { m_sseTypeHasBeenSet = true; m_sseType = value; }
-
-    /**
-     * <p>The type of server-side encryption.</p>
-     */
     inline void SetSseType(Aws::String&& value) { m_sseTypeHasBeenSet = true; m_sseType = std::move(value); }
-
-    /**
-     * <p>The type of server-side encryption.</p>
-     */
     inline void SetSseType(const char* value) { m_sseTypeHasBeenSet = true; m_sseType.assign(value); }
-
-    /**
-     * <p>The type of server-side encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithSseType(const Aws::String& value) { SetSseType(value); return *this;}
-
-    /**
-     * <p>The type of server-side encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithSseType(Aws::String&& value) { SetSseType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of server-side encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithSseType(const char* value) { SetSseType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
     inline const Aws::String& GetKmsMasterKeyArn() const{ return m_kmsMasterKeyArn; }
-
-    /**
-     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-     */
     inline bool KmsMasterKeyArnHasBeenSet() const { return m_kmsMasterKeyArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-     */
     inline void SetKmsMasterKeyArn(const Aws::String& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = value; }
-
-    /**
-     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-     */
     inline void SetKmsMasterKeyArn(Aws::String&& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-     */
     inline void SetKmsMasterKeyArn(const char* value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn.assign(value); }
-
-    /**
-     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(const Aws::String& value) { SetKmsMasterKeyArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(Aws::String&& value) { SetKmsMasterKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-     */
     inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(const char* value) { SetKmsMasterKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inaccessibleEncryptionDateTime;

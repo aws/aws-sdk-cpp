@@ -13,14 +13,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateApplicationRequest::CreateApplicationRequest() : 
-    m_attachmentsConfigurationHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_identityType(IdentityType::NOT_SET),
+    m_identityTypeHasBeenSet(false),
+    m_iamIdentityProviderArnHasBeenSet(false),
+    m_identityCenterInstanceArnHasBeenSet(false),
+    m_clientIdsForOIDCHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_attachmentsConfigurationHasBeenSet(false),
+    m_qAppsConfigurationHasBeenSet(false),
+    m_personalizationConfigurationHasBeenSet(false)
 {
 }
 
@@ -28,15 +35,43 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_attachmentsConfigurationHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   payload.WithObject("attachmentsConfiguration", m_attachmentsConfiguration.Jsonize());
+   payload.WithString("displayName", m_displayName);
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_identityTypeHasBeenSet)
+  {
+   payload.WithString("identityType", IdentityTypeMapper::GetNameForIdentityType(m_identityType));
+  }
+
+  if(m_iamIdentityProviderArnHasBeenSet)
+  {
+   payload.WithString("iamIdentityProviderArn", m_iamIdentityProviderArn);
+
+  }
+
+  if(m_identityCenterInstanceArnHasBeenSet)
+  {
+   payload.WithString("identityCenterInstanceArn", m_identityCenterInstanceArn);
+
+  }
+
+  if(m_clientIdsForOIDCHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> clientIdsForOIDCJsonList(m_clientIdsForOIDC.size());
+   for(unsigned clientIdsForOIDCIndex = 0; clientIdsForOIDCIndex < clientIdsForOIDCJsonList.GetLength(); ++clientIdsForOIDCIndex)
+   {
+     clientIdsForOIDCJsonList[clientIdsForOIDCIndex].AsString(m_clientIdsForOIDC[clientIdsForOIDCIndex]);
+   }
+   payload.WithArray("clientIdsForOIDC", std::move(clientIdsForOIDCJsonList));
 
   }
 
@@ -46,21 +81,9 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
-
-  }
-
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -72,6 +95,30 @@ Aws::String CreateApplicationRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_attachmentsConfigurationHasBeenSet)
+  {
+   payload.WithObject("attachmentsConfiguration", m_attachmentsConfiguration.Jsonize());
+
+  }
+
+  if(m_qAppsConfigurationHasBeenSet)
+  {
+   payload.WithObject("qAppsConfiguration", m_qAppsConfiguration.Jsonize());
+
+  }
+
+  if(m_personalizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("personalizationConfiguration", m_personalizationConfiguration.Jsonize());
 
   }
 

@@ -38,46 +38,19 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data in a row of query results.</p>
      */
     inline const Aws::Vector<Aws::Utils::Document>& GetRowData() const{ return m_rowData; }
-
-    /**
-     * <p>The data in a row of query results.</p>
-     */
     inline bool RowDataHasBeenSet() const { return m_rowDataHasBeenSet; }
-
-    /**
-     * <p>The data in a row of query results.</p>
-     */
     inline void SetRowData(const Aws::Vector<Aws::Utils::Document>& value) { m_rowDataHasBeenSet = true; m_rowData = value; }
-
-    /**
-     * <p>The data in a row of query results.</p>
-     */
     inline void SetRowData(Aws::Vector<Aws::Utils::Document>&& value) { m_rowDataHasBeenSet = true; m_rowData = std::move(value); }
-
-    /**
-     * <p>The data in a row of query results.</p>
-     */
     inline Row& WithRowData(const Aws::Vector<Aws::Utils::Document>& value) { SetRowData(value); return *this;}
-
-    /**
-     * <p>The data in a row of query results.</p>
-     */
     inline Row& WithRowData(Aws::Vector<Aws::Utils::Document>&& value) { SetRowData(std::move(value)); return *this;}
-
-    /**
-     * <p>The data in a row of query results.</p>
-     */
     inline Row& AddRowData(const Aws::Utils::Document& value) { m_rowDataHasBeenSet = true; m_rowData.push_back(value); return *this; }
-
-    /**
-     * <p>The data in a row of query results.</p>
-     */
     inline Row& AddRowData(Aws::Utils::Document&& value) { m_rowDataHasBeenSet = true; m_rowData.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::Utils::Document> m_rowData;

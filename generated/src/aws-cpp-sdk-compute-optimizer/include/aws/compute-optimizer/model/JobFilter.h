@@ -46,6 +46,7 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
      * export jobs of a specific resource type (for example,
@@ -53,48 +54,14 @@ namespace Model
      * export jobs with a specific status (e.g, <code>Complete</code>).</p>
      */
     inline const JobFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (for example,
-     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
-     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (for example,
-     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
-     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
-     */
     inline void SetName(const JobFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (for example,
-     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
-     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
-     */
     inline void SetName(JobFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (for example,
-     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
-     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
-     */
     inline JobFilter& WithName(const JobFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (for example,
-     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
-     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
-     */
     inline JobFilter& WithName(JobFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the filter.</p> <p>The valid values for this parameter are as
      * follows, depending on what you specify for the <code>name</code> parameter:</p>
@@ -107,111 +74,15 @@ namespace Model
      * </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline JobFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline JobFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline JobFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline JobFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values for this parameter are as
-     * follows, depending on what you specify for the <code>name</code> parameter:</p>
-     * <ul> <li> <p>Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code>
-     * if you specify the <code>name</code> parameter as <code>ResourceType</code>.
-     * There is no filter for EBS volumes because volume recommendations cannot be
-     * exported at this time.</p> </li> <li> <p>Specify <code>Queued</code>,
-     * <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specify the <code>name</code> parameter as <code>JobStatus</code>.</p> </li>
-     * </ul>
-     */
     inline JobFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     JobFilterName m_name;

@@ -32,103 +32,35 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The name of the custom metric. Cannot be updated. </p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p> The name of the custom metric. Cannot be updated. </p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p> The name of the custom metric. Cannot be updated. </p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p> The name of the custom metric. Cannot be updated. </p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p> The name of the custom metric. Cannot be updated. </p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p> The name of the custom metric. Cannot be updated. </p>
-     */
     inline UpdateCustomMetricRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p> The name of the custom metric. Cannot be updated. </p>
-     */
     inline UpdateCustomMetricRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the custom metric. Cannot be updated. </p>
-     */
     inline UpdateCustomMetricRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Field represents a friendly name in the console for the custom metric, it
      * doesn't have to be unique. Don't use this name as the metric identifier in the
      * device metric report. Can be updated. </p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p> Field represents a friendly name in the console for the custom metric, it
-     * doesn't have to be unique. Don't use this name as the metric identifier in the
-     * device metric report. Can be updated. </p>
-     */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p> Field represents a friendly name in the console for the custom metric, it
-     * doesn't have to be unique. Don't use this name as the metric identifier in the
-     * device metric report. Can be updated. </p>
-     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p> Field represents a friendly name in the console for the custom metric, it
-     * doesn't have to be unique. Don't use this name as the metric identifier in the
-     * device metric report. Can be updated. </p>
-     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p> Field represents a friendly name in the console for the custom metric, it
-     * doesn't have to be unique. Don't use this name as the metric identifier in the
-     * device metric report. Can be updated. </p>
-     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p> Field represents a friendly name in the console for the custom metric, it
-     * doesn't have to be unique. Don't use this name as the metric identifier in the
-     * device metric report. Can be updated. </p>
-     */
     inline UpdateCustomMetricRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p> Field represents a friendly name in the console for the custom metric, it
-     * doesn't have to be unique. Don't use this name as the metric identifier in the
-     * device metric report. Can be updated. </p>
-     */
     inline UpdateCustomMetricRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p> Field represents a friendly name in the console for the custom metric, it
-     * doesn't have to be unique. Don't use this name as the metric identifier in the
-     * device metric report. Can be updated. </p>
-     */
     inline UpdateCustomMetricRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricName;

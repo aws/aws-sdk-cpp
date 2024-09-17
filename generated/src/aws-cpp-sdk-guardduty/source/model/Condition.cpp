@@ -32,17 +32,8 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(JsonView jsonValue) : 
-    m_equalsHasBeenSet(false),
-    m_notEqualsHasBeenSet(false),
-    m_greaterThan(0),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqual(0),
-    m_greaterThanOrEqualHasBeenSet(false),
-    m_lessThan(0),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqual(0),
-    m_lessThanOrEqualHasBeenSet(false)
+Condition::Condition(JsonView jsonValue)
+  : Condition()
 {
   *this = jsonValue;
 }

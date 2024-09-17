@@ -42,27 +42,8 @@ OriginEndpoint::OriginEndpoint() :
 {
 }
 
-OriginEndpoint::OriginEndpoint(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_authorizationHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
-    m_cmafPackageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dashPackageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hlsPackageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_mssPackageHasBeenSet(false),
-    m_origination(Origination::NOT_SET),
-    m_originationHasBeenSet(false),
-    m_startoverWindowSeconds(0),
-    m_startoverWindowSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_timeDelaySeconds(0),
-    m_timeDelaySecondsHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_whitelistHasBeenSet(false)
+OriginEndpoint::OriginEndpoint(JsonView jsonValue)
+  : OriginEndpoint()
 {
   *this = jsonValue;
 }

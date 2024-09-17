@@ -23,8 +23,8 @@ ModelInput::ModelInput() :
 {
 }
 
-ModelInput::ModelInput(JsonView jsonValue) : 
-    m_dataInputConfigHasBeenSet(false)
+ModelInput::ModelInput(JsonView jsonValue)
+  : ModelInput()
 {
   *this = jsonValue;
 }

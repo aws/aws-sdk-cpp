@@ -39,132 +39,47 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
      * and the current public key is returned.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>Optionally specifies, in UTC, the start of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>Optionally specifies, in UTC, the start of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>Optionally specifies, in UTC, the start of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>Optionally specifies, in UTC, the start of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned.</p>
-     */
     inline ListPublicKeysRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>Optionally specifies, in UTC, the start of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned.</p>
-     */
     inline ListPublicKeysRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is
      * used.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is
-     * used.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is
-     * used.</p>
-     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is
-     * used.</p>
-     */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is
-     * used.</p>
-     */
     inline ListPublicKeysRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is
-     * used.</p>
-     */
     inline ListPublicKeysRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListPublicKeysRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListPublicKeysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Reserved for future use.</p>
-     */
     inline ListPublicKeysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startTime;

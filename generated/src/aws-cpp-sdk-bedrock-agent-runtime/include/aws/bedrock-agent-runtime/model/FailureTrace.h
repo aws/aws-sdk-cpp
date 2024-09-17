@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Trace Part which is emitted when agent trace could not be
-   * generated</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the failure of the interaction.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FailureTrace">AWS
    * API Reference</a></p>
    */
@@ -38,62 +38,40 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
-    inline const Aws::String& GetTraceId() const{ return m_traceId; }
-
-    
-    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-
-    
-    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-
-    
-    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-
-    
-    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-
-    
-    inline FailureTrace& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-
-    
-    inline FailureTrace& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-
-    
-    inline FailureTrace& WithTraceId(const char* value) { SetTraceId(value); return *this;}
-
-
-    
+    ///@{
+    /**
+     * <p>The reason the interaction failed.</p>
+     */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-
-    
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-
-    
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-
-    
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-
-    
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-
-    
     inline FailureTrace& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-
-    
     inline FailureTrace& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-
-    
     inline FailureTrace& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The unique identifier of the trace.</p>
+     */
+    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
+    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
+    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
+    inline FailureTrace& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
+    inline FailureTrace& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
+    inline FailureTrace& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_traceId;
-    bool m_traceIdHasBeenSet = false;
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
+
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet = false;
   };
 
 } // namespace Model

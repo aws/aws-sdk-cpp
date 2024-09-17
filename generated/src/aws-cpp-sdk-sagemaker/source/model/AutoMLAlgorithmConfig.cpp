@@ -23,8 +23,8 @@ AutoMLAlgorithmConfig::AutoMLAlgorithmConfig() :
 {
 }
 
-AutoMLAlgorithmConfig::AutoMLAlgorithmConfig(JsonView jsonValue) : 
-    m_autoMLAlgorithmsHasBeenSet(false)
+AutoMLAlgorithmConfig::AutoMLAlgorithmConfig(JsonView jsonValue)
+  : AutoMLAlgorithmConfig()
 {
   *this = jsonValue;
 }

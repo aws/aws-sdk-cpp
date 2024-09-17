@@ -23,8 +23,8 @@ EndpointNetworkConfiguration::EndpointNetworkConfiguration() :
 {
 }
 
-EndpointNetworkConfiguration::EndpointNetworkConfiguration(JsonView jsonValue) : 
-    m_ipAddressesHasBeenSet(false)
+EndpointNetworkConfiguration::EndpointNetworkConfiguration(JsonView jsonValue)
+  : EndpointNetworkConfiguration()
 {
   *this = jsonValue;
 }

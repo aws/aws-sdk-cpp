@@ -24,9 +24,8 @@ ServiceActionDetail::ServiceActionDetail() :
 {
 }
 
-ServiceActionDetail::ServiceActionDetail(JsonView jsonValue) : 
-    m_serviceActionSummaryHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+ServiceActionDetail::ServiceActionDetail(JsonView jsonValue)
+  : ServiceActionDetail()
 {
   *this = jsonValue;
 }

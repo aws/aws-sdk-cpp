@@ -25,6 +25,8 @@ CollectionDetail::CollectionDetail() :
     m_createdDateHasBeenSet(false),
     m_dashboardEndpointHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_failureCodeHasBeenSet(false),
+    m_failureMessageHasBeenSet(false),
     m_idHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false),
     m_lastModifiedDate(0),
@@ -39,24 +41,8 @@ CollectionDetail::CollectionDetail() :
 {
 }
 
-CollectionDetail::CollectionDetail(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_collectionEndpointHasBeenSet(false),
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_dashboardEndpointHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_standbyReplicas(StandbyReplicas::NOT_SET),
-    m_standbyReplicasHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(CollectionType::NOT_SET),
-    m_typeHasBeenSet(false)
+CollectionDetail::CollectionDetail(JsonView jsonValue)
+  : CollectionDetail()
 {
   *this = jsonValue;
 }
@@ -96,6 +82,20 @@ CollectionDetail& CollectionDetail::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = jsonValue.GetString("failureCode");
+
+    m_failureCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+
+    m_failureMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -181,6 +181,18 @@ JsonValue CollectionDetail::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithString("failureCode", m_failureCode);
+
+  }
+
+  if(m_failureMessageHasBeenSet)
+  {
+   payload.WithString("failureMessage", m_failureMessage);
 
   }
 

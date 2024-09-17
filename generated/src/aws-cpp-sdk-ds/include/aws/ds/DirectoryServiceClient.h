@@ -786,13 +786,13 @@ namespace DirectoryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDirectoriesOutcome DescribeDirectories(const Model::DescribeDirectoriesRequest& request) const;
+        virtual Model::DescribeDirectoriesOutcome DescribeDirectories(const Model::DescribeDirectoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDirectories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDirectoriesRequestT = Model::DescribeDirectoriesRequest>
-        Model::DescribeDirectoriesOutcomeCallable DescribeDirectoriesCallable(const DescribeDirectoriesRequestT& request) const
+        Model::DescribeDirectoriesOutcomeCallable DescribeDirectoriesCallable(const DescribeDirectoriesRequestT& request = {}) const
         {
             return SubmitCallable(&DirectoryServiceClient::DescribeDirectories, request);
         }
@@ -801,7 +801,7 @@ namespace DirectoryService
          * An Async wrapper for DescribeDirectories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDirectoriesRequestT = Model::DescribeDirectoriesRequest>
-        void DescribeDirectoriesAsync(const DescribeDirectoriesRequestT& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDirectoriesAsync(const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDirectoriesRequestT& request = {}) const
         {
             return SubmitAsync(&DirectoryServiceClient::DescribeDirectories, request, handler, context);
         }
@@ -840,13 +840,13 @@ namespace DirectoryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventTopicsOutcome DescribeEventTopics(const Model::DescribeEventTopicsRequest& request) const;
+        virtual Model::DescribeEventTopicsOutcome DescribeEventTopics(const Model::DescribeEventTopicsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventTopics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventTopicsRequestT = Model::DescribeEventTopicsRequest>
-        Model::DescribeEventTopicsOutcomeCallable DescribeEventTopicsCallable(const DescribeEventTopicsRequestT& request) const
+        Model::DescribeEventTopicsOutcomeCallable DescribeEventTopicsCallable(const DescribeEventTopicsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectoryServiceClient::DescribeEventTopics, request);
         }
@@ -855,7 +855,7 @@ namespace DirectoryService
          * An Async wrapper for DescribeEventTopics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventTopicsRequestT = Model::DescribeEventTopicsRequest>
-        void DescribeEventTopicsAsync(const DescribeEventTopicsRequestT& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventTopicsAsync(const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventTopicsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectoryServiceClient::DescribeEventTopics, request, handler, context);
         }
@@ -975,13 +975,13 @@ namespace DirectoryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
+        virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSnapshotsRequestT = Model::DescribeSnapshotsRequest>
-        Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const DescribeSnapshotsRequestT& request) const
+        Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const DescribeSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectoryServiceClient::DescribeSnapshots, request);
         }
@@ -990,7 +990,7 @@ namespace DirectoryService
          * An Async wrapper for DescribeSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSnapshotsRequestT = Model::DescribeSnapshotsRequest>
-        void DescribeSnapshotsAsync(const DescribeSnapshotsRequestT& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSnapshotsAsync(const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectoryServiceClient::DescribeSnapshots, request, handler, context);
         }
@@ -1003,13 +1003,13 @@ namespace DirectoryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeTrustsOutcome DescribeTrusts(const Model::DescribeTrustsRequest& request) const;
+        virtual Model::DescribeTrustsOutcome DescribeTrusts(const Model::DescribeTrustsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeTrusts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeTrustsRequestT = Model::DescribeTrustsRequest>
-        Model::DescribeTrustsOutcomeCallable DescribeTrustsCallable(const DescribeTrustsRequestT& request) const
+        Model::DescribeTrustsOutcomeCallable DescribeTrustsCallable(const DescribeTrustsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectoryServiceClient::DescribeTrusts, request);
         }
@@ -1018,7 +1018,7 @@ namespace DirectoryService
          * An Async wrapper for DescribeTrusts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeTrustsRequestT = Model::DescribeTrustsRequest>
-        void DescribeTrustsAsync(const DescribeTrustsRequestT& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeTrustsAsync(const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeTrustsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectoryServiceClient::DescribeTrusts, request, handler, context);
         }
@@ -1266,13 +1266,13 @@ namespace DirectoryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDirectoryLimitsOutcome GetDirectoryLimits(const Model::GetDirectoryLimitsRequest& request) const;
+        virtual Model::GetDirectoryLimitsOutcome GetDirectoryLimits(const Model::GetDirectoryLimitsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDirectoryLimits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDirectoryLimitsRequestT = Model::GetDirectoryLimitsRequest>
-        Model::GetDirectoryLimitsOutcomeCallable GetDirectoryLimitsCallable(const GetDirectoryLimitsRequestT& request) const
+        Model::GetDirectoryLimitsOutcomeCallable GetDirectoryLimitsCallable(const GetDirectoryLimitsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectoryServiceClient::GetDirectoryLimits, request);
         }
@@ -1281,7 +1281,7 @@ namespace DirectoryService
          * An Async wrapper for GetDirectoryLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDirectoryLimitsRequestT = Model::GetDirectoryLimitsRequest>
-        void GetDirectoryLimitsAsync(const GetDirectoryLimitsRequestT& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDirectoryLimitsAsync(const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDirectoryLimitsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectoryServiceClient::GetDirectoryLimits, request, handler, context);
         }
@@ -1370,13 +1370,13 @@ namespace DirectoryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLogSubscriptionsOutcome ListLogSubscriptions(const Model::ListLogSubscriptionsRequest& request) const;
+        virtual Model::ListLogSubscriptionsOutcome ListLogSubscriptions(const Model::ListLogSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLogSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLogSubscriptionsRequestT = Model::ListLogSubscriptionsRequest>
-        Model::ListLogSubscriptionsOutcomeCallable ListLogSubscriptionsCallable(const ListLogSubscriptionsRequestT& request) const
+        Model::ListLogSubscriptionsOutcomeCallable ListLogSubscriptionsCallable(const ListLogSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&DirectoryServiceClient::ListLogSubscriptions, request);
         }
@@ -1385,7 +1385,7 @@ namespace DirectoryService
          * An Async wrapper for ListLogSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLogSubscriptionsRequestT = Model::ListLogSubscriptionsRequest>
-        void ListLogSubscriptionsAsync(const ListLogSubscriptionsRequestT& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLogSubscriptionsAsync(const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLogSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&DirectoryServiceClient::ListLogSubscriptions, request, handler, context);
         }
@@ -1958,7 +1958,6 @@ namespace DirectoryService
       void init(const DirectoryServiceClientConfiguration& clientConfiguration);
 
       DirectoryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DirectoryServiceEndpointProviderBase> m_endpointProvider;
   };
 

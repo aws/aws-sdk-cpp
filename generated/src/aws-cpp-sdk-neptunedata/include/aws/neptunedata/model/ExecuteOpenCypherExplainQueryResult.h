@@ -37,38 +37,25 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>A text blob containing the openCypher <code>explain</code> results.</p>
      */
     inline Aws::IOStream& GetResults() const { return m_results.GetUnderlyingStream(); }
-
-    /**
-     * <p>A text blob containing the openCypher <code>explain</code> results.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_results = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExecuteOpenCypherExplainQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExecuteOpenCypherExplainQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExecuteOpenCypherExplainQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_results;

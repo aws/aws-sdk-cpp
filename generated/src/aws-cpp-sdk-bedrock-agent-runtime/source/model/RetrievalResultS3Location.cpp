@@ -23,8 +23,8 @@ RetrievalResultS3Location::RetrievalResultS3Location() :
 {
 }
 
-RetrievalResultS3Location::RetrievalResultS3Location(JsonView jsonValue) : 
-    m_uriHasBeenSet(false)
+RetrievalResultS3Location::RetrievalResultS3Location(JsonView jsonValue)
+  : RetrievalResultS3Location()
 {
   *this = jsonValue;
 }

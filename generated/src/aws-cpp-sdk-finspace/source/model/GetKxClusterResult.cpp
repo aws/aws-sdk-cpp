@@ -24,10 +24,8 @@ GetKxClusterResult::GetKxClusterResult() :
 {
 }
 
-GetKxClusterResult::GetKxClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(KxClusterStatus::NOT_SET),
-    m_clusterType(KxClusterType::NOT_SET),
-    m_azMode(KxAzMode::NOT_SET)
+GetKxClusterResult::GetKxClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetKxClusterResult()
 {
   *this = result;
 }

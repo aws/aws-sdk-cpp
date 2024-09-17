@@ -56,7 +56,7 @@ namespace Aws
 
   namespace AugmentedAIRuntime
   {
-    using AugmentedAIRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AugmentedAIRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AugmentedAIRuntimeEndpointProviderBase = Aws::AugmentedAIRuntime::Endpoint::AugmentedAIRuntimeEndpointProviderBase;
     using AugmentedAIRuntimeEndpointProvider = Aws::AugmentedAIRuntime::Endpoint::AugmentedAIRuntimeEndpointProvider;
 

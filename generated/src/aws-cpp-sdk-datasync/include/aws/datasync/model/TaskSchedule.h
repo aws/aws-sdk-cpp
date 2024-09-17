@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/model/ScheduleStatus.h>
 #include <utility>
 
 namespace Aws
@@ -24,10 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the schedule you want your task to use for repeated executions. For
-   * more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-   * Expressions for Rules</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Configures your DataSync task to run on a <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">schedule</a>
+   * (at a minimum interval of 1 hour).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskSchedule">AWS
    * API Reference</a></p>
    */
@@ -40,58 +40,47 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
+     * <p>Specifies your task schedule by using a cron expression in UTC time. For
+     * information about cron expression syntax, see the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">
+     * <i>Amazon EventBridge User Guide</i> </a>.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
-
-    /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
-     */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-
-    /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
-     */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-
-    /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
-     */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-
-    /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
-     */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-
-    /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
-     */
     inline TaskSchedule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-
-    /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
-     */
     inline TaskSchedule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
-     * from a source to a destination location. </p>
-     */
     inline TaskSchedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Specifies whether to enable or disable your task schedule. Your schedule is
+     * enabled by default, but there can be situations where you need to disable it.
+     * For example, you might need to pause a recurring transfer to fix an issue with
+     * your task or perform maintenance on your storage system.</p> <p>DataSync might
+     * disable your schedule automatically if your task fails repeatedly with the same
+     * error. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.</p>
+     */
+    inline const ScheduleStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const ScheduleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ScheduleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline TaskSchedule& WithStatus(const ScheduleStatus& value) { SetStatus(value); return *this;}
+    inline TaskSchedule& WithStatus(ScheduleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet = false;
+
+    ScheduleStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

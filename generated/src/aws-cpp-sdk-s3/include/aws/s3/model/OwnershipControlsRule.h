@@ -38,24 +38,15 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     
     inline const ObjectOwnership& GetObjectOwnership() const{ return m_objectOwnership; }
-
-    
     inline bool ObjectOwnershipHasBeenSet() const { return m_objectOwnershipHasBeenSet; }
-
-    
     inline void SetObjectOwnership(const ObjectOwnership& value) { m_objectOwnershipHasBeenSet = true; m_objectOwnership = value; }
-
-    
     inline void SetObjectOwnership(ObjectOwnership&& value) { m_objectOwnershipHasBeenSet = true; m_objectOwnership = std::move(value); }
-
-    
     inline OwnershipControlsRule& WithObjectOwnership(const ObjectOwnership& value) { SetObjectOwnership(value); return *this;}
-
-    
     inline OwnershipControlsRule& WithObjectOwnership(ObjectOwnership&& value) { SetObjectOwnership(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObjectOwnership m_objectOwnership;

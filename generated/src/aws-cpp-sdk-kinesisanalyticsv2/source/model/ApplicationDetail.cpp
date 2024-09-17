@@ -38,6 +38,7 @@ ApplicationDetail::ApplicationDetail() :
     m_applicationVersionUpdatedFromHasBeenSet(false),
     m_applicationVersionRolledBackFrom(0),
     m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_applicationVersionCreateTimestampHasBeenSet(false),
     m_conditionalTokenHasBeenSet(false),
     m_applicationVersionRolledBackTo(0),
     m_applicationVersionRolledBackToHasBeenSet(false),
@@ -46,31 +47,8 @@ ApplicationDetail::ApplicationDetail() :
 {
 }
 
-ApplicationDetail::ApplicationDetail(JsonView jsonValue) : 
-    m_applicationARNHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
-    m_runtimeEnvironmentHasBeenSet(false),
-    m_serviceExecutionRoleHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false),
-    m_applicationVersionId(0),
-    m_applicationVersionIdHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_applicationConfigurationDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
-    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false),
-    m_applicationVersionUpdatedFrom(0),
-    m_applicationVersionUpdatedFromHasBeenSet(false),
-    m_applicationVersionRolledBackFrom(0),
-    m_applicationVersionRolledBackFromHasBeenSet(false),
-    m_conditionalTokenHasBeenSet(false),
-    m_applicationVersionRolledBackTo(0),
-    m_applicationVersionRolledBackToHasBeenSet(false),
-    m_applicationMode(ApplicationMode::NOT_SET),
-    m_applicationModeHasBeenSet(false)
+ApplicationDetail::ApplicationDetail(JsonView jsonValue)
+  : ApplicationDetail()
 {
   *this = jsonValue;
 }
@@ -176,6 +154,13 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_applicationVersionRolledBackFrom = jsonValue.GetInt64("ApplicationVersionRolledBackFrom");
 
     m_applicationVersionRolledBackFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionCreateTimestamp"))
+  {
+    m_applicationVersionCreateTimestamp = jsonValue.GetDouble("ApplicationVersionCreateTimestamp");
+
+    m_applicationVersionCreateTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ConditionalToken"))
@@ -289,6 +274,11 @@ JsonValue ApplicationDetail::Jsonize() const
   {
    payload.WithInt64("ApplicationVersionRolledBackFrom", m_applicationVersionRolledBackFrom);
 
+  }
+
+  if(m_applicationVersionCreateTimestampHasBeenSet)
+  {
+   payload.WithDouble("ApplicationVersionCreateTimestamp", m_applicationVersionCreateTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_conditionalTokenHasBeenSet)

@@ -51,35 +51,8 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(JsonView jsonValue) : 
-    m_ownerAccountHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectionState(ConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_partnerNameHasBeenSet(false),
-    m_loaIssueTimeHasBeenSet(false),
-    m_lagIdHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_macSecCapable(false),
-    m_macSecCapableHasBeenSet(false),
-    m_portEncryptionStatusHasBeenSet(false),
-    m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+Connection::Connection(JsonView jsonValue)
+  : Connection()
 {
   *this = jsonValue;
 }

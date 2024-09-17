@@ -38,67 +38,29 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The challenge name.</p>
      */
     inline const ChallengeName& GetChallengeName() const{ return m_challengeName; }
-
-    /**
-     * <p>The challenge name.</p>
-     */
     inline bool ChallengeNameHasBeenSet() const { return m_challengeNameHasBeenSet; }
-
-    /**
-     * <p>The challenge name.</p>
-     */
     inline void SetChallengeName(const ChallengeName& value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
-
-    /**
-     * <p>The challenge name.</p>
-     */
     inline void SetChallengeName(ChallengeName&& value) { m_challengeNameHasBeenSet = true; m_challengeName = std::move(value); }
-
-    /**
-     * <p>The challenge name.</p>
-     */
     inline ChallengeResponseType& WithChallengeName(const ChallengeName& value) { SetChallengeName(value); return *this;}
-
-    /**
-     * <p>The challenge name.</p>
-     */
     inline ChallengeResponseType& WithChallengeName(ChallengeName&& value) { SetChallengeName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The challenge response.</p>
      */
     inline const ChallengeResponse& GetChallengeResponse() const{ return m_challengeResponse; }
-
-    /**
-     * <p>The challenge response.</p>
-     */
     inline bool ChallengeResponseHasBeenSet() const { return m_challengeResponseHasBeenSet; }
-
-    /**
-     * <p>The challenge response.</p>
-     */
     inline void SetChallengeResponse(const ChallengeResponse& value) { m_challengeResponseHasBeenSet = true; m_challengeResponse = value; }
-
-    /**
-     * <p>The challenge response.</p>
-     */
     inline void SetChallengeResponse(ChallengeResponse&& value) { m_challengeResponseHasBeenSet = true; m_challengeResponse = std::move(value); }
-
-    /**
-     * <p>The challenge response.</p>
-     */
     inline ChallengeResponseType& WithChallengeResponse(const ChallengeResponse& value) { SetChallengeResponse(value); return *this;}
-
-    /**
-     * <p>The challenge response.</p>
-     */
     inline ChallengeResponseType& WithChallengeResponse(ChallengeResponse&& value) { SetChallengeResponse(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChallengeName m_challengeName;

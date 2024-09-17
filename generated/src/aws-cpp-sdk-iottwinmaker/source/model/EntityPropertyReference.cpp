@@ -27,12 +27,8 @@ EntityPropertyReference::EntityPropertyReference() :
 {
 }
 
-EntityPropertyReference::EntityPropertyReference(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_componentPathHasBeenSet(false),
-    m_externalIdPropertyHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_propertyNameHasBeenSet(false)
+EntityPropertyReference::EntityPropertyReference(JsonView jsonValue)
+  : EntityPropertyReference()
 {
   *this = jsonValue;
 }

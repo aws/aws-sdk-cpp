@@ -19,27 +19,25 @@ namespace Model
 {
 
 SessionKeyEmvCommon::SessionKeyEmvCommon() : 
-    m_applicationTransactionCounterHasBeenSet(false),
+    m_primaryAccountNumberHasBeenSet(false),
     m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+    m_applicationTransactionCounterHasBeenSet(false)
 {
 }
 
-SessionKeyEmvCommon::SessionKeyEmvCommon(JsonView jsonValue) : 
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false)
+SessionKeyEmvCommon::SessionKeyEmvCommon(JsonView jsonValue)
+  : SessionKeyEmvCommon()
 {
   *this = jsonValue;
 }
 
 SessionKeyEmvCommon& SessionKeyEmvCommon::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
+  if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
-    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
+    m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
 
-    m_applicationTransactionCounterHasBeenSet = true;
+    m_primaryAccountNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PanSequenceNumber"))
@@ -49,11 +47,11 @@ SessionKeyEmvCommon& SessionKeyEmvCommon::operator =(JsonView jsonValue)
     m_panSequenceNumberHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PrimaryAccountNumber"))
+  if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
-    m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
+    m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
 
-    m_primaryAccountNumberHasBeenSet = true;
+    m_applicationTransactionCounterHasBeenSet = true;
   }
 
   return *this;
@@ -63,9 +61,9 @@ JsonValue SessionKeyEmvCommon::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_applicationTransactionCounterHasBeenSet)
+  if(m_primaryAccountNumberHasBeenSet)
   {
-   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
+   payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
 
   }
 
@@ -75,9 +73,9 @@ JsonValue SessionKeyEmvCommon::Jsonize() const
 
   }
 
-  if(m_primaryAccountNumberHasBeenSet)
+  if(m_applicationTransactionCounterHasBeenSet)
   {
-   payload.WithString("PrimaryAccountNumber", m_primaryAccountNumber);
+   payload.WithString("ApplicationTransactionCounter", m_applicationTransactionCounter);
 
   }
 

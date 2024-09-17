@@ -23,8 +23,8 @@ BulkEmailContent::BulkEmailContent() :
 {
 }
 
-BulkEmailContent::BulkEmailContent(JsonView jsonValue) : 
-    m_templateHasBeenSet(false)
+BulkEmailContent::BulkEmailContent(JsonView jsonValue)
+  : BulkEmailContent()
 {
   *this = jsonValue;
 }

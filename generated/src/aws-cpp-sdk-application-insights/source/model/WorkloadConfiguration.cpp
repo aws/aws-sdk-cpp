@@ -26,11 +26,8 @@ WorkloadConfiguration::WorkloadConfiguration() :
 {
 }
 
-WorkloadConfiguration::WorkloadConfiguration(JsonView jsonValue) : 
-    m_workloadNameHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+WorkloadConfiguration::WorkloadConfiguration(JsonView jsonValue)
+  : WorkloadConfiguration()
 {
   *this = jsonValue;
 }

@@ -33,16 +33,8 @@ InventoryConfiguration::InventoryConfiguration() :
 {
 }
 
-InventoryConfiguration::InventoryConfiguration(const XmlNode& xmlNode) : 
-    m_destinationHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_includedObjectVersions(InventoryIncludedObjectVersions::NOT_SET),
-    m_includedObjectVersionsHasBeenSet(false),
-    m_optionalFieldsHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
+InventoryConfiguration::InventoryConfiguration(const XmlNode& xmlNode)
+  : InventoryConfiguration()
 {
   *this = xmlNode;
 }

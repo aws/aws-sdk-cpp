@@ -24,9 +24,8 @@ DataPointTooltipOption::DataPointTooltipOption() :
 {
 }
 
-DataPointTooltipOption::DataPointTooltipOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+DataPointTooltipOption::DataPointTooltipOption(JsonView jsonValue)
+  : DataPointTooltipOption()
 {
   *this = jsonValue;
 }

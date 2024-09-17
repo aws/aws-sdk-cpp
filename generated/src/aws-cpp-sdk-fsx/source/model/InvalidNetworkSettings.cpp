@@ -26,11 +26,8 @@ InvalidNetworkSettings::InvalidNetworkSettings() :
 {
 }
 
-InvalidNetworkSettings::InvalidNetworkSettings(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_invalidSubnetIdHasBeenSet(false),
-    m_invalidSecurityGroupIdHasBeenSet(false),
-    m_invalidRouteTableIdHasBeenSet(false)
+InvalidNetworkSettings::InvalidNetworkSettings(JsonView jsonValue)
+  : InvalidNetworkSettings()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CodeError::CodeError() :
 {
 }
 
-CodeError::CodeError(JsonView jsonValue) : 
-    m_errorTypeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_locationHasBeenSet(false)
+CodeError::CodeError(JsonView jsonValue)
+  : CodeError()
 {
   *this = jsonValue;
 }

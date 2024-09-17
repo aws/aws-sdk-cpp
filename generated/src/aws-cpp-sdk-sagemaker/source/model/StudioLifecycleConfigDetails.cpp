@@ -28,13 +28,8 @@ StudioLifecycleConfigDetails::StudioLifecycleConfigDetails() :
 {
 }
 
-StudioLifecycleConfigDetails::StudioLifecycleConfigDetails(JsonView jsonValue) : 
-    m_studioLifecycleConfigArnHasBeenSet(false),
-    m_studioLifecycleConfigNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_studioLifecycleConfigAppType(StudioLifecycleConfigAppType::NOT_SET),
-    m_studioLifecycleConfigAppTypeHasBeenSet(false)
+StudioLifecycleConfigDetails::StudioLifecycleConfigDetails(JsonView jsonValue)
+  : StudioLifecycleConfigDetails()
 {
   *this = jsonValue;
 }

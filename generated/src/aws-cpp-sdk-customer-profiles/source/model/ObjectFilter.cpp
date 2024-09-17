@@ -24,9 +24,8 @@ ObjectFilter::ObjectFilter() :
 {
 }
 
-ObjectFilter::ObjectFilter(JsonView jsonValue) : 
-    m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ObjectFilter::ObjectFilter(JsonView jsonValue)
+  : ObjectFilter()
 {
   *this = jsonValue;
 }

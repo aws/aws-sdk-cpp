@@ -26,11 +26,8 @@ LongRangeType::LongRangeType() :
 {
 }
 
-LongRangeType::LongRangeType(JsonView jsonValue) : 
-    m_startValue(0),
-    m_startValueHasBeenSet(false),
-    m_endValue(0),
-    m_endValueHasBeenSet(false)
+LongRangeType::LongRangeType(JsonView jsonValue)
+  : LongRangeType()
 {
   *this = jsonValue;
 }

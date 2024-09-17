@@ -38,23 +38,8 @@ AwsDmsReplicationInstanceDetails::AwsDmsReplicationInstanceDetails() :
 {
 }
 
-AwsDmsReplicationInstanceDetails::AwsDmsReplicationInstanceDetails(JsonView jsonValue) : 
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_replicationInstanceClassHasBeenSet(false),
-    m_replicationInstanceIdentifierHasBeenSet(false),
-    m_replicationSubnetGroupHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false)
+AwsDmsReplicationInstanceDetails::AwsDmsReplicationInstanceDetails(JsonView jsonValue)
+  : AwsDmsReplicationInstanceDetails()
 {
   *this = jsonValue;
 }

@@ -32,36 +32,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The request to create a field-level encryption profile.</p>
      */
     inline const FieldLevelEncryptionProfileConfig& GetFieldLevelEncryptionProfileConfig() const{ return m_fieldLevelEncryptionProfileConfig; }
-
-    /**
-     * <p>The request to create a field-level encryption profile.</p>
-     */
     inline bool FieldLevelEncryptionProfileConfigHasBeenSet() const { return m_fieldLevelEncryptionProfileConfigHasBeenSet; }
-
-    /**
-     * <p>The request to create a field-level encryption profile.</p>
-     */
     inline void SetFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = value; }
-
-    /**
-     * <p>The request to create a field-level encryption profile.</p>
-     */
     inline void SetFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = std::move(value); }
-
-    /**
-     * <p>The request to create a field-level encryption profile.</p>
-     */
     inline CreateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { SetFieldLevelEncryptionProfileConfig(value); return *this;}
-
-    /**
-     * <p>The request to create a field-level encryption profile.</p>
-     */
     inline CreateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { SetFieldLevelEncryptionProfileConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FieldLevelEncryptionProfileConfig m_fieldLevelEncryptionProfileConfig;

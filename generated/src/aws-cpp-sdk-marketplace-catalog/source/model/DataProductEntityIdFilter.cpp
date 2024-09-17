@@ -23,8 +23,8 @@ DataProductEntityIdFilter::DataProductEntityIdFilter() :
 {
 }
 
-DataProductEntityIdFilter::DataProductEntityIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+DataProductEntityIdFilter::DataProductEntityIdFilter(JsonView jsonValue)
+  : DataProductEntityIdFilter()
 {
   *this = jsonValue;
 }

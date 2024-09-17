@@ -10,6 +10,13 @@
 #include <metric/CloudWatchMetrics.h>
 
 int main(int argc, char *argv[]) {
+    if (1 == argc ||
+        (2 == argc && (std::string(argv[1]) == "-h" || std::string(argv[1]) == "--help" )))
+    {
+        Benchmark::Configuration::PrintHelp();
+        return 0;
+    }
+
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {

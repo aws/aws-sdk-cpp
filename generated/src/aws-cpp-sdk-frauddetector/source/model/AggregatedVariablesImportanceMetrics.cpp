@@ -23,8 +23,8 @@ AggregatedVariablesImportanceMetrics::AggregatedVariablesImportanceMetrics() :
 {
 }
 
-AggregatedVariablesImportanceMetrics::AggregatedVariablesImportanceMetrics(JsonView jsonValue) : 
-    m_logOddsMetricsHasBeenSet(false)
+AggregatedVariablesImportanceMetrics::AggregatedVariablesImportanceMetrics(JsonView jsonValue)
+  : AggregatedVariablesImportanceMetrics()
 {
   *this = jsonValue;
 }

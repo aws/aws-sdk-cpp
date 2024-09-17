@@ -33,122 +33,52 @@ namespace Model
     AWS_CLOUDFRONT_API CopyDistribution2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const Distribution& GetDistribution() const{ return m_distribution; }
-
-    
     inline void SetDistribution(const Distribution& value) { m_distribution = value; }
-
-    
     inline void SetDistribution(Distribution&& value) { m_distribution = std::move(value); }
-
-    
     inline CopyDistribution2020_05_31Result& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
-
-    
     inline CopyDistribution2020_05_31Result& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL of the staging distribution.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The URL of the staging distribution.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>The URL of the staging distribution.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>The URL of the staging distribution.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>The URL of the staging distribution.</p>
-     */
     inline CopyDistribution2020_05_31Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The URL of the staging distribution.</p>
-     */
     inline CopyDistribution2020_05_31Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of the staging distribution.</p>
-     */
     inline CopyDistribution2020_05_31Result& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version identifier for the current version of the staging
      * distribution.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The version identifier for the current version of the staging
-     * distribution.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The version identifier for the current version of the staging
-     * distribution.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The version identifier for the current version of the staging
-     * distribution.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The version identifier for the current version of the staging
-     * distribution.</p>
-     */
     inline CopyDistribution2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The version identifier for the current version of the staging
-     * distribution.</p>
-     */
     inline CopyDistribution2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The version identifier for the current version of the staging
-     * distribution.</p>
-     */
     inline CopyDistribution2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CopyDistribution2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CopyDistribution2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CopyDistribution2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Distribution m_distribution;

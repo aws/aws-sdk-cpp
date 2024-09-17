@@ -24,9 +24,8 @@ ComponentParameter::ComponentParameter() :
 {
 }
 
-ComponentParameter::ComponentParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ComponentParameter::ComponentParameter(JsonView jsonValue)
+  : ComponentParameter()
 {
   *this = jsonValue;
 }

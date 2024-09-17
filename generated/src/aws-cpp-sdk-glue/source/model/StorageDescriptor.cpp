@@ -39,24 +39,8 @@ StorageDescriptor::StorageDescriptor() :
 {
 }
 
-StorageDescriptor::StorageDescriptor(JsonView jsonValue) : 
-    m_columnsHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_additionalLocationsHasBeenSet(false),
-    m_inputFormatHasBeenSet(false),
-    m_outputFormatHasBeenSet(false),
-    m_compressed(false),
-    m_compressedHasBeenSet(false),
-    m_numberOfBuckets(0),
-    m_numberOfBucketsHasBeenSet(false),
-    m_serdeInfoHasBeenSet(false),
-    m_bucketColumnsHasBeenSet(false),
-    m_sortColumnsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_skewedInfoHasBeenSet(false),
-    m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false),
-    m_schemaReferenceHasBeenSet(false)
+StorageDescriptor::StorageDescriptor(JsonView jsonValue)
+  : StorageDescriptor()
 {
   *this = jsonValue;
 }

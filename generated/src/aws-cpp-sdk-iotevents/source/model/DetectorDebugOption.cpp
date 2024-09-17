@@ -24,9 +24,8 @@ DetectorDebugOption::DetectorDebugOption() :
 {
 }
 
-DetectorDebugOption::DetectorDebugOption(JsonView jsonValue) : 
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false)
+DetectorDebugOption::DetectorDebugOption(JsonView jsonValue)
+  : DetectorDebugOption()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ TextGenerationResolvedAttributes::TextGenerationResolvedAttributes() :
 {
 }
 
-TextGenerationResolvedAttributes::TextGenerationResolvedAttributes(JsonView jsonValue) : 
-    m_baseModelNameHasBeenSet(false)
+TextGenerationResolvedAttributes::TextGenerationResolvedAttributes(JsonView jsonValue)
+  : TextGenerationResolvedAttributes()
 {
   *this = jsonValue;
 }

@@ -38,6 +38,7 @@ namespace Model
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
      * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
@@ -45,112 +46,29 @@ namespace Model
      * logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
-     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
-     * logs.</p>
-     */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
-     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
-     * logs.</p>
-     */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
-     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
-     * logs.</p>
-     */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
-     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
-     * logs.</p>
-     */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
-     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
-     * logs.</p>
-     */
     inline LoggingConfiguration& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
-     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
-     * logs.</p>
-     */
     inline LoggingConfiguration& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
-     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
-     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
-     * logs.</p>
-     */
     inline LoggingConfiguration& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the CloudWatch logging group for the Transfer Family server to
      * which this workflow belongs.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-
-    /**
-     * <p>The name of the CloudWatch logging group for the Transfer Family server to
-     * which this workflow belongs.</p>
-     */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the CloudWatch logging group for the Transfer Family server to
-     * which this workflow belongs.</p>
-     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-
-    /**
-     * <p>The name of the CloudWatch logging group for the Transfer Family server to
-     * which this workflow belongs.</p>
-     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the CloudWatch logging group for the Transfer Family server to
-     * which this workflow belongs.</p>
-     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-
-    /**
-     * <p>The name of the CloudWatch logging group for the Transfer Family server to
-     * which this workflow belongs.</p>
-     */
     inline LoggingConfiguration& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the CloudWatch logging group for the Transfer Family server to
-     * which this workflow belongs.</p>
-     */
     inline LoggingConfiguration& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the CloudWatch logging group for the Transfer Family server to
-     * which this workflow belongs.</p>
-     */
     inline LoggingConfiguration& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_loggingRole;

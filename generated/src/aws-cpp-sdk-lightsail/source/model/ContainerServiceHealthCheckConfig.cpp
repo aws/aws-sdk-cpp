@@ -32,17 +32,8 @@ ContainerServiceHealthCheckConfig::ContainerServiceHealthCheckConfig() :
 {
 }
 
-ContainerServiceHealthCheckConfig::ContainerServiceHealthCheckConfig(JsonView jsonValue) : 
-    m_healthyThreshold(0),
-    m_healthyThresholdHasBeenSet(false),
-    m_unhealthyThreshold(0),
-    m_unhealthyThresholdHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_intervalSeconds(0),
-    m_intervalSecondsHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_successCodesHasBeenSet(false)
+ContainerServiceHealthCheckConfig::ContainerServiceHealthCheckConfig(JsonView jsonValue)
+  : ContainerServiceHealthCheckConfig()
 {
   *this = jsonValue;
 }

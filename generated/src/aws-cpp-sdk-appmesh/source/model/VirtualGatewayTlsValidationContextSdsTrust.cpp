@@ -23,8 +23,8 @@ VirtualGatewayTlsValidationContextSdsTrust::VirtualGatewayTlsValidationContextSd
 {
 }
 
-VirtualGatewayTlsValidationContextSdsTrust::VirtualGatewayTlsValidationContextSdsTrust(JsonView jsonValue) : 
-    m_secretNameHasBeenSet(false)
+VirtualGatewayTlsValidationContextSdsTrust::VirtualGatewayTlsValidationContextSdsTrust(JsonView jsonValue)
+  : VirtualGatewayTlsValidationContextSdsTrust()
 {
   *this = jsonValue;
 }

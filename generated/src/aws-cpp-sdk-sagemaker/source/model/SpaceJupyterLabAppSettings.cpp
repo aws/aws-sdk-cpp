@@ -20,13 +20,13 @@ namespace Model
 
 SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings() : 
     m_defaultResourceSpecHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+    m_codeRepositoriesHasBeenSet(false),
+    m_appLifecycleManagementHasBeenSet(false)
 {
 }
 
-SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false)
+SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings(JsonView jsonValue)
+  : SpaceJupyterLabAppSettings()
 {
   *this = jsonValue;
 }
@@ -50,6 +50,13 @@ SpaceJupyterLabAppSettings& SpaceJupyterLabAppSettings::operator =(JsonView json
     m_codeRepositoriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppLifecycleManagement"))
+  {
+    m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
+
+    m_appLifecycleManagementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +78,12 @@ JsonValue SpaceJupyterLabAppSettings::Jsonize() const
      codeRepositoriesJsonList[codeRepositoriesIndex].AsObject(m_codeRepositories[codeRepositoriesIndex].Jsonize());
    }
    payload.WithArray("CodeRepositories", std::move(codeRepositoriesJsonList));
+
+  }
+
+  if(m_appLifecycleManagementHasBeenSet)
+  {
+   payload.WithObject("AppLifecycleManagement", m_appLifecycleManagement.Jsonize());
 
   }
 

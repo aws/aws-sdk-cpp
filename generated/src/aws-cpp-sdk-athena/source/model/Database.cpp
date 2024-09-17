@@ -25,10 +25,8 @@ Database::Database() :
 {
 }
 
-Database::Database(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+Database::Database(JsonView jsonValue)
+  : Database()
 {
   *this = jsonValue;
 }

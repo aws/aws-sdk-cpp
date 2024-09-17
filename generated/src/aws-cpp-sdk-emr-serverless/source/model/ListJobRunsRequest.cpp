@@ -22,7 +22,9 @@ ListJobRunsRequest::ListJobRunsRequest() :
     m_maxResultsHasBeenSet(false),
     m_createdAtAfterHasBeenSet(false),
     m_createdAtBeforeHasBeenSet(false),
-    m_statesHasBeenSet(false)
+    m_statesHasBeenSet(false),
+    m_mode(JobRunMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -70,6 +72,13 @@ void ListJobRunsRequest::AddQueryStringParameters(URI& uri) const
         uri.AddQueryStringParameter("states", ss.str());
         ss.str("");
       }
+    }
+
+    if(m_modeHasBeenSet)
+    {
+      ss << JobRunModeMapper::GetNameForJobRunMode(m_mode);
+      uri.AddQueryStringParameter("mode", ss.str());
+      ss.str("");
     }
 
 }

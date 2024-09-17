@@ -33,53 +33,27 @@ namespace Model
     AWS_IOT_API DescribeDetectMitigationActionsTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The description of a task. </p>
      */
     inline const DetectMitigationActionsTaskSummary& GetTaskSummary() const{ return m_taskSummary; }
-
-    /**
-     * <p> The description of a task. </p>
-     */
     inline void SetTaskSummary(const DetectMitigationActionsTaskSummary& value) { m_taskSummary = value; }
-
-    /**
-     * <p> The description of a task. </p>
-     */
     inline void SetTaskSummary(DetectMitigationActionsTaskSummary&& value) { m_taskSummary = std::move(value); }
-
-    /**
-     * <p> The description of a task. </p>
-     */
     inline DescribeDetectMitigationActionsTaskResult& WithTaskSummary(const DetectMitigationActionsTaskSummary& value) { SetTaskSummary(value); return *this;}
-
-    /**
-     * <p> The description of a task. </p>
-     */
     inline DescribeDetectMitigationActionsTaskResult& WithTaskSummary(DetectMitigationActionsTaskSummary&& value) { SetTaskSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDetectMitigationActionsTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDetectMitigationActionsTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDetectMitigationActionsTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DetectMitigationActionsTaskSummary m_taskSummary;

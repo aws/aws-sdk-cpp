@@ -23,8 +23,8 @@ InputLambdaProcessor::InputLambdaProcessor() :
 {
 }
 
-InputLambdaProcessor::InputLambdaProcessor(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false)
+InputLambdaProcessor::InputLambdaProcessor(JsonView jsonValue)
+  : InputLambdaProcessor()
 {
   *this = jsonValue;
 }

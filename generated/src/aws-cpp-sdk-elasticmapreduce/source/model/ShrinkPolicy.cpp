@@ -25,10 +25,8 @@ ShrinkPolicy::ShrinkPolicy() :
 {
 }
 
-ShrinkPolicy::ShrinkPolicy(JsonView jsonValue) : 
-    m_decommissionTimeout(0),
-    m_decommissionTimeoutHasBeenSet(false),
-    m_instanceResizePolicyHasBeenSet(false)
+ShrinkPolicy::ShrinkPolicy(JsonView jsonValue)
+  : ShrinkPolicy()
 {
   *this = jsonValue;
 }

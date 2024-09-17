@@ -27,12 +27,8 @@ LensShareSummary::LensShareSummary() :
 {
 }
 
-LensShareSummary::LensShareSummary(JsonView jsonValue) : 
-    m_shareIdHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+LensShareSummary::LensShareSummary(JsonView jsonValue)
+  : LensShareSummary()
 {
   *this = jsonValue;
 }

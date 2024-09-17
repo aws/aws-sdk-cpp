@@ -24,9 +24,8 @@ AWSLocation::AWSLocation() :
 {
 }
 
-AWSLocation::AWSLocation(JsonView jsonValue) : 
-    m_zoneHasBeenSet(false),
-    m_subnetArnHasBeenSet(false)
+AWSLocation::AWSLocation(JsonView jsonValue)
+  : AWSLocation()
 {
   *this = jsonValue;
 }

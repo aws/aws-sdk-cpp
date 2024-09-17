@@ -33,100 +33,35 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the collaboration that the schemas belong to.
      * Currently accepts collaboration ID.</p>
      */
     inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schemas belong to.
-     * Currently accepts collaboration ID.</p>
-     */
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schemas belong to.
-     * Currently accepts collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schemas belong to.
-     * Currently accepts collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schemas belong to.
-     * Currently accepts collaboration ID.</p>
-     */
     inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier for the collaboration that the schemas belong to.
-     * Currently accepts collaboration ID.</p>
-     */
     inline BatchGetSchemaRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the collaboration that the schemas belong to.
-     * Currently accepts collaboration ID.</p>
-     */
     inline BatchGetSchemaRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the collaboration that the schemas belong to.
-     * Currently accepts collaboration ID.</p>
-     */
     inline BatchGetSchemaRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
+     * <p>The names for the schema objects to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline BatchGetSchemaRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline BatchGetSchemaRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline BatchGetSchemaRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline BatchGetSchemaRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names for the schema objects to retrieve.&gt;</p>
-     */
     inline BatchGetSchemaRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_collaborationIdentifier;

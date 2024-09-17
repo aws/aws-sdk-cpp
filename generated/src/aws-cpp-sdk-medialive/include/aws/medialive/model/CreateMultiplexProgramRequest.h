@@ -37,175 +37,60 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * ID of the multiplex where the program is to be created.
      */
     inline const Aws::String& GetMultiplexId() const{ return m_multiplexId; }
-
-    /**
-     * ID of the multiplex where the program is to be created.
-     */
     inline bool MultiplexIdHasBeenSet() const { return m_multiplexIdHasBeenSet; }
-
-    /**
-     * ID of the multiplex where the program is to be created.
-     */
     inline void SetMultiplexId(const Aws::String& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = value; }
-
-    /**
-     * ID of the multiplex where the program is to be created.
-     */
     inline void SetMultiplexId(Aws::String&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::move(value); }
-
-    /**
-     * ID of the multiplex where the program is to be created.
-     */
     inline void SetMultiplexId(const char* value) { m_multiplexIdHasBeenSet = true; m_multiplexId.assign(value); }
-
-    /**
-     * ID of the multiplex where the program is to be created.
-     */
     inline CreateMultiplexProgramRequest& WithMultiplexId(const Aws::String& value) { SetMultiplexId(value); return *this;}
-
-    /**
-     * ID of the multiplex where the program is to be created.
-     */
     inline CreateMultiplexProgramRequest& WithMultiplexId(Aws::String&& value) { SetMultiplexId(std::move(value)); return *this;}
-
-    /**
-     * ID of the multiplex where the program is to be created.
-     */
     inline CreateMultiplexProgramRequest& WithMultiplexId(const char* value) { SetMultiplexId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The settings for this multiplex program.
      */
     inline const MultiplexProgramSettings& GetMultiplexProgramSettings() const{ return m_multiplexProgramSettings; }
-
-    /**
-     * The settings for this multiplex program.
-     */
     inline bool MultiplexProgramSettingsHasBeenSet() const { return m_multiplexProgramSettingsHasBeenSet; }
-
-    /**
-     * The settings for this multiplex program.
-     */
     inline void SetMultiplexProgramSettings(const MultiplexProgramSettings& value) { m_multiplexProgramSettingsHasBeenSet = true; m_multiplexProgramSettings = value; }
-
-    /**
-     * The settings for this multiplex program.
-     */
     inline void SetMultiplexProgramSettings(MultiplexProgramSettings&& value) { m_multiplexProgramSettingsHasBeenSet = true; m_multiplexProgramSettings = std::move(value); }
-
-    /**
-     * The settings for this multiplex program.
-     */
     inline CreateMultiplexProgramRequest& WithMultiplexProgramSettings(const MultiplexProgramSettings& value) { SetMultiplexProgramSettings(value); return *this;}
-
-    /**
-     * The settings for this multiplex program.
-     */
     inline CreateMultiplexProgramRequest& WithMultiplexProgramSettings(MultiplexProgramSettings&& value) { SetMultiplexProgramSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Name of multiplex program.
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
-
-    /**
-     * Name of multiplex program.
-     */
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
-
-    /**
-     * Name of multiplex program.
-     */
     inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
-
-    /**
-     * Name of multiplex program.
-     */
     inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
-
-    /**
-     * Name of multiplex program.
-     */
     inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
-
-    /**
-     * Name of multiplex program.
-     */
     inline CreateMultiplexProgramRequest& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-
-    /**
-     * Name of multiplex program.
-     */
     inline CreateMultiplexProgramRequest& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-
-    /**
-     * Name of multiplex program.
-     */
     inline CreateMultiplexProgramRequest& WithProgramName(const char* value) { SetProgramName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * Unique request ID. This prevents retries from creating multiple
-resources.
-
-     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    /**
-     * Unique request ID. This prevents retries from creating multiple
-resources.
-
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * Unique request ID. This prevents retries from creating multiple
-resources.
-
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * Unique request ID. This prevents retries from creating multiple
-resources.
-
-     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * Unique request ID. This prevents retries from creating multiple
-resources.
-
-     */
     inline CreateMultiplexProgramRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * Unique request ID. This prevents retries from creating multiple
-resources.
-
-     */
     inline CreateMultiplexProgramRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * Unique request ID. This prevents retries from creating multiple
-resources.
-
-     */
     inline CreateMultiplexProgramRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_multiplexId;

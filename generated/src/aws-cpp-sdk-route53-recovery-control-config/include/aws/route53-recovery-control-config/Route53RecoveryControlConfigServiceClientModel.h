@@ -42,6 +42,10 @@
 #include <aws/route53-recovery-control-config/model/UpdateControlPanelResult.h>
 #include <aws/route53-recovery-control-config/model/UpdateRoutingControlResult.h>
 #include <aws/route53-recovery-control-config/model/UpdateSafetyRuleResult.h>
+#include <aws/route53-recovery-control-config/model/ListControlPanelsRequest.h>
+#include <aws/route53-recovery-control-config/model/CreateSafetyRuleRequest.h>
+#include <aws/route53-recovery-control-config/model/ListClustersRequest.h>
+#include <aws/route53-recovery-control-config/model/UpdateSafetyRuleRequest.h>
 /* End of service model headers required in Route53RecoveryControlConfigClient header */
 
 namespace Aws
@@ -75,7 +79,7 @@ namespace Aws
 
   namespace Route53RecoveryControlConfig
   {
-    using Route53RecoveryControlConfigClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53RecoveryControlConfigClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53RecoveryControlConfigEndpointProviderBase = Aws::Route53RecoveryControlConfig::Endpoint::Route53RecoveryControlConfigEndpointProviderBase;
     using Route53RecoveryControlConfigEndpointProvider = Aws::Route53RecoveryControlConfig::Endpoint::Route53RecoveryControlConfigEndpointProvider;
 

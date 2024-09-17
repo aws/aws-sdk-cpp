@@ -23,8 +23,8 @@ EvaluationFormNumericQuestionAutomation::EvaluationFormNumericQuestionAutomation
 {
 }
 
-EvaluationFormNumericQuestionAutomation::EvaluationFormNumericQuestionAutomation(JsonView jsonValue) : 
-    m_propertyValueHasBeenSet(false)
+EvaluationFormNumericQuestionAutomation::EvaluationFormNumericQuestionAutomation(JsonView jsonValue)
+  : EvaluationFormNumericQuestionAutomation()
 {
   *this = jsonValue;
 }

@@ -23,16 +23,14 @@ LogConfigurationType::LogConfigurationType() :
     m_logLevelHasBeenSet(false),
     m_eventSource(EventSourceName::NOT_SET),
     m_eventSourceHasBeenSet(false),
-    m_cloudWatchLogsConfigurationHasBeenSet(false)
+    m_cloudWatchLogsConfigurationHasBeenSet(false),
+    m_s3ConfigurationHasBeenSet(false),
+    m_firehoseConfigurationHasBeenSet(false)
 {
 }
 
-LogConfigurationType::LogConfigurationType(JsonView jsonValue) : 
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_eventSource(EventSourceName::NOT_SET),
-    m_eventSourceHasBeenSet(false),
-    m_cloudWatchLogsConfigurationHasBeenSet(false)
+LogConfigurationType::LogConfigurationType(JsonView jsonValue)
+  : LogConfigurationType()
 {
   *this = jsonValue;
 }
@@ -60,6 +58,20 @@ LogConfigurationType& LogConfigurationType::operator =(JsonView jsonValue)
     m_cloudWatchLogsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3Configuration"))
+  {
+    m_s3Configuration = jsonValue.GetObject("S3Configuration");
+
+    m_s3ConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FirehoseConfiguration"))
+  {
+    m_firehoseConfiguration = jsonValue.GetObject("FirehoseConfiguration");
+
+    m_firehoseConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +92,18 @@ JsonValue LogConfigurationType::Jsonize() const
   if(m_cloudWatchLogsConfigurationHasBeenSet)
   {
    payload.WithObject("CloudWatchLogsConfiguration", m_cloudWatchLogsConfiguration.Jsonize());
+
+  }
+
+  if(m_s3ConfigurationHasBeenSet)
+  {
+   payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
+
+  }
+
+  if(m_firehoseConfigurationHasBeenSet)
+  {
+   payload.WithObject("FirehoseConfiguration", m_firehoseConfiguration.Jsonize());
 
   }
 

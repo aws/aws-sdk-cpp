@@ -42,128 +42,46 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details of the last <code>UpdateDataLake</code>or
      * <code>DeleteDataLake</code> API request which failed.</p>
      */
     inline const DataLakeUpdateException& GetException() const{ return m_exception; }
-
-    /**
-     * <p>The details of the last <code>UpdateDataLake</code>or
-     * <code>DeleteDataLake</code> API request which failed.</p>
-     */
     inline bool ExceptionHasBeenSet() const { return m_exceptionHasBeenSet; }
-
-    /**
-     * <p>The details of the last <code>UpdateDataLake</code>or
-     * <code>DeleteDataLake</code> API request which failed.</p>
-     */
     inline void SetException(const DataLakeUpdateException& value) { m_exceptionHasBeenSet = true; m_exception = value; }
-
-    /**
-     * <p>The details of the last <code>UpdateDataLake</code>or
-     * <code>DeleteDataLake</code> API request which failed.</p>
-     */
     inline void SetException(DataLakeUpdateException&& value) { m_exceptionHasBeenSet = true; m_exception = std::move(value); }
-
-    /**
-     * <p>The details of the last <code>UpdateDataLake</code>or
-     * <code>DeleteDataLake</code> API request which failed.</p>
-     */
     inline DataLakeUpdateStatus& WithException(const DataLakeUpdateException& value) { SetException(value); return *this;}
-
-    /**
-     * <p>The details of the last <code>UpdateDataLake</code>or
-     * <code>DeleteDataLake</code> API request which failed.</p>
-     */
     inline DataLakeUpdateStatus& WithException(DataLakeUpdateException&& value) { SetException(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID for the last <code>UpdateDataLake</code> or
      * <code>DeleteDataLake</code> API request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The unique ID for the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request.</p>
-     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID for the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * <p>The unique ID for the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * <p>The unique ID for the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * <p>The unique ID for the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request.</p>
-     */
     inline DataLakeUpdateStatus& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The unique ID for the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request.</p>
-     */
     inline DataLakeUpdateStatus& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request.</p>
-     */
     inline DataLakeUpdateStatus& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the last <code>UpdateDataLake</code> or
      * <code>DeleteDataLake</code> API request that was requested.</p>
      */
     inline const DataLakeStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request that was requested.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request that was requested.</p>
-     */
     inline void SetStatus(const DataLakeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request that was requested.</p>
-     */
     inline void SetStatus(DataLakeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request that was requested.</p>
-     */
     inline DataLakeUpdateStatus& WithStatus(const DataLakeStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the last <code>UpdateDataLake</code> or
-     * <code>DeleteDataLake</code> API request that was requested.</p>
-     */
     inline DataLakeUpdateStatus& WithStatus(DataLakeStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataLakeUpdateException m_exception;

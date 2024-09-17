@@ -28,13 +28,8 @@ ActionHistory::ActionHistory() :
 {
 }
 
-ActionHistory::ActionHistory(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_actionHistoryDetailsHasBeenSet(false)
+ActionHistory::ActionHistory(JsonView jsonValue)
+  : ActionHistory()
 {
   *this = jsonValue;
 }

@@ -35,55 +35,29 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetId() const{ return m_id; }
-
-    
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
     inline UpdateCampaignNameRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
     inline UpdateCampaignNameRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    
     inline UpdateCampaignNameRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetName() const{ return m_name; }
-
-    
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    
     inline UpdateCampaignNameRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    
     inline UpdateCampaignNameRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    
     inline UpdateCampaignNameRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

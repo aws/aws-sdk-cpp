@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 DeleteDataSourceRequest::DeleteDataSourceRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_indexIdHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 

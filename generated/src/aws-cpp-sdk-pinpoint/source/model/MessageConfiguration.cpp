@@ -31,16 +31,8 @@ MessageConfiguration::MessageConfiguration() :
 {
 }
 
-MessageConfiguration::MessageConfiguration(JsonView jsonValue) : 
-    m_aDMMessageHasBeenSet(false),
-    m_aPNSMessageHasBeenSet(false),
-    m_baiduMessageHasBeenSet(false),
-    m_customMessageHasBeenSet(false),
-    m_defaultMessageHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false),
-    m_inAppMessageHasBeenSet(false)
+MessageConfiguration::MessageConfiguration(JsonView jsonValue)
+  : MessageConfiguration()
 {
   *this = jsonValue;
 }

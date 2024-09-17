@@ -42,77 +42,31 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the event source.</p>
      */
     inline const EventSourceName& GetEventSourceName() const{ return m_eventSourceName; }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline bool EventSourceNameHasBeenSet() const { return m_eventSourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline void SetEventSourceName(const EventSourceName& value) { m_eventSourceNameHasBeenSet = true; m_eventSourceName = value; }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline void SetEventSourceName(EventSourceName&& value) { m_eventSourceNameHasBeenSet = true; m_eventSourceName = std::move(value); }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline RuleTriggerEventSource& WithEventSourceName(const EventSourceName& value) { SetEventSourceName(value); return *this;}
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline RuleTriggerEventSource& WithEventSourceName(EventSourceName&& value) { SetEventSourceName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for the integration association.</p>
      */
     inline const Aws::String& GetIntegrationAssociationId() const{ return m_integrationAssociationId; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline bool IntegrationAssociationIdHasBeenSet() const { return m_integrationAssociationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(const Aws::String& value) { m_integrationAssociationIdHasBeenSet = true; m_integrationAssociationId = value; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(Aws::String&& value) { m_integrationAssociationIdHasBeenSet = true; m_integrationAssociationId = std::move(value); }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(const char* value) { m_integrationAssociationIdHasBeenSet = true; m_integrationAssociationId.assign(value); }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline RuleTriggerEventSource& WithIntegrationAssociationId(const Aws::String& value) { SetIntegrationAssociationId(value); return *this;}
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline RuleTriggerEventSource& WithIntegrationAssociationId(Aws::String&& value) { SetIntegrationAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline RuleTriggerEventSource& WithIntegrationAssociationId(const char* value) { SetIntegrationAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     EventSourceName m_eventSourceName;

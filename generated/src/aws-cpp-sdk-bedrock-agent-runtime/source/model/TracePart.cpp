@@ -19,24 +19,29 @@ namespace Model
 {
 
 TracePart::TracePart() : 
-    m_agentIdHasBeenSet(false),
     m_agentAliasIdHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
+    m_agentVersionHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_traceHasBeenSet(false)
 {
 }
 
-TracePart::TracePart(JsonView jsonValue) : 
-    m_agentIdHasBeenSet(false),
-    m_agentAliasIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_traceHasBeenSet(false)
+TracePart::TracePart(JsonView jsonValue)
+  : TracePart()
 {
   *this = jsonValue;
 }
 
 TracePart& TracePart::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("agentAliasId"))
+  {
+    m_agentAliasId = jsonValue.GetString("agentAliasId");
+
+    m_agentAliasIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
@@ -44,11 +49,11 @@ TracePart& TracePart::operator =(JsonView jsonValue)
     m_agentIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("agentAliasId"))
+  if(jsonValue.ValueExists("agentVersion"))
   {
-    m_agentAliasId = jsonValue.GetString("agentAliasId");
+    m_agentVersion = jsonValue.GetString("agentVersion");
 
-    m_agentAliasIdHasBeenSet = true;
+    m_agentVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sessionId"))
@@ -72,15 +77,21 @@ JsonValue TracePart::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_agentAliasIdHasBeenSet)
+  {
+   payload.WithString("agentAliasId", m_agentAliasId);
+
+  }
+
   if(m_agentIdHasBeenSet)
   {
    payload.WithString("agentId", m_agentId);
 
   }
 
-  if(m_agentAliasIdHasBeenSet)
+  if(m_agentVersionHasBeenSet)
   {
-   payload.WithString("agentAliasId", m_agentAliasId);
+   payload.WithString("agentVersion", m_agentVersion);
 
   }
 

@@ -33,53 +33,27 @@ namespace Model
     AWS_SERVICECATALOG_API CreateServiceActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object containing information about the self-service action.</p>
      */
     inline const ServiceActionDetail& GetServiceActionDetail() const{ return m_serviceActionDetail; }
-
-    /**
-     * <p>An object containing information about the self-service action.</p>
-     */
     inline void SetServiceActionDetail(const ServiceActionDetail& value) { m_serviceActionDetail = value; }
-
-    /**
-     * <p>An object containing information about the self-service action.</p>
-     */
     inline void SetServiceActionDetail(ServiceActionDetail&& value) { m_serviceActionDetail = std::move(value); }
-
-    /**
-     * <p>An object containing information about the self-service action.</p>
-     */
     inline CreateServiceActionResult& WithServiceActionDetail(const ServiceActionDetail& value) { SetServiceActionDetail(value); return *this;}
-
-    /**
-     * <p>An object containing information about the self-service action.</p>
-     */
     inline CreateServiceActionResult& WithServiceActionDetail(ServiceActionDetail&& value) { SetServiceActionDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateServiceActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateServiceActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateServiceActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceActionDetail m_serviceActionDetail;

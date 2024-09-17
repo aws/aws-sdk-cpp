@@ -29,14 +29,8 @@ AnalysisRule::AnalysisRule() :
 {
 }
 
-AnalysisRule::AnalysisRule(JsonView jsonValue) : 
-    m_collaborationIdHasBeenSet(false),
-    m_type(AnalysisRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_policyHasBeenSet(false)
+AnalysisRule::AnalysisRule(JsonView jsonValue)
+  : AnalysisRule()
 {
   *this = jsonValue;
 }

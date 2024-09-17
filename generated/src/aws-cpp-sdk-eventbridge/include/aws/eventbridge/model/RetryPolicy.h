@@ -36,59 +36,28 @@ namespace Model
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of retry attempts to make before the request fails. Retry
      * attempts continue until either the maximum number of attempts is made or until
      * the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
-
-    /**
-     * <p>The maximum number of retry attempts to make before the request fails. Retry
-     * attempts continue until either the maximum number of attempts is made or until
-     * the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
-     */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of retry attempts to make before the request fails. Retry
-     * attempts continue until either the maximum number of attempts is made or until
-     * the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
-     */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
-
-    /**
-     * <p>The maximum number of retry attempts to make before the request fails. Retry
-     * attempts continue until either the maximum number of attempts is made or until
-     * the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
-     */
     inline RetryPolicy& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum amount of time, in seconds, to continue to make retry
      * attempts.</p>
      */
     inline int GetMaximumEventAgeInSeconds() const{ return m_maximumEventAgeInSeconds; }
-
-    /**
-     * <p>The maximum amount of time, in seconds, to continue to make retry
-     * attempts.</p>
-     */
     inline bool MaximumEventAgeInSecondsHasBeenSet() const { return m_maximumEventAgeInSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum amount of time, in seconds, to continue to make retry
-     * attempts.</p>
-     */
     inline void SetMaximumEventAgeInSeconds(int value) { m_maximumEventAgeInSecondsHasBeenSet = true; m_maximumEventAgeInSeconds = value; }
-
-    /**
-     * <p>The maximum amount of time, in seconds, to continue to make retry
-     * attempts.</p>
-     */
     inline RetryPolicy& WithMaximumEventAgeInSeconds(int value) { SetMaximumEventAgeInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumRetryAttempts;

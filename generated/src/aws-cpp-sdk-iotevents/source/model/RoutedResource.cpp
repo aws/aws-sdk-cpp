@@ -24,9 +24,8 @@ RoutedResource::RoutedResource() :
 {
 }
 
-RoutedResource::RoutedResource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+RoutedResource::RoutedResource(JsonView jsonValue)
+  : RoutedResource()
 {
   *this = jsonValue;
 }

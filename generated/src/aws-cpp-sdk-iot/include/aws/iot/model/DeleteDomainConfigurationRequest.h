@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the domain configuration to be deleted.</p>
      */
     inline const Aws::String& GetDomainConfigurationName() const{ return m_domainConfigurationName; }
-
-    /**
-     * <p>The name of the domain configuration to be deleted.</p>
-     */
     inline bool DomainConfigurationNameHasBeenSet() const { return m_domainConfigurationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain configuration to be deleted.</p>
-     */
     inline void SetDomainConfigurationName(const Aws::String& value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName = value; }
-
-    /**
-     * <p>The name of the domain configuration to be deleted.</p>
-     */
     inline void SetDomainConfigurationName(Aws::String&& value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName = std::move(value); }
-
-    /**
-     * <p>The name of the domain configuration to be deleted.</p>
-     */
     inline void SetDomainConfigurationName(const char* value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName.assign(value); }
-
-    /**
-     * <p>The name of the domain configuration to be deleted.</p>
-     */
     inline DeleteDomainConfigurationRequest& WithDomainConfigurationName(const Aws::String& value) { SetDomainConfigurationName(value); return *this;}
-
-    /**
-     * <p>The name of the domain configuration to be deleted.</p>
-     */
     inline DeleteDomainConfigurationRequest& WithDomainConfigurationName(Aws::String&& value) { SetDomainConfigurationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain configuration to be deleted.</p>
-     */
     inline DeleteDomainConfigurationRequest& WithDomainConfigurationName(const char* value) { SetDomainConfigurationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainConfigurationName;

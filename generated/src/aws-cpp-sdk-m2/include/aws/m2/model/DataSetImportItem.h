@@ -39,67 +39,29 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data set.</p>
      */
     inline const DataSet& GetDataSet() const{ return m_dataSet; }
-
-    /**
-     * <p>The data set.</p>
-     */
     inline bool DataSetHasBeenSet() const { return m_dataSetHasBeenSet; }
-
-    /**
-     * <p>The data set.</p>
-     */
     inline void SetDataSet(const DataSet& value) { m_dataSetHasBeenSet = true; m_dataSet = value; }
-
-    /**
-     * <p>The data set.</p>
-     */
     inline void SetDataSet(DataSet&& value) { m_dataSetHasBeenSet = true; m_dataSet = std::move(value); }
-
-    /**
-     * <p>The data set.</p>
-     */
     inline DataSetImportItem& WithDataSet(const DataSet& value) { SetDataSet(value); return *this;}
-
-    /**
-     * <p>The data set.</p>
-     */
     inline DataSetImportItem& WithDataSet(DataSet&& value) { SetDataSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the data set.</p>
      */
     inline const ExternalLocation& GetExternalLocation() const{ return m_externalLocation; }
-
-    /**
-     * <p>The location of the data set.</p>
-     */
     inline bool ExternalLocationHasBeenSet() const { return m_externalLocationHasBeenSet; }
-
-    /**
-     * <p>The location of the data set.</p>
-     */
     inline void SetExternalLocation(const ExternalLocation& value) { m_externalLocationHasBeenSet = true; m_externalLocation = value; }
-
-    /**
-     * <p>The location of the data set.</p>
-     */
     inline void SetExternalLocation(ExternalLocation&& value) { m_externalLocationHasBeenSet = true; m_externalLocation = std::move(value); }
-
-    /**
-     * <p>The location of the data set.</p>
-     */
     inline DataSetImportItem& WithExternalLocation(const ExternalLocation& value) { SetExternalLocation(value); return *this;}
-
-    /**
-     * <p>The location of the data set.</p>
-     */
     inline DataSetImportItem& WithExternalLocation(ExternalLocation&& value) { SetExternalLocation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataSet m_dataSet;

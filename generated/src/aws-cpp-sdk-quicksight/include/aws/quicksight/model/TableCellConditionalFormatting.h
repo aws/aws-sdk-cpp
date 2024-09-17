@@ -39,77 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field ID of the cell for conditional formatting.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The field ID of the cell for conditional formatting.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The field ID of the cell for conditional formatting.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The field ID of the cell for conditional formatting.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The field ID of the cell for conditional formatting.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The field ID of the cell for conditional formatting.</p>
-     */
     inline TableCellConditionalFormatting& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The field ID of the cell for conditional formatting.</p>
-     */
     inline TableCellConditionalFormatting& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The field ID of the cell for conditional formatting.</p>
-     */
     inline TableCellConditionalFormatting& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The text format of the cell for conditional formatting.</p>
      */
     inline const TextConditionalFormat& GetTextFormat() const{ return m_textFormat; }
-
-    /**
-     * <p>The text format of the cell for conditional formatting.</p>
-     */
     inline bool TextFormatHasBeenSet() const { return m_textFormatHasBeenSet; }
-
-    /**
-     * <p>The text format of the cell for conditional formatting.</p>
-     */
     inline void SetTextFormat(const TextConditionalFormat& value) { m_textFormatHasBeenSet = true; m_textFormat = value; }
-
-    /**
-     * <p>The text format of the cell for conditional formatting.</p>
-     */
     inline void SetTextFormat(TextConditionalFormat&& value) { m_textFormatHasBeenSet = true; m_textFormat = std::move(value); }
-
-    /**
-     * <p>The text format of the cell for conditional formatting.</p>
-     */
     inline TableCellConditionalFormatting& WithTextFormat(const TextConditionalFormat& value) { SetTextFormat(value); return *this;}
-
-    /**
-     * <p>The text format of the cell for conditional formatting.</p>
-     */
     inline TableCellConditionalFormatting& WithTextFormat(TextConditionalFormat&& value) { SetTextFormat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

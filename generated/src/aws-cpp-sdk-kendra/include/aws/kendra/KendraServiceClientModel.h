@@ -68,6 +68,7 @@
 #include <aws/kendra/model/UntagResourceResult.h>
 #include <aws/kendra/model/UpdateAccessControlConfigurationResult.h>
 #include <aws/kendra/model/UpdateFeaturedResultsSetResult.h>
+#include <aws/kendra/model/ListIndicesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KendraClient header */
 
@@ -102,7 +103,7 @@ namespace Aws
 
   namespace kendra
   {
-    using KendraClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KendraClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KendraEndpointProviderBase = Aws::kendra::Endpoint::KendraEndpointProviderBase;
     using KendraEndpointProvider = Aws::kendra::Endpoint::KendraEndpointProvider;
 

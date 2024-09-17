@@ -25,10 +25,8 @@ SegmentTypeInfo::SegmentTypeInfo() :
 {
 }
 
-SegmentTypeInfo::SegmentTypeInfo(JsonView jsonValue) : 
-    m_type(SegmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_modelVersionHasBeenSet(false)
+SegmentTypeInfo::SegmentTypeInfo(JsonView jsonValue)
+  : SegmentTypeInfo()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ ChangeProgressStatus::ChangeProgressStatus() :
 {
 }
 
-ChangeProgressStatus::ChangeProgressStatus(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_status(ChangeProgressStatuses::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_totalNumberOfStages(0),
-    m_totalNumberOfStagesHasBeenSet(false),
-    m_changeProgressStagesHasBeenSet(false)
+ChangeProgressStatus::ChangeProgressStatus(JsonView jsonValue)
+  : ChangeProgressStatus()
 {
   *this = jsonValue;
 }

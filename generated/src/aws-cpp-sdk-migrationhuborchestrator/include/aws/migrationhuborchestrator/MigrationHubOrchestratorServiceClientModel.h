@@ -18,9 +18,11 @@
 /* End of generic header includes */
 
 /* Service model headers required in MigrationHubOrchestratorClient header */
+#include <aws/migrationhuborchestrator/model/CreateTemplateResult.h>
 #include <aws/migrationhuborchestrator/model/CreateWorkflowResult.h>
 #include <aws/migrationhuborchestrator/model/CreateWorkflowStepResult.h>
 #include <aws/migrationhuborchestrator/model/CreateWorkflowStepGroupResult.h>
+#include <aws/migrationhuborchestrator/model/DeleteTemplateResult.h>
 #include <aws/migrationhuborchestrator/model/DeleteWorkflowResult.h>
 #include <aws/migrationhuborchestrator/model/DeleteWorkflowStepResult.h>
 #include <aws/migrationhuborchestrator/model/DeleteWorkflowStepGroupResult.h>
@@ -43,9 +45,13 @@
 #include <aws/migrationhuborchestrator/model/StopWorkflowResult.h>
 #include <aws/migrationhuborchestrator/model/TagResourceResult.h>
 #include <aws/migrationhuborchestrator/model/UntagResourceResult.h>
+#include <aws/migrationhuborchestrator/model/UpdateTemplateResult.h>
 #include <aws/migrationhuborchestrator/model/UpdateWorkflowResult.h>
 #include <aws/migrationhuborchestrator/model/UpdateWorkflowStepResult.h>
 #include <aws/migrationhuborchestrator/model/UpdateWorkflowStepGroupResult.h>
+#include <aws/migrationhuborchestrator/model/ListWorkflowsRequest.h>
+#include <aws/migrationhuborchestrator/model/ListPluginsRequest.h>
+#include <aws/migrationhuborchestrator/model/ListTemplatesRequest.h>
 /* End of service model headers required in MigrationHubOrchestratorClient header */
 
 namespace Aws
@@ -79,16 +85,18 @@ namespace Aws
 
   namespace MigrationHubOrchestrator
   {
-    using MigrationHubOrchestratorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MigrationHubOrchestratorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MigrationHubOrchestratorEndpointProviderBase = Aws::MigrationHubOrchestrator::Endpoint::MigrationHubOrchestratorEndpointProviderBase;
     using MigrationHubOrchestratorEndpointProvider = Aws::MigrationHubOrchestrator::Endpoint::MigrationHubOrchestratorEndpointProvider;
 
     namespace Model
     {
       /* Service model forward declarations required in MigrationHubOrchestratorClient header */
+      class CreateTemplateRequest;
       class CreateWorkflowRequest;
       class CreateWorkflowStepRequest;
       class CreateWorkflowStepGroupRequest;
+      class DeleteTemplateRequest;
       class DeleteWorkflowRequest;
       class DeleteWorkflowStepRequest;
       class DeleteWorkflowStepGroupRequest;
@@ -111,15 +119,18 @@ namespace Aws
       class StopWorkflowRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateTemplateRequest;
       class UpdateWorkflowRequest;
       class UpdateWorkflowStepRequest;
       class UpdateWorkflowStepGroupRequest;
       /* End of service model forward declarations required in MigrationHubOrchestratorClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<CreateTemplateResult, MigrationHubOrchestratorError> CreateTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateWorkflowResult, MigrationHubOrchestratorError> CreateWorkflowOutcome;
       typedef Aws::Utils::Outcome<CreateWorkflowStepResult, MigrationHubOrchestratorError> CreateWorkflowStepOutcome;
       typedef Aws::Utils::Outcome<CreateWorkflowStepGroupResult, MigrationHubOrchestratorError> CreateWorkflowStepGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteTemplateResult, MigrationHubOrchestratorError> DeleteTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkflowResult, MigrationHubOrchestratorError> DeleteWorkflowOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkflowStepResult, MigrationHubOrchestratorError> DeleteWorkflowStepOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkflowStepGroupResult, MigrationHubOrchestratorError> DeleteWorkflowStepGroupOutcome;
@@ -142,15 +153,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopWorkflowResult, MigrationHubOrchestratorError> StopWorkflowOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, MigrationHubOrchestratorError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, MigrationHubOrchestratorError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateTemplateResult, MigrationHubOrchestratorError> UpdateTemplateOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkflowResult, MigrationHubOrchestratorError> UpdateWorkflowOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkflowStepResult, MigrationHubOrchestratorError> UpdateWorkflowStepOutcome;
       typedef Aws::Utils::Outcome<UpdateWorkflowStepGroupResult, MigrationHubOrchestratorError> UpdateWorkflowStepGroupOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
       typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
       typedef std::future<CreateWorkflowStepOutcome> CreateWorkflowStepOutcomeCallable;
       typedef std::future<CreateWorkflowStepGroupOutcome> CreateWorkflowStepGroupOutcomeCallable;
+      typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
       typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
       typedef std::future<DeleteWorkflowStepOutcome> DeleteWorkflowStepOutcomeCallable;
       typedef std::future<DeleteWorkflowStepGroupOutcome> DeleteWorkflowStepGroupOutcomeCallable;
@@ -173,6 +187,7 @@ namespace Aws
       typedef std::future<StopWorkflowOutcome> StopWorkflowOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
       typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
       typedef std::future<UpdateWorkflowStepOutcome> UpdateWorkflowStepOutcomeCallable;
       typedef std::future<UpdateWorkflowStepGroupOutcome> UpdateWorkflowStepGroupOutcomeCallable;
@@ -182,9 +197,11 @@ namespace Aws
     class MigrationHubOrchestratorClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::CreateTemplateRequest&, const Model::CreateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::CreateWorkflowRequest&, const Model::CreateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkflowResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::CreateWorkflowStepRequest&, const Model::CreateWorkflowStepOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkflowStepResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::CreateWorkflowStepGroupRequest&, const Model::CreateWorkflowStepGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkflowStepGroupResponseReceivedHandler;
+    typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::DeleteTemplateRequest&, const Model::DeleteTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::DeleteWorkflowRequest&, const Model::DeleteWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::DeleteWorkflowStepRequest&, const Model::DeleteWorkflowStepOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowStepResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::DeleteWorkflowStepGroupRequest&, const Model::DeleteWorkflowStepGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowStepGroupResponseReceivedHandler;
@@ -207,6 +224,7 @@ namespace Aws
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::StopWorkflowRequest&, const Model::StopWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkflowResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::UpdateWorkflowRequest&, const Model::UpdateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkflowResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::UpdateWorkflowStepRequest&, const Model::UpdateWorkflowStepOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkflowStepResponseReceivedHandler;
     typedef std::function<void(const MigrationHubOrchestratorClient*, const Model::UpdateWorkflowStepGroupRequest&, const Model::UpdateWorkflowStepGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkflowStepGroupResponseReceivedHandler;

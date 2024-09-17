@@ -32,146 +32,59 @@ namespace Model
     AWS_IVSREALTIME_API Aws::String SerializePayload() const override;
 
 
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
-
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline DisconnectParticipantRequest& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline DisconnectParticipantRequest& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
-     * returned by <a>CreateParticipantToken</a>.</p>
-     */
-    inline DisconnectParticipantRequest& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
-
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline DisconnectParticipantRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline DisconnectParticipantRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>Description of why this participant is being disconnected.</p>
-     */
-    inline DisconnectParticipantRequest& WithReason(const char* value) { SetReason(value); return *this;}
-
-
+    ///@{
     /**
      * <p>ARN of the stage to which the participant is attached.</p>
      */
     inline const Aws::String& GetStageArn() const{ return m_stageArn; }
-
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
     inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
     inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
     inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
     inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
     inline DisconnectParticipantRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
     inline DisconnectParticipantRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
     inline DisconnectParticipantRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Identifier of the participant to be disconnected. IVS assigns this; it is
+     * returned by <a>CreateParticipantToken</a> (for streams using WebRTC ingest) or
+     * <a>CreateIngestConfiguration</a> (for streams using RTMP ingest).</p>
+     */
+    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
+    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
+    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
+    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
+    inline DisconnectParticipantRequest& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
+    inline DisconnectParticipantRequest& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
+    inline DisconnectParticipantRequest& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Description of why this participant is being disconnected.</p>
+     */
+    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
+    inline DisconnectParticipantRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+    inline DisconnectParticipantRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
+    inline DisconnectParticipantRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    ///@}
   private:
+
+    Aws::String m_stageArn;
+    bool m_stageArnHasBeenSet = false;
 
     Aws::String m_participantId;
     bool m_participantIdHasBeenSet = false;
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
-
-    Aws::String m_stageArn;
-    bool m_stageArnHasBeenSet = false;
   };
 
 } // namespace Model

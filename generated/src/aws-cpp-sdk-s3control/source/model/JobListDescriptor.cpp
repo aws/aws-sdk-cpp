@@ -35,18 +35,8 @@ JobListDescriptor::JobListDescriptor() :
 {
 }
 
-JobListDescriptor::JobListDescriptor(const XmlNode& xmlNode) : 
-    m_jobIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operation(OperationName::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationDateHasBeenSet(false),
-    m_progressSummaryHasBeenSet(false)
+JobListDescriptor::JobListDescriptor(const XmlNode& xmlNode)
+  : JobListDescriptor()
 {
   *this = xmlNode;
 }

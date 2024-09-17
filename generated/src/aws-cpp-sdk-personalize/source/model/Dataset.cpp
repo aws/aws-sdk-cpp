@@ -32,17 +32,8 @@ Dataset::Dataset() :
 {
 }
 
-Dataset::Dataset(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestDatasetUpdateHasBeenSet(false),
-    m_trackingIdHasBeenSet(false)
+Dataset::Dataset(JsonView jsonValue)
+  : Dataset()
 {
   *this = jsonValue;
 }

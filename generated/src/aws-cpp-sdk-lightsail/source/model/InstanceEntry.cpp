@@ -28,13 +28,8 @@ InstanceEntry::InstanceEntry() :
 {
 }
 
-InstanceEntry::InstanceEntry(JsonView jsonValue) : 
-    m_sourceNameHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_portInfoSource(PortInfoSourceType::NOT_SET),
-    m_portInfoSourceHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+InstanceEntry::InstanceEntry(JsonView jsonValue)
+  : InstanceEntry()
 {
   *this = jsonValue;
 }

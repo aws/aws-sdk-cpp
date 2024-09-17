@@ -35,20 +35,8 @@ ConfigRule::ConfigRule() :
 {
 }
 
-ConfigRule::ConfigRule(JsonView jsonValue) : 
-    m_configRuleNameHasBeenSet(false),
-    m_configRuleArnHasBeenSet(false),
-    m_configRuleIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false),
-    m_configRuleState(ConfigRuleState::NOT_SET),
-    m_configRuleStateHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_evaluationModesHasBeenSet(false)
+ConfigRule::ConfigRule(JsonView jsonValue)
+  : ConfigRule()
 {
   *this = jsonValue;
 }

@@ -22,6 +22,7 @@
 #include <aws/dynamodbstreams/model/GetRecordsResult.h>
 #include <aws/dynamodbstreams/model/GetShardIteratorResult.h>
 #include <aws/dynamodbstreams/model/ListStreamsResult.h>
+#include <aws/dynamodbstreams/model/ListStreamsRequest.h>
 /* End of service model headers required in DynamoDBStreamsClient header */
 
 namespace Aws
@@ -55,7 +56,7 @@ namespace Aws
 
   namespace DynamoDBStreams
   {
-    using DynamoDBStreamsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DynamoDBStreamsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DynamoDBStreamsEndpointProviderBase = Aws::DynamoDBStreams::Endpoint::DynamoDBStreamsEndpointProviderBase;
     using DynamoDBStreamsEndpointProvider = Aws::DynamoDBStreams::Endpoint::DynamoDBStreamsEndpointProvider;
 

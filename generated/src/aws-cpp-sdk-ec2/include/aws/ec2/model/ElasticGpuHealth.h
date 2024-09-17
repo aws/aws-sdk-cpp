@@ -26,8 +26,8 @@ namespace Model
   /**
    *  <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For
    * workloads that require graphics acceleration, we recommend that you use Amazon
-   * EC2 G4ad, G4dn, or G5 instances.</p>  <p>Describes the status of an
-   * Elastic Graphics accelerator.</p><p><h3>See Also:</h3>   <a
+   * EC2 G4, G5, or G6 instances.</p>  <p>Describes the status of an Elastic
+   * Graphics accelerator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuHealth">AWS
    * API Reference</a></p>
    */
@@ -42,36 +42,17 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The health status.</p>
      */
     inline const ElasticGpuStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The health status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The health status.</p>
-     */
     inline void SetStatus(const ElasticGpuStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The health status.</p>
-     */
     inline void SetStatus(ElasticGpuStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The health status.</p>
-     */
     inline ElasticGpuHealth& WithStatus(const ElasticGpuStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The health status.</p>
-     */
     inline ElasticGpuHealth& WithStatus(ElasticGpuStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ElasticGpuStatus m_status;

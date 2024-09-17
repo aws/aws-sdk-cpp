@@ -22,8 +22,8 @@ DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult() :
 {
 }
 
-DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_additionalDataPending(false)
+DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DownloadDBLogFilePortionResult()
 {
   *this = result;
 }

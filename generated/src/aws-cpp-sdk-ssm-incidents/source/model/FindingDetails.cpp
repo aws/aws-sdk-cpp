@@ -24,9 +24,8 @@ FindingDetails::FindingDetails() :
 {
 }
 
-FindingDetails::FindingDetails(JsonView jsonValue) : 
-    m_cloudFormationStackUpdateHasBeenSet(false),
-    m_codeDeployDeploymentHasBeenSet(false)
+FindingDetails::FindingDetails(JsonView jsonValue)
+  : FindingDetails()
 {
   *this = jsonValue;
 }

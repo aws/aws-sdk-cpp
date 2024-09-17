@@ -29,14 +29,8 @@ PutEventsRequestEntry::PutEventsRequestEntry() :
 {
 }
 
-PutEventsRequestEntry::PutEventsRequestEntry(JsonView jsonValue) : 
-    m_timeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false),
-    m_traceHeaderHasBeenSet(false)
+PutEventsRequestEntry::PutEventsRequestEntry(JsonView jsonValue)
+  : PutEventsRequestEntry()
 {
   *this = jsonValue;
 }

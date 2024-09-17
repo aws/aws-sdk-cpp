@@ -38,63 +38,29 @@ namespace Model
     AWS_OPSWORKS_API CreateLayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The layer ID.</p>
      */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(Aws::String&& value) { m_layerId = std::move(value); }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(const char* value) { m_layerId.assign(value); }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline CreateLayerResult& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline CreateLayerResult& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline CreateLayerResult& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLayerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLayerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLayerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_layerId;

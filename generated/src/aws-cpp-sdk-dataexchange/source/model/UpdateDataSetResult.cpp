@@ -23,9 +23,8 @@ UpdateDataSetResult::UpdateDataSetResult() :
 {
 }
 
-UpdateDataSetResult::UpdateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_assetType(AssetType::NOT_SET),
-    m_origin(Origin::NOT_SET)
+UpdateDataSetResult::UpdateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateDataSetResult()
 {
   *this = result;
 }

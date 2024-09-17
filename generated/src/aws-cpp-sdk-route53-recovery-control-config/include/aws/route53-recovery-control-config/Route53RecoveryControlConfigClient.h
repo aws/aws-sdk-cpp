@@ -187,13 +187,13 @@ namespace Route53RecoveryControlConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRule">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateSafetyRuleOutcome CreateSafetyRule(const Model::CreateSafetyRuleRequest& request) const;
+        virtual Model::CreateSafetyRuleOutcome CreateSafetyRule(const Model::CreateSafetyRuleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateSafetyRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateSafetyRuleRequestT = Model::CreateSafetyRuleRequest>
-        Model::CreateSafetyRuleOutcomeCallable CreateSafetyRuleCallable(const CreateSafetyRuleRequestT& request) const
+        Model::CreateSafetyRuleOutcomeCallable CreateSafetyRuleCallable(const CreateSafetyRuleRequestT& request = {}) const
         {
             return SubmitCallable(&Route53RecoveryControlConfigClient::CreateSafetyRule, request);
         }
@@ -202,7 +202,7 @@ namespace Route53RecoveryControlConfig
          * An Async wrapper for CreateSafetyRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateSafetyRuleRequestT = Model::CreateSafetyRuleRequest>
-        void CreateSafetyRuleAsync(const CreateSafetyRuleRequestT& request, const CreateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateSafetyRuleAsync(const CreateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateSafetyRuleRequestT& request = {}) const
         {
             return SubmitAsync(&Route53RecoveryControlConfigClient::CreateSafetyRule, request, handler, context);
         }
@@ -471,13 +471,13 @@ namespace Route53RecoveryControlConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request) const
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
         {
             return SubmitCallable(&Route53RecoveryControlConfigClient::ListClusters, request);
         }
@@ -486,7 +486,7 @@ namespace Route53RecoveryControlConfig
          * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&Route53RecoveryControlConfigClient::ListClusters, request, handler, context);
         }
@@ -497,13 +497,13 @@ namespace Route53RecoveryControlConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListControlPanelsOutcome ListControlPanels(const Model::ListControlPanelsRequest& request) const;
+        virtual Model::ListControlPanelsOutcome ListControlPanels(const Model::ListControlPanelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListControlPanels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListControlPanelsRequestT = Model::ListControlPanelsRequest>
-        Model::ListControlPanelsOutcomeCallable ListControlPanelsCallable(const ListControlPanelsRequestT& request) const
+        Model::ListControlPanelsOutcomeCallable ListControlPanelsCallable(const ListControlPanelsRequestT& request = {}) const
         {
             return SubmitCallable(&Route53RecoveryControlConfigClient::ListControlPanels, request);
         }
@@ -512,7 +512,7 @@ namespace Route53RecoveryControlConfig
          * An Async wrapper for ListControlPanels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListControlPanelsRequestT = Model::ListControlPanelsRequest>
-        void ListControlPanelsAsync(const ListControlPanelsRequestT& request, const ListControlPanelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListControlPanelsAsync(const ListControlPanelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListControlPanelsRequestT& request = {}) const
         {
             return SubmitAsync(&Route53RecoveryControlConfigClient::ListControlPanels, request, handler, context);
         }
@@ -709,13 +709,13 @@ namespace Route53RecoveryControlConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateSafetyRuleOutcome UpdateSafetyRule(const Model::UpdateSafetyRuleRequest& request) const;
+        virtual Model::UpdateSafetyRuleOutcome UpdateSafetyRule(const Model::UpdateSafetyRuleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateSafetyRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateSafetyRuleRequestT = Model::UpdateSafetyRuleRequest>
-        Model::UpdateSafetyRuleOutcomeCallable UpdateSafetyRuleCallable(const UpdateSafetyRuleRequestT& request) const
+        Model::UpdateSafetyRuleOutcomeCallable UpdateSafetyRuleCallable(const UpdateSafetyRuleRequestT& request = {}) const
         {
             return SubmitCallable(&Route53RecoveryControlConfigClient::UpdateSafetyRule, request);
         }
@@ -724,7 +724,7 @@ namespace Route53RecoveryControlConfig
          * An Async wrapper for UpdateSafetyRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateSafetyRuleRequestT = Model::UpdateSafetyRuleRequest>
-        void UpdateSafetyRuleAsync(const UpdateSafetyRuleRequestT& request, const UpdateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateSafetyRuleAsync(const UpdateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateSafetyRuleRequestT& request = {}) const
         {
             return SubmitAsync(&Route53RecoveryControlConfigClient::UpdateSafetyRule, request, handler, context);
         }
@@ -737,7 +737,6 @@ namespace Route53RecoveryControlConfig
       void init(const Route53RecoveryControlConfigClientConfiguration& clientConfiguration);
 
       Route53RecoveryControlConfigClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> m_endpointProvider;
   };
 

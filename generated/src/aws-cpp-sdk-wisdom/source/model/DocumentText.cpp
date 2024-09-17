@@ -24,9 +24,8 @@ DocumentText::DocumentText() :
 {
 }
 
-DocumentText::DocumentText(JsonView jsonValue) : 
-    m_highlightsHasBeenSet(false),
-    m_textHasBeenSet(false)
+DocumentText::DocumentText(JsonView jsonValue)
+  : DocumentText()
 {
   *this = jsonValue;
 }

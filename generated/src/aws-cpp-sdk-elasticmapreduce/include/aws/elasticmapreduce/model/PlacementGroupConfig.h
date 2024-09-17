@@ -42,85 +42,32 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Role of the instance in the cluster.</p> <p>Starting with Amazon EMR release
      * 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
      */
     inline const InstanceRoleType& GetInstanceRole() const{ return m_instanceRole; }
-
-    /**
-     * <p>Role of the instance in the cluster.</p> <p>Starting with Amazon EMR release
-     * 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-     */
     inline bool InstanceRoleHasBeenSet() const { return m_instanceRoleHasBeenSet; }
-
-    /**
-     * <p>Role of the instance in the cluster.</p> <p>Starting with Amazon EMR release
-     * 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-     */
     inline void SetInstanceRole(const InstanceRoleType& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
-
-    /**
-     * <p>Role of the instance in the cluster.</p> <p>Starting with Amazon EMR release
-     * 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-     */
     inline void SetInstanceRole(InstanceRoleType&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = std::move(value); }
-
-    /**
-     * <p>Role of the instance in the cluster.</p> <p>Starting with Amazon EMR release
-     * 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-     */
     inline PlacementGroupConfig& WithInstanceRole(const InstanceRoleType& value) { SetInstanceRole(value); return *this;}
-
-    /**
-     * <p>Role of the instance in the cluster.</p> <p>Starting with Amazon EMR release
-     * 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
-     */
     inline PlacementGroupConfig& WithInstanceRole(InstanceRoleType&& value) { SetInstanceRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
      * <p>Starting with Amazon EMR release 5.23.0, the only supported placement
      * strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
      */
     inline const PlacementGroupStrategy& GetPlacementStrategy() const{ return m_placementStrategy; }
-
-    /**
-     * <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
-     * <p>Starting with Amazon EMR release 5.23.0, the only supported placement
-     * strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-     */
     inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
-
-    /**
-     * <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
-     * <p>Starting with Amazon EMR release 5.23.0, the only supported placement
-     * strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-     */
     inline void SetPlacementStrategy(const PlacementGroupStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
-
-    /**
-     * <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
-     * <p>Starting with Amazon EMR release 5.23.0, the only supported placement
-     * strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-     */
     inline void SetPlacementStrategy(PlacementGroupStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
-
-    /**
-     * <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
-     * <p>Starting with Amazon EMR release 5.23.0, the only supported placement
-     * strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-     */
     inline PlacementGroupConfig& WithPlacementStrategy(const PlacementGroupStrategy& value) { SetPlacementStrategy(value); return *this;}
-
-    /**
-     * <p>Amazon EC2 Placement Group strategy associated with instance role.</p>
-     * <p>Starting with Amazon EMR release 5.23.0, the only supported placement
-     * strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
-     */
     inline PlacementGroupConfig& WithPlacementStrategy(PlacementGroupStrategy&& value) { SetPlacementStrategy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceRoleType m_instanceRole;

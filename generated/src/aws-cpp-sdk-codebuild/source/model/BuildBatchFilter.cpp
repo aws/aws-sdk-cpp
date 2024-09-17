@@ -24,9 +24,8 @@ BuildBatchFilter::BuildBatchFilter() :
 {
 }
 
-BuildBatchFilter::BuildBatchFilter(JsonView jsonValue) : 
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
+BuildBatchFilter::BuildBatchFilter(JsonView jsonValue)
+  : BuildBatchFilter()
 {
   *this = jsonValue;
 }

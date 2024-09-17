@@ -24,9 +24,8 @@ SqlConfiguration::SqlConfiguration() :
 {
 }
 
-SqlConfiguration::SqlConfiguration(JsonView jsonValue) : 
-    m_queryIdentifiersEnclosingOption(QueryIdentifiersEnclosingOption::NOT_SET),
-    m_queryIdentifiersEnclosingOptionHasBeenSet(false)
+SqlConfiguration::SqlConfiguration(JsonView jsonValue)
+  : SqlConfiguration()
 {
   *this = jsonValue;
 }

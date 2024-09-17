@@ -35,20 +35,8 @@ ActionExecutionDetail::ActionExecutionDetail() :
 {
 }
 
-ActionExecutionDetail::ActionExecutionDetail(JsonView jsonValue) : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_actionExecutionIdHasBeenSet(false),
-    m_pipelineVersion(0),
-    m_pipelineVersionHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_status(ActionExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+ActionExecutionDetail::ActionExecutionDetail(JsonView jsonValue)
+  : ActionExecutionDetail()
 {
   *this = jsonValue;
 }

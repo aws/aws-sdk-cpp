@@ -22,8 +22,8 @@ CreateShareResult::CreateShareResult() :
 {
 }
 
-CreateShareResult::CreateShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ShareStatus::NOT_SET)
+CreateShareResult::CreateShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateShareResult()
 {
   *this = result;
 }

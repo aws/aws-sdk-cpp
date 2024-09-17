@@ -24,9 +24,8 @@ TermsAggregation::TermsAggregation() :
 {
 }
 
-TermsAggregation::TermsAggregation(JsonView jsonValue) : 
-    m_maxBuckets(0),
-    m_maxBucketsHasBeenSet(false)
+TermsAggregation::TermsAggregation(JsonView jsonValue)
+  : TermsAggregation()
 {
   *this = jsonValue;
 }

@@ -41,38 +41,83 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * Specify an integer value for Black video duration from 50 to 86400000 to
-     * generate a black video input for that many milliseconds. Required when you
-     * include Video generator.
+     * Specify the number of audio channels to include in your video generator input.
+     * MediaConvert creates these audio channels as silent audio within a single audio
+     * track. Enter an integer from 1 to 32.
+     */
+    inline int GetChannels() const{ return m_channels; }
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+    inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
+    inline InputVideoGenerator& WithChannels(int value) { SetChannels(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Specify the duration, in milliseconds, for your video generator input.
+Enter an
+     * integer from 50 to 86400000.
      */
     inline int GetDuration() const{ return m_duration; }
-
-    /**
-     * Specify an integer value for Black video duration from 50 to 86400000 to
-     * generate a black video input for that many milliseconds. Required when you
-     * include Video generator.
-     */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-
-    /**
-     * Specify an integer value for Black video duration from 50 to 86400000 to
-     * generate a black video input for that many milliseconds. Required when you
-     * include Video generator.
-     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
-
-    /**
-     * Specify an integer value for Black video duration from 50 to 86400000 to
-     * generate a black video input for that many milliseconds. Required when you
-     * include Video generator.
-     */
     inline InputVideoGenerator& WithDuration(int value) { SetDuration(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * Specify the denominator of the fraction that represents the frame rate for your
+     * video generator input. When you do, you must also specify a value for Frame rate
+     * numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame
+     * rate numerator and Frame rate denominator blank.
+     */
+    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
+    inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
+    inline InputVideoGenerator& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Specify the numerator of the fraction that represents the frame rate for your
+     * video generator input. When you do, you must also specify a value for Frame rate
+     * denominator. MediaConvert uses a default frame rate of 29.97 when you leave
+     * Frame rate numerator and Frame rate denominator blank.
+     */
+    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
+    inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
+    inline InputVideoGenerator& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Specify the audio sample rate, in Hz, for the silent audio in your video
+     * generator input.
+Enter an integer from 32000 to 48000.
+     */
+    inline int GetSampleRate() const{ return m_sampleRate; }
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
+    inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
+    inline InputVideoGenerator& WithSampleRate(int value) { SetSampleRate(value); return *this;}
+    ///@}
   private:
+
+    int m_channels;
+    bool m_channelsHasBeenSet = false;
 
     int m_duration;
     bool m_durationHasBeenSet = false;
+
+    int m_framerateDenominator;
+    bool m_framerateDenominatorHasBeenSet = false;
+
+    int m_framerateNumerator;
+    bool m_framerateNumeratorHasBeenSet = false;
+
+    int m_sampleRate;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

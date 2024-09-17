@@ -43,95 +43,34 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
      * the idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline DeleteScraperRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline DeleteScraperRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
-     */
     inline DeleteScraperRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the scraper to delete.</p>
      */
     inline const Aws::String& GetScraperId() const{ return m_scraperId; }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline void SetScraperId(const Aws::String& value) { m_scraperIdHasBeenSet = true; m_scraperId = value; }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline void SetScraperId(Aws::String&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::move(value); }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline void SetScraperId(const char* value) { m_scraperIdHasBeenSet = true; m_scraperId.assign(value); }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline DeleteScraperRequest& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline DeleteScraperRequest& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline DeleteScraperRequest& WithScraperId(const char* value) { SetScraperId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

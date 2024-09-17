@@ -29,14 +29,8 @@ RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark() :
 {
 }
 
-RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark(JsonView jsonValue) : 
-    m_metricsHasBeenSet(false),
-    m_endpointMetricsHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false),
-    m_modelConfigurationHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_invocationEndTimeHasBeenSet(false),
-    m_invocationStartTimeHasBeenSet(false)
+RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark(JsonView jsonValue)
+  : RecommendationJobInferenceBenchmark()
 {
   *this = jsonValue;
 }

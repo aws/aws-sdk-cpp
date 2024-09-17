@@ -44,6 +44,8 @@
 #include <aws/cloudsearch/model/UpdateDomainEndpointOptionsResult.h>
 #include <aws/cloudsearch/model/UpdateScalingParametersResult.h>
 #include <aws/cloudsearch/model/UpdateServiceAccessPoliciesResult.h>
+#include <aws/cloudsearch/model/DescribeDomainsRequest.h>
+#include <aws/cloudsearch/model/ListDomainNamesRequest.h>
 /* End of service model headers required in CloudSearchClient header */
 
 namespace Aws
@@ -77,7 +79,7 @@ namespace Aws
 
   namespace CloudSearch
   {
-    using CloudSearchClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudSearchClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudSearchEndpointProviderBase = Aws::CloudSearch::Endpoint::CloudSearchEndpointProviderBase;
     using CloudSearchEndpointProvider = Aws::CloudSearch::Endpoint::CloudSearchEndpointProvider;
 

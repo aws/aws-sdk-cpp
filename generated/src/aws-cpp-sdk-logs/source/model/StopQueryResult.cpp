@@ -22,8 +22,8 @@ StopQueryResult::StopQueryResult() :
 {
 }
 
-StopQueryResult::StopQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_success(false)
+StopQueryResult::StopQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopQueryResult()
 {
   *this = result;
 }

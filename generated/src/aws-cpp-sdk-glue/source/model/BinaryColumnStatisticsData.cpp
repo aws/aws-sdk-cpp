@@ -28,13 +28,8 @@ BinaryColumnStatisticsData::BinaryColumnStatisticsData() :
 {
 }
 
-BinaryColumnStatisticsData::BinaryColumnStatisticsData(JsonView jsonValue) : 
-    m_maximumLength(0),
-    m_maximumLengthHasBeenSet(false),
-    m_averageLength(0.0),
-    m_averageLengthHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false)
+BinaryColumnStatisticsData::BinaryColumnStatisticsData(JsonView jsonValue)
+  : BinaryColumnStatisticsData()
 {
   *this = jsonValue;
 }

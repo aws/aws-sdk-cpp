@@ -24,9 +24,8 @@ AudioDolbyEDecode::AudioDolbyEDecode() :
 {
 }
 
-AudioDolbyEDecode::AudioDolbyEDecode(JsonView jsonValue) : 
-    m_programSelection(DolbyEProgramSelection::NOT_SET),
-    m_programSelectionHasBeenSet(false)
+AudioDolbyEDecode::AudioDolbyEDecode(JsonView jsonValue)
+  : AudioDolbyEDecode()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ SearchSecurityProfilesResult::SearchSecurityProfilesResult() :
 {
 }
 
-SearchSecurityProfilesResult::SearchSecurityProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_approximateTotalCount(0)
+SearchSecurityProfilesResult::SearchSecurityProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchSecurityProfilesResult()
 {
   *this = result;
 }

@@ -38,57 +38,27 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+     * <p>Indicates whether the match is case sensitive.</p>
      */
     inline bool GetCaseSensitive() const{ return m_caseSensitive; }
-
-    /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
-     */
     inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
-     */
     inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
-
-    /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
-     */
     inline PathMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of path match.</p>
      */
     inline const PathMatchType& GetMatch() const{ return m_match; }
-
-    /**
-     * <p>The type of path match.</p>
-     */
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-
-    /**
-     * <p>The type of path match.</p>
-     */
     inline void SetMatch(const PathMatchType& value) { m_matchHasBeenSet = true; m_match = value; }
-
-    /**
-     * <p>The type of path match.</p>
-     */
     inline void SetMatch(PathMatchType&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-
-    /**
-     * <p>The type of path match.</p>
-     */
     inline PathMatch& WithMatch(const PathMatchType& value) { SetMatch(value); return *this;}
-
-    /**
-     * <p>The type of path match.</p>
-     */
     inline PathMatch& WithMatch(PathMatchType&& value) { SetMatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_caseSensitive;

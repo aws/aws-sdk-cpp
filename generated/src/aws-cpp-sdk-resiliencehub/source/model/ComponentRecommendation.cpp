@@ -26,11 +26,8 @@ ComponentRecommendation::ComponentRecommendation() :
 {
 }
 
-ComponentRecommendation::ComponentRecommendation(JsonView jsonValue) : 
-    m_appComponentNameHasBeenSet(false),
-    m_configRecommendationsHasBeenSet(false),
-    m_recommendationStatus(RecommendationComplianceStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false)
+ComponentRecommendation::ComponentRecommendation(JsonView jsonValue)
+  : ComponentRecommendation()
 {
   *this = jsonValue;
 }

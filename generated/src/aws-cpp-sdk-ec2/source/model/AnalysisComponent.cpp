@@ -27,10 +27,8 @@ AnalysisComponent::AnalysisComponent() :
 {
 }
 
-AnalysisComponent::AnalysisComponent(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AnalysisComponent::AnalysisComponent(const XmlNode& xmlNode)
+  : AnalysisComponent()
 {
   *this = xmlNode;
 }

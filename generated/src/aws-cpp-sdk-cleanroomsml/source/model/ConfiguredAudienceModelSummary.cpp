@@ -19,81 +19,31 @@ namespace Model
 {
 
 ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary() : 
-    m_audienceModelArnHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_audienceModelArnHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_configuredAudienceModelArnHasBeenSet(false),
     m_status(ConfiguredAudienceModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
-ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary(JsonView jsonValue) : 
-    m_audienceModelArnHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_status(ConfiguredAudienceModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary(JsonView jsonValue)
+  : ConfiguredAudienceModelSummary()
 {
   *this = jsonValue;
 }
 
 ConfiguredAudienceModelSummary& ConfiguredAudienceModelSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("audienceModelArn"))
-  {
-    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
-
-    m_audienceModelArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("configuredAudienceModelArn"))
-  {
-    m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");
-
-    m_configuredAudienceModelArnHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
 
     m_createTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("outputConfig"))
-  {
-    m_outputConfig = jsonValue.GetObject("outputConfig");
-
-    m_outputConfigHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = ConfiguredAudienceModelStatusMapper::GetConfiguredAudienceModelStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updateTime"))
@@ -103,6 +53,48 @@ ConfiguredAudienceModelSummary& ConfiguredAudienceModelSummary::operator =(JsonV
     m_updateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audienceModelArn"))
+  {
+    m_audienceModelArn = jsonValue.GetString("audienceModelArn");
+
+    m_audienceModelArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outputConfig"))
+  {
+    m_outputConfig = jsonValue.GetObject("outputConfig");
+
+    m_outputConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configuredAudienceModelArn"))
+  {
+    m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");
+
+    m_configuredAudienceModelArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ConfiguredAudienceModelStatusMapper::GetConfiguredAudienceModelStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,32 +102,25 @@ JsonValue ConfiguredAudienceModelSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_audienceModelArnHasBeenSet)
-  {
-   payload.WithString("audienceModelArn", m_audienceModelArn);
-
-  }
-
-  if(m_configuredAudienceModelArnHasBeenSet)
-  {
-   payload.WithString("configuredAudienceModelArn", m_configuredAudienceModelArn);
-
-  }
-
   if(m_createTimeHasBeenSet)
   {
    payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_updateTimeHasBeenSet)
   {
-   payload.WithString("description", m_description);
-
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_audienceModelArnHasBeenSet)
+  {
+   payload.WithString("audienceModelArn", m_audienceModelArn);
 
   }
 
@@ -145,14 +130,21 @@ JsonValue ConfiguredAudienceModelSummary::Jsonize() const
 
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_configuredAudienceModelArnHasBeenSet)
+  {
+   payload.WithString("configuredAudienceModelArn", m_configuredAudienceModelArn);
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ConfiguredAudienceModelStatusMapper::GetNameForConfiguredAudienceModelStatus(m_status));
-  }
-
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

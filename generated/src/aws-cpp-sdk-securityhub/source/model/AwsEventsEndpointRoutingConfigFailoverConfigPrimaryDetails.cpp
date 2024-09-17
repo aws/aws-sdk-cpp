@@ -23,8 +23,8 @@ AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::AwsEventsEndpointRou
 {
 }
 
-AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails(JsonView jsonValue) : 
-    m_healthCheckHasBeenSet(false)
+AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails(JsonView jsonValue)
+  : AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails()
 {
   *this = jsonValue;
 }

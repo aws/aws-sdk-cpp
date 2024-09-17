@@ -738,13 +738,13 @@ namespace CloudWatchEvidently
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
+        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request) const
+        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchEvidentlyClient::ListProjects, request);
         }
@@ -753,7 +753,7 @@ namespace CloudWatchEvidently
          * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        void ListProjectsAsync(const ListProjectsRequestT& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProjectsAsync(const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProjectsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchEvidentlyClient::ListProjects, request, handler, context);
         }
@@ -790,13 +790,13 @@ namespace CloudWatchEvidently
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSegmentsOutcome ListSegments(const Model::ListSegmentsRequest& request) const;
+        virtual Model::ListSegmentsOutcome ListSegments(const Model::ListSegmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSegments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSegmentsRequestT = Model::ListSegmentsRequest>
-        Model::ListSegmentsOutcomeCallable ListSegmentsCallable(const ListSegmentsRequestT& request) const
+        Model::ListSegmentsOutcomeCallable ListSegmentsCallable(const ListSegmentsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchEvidentlyClient::ListSegments, request);
         }
@@ -805,7 +805,7 @@ namespace CloudWatchEvidently
          * An Async wrapper for ListSegments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSegmentsRequestT = Model::ListSegmentsRequest>
-        void ListSegmentsAsync(const ListSegmentsRequestT& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSegmentsAsync(const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSegmentsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchEvidentlyClient::ListSegments, request, handler, context);
         }
@@ -1220,7 +1220,6 @@ namespace CloudWatchEvidently
       void init(const CloudWatchEvidentlyClientConfiguration& clientConfiguration);
 
       CloudWatchEvidentlyClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> m_endpointProvider;
   };
 

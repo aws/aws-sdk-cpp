@@ -25,10 +25,8 @@ BatchGetIncidentFindingsError::BatchGetIncidentFindingsError() :
 {
 }
 
-BatchGetIncidentFindingsError::BatchGetIncidentFindingsError(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchGetIncidentFindingsError::BatchGetIncidentFindingsError(JsonView jsonValue)
+  : BatchGetIncidentFindingsError()
 {
   *this = jsonValue;
 }

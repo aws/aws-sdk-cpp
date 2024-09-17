@@ -32,46 +32,19 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p> The ID for the share request to be deleted. </p>
+     * <p>The ID for the resource share to be deleted.</p>
      */
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    /**
-     * <p> The ID for the share request to be deleted. </p>
-     */
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-
-    /**
-     * <p> The ID for the share request to be deleted. </p>
-     */
     inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
-
-    /**
-     * <p> The ID for the share request to be deleted. </p>
-     */
     inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
-
-    /**
-     * <p> The ID for the share request to be deleted. </p>
-     */
     inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
-
-    /**
-     * <p> The ID for the share request to be deleted. </p>
-     */
     inline DeleteShareRequest& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    /**
-     * <p> The ID for the share request to be deleted. </p>
-     */
     inline DeleteShareRequest& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID for the share request to be deleted. </p>
-     */
     inline DeleteShareRequest& WithShareId(const char* value) { SetShareId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shareId;

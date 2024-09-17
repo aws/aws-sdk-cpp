@@ -39,46 +39,19 @@ namespace Model
     AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The section of audio where the category rule was detected.</p>
      */
     inline const Aws::Vector<PointOfInterest>& GetPointsOfInterest() const{ return m_pointsOfInterest; }
-
-    /**
-     * <p>The section of audio where the category rule was detected.</p>
-     */
     inline bool PointsOfInterestHasBeenSet() const { return m_pointsOfInterestHasBeenSet; }
-
-    /**
-     * <p>The section of audio where the category rule was detected.</p>
-     */
     inline void SetPointsOfInterest(const Aws::Vector<PointOfInterest>& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest = value; }
-
-    /**
-     * <p>The section of audio where the category rule was detected.</p>
-     */
     inline void SetPointsOfInterest(Aws::Vector<PointOfInterest>&& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest = std::move(value); }
-
-    /**
-     * <p>The section of audio where the category rule was detected.</p>
-     */
     inline CategoryDetails& WithPointsOfInterest(const Aws::Vector<PointOfInterest>& value) { SetPointsOfInterest(value); return *this;}
-
-    /**
-     * <p>The section of audio where the category rule was detected.</p>
-     */
     inline CategoryDetails& WithPointsOfInterest(Aws::Vector<PointOfInterest>&& value) { SetPointsOfInterest(std::move(value)); return *this;}
-
-    /**
-     * <p>The section of audio where the category rule was detected.</p>
-     */
     inline CategoryDetails& AddPointsOfInterest(const PointOfInterest& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest.push_back(value); return *this; }
-
-    /**
-     * <p>The section of audio where the category rule was detected.</p>
-     */
     inline CategoryDetails& AddPointsOfInterest(PointOfInterest&& value) { m_pointsOfInterestHasBeenSet = true; m_pointsOfInterest.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PointOfInterest> m_pointsOfInterest;

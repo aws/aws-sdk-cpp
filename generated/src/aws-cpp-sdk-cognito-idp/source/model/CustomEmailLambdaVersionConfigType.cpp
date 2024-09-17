@@ -25,10 +25,8 @@ CustomEmailLambdaVersionConfigType::CustomEmailLambdaVersionConfigType() :
 {
 }
 
-CustomEmailLambdaVersionConfigType::CustomEmailLambdaVersionConfigType(JsonView jsonValue) : 
-    m_lambdaVersion(CustomEmailSenderLambdaVersionType::NOT_SET),
-    m_lambdaVersionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false)
+CustomEmailLambdaVersionConfigType::CustomEmailLambdaVersionConfigType(JsonView jsonValue)
+  : CustomEmailLambdaVersionConfigType()
 {
   *this = jsonValue;
 }

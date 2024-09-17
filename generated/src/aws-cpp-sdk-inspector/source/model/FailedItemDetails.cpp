@@ -26,11 +26,8 @@ FailedItemDetails::FailedItemDetails() :
 {
 }
 
-FailedItemDetails::FailedItemDetails(JsonView jsonValue) : 
-    m_failureCode(FailedItemErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_retryable(false),
-    m_retryableHasBeenSet(false)
+FailedItemDetails::FailedItemDetails(JsonView jsonValue)
+  : FailedItemDetails()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ListTargetsFilter::ListTargetsFilter() :
 {
 }
 
-ListTargetsFilter::ListTargetsFilter(JsonView jsonValue) : 
-    m_name(ListTargetsFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ListTargetsFilter::ListTargetsFilter(JsonView jsonValue)
+  : ListTargetsFilter()
 {
   *this = jsonValue;
 }

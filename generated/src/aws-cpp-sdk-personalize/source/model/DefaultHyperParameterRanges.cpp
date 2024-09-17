@@ -25,10 +25,8 @@ DefaultHyperParameterRanges::DefaultHyperParameterRanges() :
 {
 }
 
-DefaultHyperParameterRanges::DefaultHyperParameterRanges(JsonView jsonValue) : 
-    m_integerHyperParameterRangesHasBeenSet(false),
-    m_continuousHyperParameterRangesHasBeenSet(false),
-    m_categoricalHyperParameterRangesHasBeenSet(false)
+DefaultHyperParameterRanges::DefaultHyperParameterRanges(JsonView jsonValue)
+  : DefaultHyperParameterRanges()
 {
   *this = jsonValue;
 }

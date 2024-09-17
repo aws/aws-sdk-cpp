@@ -43,46 +43,19 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates that the topic does not exist.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
-
-    /**
-     * <p>Indicates that the topic does not exist.</p>
-     */
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-
-    /**
-     * <p>Indicates that the topic does not exist.</p>
-     */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-
-    /**
-     * <p>Indicates that the topic does not exist.</p>
-     */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-
-    /**
-     * <p>Indicates that the topic does not exist.</p>
-     */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-
-    /**
-     * <p>Indicates that the topic does not exist.</p>
-     */
     inline InvalidSnsTopicException& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-
-    /**
-     * <p>Indicates that the topic does not exist.</p>
-     */
     inline InvalidSnsTopicException& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates that the topic does not exist.</p>
-     */
     inline InvalidSnsTopicException& WithTopic(const char* value) { SetTopic(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topic;

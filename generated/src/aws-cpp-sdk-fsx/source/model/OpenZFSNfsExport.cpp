@@ -23,8 +23,8 @@ OpenZFSNfsExport::OpenZFSNfsExport() :
 {
 }
 
-OpenZFSNfsExport::OpenZFSNfsExport(JsonView jsonValue) : 
-    m_clientConfigurationsHasBeenSet(false)
+OpenZFSNfsExport::OpenZFSNfsExport(JsonView jsonValue)
+  : OpenZFSNfsExport()
 {
   *this = jsonValue;
 }

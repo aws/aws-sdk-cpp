@@ -39,24 +39,8 @@ CloudWatchLogsLogStream::CloudWatchLogsLogStream() :
 {
 }
 
-CloudWatchLogsLogStream::CloudWatchLogsLogStream(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false),
-    m_datetimeFormatHasBeenSet(false),
-    m_timeZone(CloudWatchLogsTimeZone::NOT_SET),
-    m_timeZoneHasBeenSet(false),
-    m_fileHasBeenSet(false),
-    m_fileFingerprintLinesHasBeenSet(false),
-    m_multiLineStartPatternHasBeenSet(false),
-    m_initialPosition(CloudWatchLogsInitialPosition::NOT_SET),
-    m_initialPositionHasBeenSet(false),
-    m_encoding(CloudWatchLogsEncoding::NOT_SET),
-    m_encodingHasBeenSet(false),
-    m_bufferDuration(0),
-    m_bufferDurationHasBeenSet(false),
-    m_batchCount(0),
-    m_batchCountHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false)
+CloudWatchLogsLogStream::CloudWatchLogsLogStream(JsonView jsonValue)
+  : CloudWatchLogsLogStream()
 {
   *this = jsonValue;
 }

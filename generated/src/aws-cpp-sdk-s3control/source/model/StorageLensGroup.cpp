@@ -27,10 +27,8 @@ StorageLensGroup::StorageLensGroup() :
 {
 }
 
-StorageLensGroup::StorageLensGroup(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_storageLensGroupArnHasBeenSet(false)
+StorageLensGroup::StorageLensGroup(const XmlNode& xmlNode)
+  : StorageLensGroup()
 {
   *this = xmlNode;
 }

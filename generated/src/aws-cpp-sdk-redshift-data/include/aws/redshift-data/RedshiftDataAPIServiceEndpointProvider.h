@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RedshiftDataAPIServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RedshiftDataAPIServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RedshiftDataAPIServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RedshiftDataAPIServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

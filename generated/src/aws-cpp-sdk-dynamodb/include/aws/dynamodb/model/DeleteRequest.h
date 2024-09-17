@@ -40,90 +40,25 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
      * the item to delete. All of the table's primary key attributes must be specified,
      * and their data types must match those of the table's key schema.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetKey() const{ return m_key; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& WithKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of attribute name to attribute values, representing the primary key of
-     * the item to delete. All of the table's primary key attributes must be specified,
-     * and their data types must match those of the table's key schema.</p>
-     */
     inline DeleteRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_key;

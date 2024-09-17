@@ -27,12 +27,8 @@ CaptionDescriptionPreset::CaptionDescriptionPreset() :
 {
 }
 
-CaptionDescriptionPreset::CaptionDescriptionPreset(JsonView jsonValue) : 
-    m_customLanguageCodeHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
+CaptionDescriptionPreset::CaptionDescriptionPreset(JsonView jsonValue)
+  : CaptionDescriptionPreset()
 {
   *this = jsonValue;
 }

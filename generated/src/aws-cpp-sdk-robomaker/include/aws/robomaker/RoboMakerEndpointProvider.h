@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using RoboMakerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RoboMakerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using RoboMakerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RoboMakerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

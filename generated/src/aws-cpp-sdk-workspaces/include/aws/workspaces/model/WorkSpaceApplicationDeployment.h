@@ -38,46 +38,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The associations between the applications and the associated resources.</p>
      */
     inline const Aws::Vector<WorkspaceResourceAssociation>& GetAssociations() const{ return m_associations; }
-
-    /**
-     * <p>The associations between the applications and the associated resources.</p>
-     */
     inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
-
-    /**
-     * <p>The associations between the applications and the associated resources.</p>
-     */
     inline void SetAssociations(const Aws::Vector<WorkspaceResourceAssociation>& value) { m_associationsHasBeenSet = true; m_associations = value; }
-
-    /**
-     * <p>The associations between the applications and the associated resources.</p>
-     */
     inline void SetAssociations(Aws::Vector<WorkspaceResourceAssociation>&& value) { m_associationsHasBeenSet = true; m_associations = std::move(value); }
-
-    /**
-     * <p>The associations between the applications and the associated resources.</p>
-     */
     inline WorkSpaceApplicationDeployment& WithAssociations(const Aws::Vector<WorkspaceResourceAssociation>& value) { SetAssociations(value); return *this;}
-
-    /**
-     * <p>The associations between the applications and the associated resources.</p>
-     */
     inline WorkSpaceApplicationDeployment& WithAssociations(Aws::Vector<WorkspaceResourceAssociation>&& value) { SetAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>The associations between the applications and the associated resources.</p>
-     */
     inline WorkSpaceApplicationDeployment& AddAssociations(const WorkspaceResourceAssociation& value) { m_associationsHasBeenSet = true; m_associations.push_back(value); return *this; }
-
-    /**
-     * <p>The associations between the applications and the associated resources.</p>
-     */
     inline WorkSpaceApplicationDeployment& AddAssociations(WorkspaceResourceAssociation&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<WorkspaceResourceAssociation> m_associations;

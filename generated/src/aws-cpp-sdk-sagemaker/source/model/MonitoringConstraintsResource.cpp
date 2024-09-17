@@ -23,8 +23,8 @@ MonitoringConstraintsResource::MonitoringConstraintsResource() :
 {
 }
 
-MonitoringConstraintsResource::MonitoringConstraintsResource(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+MonitoringConstraintsResource::MonitoringConstraintsResource(JsonView jsonValue)
+  : MonitoringConstraintsResource()
 {
   *this = jsonValue;
 }

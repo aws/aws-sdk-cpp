@@ -35,20 +35,8 @@ DestinationConnectorProperties::DestinationConnectorProperties() :
 {
 }
 
-DestinationConnectorProperties::DestinationConnectorProperties(JsonView jsonValue) : 
-    m_redshiftHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_salesforceHasBeenSet(false),
-    m_snowflakeHasBeenSet(false),
-    m_eventBridgeHasBeenSet(false),
-    m_lookoutMetricsHasBeenSet(false),
-    m_upsolverHasBeenSet(false),
-    m_honeycodeHasBeenSet(false),
-    m_customerProfilesHasBeenSet(false),
-    m_zendeskHasBeenSet(false),
-    m_marketoHasBeenSet(false),
-    m_customConnectorHasBeenSet(false),
-    m_sAPODataHasBeenSet(false)
+DestinationConnectorProperties::DestinationConnectorProperties(JsonView jsonValue)
+  : DestinationConnectorProperties()
 {
   *this = jsonValue;
 }

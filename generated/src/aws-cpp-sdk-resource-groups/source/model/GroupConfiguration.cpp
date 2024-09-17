@@ -27,12 +27,8 @@ GroupConfiguration::GroupConfiguration() :
 {
 }
 
-GroupConfiguration::GroupConfiguration(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_proposedConfigurationHasBeenSet(false),
-    m_status(GroupConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+GroupConfiguration::GroupConfiguration(JsonView jsonValue)
+  : GroupConfiguration()
 {
   *this = jsonValue;
 }

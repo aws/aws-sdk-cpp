@@ -40,31 +40,14 @@ Ipam::Ipam() :
     m_resourceDiscoveryAssociationCountHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
     m_tier(IpamTier::NOT_SET),
-    m_tierHasBeenSet(false)
+    m_tierHasBeenSet(false),
+    m_enablePrivateGua(false),
+    m_enablePrivateGuaHasBeenSet(false)
 {
 }
 
-Ipam::Ipam(const XmlNode& xmlNode) : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_publicDefaultScopeIdHasBeenSet(false),
-    m_privateDefaultScopeIdHasBeenSet(false),
-    m_scopeCount(0),
-    m_scopeCountHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operatingRegionsHasBeenSet(false),
-    m_state(IpamState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultResourceDiscoveryIdHasBeenSet(false),
-    m_defaultResourceDiscoveryAssociationIdHasBeenSet(false),
-    m_resourceDiscoveryAssociationCount(0),
-    m_resourceDiscoveryAssociationCountHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_tier(IpamTier::NOT_SET),
-    m_tierHasBeenSet(false)
+Ipam::Ipam(const XmlNode& xmlNode)
+  : Ipam()
 {
   *this = xmlNode;
 }
@@ -183,6 +166,12 @@ Ipam& Ipam::operator =(const XmlNode& xmlNode)
       m_tier = IpamTierMapper::GetIpamTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()).c_str());
       m_tierHasBeenSet = true;
     }
+    XmlNode enablePrivateGuaNode = resultNode.FirstChild("enablePrivateGua");
+    if(!enablePrivateGuaNode.IsNull())
+    {
+      m_enablePrivateGua = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablePrivateGuaNode.GetText()).c_str()).c_str());
+      m_enablePrivateGuaHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -282,6 +271,11 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
   }
 
+  if(m_enablePrivateGuaHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnablePrivateGua=" << std::boolalpha << m_enablePrivateGua << "&";
+  }
+
 }
 
 void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -361,6 +355,10 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_tierHasBeenSet)
   {
       oStream << location << ".Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
+  }
+  if(m_enablePrivateGuaHasBeenSet)
+  {
+      oStream << location << ".EnablePrivateGua=" << std::boolalpha << m_enablePrivateGua << "&";
   }
 }
 

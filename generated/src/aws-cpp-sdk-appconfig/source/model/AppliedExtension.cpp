@@ -27,12 +27,8 @@ AppliedExtension::AppliedExtension() :
 {
 }
 
-AppliedExtension::AppliedExtension(JsonView jsonValue) : 
-    m_extensionIdHasBeenSet(false),
-    m_extensionAssociationIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+AppliedExtension::AppliedExtension(JsonView jsonValue)
+  : AppliedExtension()
 {
   *this = jsonValue;
 }

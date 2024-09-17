@@ -26,9 +26,8 @@ ExistingObjectReplication::ExistingObjectReplication() :
 {
 }
 
-ExistingObjectReplication::ExistingObjectReplication(const XmlNode& xmlNode) : 
-    m_status(ExistingObjectReplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ExistingObjectReplication::ExistingObjectReplication(const XmlNode& xmlNode)
+  : ExistingObjectReplication()
 {
   *this = xmlNode;
 }

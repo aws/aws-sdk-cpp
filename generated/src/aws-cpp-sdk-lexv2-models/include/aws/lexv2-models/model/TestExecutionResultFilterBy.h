@@ -39,6 +39,7 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies which results to filter. See <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test
@@ -46,84 +47,25 @@ namespace Model
      * results.</p>
      */
     inline const TestResultTypeFilter& GetResultTypeFilter() const{ return m_resultTypeFilter; }
-
-    /**
-     * <p>Specifies which results to filter. See <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test
-     * result details"&gt;Test results details</a> for details about different types of
-     * results.</p>
-     */
     inline bool ResultTypeFilterHasBeenSet() const { return m_resultTypeFilterHasBeenSet; }
-
-    /**
-     * <p>Specifies which results to filter. See <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test
-     * result details"&gt;Test results details</a> for details about different types of
-     * results.</p>
-     */
     inline void SetResultTypeFilter(const TestResultTypeFilter& value) { m_resultTypeFilterHasBeenSet = true; m_resultTypeFilter = value; }
-
-    /**
-     * <p>Specifies which results to filter. See <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test
-     * result details"&gt;Test results details</a> for details about different types of
-     * results.</p>
-     */
     inline void SetResultTypeFilter(TestResultTypeFilter&& value) { m_resultTypeFilterHasBeenSet = true; m_resultTypeFilter = std::move(value); }
-
-    /**
-     * <p>Specifies which results to filter. See <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test
-     * result details"&gt;Test results details</a> for details about different types of
-     * results.</p>
-     */
     inline TestExecutionResultFilterBy& WithResultTypeFilter(const TestResultTypeFilter& value) { SetResultTypeFilter(value); return *this;}
-
-    /**
-     * <p>Specifies which results to filter. See <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test
-     * result details"&gt;Test results details</a> for details about different types of
-     * results.</p>
-     */
     inline TestExecutionResultFilterBy& WithResultTypeFilter(TestResultTypeFilter&& value) { SetResultTypeFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the method for filtering Conversation level test
      * results.</p>
      */
     inline const ConversationLevelTestResultsFilterBy& GetConversationLevelTestResultsFilterBy() const{ return m_conversationLevelTestResultsFilterBy; }
-
-    /**
-     * <p>Contains information about the method for filtering Conversation level test
-     * results.</p>
-     */
     inline bool ConversationLevelTestResultsFilterByHasBeenSet() const { return m_conversationLevelTestResultsFilterByHasBeenSet; }
-
-    /**
-     * <p>Contains information about the method for filtering Conversation level test
-     * results.</p>
-     */
     inline void SetConversationLevelTestResultsFilterBy(const ConversationLevelTestResultsFilterBy& value) { m_conversationLevelTestResultsFilterByHasBeenSet = true; m_conversationLevelTestResultsFilterBy = value; }
-
-    /**
-     * <p>Contains information about the method for filtering Conversation level test
-     * results.</p>
-     */
     inline void SetConversationLevelTestResultsFilterBy(ConversationLevelTestResultsFilterBy&& value) { m_conversationLevelTestResultsFilterByHasBeenSet = true; m_conversationLevelTestResultsFilterBy = std::move(value); }
-
-    /**
-     * <p>Contains information about the method for filtering Conversation level test
-     * results.</p>
-     */
     inline TestExecutionResultFilterBy& WithConversationLevelTestResultsFilterBy(const ConversationLevelTestResultsFilterBy& value) { SetConversationLevelTestResultsFilterBy(value); return *this;}
-
-    /**
-     * <p>Contains information about the method for filtering Conversation level test
-     * results.</p>
-     */
     inline TestExecutionResultFilterBy& WithConversationLevelTestResultsFilterBy(ConversationLevelTestResultsFilterBy&& value) { SetConversationLevelTestResultsFilterBy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TestResultTypeFilter m_resultTypeFilter;

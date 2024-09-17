@@ -25,10 +25,8 @@ AccessEndpoint::AccessEndpoint() :
 {
 }
 
-AccessEndpoint::AccessEndpoint(JsonView jsonValue) : 
-    m_endpointType(AccessEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_vpceIdHasBeenSet(false)
+AccessEndpoint::AccessEndpoint(JsonView jsonValue)
+  : AccessEndpoint()
 {
   *this = jsonValue;
 }

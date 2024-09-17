@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
-#include <aws/detective/model/DisableOrganizationAdminAccountRequest.h>
 
 namespace Aws
 {
@@ -59,7 +58,7 @@ namespace Detective
    * </ul> <p>All API actions are logged as CloudTrail events. See <a
    * href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging
    * Detective API Calls with CloudTrail</a>.</p>  <p>We replaced the term
-   * "master account" with the term "administrator account." An administrator account
+   * "master account" with the term "administrator account". An administrator account
    * is used to centrally manage multiple accounts. In the case of Detective, the
    * administrator account manages the accounts in their behavior graph.</p> 
    */
@@ -204,29 +203,24 @@ namespace Detective
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
          * as the administrator account. This operation is called by the account that is
-         * enabling Detective.</p> <p>Before you try to enable Detective, make sure that
-         * your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you
-         * do not meet this requirement, you cannot enable Detective. If you do meet the
-         * GuardDuty prerequisite, then when you make the request to enable Detective, it
-         * checks whether your data volume is within the Detective quota. If it exceeds the
-         * quota, then you cannot enable Detective. </p> <p>The operation also enables
-         * Detective for the calling account in the currently selected Region. It returns
-         * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
-         * process to create the corresponding data tables for the new behavior graph.</p>
-         * <p>An account can only be the administrator account for one behavior graph
-         * within a Region. If the same account calls <code>CreateGraph</code> with the
-         * same administrator account, it always returns the same behavior graph ARN. It
-         * does not create a new behavior graph.</p><p><h3>See Also:</h3>   <a
+         * enabling Detective.</p> <p>The operation also enables Detective for the calling
+         * account in the currently selected Region. It returns the ARN of the new behavior
+         * graph.</p> <p> <code>CreateGraph</code> triggers a process to create the
+         * corresponding data tables for the new behavior graph.</p> <p>An account can only
+         * be the administrator account for one behavior graph within a Region. If the same
+         * account calls <code>CreateGraph</code> with the same administrator account, it
+         * always returns the same behavior graph ARN. It does not create a new behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateGraphOutcome CreateGraph(const Model::CreateGraphRequest& request) const;
+        virtual Model::CreateGraphOutcome CreateGraph(const Model::CreateGraphRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateGraph that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateGraphRequestT = Model::CreateGraphRequest>
-        Model::CreateGraphOutcomeCallable CreateGraphCallable(const CreateGraphRequestT& request) const
+        Model::CreateGraphOutcomeCallable CreateGraphCallable(const CreateGraphRequestT& request = {}) const
         {
             return SubmitCallable(&DetectiveClient::CreateGraph, request);
         }
@@ -235,7 +229,7 @@ namespace Detective
          * An Async wrapper for CreateGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateGraphRequestT = Model::CreateGraphRequest>
-        void CreateGraphAsync(const CreateGraphRequestT& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateGraphAsync(const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateGraphRequestT& request = {}) const
         {
             return SubmitAsync(&DetectiveClient::CreateGraph, request, handler, context);
         }
@@ -482,8 +476,12 @@ namespace Detective
         }
 
         /**
-         * <p>Returns the investigation results of an investigation for a behavior graph.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Detective investigations lets you investigate IAM users and IAM roles using
+         * indicators of compromise. An indicator of compromise (IOC) is an artifact
+         * observed in or on a network, system, or environment that can (with a high level
+         * of confidence) identify malicious activity or a security incident.
+         * <code>GetInvestigation</code> returns the investigation results of an
+         * investigation for a behavior graph. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">AWS
          * API Reference</a></p>
          */
@@ -568,13 +566,13 @@ namespace Detective
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGraphsOutcome ListGraphs(const Model::ListGraphsRequest& request) const;
+        virtual Model::ListGraphsOutcome ListGraphs(const Model::ListGraphsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGraphs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGraphsRequestT = Model::ListGraphsRequest>
-        Model::ListGraphsOutcomeCallable ListGraphsCallable(const ListGraphsRequestT& request) const
+        Model::ListGraphsOutcomeCallable ListGraphsCallable(const ListGraphsRequestT& request = {}) const
         {
             return SubmitCallable(&DetectiveClient::ListGraphs, request);
         }
@@ -583,13 +581,16 @@ namespace Detective
          * An Async wrapper for ListGraphs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGraphsRequestT = Model::ListGraphsRequest>
-        void ListGraphsAsync(const ListGraphsRequestT& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGraphsAsync(const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGraphsRequestT& request = {}) const
         {
             return SubmitAsync(&DetectiveClient::ListGraphs, request, handler, context);
         }
 
         /**
-         * <p>Get the indicators from an investigation</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the indicators from an investigation. You can use the information from
+         * the indicators to determine if an IAM user and/or IAM role is involved in an
+         * unusual activity that could indicate malicious behavior and its
+         * impact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">AWS
          * API Reference</a></p>
          */
@@ -614,7 +615,12 @@ namespace Detective
         }
 
         /**
-         * <p>List all Investigations.</p><p><h3>See Also:</h3>   <a
+         * <p>Detective investigations lets you investigate IAM users and IAM roles using
+         * indicators of compromise. An indicator of compromise (IOC) is an artifact
+         * observed in or on a network, system, or environment that can (with a high level
+         * of confidence) identify malicious activity or a security incident.
+         * <code>ListInvestigations</code> lists all active Detective
+         * investigations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">AWS
          * API Reference</a></p>
          */
@@ -649,13 +655,13 @@ namespace Detective
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
+        virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInvitationsRequestT = Model::ListInvitationsRequest>
-        Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const ListInvitationsRequestT& request) const
+        Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const ListInvitationsRequestT& request = {}) const
         {
             return SubmitCallable(&DetectiveClient::ListInvitations, request);
         }
@@ -664,7 +670,7 @@ namespace Detective
          * An Async wrapper for ListInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInvitationsRequestT = Model::ListInvitationsRequest>
-        void ListInvitationsAsync(const ListInvitationsRequestT& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInvitationsAsync(const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInvitationsRequestT& request = {}) const
         {
             return SubmitAsync(&DetectiveClient::ListInvitations, request, handler, context);
         }
@@ -705,13 +711,13 @@ namespace Detective
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request) const;
+        virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOrganizationAdminAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOrganizationAdminAccountsRequestT = Model::ListOrganizationAdminAccountsRequest>
-        Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequestT& request) const
+        Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequestT& request = {}) const
         {
             return SubmitCallable(&DetectiveClient::ListOrganizationAdminAccounts, request);
         }
@@ -720,7 +726,7 @@ namespace Detective
          * An Async wrapper for ListOrganizationAdminAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOrganizationAdminAccountsRequestT = Model::ListOrganizationAdminAccountsRequest>
-        void ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequestT& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOrganizationAdminAccountsRequestT& request = {}) const
         {
             return SubmitAsync(&DetectiveClient::ListOrganizationAdminAccounts, request, handler, context);
         }
@@ -782,8 +788,12 @@ namespace Detective
         }
 
         /**
-         * <p>initiate an investigation on an entity in a graph</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Detective investigations lets you investigate IAM users and IAM roles using
+         * indicators of compromise. An indicator of compromise (IOC) is an artifact
+         * observed in or on a network, system, or environment that can (with a high level
+         * of confidence) identify malicious activity or a security incident.
+         * <code>StartInvestigation</code> initiates an investigation on an entity in a
+         * behavior graph. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">AWS
          * API Reference</a></p>
          */
@@ -914,7 +924,7 @@ namespace Detective
         }
 
         /**
-         * <p>Update the state of an investigation.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the state of an investigation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">AWS
          * API Reference</a></p>
          */
@@ -973,7 +983,6 @@ namespace Detective
       void init(const DetectiveClientConfiguration& clientConfiguration);
 
       DetectiveClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DetectiveEndpointProviderBase> m_endpointProvider;
   };
 

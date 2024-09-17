@@ -42,22 +42,8 @@ Statement::Statement() :
 {
 }
 
-Statement::Statement(JsonView jsonValue) : 
-    m_byteMatchStatementHasBeenSet(false),
-    m_sqliMatchStatementHasBeenSet(false),
-    m_xssMatchStatementHasBeenSet(false),
-    m_sizeConstraintStatementHasBeenSet(false),
-    m_geoMatchStatementHasBeenSet(false),
-    m_ruleGroupReferenceStatementHasBeenSet(false),
-    m_iPSetReferenceStatementHasBeenSet(false),
-    m_regexPatternSetReferenceStatementHasBeenSet(false),
-    m_rateBasedStatementHasBeenSet(false),
-    m_andStatementHasBeenSet(false),
-    m_orStatementHasBeenSet(false),
-    m_notStatementHasBeenSet(false),
-    m_managedRuleGroupStatementHasBeenSet(false),
-    m_labelMatchStatementHasBeenSet(false),
-    m_regexMatchStatementHasBeenSet(false)
+Statement::Statement(JsonView jsonValue)
+  : Statement()
 {
   *this = jsonValue;
 }

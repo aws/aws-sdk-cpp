@@ -35,6 +35,7 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS
      * notifications no matter what your replication instance version is. If not set or
@@ -42,31 +43,10 @@ namespace Model
      * from DMS version 3.4.5 or higher. </p>
      */
     inline bool GetForceMove() const{ return m_forceMove; }
-
-    /**
-     * <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS
-     * notifications no matter what your replication instance version is. If not set or
-     * set to false, this operation runs only when all your replication instances are
-     * from DMS version 3.4.5 or higher. </p>
-     */
     inline bool ForceMoveHasBeenSet() const { return m_forceMoveHasBeenSet; }
-
-    /**
-     * <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS
-     * notifications no matter what your replication instance version is. If not set or
-     * set to false, this operation runs only when all your replication instances are
-     * from DMS version 3.4.5 or higher. </p>
-     */
     inline void SetForceMove(bool value) { m_forceMoveHasBeenSet = true; m_forceMove = value; }
-
-    /**
-     * <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS
-     * notifications no matter what your replication instance version is. If not set or
-     * set to false, this operation runs only when all your replication instances are
-     * from DMS version 3.4.5 or higher. </p>
-     */
     inline UpdateSubscriptionsToEventBridgeRequest& WithForceMove(bool value) { SetForceMove(value); return *this;}
-
+    ///@}
   private:
 
     bool m_forceMove;

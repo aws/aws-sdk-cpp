@@ -23,8 +23,8 @@ TemplateSourceTemplate::TemplateSourceTemplate() :
 {
 }
 
-TemplateSourceTemplate::TemplateSourceTemplate(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+TemplateSourceTemplate::TemplateSourceTemplate(JsonView jsonValue)
+  : TemplateSourceTemplate()
 {
   *this = jsonValue;
 }

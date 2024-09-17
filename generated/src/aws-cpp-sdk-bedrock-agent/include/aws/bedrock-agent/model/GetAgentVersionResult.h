@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Get Agent Version Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentVersionResponse">AWS
-   * API Reference</a></p>
-   */
   class GetAgentVersionResult
   {
   public:
@@ -38,43 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>Contains details about the version of the agent.</p>
+     */
     inline const AgentVersion& GetAgentVersion() const{ return m_agentVersion; }
-
-    
     inline void SetAgentVersion(const AgentVersion& value) { m_agentVersion = value; }
-
-    
     inline void SetAgentVersion(AgentVersion&& value) { m_agentVersion = std::move(value); }
-
-    
     inline GetAgentVersionResult& WithAgentVersion(const AgentVersion& value) { SetAgentVersion(value); return *this;}
-
-    
     inline GetAgentVersionResult& WithAgentVersion(AgentVersion&& value) { SetAgentVersion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAgentVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAgentVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAgentVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AgentVersion m_agentVersion;

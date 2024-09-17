@@ -28,13 +28,8 @@ DirectSchemaChangePolicy::DirectSchemaChangePolicy() :
 {
 }
 
-DirectSchemaChangePolicy::DirectSchemaChangePolicy(JsonView jsonValue) : 
-    m_enableUpdateCatalog(false),
-    m_enableUpdateCatalogHasBeenSet(false),
-    m_updateBehavior(UpdateCatalogBehavior::NOT_SET),
-    m_updateBehaviorHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false)
+DirectSchemaChangePolicy::DirectSchemaChangePolicy(JsonView jsonValue)
+  : DirectSchemaChangePolicy()
 {
   *this = jsonValue;
 }

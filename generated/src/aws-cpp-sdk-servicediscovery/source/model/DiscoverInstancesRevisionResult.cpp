@@ -22,8 +22,8 @@ DiscoverInstancesRevisionResult::DiscoverInstancesRevisionResult() :
 {
 }
 
-DiscoverInstancesRevisionResult::DiscoverInstancesRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_instancesRevision(0)
+DiscoverInstancesRevisionResult::DiscoverInstancesRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DiscoverInstancesRevisionResult()
 {
   *this = result;
 }

@@ -44,6 +44,14 @@
 #include <aws/discovery/model/StopContinuousExportResult.h>
 #include <aws/discovery/model/StopDataCollectionByAgentIdsResult.h>
 #include <aws/discovery/model/UpdateApplicationResult.h>
+#include <aws/discovery/model/DescribeTagsRequest.h>
+#include <aws/discovery/model/DescribeExportTasksRequest.h>
+#include <aws/discovery/model/StartExportTaskRequest.h>
+#include <aws/discovery/model/DescribeImportTasksRequest.h>
+#include <aws/discovery/model/DescribeAgentsRequest.h>
+#include <aws/discovery/model/DescribeContinuousExportsRequest.h>
+#include <aws/discovery/model/GetDiscoverySummaryRequest.h>
+#include <aws/discovery/model/StartContinuousExportRequest.h>
 /* End of service model headers required in ApplicationDiscoveryServiceClient header */
 
 namespace Aws
@@ -77,7 +85,7 @@ namespace Aws
 
   namespace ApplicationDiscoveryService
   {
-    using ApplicationDiscoveryServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ApplicationDiscoveryServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ApplicationDiscoveryServiceEndpointProviderBase = Aws::ApplicationDiscoveryService::Endpoint::ApplicationDiscoveryServiceEndpointProviderBase;
     using ApplicationDiscoveryServiceEndpointProvider = Aws::ApplicationDiscoveryService::Endpoint::ApplicationDiscoveryServiceEndpointProvider;
 

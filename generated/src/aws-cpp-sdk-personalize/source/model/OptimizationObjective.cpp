@@ -25,10 +25,8 @@ OptimizationObjective::OptimizationObjective() :
 {
 }
 
-OptimizationObjective::OptimizationObjective(JsonView jsonValue) : 
-    m_itemAttributeHasBeenSet(false),
-    m_objectiveSensitivity(ObjectiveSensitivity::NOT_SET),
-    m_objectiveSensitivityHasBeenSet(false)
+OptimizationObjective::OptimizationObjective(JsonView jsonValue)
+  : OptimizationObjective()
 {
   *this = jsonValue;
 }

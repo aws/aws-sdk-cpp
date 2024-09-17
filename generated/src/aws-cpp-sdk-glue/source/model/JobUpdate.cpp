@@ -19,6 +19,10 @@ namespace Model
 {
 
 JobUpdate::JobUpdate() : 
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
+    m_jobRunQueuingEnabled(false),
+    m_jobRunQueuingEnabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -43,42 +47,33 @@ JobUpdate::JobUpdate() :
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+    m_sourceControlDetailsHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
 }
 
-JobUpdate::JobUpdate(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_executionPropertyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_defaultArgumentsHasBeenSet(false),
-    m_nonOverridableArgumentsHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_codeGenConfigurationNodesHasBeenSet(false),
-    m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+JobUpdate::JobUpdate(JsonView jsonValue)
+  : JobUpdate()
 {
   *this = jsonValue;
 }
 
 JobUpdate& JobUpdate::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("JobMode"))
+  {
+    m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
+
+    m_jobModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobRunQueuingEnabled"))
+  {
+    m_jobRunQueuingEnabled = jsonValue.GetBool("JobRunQueuingEnabled");
+
+    m_jobRunQueuingEnabledHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
@@ -221,12 +216,30 @@ JobUpdate& JobUpdate::operator =(JsonView jsonValue)
     m_sourceControlDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaintenanceWindow"))
+  {
+    m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
+
+    m_maintenanceWindowHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue JobUpdate::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_jobModeHasBeenSet)
+  {
+   payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
+  }
+
+  if(m_jobRunQueuingEnabledHasBeenSet)
+  {
+   payload.WithBool("JobRunQueuingEnabled", m_jobRunQueuingEnabled);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -352,6 +365,12 @@ JsonValue JobUpdate::Jsonize() const
   if(m_sourceControlDetailsHasBeenSet)
   {
    payload.WithObject("SourceControlDetails", m_sourceControlDetails.Jsonize());
+
+  }
+
+  if(m_maintenanceWindowHasBeenSet)
+  {
+   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
 
   }
 

@@ -25,10 +25,8 @@ EntityReference::EntityReference() :
 {
 }
 
-EntityReference::EntityReference(JsonView jsonValue) : 
-    m_unspecified(false),
-    m_unspecifiedHasBeenSet(false),
-    m_identifierHasBeenSet(false)
+EntityReference::EntityReference(JsonView jsonValue)
+  : EntityReference()
 {
   *this = jsonValue;
 }

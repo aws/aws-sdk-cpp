@@ -27,12 +27,8 @@ S3CatalogDeltaSource::S3CatalogDeltaSource() :
 {
 }
 
-S3CatalogDeltaSource::S3CatalogDeltaSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_additionalDeltaOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+S3CatalogDeltaSource::S3CatalogDeltaSource(JsonView jsonValue)
+  : S3CatalogDeltaSource()
 {
   *this = jsonValue;
 }

@@ -40,111 +40,44 @@ namespace Model
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The shard ID of the existing child shard of the current shard.</p>
      */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
-
-    /**
-     * <p>The shard ID of the existing child shard of the current shard.</p>
-     */
     inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
-
-    /**
-     * <p>The shard ID of the existing child shard of the current shard.</p>
-     */
     inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-
-    /**
-     * <p>The shard ID of the existing child shard of the current shard.</p>
-     */
     inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-
-    /**
-     * <p>The shard ID of the existing child shard of the current shard.</p>
-     */
     inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-
-    /**
-     * <p>The shard ID of the existing child shard of the current shard.</p>
-     */
     inline ChildShard& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-
-    /**
-     * <p>The shard ID of the existing child shard of the current shard.</p>
-     */
     inline ChildShard& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-
-    /**
-     * <p>The shard ID of the existing child shard of the current shard.</p>
-     */
     inline ChildShard& WithShardId(const char* value) { SetShardId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current shard that is the parent of the existing child shard.</p>
      */
     inline const Aws::Vector<Aws::String>& GetParentShards() const{ return m_parentShards; }
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline bool ParentShardsHasBeenSet() const { return m_parentShardsHasBeenSet; }
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline void SetParentShards(const Aws::Vector<Aws::String>& value) { m_parentShardsHasBeenSet = true; m_parentShards = value; }
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline void SetParentShards(Aws::Vector<Aws::String>&& value) { m_parentShardsHasBeenSet = true; m_parentShards = std::move(value); }
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline ChildShard& WithParentShards(const Aws::Vector<Aws::String>& value) { SetParentShards(value); return *this;}
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline ChildShard& WithParentShards(Aws::Vector<Aws::String>&& value) { SetParentShards(std::move(value)); return *this;}
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline ChildShard& AddParentShards(const Aws::String& value) { m_parentShardsHasBeenSet = true; m_parentShards.push_back(value); return *this; }
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline ChildShard& AddParentShards(Aws::String&& value) { m_parentShardsHasBeenSet = true; m_parentShards.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The current shard that is the parent of the existing child shard.</p>
-     */
     inline ChildShard& AddParentShards(const char* value) { m_parentShardsHasBeenSet = true; m_parentShards.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const HashKeyRange& GetHashKeyRange() const{ return m_hashKeyRange; }
-
-    
     inline bool HashKeyRangeHasBeenSet() const { return m_hashKeyRangeHasBeenSet; }
-
-    
     inline void SetHashKeyRange(const HashKeyRange& value) { m_hashKeyRangeHasBeenSet = true; m_hashKeyRange = value; }
-
-    
     inline void SetHashKeyRange(HashKeyRange&& value) { m_hashKeyRangeHasBeenSet = true; m_hashKeyRange = std::move(value); }
-
-    
     inline ChildShard& WithHashKeyRange(const HashKeyRange& value) { SetHashKeyRange(value); return *this;}
-
-    
     inline ChildShard& WithHashKeyRange(HashKeyRange&& value) { SetHashKeyRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shardId;

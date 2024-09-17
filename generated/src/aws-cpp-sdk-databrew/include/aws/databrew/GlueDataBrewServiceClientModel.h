@@ -62,6 +62,12 @@
 #include <aws/databrew/model/UpdateRecipeJobResult.h>
 #include <aws/databrew/model/UpdateRulesetResult.h>
 #include <aws/databrew/model/UpdateScheduleResult.h>
+#include <aws/databrew/model/ListRecipesRequest.h>
+#include <aws/databrew/model/ListProjectsRequest.h>
+#include <aws/databrew/model/ListSchedulesRequest.h>
+#include <aws/databrew/model/ListDatasetsRequest.h>
+#include <aws/databrew/model/ListJobsRequest.h>
+#include <aws/databrew/model/ListRulesetsRequest.h>
 /* End of service model headers required in GlueDataBrewClient header */
 
 namespace Aws
@@ -95,7 +101,7 @@ namespace Aws
 
   namespace GlueDataBrew
   {
-    using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GlueDataBrewEndpointProviderBase = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProviderBase;
     using GlueDataBrewEndpointProvider = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProvider;
 

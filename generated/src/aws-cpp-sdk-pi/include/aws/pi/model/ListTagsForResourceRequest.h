@@ -35,43 +35,20 @@ namespace Model
     AWS_PI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>List the tags for the Amazon Web Services service for which Performance
      * Insights returns metrics. Valid value is <code>RDS</code>.</p>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
-
-    /**
-     * <p>List the tags for the Amazon Web Services service for which Performance
-     * Insights returns metrics. Valid value is <code>RDS</code>.</p>
-     */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-
-    /**
-     * <p>List the tags for the Amazon Web Services service for which Performance
-     * Insights returns metrics. Valid value is <code>RDS</code>.</p>
-     */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-
-    /**
-     * <p>List the tags for the Amazon Web Services service for which Performance
-     * Insights returns metrics. Valid value is <code>RDS</code>.</p>
-     */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-
-    /**
-     * <p>List the tags for the Amazon Web Services service for which Performance
-     * Insights returns metrics. Valid value is <code>RDS</code>.</p>
-     */
     inline ListTagsForResourceRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-
-    /**
-     * <p>List the tags for the Amazon Web Services service for which Performance
-     * Insights returns metrics. Valid value is <code>RDS</code>.</p>
-     */
     inline ListTagsForResourceRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
      * value is an Amazon Resource Name (ARN). For information about creating an ARN,
@@ -80,70 +57,14 @@ namespace Model
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
-     * value is an Amazon Resource Name (ARN). For information about creating an ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-     */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
-     * value is an Amazon Resource Name (ARN). For information about creating an ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
-     * value is an Amazon Resource Name (ARN). For information about creating an ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
-     * value is an Amazon Resource Name (ARN). For information about creating an ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
-     * value is an Amazon Resource Name (ARN). For information about creating an ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
-     * value is an Amazon Resource Name (ARN). For information about creating an ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists all the tags for the Amazon RDS Performance Insights resource. This
-     * value is an Amazon Resource Name (ARN). For information about creating an ARN,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
-
+    ///@}
   private:
 
     ServiceType m_serviceType;

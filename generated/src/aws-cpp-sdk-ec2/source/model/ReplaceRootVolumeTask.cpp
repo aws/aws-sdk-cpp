@@ -35,18 +35,8 @@ ReplaceRootVolumeTask::ReplaceRootVolumeTask() :
 {
 }
 
-ReplaceRootVolumeTask::ReplaceRootVolumeTask(const XmlNode& xmlNode) : 
-    m_replaceRootVolumeTaskIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_taskState(ReplaceRootVolumeTaskState::NOT_SET),
-    m_taskStateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completeTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_deleteReplacedRootVolume(false),
-    m_deleteReplacedRootVolumeHasBeenSet(false)
+ReplaceRootVolumeTask::ReplaceRootVolumeTask(const XmlNode& xmlNode)
+  : ReplaceRootVolumeTask()
 {
   *this = xmlNode;
 }

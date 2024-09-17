@@ -23,8 +23,8 @@ AwsManagedResources::AwsManagedResources() :
 {
 }
 
-AwsManagedResources::AwsManagedResources(JsonView jsonValue) : 
-    m_targetDestinationHasBeenSet(false)
+AwsManagedResources::AwsManagedResources(JsonView jsonValue)
+  : AwsManagedResources()
 {
   *this = jsonValue;
 }

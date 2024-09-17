@@ -41,24 +41,8 @@ LaunchSpecification::LaunchSpecification() :
 {
 }
 
-LaunchSpecification::LaunchSpecification(const XmlNode& xmlNode) : 
-    m_userDataHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_addressingTypeHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_monitoringHasBeenSet(false)
+LaunchSpecification::LaunchSpecification(const XmlNode& xmlNode)
+  : LaunchSpecification()
 {
   *this = xmlNode;
 }

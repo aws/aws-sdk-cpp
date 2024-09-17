@@ -24,9 +24,8 @@ ProposalActions::ProposalActions() :
 {
 }
 
-ProposalActions::ProposalActions(JsonView jsonValue) : 
-    m_invitationsHasBeenSet(false),
-    m_removalsHasBeenSet(false)
+ProposalActions::ProposalActions(JsonView jsonValue)
+  : ProposalActions()
 {
   *this = jsonValue;
 }

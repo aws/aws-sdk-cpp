@@ -24,9 +24,8 @@ Parameter::Parameter() :
 {
 }
 
-Parameter::Parameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+Parameter::Parameter(JsonView jsonValue)
+  : Parameter()
 {
   *this = jsonValue;
 }

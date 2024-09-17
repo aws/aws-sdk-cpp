@@ -24,9 +24,8 @@ DeleteFileSystemOpenZFSResponse::DeleteFileSystemOpenZFSResponse() :
 {
 }
 
-DeleteFileSystemOpenZFSResponse::DeleteFileSystemOpenZFSResponse(JsonView jsonValue) : 
-    m_finalBackupIdHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
+DeleteFileSystemOpenZFSResponse::DeleteFileSystemOpenZFSResponse(JsonView jsonValue)
+  : DeleteFileSystemOpenZFSResponse()
 {
   *this = jsonValue;
 }

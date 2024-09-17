@@ -35,30 +35,12 @@ EnvironmentSummary::EnvironmentSummary() :
     m_pendingSoftwareSetIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
 }
 
-EnvironmentSummary::EnvironmentSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_desktopArnHasBeenSet(false),
-    m_desktopEndpointHasBeenSet(false),
-    m_desktopType(DesktopType::NOT_SET),
-    m_desktopTypeHasBeenSet(false),
-    m_activationCodeHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_softwareSetUpdateMode(SoftwareSetUpdateMode::NOT_SET),
-    m_softwareSetUpdateModeHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EnvironmentSummary::EnvironmentSummary(JsonView jsonValue)
+  : EnvironmentSummary()
 {
   *this = jsonValue;
 }
@@ -163,13 +145,6 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("tags"))
-  {
-    m_tags = jsonValue.GetObject("tags");
-
-    m_tagsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -253,12 +228,6 @@ JsonValue EnvironmentSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   payload.WithObject("tags", m_tags.Jsonize());
 
   }
 

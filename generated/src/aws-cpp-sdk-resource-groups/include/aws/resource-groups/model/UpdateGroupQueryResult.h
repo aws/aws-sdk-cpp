@@ -33,58 +33,28 @@ namespace Model
     AWS_RESOURCEGROUPS_API UpdateGroupQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated resource query associated with the resource group after the
      * update.</p>
      */
     inline const GroupQuery& GetGroupQuery() const{ return m_groupQuery; }
-
-    /**
-     * <p>The updated resource query associated with the resource group after the
-     * update.</p>
-     */
     inline void SetGroupQuery(const GroupQuery& value) { m_groupQuery = value; }
-
-    /**
-     * <p>The updated resource query associated with the resource group after the
-     * update.</p>
-     */
     inline void SetGroupQuery(GroupQuery&& value) { m_groupQuery = std::move(value); }
-
-    /**
-     * <p>The updated resource query associated with the resource group after the
-     * update.</p>
-     */
     inline UpdateGroupQueryResult& WithGroupQuery(const GroupQuery& value) { SetGroupQuery(value); return *this;}
-
-    /**
-     * <p>The updated resource query associated with the resource group after the
-     * update.</p>
-     */
     inline UpdateGroupQueryResult& WithGroupQuery(GroupQuery&& value) { SetGroupQuery(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateGroupQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateGroupQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateGroupQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GroupQuery m_groupQuery;

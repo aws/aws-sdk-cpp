@@ -22,8 +22,8 @@ ListTopicsResult::ListTopicsResult() :
 {
 }
 
-ListTopicsResult::ListTopicsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListTopicsResult::ListTopicsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListTopicsResult()
 {
   *this = result;
 }

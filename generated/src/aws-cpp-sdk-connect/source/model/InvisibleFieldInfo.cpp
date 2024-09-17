@@ -23,8 +23,8 @@ InvisibleFieldInfo::InvisibleFieldInfo() :
 {
 }
 
-InvisibleFieldInfo::InvisibleFieldInfo(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+InvisibleFieldInfo::InvisibleFieldInfo(JsonView jsonValue)
+  : InvisibleFieldInfo()
 {
   *this = jsonValue;
 }

@@ -16,6 +16,7 @@ namespace Model
   enum class MessageSystemAttributeName
   {
     NOT_SET,
+    All,
     SenderId,
     SentTimestamp,
     ApproximateReceiveCount,

@@ -20,6 +20,7 @@
 /* Service model headers required in Macie2Client header */
 #include <aws/macie2/model/AcceptInvitationResult.h>
 #include <aws/macie2/model/BatchGetCustomDataIdentifiersResult.h>
+#include <aws/macie2/model/BatchUpdateAutomatedDiscoveryAccountsResult.h>
 #include <aws/macie2/model/CreateAllowListResult.h>
 #include <aws/macie2/model/CreateClassificationJobResult.h>
 #include <aws/macie2/model/CreateCustomDataIdentifierResult.h>
@@ -66,6 +67,7 @@
 #include <aws/macie2/model/GetUsageStatisticsResult.h>
 #include <aws/macie2/model/GetUsageTotalsResult.h>
 #include <aws/macie2/model/ListAllowListsResult.h>
+#include <aws/macie2/model/ListAutomatedDiscoveryAccountsResult.h>
 #include <aws/macie2/model/ListClassificationJobsResult.h>
 #include <aws/macie2/model/ListClassificationScopesResult.h>
 #include <aws/macie2/model/ListCustomDataIdentifiersResult.h>
@@ -97,6 +99,41 @@
 #include <aws/macie2/model/UpdateResourceProfileDetectionsResult.h>
 #include <aws/macie2/model/UpdateRevealConfigurationResult.h>
 #include <aws/macie2/model/UpdateSensitivityInspectionTemplateResult.h>
+#include <aws/macie2/model/GetAdministratorAccountRequest.h>
+#include <aws/macie2/model/DisableMacieRequest.h>
+#include <aws/macie2/model/GetFindingsPublicationConfigurationRequest.h>
+#include <aws/macie2/model/GetMasterAccountRequest.h>
+#include <aws/macie2/model/UpdateMacieSessionRequest.h>
+#include <aws/macie2/model/DisassociateFromAdministratorAccountRequest.h>
+#include <aws/macie2/model/ListAutomatedDiscoveryAccountsRequest.h>
+#include <aws/macie2/model/BatchUpdateAutomatedDiscoveryAccountsRequest.h>
+#include <aws/macie2/model/GetAutomatedDiscoveryConfigurationRequest.h>
+#include <aws/macie2/model/ListInvitationsRequest.h>
+#include <aws/macie2/model/GetRevealConfigurationRequest.h>
+#include <aws/macie2/model/SearchResourcesRequest.h>
+#include <aws/macie2/model/GetUsageStatisticsRequest.h>
+#include <aws/macie2/model/GetBucketStatisticsRequest.h>
+#include <aws/macie2/model/GetInvitationsCountRequest.h>
+#include <aws/macie2/model/ListClassificationJobsRequest.h>
+#include <aws/macie2/model/ListFindingsRequest.h>
+#include <aws/macie2/model/BatchGetCustomDataIdentifiersRequest.h>
+#include <aws/macie2/model/ListSensitivityInspectionTemplatesRequest.h>
+#include <aws/macie2/model/PutFindingsPublicationConfigurationRequest.h>
+#include <aws/macie2/model/DescribeBucketsRequest.h>
+#include <aws/macie2/model/CreateSampleFindingsRequest.h>
+#include <aws/macie2/model/ListAllowListsRequest.h>
+#include <aws/macie2/model/ListCustomDataIdentifiersRequest.h>
+#include <aws/macie2/model/GetMacieSessionRequest.h>
+#include <aws/macie2/model/ListMembersRequest.h>
+#include <aws/macie2/model/ListOrganizationAdminAccountsRequest.h>
+#include <aws/macie2/model/ListManagedDataIdentifiersRequest.h>
+#include <aws/macie2/model/EnableMacieRequest.h>
+#include <aws/macie2/model/ListClassificationScopesRequest.h>
+#include <aws/macie2/model/GetClassificationExportConfigurationRequest.h>
+#include <aws/macie2/model/DescribeOrganizationConfigurationRequest.h>
+#include <aws/macie2/model/GetUsageTotalsRequest.h>
+#include <aws/macie2/model/ListFindingsFiltersRequest.h>
+#include <aws/macie2/model/DisassociateFromMasterAccountRequest.h>
 /* End of service model headers required in Macie2Client header */
 
 namespace Aws
@@ -130,7 +167,7 @@ namespace Aws
 
   namespace Macie2
   {
-    using Macie2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Macie2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Macie2EndpointProviderBase = Aws::Macie2::Endpoint::Macie2EndpointProviderBase;
     using Macie2EndpointProvider = Aws::Macie2::Endpoint::Macie2EndpointProvider;
 
@@ -139,6 +176,7 @@ namespace Aws
       /* Service model forward declarations required in Macie2Client header */
       class AcceptInvitationRequest;
       class BatchGetCustomDataIdentifiersRequest;
+      class BatchUpdateAutomatedDiscoveryAccountsRequest;
       class CreateAllowListRequest;
       class CreateClassificationJobRequest;
       class CreateCustomDataIdentifierRequest;
@@ -185,6 +223,7 @@ namespace Aws
       class GetUsageStatisticsRequest;
       class GetUsageTotalsRequest;
       class ListAllowListsRequest;
+      class ListAutomatedDiscoveryAccountsRequest;
       class ListClassificationJobsRequest;
       class ListClassificationScopesRequest;
       class ListCustomDataIdentifiersRequest;
@@ -221,6 +260,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AcceptInvitationResult, Macie2Error> AcceptInvitationOutcome;
       typedef Aws::Utils::Outcome<BatchGetCustomDataIdentifiersResult, Macie2Error> BatchGetCustomDataIdentifiersOutcome;
+      typedef Aws::Utils::Outcome<BatchUpdateAutomatedDiscoveryAccountsResult, Macie2Error> BatchUpdateAutomatedDiscoveryAccountsOutcome;
       typedef Aws::Utils::Outcome<CreateAllowListResult, Macie2Error> CreateAllowListOutcome;
       typedef Aws::Utils::Outcome<CreateClassificationJobResult, Macie2Error> CreateClassificationJobOutcome;
       typedef Aws::Utils::Outcome<CreateCustomDataIdentifierResult, Macie2Error> CreateCustomDataIdentifierOutcome;
@@ -267,6 +307,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetUsageStatisticsResult, Macie2Error> GetUsageStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetUsageTotalsResult, Macie2Error> GetUsageTotalsOutcome;
       typedef Aws::Utils::Outcome<ListAllowListsResult, Macie2Error> ListAllowListsOutcome;
+      typedef Aws::Utils::Outcome<ListAutomatedDiscoveryAccountsResult, Macie2Error> ListAutomatedDiscoveryAccountsOutcome;
       typedef Aws::Utils::Outcome<ListClassificationJobsResult, Macie2Error> ListClassificationJobsOutcome;
       typedef Aws::Utils::Outcome<ListClassificationScopesResult, Macie2Error> ListClassificationScopesOutcome;
       typedef Aws::Utils::Outcome<ListCustomDataIdentifiersResult, Macie2Error> ListCustomDataIdentifiersOutcome;
@@ -303,6 +344,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
       typedef std::future<BatchGetCustomDataIdentifiersOutcome> BatchGetCustomDataIdentifiersOutcomeCallable;
+      typedef std::future<BatchUpdateAutomatedDiscoveryAccountsOutcome> BatchUpdateAutomatedDiscoveryAccountsOutcomeCallable;
       typedef std::future<CreateAllowListOutcome> CreateAllowListOutcomeCallable;
       typedef std::future<CreateClassificationJobOutcome> CreateClassificationJobOutcomeCallable;
       typedef std::future<CreateCustomDataIdentifierOutcome> CreateCustomDataIdentifierOutcomeCallable;
@@ -349,6 +391,7 @@ namespace Aws
       typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
       typedef std::future<GetUsageTotalsOutcome> GetUsageTotalsOutcomeCallable;
       typedef std::future<ListAllowListsOutcome> ListAllowListsOutcomeCallable;
+      typedef std::future<ListAutomatedDiscoveryAccountsOutcome> ListAutomatedDiscoveryAccountsOutcomeCallable;
       typedef std::future<ListClassificationJobsOutcome> ListClassificationJobsOutcomeCallable;
       typedef std::future<ListClassificationScopesOutcome> ListClassificationScopesOutcomeCallable;
       typedef std::future<ListCustomDataIdentifiersOutcome> ListCustomDataIdentifiersOutcomeCallable;
@@ -388,6 +431,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const Macie2Client*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::BatchGetCustomDataIdentifiersRequest&, const Model::BatchGetCustomDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCustomDataIdentifiersResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::BatchUpdateAutomatedDiscoveryAccountsRequest&, const Model::BatchUpdateAutomatedDiscoveryAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateAutomatedDiscoveryAccountsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::CreateAllowListRequest&, const Model::CreateAllowListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAllowListResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::CreateClassificationJobRequest&, const Model::CreateClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClassificationJobResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::CreateCustomDataIdentifierRequest&, const Model::CreateCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomDataIdentifierResponseReceivedHandler;
@@ -434,6 +478,7 @@ namespace Aws
     typedef std::function<void(const Macie2Client*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetUsageTotalsRequest&, const Model::GetUsageTotalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageTotalsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListAllowListsRequest&, const Model::ListAllowListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAllowListsResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::ListAutomatedDiscoveryAccountsRequest&, const Model::ListAutomatedDiscoveryAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutomatedDiscoveryAccountsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListClassificationJobsRequest&, const Model::ListClassificationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClassificationJobsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListClassificationScopesRequest&, const Model::ListClassificationScopesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClassificationScopesResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListCustomDataIdentifiersRequest&, const Model::ListCustomDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomDataIdentifiersResponseReceivedHandler;

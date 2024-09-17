@@ -39,110 +39,43 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of Config rules or Amazon Web Services resources that are
      * compliant, up to a maximum of 25 for rules and 100 for resources.</p>
      */
     inline const ComplianceContributorCount& GetCompliantResourceCount() const{ return m_compliantResourceCount; }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * compliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline bool CompliantResourceCountHasBeenSet() const { return m_compliantResourceCountHasBeenSet; }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * compliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline void SetCompliantResourceCount(const ComplianceContributorCount& value) { m_compliantResourceCountHasBeenSet = true; m_compliantResourceCount = value; }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * compliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline void SetCompliantResourceCount(ComplianceContributorCount&& value) { m_compliantResourceCountHasBeenSet = true; m_compliantResourceCount = std::move(value); }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * compliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline ComplianceSummary& WithCompliantResourceCount(const ComplianceContributorCount& value) { SetCompliantResourceCount(value); return *this;}
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * compliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline ComplianceSummary& WithCompliantResourceCount(ComplianceContributorCount&& value) { SetCompliantResourceCount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of Config rules or Amazon Web Services resources that are
      * noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
      */
     inline const ComplianceContributorCount& GetNonCompliantResourceCount() const{ return m_nonCompliantResourceCount; }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline bool NonCompliantResourceCountHasBeenSet() const { return m_nonCompliantResourceCountHasBeenSet; }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline void SetNonCompliantResourceCount(const ComplianceContributorCount& value) { m_nonCompliantResourceCountHasBeenSet = true; m_nonCompliantResourceCount = value; }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline void SetNonCompliantResourceCount(ComplianceContributorCount&& value) { m_nonCompliantResourceCountHasBeenSet = true; m_nonCompliantResourceCount = std::move(value); }
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline ComplianceSummary& WithNonCompliantResourceCount(const ComplianceContributorCount& value) { SetNonCompliantResourceCount(value); return *this;}
-
-    /**
-     * <p>The number of Config rules or Amazon Web Services resources that are
-     * noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
-     */
     inline ComplianceSummary& WithNonCompliantResourceCount(ComplianceContributorCount&& value) { SetNonCompliantResourceCount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time that Config created the compliance summary.</p>
      */
     inline const Aws::Utils::DateTime& GetComplianceSummaryTimestamp() const{ return m_complianceSummaryTimestamp; }
-
-    /**
-     * <p>The time that Config created the compliance summary.</p>
-     */
     inline bool ComplianceSummaryTimestampHasBeenSet() const { return m_complianceSummaryTimestampHasBeenSet; }
-
-    /**
-     * <p>The time that Config created the compliance summary.</p>
-     */
     inline void SetComplianceSummaryTimestamp(const Aws::Utils::DateTime& value) { m_complianceSummaryTimestampHasBeenSet = true; m_complianceSummaryTimestamp = value; }
-
-    /**
-     * <p>The time that Config created the compliance summary.</p>
-     */
     inline void SetComplianceSummaryTimestamp(Aws::Utils::DateTime&& value) { m_complianceSummaryTimestampHasBeenSet = true; m_complianceSummaryTimestamp = std::move(value); }
-
-    /**
-     * <p>The time that Config created the compliance summary.</p>
-     */
     inline ComplianceSummary& WithComplianceSummaryTimestamp(const Aws::Utils::DateTime& value) { SetComplianceSummaryTimestamp(value); return *this;}
-
-    /**
-     * <p>The time that Config created the compliance summary.</p>
-     */
     inline ComplianceSummary& WithComplianceSummaryTimestamp(Aws::Utils::DateTime&& value) { SetComplianceSummaryTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ComplianceContributorCount m_compliantResourceCount;

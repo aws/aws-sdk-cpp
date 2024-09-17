@@ -22,8 +22,8 @@ DeleteTopicResult::DeleteTopicResult() :
 {
 }
 
-DeleteTopicResult::DeleteTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteTopicResult::DeleteTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteTopicResult()
 {
   *this = result;
 }

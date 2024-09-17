@@ -23,8 +23,8 @@ UserIdentity::UserIdentity() :
 {
 }
 
-UserIdentity::UserIdentity(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+UserIdentity::UserIdentity(JsonView jsonValue)
+  : UserIdentity()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AutoshiftSummary::AutoshiftSummary() :
 {
 }
 
-AutoshiftSummary::AutoshiftSummary(JsonView jsonValue) : 
-    m_awayFromHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(AutoshiftExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AutoshiftSummary::AutoshiftSummary(JsonView jsonValue)
+  : AutoshiftSummary()
 {
   *this = jsonValue;
 }

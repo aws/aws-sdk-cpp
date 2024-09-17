@@ -27,10 +27,8 @@ InstanceEventWindowStateChange::InstanceEventWindowStateChange() :
 {
 }
 
-InstanceEventWindowStateChange::InstanceEventWindowStateChange(const XmlNode& xmlNode) : 
-    m_instanceEventWindowIdHasBeenSet(false),
-    m_state(InstanceEventWindowState::NOT_SET),
-    m_stateHasBeenSet(false)
+InstanceEventWindowStateChange::InstanceEventWindowStateChange(const XmlNode& xmlNode)
+  : InstanceEventWindowStateChange()
 {
   *this = xmlNode;
 }

@@ -23,9 +23,8 @@ UpdateImageSetMetadataResult::UpdateImageSetMetadataResult() :
 {
 }
 
-UpdateImageSetMetadataResult::UpdateImageSetMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET)
+UpdateImageSetMetadataResult::UpdateImageSetMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateImageSetMetadataResult()
 {
   *this = result;
 }

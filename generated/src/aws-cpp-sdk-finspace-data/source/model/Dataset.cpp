@@ -35,20 +35,8 @@ Dataset::Dataset() :
 {
 }
 
-Dataset::Dataset(JsonView jsonValue) : 
-    m_datasetIdHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_datasetTitleHasBeenSet(false),
-    m_kind(DatasetKind::NOT_SET),
-    m_kindHasBeenSet(false),
-    m_datasetDescriptionHasBeenSet(false),
-    m_ownerInfoHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_schemaDefinitionHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+Dataset::Dataset(JsonView jsonValue)
+  : Dataset()
 {
   *this = jsonValue;
 }

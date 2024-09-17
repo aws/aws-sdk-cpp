@@ -34,95 +34,34 @@ namespace Model
     AWS_VOICEID_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the domain that contains the fraudster registration
      * job.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The identifier of the domain that contains the fraudster registration
-     * job.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the domain that contains the fraudster registration
-     * job.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The identifier of the domain that contains the fraudster registration
-     * job.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The identifier of the domain that contains the fraudster registration
-     * job.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The identifier of the domain that contains the fraudster registration
-     * job.</p>
-     */
     inline DescribeFraudsterRegistrationJobRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The identifier of the domain that contains the fraudster registration
-     * job.</p>
-     */
     inline DescribeFraudsterRegistrationJobRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the domain that contains the fraudster registration
-     * job.</p>
-     */
     inline DescribeFraudsterRegistrationJobRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the fraudster registration job you are describing.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The identifier of the fraudster registration job you are describing.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the fraudster registration job you are describing.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The identifier of the fraudster registration job you are describing.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The identifier of the fraudster registration job you are describing.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The identifier of the fraudster registration job you are describing.</p>
-     */
     inline DescribeFraudsterRegistrationJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The identifier of the fraudster registration job you are describing.</p>
-     */
     inline DescribeFraudsterRegistrationJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the fraudster registration job you are describing.</p>
-     */
     inline DescribeFraudsterRegistrationJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainId;

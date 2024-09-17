@@ -23,8 +23,8 @@ ScalingPolicy::ScalingPolicy() :
 {
 }
 
-ScalingPolicy::ScalingPolicy(JsonView jsonValue) : 
-    m_targetTrackingHasBeenSet(false)
+ScalingPolicy::ScalingPolicy(JsonView jsonValue)
+  : ScalingPolicy()
 {
   *this = jsonValue;
 }

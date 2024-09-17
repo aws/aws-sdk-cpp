@@ -27,10 +27,8 @@ BatchDescribeTypeConfigurationsError::BatchDescribeTypeConfigurationsError() :
 {
 }
 
-BatchDescribeTypeConfigurationsError::BatchDescribeTypeConfigurationsError(const XmlNode& xmlNode) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_typeConfigurationIdentifierHasBeenSet(false)
+BatchDescribeTypeConfigurationsError::BatchDescribeTypeConfigurationsError(const XmlNode& xmlNode)
+  : BatchDescribeTypeConfigurationsError()
 {
   *this = xmlNode;
 }

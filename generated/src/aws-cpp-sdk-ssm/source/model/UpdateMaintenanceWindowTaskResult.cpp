@@ -23,9 +23,8 @@ UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult() :
 {
 }
 
-UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_priority(0),
-    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET)
+UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateMaintenanceWindowTaskResult()
 {
   *this = result;
 }

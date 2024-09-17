@@ -29,13 +29,8 @@ StructuredMessageListDefinition::StructuredMessageListDefinition() :
 {
 }
 
-StructuredMessageListDefinition::StructuredMessageListDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_memberTypeHasBeenSet(false),
-    m_listType(StructuredMessageListType::NOT_SET),
-    m_listTypeHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false)
+StructuredMessageListDefinition::StructuredMessageListDefinition(JsonView jsonValue)
+  : StructuredMessageListDefinition()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ Denied::Denied() :
 {
 }
 
-Denied::Denied(JsonView jsonValue) : 
-    m_implicitDenyHasBeenSet(false),
-    m_explicitDenyHasBeenSet(false)
+Denied::Denied(JsonView jsonValue)
+  : Denied()
 {
   *this = jsonValue;
 }

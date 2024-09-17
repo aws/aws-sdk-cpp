@@ -33,58 +33,28 @@ namespace Model
     AWS_WAFV2_API GetWebACLForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The web ACL that is associated with the resource. If there is no associated
      * resource, WAF returns a null web ACL.</p>
      */
     inline const WebACL& GetWebACL() const{ return m_webACL; }
-
-    /**
-     * <p>The web ACL that is associated with the resource. If there is no associated
-     * resource, WAF returns a null web ACL.</p>
-     */
     inline void SetWebACL(const WebACL& value) { m_webACL = value; }
-
-    /**
-     * <p>The web ACL that is associated with the resource. If there is no associated
-     * resource, WAF returns a null web ACL.</p>
-     */
     inline void SetWebACL(WebACL&& value) { m_webACL = std::move(value); }
-
-    /**
-     * <p>The web ACL that is associated with the resource. If there is no associated
-     * resource, WAF returns a null web ACL.</p>
-     */
     inline GetWebACLForResourceResult& WithWebACL(const WebACL& value) { SetWebACL(value); return *this;}
-
-    /**
-     * <p>The web ACL that is associated with the resource. If there is no associated
-     * resource, WAF returns a null web ACL.</p>
-     */
     inline GetWebACLForResourceResult& WithWebACL(WebACL&& value) { SetWebACL(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWebACLForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWebACLForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWebACLForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     WebACL m_webACL;

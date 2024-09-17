@@ -25,6 +25,10 @@ JobRun::JobRun() :
     m_previousRunIdHasBeenSet(false),
     m_triggerNameHasBeenSet(false),
     m_jobNameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
+    m_jobRunQueuingEnabled(false),
+    m_jobRunQueuingEnabledHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
@@ -50,43 +54,15 @@ JobRun::JobRun() :
     m_dPUSeconds(0.0),
     m_dPUSecondsHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false)
+    m_executionClassHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false),
+    m_profileNameHasBeenSet(false),
+    m_stateDetailHasBeenSet(false)
 {
 }
 
-JobRun::JobRun(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_previousRunIdHasBeenSet(false),
-    m_triggerNameHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_jobRunState(JobRunState::NOT_SET),
-    m_jobRunStateHasBeenSet(false),
-    m_argumentsHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_predecessorRunsHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false),
-    m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false)
+JobRun::JobRun(JsonView jsonValue)
+  : JobRun()
 {
   *this = jsonValue;
 }
@@ -126,6 +102,20 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_jobName = jsonValue.GetString("JobName");
 
     m_jobNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobMode"))
+  {
+    m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
+
+    m_jobModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobRunQueuingEnabled"))
+  {
+    m_jobRunQueuingEnabled = jsonValue.GetBool("JobRunQueuingEnabled");
+
+    m_jobRunQueuingEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StartedOn"))
@@ -260,6 +250,27 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_executionClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaintenanceWindow"))
+  {
+    m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
+
+    m_maintenanceWindowHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProfileName"))
+  {
+    m_profileName = jsonValue.GetString("ProfileName");
+
+    m_profileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateDetail"))
+  {
+    m_stateDetail = jsonValue.GetString("StateDetail");
+
+    m_stateDetailHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -294,6 +305,17 @@ JsonValue JobRun::Jsonize() const
   if(m_jobNameHasBeenSet)
   {
    payload.WithString("JobName", m_jobName);
+
+  }
+
+  if(m_jobModeHasBeenSet)
+  {
+   payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
+  }
+
+  if(m_jobRunQueuingEnabledHasBeenSet)
+  {
+   payload.WithBool("JobRunQueuingEnabled", m_jobRunQueuingEnabled);
 
   }
 
@@ -407,6 +429,24 @@ JsonValue JobRun::Jsonize() const
   if(m_executionClassHasBeenSet)
   {
    payload.WithString("ExecutionClass", ExecutionClassMapper::GetNameForExecutionClass(m_executionClass));
+  }
+
+  if(m_maintenanceWindowHasBeenSet)
+  {
+   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
+
+  }
+
+  if(m_profileNameHasBeenSet)
+  {
+   payload.WithString("ProfileName", m_profileName);
+
+  }
+
+  if(m_stateDetailHasBeenSet)
+  {
+   payload.WithString("StateDetail", m_stateDetail);
+
   }
 
   return payload;

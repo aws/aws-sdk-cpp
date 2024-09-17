@@ -35,20 +35,8 @@ ResourceShare::ResourceShare() :
 {
 }
 
-ResourceShare::ResourceShare(JsonView jsonValue) : 
-    m_resourceShareArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningAccountIdHasBeenSet(false),
-    m_allowExternalPrincipals(false),
-    m_allowExternalPrincipalsHasBeenSet(false),
-    m_status(ResourceShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_featureSet(ResourceShareFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false)
+ResourceShare::ResourceShare(JsonView jsonValue)
+  : ResourceShare()
 {
   *this = jsonValue;
 }

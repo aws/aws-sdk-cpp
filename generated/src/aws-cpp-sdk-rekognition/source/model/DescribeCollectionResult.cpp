@@ -23,9 +23,8 @@ DescribeCollectionResult::DescribeCollectionResult() :
 {
 }
 
-DescribeCollectionResult::DescribeCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_faceCount(0),
-    m_userCount(0)
+DescribeCollectionResult::DescribeCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCollectionResult()
 {
   *this = result;
 }

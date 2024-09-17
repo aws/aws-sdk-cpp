@@ -26,11 +26,8 @@ AssertionRuleUpdate::AssertionRuleUpdate() :
 {
 }
 
-AssertionRuleUpdate::AssertionRuleUpdate(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_safetyRuleArnHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false)
+AssertionRuleUpdate::AssertionRuleUpdate(JsonView jsonValue)
+  : AssertionRuleUpdate()
 {
   *this = jsonValue;
 }

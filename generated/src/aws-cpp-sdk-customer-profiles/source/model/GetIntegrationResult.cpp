@@ -22,8 +22,8 @@ GetIntegrationResult::GetIntegrationResult() :
 {
 }
 
-GetIntegrationResult::GetIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isUnstructured(false)
+GetIntegrationResult::GetIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetIntegrationResult()
 {
   *this = result;
 }

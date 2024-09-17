@@ -23,8 +23,8 @@ DeleteRequest::DeleteRequest() :
 {
 }
 
-DeleteRequest::DeleteRequest(JsonView jsonValue) : 
-    m_keyHasBeenSet(false)
+DeleteRequest::DeleteRequest(JsonView jsonValue)
+  : DeleteRequest()
 {
   *this = jsonValue;
 }

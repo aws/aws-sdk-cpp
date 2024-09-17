@@ -38,116 +38,44 @@ namespace Model
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
+     * <p>The Sequence Store ID used for the multipart uploads.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
-
-    /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
-     */
     inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
-
-    /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
-     */
     inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
-
-    /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
-     */
     inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
-
-    /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
-     */
     inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
-
-    /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
-     */
     inline ListMultipartReadSetUploadsRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
-
-    /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
-     */
     inline ListMultipartReadSetUploadsRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p> The Sequence Store ID used for the multipart uploads. </p>
-     */
     inline ListMultipartReadSetUploadsRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p> The maximum number of multipart uploads returned in a page. </p>
+     * <p>The maximum number of multipart uploads returned in a page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> The maximum number of multipart uploads returned in a page. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> The maximum number of multipart uploads returned in a page. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> The maximum number of multipart uploads returned in a page. </p>
-     */
     inline ListMultipartReadSetUploadsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-     */
     inline ListMultipartReadSetUploadsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-     */
     inline ListMultipartReadSetUploadsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-     */
     inline ListMultipartReadSetUploadsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sequenceStoreId;

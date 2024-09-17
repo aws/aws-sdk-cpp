@@ -38,23 +38,8 @@ RouteSetDetails::RouteSetDetails() :
 {
 }
 
-RouteSetDetails::RouteSetDetails(JsonView jsonValue) : 
-    m_carrierGatewayIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceOwnerIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+RouteSetDetails::RouteSetDetails(JsonView jsonValue)
+  : RouteSetDetails()
 {
   *this = jsonValue;
 }

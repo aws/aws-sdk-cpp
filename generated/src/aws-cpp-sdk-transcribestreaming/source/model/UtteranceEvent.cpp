@@ -37,22 +37,8 @@ UtteranceEvent::UtteranceEvent() :
 {
 }
 
-UtteranceEvent::UtteranceEvent(JsonView jsonValue) : 
-    m_utteranceIdHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_transcriptHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_entitiesHasBeenSet(false),
-    m_sentiment(Sentiment::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_issuesDetectedHasBeenSet(false)
+UtteranceEvent::UtteranceEvent(JsonView jsonValue)
+  : UtteranceEvent()
 {
   *this = jsonValue;
 }

@@ -25,18 +25,15 @@ ConnectionInput::ConnectionInput() :
     m_connectionTypeHasBeenSet(false),
     m_matchCriteriaHasBeenSet(false),
     m_connectionPropertiesHasBeenSet(false),
-    m_physicalConnectionRequirementsHasBeenSet(false)
+    m_physicalConnectionRequirementsHasBeenSet(false),
+    m_authenticationConfigurationHasBeenSet(false),
+    m_validateCredentials(false),
+    m_validateCredentialsHasBeenSet(false)
 {
 }
 
-ConnectionInput::ConnectionInput(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_matchCriteriaHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false),
-    m_physicalConnectionRequirementsHasBeenSet(false)
+ConnectionInput::ConnectionInput(JsonView jsonValue)
+  : ConnectionInput()
 {
   *this = jsonValue;
 }
@@ -91,6 +88,20 @@ ConnectionInput& ConnectionInput::operator =(JsonView jsonValue)
     m_physicalConnectionRequirementsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthenticationConfiguration"))
+  {
+    m_authenticationConfiguration = jsonValue.GetObject("AuthenticationConfiguration");
+
+    m_authenticationConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidateCredentials"))
+  {
+    m_validateCredentials = jsonValue.GetBool("ValidateCredentials");
+
+    m_validateCredentialsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +151,18 @@ JsonValue ConnectionInput::Jsonize() const
   if(m_physicalConnectionRequirementsHasBeenSet)
   {
    payload.WithObject("PhysicalConnectionRequirements", m_physicalConnectionRequirements.Jsonize());
+
+  }
+
+  if(m_authenticationConfigurationHasBeenSet)
+  {
+   payload.WithObject("AuthenticationConfiguration", m_authenticationConfiguration.Jsonize());
+
+  }
+
+  if(m_validateCredentialsHasBeenSet)
+  {
+   payload.WithBool("ValidateCredentials", m_validateCredentials);
 
   }
 

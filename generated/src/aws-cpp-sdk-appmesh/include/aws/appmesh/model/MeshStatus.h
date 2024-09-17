@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current mesh status.</p>
      */
     inline const MeshStatusCode& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current mesh status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current mesh status.</p>
-     */
     inline void SetStatus(const MeshStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current mesh status.</p>
-     */
     inline void SetStatus(MeshStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current mesh status.</p>
-     */
     inline MeshStatus& WithStatus(const MeshStatusCode& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current mesh status.</p>
-     */
     inline MeshStatus& WithStatus(MeshStatusCode&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MeshStatusCode m_status;

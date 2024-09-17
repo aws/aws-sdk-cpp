@@ -38,79 +38,31 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of results to include in the response. If you omit this,
      * the default of 50 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to include in the response. If you omit this,
-     * the default of 50 is used.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to include in the response. If you omit this,
-     * the default of 50 is used.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to include in the response. If you omit this,
-     * the default of 50 is used.</p>
-     */
     inline ListSegmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use when requesting the next set of results. You received this
      * token from a previous <code>ListSegments</code> operation.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use when requesting the next set of results. You received this
-     * token from a previous <code>ListSegments</code> operation.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to use when requesting the next set of results. You received this
-     * token from a previous <code>ListSegments</code> operation.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to use when requesting the next set of results. You received this
-     * token from a previous <code>ListSegments</code> operation.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of results. You received this
-     * token from a previous <code>ListSegments</code> operation.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of results. You received this
-     * token from a previous <code>ListSegments</code> operation.</p>
-     */
     inline ListSegmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of results. You received this
-     * token from a previous <code>ListSegments</code> operation.</p>
-     */
     inline ListSegmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of results. You received this
-     * token from a previous <code>ListSegments</code> operation.</p>
-     */
     inline ListSegmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

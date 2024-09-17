@@ -41,86 +41,39 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const QueryRuntimeStatisticsTimeline& GetTimeline() const{ return m_timeline; }
-
-    
     inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
-
-    
     inline void SetTimeline(const QueryRuntimeStatisticsTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
-
-    
     inline void SetTimeline(QueryRuntimeStatisticsTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
-
-    
     inline QueryRuntimeStatistics& WithTimeline(const QueryRuntimeStatisticsTimeline& value) { SetTimeline(value); return *this;}
-
-    
     inline QueryRuntimeStatistics& WithTimeline(QueryRuntimeStatisticsTimeline&& value) { SetTimeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const QueryRuntimeStatisticsRows& GetRows() const{ return m_rows; }
-
-    
     inline bool RowsHasBeenSet() const { return m_rowsHasBeenSet; }
-
-    
     inline void SetRows(const QueryRuntimeStatisticsRows& value) { m_rowsHasBeenSet = true; m_rows = value; }
-
-    
     inline void SetRows(QueryRuntimeStatisticsRows&& value) { m_rowsHasBeenSet = true; m_rows = std::move(value); }
-
-    
     inline QueryRuntimeStatistics& WithRows(const QueryRuntimeStatisticsRows& value) { SetRows(value); return *this;}
-
-    
     inline QueryRuntimeStatistics& WithRows(QueryRuntimeStatisticsRows&& value) { SetRows(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stage statistics such as input and output rows and bytes, execution time, and
      * stage state. This information also includes substages and the query stage
      * plan.</p>
      */
     inline const QueryStage& GetOutputStage() const{ return m_outputStage; }
-
-    /**
-     * <p>Stage statistics such as input and output rows and bytes, execution time, and
-     * stage state. This information also includes substages and the query stage
-     * plan.</p>
-     */
     inline bool OutputStageHasBeenSet() const { return m_outputStageHasBeenSet; }
-
-    /**
-     * <p>Stage statistics such as input and output rows and bytes, execution time, and
-     * stage state. This information also includes substages and the query stage
-     * plan.</p>
-     */
     inline void SetOutputStage(const QueryStage& value) { m_outputStageHasBeenSet = true; m_outputStage = value; }
-
-    /**
-     * <p>Stage statistics such as input and output rows and bytes, execution time, and
-     * stage state. This information also includes substages and the query stage
-     * plan.</p>
-     */
     inline void SetOutputStage(QueryStage&& value) { m_outputStageHasBeenSet = true; m_outputStage = std::move(value); }
-
-    /**
-     * <p>Stage statistics such as input and output rows and bytes, execution time, and
-     * stage state. This information also includes substages and the query stage
-     * plan.</p>
-     */
     inline QueryRuntimeStatistics& WithOutputStage(const QueryStage& value) { SetOutputStage(value); return *this;}
-
-    /**
-     * <p>Stage statistics such as input and output rows and bytes, execution time, and
-     * stage state. This information also includes substages and the query stage
-     * plan.</p>
-     */
     inline QueryRuntimeStatistics& WithOutputStage(QueryStage&& value) { SetOutputStage(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     QueryRuntimeStatisticsTimeline m_timeline;

@@ -24,9 +24,8 @@ ReplicationInfoSummary::ReplicationInfoSummary() :
 {
 }
 
-ReplicationInfoSummary::ReplicationInfoSummary(JsonView jsonValue) : 
-    m_sourceKafkaClusterAliasHasBeenSet(false),
-    m_targetKafkaClusterAliasHasBeenSet(false)
+ReplicationInfoSummary::ReplicationInfoSummary(JsonView jsonValue)
+  : ReplicationInfoSummary()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ListJobsFilterTerm::ListJobsFilterTerm() :
 {
 }
 
-ListJobsFilterTerm::ListJobsFilterTerm(JsonView jsonValue) : 
-    m_comparator(JobComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(ListJobsFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ListJobsFilterTerm::ListJobsFilterTerm(JsonView jsonValue)
+  : ListJobsFilterTerm()
 {
   *this = jsonValue;
 }

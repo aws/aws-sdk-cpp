@@ -53,38 +53,8 @@ TranscriptionJob::TranscriptionJob() :
 {
 }
 
-TranscriptionJob::TranscriptionJob(JsonView jsonValue) : 
-    m_transcriptionJobNameHasBeenSet(false),
-    m_transcriptionJobStatus(TranscriptionJobStatus::NOT_SET),
-    m_transcriptionJobStatusHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaFormat(MediaFormat::NOT_SET),
-    m_mediaFormatHasBeenSet(false),
-    m_mediaHasBeenSet(false),
-    m_transcriptHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_modelSettingsHasBeenSet(false),
-    m_jobExecutionSettingsHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false),
-    m_identifyLanguage(false),
-    m_identifyLanguageHasBeenSet(false),
-    m_identifyMultipleLanguages(false),
-    m_identifyMultipleLanguagesHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false),
-    m_identifiedLanguageScore(0.0),
-    m_identifiedLanguageScoreHasBeenSet(false),
-    m_languageCodesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_subtitlesHasBeenSet(false),
-    m_languageIdSettingsHasBeenSet(false),
-    m_toxicityDetectionHasBeenSet(false)
+TranscriptionJob::TranscriptionJob(JsonView jsonValue)
+  : TranscriptionJob()
 {
   *this = jsonValue;
 }

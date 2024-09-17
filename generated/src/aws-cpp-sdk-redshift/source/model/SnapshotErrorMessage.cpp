@@ -28,11 +28,8 @@ SnapshotErrorMessage::SnapshotErrorMessage() :
 {
 }
 
-SnapshotErrorMessage::SnapshotErrorMessage(const XmlNode& xmlNode) : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotClusterIdentifierHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+SnapshotErrorMessage::SnapshotErrorMessage(const XmlNode& xmlNode)
+  : SnapshotErrorMessage()
 {
   *this = xmlNode;
 }

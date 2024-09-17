@@ -28,13 +28,8 @@ WirelessGatewayStatistics::WirelessGatewayStatistics() :
 {
 }
 
-WirelessGatewayStatistics::WirelessGatewayStatistics(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_lastUplinkReceivedAtHasBeenSet(false)
+WirelessGatewayStatistics::WirelessGatewayStatistics(JsonView jsonValue)
+  : WirelessGatewayStatistics()
 {
   *this = jsonValue;
 }

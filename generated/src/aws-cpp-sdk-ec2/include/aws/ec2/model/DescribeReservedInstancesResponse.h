@@ -40,57 +40,27 @@ namespace Model
     AWS_EC2_API DescribeReservedInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A list of Reserved Instances.</p>
      */
     inline const Aws::Vector<ReservedInstances>& GetReservedInstances() const{ return m_reservedInstances; }
-
-    /**
-     * <p>A list of Reserved Instances.</p>
-     */
     inline void SetReservedInstances(const Aws::Vector<ReservedInstances>& value) { m_reservedInstances = value; }
-
-    /**
-     * <p>A list of Reserved Instances.</p>
-     */
     inline void SetReservedInstances(Aws::Vector<ReservedInstances>&& value) { m_reservedInstances = std::move(value); }
-
-    /**
-     * <p>A list of Reserved Instances.</p>
-     */
     inline DescribeReservedInstancesResponse& WithReservedInstances(const Aws::Vector<ReservedInstances>& value) { SetReservedInstances(value); return *this;}
-
-    /**
-     * <p>A list of Reserved Instances.</p>
-     */
     inline DescribeReservedInstancesResponse& WithReservedInstances(Aws::Vector<ReservedInstances>&& value) { SetReservedInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of Reserved Instances.</p>
-     */
     inline DescribeReservedInstancesResponse& AddReservedInstances(const ReservedInstances& value) { m_reservedInstances.push_back(value); return *this; }
-
-    /**
-     * <p>A list of Reserved Instances.</p>
-     */
     inline DescribeReservedInstancesResponse& AddReservedInstances(ReservedInstances&& value) { m_reservedInstances.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeReservedInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeReservedInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ReservedInstances> m_reservedInstances;

@@ -25,10 +25,8 @@ UplinkEchoConfig::UplinkEchoConfig() :
 {
 }
 
-UplinkEchoConfig::UplinkEchoConfig(JsonView jsonValue) : 
-    m_antennaUplinkConfigArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+UplinkEchoConfig::UplinkEchoConfig(JsonView jsonValue)
+  : UplinkEchoConfig()
 {
   *this = jsonValue;
 }

@@ -38,128 +38,47 @@ namespace Model
     AWS_CLOUDFRONT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
-     * <p>The marker associated with the Key Value Stores list.</p>
+     * <p>The marker associated with the key value stores list.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker associated with the Key Value Stores list.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>The marker associated with the Key Value Stores list.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>The marker associated with the Key Value Stores list.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>The marker associated with the Key Value Stores list.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>The marker associated with the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker associated with the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker associated with the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
+     * <p>The maximum number of items in the key value stores list.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
-
-    /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
-     */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
-     */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-
-    /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
-     */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-
-    /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
-     */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-
-    /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-
-    /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum number of items in the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The status of the request for the Key Value Stores list.</p>
+     * <p>The status of the request for the key value stores list.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the request for the Key Value Stores list.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the request for the Key Value Stores list.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the request for the Key Value Stores list.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the request for the Key Value Stores list.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The status of the request for the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the request for the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the request for the Key Value Stores list.</p>
-     */
     inline ListKeyValueStores2020_05_31Request& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

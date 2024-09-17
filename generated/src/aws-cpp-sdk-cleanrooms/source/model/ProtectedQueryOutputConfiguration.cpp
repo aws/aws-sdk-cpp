@@ -19,12 +19,13 @@ namespace Model
 {
 
 ProtectedQueryOutputConfiguration::ProtectedQueryOutputConfiguration() : 
-    m_s3HasBeenSet(false)
+    m_s3HasBeenSet(false),
+    m_memberHasBeenSet(false)
 {
 }
 
-ProtectedQueryOutputConfiguration::ProtectedQueryOutputConfiguration(JsonView jsonValue) : 
-    m_s3HasBeenSet(false)
+ProtectedQueryOutputConfiguration::ProtectedQueryOutputConfiguration(JsonView jsonValue)
+  : ProtectedQueryOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ ProtectedQueryOutputConfiguration& ProtectedQueryOutputConfiguration::operator =
     m_s3HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("member"))
+  {
+    m_member = jsonValue.GetObject("member");
+
+    m_memberHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue ProtectedQueryOutputConfiguration::Jsonize() const
   if(m_s3HasBeenSet)
   {
    payload.WithObject("s3", m_s3.Jsonize());
+
+  }
+
+  if(m_memberHasBeenSet)
+  {
+   payload.WithObject("member", m_member.Jsonize());
 
   }
 

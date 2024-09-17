@@ -26,11 +26,8 @@ ClientProperties::ClientProperties() :
 {
 }
 
-ClientProperties::ClientProperties(JsonView jsonValue) : 
-    m_reconnectEnabled(ReconnectEnum::NOT_SET),
-    m_reconnectEnabledHasBeenSet(false),
-    m_logUploadEnabled(LogUploadEnum::NOT_SET),
-    m_logUploadEnabledHasBeenSet(false)
+ClientProperties::ClientProperties(JsonView jsonValue)
+  : ClientProperties()
 {
   *this = jsonValue;
 }

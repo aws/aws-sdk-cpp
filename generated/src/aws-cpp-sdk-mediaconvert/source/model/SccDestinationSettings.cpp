@@ -24,9 +24,8 @@ SccDestinationSettings::SccDestinationSettings() :
 {
 }
 
-SccDestinationSettings::SccDestinationSettings(JsonView jsonValue) : 
-    m_framerate(SccDestinationFramerate::NOT_SET),
-    m_framerateHasBeenSet(false)
+SccDestinationSettings::SccDestinationSettings(JsonView jsonValue)
+  : SccDestinationSettings()
 {
   *this = jsonValue;
 }

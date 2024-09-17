@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SIGNING_HASH = HashingUtils::HashString("SIGNING");
         static const int ENCRYPTION_HASH = HashingUtils::HashString("ENCRYPTION");
+        static const int TLS_HASH = HashingUtils::HashString("TLS");
 
 
         CertificateUsageType GetCertificateUsageTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ENCRYPTION_HASH)
           {
             return CertificateUsageType::ENCRYPTION;
+          }
+          else if (hashCode == TLS_HASH)
+          {
+            return CertificateUsageType::TLS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "SIGNING";
           case CertificateUsageType::ENCRYPTION:
             return "ENCRYPTION";
+          case CertificateUsageType::TLS:
+            return "TLS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

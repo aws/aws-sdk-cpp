@@ -23,8 +23,8 @@ LifecycleTransitionReason::LifecycleTransitionReason() :
 {
 }
 
-LifecycleTransitionReason::LifecycleTransitionReason(JsonView jsonValue) : 
-    m_messageHasBeenSet(false)
+LifecycleTransitionReason::LifecycleTransitionReason(JsonView jsonValue)
+  : LifecycleTransitionReason()
 {
   *this = jsonValue;
 }

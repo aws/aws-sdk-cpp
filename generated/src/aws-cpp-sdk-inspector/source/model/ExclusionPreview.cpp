@@ -27,12 +27,8 @@ ExclusionPreview::ExclusionPreview() :
 {
 }
 
-ExclusionPreview::ExclusionPreview(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_scopesHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+ExclusionPreview::ExclusionPreview(JsonView jsonValue)
+  : ExclusionPreview()
 {
   *this = jsonValue;
 }

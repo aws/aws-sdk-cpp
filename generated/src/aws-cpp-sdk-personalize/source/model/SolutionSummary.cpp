@@ -28,13 +28,8 @@ SolutionSummary::SolutionSummary() :
 {
 }
 
-SolutionSummary::SolutionSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_recipeArnHasBeenSet(false)
+SolutionSummary::SolutionSummary(JsonView jsonValue)
+  : SolutionSummary()
 {
   *this = jsonValue;
 }

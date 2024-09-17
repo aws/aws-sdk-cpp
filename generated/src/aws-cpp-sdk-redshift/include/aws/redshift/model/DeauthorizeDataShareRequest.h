@@ -36,111 +36,36 @@ namespace Model
 
   public:
 
+    ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
-     */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
-     */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
-     */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
-     */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
-     */
     inline DeauthorizeDataShareRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
-     */
     inline DeauthorizeDataShareRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
-     */
     inline DeauthorizeDataShareRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
      * from the datashare. This identifier is an Amazon Web Services account ID or a
      * keyword, such as ADX.</p>
      */
     inline const Aws::String& GetConsumerIdentifier() const{ return m_consumerIdentifier; }
-
-    /**
-     * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID or a
-     * keyword, such as ADX.</p>
-     */
     inline bool ConsumerIdentifierHasBeenSet() const { return m_consumerIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID or a
-     * keyword, such as ADX.</p>
-     */
     inline void SetConsumerIdentifier(const Aws::String& value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier = value; }
-
-    /**
-     * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID or a
-     * keyword, such as ADX.</p>
-     */
     inline void SetConsumerIdentifier(Aws::String&& value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID or a
-     * keyword, such as ADX.</p>
-     */
     inline void SetConsumerIdentifier(const char* value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID or a
-     * keyword, such as ADX.</p>
-     */
     inline DeauthorizeDataShareRequest& WithConsumerIdentifier(const Aws::String& value) { SetConsumerIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID or a
-     * keyword, such as ADX.</p>
-     */
     inline DeauthorizeDataShareRequest& WithConsumerIdentifier(Aws::String&& value) { SetConsumerIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID or a
-     * keyword, such as ADX.</p>
-     */
     inline DeauthorizeDataShareRequest& WithConsumerIdentifier(const char* value) { SetConsumerIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataShareArn;

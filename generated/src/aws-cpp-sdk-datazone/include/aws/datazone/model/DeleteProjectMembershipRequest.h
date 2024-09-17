@@ -33,118 +33,45 @@ namespace Model
     AWS_DATAZONE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
      */
     inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-     */
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-     */
     inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-     */
     inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-     */
     inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The project member whose project membership is deleted.</p>
      */
     inline const Member& GetMember() const{ return m_member; }
-
-    /**
-     * <p>The project member whose project membership is deleted.</p>
-     */
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-
-    /**
-     * <p>The project member whose project membership is deleted.</p>
-     */
     inline void SetMember(const Member& value) { m_memberHasBeenSet = true; m_member = value; }
-
-    /**
-     * <p>The project member whose project membership is deleted.</p>
-     */
     inline void SetMember(Member&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-
-    /**
-     * <p>The project member whose project membership is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithMember(const Member& value) { SetMember(value); return *this;}
-
-    /**
-     * <p>The project member whose project membership is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithMember(Member&& value) { SetMember(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
      */
     inline const Aws::String& GetProjectIdentifier() const{ return m_projectIdentifier; }
-
-    /**
-     * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-     */
     inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-     */
     inline void SetProjectIdentifier(const Aws::String& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = value; }
-
-    /**
-     * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-     */
     inline void SetProjectIdentifier(Aws::String&& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-     */
     inline void SetProjectIdentifier(const char* value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithProjectIdentifier(const Aws::String& value) { SetProjectIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithProjectIdentifier(Aws::String&& value) { SetProjectIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
-     */
     inline DeleteProjectMembershipRequest& WithProjectIdentifier(const char* value) { SetProjectIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainIdentifier;

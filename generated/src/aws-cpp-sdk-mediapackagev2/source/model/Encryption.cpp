@@ -27,12 +27,8 @@ Encryption::Encryption() :
 {
 }
 
-Encryption::Encryption(JsonView jsonValue) : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethodHasBeenSet(false),
-    m_keyRotationIntervalSeconds(0),
-    m_keyRotationIntervalSecondsHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
+Encryption::Encryption(JsonView jsonValue)
+  : Encryption()
 {
   *this = jsonValue;
 }

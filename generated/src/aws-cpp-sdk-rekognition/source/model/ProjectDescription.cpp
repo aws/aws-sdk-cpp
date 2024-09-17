@@ -31,16 +31,8 @@ ProjectDescription::ProjectDescription() :
 {
 }
 
-ProjectDescription::ProjectDescription(JsonView jsonValue) : 
-    m_projectArnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_datasetsHasBeenSet(false),
-    m_feature(CustomizationFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_autoUpdate(ProjectAutoUpdate::NOT_SET),
-    m_autoUpdateHasBeenSet(false)
+ProjectDescription::ProjectDescription(JsonView jsonValue)
+  : ProjectDescription()
 {
   *this = jsonValue;
 }

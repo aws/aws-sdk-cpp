@@ -31,16 +31,8 @@ ProcessingJobSummary::ProcessingJobSummary() :
 {
 }
 
-ProcessingJobSummary::ProcessingJobSummary(JsonView jsonValue) : 
-    m_processingJobNameHasBeenSet(false),
-    m_processingJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_processingEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_processingJobStatus(ProcessingJobStatus::NOT_SET),
-    m_processingJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_exitMessageHasBeenSet(false)
+ProcessingJobSummary::ProcessingJobSummary(JsonView jsonValue)
+  : ProcessingJobSummary()
 {
   *this = jsonValue;
 }

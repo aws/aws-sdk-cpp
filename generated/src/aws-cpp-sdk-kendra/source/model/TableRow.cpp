@@ -23,8 +23,8 @@ TableRow::TableRow() :
 {
 }
 
-TableRow::TableRow(JsonView jsonValue) : 
-    m_cellsHasBeenSet(false)
+TableRow::TableRow(JsonView jsonValue)
+  : TableRow()
 {
   *this = jsonValue;
 }

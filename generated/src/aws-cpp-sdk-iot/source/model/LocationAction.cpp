@@ -28,13 +28,8 @@ LocationAction::LocationAction() :
 {
 }
 
-LocationAction::LocationAction(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_trackerNameHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_latitudeHasBeenSet(false),
-    m_longitudeHasBeenSet(false)
+LocationAction::LocationAction(JsonView jsonValue)
+  : LocationAction()
 {
   *this = jsonValue;
 }

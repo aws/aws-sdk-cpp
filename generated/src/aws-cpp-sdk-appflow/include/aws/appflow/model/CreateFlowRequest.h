@@ -40,96 +40,36 @@ namespace Model
     AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
      * or hyphens (-) only. </p>
      */
     inline const Aws::String& GetFlowName() const{ return m_flowName; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline CreateFlowRequest& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline CreateFlowRequest& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
-
-    /**
-     * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
-     * or hyphens (-) only. </p>
-     */
     inline CreateFlowRequest& WithFlowName(const char* value) { SetFlowName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A description of the flow you want to create. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p> A description of the flow you want to create. </p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p> A description of the flow you want to create. </p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p> A description of the flow you want to create. </p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p> A description of the flow you want to create. </p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p> A description of the flow you want to create. </p>
-     */
     inline CreateFlowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p> A description of the flow you want to create. </p>
-     */
     inline CreateFlowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p> A description of the flow you want to create. </p>
-     */
     inline CreateFlowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
      * provide for encryption. This is required if you do not want to use the Amazon
@@ -137,339 +77,104 @@ namespace Model
      * the Amazon AppFlow-managed KMS key. </p>
      */
     inline const Aws::String& GetKmsArn() const{ return m_kmsArn; }
-
-    /**
-     * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
-     * provide for encryption. This is required if you do not want to use the Amazon
-     * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
-     * the Amazon AppFlow-managed KMS key. </p>
-     */
     inline bool KmsArnHasBeenSet() const { return m_kmsArnHasBeenSet; }
-
-    /**
-     * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
-     * provide for encryption. This is required if you do not want to use the Amazon
-     * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
-     * the Amazon AppFlow-managed KMS key. </p>
-     */
     inline void SetKmsArn(const Aws::String& value) { m_kmsArnHasBeenSet = true; m_kmsArn = value; }
-
-    /**
-     * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
-     * provide for encryption. This is required if you do not want to use the Amazon
-     * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
-     * the Amazon AppFlow-managed KMS key. </p>
-     */
     inline void SetKmsArn(Aws::String&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::move(value); }
-
-    /**
-     * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
-     * provide for encryption. This is required if you do not want to use the Amazon
-     * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
-     * the Amazon AppFlow-managed KMS key. </p>
-     */
     inline void SetKmsArn(const char* value) { m_kmsArnHasBeenSet = true; m_kmsArn.assign(value); }
-
-    /**
-     * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
-     * provide for encryption. This is required if you do not want to use the Amazon
-     * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
-     * the Amazon AppFlow-managed KMS key. </p>
-     */
     inline CreateFlowRequest& WithKmsArn(const Aws::String& value) { SetKmsArn(value); return *this;}
-
-    /**
-     * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
-     * provide for encryption. This is required if you do not want to use the Amazon
-     * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
-     * the Amazon AppFlow-managed KMS key. </p>
-     */
     inline CreateFlowRequest& WithKmsArn(Aws::String&& value) { SetKmsArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you
-     * provide for encryption. This is required if you do not want to use the Amazon
-     * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
-     * the Amazon AppFlow-managed KMS key. </p>
-     */
     inline CreateFlowRequest& WithKmsArn(const char* value) { SetKmsArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The trigger settings that determine how and when the flow runs. </p>
      */
     inline const TriggerConfig& GetTriggerConfig() const{ return m_triggerConfig; }
-
-    /**
-     * <p> The trigger settings that determine how and when the flow runs. </p>
-     */
     inline bool TriggerConfigHasBeenSet() const { return m_triggerConfigHasBeenSet; }
-
-    /**
-     * <p> The trigger settings that determine how and when the flow runs. </p>
-     */
     inline void SetTriggerConfig(const TriggerConfig& value) { m_triggerConfigHasBeenSet = true; m_triggerConfig = value; }
-
-    /**
-     * <p> The trigger settings that determine how and when the flow runs. </p>
-     */
     inline void SetTriggerConfig(TriggerConfig&& value) { m_triggerConfigHasBeenSet = true; m_triggerConfig = std::move(value); }
-
-    /**
-     * <p> The trigger settings that determine how and when the flow runs. </p>
-     */
     inline CreateFlowRequest& WithTriggerConfig(const TriggerConfig& value) { SetTriggerConfig(value); return *this;}
-
-    /**
-     * <p> The trigger settings that determine how and when the flow runs. </p>
-     */
     inline CreateFlowRequest& WithTriggerConfig(TriggerConfig&& value) { SetTriggerConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The configuration that controls how Amazon AppFlow retrieves data from the
      * source connector. </p>
      */
     inline const SourceFlowConfig& GetSourceFlowConfig() const{ return m_sourceFlowConfig; }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow retrieves data from the
-     * source connector. </p>
-     */
     inline bool SourceFlowConfigHasBeenSet() const { return m_sourceFlowConfigHasBeenSet; }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow retrieves data from the
-     * source connector. </p>
-     */
     inline void SetSourceFlowConfig(const SourceFlowConfig& value) { m_sourceFlowConfigHasBeenSet = true; m_sourceFlowConfig = value; }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow retrieves data from the
-     * source connector. </p>
-     */
     inline void SetSourceFlowConfig(SourceFlowConfig&& value) { m_sourceFlowConfigHasBeenSet = true; m_sourceFlowConfig = std::move(value); }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow retrieves data from the
-     * source connector. </p>
-     */
     inline CreateFlowRequest& WithSourceFlowConfig(const SourceFlowConfig& value) { SetSourceFlowConfig(value); return *this;}
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow retrieves data from the
-     * source connector. </p>
-     */
     inline CreateFlowRequest& WithSourceFlowConfig(SourceFlowConfig&& value) { SetSourceFlowConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The configuration that controls how Amazon AppFlow places data in the
      * destination connector. </p>
      */
     inline const Aws::Vector<DestinationFlowConfig>& GetDestinationFlowConfigList() const{ return m_destinationFlowConfigList; }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow places data in the
-     * destination connector. </p>
-     */
     inline bool DestinationFlowConfigListHasBeenSet() const { return m_destinationFlowConfigListHasBeenSet; }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow places data in the
-     * destination connector. </p>
-     */
     inline void SetDestinationFlowConfigList(const Aws::Vector<DestinationFlowConfig>& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList = value; }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow places data in the
-     * destination connector. </p>
-     */
     inline void SetDestinationFlowConfigList(Aws::Vector<DestinationFlowConfig>&& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList = std::move(value); }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow places data in the
-     * destination connector. </p>
-     */
     inline CreateFlowRequest& WithDestinationFlowConfigList(const Aws::Vector<DestinationFlowConfig>& value) { SetDestinationFlowConfigList(value); return *this;}
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow places data in the
-     * destination connector. </p>
-     */
     inline CreateFlowRequest& WithDestinationFlowConfigList(Aws::Vector<DestinationFlowConfig>&& value) { SetDestinationFlowConfigList(std::move(value)); return *this;}
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow places data in the
-     * destination connector. </p>
-     */
     inline CreateFlowRequest& AddDestinationFlowConfigList(const DestinationFlowConfig& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList.push_back(value); return *this; }
-
-    /**
-     * <p> The configuration that controls how Amazon AppFlow places data in the
-     * destination connector. </p>
-     */
     inline CreateFlowRequest& AddDestinationFlowConfigList(DestinationFlowConfig&& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
      * the flow run. </p>
      */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
-
-    /**
-     * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
-     * the flow run. </p>
-     */
     inline bool TasksHasBeenSet() const { return m_tasksHasBeenSet; }
-
-    /**
-     * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
-     * the flow run. </p>
-     */
     inline void SetTasks(const Aws::Vector<Task>& value) { m_tasksHasBeenSet = true; m_tasks = value; }
-
-    /**
-     * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
-     * the flow run. </p>
-     */
     inline void SetTasks(Aws::Vector<Task>&& value) { m_tasksHasBeenSet = true; m_tasks = std::move(value); }
-
-    /**
-     * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
-     * the flow run. </p>
-     */
     inline CreateFlowRequest& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
-
-    /**
-     * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
-     * the flow run. </p>
-     */
     inline CreateFlowRequest& WithTasks(Aws::Vector<Task>&& value) { SetTasks(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
-     * the flow run. </p>
-     */
     inline CreateFlowRequest& AddTasks(const Task& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
-
-    /**
-     * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
-     * the flow run. </p>
-     */
     inline CreateFlowRequest& AddTasks(Task&& value) { m_tasksHasBeenSet = true; m_tasks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The tags used to organize, track, or control access for your flow. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> The tags used to organize, track, or control access for your flow. </p>
-     */
     inline CreateFlowRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
      * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
      * data from a flow, it stores metadata in a data catalog.</p>
      */
     inline const MetadataCatalogConfig& GetMetadataCatalogConfig() const{ return m_metadataCatalogConfig; }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
-     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
-     * data from a flow, it stores metadata in a data catalog.</p>
-     */
     inline bool MetadataCatalogConfigHasBeenSet() const { return m_metadataCatalogConfigHasBeenSet; }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
-     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
-     * data from a flow, it stores metadata in a data catalog.</p>
-     */
     inline void SetMetadataCatalogConfig(const MetadataCatalogConfig& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = value; }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
-     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
-     * data from a flow, it stores metadata in a data catalog.</p>
-     */
     inline void SetMetadataCatalogConfig(MetadataCatalogConfig&& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = std::move(value); }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
-     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
-     * data from a flow, it stores metadata in a data catalog.</p>
-     */
     inline CreateFlowRequest& WithMetadataCatalogConfig(const MetadataCatalogConfig& value) { SetMetadataCatalogConfig(value); return *this;}
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
-     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
-     * data from a flow, it stores metadata in a data catalog.</p>
-     */
     inline CreateFlowRequest& WithMetadataCatalogConfig(MetadataCatalogConfig&& value) { SetMetadataCatalogConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
      * that your <code>CreateFlow</code> request completes only once. You choose the
@@ -484,112 +189,14 @@ namespace Model
      * <code>CreateFlow</code>. The token is active for 8 hours.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
-     * that your <code>CreateFlow</code> request completes only once. You choose the
-     * value to pass. For example, if you don't receive a response from your request,
-     * you can safely retry the request with the same <code>clientToken</code>
-     * parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon
-     * Web Services SDK that you are using inserts a value for you. This way, the SDK
-     * can safely retry requests multiple times after a network error. You must provide
-     * your own value for other use cases.</p> <p>If you specify input parameters that
-     * differ from your first request, an error occurs. If you use a different value
-     * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
-     * <code>CreateFlow</code>. The token is active for 8 hours.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
-     * that your <code>CreateFlow</code> request completes only once. You choose the
-     * value to pass. For example, if you don't receive a response from your request,
-     * you can safely retry the request with the same <code>clientToken</code>
-     * parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon
-     * Web Services SDK that you are using inserts a value for you. This way, the SDK
-     * can safely retry requests multiple times after a network error. You must provide
-     * your own value for other use cases.</p> <p>If you specify input parameters that
-     * differ from your first request, an error occurs. If you use a different value
-     * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
-     * <code>CreateFlow</code>. The token is active for 8 hours.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
-     * that your <code>CreateFlow</code> request completes only once. You choose the
-     * value to pass. For example, if you don't receive a response from your request,
-     * you can safely retry the request with the same <code>clientToken</code>
-     * parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon
-     * Web Services SDK that you are using inserts a value for you. This way, the SDK
-     * can safely retry requests multiple times after a network error. You must provide
-     * your own value for other use cases.</p> <p>If you specify input parameters that
-     * differ from your first request, an error occurs. If you use a different value
-     * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
-     * <code>CreateFlow</code>. The token is active for 8 hours.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
-     * that your <code>CreateFlow</code> request completes only once. You choose the
-     * value to pass. For example, if you don't receive a response from your request,
-     * you can safely retry the request with the same <code>clientToken</code>
-     * parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon
-     * Web Services SDK that you are using inserts a value for you. This way, the SDK
-     * can safely retry requests multiple times after a network error. You must provide
-     * your own value for other use cases.</p> <p>If you specify input parameters that
-     * differ from your first request, an error occurs. If you use a different value
-     * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
-     * <code>CreateFlow</code>. The token is active for 8 hours.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
-     * that your <code>CreateFlow</code> request completes only once. You choose the
-     * value to pass. For example, if you don't receive a response from your request,
-     * you can safely retry the request with the same <code>clientToken</code>
-     * parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon
-     * Web Services SDK that you are using inserts a value for you. This way, the SDK
-     * can safely retry requests multiple times after a network error. You must provide
-     * your own value for other use cases.</p> <p>If you specify input parameters that
-     * differ from your first request, an error occurs. If you use a different value
-     * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
-     * <code>CreateFlow</code>. The token is active for 8 hours.</p>
-     */
     inline CreateFlowRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
-     * that your <code>CreateFlow</code> request completes only once. You choose the
-     * value to pass. For example, if you don't receive a response from your request,
-     * you can safely retry the request with the same <code>clientToken</code>
-     * parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon
-     * Web Services SDK that you are using inserts a value for you. This way, the SDK
-     * can safely retry requests multiple times after a network error. You must provide
-     * your own value for other use cases.</p> <p>If you specify input parameters that
-     * differ from your first request, an error occurs. If you use a different value
-     * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
-     * <code>CreateFlow</code>. The token is active for 8 hours.</p>
-     */
     inline CreateFlowRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>clientToken</code> parameter is an idempotency token. It ensures
-     * that your <code>CreateFlow</code> request completes only once. You choose the
-     * value to pass. For example, if you don't receive a response from your request,
-     * you can safely retry the request with the same <code>clientToken</code>
-     * parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon
-     * Web Services SDK that you are using inserts a value for you. This way, the SDK
-     * can safely retry requests multiple times after a network error. You must provide
-     * your own value for other use cases.</p> <p>If you specify input parameters that
-     * differ from your first request, an error occurs. If you use a different value
-     * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
-     * <code>CreateFlow</code>. The token is active for 8 hours.</p>
-     */
     inline CreateFlowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowName;

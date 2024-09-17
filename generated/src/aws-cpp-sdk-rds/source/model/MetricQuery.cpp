@@ -25,8 +25,8 @@ MetricQuery::MetricQuery() :
 {
 }
 
-MetricQuery::MetricQuery(const XmlNode& xmlNode) : 
-    m_performanceInsightsMetricQueryHasBeenSet(false)
+MetricQuery::MetricQuery(const XmlNode& xmlNode)
+  : MetricQuery()
 {
   *this = xmlNode;
 }

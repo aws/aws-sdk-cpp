@@ -27,12 +27,8 @@ ResourceResult::ResourceResult() :
 {
 }
 
-ResourceResult::ResourceResult(JsonView jsonValue) : 
-    m_componentIdHasBeenSet(false),
-    m_lastCheckedTimestampHasBeenSet(false),
-    m_readiness(Readiness::NOT_SET),
-    m_readinessHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+ResourceResult::ResourceResult(JsonView jsonValue)
+  : ResourceResult()
 {
   *this = jsonValue;
 }

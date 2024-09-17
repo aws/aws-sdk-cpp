@@ -25,10 +25,8 @@ AttributePayload::AttributePayload() :
 {
 }
 
-AttributePayload::AttributePayload(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
-    m_merge(false),
-    m_mergeHasBeenSet(false)
+AttributePayload::AttributePayload(JsonView jsonValue)
+  : AttributePayload()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ AwsCloudFormationStackDriftInformationDetails::AwsCloudFormationStackDriftInform
 {
 }
 
-AwsCloudFormationStackDriftInformationDetails::AwsCloudFormationStackDriftInformationDetails(JsonView jsonValue) : 
-    m_stackDriftStatusHasBeenSet(false)
+AwsCloudFormationStackDriftInformationDetails::AwsCloudFormationStackDriftInformationDetails(JsonView jsonValue)
+  : AwsCloudFormationStackDriftInformationDetails()
 {
   *this = jsonValue;
 }

@@ -21,14 +21,14 @@ namespace Model
 AnalysisRuleList::AnalysisRuleList() : 
     m_joinColumnsHasBeenSet(false),
     m_allowedJoinOperatorsHasBeenSet(false),
-    m_listColumnsHasBeenSet(false)
+    m_listColumnsHasBeenSet(false),
+    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
+    m_additionalAnalysesHasBeenSet(false)
 {
 }
 
-AnalysisRuleList::AnalysisRuleList(JsonView jsonValue) : 
-    m_joinColumnsHasBeenSet(false),
-    m_allowedJoinOperatorsHasBeenSet(false),
-    m_listColumnsHasBeenSet(false)
+AnalysisRuleList::AnalysisRuleList(JsonView jsonValue)
+  : AnalysisRuleList()
 {
   *this = jsonValue;
 }
@@ -63,6 +63,13 @@ AnalysisRuleList& AnalysisRuleList::operator =(JsonView jsonValue)
       m_listColumns.push_back(listColumnsJsonList[listColumnsIndex].AsString());
     }
     m_listColumnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("additionalAnalyses"))
+  {
+    m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
+
+    m_additionalAnalysesHasBeenSet = true;
   }
 
   return *this;
@@ -103,6 +110,11 @@ JsonValue AnalysisRuleList::Jsonize() const
    }
    payload.WithArray("listColumns", std::move(listColumnsJsonList));
 
+  }
+
+  if(m_additionalAnalysesHasBeenSet)
+  {
+   payload.WithString("additionalAnalyses", AdditionalAnalysesMapper::GetNameForAdditionalAnalyses(m_additionalAnalyses));
   }
 
   return payload;

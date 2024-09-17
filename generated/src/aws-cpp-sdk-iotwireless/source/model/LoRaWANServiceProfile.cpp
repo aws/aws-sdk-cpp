@@ -32,17 +32,8 @@ LoRaWANServiceProfile::LoRaWANServiceProfile() :
 {
 }
 
-LoRaWANServiceProfile::LoRaWANServiceProfile(JsonView jsonValue) : 
-    m_addGwMetadata(false),
-    m_addGwMetadataHasBeenSet(false),
-    m_drMin(0),
-    m_drMinHasBeenSet(false),
-    m_drMax(0),
-    m_drMaxHasBeenSet(false),
-    m_prAllowed(false),
-    m_prAllowedHasBeenSet(false),
-    m_raAllowed(false),
-    m_raAllowedHasBeenSet(false)
+LoRaWANServiceProfile::LoRaWANServiceProfile(JsonView jsonValue)
+  : LoRaWANServiceProfile()
 {
   *this = jsonValue;
 }

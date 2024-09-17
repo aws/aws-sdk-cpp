@@ -26,11 +26,8 @@ PriceList::PriceList() :
 {
 }
 
-PriceList::PriceList(JsonView jsonValue) : 
-    m_priceListArnHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_fileFormatsHasBeenSet(false)
+PriceList::PriceList(JsonView jsonValue)
+  : PriceList()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ EvaluationMetrics::EvaluationMetrics() :
 {
 }
 
-EvaluationMetrics::EvaluationMetrics(JsonView jsonValue) : 
-    m_transformType(TransformType::NOT_SET),
-    m_transformTypeHasBeenSet(false),
-    m_findMatchesMetricsHasBeenSet(false)
+EvaluationMetrics::EvaluationMetrics(JsonView jsonValue)
+  : EvaluationMetrics()
 {
   *this = jsonValue;
 }

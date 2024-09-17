@@ -22,8 +22,8 @@ CreateWirelessGatewayTaskResult::CreateWirelessGatewayTaskResult() :
 {
 }
 
-CreateWirelessGatewayTaskResult::CreateWirelessGatewayTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WirelessGatewayTaskStatus::NOT_SET)
+CreateWirelessGatewayTaskResult::CreateWirelessGatewayTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateWirelessGatewayTaskResult()
 {
   *this = result;
 }

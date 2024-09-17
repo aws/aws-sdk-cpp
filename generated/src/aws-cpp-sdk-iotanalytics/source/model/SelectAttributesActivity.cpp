@@ -25,10 +25,8 @@ SelectAttributesActivity::SelectAttributesActivity() :
 {
 }
 
-SelectAttributesActivity::SelectAttributesActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_nextHasBeenSet(false)
+SelectAttributesActivity::SelectAttributesActivity(JsonView jsonValue)
+  : SelectAttributesActivity()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ StartCondition::StartCondition() :
 {
 }
 
-StartCondition::StartCondition(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_eventStartConditionHasBeenSet(false),
-    m_segmentStartConditionHasBeenSet(false)
+StartCondition::StartCondition(JsonView jsonValue)
+  : StartCondition()
 {
   *this = jsonValue;
 }

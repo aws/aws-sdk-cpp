@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MigrationHubStrategyRecommendationsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MigrationHubStrategyRecommendationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MigrationHubStrategyRecommendationsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MigrationHubStrategyRecommendationsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

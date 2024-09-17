@@ -30,15 +30,8 @@ Transition::Transition() :
 {
 }
 
-Transition::Transition(JsonView jsonValue) : 
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_relativePosition(RelativePosition::NOT_SET),
-    m_relativePositionHasBeenSet(false),
-    m_relativeProgramHasBeenSet(false),
-    m_scheduledStartTimeMillis(0),
-    m_scheduledStartTimeMillisHasBeenSet(false),
-    m_typeHasBeenSet(false)
+Transition::Transition(JsonView jsonValue)
+  : Transition()
 {
   *this = jsonValue;
 }

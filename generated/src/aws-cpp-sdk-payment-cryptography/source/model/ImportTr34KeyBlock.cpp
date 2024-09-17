@@ -20,23 +20,17 @@ namespace Model
 
 ImportTr34KeyBlock::ImportTr34KeyBlock() : 
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
+    m_signingKeyCertificateHasBeenSet(false),
     m_importTokenHasBeenSet(false),
+    m_wrappedKeyBlockHasBeenSet(false),
     m_keyBlockFormat(Tr34KeyBlockFormat::NOT_SET),
     m_keyBlockFormatHasBeenSet(false),
-    m_randomNonceHasBeenSet(false),
-    m_signingKeyCertificateHasBeenSet(false),
-    m_wrappedKeyBlockHasBeenSet(false)
+    m_randomNonceHasBeenSet(false)
 {
 }
 
-ImportTr34KeyBlock::ImportTr34KeyBlock(JsonView jsonValue) : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
-    m_importTokenHasBeenSet(false),
-    m_keyBlockFormat(Tr34KeyBlockFormat::NOT_SET),
-    m_keyBlockFormatHasBeenSet(false),
-    m_randomNonceHasBeenSet(false),
-    m_signingKeyCertificateHasBeenSet(false),
-    m_wrappedKeyBlockHasBeenSet(false)
+ImportTr34KeyBlock::ImportTr34KeyBlock(JsonView jsonValue)
+  : ImportTr34KeyBlock()
 {
   *this = jsonValue;
 }
@@ -50,11 +44,25 @@ ImportTr34KeyBlock& ImportTr34KeyBlock::operator =(JsonView jsonValue)
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SigningKeyCertificate"))
+  {
+    m_signingKeyCertificate = jsonValue.GetString("SigningKeyCertificate");
+
+    m_signingKeyCertificateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ImportToken"))
   {
     m_importToken = jsonValue.GetString("ImportToken");
 
     m_importTokenHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WrappedKeyBlock"))
+  {
+    m_wrappedKeyBlock = jsonValue.GetString("WrappedKeyBlock");
+
+    m_wrappedKeyBlockHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KeyBlockFormat"))
@@ -71,20 +79,6 @@ ImportTr34KeyBlock& ImportTr34KeyBlock::operator =(JsonView jsonValue)
     m_randomNonceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SigningKeyCertificate"))
-  {
-    m_signingKeyCertificate = jsonValue.GetString("SigningKeyCertificate");
-
-    m_signingKeyCertificateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("WrappedKeyBlock"))
-  {
-    m_wrappedKeyBlock = jsonValue.GetString("WrappedKeyBlock");
-
-    m_wrappedKeyBlockHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -98,9 +92,21 @@ JsonValue ImportTr34KeyBlock::Jsonize() const
 
   }
 
+  if(m_signingKeyCertificateHasBeenSet)
+  {
+   payload.WithString("SigningKeyCertificate", m_signingKeyCertificate);
+
+  }
+
   if(m_importTokenHasBeenSet)
   {
    payload.WithString("ImportToken", m_importToken);
+
+  }
+
+  if(m_wrappedKeyBlockHasBeenSet)
+  {
+   payload.WithString("WrappedKeyBlock", m_wrappedKeyBlock);
 
   }
 
@@ -112,18 +118,6 @@ JsonValue ImportTr34KeyBlock::Jsonize() const
   if(m_randomNonceHasBeenSet)
   {
    payload.WithString("RandomNonce", m_randomNonce);
-
-  }
-
-  if(m_signingKeyCertificateHasBeenSet)
-  {
-   payload.WithString("SigningKeyCertificate", m_signingKeyCertificate);
-
-  }
-
-  if(m_wrappedKeyBlockHasBeenSet)
-  {
-   payload.WithString("WrappedKeyBlock", m_wrappedKeyBlock);
 
   }
 

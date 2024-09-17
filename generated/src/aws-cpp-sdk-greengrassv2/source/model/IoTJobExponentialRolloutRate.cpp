@@ -27,12 +27,8 @@ IoTJobExponentialRolloutRate::IoTJobExponentialRolloutRate() :
 {
 }
 
-IoTJobExponentialRolloutRate::IoTJobExponentialRolloutRate(JsonView jsonValue) : 
-    m_baseRatePerMinute(0),
-    m_baseRatePerMinuteHasBeenSet(false),
-    m_incrementFactor(0.0),
-    m_incrementFactorHasBeenSet(false),
-    m_rateIncreaseCriteriaHasBeenSet(false)
+IoTJobExponentialRolloutRate::IoTJobExponentialRolloutRate(JsonView jsonValue)
+  : IoTJobExponentialRolloutRate()
 {
   *this = jsonValue;
 }

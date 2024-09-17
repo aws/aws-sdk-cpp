@@ -22,8 +22,8 @@ GetRuntimeManagementConfigResult::GetRuntimeManagementConfigResult() :
 {
 }
 
-GetRuntimeManagementConfigResult::GetRuntimeManagementConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_updateRuntimeOn(UpdateRuntimeOn::NOT_SET)
+GetRuntimeManagementConfigResult::GetRuntimeManagementConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRuntimeManagementConfigResult()
 {
   *this = result;
 }

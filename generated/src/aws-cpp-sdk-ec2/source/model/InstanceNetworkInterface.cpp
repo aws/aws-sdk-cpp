@@ -45,28 +45,8 @@ InstanceNetworkInterface::InstanceNetworkInterface() :
 {
 }
 
-InstanceNetworkInterface::InstanceNetworkInterface(const XmlNode& xmlNode) : 
-    m_associationHasBeenSet(false),
-    m_attachmentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false),
-    m_status(NetworkInterfaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_interfaceTypeHasBeenSet(false),
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false),
-    m_connectionTrackingConfigurationHasBeenSet(false)
+InstanceNetworkInterface::InstanceNetworkInterface(const XmlNode& xmlNode)
+  : InstanceNetworkInterface()
 {
   *this = xmlNode;
 }

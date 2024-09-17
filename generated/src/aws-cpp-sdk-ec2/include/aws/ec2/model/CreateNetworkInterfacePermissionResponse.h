@@ -39,47 +39,25 @@ namespace Model
     AWS_EC2_API CreateNetworkInterfacePermissionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the permission for the network interface.</p>
      */
     inline const NetworkInterfacePermission& GetInterfacePermission() const{ return m_interfacePermission; }
-
-    /**
-     * <p>Information about the permission for the network interface.</p>
-     */
     inline void SetInterfacePermission(const NetworkInterfacePermission& value) { m_interfacePermission = value; }
-
-    /**
-     * <p>Information about the permission for the network interface.</p>
-     */
     inline void SetInterfacePermission(NetworkInterfacePermission&& value) { m_interfacePermission = std::move(value); }
-
-    /**
-     * <p>Information about the permission for the network interface.</p>
-     */
     inline CreateNetworkInterfacePermissionResponse& WithInterfacePermission(const NetworkInterfacePermission& value) { SetInterfacePermission(value); return *this;}
-
-    /**
-     * <p>Information about the permission for the network interface.</p>
-     */
     inline CreateNetworkInterfacePermissionResponse& WithInterfacePermission(NetworkInterfacePermission&& value) { SetInterfacePermission(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateNetworkInterfacePermissionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateNetworkInterfacePermissionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NetworkInterfacePermission m_interfacePermission;

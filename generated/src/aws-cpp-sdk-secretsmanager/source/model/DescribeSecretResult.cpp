@@ -22,8 +22,8 @@ DescribeSecretResult::DescribeSecretResult() :
 {
 }
 
-DescribeSecretResult::DescribeSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_rotationEnabled(false)
+DescribeSecretResult::DescribeSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeSecretResult()
 {
   *this = result;
 }

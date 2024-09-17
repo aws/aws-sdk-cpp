@@ -29,9 +29,33 @@ DescribePlaceIndexResult::DescribePlaceIndexResult(const Aws::AmazonWebServiceRe
 DescribePlaceIndexResult& DescribePlaceIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("IndexName"))
+  {
+    m_indexName = jsonValue.GetString("IndexName");
+
+  }
+
+  if(jsonValue.ValueExists("IndexArn"))
+  {
+    m_indexArn = jsonValue.GetString("IndexArn");
+
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
+
+  }
+
+  if(jsonValue.ValueExists("UpdateTime"))
+  {
+    m_updateTime = jsonValue.GetString("UpdateTime");
 
   }
 
@@ -47,24 +71,6 @@ DescribePlaceIndexResult& DescribePlaceIndexResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-
-  }
-
-  if(jsonValue.ValueExists("IndexArn"))
-  {
-    m_indexArn = jsonValue.GetString("IndexArn");
-
-  }
-
-  if(jsonValue.ValueExists("IndexName"))
-  {
-    m_indexName = jsonValue.GetString("IndexName");
-
-  }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -72,12 +78,6 @@ DescribePlaceIndexResult& DescribePlaceIndexResult::operator =(const Aws::Amazon
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
-  }
-
-  if(jsonValue.ValueExists("UpdateTime"))
-  {
-    m_updateTime = jsonValue.GetString("UpdateTime");
-
   }
 
 

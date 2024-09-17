@@ -30,15 +30,8 @@ PrivateKeyFlagsV3::PrivateKeyFlagsV3() :
 {
 }
 
-PrivateKeyFlagsV3::PrivateKeyFlagsV3(JsonView jsonValue) : 
-    m_clientVersion(ClientCompatibilityV3::NOT_SET),
-    m_clientVersionHasBeenSet(false),
-    m_exportableKey(false),
-    m_exportableKeyHasBeenSet(false),
-    m_requireAlternateSignatureAlgorithm(false),
-    m_requireAlternateSignatureAlgorithmHasBeenSet(false),
-    m_strongKeyProtectionRequired(false),
-    m_strongKeyProtectionRequiredHasBeenSet(false)
+PrivateKeyFlagsV3::PrivateKeyFlagsV3(JsonView jsonValue)
+  : PrivateKeyFlagsV3()
 {
   *this = jsonValue;
 }

@@ -40,6 +40,7 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Determines whether any cookies in viewer requests are included in the cache
      * key and in requests that CloudFront sends to the origin. Valid values are:</p>
@@ -58,121 +59,22 @@ namespace Model
      * the origin.</p> </li> </ul>
      */
     inline const CachePolicyCookieBehavior& GetCookieBehavior() const{ return m_cookieBehavior; }
-
-    /**
-     * <p>Determines whether any cookies in viewer requests are included in the cache
-     * key and in requests that CloudFront sends to the origin. Valid values are:</p>
-     * <ul> <li> <p> <code>none</code> – No cookies in viewer requests are included in
-     * the cache key or in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any cookies that are listed in an
-     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p>
-     * </li> <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that
-     * are listed in the <code>CookieNames</code> type are included in the cache key
-     * and in requests that CloudFront sends to the origin.</p> </li> <li> <p>
-     * <code>allExcept</code> – All cookies in viewer requests are included in the
-     * cache key and in requests that CloudFront sends to the origin, <i> <b>except</b>
-     * </i> for those that are listed in the <code>CookieNames</code> type, which are
-     * not included.</p> </li> <li> <p> <code>all</code> – All cookies in viewer
-     * requests are included in the cache key and in requests that CloudFront sends to
-     * the origin.</p> </li> </ul>
-     */
     inline bool CookieBehaviorHasBeenSet() const { return m_cookieBehaviorHasBeenSet; }
-
-    /**
-     * <p>Determines whether any cookies in viewer requests are included in the cache
-     * key and in requests that CloudFront sends to the origin. Valid values are:</p>
-     * <ul> <li> <p> <code>none</code> – No cookies in viewer requests are included in
-     * the cache key or in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any cookies that are listed in an
-     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p>
-     * </li> <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that
-     * are listed in the <code>CookieNames</code> type are included in the cache key
-     * and in requests that CloudFront sends to the origin.</p> </li> <li> <p>
-     * <code>allExcept</code> – All cookies in viewer requests are included in the
-     * cache key and in requests that CloudFront sends to the origin, <i> <b>except</b>
-     * </i> for those that are listed in the <code>CookieNames</code> type, which are
-     * not included.</p> </li> <li> <p> <code>all</code> – All cookies in viewer
-     * requests are included in the cache key and in requests that CloudFront sends to
-     * the origin.</p> </li> </ul>
-     */
     inline void SetCookieBehavior(const CachePolicyCookieBehavior& value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = value; }
-
-    /**
-     * <p>Determines whether any cookies in viewer requests are included in the cache
-     * key and in requests that CloudFront sends to the origin. Valid values are:</p>
-     * <ul> <li> <p> <code>none</code> – No cookies in viewer requests are included in
-     * the cache key or in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any cookies that are listed in an
-     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p>
-     * </li> <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that
-     * are listed in the <code>CookieNames</code> type are included in the cache key
-     * and in requests that CloudFront sends to the origin.</p> </li> <li> <p>
-     * <code>allExcept</code> – All cookies in viewer requests are included in the
-     * cache key and in requests that CloudFront sends to the origin, <i> <b>except</b>
-     * </i> for those that are listed in the <code>CookieNames</code> type, which are
-     * not included.</p> </li> <li> <p> <code>all</code> – All cookies in viewer
-     * requests are included in the cache key and in requests that CloudFront sends to
-     * the origin.</p> </li> </ul>
-     */
     inline void SetCookieBehavior(CachePolicyCookieBehavior&& value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = std::move(value); }
-
-    /**
-     * <p>Determines whether any cookies in viewer requests are included in the cache
-     * key and in requests that CloudFront sends to the origin. Valid values are:</p>
-     * <ul> <li> <p> <code>none</code> – No cookies in viewer requests are included in
-     * the cache key or in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any cookies that are listed in an
-     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p>
-     * </li> <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that
-     * are listed in the <code>CookieNames</code> type are included in the cache key
-     * and in requests that CloudFront sends to the origin.</p> </li> <li> <p>
-     * <code>allExcept</code> – All cookies in viewer requests are included in the
-     * cache key and in requests that CloudFront sends to the origin, <i> <b>except</b>
-     * </i> for those that are listed in the <code>CookieNames</code> type, which are
-     * not included.</p> </li> <li> <p> <code>all</code> – All cookies in viewer
-     * requests are included in the cache key and in requests that CloudFront sends to
-     * the origin.</p> </li> </ul>
-     */
     inline CachePolicyCookiesConfig& WithCookieBehavior(const CachePolicyCookieBehavior& value) { SetCookieBehavior(value); return *this;}
-
-    /**
-     * <p>Determines whether any cookies in viewer requests are included in the cache
-     * key and in requests that CloudFront sends to the origin. Valid values are:</p>
-     * <ul> <li> <p> <code>none</code> – No cookies in viewer requests are included in
-     * the cache key or in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any cookies that are listed in an
-     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p>
-     * </li> <li> <p> <code>whitelist</code> – Only the cookies in viewer requests that
-     * are listed in the <code>CookieNames</code> type are included in the cache key
-     * and in requests that CloudFront sends to the origin.</p> </li> <li> <p>
-     * <code>allExcept</code> – All cookies in viewer requests are included in the
-     * cache key and in requests that CloudFront sends to the origin, <i> <b>except</b>
-     * </i> for those that are listed in the <code>CookieNames</code> type, which are
-     * not included.</p> </li> <li> <p> <code>all</code> – All cookies in viewer
-     * requests are included in the cache key and in requests that CloudFront sends to
-     * the origin.</p> </li> </ul>
-     */
     inline CachePolicyCookiesConfig& WithCookieBehavior(CachePolicyCookieBehavior&& value) { SetCookieBehavior(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const CookieNames& GetCookies() const{ return m_cookies; }
-
-    
     inline bool CookiesHasBeenSet() const { return m_cookiesHasBeenSet; }
-
-    
     inline void SetCookies(const CookieNames& value) { m_cookiesHasBeenSet = true; m_cookies = value; }
-
-    
     inline void SetCookies(CookieNames&& value) { m_cookiesHasBeenSet = true; m_cookies = std::move(value); }
-
-    
     inline CachePolicyCookiesConfig& WithCookies(const CookieNames& value) { SetCookies(value); return *this;}
-
-    
     inline CachePolicyCookiesConfig& WithCookies(CookieNames&& value) { SetCookies(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CachePolicyCookieBehavior m_cookieBehavior;

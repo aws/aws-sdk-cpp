@@ -23,8 +23,8 @@ TuningJobStepMetaData::TuningJobStepMetaData() :
 {
 }
 
-TuningJobStepMetaData::TuningJobStepMetaData(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+TuningJobStepMetaData::TuningJobStepMetaData(JsonView jsonValue)
+  : TuningJobStepMetaData()
 {
   *this = jsonValue;
 }

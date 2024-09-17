@@ -25,10 +25,8 @@ StringConfigurationOptions::StringConfigurationOptions() :
 {
 }
 
-StringConfigurationOptions::StringConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_re2ExpressionHasBeenSet(false),
-    m_expressionDescriptionHasBeenSet(false)
+StringConfigurationOptions::StringConfigurationOptions(JsonView jsonValue)
+  : StringConfigurationOptions()
 {
   *this = jsonValue;
 }

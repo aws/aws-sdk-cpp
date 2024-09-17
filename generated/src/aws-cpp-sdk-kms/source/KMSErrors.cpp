@@ -19,6 +19,7 @@ namespace KMSErrorMapper
 {
 
 static const int CLOUD_HSM_CLUSTER_NOT_ACTIVE_HASH = HashingUtils::HashString("CloudHsmClusterNotActiveException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INCORRECT_TRUST_ANCHOR_HASH = HashingUtils::HashString("IncorrectTrustAnchorException");
 static const int INVALID_GRANT_ID_HASH = HashingUtils::HashString("InvalidGrantIdException");
 static const int XKS_PROXY_INVALID_RESPONSE_HASH = HashingUtils::HashString("XksProxyInvalidResponseException");
@@ -74,6 +75,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CLOUD_HSM_CLUSTER_NOT_ACTIVE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::CLOUD_HSM_CLUSTER_NOT_ACTIVE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCORRECT_TRUST_ANCHOR_HASH)
   {

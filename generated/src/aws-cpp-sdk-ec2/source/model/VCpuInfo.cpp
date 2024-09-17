@@ -32,15 +32,8 @@ VCpuInfo::VCpuInfo() :
 {
 }
 
-VCpuInfo::VCpuInfo(const XmlNode& xmlNode) : 
-    m_defaultVCpus(0),
-    m_defaultVCpusHasBeenSet(false),
-    m_defaultCores(0),
-    m_defaultCoresHasBeenSet(false),
-    m_defaultThreadsPerCore(0),
-    m_defaultThreadsPerCoreHasBeenSet(false),
-    m_validCoresHasBeenSet(false),
-    m_validThreadsPerCoreHasBeenSet(false)
+VCpuInfo::VCpuInfo(const XmlNode& xmlNode)
+  : VCpuInfo()
 {
   *this = xmlNode;
 }

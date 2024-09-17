@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The conditional formatting that determines the shape of the filled map.</p>
      */
     inline const FilledMapShapeConditionalFormatting& GetShape() const{ return m_shape; }
-
-    /**
-     * <p>The conditional formatting that determines the shape of the filled map.</p>
-     */
     inline bool ShapeHasBeenSet() const { return m_shapeHasBeenSet; }
-
-    /**
-     * <p>The conditional formatting that determines the shape of the filled map.</p>
-     */
     inline void SetShape(const FilledMapShapeConditionalFormatting& value) { m_shapeHasBeenSet = true; m_shape = value; }
-
-    /**
-     * <p>The conditional formatting that determines the shape of the filled map.</p>
-     */
     inline void SetShape(FilledMapShapeConditionalFormatting&& value) { m_shapeHasBeenSet = true; m_shape = std::move(value); }
-
-    /**
-     * <p>The conditional formatting that determines the shape of the filled map.</p>
-     */
     inline FilledMapConditionalFormattingOption& WithShape(const FilledMapShapeConditionalFormatting& value) { SetShape(value); return *this;}
-
-    /**
-     * <p>The conditional formatting that determines the shape of the filled map.</p>
-     */
     inline FilledMapConditionalFormattingOption& WithShape(FilledMapShapeConditionalFormatting&& value) { SetShape(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FilledMapShapeConditionalFormatting m_shape;

@@ -27,12 +27,19 @@ Aws::String ListStacksRequest::SerializePayload() const
 
   if(m_stackStatusFilterHasBeenSet)
   {
-    unsigned stackStatusFilterCount = 1;
-    for(auto& item : m_stackStatusFilter)
+    if (m_stackStatusFilter.empty())
     {
-      ss << "StackStatusFilter.member." << stackStatusFilterCount << "="
-          << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(item).c_str()) << "&";
-      stackStatusFilterCount++;
+      ss << "StackStatusFilter=&";
+    }
+    else
+    {
+      unsigned stackStatusFilterCount = 1;
+      for(auto& item : m_stackStatusFilter)
+      {
+        ss << "StackStatusFilter.member." << stackStatusFilterCount << "="
+            << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(item).c_str()) << "&";
+        stackStatusFilterCount++;
+      }
     }
   }
 

@@ -22,8 +22,8 @@ ConfigureLogsForPlaybackConfigurationResult::ConfigureLogsForPlaybackConfigurati
 {
 }
 
-ConfigureLogsForPlaybackConfigurationResult::ConfigureLogsForPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_percentEnabled(0)
+ConfigureLogsForPlaybackConfigurationResult::ConfigureLogsForPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ConfigureLogsForPlaybackConfigurationResult()
 {
   *this = result;
 }

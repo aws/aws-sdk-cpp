@@ -37,36 +37,17 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The HTTP criteria that a rule must match.</p>
      */
     inline const HttpMatch& GetHttpMatch() const{ return m_httpMatch; }
-
-    /**
-     * <p>The HTTP criteria that a rule must match.</p>
-     */
     inline bool HttpMatchHasBeenSet() const { return m_httpMatchHasBeenSet; }
-
-    /**
-     * <p>The HTTP criteria that a rule must match.</p>
-     */
     inline void SetHttpMatch(const HttpMatch& value) { m_httpMatchHasBeenSet = true; m_httpMatch = value; }
-
-    /**
-     * <p>The HTTP criteria that a rule must match.</p>
-     */
     inline void SetHttpMatch(HttpMatch&& value) { m_httpMatchHasBeenSet = true; m_httpMatch = std::move(value); }
-
-    /**
-     * <p>The HTTP criteria that a rule must match.</p>
-     */
     inline RuleMatch& WithHttpMatch(const HttpMatch& value) { SetHttpMatch(value); return *this;}
-
-    /**
-     * <p>The HTTP criteria that a rule must match.</p>
-     */
     inline RuleMatch& WithHttpMatch(HttpMatch&& value) { SetHttpMatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HttpMatch m_httpMatch;

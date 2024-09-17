@@ -34,120 +34,45 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The sender ID to update.</p>
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
-
-    /**
-     * <p>The sender ID to update.</p>
-     */
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
-
-    /**
-     * <p>The sender ID to update.</p>
-     */
     inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
-
-    /**
-     * <p>The sender ID to update.</p>
-     */
     inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
-
-    /**
-     * <p>The sender ID to update.</p>
-     */
     inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
-
-    /**
-     * <p>The sender ID to update.</p>
-     */
     inline UpdateSenderIdRequest& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-
-    /**
-     * <p>The sender ID to update.</p>
-     */
     inline UpdateSenderIdRequest& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-
-    /**
-     * <p>The sender ID to update.</p>
-     */
     inline UpdateSenderIdRequest& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
      * region.</p>
      */
     inline const Aws::String& GetIsoCountryCode() const{ return m_isoCountryCode; }
-
-    /**
-     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-     * region.</p>
-     */
     inline bool IsoCountryCodeHasBeenSet() const { return m_isoCountryCodeHasBeenSet; }
-
-    /**
-     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-     * region.</p>
-     */
     inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = value; }
-
-    /**
-     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-     * region.</p>
-     */
     inline void SetIsoCountryCode(Aws::String&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::move(value); }
-
-    /**
-     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-     * region.</p>
-     */
     inline void SetIsoCountryCode(const char* value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode.assign(value); }
-
-    /**
-     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-     * region.</p>
-     */
     inline UpdateSenderIdRequest& WithIsoCountryCode(const Aws::String& value) { SetIsoCountryCode(value); return *this;}
-
-    /**
-     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-     * region.</p>
-     */
     inline UpdateSenderIdRequest& WithIsoCountryCode(Aws::String&& value) { SetIsoCountryCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-     * region.</p>
-     */
     inline UpdateSenderIdRequest& WithIsoCountryCode(const char* value) { SetIsoCountryCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>By default this is set to false. When set to true the sender ID can't be
      * deleted.</p>
      */
     inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
-
-    /**
-     * <p>By default this is set to false. When set to true the sender ID can't be
-     * deleted.</p>
-     */
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
-
-    /**
-     * <p>By default this is set to false. When set to true the sender ID can't be
-     * deleted.</p>
-     */
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
-
-    /**
-     * <p>By default this is set to false. When set to true the sender ID can't be
-     * deleted.</p>
-     */
     inline UpdateSenderIdRequest& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_senderId;

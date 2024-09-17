@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SupportAppClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SupportAppClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SupportAppClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SupportAppBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

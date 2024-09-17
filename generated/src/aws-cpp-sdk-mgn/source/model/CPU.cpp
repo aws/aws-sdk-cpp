@@ -25,10 +25,8 @@ CPU::CPU() :
 {
 }
 
-CPU::CPU(JsonView jsonValue) : 
-    m_cores(0),
-    m_coresHasBeenSet(false),
-    m_modelNameHasBeenSet(false)
+CPU::CPU(JsonView jsonValue)
+  : CPU()
 {
   *this = jsonValue;
 }

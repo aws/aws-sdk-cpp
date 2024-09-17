@@ -24,9 +24,8 @@ CreateCisTargets::CreateCisTargets() :
 {
 }
 
-CreateCisTargets::CreateCisTargets(JsonView jsonValue) : 
-    m_accountIdsHasBeenSet(false),
-    m_targetResourceTagsHasBeenSet(false)
+CreateCisTargets::CreateCisTargets(JsonView jsonValue)
+  : CreateCisTargets()
 {
   *this = jsonValue;
 }

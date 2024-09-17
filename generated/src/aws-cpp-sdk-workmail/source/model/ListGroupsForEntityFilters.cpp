@@ -23,8 +23,8 @@ ListGroupsForEntityFilters::ListGroupsForEntityFilters() :
 {
 }
 
-ListGroupsForEntityFilters::ListGroupsForEntityFilters(JsonView jsonValue) : 
-    m_groupNamePrefixHasBeenSet(false)
+ListGroupsForEntityFilters::ListGroupsForEntityFilters(JsonView jsonValue)
+  : ListGroupsForEntityFilters()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ AuditTaskMetadata::AuditTaskMetadata() :
 {
 }
 
-AuditTaskMetadata::AuditTaskMetadata(JsonView jsonValue) : 
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(AuditTaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_taskType(AuditTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false)
+AuditTaskMetadata::AuditTaskMetadata(JsonView jsonValue)
+  : AuditTaskMetadata()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ TreeMapAggregatedFieldWells::TreeMapAggregatedFieldWells() :
 {
 }
 
-TreeMapAggregatedFieldWells::TreeMapAggregatedFieldWells(JsonView jsonValue) : 
-    m_groupsHasBeenSet(false),
-    m_sizesHasBeenSet(false),
-    m_colorsHasBeenSet(false)
+TreeMapAggregatedFieldWells::TreeMapAggregatedFieldWells(JsonView jsonValue)
+  : TreeMapAggregatedFieldWells()
 {
   *this = jsonValue;
 }

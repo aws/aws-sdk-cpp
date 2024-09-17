@@ -33,53 +33,27 @@ namespace Model
     AWS_S3CRT_API GetObjectRetentionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The container element for an object's retention settings.</p>
      */
     inline const ObjectLockRetention& GetRetention() const{ return m_retention; }
-
-    /**
-     * <p>The container element for an object's retention settings.</p>
-     */
     inline void SetRetention(const ObjectLockRetention& value) { m_retention = value; }
-
-    /**
-     * <p>The container element for an object's retention settings.</p>
-     */
     inline void SetRetention(ObjectLockRetention&& value) { m_retention = std::move(value); }
-
-    /**
-     * <p>The container element for an object's retention settings.</p>
-     */
     inline GetObjectRetentionResult& WithRetention(const ObjectLockRetention& value) { SetRetention(value); return *this;}
-
-    /**
-     * <p>The container element for an object's retention settings.</p>
-     */
     inline GetObjectRetentionResult& WithRetention(ObjectLockRetention&& value) { SetRetention(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetObjectRetentionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetObjectRetentionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetObjectRetentionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ObjectLockRetention m_retention;

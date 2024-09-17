@@ -27,12 +27,8 @@ RegistrationTypeDisplayHints::RegistrationTypeDisplayHints() :
 {
 }
 
-RegistrationTypeDisplayHints::RegistrationTypeDisplayHints(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_documentationTitleHasBeenSet(false),
-    m_documentationLinkHasBeenSet(false)
+RegistrationTypeDisplayHints::RegistrationTypeDisplayHints(JsonView jsonValue)
+  : RegistrationTypeDisplayHints()
 {
   *this = jsonValue;
 }

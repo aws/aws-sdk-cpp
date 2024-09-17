@@ -54,6 +54,8 @@ namespace Aws
         static const int FLEET_VPC_PEERING_DELETED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_DELETED");
         static const int INSTANCE_INTERRUPTED_HASH = HashingUtils::HashString("INSTANCE_INTERRUPTED");
         static const int INSTANCE_RECYCLED_HASH = HashingUtils::HashString("INSTANCE_RECYCLED");
+        static const int FLEET_CREATION_COMPLETED_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_COMPLETED_INSTALLER");
+        static const int FLEET_CREATION_FAILED_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_FAILED_INSTALLER");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
@@ -195,6 +197,14 @@ namespace Aws
           {
             return EventCode::INSTANCE_RECYCLED;
           }
+          else if (hashCode == FLEET_CREATION_COMPLETED_INSTALLER_HASH)
+          {
+            return EventCode::FLEET_CREATION_COMPLETED_INSTALLER;
+          }
+          else if (hashCode == FLEET_CREATION_FAILED_INSTALLER_HASH)
+          {
+            return EventCode::FLEET_CREATION_FAILED_INSTALLER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -279,6 +289,10 @@ namespace Aws
             return "INSTANCE_INTERRUPTED";
           case EventCode::INSTANCE_RECYCLED:
             return "INSTANCE_RECYCLED";
+          case EventCode::FLEET_CREATION_COMPLETED_INSTALLER:
+            return "FLEET_CREATION_COMPLETED_INSTALLER";
+          case EventCode::FLEET_CREATION_FAILED_INSTALLER:
+            return "FLEET_CREATION_FAILED_INSTALLER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

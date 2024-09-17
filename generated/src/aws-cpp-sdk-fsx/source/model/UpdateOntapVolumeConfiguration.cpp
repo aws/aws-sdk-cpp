@@ -36,21 +36,8 @@ UpdateOntapVolumeConfiguration::UpdateOntapVolumeConfiguration() :
 {
 }
 
-UpdateOntapVolumeConfiguration::UpdateOntapVolumeConfiguration(JsonView jsonValue) : 
-    m_junctionPathHasBeenSet(false),
-    m_securityStyle(SecurityStyle::NOT_SET),
-    m_securityStyleHasBeenSet(false),
-    m_sizeInMegabytes(0),
-    m_sizeInMegabytesHasBeenSet(false),
-    m_storageEfficiencyEnabled(false),
-    m_storageEfficiencyEnabledHasBeenSet(false),
-    m_tieringPolicyHasBeenSet(false),
-    m_snapshotPolicyHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_snaplockConfigurationHasBeenSet(false),
-    m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false)
+UpdateOntapVolumeConfiguration::UpdateOntapVolumeConfiguration(JsonView jsonValue)
+  : UpdateOntapVolumeConfiguration()
 {
   *this = jsonValue;
 }

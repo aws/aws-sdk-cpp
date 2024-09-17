@@ -30,15 +30,8 @@ DirectoryRegistration::DirectoryRegistration() :
 {
 }
 
-DirectoryRegistration::DirectoryRegistration(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_status(DirectoryRegistrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(DirectoryRegistrationStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DirectoryRegistration::DirectoryRegistration(JsonView jsonValue)
+  : DirectoryRegistration()
 {
   *this = jsonValue;
 }

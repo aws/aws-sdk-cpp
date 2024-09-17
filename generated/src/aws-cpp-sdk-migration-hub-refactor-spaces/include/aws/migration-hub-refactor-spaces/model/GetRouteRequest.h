@@ -32,128 +32,47 @@ namespace Model
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the application. </p>
      */
     inline const Aws::String& GetApplicationIdentifier() const{ return m_applicationIdentifier; }
-
-    /**
-     * <p>The ID of the application. </p>
-     */
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the application. </p>
-     */
     inline void SetApplicationIdentifier(const Aws::String& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = value; }
-
-    /**
-     * <p>The ID of the application. </p>
-     */
     inline void SetApplicationIdentifier(Aws::String&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the application. </p>
-     */
     inline void SetApplicationIdentifier(const char* value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the application. </p>
-     */
     inline GetRouteRequest& WithApplicationIdentifier(const Aws::String& value) { SetApplicationIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the application. </p>
-     */
     inline GetRouteRequest& WithApplicationIdentifier(Aws::String&& value) { SetApplicationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the application. </p>
-     */
     inline GetRouteRequest& WithApplicationIdentifier(const char* value) { SetApplicationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the environment.</p>
      */
     inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline void SetEnvironmentIdentifier(const Aws::String& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = value; }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline void SetEnvironmentIdentifier(Aws::String&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline void SetEnvironmentIdentifier(const char* value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline GetRouteRequest& WithEnvironmentIdentifier(const Aws::String& value) { SetEnvironmentIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline GetRouteRequest& WithEnvironmentIdentifier(Aws::String&& value) { SetEnvironmentIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline GetRouteRequest& WithEnvironmentIdentifier(const char* value) { SetEnvironmentIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the route.</p>
      */
     inline const Aws::String& GetRouteIdentifier() const{ return m_routeIdentifier; }
-
-    /**
-     * <p>The ID of the route.</p>
-     */
     inline bool RouteIdentifierHasBeenSet() const { return m_routeIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the route.</p>
-     */
     inline void SetRouteIdentifier(const Aws::String& value) { m_routeIdentifierHasBeenSet = true; m_routeIdentifier = value; }
-
-    /**
-     * <p>The ID of the route.</p>
-     */
     inline void SetRouteIdentifier(Aws::String&& value) { m_routeIdentifierHasBeenSet = true; m_routeIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the route.</p>
-     */
     inline void SetRouteIdentifier(const char* value) { m_routeIdentifierHasBeenSet = true; m_routeIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the route.</p>
-     */
     inline GetRouteRequest& WithRouteIdentifier(const Aws::String& value) { SetRouteIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the route.</p>
-     */
     inline GetRouteRequest& WithRouteIdentifier(Aws::String&& value) { SetRouteIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the route.</p>
-     */
     inline GetRouteRequest& WithRouteIdentifier(const char* value) { SetRouteIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationIdentifier;

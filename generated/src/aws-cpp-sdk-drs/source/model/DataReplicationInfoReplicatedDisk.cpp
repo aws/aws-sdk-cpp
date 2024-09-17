@@ -27,20 +27,14 @@ DataReplicationInfoReplicatedDisk::DataReplicationInfoReplicatedDisk() :
     m_rescannedStorageBytes(0),
     m_rescannedStorageBytesHasBeenSet(false),
     m_totalStorageBytes(0),
-    m_totalStorageBytesHasBeenSet(false)
+    m_totalStorageBytesHasBeenSet(false),
+    m_volumeStatus(VolumeStatus::NOT_SET),
+    m_volumeStatusHasBeenSet(false)
 {
 }
 
-DataReplicationInfoReplicatedDisk::DataReplicationInfoReplicatedDisk(JsonView jsonValue) : 
-    m_backloggedStorageBytes(0),
-    m_backloggedStorageBytesHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_replicatedStorageBytes(0),
-    m_replicatedStorageBytesHasBeenSet(false),
-    m_rescannedStorageBytes(0),
-    m_rescannedStorageBytesHasBeenSet(false),
-    m_totalStorageBytes(0),
-    m_totalStorageBytesHasBeenSet(false)
+DataReplicationInfoReplicatedDisk::DataReplicationInfoReplicatedDisk(JsonView jsonValue)
+  : DataReplicationInfoReplicatedDisk()
 {
   *this = jsonValue;
 }
@@ -82,6 +76,13 @@ DataReplicationInfoReplicatedDisk& DataReplicationInfoReplicatedDisk::operator =
     m_totalStorageBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("volumeStatus"))
+  {
+    m_volumeStatus = VolumeStatusMapper::GetVolumeStatusForName(jsonValue.GetString("volumeStatus"));
+
+    m_volumeStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +118,11 @@ JsonValue DataReplicationInfoReplicatedDisk::Jsonize() const
   {
    payload.WithInt64("totalStorageBytes", m_totalStorageBytes);
 
+  }
+
+  if(m_volumeStatusHasBeenSet)
+  {
+   payload.WithString("volumeStatus", VolumeStatusMapper::GetNameForVolumeStatus(m_volumeStatus));
   }
 
   return payload;

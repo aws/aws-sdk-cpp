@@ -38,87 +38,33 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This field specifies the value of the additional information.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>This field specifies the value of the additional information.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>This field specifies the value of the additional information.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>This field specifies the value of the additional information.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>This field specifies the value of the additional information.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>This field specifies the value of the additional information.</p>
-     */
     inline ServiceAdditionalInfo& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>This field specifies the value of the additional information.</p>
-     */
     inline ServiceAdditionalInfo& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>This field specifies the value of the additional information.</p>
-     */
     inline ServiceAdditionalInfo& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the type of the additional information.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>Describes the type of the additional information.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Describes the type of the additional information.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Describes the type of the additional information.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Describes the type of the additional information.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>Describes the type of the additional information.</p>
-     */
     inline ServiceAdditionalInfo& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Describes the type of the additional information.</p>
-     */
     inline ServiceAdditionalInfo& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the type of the additional information.</p>
-     */
     inline ServiceAdditionalInfo& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

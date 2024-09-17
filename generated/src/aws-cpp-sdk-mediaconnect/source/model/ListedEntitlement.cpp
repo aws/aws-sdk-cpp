@@ -26,11 +26,8 @@ ListedEntitlement::ListedEntitlement() :
 {
 }
 
-ListedEntitlement::ListedEntitlement(JsonView jsonValue) : 
-    m_dataTransferSubscriberFeePercent(0),
-    m_dataTransferSubscriberFeePercentHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_entitlementNameHasBeenSet(false)
+ListedEntitlement::ListedEntitlement(JsonView jsonValue)
+  : ListedEntitlement()
 {
   *this = jsonValue;
 }

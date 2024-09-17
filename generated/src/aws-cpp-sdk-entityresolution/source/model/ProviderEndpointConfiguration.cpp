@@ -23,8 +23,8 @@ ProviderEndpointConfiguration::ProviderEndpointConfiguration() :
 {
 }
 
-ProviderEndpointConfiguration::ProviderEndpointConfiguration(JsonView jsonValue) : 
-    m_marketplaceConfigurationHasBeenSet(false)
+ProviderEndpointConfiguration::ProviderEndpointConfiguration(JsonView jsonValue)
+  : ProviderEndpointConfiguration()
 {
   *this = jsonValue;
 }

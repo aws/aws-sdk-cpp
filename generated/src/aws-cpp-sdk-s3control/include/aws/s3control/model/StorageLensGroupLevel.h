@@ -38,48 +38,19 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p> Indicates which Storage Lens group ARNs to include or exclude in the Storage
      * Lens group aggregation. If this value is left null, then all Storage Lens groups
      * are selected. </p>
      */
     inline const StorageLensGroupLevelSelectionCriteria& GetSelectionCriteria() const{ return m_selectionCriteria; }
-
-    /**
-     * <p> Indicates which Storage Lens group ARNs to include or exclude in the Storage
-     * Lens group aggregation. If this value is left null, then all Storage Lens groups
-     * are selected. </p>
-     */
     inline bool SelectionCriteriaHasBeenSet() const { return m_selectionCriteriaHasBeenSet; }
-
-    /**
-     * <p> Indicates which Storage Lens group ARNs to include or exclude in the Storage
-     * Lens group aggregation. If this value is left null, then all Storage Lens groups
-     * are selected. </p>
-     */
     inline void SetSelectionCriteria(const StorageLensGroupLevelSelectionCriteria& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = value; }
-
-    /**
-     * <p> Indicates which Storage Lens group ARNs to include or exclude in the Storage
-     * Lens group aggregation. If this value is left null, then all Storage Lens groups
-     * are selected. </p>
-     */
     inline void SetSelectionCriteria(StorageLensGroupLevelSelectionCriteria&& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = std::move(value); }
-
-    /**
-     * <p> Indicates which Storage Lens group ARNs to include or exclude in the Storage
-     * Lens group aggregation. If this value is left null, then all Storage Lens groups
-     * are selected. </p>
-     */
     inline StorageLensGroupLevel& WithSelectionCriteria(const StorageLensGroupLevelSelectionCriteria& value) { SetSelectionCriteria(value); return *this;}
-
-    /**
-     * <p> Indicates which Storage Lens group ARNs to include or exclude in the Storage
-     * Lens group aggregation. If this value is left null, then all Storage Lens groups
-     * are selected. </p>
-     */
     inline StorageLensGroupLevel& WithSelectionCriteria(StorageLensGroupLevelSelectionCriteria&& value) { SetSelectionCriteria(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StorageLensGroupLevelSelectionCriteria m_selectionCriteria;

@@ -30,13 +30,8 @@ MaxAgeRule::MaxAgeRule() :
 {
 }
 
-MaxAgeRule::MaxAgeRule(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_maxAgeInDays(0),
-    m_maxAgeInDaysHasBeenSet(false),
-    m_deleteSourceFromS3(false),
-    m_deleteSourceFromS3HasBeenSet(false)
+MaxAgeRule::MaxAgeRule(const XmlNode& xmlNode)
+  : MaxAgeRule()
 {
   *this = xmlNode;
 }

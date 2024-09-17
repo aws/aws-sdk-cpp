@@ -26,11 +26,8 @@ TdscdmaLocalId::TdscdmaLocalId() :
 {
 }
 
-TdscdmaLocalId::TdscdmaLocalId(JsonView jsonValue) : 
-    m_uarfcn(0),
-    m_uarfcnHasBeenSet(false),
-    m_cellParams(0),
-    m_cellParamsHasBeenSet(false)
+TdscdmaLocalId::TdscdmaLocalId(JsonView jsonValue)
+  : TdscdmaLocalId()
 {
   *this = jsonValue;
 }

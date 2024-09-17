@@ -36,21 +36,8 @@ WorkspaceBundle::WorkspaceBundle() :
 {
 }
 
-WorkspaceBundle::WorkspaceBundle(JsonView jsonValue) : 
-    m_bundleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_rootStorageHasBeenSet(false),
-    m_userStorageHasBeenSet(false),
-    m_computeTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_state(WorkspaceBundleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_bundleType(BundleType::NOT_SET),
-    m_bundleTypeHasBeenSet(false)
+WorkspaceBundle::WorkspaceBundle(JsonView jsonValue)
+  : WorkspaceBundle()
 {
   *this = jsonValue;
 }

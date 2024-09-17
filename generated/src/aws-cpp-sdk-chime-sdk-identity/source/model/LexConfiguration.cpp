@@ -28,13 +28,8 @@ LexConfiguration::LexConfiguration() :
 {
 }
 
-LexConfiguration::LexConfiguration(JsonView jsonValue) : 
-    m_respondsTo(RespondsTo::NOT_SET),
-    m_respondsToHasBeenSet(false),
-    m_invokedByHasBeenSet(false),
-    m_lexBotAliasArnHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_welcomeIntentHasBeenSet(false)
+LexConfiguration::LexConfiguration(JsonView jsonValue)
+  : LexConfiguration()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ S3DirectSourceAdditionalOptions::S3DirectSourceAdditionalOptions() :
 {
 }
 
-S3DirectSourceAdditionalOptions::S3DirectSourceAdditionalOptions(JsonView jsonValue) : 
-    m_boundedSize(0),
-    m_boundedSizeHasBeenSet(false),
-    m_boundedFiles(0),
-    m_boundedFilesHasBeenSet(false),
-    m_enableSamplePath(false),
-    m_enableSamplePathHasBeenSet(false),
-    m_samplePathHasBeenSet(false)
+S3DirectSourceAdditionalOptions::S3DirectSourceAdditionalOptions(JsonView jsonValue)
+  : S3DirectSourceAdditionalOptions()
 {
   *this = jsonValue;
 }

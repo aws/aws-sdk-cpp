@@ -16,22 +16,21 @@ namespace Aws
 namespace SFN
 {
   /**
-   * <fullname>Step Functions</fullname> <p>Step Functions is a service that lets you
-   * coordinate the components of distributed applications and microservices using
-   * visual workflows.</p> <p>You can use Step Functions to build applications from
-   * individual components, each of which performs a discrete function, or
-   * <i>task</i>, allowing you to scale and change applications quickly. Step
-   * Functions provides a console that helps visualize the components of your
-   * application as a series of steps. Step Functions automatically triggers and
-   * tracks each step, and retries steps when there are errors, so your application
-   * executes predictably and in the right order every time. Step Functions logs the
-   * state of each step, so you can quickly diagnose and debug any issues.</p>
-   * <p>Step Functions manages operations and underlying infrastructure to ensure
-   * your application is available at any scale. You can run tasks on Amazon Web
-   * Services, your own servers, or any system that has access to Amazon Web
-   * Services. You can access and use Step Functions using the console, the Amazon
-   * Web Services SDKs, or an HTTP API. For more information about Step Functions,
-   * see the <i> <a
+   * <fullname>Step Functions</fullname> <p>Step Functions coordinates the components
+   * of distributed applications and microservices using visual workflows.</p> <p>You
+   * can use Step Functions to build applications from individual components, each of
+   * which performs a discrete function, or <i>task</i>, allowing you to scale and
+   * change applications quickly. Step Functions provides a console that helps
+   * visualize the components of your application as a series of steps. Step
+   * Functions automatically triggers and tracks each step, and retries steps when
+   * there are errors, so your application executes predictably and in the right
+   * order every time. Step Functions logs the state of each step, so you can quickly
+   * diagnose and debug any issues.</p> <p>Step Functions manages operations and
+   * underlying infrastructure to ensure your application is available at any scale.
+   * You can run tasks on Amazon Web Services, your own servers, or any system that
+   * has access to Amazon Web Services. You can access and use Step Functions using
+   * the console, the Amazon Web Services SDKs, or an HTTP API. For more information
+   * about Step Functions, see the <i> <a
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step
    * Functions Developer Guide</a> </i>.</p>  <p>If you use the Step
    * Functions API actions using Amazon Web Services SDK integrations, make sure the
@@ -146,19 +145,25 @@ namespace SFN
          * States Language</a> in the Step Functions User Guide.</p> <p>If you set the
          * <code>publish</code> parameter of this API action to <code>true</code>, it
          * publishes version <code>1</code> as the first revision of the state machine.</p>
-         *  <p>This operation is eventually consistent. The results are best effort
-         * and may not reflect very recent updates and changes.</p>   <p>
+         * <p> For additional control over security, you can encrypt your data using a
+         * <b>customer-managed key</b> for Step Functions state machines. You can configure
+         * a symmetric KMS key and data key reuse period when creating or updating a
+         * <b>State Machine</b>. The execution history and state machine definition will be
+         * encrypted with the key applied to the State Machine. </p>  <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p>   <p>
          * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t
          * create a duplicate resource if it was already created.
          * <code>CreateStateMachine</code>'s idempotency check is based on the state
          * machine <code>name</code>, <code>definition</code>, <code>type</code>,
-         * <code>LoggingConfiguration</code>, and <code>TracingConfiguration</code>. The
-         * check is also based on the <code>publish</code> and
-         * <code>versionDescription</code> parameters. If a following request has a
-         * different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
-         * these differences and treat it as an idempotent request of the previous. In this
-         * case, <code>roleArn</code> and <code>tags</code> will not be updated, even if
-         * they are different.</p> <p><h3>See Also:</h3>   <a
+         * <code>LoggingConfiguration</code>, <code>TracingConfiguration</code>, and
+         * <code>EncryptionConfiguration</code> The check is also based on the
+         * <code>publish</code> and <code>versionDescription</code> parameters. If a
+         * following request has a different <code>roleArn</code> or <code>tags</code>,
+         * Step Functions will ignore these differences and treat it as an idempotent
+         * request of the previous. In this case, <code>roleArn</code> and
+         * <code>tags</code> will not be updated, even if they are different.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          */
@@ -667,13 +672,13 @@ namespace SFN
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListActivitiesOutcome ListActivities(const Model::ListActivitiesRequest& request) const;
+        virtual Model::ListActivitiesOutcome ListActivities(const Model::ListActivitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListActivities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListActivitiesRequestT = Model::ListActivitiesRequest>
-        Model::ListActivitiesOutcomeCallable ListActivitiesCallable(const ListActivitiesRequestT& request) const
+        Model::ListActivitiesOutcomeCallable ListActivitiesCallable(const ListActivitiesRequestT& request = {}) const
         {
             return SubmitCallable(&SFNClient::ListActivities, request);
         }
@@ -682,7 +687,7 @@ namespace SFN
          * An Async wrapper for ListActivities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListActivitiesRequestT = Model::ListActivitiesRequest>
-        void ListActivitiesAsync(const ListActivitiesRequestT& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListActivitiesAsync(const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListActivitiesRequestT& request = {}) const
         {
             return SubmitAsync(&SFNClient::ListActivities, request, handler, context);
         }
@@ -711,13 +716,13 @@ namespace SFN
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
+        virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExecutionsRequestT = Model::ListExecutionsRequest>
-        Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const ListExecutionsRequestT& request) const
+        Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const ListExecutionsRequestT& request = {}) const
         {
             return SubmitCallable(&SFNClient::ListExecutions, request);
         }
@@ -726,7 +731,7 @@ namespace SFN
          * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExecutionsRequestT = Model::ListExecutionsRequest>
-        void ListExecutionsAsync(const ListExecutionsRequestT& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExecutionsAsync(const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExecutionsRequestT& request = {}) const
         {
             return SubmitAsync(&SFNClient::ListExecutions, request, handler, context);
         }
@@ -848,13 +853,13 @@ namespace SFN
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStateMachinesOutcome ListStateMachines(const Model::ListStateMachinesRequest& request) const;
+        virtual Model::ListStateMachinesOutcome ListStateMachines(const Model::ListStateMachinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStateMachines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStateMachinesRequestT = Model::ListStateMachinesRequest>
-        Model::ListStateMachinesOutcomeCallable ListStateMachinesCallable(const ListStateMachinesRequestT& request) const
+        Model::ListStateMachinesOutcomeCallable ListStateMachinesCallable(const ListStateMachinesRequestT& request = {}) const
         {
             return SubmitCallable(&SFNClient::ListStateMachines, request);
         }
@@ -863,7 +868,7 @@ namespace SFN
          * An Async wrapper for ListStateMachines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStateMachinesRequestT = Model::ListStateMachinesRequest>
-        void ListStateMachinesAsync(const ListStateMachinesRequestT& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStateMachinesAsync(const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStateMachinesRequestT& request = {}) const
         {
             return SubmitAsync(&SFNClient::ListStateMachines, request, handler, context);
         }
@@ -1009,7 +1014,12 @@ namespace SFN
          * pattern, and optionally Task states using the <a
          * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
          * run</a> pattern to report that the task identified by the <code>taskToken</code>
-         * failed.</p><p><h3>See Also:</h3>   <a
+         * failed.</p> <p>For an execution with encryption enabled, Step Functions will
+         * encrypt the error and cause fields using the KMS key for the execution role.</p>
+         * <p>A caller can mark a task as fail without using any KMS permissions in the
+         * execution role if the caller provides a null value for both <code>error</code>
+         * and <code>cause</code> fields because no data needs to be
+         * encrypted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
          * API Reference</a></p>
          */
@@ -1198,7 +1208,12 @@ namespace SFN
 
         /**
          * <p>Stops an execution.</p> <p>This API action is not supported by
-         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
+         * <code>EXPRESS</code> state machines.</p> <p>For an execution with encryption
+         * enabled, Step Functions will encrypt the error and cause fields using the KMS
+         * key for the execution role.</p> <p>A caller can stop an execution without using
+         * any KMS permissions in the execution role if the caller provides a null value
+         * for both <code>error</code> and <code>cause</code> fields because no data needs
+         * to be encrypted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
          * API Reference</a></p>
          */
@@ -1374,13 +1389,13 @@ namespace SFN
 
         /**
          * <p>Updates an existing state machine by modifying its <code>definition</code>,
-         * <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions
-         * will continue to use the previous <code>definition</code> and
-         * <code>roleArn</code>. You must include at least one of <code>definition</code>
-         * or <code>roleArn</code> or you will receive a
-         * <code>MissingRequiredParameter</code> error.</p> <p>A qualified state machine
-         * ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
-         * example, the qualified state machine ARN
+         * <code>roleArn</code>, <code>loggingConfiguration</code>, or
+         * <code>EncryptionConfiguration</code>. Running executions will continue to use
+         * the previous <code>definition</code> and <code>roleArn</code>. You must include
+         * at least one of <code>definition</code> or <code>roleArn</code> or you will
+         * receive a <code>MissingRequiredParameter</code> error.</p> <p>A qualified state
+         * machine ARN refers to a <i>Distributed Map state</i> defined within a state
+         * machine. For example, the qualified state machine ARN
          * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
          * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
          * in the state machine named <code>stateMachineName</code>.</p> <p>A qualified
@@ -1479,6 +1494,46 @@ namespace SFN
             return SubmitAsync(&SFNClient::UpdateStateMachineAlias, request, handler, context);
         }
 
+        /**
+         * <p>Validates the syntax of a state machine definition.</p> <p>You can validate
+         * that a state machine definition is correct without creating a state machine
+         * resource. Step Functions will implicitly perform the same syntax check when you
+         * invoke <code>CreateStateMachine</code> and <code>UpdateStateMachine</code>.
+         * State machine definitions are specified using a JSON-based, structured language.
+         * For more information on Amazon States Language see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+         * States Language</a> (ASL). </p> <p>Suggested uses for
+         * <code>ValidateStateMachineDefinition</code>:</p> <ul> <li> <p>Integrate
+         * automated checks into your code review or Continuous Integration (CI) process to
+         * validate state machine definitions before starting deployments.</p> </li> <li>
+         * <p>Run the validation from a Git pre-commit hook to check your state machine
+         * definitions before committing them to your source repository.</p> </li> </ul>
+         *  <p>Errors found in the state machine definition will be returned in the
+         * response as a list of <b>diagnostic elements</b>, rather than raise an
+         * exception.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ValidateStateMachineDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ValidateStateMachineDefinitionOutcome ValidateStateMachineDefinition(const Model::ValidateStateMachineDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ValidateStateMachineDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ValidateStateMachineDefinitionRequestT = Model::ValidateStateMachineDefinitionRequest>
+        Model::ValidateStateMachineDefinitionOutcomeCallable ValidateStateMachineDefinitionCallable(const ValidateStateMachineDefinitionRequestT& request) const
+        {
+            return SubmitCallable(&SFNClient::ValidateStateMachineDefinition, request);
+        }
+
+        /**
+         * An Async wrapper for ValidateStateMachineDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ValidateStateMachineDefinitionRequestT = Model::ValidateStateMachineDefinitionRequest>
+        void ValidateStateMachineDefinitionAsync(const ValidateStateMachineDefinitionRequestT& request, const ValidateStateMachineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SFNClient::ValidateStateMachineDefinition, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();
@@ -1487,7 +1542,6 @@ namespace SFN
       void init(const SFNClientConfiguration& clientConfiguration);
 
       SFNClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SFNEndpointProviderBase> m_endpointProvider;
   };
 

@@ -25,10 +25,8 @@ BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult() :
 {
 }
 
-BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_keyPhrasesHasBeenSet(false)
+BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(JsonView jsonValue)
+  : BatchDetectKeyPhrasesItemResult()
 {
   *this = jsonValue;
 }

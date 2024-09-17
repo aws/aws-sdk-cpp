@@ -27,12 +27,8 @@ Image::Image() :
 {
 }
 
-Image::Image(JsonView jsonValue) : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageManifestHasBeenSet(false),
-    m_imageManifestMediaTypeHasBeenSet(false)
+Image::Image(JsonView jsonValue)
+  : Image()
 {
   *this = jsonValue;
 }

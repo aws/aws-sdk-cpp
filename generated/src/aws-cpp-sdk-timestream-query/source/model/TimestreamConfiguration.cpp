@@ -29,14 +29,8 @@ TimestreamConfiguration::TimestreamConfiguration() :
 {
 }
 
-TimestreamConfiguration::TimestreamConfiguration(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_timeColumnHasBeenSet(false),
-    m_dimensionMappingsHasBeenSet(false),
-    m_multiMeasureMappingsHasBeenSet(false),
-    m_mixedMeasureMappingsHasBeenSet(false),
-    m_measureNameColumnHasBeenSet(false)
+TimestreamConfiguration::TimestreamConfiguration(JsonView jsonValue)
+  : TimestreamConfiguration()
 {
   *this = jsonValue;
 }

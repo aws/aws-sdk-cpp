@@ -32,17 +32,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_resourceCollectionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_dataSource(EventDataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_eventClass(EventClass::NOT_SET),
-    m_eventClassHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

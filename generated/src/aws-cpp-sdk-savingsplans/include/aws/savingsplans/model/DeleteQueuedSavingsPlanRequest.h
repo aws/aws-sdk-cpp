@@ -32,46 +32,19 @@ namespace Model
     AWS_SAVINGSPLANS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Savings Plan.</p>
      */
     inline const Aws::String& GetSavingsPlanId() const{ return m_savingsPlanId; }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline bool SavingsPlanIdHasBeenSet() const { return m_savingsPlanIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline void SetSavingsPlanId(const Aws::String& value) { m_savingsPlanIdHasBeenSet = true; m_savingsPlanId = value; }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline void SetSavingsPlanId(Aws::String&& value) { m_savingsPlanIdHasBeenSet = true; m_savingsPlanId = std::move(value); }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline void SetSavingsPlanId(const char* value) { m_savingsPlanIdHasBeenSet = true; m_savingsPlanId.assign(value); }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline DeleteQueuedSavingsPlanRequest& WithSavingsPlanId(const Aws::String& value) { SetSavingsPlanId(value); return *this;}
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline DeleteQueuedSavingsPlanRequest& WithSavingsPlanId(Aws::String&& value) { SetSavingsPlanId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline DeleteQueuedSavingsPlanRequest& WithSavingsPlanId(const char* value) { SetSavingsPlanId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_savingsPlanId;

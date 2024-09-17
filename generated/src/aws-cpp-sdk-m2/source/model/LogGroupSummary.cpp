@@ -24,9 +24,8 @@ LogGroupSummary::LogGroupSummary() :
 {
 }
 
-LogGroupSummary::LogGroupSummary(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false),
-    m_logTypeHasBeenSet(false)
+LogGroupSummary::LogGroupSummary(JsonView jsonValue)
+  : LogGroupSummary()
 {
   *this = jsonValue;
 }

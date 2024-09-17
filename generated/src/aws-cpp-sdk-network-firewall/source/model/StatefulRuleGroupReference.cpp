@@ -26,11 +26,8 @@ StatefulRuleGroupReference::StatefulRuleGroupReference() :
 {
 }
 
-StatefulRuleGroupReference::StatefulRuleGroupReference(JsonView jsonValue) : 
-    m_resourceArnHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_overrideHasBeenSet(false)
+StatefulRuleGroupReference::StatefulRuleGroupReference(JsonView jsonValue)
+  : StatefulRuleGroupReference()
 {
   *this = jsonValue;
 }

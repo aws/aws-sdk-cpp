@@ -34,106 +34,43 @@ namespace Model
     AWS_WORKDOCS_API DescribeGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of groups.</p>
      */
     inline const Aws::Vector<GroupMetadata>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>The list of groups.</p>
-     */
     inline void SetGroups(const Aws::Vector<GroupMetadata>& value) { m_groups = value; }
-
-    /**
-     * <p>The list of groups.</p>
-     */
     inline void SetGroups(Aws::Vector<GroupMetadata>&& value) { m_groups = std::move(value); }
-
-    /**
-     * <p>The list of groups.</p>
-     */
     inline DescribeGroupsResult& WithGroups(const Aws::Vector<GroupMetadata>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>The list of groups.</p>
-     */
     inline DescribeGroupsResult& WithGroups(Aws::Vector<GroupMetadata>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of groups.</p>
-     */
     inline DescribeGroupsResult& AddGroups(const GroupMetadata& value) { m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>The list of groups.</p>
-     */
     inline DescribeGroupsResult& AddGroups(GroupMetadata&& value) { m_groups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline DescribeGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline DescribeGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline DescribeGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<GroupMetadata> m_groups;

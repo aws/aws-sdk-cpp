@@ -34,19 +34,8 @@ ReadOptions::ReadOptions() :
 {
 }
 
-ReadOptions::ReadOptions(JsonView jsonValue) : 
-    m_sepHasBeenSet(false),
-    m_encodingHasBeenSet(false),
-    m_quoteHasBeenSet(false),
-    m_quoteAll(false),
-    m_quoteAllHasBeenSet(false),
-    m_escapeHasBeenSet(false),
-    m_escapeQuotes(false),
-    m_escapeQuotesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_header(false),
-    m_headerHasBeenSet(false),
-    m_lineSepHasBeenSet(false)
+ReadOptions::ReadOptions(JsonView jsonValue)
+  : ReadOptions()
 {
   *this = jsonValue;
 }

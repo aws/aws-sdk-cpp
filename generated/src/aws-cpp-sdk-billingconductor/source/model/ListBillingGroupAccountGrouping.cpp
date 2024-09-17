@@ -24,9 +24,8 @@ ListBillingGroupAccountGrouping::ListBillingGroupAccountGrouping() :
 {
 }
 
-ListBillingGroupAccountGrouping::ListBillingGroupAccountGrouping(JsonView jsonValue) : 
-    m_autoAssociate(false),
-    m_autoAssociateHasBeenSet(false)
+ListBillingGroupAccountGrouping::ListBillingGroupAccountGrouping(JsonView jsonValue)
+  : ListBillingGroupAccountGrouping()
 {
   *this = jsonValue;
 }

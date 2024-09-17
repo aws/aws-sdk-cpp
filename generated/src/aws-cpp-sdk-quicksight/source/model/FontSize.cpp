@@ -24,9 +24,8 @@ FontSize::FontSize() :
 {
 }
 
-FontSize::FontSize(JsonView jsonValue) : 
-    m_relative(RelativeFontSize::NOT_SET),
-    m_relativeHasBeenSet(false)
+FontSize::FontSize(JsonView jsonValue)
+  : FontSize()
 {
   *this = jsonValue;
 }

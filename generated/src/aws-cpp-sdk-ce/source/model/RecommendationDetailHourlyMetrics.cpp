@@ -27,12 +27,8 @@ RecommendationDetailHourlyMetrics::RecommendationDetailHourlyMetrics() :
 {
 }
 
-RecommendationDetailHourlyMetrics::RecommendationDetailHourlyMetrics(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_estimatedOnDemandCostHasBeenSet(false),
-    m_currentCoverageHasBeenSet(false),
-    m_estimatedCoverageHasBeenSet(false),
-    m_estimatedNewCommitmentUtilizationHasBeenSet(false)
+RecommendationDetailHourlyMetrics::RecommendationDetailHourlyMetrics(JsonView jsonValue)
+  : RecommendationDetailHourlyMetrics()
 {
   *this = jsonValue;
 }

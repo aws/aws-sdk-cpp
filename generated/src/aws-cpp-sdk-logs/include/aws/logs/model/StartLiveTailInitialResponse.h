@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/core/http/HttpTypes.h>
 
 namespace Aws
 {
@@ -27,6 +28,7 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse();
     AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

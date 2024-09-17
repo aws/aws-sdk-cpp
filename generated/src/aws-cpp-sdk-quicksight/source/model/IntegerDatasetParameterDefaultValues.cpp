@@ -23,8 +23,8 @@ IntegerDatasetParameterDefaultValues::IntegerDatasetParameterDefaultValues() :
 {
 }
 
-IntegerDatasetParameterDefaultValues::IntegerDatasetParameterDefaultValues(JsonView jsonValue) : 
-    m_staticValuesHasBeenSet(false)
+IntegerDatasetParameterDefaultValues::IntegerDatasetParameterDefaultValues(JsonView jsonValue)
+  : IntegerDatasetParameterDefaultValues()
 {
   *this = jsonValue;
 }

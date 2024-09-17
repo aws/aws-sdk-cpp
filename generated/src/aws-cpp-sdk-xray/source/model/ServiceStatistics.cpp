@@ -30,15 +30,8 @@ ServiceStatistics::ServiceStatistics() :
 {
 }
 
-ServiceStatistics::ServiceStatistics(JsonView jsonValue) : 
-    m_okCount(0),
-    m_okCountHasBeenSet(false),
-    m_errorStatisticsHasBeenSet(false),
-    m_faultStatisticsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_totalResponseTime(0.0),
-    m_totalResponseTimeHasBeenSet(false)
+ServiceStatistics::ServiceStatistics(JsonView jsonValue)
+  : ServiceStatistics()
 {
   *this = jsonValue;
 }

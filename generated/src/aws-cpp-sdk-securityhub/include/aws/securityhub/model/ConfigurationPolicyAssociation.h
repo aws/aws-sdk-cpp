@@ -40,36 +40,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The target account, organizational unit, or the root. </p>
      */
     inline const Target& GetTarget() const{ return m_target; }
-
-    /**
-     * <p> The target account, organizational unit, or the root. </p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p> The target account, organizational unit, or the root. </p>
-     */
     inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p> The target account, organizational unit, or the root. </p>
-     */
     inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p> The target account, organizational unit, or the root. </p>
-     */
     inline ConfigurationPolicyAssociation& WithTarget(const Target& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p> The target account, organizational unit, or the root. </p>
-     */
     inline ConfigurationPolicyAssociation& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Target m_target;

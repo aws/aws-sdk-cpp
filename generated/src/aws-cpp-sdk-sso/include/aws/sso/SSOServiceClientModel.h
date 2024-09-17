@@ -55,7 +55,7 @@ namespace Aws
 
   namespace SSO
   {
-    using SSOClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSOClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSOEndpointProviderBase = Aws::SSO::Endpoint::SSOEndpointProviderBase;
     using SSOEndpointProvider = Aws::SSO::Endpoint::SSOEndpointProvider;
 

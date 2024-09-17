@@ -32,62 +32,21 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name that describes the channel group. The name is the primary identifier
      * for the channel group, and must be unique for your account in the AWS
      * Region.</p>
      */
     inline const Aws::String& GetChannelGroupName() const{ return m_channelGroupName; }
-
-    /**
-     * <p>The name that describes the channel group. The name is the primary identifier
-     * for the channel group, and must be unique for your account in the AWS
-     * Region.</p>
-     */
     inline bool ChannelGroupNameHasBeenSet() const { return m_channelGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name that describes the channel group. The name is the primary identifier
-     * for the channel group, and must be unique for your account in the AWS
-     * Region.</p>
-     */
     inline void SetChannelGroupName(const Aws::String& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = value; }
-
-    /**
-     * <p>The name that describes the channel group. The name is the primary identifier
-     * for the channel group, and must be unique for your account in the AWS
-     * Region.</p>
-     */
     inline void SetChannelGroupName(Aws::String&& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = std::move(value); }
-
-    /**
-     * <p>The name that describes the channel group. The name is the primary identifier
-     * for the channel group, and must be unique for your account in the AWS
-     * Region.</p>
-     */
     inline void SetChannelGroupName(const char* value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName.assign(value); }
-
-    /**
-     * <p>The name that describes the channel group. The name is the primary identifier
-     * for the channel group, and must be unique for your account in the AWS
-     * Region.</p>
-     */
     inline DeleteChannelGroupRequest& WithChannelGroupName(const Aws::String& value) { SetChannelGroupName(value); return *this;}
-
-    /**
-     * <p>The name that describes the channel group. The name is the primary identifier
-     * for the channel group, and must be unique for your account in the AWS
-     * Region.</p>
-     */
     inline DeleteChannelGroupRequest& WithChannelGroupName(Aws::String&& value) { SetChannelGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name that describes the channel group. The name is the primary identifier
-     * for the channel group, and must be unique for your account in the AWS
-     * Region.</p>
-     */
     inline DeleteChannelGroupRequest& WithChannelGroupName(const char* value) { SetChannelGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelGroupName;

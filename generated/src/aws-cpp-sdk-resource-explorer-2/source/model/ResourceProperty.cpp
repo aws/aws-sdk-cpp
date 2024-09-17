@@ -25,10 +25,8 @@ ResourceProperty::ResourceProperty() :
 {
 }
 
-ResourceProperty::ResourceProperty(JsonView jsonValue) : 
-    m_dataHasBeenSet(false),
-    m_lastReportedAtHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ResourceProperty::ResourceProperty(JsonView jsonValue)
+  : ResourceProperty()
 {
   *this = jsonValue;
 }

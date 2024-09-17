@@ -27,12 +27,8 @@ AssociationStatus::AssociationStatus() :
 {
 }
 
-AssociationStatus::AssociationStatus(JsonView jsonValue) : 
-    m_dateHasBeenSet(false),
-    m_name(AssociationStatusName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
+AssociationStatus::AssociationStatus(JsonView jsonValue)
+  : AssociationStatus()
 {
   *this = jsonValue;
 }

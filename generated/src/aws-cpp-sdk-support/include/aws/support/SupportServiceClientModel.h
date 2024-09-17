@@ -34,6 +34,10 @@
 #include <aws/support/model/DescribeTrustedAdvisorChecksResult.h>
 #include <aws/support/model/RefreshTrustedAdvisorCheckResult.h>
 #include <aws/support/model/ResolveCaseResult.h>
+#include <aws/support/model/DescribeSeverityLevelsRequest.h>
+#include <aws/support/model/DescribeServicesRequest.h>
+#include <aws/support/model/ResolveCaseRequest.h>
+#include <aws/support/model/DescribeCasesRequest.h>
 /* End of service model headers required in SupportClient header */
 
 namespace Aws
@@ -67,7 +71,7 @@ namespace Aws
 
   namespace Support
   {
-    using SupportClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SupportClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SupportEndpointProviderBase = Aws::Support::Endpoint::SupportEndpointProviderBase;
     using SupportEndpointProvider = Aws::Support::Endpoint::SupportEndpointProvider;
 

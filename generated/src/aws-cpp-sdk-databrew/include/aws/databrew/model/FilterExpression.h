@@ -42,6 +42,7 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The expression which includes condition names followed by substitution
      * variables, possibly grouped and combined with other conditions. For example,
@@ -49,142 +50,34 @@ namespace Model
      * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
-
-    /**
-     * <p>The expression which includes condition names followed by substitution
-     * variables, possibly grouped and combined with other conditions. For example,
-     * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
-     * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-     */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-
-    /**
-     * <p>The expression which includes condition names followed by substitution
-     * variables, possibly grouped and combined with other conditions. For example,
-     * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
-     * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-
-    /**
-     * <p>The expression which includes condition names followed by substitution
-     * variables, possibly grouped and combined with other conditions. For example,
-     * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
-     * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-     */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-
-    /**
-     * <p>The expression which includes condition names followed by substitution
-     * variables, possibly grouped and combined with other conditions. For example,
-     * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
-     * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-     */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-
-    /**
-     * <p>The expression which includes condition names followed by substitution
-     * variables, possibly grouped and combined with other conditions. For example,
-     * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
-     * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-     */
     inline FilterExpression& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-
-    /**
-     * <p>The expression which includes condition names followed by substitution
-     * variables, possibly grouped and combined with other conditions. For example,
-     * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
-     * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-     */
     inline FilterExpression& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>The expression which includes condition names followed by substitution
-     * variables, possibly grouped and combined with other conditions. For example,
-     * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
-     * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-     */
     inline FilterExpression& WithExpression(const char* value) { SetExpression(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The map of substitution variable names to their values used in this filter
      * expression.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetValuesMap() const{ return m_valuesMap; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline bool ValuesMapHasBeenSet() const { return m_valuesMapHasBeenSet; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline void SetValuesMap(const Aws::Map<Aws::String, Aws::String>& value) { m_valuesMapHasBeenSet = true; m_valuesMap = value; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline void SetValuesMap(Aws::Map<Aws::String, Aws::String>&& value) { m_valuesMapHasBeenSet = true; m_valuesMap = std::move(value); }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& WithValuesMap(const Aws::Map<Aws::String, Aws::String>& value) { SetValuesMap(value); return *this;}
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& WithValuesMap(Aws::Map<Aws::String, Aws::String>&& value) { SetValuesMap(std::move(value)); return *this;}
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& AddValuesMap(const Aws::String& key, const Aws::String& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, value); return *this; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& AddValuesMap(Aws::String&& key, const Aws::String& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& AddValuesMap(const Aws::String& key, Aws::String&& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& AddValuesMap(Aws::String&& key, Aws::String&& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& AddValuesMap(const char* key, Aws::String&& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& AddValuesMap(Aws::String&& key, const char* value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The map of substitution variable names to their values used in this filter
-     * expression.</p>
-     */
     inline FilterExpression& AddValuesMap(const char* key, const char* value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_expression;

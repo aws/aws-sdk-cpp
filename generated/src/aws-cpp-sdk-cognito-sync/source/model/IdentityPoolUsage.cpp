@@ -28,13 +28,8 @@ IdentityPoolUsage::IdentityPoolUsage() :
 {
 }
 
-IdentityPoolUsage::IdentityPoolUsage(JsonView jsonValue) : 
-    m_identityPoolIdHasBeenSet(false),
-    m_syncSessionsCount(0),
-    m_syncSessionsCountHasBeenSet(false),
-    m_dataStorage(0),
-    m_dataStorageHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+IdentityPoolUsage::IdentityPoolUsage(JsonView jsonValue)
+  : IdentityPoolUsage()
 {
   *this = jsonValue;
 }

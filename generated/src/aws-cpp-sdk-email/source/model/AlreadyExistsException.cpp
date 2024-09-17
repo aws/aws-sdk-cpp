@@ -25,8 +25,8 @@ AlreadyExistsException::AlreadyExistsException() :
 {
 }
 
-AlreadyExistsException::AlreadyExistsException(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+AlreadyExistsException::AlreadyExistsException(const XmlNode& xmlNode)
+  : AlreadyExistsException()
 {
   *this = xmlNode;
 }

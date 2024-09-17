@@ -33,9 +33,10 @@ namespace Model
    * new resource and you do not specify the Amazon S3 bucket policy, the access
    * preview assumes an directory bucket without a policy. To propose deletion of an
    * existing bucket policy, you can specify an empty string. For more information
-   * about bucket policy limits, see <a
+   * about Amazon S3 directory bucket policies, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
-   * bucket policies</a>.</p><p><h3>See Also:</h3>   <a
+   * directory bucket policies for S3 Express One Zone</a>.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3ExpressDirectoryBucketConfiguration">AWS
    * API Reference</a></p>
    */
@@ -48,46 +49,19 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
      */
     inline const Aws::String& GetBucketPolicy() const{ return m_bucketPolicy; }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline bool BucketPolicyHasBeenSet() const { return m_bucketPolicyHasBeenSet; }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline void SetBucketPolicy(const Aws::String& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = value; }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline void SetBucketPolicy(Aws::String&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::move(value); }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline void SetBucketPolicy(const char* value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy.assign(value); }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(const Aws::String& value) { SetBucketPolicy(value); return *this;}
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(Aws::String&& value) { SetBucketPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(const char* value) { SetBucketPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketPolicy;

@@ -41,6 +41,7 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The error code that indicates why the parameter or parameter combination is
      * not valid. For more information about error codes, see <a
@@ -48,64 +49,16 @@ namespace Model
      * codes</a>.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error code that indicates why the parameter or parameter combination is
-     * not valid. For more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error code that indicates why the parameter or parameter combination is
-     * not valid. For more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error code that indicates why the parameter or parameter combination is
-     * not valid. For more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The error code that indicates why the parameter or parameter combination is
-     * not valid. For more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>The error code that indicates why the parameter or parameter combination is
-     * not valid. For more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline ValidationError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The error code that indicates why the parameter or parameter combination is
-     * not valid. For more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline ValidationError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code that indicates why the parameter or parameter combination is
-     * not valid. For more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline ValidationError& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message that describes why the parameter or parameter combination
      * is not valid. For more information about error messages, see <a
@@ -113,63 +66,14 @@ namespace Model
      * codes</a>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The error message that describes why the parameter or parameter combination
-     * is not valid. For more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The error message that describes why the parameter or parameter combination
-     * is not valid. For more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The error message that describes why the parameter or parameter combination
-     * is not valid. For more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The error message that describes why the parameter or parameter combination
-     * is not valid. For more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The error message that describes why the parameter or parameter combination
-     * is not valid. For more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline ValidationError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The error message that describes why the parameter or parameter combination
-     * is not valid. For more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline ValidationError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message that describes why the parameter or parameter combination
-     * is not valid. For more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * codes</a>.</p>
-     */
     inline ValidationError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_code;

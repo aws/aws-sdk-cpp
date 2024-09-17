@@ -27,10 +27,8 @@ ChangeSetHookTargetDetails::ChangeSetHookTargetDetails() :
 {
 }
 
-ChangeSetHookTargetDetails::ChangeSetHookTargetDetails(const XmlNode& xmlNode) : 
-    m_targetType(HookTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_resourceTargetDetailsHasBeenSet(false)
+ChangeSetHookTargetDetails::ChangeSetHookTargetDetails(const XmlNode& xmlNode)
+  : ChangeSetHookTargetDetails()
 {
   *this = xmlNode;
 }

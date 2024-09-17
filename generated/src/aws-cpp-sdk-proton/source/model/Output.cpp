@@ -24,9 +24,8 @@ Output::Output() :
 {
 }
 
-Output::Output(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueStringHasBeenSet(false)
+Output::Output(JsonView jsonValue)
+  : Output()
 {
   *this = jsonValue;
 }

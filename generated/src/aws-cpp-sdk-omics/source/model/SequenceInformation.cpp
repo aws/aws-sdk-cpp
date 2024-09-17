@@ -28,13 +28,8 @@ SequenceInformation::SequenceInformation() :
 {
 }
 
-SequenceInformation::SequenceInformation(JsonView jsonValue) : 
-    m_totalReadCount(0),
-    m_totalReadCountHasBeenSet(false),
-    m_totalBaseCount(0),
-    m_totalBaseCountHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_alignmentHasBeenSet(false)
+SequenceInformation::SequenceInformation(JsonView jsonValue)
+  : SequenceInformation()
 {
   *this = jsonValue;
 }

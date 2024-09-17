@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns the details of the DB instance’s server certificate.</p> <p>For more
+   * <p>The details of the DB instance’s server certificate.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
    * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
@@ -47,85 +47,32 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The CA identifier of the CA certificate used for the DB instance's server
      * certificate.</p>
      */
     inline const Aws::String& GetCAIdentifier() const{ return m_cAIdentifier; }
-
-    /**
-     * <p>The CA identifier of the CA certificate used for the DB instance's server
-     * certificate.</p>
-     */
     inline bool CAIdentifierHasBeenSet() const { return m_cAIdentifierHasBeenSet; }
-
-    /**
-     * <p>The CA identifier of the CA certificate used for the DB instance's server
-     * certificate.</p>
-     */
     inline void SetCAIdentifier(const Aws::String& value) { m_cAIdentifierHasBeenSet = true; m_cAIdentifier = value; }
-
-    /**
-     * <p>The CA identifier of the CA certificate used for the DB instance's server
-     * certificate.</p>
-     */
     inline void SetCAIdentifier(Aws::String&& value) { m_cAIdentifierHasBeenSet = true; m_cAIdentifier = std::move(value); }
-
-    /**
-     * <p>The CA identifier of the CA certificate used for the DB instance's server
-     * certificate.</p>
-     */
     inline void SetCAIdentifier(const char* value) { m_cAIdentifierHasBeenSet = true; m_cAIdentifier.assign(value); }
-
-    /**
-     * <p>The CA identifier of the CA certificate used for the DB instance's server
-     * certificate.</p>
-     */
     inline CertificateDetails& WithCAIdentifier(const Aws::String& value) { SetCAIdentifier(value); return *this;}
-
-    /**
-     * <p>The CA identifier of the CA certificate used for the DB instance's server
-     * certificate.</p>
-     */
     inline CertificateDetails& WithCAIdentifier(Aws::String&& value) { SetCAIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The CA identifier of the CA certificate used for the DB instance's server
-     * certificate.</p>
-     */
     inline CertificateDetails& WithCAIdentifier(const char* value) { SetCAIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expiration date of the DB instance’s server certificate.</p>
      */
     inline const Aws::Utils::DateTime& GetValidTill() const{ return m_validTill; }
-
-    /**
-     * <p>The expiration date of the DB instance’s server certificate.</p>
-     */
     inline bool ValidTillHasBeenSet() const { return m_validTillHasBeenSet; }
-
-    /**
-     * <p>The expiration date of the DB instance’s server certificate.</p>
-     */
     inline void SetValidTill(const Aws::Utils::DateTime& value) { m_validTillHasBeenSet = true; m_validTill = value; }
-
-    /**
-     * <p>The expiration date of the DB instance’s server certificate.</p>
-     */
     inline void SetValidTill(Aws::Utils::DateTime&& value) { m_validTillHasBeenSet = true; m_validTill = std::move(value); }
-
-    /**
-     * <p>The expiration date of the DB instance’s server certificate.</p>
-     */
     inline CertificateDetails& WithValidTill(const Aws::Utils::DateTime& value) { SetValidTill(value); return *this;}
-
-    /**
-     * <p>The expiration date of the DB instance’s server certificate.</p>
-     */
     inline CertificateDetails& WithValidTill(Aws::Utils::DateTime&& value) { SetValidTill(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cAIdentifier;

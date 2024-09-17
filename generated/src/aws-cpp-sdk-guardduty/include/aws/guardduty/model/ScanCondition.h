@@ -38,54 +38,20 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
      * when triggering for malware scan.</p>
      */
     inline const Aws::Vector<ScanConditionPair>& GetMapEquals() const{ return m_mapEquals; }
-
-    /**
-     * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
-     * when triggering for malware scan.</p>
-     */
     inline bool MapEqualsHasBeenSet() const { return m_mapEqualsHasBeenSet; }
-
-    /**
-     * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
-     * when triggering for malware scan.</p>
-     */
     inline void SetMapEquals(const Aws::Vector<ScanConditionPair>& value) { m_mapEqualsHasBeenSet = true; m_mapEquals = value; }
-
-    /**
-     * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
-     * when triggering for malware scan.</p>
-     */
     inline void SetMapEquals(Aws::Vector<ScanConditionPair>&& value) { m_mapEqualsHasBeenSet = true; m_mapEquals = std::move(value); }
-
-    /**
-     * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
-     * when triggering for malware scan.</p>
-     */
     inline ScanCondition& WithMapEquals(const Aws::Vector<ScanConditionPair>& value) { SetMapEquals(value); return *this;}
-
-    /**
-     * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
-     * when triggering for malware scan.</p>
-     */
     inline ScanCondition& WithMapEquals(Aws::Vector<ScanConditionPair>&& value) { SetMapEquals(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
-     * when triggering for malware scan.</p>
-     */
     inline ScanCondition& AddMapEquals(const ScanConditionPair& value) { m_mapEqualsHasBeenSet = true; m_mapEquals.push_back(value); return *this; }
-
-    /**
-     * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
-     * when triggering for malware scan.</p>
-     */
     inline ScanCondition& AddMapEquals(ScanConditionPair&& value) { m_mapEqualsHasBeenSet = true; m_mapEquals.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ScanConditionPair> m_mapEquals;

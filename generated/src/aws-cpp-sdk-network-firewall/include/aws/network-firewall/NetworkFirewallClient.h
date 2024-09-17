@@ -282,12 +282,16 @@ namespace NetworkFirewall
         }
 
         /**
-         * <p>Creates an Network Firewall TLS inspection configuration. A TLS inspection
-         * configuration contains Certificate Manager certificate associations between and
-         * the scope configurations that Network Firewall uses to decrypt and re-encrypt
-         * traffic traveling through your firewall.</p> <p>After you create a TLS
-         * inspection configuration, you can associate it with a new firewall policy.</p>
-         * <p>To update the settings for a TLS inspection configuration, use
+         * <p>Creates an Network Firewall TLS inspection configuration. Network Firewall
+         * uses TLS inspection configurations to decrypt your firewall's inbound and
+         * outbound SSL/TLS traffic. After decryption, Network Firewall inspects the
+         * traffic according to your firewall policy's stateful rules, and then re-encrypts
+         * it before sending it to its destination. You can enable inspection of your
+         * firewall's inbound traffic, outbound traffic, or both. To use TLS inspection
+         * with your firewall, you must first import or provision certificates using ACM,
+         * create a TLS inspection configuration, add that configuration to a new firewall
+         * policy, and then associate that policy with your firewall.</p> <p>To update the
+         * settings for a TLS inspection configuration, use
          * <a>UpdateTLSInspectionConfiguration</a>.</p> <p>To manage a TLS inspection
          * configuration's tags, use the standard Amazon Web Services resource tagging
          * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
@@ -337,13 +341,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewall">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteFirewallOutcome DeleteFirewall(const Model::DeleteFirewallRequest& request) const;
+        virtual Model::DeleteFirewallOutcome DeleteFirewall(const Model::DeleteFirewallRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteFirewall that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteFirewallRequestT = Model::DeleteFirewallRequest>
-        Model::DeleteFirewallOutcomeCallable DeleteFirewallCallable(const DeleteFirewallRequestT& request) const
+        Model::DeleteFirewallOutcomeCallable DeleteFirewallCallable(const DeleteFirewallRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DeleteFirewall, request);
         }
@@ -352,7 +356,7 @@ namespace NetworkFirewall
          * An Async wrapper for DeleteFirewall that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteFirewallRequestT = Model::DeleteFirewallRequest>
-        void DeleteFirewallAsync(const DeleteFirewallRequestT& request, const DeleteFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteFirewallAsync(const DeleteFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteFirewallRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DeleteFirewall, request, handler, context);
         }
@@ -362,13 +366,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewallPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteFirewallPolicyOutcome DeleteFirewallPolicy(const Model::DeleteFirewallPolicyRequest& request) const;
+        virtual Model::DeleteFirewallPolicyOutcome DeleteFirewallPolicy(const Model::DeleteFirewallPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteFirewallPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteFirewallPolicyRequestT = Model::DeleteFirewallPolicyRequest>
-        Model::DeleteFirewallPolicyOutcomeCallable DeleteFirewallPolicyCallable(const DeleteFirewallPolicyRequestT& request) const
+        Model::DeleteFirewallPolicyOutcomeCallable DeleteFirewallPolicyCallable(const DeleteFirewallPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DeleteFirewallPolicy, request);
         }
@@ -377,7 +381,7 @@ namespace NetworkFirewall
          * An Async wrapper for DeleteFirewallPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteFirewallPolicyRequestT = Model::DeleteFirewallPolicyRequest>
-        void DeleteFirewallPolicyAsync(const DeleteFirewallPolicyRequestT& request, const DeleteFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteFirewallPolicyAsync(const DeleteFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteFirewallPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DeleteFirewallPolicy, request, handler, context);
         }
@@ -413,13 +417,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteRuleGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteRuleGroupOutcome DeleteRuleGroup(const Model::DeleteRuleGroupRequest& request) const;
+        virtual Model::DeleteRuleGroupOutcome DeleteRuleGroup(const Model::DeleteRuleGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteRuleGroupRequestT = Model::DeleteRuleGroupRequest>
-        Model::DeleteRuleGroupOutcomeCallable DeleteRuleGroupCallable(const DeleteRuleGroupRequestT& request) const
+        Model::DeleteRuleGroupOutcomeCallable DeleteRuleGroupCallable(const DeleteRuleGroupRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DeleteRuleGroup, request);
         }
@@ -428,7 +432,7 @@ namespace NetworkFirewall
          * An Async wrapper for DeleteRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteRuleGroupRequestT = Model::DeleteRuleGroupRequest>
-        void DeleteRuleGroupAsync(const DeleteRuleGroupRequestT& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteRuleGroupAsync(const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteRuleGroupRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DeleteRuleGroup, request, handler, context);
         }
@@ -439,13 +443,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteTLSInspectionConfigurationOutcome DeleteTLSInspectionConfiguration(const Model::DeleteTLSInspectionConfigurationRequest& request) const;
+        virtual Model::DeleteTLSInspectionConfigurationOutcome DeleteTLSInspectionConfiguration(const Model::DeleteTLSInspectionConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteTLSInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteTLSInspectionConfigurationRequestT = Model::DeleteTLSInspectionConfigurationRequest>
-        Model::DeleteTLSInspectionConfigurationOutcomeCallable DeleteTLSInspectionConfigurationCallable(const DeleteTLSInspectionConfigurationRequestT& request) const
+        Model::DeleteTLSInspectionConfigurationOutcomeCallable DeleteTLSInspectionConfigurationCallable(const DeleteTLSInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DeleteTLSInspectionConfiguration, request);
         }
@@ -454,7 +458,7 @@ namespace NetworkFirewall
          * An Async wrapper for DeleteTLSInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteTLSInspectionConfigurationRequestT = Model::DeleteTLSInspectionConfigurationRequest>
-        void DeleteTLSInspectionConfigurationAsync(const DeleteTLSInspectionConfigurationRequestT& request, const DeleteTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteTLSInspectionConfigurationAsync(const DeleteTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteTLSInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DeleteTLSInspectionConfiguration, request, handler, context);
         }
@@ -465,13 +469,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewall">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFirewallOutcome DescribeFirewall(const Model::DescribeFirewallRequest& request) const;
+        virtual Model::DescribeFirewallOutcome DescribeFirewall(const Model::DescribeFirewallRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFirewall that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFirewallRequestT = Model::DescribeFirewallRequest>
-        Model::DescribeFirewallOutcomeCallable DescribeFirewallCallable(const DescribeFirewallRequestT& request) const
+        Model::DescribeFirewallOutcomeCallable DescribeFirewallCallable(const DescribeFirewallRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DescribeFirewall, request);
         }
@@ -480,7 +484,7 @@ namespace NetworkFirewall
          * An Async wrapper for DescribeFirewall that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFirewallRequestT = Model::DescribeFirewallRequest>
-        void DescribeFirewallAsync(const DescribeFirewallRequestT& request, const DescribeFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFirewallAsync(const DescribeFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFirewallRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeFirewall, request, handler, context);
         }
@@ -491,13 +495,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFirewallPolicyOutcome DescribeFirewallPolicy(const Model::DescribeFirewallPolicyRequest& request) const;
+        virtual Model::DescribeFirewallPolicyOutcome DescribeFirewallPolicy(const Model::DescribeFirewallPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFirewallPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFirewallPolicyRequestT = Model::DescribeFirewallPolicyRequest>
-        Model::DescribeFirewallPolicyOutcomeCallable DescribeFirewallPolicyCallable(const DescribeFirewallPolicyRequestT& request) const
+        Model::DescribeFirewallPolicyOutcomeCallable DescribeFirewallPolicyCallable(const DescribeFirewallPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DescribeFirewallPolicy, request);
         }
@@ -506,7 +510,7 @@ namespace NetworkFirewall
          * An Async wrapper for DescribeFirewallPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFirewallPolicyRequestT = Model::DescribeFirewallPolicyRequest>
-        void DescribeFirewallPolicyAsync(const DescribeFirewallPolicyRequestT& request, const DescribeFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFirewallPolicyAsync(const DescribeFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFirewallPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeFirewallPolicy, request, handler, context);
         }
@@ -517,13 +521,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeLoggingConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLoggingConfigurationOutcome DescribeLoggingConfiguration(const Model::DescribeLoggingConfigurationRequest& request) const;
+        virtual Model::DescribeLoggingConfigurationOutcome DescribeLoggingConfiguration(const Model::DescribeLoggingConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLoggingConfigurationRequestT = Model::DescribeLoggingConfigurationRequest>
-        Model::DescribeLoggingConfigurationOutcomeCallable DescribeLoggingConfigurationCallable(const DescribeLoggingConfigurationRequestT& request) const
+        Model::DescribeLoggingConfigurationOutcomeCallable DescribeLoggingConfigurationCallable(const DescribeLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DescribeLoggingConfiguration, request);
         }
@@ -532,7 +536,7 @@ namespace NetworkFirewall
          * An Async wrapper for DescribeLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLoggingConfigurationRequestT = Model::DescribeLoggingConfigurationRequest>
-        void DescribeLoggingConfigurationAsync(const DescribeLoggingConfigurationRequestT& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLoggingConfigurationAsync(const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeLoggingConfiguration, request, handler, context);
         }
@@ -569,13 +573,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRuleGroupOutcome DescribeRuleGroup(const Model::DescribeRuleGroupRequest& request) const;
+        virtual Model::DescribeRuleGroupOutcome DescribeRuleGroup(const Model::DescribeRuleGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRuleGroupRequestT = Model::DescribeRuleGroupRequest>
-        Model::DescribeRuleGroupOutcomeCallable DescribeRuleGroupCallable(const DescribeRuleGroupRequestT& request) const
+        Model::DescribeRuleGroupOutcomeCallable DescribeRuleGroupCallable(const DescribeRuleGroupRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DescribeRuleGroup, request);
         }
@@ -584,7 +588,7 @@ namespace NetworkFirewall
          * An Async wrapper for DescribeRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRuleGroupRequestT = Model::DescribeRuleGroupRequest>
-        void DescribeRuleGroupAsync(const DescribeRuleGroupRequestT& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRuleGroupAsync(const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRuleGroupRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeRuleGroup, request, handler, context);
         }
@@ -597,13 +601,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRuleGroupMetadataOutcome DescribeRuleGroupMetadata(const Model::DescribeRuleGroupMetadataRequest& request) const;
+        virtual Model::DescribeRuleGroupMetadataOutcome DescribeRuleGroupMetadata(const Model::DescribeRuleGroupMetadataRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRuleGroupMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRuleGroupMetadataRequestT = Model::DescribeRuleGroupMetadataRequest>
-        Model::DescribeRuleGroupMetadataOutcomeCallable DescribeRuleGroupMetadataCallable(const DescribeRuleGroupMetadataRequestT& request) const
+        Model::DescribeRuleGroupMetadataOutcomeCallable DescribeRuleGroupMetadataCallable(const DescribeRuleGroupMetadataRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DescribeRuleGroupMetadata, request);
         }
@@ -612,7 +616,7 @@ namespace NetworkFirewall
          * An Async wrapper for DescribeRuleGroupMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRuleGroupMetadataRequestT = Model::DescribeRuleGroupMetadataRequest>
-        void DescribeRuleGroupMetadataAsync(const DescribeRuleGroupMetadataRequestT& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRuleGroupMetadataAsync(const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRuleGroupMetadataRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeRuleGroupMetadata, request, handler, context);
         }
@@ -623,13 +627,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeTLSInspectionConfigurationOutcome DescribeTLSInspectionConfiguration(const Model::DescribeTLSInspectionConfigurationRequest& request) const;
+        virtual Model::DescribeTLSInspectionConfigurationOutcome DescribeTLSInspectionConfiguration(const Model::DescribeTLSInspectionConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeTLSInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeTLSInspectionConfigurationRequestT = Model::DescribeTLSInspectionConfigurationRequest>
-        Model::DescribeTLSInspectionConfigurationOutcomeCallable DescribeTLSInspectionConfigurationCallable(const DescribeTLSInspectionConfigurationRequestT& request) const
+        Model::DescribeTLSInspectionConfigurationOutcomeCallable DescribeTLSInspectionConfigurationCallable(const DescribeTLSInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::DescribeTLSInspectionConfiguration, request);
         }
@@ -638,7 +642,7 @@ namespace NetworkFirewall
          * An Async wrapper for DescribeTLSInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeTLSInspectionConfigurationRequestT = Model::DescribeTLSInspectionConfigurationRequest>
-        void DescribeTLSInspectionConfigurationAsync(const DescribeTLSInspectionConfigurationRequestT& request, const DescribeTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeTLSInspectionConfigurationAsync(const DescribeTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeTLSInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::DescribeTLSInspectionConfiguration, request, handler, context);
         }
@@ -677,13 +681,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewallPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFirewallPoliciesOutcome ListFirewallPolicies(const Model::ListFirewallPoliciesRequest& request) const;
+        virtual Model::ListFirewallPoliciesOutcome ListFirewallPolicies(const Model::ListFirewallPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFirewallPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFirewallPoliciesRequestT = Model::ListFirewallPoliciesRequest>
-        Model::ListFirewallPoliciesOutcomeCallable ListFirewallPoliciesCallable(const ListFirewallPoliciesRequestT& request) const
+        Model::ListFirewallPoliciesOutcomeCallable ListFirewallPoliciesCallable(const ListFirewallPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::ListFirewallPolicies, request);
         }
@@ -692,7 +696,7 @@ namespace NetworkFirewall
          * An Async wrapper for ListFirewallPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFirewallPoliciesRequestT = Model::ListFirewallPoliciesRequest>
-        void ListFirewallPoliciesAsync(const ListFirewallPoliciesRequestT& request, const ListFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFirewallPoliciesAsync(const ListFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFirewallPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::ListFirewallPolicies, request, handler, context);
         }
@@ -706,13 +710,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewalls">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFirewallsOutcome ListFirewalls(const Model::ListFirewallsRequest& request) const;
+        virtual Model::ListFirewallsOutcome ListFirewalls(const Model::ListFirewallsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFirewalls that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFirewallsRequestT = Model::ListFirewallsRequest>
-        Model::ListFirewallsOutcomeCallable ListFirewallsCallable(const ListFirewallsRequestT& request) const
+        Model::ListFirewallsOutcomeCallable ListFirewallsCallable(const ListFirewallsRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::ListFirewalls, request);
         }
@@ -721,7 +725,7 @@ namespace NetworkFirewall
          * An Async wrapper for ListFirewalls that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFirewallsRequestT = Model::ListFirewallsRequest>
-        void ListFirewallsAsync(const ListFirewallsRequestT& request, const ListFirewallsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFirewallsAsync(const ListFirewallsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFirewallsRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::ListFirewalls, request, handler, context);
         }
@@ -733,13 +737,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListRuleGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request) const;
+        virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRuleGroupsRequestT = Model::ListRuleGroupsRequest>
-        Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const ListRuleGroupsRequestT& request) const
+        Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const ListRuleGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::ListRuleGroups, request);
         }
@@ -748,7 +752,7 @@ namespace NetworkFirewall
          * An Async wrapper for ListRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRuleGroupsRequestT = Model::ListRuleGroupsRequest>
-        void ListRuleGroupsAsync(const ListRuleGroupsRequestT& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRuleGroupsAsync(const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRuleGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::ListRuleGroups, request, handler, context);
         }
@@ -761,13 +765,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTLSInspectionConfigurationsOutcome ListTLSInspectionConfigurations(const Model::ListTLSInspectionConfigurationsRequest& request) const;
+        virtual Model::ListTLSInspectionConfigurationsOutcome ListTLSInspectionConfigurations(const Model::ListTLSInspectionConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTLSInspectionConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTLSInspectionConfigurationsRequestT = Model::ListTLSInspectionConfigurationsRequest>
-        Model::ListTLSInspectionConfigurationsOutcomeCallable ListTLSInspectionConfigurationsCallable(const ListTLSInspectionConfigurationsRequestT& request) const
+        Model::ListTLSInspectionConfigurationsOutcomeCallable ListTLSInspectionConfigurationsCallable(const ListTLSInspectionConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::ListTLSInspectionConfigurations, request);
         }
@@ -776,7 +780,7 @@ namespace NetworkFirewall
          * An Async wrapper for ListTLSInspectionConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTLSInspectionConfigurationsRequestT = Model::ListTLSInspectionConfigurationsRequest>
-        void ListTLSInspectionConfigurationsAsync(const ListTLSInspectionConfigurationsRequestT& request, const ListTLSInspectionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTLSInspectionConfigurationsAsync(const ListTLSInspectionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTLSInspectionConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::ListTLSInspectionConfigurations, request, handler, context);
         }
@@ -952,13 +956,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallDescription">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateFirewallDescriptionOutcome UpdateFirewallDescription(const Model::UpdateFirewallDescriptionRequest& request) const;
+        virtual Model::UpdateFirewallDescriptionOutcome UpdateFirewallDescription(const Model::UpdateFirewallDescriptionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateFirewallDescription that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateFirewallDescriptionRequestT = Model::UpdateFirewallDescriptionRequest>
-        Model::UpdateFirewallDescriptionOutcomeCallable UpdateFirewallDescriptionCallable(const UpdateFirewallDescriptionRequestT& request) const
+        Model::UpdateFirewallDescriptionOutcomeCallable UpdateFirewallDescriptionCallable(const UpdateFirewallDescriptionRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::UpdateFirewallDescription, request);
         }
@@ -967,7 +971,7 @@ namespace NetworkFirewall
          * An Async wrapper for UpdateFirewallDescription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateFirewallDescriptionRequestT = Model::UpdateFirewallDescriptionRequest>
-        void UpdateFirewallDescriptionAsync(const UpdateFirewallDescriptionRequestT& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateFirewallDescriptionAsync(const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateFirewallDescriptionRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::UpdateFirewallDescription, request, handler, context);
         }
@@ -978,13 +982,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateFirewallEncryptionConfigurationOutcome UpdateFirewallEncryptionConfiguration(const Model::UpdateFirewallEncryptionConfigurationRequest& request) const;
+        virtual Model::UpdateFirewallEncryptionConfigurationOutcome UpdateFirewallEncryptionConfiguration(const Model::UpdateFirewallEncryptionConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateFirewallEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateFirewallEncryptionConfigurationRequestT = Model::UpdateFirewallEncryptionConfigurationRequest>
-        Model::UpdateFirewallEncryptionConfigurationOutcomeCallable UpdateFirewallEncryptionConfigurationCallable(const UpdateFirewallEncryptionConfigurationRequestT& request) const
+        Model::UpdateFirewallEncryptionConfigurationOutcomeCallable UpdateFirewallEncryptionConfigurationCallable(const UpdateFirewallEncryptionConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::UpdateFirewallEncryptionConfiguration, request);
         }
@@ -993,7 +997,7 @@ namespace NetworkFirewall
          * An Async wrapper for UpdateFirewallEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateFirewallEncryptionConfigurationRequestT = Model::UpdateFirewallEncryptionConfigurationRequest>
-        void UpdateFirewallEncryptionConfigurationAsync(const UpdateFirewallEncryptionConfigurationRequestT& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateFirewallEncryptionConfigurationAsync(const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateFirewallEncryptionConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::UpdateFirewallEncryptionConfiguration, request, handler, context);
         }
@@ -1074,13 +1078,13 @@ namespace NetworkFirewall
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateLoggingConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateLoggingConfigurationOutcome UpdateLoggingConfiguration(const Model::UpdateLoggingConfigurationRequest& request) const;
+        virtual Model::UpdateLoggingConfigurationOutcome UpdateLoggingConfiguration(const Model::UpdateLoggingConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateLoggingConfigurationRequestT = Model::UpdateLoggingConfigurationRequest>
-        Model::UpdateLoggingConfigurationOutcomeCallable UpdateLoggingConfigurationCallable(const UpdateLoggingConfigurationRequestT& request) const
+        Model::UpdateLoggingConfigurationOutcomeCallable UpdateLoggingConfigurationCallable(const UpdateLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkFirewallClient::UpdateLoggingConfiguration, request);
         }
@@ -1089,7 +1093,7 @@ namespace NetworkFirewall
          * An Async wrapper for UpdateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateLoggingConfigurationRequestT = Model::UpdateLoggingConfigurationRequest>
-        void UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationRequestT& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateLoggingConfigurationAsync(const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkFirewallClient::UpdateLoggingConfiguration, request, handler, context);
         }
@@ -1189,7 +1193,6 @@ namespace NetworkFirewall
       void init(const NetworkFirewallClientConfiguration& clientConfiguration);
 
       NetworkFirewallClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<NetworkFirewallEndpointProviderBase> m_endpointProvider;
   };
 

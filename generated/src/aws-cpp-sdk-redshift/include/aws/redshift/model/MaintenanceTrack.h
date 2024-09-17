@@ -46,144 +46,49 @@ namespace Model
     AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the maintenance track. Possible values are <code>current</code>
      * and <code>trailing</code>.</p>
      */
     inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
-
-    /**
-     * <p>The name of the maintenance track. Possible values are <code>current</code>
-     * and <code>trailing</code>.</p>
-     */
     inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
-
-    /**
-     * <p>The name of the maintenance track. Possible values are <code>current</code>
-     * and <code>trailing</code>.</p>
-     */
     inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
-
-    /**
-     * <p>The name of the maintenance track. Possible values are <code>current</code>
-     * and <code>trailing</code>.</p>
-     */
     inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
-
-    /**
-     * <p>The name of the maintenance track. Possible values are <code>current</code>
-     * and <code>trailing</code>.</p>
-     */
     inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
-
-    /**
-     * <p>The name of the maintenance track. Possible values are <code>current</code>
-     * and <code>trailing</code>.</p>
-     */
     inline MaintenanceTrack& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
-
-    /**
-     * <p>The name of the maintenance track. Possible values are <code>current</code>
-     * and <code>trailing</code>.</p>
-     */
     inline MaintenanceTrack& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the maintenance track. Possible values are <code>current</code>
-     * and <code>trailing</code>.</p>
-     */
     inline MaintenanceTrack& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number for the cluster release.</p>
      */
     inline const Aws::String& GetDatabaseVersion() const{ return m_databaseVersion; }
-
-    /**
-     * <p>The version number for the cluster release.</p>
-     */
     inline bool DatabaseVersionHasBeenSet() const { return m_databaseVersionHasBeenSet; }
-
-    /**
-     * <p>The version number for the cluster release.</p>
-     */
     inline void SetDatabaseVersion(const Aws::String& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = value; }
-
-    /**
-     * <p>The version number for the cluster release.</p>
-     */
     inline void SetDatabaseVersion(Aws::String&& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = std::move(value); }
-
-    /**
-     * <p>The version number for the cluster release.</p>
-     */
     inline void SetDatabaseVersion(const char* value) { m_databaseVersionHasBeenSet = true; m_databaseVersion.assign(value); }
-
-    /**
-     * <p>The version number for the cluster release.</p>
-     */
     inline MaintenanceTrack& WithDatabaseVersion(const Aws::String& value) { SetDatabaseVersion(value); return *this;}
-
-    /**
-     * <p>The version number for the cluster release.</p>
-     */
     inline MaintenanceTrack& WithDatabaseVersion(Aws::String&& value) { SetDatabaseVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version number for the cluster release.</p>
-     */
     inline MaintenanceTrack& WithDatabaseVersion(const char* value) { SetDatabaseVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
      * </p>
      */
     inline const Aws::Vector<UpdateTarget>& GetUpdateTargets() const{ return m_updateTargets; }
-
-    /**
-     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
-     * </p>
-     */
     inline bool UpdateTargetsHasBeenSet() const { return m_updateTargetsHasBeenSet; }
-
-    /**
-     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
-     * </p>
-     */
     inline void SetUpdateTargets(const Aws::Vector<UpdateTarget>& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = value; }
-
-    /**
-     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
-     * </p>
-     */
     inline void SetUpdateTargets(Aws::Vector<UpdateTarget>&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = std::move(value); }
-
-    /**
-     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
-     * </p>
-     */
     inline MaintenanceTrack& WithUpdateTargets(const Aws::Vector<UpdateTarget>& value) { SetUpdateTargets(value); return *this;}
-
-    /**
-     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
-     * </p>
-     */
     inline MaintenanceTrack& WithUpdateTargets(Aws::Vector<UpdateTarget>&& value) { SetUpdateTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
-     * </p>
-     */
     inline MaintenanceTrack& AddUpdateTargets(const UpdateTarget& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
-     * </p>
-     */
     inline MaintenanceTrack& AddUpdateTargets(UpdateTarget&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_maintenanceTrackName;

@@ -27,8 +27,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
    * prerequisites</a>. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-   * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3> 
-   * <a
+   * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HibernationOptions">AWS
    * API Reference</a></p>
    */
@@ -43,30 +43,16 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
      * is not enabled for hibernation.</p>
      */
     inline bool GetConfigured() const{ return m_configured; }
-
-    /**
-     * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
-     * is not enabled for hibernation.</p>
-     */
     inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
-
-    /**
-     * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
-     * is not enabled for hibernation.</p>
-     */
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
-
-    /**
-     * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
-     * is not enabled for hibernation.</p>
-     */
     inline HibernationOptions& WithConfigured(bool value) { SetConfigured(value); return *this;}
-
+    ///@}
   private:
 
     bool m_configured;

@@ -26,9 +26,8 @@ AssumedRoleUser::AssumedRoleUser() :
 {
 }
 
-AssumedRoleUser::AssumedRoleUser(const XmlNode& xmlNode) : 
-    m_assumedRoleIdHasBeenSet(false),
-    m_arnHasBeenSet(false)
+AssumedRoleUser::AssumedRoleUser(const XmlNode& xmlNode)
+  : AssumedRoleUser()
 {
   *this = xmlNode;
 }

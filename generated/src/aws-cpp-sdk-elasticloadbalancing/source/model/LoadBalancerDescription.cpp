@@ -40,23 +40,8 @@ LoadBalancerDescription::LoadBalancerDescription() :
 {
 }
 
-LoadBalancerDescription::LoadBalancerDescription(const XmlNode& xmlNode) : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_canonicalHostedZoneNameHasBeenSet(false),
-    m_canonicalHostedZoneNameIDHasBeenSet(false),
-    m_listenerDescriptionsHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_backendServerDescriptionsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_vPCIdHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_sourceSecurityGroupHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_schemeHasBeenSet(false)
+LoadBalancerDescription::LoadBalancerDescription(const XmlNode& xmlNode)
+  : LoadBalancerDescription()
 {
   *this = xmlNode;
 }

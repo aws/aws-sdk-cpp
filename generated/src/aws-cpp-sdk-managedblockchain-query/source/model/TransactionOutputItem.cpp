@@ -20,6 +20,7 @@ namespace Model
 
 TransactionOutputItem::TransactionOutputItem() : 
     m_transactionHashHasBeenSet(false),
+    m_transactionIdHasBeenSet(false),
     m_network(QueryNetwork::NOT_SET),
     m_networkHasBeenSet(false),
     m_transactionTimestampHasBeenSet(false),
@@ -28,13 +29,8 @@ TransactionOutputItem::TransactionOutputItem() :
 {
 }
 
-TransactionOutputItem::TransactionOutputItem(JsonView jsonValue) : 
-    m_transactionHashHasBeenSet(false),
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_transactionTimestampHasBeenSet(false),
-    m_confirmationStatus(ConfirmationStatus::NOT_SET),
-    m_confirmationStatusHasBeenSet(false)
+TransactionOutputItem::TransactionOutputItem(JsonView jsonValue)
+  : TransactionOutputItem()
 {
   *this = jsonValue;
 }
@@ -46,6 +42,13 @@ TransactionOutputItem& TransactionOutputItem::operator =(JsonView jsonValue)
     m_transactionHash = jsonValue.GetString("transactionHash");
 
     m_transactionHashHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("transactionId"))
+  {
+    m_transactionId = jsonValue.GetString("transactionId");
+
+    m_transactionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("network"))
@@ -79,6 +82,12 @@ JsonValue TransactionOutputItem::Jsonize() const
   if(m_transactionHashHasBeenSet)
   {
    payload.WithString("transactionHash", m_transactionHash);
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("transactionId", m_transactionId);
 
   }
 

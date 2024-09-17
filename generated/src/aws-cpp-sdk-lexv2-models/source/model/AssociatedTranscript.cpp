@@ -23,8 +23,8 @@ AssociatedTranscript::AssociatedTranscript() :
 {
 }
 
-AssociatedTranscript::AssociatedTranscript(JsonView jsonValue) : 
-    m_transcriptHasBeenSet(false)
+AssociatedTranscript::AssociatedTranscript(JsonView jsonValue)
+  : AssociatedTranscript()
 {
   *this = jsonValue;
 }

@@ -40,118 +40,45 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the layer.</p>
      */
     inline const Aws::String& GetLayerName() const{ return m_layerName; }
-
-    /**
-     * <p>The name of the layer.</p>
-     */
     inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the layer.</p>
-     */
     inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
-
-    /**
-     * <p>The name of the layer.</p>
-     */
     inline void SetLayerName(Aws::String&& value) { m_layerNameHasBeenSet = true; m_layerName = std::move(value); }
-
-    /**
-     * <p>The name of the layer.</p>
-     */
     inline void SetLayerName(const char* value) { m_layerNameHasBeenSet = true; m_layerName.assign(value); }
-
-    /**
-     * <p>The name of the layer.</p>
-     */
     inline LayersListItem& WithLayerName(const Aws::String& value) { SetLayerName(value); return *this;}
-
-    /**
-     * <p>The name of the layer.</p>
-     */
     inline LayersListItem& WithLayerName(Aws::String&& value) { SetLayerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the layer.</p>
-     */
     inline LayersListItem& WithLayerName(const char* value) { SetLayerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the function layer.</p>
      */
     inline const Aws::String& GetLayerArn() const{ return m_layerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
-     */
     inline bool LayerArnHasBeenSet() const { return m_layerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
-     */
     inline void SetLayerArn(const Aws::String& value) { m_layerArnHasBeenSet = true; m_layerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
-     */
     inline void SetLayerArn(Aws::String&& value) { m_layerArnHasBeenSet = true; m_layerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
-     */
     inline void SetLayerArn(const char* value) { m_layerArnHasBeenSet = true; m_layerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
-     */
     inline LayersListItem& WithLayerArn(const Aws::String& value) { SetLayerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
-     */
     inline LayersListItem& WithLayerArn(Aws::String&& value) { SetLayerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
-     */
     inline LayersListItem& WithLayerArn(const char* value) { SetLayerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The newest version of the layer.</p>
      */
     inline const LayerVersionsListItem& GetLatestMatchingVersion() const{ return m_latestMatchingVersion; }
-
-    /**
-     * <p>The newest version of the layer.</p>
-     */
     inline bool LatestMatchingVersionHasBeenSet() const { return m_latestMatchingVersionHasBeenSet; }
-
-    /**
-     * <p>The newest version of the layer.</p>
-     */
     inline void SetLatestMatchingVersion(const LayerVersionsListItem& value) { m_latestMatchingVersionHasBeenSet = true; m_latestMatchingVersion = value; }
-
-    /**
-     * <p>The newest version of the layer.</p>
-     */
     inline void SetLatestMatchingVersion(LayerVersionsListItem&& value) { m_latestMatchingVersionHasBeenSet = true; m_latestMatchingVersion = std::move(value); }
-
-    /**
-     * <p>The newest version of the layer.</p>
-     */
     inline LayersListItem& WithLatestMatchingVersion(const LayerVersionsListItem& value) { SetLatestMatchingVersion(value); return *this;}
-
-    /**
-     * <p>The newest version of the layer.</p>
-     */
     inline LayersListItem& WithLatestMatchingVersion(LayerVersionsListItem&& value) { SetLatestMatchingVersion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_layerName;

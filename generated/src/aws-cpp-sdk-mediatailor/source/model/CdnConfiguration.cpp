@@ -24,9 +24,8 @@ CdnConfiguration::CdnConfiguration() :
 {
 }
 
-CdnConfiguration::CdnConfiguration(JsonView jsonValue) : 
-    m_adSegmentUrlPrefixHasBeenSet(false),
-    m_contentSegmentUrlPrefixHasBeenSet(false)
+CdnConfiguration::CdnConfiguration(JsonView jsonValue)
+  : CdnConfiguration()
 {
   *this = jsonValue;
 }

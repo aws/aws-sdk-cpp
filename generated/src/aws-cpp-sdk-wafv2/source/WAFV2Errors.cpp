@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/wafv2/WAFV2Errors.h>
+#include <aws/wafv2/model/WAFLimitsExceededException.h>
 #include <aws/wafv2/model/WAFInvalidParameterException.h>
 
 using namespace Aws::Client;
@@ -17,6 +18,12 @@ namespace Aws
 {
 namespace WAFV2
 {
+template<> AWS_WAFV2_API WAFLimitsExceededException WAFV2Error::GetModeledError()
+{
+  assert(this->GetErrorType() == WAFV2Errors::W_A_F_LIMITS_EXCEEDED);
+  return WAFLimitsExceededException(this->GetJsonPayload().View());
+}
+
 template<> AWS_WAFV2_API WAFInvalidParameterException WAFV2Error::GetModeledError()
 {
   assert(this->GetErrorType() == WAFV2Errors::W_A_F_INVALID_PARAMETER);

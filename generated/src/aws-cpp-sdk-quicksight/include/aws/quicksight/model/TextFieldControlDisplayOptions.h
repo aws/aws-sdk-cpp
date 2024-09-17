@@ -39,98 +39,41 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options to configure the title visibility, name, and font size.</p>
      */
     inline const LabelOptions& GetTitleOptions() const{ return m_titleOptions; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline bool TitleOptionsHasBeenSet() const { return m_titleOptionsHasBeenSet; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline void SetTitleOptions(const LabelOptions& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = value; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline void SetTitleOptions(LabelOptions&& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = std::move(value); }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline TextFieldControlDisplayOptions& WithTitleOptions(const LabelOptions& value) { SetTitleOptions(value); return *this;}
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline TextFieldControlDisplayOptions& WithTitleOptions(LabelOptions&& value) { SetTitleOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration of the placeholder options in a text field control.</p>
      */
     inline const TextControlPlaceholderOptions& GetPlaceholderOptions() const{ return m_placeholderOptions; }
-
-    /**
-     * <p>The configuration of the placeholder options in a text field control.</p>
-     */
     inline bool PlaceholderOptionsHasBeenSet() const { return m_placeholderOptionsHasBeenSet; }
-
-    /**
-     * <p>The configuration of the placeholder options in a text field control.</p>
-     */
     inline void SetPlaceholderOptions(const TextControlPlaceholderOptions& value) { m_placeholderOptionsHasBeenSet = true; m_placeholderOptions = value; }
-
-    /**
-     * <p>The configuration of the placeholder options in a text field control.</p>
-     */
     inline void SetPlaceholderOptions(TextControlPlaceholderOptions&& value) { m_placeholderOptionsHasBeenSet = true; m_placeholderOptions = std::move(value); }
-
-    /**
-     * <p>The configuration of the placeholder options in a text field control.</p>
-     */
     inline TextFieldControlDisplayOptions& WithPlaceholderOptions(const TextControlPlaceholderOptions& value) { SetPlaceholderOptions(value); return *this;}
-
-    /**
-     * <p>The configuration of the placeholder options in a text field control.</p>
-     */
     inline TextFieldControlDisplayOptions& WithPlaceholderOptions(TextControlPlaceholderOptions&& value) { SetPlaceholderOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration of info icon label options.</p>
      */
     inline const SheetControlInfoIconLabelOptions& GetInfoIconLabelOptions() const{ return m_infoIconLabelOptions; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline bool InfoIconLabelOptionsHasBeenSet() const { return m_infoIconLabelOptionsHasBeenSet; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline void SetInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = value; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline void SetInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = std::move(value); }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline TextFieldControlDisplayOptions& WithInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { SetInfoIconLabelOptions(value); return *this;}
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline TextFieldControlDisplayOptions& WithInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { SetInfoIconLabelOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LabelOptions m_titleOptions;

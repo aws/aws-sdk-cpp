@@ -25,10 +25,8 @@ CloudWatchEncryption::CloudWatchEncryption() :
 {
 }
 
-CloudWatchEncryption::CloudWatchEncryption(JsonView jsonValue) : 
-    m_cloudWatchEncryptionMode(CloudWatchEncryptionMode::NOT_SET),
-    m_cloudWatchEncryptionModeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+CloudWatchEncryption::CloudWatchEncryption(JsonView jsonValue)
+  : CloudWatchEncryption()
 {
   *this = jsonValue;
 }

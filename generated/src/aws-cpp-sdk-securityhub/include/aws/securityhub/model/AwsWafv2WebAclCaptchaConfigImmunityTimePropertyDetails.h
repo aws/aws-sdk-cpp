@@ -37,30 +37,16 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is
      * considered valid by WAF. </p>
      */
     inline long long GetImmunityTime() const{ return m_immunityTime; }
-
-    /**
-     * <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is
-     * considered valid by WAF. </p>
-     */
     inline bool ImmunityTimeHasBeenSet() const { return m_immunityTimeHasBeenSet; }
-
-    /**
-     * <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is
-     * considered valid by WAF. </p>
-     */
     inline void SetImmunityTime(long long value) { m_immunityTimeHasBeenSet = true; m_immunityTime = value; }
-
-    /**
-     * <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is
-     * considered valid by WAF. </p>
-     */
     inline AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails& WithImmunityTime(long long value) { SetImmunityTime(value); return *this;}
-
+    ///@}
   private:
 
     long long m_immunityTime;

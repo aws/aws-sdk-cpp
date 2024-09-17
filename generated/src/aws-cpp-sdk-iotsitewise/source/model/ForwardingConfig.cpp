@@ -24,9 +24,8 @@ ForwardingConfig::ForwardingConfig() :
 {
 }
 
-ForwardingConfig::ForwardingConfig(JsonView jsonValue) : 
-    m_state(ForwardingConfigState::NOT_SET),
-    m_stateHasBeenSet(false)
+ForwardingConfig::ForwardingConfig(JsonView jsonValue)
+  : ForwardingConfig()
 {
   *this = jsonValue;
 }

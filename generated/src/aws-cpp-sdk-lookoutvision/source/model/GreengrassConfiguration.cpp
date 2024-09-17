@@ -31,16 +31,8 @@ GreengrassConfiguration::GreengrassConfiguration() :
 {
 }
 
-GreengrassConfiguration::GreengrassConfiguration(JsonView jsonValue) : 
-    m_compilerOptionsHasBeenSet(false),
-    m_targetDevice(TargetDevice::NOT_SET),
-    m_targetDeviceHasBeenSet(false),
-    m_targetPlatformHasBeenSet(false),
-    m_s3OutputLocationHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_componentDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+GreengrassConfiguration::GreengrassConfiguration(JsonView jsonValue)
+  : GreengrassConfiguration()
 {
   *this = jsonValue;
 }

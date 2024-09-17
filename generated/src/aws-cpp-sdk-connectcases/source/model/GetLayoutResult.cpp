@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLayoutResult::GetLayoutResult()
+GetLayoutResult::GetLayoutResult() : 
+    m_deleted(false)
 {
 }
 
 GetLayoutResult::GetLayoutResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLayoutResult()
 {
   *this = result;
 }
@@ -32,6 +34,24 @@ GetLayoutResult& GetLayoutResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
+
+  }
+
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetString("createdTime");
+
+  }
+
+  if(jsonValue.ValueExists("deleted"))
+  {
+    m_deleted = jsonValue.GetBool("deleted");
+
+  }
+
+  if(jsonValue.ValueExists("lastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
 
   }
 

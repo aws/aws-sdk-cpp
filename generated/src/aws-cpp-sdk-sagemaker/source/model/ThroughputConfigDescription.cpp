@@ -28,13 +28,8 @@ ThroughputConfigDescription::ThroughputConfigDescription() :
 {
 }
 
-ThroughputConfigDescription::ThroughputConfigDescription(JsonView jsonValue) : 
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_throughputModeHasBeenSet(false),
-    m_provisionedReadCapacityUnits(0),
-    m_provisionedReadCapacityUnitsHasBeenSet(false),
-    m_provisionedWriteCapacityUnits(0),
-    m_provisionedWriteCapacityUnitsHasBeenSet(false)
+ThroughputConfigDescription::ThroughputConfigDescription(JsonView jsonValue)
+  : ThroughputConfigDescription()
 {
   *this = jsonValue;
 }

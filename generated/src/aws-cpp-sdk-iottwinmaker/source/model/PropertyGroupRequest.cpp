@@ -25,10 +25,8 @@ PropertyGroupRequest::PropertyGroupRequest() :
 {
 }
 
-PropertyGroupRequest::PropertyGroupRequest(JsonView jsonValue) : 
-    m_groupType(GroupType::NOT_SET),
-    m_groupTypeHasBeenSet(false),
-    m_propertyNamesHasBeenSet(false)
+PropertyGroupRequest::PropertyGroupRequest(JsonView jsonValue)
+  : PropertyGroupRequest()
 {
   *this = jsonValue;
 }

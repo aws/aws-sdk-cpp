@@ -26,11 +26,8 @@ HttpPackageConfiguration::HttpPackageConfiguration() :
 {
 }
 
-HttpPackageConfiguration::HttpPackageConfiguration(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_sourceGroupHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+HttpPackageConfiguration::HttpPackageConfiguration(JsonView jsonValue)
+  : HttpPackageConfiguration()
 {
   *this = jsonValue;
 }

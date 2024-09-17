@@ -52,97 +52,34 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the name and path of a customer managed policy. You must have an
      * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
     inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const{ return m_customerManagedPolicyReference; }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each Amazon Web Services account
-     * where you want to deploy your permission set.</p>
-     */
     inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each Amazon Web Services account
-     * where you want to deploy your permission set.</p>
-     */
     inline void SetCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = value; }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each Amazon Web Services account
-     * where you want to deploy your permission set.</p>
-     */
     inline void SetCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::move(value); }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each Amazon Web Services account
-     * where you want to deploy your permission set.</p>
-     */
     inline PermissionsBoundary& WithCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { SetCustomerManagedPolicyReference(value); return *this;}
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each Amazon Web Services account
-     * where you want to deploy your permission set.</p>
-     */
     inline PermissionsBoundary& WithCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { SetCustomerManagedPolicyReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services managed policy ARN that you want to attach to a
      * permission set as a permissions boundary.</p>
      */
     inline const Aws::String& GetManagedPolicyArn() const{ return m_managedPolicyArn; }
-
-    /**
-     * <p>The Amazon Web Services managed policy ARN that you want to attach to a
-     * permission set as a permissions boundary.</p>
-     */
     inline bool ManagedPolicyArnHasBeenSet() const { return m_managedPolicyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services managed policy ARN that you want to attach to a
-     * permission set as a permissions boundary.</p>
-     */
     inline void SetManagedPolicyArn(const Aws::String& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = value; }
-
-    /**
-     * <p>The Amazon Web Services managed policy ARN that you want to attach to a
-     * permission set as a permissions boundary.</p>
-     */
     inline void SetManagedPolicyArn(Aws::String&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services managed policy ARN that you want to attach to a
-     * permission set as a permissions boundary.</p>
-     */
     inline void SetManagedPolicyArn(const char* value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services managed policy ARN that you want to attach to a
-     * permission set as a permissions boundary.</p>
-     */
     inline PermissionsBoundary& WithManagedPolicyArn(const Aws::String& value) { SetManagedPolicyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services managed policy ARN that you want to attach to a
-     * permission set as a permissions boundary.</p>
-     */
     inline PermissionsBoundary& WithManagedPolicyArn(Aws::String&& value) { SetManagedPolicyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services managed policy ARN that you want to attach to a
-     * permission set as a permissions boundary.</p>
-     */
     inline PermissionsBoundary& WithManagedPolicyArn(const char* value) { SetManagedPolicyArn(value); return *this;}
-
+    ///@}
   private:
 
     CustomerManagedPolicyReference m_customerManagedPolicyReference;

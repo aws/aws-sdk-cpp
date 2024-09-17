@@ -24,9 +24,8 @@ EndpointUser::EndpointUser() :
 {
 }
 
-EndpointUser::EndpointUser(JsonView jsonValue) : 
-    m_userAttributesHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+EndpointUser::EndpointUser(JsonView jsonValue)
+  : EndpointUser()
 {
   *this = jsonValue;
 }

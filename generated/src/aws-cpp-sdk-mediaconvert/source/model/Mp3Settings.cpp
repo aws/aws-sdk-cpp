@@ -32,17 +32,8 @@ Mp3Settings::Mp3Settings() :
 {
 }
 
-Mp3Settings::Mp3Settings(JsonView jsonValue) : 
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_rateControlMode(Mp3RateControlMode::NOT_SET),
-    m_rateControlModeHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_vbrQuality(0),
-    m_vbrQualityHasBeenSet(false)
+Mp3Settings::Mp3Settings(JsonView jsonValue)
+  : Mp3Settings()
 {
   *this = jsonValue;
 }

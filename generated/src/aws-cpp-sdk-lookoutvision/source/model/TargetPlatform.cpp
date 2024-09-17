@@ -28,13 +28,8 @@ TargetPlatform::TargetPlatform() :
 {
 }
 
-TargetPlatform::TargetPlatform(JsonView jsonValue) : 
-    m_os(TargetPlatformOs::NOT_SET),
-    m_osHasBeenSet(false),
-    m_arch(TargetPlatformArch::NOT_SET),
-    m_archHasBeenSet(false),
-    m_accelerator(TargetPlatformAccelerator::NOT_SET),
-    m_acceleratorHasBeenSet(false)
+TargetPlatform::TargetPlatform(JsonView jsonValue)
+  : TargetPlatform()
 {
   *this = jsonValue;
 }

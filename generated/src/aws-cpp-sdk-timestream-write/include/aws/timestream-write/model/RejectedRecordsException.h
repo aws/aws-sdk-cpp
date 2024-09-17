@@ -53,71 +53,31 @@ namespace Model
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline RejectedRecordsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline RejectedRecordsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline RejectedRecordsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> </p>
      */
     inline const Aws::Vector<RejectedRecord>& GetRejectedRecords() const{ return m_rejectedRecords; }
-
-    /**
-     * <p> </p>
-     */
     inline bool RejectedRecordsHasBeenSet() const { return m_rejectedRecordsHasBeenSet; }
-
-    /**
-     * <p> </p>
-     */
     inline void SetRejectedRecords(const Aws::Vector<RejectedRecord>& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords = value; }
-
-    /**
-     * <p> </p>
-     */
     inline void SetRejectedRecords(Aws::Vector<RejectedRecord>&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords = std::move(value); }
-
-    /**
-     * <p> </p>
-     */
     inline RejectedRecordsException& WithRejectedRecords(const Aws::Vector<RejectedRecord>& value) { SetRejectedRecords(value); return *this;}
-
-    /**
-     * <p> </p>
-     */
     inline RejectedRecordsException& WithRejectedRecords(Aws::Vector<RejectedRecord>&& value) { SetRejectedRecords(std::move(value)); return *this;}
-
-    /**
-     * <p> </p>
-     */
     inline RejectedRecordsException& AddRejectedRecords(const RejectedRecord& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords.push_back(value); return *this; }
-
-    /**
-     * <p> </p>
-     */
     inline RejectedRecordsException& AddRejectedRecords(RejectedRecord&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

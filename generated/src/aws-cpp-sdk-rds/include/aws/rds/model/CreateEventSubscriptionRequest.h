@@ -41,55 +41,22 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
      * 255 characters.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
-
-    /**
-     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
-     * 255 characters.</p>
-     */
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
-     * 255 characters.</p>
-     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
-
-    /**
-     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
-     * 255 characters.</p>
-     */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
-
-    /**
-     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
-     * 255 characters.</p>
-     */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
-
-    /**
-     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
-     * 255 characters.</p>
-     */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
-
-    /**
-     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
-     * 255 characters.</p>
-     */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
-     * 255 characters.</p>
-     */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. SNS automatically creates the ARN when you create a topic and
@@ -100,182 +67,36 @@ namespace Model
      * Notification Service Developer Guide</i>.</p> 
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. SNS automatically creates the ARN when you create a topic and
-     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
-     * topics. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
-     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
-     * Notification Service Developer Guide</i>.</p> 
-     */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. SNS automatically creates the ARN when you create a topic and
-     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
-     * topics. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
-     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
-     * Notification Service Developer Guide</i>.</p> 
-     */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. SNS automatically creates the ARN when you create a topic and
-     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
-     * topics. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
-     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
-     * Notification Service Developer Guide</i>.</p> 
-     */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. SNS automatically creates the ARN when you create a topic and
-     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
-     * topics. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
-     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
-     * Notification Service Developer Guide</i>.</p> 
-     */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. SNS automatically creates the ARN when you create a topic and
-     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
-     * topics. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
-     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
-     * Notification Service Developer Guide</i>.</p> 
-     */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. SNS automatically creates the ARN when you create a topic and
-     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
-     * topics. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
-     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
-     * Notification Service Developer Guide</i>.</p> 
-     */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. SNS automatically creates the ARN when you create a topic and
-     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
-     * topics. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
-     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
-     * Notification Service Developer Guide</i>.</p> 
-     */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
+     * If this value isn't specified, all events are returned.</p> <p>Valid
+     * Values:<code> db-instance | db-cluster | db-parameter-group | db-security-group
+     * | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl |
+     * custom-engine-version | blue-green-deployment </code> </p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p>The type of source that is generating the events. For example, if you want to
-     * be notified of events generated by a DB instance, you set this parameter to
-     * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of source that is generating the events. For example, if you want to
-     * be notified of events generated by a DB instance, you set this parameter to
-     * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
-     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p>The type of source that is generating the events. For example, if you want to
-     * be notified of events generated by a DB instance, you set this parameter to
-     * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
-     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p>The type of source that is generating the events. For example, if you want to
-     * be notified of events generated by a DB instance, you set this parameter to
-     * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
-     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-
-    /**
-     * <p>The type of source that is generating the events. For example, if you want to
-     * be notified of events generated by a DB instance, you set this parameter to
-     * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
-     */
     inline CreateEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p>The type of source that is generating the events. For example, if you want to
-     * be notified of events generated by a DB instance, you set this parameter to
-     * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
-     */
     inline CreateEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of source that is generating the events. For example, if you want to
-     * be notified of events generated by a DB instance, you set this parameter to
-     * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
-     * <code>db-instance</code> | <code>db-cluster</code> |
-     * <code>db-parameter-group</code> | <code>db-security-group</code> |
-     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code> </p>
-     */
     inline CreateEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of event categories for a particular source type
      * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
@@ -288,112 +109,17 @@ namespace Model
      * <code>DescribeEventCategories</code> operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline CreateEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline CreateEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline CreateEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline CreateEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of event categories for a particular source type
-     * (<code>SourceType</code>) that you want to subscribe to. You can see a list of
-     * the categories for a given source type in the "Amazon RDS event categories and
-     * event messages" section of the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
-     * <i>Amazon RDS User Guide</i> </a> or the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
-     * <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the
-     * <code>DescribeEventCategories</code> operation.</p>
-     */
     inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of identifiers of the event sources for which events are returned.
      * If not specified, then all sources are included in the response. An identifier
@@ -414,225 +140,38 @@ namespace Model
      * value must be supplied.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetSourceIds() const{ return m_sourceIds; }
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline bool SourceIdsHasBeenSet() const { return m_sourceIdsHasBeenSet; }
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline void SetSourceIds(const Aws::Vector<Aws::String>& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline void SetSourceIds(Aws::Vector<Aws::String>&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = std::move(value); }
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline CreateEventSubscriptionRequest& WithSourceIds(const Aws::Vector<Aws::String>& value) { SetSourceIds(value); return *this;}
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline CreateEventSubscriptionRequest& WithSourceIds(Aws::Vector<Aws::String>&& value) { SetSourceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline CreateEventSubscriptionRequest& AddSourceIds(const Aws::String& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline CreateEventSubscriptionRequest& AddSourceIds(Aws::String&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of identifiers of the event sources for which events are returned.
-     * If not specified, then all sources are included in the response. An identifier
-     * must begin with a letter and must contain only ASCII letters, digits, and
-     * hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If <code>SourceIds</code> are supplied,
-     * <code>SourceType</code> must also be provided.</p> </li> <li> <p>If the source
-     * type is a DB instance, a <code>DBInstanceIdentifier</code> value must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
-     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
-     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
-     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
-     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
-     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
-     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
-     * value must be supplied.</p> </li> </ul>
-     */
     inline CreateEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to activate the subscription. If the event notification
      * subscription isn't activated, the subscription is created but not active.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether to activate the subscription. If the event notification
-     * subscription isn't activated, the subscription is created but not active.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to activate the subscription. If the event notification
-     * subscription isn't activated, the subscription is created but not active.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether to activate the subscription. If the event notification
-     * subscription isn't activated, the subscription is created but not active.</p>
-     */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    
     inline CreateEventSubscriptionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    
     inline CreateEventSubscriptionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    
     inline CreateEventSubscriptionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    
     inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_subscriptionName;

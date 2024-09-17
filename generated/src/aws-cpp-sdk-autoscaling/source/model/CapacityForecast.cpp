@@ -26,9 +26,8 @@ CapacityForecast::CapacityForecast() :
 {
 }
 
-CapacityForecast::CapacityForecast(const XmlNode& xmlNode) : 
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+CapacityForecast::CapacityForecast(const XmlNode& xmlNode)
+  : CapacityForecast()
 {
   *this = xmlNode;
 }

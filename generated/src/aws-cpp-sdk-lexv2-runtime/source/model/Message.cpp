@@ -26,11 +26,8 @@ Message::Message() :
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_contentType(MessageContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_imageResponseCardHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }

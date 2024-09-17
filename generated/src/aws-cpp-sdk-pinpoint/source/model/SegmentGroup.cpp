@@ -28,13 +28,8 @@ SegmentGroup::SegmentGroup() :
 {
 }
 
-SegmentGroup::SegmentGroup(JsonView jsonValue) : 
-    m_dimensionsHasBeenSet(false),
-    m_sourceSegmentsHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+SegmentGroup::SegmentGroup(JsonView jsonValue)
+  : SegmentGroup()
 {
   *this = jsonValue;
 }

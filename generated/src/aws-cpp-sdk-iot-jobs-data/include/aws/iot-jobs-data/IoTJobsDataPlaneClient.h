@@ -198,7 +198,6 @@ namespace IoTJobsDataPlane
       void init(const IoTJobsDataPlaneClientConfiguration& clientConfiguration);
 
       IoTJobsDataPlaneClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> m_endpointProvider;
   };
 

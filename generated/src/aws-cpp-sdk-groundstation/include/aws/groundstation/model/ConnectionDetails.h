@@ -38,57 +38,27 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
      */
     inline int GetMtu() const{ return m_mtu; }
-
-    /**
-     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-     */
     inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
-
-    /**
-     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-     */
     inline void SetMtu(int value) { m_mtuHasBeenSet = true; m_mtu = value; }
-
-    /**
-     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-     */
     inline ConnectionDetails& WithMtu(int value) { SetMtu(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A socket address.</p>
      */
     inline const SocketAddress& GetSocketAddress() const{ return m_socketAddress; }
-
-    /**
-     * <p>A socket address.</p>
-     */
     inline bool SocketAddressHasBeenSet() const { return m_socketAddressHasBeenSet; }
-
-    /**
-     * <p>A socket address.</p>
-     */
     inline void SetSocketAddress(const SocketAddress& value) { m_socketAddressHasBeenSet = true; m_socketAddress = value; }
-
-    /**
-     * <p>A socket address.</p>
-     */
     inline void SetSocketAddress(SocketAddress&& value) { m_socketAddressHasBeenSet = true; m_socketAddress = std::move(value); }
-
-    /**
-     * <p>A socket address.</p>
-     */
     inline ConnectionDetails& WithSocketAddress(const SocketAddress& value) { SetSocketAddress(value); return *this;}
-
-    /**
-     * <p>A socket address.</p>
-     */
     inline ConnectionDetails& WithSocketAddress(SocketAddress&& value) { SetSocketAddress(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_mtu;

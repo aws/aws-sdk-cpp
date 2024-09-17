@@ -44,34 +44,17 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of time in seconds that a component can validate its configuration
      * updates. If the validation time exceeds this timeout, then the deployment
      * proceeds for the device.</p> <p>Default: <code>30</code> </p>
      */
     inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
-
-    /**
-     * <p>The amount of time in seconds that a component can validate its configuration
-     * updates. If the validation time exceeds this timeout, then the deployment
-     * proceeds for the device.</p> <p>Default: <code>30</code> </p>
-     */
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
-
-    /**
-     * <p>The amount of time in seconds that a component can validate its configuration
-     * updates. If the validation time exceeds this timeout, then the deployment
-     * proceeds for the device.</p> <p>Default: <code>30</code> </p>
-     */
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
-
-    /**
-     * <p>The amount of time in seconds that a component can validate its configuration
-     * updates. If the validation time exceeds this timeout, then the deployment
-     * proceeds for the device.</p> <p>Default: <code>30</code> </p>
-     */
     inline DeploymentConfigurationValidationPolicy& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_timeoutInSeconds;

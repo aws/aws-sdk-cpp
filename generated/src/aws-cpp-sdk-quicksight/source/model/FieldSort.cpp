@@ -25,10 +25,8 @@ FieldSort::FieldSort() :
 {
 }
 
-FieldSort::FieldSort(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false)
+FieldSort::FieldSort(JsonView jsonValue)
+  : FieldSort()
 {
   *this = jsonValue;
 }

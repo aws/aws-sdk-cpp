@@ -24,9 +24,8 @@ EdgeAgentStatus::EdgeAgentStatus() :
 {
 }
 
-EdgeAgentStatus::EdgeAgentStatus(JsonView jsonValue) : 
-    m_lastRecorderStatusHasBeenSet(false),
-    m_lastUploaderStatusHasBeenSet(false)
+EdgeAgentStatus::EdgeAgentStatus(JsonView jsonValue)
+  : EdgeAgentStatus()
 {
   *this = jsonValue;
 }

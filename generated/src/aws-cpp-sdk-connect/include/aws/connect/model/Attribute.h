@@ -39,77 +39,31 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of attribute.</p>
      */
     inline const InstanceAttributeType& GetAttributeType() const{ return m_attributeType; }
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline void SetAttributeType(const InstanceAttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline void SetAttributeType(InstanceAttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline Attribute& WithAttributeType(const InstanceAttributeType& value) { SetAttributeType(value); return *this;}
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline Attribute& WithAttributeType(InstanceAttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the attribute.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the attribute.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the attribute.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the attribute.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the attribute.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the attribute.</p>
-     */
     inline Attribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the attribute.</p>
-     */
     inline Attribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the attribute.</p>
-     */
     inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     InstanceAttributeType m_attributeType;

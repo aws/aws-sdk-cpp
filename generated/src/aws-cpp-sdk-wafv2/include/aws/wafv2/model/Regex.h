@@ -38,46 +38,19 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The string representing the regular expression.</p>
      */
     inline const Aws::String& GetRegexString() const{ return m_regexString; }
-
-    /**
-     * <p>The string representing the regular expression.</p>
-     */
     inline bool RegexStringHasBeenSet() const { return m_regexStringHasBeenSet; }
-
-    /**
-     * <p>The string representing the regular expression.</p>
-     */
     inline void SetRegexString(const Aws::String& value) { m_regexStringHasBeenSet = true; m_regexString = value; }
-
-    /**
-     * <p>The string representing the regular expression.</p>
-     */
     inline void SetRegexString(Aws::String&& value) { m_regexStringHasBeenSet = true; m_regexString = std::move(value); }
-
-    /**
-     * <p>The string representing the regular expression.</p>
-     */
     inline void SetRegexString(const char* value) { m_regexStringHasBeenSet = true; m_regexString.assign(value); }
-
-    /**
-     * <p>The string representing the regular expression.</p>
-     */
     inline Regex& WithRegexString(const Aws::String& value) { SetRegexString(value); return *this;}
-
-    /**
-     * <p>The string representing the regular expression.</p>
-     */
     inline Regex& WithRegexString(Aws::String&& value) { SetRegexString(std::move(value)); return *this;}
-
-    /**
-     * <p>The string representing the regular expression.</p>
-     */
     inline Regex& WithRegexString(const char* value) { SetRegexString(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_regexString;

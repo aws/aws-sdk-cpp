@@ -19,12 +19,16 @@ namespace Model
 {
 
 PipelineBlueprintSummary::PipelineBlueprintSummary() : 
-    m_blueprintNameHasBeenSet(false)
+    m_blueprintNameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_displayDescriptionHasBeenSet(false),
+    m_serviceHasBeenSet(false),
+    m_useCaseHasBeenSet(false)
 {
 }
 
-PipelineBlueprintSummary::PipelineBlueprintSummary(JsonView jsonValue) : 
-    m_blueprintNameHasBeenSet(false)
+PipelineBlueprintSummary::PipelineBlueprintSummary(JsonView jsonValue)
+  : PipelineBlueprintSummary()
 {
   *this = jsonValue;
 }
@@ -38,6 +42,34 @@ PipelineBlueprintSummary& PipelineBlueprintSummary::operator =(JsonView jsonValu
     m_blueprintNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisplayDescription"))
+  {
+    m_displayDescription = jsonValue.GetString("DisplayDescription");
+
+    m_displayDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Service"))
+  {
+    m_service = jsonValue.GetString("Service");
+
+    m_serviceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseCase"))
+  {
+    m_useCase = jsonValue.GetString("UseCase");
+
+    m_useCaseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +80,30 @@ JsonValue PipelineBlueprintSummary::Jsonize() const
   if(m_blueprintNameHasBeenSet)
   {
    payload.WithString("BlueprintName", m_blueprintName);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
+
+  }
+
+  if(m_displayDescriptionHasBeenSet)
+  {
+   payload.WithString("DisplayDescription", m_displayDescription);
+
+  }
+
+  if(m_serviceHasBeenSet)
+  {
+   payload.WithString("Service", m_service);
+
+  }
+
+  if(m_useCaseHasBeenSet)
+  {
+   payload.WithString("UseCase", m_useCase);
 
   }
 

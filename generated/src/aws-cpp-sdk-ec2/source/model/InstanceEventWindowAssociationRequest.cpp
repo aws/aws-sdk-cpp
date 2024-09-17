@@ -27,10 +27,8 @@ InstanceEventWindowAssociationRequest::InstanceEventWindowAssociationRequest() :
 {
 }
 
-InstanceEventWindowAssociationRequest::InstanceEventWindowAssociationRequest(const XmlNode& xmlNode) : 
-    m_instanceIdsHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_dedicatedHostIdsHasBeenSet(false)
+InstanceEventWindowAssociationRequest::InstanceEventWindowAssociationRequest(const XmlNode& xmlNode)
+  : InstanceEventWindowAssociationRequest()
 {
   *this = xmlNode;
 }

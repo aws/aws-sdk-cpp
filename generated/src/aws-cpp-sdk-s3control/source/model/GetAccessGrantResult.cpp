@@ -21,8 +21,8 @@ GetAccessGrantResult::GetAccessGrantResult() :
 {
 }
 
-GetAccessGrantResult::GetAccessGrantResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_permission(Permission::NOT_SET)
+GetAccessGrantResult::GetAccessGrantResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetAccessGrantResult()
 {
   *this = result;
 }

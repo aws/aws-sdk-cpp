@@ -26,7 +26,8 @@ namespace Model
     MissingFrag,
     MemoryError,
     MICError,
-    Successful
+    Successful,
+    Device_exist_in_conflict_fuota_task
   };
 
 namespace FuotaDeviceStatusMapper

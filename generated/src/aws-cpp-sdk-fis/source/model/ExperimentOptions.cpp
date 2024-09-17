@@ -22,15 +22,14 @@ ExperimentOptions::ExperimentOptions() :
     m_accountTargeting(AccountTargeting::NOT_SET),
     m_accountTargetingHasBeenSet(false),
     m_emptyTargetResolutionMode(EmptyTargetResolutionMode::NOT_SET),
-    m_emptyTargetResolutionModeHasBeenSet(false)
+    m_emptyTargetResolutionModeHasBeenSet(false),
+    m_actionsMode(ActionsMode::NOT_SET),
+    m_actionsModeHasBeenSet(false)
 {
 }
 
-ExperimentOptions::ExperimentOptions(JsonView jsonValue) : 
-    m_accountTargeting(AccountTargeting::NOT_SET),
-    m_accountTargetingHasBeenSet(false),
-    m_emptyTargetResolutionMode(EmptyTargetResolutionMode::NOT_SET),
-    m_emptyTargetResolutionModeHasBeenSet(false)
+ExperimentOptions::ExperimentOptions(JsonView jsonValue)
+  : ExperimentOptions()
 {
   *this = jsonValue;
 }
@@ -51,6 +50,13 @@ ExperimentOptions& ExperimentOptions::operator =(JsonView jsonValue)
     m_emptyTargetResolutionModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("actionsMode"))
+  {
+    m_actionsMode = ActionsModeMapper::GetActionsModeForName(jsonValue.GetString("actionsMode"));
+
+    m_actionsModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +72,11 @@ JsonValue ExperimentOptions::Jsonize() const
   if(m_emptyTargetResolutionModeHasBeenSet)
   {
    payload.WithString("emptyTargetResolutionMode", EmptyTargetResolutionModeMapper::GetNameForEmptyTargetResolutionMode(m_emptyTargetResolutionMode));
+  }
+
+  if(m_actionsModeHasBeenSet)
+  {
+   payload.WithString("actionsMode", ActionsModeMapper::GetNameForActionsMode(m_actionsMode));
   }
 
   return payload;

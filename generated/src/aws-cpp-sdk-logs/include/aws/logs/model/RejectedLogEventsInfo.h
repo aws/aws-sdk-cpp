@@ -35,68 +35,36 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The log events that are too new.</p>
+     * <p>The index of the first log event that is too new. This field is
+     * inclusive.</p>
      */
     inline int GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
-
-    /**
-     * <p>The log events that are too new.</p>
-     */
     inline bool TooNewLogEventStartIndexHasBeenSet() const { return m_tooNewLogEventStartIndexHasBeenSet; }
-
-    /**
-     * <p>The log events that are too new.</p>
-     */
     inline void SetTooNewLogEventStartIndex(int value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
-
-    /**
-     * <p>The log events that are too new.</p>
-     */
     inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(int value) { SetTooNewLogEventStartIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The log events that are dated too far in the past.</p>
+     * <p>The index of the last log event that is too old. This field is exclusive.</p>
      */
     inline int GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
-
-    /**
-     * <p>The log events that are dated too far in the past.</p>
-     */
     inline bool TooOldLogEventEndIndexHasBeenSet() const { return m_tooOldLogEventEndIndexHasBeenSet; }
-
-    /**
-     * <p>The log events that are dated too far in the past.</p>
-     */
     inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
-
-    /**
-     * <p>The log events that are dated too far in the past.</p>
-     */
     inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expired log events.</p>
      */
     inline int GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
-
-    /**
-     * <p>The expired log events.</p>
-     */
     inline bool ExpiredLogEventEndIndexHasBeenSet() const { return m_expiredLogEventEndIndexHasBeenSet; }
-
-    /**
-     * <p>The expired log events.</p>
-     */
     inline void SetExpiredLogEventEndIndex(int value) { m_expiredLogEventEndIndexHasBeenSet = true; m_expiredLogEventEndIndex = value; }
-
-    /**
-     * <p>The expired log events.</p>
-     */
     inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(int value) { SetExpiredLogEventEndIndex(value); return *this;}
-
+    ///@}
   private:
 
     int m_tooNewLogEventStartIndex;

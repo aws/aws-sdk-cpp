@@ -24,9 +24,8 @@ StackConfigInput::StackConfigInput() :
 {
 }
 
-StackConfigInput::StackConfigInput(JsonView jsonValue) : 
-    m_outputResolutionHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
+StackConfigInput::StackConfigInput(JsonView jsonValue)
+  : StackConfigInput()
 {
   *this = jsonValue;
 }

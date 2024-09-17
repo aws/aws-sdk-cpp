@@ -19,35 +19,54 @@ namespace Model
 {
 
 ControlOperation::ControlOperation() : 
+    m_controlIdentifierHasBeenSet(false),
+    m_enabledControlIdentifierHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_operationIdentifierHasBeenSet(false),
     m_operationType(ControlOperationType::NOT_SET),
     m_operationTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_status(ControlOperationStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_targetIdentifierHasBeenSet(false)
 {
 }
 
-ControlOperation::ControlOperation(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
-    m_operationType(ControlOperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(ControlOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+ControlOperation::ControlOperation(JsonView jsonValue)
+  : ControlOperation()
 {
   *this = jsonValue;
 }
 
 ControlOperation& ControlOperation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("controlIdentifier"))
+  {
+    m_controlIdentifier = jsonValue.GetString("controlIdentifier");
+
+    m_controlIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enabledControlIdentifier"))
+  {
+    m_enabledControlIdentifier = jsonValue.GetString("enabledControlIdentifier");
+
+    m_enabledControlIdentifierHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
 
     m_endTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operationIdentifier"))
+  {
+    m_operationIdentifier = jsonValue.GetString("operationIdentifier");
+
+    m_operationIdentifierHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("operationType"))
@@ -78,6 +97,13 @@ ControlOperation& ControlOperation::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("targetIdentifier"))
+  {
+    m_targetIdentifier = jsonValue.GetString("targetIdentifier");
+
+    m_targetIdentifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -85,9 +111,27 @@ JsonValue ControlOperation::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_controlIdentifierHasBeenSet)
+  {
+   payload.WithString("controlIdentifier", m_controlIdentifier);
+
+  }
+
+  if(m_enabledControlIdentifierHasBeenSet)
+  {
+   payload.WithString("enabledControlIdentifier", m_enabledControlIdentifier);
+
+  }
+
   if(m_endTimeHasBeenSet)
   {
    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_operationIdentifierHasBeenSet)
+  {
+   payload.WithString("operationIdentifier", m_operationIdentifier);
+
   }
 
   if(m_operationTypeHasBeenSet)
@@ -108,6 +152,12 @@ JsonValue ControlOperation::Jsonize() const
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("statusMessage", m_statusMessage);
+
+  }
+
+  if(m_targetIdentifierHasBeenSet)
+  {
+   payload.WithString("targetIdentifier", m_targetIdentifier);
 
   }
 

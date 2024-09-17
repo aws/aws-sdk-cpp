@@ -26,11 +26,8 @@ SystemTemplateDescription::SystemTemplateDescription() :
 {
 }
 
-SystemTemplateDescription::SystemTemplateDescription(JsonView jsonValue) : 
-    m_summaryHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_validatedNamespaceVersion(0),
-    m_validatedNamespaceVersionHasBeenSet(false)
+SystemTemplateDescription::SystemTemplateDescription(JsonView jsonValue)
+  : SystemTemplateDescription()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ EFSAuthorizationConfig::EFSAuthorizationConfig() :
 {
 }
 
-EFSAuthorizationConfig::EFSAuthorizationConfig(JsonView jsonValue) : 
-    m_accessPointIdHasBeenSet(false),
-    m_iam(EFSAuthorizationConfigIAM::NOT_SET),
-    m_iamHasBeenSet(false)
+EFSAuthorizationConfig::EFSAuthorizationConfig(JsonView jsonValue)
+  : EFSAuthorizationConfig()
 {
   *this = jsonValue;
 }

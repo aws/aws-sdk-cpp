@@ -38,87 +38,33 @@ namespace Model
     AWS_WORKSPACESWEB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the IP access settings.</p>
      */
     inline const Aws::String& GetIpAccessSettingsArn() const{ return m_ipAccessSettingsArn; }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline void SetIpAccessSettingsArn(const Aws::String& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline void SetIpAccessSettingsArn(Aws::String&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline void SetIpAccessSettingsArn(const char* value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline AssociateIpAccessSettingsRequest& WithIpAccessSettingsArn(const Aws::String& value) { SetIpAccessSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline AssociateIpAccessSettingsRequest& WithIpAccessSettingsArn(Aws::String&& value) { SetIpAccessSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IP access settings.</p>
-     */
     inline AssociateIpAccessSettingsRequest& WithIpAccessSettingsArn(const char* value) { SetIpAccessSettingsArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const Aws::String& value) { m_portalArnHasBeenSet = true; m_portalArn = value; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(Aws::String&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const char* value) { m_portalArnHasBeenSet = true; m_portalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateIpAccessSettingsRequest& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateIpAccessSettingsRequest& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateIpAccessSettingsRequest& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipAccessSettingsArn;

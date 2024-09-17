@@ -23,8 +23,8 @@ TlsValidationContextAcmTrust::TlsValidationContextAcmTrust() :
 {
 }
 
-TlsValidationContextAcmTrust::TlsValidationContextAcmTrust(JsonView jsonValue) : 
-    m_certificateAuthorityArnsHasBeenSet(false)
+TlsValidationContextAcmTrust::TlsValidationContextAcmTrust(JsonView jsonValue)
+  : TlsValidationContextAcmTrust()
 {
   *this = jsonValue;
 }

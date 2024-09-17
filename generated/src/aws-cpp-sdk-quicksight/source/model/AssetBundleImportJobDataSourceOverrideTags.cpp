@@ -24,9 +24,8 @@ AssetBundleImportJobDataSourceOverrideTags::AssetBundleImportJobDataSourceOverri
 {
 }
 
-AssetBundleImportJobDataSourceOverrideTags::AssetBundleImportJobDataSourceOverrideTags(JsonView jsonValue) : 
-    m_dataSourceIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+AssetBundleImportJobDataSourceOverrideTags::AssetBundleImportJobDataSourceOverrideTags(JsonView jsonValue)
+  : AssetBundleImportJobDataSourceOverrideTags()
 {
   *this = jsonValue;
 }

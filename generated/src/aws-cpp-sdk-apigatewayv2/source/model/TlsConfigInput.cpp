@@ -23,8 +23,8 @@ TlsConfigInput::TlsConfigInput() :
 {
 }
 
-TlsConfigInput::TlsConfigInput(JsonView jsonValue) : 
-    m_serverNameToVerifyHasBeenSet(false)
+TlsConfigInput::TlsConfigInput(JsonView jsonValue)
+  : TlsConfigInput()
 {
   *this = jsonValue;
 }

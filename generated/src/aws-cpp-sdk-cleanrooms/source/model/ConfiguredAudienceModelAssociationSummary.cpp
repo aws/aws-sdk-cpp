@@ -33,18 +33,8 @@ ConfiguredAudienceModelAssociationSummary::ConfiguredAudienceModelAssociationSum
 {
 }
 
-ConfiguredAudienceModelAssociationSummary::ConfiguredAudienceModelAssociationSummary(JsonView jsonValue) : 
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ConfiguredAudienceModelAssociationSummary::ConfiguredAudienceModelAssociationSummary(JsonView jsonValue)
+  : ConfiguredAudienceModelAssociationSummary()
 {
   *this = jsonValue;
 }

@@ -55,138 +55,61 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The number of units to request, filled the default target capacity type.</p>
      */
     inline int GetTotalTargetCapacity() const{ return m_totalTargetCapacity; }
-
-    /**
-     * <p>The number of units to request, filled the default target capacity type.</p>
-     */
     inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }
-
-    /**
-     * <p>The number of units to request, filled the default target capacity type.</p>
-     */
     inline void SetTotalTargetCapacity(int value) { m_totalTargetCapacityHasBeenSet = true; m_totalTargetCapacity = value; }
-
-    /**
-     * <p>The number of units to request, filled the default target capacity type.</p>
-     */
     inline TargetCapacitySpecification& WithTotalTargetCapacity(int value) { SetTotalTargetCapacity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of On-Demand units to request. If you specify a target capacity
      * for Spot units, you cannot specify a target capacity for On-Demand units.</p>
      */
     inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
-
-    /**
-     * <p>The number of On-Demand units to request. If you specify a target capacity
-     * for Spot units, you cannot specify a target capacity for On-Demand units.</p>
-     */
     inline bool OnDemandTargetCapacityHasBeenSet() const { return m_onDemandTargetCapacityHasBeenSet; }
-
-    /**
-     * <p>The number of On-Demand units to request. If you specify a target capacity
-     * for Spot units, you cannot specify a target capacity for On-Demand units.</p>
-     */
     inline void SetOnDemandTargetCapacity(int value) { m_onDemandTargetCapacityHasBeenSet = true; m_onDemandTargetCapacity = value; }
-
-    /**
-     * <p>The number of On-Demand units to request. If you specify a target capacity
-     * for Spot units, you cannot specify a target capacity for On-Demand units.</p>
-     */
     inline TargetCapacitySpecification& WithOnDemandTargetCapacity(int value) { SetOnDemandTargetCapacity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of Spot units to launch. If you specify a target capacity
      * for On-Demand units, you cannot specify a target capacity for Spot units.</p>
      */
     inline int GetSpotTargetCapacity() const{ return m_spotTargetCapacity; }
-
-    /**
-     * <p>The maximum number of Spot units to launch. If you specify a target capacity
-     * for On-Demand units, you cannot specify a target capacity for Spot units.</p>
-     */
     inline bool SpotTargetCapacityHasBeenSet() const { return m_spotTargetCapacityHasBeenSet; }
-
-    /**
-     * <p>The maximum number of Spot units to launch. If you specify a target capacity
-     * for On-Demand units, you cannot specify a target capacity for Spot units.</p>
-     */
     inline void SetSpotTargetCapacity(int value) { m_spotTargetCapacityHasBeenSet = true; m_spotTargetCapacity = value; }
-
-    /**
-     * <p>The maximum number of Spot units to launch. If you specify a target capacity
-     * for On-Demand units, you cannot specify a target capacity for Spot units.</p>
-     */
     inline TargetCapacitySpecification& WithSpotTargetCapacity(int value) { SetSpotTargetCapacity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default target capacity type.</p>
      */
     inline const DefaultTargetCapacityType& GetDefaultTargetCapacityType() const{ return m_defaultTargetCapacityType; }
-
-    /**
-     * <p>The default target capacity type.</p>
-     */
     inline bool DefaultTargetCapacityTypeHasBeenSet() const { return m_defaultTargetCapacityTypeHasBeenSet; }
-
-    /**
-     * <p>The default target capacity type.</p>
-     */
     inline void SetDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = value; }
-
-    /**
-     * <p>The default target capacity type.</p>
-     */
     inline void SetDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = std::move(value); }
-
-    /**
-     * <p>The default target capacity type.</p>
-     */
     inline TargetCapacitySpecification& WithDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { SetDefaultTargetCapacityType(value); return *this;}
-
-    /**
-     * <p>The default target capacity type.</p>
-     */
     inline TargetCapacitySpecification& WithDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { SetDefaultTargetCapacityType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit for the target capacity.</p>
      */
     inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
-
-    /**
-     * <p>The unit for the target capacity.</p>
-     */
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
-
-    /**
-     * <p>The unit for the target capacity.</p>
-     */
     inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
-
-    /**
-     * <p>The unit for the target capacity.</p>
-     */
     inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
-
-    /**
-     * <p>The unit for the target capacity.</p>
-     */
     inline TargetCapacitySpecification& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
-
-    /**
-     * <p>The unit for the target capacity.</p>
-     */
     inline TargetCapacitySpecification& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_totalTargetCapacity;

@@ -25,10 +25,8 @@ ResolverRuleConfig::ResolverRuleConfig() :
 {
 }
 
-ResolverRuleConfig::ResolverRuleConfig(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_targetIpsHasBeenSet(false),
-    m_resolverEndpointIdHasBeenSet(false)
+ResolverRuleConfig::ResolverRuleConfig(JsonView jsonValue)
+  : ResolverRuleConfig()
 {
   *this = jsonValue;
 }

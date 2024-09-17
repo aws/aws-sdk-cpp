@@ -28,6 +28,7 @@ namespace Aws
             void SetParameter(EndpointParameter param);
             void SetStringParameter(Aws::String name, Aws::String value);
             void SetBooleanParameter(Aws::String name, bool value);
+            void SetStringArrayParameter(Aws::String name, const Aws::Vector<Aws::String>& value);
 
             const Aws::Vector<EndpointParameter>& GetAllParameters() const;
         protected:

@@ -27,12 +27,8 @@ ApplicationResponse::ApplicationResponse() :
 {
 }
 
-ApplicationResponse::ApplicationResponse(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+ApplicationResponse::ApplicationResponse(JsonView jsonValue)
+  : ApplicationResponse()
 {
   *this = jsonValue;
 }

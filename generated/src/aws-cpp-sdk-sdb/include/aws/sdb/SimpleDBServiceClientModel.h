@@ -22,6 +22,7 @@
 #include <aws/sdb/model/GetAttributesResult.h>
 #include <aws/sdb/model/ListDomainsResult.h>
 #include <aws/sdb/model/SelectResult.h>
+#include <aws/sdb/model/ListDomainsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SimpleDBClient header */
 
@@ -56,7 +57,7 @@ namespace Aws
 
   namespace SimpleDB
   {
-    using SimpleDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SimpleDBClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SimpleDBEndpointProviderBase = Aws::SimpleDB::Endpoint::SimpleDBEndpointProviderBase;
     using SimpleDBEndpointProvider = Aws::SimpleDB::Endpoint::SimpleDBEndpointProvider;
 

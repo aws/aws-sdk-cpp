@@ -29,14 +29,8 @@ DistributionConfigurationSummary::DistributionConfigurationSummary() :
 {
 }
 
-DistributionConfigurationSummary::DistributionConfigurationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+DistributionConfigurationSummary::DistributionConfigurationSummary(JsonView jsonValue)
+  : DistributionConfigurationSummary()
 {
   *this = jsonValue;
 }

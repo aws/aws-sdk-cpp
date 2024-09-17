@@ -20,15 +20,13 @@ namespace Model
 
 BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry() : 
     m_geofenceIdHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false),
-    m_geometryHasBeenSet(false)
+    m_geometryHasBeenSet(false),
+    m_geofencePropertiesHasBeenSet(false)
 {
 }
 
-BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry(JsonView jsonValue) : 
-    m_geofenceIdHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false),
-    m_geometryHasBeenSet(false)
+BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry(JsonView jsonValue)
+  : BatchPutGeofenceRequestEntry()
 {
   *this = jsonValue;
 }
@@ -42,6 +40,13 @@ BatchPutGeofenceRequestEntry& BatchPutGeofenceRequestEntry::operator =(JsonView 
     m_geofenceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Geometry"))
+  {
+    m_geometry = jsonValue.GetObject("Geometry");
+
+    m_geometryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("GeofenceProperties"))
   {
     Aws::Map<Aws::String, JsonView> geofencePropertiesJsonMap = jsonValue.GetObject("GeofenceProperties").GetAllObjects();
@@ -50,13 +55,6 @@ BatchPutGeofenceRequestEntry& BatchPutGeofenceRequestEntry::operator =(JsonView 
       m_geofenceProperties[geofencePropertiesItem.first] = geofencePropertiesItem.second.AsString();
     }
     m_geofencePropertiesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Geometry"))
-  {
-    m_geometry = jsonValue.GetObject("Geometry");
-
-    m_geometryHasBeenSet = true;
   }
 
   return *this;
@@ -72,6 +70,12 @@ JsonValue BatchPutGeofenceRequestEntry::Jsonize() const
 
   }
 
+  if(m_geometryHasBeenSet)
+  {
+   payload.WithObject("Geometry", m_geometry.Jsonize());
+
+  }
+
   if(m_geofencePropertiesHasBeenSet)
   {
    JsonValue geofencePropertiesJsonMap;
@@ -80,12 +84,6 @@ JsonValue BatchPutGeofenceRequestEntry::Jsonize() const
      geofencePropertiesJsonMap.WithString(geofencePropertiesItem.first, geofencePropertiesItem.second);
    }
    payload.WithObject("GeofenceProperties", std::move(geofencePropertiesJsonMap));
-
-  }
-
-  if(m_geometryHasBeenSet)
-  {
-   payload.WithObject("Geometry", m_geometry.Jsonize());
 
   }
 

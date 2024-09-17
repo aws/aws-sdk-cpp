@@ -16,6 +16,7 @@ SetUserPoolMfaConfigRequest::SetUserPoolMfaConfigRequest() :
     m_userPoolIdHasBeenSet(false),
     m_smsMfaConfigurationHasBeenSet(false),
     m_softwareTokenMfaConfigurationHasBeenSet(false),
+    m_emailMfaConfigurationHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false)
 {
@@ -40,6 +41,12 @@ Aws::String SetUserPoolMfaConfigRequest::SerializePayload() const
   if(m_softwareTokenMfaConfigurationHasBeenSet)
   {
    payload.WithObject("SoftwareTokenMfaConfiguration", m_softwareTokenMfaConfiguration.Jsonize());
+
+  }
+
+  if(m_emailMfaConfigurationHasBeenSet)
+  {
+   payload.WithObject("EmailMfaConfiguration", m_emailMfaConfiguration.Jsonize());
 
   }
 

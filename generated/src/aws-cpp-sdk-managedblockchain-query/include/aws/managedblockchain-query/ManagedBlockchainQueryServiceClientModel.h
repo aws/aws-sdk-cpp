@@ -23,9 +23,11 @@
 #include <aws/managedblockchain-query/model/GetTokenBalanceResult.h>
 #include <aws/managedblockchain-query/model/GetTransactionResult.h>
 #include <aws/managedblockchain-query/model/ListAssetContractsResult.h>
+#include <aws/managedblockchain-query/model/ListFilteredTransactionEventsResult.h>
 #include <aws/managedblockchain-query/model/ListTokenBalancesResult.h>
 #include <aws/managedblockchain-query/model/ListTransactionEventsResult.h>
 #include <aws/managedblockchain-query/model/ListTransactionsResult.h>
+#include <aws/managedblockchain-query/model/BatchGetTokenBalanceRequest.h>
 /* End of service model headers required in ManagedBlockchainQueryClient header */
 
 namespace Aws
@@ -59,7 +61,7 @@ namespace Aws
 
   namespace ManagedBlockchainQuery
   {
-    using ManagedBlockchainQueryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ManagedBlockchainQueryClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ManagedBlockchainQueryEndpointProviderBase = Aws::ManagedBlockchainQuery::Endpoint::ManagedBlockchainQueryEndpointProviderBase;
     using ManagedBlockchainQueryEndpointProvider = Aws::ManagedBlockchainQuery::Endpoint::ManagedBlockchainQueryEndpointProvider;
 
@@ -71,6 +73,7 @@ namespace Aws
       class GetTokenBalanceRequest;
       class GetTransactionRequest;
       class ListAssetContractsRequest;
+      class ListFilteredTransactionEventsRequest;
       class ListTokenBalancesRequest;
       class ListTransactionEventsRequest;
       class ListTransactionsRequest;
@@ -82,6 +85,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetTokenBalanceResult, ManagedBlockchainQueryError> GetTokenBalanceOutcome;
       typedef Aws::Utils::Outcome<GetTransactionResult, ManagedBlockchainQueryError> GetTransactionOutcome;
       typedef Aws::Utils::Outcome<ListAssetContractsResult, ManagedBlockchainQueryError> ListAssetContractsOutcome;
+      typedef Aws::Utils::Outcome<ListFilteredTransactionEventsResult, ManagedBlockchainQueryError> ListFilteredTransactionEventsOutcome;
       typedef Aws::Utils::Outcome<ListTokenBalancesResult, ManagedBlockchainQueryError> ListTokenBalancesOutcome;
       typedef Aws::Utils::Outcome<ListTransactionEventsResult, ManagedBlockchainQueryError> ListTransactionEventsOutcome;
       typedef Aws::Utils::Outcome<ListTransactionsResult, ManagedBlockchainQueryError> ListTransactionsOutcome;
@@ -93,6 +97,7 @@ namespace Aws
       typedef std::future<GetTokenBalanceOutcome> GetTokenBalanceOutcomeCallable;
       typedef std::future<GetTransactionOutcome> GetTransactionOutcomeCallable;
       typedef std::future<ListAssetContractsOutcome> ListAssetContractsOutcomeCallable;
+      typedef std::future<ListFilteredTransactionEventsOutcome> ListFilteredTransactionEventsOutcomeCallable;
       typedef std::future<ListTokenBalancesOutcome> ListTokenBalancesOutcomeCallable;
       typedef std::future<ListTransactionEventsOutcome> ListTransactionEventsOutcomeCallable;
       typedef std::future<ListTransactionsOutcome> ListTransactionsOutcomeCallable;
@@ -107,6 +112,7 @@ namespace Aws
     typedef std::function<void(const ManagedBlockchainQueryClient*, const Model::GetTokenBalanceRequest&, const Model::GetTokenBalanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTokenBalanceResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainQueryClient*, const Model::GetTransactionRequest&, const Model::GetTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransactionResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainQueryClient*, const Model::ListAssetContractsRequest&, const Model::ListAssetContractsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetContractsResponseReceivedHandler;
+    typedef std::function<void(const ManagedBlockchainQueryClient*, const Model::ListFilteredTransactionEventsRequest&, const Model::ListFilteredTransactionEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFilteredTransactionEventsResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainQueryClient*, const Model::ListTokenBalancesRequest&, const Model::ListTokenBalancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTokenBalancesResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainQueryClient*, const Model::ListTransactionEventsRequest&, const Model::ListTransactionEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTransactionEventsResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainQueryClient*, const Model::ListTransactionsRequest&, const Model::ListTransactionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTransactionsResponseReceivedHandler;

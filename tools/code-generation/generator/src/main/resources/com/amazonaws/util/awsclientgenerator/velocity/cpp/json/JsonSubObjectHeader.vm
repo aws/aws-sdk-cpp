@@ -45,6 +45,9 @@ namespace Model
     ${exportMacro} ${typeInfo.className}();
     ${exportMacro} ${typeInfo.className}(${typeInfo.jsonViewType} jsonValue);
     ${exportMacro} ${classNameRef} operator=(${typeInfo.jsonViewType} jsonValue);
+#if ($typeInfo.shape.isEvent() && $typeInfo.className.endsWith("InitialResponse"))
+    ${exportMacro} ${typeInfo.className}(const Http::HeaderValueCollection& responseHeaders);
+#end
     ${exportMacro} ${typeInfo.jsonType} Jsonize() const;
 
 #set($useRequiredField = true)

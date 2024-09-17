@@ -23,8 +23,8 @@ IncludedProperty::IncludedProperty() :
 {
 }
 
-IncludedProperty::IncludedProperty(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+IncludedProperty::IncludedProperty(JsonView jsonValue)
+  : IncludedProperty()
 {
   *this = jsonValue;
 }

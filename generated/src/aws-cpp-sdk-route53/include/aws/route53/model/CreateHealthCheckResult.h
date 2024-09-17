@@ -39,94 +39,41 @@ namespace Model
     AWS_ROUTE53_API CreateHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains identifying information about the health
      * check.</p>
      */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
-
-    /**
-     * <p>A complex type that contains identifying information about the health
-     * check.</p>
-     */
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
-
-    /**
-     * <p>A complex type that contains identifying information about the health
-     * check.</p>
-     */
     inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = std::move(value); }
-
-    /**
-     * <p>A complex type that contains identifying information about the health
-     * check.</p>
-     */
     inline CreateHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
-
-    /**
-     * <p>A complex type that contains identifying information about the health
-     * check.</p>
-     */
     inline CreateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique URL representing the new health check.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The unique URL representing the new health check.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>The unique URL representing the new health check.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>The unique URL representing the new health check.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>The unique URL representing the new health check.</p>
-     */
     inline CreateHealthCheckResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The unique URL representing the new health check.</p>
-     */
     inline CreateHealthCheckResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique URL representing the new health check.</p>
-     */
     inline CreateHealthCheckResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateHealthCheckResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateHealthCheckResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateHealthCheckResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     HealthCheck m_healthCheck;

@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API ListTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const TemplatesResponse& GetTemplatesResponse() const{ return m_templatesResponse; }
-
-    
     inline void SetTemplatesResponse(const TemplatesResponse& value) { m_templatesResponse = value; }
-
-    
     inline void SetTemplatesResponse(TemplatesResponse&& value) { m_templatesResponse = std::move(value); }
-
-    
     inline ListTemplatesResult& WithTemplatesResponse(const TemplatesResponse& value) { SetTemplatesResponse(value); return *this;}
-
-    
     inline ListTemplatesResult& WithTemplatesResponse(TemplatesResponse&& value) { SetTemplatesResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TemplatesResponse m_templatesResponse;

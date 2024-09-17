@@ -25,8 +25,8 @@ ContinuousDeploymentPolicySummary::ContinuousDeploymentPolicySummary() :
 {
 }
 
-ContinuousDeploymentPolicySummary::ContinuousDeploymentPolicySummary(const XmlNode& xmlNode) : 
-    m_continuousDeploymentPolicyHasBeenSet(false)
+ContinuousDeploymentPolicySummary::ContinuousDeploymentPolicySummary(const XmlNode& xmlNode)
+  : ContinuousDeploymentPolicySummary()
 {
   *this = xmlNode;
 }

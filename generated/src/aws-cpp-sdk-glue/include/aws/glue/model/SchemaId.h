@@ -38,144 +38,49 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
      * or <code>SchemaName</code> has to be provided.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-     * or <code>SchemaName</code> has to be provided.</p>
-     */
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-     * or <code>SchemaName</code> has to be provided.</p>
-     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-     * or <code>SchemaName</code> has to be provided.</p>
-     */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-     * or <code>SchemaName</code> has to be provided.</p>
-     */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-     * or <code>SchemaName</code> has to be provided.</p>
-     */
     inline SchemaId& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-     * or <code>SchemaName</code> has to be provided.</p>
-     */
     inline SchemaId& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-     * or <code>SchemaName</code> has to be provided.</p>
-     */
     inline SchemaId& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the schema. One of <code>SchemaArn</code> or
      * <code>SchemaName</code> has to be provided.</p>
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
-
-    /**
-     * <p>The name of the schema. One of <code>SchemaArn</code> or
-     * <code>SchemaName</code> has to be provided.</p>
-     */
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-
-    /**
-     * <p>The name of the schema. One of <code>SchemaArn</code> or
-     * <code>SchemaName</code> has to be provided.</p>
-     */
     inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-
-    /**
-     * <p>The name of the schema. One of <code>SchemaArn</code> or
-     * <code>SchemaName</code> has to be provided.</p>
-     */
     inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-
-    /**
-     * <p>The name of the schema. One of <code>SchemaArn</code> or
-     * <code>SchemaName</code> has to be provided.</p>
-     */
     inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-
-    /**
-     * <p>The name of the schema. One of <code>SchemaArn</code> or
-     * <code>SchemaName</code> has to be provided.</p>
-     */
     inline SchemaId& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-
-    /**
-     * <p>The name of the schema. One of <code>SchemaArn</code> or
-     * <code>SchemaName</code> has to be provided.</p>
-     */
     inline SchemaId& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema. One of <code>SchemaArn</code> or
-     * <code>SchemaName</code> has to be provided.</p>
-     */
     inline SchemaId& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the schema registry that contains the schema.</p>
      */
     inline const Aws::String& GetRegistryName() const{ return m_registryName; }
-
-    /**
-     * <p>The name of the schema registry that contains the schema.</p>
-     */
     inline bool RegistryNameHasBeenSet() const { return m_registryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the schema registry that contains the schema.</p>
-     */
     inline void SetRegistryName(const Aws::String& value) { m_registryNameHasBeenSet = true; m_registryName = value; }
-
-    /**
-     * <p>The name of the schema registry that contains the schema.</p>
-     */
     inline void SetRegistryName(Aws::String&& value) { m_registryNameHasBeenSet = true; m_registryName = std::move(value); }
-
-    /**
-     * <p>The name of the schema registry that contains the schema.</p>
-     */
     inline void SetRegistryName(const char* value) { m_registryNameHasBeenSet = true; m_registryName.assign(value); }
-
-    /**
-     * <p>The name of the schema registry that contains the schema.</p>
-     */
     inline SchemaId& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-
-    /**
-     * <p>The name of the schema registry that contains the schema.</p>
-     */
     inline SchemaId& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema registry that contains the schema.</p>
-     */
     inline SchemaId& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_schemaArn;

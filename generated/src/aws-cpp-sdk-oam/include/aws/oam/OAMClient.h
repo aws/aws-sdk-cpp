@@ -92,11 +92,15 @@ namespace OAM
 
         /**
          * <p>Creates a link between a source account and a sink that you have created in a
-         * monitoring account.</p> <p>Before you create a link, you must create a sink in
-         * the monitoring account and create a sink policy in that account. The sink policy
-         * must permit the source account to link to it. You can grant permission to source
-         * accounts by granting permission to an entire organization or to individual
-         * accounts.</p> <p>For more information, see <a
+         * monitoring account. After the link is created, data is sent from the source
+         * account to the monitoring account. When you create a link, you can optionally
+         * specify filters that specify which metric namespaces and which log groups are
+         * shared from the source account to the monitoring account.</p> <p>Before you
+         * create a link, you must create a sink in the monitoring account and create a
+         * sink policy in that account. The sink policy must permit the source account to
+         * link to it. You can grant permission to source accounts by granting permission
+         * to an entire organization or to individual accounts.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a>
          * and <a
          * href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_PutSinkPolicy.html">PutSinkPolicy</a>.</p>
@@ -134,8 +138,8 @@ namespace OAM
          * you create a sink, you must create a sink policy that allows source accounts to
          * attach to it. For more information, see <a
          * href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_PutSinkPolicy.html">PutSinkPolicy</a>.</p>
-         * <p>Each account can contain one sink. If you delete a sink, you can then create
-         * a new one in that account.</p><p><h3>See Also:</h3>   <a
+         * <p>Each account can contain one sink per Region. If you delete a sink, you can
+         * then create a new one in that Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/CreateSink">AWS API
          * Reference</a></p>
          */
@@ -334,13 +338,13 @@ namespace OAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListLinks">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListLinksOutcome ListLinks(const Model::ListLinksRequest& request) const;
+        virtual Model::ListLinksOutcome ListLinks(const Model::ListLinksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLinks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLinksRequestT = Model::ListLinksRequest>
-        Model::ListLinksOutcomeCallable ListLinksCallable(const ListLinksRequestT& request) const
+        Model::ListLinksOutcomeCallable ListLinksCallable(const ListLinksRequestT& request = {}) const
         {
             return SubmitCallable(&OAMClient::ListLinks, request);
         }
@@ -349,7 +353,7 @@ namespace OAM
          * An Async wrapper for ListLinks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLinksRequestT = Model::ListLinksRequest>
-        void ListLinksAsync(const ListLinksRequestT& request, const ListLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLinksAsync(const ListLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLinksRequestT& request = {}) const
         {
             return SubmitAsync(&OAMClient::ListLinks, request, handler, context);
         }
@@ -360,13 +364,13 @@ namespace OAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListSinks">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListSinksOutcome ListSinks(const Model::ListSinksRequest& request) const;
+        virtual Model::ListSinksOutcome ListSinks(const Model::ListSinksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSinks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSinksRequestT = Model::ListSinksRequest>
-        Model::ListSinksOutcomeCallable ListSinksCallable(const ListSinksRequestT& request) const
+        Model::ListSinksOutcomeCallable ListSinksCallable(const ListSinksRequestT& request = {}) const
         {
             return SubmitCallable(&OAMClient::ListSinks, request);
         }
@@ -375,7 +379,7 @@ namespace OAM
          * An Async wrapper for ListSinks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSinksRequestT = Model::ListSinksRequest>
-        void ListSinksAsync(const ListSinksRequestT& request, const ListSinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSinksAsync(const ListSinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSinksRequestT& request = {}) const
         {
             return SubmitAsync(&OAMClient::ListSinks, request, handler, context);
         }
@@ -513,8 +517,10 @@ namespace OAM
         /**
          * <p>Use this operation to change what types of data are shared from a source
          * account to its linked monitoring account sink. You can't change the sink or
-         * change the monitoring account with this operation.</p> <p>To update the list of
-         * tags associated with the sink, use <a
+         * change the monitoring account with this operation.</p> <p>When you update a
+         * link, you can optionally specify filters that specify which metric namespaces
+         * and which log groups are shared from the source account to the monitoring
+         * account.</p> <p>To update the list of tags associated with the sink, use <a
          * href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_TagResource.html">TagResource</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/UpdateLink">AWS API
@@ -548,7 +554,6 @@ namespace OAM
       void init(const OAMClientConfiguration& clientConfiguration);
 
       OAMClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<OAMEndpointProviderBase> m_endpointProvider;
   };
 

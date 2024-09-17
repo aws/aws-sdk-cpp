@@ -24,9 +24,8 @@ RemediationParameterValue::RemediationParameterValue() :
 {
 }
 
-RemediationParameterValue::RemediationParameterValue(JsonView jsonValue) : 
-    m_resourceValueHasBeenSet(false),
-    m_staticValueHasBeenSet(false)
+RemediationParameterValue::RemediationParameterValue(JsonView jsonValue)
+  : RemediationParameterValue()
 {
   *this = jsonValue;
 }

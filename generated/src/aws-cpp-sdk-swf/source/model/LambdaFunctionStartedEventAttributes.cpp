@@ -24,9 +24,8 @@ LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes() :
 {
 }
 
-LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes(JsonView jsonValue) : 
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false)
+LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes(JsonView jsonValue)
+  : LambdaFunctionStartedEventAttributes()
 {
   *this = jsonValue;
 }

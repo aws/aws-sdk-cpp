@@ -24,11 +24,8 @@ GetObjectAttributesResult::GetObjectAttributesResult() :
 {
 }
 
-GetObjectAttributesResult::GetObjectAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_deleteMarker(false),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_storageClass(StorageClass::NOT_SET),
-    m_objectSize(0)
+GetObjectAttributesResult::GetObjectAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetObjectAttributesResult()
 {
   *this = result;
 }
@@ -77,7 +74,11 @@ GetObjectAttributesResult& GetObjectAttributesResult::operator =(const Aws::Amaz
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-    m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+    m_lastModified = DateTime(lastModifiedIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
+    if(!m_lastModified.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3::GetObjectAttributesResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
+    }
   }
 
   const auto& versionIdIter = headers.find("x-amz-version-id");

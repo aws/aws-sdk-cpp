@@ -44,87 +44,33 @@ namespace Model
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
     inline const Aws::String& GetPermissionGroupId() const{ return m_permissionGroupId; }
-
-    /**
-     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-     */
     inline bool PermissionGroupIdHasBeenSet() const { return m_permissionGroupIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-     */
     inline void SetPermissionGroupId(const Aws::String& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = value; }
-
-    /**
-     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-     */
     inline void SetPermissionGroupId(Aws::String&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-     */
     inline void SetPermissionGroupId(const char* value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-     */
     inline PermissionGroupParams& WithPermissionGroupId(const Aws::String& value) { SetPermissionGroupId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-     */
     inline PermissionGroupParams& WithPermissionGroupId(Aws::String&& value) { SetPermissionGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-     */
     inline PermissionGroupParams& WithPermissionGroupId(const char* value) { SetPermissionGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of resource permissions.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetDatasetPermissions() const{ return m_datasetPermissions; }
-
-    /**
-     * <p>List of resource permissions.</p>
-     */
     inline bool DatasetPermissionsHasBeenSet() const { return m_datasetPermissionsHasBeenSet; }
-
-    /**
-     * <p>List of resource permissions.</p>
-     */
     inline void SetDatasetPermissions(const Aws::Vector<ResourcePermission>& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions = value; }
-
-    /**
-     * <p>List of resource permissions.</p>
-     */
     inline void SetDatasetPermissions(Aws::Vector<ResourcePermission>&& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions = std::move(value); }
-
-    /**
-     * <p>List of resource permissions.</p>
-     */
     inline PermissionGroupParams& WithDatasetPermissions(const Aws::Vector<ResourcePermission>& value) { SetDatasetPermissions(value); return *this;}
-
-    /**
-     * <p>List of resource permissions.</p>
-     */
     inline PermissionGroupParams& WithDatasetPermissions(Aws::Vector<ResourcePermission>&& value) { SetDatasetPermissions(std::move(value)); return *this;}
-
-    /**
-     * <p>List of resource permissions.</p>
-     */
     inline PermissionGroupParams& AddDatasetPermissions(const ResourcePermission& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions.push_back(value); return *this; }
-
-    /**
-     * <p>List of resource permissions.</p>
-     */
     inline PermissionGroupParams& AddDatasetPermissions(ResourcePermission&& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_permissionGroupId;

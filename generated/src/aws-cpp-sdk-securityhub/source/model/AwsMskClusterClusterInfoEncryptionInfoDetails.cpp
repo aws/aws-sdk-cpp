@@ -24,9 +24,8 @@ AwsMskClusterClusterInfoEncryptionInfoDetails::AwsMskClusterClusterInfoEncryptio
 {
 }
 
-AwsMskClusterClusterInfoEncryptionInfoDetails::AwsMskClusterClusterInfoEncryptionInfoDetails(JsonView jsonValue) : 
-    m_encryptionInTransitHasBeenSet(false),
-    m_encryptionAtRestHasBeenSet(false)
+AwsMskClusterClusterInfoEncryptionInfoDetails::AwsMskClusterClusterInfoEncryptionInfoDetails(JsonView jsonValue)
+  : AwsMskClusterClusterInfoEncryptionInfoDetails()
 {
   *this = jsonValue;
 }

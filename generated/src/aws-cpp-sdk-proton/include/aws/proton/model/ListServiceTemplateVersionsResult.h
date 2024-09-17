@@ -34,120 +34,45 @@ namespace Model
     AWS_PROTON_API ListServiceTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A token that indicates the location of the next major or minor version in the
      * array of major or minor versions of a service template, after the current
      * requested list of service major or minor versions.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the current
-     * requested list of service major or minor versions.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the current
-     * requested list of service major or minor versions.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the current
-     * requested list of service major or minor versions.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the current
-     * requested list of service major or minor versions.</p>
-     */
     inline ListServiceTemplateVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the current
-     * requested list of service major or minor versions.</p>
-     */
     inline ListServiceTemplateVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the current
-     * requested list of service major or minor versions.</p>
-     */
     inline ListServiceTemplateVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of major or minor versions of a service template with detail
      * data.</p>
      */
     inline const Aws::Vector<ServiceTemplateVersionSummary>& GetTemplateVersions() const{ return m_templateVersions; }
-
-    /**
-     * <p>An array of major or minor versions of a service template with detail
-     * data.</p>
-     */
     inline void SetTemplateVersions(const Aws::Vector<ServiceTemplateVersionSummary>& value) { m_templateVersions = value; }
-
-    /**
-     * <p>An array of major or minor versions of a service template with detail
-     * data.</p>
-     */
     inline void SetTemplateVersions(Aws::Vector<ServiceTemplateVersionSummary>&& value) { m_templateVersions = std::move(value); }
-
-    /**
-     * <p>An array of major or minor versions of a service template with detail
-     * data.</p>
-     */
     inline ListServiceTemplateVersionsResult& WithTemplateVersions(const Aws::Vector<ServiceTemplateVersionSummary>& value) { SetTemplateVersions(value); return *this;}
-
-    /**
-     * <p>An array of major or minor versions of a service template with detail
-     * data.</p>
-     */
     inline ListServiceTemplateVersionsResult& WithTemplateVersions(Aws::Vector<ServiceTemplateVersionSummary>&& value) { SetTemplateVersions(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of major or minor versions of a service template with detail
-     * data.</p>
-     */
     inline ListServiceTemplateVersionsResult& AddTemplateVersions(const ServiceTemplateVersionSummary& value) { m_templateVersions.push_back(value); return *this; }
-
-    /**
-     * <p>An array of major or minor versions of a service template with detail
-     * data.</p>
-     */
     inline ListServiceTemplateVersionsResult& AddTemplateVersions(ServiceTemplateVersionSummary&& value) { m_templateVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListServiceTemplateVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListServiceTemplateVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListServiceTemplateVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

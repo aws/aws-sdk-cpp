@@ -29,14 +29,8 @@ WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule() :
 {
 }
 
-WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule(JsonView jsonValue) : 
-    m_mondayHasBeenSet(false),
-    m_tuesdayHasBeenSet(false),
-    m_wednesdayHasBeenSet(false),
-    m_thursdayHasBeenSet(false),
-    m_fridayHasBeenSet(false),
-    m_saturdayHasBeenSet(false),
-    m_sundayHasBeenSet(false)
+WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule(JsonView jsonValue)
+  : WeeklyAutoScalingSchedule()
 {
   *this = jsonValue;
 }

@@ -19,31 +19,35 @@ namespace Model
 {
 
 InvocationInput::InvocationInput() : 
-    m_traceIdHasBeenSet(false),
+    m_actionGroupInvocationInputHasBeenSet(false),
+    m_codeInterpreterInvocationInputHasBeenSet(false),
     m_invocationType(InvocationType::NOT_SET),
     m_invocationTypeHasBeenSet(false),
-    m_actionGroupInvocationInputHasBeenSet(false),
-    m_knowledgeBaseLookupInputHasBeenSet(false)
+    m_knowledgeBaseLookupInputHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
-InvocationInput::InvocationInput(JsonView jsonValue) : 
-    m_traceIdHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false),
-    m_actionGroupInvocationInputHasBeenSet(false),
-    m_knowledgeBaseLookupInputHasBeenSet(false)
+InvocationInput::InvocationInput(JsonView jsonValue)
+  : InvocationInput()
 {
   *this = jsonValue;
 }
 
 InvocationInput& InvocationInput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("traceId"))
+  if(jsonValue.ValueExists("actionGroupInvocationInput"))
   {
-    m_traceId = jsonValue.GetString("traceId");
+    m_actionGroupInvocationInput = jsonValue.GetObject("actionGroupInvocationInput");
 
-    m_traceIdHasBeenSet = true;
+    m_actionGroupInvocationInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("codeInterpreterInvocationInput"))
+  {
+    m_codeInterpreterInvocationInput = jsonValue.GetObject("codeInterpreterInvocationInput");
+
+    m_codeInterpreterInvocationInputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("invocationType"))
@@ -53,18 +57,18 @@ InvocationInput& InvocationInput::operator =(JsonView jsonValue)
     m_invocationTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("actionGroupInvocationInput"))
-  {
-    m_actionGroupInvocationInput = jsonValue.GetObject("actionGroupInvocationInput");
-
-    m_actionGroupInvocationInputHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("knowledgeBaseLookupInput"))
   {
     m_knowledgeBaseLookupInput = jsonValue.GetObject("knowledgeBaseLookupInput");
 
     m_knowledgeBaseLookupInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("traceId"))
+  {
+    m_traceId = jsonValue.GetString("traceId");
+
+    m_traceIdHasBeenSet = true;
   }
 
   return *this;
@@ -74,9 +78,15 @@ JsonValue InvocationInput::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_traceIdHasBeenSet)
+  if(m_actionGroupInvocationInputHasBeenSet)
   {
-   payload.WithString("traceId", m_traceId);
+   payload.WithObject("actionGroupInvocationInput", m_actionGroupInvocationInput.Jsonize());
+
+  }
+
+  if(m_codeInterpreterInvocationInputHasBeenSet)
+  {
+   payload.WithObject("codeInterpreterInvocationInput", m_codeInterpreterInvocationInput.Jsonize());
 
   }
 
@@ -85,15 +95,15 @@ JsonValue InvocationInput::Jsonize() const
    payload.WithString("invocationType", InvocationTypeMapper::GetNameForInvocationType(m_invocationType));
   }
 
-  if(m_actionGroupInvocationInputHasBeenSet)
-  {
-   payload.WithObject("actionGroupInvocationInput", m_actionGroupInvocationInput.Jsonize());
-
-  }
-
   if(m_knowledgeBaseLookupInputHasBeenSet)
   {
    payload.WithObject("knowledgeBaseLookupInput", m_knowledgeBaseLookupInput.Jsonize());
+
+  }
+
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("traceId", m_traceId);
 
   }
 

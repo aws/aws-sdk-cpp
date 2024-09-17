@@ -25,10 +25,8 @@ BatchDisassociateApprovalRuleTemplateFromRepositoriesError::BatchDisassociateApp
 {
 }
 
-BatchDisassociateApprovalRuleTemplateFromRepositoriesError::BatchDisassociateApprovalRuleTemplateFromRepositoriesError(JsonView jsonValue) : 
-    m_repositoryNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+BatchDisassociateApprovalRuleTemplateFromRepositoriesError::BatchDisassociateApprovalRuleTemplateFromRepositoriesError(JsonView jsonValue)
+  : BatchDisassociateApprovalRuleTemplateFromRepositoriesError()
 {
   *this = jsonValue;
 }

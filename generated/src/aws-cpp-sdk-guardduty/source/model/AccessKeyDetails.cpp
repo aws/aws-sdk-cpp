@@ -26,11 +26,8 @@ AccessKeyDetails::AccessKeyDetails() :
 {
 }
 
-AccessKeyDetails::AccessKeyDetails(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+AccessKeyDetails::AccessKeyDetails(JsonView jsonValue)
+  : AccessKeyDetails()
 {
   *this = jsonValue;
 }

@@ -58,43 +58,8 @@ BuildBatch::BuildBatch() :
 {
 }
 
-BuildBatch::BuildBatch(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_currentPhaseHasBeenSet(false),
-    m_buildBatchStatus(StatusType::NOT_SET),
-    m_buildBatchStatusHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_resolvedSourceVersionHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_phasesHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_secondarySourcesHasBeenSet(false),
-    m_secondarySourceVersionsHasBeenSet(false),
-    m_artifactsHasBeenSet(false),
-    m_secondaryArtifactsHasBeenSet(false),
-    m_cacheHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_logConfigHasBeenSet(false),
-    m_buildTimeoutInMinutes(0),
-    m_buildTimeoutInMinutesHasBeenSet(false),
-    m_queuedTimeoutInMinutes(0),
-    m_queuedTimeoutInMinutesHasBeenSet(false),
-    m_complete(false),
-    m_completeHasBeenSet(false),
-    m_initiatorHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_buildBatchNumber(0),
-    m_buildBatchNumberHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false),
-    m_buildBatchConfigHasBeenSet(false),
-    m_buildGroupsHasBeenSet(false),
-    m_debugSessionEnabled(false),
-    m_debugSessionEnabledHasBeenSet(false)
+BuildBatch::BuildBatch(JsonView jsonValue)
+  : BuildBatch()
 {
   *this = jsonValue;
 }

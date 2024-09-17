@@ -11,9 +11,6 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
-#foreach($RequestImport in $RequestlessOperations)
-\#include <aws/$metadata.projectName/model/${RequestImport}Request.h>
-#end
 
 namespace ${rootNamespace}
 {
@@ -78,7 +75,6 @@ namespace ${serviceNamespace}
 #if($serviceModel.endpointRules)
       ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
 #end
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 #if($serviceModel.endpointRules)
       std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end

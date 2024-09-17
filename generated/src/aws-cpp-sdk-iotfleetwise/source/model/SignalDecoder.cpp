@@ -29,14 +29,8 @@ SignalDecoder::SignalDecoder() :
 {
 }
 
-SignalDecoder::SignalDecoder(JsonView jsonValue) : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_type(SignalDecoderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_interfaceIdHasBeenSet(false),
-    m_canSignalHasBeenSet(false),
-    m_obdSignalHasBeenSet(false),
-    m_messageSignalHasBeenSet(false)
+SignalDecoder::SignalDecoder(JsonView jsonValue)
+  : SignalDecoder()
 {
   *this = jsonValue;
 }

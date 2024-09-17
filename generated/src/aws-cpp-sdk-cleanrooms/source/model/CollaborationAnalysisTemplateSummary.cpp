@@ -31,16 +31,8 @@ CollaborationAnalysisTemplateSummary::CollaborationAnalysisTemplateSummary() :
 {
 }
 
-CollaborationAnalysisTemplateSummary::CollaborationAnalysisTemplateSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+CollaborationAnalysisTemplateSummary::CollaborationAnalysisTemplateSummary(JsonView jsonValue)
+  : CollaborationAnalysisTemplateSummary()
 {
   *this = jsonValue;
 }

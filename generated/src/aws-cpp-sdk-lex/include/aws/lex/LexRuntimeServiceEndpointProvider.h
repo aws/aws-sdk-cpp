@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LexRuntimeServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LexRuntimeServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LexRuntimeServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LexRuntimeServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

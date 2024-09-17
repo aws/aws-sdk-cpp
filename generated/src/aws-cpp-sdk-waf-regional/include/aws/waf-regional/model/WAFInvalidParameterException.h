@@ -57,68 +57,37 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ParameterExceptionField& GetField() const{ return m_field; }
-
-    
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-
-    
     inline void SetField(const ParameterExceptionField& value) { m_fieldHasBeenSet = true; m_field = value; }
-
-    
     inline void SetField(ParameterExceptionField&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-
-    
     inline WAFInvalidParameterException& WithField(const ParameterExceptionField& value) { SetField(value); return *this;}
-
-    
     inline WAFInvalidParameterException& WithField(ParameterExceptionField&& value) { SetField(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetParameter() const{ return m_parameter; }
-
-    
     inline bool ParameterHasBeenSet() const { return m_parameterHasBeenSet; }
-
-    
     inline void SetParameter(const Aws::String& value) { m_parameterHasBeenSet = true; m_parameter = value; }
-
-    
     inline void SetParameter(Aws::String&& value) { m_parameterHasBeenSet = true; m_parameter = std::move(value); }
-
-    
     inline void SetParameter(const char* value) { m_parameterHasBeenSet = true; m_parameter.assign(value); }
-
-    
     inline WAFInvalidParameterException& WithParameter(const Aws::String& value) { SetParameter(value); return *this;}
-
-    
     inline WAFInvalidParameterException& WithParameter(Aws::String&& value) { SetParameter(std::move(value)); return *this;}
-
-    
     inline WAFInvalidParameterException& WithParameter(const char* value) { SetParameter(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ParameterExceptionReason& GetReason() const{ return m_reason; }
-
-    
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    
     inline void SetReason(const ParameterExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    
     inline void SetReason(ParameterExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    
     inline WAFInvalidParameterException& WithReason(const ParameterExceptionReason& value) { SetReason(value); return *this;}
-
-    
     inline WAFInvalidParameterException& WithReason(ParameterExceptionReason&& value) { SetReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ParameterExceptionField m_field;

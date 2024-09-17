@@ -39,46 +39,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about traffic distributions.</p>
      */
     inline const Aws::Vector<Distribution>& GetDistributions() const{ return m_distributions; }
-
-    /**
-     * <p>Information about traffic distributions.</p>
-     */
     inline bool DistributionsHasBeenSet() const { return m_distributionsHasBeenSet; }
-
-    /**
-     * <p>Information about traffic distributions.</p>
-     */
     inline void SetDistributions(const Aws::Vector<Distribution>& value) { m_distributionsHasBeenSet = true; m_distributions = value; }
-
-    /**
-     * <p>Information about traffic distributions.</p>
-     */
     inline void SetDistributions(Aws::Vector<Distribution>&& value) { m_distributionsHasBeenSet = true; m_distributions = std::move(value); }
-
-    /**
-     * <p>Information about traffic distributions.</p>
-     */
     inline TelephonyConfig& WithDistributions(const Aws::Vector<Distribution>& value) { SetDistributions(value); return *this;}
-
-    /**
-     * <p>Information about traffic distributions.</p>
-     */
     inline TelephonyConfig& WithDistributions(Aws::Vector<Distribution>&& value) { SetDistributions(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about traffic distributions.</p>
-     */
     inline TelephonyConfig& AddDistributions(const Distribution& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(value); return *this; }
-
-    /**
-     * <p>Information about traffic distributions.</p>
-     */
     inline TelephonyConfig& AddDistributions(Distribution&& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Distribution> m_distributions;

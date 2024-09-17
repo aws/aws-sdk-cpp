@@ -34,116 +34,44 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
      * channel.</p>
      */
     inline const Aws::String& GetPageId() const{ return m_pageId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
-     * channel.</p>
-     */
     inline bool PageIdHasBeenSet() const { return m_pageIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
-     * channel.</p>
-     */
     inline void SetPageId(const Aws::String& value) { m_pageIdHasBeenSet = true; m_pageId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
-     * channel.</p>
-     */
     inline void SetPageId(Aws::String&& value) { m_pageIdHasBeenSet = true; m_pageId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
-     * channel.</p>
-     */
     inline void SetPageId(const char* value) { m_pageIdHasBeenSet = true; m_pageId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
-     * channel.</p>
-     */
     inline ListPageReceiptsRequest& WithPageId(const Aws::String& value) { SetPageId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
-     * channel.</p>
-     */
     inline ListPageReceiptsRequest& WithPageId(Aws::String&& value) { SetPageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the engagement to a specific contact
-     * channel.</p>
-     */
     inline ListPageReceiptsRequest& WithPageId(const char* value) { SetPageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token to continue to the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token to continue to the next page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token to continue to the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token to continue to the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token to continue to the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token to continue to the next page of results.</p>
-     */
     inline ListPageReceiptsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token to continue to the next page of results.</p>
-     */
     inline ListPageReceiptsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token to continue to the next page of results.</p>
-     */
     inline ListPageReceiptsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of acknowledgements per page of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of acknowledgements per page of results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of acknowledgements per page of results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of acknowledgements per page of results.</p>
-     */
     inline ListPageReceiptsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pageId;

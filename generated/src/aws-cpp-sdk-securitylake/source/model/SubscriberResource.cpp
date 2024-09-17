@@ -38,23 +38,8 @@ SubscriberResource::SubscriberResource() :
 {
 }
 
-SubscriberResource::SubscriberResource(JsonView jsonValue) : 
-    m_accessTypesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false),
-    m_resourceShareNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_subscriberArnHasBeenSet(false),
-    m_subscriberDescriptionHasBeenSet(false),
-    m_subscriberEndpointHasBeenSet(false),
-    m_subscriberIdHasBeenSet(false),
-    m_subscriberIdentityHasBeenSet(false),
-    m_subscriberNameHasBeenSet(false),
-    m_subscriberStatus(SubscriberStatus::NOT_SET),
-    m_subscriberStatusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+SubscriberResource::SubscriberResource(JsonView jsonValue)
+  : SubscriberResource()
 {
   *this = jsonValue;
 }

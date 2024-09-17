@@ -23,8 +23,8 @@ BatchCreateIndexResponse::BatchCreateIndexResponse() :
 {
 }
 
-BatchCreateIndexResponse::BatchCreateIndexResponse(JsonView jsonValue) : 
-    m_objectIdentifierHasBeenSet(false)
+BatchCreateIndexResponse::BatchCreateIndexResponse(JsonView jsonValue)
+  : BatchCreateIndexResponse()
 {
   *this = jsonValue;
 }

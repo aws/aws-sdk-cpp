@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CognitoIdentityProviderClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CognitoIdentityProviderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CognitoIdentityProviderClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CognitoIdentityProviderBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

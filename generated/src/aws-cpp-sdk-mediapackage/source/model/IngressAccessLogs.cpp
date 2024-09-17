@@ -23,8 +23,8 @@ IngressAccessLogs::IngressAccessLogs() :
 {
 }
 
-IngressAccessLogs::IngressAccessLogs(JsonView jsonValue) : 
-    m_logGroupNameHasBeenSet(false)
+IngressAccessLogs::IngressAccessLogs(JsonView jsonValue)
+  : IngressAccessLogs()
 {
   *this = jsonValue;
 }

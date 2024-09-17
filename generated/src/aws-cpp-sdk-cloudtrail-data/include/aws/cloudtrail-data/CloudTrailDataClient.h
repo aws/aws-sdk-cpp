@@ -120,7 +120,6 @@ namespace CloudTrailData
       void init(const CloudTrailDataClientConfiguration& clientConfiguration);
 
       CloudTrailDataClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CloudTrailDataEndpointProviderBase> m_endpointProvider;
   };
 

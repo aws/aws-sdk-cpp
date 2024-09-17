@@ -41,67 +41,29 @@ namespace Model
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier issued to this resource by an external identity provider.</p>
      */
     inline const ExternalId& GetExternalId() const{ return m_externalId; }
-
-    /**
-     * <p>The identifier issued to this resource by an external identity provider.</p>
-     */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-
-    /**
-     * <p>The identifier issued to this resource by an external identity provider.</p>
-     */
     inline void SetExternalId(const ExternalId& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-
-    /**
-     * <p>The identifier issued to this resource by an external identity provider.</p>
-     */
     inline void SetExternalId(ExternalId&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-
-    /**
-     * <p>The identifier issued to this resource by an external identity provider.</p>
-     */
     inline AlternateIdentifier& WithExternalId(const ExternalId& value) { SetExternalId(value); return *this;}
-
-    /**
-     * <p>The identifier issued to this resource by an external identity provider.</p>
-     */
     inline AlternateIdentifier& WithExternalId(ExternalId&& value) { SetExternalId(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An entity attribute that's unique to a specific entity.</p>
      */
     inline const UniqueAttribute& GetUniqueAttribute() const{ return m_uniqueAttribute; }
-
-    /**
-     * <p>An entity attribute that's unique to a specific entity.</p>
-     */
     inline bool UniqueAttributeHasBeenSet() const { return m_uniqueAttributeHasBeenSet; }
-
-    /**
-     * <p>An entity attribute that's unique to a specific entity.</p>
-     */
     inline void SetUniqueAttribute(const UniqueAttribute& value) { m_uniqueAttributeHasBeenSet = true; m_uniqueAttribute = value; }
-
-    /**
-     * <p>An entity attribute that's unique to a specific entity.</p>
-     */
     inline void SetUniqueAttribute(UniqueAttribute&& value) { m_uniqueAttributeHasBeenSet = true; m_uniqueAttribute = std::move(value); }
-
-    /**
-     * <p>An entity attribute that's unique to a specific entity.</p>
-     */
     inline AlternateIdentifier& WithUniqueAttribute(const UniqueAttribute& value) { SetUniqueAttribute(value); return *this;}
-
-    /**
-     * <p>An entity attribute that's unique to a specific entity.</p>
-     */
     inline AlternateIdentifier& WithUniqueAttribute(UniqueAttribute&& value) { SetUniqueAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExternalId m_externalId;

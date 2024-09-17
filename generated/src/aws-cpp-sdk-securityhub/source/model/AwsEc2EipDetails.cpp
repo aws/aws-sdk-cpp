@@ -32,17 +32,8 @@ AwsEc2EipDetails::AwsEc2EipDetails() :
 {
 }
 
-AwsEc2EipDetails::AwsEc2EipDetails(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_publicIpv4PoolHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfaceOwnerIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+AwsEc2EipDetails::AwsEc2EipDetails(JsonView jsonValue)
+  : AwsEc2EipDetails()
 {
   *this = jsonValue;
 }

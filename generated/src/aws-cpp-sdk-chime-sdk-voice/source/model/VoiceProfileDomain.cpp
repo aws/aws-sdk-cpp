@@ -29,14 +29,8 @@ VoiceProfileDomain::VoiceProfileDomain() :
 {
 }
 
-VoiceProfileDomain::VoiceProfileDomain(JsonView jsonValue) : 
-    m_voiceProfileDomainIdHasBeenSet(false),
-    m_voiceProfileDomainArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+VoiceProfileDomain::VoiceProfileDomain(JsonView jsonValue)
+  : VoiceProfileDomain()
 {
   *this = jsonValue;
 }

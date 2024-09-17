@@ -41,118 +41,45 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Received status.</p>
      */
     inline const ReceivedStatus& GetReceivedStatus() const{ return m_receivedStatus; }
-
-    /**
-     * <p>Received status.</p>
-     */
     inline bool ReceivedStatusHasBeenSet() const { return m_receivedStatusHasBeenSet; }
-
-    /**
-     * <p>Received status.</p>
-     */
     inline void SetReceivedStatus(const ReceivedStatus& value) { m_receivedStatusHasBeenSet = true; m_receivedStatus = value; }
-
-    /**
-     * <p>Received status.</p>
-     */
     inline void SetReceivedStatus(ReceivedStatus&& value) { m_receivedStatusHasBeenSet = true; m_receivedStatus = std::move(value); }
-
-    /**
-     * <p>Received status.</p>
-     */
     inline ReceivedMetadata& WithReceivedStatus(const ReceivedStatus& value) { SetReceivedStatus(value); return *this;}
-
-    /**
-     * <p>Received status.</p>
-     */
     inline ReceivedMetadata& WithReceivedStatus(ReceivedStatus&& value) { SetReceivedStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Received status reason.</p>
      */
     inline const Aws::String& GetReceivedStatusReason() const{ return m_receivedStatusReason; }
-
-    /**
-     * <p>Received status reason.</p>
-     */
     inline bool ReceivedStatusReasonHasBeenSet() const { return m_receivedStatusReasonHasBeenSet; }
-
-    /**
-     * <p>Received status reason.</p>
-     */
     inline void SetReceivedStatusReason(const Aws::String& value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason = value; }
-
-    /**
-     * <p>Received status reason.</p>
-     */
     inline void SetReceivedStatusReason(Aws::String&& value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason = std::move(value); }
-
-    /**
-     * <p>Received status reason.</p>
-     */
     inline void SetReceivedStatusReason(const char* value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason.assign(value); }
-
-    /**
-     * <p>Received status reason.</p>
-     */
     inline ReceivedMetadata& WithReceivedStatusReason(const Aws::String& value) { SetReceivedStatusReason(value); return *this;}
-
-    /**
-     * <p>Received status reason.</p>
-     */
     inline ReceivedMetadata& WithReceivedStatusReason(Aws::String&& value) { SetReceivedStatusReason(std::move(value)); return *this;}
-
-    /**
-     * <p>Received status reason.</p>
-     */
     inline ReceivedMetadata& WithReceivedStatusReason(const char* value) { SetReceivedStatusReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allowed operations.</p>
      */
     inline const Aws::Vector<AllowedOperation>& GetAllowedOperations() const{ return m_allowedOperations; }
-
-    /**
-     * <p>Allowed operations.</p>
-     */
     inline bool AllowedOperationsHasBeenSet() const { return m_allowedOperationsHasBeenSet; }
-
-    /**
-     * <p>Allowed operations.</p>
-     */
     inline void SetAllowedOperations(const Aws::Vector<AllowedOperation>& value) { m_allowedOperationsHasBeenSet = true; m_allowedOperations = value; }
-
-    /**
-     * <p>Allowed operations.</p>
-     */
     inline void SetAllowedOperations(Aws::Vector<AllowedOperation>&& value) { m_allowedOperationsHasBeenSet = true; m_allowedOperations = std::move(value); }
-
-    /**
-     * <p>Allowed operations.</p>
-     */
     inline ReceivedMetadata& WithAllowedOperations(const Aws::Vector<AllowedOperation>& value) { SetAllowedOperations(value); return *this;}
-
-    /**
-     * <p>Allowed operations.</p>
-     */
     inline ReceivedMetadata& WithAllowedOperations(Aws::Vector<AllowedOperation>&& value) { SetAllowedOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>Allowed operations.</p>
-     */
     inline ReceivedMetadata& AddAllowedOperations(const AllowedOperation& value) { m_allowedOperationsHasBeenSet = true; m_allowedOperations.push_back(value); return *this; }
-
-    /**
-     * <p>Allowed operations.</p>
-     */
     inline ReceivedMetadata& AddAllowedOperations(AllowedOperation&& value) { m_allowedOperationsHasBeenSet = true; m_allowedOperations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ReceivedStatus m_receivedStatus;

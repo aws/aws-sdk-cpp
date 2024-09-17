@@ -29,14 +29,8 @@ MetricSetSummary::MetricSetSummary() :
 {
 }
 
-MetricSetSummary::MetricSetSummary(JsonView jsonValue) : 
-    m_metricSetArnHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_metricSetDescriptionHasBeenSet(false),
-    m_metricSetNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+MetricSetSummary::MetricSetSummary(JsonView jsonValue)
+  : MetricSetSummary()
 {
   *this = jsonValue;
 }

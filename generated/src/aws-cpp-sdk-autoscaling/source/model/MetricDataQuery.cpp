@@ -30,13 +30,8 @@ MetricDataQuery::MetricDataQuery() :
 {
 }
 
-MetricDataQuery::MetricDataQuery(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_metricStatHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_returnData(false),
-    m_returnDataHasBeenSet(false)
+MetricDataQuery::MetricDataQuery(const XmlNode& xmlNode)
+  : MetricDataQuery()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ DataConfig::DataConfig() :
 {
 }
 
-DataConfig::DataConfig(JsonView jsonValue) : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_attributeConfigsHasBeenSet(false),
-    m_additionalDatasetsHasBeenSet(false)
+DataConfig::DataConfig(JsonView jsonValue)
+  : DataConfig()
 {
   *this = jsonValue;
 }

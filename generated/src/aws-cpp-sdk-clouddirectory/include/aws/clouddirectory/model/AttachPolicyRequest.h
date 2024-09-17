@@ -35,122 +35,45 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where both objects reside. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where both objects reside. For more information, see <a>arns</a>.</p>
-     */
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where both objects reside. For more information, see <a>arns</a>.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where both objects reside. For more information, see <a>arns</a>.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where both objects reside. For more information, see <a>arns</a>.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where both objects reside. For more information, see <a>arns</a>.</p>
-     */
     inline AttachPolicyRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where both objects reside. For more information, see <a>arns</a>.</p>
-     */
     inline AttachPolicyRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-     * where both objects reside. For more information, see <a>arns</a>.</p>
-     */
     inline AttachPolicyRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reference that is associated with the policy object.</p>
      */
     inline const ObjectReference& GetPolicyReference() const{ return m_policyReference; }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline bool PolicyReferenceHasBeenSet() const { return m_policyReferenceHasBeenSet; }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline void SetPolicyReference(const ObjectReference& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline void SetPolicyReference(ObjectReference&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = std::move(value); }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline AttachPolicyRequest& WithPolicyReference(const ObjectReference& value) { SetPolicyReference(value); return *this;}
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline AttachPolicyRequest& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reference that identifies the object to which the policy will be
      * attached.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline AttachPolicyRequest& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline AttachPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

@@ -33,43 +33,25 @@ namespace Model
     AWS_OPSWORKSCM_API RestoreServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Server& GetServer() const{ return m_server; }
-
-    
     inline void SetServer(const Server& value) { m_server = value; }
-
-    
     inline void SetServer(Server&& value) { m_server = std::move(value); }
-
-    
     inline RestoreServerResult& WithServer(const Server& value) { SetServer(value); return *this;}
-
-    
     inline RestoreServerResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RestoreServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RestoreServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RestoreServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Server m_server;

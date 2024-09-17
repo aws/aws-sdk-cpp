@@ -23,8 +23,8 @@ BatchScheduleActionCreateRequest::BatchScheduleActionCreateRequest() :
 {
 }
 
-BatchScheduleActionCreateRequest::BatchScheduleActionCreateRequest(JsonView jsonValue) : 
-    m_scheduleActionsHasBeenSet(false)
+BatchScheduleActionCreateRequest::BatchScheduleActionCreateRequest(JsonView jsonValue)
+  : BatchScheduleActionCreateRequest()
 {
   *this = jsonValue;
 }

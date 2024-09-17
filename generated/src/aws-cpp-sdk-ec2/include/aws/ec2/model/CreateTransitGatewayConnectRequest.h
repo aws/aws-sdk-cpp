@@ -39,127 +39,48 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
      * Amazon Web Services Direct Connect attachment.</p>
      */
     inline const Aws::String& GetTransportTransitGatewayAttachmentId() const{ return m_transportTransitGatewayAttachmentId; }
-
-    /**
-     * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * Amazon Web Services Direct Connect attachment.</p>
-     */
     inline bool TransportTransitGatewayAttachmentIdHasBeenSet() const { return m_transportTransitGatewayAttachmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * Amazon Web Services Direct Connect attachment.</p>
-     */
     inline void SetTransportTransitGatewayAttachmentId(const Aws::String& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = value; }
-
-    /**
-     * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * Amazon Web Services Direct Connect attachment.</p>
-     */
     inline void SetTransportTransitGatewayAttachmentId(Aws::String&& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * Amazon Web Services Direct Connect attachment.</p>
-     */
     inline void SetTransportTransitGatewayAttachmentId(const char* value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * Amazon Web Services Direct Connect attachment.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(const Aws::String& value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * Amazon Web Services Direct Connect attachment.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(Aws::String&& value) { SetTransportTransitGatewayAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
-     * Amazon Web Services Direct Connect attachment.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(const char* value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Connect attachment options.</p>
      */
     inline const CreateTransitGatewayConnectRequestOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The Connect attachment options.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The Connect attachment options.</p>
-     */
     inline void SetOptions(const CreateTransitGatewayConnectRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The Connect attachment options.</p>
-     */
     inline void SetOptions(CreateTransitGatewayConnectRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The Connect attachment options.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithOptions(const CreateTransitGatewayConnectRequestOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The Connect attachment options.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithOptions(CreateTransitGatewayConnectRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to apply to the Connect attachment.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags to apply to the Connect attachment.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags to apply to the Connect attachment.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags to apply to the Connect attachment.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags to apply to the Connect attachment.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags to apply to the Connect attachment.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to apply to the Connect attachment.</p>
-     */
     inline CreateTransitGatewayConnectRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to apply to the Connect attachment.</p>
-     */
     inline CreateTransitGatewayConnectRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -167,31 +88,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateTransitGatewayConnectRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transportTransitGatewayAttachmentId;

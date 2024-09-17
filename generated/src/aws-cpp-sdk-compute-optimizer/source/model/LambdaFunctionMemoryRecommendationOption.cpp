@@ -29,14 +29,8 @@ LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOpti
 {
 }
 
-LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOption(JsonView jsonValue) : 
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_projectedUtilizationMetricsHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
+LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOption(JsonView jsonValue)
+  : LambdaFunctionMemoryRecommendationOption()
 {
   *this = jsonValue;
 }

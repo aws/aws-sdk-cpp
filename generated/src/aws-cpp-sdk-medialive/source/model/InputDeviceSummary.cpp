@@ -43,28 +43,8 @@ InputDeviceSummary::InputDeviceSummary() :
 {
 }
 
-InputDeviceSummary::InputDeviceSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectionState(InputDeviceConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_deviceSettingsSyncState(DeviceSettingsSyncState::NOT_SET),
-    m_deviceSettingsSyncStateHasBeenSet(false),
-    m_deviceUpdateStatus(DeviceUpdateStatus::NOT_SET),
-    m_deviceUpdateStatusHasBeenSet(false),
-    m_hdDeviceSettingsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkSettingsHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_type(InputDeviceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_uhdDeviceSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_medialiveInputArnsHasBeenSet(false),
-    m_outputType(InputDeviceOutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false)
+InputDeviceSummary::InputDeviceSummary(JsonView jsonValue)
+  : InputDeviceSummary()
 {
   *this = jsonValue;
 }

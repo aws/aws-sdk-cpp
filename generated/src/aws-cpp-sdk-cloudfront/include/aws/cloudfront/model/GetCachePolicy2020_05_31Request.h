@@ -32,6 +32,7 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the cache policy. If the cache policy is attached
      * to a distribution's cache behavior, you can get the policy's identifier using
@@ -40,70 +41,14 @@ namespace Model
      * <code>ListCachePolicies</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique identifier for the cache policy. If the cache policy is attached
-     * to a distribution's cache behavior, you can get the policy's identifier using
-     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-     * policy is not attached to a cache behavior, you can get the identifier using
-     * <code>ListCachePolicies</code>.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the cache policy. If the cache policy is attached
-     * to a distribution's cache behavior, you can get the policy's identifier using
-     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-     * policy is not attached to a cache behavior, you can get the identifier using
-     * <code>ListCachePolicies</code>.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique identifier for the cache policy. If the cache policy is attached
-     * to a distribution's cache behavior, you can get the policy's identifier using
-     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-     * policy is not attached to a cache behavior, you can get the identifier using
-     * <code>ListCachePolicies</code>.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the cache policy. If the cache policy is attached
-     * to a distribution's cache behavior, you can get the policy's identifier using
-     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-     * policy is not attached to a cache behavior, you can get the identifier using
-     * <code>ListCachePolicies</code>.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique identifier for the cache policy. If the cache policy is attached
-     * to a distribution's cache behavior, you can get the policy's identifier using
-     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-     * policy is not attached to a cache behavior, you can get the identifier using
-     * <code>ListCachePolicies</code>.</p>
-     */
     inline GetCachePolicy2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the cache policy. If the cache policy is attached
-     * to a distribution's cache behavior, you can get the policy's identifier using
-     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-     * policy is not attached to a cache behavior, you can get the identifier using
-     * <code>ListCachePolicies</code>.</p>
-     */
     inline GetCachePolicy2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the cache policy. If the cache policy is attached
-     * to a distribution's cache behavior, you can get the policy's identifier using
-     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-     * policy is not attached to a cache behavior, you can get the identifier using
-     * <code>ListCachePolicies</code>.</p>
-     */
     inline GetCachePolicy2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

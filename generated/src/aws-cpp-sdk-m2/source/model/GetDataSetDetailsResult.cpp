@@ -24,10 +24,8 @@ GetDataSetDetailsResult::GetDataSetDetailsResult() :
 {
 }
 
-GetDataSetDetailsResult::GetDataSetDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_blocksize(0),
-    m_fileSize(0),
-    m_recordLength(0)
+GetDataSetDetailsResult::GetDataSetDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataSetDetailsResult()
 {
   *this = result;
 }

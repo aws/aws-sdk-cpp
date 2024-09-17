@@ -23,8 +23,8 @@ KnowledgeBaseQuery::KnowledgeBaseQuery() :
 {
 }
 
-KnowledgeBaseQuery::KnowledgeBaseQuery(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+KnowledgeBaseQuery::KnowledgeBaseQuery(JsonView jsonValue)
+  : KnowledgeBaseQuery()
 {
   *this = jsonValue;
 }

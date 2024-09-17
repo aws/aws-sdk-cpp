@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status of the virtual service.</p>
      */
     inline const VirtualServiceStatusCode& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the virtual service.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the virtual service.</p>
-     */
     inline void SetStatus(const VirtualServiceStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the virtual service.</p>
-     */
     inline void SetStatus(VirtualServiceStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the virtual service.</p>
-     */
     inline VirtualServiceStatus& WithStatus(const VirtualServiceStatusCode& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the virtual service.</p>
-     */
     inline VirtualServiceStatus& WithStatus(VirtualServiceStatusCode&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VirtualServiceStatusCode m_status;

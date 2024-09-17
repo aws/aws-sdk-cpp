@@ -24,9 +24,8 @@ GaugeChartFieldWells::GaugeChartFieldWells() :
 {
 }
 
-GaugeChartFieldWells::GaugeChartFieldWells(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false),
-    m_targetValuesHasBeenSet(false)
+GaugeChartFieldWells::GaugeChartFieldWells(JsonView jsonValue)
+  : GaugeChartFieldWells()
 {
   *this = jsonValue;
 }

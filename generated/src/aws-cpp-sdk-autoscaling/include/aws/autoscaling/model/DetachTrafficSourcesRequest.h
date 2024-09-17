@@ -38,95 +38,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DetachTrafficSourcesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DetachTrafficSourcesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DetachTrafficSourcesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
      * 10 traffic sources.</p>
      */
     inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
-
-    /**
-     * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p>
-     */
     inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
-
-    /**
-     * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p>
-     */
     inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
-
-    /**
-     * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p>
-     */
     inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
-
-    /**
-     * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p>
-     */
     inline DetachTrafficSourcesRequest& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
-
-    /**
-     * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p>
-     */
     inline DetachTrafficSourcesRequest& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p>
-     */
     inline DetachTrafficSourcesRequest& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
-
-    /**
-     * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p>
-     */
     inline DetachTrafficSourcesRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

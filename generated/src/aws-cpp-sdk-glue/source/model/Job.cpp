@@ -20,6 +20,10 @@ namespace Model
 
 Job::Job() : 
     m_nameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
+    m_jobRunQueuingEnabled(false),
+    m_jobRunQueuingEnabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -46,39 +50,14 @@ Job::Job() :
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+    m_sourceControlDetailsHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false),
+    m_profileNameHasBeenSet(false)
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_executionPropertyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_defaultArgumentsHasBeenSet(false),
-    m_nonOverridableArgumentsHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_codeGenConfigurationNodesHasBeenSet(false),
-    m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }
@@ -90,6 +69,20 @@ Job& Job::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobMode"))
+  {
+    m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
+
+    m_jobModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobRunQueuingEnabled"))
+  {
+    m_jobRunQueuingEnabled = jsonValue.GetBool("JobRunQueuingEnabled");
+
+    m_jobRunQueuingEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -248,6 +241,20 @@ Job& Job::operator =(JsonView jsonValue)
     m_sourceControlDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaintenanceWindow"))
+  {
+    m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
+
+    m_maintenanceWindowHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProfileName"))
+  {
+    m_profileName = jsonValue.GetString("ProfileName");
+
+    m_profileNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -258,6 +265,17 @@ JsonValue Job::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_jobModeHasBeenSet)
+  {
+   payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
+  }
+
+  if(m_jobRunQueuingEnabledHasBeenSet)
+  {
+   payload.WithBool("JobRunQueuingEnabled", m_jobRunQueuingEnabled);
 
   }
 
@@ -395,6 +413,18 @@ JsonValue Job::Jsonize() const
   if(m_sourceControlDetailsHasBeenSet)
   {
    payload.WithObject("SourceControlDetails", m_sourceControlDetails.Jsonize());
+
+  }
+
+  if(m_maintenanceWindowHasBeenSet)
+  {
+   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
+
+  }
+
+  if(m_profileNameHasBeenSet)
+  {
+   payload.WithString("ProfileName", m_profileName);
 
   }
 

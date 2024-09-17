@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeCatalystClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeCatalystClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeCatalystClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeCatalystBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

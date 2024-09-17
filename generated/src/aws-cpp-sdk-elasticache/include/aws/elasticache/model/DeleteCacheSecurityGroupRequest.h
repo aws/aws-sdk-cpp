@@ -40,54 +40,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the cache security group to delete.</p>  <p>You cannot
      * delete the default security group.</p> 
      */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
-
-    /**
-     * <p>The name of the cache security group to delete.</p>  <p>You cannot
-     * delete the default security group.</p> 
-     */
     inline bool CacheSecurityGroupNameHasBeenSet() const { return m_cacheSecurityGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cache security group to delete.</p>  <p>You cannot
-     * delete the default security group.</p> 
-     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
-
-    /**
-     * <p>The name of the cache security group to delete.</p>  <p>You cannot
-     * delete the default security group.</p> 
-     */
     inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the cache security group to delete.</p>  <p>You cannot
-     * delete the default security group.</p> 
-     */
     inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
-
-    /**
-     * <p>The name of the cache security group to delete.</p>  <p>You cannot
-     * delete the default security group.</p> 
-     */
     inline DeleteCacheSecurityGroupRequest& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the cache security group to delete.</p>  <p>You cannot
-     * delete the default security group.</p> 
-     */
     inline DeleteCacheSecurityGroupRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cache security group to delete.</p>  <p>You cannot
-     * delete the default security group.</p> 
-     */
     inline DeleteCacheSecurityGroupRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cacheSecurityGroupName;

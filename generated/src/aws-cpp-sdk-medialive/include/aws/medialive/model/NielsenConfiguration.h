@@ -38,77 +38,31 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Enter the Distributor ID assigned to your organization by Nielsen.
      */
     inline const Aws::String& GetDistributorId() const{ return m_distributorId; }
-
-    /**
-     * Enter the Distributor ID assigned to your organization by Nielsen.
-     */
     inline bool DistributorIdHasBeenSet() const { return m_distributorIdHasBeenSet; }
-
-    /**
-     * Enter the Distributor ID assigned to your organization by Nielsen.
-     */
     inline void SetDistributorId(const Aws::String& value) { m_distributorIdHasBeenSet = true; m_distributorId = value; }
-
-    /**
-     * Enter the Distributor ID assigned to your organization by Nielsen.
-     */
     inline void SetDistributorId(Aws::String&& value) { m_distributorIdHasBeenSet = true; m_distributorId = std::move(value); }
-
-    /**
-     * Enter the Distributor ID assigned to your organization by Nielsen.
-     */
     inline void SetDistributorId(const char* value) { m_distributorIdHasBeenSet = true; m_distributorId.assign(value); }
-
-    /**
-     * Enter the Distributor ID assigned to your organization by Nielsen.
-     */
     inline NielsenConfiguration& WithDistributorId(const Aws::String& value) { SetDistributorId(value); return *this;}
-
-    /**
-     * Enter the Distributor ID assigned to your organization by Nielsen.
-     */
     inline NielsenConfiguration& WithDistributorId(Aws::String&& value) { SetDistributorId(std::move(value)); return *this;}
-
-    /**
-     * Enter the Distributor ID assigned to your organization by Nielsen.
-     */
     inline NielsenConfiguration& WithDistributorId(const char* value) { SetDistributorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Enables Nielsen PCM to ID3 tagging
      */
     inline const NielsenPcmToId3TaggingState& GetNielsenPcmToId3Tagging() const{ return m_nielsenPcmToId3Tagging; }
-
-    /**
-     * Enables Nielsen PCM to ID3 tagging
-     */
     inline bool NielsenPcmToId3TaggingHasBeenSet() const { return m_nielsenPcmToId3TaggingHasBeenSet; }
-
-    /**
-     * Enables Nielsen PCM to ID3 tagging
-     */
     inline void SetNielsenPcmToId3Tagging(const NielsenPcmToId3TaggingState& value) { m_nielsenPcmToId3TaggingHasBeenSet = true; m_nielsenPcmToId3Tagging = value; }
-
-    /**
-     * Enables Nielsen PCM to ID3 tagging
-     */
     inline void SetNielsenPcmToId3Tagging(NielsenPcmToId3TaggingState&& value) { m_nielsenPcmToId3TaggingHasBeenSet = true; m_nielsenPcmToId3Tagging = std::move(value); }
-
-    /**
-     * Enables Nielsen PCM to ID3 tagging
-     */
     inline NielsenConfiguration& WithNielsenPcmToId3Tagging(const NielsenPcmToId3TaggingState& value) { SetNielsenPcmToId3Tagging(value); return *this;}
-
-    /**
-     * Enables Nielsen PCM to ID3 tagging
-     */
     inline NielsenConfiguration& WithNielsenPcmToId3Tagging(NielsenPcmToId3TaggingState&& value) { SetNielsenPcmToId3Tagging(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_distributorId;

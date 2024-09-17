@@ -24,9 +24,8 @@ LicenseSpecification::LicenseSpecification() :
 {
 }
 
-LicenseSpecification::LicenseSpecification(JsonView jsonValue) : 
-    m_licenseConfigurationArnHasBeenSet(false),
-    m_amiAssociationScopeHasBeenSet(false)
+LicenseSpecification::LicenseSpecification(JsonView jsonValue)
+  : LicenseSpecification()
 {
   *this = jsonValue;
 }

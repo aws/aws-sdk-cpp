@@ -26,11 +26,8 @@ ConfluenceAttachmentToIndexFieldMapping::ConfluenceAttachmentToIndexFieldMapping
 {
 }
 
-ConfluenceAttachmentToIndexFieldMapping::ConfluenceAttachmentToIndexFieldMapping(JsonView jsonValue) : 
-    m_dataSourceFieldName(ConfluenceAttachmentFieldName::NOT_SET),
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
+ConfluenceAttachmentToIndexFieldMapping::ConfluenceAttachmentToIndexFieldMapping(JsonView jsonValue)
+  : ConfluenceAttachmentToIndexFieldMapping()
 {
   *this = jsonValue;
 }

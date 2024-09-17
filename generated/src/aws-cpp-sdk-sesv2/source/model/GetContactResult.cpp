@@ -22,8 +22,8 @@ GetContactResult::GetContactResult() :
 {
 }
 
-GetContactResult::GetContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_unsubscribeAll(false)
+GetContactResult::GetContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetContactResult()
 {
   *this = result;
 }

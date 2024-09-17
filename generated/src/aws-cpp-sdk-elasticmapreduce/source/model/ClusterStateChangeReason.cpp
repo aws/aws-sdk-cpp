@@ -25,10 +25,8 @@ ClusterStateChangeReason::ClusterStateChangeReason() :
 {
 }
 
-ClusterStateChangeReason::ClusterStateChangeReason(JsonView jsonValue) : 
-    m_code(ClusterStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ClusterStateChangeReason::ClusterStateChangeReason(JsonView jsonValue)
+  : ClusterStateChangeReason()
 {
   *this = jsonValue;
 }

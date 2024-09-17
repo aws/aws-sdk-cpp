@@ -24,9 +24,8 @@ OpsEntityItem::OpsEntityItem() :
 {
 }
 
-OpsEntityItem::OpsEntityItem(JsonView jsonValue) : 
-    m_captureTimeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+OpsEntityItem::OpsEntityItem(JsonView jsonValue)
+  : OpsEntityItem()
 {
   *this = jsonValue;
 }

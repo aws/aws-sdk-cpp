@@ -25,10 +25,8 @@ ResourceTagMapping::ResourceTagMapping() :
 {
 }
 
-ResourceTagMapping::ResourceTagMapping(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_complianceDetailsHasBeenSet(false)
+ResourceTagMapping::ResourceTagMapping(JsonView jsonValue)
+  : ResourceTagMapping()
 {
   *this = jsonValue;
 }

@@ -177,8 +177,24 @@ namespace EventBridge
          * archive, incoming events might not immediately start being sent to the archive.
          * Allow a short period of time for changes to take effect. If you do not specify a
          * pattern to filter events sent to the archive, all events are sent to the archive
-         * except replayed events. Replayed events are not sent to an
-         * archive.</p><p><h3>See Also:</h3>   <a
+         * except replayed events. Replayed events are not sent to an archive.</p> 
+         * <p>Archives and schema discovery are not supported for event buses encrypted
+         * using a customer managed key. EventBridge returns an error if:</p> <ul> <li>
+         * <p>You call <code> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
+         * </code> on an event bus set to use a customer managed key for encryption.</p>
+         * </li> <li> <p>You call <code> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
+         * </code> on an event bus set to use a customer managed key for encryption.</p>
+         * </li> <li> <p>You call <code> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
+         * </code> to set a customer managed key on an event bus with an archives or schema
+         * discovery enabled.</p> </li> </ul> <p>To enable archives or schema discovery on
+         * an event bus, choose to use an Amazon Web Services owned key. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
+         * encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">AWS
          * API Reference</a></p>
          */
@@ -474,8 +490,8 @@ namespace EventBridge
          * endpoints, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">AWS
          * API Reference</a></p>
          */
@@ -672,8 +688,8 @@ namespace EventBridge
          * about global endpoints, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -711,13 +727,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEventBus">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventBusOutcome DescribeEventBus(const Model::DescribeEventBusRequest& request) const;
+        virtual Model::DescribeEventBusOutcome DescribeEventBus(const Model::DescribeEventBusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventBus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventBusRequestT = Model::DescribeEventBusRequest>
-        Model::DescribeEventBusOutcomeCallable DescribeEventBusCallable(const DescribeEventBusRequestT& request) const
+        Model::DescribeEventBusOutcomeCallable DescribeEventBusCallable(const DescribeEventBusRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::DescribeEventBus, request);
         }
@@ -726,7 +742,7 @@ namespace EventBridge
          * An Async wrapper for DescribeEventBus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventBusRequestT = Model::DescribeEventBusRequest>
-        void DescribeEventBusAsync(const DescribeEventBusRequestT& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventBusAsync(const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventBusRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::DescribeEventBus, request, handler, context);
         }
@@ -911,13 +927,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApiDestinationsOutcome ListApiDestinations(const Model::ListApiDestinationsRequest& request) const;
+        virtual Model::ListApiDestinationsOutcome ListApiDestinations(const Model::ListApiDestinationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApiDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApiDestinationsRequestT = Model::ListApiDestinationsRequest>
-        Model::ListApiDestinationsOutcomeCallable ListApiDestinationsCallable(const ListApiDestinationsRequestT& request) const
+        Model::ListApiDestinationsOutcomeCallable ListApiDestinationsCallable(const ListApiDestinationsRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListApiDestinations, request);
         }
@@ -926,7 +942,7 @@ namespace EventBridge
          * An Async wrapper for ListApiDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApiDestinationsRequestT = Model::ListApiDestinationsRequest>
-        void ListApiDestinationsAsync(const ListApiDestinationsRequestT& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApiDestinationsAsync(const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApiDestinationsRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListApiDestinations, request, handler, context);
         }
@@ -938,13 +954,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListArchivesOutcome ListArchives(const Model::ListArchivesRequest& request) const;
+        virtual Model::ListArchivesOutcome ListArchives(const Model::ListArchivesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListArchives that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListArchivesRequestT = Model::ListArchivesRequest>
-        Model::ListArchivesOutcomeCallable ListArchivesCallable(const ListArchivesRequestT& request) const
+        Model::ListArchivesOutcomeCallable ListArchivesCallable(const ListArchivesRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListArchives, request);
         }
@@ -953,7 +969,7 @@ namespace EventBridge
          * An Async wrapper for ListArchives that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListArchivesRequestT = Model::ListArchivesRequest>
-        void ListArchivesAsync(const ListArchivesRequestT& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListArchivesAsync(const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListArchivesRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListArchives, request, handler, context);
         }
@@ -964,13 +980,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
+        virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConnectionsRequestT = Model::ListConnectionsRequest>
-        Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const ListConnectionsRequestT& request) const
+        Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const ListConnectionsRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListConnections, request);
         }
@@ -979,7 +995,7 @@ namespace EventBridge
          * An Async wrapper for ListConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConnectionsRequestT = Model::ListConnectionsRequest>
-        void ListConnectionsAsync(const ListConnectionsRequestT& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConnectionsAsync(const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectionsRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListConnections, request, handler, context);
         }
@@ -989,18 +1005,18 @@ namespace EventBridge
          * about global endpoints, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
+        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request) const
+        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListEndpoints, request);
         }
@@ -1009,7 +1025,7 @@ namespace EventBridge
          * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        void ListEndpointsAsync(const ListEndpointsRequestT& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEndpointsAsync(const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListEndpoints, request, handler, context);
         }
@@ -1020,13 +1036,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventBuses">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventBusesOutcome ListEventBuses(const Model::ListEventBusesRequest& request) const;
+        virtual Model::ListEventBusesOutcome ListEventBuses(const Model::ListEventBusesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventBuses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventBusesRequestT = Model::ListEventBusesRequest>
-        Model::ListEventBusesOutcomeCallable ListEventBusesCallable(const ListEventBusesRequestT& request) const
+        Model::ListEventBusesOutcomeCallable ListEventBusesCallable(const ListEventBusesRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListEventBuses, request);
         }
@@ -1035,7 +1051,7 @@ namespace EventBridge
          * An Async wrapper for ListEventBuses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventBusesRequestT = Model::ListEventBusesRequest>
-        void ListEventBusesAsync(const ListEventBusesRequestT& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventBusesAsync(const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventBusesRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListEventBuses, request, handler, context);
         }
@@ -1049,13 +1065,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventSources">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventSourcesOutcome ListEventSources(const Model::ListEventSourcesRequest& request) const;
+        virtual Model::ListEventSourcesOutcome ListEventSources(const Model::ListEventSourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventSources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventSourcesRequestT = Model::ListEventSourcesRequest>
-        Model::ListEventSourcesOutcomeCallable ListEventSourcesCallable(const ListEventSourcesRequestT& request) const
+        Model::ListEventSourcesOutcomeCallable ListEventSourcesCallable(const ListEventSourcesRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListEventSources, request);
         }
@@ -1064,7 +1080,7 @@ namespace EventBridge
          * An Async wrapper for ListEventSources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventSourcesRequestT = Model::ListEventSourcesRequest>
-        void ListEventSourcesAsync(const ListEventSourcesRequestT& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventSourcesAsync(const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventSourcesRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListEventSources, request, handler, context);
         }
@@ -1131,13 +1147,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReplaysOutcome ListReplays(const Model::ListReplaysRequest& request) const;
+        virtual Model::ListReplaysOutcome ListReplays(const Model::ListReplaysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReplays that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReplaysRequestT = Model::ListReplaysRequest>
-        Model::ListReplaysOutcomeCallable ListReplaysCallable(const ListReplaysRequestT& request) const
+        Model::ListReplaysOutcomeCallable ListReplaysCallable(const ListReplaysRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListReplays, request);
         }
@@ -1146,7 +1162,7 @@ namespace EventBridge
          * An Async wrapper for ListReplays that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReplaysRequestT = Model::ListReplaysRequest>
-        void ListReplaysAsync(const ListReplaysRequestT& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReplaysAsync(const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReplaysRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListReplays, request, handler, context);
         }
@@ -1189,13 +1205,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
+        virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRulesRequestT = Model::ListRulesRequest>
-        Model::ListRulesOutcomeCallable ListRulesCallable(const ListRulesRequestT& request) const
+        Model::ListRulesOutcomeCallable ListRulesCallable(const ListRulesRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::ListRules, request);
         }
@@ -1204,7 +1220,7 @@ namespace EventBridge
          * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRulesRequestT = Model::ListRulesRequest>
-        void ListRulesAsync(const ListRulesRequestT& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRulesAsync(const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRulesRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::ListRules, request, handler, context);
         }
@@ -1267,12 +1283,12 @@ namespace EventBridge
          * is calculated including the event and any necessary characters and keys of the
          * JSON representation of the event. To learn more, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-         * PutEvents event entry size</a> in the <i>Amazon EventBridge User Guide</i> </p>
-         * <p>PutEvents accepts the data in JSON format. For the JSON number (integer) data
-         * type, the constraints are: a minimum value of -9,223,372,036,854,775,808 and a
-         * maximum value of 9,223,372,036,854,775,807.</p>  <p>PutEvents will only
-         * process nested JSON up to 1100 levels deep.</p> <p><h3>See Also:</h3>  
-         * <a
+         * PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i> </p> <p>PutEvents accepts the data in JSON format. For the JSON number
+         * (integer) data type, the constraints are: a minimum value of
+         * -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807.</p>
+         *  <p>PutEvents will only process nested JSON up to 1100 levels deep.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">AWS
          * API Reference</a></p>
          */
@@ -1350,13 +1366,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPermission">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutPermissionOutcome PutPermission(const Model::PutPermissionRequest& request) const;
+        virtual Model::PutPermissionOutcome PutPermission(const Model::PutPermissionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutPermission that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutPermissionRequestT = Model::PutPermissionRequest>
-        Model::PutPermissionOutcomeCallable PutPermissionCallable(const PutPermissionRequestT& request) const
+        Model::PutPermissionOutcomeCallable PutPermissionCallable(const PutPermissionRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::PutPermission, request);
         }
@@ -1365,7 +1381,7 @@ namespace EventBridge
          * An Async wrapper for PutPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutPermissionRequestT = Model::PutPermissionRequest>
-        void PutPermissionAsync(const PutPermissionRequestT& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutPermissionAsync(const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutPermissionRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::PutPermission, request, handler, context);
         }
@@ -1451,11 +1467,11 @@ namespace EventBridge
          * associated with it at one time.</p>  <p>For a list of services you can
          * configure as targets for events, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge
-         * targets</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>Creating rules
-         * with built-in targets is supported only in the Amazon Web Services Management
-         * Console. The built-in targets are:</p> <ul> <li> <p> <code>Amazon EBS
-         * CreateSnapshot API call</code> </p> </li> <li> <p> <code>Amazon EC2
-         * RebootInstances API call</code> </p> </li> <li> <p> <code>Amazon EC2
+         * targets</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+         * <p>Creating rules with built-in targets is supported only in the Amazon Web
+         * Services Management Console. The built-in targets are:</p> <ul> <li> <p>
+         * <code>Amazon EBS CreateSnapshot API call</code> </p> </li> <li> <p> <code>Amazon
+         * EC2 RebootInstances API call</code> </p> </li> <li> <p> <code>Amazon EC2
          * StopInstances API call</code> </p> </li> <li> <p> <code>Amazon EC2
          * TerminateInstances API call</code> </p> </li> </ul> <p>For some target types,
          * <code>PutTargets</code> provides target-specific parameters. If the target is a
@@ -1470,9 +1486,9 @@ namespace EventBridge
          * relies on IAM roles that you specify in the <code>RoleARN</code> argument in
          * <code>PutTargets</code>.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
-         * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
-         * another Amazon Web Services account is in the same region and has granted you
-         * permission (using <code>PutPermission</code>), you can send events to that
+         * and Access Control</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+         * <p>If another Amazon Web Services account is in the same region and has granted
+         * you permission (using <code>PutPermission</code>), you can send events to that
          * account. Set that account's event bus as a target of the rules in your account.
          * To send the matched events to the other account, specify that account's event
          * bus as the <code>Arn</code> value when you run <code>PutTargets</code>. If your
@@ -1552,13 +1568,13 @@ namespace EventBridge
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemovePermission">AWS
          * API Reference</a></p>
          */
-        virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
+        virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RemovePermission that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RemovePermissionRequestT = Model::RemovePermissionRequest>
-        Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const RemovePermissionRequestT& request) const
+        Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const RemovePermissionRequestT& request = {}) const
         {
             return SubmitCallable(&EventBridgeClient::RemovePermission, request);
         }
@@ -1567,7 +1583,7 @@ namespace EventBridge
          * An Async wrapper for RemovePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RemovePermissionRequestT = Model::RemovePermissionRequest>
-        void RemovePermissionAsync(const RemovePermissionRequestT& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RemovePermissionAsync(const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RemovePermissionRequestT& request = {}) const
         {
             return SubmitAsync(&EventBridgeClient::RemovePermission, request, handler, context);
         }
@@ -1815,8 +1831,8 @@ namespace EventBridge
          * <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -1840,6 +1856,31 @@ namespace EventBridge
             return SubmitAsync(&EventBridgeClient::UpdateEndpoint, request, handler, context);
         }
 
+        /**
+         * <p>Updates the specified event bus.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEventBus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventBusOutcome UpdateEventBus(const Model::UpdateEventBusRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for UpdateEventBus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEventBusRequestT = Model::UpdateEventBusRequest>
+        Model::UpdateEventBusOutcomeCallable UpdateEventBusCallable(const UpdateEventBusRequestT& request = {}) const
+        {
+            return SubmitCallable(&EventBridgeClient::UpdateEventBus, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEventBus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEventBusRequestT = Model::UpdateEventBusRequest>
+        void UpdateEventBusAsync(const UpdateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateEventBusRequestT& request = {}) const
+        {
+            return SubmitAsync(&EventBridgeClient::UpdateEventBus, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EventBridgeEndpointProviderBase>& accessEndpointProvider();
@@ -1848,7 +1889,6 @@ namespace EventBridge
       void init(const EventBridgeClientConfiguration& clientConfiguration);
 
       EventBridgeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EventBridgeEndpointProviderBase> m_endpointProvider;
   };
 

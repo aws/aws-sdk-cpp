@@ -21,11 +21,18 @@ Aws::String PutManagedInsightRulesRequest::SerializePayload() const
   ss << "Action=PutManagedInsightRules&";
   if(m_managedRulesHasBeenSet)
   {
-    unsigned managedRulesCount = 1;
-    for(auto& item : m_managedRules)
+    if (m_managedRules.empty())
     {
-      item.OutputToStream(ss, "ManagedRules.member.", managedRulesCount, "");
-      managedRulesCount++;
+      ss << "ManagedRules=&";
+    }
+    else
+    {
+      unsigned managedRulesCount = 1;
+      for(auto& item : m_managedRules)
+      {
+        item.OutputToStream(ss, "ManagedRules.member.", managedRulesCount, "");
+        managedRulesCount++;
+      }
     }
   }
 

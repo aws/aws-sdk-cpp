@@ -39,53 +39,27 @@ namespace Model
     AWS_AMPLIFY_API GetWebhookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes the structure of a webhook. </p>
      */
     inline const Webhook& GetWebhook() const{ return m_webhook; }
-
-    /**
-     * <p>Describes the structure of a webhook. </p>
-     */
     inline void SetWebhook(const Webhook& value) { m_webhook = value; }
-
-    /**
-     * <p>Describes the structure of a webhook. </p>
-     */
     inline void SetWebhook(Webhook&& value) { m_webhook = std::move(value); }
-
-    /**
-     * <p>Describes the structure of a webhook. </p>
-     */
     inline GetWebhookResult& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
-
-    /**
-     * <p>Describes the structure of a webhook. </p>
-     */
     inline GetWebhookResult& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWebhookResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWebhookResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWebhookResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Webhook m_webhook;

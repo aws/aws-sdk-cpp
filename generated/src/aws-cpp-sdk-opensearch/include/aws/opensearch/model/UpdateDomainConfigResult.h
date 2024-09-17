@@ -41,105 +41,49 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API UpdateDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the updated domain.</p>
      */
     inline const DomainConfig& GetDomainConfig() const{ return m_domainConfig; }
-
-    /**
-     * <p>The status of the updated domain.</p>
-     */
     inline void SetDomainConfig(const DomainConfig& value) { m_domainConfig = value; }
-
-    /**
-     * <p>The status of the updated domain.</p>
-     */
     inline void SetDomainConfig(DomainConfig&& value) { m_domainConfig = std::move(value); }
-
-    /**
-     * <p>The status of the updated domain.</p>
-     */
     inline UpdateDomainConfigResult& WithDomainConfig(const DomainConfig& value) { SetDomainConfig(value); return *this;}
-
-    /**
-     * <p>The status of the updated domain.</p>
-     */
     inline UpdateDomainConfigResult& WithDomainConfig(DomainConfig&& value) { SetDomainConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Results of the dry run performed in the update domain request.</p>
      */
     inline const DryRunResults& GetDryRunResults() const{ return m_dryRunResults; }
-
-    /**
-     * <p>Results of the dry run performed in the update domain request.</p>
-     */
     inline void SetDryRunResults(const DryRunResults& value) { m_dryRunResults = value; }
-
-    /**
-     * <p>Results of the dry run performed in the update domain request.</p>
-     */
     inline void SetDryRunResults(DryRunResults&& value) { m_dryRunResults = std::move(value); }
-
-    /**
-     * <p>Results of the dry run performed in the update domain request.</p>
-     */
     inline UpdateDomainConfigResult& WithDryRunResults(const DryRunResults& value) { SetDryRunResults(value); return *this;}
-
-    /**
-     * <p>Results of the dry run performed in the update domain request.</p>
-     */
     inline UpdateDomainConfigResult& WithDryRunResults(DryRunResults&& value) { SetDryRunResults(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the dry run being performed on the domain, if any.</p>
      */
     inline const DryRunProgressStatus& GetDryRunProgressStatus() const{ return m_dryRunProgressStatus; }
-
-    /**
-     * <p>The status of the dry run being performed on the domain, if any.</p>
-     */
     inline void SetDryRunProgressStatus(const DryRunProgressStatus& value) { m_dryRunProgressStatus = value; }
-
-    /**
-     * <p>The status of the dry run being performed on the domain, if any.</p>
-     */
     inline void SetDryRunProgressStatus(DryRunProgressStatus&& value) { m_dryRunProgressStatus = std::move(value); }
-
-    /**
-     * <p>The status of the dry run being performed on the domain, if any.</p>
-     */
     inline UpdateDomainConfigResult& WithDryRunProgressStatus(const DryRunProgressStatus& value) { SetDryRunProgressStatus(value); return *this;}
-
-    /**
-     * <p>The status of the dry run being performed on the domain, if any.</p>
-     */
     inline UpdateDomainConfigResult& WithDryRunProgressStatus(DryRunProgressStatus&& value) { SetDryRunProgressStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDomainConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDomainConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDomainConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainConfig m_domainConfig;

@@ -31,16 +31,8 @@ PipelineSummary::PipelineSummary() :
 {
 }
 
-PipelineSummary::PipelineSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_pipelineType(PipelineType::NOT_SET),
-    m_pipelineTypeHasBeenSet(false),
-    m_executionMode(ExecutionMode::NOT_SET),
-    m_executionModeHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_updatedHasBeenSet(false)
+PipelineSummary::PipelineSummary(JsonView jsonValue)
+  : PipelineSummary()
 {
   *this = jsonValue;
 }

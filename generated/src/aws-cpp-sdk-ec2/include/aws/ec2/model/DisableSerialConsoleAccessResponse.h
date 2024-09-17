@@ -32,43 +32,25 @@ namespace Model
     AWS_EC2_API DisableSerialConsoleAccessResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>If <code>true</code>, access to the EC2 serial console of all instances is
      * enabled for your account. If <code>false</code>, access to the EC2 serial
      * console of all instances is disabled for your account.</p>
      */
     inline bool GetSerialConsoleAccessEnabled() const{ return m_serialConsoleAccessEnabled; }
-
-    /**
-     * <p>If <code>true</code>, access to the EC2 serial console of all instances is
-     * enabled for your account. If <code>false</code>, access to the EC2 serial
-     * console of all instances is disabled for your account.</p>
-     */
     inline void SetSerialConsoleAccessEnabled(bool value) { m_serialConsoleAccessEnabled = value; }
-
-    /**
-     * <p>If <code>true</code>, access to the EC2 serial console of all instances is
-     * enabled for your account. If <code>false</code>, access to the EC2 serial
-     * console of all instances is disabled for your account.</p>
-     */
     inline DisableSerialConsoleAccessResponse& WithSerialConsoleAccessEnabled(bool value) { SetSerialConsoleAccessEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DisableSerialConsoleAccessResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DisableSerialConsoleAccessResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_serialConsoleAccessEnabled;

@@ -26,11 +26,8 @@ EnumListConfigurationOptions::EnumListConfigurationOptions() :
 {
 }
 
-EnumListConfigurationOptions::EnumListConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValueHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false)
+EnumListConfigurationOptions::EnumListConfigurationOptions(JsonView jsonValue)
+  : EnumListConfigurationOptions()
 {
   *this = jsonValue;
 }

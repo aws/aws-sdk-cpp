@@ -32,63 +32,29 @@ namespace Model
     AWS_SECURITYHUB_API CreateInsightResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the insight created.</p>
      */
     inline const Aws::String& GetInsightArn() const{ return m_insightArn; }
-
-    /**
-     * <p>The ARN of the insight created.</p>
-     */
     inline void SetInsightArn(const Aws::String& value) { m_insightArn = value; }
-
-    /**
-     * <p>The ARN of the insight created.</p>
-     */
     inline void SetInsightArn(Aws::String&& value) { m_insightArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the insight created.</p>
-     */
     inline void SetInsightArn(const char* value) { m_insightArn.assign(value); }
-
-    /**
-     * <p>The ARN of the insight created.</p>
-     */
     inline CreateInsightResult& WithInsightArn(const Aws::String& value) { SetInsightArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the insight created.</p>
-     */
     inline CreateInsightResult& WithInsightArn(Aws::String&& value) { SetInsightArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the insight created.</p>
-     */
     inline CreateInsightResult& WithInsightArn(const char* value) { SetInsightArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateInsightResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateInsightResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateInsightResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_insightArn;

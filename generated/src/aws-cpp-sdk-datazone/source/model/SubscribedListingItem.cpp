@@ -19,12 +19,13 @@ namespace Model
 {
 
 SubscribedListingItem::SubscribedListingItem() : 
-    m_assetListingHasBeenSet(false)
+    m_assetListingHasBeenSet(false),
+    m_productListingHasBeenSet(false)
 {
 }
 
-SubscribedListingItem::SubscribedListingItem(JsonView jsonValue) : 
-    m_assetListingHasBeenSet(false)
+SubscribedListingItem::SubscribedListingItem(JsonView jsonValue)
+  : SubscribedListingItem()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ SubscribedListingItem& SubscribedListingItem::operator =(JsonView jsonValue)
     m_assetListingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("productListing"))
+  {
+    m_productListing = jsonValue.GetObject("productListing");
+
+    m_productListingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue SubscribedListingItem::Jsonize() const
   if(m_assetListingHasBeenSet)
   {
    payload.WithObject("assetListing", m_assetListing.Jsonize());
+
+  }
+
+  if(m_productListingHasBeenSet)
+  {
+   payload.WithObject("productListing", m_productListing.Jsonize());
 
   }
 

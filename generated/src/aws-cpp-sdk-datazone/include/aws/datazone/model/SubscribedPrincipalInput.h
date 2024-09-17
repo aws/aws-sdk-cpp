@@ -38,36 +38,17 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The project that is to be given a subscription grant.</p>
      */
     inline const SubscribedProjectInput& GetProject() const{ return m_project; }
-
-    /**
-     * <p>The project that is to be given a subscription grant.</p>
-     */
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-
-    /**
-     * <p>The project that is to be given a subscription grant.</p>
-     */
     inline void SetProject(const SubscribedProjectInput& value) { m_projectHasBeenSet = true; m_project = value; }
-
-    /**
-     * <p>The project that is to be given a subscription grant.</p>
-     */
     inline void SetProject(SubscribedProjectInput&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-
-    /**
-     * <p>The project that is to be given a subscription grant.</p>
-     */
     inline SubscribedPrincipalInput& WithProject(const SubscribedProjectInput& value) { SetProject(value); return *this;}
-
-    /**
-     * <p>The project that is to be given a subscription grant.</p>
-     */
     inline SubscribedPrincipalInput& WithProject(SubscribedProjectInput&& value) { SetProject(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SubscribedProjectInput m_project;

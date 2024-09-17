@@ -22,8 +22,8 @@ ModifySecurityGroupRulesResponse::ModifySecurityGroupRulesResponse() :
 {
 }
 
-ModifySecurityGroupRulesResponse::ModifySecurityGroupRulesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifySecurityGroupRulesResponse::ModifySecurityGroupRulesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifySecurityGroupRulesResponse()
 {
   *this = result;
 }

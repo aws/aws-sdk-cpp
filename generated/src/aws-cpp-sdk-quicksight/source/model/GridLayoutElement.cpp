@@ -33,18 +33,8 @@ GridLayoutElement::GridLayoutElement() :
 {
 }
 
-GridLayoutElement::GridLayoutElement(JsonView jsonValue) : 
-    m_elementIdHasBeenSet(false),
-    m_elementType(LayoutElementType::NOT_SET),
-    m_elementTypeHasBeenSet(false),
-    m_columnIndex(0),
-    m_columnIndexHasBeenSet(false),
-    m_columnSpan(0),
-    m_columnSpanHasBeenSet(false),
-    m_rowIndex(0),
-    m_rowIndexHasBeenSet(false),
-    m_rowSpan(0),
-    m_rowSpanHasBeenSet(false)
+GridLayoutElement::GridLayoutElement(JsonView jsonValue)
+  : GridLayoutElement()
 {
   *this = jsonValue;
 }

@@ -26,12 +26,8 @@ DescribeModelPackageResult::DescribeModelPackageResult() :
 {
 }
 
-DescribeModelPackageResult::DescribeModelPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelPackageVersion(0),
-    m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_certifyForMarketplace(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
-    m_skipModelValidation(SkipModelValidation::NOT_SET)
+DescribeModelPackageResult::DescribeModelPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelPackageResult()
 {
   *this = result;
 }
@@ -198,6 +194,24 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("SkipModelValidation"))
   {
     m_skipModelValidation = SkipModelValidationMapper::GetSkipModelValidationForName(jsonValue.GetString("SkipModelValidation"));
+
+  }
+
+  if(jsonValue.ValueExists("SourceUri"))
+  {
+    m_sourceUri = jsonValue.GetString("SourceUri");
+
+  }
+
+  if(jsonValue.ValueExists("SecurityConfig"))
+  {
+    m_securityConfig = jsonValue.GetObject("SecurityConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ModelCard"))
+  {
+    m_modelCard = jsonValue.GetObject("ModelCard");
 
   }
 

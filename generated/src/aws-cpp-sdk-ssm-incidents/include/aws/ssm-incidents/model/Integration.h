@@ -38,42 +38,18 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the PagerDuty service where the response plan creates an
      * incident.</p>
      */
     inline const PagerDutyConfiguration& GetPagerDutyConfiguration() const{ return m_pagerDutyConfiguration; }
-
-    /**
-     * <p>Information about the PagerDuty service where the response plan creates an
-     * incident.</p>
-     */
     inline bool PagerDutyConfigurationHasBeenSet() const { return m_pagerDutyConfigurationHasBeenSet; }
-
-    /**
-     * <p>Information about the PagerDuty service where the response plan creates an
-     * incident.</p>
-     */
     inline void SetPagerDutyConfiguration(const PagerDutyConfiguration& value) { m_pagerDutyConfigurationHasBeenSet = true; m_pagerDutyConfiguration = value; }
-
-    /**
-     * <p>Information about the PagerDuty service where the response plan creates an
-     * incident.</p>
-     */
     inline void SetPagerDutyConfiguration(PagerDutyConfiguration&& value) { m_pagerDutyConfigurationHasBeenSet = true; m_pagerDutyConfiguration = std::move(value); }
-
-    /**
-     * <p>Information about the PagerDuty service where the response plan creates an
-     * incident.</p>
-     */
     inline Integration& WithPagerDutyConfiguration(const PagerDutyConfiguration& value) { SetPagerDutyConfiguration(value); return *this;}
-
-    /**
-     * <p>Information about the PagerDuty service where the response plan creates an
-     * incident.</p>
-     */
     inline Integration& WithPagerDutyConfiguration(PagerDutyConfiguration&& value) { SetPagerDutyConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PagerDutyConfiguration m_pagerDutyConfiguration;

@@ -29,14 +29,8 @@ ChannelMessageCallback::ChannelMessageCallback() :
 {
 }
 
-ChannelMessageCallback::ChannelMessageCallback(JsonView jsonValue) : 
-    m_messageIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_pushNotificationHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+ChannelMessageCallback::ChannelMessageCallback(JsonView jsonValue)
+  : ChannelMessageCallback()
 {
   *this = jsonValue;
 }

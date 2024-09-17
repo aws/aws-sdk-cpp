@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using FISClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FISClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using FISClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FISBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

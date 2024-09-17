@@ -39,6 +39,7 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The dashboard ID for the dashboard that you want the user to see first. This
      * ID is included in the output URL. When the URL in response is accessed, Amazon
@@ -47,101 +48,26 @@ namespace Model
      * permissions error message.</p>
      */
     inline const Aws::String& GetInitialDashboardId() const{ return m_initialDashboardId; }
-
-    /**
-     * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
-     * QuickSight renders this dashboard if the user has permissions to view it.</p>
-     * <p>If the user does not have permission to view this dashboard, they see a
-     * permissions error message.</p>
-     */
     inline bool InitialDashboardIdHasBeenSet() const { return m_initialDashboardIdHasBeenSet; }
-
-    /**
-     * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
-     * QuickSight renders this dashboard if the user has permissions to view it.</p>
-     * <p>If the user does not have permission to view this dashboard, they see a
-     * permissions error message.</p>
-     */
     inline void SetInitialDashboardId(const Aws::String& value) { m_initialDashboardIdHasBeenSet = true; m_initialDashboardId = value; }
-
-    /**
-     * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
-     * QuickSight renders this dashboard if the user has permissions to view it.</p>
-     * <p>If the user does not have permission to view this dashboard, they see a
-     * permissions error message.</p>
-     */
     inline void SetInitialDashboardId(Aws::String&& value) { m_initialDashboardIdHasBeenSet = true; m_initialDashboardId = std::move(value); }
-
-    /**
-     * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
-     * QuickSight renders this dashboard if the user has permissions to view it.</p>
-     * <p>If the user does not have permission to view this dashboard, they see a
-     * permissions error message.</p>
-     */
     inline void SetInitialDashboardId(const char* value) { m_initialDashboardIdHasBeenSet = true; m_initialDashboardId.assign(value); }
-
-    /**
-     * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
-     * QuickSight renders this dashboard if the user has permissions to view it.</p>
-     * <p>If the user does not have permission to view this dashboard, they see a
-     * permissions error message.</p>
-     */
     inline RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(const Aws::String& value) { SetInitialDashboardId(value); return *this;}
-
-    /**
-     * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
-     * QuickSight renders this dashboard if the user has permissions to view it.</p>
-     * <p>If the user does not have permission to view this dashboard, they see a
-     * permissions error message.</p>
-     */
     inline RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(Aws::String&& value) { SetInitialDashboardId(std::move(value)); return *this;}
-
-    /**
-     * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
-     * QuickSight renders this dashboard if the user has permissions to view it.</p>
-     * <p>If the user does not have permission to view this dashboard, they see a
-     * permissions error message.</p>
-     */
     inline RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(const char* value) { SetInitialDashboardId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
      */
     inline const RegisteredUserDashboardFeatureConfigurations& GetFeatureConfigurations() const{ return m_featureConfigurations; }
-
-    /**
-     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-     */
     inline bool FeatureConfigurationsHasBeenSet() const { return m_featureConfigurationsHasBeenSet; }
-
-    /**
-     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-     */
     inline void SetFeatureConfigurations(const RegisteredUserDashboardFeatureConfigurations& value) { m_featureConfigurationsHasBeenSet = true; m_featureConfigurations = value; }
-
-    /**
-     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-     */
     inline void SetFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations&& value) { m_featureConfigurationsHasBeenSet = true; m_featureConfigurations = std::move(value); }
-
-    /**
-     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-     */
     inline RegisteredUserDashboardEmbeddingConfiguration& WithFeatureConfigurations(const RegisteredUserDashboardFeatureConfigurations& value) { SetFeatureConfigurations(value); return *this;}
-
-    /**
-     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-     */
     inline RegisteredUserDashboardEmbeddingConfiguration& WithFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations&& value) { SetFeatureConfigurations(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_initialDashboardId;

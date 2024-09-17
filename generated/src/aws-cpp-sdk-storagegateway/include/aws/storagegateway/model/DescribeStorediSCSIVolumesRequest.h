@@ -39,69 +39,22 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An array of strings where each string represents the Amazon Resource Name
      * (ARN) of a stored volume. All of the specified stored volumes must be from the
      * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeARNs() const{ return m_volumeARNs; }
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline bool VolumeARNsHasBeenSet() const { return m_volumeARNsHasBeenSet; }
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline void SetVolumeARNs(const Aws::Vector<Aws::String>& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = value; }
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline void SetVolumeARNs(Aws::Vector<Aws::String>&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = std::move(value); }
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline DescribeStorediSCSIVolumesRequest& WithVolumeARNs(const Aws::Vector<Aws::String>& value) { SetVolumeARNs(value); return *this;}
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline DescribeStorediSCSIVolumesRequest& WithVolumeARNs(Aws::Vector<Aws::String>&& value) { SetVolumeARNs(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(const Aws::String& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(Aws::String&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of strings where each string represents the Amazon Resource Name
-     * (ARN) of a stored volume. All of the specified stored volumes must be from the
-     * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
-     */
     inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(const char* value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_volumeARNs;

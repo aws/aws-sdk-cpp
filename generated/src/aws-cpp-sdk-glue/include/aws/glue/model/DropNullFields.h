@@ -44,130 +44,49 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the transform node.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline DropNullFields& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline DropNullFields& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline DropNullFields& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data inputs identified by their node names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline DropNullFields& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline DropNullFields& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline DropNullFields& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline DropNullFields& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline DropNullFields& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structure that represents whether certain values are recognized as null
      * values for removal.</p>
      */
     inline const NullCheckBoxList& GetNullCheckBoxList() const{ return m_nullCheckBoxList; }
-
-    /**
-     * <p>A structure that represents whether certain values are recognized as null
-     * values for removal.</p>
-     */
     inline bool NullCheckBoxListHasBeenSet() const { return m_nullCheckBoxListHasBeenSet; }
-
-    /**
-     * <p>A structure that represents whether certain values are recognized as null
-     * values for removal.</p>
-     */
     inline void SetNullCheckBoxList(const NullCheckBoxList& value) { m_nullCheckBoxListHasBeenSet = true; m_nullCheckBoxList = value; }
-
-    /**
-     * <p>A structure that represents whether certain values are recognized as null
-     * values for removal.</p>
-     */
     inline void SetNullCheckBoxList(NullCheckBoxList&& value) { m_nullCheckBoxListHasBeenSet = true; m_nullCheckBoxList = std::move(value); }
-
-    /**
-     * <p>A structure that represents whether certain values are recognized as null
-     * values for removal.</p>
-     */
     inline DropNullFields& WithNullCheckBoxList(const NullCheckBoxList& value) { SetNullCheckBoxList(value); return *this;}
-
-    /**
-     * <p>A structure that represents whether certain values are recognized as null
-     * values for removal.</p>
-     */
     inline DropNullFields& WithNullCheckBoxList(NullCheckBoxList&& value) { SetNullCheckBoxList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structure that specifies a list of NullValueField structures that represent
      * a custom null value such as zero or other value being used as a null placeholder
@@ -176,70 +95,14 @@ namespace Model
      * datatype match the data.</p>
      */
     inline const Aws::Vector<NullValueField>& GetNullTextList() const{ return m_nullTextList; }
-
-    /**
-     * <p>A structure that specifies a list of NullValueField structures that represent
-     * a custom null value such as zero or other value being used as a null placeholder
-     * unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes
-     * custom null values only if both the value of the null placeholder and the
-     * datatype match the data.</p>
-     */
     inline bool NullTextListHasBeenSet() const { return m_nullTextListHasBeenSet; }
-
-    /**
-     * <p>A structure that specifies a list of NullValueField structures that represent
-     * a custom null value such as zero or other value being used as a null placeholder
-     * unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes
-     * custom null values only if both the value of the null placeholder and the
-     * datatype match the data.</p>
-     */
     inline void SetNullTextList(const Aws::Vector<NullValueField>& value) { m_nullTextListHasBeenSet = true; m_nullTextList = value; }
-
-    /**
-     * <p>A structure that specifies a list of NullValueField structures that represent
-     * a custom null value such as zero or other value being used as a null placeholder
-     * unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes
-     * custom null values only if both the value of the null placeholder and the
-     * datatype match the data.</p>
-     */
     inline void SetNullTextList(Aws::Vector<NullValueField>&& value) { m_nullTextListHasBeenSet = true; m_nullTextList = std::move(value); }
-
-    /**
-     * <p>A structure that specifies a list of NullValueField structures that represent
-     * a custom null value such as zero or other value being used as a null placeholder
-     * unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes
-     * custom null values only if both the value of the null placeholder and the
-     * datatype match the data.</p>
-     */
     inline DropNullFields& WithNullTextList(const Aws::Vector<NullValueField>& value) { SetNullTextList(value); return *this;}
-
-    /**
-     * <p>A structure that specifies a list of NullValueField structures that represent
-     * a custom null value such as zero or other value being used as a null placeholder
-     * unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes
-     * custom null values only if both the value of the null placeholder and the
-     * datatype match the data.</p>
-     */
     inline DropNullFields& WithNullTextList(Aws::Vector<NullValueField>&& value) { SetNullTextList(std::move(value)); return *this;}
-
-    /**
-     * <p>A structure that specifies a list of NullValueField structures that represent
-     * a custom null value such as zero or other value being used as a null placeholder
-     * unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes
-     * custom null values only if both the value of the null placeholder and the
-     * datatype match the data.</p>
-     */
     inline DropNullFields& AddNullTextList(const NullValueField& value) { m_nullTextListHasBeenSet = true; m_nullTextList.push_back(value); return *this; }
-
-    /**
-     * <p>A structure that specifies a list of NullValueField structures that represent
-     * a custom null value such as zero or other value being used as a null placeholder
-     * unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes
-     * custom null values only if both the value of the null placeholder and the
-     * datatype match the data.</p>
-     */
     inline DropNullFields& AddNullTextList(NullValueField&& value) { m_nullTextListHasBeenSet = true; m_nullTextList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

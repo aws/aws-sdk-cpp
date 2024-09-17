@@ -23,8 +23,8 @@ SearchedUser::SearchedUser() :
 {
 }
 
-SearchedUser::SearchedUser(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false)
+SearchedUser::SearchedUser(JsonView jsonValue)
+  : SearchedUser()
 {
   *this = jsonValue;
 }

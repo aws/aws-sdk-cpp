@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GreengrassClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GreengrassClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GreengrassClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GreengrassBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -26,11 +26,8 @@ GetLabelDetectionRequestMetadata::GetLabelDetectionRequestMetadata() :
 {
 }
 
-GetLabelDetectionRequestMetadata::GetLabelDetectionRequestMetadata(JsonView jsonValue) : 
-    m_sortBy(LabelDetectionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_aggregateBy(LabelDetectionAggregateBy::NOT_SET),
-    m_aggregateByHasBeenSet(false)
+GetLabelDetectionRequestMetadata::GetLabelDetectionRequestMetadata(JsonView jsonValue)
+  : GetLabelDetectionRequestMetadata()
 {
   *this = jsonValue;
 }

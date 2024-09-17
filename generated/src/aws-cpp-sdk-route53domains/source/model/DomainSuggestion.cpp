@@ -24,9 +24,8 @@ DomainSuggestion::DomainSuggestion() :
 {
 }
 
-DomainSuggestion::DomainSuggestion(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_availabilityHasBeenSet(false)
+DomainSuggestion::DomainSuggestion(JsonView jsonValue)
+  : DomainSuggestion()
 {
   *this = jsonValue;
 }

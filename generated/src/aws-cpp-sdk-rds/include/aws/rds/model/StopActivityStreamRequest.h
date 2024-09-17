@@ -36,87 +36,32 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
      * stream. For example,
      * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
-     * stream. For example,
-     * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
-     * stream. For example,
-     * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
-     * stream. For example,
-     * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
-     * stream. For example,
-     * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
-     * stream. For example,
-     * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-     */
     inline StopActivityStreamRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
-     * stream. For example,
-     * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-     */
     inline StopActivityStreamRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity
-     * stream. For example,
-     * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-     */
     inline StopActivityStreamRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether or not the database activity stream is to stop as soon as
      * possible, regardless of the maintenance window for the database.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
-
-    /**
-     * <p>Specifies whether or not the database activity stream is to stop as soon as
-     * possible, regardless of the maintenance window for the database.</p>
-     */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
-
-    /**
-     * <p>Specifies whether or not the database activity stream is to stop as soon as
-     * possible, regardless of the maintenance window for the database.</p>
-     */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
-
-    /**
-     * <p>Specifies whether or not the database activity stream is to stop as soon as
-     * possible, regardless of the maintenance window for the database.</p>
-     */
     inline StopActivityStreamRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

@@ -36,59 +36,28 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of messages that all journeys can send to an endpoint
      * during the specified timeframe. The maximum value is 100. If set to 0, this
      * limit will not apply.</p>
      */
     inline int GetCap() const{ return m_cap; }
-
-    /**
-     * <p>The maximum number of messages that all journeys can send to an endpoint
-     * during the specified timeframe. The maximum value is 100. If set to 0, this
-     * limit will not apply.</p>
-     */
     inline bool CapHasBeenSet() const { return m_capHasBeenSet; }
-
-    /**
-     * <p>The maximum number of messages that all journeys can send to an endpoint
-     * during the specified timeframe. The maximum value is 100. If set to 0, this
-     * limit will not apply.</p>
-     */
     inline void SetCap(int value) { m_capHasBeenSet = true; m_cap = value; }
-
-    /**
-     * <p>The maximum number of messages that all journeys can send to an endpoint
-     * during the specified timeframe. The maximum value is 100. If set to 0, this
-     * limit will not apply.</p>
-     */
     inline JourneyTimeframeCap& WithCap(int value) { SetCap(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The length of the timeframe in days. The maximum value is 30. If set to 0,
      * this limit will not apply.</p>
      */
     inline int GetDays() const{ return m_days; }
-
-    /**
-     * <p>The length of the timeframe in days. The maximum value is 30. If set to 0,
-     * this limit will not apply.</p>
-     */
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
-
-    /**
-     * <p>The length of the timeframe in days. The maximum value is 30. If set to 0,
-     * this limit will not apply.</p>
-     */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
-
-    /**
-     * <p>The length of the timeframe in days. The maximum value is 30. If set to 0,
-     * this limit will not apply.</p>
-     */
     inline JourneyTimeframeCap& WithDays(int value) { SetDays(value); return *this;}
-
+    ///@}
   private:
 
     int m_cap;

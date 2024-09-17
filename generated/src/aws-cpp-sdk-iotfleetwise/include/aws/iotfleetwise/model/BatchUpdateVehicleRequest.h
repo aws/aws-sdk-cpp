@@ -35,54 +35,20 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> A list of information about the vehicles to update. For more information,
      * see the API data type.</p>
      */
     inline const Aws::Vector<UpdateVehicleRequestItem>& GetVehicles() const{ return m_vehicles; }
-
-    /**
-     * <p> A list of information about the vehicles to update. For more information,
-     * see the API data type.</p>
-     */
     inline bool VehiclesHasBeenSet() const { return m_vehiclesHasBeenSet; }
-
-    /**
-     * <p> A list of information about the vehicles to update. For more information,
-     * see the API data type.</p>
-     */
     inline void SetVehicles(const Aws::Vector<UpdateVehicleRequestItem>& value) { m_vehiclesHasBeenSet = true; m_vehicles = value; }
-
-    /**
-     * <p> A list of information about the vehicles to update. For more information,
-     * see the API data type.</p>
-     */
     inline void SetVehicles(Aws::Vector<UpdateVehicleRequestItem>&& value) { m_vehiclesHasBeenSet = true; m_vehicles = std::move(value); }
-
-    /**
-     * <p> A list of information about the vehicles to update. For more information,
-     * see the API data type.</p>
-     */
     inline BatchUpdateVehicleRequest& WithVehicles(const Aws::Vector<UpdateVehicleRequestItem>& value) { SetVehicles(value); return *this;}
-
-    /**
-     * <p> A list of information about the vehicles to update. For more information,
-     * see the API data type.</p>
-     */
     inline BatchUpdateVehicleRequest& WithVehicles(Aws::Vector<UpdateVehicleRequestItem>&& value) { SetVehicles(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of information about the vehicles to update. For more information,
-     * see the API data type.</p>
-     */
     inline BatchUpdateVehicleRequest& AddVehicles(const UpdateVehicleRequestItem& value) { m_vehiclesHasBeenSet = true; m_vehicles.push_back(value); return *this; }
-
-    /**
-     * <p> A list of information about the vehicles to update. For more information,
-     * see the API data type.</p>
-     */
     inline BatchUpdateVehicleRequest& AddVehicles(UpdateVehicleRequestItem&& value) { m_vehiclesHasBeenSet = true; m_vehicles.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<UpdateVehicleRequestItem> m_vehicles;

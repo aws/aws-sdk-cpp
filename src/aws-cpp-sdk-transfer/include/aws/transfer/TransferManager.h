@@ -39,10 +39,14 @@ namespace Aws
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), computeContentMD5(false), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5)
+            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor)
+              : s3Client(nullptr),
+                transferExecutor(executor),
+                computeContentMD5(false),
+                transferBufferMaxHeapSize(10 * MB5),
+                bufferSize(MB5)
             {
             }
-
             /**
              * S3 Client to use for transfers. You are responsible for setting this.
              */
@@ -53,6 +57,18 @@ namespace Aws
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
              */
             Aws::Utils::Threading::Executor* transferExecutor = nullptr;
+
+            /**
+             * Threading Executor shared pointer.
+             * Created and owned by Transfer manager if no raw pointer `transferExecutor` is provided.
+             */
+            std::shared_ptr<Aws::Utils::Threading::Executor> spExecutor = nullptr;
+
+            /**
+             * Threading Executor factory method. Default creates a factory that creates DefaultExecutor
+             */
+            std::function<std::shared_ptr<Utils::Threading::Executor>()> executorCreateFn;
+
             /**
              * When true, TransferManager will calculate the MD5 digest of the content being uploaded.
              * The digest is sent to S3 via an HTTP header enabling the service to perform integrity checks.
@@ -165,9 +181,10 @@ namespace Aws
             ~TransferManager();
 
             /**
-             * Uploads a file via filename, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
-             * then a multi-part upload will be performed.
-             */
+            * Uploads a file via filename, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
+            * then a multi-part upload will be performed.
+            * Keeps file to be unopened until doing actual upload, this is useful for uploading directories with many small files (avoid having too many open files, which may exceed system limit)
+            */
             std::shared_ptr<TransferHandle> UploadFile(const Aws::String& fileName,
                                                        const Aws::String& bucketName,
                                                        const Aws::String& keyName,
@@ -282,30 +299,7 @@ namespace Aws
              * Submits the actual task to task scheduler
              */
             std::shared_ptr<TransferHandle> SubmitUpload(const std::shared_ptr<TransferHandle>& handle, const std::shared_ptr<Aws::IOStream>& fileStream = nullptr);
-
-            /**
-             * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
-             * then a multi-part upload will be performed. 
-             */
-            std::shared_ptr<TransferHandle> DoUploadFile(const std::shared_ptr<Aws::IOStream>& fileStream,
-                                                         const Aws::String& bucketName,
-                                                         const Aws::String& keyName,
-                                                         const Aws::String& contentType,
-                                                         const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
-
-            /**
-             * Uploads the contents of file, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
-             * then a multi-part upload will be performed.
-             * Keeps file to be unopened until doing actual upload, this is useful for uploading directories with many small files (avoid having too many open files, which may exceed system limit)
-             */
-            std::shared_ptr<TransferHandle> DoUploadFile(const Aws::String& fileName,
-                                                         const Aws::String& bucketName,
-                                                         const Aws::String& keyName,
-                                                         const Aws::String& contentType,
-                                                         const Aws::Map<Aws::String, Aws::String>& metadata,
-                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
-
+            
             bool MultipartUploadSupported(uint64_t length) const;
             bool InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle);
 

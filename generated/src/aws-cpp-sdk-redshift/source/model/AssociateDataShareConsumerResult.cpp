@@ -22,8 +22,8 @@ AssociateDataShareConsumerResult::AssociateDataShareConsumerResult() :
 {
 }
 
-AssociateDataShareConsumerResult::AssociateDataShareConsumerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_allowPubliclyAccessibleConsumers(false)
+AssociateDataShareConsumerResult::AssociateDataShareConsumerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AssociateDataShareConsumerResult()
 {
   *this = result;
 }

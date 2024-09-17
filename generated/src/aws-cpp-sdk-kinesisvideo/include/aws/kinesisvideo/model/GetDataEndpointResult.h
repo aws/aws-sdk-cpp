@@ -32,70 +32,30 @@ namespace Model
     AWS_KINESISVIDEO_API GetDataEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The endpoint value. To read data from the stream or to write data to it,
      * specify this endpoint in your application.</p>
      */
     inline const Aws::String& GetDataEndpoint() const{ return m_dataEndpoint; }
-
-    /**
-     * <p>The endpoint value. To read data from the stream or to write data to it,
-     * specify this endpoint in your application.</p>
-     */
     inline void SetDataEndpoint(const Aws::String& value) { m_dataEndpoint = value; }
-
-    /**
-     * <p>The endpoint value. To read data from the stream or to write data to it,
-     * specify this endpoint in your application.</p>
-     */
     inline void SetDataEndpoint(Aws::String&& value) { m_dataEndpoint = std::move(value); }
-
-    /**
-     * <p>The endpoint value. To read data from the stream or to write data to it,
-     * specify this endpoint in your application.</p>
-     */
     inline void SetDataEndpoint(const char* value) { m_dataEndpoint.assign(value); }
-
-    /**
-     * <p>The endpoint value. To read data from the stream or to write data to it,
-     * specify this endpoint in your application.</p>
-     */
     inline GetDataEndpointResult& WithDataEndpoint(const Aws::String& value) { SetDataEndpoint(value); return *this;}
-
-    /**
-     * <p>The endpoint value. To read data from the stream or to write data to it,
-     * specify this endpoint in your application.</p>
-     */
     inline GetDataEndpointResult& WithDataEndpoint(Aws::String&& value) { SetDataEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The endpoint value. To read data from the stream or to write data to it,
-     * specify this endpoint in your application.</p>
-     */
     inline GetDataEndpointResult& WithDataEndpoint(const char* value) { SetDataEndpoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDataEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDataEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDataEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataEndpoint;

@@ -26,11 +26,8 @@ MergeOperations::MergeOperations() :
 {
 }
 
-MergeOperations::MergeOperations(JsonView jsonValue) : 
-    m_source(ChangeTypeEnum::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_destination(ChangeTypeEnum::NOT_SET),
-    m_destinationHasBeenSet(false)
+MergeOperations::MergeOperations(JsonView jsonValue)
+  : MergeOperations()
 {
   *this = jsonValue;
 }

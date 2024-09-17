@@ -33,16 +33,8 @@ LaunchTemplate::LaunchTemplate() :
 {
 }
 
-LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode) : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_defaultVersionNumber(0),
-    m_defaultVersionNumberHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
+  : LaunchTemplate()
 {
   *this = xmlNode;
 }

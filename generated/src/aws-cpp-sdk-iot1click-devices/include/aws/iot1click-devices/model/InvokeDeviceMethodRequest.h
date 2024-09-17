@@ -33,118 +33,45 @@ namespace Model
     AWS_IOT1CLICKDEVICESSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the device.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The device method to invoke.</p>
      */
     inline const DeviceMethod& GetDeviceMethod() const{ return m_deviceMethod; }
-
-    /**
-     * <p>The device method to invoke.</p>
-     */
     inline bool DeviceMethodHasBeenSet() const { return m_deviceMethodHasBeenSet; }
-
-    /**
-     * <p>The device method to invoke.</p>
-     */
     inline void SetDeviceMethod(const DeviceMethod& value) { m_deviceMethodHasBeenSet = true; m_deviceMethod = value; }
-
-    /**
-     * <p>The device method to invoke.</p>
-     */
     inline void SetDeviceMethod(DeviceMethod&& value) { m_deviceMethodHasBeenSet = true; m_deviceMethod = std::move(value); }
-
-    /**
-     * <p>The device method to invoke.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceMethod(const DeviceMethod& value) { SetDeviceMethod(value); return *this;}
-
-    /**
-     * <p>The device method to invoke.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceMethod(DeviceMethod&& value) { SetDeviceMethod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A JSON encoded string containing the device method request parameters.</p>
      */
     inline const Aws::String& GetDeviceMethodParameters() const{ return m_deviceMethodParameters; }
-
-    /**
-     * <p>A JSON encoded string containing the device method request parameters.</p>
-     */
     inline bool DeviceMethodParametersHasBeenSet() const { return m_deviceMethodParametersHasBeenSet; }
-
-    /**
-     * <p>A JSON encoded string containing the device method request parameters.</p>
-     */
     inline void SetDeviceMethodParameters(const Aws::String& value) { m_deviceMethodParametersHasBeenSet = true; m_deviceMethodParameters = value; }
-
-    /**
-     * <p>A JSON encoded string containing the device method request parameters.</p>
-     */
     inline void SetDeviceMethodParameters(Aws::String&& value) { m_deviceMethodParametersHasBeenSet = true; m_deviceMethodParameters = std::move(value); }
-
-    /**
-     * <p>A JSON encoded string containing the device method request parameters.</p>
-     */
     inline void SetDeviceMethodParameters(const char* value) { m_deviceMethodParametersHasBeenSet = true; m_deviceMethodParameters.assign(value); }
-
-    /**
-     * <p>A JSON encoded string containing the device method request parameters.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceMethodParameters(const Aws::String& value) { SetDeviceMethodParameters(value); return *this;}
-
-    /**
-     * <p>A JSON encoded string containing the device method request parameters.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceMethodParameters(Aws::String&& value) { SetDeviceMethodParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>A JSON encoded string containing the device method request parameters.</p>
-     */
     inline InvokeDeviceMethodRequest& WithDeviceMethodParameters(const char* value) { SetDeviceMethodParameters(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

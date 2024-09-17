@@ -22,8 +22,8 @@ CreateDomainResult::CreateDomainResult() :
 {
 }
 
-CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DomainStatus::NOT_SET)
+CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateDomainResult()
 {
   *this = result;
 }
@@ -70,6 +70,12 @@ CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("portalUrl"))
   {
     m_portalUrl = jsonValue.GetString("portalUrl");
+
+  }
+
+  if(jsonValue.ValueExists("rootDomainUnitId"))
+  {
+    m_rootDomainUnitId = jsonValue.GetString("rootDomainUnitId");
 
   }
 

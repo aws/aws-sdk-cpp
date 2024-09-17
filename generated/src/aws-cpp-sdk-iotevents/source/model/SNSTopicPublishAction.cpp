@@ -24,9 +24,8 @@ SNSTopicPublishAction::SNSTopicPublishAction() :
 {
 }
 
-SNSTopicPublishAction::SNSTopicPublishAction(JsonView jsonValue) : 
-    m_targetArnHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+SNSTopicPublishAction::SNSTopicPublishAction(JsonView jsonValue)
+  : SNSTopicPublishAction()
 {
   *this = jsonValue;
 }

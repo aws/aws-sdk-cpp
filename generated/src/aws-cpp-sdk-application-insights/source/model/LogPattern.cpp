@@ -27,12 +27,8 @@ LogPattern::LogPattern() :
 {
 }
 
-LogPattern::LogPattern(JsonView jsonValue) : 
-    m_patternSetNameHasBeenSet(false),
-    m_patternNameHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false)
+LogPattern::LogPattern(JsonView jsonValue)
+  : LogPattern()
 {
   *this = jsonValue;
 }

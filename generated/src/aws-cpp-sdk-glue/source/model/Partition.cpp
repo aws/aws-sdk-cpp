@@ -31,16 +31,8 @@ Partition::Partition() :
 {
 }
 
-Partition::Partition(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_storageDescriptorHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
+Partition::Partition(JsonView jsonValue)
+  : Partition()
 {
   *this = jsonValue;
 }

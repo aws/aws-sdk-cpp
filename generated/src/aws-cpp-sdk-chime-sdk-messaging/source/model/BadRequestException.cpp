@@ -25,10 +25,8 @@ BadRequestException::BadRequestException() :
 {
 }
 
-BadRequestException::BadRequestException(JsonView jsonValue) : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BadRequestException::BadRequestException(JsonView jsonValue)
+  : BadRequestException()
 {
   *this = jsonValue;
 }

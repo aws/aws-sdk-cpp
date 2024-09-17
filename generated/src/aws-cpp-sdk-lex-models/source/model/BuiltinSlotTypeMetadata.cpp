@@ -24,9 +24,8 @@ BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata() :
 {
 }
 
-BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata(JsonView jsonValue) : 
-    m_signatureHasBeenSet(false),
-    m_supportedLocalesHasBeenSet(false)
+BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata(JsonView jsonValue)
+  : BuiltinSlotTypeMetadata()
 {
   *this = jsonValue;
 }

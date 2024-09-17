@@ -8,20 +8,7 @@
   */
 #pragma once
 
-#ifdef __APPLE__
-
-#ifdef __clang__
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif // __clang__
-
-#ifdef __GNUC__
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // __GNUC__
-
-#endif // __APPLE__
-
 #include <aws/core/Core_EXPORTS.h>
-
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/Outcome.h>
 
@@ -31,8 +18,6 @@ namespace Aws
     {
         namespace Crypto
         {
-            class WindowsHashImpl;
-
             /**
              * Md5 hash implementation
              */
@@ -66,7 +51,6 @@ namespace Aws
                 virtual HashResult GetHash() override;
 
             private:
-
                 std::shared_ptr<Hash> m_hashImpl;
             };
 

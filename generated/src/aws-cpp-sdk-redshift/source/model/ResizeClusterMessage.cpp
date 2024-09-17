@@ -33,16 +33,8 @@ ResizeClusterMessage::ResizeClusterMessage() :
 {
 }
 
-ResizeClusterMessage::ResizeClusterMessage(const XmlNode& xmlNode) : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_classic(false),
-    m_classicHasBeenSet(false),
-    m_reservedNodeIdHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false)
+ResizeClusterMessage::ResizeClusterMessage(const XmlNode& xmlNode)
+  : ResizeClusterMessage()
 {
   *this = xmlNode;
 }

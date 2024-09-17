@@ -32,17 +32,8 @@ CisTargetResourceAggregation::CisTargetResourceAggregation() :
 {
 }
 
-CisTargetResourceAggregation::CisTargetResourceAggregation(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_scanArnHasBeenSet(false),
-    m_statusCountsHasBeenSet(false),
-    m_targetResourceIdHasBeenSet(false),
-    m_targetResourceTagsHasBeenSet(false),
-    m_targetStatus(CisTargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false),
-    m_targetStatusReason(CisTargetStatusReason::NOT_SET),
-    m_targetStatusReasonHasBeenSet(false)
+CisTargetResourceAggregation::CisTargetResourceAggregation(JsonView jsonValue)
+  : CisTargetResourceAggregation()
 {
   *this = jsonValue;
 }

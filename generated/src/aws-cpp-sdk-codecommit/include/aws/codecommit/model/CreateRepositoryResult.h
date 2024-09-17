@@ -39,53 +39,27 @@ namespace Model
     AWS_CODECOMMIT_API CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the newly created repository.</p>
      */
     inline const RepositoryMetadata& GetRepositoryMetadata() const{ return m_repositoryMetadata; }
-
-    /**
-     * <p>Information about the newly created repository.</p>
-     */
     inline void SetRepositoryMetadata(const RepositoryMetadata& value) { m_repositoryMetadata = value; }
-
-    /**
-     * <p>Information about the newly created repository.</p>
-     */
     inline void SetRepositoryMetadata(RepositoryMetadata&& value) { m_repositoryMetadata = std::move(value); }
-
-    /**
-     * <p>Information about the newly created repository.</p>
-     */
     inline CreateRepositoryResult& WithRepositoryMetadata(const RepositoryMetadata& value) { SetRepositoryMetadata(value); return *this;}
-
-    /**
-     * <p>Information about the newly created repository.</p>
-     */
     inline CreateRepositoryResult& WithRepositoryMetadata(RepositoryMetadata&& value) { SetRepositoryMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RepositoryMetadata m_repositoryMetadata;

@@ -33,92 +33,34 @@ namespace Model
     AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTraceIds() const{ return m_traceIds; }
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline bool TraceIdsHasBeenSet() const { return m_traceIdsHasBeenSet; }
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline void SetTraceIds(const Aws::Vector<Aws::String>& value) { m_traceIdsHasBeenSet = true; m_traceIds = value; }
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline void SetTraceIds(Aws::Vector<Aws::String>&& value) { m_traceIdsHasBeenSet = true; m_traceIds = std::move(value); }
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline BatchGetTracesRequest& WithTraceIds(const Aws::Vector<Aws::String>& value) { SetTraceIds(value); return *this;}
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline BatchGetTracesRequest& WithTraceIds(Aws::Vector<Aws::String>&& value) { SetTraceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline BatchGetTracesRequest& AddTraceIds(const Aws::String& value) { m_traceIdsHasBeenSet = true; m_traceIds.push_back(value); return *this; }
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline BatchGetTracesRequest& AddTraceIds(Aws::String&& value) { m_traceIdsHasBeenSet = true; m_traceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-     */
     inline BatchGetTracesRequest& AddTraceIds(const char* value) { m_traceIdsHasBeenSet = true; m_traceIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline BatchGetTracesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline BatchGetTracesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline BatchGetTracesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_traceIds;

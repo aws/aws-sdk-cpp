@@ -27,12 +27,8 @@ BonusPayment::BonusPayment() :
 {
 }
 
-BonusPayment::BonusPayment(JsonView jsonValue) : 
-    m_workerIdHasBeenSet(false),
-    m_bonusAmountHasBeenSet(false),
-    m_assignmentIdHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_grantTimeHasBeenSet(false)
+BonusPayment::BonusPayment(JsonView jsonValue)
+  : BonusPayment()
 {
   *this = jsonValue;
 }

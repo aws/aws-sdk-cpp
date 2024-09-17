@@ -23,8 +23,8 @@ ResaleAuthorizationLastModifiedDateFilter::ResaleAuthorizationLastModifiedDateFi
 {
 }
 
-ResaleAuthorizationLastModifiedDateFilter::ResaleAuthorizationLastModifiedDateFilter(JsonView jsonValue) : 
-    m_dateRangeHasBeenSet(false)
+ResaleAuthorizationLastModifiedDateFilter::ResaleAuthorizationLastModifiedDateFilter(JsonView jsonValue)
+  : ResaleAuthorizationLastModifiedDateFilter()
 {
   *this = jsonValue;
 }

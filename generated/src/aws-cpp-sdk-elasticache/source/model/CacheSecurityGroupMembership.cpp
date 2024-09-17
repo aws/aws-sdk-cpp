@@ -26,9 +26,8 @@ CacheSecurityGroupMembership::CacheSecurityGroupMembership() :
 {
 }
 
-CacheSecurityGroupMembership::CacheSecurityGroupMembership(const XmlNode& xmlNode) : 
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+CacheSecurityGroupMembership::CacheSecurityGroupMembership(const XmlNode& xmlNode)
+  : CacheSecurityGroupMembership()
 {
   *this = xmlNode;
 }

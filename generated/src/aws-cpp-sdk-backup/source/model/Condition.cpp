@@ -26,11 +26,8 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(JsonView jsonValue) : 
-    m_conditionType(ConditionType::NOT_SET),
-    m_conditionTypeHasBeenSet(false),
-    m_conditionKeyHasBeenSet(false),
-    m_conditionValueHasBeenSet(false)
+Condition::Condition(JsonView jsonValue)
+  : Condition()
 {
   *this = jsonValue;
 }

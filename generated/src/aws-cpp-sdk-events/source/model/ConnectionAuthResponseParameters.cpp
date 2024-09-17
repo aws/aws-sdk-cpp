@@ -26,11 +26,8 @@ ConnectionAuthResponseParameters::ConnectionAuthResponseParameters() :
 {
 }
 
-ConnectionAuthResponseParameters::ConnectionAuthResponseParameters(JsonView jsonValue) : 
-    m_basicAuthParametersHasBeenSet(false),
-    m_oAuthParametersHasBeenSet(false),
-    m_apiKeyAuthParametersHasBeenSet(false),
-    m_invocationHttpParametersHasBeenSet(false)
+ConnectionAuthResponseParameters::ConnectionAuthResponseParameters(JsonView jsonValue)
+  : ConnectionAuthResponseParameters()
 {
   *this = jsonValue;
 }

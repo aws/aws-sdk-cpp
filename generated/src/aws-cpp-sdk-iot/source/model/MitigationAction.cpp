@@ -26,11 +26,8 @@ MitigationAction::MitigationAction() :
 {
 }
 
-MitigationAction::MitigationAction(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_actionParamsHasBeenSet(false)
+MitigationAction::MitigationAction(JsonView jsonValue)
+  : MitigationAction()
 {
   *this = jsonValue;
 }

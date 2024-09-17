@@ -45,147 +45,39 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
+     * <p>The value for the specified resource type.</p> <p>When the type is
+     * <code>GPU</code>, the value is the number of physical <code>GPUs</code> the
+     * Amazon ECS container agent reserves for the container. The number of GPUs that's
      * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
+     * on the container instance that the task is launched on.</p> <p>When the type is
+     * <code>InferenceAccelerator</code>, the <code>value</code> matches the
+     * <code>deviceName</code> for an <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
      * specified in a task definition.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
-     * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
-     * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
-     * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
-     * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
-     * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
-     */
     inline ResourceRequirement& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
-     * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
-     */
     inline ResourceRequirement& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
-     * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent reserves for the container. The number of GPUs that's
-     * reserved for all containers in a task can't exceed the number of available GPUs
-     * on the container instance that the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-     * specified in a task definition.</p>
-     */
     inline ResourceRequirement& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The type of resource to assign to a container. The supported values are
-     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
+     * <p>The type of resource to assign to a container. </p>
      */
     inline const ResourceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of resource to assign to a container. The supported values are
-     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of resource to assign to a container. The supported values are
-     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-     */
     inline void SetType(const ResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of resource to assign to a container. The supported values are
-     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-     */
     inline void SetType(ResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of resource to assign to a container. The supported values are
-     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-     */
     inline ResourceRequirement& WithType(const ResourceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of resource to assign to a container. The supported values are
-     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-     */
     inline ResourceRequirement& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

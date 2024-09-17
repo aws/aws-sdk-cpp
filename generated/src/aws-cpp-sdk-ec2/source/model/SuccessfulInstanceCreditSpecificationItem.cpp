@@ -25,8 +25,8 @@ SuccessfulInstanceCreditSpecificationItem::SuccessfulInstanceCreditSpecification
 {
 }
 
-SuccessfulInstanceCreditSpecificationItem::SuccessfulInstanceCreditSpecificationItem(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false)
+SuccessfulInstanceCreditSpecificationItem::SuccessfulInstanceCreditSpecificationItem(const XmlNode& xmlNode)
+  : SuccessfulInstanceCreditSpecificationItem()
 {
   *this = xmlNode;
 }

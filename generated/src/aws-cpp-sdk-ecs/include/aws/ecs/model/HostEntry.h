@@ -26,7 +26,9 @@ namespace Model
   /**
    * <p>Hostnames and IP address entries that are added to the
    * <code>/etc/hosts</code> file of a container via the <code>extraHosts</code>
-   * parameter of its <a>ContainerDefinition</a>. </p><p><h3>See Also:</h3>   <a
+   * parameter of its <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HostEntry">AWS API
    * Reference</a></p>
    */
@@ -39,87 +41,33 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
-
-    /**
-     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-
-    /**
-     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-
-    /**
-     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-
-    /**
-     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-
-    /**
-     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline HostEntry& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-
-    /**
-     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline HostEntry& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-
-    /**
-     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline HostEntry& WithHostname(const char* value) { SetHostname(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
-
-    /**
-     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-
-    /**
-     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-
-    /**
-     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-
-    /**
-     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-
-    /**
-     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline HostEntry& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-
-    /**
-     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline HostEntry& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
-     */
     inline HostEntry& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hostname;

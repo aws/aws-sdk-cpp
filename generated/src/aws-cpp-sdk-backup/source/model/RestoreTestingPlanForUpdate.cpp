@@ -27,12 +27,8 @@ RestoreTestingPlanForUpdate::RestoreTestingPlanForUpdate() :
 {
 }
 
-RestoreTestingPlanForUpdate::RestoreTestingPlanForUpdate(JsonView jsonValue) : 
-    m_recoveryPointSelectionHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startWindowHours(0),
-    m_startWindowHoursHasBeenSet(false)
+RestoreTestingPlanForUpdate::RestoreTestingPlanForUpdate(JsonView jsonValue)
+  : RestoreTestingPlanForUpdate()
 {
   *this = jsonValue;
 }

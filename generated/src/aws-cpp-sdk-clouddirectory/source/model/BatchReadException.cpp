@@ -25,10 +25,8 @@ BatchReadException::BatchReadException() :
 {
 }
 
-BatchReadException::BatchReadException(JsonView jsonValue) : 
-    m_type(BatchReadExceptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+BatchReadException::BatchReadException(JsonView jsonValue)
+  : BatchReadException()
 {
   *this = jsonValue;
 }

@@ -33,104 +33,43 @@ namespace Model
     AWS_LOOKOUTMETRICS_API GetSampleDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of header labels for the records.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHeaderValues() const{ return m_headerValues; }
-
-    /**
-     * <p>A list of header labels for the records.</p>
-     */
     inline void SetHeaderValues(const Aws::Vector<Aws::String>& value) { m_headerValues = value; }
-
-    /**
-     * <p>A list of header labels for the records.</p>
-     */
     inline void SetHeaderValues(Aws::Vector<Aws::String>&& value) { m_headerValues = std::move(value); }
-
-    /**
-     * <p>A list of header labels for the records.</p>
-     */
     inline GetSampleDataResult& WithHeaderValues(const Aws::Vector<Aws::String>& value) { SetHeaderValues(value); return *this;}
-
-    /**
-     * <p>A list of header labels for the records.</p>
-     */
     inline GetSampleDataResult& WithHeaderValues(Aws::Vector<Aws::String>&& value) { SetHeaderValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of header labels for the records.</p>
-     */
     inline GetSampleDataResult& AddHeaderValues(const Aws::String& value) { m_headerValues.push_back(value); return *this; }
-
-    /**
-     * <p>A list of header labels for the records.</p>
-     */
     inline GetSampleDataResult& AddHeaderValues(Aws::String&& value) { m_headerValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of header labels for the records.</p>
-     */
     inline GetSampleDataResult& AddHeaderValues(const char* value) { m_headerValues.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of records.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetSampleRows() const{ return m_sampleRows; }
-
-    /**
-     * <p>A list of records.</p>
-     */
     inline void SetSampleRows(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_sampleRows = value; }
-
-    /**
-     * <p>A list of records.</p>
-     */
     inline void SetSampleRows(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_sampleRows = std::move(value); }
-
-    /**
-     * <p>A list of records.</p>
-     */
     inline GetSampleDataResult& WithSampleRows(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetSampleRows(value); return *this;}
-
-    /**
-     * <p>A list of records.</p>
-     */
     inline GetSampleDataResult& WithSampleRows(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetSampleRows(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of records.</p>
-     */
     inline GetSampleDataResult& AddSampleRows(const Aws::Vector<Aws::String>& value) { m_sampleRows.push_back(value); return *this; }
-
-    /**
-     * <p>A list of records.</p>
-     */
     inline GetSampleDataResult& AddSampleRows(Aws::Vector<Aws::String>&& value) { m_sampleRows.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSampleDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSampleDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSampleDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_headerValues;

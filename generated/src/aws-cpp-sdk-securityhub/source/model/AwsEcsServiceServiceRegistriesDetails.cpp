@@ -28,13 +28,8 @@ AwsEcsServiceServiceRegistriesDetails::AwsEcsServiceServiceRegistriesDetails() :
 {
 }
 
-AwsEcsServiceServiceRegistriesDetails::AwsEcsServiceServiceRegistriesDetails(JsonView jsonValue) : 
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_registryArnHasBeenSet(false)
+AwsEcsServiceServiceRegistriesDetails::AwsEcsServiceServiceRegistriesDetails(JsonView jsonValue)
+  : AwsEcsServiceServiceRegistriesDetails()
 {
   *this = jsonValue;
 }

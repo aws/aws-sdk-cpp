@@ -41,6 +41,7 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
      * address or Domain Name Service (DNS) name of the NameNode. An agent that's
@@ -48,84 +49,24 @@ namespace Model
      * network.</p>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
-
-    /**
-     * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
-     * address or Domain Name Service (DNS) name of the NameNode. An agent that's
-     * installed on-premises uses this hostname to communicate with the NameNode in the
-     * network.</p>
-     */
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-
-    /**
-     * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
-     * address or Domain Name Service (DNS) name of the NameNode. An agent that's
-     * installed on-premises uses this hostname to communicate with the NameNode in the
-     * network.</p>
-     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-
-    /**
-     * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
-     * address or Domain Name Service (DNS) name of the NameNode. An agent that's
-     * installed on-premises uses this hostname to communicate with the NameNode in the
-     * network.</p>
-     */
     inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-
-    /**
-     * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
-     * address or Domain Name Service (DNS) name of the NameNode. An agent that's
-     * installed on-premises uses this hostname to communicate with the NameNode in the
-     * network.</p>
-     */
     inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-
-    /**
-     * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
-     * address or Domain Name Service (DNS) name of the NameNode. An agent that's
-     * installed on-premises uses this hostname to communicate with the NameNode in the
-     * network.</p>
-     */
     inline HdfsNameNode& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-
-    /**
-     * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
-     * address or Domain Name Service (DNS) name of the NameNode. An agent that's
-     * installed on-premises uses this hostname to communicate with the NameNode in the
-     * network.</p>
-     */
     inline HdfsNameNode& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-
-    /**
-     * <p>The hostname of the NameNode in the HDFS cluster. This value is the IP
-     * address or Domain Name Service (DNS) name of the NameNode. An agent that's
-     * installed on-premises uses this hostname to communicate with the NameNode in the
-     * network.</p>
-     */
     inline HdfsNameNode& WithHostname(const char* value) { SetHostname(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port that the NameNode uses to listen to client requests.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port that the NameNode uses to listen to client requests.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port that the NameNode uses to listen to client requests.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port that the NameNode uses to listen to client requests.</p>
-     */
     inline HdfsNameNode& WithPort(int value) { SetPort(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hostname;

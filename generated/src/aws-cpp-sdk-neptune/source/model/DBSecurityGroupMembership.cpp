@@ -26,9 +26,8 @@ DBSecurityGroupMembership::DBSecurityGroupMembership() :
 {
 }
 
-DBSecurityGroupMembership::DBSecurityGroupMembership(const XmlNode& xmlNode) : 
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+DBSecurityGroupMembership::DBSecurityGroupMembership(const XmlNode& xmlNode)
+  : DBSecurityGroupMembership()
 {
   *this = xmlNode;
 }

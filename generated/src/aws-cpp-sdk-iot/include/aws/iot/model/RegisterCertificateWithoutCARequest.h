@@ -33,77 +33,31 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The certificate data, in PEM format.</p>
      */
     inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
-
-    /**
-     * <p>The certificate data, in PEM format.</p>
-     */
     inline bool CertificatePemHasBeenSet() const { return m_certificatePemHasBeenSet; }
-
-    /**
-     * <p>The certificate data, in PEM format.</p>
-     */
     inline void SetCertificatePem(const Aws::String& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
-
-    /**
-     * <p>The certificate data, in PEM format.</p>
-     */
     inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = std::move(value); }
-
-    /**
-     * <p>The certificate data, in PEM format.</p>
-     */
     inline void SetCertificatePem(const char* value) { m_certificatePemHasBeenSet = true; m_certificatePem.assign(value); }
-
-    /**
-     * <p>The certificate data, in PEM format.</p>
-     */
     inline RegisterCertificateWithoutCARequest& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
-
-    /**
-     * <p>The certificate data, in PEM format.</p>
-     */
     inline RegisterCertificateWithoutCARequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
-
-    /**
-     * <p>The certificate data, in PEM format.</p>
-     */
     inline RegisterCertificateWithoutCARequest& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the register certificate request.</p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the register certificate request.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the register certificate request.</p>
-     */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the register certificate request.</p>
-     */
     inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the register certificate request.</p>
-     */
     inline RegisterCertificateWithoutCARequest& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the register certificate request.</p>
-     */
     inline RegisterCertificateWithoutCARequest& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificatePem;

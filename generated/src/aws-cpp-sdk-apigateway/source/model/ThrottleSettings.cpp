@@ -26,11 +26,8 @@ ThrottleSettings::ThrottleSettings() :
 {
 }
 
-ThrottleSettings::ThrottleSettings(JsonView jsonValue) : 
-    m_burstLimit(0),
-    m_burstLimitHasBeenSet(false),
-    m_rateLimit(0.0),
-    m_rateLimitHasBeenSet(false)
+ThrottleSettings::ThrottleSettings(JsonView jsonValue)
+  : ThrottleSettings()
 {
   *this = jsonValue;
 }

@@ -36,198 +36,71 @@ namespace Model
 
   public:
 
+    ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
-     */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
-     */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
-     */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
-     */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use
-     * with the account or the namespace.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A value that specifies whether the datashare is associated with the entire
      * account.</p>
      */
     inline bool GetAssociateEntireAccount() const{ return m_associateEntireAccount; }
-
-    /**
-     * <p>A value that specifies whether the datashare is associated with the entire
-     * account.</p>
-     */
     inline bool AssociateEntireAccountHasBeenSet() const { return m_associateEntireAccountHasBeenSet; }
-
-    /**
-     * <p>A value that specifies whether the datashare is associated with the entire
-     * account.</p>
-     */
     inline void SetAssociateEntireAccount(bool value) { m_associateEntireAccountHasBeenSet = true; m_associateEntireAccount = value; }
-
-    /**
-     * <p>A value that specifies whether the datashare is associated with the entire
-     * account.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithAssociateEntireAccount(bool value) { SetAssociateEntireAccount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace associated with the
      * datashare.</p>
      */
     inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
-     * datashare.</p>
-     */
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
-     * datashare.</p>
-     */
     inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
-     * datashare.</p>
-     */
     inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
-     * datashare.</p>
-     */
     inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
-     * datashare.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
-     * datashare.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
-     * datashare.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>From a datashare consumer account, associates a datashare with all existing
      * and future namespaces in the specified Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetConsumerRegion() const{ return m_consumerRegion; }
-
-    /**
-     * <p>From a datashare consumer account, associates a datashare with all existing
-     * and future namespaces in the specified Amazon Web Services Region.</p>
-     */
     inline bool ConsumerRegionHasBeenSet() const { return m_consumerRegionHasBeenSet; }
-
-    /**
-     * <p>From a datashare consumer account, associates a datashare with all existing
-     * and future namespaces in the specified Amazon Web Services Region.</p>
-     */
     inline void SetConsumerRegion(const Aws::String& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = value; }
-
-    /**
-     * <p>From a datashare consumer account, associates a datashare with all existing
-     * and future namespaces in the specified Amazon Web Services Region.</p>
-     */
     inline void SetConsumerRegion(Aws::String&& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = std::move(value); }
-
-    /**
-     * <p>From a datashare consumer account, associates a datashare with all existing
-     * and future namespaces in the specified Amazon Web Services Region.</p>
-     */
     inline void SetConsumerRegion(const char* value) { m_consumerRegionHasBeenSet = true; m_consumerRegion.assign(value); }
-
-    /**
-     * <p>From a datashare consumer account, associates a datashare with all existing
-     * and future namespaces in the specified Amazon Web Services Region.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithConsumerRegion(const Aws::String& value) { SetConsumerRegion(value); return *this;}
-
-    /**
-     * <p>From a datashare consumer account, associates a datashare with all existing
-     * and future namespaces in the specified Amazon Web Services Region.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithConsumerRegion(Aws::String&& value) { SetConsumerRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>From a datashare consumer account, associates a datashare with all existing
-     * and future namespaces in the specified Amazon Web Services Region.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithConsumerRegion(const char* value) { SetConsumerRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If set to true, allows write operations for a datashare.</p>
      */
     inline bool GetAllowWrites() const{ return m_allowWrites; }
-
-    /**
-     * <p>If set to true, allows write operations for a datashare.</p>
-     */
     inline bool AllowWritesHasBeenSet() const { return m_allowWritesHasBeenSet; }
-
-    /**
-     * <p>If set to true, allows write operations for a datashare.</p>
-     */
     inline void SetAllowWrites(bool value) { m_allowWritesHasBeenSet = true; m_allowWrites = value; }
-
-    /**
-     * <p>If set to true, allows write operations for a datashare.</p>
-     */
     inline AssociateDataShareConsumerRequest& WithAllowWrites(bool value) { SetAllowWrites(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataShareArn;

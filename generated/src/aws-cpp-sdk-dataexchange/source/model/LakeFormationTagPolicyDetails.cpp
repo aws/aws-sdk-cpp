@@ -24,9 +24,8 @@ LakeFormationTagPolicyDetails::LakeFormationTagPolicyDetails() :
 {
 }
 
-LakeFormationTagPolicyDetails::LakeFormationTagPolicyDetails(JsonView jsonValue) : 
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+LakeFormationTagPolicyDetails::LakeFormationTagPolicyDetails(JsonView jsonValue)
+  : LakeFormationTagPolicyDetails()
 {
   *this = jsonValue;
 }

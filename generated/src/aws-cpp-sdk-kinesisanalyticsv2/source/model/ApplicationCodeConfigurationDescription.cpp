@@ -25,10 +25,8 @@ ApplicationCodeConfigurationDescription::ApplicationCodeConfigurationDescription
 {
 }
 
-ApplicationCodeConfigurationDescription::ApplicationCodeConfigurationDescription(JsonView jsonValue) : 
-    m_codeContentType(CodeContentType::NOT_SET),
-    m_codeContentTypeHasBeenSet(false),
-    m_codeContentDescriptionHasBeenSet(false)
+ApplicationCodeConfigurationDescription::ApplicationCodeConfigurationDescription(JsonView jsonValue)
+  : ApplicationCodeConfigurationDescription()
 {
   *this = jsonValue;
 }

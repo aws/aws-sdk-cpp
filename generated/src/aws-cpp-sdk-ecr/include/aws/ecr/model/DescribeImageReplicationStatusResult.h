@@ -35,122 +35,52 @@ namespace Model
     AWS_ECR_API DescribeImageReplicationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The repository name associated with the request.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The repository name associated with the request.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryName = value; }
-
-    /**
-     * <p>The repository name associated with the request.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The repository name associated with the request.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryName.assign(value); }
-
-    /**
-     * <p>The repository name associated with the request.</p>
-     */
     inline DescribeImageReplicationStatusResult& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The repository name associated with the request.</p>
-     */
     inline DescribeImageReplicationStatusResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The repository name associated with the request.</p>
-     */
     inline DescribeImageReplicationStatusResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ImageIdentifier& GetImageId() const{ return m_imageId; }
-
-    
     inline void SetImageId(const ImageIdentifier& value) { m_imageId = value; }
-
-    
     inline void SetImageId(ImageIdentifier&& value) { m_imageId = std::move(value); }
-
-    
     inline DescribeImageReplicationStatusResult& WithImageId(const ImageIdentifier& value) { SetImageId(value); return *this;}
-
-    
     inline DescribeImageReplicationStatusResult& WithImageId(ImageIdentifier&& value) { SetImageId(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The replication status details for the images in the specified
      * repository.</p>
      */
     inline const Aws::Vector<ImageReplicationStatus>& GetReplicationStatuses() const{ return m_replicationStatuses; }
-
-    /**
-     * <p>The replication status details for the images in the specified
-     * repository.</p>
-     */
     inline void SetReplicationStatuses(const Aws::Vector<ImageReplicationStatus>& value) { m_replicationStatuses = value; }
-
-    /**
-     * <p>The replication status details for the images in the specified
-     * repository.</p>
-     */
     inline void SetReplicationStatuses(Aws::Vector<ImageReplicationStatus>&& value) { m_replicationStatuses = std::move(value); }
-
-    /**
-     * <p>The replication status details for the images in the specified
-     * repository.</p>
-     */
     inline DescribeImageReplicationStatusResult& WithReplicationStatuses(const Aws::Vector<ImageReplicationStatus>& value) { SetReplicationStatuses(value); return *this;}
-
-    /**
-     * <p>The replication status details for the images in the specified
-     * repository.</p>
-     */
     inline DescribeImageReplicationStatusResult& WithReplicationStatuses(Aws::Vector<ImageReplicationStatus>&& value) { SetReplicationStatuses(std::move(value)); return *this;}
-
-    /**
-     * <p>The replication status details for the images in the specified
-     * repository.</p>
-     */
     inline DescribeImageReplicationStatusResult& AddReplicationStatuses(const ImageReplicationStatus& value) { m_replicationStatuses.push_back(value); return *this; }
-
-    /**
-     * <p>The replication status details for the images in the specified
-     * repository.</p>
-     */
     inline DescribeImageReplicationStatusResult& AddReplicationStatuses(ImageReplicationStatus&& value) { m_replicationStatuses.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeImageReplicationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeImageReplicationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeImageReplicationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

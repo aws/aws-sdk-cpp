@@ -29,10 +29,11 @@ namespace Model
 
     StartLiveTailHandler::StartLiveTailHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const StartLiveTailInitialResponse&)
+        m_onInitialResponse = [&](const StartLiveTailInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(STARTLIVETAIL_HANDLER_CLASS_TAG,
-                "StartLiveTail initial response received.");
+                "StartLiveTail initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onLiveTailSessionStart = [&](const LiveTailSessionStart&)
@@ -99,18 +100,11 @@ namespace Model
         }
         switch (StartLiveTailEventMapper::GetStartLiveTailEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case StartLiveTailEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(STARTLIVETAIL_HANDLER_CLASS_TAG, "Unable to generate a proper StartLiveTailInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            StartLiveTailInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case StartLiveTailEventType::INITIAL_RESPONSE:
+        {
+            StartLiveTailInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

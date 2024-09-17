@@ -588,13 +588,13 @@ namespace ChimeSDKIdentity
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppInstancesOutcome ListAppInstances(const Model::ListAppInstancesRequest& request) const;
+        virtual Model::ListAppInstancesOutcome ListAppInstances(const Model::ListAppInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAppInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppInstancesRequestT = Model::ListAppInstancesRequest>
-        Model::ListAppInstancesOutcomeCallable ListAppInstancesCallable(const ListAppInstancesRequestT& request) const
+        Model::ListAppInstancesOutcomeCallable ListAppInstancesCallable(const ListAppInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeSDKIdentityClient::ListAppInstances, request);
         }
@@ -603,7 +603,7 @@ namespace ChimeSDKIdentity
          * An Async wrapper for ListAppInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppInstancesRequestT = Model::ListAppInstancesRequest>
-        void ListAppInstancesAsync(const ListAppInstancesRequestT& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppInstancesAsync(const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeSDKIdentityClient::ListAppInstances, request, handler, context);
         }
@@ -882,7 +882,6 @@ namespace ChimeSDKIdentity
       void init(const ChimeSDKIdentityClientConfiguration& clientConfiguration);
 
       ChimeSDKIdentityClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> m_endpointProvider;
   };
 

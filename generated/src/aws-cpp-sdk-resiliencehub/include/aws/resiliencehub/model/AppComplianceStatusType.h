@@ -19,7 +19,9 @@ namespace Model
     PolicyBreached,
     PolicyMet,
     NotAssessed,
-    ChangesDetected
+    ChangesDetected,
+    NotApplicable,
+    MissingPolicy
   };
 
 namespace AppComplianceStatusTypeMapper

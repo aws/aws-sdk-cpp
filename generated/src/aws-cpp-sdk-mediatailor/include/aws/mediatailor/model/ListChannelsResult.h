@@ -34,106 +34,43 @@ namespace Model
     AWS_MEDIATAILOR_API ListChannelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of channels that are associated with this account.</p>
      */
     inline const Aws::Vector<Channel>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>A list of channels that are associated with this account.</p>
-     */
     inline void SetItems(const Aws::Vector<Channel>& value) { m_items = value; }
-
-    /**
-     * <p>A list of channels that are associated with this account.</p>
-     */
     inline void SetItems(Aws::Vector<Channel>&& value) { m_items = std::move(value); }
-
-    /**
-     * <p>A list of channels that are associated with this account.</p>
-     */
     inline ListChannelsResult& WithItems(const Aws::Vector<Channel>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>A list of channels that are associated with this account.</p>
-     */
     inline ListChannelsResult& WithItems(Aws::Vector<Channel>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of channels that are associated with this account.</p>
-     */
     inline ListChannelsResult& AddItems(const Channel& value) { m_items.push_back(value); return *this; }
-
-    /**
-     * <p>A list of channels that are associated with this account.</p>
-     */
     inline ListChannelsResult& AddItems(Channel&& value) { m_items.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token returned by the list request when results exceed the maximum
      * allowed. Use the token to fetch the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token returned by the list request when results exceed the maximum
-     * allowed. Use the token to fetch the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token returned by the list request when results exceed the maximum
-     * allowed. Use the token to fetch the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token returned by the list request when results exceed the maximum
-     * allowed. Use the token to fetch the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token returned by the list request when results exceed the maximum
-     * allowed. Use the token to fetch the next page of results.</p>
-     */
     inline ListChannelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token returned by the list request when results exceed the maximum
-     * allowed. Use the token to fetch the next page of results.</p>
-     */
     inline ListChannelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token returned by the list request when results exceed the maximum
-     * allowed. Use the token to fetch the next page of results.</p>
-     */
     inline ListChannelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListChannelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListChannelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListChannelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Channel> m_items;

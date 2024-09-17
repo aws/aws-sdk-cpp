@@ -38,67 +38,29 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The confidence level of the label given</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>The confidence level of the label given</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>The confidence level of the label given</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>The confidence level of the label given</p>
-     */
     inline ContentType& WithConfidence(double value) { SetConfidence(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the label</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the label</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the label</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the label</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the label</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the label</p>
-     */
     inline ContentType& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the label</p>
-     */
     inline ContentType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the label</p>
-     */
     inline ContentType& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     double m_confidence;

@@ -32,17 +32,8 @@ LinuxParameters::LinuxParameters() :
 {
 }
 
-LinuxParameters::LinuxParameters(JsonView jsonValue) : 
-    m_devicesHasBeenSet(false),
-    m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false),
-    m_sharedMemorySize(0),
-    m_sharedMemorySizeHasBeenSet(false),
-    m_tmpfsHasBeenSet(false),
-    m_maxSwap(0),
-    m_maxSwapHasBeenSet(false),
-    m_swappiness(0),
-    m_swappinessHasBeenSet(false)
+LinuxParameters::LinuxParameters(JsonView jsonValue)
+  : LinuxParameters()
 {
   *this = jsonValue;
 }

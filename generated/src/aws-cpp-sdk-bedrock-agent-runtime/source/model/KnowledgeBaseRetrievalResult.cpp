@@ -21,16 +21,14 @@ namespace Model
 KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult() : 
     m_contentHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_metadataHasBeenSet(false),
     m_score(0.0),
     m_scoreHasBeenSet(false)
 {
 }
 
-KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult(JsonView jsonValue)
+  : KnowledgeBaseRetrievalResult()
 {
   *this = jsonValue;
 }
@@ -49,6 +47,16 @@ KnowledgeBaseRetrievalResult& KnowledgeBaseRetrievalResult::operator =(JsonView 
     m_location = jsonValue.GetObject("location");
 
     m_locationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsObject();
+    }
+    m_metadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("score"))
@@ -74,6 +82,17 @@ JsonValue KnowledgeBaseRetrievalResult::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithObject("location", m_location.Jsonize());
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.View());
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
 
   }
 

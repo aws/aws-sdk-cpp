@@ -27,12 +27,8 @@ EvaluatedExternalModel::EvaluatedExternalModel() :
 {
 }
 
-EvaluatedExternalModel::EvaluatedExternalModel(JsonView jsonValue) : 
-    m_modelEndpointHasBeenSet(false),
-    m_useEventVariables(false),
-    m_useEventVariablesHasBeenSet(false),
-    m_inputVariablesHasBeenSet(false),
-    m_outputVariablesHasBeenSet(false)
+EvaluatedExternalModel::EvaluatedExternalModel(JsonView jsonValue)
+  : EvaluatedExternalModel()
 {
   *this = jsonValue;
 }

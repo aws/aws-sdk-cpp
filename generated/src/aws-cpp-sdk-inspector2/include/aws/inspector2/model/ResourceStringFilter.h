@@ -39,77 +39,31 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The filter's comparison.</p>
      */
     inline const ResourceStringComparison& GetComparison() const{ return m_comparison; }
-
-    /**
-     * <p>The filter's comparison.</p>
-     */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-
-    /**
-     * <p>The filter's comparison.</p>
-     */
     inline void SetComparison(const ResourceStringComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-
-    /**
-     * <p>The filter's comparison.</p>
-     */
     inline void SetComparison(ResourceStringComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-
-    /**
-     * <p>The filter's comparison.</p>
-     */
     inline ResourceStringFilter& WithComparison(const ResourceStringComparison& value) { SetComparison(value); return *this;}
-
-    /**
-     * <p>The filter's comparison.</p>
-     */
     inline ResourceStringFilter& WithComparison(ResourceStringComparison&& value) { SetComparison(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filter's value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The filter's value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The filter's value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The filter's value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The filter's value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The filter's value.</p>
-     */
     inline ResourceStringFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The filter's value.</p>
-     */
     inline ResourceStringFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The filter's value.</p>
-     */
     inline ResourceStringFilter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     ResourceStringComparison m_comparison;

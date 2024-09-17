@@ -33,53 +33,27 @@ namespace Model
     AWS_NIMBLESTUDIO_API DeleteStreamingSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The session.</p>
      */
     inline const StreamingSession& GetSession() const{ return m_session; }
-
-    /**
-     * <p>The session.</p>
-     */
     inline void SetSession(const StreamingSession& value) { m_session = value; }
-
-    /**
-     * <p>The session.</p>
-     */
     inline void SetSession(StreamingSession&& value) { m_session = std::move(value); }
-
-    /**
-     * <p>The session.</p>
-     */
     inline DeleteStreamingSessionResult& WithSession(const StreamingSession& value) { SetSession(value); return *this;}
-
-    /**
-     * <p>The session.</p>
-     */
     inline DeleteStreamingSessionResult& WithSession(StreamingSession&& value) { SetSession(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteStreamingSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteStreamingSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteStreamingSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StreamingSession m_session;

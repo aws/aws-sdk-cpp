@@ -29,12 +29,8 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(const XmlNode& xmlNode) : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
+NetworkInterface::NetworkInterface(const XmlNode& xmlNode)
+  : NetworkInterface()
 {
   *this = xmlNode;
 }

@@ -27,12 +27,8 @@ CompositedVideoArtifactsConfiguration::CompositedVideoArtifactsConfiguration() :
 {
 }
 
-CompositedVideoArtifactsConfiguration::CompositedVideoArtifactsConfiguration(JsonView jsonValue) : 
-    m_layout(LayoutOption::NOT_SET),
-    m_layoutHasBeenSet(false),
-    m_resolution(ResolutionOption::NOT_SET),
-    m_resolutionHasBeenSet(false),
-    m_gridViewConfigurationHasBeenSet(false)
+CompositedVideoArtifactsConfiguration::CompositedVideoArtifactsConfiguration(JsonView jsonValue)
+  : CompositedVideoArtifactsConfiguration()
 {
   *this = jsonValue;
 }

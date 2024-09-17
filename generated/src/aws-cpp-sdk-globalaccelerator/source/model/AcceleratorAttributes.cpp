@@ -26,11 +26,8 @@ AcceleratorAttributes::AcceleratorAttributes() :
 {
 }
 
-AcceleratorAttributes::AcceleratorAttributes(JsonView jsonValue) : 
-    m_flowLogsEnabled(false),
-    m_flowLogsEnabledHasBeenSet(false),
-    m_flowLogsS3BucketHasBeenSet(false),
-    m_flowLogsS3PrefixHasBeenSet(false)
+AcceleratorAttributes::AcceleratorAttributes(JsonView jsonValue)
+  : AcceleratorAttributes()
 {
   *this = jsonValue;
 }

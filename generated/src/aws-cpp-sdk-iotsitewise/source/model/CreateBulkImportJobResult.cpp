@@ -22,8 +22,8 @@ CreateBulkImportJobResult::CreateBulkImportJobResult() :
 {
 }
 
-CreateBulkImportJobResult::CreateBulkImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+CreateBulkImportJobResult::CreateBulkImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateBulkImportJobResult()
 {
   *this = result;
 }

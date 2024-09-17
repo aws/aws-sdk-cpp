@@ -155,6 +155,12 @@ DescribeIntentResult& DescribeIntentResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("qnAIntentConfiguration"))
+  {
+    m_qnAIntentConfiguration = jsonValue.GetObject("qnAIntentConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

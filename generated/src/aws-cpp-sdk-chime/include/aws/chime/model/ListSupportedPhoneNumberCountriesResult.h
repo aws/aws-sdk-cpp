@@ -34,63 +34,29 @@ namespace Model
     AWS_CHIME_API ListSupportedPhoneNumberCountriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The supported phone number countries.</p>
      */
     inline const Aws::Vector<PhoneNumberCountry>& GetPhoneNumberCountries() const{ return m_phoneNumberCountries; }
-
-    /**
-     * <p>The supported phone number countries.</p>
-     */
     inline void SetPhoneNumberCountries(const Aws::Vector<PhoneNumberCountry>& value) { m_phoneNumberCountries = value; }
-
-    /**
-     * <p>The supported phone number countries.</p>
-     */
     inline void SetPhoneNumberCountries(Aws::Vector<PhoneNumberCountry>&& value) { m_phoneNumberCountries = std::move(value); }
-
-    /**
-     * <p>The supported phone number countries.</p>
-     */
     inline ListSupportedPhoneNumberCountriesResult& WithPhoneNumberCountries(const Aws::Vector<PhoneNumberCountry>& value) { SetPhoneNumberCountries(value); return *this;}
-
-    /**
-     * <p>The supported phone number countries.</p>
-     */
     inline ListSupportedPhoneNumberCountriesResult& WithPhoneNumberCountries(Aws::Vector<PhoneNumberCountry>&& value) { SetPhoneNumberCountries(std::move(value)); return *this;}
-
-    /**
-     * <p>The supported phone number countries.</p>
-     */
     inline ListSupportedPhoneNumberCountriesResult& AddPhoneNumberCountries(const PhoneNumberCountry& value) { m_phoneNumberCountries.push_back(value); return *this; }
-
-    /**
-     * <p>The supported phone number countries.</p>
-     */
     inline ListSupportedPhoneNumberCountriesResult& AddPhoneNumberCountries(PhoneNumberCountry&& value) { m_phoneNumberCountries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSupportedPhoneNumberCountriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSupportedPhoneNumberCountriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSupportedPhoneNumberCountriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PhoneNumberCountry> m_phoneNumberCountries;

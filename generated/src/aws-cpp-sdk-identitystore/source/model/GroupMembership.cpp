@@ -26,11 +26,8 @@ GroupMembership::GroupMembership() :
 {
 }
 
-GroupMembership::GroupMembership(JsonView jsonValue) : 
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
+GroupMembership::GroupMembership(JsonView jsonValue)
+  : GroupMembership()
 {
   *this = jsonValue;
 }

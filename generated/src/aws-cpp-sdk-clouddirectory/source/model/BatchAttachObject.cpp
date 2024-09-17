@@ -25,10 +25,8 @@ BatchAttachObject::BatchAttachObject() :
 {
 }
 
-BatchAttachObject::BatchAttachObject(JsonView jsonValue) : 
-    m_parentReferenceHasBeenSet(false),
-    m_childReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
+BatchAttachObject::BatchAttachObject(JsonView jsonValue)
+  : BatchAttachObject()
 {
   *this = jsonValue;
 }

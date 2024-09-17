@@ -41,108 +41,43 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The current state of the EC2 Fleet.</p>
      */
     inline const FleetStateCode& GetCurrentFleetState() const{ return m_currentFleetState; }
-
-    /**
-     * <p>The current state of the EC2 Fleet.</p>
-     */
     inline bool CurrentFleetStateHasBeenSet() const { return m_currentFleetStateHasBeenSet; }
-
-    /**
-     * <p>The current state of the EC2 Fleet.</p>
-     */
     inline void SetCurrentFleetState(const FleetStateCode& value) { m_currentFleetStateHasBeenSet = true; m_currentFleetState = value; }
-
-    /**
-     * <p>The current state of the EC2 Fleet.</p>
-     */
     inline void SetCurrentFleetState(FleetStateCode&& value) { m_currentFleetStateHasBeenSet = true; m_currentFleetState = std::move(value); }
-
-    /**
-     * <p>The current state of the EC2 Fleet.</p>
-     */
     inline DeleteFleetSuccessItem& WithCurrentFleetState(const FleetStateCode& value) { SetCurrentFleetState(value); return *this;}
-
-    /**
-     * <p>The current state of the EC2 Fleet.</p>
-     */
     inline DeleteFleetSuccessItem& WithCurrentFleetState(FleetStateCode&& value) { SetCurrentFleetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The previous state of the EC2 Fleet.</p>
      */
     inline const FleetStateCode& GetPreviousFleetState() const{ return m_previousFleetState; }
-
-    /**
-     * <p>The previous state of the EC2 Fleet.</p>
-     */
     inline bool PreviousFleetStateHasBeenSet() const { return m_previousFleetStateHasBeenSet; }
-
-    /**
-     * <p>The previous state of the EC2 Fleet.</p>
-     */
     inline void SetPreviousFleetState(const FleetStateCode& value) { m_previousFleetStateHasBeenSet = true; m_previousFleetState = value; }
-
-    /**
-     * <p>The previous state of the EC2 Fleet.</p>
-     */
     inline void SetPreviousFleetState(FleetStateCode&& value) { m_previousFleetStateHasBeenSet = true; m_previousFleetState = std::move(value); }
-
-    /**
-     * <p>The previous state of the EC2 Fleet.</p>
-     */
     inline DeleteFleetSuccessItem& WithPreviousFleetState(const FleetStateCode& value) { SetPreviousFleetState(value); return *this;}
-
-    /**
-     * <p>The previous state of the EC2 Fleet.</p>
-     */
     inline DeleteFleetSuccessItem& WithPreviousFleetState(FleetStateCode&& value) { SetPreviousFleetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the EC2 Fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline DeleteFleetSuccessItem& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline DeleteFleetSuccessItem& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline DeleteFleetSuccessItem& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-
+    ///@}
   private:
 
     FleetStateCode m_currentFleetState;

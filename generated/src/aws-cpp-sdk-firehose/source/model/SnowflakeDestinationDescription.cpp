@@ -36,29 +36,14 @@ SnowflakeDestinationDescription::SnowflakeDestinationDescription() :
     m_retryOptionsHasBeenSet(false),
     m_s3BackupMode(SnowflakeS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false)
+    m_s3DestinationDescriptionHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false),
+    m_bufferingHintsHasBeenSet(false)
 {
 }
 
-SnowflakeDestinationDescription::SnowflakeDestinationDescription(JsonView jsonValue) : 
-    m_accountUrlHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_snowflakeRoleConfigurationHasBeenSet(false),
-    m_dataLoadingOption(SnowflakeDataLoadingOption::NOT_SET),
-    m_dataLoadingOptionHasBeenSet(false),
-    m_metaDataColumnNameHasBeenSet(false),
-    m_contentColumnNameHasBeenSet(false),
-    m_snowflakeVpcConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3BackupMode(SnowflakeS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false)
+SnowflakeDestinationDescription::SnowflakeDestinationDescription(JsonView jsonValue)
+  : SnowflakeDestinationDescription()
 {
   *this = jsonValue;
 }
@@ -177,6 +162,20 @@ SnowflakeDestinationDescription& SnowflakeDestinationDescription::operator =(Jso
     m_s3DestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
+  {
+    m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
+
+    m_secretsManagerConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BufferingHints"))
+  {
+    m_bufferingHints = jsonValue.GetObject("BufferingHints");
+
+    m_bufferingHintsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -275,6 +274,18 @@ JsonValue SnowflakeDestinationDescription::Jsonize() const
   if(m_s3DestinationDescriptionHasBeenSet)
   {
    payload.WithObject("S3DestinationDescription", m_s3DestinationDescription.Jsonize());
+
+  }
+
+  if(m_secretsManagerConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
+
+  }
+
+  if(m_bufferingHintsHasBeenSet)
+  {
+   payload.WithObject("BufferingHints", m_bufferingHints.Jsonize());
 
   }
 

@@ -35,20 +35,8 @@ LineageObject::LineageObject() :
 {
 }
 
-LineageObject::LineageObject(JsonView jsonValue) : 
-    m_startTimeHasBeenSet(false),
-    m_namespacePid(0),
-    m_namespacePidHasBeenSet(false),
-    m_userId(0),
-    m_userIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_uuidHasBeenSet(false),
-    m_executablePathHasBeenSet(false),
-    m_euid(0),
-    m_euidHasBeenSet(false),
-    m_parentUuidHasBeenSet(false)
+LineageObject::LineageObject(JsonView jsonValue)
+  : LineageObject()
 {
   *this = jsonValue;
 }

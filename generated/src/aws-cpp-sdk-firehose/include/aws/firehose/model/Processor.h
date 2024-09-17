@@ -26,7 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes a data processor.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a data processor.</p>  <p>If you want to add a new line
+   * delimiter between records in objects that are delivered to Amazon S3, choose
+   * <code>AppendDelimiterToRecord</code> as a processor type. You don’t have to put
+   * a processor parameter when you select <code>AppendDelimiterToRecord</code>. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Processor">AWS
    * API Reference</a></p>
    */
@@ -39,77 +43,31 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of processor.</p>
      */
     inline const ProcessorType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of processor.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of processor.</p>
-     */
     inline void SetType(const ProcessorType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of processor.</p>
-     */
     inline void SetType(ProcessorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of processor.</p>
-     */
     inline Processor& WithType(const ProcessorType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of processor.</p>
-     */
     inline Processor& WithType(ProcessorType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The processor parameters.</p>
      */
     inline const Aws::Vector<ProcessorParameter>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>The processor parameters.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>The processor parameters.</p>
-     */
     inline void SetParameters(const Aws::Vector<ProcessorParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>The processor parameters.</p>
-     */
     inline void SetParameters(Aws::Vector<ProcessorParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>The processor parameters.</p>
-     */
     inline Processor& WithParameters(const Aws::Vector<ProcessorParameter>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>The processor parameters.</p>
-     */
     inline Processor& WithParameters(Aws::Vector<ProcessorParameter>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The processor parameters.</p>
-     */
     inline Processor& AddParameters(const ProcessorParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>The processor parameters.</p>
-     */
     inline Processor& AddParameters(ProcessorParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ProcessorType m_type;

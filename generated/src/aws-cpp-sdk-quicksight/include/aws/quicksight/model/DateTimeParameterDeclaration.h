@@ -43,182 +43,70 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the parameter that is being declared.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline DateTimeParameterDeclaration& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline DateTimeParameterDeclaration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline DateTimeParameterDeclaration& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default values of a parameter. If the parameter is a single-value
      * parameter, a maximum of one default value can be provided.</p>
      */
     inline const DateTimeDefaultValues& GetDefaultValues() const{ return m_defaultValues; }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline bool DefaultValuesHasBeenSet() const { return m_defaultValuesHasBeenSet; }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline void SetDefaultValues(const DateTimeDefaultValues& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = value; }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline void SetDefaultValues(DateTimeDefaultValues&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::move(value); }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline DateTimeParameterDeclaration& WithDefaultValues(const DateTimeDefaultValues& value) { SetDefaultValues(value); return *this;}
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline DateTimeParameterDeclaration& WithDefaultValues(DateTimeDefaultValues&& value) { SetDefaultValues(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of time precision that is used to aggregate <code>DateTime</code>
      * values.</p>
      */
     inline const TimeGranularity& GetTimeGranularity() const{ return m_timeGranularity; }
-
-    /**
-     * <p>The level of time precision that is used to aggregate <code>DateTime</code>
-     * values.</p>
-     */
     inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-
-    /**
-     * <p>The level of time precision that is used to aggregate <code>DateTime</code>
-     * values.</p>
-     */
     inline void SetTimeGranularity(const TimeGranularity& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-
-    /**
-     * <p>The level of time precision that is used to aggregate <code>DateTime</code>
-     * values.</p>
-     */
     inline void SetTimeGranularity(TimeGranularity&& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = std::move(value); }
-
-    /**
-     * <p>The level of time precision that is used to aggregate <code>DateTime</code>
-     * values.</p>
-     */
     inline DateTimeParameterDeclaration& WithTimeGranularity(const TimeGranularity& value) { SetTimeGranularity(value); return *this;}
-
-    /**
-     * <p>The level of time precision that is used to aggregate <code>DateTime</code>
-     * values.</p>
-     */
     inline DateTimeParameterDeclaration& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration that defines the default value of a <code>DateTime</code>
      * parameter when a value has not been set.</p>
      */
     inline const DateTimeValueWhenUnsetConfiguration& GetValueWhenUnset() const{ return m_valueWhenUnset; }
-
-    /**
-     * <p>The configuration that defines the default value of a <code>DateTime</code>
-     * parameter when a value has not been set.</p>
-     */
     inline bool ValueWhenUnsetHasBeenSet() const { return m_valueWhenUnsetHasBeenSet; }
-
-    /**
-     * <p>The configuration that defines the default value of a <code>DateTime</code>
-     * parameter when a value has not been set.</p>
-     */
     inline void SetValueWhenUnset(const DateTimeValueWhenUnsetConfiguration& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = value; }
-
-    /**
-     * <p>The configuration that defines the default value of a <code>DateTime</code>
-     * parameter when a value has not been set.</p>
-     */
     inline void SetValueWhenUnset(DateTimeValueWhenUnsetConfiguration&& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = std::move(value); }
-
-    /**
-     * <p>The configuration that defines the default value of a <code>DateTime</code>
-     * parameter when a value has not been set.</p>
-     */
     inline DateTimeParameterDeclaration& WithValueWhenUnset(const DateTimeValueWhenUnsetConfiguration& value) { SetValueWhenUnset(value); return *this;}
-
-    /**
-     * <p>The configuration that defines the default value of a <code>DateTime</code>
-     * parameter when a value has not been set.</p>
-     */
     inline DateTimeParameterDeclaration& WithValueWhenUnset(DateTimeValueWhenUnsetConfiguration&& value) { SetValueWhenUnset(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<MappedDataSetParameter>& GetMappedDataSetParameters() const{ return m_mappedDataSetParameters; }
-
-    
     inline bool MappedDataSetParametersHasBeenSet() const { return m_mappedDataSetParametersHasBeenSet; }
-
-    
     inline void SetMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = value; }
-
-    
     inline void SetMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = std::move(value); }
-
-    
     inline DateTimeParameterDeclaration& WithMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { SetMappedDataSetParameters(value); return *this;}
-
-    
     inline DateTimeParameterDeclaration& WithMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { SetMappedDataSetParameters(std::move(value)); return *this;}
-
-    
     inline DateTimeParameterDeclaration& AddMappedDataSetParameters(const MappedDataSetParameter& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(value); return *this; }
-
-    
     inline DateTimeParameterDeclaration& AddMappedDataSetParameters(MappedDataSetParameter&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

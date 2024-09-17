@@ -23,8 +23,8 @@ RegionMapInputValue::RegionMapInputValue() :
 {
 }
 
-RegionMapInputValue::RegionMapInputValue(JsonView jsonValue) : 
-    m_sseKmsKeyIdHasBeenSet(false)
+RegionMapInputValue::RegionMapInputValue(JsonView jsonValue)
+  : RegionMapInputValue()
 {
   *this = jsonValue;
 }

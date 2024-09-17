@@ -26,11 +26,8 @@ FacetResult::FacetResult() :
 {
 }
 
-FacetResult::FacetResult(JsonView jsonValue) : 
-    m_documentAttributeKeyHasBeenSet(false),
-    m_documentAttributeValueType(DocumentAttributeValueType::NOT_SET),
-    m_documentAttributeValueTypeHasBeenSet(false),
-    m_documentAttributeValueCountPairsHasBeenSet(false)
+FacetResult::FacetResult(JsonView jsonValue)
+  : FacetResult()
 {
   *this = jsonValue;
 }

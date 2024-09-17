@@ -38,98 +38,41 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The status message.</p>
-     */
     inline GremlinQueryStatusAttributes& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline GremlinQueryStatusAttributes& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The status message.</p>
-     */
     inline GremlinQueryStatusAttributes& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP response code returned fro the Gremlin query request..</p>
      */
     inline int GetCode() const{ return m_code; }
-
-    /**
-     * <p>The HTTP response code returned fro the Gremlin query request..</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The HTTP response code returned fro the Gremlin query request..</p>
-     */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The HTTP response code returned fro the Gremlin query request..</p>
-     */
     inline GremlinQueryStatusAttributes& WithCode(int value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Attributes of the Gremlin query status.</p>
      */
     inline Aws::Utils::DocumentView GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>Attributes of the Gremlin query status.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>Attributes of the Gremlin query status.</p>
-     */
     inline void SetAttributes(const Aws::Utils::Document& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>Attributes of the Gremlin query status.</p>
-     */
     inline void SetAttributes(Aws::Utils::Document&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>Attributes of the Gremlin query status.</p>
-     */
     inline GremlinQueryStatusAttributes& WithAttributes(const Aws::Utils::Document& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>Attributes of the Gremlin query status.</p>
-     */
     inline GremlinQueryStatusAttributes& WithAttributes(Aws::Utils::Document&& value) { SetAttributes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

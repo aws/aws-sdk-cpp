@@ -35,46 +35,19 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the dedicated IP pool that you want to delete.</p>
      */
     inline const Aws::String& GetPoolName() const{ return m_poolName; }
-
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
     inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
-
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
     inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
-
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
     inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
-
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
     inline DeleteDedicatedIpPoolRequest& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
-
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
     inline DeleteDedicatedIpPoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dedicated IP pool that you want to delete.</p>
-     */
     inline DeleteDedicatedIpPoolRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_poolName;

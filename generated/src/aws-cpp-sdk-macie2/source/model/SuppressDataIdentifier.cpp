@@ -25,10 +25,8 @@ SuppressDataIdentifier::SuppressDataIdentifier() :
 {
 }
 
-SuppressDataIdentifier::SuppressDataIdentifier(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(DataIdentifierType::NOT_SET),
-    m_typeHasBeenSet(false)
+SuppressDataIdentifier::SuppressDataIdentifier(JsonView jsonValue)
+  : SuppressDataIdentifier()
 {
   *this = jsonValue;
 }

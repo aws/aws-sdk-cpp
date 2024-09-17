@@ -25,10 +25,8 @@ ApiGatewayProxyInput::ApiGatewayProxyInput() :
 {
 }
 
-ApiGatewayProxyInput::ApiGatewayProxyInput(JsonView jsonValue) : 
-    m_endpointType(ApiGatewayEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
+ApiGatewayProxyInput::ApiGatewayProxyInput(JsonView jsonValue)
+  : ApiGatewayProxyInput()
 {
   *this = jsonValue;
 }

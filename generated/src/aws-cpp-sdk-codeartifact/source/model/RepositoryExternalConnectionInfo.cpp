@@ -27,12 +27,8 @@ RepositoryExternalConnectionInfo::RepositoryExternalConnectionInfo() :
 {
 }
 
-RepositoryExternalConnectionInfo::RepositoryExternalConnectionInfo(JsonView jsonValue) : 
-    m_externalConnectionNameHasBeenSet(false),
-    m_packageFormat(PackageFormat::NOT_SET),
-    m_packageFormatHasBeenSet(false),
-    m_status(ExternalConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+RepositoryExternalConnectionInfo::RepositoryExternalConnectionInfo(JsonView jsonValue)
+  : RepositoryExternalConnectionInfo()
 {
   *this = jsonValue;
 }

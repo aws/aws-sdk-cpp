@@ -287,7 +287,6 @@ namespace MarketplaceMetering
       void init(const MarketplaceMeteringClientConfiguration& clientConfiguration);
 
       MarketplaceMeteringClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MarketplaceMeteringEndpointProviderBase> m_endpointProvider;
   };
 

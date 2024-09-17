@@ -39,24 +39,8 @@ CheckDetail::CheckDetail() :
 {
 }
 
-CheckDetail::CheckDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_provider(CheckProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_choiceIdHasBeenSet(false),
-    m_status(CheckStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_flaggedResources(0),
-    m_flaggedResourcesHasBeenSet(false),
-    m_reason(CheckFailureReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+CheckDetail::CheckDetail(JsonView jsonValue)
+  : CheckDetail()
 {
   *this = jsonValue;
 }

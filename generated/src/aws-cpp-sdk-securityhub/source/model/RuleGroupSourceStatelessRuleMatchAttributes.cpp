@@ -28,13 +28,8 @@ RuleGroupSourceStatelessRuleMatchAttributes::RuleGroupSourceStatelessRuleMatchAt
 {
 }
 
-RuleGroupSourceStatelessRuleMatchAttributes::RuleGroupSourceStatelessRuleMatchAttributes(JsonView jsonValue) : 
-    m_destinationPortsHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_tcpFlagsHasBeenSet(false)
+RuleGroupSourceStatelessRuleMatchAttributes::RuleGroupSourceStatelessRuleMatchAttributes(JsonView jsonValue)
+  : RuleGroupSourceStatelessRuleMatchAttributes()
 {
   *this = jsonValue;
 }

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using AthenaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AthenaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using AthenaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AthenaBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

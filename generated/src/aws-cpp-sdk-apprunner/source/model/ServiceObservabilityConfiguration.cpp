@@ -25,10 +25,8 @@ ServiceObservabilityConfiguration::ServiceObservabilityConfiguration() :
 {
 }
 
-ServiceObservabilityConfiguration::ServiceObservabilityConfiguration(JsonView jsonValue) : 
-    m_observabilityEnabled(false),
-    m_observabilityEnabledHasBeenSet(false),
-    m_observabilityConfigurationArnHasBeenSet(false)
+ServiceObservabilityConfiguration::ServiceObservabilityConfiguration(JsonView jsonValue)
+  : ServiceObservabilityConfiguration()
 {
   *this = jsonValue;
 }

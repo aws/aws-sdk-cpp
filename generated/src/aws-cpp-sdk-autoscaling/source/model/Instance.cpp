@@ -35,18 +35,8 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_lifecycleState(LifecycleState::NOT_SET),
-    m_lifecycleStateHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_protectedFromScaleIn(false),
-    m_protectedFromScaleInHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+Instance::Instance(const XmlNode& xmlNode)
+  : Instance()
 {
   *this = xmlNode;
 }

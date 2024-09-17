@@ -26,11 +26,8 @@ AdapterVersionEvaluationMetric::AdapterVersionEvaluationMetric() :
 {
 }
 
-AdapterVersionEvaluationMetric::AdapterVersionEvaluationMetric(JsonView jsonValue) : 
-    m_baselineHasBeenSet(false),
-    m_adapterVersionHasBeenSet(false),
-    m_featureType(FeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false)
+AdapterVersionEvaluationMetric::AdapterVersionEvaluationMetric(JsonView jsonValue)
+  : AdapterVersionEvaluationMetric()
 {
   *this = jsonValue;
 }

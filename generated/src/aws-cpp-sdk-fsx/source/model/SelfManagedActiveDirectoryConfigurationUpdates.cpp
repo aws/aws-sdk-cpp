@@ -28,13 +28,8 @@ SelfManagedActiveDirectoryConfigurationUpdates::SelfManagedActiveDirectoryConfig
 {
 }
 
-SelfManagedActiveDirectoryConfigurationUpdates::SelfManagedActiveDirectoryConfigurationUpdates(JsonView jsonValue) : 
-    m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false),
-    m_fileSystemAdministratorsGroupHasBeenSet(false)
+SelfManagedActiveDirectoryConfigurationUpdates::SelfManagedActiveDirectoryConfigurationUpdates(JsonView jsonValue)
+  : SelfManagedActiveDirectoryConfigurationUpdates()
 {
   *this = jsonValue;
 }

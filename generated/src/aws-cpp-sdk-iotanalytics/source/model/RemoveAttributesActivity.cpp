@@ -25,10 +25,8 @@ RemoveAttributesActivity::RemoveAttributesActivity() :
 {
 }
 
-RemoveAttributesActivity::RemoveAttributesActivity(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_nextHasBeenSet(false)
+RemoveAttributesActivity::RemoveAttributesActivity(JsonView jsonValue)
+  : RemoveAttributesActivity()
 {
   *this = jsonValue;
 }

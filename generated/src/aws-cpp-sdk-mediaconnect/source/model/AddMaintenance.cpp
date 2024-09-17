@@ -25,10 +25,8 @@ AddMaintenance::AddMaintenance() :
 {
 }
 
-AddMaintenance::AddMaintenance(JsonView jsonValue) : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceStartHourHasBeenSet(false)
+AddMaintenance::AddMaintenance(JsonView jsonValue)
+  : AddMaintenance()
 {
   *this = jsonValue;
 }

@@ -29,14 +29,8 @@ RecommendationReportDetails::RecommendationReportDetails() :
 {
 }
 
-RecommendationReportDetails::RecommendationReportDetails(JsonView jsonValue) : 
-    m_completionTimeHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(RecommendationReportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+RecommendationReportDetails::RecommendationReportDetails(JsonView jsonValue)
+  : RecommendationReportDetails()
 {
   *this = jsonValue;
 }

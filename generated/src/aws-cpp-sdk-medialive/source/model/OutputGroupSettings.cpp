@@ -26,19 +26,14 @@ OutputGroupSettings::OutputGroupSettings() :
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_multiplexGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
-    m_udpGroupSettingsHasBeenSet(false)
+    m_udpGroupSettingsHasBeenSet(false),
+    m_cmafIngestGroupSettingsHasBeenSet(false),
+    m_srtGroupSettingsHasBeenSet(false)
 {
 }
 
-OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
-    m_archiveGroupSettingsHasBeenSet(false),
-    m_frameCaptureGroupSettingsHasBeenSet(false),
-    m_hlsGroupSettingsHasBeenSet(false),
-    m_mediaPackageGroupSettingsHasBeenSet(false),
-    m_msSmoothGroupSettingsHasBeenSet(false),
-    m_multiplexGroupSettingsHasBeenSet(false),
-    m_rtmpGroupSettingsHasBeenSet(false),
-    m_udpGroupSettingsHasBeenSet(false)
+OutputGroupSettings::OutputGroupSettings(JsonView jsonValue)
+  : OutputGroupSettings()
 {
   *this = jsonValue;
 }
@@ -101,6 +96,20 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
     m_udpGroupSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cmafIngestGroupSettings"))
+  {
+    m_cmafIngestGroupSettings = jsonValue.GetObject("cmafIngestGroupSettings");
+
+    m_cmafIngestGroupSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("srtGroupSettings"))
+  {
+    m_srtGroupSettings = jsonValue.GetObject("srtGroupSettings");
+
+    m_srtGroupSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,18 @@ JsonValue OutputGroupSettings::Jsonize() const
   if(m_udpGroupSettingsHasBeenSet)
   {
    payload.WithObject("udpGroupSettings", m_udpGroupSettings.Jsonize());
+
+  }
+
+  if(m_cmafIngestGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("cmafIngestGroupSettings", m_cmafIngestGroupSettings.Jsonize());
+
+  }
+
+  if(m_srtGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("srtGroupSettings", m_srtGroupSettings.Jsonize());
 
   }
 

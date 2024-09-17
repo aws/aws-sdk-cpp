@@ -26,11 +26,8 @@ DimensionKeyDetail::DimensionKeyDetail() :
 {
 }
 
-DimensionKeyDetail::DimensionKeyDetail(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_status(DetailStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+DimensionKeyDetail::DimensionKeyDetail(JsonView jsonValue)
+  : DimensionKeyDetail()
 {
   *this = jsonValue;
 }

@@ -17,12 +17,14 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/utils/event/EventStream.h>
 
 #include <aws/qbusiness/QBusinessClient.h>
 #include <aws/qbusiness/QBusinessErrorMarshaller.h>
 #include <aws/qbusiness/QBusinessEndpointProvider.h>
 #include <aws/qbusiness/model/BatchDeleteDocumentRequest.h>
 #include <aws/qbusiness/model/BatchPutDocumentRequest.h>
+#include <aws/qbusiness/model/ChatRequest.h>
 #include <aws/qbusiness/model/ChatSyncRequest.h>
 #include <aws/qbusiness/model/CreateApplicationRequest.h>
 #include <aws/qbusiness/model/CreateDataSourceRequest.h>
@@ -104,13 +106,12 @@ const char* QBusinessClient::GetAllocationTag() {return ALLOCATION_TAG;}
 QBusinessClient::QBusinessClient(const QBusiness::QBusinessClientConfiguration& clientConfiguration,
                                  std::shared_ptr<QBusinessEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -120,13 +121,12 @@ QBusinessClient::QBusinessClient(const AWSCredentials& credentials,
                                  std::shared_ptr<QBusinessEndpointProviderBase> endpointProvider,
                                  const QBusiness::QBusinessClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -136,13 +136,12 @@ QBusinessClient::QBusinessClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                  std::shared_ptr<QBusinessEndpointProviderBase> endpointProvider,
                                  const QBusiness::QBusinessClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -151,13 +150,12 @@ QBusinessClient::QBusinessClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* Legacy constructors due deprecation */
   QBusinessClient::QBusinessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -166,13 +164,12 @@ QBusinessClient::QBusinessClient(const std::shared_ptr<AWSCredentialsProvider>& 
 QBusinessClient::QBusinessClient(const AWSCredentials& credentials,
                                  const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -181,13 +178,12 @@ QBusinessClient::QBusinessClient(const AWSCredentials& credentials,
 QBusinessClient::QBusinessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                  const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -207,6 +203,14 @@ std::shared_ptr<QBusinessEndpointProviderBase>& QBusinessClient::accessEndpointP
 void QBusinessClient::init(const QBusiness::QBusinessClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("QBusiness");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }
@@ -299,6 +303,62 @@ BatchPutDocumentOutcome QBusinessClient::BatchPutDocument(const BatchPutDocument
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+void QBusinessClient::ChatAsync(Model::ChatRequest& request,
+                const ChatStreamReadyHandler& streamReadyHandler,
+                const ChatResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+{
+  AWS_ASYNC_OPERATION_GUARD(Chat);
+  if (!m_endpointProvider) {
+    handler(this, request, ChatOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
+    return;
+  }
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("Chat", "Required field: ApplicationId, is not set");
+    handler(this, request, ChatOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false)), handlerContext);
+    return;
+  }
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+      *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!endpointResolutionOutcome.IsSuccess()) {
+      handler(this, request, ChatOutcome(Aws::Client::AWSError<CoreErrors>(
+          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+      return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/conversations");
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+
+  auto eventEncoderStream = Aws::MakeShared<Model::ChatInputStream>(ALLOCATION_TAG);
+  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
+  request.SetInputStream(eventEncoderStream); // this becomes the body of the request
+  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+
+  m_clientConfiguration.executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+      if(outcome.IsSuccess())
+      {
+        handler(this, request, ChatOutcome(NoResult()), handlerContext);
+      }
+      else
+      {
+        request.GetInputStream()->Close();
+        handler(this, request, ChatOutcome(outcome.GetError()), handlerContext);
+      }
+      return ChatOutcome(NoResult());
+  });
+  sem->WaitOne();
+  streamReadyHandler(*request.GetInputStream());
+}
 ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
 {
   AWS_OPERATION_GUARD(ChatSync);
@@ -307,11 +367,6 @@ ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
   {
     AWS_LOGSTREAM_ERROR("ChatSync", "Required field: ApplicationId, is not set");
     return ChatSyncOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
-  }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ChatSync", "Required field: UserId, is not set");
-    return ChatSyncOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ChatSync, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -650,20 +705,15 @@ DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConver
 {
   AWS_OPERATION_GUARD(DeleteConversation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConversation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ApplicationIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteConversation", "Required field: ApplicationId, is not set");
-    return DeleteConversationOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
-  }
   if (!request.ConversationIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteConversation", "Required field: ConversationId, is not set");
     return DeleteConversationOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConversationId]", false));
   }
-  if (!request.UserIdHasBeenSet())
+  if (!request.ApplicationIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("DeleteConversation", "Required field: UserId, is not set");
-    return DeleteConversationOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+    AWS_LOGSTREAM_ERROR("DeleteConversation", "Required field: ApplicationId, is not set");
+    return DeleteConversationOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteConversation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -700,15 +750,15 @@ DeleteDataSourceOutcome QBusinessClient::DeleteDataSource(const DeleteDataSource
     AWS_LOGSTREAM_ERROR("DeleteDataSource", "Required field: ApplicationId, is not set");
     return DeleteDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteDataSource", "Required field: DataSourceId, is not set");
-    return DeleteDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.IndexIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDataSource", "Required field: IndexId, is not set");
     return DeleteDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataSource", "Required field: DataSourceId, is not set");
+    return DeleteDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -747,15 +797,15 @@ DeleteGroupOutcome QBusinessClient::DeleteGroup(const DeleteGroupRequest& reques
     AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: ApplicationId, is not set");
     return DeleteGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: GroupName, is not set");
-    return DeleteGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   if (!request.IndexIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: IndexId, is not set");
     return DeleteGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexId]", false));
+  }
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: GroupName, is not set");
+    return DeleteGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1061,15 +1111,15 @@ GetDataSourceOutcome QBusinessClient::GetDataSource(const GetDataSourceRequest& 
     AWS_LOGSTREAM_ERROR("GetDataSource", "Required field: ApplicationId, is not set");
     return GetDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetDataSource", "Required field: DataSourceId, is not set");
-    return GetDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.IndexIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDataSource", "Required field: IndexId, is not set");
     return GetDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDataSource", "Required field: DataSourceId, is not set");
+    return GetDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1108,15 +1158,15 @@ GetGroupOutcome QBusinessClient::GetGroup(const GetGroupRequest& request) const
     AWS_LOGSTREAM_ERROR("GetGroup", "Required field: ApplicationId, is not set");
     return GetGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetGroup", "Required field: GroupName, is not set");
-    return GetGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   if (!request.IndexIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetGroup", "Required field: IndexId, is not set");
     return GetGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexId]", false));
+  }
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroup", "Required field: GroupName, is not set");
+    return GetGroupOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1382,11 +1432,6 @@ ListConversationsOutcome QBusinessClient::ListConversations(const ListConversati
     AWS_LOGSTREAM_ERROR("ListConversations", "Required field: ApplicationId, is not set");
     return ListConversationsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListConversations", "Required field: UserId, is not set");
-    return ListConversationsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListConversations, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -1416,15 +1461,15 @@ ListDataSourceSyncJobsOutcome QBusinessClient::ListDataSourceSyncJobs(const List
 {
   AWS_OPERATION_GUARD(ListDataSourceSyncJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSourceSyncJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ApplicationIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListDataSourceSyncJobs", "Required field: ApplicationId, is not set");
-    return ListDataSourceSyncJobsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
-  }
   if (!request.DataSourceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListDataSourceSyncJobs", "Required field: DataSourceId, is not set");
     return ListDataSourceSyncJobsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDataSourceSyncJobs", "Required field: ApplicationId, is not set");
+    return ListDataSourceSyncJobsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   if (!request.IndexIdHasBeenSet())
   {
@@ -1626,20 +1671,15 @@ ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& req
 {
   AWS_OPERATION_GUARD(ListMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ApplicationIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListMessages", "Required field: ApplicationId, is not set");
-    return ListMessagesOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
-  }
   if (!request.ConversationIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListMessages", "Required field: ConversationId, is not set");
     return ListMessagesOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConversationId]", false));
   }
-  if (!request.UserIdHasBeenSet())
+  if (!request.ApplicationIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("ListMessages", "Required field: UserId, is not set");
-    return ListMessagesOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+    AWS_LOGSTREAM_ERROR("ListMessages", "Required field: ApplicationId, is not set");
+    return ListMessagesOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMessages, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1821,11 +1861,6 @@ PutFeedbackOutcome QBusinessClient::PutFeedback(const PutFeedbackRequest& reques
     AWS_LOGSTREAM_ERROR("PutFeedback", "Required field: MessageId, is not set");
     return PutFeedbackOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PutFeedback", "Required field: UserId, is not set");
-    return PutFeedbackOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutFeedback, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -1900,15 +1935,15 @@ StartDataSourceSyncJobOutcome QBusinessClient::StartDataSourceSyncJob(const Star
 {
   AWS_OPERATION_GUARD(StartDataSourceSyncJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDataSourceSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ApplicationIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartDataSourceSyncJob", "Required field: ApplicationId, is not set");
-    return StartDataSourceSyncJobOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
-  }
   if (!request.DataSourceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartDataSourceSyncJob", "Required field: DataSourceId, is not set");
     return StartDataSourceSyncJobOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartDataSourceSyncJob", "Required field: ApplicationId, is not set");
+    return StartDataSourceSyncJobOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   if (!request.IndexIdHasBeenSet())
   {
@@ -1948,15 +1983,15 @@ StopDataSourceSyncJobOutcome QBusinessClient::StopDataSourceSyncJob(const StopDa
 {
   AWS_OPERATION_GUARD(StopDataSourceSyncJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDataSourceSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ApplicationIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StopDataSourceSyncJob", "Required field: ApplicationId, is not set");
-    return StopDataSourceSyncJobOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
-  }
   if (!request.DataSourceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopDataSourceSyncJob", "Required field: DataSourceId, is not set");
     return StopDataSourceSyncJobOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopDataSourceSyncJob", "Required field: ApplicationId, is not set");
+    return StopDataSourceSyncJobOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   if (!request.IndexIdHasBeenSet())
   {
@@ -2139,15 +2174,15 @@ UpdateDataSourceOutcome QBusinessClient::UpdateDataSource(const UpdateDataSource
     AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: ApplicationId, is not set");
     return UpdateDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: DataSourceId, is not set");
-    return UpdateDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.IndexIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: IndexId, is not set");
     return UpdateDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: DataSourceId, is not set");
+    return UpdateDataSourceOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

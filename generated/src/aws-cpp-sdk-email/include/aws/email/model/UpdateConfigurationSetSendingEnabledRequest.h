@@ -40,71 +40,30 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the configuration set to update.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The name of the configuration set to update.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration set to update.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>The name of the configuration set to update.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration set to update.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The name of the configuration set to update.</p>
-     */
     inline UpdateConfigurationSetSendingEnabledRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration set to update.</p>
-     */
     inline UpdateConfigurationSetSendingEnabledRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration set to update.</p>
-     */
     inline UpdateConfigurationSetSendingEnabledRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes whether email sending is enabled or disabled for the configuration
      * set. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Describes whether email sending is enabled or disabled for the configuration
-     * set. </p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Describes whether email sending is enabled or disabled for the configuration
-     * set. </p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Describes whether email sending is enabled or disabled for the configuration
-     * set. </p>
-     */
     inline UpdateConfigurationSetSendingEnabledRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetName;

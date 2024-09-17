@@ -33,106 +33,43 @@ namespace Model
     AWS_SERVICECATALOG_API UpdatePortfolioShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The token that tracks the status of the <code>UpdatePortfolioShare</code>
      * operation for external account to account or organizational type sharing.</p>
      */
     inline const Aws::String& GetPortfolioShareToken() const{ return m_portfolioShareToken; }
-
-    /**
-     * <p>The token that tracks the status of the <code>UpdatePortfolioShare</code>
-     * operation for external account to account or organizational type sharing.</p>
-     */
     inline void SetPortfolioShareToken(const Aws::String& value) { m_portfolioShareToken = value; }
-
-    /**
-     * <p>The token that tracks the status of the <code>UpdatePortfolioShare</code>
-     * operation for external account to account or organizational type sharing.</p>
-     */
     inline void SetPortfolioShareToken(Aws::String&& value) { m_portfolioShareToken = std::move(value); }
-
-    /**
-     * <p>The token that tracks the status of the <code>UpdatePortfolioShare</code>
-     * operation for external account to account or organizational type sharing.</p>
-     */
     inline void SetPortfolioShareToken(const char* value) { m_portfolioShareToken.assign(value); }
-
-    /**
-     * <p>The token that tracks the status of the <code>UpdatePortfolioShare</code>
-     * operation for external account to account or organizational type sharing.</p>
-     */
     inline UpdatePortfolioShareResult& WithPortfolioShareToken(const Aws::String& value) { SetPortfolioShareToken(value); return *this;}
-
-    /**
-     * <p>The token that tracks the status of the <code>UpdatePortfolioShare</code>
-     * operation for external account to account or organizational type sharing.</p>
-     */
     inline UpdatePortfolioShareResult& WithPortfolioShareToken(Aws::String&& value) { SetPortfolioShareToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token that tracks the status of the <code>UpdatePortfolioShare</code>
-     * operation for external account to account or organizational type sharing.</p>
-     */
     inline UpdatePortfolioShareResult& WithPortfolioShareToken(const char* value) { SetPortfolioShareToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of <code>UpdatePortfolioShare</code> operation. You can also
      * obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
      * </p>
      */
     inline const ShareStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of <code>UpdatePortfolioShare</code> operation. You can also
-     * obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-     * </p>
-     */
     inline void SetStatus(const ShareStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of <code>UpdatePortfolioShare</code> operation. You can also
-     * obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-     * </p>
-     */
     inline void SetStatus(ShareStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of <code>UpdatePortfolioShare</code> operation. You can also
-     * obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-     * </p>
-     */
     inline UpdatePortfolioShareResult& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of <code>UpdatePortfolioShare</code> operation. You can also
-     * obtain the operation status using <code>DescribePortfolioShareStatus</code> API.
-     * </p>
-     */
     inline UpdatePortfolioShareResult& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePortfolioShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePortfolioShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePortfolioShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_portfolioShareToken;

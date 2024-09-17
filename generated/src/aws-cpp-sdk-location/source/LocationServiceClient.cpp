@@ -49,6 +49,7 @@
 #include <aws/location/model/DescribeRouteCalculatorRequest.h>
 #include <aws/location/model/DescribeTrackerRequest.h>
 #include <aws/location/model/DisassociateTrackerConsumerRequest.h>
+#include <aws/location/model/ForecastGeofenceEventsRequest.h>
 #include <aws/location/model/GetDevicePositionRequest.h>
 #include <aws/location/model/GetDevicePositionHistoryRequest.h>
 #include <aws/location/model/GetGeofenceRequest.h>
@@ -79,6 +80,7 @@
 #include <aws/location/model/UpdatePlaceIndexRequest.h>
 #include <aws/location/model/UpdateRouteCalculatorRequest.h>
 #include <aws/location/model/UpdateTrackerRequest.h>
+#include <aws/location/model/VerifyDevicePositionRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -113,7 +115,6 @@ LocationServiceClient::LocationServiceClient(const LocationService::LocationServ
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -129,7 +130,6 @@ LocationServiceClient::LocationServiceClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -145,7 +145,6 @@ LocationServiceClient::LocationServiceClient(const std::shared_ptr<AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -160,7 +159,6 @@ LocationServiceClient::LocationServiceClient(const std::shared_ptr<AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -175,7 +173,6 @@ LocationServiceClient::LocationServiceClient(const AWSCredentials& credentials,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -190,7 +187,6 @@ LocationServiceClient::LocationServiceClient(const std::shared_ptr<AWSCredential
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -210,6 +206,14 @@ std::shared_ptr<LocationServiceEndpointProviderBase>& LocationServiceClient::acc
 void LocationServiceClient::init(const LocationService::LocationServiceClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Location");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }
@@ -1142,15 +1146,15 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
 {
   AWS_OPERATION_GUARD(DisassociateTrackerConsumer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ConsumerArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateTrackerConsumer", "Required field: ConsumerArn, is not set");
-    return DisassociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConsumerArn]", false));
-  }
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateTrackerConsumer", "Required field: TrackerName, is not set");
     return DisassociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
+  }
+  if (!request.ConsumerArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateTrackerConsumer", "Required field: ConsumerArn, is not set");
+    return DisassociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConsumerArn]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateTrackerConsumer, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1180,19 +1184,55 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ForecastGeofenceEventsOutcome LocationServiceClient::ForecastGeofenceEvents(const ForecastGeofenceEventsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ForecastGeofenceEvents);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ForecastGeofenceEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollectionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ForecastGeofenceEvents", "Required field: CollectionName, is not set");
+    return ForecastGeofenceEventsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ForecastGeofenceEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ForecastGeofenceEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ForecastGeofenceEvents",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ForecastGeofenceEventsOutcome>(
+    [&]()-> ForecastGeofenceEventsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ForecastGeofenceEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("geofencing.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ForecastGeofenceEventsOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/forecast-geofence-events");
+      return ForecastGeofenceEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevicePositionRequest& request) const
 {
   AWS_OPERATION_GUARD(GetDevicePosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DeviceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetDevicePosition", "Required field: DeviceId, is not set");
-    return GetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
-  }
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDevicePosition", "Required field: TrackerName, is not set");
     return GetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
+  }
+  if (!request.DeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDevicePosition", "Required field: DeviceId, is not set");
+    return GetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDevicePosition, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1227,15 +1267,15 @@ GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(
 {
   AWS_OPERATION_GUARD(GetDevicePositionHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicePositionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DeviceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetDevicePositionHistory", "Required field: DeviceId, is not set");
-    return GetDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
-  }
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDevicePositionHistory", "Required field: TrackerName, is not set");
     return GetDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
+  }
+  if (!request.DeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDevicePositionHistory", "Required field: DeviceId, is not set");
+    return GetDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDevicePositionHistory, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1312,6 +1352,11 @@ GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsReques
 {
   AWS_OPERATION_GUARD(GetMapGlyphs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapGlyphs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MapNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMapGlyphs", "Required field: MapName, is not set");
+    return GetMapGlyphsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
+  }
   if (!request.FontStackHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMapGlyphs", "Required field: FontStack, is not set");
@@ -1321,11 +1366,6 @@ GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsReques
   {
     AWS_LOGSTREAM_ERROR("GetMapGlyphs", "Required field: FontUnicodeRange, is not set");
     return GetMapGlyphsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FontUnicodeRange]", false));
-  }
-  if (!request.MapNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetMapGlyphs", "Required field: MapName, is not set");
-    return GetMapGlyphsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMapGlyphs, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1360,15 +1400,15 @@ GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesReq
 {
   AWS_OPERATION_GUARD(GetMapSprites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapSprites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.FileNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetMapSprites", "Required field: FileName, is not set");
-    return GetMapSpritesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileName]", false));
-  }
   if (!request.MapNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMapSprites", "Required field: MapName, is not set");
     return GetMapSpritesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
+  }
+  if (!request.FileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMapSprites", "Required field: FileName, is not set");
+    return GetMapSpritesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileName]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMapSprites, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1443,6 +1483,11 @@ GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& req
     AWS_LOGSTREAM_ERROR("GetMapTile", "Required field: MapName, is not set");
     return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
+  if (!request.ZHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMapTile", "Required field: Z, is not set");
+    return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Z]", false));
+  }
   if (!request.XHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMapTile", "Required field: X, is not set");
@@ -1452,11 +1497,6 @@ GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& req
   {
     AWS_LOGSTREAM_ERROR("GetMapTile", "Required field: Y, is not set");
     return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Y]", false));
-  }
-  if (!request.ZHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetMapTile", "Required field: Z, is not set");
-    return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Z]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMapTile, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2276,6 +2316,42 @@ UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerReq
       endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
       return UpdateTrackerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+VerifyDevicePositionOutcome LocationServiceClient::VerifyDevicePosition(const VerifyDevicePositionRequest& request) const
+{
+  AWS_OPERATION_GUARD(VerifyDevicePosition);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, VerifyDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.TrackerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("VerifyDevicePosition", "Required field: TrackerName, is not set");
+    return VerifyDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, VerifyDevicePosition, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, VerifyDevicePosition, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".VerifyDevicePosition",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<VerifyDevicePositionOutcome>(
+    [&]()-> VerifyDevicePositionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, VerifyDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("tracking.");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), VerifyDevicePositionOutcome(addPrefixErr.value()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/positions/verify");
+      return VerifyDevicePositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

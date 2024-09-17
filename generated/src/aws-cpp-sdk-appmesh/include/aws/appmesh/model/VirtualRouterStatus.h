@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status of the virtual router.</p>
      */
     inline const VirtualRouterStatusCode& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the virtual router.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the virtual router.</p>
-     */
     inline void SetStatus(const VirtualRouterStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the virtual router.</p>
-     */
     inline void SetStatus(VirtualRouterStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the virtual router.</p>
-     */
     inline VirtualRouterStatus& WithStatus(const VirtualRouterStatusCode& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the virtual router.</p>
-     */
     inline VirtualRouterStatus& WithStatus(VirtualRouterStatusCode&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VirtualRouterStatusCode m_status;

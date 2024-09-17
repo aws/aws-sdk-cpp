@@ -39,32 +39,14 @@ AddOutputRequest::AddOutputRequest() :
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
+    m_vpcInterfaceAttachmentHasBeenSet(false),
+    m_outputStatus(OutputStatus::NOT_SET),
+    m_outputStatusHasBeenSet(false)
 {
 }
 
-AddOutputRequest::AddOutputRequest(JsonView jsonValue) : 
-    m_cidrAllowListHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_maxLatency(0),
-    m_maxLatencyHasBeenSet(false),
-    m_mediaStreamOutputConfigurationsHasBeenSet(false),
-    m_minLatency(0),
-    m_minLatencyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_remoteIdHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_smoothingLatency(0),
-    m_smoothingLatencyHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
+AddOutputRequest::AddOutputRequest(JsonView jsonValue)
+  : AddOutputRequest()
 {
   *this = jsonValue;
 }
@@ -182,6 +164,13 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
     m_vpcInterfaceAttachmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputStatus"))
+  {
+    m_outputStatus = OutputStatusMapper::GetOutputStatusForName(jsonValue.GetString("outputStatus"));
+
+    m_outputStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -286,6 +275,11 @@ JsonValue AddOutputRequest::Jsonize() const
   {
    payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
 
+  }
+
+  if(m_outputStatusHasBeenSet)
+  {
+   payload.WithString("outputStatus", OutputStatusMapper::GetNameForOutputStatus(m_outputStatus));
   }
 
   return payload;

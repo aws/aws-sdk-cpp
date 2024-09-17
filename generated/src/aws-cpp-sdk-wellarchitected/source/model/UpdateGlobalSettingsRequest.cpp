@@ -16,7 +16,8 @@ UpdateGlobalSettingsRequest::UpdateGlobalSettingsRequest() :
     m_organizationSharingStatus(OrganizationSharingStatus::NOT_SET),
     m_organizationSharingStatusHasBeenSet(false),
     m_discoveryIntegrationStatus(DiscoveryIntegrationStatus::NOT_SET),
-    m_discoveryIntegrationStatusHasBeenSet(false)
+    m_discoveryIntegrationStatusHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String UpdateGlobalSettingsRequest::SerializePayload() const
   if(m_discoveryIntegrationStatusHasBeenSet)
   {
    payload.WithString("DiscoveryIntegrationStatus", DiscoveryIntegrationStatusMapper::GetNameForDiscoveryIntegrationStatus(m_discoveryIntegrationStatus));
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

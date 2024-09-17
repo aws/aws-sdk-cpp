@@ -25,10 +25,8 @@ EventResource::EventResource() :
 {
 }
 
-EventResource::EventResource(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+EventResource::EventResource(JsonView jsonValue)
+  : EventResource()
 {
   *this = jsonValue;
 }

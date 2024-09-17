@@ -34,19 +34,8 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_ruleArnHasBeenSet(false),
-    m_triggerEventSourceHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_publishStatus(RulePublishStatus::NOT_SET),
-    m_publishStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Rule::Rule(JsonView jsonValue)
+  : Rule()
 {
   *this = jsonValue;
 }

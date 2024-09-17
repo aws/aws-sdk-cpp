@@ -28,13 +28,8 @@ AlgorithmSummary::AlgorithmSummary() :
 {
 }
 
-AlgorithmSummary::AlgorithmSummary(JsonView jsonValue) : 
-    m_algorithmNameHasBeenSet(false),
-    m_algorithmArnHasBeenSet(false),
-    m_algorithmDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_algorithmStatus(AlgorithmStatus::NOT_SET),
-    m_algorithmStatusHasBeenSet(false)
+AlgorithmSummary::AlgorithmSummary(JsonView jsonValue)
+  : AlgorithmSummary()
 {
   *this = jsonValue;
 }

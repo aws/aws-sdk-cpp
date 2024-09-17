@@ -23,8 +23,8 @@ Clip::Clip() :
 {
 }
 
-Clip::Clip(JsonView jsonValue) : 
-    m_timeSpanHasBeenSet(false)
+Clip::Clip(JsonView jsonValue)
+  : Clip()
 {
   *this = jsonValue;
 }

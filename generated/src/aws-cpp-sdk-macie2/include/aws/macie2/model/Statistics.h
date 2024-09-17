@@ -36,51 +36,26 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The approximate number of objects that the job has yet to process during its
      * current run.</p>
      */
     inline double GetApproximateNumberOfObjectsToProcess() const{ return m_approximateNumberOfObjectsToProcess; }
-
-    /**
-     * <p>The approximate number of objects that the job has yet to process during its
-     * current run.</p>
-     */
     inline bool ApproximateNumberOfObjectsToProcessHasBeenSet() const { return m_approximateNumberOfObjectsToProcessHasBeenSet; }
-
-    /**
-     * <p>The approximate number of objects that the job has yet to process during its
-     * current run.</p>
-     */
     inline void SetApproximateNumberOfObjectsToProcess(double value) { m_approximateNumberOfObjectsToProcessHasBeenSet = true; m_approximateNumberOfObjectsToProcess = value; }
-
-    /**
-     * <p>The approximate number of objects that the job has yet to process during its
-     * current run.</p>
-     */
     inline Statistics& WithApproximateNumberOfObjectsToProcess(double value) { SetApproximateNumberOfObjectsToProcess(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of times that the job has run.</p>
      */
     inline double GetNumberOfRuns() const{ return m_numberOfRuns; }
-
-    /**
-     * <p>The number of times that the job has run.</p>
-     */
     inline bool NumberOfRunsHasBeenSet() const { return m_numberOfRunsHasBeenSet; }
-
-    /**
-     * <p>The number of times that the job has run.</p>
-     */
     inline void SetNumberOfRuns(double value) { m_numberOfRunsHasBeenSet = true; m_numberOfRuns = value; }
-
-    /**
-     * <p>The number of times that the job has run.</p>
-     */
     inline Statistics& WithNumberOfRuns(double value) { SetNumberOfRuns(value); return *this;}
-
+    ///@}
   private:
 
     double m_approximateNumberOfObjectsToProcess;

@@ -26,9 +26,8 @@ RequestPaymentConfiguration::RequestPaymentConfiguration() :
 {
 }
 
-RequestPaymentConfiguration::RequestPaymentConfiguration(const XmlNode& xmlNode) : 
-    m_payer(Payer::NOT_SET),
-    m_payerHasBeenSet(false)
+RequestPaymentConfiguration::RequestPaymentConfiguration(const XmlNode& xmlNode)
+  : RequestPaymentConfiguration()
 {
   *this = xmlNode;
 }

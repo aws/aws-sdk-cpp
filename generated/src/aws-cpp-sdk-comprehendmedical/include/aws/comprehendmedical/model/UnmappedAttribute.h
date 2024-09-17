@@ -39,85 +39,32 @@ namespace Model
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The type of the unmapped attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline const EntityType& GetType() const{ return m_type; }
-
-    /**
-     * <p> The type of the unmapped attribute, could be one of the following values:
-     * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PROTECTED_HEALTH_INFORMATION". </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> The type of the unmapped attribute, could be one of the following values:
-     * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PROTECTED_HEALTH_INFORMATION". </p>
-     */
     inline void SetType(const EntityType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> The type of the unmapped attribute, could be one of the following values:
-     * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PROTECTED_HEALTH_INFORMATION". </p>
-     */
     inline void SetType(EntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> The type of the unmapped attribute, could be one of the following values:
-     * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PROTECTED_HEALTH_INFORMATION". </p>
-     */
     inline UnmappedAttribute& WithType(const EntityType& value) { SetType(value); return *this;}
-
-    /**
-     * <p> The type of the unmapped attribute, could be one of the following values:
-     * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PROTECTED_HEALTH_INFORMATION". </p>
-     */
     inline UnmappedAttribute& WithType(EntityType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The specific attribute that has been extracted but not mapped to an entity.
      * </p>
      */
     inline const Attribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p> The specific attribute that has been extracted but not mapped to an entity.
-     * </p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p> The specific attribute that has been extracted but not mapped to an entity.
-     * </p>
-     */
     inline void SetAttribute(const Attribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p> The specific attribute that has been extracted but not mapped to an entity.
-     * </p>
-     */
     inline void SetAttribute(Attribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p> The specific attribute that has been extracted but not mapped to an entity.
-     * </p>
-     */
     inline UnmappedAttribute& WithAttribute(const Attribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p> The specific attribute that has been extracted but not mapped to an entity.
-     * </p>
-     */
     inline UnmappedAttribute& WithAttribute(Attribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EntityType m_type;

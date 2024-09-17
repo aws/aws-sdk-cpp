@@ -31,16 +31,8 @@ StreamRecord::StreamRecord() :
 {
 }
 
-StreamRecord::StreamRecord(JsonView jsonValue) : 
-    m_approximateCreationDateTimeHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_newImageHasBeenSet(false),
-    m_oldImageHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false),
-    m_sizeBytes(0),
-    m_sizeBytesHasBeenSet(false),
-    m_streamViewType(StreamViewType::NOT_SET),
-    m_streamViewTypeHasBeenSet(false)
+StreamRecord::StreamRecord(JsonView jsonValue)
+  : StreamRecord()
 {
   *this = jsonValue;
 }

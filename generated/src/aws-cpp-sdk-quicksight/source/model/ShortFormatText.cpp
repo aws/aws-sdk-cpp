@@ -24,9 +24,8 @@ ShortFormatText::ShortFormatText() :
 {
 }
 
-ShortFormatText::ShortFormatText(JsonView jsonValue) : 
-    m_plainTextHasBeenSet(false),
-    m_richTextHasBeenSet(false)
+ShortFormatText::ShortFormatText(JsonView jsonValue)
+  : ShortFormatText()
 {
   *this = jsonValue;
 }

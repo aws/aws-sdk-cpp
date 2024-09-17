@@ -72,6 +72,7 @@
 #include <aws/qbusiness/model/UpdateRetrieverResult.h>
 #include <aws/qbusiness/model/UpdateUserResult.h>
 #include <aws/qbusiness/model/UpdateWebExperienceResult.h>
+#include <aws/qbusiness/model/ListApplicationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in QBusinessClient header */
 
@@ -86,6 +87,11 @@ namespace Aws
   namespace Utils
   {
     template< typename R, typename E> class Outcome;
+
+    namespace Event
+    {
+      class EventEncoderStream;
+    } // namespace Event
 
     namespace Threading
     {
@@ -106,7 +112,7 @@ namespace Aws
 
   namespace QBusiness
   {
-    using QBusinessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QBusinessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using QBusinessEndpointProviderBase = Aws::QBusiness::Endpoint::QBusinessEndpointProviderBase;
     using QBusinessEndpointProvider = Aws::QBusiness::Endpoint::QBusinessEndpointProvider;
 
@@ -115,6 +121,8 @@ namespace Aws
       /* Service model forward declarations required in QBusinessClient header */
       class BatchDeleteDocumentRequest;
       class BatchPutDocumentRequest;
+      class ChatRequest;
+      class ChatInputStream;
       class ChatSyncRequest;
       class CreateApplicationRequest;
       class CreateDataSourceRequest;
@@ -173,6 +181,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<BatchDeleteDocumentResult, QBusinessError> BatchDeleteDocumentOutcome;
       typedef Aws::Utils::Outcome<BatchPutDocumentResult, QBusinessError> BatchPutDocumentOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, QBusinessError> ChatOutcome;
       typedef Aws::Utils::Outcome<ChatSyncResult, QBusinessError> ChatSyncOutcome;
       typedef Aws::Utils::Outcome<CreateApplicationResult, QBusinessError> CreateApplicationOutcome;
       typedef Aws::Utils::Outcome<CreateDataSourceResult, QBusinessError> CreateDataSourceOutcome;
@@ -231,6 +240,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<BatchDeleteDocumentOutcome> BatchDeleteDocumentOutcomeCallable;
       typedef std::future<BatchPutDocumentOutcome> BatchPutDocumentOutcomeCallable;
+      typedef std::future<ChatOutcome> ChatOutcomeCallable;
       typedef std::future<ChatSyncOutcome> ChatSyncOutcomeCallable;
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
       typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
@@ -292,6 +302,8 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const QBusinessClient*, const Model::BatchDeleteDocumentRequest&, const Model::BatchDeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteDocumentResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::BatchPutDocumentRequest&, const Model::BatchPutDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutDocumentResponseReceivedHandler;
+    typedef std::function<void(Model::ChatInputStream&)> ChatStreamReadyHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::ChatRequest&, const Model::ChatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChatResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ChatSyncRequest&, const Model::ChatSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChatSyncResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;

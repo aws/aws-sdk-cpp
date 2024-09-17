@@ -24,9 +24,8 @@ CompatibleEnvironmentTemplate::CompatibleEnvironmentTemplate() :
 {
 }
 
-CompatibleEnvironmentTemplate::CompatibleEnvironmentTemplate(JsonView jsonValue) : 
-    m_majorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+CompatibleEnvironmentTemplate::CompatibleEnvironmentTemplate(JsonView jsonValue)
+  : CompatibleEnvironmentTemplate()
 {
   *this = jsonValue;
 }

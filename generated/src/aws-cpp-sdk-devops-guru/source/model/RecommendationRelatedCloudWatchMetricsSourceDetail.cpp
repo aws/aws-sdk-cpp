@@ -24,9 +24,8 @@ RecommendationRelatedCloudWatchMetricsSourceDetail::RecommendationRelatedCloudWa
 {
 }
 
-RecommendationRelatedCloudWatchMetricsSourceDetail::RecommendationRelatedCloudWatchMetricsSourceDetail(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+RecommendationRelatedCloudWatchMetricsSourceDetail::RecommendationRelatedCloudWatchMetricsSourceDetail(JsonView jsonValue)
+  : RecommendationRelatedCloudWatchMetricsSourceDetail()
 {
   *this = jsonValue;
 }

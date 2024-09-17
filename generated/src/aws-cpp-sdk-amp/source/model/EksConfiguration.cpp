@@ -25,10 +25,8 @@ EksConfiguration::EksConfiguration() :
 {
 }
 
-EksConfiguration::EksConfiguration(JsonView jsonValue) : 
-    m_clusterArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+EksConfiguration::EksConfiguration(JsonView jsonValue)
+  : EksConfiguration()
 {
   *this = jsonValue;
 }

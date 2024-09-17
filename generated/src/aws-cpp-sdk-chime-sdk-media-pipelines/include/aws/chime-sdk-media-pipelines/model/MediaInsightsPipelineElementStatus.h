@@ -38,67 +38,29 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of status.</p>
      */
     inline const MediaInsightsPipelineConfigurationElementType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of status.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of status.</p>
-     */
     inline void SetType(const MediaInsightsPipelineConfigurationElementType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of status.</p>
-     */
     inline void SetType(MediaInsightsPipelineConfigurationElementType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of status.</p>
-     */
     inline MediaInsightsPipelineElementStatus& WithType(const MediaInsightsPipelineConfigurationElementType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of status.</p>
-     */
     inline MediaInsightsPipelineElementStatus& WithType(MediaInsightsPipelineConfigurationElementType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The element's status.</p>
      */
     inline const MediaPipelineElementStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The element's status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The element's status.</p>
-     */
     inline void SetStatus(const MediaPipelineElementStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The element's status.</p>
-     */
     inline void SetStatus(MediaPipelineElementStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The element's status.</p>
-     */
     inline MediaInsightsPipelineElementStatus& WithStatus(const MediaPipelineElementStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The element's status.</p>
-     */
     inline MediaInsightsPipelineElementStatus& WithStatus(MediaPipelineElementStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MediaInsightsPipelineConfigurationElementType m_type;

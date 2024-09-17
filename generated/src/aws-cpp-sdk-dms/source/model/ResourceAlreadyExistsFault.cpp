@@ -24,9 +24,8 @@ ResourceAlreadyExistsFault::ResourceAlreadyExistsFault() :
 {
 }
 
-ResourceAlreadyExistsFault::ResourceAlreadyExistsFault(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+ResourceAlreadyExistsFault::ResourceAlreadyExistsFault(JsonView jsonValue)
+  : ResourceAlreadyExistsFault()
 {
   *this = jsonValue;
 }

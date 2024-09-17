@@ -22,8 +22,8 @@ SetDefaultPermissionVersionResult::SetDefaultPermissionVersionResult() :
 {
 }
 
-SetDefaultPermissionVersionResult::SetDefaultPermissionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_returnValue(false)
+SetDefaultPermissionVersionResult::SetDefaultPermissionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SetDefaultPermissionVersionResult()
 {
   *this = result;
 }

@@ -260,12 +260,12 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
     }
   }
 
-  if(m_objectLockModeHasBeenSet)
+  if(m_objectLockModeHasBeenSet && m_objectLockMode != ObjectLockMode::NOT_SET)
   {
     headers.emplace("x-amz-fwd-header-x-amz-object-lock-mode", ObjectLockModeMapper::GetNameForObjectLockMode(m_objectLockMode));
   }
 
-  if(m_objectLockLegalHoldStatusHasBeenSet)
+  if(m_objectLockLegalHoldStatusHasBeenSet && m_objectLockLegalHoldStatus != ObjectLockLegalHoldStatus::NOT_SET)
   {
     headers.emplace("x-amz-fwd-header-x-amz-object-lock-legal-hold", ObjectLockLegalHoldStatusMapper::GetNameForObjectLockLegalHoldStatus(m_objectLockLegalHoldStatus));
   }
@@ -282,12 +282,12 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
     ss.str("");
   }
 
-  if(m_replicationStatusHasBeenSet)
+  if(m_replicationStatusHasBeenSet && m_replicationStatus != ReplicationStatus::NOT_SET)
   {
     headers.emplace("x-amz-fwd-header-x-amz-replication-status", ReplicationStatusMapper::GetNameForReplicationStatus(m_replicationStatus));
   }
 
-  if(m_requestChargedHasBeenSet)
+  if(m_requestChargedHasBeenSet && m_requestCharged != RequestCharged::NOT_SET)
   {
     headers.emplace("x-amz-fwd-header-x-amz-request-charged", RequestChargedMapper::GetNameForRequestCharged(m_requestCharged));
   }
@@ -299,7 +299,7 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
     ss.str("");
   }
 
-  if(m_serverSideEncryptionHasBeenSet)
+  if(m_serverSideEncryptionHasBeenSet && m_serverSideEncryption != ServerSideEncryption::NOT_SET)
   {
     headers.emplace("x-amz-fwd-header-x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
   }
@@ -325,7 +325,7 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
     ss.str("");
   }
 
-  if(m_storageClassHasBeenSet)
+  if(m_storageClassHasBeenSet && m_storageClass != StorageClass::NOT_SET)
   {
     headers.emplace("x-amz-fwd-header-x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass));
   }
@@ -353,6 +353,27 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
 
   return headers;
 
+}
+
+bool WriteGetObjectResponseRequest::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  AWS_UNREFERENCED_PARAM(header);
+
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = Utils::Xml::XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+
+  return false;
 }
 
 WriteGetObjectResponseRequest::EndpointParameters WriteGetObjectResponseRequest::GetEndpointContextParams() const

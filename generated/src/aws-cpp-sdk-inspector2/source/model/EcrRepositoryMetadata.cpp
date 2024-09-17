@@ -25,10 +25,8 @@ EcrRepositoryMetadata::EcrRepositoryMetadata() :
 {
 }
 
-EcrRepositoryMetadata::EcrRepositoryMetadata(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_scanFrequency(EcrScanFrequency::NOT_SET),
-    m_scanFrequencyHasBeenSet(false)
+EcrRepositoryMetadata::EcrRepositoryMetadata(JsonView jsonValue)
+  : EcrRepositoryMetadata()
 {
   *this = jsonValue;
 }

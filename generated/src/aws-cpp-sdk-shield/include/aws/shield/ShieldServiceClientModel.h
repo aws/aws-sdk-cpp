@@ -53,6 +53,21 @@
 #include <aws/shield/model/UpdateEmergencyContactSettingsResult.h>
 #include <aws/shield/model/UpdateProtectionGroupResult.h>
 #include <aws/shield/model/UpdateSubscriptionResult.h>
+#include <aws/shield/model/DescribeProtectionRequest.h>
+#include <aws/shield/model/GetSubscriptionStateRequest.h>
+#include <aws/shield/model/UpdateEmergencyContactSettingsRequest.h>
+#include <aws/shield/model/DescribeEmergencyContactSettingsRequest.h>
+#include <aws/shield/model/CreateSubscriptionRequest.h>
+#include <aws/shield/model/ListProtectionsRequest.h>
+#include <aws/shield/model/DescribeAttackStatisticsRequest.h>
+#include <aws/shield/model/ListAttacksRequest.h>
+#include <aws/shield/model/DescribeSubscriptionRequest.h>
+#include <aws/shield/model/DisableProactiveEngagementRequest.h>
+#include <aws/shield/model/UpdateSubscriptionRequest.h>
+#include <aws/shield/model/DisassociateDRTRoleRequest.h>
+#include <aws/shield/model/DescribeDRTAccessRequest.h>
+#include <aws/shield/model/EnableProactiveEngagementRequest.h>
+#include <aws/shield/model/ListProtectionGroupsRequest.h>
 /* End of service model headers required in ShieldClient header */
 
 namespace Aws
@@ -86,7 +101,7 @@ namespace Aws
 
   namespace Shield
   {
-    using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ShieldEndpointProviderBase = Aws::Shield::Endpoint::ShieldEndpointProviderBase;
     using ShieldEndpointProvider = Aws::Shield::Endpoint::ShieldEndpointProvider;
 

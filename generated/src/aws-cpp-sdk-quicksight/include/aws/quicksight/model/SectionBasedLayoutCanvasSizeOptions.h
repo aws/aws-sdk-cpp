@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options for a paper canvas of a section-based layout.</p>
      */
     inline const SectionBasedLayoutPaperCanvasSizeOptions& GetPaperCanvasSizeOptions() const{ return m_paperCanvasSizeOptions; }
-
-    /**
-     * <p>The options for a paper canvas of a section-based layout.</p>
-     */
     inline bool PaperCanvasSizeOptionsHasBeenSet() const { return m_paperCanvasSizeOptionsHasBeenSet; }
-
-    /**
-     * <p>The options for a paper canvas of a section-based layout.</p>
-     */
     inline void SetPaperCanvasSizeOptions(const SectionBasedLayoutPaperCanvasSizeOptions& value) { m_paperCanvasSizeOptionsHasBeenSet = true; m_paperCanvasSizeOptions = value; }
-
-    /**
-     * <p>The options for a paper canvas of a section-based layout.</p>
-     */
     inline void SetPaperCanvasSizeOptions(SectionBasedLayoutPaperCanvasSizeOptions&& value) { m_paperCanvasSizeOptionsHasBeenSet = true; m_paperCanvasSizeOptions = std::move(value); }
-
-    /**
-     * <p>The options for a paper canvas of a section-based layout.</p>
-     */
     inline SectionBasedLayoutCanvasSizeOptions& WithPaperCanvasSizeOptions(const SectionBasedLayoutPaperCanvasSizeOptions& value) { SetPaperCanvasSizeOptions(value); return *this;}
-
-    /**
-     * <p>The options for a paper canvas of a section-based layout.</p>
-     */
     inline SectionBasedLayoutCanvasSizeOptions& WithPaperCanvasSizeOptions(SectionBasedLayoutPaperCanvasSizeOptions&& value) { SetPaperCanvasSizeOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SectionBasedLayoutPaperCanvasSizeOptions m_paperCanvasSizeOptions;

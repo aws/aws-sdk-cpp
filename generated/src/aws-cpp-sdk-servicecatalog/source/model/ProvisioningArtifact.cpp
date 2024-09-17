@@ -28,13 +28,8 @@ ProvisioningArtifact::ProvisioningArtifact() :
 {
 }
 
-ProvisioningArtifact::ProvisioningArtifact(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_guidance(ProvisioningArtifactGuidance::NOT_SET),
-    m_guidanceHasBeenSet(false)
+ProvisioningArtifact::ProvisioningArtifact(JsonView jsonValue)
+  : ProvisioningArtifact()
 {
   *this = jsonValue;
 }

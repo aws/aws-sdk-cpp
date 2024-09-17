@@ -24,9 +24,8 @@ AudioHlsRenditionSelection::AudioHlsRenditionSelection() :
 {
 }
 
-AudioHlsRenditionSelection::AudioHlsRenditionSelection(JsonView jsonValue) : 
-    m_groupIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AudioHlsRenditionSelection::AudioHlsRenditionSelection(JsonView jsonValue)
+  : AudioHlsRenditionSelection()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ QueryResultsS3AccessGrantsConfiguration::QueryResultsS3AccessGrantsConfiguration
 {
 }
 
-QueryResultsS3AccessGrantsConfiguration::QueryResultsS3AccessGrantsConfiguration(JsonView jsonValue) : 
-    m_enableS3AccessGrants(false),
-    m_enableS3AccessGrantsHasBeenSet(false),
-    m_createUserLevelPrefix(false),
-    m_createUserLevelPrefixHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
+QueryResultsS3AccessGrantsConfiguration::QueryResultsS3AccessGrantsConfiguration(JsonView jsonValue)
+  : QueryResultsS3AccessGrantsConfiguration()
 {
   *this = jsonValue;
 }

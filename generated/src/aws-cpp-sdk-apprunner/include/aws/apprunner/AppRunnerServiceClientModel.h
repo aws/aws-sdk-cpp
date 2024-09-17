@@ -55,6 +55,12 @@
 #include <aws/apprunner/model/UpdateDefaultAutoScalingConfigurationResult.h>
 #include <aws/apprunner/model/UpdateServiceResult.h>
 #include <aws/apprunner/model/UpdateVpcIngressConnectionResult.h>
+#include <aws/apprunner/model/ListVpcIngressConnectionsRequest.h>
+#include <aws/apprunner/model/ListAutoScalingConfigurationsRequest.h>
+#include <aws/apprunner/model/ListServicesRequest.h>
+#include <aws/apprunner/model/ListVpcConnectorsRequest.h>
+#include <aws/apprunner/model/ListObservabilityConfigurationsRequest.h>
+#include <aws/apprunner/model/ListConnectionsRequest.h>
 /* End of service model headers required in AppRunnerClient header */
 
 namespace Aws
@@ -88,7 +94,7 @@ namespace Aws
 
   namespace AppRunner
   {
-    using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AppRunnerEndpointProviderBase = Aws::AppRunner::Endpoint::AppRunnerEndpointProviderBase;
     using AppRunnerEndpointProvider = Aws::AppRunner::Endpoint::AppRunnerEndpointProvider;
 

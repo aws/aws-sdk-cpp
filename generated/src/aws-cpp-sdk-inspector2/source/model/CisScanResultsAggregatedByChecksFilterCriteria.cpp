@@ -28,13 +28,8 @@ CisScanResultsAggregatedByChecksFilterCriteria::CisScanResultsAggregatedByChecks
 {
 }
 
-CisScanResultsAggregatedByChecksFilterCriteria::CisScanResultsAggregatedByChecksFilterCriteria(JsonView jsonValue) : 
-    m_accountIdFiltersHasBeenSet(false),
-    m_checkIdFiltersHasBeenSet(false),
-    m_failedResourcesFiltersHasBeenSet(false),
-    m_platformFiltersHasBeenSet(false),
-    m_securityLevelFiltersHasBeenSet(false),
-    m_titleFiltersHasBeenSet(false)
+CisScanResultsAggregatedByChecksFilterCriteria::CisScanResultsAggregatedByChecksFilterCriteria(JsonView jsonValue)
+  : CisScanResultsAggregatedByChecksFilterCriteria()
 {
   *this = jsonValue;
 }

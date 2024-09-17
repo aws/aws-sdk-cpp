@@ -26,11 +26,8 @@ SnsAction::SnsAction() :
 {
 }
 
-SnsAction::SnsAction(JsonView jsonValue) : 
-    m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_messageFormat(MessageFormat::NOT_SET),
-    m_messageFormatHasBeenSet(false)
+SnsAction::SnsAction(JsonView jsonValue)
+  : SnsAction()
 {
   *this = jsonValue;
 }

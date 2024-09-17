@@ -25,10 +25,8 @@ MulticastGroup::MulticastGroup() :
 {
 }
 
-MulticastGroup::MulticastGroup(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+MulticastGroup::MulticastGroup(JsonView jsonValue)
+  : MulticastGroup()
 {
   *this = jsonValue;
 }

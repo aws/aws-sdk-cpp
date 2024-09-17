@@ -25,10 +25,8 @@ ActivityListItem::ActivityListItem() :
 {
 }
 
-ActivityListItem::ActivityListItem(JsonView jsonValue) : 
-    m_activityArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+ActivityListItem::ActivityListItem(JsonView jsonValue)
+  : ActivityListItem()
 {
   *this = jsonValue;
 }

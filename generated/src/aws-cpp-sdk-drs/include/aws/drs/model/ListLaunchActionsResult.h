@@ -34,99 +34,42 @@ namespace Model
     AWS_DRS_API ListLaunchActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of resource launch actions.</p>
      */
     inline const Aws::Vector<LaunchAction>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>List of resource launch actions.</p>
-     */
     inline void SetItems(const Aws::Vector<LaunchAction>& value) { m_items = value; }
-
-    /**
-     * <p>List of resource launch actions.</p>
-     */
     inline void SetItems(Aws::Vector<LaunchAction>&& value) { m_items = std::move(value); }
-
-    /**
-     * <p>List of resource launch actions.</p>
-     */
     inline ListLaunchActionsResult& WithItems(const Aws::Vector<LaunchAction>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>List of resource launch actions.</p>
-     */
     inline ListLaunchActionsResult& WithItems(Aws::Vector<LaunchAction>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>List of resource launch actions.</p>
-     */
     inline ListLaunchActionsResult& AddItems(const LaunchAction& value) { m_items.push_back(value); return *this; }
-
-    /**
-     * <p>List of resource launch actions.</p>
-     */
     inline ListLaunchActionsResult& AddItems(LaunchAction&& value) { m_items.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token returned when listing resource launch actions.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token returned when listing resource launch actions.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Next token returned when listing resource launch actions.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token returned when listing resource launch actions.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token returned when listing resource launch actions.</p>
-     */
     inline ListLaunchActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token returned when listing resource launch actions.</p>
-     */
     inline ListLaunchActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token returned when listing resource launch actions.</p>
-     */
     inline ListLaunchActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListLaunchActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListLaunchActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListLaunchActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LaunchAction> m_items;

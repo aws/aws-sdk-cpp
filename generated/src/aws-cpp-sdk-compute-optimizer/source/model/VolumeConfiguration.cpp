@@ -35,20 +35,8 @@ VolumeConfiguration::VolumeConfiguration() :
 {
 }
 
-VolumeConfiguration::VolumeConfiguration(JsonView jsonValue) : 
-    m_volumeTypeHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeBaselineIOPS(0),
-    m_volumeBaselineIOPSHasBeenSet(false),
-    m_volumeBurstIOPS(0),
-    m_volumeBurstIOPSHasBeenSet(false),
-    m_volumeBaselineThroughput(0),
-    m_volumeBaselineThroughputHasBeenSet(false),
-    m_volumeBurstThroughput(0),
-    m_volumeBurstThroughputHasBeenSet(false),
-    m_rootVolume(false),
-    m_rootVolumeHasBeenSet(false)
+VolumeConfiguration::VolumeConfiguration(JsonView jsonValue)
+  : VolumeConfiguration()
 {
   *this = jsonValue;
 }

@@ -37,36 +37,17 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The MUX type of the audio artifact configuration object.</p>
      */
     inline const AudioMuxType& GetMuxType() const{ return m_muxType; }
-
-    /**
-     * <p>The MUX type of the audio artifact configuration object.</p>
-     */
     inline bool MuxTypeHasBeenSet() const { return m_muxTypeHasBeenSet; }
-
-    /**
-     * <p>The MUX type of the audio artifact configuration object.</p>
-     */
     inline void SetMuxType(const AudioMuxType& value) { m_muxTypeHasBeenSet = true; m_muxType = value; }
-
-    /**
-     * <p>The MUX type of the audio artifact configuration object.</p>
-     */
     inline void SetMuxType(AudioMuxType&& value) { m_muxTypeHasBeenSet = true; m_muxType = std::move(value); }
-
-    /**
-     * <p>The MUX type of the audio artifact configuration object.</p>
-     */
     inline AudioArtifactsConfiguration& WithMuxType(const AudioMuxType& value) { SetMuxType(value); return *this;}
-
-    /**
-     * <p>The MUX type of the audio artifact configuration object.</p>
-     */
     inline AudioArtifactsConfiguration& WithMuxType(AudioMuxType&& value) { SetMuxType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AudioMuxType m_muxType;

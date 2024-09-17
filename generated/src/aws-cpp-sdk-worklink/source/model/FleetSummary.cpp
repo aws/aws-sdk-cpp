@@ -31,16 +31,8 @@ FleetSummary::FleetSummary() :
 {
 }
 
-FleetSummary::FleetSummary(JsonView jsonValue) : 
-    m_fleetArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_companyCodeHasBeenSet(false),
-    m_fleetStatus(FleetStatus::NOT_SET),
-    m_fleetStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+FleetSummary::FleetSummary(JsonView jsonValue)
+  : FleetSummary()
 {
   *this = jsonValue;
 }

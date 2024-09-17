@@ -33,6 +33,7 @@ namespace Model
     AWS_WAFV2_API CreateRegexPatternSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>High-level information about a <a>RegexPatternSet</a>, returned by operations
      * like create and list. This provides information like the ID, that you can use to
@@ -41,65 +42,22 @@ namespace Model
      * in a <a>Rule</a>.</p>
      */
     inline const RegexPatternSetSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>High-level information about a <a>RegexPatternSet</a>, returned by operations
-     * like create and list. This provides information like the ID, that you can use to
-     * retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you
-     * provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set
-     * in a <a>Rule</a>.</p>
-     */
     inline void SetSummary(const RegexPatternSetSummary& value) { m_summary = value; }
-
-    /**
-     * <p>High-level information about a <a>RegexPatternSet</a>, returned by operations
-     * like create and list. This provides information like the ID, that you can use to
-     * retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you
-     * provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set
-     * in a <a>Rule</a>.</p>
-     */
     inline void SetSummary(RegexPatternSetSummary&& value) { m_summary = std::move(value); }
-
-    /**
-     * <p>High-level information about a <a>RegexPatternSet</a>, returned by operations
-     * like create and list. This provides information like the ID, that you can use to
-     * retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you
-     * provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set
-     * in a <a>Rule</a>.</p>
-     */
     inline CreateRegexPatternSetResult& WithSummary(const RegexPatternSetSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>High-level information about a <a>RegexPatternSet</a>, returned by operations
-     * like create and list. This provides information like the ID, that you can use to
-     * retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you
-     * provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set
-     * in a <a>Rule</a>.</p>
-     */
     inline CreateRegexPatternSetResult& WithSummary(RegexPatternSetSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateRegexPatternSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateRegexPatternSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateRegexPatternSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RegexPatternSetSummary m_summary;

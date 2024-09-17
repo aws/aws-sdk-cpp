@@ -38,42 +38,18 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration having the video sharing capabilities for participants over
      * the call.</p>
      */
     inline const VideoCapability& GetVideo() const{ return m_video; }
-
-    /**
-     * <p>The configuration having the video sharing capabilities for participants over
-     * the call.</p>
-     */
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-
-    /**
-     * <p>The configuration having the video sharing capabilities for participants over
-     * the call.</p>
-     */
     inline void SetVideo(const VideoCapability& value) { m_videoHasBeenSet = true; m_video = value; }
-
-    /**
-     * <p>The configuration having the video sharing capabilities for participants over
-     * the call.</p>
-     */
     inline void SetVideo(VideoCapability&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-
-    /**
-     * <p>The configuration having the video sharing capabilities for participants over
-     * the call.</p>
-     */
     inline ParticipantCapabilities& WithVideo(const VideoCapability& value) { SetVideo(value); return *this;}
-
-    /**
-     * <p>The configuration having the video sharing capabilities for participants over
-     * the call.</p>
-     */
     inline ParticipantCapabilities& WithVideo(VideoCapability&& value) { SetVideo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VideoCapability m_video;

@@ -22,8 +22,8 @@ GetParametersForImportResult::GetParametersForImportResult() :
 {
 }
 
-GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_wrappingKeyAlgorithm(KeyAlgorithm::NOT_SET)
+GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetParametersForImportResult()
 {
   *this = result;
 }
@@ -31,24 +31,6 @@ GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebS
 GetParametersForImportResult& GetParametersForImportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ImportToken"))
-  {
-    m_importToken = jsonValue.GetString("ImportToken");
-
-  }
-
-  if(jsonValue.ValueExists("ParametersValidUntilTimestamp"))
-  {
-    m_parametersValidUntilTimestamp = jsonValue.GetDouble("ParametersValidUntilTimestamp");
-
-  }
-
-  if(jsonValue.ValueExists("WrappingKeyAlgorithm"))
-  {
-    m_wrappingKeyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("WrappingKeyAlgorithm"));
-
-  }
-
   if(jsonValue.ValueExists("WrappingKeyCertificate"))
   {
     m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");
@@ -58,6 +40,24 @@ GetParametersForImportResult& GetParametersForImportResult::operator =(const Aws
   if(jsonValue.ValueExists("WrappingKeyCertificateChain"))
   {
     m_wrappingKeyCertificateChain = jsonValue.GetString("WrappingKeyCertificateChain");
+
+  }
+
+  if(jsonValue.ValueExists("WrappingKeyAlgorithm"))
+  {
+    m_wrappingKeyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("WrappingKeyAlgorithm"));
+
+  }
+
+  if(jsonValue.ValueExists("ImportToken"))
+  {
+    m_importToken = jsonValue.GetString("ImportToken");
+
+  }
+
+  if(jsonValue.ValueExists("ParametersValidUntilTimestamp"))
+  {
+    m_parametersValidUntilTimestamp = jsonValue.GetDouble("ParametersValidUntilTimestamp");
 
   }
 

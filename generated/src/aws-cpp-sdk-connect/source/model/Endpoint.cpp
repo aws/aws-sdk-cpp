@@ -25,10 +25,8 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(JsonView jsonValue) : 
-    m_type(EndpointType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_addressHasBeenSet(false)
+Endpoint::Endpoint(JsonView jsonValue)
+  : Endpoint()
 {
   *this = jsonValue;
 }

@@ -27,6 +27,9 @@ namespace Aws
         static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
         static const int MARKETPLACE_HASH = HashingUtils::HashString("MARKETPLACE");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
+        static const int VIEW_VALIDATION_REDSHIFT_HASH = HashingUtils::HashString("VIEW_VALIDATION_REDSHIFT");
+        static const int VIEW_VALIDATION_ATHENA_HASH = HashingUtils::HashString("VIEW_VALIDATION_ATHENA");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return ConnectionType::CUSTOM;
           }
+          else if (hashCode == SALESFORCE_HASH)
+          {
+            return ConnectionType::SALESFORCE;
+          }
+          else if (hashCode == VIEW_VALIDATION_REDSHIFT_HASH)
+          {
+            return ConnectionType::VIEW_VALIDATION_REDSHIFT;
+          }
+          else if (hashCode == VIEW_VALIDATION_ATHENA_HASH)
+          {
+            return ConnectionType::VIEW_VALIDATION_ATHENA;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +105,12 @@ namespace Aws
             return "MARKETPLACE";
           case ConnectionType::CUSTOM:
             return "CUSTOM";
+          case ConnectionType::SALESFORCE:
+            return "SALESFORCE";
+          case ConnectionType::VIEW_VALIDATION_REDSHIFT:
+            return "VIEW_VALIDATION_REDSHIFT";
+          case ConnectionType::VIEW_VALIDATION_ATHENA:
+            return "VIEW_VALIDATION_ATHENA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

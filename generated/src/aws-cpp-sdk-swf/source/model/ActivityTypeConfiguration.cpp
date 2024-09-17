@@ -28,13 +28,8 @@ ActivityTypeConfiguration::ActivityTypeConfiguration() :
 {
 }
 
-ActivityTypeConfiguration::ActivityTypeConfiguration(JsonView jsonValue) : 
-    m_defaultTaskStartToCloseTimeoutHasBeenSet(false),
-    m_defaultTaskHeartbeatTimeoutHasBeenSet(false),
-    m_defaultTaskListHasBeenSet(false),
-    m_defaultTaskPriorityHasBeenSet(false),
-    m_defaultTaskScheduleToStartTimeoutHasBeenSet(false),
-    m_defaultTaskScheduleToCloseTimeoutHasBeenSet(false)
+ActivityTypeConfiguration::ActivityTypeConfiguration(JsonView jsonValue)
+  : ActivityTypeConfiguration()
 {
   *this = jsonValue;
 }

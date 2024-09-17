@@ -24,9 +24,8 @@ KmsException::KmsException() :
 {
 }
 
-KmsException::KmsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_kmsErrorHasBeenSet(false)
+KmsException::KmsException(JsonView jsonValue)
+  : KmsException()
 {
   *this = jsonValue;
 }

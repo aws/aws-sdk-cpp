@@ -30,15 +30,8 @@ SyntaxToken::SyntaxToken() :
 {
 }
 
-SyntaxToken::SyntaxToken(JsonView jsonValue) : 
-    m_tokenId(0),
-    m_tokenIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_partOfSpeechHasBeenSet(false)
+SyntaxToken::SyntaxToken(JsonView jsonValue)
+  : SyntaxToken()
 {
   *this = jsonValue;
 }

@@ -59,12 +59,82 @@ MemorySystemInterface* GetMemorySystem()
     #endif // USE_AWS_MEMORY_MANAGEMENT
 }
 
+#if defined(__cpp_exceptions) || defined(_CPPUNWIND) || defined(__EXCEPTIONS)
+#define AWS_HAS_EXCEPTIONS
+#endif
+
+/**
+ * A default memory allocator
+ * It is used in case of custom memory management SDK build
+ *   and no custom allocator provided by application.
+ */
+class AwsDefaultMemorySystem : public MemorySystemInterface
+{
+public:
+#if defined(AWS_HAS_EXCEPTIONS)
+    static std::bad_alloc s_OOM;
+#endif
+    static AwsDefaultMemorySystem s_defMemSystem;
+
+    virtual ~AwsDefaultMemorySystem() = default;
+
+    void Begin() override
+    {
+    }
+
+    void End() override
+    {
+    }
+
+    void* AllocateMemory(std::size_t blockSize, std::size_t alignment, const char *allocationTag = nullptr) override
+    {
+        AWS_UNREFERENCED_PARAM(allocationTag);
+        void *ret;
+
+#if defined(AWS_HAS_ALIGNED_ALLOC)
+        if (alignment == 1) {
+            ret = malloc(blockSize);
+        } else {
+            ret = aligned_alloc(alignment, blockSize);
+        }
+#else
+        AWS_UNREFERENCED_PARAM(alignment);
+        ret = malloc(blockSize);
+#endif
+        if (ret == nullptr) {
+#if defined(AWS_HAS_EXCEPTIONS)
+            throw s_OOM;
+#endif
+        }
+        return ret;
+    }
+
+    void FreeMemory(void* memoryPtr) override
+    {
+        free(memoryPtr);
+    }
+};
+#if defined(AWS_HAS_EXCEPTIONS)
+std::bad_alloc AwsDefaultMemorySystem::s_OOM;
+#endif
+AwsDefaultMemorySystem AwsDefaultMemorySystem::s_defMemSystem;
+
+MemorySystemInterface& GetDefaultMemorySystem()
+{
+    return AwsDefaultMemorySystem::s_defMemSystem;
+}
+
 } // namespace Memory
 } // namespace Utils
 
 void* Malloc(const char* allocationTag, size_t allocationSize)
 {
     Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+    // Was InitAPI forgotten or ShutdownAPI already called or Aws:: class used as static?
+    // TODO: enforce to non-conditional assert
+    AWS_ASSERT(memorySystem && "Memory system is not initialized.");
+#endif
 
     void* rawMemory = nullptr;
     if(memorySystem != nullptr)
@@ -88,6 +158,11 @@ void Free(void* memoryPtr)
     }
 
     Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+    // Was InitAPI forgotten or ShutdownAPI already called or Aws:: class used as static?
+    // TODO: enforce to non-conditional assert
+    AWS_ASSERT(memorySystem && "Memory system is not initialized.");
+#endif
     if(memorySystem != nullptr)
     {
         memorySystem->FreeMemory(memoryPtr);
@@ -101,7 +176,7 @@ void Free(void* memoryPtr)
 static void* MemAcquire(aws_allocator* allocator, size_t size)
 {
     (void)allocator; // unused;
-    return Aws::Malloc("MemAcquire", size);
+    return Aws::Malloc("CrtMemAcquire", size);
 }
 
 static void MemRelease(aws_allocator* allocator, void* ptr)

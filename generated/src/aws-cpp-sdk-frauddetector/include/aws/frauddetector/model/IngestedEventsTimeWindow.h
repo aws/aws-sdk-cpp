@@ -37,87 +37,33 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Timestamp of the first ingensted event.</p>
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>Timestamp of the first ingensted event.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>Timestamp of the first ingensted event.</p>
-     */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>Timestamp of the first ingensted event.</p>
-     */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>Timestamp of the first ingensted event.</p>
-     */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-
-    /**
-     * <p>Timestamp of the first ingensted event.</p>
-     */
     inline IngestedEventsTimeWindow& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>Timestamp of the first ingensted event.</p>
-     */
     inline IngestedEventsTimeWindow& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Timestamp of the first ingensted event.</p>
-     */
     inline IngestedEventsTimeWindow& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Timestamp of the final ingested event.</p>
      */
     inline const Aws::String& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>Timestamp of the final ingested event.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>Timestamp of the final ingested event.</p>
-     */
     inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>Timestamp of the final ingested event.</p>
-     */
     inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>Timestamp of the final ingested event.</p>
-     */
     inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
-
-    /**
-     * <p>Timestamp of the final ingested event.</p>
-     */
     inline IngestedEventsTimeWindow& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>Timestamp of the final ingested event.</p>
-     */
     inline IngestedEventsTimeWindow& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Timestamp of the final ingested event.</p>
-     */
     inline IngestedEventsTimeWindow& WithEndTime(const char* value) { SetEndTime(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_startTime;

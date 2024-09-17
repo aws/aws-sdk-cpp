@@ -24,9 +24,8 @@ ResourceDataSyncAwsOrganizationsSource::ResourceDataSyncAwsOrganizationsSource()
 {
 }
 
-ResourceDataSyncAwsOrganizationsSource::ResourceDataSyncAwsOrganizationsSource(JsonView jsonValue) : 
-    m_organizationSourceTypeHasBeenSet(false),
-    m_organizationalUnitsHasBeenSet(false)
+ResourceDataSyncAwsOrganizationsSource::ResourceDataSyncAwsOrganizationsSource(JsonView jsonValue)
+  : ResourceDataSyncAwsOrganizationsSource()
 {
   *this = jsonValue;
 }

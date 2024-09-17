@@ -36,21 +36,8 @@ InstanceTypeDetails::InstanceTypeDetails() :
 {
 }
 
-InstanceTypeDetails::InstanceTypeDetails(JsonView jsonValue) : 
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_encryptionEnabled(false),
-    m_encryptionEnabledHasBeenSet(false),
-    m_cognitoEnabled(false),
-    m_cognitoEnabledHasBeenSet(false),
-    m_appLogsEnabled(false),
-    m_appLogsEnabledHasBeenSet(false),
-    m_advancedSecurityEnabled(false),
-    m_advancedSecurityEnabledHasBeenSet(false),
-    m_warmEnabled(false),
-    m_warmEnabledHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+InstanceTypeDetails::InstanceTypeDetails(JsonView jsonValue)
+  : InstanceTypeDetails()
 {
   *this = jsonValue;
 }

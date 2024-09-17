@@ -40,46 +40,19 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
-
-    /**
-     * <p/>
-     */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline PublishMetricAction& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline PublishMetricAction& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline PublishMetricAction& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline PublishMetricAction& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Dimension> m_dimensions;

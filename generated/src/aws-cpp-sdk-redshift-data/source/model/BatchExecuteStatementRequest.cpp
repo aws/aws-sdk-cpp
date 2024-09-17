@@ -19,6 +19,9 @@ BatchExecuteStatementRequest::BatchExecuteStatementRequest() :
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
     m_secretArnHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_sessionKeepAliveSeconds(0),
+    m_sessionKeepAliveSecondsHasBeenSet(false),
     m_sqlsHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_withEvent(false),
@@ -58,6 +61,18 @@ Aws::String BatchExecuteStatementRequest::SerializePayload() const
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("SessionId", m_sessionId);
+
+  }
+
+  if(m_sessionKeepAliveSecondsHasBeenSet)
+  {
+   payload.WithInteger("SessionKeepAliveSeconds", m_sessionKeepAliveSeconds);
 
   }
 

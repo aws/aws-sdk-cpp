@@ -5,6 +5,8 @@
 
 #include <aws/lexv2-runtime/model/StartConversationInitialResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
@@ -31,6 +33,11 @@ StartConversationInitialResponse& StartConversationInitialResponse::operator =(J
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
+}
+
+StartConversationInitialResponse::StartConversationInitialResponse(const Http::HeaderValueCollection& headers) : StartConversationInitialResponse()
+{
+  AWS_UNREFERENCED_PARAM(headers);
 }
 
 JsonValue StartConversationInitialResponse::Jsonize() const

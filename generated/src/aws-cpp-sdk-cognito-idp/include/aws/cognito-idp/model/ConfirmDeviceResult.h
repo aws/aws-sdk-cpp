@@ -37,43 +37,25 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API ConfirmDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether the user confirmation must confirm the device response.</p>
      */
     inline bool GetUserConfirmationNecessary() const{ return m_userConfirmationNecessary; }
-
-    /**
-     * <p>Indicates whether the user confirmation must confirm the device response.</p>
-     */
     inline void SetUserConfirmationNecessary(bool value) { m_userConfirmationNecessary = value; }
-
-    /**
-     * <p>Indicates whether the user confirmation must confirm the device response.</p>
-     */
     inline ConfirmDeviceResult& WithUserConfirmationNecessary(bool value) { SetUserConfirmationNecessary(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ConfirmDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ConfirmDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ConfirmDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_userConfirmationNecessary;

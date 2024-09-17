@@ -63,6 +63,11 @@
 #include <aws/globalaccelerator/model/UpdateEndpointGroupResult.h>
 #include <aws/globalaccelerator/model/UpdateListenerResult.h>
 #include <aws/globalaccelerator/model/WithdrawByoipCidrResult.h>
+#include <aws/globalaccelerator/model/ListByoipCidrsRequest.h>
+#include <aws/globalaccelerator/model/ListCustomRoutingAcceleratorsRequest.h>
+#include <aws/globalaccelerator/model/ListCrossAccountResourceAccountsRequest.h>
+#include <aws/globalaccelerator/model/ListCrossAccountAttachmentsRequest.h>
+#include <aws/globalaccelerator/model/ListAcceleratorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in GlobalAcceleratorClient header */
 
@@ -97,7 +102,7 @@ namespace Aws
 
   namespace GlobalAccelerator
   {
-    using GlobalAcceleratorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlobalAcceleratorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using GlobalAcceleratorEndpointProviderBase = Aws::GlobalAccelerator::Endpoint::GlobalAcceleratorEndpointProviderBase;
     using GlobalAcceleratorEndpointProvider = Aws::GlobalAccelerator::Endpoint::GlobalAcceleratorEndpointProvider;
 

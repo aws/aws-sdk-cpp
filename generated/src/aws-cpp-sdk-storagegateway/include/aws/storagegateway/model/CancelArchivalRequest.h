@@ -37,79 +37,32 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-
-    
     inline CancelArchivalRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline CancelArchivalRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline CancelArchivalRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
      * archiving for.</p>
      */
     inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
-     * archiving for.</p>
-     */
     inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
-     * archiving for.</p>
-     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
-     * archiving for.</p>
-     */
     inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
-     * archiving for.</p>
-     */
     inline void SetTapeARN(const char* value) { m_tapeARNHasBeenSet = true; m_tapeARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
-     * archiving for.</p>
-     */
     inline CancelArchivalRequest& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
-     * archiving for.</p>
-     */
     inline CancelArchivalRequest& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
-     * archiving for.</p>
-     */
     inline CancelArchivalRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

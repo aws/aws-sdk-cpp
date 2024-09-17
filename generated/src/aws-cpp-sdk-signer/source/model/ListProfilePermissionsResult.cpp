@@ -22,8 +22,8 @@ ListProfilePermissionsResult::ListProfilePermissionsResult() :
 {
 }
 
-ListProfilePermissionsResult::ListProfilePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_policySizeBytes(0)
+ListProfilePermissionsResult::ListProfilePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListProfilePermissionsResult()
 {
   *this = result;
 }

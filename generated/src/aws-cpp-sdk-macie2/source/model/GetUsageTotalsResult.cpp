@@ -22,8 +22,8 @@ GetUsageTotalsResult::GetUsageTotalsResult() :
 {
 }
 
-GetUsageTotalsResult::GetUsageTotalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_timeRange(TimeRange::NOT_SET)
+GetUsageTotalsResult::GetUsageTotalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetUsageTotalsResult()
 {
   *this = result;
 }

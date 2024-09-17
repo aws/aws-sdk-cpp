@@ -38,77 +38,31 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The release version. </p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
-
-    /**
-     * <p>The release version. </p>
-     */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
-
-    /**
-     * <p>The release version. </p>
-     */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
-
-    /**
-     * <p>The release version. </p>
-     */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
-
-    /**
-     * <p>The release version. </p>
-     */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
-
-    /**
-     * <p>The release version. </p>
-     */
     inline ReleaseSummary& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
-
-    /**
-     * <p>The release version. </p>
-     */
     inline ReleaseSummary& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The release version. </p>
-     */
     inline ReleaseSummary& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp of the release. </p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The timestamp of the release. </p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp of the release. </p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The timestamp of the release. </p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp of the release. </p>
-     */
     inline ReleaseSummary& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp of the release. </p>
-     */
     inline ReleaseSummary& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_releaseVersion;

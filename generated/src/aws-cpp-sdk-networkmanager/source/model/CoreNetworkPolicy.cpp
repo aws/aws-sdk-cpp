@@ -33,18 +33,8 @@ CoreNetworkPolicy::CoreNetworkPolicy() :
 {
 }
 
-CoreNetworkPolicy::CoreNetworkPolicy(JsonView jsonValue) : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_policyVersionId(0),
-    m_policyVersionIdHasBeenSet(false),
-    m_alias(CoreNetworkPolicyAlias::NOT_SET),
-    m_aliasHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_changeSetState(ChangeSetState::NOT_SET),
-    m_changeSetStateHasBeenSet(false),
-    m_policyErrorsHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
+CoreNetworkPolicy::CoreNetworkPolicy(JsonView jsonValue)
+  : CoreNetworkPolicy()
 {
   *this = jsonValue;
 }

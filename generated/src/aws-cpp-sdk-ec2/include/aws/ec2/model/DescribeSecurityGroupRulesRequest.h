@@ -38,6 +38,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
      * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
@@ -49,138 +50,31 @@ namespace Model
      * <code>TeamA</code> for the filter value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
-     * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
-     * of the security group rule.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
-     * The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> </ul>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
-     * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
-     * of the security group rule.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
-     * The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> </ul>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
-     * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
-     * of the security group rule.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
-     * The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> </ul>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
-     * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
-     * of the security group rule.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
-     * The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> </ul>
-     */
     inline DescribeSecurityGroupRulesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
-     * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
-     * of the security group rule.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
-     * The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> </ul>
-     */
     inline DescribeSecurityGroupRulesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
-     * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
-     * of the security group rule.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
-     * The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> </ul>
-     */
     inline DescribeSecurityGroupRulesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of the
-     * security group.</p> </li> <li> <p> <code>security-group-rule-id</code> - The ID
-     * of the security group rule.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
-     * The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> </ul>
-     */
     inline DescribeSecurityGroupRulesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of the security group rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupRuleIds() const{ return m_securityGroupRuleIds; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline bool SecurityGroupRuleIdsHasBeenSet() const { return m_securityGroupRuleIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline void SetSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = value; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline void SetSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& WithSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupRuleIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& WithSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupRuleIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& AddSecurityGroupRuleIds(const Aws::String& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& AddSecurityGroupRuleIds(Aws::String&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the security group rules.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& AddSecurityGroupRuleIds(const char* value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -188,81 +82,27 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return for this request. To get the next page
      * of items, make another request with the token returned in the output. This value
@@ -271,34 +111,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. This value
-     * can be between 5 and 1000. If this parameter is not specified, then all items
-     * are returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. This value
-     * can be between 5 and 1000. If this parameter is not specified, then all items
-     * are returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. This value
-     * can be between 5 and 1000. If this parameter is not specified, then all items
-     * are returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
     inline DescribeSecurityGroupRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Filter> m_filters;

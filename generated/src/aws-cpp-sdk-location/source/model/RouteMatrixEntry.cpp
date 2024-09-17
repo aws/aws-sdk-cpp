@@ -27,12 +27,8 @@ RouteMatrixEntry::RouteMatrixEntry() :
 {
 }
 
-RouteMatrixEntry::RouteMatrixEntry(JsonView jsonValue) : 
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_errorHasBeenSet(false)
+RouteMatrixEntry::RouteMatrixEntry(JsonView jsonValue)
+  : RouteMatrixEntry()
 {
   *this = jsonValue;
 }

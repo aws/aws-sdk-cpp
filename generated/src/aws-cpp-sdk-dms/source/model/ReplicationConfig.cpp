@@ -34,19 +34,8 @@ ReplicationConfig::ReplicationConfig() :
 {
 }
 
-ReplicationConfig::ReplicationConfig(JsonView jsonValue) : 
-    m_replicationConfigIdentifierHasBeenSet(false),
-    m_replicationConfigArnHasBeenSet(false),
-    m_sourceEndpointArnHasBeenSet(false),
-    m_targetEndpointArnHasBeenSet(false),
-    m_replicationType(MigrationTypeValue::NOT_SET),
-    m_replicationTypeHasBeenSet(false),
-    m_computeConfigHasBeenSet(false),
-    m_replicationSettingsHasBeenSet(false),
-    m_supplementalSettingsHasBeenSet(false),
-    m_tableMappingsHasBeenSet(false),
-    m_replicationConfigCreateTimeHasBeenSet(false),
-    m_replicationConfigUpdateTimeHasBeenSet(false)
+ReplicationConfig::ReplicationConfig(JsonView jsonValue)
+  : ReplicationConfig()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(JsonView jsonValue) : 
-    m_uriHasBeenSet(false)
+Environment::Environment(JsonView jsonValue)
+  : Environment()
 {
   *this = jsonValue;
 }

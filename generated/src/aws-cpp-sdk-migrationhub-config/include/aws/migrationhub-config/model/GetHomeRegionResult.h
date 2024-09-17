@@ -32,63 +32,29 @@ namespace Model
     AWS_MIGRATIONHUBCONFIG_API GetHomeRegionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the home region of the calling account.</p>
      */
     inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
-
-    /**
-     * <p>The name of the home region of the calling account.</p>
-     */
     inline void SetHomeRegion(const Aws::String& value) { m_homeRegion = value; }
-
-    /**
-     * <p>The name of the home region of the calling account.</p>
-     */
     inline void SetHomeRegion(Aws::String&& value) { m_homeRegion = std::move(value); }
-
-    /**
-     * <p>The name of the home region of the calling account.</p>
-     */
     inline void SetHomeRegion(const char* value) { m_homeRegion.assign(value); }
-
-    /**
-     * <p>The name of the home region of the calling account.</p>
-     */
     inline GetHomeRegionResult& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
-
-    /**
-     * <p>The name of the home region of the calling account.</p>
-     */
     inline GetHomeRegionResult& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the home region of the calling account.</p>
-     */
     inline GetHomeRegionResult& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetHomeRegionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetHomeRegionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetHomeRegionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_homeRegion;

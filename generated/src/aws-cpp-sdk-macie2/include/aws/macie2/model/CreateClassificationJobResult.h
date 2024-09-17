@@ -32,99 +32,42 @@ namespace Model
     AWS_MACIE2_API CreateClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the job.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the job.</p>
-     */
     inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the job.</p>
-     */
     inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the job.</p>
-     */
     inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the job.</p>
-     */
     inline CreateClassificationJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the job.</p>
-     */
     inline CreateClassificationJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the job.</p>
-     */
     inline CreateClassificationJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The unique identifier for the job.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-
-    /**
-     * <p>The unique identifier for the job.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the job.</p>
-     */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the job.</p>
-     */
     inline CreateClassificationJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the job.</p>
-     */
     inline CreateClassificationJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the job.</p>
-     */
     inline CreateClassificationJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateClassificationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateClassificationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateClassificationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobArn;

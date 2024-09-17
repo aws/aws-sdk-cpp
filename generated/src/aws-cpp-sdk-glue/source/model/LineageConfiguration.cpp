@@ -24,9 +24,8 @@ LineageConfiguration::LineageConfiguration() :
 {
 }
 
-LineageConfiguration::LineageConfiguration(JsonView jsonValue) : 
-    m_crawlerLineageSettings(CrawlerLineageSettings::NOT_SET),
-    m_crawlerLineageSettingsHasBeenSet(false)
+LineageConfiguration::LineageConfiguration(JsonView jsonValue)
+  : LineageConfiguration()
 {
   *this = jsonValue;
 }

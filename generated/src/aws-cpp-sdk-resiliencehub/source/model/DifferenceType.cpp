@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int NotEqual_HASH = HashingUtils::HashString("NotEqual");
+        static const int Added_HASH = HashingUtils::HashString("Added");
+        static const int Removed_HASH = HashingUtils::HashString("Removed");
 
 
         DifferenceType GetDifferenceTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == NotEqual_HASH)
           {
             return DifferenceType::NotEqual;
+          }
+          else if (hashCode == Added_HASH)
+          {
+            return DifferenceType::Added;
+          }
+          else if (hashCode == Removed_HASH)
+          {
+            return DifferenceType::Removed;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case DifferenceType::NotEqual:
             return "NotEqual";
+          case DifferenceType::Added:
+            return "Added";
+          case DifferenceType::Removed:
+            return "Removed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

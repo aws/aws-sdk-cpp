@@ -25,10 +25,8 @@ LaunchDetails::LaunchDetails() :
 {
 }
 
-LaunchDetails::LaunchDetails(JsonView jsonValue) : 
-    m_latestLaunchTimeHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false)
+LaunchDetails::LaunchDetails(JsonView jsonValue)
+  : LaunchDetails()
 {
   *this = jsonValue;
 }

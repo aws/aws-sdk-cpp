@@ -22,8 +22,8 @@ ModifySnapshotScheduleResult::ModifySnapshotScheduleResult() :
 {
 }
 
-ModifySnapshotScheduleResult::ModifySnapshotScheduleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_associatedClusterCount(0)
+ModifySnapshotScheduleResult::ModifySnapshotScheduleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifySnapshotScheduleResult()
 {
   *this = result;
 }

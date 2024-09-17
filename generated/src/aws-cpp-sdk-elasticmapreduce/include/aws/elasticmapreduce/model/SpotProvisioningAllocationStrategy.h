@@ -19,7 +19,8 @@ namespace Model
     capacity_optimized,
     price_capacity_optimized,
     lowest_price,
-    diversified
+    diversified,
+    capacity_optimized_prioritized
   };
 
 namespace SpotProvisioningAllocationStrategyMapper

@@ -42,86 +42,34 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The launch templates and overrides that were used for launching the
      * instances. The values that you specify in the Overrides replace the values in
      * the launch template.</p>
      */
     inline const LaunchTemplateAndOverridesResponse& GetLaunchTemplateAndOverrides() const{ return m_launchTemplateAndOverrides; }
-
-    /**
-     * <p>The launch templates and overrides that were used for launching the
-     * instances. The values that you specify in the Overrides replace the values in
-     * the launch template.</p>
-     */
     inline bool LaunchTemplateAndOverridesHasBeenSet() const { return m_launchTemplateAndOverridesHasBeenSet; }
-
-    /**
-     * <p>The launch templates and overrides that were used for launching the
-     * instances. The values that you specify in the Overrides replace the values in
-     * the launch template.</p>
-     */
     inline void SetLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = value; }
-
-    /**
-     * <p>The launch templates and overrides that were used for launching the
-     * instances. The values that you specify in the Overrides replace the values in
-     * the launch template.</p>
-     */
     inline void SetLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse&& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = std::move(value); }
-
-    /**
-     * <p>The launch templates and overrides that were used for launching the
-     * instances. The values that you specify in the Overrides replace the values in
-     * the launch template.</p>
-     */
     inline DescribeFleetError& WithLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { SetLaunchTemplateAndOverrides(value); return *this;}
-
-    /**
-     * <p>The launch templates and overrides that were used for launching the
-     * instances. The values that you specify in the Overrides replace the values in
-     * the launch template.</p>
-     */
     inline DescribeFleetError& WithLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse&& value) { SetLaunchTemplateAndOverrides(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates if the instance that could not be launched was a Spot Instance or
      * On-Demand Instance.</p>
      */
     inline const InstanceLifecycle& GetLifecycle() const{ return m_lifecycle; }
-
-    /**
-     * <p>Indicates if the instance that could not be launched was a Spot Instance or
-     * On-Demand Instance.</p>
-     */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-
-    /**
-     * <p>Indicates if the instance that could not be launched was a Spot Instance or
-     * On-Demand Instance.</p>
-     */
     inline void SetLifecycle(const InstanceLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-
-    /**
-     * <p>Indicates if the instance that could not be launched was a Spot Instance or
-     * On-Demand Instance.</p>
-     */
     inline void SetLifecycle(InstanceLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-
-    /**
-     * <p>Indicates if the instance that could not be launched was a Spot Instance or
-     * On-Demand Instance.</p>
-     */
     inline DescribeFleetError& WithLifecycle(const InstanceLifecycle& value) { SetLifecycle(value); return *this;}
-
-    /**
-     * <p>Indicates if the instance that could not be launched was a Spot Instance or
-     * On-Demand Instance.</p>
-     */
     inline DescribeFleetError& WithLifecycle(InstanceLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
@@ -129,64 +77,16 @@ namespace Model
      * codes</a>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code that indicates why the instance could not be launched. For
-     * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code that indicates why the instance could not be launched. For
-     * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code that indicates why the instance could not be launched. For
-     * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code that indicates why the instance could not be launched. For
-     * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code that indicates why the instance could not be launched. For
-     * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline DescribeFleetError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code that indicates why the instance could not be launched. For
-     * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline DescribeFleetError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code that indicates why the instance could not be launched. For
-     * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline DescribeFleetError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
@@ -194,63 +94,14 @@ namespace Model
      * codes</a>.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline DescribeFleetError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline DescribeFleetError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-     * codes</a>.</p>
-     */
     inline DescribeFleetError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;

@@ -40,67 +40,29 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the type.</p>
      */
     inline const HookTargetType& GetTargetType() const{ return m_targetType; }
-
-    /**
-     * <p>The name of the type.</p>
-     */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-
-    /**
-     * <p>The name of the type.</p>
-     */
     inline void SetTargetType(const HookTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-
-    /**
-     * <p>The name of the type.</p>
-     */
     inline void SetTargetType(HookTargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-
-    /**
-     * <p>The name of the type.</p>
-     */
     inline ChangeSetHookTargetDetails& WithTargetType(const HookTargetType& value) { SetTargetType(value); return *this;}
-
-    /**
-     * <p>The name of the type.</p>
-     */
     inline ChangeSetHookTargetDetails& WithTargetType(HookTargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
      */
     inline const ChangeSetHookResourceTargetDetails& GetResourceTargetDetails() const{ return m_resourceTargetDetails; }
-
-    /**
-     * <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-     */
     inline bool ResourceTargetDetailsHasBeenSet() const { return m_resourceTargetDetailsHasBeenSet; }
-
-    /**
-     * <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-     */
     inline void SetResourceTargetDetails(const ChangeSetHookResourceTargetDetails& value) { m_resourceTargetDetailsHasBeenSet = true; m_resourceTargetDetails = value; }
-
-    /**
-     * <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-     */
     inline void SetResourceTargetDetails(ChangeSetHookResourceTargetDetails&& value) { m_resourceTargetDetailsHasBeenSet = true; m_resourceTargetDetails = std::move(value); }
-
-    /**
-     * <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-     */
     inline ChangeSetHookTargetDetails& WithResourceTargetDetails(const ChangeSetHookResourceTargetDetails& value) { SetResourceTargetDetails(value); return *this;}
-
-    /**
-     * <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-     */
     inline ChangeSetHookTargetDetails& WithResourceTargetDetails(ChangeSetHookResourceTargetDetails&& value) { SetResourceTargetDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HookTargetType m_targetType;

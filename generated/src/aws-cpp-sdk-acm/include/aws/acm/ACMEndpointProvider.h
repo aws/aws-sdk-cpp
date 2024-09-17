@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ACMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ACMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ACMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ACMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

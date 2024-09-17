@@ -20,6 +20,8 @@ namespace Model
 
 MatchingBucket::MatchingBucket() : 
     m_accountIdHasBeenSet(false),
+    m_automatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus::NOT_SET),
+    m_automatedDiscoveryMonitoringStatusHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_classifiableObjectCount(0),
     m_classifiableObjectCountHasBeenSet(false),
@@ -44,29 +46,8 @@ MatchingBucket::MatchingBucket() :
 {
 }
 
-MatchingBucket::MatchingBucket(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_classifiableObjectCount(0),
-    m_classifiableObjectCountHasBeenSet(false),
-    m_classifiableSizeInBytes(0),
-    m_classifiableSizeInBytesHasBeenSet(false),
-    m_errorCode(BucketMetadataErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_lastAutomatedDiscoveryTimeHasBeenSet(false),
-    m_objectCount(0),
-    m_objectCountHasBeenSet(false),
-    m_objectCountByEncryptionTypeHasBeenSet(false),
-    m_sensitivityScore(0),
-    m_sensitivityScoreHasBeenSet(false),
-    m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false),
-    m_sizeInBytesCompressed(0),
-    m_sizeInBytesCompressedHasBeenSet(false),
-    m_unclassifiableObjectCountHasBeenSet(false),
-    m_unclassifiableObjectSizeInBytesHasBeenSet(false)
+MatchingBucket::MatchingBucket(JsonView jsonValue)
+  : MatchingBucket()
 {
   *this = jsonValue;
 }
@@ -78,6 +59,13 @@ MatchingBucket& MatchingBucket::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
 
     m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("automatedDiscoveryMonitoringStatus"))
+  {
+    m_automatedDiscoveryMonitoringStatus = AutomatedDiscoveryMonitoringStatusMapper::GetAutomatedDiscoveryMonitoringStatusForName(jsonValue.GetString("automatedDiscoveryMonitoringStatus"));
+
+    m_automatedDiscoveryMonitoringStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bucketName"))
@@ -189,6 +177,11 @@ JsonValue MatchingBucket::Jsonize() const
   {
    payload.WithString("accountId", m_accountId);
 
+  }
+
+  if(m_automatedDiscoveryMonitoringStatusHasBeenSet)
+  {
+   payload.WithString("automatedDiscoveryMonitoringStatus", AutomatedDiscoveryMonitoringStatusMapper::GetNameForAutomatedDiscoveryMonitoringStatus(m_automatedDiscoveryMonitoringStatus));
   }
 
   if(m_bucketNameHasBeenSet)

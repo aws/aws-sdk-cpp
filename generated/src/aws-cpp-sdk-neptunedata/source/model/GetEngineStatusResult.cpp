@@ -22,8 +22,8 @@ GetEngineStatusResult::GetEngineStatusResult() :
 {
 }
 
-GetEngineStatusResult::GetEngineStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_rollingBackTrxCount(0)
+GetEngineStatusResult::GetEngineStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEngineStatusResult()
 {
   *this = result;
 }

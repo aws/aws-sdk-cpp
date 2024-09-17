@@ -27,12 +27,8 @@ AttributeTypesSelector::AttributeTypesSelector() :
 {
 }
 
-AttributeTypesSelector::AttributeTypesSelector(JsonView jsonValue) : 
-    m_attributeMatchingModel(AttributeMatchingModel::NOT_SET),
-    m_attributeMatchingModelHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
+AttributeTypesSelector::AttributeTypesSelector(JsonView jsonValue)
+  : AttributeTypesSelector()
 {
   *this = jsonValue;
 }

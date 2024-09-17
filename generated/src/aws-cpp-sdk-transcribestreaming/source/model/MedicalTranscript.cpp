@@ -23,8 +23,8 @@ MedicalTranscript::MedicalTranscript() :
 {
 }
 
-MedicalTranscript::MedicalTranscript(JsonView jsonValue) : 
-    m_resultsHasBeenSet(false)
+MedicalTranscript::MedicalTranscript(JsonView jsonValue)
+  : MedicalTranscript()
 {
   *this = jsonValue;
 }

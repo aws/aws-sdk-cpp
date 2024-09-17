@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using BCMDataExportsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BCMDataExportsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

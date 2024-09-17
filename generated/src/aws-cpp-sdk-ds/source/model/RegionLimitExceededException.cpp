@@ -24,9 +24,8 @@ RegionLimitExceededException::RegionLimitExceededException() :
 {
 }
 
-RegionLimitExceededException::RegionLimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+RegionLimitExceededException::RegionLimitExceededException(JsonView jsonValue)
+  : RegionLimitExceededException()
 {
   *this = jsonValue;
 }

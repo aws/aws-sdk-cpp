@@ -24,9 +24,8 @@ ActivityType::ActivityType() :
 {
 }
 
-ActivityType::ActivityType(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+ActivityType::ActivityType(JsonView jsonValue)
+  : ActivityType()
 {
   *this = jsonValue;
 }

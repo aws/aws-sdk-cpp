@@ -23,8 +23,8 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(JsonView jsonValue) : 
-    m_expressionStringHasBeenSet(false)
+Condition::Condition(JsonView jsonValue)
+  : Condition()
 {
   *this = jsonValue;
 }

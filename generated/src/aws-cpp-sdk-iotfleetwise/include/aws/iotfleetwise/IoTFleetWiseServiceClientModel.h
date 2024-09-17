@@ -70,6 +70,16 @@
 #include <aws/iotfleetwise/model/UpdateModelManifestResult.h>
 #include <aws/iotfleetwise/model/UpdateSignalCatalogResult.h>
 #include <aws/iotfleetwise/model/UpdateVehicleResult.h>
+#include <aws/iotfleetwise/model/ListModelManifestsRequest.h>
+#include <aws/iotfleetwise/model/ListVehiclesRequest.h>
+#include <aws/iotfleetwise/model/GetRegisterAccountStatusRequest.h>
+#include <aws/iotfleetwise/model/RegisterAccountRequest.h>
+#include <aws/iotfleetwise/model/ListCampaignsRequest.h>
+#include <aws/iotfleetwise/model/ListDecoderManifestsRequest.h>
+#include <aws/iotfleetwise/model/GetLoggingOptionsRequest.h>
+#include <aws/iotfleetwise/model/ListSignalCatalogsRequest.h>
+#include <aws/iotfleetwise/model/GetEncryptionConfigurationRequest.h>
+#include <aws/iotfleetwise/model/ListFleetsRequest.h>
 /* End of service model headers required in IoTFleetWiseClient header */
 
 namespace Aws
@@ -103,7 +113,7 @@ namespace Aws
 
   namespace IoTFleetWise
   {
-    using IoTFleetWiseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTFleetWiseClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTFleetWiseEndpointProviderBase = Aws::IoTFleetWise::Endpoint::IoTFleetWiseEndpointProviderBase;
     using IoTFleetWiseEndpointProvider = Aws::IoTFleetWise::Endpoint::IoTFleetWiseEndpointProvider;
 

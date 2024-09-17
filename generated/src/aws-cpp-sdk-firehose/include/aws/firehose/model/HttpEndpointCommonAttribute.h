@@ -38,87 +38,33 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the HTTP endpoint common attribute.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>The name of the HTTP endpoint common attribute.</p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the HTTP endpoint common attribute.</p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>The name of the HTTP endpoint common attribute.</p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>The name of the HTTP endpoint common attribute.</p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p>The name of the HTTP endpoint common attribute.</p>
-     */
     inline HttpEndpointCommonAttribute& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>The name of the HTTP endpoint common attribute.</p>
-     */
     inline HttpEndpointCommonAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the HTTP endpoint common attribute.</p>
-     */
     inline HttpEndpointCommonAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the HTTP endpoint common attribute.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
-
-    /**
-     * <p>The value of the HTTP endpoint common attribute.</p>
-     */
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-
-    /**
-     * <p>The value of the HTTP endpoint common attribute.</p>
-     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-
-    /**
-     * <p>The value of the HTTP endpoint common attribute.</p>
-     */
     inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-
-    /**
-     * <p>The value of the HTTP endpoint common attribute.</p>
-     */
     inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-
-    /**
-     * <p>The value of the HTTP endpoint common attribute.</p>
-     */
     inline HttpEndpointCommonAttribute& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-
-    /**
-     * <p>The value of the HTTP endpoint common attribute.</p>
-     */
     inline HttpEndpointCommonAttribute& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the HTTP endpoint common attribute.</p>
-     */
     inline HttpEndpointCommonAttribute& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attributeName;

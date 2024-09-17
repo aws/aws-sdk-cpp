@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
+#include <aws/core/http/HttpTypes.h>
 
 namespace Aws
 {

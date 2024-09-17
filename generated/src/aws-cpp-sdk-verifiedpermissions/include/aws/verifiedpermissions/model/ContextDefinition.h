@@ -50,6 +50,7 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An list of attributes that are needed to successfully evaluate an
      * authorization request. Each attribute in this array must include a map of a data
@@ -58,106 +59,18 @@ namespace Model
      * </p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetContextMap() const{ return m_contextMap; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline bool ContextMapHasBeenSet() const { return m_contextMapHasBeenSet; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline void SetContextMap(const Aws::Map<Aws::String, AttributeValue>& value) { m_contextMapHasBeenSet = true; m_contextMap = value; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline void SetContextMap(Aws::Map<Aws::String, AttributeValue>&& value) { m_contextMapHasBeenSet = true; m_contextMap = std::move(value); }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& WithContextMap(const Aws::Map<Aws::String, AttributeValue>& value) { SetContextMap(value); return *this;}
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& WithContextMap(Aws::Map<Aws::String, AttributeValue>&& value) { SetContextMap(std::move(value)); return *this;}
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& AddContextMap(const Aws::String& key, const AttributeValue& value) { m_contextMapHasBeenSet = true; m_contextMap.emplace(key, value); return *this; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& AddContextMap(Aws::String&& key, const AttributeValue& value) { m_contextMapHasBeenSet = true; m_contextMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& AddContextMap(const Aws::String& key, AttributeValue&& value) { m_contextMapHasBeenSet = true; m_contextMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& AddContextMap(Aws::String&& key, AttributeValue&& value) { m_contextMapHasBeenSet = true; m_contextMap.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& AddContextMap(const char* key, AttributeValue&& value) { m_contextMapHasBeenSet = true; m_contextMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An list of attributes that are needed to successfully evaluate an
-     * authorization request. Each attribute in this array must include a map of a data
-     * type and its value.</p> <p>Example:
-     * <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
-     * </p>
-     */
     inline ContextDefinition& AddContextMap(const char* key, const AttributeValue& value) { m_contextMapHasBeenSet = true; m_contextMap.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_contextMap;

@@ -23,8 +23,8 @@ TableReference::TableReference() :
 {
 }
 
-TableReference::TableReference(JsonView jsonValue) : 
-    m_glueHasBeenSet(false)
+TableReference::TableReference(JsonView jsonValue)
+  : TableReference()
 {
   *this = jsonValue;
 }

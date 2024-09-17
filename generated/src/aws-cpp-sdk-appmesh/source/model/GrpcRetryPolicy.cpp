@@ -28,13 +28,8 @@ GrpcRetryPolicy::GrpcRetryPolicy() :
 {
 }
 
-GrpcRetryPolicy::GrpcRetryPolicy(JsonView jsonValue) : 
-    m_grpcRetryEventsHasBeenSet(false),
-    m_httpRetryEventsHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_perRetryTimeoutHasBeenSet(false),
-    m_tcpRetryEventsHasBeenSet(false)
+GrpcRetryPolicy::GrpcRetryPolicy(JsonView jsonValue)
+  : GrpcRetryPolicy()
 {
   *this = jsonValue;
 }

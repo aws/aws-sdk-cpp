@@ -31,16 +31,8 @@ StepScalingPolicyConfiguration::StepScalingPolicyConfiguration() :
 {
 }
 
-StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(JsonView jsonValue) : 
-    m_adjustmentType(AdjustmentType::NOT_SET),
-    m_adjustmentTypeHasBeenSet(false),
-    m_stepAdjustmentsHasBeenSet(false),
-    m_minAdjustmentMagnitude(0),
-    m_minAdjustmentMagnitudeHasBeenSet(false),
-    m_cooldown(0),
-    m_cooldownHasBeenSet(false),
-    m_metricAggregationType(MetricAggregationType::NOT_SET),
-    m_metricAggregationTypeHasBeenSet(false)
+StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(JsonView jsonValue)
+  : StepScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }

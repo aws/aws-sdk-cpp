@@ -24,9 +24,8 @@ LogDeliveryConfigurationType::LogDeliveryConfigurationType() :
 {
 }
 
-LogDeliveryConfigurationType::LogDeliveryConfigurationType(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_logConfigurationsHasBeenSet(false)
+LogDeliveryConfigurationType::LogDeliveryConfigurationType(JsonView jsonValue)
+  : LogDeliveryConfigurationType()
 {
   *this = jsonValue;
 }

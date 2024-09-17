@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AssetListing.h>
+#include <aws/datazone/model/DataProductListing.h>
 #include <utility>
 
 namespace Aws
@@ -38,40 +39,36 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An asset published in an Amazon DataZone catalog.</p>
      */
     inline const AssetListing& GetAssetListing() const{ return m_assetListing; }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline bool AssetListingHasBeenSet() const { return m_assetListingHasBeenSet; }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline void SetAssetListing(const AssetListing& value) { m_assetListingHasBeenSet = true; m_assetListing = value; }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline void SetAssetListing(AssetListing&& value) { m_assetListingHasBeenSet = true; m_assetListing = std::move(value); }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline ListingItem& WithAssetListing(const AssetListing& value) { SetAssetListing(value); return *this;}
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline ListingItem& WithAssetListing(AssetListing&& value) { SetAssetListing(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The data product listing.</p>
+     */
+    inline const DataProductListing& GetDataProductListing() const{ return m_dataProductListing; }
+    inline bool DataProductListingHasBeenSet() const { return m_dataProductListingHasBeenSet; }
+    inline void SetDataProductListing(const DataProductListing& value) { m_dataProductListingHasBeenSet = true; m_dataProductListing = value; }
+    inline void SetDataProductListing(DataProductListing&& value) { m_dataProductListingHasBeenSet = true; m_dataProductListing = std::move(value); }
+    inline ListingItem& WithDataProductListing(const DataProductListing& value) { SetDataProductListing(value); return *this;}
+    inline ListingItem& WithDataProductListing(DataProductListing&& value) { SetDataProductListing(std::move(value)); return *this;}
+    ///@}
   private:
 
     AssetListing m_assetListing;
     bool m_assetListingHasBeenSet = false;
+
+    DataProductListing m_dataProductListing;
+    bool m_dataProductListingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,9 +23,8 @@ PutFunctionEventInvokeConfigResult::PutFunctionEventInvokeConfigResult() :
 {
 }
 
-PutFunctionEventInvokeConfigResult::PutFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_maximumRetryAttempts(0),
-    m_maximumEventAgeInSeconds(0)
+PutFunctionEventInvokeConfigResult::PutFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PutFunctionEventInvokeConfigResult()
 {
   *this = result;
 }

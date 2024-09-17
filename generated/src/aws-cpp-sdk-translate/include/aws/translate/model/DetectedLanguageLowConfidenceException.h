@@ -43,71 +43,31 @@ namespace Model
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline DetectedLanguageLowConfidenceException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline DetectedLanguageLowConfidenceException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline DetectedLanguageLowConfidenceException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
      */
     inline const Aws::String& GetDetectedLanguageCode() const{ return m_detectedLanguageCode; }
-
-    /**
-     * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-     */
     inline bool DetectedLanguageCodeHasBeenSet() const { return m_detectedLanguageCodeHasBeenSet; }
-
-    /**
-     * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-     */
     inline void SetDetectedLanguageCode(const Aws::String& value) { m_detectedLanguageCodeHasBeenSet = true; m_detectedLanguageCode = value; }
-
-    /**
-     * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-     */
     inline void SetDetectedLanguageCode(Aws::String&& value) { m_detectedLanguageCodeHasBeenSet = true; m_detectedLanguageCode = std::move(value); }
-
-    /**
-     * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-     */
     inline void SetDetectedLanguageCode(const char* value) { m_detectedLanguageCodeHasBeenSet = true; m_detectedLanguageCode.assign(value); }
-
-    /**
-     * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-     */
     inline DetectedLanguageLowConfidenceException& WithDetectedLanguageCode(const Aws::String& value) { SetDetectedLanguageCode(value); return *this;}
-
-    /**
-     * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-     */
     inline DetectedLanguageLowConfidenceException& WithDetectedLanguageCode(Aws::String&& value) { SetDetectedLanguageCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The language code of the auto-detected language from Amazon Comprehend.</p>
-     */
     inline DetectedLanguageLowConfidenceException& WithDetectedLanguageCode(const char* value) { SetDetectedLanguageCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

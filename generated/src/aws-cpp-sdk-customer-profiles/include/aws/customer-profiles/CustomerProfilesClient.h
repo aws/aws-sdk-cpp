@@ -21,10 +21,10 @@ namespace CustomerProfiles
    * pre-built connectors powered by AppFlow that make it easy to combine customer
    * information from third party applications, such as Salesforce (CRM), ServiceNow
    * (ITSM), and your enterprise resource planning (ERP), with contact history from
-   * your Amazon Connect contact center. If you're new to Amazon Connect, you might
-   * find it helpful to review the <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Amazon Connect
-   * Administrator Guide</a>.</p>
+   * your Amazon Connect contact center. </p> <p>For more information about the
+   * Amazon Connect Customer Profiles feature, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
+   * Customer Profiles</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
    */
   class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>
   {
@@ -157,8 +157,15 @@ namespace CustomerProfiles
          * resolution</a>: set <code>Matching</code> to true.</p> <p>To prevent
          * cross-service impersonation when you call this API, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
-         * confused deputy prevention</a> for sample policies that you should apply.
-         * </p><p><h3>See Also:</h3>   <a
+         * confused deputy prevention</a> for sample policies that you should apply. </p>
+         *  <p>It is not possible to associate a Customer Profiles domain with an
+         * Amazon Connect Instance directly from the API. If you would like to create a
+         * domain and associate a Customer Profiles domain, use the Amazon Connect admin
+         * website. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-customer-profiles.html#enable-customer-profiles-step1">Enable
+         * Customer Profiles</a>.</p> <p>Each Amazon Connect instance can be associated
+         * with only one domain. Multiple Amazon Connect instances can be associated with
+         * one domain.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -996,13 +1003,13 @@ namespace CustomerProfiles
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
+        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request) const
+        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request = {}) const
         {
             return SubmitCallable(&CustomerProfilesClient::ListDomains, request);
         }
@@ -1011,7 +1018,7 @@ namespace CustomerProfiles
          * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainsAsync(const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainsRequestT& request = {}) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListDomains, request, handler, context);
         }
@@ -1099,13 +1106,13 @@ namespace CustomerProfiles
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProfileObjectTypeTemplatesOutcome ListProfileObjectTypeTemplates(const Model::ListProfileObjectTypeTemplatesRequest& request) const;
+        virtual Model::ListProfileObjectTypeTemplatesOutcome ListProfileObjectTypeTemplates(const Model::ListProfileObjectTypeTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProfileObjectTypeTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProfileObjectTypeTemplatesRequestT = Model::ListProfileObjectTypeTemplatesRequest>
-        Model::ListProfileObjectTypeTemplatesOutcomeCallable ListProfileObjectTypeTemplatesCallable(const ListProfileObjectTypeTemplatesRequestT& request) const
+        Model::ListProfileObjectTypeTemplatesOutcomeCallable ListProfileObjectTypeTemplatesCallable(const ListProfileObjectTypeTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&CustomerProfilesClient::ListProfileObjectTypeTemplates, request);
         }
@@ -1114,7 +1121,7 @@ namespace CustomerProfiles
          * An Async wrapper for ListProfileObjectTypeTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProfileObjectTypeTemplatesRequestT = Model::ListProfileObjectTypeTemplatesRequest>
-        void ListProfileObjectTypeTemplatesAsync(const ListProfileObjectTypeTemplatesRequestT& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProfileObjectTypeTemplatesAsync(const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProfileObjectTypeTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListProfileObjectTypeTemplates, request, handler, context);
         }
@@ -1583,7 +1590,6 @@ namespace CustomerProfiles
       void init(const CustomerProfilesClientConfiguration& clientConfiguration);
 
       CustomerProfilesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CustomerProfilesEndpointProviderBase> m_endpointProvider;
   };
 

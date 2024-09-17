@@ -95,6 +95,22 @@
 #include <aws/waf/model/UpdateSqlInjectionMatchSetResult.h>
 #include <aws/waf/model/UpdateWebACLResult.h>
 #include <aws/waf/model/UpdateXssMatchSetResult.h>
+#include <aws/waf/model/ListByteMatchSetsRequest.h>
+#include <aws/waf/model/ListActivatedRulesInRuleGroupRequest.h>
+#include <aws/waf/model/ListRuleGroupsRequest.h>
+#include <aws/waf/model/ListGeoMatchSetsRequest.h>
+#include <aws/waf/model/ListLoggingConfigurationsRequest.h>
+#include <aws/waf/model/ListRegexPatternSetsRequest.h>
+#include <aws/waf/model/ListIPSetsRequest.h>
+#include <aws/waf/model/GetChangeTokenRequest.h>
+#include <aws/waf/model/ListRateBasedRulesRequest.h>
+#include <aws/waf/model/ListSubscribedRuleGroupsRequest.h>
+#include <aws/waf/model/ListWebACLsRequest.h>
+#include <aws/waf/model/ListRegexMatchSetsRequest.h>
+#include <aws/waf/model/ListSqlInjectionMatchSetsRequest.h>
+#include <aws/waf/model/ListRulesRequest.h>
+#include <aws/waf/model/ListSizeConstraintSetsRequest.h>
+#include <aws/waf/model/ListXssMatchSetsRequest.h>
 /* End of service model headers required in WAFClient header */
 
 namespace Aws
@@ -128,7 +144,7 @@ namespace Aws
 
   namespace WAF
   {
-    using WAFClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WAFClientConfiguration = Aws::Client::GenericClientConfiguration;
     using WAFEndpointProviderBase = Aws::WAF::Endpoint::WAFEndpointProviderBase;
     using WAFEndpointProvider = Aws::WAF::Endpoint::WAFEndpointProvider;
 

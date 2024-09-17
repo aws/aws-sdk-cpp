@@ -24,9 +24,8 @@ InputTransformer::InputTransformer() :
 {
 }
 
-InputTransformer::InputTransformer(JsonView jsonValue) : 
-    m_inputPathsMapHasBeenSet(false),
-    m_inputTemplateHasBeenSet(false)
+InputTransformer::InputTransformer(JsonView jsonValue)
+  : InputTransformer()
 {
   *this = jsonValue;
 }

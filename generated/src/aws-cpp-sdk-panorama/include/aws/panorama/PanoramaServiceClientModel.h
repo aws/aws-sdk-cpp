@@ -52,6 +52,13 @@
 #include <aws/panorama/model/TagResourceResult.h>
 #include <aws/panorama/model/UntagResourceResult.h>
 #include <aws/panorama/model/UpdateDeviceMetadataResult.h>
+#include <aws/panorama/model/ListApplicationInstancesRequest.h>
+#include <aws/panorama/model/ListDevicesRequest.h>
+#include <aws/panorama/model/ListDevicesJobsRequest.h>
+#include <aws/panorama/model/ListNodesRequest.h>
+#include <aws/panorama/model/ListPackageImportJobsRequest.h>
+#include <aws/panorama/model/ListNodeFromTemplateJobsRequest.h>
+#include <aws/panorama/model/ListPackagesRequest.h>
 /* End of service model headers required in PanoramaClient header */
 
 namespace Aws
@@ -85,7 +92,7 @@ namespace Aws
 
   namespace Panorama
   {
-    using PanoramaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PanoramaClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PanoramaEndpointProviderBase = Aws::Panorama::Endpoint::PanoramaEndpointProviderBase;
     using PanoramaEndpointProvider = Aws::Panorama::Endpoint::PanoramaEndpointProvider;
 

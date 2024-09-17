@@ -37,128 +37,47 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The detector for which the rule is associated.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-
-    /**
-     * <p>The detector for which the rule is associated.</p>
-     */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-
-    /**
-     * <p>The detector for which the rule is associated.</p>
-     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-
-    /**
-     * <p>The detector for which the rule is associated.</p>
-     */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-
-    /**
-     * <p>The detector for which the rule is associated.</p>
-     */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-
-    /**
-     * <p>The detector for which the rule is associated.</p>
-     */
     inline Rule& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-
-    /**
-     * <p>The detector for which the rule is associated.</p>
-     */
     inline Rule& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The detector for which the rule is associated.</p>
-     */
     inline Rule& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule ID.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
-
-    /**
-     * <p>The rule ID.</p>
-     */
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-
-    /**
-     * <p>The rule ID.</p>
-     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-
-    /**
-     * <p>The rule ID.</p>
-     */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-
-    /**
-     * <p>The rule ID.</p>
-     */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-
-    /**
-     * <p>The rule ID.</p>
-     */
     inline Rule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-
-    /**
-     * <p>The rule ID.</p>
-     */
     inline Rule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule ID.</p>
-     */
     inline Rule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule version.</p>
      */
     inline const Aws::String& GetRuleVersion() const{ return m_ruleVersion; }
-
-    /**
-     * <p>The rule version.</p>
-     */
     inline bool RuleVersionHasBeenSet() const { return m_ruleVersionHasBeenSet; }
-
-    /**
-     * <p>The rule version.</p>
-     */
     inline void SetRuleVersion(const Aws::String& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = value; }
-
-    /**
-     * <p>The rule version.</p>
-     */
     inline void SetRuleVersion(Aws::String&& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = std::move(value); }
-
-    /**
-     * <p>The rule version.</p>
-     */
     inline void SetRuleVersion(const char* value) { m_ruleVersionHasBeenSet = true; m_ruleVersion.assign(value); }
-
-    /**
-     * <p>The rule version.</p>
-     */
     inline Rule& WithRuleVersion(const Aws::String& value) { SetRuleVersion(value); return *this;}
-
-    /**
-     * <p>The rule version.</p>
-     */
     inline Rule& WithRuleVersion(Aws::String&& value) { SetRuleVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule version.</p>
-     */
     inline Rule& WithRuleVersion(const char* value) { SetRuleVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detectorId;

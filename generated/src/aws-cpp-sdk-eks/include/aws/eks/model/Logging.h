@@ -39,46 +39,19 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cluster control plane logging configuration for your cluster.</p>
      */
     inline const Aws::Vector<LogSetup>& GetClusterLogging() const{ return m_clusterLogging; }
-
-    /**
-     * <p>The cluster control plane logging configuration for your cluster.</p>
-     */
     inline bool ClusterLoggingHasBeenSet() const { return m_clusterLoggingHasBeenSet; }
-
-    /**
-     * <p>The cluster control plane logging configuration for your cluster.</p>
-     */
     inline void SetClusterLogging(const Aws::Vector<LogSetup>& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = value; }
-
-    /**
-     * <p>The cluster control plane logging configuration for your cluster.</p>
-     */
     inline void SetClusterLogging(Aws::Vector<LogSetup>&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = std::move(value); }
-
-    /**
-     * <p>The cluster control plane logging configuration for your cluster.</p>
-     */
     inline Logging& WithClusterLogging(const Aws::Vector<LogSetup>& value) { SetClusterLogging(value); return *this;}
-
-    /**
-     * <p>The cluster control plane logging configuration for your cluster.</p>
-     */
     inline Logging& WithClusterLogging(Aws::Vector<LogSetup>&& value) { SetClusterLogging(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster control plane logging configuration for your cluster.</p>
-     */
     inline Logging& AddClusterLogging(const LogSetup& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(value); return *this; }
-
-    /**
-     * <p>The cluster control plane logging configuration for your cluster.</p>
-     */
     inline Logging& AddClusterLogging(LogSetup&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<LogSetup> m_clusterLogging;

@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetPackageVersionResult::GetPackageVersionResult() : 
-    m_status(PackageVersionStatus::NOT_SET)
+    m_status(PackageVersionStatus::NOT_SET),
+    m_sbomValidationStatus(SbomValidationStatus::NOT_SET)
 {
 }
 
-GetPackageVersionResult::GetPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(PackageVersionStatus::NOT_SET)
+GetPackageVersionResult::GetPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetPackageVersionResult()
 {
   *this = result;
 }
@@ -64,6 +65,12 @@ GetPackageVersionResult& GetPackageVersionResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("artifact"))
+  {
+    m_artifact = jsonValue.GetObject("artifact");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = PackageVersionStatusMapper::GetPackageVersionStatusForName(jsonValue.GetString("status"));
@@ -85,6 +92,24 @@ GetPackageVersionResult& GetPackageVersionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
+
+  }
+
+  if(jsonValue.ValueExists("sbom"))
+  {
+    m_sbom = jsonValue.GetObject("sbom");
+
+  }
+
+  if(jsonValue.ValueExists("sbomValidationStatus"))
+  {
+    m_sbomValidationStatus = SbomValidationStatusMapper::GetSbomValidationStatusForName(jsonValue.GetString("sbomValidationStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("recipe"))
+  {
+    m_recipe = jsonValue.GetString("recipe");
 
   }
 

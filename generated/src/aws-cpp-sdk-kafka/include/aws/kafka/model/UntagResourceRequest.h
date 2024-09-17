@@ -39,6 +39,7 @@ namespace Model
     AWS_KAFKA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * 
             <p>The Amazon Resource Name (ARN) that uniquely identifies the
@@ -46,64 +47,16 @@ namespace Model
          
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * resource that's associated with the tags.</p>
-         
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * resource that's associated with the tags.</p>
-         
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * resource that's associated with the tags.</p>
-         
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * resource that's associated with the tags.</p>
-         
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * resource that's associated with the tags.</p>
-         
-     */
     inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * resource that's associated with the tags.</p>
-         
-     */
     inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the
-     * resource that's associated with the tags.</p>
-         
-     */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>Tag keys must be unique for a given cluster. In addition, the
@@ -141,311 +94,15 @@ namespace Model
          
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * 
-            <p>Tag keys must be unique for a given cluster. In addition, the
-     * following restrictions apply:</p>
-            <ul>
-               <li>
-         
-     * <p>Each tag key must be unique. If you add a tag with a key that's already in
-  
-     * use, your new tag overwrites the existing key-value pair. </p>
-              
-     * </li>
-               <li>
-                  <p>You can't start a tag key with
-     * aws: because this prefix is reserved for use
-                  by  AWS.  AWS
-     * creates tags that begin with this prefix on your behalf, but
-                 
-     * you can't edit or delete them.</p>
-               </li>
-               <li>
-    
-     * <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        
-     * </li>
-               <li>
-                  <p>Tag keys must consist of the
-     * following characters: Unicode letters, digits,
-                  white space,
-     * and the following special characters: _ . / = + -
-                     @.</p>
-  
-     *             </li>
-            </ul>
-         
-     */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

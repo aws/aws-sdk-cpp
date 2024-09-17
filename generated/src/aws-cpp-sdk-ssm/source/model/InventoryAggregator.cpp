@@ -25,10 +25,8 @@ InventoryAggregator::InventoryAggregator() :
 {
 }
 
-InventoryAggregator::InventoryAggregator(JsonView jsonValue) : 
-    m_expressionHasBeenSet(false),
-    m_aggregatorsHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+InventoryAggregator::InventoryAggregator(JsonView jsonValue)
+  : InventoryAggregator()
 {
   *this = jsonValue;
 }

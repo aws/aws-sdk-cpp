@@ -37,133 +37,48 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The cluster identifier of the cluster to grant access to.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-
-    /**
-     * <p>The cluster identifier of the cluster to grant access to.</p>
-     */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The cluster identifier of the cluster to grant access to.</p>
-     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-
-    /**
-     * <p>The cluster identifier of the cluster to grant access to.</p>
-     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The cluster identifier of the cluster to grant access to.</p>
-     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-
-    /**
-     * <p>The cluster identifier of the cluster to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The cluster identifier of the cluster to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster identifier of the cluster to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID to grant access to.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
-
-    /**
-     * <p>The Amazon Web Services account ID to grant access to.</p>
-     */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID to grant access to.</p>
-     */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID to grant access to.</p>
-     */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID to grant access to.</p>
-     */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithAccount(const char* value) { SetAccount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-     */
     inline AuthorizeEndpointAccessRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_clusterIdentifier;

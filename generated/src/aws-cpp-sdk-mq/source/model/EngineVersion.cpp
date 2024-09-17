@@ -23,8 +23,8 @@ EngineVersion::EngineVersion() :
 {
 }
 
-EngineVersion::EngineVersion(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+EngineVersion::EngineVersion(JsonView jsonValue)
+  : EngineVersion()
 {
   *this = jsonValue;
 }

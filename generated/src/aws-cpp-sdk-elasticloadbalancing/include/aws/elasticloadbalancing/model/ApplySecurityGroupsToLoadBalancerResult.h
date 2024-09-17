@@ -40,62 +40,28 @@ namespace Model
     AWS_ELASTICLOADBALANCING_API ApplySecurityGroupsToLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The IDs of the security groups associated with the load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
-
-    /**
-     * <p>The IDs of the security groups associated with the load balancer.</p>
-     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroups = value; }
-
-    /**
-     * <p>The IDs of the security groups associated with the load balancer.</p>
-     */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroups = std::move(value); }
-
-    /**
-     * <p>The IDs of the security groups associated with the load balancer.</p>
-     */
     inline ApplySecurityGroupsToLoadBalancerResult& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-
-    /**
-     * <p>The IDs of the security groups associated with the load balancer.</p>
-     */
     inline ApplySecurityGroupsToLoadBalancerResult& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the security groups associated with the load balancer.</p>
-     */
     inline ApplySecurityGroupsToLoadBalancerResult& AddSecurityGroups(const Aws::String& value) { m_securityGroups.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the security groups associated with the load balancer.</p>
-     */
     inline ApplySecurityGroupsToLoadBalancerResult& AddSecurityGroups(Aws::String&& value) { m_securityGroups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the security groups associated with the load balancer.</p>
-     */
     inline ApplySecurityGroupsToLoadBalancerResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ApplySecurityGroupsToLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ApplySecurityGroupsToLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_securityGroups;

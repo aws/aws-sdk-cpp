@@ -41,102 +41,36 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Additional information about the error.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>Additional information about the error.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>Additional information about the error.</p>
-     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>Additional information about the error.</p>
-     */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>Additional information about the error.</p>
-     */
     inline StorageGatewayError& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>Additional information about the error.</p>
-     */
     inline StorageGatewayError& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Human-readable text that provides detail about the error that occurred.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetErrorDetails() const{ return m_errorDetails; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline void SetErrorDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline void SetErrorDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& WithErrorDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetErrorDetails(value); return *this;}
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& WithErrorDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetErrorDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& AddErrorDetails(const Aws::String& key, const Aws::String& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(key, value); return *this; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& AddErrorDetails(Aws::String&& key, const Aws::String& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& AddErrorDetails(const Aws::String& key, Aws::String&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& AddErrorDetails(Aws::String&& key, Aws::String&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& AddErrorDetails(const char* key, Aws::String&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& AddErrorDetails(Aws::String&& key, const char* value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Human-readable text that provides detail about the error that occurred.</p>
-     */
     inline StorageGatewayError& AddErrorDetails(const char* key, const char* value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     ErrorCode m_errorCode;

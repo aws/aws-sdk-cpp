@@ -25,8 +25,8 @@ ReshardingStatus::ReshardingStatus() :
 {
 }
 
-ReshardingStatus::ReshardingStatus(const XmlNode& xmlNode) : 
-    m_slotMigrationHasBeenSet(false)
+ReshardingStatus::ReshardingStatus(const XmlNode& xmlNode)
+  : ReshardingStatus()
 {
   *this = xmlNode;
 }

@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/elasticmapreduce/model/OnDemandProvisioningAllocationStrategy.h>
+#include <aws/elasticmapreduce/model/OnDemandCapacityReservationOptions.h>
+#include <utility>
 
 namespace Aws
 {
@@ -36,6 +39,7 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>On-Demand resize timeout in minutes. If On-Demand Instances are not
      * provisioned within this time, the resize workflow stops. The minimum value is 5
@@ -46,44 +50,43 @@ namespace Model
      * Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
      */
     inline int GetTimeoutDurationMinutes() const{ return m_timeoutDurationMinutes; }
-
-    /**
-     * <p>On-Demand resize timeout in minutes. If On-Demand Instances are not
-     * provisioned within this time, the resize workflow stops. The minimum value is 5
-     * minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies
-     * to all resize workflows on the Instance Fleet. The resize could be triggered by
-     * Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon
-     * EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by
-     * Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
-     */
     inline bool TimeoutDurationMinutesHasBeenSet() const { return m_timeoutDurationMinutesHasBeenSet; }
-
-    /**
-     * <p>On-Demand resize timeout in minutes. If On-Demand Instances are not
-     * provisioned within this time, the resize workflow stops. The minimum value is 5
-     * minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies
-     * to all resize workflows on the Instance Fleet. The resize could be triggered by
-     * Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon
-     * EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by
-     * Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
-     */
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
-
-    /**
-     * <p>On-Demand resize timeout in minutes. If On-Demand Instances are not
-     * provisioned within this time, the resize workflow stops. The minimum value is 5
-     * minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies
-     * to all resize workflows on the Instance Fleet. The resize could be triggered by
-     * Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon
-     * EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by
-     * Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
-     */
     inline OnDemandResizingSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Specifies the allocation strategy to use to launch On-Demand instances during
+     * a resize. The default is <code>lowest-price</code>.</p>
+     */
+    inline const OnDemandProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+    inline void SetAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline void SetAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
+    inline OnDemandResizingSpecification& WithAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
+    inline OnDemandResizingSpecification& WithAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const OnDemandCapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
+    inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
+    inline void SetCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
+    inline void SetCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
+    inline OnDemandResizingSpecification& WithCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
+    inline OnDemandResizingSpecification& WithCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_timeoutDurationMinutes;
     bool m_timeoutDurationMinutesHasBeenSet = false;
+
+    OnDemandProvisioningAllocationStrategy m_allocationStrategy;
+    bool m_allocationStrategyHasBeenSet = false;
+
+    OnDemandCapacityReservationOptions m_capacityReservationOptions;
+    bool m_capacityReservationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

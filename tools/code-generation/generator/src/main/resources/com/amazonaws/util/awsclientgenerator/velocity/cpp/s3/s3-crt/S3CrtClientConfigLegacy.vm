@@ -1,0 +1,17 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+
+namespace ${rootNamespace}
+{
+    namespace ${serviceNamespace}
+    {
+        /* Backward compatibility, please use just S3CrtClientConfiguration */
+        using ClientConfiguration = Aws::S3Crt::S3CrtClientConfiguration;
+    }
+}

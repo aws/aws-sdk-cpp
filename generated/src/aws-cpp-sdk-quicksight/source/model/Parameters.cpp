@@ -26,11 +26,8 @@ Parameters::Parameters() :
 {
 }
 
-Parameters::Parameters(JsonView jsonValue) : 
-    m_stringParametersHasBeenSet(false),
-    m_integerParametersHasBeenSet(false),
-    m_decimalParametersHasBeenSet(false),
-    m_dateTimeParametersHasBeenSet(false)
+Parameters::Parameters(JsonView jsonValue)
+  : Parameters()
 {
   *this = jsonValue;
 }

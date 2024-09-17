@@ -33,56 +33,46 @@ namespace Model
     AWS_GUARDDUTY_API GetFindingsStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The finding statistics object.</p>
      */
     inline const FindingStatistics& GetFindingStatistics() const{ return m_findingStatistics; }
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline void SetFindingStatistics(const FindingStatistics& value) { m_findingStatistics = value; }
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline void SetFindingStatistics(FindingStatistics&& value) { m_findingStatistics = std::move(value); }
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline GetFindingsStatisticsResult& WithFindingStatistics(const FindingStatistics& value) { SetFindingStatistics(value); return *this;}
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline GetFindingsStatisticsResult& WithFindingStatistics(FindingStatistics&& value) { SetFindingStatistics(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p> <p>This parameter is currently not supported.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+    inline GetFindingsStatisticsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline GetFindingsStatisticsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline GetFindingsStatisticsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetFindingsStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetFindingsStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetFindingsStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FindingStatistics m_findingStatistics;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

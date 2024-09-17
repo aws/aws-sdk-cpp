@@ -34,63 +34,29 @@ namespace Model
     AWS_S3_API GetBucketTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Contains the tag set.</p>
      */
     inline const Aws::Vector<Tag>& GetTagSet() const{ return m_tagSet; }
-
-    /**
-     * <p>Contains the tag set.</p>
-     */
     inline void SetTagSet(const Aws::Vector<Tag>& value) { m_tagSet = value; }
-
-    /**
-     * <p>Contains the tag set.</p>
-     */
     inline void SetTagSet(Aws::Vector<Tag>&& value) { m_tagSet = std::move(value); }
-
-    /**
-     * <p>Contains the tag set.</p>
-     */
     inline GetBucketTaggingResult& WithTagSet(const Aws::Vector<Tag>& value) { SetTagSet(value); return *this;}
-
-    /**
-     * <p>Contains the tag set.</p>
-     */
     inline GetBucketTaggingResult& WithTagSet(Aws::Vector<Tag>&& value) { SetTagSet(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the tag set.</p>
-     */
     inline GetBucketTaggingResult& AddTagSet(const Tag& value) { m_tagSet.push_back(value); return *this; }
-
-    /**
-     * <p>Contains the tag set.</p>
-     */
     inline GetBucketTaggingResult& AddTagSet(Tag&& value) { m_tagSet.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketTaggingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketTaggingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketTaggingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_tagSet;

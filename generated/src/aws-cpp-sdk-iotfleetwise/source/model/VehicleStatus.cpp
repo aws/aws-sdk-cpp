@@ -26,11 +26,8 @@ VehicleStatus::VehicleStatus() :
 {
 }
 
-VehicleStatus::VehicleStatus(JsonView jsonValue) : 
-    m_campaignNameHasBeenSet(false),
-    m_vehicleNameHasBeenSet(false),
-    m_status(VehicleState::NOT_SET),
-    m_statusHasBeenSet(false)
+VehicleStatus::VehicleStatus(JsonView jsonValue)
+  : VehicleStatus()
 {
   *this = jsonValue;
 }

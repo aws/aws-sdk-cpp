@@ -37,95 +37,34 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The token to use to refresh a previously issued access token that might have
      * expired.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>The token to use to refresh a previously issued access token that might have
-     * expired.</p>
-     */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-
-    /**
-     * <p>The token to use to refresh a previously issued access token that might have
-     * expired.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-
-    /**
-     * <p>The token to use to refresh a previously issued access token that might have
-     * expired.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-
-    /**
-     * <p>The token to use to refresh a previously issued access token that might have
-     * expired.</p>
-     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-
-    /**
-     * <p>The token to use to refresh a previously issued access token that might have
-     * expired.</p>
-     */
     inline RefreshTokenRequestBody& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>The token to use to refresh a previously issued access token that might have
-     * expired.</p>
-     */
     inline RefreshTokenRequestBody& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to refresh a previously issued access token that might have
-     * expired.</p>
-     */
     inline RefreshTokenRequestBody& WithToken(const char* value) { SetToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the client to request the token from.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
-
-    /**
-     * <p>The ID of the client to request the token from.</p>
-     */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the client to request the token from.</p>
-     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-
-    /**
-     * <p>The ID of the client to request the token from.</p>
-     */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-
-    /**
-     * <p>The ID of the client to request the token from.</p>
-     */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-
-    /**
-     * <p>The ID of the client to request the token from.</p>
-     */
     inline RefreshTokenRequestBody& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-
-    /**
-     * <p>The ID of the client to request the token from.</p>
-     */
     inline RefreshTokenRequestBody& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the client to request the token from.</p>
-     */
     inline RefreshTokenRequestBody& WithClientId(const char* value) { SetClientId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_token;

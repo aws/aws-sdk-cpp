@@ -24,9 +24,8 @@ JourneysResponse::JourneysResponse() :
 {
 }
 
-JourneysResponse::JourneysResponse(JsonView jsonValue) : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+JourneysResponse::JourneysResponse(JsonView jsonValue)
+  : JourneysResponse()
 {
   *this = jsonValue;
 }

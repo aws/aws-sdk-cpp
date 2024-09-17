@@ -40,67 +40,29 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The information of the section.</p>
      */
     AWS_CONNECT_API const EvaluationFormSection& GetSection() const;
-
-    /**
-     * <p>The information of the section.</p>
-     */
     AWS_CONNECT_API bool SectionHasBeenSet() const;
-
-    /**
-     * <p>The information of the section.</p>
-     */
     AWS_CONNECT_API void SetSection(const EvaluationFormSection& value);
-
-    /**
-     * <p>The information of the section.</p>
-     */
     AWS_CONNECT_API void SetSection(EvaluationFormSection&& value);
-
-    /**
-     * <p>The information of the section.</p>
-     */
     AWS_CONNECT_API EvaluationFormItem& WithSection(const EvaluationFormSection& value);
-
-    /**
-     * <p>The information of the section.</p>
-     */
     AWS_CONNECT_API EvaluationFormItem& WithSection(EvaluationFormSection&& value);
+    ///@}
 
-
+    ///@{
     /**
      * <p>The information of the question.</p>
      */
     inline const EvaluationFormQuestion& GetQuestion() const{ return m_question; }
-
-    /**
-     * <p>The information of the question.</p>
-     */
     inline bool QuestionHasBeenSet() const { return m_questionHasBeenSet; }
-
-    /**
-     * <p>The information of the question.</p>
-     */
     inline void SetQuestion(const EvaluationFormQuestion& value) { m_questionHasBeenSet = true; m_question = value; }
-
-    /**
-     * <p>The information of the question.</p>
-     */
     inline void SetQuestion(EvaluationFormQuestion&& value) { m_questionHasBeenSet = true; m_question = std::move(value); }
-
-    /**
-     * <p>The information of the question.</p>
-     */
     inline EvaluationFormItem& WithQuestion(const EvaluationFormQuestion& value) { SetQuestion(value); return *this;}
-
-    /**
-     * <p>The information of the question.</p>
-     */
     inline EvaluationFormItem& WithQuestion(EvaluationFormQuestion&& value) { SetQuestion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     std::shared_ptr<EvaluationFormSection> m_section;

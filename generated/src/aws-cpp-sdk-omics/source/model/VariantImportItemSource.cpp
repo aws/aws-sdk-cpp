@@ -23,8 +23,8 @@ VariantImportItemSource::VariantImportItemSource() :
 {
 }
 
-VariantImportItemSource::VariantImportItemSource(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false)
+VariantImportItemSource::VariantImportItemSource(JsonView jsonValue)
+  : VariantImportItemSource()
 {
   *this = jsonValue;
 }

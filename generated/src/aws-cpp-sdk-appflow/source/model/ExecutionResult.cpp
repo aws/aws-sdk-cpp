@@ -33,18 +33,8 @@ ExecutionResult::ExecutionResult() :
 {
 }
 
-ExecutionResult::ExecutionResult(JsonView jsonValue) : 
-    m_errorInfoHasBeenSet(false),
-    m_bytesProcessed(0),
-    m_bytesProcessedHasBeenSet(false),
-    m_bytesWritten(0),
-    m_bytesWrittenHasBeenSet(false),
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_numParallelProcesses(0),
-    m_numParallelProcessesHasBeenSet(false),
-    m_maxPageSize(0),
-    m_maxPageSizeHasBeenSet(false)
+ExecutionResult::ExecutionResult(JsonView jsonValue)
+  : ExecutionResult()
 {
   *this = jsonValue;
 }

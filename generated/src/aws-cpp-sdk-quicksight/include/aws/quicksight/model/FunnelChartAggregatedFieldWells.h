@@ -40,103 +40,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The category field wells of a funnel chart. Values are grouped by category
      * fields.</p>
      */
     inline const Aws::Vector<DimensionField>& GetCategory() const{ return m_category; }
-
-    /**
-     * <p>The category field wells of a funnel chart. Values are grouped by category
-     * fields.</p>
-     */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-
-    /**
-     * <p>The category field wells of a funnel chart. Values are grouped by category
-     * fields.</p>
-     */
     inline void SetCategory(const Aws::Vector<DimensionField>& value) { m_categoryHasBeenSet = true; m_category = value; }
-
-    /**
-     * <p>The category field wells of a funnel chart. Values are grouped by category
-     * fields.</p>
-     */
     inline void SetCategory(Aws::Vector<DimensionField>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-
-    /**
-     * <p>The category field wells of a funnel chart. Values are grouped by category
-     * fields.</p>
-     */
     inline FunnelChartAggregatedFieldWells& WithCategory(const Aws::Vector<DimensionField>& value) { SetCategory(value); return *this;}
-
-    /**
-     * <p>The category field wells of a funnel chart. Values are grouped by category
-     * fields.</p>
-     */
     inline FunnelChartAggregatedFieldWells& WithCategory(Aws::Vector<DimensionField>&& value) { SetCategory(std::move(value)); return *this;}
-
-    /**
-     * <p>The category field wells of a funnel chart. Values are grouped by category
-     * fields.</p>
-     */
     inline FunnelChartAggregatedFieldWells& AddCategory(const DimensionField& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
-
-    /**
-     * <p>The category field wells of a funnel chart. Values are grouped by category
-     * fields.</p>
-     */
     inline FunnelChartAggregatedFieldWells& AddCategory(DimensionField&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value field wells of a funnel chart. Values are aggregated based on
      * categories.</p>
      */
     inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value field wells of a funnel chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value field wells of a funnel chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value field wells of a funnel chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value field wells of a funnel chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline FunnelChartAggregatedFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value field wells of a funnel chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline FunnelChartAggregatedFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value field wells of a funnel chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline FunnelChartAggregatedFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value field wells of a funnel chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline FunnelChartAggregatedFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DimensionField> m_category;

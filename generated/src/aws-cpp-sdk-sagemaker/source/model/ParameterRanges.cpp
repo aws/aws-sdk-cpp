@@ -26,11 +26,8 @@ ParameterRanges::ParameterRanges() :
 {
 }
 
-ParameterRanges::ParameterRanges(JsonView jsonValue) : 
-    m_integerParameterRangesHasBeenSet(false),
-    m_continuousParameterRangesHasBeenSet(false),
-    m_categoricalParameterRangesHasBeenSet(false),
-    m_autoParametersHasBeenSet(false)
+ParameterRanges::ParameterRanges(JsonView jsonValue)
+  : ParameterRanges()
 {
   *this = jsonValue;
 }

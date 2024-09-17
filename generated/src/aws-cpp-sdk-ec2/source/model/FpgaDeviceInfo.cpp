@@ -29,12 +29,8 @@ FpgaDeviceInfo::FpgaDeviceInfo() :
 {
 }
 
-FpgaDeviceInfo::FpgaDeviceInfo(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false)
+FpgaDeviceInfo::FpgaDeviceInfo(const XmlNode& xmlNode)
+  : FpgaDeviceInfo()
 {
   *this = xmlNode;
 }

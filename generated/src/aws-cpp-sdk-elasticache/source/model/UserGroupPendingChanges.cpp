@@ -26,9 +26,8 @@ UserGroupPendingChanges::UserGroupPendingChanges() :
 {
 }
 
-UserGroupPendingChanges::UserGroupPendingChanges(const XmlNode& xmlNode) : 
-    m_userIdsToRemoveHasBeenSet(false),
-    m_userIdsToAddHasBeenSet(false)
+UserGroupPendingChanges::UserGroupPendingChanges(const XmlNode& xmlNode)
+  : UserGroupPendingChanges()
 {
   *this = xmlNode;
 }

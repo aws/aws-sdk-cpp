@@ -40,75 +40,31 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Voice Connector ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline VoiceConnectorItem& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline VoiceConnectorItem& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline VoiceConnectorItem& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The priority setting of a Voice Connector item. Calls are routed to hosts in
      * priority order, with 1 as the highest priority. When hosts have equal priority,
      * the system distributes calls among them based on their relative weight.</p>
      */
     inline int GetPriority() const{ return m_priority; }
-
-    /**
-     * <p>The priority setting of a Voice Connector item. Calls are routed to hosts in
-     * priority order, with 1 as the highest priority. When hosts have equal priority,
-     * the system distributes calls among them based on their relative weight.</p>
-     */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>The priority setting of a Voice Connector item. Calls are routed to hosts in
-     * priority order, with 1 as the highest priority. When hosts have equal priority,
-     * the system distributes calls among them based on their relative weight.</p>
-     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>The priority setting of a Voice Connector item. Calls are routed to hosts in
-     * priority order, with 1 as the highest priority. When hosts have equal priority,
-     * the system distributes calls among them based on their relative weight.</p>
-     */
     inline VoiceConnectorItem& WithPriority(int value) { SetPriority(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;

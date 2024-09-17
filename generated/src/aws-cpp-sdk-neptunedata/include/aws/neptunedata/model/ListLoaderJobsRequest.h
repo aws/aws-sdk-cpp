@@ -36,59 +36,28 @@ namespace Model
     AWS_NEPTUNEDATA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The number of load IDs to list. Must be a positive integer greater than zero
      * and not more than <code>100</code> (which is the default).</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The number of load IDs to list. Must be a positive integer greater than zero
-     * and not more than <code>100</code> (which is the default).</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The number of load IDs to list. Must be a positive integer greater than zero
-     * and not more than <code>100</code> (which is the default).</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The number of load IDs to list. Must be a positive integer greater than zero
-     * and not more than <code>100</code> (which is the default).</p>
-     */
     inline ListLoaderJobsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional parameter that can be used to exclude the load IDs of queued load
      * requests when requesting a list of load IDs by setting the parameter to
      * <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
      */
     inline bool GetIncludeQueuedLoads() const{ return m_includeQueuedLoads; }
-
-    /**
-     * <p>An optional parameter that can be used to exclude the load IDs of queued load
-     * requests when requesting a list of load IDs by setting the parameter to
-     * <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
-     */
     inline bool IncludeQueuedLoadsHasBeenSet() const { return m_includeQueuedLoadsHasBeenSet; }
-
-    /**
-     * <p>An optional parameter that can be used to exclude the load IDs of queued load
-     * requests when requesting a list of load IDs by setting the parameter to
-     * <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
-     */
     inline void SetIncludeQueuedLoads(bool value) { m_includeQueuedLoadsHasBeenSet = true; m_includeQueuedLoads = value; }
-
-    /**
-     * <p>An optional parameter that can be used to exclude the load IDs of queued load
-     * requests when requesting a list of load IDs by setting the parameter to
-     * <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
-     */
     inline ListLoaderJobsRequest& WithIncludeQueuedLoads(bool value) { SetIncludeQueuedLoads(value); return *this;}
-
+    ///@}
   private:
 
     int m_limit;

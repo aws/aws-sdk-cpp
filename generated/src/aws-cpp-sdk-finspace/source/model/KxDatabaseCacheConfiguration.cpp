@@ -25,10 +25,8 @@ KxDatabaseCacheConfiguration::KxDatabaseCacheConfiguration() :
 {
 }
 
-KxDatabaseCacheConfiguration::KxDatabaseCacheConfiguration(JsonView jsonValue) : 
-    m_cacheTypeHasBeenSet(false),
-    m_dbPathsHasBeenSet(false),
-    m_dataviewNameHasBeenSet(false)
+KxDatabaseCacheConfiguration::KxDatabaseCacheConfiguration(JsonView jsonValue)
+  : KxDatabaseCacheConfiguration()
 {
   *this = jsonValue;
 }

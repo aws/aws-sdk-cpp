@@ -24,6 +24,7 @@ namespace Aws
         static const int price_capacity_optimized_HASH = HashingUtils::HashString("price-capacity-optimized");
         static const int lowest_price_HASH = HashingUtils::HashString("lowest-price");
         static const int diversified_HASH = HashingUtils::HashString("diversified");
+        static const int capacity_optimized_prioritized_HASH = HashingUtils::HashString("capacity-optimized-prioritized");
 
 
         SpotProvisioningAllocationStrategy GetSpotProvisioningAllocationStrategyForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == diversified_HASH)
           {
             return SpotProvisioningAllocationStrategy::diversified;
+          }
+          else if (hashCode == capacity_optimized_prioritized_HASH)
+          {
+            return SpotProvisioningAllocationStrategy::capacity_optimized_prioritized;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "lowest-price";
           case SpotProvisioningAllocationStrategy::diversified:
             return "diversified";
+          case SpotProvisioningAllocationStrategy::capacity_optimized_prioritized:
+            return "capacity-optimized-prioritized";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

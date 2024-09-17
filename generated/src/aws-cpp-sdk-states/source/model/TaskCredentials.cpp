@@ -23,8 +23,8 @@ TaskCredentials::TaskCredentials() :
 {
 }
 
-TaskCredentials::TaskCredentials(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false)
+TaskCredentials::TaskCredentials(JsonView jsonValue)
+  : TaskCredentials()
 {
   *this = jsonValue;
 }

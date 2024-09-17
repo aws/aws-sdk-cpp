@@ -38,128 +38,47 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the node at which the edge starts.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The ID of the node at which the edge starts.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The ID of the node at which the edge starts.</p>
-     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The ID of the node at which the edge starts.</p>
-     */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The ID of the node at which the edge starts.</p>
-     */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-
-    /**
-     * <p>The ID of the node at which the edge starts.</p>
-     */
     inline CodeGenEdge& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The ID of the node at which the edge starts.</p>
-     */
     inline CodeGenEdge& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the node at which the edge starts.</p>
-     */
     inline CodeGenEdge& WithSource(const char* value) { SetSource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the node at which the edge ends.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
-
-    /**
-     * <p>The ID of the node at which the edge ends.</p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p>The ID of the node at which the edge ends.</p>
-     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p>The ID of the node at which the edge ends.</p>
-     */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p>The ID of the node at which the edge ends.</p>
-     */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-
-    /**
-     * <p>The ID of the node at which the edge ends.</p>
-     */
     inline CodeGenEdge& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p>The ID of the node at which the edge ends.</p>
-     */
     inline CodeGenEdge& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the node at which the edge ends.</p>
-     */
     inline CodeGenEdge& WithTarget(const char* value) { SetTarget(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target of the edge.</p>
      */
     inline const Aws::String& GetTargetParameter() const{ return m_targetParameter; }
-
-    /**
-     * <p>The target of the edge.</p>
-     */
     inline bool TargetParameterHasBeenSet() const { return m_targetParameterHasBeenSet; }
-
-    /**
-     * <p>The target of the edge.</p>
-     */
     inline void SetTargetParameter(const Aws::String& value) { m_targetParameterHasBeenSet = true; m_targetParameter = value; }
-
-    /**
-     * <p>The target of the edge.</p>
-     */
     inline void SetTargetParameter(Aws::String&& value) { m_targetParameterHasBeenSet = true; m_targetParameter = std::move(value); }
-
-    /**
-     * <p>The target of the edge.</p>
-     */
     inline void SetTargetParameter(const char* value) { m_targetParameterHasBeenSet = true; m_targetParameter.assign(value); }
-
-    /**
-     * <p>The target of the edge.</p>
-     */
     inline CodeGenEdge& WithTargetParameter(const Aws::String& value) { SetTargetParameter(value); return *this;}
-
-    /**
-     * <p>The target of the edge.</p>
-     */
     inline CodeGenEdge& WithTargetParameter(Aws::String&& value) { SetTargetParameter(std::move(value)); return *this;}
-
-    /**
-     * <p>The target of the edge.</p>
-     */
     inline CodeGenEdge& WithTargetParameter(const char* value) { SetTargetParameter(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_source;

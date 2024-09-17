@@ -35,180 +35,76 @@ namespace Model
     AWS_XRAY_API GetServiceGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The start of the time frame for which the graph was generated.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The start of the time frame for which the graph was generated.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-
-    /**
-     * <p>The start of the time frame for which the graph was generated.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-
-    /**
-     * <p>The start of the time frame for which the graph was generated.</p>
-     */
     inline GetServiceGraphResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The start of the time frame for which the graph was generated.</p>
-     */
     inline GetServiceGraphResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end of the time frame for which the graph was generated.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The end of the time frame for which the graph was generated.</p>
-     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-
-    /**
-     * <p>The end of the time frame for which the graph was generated.</p>
-     */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-
-    /**
-     * <p>The end of the time frame for which the graph was generated.</p>
-     */
     inline GetServiceGraphResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The end of the time frame for which the graph was generated.</p>
-     */
     inline GetServiceGraphResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The services that have processed a traced request during the specified time
      * frame.</p>
      */
     inline const Aws::Vector<Service>& GetServices() const{ return m_services; }
-
-    /**
-     * <p>The services that have processed a traced request during the specified time
-     * frame.</p>
-     */
     inline void SetServices(const Aws::Vector<Service>& value) { m_services = value; }
-
-    /**
-     * <p>The services that have processed a traced request during the specified time
-     * frame.</p>
-     */
     inline void SetServices(Aws::Vector<Service>&& value) { m_services = std::move(value); }
-
-    /**
-     * <p>The services that have processed a traced request during the specified time
-     * frame.</p>
-     */
     inline GetServiceGraphResult& WithServices(const Aws::Vector<Service>& value) { SetServices(value); return *this;}
-
-    /**
-     * <p>The services that have processed a traced request during the specified time
-     * frame.</p>
-     */
     inline GetServiceGraphResult& WithServices(Aws::Vector<Service>&& value) { SetServices(std::move(value)); return *this;}
-
-    /**
-     * <p>The services that have processed a traced request during the specified time
-     * frame.</p>
-     */
     inline GetServiceGraphResult& AddServices(const Service& value) { m_services.push_back(value); return *this; }
-
-    /**
-     * <p>The services that have processed a traced request during the specified time
-     * frame.</p>
-     */
     inline GetServiceGraphResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A flag indicating whether the group's filter expression has been consistent,
      * or if the returned service graph may show traces from an older version of the
      * group's filter expression.</p>
      */
     inline bool GetContainsOldGroupVersions() const{ return m_containsOldGroupVersions; }
-
-    /**
-     * <p>A flag indicating whether the group's filter expression has been consistent,
-     * or if the returned service graph may show traces from an older version of the
-     * group's filter expression.</p>
-     */
     inline void SetContainsOldGroupVersions(bool value) { m_containsOldGroupVersions = value; }
-
-    /**
-     * <p>A flag indicating whether the group's filter expression has been consistent,
-     * or if the returned service graph may show traces from an older version of the
-     * group's filter expression.</p>
-     */
     inline GetServiceGraphResult& WithContainsOldGroupVersions(bool value) { SetContainsOldGroupVersions(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetServiceGraphResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetServiceGraphResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetServiceGraphResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetServiceGraphResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetServiceGraphResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetServiceGraphResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startTime;

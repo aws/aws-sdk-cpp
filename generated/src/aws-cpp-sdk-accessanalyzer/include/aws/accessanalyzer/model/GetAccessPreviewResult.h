@@ -33,53 +33,27 @@ namespace Model
     AWS_ACCESSANALYZER_API GetAccessPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains information about the access preview.</p>
      */
     inline const AccessPreview& GetAccessPreview() const{ return m_accessPreview; }
-
-    /**
-     * <p>An object that contains information about the access preview.</p>
-     */
     inline void SetAccessPreview(const AccessPreview& value) { m_accessPreview = value; }
-
-    /**
-     * <p>An object that contains information about the access preview.</p>
-     */
     inline void SetAccessPreview(AccessPreview&& value) { m_accessPreview = std::move(value); }
-
-    /**
-     * <p>An object that contains information about the access preview.</p>
-     */
     inline GetAccessPreviewResult& WithAccessPreview(const AccessPreview& value) { SetAccessPreview(value); return *this;}
-
-    /**
-     * <p>An object that contains information about the access preview.</p>
-     */
     inline GetAccessPreviewResult& WithAccessPreview(AccessPreview&& value) { SetAccessPreview(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccessPreviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccessPreviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccessPreviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccessPreview m_accessPreview;

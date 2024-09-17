@@ -28,13 +28,8 @@ EC2ReplaceRouteAction::EC2ReplaceRouteAction() :
 {
 }
 
-EC2ReplaceRouteAction::EC2ReplaceRouteAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
+EC2ReplaceRouteAction::EC2ReplaceRouteAction(JsonView jsonValue)
+  : EC2ReplaceRouteAction()
 {
   *this = jsonValue;
 }

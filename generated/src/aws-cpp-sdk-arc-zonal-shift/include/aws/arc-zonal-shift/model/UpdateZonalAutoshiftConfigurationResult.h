@@ -33,108 +33,42 @@ namespace Model
     AWS_ARCZONALSHIFT_API UpdateZonalAutoshiftConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier for the resource that you updated the zonal autoshift
      * configuration for. The identifier is the Amazon Resource Name (ARN) for the
      * resource.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-
-    /**
-     * <p>The identifier for the resource that you updated the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifier = value; }
-
-    /**
-     * <p>The identifier for the resource that you updated the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier for the resource that you updated the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier for the resource that you updated the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationResult& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier for the resource that you updated the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationResult& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the resource that you updated the zonal autoshift
-     * configuration for. The identifier is the Amazon Resource Name (ARN) for the
-     * resource.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationResult& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The zonal autoshift status for the resource that you updated the zonal
-     * autoshift configuration for.</p>
+     * <p>The updated zonal autoshift status for the resource.</p>
      */
     inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
-
-    /**
-     * <p>The zonal autoshift status for the resource that you updated the zonal
-     * autoshift configuration for.</p>
-     */
     inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatus = value; }
-
-    /**
-     * <p>The zonal autoshift status for the resource that you updated the zonal
-     * autoshift configuration for.</p>
-     */
     inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { m_zonalAutoshiftStatus = std::move(value); }
-
-    /**
-     * <p>The zonal autoshift status for the resource that you updated the zonal
-     * autoshift configuration for.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationResult& WithZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { SetZonalAutoshiftStatus(value); return *this;}
-
-    /**
-     * <p>The zonal autoshift status for the resource that you updated the zonal
-     * autoshift configuration for.</p>
-     */
     inline UpdateZonalAutoshiftConfigurationResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { SetZonalAutoshiftStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateZonalAutoshiftConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateZonalAutoshiftConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateZonalAutoshiftConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceIdentifier;

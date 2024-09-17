@@ -61,7 +61,6 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const KinesisVi
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -77,7 +76,6 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const AWSCreden
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -93,7 +91,6 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const std::shar
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -108,7 +105,6 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const std::shar
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),
   m_endpointProvider(Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -123,7 +119,6 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const AWSCreden
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -138,7 +133,6 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const std::shar
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
-    m_executor(clientConfiguration.executor),
     m_endpointProvider(Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
@@ -158,6 +152,14 @@ std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase>& KinesisVideoArch
 void KinesisVideoArchivedMediaClient::init(const KinesisVideoArchivedMedia::KinesisVideoArchivedMediaClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Kinesis Video Archived Media");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 }

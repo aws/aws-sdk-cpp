@@ -24,9 +24,8 @@ PartitionObjects::PartitionObjects() :
 {
 }
 
-PartitionObjects::PartitionObjects(JsonView jsonValue) : 
-    m_partitionValuesHasBeenSet(false),
-    m_objectsHasBeenSet(false)
+PartitionObjects::PartitionObjects(JsonView jsonValue)
+  : PartitionObjects()
 {
   *this = jsonValue;
 }

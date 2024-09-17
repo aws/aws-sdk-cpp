@@ -27,12 +27,8 @@ LoRaWANUpdateDevice::LoRaWANUpdateDevice() :
 {
 }
 
-LoRaWANUpdateDevice::LoRaWANUpdateDevice(JsonView jsonValue) : 
-    m_deviceProfileIdHasBeenSet(false),
-    m_serviceProfileIdHasBeenSet(false),
-    m_abpV1_1HasBeenSet(false),
-    m_abpV1_0_xHasBeenSet(false),
-    m_fPortsHasBeenSet(false)
+LoRaWANUpdateDevice::LoRaWANUpdateDevice(JsonView jsonValue)
+  : LoRaWANUpdateDevice()
 {
   *this = jsonValue;
 }

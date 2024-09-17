@@ -27,12 +27,8 @@ LambdaFunctionCompletedEventAttributes::LambdaFunctionCompletedEventAttributes()
 {
 }
 
-LambdaFunctionCompletedEventAttributes::LambdaFunctionCompletedEventAttributes(JsonView jsonValue) : 
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_resultHasBeenSet(false)
+LambdaFunctionCompletedEventAttributes::LambdaFunctionCompletedEventAttributes(JsonView jsonValue)
+  : LambdaFunctionCompletedEventAttributes()
 {
   *this = jsonValue;
 }

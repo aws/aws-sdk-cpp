@@ -22,8 +22,8 @@ SetSecurityGroupsResult::SetSecurityGroupsResult() :
 {
 }
 
-SetSecurityGroupsResult::SetSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET)
+SetSecurityGroupsResult::SetSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : SetSecurityGroupsResult()
 {
   *this = result;
 }

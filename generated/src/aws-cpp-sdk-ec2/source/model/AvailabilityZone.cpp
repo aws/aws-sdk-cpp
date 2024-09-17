@@ -37,20 +37,8 @@ AvailabilityZone::AvailabilityZone() :
 {
 }
 
-AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
-    m_state(AvailabilityZoneState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_optInStatus(AvailabilityZoneOptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_zoneNameHasBeenSet(false),
-    m_zoneIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_zoneTypeHasBeenSet(false),
-    m_parentZoneNameHasBeenSet(false),
-    m_parentZoneIdHasBeenSet(false)
+AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
+  : AvailabilityZone()
 {
   *this = xmlNode;
 }

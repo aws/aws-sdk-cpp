@@ -95,16 +95,15 @@ namespace Model
    * your Amazon Web Services payments</a>.</p> </li> <li>
    * <p>MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in
    * this organization, you first must migrate the organization's management account
-   * to the marketplace that corresponds to the management account's address. For
-   * example, accounts with India addresses must be associated with the AISPL
-   * marketplace. All accounts in an organization must be associated with the same
-   * marketplace.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies
-   * only to the Amazon Web Services Regions in China. To create an organization, the
-   * master must have a valid business license. For more information, contact
-   * customer support.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To
-   * complete this operation, you must first provide a valid contact address and
-   * phone number for the management account. Then try the operation again.</p> </li>
-   * <li> <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the
+   * to the marketplace that corresponds to the management account's address. All
+   * accounts in an organization must be associated with the same marketplace.</p>
+   * </li> <li> <p>MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the
+   * Amazon Web Services Regions in China. To create an organization, the master must
+   * have a valid business license. For more information, contact customer
+   * support.</p> </li> <li> <p>MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this
+   * operation, you must first provide a valid contact address and phone number for
+   * the management account. Then try the operation again.</p> </li> <li>
+   * <p>MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the
    * management account must have an associated account in the Amazon Web Services
    * GovCloud (US-West) Region. For more information, see <a
    * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
@@ -145,9 +144,9 @@ namespace Model
    * <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags
    * that are not compliant with the tag policy requirements for this account.</p>
    * </li> <li> <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services
-   * account, there is a waiting period before you can remove it from the
-   * organization. If you get an error that indicates that a wait period is required,
-   * try again in a few days.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * account, you must wait until at least seven days after the account was created.
+   * Invited accounts aren't subject to this waiting period.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ConstraintViolationException">AWS
    * API Reference</a></p>
    */
@@ -160,49 +159,27 @@ namespace Model
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ConstraintViolationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ConstraintViolationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ConstraintViolationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ConstraintViolationExceptionReason& GetReason() const{ return m_reason; }
-
-    
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    
     inline void SetReason(const ConstraintViolationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    
     inline void SetReason(ConstraintViolationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    
     inline ConstraintViolationException& WithReason(const ConstraintViolationExceptionReason& value) { SetReason(value); return *this;}
-
-    
     inline ConstraintViolationException& WithReason(ConstraintViolationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

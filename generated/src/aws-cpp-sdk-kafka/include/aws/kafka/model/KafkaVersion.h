@@ -33,49 +33,27 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    
     inline KafkaVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    
     inline KafkaVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    
     inline KafkaVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const KafkaVersionStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const KafkaVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(KafkaVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline KafkaVersion& WithStatus(const KafkaVersionStatus& value) { SetStatus(value); return *this;}
-
-    
     inline KafkaVersion& WithStatus(KafkaVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_version;

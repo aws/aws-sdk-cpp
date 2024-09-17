@@ -18,6 +18,8 @@ CreateSolutionRequest::CreateSolutionRequest() :
     m_performHPOHasBeenSet(false),
     m_performAutoML(false),
     m_performAutoMLHasBeenSet(false),
+    m_performAutoTraining(false),
+    m_performAutoTrainingHasBeenSet(false),
     m_recipeArnHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
@@ -45,6 +47,12 @@ Aws::String CreateSolutionRequest::SerializePayload() const
   if(m_performAutoMLHasBeenSet)
   {
    payload.WithBool("performAutoML", m_performAutoML);
+
+  }
+
+  if(m_performAutoTrainingHasBeenSet)
+  {
+   payload.WithBool("performAutoTraining", m_performAutoTraining);
 
   }
 

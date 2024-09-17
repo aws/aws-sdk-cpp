@@ -33,18 +33,8 @@ DICOMImportJobProperties::DICOMImportJobProperties() :
 {
 }
 
-DICOMImportJobProperties::DICOMImportJobProperties(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_datastoreIdHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_submittedAtHasBeenSet(false),
-    m_inputS3UriHasBeenSet(false),
-    m_outputS3UriHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DICOMImportJobProperties::DICOMImportJobProperties(JsonView jsonValue)
+  : DICOMImportJobProperties()
 {
   *this = jsonValue;
 }

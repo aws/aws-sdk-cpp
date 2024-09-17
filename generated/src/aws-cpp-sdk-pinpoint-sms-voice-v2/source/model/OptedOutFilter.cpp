@@ -25,10 +25,8 @@ OptedOutFilter::OptedOutFilter() :
 {
 }
 
-OptedOutFilter::OptedOutFilter(JsonView jsonValue) : 
-    m_name(OptedOutFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+OptedOutFilter::OptedOutFilter(JsonView jsonValue)
+  : OptedOutFilter()
 {
   *this = jsonValue;
 }

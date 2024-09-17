@@ -25,10 +25,8 @@ ReferenceLineDynamicDataConfiguration::ReferenceLineDynamicDataConfiguration() :
 {
 }
 
-ReferenceLineDynamicDataConfiguration::ReferenceLineDynamicDataConfiguration(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_measureAggregationFunctionHasBeenSet(false),
-    m_calculationHasBeenSet(false)
+ReferenceLineDynamicDataConfiguration::ReferenceLineDynamicDataConfiguration(JsonView jsonValue)
+  : ReferenceLineDynamicDataConfiguration()
 {
   *this = jsonValue;
 }

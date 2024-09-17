@@ -23,18 +23,15 @@ SearchByAttributeValue::SearchByAttributeValue() :
     m_dICOMAccessionNumberHasBeenSet(false),
     m_dICOMStudyIdHasBeenSet(false),
     m_dICOMStudyInstanceUIDHasBeenSet(false),
+    m_dICOMSeriesInstanceUIDHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
     m_dICOMStudyDateAndTimeHasBeenSet(false)
 {
 }
 
-SearchByAttributeValue::SearchByAttributeValue(JsonView jsonValue) : 
-    m_dICOMPatientIdHasBeenSet(false),
-    m_dICOMAccessionNumberHasBeenSet(false),
-    m_dICOMStudyIdHasBeenSet(false),
-    m_dICOMStudyInstanceUIDHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dICOMStudyDateAndTimeHasBeenSet(false)
+SearchByAttributeValue::SearchByAttributeValue(JsonView jsonValue)
+  : SearchByAttributeValue()
 {
   *this = jsonValue;
 }
@@ -69,11 +66,25 @@ SearchByAttributeValue& SearchByAttributeValue::operator =(JsonView jsonValue)
     m_dICOMStudyInstanceUIDHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DICOMSeriesInstanceUID"))
+  {
+    m_dICOMSeriesInstanceUID = jsonValue.GetString("DICOMSeriesInstanceUID");
+
+    m_dICOMSeriesInstanceUIDHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
 
     m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DICOMStudyDateAndTime"))
@@ -114,9 +125,20 @@ JsonValue SearchByAttributeValue::Jsonize() const
 
   }
 
+  if(m_dICOMSeriesInstanceUIDHasBeenSet)
+  {
+   payload.WithString("DICOMSeriesInstanceUID", m_dICOMSeriesInstanceUID);
+
+  }
+
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   if(m_dICOMStudyDateAndTimeHasBeenSet)

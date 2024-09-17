@@ -26,9 +26,8 @@ RuleOption::RuleOption() :
 {
 }
 
-RuleOption::RuleOption(const XmlNode& xmlNode) : 
-    m_keywordHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+RuleOption::RuleOption(const XmlNode& xmlNode)
+  : RuleOption()
 {
   *this = xmlNode;
 }

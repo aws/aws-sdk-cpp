@@ -27,12 +27,8 @@ Subscriber::Subscriber() :
 {
 }
 
-Subscriber::Subscriber(JsonView jsonValue) : 
-    m_addressHasBeenSet(false),
-    m_type(SubscriberType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(SubscriberStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+Subscriber::Subscriber(JsonView jsonValue)
+  : Subscriber()
 {
   *this = jsonValue;
 }

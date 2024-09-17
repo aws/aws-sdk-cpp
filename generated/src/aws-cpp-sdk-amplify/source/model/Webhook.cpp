@@ -29,14 +29,8 @@ Webhook::Webhook() :
 {
 }
 
-Webhook::Webhook(JsonView jsonValue) : 
-    m_webhookArnHasBeenSet(false),
-    m_webhookIdHasBeenSet(false),
-    m_webhookUrlHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+Webhook::Webhook(JsonView jsonValue)
+  : Webhook()
 {
   *this = jsonValue;
 }

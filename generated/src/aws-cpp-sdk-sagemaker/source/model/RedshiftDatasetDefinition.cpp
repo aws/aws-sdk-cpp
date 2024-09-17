@@ -33,18 +33,8 @@ RedshiftDatasetDefinition::RedshiftDatasetDefinition() :
 {
 }
 
-RedshiftDatasetDefinition::RedshiftDatasetDefinition(JsonView jsonValue) : 
-    m_clusterIdHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_dbUserHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_clusterRoleArnHasBeenSet(false),
-    m_outputS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_outputFormat(RedshiftResultFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_outputCompression(RedshiftResultCompressionType::NOT_SET),
-    m_outputCompressionHasBeenSet(false)
+RedshiftDatasetDefinition::RedshiftDatasetDefinition(JsonView jsonValue)
+  : RedshiftDatasetDefinition()
 {
   *this = jsonValue;
 }

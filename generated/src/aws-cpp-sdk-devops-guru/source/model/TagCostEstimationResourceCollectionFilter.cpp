@@ -24,9 +24,8 @@ TagCostEstimationResourceCollectionFilter::TagCostEstimationResourceCollectionFi
 {
 }
 
-TagCostEstimationResourceCollectionFilter::TagCostEstimationResourceCollectionFilter(JsonView jsonValue) : 
-    m_appBoundaryKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+TagCostEstimationResourceCollectionFilter::TagCostEstimationResourceCollectionFilter(JsonView jsonValue)
+  : TagCostEstimationResourceCollectionFilter()
 {
   *this = jsonValue;
 }

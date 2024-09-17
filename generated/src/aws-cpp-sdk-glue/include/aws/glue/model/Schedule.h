@@ -39,6 +39,7 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
@@ -46,94 +47,26 @@ namespace Model
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
-
-    /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-     */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-
-    /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-     */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-
-    /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-     */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-
-    /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-     */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-
-    /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-     */
     inline Schedule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-
-    /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-     */
     inline Schedule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-     */
     inline Schedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the schedule.</p>
      */
     inline const ScheduleState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the schedule.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the schedule.</p>
-     */
     inline void SetState(const ScheduleState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the schedule.</p>
-     */
     inline void SetState(ScheduleState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the schedule.</p>
-     */
     inline Schedule& WithState(const ScheduleState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the schedule.</p>
-     */
     inline Schedule& WithState(ScheduleState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduleExpression;

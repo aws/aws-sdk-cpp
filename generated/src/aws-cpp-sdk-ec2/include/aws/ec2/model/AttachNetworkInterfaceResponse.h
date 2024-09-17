@@ -38,73 +38,36 @@ namespace Model
     AWS_EC2_API AttachNetworkInterfaceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the network interface attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentId = value; }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline void SetAttachmentId(const char* value) { m_attachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline AttachNetworkInterfaceResponse& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline AttachNetworkInterfaceResponse& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline AttachNetworkInterfaceResponse& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The index of the network card.</p>
      */
     inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
-
-    /**
-     * <p>The index of the network card.</p>
-     */
     inline void SetNetworkCardIndex(int value) { m_networkCardIndex = value; }
-
-    /**
-     * <p>The index of the network card.</p>
-     */
     inline AttachNetworkInterfaceResponse& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AttachNetworkInterfaceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AttachNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachmentId;

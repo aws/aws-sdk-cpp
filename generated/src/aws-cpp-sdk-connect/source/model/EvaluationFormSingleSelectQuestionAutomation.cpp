@@ -24,9 +24,8 @@ EvaluationFormSingleSelectQuestionAutomation::EvaluationFormSingleSelectQuestion
 {
 }
 
-EvaluationFormSingleSelectQuestionAutomation::EvaluationFormSingleSelectQuestionAutomation(JsonView jsonValue) : 
-    m_optionsHasBeenSet(false),
-    m_defaultOptionRefIdHasBeenSet(false)
+EvaluationFormSingleSelectQuestionAutomation::EvaluationFormSingleSelectQuestionAutomation(JsonView jsonValue)
+  : EvaluationFormSingleSelectQuestionAutomation()
 {
   *this = jsonValue;
 }

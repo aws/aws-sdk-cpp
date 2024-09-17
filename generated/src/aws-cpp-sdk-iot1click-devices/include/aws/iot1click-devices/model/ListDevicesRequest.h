@@ -38,116 +38,45 @@ namespace Model
     AWS_IOT1CLICKDEVICESSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The type of the device, such as "button".</p>
      */
     inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
-
-    /**
-     * <p>The type of the device, such as "button".</p>
-     */
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the device, such as "button".</p>
-     */
     inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
-
-    /**
-     * <p>The type of the device, such as "button".</p>
-     */
     inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
-
-    /**
-     * <p>The type of the device, such as "button".</p>
-     */
     inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
-
-    /**
-     * <p>The type of the device, such as "button".</p>
-     */
     inline ListDevicesRequest& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
-
-    /**
-     * <p>The type of the device, such as "button".</p>
-     */
     inline ListDevicesRequest& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of the device, such as "button".</p>
-     */
     inline ListDevicesRequest& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return per request. If not set, a default
      * value of
  100 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return per request. If not set, a default
-     * value of
- 100 is used.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return per request. If not set, a default
-     * value of
- 100 is used.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return per request. If not set, a default
-     * value of
- 100 is used.</p>
-     */
     inline ListDevicesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline ListDevicesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline ListDevicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results.</p>
-     */
     inline ListDevicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceType;

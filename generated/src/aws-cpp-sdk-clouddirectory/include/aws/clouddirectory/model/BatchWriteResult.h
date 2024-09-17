@@ -34,63 +34,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API BatchWriteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of all the responses for each batch write.</p>
      */
     inline const Aws::Vector<BatchWriteOperationResponse>& GetResponses() const{ return m_responses; }
-
-    /**
-     * <p>A list of all the responses for each batch write.</p>
-     */
     inline void SetResponses(const Aws::Vector<BatchWriteOperationResponse>& value) { m_responses = value; }
-
-    /**
-     * <p>A list of all the responses for each batch write.</p>
-     */
     inline void SetResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { m_responses = std::move(value); }
-
-    /**
-     * <p>A list of all the responses for each batch write.</p>
-     */
     inline BatchWriteResult& WithResponses(const Aws::Vector<BatchWriteOperationResponse>& value) { SetResponses(value); return *this;}
-
-    /**
-     * <p>A list of all the responses for each batch write.</p>
-     */
     inline BatchWriteResult& WithResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { SetResponses(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of all the responses for each batch write.</p>
-     */
     inline BatchWriteResult& AddResponses(const BatchWriteOperationResponse& value) { m_responses.push_back(value); return *this; }
-
-    /**
-     * <p>A list of all the responses for each batch write.</p>
-     */
     inline BatchWriteResult& AddResponses(BatchWriteOperationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchWriteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchWriteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchWriteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchWriteOperationResponse> m_responses;

@@ -22,8 +22,8 @@ DeleteVpcConnectionResult::DeleteVpcConnectionResult() :
 {
 }
 
-DeleteVpcConnectionResult::DeleteVpcConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(VpcConnectionState::NOT_SET)
+DeleteVpcConnectionResult::DeleteVpcConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteVpcConnectionResult()
 {
   *this = result;
 }

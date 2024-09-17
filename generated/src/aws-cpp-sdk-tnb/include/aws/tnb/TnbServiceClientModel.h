@@ -47,6 +47,13 @@
 #include <aws/tnb/model/UpdateSolNetworkPackageResult.h>
 #include <aws/tnb/model/ValidateSolFunctionPackageContentResult.h>
 #include <aws/tnb/model/ValidateSolNetworkPackageContentResult.h>
+#include <aws/tnb/model/CreateSolFunctionPackageRequest.h>
+#include <aws/tnb/model/ListSolNetworkOperationsRequest.h>
+#include <aws/tnb/model/CreateSolNetworkPackageRequest.h>
+#include <aws/tnb/model/ListSolFunctionInstancesRequest.h>
+#include <aws/tnb/model/ListSolFunctionPackagesRequest.h>
+#include <aws/tnb/model/ListSolNetworkInstancesRequest.h>
+#include <aws/tnb/model/ListSolNetworkPackagesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TnbClient header */
 
@@ -81,7 +88,7 @@ namespace Aws
 
   namespace tnb
   {
-    using TnbClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TnbClientConfiguration = Aws::Client::GenericClientConfiguration;
     using TnbEndpointProviderBase = Aws::tnb::Endpoint::TnbEndpointProviderBase;
     using TnbEndpointProvider = Aws::tnb::Endpoint::TnbEndpointProvider;
 

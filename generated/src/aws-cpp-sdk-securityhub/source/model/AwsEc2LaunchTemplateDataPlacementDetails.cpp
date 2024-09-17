@@ -31,16 +31,8 @@ AwsEc2LaunchTemplateDataPlacementDetails::AwsEc2LaunchTemplateDataPlacementDetai
 {
 }
 
-AwsEc2LaunchTemplateDataPlacementDetails::AwsEc2LaunchTemplateDataPlacementDetails(JsonView jsonValue) : 
-    m_affinityHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false),
-    m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false),
-    m_tenancyHasBeenSet(false)
+AwsEc2LaunchTemplateDataPlacementDetails::AwsEc2LaunchTemplateDataPlacementDetails(JsonView jsonValue)
+  : AwsEc2LaunchTemplateDataPlacementDetails()
 {
   *this = jsonValue;
 }

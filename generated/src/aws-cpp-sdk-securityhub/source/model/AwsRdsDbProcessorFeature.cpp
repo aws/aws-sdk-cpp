@@ -24,9 +24,8 @@ AwsRdsDbProcessorFeature::AwsRdsDbProcessorFeature() :
 {
 }
 
-AwsRdsDbProcessorFeature::AwsRdsDbProcessorFeature(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsRdsDbProcessorFeature::AwsRdsDbProcessorFeature(JsonView jsonValue)
+  : AwsRdsDbProcessorFeature()
 {
   *this = jsonValue;
 }

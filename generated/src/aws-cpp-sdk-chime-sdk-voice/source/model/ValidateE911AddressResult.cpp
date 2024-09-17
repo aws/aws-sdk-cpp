@@ -22,8 +22,8 @@ ValidateE911AddressResult::ValidateE911AddressResult() :
 {
 }
 
-ValidateE911AddressResult::ValidateE911AddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_validationResult(0)
+ValidateE911AddressResult::ValidateE911AddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ValidateE911AddressResult()
 {
   *this = result;
 }

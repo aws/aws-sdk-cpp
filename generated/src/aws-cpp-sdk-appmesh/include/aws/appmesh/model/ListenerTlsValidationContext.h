@@ -39,79 +39,31 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A reference to an object that represents the SANs for a listener's Transport
      * Layer Security (TLS) validation context.</p>
      */
     inline const SubjectAlternativeNames& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
-
-    /**
-     * <p>A reference to an object that represents the SANs for a listener's Transport
-     * Layer Security (TLS) validation context.</p>
-     */
     inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
-
-    /**
-     * <p>A reference to an object that represents the SANs for a listener's Transport
-     * Layer Security (TLS) validation context.</p>
-     */
     inline void SetSubjectAlternativeNames(const SubjectAlternativeNames& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
-
-    /**
-     * <p>A reference to an object that represents the SANs for a listener's Transport
-     * Layer Security (TLS) validation context.</p>
-     */
     inline void SetSubjectAlternativeNames(SubjectAlternativeNames&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
-
-    /**
-     * <p>A reference to an object that represents the SANs for a listener's Transport
-     * Layer Security (TLS) validation context.</p>
-     */
     inline ListenerTlsValidationContext& WithSubjectAlternativeNames(const SubjectAlternativeNames& value) { SetSubjectAlternativeNames(value); return *this;}
-
-    /**
-     * <p>A reference to an object that represents the SANs for a listener's Transport
-     * Layer Security (TLS) validation context.</p>
-     */
     inline ListenerTlsValidationContext& WithSubjectAlternativeNames(SubjectAlternativeNames&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to where to retrieve the trust chain when validating a peer’s
      * Transport Layer Security (TLS) certificate.</p>
      */
     inline const ListenerTlsValidationContextTrust& GetTrust() const{ return m_trust; }
-
-    /**
-     * <p>A reference to where to retrieve the trust chain when validating a peer’s
-     * Transport Layer Security (TLS) certificate.</p>
-     */
     inline bool TrustHasBeenSet() const { return m_trustHasBeenSet; }
-
-    /**
-     * <p>A reference to where to retrieve the trust chain when validating a peer’s
-     * Transport Layer Security (TLS) certificate.</p>
-     */
     inline void SetTrust(const ListenerTlsValidationContextTrust& value) { m_trustHasBeenSet = true; m_trust = value; }
-
-    /**
-     * <p>A reference to where to retrieve the trust chain when validating a peer’s
-     * Transport Layer Security (TLS) certificate.</p>
-     */
     inline void SetTrust(ListenerTlsValidationContextTrust&& value) { m_trustHasBeenSet = true; m_trust = std::move(value); }
-
-    /**
-     * <p>A reference to where to retrieve the trust chain when validating a peer’s
-     * Transport Layer Security (TLS) certificate.</p>
-     */
     inline ListenerTlsValidationContext& WithTrust(const ListenerTlsValidationContextTrust& value) { SetTrust(value); return *this;}
-
-    /**
-     * <p>A reference to where to retrieve the trust chain when validating a peer’s
-     * Transport Layer Security (TLS) certificate.</p>
-     */
     inline ListenerTlsValidationContext& WithTrust(ListenerTlsValidationContextTrust&& value) { SetTrust(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SubjectAlternativeNames m_subjectAlternativeNames;

@@ -38,36 +38,17 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Returns a typed link specifier as output.</p>
      */
     inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const{ return m_typedLinkSpecifier; }
-
-    /**
-     * <p>Returns a typed link specifier as output.</p>
-     */
     inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
-
-    /**
-     * <p>Returns a typed link specifier as output.</p>
-     */
     inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
-
-    /**
-     * <p>Returns a typed link specifier as output.</p>
-     */
     inline void SetTypedLinkSpecifier(TypedLinkSpecifier&& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = std::move(value); }
-
-    /**
-     * <p>Returns a typed link specifier as output.</p>
-     */
     inline BatchAttachTypedLinkResponse& WithTypedLinkSpecifier(const TypedLinkSpecifier& value) { SetTypedLinkSpecifier(value); return *this;}
-
-    /**
-     * <p>Returns a typed link specifier as output.</p>
-     */
     inline BatchAttachTypedLinkResponse& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TypedLinkSpecifier m_typedLinkSpecifier;

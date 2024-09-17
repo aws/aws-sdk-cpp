@@ -34,46 +34,19 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The user's SSH public key.</p>
      */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
-
-    /**
-     * <p>The user's SSH public key.</p>
-     */
     inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
-
-    /**
-     * <p>The user's SSH public key.</p>
-     */
     inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
-
-    /**
-     * <p>The user's SSH public key.</p>
-     */
     inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
-
-    /**
-     * <p>The user's SSH public key.</p>
-     */
     inline void SetSshPublicKey(const char* value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey.assign(value); }
-
-    /**
-     * <p>The user's SSH public key.</p>
-     */
     inline UpdateMyUserProfileRequest& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
-
-    /**
-     * <p>The user's SSH public key.</p>
-     */
     inline UpdateMyUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The user's SSH public key.</p>
-     */
     inline UpdateMyUserProfileRequest& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sshPublicKey;

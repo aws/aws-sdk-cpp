@@ -38,87 +38,33 @@ namespace Model
      */
     AWS_NEPTUNEGRAPH_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
     inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetQueryRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetQueryRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetQueryRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the query in question.</p>
      */
     inline const Aws::String& GetQueryId() const{ return m_queryId; }
-
-    /**
-     * <p>The ID of the query in question.</p>
-     */
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the query in question.</p>
-     */
     inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
-
-    /**
-     * <p>The ID of the query in question.</p>
-     */
     inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
-
-    /**
-     * <p>The ID of the query in question.</p>
-     */
     inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
-
-    /**
-     * <p>The ID of the query in question.</p>
-     */
     inline GetQueryRequest& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-
-    /**
-     * <p>The ID of the query in question.</p>
-     */
     inline GetQueryRequest& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the query in question.</p>
-     */
     inline GetQueryRequest& WithQueryId(const char* value) { SetQueryId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_graphIdentifier;

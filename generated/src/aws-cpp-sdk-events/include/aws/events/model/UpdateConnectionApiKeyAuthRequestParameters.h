@@ -38,87 +38,33 @@ namespace Model
     AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the API key to use for authorization.</p>
      */
     inline const Aws::String& GetApiKeyName() const{ return m_apiKeyName; }
-
-    /**
-     * <p>The name of the API key to use for authorization.</p>
-     */
     inline bool ApiKeyNameHasBeenSet() const { return m_apiKeyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the API key to use for authorization.</p>
-     */
     inline void SetApiKeyName(const Aws::String& value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName = value; }
-
-    /**
-     * <p>The name of the API key to use for authorization.</p>
-     */
     inline void SetApiKeyName(Aws::String&& value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName = std::move(value); }
-
-    /**
-     * <p>The name of the API key to use for authorization.</p>
-     */
     inline void SetApiKeyName(const char* value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName.assign(value); }
-
-    /**
-     * <p>The name of the API key to use for authorization.</p>
-     */
     inline UpdateConnectionApiKeyAuthRequestParameters& WithApiKeyName(const Aws::String& value) { SetApiKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the API key to use for authorization.</p>
-     */
     inline UpdateConnectionApiKeyAuthRequestParameters& WithApiKeyName(Aws::String&& value) { SetApiKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the API key to use for authorization.</p>
-     */
     inline UpdateConnectionApiKeyAuthRequestParameters& WithApiKeyName(const char* value) { SetApiKeyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value associated with teh API key to use for authorization.</p>
      */
     inline const Aws::String& GetApiKeyValue() const{ return m_apiKeyValue; }
-
-    /**
-     * <p>The value associated with teh API key to use for authorization.</p>
-     */
     inline bool ApiKeyValueHasBeenSet() const { return m_apiKeyValueHasBeenSet; }
-
-    /**
-     * <p>The value associated with teh API key to use for authorization.</p>
-     */
     inline void SetApiKeyValue(const Aws::String& value) { m_apiKeyValueHasBeenSet = true; m_apiKeyValue = value; }
-
-    /**
-     * <p>The value associated with teh API key to use for authorization.</p>
-     */
     inline void SetApiKeyValue(Aws::String&& value) { m_apiKeyValueHasBeenSet = true; m_apiKeyValue = std::move(value); }
-
-    /**
-     * <p>The value associated with teh API key to use for authorization.</p>
-     */
     inline void SetApiKeyValue(const char* value) { m_apiKeyValueHasBeenSet = true; m_apiKeyValue.assign(value); }
-
-    /**
-     * <p>The value associated with teh API key to use for authorization.</p>
-     */
     inline UpdateConnectionApiKeyAuthRequestParameters& WithApiKeyValue(const Aws::String& value) { SetApiKeyValue(value); return *this;}
-
-    /**
-     * <p>The value associated with teh API key to use for authorization.</p>
-     */
     inline UpdateConnectionApiKeyAuthRequestParameters& WithApiKeyValue(Aws::String&& value) { SetApiKeyValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value associated with teh API key to use for authorization.</p>
-     */
     inline UpdateConnectionApiKeyAuthRequestParameters& WithApiKeyValue(const char* value) { SetApiKeyValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiKeyName;

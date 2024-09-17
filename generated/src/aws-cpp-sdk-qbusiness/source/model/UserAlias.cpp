@@ -19,34 +19,32 @@ namespace Model
 {
 
 UserAlias::UserAlias() : 
-    m_dataSourceIdHasBeenSet(false),
     m_indexIdHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false),
     m_userIdHasBeenSet(false)
 {
 }
 
-UserAlias::UserAlias(JsonView jsonValue) : 
-    m_dataSourceIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+UserAlias::UserAlias(JsonView jsonValue)
+  : UserAlias()
 {
   *this = jsonValue;
 }
 
 UserAlias& UserAlias::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dataSourceId"))
-  {
-    m_dataSourceId = jsonValue.GetString("dataSourceId");
-
-    m_dataSourceIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
 
     m_indexIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataSourceId"))
+  {
+    m_dataSourceId = jsonValue.GetString("dataSourceId");
+
+    m_dataSourceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("userId"))
@@ -63,15 +61,15 @@ JsonValue UserAlias::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataSourceIdHasBeenSet)
-  {
-   payload.WithString("dataSourceId", m_dataSourceId);
-
-  }
-
   if(m_indexIdHasBeenSet)
   {
    payload.WithString("indexId", m_indexId);
+
+  }
+
+  if(m_dataSourceIdHasBeenSet)
+  {
+   payload.WithString("dataSourceId", m_dataSourceId);
 
   }
 

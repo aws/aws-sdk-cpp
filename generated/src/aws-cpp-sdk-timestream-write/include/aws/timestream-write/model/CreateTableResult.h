@@ -33,53 +33,27 @@ namespace Model
     AWS_TIMESTREAMWRITE_API CreateTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The newly created Timestream table.</p>
      */
     inline const Table& GetTable() const{ return m_table; }
-
-    /**
-     * <p>The newly created Timestream table.</p>
-     */
     inline void SetTable(const Table& value) { m_table = value; }
-
-    /**
-     * <p>The newly created Timestream table.</p>
-     */
     inline void SetTable(Table&& value) { m_table = std::move(value); }
-
-    /**
-     * <p>The newly created Timestream table.</p>
-     */
     inline CreateTableResult& WithTable(const Table& value) { SetTable(value); return *this;}
-
-    /**
-     * <p>The newly created Timestream table.</p>
-     */
     inline CreateTableResult& WithTable(Table&& value) { SetTable(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Table m_table;

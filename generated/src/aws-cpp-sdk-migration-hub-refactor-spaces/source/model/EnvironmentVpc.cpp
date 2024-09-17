@@ -29,14 +29,8 @@ EnvironmentVpc::EnvironmentVpc() :
 {
 }
 
-EnvironmentVpc::EnvironmentVpc(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_cidrBlocksHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcNameHasBeenSet(false)
+EnvironmentVpc::EnvironmentVpc(JsonView jsonValue)
+  : EnvironmentVpc()
 {
   *this = jsonValue;
 }

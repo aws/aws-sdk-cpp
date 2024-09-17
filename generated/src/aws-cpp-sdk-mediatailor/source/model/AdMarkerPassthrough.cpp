@@ -24,9 +24,8 @@ AdMarkerPassthrough::AdMarkerPassthrough() :
 {
 }
 
-AdMarkerPassthrough::AdMarkerPassthrough(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+AdMarkerPassthrough::AdMarkerPassthrough(JsonView jsonValue)
+  : AdMarkerPassthrough()
 {
   *this = jsonValue;
 }

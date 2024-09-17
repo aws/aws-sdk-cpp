@@ -21,6 +21,11 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
+    m_overflowBehaviorHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_fleetServiceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -54,6 +59,29 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_scalingConfigurationHasBeenSet)
   {
    payload.WithObject("scalingConfiguration", m_scalingConfiguration.Jsonize());
+
+  }
+
+  if(m_overflowBehaviorHasBeenSet)
+  {
+   payload.WithString("overflowBehavior", FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior));
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("imageId", m_imageId);
+
+  }
+
+  if(m_fleetServiceRoleHasBeenSet)
+  {
+   payload.WithString("fleetServiceRole", m_fleetServiceRole);
 
   }
 

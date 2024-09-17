@@ -43,36 +43,13 @@ Deployment::Deployment() :
     m_rolloutStateReasonHasBeenSet(false),
     m_serviceConnectConfigurationHasBeenSet(false),
     m_serviceConnectResourcesHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false)
+    m_volumeConfigurationsHasBeenSet(false),
+    m_fargateEphemeralStorageHasBeenSet(false)
 {
 }
 
-Deployment::Deployment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_desiredCount(0),
-    m_desiredCountHasBeenSet(false),
-    m_pendingCount(0),
-    m_pendingCountHasBeenSet(false),
-    m_runningCount(0),
-    m_runningCountHasBeenSet(false),
-    m_failedTasks(0),
-    m_failedTasksHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformFamilyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_rolloutState(DeploymentRolloutState::NOT_SET),
-    m_rolloutStateHasBeenSet(false),
-    m_rolloutStateReasonHasBeenSet(false),
-    m_serviceConnectConfigurationHasBeenSet(false),
-    m_serviceConnectResourcesHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false)
+Deployment::Deployment(JsonView jsonValue)
+  : Deployment()
 {
   *this = jsonValue;
 }
@@ -221,6 +198,13 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_volumeConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fargateEphemeralStorage"))
+  {
+    m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
+
+    m_fargateEphemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -350,6 +334,12 @@ JsonValue Deployment::Jsonize() const
      volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());
    }
    payload.WithArray("volumeConfigurations", std::move(volumeConfigurationsJsonList));
+
+  }
+
+  if(m_fargateEphemeralStorageHasBeenSet)
+  {
+   payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
 
   }
 

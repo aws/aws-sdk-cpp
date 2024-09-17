@@ -27,12 +27,8 @@ Communication::Communication() :
 {
 }
 
-Communication::Communication(JsonView jsonValue) : 
-    m_caseIdHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_submittedByHasBeenSet(false),
-    m_timeCreatedHasBeenSet(false),
-    m_attachmentSetHasBeenSet(false)
+Communication::Communication(JsonView jsonValue)
+  : Communication()
 {
   *this = jsonValue;
 }

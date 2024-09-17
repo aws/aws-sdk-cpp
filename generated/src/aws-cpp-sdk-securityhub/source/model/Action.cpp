@@ -27,12 +27,8 @@ Action::Action() :
 {
 }
 
-Action::Action(JsonView jsonValue) : 
-    m_actionTypeHasBeenSet(false),
-    m_networkConnectionActionHasBeenSet(false),
-    m_awsApiCallActionHasBeenSet(false),
-    m_dnsRequestActionHasBeenSet(false),
-    m_portProbeActionHasBeenSet(false)
+Action::Action(JsonView jsonValue)
+  : Action()
 {
   *this = jsonValue;
 }

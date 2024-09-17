@@ -29,14 +29,8 @@ CustomFilterListConfiguration::CustomFilterListConfiguration() :
 {
 }
 
-CustomFilterListConfiguration::CustomFilterListConfiguration(JsonView jsonValue) : 
-    m_matchOperator(CategoryFilterMatchOperator::NOT_SET),
-    m_matchOperatorHasBeenSet(false),
-    m_categoryValuesHasBeenSet(false),
-    m_selectAllOptions(CategoryFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false)
+CustomFilterListConfiguration::CustomFilterListConfiguration(JsonView jsonValue)
+  : CustomFilterListConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig() :
 {
 }
 
-DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig(JsonView jsonValue) : 
-    m_dataFormat(DocumentClassifierDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_testS3UriHasBeenSet(false),
-    m_labelDelimiterHasBeenSet(false),
-    m_augmentedManifestsHasBeenSet(false),
-    m_documentType(DocumentClassifierDocumentTypeFormat::NOT_SET),
-    m_documentTypeHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_documentReaderConfigHasBeenSet(false)
+DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig(JsonView jsonValue)
+  : DocumentClassifierInputDataConfig()
 {
   *this = jsonValue;
 }

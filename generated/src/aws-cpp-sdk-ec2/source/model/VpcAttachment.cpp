@@ -27,10 +27,8 @@ VpcAttachment::VpcAttachment() :
 {
 }
 
-VpcAttachment::VpcAttachment(const XmlNode& xmlNode) : 
-    m_state(AttachmentStatus::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+VpcAttachment::VpcAttachment(const XmlNode& xmlNode)
+  : VpcAttachment()
 {
   *this = xmlNode;
 }

@@ -33,6 +33,7 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the message template. A template name must start with an
      * alphanumeric character and can contain a maximum of 128 characters. The
@@ -40,82 +41,24 @@ namespace Model
      * Template names are case sensitive.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline CreateVoiceTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline CreateVoiceTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the message template. A template name must start with an
-     * alphanumeric character and can contain a maximum of 128 characters. The
-     * characters can be alphanumeric characters, underscores (_), or hyphens (-).
-     * Template names are case sensitive.</p>
-     */
     inline CreateVoiceTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const VoiceTemplateRequest& GetVoiceTemplateRequest() const{ return m_voiceTemplateRequest; }
-
-    
     inline bool VoiceTemplateRequestHasBeenSet() const { return m_voiceTemplateRequestHasBeenSet; }
-
-    
     inline void SetVoiceTemplateRequest(const VoiceTemplateRequest& value) { m_voiceTemplateRequestHasBeenSet = true; m_voiceTemplateRequest = value; }
-
-    
     inline void SetVoiceTemplateRequest(VoiceTemplateRequest&& value) { m_voiceTemplateRequestHasBeenSet = true; m_voiceTemplateRequest = std::move(value); }
-
-    
     inline CreateVoiceTemplateRequest& WithVoiceTemplateRequest(const VoiceTemplateRequest& value) { SetVoiceTemplateRequest(value); return *this;}
-
-    
     inline CreateVoiceTemplateRequest& WithVoiceTemplateRequest(VoiceTemplateRequest&& value) { SetVoiceTemplateRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateName;

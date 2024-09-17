@@ -26,11 +26,8 @@ AcceptRule::AcceptRule() :
 {
 }
 
-AcceptRule::AcceptRule(JsonView jsonValue) : 
-    m_rule(AcceptRuleBehavior::NOT_SET),
-    m_ruleHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
+AcceptRule::AcceptRule(JsonView jsonValue)
+  : AcceptRule()
 {
   *this = jsonValue;
 }

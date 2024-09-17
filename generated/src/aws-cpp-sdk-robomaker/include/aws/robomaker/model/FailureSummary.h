@@ -38,67 +38,29 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of failures.</p>
      */
     inline int GetTotalFailureCount() const{ return m_totalFailureCount; }
-
-    /**
-     * <p>The total number of failures.</p>
-     */
     inline bool TotalFailureCountHasBeenSet() const { return m_totalFailureCountHasBeenSet; }
-
-    /**
-     * <p>The total number of failures.</p>
-     */
     inline void SetTotalFailureCount(int value) { m_totalFailureCountHasBeenSet = true; m_totalFailureCount = value; }
-
-    /**
-     * <p>The total number of failures.</p>
-     */
     inline FailureSummary& WithTotalFailureCount(int value) { SetTotalFailureCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The worlds that failed.</p>
      */
     inline const Aws::Vector<WorldFailure>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p>The worlds that failed.</p>
-     */
     inline bool FailuresHasBeenSet() const { return m_failuresHasBeenSet; }
-
-    /**
-     * <p>The worlds that failed.</p>
-     */
     inline void SetFailures(const Aws::Vector<WorldFailure>& value) { m_failuresHasBeenSet = true; m_failures = value; }
-
-    /**
-     * <p>The worlds that failed.</p>
-     */
     inline void SetFailures(Aws::Vector<WorldFailure>&& value) { m_failuresHasBeenSet = true; m_failures = std::move(value); }
-
-    /**
-     * <p>The worlds that failed.</p>
-     */
     inline FailureSummary& WithFailures(const Aws::Vector<WorldFailure>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p>The worlds that failed.</p>
-     */
     inline FailureSummary& WithFailures(Aws::Vector<WorldFailure>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p>The worlds that failed.</p>
-     */
     inline FailureSummary& AddFailures(const WorldFailure& value) { m_failuresHasBeenSet = true; m_failures.push_back(value); return *this; }
-
-    /**
-     * <p>The worlds that failed.</p>
-     */
     inline FailureSummary& AddFailures(WorldFailure&& value) { m_failuresHasBeenSet = true; m_failures.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_totalFailureCount;

@@ -46,141 +46,55 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The rescan duration configured for image pull date.</p>
      */
     inline const EcrPullDateRescanDuration& GetPullDateRescanDuration() const{ return m_pullDateRescanDuration; }
-
-    /**
-     * <p>The rescan duration configured for image pull date.</p>
-     */
     inline bool PullDateRescanDurationHasBeenSet() const { return m_pullDateRescanDurationHasBeenSet; }
-
-    /**
-     * <p>The rescan duration configured for image pull date.</p>
-     */
     inline void SetPullDateRescanDuration(const EcrPullDateRescanDuration& value) { m_pullDateRescanDurationHasBeenSet = true; m_pullDateRescanDuration = value; }
-
-    /**
-     * <p>The rescan duration configured for image pull date.</p>
-     */
     inline void SetPullDateRescanDuration(EcrPullDateRescanDuration&& value) { m_pullDateRescanDurationHasBeenSet = true; m_pullDateRescanDuration = std::move(value); }
-
-    /**
-     * <p>The rescan duration configured for image pull date.</p>
-     */
     inline EcrRescanDurationState& WithPullDateRescanDuration(const EcrPullDateRescanDuration& value) { SetPullDateRescanDuration(value); return *this;}
-
-    /**
-     * <p>The rescan duration configured for image pull date.</p>
-     */
     inline EcrRescanDurationState& WithPullDateRescanDuration(EcrPullDateRescanDuration&& value) { SetPullDateRescanDuration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt;
      * </code></pre>
      */
     inline const EcrRescanDuration& GetRescanDuration() const{ return m_rescanDuration; }
-
-    /**
-     * <p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline bool RescanDurationHasBeenSet() const { return m_rescanDurationHasBeenSet; }
-
-    /**
-     * <p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline void SetRescanDuration(const EcrRescanDuration& value) { m_rescanDurationHasBeenSet = true; m_rescanDuration = value; }
-
-    /**
-     * <p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline void SetRescanDuration(EcrRescanDuration&& value) { m_rescanDurationHasBeenSet = true; m_rescanDuration = std::move(value); }
-
-    /**
-     * <p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline EcrRescanDurationState& WithRescanDuration(const EcrRescanDuration& value) { SetRescanDuration(value); return *this;}
-
-    /**
-     * <p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt;
-     * </code></pre>
-     */
     inline EcrRescanDurationState& WithRescanDuration(EcrRescanDuration&& value) { SetRescanDuration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of changes to the ECR automated re-scan duration.</p>
      */
     inline const EcrRescanDurationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of changes to the ECR automated re-scan duration.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of changes to the ECR automated re-scan duration.</p>
-     */
     inline void SetStatus(const EcrRescanDurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of changes to the ECR automated re-scan duration.</p>
-     */
     inline void SetStatus(EcrRescanDurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of changes to the ECR automated re-scan duration.</p>
-     */
     inline EcrRescanDurationState& WithStatus(const EcrRescanDurationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of changes to the ECR automated re-scan duration.</p>
-     */
     inline EcrRescanDurationState& WithStatus(EcrRescanDurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A timestamp representing when the last time the ECR scan duration setting was
      * changed.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>A timestamp representing when the last time the ECR scan duration setting was
-     * changed.</p>
-     */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>A timestamp representing when the last time the ECR scan duration setting was
-     * changed.</p>
-     */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>A timestamp representing when the last time the ECR scan duration setting was
-     * changed.</p>
-     */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>A timestamp representing when the last time the ECR scan duration setting was
-     * changed.</p>
-     */
     inline EcrRescanDurationState& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>A timestamp representing when the last time the ECR scan duration setting was
-     * changed.</p>
-     */
     inline EcrRescanDurationState& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EcrPullDateRescanDuration m_pullDateRescanDuration;

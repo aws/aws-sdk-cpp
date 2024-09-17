@@ -24,9 +24,8 @@ DateFilter::DateFilter() :
 {
 }
 
-DateFilter::DateFilter(JsonView jsonValue) : 
-    m_endInclusiveHasBeenSet(false),
-    m_startInclusiveHasBeenSet(false)
+DateFilter::DateFilter(JsonView jsonValue)
+  : DateFilter()
 {
   *this = jsonValue;
 }

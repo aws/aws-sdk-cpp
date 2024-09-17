@@ -35,6 +35,15 @@
 #include <aws/kinesis/model/PutRecordsResult.h>
 #include <aws/kinesis/model/RegisterStreamConsumerResult.h>
 #include <aws/kinesis/model/UpdateShardCountResult.h>
+#include <aws/kinesis/model/DescribeLimitsRequest.h>
+#include <aws/kinesis/model/DeregisterStreamConsumerRequest.h>
+#include <aws/kinesis/model/ListShardsRequest.h>
+#include <aws/kinesis/model/ListStreamsRequest.h>
+#include <aws/kinesis/model/DescribeStreamSummaryRequest.h>
+#include <aws/kinesis/model/DeleteStreamRequest.h>
+#include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
+#include <aws/kinesis/model/ListTagsForStreamRequest.h>
+#include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KinesisClient header */
 
@@ -69,7 +78,7 @@ namespace Aws
 
   namespace Kinesis
   {
-    using KinesisClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisEndpointProviderBase = Aws::Kinesis::Endpoint::KinesisEndpointProviderBase;
     using KinesisEndpointProvider = Aws::Kinesis::Endpoint::KinesisEndpointProvider;
 

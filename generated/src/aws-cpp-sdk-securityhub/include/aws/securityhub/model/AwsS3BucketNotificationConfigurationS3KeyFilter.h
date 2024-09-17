@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The filter rules for the filter.</p>
      */
     inline const Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>& GetFilterRules() const{ return m_filterRules; }
-
-    /**
-     * <p>The filter rules for the filter.</p>
-     */
     inline bool FilterRulesHasBeenSet() const { return m_filterRulesHasBeenSet; }
-
-    /**
-     * <p>The filter rules for the filter.</p>
-     */
     inline void SetFilterRules(const Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>& value) { m_filterRulesHasBeenSet = true; m_filterRules = value; }
-
-    /**
-     * <p>The filter rules for the filter.</p>
-     */
     inline void SetFilterRules(Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>&& value) { m_filterRulesHasBeenSet = true; m_filterRules = std::move(value); }
-
-    /**
-     * <p>The filter rules for the filter.</p>
-     */
     inline AwsS3BucketNotificationConfigurationS3KeyFilter& WithFilterRules(const Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>& value) { SetFilterRules(value); return *this;}
-
-    /**
-     * <p>The filter rules for the filter.</p>
-     */
     inline AwsS3BucketNotificationConfigurationS3KeyFilter& WithFilterRules(Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>&& value) { SetFilterRules(std::move(value)); return *this;}
-
-    /**
-     * <p>The filter rules for the filter.</p>
-     */
     inline AwsS3BucketNotificationConfigurationS3KeyFilter& AddFilterRules(const AwsS3BucketNotificationConfigurationS3KeyFilterRule& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(value); return *this; }
-
-    /**
-     * <p>The filter rules for the filter.</p>
-     */
     inline AwsS3BucketNotificationConfigurationS3KeyFilter& AddFilterRules(AwsS3BucketNotificationConfigurationS3KeyFilterRule&& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule> m_filterRules;

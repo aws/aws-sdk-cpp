@@ -24,21 +24,15 @@ EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem() :
     m_enabledRegionsHasBeenSet(false),
     m_environmentBlueprintIdHasBeenSet(false),
     m_manageAccessRoleArnHasBeenSet(false),
+    m_provisioningConfigurationsHasBeenSet(false),
     m_provisioningRoleArnHasBeenSet(false),
     m_regionalParametersHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
 
-EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_enabledRegionsHasBeenSet(false),
-    m_environmentBlueprintIdHasBeenSet(false),
-    m_manageAccessRoleArnHasBeenSet(false),
-    m_provisioningRoleArnHasBeenSet(false),
-    m_regionalParametersHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem(JsonView jsonValue)
+  : EnvironmentBlueprintConfigurationItem()
 {
   *this = jsonValue;
 }
@@ -81,6 +75,16 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
     m_manageAccessRoleArn = jsonValue.GetString("manageAccessRoleArn");
 
     m_manageAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("provisioningConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> provisioningConfigurationsJsonList = jsonValue.GetArray("provisioningConfigurations");
+    for(unsigned provisioningConfigurationsIndex = 0; provisioningConfigurationsIndex < provisioningConfigurationsJsonList.GetLength(); ++provisioningConfigurationsIndex)
+    {
+      m_provisioningConfigurations.push_back(provisioningConfigurationsJsonList[provisioningConfigurationsIndex].AsObject());
+    }
+    m_provisioningConfigurationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("provisioningRoleArn"))
@@ -151,6 +155,17 @@ JsonValue EnvironmentBlueprintConfigurationItem::Jsonize() const
   if(m_manageAccessRoleArnHasBeenSet)
   {
    payload.WithString("manageAccessRoleArn", m_manageAccessRoleArn);
+
+  }
+
+  if(m_provisioningConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> provisioningConfigurationsJsonList(m_provisioningConfigurations.size());
+   for(unsigned provisioningConfigurationsIndex = 0; provisioningConfigurationsIndex < provisioningConfigurationsJsonList.GetLength(); ++provisioningConfigurationsIndex)
+   {
+     provisioningConfigurationsJsonList[provisioningConfigurationsIndex].AsObject(m_provisioningConfigurations[provisioningConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("provisioningConfigurations", std::move(provisioningConfigurationsJsonList));
 
   }
 

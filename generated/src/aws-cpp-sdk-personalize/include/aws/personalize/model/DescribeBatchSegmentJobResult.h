@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeBatchSegmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information on the specified batch segment job.</p>
      */
     inline const BatchSegmentJob& GetBatchSegmentJob() const{ return m_batchSegmentJob; }
-
-    /**
-     * <p>Information on the specified batch segment job.</p>
-     */
     inline void SetBatchSegmentJob(const BatchSegmentJob& value) { m_batchSegmentJob = value; }
-
-    /**
-     * <p>Information on the specified batch segment job.</p>
-     */
     inline void SetBatchSegmentJob(BatchSegmentJob&& value) { m_batchSegmentJob = std::move(value); }
-
-    /**
-     * <p>Information on the specified batch segment job.</p>
-     */
     inline DescribeBatchSegmentJobResult& WithBatchSegmentJob(const BatchSegmentJob& value) { SetBatchSegmentJob(value); return *this;}
-
-    /**
-     * <p>Information on the specified batch segment job.</p>
-     */
     inline DescribeBatchSegmentJobResult& WithBatchSegmentJob(BatchSegmentJob&& value) { SetBatchSegmentJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeBatchSegmentJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeBatchSegmentJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeBatchSegmentJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BatchSegmentJob m_batchSegmentJob;

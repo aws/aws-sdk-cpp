@@ -33,53 +33,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API CreateResourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The newly created resource server.</p>
      */
     inline const ResourceServerType& GetResourceServer() const{ return m_resourceServer; }
-
-    /**
-     * <p>The newly created resource server.</p>
-     */
     inline void SetResourceServer(const ResourceServerType& value) { m_resourceServer = value; }
-
-    /**
-     * <p>The newly created resource server.</p>
-     */
     inline void SetResourceServer(ResourceServerType&& value) { m_resourceServer = std::move(value); }
-
-    /**
-     * <p>The newly created resource server.</p>
-     */
     inline CreateResourceServerResult& WithResourceServer(const ResourceServerType& value) { SetResourceServer(value); return *this;}
-
-    /**
-     * <p>The newly created resource server.</p>
-     */
     inline CreateResourceServerResult& WithResourceServer(ResourceServerType&& value) { SetResourceServer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateResourceServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateResourceServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateResourceServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResourceServerType m_resourceServer;

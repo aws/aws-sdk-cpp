@@ -22,8 +22,8 @@ StopWorkflowResult::StopWorkflowResult() :
 {
 }
 
-StopWorkflowResult::StopWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(MigrationWorkflowStatusEnum::NOT_SET)
+StopWorkflowResult::StopWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopWorkflowResult()
 {
   *this = result;
 }

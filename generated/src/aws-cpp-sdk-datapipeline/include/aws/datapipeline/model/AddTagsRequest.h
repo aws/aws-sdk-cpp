@@ -39,87 +39,33 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the pipeline.</p>
      */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
-
-    /**
-     * <p>The ID of the pipeline.</p>
-     */
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the pipeline.</p>
-     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-
-    /**
-     * <p>The ID of the pipeline.</p>
-     */
     inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-
-    /**
-     * <p>The ID of the pipeline.</p>
-     */
     inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-
-    /**
-     * <p>The ID of the pipeline.</p>
-     */
     inline AddTagsRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-
-    /**
-     * <p>The ID of the pipeline.</p>
-     */
     inline AddTagsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the pipeline.</p>
-     */
     inline AddTagsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to add, as key/value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags to add, as key/value pairs.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags to add, as key/value pairs.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags to add, as key/value pairs.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags to add, as key/value pairs.</p>
-     */
     inline AddTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags to add, as key/value pairs.</p>
-     */
     inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to add, as key/value pairs.</p>
-     */
     inline AddTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to add, as key/value pairs.</p>
-     */
     inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_pipelineId;

@@ -24,9 +24,8 @@ AwsIamConfig::AwsIamConfig() :
 {
 }
 
-AwsIamConfig::AwsIamConfig(JsonView jsonValue) : 
-    m_signingRegionHasBeenSet(false),
-    m_signingServiceNameHasBeenSet(false)
+AwsIamConfig::AwsIamConfig(JsonView jsonValue)
+  : AwsIamConfig()
 {
   *this = jsonValue;
 }

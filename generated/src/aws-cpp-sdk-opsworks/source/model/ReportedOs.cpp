@@ -25,10 +25,8 @@ ReportedOs::ReportedOs() :
 {
 }
 
-ReportedOs::ReportedOs(JsonView jsonValue) : 
-    m_familyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+ReportedOs::ReportedOs(JsonView jsonValue)
+  : ReportedOs()
 {
   *this = jsonValue;
 }

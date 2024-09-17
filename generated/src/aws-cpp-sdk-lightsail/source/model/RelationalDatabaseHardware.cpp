@@ -28,13 +28,8 @@ RelationalDatabaseHardware::RelationalDatabaseHardware() :
 {
 }
 
-RelationalDatabaseHardware::RelationalDatabaseHardware(JsonView jsonValue) : 
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_diskSizeInGb(0),
-    m_diskSizeInGbHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false)
+RelationalDatabaseHardware::RelationalDatabaseHardware(JsonView jsonValue)
+  : RelationalDatabaseHardware()
 {
   *this = jsonValue;
 }

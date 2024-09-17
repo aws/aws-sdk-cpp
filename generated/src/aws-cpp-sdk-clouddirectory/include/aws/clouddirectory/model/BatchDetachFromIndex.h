@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A reference to the index object.</p>
      */
     inline const ObjectReference& GetIndexReference() const{ return m_indexReference; }
-
-    /**
-     * <p>A reference to the index object.</p>
-     */
     inline bool IndexReferenceHasBeenSet() const { return m_indexReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to the index object.</p>
-     */
     inline void SetIndexReference(const ObjectReference& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
-
-    /**
-     * <p>A reference to the index object.</p>
-     */
     inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::move(value); }
-
-    /**
-     * <p>A reference to the index object.</p>
-     */
     inline BatchDetachFromIndex& WithIndexReference(const ObjectReference& value) { SetIndexReference(value); return *this;}
-
-    /**
-     * <p>A reference to the index object.</p>
-     */
     inline BatchDetachFromIndex& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to the object being detached from the index.</p>
      */
     inline const ObjectReference& GetTargetReference() const{ return m_targetReference; }
-
-    /**
-     * <p>A reference to the object being detached from the index.</p>
-     */
     inline bool TargetReferenceHasBeenSet() const { return m_targetReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to the object being detached from the index.</p>
-     */
     inline void SetTargetReference(const ObjectReference& value) { m_targetReferenceHasBeenSet = true; m_targetReference = value; }
-
-    /**
-     * <p>A reference to the object being detached from the index.</p>
-     */
     inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::move(value); }
-
-    /**
-     * <p>A reference to the object being detached from the index.</p>
-     */
     inline BatchDetachFromIndex& WithTargetReference(const ObjectReference& value) { SetTargetReference(value); return *this;}
-
-    /**
-     * <p>A reference to the object being detached from the index.</p>
-     */
     inline BatchDetachFromIndex& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObjectReference m_indexReference;

@@ -314,13 +314,13 @@ namespace ConnectCampaigns
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/ListCampaigns">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request) const;
+        virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCampaigns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCampaignsRequestT = Model::ListCampaignsRequest>
-        Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const ListCampaignsRequestT& request) const
+        Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const ListCampaignsRequestT& request = {}) const
         {
             return SubmitCallable(&ConnectCampaignsClient::ListCampaigns, request);
         }
@@ -329,7 +329,7 @@ namespace ConnectCampaigns
          * An Async wrapper for ListCampaigns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCampaignsRequestT = Model::ListCampaignsRequest>
-        void ListCampaignsAsync(const ListCampaignsRequestT& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCampaignsAsync(const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCampaignsRequestT& request = {}) const
         {
             return SubmitAsync(&ConnectCampaignsClient::ListCampaigns, request, handler, context);
         }
@@ -651,7 +651,6 @@ namespace ConnectCampaigns
       void init(const ConnectCampaignsClientConfiguration& clientConfiguration);
 
       ConnectCampaignsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ConnectCampaignsEndpointProviderBase> m_endpointProvider;
   };
 

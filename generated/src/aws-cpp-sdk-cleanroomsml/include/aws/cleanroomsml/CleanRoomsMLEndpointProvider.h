@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CleanRoomsMLClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CleanRoomsMLClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CleanRoomsMLClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CleanRoomsMLBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -25,10 +25,8 @@ FindingAction::FindingAction() :
 {
 }
 
-FindingAction::FindingAction(JsonView jsonValue) : 
-    m_actionType(FindingActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_apiCallDetailsHasBeenSet(false)
+FindingAction::FindingAction(JsonView jsonValue)
+  : FindingAction()
 {
   *this = jsonValue;
 }

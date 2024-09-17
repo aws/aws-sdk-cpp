@@ -40,6 +40,7 @@ namespace Model
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side
      * encryption options in Amazon S3, see <a
@@ -48,53 +49,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const S3ObjectEncryptionType& GetObjectEncryptionType() const{ return m_objectEncryptionType; }
-
-    /**
-     * <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side
-     * encryption options in Amazon S3, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
-     * Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-     * Guide</i>.</p>
-     */
     inline bool ObjectEncryptionTypeHasBeenSet() const { return m_objectEncryptionTypeHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side
-     * encryption options in Amazon S3, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
-     * Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-     * Guide</i>.</p>
-     */
     inline void SetObjectEncryptionType(const S3ObjectEncryptionType& value) { m_objectEncryptionTypeHasBeenSet = true; m_objectEncryptionType = value; }
-
-    /**
-     * <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side
-     * encryption options in Amazon S3, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
-     * Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-     * Guide</i>.</p>
-     */
     inline void SetObjectEncryptionType(S3ObjectEncryptionType&& value) { m_objectEncryptionTypeHasBeenSet = true; m_objectEncryptionType = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side
-     * encryption options in Amazon S3, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
-     * Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-     * Guide</i>.</p>
-     */
     inline S3EncryptionConfiguration& WithObjectEncryptionType(const S3ObjectEncryptionType& value) { SetObjectEncryptionType(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side
-     * encryption options in Amazon S3, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
-     * Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-     * Guide</i>.</p>
-     */
     inline S3EncryptionConfiguration& WithObjectEncryptionType(S3ObjectEncryptionType&& value) { SetObjectEncryptionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
      * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
@@ -104,77 +66,14 @@ namespace Model
      * <code>ObjectEncryptionType</code>.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
-     * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-     * <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code>
-     * as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
-     * required if you specify <code>SSE_S3</code> as the
-     * <code>ObjectEncryptionType</code>.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
-     * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-     * <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code>
-     * as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
-     * required if you specify <code>SSE_S3</code> as the
-     * <code>ObjectEncryptionType</code>.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
-     * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-     * <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code>
-     * as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
-     * required if you specify <code>SSE_S3</code> as the
-     * <code>ObjectEncryptionType</code>.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
-     * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-     * <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code>
-     * as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
-     * required if you specify <code>SSE_S3</code> as the
-     * <code>ObjectEncryptionType</code>.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
-     * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-     * <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code>
-     * as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
-     * required if you specify <code>SSE_S3</code> as the
-     * <code>ObjectEncryptionType</code>.</p>
-     */
     inline S3EncryptionConfiguration& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
-     * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-     * <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code>
-     * as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
-     * required if you specify <code>SSE_S3</code> as the
-     * <code>ObjectEncryptionType</code>.</p>
-     */
     inline S3EncryptionConfiguration& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key
-     * Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
-     * <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code>
-     * as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
-     * required if you specify <code>SSE_S3</code> as the
-     * <code>ObjectEncryptionType</code>.</p>
-     */
     inline S3EncryptionConfiguration& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     S3ObjectEncryptionType m_objectEncryptionType;

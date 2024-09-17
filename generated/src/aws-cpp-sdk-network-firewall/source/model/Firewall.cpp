@@ -37,22 +37,8 @@ Firewall::Firewall() :
 {
 }
 
-Firewall::Firewall(JsonView jsonValue) : 
-    m_firewallNameHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetMappingsHasBeenSet(false),
-    m_deleteProtection(false),
-    m_deleteProtectionHasBeenSet(false),
-    m_subnetChangeProtection(false),
-    m_subnetChangeProtectionHasBeenSet(false),
-    m_firewallPolicyChangeProtection(false),
-    m_firewallPolicyChangeProtectionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_firewallIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+Firewall::Firewall(JsonView jsonValue)
+  : Firewall()
 {
   *this = jsonValue;
 }

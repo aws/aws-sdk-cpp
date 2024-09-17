@@ -43,6 +43,7 @@
 #include <aws/voice-id/model/UntagResourceResult.h>
 #include <aws/voice-id/model/UpdateDomainResult.h>
 #include <aws/voice-id/model/UpdateWatchlistResult.h>
+#include <aws/voice-id/model/ListDomainsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in VoiceIDClient header */
 
@@ -77,7 +78,7 @@ namespace Aws
 
   namespace VoiceID
   {
-    using VoiceIDClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using VoiceIDClientConfiguration = Aws::Client::GenericClientConfiguration;
     using VoiceIDEndpointProviderBase = Aws::VoiceID::Endpoint::VoiceIDEndpointProviderBase;
     using VoiceIDEndpointProvider = Aws::VoiceID::Endpoint::VoiceIDEndpointProvider;
 

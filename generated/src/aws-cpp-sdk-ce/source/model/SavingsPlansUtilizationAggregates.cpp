@@ -25,10 +25,8 @@ SavingsPlansUtilizationAggregates::SavingsPlansUtilizationAggregates() :
 {
 }
 
-SavingsPlansUtilizationAggregates::SavingsPlansUtilizationAggregates(JsonView jsonValue) : 
-    m_utilizationHasBeenSet(false),
-    m_savingsHasBeenSet(false),
-    m_amortizedCommitmentHasBeenSet(false)
+SavingsPlansUtilizationAggregates::SavingsPlansUtilizationAggregates(JsonView jsonValue)
+  : SavingsPlansUtilizationAggregates()
 {
   *this = jsonValue;
 }

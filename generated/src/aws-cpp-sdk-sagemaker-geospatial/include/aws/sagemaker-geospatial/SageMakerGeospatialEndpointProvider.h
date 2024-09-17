@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SageMakerGeospatialClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SageMakerGeospatialClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SageMakerGeospatialClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SageMakerGeospatialBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

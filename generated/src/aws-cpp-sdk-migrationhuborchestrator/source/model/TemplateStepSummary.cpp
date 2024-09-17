@@ -34,19 +34,8 @@ TemplateStepSummary::TemplateStepSummary() :
 {
 }
 
-TemplateStepSummary::TemplateStepSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_stepGroupIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_stepActionType(StepActionType::NOT_SET),
-    m_stepActionTypeHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false)
+TemplateStepSummary::TemplateStepSummary(JsonView jsonValue)
+  : TemplateStepSummary()
 {
   *this = jsonValue;
 }

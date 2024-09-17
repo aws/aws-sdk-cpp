@@ -40,6 +40,7 @@ namespace Model
     AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
      * container when sending requests to the data plane. The service assigns this
@@ -47,95 +48,28 @@ namespace Model
      * not change.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
-
-    /**
-     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
-     * container when sending requests to the data plane. The service assigns this
-     * value when the container is created. Once the value has been assigned, it does
-     * not change.</p>
-     */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-
-    /**
-     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
-     * container when sending requests to the data plane. The service assigns this
-     * value when the container is created. Once the value has been assigned, it does
-     * not change.</p>
-     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-
-    /**
-     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
-     * container when sending requests to the data plane. The service assigns this
-     * value when the container is created. Once the value has been assigned, it does
-     * not change.</p>
-     */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-
-    /**
-     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
-     * container when sending requests to the data plane. The service assigns this
-     * value when the container is created. Once the value has been assigned, it does
-     * not change.</p>
-     */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-
-    /**
-     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
-     * container when sending requests to the data plane. The service assigns this
-     * value when the container is created. Once the value has been assigned, it does
-     * not change.</p>
-     */
     inline Container& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-
-    /**
-     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
-     * container when sending requests to the data plane. The service assigns this
-     * value when the container is created. Once the value has been assigned, it does
-     * not change.</p>
-     */
     inline Container& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
-     * container when sending requests to the data plane. The service assigns this
-     * value when the container is created. Once the value has been assigned, it does
-     * not change.</p>
-     */
     inline Container& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Unix timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>Unix timestamp.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>Unix timestamp.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>Unix timestamp.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>Unix timestamp.</p>
-     */
     inline Container& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>Unix timestamp.</p>
-     */
     inline Container& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
      * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
@@ -143,105 +77,30 @@ namespace Model
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
-     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
-     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
-     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-     */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
-     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
-     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
-     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
-     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
-     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
-     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-     */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
-     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
-     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
-     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-     */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
-     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
-     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
-     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-     */
     inline Container& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
-     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
-     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
-     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-     */
     inline Container& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
-     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
-     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
-     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
-     */
     inline Container& WithARN(const char* value) { SetARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the container.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the container.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the container.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the container.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the container.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the container.</p>
-     */
     inline Container& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the container.</p>
-     */
     inline Container& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the container.</p>
-     */
     inline Container& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of container creation or deletion. The status is one of the
      * following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>.
@@ -250,53 +109,14 @@ namespace Model
      * <code>ACTIVE</code>.</p>
      */
     inline const ContainerStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of container creation or deletion. The status is one of the
-     * following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>.
-     * While the service is creating the container, the status is
-     * <code>CREATING</code>. When the endpoint is available, the status changes to
-     * <code>ACTIVE</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of container creation or deletion. The status is one of the
-     * following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>.
-     * While the service is creating the container, the status is
-     * <code>CREATING</code>. When the endpoint is available, the status changes to
-     * <code>ACTIVE</code>.</p>
-     */
     inline void SetStatus(const ContainerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of container creation or deletion. The status is one of the
-     * following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>.
-     * While the service is creating the container, the status is
-     * <code>CREATING</code>. When the endpoint is available, the status changes to
-     * <code>ACTIVE</code>.</p>
-     */
     inline void SetStatus(ContainerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of container creation or deletion. The status is one of the
-     * following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>.
-     * While the service is creating the container, the status is
-     * <code>CREATING</code>. When the endpoint is available, the status changes to
-     * <code>ACTIVE</code>.</p>
-     */
     inline Container& WithStatus(const ContainerStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of container creation or deletion. The status is one of the
-     * following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>.
-     * While the service is creating the container, the status is
-     * <code>CREATING</code>. When the endpoint is available, the status changes to
-     * <code>ACTIVE</code>.</p>
-     */
     inline Container& WithStatus(ContainerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of access logging on the container. This value is
      * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
@@ -306,37 +126,10 @@ namespace Model
      * CloudWatch Logs.</p>
      */
     inline bool GetAccessLoggingEnabled() const{ return m_accessLoggingEnabled; }
-
-    /**
-     * <p>The state of access logging on the container. This value is
-     * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
-     * send access logs to Amazon CloudWatch Logs. When you enable access logging on
-     * the container, MediaStore changes this value to <code>true</code>, indicating
-     * that the service delivers access logs for objects stored in that container to
-     * CloudWatch Logs.</p>
-     */
     inline bool AccessLoggingEnabledHasBeenSet() const { return m_accessLoggingEnabledHasBeenSet; }
-
-    /**
-     * <p>The state of access logging on the container. This value is
-     * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
-     * send access logs to Amazon CloudWatch Logs. When you enable access logging on
-     * the container, MediaStore changes this value to <code>true</code>, indicating
-     * that the service delivers access logs for objects stored in that container to
-     * CloudWatch Logs.</p>
-     */
     inline void SetAccessLoggingEnabled(bool value) { m_accessLoggingEnabledHasBeenSet = true; m_accessLoggingEnabled = value; }
-
-    /**
-     * <p>The state of access logging on the container. This value is
-     * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
-     * send access logs to Amazon CloudWatch Logs. When you enable access logging on
-     * the container, MediaStore changes this value to <code>true</code>, indicating
-     * that the service delivers access logs for objects stored in that container to
-     * CloudWatch Logs.</p>
-     */
     inline Container& WithAccessLoggingEnabled(bool value) { SetAccessLoggingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpoint;

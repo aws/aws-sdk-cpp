@@ -22,8 +22,8 @@ DescribeFolderResult::DescribeFolderResult() :
 {
 }
 
-DescribeFolderResult::DescribeFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeFolderResult::DescribeFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeFolderResult()
 {
   *this = result;
 }

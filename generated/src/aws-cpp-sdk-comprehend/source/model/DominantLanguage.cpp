@@ -25,10 +25,8 @@ DominantLanguage::DominantLanguage() :
 {
 }
 
-DominantLanguage::DominantLanguage(JsonView jsonValue) : 
-    m_languageCodeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+DominantLanguage::DominantLanguage(JsonView jsonValue)
+  : DominantLanguage()
 {
   *this = jsonValue;
 }

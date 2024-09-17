@@ -23,8 +23,8 @@ HistogramAggregatedFieldWells::HistogramAggregatedFieldWells() :
 {
 }
 
-HistogramAggregatedFieldWells::HistogramAggregatedFieldWells(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+HistogramAggregatedFieldWells::HistogramAggregatedFieldWells(JsonView jsonValue)
+  : HistogramAggregatedFieldWells()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ OnDeviceServiceConfiguration::OnDeviceServiceConfiguration() :
 {
 }
 
-OnDeviceServiceConfiguration::OnDeviceServiceConfiguration(JsonView jsonValue) : 
-    m_nFSOnDeviceServiceHasBeenSet(false),
-    m_tGWOnDeviceServiceHasBeenSet(false),
-    m_eKSOnDeviceServiceHasBeenSet(false),
-    m_s3OnDeviceServiceHasBeenSet(false)
+OnDeviceServiceConfiguration::OnDeviceServiceConfiguration(JsonView jsonValue)
+  : OnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }

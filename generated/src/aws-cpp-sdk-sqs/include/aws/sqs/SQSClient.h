@@ -158,9 +158,9 @@ namespace SQS
          * queues (DLQs)</a> only. In this context, the source queue is the dead-letter
          * queue (DLQ), while the destination queue can be the original source queue (from
          * which the messages were driven to the dead-letter-queue), or a custom
-         * destination queue. </p> </li> <li> <p>Currently, only standard queues are
-         * supported.</p> </li> <li> <p>Only one active message movement task is supported
-         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * destination queue. </p> </li> <li> <p>Only one active message movement task is
+         * supported per queue at any given time.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CancelMessageMoveTask">AWS
          * API Reference</a></p>
          */
@@ -556,9 +556,9 @@ namespace SQS
          * queues (DLQs)</a> only. In this context, the source queue is the dead-letter
          * queue (DLQ), while the destination queue can be the original source queue (from
          * which the messages were driven to the dead-letter-queue), or a custom
-         * destination queue. </p> </li> <li> <p>Currently, only standard queues are
-         * supported.</p> </li> <li> <p>Only one active message movement task is supported
-         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * destination queue. </p> </li> <li> <p>Only one active message movement task is
+         * supported per queue at any given time.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListMessageMoveTasks">AWS
          * API Reference</a></p>
          */
@@ -635,13 +635,13 @@ namespace SQS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request) const;
+        virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListQueues that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListQueuesRequestT = Model::ListQueuesRequest>
-        Model::ListQueuesOutcomeCallable ListQueuesCallable(const ListQueuesRequestT& request) const
+        Model::ListQueuesOutcomeCallable ListQueuesCallable(const ListQueuesRequestT& request = {}) const
         {
             return SubmitCallable(&SQSClient::ListQueues, request);
         }
@@ -650,7 +650,7 @@ namespace SQS
          * An Async wrapper for ListQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListQueuesRequestT = Model::ListQueuesRequest>
-        void ListQueuesAsync(const ListQueuesRequestT& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListQueuesAsync(const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListQueuesRequestT& request = {}) const
         {
             return SubmitAsync(&SQSClient::ListQueues, request, handler, context);
         }
@@ -785,12 +785,16 @@ namespace SQS
         /**
          * <p>Delivers a message to the specified queue.</p>  <p>A message can
          * include only XML, JSON, and unformatted text. The following Unicode characters
-         * are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
+         * are allowed. For more information, see the <a
+         * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
+         * characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
          * <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to
-         * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any
-         * characters not included in this list will be rejected. For more information, see
-         * the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> <p><h3>See Also:</h3>   <a
+         * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
+         * <p>Amazon SQS does not throw an exception or completely reject the message if it
+         * contains invalid characters. Instead, it replaces those invalid characters with
+         * <code>U+FFFD</code> before storing the message in the queue, as long as the
+         * message body contains at least one valid character.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS API
          * Reference</a></p>
          */
@@ -827,15 +831,17 @@ namespace SQS
          * maximum total payload size (the sum of the individual lengths of all of the
          * batched messages) are both 256 KiB (262,144 bytes).</p>  <p>A message
          * can include only XML, JSON, and unformatted text. The following Unicode
-         * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-         * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
-         * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
-         * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
-         * rejected. For more information, see the <a
+         * characters are allowed. For more information, see the <a
          * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p>  <p>If you don't specify the
-         * <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the default
-         * value for the queue.</p><p><h3>See Also:</h3>   <a
+         * characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
+         * <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to
+         * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
+         * <p>Amazon SQS does not throw an exception or completely reject the message if it
+         * contains invalid characters. Instead, it replaces those invalid characters with
+         * <code>U+FFFD</code> before storing the message in the queue, as long as the
+         * message body contains at least one valid character.</p>  <p>If you
+         * don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon SQS
+         * uses the default value for the queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">AWS
          * API Reference</a></p>
          */
@@ -860,17 +866,17 @@ namespace SQS
         }
 
         /**
-         * <p>Sets the value of one or more queue attributes. When you change a queue's
-         * attributes, the change can take up to 60 seconds for most of the attributes to
-         * propagate throughout the Amazon SQS system. Changes made to the
-         * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will
-         * impact existing messages in the queue potentially causing them to be expired and
-         * deleted if the <code>MessageRetentionPeriod</code> is reduced below the age of
-         * existing messages.</p>  <ul> <li> <p>In the future, new attributes might
-         * be added. If you write code that calls this action, we recommend that you
-         * structure your code so that it can handle new attributes gracefully.</p> </li>
-         * <li> <p>Cross-account permissions don't apply to this action. For more
-         * information, see <a
+         * <p>Sets the value of one or more queue attributes, like a policy. When you
+         * change a queue's attributes, the change can take up to 60 seconds for most of
+         * the attributes to propagate throughout the Amazon SQS system. Changes made to
+         * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
+         * will impact existing messages in the queue potentially causing them to be
+         * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
+         * the age of existing messages.</p>  <ul> <li> <p>In the future, new
+         * attributes might be added. If you write code that calls this action, we
+         * recommend that you structure your code so that it can handle new attributes
+         * gracefully.</p> </li> <li> <p>Cross-account permissions don't apply to this
+         * action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
          * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
@@ -911,9 +917,8 @@ namespace SQS
          * <code>StartMessageMoveTask</code> the source queue is the DLQ, while the
          * destination queue can be the original source queue (from which the messages were
          * driven to the dead-letter-queue), or a custom destination queue.</p> </li> <li>
-         * <p>Currently, only standard queues support redrive. FIFO queues don't support
-         * redrive.</p> </li> <li> <p>Only one active message movement task is supported
-         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * <p>Only one active message movement task is supported per queue at any given
+         * time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/StartMessageMoveTask">AWS
          * API Reference</a></p>
          */
@@ -1019,7 +1024,6 @@ namespace SQS
       void init(const SQSClientConfiguration& clientConfiguration);
 
       SQSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
   };
 

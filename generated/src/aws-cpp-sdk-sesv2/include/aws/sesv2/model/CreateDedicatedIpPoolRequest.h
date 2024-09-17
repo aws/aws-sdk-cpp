@@ -38,126 +38,46 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the dedicated IP pool.</p>
      */
     inline const Aws::String& GetPoolName() const{ return m_poolName; }
-
-    /**
-     * <p>The name of the dedicated IP pool.</p>
-     */
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dedicated IP pool.</p>
-     */
     inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
-
-    /**
-     * <p>The name of the dedicated IP pool.</p>
-     */
     inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
-
-    /**
-     * <p>The name of the dedicated IP pool.</p>
-     */
     inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
-
-    /**
-     * <p>The name of the dedicated IP pool.</p>
-     */
     inline CreateDedicatedIpPoolRequest& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
-
-    /**
-     * <p>The name of the dedicated IP pool.</p>
-     */
     inline CreateDedicatedIpPoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dedicated IP pool.</p>
-     */
     inline CreateDedicatedIpPoolRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that defines the tags (keys and values) that you want to associate
      * with the pool.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>An object that defines the tags (keys and values) that you want to associate
-     * with the pool.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>An object that defines the tags (keys and values) that you want to associate
-     * with the pool.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>An object that defines the tags (keys and values) that you want to associate
-     * with the pool.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>An object that defines the tags (keys and values) that you want to associate
-     * with the pool.</p>
-     */
     inline CreateDedicatedIpPoolRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>An object that defines the tags (keys and values) that you want to associate
-     * with the pool.</p>
-     */
     inline CreateDedicatedIpPoolRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that defines the tags (keys and values) that you want to associate
-     * with the pool.</p>
-     */
     inline CreateDedicatedIpPoolRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>An object that defines the tags (keys and values) that you want to associate
-     * with the pool.</p>
-     */
     inline CreateDedicatedIpPoolRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of scaling mode.</p>
      */
     inline const ScalingMode& GetScalingMode() const{ return m_scalingMode; }
-
-    /**
-     * <p>The type of scaling mode.</p>
-     */
     inline bool ScalingModeHasBeenSet() const { return m_scalingModeHasBeenSet; }
-
-    /**
-     * <p>The type of scaling mode.</p>
-     */
     inline void SetScalingMode(const ScalingMode& value) { m_scalingModeHasBeenSet = true; m_scalingMode = value; }
-
-    /**
-     * <p>The type of scaling mode.</p>
-     */
     inline void SetScalingMode(ScalingMode&& value) { m_scalingModeHasBeenSet = true; m_scalingMode = std::move(value); }
-
-    /**
-     * <p>The type of scaling mode.</p>
-     */
     inline CreateDedicatedIpPoolRequest& WithScalingMode(const ScalingMode& value) { SetScalingMode(value); return *this;}
-
-    /**
-     * <p>The type of scaling mode.</p>
-     */
     inline CreateDedicatedIpPoolRequest& WithScalingMode(ScalingMode&& value) { SetScalingMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_poolName;

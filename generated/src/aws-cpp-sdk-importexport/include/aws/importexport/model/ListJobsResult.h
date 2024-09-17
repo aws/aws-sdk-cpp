@@ -39,53 +39,32 @@ namespace Model
     AWS_IMPORTEXPORT_API ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const Aws::Vector<Job>& GetJobs() const{ return m_jobs; }
-
-    
     inline void SetJobs(const Aws::Vector<Job>& value) { m_jobs = value; }
-
-    
     inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = std::move(value); }
-
-    
     inline ListJobsResult& WithJobs(const Aws::Vector<Job>& value) { SetJobs(value); return *this;}
-
-    
     inline ListJobsResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(std::move(value)); return *this;}
-
-    
     inline ListJobsResult& AddJobs(const Job& value) { m_jobs.push_back(value); return *this; }
-
-    
     inline ListJobsResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline bool GetIsTruncated() const{ return m_isTruncated; }
-
-    
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
-
-    
     inline ListJobsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ListJobsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ListJobsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Job> m_jobs;

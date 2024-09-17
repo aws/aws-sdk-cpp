@@ -36,47 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the DHCP options set.</p>
      */
     inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
-
-    /**
-     * <p>The ID of the DHCP options set.</p>
-     */
     inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the DHCP options set.</p>
-     */
     inline void SetDhcpOptionsId(const Aws::String& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
-
-    /**
-     * <p>The ID of the DHCP options set.</p>
-     */
     inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
-
-    /**
-     * <p>The ID of the DHCP options set.</p>
-     */
     inline void SetDhcpOptionsId(const char* value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId.assign(value); }
-
-    /**
-     * <p>The ID of the DHCP options set.</p>
-     */
     inline DeleteDhcpOptionsRequest& WithDhcpOptionsId(const Aws::String& value) { SetDhcpOptionsId(value); return *this;}
-
-    /**
-     * <p>The ID of the DHCP options set.</p>
-     */
     inline DeleteDhcpOptionsRequest& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the DHCP options set.</p>
-     */
     inline DeleteDhcpOptionsRequest& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -84,31 +58,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteDhcpOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dhcpOptionsId;

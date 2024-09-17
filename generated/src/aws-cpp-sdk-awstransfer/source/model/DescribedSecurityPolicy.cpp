@@ -25,18 +25,16 @@ DescribedSecurityPolicy::DescribedSecurityPolicy() :
     m_sshCiphersHasBeenSet(false),
     m_sshKexsHasBeenSet(false),
     m_sshMacsHasBeenSet(false),
-    m_tlsCiphersHasBeenSet(false)
+    m_tlsCiphersHasBeenSet(false),
+    m_sshHostKeyAlgorithmsHasBeenSet(false),
+    m_type(SecurityPolicyResourceType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_protocolsHasBeenSet(false)
 {
 }
 
-DescribedSecurityPolicy::DescribedSecurityPolicy(JsonView jsonValue) : 
-    m_fips(false),
-    m_fipsHasBeenSet(false),
-    m_securityPolicyNameHasBeenSet(false),
-    m_sshCiphersHasBeenSet(false),
-    m_sshKexsHasBeenSet(false),
-    m_sshMacsHasBeenSet(false),
-    m_tlsCiphersHasBeenSet(false)
+DescribedSecurityPolicy::DescribedSecurityPolicy(JsonView jsonValue)
+  : DescribedSecurityPolicy()
 {
   *this = jsonValue;
 }
@@ -95,6 +93,33 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
       m_tlsCiphers.push_back(tlsCiphersJsonList[tlsCiphersIndex].AsString());
     }
     m_tlsCiphersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SshHostKeyAlgorithms"))
+  {
+    Aws::Utils::Array<JsonView> sshHostKeyAlgorithmsJsonList = jsonValue.GetArray("SshHostKeyAlgorithms");
+    for(unsigned sshHostKeyAlgorithmsIndex = 0; sshHostKeyAlgorithmsIndex < sshHostKeyAlgorithmsJsonList.GetLength(); ++sshHostKeyAlgorithmsIndex)
+    {
+      m_sshHostKeyAlgorithms.push_back(sshHostKeyAlgorithmsJsonList[sshHostKeyAlgorithmsIndex].AsString());
+    }
+    m_sshHostKeyAlgorithmsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = SecurityPolicyResourceTypeMapper::GetSecurityPolicyResourceTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Protocols"))
+  {
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+    {
+      m_protocols.push_back(SecurityPolicyProtocolMapper::GetSecurityPolicyProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
+    }
+    m_protocolsHasBeenSet = true;
   }
 
   return *this;
@@ -157,6 +182,33 @@ JsonValue DescribedSecurityPolicy::Jsonize() const
      tlsCiphersJsonList[tlsCiphersIndex].AsString(m_tlsCiphers[tlsCiphersIndex]);
    }
    payload.WithArray("TlsCiphers", std::move(tlsCiphersJsonList));
+
+  }
+
+  if(m_sshHostKeyAlgorithmsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sshHostKeyAlgorithmsJsonList(m_sshHostKeyAlgorithms.size());
+   for(unsigned sshHostKeyAlgorithmsIndex = 0; sshHostKeyAlgorithmsIndex < sshHostKeyAlgorithmsJsonList.GetLength(); ++sshHostKeyAlgorithmsIndex)
+   {
+     sshHostKeyAlgorithmsJsonList[sshHostKeyAlgorithmsIndex].AsString(m_sshHostKeyAlgorithms[sshHostKeyAlgorithmsIndex]);
+   }
+   payload.WithArray("SshHostKeyAlgorithms", std::move(sshHostKeyAlgorithmsJsonList));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", SecurityPolicyResourceTypeMapper::GetNameForSecurityPolicyResourceType(m_type));
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(SecurityPolicyProtocolMapper::GetNameForSecurityPolicyProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
 
   }
 

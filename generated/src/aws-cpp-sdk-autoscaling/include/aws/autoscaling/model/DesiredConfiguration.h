@@ -43,61 +43,23 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Describes the launch template and the version of the launch template that
      * Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more
      * information about launch templates, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html">Launch
      * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
-
-    /**
-     * <p>Describes the launch template and the version of the launch template that
-     * Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more
-     * information about launch templates, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
-     * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-
-    /**
-     * <p>Describes the launch template and the version of the launch template that
-     * Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more
-     * information about launch templates, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
-     * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-
-    /**
-     * <p>Describes the launch template and the version of the launch template that
-     * Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more
-     * information about launch templates, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
-     * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-
-    /**
-     * <p>Describes the launch template and the version of the launch template that
-     * Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more
-     * information about launch templates, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
-     * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline DesiredConfiguration& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
-
-    /**
-     * <p>Describes the launch template and the version of the launch template that
-     * Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more
-     * information about launch templates, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
-     * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline DesiredConfiguration& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Use this structure to launch multiple instance types and On-Demand Instances
      * and Spot Instances within a single Auto Scaling group.</p> <p>A mixed instances
@@ -108,62 +70,12 @@ namespace Model
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
-
-    /**
-     * <p>Use this structure to launch multiple instance types and On-Demand Instances
-     * and Spot Instances within a single Auto Scaling group.</p> <p>A mixed instances
-     * policy contains information that Amazon EC2 Auto Scaling can use to launch
-     * instances and help optimize your costs. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
-     * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
-
-    /**
-     * <p>Use this structure to launch multiple instance types and On-Demand Instances
-     * and Spot Instances within a single Auto Scaling group.</p> <p>A mixed instances
-     * policy contains information that Amazon EC2 Auto Scaling can use to launch
-     * instances and help optimize your costs. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
-     * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
-
-    /**
-     * <p>Use this structure to launch multiple instance types and On-Demand Instances
-     * and Spot Instances within a single Auto Scaling group.</p> <p>A mixed instances
-     * policy contains information that Amazon EC2 Auto Scaling can use to launch
-     * instances and help optimize your costs. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
-     * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
-
-    /**
-     * <p>Use this structure to launch multiple instance types and On-Demand Instances
-     * and Spot Instances within a single Auto Scaling group.</p> <p>A mixed instances
-     * policy contains information that Amazon EC2 Auto Scaling can use to launch
-     * instances and help optimize your costs. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
-     * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline DesiredConfiguration& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
-
-    /**
-     * <p>Use this structure to launch multiple instance types and On-Demand Instances
-     * and Spot Instances within a single Auto Scaling group.</p> <p>A mixed instances
-     * policy contains information that Amazon EC2 Auto Scaling can use to launch
-     * instances and help optimize your costs. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
-     * Scaling groups with multiple instance types and purchase options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     */
     inline DesiredConfiguration& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LaunchTemplateSpecification m_launchTemplate;

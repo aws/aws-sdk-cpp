@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetTemplateResult::GetTemplateResult() : 
+    m_deleted(false),
     m_status(TemplateStatus::NOT_SET)
 {
 }
 
-GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TemplateStatus::NOT_SET)
+GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTemplateResult()
 {
   *this = result;
 }
@@ -31,9 +32,27 @@ GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue
 GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetString("createdTime");
+
+  }
+
+  if(jsonValue.ValueExists("deleted"))
+  {
+    m_deleted = jsonValue.GetBool("deleted");
+
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("lastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
 
   }
 

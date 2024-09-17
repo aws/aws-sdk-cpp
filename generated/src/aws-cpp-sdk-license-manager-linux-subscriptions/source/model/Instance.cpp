@@ -21,28 +21,24 @@ namespace Model
 Instance::Instance() : 
     m_accountIDHasBeenSet(false),
     m_amiIdHasBeenSet(false),
+    m_dualSubscriptionHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
     m_productCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_registeredWithSubscriptionProviderHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_subscriptionNameHasBeenSet(false),
+    m_subscriptionProviderCreateTimeHasBeenSet(false),
+    m_subscriptionProviderUpdateTimeHasBeenSet(false),
     m_usageOperationHasBeenSet(false)
 {
 }
 
-Instance::Instance(JsonView jsonValue) : 
-    m_accountIDHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_instanceIDHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false),
-    m_usageOperationHasBeenSet(false)
+Instance::Instance(JsonView jsonValue)
+  : Instance()
 {
   *this = jsonValue;
 }
@@ -61,6 +57,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_amiId = jsonValue.GetString("AmiId");
 
     m_amiIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DualSubscription"))
+  {
+    m_dualSubscription = jsonValue.GetString("DualSubscription");
+
+    m_dualSubscriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InstanceID"))
@@ -84,6 +87,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OsVersion"))
+  {
+    m_osVersion = jsonValue.GetString("OsVersion");
+
+    m_osVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ProductCode"))
   {
     Aws::Utils::Array<JsonView> productCodeJsonList = jsonValue.GetArray("ProductCode");
@@ -101,6 +111,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_regionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RegisteredWithSubscriptionProvider"))
+  {
+    m_registeredWithSubscriptionProvider = jsonValue.GetString("RegisteredWithSubscriptionProvider");
+
+    m_registeredWithSubscriptionProviderHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
@@ -113,6 +130,20 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_subscriptionName = jsonValue.GetString("SubscriptionName");
 
     m_subscriptionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SubscriptionProviderCreateTime"))
+  {
+    m_subscriptionProviderCreateTime = jsonValue.GetString("SubscriptionProviderCreateTime");
+
+    m_subscriptionProviderCreateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SubscriptionProviderUpdateTime"))
+  {
+    m_subscriptionProviderUpdateTime = jsonValue.GetString("SubscriptionProviderUpdateTime");
+
+    m_subscriptionProviderUpdateTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UsageOperation"))
@@ -141,6 +172,12 @@ JsonValue Instance::Jsonize() const
 
   }
 
+  if(m_dualSubscriptionHasBeenSet)
+  {
+   payload.WithString("DualSubscription", m_dualSubscription);
+
+  }
+
   if(m_instanceIDHasBeenSet)
   {
    payload.WithString("InstanceID", m_instanceID);
@@ -156,6 +193,12 @@ JsonValue Instance::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithString("LastUpdatedTime", m_lastUpdatedTime);
+
+  }
+
+  if(m_osVersionHasBeenSet)
+  {
+   payload.WithString("OsVersion", m_osVersion);
 
   }
 
@@ -176,6 +219,12 @@ JsonValue Instance::Jsonize() const
 
   }
 
+  if(m_registeredWithSubscriptionProviderHasBeenSet)
+  {
+   payload.WithString("RegisteredWithSubscriptionProvider", m_registeredWithSubscriptionProvider);
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", m_status);
@@ -185,6 +234,18 @@ JsonValue Instance::Jsonize() const
   if(m_subscriptionNameHasBeenSet)
   {
    payload.WithString("SubscriptionName", m_subscriptionName);
+
+  }
+
+  if(m_subscriptionProviderCreateTimeHasBeenSet)
+  {
+   payload.WithString("SubscriptionProviderCreateTime", m_subscriptionProviderCreateTime);
+
+  }
+
+  if(m_subscriptionProviderUpdateTimeHasBeenSet)
+  {
+   payload.WithString("SubscriptionProviderUpdateTime", m_subscriptionProviderUpdateTime);
 
   }
 

@@ -22,8 +22,8 @@ EnableIpamOrganizationAdminAccountResponse::EnableIpamOrganizationAdminAccountRe
 {
 }
 
-EnableIpamOrganizationAdminAccountResponse::EnableIpamOrganizationAdminAccountResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_success(false)
+EnableIpamOrganizationAdminAccountResponse::EnableIpamOrganizationAdminAccountResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableIpamOrganizationAdminAccountResponse()
 {
   *this = result;
 }

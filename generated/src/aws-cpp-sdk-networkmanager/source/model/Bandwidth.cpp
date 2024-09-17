@@ -26,11 +26,8 @@ Bandwidth::Bandwidth() :
 {
 }
 
-Bandwidth::Bandwidth(JsonView jsonValue) : 
-    m_uploadSpeed(0),
-    m_uploadSpeedHasBeenSet(false),
-    m_downloadSpeed(0),
-    m_downloadSpeedHasBeenSet(false)
+Bandwidth::Bandwidth(JsonView jsonValue)
+  : Bandwidth()
 {
   *this = jsonValue;
 }

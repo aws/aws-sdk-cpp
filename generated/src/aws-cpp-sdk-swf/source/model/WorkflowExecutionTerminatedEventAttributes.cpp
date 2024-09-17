@@ -28,13 +28,8 @@ WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttr
 {
 }
 
-WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_cause(WorkflowExecutionTerminatedCause::NOT_SET),
-    m_causeHasBeenSet(false)
+WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes(JsonView jsonValue)
+  : WorkflowExecutionTerminatedEventAttributes()
 {
   *this = jsonValue;
 }

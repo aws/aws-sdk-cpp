@@ -49,34 +49,8 @@ XavcSettings::XavcSettings() :
 {
 }
 
-XavcSettings::XavcSettings(JsonView jsonValue) : 
-    m_adaptiveQuantization(XavcAdaptiveQuantization::NOT_SET),
-    m_adaptiveQuantizationHasBeenSet(false),
-    m_entropyEncoding(XavcEntropyEncoding::NOT_SET),
-    m_entropyEncodingHasBeenSet(false),
-    m_framerateControl(XavcFramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(XavcFramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_profile(XavcProfile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_slowPal(XavcSlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_softness(0),
-    m_softnessHasBeenSet(false),
-    m_spatialAdaptiveQuantization(XavcSpatialAdaptiveQuantization::NOT_SET),
-    m_spatialAdaptiveQuantizationHasBeenSet(false),
-    m_temporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization::NOT_SET),
-    m_temporalAdaptiveQuantizationHasBeenSet(false),
-    m_xavc4kIntraCbgProfileSettingsHasBeenSet(false),
-    m_xavc4kIntraVbrProfileSettingsHasBeenSet(false),
-    m_xavc4kProfileSettingsHasBeenSet(false),
-    m_xavcHdIntraCbgProfileSettingsHasBeenSet(false),
-    m_xavcHdProfileSettingsHasBeenSet(false)
+XavcSettings::XavcSettings(JsonView jsonValue)
+  : XavcSettings()
 {
   *this = jsonValue;
 }

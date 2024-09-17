@@ -39,54 +39,20 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the logging destinations for the logs for a firewall. Network
      * Firewall generates logs for stateful rule groups. </p>
      */
     inline const Aws::Vector<LogDestinationConfig>& GetLogDestinationConfigs() const{ return m_logDestinationConfigs; }
-
-    /**
-     * <p>Defines the logging destinations for the logs for a firewall. Network
-     * Firewall generates logs for stateful rule groups. </p>
-     */
     inline bool LogDestinationConfigsHasBeenSet() const { return m_logDestinationConfigsHasBeenSet; }
-
-    /**
-     * <p>Defines the logging destinations for the logs for a firewall. Network
-     * Firewall generates logs for stateful rule groups. </p>
-     */
     inline void SetLogDestinationConfigs(const Aws::Vector<LogDestinationConfig>& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = value; }
-
-    /**
-     * <p>Defines the logging destinations for the logs for a firewall. Network
-     * Firewall generates logs for stateful rule groups. </p>
-     */
     inline void SetLogDestinationConfigs(Aws::Vector<LogDestinationConfig>&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = std::move(value); }
-
-    /**
-     * <p>Defines the logging destinations for the logs for a firewall. Network
-     * Firewall generates logs for stateful rule groups. </p>
-     */
     inline LoggingConfiguration& WithLogDestinationConfigs(const Aws::Vector<LogDestinationConfig>& value) { SetLogDestinationConfigs(value); return *this;}
-
-    /**
-     * <p>Defines the logging destinations for the logs for a firewall. Network
-     * Firewall generates logs for stateful rule groups. </p>
-     */
     inline LoggingConfiguration& WithLogDestinationConfigs(Aws::Vector<LogDestinationConfig>&& value) { SetLogDestinationConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines the logging destinations for the logs for a firewall. Network
-     * Firewall generates logs for stateful rule groups. </p>
-     */
     inline LoggingConfiguration& AddLogDestinationConfigs(const LogDestinationConfig& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>Defines the logging destinations for the logs for a firewall. Network
-     * Firewall generates logs for stateful rule groups. </p>
-     */
     inline LoggingConfiguration& AddLogDestinationConfigs(LogDestinationConfig&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<LogDestinationConfig> m_logDestinationConfigs;

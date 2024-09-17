@@ -35,18 +35,8 @@ CustomOriginConfig::CustomOriginConfig() :
 {
 }
 
-CustomOriginConfig::CustomOriginConfig(const XmlNode& xmlNode) : 
-    m_hTTPPort(0),
-    m_hTTPPortHasBeenSet(false),
-    m_hTTPSPort(0),
-    m_hTTPSPortHasBeenSet(false),
-    m_originProtocolPolicy(OriginProtocolPolicy::NOT_SET),
-    m_originProtocolPolicyHasBeenSet(false),
-    m_originSslProtocolsHasBeenSet(false),
-    m_originReadTimeout(0),
-    m_originReadTimeoutHasBeenSet(false),
-    m_originKeepaliveTimeout(0),
-    m_originKeepaliveTimeoutHasBeenSet(false)
+CustomOriginConfig::CustomOriginConfig(const XmlNode& xmlNode)
+  : CustomOriginConfig()
 {
   *this = xmlNode;
 }

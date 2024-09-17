@@ -37,46 +37,19 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-     */
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-     */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-     */
     inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-     */
     inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-     */
     inline DeleteReplicationInstanceRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-     */
     inline DeleteReplicationInstanceRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-     */
     inline DeleteReplicationInstanceRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationInstanceArn;

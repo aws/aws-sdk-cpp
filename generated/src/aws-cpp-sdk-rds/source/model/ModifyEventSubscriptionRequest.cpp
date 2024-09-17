@@ -41,12 +41,19 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
 
   if(m_eventCategoriesHasBeenSet)
   {
-    unsigned eventCategoriesCount = 1;
-    for(auto& item : m_eventCategories)
+    if (m_eventCategories.empty())
     {
-      ss << "EventCategories.member." << eventCategoriesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      eventCategoriesCount++;
+      ss << "EventCategories=&";
+    }
+    else
+    {
+      unsigned eventCategoriesCount = 1;
+      for(auto& item : m_eventCategories)
+      {
+        ss << "EventCategories.member." << eventCategoriesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        eventCategoriesCount++;
+      }
     }
   }
 

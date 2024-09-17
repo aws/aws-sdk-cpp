@@ -24,10 +24,8 @@ DescribeModelCardResult::DescribeModelCardResult() :
 {
 }
 
-DescribeModelCardResult::DescribeModelCardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelCardVersion(0),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardProcessingStatus(ModelCardProcessingStatus::NOT_SET)
+DescribeModelCardResult::DescribeModelCardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelCardResult()
 {
   *this = result;
 }

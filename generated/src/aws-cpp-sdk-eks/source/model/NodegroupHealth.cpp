@@ -23,8 +23,8 @@ NodegroupHealth::NodegroupHealth() :
 {
 }
 
-NodegroupHealth::NodegroupHealth(JsonView jsonValue) : 
-    m_issuesHasBeenSet(false)
+NodegroupHealth::NodegroupHealth(JsonView jsonValue)
+  : NodegroupHealth()
 {
   *this = jsonValue;
 }

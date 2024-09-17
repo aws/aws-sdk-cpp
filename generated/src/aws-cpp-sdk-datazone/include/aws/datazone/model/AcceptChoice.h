@@ -39,80 +39,49 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline const Aws::String& GetEditedValue() const{ return m_editedValue; }
+    inline bool EditedValueHasBeenSet() const { return m_editedValueHasBeenSet; }
+    inline void SetEditedValue(const Aws::String& value) { m_editedValueHasBeenSet = true; m_editedValue = value; }
+    inline void SetEditedValue(Aws::String&& value) { m_editedValueHasBeenSet = true; m_editedValue = std::move(value); }
+    inline void SetEditedValue(const char* value) { m_editedValueHasBeenSet = true; m_editedValue.assign(value); }
+    inline AcceptChoice& WithEditedValue(const Aws::String& value) { SetEditedValue(value); return *this;}
+    inline AcceptChoice& WithEditedValue(Aws::String&& value) { SetEditedValue(std::move(value)); return *this;}
+    inline AcceptChoice& WithEditedValue(const char* value) { SetEditedValue(value); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
      * that can be accepted.</p>
      */
     inline int GetPredictionChoice() const{ return m_predictionChoice; }
-
-    /**
-     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
-     * that can be accepted.</p>
-     */
     inline bool PredictionChoiceHasBeenSet() const { return m_predictionChoiceHasBeenSet; }
-
-    /**
-     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
-     * that can be accepted.</p>
-     */
     inline void SetPredictionChoice(int value) { m_predictionChoiceHasBeenSet = true; m_predictionChoice = value; }
-
-    /**
-     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
-     * that can be accepted.</p>
-     */
     inline AcceptChoice& WithPredictionChoice(int value) { SetPredictionChoice(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the target (for example, a column name) where a prediction can be
      * accepted.</p>
      */
     inline const Aws::String& GetPredictionTarget() const{ return m_predictionTarget; }
-
-    /**
-     * <p>Specifies the target (for example, a column name) where a prediction can be
-     * accepted.</p>
-     */
     inline bool PredictionTargetHasBeenSet() const { return m_predictionTargetHasBeenSet; }
-
-    /**
-     * <p>Specifies the target (for example, a column name) where a prediction can be
-     * accepted.</p>
-     */
     inline void SetPredictionTarget(const Aws::String& value) { m_predictionTargetHasBeenSet = true; m_predictionTarget = value; }
-
-    /**
-     * <p>Specifies the target (for example, a column name) where a prediction can be
-     * accepted.</p>
-     */
     inline void SetPredictionTarget(Aws::String&& value) { m_predictionTargetHasBeenSet = true; m_predictionTarget = std::move(value); }
-
-    /**
-     * <p>Specifies the target (for example, a column name) where a prediction can be
-     * accepted.</p>
-     */
     inline void SetPredictionTarget(const char* value) { m_predictionTargetHasBeenSet = true; m_predictionTarget.assign(value); }
-
-    /**
-     * <p>Specifies the target (for example, a column name) where a prediction can be
-     * accepted.</p>
-     */
     inline AcceptChoice& WithPredictionTarget(const Aws::String& value) { SetPredictionTarget(value); return *this;}
-
-    /**
-     * <p>Specifies the target (for example, a column name) where a prediction can be
-     * accepted.</p>
-     */
     inline AcceptChoice& WithPredictionTarget(Aws::String&& value) { SetPredictionTarget(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the target (for example, a column name) where a prediction can be
-     * accepted.</p>
-     */
     inline AcceptChoice& WithPredictionTarget(const char* value) { SetPredictionTarget(value); return *this;}
-
+    ///@}
   private:
+
+    Aws::String m_editedValue;
+    bool m_editedValueHasBeenSet = false;
 
     int m_predictionChoice;
     bool m_predictionChoiceHasBeenSet = false;

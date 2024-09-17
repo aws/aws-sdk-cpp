@@ -24,18 +24,13 @@ DescribeModelResult::DescribeModelResult() :
     m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
     m_latestScheduledRetrainingModelVersion(0),
     m_latestScheduledRetrainingAvailableDataInDays(0),
-    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET)
+    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
+    m_modelQuality(ModelQuality::NOT_SET)
 {
 }
 
-DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelStatus::NOT_SET),
-    m_activeModelVersion(0),
-    m_previousActiveModelVersion(0),
-    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
-    m_latestScheduledRetrainingModelVersion(0),
-    m_latestScheduledRetrainingAvailableDataInDays(0),
-    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET)
+DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeModelResult()
 {
   *this = result;
 }
@@ -280,6 +275,18 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("RetrainingSchedulerStatus"))
   {
     m_retrainingSchedulerStatus = RetrainingSchedulerStatusMapper::GetRetrainingSchedulerStatusForName(jsonValue.GetString("RetrainingSchedulerStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("ModelDiagnosticsOutputConfiguration"))
+  {
+    m_modelDiagnosticsOutputConfiguration = jsonValue.GetObject("ModelDiagnosticsOutputConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ModelQuality"))
+  {
+    m_modelQuality = ModelQualityMapper::GetModelQualityForName(jsonValue.GetString("ModelQuality"));
 
   }
 

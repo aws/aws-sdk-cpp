@@ -34,46 +34,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the patch baseline that should be the default patch baseline.</p>
      */
     inline const Aws::String& GetBaselineId() const{ return m_baselineId; }
-
-    /**
-     * <p>The ID of the patch baseline that should be the default patch baseline.</p>
-     */
     inline bool BaselineIdHasBeenSet() const { return m_baselineIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the patch baseline that should be the default patch baseline.</p>
-     */
     inline void SetBaselineId(const Aws::String& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
-
-    /**
-     * <p>The ID of the patch baseline that should be the default patch baseline.</p>
-     */
     inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
-
-    /**
-     * <p>The ID of the patch baseline that should be the default patch baseline.</p>
-     */
     inline void SetBaselineId(const char* value) { m_baselineIdHasBeenSet = true; m_baselineId.assign(value); }
-
-    /**
-     * <p>The ID of the patch baseline that should be the default patch baseline.</p>
-     */
     inline RegisterDefaultPatchBaselineRequest& WithBaselineId(const Aws::String& value) { SetBaselineId(value); return *this;}
-
-    /**
-     * <p>The ID of the patch baseline that should be the default patch baseline.</p>
-     */
     inline RegisterDefaultPatchBaselineRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the patch baseline that should be the default patch baseline.</p>
-     */
     inline RegisterDefaultPatchBaselineRequest& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_baselineId;

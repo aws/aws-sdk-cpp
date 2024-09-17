@@ -27,12 +27,8 @@ RouteAnalysisCompletion::RouteAnalysisCompletion() :
 {
 }
 
-RouteAnalysisCompletion::RouteAnalysisCompletion(JsonView jsonValue) : 
-    m_resultCode(RouteAnalysisCompletionResultCode::NOT_SET),
-    m_resultCodeHasBeenSet(false),
-    m_reasonCode(RouteAnalysisCompletionReasonCode::NOT_SET),
-    m_reasonCodeHasBeenSet(false),
-    m_reasonContextHasBeenSet(false)
+RouteAnalysisCompletion::RouteAnalysisCompletion(JsonView jsonValue)
+  : RouteAnalysisCompletion()
 {
   *this = jsonValue;
 }

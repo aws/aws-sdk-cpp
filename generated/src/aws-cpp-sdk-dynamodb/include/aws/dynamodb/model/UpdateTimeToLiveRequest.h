@@ -39,83 +39,33 @@ namespace Model
     AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
-     * <p>The name of the table to be configured.</p>
+     * <p>The name of the table to be configured. You can also provide the Amazon
+     * Resource Name (ARN) of the table in this parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the table to be configured.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the table to be configured.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the table to be configured.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the table to be configured.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the table to be configured.</p>
-     */
     inline UpdateTimeToLiveRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the table to be configured.</p>
-     */
     inline UpdateTimeToLiveRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the table to be configured.</p>
-     */
     inline UpdateTimeToLiveRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the settings used to enable or disable Time to Live for the
      * specified table.</p>
      */
     inline const TimeToLiveSpecification& GetTimeToLiveSpecification() const{ return m_timeToLiveSpecification; }
-
-    /**
-     * <p>Represents the settings used to enable or disable Time to Live for the
-     * specified table.</p>
-     */
     inline bool TimeToLiveSpecificationHasBeenSet() const { return m_timeToLiveSpecificationHasBeenSet; }
-
-    /**
-     * <p>Represents the settings used to enable or disable Time to Live for the
-     * specified table.</p>
-     */
     inline void SetTimeToLiveSpecification(const TimeToLiveSpecification& value) { m_timeToLiveSpecificationHasBeenSet = true; m_timeToLiveSpecification = value; }
-
-    /**
-     * <p>Represents the settings used to enable or disable Time to Live for the
-     * specified table.</p>
-     */
     inline void SetTimeToLiveSpecification(TimeToLiveSpecification&& value) { m_timeToLiveSpecificationHasBeenSet = true; m_timeToLiveSpecification = std::move(value); }
-
-    /**
-     * <p>Represents the settings used to enable or disable Time to Live for the
-     * specified table.</p>
-     */
     inline UpdateTimeToLiveRequest& WithTimeToLiveSpecification(const TimeToLiveSpecification& value) { SetTimeToLiveSpecification(value); return *this;}
-
-    /**
-     * <p>Represents the settings used to enable or disable Time to Live for the
-     * specified table.</p>
-     */
     inline UpdateTimeToLiveRequest& WithTimeToLiveSpecification(TimeToLiveSpecification&& value) { SetTimeToLiveSpecification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableName;

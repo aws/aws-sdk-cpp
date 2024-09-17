@@ -39,46 +39,19 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The coordinates of the multipolygon geometry.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>& GetCoordinates() const{ return m_coordinates; }
-
-    /**
-     * <p>The coordinates of the multipolygon geometry.</p>
-     */
     inline bool CoordinatesHasBeenSet() const { return m_coordinatesHasBeenSet; }
-
-    /**
-     * <p>The coordinates of the multipolygon geometry.</p>
-     */
     inline void SetCoordinates(const Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>& value) { m_coordinatesHasBeenSet = true; m_coordinates = value; }
-
-    /**
-     * <p>The coordinates of the multipolygon geometry.</p>
-     */
     inline void SetCoordinates(Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>&& value) { m_coordinatesHasBeenSet = true; m_coordinates = std::move(value); }
-
-    /**
-     * <p>The coordinates of the multipolygon geometry.</p>
-     */
     inline MultiPolygonGeometryInput& WithCoordinates(const Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>& value) { SetCoordinates(value); return *this;}
-
-    /**
-     * <p>The coordinates of the multipolygon geometry.</p>
-     */
     inline MultiPolygonGeometryInput& WithCoordinates(Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>&& value) { SetCoordinates(std::move(value)); return *this;}
-
-    /**
-     * <p>The coordinates of the multipolygon geometry.</p>
-     */
     inline MultiPolygonGeometryInput& AddCoordinates(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { m_coordinatesHasBeenSet = true; m_coordinates.push_back(value); return *this; }
-
-    /**
-     * <p>The coordinates of the multipolygon geometry.</p>
-     */
     inline MultiPolygonGeometryInput& AddCoordinates(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { m_coordinatesHasBeenSet = true; m_coordinates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>> m_coordinates;

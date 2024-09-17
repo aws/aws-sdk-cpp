@@ -34,87 +34,33 @@ namespace Model
     AWS_KEYSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the keyspace of the to be deleted table.</p>
      */
     inline const Aws::String& GetKeyspaceName() const{ return m_keyspaceName; }
-
-    /**
-     * <p>The name of the keyspace of the to be deleted table.</p>
-     */
     inline bool KeyspaceNameHasBeenSet() const { return m_keyspaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the keyspace of the to be deleted table.</p>
-     */
     inline void SetKeyspaceName(const Aws::String& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = value; }
-
-    /**
-     * <p>The name of the keyspace of the to be deleted table.</p>
-     */
     inline void SetKeyspaceName(Aws::String&& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = std::move(value); }
-
-    /**
-     * <p>The name of the keyspace of the to be deleted table.</p>
-     */
     inline void SetKeyspaceName(const char* value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName.assign(value); }
-
-    /**
-     * <p>The name of the keyspace of the to be deleted table.</p>
-     */
     inline DeleteTableRequest& WithKeyspaceName(const Aws::String& value) { SetKeyspaceName(value); return *this;}
-
-    /**
-     * <p>The name of the keyspace of the to be deleted table.</p>
-     */
     inline DeleteTableRequest& WithKeyspaceName(Aws::String&& value) { SetKeyspaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the keyspace of the to be deleted table.</p>
-     */
     inline DeleteTableRequest& WithKeyspaceName(const char* value) { SetKeyspaceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the table to be deleted.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the table to be deleted.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the table to be deleted.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the table to be deleted.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the table to be deleted.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the table to be deleted.</p>
-     */
     inline DeleteTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the table to be deleted.</p>
-     */
     inline DeleteTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the table to be deleted.</p>
-     */
     inline DeleteTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyspaceName;

@@ -36,95 +36,34 @@ namespace Model
     AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The short name or full ARN of the cluster that hosts the container instance
      * the attachment belongs to.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
-
-    /**
-     * <p>The short name or full ARN of the cluster that hosts the container instance
-     * the attachment belongs to.</p>
-     */
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-
-    /**
-     * <p>The short name or full ARN of the cluster that hosts the container instance
-     * the attachment belongs to.</p>
-     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-
-    /**
-     * <p>The short name or full ARN of the cluster that hosts the container instance
-     * the attachment belongs to.</p>
-     */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-
-    /**
-     * <p>The short name or full ARN of the cluster that hosts the container instance
-     * the attachment belongs to.</p>
-     */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-
-    /**
-     * <p>The short name or full ARN of the cluster that hosts the container instance
-     * the attachment belongs to.</p>
-     */
     inline SubmitAttachmentStateChangesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-
-    /**
-     * <p>The short name or full ARN of the cluster that hosts the container instance
-     * the attachment belongs to.</p>
-     */
     inline SubmitAttachmentStateChangesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-
-    /**
-     * <p>The short name or full ARN of the cluster that hosts the container instance
-     * the attachment belongs to.</p>
-     */
     inline SubmitAttachmentStateChangesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any attachments associated with the state change request.</p>
      */
     inline const Aws::Vector<AttachmentStateChange>& GetAttachments() const{ return m_attachments; }
-
-    /**
-     * <p>Any attachments associated with the state change request.</p>
-     */
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-
-    /**
-     * <p>Any attachments associated with the state change request.</p>
-     */
     inline void SetAttachments(const Aws::Vector<AttachmentStateChange>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-
-    /**
-     * <p>Any attachments associated with the state change request.</p>
-     */
     inline void SetAttachments(Aws::Vector<AttachmentStateChange>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-
-    /**
-     * <p>Any attachments associated with the state change request.</p>
-     */
     inline SubmitAttachmentStateChangesRequest& WithAttachments(const Aws::Vector<AttachmentStateChange>& value) { SetAttachments(value); return *this;}
-
-    /**
-     * <p>Any attachments associated with the state change request.</p>
-     */
     inline SubmitAttachmentStateChangesRequest& WithAttachments(Aws::Vector<AttachmentStateChange>&& value) { SetAttachments(std::move(value)); return *this;}
-
-    /**
-     * <p>Any attachments associated with the state change request.</p>
-     */
     inline SubmitAttachmentStateChangesRequest& AddAttachments(const AttachmentStateChange& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-
-    /**
-     * <p>Any attachments associated with the state change request.</p>
-     */
     inline SubmitAttachmentStateChangesRequest& AddAttachments(AttachmentStateChange&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_cluster;

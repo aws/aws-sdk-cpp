@@ -25,11 +25,8 @@ DescribeChannelResult::DescribeChannelResult() :
 {
 }
 
-DescribeChannelResult::DescribeChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_channelClass(ChannelClass::NOT_SET),
-    m_logLevel(LogLevel::NOT_SET),
-    m_pipelinesRunningCount(0),
-    m_state(ChannelState::NOT_SET)
+DescribeChannelResult::DescribeChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeChannelResult()
 {
   *this = result;
 }
@@ -157,6 +154,12 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("vpc"))
   {
     m_vpc = jsonValue.GetObject("vpc");
+
+  }
+
+  if(jsonValue.ValueExists("anywhereSettings"))
+  {
+    m_anywhereSettings = jsonValue.GetObject("anywhereSettings");
 
   }
 

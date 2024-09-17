@@ -25,10 +25,8 @@ InputSessionStateSpecification::InputSessionStateSpecification() :
 {
 }
 
-InputSessionStateSpecification::InputSessionStateSpecification(JsonView jsonValue) : 
-    m_sessionAttributesHasBeenSet(false),
-    m_activeContextsHasBeenSet(false),
-    m_runtimeHintsHasBeenSet(false)
+InputSessionStateSpecification::InputSessionStateSpecification(JsonView jsonValue)
+  : InputSessionStateSpecification()
 {
   *this = jsonValue;
 }

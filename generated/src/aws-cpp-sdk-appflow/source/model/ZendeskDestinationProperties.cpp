@@ -27,12 +27,8 @@ ZendeskDestinationProperties::ZendeskDestinationProperties() :
 {
 }
 
-ZendeskDestinationProperties::ZendeskDestinationProperties(JsonView jsonValue) : 
-    m_objectHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false)
+ZendeskDestinationProperties::ZendeskDestinationProperties(JsonView jsonValue)
+  : ZendeskDestinationProperties()
 {
   *this = jsonValue;
 }

@@ -19,28 +19,48 @@ namespace Model
 {
 
 SessionState::SessionState() : 
-    m_sessionAttributesHasBeenSet(false),
-    m_promptSessionAttributesHasBeenSet(false)
+    m_filesHasBeenSet(false),
+    m_invocationIdHasBeenSet(false),
+    m_knowledgeBaseConfigurationsHasBeenSet(false),
+    m_promptSessionAttributesHasBeenSet(false),
+    m_returnControlInvocationResultsHasBeenSet(false),
+    m_sessionAttributesHasBeenSet(false)
 {
 }
 
-SessionState::SessionState(JsonView jsonValue) : 
-    m_sessionAttributesHasBeenSet(false),
-    m_promptSessionAttributesHasBeenSet(false)
+SessionState::SessionState(JsonView jsonValue)
+  : SessionState()
 {
   *this = jsonValue;
 }
 
 SessionState& SessionState::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("sessionAttributes"))
+  if(jsonValue.ValueExists("files"))
   {
-    Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
-    for(auto& sessionAttributesItem : sessionAttributesJsonMap)
+    Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
+    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
     {
-      m_sessionAttributes[sessionAttributesItem.first] = sessionAttributesItem.second.AsString();
+      m_files.push_back(filesJsonList[filesIndex].AsObject());
     }
-    m_sessionAttributesHasBeenSet = true;
+    m_filesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("invocationId"))
+  {
+    m_invocationId = jsonValue.GetString("invocationId");
+
+    m_invocationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("knowledgeBaseConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> knowledgeBaseConfigurationsJsonList = jsonValue.GetArray("knowledgeBaseConfigurations");
+    for(unsigned knowledgeBaseConfigurationsIndex = 0; knowledgeBaseConfigurationsIndex < knowledgeBaseConfigurationsJsonList.GetLength(); ++knowledgeBaseConfigurationsIndex)
+    {
+      m_knowledgeBaseConfigurations.push_back(knowledgeBaseConfigurationsJsonList[knowledgeBaseConfigurationsIndex].AsObject());
+    }
+    m_knowledgeBaseConfigurationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("promptSessionAttributes"))
@@ -53,6 +73,26 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     m_promptSessionAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("returnControlInvocationResults"))
+  {
+    Aws::Utils::Array<JsonView> returnControlInvocationResultsJsonList = jsonValue.GetArray("returnControlInvocationResults");
+    for(unsigned returnControlInvocationResultsIndex = 0; returnControlInvocationResultsIndex < returnControlInvocationResultsJsonList.GetLength(); ++returnControlInvocationResultsIndex)
+    {
+      m_returnControlInvocationResults.push_back(returnControlInvocationResultsJsonList[returnControlInvocationResultsIndex].AsObject());
+    }
+    m_returnControlInvocationResultsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sessionAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
+    for(auto& sessionAttributesItem : sessionAttributesJsonMap)
+    {
+      m_sessionAttributes[sessionAttributesItem.first] = sessionAttributesItem.second.AsString();
+    }
+    m_sessionAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,14 +100,31 @@ JsonValue SessionState::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_sessionAttributesHasBeenSet)
+  if(m_filesHasBeenSet)
   {
-   JsonValue sessionAttributesJsonMap;
-   for(auto& sessionAttributesItem : m_sessionAttributes)
+   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
+   for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
    {
-     sessionAttributesJsonMap.WithString(sessionAttributesItem.first, sessionAttributesItem.second);
+     filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());
    }
-   payload.WithObject("sessionAttributes", std::move(sessionAttributesJsonMap));
+   payload.WithArray("files", std::move(filesJsonList));
+
+  }
+
+  if(m_invocationIdHasBeenSet)
+  {
+   payload.WithString("invocationId", m_invocationId);
+
+  }
+
+  if(m_knowledgeBaseConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> knowledgeBaseConfigurationsJsonList(m_knowledgeBaseConfigurations.size());
+   for(unsigned knowledgeBaseConfigurationsIndex = 0; knowledgeBaseConfigurationsIndex < knowledgeBaseConfigurationsJsonList.GetLength(); ++knowledgeBaseConfigurationsIndex)
+   {
+     knowledgeBaseConfigurationsJsonList[knowledgeBaseConfigurationsIndex].AsObject(m_knowledgeBaseConfigurations[knowledgeBaseConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("knowledgeBaseConfigurations", std::move(knowledgeBaseConfigurationsJsonList));
 
   }
 
@@ -79,6 +136,28 @@ JsonValue SessionState::Jsonize() const
      promptSessionAttributesJsonMap.WithString(promptSessionAttributesItem.first, promptSessionAttributesItem.second);
    }
    payload.WithObject("promptSessionAttributes", std::move(promptSessionAttributesJsonMap));
+
+  }
+
+  if(m_returnControlInvocationResultsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> returnControlInvocationResultsJsonList(m_returnControlInvocationResults.size());
+   for(unsigned returnControlInvocationResultsIndex = 0; returnControlInvocationResultsIndex < returnControlInvocationResultsJsonList.GetLength(); ++returnControlInvocationResultsIndex)
+   {
+     returnControlInvocationResultsJsonList[returnControlInvocationResultsIndex].AsObject(m_returnControlInvocationResults[returnControlInvocationResultsIndex].Jsonize());
+   }
+   payload.WithArray("returnControlInvocationResults", std::move(returnControlInvocationResultsJsonList));
+
+  }
+
+  if(m_sessionAttributesHasBeenSet)
+  {
+   JsonValue sessionAttributesJsonMap;
+   for(auto& sessionAttributesItem : m_sessionAttributes)
+   {
+     sessionAttributesJsonMap.WithString(sessionAttributesItem.first, sessionAttributesItem.second);
+   }
+   payload.WithObject("sessionAttributes", std::move(sessionAttributesJsonMap));
 
   }
 

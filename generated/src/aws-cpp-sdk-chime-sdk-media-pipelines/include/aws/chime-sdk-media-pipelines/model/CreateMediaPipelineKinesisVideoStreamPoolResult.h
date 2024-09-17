@@ -33,53 +33,28 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaPipelineKinesisVideoStreamPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>The configuration for the Kinesis video stream pool.</p>
+     * <p>The configuration for applying the streams to the pool.</p>  <p/>
+     * 
      */
     inline const KinesisVideoStreamPoolConfiguration& GetKinesisVideoStreamPoolConfiguration() const{ return m_kinesisVideoStreamPoolConfiguration; }
-
-    /**
-     * <p>The configuration for the Kinesis video stream pool.</p>
-     */
     inline void SetKinesisVideoStreamPoolConfiguration(const KinesisVideoStreamPoolConfiguration& value) { m_kinesisVideoStreamPoolConfiguration = value; }
-
-    /**
-     * <p>The configuration for the Kinesis video stream pool.</p>
-     */
     inline void SetKinesisVideoStreamPoolConfiguration(KinesisVideoStreamPoolConfiguration&& value) { m_kinesisVideoStreamPoolConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration for the Kinesis video stream pool.</p>
-     */
     inline CreateMediaPipelineKinesisVideoStreamPoolResult& WithKinesisVideoStreamPoolConfiguration(const KinesisVideoStreamPoolConfiguration& value) { SetKinesisVideoStreamPoolConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration for the Kinesis video stream pool.</p>
-     */
     inline CreateMediaPipelineKinesisVideoStreamPoolResult& WithKinesisVideoStreamPoolConfiguration(KinesisVideoStreamPoolConfiguration&& value) { SetKinesisVideoStreamPoolConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMediaPipelineKinesisVideoStreamPoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMediaPipelineKinesisVideoStreamPoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMediaPipelineKinesisVideoStreamPoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     KinesisVideoStreamPoolConfiguration m_kinesisVideoStreamPoolConfiguration;

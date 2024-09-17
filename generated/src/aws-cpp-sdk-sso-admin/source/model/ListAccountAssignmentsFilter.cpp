@@ -23,8 +23,8 @@ ListAccountAssignmentsFilter::ListAccountAssignmentsFilter() :
 {
 }
 
-ListAccountAssignmentsFilter::ListAccountAssignmentsFilter(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false)
+ListAccountAssignmentsFilter::ListAccountAssignmentsFilter(JsonView jsonValue)
+  : ListAccountAssignmentsFilter()
 {
   *this = jsonValue;
 }

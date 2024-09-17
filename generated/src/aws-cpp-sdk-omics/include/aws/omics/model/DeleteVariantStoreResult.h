@@ -33,53 +33,27 @@ namespace Model
     AWS_OMICS_API DeleteVariantStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The store's status.</p>
      */
     inline const StoreStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The store's status.</p>
-     */
     inline void SetStatus(const StoreStatus& value) { m_status = value; }
-
-    /**
-     * <p>The store's status.</p>
-     */
     inline void SetStatus(StoreStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The store's status.</p>
-     */
     inline DeleteVariantStoreResult& WithStatus(const StoreStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The store's status.</p>
-     */
     inline DeleteVariantStoreResult& WithStatus(StoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteVariantStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteVariantStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteVariantStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StoreStatus m_status;

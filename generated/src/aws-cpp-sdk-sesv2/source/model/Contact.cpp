@@ -28,13 +28,8 @@ Contact::Contact() :
 {
 }
 
-Contact::Contact(JsonView jsonValue) : 
-    m_emailAddressHasBeenSet(false),
-    m_topicPreferencesHasBeenSet(false),
-    m_topicDefaultPreferencesHasBeenSet(false),
-    m_unsubscribeAll(false),
-    m_unsubscribeAllHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+Contact::Contact(JsonView jsonValue)
+  : Contact()
 {
   *this = jsonValue;
 }

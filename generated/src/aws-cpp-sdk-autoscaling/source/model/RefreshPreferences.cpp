@@ -42,25 +42,8 @@ RefreshPreferences::RefreshPreferences() :
 {
 }
 
-RefreshPreferences::RefreshPreferences(const XmlNode& xmlNode) : 
-    m_minHealthyPercentage(0),
-    m_minHealthyPercentageHasBeenSet(false),
-    m_instanceWarmup(0),
-    m_instanceWarmupHasBeenSet(false),
-    m_checkpointPercentagesHasBeenSet(false),
-    m_checkpointDelay(0),
-    m_checkpointDelayHasBeenSet(false),
-    m_skipMatching(false),
-    m_skipMatchingHasBeenSet(false),
-    m_autoRollback(false),
-    m_autoRollbackHasBeenSet(false),
-    m_scaleInProtectedInstances(ScaleInProtectedInstances::NOT_SET),
-    m_scaleInProtectedInstancesHasBeenSet(false),
-    m_standbyInstances(StandbyInstances::NOT_SET),
-    m_standbyInstancesHasBeenSet(false),
-    m_alarmSpecificationHasBeenSet(false),
-    m_maxHealthyPercentage(0),
-    m_maxHealthyPercentageHasBeenSet(false)
+RefreshPreferences::RefreshPreferences(const XmlNode& xmlNode)
+  : RefreshPreferences()
 {
   *this = xmlNode;
 }

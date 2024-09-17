@@ -22,8 +22,8 @@ ImportClientVpnClientCertificateRevocationListResponse::ImportClientVpnClientCer
 {
 }
 
-ImportClientVpnClientCertificateRevocationListResponse::ImportClientVpnClientCertificateRevocationListResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ImportClientVpnClientCertificateRevocationListResponse::ImportClientVpnClientCertificateRevocationListResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ImportClientVpnClientCertificateRevocationListResponse()
 {
   *this = result;
 }

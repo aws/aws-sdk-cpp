@@ -27,20 +27,16 @@ ClusterNodeDetails::ClusterNodeDetails() :
     m_launchTimeHasBeenSet(false),
     m_lifeCycleConfigHasBeenSet(false),
     m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
+    m_threadsPerCoreHasBeenSet(false),
+    m_instanceStorageConfigsHasBeenSet(false),
+    m_privatePrimaryIpHasBeenSet(false),
+    m_privateDnsHostnameHasBeenSet(false),
+    m_placementHasBeenSet(false)
 {
 }
 
-ClusterNodeDetails::ClusterNodeDetails(JsonView jsonValue) : 
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
+ClusterNodeDetails::ClusterNodeDetails(JsonView jsonValue)
+  : ClusterNodeDetails()
 {
   *this = jsonValue;
 }
@@ -96,6 +92,37 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     m_threadsPerCoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceStorageConfigs"))
+  {
+    Aws::Utils::Array<JsonView> instanceStorageConfigsJsonList = jsonValue.GetArray("InstanceStorageConfigs");
+    for(unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength(); ++instanceStorageConfigsIndex)
+    {
+      m_instanceStorageConfigs.push_back(instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject());
+    }
+    m_instanceStorageConfigsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivatePrimaryIp"))
+  {
+    m_privatePrimaryIp = jsonValue.GetString("PrivatePrimaryIp");
+
+    m_privatePrimaryIpHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivateDnsHostname"))
+  {
+    m_privateDnsHostname = jsonValue.GetString("PrivateDnsHostname");
+
+    m_privateDnsHostnameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Placement"))
+  {
+    m_placement = jsonValue.GetObject("Placement");
+
+    m_placementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +167,35 @@ JsonValue ClusterNodeDetails::Jsonize() const
   if(m_threadsPerCoreHasBeenSet)
   {
    payload.WithInteger("ThreadsPerCore", m_threadsPerCore);
+
+  }
+
+  if(m_instanceStorageConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceStorageConfigsJsonList(m_instanceStorageConfigs.size());
+   for(unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength(); ++instanceStorageConfigsIndex)
+   {
+     instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject(m_instanceStorageConfigs[instanceStorageConfigsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceStorageConfigs", std::move(instanceStorageConfigsJsonList));
+
+  }
+
+  if(m_privatePrimaryIpHasBeenSet)
+  {
+   payload.WithString("PrivatePrimaryIp", m_privatePrimaryIp);
+
+  }
+
+  if(m_privateDnsHostnameHasBeenSet)
+  {
+   payload.WithString("PrivateDnsHostname", m_privateDnsHostname);
+
+  }
+
+  if(m_placementHasBeenSet)
+  {
+   payload.WithObject("Placement", m_placement.Jsonize());
 
   }
 

@@ -39,6 +39,7 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The initial <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
@@ -47,52 +48,12 @@ namespace Model
      * change.</p>
      */
     inline const PredictorBaseline& GetPredictorBaseline() const{ return m_predictorBaseline; }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor you are monitoring. Use these metrics as a
-     * baseline for comparison purposes as you use your predictor and the metrics
-     * change.</p>
-     */
     inline bool PredictorBaselineHasBeenSet() const { return m_predictorBaselineHasBeenSet; }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor you are monitoring. Use these metrics as a
-     * baseline for comparison purposes as you use your predictor and the metrics
-     * change.</p>
-     */
     inline void SetPredictorBaseline(const PredictorBaseline& value) { m_predictorBaselineHasBeenSet = true; m_predictorBaseline = value; }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor you are monitoring. Use these metrics as a
-     * baseline for comparison purposes as you use your predictor and the metrics
-     * change.</p>
-     */
     inline void SetPredictorBaseline(PredictorBaseline&& value) { m_predictorBaselineHasBeenSet = true; m_predictorBaseline = std::move(value); }
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor you are monitoring. Use these metrics as a
-     * baseline for comparison purposes as you use your predictor and the metrics
-     * change.</p>
-     */
     inline Baseline& WithPredictorBaseline(const PredictorBaseline& value) { SetPredictorBaseline(value); return *this;}
-
-    /**
-     * <p>The initial <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy
-     * metrics</a> for the predictor you are monitoring. Use these metrics as a
-     * baseline for comparison purposes as you use your predictor and the metrics
-     * change.</p>
-     */
     inline Baseline& WithPredictorBaseline(PredictorBaseline&& value) { SetPredictorBaseline(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PredictorBaseline m_predictorBaseline;

@@ -28,13 +28,8 @@ DeliverySource::DeliverySource() :
 {
 }
 
-DeliverySource::DeliverySource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_logTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+DeliverySource::DeliverySource(JsonView jsonValue)
+  : DeliverySource()
 {
   *this = jsonValue;
 }

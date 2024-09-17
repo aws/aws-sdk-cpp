@@ -28,13 +28,8 @@ FirewallManagerRuleGroup::FirewallManagerRuleGroup() :
 {
 }
 
-FirewallManagerRuleGroup::FirewallManagerRuleGroup(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_firewallManagerStatementHasBeenSet(false),
-    m_overrideActionHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+FirewallManagerRuleGroup::FirewallManagerRuleGroup(JsonView jsonValue)
+  : FirewallManagerRuleGroup()
 {
   *this = jsonValue;
 }

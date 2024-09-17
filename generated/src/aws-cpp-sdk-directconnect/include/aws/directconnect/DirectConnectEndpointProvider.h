@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using DirectConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DirectConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using DirectConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DirectConnectBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

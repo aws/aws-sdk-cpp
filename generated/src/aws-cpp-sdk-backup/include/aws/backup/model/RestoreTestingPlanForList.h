@@ -39,6 +39,7 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time that a restore testing plan was created, in Unix format and
      * Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is
@@ -46,48 +47,14 @@ namespace Model
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The date and time that a restore testing plan was created, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is
-     * accurate to milliseconds. For example, the value 1516925490.087 represents
-     * Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time that a restore testing plan was created, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is
-     * accurate to milliseconds. For example, the value 1516925490.087 represents
-     * Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>The date and time that a restore testing plan was created, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is
-     * accurate to milliseconds. For example, the value 1516925490.087 represents
-     * Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>The date and time that a restore testing plan was created, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is
-     * accurate to milliseconds. For example, the value 1516925490.087 represents
-     * Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline RestoreTestingPlanForList& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>The date and time that a restore testing plan was created, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is
-     * accurate to milliseconds. For example, the value 1516925490.087 represents
-     * Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline RestoreTestingPlanForList& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last time a restore test was run with the specified restore testing plan.
      * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
@@ -95,48 +62,14 @@ namespace Model
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetLastExecutionTime() const{ return m_lastExecutionTime; }
-
-    /**
-     * <p>The last time a restore test was run with the specified restore testing plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
-     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline bool LastExecutionTimeHasBeenSet() const { return m_lastExecutionTimeHasBeenSet; }
-
-    /**
-     * <p>The last time a restore test was run with the specified restore testing plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
-     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline void SetLastExecutionTime(const Aws::Utils::DateTime& value) { m_lastExecutionTimeHasBeenSet = true; m_lastExecutionTime = value; }
-
-    /**
-     * <p>The last time a restore test was run with the specified restore testing plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
-     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline void SetLastExecutionTime(Aws::Utils::DateTime&& value) { m_lastExecutionTimeHasBeenSet = true; m_lastExecutionTime = std::move(value); }
-
-    /**
-     * <p>The last time a restore test was run with the specified restore testing plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
-     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline RestoreTestingPlanForList& WithLastExecutionTime(const Aws::Utils::DateTime& value) { SetLastExecutionTime(value); return *this;}
-
-    /**
-     * <p>The last time a restore test was run with the specified restore testing plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
-     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline RestoreTestingPlanForList& WithLastExecutionTime(Aws::Utils::DateTime&& value) { SetLastExecutionTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the restore testing plan was updated. This update is
      * in Unix format and Coordinated Universal Time (UTC). The value of
@@ -144,244 +77,74 @@ namespace Model
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
-
-    /**
-     * <p>The date and time that the restore testing plan was updated. This update is
-     * in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
-     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time that the restore testing plan was updated. This update is
-     * in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
-     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-
-    /**
-     * <p>The date and time that the restore testing plan was updated. This update is
-     * in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
-     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-
-    /**
-     * <p>The date and time that the restore testing plan was updated. This update is
-     * in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
-     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline RestoreTestingPlanForList& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-
-    /**
-     * <p>The date and time that the restore testing plan was updated. This update is
-     * in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value
-     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-     */
     inline RestoreTestingPlanForList& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
      * plan.</p>
      */
     inline const Aws::String& GetRestoreTestingPlanArn() const{ return m_restoreTestingPlanArn; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
-     * plan.</p>
-     */
     inline bool RestoreTestingPlanArnHasBeenSet() const { return m_restoreTestingPlanArnHasBeenSet; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
-     * plan.</p>
-     */
     inline void SetRestoreTestingPlanArn(const Aws::String& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = value; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
-     * plan.</p>
-     */
     inline void SetRestoreTestingPlanArn(Aws::String&& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = std::move(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
-     * plan.</p>
-     */
     inline void SetRestoreTestingPlanArn(const char* value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn.assign(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
-     * plan.</p>
-     */
     inline RestoreTestingPlanForList& WithRestoreTestingPlanArn(const Aws::String& value) { SetRestoreTestingPlanArn(value); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
-     * plan.</p>
-     */
     inline RestoreTestingPlanForList& WithRestoreTestingPlanArn(Aws::String&& value) { SetRestoreTestingPlanArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) that uniquely identifiesa restore testing
-     * plan.</p>
-     */
     inline RestoreTestingPlanForList& WithRestoreTestingPlanArn(const char* value) { SetRestoreTestingPlanArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>This is the restore testing plan name.</p>
+     * <p>The restore testing plan name.</p>
      */
     inline const Aws::String& GetRestoreTestingPlanName() const{ return m_restoreTestingPlanName; }
-
-    /**
-     * <p>This is the restore testing plan name.</p>
-     */
     inline bool RestoreTestingPlanNameHasBeenSet() const { return m_restoreTestingPlanNameHasBeenSet; }
-
-    /**
-     * <p>This is the restore testing plan name.</p>
-     */
     inline void SetRestoreTestingPlanName(const Aws::String& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = value; }
-
-    /**
-     * <p>This is the restore testing plan name.</p>
-     */
     inline void SetRestoreTestingPlanName(Aws::String&& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = std::move(value); }
-
-    /**
-     * <p>This is the restore testing plan name.</p>
-     */
     inline void SetRestoreTestingPlanName(const char* value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName.assign(value); }
-
-    /**
-     * <p>This is the restore testing plan name.</p>
-     */
     inline RestoreTestingPlanForList& WithRestoreTestingPlanName(const Aws::String& value) { SetRestoreTestingPlanName(value); return *this;}
-
-    /**
-     * <p>This is the restore testing plan name.</p>
-     */
     inline RestoreTestingPlanForList& WithRestoreTestingPlanName(Aws::String&& value) { SetRestoreTestingPlanName(std::move(value)); return *this;}
-
-    /**
-     * <p>This is the restore testing plan name.</p>
-     */
     inline RestoreTestingPlanForList& WithRestoreTestingPlanName(const char* value) { SetRestoreTestingPlanName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A CRON expression in specified timezone when a restore testing plan is
      * executed.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
-
-    /**
-     * <p>A CRON expression in specified timezone when a restore testing plan is
-     * executed.</p>
-     */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-
-    /**
-     * <p>A CRON expression in specified timezone when a restore testing plan is
-     * executed.</p>
-     */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-
-    /**
-     * <p>A CRON expression in specified timezone when a restore testing plan is
-     * executed.</p>
-     */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-
-    /**
-     * <p>A CRON expression in specified timezone when a restore testing plan is
-     * executed.</p>
-     */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-
-    /**
-     * <p>A CRON expression in specified timezone when a restore testing plan is
-     * executed.</p>
-     */
     inline RestoreTestingPlanForList& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-
-    /**
-     * <p>A CRON expression in specified timezone when a restore testing plan is
-     * executed.</p>
-     */
     inline RestoreTestingPlanForList& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>A CRON expression in specified timezone when a restore testing plan is
-     * executed.</p>
-     */
     inline RestoreTestingPlanForList& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional. This is the timezone in which the schedule expression is set. By
      * default, ScheduleExpressions are in UTC. You can modify this to a specified
      * timezone.</p>
      */
     inline const Aws::String& GetScheduleExpressionTimezone() const{ return m_scheduleExpressionTimezone; }
-
-    /**
-     * <p>Optional. This is the timezone in which the schedule expression is set. By
-     * default, ScheduleExpressions are in UTC. You can modify this to a specified
-     * timezone.</p>
-     */
     inline bool ScheduleExpressionTimezoneHasBeenSet() const { return m_scheduleExpressionTimezoneHasBeenSet; }
-
-    /**
-     * <p>Optional. This is the timezone in which the schedule expression is set. By
-     * default, ScheduleExpressions are in UTC. You can modify this to a specified
-     * timezone.</p>
-     */
     inline void SetScheduleExpressionTimezone(const Aws::String& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = value; }
-
-    /**
-     * <p>Optional. This is the timezone in which the schedule expression is set. By
-     * default, ScheduleExpressions are in UTC. You can modify this to a specified
-     * timezone.</p>
-     */
     inline void SetScheduleExpressionTimezone(Aws::String&& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = std::move(value); }
-
-    /**
-     * <p>Optional. This is the timezone in which the schedule expression is set. By
-     * default, ScheduleExpressions are in UTC. You can modify this to a specified
-     * timezone.</p>
-     */
     inline void SetScheduleExpressionTimezone(const char* value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone.assign(value); }
-
-    /**
-     * <p>Optional. This is the timezone in which the schedule expression is set. By
-     * default, ScheduleExpressions are in UTC. You can modify this to a specified
-     * timezone.</p>
-     */
     inline RestoreTestingPlanForList& WithScheduleExpressionTimezone(const Aws::String& value) { SetScheduleExpressionTimezone(value); return *this;}
-
-    /**
-     * <p>Optional. This is the timezone in which the schedule expression is set. By
-     * default, ScheduleExpressions are in UTC. You can modify this to a specified
-     * timezone.</p>
-     */
     inline RestoreTestingPlanForList& WithScheduleExpressionTimezone(Aws::String&& value) { SetScheduleExpressionTimezone(std::move(value)); return *this;}
-
-    /**
-     * <p>Optional. This is the timezone in which the schedule expression is set. By
-     * default, ScheduleExpressions are in UTC. You can modify this to a specified
-     * timezone.</p>
-     */
     inline RestoreTestingPlanForList& WithScheduleExpressionTimezone(const char* value) { SetScheduleExpressionTimezone(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defaults to 24 hours.</p> <p>A value in hours after a restore test is
      * scheduled before a job will be canceled if it doesn't start successfully. This
@@ -389,31 +152,10 @@ namespace Model
      * of 168 hours (one week).</p>
      */
     inline int GetStartWindowHours() const{ return m_startWindowHours; }
-
-    /**
-     * <p>Defaults to 24 hours.</p> <p>A value in hours after a restore test is
-     * scheduled before a job will be canceled if it doesn't start successfully. This
-     * value is optional. If this value is included, this parameter has a maximum value
-     * of 168 hours (one week).</p>
-     */
     inline bool StartWindowHoursHasBeenSet() const { return m_startWindowHoursHasBeenSet; }
-
-    /**
-     * <p>Defaults to 24 hours.</p> <p>A value in hours after a restore test is
-     * scheduled before a job will be canceled if it doesn't start successfully. This
-     * value is optional. If this value is included, this parameter has a maximum value
-     * of 168 hours (one week).</p>
-     */
     inline void SetStartWindowHours(int value) { m_startWindowHoursHasBeenSet = true; m_startWindowHours = value; }
-
-    /**
-     * <p>Defaults to 24 hours.</p> <p>A value in hours after a restore test is
-     * scheduled before a job will be canceled if it doesn't start successfully. This
-     * value is optional. If this value is included, this parameter has a maximum value
-     * of 168 hours (one week).</p>
-     */
     inline RestoreTestingPlanForList& WithStartWindowHours(int value) { SetStartWindowHours(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationTime;

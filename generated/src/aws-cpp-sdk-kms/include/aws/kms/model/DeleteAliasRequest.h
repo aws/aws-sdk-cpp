@@ -34,54 +34,20 @@ namespace Model
     AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
      * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
-
-    /**
-     * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-     */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
-
-    /**
-     * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-     */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
-
-    /**
-     * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-     */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
-
-    /**
-     * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-     */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
-
-    /**
-     * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-     */
     inline DeleteAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
-
-    /**
-     * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-     */
     inline DeleteAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
-
-    /**
-     * <p>The alias to be deleted. The alias name must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-     */
     inline DeleteAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aliasName;

@@ -26,11 +26,8 @@ ObjectTypeField::ObjectTypeField() :
 {
 }
 
-ObjectTypeField::ObjectTypeField(JsonView jsonValue) : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_contentType(FieldContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
+ObjectTypeField::ObjectTypeField(JsonView jsonValue)
+  : ObjectTypeField()
 {
   *this = jsonValue;
 }

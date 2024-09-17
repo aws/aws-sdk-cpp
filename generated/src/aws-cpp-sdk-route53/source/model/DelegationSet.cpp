@@ -27,10 +27,8 @@ DelegationSet::DelegationSet() :
 {
 }
 
-DelegationSet::DelegationSet(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_nameServersHasBeenSet(false)
+DelegationSet::DelegationSet(const XmlNode& xmlNode)
+  : DelegationSet()
 {
   *this = xmlNode;
 }

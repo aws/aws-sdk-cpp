@@ -5,6 +5,7 @@
 
 #include <aws/iotsitewise/model/UpdateAssetModelCompositeModelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -20,7 +21,11 @@ UpdateAssetModelCompositeModelRequest::UpdateAssetModelCompositeModelRequest() :
     m_assetModelCompositeModelNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_assetModelCompositeModelPropertiesHasBeenSet(false)
+    m_assetModelCompositeModelPropertiesHasBeenSet(false),
+    m_ifMatchHasBeenSet(false),
+    m_ifNoneMatchHasBeenSet(false),
+    m_matchForVersionType(AssetModelVersionType::NOT_SET),
+    m_matchForVersionTypeHasBeenSet(false)
 {
 }
 
@@ -64,6 +69,33 @@ Aws::String UpdateAssetModelCompositeModelRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection UpdateAssetModelCompositeModelRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_ifMatchHasBeenSet)
+  {
+    ss << m_ifMatch;
+    headers.emplace("if-match",  ss.str());
+    ss.str("");
+  }
+
+  if(m_ifNoneMatchHasBeenSet)
+  {
+    ss << m_ifNoneMatch;
+    headers.emplace("if-none-match",  ss.str());
+    ss.str("");
+  }
+
+  if(m_matchForVersionTypeHasBeenSet && m_matchForVersionType != AssetModelVersionType::NOT_SET)
+  {
+    headers.emplace("match-for-version-type", AssetModelVersionTypeMapper::GetNameForAssetModelVersionType(m_matchForVersionType));
+  }
+
+  return headers;
+
 }
 
 

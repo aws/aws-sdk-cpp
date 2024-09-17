@@ -27,20 +27,13 @@ ContentModerationDetection::ContentModerationDetection() :
     m_endTimestampMillis(0),
     m_endTimestampMillisHasBeenSet(false),
     m_durationMillis(0),
-    m_durationMillisHasBeenSet(false)
+    m_durationMillisHasBeenSet(false),
+    m_contentTypesHasBeenSet(false)
 {
 }
 
-ContentModerationDetection::ContentModerationDetection(JsonView jsonValue) : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_moderationLabelHasBeenSet(false),
-    m_startTimestampMillis(0),
-    m_startTimestampMillisHasBeenSet(false),
-    m_endTimestampMillis(0),
-    m_endTimestampMillisHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false)
+ContentModerationDetection::ContentModerationDetection(JsonView jsonValue)
+  : ContentModerationDetection()
 {
   *this = jsonValue;
 }
@@ -82,6 +75,16 @@ ContentModerationDetection& ContentModerationDetection::operator =(JsonView json
     m_durationMillisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentTypes"))
+  {
+    Aws::Utils::Array<JsonView> contentTypesJsonList = jsonValue.GetArray("ContentTypes");
+    for(unsigned contentTypesIndex = 0; contentTypesIndex < contentTypesJsonList.GetLength(); ++contentTypesIndex)
+    {
+      m_contentTypes.push_back(contentTypesJsonList[contentTypesIndex].AsObject());
+    }
+    m_contentTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +119,17 @@ JsonValue ContentModerationDetection::Jsonize() const
   if(m_durationMillisHasBeenSet)
   {
    payload.WithInt64("DurationMillis", m_durationMillis);
+
+  }
+
+  if(m_contentTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> contentTypesJsonList(m_contentTypes.size());
+   for(unsigned contentTypesIndex = 0; contentTypesIndex < contentTypesJsonList.GetLength(); ++contentTypesIndex)
+   {
+     contentTypesJsonList[contentTypesIndex].AsObject(m_contentTypes[contentTypesIndex].Jsonize());
+   }
+   payload.WithArray("ContentTypes", std::move(contentTypesJsonList));
 
   }
 

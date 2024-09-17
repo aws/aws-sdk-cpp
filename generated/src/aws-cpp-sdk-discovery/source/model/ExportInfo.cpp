@@ -32,17 +32,8 @@ ExportInfo::ExportInfo() :
 {
 }
 
-ExportInfo::ExportInfo(JsonView jsonValue) : 
-    m_exportIdHasBeenSet(false),
-    m_exportStatus(ExportStatus::NOT_SET),
-    m_exportStatusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_configurationsDownloadUrlHasBeenSet(false),
-    m_exportRequestTimeHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_requestedStartTimeHasBeenSet(false),
-    m_requestedEndTimeHasBeenSet(false)
+ExportInfo::ExportInfo(JsonView jsonValue)
+  : ExportInfo()
 {
   *this = jsonValue;
 }

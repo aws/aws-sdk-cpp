@@ -26,11 +26,8 @@ SchemaChangePolicy::SchemaChangePolicy() :
 {
 }
 
-SchemaChangePolicy::SchemaChangePolicy(JsonView jsonValue) : 
-    m_updateBehavior(UpdateBehavior::NOT_SET),
-    m_updateBehaviorHasBeenSet(false),
-    m_deleteBehavior(DeleteBehavior::NOT_SET),
-    m_deleteBehaviorHasBeenSet(false)
+SchemaChangePolicy::SchemaChangePolicy(JsonView jsonValue)
+  : SchemaChangePolicy()
 {
   *this = jsonValue;
 }

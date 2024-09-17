@@ -34,67 +34,29 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
      */
     inline const Aws::String& GetDiskName() const{ return m_diskName; }
-
-    /**
-     * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
-     */
     inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
-     */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
-
-    /**
-     * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
-     */
     inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
-
-    /**
-     * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
-     */
     inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
-
-    /**
-     * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
-     */
     inline DeleteDiskRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
-
-    /**
-     * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
-     */
     inline DeleteDiskRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
-     */
     inline DeleteDiskRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
      */
     inline bool GetForceDeleteAddOns() const{ return m_forceDeleteAddOns; }
-
-    /**
-     * <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
-     */
     inline bool ForceDeleteAddOnsHasBeenSet() const { return m_forceDeleteAddOnsHasBeenSet; }
-
-    /**
-     * <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
-     */
     inline void SetForceDeleteAddOns(bool value) { m_forceDeleteAddOnsHasBeenSet = true; m_forceDeleteAddOns = value; }
-
-    /**
-     * <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
-     */
     inline DeleteDiskRequest& WithForceDeleteAddOns(bool value) { SetForceDeleteAddOns(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_diskName;

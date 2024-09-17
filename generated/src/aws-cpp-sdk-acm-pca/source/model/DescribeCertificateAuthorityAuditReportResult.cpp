@@ -22,8 +22,8 @@ DescribeCertificateAuthorityAuditReportResult::DescribeCertificateAuthorityAudit
 {
 }
 
-DescribeCertificateAuthorityAuditReportResult::DescribeCertificateAuthorityAuditReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_auditReportStatus(AuditReportStatus::NOT_SET)
+DescribeCertificateAuthorityAuditReportResult::DescribeCertificateAuthorityAuditReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCertificateAuthorityAuditReportResult()
 {
   *this = result;
 }

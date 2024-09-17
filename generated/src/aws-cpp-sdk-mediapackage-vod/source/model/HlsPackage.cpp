@@ -30,15 +30,8 @@ HlsPackage::HlsPackage() :
 {
 }
 
-HlsPackage::HlsPackage(JsonView jsonValue) : 
-    m_encryptionHasBeenSet(false),
-    m_hlsManifestsHasBeenSet(false),
-    m_includeDvbSubtitles(false),
-    m_includeDvbSubtitlesHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_useAudioRenditionGroup(false),
-    m_useAudioRenditionGroupHasBeenSet(false)
+HlsPackage::HlsPackage(JsonView jsonValue)
+  : HlsPackage()
 {
   *this = jsonValue;
 }

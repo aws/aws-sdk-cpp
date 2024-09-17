@@ -24,9 +24,8 @@ FastLaunchSnapshotConfiguration::FastLaunchSnapshotConfiguration() :
 {
 }
 
-FastLaunchSnapshotConfiguration::FastLaunchSnapshotConfiguration(JsonView jsonValue) : 
-    m_targetResourceCount(0),
-    m_targetResourceCountHasBeenSet(false)
+FastLaunchSnapshotConfiguration::FastLaunchSnapshotConfiguration(JsonView jsonValue)
+  : FastLaunchSnapshotConfiguration()
 {
   *this = jsonValue;
 }

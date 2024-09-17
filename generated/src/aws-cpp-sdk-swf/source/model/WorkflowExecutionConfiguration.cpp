@@ -29,14 +29,8 @@ WorkflowExecutionConfiguration::WorkflowExecutionConfiguration() :
 {
 }
 
-WorkflowExecutionConfiguration::WorkflowExecutionConfiguration(JsonView jsonValue) : 
-    m_taskStartToCloseTimeoutHasBeenSet(false),
-    m_executionStartToCloseTimeoutHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_lambdaRoleHasBeenSet(false)
+WorkflowExecutionConfiguration::WorkflowExecutionConfiguration(JsonView jsonValue)
+  : WorkflowExecutionConfiguration()
 {
   *this = jsonValue;
 }

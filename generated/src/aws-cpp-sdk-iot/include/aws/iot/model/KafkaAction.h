@@ -41,276 +41,94 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
-
-    /**
-     * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-     */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-     */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-
-    /**
-     * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-     */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-     */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-
-    /**
-     * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-     */
     inline KafkaAction& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-     */
     inline KafkaAction& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-     */
     inline KafkaAction& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
-
-    /**
-     * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-     */
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-
-    /**
-     * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-     */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-
-    /**
-     * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-     */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-
-    /**
-     * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-     */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-
-    /**
-     * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-     */
     inline KafkaAction& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-
-    /**
-     * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-     */
     inline KafkaAction& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-
-    /**
-     * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-     */
     inline KafkaAction& WithTopic(const char* value) { SetTopic(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Kafka message key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The Kafka message key.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The Kafka message key.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The Kafka message key.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The Kafka message key.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The Kafka message key.</p>
-     */
     inline KafkaAction& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The Kafka message key.</p>
-     */
     inline KafkaAction& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The Kafka message key.</p>
-     */
     inline KafkaAction& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Kafka message partition.</p>
      */
     inline const Aws::String& GetPartition() const{ return m_partition; }
-
-    /**
-     * <p>The Kafka message partition.</p>
-     */
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
-
-    /**
-     * <p>The Kafka message partition.</p>
-     */
     inline void SetPartition(const Aws::String& value) { m_partitionHasBeenSet = true; m_partition = value; }
-
-    /**
-     * <p>The Kafka message partition.</p>
-     */
     inline void SetPartition(Aws::String&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
-
-    /**
-     * <p>The Kafka message partition.</p>
-     */
     inline void SetPartition(const char* value) { m_partitionHasBeenSet = true; m_partition.assign(value); }
-
-    /**
-     * <p>The Kafka message partition.</p>
-     */
     inline KafkaAction& WithPartition(const Aws::String& value) { SetPartition(value); return *this;}
-
-    /**
-     * <p>The Kafka message partition.</p>
-     */
     inline KafkaAction& WithPartition(Aws::String&& value) { SetPartition(std::move(value)); return *this;}
-
-    /**
-     * <p>The Kafka message partition.</p>
-     */
     inline KafkaAction& WithPartition(const char* value) { SetPartition(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Properties of the Apache Kafka producer client.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientProperties() const{ return m_clientProperties; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline bool ClientPropertiesHasBeenSet() const { return m_clientPropertiesHasBeenSet; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline void SetClientProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties = value; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline void SetClientProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties = std::move(value); }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& WithClientProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetClientProperties(value); return *this;}
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& WithClientProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetClientProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& AddClientProperties(const Aws::String& key, const Aws::String& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, value); return *this; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& AddClientProperties(Aws::String&& key, const Aws::String& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& AddClientProperties(const Aws::String& key, Aws::String&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& AddClientProperties(Aws::String&& key, Aws::String&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& AddClientProperties(const char* key, Aws::String&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& AddClientProperties(Aws::String&& key, const char* value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Properties of the Apache Kafka producer client.</p>
-     */
     inline KafkaAction& AddClientProperties(const char* key, const char* value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of Kafka headers that you specify.</p>
      */
     inline const Aws::Vector<KafkaActionHeader>& GetHeaders() const{ return m_headers; }
-
-    /**
-     * <p>The list of Kafka headers that you specify.</p>
-     */
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-
-    /**
-     * <p>The list of Kafka headers that you specify.</p>
-     */
     inline void SetHeaders(const Aws::Vector<KafkaActionHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
-
-    /**
-     * <p>The list of Kafka headers that you specify.</p>
-     */
     inline void SetHeaders(Aws::Vector<KafkaActionHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-
-    /**
-     * <p>The list of Kafka headers that you specify.</p>
-     */
     inline KafkaAction& WithHeaders(const Aws::Vector<KafkaActionHeader>& value) { SetHeaders(value); return *this;}
-
-    /**
-     * <p>The list of Kafka headers that you specify.</p>
-     */
     inline KafkaAction& WithHeaders(Aws::Vector<KafkaActionHeader>&& value) { SetHeaders(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of Kafka headers that you specify.</p>
-     */
     inline KafkaAction& AddHeaders(const KafkaActionHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
-
-    /**
-     * <p>The list of Kafka headers that you specify.</p>
-     */
     inline KafkaAction& AddHeaders(KafkaActionHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_destinationArn;

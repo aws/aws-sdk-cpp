@@ -26,9 +26,8 @@ ObjectIdentifier::ObjectIdentifier() :
 {
 }
 
-ObjectIdentifier::ObjectIdentifier(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+ObjectIdentifier::ObjectIdentifier(const XmlNode& xmlNode)
+  : ObjectIdentifier()
 {
   *this = xmlNode;
 }

@@ -24,10 +24,8 @@ CreateRouteResult::CreateRouteResult() :
 {
 }
 
-CreateRouteResult::CreateRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_apiKeyRequired(false),
-    m_authorizationType(AuthorizationType::NOT_SET)
+CreateRouteResult::CreateRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateRouteResult()
 {
   *this = result;
 }

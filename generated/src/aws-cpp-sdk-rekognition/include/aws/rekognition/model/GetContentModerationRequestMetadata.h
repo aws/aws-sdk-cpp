@@ -39,67 +39,29 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sorting method chosen for a GetContentModeration request.</p>
      */
     inline const ContentModerationSortBy& GetSortBy() const{ return m_sortBy; }
-
-    /**
-     * <p>The sorting method chosen for a GetContentModeration request.</p>
-     */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-
-    /**
-     * <p>The sorting method chosen for a GetContentModeration request.</p>
-     */
     inline void SetSortBy(const ContentModerationSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-
-    /**
-     * <p>The sorting method chosen for a GetContentModeration request.</p>
-     */
     inline void SetSortBy(ContentModerationSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-
-    /**
-     * <p>The sorting method chosen for a GetContentModeration request.</p>
-     */
     inline GetContentModerationRequestMetadata& WithSortBy(const ContentModerationSortBy& value) { SetSortBy(value); return *this;}
-
-    /**
-     * <p>The sorting method chosen for a GetContentModeration request.</p>
-     */
     inline GetContentModerationRequestMetadata& WithSortBy(ContentModerationSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The aggregation method chosen for a GetContentModeration request.</p>
      */
     inline const ContentModerationAggregateBy& GetAggregateBy() const{ return m_aggregateBy; }
-
-    /**
-     * <p>The aggregation method chosen for a GetContentModeration request.</p>
-     */
     inline bool AggregateByHasBeenSet() const { return m_aggregateByHasBeenSet; }
-
-    /**
-     * <p>The aggregation method chosen for a GetContentModeration request.</p>
-     */
     inline void SetAggregateBy(const ContentModerationAggregateBy& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = value; }
-
-    /**
-     * <p>The aggregation method chosen for a GetContentModeration request.</p>
-     */
     inline void SetAggregateBy(ContentModerationAggregateBy&& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = std::move(value); }
-
-    /**
-     * <p>The aggregation method chosen for a GetContentModeration request.</p>
-     */
     inline GetContentModerationRequestMetadata& WithAggregateBy(const ContentModerationAggregateBy& value) { SetAggregateBy(value); return *this;}
-
-    /**
-     * <p>The aggregation method chosen for a GetContentModeration request.</p>
-     */
     inline GetContentModerationRequestMetadata& WithAggregateBy(ContentModerationAggregateBy&& value) { SetAggregateBy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContentModerationSortBy m_sortBy;

@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The voice profile domain ID.</p>
      */
     inline const Aws::String& GetVoiceProfileDomainId() const{ return m_voiceProfileDomainId; }
-
-    /**
-     * <p>The voice profile domain ID.</p>
-     */
     inline bool VoiceProfileDomainIdHasBeenSet() const { return m_voiceProfileDomainIdHasBeenSet; }
-
-    /**
-     * <p>The voice profile domain ID.</p>
-     */
     inline void SetVoiceProfileDomainId(const Aws::String& value) { m_voiceProfileDomainIdHasBeenSet = true; m_voiceProfileDomainId = value; }
-
-    /**
-     * <p>The voice profile domain ID.</p>
-     */
     inline void SetVoiceProfileDomainId(Aws::String&& value) { m_voiceProfileDomainIdHasBeenSet = true; m_voiceProfileDomainId = std::move(value); }
-
-    /**
-     * <p>The voice profile domain ID.</p>
-     */
     inline void SetVoiceProfileDomainId(const char* value) { m_voiceProfileDomainIdHasBeenSet = true; m_voiceProfileDomainId.assign(value); }
-
-    /**
-     * <p>The voice profile domain ID.</p>
-     */
     inline GetVoiceProfileDomainRequest& WithVoiceProfileDomainId(const Aws::String& value) { SetVoiceProfileDomainId(value); return *this;}
-
-    /**
-     * <p>The voice profile domain ID.</p>
-     */
     inline GetVoiceProfileDomainRequest& WithVoiceProfileDomainId(Aws::String&& value) { SetVoiceProfileDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The voice profile domain ID.</p>
-     */
     inline GetVoiceProfileDomainRequest& WithVoiceProfileDomainId(const char* value) { SetVoiceProfileDomainId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceProfileDomainId;

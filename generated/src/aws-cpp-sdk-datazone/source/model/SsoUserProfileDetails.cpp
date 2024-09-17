@@ -25,10 +25,8 @@ SsoUserProfileDetails::SsoUserProfileDetails() :
 {
 }
 
-SsoUserProfileDetails::SsoUserProfileDetails(JsonView jsonValue) : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+SsoUserProfileDetails::SsoUserProfileDetails(JsonView jsonValue)
+  : SsoUserProfileDetails()
 {
   *this = jsonValue;
 }

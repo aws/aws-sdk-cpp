@@ -490,13 +490,13 @@ namespace SSMIncidents
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentRecords">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIncidentRecordsOutcome ListIncidentRecords(const Model::ListIncidentRecordsRequest& request) const;
+        virtual Model::ListIncidentRecordsOutcome ListIncidentRecords(const Model::ListIncidentRecordsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIncidentRecords that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIncidentRecordsRequestT = Model::ListIncidentRecordsRequest>
-        Model::ListIncidentRecordsOutcomeCallable ListIncidentRecordsCallable(const ListIncidentRecordsRequestT& request) const
+        Model::ListIncidentRecordsOutcomeCallable ListIncidentRecordsCallable(const ListIncidentRecordsRequestT& request = {}) const
         {
             return SubmitCallable(&SSMIncidentsClient::ListIncidentRecords, request);
         }
@@ -505,7 +505,7 @@ namespace SSMIncidents
          * An Async wrapper for ListIncidentRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIncidentRecordsRequestT = Model::ListIncidentRecordsRequest>
-        void ListIncidentRecordsAsync(const ListIncidentRecordsRequestT& request, const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIncidentRecordsAsync(const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIncidentRecordsRequestT& request = {}) const
         {
             return SubmitAsync(&SSMIncidentsClient::ListIncidentRecords, request, handler, context);
         }
@@ -541,13 +541,13 @@ namespace SSMIncidents
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListReplicationSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReplicationSetsOutcome ListReplicationSets(const Model::ListReplicationSetsRequest& request) const;
+        virtual Model::ListReplicationSetsOutcome ListReplicationSets(const Model::ListReplicationSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReplicationSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReplicationSetsRequestT = Model::ListReplicationSetsRequest>
-        Model::ListReplicationSetsOutcomeCallable ListReplicationSetsCallable(const ListReplicationSetsRequestT& request) const
+        Model::ListReplicationSetsOutcomeCallable ListReplicationSetsCallable(const ListReplicationSetsRequestT& request = {}) const
         {
             return SubmitCallable(&SSMIncidentsClient::ListReplicationSets, request);
         }
@@ -556,7 +556,7 @@ namespace SSMIncidents
          * An Async wrapper for ListReplicationSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReplicationSetsRequestT = Model::ListReplicationSetsRequest>
-        void ListReplicationSetsAsync(const ListReplicationSetsRequestT& request, const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReplicationSetsAsync(const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReplicationSetsRequestT& request = {}) const
         {
             return SubmitAsync(&SSMIncidentsClient::ListReplicationSets, request, handler, context);
         }
@@ -566,13 +566,13 @@ namespace SSMIncidents
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListResponsePlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResponsePlansOutcome ListResponsePlans(const Model::ListResponsePlansRequest& request) const;
+        virtual Model::ListResponsePlansOutcome ListResponsePlans(const Model::ListResponsePlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResponsePlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResponsePlansRequestT = Model::ListResponsePlansRequest>
-        Model::ListResponsePlansOutcomeCallable ListResponsePlansCallable(const ListResponsePlansRequestT& request) const
+        Model::ListResponsePlansOutcomeCallable ListResponsePlansCallable(const ListResponsePlansRequestT& request = {}) const
         {
             return SubmitCallable(&SSMIncidentsClient::ListResponsePlans, request);
         }
@@ -581,7 +581,7 @@ namespace SSMIncidents
          * An Async wrapper for ListResponsePlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResponsePlansRequestT = Model::ListResponsePlansRequest>
-        void ListResponsePlansAsync(const ListResponsePlansRequestT& request, const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResponsePlansAsync(const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResponsePlansRequestT& request = {}) const
         {
             return SubmitAsync(&SSMIncidentsClient::ListResponsePlans, request, handler, context);
         }
@@ -909,7 +909,6 @@ namespace SSMIncidents
       void init(const SSMIncidentsClientConfiguration& clientConfiguration);
 
       SSMIncidentsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SSMIncidentsEndpointProviderBase> m_endpointProvider;
   };
 

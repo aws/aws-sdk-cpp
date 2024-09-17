@@ -30,15 +30,8 @@ ClipLimits::ClipLimits() :
 {
 }
 
-ClipLimits::ClipLimits(JsonView jsonValue) : 
-    m_maximumRGBTolerance(0),
-    m_maximumRGBToleranceHasBeenSet(false),
-    m_maximumYUV(0),
-    m_maximumYUVHasBeenSet(false),
-    m_minimumRGBTolerance(0),
-    m_minimumRGBToleranceHasBeenSet(false),
-    m_minimumYUV(0),
-    m_minimumYUVHasBeenSet(false)
+ClipLimits::ClipLimits(JsonView jsonValue)
+  : ClipLimits()
 {
   *this = jsonValue;
 }

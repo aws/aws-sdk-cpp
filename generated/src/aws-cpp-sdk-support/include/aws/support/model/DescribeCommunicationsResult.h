@@ -40,99 +40,42 @@ namespace Model
     AWS_SUPPORT_API DescribeCommunicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The communications for the case.</p>
      */
     inline const Aws::Vector<Communication>& GetCommunications() const{ return m_communications; }
-
-    /**
-     * <p>The communications for the case.</p>
-     */
     inline void SetCommunications(const Aws::Vector<Communication>& value) { m_communications = value; }
-
-    /**
-     * <p>The communications for the case.</p>
-     */
     inline void SetCommunications(Aws::Vector<Communication>&& value) { m_communications = std::move(value); }
-
-    /**
-     * <p>The communications for the case.</p>
-     */
     inline DescribeCommunicationsResult& WithCommunications(const Aws::Vector<Communication>& value) { SetCommunications(value); return *this;}
-
-    /**
-     * <p>The communications for the case.</p>
-     */
     inline DescribeCommunicationsResult& WithCommunications(Aws::Vector<Communication>&& value) { SetCommunications(std::move(value)); return *this;}
-
-    /**
-     * <p>The communications for the case.</p>
-     */
     inline DescribeCommunicationsResult& AddCommunications(const Communication& value) { m_communications.push_back(value); return *this; }
-
-    /**
-     * <p>The communications for the case.</p>
-     */
     inline DescribeCommunicationsResult& AddCommunications(Communication&& value) { m_communications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A resumption point for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline DescribeCommunicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline DescribeCommunicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline DescribeCommunicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCommunicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCommunicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCommunicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Communication> m_communications;

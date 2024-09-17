@@ -30,15 +30,8 @@ ECSTarget::ECSTarget() :
 {
 }
 
-ECSTarget::ECSTarget(JsonView jsonValue) : 
-    m_deploymentIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_taskSetsInfoHasBeenSet(false)
+ECSTarget::ECSTarget(JsonView jsonValue)
+  : ECSTarget()
 {
   *this = jsonValue;
 }

@@ -25,6 +25,7 @@
 #include <aws/emr-serverless/model/GetDashboardForJobRunResult.h>
 #include <aws/emr-serverless/model/GetJobRunResult.h>
 #include <aws/emr-serverless/model/ListApplicationsResult.h>
+#include <aws/emr-serverless/model/ListJobRunAttemptsResult.h>
 #include <aws/emr-serverless/model/ListJobRunsResult.h>
 #include <aws/emr-serverless/model/ListTagsForResourceResult.h>
 #include <aws/emr-serverless/model/StartApplicationResult.h>
@@ -33,6 +34,7 @@
 #include <aws/emr-serverless/model/TagResourceResult.h>
 #include <aws/emr-serverless/model/UntagResourceResult.h>
 #include <aws/emr-serverless/model/UpdateApplicationResult.h>
+#include <aws/emr-serverless/model/ListApplicationsRequest.h>
 /* End of service model headers required in EMRServerlessClient header */
 
 namespace Aws
@@ -66,7 +68,7 @@ namespace Aws
 
   namespace EMRServerless
   {
-    using EMRServerlessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMRServerlessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EMRServerlessEndpointProviderBase = Aws::EMRServerless::Endpoint::EMRServerlessEndpointProviderBase;
     using EMRServerlessEndpointProvider = Aws::EMRServerless::Endpoint::EMRServerlessEndpointProvider;
 
@@ -80,6 +82,7 @@ namespace Aws
       class GetDashboardForJobRunRequest;
       class GetJobRunRequest;
       class ListApplicationsRequest;
+      class ListJobRunAttemptsRequest;
       class ListJobRunsRequest;
       class ListTagsForResourceRequest;
       class StartApplicationRequest;
@@ -98,6 +101,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDashboardForJobRunResult, EMRServerlessError> GetDashboardForJobRunOutcome;
       typedef Aws::Utils::Outcome<GetJobRunResult, EMRServerlessError> GetJobRunOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, EMRServerlessError> ListApplicationsOutcome;
+      typedef Aws::Utils::Outcome<ListJobRunAttemptsResult, EMRServerlessError> ListJobRunAttemptsOutcome;
       typedef Aws::Utils::Outcome<ListJobRunsResult, EMRServerlessError> ListJobRunsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, EMRServerlessError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<StartApplicationResult, EMRServerlessError> StartApplicationOutcome;
@@ -116,6 +120,7 @@ namespace Aws
       typedef std::future<GetDashboardForJobRunOutcome> GetDashboardForJobRunOutcomeCallable;
       typedef std::future<GetJobRunOutcome> GetJobRunOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
+      typedef std::future<ListJobRunAttemptsOutcome> ListJobRunAttemptsOutcomeCallable;
       typedef std::future<ListJobRunsOutcome> ListJobRunsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
@@ -137,6 +142,7 @@ namespace Aws
     typedef std::function<void(const EMRServerlessClient*, const Model::GetDashboardForJobRunRequest&, const Model::GetDashboardForJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardForJobRunResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::GetJobRunRequest&, const Model::GetJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobRunResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
+    typedef std::function<void(const EMRServerlessClient*, const Model::ListJobRunAttemptsRequest&, const Model::ListJobRunAttemptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobRunAttemptsResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::ListJobRunsRequest&, const Model::ListJobRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobRunsResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EMRServerlessClient*, const Model::StartApplicationRequest&, const Model::StartApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartApplicationResponseReceivedHandler;

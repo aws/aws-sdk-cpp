@@ -30,15 +30,8 @@ GrokClassifier::GrokClassifier() :
 {
 }
 
-GrokClassifier::GrokClassifier(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_grokPatternHasBeenSet(false),
-    m_customPatternsHasBeenSet(false)
+GrokClassifier::GrokClassifier(JsonView jsonValue)
+  : GrokClassifier()
 {
   *this = jsonValue;
 }

@@ -30,13 +30,8 @@ SigningCertificate::SigningCertificate() :
 {
 }
 
-SigningCertificate::SigningCertificate(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadDateHasBeenSet(false)
+SigningCertificate::SigningCertificate(const XmlNode& xmlNode)
+  : SigningCertificate()
 {
   *this = xmlNode;
 }

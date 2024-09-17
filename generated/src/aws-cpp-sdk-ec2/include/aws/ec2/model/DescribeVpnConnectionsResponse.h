@@ -39,57 +39,27 @@ namespace Model
     AWS_EC2_API DescribeVpnConnectionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about one or more VPN connections.</p>
      */
     inline const Aws::Vector<VpnConnection>& GetVpnConnections() const{ return m_vpnConnections; }
-
-    /**
-     * <p>Information about one or more VPN connections.</p>
-     */
     inline void SetVpnConnections(const Aws::Vector<VpnConnection>& value) { m_vpnConnections = value; }
-
-    /**
-     * <p>Information about one or more VPN connections.</p>
-     */
     inline void SetVpnConnections(Aws::Vector<VpnConnection>&& value) { m_vpnConnections = std::move(value); }
-
-    /**
-     * <p>Information about one or more VPN connections.</p>
-     */
     inline DescribeVpnConnectionsResponse& WithVpnConnections(const Aws::Vector<VpnConnection>& value) { SetVpnConnections(value); return *this;}
-
-    /**
-     * <p>Information about one or more VPN connections.</p>
-     */
     inline DescribeVpnConnectionsResponse& WithVpnConnections(Aws::Vector<VpnConnection>&& value) { SetVpnConnections(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about one or more VPN connections.</p>
-     */
     inline DescribeVpnConnectionsResponse& AddVpnConnections(const VpnConnection& value) { m_vpnConnections.push_back(value); return *this; }
-
-    /**
-     * <p>Information about one or more VPN connections.</p>
-     */
     inline DescribeVpnConnectionsResponse& AddVpnConnections(VpnConnection&& value) { m_vpnConnections.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeVpnConnectionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeVpnConnectionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<VpnConnection> m_vpnConnections;

@@ -23,8 +23,8 @@ RedshiftCredentialConfiguration::RedshiftCredentialConfiguration() :
 {
 }
 
-RedshiftCredentialConfiguration::RedshiftCredentialConfiguration(JsonView jsonValue) : 
-    m_secretManagerArnHasBeenSet(false)
+RedshiftCredentialConfiguration::RedshiftCredentialConfiguration(JsonView jsonValue)
+  : RedshiftCredentialConfiguration()
 {
   *this = jsonValue;
 }

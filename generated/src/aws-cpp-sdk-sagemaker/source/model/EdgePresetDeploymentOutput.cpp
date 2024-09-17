@@ -28,13 +28,8 @@ EdgePresetDeploymentOutput::EdgePresetDeploymentOutput() :
 {
 }
 
-EdgePresetDeploymentOutput::EdgePresetDeploymentOutput(JsonView jsonValue) : 
-    m_type(EdgePresetDeploymentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_artifactHasBeenSet(false),
-    m_status(EdgePresetDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+EdgePresetDeploymentOutput::EdgePresetDeploymentOutput(JsonView jsonValue)
+  : EdgePresetDeploymentOutput()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ S3ContentBaseLocation::S3ContentBaseLocation() :
 {
 }
 
-S3ContentBaseLocation::S3ContentBaseLocation(JsonView jsonValue) : 
-    m_bucketARNHasBeenSet(false),
-    m_basePathHasBeenSet(false)
+S3ContentBaseLocation::S3ContentBaseLocation(JsonView jsonValue)
+  : S3ContentBaseLocation()
 {
   *this = jsonValue;
 }

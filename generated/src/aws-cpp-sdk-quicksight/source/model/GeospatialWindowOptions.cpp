@@ -25,10 +25,8 @@ GeospatialWindowOptions::GeospatialWindowOptions() :
 {
 }
 
-GeospatialWindowOptions::GeospatialWindowOptions(JsonView jsonValue) : 
-    m_boundsHasBeenSet(false),
-    m_mapZoomMode(MapZoomMode::NOT_SET),
-    m_mapZoomModeHasBeenSet(false)
+GeospatialWindowOptions::GeospatialWindowOptions(JsonView jsonValue)
+  : GeospatialWindowOptions()
 {
   *this = jsonValue;
 }

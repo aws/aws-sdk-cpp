@@ -23,8 +23,8 @@ InvokedIntentSample::InvokedIntentSample() :
 {
 }
 
-InvokedIntentSample::InvokedIntentSample(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false)
+InvokedIntentSample::InvokedIntentSample(JsonView jsonValue)
+  : InvokedIntentSample()
 {
   *this = jsonValue;
 }

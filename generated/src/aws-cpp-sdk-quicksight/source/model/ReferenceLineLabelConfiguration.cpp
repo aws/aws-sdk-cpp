@@ -30,15 +30,8 @@ ReferenceLineLabelConfiguration::ReferenceLineLabelConfiguration() :
 {
 }
 
-ReferenceLineLabelConfiguration::ReferenceLineLabelConfiguration(JsonView jsonValue) : 
-    m_valueLabelConfigurationHasBeenSet(false),
-    m_customLabelConfigurationHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false),
-    m_fontColorHasBeenSet(false),
-    m_horizontalPosition(ReferenceLineLabelHorizontalPosition::NOT_SET),
-    m_horizontalPositionHasBeenSet(false),
-    m_verticalPosition(ReferenceLineLabelVerticalPosition::NOT_SET),
-    m_verticalPositionHasBeenSet(false)
+ReferenceLineLabelConfiguration::ReferenceLineLabelConfiguration(JsonView jsonValue)
+  : ReferenceLineLabelConfiguration()
 {
   *this = jsonValue;
 }

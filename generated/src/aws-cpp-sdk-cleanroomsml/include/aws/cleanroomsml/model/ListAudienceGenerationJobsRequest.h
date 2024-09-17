@@ -38,186 +38,73 @@ namespace Model
     AWS_CLEANROOMSML_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
-
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
-
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
-
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline ListAudienceGenerationJobsRequest& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline ListAudienceGenerationJobsRequest& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the collaboration that contains the audience generation
-     * jobs that you are interested in.</p>
-     */
-    inline ListAudienceGenerationJobsRequest& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
-
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline const Aws::String& GetConfiguredAudienceModelArn() const{ return m_configuredAudienceModelArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline bool ConfiguredAudienceModelArnHasBeenSet() const { return m_configuredAudienceModelArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline void SetConfiguredAudienceModelArn(const Aws::String& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline void SetConfiguredAudienceModelArn(Aws::String&& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline void SetConfiguredAudienceModelArn(const char* value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline ListAudienceGenerationJobsRequest& WithConfiguredAudienceModelArn(const Aws::String& value) { SetConfiguredAudienceModelArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline ListAudienceGenerationJobsRequest& WithConfiguredAudienceModelArn(Aws::String&& value) { SetConfiguredAudienceModelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
-     * for the audience generation jobs that you are interested in.</p>
-     */
-    inline ListAudienceGenerationJobsRequest& WithConfiguredAudienceModelArn(const char* value) { SetConfiguredAudienceModelArn(value); return *this;}
-
-
-    /**
-     * <p>The maximum size of the results that is returned per call.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum size of the results that is returned per call.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum size of the results that is returned per call.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum size of the results that is returned per call.</p>
-     */
-    inline ListAudienceGenerationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
+    ///@{
     /**
      * <p>The token value retrieved from a previous call to access the next page of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListAudienceGenerationJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListAudienceGenerationJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListAudienceGenerationJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The maximum size of the results that is returned per call.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListAudienceGenerationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the configured audience model that was used
+     * for the audience generation jobs that you are interested in.</p>
+     */
+    inline const Aws::String& GetConfiguredAudienceModelArn() const{ return m_configuredAudienceModelArn; }
+    inline bool ConfiguredAudienceModelArnHasBeenSet() const { return m_configuredAudienceModelArnHasBeenSet; }
+    inline void SetConfiguredAudienceModelArn(const Aws::String& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = value; }
+    inline void SetConfiguredAudienceModelArn(Aws::String&& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = std::move(value); }
+    inline void SetConfiguredAudienceModelArn(const char* value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn.assign(value); }
+    inline ListAudienceGenerationJobsRequest& WithConfiguredAudienceModelArn(const Aws::String& value) { SetConfiguredAudienceModelArn(value); return *this;}
+    inline ListAudienceGenerationJobsRequest& WithConfiguredAudienceModelArn(Aws::String&& value) { SetConfiguredAudienceModelArn(std::move(value)); return *this;}
+    inline ListAudienceGenerationJobsRequest& WithConfiguredAudienceModelArn(const char* value) { SetConfiguredAudienceModelArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the collaboration that contains the audience generation
+     * jobs that you are interested in.</p>
+     */
+    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
+    inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
+    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
+    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
+    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
+    inline ListAudienceGenerationJobsRequest& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
+    inline ListAudienceGenerationJobsRequest& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
+    inline ListAudienceGenerationJobsRequest& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    ///@}
   private:
 
-    Aws::String m_collaborationId;
-    bool m_collaborationIdHasBeenSet = false;
-
-    Aws::String m_configuredAudienceModelArn;
-    bool m_configuredAudienceModelArnHasBeenSet = false;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    Aws::String m_configuredAudienceModelArn;
+    bool m_configuredAudienceModelArnHasBeenSet = false;
+
+    Aws::String m_collaborationId;
+    bool m_collaborationIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,8 @@ SparkSubmit::SparkSubmit() :
 {
 }
 
-SparkSubmit::SparkSubmit(JsonView jsonValue) : 
-    m_entryPointHasBeenSet(false),
-    m_entryPointArgumentsHasBeenSet(false),
-    m_sparkSubmitParametersHasBeenSet(false)
+SparkSubmit::SparkSubmit(JsonView jsonValue)
+  : SparkSubmit()
 {
   *this = jsonValue;
 }

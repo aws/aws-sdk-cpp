@@ -25,10 +25,8 @@ ReportDestinationS3::ReportDestinationS3() :
 {
 }
 
-ReportDestinationS3::ReportDestinationS3(JsonView jsonValue) : 
-    m_subdirectoryHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false),
-    m_bucketAccessRoleArnHasBeenSet(false)
+ReportDestinationS3::ReportDestinationS3(JsonView jsonValue)
+  : ReportDestinationS3()
 {
   *this = jsonValue;
 }

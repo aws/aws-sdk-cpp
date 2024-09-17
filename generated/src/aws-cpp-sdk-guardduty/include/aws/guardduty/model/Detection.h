@@ -38,42 +38,18 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The details about the anomalous activity that caused GuardDuty to generate
      * the finding.</p>
      */
     inline const Anomaly& GetAnomaly() const{ return m_anomaly; }
-
-    /**
-     * <p>The details about the anomalous activity that caused GuardDuty to generate
-     * the finding.</p>
-     */
     inline bool AnomalyHasBeenSet() const { return m_anomalyHasBeenSet; }
-
-    /**
-     * <p>The details about the anomalous activity that caused GuardDuty to generate
-     * the finding.</p>
-     */
     inline void SetAnomaly(const Anomaly& value) { m_anomalyHasBeenSet = true; m_anomaly = value; }
-
-    /**
-     * <p>The details about the anomalous activity that caused GuardDuty to generate
-     * the finding.</p>
-     */
     inline void SetAnomaly(Anomaly&& value) { m_anomalyHasBeenSet = true; m_anomaly = std::move(value); }
-
-    /**
-     * <p>The details about the anomalous activity that caused GuardDuty to generate
-     * the finding.</p>
-     */
     inline Detection& WithAnomaly(const Anomaly& value) { SetAnomaly(value); return *this;}
-
-    /**
-     * <p>The details about the anomalous activity that caused GuardDuty to generate
-     * the finding.</p>
-     */
     inline Detection& WithAnomaly(Anomaly&& value) { SetAnomaly(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Anomaly m_anomaly;

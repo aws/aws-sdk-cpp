@@ -35,20 +35,8 @@ DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties()
 {
 }
 
-DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties(JsonView jsonValue) : 
-    m_jobIdHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties(JsonView jsonValue)
+  : DominantLanguageDetectionJobProperties()
 {
   *this = jsonValue;
 }

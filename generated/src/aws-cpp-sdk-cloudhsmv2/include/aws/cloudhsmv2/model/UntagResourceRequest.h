@@ -35,109 +35,36 @@ namespace Model
     AWS_CLOUDHSMV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
      * find the cluster ID, use <a>DescribeClusters</a>.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
-     * find the cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
-     * find the cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
-     * find the cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
-     * find the cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
-     * find the cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline UntagResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
-     * find the cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline UntagResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
-     * find the cluster ID, use <a>DescribeClusters</a>.</p>
-     */
     inline UntagResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of one or more tag keys for the tags that you are removing. Specify
      * only the tag keys, not the tag values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline void SetTagKeyList(const Aws::Vector<Aws::String>& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = value; }
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline void SetTagKeyList(Aws::Vector<Aws::String>&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = std::move(value); }
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline UntagResourceRequest& WithTagKeyList(const Aws::Vector<Aws::String>& value) { SetTagKeyList(value); return *this;}
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline UntagResourceRequest& WithTagKeyList(Aws::Vector<Aws::String>&& value) { SetTagKeyList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline UntagResourceRequest& AddTagKeyList(const Aws::String& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline UntagResourceRequest& AddTagKeyList(Aws::String&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of one or more tag keys for the tags that you are removing. Specify
-     * only the tag keys, not the tag values.</p>
-     */
     inline UntagResourceRequest& AddTagKeyList(const char* value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceId;

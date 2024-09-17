@@ -39,63 +39,23 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The friendly name of the platform. This name helps you identify the
      * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
      * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The friendly name of the platform. This name helps you identify the
-     * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
-     * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The friendly name of the platform. This name helps you identify the
-     * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
-     * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The friendly name of the platform. This name helps you identify the
-     * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
-     * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The friendly name of the platform. This name helps you identify the
-     * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
-     * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The friendly name of the platform. This name helps you identify the
-     * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
-     * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-     */
     inline ComponentPlatform& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The friendly name of the platform. This name helps you identify the
-     * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
-     * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-     */
     inline ComponentPlatform& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The friendly name of the platform. This name helps you identify the
-     * platform.</p> <p>If you omit this parameter, IoT Greengrass creates a friendly
-     * name from the <code>os</code> and <code>architecture</code> of the platform.</p>
-     */
     inline ComponentPlatform& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
      * defines the <code>os</code> and <code>architecture</code> by default. You can
@@ -105,127 +65,19 @@ namespace Model
      * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A dictionary of attributes for the platform. The IoT Greengrass Core software
-     * defines the <code>os</code> and <code>architecture</code> by default. You can
-     * specify additional platform attributes for a core device when you deploy the
-     * Greengrass nucleus component. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
-     * nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-     */
     inline ComponentPlatform& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

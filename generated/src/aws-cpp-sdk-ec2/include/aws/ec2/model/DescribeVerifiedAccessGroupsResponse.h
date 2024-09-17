@@ -35,100 +35,41 @@ namespace Model
     AWS_EC2_API DescribeVerifiedAccessGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Details about the Verified Access groups.</p>
      */
     inline const Aws::Vector<VerifiedAccessGroup>& GetVerifiedAccessGroups() const{ return m_verifiedAccessGroups; }
-
-    /**
-     * <p>Details about the Verified Access groups.</p>
-     */
     inline void SetVerifiedAccessGroups(const Aws::Vector<VerifiedAccessGroup>& value) { m_verifiedAccessGroups = value; }
-
-    /**
-     * <p>Details about the Verified Access groups.</p>
-     */
     inline void SetVerifiedAccessGroups(Aws::Vector<VerifiedAccessGroup>&& value) { m_verifiedAccessGroups = std::move(value); }
-
-    /**
-     * <p>Details about the Verified Access groups.</p>
-     */
     inline DescribeVerifiedAccessGroupsResponse& WithVerifiedAccessGroups(const Aws::Vector<VerifiedAccessGroup>& value) { SetVerifiedAccessGroups(value); return *this;}
-
-    /**
-     * <p>Details about the Verified Access groups.</p>
-     */
     inline DescribeVerifiedAccessGroupsResponse& WithVerifiedAccessGroups(Aws::Vector<VerifiedAccessGroup>&& value) { SetVerifiedAccessGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Details about the Verified Access groups.</p>
-     */
     inline DescribeVerifiedAccessGroupsResponse& AddVerifiedAccessGroups(const VerifiedAccessGroup& value) { m_verifiedAccessGroups.push_back(value); return *this; }
-
-    /**
-     * <p>Details about the Verified Access groups.</p>
-     */
     inline DescribeVerifiedAccessGroupsResponse& AddVerifiedAccessGroups(VerifiedAccessGroup&& value) { m_verifiedAccessGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeVerifiedAccessGroupsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeVerifiedAccessGroupsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeVerifiedAccessGroupsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeVerifiedAccessGroupsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeVerifiedAccessGroupsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<VerifiedAccessGroup> m_verifiedAccessGroups;

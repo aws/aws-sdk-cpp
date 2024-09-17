@@ -47,6 +47,10 @@
 #include <aws/elasticloadbalancing/model/SetLoadBalancerListenerSSLCertificateResult.h>
 #include <aws/elasticloadbalancing/model/SetLoadBalancerPoliciesForBackendServerResult.h>
 #include <aws/elasticloadbalancing/model/SetLoadBalancerPoliciesOfListenerResult.h>
+#include <aws/elasticloadbalancing/model/DescribeLoadBalancerPoliciesRequest.h>
+#include <aws/elasticloadbalancing/model/DescribeAccountLimitsRequest.h>
+#include <aws/elasticloadbalancing/model/DescribeLoadBalancerPolicyTypesRequest.h>
+#include <aws/elasticloadbalancing/model/DescribeLoadBalancersRequest.h>
 /* End of service model headers required in ElasticLoadBalancingClient header */
 
 namespace Aws
@@ -80,7 +84,7 @@ namespace Aws
 
   namespace ElasticLoadBalancing
   {
-    using ElasticLoadBalancingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticLoadBalancingClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ElasticLoadBalancingEndpointProviderBase = Aws::ElasticLoadBalancing::Endpoint::ElasticLoadBalancingEndpointProviderBase;
     using ElasticLoadBalancingEndpointProvider = Aws::ElasticLoadBalancing::Endpoint::ElasticLoadBalancingEndpointProvider;
 

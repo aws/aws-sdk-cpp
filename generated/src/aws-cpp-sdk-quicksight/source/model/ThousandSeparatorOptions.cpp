@@ -26,11 +26,8 @@ ThousandSeparatorOptions::ThousandSeparatorOptions() :
 {
 }
 
-ThousandSeparatorOptions::ThousandSeparatorOptions(JsonView jsonValue) : 
-    m_symbol(NumericSeparatorSymbol::NOT_SET),
-    m_symbolHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+ThousandSeparatorOptions::ThousandSeparatorOptions(JsonView jsonValue)
+  : ThousandSeparatorOptions()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ DocumentMetadataResponseInfo::DocumentMetadataResponseInfo() :
 {
 }
 
-DocumentMetadataResponseInfo::DocumentMetadataResponseInfo(JsonView jsonValue) : 
-    m_reviewerResponseHasBeenSet(false)
+DocumentMetadataResponseInfo::DocumentMetadataResponseInfo(JsonView jsonValue)
+  : DocumentMetadataResponseInfo()
 {
   *this = jsonValue;
 }

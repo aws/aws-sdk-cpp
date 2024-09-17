@@ -36,26 +36,15 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p> Indicates the number of sensors that have less than 90 days of data. </p>
+     * <p> Indicates the number of sensors that have less than 14 days of data. </p>
      */
     inline int GetAffectedSensorCount() const{ return m_affectedSensorCount; }
-
-    /**
-     * <p> Indicates the number of sensors that have less than 90 days of data. </p>
-     */
     inline bool AffectedSensorCountHasBeenSet() const { return m_affectedSensorCountHasBeenSet; }
-
-    /**
-     * <p> Indicates the number of sensors that have less than 90 days of data. </p>
-     */
     inline void SetAffectedSensorCount(int value) { m_affectedSensorCountHasBeenSet = true; m_affectedSensorCount = value; }
-
-    /**
-     * <p> Indicates the number of sensors that have less than 90 days of data. </p>
-     */
     inline SensorsWithShortDateRange& WithAffectedSensorCount(int value) { SetAffectedSensorCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_affectedSensorCount;

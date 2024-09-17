@@ -27,10 +27,8 @@ PurchaseRequest::PurchaseRequest() :
 {
 }
 
-PurchaseRequest::PurchaseRequest(const XmlNode& xmlNode) : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_purchaseTokenHasBeenSet(false)
+PurchaseRequest::PurchaseRequest(const XmlNode& xmlNode)
+  : PurchaseRequest()
 {
   *this = xmlNode;
 }

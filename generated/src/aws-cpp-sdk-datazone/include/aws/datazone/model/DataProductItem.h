@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/DataProductItemType.h>
 #include <utility>
 
 namespace Aws
@@ -24,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The data product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DataProductItem">AWS
    * API Reference</a></p>
    */
@@ -37,94 +39,73 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p/>
+     * <p>The glossary terms of the data product.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const{ return m_glossaryTerms; }
+    inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
+    inline void SetGlossaryTerms(const Aws::Vector<Aws::String>& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = value; }
+    inline void SetGlossaryTerms(Aws::Vector<Aws::String>&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::move(value); }
+    inline DataProductItem& WithGlossaryTerms(const Aws::Vector<Aws::String>& value) { SetGlossaryTerms(value); return *this;}
+    inline DataProductItem& WithGlossaryTerms(Aws::Vector<Aws::String>&& value) { SetGlossaryTerms(std::move(value)); return *this;}
+    inline DataProductItem& AddGlossaryTerms(const Aws::String& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(value); return *this; }
+    inline DataProductItem& AddGlossaryTerms(Aws::String&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(std::move(value)); return *this; }
+    inline DataProductItem& AddGlossaryTerms(const char* value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(value); return *this; }
+    ///@}
 
+    ///@{
     /**
-     * <p/>
+     * <p>The ID of the data product.</p>
      */
-    inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
+    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
+    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
+    inline DataProductItem& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
+    inline DataProductItem& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
+    inline DataProductItem& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    ///@}
 
+    ///@{
     /**
-     * <p/>
+     * <p>The type of the data product.</p>
      */
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
+    inline const DataProductItemType& GetItemType() const{ return m_itemType; }
+    inline bool ItemTypeHasBeenSet() const { return m_itemTypeHasBeenSet; }
+    inline void SetItemType(const DataProductItemType& value) { m_itemTypeHasBeenSet = true; m_itemType = value; }
+    inline void SetItemType(DataProductItemType&& value) { m_itemTypeHasBeenSet = true; m_itemType = std::move(value); }
+    inline DataProductItem& WithItemType(const DataProductItemType& value) { SetItemType(value); return *this;}
+    inline DataProductItem& WithItemType(DataProductItemType&& value) { SetItemType(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
     /**
-     * <p/>
+     * <p>The revision of the data product.</p>
      */
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p/>
-     */
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p/>
-     */
-    inline DataProductItem& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p/>
-     */
-    inline DataProductItem& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
-    inline DataProductItem& WithDomainId(const char* value) { SetDomainId(value); return *this;}
-
-
-    /**
-     * <p/>
-     */
-    inline const Aws::String& GetItemId() const{ return m_itemId; }
-
-    /**
-     * <p/>
-     */
-    inline bool ItemIdHasBeenSet() const { return m_itemIdHasBeenSet; }
-
-    /**
-     * <p/>
-     */
-    inline void SetItemId(const Aws::String& value) { m_itemIdHasBeenSet = true; m_itemId = value; }
-
-    /**
-     * <p/>
-     */
-    inline void SetItemId(Aws::String&& value) { m_itemIdHasBeenSet = true; m_itemId = std::move(value); }
-
-    /**
-     * <p/>
-     */
-    inline void SetItemId(const char* value) { m_itemIdHasBeenSet = true; m_itemId.assign(value); }
-
-    /**
-     * <p/>
-     */
-    inline DataProductItem& WithItemId(const Aws::String& value) { SetItemId(value); return *this;}
-
-    /**
-     * <p/>
-     */
-    inline DataProductItem& WithItemId(Aws::String&& value) { SetItemId(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
-    inline DataProductItem& WithItemId(const char* value) { SetItemId(value); return *this;}
-
+    inline const Aws::String& GetRevision() const{ return m_revision; }
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+    inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
+    inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
+    inline DataProductItem& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
+    inline DataProductItem& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
+    inline DataProductItem& WithRevision(const char* value) { SetRevision(value); return *this;}
+    ///@}
   private:
 
-    Aws::String m_domainId;
-    bool m_domainIdHasBeenSet = false;
+    Aws::Vector<Aws::String> m_glossaryTerms;
+    bool m_glossaryTermsHasBeenSet = false;
 
-    Aws::String m_itemId;
-    bool m_itemIdHasBeenSet = false;
+    Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
+
+    DataProductItemType m_itemType;
+    bool m_itemTypeHasBeenSet = false;
+
+    Aws::String m_revision;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

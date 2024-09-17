@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using CodeStarconnectionsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeStarconnectionsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using CodeStarconnectionsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeStarconnectionsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

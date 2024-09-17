@@ -25,10 +25,8 @@ RadarChartAggregatedFieldWells::RadarChartAggregatedFieldWells() :
 {
 }
 
-RadarChartAggregatedFieldWells::RadarChartAggregatedFieldWells(JsonView jsonValue) : 
-    m_categoryHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+RadarChartAggregatedFieldWells::RadarChartAggregatedFieldWells(JsonView jsonValue)
+  : RadarChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }

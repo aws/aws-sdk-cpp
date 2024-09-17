@@ -1,0 +1,90 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/EnvironmentActionSummary.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace DataZone
+{
+namespace Model
+{
+  class ListEnvironmentActionsResult
+  {
+  public:
+    AWS_DATAZONE_API ListEnvironmentActionsResult();
+    AWS_DATAZONE_API ListEnvironmentActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAZONE_API ListEnvironmentActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    ///@{
+    /**
+     * <p>The results of <code>ListEnvironmentActions</code>.</p>
+     */
+    inline const Aws::Vector<EnvironmentActionSummary>& GetItems() const{ return m_items; }
+    inline void SetItems(const Aws::Vector<EnvironmentActionSummary>& value) { m_items = value; }
+    inline void SetItems(Aws::Vector<EnvironmentActionSummary>&& value) { m_items = std::move(value); }
+    inline ListEnvironmentActionsResult& WithItems(const Aws::Vector<EnvironmentActionSummary>& value) { SetItems(value); return *this;}
+    inline ListEnvironmentActionsResult& WithItems(Aws::Vector<EnvironmentActionSummary>&& value) { SetItems(std::move(value)); return *this;}
+    inline ListEnvironmentActionsResult& AddItems(const EnvironmentActionSummary& value) { m_items.push_back(value); return *this; }
+    inline ListEnvironmentActionsResult& AddItems(EnvironmentActionSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>When the number of environment actions is greater than the default value for
+     * the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+     * <code>MaxResults</code> that is less than the number of environment actions, the
+     * response includes a pagination token named <code>NextToken</code>. You can
+     * specify this <code>NextToken</code> value in a subsequent call to
+     * <code>ListEnvironmentActions</code> to list the next set of environment
+     * actions.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+    inline ListEnvironmentActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListEnvironmentActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListEnvironmentActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+    inline ListEnvironmentActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline ListEnvironmentActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline ListEnvironmentActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
+  private:
+
+    Aws::Vector<EnvironmentActionSummary> m_items;
+
+    Aws::String m_nextToken;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace DataZone
+} // namespace Aws

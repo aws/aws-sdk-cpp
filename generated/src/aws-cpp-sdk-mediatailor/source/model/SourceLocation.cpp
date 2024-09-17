@@ -31,16 +31,8 @@ SourceLocation::SourceLocation() :
 {
 }
 
-SourceLocation::SourceLocation(JsonView jsonValue) : 
-    m_accessConfigurationHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_defaultSegmentDeliveryConfigurationHasBeenSet(false),
-    m_httpConfigurationHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_segmentDeliveryConfigurationsHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+SourceLocation::SourceLocation(JsonView jsonValue)
+  : SourceLocation()
 {
   *this = jsonValue;
 }

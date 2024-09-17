@@ -25,10 +25,8 @@ ConnectionStatusEventConfiguration::ConnectionStatusEventConfiguration() :
 {
 }
 
-ConnectionStatusEventConfiguration::ConnectionStatusEventConfiguration(JsonView jsonValue) : 
-    m_loRaWANHasBeenSet(false),
-    m_wirelessGatewayIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessGatewayIdEventTopicHasBeenSet(false)
+ConnectionStatusEventConfiguration::ConnectionStatusEventConfiguration(JsonView jsonValue)
+  : ConnectionStatusEventConfiguration()
 {
   *this = jsonValue;
 }

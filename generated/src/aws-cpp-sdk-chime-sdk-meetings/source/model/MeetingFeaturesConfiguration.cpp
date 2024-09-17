@@ -26,11 +26,8 @@ MeetingFeaturesConfiguration::MeetingFeaturesConfiguration() :
 {
 }
 
-MeetingFeaturesConfiguration::MeetingFeaturesConfiguration(JsonView jsonValue) : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_attendeeHasBeenSet(false)
+MeetingFeaturesConfiguration::MeetingFeaturesConfiguration(JsonView jsonValue)
+  : MeetingFeaturesConfiguration()
 {
   *this = jsonValue;
 }

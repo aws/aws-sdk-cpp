@@ -28,6 +28,8 @@ namespace Aws
         static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
         static const int UnsupportedAddonModification_HASH = HashingUtils::HashString("UnsupportedAddonModification");
         static const int K8sResourceNotFound_HASH = HashingUtils::HashString("K8sResourceNotFound");
+        static const int AddonSubscriptionNeeded_HASH = HashingUtils::HashString("AddonSubscriptionNeeded");
+        static const int AddonPermissionFailure_HASH = HashingUtils::HashString("AddonPermissionFailure");
 
 
         AddonIssueCode GetAddonIssueCodeForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return AddonIssueCode::K8sResourceNotFound;
           }
+          else if (hashCode == AddonSubscriptionNeeded_HASH)
+          {
+            return AddonIssueCode::AddonSubscriptionNeeded;
+          }
+          else if (hashCode == AddonPermissionFailure_HASH)
+          {
+            return AddonIssueCode::AddonPermissionFailure;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +107,10 @@ namespace Aws
             return "UnsupportedAddonModification";
           case AddonIssueCode::K8sResourceNotFound:
             return "K8sResourceNotFound";
+          case AddonIssueCode::AddonSubscriptionNeeded:
+            return "AddonSubscriptionNeeded";
+          case AddonIssueCode::AddonPermissionFailure:
+            return "AddonPermissionFailure";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -19,42 +19,43 @@ namespace Model
 {
 
 DataSourceSummary::DataSourceSummary() : 
-    m_knowledgeBaseIdHasBeenSet(false),
     m_dataSourceIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(DataSourceStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
 
-DataSourceSummary::DataSourceSummary(JsonView jsonValue) : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DataSourceSummary::DataSourceSummary(JsonView jsonValue)
+  : DataSourceSummary()
 {
   *this = jsonValue;
 }
 
 DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
-    m_knowledgeBaseIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
 
     m_dataSourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("knowledgeBaseId"))
+  {
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+
+    m_knowledgeBaseIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -71,13 +72,6 @@ DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -92,15 +86,21 @@ JsonValue DataSourceSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
-  }
-
   if(m_dataSourceIdHasBeenSet)
   {
    payload.WithString("dataSourceId", m_dataSourceId);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_knowledgeBaseIdHasBeenSet)
+  {
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
 
   }
 
@@ -113,12 +113,6 @@ JsonValue DataSourceSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
   }
 
   if(m_updatedAtHasBeenSet)

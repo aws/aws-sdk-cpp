@@ -8,6 +8,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/PackageVersionArtifact.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -40,137 +41,50 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the associated software package.</p>
      */
     inline const Aws::String& GetPackageName() const{ return m_packageName; }
-
-    /**
-     * <p>The name of the associated software package.</p>
-     */
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the associated software package.</p>
-     */
     inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
-
-    /**
-     * <p>The name of the associated software package.</p>
-     */
     inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
-
-    /**
-     * <p>The name of the associated software package.</p>
-     */
     inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
-
-    /**
-     * <p>The name of the associated software package.</p>
-     */
     inline CreatePackageVersionRequest& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
-
-    /**
-     * <p>The name of the associated software package.</p>
-     */
     inline CreatePackageVersionRequest& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the associated software package.</p>
-     */
     inline CreatePackageVersionRequest& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the new package version.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
-
-    /**
-     * <p>The name of the new package version.</p>
-     */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the new package version.</p>
-     */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
-
-    /**
-     * <p>The name of the new package version.</p>
-     */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
-
-    /**
-     * <p>The name of the new package version.</p>
-     */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
-
-    /**
-     * <p>The name of the new package version.</p>
-     */
     inline CreatePackageVersionRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-
-    /**
-     * <p>The name of the new package version.</p>
-     */
     inline CreatePackageVersionRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the new package version.</p>
-     */
     inline CreatePackageVersionRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A summary of the package version being created. This can be used to outline
      * the package's contents or purpose.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A summary of the package version being created. This can be used to outline
-     * the package's contents or purpose.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A summary of the package version being created. This can be used to outline
-     * the package's contents or purpose.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A summary of the package version being created. This can be used to outline
-     * the package's contents or purpose.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A summary of the package version being created. This can be used to outline
-     * the package's contents or purpose.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A summary of the package version being created. This can be used to outline
-     * the package's contents or purpose.</p>
-     */
     inline CreatePackageVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A summary of the package version being created. This can be used to outline
-     * the package's contents or purpose.</p>
-     */
     inline CreatePackageVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A summary of the package version being created. This can be used to outline
-     * the package's contents or purpose.</p>
-     */
     inline CreatePackageVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
      * example, the S3 file location, configuration options that are being sent to the
@@ -178,226 +92,82 @@ namespace Model
      * version is limited to 3KB.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet.</p> <p>The combined size of all the attributes on a package
-     * version is limited to 3KB.</p>
-     */
     inline CreatePackageVersionRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    ///@}
 
+    ///@{
+    /**
+     * <p>The various build components created during the build process such as
+     * libraries and configuration files that make up a software package version.</p>
+     */
+    inline const PackageVersionArtifact& GetArtifact() const{ return m_artifact; }
+    inline bool ArtifactHasBeenSet() const { return m_artifactHasBeenSet; }
+    inline void SetArtifact(const PackageVersionArtifact& value) { m_artifactHasBeenSet = true; m_artifact = value; }
+    inline void SetArtifact(PackageVersionArtifact&& value) { m_artifactHasBeenSet = true; m_artifact = std::move(value); }
+    inline CreatePackageVersionRequest& WithArtifact(const PackageVersionArtifact& value) { SetArtifact(value); return *this;}
+    inline CreatePackageVersionRequest& WithArtifact(PackageVersionArtifact&& value) { SetArtifact(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The inline job document associated with a software package version used for a
+     * quick job deployment via IoT Jobs.</p>
+     */
+    inline const Aws::String& GetRecipe() const{ return m_recipe; }
+    inline bool RecipeHasBeenSet() const { return m_recipeHasBeenSet; }
+    inline void SetRecipe(const Aws::String& value) { m_recipeHasBeenSet = true; m_recipe = value; }
+    inline void SetRecipe(Aws::String&& value) { m_recipeHasBeenSet = true; m_recipe = std::move(value); }
+    inline void SetRecipe(const char* value) { m_recipeHasBeenSet = true; m_recipe.assign(value); }
+    inline CreatePackageVersionRequest& WithRecipe(const Aws::String& value) { SetRecipe(value); return *this;}
+    inline CreatePackageVersionRequest& WithRecipe(Aws::String&& value) { SetRecipe(std::move(value)); return *this;}
+    inline CreatePackageVersionRequest& WithRecipe(const char* value) { SetRecipe(value); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Metadata that can be used to manage the package version.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Metadata that can be used to manage the package version.</p>
-     */
     inline CreatePackageVersionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline CreatePackageVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline CreatePackageVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline CreatePackageVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_packageName;
@@ -411,6 +181,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    PackageVersionArtifact m_artifact;
+    bool m_artifactHasBeenSet = false;
+
+    Aws::String m_recipe;
+    bool m_recipeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

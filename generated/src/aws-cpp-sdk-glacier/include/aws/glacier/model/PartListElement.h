@@ -38,95 +38,34 @@ namespace Model
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
      */
     inline const Aws::String& GetRangeInBytes() const{ return m_rangeInBytes; }
-
-    /**
-     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
-     */
     inline bool RangeInBytesHasBeenSet() const { return m_rangeInBytesHasBeenSet; }
-
-    /**
-     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
-     */
     inline void SetRangeInBytes(const Aws::String& value) { m_rangeInBytesHasBeenSet = true; m_rangeInBytes = value; }
-
-    /**
-     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
-     */
     inline void SetRangeInBytes(Aws::String&& value) { m_rangeInBytesHasBeenSet = true; m_rangeInBytes = std::move(value); }
-
-    /**
-     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
-     */
     inline void SetRangeInBytes(const char* value) { m_rangeInBytesHasBeenSet = true; m_rangeInBytes.assign(value); }
-
-    /**
-     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
-     */
     inline PartListElement& WithRangeInBytes(const Aws::String& value) { SetRangeInBytes(value); return *this;}
-
-    /**
-     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
-     */
     inline PartListElement& WithRangeInBytes(Aws::String&& value) { SetRangeInBytes(std::move(value)); return *this;}
-
-    /**
-     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
-     */
     inline PartListElement& WithRangeInBytes(const char* value) { SetRangeInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
      * This field is never <code>null</code>.</p>
      */
     inline const Aws::String& GetSHA256TreeHash() const{ return m_sHA256TreeHash; }
-
-    /**
-     * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-     * This field is never <code>null</code>.</p>
-     */
     inline bool SHA256TreeHashHasBeenSet() const { return m_sHA256TreeHashHasBeenSet; }
-
-    /**
-     * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-     * This field is never <code>null</code>.</p>
-     */
     inline void SetSHA256TreeHash(const Aws::String& value) { m_sHA256TreeHashHasBeenSet = true; m_sHA256TreeHash = value; }
-
-    /**
-     * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-     * This field is never <code>null</code>.</p>
-     */
     inline void SetSHA256TreeHash(Aws::String&& value) { m_sHA256TreeHashHasBeenSet = true; m_sHA256TreeHash = std::move(value); }
-
-    /**
-     * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-     * This field is never <code>null</code>.</p>
-     */
     inline void SetSHA256TreeHash(const char* value) { m_sHA256TreeHashHasBeenSet = true; m_sHA256TreeHash.assign(value); }
-
-    /**
-     * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-     * This field is never <code>null</code>.</p>
-     */
     inline PartListElement& WithSHA256TreeHash(const Aws::String& value) { SetSHA256TreeHash(value); return *this;}
-
-    /**
-     * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-     * This field is never <code>null</code>.</p>
-     */
     inline PartListElement& WithSHA256TreeHash(Aws::String&& value) { SetSHA256TreeHash(std::move(value)); return *this;}
-
-    /**
-     * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-     * This field is never <code>null</code>.</p>
-     */
     inline PartListElement& WithSHA256TreeHash(const char* value) { SetSHA256TreeHash(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rangeInBytes;

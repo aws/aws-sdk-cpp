@@ -29,12 +29,8 @@ LocalGateway::LocalGateway() :
 {
 }
 
-LocalGateway::LocalGateway(const XmlNode& xmlNode) : 
-    m_localGatewayIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LocalGateway::LocalGateway(const XmlNode& xmlNode)
+  : LocalGateway()
 {
   *this = xmlNode;
 }

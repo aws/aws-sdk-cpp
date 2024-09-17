@@ -42,249 +42,87 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Time at which a related item was associated with a case.</p>
      */
     inline const Aws::Utils::DateTime& GetAssociationTime() const{ return m_associationTime; }
-
-    /**
-     * <p>Time at which a related item was associated with a case.</p>
-     */
     inline bool AssociationTimeHasBeenSet() const { return m_associationTimeHasBeenSet; }
-
-    /**
-     * <p>Time at which a related item was associated with a case.</p>
-     */
     inline void SetAssociationTime(const Aws::Utils::DateTime& value) { m_associationTimeHasBeenSet = true; m_associationTime = value; }
-
-    /**
-     * <p>Time at which a related item was associated with a case.</p>
-     */
     inline void SetAssociationTime(Aws::Utils::DateTime&& value) { m_associationTimeHasBeenSet = true; m_associationTime = std::move(value); }
-
-    /**
-     * <p>Time at which a related item was associated with a case.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithAssociationTime(const Aws::Utils::DateTime& value) { SetAssociationTime(value); return *this;}
-
-    /**
-     * <p>Time at which a related item was associated with a case.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithAssociationTime(Aws::Utils::DateTime&& value) { SetAssociationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the content of a particular type of related item.</p>
      */
     inline const RelatedItemContent& GetContent() const{ return m_content; }
-
-    /**
-     * <p>Represents the content of a particular type of related item.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>Represents the content of a particular type of related item.</p>
-     */
     inline void SetContent(const RelatedItemContent& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>Represents the content of a particular type of related item.</p>
-     */
     inline void SetContent(RelatedItemContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>Represents the content of a particular type of related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithContent(const RelatedItemContent& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>Represents the content of a particular type of related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithContent(RelatedItemContent&& value) { SetContent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the creator of the related item.</p>
      */
     inline const UserUnion& GetPerformedBy() const{ return m_performedBy; }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline void SetPerformedBy(const UserUnion& value) { m_performedByHasBeenSet = true; m_performedBy = value; }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline void SetPerformedBy(UserUnion&& value) { m_performedByHasBeenSet = true; m_performedBy = std::move(value); }
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithPerformedBy(const UserUnion& value) { SetPerformedBy(value); return *this;}
-
-    /**
-     * <p>Represents the creator of the related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithPerformedBy(UserUnion&& value) { SetPerformedBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Unique identifier of a related item.</p>
      */
     inline const Aws::String& GetRelatedItemId() const{ return m_relatedItemId; }
-
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
     inline bool RelatedItemIdHasBeenSet() const { return m_relatedItemIdHasBeenSet; }
-
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
     inline void SetRelatedItemId(const Aws::String& value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId = value; }
-
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
     inline void SetRelatedItemId(Aws::String&& value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId = std::move(value); }
-
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
     inline void SetRelatedItemId(const char* value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId.assign(value); }
-
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithRelatedItemId(const Aws::String& value) { SetRelatedItemId(value); return *this;}
-
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithRelatedItemId(Aws::String&& value) { SetRelatedItemId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithRelatedItemId(const char* value) { SetRelatedItemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
      * to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-     * to organize, track, or control access for this resource.</p>
-     */
     inline SearchRelatedItemsResponseItem& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Type of a related item.</p>
      */
     inline const RelatedItemType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Type of a related item.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Type of a related item.</p>
-     */
     inline void SetType(const RelatedItemType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Type of a related item.</p>
-     */
     inline void SetType(RelatedItemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Type of a related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithType(const RelatedItemType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Type of a related item.</p>
-     */
     inline SearchRelatedItemsResponseItem& WithType(RelatedItemType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_associationTime;

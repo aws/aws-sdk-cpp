@@ -38,75 +38,30 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of services corresponding to an error. A service identifies a segment
      * and it contains a name, account ID, type, and inferred flag.</p>
      */
     inline const Aws::Vector<ErrorRootCauseService>& GetServices() const{ return m_services; }
-
-    /**
-     * <p>A list of services corresponding to an error. A service identifies a segment
-     * and it contains a name, account ID, type, and inferred flag.</p>
-     */
     inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
-
-    /**
-     * <p>A list of services corresponding to an error. A service identifies a segment
-     * and it contains a name, account ID, type, and inferred flag.</p>
-     */
     inline void SetServices(const Aws::Vector<ErrorRootCauseService>& value) { m_servicesHasBeenSet = true; m_services = value; }
-
-    /**
-     * <p>A list of services corresponding to an error. A service identifies a segment
-     * and it contains a name, account ID, type, and inferred flag.</p>
-     */
     inline void SetServices(Aws::Vector<ErrorRootCauseService>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
-
-    /**
-     * <p>A list of services corresponding to an error. A service identifies a segment
-     * and it contains a name, account ID, type, and inferred flag.</p>
-     */
     inline ErrorRootCause& WithServices(const Aws::Vector<ErrorRootCauseService>& value) { SetServices(value); return *this;}
-
-    /**
-     * <p>A list of services corresponding to an error. A service identifies a segment
-     * and it contains a name, account ID, type, and inferred flag.</p>
-     */
     inline ErrorRootCause& WithServices(Aws::Vector<ErrorRootCauseService>&& value) { SetServices(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of services corresponding to an error. A service identifies a segment
-     * and it contains a name, account ID, type, and inferred flag.</p>
-     */
     inline ErrorRootCause& AddServices(const ErrorRootCauseService& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
-
-    /**
-     * <p>A list of services corresponding to an error. A service identifies a segment
-     * and it contains a name, account ID, type, and inferred flag.</p>
-     */
     inline ErrorRootCause& AddServices(ErrorRootCauseService&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A flag that denotes that the root cause impacts the trace client.</p>
      */
     inline bool GetClientImpacting() const{ return m_clientImpacting; }
-
-    /**
-     * <p>A flag that denotes that the root cause impacts the trace client.</p>
-     */
     inline bool ClientImpactingHasBeenSet() const { return m_clientImpactingHasBeenSet; }
-
-    /**
-     * <p>A flag that denotes that the root cause impacts the trace client.</p>
-     */
     inline void SetClientImpacting(bool value) { m_clientImpactingHasBeenSet = true; m_clientImpacting = value; }
-
-    /**
-     * <p>A flag that denotes that the root cause impacts the trace client.</p>
-     */
     inline ErrorRootCause& WithClientImpacting(bool value) { SetClientImpacting(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ErrorRootCauseService> m_services;

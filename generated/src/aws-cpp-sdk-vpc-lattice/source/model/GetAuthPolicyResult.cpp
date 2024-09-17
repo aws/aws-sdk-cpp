@@ -22,8 +22,8 @@ GetAuthPolicyResult::GetAuthPolicyResult() :
 {
 }
 
-GetAuthPolicyResult::GetAuthPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(AuthPolicyState::NOT_SET)
+GetAuthPolicyResult::GetAuthPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAuthPolicyResult()
 {
   *this = result;
 }

@@ -30,15 +30,8 @@ AccountModification::AccountModification() :
 {
 }
 
-AccountModification::AccountModification(JsonView jsonValue) : 
-    m_modificationState(DedicatedTenancyModificationStateEnum::NOT_SET),
-    m_modificationStateHasBeenSet(false),
-    m_dedicatedTenancySupport(DedicatedTenancySupportResultEnum::NOT_SET),
-    m_dedicatedTenancySupportHasBeenSet(false),
-    m_dedicatedTenancyManagementCidrRangeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+AccountModification::AccountModification(JsonView jsonValue)
+  : AccountModification()
 {
   *this = jsonValue;
 }

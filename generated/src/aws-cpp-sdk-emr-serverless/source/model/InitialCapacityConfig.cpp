@@ -25,10 +25,8 @@ InitialCapacityConfig::InitialCapacityConfig() :
 {
 }
 
-InitialCapacityConfig::InitialCapacityConfig(JsonView jsonValue) : 
-    m_workerCount(0),
-    m_workerCountHasBeenSet(false),
-    m_workerConfigurationHasBeenSet(false)
+InitialCapacityConfig::InitialCapacityConfig(JsonView jsonValue)
+  : InitialCapacityConfig()
 {
   *this = jsonValue;
 }

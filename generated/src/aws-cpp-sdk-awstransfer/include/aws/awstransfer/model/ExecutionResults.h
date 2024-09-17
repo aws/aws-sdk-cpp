@@ -39,95 +39,34 @@ namespace Model
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      */
     inline const Aws::Vector<ExecutionStepResult>& GetSteps() const{ return m_steps; }
-
-    /**
-     * <p>Specifies the details for the steps that are in the specified workflow.</p>
-     */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-
-    /**
-     * <p>Specifies the details for the steps that are in the specified workflow.</p>
-     */
     inline void SetSteps(const Aws::Vector<ExecutionStepResult>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-
-    /**
-     * <p>Specifies the details for the steps that are in the specified workflow.</p>
-     */
     inline void SetSteps(Aws::Vector<ExecutionStepResult>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-
-    /**
-     * <p>Specifies the details for the steps that are in the specified workflow.</p>
-     */
     inline ExecutionResults& WithSteps(const Aws::Vector<ExecutionStepResult>& value) { SetSteps(value); return *this;}
-
-    /**
-     * <p>Specifies the details for the steps that are in the specified workflow.</p>
-     */
     inline ExecutionResults& WithSteps(Aws::Vector<ExecutionStepResult>&& value) { SetSteps(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the details for the steps that are in the specified workflow.</p>
-     */
     inline ExecutionResults& AddSteps(const ExecutionStepResult& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the details for the steps that are in the specified workflow.</p>
-     */
     inline ExecutionResults& AddSteps(ExecutionStepResult&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the steps (actions) to take if errors are encountered during
      * execution of the workflow.</p>
      */
     inline const Aws::Vector<ExecutionStepResult>& GetOnExceptionSteps() const{ return m_onExceptionSteps; }
-
-    /**
-     * <p>Specifies the steps (actions) to take if errors are encountered during
-     * execution of the workflow.</p>
-     */
     inline bool OnExceptionStepsHasBeenSet() const { return m_onExceptionStepsHasBeenSet; }
-
-    /**
-     * <p>Specifies the steps (actions) to take if errors are encountered during
-     * execution of the workflow.</p>
-     */
     inline void SetOnExceptionSteps(const Aws::Vector<ExecutionStepResult>& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = value; }
-
-    /**
-     * <p>Specifies the steps (actions) to take if errors are encountered during
-     * execution of the workflow.</p>
-     */
     inline void SetOnExceptionSteps(Aws::Vector<ExecutionStepResult>&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = std::move(value); }
-
-    /**
-     * <p>Specifies the steps (actions) to take if errors are encountered during
-     * execution of the workflow.</p>
-     */
     inline ExecutionResults& WithOnExceptionSteps(const Aws::Vector<ExecutionStepResult>& value) { SetOnExceptionSteps(value); return *this;}
-
-    /**
-     * <p>Specifies the steps (actions) to take if errors are encountered during
-     * execution of the workflow.</p>
-     */
     inline ExecutionResults& WithOnExceptionSteps(Aws::Vector<ExecutionStepResult>&& value) { SetOnExceptionSteps(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the steps (actions) to take if errors are encountered during
-     * execution of the workflow.</p>
-     */
     inline ExecutionResults& AddOnExceptionSteps(const ExecutionStepResult& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the steps (actions) to take if errors are encountered during
-     * execution of the workflow.</p>
-     */
     inline ExecutionResults& AddOnExceptionSteps(ExecutionStepResult&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ExecutionStepResult> m_steps;

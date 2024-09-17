@@ -39,106 +39,43 @@ namespace Model
     AWS_CONFIGSERVICE_API DescribeConfigRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details about your Config rules.</p>
      */
     inline const Aws::Vector<ConfigRule>& GetConfigRules() const{ return m_configRules; }
-
-    /**
-     * <p>The details about your Config rules.</p>
-     */
     inline void SetConfigRules(const Aws::Vector<ConfigRule>& value) { m_configRules = value; }
-
-    /**
-     * <p>The details about your Config rules.</p>
-     */
     inline void SetConfigRules(Aws::Vector<ConfigRule>&& value) { m_configRules = std::move(value); }
-
-    /**
-     * <p>The details about your Config rules.</p>
-     */
     inline DescribeConfigRulesResult& WithConfigRules(const Aws::Vector<ConfigRule>& value) { SetConfigRules(value); return *this;}
-
-    /**
-     * <p>The details about your Config rules.</p>
-     */
     inline DescribeConfigRulesResult& WithConfigRules(Aws::Vector<ConfigRule>&& value) { SetConfigRules(std::move(value)); return *this;}
-
-    /**
-     * <p>The details about your Config rules.</p>
-     */
     inline DescribeConfigRulesResult& AddConfigRules(const ConfigRule& value) { m_configRules.push_back(value); return *this; }
-
-    /**
-     * <p>The details about your Config rules.</p>
-     */
     inline DescribeConfigRulesResult& AddConfigRules(ConfigRule&& value) { m_configRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline DescribeConfigRulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline DescribeConfigRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The string that you use in a subsequent request to get the next page of
-     * results in a paginated response.</p>
-     */
     inline DescribeConfigRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeConfigRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeConfigRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeConfigRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ConfigRule> m_configRules;

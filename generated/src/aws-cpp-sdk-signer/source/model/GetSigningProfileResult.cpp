@@ -22,8 +22,8 @@ GetSigningProfileResult::GetSigningProfileResult() :
 {
 }
 
-GetSigningProfileResult::GetSigningProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(SigningProfileStatus::NOT_SET)
+GetSigningProfileResult::GetSigningProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetSigningProfileResult()
 {
   *this = result;
 }

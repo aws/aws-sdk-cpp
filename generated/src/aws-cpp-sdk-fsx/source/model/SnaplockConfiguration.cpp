@@ -32,17 +32,8 @@ SnaplockConfiguration::SnaplockConfiguration() :
 {
 }
 
-SnaplockConfiguration::SnaplockConfiguration(JsonView jsonValue) : 
-    m_auditLogVolume(false),
-    m_auditLogVolumeHasBeenSet(false),
-    m_autocommitPeriodHasBeenSet(false),
-    m_privilegedDelete(PrivilegedDelete::NOT_SET),
-    m_privilegedDeleteHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_snaplockType(SnaplockType::NOT_SET),
-    m_snaplockTypeHasBeenSet(false),
-    m_volumeAppendModeEnabled(false),
-    m_volumeAppendModeEnabledHasBeenSet(false)
+SnaplockConfiguration::SnaplockConfiguration(JsonView jsonValue)
+  : SnaplockConfiguration()
 {
   *this = jsonValue;
 }

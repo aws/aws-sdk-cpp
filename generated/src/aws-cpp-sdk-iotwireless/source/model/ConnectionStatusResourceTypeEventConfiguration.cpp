@@ -23,8 +23,8 @@ ConnectionStatusResourceTypeEventConfiguration::ConnectionStatusResourceTypeEven
 {
 }
 
-ConnectionStatusResourceTypeEventConfiguration::ConnectionStatusResourceTypeEventConfiguration(JsonView jsonValue) : 
-    m_loRaWANHasBeenSet(false)
+ConnectionStatusResourceTypeEventConfiguration::ConnectionStatusResourceTypeEventConfiguration(JsonView jsonValue)
+  : ConnectionStatusResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }

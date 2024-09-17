@@ -24,9 +24,8 @@ ThirdPartyFirewallFirewallPolicy::ThirdPartyFirewallFirewallPolicy() :
 {
 }
 
-ThirdPartyFirewallFirewallPolicy::ThirdPartyFirewallFirewallPolicy(JsonView jsonValue) : 
-    m_firewallPolicyIdHasBeenSet(false),
-    m_firewallPolicyNameHasBeenSet(false)
+ThirdPartyFirewallFirewallPolicy::ThirdPartyFirewallFirewallPolicy(JsonView jsonValue)
+  : ThirdPartyFirewallFirewallPolicy()
 {
   *this = jsonValue;
 }

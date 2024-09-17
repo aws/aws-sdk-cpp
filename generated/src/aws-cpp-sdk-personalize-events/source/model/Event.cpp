@@ -32,17 +32,8 @@ Event::Event() :
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_eventValue(0.0),
-    m_eventValueHasBeenSet(false),
-    m_itemIdHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_sentAtHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_impressionHasBeenSet(false),
-    m_metricAttributionHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }

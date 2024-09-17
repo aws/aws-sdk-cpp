@@ -27,12 +27,8 @@ Source::Source() :
 {
 }
 
-Source::Source(JsonView jsonValue) : 
-    m_configDetailsHasBeenSet(false),
-    m_configIdHasBeenSet(false),
-    m_configType(ConfigCapabilityType::NOT_SET),
-    m_configTypeHasBeenSet(false),
-    m_dataflowSourceRegionHasBeenSet(false)
+Source::Source(JsonView jsonValue)
+  : Source()
 {
   *this = jsonValue;
 }

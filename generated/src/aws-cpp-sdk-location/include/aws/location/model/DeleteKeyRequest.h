@@ -38,6 +38,21 @@ namespace Model
     AWS_LOCATIONSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
+    /**
+     * <p>The name of the API key to delete.</p>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+    inline DeleteKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+    inline DeleteKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+    inline DeleteKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
      * the parameter <code>true</code> to delete the key or to <code>false</code> to
@@ -47,85 +62,17 @@ namespace Model
      * use.</p> 
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
-
-    /**
-     * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
-     * the parameter <code>true</code> to delete the key or to <code>false</code> to
-     * not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or
-     * <code>false</code>.</p> <p>Required: No</p>  <p>This action is
-     * irreversible. Only use ForceDelete if you are certain the key is no longer in
-     * use.</p> 
-     */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
-
-    /**
-     * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
-     * the parameter <code>true</code> to delete the key or to <code>false</code> to
-     * not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or
-     * <code>false</code>.</p> <p>Required: No</p>  <p>This action is
-     * irreversible. Only use ForceDelete if you are certain the key is no longer in
-     * use.</p> 
-     */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
-
-    /**
-     * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
-     * the parameter <code>true</code> to delete the key or to <code>false</code> to
-     * not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or
-     * <code>false</code>.</p> <p>Required: No</p>  <p>This action is
-     * irreversible. Only use ForceDelete if you are certain the key is no longer in
-     * use.</p> 
-     */
     inline DeleteKeyRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
-
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline DeleteKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline DeleteKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
-    inline DeleteKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-
+    ///@}
   private:
-
-    bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet = false;
 
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet = false;
+
+    bool m_forceDelete;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

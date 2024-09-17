@@ -39,58 +39,28 @@ namespace Model
     AWS_ROUTE53_API GetGeoLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains the codes and full continent, country, and
      * subdivision names for the specified geolocation code.</p>
      */
     inline const GeoLocationDetails& GetGeoLocationDetails() const{ return m_geoLocationDetails; }
-
-    /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
-     */
     inline void SetGeoLocationDetails(const GeoLocationDetails& value) { m_geoLocationDetails = value; }
-
-    /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
-     */
     inline void SetGeoLocationDetails(GeoLocationDetails&& value) { m_geoLocationDetails = std::move(value); }
-
-    /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
-     */
     inline GetGeoLocationResult& WithGeoLocationDetails(const GeoLocationDetails& value) { SetGeoLocationDetails(value); return *this;}
-
-    /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
-     */
     inline GetGeoLocationResult& WithGeoLocationDetails(GeoLocationDetails&& value) { SetGeoLocationDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetGeoLocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetGeoLocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetGeoLocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GeoLocationDetails m_geoLocationDetails;

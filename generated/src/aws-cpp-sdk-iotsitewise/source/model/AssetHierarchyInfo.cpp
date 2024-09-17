@@ -24,9 +24,8 @@ AssetHierarchyInfo::AssetHierarchyInfo() :
 {
 }
 
-AssetHierarchyInfo::AssetHierarchyInfo(JsonView jsonValue) : 
-    m_parentAssetIdHasBeenSet(false),
-    m_childAssetIdHasBeenSet(false)
+AssetHierarchyInfo::AssetHierarchyInfo(JsonView jsonValue)
+  : AssetHierarchyInfo()
 {
   *this = jsonValue;
 }

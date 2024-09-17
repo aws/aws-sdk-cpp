@@ -38,6 +38,7 @@ namespace Model
     AWS_S3OUTPOSTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
@@ -45,84 +46,24 @@ namespace Model
      * listing additional Outposts.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
-     * listing additional Outposts.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
-     * listing additional Outposts.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
-     * listing additional Outposts.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
-     * listing additional Outposts.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
-     * listing additional Outposts.</p>
-     */
     inline ListOutpostsWithS3Request& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
-     * listing additional Outposts.</p>
-     */
     inline ListOutpostsWithS3Request& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>When you can get additional results from the <code>ListOutpostsWithS3</code>
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
-     * listing additional Outposts.</p>
-     */
     inline ListOutpostsWithS3Request& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of Outposts to return. The limit is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of Outposts to return. The limit is 100.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of Outposts to return. The limit is 100.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of Outposts to return. The limit is 100.</p>
-     */
     inline ListOutpostsWithS3Request& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

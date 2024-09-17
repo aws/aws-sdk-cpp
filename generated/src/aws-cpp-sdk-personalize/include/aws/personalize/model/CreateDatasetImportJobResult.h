@@ -32,63 +32,29 @@ namespace Model
     AWS_PERSONALIZE_API CreateDatasetImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the dataset import job.</p>
      */
     inline const Aws::String& GetDatasetImportJobArn() const{ return m_datasetImportJobArn; }
-
-    /**
-     * <p>The ARN of the dataset import job.</p>
-     */
     inline void SetDatasetImportJobArn(const Aws::String& value) { m_datasetImportJobArn = value; }
-
-    /**
-     * <p>The ARN of the dataset import job.</p>
-     */
     inline void SetDatasetImportJobArn(Aws::String&& value) { m_datasetImportJobArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the dataset import job.</p>
-     */
     inline void SetDatasetImportJobArn(const char* value) { m_datasetImportJobArn.assign(value); }
-
-    /**
-     * <p>The ARN of the dataset import job.</p>
-     */
     inline CreateDatasetImportJobResult& WithDatasetImportJobArn(const Aws::String& value) { SetDatasetImportJobArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the dataset import job.</p>
-     */
     inline CreateDatasetImportJobResult& WithDatasetImportJobArn(Aws::String&& value) { SetDatasetImportJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the dataset import job.</p>
-     */
     inline CreateDatasetImportJobResult& WithDatasetImportJobArn(const char* value) { SetDatasetImportJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDatasetImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDatasetImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDatasetImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetImportJobArn;

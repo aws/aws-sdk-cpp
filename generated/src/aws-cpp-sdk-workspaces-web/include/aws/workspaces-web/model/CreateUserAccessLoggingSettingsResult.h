@@ -32,63 +32,29 @@ namespace Model
     AWS_WORKSPACESWEB_API CreateUserAccessLoggingSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the user access logging settings.</p>
      */
     inline const Aws::String& GetUserAccessLoggingSettingsArn() const{ return m_userAccessLoggingSettingsArn; }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettingsArn(const Aws::String& value) { m_userAccessLoggingSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettingsArn(Aws::String&& value) { m_userAccessLoggingSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettingsArn(const char* value) { m_userAccessLoggingSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline CreateUserAccessLoggingSettingsResult& WithUserAccessLoggingSettingsArn(const Aws::String& value) { SetUserAccessLoggingSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline CreateUserAccessLoggingSettingsResult& WithUserAccessLoggingSettingsArn(Aws::String&& value) { SetUserAccessLoggingSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the user access logging settings.</p>
-     */
     inline CreateUserAccessLoggingSettingsResult& WithUserAccessLoggingSettingsArn(const char* value) { SetUserAccessLoggingSettingsArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUserAccessLoggingSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUserAccessLoggingSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUserAccessLoggingSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userAccessLoggingSettingsArn;

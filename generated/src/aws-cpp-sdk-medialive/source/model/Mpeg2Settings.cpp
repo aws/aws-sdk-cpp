@@ -54,39 +54,8 @@ Mpeg2Settings::Mpeg2Settings() :
 {
 }
 
-Mpeg2Settings::Mpeg2Settings(JsonView jsonValue) : 
-    m_adaptiveQuantization(Mpeg2AdaptiveQuantization::NOT_SET),
-    m_adaptiveQuantizationHasBeenSet(false),
-    m_afdSignaling(AfdSignaling::NOT_SET),
-    m_afdSignalingHasBeenSet(false),
-    m_colorMetadata(Mpeg2ColorMetadata::NOT_SET),
-    m_colorMetadataHasBeenSet(false),
-    m_colorSpace(Mpeg2ColorSpace::NOT_SET),
-    m_colorSpaceHasBeenSet(false),
-    m_displayAspectRatio(Mpeg2DisplayRatio::NOT_SET),
-    m_displayAspectRatioHasBeenSet(false),
-    m_filterSettingsHasBeenSet(false),
-    m_fixedAfd(FixedAfd::NOT_SET),
-    m_fixedAfdHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_gopClosedCadence(0),
-    m_gopClosedCadenceHasBeenSet(false),
-    m_gopNumBFrames(0),
-    m_gopNumBFramesHasBeenSet(false),
-    m_gopSize(0.0),
-    m_gopSizeHasBeenSet(false),
-    m_gopSizeUnits(Mpeg2GopSizeUnits::NOT_SET),
-    m_gopSizeUnitsHasBeenSet(false),
-    m_scanType(Mpeg2ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false),
-    m_subgopLength(Mpeg2SubGopLength::NOT_SET),
-    m_subgopLengthHasBeenSet(false),
-    m_timecodeInsertion(Mpeg2TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+Mpeg2Settings::Mpeg2Settings(JsonView jsonValue)
+  : Mpeg2Settings()
 {
   *this = jsonValue;
 }

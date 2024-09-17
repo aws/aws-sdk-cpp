@@ -25,10 +25,8 @@ TestSetDiscrepancyReportBotAliasTarget::TestSetDiscrepancyReportBotAliasTarget()
 {
 }
 
-TestSetDiscrepancyReportBotAliasTarget::TestSetDiscrepancyReportBotAliasTarget(JsonView jsonValue) : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+TestSetDiscrepancyReportBotAliasTarget::TestSetDiscrepancyReportBotAliasTarget(JsonView jsonValue)
+  : TestSetDiscrepancyReportBotAliasTarget()
 {
   *this = jsonValue;
 }

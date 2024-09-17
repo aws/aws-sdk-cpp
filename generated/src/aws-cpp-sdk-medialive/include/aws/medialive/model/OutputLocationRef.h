@@ -38,30 +38,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetDestinationRefId() const{ return m_destinationRefId; }
-
-    
     inline bool DestinationRefIdHasBeenSet() const { return m_destinationRefIdHasBeenSet; }
-
-    
     inline void SetDestinationRefId(const Aws::String& value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId = value; }
-
-    
     inline void SetDestinationRefId(Aws::String&& value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId = std::move(value); }
-
-    
     inline void SetDestinationRefId(const char* value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId.assign(value); }
-
-    
     inline OutputLocationRef& WithDestinationRefId(const Aws::String& value) { SetDestinationRefId(value); return *this;}
-
-    
     inline OutputLocationRef& WithDestinationRefId(Aws::String&& value) { SetDestinationRefId(std::move(value)); return *this;}
-
-    
     inline OutputLocationRef& WithDestinationRefId(const char* value) { SetDestinationRefId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationRefId;

@@ -36,47 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DeleteWarmPoolRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DeleteWarmPoolRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DeleteWarmPoolRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that the warm pool is to be deleted along with all of its
      * associated instances, without waiting for all instances to be terminated. This
@@ -84,31 +58,10 @@ namespace Model
      * warm pool instances.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
-
-    /**
-     * <p>Specifies that the warm pool is to be deleted along with all of its
-     * associated instances, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * warm pool instances.</p>
-     */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
-
-    /**
-     * <p>Specifies that the warm pool is to be deleted along with all of its
-     * associated instances, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * warm pool instances.</p>
-     */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
-
-    /**
-     * <p>Specifies that the warm pool is to be deleted along with all of its
-     * associated instances, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * warm pool instances.</p>
-     */
     inline DeleteWarmPoolRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

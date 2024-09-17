@@ -37,22 +37,8 @@ CodeReviewSummary::CodeReviewSummary() :
 {
 }
 
-CodeReviewSummary::CodeReviewSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_codeReviewArnHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_state(JobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_lastUpdatedTimeStampHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_pullRequestIdHasBeenSet(false),
-    m_metricsSummaryHasBeenSet(false),
-    m_sourceCodeTypeHasBeenSet(false)
+CodeReviewSummary::CodeReviewSummary(JsonView jsonValue)
+  : CodeReviewSummary()
 {
   *this = jsonValue;
 }

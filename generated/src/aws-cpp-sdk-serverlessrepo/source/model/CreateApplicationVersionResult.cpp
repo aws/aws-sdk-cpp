@@ -22,8 +22,8 @@ CreateApplicationVersionResult::CreateApplicationVersionResult() :
 {
 }
 
-CreateApplicationVersionResult::CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourcesSupported(false)
+CreateApplicationVersionResult::CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateApplicationVersionResult()
 {
   *this = result;
 }

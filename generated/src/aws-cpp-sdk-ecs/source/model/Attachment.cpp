@@ -26,11 +26,8 @@ Attachment::Attachment() :
 {
 }
 
-Attachment::Attachment(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+Attachment::Attachment(JsonView jsonValue)
+  : Attachment()
 {
   *this = jsonValue;
 }

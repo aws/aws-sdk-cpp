@@ -24,9 +24,8 @@ IdentityPoolShortDescription::IdentityPoolShortDescription() :
 {
 }
 
-IdentityPoolShortDescription::IdentityPoolShortDescription(JsonView jsonValue) : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityPoolNameHasBeenSet(false)
+IdentityPoolShortDescription::IdentityPoolShortDescription(JsonView jsonValue)
+  : IdentityPoolShortDescription()
 {
   *this = jsonValue;
 }

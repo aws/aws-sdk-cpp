@@ -23,8 +23,8 @@ CategoricalParameterRangeSpecification::CategoricalParameterRangeSpecification()
 {
 }
 
-CategoricalParameterRangeSpecification::CategoricalParameterRangeSpecification(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+CategoricalParameterRangeSpecification::CategoricalParameterRangeSpecification(JsonView jsonValue)
+  : CategoricalParameterRangeSpecification()
 {
   *this = jsonValue;
 }

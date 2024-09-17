@@ -57,6 +57,20 @@
 #include <aws/organizations/model/PutResourcePolicyResult.h>
 #include <aws/organizations/model/UpdateOrganizationalUnitResult.h>
 #include <aws/organizations/model/UpdatePolicyResult.h>
+#include <aws/organizations/model/DeleteResourcePolicyRequest.h>
+#include <aws/organizations/model/ListAccountsRequest.h>
+#include <aws/organizations/model/CreateOrganizationRequest.h>
+#include <aws/organizations/model/EnableAllFeaturesRequest.h>
+#include <aws/organizations/model/ListHandshakesForOrganizationRequest.h>
+#include <aws/organizations/model/LeaveOrganizationRequest.h>
+#include <aws/organizations/model/ListRootsRequest.h>
+#include <aws/organizations/model/DescribeResourcePolicyRequest.h>
+#include <aws/organizations/model/ListCreateAccountStatusRequest.h>
+#include <aws/organizations/model/ListHandshakesForAccountRequest.h>
+#include <aws/organizations/model/DescribeOrganizationRequest.h>
+#include <aws/organizations/model/DeleteOrganizationRequest.h>
+#include <aws/organizations/model/ListDelegatedAdministratorsRequest.h>
+#include <aws/organizations/model/ListAWSServiceAccessForOrganizationRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in OrganizationsClient header */
 
@@ -91,7 +105,7 @@ namespace Aws
 
   namespace Organizations
   {
-    using OrganizationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OrganizationsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OrganizationsEndpointProviderBase = Aws::Organizations::Endpoint::OrganizationsEndpointProviderBase;
     using OrganizationsEndpointProvider = Aws::Organizations::Endpoint::OrganizationsEndpointProvider;
 

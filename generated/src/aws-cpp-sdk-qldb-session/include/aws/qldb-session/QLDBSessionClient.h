@@ -108,13 +108,13 @@ namespace QLDBSession
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/SendCommand">AWS
          * API Reference</a></p>
          */
-        virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request) const;
+        virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SendCommand that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SendCommandRequestT = Model::SendCommandRequest>
-        Model::SendCommandOutcomeCallable SendCommandCallable(const SendCommandRequestT& request) const
+        Model::SendCommandOutcomeCallable SendCommandCallable(const SendCommandRequestT& request = {}) const
         {
             return SubmitCallable(&QLDBSessionClient::SendCommand, request);
         }
@@ -123,7 +123,7 @@ namespace QLDBSession
          * An Async wrapper for SendCommand that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SendCommandRequestT = Model::SendCommandRequest>
-        void SendCommandAsync(const SendCommandRequestT& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SendCommandAsync(const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SendCommandRequestT& request = {}) const
         {
             return SubmitAsync(&QLDBSessionClient::SendCommand, request, handler, context);
         }
@@ -136,7 +136,6 @@ namespace QLDBSession
       void init(const QLDBSessionClientConfiguration& clientConfiguration);
 
       QLDBSessionClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<QLDBSessionEndpointProviderBase> m_endpointProvider;
   };
 

@@ -33,16 +33,8 @@ ConnectionNotification::ConnectionNotification() :
 {
 }
 
-ConnectionNotification::ConnectionNotification(const XmlNode& xmlNode) : 
-    m_connectionNotificationIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_connectionNotificationType(ConnectionNotificationType::NOT_SET),
-    m_connectionNotificationTypeHasBeenSet(false),
-    m_connectionNotificationArnHasBeenSet(false),
-    m_connectionEventsHasBeenSet(false),
-    m_connectionNotificationState(ConnectionNotificationState::NOT_SET),
-    m_connectionNotificationStateHasBeenSet(false)
+ConnectionNotification::ConnectionNotification(const XmlNode& xmlNode)
+  : ConnectionNotification()
 {
   *this = xmlNode;
 }

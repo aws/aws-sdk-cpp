@@ -38,95 +38,34 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
      * calling program to your API. </p>
      */
     inline const Aws::String& GetApiKey() const{ return m_apiKey; }
-
-    /**
-     * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
-     * calling program to your API. </p>
-     */
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-
-    /**
-     * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
-     * calling program to your API. </p>
-     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-
-    /**
-     * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
-     * calling program to your API. </p>
-     */
     inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-
-    /**
-     * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
-     * calling program to your API. </p>
-     */
     inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-
-    /**
-     * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
-     * calling program to your API. </p>
-     */
     inline AmplitudeConnectorProfileCredentials& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-
-    /**
-     * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
-     * calling program to your API. </p>
-     */
     inline AmplitudeConnectorProfileCredentials& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-
-    /**
-     * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
-     * calling program to your API. </p>
-     */
     inline AmplitudeConnectorProfileCredentials& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The Secret Access Key portion of the credentials. </p>
      */
     inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline void SetSecretKey(const Aws::String& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline void SetSecretKey(Aws::String&& value) { m_secretKeyHasBeenSet = true; m_secretKey = std::move(value); }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline void SetSecretKey(const char* value) { m_secretKeyHasBeenSet = true; m_secretKey.assign(value); }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline AmplitudeConnectorProfileCredentials& WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline AmplitudeConnectorProfileCredentials& WithSecretKey(Aws::String&& value) { SetSecretKey(std::move(value)); return *this;}
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline AmplitudeConnectorProfileCredentials& WithSecretKey(const char* value) { SetSecretKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiKey;

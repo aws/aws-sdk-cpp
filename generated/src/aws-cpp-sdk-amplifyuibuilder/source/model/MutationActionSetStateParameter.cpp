@@ -25,10 +25,8 @@ MutationActionSetStateParameter::MutationActionSetStateParameter() :
 {
 }
 
-MutationActionSetStateParameter::MutationActionSetStateParameter(JsonView jsonValue) : 
-    m_componentNameHasBeenSet(false),
-    m_propertyHasBeenSet(false),
-    m_setHasBeenSet(false)
+MutationActionSetStateParameter::MutationActionSetStateParameter(JsonView jsonValue)
+  : MutationActionSetStateParameter()
 {
   *this = jsonValue;
 }

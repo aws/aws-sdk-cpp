@@ -25,10 +25,8 @@ CategoryFilterConfiguration::CategoryFilterConfiguration() :
 {
 }
 
-CategoryFilterConfiguration::CategoryFilterConfiguration(JsonView jsonValue) : 
-    m_filterListConfigurationHasBeenSet(false),
-    m_customFilterListConfigurationHasBeenSet(false),
-    m_customFilterConfigurationHasBeenSet(false)
+CategoryFilterConfiguration::CategoryFilterConfiguration(JsonView jsonValue)
+  : CategoryFilterConfiguration()
 {
   *this = jsonValue;
 }

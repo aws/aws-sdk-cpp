@@ -24,9 +24,8 @@ NodegroupResources::NodegroupResources() :
 {
 }
 
-NodegroupResources::NodegroupResources(JsonView jsonValue) : 
-    m_autoScalingGroupsHasBeenSet(false),
-    m_remoteAccessSecurityGroupHasBeenSet(false)
+NodegroupResources::NodegroupResources(JsonView jsonValue)
+  : NodegroupResources()
 {
   *this = jsonValue;
 }

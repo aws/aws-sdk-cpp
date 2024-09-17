@@ -40,30 +40,17 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::Vector<Section>& GetSections() const{ return m_sections; }
-
-    
     inline bool SectionsHasBeenSet() const { return m_sectionsHasBeenSet; }
-
-    
     inline void SetSections(const Aws::Vector<Section>& value) { m_sectionsHasBeenSet = true; m_sections = value; }
-
-    
     inline void SetSections(Aws::Vector<Section>&& value) { m_sectionsHasBeenSet = true; m_sections = std::move(value); }
-
-    
     inline LayoutSections& WithSections(const Aws::Vector<Section>& value) { SetSections(value); return *this;}
-
-    
     inline LayoutSections& WithSections(Aws::Vector<Section>&& value) { SetSections(std::move(value)); return *this;}
-
-    
     inline LayoutSections& AddSections(const Section& value) { m_sectionsHasBeenSet = true; m_sections.push_back(value); return *this; }
-
-    
     inline LayoutSections& AddSections(Section&& value) { m_sectionsHasBeenSet = true; m_sections.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Section> m_sections;

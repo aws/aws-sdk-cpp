@@ -26,11 +26,8 @@ MaintenanceUpdateSettings::MaintenanceUpdateSettings() :
 {
 }
 
-MaintenanceUpdateSettings::MaintenanceUpdateSettings(JsonView jsonValue) : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceScheduledDateHasBeenSet(false),
-    m_maintenanceStartTimeHasBeenSet(false)
+MaintenanceUpdateSettings::MaintenanceUpdateSettings(JsonView jsonValue)
+  : MaintenanceUpdateSettings()
 {
   *this = jsonValue;
 }

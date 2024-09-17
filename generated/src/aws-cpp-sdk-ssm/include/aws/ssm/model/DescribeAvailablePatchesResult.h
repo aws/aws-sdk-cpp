@@ -34,106 +34,43 @@ namespace Model
     AWS_SSM_API DescribeAvailablePatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of patches. Each entry in the array is a patch structure.</p>
      */
     inline const Aws::Vector<Patch>& GetPatches() const{ return m_patches; }
-
-    /**
-     * <p>An array of patches. Each entry in the array is a patch structure.</p>
-     */
     inline void SetPatches(const Aws::Vector<Patch>& value) { m_patches = value; }
-
-    /**
-     * <p>An array of patches. Each entry in the array is a patch structure.</p>
-     */
     inline void SetPatches(Aws::Vector<Patch>&& value) { m_patches = std::move(value); }
-
-    /**
-     * <p>An array of patches. Each entry in the array is a patch structure.</p>
-     */
     inline DescribeAvailablePatchesResult& WithPatches(const Aws::Vector<Patch>& value) { SetPatches(value); return *this;}
-
-    /**
-     * <p>An array of patches. Each entry in the array is a patch structure.</p>
-     */
     inline DescribeAvailablePatchesResult& WithPatches(Aws::Vector<Patch>&& value) { SetPatches(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of patches. Each entry in the array is a patch structure.</p>
-     */
     inline DescribeAvailablePatchesResult& AddPatches(const Patch& value) { m_patches.push_back(value); return *this; }
-
-    /**
-     * <p>An array of patches. Each entry in the array is a patch structure.</p>
-     */
     inline DescribeAvailablePatchesResult& AddPatches(Patch&& value) { m_patches.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeAvailablePatchesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeAvailablePatchesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeAvailablePatchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAvailablePatchesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAvailablePatchesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAvailablePatchesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Patch> m_patches;

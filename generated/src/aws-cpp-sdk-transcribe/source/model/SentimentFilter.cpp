@@ -29,14 +29,8 @@ SentimentFilter::SentimentFilter() :
 {
 }
 
-SentimentFilter::SentimentFilter(JsonView jsonValue) : 
-    m_sentimentsHasBeenSet(false),
-    m_absoluteTimeRangeHasBeenSet(false),
-    m_relativeTimeRangeHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
+SentimentFilter::SentimentFilter(JsonView jsonValue)
+  : SentimentFilter()
 {
   *this = jsonValue;
 }

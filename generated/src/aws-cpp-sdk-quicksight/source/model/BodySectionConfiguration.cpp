@@ -22,15 +22,13 @@ BodySectionConfiguration::BodySectionConfiguration() :
     m_sectionIdHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_styleHasBeenSet(false),
-    m_pageBreakConfigurationHasBeenSet(false)
+    m_pageBreakConfigurationHasBeenSet(false),
+    m_repeatConfigurationHasBeenSet(false)
 {
 }
 
-BodySectionConfiguration::BodySectionConfiguration(JsonView jsonValue) : 
-    m_sectionIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_styleHasBeenSet(false),
-    m_pageBreakConfigurationHasBeenSet(false)
+BodySectionConfiguration::BodySectionConfiguration(JsonView jsonValue)
+  : BodySectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -65,6 +63,13 @@ BodySectionConfiguration& BodySectionConfiguration::operator =(JsonView jsonValu
     m_pageBreakConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RepeatConfiguration"))
+  {
+    m_repeatConfiguration = jsonValue.GetObject("RepeatConfiguration");
+
+    m_repeatConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +98,12 @@ JsonValue BodySectionConfiguration::Jsonize() const
   if(m_pageBreakConfigurationHasBeenSet)
   {
    payload.WithObject("PageBreakConfiguration", m_pageBreakConfiguration.Jsonize());
+
+  }
+
+  if(m_repeatConfigurationHasBeenSet)
+  {
+   payload.WithObject("RepeatConfiguration", m_repeatConfiguration.Jsonize());
 
   }
 

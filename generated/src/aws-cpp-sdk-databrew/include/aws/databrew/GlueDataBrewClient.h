@@ -633,13 +633,13 @@ namespace GlueDataBrew
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueDataBrewClient::ListDatasets, request);
         }
@@ -648,7 +648,7 @@ namespace GlueDataBrew
          * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueDataBrewClient::ListDatasets, request, handler, context);
         }
@@ -685,13 +685,13 @@ namespace GlueDataBrew
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const
+        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueDataBrewClient::ListJobs, request);
         }
@@ -700,7 +700,7 @@ namespace GlueDataBrew
          * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobsAsync(const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueDataBrewClient::ListJobs, request, handler, context);
         }
@@ -711,13 +711,13 @@ namespace GlueDataBrew
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListProjects">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
+        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request) const
+        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueDataBrewClient::ListProjects, request);
         }
@@ -726,7 +726,7 @@ namespace GlueDataBrew
          * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        void ListProjectsAsync(const ListProjectsRequestT& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProjectsAsync(const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProjectsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueDataBrewClient::ListProjects, request, handler, context);
         }
@@ -763,13 +763,13 @@ namespace GlueDataBrew
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request) const;
+        virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecipes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecipesRequestT = Model::ListRecipesRequest>
-        Model::ListRecipesOutcomeCallable ListRecipesCallable(const ListRecipesRequestT& request) const
+        Model::ListRecipesOutcomeCallable ListRecipesCallable(const ListRecipesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueDataBrewClient::ListRecipes, request);
         }
@@ -778,7 +778,7 @@ namespace GlueDataBrew
          * An Async wrapper for ListRecipes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecipesRequestT = Model::ListRecipesRequest>
-        void ListRecipesAsync(const ListRecipesRequestT& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecipesAsync(const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecipesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueDataBrewClient::ListRecipes, request, handler, context);
         }
@@ -789,13 +789,13 @@ namespace GlueDataBrew
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRulesets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRulesetsOutcome ListRulesets(const Model::ListRulesetsRequest& request) const;
+        virtual Model::ListRulesetsOutcome ListRulesets(const Model::ListRulesetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRulesets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRulesetsRequestT = Model::ListRulesetsRequest>
-        Model::ListRulesetsOutcomeCallable ListRulesetsCallable(const ListRulesetsRequestT& request) const
+        Model::ListRulesetsOutcomeCallable ListRulesetsCallable(const ListRulesetsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueDataBrewClient::ListRulesets, request);
         }
@@ -804,7 +804,7 @@ namespace GlueDataBrew
          * An Async wrapper for ListRulesets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRulesetsRequestT = Model::ListRulesetsRequest>
-        void ListRulesetsAsync(const ListRulesetsRequestT& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRulesetsAsync(const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRulesetsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueDataBrewClient::ListRulesets, request, handler, context);
         }
@@ -814,13 +814,13 @@ namespace GlueDataBrew
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListSchedules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSchedulesOutcome ListSchedules(const Model::ListSchedulesRequest& request) const;
+        virtual Model::ListSchedulesOutcome ListSchedules(const Model::ListSchedulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSchedulesRequestT = Model::ListSchedulesRequest>
-        Model::ListSchedulesOutcomeCallable ListSchedulesCallable(const ListSchedulesRequestT& request) const
+        Model::ListSchedulesOutcomeCallable ListSchedulesCallable(const ListSchedulesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueDataBrewClient::ListSchedules, request);
         }
@@ -829,7 +829,7 @@ namespace GlueDataBrew
          * An Async wrapper for ListSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSchedulesRequestT = Model::ListSchedulesRequest>
-        void ListSchedulesAsync(const ListSchedulesRequestT& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSchedulesAsync(const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSchedulesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueDataBrewClient::ListSchedules, request, handler, context);
         }
@@ -1226,7 +1226,6 @@ namespace GlueDataBrew
       void init(const GlueDataBrewClientConfiguration& clientConfiguration);
 
       GlueDataBrewClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GlueDataBrewEndpointProviderBase> m_endpointProvider;
   };
 

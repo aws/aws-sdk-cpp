@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoT
 {
 namespace Model
@@ -31,51 +35,40 @@ namespace Model
 
     AWS_IOT_API Aws::String SerializePayload() const override;
 
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
+    ///@{
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline DescribeJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline DescribeJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline DescribeJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>A flag that provides a view of the job document before and after the
+     * substitution parameters have been resolved with their exact values.</p>
+     */
+    inline bool GetBeforeSubstitution() const{ return m_beforeSubstitution; }
+    inline bool BeforeSubstitutionHasBeenSet() const { return m_beforeSubstitutionHasBeenSet; }
+    inline void SetBeforeSubstitution(bool value) { m_beforeSubstitutionHasBeenSet = true; m_beforeSubstitution = value; }
+    inline DescribeJobRequest& WithBeforeSubstitution(bool value) { SetBeforeSubstitution(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
+
+    bool m_beforeSubstitution;
+    bool m_beforeSubstitutionHasBeenSet = false;
   };
 
 } // namespace Model

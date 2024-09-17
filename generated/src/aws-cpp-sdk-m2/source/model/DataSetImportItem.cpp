@@ -24,9 +24,8 @@ DataSetImportItem::DataSetImportItem() :
 {
 }
 
-DataSetImportItem::DataSetImportItem(JsonView jsonValue) : 
-    m_dataSetHasBeenSet(false),
-    m_externalLocationHasBeenSet(false)
+DataSetImportItem::DataSetImportItem(JsonView jsonValue)
+  : DataSetImportItem()
 {
   *this = jsonValue;
 }

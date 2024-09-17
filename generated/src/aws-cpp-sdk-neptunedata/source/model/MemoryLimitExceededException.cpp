@@ -25,10 +25,8 @@ MemoryLimitExceededException::MemoryLimitExceededException() :
 {
 }
 
-MemoryLimitExceededException::MemoryLimitExceededException(JsonView jsonValue) : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
+MemoryLimitExceededException::MemoryLimitExceededException(JsonView jsonValue)
+  : MemoryLimitExceededException()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AuditContext::AuditContext() :
 {
 }
 
-AuditContext::AuditContext(JsonView jsonValue) : 
-    m_additionalAuditContextHasBeenSet(false),
-    m_requestedColumnsHasBeenSet(false),
-    m_allColumnsRequested(false),
-    m_allColumnsRequestedHasBeenSet(false)
+AuditContext::AuditContext(JsonView jsonValue)
+  : AuditContext()
 {
   *this = jsonValue;
 }

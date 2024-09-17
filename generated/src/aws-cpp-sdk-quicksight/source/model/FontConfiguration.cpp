@@ -29,14 +29,8 @@ FontConfiguration::FontConfiguration() :
 {
 }
 
-FontConfiguration::FontConfiguration(JsonView jsonValue) : 
-    m_fontSizeHasBeenSet(false),
-    m_fontDecoration(FontDecoration::NOT_SET),
-    m_fontDecorationHasBeenSet(false),
-    m_fontColorHasBeenSet(false),
-    m_fontWeightHasBeenSet(false),
-    m_fontStyle(FontStyle::NOT_SET),
-    m_fontStyleHasBeenSet(false)
+FontConfiguration::FontConfiguration(JsonView jsonValue)
+  : FontConfiguration()
 {
   *this = jsonValue;
 }

@@ -27,6 +27,9 @@
 #include <aws/polly/model/PutLexiconResult.h>
 #include <aws/polly/model/StartSpeechSynthesisTaskResult.h>
 #include <aws/polly/model/SynthesizeSpeechResult.h>
+#include <aws/polly/model/DescribeVoicesRequest.h>
+#include <aws/polly/model/ListLexiconsRequest.h>
+#include <aws/polly/model/ListSpeechSynthesisTasksRequest.h>
 /* End of service model headers required in PollyClient header */
 
 namespace Aws
@@ -60,7 +63,7 @@ namespace Aws
 
   namespace Polly
   {
-    using PollyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PollyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PollyEndpointProviderBase = Aws::Polly::Endpoint::PollyEndpointProviderBase;
     using PollyEndpointProvider = Aws::Polly::Endpoint::PollyEndpointProvider;
 

@@ -24,9 +24,8 @@ BatchRetryStrategy::BatchRetryStrategy() :
 {
 }
 
-BatchRetryStrategy::BatchRetryStrategy(JsonView jsonValue) : 
-    m_attempts(0),
-    m_attemptsHasBeenSet(false)
+BatchRetryStrategy::BatchRetryStrategy(JsonView jsonValue)
+  : BatchRetryStrategy()
 {
   *this = jsonValue;
 }

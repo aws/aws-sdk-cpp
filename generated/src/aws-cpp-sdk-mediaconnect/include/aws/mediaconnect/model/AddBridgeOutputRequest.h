@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const AddBridgeNetworkOutputRequest& GetNetworkOutput() const{ return m_networkOutput; }
-
-    
     inline bool NetworkOutputHasBeenSet() const { return m_networkOutputHasBeenSet; }
-
-    
     inline void SetNetworkOutput(const AddBridgeNetworkOutputRequest& value) { m_networkOutputHasBeenSet = true; m_networkOutput = value; }
-
-    
     inline void SetNetworkOutput(AddBridgeNetworkOutputRequest&& value) { m_networkOutputHasBeenSet = true; m_networkOutput = std::move(value); }
-
-    
     inline AddBridgeOutputRequest& WithNetworkOutput(const AddBridgeNetworkOutputRequest& value) { SetNetworkOutput(value); return *this;}
-
-    
     inline AddBridgeOutputRequest& WithNetworkOutput(AddBridgeNetworkOutputRequest&& value) { SetNetworkOutput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AddBridgeNetworkOutputRequest m_networkOutput;

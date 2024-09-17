@@ -26,11 +26,8 @@ DifferentialPrivacyPreviewAggregation::DifferentialPrivacyPreviewAggregation() :
 {
 }
 
-DifferentialPrivacyPreviewAggregation::DifferentialPrivacyPreviewAggregation(JsonView jsonValue) : 
-    m_type(DifferentialPrivacyAggregationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false)
+DifferentialPrivacyPreviewAggregation::DifferentialPrivacyPreviewAggregation(JsonView jsonValue)
+  : DifferentialPrivacyPreviewAggregation()
 {
   *this = jsonValue;
 }

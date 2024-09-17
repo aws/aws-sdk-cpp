@@ -23,8 +23,8 @@ TimedMetadataInsertion::TimedMetadataInsertion() :
 {
 }
 
-TimedMetadataInsertion::TimedMetadataInsertion(JsonView jsonValue) : 
-    m_id3InsertionsHasBeenSet(false)
+TimedMetadataInsertion::TimedMetadataInsertion(JsonView jsonValue)
+  : TimedMetadataInsertion()
 {
   *this = jsonValue;
 }

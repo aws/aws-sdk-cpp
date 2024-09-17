@@ -38,63 +38,29 @@ namespace Model
     AWS_OPSWORKS_API CreateUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The user's IAM ARN.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
-
-    /**
-     * <p>The user's IAM ARN.</p>
-     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArn = value; }
-
-    /**
-     * <p>The user's IAM ARN.</p>
-     */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArn = std::move(value); }
-
-    /**
-     * <p>The user's IAM ARN.</p>
-     */
     inline void SetIamUserArn(const char* value) { m_iamUserArn.assign(value); }
-
-    /**
-     * <p>The user's IAM ARN.</p>
-     */
     inline CreateUserProfileResult& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
-
-    /**
-     * <p>The user's IAM ARN.</p>
-     */
     inline CreateUserProfileResult& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The user's IAM ARN.</p>
-     */
     inline CreateUserProfileResult& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUserProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUserProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUserProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_iamUserArn;

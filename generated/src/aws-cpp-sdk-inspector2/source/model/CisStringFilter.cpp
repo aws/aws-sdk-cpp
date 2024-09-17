@@ -25,10 +25,8 @@ CisStringFilter::CisStringFilter() :
 {
 }
 
-CisStringFilter::CisStringFilter(JsonView jsonValue) : 
-    m_comparison(CisStringComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CisStringFilter::CisStringFilter(JsonView jsonValue)
+  : CisStringFilter()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetTemplateResult::GetTemplateResult() :
 {
 }
 
-GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TemplateStatus::NOT_SET)
+GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTemplateResult()
 {
   *this = result;
 }
@@ -34,6 +34,12 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("templateArn"))
+  {
+    m_templateArn = jsonValue.GetString("templateArn");
 
   }
 
@@ -67,16 +73,43 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetDouble("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("owner"))
+  {
+    m_owner = jsonValue.GetString("owner");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = TemplateStatusMapper::GetTemplateStatusForName(jsonValue.GetString("status"));
 
   }
 
-  if(jsonValue.ValueExists("creationTime"))
+  if(jsonValue.ValueExists("statusMessage"))
   {
-    m_creationTime = jsonValue.GetDouble("creationTime");
+    m_statusMessage = jsonValue.GetString("statusMessage");
 
+  }
+
+  if(jsonValue.ValueExists("templateClass"))
+  {
+    m_templateClass = jsonValue.GetString("templateClass");
+
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
   }
 
 

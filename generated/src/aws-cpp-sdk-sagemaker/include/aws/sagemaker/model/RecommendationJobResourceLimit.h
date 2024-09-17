@@ -36,47 +36,25 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the maximum number of load tests.</p>
      */
     inline int GetMaxNumberOfTests() const{ return m_maxNumberOfTests; }
-
-    /**
-     * <p>Defines the maximum number of load tests.</p>
-     */
     inline bool MaxNumberOfTestsHasBeenSet() const { return m_maxNumberOfTestsHasBeenSet; }
-
-    /**
-     * <p>Defines the maximum number of load tests.</p>
-     */
     inline void SetMaxNumberOfTests(int value) { m_maxNumberOfTestsHasBeenSet = true; m_maxNumberOfTests = value; }
-
-    /**
-     * <p>Defines the maximum number of load tests.</p>
-     */
     inline RecommendationJobResourceLimit& WithMaxNumberOfTests(int value) { SetMaxNumberOfTests(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the maximum number of parallel load tests.</p>
      */
     inline int GetMaxParallelOfTests() const{ return m_maxParallelOfTests; }
-
-    /**
-     * <p>Defines the maximum number of parallel load tests.</p>
-     */
     inline bool MaxParallelOfTestsHasBeenSet() const { return m_maxParallelOfTestsHasBeenSet; }
-
-    /**
-     * <p>Defines the maximum number of parallel load tests.</p>
-     */
     inline void SetMaxParallelOfTests(int value) { m_maxParallelOfTestsHasBeenSet = true; m_maxParallelOfTests = value; }
-
-    /**
-     * <p>Defines the maximum number of parallel load tests.</p>
-     */
     inline RecommendationJobResourceLimit& WithMaxParallelOfTests(int value) { SetMaxParallelOfTests(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxNumberOfTests;

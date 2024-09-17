@@ -34,19 +34,8 @@ NotebookInstanceSummary::NotebookInstanceSummary() :
 {
 }
 
-NotebookInstanceSummary::NotebookInstanceSummary(JsonView jsonValue) : 
-    m_notebookInstanceNameHasBeenSet(false),
-    m_notebookInstanceArnHasBeenSet(false),
-    m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
-    m_notebookInstanceStatusHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
-    m_defaultCodeRepositoryHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false)
+NotebookInstanceSummary::NotebookInstanceSummary(JsonView jsonValue)
+  : NotebookInstanceSummary()
 {
   *this = jsonValue;
 }

@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateKeyRequest::CreateKeyRequest() : 
+    m_keyNameHasBeenSet(false),
+    m_restrictionsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
     m_noExpiry(false),
     m_noExpiryHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -26,6 +26,18 @@ CreateKeyRequest::CreateKeyRequest() :
 Aws::String CreateKeyRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_keyNameHasBeenSet)
+  {
+   payload.WithString("KeyName", m_keyName);
+
+  }
+
+  if(m_restrictionsHasBeenSet)
+  {
+   payload.WithObject("Restrictions", m_restrictions.Jsonize());
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -38,21 +50,9 @@ Aws::String CreateKeyRequest::SerializePayload() const
    payload.WithString("ExpireTime", m_expireTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_keyNameHasBeenSet)
-  {
-   payload.WithString("KeyName", m_keyName);
-
-  }
-
   if(m_noExpiryHasBeenSet)
   {
    payload.WithBool("NoExpiry", m_noExpiry);
-
-  }
-
-  if(m_restrictionsHasBeenSet)
-  {
-   payload.WithObject("Restrictions", m_restrictions.Jsonize());
 
   }
 

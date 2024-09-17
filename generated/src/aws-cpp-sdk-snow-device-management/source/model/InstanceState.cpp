@@ -26,11 +26,8 @@ InstanceState::InstanceState() :
 {
 }
 
-InstanceState::InstanceState(JsonView jsonValue) : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_name(InstanceStateName::NOT_SET),
-    m_nameHasBeenSet(false)
+InstanceState::InstanceState(JsonView jsonValue)
+  : InstanceState()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ BillingDetails::BillingDetails() :
 {
 }
 
-BillingDetails::BillingDetails(JsonView jsonValue) : 
-    m_billedMemoryUsedInMB(0),
-    m_billedMemoryUsedInMBHasBeenSet(false),
-    m_billedDurationInMilliseconds(0),
-    m_billedDurationInMillisecondsHasBeenSet(false)
+BillingDetails::BillingDetails(JsonView jsonValue)
+  : BillingDetails()
 {
   *this = jsonValue;
 }

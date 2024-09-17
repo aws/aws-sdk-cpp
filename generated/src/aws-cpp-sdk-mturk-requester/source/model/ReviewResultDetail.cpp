@@ -28,13 +28,8 @@ ReviewResultDetail::ReviewResultDetail() :
 {
 }
 
-ReviewResultDetail::ReviewResultDetail(JsonView jsonValue) : 
-    m_actionIdHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_subjectTypeHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ReviewResultDetail::ReviewResultDetail(JsonView jsonValue)
+  : ReviewResultDetail()
 {
   *this = jsonValue;
 }

@@ -28,11 +28,8 @@ S3InitiateRestoreObjectOperation::S3InitiateRestoreObjectOperation() :
 {
 }
 
-S3InitiateRestoreObjectOperation::S3InitiateRestoreObjectOperation(const XmlNode& xmlNode) : 
-    m_expirationInDays(0),
-    m_expirationInDaysHasBeenSet(false),
-    m_glacierJobTier(S3GlacierJobTier::NOT_SET),
-    m_glacierJobTierHasBeenSet(false)
+S3InitiateRestoreObjectOperation::S3InitiateRestoreObjectOperation(const XmlNode& xmlNode)
+  : S3InitiateRestoreObjectOperation()
 {
   *this = xmlNode;
 }

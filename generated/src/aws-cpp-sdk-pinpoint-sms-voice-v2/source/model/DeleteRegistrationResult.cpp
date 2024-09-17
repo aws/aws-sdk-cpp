@@ -25,11 +25,8 @@ DeleteRegistrationResult::DeleteRegistrationResult() :
 {
 }
 
-DeleteRegistrationResult::DeleteRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_currentVersionNumber(0),
-    m_approvedVersionNumber(0),
-    m_latestDeniedVersionNumber(0)
+DeleteRegistrationResult::DeleteRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRegistrationResult()
 {
   *this = result;
 }

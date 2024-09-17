@@ -26,11 +26,8 @@ UpdateThemeData::UpdateThemeData() :
 {
 }
 
-UpdateThemeData::UpdateThemeData(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+UpdateThemeData::UpdateThemeData(JsonView jsonValue)
+  : UpdateThemeData()
 {
   *this = jsonValue;
 }

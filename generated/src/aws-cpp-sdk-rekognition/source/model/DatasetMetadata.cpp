@@ -31,16 +31,8 @@ DatasetMetadata::DatasetMetadata() :
 {
 }
 
-DatasetMetadata::DatasetMetadata(JsonView jsonValue) : 
-    m_creationTimestampHasBeenSet(false),
-    m_datasetType(DatasetType::NOT_SET),
-    m_datasetTypeHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_statusMessageCode(DatasetStatusMessageCode::NOT_SET),
-    m_statusMessageCodeHasBeenSet(false)
+DatasetMetadata::DatasetMetadata(JsonView jsonValue)
+  : DatasetMetadata()
 {
   *this = jsonValue;
 }

@@ -35,6 +35,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specifies the number (1 to 4) of the captions channel you want to extract from
      * the ancillary captions. If you plan to convert the ancillary captions to another
@@ -43,34 +44,10 @@ namespace Model
      * captions), leave this field blank because MediaLive ignores the field.
      */
     inline int GetSourceAncillaryChannelNumber() const{ return m_sourceAncillaryChannelNumber; }
-
-    /**
-     * Specifies the number (1 to 4) of the captions channel you want to extract from
-     * the ancillary captions. If you plan to convert the ancillary captions to another
-     * format, complete this field. If you plan to choose Embedded as the captions
-     * destination in the output (to pass through all the channels in the ancillary
-     * captions), leave this field blank because MediaLive ignores the field.
-     */
     inline bool SourceAncillaryChannelNumberHasBeenSet() const { return m_sourceAncillaryChannelNumberHasBeenSet; }
-
-    /**
-     * Specifies the number (1 to 4) of the captions channel you want to extract from
-     * the ancillary captions. If you plan to convert the ancillary captions to another
-     * format, complete this field. If you plan to choose Embedded as the captions
-     * destination in the output (to pass through all the channels in the ancillary
-     * captions), leave this field blank because MediaLive ignores the field.
-     */
     inline void SetSourceAncillaryChannelNumber(int value) { m_sourceAncillaryChannelNumberHasBeenSet = true; m_sourceAncillaryChannelNumber = value; }
-
-    /**
-     * Specifies the number (1 to 4) of the captions channel you want to extract from
-     * the ancillary captions. If you plan to convert the ancillary captions to another
-     * format, complete this field. If you plan to choose Embedded as the captions
-     * destination in the output (to pass through all the channels in the ancillary
-     * captions), leave this field blank because MediaLive ignores the field.
-     */
     inline AncillarySourceSettings& WithSourceAncillaryChannelNumber(int value) { SetSourceAncillaryChannelNumber(value); return *this;}
-
+    ///@}
   private:
 
     int m_sourceAncillaryChannelNumber;

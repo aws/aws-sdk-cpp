@@ -24,9 +24,8 @@ AppliedTerminology::AppliedTerminology() :
 {
 }
 
-AppliedTerminology::AppliedTerminology(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_termsHasBeenSet(false)
+AppliedTerminology::AppliedTerminology(JsonView jsonValue)
+  : AppliedTerminology()
 {
   *this = jsonValue;
 }

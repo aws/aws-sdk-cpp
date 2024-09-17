@@ -30,15 +30,8 @@ SpotProvisioningSpecification::SpotProvisioningSpecification() :
 {
 }
 
-SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue) : 
-    m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false),
-    m_timeoutAction(SpotProvisioningTimeoutAction::NOT_SET),
-    m_timeoutActionHasBeenSet(false),
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_allocationStrategy(SpotProvisioningAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
+SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue)
+  : SpotProvisioningSpecification()
 {
   *this = jsonValue;
 }

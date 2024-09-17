@@ -34,19 +34,8 @@ ClusterOperationInfo::ClusterOperationInfo() :
 {
 }
 
-ClusterOperationInfo::ClusterOperationInfo(JsonView jsonValue) : 
-    m_clientRequestIdHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_operationArnHasBeenSet(false),
-    m_operationStateHasBeenSet(false),
-    m_operationStepsHasBeenSet(false),
-    m_operationTypeHasBeenSet(false),
-    m_sourceClusterInfoHasBeenSet(false),
-    m_targetClusterInfoHasBeenSet(false),
-    m_vpcConnectionInfoHasBeenSet(false)
+ClusterOperationInfo::ClusterOperationInfo(JsonView jsonValue)
+  : ClusterOperationInfo()
 {
   *this = jsonValue;
 }

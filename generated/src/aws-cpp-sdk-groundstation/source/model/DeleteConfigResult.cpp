@@ -22,8 +22,8 @@ DeleteConfigResult::DeleteConfigResult() :
 {
 }
 
-DeleteConfigResult::DeleteConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_configType(ConfigCapabilityType::NOT_SET)
+DeleteConfigResult::DeleteConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteConfigResult()
 {
   *this = result;
 }

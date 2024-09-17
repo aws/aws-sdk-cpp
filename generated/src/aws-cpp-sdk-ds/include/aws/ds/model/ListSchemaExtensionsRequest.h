@@ -34,124 +34,45 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the directory from which to retrieve the schema extension
      * information.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>The identifier of the directory from which to retrieve the schema extension
-     * information.</p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the directory from which to retrieve the schema extension
-     * information.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p>The identifier of the directory from which to retrieve the schema extension
-     * information.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p>The identifier of the directory from which to retrieve the schema extension
-     * information.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p>The identifier of the directory from which to retrieve the schema extension
-     * information.</p>
-     */
     inline ListSchemaExtensionsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>The identifier of the directory from which to retrieve the schema extension
-     * information.</p>
-     */
     inline ListSchemaExtensionsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the directory from which to retrieve the schema extension
-     * information.</p>
-     */
     inline ListSchemaExtensionsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
      * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-     */
     inline ListSchemaExtensionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-     */
     inline ListSchemaExtensionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
-     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-     */
     inline ListSchemaExtensionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of items to return.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of items to return.</p>
-     */
     inline ListSchemaExtensionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

@@ -24,9 +24,8 @@ DocumentMetadata::DocumentMetadata() :
 {
 }
 
-DocumentMetadata::DocumentMetadata(JsonView jsonValue) : 
-    m_pages(0),
-    m_pagesHasBeenSet(false)
+DocumentMetadata::DocumentMetadata(JsonView jsonValue)
+  : DocumentMetadata()
 {
   *this = jsonValue;
 }

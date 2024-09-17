@@ -26,11 +26,8 @@ Hdr10Plus::Hdr10Plus() :
 {
 }
 
-Hdr10Plus::Hdr10Plus(JsonView jsonValue) : 
-    m_masteringMonitorNits(0),
-    m_masteringMonitorNitsHasBeenSet(false),
-    m_targetMonitorNits(0),
-    m_targetMonitorNitsHasBeenSet(false)
+Hdr10Plus::Hdr10Plus(JsonView jsonValue)
+  : Hdr10Plus()
 {
   *this = jsonValue;
 }

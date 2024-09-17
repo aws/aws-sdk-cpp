@@ -24,6 +24,7 @@ namespace Aws
         static const int FAIRPLAY_HASH = HashingUtils::HashString("FAIRPLAY");
         static const int PLAYREADY_HASH = HashingUtils::HashString("PLAYREADY");
         static const int WIDEVINE_HASH = HashingUtils::HashString("WIDEVINE");
+        static const int IRDETO_HASH = HashingUtils::HashString("IRDETO");
 
 
         DrmSystem GetDrmSystemForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == WIDEVINE_HASH)
           {
             return DrmSystem::WIDEVINE;
+          }
+          else if (hashCode == IRDETO_HASH)
+          {
+            return DrmSystem::IRDETO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "PLAYREADY";
           case DrmSystem::WIDEVINE:
             return "WIDEVINE";
+          case DrmSystem::IRDETO:
+            return "IRDETO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

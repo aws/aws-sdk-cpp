@@ -641,13 +641,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest& request) const;
+        virtual Model::DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCertificatesRequestT = Model::DescribeCertificatesRequest>
-        Model::DescribeCertificatesOutcomeCallable DescribeCertificatesCallable(const DescribeCertificatesRequestT& request) const
+        Model::DescribeCertificatesOutcomeCallable DescribeCertificatesCallable(const DescribeCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeCertificates, request);
         }
@@ -656,7 +656,7 @@ namespace DocDB
          * An Async wrapper for DescribeCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCertificatesRequestT = Model::DescribeCertificatesRequest>
-        void DescribeCertificatesAsync(const DescribeCertificatesRequestT& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCertificatesAsync(const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeCertificates, request, handler, context);
         }
@@ -669,13 +669,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBClusterParameterGroupsOutcome DescribeDBClusterParameterGroups(const Model::DescribeDBClusterParameterGroupsRequest& request) const;
+        virtual Model::DescribeDBClusterParameterGroupsOutcome DescribeDBClusterParameterGroups(const Model::DescribeDBClusterParameterGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBClusterParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBClusterParameterGroupsRequestT = Model::DescribeDBClusterParameterGroupsRequest>
-        Model::DescribeDBClusterParameterGroupsOutcomeCallable DescribeDBClusterParameterGroupsCallable(const DescribeDBClusterParameterGroupsRequestT& request) const
+        Model::DescribeDBClusterParameterGroupsOutcomeCallable DescribeDBClusterParameterGroupsCallable(const DescribeDBClusterParameterGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeDBClusterParameterGroups, request);
         }
@@ -684,7 +684,7 @@ namespace DocDB
          * An Async wrapper for DescribeDBClusterParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBClusterParameterGroupsRequestT = Model::DescribeDBClusterParameterGroupsRequest>
-        void DescribeDBClusterParameterGroupsAsync(const DescribeDBClusterParameterGroupsRequestT& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBClusterParameterGroupsAsync(const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBClusterParameterGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeDBClusterParameterGroups, request, handler, context);
         }
@@ -753,13 +753,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBClusterSnapshotsOutcome DescribeDBClusterSnapshots(const Model::DescribeDBClusterSnapshotsRequest& request) const;
+        virtual Model::DescribeDBClusterSnapshotsOutcome DescribeDBClusterSnapshots(const Model::DescribeDBClusterSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBClusterSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBClusterSnapshotsRequestT = Model::DescribeDBClusterSnapshotsRequest>
-        Model::DescribeDBClusterSnapshotsOutcomeCallable DescribeDBClusterSnapshotsCallable(const DescribeDBClusterSnapshotsRequestT& request) const
+        Model::DescribeDBClusterSnapshotsOutcomeCallable DescribeDBClusterSnapshotsCallable(const DescribeDBClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeDBClusterSnapshots, request);
         }
@@ -768,7 +768,7 @@ namespace DocDB
          * An Async wrapper for DescribeDBClusterSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBClusterSnapshotsRequestT = Model::DescribeDBClusterSnapshotsRequest>
-        void DescribeDBClusterSnapshotsAsync(const DescribeDBClusterSnapshotsRequestT& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBClusterSnapshotsAsync(const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeDBClusterSnapshots, request, handler, context);
         }
@@ -783,13 +783,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBClustersOutcome DescribeDBClusters(const Model::DescribeDBClustersRequest& request) const;
+        virtual Model::DescribeDBClustersOutcome DescribeDBClusters(const Model::DescribeDBClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBClustersRequestT = Model::DescribeDBClustersRequest>
-        Model::DescribeDBClustersOutcomeCallable DescribeDBClustersCallable(const DescribeDBClustersRequestT& request) const
+        Model::DescribeDBClustersOutcomeCallable DescribeDBClustersCallable(const DescribeDBClustersRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeDBClusters, request);
         }
@@ -798,7 +798,7 @@ namespace DocDB
          * An Async wrapper for DescribeDBClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBClustersRequestT = Model::DescribeDBClustersRequest>
-        void DescribeDBClustersAsync(const DescribeDBClustersRequestT& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBClustersAsync(const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBClustersRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeDBClusters, request, handler, context);
         }
@@ -808,13 +808,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBEngineVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBEngineVersionsOutcome DescribeDBEngineVersions(const Model::DescribeDBEngineVersionsRequest& request) const;
+        virtual Model::DescribeDBEngineVersionsOutcome DescribeDBEngineVersions(const Model::DescribeDBEngineVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBEngineVersionsRequestT = Model::DescribeDBEngineVersionsRequest>
-        Model::DescribeDBEngineVersionsOutcomeCallable DescribeDBEngineVersionsCallable(const DescribeDBEngineVersionsRequestT& request) const
+        Model::DescribeDBEngineVersionsOutcomeCallable DescribeDBEngineVersionsCallable(const DescribeDBEngineVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeDBEngineVersions, request);
         }
@@ -823,7 +823,7 @@ namespace DocDB
          * An Async wrapper for DescribeDBEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBEngineVersionsRequestT = Model::DescribeDBEngineVersionsRequest>
-        void DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsRequestT& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBEngineVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeDBEngineVersions, request, handler, context);
         }
@@ -834,13 +834,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest& request) const;
+        virtual Model::DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBInstancesRequestT = Model::DescribeDBInstancesRequest>
-        Model::DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const DescribeDBInstancesRequestT& request) const
+        Model::DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const DescribeDBInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeDBInstances, request);
         }
@@ -849,7 +849,7 @@ namespace DocDB
          * An Async wrapper for DescribeDBInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBInstancesRequestT = Model::DescribeDBInstancesRequest>
-        void DescribeDBInstancesAsync(const DescribeDBInstancesRequestT& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBInstancesAsync(const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeDBInstances, request, handler, context);
         }
@@ -862,13 +862,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBSubnetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBSubnetGroupsOutcome DescribeDBSubnetGroups(const Model::DescribeDBSubnetGroupsRequest& request) const;
+        virtual Model::DescribeDBSubnetGroupsOutcome DescribeDBSubnetGroups(const Model::DescribeDBSubnetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBSubnetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBSubnetGroupsRequestT = Model::DescribeDBSubnetGroupsRequest>
-        Model::DescribeDBSubnetGroupsOutcomeCallable DescribeDBSubnetGroupsCallable(const DescribeDBSubnetGroupsRequestT& request) const
+        Model::DescribeDBSubnetGroupsOutcomeCallable DescribeDBSubnetGroupsCallable(const DescribeDBSubnetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeDBSubnetGroups, request);
         }
@@ -877,7 +877,7 @@ namespace DocDB
          * An Async wrapper for DescribeDBSubnetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBSubnetGroupsRequestT = Model::DescribeDBSubnetGroupsRequest>
-        void DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsRequestT& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBSubnetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeDBSubnetGroups, request, handler, context);
         }
@@ -914,13 +914,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventCategories">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
+        virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventCategories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventCategoriesRequestT = Model::DescribeEventCategoriesRequest>
-        Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const DescribeEventCategoriesRequestT& request) const
+        Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const DescribeEventCategoriesRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeEventCategories, request);
         }
@@ -929,7 +929,7 @@ namespace DocDB
          * An Async wrapper for DescribeEventCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventCategoriesRequestT = Model::DescribeEventCategoriesRequest>
-        void DescribeEventCategoriesAsync(const DescribeEventCategoriesRequestT& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventCategoriesAsync(const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventCategoriesRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeEventCategories, request, handler, context);
         }
@@ -944,13 +944,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
+        virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventSubscriptionsRequestT = Model::DescribeEventSubscriptionsRequest>
-        Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const DescribeEventSubscriptionsRequestT& request) const
+        Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const DescribeEventSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeEventSubscriptions, request);
         }
@@ -959,7 +959,7 @@ namespace DocDB
          * An Async wrapper for DescribeEventSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventSubscriptionsRequestT = Model::DescribeEventSubscriptionsRequest>
-        void DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequestT& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeEventSubscriptions, request, handler, context);
         }
@@ -973,13 +973,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request) const
+        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeEvents, request);
         }
@@ -988,7 +988,7 @@ namespace DocDB
          * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        void DescribeEventsAsync(const DescribeEventsRequestT& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeEvents, request, handler, context);
         }
@@ -1000,13 +1000,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGlobalClustersOutcome DescribeGlobalClusters(const Model::DescribeGlobalClustersRequest& request) const;
+        virtual Model::DescribeGlobalClustersOutcome DescribeGlobalClusters(const Model::DescribeGlobalClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGlobalClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGlobalClustersRequestT = Model::DescribeGlobalClustersRequest>
-        Model::DescribeGlobalClustersOutcomeCallable DescribeGlobalClustersCallable(const DescribeGlobalClustersRequestT& request) const
+        Model::DescribeGlobalClustersOutcomeCallable DescribeGlobalClustersCallable(const DescribeGlobalClustersRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribeGlobalClusters, request);
         }
@@ -1015,7 +1015,7 @@ namespace DocDB
          * An Async wrapper for DescribeGlobalClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGlobalClustersRequestT = Model::DescribeGlobalClustersRequest>
-        void DescribeGlobalClustersAsync(const DescribeGlobalClustersRequestT& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGlobalClustersAsync(const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGlobalClustersRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribeGlobalClusters, request, handler, context);
         }
@@ -1052,13 +1052,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribePendingMaintenanceActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePendingMaintenanceActionsOutcome DescribePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest& request) const;
+        virtual Model::DescribePendingMaintenanceActionsOutcome DescribePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePendingMaintenanceActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePendingMaintenanceActionsRequestT = Model::DescribePendingMaintenanceActionsRequest>
-        Model::DescribePendingMaintenanceActionsOutcomeCallable DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequestT& request) const
+        Model::DescribePendingMaintenanceActionsOutcomeCallable DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::DescribePendingMaintenanceActions, request);
         }
@@ -1067,7 +1067,7 @@ namespace DocDB
          * An Async wrapper for DescribePendingMaintenanceActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePendingMaintenanceActionsRequestT = Model::DescribePendingMaintenanceActionsRequest>
-        void DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequestT& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePendingMaintenanceActionsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::DescribePendingMaintenanceActions, request, handler, context);
         }
@@ -1082,13 +1082,13 @@ namespace DocDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          */
-        virtual Model::FailoverDBClusterOutcome FailoverDBCluster(const Model::FailoverDBClusterRequest& request) const;
+        virtual Model::FailoverDBClusterOutcome FailoverDBCluster(const Model::FailoverDBClusterRequest& request = {}) const;
 
         /**
          * A Callable wrapper for FailoverDBCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename FailoverDBClusterRequestT = Model::FailoverDBClusterRequest>
-        Model::FailoverDBClusterOutcomeCallable FailoverDBClusterCallable(const FailoverDBClusterRequestT& request) const
+        Model::FailoverDBClusterOutcomeCallable FailoverDBClusterCallable(const FailoverDBClusterRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBClient::FailoverDBCluster, request);
         }
@@ -1097,9 +1097,41 @@ namespace DocDB
          * An Async wrapper for FailoverDBCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename FailoverDBClusterRequestT = Model::FailoverDBClusterRequest>
-        void FailoverDBClusterAsync(const FailoverDBClusterRequestT& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void FailoverDBClusterAsync(const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const FailoverDBClusterRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBClient::FailoverDBCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Promotes the specified secondary DB cluster to be the primary DB cluster in
+         * the global cluster when failing over a global cluster occurs.</p> <p>Use this
+         * operation to respond to an unplanned event, such as a regional disaster in the
+         * primary region. Failing over can result in a loss of write transaction data that
+         * wasn't replicated to the chosen secondary before the failover event occurred.
+         * However, the recovery process that promotes a DB instance on the chosen seconday
+         * DB cluster to be the primary writer DB instance guarantees that the data is in a
+         * transactionally consistent state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::FailoverGlobalClusterOutcome FailoverGlobalCluster(const Model::FailoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for FailoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename FailoverGlobalClusterRequestT = Model::FailoverGlobalClusterRequest>
+        Model::FailoverGlobalClusterOutcomeCallable FailoverGlobalClusterCallable(const FailoverGlobalClusterRequestT& request) const
+        {
+            return SubmitCallable(&DocDBClient::FailoverGlobalCluster, request);
+        }
+
+        /**
+         * An Async wrapper for FailoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename FailoverGlobalClusterRequestT = Model::FailoverGlobalClusterRequest>
+        void FailoverGlobalClusterAsync(const FailoverGlobalClusterRequestT& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBClient::FailoverGlobalCluster, request, handler, context);
         }
 
         /**
@@ -1603,6 +1635,33 @@ namespace DocDB
             return SubmitAsync(&DocDBClient::StopDBCluster, request, handler, context);
         }
 
+        /**
+         * <p>Switches over the specified secondary Amazon DocumentDB cluster to be the new
+         * primary Amazon DocumentDB cluster in the global database cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SwitchoverGlobalClusterOutcome SwitchoverGlobalCluster(const Model::SwitchoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for SwitchoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        Model::SwitchoverGlobalClusterOutcomeCallable SwitchoverGlobalClusterCallable(const SwitchoverGlobalClusterRequestT& request) const
+        {
+            return SubmitCallable(&DocDBClient::SwitchoverGlobalCluster, request);
+        }
+
+        /**
+         * An Async wrapper for SwitchoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        void SwitchoverGlobalClusterAsync(const SwitchoverGlobalClusterRequestT& request, const SwitchoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBClient::SwitchoverGlobalCluster, request, handler, context);
+        }
+
 
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();
@@ -1611,7 +1670,6 @@ namespace DocDB
         void init(const DocDBClientConfiguration& clientConfiguration);
 
         DocDBClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<DocDBEndpointProviderBase> m_endpointProvider;
   };
 

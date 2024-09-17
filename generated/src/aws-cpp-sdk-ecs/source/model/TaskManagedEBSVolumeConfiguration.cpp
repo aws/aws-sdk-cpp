@@ -38,23 +38,8 @@ TaskManagedEBSVolumeConfiguration::TaskManagedEBSVolumeConfiguration() :
 {
 }
 
-TaskManagedEBSVolumeConfiguration::TaskManagedEBSVolumeConfiguration(JsonView jsonValue) : 
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_terminationPolicyHasBeenSet(false),
-    m_filesystemType(TaskFilesystemType::NOT_SET),
-    m_filesystemTypeHasBeenSet(false)
+TaskManagedEBSVolumeConfiguration::TaskManagedEBSVolumeConfiguration(JsonView jsonValue)
+  : TaskManagedEBSVolumeConfiguration()
 {
   *this = jsonValue;
 }

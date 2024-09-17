@@ -22,8 +22,8 @@ UpdateBotRecommendationResult::UpdateBotRecommendationResult() :
 {
 }
 
-UpdateBotRecommendationResult::UpdateBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botRecommendationStatus(BotRecommendationStatus::NOT_SET)
+UpdateBotRecommendationResult::UpdateBotRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateBotRecommendationResult()
 {
   *this = result;
 }

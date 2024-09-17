@@ -38,6 +38,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
@@ -46,119 +47,29 @@ namespace Model
      * following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
-
-    /**
-     * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
-     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters that consist of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
-     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters that consist of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-
-    /**
-     * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
-     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters that consist of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-
-    /**
-     * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
-     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters that consist of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-
-    /**
-     * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
-     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters that consist of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline TagRoleRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-
-    /**
-     * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
-     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters that consist of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline TagRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IAM role to which you want to add tags.</p> <p>This parameter
-     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters that consist of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline TagRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of tags that you want to attach to the IAM role. Each tag consists
      * of a key name and an associated value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM role. Each tag consists
-     * of a key name and an associated value.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM role. Each tag consists
-     * of a key name and an associated value.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM role. Each tag consists
-     * of a key name and an associated value.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM role. Each tag consists
-     * of a key name and an associated value.</p>
-     */
     inline TagRoleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM role. Each tag consists
-     * of a key name and an associated value.</p>
-     */
     inline TagRoleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM role. Each tag consists
-     * of a key name and an associated value.</p>
-     */
     inline TagRoleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM role. Each tag consists
-     * of a key name and an associated value.</p>
-     */
     inline TagRoleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_roleName;

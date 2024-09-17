@@ -22,8 +22,8 @@ GetRelationalDatabaseMetricDataResult::GetRelationalDatabaseMetricDataResult() :
 {
 }
 
-GetRelationalDatabaseMetricDataResult::GetRelationalDatabaseMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_metricName(RelationalDatabaseMetricName::NOT_SET)
+GetRelationalDatabaseMetricDataResult::GetRelationalDatabaseMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetRelationalDatabaseMetricDataResult()
 {
   *this = result;
 }

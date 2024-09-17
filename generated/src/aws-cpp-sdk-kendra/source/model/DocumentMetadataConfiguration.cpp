@@ -27,12 +27,8 @@ DocumentMetadataConfiguration::DocumentMetadataConfiguration() :
 {
 }
 
-DocumentMetadataConfiguration::DocumentMetadataConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(DocumentAttributeValueType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_relevanceHasBeenSet(false),
-    m_searchHasBeenSet(false)
+DocumentMetadataConfiguration::DocumentMetadataConfiguration(JsonView jsonValue)
+  : DocumentMetadataConfiguration()
 {
   *this = jsonValue;
 }

@@ -21,6 +21,7 @@
 #include <aws/emr-containers/model/CancelJobRunResult.h>
 #include <aws/emr-containers/model/CreateJobTemplateResult.h>
 #include <aws/emr-containers/model/CreateManagedEndpointResult.h>
+#include <aws/emr-containers/model/CreateSecurityConfigurationResult.h>
 #include <aws/emr-containers/model/CreateVirtualClusterResult.h>
 #include <aws/emr-containers/model/DeleteJobTemplateResult.h>
 #include <aws/emr-containers/model/DeleteManagedEndpointResult.h>
@@ -28,16 +29,21 @@
 #include <aws/emr-containers/model/DescribeJobRunResult.h>
 #include <aws/emr-containers/model/DescribeJobTemplateResult.h>
 #include <aws/emr-containers/model/DescribeManagedEndpointResult.h>
+#include <aws/emr-containers/model/DescribeSecurityConfigurationResult.h>
 #include <aws/emr-containers/model/DescribeVirtualClusterResult.h>
 #include <aws/emr-containers/model/GetManagedEndpointSessionCredentialsResult.h>
 #include <aws/emr-containers/model/ListJobRunsResult.h>
 #include <aws/emr-containers/model/ListJobTemplatesResult.h>
 #include <aws/emr-containers/model/ListManagedEndpointsResult.h>
+#include <aws/emr-containers/model/ListSecurityConfigurationsResult.h>
 #include <aws/emr-containers/model/ListTagsForResourceResult.h>
 #include <aws/emr-containers/model/ListVirtualClustersResult.h>
 #include <aws/emr-containers/model/StartJobRunResult.h>
 #include <aws/emr-containers/model/TagResourceResult.h>
 #include <aws/emr-containers/model/UntagResourceResult.h>
+#include <aws/emr-containers/model/ListJobTemplatesRequest.h>
+#include <aws/emr-containers/model/ListSecurityConfigurationsRequest.h>
+#include <aws/emr-containers/model/ListVirtualClustersRequest.h>
 /* End of service model headers required in EMRContainersClient header */
 
 namespace Aws
@@ -71,7 +77,7 @@ namespace Aws
 
   namespace EMRContainers
   {
-    using EMRContainersClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMRContainersClientConfiguration = Aws::Client::GenericClientConfiguration;
     using EMRContainersEndpointProviderBase = Aws::EMRContainers::Endpoint::EMRContainersEndpointProviderBase;
     using EMRContainersEndpointProvider = Aws::EMRContainers::Endpoint::EMRContainersEndpointProvider;
 
@@ -81,6 +87,7 @@ namespace Aws
       class CancelJobRunRequest;
       class CreateJobTemplateRequest;
       class CreateManagedEndpointRequest;
+      class CreateSecurityConfigurationRequest;
       class CreateVirtualClusterRequest;
       class DeleteJobTemplateRequest;
       class DeleteManagedEndpointRequest;
@@ -88,11 +95,13 @@ namespace Aws
       class DescribeJobRunRequest;
       class DescribeJobTemplateRequest;
       class DescribeManagedEndpointRequest;
+      class DescribeSecurityConfigurationRequest;
       class DescribeVirtualClusterRequest;
       class GetManagedEndpointSessionCredentialsRequest;
       class ListJobRunsRequest;
       class ListJobTemplatesRequest;
       class ListManagedEndpointsRequest;
+      class ListSecurityConfigurationsRequest;
       class ListTagsForResourceRequest;
       class ListVirtualClustersRequest;
       class StartJobRunRequest;
@@ -104,6 +113,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CancelJobRunResult, EMRContainersError> CancelJobRunOutcome;
       typedef Aws::Utils::Outcome<CreateJobTemplateResult, EMRContainersError> CreateJobTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateManagedEndpointResult, EMRContainersError> CreateManagedEndpointOutcome;
+      typedef Aws::Utils::Outcome<CreateSecurityConfigurationResult, EMRContainersError> CreateSecurityConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateVirtualClusterResult, EMRContainersError> CreateVirtualClusterOutcome;
       typedef Aws::Utils::Outcome<DeleteJobTemplateResult, EMRContainersError> DeleteJobTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteManagedEndpointResult, EMRContainersError> DeleteManagedEndpointOutcome;
@@ -111,11 +121,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeJobRunResult, EMRContainersError> DescribeJobRunOutcome;
       typedef Aws::Utils::Outcome<DescribeJobTemplateResult, EMRContainersError> DescribeJobTemplateOutcome;
       typedef Aws::Utils::Outcome<DescribeManagedEndpointResult, EMRContainersError> DescribeManagedEndpointOutcome;
+      typedef Aws::Utils::Outcome<DescribeSecurityConfigurationResult, EMRContainersError> DescribeSecurityConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeVirtualClusterResult, EMRContainersError> DescribeVirtualClusterOutcome;
       typedef Aws::Utils::Outcome<GetManagedEndpointSessionCredentialsResult, EMRContainersError> GetManagedEndpointSessionCredentialsOutcome;
       typedef Aws::Utils::Outcome<ListJobRunsResult, EMRContainersError> ListJobRunsOutcome;
       typedef Aws::Utils::Outcome<ListJobTemplatesResult, EMRContainersError> ListJobTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListManagedEndpointsResult, EMRContainersError> ListManagedEndpointsOutcome;
+      typedef Aws::Utils::Outcome<ListSecurityConfigurationsResult, EMRContainersError> ListSecurityConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, EMRContainersError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListVirtualClustersResult, EMRContainersError> ListVirtualClustersOutcome;
       typedef Aws::Utils::Outcome<StartJobRunResult, EMRContainersError> StartJobRunOutcome;
@@ -127,6 +139,7 @@ namespace Aws
       typedef std::future<CancelJobRunOutcome> CancelJobRunOutcomeCallable;
       typedef std::future<CreateJobTemplateOutcome> CreateJobTemplateOutcomeCallable;
       typedef std::future<CreateManagedEndpointOutcome> CreateManagedEndpointOutcomeCallable;
+      typedef std::future<CreateSecurityConfigurationOutcome> CreateSecurityConfigurationOutcomeCallable;
       typedef std::future<CreateVirtualClusterOutcome> CreateVirtualClusterOutcomeCallable;
       typedef std::future<DeleteJobTemplateOutcome> DeleteJobTemplateOutcomeCallable;
       typedef std::future<DeleteManagedEndpointOutcome> DeleteManagedEndpointOutcomeCallable;
@@ -134,11 +147,13 @@ namespace Aws
       typedef std::future<DescribeJobRunOutcome> DescribeJobRunOutcomeCallable;
       typedef std::future<DescribeJobTemplateOutcome> DescribeJobTemplateOutcomeCallable;
       typedef std::future<DescribeManagedEndpointOutcome> DescribeManagedEndpointOutcomeCallable;
+      typedef std::future<DescribeSecurityConfigurationOutcome> DescribeSecurityConfigurationOutcomeCallable;
       typedef std::future<DescribeVirtualClusterOutcome> DescribeVirtualClusterOutcomeCallable;
       typedef std::future<GetManagedEndpointSessionCredentialsOutcome> GetManagedEndpointSessionCredentialsOutcomeCallable;
       typedef std::future<ListJobRunsOutcome> ListJobRunsOutcomeCallable;
       typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
       typedef std::future<ListManagedEndpointsOutcome> ListManagedEndpointsOutcomeCallable;
+      typedef std::future<ListSecurityConfigurationsOutcome> ListSecurityConfigurationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListVirtualClustersOutcome> ListVirtualClustersOutcomeCallable;
       typedef std::future<StartJobRunOutcome> StartJobRunOutcomeCallable;
@@ -153,6 +168,7 @@ namespace Aws
     typedef std::function<void(const EMRContainersClient*, const Model::CancelJobRunRequest&, const Model::CancelJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobRunResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::CreateJobTemplateRequest&, const Model::CreateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobTemplateResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::CreateManagedEndpointRequest&, const Model::CreateManagedEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateManagedEndpointResponseReceivedHandler;
+    typedef std::function<void(const EMRContainersClient*, const Model::CreateSecurityConfigurationRequest&, const Model::CreateSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::CreateVirtualClusterRequest&, const Model::CreateVirtualClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVirtualClusterResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::DeleteJobTemplateRequest&, const Model::DeleteJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobTemplateResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::DeleteManagedEndpointRequest&, const Model::DeleteManagedEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteManagedEndpointResponseReceivedHandler;
@@ -160,11 +176,13 @@ namespace Aws
     typedef std::function<void(const EMRContainersClient*, const Model::DescribeJobRunRequest&, const Model::DescribeJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobRunResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::DescribeJobTemplateRequest&, const Model::DescribeJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobTemplateResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::DescribeManagedEndpointRequest&, const Model::DescribeManagedEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedEndpointResponseReceivedHandler;
+    typedef std::function<void(const EMRContainersClient*, const Model::DescribeSecurityConfigurationRequest&, const Model::DescribeSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::DescribeVirtualClusterRequest&, const Model::DescribeVirtualClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualClusterResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::GetManagedEndpointSessionCredentialsRequest&, const Model::GetManagedEndpointSessionCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedEndpointSessionCredentialsResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListJobRunsRequest&, const Model::ListJobRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobRunsResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListJobTemplatesRequest&, const Model::ListJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobTemplatesResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListManagedEndpointsRequest&, const Model::ListManagedEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedEndpointsResponseReceivedHandler;
+    typedef std::function<void(const EMRContainersClient*, const Model::ListSecurityConfigurationsRequest&, const Model::ListSecurityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityConfigurationsResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListVirtualClustersRequest&, const Model::ListVirtualClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualClustersResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::StartJobRunRequest&, const Model::StartJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartJobRunResponseReceivedHandler;

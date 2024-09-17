@@ -25,10 +25,8 @@ ListServiceInstancesFilter::ListServiceInstancesFilter() :
 {
 }
 
-ListServiceInstancesFilter::ListServiceInstancesFilter(JsonView jsonValue) : 
-    m_key(ListServiceInstancesFilterBy::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ListServiceInstancesFilter::ListServiceInstancesFilter(JsonView jsonValue)
+  : ListServiceInstancesFilter()
 {
   *this = jsonValue;
 }

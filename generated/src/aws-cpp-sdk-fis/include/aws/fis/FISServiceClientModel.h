@@ -26,6 +26,7 @@
 #include <aws/fis/model/GetExperimentResult.h>
 #include <aws/fis/model/GetExperimentTargetAccountConfigurationResult.h>
 #include <aws/fis/model/GetExperimentTemplateResult.h>
+#include <aws/fis/model/GetSafetyLeverResult.h>
 #include <aws/fis/model/GetTargetAccountConfigurationResult.h>
 #include <aws/fis/model/GetTargetResourceTypeResult.h>
 #include <aws/fis/model/ListActionsResult.h>
@@ -41,7 +42,12 @@
 #include <aws/fis/model/TagResourceResult.h>
 #include <aws/fis/model/UntagResourceResult.h>
 #include <aws/fis/model/UpdateExperimentTemplateResult.h>
+#include <aws/fis/model/UpdateSafetyLeverStateResult.h>
 #include <aws/fis/model/UpdateTargetAccountConfigurationResult.h>
+#include <aws/fis/model/ListTargetResourceTypesRequest.h>
+#include <aws/fis/model/ListExperimentsRequest.h>
+#include <aws/fis/model/ListExperimentTemplatesRequest.h>
+#include <aws/fis/model/ListActionsRequest.h>
 /* End of service model headers required in FISClient header */
 
 namespace Aws
@@ -75,7 +81,7 @@ namespace Aws
 
   namespace FIS
   {
-    using FISClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FISClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FISEndpointProviderBase = Aws::FIS::Endpoint::FISEndpointProviderBase;
     using FISEndpointProvider = Aws::FIS::Endpoint::FISEndpointProvider;
 
@@ -90,6 +96,7 @@ namespace Aws
       class GetExperimentRequest;
       class GetExperimentTargetAccountConfigurationRequest;
       class GetExperimentTemplateRequest;
+      class GetSafetyLeverRequest;
       class GetTargetAccountConfigurationRequest;
       class GetTargetResourceTypeRequest;
       class ListActionsRequest;
@@ -105,6 +112,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateExperimentTemplateRequest;
+      class UpdateSafetyLeverStateRequest;
       class UpdateTargetAccountConfigurationRequest;
       /* End of service model forward declarations required in FISClient header */
 
@@ -117,6 +125,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetExperimentResult, FISError> GetExperimentOutcome;
       typedef Aws::Utils::Outcome<GetExperimentTargetAccountConfigurationResult, FISError> GetExperimentTargetAccountConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetExperimentTemplateResult, FISError> GetExperimentTemplateOutcome;
+      typedef Aws::Utils::Outcome<GetSafetyLeverResult, FISError> GetSafetyLeverOutcome;
       typedef Aws::Utils::Outcome<GetTargetAccountConfigurationResult, FISError> GetTargetAccountConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetTargetResourceTypeResult, FISError> GetTargetResourceTypeOutcome;
       typedef Aws::Utils::Outcome<ListActionsResult, FISError> ListActionsOutcome;
@@ -132,6 +141,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, FISError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, FISError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateExperimentTemplateResult, FISError> UpdateExperimentTemplateOutcome;
+      typedef Aws::Utils::Outcome<UpdateSafetyLeverStateResult, FISError> UpdateSafetyLeverStateOutcome;
       typedef Aws::Utils::Outcome<UpdateTargetAccountConfigurationResult, FISError> UpdateTargetAccountConfigurationOutcome;
       /* End of service model Outcome class definitions */
 
@@ -144,6 +154,7 @@ namespace Aws
       typedef std::future<GetExperimentOutcome> GetExperimentOutcomeCallable;
       typedef std::future<GetExperimentTargetAccountConfigurationOutcome> GetExperimentTargetAccountConfigurationOutcomeCallable;
       typedef std::future<GetExperimentTemplateOutcome> GetExperimentTemplateOutcomeCallable;
+      typedef std::future<GetSafetyLeverOutcome> GetSafetyLeverOutcomeCallable;
       typedef std::future<GetTargetAccountConfigurationOutcome> GetTargetAccountConfigurationOutcomeCallable;
       typedef std::future<GetTargetResourceTypeOutcome> GetTargetResourceTypeOutcomeCallable;
       typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
@@ -159,6 +170,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateExperimentTemplateOutcome> UpdateExperimentTemplateOutcomeCallable;
+      typedef std::future<UpdateSafetyLeverStateOutcome> UpdateSafetyLeverStateOutcomeCallable;
       typedef std::future<UpdateTargetAccountConfigurationOutcome> UpdateTargetAccountConfigurationOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -174,6 +186,7 @@ namespace Aws
     typedef std::function<void(const FISClient*, const Model::GetExperimentRequest&, const Model::GetExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::GetExperimentTargetAccountConfigurationRequest&, const Model::GetExperimentTargetAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentTargetAccountConfigurationResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::GetExperimentTemplateRequest&, const Model::GetExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentTemplateResponseReceivedHandler;
+    typedef std::function<void(const FISClient*, const Model::GetSafetyLeverRequest&, const Model::GetSafetyLeverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSafetyLeverResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::GetTargetAccountConfigurationRequest&, const Model::GetTargetAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTargetAccountConfigurationResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::GetTargetResourceTypeRequest&, const Model::GetTargetResourceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTargetResourceTypeResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::ListActionsRequest&, const Model::ListActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionsResponseReceivedHandler;
@@ -189,6 +202,7 @@ namespace Aws
     typedef std::function<void(const FISClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::UpdateExperimentTemplateRequest&, const Model::UpdateExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentTemplateResponseReceivedHandler;
+    typedef std::function<void(const FISClient*, const Model::UpdateSafetyLeverStateRequest&, const Model::UpdateSafetyLeverStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSafetyLeverStateResponseReceivedHandler;
     typedef std::function<void(const FISClient*, const Model::UpdateTargetAccountConfigurationRequest&, const Model::UpdateTargetAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTargetAccountConfigurationResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace FIS

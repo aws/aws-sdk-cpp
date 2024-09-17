@@ -22,8 +22,8 @@ ModifyAvailabilityZoneGroupResponse::ModifyAvailabilityZoneGroupResponse() :
 {
 }
 
-ModifyAvailabilityZoneGroupResponse::ModifyAvailabilityZoneGroupResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_return(false)
+ModifyAvailabilityZoneGroupResponse::ModifyAvailabilityZoneGroupResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyAvailabilityZoneGroupResponse()
 {
   *this = result;
 }

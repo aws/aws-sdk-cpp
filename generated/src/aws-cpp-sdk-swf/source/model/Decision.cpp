@@ -37,22 +37,8 @@ Decision::Decision() :
 {
 }
 
-Decision::Decision(JsonView jsonValue) : 
-    m_decisionType(DecisionType::NOT_SET),
-    m_decisionTypeHasBeenSet(false),
-    m_scheduleActivityTaskDecisionAttributesHasBeenSet(false),
-    m_requestCancelActivityTaskDecisionAttributesHasBeenSet(false),
-    m_completeWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_failWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_cancelWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_recordMarkerDecisionAttributesHasBeenSet(false),
-    m_startTimerDecisionAttributesHasBeenSet(false),
-    m_cancelTimerDecisionAttributesHasBeenSet(false),
-    m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_startChildWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_scheduleLambdaFunctionDecisionAttributesHasBeenSet(false)
+Decision::Decision(JsonView jsonValue)
+  : Decision()
 {
   *this = jsonValue;
 }

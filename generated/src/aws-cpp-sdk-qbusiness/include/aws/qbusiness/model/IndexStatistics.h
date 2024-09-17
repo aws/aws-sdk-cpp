@@ -38,36 +38,17 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of documents indexed.</p>
      */
     inline const TextDocumentStatistics& GetTextDocumentStatistics() const{ return m_textDocumentStatistics; }
-
-    /**
-     * <p>The number of documents indexed.</p>
-     */
     inline bool TextDocumentStatisticsHasBeenSet() const { return m_textDocumentStatisticsHasBeenSet; }
-
-    /**
-     * <p>The number of documents indexed.</p>
-     */
     inline void SetTextDocumentStatistics(const TextDocumentStatistics& value) { m_textDocumentStatisticsHasBeenSet = true; m_textDocumentStatistics = value; }
-
-    /**
-     * <p>The number of documents indexed.</p>
-     */
     inline void SetTextDocumentStatistics(TextDocumentStatistics&& value) { m_textDocumentStatisticsHasBeenSet = true; m_textDocumentStatistics = std::move(value); }
-
-    /**
-     * <p>The number of documents indexed.</p>
-     */
     inline IndexStatistics& WithTextDocumentStatistics(const TextDocumentStatistics& value) { SetTextDocumentStatistics(value); return *this;}
-
-    /**
-     * <p>The number of documents indexed.</p>
-     */
     inline IndexStatistics& WithTextDocumentStatistics(TextDocumentStatistics&& value) { SetTextDocumentStatistics(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TextDocumentStatistics m_textDocumentStatistics;

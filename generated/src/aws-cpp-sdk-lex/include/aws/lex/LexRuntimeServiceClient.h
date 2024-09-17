@@ -298,7 +298,6 @@ namespace LexRuntimeService
       void init(const LexRuntimeServiceClientConfiguration& clientConfiguration);
 
       LexRuntimeServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LexRuntimeServiceEndpointProviderBase> m_endpointProvider;
   };
 

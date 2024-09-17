@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/PrincipalGroup.h>
 #include <aws/qbusiness/model/PrincipalUser.h>
+#include <aws/qbusiness/model/PrincipalGroup.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Provides user and group information used for filtering documents to use for
-   * generating Amazon Q conversation responses.</p><p><h3>See Also:</h3>   <a
+   * generating Amazon Q Business conversation responses.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Principal">AWS
    * API Reference</a></p>
    */
@@ -39,74 +40,36 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline const PrincipalGroup& GetGroup() const{ return m_group; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline void SetGroup(const PrincipalGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline void SetGroup(PrincipalGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline Principal& WithGroup(const PrincipalGroup& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline Principal& WithGroup(PrincipalGroup&& value) { SetGroup(std::move(value)); return *this;}
-
-
+    ///@{
     /**
      * <p>The user associated with the principal.</p>
      */
     inline const PrincipalUser& GetUser() const{ return m_user; }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline void SetUser(const PrincipalUser& value) { m_userHasBeenSet = true; m_user = value; }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline void SetUser(PrincipalUser&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline Principal& WithUser(const PrincipalUser& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline Principal& WithUser(PrincipalUser&& value) { SetUser(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p> The group associated with the principal.</p>
+     */
+    inline const PrincipalGroup& GetGroup() const{ return m_group; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+    inline void SetGroup(const PrincipalGroup& value) { m_groupHasBeenSet = true; m_group = value; }
+    inline void SetGroup(PrincipalGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+    inline Principal& WithGroup(const PrincipalGroup& value) { SetGroup(value); return *this;}
+    inline Principal& WithGroup(PrincipalGroup&& value) { SetGroup(std::move(value)); return *this;}
+    ///@}
   private:
-
-    PrincipalGroup m_group;
-    bool m_groupHasBeenSet = false;
 
     PrincipalUser m_user;
     bool m_userHasBeenSet = false;
+
+    PrincipalGroup m_group;
+    bool m_groupHasBeenSet = false;
   };
 
 } // namespace Model

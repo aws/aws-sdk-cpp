@@ -39,124 +39,46 @@ namespace Model
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name for the gating rule. You can use any non-white space character in
      * the name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name for the gating rule. You can use any non-white space character in
-     * the name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name for the gating rule. You can use any non-white space character in
-     * the name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name for the gating rule. You can use any non-white space character in
-     * the name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name for the gating rule. You can use any non-white space character in
-     * the name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name for the gating rule. You can use any non-white space character in
-     * the name.</p>
-     */
     inline GatingRuleUpdate& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name for the gating rule. You can use any non-white space character in
-     * the name.</p>
-     */
     inline GatingRuleUpdate& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the gating rule. You can use any non-white space character in
-     * the name.</p>
-     */
     inline GatingRuleUpdate& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
      */
     inline const Aws::String& GetSafetyRuleArn() const{ return m_safetyRuleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-     */
     inline bool SafetyRuleArnHasBeenSet() const { return m_safetyRuleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-     */
     inline void SetSafetyRuleArn(const Aws::String& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-     */
     inline void SetSafetyRuleArn(Aws::String&& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-     */
     inline void SetSafetyRuleArn(const char* value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-     */
     inline GatingRuleUpdate& WithSafetyRuleArn(const Aws::String& value) { SetSafetyRuleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-     */
     inline GatingRuleUpdate& WithSafetyRuleArn(Aws::String&& value) { SetSafetyRuleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-     */
     inline GatingRuleUpdate& WithSafetyRuleArn(const char* value) { SetSafetyRuleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An evaluation period, in milliseconds (ms), during which any request against
      * the target routing controls will fail. This helps prevent "flapping" of state.
      * The wait period is 5000 ms by default, but you can choose a custom value.</p>
      */
     inline int GetWaitPeriodMs() const{ return m_waitPeriodMs; }
-
-    /**
-     * <p>An evaluation period, in milliseconds (ms), during which any request against
-     * the target routing controls will fail. This helps prevent "flapping" of state.
-     * The wait period is 5000 ms by default, but you can choose a custom value.</p>
-     */
     inline bool WaitPeriodMsHasBeenSet() const { return m_waitPeriodMsHasBeenSet; }
-
-    /**
-     * <p>An evaluation period, in milliseconds (ms), during which any request against
-     * the target routing controls will fail. This helps prevent "flapping" of state.
-     * The wait period is 5000 ms by default, but you can choose a custom value.</p>
-     */
     inline void SetWaitPeriodMs(int value) { m_waitPeriodMsHasBeenSet = true; m_waitPeriodMs = value; }
-
-    /**
-     * <p>An evaluation period, in milliseconds (ms), during which any request against
-     * the target routing controls will fail. This helps prevent "flapping" of state.
-     * The wait period is 5000 ms by default, but you can choose a custom value.</p>
-     */
     inline GatingRuleUpdate& WithWaitPeriodMs(int value) { SetWaitPeriodMs(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -21,12 +21,19 @@ Aws::String GetSMSAttributesRequest::SerializePayload() const
   ss << "Action=GetSMSAttributes&";
   if(m_attributesHasBeenSet)
   {
-    unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
+    if (m_attributes.empty())
     {
-      ss << "attributes.member." << attributesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      attributesCount++;
+      ss << "attributes=&";
+    }
+    else
+    {
+      unsigned attributesCount = 1;
+      for(auto& item : m_attributes)
+      {
+        ss << "attributes.member." << attributesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        attributesCount++;
+      }
     }
   }
 

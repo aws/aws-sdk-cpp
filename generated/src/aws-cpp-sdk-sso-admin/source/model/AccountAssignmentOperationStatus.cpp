@@ -34,19 +34,8 @@ AccountAssignmentOperationStatus::AccountAssignmentOperationStatus() :
 {
 }
 
-AccountAssignmentOperationStatus::AccountAssignmentOperationStatus(JsonView jsonValue) : 
-    m_createdDateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+AccountAssignmentOperationStatus::AccountAssignmentOperationStatus(JsonView jsonValue)
+  : AccountAssignmentOperationStatus()
 {
   *this = jsonValue;
 }

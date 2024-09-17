@@ -25,10 +25,8 @@ UnshareTarget::UnshareTarget() :
 {
 }
 
-UnshareTarget::UnshareTarget(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+UnshareTarget::UnshareTarget(JsonView jsonValue)
+  : UnshareTarget()
 {
   *this = jsonValue;
 }

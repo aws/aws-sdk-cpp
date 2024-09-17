@@ -44,8 +44,8 @@ SynthesizeSpeechResult& SynthesizeSpeechResult::operator=(SynthesizeSpeechResult
    return *this;
 }
 
-SynthesizeSpeechResult::SynthesizeSpeechResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
-    m_requestCharacters(0)
+SynthesizeSpeechResult::SynthesizeSpeechResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+  : SynthesizeSpeechResult()
 {
   *this = std::move(result);
 }

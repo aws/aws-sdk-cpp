@@ -32,17 +32,8 @@ WorldGenerationJobSummary::WorldGenerationJobSummary() :
 {
 }
 
-WorldGenerationJobSummary::WorldGenerationJobSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_templateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(WorldGenerationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_worldCountHasBeenSet(false),
-    m_succeededWorldCount(0),
-    m_succeededWorldCountHasBeenSet(false),
-    m_failedWorldCount(0),
-    m_failedWorldCountHasBeenSet(false)
+WorldGenerationJobSummary::WorldGenerationJobSummary(JsonView jsonValue)
+  : WorldGenerationJobSummary()
 {
   *this = jsonValue;
 }

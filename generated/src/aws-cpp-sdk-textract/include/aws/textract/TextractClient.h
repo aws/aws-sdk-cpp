@@ -645,13 +645,13 @@ namespace Textract
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAdapterVersionsOutcome ListAdapterVersions(const Model::ListAdapterVersionsRequest& request) const;
+        virtual Model::ListAdapterVersionsOutcome ListAdapterVersions(const Model::ListAdapterVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAdapterVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAdapterVersionsRequestT = Model::ListAdapterVersionsRequest>
-        Model::ListAdapterVersionsOutcomeCallable ListAdapterVersionsCallable(const ListAdapterVersionsRequestT& request) const
+        Model::ListAdapterVersionsOutcomeCallable ListAdapterVersionsCallable(const ListAdapterVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&TextractClient::ListAdapterVersions, request);
         }
@@ -660,7 +660,7 @@ namespace Textract
          * An Async wrapper for ListAdapterVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAdapterVersionsRequestT = Model::ListAdapterVersionsRequest>
-        void ListAdapterVersionsAsync(const ListAdapterVersionsRequestT& request, const ListAdapterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAdapterVersionsAsync(const ListAdapterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAdapterVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&TextractClient::ListAdapterVersions, request, handler, context);
         }
@@ -671,13 +671,13 @@ namespace Textract
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAdaptersOutcome ListAdapters(const Model::ListAdaptersRequest& request) const;
+        virtual Model::ListAdaptersOutcome ListAdapters(const Model::ListAdaptersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAdapters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAdaptersRequestT = Model::ListAdaptersRequest>
-        Model::ListAdaptersOutcomeCallable ListAdaptersCallable(const ListAdaptersRequestT& request) const
+        Model::ListAdaptersOutcomeCallable ListAdaptersCallable(const ListAdaptersRequestT& request = {}) const
         {
             return SubmitCallable(&TextractClient::ListAdapters, request);
         }
@@ -686,7 +686,7 @@ namespace Textract
          * An Async wrapper for ListAdapters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAdaptersRequestT = Model::ListAdaptersRequest>
-        void ListAdaptersAsync(const ListAdaptersRequestT& request, const ListAdaptersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAdaptersAsync(const ListAdaptersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAdaptersRequestT& request = {}) const
         {
             return SubmitAsync(&TextractClient::ListAdapters, request, handler, context);
         }
@@ -973,7 +973,6 @@ namespace Textract
       void init(const TextractClientConfiguration& clientConfiguration);
 
       TextractClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<TextractEndpointProviderBase> m_endpointProvider;
   };
 

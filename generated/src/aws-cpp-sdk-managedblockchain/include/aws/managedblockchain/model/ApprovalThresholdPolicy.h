@@ -42,6 +42,7 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percentage of votes among all members that must be <code>YES</code> for a
      * proposal to be approved. For example, a <code>ThresholdPercentage</code> value
@@ -53,44 +54,12 @@ namespace Model
      * approved.</p>
      */
     inline int GetThresholdPercentage() const{ return m_thresholdPercentage; }
-
-    /**
-     * <p>The percentage of votes among all members that must be <code>YES</code> for a
-     * proposal to be approved. For example, a <code>ThresholdPercentage</code> value
-     * of <code>50</code> indicates 50%. The <code>ThresholdComparator</code>
-     * determines the precise comparison. If a <code>ThresholdPercentage</code> value
-     * of <code>50</code> is specified on a network with 10 members, along with a
-     * <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>, this
-     * indicates that 6 <code>YES</code> votes are required for the proposal to be
-     * approved.</p>
-     */
     inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of votes among all members that must be <code>YES</code> for a
-     * proposal to be approved. For example, a <code>ThresholdPercentage</code> value
-     * of <code>50</code> indicates 50%. The <code>ThresholdComparator</code>
-     * determines the precise comparison. If a <code>ThresholdPercentage</code> value
-     * of <code>50</code> is specified on a network with 10 members, along with a
-     * <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>, this
-     * indicates that 6 <code>YES</code> votes are required for the proposal to be
-     * approved.</p>
-     */
     inline void SetThresholdPercentage(int value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
-
-    /**
-     * <p>The percentage of votes among all members that must be <code>YES</code> for a
-     * proposal to be approved. For example, a <code>ThresholdPercentage</code> value
-     * of <code>50</code> indicates 50%. The <code>ThresholdComparator</code>
-     * determines the precise comparison. If a <code>ThresholdPercentage</code> value
-     * of <code>50</code> is specified on a network with 10 members, along with a
-     * <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>, this
-     * indicates that 6 <code>YES</code> votes are required for the proposal to be
-     * approved.</p>
-     */
     inline ApprovalThresholdPolicy& WithThresholdPercentage(int value) { SetThresholdPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The duration from the time that a proposal is created until it expires. If
      * members cast neither the required number of <code>YES</code> votes to approve
@@ -99,77 +68,24 @@ namespace Model
      * <code>ProposalActions</code> aren't carried out.</p>
      */
     inline int GetProposalDurationInHours() const{ return m_proposalDurationInHours; }
-
-    /**
-     * <p>The duration from the time that a proposal is created until it expires. If
-     * members cast neither the required number of <code>YES</code> votes to approve
-     * the proposal nor the number of <code>NO</code> votes required to reject it
-     * before the duration expires, the proposal is <code>EXPIRED</code> and
-     * <code>ProposalActions</code> aren't carried out.</p>
-     */
     inline bool ProposalDurationInHoursHasBeenSet() const { return m_proposalDurationInHoursHasBeenSet; }
-
-    /**
-     * <p>The duration from the time that a proposal is created until it expires. If
-     * members cast neither the required number of <code>YES</code> votes to approve
-     * the proposal nor the number of <code>NO</code> votes required to reject it
-     * before the duration expires, the proposal is <code>EXPIRED</code> and
-     * <code>ProposalActions</code> aren't carried out.</p>
-     */
     inline void SetProposalDurationInHours(int value) { m_proposalDurationInHoursHasBeenSet = true; m_proposalDurationInHours = value; }
-
-    /**
-     * <p>The duration from the time that a proposal is created until it expires. If
-     * members cast neither the required number of <code>YES</code> votes to approve
-     * the proposal nor the number of <code>NO</code> votes required to reject it
-     * before the duration expires, the proposal is <code>EXPIRED</code> and
-     * <code>ProposalActions</code> aren't carried out.</p>
-     */
     inline ApprovalThresholdPolicy& WithProposalDurationInHours(int value) { SetProposalDurationInHours(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether the vote percentage must be greater than the
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
      * <code>ThresholdPercentage</code> to be approved.</p>
      */
     inline const ThresholdComparator& GetThresholdComparator() const{ return m_thresholdComparator; }
-
-    /**
-     * <p>Determines whether the vote percentage must be greater than the
-     * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThresholdPercentage</code> to be approved.</p>
-     */
     inline bool ThresholdComparatorHasBeenSet() const { return m_thresholdComparatorHasBeenSet; }
-
-    /**
-     * <p>Determines whether the vote percentage must be greater than the
-     * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThresholdPercentage</code> to be approved.</p>
-     */
     inline void SetThresholdComparator(const ThresholdComparator& value) { m_thresholdComparatorHasBeenSet = true; m_thresholdComparator = value; }
-
-    /**
-     * <p>Determines whether the vote percentage must be greater than the
-     * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThresholdPercentage</code> to be approved.</p>
-     */
     inline void SetThresholdComparator(ThresholdComparator&& value) { m_thresholdComparatorHasBeenSet = true; m_thresholdComparator = std::move(value); }
-
-    /**
-     * <p>Determines whether the vote percentage must be greater than the
-     * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThresholdPercentage</code> to be approved.</p>
-     */
     inline ApprovalThresholdPolicy& WithThresholdComparator(const ThresholdComparator& value) { SetThresholdComparator(value); return *this;}
-
-    /**
-     * <p>Determines whether the vote percentage must be greater than the
-     * <code>ThresholdPercentage</code> or must be greater than or equal to the
-     * <code>ThresholdPercentage</code> to be approved.</p>
-     */
     inline ApprovalThresholdPolicy& WithThresholdComparator(ThresholdComparator&& value) { SetThresholdComparator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_thresholdPercentage;

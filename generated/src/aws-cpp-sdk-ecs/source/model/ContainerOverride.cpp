@@ -33,18 +33,8 @@ ContainerOverride::ContainerOverride() :
 {
 }
 
-ContainerOverride::ContainerOverride(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_environmentFilesHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+ContainerOverride::ContainerOverride(JsonView jsonValue)
+  : ContainerOverride()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ConfirmTransitVirtualInterfaceResult::ConfirmTransitVirtualInterfaceResult() :
 {
 }
 
-ConfirmTransitVirtualInterfaceResult::ConfirmTransitVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
+ConfirmTransitVirtualInterfaceResult::ConfirmTransitVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ConfirmTransitVirtualInterfaceResult()
 {
   *this = result;
 }

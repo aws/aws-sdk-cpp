@@ -25,8 +25,8 @@ TagKeys::TagKeys() :
 {
 }
 
-TagKeys::TagKeys(const XmlNode& xmlNode) : 
-    m_itemsHasBeenSet(false)
+TagKeys::TagKeys(const XmlNode& xmlNode)
+  : TagKeys()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ GatewayRouteTarget::GatewayRouteTarget() :
 {
 }
 
-GatewayRouteTarget::GatewayRouteTarget(JsonView jsonValue) : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_virtualServiceHasBeenSet(false)
+GatewayRouteTarget::GatewayRouteTarget(JsonView jsonValue)
+  : GatewayRouteTarget()
 {
   *this = jsonValue;
 }

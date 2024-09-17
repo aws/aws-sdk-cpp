@@ -32,63 +32,29 @@ namespace Model
     AWS_OMICS_API CompleteMultipartReadSetUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline const Aws::String& GetReadSetId() const{ return m_readSetId; }
-
-    /**
-     * <p> The read set ID created for an uploaded read set. </p>
-     */
     inline void SetReadSetId(const Aws::String& value) { m_readSetId = value; }
-
-    /**
-     * <p> The read set ID created for an uploaded read set. </p>
-     */
     inline void SetReadSetId(Aws::String&& value) { m_readSetId = std::move(value); }
-
-    /**
-     * <p> The read set ID created for an uploaded read set. </p>
-     */
     inline void SetReadSetId(const char* value) { m_readSetId.assign(value); }
-
-    /**
-     * <p> The read set ID created for an uploaded read set. </p>
-     */
     inline CompleteMultipartReadSetUploadResult& WithReadSetId(const Aws::String& value) { SetReadSetId(value); return *this;}
-
-    /**
-     * <p> The read set ID created for an uploaded read set. </p>
-     */
     inline CompleteMultipartReadSetUploadResult& WithReadSetId(Aws::String&& value) { SetReadSetId(std::move(value)); return *this;}
-
-    /**
-     * <p> The read set ID created for an uploaded read set. </p>
-     */
     inline CompleteMultipartReadSetUploadResult& WithReadSetId(const char* value) { SetReadSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CompleteMultipartReadSetUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CompleteMultipartReadSetUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CompleteMultipartReadSetUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_readSetId;

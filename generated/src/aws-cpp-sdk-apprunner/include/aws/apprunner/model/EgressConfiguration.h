@@ -39,6 +39,7 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of egress configuration.</p> <p>Set to <code>DEFAULT</code> for
      * access to resources hosted on public networks.</p> <p>Set to <code>VPC</code> to
@@ -46,104 +47,28 @@ namespace Model
      * <code>VpcConnectorArn</code>.</p>
      */
     inline const EgressType& GetEgressType() const{ return m_egressType; }
-
-    /**
-     * <p>The type of egress configuration.</p> <p>Set to <code>DEFAULT</code> for
-     * access to resources hosted on public networks.</p> <p>Set to <code>VPC</code> to
-     * associate your service to a custom VPC specified by
-     * <code>VpcConnectorArn</code>.</p>
-     */
     inline bool EgressTypeHasBeenSet() const { return m_egressTypeHasBeenSet; }
-
-    /**
-     * <p>The type of egress configuration.</p> <p>Set to <code>DEFAULT</code> for
-     * access to resources hosted on public networks.</p> <p>Set to <code>VPC</code> to
-     * associate your service to a custom VPC specified by
-     * <code>VpcConnectorArn</code>.</p>
-     */
     inline void SetEgressType(const EgressType& value) { m_egressTypeHasBeenSet = true; m_egressType = value; }
-
-    /**
-     * <p>The type of egress configuration.</p> <p>Set to <code>DEFAULT</code> for
-     * access to resources hosted on public networks.</p> <p>Set to <code>VPC</code> to
-     * associate your service to a custom VPC specified by
-     * <code>VpcConnectorArn</code>.</p>
-     */
     inline void SetEgressType(EgressType&& value) { m_egressTypeHasBeenSet = true; m_egressType = std::move(value); }
-
-    /**
-     * <p>The type of egress configuration.</p> <p>Set to <code>DEFAULT</code> for
-     * access to resources hosted on public networks.</p> <p>Set to <code>VPC</code> to
-     * associate your service to a custom VPC specified by
-     * <code>VpcConnectorArn</code>.</p>
-     */
     inline EgressConfiguration& WithEgressType(const EgressType& value) { SetEgressType(value); return *this;}
-
-    /**
-     * <p>The type of egress configuration.</p> <p>Set to <code>DEFAULT</code> for
-     * access to resources hosted on public networks.</p> <p>Set to <code>VPC</code> to
-     * associate your service to a custom VPC specified by
-     * <code>VpcConnectorArn</code>.</p>
-     */
     inline EgressConfiguration& WithEgressType(EgressType&& value) { SetEgressType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
      * to associate with your App Runner service. Only valid when <code>EgressType =
      * VPC</code>.</p>
      */
     inline const Aws::String& GetVpcConnectorArn() const{ return m_vpcConnectorArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
-     * to associate with your App Runner service. Only valid when <code>EgressType =
-     * VPC</code>.</p>
-     */
     inline bool VpcConnectorArnHasBeenSet() const { return m_vpcConnectorArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
-     * to associate with your App Runner service. Only valid when <code>EgressType =
-     * VPC</code>.</p>
-     */
     inline void SetVpcConnectorArn(const Aws::String& value) { m_vpcConnectorArnHasBeenSet = true; m_vpcConnectorArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
-     * to associate with your App Runner service. Only valid when <code>EgressType =
-     * VPC</code>.</p>
-     */
     inline void SetVpcConnectorArn(Aws::String&& value) { m_vpcConnectorArnHasBeenSet = true; m_vpcConnectorArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
-     * to associate with your App Runner service. Only valid when <code>EgressType =
-     * VPC</code>.</p>
-     */
     inline void SetVpcConnectorArn(const char* value) { m_vpcConnectorArnHasBeenSet = true; m_vpcConnectorArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
-     * to associate with your App Runner service. Only valid when <code>EgressType =
-     * VPC</code>.</p>
-     */
     inline EgressConfiguration& WithVpcConnectorArn(const Aws::String& value) { SetVpcConnectorArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
-     * to associate with your App Runner service. Only valid when <code>EgressType =
-     * VPC</code>.</p>
-     */
     inline EgressConfiguration& WithVpcConnectorArn(Aws::String&& value) { SetVpcConnectorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want
-     * to associate with your App Runner service. Only valid when <code>EgressType =
-     * VPC</code>.</p>
-     */
     inline EgressConfiguration& WithVpcConnectorArn(const char* value) { SetVpcConnectorArn(value); return *this;}
-
+    ///@}
   private:
 
     EgressType m_egressType;

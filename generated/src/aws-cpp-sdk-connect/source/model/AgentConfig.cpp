@@ -23,8 +23,8 @@ AgentConfig::AgentConfig() :
 {
 }
 
-AgentConfig::AgentConfig(JsonView jsonValue) : 
-    m_distributionsHasBeenSet(false)
+AgentConfig::AgentConfig(JsonView jsonValue)
+  : AgentConfig()
 {
   *this = jsonValue;
 }

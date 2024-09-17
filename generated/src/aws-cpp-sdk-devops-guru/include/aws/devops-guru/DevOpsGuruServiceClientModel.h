@@ -49,6 +49,16 @@
 #include <aws/devops-guru/model/UpdateEventSourcesConfigResult.h>
 #include <aws/devops-guru/model/UpdateResourceCollectionResult.h>
 #include <aws/devops-guru/model/UpdateServiceIntegrationResult.h>
+#include <aws/devops-guru/model/DescribeOrganizationHealthRequest.h>
+#include <aws/devops-guru/model/ListNotificationChannelsRequest.h>
+#include <aws/devops-guru/model/DescribeAccountHealthRequest.h>
+#include <aws/devops-guru/model/DescribeServiceIntegrationRequest.h>
+#include <aws/devops-guru/model/GetCostEstimationRequest.h>
+#include <aws/devops-guru/model/DescribeFeedbackRequest.h>
+#include <aws/devops-guru/model/DescribeEventSourcesConfigRequest.h>
+#include <aws/devops-guru/model/ListMonitoredResourcesRequest.h>
+#include <aws/devops-guru/model/UpdateEventSourcesConfigRequest.h>
+#include <aws/devops-guru/model/PutFeedbackRequest.h>
 /* End of service model headers required in DevOpsGuruClient header */
 
 namespace Aws
@@ -82,7 +92,7 @@ namespace Aws
 
   namespace DevOpsGuru
   {
-    using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DevOpsGuruEndpointProviderBase = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProviderBase;
     using DevOpsGuruEndpointProvider = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProvider;
 

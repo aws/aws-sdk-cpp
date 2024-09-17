@@ -23,8 +23,8 @@ SnowflakeMetadata::SnowflakeMetadata() :
 {
 }
 
-SnowflakeMetadata::SnowflakeMetadata(JsonView jsonValue) : 
-    m_supportedRegionsHasBeenSet(false)
+SnowflakeMetadata::SnowflakeMetadata(JsonView jsonValue)
+  : SnowflakeMetadata()
 {
   *this = jsonValue;
 }

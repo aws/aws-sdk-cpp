@@ -3,7 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <service/S3Utils.h>
+#ifdef AWS_SDK_BENCHMARK_USE_CRT
+#include <aws/s3-crt/S3CrtClientConfiguration.h>
+using namespace Aws::S3Crt;
+using S3ClientConfiguration = Aws::S3Crt::ClientConfiguration;
+using S3Client = S3CrtClient;
+#else
 #include <aws/s3/S3ClientConfiguration.h>
+using namespace Aws::S3;
+#endif
 #ifdef USE_OTLP
 #include <smithy/tracing/impl/opentelemetry/OtelTelemetryProvider.h>
 #include <opentelemetry/exporters/ostream/span_exporter_factory.h>
@@ -15,7 +23,6 @@
 #endif
 
 using namespace Benchmark;
-using namespace Aws::S3;
 #ifdef USE_OTLP
 using namespace smithy::components::tracing;
 using namespace opentelemetry::exporter::otlp;
@@ -23,7 +30,7 @@ using namespace opentelemetry::exporter::otlp;
 
 const char* ALLOC_TAG = "S3_BENCHMARK";
 
-std::unique_ptr<Aws::S3::S3Client> S3Utils::makeClient(const std::map<std::string, std::string> &cliDimensions) {
+std::unique_ptr<S3Client> S3Utils::makeClient(const std::map<std::string, std::string> &cliDimensions) {
     S3ClientConfiguration configuration;
     if (cliDimensions.find("TelemetryHost") != cliDimensions.end() &&
         cliDimensions.find("TelemetryPort") != cliDimensions.end())

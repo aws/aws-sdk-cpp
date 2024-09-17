@@ -25,10 +25,8 @@ BotAliasHistoryEvent::BotAliasHistoryEvent() :
 {
 }
 
-BotAliasHistoryEvent::BotAliasHistoryEvent(JsonView jsonValue) : 
-    m_botVersionHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
+BotAliasHistoryEvent::BotAliasHistoryEvent(JsonView jsonValue)
+  : BotAliasHistoryEvent()
 {
   *this = jsonValue;
 }

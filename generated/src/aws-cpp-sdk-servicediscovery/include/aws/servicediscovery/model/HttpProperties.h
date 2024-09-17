@@ -38,46 +38,19 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an HTTP namespace.</p>
      */
     inline const Aws::String& GetHttpName() const{ return m_httpName; }
-
-    /**
-     * <p>The name of an HTTP namespace.</p>
-     */
     inline bool HttpNameHasBeenSet() const { return m_httpNameHasBeenSet; }
-
-    /**
-     * <p>The name of an HTTP namespace.</p>
-     */
     inline void SetHttpName(const Aws::String& value) { m_httpNameHasBeenSet = true; m_httpName = value; }
-
-    /**
-     * <p>The name of an HTTP namespace.</p>
-     */
     inline void SetHttpName(Aws::String&& value) { m_httpNameHasBeenSet = true; m_httpName = std::move(value); }
-
-    /**
-     * <p>The name of an HTTP namespace.</p>
-     */
     inline void SetHttpName(const char* value) { m_httpNameHasBeenSet = true; m_httpName.assign(value); }
-
-    /**
-     * <p>The name of an HTTP namespace.</p>
-     */
     inline HttpProperties& WithHttpName(const Aws::String& value) { SetHttpName(value); return *this;}
-
-    /**
-     * <p>The name of an HTTP namespace.</p>
-     */
     inline HttpProperties& WithHttpName(Aws::String&& value) { SetHttpName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an HTTP namespace.</p>
-     */
     inline HttpProperties& WithHttpName(const char* value) { SetHttpName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_httpName;

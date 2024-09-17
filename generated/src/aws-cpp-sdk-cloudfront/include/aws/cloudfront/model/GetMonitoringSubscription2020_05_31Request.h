@@ -32,46 +32,19 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the distribution that you are getting metrics information for.</p>
      */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
-
-    /**
-     * <p>The ID of the distribution that you are getting metrics information for.</p>
-     */
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the distribution that you are getting metrics information for.</p>
-     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
-
-    /**
-     * <p>The ID of the distribution that you are getting metrics information for.</p>
-     */
     inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
-
-    /**
-     * <p>The ID of the distribution that you are getting metrics information for.</p>
-     */
     inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
-
-    /**
-     * <p>The ID of the distribution that you are getting metrics information for.</p>
-     */
     inline GetMonitoringSubscription2020_05_31Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
-
-    /**
-     * <p>The ID of the distribution that you are getting metrics information for.</p>
-     */
     inline GetMonitoringSubscription2020_05_31Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the distribution that you are getting metrics information for.</p>
-     */
     inline GetMonitoringSubscription2020_05_31Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_distributionId;

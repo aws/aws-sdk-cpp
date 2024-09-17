@@ -25,10 +25,8 @@ AccountSettings::AccountSettings() :
 {
 }
 
-AccountSettings::AccountSettings(JsonView jsonValue) : 
-    m_pipelineCodebuildRoleArnHasBeenSet(false),
-    m_pipelineProvisioningRepositoryHasBeenSet(false),
-    m_pipelineServiceRoleArnHasBeenSet(false)
+AccountSettings::AccountSettings(JsonView jsonValue)
+  : AccountSettings()
 {
   *this = jsonValue;
 }

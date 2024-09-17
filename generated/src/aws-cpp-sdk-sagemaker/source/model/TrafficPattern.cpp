@@ -26,11 +26,8 @@ TrafficPattern::TrafficPattern() :
 {
 }
 
-TrafficPattern::TrafficPattern(JsonView jsonValue) : 
-    m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false),
-    m_phasesHasBeenSet(false),
-    m_stairsHasBeenSet(false)
+TrafficPattern::TrafficPattern(JsonView jsonValue)
+  : TrafficPattern()
 {
   *this = jsonValue;
 }

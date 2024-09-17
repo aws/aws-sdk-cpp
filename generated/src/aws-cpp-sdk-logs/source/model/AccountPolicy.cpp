@@ -32,17 +32,8 @@ AccountPolicy::AccountPolicy() :
 {
 }
 
-AccountPolicy::AccountPolicy(JsonView jsonValue) : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_lastUpdatedTime(0),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_selectionCriteriaHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+AccountPolicy::AccountPolicy(JsonView jsonValue)
+  : AccountPolicy()
 {
   *this = jsonValue;
 }

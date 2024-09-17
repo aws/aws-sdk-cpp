@@ -30,15 +30,8 @@ AwsCorsConfiguration::AwsCorsConfiguration() :
 {
 }
 
-AwsCorsConfiguration::AwsCorsConfiguration(JsonView jsonValue) : 
-    m_allowOriginsHasBeenSet(false),
-    m_allowCredentials(false),
-    m_allowCredentialsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false),
-    m_maxAge(0),
-    m_maxAgeHasBeenSet(false),
-    m_allowMethodsHasBeenSet(false),
-    m_allowHeadersHasBeenSet(false)
+AwsCorsConfiguration::AwsCorsConfiguration(JsonView jsonValue)
+  : AwsCorsConfiguration()
 {
   *this = jsonValue;
 }

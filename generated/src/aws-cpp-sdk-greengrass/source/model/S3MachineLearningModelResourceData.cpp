@@ -25,10 +25,8 @@ S3MachineLearningModelResourceData::S3MachineLearningModelResourceData() :
 {
 }
 
-S3MachineLearningModelResourceData::S3MachineLearningModelResourceData(JsonView jsonValue) : 
-    m_destinationPathHasBeenSet(false),
-    m_ownerSettingHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
+S3MachineLearningModelResourceData::S3MachineLearningModelResourceData(JsonView jsonValue)
+  : S3MachineLearningModelResourceData()
 {
   *this = jsonValue;
 }

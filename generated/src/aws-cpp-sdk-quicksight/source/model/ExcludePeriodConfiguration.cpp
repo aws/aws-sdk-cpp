@@ -28,13 +28,8 @@ ExcludePeriodConfiguration::ExcludePeriodConfiguration() :
 {
 }
 
-ExcludePeriodConfiguration::ExcludePeriodConfiguration(JsonView jsonValue) : 
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_granularity(TimeGranularity::NOT_SET),
-    m_granularityHasBeenSet(false),
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ExcludePeriodConfiguration::ExcludePeriodConfiguration(JsonView jsonValue)
+  : ExcludePeriodConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ PromptSearchCriteria::PromptSearchCriteria() :
 {
 }
 
-PromptSearchCriteria::PromptSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
+PromptSearchCriteria::PromptSearchCriteria(JsonView jsonValue)
+  : PromptSearchCriteria()
 {
   *this = jsonValue;
 }

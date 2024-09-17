@@ -39,79 +39,31 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An opaque string that indicates the position at which to begin the returned
      * list of gateways.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin the returned
-     * list of gateways.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin the returned
-     * list of gateways.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin the returned
-     * list of gateways.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin the returned
-     * list of gateways.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin the returned
-     * list of gateways.</p>
-     */
     inline ListGatewaysRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin the returned
-     * list of gateways.</p>
-     */
     inline ListGatewaysRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin the returned
-     * list of gateways.</p>
-     */
     inline ListGatewaysRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that the list of gateways returned be limited to the specified
      * number of items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>Specifies that the list of gateways returned be limited to the specified
-     * number of items.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>Specifies that the list of gateways returned be limited to the specified
-     * number of items.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>Specifies that the list of gateways returned be limited to the specified
-     * number of items.</p>
-     */
     inline ListGatewaysRequest& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

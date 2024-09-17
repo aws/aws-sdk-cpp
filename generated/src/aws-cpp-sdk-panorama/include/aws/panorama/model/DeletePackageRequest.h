@@ -38,71 +38,30 @@ namespace Model
     AWS_PANORAMA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Delete the package even if it has artifacts stored in its access point.
      * Deletes the package's artifacts from Amazon S3.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
-
-    /**
-     * <p>Delete the package even if it has artifacts stored in its access point.
-     * Deletes the package's artifacts from Amazon S3.</p>
-     */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
-
-    /**
-     * <p>Delete the package even if it has artifacts stored in its access point.
-     * Deletes the package's artifacts from Amazon S3.</p>
-     */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
-
-    /**
-     * <p>Delete the package even if it has artifacts stored in its access point.
-     * Deletes the package's artifacts from Amazon S3.</p>
-     */
     inline DeletePackageRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The package's ID.</p>
      */
     inline const Aws::String& GetPackageId() const{ return m_packageId; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline bool PackageIdHasBeenSet() const { return m_packageIdHasBeenSet; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline void SetPackageId(const Aws::String& value) { m_packageIdHasBeenSet = true; m_packageId = value; }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline void SetPackageId(Aws::String&& value) { m_packageIdHasBeenSet = true; m_packageId = std::move(value); }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline void SetPackageId(const char* value) { m_packageIdHasBeenSet = true; m_packageId.assign(value); }
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline DeletePackageRequest& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline DeletePackageRequest& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The package's ID.</p>
-     */
     inline DeletePackageRequest& WithPackageId(const char* value) { SetPackageId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_forceDelete;

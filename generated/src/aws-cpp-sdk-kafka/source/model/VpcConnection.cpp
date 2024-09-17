@@ -29,14 +29,8 @@ VpcConnection::VpcConnection() :
 {
 }
 
-VpcConnection::VpcConnection(JsonView jsonValue) : 
-    m_vpcConnectionArnHasBeenSet(false),
-    m_targetClusterArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_state(VpcConnectionState::NOT_SET),
-    m_stateHasBeenSet(false)
+VpcConnection::VpcConnection(JsonView jsonValue)
+  : VpcConnection()
 {
   *this = jsonValue;
 }

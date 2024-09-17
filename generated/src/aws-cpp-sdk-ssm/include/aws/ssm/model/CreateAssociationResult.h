@@ -33,53 +33,27 @@ namespace Model
     AWS_SSM_API CreateAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the association.</p>
      */
     inline const AssociationDescription& GetAssociationDescription() const{ return m_associationDescription; }
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline void SetAssociationDescription(const AssociationDescription& value) { m_associationDescription = value; }
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline void SetAssociationDescription(AssociationDescription&& value) { m_associationDescription = std::move(value); }
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline CreateAssociationResult& WithAssociationDescription(const AssociationDescription& value) { SetAssociationDescription(value); return *this;}
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline CreateAssociationResult& WithAssociationDescription(AssociationDescription&& value) { SetAssociationDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AssociationDescription m_associationDescription;

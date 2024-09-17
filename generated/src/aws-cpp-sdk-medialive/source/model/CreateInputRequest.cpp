@@ -25,7 +25,11 @@ CreateInputRequest::CreateInputRequest() :
     m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_srtSettingsHasBeenSet(false),
+    m_inputNetworkLocation(InputNetworkLocation::NOT_SET),
+    m_inputNetworkLocationHasBeenSet(false),
+    m_multicastSettingsHasBeenSet(false)
 {
 }
 
@@ -125,6 +129,23 @@ Aws::String CreateInputRequest::SerializePayload() const
   if(m_vpcHasBeenSet)
   {
    payload.WithObject("vpc", m_vpc.Jsonize());
+
+  }
+
+  if(m_srtSettingsHasBeenSet)
+  {
+   payload.WithObject("srtSettings", m_srtSettings.Jsonize());
+
+  }
+
+  if(m_inputNetworkLocationHasBeenSet)
+  {
+   payload.WithString("inputNetworkLocation", InputNetworkLocationMapper::GetNameForInputNetworkLocation(m_inputNetworkLocation));
+  }
+
+  if(m_multicastSettingsHasBeenSet)
+  {
+   payload.WithObject("multicastSettings", m_multicastSettings.Jsonize());
 
   }
 

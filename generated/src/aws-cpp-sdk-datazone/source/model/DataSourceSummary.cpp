@@ -40,25 +40,8 @@ DataSourceSummary::DataSourceSummary() :
 {
 }
 
-DataSourceSummary::DataSourceSummary(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_enableSetting(EnableSetting::NOT_SET),
-    m_enableSettingHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_lastRunAssetCount(0),
-    m_lastRunAssetCountHasBeenSet(false),
-    m_lastRunAtHasBeenSet(false),
-    m_lastRunErrorMessageHasBeenSet(false),
-    m_lastRunStatus(DataSourceRunStatus::NOT_SET),
-    m_lastRunStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+DataSourceSummary::DataSourceSummary(JsonView jsonValue)
+  : DataSourceSummary()
 {
   *this = jsonValue;
 }

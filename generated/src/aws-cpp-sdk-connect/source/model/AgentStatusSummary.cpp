@@ -29,14 +29,8 @@ AgentStatusSummary::AgentStatusSummary() :
 {
 }
 
-AgentStatusSummary::AgentStatusSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(AgentStatusType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+AgentStatusSummary::AgentStatusSummary(JsonView jsonValue)
+  : AgentStatusSummary()
 {
   *this = jsonValue;
 }

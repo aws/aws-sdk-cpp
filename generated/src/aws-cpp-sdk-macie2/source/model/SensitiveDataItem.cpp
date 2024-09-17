@@ -27,12 +27,8 @@ SensitiveDataItem::SensitiveDataItem() :
 {
 }
 
-SensitiveDataItem::SensitiveDataItem(JsonView jsonValue) : 
-    m_category(SensitiveDataItemCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_detectionsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
+SensitiveDataItem::SensitiveDataItem(JsonView jsonValue)
+  : SensitiveDataItem()
 {
   *this = jsonValue;
 }

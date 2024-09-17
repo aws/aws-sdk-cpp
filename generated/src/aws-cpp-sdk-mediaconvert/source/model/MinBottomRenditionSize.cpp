@@ -26,11 +26,8 @@ MinBottomRenditionSize::MinBottomRenditionSize() :
 {
 }
 
-MinBottomRenditionSize::MinBottomRenditionSize(JsonView jsonValue) : 
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
+MinBottomRenditionSize::MinBottomRenditionSize(JsonView jsonValue)
+  : MinBottomRenditionSize()
 {
   *this = jsonValue;
 }

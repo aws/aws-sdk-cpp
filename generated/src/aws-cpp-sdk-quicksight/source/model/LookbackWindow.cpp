@@ -27,12 +27,8 @@ LookbackWindow::LookbackWindow() :
 {
 }
 
-LookbackWindow::LookbackWindow(JsonView jsonValue) : 
-    m_columnNameHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_sizeUnit(LookbackWindowSizeUnit::NOT_SET),
-    m_sizeUnitHasBeenSet(false)
+LookbackWindow::LookbackWindow(JsonView jsonValue)
+  : LookbackWindow()
 {
   *this = jsonValue;
 }

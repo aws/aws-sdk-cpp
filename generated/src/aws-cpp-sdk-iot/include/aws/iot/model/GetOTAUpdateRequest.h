@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The OTA update ID.</p>
      */
     inline const Aws::String& GetOtaUpdateId() const{ return m_otaUpdateId; }
-
-    /**
-     * <p>The OTA update ID.</p>
-     */
     inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
-
-    /**
-     * <p>The OTA update ID.</p>
-     */
     inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
-
-    /**
-     * <p>The OTA update ID.</p>
-     */
     inline void SetOtaUpdateId(Aws::String&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::move(value); }
-
-    /**
-     * <p>The OTA update ID.</p>
-     */
     inline void SetOtaUpdateId(const char* value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId.assign(value); }
-
-    /**
-     * <p>The OTA update ID.</p>
-     */
     inline GetOTAUpdateRequest& WithOtaUpdateId(const Aws::String& value) { SetOtaUpdateId(value); return *this;}
-
-    /**
-     * <p>The OTA update ID.</p>
-     */
     inline GetOTAUpdateRequest& WithOtaUpdateId(Aws::String&& value) { SetOtaUpdateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The OTA update ID.</p>
-     */
     inline GetOTAUpdateRequest& WithOtaUpdateId(const char* value) { SetOtaUpdateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_otaUpdateId;

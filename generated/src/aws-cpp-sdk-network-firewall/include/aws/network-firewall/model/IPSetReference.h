@@ -52,54 +52,20 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
      * your rule group.</p>
      */
     inline const Aws::String& GetReferenceArn() const{ return m_referenceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
-     * your rule group.</p>
-     */
     inline bool ReferenceArnHasBeenSet() const { return m_referenceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
-     * your rule group.</p>
-     */
     inline void SetReferenceArn(const Aws::String& value) { m_referenceArnHasBeenSet = true; m_referenceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
-     * your rule group.</p>
-     */
     inline void SetReferenceArn(Aws::String&& value) { m_referenceArnHasBeenSet = true; m_referenceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
-     * your rule group.</p>
-     */
     inline void SetReferenceArn(const char* value) { m_referenceArnHasBeenSet = true; m_referenceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
-     * your rule group.</p>
-     */
     inline IPSetReference& WithReferenceArn(const Aws::String& value) { SetReferenceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
-     * your rule group.</p>
-     */
     inline IPSetReference& WithReferenceArn(Aws::String&& value) { SetReferenceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that you are referencing in
-     * your rule group.</p>
-     */
     inline IPSetReference& WithReferenceArn(const char* value) { SetReferenceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_referenceArn;

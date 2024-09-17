@@ -45,6 +45,7 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the dimension. Dimension names must contain only ASCII
      * characters, must include at least one non-whitespace character, and cannot start
@@ -52,120 +53,30 @@ namespace Model
      * part of dimension names.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the dimension. Dimension names must contain only ASCII
-     * characters, must include at least one non-whitespace character, and cannot start
-     * with a colon (<code>:</code>). ASCII control characters are not supported as
-     * part of dimension names.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the dimension. Dimension names must contain only ASCII
-     * characters, must include at least one non-whitespace character, and cannot start
-     * with a colon (<code>:</code>). ASCII control characters are not supported as
-     * part of dimension names.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the dimension. Dimension names must contain only ASCII
-     * characters, must include at least one non-whitespace character, and cannot start
-     * with a colon (<code>:</code>). ASCII control characters are not supported as
-     * part of dimension names.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the dimension. Dimension names must contain only ASCII
-     * characters, must include at least one non-whitespace character, and cannot start
-     * with a colon (<code>:</code>). ASCII control characters are not supported as
-     * part of dimension names.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the dimension. Dimension names must contain only ASCII
-     * characters, must include at least one non-whitespace character, and cannot start
-     * with a colon (<code>:</code>). ASCII control characters are not supported as
-     * part of dimension names.</p>
-     */
     inline Dimension& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the dimension. Dimension names must contain only ASCII
-     * characters, must include at least one non-whitespace character, and cannot start
-     * with a colon (<code>:</code>). ASCII control characters are not supported as
-     * part of dimension names.</p>
-     */
     inline Dimension& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dimension. Dimension names must contain only ASCII
-     * characters, must include at least one non-whitespace character, and cannot start
-     * with a colon (<code>:</code>). ASCII control characters are not supported as
-     * part of dimension names.</p>
-     */
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the dimension. Dimension values must contain only ASCII
      * characters and must include at least one non-whitespace character. ASCII control
      * characters are not supported as part of dimension values.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the dimension. Dimension values must contain only ASCII
-     * characters and must include at least one non-whitespace character. ASCII control
-     * characters are not supported as part of dimension values.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the dimension. Dimension values must contain only ASCII
-     * characters and must include at least one non-whitespace character. ASCII control
-     * characters are not supported as part of dimension values.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the dimension. Dimension values must contain only ASCII
-     * characters and must include at least one non-whitespace character. ASCII control
-     * characters are not supported as part of dimension values.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the dimension. Dimension values must contain only ASCII
-     * characters and must include at least one non-whitespace character. ASCII control
-     * characters are not supported as part of dimension values.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the dimension. Dimension values must contain only ASCII
-     * characters and must include at least one non-whitespace character. ASCII control
-     * characters are not supported as part of dimension values.</p>
-     */
     inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the dimension. Dimension values must contain only ASCII
-     * characters and must include at least one non-whitespace character. ASCII control
-     * characters are not supported as part of dimension values.</p>
-     */
     inline Dimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the dimension. Dimension values must contain only ASCII
-     * characters and must include at least one non-whitespace character. ASCII control
-     * characters are not supported as part of dimension values.</p>
-     */
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

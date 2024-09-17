@@ -34,6 +34,8 @@ namespace Aws
         static const int AWS_RDS_DBClusterSnapshot_HASH = HashingUtils::HashString("AWS::RDS::DBClusterSnapshot");
         static const int AWS_SNS_Topic_HASH = HashingUtils::HashString("AWS::SNS::Topic");
         static const int AWS_S3Express_DirectoryBucket_HASH = HashingUtils::HashString("AWS::S3Express::DirectoryBucket");
+        static const int AWS_DynamoDB_Table_HASH = HashingUtils::HashString("AWS::DynamoDB::Table");
+        static const int AWS_DynamoDB_Stream_HASH = HashingUtils::HashString("AWS::DynamoDB::Stream");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -95,6 +97,14 @@ namespace Aws
           {
             return ResourceType::AWS_S3Express_DirectoryBucket;
           }
+          else if (hashCode == AWS_DynamoDB_Table_HASH)
+          {
+            return ResourceType::AWS_DynamoDB_Table;
+          }
+          else if (hashCode == AWS_DynamoDB_Stream_HASH)
+          {
+            return ResourceType::AWS_DynamoDB_Stream;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +149,10 @@ namespace Aws
             return "AWS::SNS::Topic";
           case ResourceType::AWS_S3Express_DirectoryBucket:
             return "AWS::S3Express::DirectoryBucket";
+          case ResourceType::AWS_DynamoDB_Table:
+            return "AWS::DynamoDB::Table";
+          case ResourceType::AWS_DynamoDB_Stream:
+            return "AWS::DynamoDB::Stream";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -22,8 +22,8 @@ GetGroupProfileResult::GetGroupProfileResult() :
 {
 }
 
-GetGroupProfileResult::GetGroupProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GroupProfileStatus::NOT_SET)
+GetGroupProfileResult::GetGroupProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetGroupProfileResult()
 {
   *this = result;
 }

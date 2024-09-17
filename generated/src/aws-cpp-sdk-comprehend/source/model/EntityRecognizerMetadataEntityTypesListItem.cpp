@@ -26,11 +26,8 @@ EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypes
 {
 }
 
-EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_evaluationMetricsHasBeenSet(false),
-    m_numberOfTrainMentions(0),
-    m_numberOfTrainMentionsHasBeenSet(false)
+EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem(JsonView jsonValue)
+  : EntityRecognizerMetadataEntityTypesListItem()
 {
   *this = jsonValue;
 }

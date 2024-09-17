@@ -24,9 +24,8 @@ PipeTargetCloudWatchLogsParameters::PipeTargetCloudWatchLogsParameters() :
 {
 }
 
-PipeTargetCloudWatchLogsParameters::PipeTargetCloudWatchLogsParameters(JsonView jsonValue) : 
-    m_logStreamNameHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+PipeTargetCloudWatchLogsParameters::PipeTargetCloudWatchLogsParameters(JsonView jsonValue)
+  : PipeTargetCloudWatchLogsParameters()
 {
   *this = jsonValue;
 }

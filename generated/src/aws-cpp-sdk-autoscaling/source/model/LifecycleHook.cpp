@@ -35,18 +35,8 @@ LifecycleHook::LifecycleHook() :
 {
 }
 
-LifecycleHook::LifecycleHook(const XmlNode& xmlNode) : 
-    m_lifecycleHookNameHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_lifecycleTransitionHasBeenSet(false),
-    m_notificationTargetARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_notificationMetadataHasBeenSet(false),
-    m_heartbeatTimeout(0),
-    m_heartbeatTimeoutHasBeenSet(false),
-    m_globalTimeout(0),
-    m_globalTimeoutHasBeenSet(false),
-    m_defaultResultHasBeenSet(false)
+LifecycleHook::LifecycleHook(const XmlNode& xmlNode)
+  : LifecycleHook()
 {
   *this = xmlNode;
 }

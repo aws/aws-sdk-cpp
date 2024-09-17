@@ -42,60 +42,21 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A list of locations to allow game session placement in, in the form of
      * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedLocations() const{ return m_allowedLocations; }
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline bool AllowedLocationsHasBeenSet() const { return m_allowedLocationsHasBeenSet; }
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline void SetAllowedLocations(const Aws::Vector<Aws::String>& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations = value; }
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline void SetAllowedLocations(Aws::Vector<Aws::String>&& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations = std::move(value); }
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline FilterConfiguration& WithAllowedLocations(const Aws::Vector<Aws::String>& value) { SetAllowedLocations(value); return *this;}
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline FilterConfiguration& WithAllowedLocations(Aws::Vector<Aws::String>&& value) { SetAllowedLocations(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline FilterConfiguration& AddAllowedLocations(const Aws::String& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations.push_back(value); return *this; }
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline FilterConfiguration& AddAllowedLocations(Aws::String&& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> A list of locations to allow game session placement in, in the form of
-     * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-     */
     inline FilterConfiguration& AddAllowedLocations(const char* value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_allowedLocations;

@@ -23,9 +23,8 @@ DescribeGeneratedTemplateResult::DescribeGeneratedTemplateResult() :
 {
 }
 
-DescribeGeneratedTemplateResult::DescribeGeneratedTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(GeneratedTemplateStatus::NOT_SET),
-    m_totalWarnings(0)
+DescribeGeneratedTemplateResult::DescribeGeneratedTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeGeneratedTemplateResult()
 {
   *this = result;
 }

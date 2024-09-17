@@ -14,21 +14,27 @@ using namespace Aws::Utils;
 
 UpdateDataSourceRequest::UpdateDataSourceRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_documentEnrichmentConfigurationHasBeenSet(false),
     m_indexIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_configurationHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_syncScheduleHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_documentEnrichmentConfigurationHasBeenSet(false)
 {
 }
 
 Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
+
+  }
 
   if(m_configurationHasBeenSet)
   {
@@ -38,27 +44,15 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
     }
   }
 
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
-  if(m_documentEnrichmentConfigurationHasBeenSet)
-  {
-   payload.WithObject("documentEnrichmentConfiguration", m_documentEnrichmentConfiguration.Jsonize());
-
-  }
-
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -68,9 +62,15 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
 
   }
 
-  if(m_vpcConfigurationHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
+   payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_documentEnrichmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("documentEnrichmentConfiguration", m_documentEnrichmentConfiguration.Jsonize());
 
   }
 

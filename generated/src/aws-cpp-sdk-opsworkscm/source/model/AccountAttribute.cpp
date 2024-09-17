@@ -27,12 +27,8 @@ AccountAttribute::AccountAttribute() :
 {
 }
 
-AccountAttribute::AccountAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false)
+AccountAttribute::AccountAttribute(JsonView jsonValue)
+  : AccountAttribute()
 {
   *this = jsonValue;
 }

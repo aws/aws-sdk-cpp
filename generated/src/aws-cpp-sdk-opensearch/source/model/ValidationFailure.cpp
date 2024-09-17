@@ -24,9 +24,8 @@ ValidationFailure::ValidationFailure() :
 {
 }
 
-ValidationFailure::ValidationFailure(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ValidationFailure::ValidationFailure(JsonView jsonValue)
+  : ValidationFailure()
 {
   *this = jsonValue;
 }

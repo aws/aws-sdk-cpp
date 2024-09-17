@@ -39,32 +39,17 @@ RuntimeContext::RuntimeContext() :
     m_addressFamilyHasBeenSet(false),
     m_ianaProtocolNumber(0),
     m_ianaProtocolNumberHasBeenSet(false),
-    m_memoryRegionsHasBeenSet(false)
+    m_memoryRegionsHasBeenSet(false),
+    m_toolNameHasBeenSet(false),
+    m_toolCategoryHasBeenSet(false),
+    m_serviceNameHasBeenSet(false),
+    m_commandLineExampleHasBeenSet(false),
+    m_threatFilePathHasBeenSet(false)
 {
 }
 
-RuntimeContext::RuntimeContext(JsonView jsonValue) : 
-    m_modifyingProcessHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_scriptPathHasBeenSet(false),
-    m_libraryPathHasBeenSet(false),
-    m_ldPreloadValueHasBeenSet(false),
-    m_socketPathHasBeenSet(false),
-    m_runcBinaryPathHasBeenSet(false),
-    m_releaseAgentPathHasBeenSet(false),
-    m_mountSourceHasBeenSet(false),
-    m_mountTargetHasBeenSet(false),
-    m_fileSystemTypeHasBeenSet(false),
-    m_flagsHasBeenSet(false),
-    m_moduleNameHasBeenSet(false),
-    m_moduleFilePathHasBeenSet(false),
-    m_moduleSha256HasBeenSet(false),
-    m_shellHistoryFilePathHasBeenSet(false),
-    m_targetProcessHasBeenSet(false),
-    m_addressFamilyHasBeenSet(false),
-    m_ianaProtocolNumber(0),
-    m_ianaProtocolNumberHasBeenSet(false),
-    m_memoryRegionsHasBeenSet(false)
+RuntimeContext::RuntimeContext(JsonView jsonValue)
+  : RuntimeContext()
 {
   *this = jsonValue;
 }
@@ -217,6 +202,41 @@ RuntimeContext& RuntimeContext::operator =(JsonView jsonValue)
     m_memoryRegionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("toolName"))
+  {
+    m_toolName = jsonValue.GetString("toolName");
+
+    m_toolNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("toolCategory"))
+  {
+    m_toolCategory = jsonValue.GetString("toolCategory");
+
+    m_toolCategoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceName"))
+  {
+    m_serviceName = jsonValue.GetString("serviceName");
+
+    m_serviceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("commandLineExample"))
+  {
+    m_commandLineExample = jsonValue.GetString("commandLineExample");
+
+    m_commandLineExampleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("threatFilePath"))
+  {
+    m_threatFilePath = jsonValue.GetString("threatFilePath");
+
+    m_threatFilePathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -350,6 +370,36 @@ JsonValue RuntimeContext::Jsonize() const
      memoryRegionsJsonList[memoryRegionsIndex].AsString(m_memoryRegions[memoryRegionsIndex]);
    }
    payload.WithArray("memoryRegions", std::move(memoryRegionsJsonList));
+
+  }
+
+  if(m_toolNameHasBeenSet)
+  {
+   payload.WithString("toolName", m_toolName);
+
+  }
+
+  if(m_toolCategoryHasBeenSet)
+  {
+   payload.WithString("toolCategory", m_toolCategory);
+
+  }
+
+  if(m_serviceNameHasBeenSet)
+  {
+   payload.WithString("serviceName", m_serviceName);
+
+  }
+
+  if(m_commandLineExampleHasBeenSet)
+  {
+   payload.WithString("commandLineExample", m_commandLineExample);
+
+  }
+
+  if(m_threatFilePathHasBeenSet)
+  {
+   payload.WithString("threatFilePath", m_threatFilePath);
 
   }
 

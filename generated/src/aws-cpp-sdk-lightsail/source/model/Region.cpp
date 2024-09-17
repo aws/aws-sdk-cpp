@@ -29,14 +29,8 @@ Region::Region() :
 {
 }
 
-Region::Region(JsonView jsonValue) : 
-    m_continentCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_name(RegionName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_relationalDatabaseAvailabilityZonesHasBeenSet(false)
+Region::Region(JsonView jsonValue)
+  : Region()
 {
   *this = jsonValue;
 }

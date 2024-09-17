@@ -27,12 +27,8 @@ ExperimentReport::ExperimentReport() :
 {
 }
 
-ExperimentReport::ExperimentReport(JsonView jsonValue) : 
-    m_contentHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_reportName(ExperimentReportName::NOT_SET),
-    m_reportNameHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
+ExperimentReport::ExperimentReport(JsonView jsonValue)
+  : ExperimentReport()
 {
   *this = jsonValue;
 }

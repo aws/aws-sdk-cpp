@@ -34,114 +34,45 @@ namespace Model
     AWS_PRIVATENETWORKS_API CreateNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the network.</p>
      */
     inline const Network& GetNetwork() const{ return m_network; }
-
-    /**
-     * <p>Information about the network.</p>
-     */
     inline void SetNetwork(const Network& value) { m_network = value; }
-
-    /**
-     * <p>Information about the network.</p>
-     */
     inline void SetNetwork(Network&& value) { m_network = std::move(value); }
-
-    /**
-     * <p>Information about the network.</p>
-     */
     inline CreateNetworkResult& WithNetwork(const Network& value) { SetNetwork(value); return *this;}
-
-    /**
-     * <p>Information about the network.</p>
-     */
     inline CreateNetworkResult& WithNetwork(Network&& value) { SetNetwork(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The network tags. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> The network tags. </p>
-     */
     inline CreateNetworkResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Network m_network;

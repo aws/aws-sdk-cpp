@@ -27,12 +27,8 @@ SessionIssuer::SessionIssuer() :
 {
 }
 
-SessionIssuer::SessionIssuer(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+SessionIssuer::SessionIssuer(JsonView jsonValue)
+  : SessionIssuer()
 {
   *this = jsonValue;
 }

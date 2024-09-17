@@ -19,29 +19,26 @@ namespace Model
 {
 
 ListTrackersResponseEntry::ListTrackersResponseEntry() : 
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_trackerNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
 
-ListTrackersResponseEntry::ListTrackersResponseEntry(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_trackerNameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListTrackersResponseEntry::ListTrackersResponseEntry(JsonView jsonValue)
+  : ListTrackersResponseEntry()
 {
   *this = jsonValue;
 }
 
 ListTrackersResponseEntry& ListTrackersResponseEntry::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("TrackerName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_trackerName = jsonValue.GetString("TrackerName");
 
-    m_createTimeHasBeenSet = true;
+    m_trackerNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -51,11 +48,11 @@ ListTrackersResponseEntry& ListTrackersResponseEntry::operator =(JsonView jsonVa
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TrackerName"))
+  if(jsonValue.ValueExists("CreateTime"))
   {
-    m_trackerName = jsonValue.GetString("TrackerName");
+    m_createTime = jsonValue.GetString("CreateTime");
 
-    m_trackerNameHasBeenSet = true;
+    m_createTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -72,9 +69,10 @@ JsonValue ListTrackersResponseEntry::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createTimeHasBeenSet)
+  if(m_trackerNameHasBeenSet)
   {
-   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("TrackerName", m_trackerName);
+
   }
 
   if(m_descriptionHasBeenSet)
@@ -83,10 +81,9 @@ JsonValue ListTrackersResponseEntry::Jsonize() const
 
   }
 
-  if(m_trackerNameHasBeenSet)
+  if(m_createTimeHasBeenSet)
   {
-   payload.WithString("TrackerName", m_trackerName);
-
+   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updateTimeHasBeenSet)

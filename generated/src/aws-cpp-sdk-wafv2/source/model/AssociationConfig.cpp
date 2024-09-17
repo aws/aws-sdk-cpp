@@ -23,8 +23,8 @@ AssociationConfig::AssociationConfig() :
 {
 }
 
-AssociationConfig::AssociationConfig(JsonView jsonValue) : 
-    m_requestBodyHasBeenSet(false)
+AssociationConfig::AssociationConfig(JsonView jsonValue)
+  : AssociationConfig()
 {
   *this = jsonValue;
 }

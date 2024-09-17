@@ -368,13 +368,13 @@ namespace CodeGuruReviewer
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRepositoryAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRepositoryAssociationsOutcome ListRepositoryAssociations(const Model::ListRepositoryAssociationsRequest& request) const;
+        virtual Model::ListRepositoryAssociationsOutcome ListRepositoryAssociations(const Model::ListRepositoryAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRepositoryAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRepositoryAssociationsRequestT = Model::ListRepositoryAssociationsRequest>
-        Model::ListRepositoryAssociationsOutcomeCallable ListRepositoryAssociationsCallable(const ListRepositoryAssociationsRequestT& request) const
+        Model::ListRepositoryAssociationsOutcomeCallable ListRepositoryAssociationsCallable(const ListRepositoryAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeGuruReviewerClient::ListRepositoryAssociations, request);
         }
@@ -383,7 +383,7 @@ namespace CodeGuruReviewer
          * An Async wrapper for ListRepositoryAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRepositoryAssociationsRequestT = Model::ListRepositoryAssociationsRequest>
-        void ListRepositoryAssociationsAsync(const ListRepositoryAssociationsRequestT& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRepositoryAssociationsAsync(const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRepositoryAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeGuruReviewerClient::ListRepositoryAssociations, request, handler, context);
         }
@@ -500,7 +500,6 @@ namespace CodeGuruReviewer
       void init(const CodeGuruReviewerClientConfiguration& clientConfiguration);
 
       CodeGuruReviewerClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CodeGuruReviewerEndpointProviderBase> m_endpointProvider;
   };
 

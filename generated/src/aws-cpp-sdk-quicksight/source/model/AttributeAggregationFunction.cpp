@@ -25,10 +25,8 @@ AttributeAggregationFunction::AttributeAggregationFunction() :
 {
 }
 
-AttributeAggregationFunction::AttributeAggregationFunction(JsonView jsonValue) : 
-    m_simpleAttributeAggregation(SimpleAttributeAggregationFunction::NOT_SET),
-    m_simpleAttributeAggregationHasBeenSet(false),
-    m_valueForMultipleValuesHasBeenSet(false)
+AttributeAggregationFunction::AttributeAggregationFunction(JsonView jsonValue)
+  : AttributeAggregationFunction()
 {
   *this = jsonValue;
 }

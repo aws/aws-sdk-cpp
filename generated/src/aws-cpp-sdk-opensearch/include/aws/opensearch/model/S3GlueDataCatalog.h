@@ -38,46 +38,19 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-     */
     inline S3GlueDataCatalog& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-     */
     inline S3GlueDataCatalog& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
-     */
     inline S3GlueDataCatalog& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

@@ -31,16 +31,8 @@ CaptionSourceSettings::CaptionSourceSettings() :
 {
 }
 
-CaptionSourceSettings::CaptionSourceSettings(JsonView jsonValue) : 
-    m_ancillarySourceSettingsHasBeenSet(false),
-    m_dvbSubSourceSettingsHasBeenSet(false),
-    m_embeddedSourceSettingsHasBeenSet(false),
-    m_fileSourceSettingsHasBeenSet(false),
-    m_sourceType(CaptionSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_teletextSourceSettingsHasBeenSet(false),
-    m_trackSourceSettingsHasBeenSet(false),
-    m_webvttHlsSourceSettingsHasBeenSet(false)
+CaptionSourceSettings::CaptionSourceSettings(JsonView jsonValue)
+  : CaptionSourceSettings()
 {
   *this = jsonValue;
 }

@@ -21,6 +21,8 @@ namespace Model
 VpcEndpointDetail::VpcEndpointDetail() : 
     m_createdDate(0),
     m_createdDateHasBeenSet(false),
+    m_failureCodeHasBeenSet(false),
+    m_failureMessageHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -31,16 +33,8 @@ VpcEndpointDetail::VpcEndpointDetail() :
 {
 }
 
-VpcEndpointDetail::VpcEndpointDetail(JsonView jsonValue) : 
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+VpcEndpointDetail::VpcEndpointDetail(JsonView jsonValue)
+  : VpcEndpointDetail()
 {
   *this = jsonValue;
 }
@@ -52,6 +46,20 @@ VpcEndpointDetail& VpcEndpointDetail::operator =(JsonView jsonValue)
     m_createdDate = jsonValue.GetInt64("createdDate");
 
     m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = jsonValue.GetString("failureCode");
+
+    m_failureCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+
+    m_failureMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -112,6 +120,18 @@ JsonValue VpcEndpointDetail::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithInt64("createdDate", m_createdDate);
+
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithString("failureCode", m_failureCode);
+
+  }
+
+  if(m_failureMessageHasBeenSet)
+  {
+   payload.WithString("failureMessage", m_failureMessage);
 
   }
 

@@ -23,8 +23,8 @@ JourneyEmailMessage::JourneyEmailMessage() :
 {
 }
 
-JourneyEmailMessage::JourneyEmailMessage(JsonView jsonValue) : 
-    m_fromAddressHasBeenSet(false)
+JourneyEmailMessage::JourneyEmailMessage(JsonView jsonValue)
+  : JourneyEmailMessage()
 {
   *this = jsonValue;
 }

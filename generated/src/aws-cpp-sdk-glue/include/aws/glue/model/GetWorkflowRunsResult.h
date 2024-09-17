@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUE_API GetWorkflowRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of workflow run metadata objects.</p>
      */
     inline const Aws::Vector<WorkflowRun>& GetRuns() const{ return m_runs; }
-
-    /**
-     * <p>A list of workflow run metadata objects.</p>
-     */
     inline void SetRuns(const Aws::Vector<WorkflowRun>& value) { m_runs = value; }
-
-    /**
-     * <p>A list of workflow run metadata objects.</p>
-     */
     inline void SetRuns(Aws::Vector<WorkflowRun>&& value) { m_runs = std::move(value); }
-
-    /**
-     * <p>A list of workflow run metadata objects.</p>
-     */
     inline GetWorkflowRunsResult& WithRuns(const Aws::Vector<WorkflowRun>& value) { SetRuns(value); return *this;}
-
-    /**
-     * <p>A list of workflow run metadata objects.</p>
-     */
     inline GetWorkflowRunsResult& WithRuns(Aws::Vector<WorkflowRun>&& value) { SetRuns(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of workflow run metadata objects.</p>
-     */
     inline GetWorkflowRunsResult& AddRuns(const WorkflowRun& value) { m_runs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of workflow run metadata objects.</p>
-     */
     inline GetWorkflowRunsResult& AddRuns(WorkflowRun&& value) { m_runs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token, if not all requested workflow runs have been
      * returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token, if not all requested workflow runs have been
-     * returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A continuation token, if not all requested workflow runs have been
-     * returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token, if not all requested workflow runs have been
-     * returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token, if not all requested workflow runs have been
-     * returned.</p>
-     */
     inline GetWorkflowRunsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token, if not all requested workflow runs have been
-     * returned.</p>
-     */
     inline GetWorkflowRunsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token, if not all requested workflow runs have been
-     * returned.</p>
-     */
     inline GetWorkflowRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWorkflowRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWorkflowRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWorkflowRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<WorkflowRun> m_runs;

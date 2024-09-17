@@ -34,106 +34,43 @@ namespace Model
     AWS_EFS_API DescribeReplicationConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The collection of replication configurations that is returned.</p>
      */
     inline const Aws::Vector<ReplicationConfigurationDescription>& GetReplications() const{ return m_replications; }
-
-    /**
-     * <p>The collection of replication configurations that is returned.</p>
-     */
     inline void SetReplications(const Aws::Vector<ReplicationConfigurationDescription>& value) { m_replications = value; }
-
-    /**
-     * <p>The collection of replication configurations that is returned.</p>
-     */
     inline void SetReplications(Aws::Vector<ReplicationConfigurationDescription>&& value) { m_replications = std::move(value); }
-
-    /**
-     * <p>The collection of replication configurations that is returned.</p>
-     */
     inline DescribeReplicationConfigurationsResult& WithReplications(const Aws::Vector<ReplicationConfigurationDescription>& value) { SetReplications(value); return *this;}
-
-    /**
-     * <p>The collection of replication configurations that is returned.</p>
-     */
     inline DescribeReplicationConfigurationsResult& WithReplications(Aws::Vector<ReplicationConfigurationDescription>&& value) { SetReplications(std::move(value)); return *this;}
-
-    /**
-     * <p>The collection of replication configurations that is returned.</p>
-     */
     inline DescribeReplicationConfigurationsResult& AddReplications(const ReplicationConfigurationDescription& value) { m_replications.push_back(value); return *this; }
-
-    /**
-     * <p>The collection of replication configurations that is returned.</p>
-     */
     inline DescribeReplicationConfigurationsResult& AddReplications(ReplicationConfigurationDescription&& value) { m_replications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>You can use the <code>NextToken</code> from the previous response in a
      * subsequent request to fetch the additional descriptions.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>You can use the <code>NextToken</code> from the previous response in a
-     * subsequent request to fetch the additional descriptions.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>You can use the <code>NextToken</code> from the previous response in a
-     * subsequent request to fetch the additional descriptions.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>You can use the <code>NextToken</code> from the previous response in a
-     * subsequent request to fetch the additional descriptions.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>You can use the <code>NextToken</code> from the previous response in a
-     * subsequent request to fetch the additional descriptions.</p>
-     */
     inline DescribeReplicationConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>You can use the <code>NextToken</code> from the previous response in a
-     * subsequent request to fetch the additional descriptions.</p>
-     */
     inline DescribeReplicationConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>You can use the <code>NextToken</code> from the previous response in a
-     * subsequent request to fetch the additional descriptions.</p>
-     */
     inline DescribeReplicationConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeReplicationConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeReplicationConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeReplicationConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ReplicationConfigurationDescription> m_replications;

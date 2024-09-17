@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API CreateInAppTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const TemplateCreateMessageBody& GetTemplateCreateMessageBody() const{ return m_templateCreateMessageBody; }
-
-    
     inline void SetTemplateCreateMessageBody(const TemplateCreateMessageBody& value) { m_templateCreateMessageBody = value; }
-
-    
     inline void SetTemplateCreateMessageBody(TemplateCreateMessageBody&& value) { m_templateCreateMessageBody = std::move(value); }
-
-    
     inline CreateInAppTemplateResult& WithTemplateCreateMessageBody(const TemplateCreateMessageBody& value) { SetTemplateCreateMessageBody(value); return *this;}
-
-    
     inline CreateInAppTemplateResult& WithTemplateCreateMessageBody(TemplateCreateMessageBody&& value) { SetTemplateCreateMessageBody(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateInAppTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateInAppTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateInAppTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TemplateCreateMessageBody m_templateCreateMessageBody;

@@ -24,9 +24,8 @@ EnabledServicePrincipal::EnabledServicePrincipal() :
 {
 }
 
-EnabledServicePrincipal::EnabledServicePrincipal(JsonView jsonValue) : 
-    m_servicePrincipalHasBeenSet(false),
-    m_dateEnabledHasBeenSet(false)
+EnabledServicePrincipal::EnabledServicePrincipal(JsonView jsonValue)
+  : EnabledServicePrincipal()
 {
   *this = jsonValue;
 }

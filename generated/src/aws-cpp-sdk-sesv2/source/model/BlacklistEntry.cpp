@@ -25,10 +25,8 @@ BlacklistEntry::BlacklistEntry() :
 {
 }
 
-BlacklistEntry::BlacklistEntry(JsonView jsonValue) : 
-    m_rblNameHasBeenSet(false),
-    m_listingTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+BlacklistEntry::BlacklistEntry(JsonView jsonValue)
+  : BlacklistEntry()
 {
   *this = jsonValue;
 }

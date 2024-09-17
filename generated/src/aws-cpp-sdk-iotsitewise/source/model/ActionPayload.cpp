@@ -23,8 +23,8 @@ ActionPayload::ActionPayload() :
 {
 }
 
-ActionPayload::ActionPayload(JsonView jsonValue) : 
-    m_stringValueHasBeenSet(false)
+ActionPayload::ActionPayload(JsonView jsonValue)
+  : ActionPayload()
 {
   *this = jsonValue;
 }

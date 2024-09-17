@@ -24,9 +24,8 @@ SupportTerm::SupportTerm() :
 {
 }
 
-SupportTerm::SupportTerm(JsonView jsonValue) : 
-    m_refundPolicyHasBeenSet(false),
-    m_typeHasBeenSet(false)
+SupportTerm::SupportTerm(JsonView jsonValue)
+  : SupportTerm()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ Parent::Parent() :
 {
 }
 
-Parent::Parent(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_type(ParentType::NOT_SET),
-    m_typeHasBeenSet(false)
+Parent::Parent(JsonView jsonValue)
+  : Parent()
 {
   *this = jsonValue;
 }

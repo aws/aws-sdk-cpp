@@ -25,10 +25,8 @@ RecoveryInstanceDataReplicationError::RecoveryInstanceDataReplicationError() :
 {
 }
 
-RecoveryInstanceDataReplicationError::RecoveryInstanceDataReplicationError(JsonView jsonValue) : 
-    m_error(FailbackReplicationError::NOT_SET),
-    m_errorHasBeenSet(false),
-    m_rawErrorHasBeenSet(false)
+RecoveryInstanceDataReplicationError::RecoveryInstanceDataReplicationError(JsonView jsonValue)
+  : RecoveryInstanceDataReplicationError()
 {
   *this = jsonValue;
 }

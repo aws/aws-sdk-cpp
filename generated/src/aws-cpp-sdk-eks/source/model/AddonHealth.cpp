@@ -23,8 +23,8 @@ AddonHealth::AddonHealth() :
 {
 }
 
-AddonHealth::AddonHealth(JsonView jsonValue) : 
-    m_issuesHasBeenSet(false)
+AddonHealth::AddonHealth(JsonView jsonValue)
+  : AddonHealth()
 {
   *this = jsonValue;
 }

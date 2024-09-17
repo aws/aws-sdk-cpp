@@ -43,119 +43,39 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resource types of only those Amazon Web Services resources that you want
      * to trigger an evaluation for the rule. You can only specify one type if you also
      * specify a resource ID for <code>ComplianceResourceId</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComplianceResourceTypes() const{ return m_complianceResourceTypes; }
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline bool ComplianceResourceTypesHasBeenSet() const { return m_complianceResourceTypesHasBeenSet; }
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline void SetComplianceResourceTypes(const Aws::Vector<Aws::String>& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = value; }
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline void SetComplianceResourceTypes(Aws::Vector<Aws::String>&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = std::move(value); }
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline Scope& WithComplianceResourceTypes(const Aws::Vector<Aws::String>& value) { SetComplianceResourceTypes(value); return *this;}
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline Scope& WithComplianceResourceTypes(Aws::Vector<Aws::String>&& value) { SetComplianceResourceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline Scope& AddComplianceResourceTypes(const Aws::String& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline Scope& AddComplianceResourceTypes(Aws::String&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The resource types of only those Amazon Web Services resources that you want
-     * to trigger an evaluation for the rule. You can only specify one type if you also
-     * specify a resource ID for <code>ComplianceResourceId</code>.</p>
-     */
     inline Scope& AddComplianceResourceTypes(const char* value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag key that is applied to only those Amazon Web Services resources that
      * you want to trigger an evaluation for the rule.</p>
      */
     inline const Aws::String& GetTagKey() const{ return m_tagKey; }
-
-    /**
-     * <p>The tag key that is applied to only those Amazon Web Services resources that
-     * you want to trigger an evaluation for the rule.</p>
-     */
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-
-    /**
-     * <p>The tag key that is applied to only those Amazon Web Services resources that
-     * you want to trigger an evaluation for the rule.</p>
-     */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-
-    /**
-     * <p>The tag key that is applied to only those Amazon Web Services resources that
-     * you want to trigger an evaluation for the rule.</p>
-     */
     inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-
-    /**
-     * <p>The tag key that is applied to only those Amazon Web Services resources that
-     * you want to trigger an evaluation for the rule.</p>
-     */
     inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-
-    /**
-     * <p>The tag key that is applied to only those Amazon Web Services resources that
-     * you want to trigger an evaluation for the rule.</p>
-     */
     inline Scope& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-
-    /**
-     * <p>The tag key that is applied to only those Amazon Web Services resources that
-     * you want to trigger an evaluation for the rule.</p>
-     */
     inline Scope& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag key that is applied to only those Amazon Web Services resources that
-     * you want to trigger an evaluation for the rule.</p>
-     */
     inline Scope& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag value applied to only those Amazon Web Services resources that you
      * want to trigger an evaluation for the rule. If you specify a value for
@@ -163,120 +83,30 @@ namespace Model
      * <code>TagKey</code>.</p>
      */
     inline const Aws::String& GetTagValue() const{ return m_tagValue; }
-
-    /**
-     * <p>The tag value applied to only those Amazon Web Services resources that you
-     * want to trigger an evaluation for the rule. If you specify a value for
-     * <code>TagValue</code>, you must also specify a value for
-     * <code>TagKey</code>.</p>
-     */
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-
-    /**
-     * <p>The tag value applied to only those Amazon Web Services resources that you
-     * want to trigger an evaluation for the rule. If you specify a value for
-     * <code>TagValue</code>, you must also specify a value for
-     * <code>TagKey</code>.</p>
-     */
     inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-
-    /**
-     * <p>The tag value applied to only those Amazon Web Services resources that you
-     * want to trigger an evaluation for the rule. If you specify a value for
-     * <code>TagValue</code>, you must also specify a value for
-     * <code>TagKey</code>.</p>
-     */
     inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-
-    /**
-     * <p>The tag value applied to only those Amazon Web Services resources that you
-     * want to trigger an evaluation for the rule. If you specify a value for
-     * <code>TagValue</code>, you must also specify a value for
-     * <code>TagKey</code>.</p>
-     */
     inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-
-    /**
-     * <p>The tag value applied to only those Amazon Web Services resources that you
-     * want to trigger an evaluation for the rule. If you specify a value for
-     * <code>TagValue</code>, you must also specify a value for
-     * <code>TagKey</code>.</p>
-     */
     inline Scope& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-
-    /**
-     * <p>The tag value applied to only those Amazon Web Services resources that you
-     * want to trigger an evaluation for the rule. If you specify a value for
-     * <code>TagValue</code>, you must also specify a value for
-     * <code>TagKey</code>.</p>
-     */
     inline Scope& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag value applied to only those Amazon Web Services resources that you
-     * want to trigger an evaluation for the rule. If you specify a value for
-     * <code>TagValue</code>, you must also specify a value for
-     * <code>TagKey</code>.</p>
-     */
     inline Scope& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the only Amazon Web Services resource that you want to trigger an
      * evaluation for the rule. If you specify a resource ID, you must specify one
      * resource type for <code>ComplianceResourceTypes</code>.</p>
      */
     inline const Aws::String& GetComplianceResourceId() const{ return m_complianceResourceId; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want to trigger an
-     * evaluation for the rule. If you specify a resource ID, you must specify one
-     * resource type for <code>ComplianceResourceTypes</code>.</p>
-     */
     inline bool ComplianceResourceIdHasBeenSet() const { return m_complianceResourceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want to trigger an
-     * evaluation for the rule. If you specify a resource ID, you must specify one
-     * resource type for <code>ComplianceResourceTypes</code>.</p>
-     */
     inline void SetComplianceResourceId(const Aws::String& value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId = value; }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want to trigger an
-     * evaluation for the rule. If you specify a resource ID, you must specify one
-     * resource type for <code>ComplianceResourceTypes</code>.</p>
-     */
     inline void SetComplianceResourceId(Aws::String&& value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId = std::move(value); }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want to trigger an
-     * evaluation for the rule. If you specify a resource ID, you must specify one
-     * resource type for <code>ComplianceResourceTypes</code>.</p>
-     */
     inline void SetComplianceResourceId(const char* value) { m_complianceResourceIdHasBeenSet = true; m_complianceResourceId.assign(value); }
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want to trigger an
-     * evaluation for the rule. If you specify a resource ID, you must specify one
-     * resource type for <code>ComplianceResourceTypes</code>.</p>
-     */
     inline Scope& WithComplianceResourceId(const Aws::String& value) { SetComplianceResourceId(value); return *this;}
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want to trigger an
-     * evaluation for the rule. If you specify a resource ID, you must specify one
-     * resource type for <code>ComplianceResourceTypes</code>.</p>
-     */
     inline Scope& WithComplianceResourceId(Aws::String&& value) { SetComplianceResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the only Amazon Web Services resource that you want to trigger an
-     * evaluation for the rule. If you specify a resource ID, you must specify one
-     * resource type for <code>ComplianceResourceTypes</code>.</p>
-     */
     inline Scope& WithComplianceResourceId(const char* value) { SetComplianceResourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_complianceResourceTypes;

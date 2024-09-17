@@ -24,10 +24,8 @@ UpdateKxVolumeResult::UpdateKxVolumeResult() :
 {
 }
 
-UpdateKxVolumeResult::UpdateKxVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_volumeType(KxVolumeType::NOT_SET),
-    m_status(KxVolumeStatus::NOT_SET),
-    m_azMode(KxAzMode::NOT_SET)
+UpdateKxVolumeResult::UpdateKxVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateKxVolumeResult()
 {
   *this = result;
 }

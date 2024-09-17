@@ -25,8 +25,12 @@
 #include <aws/savingsplans/model/DescribeSavingsPlansOfferingRatesResult.h>
 #include <aws/savingsplans/model/DescribeSavingsPlansOfferingsResult.h>
 #include <aws/savingsplans/model/ListTagsForResourceResult.h>
+#include <aws/savingsplans/model/ReturnSavingsPlanResult.h>
 #include <aws/savingsplans/model/TagResourceResult.h>
 #include <aws/savingsplans/model/UntagResourceResult.h>
+#include <aws/savingsplans/model/DescribeSavingsPlansOfferingRatesRequest.h>
+#include <aws/savingsplans/model/DescribeSavingsPlansOfferingsRequest.h>
+#include <aws/savingsplans/model/DescribeSavingsPlansRequest.h>
 /* End of service model headers required in SavingsPlansClient header */
 
 namespace Aws
@@ -60,7 +64,7 @@ namespace Aws
 
   namespace SavingsPlans
   {
-    using SavingsPlansClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SavingsPlansClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SavingsPlansEndpointProviderBase = Aws::SavingsPlans::Endpoint::SavingsPlansEndpointProviderBase;
     using SavingsPlansEndpointProvider = Aws::SavingsPlans::Endpoint::SavingsPlansEndpointProvider;
 
@@ -74,6 +78,7 @@ namespace Aws
       class DescribeSavingsPlansOfferingRatesRequest;
       class DescribeSavingsPlansOfferingsRequest;
       class ListTagsForResourceRequest;
+      class ReturnSavingsPlanRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       /* End of service model forward declarations required in SavingsPlansClient header */
@@ -86,6 +91,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingRatesResult, SavingsPlansError> DescribeSavingsPlansOfferingRatesOutcome;
       typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingsResult, SavingsPlansError> DescribeSavingsPlansOfferingsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, SavingsPlansError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ReturnSavingsPlanResult, SavingsPlansError> ReturnSavingsPlanOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, SavingsPlansError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, SavingsPlansError> UntagResourceOutcome;
       /* End of service model Outcome class definitions */
@@ -98,6 +104,7 @@ namespace Aws
       typedef std::future<DescribeSavingsPlansOfferingRatesOutcome> DescribeSavingsPlansOfferingRatesOutcomeCallable;
       typedef std::future<DescribeSavingsPlansOfferingsOutcome> DescribeSavingsPlansOfferingsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ReturnSavingsPlanOutcome> ReturnSavingsPlanOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -113,6 +120,7 @@ namespace Aws
     typedef std::function<void(const SavingsPlansClient*, const Model::DescribeSavingsPlansOfferingRatesRequest&, const Model::DescribeSavingsPlansOfferingRatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSavingsPlansOfferingRatesResponseReceivedHandler;
     typedef std::function<void(const SavingsPlansClient*, const Model::DescribeSavingsPlansOfferingsRequest&, const Model::DescribeSavingsPlansOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSavingsPlansOfferingsResponseReceivedHandler;
     typedef std::function<void(const SavingsPlansClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const SavingsPlansClient*, const Model::ReturnSavingsPlanRequest&, const Model::ReturnSavingsPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReturnSavingsPlanResponseReceivedHandler;
     typedef std::function<void(const SavingsPlansClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SavingsPlansClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     /* End of service model async handlers definitions */

@@ -24,9 +24,8 @@ ObjectAttributeRange::ObjectAttributeRange() :
 {
 }
 
-ObjectAttributeRange::ObjectAttributeRange(JsonView jsonValue) : 
-    m_attributeKeyHasBeenSet(false),
-    m_rangeHasBeenSet(false)
+ObjectAttributeRange::ObjectAttributeRange(JsonView jsonValue)
+  : ObjectAttributeRange()
 {
   *this = jsonValue;
 }

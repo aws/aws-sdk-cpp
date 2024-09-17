@@ -24,9 +24,8 @@ JobOutputDataConfig::JobOutputDataConfig() :
 {
 }
 
-JobOutputDataConfig::JobOutputDataConfig(JsonView jsonValue) : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3PathHasBeenSet(false)
+JobOutputDataConfig::JobOutputDataConfig(JsonView jsonValue)
+  : JobOutputDataConfig()
 {
   *this = jsonValue;
 }

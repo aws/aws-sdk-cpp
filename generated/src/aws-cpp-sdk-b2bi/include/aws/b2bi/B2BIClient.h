@@ -447,13 +447,13 @@ namespace B2BI
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCapabilitiesOutcome ListCapabilities(const Model::ListCapabilitiesRequest& request) const;
+        virtual Model::ListCapabilitiesOutcome ListCapabilities(const Model::ListCapabilitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCapabilities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCapabilitiesRequestT = Model::ListCapabilitiesRequest>
-        Model::ListCapabilitiesOutcomeCallable ListCapabilitiesCallable(const ListCapabilitiesRequestT& request) const
+        Model::ListCapabilitiesOutcomeCallable ListCapabilitiesCallable(const ListCapabilitiesRequestT& request = {}) const
         {
             return SubmitCallable(&B2BIClient::ListCapabilities, request);
         }
@@ -462,7 +462,7 @@ namespace B2BI
          * An Async wrapper for ListCapabilities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCapabilitiesRequestT = Model::ListCapabilitiesRequest>
-        void ListCapabilitiesAsync(const ListCapabilitiesRequestT& request, const ListCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCapabilitiesAsync(const ListCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCapabilitiesRequestT& request = {}) const
         {
             return SubmitAsync(&B2BIClient::ListCapabilities, request, handler, context);
         }
@@ -475,13 +475,13 @@ namespace B2BI
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListPartnerships">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPartnershipsOutcome ListPartnerships(const Model::ListPartnershipsRequest& request) const;
+        virtual Model::ListPartnershipsOutcome ListPartnerships(const Model::ListPartnershipsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPartnerships that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPartnershipsRequestT = Model::ListPartnershipsRequest>
-        Model::ListPartnershipsOutcomeCallable ListPartnershipsCallable(const ListPartnershipsRequestT& request) const
+        Model::ListPartnershipsOutcomeCallable ListPartnershipsCallable(const ListPartnershipsRequestT& request = {}) const
         {
             return SubmitCallable(&B2BIClient::ListPartnerships, request);
         }
@@ -490,7 +490,7 @@ namespace B2BI
          * An Async wrapper for ListPartnerships that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPartnershipsRequestT = Model::ListPartnershipsRequest>
-        void ListPartnershipsAsync(const ListPartnershipsRequestT& request, const ListPartnershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPartnershipsAsync(const ListPartnershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPartnershipsRequestT& request = {}) const
         {
             return SubmitAsync(&B2BIClient::ListPartnerships, request, handler, context);
         }
@@ -502,13 +502,13 @@ namespace B2BI
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request) const;
+        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request) const
+        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&B2BIClient::ListProfiles, request);
         }
@@ -517,7 +517,7 @@ namespace B2BI
          * An Async wrapper for ListProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        void ListProfilesAsync(const ListProfilesRequestT& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProfilesAsync(const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&B2BIClient::ListProfiles, request, handler, context);
         }
@@ -556,13 +556,13 @@ namespace B2BI
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTransformersOutcome ListTransformers(const Model::ListTransformersRequest& request) const;
+        virtual Model::ListTransformersOutcome ListTransformers(const Model::ListTransformersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTransformers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTransformersRequestT = Model::ListTransformersRequest>
-        Model::ListTransformersOutcomeCallable ListTransformersCallable(const ListTransformersRequestT& request) const
+        Model::ListTransformersOutcomeCallable ListTransformersCallable(const ListTransformersRequestT& request = {}) const
         {
             return SubmitCallable(&B2BIClient::ListTransformers, request);
         }
@@ -571,7 +571,7 @@ namespace B2BI
          * An Async wrapper for ListTransformers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTransformersRequestT = Model::ListTransformersRequest>
-        void ListTransformersAsync(const ListTransformersRequestT& request, const ListTransformersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTransformersAsync(const ListTransformersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTransformersRequestT& request = {}) const
         {
             return SubmitAsync(&B2BIClient::ListTransformers, request, handler, context);
         }
@@ -832,7 +832,6 @@ namespace B2BI
       void init(const B2BIClientConfiguration& clientConfiguration);
 
       B2BIClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<B2BIEndpointProviderBase> m_endpointProvider;
   };
 

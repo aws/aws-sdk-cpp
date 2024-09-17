@@ -27,10 +27,8 @@ StackResourceDriftInformationSummary::StackResourceDriftInformationSummary() :
 {
 }
 
-StackResourceDriftInformationSummary::StackResourceDriftInformationSummary(const XmlNode& xmlNode) : 
-    m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
-    m_stackResourceDriftStatusHasBeenSet(false),
-    m_lastCheckTimestampHasBeenSet(false)
+StackResourceDriftInformationSummary::StackResourceDriftInformationSummary(const XmlNode& xmlNode)
+  : StackResourceDriftInformationSummary()
 {
   *this = xmlNode;
 }

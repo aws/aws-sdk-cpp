@@ -20,13 +20,13 @@ namespace Model
 
 S3DataSourceConfiguration::S3DataSourceConfiguration() : 
     m_bucketArnHasBeenSet(false),
+    m_bucketOwnerAccountIdHasBeenSet(false),
     m_inclusionPrefixesHasBeenSet(false)
 {
 }
 
-S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_inclusionPrefixesHasBeenSet(false)
+S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue)
+  : S3DataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,6 +38,13 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
     m_bucketArn = jsonValue.GetString("bucketArn");
 
     m_bucketArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bucketOwnerAccountId"))
+  {
+    m_bucketOwnerAccountId = jsonValue.GetString("bucketOwnerAccountId");
+
+    m_bucketOwnerAccountIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inclusionPrefixes"))
@@ -60,6 +67,12 @@ JsonValue S3DataSourceConfiguration::Jsonize() const
   if(m_bucketArnHasBeenSet)
   {
    payload.WithString("bucketArn", m_bucketArn);
+
+  }
+
+  if(m_bucketOwnerAccountIdHasBeenSet)
+  {
+   payload.WithString("bucketOwnerAccountId", m_bucketOwnerAccountId);
 
   }
 

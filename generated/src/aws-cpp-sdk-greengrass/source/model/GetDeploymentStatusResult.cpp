@@ -22,8 +22,8 @@ GetDeploymentStatusResult::GetDeploymentStatusResult() :
 {
 }
 
-GetDeploymentStatusResult::GetDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deploymentType(DeploymentType::NOT_SET)
+GetDeploymentStatusResult::GetDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDeploymentStatusResult()
 {
   *this = result;
 }

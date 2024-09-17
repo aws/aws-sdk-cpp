@@ -33,98 +33,41 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>List Connectors Request filters.</p>
      */
     inline const ListConnectorsRequestFilters& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>List Connectors Request filters.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>List Connectors Request filters.</p>
-     */
     inline void SetFilters(const ListConnectorsRequestFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>List Connectors Request filters.</p>
-     */
     inline void SetFilters(ListConnectorsRequestFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>List Connectors Request filters.</p>
-     */
     inline ListConnectorsRequest& WithFilters(const ListConnectorsRequestFilters& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>List Connectors Request filters.</p>
-     */
     inline ListConnectorsRequest& WithFilters(ListConnectorsRequestFilters&& value) { SetFilters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List Connectors Request max results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>List Connectors Request max results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>List Connectors Request max results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>List Connectors Request max results.</p>
-     */
     inline ListConnectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List Connectors Request next token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>List Connectors Request next token.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>List Connectors Request next token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>List Connectors Request next token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>List Connectors Request next token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>List Connectors Request next token.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>List Connectors Request next token.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>List Connectors Request next token.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     ListConnectorsRequestFilters m_filters;

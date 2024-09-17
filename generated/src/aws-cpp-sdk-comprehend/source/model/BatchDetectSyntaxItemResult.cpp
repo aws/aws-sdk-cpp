@@ -25,10 +25,8 @@ BatchDetectSyntaxItemResult::BatchDetectSyntaxItemResult() :
 {
 }
 
-BatchDetectSyntaxItemResult::BatchDetectSyntaxItemResult(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_syntaxTokensHasBeenSet(false)
+BatchDetectSyntaxItemResult::BatchDetectSyntaxItemResult(JsonView jsonValue)
+  : BatchDetectSyntaxItemResult()
 {
   *this = jsonValue;
 }

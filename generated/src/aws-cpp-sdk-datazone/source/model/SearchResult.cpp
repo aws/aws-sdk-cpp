@@ -22,8 +22,8 @@ SearchResult::SearchResult() :
 {
 }
 
-SearchResult::SearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_totalMatchCount(0)
+SearchResult::SearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : SearchResult()
 {
   *this = result;
 }

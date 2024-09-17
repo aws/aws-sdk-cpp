@@ -28,19 +28,13 @@ CustomerGateway::CustomerGateway() :
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_bgpAsnExtendedHasBeenSet(false)
 {
 }
 
-CustomerGateway::CustomerGateway(const XmlNode& xmlNode) : 
-    m_bgpAsnHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+CustomerGateway::CustomerGateway(const XmlNode& xmlNode)
+  : CustomerGateway()
 {
   *this = xmlNode;
 }
@@ -105,6 +99,12 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode bgpAsnExtendedNode = resultNode.FirstChild("bgpAsnExtended");
+    if(!bgpAsnExtendedNode.IsNull())
+    {
+      m_bgpAsnExtended = Aws::Utils::Xml::DecodeEscapedXmlText(bgpAsnExtendedNode.GetText());
+      m_bgpAsnExtendedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -158,6 +158,11 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_bgpAsnExtendedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BgpAsnExtended=" << StringUtils::URLEncode(m_bgpAsnExtended.c_str()) << "&";
+  }
+
 }
 
 void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -199,6 +204,10 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_bgpAsnExtendedHasBeenSet)
+  {
+      oStream << location << ".BgpAsnExtended=" << StringUtils::URLEncode(m_bgpAsnExtended.c_str()) << "&";
   }
 }
 

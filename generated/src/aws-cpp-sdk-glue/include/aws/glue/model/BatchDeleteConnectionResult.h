@@ -35,143 +35,49 @@ namespace Model
     AWS_GLUE_API BatchDeleteConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of names of the connection definitions that were successfully
      * deleted.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSucceeded() const{ return m_succeeded; }
-
-    /**
-     * <p>A list of names of the connection definitions that were successfully
-     * deleted.</p>
-     */
     inline void SetSucceeded(const Aws::Vector<Aws::String>& value) { m_succeeded = value; }
-
-    /**
-     * <p>A list of names of the connection definitions that were successfully
-     * deleted.</p>
-     */
     inline void SetSucceeded(Aws::Vector<Aws::String>&& value) { m_succeeded = std::move(value); }
-
-    /**
-     * <p>A list of names of the connection definitions that were successfully
-     * deleted.</p>
-     */
     inline BatchDeleteConnectionResult& WithSucceeded(const Aws::Vector<Aws::String>& value) { SetSucceeded(value); return *this;}
-
-    /**
-     * <p>A list of names of the connection definitions that were successfully
-     * deleted.</p>
-     */
     inline BatchDeleteConnectionResult& WithSucceeded(Aws::Vector<Aws::String>&& value) { SetSucceeded(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of names of the connection definitions that were successfully
-     * deleted.</p>
-     */
     inline BatchDeleteConnectionResult& AddSucceeded(const Aws::String& value) { m_succeeded.push_back(value); return *this; }
-
-    /**
-     * <p>A list of names of the connection definitions that were successfully
-     * deleted.</p>
-     */
     inline BatchDeleteConnectionResult& AddSucceeded(Aws::String&& value) { m_succeeded.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of names of the connection definitions that were successfully
-     * deleted.</p>
-     */
     inline BatchDeleteConnectionResult& AddSucceeded(const char* value) { m_succeeded.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A map of the names of connections that were not successfully deleted to error
      * details.</p>
      */
     inline const Aws::Map<Aws::String, ErrorDetail>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline void SetErrors(const Aws::Map<Aws::String, ErrorDetail>& value) { m_errors = value; }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline void SetErrors(Aws::Map<Aws::String, ErrorDetail>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& WithErrors(const Aws::Map<Aws::String, ErrorDetail>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& WithErrors(Aws::Map<Aws::String, ErrorDetail>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& AddErrors(const Aws::String& key, const ErrorDetail& value) { m_errors.emplace(key, value); return *this; }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& AddErrors(Aws::String&& key, const ErrorDetail& value) { m_errors.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& AddErrors(const Aws::String& key, ErrorDetail&& value) { m_errors.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& AddErrors(Aws::String&& key, ErrorDetail&& value) { m_errors.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& AddErrors(const char* key, ErrorDetail&& value) { m_errors.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of the names of connections that were not successfully deleted to error
-     * details.</p>
-     */
     inline BatchDeleteConnectionResult& AddErrors(const char* key, const ErrorDetail& value) { m_errors.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchDeleteConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchDeleteConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchDeleteConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_succeeded;

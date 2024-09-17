@@ -37,113 +37,44 @@ namespace Model
     AWS_STORAGEGATEWAY_API AttachVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the volume that was attached to the
      * gateway.</p>
      */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was attached to the
-     * gateway.</p>
-     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was attached to the
-     * gateway.</p>
-     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was attached to the
-     * gateway.</p>
-     */
     inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was attached to the
-     * gateway.</p>
-     */
     inline AttachVolumeResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was attached to the
-     * gateway.</p>
-     */
     inline AttachVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume that was attached to the
-     * gateway.</p>
-     */
     inline AttachVolumeResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name for the initiator that was used to connect to the target.</p>
      */
     inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
-     * name for the initiator that was used to connect to the target.</p>
-     */
     inline void SetTargetARN(const Aws::String& value) { m_targetARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
-     * name for the initiator that was used to connect to the target.</p>
-     */
     inline void SetTargetARN(Aws::String&& value) { m_targetARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
-     * name for the initiator that was used to connect to the target.</p>
-     */
     inline void SetTargetARN(const char* value) { m_targetARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
-     * name for the initiator that was used to connect to the target.</p>
-     */
     inline AttachVolumeResult& WithTargetARN(const Aws::String& value) { SetTargetARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
-     * name for the initiator that was used to connect to the target.</p>
-     */
     inline AttachVolumeResult& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
-     * name for the initiator that was used to connect to the target.</p>
-     */
     inline AttachVolumeResult& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AttachVolumeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AttachVolumeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AttachVolumeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_volumeARN;

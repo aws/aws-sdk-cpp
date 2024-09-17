@@ -25,10 +25,8 @@ IdempotentParameterMismatchException::IdempotentParameterMismatchException() :
 {
 }
 
-IdempotentParameterMismatchException::IdempotentParameterMismatchException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false)
+IdempotentParameterMismatchException::IdempotentParameterMismatchException(JsonView jsonValue)
+  : IdempotentParameterMismatchException()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ RelatedItem::RelatedItem() :
 {
 }
 
-RelatedItem::RelatedItem(JsonView jsonValue) : 
-    m_generatedIdHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_titleHasBeenSet(false)
+RelatedItem::RelatedItem(JsonView jsonValue)
+  : RelatedItem()
 {
   *this = jsonValue;
 }

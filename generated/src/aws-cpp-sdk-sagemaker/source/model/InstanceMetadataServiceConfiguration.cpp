@@ -23,8 +23,8 @@ InstanceMetadataServiceConfiguration::InstanceMetadataServiceConfiguration() :
 {
 }
 
-InstanceMetadataServiceConfiguration::InstanceMetadataServiceConfiguration(JsonView jsonValue) : 
-    m_minimumInstanceMetadataServiceVersionHasBeenSet(false)
+InstanceMetadataServiceConfiguration::InstanceMetadataServiceConfiguration(JsonView jsonValue)
+  : InstanceMetadataServiceConfiguration()
 {
   *this = jsonValue;
 }

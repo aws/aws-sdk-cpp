@@ -29,14 +29,8 @@ ProtocolsListData::ProtocolsListData() :
 {
 }
 
-ProtocolsListData::ProtocolsListData(JsonView jsonValue) : 
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_listUpdateTokenHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_protocolsListHasBeenSet(false),
-    m_previousProtocolsListHasBeenSet(false)
+ProtocolsListData::ProtocolsListData(JsonView jsonValue)
+  : ProtocolsListData()
 {
   *this = jsonValue;
 }

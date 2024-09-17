@@ -40,92 +40,34 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the object that contains the validation error.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier of the object that contains the validation error.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier of the object that contains the validation error.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier of the object that contains the validation error.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier of the object that contains the validation error.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier of the object that contains the validation error.</p>
-     */
     inline ValidationError& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the object that contains the validation error.</p>
-     */
     inline ValidationError& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the object that contains the validation error.</p>
-     */
     inline ValidationError& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the validation error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline void SetErrors(const Aws::Vector<Aws::String>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline void SetErrors(Aws::Vector<Aws::String>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline ValidationError& WithErrors(const Aws::Vector<Aws::String>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline ValidationError& WithErrors(Aws::Vector<Aws::String>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline ValidationError& AddErrors(const Aws::String& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline ValidationError& AddErrors(Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A description of the validation error.</p>
-     */
     inline ValidationError& AddErrors(const char* value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_id;

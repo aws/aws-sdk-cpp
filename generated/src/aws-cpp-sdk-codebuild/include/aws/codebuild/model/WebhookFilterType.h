@@ -21,7 +21,10 @@ namespace Model
     HEAD_REF,
     ACTOR_ACCOUNT_ID,
     FILE_PATH,
-    COMMIT_MESSAGE
+    COMMIT_MESSAGE,
+    WORKFLOW_NAME,
+    TAG_NAME,
+    RELEASE_NAME
   };
 
 namespace WebhookFilterTypeMapper

@@ -23,8 +23,8 @@ OutputSettings::OutputSettings() :
 {
 }
 
-OutputSettings::OutputSettings(JsonView jsonValue) : 
-    m_hlsSettingsHasBeenSet(false)
+OutputSettings::OutputSettings(JsonView jsonValue)
+  : OutputSettings()
 {
   *this = jsonValue;
 }

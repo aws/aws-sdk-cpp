@@ -28,13 +28,8 @@ TransformInput::TransformInput() :
 {
 }
 
-TransformInput::TransformInput(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_splitType(SplitType::NOT_SET),
-    m_splitTypeHasBeenSet(false)
+TransformInput::TransformInput(JsonView jsonValue)
+  : TransformInput()
 {
   *this = jsonValue;
 }

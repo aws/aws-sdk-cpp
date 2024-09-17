@@ -25,10 +25,8 @@ FailedCampaignStateResponse::FailedCampaignStateResponse() :
 {
 }
 
-FailedCampaignStateResponse::FailedCampaignStateResponse(JsonView jsonValue) : 
-    m_campaignIdHasBeenSet(false),
-    m_failureCode(GetCampaignStateBatchFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
+FailedCampaignStateResponse::FailedCampaignStateResponse(JsonView jsonValue)
+  : FailedCampaignStateResponse()
 {
   *this = jsonValue;
 }

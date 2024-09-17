@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A list of documents that could not be removed from an Amazon Q index. Each
-   * entry contains an error message that indicates why the document couldn't be
-   * removed from the index.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of documents that could not be removed from an Amazon Q Business
+   * index. Each entry contains an error message that indicates why the document
+   * couldn't be removed from the index.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/FailedDocument">AWS
    * API Reference</a></p>
    */
@@ -40,144 +40,57 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
+     * <p>The identifier of the document that couldn't be removed from the Amazon Q
+     * Business index.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetId() const{ return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline FailedDocument& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline FailedDocument& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline FailedDocument& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-    /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
-     */
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
-     */
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
-     */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
-     */
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
-     */
-    inline FailedDocument& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
-     */
-    inline FailedDocument& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q data source connector that contains the failed
-     * document.</p>
-     */
-    inline FailedDocument& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
-
-
+    ///@{
     /**
      * <p>An explanation for why the document couldn't be removed from the index.</p>
      */
     inline const ErrorDetail& GetError() const{ return m_error; }
-
-    /**
-     * <p>An explanation for why the document couldn't be removed from the index.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>An explanation for why the document couldn't be removed from the index.</p>
-     */
     inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>An explanation for why the document couldn't be removed from the index.</p>
-     */
     inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>An explanation for why the document couldn't be removed from the index.</p>
-     */
     inline FailedDocument& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-
-    /**
-     * <p>An explanation for why the document couldn't be removed from the index.</p>
-     */
     inline FailedDocument& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
+     * <p>The identifier of the Amazon Q Business data source connector that contains
+     * the failed document.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
-     */
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
-     */
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
-     */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
-     */
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
-     */
-    inline FailedDocument& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
-     */
-    inline FailedDocument& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the document that couldn't be removed from the Amazon Q
-     * index.</p>
-     */
-    inline FailedDocument& WithId(const char* value) { SetId(value); return *this;}
-
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
+    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
+    inline FailedDocument& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+    inline FailedDocument& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+    inline FailedDocument& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    ///@}
   private:
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     ErrorDetail m_error;
     bool m_errorHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
   };
 
 } // namespace Model

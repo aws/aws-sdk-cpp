@@ -26,11 +26,8 @@ VpcDestinationProperties::VpcDestinationProperties() :
 {
 }
 
-VpcDestinationProperties::VpcDestinationProperties(JsonView jsonValue) : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+VpcDestinationProperties::VpcDestinationProperties(JsonView jsonValue)
+  : VpcDestinationProperties()
 {
   *this = jsonValue;
 }

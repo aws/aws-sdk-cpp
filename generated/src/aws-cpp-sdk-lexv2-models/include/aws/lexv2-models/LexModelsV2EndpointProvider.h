@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using LexModelsV2ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LexModelsV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using LexModelsV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LexModelsV2BuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -29,14 +29,8 @@ EC2CreateRouteAction::EC2CreateRouteAction() :
 {
 }
 
-EC2CreateRouteAction::EC2CreateRouteAction(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
+EC2CreateRouteAction::EC2CreateRouteAction(JsonView jsonValue)
+  : EC2CreateRouteAction()
 {
   *this = jsonValue;
 }

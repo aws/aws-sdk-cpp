@@ -39,95 +39,34 @@ namespace Model
     AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
      * in.</p>
      */
     inline const Aws::String& GetSentimentLabel() const{ return m_sentimentLabel; }
-
-    /**
-     * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
-     * in.</p>
-     */
     inline bool SentimentLabelHasBeenSet() const { return m_sentimentLabelHasBeenSet; }
-
-    /**
-     * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
-     * in.</p>
-     */
     inline void SetSentimentLabel(const Aws::String& value) { m_sentimentLabelHasBeenSet = true; m_sentimentLabel = value; }
-
-    /**
-     * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
-     * in.</p>
-     */
     inline void SetSentimentLabel(Aws::String&& value) { m_sentimentLabelHasBeenSet = true; m_sentimentLabel = std::move(value); }
-
-    /**
-     * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
-     * in.</p>
-     */
     inline void SetSentimentLabel(const char* value) { m_sentimentLabelHasBeenSet = true; m_sentimentLabel.assign(value); }
-
-    /**
-     * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
-     * in.</p>
-     */
     inline SentimentResponse& WithSentimentLabel(const Aws::String& value) { SetSentimentLabel(value); return *this;}
-
-    /**
-     * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
-     * in.</p>
-     */
     inline SentimentResponse& WithSentimentLabel(Aws::String&& value) { SetSentimentLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>The inferred sentiment that Amazon Comprehend has the highest confidence
-     * in.</p>
-     */
     inline SentimentResponse& WithSentimentLabel(const char* value) { SetSentimentLabel(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The likelihood that the sentiment was correctly inferred.</p>
      */
     inline const Aws::String& GetSentimentScore() const{ return m_sentimentScore; }
-
-    /**
-     * <p>The likelihood that the sentiment was correctly inferred.</p>
-     */
     inline bool SentimentScoreHasBeenSet() const { return m_sentimentScoreHasBeenSet; }
-
-    /**
-     * <p>The likelihood that the sentiment was correctly inferred.</p>
-     */
     inline void SetSentimentScore(const Aws::String& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = value; }
-
-    /**
-     * <p>The likelihood that the sentiment was correctly inferred.</p>
-     */
     inline void SetSentimentScore(Aws::String&& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = std::move(value); }
-
-    /**
-     * <p>The likelihood that the sentiment was correctly inferred.</p>
-     */
     inline void SetSentimentScore(const char* value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore.assign(value); }
-
-    /**
-     * <p>The likelihood that the sentiment was correctly inferred.</p>
-     */
     inline SentimentResponse& WithSentimentScore(const Aws::String& value) { SetSentimentScore(value); return *this;}
-
-    /**
-     * <p>The likelihood that the sentiment was correctly inferred.</p>
-     */
     inline SentimentResponse& WithSentimentScore(Aws::String&& value) { SetSentimentScore(std::move(value)); return *this;}
-
-    /**
-     * <p>The likelihood that the sentiment was correctly inferred.</p>
-     */
     inline SentimentResponse& WithSentimentScore(const char* value) { SetSentimentScore(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sentimentLabel;

@@ -23,8 +23,8 @@ SnsDestination::SnsDestination() :
 {
 }
 
-SnsDestination::SnsDestination(JsonView jsonValue) : 
-    m_topicArnHasBeenSet(false)
+SnsDestination::SnsDestination(JsonView jsonValue)
+  : SnsDestination()
 {
   *this = jsonValue;
 }

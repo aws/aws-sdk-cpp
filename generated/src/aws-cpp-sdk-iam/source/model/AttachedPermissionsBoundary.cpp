@@ -27,10 +27,8 @@ AttachedPermissionsBoundary::AttachedPermissionsBoundary() :
 {
 }
 
-AttachedPermissionsBoundary::AttachedPermissionsBoundary(const XmlNode& xmlNode) : 
-    m_permissionsBoundaryType(PermissionsBoundaryAttachmentType::NOT_SET),
-    m_permissionsBoundaryTypeHasBeenSet(false),
-    m_permissionsBoundaryArnHasBeenSet(false)
+AttachedPermissionsBoundary::AttachedPermissionsBoundary(const XmlNode& xmlNode)
+  : AttachedPermissionsBoundary()
 {
   *this = xmlNode;
 }

@@ -25,10 +25,8 @@ MetricDataResult::MetricDataResult() :
 {
 }
 
-MetricDataResult::MetricDataResult(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+MetricDataResult::MetricDataResult(JsonView jsonValue)
+  : MetricDataResult()
 {
   *this = jsonValue;
 }

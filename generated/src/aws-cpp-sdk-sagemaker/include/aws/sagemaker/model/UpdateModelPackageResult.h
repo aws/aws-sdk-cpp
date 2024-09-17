@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API UpdateModelPackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the model.</p>
      */
     inline const Aws::String& GetModelPackageArn() const{ return m_modelPackageArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
-     */
     inline void SetModelPackageArn(const Aws::String& value) { m_modelPackageArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
-     */
     inline void SetModelPackageArn(Aws::String&& value) { m_modelPackageArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
-     */
     inline void SetModelPackageArn(const char* value) { m_modelPackageArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
-     */
     inline UpdateModelPackageResult& WithModelPackageArn(const Aws::String& value) { SetModelPackageArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
-     */
     inline UpdateModelPackageResult& WithModelPackageArn(Aws::String&& value) { SetModelPackageArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
-     */
     inline UpdateModelPackageResult& WithModelPackageArn(const char* value) { SetModelPackageArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateModelPackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateModelPackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateModelPackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelPackageArn;

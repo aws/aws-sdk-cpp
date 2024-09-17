@@ -40,6 +40,7 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the trail, event data store, or channel to which one or
      * more tags will be added.</p> <p>The format of a trail ARN is:
@@ -50,125 +51,28 @@ namespace Model
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
-     * format of an event data store ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>The format of a channel ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
-     * format of an event data store ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>The format of a channel ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
-     * format of an event data store ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>The format of a channel ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
-     * format of an event data store ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>The format of a channel ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
-     * format of an event data store ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>The format of a channel ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline AddTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
-     * format of an event data store ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>The format of a channel ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline AddTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
-     * format of an event data store ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
-     * </p> <p>The format of a channel ARN is:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-     */
     inline AddTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains a list of tags, up to a limit of 50</p>
      */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
-
-    /**
-     * <p>Contains a list of tags, up to a limit of 50</p>
-     */
     inline bool TagsListHasBeenSet() const { return m_tagsListHasBeenSet; }
-
-    /**
-     * <p>Contains a list of tags, up to a limit of 50</p>
-     */
     inline void SetTagsList(const Aws::Vector<Tag>& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
-
-    /**
-     * <p>Contains a list of tags, up to a limit of 50</p>
-     */
     inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = std::move(value); }
-
-    /**
-     * <p>Contains a list of tags, up to a limit of 50</p>
-     */
     inline AddTagsRequest& WithTagsList(const Aws::Vector<Tag>& value) { SetTagsList(value); return *this;}
-
-    /**
-     * <p>Contains a list of tags, up to a limit of 50</p>
-     */
     inline AddTagsRequest& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains a list of tags, up to a limit of 50</p>
-     */
     inline AddTagsRequest& AddTagsList(const Tag& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
-
-    /**
-     * <p>Contains a list of tags, up to a limit of 50</p>
-     */
     inline AddTagsRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceId;

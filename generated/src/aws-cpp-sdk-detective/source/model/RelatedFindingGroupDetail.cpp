@@ -23,8 +23,8 @@ RelatedFindingGroupDetail::RelatedFindingGroupDetail() :
 {
 }
 
-RelatedFindingGroupDetail::RelatedFindingGroupDetail(JsonView jsonValue) : 
-    m_idHasBeenSet(false)
+RelatedFindingGroupDetail::RelatedFindingGroupDetail(JsonView jsonValue)
+  : RelatedFindingGroupDetail()
 {
   *this = jsonValue;
 }

@@ -122,6 +122,41 @@
 #include <aws/dms/model/StopReplicationTaskResult.h>
 #include <aws/dms/model/TestConnectionResult.h>
 #include <aws/dms/model/UpdateSubscriptionsToEventBridgeResult.h>
+#include <aws/dms/model/DescribeRecommendationsRequest.h>
+#include <aws/dms/model/DescribeConnectionsRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorSchemaObjectSummaryRequest.h>
+#include <aws/dms/model/DescribeOrderableReplicationInstancesRequest.h>
+#include <aws/dms/model/DescribeCertificatesRequest.h>
+#include <aws/dms/model/DescribeEventCategoriesRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorDatabasesRequest.h>
+#include <aws/dms/model/DescribePendingMaintenanceActionsRequest.h>
+#include <aws/dms/model/DescribeMigrationProjectsRequest.h>
+#include <aws/dms/model/DescribeReplicationTaskAssessmentRunsRequest.h>
+#include <aws/dms/model/DescribeInstanceProfilesRequest.h>
+#include <aws/dms/model/DescribeReplicationTaskAssessmentResultsRequest.h>
+#include <aws/dms/model/DescribeReplicationInstancesRequest.h>
+#include <aws/dms/model/DescribeReplicationTaskIndividualAssessmentsRequest.h>
+#include <aws/dms/model/DescribeReplicationSubnetGroupsRequest.h>
+#include <aws/dms/model/DescribeApplicableIndividualAssessmentsRequest.h>
+#include <aws/dms/model/DescribeEndpointsRequest.h>
+#include <aws/dms/model/DescribeReplicationTasksRequest.h>
+#include <aws/dms/model/DescribeReplicationConfigsRequest.h>
+#include <aws/dms/model/RunFleetAdvisorLsaAnalysisRequest.h>
+#include <aws/dms/model/DescribeEventSubscriptionsRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorCollectorsRequest.h>
+#include <aws/dms/model/DescribeAccountAttributesRequest.h>
+#include <aws/dms/model/DescribeDataProvidersRequest.h>
+#include <aws/dms/model/BatchStartRecommendationsRequest.h>
+#include <aws/dms/model/DescribeReplicationsRequest.h>
+#include <aws/dms/model/DescribeEventsRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorSchemasRequest.h>
+#include <aws/dms/model/UpdateSubscriptionsToEventBridgeRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorLsaAnalysisRequest.h>
+#include <aws/dms/model/CreateInstanceProfileRequest.h>
+#include <aws/dms/model/DescribeEndpointTypesRequest.h>
+#include <aws/dms/model/DescribeEngineVersionsRequest.h>
+#include <aws/dms/model/DescribeRecommendationLimitationsRequest.h>
+#include <aws/dms/model/ListTagsForResourceRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DatabaseMigrationServiceClient header */
 
@@ -156,7 +191,7 @@ namespace Aws
 
   namespace DatabaseMigrationService
   {
-    using DatabaseMigrationServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DatabaseMigrationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DatabaseMigrationServiceEndpointProviderBase = Aws::DatabaseMigrationService::Endpoint::DatabaseMigrationServiceEndpointProviderBase;
     using DatabaseMigrationServiceEndpointProvider = Aws::DatabaseMigrationService::Endpoint::DatabaseMigrationServiceEndpointProvider;
 

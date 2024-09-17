@@ -25,10 +25,8 @@ ControlComment::ControlComment() :
 {
 }
 
-ControlComment::ControlComment(JsonView jsonValue) : 
-    m_authorNameHasBeenSet(false),
-    m_commentBodyHasBeenSet(false),
-    m_postedDateHasBeenSet(false)
+ControlComment::ControlComment(JsonView jsonValue)
+  : ControlComment()
 {
   *this = jsonValue;
 }

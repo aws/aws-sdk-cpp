@@ -28,13 +28,8 @@ SeverityUpdate::SeverityUpdate() :
 {
 }
 
-SeverityUpdate::SeverityUpdate(JsonView jsonValue) : 
-    m_normalized(0),
-    m_normalizedHasBeenSet(false),
-    m_product(0.0),
-    m_productHasBeenSet(false),
-    m_label(SeverityLabel::NOT_SET),
-    m_labelHasBeenSet(false)
+SeverityUpdate::SeverityUpdate(JsonView jsonValue)
+  : SeverityUpdate()
 {
   *this = jsonValue;
 }

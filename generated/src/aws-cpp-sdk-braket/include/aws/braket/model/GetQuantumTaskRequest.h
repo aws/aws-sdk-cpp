@@ -40,87 +40,33 @@ namespace Model
     AWS_BRAKET_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>A list of attributes to return information for.</p>
      */
     inline const Aws::Vector<QuantumTaskAdditionalAttributeName>& GetAdditionalAttributeNames() const{ return m_additionalAttributeNames; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline bool AdditionalAttributeNamesHasBeenSet() const { return m_additionalAttributeNamesHasBeenSet; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline void SetAdditionalAttributeNames(const Aws::Vector<QuantumTaskAdditionalAttributeName>& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames = value; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline void SetAdditionalAttributeNames(Aws::Vector<QuantumTaskAdditionalAttributeName>&& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames = std::move(value); }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetQuantumTaskRequest& WithAdditionalAttributeNames(const Aws::Vector<QuantumTaskAdditionalAttributeName>& value) { SetAdditionalAttributeNames(value); return *this;}
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetQuantumTaskRequest& WithAdditionalAttributeNames(Aws::Vector<QuantumTaskAdditionalAttributeName>&& value) { SetAdditionalAttributeNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetQuantumTaskRequest& AddAdditionalAttributeNames(const QuantumTaskAdditionalAttributeName& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of attributes to return information for.</p>
-     */
     inline GetQuantumTaskRequest& AddAdditionalAttributeNames(QuantumTaskAdditionalAttributeName&& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the task to retrieve.</p>
      */
     inline const Aws::String& GetQuantumTaskArn() const{ return m_quantumTaskArn; }
-
-    /**
-     * <p>The ARN of the task to retrieve.</p>
-     */
     inline bool QuantumTaskArnHasBeenSet() const { return m_quantumTaskArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the task to retrieve.</p>
-     */
     inline void SetQuantumTaskArn(const Aws::String& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = value; }
-
-    /**
-     * <p>The ARN of the task to retrieve.</p>
-     */
     inline void SetQuantumTaskArn(Aws::String&& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the task to retrieve.</p>
-     */
     inline void SetQuantumTaskArn(const char* value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn.assign(value); }
-
-    /**
-     * <p>The ARN of the task to retrieve.</p>
-     */
     inline GetQuantumTaskRequest& WithQuantumTaskArn(const Aws::String& value) { SetQuantumTaskArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the task to retrieve.</p>
-     */
     inline GetQuantumTaskRequest& WithQuantumTaskArn(Aws::String&& value) { SetQuantumTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the task to retrieve.</p>
-     */
     inline GetQuantumTaskRequest& WithQuantumTaskArn(const char* value) { SetQuantumTaskArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<QuantumTaskAdditionalAttributeName> m_additionalAttributeNames;

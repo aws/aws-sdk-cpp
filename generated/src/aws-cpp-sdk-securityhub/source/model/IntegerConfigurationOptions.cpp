@@ -28,13 +28,8 @@ IntegerConfigurationOptions::IntegerConfigurationOptions() :
 {
 }
 
-IntegerConfigurationOptions::IntegerConfigurationOptions(JsonView jsonValue) : 
-    m_defaultValue(0),
-    m_defaultValueHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+IntegerConfigurationOptions::IntegerConfigurationOptions(JsonView jsonValue)
+  : IntegerConfigurationOptions()
 {
   *this = jsonValue;
 }

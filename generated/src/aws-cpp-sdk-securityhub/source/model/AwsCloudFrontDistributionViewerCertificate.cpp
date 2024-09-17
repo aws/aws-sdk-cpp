@@ -30,15 +30,8 @@ AwsCloudFrontDistributionViewerCertificate::AwsCloudFrontDistributionViewerCerti
 {
 }
 
-AwsCloudFrontDistributionViewerCertificate::AwsCloudFrontDistributionViewerCertificate(JsonView jsonValue) : 
-    m_acmCertificateArnHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_certificateSourceHasBeenSet(false),
-    m_cloudFrontDefaultCertificate(false),
-    m_cloudFrontDefaultCertificateHasBeenSet(false),
-    m_iamCertificateIdHasBeenSet(false),
-    m_minimumProtocolVersionHasBeenSet(false),
-    m_sslSupportMethodHasBeenSet(false)
+AwsCloudFrontDistributionViewerCertificate::AwsCloudFrontDistributionViewerCertificate(JsonView jsonValue)
+  : AwsCloudFrontDistributionViewerCertificate()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ UrlEndpointConfig::UrlEndpointConfig() :
 {
 }
 
-UrlEndpointConfig::UrlEndpointConfig(JsonView jsonValue) : 
-    m_healthUrlHasBeenSet(false),
-    m_urlHasBeenSet(false)
+UrlEndpointConfig::UrlEndpointConfig(JsonView jsonValue)
+  : UrlEndpointConfig()
 {
   *this = jsonValue;
 }

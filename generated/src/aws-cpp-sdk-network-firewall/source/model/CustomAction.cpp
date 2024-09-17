@@ -24,9 +24,8 @@ CustomAction::CustomAction() :
 {
 }
 
-CustomAction::CustomAction(JsonView jsonValue) : 
-    m_actionNameHasBeenSet(false),
-    m_actionDefinitionHasBeenSet(false)
+CustomAction::CustomAction(JsonView jsonValue)
+  : CustomAction()
 {
   *this = jsonValue;
 }

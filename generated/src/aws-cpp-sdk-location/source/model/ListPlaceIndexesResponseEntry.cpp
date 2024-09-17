@@ -19,38 +19,27 @@ namespace Model
 {
 
 ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry() : 
-    m_createTimeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_dataSourceHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
 
-ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry(JsonView jsonValue)
+  : ListPlaceIndexesResponseEntry()
 {
   *this = jsonValue;
 }
 
 ListPlaceIndexesResponseEntry& ListPlaceIndexesResponseEntry::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("IndexName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_indexName = jsonValue.GetString("IndexName");
 
-    m_createTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DataSource"))
-  {
-    m_dataSource = jsonValue.GetString("DataSource");
-
-    m_dataSourceHasBeenSet = true;
+    m_indexNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -60,11 +49,18 @@ ListPlaceIndexesResponseEntry& ListPlaceIndexesResponseEntry::operator =(JsonVie
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("IndexName"))
+  if(jsonValue.ValueExists("DataSource"))
   {
-    m_indexName = jsonValue.GetString("IndexName");
+    m_dataSource = jsonValue.GetString("DataSource");
 
-    m_indexNameHasBeenSet = true;
+    m_dataSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
+
+    m_createTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -81,14 +77,9 @@ JsonValue ListPlaceIndexesResponseEntry::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createTimeHasBeenSet)
+  if(m_indexNameHasBeenSet)
   {
-   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_dataSourceHasBeenSet)
-  {
-   payload.WithString("DataSource", m_dataSource);
+   payload.WithString("IndexName", m_indexName);
 
   }
 
@@ -98,10 +89,15 @@ JsonValue ListPlaceIndexesResponseEntry::Jsonize() const
 
   }
 
-  if(m_indexNameHasBeenSet)
+  if(m_dataSourceHasBeenSet)
   {
-   payload.WithString("IndexName", m_indexName);
+   payload.WithString("DataSource", m_dataSource);
 
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updateTimeHasBeenSet)

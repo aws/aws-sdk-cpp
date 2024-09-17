@@ -121,112 +121,16 @@ DBCluster::DBCluster() :
     m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
     m_localWriteForwardingStatusHasBeenSet(false),
     m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_limitlessDatabaseHasBeenSet(false)
+    m_limitlessDatabaseHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
 }
 
-DBCluster::DBCluster(const XmlNode& xmlNode) : 
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterParameterGroupHasBeenSet(false),
-    m_dBSubnetGroupHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_automaticRestartTimeHasBeenSet(false),
-    m_percentProgressHasBeenSet(false),
-    m_earliestRestorableTimeHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_customEndpointsHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_latestRestorableTimeHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dBClusterOptionGroupMembershipsHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_replicationSourceIdentifierHasBeenSet(false),
-    m_readReplicaIdentifiersHasBeenSet(false),
-    m_statusInfosHasBeenSet(false),
-    m_dBClusterMembersHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_dBClusterArnHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_earliestBacktrackTimeHasBeenSet(false),
-    m_backtrackWindow(0),
-    m_backtrackWindowHasBeenSet(false),
-    m_backtrackConsumedChangeRecords(0),
-    m_backtrackConsumedChangeRecordsHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_scalingConfigurationInfoHasBeenSet(false),
-    m_rdsCustomClusterConfigurationHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_httpEndpointEnabled(false),
-    m_httpEndpointEnabledHasBeenSet(false),
-    m_activityStreamMode(ActivityStreamMode::NOT_SET),
-    m_activityStreamModeHasBeenSet(false),
-    m_activityStreamStatus(ActivityStreamStatus::NOT_SET),
-    m_activityStreamStatusHasBeenSet(false),
-    m_activityStreamKmsKeyIdHasBeenSet(false),
-    m_activityStreamKinesisStreamNameHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_crossAccountClone(false),
-    m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
-    m_globalWriteForwardingStatusHasBeenSet(false),
-    m_globalWriteForwardingRequested(false),
-    m_globalWriteForwardingRequestedHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_dBClusterInstanceClassHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false),
-    m_performanceInsightsEnabled(false),
-    m_performanceInsightsEnabledHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_performanceInsightsRetentionPeriod(0),
-    m_performanceInsightsRetentionPeriodHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false),
-    m_masterUserSecretHasBeenSet(false),
-    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
-    m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
-    m_localWriteForwardingStatusHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_limitlessDatabaseHasBeenSet(false)
+DBCluster::DBCluster(const XmlNode& xmlNode)
+  : DBCluster()
 {
   *this = xmlNode;
 }
@@ -765,6 +669,24 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_limitlessDatabase = limitlessDatabaseNode;
       m_limitlessDatabaseHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
+    {
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
+    }
+    XmlNode engineLifecycleSupportNode = resultNode.FirstChild("EngineLifecycleSupport");
+    if(!engineLifecycleSupportNode.IsNull())
+    {
+      m_engineLifecycleSupport = Aws::Utils::Xml::DecodeEscapedXmlText(engineLifecycleSupportNode.GetText());
+      m_engineLifecycleSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1227,6 +1149,23 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_limitlessDatabase.OutputToStream(oStream, limitlessDatabaseLocationAndMemberSs.str().c_str());
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1608,6 +1547,20 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String limitlessDatabaseLocationAndMember(location);
       limitlessDatabaseLocationAndMember += ".LimitlessDatabase";
       m_limitlessDatabase.OutputToStream(oStream, limitlessDatabaseLocationAndMember.c_str());
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
+  }
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 }
 

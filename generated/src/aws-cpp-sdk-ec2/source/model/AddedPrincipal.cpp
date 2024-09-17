@@ -29,12 +29,8 @@ AddedPrincipal::AddedPrincipal() :
 {
 }
 
-AddedPrincipal::AddedPrincipal(const XmlNode& xmlNode) : 
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_servicePermissionIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+AddedPrincipal::AddedPrincipal(const XmlNode& xmlNode)
+  : AddedPrincipal()
 {
   *this = xmlNode;
 }

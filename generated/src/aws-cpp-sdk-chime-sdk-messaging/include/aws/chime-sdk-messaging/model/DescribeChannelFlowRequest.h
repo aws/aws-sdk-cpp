@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the channel flow.</p>
      */
     inline const Aws::String& GetChannelFlowArn() const{ return m_channelFlowArn; }
-
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
     inline bool ChannelFlowArnHasBeenSet() const { return m_channelFlowArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
     inline void SetChannelFlowArn(const Aws::String& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = value; }
-
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
     inline void SetChannelFlowArn(Aws::String&& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
     inline void SetChannelFlowArn(const char* value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn.assign(value); }
-
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
     inline DescribeChannelFlowRequest& WithChannelFlowArn(const Aws::String& value) { SetChannelFlowArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
     inline DescribeChannelFlowRequest& WithChannelFlowArn(Aws::String&& value) { SetChannelFlowArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the channel flow.</p>
-     */
     inline DescribeChannelFlowRequest& WithChannelFlowArn(const char* value) { SetChannelFlowArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelFlowArn;

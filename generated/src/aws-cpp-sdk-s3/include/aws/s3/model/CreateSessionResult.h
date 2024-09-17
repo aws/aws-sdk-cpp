@@ -33,53 +33,27 @@ namespace Model
     AWS_S3_API CreateSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
-     * <p>The established temporary security credentials for the created session..</p>
+     * <p>The established temporary security credentials for the created session.</p>
      */
     inline const SessionCredentials& GetCredentials() const{ return m_credentials; }
-
-    /**
-     * <p>The established temporary security credentials for the created session..</p>
-     */
     inline void SetCredentials(const SessionCredentials& value) { m_credentials = value; }
-
-    /**
-     * <p>The established temporary security credentials for the created session..</p>
-     */
     inline void SetCredentials(SessionCredentials&& value) { m_credentials = std::move(value); }
-
-    /**
-     * <p>The established temporary security credentials for the created session..</p>
-     */
     inline CreateSessionResult& WithCredentials(const SessionCredentials& value) { SetCredentials(value); return *this;}
-
-    /**
-     * <p>The established temporary security credentials for the created session..</p>
-     */
     inline CreateSessionResult& WithCredentials(SessionCredentials&& value) { SetCredentials(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SessionCredentials m_credentials;

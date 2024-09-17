@@ -23,8 +23,8 @@ DetectedDataDetails::DetectedDataDetails() :
 {
 }
 
-DetectedDataDetails::DetectedDataDetails(JsonView jsonValue) : 
-    m_valueHasBeenSet(false)
+DetectedDataDetails::DetectedDataDetails(JsonView jsonValue)
+  : DetectedDataDetails()
 {
   *this = jsonValue;
 }

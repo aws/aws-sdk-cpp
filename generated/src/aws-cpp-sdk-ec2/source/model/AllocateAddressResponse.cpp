@@ -22,8 +22,8 @@ AllocateAddressResponse::AllocateAddressResponse() :
 {
 }
 
-AllocateAddressResponse::AllocateAddressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_domain(DomainType::NOT_SET)
+AllocateAddressResponse::AllocateAddressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : AllocateAddressResponse()
 {
   *this = result;
 }

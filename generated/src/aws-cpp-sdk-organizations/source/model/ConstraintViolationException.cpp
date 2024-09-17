@@ -25,10 +25,8 @@ ConstraintViolationException::ConstraintViolationException() :
 {
 }
 
-ConstraintViolationException::ConstraintViolationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(ConstraintViolationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+ConstraintViolationException::ConstraintViolationException(JsonView jsonValue)
+  : ConstraintViolationException()
 {
   *this = jsonValue;
 }

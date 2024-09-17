@@ -25,10 +25,8 @@ LiveConnectorSourceConfiguration::LiveConnectorSourceConfiguration() :
 {
 }
 
-LiveConnectorSourceConfiguration::LiveConnectorSourceConfiguration(JsonView jsonValue) : 
-    m_sourceType(LiveConnectorSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet(false)
+LiveConnectorSourceConfiguration::LiveConnectorSourceConfiguration(JsonView jsonValue)
+  : LiveConnectorSourceConfiguration()
 {
   *this = jsonValue;
 }

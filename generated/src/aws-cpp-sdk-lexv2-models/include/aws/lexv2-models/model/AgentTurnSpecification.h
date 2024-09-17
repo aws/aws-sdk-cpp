@@ -37,46 +37,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The agent prompt for the agent turn in a test set.</p>
      */
     inline const Aws::String& GetAgentPrompt() const{ return m_agentPrompt; }
-
-    /**
-     * <p>The agent prompt for the agent turn in a test set.</p>
-     */
     inline bool AgentPromptHasBeenSet() const { return m_agentPromptHasBeenSet; }
-
-    /**
-     * <p>The agent prompt for the agent turn in a test set.</p>
-     */
     inline void SetAgentPrompt(const Aws::String& value) { m_agentPromptHasBeenSet = true; m_agentPrompt = value; }
-
-    /**
-     * <p>The agent prompt for the agent turn in a test set.</p>
-     */
     inline void SetAgentPrompt(Aws::String&& value) { m_agentPromptHasBeenSet = true; m_agentPrompt = std::move(value); }
-
-    /**
-     * <p>The agent prompt for the agent turn in a test set.</p>
-     */
     inline void SetAgentPrompt(const char* value) { m_agentPromptHasBeenSet = true; m_agentPrompt.assign(value); }
-
-    /**
-     * <p>The agent prompt for the agent turn in a test set.</p>
-     */
     inline AgentTurnSpecification& WithAgentPrompt(const Aws::String& value) { SetAgentPrompt(value); return *this;}
-
-    /**
-     * <p>The agent prompt for the agent turn in a test set.</p>
-     */
     inline AgentTurnSpecification& WithAgentPrompt(Aws::String&& value) { SetAgentPrompt(std::move(value)); return *this;}
-
-    /**
-     * <p>The agent prompt for the agent turn in a test set.</p>
-     */
     inline AgentTurnSpecification& WithAgentPrompt(const char* value) { SetAgentPrompt(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentPrompt;

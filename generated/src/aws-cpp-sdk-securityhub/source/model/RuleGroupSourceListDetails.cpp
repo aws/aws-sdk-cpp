@@ -25,10 +25,8 @@ RuleGroupSourceListDetails::RuleGroupSourceListDetails() :
 {
 }
 
-RuleGroupSourceListDetails::RuleGroupSourceListDetails(JsonView jsonValue) : 
-    m_generatedRulesTypeHasBeenSet(false),
-    m_targetTypesHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+RuleGroupSourceListDetails::RuleGroupSourceListDetails(JsonView jsonValue)
+  : RuleGroupSourceListDetails()
 {
   *this = jsonValue;
 }

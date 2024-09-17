@@ -34,71 +34,30 @@ namespace Model
     AWS_IOTSECURETUNNELING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the tunnel to close.</p>
      */
     inline const Aws::String& GetTunnelId() const{ return m_tunnelId; }
-
-    /**
-     * <p>The ID of the tunnel to close.</p>
-     */
     inline bool TunnelIdHasBeenSet() const { return m_tunnelIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the tunnel to close.</p>
-     */
     inline void SetTunnelId(const Aws::String& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = value; }
-
-    /**
-     * <p>The ID of the tunnel to close.</p>
-     */
     inline void SetTunnelId(Aws::String&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::move(value); }
-
-    /**
-     * <p>The ID of the tunnel to close.</p>
-     */
     inline void SetTunnelId(const char* value) { m_tunnelIdHasBeenSet = true; m_tunnelId.assign(value); }
-
-    /**
-     * <p>The ID of the tunnel to close.</p>
-     */
     inline CloseTunnelRequest& WithTunnelId(const Aws::String& value) { SetTunnelId(value); return *this;}
-
-    /**
-     * <p>The ID of the tunnel to close.</p>
-     */
     inline CloseTunnelRequest& WithTunnelId(Aws::String&& value) { SetTunnelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the tunnel to close.</p>
-     */
     inline CloseTunnelRequest& WithTunnelId(const char* value) { SetTunnelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
      * immediately.</p>
      */
     inline bool GetDelete() const{ return m_delete; }
-
-    /**
-     * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
-     * immediately.</p>
-     */
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
-
-    /**
-     * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
-     * immediately.</p>
-     */
     inline void SetDelete(bool value) { m_deleteHasBeenSet = true; m_delete = value; }
-
-    /**
-     * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
-     * immediately.</p>
-     */
     inline CloseTunnelRequest& WithDelete(bool value) { SetDelete(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tunnelId;

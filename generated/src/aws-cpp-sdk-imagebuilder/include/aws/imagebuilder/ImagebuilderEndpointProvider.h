@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ImagebuilderClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ImagebuilderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ImagebuilderClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ImagebuilderBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

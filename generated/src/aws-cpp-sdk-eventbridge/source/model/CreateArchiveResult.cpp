@@ -22,8 +22,8 @@ CreateArchiveResult::CreateArchiveResult() :
 {
 }
 
-CreateArchiveResult::CreateArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(ArchiveState::NOT_SET)
+CreateArchiveResult::CreateArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateArchiveResult()
 {
   *this = result;
 }

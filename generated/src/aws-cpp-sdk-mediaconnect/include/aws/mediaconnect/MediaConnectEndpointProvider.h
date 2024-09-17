@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using MediaConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MediaConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using MediaConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaConnectBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

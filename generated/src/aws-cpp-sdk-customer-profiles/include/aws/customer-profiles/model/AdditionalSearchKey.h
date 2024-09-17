@@ -45,92 +45,34 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A searchable identifier of a customer profile.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>A searchable identifier of a customer profile.</p>
-     */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-
-    /**
-     * <p>A searchable identifier of a customer profile.</p>
-     */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>A searchable identifier of a customer profile.</p>
-     */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>A searchable identifier of a customer profile.</p>
-     */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>A searchable identifier of a customer profile.</p>
-     */
     inline AdditionalSearchKey& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>A searchable identifier of a customer profile.</p>
-     */
     inline AdditionalSearchKey& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>A searchable identifier of a customer profile.</p>
-     */
     inline AdditionalSearchKey& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline AdditionalSearchKey& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline AdditionalSearchKey& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline AdditionalSearchKey& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline AdditionalSearchKey& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key values.</p>
-     */
     inline AdditionalSearchKey& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_keyName;

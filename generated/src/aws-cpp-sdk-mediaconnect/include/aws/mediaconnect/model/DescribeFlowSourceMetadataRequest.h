@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of the flow.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline DescribeFlowSourceMetadataRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline DescribeFlowSourceMetadataRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline DescribeFlowSourceMetadataRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

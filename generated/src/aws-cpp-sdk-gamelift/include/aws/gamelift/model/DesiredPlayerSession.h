@@ -38,95 +38,34 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline const Aws::String& GetPlayerId() const{ return m_playerId; }
-
-    /**
-     * <p>A unique identifier for a player to associate with the player session.</p>
-     */
     inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a player to associate with the player session.</p>
-     */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
-
-    /**
-     * <p>A unique identifier for a player to associate with the player session.</p>
-     */
     inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a player to associate with the player session.</p>
-     */
     inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a player to associate with the player session.</p>
-     */
     inline DesiredPlayerSession& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a player to associate with the player session.</p>
-     */
     inline DesiredPlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a player to associate with the player session.</p>
-     */
     inline DesiredPlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not
      * use this data, so it can be formatted as needed for use in the game.</p>
      */
     inline const Aws::String& GetPlayerData() const{ return m_playerData; }
-
-    /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
-     */
     inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }
-
-    /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
-     */
     inline void SetPlayerData(const Aws::String& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
-
-    /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
-     */
     inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
-
-    /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
-     */
     inline void SetPlayerData(const char* value) { m_playerDataHasBeenSet = true; m_playerData.assign(value); }
-
-    /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
-     */
     inline DesiredPlayerSession& WithPlayerData(const Aws::String& value) { SetPlayerData(value); return *this;}
-
-    /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
-     */
     inline DesiredPlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
-
-    /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
-     */
     inline DesiredPlayerSession& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_playerId;

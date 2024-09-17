@@ -24,9 +24,8 @@ ServerReplicationConfiguration::ServerReplicationConfiguration() :
 {
 }
 
-ServerReplicationConfiguration::ServerReplicationConfiguration(JsonView jsonValue) : 
-    m_serverHasBeenSet(false),
-    m_serverReplicationParametersHasBeenSet(false)
+ServerReplicationConfiguration::ServerReplicationConfiguration(JsonView jsonValue)
+  : ServerReplicationConfiguration()
 {
   *this = jsonValue;
 }

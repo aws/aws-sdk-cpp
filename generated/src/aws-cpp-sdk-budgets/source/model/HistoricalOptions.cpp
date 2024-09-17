@@ -26,11 +26,8 @@ HistoricalOptions::HistoricalOptions() :
 {
 }
 
-HistoricalOptions::HistoricalOptions(JsonView jsonValue) : 
-    m_budgetAdjustmentPeriod(0),
-    m_budgetAdjustmentPeriodHasBeenSet(false),
-    m_lookBackAvailablePeriods(0),
-    m_lookBackAvailablePeriodsHasBeenSet(false)
+HistoricalOptions::HistoricalOptions(JsonView jsonValue)
+  : HistoricalOptions()
 {
   *this = jsonValue;
 }

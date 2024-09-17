@@ -27,12 +27,8 @@ ExecutionStartedEventDetails::ExecutionStartedEventDetails() :
 {
 }
 
-ExecutionStartedEventDetails::ExecutionStartedEventDetails(JsonView jsonValue) : 
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stateMachineAliasArnHasBeenSet(false),
-    m_stateMachineVersionArnHasBeenSet(false)
+ExecutionStartedEventDetails::ExecutionStartedEventDetails(JsonView jsonValue)
+  : ExecutionStartedEventDetails()
 {
   *this = jsonValue;
 }

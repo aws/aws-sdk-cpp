@@ -165,13 +165,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountHealth">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountHealthOutcome DescribeAccountHealth(const Model::DescribeAccountHealthRequest& request) const;
+        virtual Model::DescribeAccountHealthOutcome DescribeAccountHealth(const Model::DescribeAccountHealthRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountHealth that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountHealthRequestT = Model::DescribeAccountHealthRequest>
-        Model::DescribeAccountHealthOutcomeCallable DescribeAccountHealthCallable(const DescribeAccountHealthRequestT& request) const
+        Model::DescribeAccountHealthOutcomeCallable DescribeAccountHealthCallable(const DescribeAccountHealthRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::DescribeAccountHealth, request);
         }
@@ -180,7 +180,7 @@ namespace DevOpsGuru
          * An Async wrapper for DescribeAccountHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountHealthRequestT = Model::DescribeAccountHealthRequest>
-        void DescribeAccountHealthAsync(const DescribeAccountHealthRequestT& request, const DescribeAccountHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountHealthAsync(const DescribeAccountHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountHealthRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::DescribeAccountHealth, request, handler, context);
         }
@@ -248,13 +248,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventSourcesConfigOutcome DescribeEventSourcesConfig(const Model::DescribeEventSourcesConfigRequest& request) const;
+        virtual Model::DescribeEventSourcesConfigOutcome DescribeEventSourcesConfig(const Model::DescribeEventSourcesConfigRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventSourcesConfig that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventSourcesConfigRequestT = Model::DescribeEventSourcesConfigRequest>
-        Model::DescribeEventSourcesConfigOutcomeCallable DescribeEventSourcesConfigCallable(const DescribeEventSourcesConfigRequestT& request) const
+        Model::DescribeEventSourcesConfigOutcomeCallable DescribeEventSourcesConfigCallable(const DescribeEventSourcesConfigRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::DescribeEventSourcesConfig, request);
         }
@@ -263,7 +263,7 @@ namespace DevOpsGuru
          * An Async wrapper for DescribeEventSourcesConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventSourcesConfigRequestT = Model::DescribeEventSourcesConfigRequest>
-        void DescribeEventSourcesConfigAsync(const DescribeEventSourcesConfigRequestT& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventSourcesConfigAsync(const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventSourcesConfigRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::DescribeEventSourcesConfig, request, handler, context);
         }
@@ -274,13 +274,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeFeedback">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFeedbackOutcome DescribeFeedback(const Model::DescribeFeedbackRequest& request) const;
+        virtual Model::DescribeFeedbackOutcome DescribeFeedback(const Model::DescribeFeedbackRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFeedbackRequestT = Model::DescribeFeedbackRequest>
-        Model::DescribeFeedbackOutcomeCallable DescribeFeedbackCallable(const DescribeFeedbackRequestT& request) const
+        Model::DescribeFeedbackOutcomeCallable DescribeFeedbackCallable(const DescribeFeedbackRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::DescribeFeedback, request);
         }
@@ -289,7 +289,7 @@ namespace DevOpsGuru
          * An Async wrapper for DescribeFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFeedbackRequestT = Model::DescribeFeedbackRequest>
-        void DescribeFeedbackAsync(const DescribeFeedbackRequestT& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFeedbackAsync(const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFeedbackRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::DescribeFeedback, request, handler, context);
         }
@@ -326,13 +326,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationHealth">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationHealthOutcome DescribeOrganizationHealth(const Model::DescribeOrganizationHealthRequest& request) const;
+        virtual Model::DescribeOrganizationHealthOutcome DescribeOrganizationHealth(const Model::DescribeOrganizationHealthRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganizationHealth that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOrganizationHealthRequestT = Model::DescribeOrganizationHealthRequest>
-        Model::DescribeOrganizationHealthOutcomeCallable DescribeOrganizationHealthCallable(const DescribeOrganizationHealthRequestT& request) const
+        Model::DescribeOrganizationHealthOutcomeCallable DescribeOrganizationHealthCallable(const DescribeOrganizationHealthRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::DescribeOrganizationHealth, request);
         }
@@ -341,7 +341,7 @@ namespace DevOpsGuru
          * An Async wrapper for DescribeOrganizationHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOrganizationHealthRequestT = Model::DescribeOrganizationHealthRequest>
-        void DescribeOrganizationHealthAsync(const DescribeOrganizationHealthRequestT& request, const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOrganizationHealthAsync(const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationHealthRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::DescribeOrganizationHealth, request, handler, context);
         }
@@ -441,13 +441,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeServiceIntegration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeServiceIntegrationOutcome DescribeServiceIntegration(const Model::DescribeServiceIntegrationRequest& request) const;
+        virtual Model::DescribeServiceIntegrationOutcome DescribeServiceIntegration(const Model::DescribeServiceIntegrationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeServiceIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeServiceIntegrationRequestT = Model::DescribeServiceIntegrationRequest>
-        Model::DescribeServiceIntegrationOutcomeCallable DescribeServiceIntegrationCallable(const DescribeServiceIntegrationRequestT& request) const
+        Model::DescribeServiceIntegrationOutcomeCallable DescribeServiceIntegrationCallable(const DescribeServiceIntegrationRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::DescribeServiceIntegration, request);
         }
@@ -456,7 +456,7 @@ namespace DevOpsGuru
          * An Async wrapper for DescribeServiceIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeServiceIntegrationRequestT = Model::DescribeServiceIntegrationRequest>
-        void DescribeServiceIntegrationAsync(const DescribeServiceIntegrationRequestT& request, const DescribeServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeServiceIntegrationAsync(const DescribeServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServiceIntegrationRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::DescribeServiceIntegration, request, handler, context);
         }
@@ -471,13 +471,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCostEstimationOutcome GetCostEstimation(const Model::GetCostEstimationRequest& request) const;
+        virtual Model::GetCostEstimationOutcome GetCostEstimation(const Model::GetCostEstimationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCostEstimation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCostEstimationRequestT = Model::GetCostEstimationRequest>
-        Model::GetCostEstimationOutcomeCallable GetCostEstimationCallable(const GetCostEstimationRequestT& request) const
+        Model::GetCostEstimationOutcomeCallable GetCostEstimationCallable(const GetCostEstimationRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::GetCostEstimation, request);
         }
@@ -486,7 +486,7 @@ namespace DevOpsGuru
          * An Async wrapper for GetCostEstimation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCostEstimationRequestT = Model::GetCostEstimationRequest>
-        void GetCostEstimationAsync(const GetCostEstimationRequestT& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCostEstimationAsync(const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCostEstimationRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::GetCostEstimation, request, handler, context);
         }
@@ -636,13 +636,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMonitoredResourcesOutcome ListMonitoredResources(const Model::ListMonitoredResourcesRequest& request) const;
+        virtual Model::ListMonitoredResourcesOutcome ListMonitoredResources(const Model::ListMonitoredResourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMonitoredResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMonitoredResourcesRequestT = Model::ListMonitoredResourcesRequest>
-        Model::ListMonitoredResourcesOutcomeCallable ListMonitoredResourcesCallable(const ListMonitoredResourcesRequestT& request) const
+        Model::ListMonitoredResourcesOutcomeCallable ListMonitoredResourcesCallable(const ListMonitoredResourcesRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::ListMonitoredResources, request);
         }
@@ -651,7 +651,7 @@ namespace DevOpsGuru
          * An Async wrapper for ListMonitoredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMonitoredResourcesRequestT = Model::ListMonitoredResourcesRequest>
-        void ListMonitoredResourcesAsync(const ListMonitoredResourcesRequestT& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMonitoredResourcesAsync(const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMonitoredResourcesRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::ListMonitoredResources, request, handler, context);
         }
@@ -665,13 +665,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListNotificationChannels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNotificationChannelsOutcome ListNotificationChannels(const Model::ListNotificationChannelsRequest& request) const;
+        virtual Model::ListNotificationChannelsOutcome ListNotificationChannels(const Model::ListNotificationChannelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNotificationChannels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNotificationChannelsRequestT = Model::ListNotificationChannelsRequest>
-        Model::ListNotificationChannelsOutcomeCallable ListNotificationChannelsCallable(const ListNotificationChannelsRequestT& request) const
+        Model::ListNotificationChannelsOutcomeCallable ListNotificationChannelsCallable(const ListNotificationChannelsRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::ListNotificationChannels, request);
         }
@@ -680,7 +680,7 @@ namespace DevOpsGuru
          * An Async wrapper for ListNotificationChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNotificationChannelsRequestT = Model::ListNotificationChannelsRequest>
-        void ListNotificationChannelsAsync(const ListNotificationChannelsRequestT& request, const ListNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNotificationChannelsAsync(const ListNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNotificationChannelsRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::ListNotificationChannels, request, handler, context);
         }
@@ -744,13 +744,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PutFeedback">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request) const;
+        virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutFeedbackRequestT = Model::PutFeedbackRequest>
-        Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const PutFeedbackRequestT& request) const
+        Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const PutFeedbackRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::PutFeedback, request);
         }
@@ -759,7 +759,7 @@ namespace DevOpsGuru
          * An Async wrapper for PutFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutFeedbackRequestT = Model::PutFeedbackRequest>
-        void PutFeedbackAsync(const PutFeedbackRequestT& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutFeedbackAsync(const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutFeedbackRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::PutFeedback, request, handler, context);
         }
@@ -889,13 +889,13 @@ namespace DevOpsGuru
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateEventSourcesConfigOutcome UpdateEventSourcesConfig(const Model::UpdateEventSourcesConfigRequest& request) const;
+        virtual Model::UpdateEventSourcesConfigOutcome UpdateEventSourcesConfig(const Model::UpdateEventSourcesConfigRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateEventSourcesConfig that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateEventSourcesConfigRequestT = Model::UpdateEventSourcesConfigRequest>
-        Model::UpdateEventSourcesConfigOutcomeCallable UpdateEventSourcesConfigCallable(const UpdateEventSourcesConfigRequestT& request) const
+        Model::UpdateEventSourcesConfigOutcomeCallable UpdateEventSourcesConfigCallable(const UpdateEventSourcesConfigRequestT& request = {}) const
         {
             return SubmitCallable(&DevOpsGuruClient::UpdateEventSourcesConfig, request);
         }
@@ -904,7 +904,7 @@ namespace DevOpsGuru
          * An Async wrapper for UpdateEventSourcesConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateEventSourcesConfigRequestT = Model::UpdateEventSourcesConfigRequest>
-        void UpdateEventSourcesConfigAsync(const UpdateEventSourcesConfigRequestT& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateEventSourcesConfigAsync(const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateEventSourcesConfigRequestT& request = {}) const
         {
             return SubmitAsync(&DevOpsGuruClient::UpdateEventSourcesConfig, request, handler, context);
         }
@@ -977,7 +977,6 @@ namespace DevOpsGuru
       void init(const DevOpsGuruClientConfiguration& clientConfiguration);
 
       DevOpsGuruClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DevOpsGuruEndpointProviderBase> m_endpointProvider;
   };
 

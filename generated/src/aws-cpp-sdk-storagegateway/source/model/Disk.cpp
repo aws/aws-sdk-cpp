@@ -31,16 +31,8 @@ Disk::Disk() :
 {
 }
 
-Disk::Disk(JsonView jsonValue) : 
-    m_diskIdHasBeenSet(false),
-    m_diskPathHasBeenSet(false),
-    m_diskNodeHasBeenSet(false),
-    m_diskStatusHasBeenSet(false),
-    m_diskSizeInBytes(0),
-    m_diskSizeInBytesHasBeenSet(false),
-    m_diskAllocationTypeHasBeenSet(false),
-    m_diskAllocationResourceHasBeenSet(false),
-    m_diskAttributeListHasBeenSet(false)
+Disk::Disk(JsonView jsonValue)
+  : Disk()
 {
   *this = jsonValue;
 }

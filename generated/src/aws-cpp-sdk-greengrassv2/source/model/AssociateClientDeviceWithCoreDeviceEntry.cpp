@@ -23,8 +23,8 @@ AssociateClientDeviceWithCoreDeviceEntry::AssociateClientDeviceWithCoreDeviceEnt
 {
 }
 
-AssociateClientDeviceWithCoreDeviceEntry::AssociateClientDeviceWithCoreDeviceEntry(JsonView jsonValue) : 
-    m_thingNameHasBeenSet(false)
+AssociateClientDeviceWithCoreDeviceEntry::AssociateClientDeviceWithCoreDeviceEntry(JsonView jsonValue)
+  : AssociateClientDeviceWithCoreDeviceEntry()
 {
   *this = jsonValue;
 }

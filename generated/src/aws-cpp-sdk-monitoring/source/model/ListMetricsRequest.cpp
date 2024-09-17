@@ -39,11 +39,18 @@ Aws::String ListMetricsRequest::SerializePayload() const
 
   if(m_dimensionsHasBeenSet)
   {
-    unsigned dimensionsCount = 1;
-    for(auto& item : m_dimensions)
+    if (m_dimensions.empty())
     {
-      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
-      dimensionsCount++;
+      ss << "Dimensions=&";
+    }
+    else
+    {
+      unsigned dimensionsCount = 1;
+      for(auto& item : m_dimensions)
+      {
+        item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
+        dimensionsCount++;
+      }
     }
   }
 

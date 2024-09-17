@@ -27,12 +27,8 @@ AccountSettings::AccountSettings() :
 {
 }
 
-AccountSettings::AccountSettings(JsonView jsonValue) : 
-    m_groupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus::NOT_SET),
-    m_groupLifecycleEventsDesiredStatusHasBeenSet(false),
-    m_groupLifecycleEventsStatus(GroupLifecycleEventsStatus::NOT_SET),
-    m_groupLifecycleEventsStatusHasBeenSet(false),
-    m_groupLifecycleEventsStatusMessageHasBeenSet(false)
+AccountSettings::AccountSettings(JsonView jsonValue)
+  : AccountSettings()
 {
   *this = jsonValue;
 }

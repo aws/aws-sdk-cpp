@@ -25,10 +25,8 @@ RegexMatchStatement::RegexMatchStatement() :
 {
 }
 
-RegexMatchStatement::RegexMatchStatement(JsonView jsonValue) : 
-    m_regexStringHasBeenSet(false),
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
+RegexMatchStatement::RegexMatchStatement(JsonView jsonValue)
+  : RegexMatchStatement()
 {
   *this = jsonValue;
 }

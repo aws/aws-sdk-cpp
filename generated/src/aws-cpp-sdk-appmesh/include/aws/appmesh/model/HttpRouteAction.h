@@ -39,54 +39,20 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that represents the targets that traffic is routed to when a
      * request matches the route.</p>
      */
     inline const Aws::Vector<WeightedTarget>& GetWeightedTargets() const{ return m_weightedTargets; }
-
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
     inline bool WeightedTargetsHasBeenSet() const { return m_weightedTargetsHasBeenSet; }
-
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
     inline void SetWeightedTargets(const Aws::Vector<WeightedTarget>& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = value; }
-
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
     inline void SetWeightedTargets(Aws::Vector<WeightedTarget>&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = std::move(value); }
-
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
     inline HttpRouteAction& WithWeightedTargets(const Aws::Vector<WeightedTarget>& value) { SetWeightedTargets(value); return *this;}
-
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
     inline HttpRouteAction& WithWeightedTargets(Aws::Vector<WeightedTarget>&& value) { SetWeightedTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
     inline HttpRouteAction& AddWeightedTargets(const WeightedTarget& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.push_back(value); return *this; }
-
-    /**
-     * <p>An object that represents the targets that traffic is routed to when a
-     * request matches the route.</p>
-     */
     inline HttpRouteAction& AddWeightedTargets(WeightedTarget&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<WeightedTarget> m_weightedTargets;

@@ -33,53 +33,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API UpdateIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identity provider details.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
-
-    /**
-     * <p>The identity provider details.</p>
-     */
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }
-
-    /**
-     * <p>The identity provider details.</p>
-     */
     inline void SetIdentityProvider(IdentityProviderType&& value) { m_identityProvider = std::move(value); }
-
-    /**
-     * <p>The identity provider details.</p>
-     */
     inline UpdateIdentityProviderResult& WithIdentityProvider(const IdentityProviderType& value) { SetIdentityProvider(value); return *this;}
-
-    /**
-     * <p>The identity provider details.</p>
-     */
     inline UpdateIdentityProviderResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateIdentityProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateIdentityProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateIdentityProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IdentityProviderType m_identityProvider;

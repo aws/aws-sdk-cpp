@@ -23,8 +23,8 @@ TrainingJobStepMetadata::TrainingJobStepMetadata() :
 {
 }
 
-TrainingJobStepMetadata::TrainingJobStepMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+TrainingJobStepMetadata::TrainingJobStepMetadata(JsonView jsonValue)
+  : TrainingJobStepMetadata()
 {
   *this = jsonValue;
 }

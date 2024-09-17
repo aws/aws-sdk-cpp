@@ -38,42 +38,18 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides the timestamps that identify when in an audio segment the specified
      * issue occurs.</p>
      */
     inline const CharacterOffsets& GetCharacterOffsets() const{ return m_characterOffsets; }
-
-    /**
-     * <p>Provides the timestamps that identify when in an audio segment the specified
-     * issue occurs.</p>
-     */
     inline bool CharacterOffsetsHasBeenSet() const { return m_characterOffsetsHasBeenSet; }
-
-    /**
-     * <p>Provides the timestamps that identify when in an audio segment the specified
-     * issue occurs.</p>
-     */
     inline void SetCharacterOffsets(const CharacterOffsets& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = value; }
-
-    /**
-     * <p>Provides the timestamps that identify when in an audio segment the specified
-     * issue occurs.</p>
-     */
     inline void SetCharacterOffsets(CharacterOffsets&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::move(value); }
-
-    /**
-     * <p>Provides the timestamps that identify when in an audio segment the specified
-     * issue occurs.</p>
-     */
     inline IssueDetected& WithCharacterOffsets(const CharacterOffsets& value) { SetCharacterOffsets(value); return *this;}
-
-    /**
-     * <p>Provides the timestamps that identify when in an audio segment the specified
-     * issue occurs.</p>
-     */
     inline IssueDetected& WithCharacterOffsets(CharacterOffsets&& value) { SetCharacterOffsets(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CharacterOffsets m_characterOffsets;

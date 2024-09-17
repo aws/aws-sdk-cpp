@@ -48,33 +48,8 @@ SimulationJob::SimulationJob() :
 {
 }
 
-SimulationJob::SimulationJob(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SimulationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastStartedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_failureBehavior(FailureBehavior::NOT_SET),
-    m_failureBehaviorHasBeenSet(false),
-    m_failureCode(SimulationJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false),
-    m_maxJobDurationInSeconds(0),
-    m_maxJobDurationInSecondsHasBeenSet(false),
-    m_simulationTimeMillis(0),
-    m_simulationTimeMillisHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_robotApplicationsHasBeenSet(false),
-    m_simulationApplicationsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false),
-    m_computeHasBeenSet(false)
+SimulationJob::SimulationJob(JsonView jsonValue)
+  : SimulationJob()
 {
   *this = jsonValue;
 }

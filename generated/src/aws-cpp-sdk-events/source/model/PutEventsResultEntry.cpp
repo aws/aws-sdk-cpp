@@ -25,10 +25,8 @@ PutEventsResultEntry::PutEventsResultEntry() :
 {
 }
 
-PutEventsResultEntry::PutEventsResultEntry(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+PutEventsResultEntry::PutEventsResultEntry(JsonView jsonValue)
+  : PutEventsResultEntry()
 {
   *this = jsonValue;
 }

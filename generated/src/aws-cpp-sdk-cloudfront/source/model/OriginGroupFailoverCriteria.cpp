@@ -25,8 +25,8 @@ OriginGroupFailoverCriteria::OriginGroupFailoverCriteria() :
 {
 }
 
-OriginGroupFailoverCriteria::OriginGroupFailoverCriteria(const XmlNode& xmlNode) : 
-    m_statusCodesHasBeenSet(false)
+OriginGroupFailoverCriteria::OriginGroupFailoverCriteria(const XmlNode& xmlNode)
+  : OriginGroupFailoverCriteria()
 {
   *this = xmlNode;
 }

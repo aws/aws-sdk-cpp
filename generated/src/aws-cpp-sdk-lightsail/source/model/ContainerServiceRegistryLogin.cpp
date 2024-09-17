@@ -26,11 +26,8 @@ ContainerServiceRegistryLogin::ContainerServiceRegistryLogin() :
 {
 }
 
-ContainerServiceRegistryLogin::ContainerServiceRegistryLogin(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_registryHasBeenSet(false)
+ContainerServiceRegistryLogin::ContainerServiceRegistryLogin(JsonView jsonValue)
+  : ContainerServiceRegistryLogin()
 {
   *this = jsonValue;
 }

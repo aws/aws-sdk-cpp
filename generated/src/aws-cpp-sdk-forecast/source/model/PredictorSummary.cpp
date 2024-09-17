@@ -32,17 +32,8 @@ PredictorSummary::PredictorSummary() :
 {
 }
 
-PredictorSummary::PredictorSummary(JsonView jsonValue) : 
-    m_predictorArnHasBeenSet(false),
-    m_predictorNameHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_isAutoPredictor(false),
-    m_isAutoPredictorHasBeenSet(false),
-    m_referencePredictorSummaryHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+PredictorSummary::PredictorSummary(JsonView jsonValue)
+  : PredictorSummary()
 {
   *this = jsonValue;
 }

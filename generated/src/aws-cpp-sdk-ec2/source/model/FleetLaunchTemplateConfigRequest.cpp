@@ -26,9 +26,8 @@ FleetLaunchTemplateConfigRequest::FleetLaunchTemplateConfigRequest() :
 {
 }
 
-FleetLaunchTemplateConfigRequest::FleetLaunchTemplateConfigRequest(const XmlNode& xmlNode) : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
+FleetLaunchTemplateConfigRequest::FleetLaunchTemplateConfigRequest(const XmlNode& xmlNode)
+  : FleetLaunchTemplateConfigRequest()
 {
   *this = xmlNode;
 }

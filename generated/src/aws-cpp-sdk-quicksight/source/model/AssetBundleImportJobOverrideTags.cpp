@@ -28,13 +28,8 @@ AssetBundleImportJobOverrideTags::AssetBundleImportJobOverrideTags() :
 {
 }
 
-AssetBundleImportJobOverrideTags::AssetBundleImportJobOverrideTags(JsonView jsonValue) : 
-    m_vPCConnectionsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_dataSetsHasBeenSet(false),
-    m_themesHasBeenSet(false),
-    m_analysesHasBeenSet(false),
-    m_dashboardsHasBeenSet(false)
+AssetBundleImportJobOverrideTags::AssetBundleImportJobOverrideTags(JsonView jsonValue)
+  : AssetBundleImportJobOverrideTags()
 {
   *this = jsonValue;
 }

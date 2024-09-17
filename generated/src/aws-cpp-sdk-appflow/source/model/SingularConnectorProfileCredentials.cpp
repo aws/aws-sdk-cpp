@@ -23,8 +23,8 @@ SingularConnectorProfileCredentials::SingularConnectorProfileCredentials() :
 {
 }
 
-SingularConnectorProfileCredentials::SingularConnectorProfileCredentials(JsonView jsonValue) : 
-    m_apiKeyHasBeenSet(false)
+SingularConnectorProfileCredentials::SingularConnectorProfileCredentials(JsonView jsonValue)
+  : SingularConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

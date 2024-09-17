@@ -30,6 +30,7 @@
 #include <aws/networkmonitor/model/UntagResourceResult.h>
 #include <aws/networkmonitor/model/UpdateMonitorResult.h>
 #include <aws/networkmonitor/model/UpdateProbeResult.h>
+#include <aws/networkmonitor/model/ListMonitorsRequest.h>
 /* End of service model headers required in NetworkMonitorClient header */
 
 namespace Aws
@@ -63,7 +64,7 @@ namespace Aws
 
   namespace NetworkMonitor
   {
-    using NetworkMonitorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NetworkMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NetworkMonitorEndpointProviderBase = Aws::NetworkMonitor::Endpoint::NetworkMonitorEndpointProviderBase;
     using NetworkMonitorEndpointProvider = Aws::NetworkMonitor::Endpoint::NetworkMonitorEndpointProvider;
 

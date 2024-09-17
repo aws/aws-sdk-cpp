@@ -119,7 +119,6 @@ namespace MarketplaceCommerceAnalytics
       void init(const MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration);
 
       MarketplaceCommerceAnalyticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 

@@ -36,30 +36,16 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates the total number of unsupported timestamps across the ingested
      * data. </p>
      */
     inline int GetTotalNumberOfUnsupportedTimestamps() const{ return m_totalNumberOfUnsupportedTimestamps; }
-
-    /**
-     * <p> Indicates the total number of unsupported timestamps across the ingested
-     * data. </p>
-     */
     inline bool TotalNumberOfUnsupportedTimestampsHasBeenSet() const { return m_totalNumberOfUnsupportedTimestampsHasBeenSet; }
-
-    /**
-     * <p> Indicates the total number of unsupported timestamps across the ingested
-     * data. </p>
-     */
     inline void SetTotalNumberOfUnsupportedTimestamps(int value) { m_totalNumberOfUnsupportedTimestampsHasBeenSet = true; m_totalNumberOfUnsupportedTimestamps = value; }
-
-    /**
-     * <p> Indicates the total number of unsupported timestamps across the ingested
-     * data. </p>
-     */
     inline UnsupportedTimestamps& WithTotalNumberOfUnsupportedTimestamps(int value) { SetTotalNumberOfUnsupportedTimestamps(value); return *this;}
-
+    ///@}
   private:
 
     int m_totalNumberOfUnsupportedTimestamps;

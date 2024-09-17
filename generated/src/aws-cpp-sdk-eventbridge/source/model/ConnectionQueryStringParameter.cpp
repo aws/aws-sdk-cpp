@@ -26,11 +26,8 @@ ConnectionQueryStringParameter::ConnectionQueryStringParameter() :
 {
 }
 
-ConnectionQueryStringParameter::ConnectionQueryStringParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_isValueSecret(false),
-    m_isValueSecretHasBeenSet(false)
+ConnectionQueryStringParameter::ConnectionQueryStringParameter(JsonView jsonValue)
+  : ConnectionQueryStringParameter()
 {
   *this = jsonValue;
 }

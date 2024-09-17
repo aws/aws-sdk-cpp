@@ -29,14 +29,8 @@ AccessPreview::AccessPreview() :
 {
 }
 
-AccessPreview::AccessPreview(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_analyzerArnHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(AccessPreviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+AccessPreview::AccessPreview(JsonView jsonValue)
+  : AccessPreview()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ GetTrainingDatasetResult::GetTrainingDatasetResult() :
 {
 }
 
-GetTrainingDatasetResult::GetTrainingDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TrainingDatasetStatus::NOT_SET)
+GetTrainingDatasetResult::GetTrainingDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetTrainingDatasetResult()
 {
   *this = result;
 }
@@ -37,9 +37,15 @@ GetTrainingDatasetResult& GetTrainingDatasetResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("updateTime"))
   {
-    m_description = jsonValue.GetString("description");
+    m_updateTime = jsonValue.GetString("updateTime");
+
+  }
+
+  if(jsonValue.ValueExists("trainingDatasetArn"))
+  {
+    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
 
   }
 
@@ -49,15 +55,24 @@ GetTrainingDatasetResult& GetTrainingDatasetResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("roleArn"))
+  if(jsonValue.ValueExists("trainingData"))
   {
-    m_roleArn = jsonValue.GetString("roleArn");
-
+    Aws::Utils::Array<JsonView> trainingDataJsonList = jsonValue.GetArray("trainingData");
+    for(unsigned trainingDataIndex = 0; trainingDataIndex < trainingDataJsonList.GetLength(); ++trainingDataIndex)
+    {
+      m_trainingData.push_back(trainingDataJsonList[trainingDataIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("status"))
   {
     m_status = TrainingDatasetStatusMapper::GetTrainingDatasetStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
 
   }
 
@@ -70,24 +85,9 @@ GetTrainingDatasetResult& GetTrainingDatasetResult::operator =(const Aws::Amazon
     }
   }
 
-  if(jsonValue.ValueExists("trainingData"))
+  if(jsonValue.ValueExists("description"))
   {
-    Aws::Utils::Array<JsonView> trainingDataJsonList = jsonValue.GetArray("trainingData");
-    for(unsigned trainingDataIndex = 0; trainingDataIndex < trainingDataJsonList.GetLength(); ++trainingDataIndex)
-    {
-      m_trainingData.push_back(trainingDataJsonList[trainingDataIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("trainingDatasetArn"))
-  {
-    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
-
-  }
-
-  if(jsonValue.ValueExists("updateTime"))
-  {
-    m_updateTime = jsonValue.GetString("updateTime");
+    m_description = jsonValue.GetString("description");
 
   }
 

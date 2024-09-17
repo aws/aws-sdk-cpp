@@ -23,8 +23,8 @@ ErrorDetails::ErrorDetails() :
 {
 }
 
-ErrorDetails::ErrorDetails(JsonView jsonValue) : 
-    m_defaultErrorDetailsHasBeenSet(false)
+ErrorDetails::ErrorDetails(JsonView jsonValue)
+  : ErrorDetails()
 {
   *this = jsonValue;
 }

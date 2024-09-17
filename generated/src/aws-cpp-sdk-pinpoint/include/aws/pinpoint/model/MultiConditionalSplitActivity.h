@@ -49,140 +49,48 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The paths for the activity, including the conditions for entering each path
      * and the activity to perform for each path.</p>
      */
     inline const Aws::Vector<MultiConditionalBranch>& GetBranches() const{ return m_branches; }
-
-    /**
-     * <p>The paths for the activity, including the conditions for entering each path
-     * and the activity to perform for each path.</p>
-     */
     inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
-
-    /**
-     * <p>The paths for the activity, including the conditions for entering each path
-     * and the activity to perform for each path.</p>
-     */
     inline void SetBranches(const Aws::Vector<MultiConditionalBranch>& value) { m_branchesHasBeenSet = true; m_branches = value; }
-
-    /**
-     * <p>The paths for the activity, including the conditions for entering each path
-     * and the activity to perform for each path.</p>
-     */
     inline void SetBranches(Aws::Vector<MultiConditionalBranch>&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
-
-    /**
-     * <p>The paths for the activity, including the conditions for entering each path
-     * and the activity to perform for each path.</p>
-     */
     inline MultiConditionalSplitActivity& WithBranches(const Aws::Vector<MultiConditionalBranch>& value) { SetBranches(value); return *this;}
-
-    /**
-     * <p>The paths for the activity, including the conditions for entering each path
-     * and the activity to perform for each path.</p>
-     */
     inline MultiConditionalSplitActivity& WithBranches(Aws::Vector<MultiConditionalBranch>&& value) { SetBranches(std::move(value)); return *this;}
-
-    /**
-     * <p>The paths for the activity, including the conditions for entering each path
-     * and the activity to perform for each path.</p>
-     */
     inline MultiConditionalSplitActivity& AddBranches(const MultiConditionalBranch& value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
-
-    /**
-     * <p>The paths for the activity, including the conditions for entering each path
-     * and the activity to perform for each path.</p>
-     */
     inline MultiConditionalSplitActivity& AddBranches(MultiConditionalBranch&& value) { m_branchesHasBeenSet = true; m_branches.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the activity to perform for participants who don't
      * meet any of the conditions specified for other paths in the activity.</p>
      */
     inline const Aws::String& GetDefaultActivity() const{ return m_defaultActivity; }
-
-    /**
-     * <p>The unique identifier for the activity to perform for participants who don't
-     * meet any of the conditions specified for other paths in the activity.</p>
-     */
     inline bool DefaultActivityHasBeenSet() const { return m_defaultActivityHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the activity to perform for participants who don't
-     * meet any of the conditions specified for other paths in the activity.</p>
-     */
     inline void SetDefaultActivity(const Aws::String& value) { m_defaultActivityHasBeenSet = true; m_defaultActivity = value; }
-
-    /**
-     * <p>The unique identifier for the activity to perform for participants who don't
-     * meet any of the conditions specified for other paths in the activity.</p>
-     */
     inline void SetDefaultActivity(Aws::String&& value) { m_defaultActivityHasBeenSet = true; m_defaultActivity = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the activity to perform for participants who don't
-     * meet any of the conditions specified for other paths in the activity.</p>
-     */
     inline void SetDefaultActivity(const char* value) { m_defaultActivityHasBeenSet = true; m_defaultActivity.assign(value); }
-
-    /**
-     * <p>The unique identifier for the activity to perform for participants who don't
-     * meet any of the conditions specified for other paths in the activity.</p>
-     */
     inline MultiConditionalSplitActivity& WithDefaultActivity(const Aws::String& value) { SetDefaultActivity(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the activity to perform for participants who don't
-     * meet any of the conditions specified for other paths in the activity.</p>
-     */
     inline MultiConditionalSplitActivity& WithDefaultActivity(Aws::String&& value) { SetDefaultActivity(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the activity to perform for participants who don't
-     * meet any of the conditions specified for other paths in the activity.</p>
-     */
     inline MultiConditionalSplitActivity& WithDefaultActivity(const char* value) { SetDefaultActivity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of time to wait or the date and time when Amazon Pinpoint
      * determines whether the conditions are met.</p>
      */
     inline const WaitTime& GetEvaluationWaitTime() const{ return m_evaluationWaitTime; }
-
-    /**
-     * <p>The amount of time to wait or the date and time when Amazon Pinpoint
-     * determines whether the conditions are met.</p>
-     */
     inline bool EvaluationWaitTimeHasBeenSet() const { return m_evaluationWaitTimeHasBeenSet; }
-
-    /**
-     * <p>The amount of time to wait or the date and time when Amazon Pinpoint
-     * determines whether the conditions are met.</p>
-     */
     inline void SetEvaluationWaitTime(const WaitTime& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = value; }
-
-    /**
-     * <p>The amount of time to wait or the date and time when Amazon Pinpoint
-     * determines whether the conditions are met.</p>
-     */
     inline void SetEvaluationWaitTime(WaitTime&& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = std::move(value); }
-
-    /**
-     * <p>The amount of time to wait or the date and time when Amazon Pinpoint
-     * determines whether the conditions are met.</p>
-     */
     inline MultiConditionalSplitActivity& WithEvaluationWaitTime(const WaitTime& value) { SetEvaluationWaitTime(value); return *this;}
-
-    /**
-     * <p>The amount of time to wait or the date and time when Amazon Pinpoint
-     * determines whether the conditions are met.</p>
-     */
     inline MultiConditionalSplitActivity& WithEvaluationWaitTime(WaitTime&& value) { SetEvaluationWaitTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MultiConditionalBranch> m_branches;

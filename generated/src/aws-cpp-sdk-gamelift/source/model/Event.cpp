@@ -25,18 +25,14 @@ Event::Event() :
     m_eventCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
-    m_preSignedLogUrlHasBeenSet(false)
+    m_preSignedLogUrlHasBeenSet(false),
+    m_count(0),
+    m_countHasBeenSet(false)
 {
 }
 
-Event::Event(JsonView jsonValue) : 
-    m_eventIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_eventCode(EventCode::NOT_SET),
-    m_eventCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_preSignedLogUrlHasBeenSet(false)
+Event::Event(JsonView jsonValue)
+  : Event()
 {
   *this = jsonValue;
 }
@@ -85,6 +81,13 @@ Event& Event::operator =(JsonView jsonValue)
     m_preSignedLogUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Count"))
+  {
+    m_count = jsonValue.GetInt64("Count");
+
+    m_countHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +126,12 @@ JsonValue Event::Jsonize() const
   if(m_preSignedLogUrlHasBeenSet)
   {
    payload.WithString("PreSignedLogUrl", m_preSignedLogUrl);
+
+  }
+
+  if(m_countHasBeenSet)
+  {
+   payload.WithInt64("Count", m_count);
 
   }
 

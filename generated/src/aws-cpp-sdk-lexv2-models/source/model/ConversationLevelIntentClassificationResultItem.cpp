@@ -25,10 +25,8 @@ ConversationLevelIntentClassificationResultItem::ConversationLevelIntentClassifi
 {
 }
 
-ConversationLevelIntentClassificationResultItem::ConversationLevelIntentClassificationResultItem(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_matchResult(TestResultMatchStatus::NOT_SET),
-    m_matchResultHasBeenSet(false)
+ConversationLevelIntentClassificationResultItem::ConversationLevelIntentClassificationResultItem(JsonView jsonValue)
+  : ConversationLevelIntentClassificationResultItem()
 {
   *this = jsonValue;
 }

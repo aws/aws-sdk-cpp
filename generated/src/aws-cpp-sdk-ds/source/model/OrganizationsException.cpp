@@ -24,9 +24,8 @@ OrganizationsException::OrganizationsException() :
 {
 }
 
-OrganizationsException::OrganizationsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+OrganizationsException::OrganizationsException(JsonView jsonValue)
+  : OrganizationsException()
 {
   *this = jsonValue;
 }

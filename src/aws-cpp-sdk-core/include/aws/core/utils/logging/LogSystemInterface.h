@@ -37,6 +37,10 @@ namespace Aws
                  */
                 virtual void Log(LogLevel logLevel, const char* tag, const char* formatStr, ...) = 0;
                 /**
+                 * va_list overload for Log, avoid using this as well.
+                 */
+                virtual void vaLog(LogLevel logLevel, const char* tag, const char* formatStr, va_list args) = 0;
+                /**
                 * Writes the stream to the output stream.
                 */
                 virtual void LogStream(LogLevel logLevel, const char* tag, const Aws::OStringStream &messageStream) = 0;
@@ -44,6 +48,10 @@ namespace Aws
                  * Writes any buffered messages to the underlying device if the logger supports buffering.
                  */
                 virtual void Flush() = 0;
+                /**
+                 * Stops logging on this logger without destroying the object.
+                 */
+                virtual void Stop() { return; };
             };
 
         } // namespace Logging

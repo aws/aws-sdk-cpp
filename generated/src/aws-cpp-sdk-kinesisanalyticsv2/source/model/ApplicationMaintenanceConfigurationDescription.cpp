@@ -24,9 +24,8 @@ ApplicationMaintenanceConfigurationDescription::ApplicationMaintenanceConfigurat
 {
 }
 
-ApplicationMaintenanceConfigurationDescription::ApplicationMaintenanceConfigurationDescription(JsonView jsonValue) : 
-    m_applicationMaintenanceWindowStartTimeHasBeenSet(false),
-    m_applicationMaintenanceWindowEndTimeHasBeenSet(false)
+ApplicationMaintenanceConfigurationDescription::ApplicationMaintenanceConfigurationDescription(JsonView jsonValue)
+  : ApplicationMaintenanceConfigurationDescription()
 {
   *this = jsonValue;
 }

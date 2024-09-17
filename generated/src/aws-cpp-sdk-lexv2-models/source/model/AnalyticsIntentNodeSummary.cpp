@@ -30,15 +30,8 @@ AnalyticsIntentNodeSummary::AnalyticsIntentNodeSummary() :
 {
 }
 
-AnalyticsIntentNodeSummary::AnalyticsIntentNodeSummary(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_intentPathHasBeenSet(false),
-    m_intentCount(0),
-    m_intentCountHasBeenSet(false),
-    m_intentLevel(0),
-    m_intentLevelHasBeenSet(false),
-    m_nodeType(AnalyticsNodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false)
+AnalyticsIntentNodeSummary::AnalyticsIntentNodeSummary(JsonView jsonValue)
+  : AnalyticsIntentNodeSummary()
 {
   *this = jsonValue;
 }

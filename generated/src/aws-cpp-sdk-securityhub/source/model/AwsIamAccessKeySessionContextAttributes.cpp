@@ -25,10 +25,8 @@ AwsIamAccessKeySessionContextAttributes::AwsIamAccessKeySessionContextAttributes
 {
 }
 
-AwsIamAccessKeySessionContextAttributes::AwsIamAccessKeySessionContextAttributes(JsonView jsonValue) : 
-    m_mfaAuthenticated(false),
-    m_mfaAuthenticatedHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+AwsIamAccessKeySessionContextAttributes::AwsIamAccessKeySessionContextAttributes(JsonView jsonValue)
+  : AwsIamAccessKeySessionContextAttributes()
 {
   *this = jsonValue;
 }

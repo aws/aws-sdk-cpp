@@ -32,54 +32,19 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
+     * <p>The ID of the legal hold.</p>
      */
     inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
-
-    /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
-     */
     inline bool LegalHoldIdHasBeenSet() const { return m_legalHoldIdHasBeenSet; }
-
-    /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
-     */
     inline void SetLegalHoldId(const Aws::String& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = value; }
-
-    /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
-     */
     inline void SetLegalHoldId(Aws::String&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::move(value); }
-
-    /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
-     */
     inline void SetLegalHoldId(const char* value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId.assign(value); }
-
-    /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
-     */
     inline GetLegalHoldRequest& WithLegalHoldId(const Aws::String& value) { SetLegalHoldId(value); return *this;}
-
-    /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
-     */
     inline GetLegalHoldRequest& WithLegalHoldId(Aws::String&& value) { SetLegalHoldId(std::move(value)); return *this;}
-
-    /**
-     * <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is
-     * associated with a specific legal hold.</p>
-     */
     inline GetLegalHoldRequest& WithLegalHoldId(const char* value) { SetLegalHoldId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_legalHoldId;

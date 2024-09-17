@@ -23,9 +23,8 @@ GetProviderServiceResult::GetProviderServiceResult() :
 {
 }
 
-GetProviderServiceResult::GetProviderServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_anonymizedOutput(false),
-    m_providerServiceType(ServiceType::NOT_SET)
+GetProviderServiceResult::GetProviderServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProviderServiceResult()
 {
   *this = result;
 }
@@ -36,6 +35,12 @@ GetProviderServiceResult& GetProviderServiceResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("anonymizedOutput"))
   {
     m_anonymizedOutput = jsonValue.GetBool("anonymizedOutput");
+
+  }
+
+  if(jsonValue.ValueExists("providerComponentSchema"))
+  {
+    m_providerComponentSchema = jsonValue.GetObject("providerComponentSchema");
 
   }
 
@@ -57,9 +62,21 @@ GetProviderServiceResult& GetProviderServiceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("providerIdNameSpaceConfiguration"))
+  {
+    m_providerIdNameSpaceConfiguration = jsonValue.GetObject("providerIdNameSpaceConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("providerIntermediateDataAccessConfiguration"))
   {
     m_providerIntermediateDataAccessConfiguration = jsonValue.GetObject("providerIntermediateDataAccessConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("providerJobConfiguration"))
+  {
+    m_providerJobConfiguration = jsonValue.GetObject("providerJobConfiguration");
 
   }
 

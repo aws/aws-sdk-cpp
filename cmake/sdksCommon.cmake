@@ -167,6 +167,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "monitoring:tests/aws-cpp-sdk-monitoring-integ
 list(APPEND SDK_TEST_PROJECT_LIST "rds:tests/aws-cpp-sdk-rds-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "redshift:tests/aws-cpp-sdk-redshift-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3:tests/aws-cpp-sdk-s3-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "s3:tests/aws-cpp-sdk-s3-unit-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3-crt:tests/aws-cpp-sdk-s3-crt-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3-encryption:tests/aws-cpp-sdk-s3-encryption-tests,tests/aws-cpp-sdk-s3-encryption-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3control:tests/aws-cpp-sdk-s3control-integration-tests")
@@ -208,6 +209,7 @@ list(APPEND TEST_DEPENDENCY_LIST "s3control:s3,access-management,cognito-identit
 list(APPEND TEST_DEPENDENCY_LIST "sqs:access-management,cognito-identity,iam,core")
 list(APPEND TEST_DEPENDENCY_LIST "text-to-speech:polly,core")
 list(APPEND TEST_DEPENDENCY_LIST "transfer:s3,core")
+list(APPEND TEST_DEPENDENCY_LIST "logs:access-management,cognito-identity,iam,core")
 
 # make a list of the generated clients
 set(GENERATED_SERVICE_LIST "")

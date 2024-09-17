@@ -28,13 +28,8 @@ KeyUsagePropertyFlags::KeyUsagePropertyFlags() :
 {
 }
 
-KeyUsagePropertyFlags::KeyUsagePropertyFlags(JsonView jsonValue) : 
-    m_decrypt(false),
-    m_decryptHasBeenSet(false),
-    m_keyAgreement(false),
-    m_keyAgreementHasBeenSet(false),
-    m_sign(false),
-    m_signHasBeenSet(false)
+KeyUsagePropertyFlags::KeyUsagePropertyFlags(JsonView jsonValue)
+  : KeyUsagePropertyFlags()
 {
   *this = jsonValue;
 }

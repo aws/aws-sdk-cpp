@@ -33,18 +33,8 @@ ComponentStatusData::ComponentStatusData() :
 {
 }
 
-ComponentStatusData::ComponentStatusData(JsonView jsonValue) : 
-    m_bytesReceived(0),
-    m_bytesReceivedHasBeenSet(false),
-    m_bytesSent(0),
-    m_bytesSentHasBeenSet(false),
-    m_capabilityArnHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_dataflowIdHasBeenSet(false),
-    m_packetsDropped(0),
-    m_packetsDroppedHasBeenSet(false),
-    m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ComponentStatusData::ComponentStatusData(JsonView jsonValue)
+  : ComponentStatusData()
 {
   *this = jsonValue;
 }

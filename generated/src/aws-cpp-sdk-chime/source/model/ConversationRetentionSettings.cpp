@@ -24,9 +24,8 @@ ConversationRetentionSettings::ConversationRetentionSettings() :
 {
 }
 
-ConversationRetentionSettings::ConversationRetentionSettings(JsonView jsonValue) : 
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false)
+ConversationRetentionSettings::ConversationRetentionSettings(JsonView jsonValue)
+  : ConversationRetentionSettings()
 {
   *this = jsonValue;
 }

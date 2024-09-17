@@ -26,9 +26,8 @@ IpamCidrAuthorizationContext::IpamCidrAuthorizationContext() :
 {
 }
 
-IpamCidrAuthorizationContext::IpamCidrAuthorizationContext(const XmlNode& xmlNode) : 
-    m_messageHasBeenSet(false),
-    m_signatureHasBeenSet(false)
+IpamCidrAuthorizationContext::IpamCidrAuthorizationContext(const XmlNode& xmlNode)
+  : IpamCidrAuthorizationContext()
 {
   *this = xmlNode;
 }

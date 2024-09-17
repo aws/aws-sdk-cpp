@@ -32,54 +32,20 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the connector that you want to
      * describe.</p>
      */
     inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the connector that you want to
-     * describe.</p>
-     */
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the connector that you want to
-     * describe.</p>
-     */
     inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the connector that you want to
-     * describe.</p>
-     */
     inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the connector that you want to
-     * describe.</p>
-     */
     inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the connector that you want to
-     * describe.</p>
-     */
     inline DescribeConnectorRequest& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the connector that you want to
-     * describe.</p>
-     */
     inline DescribeConnectorRequest& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the connector that you want to
-     * describe.</p>
-     */
     inline DescribeConnectorRequest& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectorArn;

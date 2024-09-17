@@ -32,46 +32,19 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
      */
     inline const Aws::String& GetServiceNetworkServiceAssociationIdentifier() const{ return m_serviceNetworkServiceAssociationIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline bool ServiceNetworkServiceAssociationIdentifierHasBeenSet() const { return m_serviceNetworkServiceAssociationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline void SetServiceNetworkServiceAssociationIdentifier(const Aws::String& value) { m_serviceNetworkServiceAssociationIdentifierHasBeenSet = true; m_serviceNetworkServiceAssociationIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline void SetServiceNetworkServiceAssociationIdentifier(Aws::String&& value) { m_serviceNetworkServiceAssociationIdentifierHasBeenSet = true; m_serviceNetworkServiceAssociationIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline void SetServiceNetworkServiceAssociationIdentifier(const char* value) { m_serviceNetworkServiceAssociationIdentifierHasBeenSet = true; m_serviceNetworkServiceAssociationIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline DeleteServiceNetworkServiceAssociationRequest& WithServiceNetworkServiceAssociationIdentifier(const Aws::String& value) { SetServiceNetworkServiceAssociationIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline DeleteServiceNetworkServiceAssociationRequest& WithServiceNetworkServiceAssociationIdentifier(Aws::String&& value) { SetServiceNetworkServiceAssociationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline DeleteServiceNetworkServiceAssociationRequest& WithServiceNetworkServiceAssociationIdentifier(const char* value) { SetServiceNetworkServiceAssociationIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceNetworkServiceAssociationIdentifier;

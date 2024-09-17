@@ -39,62 +39,21 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
      * <code>Part</code> with your request, the service sends back an HTTP 400
      * response.</p>
      */
     inline const Aws::Vector<CompletedPart>& GetParts() const{ return m_parts; }
-
-    /**
-     * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
-     * <code>Part</code> with your request, the service sends back an HTTP 400
-     * response.</p>
-     */
     inline bool PartsHasBeenSet() const { return m_partsHasBeenSet; }
-
-    /**
-     * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
-     * <code>Part</code> with your request, the service sends back an HTTP 400
-     * response.</p>
-     */
     inline void SetParts(const Aws::Vector<CompletedPart>& value) { m_partsHasBeenSet = true; m_parts = value; }
-
-    /**
-     * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
-     * <code>Part</code> with your request, the service sends back an HTTP 400
-     * response.</p>
-     */
     inline void SetParts(Aws::Vector<CompletedPart>&& value) { m_partsHasBeenSet = true; m_parts = std::move(value); }
-
-    /**
-     * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
-     * <code>Part</code> with your request, the service sends back an HTTP 400
-     * response.</p>
-     */
     inline CompletedMultipartUpload& WithParts(const Aws::Vector<CompletedPart>& value) { SetParts(value); return *this;}
-
-    /**
-     * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
-     * <code>Part</code> with your request, the service sends back an HTTP 400
-     * response.</p>
-     */
     inline CompletedMultipartUpload& WithParts(Aws::Vector<CompletedPart>&& value) { SetParts(std::move(value)); return *this;}
-
-    /**
-     * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
-     * <code>Part</code> with your request, the service sends back an HTTP 400
-     * response.</p>
-     */
     inline CompletedMultipartUpload& AddParts(const CompletedPart& value) { m_partsHasBeenSet = true; m_parts.push_back(value); return *this; }
-
-    /**
-     * <p>Array of CompletedPart data types.</p> <p>If you do not supply a valid
-     * <code>Part</code> with your request, the service sends back an HTTP 400
-     * response.</p>
-     */
     inline CompletedMultipartUpload& AddParts(CompletedPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CompletedPart> m_parts;

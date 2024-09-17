@@ -40,77 +40,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline LoadPermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline LoadPermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline LoadPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the group.</p>
      */
     inline const PermissionGroup& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline LoadPermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline LoadPermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userId;

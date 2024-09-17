@@ -38,53 +38,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The deleted replication task.</p>
      */
     inline const ReplicationTask& GetReplicationTask() const{ return m_replicationTask; }
-
-    /**
-     * <p>The deleted replication task.</p>
-     */
     inline void SetReplicationTask(const ReplicationTask& value) { m_replicationTask = value; }
-
-    /**
-     * <p>The deleted replication task.</p>
-     */
     inline void SetReplicationTask(ReplicationTask&& value) { m_replicationTask = std::move(value); }
-
-    /**
-     * <p>The deleted replication task.</p>
-     */
     inline DeleteReplicationTaskResult& WithReplicationTask(const ReplicationTask& value) { SetReplicationTask(value); return *this;}
-
-    /**
-     * <p>The deleted replication task.</p>
-     */
     inline DeleteReplicationTaskResult& WithReplicationTask(ReplicationTask&& value) { SetReplicationTask(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteReplicationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteReplicationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteReplicationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReplicationTask m_replicationTask;

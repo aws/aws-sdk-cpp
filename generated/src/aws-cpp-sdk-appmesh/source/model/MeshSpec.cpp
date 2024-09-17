@@ -24,9 +24,8 @@ MeshSpec::MeshSpec() :
 {
 }
 
-MeshSpec::MeshSpec(JsonView jsonValue) : 
-    m_egressFilterHasBeenSet(false),
-    m_serviceDiscoveryHasBeenSet(false)
+MeshSpec::MeshSpec(JsonView jsonValue)
+  : MeshSpec()
 {
   *this = jsonValue;
 }

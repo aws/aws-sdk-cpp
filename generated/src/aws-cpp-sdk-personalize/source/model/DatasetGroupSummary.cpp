@@ -30,15 +30,8 @@ DatasetGroupSummary::DatasetGroupSummary() :
 {
 }
 
-DatasetGroupSummary::DatasetGroupSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false)
+DatasetGroupSummary::DatasetGroupSummary(JsonView jsonValue)
+  : DatasetGroupSummary()
 {
   *this = jsonValue;
 }

@@ -38,75 +38,43 @@ namespace Model
     AWS_WELLARCHITECTED_API GetLensReviewReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-
-    
     inline GetLensReviewReportResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline GetLensReviewReportResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline GetLensReviewReportResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
-
-    
     inline void SetMilestoneNumber(int value) { m_milestoneNumber = value; }
-
-    
     inline GetLensReviewReportResult& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const LensReviewReport& GetLensReviewReport() const{ return m_lensReviewReport; }
-
-    
     inline void SetLensReviewReport(const LensReviewReport& value) { m_lensReviewReport = value; }
-
-    
     inline void SetLensReviewReport(LensReviewReport&& value) { m_lensReviewReport = std::move(value); }
-
-    
     inline GetLensReviewReportResult& WithLensReviewReport(const LensReviewReport& value) { SetLensReviewReport(value); return *this;}
-
-    
     inline GetLensReviewReportResult& WithLensReviewReport(LensReviewReport&& value) { SetLensReviewReport(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLensReviewReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLensReviewReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLensReviewReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

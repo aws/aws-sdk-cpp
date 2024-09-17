@@ -23,8 +23,8 @@ StopExecutionTrigger::StopExecutionTrigger() :
 {
 }
 
-StopExecutionTrigger::StopExecutionTrigger(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false)
+StopExecutionTrigger::StopExecutionTrigger(JsonView jsonValue)
+  : StopExecutionTrigger()
 {
   *this = jsonValue;
 }

@@ -40,47 +40,25 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The minimum value in Mbps.</p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p>The minimum value in Mbps.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The minimum value in Mbps.</p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The minimum value in Mbps.</p>
-     */
     inline BaselineEbsBandwidthMbpsRequest& WithMin(int value) { SetMin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum value in Mbps.</p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum value in Mbps.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum value in Mbps.</p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum value in Mbps.</p>
-     */
     inline BaselineEbsBandwidthMbpsRequest& WithMax(int value) { SetMax(value); return *this;}
-
+    ///@}
   private:
 
     int m_min;

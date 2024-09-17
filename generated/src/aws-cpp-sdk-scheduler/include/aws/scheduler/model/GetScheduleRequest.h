@@ -38,103 +38,35 @@ namespace Model
     AWS_SCHEDULER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the schedule group associated with this schedule. If you omit
      * this, EventBridge Scheduler assumes that the schedule is associated with the
      * default group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The name of the schedule group associated with this schedule. If you omit
-     * this, EventBridge Scheduler assumes that the schedule is associated with the
-     * default group.</p>
-     */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the schedule group associated with this schedule. If you omit
-     * this, EventBridge Scheduler assumes that the schedule is associated with the
-     * default group.</p>
-     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The name of the schedule group associated with this schedule. If you omit
-     * this, EventBridge Scheduler assumes that the schedule is associated with the
-     * default group.</p>
-     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The name of the schedule group associated with this schedule. If you omit
-     * this, EventBridge Scheduler assumes that the schedule is associated with the
-     * default group.</p>
-     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The name of the schedule group associated with this schedule. If you omit
-     * this, EventBridge Scheduler assumes that the schedule is associated with the
-     * default group.</p>
-     */
     inline GetScheduleRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the schedule group associated with this schedule. If you omit
-     * this, EventBridge Scheduler assumes that the schedule is associated with the
-     * default group.</p>
-     */
     inline GetScheduleRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schedule group associated with this schedule. If you omit
-     * this, EventBridge Scheduler assumes that the schedule is associated with the
-     * default group.</p>
-     */
     inline GetScheduleRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the schedule to retrieve.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the schedule to retrieve.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the schedule to retrieve.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the schedule to retrieve.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the schedule to retrieve.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the schedule to retrieve.</p>
-     */
     inline GetScheduleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the schedule to retrieve.</p>
-     */
     inline GetScheduleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schedule to retrieve.</p>
-     */
     inline GetScheduleRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupName;

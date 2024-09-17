@@ -29,14 +29,8 @@ AwsEc2VpcPeeringConnectionVpcInfoDetails::AwsEc2VpcPeeringConnectionVpcInfoDetai
 {
 }
 
-AwsEc2VpcPeeringConnectionVpcInfoDetails::AwsEc2VpcPeeringConnectionVpcInfoDetails(JsonView jsonValue) : 
-    m_cidrBlockHasBeenSet(false),
-    m_cidrBlockSetHasBeenSet(false),
-    m_ipv6CidrBlockSetHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_peeringOptionsHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+AwsEc2VpcPeeringConnectionVpcInfoDetails::AwsEc2VpcPeeringConnectionVpcInfoDetails(JsonView jsonValue)
+  : AwsEc2VpcPeeringConnectionVpcInfoDetails()
 {
   *this = jsonValue;
 }

@@ -32,17 +32,8 @@ EcsTaskDetails::EcsTaskDetails() :
 {
 }
 
-EcsTaskDetails::EcsTaskDetails(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_definitionArnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_taskCreatedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_groupHasBeenSet(false)
+EcsTaskDetails::EcsTaskDetails(JsonView jsonValue)
+  : EcsTaskDetails()
 {
   *this = jsonValue;
 }

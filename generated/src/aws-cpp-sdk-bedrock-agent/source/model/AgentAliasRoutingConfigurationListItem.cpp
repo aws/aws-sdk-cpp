@@ -19,12 +19,13 @@ namespace Model
 {
 
 AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem() : 
-    m_agentVersionHasBeenSet(false)
+    m_agentVersionHasBeenSet(false),
+    m_provisionedThroughputHasBeenSet(false)
 {
 }
 
-AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem(JsonView jsonValue) : 
-    m_agentVersionHasBeenSet(false)
+AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem(JsonView jsonValue)
+  : AgentAliasRoutingConfigurationListItem()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ AgentAliasRoutingConfigurationListItem& AgentAliasRoutingConfigurationListItem::
     m_agentVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("provisionedThroughput"))
+  {
+    m_provisionedThroughput = jsonValue.GetString("provisionedThroughput");
+
+    m_provisionedThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue AgentAliasRoutingConfigurationListItem::Jsonize() const
   if(m_agentVersionHasBeenSet)
   {
    payload.WithString("agentVersion", m_agentVersion);
+
+  }
+
+  if(m_provisionedThroughputHasBeenSet)
+  {
+   payload.WithString("provisionedThroughput", m_provisionedThroughput);
 
   }
 

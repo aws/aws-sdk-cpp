@@ -27,10 +27,8 @@ LBCookieStickinessPolicy::LBCookieStickinessPolicy() :
 {
 }
 
-LBCookieStickinessPolicy::LBCookieStickinessPolicy(const XmlNode& xmlNode) : 
-    m_policyNameHasBeenSet(false),
-    m_cookieExpirationPeriod(0),
-    m_cookieExpirationPeriodHasBeenSet(false)
+LBCookieStickinessPolicy::LBCookieStickinessPolicy(const XmlNode& xmlNode)
+  : LBCookieStickinessPolicy()
 {
   *this = xmlNode;
 }

@@ -27,12 +27,8 @@ BatchChannelMemberships::BatchChannelMemberships() :
 {
 }
 
-BatchChannelMemberships::BatchChannelMemberships(JsonView jsonValue) : 
-    m_invitedByHasBeenSet(false),
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_channelArnHasBeenSet(false)
+BatchChannelMemberships::BatchChannelMemberships(JsonView jsonValue)
+  : BatchChannelMemberships()
 {
   *this = jsonValue;
 }

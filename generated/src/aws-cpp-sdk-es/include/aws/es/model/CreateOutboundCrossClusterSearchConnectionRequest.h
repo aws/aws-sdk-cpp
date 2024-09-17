@@ -38,128 +38,46 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the <code><a>DomainInformation</a></code> for the source
      * Elasticsearch domain.</p>
      */
     inline const DomainInformation& GetSourceDomainInfo() const{ return m_sourceDomainInfo; }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the source
-     * Elasticsearch domain.</p>
-     */
     inline bool SourceDomainInfoHasBeenSet() const { return m_sourceDomainInfoHasBeenSet; }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the source
-     * Elasticsearch domain.</p>
-     */
     inline void SetSourceDomainInfo(const DomainInformation& value) { m_sourceDomainInfoHasBeenSet = true; m_sourceDomainInfo = value; }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the source
-     * Elasticsearch domain.</p>
-     */
     inline void SetSourceDomainInfo(DomainInformation&& value) { m_sourceDomainInfoHasBeenSet = true; m_sourceDomainInfo = std::move(value); }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the source
-     * Elasticsearch domain.</p>
-     */
     inline CreateOutboundCrossClusterSearchConnectionRequest& WithSourceDomainInfo(const DomainInformation& value) { SetSourceDomainInfo(value); return *this;}
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the source
-     * Elasticsearch domain.</p>
-     */
     inline CreateOutboundCrossClusterSearchConnectionRequest& WithSourceDomainInfo(DomainInformation&& value) { SetSourceDomainInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the <code><a>DomainInformation</a></code> for the destination
      * Elasticsearch domain.</p>
      */
     inline const DomainInformation& GetDestinationDomainInfo() const{ return m_destinationDomainInfo; }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the destination
-     * Elasticsearch domain.</p>
-     */
     inline bool DestinationDomainInfoHasBeenSet() const { return m_destinationDomainInfoHasBeenSet; }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the destination
-     * Elasticsearch domain.</p>
-     */
     inline void SetDestinationDomainInfo(const DomainInformation& value) { m_destinationDomainInfoHasBeenSet = true; m_destinationDomainInfo = value; }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the destination
-     * Elasticsearch domain.</p>
-     */
     inline void SetDestinationDomainInfo(DomainInformation&& value) { m_destinationDomainInfoHasBeenSet = true; m_destinationDomainInfo = std::move(value); }
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the destination
-     * Elasticsearch domain.</p>
-     */
     inline CreateOutboundCrossClusterSearchConnectionRequest& WithDestinationDomainInfo(const DomainInformation& value) { SetDestinationDomainInfo(value); return *this;}
-
-    /**
-     * <p>Specifies the <code><a>DomainInformation</a></code> for the destination
-     * Elasticsearch domain.</p>
-     */
     inline CreateOutboundCrossClusterSearchConnectionRequest& WithDestinationDomainInfo(DomainInformation&& value) { SetDestinationDomainInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the connection alias that will be used by the customer for this
      * connection.</p>
      */
     inline const Aws::String& GetConnectionAlias() const{ return m_connectionAlias; }
-
-    /**
-     * <p>Specifies the connection alias that will be used by the customer for this
-     * connection.</p>
-     */
     inline bool ConnectionAliasHasBeenSet() const { return m_connectionAliasHasBeenSet; }
-
-    /**
-     * <p>Specifies the connection alias that will be used by the customer for this
-     * connection.</p>
-     */
     inline void SetConnectionAlias(const Aws::String& value) { m_connectionAliasHasBeenSet = true; m_connectionAlias = value; }
-
-    /**
-     * <p>Specifies the connection alias that will be used by the customer for this
-     * connection.</p>
-     */
     inline void SetConnectionAlias(Aws::String&& value) { m_connectionAliasHasBeenSet = true; m_connectionAlias = std::move(value); }
-
-    /**
-     * <p>Specifies the connection alias that will be used by the customer for this
-     * connection.</p>
-     */
     inline void SetConnectionAlias(const char* value) { m_connectionAliasHasBeenSet = true; m_connectionAlias.assign(value); }
-
-    /**
-     * <p>Specifies the connection alias that will be used by the customer for this
-     * connection.</p>
-     */
     inline CreateOutboundCrossClusterSearchConnectionRequest& WithConnectionAlias(const Aws::String& value) { SetConnectionAlias(value); return *this;}
-
-    /**
-     * <p>Specifies the connection alias that will be used by the customer for this
-     * connection.</p>
-     */
     inline CreateOutboundCrossClusterSearchConnectionRequest& WithConnectionAlias(Aws::String&& value) { SetConnectionAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the connection alias that will be used by the customer for this
-     * connection.</p>
-     */
     inline CreateOutboundCrossClusterSearchConnectionRequest& WithConnectionAlias(const char* value) { SetConnectionAlias(value); return *this;}
-
+    ///@}
   private:
 
     DomainInformation m_sourceDomainInfo;

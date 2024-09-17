@@ -51,36 +51,8 @@ BackupJob::BackupJob() :
 {
 }
 
-BackupJob::BackupJob(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_backupJobIdHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultArnHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_state(BackupJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_percentDoneHasBeenSet(false),
-    m_backupSizeInBytes(0),
-    m_backupSizeInBytesHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_expectedCompletionDateHasBeenSet(false),
-    m_startByHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_bytesTransferred(0),
-    m_bytesTransferredHasBeenSet(false),
-    m_backupOptionsHasBeenSet(false),
-    m_backupTypeHasBeenSet(false),
-    m_parentJobIdHasBeenSet(false),
-    m_isParent(false),
-    m_isParentHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_initiationDateHasBeenSet(false),
-    m_messageCategoryHasBeenSet(false)
+BackupJob::BackupJob(JsonView jsonValue)
+  : BackupJob()
 {
   *this = jsonValue;
 }

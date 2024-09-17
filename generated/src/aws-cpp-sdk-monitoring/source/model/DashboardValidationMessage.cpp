@@ -26,9 +26,8 @@ DashboardValidationMessage::DashboardValidationMessage() :
 {
 }
 
-DashboardValidationMessage::DashboardValidationMessage(const XmlNode& xmlNode) : 
-    m_dataPathHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DashboardValidationMessage::DashboardValidationMessage(const XmlNode& xmlNode)
+  : DashboardValidationMessage()
 {
   *this = xmlNode;
 }

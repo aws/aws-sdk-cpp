@@ -24,7 +24,8 @@ namespace Model
     FAILED,
     TIMEOUT,
     ERROR_,
-    WAITING
+    WAITING,
+    EXPIRED
   };
 
 namespace JobRunStateMapper

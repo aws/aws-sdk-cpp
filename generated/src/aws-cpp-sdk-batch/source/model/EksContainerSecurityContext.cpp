@@ -25,6 +25,8 @@ EksContainerSecurityContext::EksContainerSecurityContext() :
     m_runAsGroupHasBeenSet(false),
     m_privileged(false),
     m_privilegedHasBeenSet(false),
+    m_allowPrivilegeEscalation(false),
+    m_allowPrivilegeEscalationHasBeenSet(false),
     m_readOnlyRootFilesystem(false),
     m_readOnlyRootFilesystemHasBeenSet(false),
     m_runAsNonRoot(false),
@@ -32,17 +34,8 @@ EksContainerSecurityContext::EksContainerSecurityContext() :
 {
 }
 
-EksContainerSecurityContext::EksContainerSecurityContext(JsonView jsonValue) : 
-    m_runAsUser(0),
-    m_runAsUserHasBeenSet(false),
-    m_runAsGroup(0),
-    m_runAsGroupHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_readOnlyRootFilesystem(false),
-    m_readOnlyRootFilesystemHasBeenSet(false),
-    m_runAsNonRoot(false),
-    m_runAsNonRootHasBeenSet(false)
+EksContainerSecurityContext::EksContainerSecurityContext(JsonView jsonValue)
+  : EksContainerSecurityContext()
 {
   *this = jsonValue;
 }
@@ -68,6 +61,13 @@ EksContainerSecurityContext& EksContainerSecurityContext::operator =(JsonView js
     m_privileged = jsonValue.GetBool("privileged");
 
     m_privilegedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("allowPrivilegeEscalation"))
+  {
+    m_allowPrivilegeEscalation = jsonValue.GetBool("allowPrivilegeEscalation");
+
+    m_allowPrivilegeEscalationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("readOnlyRootFilesystem"))
@@ -106,6 +106,12 @@ JsonValue EksContainerSecurityContext::Jsonize() const
   if(m_privilegedHasBeenSet)
   {
    payload.WithBool("privileged", m_privileged);
+
+  }
+
+  if(m_allowPrivilegeEscalationHasBeenSet)
+  {
+   payload.WithBool("allowPrivilegeEscalation", m_allowPrivilegeEscalation);
 
   }
 

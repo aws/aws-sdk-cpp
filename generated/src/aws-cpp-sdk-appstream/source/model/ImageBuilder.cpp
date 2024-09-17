@@ -39,32 +39,14 @@ ImageBuilder::ImageBuilder() :
     m_networkAccessConfigurationHasBeenSet(false),
     m_imageBuilderErrorsHasBeenSet(false),
     m_appstreamAgentVersionHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+    m_accessEndpointsHasBeenSet(false),
+    m_latestAppstreamAgentVersion(LatestAppstreamAgentVersion::NOT_SET),
+    m_latestAppstreamAgentVersionHasBeenSet(false)
 {
 }
 
-ImageBuilder::ImageBuilder(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_imageArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_state(ImageBuilderState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false),
-    m_networkAccessConfigurationHasBeenSet(false),
-    m_imageBuilderErrorsHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+ImageBuilder::ImageBuilder(JsonView jsonValue)
+  : ImageBuilder()
 {
   *this = jsonValue;
 }
@@ -203,6 +185,13 @@ ImageBuilder& ImageBuilder::operator =(JsonView jsonValue)
     m_accessEndpointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LatestAppstreamAgentVersion"))
+  {
+    m_latestAppstreamAgentVersion = LatestAppstreamAgentVersionMapper::GetLatestAppstreamAgentVersionForName(jsonValue.GetString("LatestAppstreamAgentVersion"));
+
+    m_latestAppstreamAgentVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -323,6 +312,11 @@ JsonValue ImageBuilder::Jsonize() const
    }
    payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
 
+  }
+
+  if(m_latestAppstreamAgentVersionHasBeenSet)
+  {
+   payload.WithString("LatestAppstreamAgentVersion", LatestAppstreamAgentVersionMapper::GetNameForLatestAppstreamAgentVersion(m_latestAppstreamAgentVersion));
   }
 
   return payload;

@@ -19,12 +19,13 @@ namespace Model
 {
 
 ClusterConfiguration::ClusterConfiguration() : 
-    m_executeCommandConfigurationHasBeenSet(false)
+    m_executeCommandConfigurationHasBeenSet(false),
+    m_managedStorageConfigurationHasBeenSet(false)
 {
 }
 
-ClusterConfiguration::ClusterConfiguration(JsonView jsonValue) : 
-    m_executeCommandConfigurationHasBeenSet(false)
+ClusterConfiguration::ClusterConfiguration(JsonView jsonValue)
+  : ClusterConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ ClusterConfiguration& ClusterConfiguration::operator =(JsonView jsonValue)
     m_executeCommandConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("managedStorageConfiguration"))
+  {
+    m_managedStorageConfiguration = jsonValue.GetObject("managedStorageConfiguration");
+
+    m_managedStorageConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue ClusterConfiguration::Jsonize() const
   if(m_executeCommandConfigurationHasBeenSet)
   {
    payload.WithObject("executeCommandConfiguration", m_executeCommandConfiguration.Jsonize());
+
+  }
+
+  if(m_managedStorageConfigurationHasBeenSet)
+  {
+   payload.WithObject("managedStorageConfiguration", m_managedStorageConfiguration.Jsonize());
 
   }
 

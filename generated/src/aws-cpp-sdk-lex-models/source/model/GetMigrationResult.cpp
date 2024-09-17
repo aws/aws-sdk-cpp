@@ -24,10 +24,8 @@ GetMigrationResult::GetMigrationResult() :
 {
 }
 
-GetMigrationResult::GetMigrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_v1BotLocale(Locale::NOT_SET),
-    m_migrationStatus(MigrationStatus::NOT_SET),
-    m_migrationStrategy(MigrationStrategy::NOT_SET)
+GetMigrationResult::GetMigrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetMigrationResult()
 {
   *this = result;
 }

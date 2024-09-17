@@ -24,9 +24,8 @@ BatchUpdatePartitionRequestEntry::BatchUpdatePartitionRequestEntry() :
 {
 }
 
-BatchUpdatePartitionRequestEntry::BatchUpdatePartitionRequestEntry(JsonView jsonValue) : 
-    m_partitionValueListHasBeenSet(false),
-    m_partitionInputHasBeenSet(false)
+BatchUpdatePartitionRequestEntry::BatchUpdatePartitionRequestEntry(JsonView jsonValue)
+  : BatchUpdatePartitionRequestEntry()
 {
   *this = jsonValue;
 }

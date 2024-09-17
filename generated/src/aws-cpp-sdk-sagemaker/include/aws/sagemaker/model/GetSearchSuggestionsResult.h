@@ -34,70 +34,30 @@ namespace Model
     AWS_SAGEMAKER_API GetSearchSuggestionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of property names for a <code>Resource</code> that match a
      * <code>SuggestionQuery</code>.</p>
      */
     inline const Aws::Vector<PropertyNameSuggestion>& GetPropertyNameSuggestions() const{ return m_propertyNameSuggestions; }
-
-    /**
-     * <p>A list of property names for a <code>Resource</code> that match a
-     * <code>SuggestionQuery</code>.</p>
-     */
     inline void SetPropertyNameSuggestions(const Aws::Vector<PropertyNameSuggestion>& value) { m_propertyNameSuggestions = value; }
-
-    /**
-     * <p>A list of property names for a <code>Resource</code> that match a
-     * <code>SuggestionQuery</code>.</p>
-     */
     inline void SetPropertyNameSuggestions(Aws::Vector<PropertyNameSuggestion>&& value) { m_propertyNameSuggestions = std::move(value); }
-
-    /**
-     * <p>A list of property names for a <code>Resource</code> that match a
-     * <code>SuggestionQuery</code>.</p>
-     */
     inline GetSearchSuggestionsResult& WithPropertyNameSuggestions(const Aws::Vector<PropertyNameSuggestion>& value) { SetPropertyNameSuggestions(value); return *this;}
-
-    /**
-     * <p>A list of property names for a <code>Resource</code> that match a
-     * <code>SuggestionQuery</code>.</p>
-     */
     inline GetSearchSuggestionsResult& WithPropertyNameSuggestions(Aws::Vector<PropertyNameSuggestion>&& value) { SetPropertyNameSuggestions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of property names for a <code>Resource</code> that match a
-     * <code>SuggestionQuery</code>.</p>
-     */
     inline GetSearchSuggestionsResult& AddPropertyNameSuggestions(const PropertyNameSuggestion& value) { m_propertyNameSuggestions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of property names for a <code>Resource</code> that match a
-     * <code>SuggestionQuery</code>.</p>
-     */
     inline GetSearchSuggestionsResult& AddPropertyNameSuggestions(PropertyNameSuggestion&& value) { m_propertyNameSuggestions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSearchSuggestionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSearchSuggestionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSearchSuggestionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PropertyNameSuggestion> m_propertyNameSuggestions;

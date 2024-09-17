@@ -23,8 +23,8 @@ EventTriggerDefinition::EventTriggerDefinition() :
 {
 }
 
-EventTriggerDefinition::EventTriggerDefinition(JsonView jsonValue) : 
-    m_eventResourceARNHasBeenSet(false)
+EventTriggerDefinition::EventTriggerDefinition(JsonView jsonValue)
+  : EventTriggerDefinition()
 {
   *this = jsonValue;
 }

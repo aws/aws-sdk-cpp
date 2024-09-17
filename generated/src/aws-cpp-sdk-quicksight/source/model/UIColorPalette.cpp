@@ -38,23 +38,8 @@ UIColorPalette::UIColorPalette() :
 {
 }
 
-UIColorPalette::UIColorPalette(JsonView jsonValue) : 
-    m_primaryForegroundHasBeenSet(false),
-    m_primaryBackgroundHasBeenSet(false),
-    m_secondaryForegroundHasBeenSet(false),
-    m_secondaryBackgroundHasBeenSet(false),
-    m_accentHasBeenSet(false),
-    m_accentForegroundHasBeenSet(false),
-    m_dangerHasBeenSet(false),
-    m_dangerForegroundHasBeenSet(false),
-    m_warningHasBeenSet(false),
-    m_warningForegroundHasBeenSet(false),
-    m_successHasBeenSet(false),
-    m_successForegroundHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_dimensionForegroundHasBeenSet(false),
-    m_measureHasBeenSet(false),
-    m_measureForegroundHasBeenSet(false)
+UIColorPalette::UIColorPalette(JsonView jsonValue)
+  : UIColorPalette()
 {
   *this = jsonValue;
 }

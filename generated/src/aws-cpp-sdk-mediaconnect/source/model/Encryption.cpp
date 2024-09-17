@@ -33,18 +33,8 @@ Encryption::Encryption() :
 {
 }
 
-Encryption::Encryption(JsonView jsonValue) : 
-    m_algorithm(Algorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_constantInitializationVectorHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_urlHasBeenSet(false)
+Encryption::Encryption(JsonView jsonValue)
+  : Encryption()
 {
   *this = jsonValue;
 }

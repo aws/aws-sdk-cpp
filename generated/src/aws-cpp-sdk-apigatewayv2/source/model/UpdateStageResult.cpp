@@ -23,9 +23,8 @@ UpdateStageResult::UpdateStageResult() :
 {
 }
 
-UpdateStageResult::UpdateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_apiGatewayManaged(false),
-    m_autoDeploy(false)
+UpdateStageResult::UpdateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateStageResult()
 {
   *this = result;
 }

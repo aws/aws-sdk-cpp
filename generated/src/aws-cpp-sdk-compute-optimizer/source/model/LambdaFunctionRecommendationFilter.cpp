@@ -25,10 +25,8 @@ LambdaFunctionRecommendationFilter::LambdaFunctionRecommendationFilter() :
 {
 }
 
-LambdaFunctionRecommendationFilter::LambdaFunctionRecommendationFilter(JsonView jsonValue) : 
-    m_name(LambdaFunctionRecommendationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+LambdaFunctionRecommendationFilter::LambdaFunctionRecommendationFilter(JsonView jsonValue)
+  : LambdaFunctionRecommendationFilter()
 {
   *this = jsonValue;
 }

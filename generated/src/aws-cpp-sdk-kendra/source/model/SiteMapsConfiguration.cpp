@@ -23,8 +23,8 @@ SiteMapsConfiguration::SiteMapsConfiguration() :
 {
 }
 
-SiteMapsConfiguration::SiteMapsConfiguration(JsonView jsonValue) : 
-    m_siteMapsHasBeenSet(false)
+SiteMapsConfiguration::SiteMapsConfiguration(JsonView jsonValue)
+  : SiteMapsConfiguration()
 {
   *this = jsonValue;
 }

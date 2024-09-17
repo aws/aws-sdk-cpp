@@ -24,9 +24,8 @@ GetSolFunctionInstanceMetadata::GetSolFunctionInstanceMetadata() :
 {
 }
 
-GetSolFunctionInstanceMetadata::GetSolFunctionInstanceMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+GetSolFunctionInstanceMetadata::GetSolFunctionInstanceMetadata(JsonView jsonValue)
+  : GetSolFunctionInstanceMetadata()
 {
   *this = jsonValue;
 }

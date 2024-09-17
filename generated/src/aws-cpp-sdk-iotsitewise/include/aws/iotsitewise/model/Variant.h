@@ -38,113 +38,49 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Asset property data of type string (sequence of characters).</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>Asset property data of type string (sequence of characters).</p>
-     */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>Asset property data of type string (sequence of characters).</p>
-     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>Asset property data of type string (sequence of characters).</p>
-     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>Asset property data of type string (sequence of characters).</p>
-     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>Asset property data of type string (sequence of characters).</p>
-     */
     inline Variant& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>Asset property data of type string (sequence of characters).</p>
-     */
     inline Variant& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Asset property data of type string (sequence of characters).</p>
-     */
     inline Variant& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>Asset property data of type integer (number that's greater than or equal to
-     * zero).</p>
+     * <p>Asset property data of type integer (whole number).</p>
      */
     inline int GetIntegerValue() const{ return m_integerValue; }
-
-    /**
-     * <p>Asset property data of type integer (number that's greater than or equal to
-     * zero).</p>
-     */
     inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }
-
-    /**
-     * <p>Asset property data of type integer (number that's greater than or equal to
-     * zero).</p>
-     */
     inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
-
-    /**
-     * <p>Asset property data of type integer (number that's greater than or equal to
-     * zero).</p>
-     */
     inline Variant& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Asset property data of type double (floating point number).</p>
      */
     inline double GetDoubleValue() const{ return m_doubleValue; }
-
-    /**
-     * <p>Asset property data of type double (floating point number).</p>
-     */
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
-
-    /**
-     * <p>Asset property data of type double (floating point number).</p>
-     */
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
-
-    /**
-     * <p>Asset property data of type double (floating point number).</p>
-     */
     inline Variant& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Asset property data of type Boolean (true or false).</p>
      */
     inline bool GetBooleanValue() const{ return m_booleanValue; }
-
-    /**
-     * <p>Asset property data of type Boolean (true or false).</p>
-     */
     inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
-
-    /**
-     * <p>Asset property data of type Boolean (true or false).</p>
-     */
     inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
-
-    /**
-     * <p>Asset property data of type Boolean (true or false).</p>
-     */
     inline Variant& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stringValue;

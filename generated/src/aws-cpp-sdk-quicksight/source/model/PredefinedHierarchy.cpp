@@ -25,10 +25,8 @@ PredefinedHierarchy::PredefinedHierarchy() :
 {
 }
 
-PredefinedHierarchy::PredefinedHierarchy(JsonView jsonValue) : 
-    m_hierarchyIdHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_drillDownFiltersHasBeenSet(false)
+PredefinedHierarchy::PredefinedHierarchy(JsonView jsonValue)
+  : PredefinedHierarchy()
 {
   *this = jsonValue;
 }

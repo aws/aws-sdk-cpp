@@ -25,10 +25,8 @@ FailureDetails::FailureDetails() :
 {
 }
 
-FailureDetails::FailureDetails(JsonView jsonValue) : 
-    m_failureStageHasBeenSet(false),
-    m_failureTypeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+FailureDetails::FailureDetails(JsonView jsonValue)
+  : FailureDetails()
 {
   *this = jsonValue;
 }

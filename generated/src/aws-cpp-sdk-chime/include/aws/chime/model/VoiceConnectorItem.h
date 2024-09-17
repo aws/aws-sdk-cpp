@@ -40,75 +40,31 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Chime Voice Connector ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
-
-    /**
-     * <p>The Amazon Chime Voice Connector ID.</p>
-     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-
-    /**
-     * <p>The Amazon Chime Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime Voice Connector ID.</p>
-     */
     inline VoiceConnectorItem& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime Voice Connector ID.</p>
-     */
     inline VoiceConnectorItem& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime Voice Connector ID.</p>
-     */
     inline VoiceConnectorItem& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
      * attempted first.</p>
      */
     inline int GetPriority() const{ return m_priority; }
-
-    /**
-     * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
-     * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first.</p>
-     */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
-     * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first.</p>
-     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
-     * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first.</p>
-     */
     inline VoiceConnectorItem& WithPriority(int value) { SetPriority(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;

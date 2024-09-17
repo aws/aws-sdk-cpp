@@ -34,19 +34,8 @@ Step::Step() :
 {
 }
 
-Step::Step(JsonView jsonValue) : 
-    m_stepNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_logUrlHasBeenSet(false),
-    m_artifactsUrlHasBeenSet(false),
-    m_testArtifactsUrlHasBeenSet(false),
-    m_testConfigUrlHasBeenSet(false),
-    m_screenshotsHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_contextHasBeenSet(false)
+Step::Step(JsonView jsonValue)
+  : Step()
 {
   *this = jsonValue;
 }

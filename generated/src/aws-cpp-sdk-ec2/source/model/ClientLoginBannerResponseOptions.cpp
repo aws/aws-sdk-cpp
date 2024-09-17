@@ -27,10 +27,8 @@ ClientLoginBannerResponseOptions::ClientLoginBannerResponseOptions() :
 {
 }
 
-ClientLoginBannerResponseOptions::ClientLoginBannerResponseOptions(const XmlNode& xmlNode) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bannerTextHasBeenSet(false)
+ClientLoginBannerResponseOptions::ClientLoginBannerResponseOptions(const XmlNode& xmlNode)
+  : ClientLoginBannerResponseOptions()
 {
   *this = xmlNode;
 }

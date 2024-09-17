@@ -26,11 +26,8 @@ ProjectedMetric::ProjectedMetric() :
 {
 }
 
-ProjectedMetric::ProjectedMetric(JsonView jsonValue) : 
-    m_name(MetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ProjectedMetric::ProjectedMetric(JsonView jsonValue)
+  : ProjectedMetric()
 {
   *this = jsonValue;
 }

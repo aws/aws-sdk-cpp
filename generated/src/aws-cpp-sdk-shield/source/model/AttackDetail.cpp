@@ -30,15 +30,8 @@ AttackDetail::AttackDetail() :
 {
 }
 
-AttackDetail::AttackDetail(JsonView jsonValue) : 
-    m_attackIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_subResourcesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_attackCountersHasBeenSet(false),
-    m_attackPropertiesHasBeenSet(false),
-    m_mitigationsHasBeenSet(false)
+AttackDetail::AttackDetail(JsonView jsonValue)
+  : AttackDetail()
 {
   *this = jsonValue;
 }

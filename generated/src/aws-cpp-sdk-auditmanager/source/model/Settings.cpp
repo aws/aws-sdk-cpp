@@ -31,16 +31,8 @@ Settings::Settings() :
 {
 }
 
-Settings::Settings(JsonView jsonValue) : 
-    m_isAwsOrgEnabled(false),
-    m_isAwsOrgEnabledHasBeenSet(false),
-    m_snsTopicHasBeenSet(false),
-    m_defaultAssessmentReportsDestinationHasBeenSet(false),
-    m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_evidenceFinderEnablementHasBeenSet(false),
-    m_deregistrationPolicyHasBeenSet(false),
-    m_defaultExportDestinationHasBeenSet(false)
+Settings::Settings(JsonView jsonValue)
+  : Settings()
 {
   *this = jsonValue;
 }

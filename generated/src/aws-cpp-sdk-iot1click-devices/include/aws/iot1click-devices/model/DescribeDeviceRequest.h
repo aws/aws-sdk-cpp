@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT1CLICKDEVICESSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the device.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline DescribeDeviceRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline DescribeDeviceRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the device.</p>
-     */
     inline DescribeDeviceRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

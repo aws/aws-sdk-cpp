@@ -26,11 +26,8 @@ AwsStepFunctionStateMachineLoggingConfigurationDetails::AwsStepFunctionStateMach
 {
 }
 
-AwsStepFunctionStateMachineLoggingConfigurationDetails::AwsStepFunctionStateMachineLoggingConfigurationDetails(JsonView jsonValue) : 
-    m_destinationsHasBeenSet(false),
-    m_includeExecutionData(false),
-    m_includeExecutionDataHasBeenSet(false),
-    m_levelHasBeenSet(false)
+AwsStepFunctionStateMachineLoggingConfigurationDetails::AwsStepFunctionStateMachineLoggingConfigurationDetails(JsonView jsonValue)
+  : AwsStepFunctionStateMachineLoggingConfigurationDetails()
 {
   *this = jsonValue;
 }

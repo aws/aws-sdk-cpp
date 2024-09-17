@@ -25,6 +25,8 @@ Solution::Solution() :
     m_performHPOHasBeenSet(false),
     m_performAutoML(false),
     m_performAutoMLHasBeenSet(false),
+    m_performAutoTraining(false),
+    m_performAutoTrainingHasBeenSet(false),
     m_recipeArnHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
@@ -33,26 +35,13 @@ Solution::Solution() :
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestSolutionVersionHasBeenSet(false)
+    m_latestSolutionVersionHasBeenSet(false),
+    m_latestSolutionUpdateHasBeenSet(false)
 {
 }
 
-Solution::Solution(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_performHPO(false),
-    m_performHPOHasBeenSet(false),
-    m_performAutoML(false),
-    m_performAutoMLHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_solutionConfigHasBeenSet(false),
-    m_autoMLResultHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestSolutionVersionHasBeenSet(false)
+Solution::Solution(JsonView jsonValue)
+  : Solution()
 {
   *this = jsonValue;
 }
@@ -85,6 +74,13 @@ Solution& Solution::operator =(JsonView jsonValue)
     m_performAutoML = jsonValue.GetBool("performAutoML");
 
     m_performAutoMLHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("performAutoTraining"))
+  {
+    m_performAutoTraining = jsonValue.GetBool("performAutoTraining");
+
+    m_performAutoTrainingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("recipeArn"))
@@ -150,6 +146,13 @@ Solution& Solution::operator =(JsonView jsonValue)
     m_latestSolutionVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latestSolutionUpdate"))
+  {
+    m_latestSolutionUpdate = jsonValue.GetObject("latestSolutionUpdate");
+
+    m_latestSolutionUpdateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +181,12 @@ JsonValue Solution::Jsonize() const
   if(m_performAutoMLHasBeenSet)
   {
    payload.WithBool("performAutoML", m_performAutoML);
+
+  }
+
+  if(m_performAutoTrainingHasBeenSet)
+  {
+   payload.WithBool("performAutoTraining", m_performAutoTraining);
 
   }
 
@@ -230,6 +239,12 @@ JsonValue Solution::Jsonize() const
   if(m_latestSolutionVersionHasBeenSet)
   {
    payload.WithObject("latestSolutionVersion", m_latestSolutionVersion.Jsonize());
+
+  }
+
+  if(m_latestSolutionUpdateHasBeenSet)
+  {
+   payload.WithObject("latestSolutionUpdate", m_latestSolutionUpdate.Jsonize());
 
   }
 

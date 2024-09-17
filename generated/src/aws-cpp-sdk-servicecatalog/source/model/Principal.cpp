@@ -25,10 +25,8 @@ Principal::Principal() :
 {
 }
 
-Principal::Principal(JsonView jsonValue) : 
-    m_principalARNHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
+Principal::Principal(JsonView jsonValue)
+  : Principal()
 {
   *this = jsonValue;
 }

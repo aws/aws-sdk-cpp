@@ -45,85 +45,32 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The box representing a region of interest on screen.</p>
      */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
-
-    /**
-     * <p>The box representing a region of interest on screen.</p>
-     */
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-
-    /**
-     * <p>The box representing a region of interest on screen.</p>
-     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-
-    /**
-     * <p>The box representing a region of interest on screen.</p>
-     */
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-
-    /**
-     * <p>The box representing a region of interest on screen.</p>
-     */
     inline RegionOfInterest& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
-
-    /**
-     * <p>The box representing a region of interest on screen.</p>
-     */
     inline RegionOfInterest& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
      * region of interest. </p>
      */
     inline const Aws::Vector<Point>& GetPolygon() const{ return m_polygon; }
-
-    /**
-     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
-     * region of interest. </p>
-     */
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-
-    /**
-     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
-     * region of interest. </p>
-     */
     inline void SetPolygon(const Aws::Vector<Point>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-
-    /**
-     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
-     * region of interest. </p>
-     */
     inline void SetPolygon(Aws::Vector<Point>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-
-    /**
-     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
-     * region of interest. </p>
-     */
     inline RegionOfInterest& WithPolygon(const Aws::Vector<Point>& value) { SetPolygon(value); return *this;}
-
-    /**
-     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
-     * region of interest. </p>
-     */
     inline RegionOfInterest& WithPolygon(Aws::Vector<Point>&& value) { SetPolygon(std::move(value)); return *this;}
-
-    /**
-     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
-     * region of interest. </p>
-     */
     inline RegionOfInterest& AddPolygon(const Point& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-
-    /**
-     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
-     * region of interest. </p>
-     */
     inline RegionOfInterest& AddPolygon(Point&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     BoundingBox m_boundingBox;

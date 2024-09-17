@@ -25,10 +25,8 @@ PagerDutyConfiguration::PagerDutyConfiguration() :
 {
 }
 
-PagerDutyConfiguration::PagerDutyConfiguration(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pagerDutyIncidentConfigurationHasBeenSet(false),
-    m_secretIdHasBeenSet(false)
+PagerDutyConfiguration::PagerDutyConfiguration(JsonView jsonValue)
+  : PagerDutyConfiguration()
 {
   *this = jsonValue;
 }

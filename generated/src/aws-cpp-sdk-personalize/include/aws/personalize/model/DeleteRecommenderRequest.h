@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
      */
     inline const Aws::String& GetRecommenderArn() const{ return m_recommenderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-     */
     inline bool RecommenderArnHasBeenSet() const { return m_recommenderArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-     */
     inline void SetRecommenderArn(const Aws::String& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-     */
     inline void SetRecommenderArn(Aws::String&& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-     */
     inline void SetRecommenderArn(const char* value) { m_recommenderArnHasBeenSet = true; m_recommenderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-     */
     inline DeleteRecommenderRequest& WithRecommenderArn(const Aws::String& value) { SetRecommenderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-     */
     inline DeleteRecommenderRequest& WithRecommenderArn(Aws::String&& value) { SetRecommenderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-     */
     inline DeleteRecommenderRequest& WithRecommenderArn(const char* value) { SetRecommenderArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recommenderArn;

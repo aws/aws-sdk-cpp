@@ -35,99 +35,37 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
      * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * address range that you've brought to this Amazon Web Services Region or another
+     * Region.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
-     */
     inline ProvisionByoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
-     */
     inline ProvisionByoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
-     */
     inline ProvisionByoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A signed document that proves that you are authorized to bring the specified
      * IP address range to Amazon using BYOIP. </p>
      */
     inline const CidrAuthorizationContext& GetCidrAuthorizationContext() const{ return m_cidrAuthorizationContext; }
-
-    /**
-     * <p>A signed document that proves that you are authorized to bring the specified
-     * IP address range to Amazon using BYOIP. </p>
-     */
     inline bool CidrAuthorizationContextHasBeenSet() const { return m_cidrAuthorizationContextHasBeenSet; }
-
-    /**
-     * <p>A signed document that proves that you are authorized to bring the specified
-     * IP address range to Amazon using BYOIP. </p>
-     */
     inline void SetCidrAuthorizationContext(const CidrAuthorizationContext& value) { m_cidrAuthorizationContextHasBeenSet = true; m_cidrAuthorizationContext = value; }
-
-    /**
-     * <p>A signed document that proves that you are authorized to bring the specified
-     * IP address range to Amazon using BYOIP. </p>
-     */
     inline void SetCidrAuthorizationContext(CidrAuthorizationContext&& value) { m_cidrAuthorizationContextHasBeenSet = true; m_cidrAuthorizationContext = std::move(value); }
-
-    /**
-     * <p>A signed document that proves that you are authorized to bring the specified
-     * IP address range to Amazon using BYOIP. </p>
-     */
     inline ProvisionByoipCidrRequest& WithCidrAuthorizationContext(const CidrAuthorizationContext& value) { SetCidrAuthorizationContext(value); return *this;}
-
-    /**
-     * <p>A signed document that proves that you are authorized to bring the specified
-     * IP address range to Amazon using BYOIP. </p>
-     */
     inline ProvisionByoipCidrRequest& WithCidrAuthorizationContext(CidrAuthorizationContext&& value) { SetCidrAuthorizationContext(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidr;

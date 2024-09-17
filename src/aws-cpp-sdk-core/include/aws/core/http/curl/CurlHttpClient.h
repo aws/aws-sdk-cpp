@@ -65,10 +65,20 @@ private:
     bool m_verifySSL = true;
     Aws::String m_caPath;
     Aws::String m_caFile;
+    Aws::String m_proxyCaPath;
+    Aws::String m_proxyCaFile;
     bool m_disableExpectHeader = false;
     bool m_allowRedirects = false;
+    bool m_enableHttpClientTrace = false;
+    Aws::Http::TransferLibPerformanceMode m_perfMode = TransferLibPerformanceMode::LOW_LATENCY;
     static std::atomic<bool> isInit;
     std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
+
+#if LIBCURL_VERSION_NUM >= 0x072000 // 7.32.0
+    static int CurlProgressCallback(void *userdata, curl_off_t, curl_off_t, curl_off_t, curl_off_t);
+#else
+    static int CurlProgressCallback(void *userdata, double, double, double, double);
+#endif
 };
 
 using PlatformHttpClient = CurlHttpClient;

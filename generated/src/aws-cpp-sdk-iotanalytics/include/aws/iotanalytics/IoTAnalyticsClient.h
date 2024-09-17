@@ -493,13 +493,13 @@ namespace IoTAnalytics
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeLoggingOptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLoggingOptionsOutcome DescribeLoggingOptions(const Model::DescribeLoggingOptionsRequest& request) const;
+        virtual Model::DescribeLoggingOptionsOutcome DescribeLoggingOptions(const Model::DescribeLoggingOptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLoggingOptionsRequestT = Model::DescribeLoggingOptionsRequest>
-        Model::DescribeLoggingOptionsOutcomeCallable DescribeLoggingOptionsCallable(const DescribeLoggingOptionsRequestT& request) const
+        Model::DescribeLoggingOptionsOutcomeCallable DescribeLoggingOptionsCallable(const DescribeLoggingOptionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTAnalyticsClient::DescribeLoggingOptions, request);
         }
@@ -508,7 +508,7 @@ namespace IoTAnalytics
          * An Async wrapper for DescribeLoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLoggingOptionsRequestT = Model::DescribeLoggingOptionsRequest>
-        void DescribeLoggingOptionsAsync(const DescribeLoggingOptionsRequestT& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLoggingOptionsAsync(const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLoggingOptionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTAnalyticsClient::DescribeLoggingOptions, request, handler, context);
         }
@@ -569,13 +569,13 @@ namespace IoTAnalytics
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListChannels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request) const
+        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTAnalyticsClient::ListChannels, request);
         }
@@ -584,7 +584,7 @@ namespace IoTAnalytics
          * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListChannelsAsync(const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListChannelsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTAnalyticsClient::ListChannels, request, handler, context);
         }
@@ -620,13 +620,13 @@ namespace IoTAnalytics
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTAnalyticsClient::ListDatasets, request);
         }
@@ -635,7 +635,7 @@ namespace IoTAnalytics
          * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTAnalyticsClient::ListDatasets, request, handler, context);
         }
@@ -645,13 +645,13 @@ namespace IoTAnalytics
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatastores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatastoresOutcome ListDatastores(const Model::ListDatastoresRequest& request) const;
+        virtual Model::ListDatastoresOutcome ListDatastores(const Model::ListDatastoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatastores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatastoresRequestT = Model::ListDatastoresRequest>
-        Model::ListDatastoresOutcomeCallable ListDatastoresCallable(const ListDatastoresRequestT& request) const
+        Model::ListDatastoresOutcomeCallable ListDatastoresCallable(const ListDatastoresRequestT& request = {}) const
         {
             return SubmitCallable(&IoTAnalyticsClient::ListDatastores, request);
         }
@@ -660,7 +660,7 @@ namespace IoTAnalytics
          * An Async wrapper for ListDatastores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatastoresRequestT = Model::ListDatastoresRequest>
-        void ListDatastoresAsync(const ListDatastoresRequestT& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatastoresAsync(const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatastoresRequestT& request = {}) const
         {
             return SubmitAsync(&IoTAnalyticsClient::ListDatastores, request, handler, context);
         }
@@ -670,13 +670,13 @@ namespace IoTAnalytics
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListPipelines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
+        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request) const
+        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTAnalyticsClient::ListPipelines, request);
         }
@@ -685,7 +685,7 @@ namespace IoTAnalytics
          * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        void ListPipelinesAsync(const ListPipelinesRequestT& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPipelinesAsync(const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPipelinesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTAnalyticsClient::ListPipelines, request, handler, context);
         }
@@ -988,7 +988,6 @@ namespace IoTAnalytics
       void init(const IoTAnalyticsClientConfiguration& clientConfiguration);
 
       IoTAnalyticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<IoTAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 

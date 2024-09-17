@@ -27,12 +27,8 @@ IngestedFilesSummary::IngestedFilesSummary() :
 {
 }
 
-IngestedFilesSummary::IngestedFilesSummary(JsonView jsonValue) : 
-    m_totalNumberOfFiles(0),
-    m_totalNumberOfFilesHasBeenSet(false),
-    m_ingestedNumberOfFiles(0),
-    m_ingestedNumberOfFilesHasBeenSet(false),
-    m_discardedFilesHasBeenSet(false)
+IngestedFilesSummary::IngestedFilesSummary(JsonView jsonValue)
+  : IngestedFilesSummary()
 {
   *this = jsonValue;
 }

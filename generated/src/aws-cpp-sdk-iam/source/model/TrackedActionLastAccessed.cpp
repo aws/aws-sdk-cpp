@@ -28,11 +28,8 @@ TrackedActionLastAccessed::TrackedActionLastAccessed() :
 {
 }
 
-TrackedActionLastAccessed::TrackedActionLastAccessed(const XmlNode& xmlNode) : 
-    m_actionNameHasBeenSet(false),
-    m_lastAccessedEntityHasBeenSet(false),
-    m_lastAccessedTimeHasBeenSet(false),
-    m_lastAccessedRegionHasBeenSet(false)
+TrackedActionLastAccessed::TrackedActionLastAccessed(const XmlNode& xmlNode)
+  : TrackedActionLastAccessed()
 {
   *this = xmlNode;
 }

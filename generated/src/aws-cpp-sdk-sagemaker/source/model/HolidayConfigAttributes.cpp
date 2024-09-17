@@ -23,8 +23,8 @@ HolidayConfigAttributes::HolidayConfigAttributes() :
 {
 }
 
-HolidayConfigAttributes::HolidayConfigAttributes(JsonView jsonValue) : 
-    m_countryCodeHasBeenSet(false)
+HolidayConfigAttributes::HolidayConfigAttributes(JsonView jsonValue)
+  : HolidayConfigAttributes()
 {
   *this = jsonValue;
 }

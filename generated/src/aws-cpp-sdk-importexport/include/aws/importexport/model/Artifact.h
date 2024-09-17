@@ -40,55 +40,29 @@ namespace Model
     AWS_IMPORTEXPORT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    
     inline Artifact& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    
     inline Artifact& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    
     inline Artifact& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetURL() const{ return m_uRL; }
-
-    
     inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }
-
-    
     inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }
-
-    
     inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = std::move(value); }
-
-    
     inline void SetURL(const char* value) { m_uRLHasBeenSet = true; m_uRL.assign(value); }
-
-    
     inline Artifact& WithURL(const Aws::String& value) { SetURL(value); return *this;}
-
-    
     inline Artifact& WithURL(Aws::String&& value) { SetURL(std::move(value)); return *this;}
-
-    
     inline Artifact& WithURL(const char* value) { SetURL(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

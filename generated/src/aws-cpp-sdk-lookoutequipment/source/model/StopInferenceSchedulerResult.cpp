@@ -22,8 +22,8 @@ StopInferenceSchedulerResult::StopInferenceSchedulerResult() :
 {
 }
 
-StopInferenceSchedulerResult::StopInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(InferenceSchedulerStatus::NOT_SET)
+StopInferenceSchedulerResult::StopInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopInferenceSchedulerResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ DefaultAction::DefaultAction() :
 {
 }
 
-DefaultAction::DefaultAction(JsonView jsonValue) : 
-    m_blockHasBeenSet(false),
-    m_allowHasBeenSet(false)
+DefaultAction::DefaultAction(JsonView jsonValue)
+  : DefaultAction()
 {
   *this = jsonValue;
 }

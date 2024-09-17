@@ -22,8 +22,8 @@ GetExpenseAnalysisResult::GetExpenseAnalysisResult() :
 {
 }
 
-GetExpenseAnalysisResult::GetExpenseAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(JobStatus::NOT_SET)
+GetExpenseAnalysisResult::GetExpenseAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetExpenseAnalysisResult()
 {
   *this = result;
 }

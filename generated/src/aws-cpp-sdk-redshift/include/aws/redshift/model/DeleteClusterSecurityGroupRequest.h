@@ -39,46 +39,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the cluster security group to be deleted.</p>
      */
     inline const Aws::String& GetClusterSecurityGroupName() const{ return m_clusterSecurityGroupName; }
-
-    /**
-     * <p>The name of the cluster security group to be deleted.</p>
-     */
     inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cluster security group to be deleted.</p>
-     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
-
-    /**
-     * <p>The name of the cluster security group to be deleted.</p>
-     */
     inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the cluster security group to be deleted.</p>
-     */
     inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
-
-    /**
-     * <p>The name of the cluster security group to be deleted.</p>
-     */
     inline DeleteClusterSecurityGroupRequest& WithClusterSecurityGroupName(const Aws::String& value) { SetClusterSecurityGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the cluster security group to be deleted.</p>
-     */
     inline DeleteClusterSecurityGroupRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cluster security group to be deleted.</p>
-     */
     inline DeleteClusterSecurityGroupRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterSecurityGroupName;

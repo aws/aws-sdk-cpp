@@ -24,9 +24,8 @@ PipelineExperimentConfig::PipelineExperimentConfig() :
 {
 }
 
-PipelineExperimentConfig::PipelineExperimentConfig(JsonView jsonValue) : 
-    m_experimentNameHasBeenSet(false),
-    m_trialNameHasBeenSet(false)
+PipelineExperimentConfig::PipelineExperimentConfig(JsonView jsonValue)
+  : PipelineExperimentConfig()
 {
   *this = jsonValue;
 }

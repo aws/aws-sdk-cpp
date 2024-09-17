@@ -33,18 +33,8 @@ NetworkResource::NetworkResource() :
 {
 }
 
-NetworkResource::NetworkResource(JsonView jsonValue) : 
-    m_registeredGatewayArnHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_definitionTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+NetworkResource::NetworkResource(JsonView jsonValue)
+  : NetworkResource()
 {
   *this = jsonValue;
 }

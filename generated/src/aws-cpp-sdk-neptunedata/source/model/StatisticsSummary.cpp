@@ -28,13 +28,8 @@ StatisticsSummary::StatisticsSummary() :
 {
 }
 
-StatisticsSummary::StatisticsSummary(JsonView jsonValue) : 
-    m_signatureCount(0),
-    m_signatureCountHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_predicateCount(0),
-    m_predicateCountHasBeenSet(false)
+StatisticsSummary::StatisticsSummary(JsonView jsonValue)
+  : StatisticsSummary()
 {
   *this = jsonValue;
 }

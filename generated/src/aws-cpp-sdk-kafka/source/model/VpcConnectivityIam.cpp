@@ -24,9 +24,8 @@ VpcConnectivityIam::VpcConnectivityIam() :
 {
 }
 
-VpcConnectivityIam::VpcConnectivityIam(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+VpcConnectivityIam::VpcConnectivityIam(JsonView jsonValue)
+  : VpcConnectivityIam()
 {
   *this = jsonValue;
 }

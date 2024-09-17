@@ -22,8 +22,8 @@ DeleteUserResult::DeleteUserResult() :
 {
 }
 
-DeleteUserResult::DeleteUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DeleteUserResult::DeleteUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteUserResult()
 {
   *this = result;
 }

@@ -488,13 +488,13 @@ namespace PcaConnectorAd
          * href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListConnectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
+        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request) const
+        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request = {}) const
         {
             return SubmitCallable(&PcaConnectorAdClient::ListConnectors, request);
         }
@@ -503,7 +503,7 @@ namespace PcaConnectorAd
          * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        void ListConnectorsAsync(const ListConnectorsRequestT& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConnectorsAsync(const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectorsRequestT& request = {}) const
         {
             return SubmitAsync(&PcaConnectorAdClient::ListConnectors, request, handler, context);
         }
@@ -515,13 +515,13 @@ namespace PcaConnectorAd
          * href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListDirectoryRegistrations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDirectoryRegistrationsOutcome ListDirectoryRegistrations(const Model::ListDirectoryRegistrationsRequest& request) const;
+        virtual Model::ListDirectoryRegistrationsOutcome ListDirectoryRegistrations(const Model::ListDirectoryRegistrationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDirectoryRegistrations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDirectoryRegistrationsRequestT = Model::ListDirectoryRegistrationsRequest>
-        Model::ListDirectoryRegistrationsOutcomeCallable ListDirectoryRegistrationsCallable(const ListDirectoryRegistrationsRequestT& request) const
+        Model::ListDirectoryRegistrationsOutcomeCallable ListDirectoryRegistrationsCallable(const ListDirectoryRegistrationsRequestT& request = {}) const
         {
             return SubmitCallable(&PcaConnectorAdClient::ListDirectoryRegistrations, request);
         }
@@ -530,7 +530,7 @@ namespace PcaConnectorAd
          * An Async wrapper for ListDirectoryRegistrations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDirectoryRegistrationsRequestT = Model::ListDirectoryRegistrationsRequest>
-        void ListDirectoryRegistrationsAsync(const ListDirectoryRegistrationsRequestT& request, const ListDirectoryRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDirectoryRegistrationsAsync(const ListDirectoryRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDirectoryRegistrationsRequestT& request = {}) const
         {
             return SubmitAsync(&PcaConnectorAdClient::ListDirectoryRegistrations, request, handler, context);
         }
@@ -750,7 +750,6 @@ namespace PcaConnectorAd
       void init(const PcaConnectorAdClientConfiguration& clientConfiguration);
 
       PcaConnectorAdClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PcaConnectorAdEndpointProviderBase> m_endpointProvider;
   };
 

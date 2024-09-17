@@ -46,61 +46,28 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
-
-    
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-
-    
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-
-    
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-
-    
     inline NetworkOriginConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-
-    
     inline NetworkOriginConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration for the Amazon S3 access point or multi-region access point
      * with an <code>Internet</code> origin.</p>
      */
     inline const InternetConfiguration& GetInternetConfiguration() const{ return m_internetConfiguration; }
-
-    /**
-     * <p>The configuration for the Amazon S3 access point or multi-region access point
-     * with an <code>Internet</code> origin.</p>
-     */
     inline bool InternetConfigurationHasBeenSet() const { return m_internetConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration for the Amazon S3 access point or multi-region access point
-     * with an <code>Internet</code> origin.</p>
-     */
     inline void SetInternetConfiguration(const InternetConfiguration& value) { m_internetConfigurationHasBeenSet = true; m_internetConfiguration = value; }
-
-    /**
-     * <p>The configuration for the Amazon S3 access point or multi-region access point
-     * with an <code>Internet</code> origin.</p>
-     */
     inline void SetInternetConfiguration(InternetConfiguration&& value) { m_internetConfigurationHasBeenSet = true; m_internetConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration for the Amazon S3 access point or multi-region access point
-     * with an <code>Internet</code> origin.</p>
-     */
     inline NetworkOriginConfiguration& WithInternetConfiguration(const InternetConfiguration& value) { SetInternetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration for the Amazon S3 access point or multi-region access point
-     * with an <code>Internet</code> origin.</p>
-     */
     inline NetworkOriginConfiguration& WithInternetConfiguration(InternetConfiguration&& value) { SetInternetConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VpcConfiguration m_vpcConfiguration;

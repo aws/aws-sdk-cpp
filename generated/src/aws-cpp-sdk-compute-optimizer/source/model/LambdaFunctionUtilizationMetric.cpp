@@ -28,13 +28,8 @@ LambdaFunctionUtilizationMetric::LambdaFunctionUtilizationMetric() :
 {
 }
 
-LambdaFunctionUtilizationMetric::LambdaFunctionUtilizationMetric(JsonView jsonValue) : 
-    m_name(LambdaFunctionMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(LambdaFunctionMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
+LambdaFunctionUtilizationMetric::LambdaFunctionUtilizationMetric(JsonView jsonValue)
+  : LambdaFunctionUtilizationMetric()
 {
   *this = jsonValue;
 }

@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API CreateModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The response from a call to <code>CreateModel</code>.</p>
      */
     inline const ModelMetadata& GetModelMetadata() const{ return m_modelMetadata; }
-
-    /**
-     * <p>The response from a call to <code>CreateModel</code>.</p>
-     */
     inline void SetModelMetadata(const ModelMetadata& value) { m_modelMetadata = value; }
-
-    /**
-     * <p>The response from a call to <code>CreateModel</code>.</p>
-     */
     inline void SetModelMetadata(ModelMetadata&& value) { m_modelMetadata = std::move(value); }
-
-    /**
-     * <p>The response from a call to <code>CreateModel</code>.</p>
-     */
     inline CreateModelResult& WithModelMetadata(const ModelMetadata& value) { SetModelMetadata(value); return *this;}
-
-    /**
-     * <p>The response from a call to <code>CreateModel</code>.</p>
-     */
     inline CreateModelResult& WithModelMetadata(ModelMetadata&& value) { SetModelMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ModelMetadata m_modelMetadata;

@@ -24,9 +24,8 @@ CloudWatchMetricsDimension::CloudWatchMetricsDimension() :
 {
 }
 
-CloudWatchMetricsDimension::CloudWatchMetricsDimension(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CloudWatchMetricsDimension::CloudWatchMetricsDimension(JsonView jsonValue)
+  : CloudWatchMetricsDimension()
 {
   *this = jsonValue;
 }

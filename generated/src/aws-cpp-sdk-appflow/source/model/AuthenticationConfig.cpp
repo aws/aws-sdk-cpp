@@ -32,17 +32,8 @@ AuthenticationConfig::AuthenticationConfig() :
 {
 }
 
-AuthenticationConfig::AuthenticationConfig(JsonView jsonValue) : 
-    m_isBasicAuthSupported(false),
-    m_isBasicAuthSupportedHasBeenSet(false),
-    m_isApiKeyAuthSupported(false),
-    m_isApiKeyAuthSupportedHasBeenSet(false),
-    m_isOAuth2Supported(false),
-    m_isOAuth2SupportedHasBeenSet(false),
-    m_isCustomAuthSupported(false),
-    m_isCustomAuthSupportedHasBeenSet(false),
-    m_oAuth2DefaultsHasBeenSet(false),
-    m_customAuthConfigsHasBeenSet(false)
+AuthenticationConfig::AuthenticationConfig(JsonView jsonValue)
+  : AuthenticationConfig()
 {
   *this = jsonValue;
 }

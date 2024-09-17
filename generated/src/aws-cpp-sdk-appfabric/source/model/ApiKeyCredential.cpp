@@ -23,8 +23,8 @@ ApiKeyCredential::ApiKeyCredential() :
 {
 }
 
-ApiKeyCredential::ApiKeyCredential(JsonView jsonValue) : 
-    m_apiKeyHasBeenSet(false)
+ApiKeyCredential::ApiKeyCredential(JsonView jsonValue)
+  : ApiKeyCredential()
 {
   *this = jsonValue;
 }

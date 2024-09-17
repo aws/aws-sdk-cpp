@@ -25,10 +25,8 @@ ListAccountAssociationsFilter::ListAccountAssociationsFilter() :
 {
 }
 
-ListAccountAssociationsFilter::ListAccountAssociationsFilter(JsonView jsonValue) : 
-    m_associationHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
+ListAccountAssociationsFilter::ListAccountAssociationsFilter(JsonView jsonValue)
+  : ListAccountAssociationsFilter()
 {
   *this = jsonValue;
 }

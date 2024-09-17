@@ -27,12 +27,8 @@ ColorCorrection::ColorCorrection() :
 {
 }
 
-ColorCorrection::ColorCorrection(JsonView jsonValue) : 
-    m_inputColorSpace(ColorSpace::NOT_SET),
-    m_inputColorSpaceHasBeenSet(false),
-    m_outputColorSpace(ColorSpace::NOT_SET),
-    m_outputColorSpaceHasBeenSet(false),
-    m_uriHasBeenSet(false)
+ColorCorrection::ColorCorrection(JsonView jsonValue)
+  : ColorCorrection()
 {
   *this = jsonValue;
 }

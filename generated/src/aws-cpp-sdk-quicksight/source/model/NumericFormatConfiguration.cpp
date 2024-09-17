@@ -25,10 +25,8 @@ NumericFormatConfiguration::NumericFormatConfiguration() :
 {
 }
 
-NumericFormatConfiguration::NumericFormatConfiguration(JsonView jsonValue) : 
-    m_numberDisplayFormatConfigurationHasBeenSet(false),
-    m_currencyDisplayFormatConfigurationHasBeenSet(false),
-    m_percentageDisplayFormatConfigurationHasBeenSet(false)
+NumericFormatConfiguration::NumericFormatConfiguration(JsonView jsonValue)
+  : NumericFormatConfiguration()
 {
   *this = jsonValue;
 }

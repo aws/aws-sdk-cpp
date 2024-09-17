@@ -38,87 +38,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the analysis that you ant to apply overrides to.</p>
      */
     inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
-
-    /**
-     * <p>The ID of the analysis that you ant to apply overrides to.</p>
-     */
     inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the analysis that you ant to apply overrides to.</p>
-     */
     inline void SetAnalysisId(const Aws::String& value) { m_analysisIdHasBeenSet = true; m_analysisId = value; }
-
-    /**
-     * <p>The ID of the analysis that you ant to apply overrides to.</p>
-     */
     inline void SetAnalysisId(Aws::String&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::move(value); }
-
-    /**
-     * <p>The ID of the analysis that you ant to apply overrides to.</p>
-     */
     inline void SetAnalysisId(const char* value) { m_analysisIdHasBeenSet = true; m_analysisId.assign(value); }
-
-    /**
-     * <p>The ID of the analysis that you ant to apply overrides to.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideParameters& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-
-    /**
-     * <p>The ID of the analysis that you ant to apply overrides to.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideParameters& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the analysis that you ant to apply overrides to.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideParameters& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new name for the analysis.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A new name for the analysis.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A new name for the analysis.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A new name for the analysis.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A new name for the analysis.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A new name for the analysis.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideParameters& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A new name for the analysis.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideParameters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A new name for the analysis.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideParameters& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analysisId;

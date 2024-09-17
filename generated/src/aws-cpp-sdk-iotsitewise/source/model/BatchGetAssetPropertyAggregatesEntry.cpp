@@ -33,18 +33,8 @@ BatchGetAssetPropertyAggregatesEntry::BatchGetAssetPropertyAggregatesEntry() :
 {
 }
 
-BatchGetAssetPropertyAggregatesEntry::BatchGetAssetPropertyAggregatesEntry(JsonView jsonValue) : 
-    m_entryIdHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false),
-    m_aggregateTypesHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_qualitiesHasBeenSet(false),
-    m_timeOrdering(TimeOrdering::NOT_SET),
-    m_timeOrderingHasBeenSet(false)
+BatchGetAssetPropertyAggregatesEntry::BatchGetAssetPropertyAggregatesEntry(JsonView jsonValue)
+  : BatchGetAssetPropertyAggregatesEntry()
 {
   *this = jsonValue;
 }

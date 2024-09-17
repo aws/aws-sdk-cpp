@@ -23,9 +23,8 @@ DescribeIpRestrictionResult::DescribeIpRestrictionResult() :
 {
 }
 
-DescribeIpRestrictionResult::DescribeIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false),
-    m_status(0)
+DescribeIpRestrictionResult::DescribeIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeIpRestrictionResult()
 {
   *this = result;
 }
@@ -45,6 +44,24 @@ DescribeIpRestrictionResult& DescribeIpRestrictionResult::operator =(const Aws::
     for(auto& ipRestrictionRuleMapItem : ipRestrictionRuleMapJsonMap)
     {
       m_ipRestrictionRuleMap[ipRestrictionRuleMapItem.first] = ipRestrictionRuleMapItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("VpcIdRestrictionRuleMap"))
+  {
+    Aws::Map<Aws::String, JsonView> vpcIdRestrictionRuleMapJsonMap = jsonValue.GetObject("VpcIdRestrictionRuleMap").GetAllObjects();
+    for(auto& vpcIdRestrictionRuleMapItem : vpcIdRestrictionRuleMapJsonMap)
+    {
+      m_vpcIdRestrictionRuleMap[vpcIdRestrictionRuleMapItem.first] = vpcIdRestrictionRuleMapItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("VpcEndpointIdRestrictionRuleMap"))
+  {
+    Aws::Map<Aws::String, JsonView> vpcEndpointIdRestrictionRuleMapJsonMap = jsonValue.GetObject("VpcEndpointIdRestrictionRuleMap").GetAllObjects();
+    for(auto& vpcEndpointIdRestrictionRuleMapItem : vpcEndpointIdRestrictionRuleMapJsonMap)
+    {
+      m_vpcEndpointIdRestrictionRuleMap[vpcEndpointIdRestrictionRuleMapItem.first] = vpcEndpointIdRestrictionRuleMapItem.second.AsString();
     }
   }
 

@@ -25,11 +25,8 @@ DescribeDomainHealthResult::DescribeDomainHealthResult() :
 {
 }
 
-DescribeDomainHealthResult::DescribeDomainHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_domainState(DomainState::NOT_SET),
-    m_dedicatedMaster(false),
-    m_masterNode(MasterNodeStatus::NOT_SET),
-    m_clusterHealth(DomainHealth::NOT_SET)
+DescribeDomainHealthResult::DescribeDomainHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDomainHealthResult()
 {
   *this = result;
 }

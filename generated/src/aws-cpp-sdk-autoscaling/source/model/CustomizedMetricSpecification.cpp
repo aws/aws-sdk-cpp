@@ -31,14 +31,8 @@ CustomizedMetricSpecification::CustomizedMetricSpecification() :
 {
 }
 
-CustomizedMetricSpecification::CustomizedMetricSpecification(const XmlNode& xmlNode) : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+CustomizedMetricSpecification::CustomizedMetricSpecification(const XmlNode& xmlNode)
+  : CustomizedMetricSpecification()
 {
   *this = xmlNode;
 }

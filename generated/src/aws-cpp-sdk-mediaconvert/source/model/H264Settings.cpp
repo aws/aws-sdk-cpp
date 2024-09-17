@@ -83,6 +83,8 @@ H264Settings::H264Settings() :
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
     m_repeatPpsHasBeenSet(false),
+    m_saliencyAwareEncoding(H264SaliencyAwareEncoding::NOT_SET),
+    m_saliencyAwareEncodingHasBeenSet(false),
     m_scanTypeConversionMode(H264ScanTypeConversionMode::NOT_SET),
     m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
@@ -106,91 +108,8 @@ H264Settings::H264Settings() :
 {
 }
 
-H264Settings::H264Settings(JsonView jsonValue) : 
-    m_adaptiveQuantization(H264AdaptiveQuantization::NOT_SET),
-    m_adaptiveQuantizationHasBeenSet(false),
-    m_bandwidthReductionFilterHasBeenSet(false),
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_codecLevel(H264CodecLevel::NOT_SET),
-    m_codecLevelHasBeenSet(false),
-    m_codecProfile(H264CodecProfile::NOT_SET),
-    m_codecProfileHasBeenSet(false),
-    m_dynamicSubGop(H264DynamicSubGop::NOT_SET),
-    m_dynamicSubGopHasBeenSet(false),
-    m_endOfStreamMarkers(H264EndOfStreamMarkers::NOT_SET),
-    m_endOfStreamMarkersHasBeenSet(false),
-    m_entropyEncoding(H264EntropyEncoding::NOT_SET),
-    m_entropyEncodingHasBeenSet(false),
-    m_fieldEncoding(H264FieldEncoding::NOT_SET),
-    m_fieldEncodingHasBeenSet(false),
-    m_flickerAdaptiveQuantization(H264FlickerAdaptiveQuantization::NOT_SET),
-    m_flickerAdaptiveQuantizationHasBeenSet(false),
-    m_framerateControl(H264FramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(H264FramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_gopBReference(H264GopBReference::NOT_SET),
-    m_gopBReferenceHasBeenSet(false),
-    m_gopClosedCadence(0),
-    m_gopClosedCadenceHasBeenSet(false),
-    m_gopSize(0.0),
-    m_gopSizeHasBeenSet(false),
-    m_gopSizeUnits(H264GopSizeUnits::NOT_SET),
-    m_gopSizeUnitsHasBeenSet(false),
-    m_hrdBufferFinalFillPercentage(0),
-    m_hrdBufferFinalFillPercentageHasBeenSet(false),
-    m_hrdBufferInitialFillPercentage(0),
-    m_hrdBufferInitialFillPercentageHasBeenSet(false),
-    m_hrdBufferSize(0),
-    m_hrdBufferSizeHasBeenSet(false),
-    m_interlaceMode(H264InterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_minIInterval(0),
-    m_minIIntervalHasBeenSet(false),
-    m_numberBFramesBetweenReferenceFrames(0),
-    m_numberBFramesBetweenReferenceFramesHasBeenSet(false),
-    m_numberReferenceFrames(0),
-    m_numberReferenceFramesHasBeenSet(false),
-    m_parControl(H264ParControl::NOT_SET),
-    m_parControlHasBeenSet(false),
-    m_parDenominator(0),
-    m_parDenominatorHasBeenSet(false),
-    m_parNumerator(0),
-    m_parNumeratorHasBeenSet(false),
-    m_qualityTuningLevel(H264QualityTuningLevel::NOT_SET),
-    m_qualityTuningLevelHasBeenSet(false),
-    m_qvbrSettingsHasBeenSet(false),
-    m_rateControlMode(H264RateControlMode::NOT_SET),
-    m_rateControlModeHasBeenSet(false),
-    m_repeatPps(H264RepeatPps::NOT_SET),
-    m_repeatPpsHasBeenSet(false),
-    m_scanTypeConversionMode(H264ScanTypeConversionMode::NOT_SET),
-    m_scanTypeConversionModeHasBeenSet(false),
-    m_sceneChangeDetect(H264SceneChangeDetect::NOT_SET),
-    m_sceneChangeDetectHasBeenSet(false),
-    m_slices(0),
-    m_slicesHasBeenSet(false),
-    m_slowPal(H264SlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_softness(0),
-    m_softnessHasBeenSet(false),
-    m_spatialAdaptiveQuantization(H264SpatialAdaptiveQuantization::NOT_SET),
-    m_spatialAdaptiveQuantizationHasBeenSet(false),
-    m_syntax(H264Syntax::NOT_SET),
-    m_syntaxHasBeenSet(false),
-    m_telecine(H264Telecine::NOT_SET),
-    m_telecineHasBeenSet(false),
-    m_temporalAdaptiveQuantization(H264TemporalAdaptiveQuantization::NOT_SET),
-    m_temporalAdaptiveQuantizationHasBeenSet(false),
-    m_unregisteredSeiTimecode(H264UnregisteredSeiTimecode::NOT_SET),
-    m_unregisteredSeiTimecodeHasBeenSet(false)
+H264Settings::H264Settings(JsonView jsonValue)
+  : H264Settings()
 {
   *this = jsonValue;
 }
@@ -426,6 +345,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_repeatPps = H264RepeatPpsMapper::GetH264RepeatPpsForName(jsonValue.GetString("repeatPps"));
 
     m_repeatPpsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("saliencyAwareEncoding"))
+  {
+    m_saliencyAwareEncoding = H264SaliencyAwareEncodingMapper::GetH264SaliencyAwareEncodingForName(jsonValue.GetString("saliencyAwareEncoding"));
+
+    m_saliencyAwareEncodingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scanTypeConversionMode"))
@@ -684,6 +610,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_repeatPpsHasBeenSet)
   {
    payload.WithString("repeatPps", H264RepeatPpsMapper::GetNameForH264RepeatPps(m_repeatPps));
+  }
+
+  if(m_saliencyAwareEncodingHasBeenSet)
+  {
+   payload.WithString("saliencyAwareEncoding", H264SaliencyAwareEncodingMapper::GetNameForH264SaliencyAwareEncoding(m_saliencyAwareEncoding));
   }
 
   if(m_scanTypeConversionModeHasBeenSet)

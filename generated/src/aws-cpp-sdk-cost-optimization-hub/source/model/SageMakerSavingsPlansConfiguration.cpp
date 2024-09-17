@@ -20,17 +20,14 @@ namespace Model
 
 SageMakerSavingsPlansConfiguration::SageMakerSavingsPlansConfiguration() : 
     m_accountScopeHasBeenSet(false),
-    m_hourlyCommitmentHasBeenSet(false),
+    m_termHasBeenSet(false),
     m_paymentOptionHasBeenSet(false),
-    m_termHasBeenSet(false)
+    m_hourlyCommitmentHasBeenSet(false)
 {
 }
 
-SageMakerSavingsPlansConfiguration::SageMakerSavingsPlansConfiguration(JsonView jsonValue) : 
-    m_accountScopeHasBeenSet(false),
-    m_hourlyCommitmentHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_termHasBeenSet(false)
+SageMakerSavingsPlansConfiguration::SageMakerSavingsPlansConfiguration(JsonView jsonValue)
+  : SageMakerSavingsPlansConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,11 +41,11 @@ SageMakerSavingsPlansConfiguration& SageMakerSavingsPlansConfiguration::operator
     m_accountScopeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("hourlyCommitment"))
+  if(jsonValue.ValueExists("term"))
   {
-    m_hourlyCommitment = jsonValue.GetString("hourlyCommitment");
+    m_term = jsonValue.GetString("term");
 
-    m_hourlyCommitmentHasBeenSet = true;
+    m_termHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("paymentOption"))
@@ -58,11 +55,11 @@ SageMakerSavingsPlansConfiguration& SageMakerSavingsPlansConfiguration::operator
     m_paymentOptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("term"))
+  if(jsonValue.ValueExists("hourlyCommitment"))
   {
-    m_term = jsonValue.GetString("term");
+    m_hourlyCommitment = jsonValue.GetString("hourlyCommitment");
 
-    m_termHasBeenSet = true;
+    m_hourlyCommitmentHasBeenSet = true;
   }
 
   return *this;
@@ -78,9 +75,9 @@ JsonValue SageMakerSavingsPlansConfiguration::Jsonize() const
 
   }
 
-  if(m_hourlyCommitmentHasBeenSet)
+  if(m_termHasBeenSet)
   {
-   payload.WithString("hourlyCommitment", m_hourlyCommitment);
+   payload.WithString("term", m_term);
 
   }
 
@@ -90,9 +87,9 @@ JsonValue SageMakerSavingsPlansConfiguration::Jsonize() const
 
   }
 
-  if(m_termHasBeenSet)
+  if(m_hourlyCommitmentHasBeenSet)
   {
-   payload.WithString("term", m_term);
+   payload.WithString("hourlyCommitment", m_hourlyCommitment);
 
   }
 

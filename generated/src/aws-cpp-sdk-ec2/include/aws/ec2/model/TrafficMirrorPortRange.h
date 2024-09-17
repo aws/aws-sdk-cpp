@@ -37,55 +37,27 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The start of the Traffic Mirror port range. This applies to the TCP and UDP
      * protocols.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>The start of the Traffic Mirror port range. This applies to the TCP and UDP
-     * protocols.</p>
-     */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-
-    /**
-     * <p>The start of the Traffic Mirror port range. This applies to the TCP and UDP
-     * protocols.</p>
-     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>The start of the Traffic Mirror port range. This applies to the TCP and UDP
-     * protocols.</p>
-     */
     inline TrafficMirrorPortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end of the Traffic Mirror port range. This applies to the TCP and UDP
      * protocols.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>The end of the Traffic Mirror port range. This applies to the TCP and UDP
-     * protocols.</p>
-     */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-
-    /**
-     * <p>The end of the Traffic Mirror port range. This applies to the TCP and UDP
-     * protocols.</p>
-     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>The end of the Traffic Mirror port range. This applies to the TCP and UDP
-     * protocols.</p>
-     */
     inline TrafficMirrorPortRange& WithToPort(int value) { SetToPort(value); return *this;}
-
+    ///@}
   private:
 
     int m_fromPort;

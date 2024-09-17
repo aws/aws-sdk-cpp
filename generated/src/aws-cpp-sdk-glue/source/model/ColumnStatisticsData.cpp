@@ -31,16 +31,8 @@ ColumnStatisticsData::ColumnStatisticsData() :
 {
 }
 
-ColumnStatisticsData::ColumnStatisticsData(JsonView jsonValue) : 
-    m_type(ColumnStatisticsType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_booleanColumnStatisticsDataHasBeenSet(false),
-    m_dateColumnStatisticsDataHasBeenSet(false),
-    m_decimalColumnStatisticsDataHasBeenSet(false),
-    m_doubleColumnStatisticsDataHasBeenSet(false),
-    m_longColumnStatisticsDataHasBeenSet(false),
-    m_stringColumnStatisticsDataHasBeenSet(false),
-    m_binaryColumnStatisticsDataHasBeenSet(false)
+ColumnStatisticsData::ColumnStatisticsData(JsonView jsonValue)
+  : ColumnStatisticsData()
 {
   *this = jsonValue;
 }

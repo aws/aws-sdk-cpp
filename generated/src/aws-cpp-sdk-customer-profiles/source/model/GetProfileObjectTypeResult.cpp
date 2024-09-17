@@ -19,13 +19,14 @@ using namespace Aws;
 
 GetProfileObjectTypeResult::GetProfileObjectTypeResult() : 
     m_expirationDays(0),
-    m_allowProfileCreation(false)
+    m_allowProfileCreation(false),
+    m_maxAvailableProfileObjectCount(0),
+    m_maxProfileObjectCount(0)
 {
 }
 
-GetProfileObjectTypeResult::GetProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_expirationDays(0),
-    m_allowProfileCreation(false)
+GetProfileObjectTypeResult::GetProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetProfileObjectTypeResult()
 {
   *this = result;
 }
@@ -72,6 +73,18 @@ GetProfileObjectTypeResult& GetProfileObjectTypeResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("SourceLastUpdatedTimestampFormat"))
   {
     m_sourceLastUpdatedTimestampFormat = jsonValue.GetString("SourceLastUpdatedTimestampFormat");
+
+  }
+
+  if(jsonValue.ValueExists("MaxAvailableProfileObjectCount"))
+  {
+    m_maxAvailableProfileObjectCount = jsonValue.GetInteger("MaxAvailableProfileObjectCount");
+
+  }
+
+  if(jsonValue.ValueExists("MaxProfileObjectCount"))
+  {
+    m_maxProfileObjectCount = jsonValue.GetInteger("MaxProfileObjectCount");
 
   }
 

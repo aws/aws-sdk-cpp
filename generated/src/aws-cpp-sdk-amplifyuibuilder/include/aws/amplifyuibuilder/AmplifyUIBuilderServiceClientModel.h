@@ -33,9 +33,12 @@
 #include <aws/amplifyuibuilder/model/ListCodegenJobsResult.h>
 #include <aws/amplifyuibuilder/model/ListComponentsResult.h>
 #include <aws/amplifyuibuilder/model/ListFormsResult.h>
+#include <aws/amplifyuibuilder/model/ListTagsForResourceResult.h>
 #include <aws/amplifyuibuilder/model/ListThemesResult.h>
 #include <aws/amplifyuibuilder/model/RefreshTokenResult.h>
 #include <aws/amplifyuibuilder/model/StartCodegenJobResult.h>
+#include <aws/amplifyuibuilder/model/TagResourceResult.h>
+#include <aws/amplifyuibuilder/model/UntagResourceResult.h>
 #include <aws/amplifyuibuilder/model/UpdateComponentResult.h>
 #include <aws/amplifyuibuilder/model/UpdateFormResult.h>
 #include <aws/amplifyuibuilder/model/UpdateThemeResult.h>
@@ -73,7 +76,7 @@ namespace Aws
 
   namespace AmplifyUIBuilder
   {
-    using AmplifyUIBuilderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AmplifyUIBuilderClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AmplifyUIBuilderEndpointProviderBase = Aws::AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProviderBase;
     using AmplifyUIBuilderEndpointProvider = Aws::AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProvider;
 
@@ -98,10 +101,13 @@ namespace Aws
       class ListCodegenJobsRequest;
       class ListComponentsRequest;
       class ListFormsRequest;
+      class ListTagsForResourceRequest;
       class ListThemesRequest;
       class PutMetadataFlagRequest;
       class RefreshTokenRequest;
       class StartCodegenJobRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateComponentRequest;
       class UpdateFormRequest;
       class UpdateThemeRequest;
@@ -126,10 +132,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListCodegenJobsResult, AmplifyUIBuilderError> ListCodegenJobsOutcome;
       typedef Aws::Utils::Outcome<ListComponentsResult, AmplifyUIBuilderError> ListComponentsOutcome;
       typedef Aws::Utils::Outcome<ListFormsResult, AmplifyUIBuilderError> ListFormsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, AmplifyUIBuilderError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListThemesResult, AmplifyUIBuilderError> ListThemesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AmplifyUIBuilderError> PutMetadataFlagOutcome;
       typedef Aws::Utils::Outcome<RefreshTokenResult, AmplifyUIBuilderError> RefreshTokenOutcome;
       typedef Aws::Utils::Outcome<StartCodegenJobResult, AmplifyUIBuilderError> StartCodegenJobOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, AmplifyUIBuilderError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, AmplifyUIBuilderError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateComponentResult, AmplifyUIBuilderError> UpdateComponentOutcome;
       typedef Aws::Utils::Outcome<UpdateFormResult, AmplifyUIBuilderError> UpdateFormOutcome;
       typedef Aws::Utils::Outcome<UpdateThemeResult, AmplifyUIBuilderError> UpdateThemeOutcome;
@@ -154,10 +163,13 @@ namespace Aws
       typedef std::future<ListCodegenJobsOutcome> ListCodegenJobsOutcomeCallable;
       typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
       typedef std::future<ListFormsOutcome> ListFormsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListThemesOutcome> ListThemesOutcomeCallable;
       typedef std::future<PutMetadataFlagOutcome> PutMetadataFlagOutcomeCallable;
       typedef std::future<RefreshTokenOutcome> RefreshTokenOutcomeCallable;
       typedef std::future<StartCodegenJobOutcome> StartCodegenJobOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateComponentOutcome> UpdateComponentOutcomeCallable;
       typedef std::future<UpdateFormOutcome> UpdateFormOutcomeCallable;
       typedef std::future<UpdateThemeOutcome> UpdateThemeOutcomeCallable;
@@ -185,10 +197,13 @@ namespace Aws
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::ListCodegenJobsRequest&, const Model::ListCodegenJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodegenJobsResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::ListFormsRequest&, const Model::ListFormsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFormsResponseReceivedHandler;
+    typedef std::function<void(const AmplifyUIBuilderClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::ListThemesRequest&, const Model::ListThemesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemesResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::PutMetadataFlagRequest&, const Model::PutMetadataFlagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetadataFlagResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::RefreshTokenRequest&, const Model::RefreshTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RefreshTokenResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::StartCodegenJobRequest&, const Model::StartCodegenJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCodegenJobResponseReceivedHandler;
+    typedef std::function<void(const AmplifyUIBuilderClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const AmplifyUIBuilderClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::UpdateComponentRequest&, const Model::UpdateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::UpdateFormRequest&, const Model::UpdateFormOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFormResponseReceivedHandler;
     typedef std::function<void(const AmplifyUIBuilderClient*, const Model::UpdateThemeRequest&, const Model::UpdateThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemeResponseReceivedHandler;

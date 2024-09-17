@@ -16,7 +16,8 @@ namespace Model
   enum class ActionGroupSignature
   {
     NOT_SET,
-    AMAZON_UserInput
+    AMAZON_UserInput,
+    AMAZON_CodeInterpreter
   };
 
 namespace ActionGroupSignatureMapper

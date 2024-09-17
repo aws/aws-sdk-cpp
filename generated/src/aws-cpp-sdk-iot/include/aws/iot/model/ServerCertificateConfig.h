@@ -35,46 +35,20 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Boolean value that indicates whether Online Certificate Status Protocol
      * (OCSP) server certificate check is enabled or not.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-domain-ocsp-config.html">Configuring
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring
      * OCSP server-certificate stapling in domain configuration</a> from Amazon Web
      * Services IoT Core Developer Guide.</p>
      */
     inline bool GetEnableOCSPCheck() const{ return m_enableOCSPCheck; }
-
-    /**
-     * <p>A Boolean value that indicates whether Online Certificate Status Protocol
-     * (OCSP) server certificate check is enabled or not.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-domain-ocsp-config.html">Configuring
-     * OCSP server-certificate stapling in domain configuration</a> from Amazon Web
-     * Services IoT Core Developer Guide.</p>
-     */
     inline bool EnableOCSPCheckHasBeenSet() const { return m_enableOCSPCheckHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that indicates whether Online Certificate Status Protocol
-     * (OCSP) server certificate check is enabled or not.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-domain-ocsp-config.html">Configuring
-     * OCSP server-certificate stapling in domain configuration</a> from Amazon Web
-     * Services IoT Core Developer Guide.</p>
-     */
     inline void SetEnableOCSPCheck(bool value) { m_enableOCSPCheckHasBeenSet = true; m_enableOCSPCheck = value; }
-
-    /**
-     * <p>A Boolean value that indicates whether Online Certificate Status Protocol
-     * (OCSP) server certificate check is enabled or not.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-domain-ocsp-config.html">Configuring
-     * OCSP server-certificate stapling in domain configuration</a> from Amazon Web
-     * Services IoT Core Developer Guide.</p>
-     */
     inline ServerCertificateConfig& WithEnableOCSPCheck(bool value) { SetEnableOCSPCheck(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableOCSPCheck;

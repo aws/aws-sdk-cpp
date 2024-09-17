@@ -41,129 +41,53 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 location where the data is stored.</p>
      */
     inline const S3Location& GetS3InputDefinition() const{ return m_s3InputDefinition; }
-
-    /**
-     * <p>The Amazon S3 location where the data is stored.</p>
-     */
     inline bool S3InputDefinitionHasBeenSet() const { return m_s3InputDefinitionHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 location where the data is stored.</p>
-     */
     inline void SetS3InputDefinition(const S3Location& value) { m_s3InputDefinitionHasBeenSet = true; m_s3InputDefinition = value; }
-
-    /**
-     * <p>The Amazon S3 location where the data is stored.</p>
-     */
     inline void SetS3InputDefinition(S3Location&& value) { m_s3InputDefinitionHasBeenSet = true; m_s3InputDefinition = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 location where the data is stored.</p>
-     */
     inline Input& WithS3InputDefinition(const S3Location& value) { SetS3InputDefinition(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 location where the data is stored.</p>
-     */
     inline Input& WithS3InputDefinition(S3Location&& value) { SetS3InputDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Glue Data Catalog parameters for the data.</p>
      */
     inline const DataCatalogInputDefinition& GetDataCatalogInputDefinition() const{ return m_dataCatalogInputDefinition; }
-
-    /**
-     * <p>The Glue Data Catalog parameters for the data.</p>
-     */
     inline bool DataCatalogInputDefinitionHasBeenSet() const { return m_dataCatalogInputDefinitionHasBeenSet; }
-
-    /**
-     * <p>The Glue Data Catalog parameters for the data.</p>
-     */
     inline void SetDataCatalogInputDefinition(const DataCatalogInputDefinition& value) { m_dataCatalogInputDefinitionHasBeenSet = true; m_dataCatalogInputDefinition = value; }
-
-    /**
-     * <p>The Glue Data Catalog parameters for the data.</p>
-     */
     inline void SetDataCatalogInputDefinition(DataCatalogInputDefinition&& value) { m_dataCatalogInputDefinitionHasBeenSet = true; m_dataCatalogInputDefinition = std::move(value); }
-
-    /**
-     * <p>The Glue Data Catalog parameters for the data.</p>
-     */
     inline Input& WithDataCatalogInputDefinition(const DataCatalogInputDefinition& value) { SetDataCatalogInputDefinition(value); return *this;}
-
-    /**
-     * <p>The Glue Data Catalog parameters for the data.</p>
-     */
     inline Input& WithDataCatalogInputDefinition(DataCatalogInputDefinition&& value) { SetDataCatalogInputDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Connection information for dataset input files stored in a database.</p>
      */
     inline const DatabaseInputDefinition& GetDatabaseInputDefinition() const{ return m_databaseInputDefinition; }
-
-    /**
-     * <p>Connection information for dataset input files stored in a database.</p>
-     */
     inline bool DatabaseInputDefinitionHasBeenSet() const { return m_databaseInputDefinitionHasBeenSet; }
-
-    /**
-     * <p>Connection information for dataset input files stored in a database.</p>
-     */
     inline void SetDatabaseInputDefinition(const DatabaseInputDefinition& value) { m_databaseInputDefinitionHasBeenSet = true; m_databaseInputDefinition = value; }
-
-    /**
-     * <p>Connection information for dataset input files stored in a database.</p>
-     */
     inline void SetDatabaseInputDefinition(DatabaseInputDefinition&& value) { m_databaseInputDefinitionHasBeenSet = true; m_databaseInputDefinition = std::move(value); }
-
-    /**
-     * <p>Connection information for dataset input files stored in a database.</p>
-     */
     inline Input& WithDatabaseInputDefinition(const DatabaseInputDefinition& value) { SetDatabaseInputDefinition(value); return *this;}
-
-    /**
-     * <p>Connection information for dataset input files stored in a database.</p>
-     */
     inline Input& WithDatabaseInputDefinition(DatabaseInputDefinition&& value) { SetDatabaseInputDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains additional resource information needed for specific datasets.</p>
      */
     inline const Metadata& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>Contains additional resource information needed for specific datasets.</p>
-     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-
-    /**
-     * <p>Contains additional resource information needed for specific datasets.</p>
-     */
     inline void SetMetadata(const Metadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-
-    /**
-     * <p>Contains additional resource information needed for specific datasets.</p>
-     */
     inline void SetMetadata(Metadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-
-    /**
-     * <p>Contains additional resource information needed for specific datasets.</p>
-     */
     inline Input& WithMetadata(const Metadata& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>Contains additional resource information needed for specific datasets.</p>
-     */
     inline Input& WithMetadata(Metadata&& value) { SetMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Location m_s3InputDefinition;

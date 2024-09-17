@@ -24,9 +24,8 @@ Subnet::Subnet() :
 {
 }
 
-Subnet::Subnet(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+Subnet::Subnet(JsonView jsonValue)
+  : Subnet()
 {
   *this = jsonValue;
 }

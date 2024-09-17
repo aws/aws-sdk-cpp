@@ -40,46 +40,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The HTTP headers to insert into the request. </p>
      */
     inline const Aws::Vector<AwsWafv2CustomHttpHeader>& GetInsertHeaders() const{ return m_insertHeaders; }
-
-    /**
-     * <p> The HTTP headers to insert into the request. </p>
-     */
     inline bool InsertHeadersHasBeenSet() const { return m_insertHeadersHasBeenSet; }
-
-    /**
-     * <p> The HTTP headers to insert into the request. </p>
-     */
     inline void SetInsertHeaders(const Aws::Vector<AwsWafv2CustomHttpHeader>& value) { m_insertHeadersHasBeenSet = true; m_insertHeaders = value; }
-
-    /**
-     * <p> The HTTP headers to insert into the request. </p>
-     */
     inline void SetInsertHeaders(Aws::Vector<AwsWafv2CustomHttpHeader>&& value) { m_insertHeadersHasBeenSet = true; m_insertHeaders = std::move(value); }
-
-    /**
-     * <p> The HTTP headers to insert into the request. </p>
-     */
     inline AwsWafv2CustomRequestHandlingDetails& WithInsertHeaders(const Aws::Vector<AwsWafv2CustomHttpHeader>& value) { SetInsertHeaders(value); return *this;}
-
-    /**
-     * <p> The HTTP headers to insert into the request. </p>
-     */
     inline AwsWafv2CustomRequestHandlingDetails& WithInsertHeaders(Aws::Vector<AwsWafv2CustomHttpHeader>&& value) { SetInsertHeaders(std::move(value)); return *this;}
-
-    /**
-     * <p> The HTTP headers to insert into the request. </p>
-     */
     inline AwsWafv2CustomRequestHandlingDetails& AddInsertHeaders(const AwsWafv2CustomHttpHeader& value) { m_insertHeadersHasBeenSet = true; m_insertHeaders.push_back(value); return *this; }
-
-    /**
-     * <p> The HTTP headers to insert into the request. </p>
-     */
     inline AwsWafv2CustomRequestHandlingDetails& AddInsertHeaders(AwsWafv2CustomHttpHeader&& value) { m_insertHeadersHasBeenSet = true; m_insertHeaders.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AwsWafv2CustomHttpHeader> m_insertHeaders;

@@ -29,14 +29,8 @@ Fragment::Fragment() :
 {
 }
 
-Fragment::Fragment(JsonView jsonValue) : 
-    m_fragmentNumberHasBeenSet(false),
-    m_fragmentSizeInBytes(0),
-    m_fragmentSizeInBytesHasBeenSet(false),
-    m_producerTimestampHasBeenSet(false),
-    m_serverTimestampHasBeenSet(false),
-    m_fragmentLengthInMilliseconds(0),
-    m_fragmentLengthInMillisecondsHasBeenSet(false)
+Fragment::Fragment(JsonView jsonValue)
+  : Fragment()
 {
   *this = jsonValue;
 }

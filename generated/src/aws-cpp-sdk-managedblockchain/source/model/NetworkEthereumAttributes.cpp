@@ -23,8 +23,8 @@ NetworkEthereumAttributes::NetworkEthereumAttributes() :
 {
 }
 
-NetworkEthereumAttributes::NetworkEthereumAttributes(JsonView jsonValue) : 
-    m_chainIdHasBeenSet(false)
+NetworkEthereumAttributes::NetworkEthereumAttributes(JsonView jsonValue)
+  : NetworkEthereumAttributes()
 {
   *this = jsonValue;
 }

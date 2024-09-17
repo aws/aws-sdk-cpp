@@ -25,10 +25,8 @@ DetectedProfileObjectType::DetectedProfileObjectType() :
 {
 }
 
-DetectedProfileObjectType::DetectedProfileObjectType(JsonView jsonValue) : 
-    m_sourceLastUpdatedTimestampFormatHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_keysHasBeenSet(false)
+DetectedProfileObjectType::DetectedProfileObjectType(JsonView jsonValue)
+  : DetectedProfileObjectType()
 {
   *this = jsonValue;
 }

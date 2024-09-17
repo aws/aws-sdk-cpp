@@ -14,13 +14,13 @@ using namespace Aws::Utils;
 
 UpdateRoomRequest::UpdateRoomRequest() : 
     m_identifierHasBeenSet(false),
-    m_loggingConfigurationIdentifiersHasBeenSet(false),
-    m_maximumMessageLength(0),
-    m_maximumMessageLengthHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_maximumMessageRatePerSecond(0),
     m_maximumMessageRatePerSecondHasBeenSet(false),
+    m_maximumMessageLength(0),
+    m_maximumMessageLengthHasBeenSet(false),
     m_messageReviewHandlerHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_loggingConfigurationIdentifiersHasBeenSet(false)
 {
 }
 
@@ -34,20 +34,9 @@ Aws::String UpdateRoomRequest::SerializePayload() const
 
   }
 
-  if(m_loggingConfigurationIdentifiersHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> loggingConfigurationIdentifiersJsonList(m_loggingConfigurationIdentifiers.size());
-   for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
-   {
-     loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString(m_loggingConfigurationIdentifiers[loggingConfigurationIdentifiersIndex]);
-   }
-   payload.WithArray("loggingConfigurationIdentifiers", std::move(loggingConfigurationIdentifiersJsonList));
-
-  }
-
-  if(m_maximumMessageLengthHasBeenSet)
-  {
-   payload.WithInteger("maximumMessageLength", m_maximumMessageLength);
+   payload.WithString("name", m_name);
 
   }
 
@@ -57,15 +46,26 @@ Aws::String UpdateRoomRequest::SerializePayload() const
 
   }
 
+  if(m_maximumMessageLengthHasBeenSet)
+  {
+   payload.WithInteger("maximumMessageLength", m_maximumMessageLength);
+
+  }
+
   if(m_messageReviewHandlerHasBeenSet)
   {
    payload.WithObject("messageReviewHandler", m_messageReviewHandler.Jsonize());
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_loggingConfigurationIdentifiersHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   Aws::Utils::Array<JsonValue> loggingConfigurationIdentifiersJsonList(m_loggingConfigurationIdentifiers.size());
+   for(unsigned loggingConfigurationIdentifiersIndex = 0; loggingConfigurationIdentifiersIndex < loggingConfigurationIdentifiersJsonList.GetLength(); ++loggingConfigurationIdentifiersIndex)
+   {
+     loggingConfigurationIdentifiersJsonList[loggingConfigurationIdentifiersIndex].AsString(m_loggingConfigurationIdentifiers[loggingConfigurationIdentifiersIndex]);
+   }
+   payload.WithArray("loggingConfigurationIdentifiers", std::move(loggingConfigurationIdentifiersJsonList));
 
   }
 

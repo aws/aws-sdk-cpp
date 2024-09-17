@@ -25,10 +25,8 @@ AcceleratorType::AcceleratorType() :
 {
 }
 
-AcceleratorType::AcceleratorType(JsonView jsonValue) : 
-    m_acceleratorTypeNameHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false),
-    m_throughputInfoHasBeenSet(false)
+AcceleratorType::AcceleratorType(JsonView jsonValue)
+  : AcceleratorType()
 {
   *this = jsonValue;
 }

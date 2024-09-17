@@ -24,9 +24,8 @@ PropertyValueEntry::PropertyValueEntry() :
 {
 }
 
-PropertyValueEntry::PropertyValueEntry(JsonView jsonValue) : 
-    m_entityPropertyReferenceHasBeenSet(false),
-    m_propertyValuesHasBeenSet(false)
+PropertyValueEntry::PropertyValueEntry(JsonView jsonValue)
+  : PropertyValueEntry()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ EventsRequest::EventsRequest() :
 {
 }
 
-EventsRequest::EventsRequest(JsonView jsonValue) : 
-    m_batchItemHasBeenSet(false)
+EventsRequest::EventsRequest(JsonView jsonValue)
+  : EventsRequest()
 {
   *this = jsonValue;
 }

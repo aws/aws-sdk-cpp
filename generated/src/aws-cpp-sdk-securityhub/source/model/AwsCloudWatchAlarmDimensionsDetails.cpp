@@ -24,9 +24,8 @@ AwsCloudWatchAlarmDimensionsDetails::AwsCloudWatchAlarmDimensionsDetails() :
 {
 }
 
-AwsCloudWatchAlarmDimensionsDetails::AwsCloudWatchAlarmDimensionsDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+AwsCloudWatchAlarmDimensionsDetails::AwsCloudWatchAlarmDimensionsDetails(JsonView jsonValue)
+  : AwsCloudWatchAlarmDimensionsDetails()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ AwsLambdaFunctionDetails::AwsLambdaFunctionDetails() :
 {
 }
 
-AwsLambdaFunctionDetails::AwsLambdaFunctionDetails(JsonView jsonValue) : 
-    m_architecturesHasBeenSet(false),
-    m_codeSha256HasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+AwsLambdaFunctionDetails::AwsLambdaFunctionDetails(JsonView jsonValue)
+  : AwsLambdaFunctionDetails()
 {
   *this = jsonValue;
 }

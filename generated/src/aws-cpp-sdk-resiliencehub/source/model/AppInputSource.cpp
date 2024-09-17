@@ -30,15 +30,8 @@ AppInputSource::AppInputSource() :
 {
 }
 
-AppInputSource::AppInputSource(JsonView jsonValue) : 
-    m_eksSourceClusterNamespaceHasBeenSet(false),
-    m_importType(ResourceMappingType::NOT_SET),
-    m_importTypeHasBeenSet(false),
-    m_resourceCount(0),
-    m_resourceCountHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_terraformSourceHasBeenSet(false)
+AppInputSource::AppInputSource(JsonView jsonValue)
+  : AppInputSource()
 {
   *this = jsonValue;
 }

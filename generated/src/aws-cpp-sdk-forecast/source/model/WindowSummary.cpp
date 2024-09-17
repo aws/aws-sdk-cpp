@@ -29,14 +29,8 @@ WindowSummary::WindowSummary() :
 {
 }
 
-WindowSummary::WindowSummary(JsonView jsonValue) : 
-    m_testWindowStartHasBeenSet(false),
-    m_testWindowEndHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_evaluationType(EvaluationType::NOT_SET),
-    m_evaluationTypeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+WindowSummary::WindowSummary(JsonView jsonValue)
+  : WindowSummary()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ DeviceDeploymentSummary::DeviceDeploymentSummary() :
 {
 }
 
-DeviceDeploymentSummary::DeviceDeploymentSummary(JsonView jsonValue) : 
-    m_edgeDeploymentPlanArnHasBeenSet(false),
-    m_edgeDeploymentPlanNameHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_deployedStageNameHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_deviceDeploymentStatus(DeviceDeploymentStatus::NOT_SET),
-    m_deviceDeploymentStatusHasBeenSet(false),
-    m_deviceDeploymentStatusMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deploymentStartTimeHasBeenSet(false)
+DeviceDeploymentSummary::DeviceDeploymentSummary(JsonView jsonValue)
+  : DeviceDeploymentSummary()
 {
   *this = jsonValue;
 }

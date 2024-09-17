@@ -33,17 +33,8 @@ Document::Document() :
 {
 }
 
-Document::Document(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_blobHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_hierarchicalAccessControlListHasBeenSet(false),
-    m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_accessControlConfigurationIdHasBeenSet(false)
+Document::Document(JsonView jsonValue)
+  : Document()
 {
   *this = jsonValue;
 }

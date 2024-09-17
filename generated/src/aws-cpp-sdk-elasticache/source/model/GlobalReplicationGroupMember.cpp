@@ -30,13 +30,8 @@ GlobalReplicationGroupMember::GlobalReplicationGroupMember() :
 {
 }
 
-GlobalReplicationGroupMember::GlobalReplicationGroupMember(const XmlNode& xmlNode) : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupRegionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverHasBeenSet(false),
-    m_statusHasBeenSet(false)
+GlobalReplicationGroupMember::GlobalReplicationGroupMember(const XmlNode& xmlNode)
+  : GlobalReplicationGroupMember()
 {
   *this = xmlNode;
 }

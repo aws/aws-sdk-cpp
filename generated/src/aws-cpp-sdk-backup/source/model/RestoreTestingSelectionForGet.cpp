@@ -33,18 +33,8 @@ RestoreTestingSelectionForGet::RestoreTestingSelectionForGet() :
 {
 }
 
-RestoreTestingSelectionForGet::RestoreTestingSelectionForGet(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_protectedResourceArnsHasBeenSet(false),
-    m_protectedResourceConditionsHasBeenSet(false),
-    m_protectedResourceTypeHasBeenSet(false),
-    m_restoreMetadataOverridesHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_restoreTestingSelectionNameHasBeenSet(false),
-    m_validationWindowHours(0),
-    m_validationWindowHoursHasBeenSet(false)
+RestoreTestingSelectionForGet::RestoreTestingSelectionForGet(JsonView jsonValue)
+  : RestoreTestingSelectionForGet()
 {
   *this = jsonValue;
 }

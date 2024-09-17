@@ -23,9 +23,8 @@ DescribeStorageResult::DescribeStorageResult() :
 {
 }
 
-DescribeStorageResult::DescribeStorageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_totalBackupSizeInMegaBytes(0.0),
-    m_totalProvisionedStorageInMegaBytes(0.0)
+DescribeStorageResult::DescribeStorageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : DescribeStorageResult()
 {
   *this = result;
 }

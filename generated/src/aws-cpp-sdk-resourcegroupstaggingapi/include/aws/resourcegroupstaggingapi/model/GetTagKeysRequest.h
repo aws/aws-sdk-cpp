@@ -34,62 +34,21 @@ namespace Model
     AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies a <code>PaginationToken</code> response value from a previous
      * request to indicate that you want the next page of results. Leave this parameter
      * empty in your initial request.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
-
-    /**
-     * <p>Specifies a <code>PaginationToken</code> response value from a previous
-     * request to indicate that you want the next page of results. Leave this parameter
-     * empty in your initial request.</p>
-     */
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
-
-    /**
-     * <p>Specifies a <code>PaginationToken</code> response value from a previous
-     * request to indicate that you want the next page of results. Leave this parameter
-     * empty in your initial request.</p>
-     */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
-
-    /**
-     * <p>Specifies a <code>PaginationToken</code> response value from a previous
-     * request to indicate that you want the next page of results. Leave this parameter
-     * empty in your initial request.</p>
-     */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
-
-    /**
-     * <p>Specifies a <code>PaginationToken</code> response value from a previous
-     * request to indicate that you want the next page of results. Leave this parameter
-     * empty in your initial request.</p>
-     */
     inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
-
-    /**
-     * <p>Specifies a <code>PaginationToken</code> response value from a previous
-     * request to indicate that you want the next page of results. Leave this parameter
-     * empty in your initial request.</p>
-     */
     inline GetTagKeysRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-
-    /**
-     * <p>Specifies a <code>PaginationToken</code> response value from a previous
-     * request to indicate that you want the next page of results. Leave this parameter
-     * empty in your initial request.</p>
-     */
     inline GetTagKeysRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a <code>PaginationToken</code> response value from a previous
-     * request to indicate that you want the next page of results. Leave this parameter
-     * empty in your initial request.</p>
-     */
     inline GetTagKeysRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_paginationToken;

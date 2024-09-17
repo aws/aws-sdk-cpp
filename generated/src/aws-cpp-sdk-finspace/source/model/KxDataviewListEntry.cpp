@@ -33,30 +33,16 @@ KxDataviewListEntry::KxDataviewListEntry() :
     m_descriptionHasBeenSet(false),
     m_autoUpdate(false),
     m_autoUpdateHasBeenSet(false),
+    m_readWrite(false),
+    m_readWriteHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
 {
 }
 
-KxDataviewListEntry::KxDataviewListEntry(JsonView jsonValue) : 
-    m_environmentIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dataviewNameHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_changesetIdHasBeenSet(false),
-    m_segmentConfigurationsHasBeenSet(false),
-    m_activeVersionsHasBeenSet(false),
-    m_status(KxDataviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoUpdate(false),
-    m_autoUpdateHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+KxDataviewListEntry::KxDataviewListEntry(JsonView jsonValue)
+  : KxDataviewListEntry()
 {
   *this = jsonValue;
 }
@@ -144,6 +130,13 @@ KxDataviewListEntry& KxDataviewListEntry::operator =(JsonView jsonValue)
     m_autoUpdate = jsonValue.GetBool("autoUpdate");
 
     m_autoUpdateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("readWrite"))
+  {
+    m_readWrite = jsonValue.GetBool("readWrite");
+
+    m_readWriteHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdTimestamp"))
@@ -245,6 +238,12 @@ JsonValue KxDataviewListEntry::Jsonize() const
   if(m_autoUpdateHasBeenSet)
   {
    payload.WithBool("autoUpdate", m_autoUpdate);
+
+  }
+
+  if(m_readWriteHasBeenSet)
+  {
+   payload.WithBool("readWrite", m_readWrite);
 
   }
 

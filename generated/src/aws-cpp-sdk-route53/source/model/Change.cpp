@@ -27,10 +27,8 @@ Change::Change() :
 {
 }
 
-Change::Change(const XmlNode& xmlNode) : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_resourceRecordSetHasBeenSet(false)
+Change::Change(const XmlNode& xmlNode)
+  : Change()
 {
   *this = xmlNode;
 }

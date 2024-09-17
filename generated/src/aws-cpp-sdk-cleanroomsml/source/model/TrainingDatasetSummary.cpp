@@ -20,23 +20,17 @@ namespace Model
 
 TrainingDatasetSummary::TrainingDatasetSummary() : 
     m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_trainingDatasetArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(TrainingDatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
 }
 
-TrainingDatasetSummary::TrainingDatasetSummary(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(TrainingDatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+TrainingDatasetSummary::TrainingDatasetSummary(JsonView jsonValue)
+  : TrainingDatasetSummary()
 {
   *this = jsonValue;
 }
@@ -50,11 +44,18 @@ TrainingDatasetSummary& TrainingDatasetSummary::operator =(JsonView jsonValue)
     m_createTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("updateTime"))
   {
-    m_description = jsonValue.GetString("description");
+    m_updateTime = jsonValue.GetString("updateTime");
 
-    m_descriptionHasBeenSet = true;
+    m_updateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trainingDatasetArn"))
+  {
+    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
+
+    m_trainingDatasetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -71,18 +72,11 @@ TrainingDatasetSummary& TrainingDatasetSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("trainingDatasetArn"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
+    m_description = jsonValue.GetString("description");
 
-    m_trainingDatasetArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("updateTime"))
-  {
-    m_updateTime = jsonValue.GetString("updateTime");
-
-    m_updateTimeHasBeenSet = true;
+    m_descriptionHasBeenSet = true;
   }
 
   return *this;
@@ -97,9 +91,14 @@ JsonValue TrainingDatasetSummary::Jsonize() const
    payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_updateTimeHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_trainingDatasetArnHasBeenSet)
+  {
+   payload.WithString("trainingDatasetArn", m_trainingDatasetArn);
 
   }
 
@@ -114,15 +113,10 @@ JsonValue TrainingDatasetSummary::Jsonize() const
    payload.WithString("status", TrainingDatasetStatusMapper::GetNameForTrainingDatasetStatus(m_status));
   }
 
-  if(m_trainingDatasetArnHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("trainingDatasetArn", m_trainingDatasetArn);
+   payload.WithString("description", m_description);
 
-  }
-
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

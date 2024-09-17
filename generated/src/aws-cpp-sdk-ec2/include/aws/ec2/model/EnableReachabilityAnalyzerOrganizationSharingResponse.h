@@ -32,40 +32,24 @@ namespace Model
     AWS_EC2_API EnableReachabilityAnalyzerOrganizationSharingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
      * error.</p>
      */
     inline bool GetReturnValue() const{ return m_returnValue; }
-
-    /**
-     * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-     * error.</p>
-     */
     inline void SetReturnValue(bool value) { m_returnValue = value; }
-
-    /**
-     * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-     * error.</p>
-     */
     inline EnableReachabilityAnalyzerOrganizationSharingResponse& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline EnableReachabilityAnalyzerOrganizationSharingResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline EnableReachabilityAnalyzerOrganizationSharingResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_returnValue;

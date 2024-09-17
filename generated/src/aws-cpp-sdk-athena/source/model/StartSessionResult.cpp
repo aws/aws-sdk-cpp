@@ -22,8 +22,8 @@ StartSessionResult::StartSessionResult() :
 {
 }
 
-StartSessionResult::StartSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(SessionState::NOT_SET)
+StartSessionResult::StartSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartSessionResult()
 {
   *this = result;
 }

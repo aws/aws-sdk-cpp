@@ -26,11 +26,8 @@ FaultStatistics::FaultStatistics() :
 {
 }
 
-FaultStatistics::FaultStatistics(JsonView jsonValue) : 
-    m_otherCount(0),
-    m_otherCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
+FaultStatistics::FaultStatistics(JsonView jsonValue)
+  : FaultStatistics()
 {
   *this = jsonValue;
 }

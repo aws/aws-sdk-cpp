@@ -26,11 +26,8 @@ MeshData::MeshData() :
 {
 }
 
-MeshData::MeshData(JsonView jsonValue) : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false)
+MeshData::MeshData(JsonView jsonValue)
+  : MeshData()
 {
   *this = jsonValue;
 }

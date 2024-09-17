@@ -38,128 +38,47 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A JDBC location.</p>
      */
     inline const Aws::Vector<CodeGenNodeArg>& GetJdbc() const{ return m_jdbc; }
-
-    /**
-     * <p>A JDBC location.</p>
-     */
     inline bool JdbcHasBeenSet() const { return m_jdbcHasBeenSet; }
-
-    /**
-     * <p>A JDBC location.</p>
-     */
     inline void SetJdbc(const Aws::Vector<CodeGenNodeArg>& value) { m_jdbcHasBeenSet = true; m_jdbc = value; }
-
-    /**
-     * <p>A JDBC location.</p>
-     */
     inline void SetJdbc(Aws::Vector<CodeGenNodeArg>&& value) { m_jdbcHasBeenSet = true; m_jdbc = std::move(value); }
-
-    /**
-     * <p>A JDBC location.</p>
-     */
     inline Location& WithJdbc(const Aws::Vector<CodeGenNodeArg>& value) { SetJdbc(value); return *this;}
-
-    /**
-     * <p>A JDBC location.</p>
-     */
     inline Location& WithJdbc(Aws::Vector<CodeGenNodeArg>&& value) { SetJdbc(std::move(value)); return *this;}
-
-    /**
-     * <p>A JDBC location.</p>
-     */
     inline Location& AddJdbc(const CodeGenNodeArg& value) { m_jdbcHasBeenSet = true; m_jdbc.push_back(value); return *this; }
-
-    /**
-     * <p>A JDBC location.</p>
-     */
     inline Location& AddJdbc(CodeGenNodeArg&& value) { m_jdbcHasBeenSet = true; m_jdbc.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
      */
     inline const Aws::Vector<CodeGenNodeArg>& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-     */
     inline void SetS3(const Aws::Vector<CodeGenNodeArg>& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-     */
     inline void SetS3(Aws::Vector<CodeGenNodeArg>&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-     */
     inline Location& WithS3(const Aws::Vector<CodeGenNodeArg>& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-     */
     inline Location& WithS3(Aws::Vector<CodeGenNodeArg>&& value) { SetS3(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-     */
     inline Location& AddS3(const CodeGenNodeArg& value) { m_s3HasBeenSet = true; m_s3.push_back(value); return *this; }
-
-    /**
-     * <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-     */
     inline Location& AddS3(CodeGenNodeArg&& value) { m_s3HasBeenSet = true; m_s3.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon DynamoDB table location.</p>
      */
     inline const Aws::Vector<CodeGenNodeArg>& GetDynamoDB() const{ return m_dynamoDB; }
-
-    /**
-     * <p>An Amazon DynamoDB table location.</p>
-     */
     inline bool DynamoDBHasBeenSet() const { return m_dynamoDBHasBeenSet; }
-
-    /**
-     * <p>An Amazon DynamoDB table location.</p>
-     */
     inline void SetDynamoDB(const Aws::Vector<CodeGenNodeArg>& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = value; }
-
-    /**
-     * <p>An Amazon DynamoDB table location.</p>
-     */
     inline void SetDynamoDB(Aws::Vector<CodeGenNodeArg>&& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = std::move(value); }
-
-    /**
-     * <p>An Amazon DynamoDB table location.</p>
-     */
     inline Location& WithDynamoDB(const Aws::Vector<CodeGenNodeArg>& value) { SetDynamoDB(value); return *this;}
-
-    /**
-     * <p>An Amazon DynamoDB table location.</p>
-     */
     inline Location& WithDynamoDB(Aws::Vector<CodeGenNodeArg>&& value) { SetDynamoDB(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon DynamoDB table location.</p>
-     */
     inline Location& AddDynamoDB(const CodeGenNodeArg& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB.push_back(value); return *this; }
-
-    /**
-     * <p>An Amazon DynamoDB table location.</p>
-     */
     inline Location& AddDynamoDB(CodeGenNodeArg&& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CodeGenNodeArg> m_jdbc;

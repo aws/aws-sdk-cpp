@@ -34,6 +34,7 @@ namespace Model
     AWS_RESOURCEEXPLORER2_API CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the new local index for the Region. You can reference this ARN in
      * IAM permission policies to authorize the following operations:
@@ -41,82 +42,26 @@ namespace Model
      * <a>CreateView</a> </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the new local index for the Region. You can reference this ARN in
-     * IAM permission policies to authorize the following operations:
-     * <a>DeleteIndex</a> | <a>GetIndex</a> | <a>UpdateIndexType</a> |
-     * <a>CreateView</a> </p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The ARN of the new local index for the Region. You can reference this ARN in
-     * IAM permission policies to authorize the following operations:
-     * <a>DeleteIndex</a> | <a>GetIndex</a> | <a>UpdateIndexType</a> |
-     * <a>CreateView</a> </p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the new local index for the Region. You can reference this ARN in
-     * IAM permission policies to authorize the following operations:
-     * <a>DeleteIndex</a> | <a>GetIndex</a> | <a>UpdateIndexType</a> |
-     * <a>CreateView</a> </p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the new local index for the Region. You can reference this ARN in
-     * IAM permission policies to authorize the following operations:
-     * <a>DeleteIndex</a> | <a>GetIndex</a> | <a>UpdateIndexType</a> |
-     * <a>CreateView</a> </p>
-     */
     inline CreateIndexResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the new local index for the Region. You can reference this ARN in
-     * IAM permission policies to authorize the following operations:
-     * <a>DeleteIndex</a> | <a>GetIndex</a> | <a>UpdateIndexType</a> |
-     * <a>CreateView</a> </p>
-     */
     inline CreateIndexResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the new local index for the Region. You can reference this ARN in
-     * IAM permission policies to authorize the following operations:
-     * <a>DeleteIndex</a> | <a>GetIndex</a> | <a>UpdateIndexType</a> |
-     * <a>CreateView</a> </p>
-     */
     inline CreateIndexResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and timestamp when the index was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The date and timestamp when the index was created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-
-    /**
-     * <p>The date and timestamp when the index was created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-
-    /**
-     * <p>The date and timestamp when the index was created.</p>
-     */
     inline CreateIndexResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The date and timestamp when the index was created.</p>
-     */
     inline CreateIndexResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the current state of the index. You can check for changes to the
      * state for asynchronous operations by calling the <a>GetIndex</a> operation.</p>
@@ -125,65 +70,22 @@ namespace Model
      * information about your resources and populates the index.</p> 
      */
     inline const IndexState& GetState() const{ return m_state; }
-
-    /**
-     * <p>Indicates the current state of the index. You can check for changes to the
-     * state for asynchronous operations by calling the <a>GetIndex</a> operation.</p>
-     *  <p>The state can remain in the <code>CREATING</code> or
-     * <code>UPDATING</code> state for several hours as Resource Explorer discovers the
-     * information about your resources and populates the index.</p> 
-     */
     inline void SetState(const IndexState& value) { m_state = value; }
-
-    /**
-     * <p>Indicates the current state of the index. You can check for changes to the
-     * state for asynchronous operations by calling the <a>GetIndex</a> operation.</p>
-     *  <p>The state can remain in the <code>CREATING</code> or
-     * <code>UPDATING</code> state for several hours as Resource Explorer discovers the
-     * information about your resources and populates the index.</p> 
-     */
     inline void SetState(IndexState&& value) { m_state = std::move(value); }
-
-    /**
-     * <p>Indicates the current state of the index. You can check for changes to the
-     * state for asynchronous operations by calling the <a>GetIndex</a> operation.</p>
-     *  <p>The state can remain in the <code>CREATING</code> or
-     * <code>UPDATING</code> state for several hours as Resource Explorer discovers the
-     * information about your resources and populates the index.</p> 
-     */
     inline CreateIndexResult& WithState(const IndexState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>Indicates the current state of the index. You can check for changes to the
-     * state for asynchronous operations by calling the <a>GetIndex</a> operation.</p>
-     *  <p>The state can remain in the <code>CREATING</code> or
-     * <code>UPDATING</code> state for several hours as Resource Explorer discovers the
-     * information about your resources and populates the index.</p> 
-     */
     inline CreateIndexResult& WithState(IndexState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

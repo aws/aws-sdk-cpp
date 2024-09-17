@@ -22,8 +22,8 @@ ListPolicyTagsResult::ListPolicyTagsResult() :
 {
 }
 
-ListPolicyTagsResult::ListPolicyTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+ListPolicyTagsResult::ListPolicyTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ListPolicyTagsResult()
 {
   *this = result;
 }

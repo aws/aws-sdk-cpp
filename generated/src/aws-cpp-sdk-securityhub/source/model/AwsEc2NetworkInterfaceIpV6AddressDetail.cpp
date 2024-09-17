@@ -23,8 +23,8 @@ AwsEc2NetworkInterfaceIpV6AddressDetail::AwsEc2NetworkInterfaceIpV6AddressDetail
 {
 }
 
-AwsEc2NetworkInterfaceIpV6AddressDetail::AwsEc2NetworkInterfaceIpV6AddressDetail(JsonView jsonValue) : 
-    m_ipV6AddressHasBeenSet(false)
+AwsEc2NetworkInterfaceIpV6AddressDetail::AwsEc2NetworkInterfaceIpV6AddressDetail(JsonView jsonValue)
+  : AwsEc2NetworkInterfaceIpV6AddressDetail()
 {
   *this = jsonValue;
 }

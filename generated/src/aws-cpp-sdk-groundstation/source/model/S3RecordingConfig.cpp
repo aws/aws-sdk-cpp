@@ -25,10 +25,8 @@ S3RecordingConfig::S3RecordingConfig() :
 {
 }
 
-S3RecordingConfig::S3RecordingConfig(JsonView jsonValue) : 
-    m_bucketArnHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+S3RecordingConfig::S3RecordingConfig(JsonView jsonValue)
+  : S3RecordingConfig()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ GroupDefinition::GroupDefinition() :
 {
 }
 
-GroupDefinition::GroupDefinition(JsonView jsonValue) : 
-    m_type(GroupDefinitionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyHasBeenSet(false)
+GroupDefinition::GroupDefinition(JsonView jsonValue)
+  : GroupDefinition()
 {
   *this = jsonValue;
 }

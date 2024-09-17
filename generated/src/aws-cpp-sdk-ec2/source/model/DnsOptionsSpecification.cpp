@@ -28,11 +28,8 @@ DnsOptionsSpecification::DnsOptionsSpecification() :
 {
 }
 
-DnsOptionsSpecification::DnsOptionsSpecification(const XmlNode& xmlNode) : 
-    m_dnsRecordIpType(DnsRecordIpType::NOT_SET),
-    m_dnsRecordIpTypeHasBeenSet(false),
-    m_privateDnsOnlyForInboundResolverEndpoint(false),
-    m_privateDnsOnlyForInboundResolverEndpointHasBeenSet(false)
+DnsOptionsSpecification::DnsOptionsSpecification(const XmlNode& xmlNode)
+  : DnsOptionsSpecification()
 {
   *this = xmlNode;
 }

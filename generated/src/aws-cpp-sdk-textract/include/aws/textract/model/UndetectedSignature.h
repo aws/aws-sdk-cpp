@@ -36,26 +36,15 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The page where a signature was expected but not found.</p>
      */
     inline int GetPage() const{ return m_page; }
-
-    /**
-     * <p>The page where a signature was expected but not found.</p>
-     */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-
-    /**
-     * <p>The page where a signature was expected but not found.</p>
-     */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
-
-    /**
-     * <p>The page where a signature was expected but not found.</p>
-     */
     inline UndetectedSignature& WithPage(int value) { SetPage(value); return *this;}
-
+    ///@}
   private:
 
     int m_page;

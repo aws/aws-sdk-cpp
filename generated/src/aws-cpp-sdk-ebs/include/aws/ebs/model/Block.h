@@ -38,67 +38,29 @@ namespace Model
     AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The block index.</p>
      */
     inline int GetBlockIndex() const{ return m_blockIndex; }
-
-    /**
-     * <p>The block index.</p>
-     */
     inline bool BlockIndexHasBeenSet() const { return m_blockIndexHasBeenSet; }
-
-    /**
-     * <p>The block index.</p>
-     */
     inline void SetBlockIndex(int value) { m_blockIndexHasBeenSet = true; m_blockIndex = value; }
-
-    /**
-     * <p>The block index.</p>
-     */
     inline Block& WithBlockIndex(int value) { SetBlockIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The block token for the block index.</p>
      */
     inline const Aws::String& GetBlockToken() const{ return m_blockToken; }
-
-    /**
-     * <p>The block token for the block index.</p>
-     */
     inline bool BlockTokenHasBeenSet() const { return m_blockTokenHasBeenSet; }
-
-    /**
-     * <p>The block token for the block index.</p>
-     */
     inline void SetBlockToken(const Aws::String& value) { m_blockTokenHasBeenSet = true; m_blockToken = value; }
-
-    /**
-     * <p>The block token for the block index.</p>
-     */
     inline void SetBlockToken(Aws::String&& value) { m_blockTokenHasBeenSet = true; m_blockToken = std::move(value); }
-
-    /**
-     * <p>The block token for the block index.</p>
-     */
     inline void SetBlockToken(const char* value) { m_blockTokenHasBeenSet = true; m_blockToken.assign(value); }
-
-    /**
-     * <p>The block token for the block index.</p>
-     */
     inline Block& WithBlockToken(const Aws::String& value) { SetBlockToken(value); return *this;}
-
-    /**
-     * <p>The block token for the block index.</p>
-     */
     inline Block& WithBlockToken(Aws::String&& value) { SetBlockToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The block token for the block index.</p>
-     */
     inline Block& WithBlockToken(const char* value) { SetBlockToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_blockIndex;

@@ -23,8 +23,8 @@ UtteranceAggregationDuration::UtteranceAggregationDuration() :
 {
 }
 
-UtteranceAggregationDuration::UtteranceAggregationDuration(JsonView jsonValue) : 
-    m_relativeAggregationDurationHasBeenSet(false)
+UtteranceAggregationDuration::UtteranceAggregationDuration(JsonView jsonValue)
+  : UtteranceAggregationDuration()
 {
   *this = jsonValue;
 }

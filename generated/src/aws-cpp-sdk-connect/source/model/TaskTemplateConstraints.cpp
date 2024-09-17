@@ -25,10 +25,8 @@ TaskTemplateConstraints::TaskTemplateConstraints() :
 {
 }
 
-TaskTemplateConstraints::TaskTemplateConstraints(JsonView jsonValue) : 
-    m_requiredFieldsHasBeenSet(false),
-    m_readOnlyFieldsHasBeenSet(false),
-    m_invisibleFieldsHasBeenSet(false)
+TaskTemplateConstraints::TaskTemplateConstraints(JsonView jsonValue)
+  : TaskTemplateConstraints()
 {
   *this = jsonValue;
 }

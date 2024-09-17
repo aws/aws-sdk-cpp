@@ -27,12 +27,8 @@ Summary::Summary() :
 {
 }
 
-Summary::Summary(JsonView jsonValue) : 
-    m_name(Finding::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_reasonCodeSummariesHasBeenSet(false)
+Summary::Summary(JsonView jsonValue)
+  : Summary()
 {
   *this = jsonValue;
 }

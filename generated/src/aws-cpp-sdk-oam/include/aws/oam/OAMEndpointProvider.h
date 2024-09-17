@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using OAMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OAMClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using OAMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OAMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

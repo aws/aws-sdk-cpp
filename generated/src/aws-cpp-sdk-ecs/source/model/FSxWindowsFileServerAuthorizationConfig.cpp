@@ -24,9 +24,8 @@ FSxWindowsFileServerAuthorizationConfig::FSxWindowsFileServerAuthorizationConfig
 {
 }
 
-FSxWindowsFileServerAuthorizationConfig::FSxWindowsFileServerAuthorizationConfig(JsonView jsonValue) : 
-    m_credentialsParameterHasBeenSet(false),
-    m_domainHasBeenSet(false)
+FSxWindowsFileServerAuthorizationConfig::FSxWindowsFileServerAuthorizationConfig(JsonView jsonValue)
+  : FSxWindowsFileServerAuthorizationConfig()
 {
   *this = jsonValue;
 }

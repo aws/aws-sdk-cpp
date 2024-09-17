@@ -30,15 +30,8 @@ AxisDisplayOptions::AxisDisplayOptions() :
 {
 }
 
-AxisDisplayOptions::AxisDisplayOptions(JsonView jsonValue) : 
-    m_tickLabelOptionsHasBeenSet(false),
-    m_axisLineVisibility(Visibility::NOT_SET),
-    m_axisLineVisibilityHasBeenSet(false),
-    m_gridLineVisibility(Visibility::NOT_SET),
-    m_gridLineVisibilityHasBeenSet(false),
-    m_dataOptionsHasBeenSet(false),
-    m_scrollbarOptionsHasBeenSet(false),
-    m_axisOffsetHasBeenSet(false)
+AxisDisplayOptions::AxisDisplayOptions(JsonView jsonValue)
+  : AxisDisplayOptions()
 {
   *this = jsonValue;
 }

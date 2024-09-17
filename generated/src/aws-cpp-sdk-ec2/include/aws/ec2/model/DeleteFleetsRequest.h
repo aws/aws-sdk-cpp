@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -44,78 +45,29 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteFleetsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline DeleteFleetsRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline DeleteFleetsRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline DeleteFleetsRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline DeleteFleetsRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the EC2 Fleets.</p>
-     */
     inline DeleteFleetsRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to terminate the associated instances when the EC2 Fleet is
      * deleted. The default is to terminate the instances.</p> <p>To let the instances
@@ -126,40 +78,10 @@ namespace Model
      * <code>instant</code> fleet with running instances is not supported.</p>
      */
     inline bool GetTerminateInstances() const{ return m_terminateInstances; }
-
-    /**
-     * <p>Indicates whether to terminate the associated instances when the EC2 Fleet is
-     * deleted. The default is to terminate the instances.</p> <p>To let the instances
-     * continue to run after the EC2 Fleet is deleted, specify
-     * <code>no-terminate-instances</code>. Supported only for fleets of type
-     * <code>maintain</code> and <code>request</code>.</p> <p>For <code>instant</code>
-     * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
-     * <code>instant</code> fleet with running instances is not supported.</p>
-     */
     inline bool TerminateInstancesHasBeenSet() const { return m_terminateInstancesHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to terminate the associated instances when the EC2 Fleet is
-     * deleted. The default is to terminate the instances.</p> <p>To let the instances
-     * continue to run after the EC2 Fleet is deleted, specify
-     * <code>no-terminate-instances</code>. Supported only for fleets of type
-     * <code>maintain</code> and <code>request</code>.</p> <p>For <code>instant</code>
-     * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
-     * <code>instant</code> fleet with running instances is not supported.</p>
-     */
     inline void SetTerminateInstances(bool value) { m_terminateInstancesHasBeenSet = true; m_terminateInstances = value; }
-
-    /**
-     * <p>Indicates whether to terminate the associated instances when the EC2 Fleet is
-     * deleted. The default is to terminate the instances.</p> <p>To let the instances
-     * continue to run after the EC2 Fleet is deleted, specify
-     * <code>no-terminate-instances</code>. Supported only for fleets of type
-     * <code>maintain</code> and <code>request</code>.</p> <p>For <code>instant</code>
-     * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
-     * <code>instant</code> fleet with running instances is not supported.</p>
-     */
     inline DeleteFleetsRequest& WithTerminateInstances(bool value) { SetTerminateInstances(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

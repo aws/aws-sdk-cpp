@@ -32,95 +32,34 @@ namespace Model
     AWS_IVS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ARN of the channel into which metadata is inserted. This channel must have an
      * active stream.</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-
-    /**
-     * <p>ARN of the channel into which metadata is inserted. This channel must have an
-     * active stream.</p>
-     */
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-
-    /**
-     * <p>ARN of the channel into which metadata is inserted. This channel must have an
-     * active stream.</p>
-     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-
-    /**
-     * <p>ARN of the channel into which metadata is inserted. This channel must have an
-     * active stream.</p>
-     */
     inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-
-    /**
-     * <p>ARN of the channel into which metadata is inserted. This channel must have an
-     * active stream.</p>
-     */
     inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-
-    /**
-     * <p>ARN of the channel into which metadata is inserted. This channel must have an
-     * active stream.</p>
-     */
     inline PutMetadataRequest& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-
-    /**
-     * <p>ARN of the channel into which metadata is inserted. This channel must have an
-     * active stream.</p>
-     */
     inline PutMetadataRequest& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the channel into which metadata is inserted. This channel must have an
-     * active stream.</p>
-     */
     inline PutMetadataRequest& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-
-    /**
-     * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-     */
     inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-
-    /**
-     * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-     */
     inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-
-    /**
-     * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-     */
     inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-
-    /**
-     * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-     */
     inline PutMetadataRequest& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-     */
     inline PutMetadataRequest& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-     */
     inline PutMetadataRequest& WithMetadata(const char* value) { SetMetadata(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelArn;

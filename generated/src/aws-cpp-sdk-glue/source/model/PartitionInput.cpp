@@ -27,12 +27,8 @@ PartitionInput::PartitionInput() :
 {
 }
 
-PartitionInput::PartitionInput(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_storageDescriptorHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false)
+PartitionInput::PartitionInput(JsonView jsonValue)
+  : PartitionInput()
 {
   *this = jsonValue;
 }

@@ -32,25 +32,14 @@ ContactData::ContactData() :
     m_regionHasBeenSet(false),
     m_satelliteArnHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_visibilityEndTimeHasBeenSet(false),
+    m_visibilityStartTimeHasBeenSet(false)
 {
 }
 
-ContactData::ContactData(JsonView jsonValue) : 
-    m_contactIdHasBeenSet(false),
-    m_contactStatus(ContactStatus::NOT_SET),
-    m_contactStatusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_groundStationHasBeenSet(false),
-    m_maximumElevationHasBeenSet(false),
-    m_missionProfileArnHasBeenSet(false),
-    m_postPassEndTimeHasBeenSet(false),
-    m_prePassStartTimeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_satelliteArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ContactData::ContactData(JsonView jsonValue)
+  : ContactData()
 {
   *this = jsonValue;
 }
@@ -151,6 +140,20 @@ ContactData& ContactData::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("visibilityEndTime"))
+  {
+    m_visibilityEndTime = jsonValue.GetDouble("visibilityEndTime");
+
+    m_visibilityEndTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("visibilityStartTime"))
+  {
+    m_visibilityStartTime = jsonValue.GetDouble("visibilityStartTime");
+
+    m_visibilityStartTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -234,6 +237,16 @@ JsonValue ContactData::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_visibilityEndTimeHasBeenSet)
+  {
+   payload.WithDouble("visibilityEndTime", m_visibilityEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_visibilityStartTimeHasBeenSet)
+  {
+   payload.WithDouble("visibilityStartTime", m_visibilityStartTime.SecondsWithMSPrecision());
   }
 
   return payload;

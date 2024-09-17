@@ -38,63 +38,29 @@ namespace Model
     AWS_KINESISANALYTICS_API CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis
      * Analytics returns a response with a summary of the application it created,
      * including the application Amazon Resource Name (ARN), name, and status.</p>
      */
     inline const ApplicationSummary& GetApplicationSummary() const{ return m_applicationSummary; }
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis
-     * Analytics returns a response with a summary of the application it created,
-     * including the application Amazon Resource Name (ARN), name, and status.</p>
-     */
     inline void SetApplicationSummary(const ApplicationSummary& value) { m_applicationSummary = value; }
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis
-     * Analytics returns a response with a summary of the application it created,
-     * including the application Amazon Resource Name (ARN), name, and status.</p>
-     */
     inline void SetApplicationSummary(ApplicationSummary&& value) { m_applicationSummary = std::move(value); }
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis
-     * Analytics returns a response with a summary of the application it created,
-     * including the application Amazon Resource Name (ARN), name, and status.</p>
-     */
     inline CreateApplicationResult& WithApplicationSummary(const ApplicationSummary& value) { SetApplicationSummary(value); return *this;}
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis
-     * Analytics returns a response with a summary of the application it created,
-     * including the application Amazon Resource Name (ARN), name, and status.</p>
-     */
     inline CreateApplicationResult& WithApplicationSummary(ApplicationSummary&& value) { SetApplicationSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationSummary m_applicationSummary;

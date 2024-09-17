@@ -26,11 +26,8 @@ SuiteRunConfiguration::SuiteRunConfiguration() :
 {
 }
 
-SuiteRunConfiguration::SuiteRunConfiguration(JsonView jsonValue) : 
-    m_primaryDeviceHasBeenSet(false),
-    m_selectedTestListHasBeenSet(false),
-    m_parallelRun(false),
-    m_parallelRunHasBeenSet(false)
+SuiteRunConfiguration::SuiteRunConfiguration(JsonView jsonValue)
+  : SuiteRunConfiguration()
 {
   *this = jsonValue;
 }

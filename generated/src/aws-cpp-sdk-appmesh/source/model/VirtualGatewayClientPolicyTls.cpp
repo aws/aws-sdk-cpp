@@ -27,12 +27,8 @@ VirtualGatewayClientPolicyTls::VirtualGatewayClientPolicyTls() :
 {
 }
 
-VirtualGatewayClientPolicyTls::VirtualGatewayClientPolicyTls(JsonView jsonValue) : 
-    m_certificateHasBeenSet(false),
-    m_enforce(false),
-    m_enforceHasBeenSet(false),
-    m_portsHasBeenSet(false),
-    m_validationHasBeenSet(false)
+VirtualGatewayClientPolicyTls::VirtualGatewayClientPolicyTls(JsonView jsonValue)
+  : VirtualGatewayClientPolicyTls()
 {
   *this = jsonValue;
 }

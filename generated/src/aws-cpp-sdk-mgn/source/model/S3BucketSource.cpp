@@ -25,10 +25,8 @@ S3BucketSource::S3BucketSource() :
 {
 }
 
-S3BucketSource::S3BucketSource(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3BucketOwnerHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
+S3BucketSource::S3BucketSource(JsonView jsonValue)
+  : S3BucketSource()
 {
   *this = jsonValue;
 }

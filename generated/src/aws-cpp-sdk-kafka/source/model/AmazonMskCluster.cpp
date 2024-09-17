@@ -23,8 +23,8 @@ AmazonMskCluster::AmazonMskCluster() :
 {
 }
 
-AmazonMskCluster::AmazonMskCluster(JsonView jsonValue) : 
-    m_mskClusterArnHasBeenSet(false)
+AmazonMskCluster::AmazonMskCluster(JsonView jsonValue)
+  : AmazonMskCluster()
 {
   *this = jsonValue;
 }

@@ -18,6 +18,8 @@
 /* End of generic header includes */
 
 /* Service model headers required in BedrockRuntimeClient header */
+#include <aws/bedrock-runtime/model/ApplyGuardrailResult.h>
+#include <aws/bedrock-runtime/model/ConverseResult.h>
 #include <aws/bedrock-runtime/model/InvokeModelResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in BedrockRuntimeClient header */
@@ -53,23 +55,32 @@ namespace Aws
 
   namespace BedrockRuntime
   {
-    using BedrockRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BedrockRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BedrockRuntimeEndpointProviderBase = Aws::BedrockRuntime::Endpoint::BedrockRuntimeEndpointProviderBase;
     using BedrockRuntimeEndpointProvider = Aws::BedrockRuntime::Endpoint::BedrockRuntimeEndpointProvider;
 
     namespace Model
     {
       /* Service model forward declarations required in BedrockRuntimeClient header */
+      class ApplyGuardrailRequest;
+      class ConverseRequest;
+      class ConverseStreamRequest;
       class InvokeModelRequest;
       class InvokeModelWithResponseStreamRequest;
       /* End of service model forward declarations required in BedrockRuntimeClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<ApplyGuardrailResult, BedrockRuntimeError> ApplyGuardrailOutcome;
+      typedef Aws::Utils::Outcome<ConverseResult, BedrockRuntimeError> ConverseOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, BedrockRuntimeError> ConverseStreamOutcome;
       typedef Aws::Utils::Outcome<InvokeModelResult, BedrockRuntimeError> InvokeModelOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BedrockRuntimeError> InvokeModelWithResponseStreamOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<ApplyGuardrailOutcome> ApplyGuardrailOutcomeCallable;
+      typedef std::future<ConverseOutcome> ConverseOutcomeCallable;
+      typedef std::future<ConverseStreamOutcome> ConverseStreamOutcomeCallable;
       typedef std::future<InvokeModelOutcome> InvokeModelOutcomeCallable;
       typedef std::future<InvokeModelWithResponseStreamOutcome> InvokeModelWithResponseStreamOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -78,6 +89,9 @@ namespace Aws
     class BedrockRuntimeClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const BedrockRuntimeClient*, const Model::ApplyGuardrailRequest&, const Model::ApplyGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyGuardrailResponseReceivedHandler;
+    typedef std::function<void(const BedrockRuntimeClient*, const Model::ConverseRequest&, const Model::ConverseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConverseResponseReceivedHandler;
+    typedef std::function<void(const BedrockRuntimeClient*, const Model::ConverseStreamRequest&, const Model::ConverseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConverseStreamResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::InvokeModelRequest&, Model::InvokeModelOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeModelResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::InvokeModelWithResponseStreamRequest&, const Model::InvokeModelWithResponseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeModelWithResponseStreamResponseReceivedHandler;
     /* End of service model async handlers definitions */

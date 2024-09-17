@@ -38,46 +38,26 @@ namespace Model
     AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was
      * successful.</p>
      */
     inline bool GetReturnValue() const{ return m_returnValue; }
-
-    /**
-     * <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was
-     * successful.</p>
-     */
     inline void SetReturnValue(bool value) { m_returnValue = value; }
-
-    /**
-     * <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was
-     * successful.</p>
-     */
     inline PutResolverQueryLogConfigPolicyResult& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutResolverQueryLogConfigPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutResolverQueryLogConfigPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutResolverQueryLogConfigPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_returnValue;

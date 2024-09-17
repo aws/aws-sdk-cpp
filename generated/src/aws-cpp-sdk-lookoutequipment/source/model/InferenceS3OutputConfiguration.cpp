@@ -24,9 +24,8 @@ InferenceS3OutputConfiguration::InferenceS3OutputConfiguration() :
 {
 }
 
-InferenceS3OutputConfiguration::InferenceS3OutputConfiguration(JsonView jsonValue) : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+InferenceS3OutputConfiguration::InferenceS3OutputConfiguration(JsonView jsonValue)
+  : InferenceS3OutputConfiguration()
 {
   *this = jsonValue;
 }

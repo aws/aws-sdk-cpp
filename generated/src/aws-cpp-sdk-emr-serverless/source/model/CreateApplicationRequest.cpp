@@ -29,7 +29,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_imageConfigurationHasBeenSet(false),
     m_workerTypeSpecificationsHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
+    m_monitoringConfigurationHasBeenSet(false),
+    m_interactiveConfigurationHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_monitoringConfigurationHasBeenSet)
   {
    payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
+
+  }
+
+  if(m_interactiveConfigurationHasBeenSet)
+  {
+   payload.WithObject("interactiveConfiguration", m_interactiveConfiguration.Jsonize());
 
   }
 

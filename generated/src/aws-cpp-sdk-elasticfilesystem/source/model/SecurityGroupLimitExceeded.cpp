@@ -24,9 +24,8 @@ SecurityGroupLimitExceeded::SecurityGroupLimitExceeded() :
 {
 }
 
-SecurityGroupLimitExceeded::SecurityGroupLimitExceeded(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SecurityGroupLimitExceeded::SecurityGroupLimitExceeded(JsonView jsonValue)
+  : SecurityGroupLimitExceeded()
 {
   *this = jsonValue;
 }

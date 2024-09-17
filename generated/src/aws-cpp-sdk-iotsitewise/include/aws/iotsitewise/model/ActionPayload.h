@@ -37,46 +37,19 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The payload of the action in a JSON string.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>The payload of the action in a JSON string.</p>
-     */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>The payload of the action in a JSON string.</p>
-     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>The payload of the action in a JSON string.</p>
-     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>The payload of the action in a JSON string.</p>
-     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>The payload of the action in a JSON string.</p>
-     */
     inline ActionPayload& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>The payload of the action in a JSON string.</p>
-     */
     inline ActionPayload& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The payload of the action in a JSON string.</p>
-     */
     inline ActionPayload& WithStringValue(const char* value) { SetStringValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stringValue;

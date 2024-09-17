@@ -39,77 +39,31 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
      */
     inline const Aws::String& GetRecommendationSourceArn() const{ return m_recommendationSourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-     */
     inline bool RecommendationSourceArnHasBeenSet() const { return m_recommendationSourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-     */
     inline void SetRecommendationSourceArn(const Aws::String& value) { m_recommendationSourceArnHasBeenSet = true; m_recommendationSourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-     */
     inline void SetRecommendationSourceArn(Aws::String&& value) { m_recommendationSourceArnHasBeenSet = true; m_recommendationSourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-     */
     inline void SetRecommendationSourceArn(const char* value) { m_recommendationSourceArnHasBeenSet = true; m_recommendationSourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-     */
     inline RecommendationSource& WithRecommendationSourceArn(const Aws::String& value) { SetRecommendationSourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-     */
     inline RecommendationSource& WithRecommendationSourceArn(Aws::String&& value) { SetRecommendationSourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
-     */
     inline RecommendationSource& WithRecommendationSourceArn(const char* value) { SetRecommendationSourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource type of the recommendation source.</p>
      */
     inline const RecommendationSourceType& GetRecommendationSourceType() const{ return m_recommendationSourceType; }
-
-    /**
-     * <p>The resource type of the recommendation source.</p>
-     */
     inline bool RecommendationSourceTypeHasBeenSet() const { return m_recommendationSourceTypeHasBeenSet; }
-
-    /**
-     * <p>The resource type of the recommendation source.</p>
-     */
     inline void SetRecommendationSourceType(const RecommendationSourceType& value) { m_recommendationSourceTypeHasBeenSet = true; m_recommendationSourceType = value; }
-
-    /**
-     * <p>The resource type of the recommendation source.</p>
-     */
     inline void SetRecommendationSourceType(RecommendationSourceType&& value) { m_recommendationSourceTypeHasBeenSet = true; m_recommendationSourceType = std::move(value); }
-
-    /**
-     * <p>The resource type of the recommendation source.</p>
-     */
     inline RecommendationSource& WithRecommendationSourceType(const RecommendationSourceType& value) { SetRecommendationSourceType(value); return *this;}
-
-    /**
-     * <p>The resource type of the recommendation source.</p>
-     */
     inline RecommendationSource& WithRecommendationSourceType(RecommendationSourceType&& value) { SetRecommendationSourceType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recommendationSourceArn;

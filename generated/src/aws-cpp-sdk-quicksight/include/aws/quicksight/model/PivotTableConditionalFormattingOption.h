@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cell conditional formatting option for a pivot table.</p>
      */
     inline const PivotTableCellConditionalFormatting& GetCell() const{ return m_cell; }
-
-    /**
-     * <p>The cell conditional formatting option for a pivot table.</p>
-     */
     inline bool CellHasBeenSet() const { return m_cellHasBeenSet; }
-
-    /**
-     * <p>The cell conditional formatting option for a pivot table.</p>
-     */
     inline void SetCell(const PivotTableCellConditionalFormatting& value) { m_cellHasBeenSet = true; m_cell = value; }
-
-    /**
-     * <p>The cell conditional formatting option for a pivot table.</p>
-     */
     inline void SetCell(PivotTableCellConditionalFormatting&& value) { m_cellHasBeenSet = true; m_cell = std::move(value); }
-
-    /**
-     * <p>The cell conditional formatting option for a pivot table.</p>
-     */
     inline PivotTableConditionalFormattingOption& WithCell(const PivotTableCellConditionalFormatting& value) { SetCell(value); return *this;}
-
-    /**
-     * <p>The cell conditional formatting option for a pivot table.</p>
-     */
     inline PivotTableConditionalFormattingOption& WithCell(PivotTableCellConditionalFormatting&& value) { SetCell(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PivotTableCellConditionalFormatting m_cell;

@@ -39,101 +39,49 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the threat intelligence list that triggered the finding.</p>
      */
     inline const Aws::String& GetThreatListName() const{ return m_threatListName; }
-
-    /**
-     * <p>The name of the threat intelligence list that triggered the finding.</p>
-     */
     inline bool ThreatListNameHasBeenSet() const { return m_threatListNameHasBeenSet; }
-
-    /**
-     * <p>The name of the threat intelligence list that triggered the finding.</p>
-     */
     inline void SetThreatListName(const Aws::String& value) { m_threatListNameHasBeenSet = true; m_threatListName = value; }
-
-    /**
-     * <p>The name of the threat intelligence list that triggered the finding.</p>
-     */
     inline void SetThreatListName(Aws::String&& value) { m_threatListNameHasBeenSet = true; m_threatListName = std::move(value); }
-
-    /**
-     * <p>The name of the threat intelligence list that triggered the finding.</p>
-     */
     inline void SetThreatListName(const char* value) { m_threatListNameHasBeenSet = true; m_threatListName.assign(value); }
-
-    /**
-     * <p>The name of the threat intelligence list that triggered the finding.</p>
-     */
     inline ThreatIntelligenceDetail& WithThreatListName(const Aws::String& value) { SetThreatListName(value); return *this;}
-
-    /**
-     * <p>The name of the threat intelligence list that triggered the finding.</p>
-     */
     inline ThreatIntelligenceDetail& WithThreatListName(Aws::String&& value) { SetThreatListName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the threat intelligence list that triggered the finding.</p>
-     */
     inline ThreatIntelligenceDetail& WithThreatListName(const char* value) { SetThreatListName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of names of the threats in the threat intelligence list that triggered
      * the finding.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThreatNames() const{ return m_threatNames; }
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline bool ThreatNamesHasBeenSet() const { return m_threatNamesHasBeenSet; }
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline void SetThreatNames(const Aws::Vector<Aws::String>& value) { m_threatNamesHasBeenSet = true; m_threatNames = value; }
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline void SetThreatNames(Aws::Vector<Aws::String>&& value) { m_threatNamesHasBeenSet = true; m_threatNames = std::move(value); }
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline ThreatIntelligenceDetail& WithThreatNames(const Aws::Vector<Aws::String>& value) { SetThreatNames(value); return *this;}
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline ThreatIntelligenceDetail& WithThreatNames(Aws::Vector<Aws::String>&& value) { SetThreatNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline ThreatIntelligenceDetail& AddThreatNames(const Aws::String& value) { m_threatNamesHasBeenSet = true; m_threatNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline ThreatIntelligenceDetail& AddThreatNames(Aws::String&& value) { m_threatNamesHasBeenSet = true; m_threatNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of names of the threats in the threat intelligence list that triggered
-     * the finding.</p>
-     */
     inline ThreatIntelligenceDetail& AddThreatNames(const char* value) { m_threatNamesHasBeenSet = true; m_threatNames.push_back(value); return *this; }
+    ///@}
 
+    ///@{
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline const Aws::String& GetThreatFileSha256() const{ return m_threatFileSha256; }
+    inline bool ThreatFileSha256HasBeenSet() const { return m_threatFileSha256HasBeenSet; }
+    inline void SetThreatFileSha256(const Aws::String& value) { m_threatFileSha256HasBeenSet = true; m_threatFileSha256 = value; }
+    inline void SetThreatFileSha256(Aws::String&& value) { m_threatFileSha256HasBeenSet = true; m_threatFileSha256 = std::move(value); }
+    inline void SetThreatFileSha256(const char* value) { m_threatFileSha256HasBeenSet = true; m_threatFileSha256.assign(value); }
+    inline ThreatIntelligenceDetail& WithThreatFileSha256(const Aws::String& value) { SetThreatFileSha256(value); return *this;}
+    inline ThreatIntelligenceDetail& WithThreatFileSha256(Aws::String&& value) { SetThreatFileSha256(std::move(value)); return *this;}
+    inline ThreatIntelligenceDetail& WithThreatFileSha256(const char* value) { SetThreatFileSha256(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_threatListName;
@@ -141,6 +89,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_threatNames;
     bool m_threatNamesHasBeenSet = false;
+
+    Aws::String m_threatFileSha256;
+    bool m_threatFileSha256HasBeenSet = false;
   };
 
 } // namespace Model

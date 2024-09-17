@@ -35,20 +35,8 @@ FieldStats::FieldStats() :
 {
 }
 
-FieldStats::FieldStats(JsonView jsonValue) : 
-    m_minHasBeenSet(false),
-    m_maxHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_missing(0),
-    m_missingHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_sumOfSquares(0.0),
-    m_sumOfSquaresHasBeenSet(false),
-    m_meanHasBeenSet(false),
-    m_stddev(0.0),
-    m_stddevHasBeenSet(false)
+FieldStats::FieldStats(JsonView jsonValue)
+  : FieldStats()
 {
   *this = jsonValue;
 }

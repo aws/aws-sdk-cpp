@@ -20,13 +20,14 @@ namespace Model
 
 ClipRange::ClipRange() : 
     m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false)
+    m_endOffsetMillisHasBeenSet(false),
+    m_startOffsetMillis(0),
+    m_startOffsetMillisHasBeenSet(false)
 {
 }
 
-ClipRange::ClipRange(JsonView jsonValue) : 
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false)
+ClipRange::ClipRange(JsonView jsonValue)
+  : ClipRange()
 {
   *this = jsonValue;
 }
@@ -40,6 +41,13 @@ ClipRange& ClipRange::operator =(JsonView jsonValue)
     m_endOffsetMillisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StartOffsetMillis"))
+  {
+    m_startOffsetMillis = jsonValue.GetInt64("StartOffsetMillis");
+
+    m_startOffsetMillisHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +58,12 @@ JsonValue ClipRange::Jsonize() const
   if(m_endOffsetMillisHasBeenSet)
   {
    payload.WithInt64("EndOffsetMillis", m_endOffsetMillis);
+
+  }
+
+  if(m_startOffsetMillisHasBeenSet)
+  {
+   payload.WithInt64("StartOffsetMillis", m_startOffsetMillis);
 
   }
 

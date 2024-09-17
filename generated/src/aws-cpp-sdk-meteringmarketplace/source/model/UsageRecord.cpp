@@ -28,13 +28,8 @@ UsageRecord::UsageRecord() :
 {
 }
 
-UsageRecord::UsageRecord(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_customerIdentifierHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_usageAllocationsHasBeenSet(false)
+UsageRecord::UsageRecord(JsonView jsonValue)
+  : UsageRecord()
 {
   *this = jsonValue;
 }

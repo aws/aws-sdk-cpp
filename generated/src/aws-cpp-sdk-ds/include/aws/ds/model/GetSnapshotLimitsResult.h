@@ -39,58 +39,28 @@ namespace Model
     AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
      * the specified directory.</p>
      */
     inline const SnapshotLimits& GetSnapshotLimits() const{ return m_snapshotLimits; }
-
-    /**
-     * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
-     * the specified directory.</p>
-     */
     inline void SetSnapshotLimits(const SnapshotLimits& value) { m_snapshotLimits = value; }
-
-    /**
-     * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
-     * the specified directory.</p>
-     */
     inline void SetSnapshotLimits(SnapshotLimits&& value) { m_snapshotLimits = std::move(value); }
-
-    /**
-     * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
-     * the specified directory.</p>
-     */
     inline GetSnapshotLimitsResult& WithSnapshotLimits(const SnapshotLimits& value) { SetSnapshotLimits(value); return *this;}
-
-    /**
-     * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
-     * the specified directory.</p>
-     */
     inline GetSnapshotLimitsResult& WithSnapshotLimits(SnapshotLimits&& value) { SetSnapshotLimits(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSnapshotLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSnapshotLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSnapshotLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SnapshotLimits m_snapshotLimits;

@@ -29,14 +29,8 @@ Delete::Delete() :
 {
 }
 
-Delete::Delete(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_conditionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
+Delete::Delete(JsonView jsonValue)
+  : Delete()
 {
   *this = jsonValue;
 }

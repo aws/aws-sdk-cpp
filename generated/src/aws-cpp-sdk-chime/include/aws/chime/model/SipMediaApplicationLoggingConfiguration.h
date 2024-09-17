@@ -36,26 +36,15 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables application message logs for the SIP media application.</p>
      */
     inline bool GetEnableSipMediaApplicationMessageLogs() const{ return m_enableSipMediaApplicationMessageLogs; }
-
-    /**
-     * <p>Enables application message logs for the SIP media application.</p>
-     */
     inline bool EnableSipMediaApplicationMessageLogsHasBeenSet() const { return m_enableSipMediaApplicationMessageLogsHasBeenSet; }
-
-    /**
-     * <p>Enables application message logs for the SIP media application.</p>
-     */
     inline void SetEnableSipMediaApplicationMessageLogs(bool value) { m_enableSipMediaApplicationMessageLogsHasBeenSet = true; m_enableSipMediaApplicationMessageLogs = value; }
-
-    /**
-     * <p>Enables application message logs for the SIP media application.</p>
-     */
     inline SipMediaApplicationLoggingConfiguration& WithEnableSipMediaApplicationMessageLogs(bool value) { SetEnableSipMediaApplicationMessageLogs(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableSipMediaApplicationMessageLogs;

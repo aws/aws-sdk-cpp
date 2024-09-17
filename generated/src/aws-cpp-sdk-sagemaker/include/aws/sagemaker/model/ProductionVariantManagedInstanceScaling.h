@@ -39,86 +39,39 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether managed instance scaling is enabled.</p>
      */
     inline const ManagedInstanceScalingStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Indicates whether managed instance scaling is enabled.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Indicates whether managed instance scaling is enabled.</p>
-     */
     inline void SetStatus(const ManagedInstanceScalingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Indicates whether managed instance scaling is enabled.</p>
-     */
     inline void SetStatus(ManagedInstanceScalingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Indicates whether managed instance scaling is enabled.</p>
-     */
     inline ProductionVariantManagedInstanceScaling& WithStatus(const ManagedInstanceScalingStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Indicates whether managed instance scaling is enabled.</p>
-     */
     inline ProductionVariantManagedInstanceScaling& WithStatus(ManagedInstanceScalingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum number of instances that the endpoint must retain when it scales
      * down to accommodate a decrease in traffic.</p>
      */
     inline int GetMinInstanceCount() const{ return m_minInstanceCount; }
-
-    /**
-     * <p>The minimum number of instances that the endpoint must retain when it scales
-     * down to accommodate a decrease in traffic.</p>
-     */
     inline bool MinInstanceCountHasBeenSet() const { return m_minInstanceCountHasBeenSet; }
-
-    /**
-     * <p>The minimum number of instances that the endpoint must retain when it scales
-     * down to accommodate a decrease in traffic.</p>
-     */
     inline void SetMinInstanceCount(int value) { m_minInstanceCountHasBeenSet = true; m_minInstanceCount = value; }
-
-    /**
-     * <p>The minimum number of instances that the endpoint must retain when it scales
-     * down to accommodate a decrease in traffic.</p>
-     */
     inline ProductionVariantManagedInstanceScaling& WithMinInstanceCount(int value) { SetMinInstanceCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of instances that the endpoint can provision when it
      * scales up to accommodate an increase in traffic.</p>
      */
     inline int GetMaxInstanceCount() const{ return m_maxInstanceCount; }
-
-    /**
-     * <p>The maximum number of instances that the endpoint can provision when it
-     * scales up to accommodate an increase in traffic.</p>
-     */
     inline bool MaxInstanceCountHasBeenSet() const { return m_maxInstanceCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of instances that the endpoint can provision when it
-     * scales up to accommodate an increase in traffic.</p>
-     */
     inline void SetMaxInstanceCount(int value) { m_maxInstanceCountHasBeenSet = true; m_maxInstanceCount = value; }
-
-    /**
-     * <p>The maximum number of instances that the endpoint can provision when it
-     * scales up to accommodate an increase in traffic.</p>
-     */
     inline ProductionVariantManagedInstanceScaling& WithMaxInstanceCount(int value) { SetMaxInstanceCount(value); return *this;}
-
+    ///@}
   private:
 
     ManagedInstanceScalingStatus m_status;

@@ -18,6 +18,8 @@ namespace Model
     NOT_SET,
     unknownOperation,
     cannotParse,
+    featureNotAvailable,
+    unsupportedEngineVersion,
     fieldValidationFailed,
     other
   };

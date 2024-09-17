@@ -30,15 +30,8 @@ DelegationMetadata::DelegationMetadata() :
 {
 }
 
-DelegationMetadata::DelegationMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false),
-    m_status(DelegationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_controlSetNameHasBeenSet(false)
+DelegationMetadata::DelegationMetadata(JsonView jsonValue)
+  : DelegationMetadata()
 {
   *this = jsonValue;
 }

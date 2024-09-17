@@ -24,9 +24,8 @@ GitFilePathFilterCriteria::GitFilePathFilterCriteria() :
 {
 }
 
-GitFilePathFilterCriteria::GitFilePathFilterCriteria(JsonView jsonValue) : 
-    m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false)
+GitFilePathFilterCriteria::GitFilePathFilterCriteria(JsonView jsonValue)
+  : GitFilePathFilterCriteria()
 {
   *this = jsonValue;
 }

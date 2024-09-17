@@ -37,36 +37,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for the filter.</p>
      */
     inline const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& GetPredicate() const{ return m_predicate; }
-
-    /**
-     * <p>The configuration for the filter.</p>
-     */
     inline bool PredicateHasBeenSet() const { return m_predicateHasBeenSet; }
-
-    /**
-     * <p>The configuration for the filter.</p>
-     */
     inline void SetPredicate(const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& value) { m_predicateHasBeenSet = true; m_predicate = value; }
-
-    /**
-     * <p>The configuration for the filter.</p>
-     */
     inline void SetPredicate(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails&& value) { m_predicateHasBeenSet = true; m_predicate = std::move(value); }
-
-    /**
-     * <p>The configuration for the filter.</p>
-     */
     inline AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails& WithPredicate(const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& value) { SetPredicate(value); return *this;}
-
-    /**
-     * <p>The configuration for the filter.</p>
-     */
     inline AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails& WithPredicate(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails&& value) { SetPredicate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails m_predicate;

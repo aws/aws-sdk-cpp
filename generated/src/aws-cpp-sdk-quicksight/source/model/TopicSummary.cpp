@@ -21,14 +21,14 @@ namespace Model
 TopicSummary::TopicSummary() : 
     m_arnHasBeenSet(false),
     m_topicIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_userExperienceVersion(TopicUserExperienceVersion::NOT_SET),
+    m_userExperienceVersionHasBeenSet(false)
 {
 }
 
-TopicSummary::TopicSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+TopicSummary::TopicSummary(JsonView jsonValue)
+  : TopicSummary()
 {
   *this = jsonValue;
 }
@@ -56,6 +56,13 @@ TopicSummary& TopicSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UserExperienceVersion"))
+  {
+    m_userExperienceVersion = TopicUserExperienceVersionMapper::GetTopicUserExperienceVersionForName(jsonValue.GetString("UserExperienceVersion"));
+
+    m_userExperienceVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +86,11 @@ JsonValue TopicSummary::Jsonize() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_userExperienceVersionHasBeenSet)
+  {
+   payload.WithString("UserExperienceVersion", TopicUserExperienceVersionMapper::GetNameForTopicUserExperienceVersion(m_userExperienceVersion));
   }
 
   return payload;

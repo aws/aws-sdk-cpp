@@ -25,11 +25,8 @@ DescribeDatasetImportJobResult::DescribeDatasetImportJobResult() :
 {
 }
 
-DescribeDatasetImportJobResult::DescribeDatasetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_useGeolocationForTimeZone(false),
-    m_estimatedTimeRemainingInMinutes(0),
-    m_dataSize(0.0),
-    m_importMode(ImportMode::NOT_SET)
+DescribeDatasetImportJobResult::DescribeDatasetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDatasetImportJobResult()
 {
   *this = result;
 }

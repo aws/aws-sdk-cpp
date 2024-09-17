@@ -33,6 +33,7 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API DescribeAppInstanceUserEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full details of an <code>AppInstanceUserEndpoint</code>: the
      * <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow
@@ -40,61 +41,22 @@ namespace Model
      * epoch milliseconds.</p>
      */
     inline const AppInstanceUserEndpoint& GetAppInstanceUserEndpoint() const{ return m_appInstanceUserEndpoint; }
-
-    /**
-     * <p>The full details of an <code>AppInstanceUserEndpoint</code>: the
-     * <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow
-     * messages, state, and created and last updated timestamps. All timestamps use
-     * epoch milliseconds.</p>
-     */
     inline void SetAppInstanceUserEndpoint(const AppInstanceUserEndpoint& value) { m_appInstanceUserEndpoint = value; }
-
-    /**
-     * <p>The full details of an <code>AppInstanceUserEndpoint</code>: the
-     * <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow
-     * messages, state, and created and last updated timestamps. All timestamps use
-     * epoch milliseconds.</p>
-     */
     inline void SetAppInstanceUserEndpoint(AppInstanceUserEndpoint&& value) { m_appInstanceUserEndpoint = std::move(value); }
-
-    /**
-     * <p>The full details of an <code>AppInstanceUserEndpoint</code>: the
-     * <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow
-     * messages, state, and created and last updated timestamps. All timestamps use
-     * epoch milliseconds.</p>
-     */
     inline DescribeAppInstanceUserEndpointResult& WithAppInstanceUserEndpoint(const AppInstanceUserEndpoint& value) { SetAppInstanceUserEndpoint(value); return *this;}
-
-    /**
-     * <p>The full details of an <code>AppInstanceUserEndpoint</code>: the
-     * <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow
-     * messages, state, and created and last updated timestamps. All timestamps use
-     * epoch milliseconds.</p>
-     */
     inline DescribeAppInstanceUserEndpointResult& WithAppInstanceUserEndpoint(AppInstanceUserEndpoint&& value) { SetAppInstanceUserEndpoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAppInstanceUserEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAppInstanceUserEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAppInstanceUserEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AppInstanceUserEndpoint m_appInstanceUserEndpoint;

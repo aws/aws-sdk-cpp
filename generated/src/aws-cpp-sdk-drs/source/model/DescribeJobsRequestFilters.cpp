@@ -25,10 +25,8 @@ DescribeJobsRequestFilters::DescribeJobsRequestFilters() :
 {
 }
 
-DescribeJobsRequestFilters::DescribeJobsRequestFilters(JsonView jsonValue) : 
-    m_fromDateHasBeenSet(false),
-    m_jobIDsHasBeenSet(false),
-    m_toDateHasBeenSet(false)
+DescribeJobsRequestFilters::DescribeJobsRequestFilters(JsonView jsonValue)
+  : DescribeJobsRequestFilters()
 {
   *this = jsonValue;
 }

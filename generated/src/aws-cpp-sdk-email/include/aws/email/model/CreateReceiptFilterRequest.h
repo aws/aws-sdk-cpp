@@ -42,48 +42,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A data structure that describes the IP address filter to create, which
      * consists of a name, an IP address range, and whether to allow or block mail from
      * it.</p>
      */
     inline const ReceiptFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>A data structure that describes the IP address filter to create, which
-     * consists of a name, an IP address range, and whether to allow or block mail from
-     * it.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>A data structure that describes the IP address filter to create, which
-     * consists of a name, an IP address range, and whether to allow or block mail from
-     * it.</p>
-     */
     inline void SetFilter(const ReceiptFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>A data structure that describes the IP address filter to create, which
-     * consists of a name, an IP address range, and whether to allow or block mail from
-     * it.</p>
-     */
     inline void SetFilter(ReceiptFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A data structure that describes the IP address filter to create, which
-     * consists of a name, an IP address range, and whether to allow or block mail from
-     * it.</p>
-     */
     inline CreateReceiptFilterRequest& WithFilter(const ReceiptFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A data structure that describes the IP address filter to create, which
-     * consists of a name, an IP address range, and whether to allow or block mail from
-     * it.</p>
-     */
     inline CreateReceiptFilterRequest& WithFilter(ReceiptFilter&& value) { SetFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReceiptFilter m_filter;

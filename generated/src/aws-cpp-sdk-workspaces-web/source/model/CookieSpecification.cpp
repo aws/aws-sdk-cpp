@@ -25,10 +25,8 @@ CookieSpecification::CookieSpecification() :
 {
 }
 
-CookieSpecification::CookieSpecification(JsonView jsonValue) : 
-    m_domainHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false)
+CookieSpecification::CookieSpecification(JsonView jsonValue)
+  : CookieSpecification()
 {
   *this = jsonValue;
 }

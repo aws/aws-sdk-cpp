@@ -26,11 +26,8 @@ ActiveContextTimeToLive::ActiveContextTimeToLive() :
 {
 }
 
-ActiveContextTimeToLive::ActiveContextTimeToLive(JsonView jsonValue) : 
-    m_timeToLiveInSeconds(0),
-    m_timeToLiveInSecondsHasBeenSet(false),
-    m_turnsToLive(0),
-    m_turnsToLiveHasBeenSet(false)
+ActiveContextTimeToLive::ActiveContextTimeToLive(JsonView jsonValue)
+  : ActiveContextTimeToLive()
 {
   *this = jsonValue;
 }

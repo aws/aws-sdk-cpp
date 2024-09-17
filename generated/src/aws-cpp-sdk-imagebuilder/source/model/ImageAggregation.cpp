@@ -24,9 +24,8 @@ ImageAggregation::ImageAggregation() :
 {
 }
 
-ImageAggregation::ImageAggregation(JsonView jsonValue) : 
-    m_imageBuildVersionArnHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
+ImageAggregation::ImageAggregation(JsonView jsonValue)
+  : ImageAggregation()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ OpsItemEventFilter::OpsItemEventFilter() :
 {
 }
 
-OpsItemEventFilter::OpsItemEventFilter(JsonView jsonValue) : 
-    m_key(OpsItemEventFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(OpsItemEventFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+OpsItemEventFilter::OpsItemEventFilter(JsonView jsonValue)
+  : OpsItemEventFilter()
 {
   *this = jsonValue;
 }

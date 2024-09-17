@@ -36,149 +36,57 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The model ID of the model version to update.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
-
-    /**
-     * <p>The model ID of the model version to update.</p>
-     */
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-
-    /**
-     * <p>The model ID of the model version to update.</p>
-     */
     inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-
-    /**
-     * <p>The model ID of the model version to update.</p>
-     */
     inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-
-    /**
-     * <p>The model ID of the model version to update.</p>
-     */
     inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-
-    /**
-     * <p>The model ID of the model version to update.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-
-    /**
-     * <p>The model ID of the model version to update.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The model ID of the model version to update.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelId(const char* value) { SetModelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The model type.</p>
      */
     inline const ModelTypeEnum& GetModelType() const{ return m_modelType; }
-
-    /**
-     * <p>The model type.</p>
-     */
     inline bool ModelTypeHasBeenSet() const { return m_modelTypeHasBeenSet; }
-
-    /**
-     * <p>The model type.</p>
-     */
     inline void SetModelType(const ModelTypeEnum& value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
-
-    /**
-     * <p>The model type.</p>
-     */
     inline void SetModelType(ModelTypeEnum&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::move(value); }
-
-    /**
-     * <p>The model type.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelType(const ModelTypeEnum& value) { SetModelType(value); return *this;}
-
-    /**
-     * <p>The model type.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelType(ModelTypeEnum&& value) { SetModelType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The model version number.</p>
      */
     inline const Aws::String& GetModelVersionNumber() const{ return m_modelVersionNumber; }
-
-    /**
-     * <p>The model version number.</p>
-     */
     inline bool ModelVersionNumberHasBeenSet() const { return m_modelVersionNumberHasBeenSet; }
-
-    /**
-     * <p>The model version number.</p>
-     */
     inline void SetModelVersionNumber(const Aws::String& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = value; }
-
-    /**
-     * <p>The model version number.</p>
-     */
     inline void SetModelVersionNumber(Aws::String&& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = std::move(value); }
-
-    /**
-     * <p>The model version number.</p>
-     */
     inline void SetModelVersionNumber(const char* value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber.assign(value); }
-
-    /**
-     * <p>The model version number.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelVersionNumber(const Aws::String& value) { SetModelVersionNumber(value); return *this;}
-
-    /**
-     * <p>The model version number.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelVersionNumber(Aws::String&& value) { SetModelVersionNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The model version number.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithModelVersionNumber(const char* value) { SetModelVersionNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The model version status.</p>
      */
     inline const ModelVersionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The model version status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The model version status.</p>
-     */
     inline void SetStatus(const ModelVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The model version status.</p>
-     */
     inline void SetStatus(ModelVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The model version status.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithStatus(const ModelVersionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The model version status.</p>
-     */
     inline UpdateModelVersionStatusRequest& WithStatus(ModelVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelId;

@@ -32,54 +32,20 @@ namespace Model
     AWS_DRS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Recovery Instance whose failback replication configuration
      * should be returned.</p>
      */
     inline const Aws::String& GetRecoveryInstanceID() const{ return m_recoveryInstanceID; }
-
-    /**
-     * <p>The ID of the Recovery Instance whose failback replication configuration
-     * should be returned.</p>
-     */
     inline bool RecoveryInstanceIDHasBeenSet() const { return m_recoveryInstanceIDHasBeenSet; }
-
-    /**
-     * <p>The ID of the Recovery Instance whose failback replication configuration
-     * should be returned.</p>
-     */
     inline void SetRecoveryInstanceID(const Aws::String& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = value; }
-
-    /**
-     * <p>The ID of the Recovery Instance whose failback replication configuration
-     * should be returned.</p>
-     */
     inline void SetRecoveryInstanceID(Aws::String&& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = std::move(value); }
-
-    /**
-     * <p>The ID of the Recovery Instance whose failback replication configuration
-     * should be returned.</p>
-     */
     inline void SetRecoveryInstanceID(const char* value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID.assign(value); }
-
-    /**
-     * <p>The ID of the Recovery Instance whose failback replication configuration
-     * should be returned.</p>
-     */
     inline GetFailbackReplicationConfigurationRequest& WithRecoveryInstanceID(const Aws::String& value) { SetRecoveryInstanceID(value); return *this;}
-
-    /**
-     * <p>The ID of the Recovery Instance whose failback replication configuration
-     * should be returned.</p>
-     */
     inline GetFailbackReplicationConfigurationRequest& WithRecoveryInstanceID(Aws::String&& value) { SetRecoveryInstanceID(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Recovery Instance whose failback replication configuration
-     * should be returned.</p>
-     */
     inline GetFailbackReplicationConfigurationRequest& WithRecoveryInstanceID(const char* value) { SetRecoveryInstanceID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recoveryInstanceID;

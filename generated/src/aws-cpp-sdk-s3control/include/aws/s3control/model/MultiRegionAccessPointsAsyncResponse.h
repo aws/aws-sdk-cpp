@@ -39,54 +39,20 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A collection of status information for the different Regions that a
      * Multi-Region Access Point supports.</p>
      */
     inline const Aws::Vector<MultiRegionAccessPointRegionalResponse>& GetRegions() const{ return m_regions; }
-
-    /**
-     * <p>A collection of status information for the different Regions that a
-     * Multi-Region Access Point supports.</p>
-     */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-
-    /**
-     * <p>A collection of status information for the different Regions that a
-     * Multi-Region Access Point supports.</p>
-     */
     inline void SetRegions(const Aws::Vector<MultiRegionAccessPointRegionalResponse>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-
-    /**
-     * <p>A collection of status information for the different Regions that a
-     * Multi-Region Access Point supports.</p>
-     */
     inline void SetRegions(Aws::Vector<MultiRegionAccessPointRegionalResponse>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-
-    /**
-     * <p>A collection of status information for the different Regions that a
-     * Multi-Region Access Point supports.</p>
-     */
     inline MultiRegionAccessPointsAsyncResponse& WithRegions(const Aws::Vector<MultiRegionAccessPointRegionalResponse>& value) { SetRegions(value); return *this;}
-
-    /**
-     * <p>A collection of status information for the different Regions that a
-     * Multi-Region Access Point supports.</p>
-     */
     inline MultiRegionAccessPointsAsyncResponse& WithRegions(Aws::Vector<MultiRegionAccessPointRegionalResponse>&& value) { SetRegions(std::move(value)); return *this;}
-
-    /**
-     * <p>A collection of status information for the different Regions that a
-     * Multi-Region Access Point supports.</p>
-     */
     inline MultiRegionAccessPointsAsyncResponse& AddRegions(const MultiRegionAccessPointRegionalResponse& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-
-    /**
-     * <p>A collection of status information for the different Regions that a
-     * Multi-Region Access Point supports.</p>
-     */
     inline MultiRegionAccessPointsAsyncResponse& AddRegions(MultiRegionAccessPointRegionalResponse&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<MultiRegionAccessPointRegionalResponse> m_regions;

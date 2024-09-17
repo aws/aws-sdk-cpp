@@ -42,27 +42,8 @@ Component::Component() :
 {
 }
 
-Component::Component(JsonView jsonValue) : 
-    m_componentIdHasBeenSet(false),
-    m_sidHasBeenSet(false),
-    m_systemNumberHasBeenSet(false),
-    m_parentComponentHasBeenSet(false),
-    m_childComponentsHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_componentType(ComponentType::NOT_SET),
-    m_componentTypeHasBeenSet(false),
-    m_status(ComponentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sapHostnameHasBeenSet(false),
-    m_sapFeatureHasBeenSet(false),
-    m_sapKernelVersionHasBeenSet(false),
-    m_hdbVersionHasBeenSet(false),
-    m_resilienceHasBeenSet(false),
-    m_associatedHostHasBeenSet(false),
-    m_databasesHasBeenSet(false),
-    m_databaseConnectionHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Component::Component(JsonView jsonValue)
+  : Component()
 {
   *this = jsonValue;
 }

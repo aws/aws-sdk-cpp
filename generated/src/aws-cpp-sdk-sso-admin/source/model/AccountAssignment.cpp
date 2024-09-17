@@ -27,12 +27,8 @@ AccountAssignment::AccountAssignment() :
 {
 }
 
-AccountAssignment::AccountAssignment(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
+AccountAssignment::AccountAssignment(JsonView jsonValue)
+  : AccountAssignment()
 {
   *this = jsonValue;
 }

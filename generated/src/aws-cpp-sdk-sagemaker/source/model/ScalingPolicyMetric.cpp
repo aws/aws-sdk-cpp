@@ -26,11 +26,8 @@ ScalingPolicyMetric::ScalingPolicyMetric() :
 {
 }
 
-ScalingPolicyMetric::ScalingPolicyMetric(JsonView jsonValue) : 
-    m_invocationsPerInstance(0),
-    m_invocationsPerInstanceHasBeenSet(false),
-    m_modelLatency(0),
-    m_modelLatencyHasBeenSet(false)
+ScalingPolicyMetric::ScalingPolicyMetric(JsonView jsonValue)
+  : ScalingPolicyMetric()
 {
   *this = jsonValue;
 }

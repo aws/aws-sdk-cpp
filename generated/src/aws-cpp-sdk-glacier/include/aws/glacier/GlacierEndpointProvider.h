@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using GlacierClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GlacierClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using GlacierClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlacierBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

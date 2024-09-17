@@ -24,9 +24,8 @@ S3MonitoringConfiguration::S3MonitoringConfiguration() :
 {
 }
 
-S3MonitoringConfiguration::S3MonitoringConfiguration(JsonView jsonValue) : 
-    m_logUriHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false)
+S3MonitoringConfiguration::S3MonitoringConfiguration(JsonView jsonValue)
+  : S3MonitoringConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ TableFieldLinkConfiguration::TableFieldLinkConfiguration() :
 {
 }
 
-TableFieldLinkConfiguration::TableFieldLinkConfiguration(JsonView jsonValue) : 
-    m_target(URLTargetConfiguration::NOT_SET),
-    m_targetHasBeenSet(false),
-    m_contentHasBeenSet(false)
+TableFieldLinkConfiguration::TableFieldLinkConfiguration(JsonView jsonValue)
+  : TableFieldLinkConfiguration()
 {
   *this = jsonValue;
 }

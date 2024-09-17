@@ -24,9 +24,8 @@ ResourceRequestStatusFilter::ResourceRequestStatusFilter() :
 {
 }
 
-ResourceRequestStatusFilter::ResourceRequestStatusFilter(JsonView jsonValue) : 
-    m_operationsHasBeenSet(false),
-    m_operationStatusesHasBeenSet(false)
+ResourceRequestStatusFilter::ResourceRequestStatusFilter(JsonView jsonValue)
+  : ResourceRequestStatusFilter()
 {
   *this = jsonValue;
 }

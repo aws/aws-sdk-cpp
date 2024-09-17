@@ -24,6 +24,7 @@ namespace Aws
         static const int AUTO_HASH = HashingUtils::HashString("AUTO");
         static const int TRACK_HASH = HashingUtils::HashString("TRACK");
         static const int FRAME_HASH = HashingUtils::HashString("FRAME");
+        static const int FORCE_HASH = HashingUtils::HashString("FORCE");
 
 
         AudioDurationCorrection GetAudioDurationCorrectionForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == FRAME_HASH)
           {
             return AudioDurationCorrection::FRAME;
+          }
+          else if (hashCode == FORCE_HASH)
+          {
+            return AudioDurationCorrection::FORCE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "TRACK";
           case AudioDurationCorrection::FRAME:
             return "FRAME";
+          case AudioDurationCorrection::FORCE:
+            return "FORCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

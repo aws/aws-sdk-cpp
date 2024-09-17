@@ -29,14 +29,8 @@ DomainSummary::DomainSummary() :
 {
 }
 
-DomainSummary::DomainSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(DomainStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
+DomainSummary::DomainSummary(JsonView jsonValue)
+  : DomainSummary()
 {
   *this = jsonValue;
 }

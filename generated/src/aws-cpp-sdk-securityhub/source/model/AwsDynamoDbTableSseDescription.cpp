@@ -26,11 +26,8 @@ AwsDynamoDbTableSseDescription::AwsDynamoDbTableSseDescription() :
 {
 }
 
-AwsDynamoDbTableSseDescription::AwsDynamoDbTableSseDescription(JsonView jsonValue) : 
-    m_inaccessibleEncryptionDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_sseTypeHasBeenSet(false),
-    m_kmsMasterKeyArnHasBeenSet(false)
+AwsDynamoDbTableSseDescription::AwsDynamoDbTableSseDescription(JsonView jsonValue)
+  : AwsDynamoDbTableSseDescription()
 {
   *this = jsonValue;
 }

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ASSET_HASH = HashingUtils::HashString("ASSET");
+        static const int DATA_PRODUCT_HASH = HashingUtils::HashString("DATA_PRODUCT");
 
 
         EntityType GetEntityTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ASSET_HASH)
           {
             return EntityType::ASSET;
+          }
+          else if (hashCode == DATA_PRODUCT_HASH)
+          {
+            return EntityType::DATA_PRODUCT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case EntityType::ASSET:
             return "ASSET";
+          case EntityType::DATA_PRODUCT:
+            return "DATA_PRODUCT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

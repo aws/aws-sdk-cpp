@@ -37,22 +37,8 @@ S3ParquetSource::S3ParquetSource() :
 {
 }
 
-S3ParquetSource::S3ParquetSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_compressionType(ParquetCompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_groupSizeHasBeenSet(false),
-    m_groupFilesHasBeenSet(false),
-    m_recurse(false),
-    m_recurseHasBeenSet(false),
-    m_maxBand(0),
-    m_maxBandHasBeenSet(false),
-    m_maxFilesInBand(0),
-    m_maxFilesInBandHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
+S3ParquetSource::S3ParquetSource(JsonView jsonValue)
+  : S3ParquetSource()
 {
   *this = jsonValue;
 }

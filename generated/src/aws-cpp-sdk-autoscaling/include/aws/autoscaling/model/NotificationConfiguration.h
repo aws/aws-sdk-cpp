@@ -39,88 +39,35 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline NotificationConfiguration& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline NotificationConfiguration& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline NotificationConfiguration& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline NotificationConfiguration& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline NotificationConfiguration& WithTopicARN(Aws::String&& value) { SetTopicARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-     */
     inline NotificationConfiguration& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One of the following event notification types:</p> <ul> <li> <p>
      * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
@@ -130,77 +77,14 @@ namespace Model
      * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline const Aws::String& GetNotificationType() const{ return m_notificationType; }
-
-    /**
-     * <p>One of the following event notification types:</p> <ul> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
-     */
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-
-    /**
-     * <p>One of the following event notification types:</p> <ul> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
-     */
     inline void SetNotificationType(const Aws::String& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-
-    /**
-     * <p>One of the following event notification types:</p> <ul> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
-     */
     inline void SetNotificationType(Aws::String&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-
-    /**
-     * <p>One of the following event notification types:</p> <ul> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
-     */
     inline void SetNotificationType(const char* value) { m_notificationTypeHasBeenSet = true; m_notificationType.assign(value); }
-
-    /**
-     * <p>One of the following event notification types:</p> <ul> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
-     */
     inline NotificationConfiguration& WithNotificationType(const Aws::String& value) { SetNotificationType(value); return *this;}
-
-    /**
-     * <p>One of the following event notification types:</p> <ul> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
-     */
     inline NotificationConfiguration& WithNotificationType(Aws::String&& value) { SetNotificationType(std::move(value)); return *this;}
-
-    /**
-     * <p>One of the following event notification types:</p> <ul> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
-     */
     inline NotificationConfiguration& WithNotificationType(const char* value) { SetNotificationType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

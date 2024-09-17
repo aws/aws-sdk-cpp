@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 CreateEncoderConfigurationRequest::CreateEncoderConfigurationRequest() : 
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_videoHasBeenSet(false)
+    m_videoHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,6 +29,12 @@ Aws::String CreateEncoderConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_videoHasBeenSet)
+  {
+   payload.WithObject("video", m_video.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -37,12 +43,6 @@ Aws::String CreateEncoderConfigurationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_videoHasBeenSet)
-  {
-   payload.WithObject("video", m_video.Jsonize());
 
   }
 

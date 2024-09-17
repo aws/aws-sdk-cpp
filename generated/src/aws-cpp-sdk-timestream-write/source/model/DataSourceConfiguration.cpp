@@ -26,11 +26,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
 {
 }
 
-DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) : 
-    m_dataSourceS3ConfigurationHasBeenSet(false),
-    m_csvConfigurationHasBeenSet(false),
-    m_dataFormat(BatchLoadDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false)
+DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
+  : DataSourceConfiguration()
 {
   *this = jsonValue;
 }

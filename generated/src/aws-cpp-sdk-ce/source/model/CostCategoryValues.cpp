@@ -25,10 +25,8 @@ CostCategoryValues::CostCategoryValues() :
 {
 }
 
-CostCategoryValues::CostCategoryValues(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_matchOptionsHasBeenSet(false)
+CostCategoryValues::CostCategoryValues(JsonView jsonValue)
+  : CostCategoryValues()
 {
   *this = jsonValue;
 }

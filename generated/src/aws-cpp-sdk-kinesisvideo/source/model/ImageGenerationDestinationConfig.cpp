@@ -24,9 +24,8 @@ ImageGenerationDestinationConfig::ImageGenerationDestinationConfig() :
 {
 }
 
-ImageGenerationDestinationConfig::ImageGenerationDestinationConfig(JsonView jsonValue) : 
-    m_uriHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false)
+ImageGenerationDestinationConfig::ImageGenerationDestinationConfig(JsonView jsonValue)
+  : ImageGenerationDestinationConfig()
 {
   *this = jsonValue;
 }

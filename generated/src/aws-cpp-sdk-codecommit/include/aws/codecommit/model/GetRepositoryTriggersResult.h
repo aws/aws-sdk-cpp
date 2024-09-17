@@ -40,99 +40,42 @@ namespace Model
     AWS_CODECOMMIT_API GetRepositoryTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The system-generated unique ID for the trigger.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
-
-    /**
-     * <p>The system-generated unique ID for the trigger.</p>
-     */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationId = value; }
-
-    /**
-     * <p>The system-generated unique ID for the trigger.</p>
-     */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationId = std::move(value); }
-
-    /**
-     * <p>The system-generated unique ID for the trigger.</p>
-     */
     inline void SetConfigurationId(const char* value) { m_configurationId.assign(value); }
-
-    /**
-     * <p>The system-generated unique ID for the trigger.</p>
-     */
     inline GetRepositoryTriggersResult& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-
-    /**
-     * <p>The system-generated unique ID for the trigger.</p>
-     */
     inline GetRepositoryTriggersResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated unique ID for the trigger.</p>
-     */
     inline GetRepositoryTriggersResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline const Aws::Vector<RepositoryTrigger>& GetTriggers() const{ return m_triggers; }
-
-    /**
-     * <p>The JSON block of configuration information for each trigger.</p>
-     */
     inline void SetTriggers(const Aws::Vector<RepositoryTrigger>& value) { m_triggers = value; }
-
-    /**
-     * <p>The JSON block of configuration information for each trigger.</p>
-     */
     inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggers = std::move(value); }
-
-    /**
-     * <p>The JSON block of configuration information for each trigger.</p>
-     */
     inline GetRepositoryTriggersResult& WithTriggers(const Aws::Vector<RepositoryTrigger>& value) { SetTriggers(value); return *this;}
-
-    /**
-     * <p>The JSON block of configuration information for each trigger.</p>
-     */
     inline GetRepositoryTriggersResult& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
-
-    /**
-     * <p>The JSON block of configuration information for each trigger.</p>
-     */
     inline GetRepositoryTriggersResult& AddTriggers(const RepositoryTrigger& value) { m_triggers.push_back(value); return *this; }
-
-    /**
-     * <p>The JSON block of configuration information for each trigger.</p>
-     */
     inline GetRepositoryTriggersResult& AddTriggers(RepositoryTrigger&& value) { m_triggers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRepositoryTriggersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRepositoryTriggersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRepositoryTriggersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationId;

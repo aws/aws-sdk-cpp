@@ -34,77 +34,31 @@ namespace Model
     AWS_GREENGRASSV2_API ResolveComponentCandidatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of components that meet the requirements that you specify in the
      * request. This list includes each component's recipe that you can use to install
      * the component.</p>
      */
     inline const Aws::Vector<ResolvedComponentVersion>& GetResolvedComponentVersions() const{ return m_resolvedComponentVersions; }
-
-    /**
-     * <p>A list of components that meet the requirements that you specify in the
-     * request. This list includes each component's recipe that you can use to install
-     * the component.</p>
-     */
     inline void SetResolvedComponentVersions(const Aws::Vector<ResolvedComponentVersion>& value) { m_resolvedComponentVersions = value; }
-
-    /**
-     * <p>A list of components that meet the requirements that you specify in the
-     * request. This list includes each component's recipe that you can use to install
-     * the component.</p>
-     */
     inline void SetResolvedComponentVersions(Aws::Vector<ResolvedComponentVersion>&& value) { m_resolvedComponentVersions = std::move(value); }
-
-    /**
-     * <p>A list of components that meet the requirements that you specify in the
-     * request. This list includes each component's recipe that you can use to install
-     * the component.</p>
-     */
     inline ResolveComponentCandidatesResult& WithResolvedComponentVersions(const Aws::Vector<ResolvedComponentVersion>& value) { SetResolvedComponentVersions(value); return *this;}
-
-    /**
-     * <p>A list of components that meet the requirements that you specify in the
-     * request. This list includes each component's recipe that you can use to install
-     * the component.</p>
-     */
     inline ResolveComponentCandidatesResult& WithResolvedComponentVersions(Aws::Vector<ResolvedComponentVersion>&& value) { SetResolvedComponentVersions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of components that meet the requirements that you specify in the
-     * request. This list includes each component's recipe that you can use to install
-     * the component.</p>
-     */
     inline ResolveComponentCandidatesResult& AddResolvedComponentVersions(const ResolvedComponentVersion& value) { m_resolvedComponentVersions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of components that meet the requirements that you specify in the
-     * request. This list includes each component's recipe that you can use to install
-     * the component.</p>
-     */
     inline ResolveComponentCandidatesResult& AddResolvedComponentVersions(ResolvedComponentVersion&& value) { m_resolvedComponentVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ResolveComponentCandidatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ResolveComponentCandidatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ResolveComponentCandidatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ResolvedComponentVersion> m_resolvedComponentVersions;

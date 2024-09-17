@@ -26,12 +26,8 @@ UpdateLaunchConfigurationResult::UpdateLaunchConfigurationResult() :
 {
 }
 
-UpdateLaunchConfigurationResult::UpdateLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_copyPrivateIp(false),
-    m_copyTags(false),
-    m_launchDisposition(LaunchDisposition::NOT_SET),
-    m_postLaunchEnabled(false),
-    m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET)
+UpdateLaunchConfigurationResult::UpdateLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateLaunchConfigurationResult()
 {
   *this = result;
 }

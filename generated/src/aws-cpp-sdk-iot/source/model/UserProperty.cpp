@@ -24,9 +24,8 @@ UserProperty::UserProperty() :
 {
 }
 
-UserProperty::UserProperty(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+UserProperty::UserProperty(JsonView jsonValue)
+  : UserProperty()
 {
   *this = jsonValue;
 }

@@ -21,18 +21,14 @@ namespace Model
 LoggingConfiguration::LoggingConfiguration() : 
     m_dagProcessingLogsHasBeenSet(false),
     m_schedulerLogsHasBeenSet(false),
-    m_taskLogsHasBeenSet(false),
     m_webserverLogsHasBeenSet(false),
-    m_workerLogsHasBeenSet(false)
+    m_workerLogsHasBeenSet(false),
+    m_taskLogsHasBeenSet(false)
 {
 }
 
-LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
-    m_dagProcessingLogsHasBeenSet(false),
-    m_schedulerLogsHasBeenSet(false),
-    m_taskLogsHasBeenSet(false),
-    m_webserverLogsHasBeenSet(false),
-    m_workerLogsHasBeenSet(false)
+LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
+  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -53,13 +49,6 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     m_schedulerLogsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TaskLogs"))
-  {
-    m_taskLogs = jsonValue.GetObject("TaskLogs");
-
-    m_taskLogsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("WebserverLogs"))
   {
     m_webserverLogs = jsonValue.GetObject("WebserverLogs");
@@ -72,6 +61,13 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     m_workerLogs = jsonValue.GetObject("WorkerLogs");
 
     m_workerLogsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TaskLogs"))
+  {
+    m_taskLogs = jsonValue.GetObject("TaskLogs");
+
+    m_taskLogsHasBeenSet = true;
   }
 
   return *this;
@@ -93,12 +89,6 @@ JsonValue LoggingConfiguration::Jsonize() const
 
   }
 
-  if(m_taskLogsHasBeenSet)
-  {
-   payload.WithObject("TaskLogs", m_taskLogs.Jsonize());
-
-  }
-
   if(m_webserverLogsHasBeenSet)
   {
    payload.WithObject("WebserverLogs", m_webserverLogs.Jsonize());
@@ -108,6 +98,12 @@ JsonValue LoggingConfiguration::Jsonize() const
   if(m_workerLogsHasBeenSet)
   {
    payload.WithObject("WorkerLogs", m_workerLogs.Jsonize());
+
+  }
+
+  if(m_taskLogsHasBeenSet)
+  {
+   payload.WithObject("TaskLogs", m_taskLogs.Jsonize());
 
   }
 

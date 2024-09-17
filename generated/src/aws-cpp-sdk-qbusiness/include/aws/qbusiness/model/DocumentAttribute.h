@@ -38,77 +38,31 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier for the attribute.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The identifier for the attribute.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The identifier for the attribute.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The identifier for the attribute.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The identifier for the attribute.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The identifier for the attribute.</p>
-     */
     inline DocumentAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The identifier for the attribute.</p>
-     */
     inline DocumentAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the attribute.</p>
-     */
     inline DocumentAttribute& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the attribute. </p>
      */
     inline const DocumentAttributeValue& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the attribute. </p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the attribute. </p>
-     */
     inline void SetValue(const DocumentAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the attribute. </p>
-     */
     inline void SetValue(DocumentAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the attribute. </p>
-     */
     inline DocumentAttribute& WithValue(const DocumentAttributeValue& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the attribute. </p>
-     */
     inline DocumentAttribute& WithValue(DocumentAttributeValue&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

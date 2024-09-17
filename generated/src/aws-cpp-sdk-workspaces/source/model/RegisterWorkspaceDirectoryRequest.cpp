@@ -21,7 +21,16 @@ RegisterWorkspaceDirectoryRequest::RegisterWorkspaceDirectoryRequest() :
     m_enableSelfServiceHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workspaceDirectoryNameHasBeenSet(false),
+    m_workspaceDirectoryDescriptionHasBeenSet(false),
+    m_userIdentityType(UserIdentityType::NOT_SET),
+    m_userIdentityTypeHasBeenSet(false),
+    m_idcInstanceArnHasBeenSet(false),
+    m_microsoftEntraConfigHasBeenSet(false),
+    m_workspaceType(WorkspaceType::NOT_SET),
+    m_workspaceTypeHasBeenSet(false),
+    m_activeDirectoryConfigHasBeenSet(false)
 {
 }
 
@@ -71,6 +80,46 @@ Aws::String RegisterWorkspaceDirectoryRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_workspaceDirectoryNameHasBeenSet)
+  {
+   payload.WithString("WorkspaceDirectoryName", m_workspaceDirectoryName);
+
+  }
+
+  if(m_workspaceDirectoryDescriptionHasBeenSet)
+  {
+   payload.WithString("WorkspaceDirectoryDescription", m_workspaceDirectoryDescription);
+
+  }
+
+  if(m_userIdentityTypeHasBeenSet)
+  {
+   payload.WithString("UserIdentityType", UserIdentityTypeMapper::GetNameForUserIdentityType(m_userIdentityType));
+  }
+
+  if(m_idcInstanceArnHasBeenSet)
+  {
+   payload.WithString("IdcInstanceArn", m_idcInstanceArn);
+
+  }
+
+  if(m_microsoftEntraConfigHasBeenSet)
+  {
+   payload.WithObject("MicrosoftEntraConfig", m_microsoftEntraConfig.Jsonize());
+
+  }
+
+  if(m_workspaceTypeHasBeenSet)
+  {
+   payload.WithString("WorkspaceType", WorkspaceTypeMapper::GetNameForWorkspaceType(m_workspaceType));
+  }
+
+  if(m_activeDirectoryConfigHasBeenSet)
+  {
+   payload.WithObject("ActiveDirectoryConfig", m_activeDirectoryConfig.Jsonize());
 
   }
 

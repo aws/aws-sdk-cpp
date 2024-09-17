@@ -38,103 +38,35 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an Image Builder recipe that the lifecycle policy uses for
      * resource selection.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of an Image Builder recipe that the lifecycle policy uses for
-     * resource selection.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of an Image Builder recipe that the lifecycle policy uses for
-     * resource selection.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of an Image Builder recipe that the lifecycle policy uses for
-     * resource selection.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of an Image Builder recipe that the lifecycle policy uses for
-     * resource selection.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of an Image Builder recipe that the lifecycle policy uses for
-     * resource selection.</p>
-     */
     inline LifecyclePolicyResourceSelectionRecipe& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of an Image Builder recipe that the lifecycle policy uses for
-     * resource selection.</p>
-     */
     inline LifecyclePolicyResourceSelectionRecipe& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an Image Builder recipe that the lifecycle policy uses for
-     * resource selection.</p>
-     */
     inline LifecyclePolicyResourceSelectionRecipe& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the Image Builder recipe specified by the <code>name</code>
      * field.</p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
-
-    /**
-     * <p>The version of the Image Builder recipe specified by the <code>name</code>
-     * field.</p>
-     */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the Image Builder recipe specified by the <code>name</code>
-     * field.</p>
-     */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-
-    /**
-     * <p>The version of the Image Builder recipe specified by the <code>name</code>
-     * field.</p>
-     */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-
-    /**
-     * <p>The version of the Image Builder recipe specified by the <code>name</code>
-     * field.</p>
-     */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-
-    /**
-     * <p>The version of the Image Builder recipe specified by the <code>name</code>
-     * field.</p>
-     */
     inline LifecyclePolicyResourceSelectionRecipe& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-
-    /**
-     * <p>The version of the Image Builder recipe specified by the <code>name</code>
-     * field.</p>
-     */
     inline LifecyclePolicyResourceSelectionRecipe& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the Image Builder recipe specified by the <code>name</code>
-     * field.</p>
-     */
     inline LifecyclePolicyResourceSelectionRecipe& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -1521,7 +1521,6 @@ namespace Glacier
       void init(const GlacierClientConfiguration& clientConfiguration);
 
       GlacierClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<GlacierEndpointProviderBase> m_endpointProvider;
   };
 

@@ -26,11 +26,8 @@ Job::Job() :
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_nonceHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }

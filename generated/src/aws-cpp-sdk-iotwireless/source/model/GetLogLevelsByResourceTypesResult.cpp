@@ -22,8 +22,8 @@ GetLogLevelsByResourceTypesResult::GetLogLevelsByResourceTypesResult() :
 {
 }
 
-GetLogLevelsByResourceTypesResult::GetLogLevelsByResourceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_defaultLogLevel(LogLevel::NOT_SET)
+GetLogLevelsByResourceTypesResult::GetLogLevelsByResourceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLogLevelsByResourceTypesResult()
 {
   *this = result;
 }

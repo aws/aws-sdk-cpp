@@ -23,8 +23,8 @@ RepositoryAuthConfig::RepositoryAuthConfig() :
 {
 }
 
-RepositoryAuthConfig::RepositoryAuthConfig(JsonView jsonValue) : 
-    m_repositoryCredentialsProviderArnHasBeenSet(false)
+RepositoryAuthConfig::RepositoryAuthConfig(JsonView jsonValue)
+  : RepositoryAuthConfig()
 {
   *this = jsonValue;
 }

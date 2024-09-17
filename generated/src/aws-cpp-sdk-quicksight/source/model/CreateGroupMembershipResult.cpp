@@ -22,8 +22,8 @@ CreateGroupMembershipResult::CreateGroupMembershipResult() :
 {
 }
 
-CreateGroupMembershipResult::CreateGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+CreateGroupMembershipResult::CreateGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateGroupMembershipResult()
 {
   *this = result;
 }

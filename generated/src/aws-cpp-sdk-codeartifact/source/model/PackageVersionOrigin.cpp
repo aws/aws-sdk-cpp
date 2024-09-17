@@ -25,10 +25,8 @@ PackageVersionOrigin::PackageVersionOrigin() :
 {
 }
 
-PackageVersionOrigin::PackageVersionOrigin(JsonView jsonValue) : 
-    m_domainEntryPointHasBeenSet(false),
-    m_originType(PackageVersionOriginType::NOT_SET),
-    m_originTypeHasBeenSet(false)
+PackageVersionOrigin::PackageVersionOrigin(JsonView jsonValue)
+  : PackageVersionOrigin()
 {
   *this = jsonValue;
 }

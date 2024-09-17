@@ -39,73 +39,30 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reference that is associated with the policy object.</p>
      */
     inline const ObjectReference& GetPolicyReference() const{ return m_policyReference; }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline bool PolicyReferenceHasBeenSet() const { return m_policyReferenceHasBeenSet; }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline void SetPolicyReference(const ObjectReference& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline void SetPolicyReference(ObjectReference&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = std::move(value); }
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline BatchAttachPolicy& WithPolicyReference(const ObjectReference& value) { SetPolicyReference(value); return *this;}
-
-    /**
-     * <p>The reference that is associated with the policy object.</p>
-     */
     inline BatchAttachPolicy& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reference that identifies the object to which the policy will be
      * attached.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline BatchAttachPolicy& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-
-    /**
-     * <p>The reference that identifies the object to which the policy will be
-     * attached.</p>
-     */
     inline BatchAttachPolicy& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObjectReference m_policyReference;

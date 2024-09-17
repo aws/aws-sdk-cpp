@@ -23,8 +23,8 @@ Summary::Summary() :
 {
 }
 
-Summary::Summary(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false)
+Summary::Summary(JsonView jsonValue)
+  : Summary()
 {
   *this = jsonValue;
 }

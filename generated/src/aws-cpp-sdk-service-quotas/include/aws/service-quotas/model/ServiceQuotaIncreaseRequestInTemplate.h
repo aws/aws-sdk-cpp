@@ -37,317 +37,112 @@ namespace Model
     AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the service identifier. To find the service code value for an
      * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the service name.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the quota identifier. To find the quota code for a specific quota,
      * use the <a>ListServiceQuotas</a> operation, and look for the
      * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
-     * use the <a>ListServiceQuotas</a> operation, and look for the
-     * <code>QuotaCode</code> response in the output for the quota you want.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the quota name.</p>
      */
     inline const Aws::String& GetQuotaName() const{ return m_quotaName; }
-
-    /**
-     * <p>Specifies the quota name.</p>
-     */
     inline bool QuotaNameHasBeenSet() const { return m_quotaNameHasBeenSet; }
-
-    /**
-     * <p>Specifies the quota name.</p>
-     */
     inline void SetQuotaName(const Aws::String& value) { m_quotaNameHasBeenSet = true; m_quotaName = value; }
-
-    /**
-     * <p>Specifies the quota name.</p>
-     */
     inline void SetQuotaName(Aws::String&& value) { m_quotaNameHasBeenSet = true; m_quotaName = std::move(value); }
-
-    /**
-     * <p>Specifies the quota name.</p>
-     */
     inline void SetQuotaName(const char* value) { m_quotaNameHasBeenSet = true; m_quotaName.assign(value); }
-
-    /**
-     * <p>Specifies the quota name.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithQuotaName(const Aws::String& value) { SetQuotaName(value); return *this;}
-
-    /**
-     * <p>Specifies the quota name.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithQuotaName(Aws::String&& value) { SetQuotaName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the quota name.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithQuotaName(const char* value) { SetQuotaName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new, increased value of the quota.</p>
      */
     inline double GetDesiredValue() const{ return m_desiredValue; }
-
-    /**
-     * <p>The new, increased value of the quota.</p>
-     */
     inline bool DesiredValueHasBeenSet() const { return m_desiredValueHasBeenSet; }
-
-    /**
-     * <p>The new, increased value of the quota.</p>
-     */
     inline void SetDesiredValue(double value) { m_desiredValueHasBeenSet = true; m_desiredValue = value; }
-
-    /**
-     * <p>The new, increased value of the quota.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithDesiredValue(double value) { SetDesiredValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of measurement.</p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit of measurement.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit of measurement.</p>
-     */
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit of measurement.</p>
-     */
     inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit of measurement.</p>
-     */
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-
-    /**
-     * <p>The unit of measurement.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit of measurement.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-
-    /**
-     * <p>The unit of measurement.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithUnit(const char* value) { SetUnit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the quota is global.</p>
      */
     inline bool GetGlobalQuota() const{ return m_globalQuota; }
-
-    /**
-     * <p>Indicates whether the quota is global.</p>
-     */
     inline bool GlobalQuotaHasBeenSet() const { return m_globalQuotaHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the quota is global.</p>
-     */
     inline void SetGlobalQuota(bool value) { m_globalQuotaHasBeenSet = true; m_globalQuota = value; }
-
-    /**
-     * <p>Indicates whether the quota is global.</p>
-     */
     inline ServiceQuotaIncreaseRequestInTemplate& WithGlobalQuota(bool value) { SetGlobalQuota(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceCode;

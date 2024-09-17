@@ -33,18 +33,8 @@ UpdateAutomationRulesRequestItem::UpdateAutomationRulesRequestItem() :
 {
 }
 
-UpdateAutomationRulesRequestItem::UpdateAutomationRulesRequestItem(JsonView jsonValue) : 
-    m_ruleArnHasBeenSet(false),
-    m_ruleStatus(RuleStatus::NOT_SET),
-    m_ruleStatusHasBeenSet(false),
-    m_ruleOrder(0),
-    m_ruleOrderHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_isTerminal(false),
-    m_isTerminalHasBeenSet(false),
-    m_criteriaHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+UpdateAutomationRulesRequestItem::UpdateAutomationRulesRequestItem(JsonView jsonValue)
+  : UpdateAutomationRulesRequestItem()
 {
   *this = jsonValue;
 }

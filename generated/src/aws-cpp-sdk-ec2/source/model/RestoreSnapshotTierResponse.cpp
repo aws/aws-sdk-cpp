@@ -23,9 +23,8 @@ RestoreSnapshotTierResponse::RestoreSnapshotTierResponse() :
 {
 }
 
-RestoreSnapshotTierResponse::RestoreSnapshotTierResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_restoreDuration(0),
-    m_isPermanentRestore(false)
+RestoreSnapshotTierResponse::RestoreSnapshotTierResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : RestoreSnapshotTierResponse()
 {
   *this = result;
 }

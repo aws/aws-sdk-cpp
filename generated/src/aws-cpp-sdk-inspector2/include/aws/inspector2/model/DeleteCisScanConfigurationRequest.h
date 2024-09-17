@@ -32,46 +32,19 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the CIS scan configuration.</p>
      */
     inline const Aws::String& GetScanConfigurationArn() const{ return m_scanConfigurationArn; }
-
-    /**
-     * <p>The ARN of the CIS scan configuration.</p>
-     */
     inline bool ScanConfigurationArnHasBeenSet() const { return m_scanConfigurationArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the CIS scan configuration.</p>
-     */
     inline void SetScanConfigurationArn(const Aws::String& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = value; }
-
-    /**
-     * <p>The ARN of the CIS scan configuration.</p>
-     */
     inline void SetScanConfigurationArn(Aws::String&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the CIS scan configuration.</p>
-     */
     inline void SetScanConfigurationArn(const char* value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn.assign(value); }
-
-    /**
-     * <p>The ARN of the CIS scan configuration.</p>
-     */
     inline DeleteCisScanConfigurationRequest& WithScanConfigurationArn(const Aws::String& value) { SetScanConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the CIS scan configuration.</p>
-     */
     inline DeleteCisScanConfigurationRequest& WithScanConfigurationArn(Aws::String&& value) { SetScanConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the CIS scan configuration.</p>
-     */
     inline DeleteCisScanConfigurationRequest& WithScanConfigurationArn(const char* value) { SetScanConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scanConfigurationArn;

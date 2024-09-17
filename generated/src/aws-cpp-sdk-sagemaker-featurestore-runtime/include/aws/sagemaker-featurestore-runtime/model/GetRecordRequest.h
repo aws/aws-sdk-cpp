@@ -40,159 +40,53 @@ namespace Model
     AWS_SAGEMAKERFEATURESTORERUNTIME_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
      * want to retrieve a record.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
-     * want to retrieve a record.</p>
-     */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
-     * want to retrieve a record.</p>
-     */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
-     * want to retrieve a record.</p>
-     */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
-     * want to retrieve a record.</p>
-     */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
-     * want to retrieve a record.</p>
-     */
     inline GetRecordRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
-     * want to retrieve a record.</p>
-     */
     inline GetRecordRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
-     * want to retrieve a record.</p>
-     */
     inline GetRecordRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
      * identifies the record in the <code>FeatureGroup</code>. </p>
      */
     inline const Aws::String& GetRecordIdentifierValueAsString() const{ return m_recordIdentifierValueAsString; }
-
-    /**
-     * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
-     * identifies the record in the <code>FeatureGroup</code>. </p>
-     */
     inline bool RecordIdentifierValueAsStringHasBeenSet() const { return m_recordIdentifierValueAsStringHasBeenSet; }
-
-    /**
-     * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
-     * identifies the record in the <code>FeatureGroup</code>. </p>
-     */
     inline void SetRecordIdentifierValueAsString(const Aws::String& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = value; }
-
-    /**
-     * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
-     * identifies the record in the <code>FeatureGroup</code>. </p>
-     */
     inline void SetRecordIdentifierValueAsString(Aws::String&& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = std::move(value); }
-
-    /**
-     * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
-     * identifies the record in the <code>FeatureGroup</code>. </p>
-     */
     inline void SetRecordIdentifierValueAsString(const char* value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString.assign(value); }
-
-    /**
-     * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
-     * identifies the record in the <code>FeatureGroup</code>. </p>
-     */
     inline GetRecordRequest& WithRecordIdentifierValueAsString(const Aws::String& value) { SetRecordIdentifierValueAsString(value); return *this;}
-
-    /**
-     * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
-     * identifies the record in the <code>FeatureGroup</code>. </p>
-     */
     inline GetRecordRequest& WithRecordIdentifierValueAsString(Aws::String&& value) { SetRecordIdentifierValueAsString(std::move(value)); return *this;}
-
-    /**
-     * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
-     * identifies the record in the <code>FeatureGroup</code>. </p>
-     */
     inline GetRecordRequest& WithRecordIdentifierValueAsString(const char* value) { SetRecordIdentifierValueAsString(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of names of Features to be retrieved. If not specified, the latest value
      * for all the Features are returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFeatureNames() const{ return m_featureNames; }
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline bool FeatureNamesHasBeenSet() const { return m_featureNamesHasBeenSet; }
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline void SetFeatureNames(const Aws::Vector<Aws::String>& value) { m_featureNamesHasBeenSet = true; m_featureNames = value; }
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline void SetFeatureNames(Aws::Vector<Aws::String>&& value) { m_featureNamesHasBeenSet = true; m_featureNames = std::move(value); }
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline GetRecordRequest& WithFeatureNames(const Aws::Vector<Aws::String>& value) { SetFeatureNames(value); return *this;}
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline GetRecordRequest& WithFeatureNames(Aws::Vector<Aws::String>&& value) { SetFeatureNames(std::move(value)); return *this;}
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline GetRecordRequest& AddFeatureNames(const Aws::String& value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(value); return *this; }
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline GetRecordRequest& AddFeatureNames(Aws::String&& value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List of names of Features to be retrieved. If not specified, the latest value
-     * for all the Features are returned.</p>
-     */
     inline GetRecordRequest& AddFeatureNames(const char* value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Parameter to request <code>ExpiresAt</code> in response. If
      * <code>Enabled</code>, <code>GetRecord</code> will return the value of
@@ -200,47 +94,12 @@ namespace Model
      * <code>GetRecord</code> will return null.</p>
      */
     inline const ExpirationTimeResponse& GetExpirationTimeResponse() const{ return m_expirationTimeResponse; }
-
-    /**
-     * <p>Parameter to request <code>ExpiresAt</code> in response. If
-     * <code>Enabled</code>, <code>GetRecord</code> will return the value of
-     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
-     * <code>GetRecord</code> will return null.</p>
-     */
     inline bool ExpirationTimeResponseHasBeenSet() const { return m_expirationTimeResponseHasBeenSet; }
-
-    /**
-     * <p>Parameter to request <code>ExpiresAt</code> in response. If
-     * <code>Enabled</code>, <code>GetRecord</code> will return the value of
-     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
-     * <code>GetRecord</code> will return null.</p>
-     */
     inline void SetExpirationTimeResponse(const ExpirationTimeResponse& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = value; }
-
-    /**
-     * <p>Parameter to request <code>ExpiresAt</code> in response. If
-     * <code>Enabled</code>, <code>GetRecord</code> will return the value of
-     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
-     * <code>GetRecord</code> will return null.</p>
-     */
     inline void SetExpirationTimeResponse(ExpirationTimeResponse&& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = std::move(value); }
-
-    /**
-     * <p>Parameter to request <code>ExpiresAt</code> in response. If
-     * <code>Enabled</code>, <code>GetRecord</code> will return the value of
-     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
-     * <code>GetRecord</code> will return null.</p>
-     */
     inline GetRecordRequest& WithExpirationTimeResponse(const ExpirationTimeResponse& value) { SetExpirationTimeResponse(value); return *this;}
-
-    /**
-     * <p>Parameter to request <code>ExpiresAt</code> in response. If
-     * <code>Enabled</code>, <code>GetRecord</code> will return the value of
-     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
-     * <code>GetRecord</code> will return null.</p>
-     */
     inline GetRecordRequest& WithExpirationTimeResponse(ExpirationTimeResponse&& value) { SetExpirationTimeResponse(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_featureGroupName;

@@ -31,6 +31,10 @@ BurninDestinationSettings::BurninDestinationSettings() :
     m_fallbackFontHasBeenSet(false),
     m_fontColor(BurninSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
+    m_fontFileBoldHasBeenSet(false),
+    m_fontFileBoldItalicHasBeenSet(false),
+    m_fontFileItalicHasBeenSet(false),
+    m_fontFileRegularHasBeenSet(false),
     m_fontOpacity(0),
     m_fontOpacityHasBeenSet(false),
     m_fontResolution(0),
@@ -63,48 +67,8 @@ BurninDestinationSettings::BurninDestinationSettings() :
 {
 }
 
-BurninDestinationSettings::BurninDestinationSettings(JsonView jsonValue) : 
-    m_alignment(BurninSubtitleAlignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_applyFontColor(BurninSubtitleApplyFontColor::NOT_SET),
-    m_applyFontColorHasBeenSet(false),
-    m_backgroundColor(BurninSubtitleBackgroundColor::NOT_SET),
-    m_backgroundColorHasBeenSet(false),
-    m_backgroundOpacity(0),
-    m_backgroundOpacityHasBeenSet(false),
-    m_fallbackFont(BurninSubtitleFallbackFont::NOT_SET),
-    m_fallbackFontHasBeenSet(false),
-    m_fontColor(BurninSubtitleFontColor::NOT_SET),
-    m_fontColorHasBeenSet(false),
-    m_fontOpacity(0),
-    m_fontOpacityHasBeenSet(false),
-    m_fontResolution(0),
-    m_fontResolutionHasBeenSet(false),
-    m_fontScript(FontScript::NOT_SET),
-    m_fontScriptHasBeenSet(false),
-    m_fontSize(0),
-    m_fontSizeHasBeenSet(false),
-    m_hexFontColorHasBeenSet(false),
-    m_outlineColor(BurninSubtitleOutlineColor::NOT_SET),
-    m_outlineColorHasBeenSet(false),
-    m_outlineSize(0),
-    m_outlineSizeHasBeenSet(false),
-    m_shadowColor(BurninSubtitleShadowColor::NOT_SET),
-    m_shadowColorHasBeenSet(false),
-    m_shadowOpacity(0),
-    m_shadowOpacityHasBeenSet(false),
-    m_shadowXOffset(0),
-    m_shadowXOffsetHasBeenSet(false),
-    m_shadowYOffset(0),
-    m_shadowYOffsetHasBeenSet(false),
-    m_stylePassthrough(BurnInSubtitleStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false),
-    m_teletextSpacing(BurninSubtitleTeletextSpacing::NOT_SET),
-    m_teletextSpacingHasBeenSet(false),
-    m_xPosition(0),
-    m_xPositionHasBeenSet(false),
-    m_yPosition(0),
-    m_yPositionHasBeenSet(false)
+BurninDestinationSettings::BurninDestinationSettings(JsonView jsonValue)
+  : BurninDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -151,6 +115,34 @@ BurninDestinationSettings& BurninDestinationSettings::operator =(JsonView jsonVa
     m_fontColor = BurninSubtitleFontColorMapper::GetBurninSubtitleFontColorForName(jsonValue.GetString("fontColor"));
 
     m_fontColorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileBold"))
+  {
+    m_fontFileBold = jsonValue.GetString("fontFileBold");
+
+    m_fontFileBoldHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileBoldItalic"))
+  {
+    m_fontFileBoldItalic = jsonValue.GetString("fontFileBoldItalic");
+
+    m_fontFileBoldItalicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileItalic"))
+  {
+    m_fontFileItalic = jsonValue.GetString("fontFileItalic");
+
+    m_fontFileItalicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileRegular"))
+  {
+    m_fontFileRegular = jsonValue.GetString("fontFileRegular");
+
+    m_fontFileRegularHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fontOpacity"))
@@ -294,6 +286,30 @@ JsonValue BurninDestinationSettings::Jsonize() const
   if(m_fontColorHasBeenSet)
   {
    payload.WithString("fontColor", BurninSubtitleFontColorMapper::GetNameForBurninSubtitleFontColor(m_fontColor));
+  }
+
+  if(m_fontFileBoldHasBeenSet)
+  {
+   payload.WithString("fontFileBold", m_fontFileBold);
+
+  }
+
+  if(m_fontFileBoldItalicHasBeenSet)
+  {
+   payload.WithString("fontFileBoldItalic", m_fontFileBoldItalic);
+
+  }
+
+  if(m_fontFileItalicHasBeenSet)
+  {
+   payload.WithString("fontFileItalic", m_fontFileItalic);
+
+  }
+
+  if(m_fontFileRegularHasBeenSet)
+  {
+   payload.WithString("fontFileRegular", m_fontFileRegular);
+
   }
 
   if(m_fontOpacityHasBeenSet)

@@ -42,6 +42,7 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is available
@@ -49,78 +50,24 @@ namespace Model
      * Fargate.</p>
      */
     inline const CPUArchitecture& GetCpuArchitecture() const{ return m_cpuArchitecture; }
-
-    /**
-     * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
-     * platform by setting the value to <code>ARM64</code>. This option is available
-     * for tasks that run on Linux Amazon EC2 instance or Linux containers on
-     * Fargate.</p>
-     */
     inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }
-
-    /**
-     * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
-     * platform by setting the value to <code>ARM64</code>. This option is available
-     * for tasks that run on Linux Amazon EC2 instance or Linux containers on
-     * Fargate.</p>
-     */
     inline void SetCpuArchitecture(const CPUArchitecture& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = value; }
-
-    /**
-     * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
-     * platform by setting the value to <code>ARM64</code>. This option is available
-     * for tasks that run on Linux Amazon EC2 instance or Linux containers on
-     * Fargate.</p>
-     */
     inline void SetCpuArchitecture(CPUArchitecture&& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = std::move(value); }
-
-    /**
-     * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
-     * platform by setting the value to <code>ARM64</code>. This option is available
-     * for tasks that run on Linux Amazon EC2 instance or Linux containers on
-     * Fargate.</p>
-     */
     inline RuntimePlatform& WithCpuArchitecture(const CPUArchitecture& value) { SetCpuArchitecture(value); return *this;}
-
-    /**
-     * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
-     * platform by setting the value to <code>ARM64</code>. This option is available
-     * for tasks that run on Linux Amazon EC2 instance or Linux containers on
-     * Fargate.</p>
-     */
     inline RuntimePlatform& WithCpuArchitecture(CPUArchitecture&& value) { SetCpuArchitecture(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operating system.</p>
      */
     inline const OSFamily& GetOperatingSystemFamily() const{ return m_operatingSystemFamily; }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline bool OperatingSystemFamilyHasBeenSet() const { return m_operatingSystemFamilyHasBeenSet; }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline void SetOperatingSystemFamily(const OSFamily& value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = value; }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline void SetOperatingSystemFamily(OSFamily&& value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = std::move(value); }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline RuntimePlatform& WithOperatingSystemFamily(const OSFamily& value) { SetOperatingSystemFamily(value); return *this;}
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline RuntimePlatform& WithOperatingSystemFamily(OSFamily&& value) { SetOperatingSystemFamily(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CPUArchitecture m_cpuArchitecture;

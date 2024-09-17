@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API GetBlueprintRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns a <code>BlueprintRun</code> object.</p>
      */
     inline const BlueprintRun& GetBlueprintRun() const{ return m_blueprintRun; }
-
-    /**
-     * <p>Returns a <code>BlueprintRun</code> object.</p>
-     */
     inline void SetBlueprintRun(const BlueprintRun& value) { m_blueprintRun = value; }
-
-    /**
-     * <p>Returns a <code>BlueprintRun</code> object.</p>
-     */
     inline void SetBlueprintRun(BlueprintRun&& value) { m_blueprintRun = std::move(value); }
-
-    /**
-     * <p>Returns a <code>BlueprintRun</code> object.</p>
-     */
     inline GetBlueprintRunResult& WithBlueprintRun(const BlueprintRun& value) { SetBlueprintRun(value); return *this;}
-
-    /**
-     * <p>Returns a <code>BlueprintRun</code> object.</p>
-     */
     inline GetBlueprintRunResult& WithBlueprintRun(BlueprintRun&& value) { SetBlueprintRun(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBlueprintRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBlueprintRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBlueprintRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BlueprintRun m_blueprintRun;

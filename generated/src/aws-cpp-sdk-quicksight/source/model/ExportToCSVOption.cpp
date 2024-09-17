@@ -24,9 +24,8 @@ ExportToCSVOption::ExportToCSVOption() :
 {
 }
 
-ExportToCSVOption::ExportToCSVOption(JsonView jsonValue) : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
+ExportToCSVOption::ExportToCSVOption(JsonView jsonValue)
+  : ExportToCSVOption()
 {
   *this = jsonValue;
 }

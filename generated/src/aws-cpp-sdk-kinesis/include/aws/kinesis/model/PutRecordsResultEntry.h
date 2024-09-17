@@ -41,145 +41,51 @@ namespace Model
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sequence number for an individual record result.</p>
      */
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
-
-    /**
-     * <p>The sequence number for an individual record result.</p>
-     */
     inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
-
-    /**
-     * <p>The sequence number for an individual record result.</p>
-     */
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
-
-    /**
-     * <p>The sequence number for an individual record result.</p>
-     */
     inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
-
-    /**
-     * <p>The sequence number for an individual record result.</p>
-     */
     inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
-
-    /**
-     * <p>The sequence number for an individual record result.</p>
-     */
     inline PutRecordsResultEntry& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
-
-    /**
-     * <p>The sequence number for an individual record result.</p>
-     */
     inline PutRecordsResultEntry& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The sequence number for an individual record result.</p>
-     */
     inline PutRecordsResultEntry& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The shard ID for an individual record result.</p>
      */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
-
-    /**
-     * <p>The shard ID for an individual record result.</p>
-     */
     inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
-
-    /**
-     * <p>The shard ID for an individual record result.</p>
-     */
     inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-
-    /**
-     * <p>The shard ID for an individual record result.</p>
-     */
     inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-
-    /**
-     * <p>The shard ID for an individual record result.</p>
-     */
     inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-
-    /**
-     * <p>The shard ID for an individual record result.</p>
-     */
     inline PutRecordsResultEntry& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-
-    /**
-     * <p>The shard ID for an individual record result.</p>
-     */
     inline PutRecordsResultEntry& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-
-    /**
-     * <p>The shard ID for an individual record result.</p>
-     */
     inline PutRecordsResultEntry& WithShardId(const char* value) { SetShardId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code for an individual record result. <code>ErrorCodes</code> can
      * be either <code>ProvisionedThroughputExceededException</code> or
      * <code>InternalFailure</code>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
-     * be either <code>ProvisionedThroughputExceededException</code> or
-     * <code>InternalFailure</code>.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
-     * be either <code>ProvisionedThroughputExceededException</code> or
-     * <code>InternalFailure</code>.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
-     * be either <code>ProvisionedThroughputExceededException</code> or
-     * <code>InternalFailure</code>.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
-     * be either <code>ProvisionedThroughputExceededException</code> or
-     * <code>InternalFailure</code>.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
-     * be either <code>ProvisionedThroughputExceededException</code> or
-     * <code>InternalFailure</code>.</p>
-     */
     inline PutRecordsResultEntry& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
-     * be either <code>ProvisionedThroughputExceededException</code> or
-     * <code>InternalFailure</code>.</p>
-     */
     inline PutRecordsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
-     * be either <code>ProvisionedThroughputExceededException</code> or
-     * <code>InternalFailure</code>.</p>
-     */
     inline PutRecordsResultEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message for an individual record result. An <code>ErrorCode</code>
      * value of <code>ProvisionedThroughputExceededException</code> has an error
@@ -188,70 +94,14 @@ namespace Model
      * message <code>"Internal Service Failure"</code>.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message for an individual record result. An <code>ErrorCode</code>
-     * value of <code>ProvisionedThroughputExceededException</code> has an error
-     * message that includes the account ID, stream name, and shard ID. An
-     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
-     * message <code>"Internal Service Failure"</code>.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message for an individual record result. An <code>ErrorCode</code>
-     * value of <code>ProvisionedThroughputExceededException</code> has an error
-     * message that includes the account ID, stream name, and shard ID. An
-     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
-     * message <code>"Internal Service Failure"</code>.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message for an individual record result. An <code>ErrorCode</code>
-     * value of <code>ProvisionedThroughputExceededException</code> has an error
-     * message that includes the account ID, stream name, and shard ID. An
-     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
-     * message <code>"Internal Service Failure"</code>.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message for an individual record result. An <code>ErrorCode</code>
-     * value of <code>ProvisionedThroughputExceededException</code> has an error
-     * message that includes the account ID, stream name, and shard ID. An
-     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
-     * message <code>"Internal Service Failure"</code>.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message for an individual record result. An <code>ErrorCode</code>
-     * value of <code>ProvisionedThroughputExceededException</code> has an error
-     * message that includes the account ID, stream name, and shard ID. An
-     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
-     * message <code>"Internal Service Failure"</code>.</p>
-     */
     inline PutRecordsResultEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message for an individual record result. An <code>ErrorCode</code>
-     * value of <code>ProvisionedThroughputExceededException</code> has an error
-     * message that includes the account ID, stream name, and shard ID. An
-     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
-     * message <code>"Internal Service Failure"</code>.</p>
-     */
     inline PutRecordsResultEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message for an individual record result. An <code>ErrorCode</code>
-     * value of <code>ProvisionedThroughputExceededException</code> has an error
-     * message that includes the account ID, stream name, and shard ID. An
-     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
-     * message <code>"Internal Service Failure"</code>.</p>
-     */
     inline PutRecordsResultEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sequenceNumber;

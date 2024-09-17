@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A list of parameters for a control. A control can have zero, one, or more
-   * than one parameter. An example of a control with two parameters is: "backup plan
+   * <p>The parameters for a control. A control can have zero, one, or more than one
+   * parameter. An example of a control with two parameters is: "backup plan
    * frequency is at least <code>daily</code> and the retention period is at least
    * <code>1 year</code>". The first parameter is <code>daily</code>. The second
    * parameter is <code>1 year</code>.</p><p><h3>See Also:</h3>   <a
@@ -41,87 +41,33 @@ namespace Model
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
-
-    /**
-     * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-     */
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-
-    /**
-     * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-
-    /**
-     * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-     */
     inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-
-    /**
-     * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-     */
     inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-
-    /**
-     * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-     */
     inline ControlInputParameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-
-    /**
-     * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-     */
     inline ControlInputParameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-     */
     inline ControlInputParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of parameter, for example, <code>hourly</code>.</p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
-
-    /**
-     * <p>The value of parameter, for example, <code>hourly</code>.</p>
-     */
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
-
-    /**
-     * <p>The value of parameter, for example, <code>hourly</code>.</p>
-     */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
-
-    /**
-     * <p>The value of parameter, for example, <code>hourly</code>.</p>
-     */
     inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
-
-    /**
-     * <p>The value of parameter, for example, <code>hourly</code>.</p>
-     */
     inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
-
-    /**
-     * <p>The value of parameter, for example, <code>hourly</code>.</p>
-     */
     inline ControlInputParameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
-
-    /**
-     * <p>The value of parameter, for example, <code>hourly</code>.</p>
-     */
     inline ControlInputParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of parameter, for example, <code>hourly</code>.</p>
-     */
     inline ControlInputParameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_parameterName;

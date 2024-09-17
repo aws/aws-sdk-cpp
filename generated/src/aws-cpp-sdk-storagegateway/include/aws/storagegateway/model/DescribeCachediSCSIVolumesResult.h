@@ -39,70 +39,30 @@ namespace Model
     AWS_STORAGEGATEWAY_API DescribeCachediSCSIVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of objects where each object contains metadata about one cached
      * volume.</p>
      */
     inline const Aws::Vector<CachediSCSIVolume>& GetCachediSCSIVolumes() const{ return m_cachediSCSIVolumes; }
-
-    /**
-     * <p>An array of objects where each object contains metadata about one cached
-     * volume.</p>
-     */
     inline void SetCachediSCSIVolumes(const Aws::Vector<CachediSCSIVolume>& value) { m_cachediSCSIVolumes = value; }
-
-    /**
-     * <p>An array of objects where each object contains metadata about one cached
-     * volume.</p>
-     */
     inline void SetCachediSCSIVolumes(Aws::Vector<CachediSCSIVolume>&& value) { m_cachediSCSIVolumes = std::move(value); }
-
-    /**
-     * <p>An array of objects where each object contains metadata about one cached
-     * volume.</p>
-     */
     inline DescribeCachediSCSIVolumesResult& WithCachediSCSIVolumes(const Aws::Vector<CachediSCSIVolume>& value) { SetCachediSCSIVolumes(value); return *this;}
-
-    /**
-     * <p>An array of objects where each object contains metadata about one cached
-     * volume.</p>
-     */
     inline DescribeCachediSCSIVolumesResult& WithCachediSCSIVolumes(Aws::Vector<CachediSCSIVolume>&& value) { SetCachediSCSIVolumes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects where each object contains metadata about one cached
-     * volume.</p>
-     */
     inline DescribeCachediSCSIVolumesResult& AddCachediSCSIVolumes(const CachediSCSIVolume& value) { m_cachediSCSIVolumes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects where each object contains metadata about one cached
-     * volume.</p>
-     */
     inline DescribeCachediSCSIVolumesResult& AddCachediSCSIVolumes(CachediSCSIVolume&& value) { m_cachediSCSIVolumes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCachediSCSIVolumesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCachediSCSIVolumesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCachediSCSIVolumesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CachediSCSIVolume> m_cachediSCSIVolumes;

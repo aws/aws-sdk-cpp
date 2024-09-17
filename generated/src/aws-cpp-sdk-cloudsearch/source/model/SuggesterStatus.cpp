@@ -26,9 +26,8 @@ SuggesterStatus::SuggesterStatus() :
 {
 }
 
-SuggesterStatus::SuggesterStatus(const XmlNode& xmlNode) : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+SuggesterStatus::SuggesterStatus(const XmlNode& xmlNode)
+  : SuggesterStatus()
 {
   *this = xmlNode;
 }

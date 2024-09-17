@@ -29,14 +29,8 @@ AwsRdsDbSecurityGroupDetails::AwsRdsDbSecurityGroupDetails() :
 {
 }
 
-AwsRdsDbSecurityGroupDetails::AwsRdsDbSecurityGroupDetails(JsonView jsonValue) : 
-    m_dbSecurityGroupArnHasBeenSet(false),
-    m_dbSecurityGroupDescriptionHasBeenSet(false),
-    m_dbSecurityGroupNameHasBeenSet(false),
-    m_ec2SecurityGroupsHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+AwsRdsDbSecurityGroupDetails::AwsRdsDbSecurityGroupDetails(JsonView jsonValue)
+  : AwsRdsDbSecurityGroupDetails()
 {
   *this = jsonValue;
 }

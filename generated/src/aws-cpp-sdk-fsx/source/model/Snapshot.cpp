@@ -32,17 +32,8 @@ Snapshot::Snapshot() :
 {
 }
 
-Snapshot::Snapshot(JsonView jsonValue) : 
-    m_resourceARNHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lifecycle(SnapshotLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_lifecycleTransitionReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false)
+Snapshot::Snapshot(JsonView jsonValue)
+  : Snapshot()
 {
   *this = jsonValue;
 }

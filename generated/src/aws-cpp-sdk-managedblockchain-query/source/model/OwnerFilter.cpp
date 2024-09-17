@@ -23,8 +23,8 @@ OwnerFilter::OwnerFilter() :
 {
 }
 
-OwnerFilter::OwnerFilter(JsonView jsonValue) : 
-    m_addressHasBeenSet(false)
+OwnerFilter::OwnerFilter(JsonView jsonValue)
+  : OwnerFilter()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ AccountSetupInProgressException::AccountSetupInProgressException() :
 {
 }
 
-AccountSetupInProgressException::AccountSetupInProgressException(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_docsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_tipHasBeenSet(false)
+AccountSetupInProgressException::AccountSetupInProgressException(JsonView jsonValue)
+  : AccountSetupInProgressException()
 {
   *this = jsonValue;
 }

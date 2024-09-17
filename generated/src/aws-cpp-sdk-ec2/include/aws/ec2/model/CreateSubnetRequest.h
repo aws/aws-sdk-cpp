@@ -38,47 +38,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The tags to assign to the subnet.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags to assign to the subnet.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags to assign to the subnet.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags to assign to the subnet.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags to assign to the subnet.</p>
-     */
     inline CreateSubnetRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags to assign to the subnet.</p>
-     */
     inline CreateSubnetRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to assign to the subnet.</p>
-     */
     inline CreateSubnetRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to assign to the subnet.</p>
-     */
     inline CreateSubnetRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
      * Web Services selects one for you. If you create more than one subnet in your
@@ -86,145 +60,35 @@ namespace Model
      * create a subnet in a Local Zone, set this value to the Local Zone ID, for
      * example <code>us-west-2-lax-1a</code>. For information about the Regions that
      * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/available-local-zones.html">Available
+     * Local Zones</a>.</p> <p>To create a subnet in an Outpost, set this value to the
+     * Availability Zone for the Outpost and specify the Outpost ARN.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
-     * Web Services selects one for you. If you create more than one subnet in your
-     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
-     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
-     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
-     * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
-     */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-
-    /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
-     * Web Services selects one for you. If you create more than one subnet in your
-     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
-     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
-     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
-     * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
-     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
-     * Web Services selects one for you. If you create more than one subnet in your
-     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
-     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
-     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
-     * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
-     */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
-     * Web Services selects one for you. If you create more than one subnet in your
-     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
-     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
-     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
-     * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
-     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-
-    /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
-     * Web Services selects one for you. If you create more than one subnet in your
-     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
-     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
-     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
-     * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
-     */
     inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
-     * Web Services selects one for you. If you create more than one subnet in your
-     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
-     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
-     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
-     * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
-     */
     inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
-     * Web Services selects one for you. If you create more than one subnet in your
-     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
-     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
-     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
-     * support Local Zones, see <a
-     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
-     * Zones locations</a>.</p> <p>To create a subnet in an Outpost, set this value to
-     * the Availability Zone for the Outpost and specify the Outpost ARN.</p>
-     */
     inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
-
-    /**
-     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
-     */
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
-
-    /**
-     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
-     */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
-
-    /**
-     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
-     */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
-
-    /**
-     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
-     */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
-
-    /**
-     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
-     */
     inline CreateSubnetRequest& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-
-    /**
-     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
-     */
     inline CreateSubnetRequest& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
-     */
     inline CreateSubnetRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
@@ -233,210 +97,60 @@ namespace Model
      * only subnet.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
-     * only subnet.</p>
-     */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
-     * only subnet.</p>
-     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
-     * only subnet.</p>
-     */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
-     * only subnet.</p>
-     */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
-     * only subnet.</p>
-     */
     inline CreateSubnetRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
-     * only subnet.</p>
-     */
     inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
-     * only subnet.</p>
-     */
     inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
      * required for an IPv6 only subnet.</p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
-
-    /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
-     * required for an IPv6 only subnet.</p>
-     */
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
-     * required for an IPv6 only subnet.</p>
-     */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
-
-    /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
-     * required for an IPv6 only subnet.</p>
-     */
     inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
-     * required for an IPv6 only subnet.</p>
-     */
     inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
-     * required for an IPv6 only subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
-     * required for an IPv6 only subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is
-     * required for an IPv6 only subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
      * you must also specify the Availability Zone of the Outpost subnet.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
-     * you must also specify the Availability Zone of the Outpost subnet.</p>
-     */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
-     * you must also specify the Availability Zone of the Outpost subnet.</p>
-     */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
-     * you must also specify the Availability Zone of the Outpost subnet.</p>
-     */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
-     * you must also specify the Availability Zone of the Outpost subnet.</p>
-     */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
-     * you must also specify the Availability Zone of the Outpost subnet.</p>
-     */
     inline CreateSubnetRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
-     * you must also specify the Availability Zone of the Outpost subnet.</p>
-     */
     inline CreateSubnetRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN,
-     * you must also specify the Availability Zone of the Outpost subnet.</p>
-     */
     inline CreateSubnetRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline CreateSubnetRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline CreateSubnetRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline CreateSubnetRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -444,176 +158,68 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to create an IPv6 only subnet.</p>
      */
     inline bool GetIpv6Native() const{ return m_ipv6Native; }
-
-    /**
-     * <p>Indicates whether to create an IPv6 only subnet.</p>
-     */
     inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to create an IPv6 only subnet.</p>
-     */
     inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
-
-    /**
-     * <p>Indicates whether to create an IPv6 only subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An IPv4 IPAM pool ID for the subnet.</p>
      */
     inline const Aws::String& GetIpv4IpamPoolId() const{ return m_ipv4IpamPoolId; }
-
-    /**
-     * <p>An IPv4 IPAM pool ID for the subnet.</p>
-     */
     inline bool Ipv4IpamPoolIdHasBeenSet() const { return m_ipv4IpamPoolIdHasBeenSet; }
-
-    /**
-     * <p>An IPv4 IPAM pool ID for the subnet.</p>
-     */
     inline void SetIpv4IpamPoolId(const Aws::String& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = value; }
-
-    /**
-     * <p>An IPv4 IPAM pool ID for the subnet.</p>
-     */
     inline void SetIpv4IpamPoolId(Aws::String&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::move(value); }
-
-    /**
-     * <p>An IPv4 IPAM pool ID for the subnet.</p>
-     */
     inline void SetIpv4IpamPoolId(const char* value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId.assign(value); }
-
-    /**
-     * <p>An IPv4 IPAM pool ID for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv4IpamPoolId(const Aws::String& value) { SetIpv4IpamPoolId(value); return *this;}
-
-    /**
-     * <p>An IPv4 IPAM pool ID for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv4IpamPoolId(Aws::String&& value) { SetIpv4IpamPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>An IPv4 IPAM pool ID for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv4IpamPoolId(const char* value) { SetIpv4IpamPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An IPv4 netmask length for the subnet.</p>
      */
     inline int GetIpv4NetmaskLength() const{ return m_ipv4NetmaskLength; }
-
-    /**
-     * <p>An IPv4 netmask length for the subnet.</p>
-     */
     inline bool Ipv4NetmaskLengthHasBeenSet() const { return m_ipv4NetmaskLengthHasBeenSet; }
-
-    /**
-     * <p>An IPv4 netmask length for the subnet.</p>
-     */
     inline void SetIpv4NetmaskLength(int value) { m_ipv4NetmaskLengthHasBeenSet = true; m_ipv4NetmaskLength = value; }
-
-    /**
-     * <p>An IPv4 netmask length for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv4NetmaskLength(int value) { SetIpv4NetmaskLength(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An IPv6 IPAM pool ID for the subnet.</p>
      */
     inline const Aws::String& GetIpv6IpamPoolId() const{ return m_ipv6IpamPoolId; }
-
-    /**
-     * <p>An IPv6 IPAM pool ID for the subnet.</p>
-     */
     inline bool Ipv6IpamPoolIdHasBeenSet() const { return m_ipv6IpamPoolIdHasBeenSet; }
-
-    /**
-     * <p>An IPv6 IPAM pool ID for the subnet.</p>
-     */
     inline void SetIpv6IpamPoolId(const Aws::String& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = value; }
-
-    /**
-     * <p>An IPv6 IPAM pool ID for the subnet.</p>
-     */
     inline void SetIpv6IpamPoolId(Aws::String&& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = std::move(value); }
-
-    /**
-     * <p>An IPv6 IPAM pool ID for the subnet.</p>
-     */
     inline void SetIpv6IpamPoolId(const char* value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId.assign(value); }
-
-    /**
-     * <p>An IPv6 IPAM pool ID for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6IpamPoolId(const Aws::String& value) { SetIpv6IpamPoolId(value); return *this;}
-
-    /**
-     * <p>An IPv6 IPAM pool ID for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6IpamPoolId(Aws::String&& value) { SetIpv6IpamPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>An IPv6 IPAM pool ID for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6IpamPoolId(const char* value) { SetIpv6IpamPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An IPv6 netmask length for the subnet.</p>
      */
     inline int GetIpv6NetmaskLength() const{ return m_ipv6NetmaskLength; }
-
-    /**
-     * <p>An IPv6 netmask length for the subnet.</p>
-     */
     inline bool Ipv6NetmaskLengthHasBeenSet() const { return m_ipv6NetmaskLengthHasBeenSet; }
-
-    /**
-     * <p>An IPv6 netmask length for the subnet.</p>
-     */
     inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
-
-    /**
-     * <p>An IPv6 netmask length for the subnet.</p>
-     */
     inline CreateSubnetRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TagSpecification> m_tagSpecifications;

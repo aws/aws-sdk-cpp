@@ -39,48 +39,19 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration properties for logging events associated with a member's
      * Certificate Authority (CA). CA logs help you determine when a member in your
      * account joins the network, or when new peers register with a member CA.</p>
      */
     inline const LogConfigurations& GetCaLogs() const{ return m_caLogs; }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member's
-     * Certificate Authority (CA). CA logs help you determine when a member in your
-     * account joins the network, or when new peers register with a member CA.</p>
-     */
     inline bool CaLogsHasBeenSet() const { return m_caLogsHasBeenSet; }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member's
-     * Certificate Authority (CA). CA logs help you determine when a member in your
-     * account joins the network, or when new peers register with a member CA.</p>
-     */
     inline void SetCaLogs(const LogConfigurations& value) { m_caLogsHasBeenSet = true; m_caLogs = value; }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member's
-     * Certificate Authority (CA). CA logs help you determine when a member in your
-     * account joins the network, or when new peers register with a member CA.</p>
-     */
     inline void SetCaLogs(LogConfigurations&& value) { m_caLogsHasBeenSet = true; m_caLogs = std::move(value); }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member's
-     * Certificate Authority (CA). CA logs help you determine when a member in your
-     * account joins the network, or when new peers register with a member CA.</p>
-     */
     inline MemberFabricLogPublishingConfiguration& WithCaLogs(const LogConfigurations& value) { SetCaLogs(value); return *this;}
-
-    /**
-     * <p>Configuration properties for logging events associated with a member's
-     * Certificate Authority (CA). CA logs help you determine when a member in your
-     * account joins the network, or when new peers register with a member CA.</p>
-     */
     inline MemberFabricLogPublishingConfiguration& WithCaLogs(LogConfigurations&& value) { SetCaLogs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LogConfigurations m_caLogs;

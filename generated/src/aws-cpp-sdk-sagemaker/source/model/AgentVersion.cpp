@@ -25,10 +25,8 @@ AgentVersion::AgentVersion() :
 {
 }
 
-AgentVersion::AgentVersion(JsonView jsonValue) : 
-    m_versionHasBeenSet(false),
-    m_agentCount(0),
-    m_agentCountHasBeenSet(false)
+AgentVersion::AgentVersion(JsonView jsonValue)
+  : AgentVersion()
 {
   *this = jsonValue;
 }

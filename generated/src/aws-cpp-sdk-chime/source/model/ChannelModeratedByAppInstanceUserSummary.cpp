@@ -23,8 +23,8 @@ ChannelModeratedByAppInstanceUserSummary::ChannelModeratedByAppInstanceUserSumma
 {
 }
 
-ChannelModeratedByAppInstanceUserSummary::ChannelModeratedByAppInstanceUserSummary(JsonView jsonValue) : 
-    m_channelSummaryHasBeenSet(false)
+ChannelModeratedByAppInstanceUserSummary::ChannelModeratedByAppInstanceUserSummary(JsonView jsonValue)
+  : ChannelModeratedByAppInstanceUserSummary()
 {
   *this = jsonValue;
 }

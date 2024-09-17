@@ -27,12 +27,8 @@ ContractFilter::ContractFilter() :
 {
 }
 
-ContractFilter::ContractFilter(JsonView jsonValue) : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_tokenStandard(QueryTokenStandard::NOT_SET),
-    m_tokenStandardHasBeenSet(false),
-    m_deployerAddressHasBeenSet(false)
+ContractFilter::ContractFilter(JsonView jsonValue)
+  : ContractFilter()
 {
   *this = jsonValue;
 }

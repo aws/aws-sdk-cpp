@@ -24,9 +24,8 @@ ApplicationSnapshotConfigurationDescription::ApplicationSnapshotConfigurationDes
 {
 }
 
-ApplicationSnapshotConfigurationDescription::ApplicationSnapshotConfigurationDescription(JsonView jsonValue) : 
-    m_snapshotsEnabled(false),
-    m_snapshotsEnabledHasBeenSet(false)
+ApplicationSnapshotConfigurationDescription::ApplicationSnapshotConfigurationDescription(JsonView jsonValue)
+  : ApplicationSnapshotConfigurationDescription()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ DoubleColumnStatisticsData::DoubleColumnStatisticsData() :
 {
 }
 
-DoubleColumnStatisticsData::DoubleColumnStatisticsData(JsonView jsonValue) : 
-    m_minimumValue(0.0),
-    m_minimumValueHasBeenSet(false),
-    m_maximumValue(0.0),
-    m_maximumValueHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false),
-    m_numberOfDistinctValues(0),
-    m_numberOfDistinctValuesHasBeenSet(false)
+DoubleColumnStatisticsData::DoubleColumnStatisticsData(JsonView jsonValue)
+  : DoubleColumnStatisticsData()
 {
   *this = jsonValue;
 }

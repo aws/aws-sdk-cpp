@@ -24,9 +24,8 @@ CostEstimate::CostEstimate() :
 {
 }
 
-CostEstimate::CostEstimate(JsonView jsonValue) : 
-    m_usageTypeHasBeenSet(false),
-    m_resultsByTimeHasBeenSet(false)
+CostEstimate::CostEstimate(JsonView jsonValue)
+  : CostEstimate()
 {
   *this = jsonValue;
 }

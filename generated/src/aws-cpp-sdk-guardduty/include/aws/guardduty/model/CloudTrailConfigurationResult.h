@@ -38,42 +38,18 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes whether CloudTrail is enabled as a data source for the
      * detector.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Describes whether CloudTrail is enabled as a data source for the
-     * detector.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Describes whether CloudTrail is enabled as a data source for the
-     * detector.</p>
-     */
     inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Describes whether CloudTrail is enabled as a data source for the
-     * detector.</p>
-     */
     inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Describes whether CloudTrail is enabled as a data source for the
-     * detector.</p>
-     */
     inline CloudTrailConfigurationResult& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Describes whether CloudTrail is enabled as a data source for the
-     * detector.</p>
-     */
     inline CloudTrailConfigurationResult& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataSourceStatus m_status;

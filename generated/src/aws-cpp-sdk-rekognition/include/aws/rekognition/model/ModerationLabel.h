@@ -41,6 +41,7 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the confidence that Amazon Rekognition has that the label has been
      * correctly identified.</p> <p>If you don't specify the <code>MinConfidence</code>
@@ -48,146 +49,50 @@ namespace Model
      * returns labels with a confidence value greater than or equal to 50 percent.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>Specifies the confidence that Amazon Rekognition has that the label has been
-     * correctly identified.</p> <p>If you don't specify the <code>MinConfidence</code>
-     * parameter in the call to <code>DetectModerationLabels</code>, the operation
-     * returns labels with a confidence value greater than or equal to 50 percent.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>Specifies the confidence that Amazon Rekognition has that the label has been
-     * correctly identified.</p> <p>If you don't specify the <code>MinConfidence</code>
-     * parameter in the call to <code>DetectModerationLabels</code>, the operation
-     * returns labels with a confidence value greater than or equal to 50 percent.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>Specifies the confidence that Amazon Rekognition has that the label has been
-     * correctly identified.</p> <p>If you don't specify the <code>MinConfidence</code>
-     * parameter in the call to <code>DetectModerationLabels</code>, the operation
-     * returns labels with a confidence value greater than or equal to 50 percent.</p>
-     */
     inline ModerationLabel& WithConfidence(double value) { SetConfidence(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The label name for the type of unsafe content detected in the image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The label name for the type of unsafe content detected in the image.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The label name for the type of unsafe content detected in the image.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The label name for the type of unsafe content detected in the image.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The label name for the type of unsafe content detected in the image.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The label name for the type of unsafe content detected in the image.</p>
-     */
     inline ModerationLabel& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The label name for the type of unsafe content detected in the image.</p>
-     */
     inline ModerationLabel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The label name for the type of unsafe content detected in the image.</p>
-     */
     inline ModerationLabel& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline const Aws::String& GetParentName() const{ return m_parentName; }
-
-    /**
-     * <p>The name for the parent label. Labels at the top level of the hierarchy have
-     * the parent label <code>""</code>.</p>
-     */
     inline bool ParentNameHasBeenSet() const { return m_parentNameHasBeenSet; }
-
-    /**
-     * <p>The name for the parent label. Labels at the top level of the hierarchy have
-     * the parent label <code>""</code>.</p>
-     */
     inline void SetParentName(const Aws::String& value) { m_parentNameHasBeenSet = true; m_parentName = value; }
-
-    /**
-     * <p>The name for the parent label. Labels at the top level of the hierarchy have
-     * the parent label <code>""</code>.</p>
-     */
     inline void SetParentName(Aws::String&& value) { m_parentNameHasBeenSet = true; m_parentName = std::move(value); }
-
-    /**
-     * <p>The name for the parent label. Labels at the top level of the hierarchy have
-     * the parent label <code>""</code>.</p>
-     */
     inline void SetParentName(const char* value) { m_parentNameHasBeenSet = true; m_parentName.assign(value); }
-
-    /**
-     * <p>The name for the parent label. Labels at the top level of the hierarchy have
-     * the parent label <code>""</code>.</p>
-     */
     inline ModerationLabel& WithParentName(const Aws::String& value) { SetParentName(value); return *this;}
-
-    /**
-     * <p>The name for the parent label. Labels at the top level of the hierarchy have
-     * the parent label <code>""</code>.</p>
-     */
     inline ModerationLabel& WithParentName(Aws::String&& value) { SetParentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the parent label. Labels at the top level of the hierarchy have
-     * the parent label <code>""</code>.</p>
-     */
     inline ModerationLabel& WithParentName(const char* value) { SetParentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of the moderation label with regard to its taxonomy, from 1 to
      * 3.</p>
      */
     inline int GetTaxonomyLevel() const{ return m_taxonomyLevel; }
-
-    /**
-     * <p>The level of the moderation label with regard to its taxonomy, from 1 to
-     * 3.</p>
-     */
     inline bool TaxonomyLevelHasBeenSet() const { return m_taxonomyLevelHasBeenSet; }
-
-    /**
-     * <p>The level of the moderation label with regard to its taxonomy, from 1 to
-     * 3.</p>
-     */
     inline void SetTaxonomyLevel(int value) { m_taxonomyLevelHasBeenSet = true; m_taxonomyLevel = value; }
-
-    /**
-     * <p>The level of the moderation label with regard to its taxonomy, from 1 to
-     * 3.</p>
-     */
     inline ModerationLabel& WithTaxonomyLevel(int value) { SetTaxonomyLevel(value); return *this;}
-
+    ///@}
   private:
 
     double m_confidence;

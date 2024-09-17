@@ -22,8 +22,8 @@ DescribeAuditSuppressionResult::DescribeAuditSuppressionResult() :
 {
 }
 
-DescribeAuditSuppressionResult::DescribeAuditSuppressionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_suppressIndefinitely(false)
+DescribeAuditSuppressionResult::DescribeAuditSuppressionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAuditSuppressionResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ LFTag::LFTag() :
 {
 }
 
-LFTag::LFTag(JsonView jsonValue) : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+LFTag::LFTag(JsonView jsonValue)
+  : LFTag()
 {
   *this = jsonValue;
 }

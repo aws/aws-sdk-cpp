@@ -39,6 +39,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -46,144 +47,50 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to apply to the Capacity Block during launch.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags to apply to the Capacity Block during launch.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags to apply to the Capacity Block during launch.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags to apply to the Capacity Block during launch.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags to apply to the Capacity Block during launch.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags to apply to the Capacity Block during launch.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to apply to the Capacity Block during launch.</p>
-     */
     inline PurchaseCapacityBlockRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to apply to the Capacity Block during launch.</p>
-     */
     inline PurchaseCapacityBlockRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Capacity Block offering.</p>
      */
     inline const Aws::String& GetCapacityBlockOfferingId() const{ return m_capacityBlockOfferingId; }
-
-    /**
-     * <p>The ID of the Capacity Block offering.</p>
-     */
     inline bool CapacityBlockOfferingIdHasBeenSet() const { return m_capacityBlockOfferingIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Capacity Block offering.</p>
-     */
     inline void SetCapacityBlockOfferingId(const Aws::String& value) { m_capacityBlockOfferingIdHasBeenSet = true; m_capacityBlockOfferingId = value; }
-
-    /**
-     * <p>The ID of the Capacity Block offering.</p>
-     */
     inline void SetCapacityBlockOfferingId(Aws::String&& value) { m_capacityBlockOfferingIdHasBeenSet = true; m_capacityBlockOfferingId = std::move(value); }
-
-    /**
-     * <p>The ID of the Capacity Block offering.</p>
-     */
     inline void SetCapacityBlockOfferingId(const char* value) { m_capacityBlockOfferingIdHasBeenSet = true; m_capacityBlockOfferingId.assign(value); }
-
-    /**
-     * <p>The ID of the Capacity Block offering.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithCapacityBlockOfferingId(const Aws::String& value) { SetCapacityBlockOfferingId(value); return *this;}
-
-    /**
-     * <p>The ID of the Capacity Block offering.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithCapacityBlockOfferingId(Aws::String&& value) { SetCapacityBlockOfferingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Capacity Block offering.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithCapacityBlockOfferingId(const char* value) { SetCapacityBlockOfferingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of operating system for which to reserve capacity.</p>
      */
     inline const CapacityReservationInstancePlatform& GetInstancePlatform() const{ return m_instancePlatform; }
-
-    /**
-     * <p>The type of operating system for which to reserve capacity.</p>
-     */
     inline bool InstancePlatformHasBeenSet() const { return m_instancePlatformHasBeenSet; }
-
-    /**
-     * <p>The type of operating system for which to reserve capacity.</p>
-     */
     inline void SetInstancePlatform(const CapacityReservationInstancePlatform& value) { m_instancePlatformHasBeenSet = true; m_instancePlatform = value; }
-
-    /**
-     * <p>The type of operating system for which to reserve capacity.</p>
-     */
     inline void SetInstancePlatform(CapacityReservationInstancePlatform&& value) { m_instancePlatformHasBeenSet = true; m_instancePlatform = std::move(value); }
-
-    /**
-     * <p>The type of operating system for which to reserve capacity.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithInstancePlatform(const CapacityReservationInstancePlatform& value) { SetInstancePlatform(value); return *this;}
-
-    /**
-     * <p>The type of operating system for which to reserve capacity.</p>
-     */
     inline PurchaseCapacityBlockRequest& WithInstancePlatform(CapacityReservationInstancePlatform&& value) { SetInstancePlatform(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

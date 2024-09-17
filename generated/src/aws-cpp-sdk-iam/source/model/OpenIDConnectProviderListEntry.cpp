@@ -25,8 +25,8 @@ OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry() :
 {
 }
 
-OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false)
+OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry(const XmlNode& xmlNode)
+  : OpenIDConnectProviderListEntry()
 {
   *this = xmlNode;
 }

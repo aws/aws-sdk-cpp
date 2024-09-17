@@ -38,76 +38,32 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetQuestionId() const{ return m_questionId; }
-
-    
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-
-    
     inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-
-    
     inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-
-    
     inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-
-    
     inline ProfileQuestionUpdate& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-
-    
     inline ProfileQuestionUpdate& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-
-    
     inline ProfileQuestionUpdate& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The selected choices.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSelectedChoiceIds() const{ return m_selectedChoiceIds; }
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline bool SelectedChoiceIdsHasBeenSet() const { return m_selectedChoiceIdsHasBeenSet; }
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline void SetSelectedChoiceIds(const Aws::Vector<Aws::String>& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds = value; }
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline void SetSelectedChoiceIds(Aws::Vector<Aws::String>&& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds = std::move(value); }
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline ProfileQuestionUpdate& WithSelectedChoiceIds(const Aws::Vector<Aws::String>& value) { SetSelectedChoiceIds(value); return *this;}
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline ProfileQuestionUpdate& WithSelectedChoiceIds(Aws::Vector<Aws::String>&& value) { SetSelectedChoiceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline ProfileQuestionUpdate& AddSelectedChoiceIds(const Aws::String& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline ProfileQuestionUpdate& AddSelectedChoiceIds(Aws::String&& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The selected choices.</p>
-     */
     inline ProfileQuestionUpdate& AddSelectedChoiceIds(const char* value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_questionId;

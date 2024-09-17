@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/SimpleEmailPart.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint/model/MessageHeader.h>
 #include <utility>
 
 namespace Aws
@@ -38,122 +40,59 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The body of the email message, in HTML format. We recommend using HTML format
      * for email clients that render HTML content. You can include links, formatted
      * text, and more in an HTML message.</p>
      */
     inline const SimpleEmailPart& GetHtmlPart() const{ return m_htmlPart; }
-
-    /**
-     * <p>The body of the email message, in HTML format. We recommend using HTML format
-     * for email clients that render HTML content. You can include links, formatted
-     * text, and more in an HTML message.</p>
-     */
     inline bool HtmlPartHasBeenSet() const { return m_htmlPartHasBeenSet; }
-
-    /**
-     * <p>The body of the email message, in HTML format. We recommend using HTML format
-     * for email clients that render HTML content. You can include links, formatted
-     * text, and more in an HTML message.</p>
-     */
     inline void SetHtmlPart(const SimpleEmailPart& value) { m_htmlPartHasBeenSet = true; m_htmlPart = value; }
-
-    /**
-     * <p>The body of the email message, in HTML format. We recommend using HTML format
-     * for email clients that render HTML content. You can include links, formatted
-     * text, and more in an HTML message.</p>
-     */
     inline void SetHtmlPart(SimpleEmailPart&& value) { m_htmlPartHasBeenSet = true; m_htmlPart = std::move(value); }
-
-    /**
-     * <p>The body of the email message, in HTML format. We recommend using HTML format
-     * for email clients that render HTML content. You can include links, formatted
-     * text, and more in an HTML message.</p>
-     */
     inline SimpleEmail& WithHtmlPart(const SimpleEmailPart& value) { SetHtmlPart(value); return *this;}
-
-    /**
-     * <p>The body of the email message, in HTML format. We recommend using HTML format
-     * for email clients that render HTML content. You can include links, formatted
-     * text, and more in an HTML message.</p>
-     */
     inline SimpleEmail& WithHtmlPart(SimpleEmailPart&& value) { SetHtmlPart(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The subject line, or title, of the email.</p>
      */
     inline const SimpleEmailPart& GetSubject() const{ return m_subject; }
-
-    /**
-     * <p>The subject line, or title, of the email.</p>
-     */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-
-    /**
-     * <p>The subject line, or title, of the email.</p>
-     */
     inline void SetSubject(const SimpleEmailPart& value) { m_subjectHasBeenSet = true; m_subject = value; }
-
-    /**
-     * <p>The subject line, or title, of the email.</p>
-     */
     inline void SetSubject(SimpleEmailPart&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-
-    /**
-     * <p>The subject line, or title, of the email.</p>
-     */
     inline SimpleEmail& WithSubject(const SimpleEmailPart& value) { SetSubject(value); return *this;}
-
-    /**
-     * <p>The subject line, or title, of the email.</p>
-     */
     inline SimpleEmail& WithSubject(SimpleEmailPart&& value) { SetSubject(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The body of the email message, in plain text format. We recommend using plain
      * text format for email clients that don't render HTML content and clients that
      * are connected to high-latency networks, such as mobile devices.</p>
      */
     inline const SimpleEmailPart& GetTextPart() const{ return m_textPart; }
-
-    /**
-     * <p>The body of the email message, in plain text format. We recommend using plain
-     * text format for email clients that don't render HTML content and clients that
-     * are connected to high-latency networks, such as mobile devices.</p>
-     */
     inline bool TextPartHasBeenSet() const { return m_textPartHasBeenSet; }
-
-    /**
-     * <p>The body of the email message, in plain text format. We recommend using plain
-     * text format for email clients that don't render HTML content and clients that
-     * are connected to high-latency networks, such as mobile devices.</p>
-     */
     inline void SetTextPart(const SimpleEmailPart& value) { m_textPartHasBeenSet = true; m_textPart = value; }
-
-    /**
-     * <p>The body of the email message, in plain text format. We recommend using plain
-     * text format for email clients that don't render HTML content and clients that
-     * are connected to high-latency networks, such as mobile devices.</p>
-     */
     inline void SetTextPart(SimpleEmailPart&& value) { m_textPartHasBeenSet = true; m_textPart = std::move(value); }
-
-    /**
-     * <p>The body of the email message, in plain text format. We recommend using plain
-     * text format for email clients that don't render HTML content and clients that
-     * are connected to high-latency networks, such as mobile devices.</p>
-     */
     inline SimpleEmail& WithTextPart(const SimpleEmailPart& value) { SetTextPart(value); return *this;}
-
-    /**
-     * <p>The body of the email message, in plain text format. We recommend using plain
-     * text format for email clients that don't render HTML content and clients that
-     * are connected to high-latency networks, such as mobile devices.</p>
-     */
     inline SimpleEmail& WithTextPart(SimpleEmailPart&& value) { SetTextPart(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The list of MessageHeaders for the email. You can have up to 15 Headers.</p>
+     */
+    inline const Aws::Vector<MessageHeader>& GetHeaders() const{ return m_headers; }
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+    inline void SetHeaders(const Aws::Vector<MessageHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
+    inline void SetHeaders(Aws::Vector<MessageHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+    inline SimpleEmail& WithHeaders(const Aws::Vector<MessageHeader>& value) { SetHeaders(value); return *this;}
+    inline SimpleEmail& WithHeaders(Aws::Vector<MessageHeader>&& value) { SetHeaders(std::move(value)); return *this;}
+    inline SimpleEmail& AddHeaders(const MessageHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
+    inline SimpleEmail& AddHeaders(MessageHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     SimpleEmailPart m_htmlPart;
@@ -164,6 +103,9 @@ namespace Model
 
     SimpleEmailPart m_textPart;
     bool m_textPartHasBeenSet = false;
+
+    Aws::Vector<MessageHeader> m_headers;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

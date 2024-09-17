@@ -29,14 +29,8 @@ ConfigurationAggregator::ConfigurationAggregator() :
 {
 }
 
-ConfigurationAggregator::ConfigurationAggregator(JsonView jsonValue) : 
-    m_configurationAggregatorNameHasBeenSet(false),
-    m_configurationAggregatorArnHasBeenSet(false),
-    m_accountAggregationSourcesHasBeenSet(false),
-    m_organizationAggregationSourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+ConfigurationAggregator::ConfigurationAggregator(JsonView jsonValue)
+  : ConfigurationAggregator()
 {
   *this = jsonValue;
 }

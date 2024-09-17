@@ -34,47 +34,21 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the application whose grants you want to list.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>Specifies the ARN of the application whose grants you want to list.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the application whose grants you want to list.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the application whose grants you want to list.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the application whose grants you want to list.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the application whose grants you want to list.</p>
-     */
     inline ListApplicationGrantsRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application whose grants you want to list.</p>
-     */
     inline ListApplicationGrantsRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application whose grants you want to list.</p>
-     */
     inline ListApplicationGrantsRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that you want to receive the next page of results. Valid only if
      * you received a <code>NextToken</code> response in the previous request. If you
@@ -83,70 +57,14 @@ namespace Model
      * next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Specifies that you want to receive the next page of results. Valid only if
-     * you received a <code>NextToken</code> response in the previous request. If you
-     * did, it indicates that more output is available. Set this parameter to the value
-     * provided by the previous call's <code>NextToken</code> response to request the
-     * next page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Specifies that you want to receive the next page of results. Valid only if
-     * you received a <code>NextToken</code> response in the previous request. If you
-     * did, it indicates that more output is available. Set this parameter to the value
-     * provided by the previous call's <code>NextToken</code> response to request the
-     * next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Specifies that you want to receive the next page of results. Valid only if
-     * you received a <code>NextToken</code> response in the previous request. If you
-     * did, it indicates that more output is available. Set this parameter to the value
-     * provided by the previous call's <code>NextToken</code> response to request the
-     * next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Specifies that you want to receive the next page of results. Valid only if
-     * you received a <code>NextToken</code> response in the previous request. If you
-     * did, it indicates that more output is available. Set this parameter to the value
-     * provided by the previous call's <code>NextToken</code> response to request the
-     * next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Specifies that you want to receive the next page of results. Valid only if
-     * you received a <code>NextToken</code> response in the previous request. If you
-     * did, it indicates that more output is available. Set this parameter to the value
-     * provided by the previous call's <code>NextToken</code> response to request the
-     * next page of results.</p>
-     */
     inline ListApplicationGrantsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Specifies that you want to receive the next page of results. Valid only if
-     * you received a <code>NextToken</code> response in the previous request. If you
-     * did, it indicates that more output is available. Set this parameter to the value
-     * provided by the previous call's <code>NextToken</code> response to request the
-     * next page of results.</p>
-     */
     inline ListApplicationGrantsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies that you want to receive the next page of results. Valid only if
-     * you received a <code>NextToken</code> response in the previous request. If you
-     * did, it indicates that more output is available. Set this parameter to the value
-     * provided by the previous call's <code>NextToken</code> response to request the
-     * next page of results.</p>
-     */
     inline ListApplicationGrantsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

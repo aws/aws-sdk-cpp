@@ -22,7 +22,8 @@ namespace Model
     completed,
     stopping,
     stopped,
-    failed
+    failed,
+    cancelled
   };
 
 namespace ExperimentStatusMapper

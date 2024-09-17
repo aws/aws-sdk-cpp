@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FULL_HASH = HashingUtils::HashString("FULL");
         static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
+        static const int AUTOTRAIN_HASH = HashingUtils::HashString("AUTOTRAIN");
 
 
         TrainingMode GetTrainingModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == UPDATE_HASH)
           {
             return TrainingMode::UPDATE;
+          }
+          else if (hashCode == AUTOTRAIN_HASH)
+          {
+            return TrainingMode::AUTOTRAIN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "FULL";
           case TrainingMode::UPDATE:
             return "UPDATE";
+          case TrainingMode::AUTOTRAIN:
+            return "AUTOTRAIN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

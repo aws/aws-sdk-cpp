@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/RuleOrder.h>
+#include <aws/fms/model/StreamExceptionPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -38,70 +39,64 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
+     * Stateful rules are provided to the rule engine as Suricata compatible strings,
+     * and Suricata evaluates them based on certain settings. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+     * <p>Default: <code>DEFAULT_ACTION_ORDER</code> </p>
      */
     inline const RuleOrder& GetRuleOrder() const{ return m_ruleOrder; }
-
-    /**
-     * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
-
-    /**
-     * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline void SetRuleOrder(const RuleOrder& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
-
-    /**
-     * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline void SetRuleOrder(RuleOrder&& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = std::move(value); }
-
-    /**
-     * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline StatefulEngineOptions& WithRuleOrder(const RuleOrder& value) { SetRuleOrder(value); return *this;}
-
-    /**
-     * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline StatefulEngineOptions& WithRuleOrder(RuleOrder&& value) { SetRuleOrder(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Indicates how Network Firewall should handle traffic when a network
+     * connection breaks midstream.</p> <ul> <li> <p> <code>DROP</code> - Fail closed
+     * and drop all subsequent traffic going to the firewall.</p> </li> <li> <p>
+     * <code>CONTINUE</code> - Continue to apply rules to subsequent traffic without
+     * context from traffic before the break. This impacts the behavior of rules that
+     * depend on context. For example, with a stateful rule that drops HTTP traffic,
+     * Network Firewall won't match subsequent traffic because the it won't have the
+     * context from session initialization, which defines the application layer
+     * protocol as HTTP. However, a TCP-layer rule using a <code>flow:stateless</code>
+     * rule would still match, and so would the <code>aws:drop_strict</code> default
+     * action. </p> </li> <li> <p> <code>REJECT</code> - Fail closed and drop all
+     * subsequent traffic going to the firewall. With this option, Network Firewall
+     * also sends a TCP reject packet back to the client so the client can immediately
+     * establish a new session. With the new session, Network Firewall will have
+     * context and will apply rules appropriately.</p> <p>For applications that are
+     * reliant on long-lived TCP connections that trigger Gateway Load Balancer idle
+     * timeouts, this is the recommended setting. </p> </li> <li> <p>
+     * <code>FMS_IGNORE</code> - Firewall Manager doesn't monitor or modify the Network
+     * Firewall stream exception policy settings. </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stream-exception-policy.html">Stream
+     * exception policy in your firewall policy</a> in the <i>Network Firewall
+     * Developer Guide</i>.</p> <p>Default: <code>FMS_IGNORE</code> </p>
+     */
+    inline const StreamExceptionPolicy& GetStreamExceptionPolicy() const{ return m_streamExceptionPolicy; }
+    inline bool StreamExceptionPolicyHasBeenSet() const { return m_streamExceptionPolicyHasBeenSet; }
+    inline void SetStreamExceptionPolicy(const StreamExceptionPolicy& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = value; }
+    inline void SetStreamExceptionPolicy(StreamExceptionPolicy&& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = std::move(value); }
+    inline StatefulEngineOptions& WithStreamExceptionPolicy(const StreamExceptionPolicy& value) { SetStreamExceptionPolicy(value); return *this;}
+    inline StatefulEngineOptions& WithStreamExceptionPolicy(StreamExceptionPolicy&& value) { SetStreamExceptionPolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     RuleOrder m_ruleOrder;
     bool m_ruleOrderHasBeenSet = false;
+
+    StreamExceptionPolicy m_streamExceptionPolicy;
+    bool m_streamExceptionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

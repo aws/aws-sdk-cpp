@@ -23,8 +23,8 @@ NtpPayload::NtpPayload() :
 {
 }
 
-NtpPayload::NtpPayload(JsonView jsonValue) : 
-    m_ntpServersHasBeenSet(false)
+NtpPayload::NtpPayload(JsonView jsonValue)
+  : NtpPayload()
 {
   *this = jsonValue;
 }

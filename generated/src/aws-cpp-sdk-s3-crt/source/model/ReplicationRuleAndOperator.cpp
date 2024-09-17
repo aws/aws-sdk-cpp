@@ -26,9 +26,8 @@ ReplicationRuleAndOperator::ReplicationRuleAndOperator() :
 {
 }
 
-ReplicationRuleAndOperator::ReplicationRuleAndOperator(const XmlNode& xmlNode) : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ReplicationRuleAndOperator::ReplicationRuleAndOperator(const XmlNode& xmlNode)
+  : ReplicationRuleAndOperator()
 {
   *this = xmlNode;
 }

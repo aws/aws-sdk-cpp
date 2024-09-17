@@ -24,10 +24,8 @@ DescribePublishingDestinationResult::DescribePublishingDestinationResult() :
 {
 }
 
-DescribePublishingDestinationResult::DescribePublishingDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_destinationType(DestinationType::NOT_SET),
-    m_status(PublishingStatus::NOT_SET),
-    m_publishingFailureStartTimestamp(0)
+DescribePublishingDestinationResult::DescribePublishingDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribePublishingDestinationResult()
 {
   *this = result;
 }

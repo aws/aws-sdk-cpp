@@ -25,11 +25,8 @@ GetHealthEventResult::GetHealthEventResult() :
 {
 }
 
-GetHealthEventResult::GetHealthEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(HealthEventStatus::NOT_SET),
-    m_percentOfTotalTrafficImpacted(0.0),
-    m_impactType(HealthEventImpactType::NOT_SET),
-    m_healthScoreThreshold(0.0)
+GetHealthEventResult::GetHealthEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetHealthEventResult()
 {
   *this = result;
 }

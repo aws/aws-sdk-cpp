@@ -35,20 +35,8 @@ RecoveryInstanceFailback::RecoveryInstanceFailback() :
 {
 }
 
-RecoveryInstanceFailback::RecoveryInstanceFailback(JsonView jsonValue) : 
-    m_agentLastSeenByServiceDateTimeHasBeenSet(false),
-    m_elapsedReplicationDurationHasBeenSet(false),
-    m_failbackClientIDHasBeenSet(false),
-    m_failbackClientLastSeenByServiceDateTimeHasBeenSet(false),
-    m_failbackInitiationTimeHasBeenSet(false),
-    m_failbackJobIDHasBeenSet(false),
-    m_failbackLaunchType(FailbackLaunchType::NOT_SET),
-    m_failbackLaunchTypeHasBeenSet(false),
-    m_failbackToOriginalServer(false),
-    m_failbackToOriginalServerHasBeenSet(false),
-    m_firstByteDateTimeHasBeenSet(false),
-    m_state(FailbackState::NOT_SET),
-    m_stateHasBeenSet(false)
+RecoveryInstanceFailback::RecoveryInstanceFailback(JsonView jsonValue)
+  : RecoveryInstanceFailback()
 {
   *this = jsonValue;
 }

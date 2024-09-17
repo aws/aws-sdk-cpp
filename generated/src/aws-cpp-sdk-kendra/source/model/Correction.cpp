@@ -28,13 +28,8 @@ Correction::Correction() :
 {
 }
 
-Correction::Correction(JsonView jsonValue) : 
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_correctedTermHasBeenSet(false)
+Correction::Correction(JsonView jsonValue)
+  : Correction()
 {
   *this = jsonValue;
 }

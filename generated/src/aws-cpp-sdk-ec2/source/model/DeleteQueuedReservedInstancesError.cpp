@@ -27,10 +27,8 @@ DeleteQueuedReservedInstancesError::DeleteQueuedReservedInstancesError() :
 {
 }
 
-DeleteQueuedReservedInstancesError::DeleteQueuedReservedInstancesError(const XmlNode& xmlNode) : 
-    m_code(DeleteQueuedReservedInstancesErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+DeleteQueuedReservedInstancesError::DeleteQueuedReservedInstancesError(const XmlNode& xmlNode)
+  : DeleteQueuedReservedInstancesError()
 {
   *this = xmlNode;
 }

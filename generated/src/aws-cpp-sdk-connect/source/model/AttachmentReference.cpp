@@ -26,11 +26,8 @@ AttachmentReference::AttachmentReference() :
 {
 }
 
-AttachmentReference::AttachmentReference(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_status(ReferenceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+AttachmentReference::AttachmentReference(JsonView jsonValue)
+  : AttachmentReference()
 {
   *this = jsonValue;
 }

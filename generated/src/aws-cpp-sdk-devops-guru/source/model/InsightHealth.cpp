@@ -28,13 +28,8 @@ InsightHealth::InsightHealth() :
 {
 }
 
-InsightHealth::InsightHealth(JsonView jsonValue) : 
-    m_openProactiveInsights(0),
-    m_openProactiveInsightsHasBeenSet(false),
-    m_openReactiveInsights(0),
-    m_openReactiveInsightsHasBeenSet(false),
-    m_meanTimeToRecoverInMilliseconds(0),
-    m_meanTimeToRecoverInMillisecondsHasBeenSet(false)
+InsightHealth::InsightHealth(JsonView jsonValue)
+  : InsightHealth()
 {
   *this = jsonValue;
 }

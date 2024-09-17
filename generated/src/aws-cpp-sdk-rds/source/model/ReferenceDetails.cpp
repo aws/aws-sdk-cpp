@@ -25,8 +25,8 @@ ReferenceDetails::ReferenceDetails() :
 {
 }
 
-ReferenceDetails::ReferenceDetails(const XmlNode& xmlNode) : 
-    m_scalarReferenceDetailsHasBeenSet(false)
+ReferenceDetails::ReferenceDetails(const XmlNode& xmlNode)
+  : ReferenceDetails()
 {
   *this = xmlNode;
 }

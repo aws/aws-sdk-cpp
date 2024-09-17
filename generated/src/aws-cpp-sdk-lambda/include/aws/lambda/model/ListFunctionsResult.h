@@ -39,99 +39,42 @@ namespace Model
     AWS_LAMBDA_API ListFunctionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListFunctionsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListFunctionsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListFunctionsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of Lambda functions.</p>
      */
     inline const Aws::Vector<FunctionConfiguration>& GetFunctions() const{ return m_functions; }
-
-    /**
-     * <p>A list of Lambda functions.</p>
-     */
     inline void SetFunctions(const Aws::Vector<FunctionConfiguration>& value) { m_functions = value; }
-
-    /**
-     * <p>A list of Lambda functions.</p>
-     */
     inline void SetFunctions(Aws::Vector<FunctionConfiguration>&& value) { m_functions = std::move(value); }
-
-    /**
-     * <p>A list of Lambda functions.</p>
-     */
     inline ListFunctionsResult& WithFunctions(const Aws::Vector<FunctionConfiguration>& value) { SetFunctions(value); return *this;}
-
-    /**
-     * <p>A list of Lambda functions.</p>
-     */
     inline ListFunctionsResult& WithFunctions(Aws::Vector<FunctionConfiguration>&& value) { SetFunctions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of Lambda functions.</p>
-     */
     inline ListFunctionsResult& AddFunctions(const FunctionConfiguration& value) { m_functions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of Lambda functions.</p>
-     */
     inline ListFunctionsResult& AddFunctions(FunctionConfiguration&& value) { m_functions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListFunctionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListFunctionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListFunctionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextMarker;

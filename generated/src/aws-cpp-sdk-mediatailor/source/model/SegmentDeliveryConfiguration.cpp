@@ -24,9 +24,8 @@ SegmentDeliveryConfiguration::SegmentDeliveryConfiguration() :
 {
 }
 
-SegmentDeliveryConfiguration::SegmentDeliveryConfiguration(JsonView jsonValue) : 
-    m_baseUrlHasBeenSet(false),
-    m_nameHasBeenSet(false)
+SegmentDeliveryConfiguration::SegmentDeliveryConfiguration(JsonView jsonValue)
+  : SegmentDeliveryConfiguration()
 {
   *this = jsonValue;
 }

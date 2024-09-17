@@ -34,46 +34,20 @@ namespace Model
     AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
+     * <p>Specify the text name of the security policy for which you want the
+     * details.</p>
      */
     inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
-
-    /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
-     */
     inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
-
-    /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
-     */
     inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
-
-    /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
-     */
     inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
-
-    /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
-     */
     inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
-
-    /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
-     */
     inline DescribeSecurityPolicyRequest& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
-
-    /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
-     */
     inline DescribeSecurityPolicyRequest& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the name of the security policy that is attached to the server.</p>
-     */
     inline DescribeSecurityPolicyRequest& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityPolicyName;

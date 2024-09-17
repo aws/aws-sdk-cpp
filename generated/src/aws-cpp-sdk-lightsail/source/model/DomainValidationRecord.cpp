@@ -27,12 +27,8 @@ DomainValidationRecord::DomainValidationRecord() :
 {
 }
 
-DomainValidationRecord::DomainValidationRecord(JsonView jsonValue) : 
-    m_domainNameHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false),
-    m_dnsRecordCreationStateHasBeenSet(false),
-    m_validationStatus(CertificateDomainValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
+DomainValidationRecord::DomainValidationRecord(JsonView jsonValue)
+  : DomainValidationRecord()
 {
   *this = jsonValue;
 }

@@ -38,53 +38,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DeleteEventSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The event subscription that was deleted.</p>
      */
     inline const EventSubscription& GetEventSubscription() const{ return m_eventSubscription; }
-
-    /**
-     * <p>The event subscription that was deleted.</p>
-     */
     inline void SetEventSubscription(const EventSubscription& value) { m_eventSubscription = value; }
-
-    /**
-     * <p>The event subscription that was deleted.</p>
-     */
     inline void SetEventSubscription(EventSubscription&& value) { m_eventSubscription = std::move(value); }
-
-    /**
-     * <p>The event subscription that was deleted.</p>
-     */
     inline DeleteEventSubscriptionResult& WithEventSubscription(const EventSubscription& value) { SetEventSubscription(value); return *this;}
-
-    /**
-     * <p>The event subscription that was deleted.</p>
-     */
     inline DeleteEventSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteEventSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteEventSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteEventSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EventSubscription m_eventSubscription;

@@ -22,8 +22,8 @@ CreateLoggingConfigurationResult::CreateLoggingConfigurationResult() :
 {
 }
 
-CreateLoggingConfigurationResult::CreateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(CreateLoggingConfigurationState::NOT_SET)
+CreateLoggingConfigurationResult::CreateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateLoggingConfigurationResult()
 {
   *this = result;
 }
@@ -37,27 +37,33 @@ CreateLoggingConfigurationResult& CreateLoggingConfigurationResult::operator =(c
 
   }
 
-  if(jsonValue.ValueExists("createTime"))
-  {
-    m_createTime = jsonValue.GetString("createTime");
-
-  }
-
-  if(jsonValue.ValueExists("destinationConfiguration"))
-  {
-    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
   }
 
+  if(jsonValue.ValueExists("createTime"))
+  {
+    m_createTime = jsonValue.GetString("createTime");
+
+  }
+
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
+
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("destinationConfiguration"))
+  {
+    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
 
   }
 
@@ -74,12 +80,6 @@ CreateLoggingConfigurationResult& CreateLoggingConfigurationResult::operator =(c
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
-  }
-
-  if(jsonValue.ValueExists("updateTime"))
-  {
-    m_updateTime = jsonValue.GetString("updateTime");
-
   }
 
 

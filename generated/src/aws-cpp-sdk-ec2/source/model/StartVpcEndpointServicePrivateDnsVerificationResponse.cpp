@@ -22,8 +22,8 @@ StartVpcEndpointServicePrivateDnsVerificationResponse::StartVpcEndpointServicePr
 {
 }
 
-StartVpcEndpointServicePrivateDnsVerificationResponse::StartVpcEndpointServicePrivateDnsVerificationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnValue(false)
+StartVpcEndpointServicePrivateDnsVerificationResponse::StartVpcEndpointServicePrivateDnsVerificationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : StartVpcEndpointServicePrivateDnsVerificationResponse()
 {
   *this = result;
 }

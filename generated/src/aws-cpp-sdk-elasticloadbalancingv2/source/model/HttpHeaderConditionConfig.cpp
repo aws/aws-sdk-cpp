@@ -26,9 +26,8 @@ HttpHeaderConditionConfig::HttpHeaderConditionConfig() :
 {
 }
 
-HttpHeaderConditionConfig::HttpHeaderConditionConfig(const XmlNode& xmlNode) : 
-    m_httpHeaderNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+HttpHeaderConditionConfig::HttpHeaderConditionConfig(const XmlNode& xmlNode)
+  : HttpHeaderConditionConfig()
 {
   *this = xmlNode;
 }

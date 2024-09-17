@@ -27,12 +27,8 @@ DeploymentLaunchConfig::DeploymentLaunchConfig() :
 {
 }
 
-DeploymentLaunchConfig::DeploymentLaunchConfig(JsonView jsonValue) : 
-    m_packageNameHasBeenSet(false),
-    m_preLaunchFileHasBeenSet(false),
-    m_launchFileHasBeenSet(false),
-    m_postLaunchFileHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
+DeploymentLaunchConfig::DeploymentLaunchConfig(JsonView jsonValue)
+  : DeploymentLaunchConfig()
 {
   *this = jsonValue;
 }

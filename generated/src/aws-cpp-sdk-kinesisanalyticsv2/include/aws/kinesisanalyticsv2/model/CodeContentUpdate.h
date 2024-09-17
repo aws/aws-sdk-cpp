@@ -40,108 +40,43 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes an update to the text code for an application.</p>
      */
     inline const Aws::String& GetTextContentUpdate() const{ return m_textContentUpdate; }
-
-    /**
-     * <p>Describes an update to the text code for an application.</p>
-     */
     inline bool TextContentUpdateHasBeenSet() const { return m_textContentUpdateHasBeenSet; }
-
-    /**
-     * <p>Describes an update to the text code for an application.</p>
-     */
     inline void SetTextContentUpdate(const Aws::String& value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate = value; }
-
-    /**
-     * <p>Describes an update to the text code for an application.</p>
-     */
     inline void SetTextContentUpdate(Aws::String&& value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate = std::move(value); }
-
-    /**
-     * <p>Describes an update to the text code for an application.</p>
-     */
     inline void SetTextContentUpdate(const char* value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate.assign(value); }
-
-    /**
-     * <p>Describes an update to the text code for an application.</p>
-     */
     inline CodeContentUpdate& WithTextContentUpdate(const Aws::String& value) { SetTextContentUpdate(value); return *this;}
-
-    /**
-     * <p>Describes an update to the text code for an application.</p>
-     */
     inline CodeContentUpdate& WithTextContentUpdate(Aws::String&& value) { SetTextContentUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes an update to the text code for an application.</p>
-     */
     inline CodeContentUpdate& WithTextContentUpdate(const char* value) { SetTextContentUpdate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes an update to the zipped code for an application.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFileContentUpdate() const{ return m_zipFileContentUpdate; }
-
-    /**
-     * <p>Describes an update to the zipped code for an application.</p>
-     */
     inline bool ZipFileContentUpdateHasBeenSet() const { return m_zipFileContentUpdateHasBeenSet; }
-
-    /**
-     * <p>Describes an update to the zipped code for an application.</p>
-     */
     inline void SetZipFileContentUpdate(const Aws::Utils::ByteBuffer& value) { m_zipFileContentUpdateHasBeenSet = true; m_zipFileContentUpdate = value; }
-
-    /**
-     * <p>Describes an update to the zipped code for an application.</p>
-     */
     inline void SetZipFileContentUpdate(Aws::Utils::ByteBuffer&& value) { m_zipFileContentUpdateHasBeenSet = true; m_zipFileContentUpdate = std::move(value); }
-
-    /**
-     * <p>Describes an update to the zipped code for an application.</p>
-     */
     inline CodeContentUpdate& WithZipFileContentUpdate(const Aws::Utils::ByteBuffer& value) { SetZipFileContentUpdate(value); return *this;}
-
-    /**
-     * <p>Describes an update to the zipped code for an application.</p>
-     */
     inline CodeContentUpdate& WithZipFileContentUpdate(Aws::Utils::ByteBuffer&& value) { SetZipFileContentUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes an update to the location of code for an application.</p>
      */
     inline const S3ContentLocationUpdate& GetS3ContentLocationUpdate() const{ return m_s3ContentLocationUpdate; }
-
-    /**
-     * <p>Describes an update to the location of code for an application.</p>
-     */
     inline bool S3ContentLocationUpdateHasBeenSet() const { return m_s3ContentLocationUpdateHasBeenSet; }
-
-    /**
-     * <p>Describes an update to the location of code for an application.</p>
-     */
     inline void SetS3ContentLocationUpdate(const S3ContentLocationUpdate& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = value; }
-
-    /**
-     * <p>Describes an update to the location of code for an application.</p>
-     */
     inline void SetS3ContentLocationUpdate(S3ContentLocationUpdate&& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = std::move(value); }
-
-    /**
-     * <p>Describes an update to the location of code for an application.</p>
-     */
     inline CodeContentUpdate& WithS3ContentLocationUpdate(const S3ContentLocationUpdate& value) { SetS3ContentLocationUpdate(value); return *this;}
-
-    /**
-     * <p>Describes an update to the location of code for an application.</p>
-     */
     inline CodeContentUpdate& WithS3ContentLocationUpdate(S3ContentLocationUpdate&& value) { SetS3ContentLocationUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_textContentUpdate;

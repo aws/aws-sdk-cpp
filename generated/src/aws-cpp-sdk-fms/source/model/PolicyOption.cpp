@@ -20,13 +20,13 @@ namespace Model
 
 PolicyOption::PolicyOption() : 
     m_networkFirewallPolicyHasBeenSet(false),
-    m_thirdPartyFirewallPolicyHasBeenSet(false)
+    m_thirdPartyFirewallPolicyHasBeenSet(false),
+    m_networkAclCommonPolicyHasBeenSet(false)
 {
 }
 
-PolicyOption::PolicyOption(JsonView jsonValue) : 
-    m_networkFirewallPolicyHasBeenSet(false),
-    m_thirdPartyFirewallPolicyHasBeenSet(false)
+PolicyOption::PolicyOption(JsonView jsonValue)
+  : PolicyOption()
 {
   *this = jsonValue;
 }
@@ -47,6 +47,13 @@ PolicyOption& PolicyOption::operator =(JsonView jsonValue)
     m_thirdPartyFirewallPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkAclCommonPolicy"))
+  {
+    m_networkAclCommonPolicy = jsonValue.GetObject("NetworkAclCommonPolicy");
+
+    m_networkAclCommonPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +70,12 @@ JsonValue PolicyOption::Jsonize() const
   if(m_thirdPartyFirewallPolicyHasBeenSet)
   {
    payload.WithObject("ThirdPartyFirewallPolicy", m_thirdPartyFirewallPolicy.Jsonize());
+
+  }
+
+  if(m_networkAclCommonPolicyHasBeenSet)
+  {
+   payload.WithObject("NetworkAclCommonPolicy", m_networkAclCommonPolicy.Jsonize());
 
   }
 

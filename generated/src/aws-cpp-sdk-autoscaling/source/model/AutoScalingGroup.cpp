@@ -70,53 +70,8 @@ AutoScalingGroup::AutoScalingGroup() :
 {
 }
 
-AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_autoScalingGroupARNHasBeenSet(false),
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_mixedInstancesPolicyHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_predictedCapacity(0),
-    m_predictedCapacityHasBeenSet(false),
-    m_defaultCooldown(0),
-    m_defaultCooldownHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_loadBalancerNamesHasBeenSet(false),
-    m_targetGroupARNsHasBeenSet(false),
-    m_healthCheckTypeHasBeenSet(false),
-    m_healthCheckGracePeriod(0),
-    m_healthCheckGracePeriodHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_suspendedProcessesHasBeenSet(false),
-    m_placementGroupHasBeenSet(false),
-    m_vPCZoneIdentifierHasBeenSet(false),
-    m_enabledMetricsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_terminationPoliciesHasBeenSet(false),
-    m_newInstancesProtectedFromScaleIn(false),
-    m_newInstancesProtectedFromScaleInHasBeenSet(false),
-    m_serviceLinkedRoleARNHasBeenSet(false),
-    m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false),
-    m_capacityRebalance(false),
-    m_capacityRebalanceHasBeenSet(false),
-    m_warmPoolConfigurationHasBeenSet(false),
-    m_warmPoolSize(0),
-    m_warmPoolSizeHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_desiredCapacityTypeHasBeenSet(false),
-    m_defaultInstanceWarmup(0),
-    m_defaultInstanceWarmupHasBeenSet(false),
-    m_trafficSourcesHasBeenSet(false),
-    m_instanceMaintenancePolicyHasBeenSet(false)
+AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode)
+  : AutoScalingGroup()
 {
   *this = xmlNode;
 }

@@ -52,7 +52,7 @@ namespace Aws
 
   namespace PersonalizeEvents
   {
-    using PersonalizeEventsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PersonalizeEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using PersonalizeEventsEndpointProviderBase = Aws::PersonalizeEvents::Endpoint::PersonalizeEventsEndpointProviderBase;
     using PersonalizeEventsEndpointProvider = Aws::PersonalizeEvents::Endpoint::PersonalizeEventsEndpointProvider;
 

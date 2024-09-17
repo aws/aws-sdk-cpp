@@ -25,10 +25,8 @@ Limit::Limit() :
 {
 }
 
-Limit::Limit(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
+Limit::Limit(JsonView jsonValue)
+  : Limit()
 {
   *this = jsonValue;
 }

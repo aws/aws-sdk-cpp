@@ -44,29 +44,8 @@ MongoDbSettings::MongoDbSettings() :
 {
 }
 
-MongoDbSettings::MongoDbSettings(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_authType(AuthTypeValue::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_authMechanism(AuthMechanismValue::NOT_SET),
-    m_authMechanismHasBeenSet(false),
-    m_nestingLevel(NestingLevelValue::NOT_SET),
-    m_nestingLevelHasBeenSet(false),
-    m_extractDocIdHasBeenSet(false),
-    m_docsToInvestigateHasBeenSet(false),
-    m_authSourceHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_useUpdateLookUp(false),
-    m_useUpdateLookUpHasBeenSet(false),
-    m_replicateShardCollections(false),
-    m_replicateShardCollectionsHasBeenSet(false)
+MongoDbSettings::MongoDbSettings(JsonView jsonValue)
+  : MongoDbSettings()
 {
   *this = jsonValue;
 }

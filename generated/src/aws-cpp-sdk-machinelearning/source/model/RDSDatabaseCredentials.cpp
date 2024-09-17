@@ -24,9 +24,8 @@ RDSDatabaseCredentials::RDSDatabaseCredentials() :
 {
 }
 
-RDSDatabaseCredentials::RDSDatabaseCredentials(JsonView jsonValue) : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+RDSDatabaseCredentials::RDSDatabaseCredentials(JsonView jsonValue)
+  : RDSDatabaseCredentials()
 {
   *this = jsonValue;
 }

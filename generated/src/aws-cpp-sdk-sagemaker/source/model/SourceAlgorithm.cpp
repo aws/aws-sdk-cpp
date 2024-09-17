@@ -20,13 +20,13 @@ namespace Model
 
 SourceAlgorithm::SourceAlgorithm() : 
     m_modelDataUrlHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false),
     m_algorithmNameHasBeenSet(false)
 {
 }
 
-SourceAlgorithm::SourceAlgorithm(JsonView jsonValue) : 
-    m_modelDataUrlHasBeenSet(false),
-    m_algorithmNameHasBeenSet(false)
+SourceAlgorithm::SourceAlgorithm(JsonView jsonValue)
+  : SourceAlgorithm()
 {
   *this = jsonValue;
 }
@@ -38,6 +38,13 @@ SourceAlgorithm& SourceAlgorithm::operator =(JsonView jsonValue)
     m_modelDataUrl = jsonValue.GetString("ModelDataUrl");
 
     m_modelDataUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelDataSource"))
+  {
+    m_modelDataSource = jsonValue.GetObject("ModelDataSource");
+
+    m_modelDataSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AlgorithmName"))
@@ -57,6 +64,12 @@ JsonValue SourceAlgorithm::Jsonize() const
   if(m_modelDataUrlHasBeenSet)
   {
    payload.WithString("ModelDataUrl", m_modelDataUrl);
+
+  }
+
+  if(m_modelDataSourceHasBeenSet)
+  {
+   payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
 
   }
 

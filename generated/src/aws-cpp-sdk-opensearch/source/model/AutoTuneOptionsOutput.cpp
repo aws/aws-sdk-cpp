@@ -27,12 +27,8 @@ AutoTuneOptionsOutput::AutoTuneOptionsOutput() :
 {
 }
 
-AutoTuneOptionsOutput::AutoTuneOptionsOutput(JsonView jsonValue) : 
-    m_state(AutoTuneState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_useOffPeakWindow(false),
-    m_useOffPeakWindowHasBeenSet(false)
+AutoTuneOptionsOutput::AutoTuneOptionsOutput(JsonView jsonValue)
+  : AutoTuneOptionsOutput()
 {
   *this = jsonValue;
 }

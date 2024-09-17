@@ -31,16 +31,8 @@ WorkloadShare::WorkloadShare() :
 {
 }
 
-WorkloadShare::WorkloadShare(JsonView jsonValue) : 
-    m_shareIdHasBeenSet(false),
-    m_sharedByHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false)
+WorkloadShare::WorkloadShare(JsonView jsonValue)
+  : WorkloadShare()
 {
   *this = jsonValue;
 }

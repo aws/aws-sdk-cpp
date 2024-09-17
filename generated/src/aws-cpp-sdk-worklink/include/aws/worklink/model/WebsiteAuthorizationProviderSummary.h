@@ -40,157 +40,58 @@ namespace Model
     AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the authorization provider.</p>
      */
     inline const Aws::String& GetAuthorizationProviderId() const{ return m_authorizationProviderId; }
-
-    /**
-     * <p>A unique identifier for the authorization provider.</p>
-     */
     inline bool AuthorizationProviderIdHasBeenSet() const { return m_authorizationProviderIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the authorization provider.</p>
-     */
     inline void SetAuthorizationProviderId(const Aws::String& value) { m_authorizationProviderIdHasBeenSet = true; m_authorizationProviderId = value; }
-
-    /**
-     * <p>A unique identifier for the authorization provider.</p>
-     */
     inline void SetAuthorizationProviderId(Aws::String&& value) { m_authorizationProviderIdHasBeenSet = true; m_authorizationProviderId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the authorization provider.</p>
-     */
     inline void SetAuthorizationProviderId(const char* value) { m_authorizationProviderIdHasBeenSet = true; m_authorizationProviderId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the authorization provider.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithAuthorizationProviderId(const Aws::String& value) { SetAuthorizationProviderId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the authorization provider.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithAuthorizationProviderId(Aws::String&& value) { SetAuthorizationProviderId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the authorization provider.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithAuthorizationProviderId(const char* value) { SetAuthorizationProviderId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The authorization provider type.</p>
      */
     inline const AuthorizationProviderType& GetAuthorizationProviderType() const{ return m_authorizationProviderType; }
-
-    /**
-     * <p>The authorization provider type.</p>
-     */
     inline bool AuthorizationProviderTypeHasBeenSet() const { return m_authorizationProviderTypeHasBeenSet; }
-
-    /**
-     * <p>The authorization provider type.</p>
-     */
     inline void SetAuthorizationProviderType(const AuthorizationProviderType& value) { m_authorizationProviderTypeHasBeenSet = true; m_authorizationProviderType = value; }
-
-    /**
-     * <p>The authorization provider type.</p>
-     */
     inline void SetAuthorizationProviderType(AuthorizationProviderType&& value) { m_authorizationProviderTypeHasBeenSet = true; m_authorizationProviderType = std::move(value); }
-
-    /**
-     * <p>The authorization provider type.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithAuthorizationProviderType(const AuthorizationProviderType& value) { SetAuthorizationProviderType(value); return *this;}
-
-    /**
-     * <p>The authorization provider type.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithAuthorizationProviderType(AuthorizationProviderType&& value) { SetAuthorizationProviderType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The domain name of the authorization provider. This applies only to
      * SAML-based authorization providers.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name of the authorization provider. This applies only to
-     * SAML-based authorization providers.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name of the authorization provider. This applies only to
-     * SAML-based authorization providers.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name of the authorization provider. This applies only to
-     * SAML-based authorization providers.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name of the authorization provider. This applies only to
-     * SAML-based authorization providers.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name of the authorization provider. This applies only to
-     * SAML-based authorization providers.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name of the authorization provider. This applies only to
-     * SAML-based authorization providers.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name of the authorization provider. This applies only to
-     * SAML-based authorization providers.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time of creation.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-
-    /**
-     * <p>The time of creation.</p>
-     */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-
-    /**
-     * <p>The time of creation.</p>
-     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-
-    /**
-     * <p>The time of creation.</p>
-     */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-
-    /**
-     * <p>The time of creation.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-
-    /**
-     * <p>The time of creation.</p>
-     */
     inline WebsiteAuthorizationProviderSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_authorizationProviderId;

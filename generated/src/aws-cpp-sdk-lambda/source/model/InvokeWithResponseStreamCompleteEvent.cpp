@@ -25,10 +25,8 @@ InvokeWithResponseStreamCompleteEvent::InvokeWithResponseStreamCompleteEvent() :
 {
 }
 
-InvokeWithResponseStreamCompleteEvent::InvokeWithResponseStreamCompleteEvent(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_logResultHasBeenSet(false)
+InvokeWithResponseStreamCompleteEvent::InvokeWithResponseStreamCompleteEvent(JsonView jsonValue)
+  : InvokeWithResponseStreamCompleteEvent()
 {
   *this = jsonValue;
 }

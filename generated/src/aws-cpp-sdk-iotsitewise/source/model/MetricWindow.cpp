@@ -23,8 +23,8 @@ MetricWindow::MetricWindow() :
 {
 }
 
-MetricWindow::MetricWindow(JsonView jsonValue) : 
-    m_tumblingHasBeenSet(false)
+MetricWindow::MetricWindow(JsonView jsonValue)
+  : MetricWindow()
 {
   *this = jsonValue;
 }

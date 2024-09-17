@@ -23,8 +23,8 @@ ForwardAction::ForwardAction() :
 {
 }
 
-ForwardAction::ForwardAction(JsonView jsonValue) : 
-    m_targetGroupsHasBeenSet(false)
+ForwardAction::ForwardAction(JsonView jsonValue)
+  : ForwardAction()
 {
   *this = jsonValue;
 }

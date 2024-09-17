@@ -39,67 +39,29 @@ namespace Model
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the account targeting setting for experiment options.</p>
      */
     inline const AccountTargeting& GetAccountTargeting() const{ return m_accountTargeting; }
-
-    /**
-     * <p>Specifies the account targeting setting for experiment options.</p>
-     */
     inline bool AccountTargetingHasBeenSet() const { return m_accountTargetingHasBeenSet; }
-
-    /**
-     * <p>Specifies the account targeting setting for experiment options.</p>
-     */
     inline void SetAccountTargeting(const AccountTargeting& value) { m_accountTargetingHasBeenSet = true; m_accountTargeting = value; }
-
-    /**
-     * <p>Specifies the account targeting setting for experiment options.</p>
-     */
     inline void SetAccountTargeting(AccountTargeting&& value) { m_accountTargetingHasBeenSet = true; m_accountTargeting = std::move(value); }
-
-    /**
-     * <p>Specifies the account targeting setting for experiment options.</p>
-     */
     inline CreateExperimentTemplateExperimentOptionsInput& WithAccountTargeting(const AccountTargeting& value) { SetAccountTargeting(value); return *this;}
-
-    /**
-     * <p>Specifies the account targeting setting for experiment options.</p>
-     */
     inline CreateExperimentTemplateExperimentOptionsInput& WithAccountTargeting(AccountTargeting&& value) { SetAccountTargeting(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the empty target resolution mode for experiment options.</p>
      */
     inline const EmptyTargetResolutionMode& GetEmptyTargetResolutionMode() const{ return m_emptyTargetResolutionMode; }
-
-    /**
-     * <p>Specifies the empty target resolution mode for experiment options.</p>
-     */
     inline bool EmptyTargetResolutionModeHasBeenSet() const { return m_emptyTargetResolutionModeHasBeenSet; }
-
-    /**
-     * <p>Specifies the empty target resolution mode for experiment options.</p>
-     */
     inline void SetEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = value; }
-
-    /**
-     * <p>Specifies the empty target resolution mode for experiment options.</p>
-     */
     inline void SetEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = std::move(value); }
-
-    /**
-     * <p>Specifies the empty target resolution mode for experiment options.</p>
-     */
     inline CreateExperimentTemplateExperimentOptionsInput& WithEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { SetEmptyTargetResolutionMode(value); return *this;}
-
-    /**
-     * <p>Specifies the empty target resolution mode for experiment options.</p>
-     */
     inline CreateExperimentTemplateExperimentOptionsInput& WithEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { SetEmptyTargetResolutionMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AccountTargeting m_accountTargeting;

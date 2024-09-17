@@ -29,14 +29,8 @@ AutoTuneOptions::AutoTuneOptions() :
 {
 }
 
-AutoTuneOptions::AutoTuneOptions(JsonView jsonValue) : 
-    m_desiredState(AutoTuneDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_rollbackOnDisable(RollbackOnDisable::NOT_SET),
-    m_rollbackOnDisableHasBeenSet(false),
-    m_maintenanceSchedulesHasBeenSet(false),
-    m_useOffPeakWindow(false),
-    m_useOffPeakWindowHasBeenSet(false)
+AutoTuneOptions::AutoTuneOptions(JsonView jsonValue)
+  : AutoTuneOptions()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ StringAttributeConstraintsType::StringAttributeConstraintsType() :
 {
 }
 
-StringAttributeConstraintsType::StringAttributeConstraintsType(JsonView jsonValue) : 
-    m_minLengthHasBeenSet(false),
-    m_maxLengthHasBeenSet(false)
+StringAttributeConstraintsType::StringAttributeConstraintsType(JsonView jsonValue)
+  : StringAttributeConstraintsType()
 {
   *this = jsonValue;
 }

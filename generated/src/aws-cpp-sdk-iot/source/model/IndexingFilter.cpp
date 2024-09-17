@@ -24,9 +24,8 @@ IndexingFilter::IndexingFilter() :
 {
 }
 
-IndexingFilter::IndexingFilter(JsonView jsonValue) : 
-    m_namedShadowNamesHasBeenSet(false),
-    m_geoLocationsHasBeenSet(false)
+IndexingFilter::IndexingFilter(JsonView jsonValue)
+  : IndexingFilter()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ ConfirmConnectionResult::ConfirmConnectionResult() :
 {
 }
 
-ConfirmConnectionResult::ConfirmConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_connectionState(ConnectionState::NOT_SET)
+ConfirmConnectionResult::ConfirmConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ConfirmConnectionResult()
 {
   *this = result;
 }

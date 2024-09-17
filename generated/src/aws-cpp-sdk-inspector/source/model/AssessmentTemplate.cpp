@@ -33,18 +33,8 @@ AssessmentTemplate::AssessmentTemplate() :
 {
 }
 
-AssessmentTemplate::AssessmentTemplate(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_assessmentTargetArnHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false),
-    m_userAttributesForFindingsHasBeenSet(false),
-    m_lastAssessmentRunArnHasBeenSet(false),
-    m_assessmentRunCount(0),
-    m_assessmentRunCountHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+AssessmentTemplate::AssessmentTemplate(JsonView jsonValue)
+  : AssessmentTemplate()
 {
   *this = jsonValue;
 }

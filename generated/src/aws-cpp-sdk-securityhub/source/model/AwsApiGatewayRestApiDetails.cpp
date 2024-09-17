@@ -32,17 +32,8 @@ AwsApiGatewayRestApiDetails::AwsApiGatewayRestApiDetails() :
 {
 }
 
-AwsApiGatewayRestApiDetails::AwsApiGatewayRestApiDetails(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_binaryMediaTypesHasBeenSet(false),
-    m_minimumCompressionSize(0),
-    m_minimumCompressionSizeHasBeenSet(false),
-    m_apiKeySourceHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false)
+AwsApiGatewayRestApiDetails::AwsApiGatewayRestApiDetails(JsonView jsonValue)
+  : AwsApiGatewayRestApiDetails()
 {
   *this = jsonValue;
 }

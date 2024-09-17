@@ -23,8 +23,8 @@ ModelPackagingOutputDetails::ModelPackagingOutputDetails() :
 {
 }
 
-ModelPackagingOutputDetails::ModelPackagingOutputDetails(JsonView jsonValue) : 
-    m_greengrassHasBeenSet(false)
+ModelPackagingOutputDetails::ModelPackagingOutputDetails(JsonView jsonValue)
+  : ModelPackagingOutputDetails()
 {
   *this = jsonValue;
 }

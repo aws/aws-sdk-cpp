@@ -41,55 +41,27 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p> The maximum data storage limit in the cache, expressed in Gigabytes. </p>
      */
     inline const DataStorage& GetDataStorage() const{ return m_dataStorage; }
-
-    /**
-     * <p> The maximum data storage limit in the cache, expressed in Gigabytes. </p>
-     */
     inline bool DataStorageHasBeenSet() const { return m_dataStorageHasBeenSet; }
-
-    /**
-     * <p> The maximum data storage limit in the cache, expressed in Gigabytes. </p>
-     */
     inline void SetDataStorage(const DataStorage& value) { m_dataStorageHasBeenSet = true; m_dataStorage = value; }
-
-    /**
-     * <p> The maximum data storage limit in the cache, expressed in Gigabytes. </p>
-     */
     inline void SetDataStorage(DataStorage&& value) { m_dataStorageHasBeenSet = true; m_dataStorage = std::move(value); }
-
-    /**
-     * <p> The maximum data storage limit in the cache, expressed in Gigabytes. </p>
-     */
     inline CacheUsageLimits& WithDataStorage(const DataStorage& value) { SetDataStorage(value); return *this;}
-
-    /**
-     * <p> The maximum data storage limit in the cache, expressed in Gigabytes. </p>
-     */
     inline CacheUsageLimits& WithDataStorage(DataStorage&& value) { SetDataStorage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ECPUPerSecond& GetECPUPerSecond() const{ return m_eCPUPerSecond; }
-
-    
     inline bool ECPUPerSecondHasBeenSet() const { return m_eCPUPerSecondHasBeenSet; }
-
-    
     inline void SetECPUPerSecond(const ECPUPerSecond& value) { m_eCPUPerSecondHasBeenSet = true; m_eCPUPerSecond = value; }
-
-    
     inline void SetECPUPerSecond(ECPUPerSecond&& value) { m_eCPUPerSecondHasBeenSet = true; m_eCPUPerSecond = std::move(value); }
-
-    
     inline CacheUsageLimits& WithECPUPerSecond(const ECPUPerSecond& value) { SetECPUPerSecond(value); return *this;}
-
-    
     inline CacheUsageLimits& WithECPUPerSecond(ECPUPerSecond&& value) { SetECPUPerSecond(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataStorage m_dataStorage;

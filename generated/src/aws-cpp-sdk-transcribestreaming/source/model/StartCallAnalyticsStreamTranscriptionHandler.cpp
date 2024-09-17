@@ -29,10 +29,11 @@ namespace Model
 
     StartCallAnalyticsStreamTranscriptionHandler::StartCallAnalyticsStreamTranscriptionHandler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const StartCallAnalyticsStreamTranscriptionInitialResponse&)
+        m_onInitialResponse = [&](const StartCallAnalyticsStreamTranscriptionInitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(STARTCALLANALYTICSSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG,
-                "StartCallAnalyticsStreamTranscription initial response received.");
+                "StartCallAnalyticsStreamTranscription initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
         m_onUtteranceEvent = [&](const UtteranceEvent&)
@@ -99,18 +100,11 @@ namespace Model
         }
         switch (StartCallAnalyticsStreamTranscriptionEventMapper::GetStartCallAnalyticsStreamTranscriptionEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case StartCallAnalyticsStreamTranscriptionEventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(STARTCALLANALYTICSSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "Unable to generate a proper StartCallAnalyticsStreamTranscriptionInitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            StartCallAnalyticsStreamTranscriptionInitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case StartCallAnalyticsStreamTranscriptionEventType::INITIAL_RESPONSE:
+        {
+            StartCallAnalyticsStreamTranscriptionInitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

@@ -23,8 +23,8 @@ InputDefinition::InputDefinition() :
 {
 }
 
-InputDefinition::InputDefinition(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false)
+InputDefinition::InputDefinition(JsonView jsonValue)
+  : InputDefinition()
 {
   *this = jsonValue;
 }

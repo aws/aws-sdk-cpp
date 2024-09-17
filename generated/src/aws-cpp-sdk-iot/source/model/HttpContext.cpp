@@ -24,9 +24,8 @@ HttpContext::HttpContext() :
 {
 }
 
-HttpContext::HttpContext(JsonView jsonValue) : 
-    m_headersHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
+HttpContext::HttpContext(JsonView jsonValue)
+  : HttpContext()
 {
   *this = jsonValue;
 }

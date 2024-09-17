@@ -26,9 +26,8 @@ InvalidChangeBatch::InvalidChangeBatch() :
 {
 }
 
-InvalidChangeBatch::InvalidChangeBatch(const XmlNode& xmlNode) : 
-    m_messagesHasBeenSet(false),
-    m_messageHasBeenSet(false)
+InvalidChangeBatch::InvalidChangeBatch(const XmlNode& xmlNode)
+  : InvalidChangeBatch()
 {
   *this = xmlNode;
 }

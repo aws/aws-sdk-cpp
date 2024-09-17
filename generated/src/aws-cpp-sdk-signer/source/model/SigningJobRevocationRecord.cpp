@@ -25,10 +25,8 @@ SigningJobRevocationRecord::SigningJobRevocationRecord() :
 {
 }
 
-SigningJobRevocationRecord::SigningJobRevocationRecord(JsonView jsonValue) : 
-    m_reasonHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revokedByHasBeenSet(false)
+SigningJobRevocationRecord::SigningJobRevocationRecord(JsonView jsonValue)
+  : SigningJobRevocationRecord()
 {
   *this = jsonValue;
 }

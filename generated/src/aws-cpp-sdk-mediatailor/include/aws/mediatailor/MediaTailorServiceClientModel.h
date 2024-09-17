@@ -60,6 +60,9 @@
 #include <aws/mediatailor/model/UpdateProgramResult.h>
 #include <aws/mediatailor/model/UpdateSourceLocationResult.h>
 #include <aws/mediatailor/model/UpdateVodSourceResult.h>
+#include <aws/mediatailor/model/ListPlaybackConfigurationsRequest.h>
+#include <aws/mediatailor/model/ListChannelsRequest.h>
+#include <aws/mediatailor/model/ListSourceLocationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in MediaTailorClient header */
 
@@ -94,7 +97,7 @@ namespace Aws
 
   namespace MediaTailor
   {
-    using MediaTailorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaTailorClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaTailorEndpointProviderBase = Aws::MediaTailor::Endpoint::MediaTailorEndpointProviderBase;
     using MediaTailorEndpointProvider = Aws::MediaTailor::Endpoint::MediaTailorEndpointProvider;
 

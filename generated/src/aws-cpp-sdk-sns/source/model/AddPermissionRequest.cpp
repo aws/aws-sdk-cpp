@@ -34,23 +34,37 @@ Aws::String AddPermissionRequest::SerializePayload() const
 
   if(m_aWSAccountIdHasBeenSet)
   {
-    unsigned aWSAccountIdCount = 1;
-    for(auto& item : m_aWSAccountId)
+    if (m_aWSAccountId.empty())
     {
-      ss << "AWSAccountId.member." << aWSAccountIdCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      aWSAccountIdCount++;
+      ss << "AWSAccountId=&";
+    }
+    else
+    {
+      unsigned aWSAccountIdCount = 1;
+      for(auto& item : m_aWSAccountId)
+      {
+        ss << "AWSAccountId.member." << aWSAccountIdCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        aWSAccountIdCount++;
+      }
     }
   }
 
   if(m_actionNameHasBeenSet)
   {
-    unsigned actionNameCount = 1;
-    for(auto& item : m_actionName)
+    if (m_actionName.empty())
     {
-      ss << "ActionName.member." << actionNameCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      actionNameCount++;
+      ss << "ActionName=&";
+    }
+    else
+    {
+      unsigned actionNameCount = 1;
+      for(auto& item : m_actionName)
+      {
+        ss << "ActionName.member." << actionNameCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        actionNameCount++;
+      }
     }
   }
 

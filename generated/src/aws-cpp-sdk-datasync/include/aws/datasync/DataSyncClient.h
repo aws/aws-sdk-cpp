@@ -519,11 +519,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Configures a transfer task, which defines where and how DataSync moves your
-         * data.</p> <p>A task includes a source location, destination location, and the
-         * options for how and when you want to transfer your data (such as bandwidth
-         * limits, scheduling, among other options).</p>  <p>If you're planning
-         * to transfer data to or from an Amazon S3 location, review <a
+         * <p>Configures a <i>task</i>, which defines where and how DataSync transfers your
+         * data.</p> <p>A task includes a source location, destination location, and
+         * transfer options (such as bandwidth limits, scheduling, and more).</p>
+         *  <p>If you're planning to transfer data to or from an Amazon S3
+         * location, review <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
          * DataSync can affect your S3 request charges</a> and the <a
          * href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before
@@ -1056,8 +1056,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Provides information about an DataSync transfer task.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides information about a <i>task</i>, which defines where and how
+         * DataSync transfers your data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">AWS
          * API Reference</a></p>
          */
@@ -1159,13 +1159,13 @@ namespace DataSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAgentsOutcome ListAgents(const Model::ListAgentsRequest& request) const;
+        virtual Model::ListAgentsOutcome ListAgents(const Model::ListAgentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAgents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAgentsRequestT = Model::ListAgentsRequest>
-        Model::ListAgentsOutcomeCallable ListAgentsCallable(const ListAgentsRequestT& request) const
+        Model::ListAgentsOutcomeCallable ListAgentsCallable(const ListAgentsRequestT& request = {}) const
         {
             return SubmitCallable(&DataSyncClient::ListAgents, request);
         }
@@ -1174,7 +1174,7 @@ namespace DataSync
          * An Async wrapper for ListAgents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAgentsRequestT = Model::ListAgentsRequest>
-        void ListAgentsAsync(const ListAgentsRequestT& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAgentsAsync(const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAgentsRequestT& request = {}) const
         {
             return SubmitAsync(&DataSyncClient::ListAgents, request, handler, context);
         }
@@ -1186,13 +1186,13 @@ namespace DataSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListDiscoveryJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDiscoveryJobsOutcome ListDiscoveryJobs(const Model::ListDiscoveryJobsRequest& request) const;
+        virtual Model::ListDiscoveryJobsOutcome ListDiscoveryJobs(const Model::ListDiscoveryJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDiscoveryJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDiscoveryJobsRequestT = Model::ListDiscoveryJobsRequest>
-        Model::ListDiscoveryJobsOutcomeCallable ListDiscoveryJobsCallable(const ListDiscoveryJobsRequestT& request) const
+        Model::ListDiscoveryJobsOutcomeCallable ListDiscoveryJobsCallable(const ListDiscoveryJobsRequestT& request = {}) const
         {
             return SubmitCallable(&DataSyncClient::ListDiscoveryJobs, request);
         }
@@ -1201,7 +1201,7 @@ namespace DataSync
          * An Async wrapper for ListDiscoveryJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDiscoveryJobsRequestT = Model::ListDiscoveryJobsRequest>
-        void ListDiscoveryJobsAsync(const ListDiscoveryJobsRequestT& request, const ListDiscoveryJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDiscoveryJobsAsync(const ListDiscoveryJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDiscoveryJobsRequestT& request = {}) const
         {
             return SubmitAsync(&DataSyncClient::ListDiscoveryJobs, request, handler, context);
         }
@@ -1215,13 +1215,13 @@ namespace DataSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListLocations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLocationsOutcome ListLocations(const Model::ListLocationsRequest& request) const;
+        virtual Model::ListLocationsOutcome ListLocations(const Model::ListLocationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLocations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLocationsRequestT = Model::ListLocationsRequest>
-        Model::ListLocationsOutcomeCallable ListLocationsCallable(const ListLocationsRequestT& request) const
+        Model::ListLocationsOutcomeCallable ListLocationsCallable(const ListLocationsRequestT& request = {}) const
         {
             return SubmitCallable(&DataSyncClient::ListLocations, request);
         }
@@ -1230,7 +1230,7 @@ namespace DataSync
          * An Async wrapper for ListLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLocationsRequestT = Model::ListLocationsRequest>
-        void ListLocationsAsync(const ListLocationsRequestT& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLocationsAsync(const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLocationsRequestT& request = {}) const
         {
             return SubmitAsync(&DataSyncClient::ListLocations, request, handler, context);
         }
@@ -1241,13 +1241,13 @@ namespace DataSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListStorageSystems">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStorageSystemsOutcome ListStorageSystems(const Model::ListStorageSystemsRequest& request) const;
+        virtual Model::ListStorageSystemsOutcome ListStorageSystems(const Model::ListStorageSystemsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStorageSystems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStorageSystemsRequestT = Model::ListStorageSystemsRequest>
-        Model::ListStorageSystemsOutcomeCallable ListStorageSystemsCallable(const ListStorageSystemsRequestT& request) const
+        Model::ListStorageSystemsOutcomeCallable ListStorageSystemsCallable(const ListStorageSystemsRequestT& request = {}) const
         {
             return SubmitCallable(&DataSyncClient::ListStorageSystems, request);
         }
@@ -1256,7 +1256,7 @@ namespace DataSync
          * An Async wrapper for ListStorageSystems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStorageSystemsRequestT = Model::ListStorageSystemsRequest>
-        void ListStorageSystemsAsync(const ListStorageSystemsRequestT& request, const ListStorageSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStorageSystemsAsync(const ListStorageSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStorageSystemsRequestT& request = {}) const
         {
             return SubmitAsync(&DataSyncClient::ListStorageSystems, request, handler, context);
         }
@@ -1293,13 +1293,13 @@ namespace DataSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTaskExecutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTaskExecutionsOutcome ListTaskExecutions(const Model::ListTaskExecutionsRequest& request) const;
+        virtual Model::ListTaskExecutionsOutcome ListTaskExecutions(const Model::ListTaskExecutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTaskExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTaskExecutionsRequestT = Model::ListTaskExecutionsRequest>
-        Model::ListTaskExecutionsOutcomeCallable ListTaskExecutionsCallable(const ListTaskExecutionsRequestT& request) const
+        Model::ListTaskExecutionsOutcomeCallable ListTaskExecutionsCallable(const ListTaskExecutionsRequestT& request = {}) const
         {
             return SubmitCallable(&DataSyncClient::ListTaskExecutions, request);
         }
@@ -1308,7 +1308,7 @@ namespace DataSync
          * An Async wrapper for ListTaskExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTaskExecutionsRequestT = Model::ListTaskExecutionsRequest>
-        void ListTaskExecutionsAsync(const ListTaskExecutionsRequestT& request, const ListTaskExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTaskExecutionsAsync(const ListTaskExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTaskExecutionsRequestT& request = {}) const
         {
             return SubmitAsync(&DataSyncClient::ListTaskExecutions, request, handler, context);
         }
@@ -1319,13 +1319,13 @@ namespace DataSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
+        virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTasksRequestT = Model::ListTasksRequest>
-        Model::ListTasksOutcomeCallable ListTasksCallable(const ListTasksRequestT& request) const
+        Model::ListTasksOutcomeCallable ListTasksCallable(const ListTasksRequestT& request = {}) const
         {
             return SubmitCallable(&DataSyncClient::ListTasks, request);
         }
@@ -1334,7 +1334,7 @@ namespace DataSync
          * An Async wrapper for ListTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTasksRequestT = Model::ListTasksRequest>
-        void ListTasksAsync(const ListTasksRequestT& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTasksAsync(const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTasksRequestT& request = {}) const
         {
             return SubmitAsync(&DataSyncClient::ListTasks, request, handler, context);
         }
@@ -1644,11 +1644,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates some parameters of an existing object storage location that DataSync
-         * accesses for a transfer. For information about creating a self-managed object
-         * storage location, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates some parameters of an existing DataSync location for an object
+         * storage system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
          * API Reference</a></p>
          */
@@ -1725,8 +1722,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the configuration of an DataSync transfer task.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the configuration of a <i>task</i>, which defines where and how
+         * DataSync transfers your data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">AWS
          * API Reference</a></p>
          */
@@ -1788,7 +1785,6 @@ namespace DataSync
       void init(const DataSyncClientConfiguration& clientConfiguration);
 
       DataSyncClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<DataSyncEndpointProviderBase> m_endpointProvider;
   };
 

@@ -25,10 +25,8 @@ TriggerConfig::TriggerConfig() :
 {
 }
 
-TriggerConfig::TriggerConfig(JsonView jsonValue) : 
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_triggerPropertiesHasBeenSet(false)
+TriggerConfig::TriggerConfig(JsonView jsonValue)
+  : TriggerConfig()
 {
   *this = jsonValue;
 }

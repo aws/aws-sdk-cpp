@@ -24,9 +24,8 @@ ListenerTlsFileCertificate::ListenerTlsFileCertificate() :
 {
 }
 
-ListenerTlsFileCertificate::ListenerTlsFileCertificate(JsonView jsonValue) : 
-    m_certificateChainHasBeenSet(false),
-    m_privateKeyHasBeenSet(false)
+ListenerTlsFileCertificate::ListenerTlsFileCertificate(JsonView jsonValue)
+  : ListenerTlsFileCertificate()
 {
   *this = jsonValue;
 }

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     EKS_ADDON_MANAGEMENT,
-    ECS_FARGATE_AGENT_MANAGEMENT
+    ECS_FARGATE_AGENT_MANAGEMENT,
+    EC2_AGENT_MANAGEMENT
   };
 
 namespace FeatureAdditionalConfigurationMapper

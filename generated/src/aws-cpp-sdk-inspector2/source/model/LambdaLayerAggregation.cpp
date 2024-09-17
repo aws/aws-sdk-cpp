@@ -29,14 +29,8 @@ LambdaLayerAggregation::LambdaLayerAggregation() :
 {
 }
 
-LambdaLayerAggregation::LambdaLayerAggregation(JsonView jsonValue) : 
-    m_functionNamesHasBeenSet(false),
-    m_layerArnsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_sortBy(LambdaLayerSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+LambdaLayerAggregation::LambdaLayerAggregation(JsonView jsonValue)
+  : LambdaLayerAggregation()
 {
   *this = jsonValue;
 }

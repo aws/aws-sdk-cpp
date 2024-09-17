@@ -44,241 +44,86 @@ namespace Model
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the Application Component.</p>
      */
     inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline AppComponentCompliance& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline AppComponentCompliance& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline AppComponentCompliance& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The compliance of the Application Component against the resiliency
      * policy.</p>
      */
     inline const Aws::Map<DisruptionType, DisruptionCompliance>& GetCompliance() const{ return m_compliance; }
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline void SetCompliance(const Aws::Map<DisruptionType, DisruptionCompliance>& value) { m_complianceHasBeenSet = true; m_compliance = value; }
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline void SetCompliance(Aws::Map<DisruptionType, DisruptionCompliance>&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline AppComponentCompliance& WithCompliance(const Aws::Map<DisruptionType, DisruptionCompliance>& value) { SetCompliance(value); return *this;}
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline AppComponentCompliance& WithCompliance(Aws::Map<DisruptionType, DisruptionCompliance>&& value) { SetCompliance(std::move(value)); return *this;}
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline AppComponentCompliance& AddCompliance(const DisruptionType& key, const DisruptionCompliance& value) { m_complianceHasBeenSet = true; m_compliance.emplace(key, value); return *this; }
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline AppComponentCompliance& AddCompliance(DisruptionType&& key, const DisruptionCompliance& value) { m_complianceHasBeenSet = true; m_compliance.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline AppComponentCompliance& AddCompliance(const DisruptionType& key, DisruptionCompliance&& value) { m_complianceHasBeenSet = true; m_compliance.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The compliance of the Application Component against the resiliency
-     * policy.</p>
-     */
     inline AppComponentCompliance& AddCompliance(DisruptionType&& key, DisruptionCompliance&& value) { m_complianceHasBeenSet = true; m_compliance.emplace(std::move(key), std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cost for the application.</p>
      */
     inline const Cost& GetCost() const{ return m_cost; }
-
-    /**
-     * <p>The cost for the application.</p>
-     */
     inline bool CostHasBeenSet() const { return m_costHasBeenSet; }
-
-    /**
-     * <p>The cost for the application.</p>
-     */
     inline void SetCost(const Cost& value) { m_costHasBeenSet = true; m_cost = value; }
-
-    /**
-     * <p>The cost for the application.</p>
-     */
     inline void SetCost(Cost&& value) { m_costHasBeenSet = true; m_cost = std::move(value); }
-
-    /**
-     * <p>The cost for the application.</p>
-     */
     inline AppComponentCompliance& WithCost(const Cost& value) { SetCost(value); return *this;}
-
-    /**
-     * <p>The cost for the application.</p>
-     */
     inline AppComponentCompliance& WithCost(Cost&& value) { SetCost(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The compliance message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The compliance message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The compliance message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The compliance message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The compliance message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The compliance message.</p>
-     */
     inline AppComponentCompliance& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The compliance message.</p>
-     */
     inline AppComponentCompliance& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The compliance message.</p>
-     */
     inline AppComponentCompliance& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current resiliency score for the application.</p>
      */
     inline const ResiliencyScore& GetResiliencyScore() const{ return m_resiliencyScore; }
-
-    /**
-     * <p>The current resiliency score for the application.</p>
-     */
     inline bool ResiliencyScoreHasBeenSet() const { return m_resiliencyScoreHasBeenSet; }
-
-    /**
-     * <p>The current resiliency score for the application.</p>
-     */
     inline void SetResiliencyScore(const ResiliencyScore& value) { m_resiliencyScoreHasBeenSet = true; m_resiliencyScore = value; }
-
-    /**
-     * <p>The current resiliency score for the application.</p>
-     */
     inline void SetResiliencyScore(ResiliencyScore&& value) { m_resiliencyScoreHasBeenSet = true; m_resiliencyScore = std::move(value); }
-
-    /**
-     * <p>The current resiliency score for the application.</p>
-     */
     inline AppComponentCompliance& WithResiliencyScore(const ResiliencyScore& value) { SetResiliencyScore(value); return *this;}
-
-    /**
-     * <p>The current resiliency score for the application.</p>
-     */
     inline AppComponentCompliance& WithResiliencyScore(ResiliencyScore&& value) { SetResiliencyScore(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Status of the action.</p>
      */
     inline const ComplianceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Status of the action.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Status of the action.</p>
-     */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Status of the action.</p>
-     */
     inline void SetStatus(ComplianceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Status of the action.</p>
-     */
     inline AppComponentCompliance& WithStatus(const ComplianceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Status of the action.</p>
-     */
     inline AppComponentCompliance& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appComponentName;

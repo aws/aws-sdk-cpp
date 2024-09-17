@@ -22,8 +22,8 @@ UpdateAnalysisPermissionsResult::UpdateAnalysisPermissionsResult() :
 {
 }
 
-UpdateAnalysisPermissionsResult::UpdateAnalysisPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateAnalysisPermissionsResult::UpdateAnalysisPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateAnalysisPermissionsResult()
 {
   *this = result;
 }

@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoTThingsGraphClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTThingsGraphClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoTThingsGraphClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTThingsGraphBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

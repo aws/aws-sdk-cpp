@@ -25,10 +25,8 @@ RoutingConfigurationListItem::RoutingConfigurationListItem() :
 {
 }
 
-RoutingConfigurationListItem::RoutingConfigurationListItem(JsonView jsonValue) : 
-    m_stateMachineVersionArnHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
+RoutingConfigurationListItem::RoutingConfigurationListItem(JsonView jsonValue)
+  : RoutingConfigurationListItem()
 {
   *this = jsonValue;
 }

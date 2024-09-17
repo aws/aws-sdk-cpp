@@ -42,95 +42,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
      * Amazon Resource Name .</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
-     * Amazon Resource Name .</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
-     * Amazon Resource Name .</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
-     * Amazon Resource Name .</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
-     * Amazon Resource Name .</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
-     * Amazon Resource Name .</p>
-     */
     inline AddTagsToResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
-     * Amazon Resource Name .</p>
-     */
     inline AddTagsToResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
-     * Amazon Resource Name .</p>
-     */
     inline AddTagsToResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-     */
     inline AddTagsToResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-     */
     inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-     */
     inline AddTagsToResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-     */
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

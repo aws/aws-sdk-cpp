@@ -25,10 +25,8 @@ AccountTakeoverActionsType::AccountTakeoverActionsType() :
 {
 }
 
-AccountTakeoverActionsType::AccountTakeoverActionsType(JsonView jsonValue) : 
-    m_lowActionHasBeenSet(false),
-    m_mediumActionHasBeenSet(false),
-    m_highActionHasBeenSet(false)
+AccountTakeoverActionsType::AccountTakeoverActionsType(JsonView jsonValue)
+  : AccountTakeoverActionsType()
 {
   *this = jsonValue;
 }

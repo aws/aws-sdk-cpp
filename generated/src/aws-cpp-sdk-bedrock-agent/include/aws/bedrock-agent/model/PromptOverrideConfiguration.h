@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/PromptConfiguration.h>
 #include <utility>
 
@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Configuration for prompt override.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains configurations to override prompts in different parts of an agent
+   * sequence. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+   * prompts</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PromptOverrideConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,62 +42,48 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
-    inline const Aws::Vector<PromptConfiguration>& GetPromptConfigurations() const{ return m_promptConfigurations; }
-
-    
-    inline bool PromptConfigurationsHasBeenSet() const { return m_promptConfigurationsHasBeenSet; }
-
-    
-    inline void SetPromptConfigurations(const Aws::Vector<PromptConfiguration>& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations = value; }
-
-    
-    inline void SetPromptConfigurations(Aws::Vector<PromptConfiguration>&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations = std::move(value); }
-
-    
-    inline PromptOverrideConfiguration& WithPromptConfigurations(const Aws::Vector<PromptConfiguration>& value) { SetPromptConfigurations(value); return *this;}
-
-    
-    inline PromptOverrideConfiguration& WithPromptConfigurations(Aws::Vector<PromptConfiguration>&& value) { SetPromptConfigurations(std::move(value)); return *this;}
-
-    
-    inline PromptOverrideConfiguration& AddPromptConfigurations(const PromptConfiguration& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations.push_back(value); return *this; }
-
-    
-    inline PromptOverrideConfiguration& AddPromptConfigurations(PromptConfiguration&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations.push_back(std::move(value)); return *this; }
-
-
-    
+    ///@{
+    /**
+     * <p>The ARN of the Lambda function to use when parsing the raw foundation model
+     * output in parts of the agent sequence. If you specify this field, at least one
+     * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
+     */
     inline const Aws::String& GetOverrideLambda() const{ return m_overrideLambda; }
-
-    
     inline bool OverrideLambdaHasBeenSet() const { return m_overrideLambdaHasBeenSet; }
-
-    
     inline void SetOverrideLambda(const Aws::String& value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda = value; }
-
-    
     inline void SetOverrideLambda(Aws::String&& value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda = std::move(value); }
-
-    
     inline void SetOverrideLambda(const char* value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda.assign(value); }
-
-    
     inline PromptOverrideConfiguration& WithOverrideLambda(const Aws::String& value) { SetOverrideLambda(value); return *this;}
-
-    
     inline PromptOverrideConfiguration& WithOverrideLambda(Aws::String&& value) { SetOverrideLambda(std::move(value)); return *this;}
-
-    
     inline PromptOverrideConfiguration& WithOverrideLambda(const char* value) { SetOverrideLambda(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Contains configurations to override a prompt template in one part of an agent
+     * sequence. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+     * prompts</a>.</p>
+     */
+    inline const Aws::Vector<PromptConfiguration>& GetPromptConfigurations() const{ return m_promptConfigurations; }
+    inline bool PromptConfigurationsHasBeenSet() const { return m_promptConfigurationsHasBeenSet; }
+    inline void SetPromptConfigurations(const Aws::Vector<PromptConfiguration>& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations = value; }
+    inline void SetPromptConfigurations(Aws::Vector<PromptConfiguration>&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations = std::move(value); }
+    inline PromptOverrideConfiguration& WithPromptConfigurations(const Aws::Vector<PromptConfiguration>& value) { SetPromptConfigurations(value); return *this;}
+    inline PromptOverrideConfiguration& WithPromptConfigurations(Aws::Vector<PromptConfiguration>&& value) { SetPromptConfigurations(std::move(value)); return *this;}
+    inline PromptOverrideConfiguration& AddPromptConfigurations(const PromptConfiguration& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations.push_back(value); return *this; }
+    inline PromptOverrideConfiguration& AddPromptConfigurations(PromptConfiguration&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
-
-    Aws::Vector<PromptConfiguration> m_promptConfigurations;
-    bool m_promptConfigurationsHasBeenSet = false;
 
     Aws::String m_overrideLambda;
     bool m_overrideLambdaHasBeenSet = false;
+
+    Aws::Vector<PromptConfiguration> m_promptConfigurations;
+    bool m_promptConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

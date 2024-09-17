@@ -29,12 +29,8 @@ Statement::Statement() :
 {
 }
 
-Statement::Statement(const XmlNode& xmlNode) : 
-    m_sourcePolicyIdHasBeenSet(false),
-    m_sourcePolicyType(PolicySourceType::NOT_SET),
-    m_sourcePolicyTypeHasBeenSet(false),
-    m_startPositionHasBeenSet(false),
-    m_endPositionHasBeenSet(false)
+Statement::Statement(const XmlNode& xmlNode)
+  : Statement()
 {
   *this = xmlNode;
 }

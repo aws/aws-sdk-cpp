@@ -53,6 +53,29 @@
 #include <aws/sms/model/TerminateAppResult.h>
 #include <aws/sms/model/UpdateAppResult.h>
 #include <aws/sms/model/UpdateReplicationJobResult.h>
+#include <aws/sms/model/GetAppLaunchConfigurationRequest.h>
+#include <aws/sms/model/DeleteAppRequest.h>
+#include <aws/sms/model/GetAppRequest.h>
+#include <aws/sms/model/DeleteAppLaunchConfigurationRequest.h>
+#include <aws/sms/model/ImportServerCatalogRequest.h>
+#include <aws/sms/model/StartAppReplicationRequest.h>
+#include <aws/sms/model/GenerateTemplateRequest.h>
+#include <aws/sms/model/PutAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/GetAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/DeleteAppReplicationConfigurationRequest.h>
+#include <aws/sms/model/ImportAppCatalogRequest.h>
+#include <aws/sms/model/ListAppsRequest.h>
+#include <aws/sms/model/PutAppLaunchConfigurationRequest.h>
+#include <aws/sms/model/DeleteServerCatalogRequest.h>
+#include <aws/sms/model/GetConnectorsRequest.h>
+#include <aws/sms/model/GetReplicationJobsRequest.h>
+#include <aws/sms/model/GetServersRequest.h>
+#include <aws/sms/model/CreateAppRequest.h>
+#include <aws/sms/model/LaunchAppRequest.h>
+#include <aws/sms/model/UpdateAppRequest.h>
+#include <aws/sms/model/TerminateAppRequest.h>
+#include <aws/sms/model/GenerateChangeSetRequest.h>
+#include <aws/sms/model/StopAppReplicationRequest.h>
 /* End of service model headers required in SMSClient header */
 
 namespace Aws
@@ -86,7 +109,7 @@ namespace Aws
 
   namespace SMS
   {
-    using SMSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SMSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SMSEndpointProviderBase = Aws::SMS::Endpoint::SMSEndpointProviderBase;
     using SMSEndpointProvider = Aws::SMS::Endpoint::SMSEndpointProvider;
 

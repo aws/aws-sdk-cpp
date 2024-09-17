@@ -20,17 +20,14 @@ namespace Model
 
 SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials() : 
     m_basicAuthHasBeenSet(false),
-    m_clientCertificateTlsAuthHasBeenSet(false),
+    m_saslScram512AuthHasBeenSet(false),
     m_saslScram256AuthHasBeenSet(false),
-    m_saslScram512AuthHasBeenSet(false)
+    m_clientCertificateTlsAuthHasBeenSet(false)
 {
 }
 
-SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials(JsonView jsonValue) : 
-    m_basicAuthHasBeenSet(false),
-    m_clientCertificateTlsAuthHasBeenSet(false),
-    m_saslScram256AuthHasBeenSet(false),
-    m_saslScram512AuthHasBeenSet(false)
+SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials(JsonView jsonValue)
+  : SelfManagedKafkaAccessConfigurationCredentials()
 {
   *this = jsonValue;
 }
@@ -44,11 +41,11 @@ SelfManagedKafkaAccessConfigurationCredentials& SelfManagedKafkaAccessConfigurat
     m_basicAuthHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ClientCertificateTlsAuth"))
+  if(jsonValue.ValueExists("SaslScram512Auth"))
   {
-    m_clientCertificateTlsAuth = jsonValue.GetString("ClientCertificateTlsAuth");
+    m_saslScram512Auth = jsonValue.GetString("SaslScram512Auth");
 
-    m_clientCertificateTlsAuthHasBeenSet = true;
+    m_saslScram512AuthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SaslScram256Auth"))
@@ -58,11 +55,11 @@ SelfManagedKafkaAccessConfigurationCredentials& SelfManagedKafkaAccessConfigurat
     m_saslScram256AuthHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SaslScram512Auth"))
+  if(jsonValue.ValueExists("ClientCertificateTlsAuth"))
   {
-    m_saslScram512Auth = jsonValue.GetString("SaslScram512Auth");
+    m_clientCertificateTlsAuth = jsonValue.GetString("ClientCertificateTlsAuth");
 
-    m_saslScram512AuthHasBeenSet = true;
+    m_clientCertificateTlsAuthHasBeenSet = true;
   }
 
   return *this;
@@ -78,9 +75,9 @@ JsonValue SelfManagedKafkaAccessConfigurationCredentials::Jsonize() const
 
   }
 
-  if(m_clientCertificateTlsAuthHasBeenSet)
+  if(m_saslScram512AuthHasBeenSet)
   {
-   payload.WithString("ClientCertificateTlsAuth", m_clientCertificateTlsAuth);
+   payload.WithString("SaslScram512Auth", m_saslScram512Auth);
 
   }
 
@@ -90,9 +87,9 @@ JsonValue SelfManagedKafkaAccessConfigurationCredentials::Jsonize() const
 
   }
 
-  if(m_saslScram512AuthHasBeenSet)
+  if(m_clientCertificateTlsAuthHasBeenSet)
   {
-   payload.WithString("SaslScram512Auth", m_saslScram512Auth);
+   payload.WithString("ClientCertificateTlsAuth", m_clientCertificateTlsAuth);
 
   }
 

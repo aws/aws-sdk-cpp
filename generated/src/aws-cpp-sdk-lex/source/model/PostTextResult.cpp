@@ -23,9 +23,8 @@ PostTextResult::PostTextResult() :
 {
 }
 
-PostTextResult::PostTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_messageFormat(MessageFormatType::NOT_SET),
-    m_dialogState(DialogState::NOT_SET)
+PostTextResult::PostTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : PostTextResult()
 {
   *this = result;
 }

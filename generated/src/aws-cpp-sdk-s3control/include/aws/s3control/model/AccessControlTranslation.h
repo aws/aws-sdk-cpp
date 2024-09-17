@@ -39,36 +39,17 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies the replica ownership.</p>
      */
     inline const OwnerOverride& GetOwner() const{ return m_owner; }
-
-    /**
-     * <p>Specifies the replica ownership.</p>
-     */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-
-    /**
-     * <p>Specifies the replica ownership.</p>
-     */
     inline void SetOwner(const OwnerOverride& value) { m_ownerHasBeenSet = true; m_owner = value; }
-
-    /**
-     * <p>Specifies the replica ownership.</p>
-     */
     inline void SetOwner(OwnerOverride&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-
-    /**
-     * <p>Specifies the replica ownership.</p>
-     */
     inline AccessControlTranslation& WithOwner(const OwnerOverride& value) { SetOwner(value); return *this;}
-
-    /**
-     * <p>Specifies the replica ownership.</p>
-     */
     inline AccessControlTranslation& WithOwner(OwnerOverride&& value) { SetOwner(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OwnerOverride m_owner;

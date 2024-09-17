@@ -23,9 +23,8 @@ GetCustomDataIdentifierResult::GetCustomDataIdentifierResult() :
 {
 }
 
-GetCustomDataIdentifierResult::GetCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_deleted(false),
-    m_maximumMatchDistance(0)
+GetCustomDataIdentifierResult::GetCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCustomDataIdentifierResult()
 {
   *this = result;
 }

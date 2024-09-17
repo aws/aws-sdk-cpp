@@ -57,42 +57,8 @@ InstancePatchState::InstancePatchState() :
 {
 }
 
-InstancePatchState::InstancePatchState(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_patchGroupHasBeenSet(false),
-    m_baselineIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_installOverrideListHasBeenSet(false),
-    m_ownerInformationHasBeenSet(false),
-    m_installedCount(0),
-    m_installedCountHasBeenSet(false),
-    m_installedOtherCount(0),
-    m_installedOtherCountHasBeenSet(false),
-    m_installedPendingRebootCount(0),
-    m_installedPendingRebootCountHasBeenSet(false),
-    m_installedRejectedCount(0),
-    m_installedRejectedCountHasBeenSet(false),
-    m_missingCount(0),
-    m_missingCountHasBeenSet(false),
-    m_failedCount(0),
-    m_failedCountHasBeenSet(false),
-    m_unreportedNotApplicableCount(0),
-    m_unreportedNotApplicableCountHasBeenSet(false),
-    m_notApplicableCount(0),
-    m_notApplicableCountHasBeenSet(false),
-    m_operationStartTimeHasBeenSet(false),
-    m_operationEndTimeHasBeenSet(false),
-    m_operation(PatchOperationType::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_lastNoRebootInstallOperationTimeHasBeenSet(false),
-    m_rebootOption(RebootOption::NOT_SET),
-    m_rebootOptionHasBeenSet(false),
-    m_criticalNonCompliantCount(0),
-    m_criticalNonCompliantCountHasBeenSet(false),
-    m_securityNonCompliantCount(0),
-    m_securityNonCompliantCountHasBeenSet(false),
-    m_otherNonCompliantCount(0),
-    m_otherNonCompliantCountHasBeenSet(false)
+InstancePatchState::InstancePatchState(JsonView jsonValue)
+  : InstancePatchState()
 {
   *this = jsonValue;
 }

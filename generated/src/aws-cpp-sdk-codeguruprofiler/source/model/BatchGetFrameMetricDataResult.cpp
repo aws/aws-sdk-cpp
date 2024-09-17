@@ -22,8 +22,8 @@ BatchGetFrameMetricDataResult::BatchGetFrameMetricDataResult() :
 {
 }
 
-BatchGetFrameMetricDataResult::BatchGetFrameMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resolution(AggregationPeriod::NOT_SET)
+BatchGetFrameMetricDataResult::BatchGetFrameMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : BatchGetFrameMetricDataResult()
 {
   *this = result;
 }

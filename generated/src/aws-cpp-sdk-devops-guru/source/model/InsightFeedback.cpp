@@ -25,10 +25,8 @@ InsightFeedback::InsightFeedback() :
 {
 }
 
-InsightFeedback::InsightFeedback(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_feedback(InsightFeedbackOption::NOT_SET),
-    m_feedbackHasBeenSet(false)
+InsightFeedback::InsightFeedback(JsonView jsonValue)
+  : InsightFeedback()
 {
   *this = jsonValue;
 }

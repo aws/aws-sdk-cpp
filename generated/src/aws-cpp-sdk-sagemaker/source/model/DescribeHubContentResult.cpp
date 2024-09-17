@@ -19,13 +19,13 @@ using namespace Aws;
 
 DescribeHubContentResult::DescribeHubContentResult() : 
     m_hubContentType(HubContentType::NOT_SET),
+    m_supportStatus(HubContentSupportStatus::NOT_SET),
     m_hubContentStatus(HubContentStatus::NOT_SET)
 {
 }
 
-DescribeHubContentResult::DescribeHubContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hubContentType(HubContentType::NOT_SET),
-    m_hubContentStatus(HubContentStatus::NOT_SET)
+DescribeHubContentResult::DescribeHubContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeHubContentResult()
 {
   *this = result;
 }
@@ -96,6 +96,24 @@ DescribeHubContentResult& DescribeHubContentResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("HubContentDocument"))
   {
     m_hubContentDocument = jsonValue.GetString("HubContentDocument");
+
+  }
+
+  if(jsonValue.ValueExists("SageMakerPublicHubContentArn"))
+  {
+    m_sageMakerPublicHubContentArn = jsonValue.GetString("SageMakerPublicHubContentArn");
+
+  }
+
+  if(jsonValue.ValueExists("ReferenceMinVersion"))
+  {
+    m_referenceMinVersion = jsonValue.GetString("ReferenceMinVersion");
+
+  }
+
+  if(jsonValue.ValueExists("SupportStatus"))
+  {
+    m_supportStatus = HubContentSupportStatusMapper::GetHubContentSupportStatusForName(jsonValue.GetString("SupportStatus"));
 
   }
 

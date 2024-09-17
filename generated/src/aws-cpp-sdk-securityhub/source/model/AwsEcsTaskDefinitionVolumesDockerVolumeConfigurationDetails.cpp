@@ -28,13 +28,8 @@ AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails::AwsEcsTaskDefinitio
 {
 }
 
-AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails(JsonView jsonValue) : 
-    m_autoprovision(false),
-    m_autoprovisionHasBeenSet(false),
-    m_driverHasBeenSet(false),
-    m_driverOptsHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_scopeHasBeenSet(false)
+AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails()
 {
   *this = jsonValue;
 }

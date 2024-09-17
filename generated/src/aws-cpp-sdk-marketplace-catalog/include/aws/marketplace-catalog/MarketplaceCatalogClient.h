@@ -82,8 +82,9 @@ namespace MarketplaceCatalog
         virtual ~MarketplaceCatalogClient();
 
         /**
-         * <p>Returns metadata and content for multiple entities.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns metadata and content for multiple entities. This is the Batch version
+         * of the <code>DescribeEntity</code> API and uses the same IAM permission action
+         * as <code>DescribeEntity</code> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">AWS
          * API Reference</a></p>
          */
@@ -459,7 +460,6 @@ namespace MarketplaceCatalog
       void init(const MarketplaceCatalogClientConfiguration& clientConfiguration);
 
       MarketplaceCatalogClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<MarketplaceCatalogEndpointProviderBase> m_endpointProvider;
   };
 

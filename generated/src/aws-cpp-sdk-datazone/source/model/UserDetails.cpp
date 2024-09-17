@@ -23,8 +23,8 @@ UserDetails::UserDetails() :
 {
 }
 
-UserDetails::UserDetails(JsonView jsonValue) : 
-    m_userIdHasBeenSet(false)
+UserDetails::UserDetails(JsonView jsonValue)
+  : UserDetails()
 {
   *this = jsonValue;
 }

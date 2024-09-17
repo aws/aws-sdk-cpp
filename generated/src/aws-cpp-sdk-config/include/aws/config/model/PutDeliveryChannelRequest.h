@@ -38,42 +38,18 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The configuration delivery channel object that delivers the configuration
      * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
      */
     inline const DeliveryChannel& GetDeliveryChannel() const{ return m_deliveryChannel; }
-
-    /**
-     * <p>The configuration delivery channel object that delivers the configuration
-     * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-     */
     inline bool DeliveryChannelHasBeenSet() const { return m_deliveryChannelHasBeenSet; }
-
-    /**
-     * <p>The configuration delivery channel object that delivers the configuration
-     * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-     */
     inline void SetDeliveryChannel(const DeliveryChannel& value) { m_deliveryChannelHasBeenSet = true; m_deliveryChannel = value; }
-
-    /**
-     * <p>The configuration delivery channel object that delivers the configuration
-     * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-     */
     inline void SetDeliveryChannel(DeliveryChannel&& value) { m_deliveryChannelHasBeenSet = true; m_deliveryChannel = std::move(value); }
-
-    /**
-     * <p>The configuration delivery channel object that delivers the configuration
-     * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-     */
     inline PutDeliveryChannelRequest& WithDeliveryChannel(const DeliveryChannel& value) { SetDeliveryChannel(value); return *this;}
-
-    /**
-     * <p>The configuration delivery channel object that delivers the configuration
-     * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-     */
     inline PutDeliveryChannelRequest& WithDeliveryChannel(DeliveryChannel&& value) { SetDeliveryChannel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DeliveryChannel m_deliveryChannel;

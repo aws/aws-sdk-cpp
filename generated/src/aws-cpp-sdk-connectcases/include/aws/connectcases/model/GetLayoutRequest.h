@@ -32,87 +32,33 @@ namespace Model
     AWS_CONNECTCASES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline GetLayoutRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline GetLayoutRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
     inline GetLayoutRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the layout.</p>
      */
     inline const Aws::String& GetLayoutId() const{ return m_layoutId; }
-
-    /**
-     * <p>The unique identifier of the layout.</p>
-     */
     inline bool LayoutIdHasBeenSet() const { return m_layoutIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the layout.</p>
-     */
     inline void SetLayoutId(const Aws::String& value) { m_layoutIdHasBeenSet = true; m_layoutId = value; }
-
-    /**
-     * <p>The unique identifier of the layout.</p>
-     */
     inline void SetLayoutId(Aws::String&& value) { m_layoutIdHasBeenSet = true; m_layoutId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the layout.</p>
-     */
     inline void SetLayoutId(const char* value) { m_layoutIdHasBeenSet = true; m_layoutId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the layout.</p>
-     */
     inline GetLayoutRequest& WithLayoutId(const Aws::String& value) { SetLayoutId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the layout.</p>
-     */
     inline GetLayoutRequest& WithLayoutId(Aws::String&& value) { SetLayoutId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the layout.</p>
-     */
     inline GetLayoutRequest& WithLayoutId(const char* value) { SetLayoutId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainId;

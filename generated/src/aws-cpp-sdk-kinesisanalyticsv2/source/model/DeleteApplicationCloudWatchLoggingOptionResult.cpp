@@ -22,8 +22,8 @@ DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggi
 {
 }
 
-DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteApplicationCloudWatchLoggingOptionResult()
 {
   *this = result;
 }
@@ -50,6 +50,12 @@ DeleteApplicationCloudWatchLoggingOptionResult& DeleteApplicationCloudWatchLoggi
     {
       m_cloudWatchLoggingOptionDescriptions.push_back(cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("OperationId"))
+  {
+    m_operationId = jsonValue.GetString("OperationId");
+
   }
 
 

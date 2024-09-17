@@ -26,11 +26,8 @@ ListTagOptionsFilters::ListTagOptionsFilters() :
 {
 }
 
-ListTagOptionsFilters::ListTagOptionsFilters(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
+ListTagOptionsFilters::ListTagOptionsFilters(JsonView jsonValue)
+  : ListTagOptionsFilters()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ ResponseSpecification::ResponseSpecification() :
 {
 }
 
-ResponseSpecification::ResponseSpecification(JsonView jsonValue) : 
-    m_messageGroupsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+ResponseSpecification::ResponseSpecification(JsonView jsonValue)
+  : ResponseSpecification()
 {
   *this = jsonValue;
 }

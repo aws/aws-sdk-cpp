@@ -24,9 +24,8 @@ GenerativeReference::GenerativeReference() :
 {
 }
 
-GenerativeReference::GenerativeReference(JsonView jsonValue) : 
-    m_generationIdHasBeenSet(false),
-    m_modelIdHasBeenSet(false)
+GenerativeReference::GenerativeReference(JsonView jsonValue)
+  : GenerativeReference()
 {
   *this = jsonValue;
 }

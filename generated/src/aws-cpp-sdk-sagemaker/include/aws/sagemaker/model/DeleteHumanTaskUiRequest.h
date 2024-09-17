@@ -34,54 +34,20 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the human task user interface (work task template) you want to
      * delete.</p>
      */
     inline const Aws::String& GetHumanTaskUiName() const{ return m_humanTaskUiName; }
-
-    /**
-     * <p>The name of the human task user interface (work task template) you want to
-     * delete.</p>
-     */
     inline bool HumanTaskUiNameHasBeenSet() const { return m_humanTaskUiNameHasBeenSet; }
-
-    /**
-     * <p>The name of the human task user interface (work task template) you want to
-     * delete.</p>
-     */
     inline void SetHumanTaskUiName(const Aws::String& value) { m_humanTaskUiNameHasBeenSet = true; m_humanTaskUiName = value; }
-
-    /**
-     * <p>The name of the human task user interface (work task template) you want to
-     * delete.</p>
-     */
     inline void SetHumanTaskUiName(Aws::String&& value) { m_humanTaskUiNameHasBeenSet = true; m_humanTaskUiName = std::move(value); }
-
-    /**
-     * <p>The name of the human task user interface (work task template) you want to
-     * delete.</p>
-     */
     inline void SetHumanTaskUiName(const char* value) { m_humanTaskUiNameHasBeenSet = true; m_humanTaskUiName.assign(value); }
-
-    /**
-     * <p>The name of the human task user interface (work task template) you want to
-     * delete.</p>
-     */
     inline DeleteHumanTaskUiRequest& WithHumanTaskUiName(const Aws::String& value) { SetHumanTaskUiName(value); return *this;}
-
-    /**
-     * <p>The name of the human task user interface (work task template) you want to
-     * delete.</p>
-     */
     inline DeleteHumanTaskUiRequest& WithHumanTaskUiName(Aws::String&& value) { SetHumanTaskUiName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the human task user interface (work task template) you want to
-     * delete.</p>
-     */
     inline DeleteHumanTaskUiRequest& WithHumanTaskUiName(const char* value) { SetHumanTaskUiName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_humanTaskUiName;

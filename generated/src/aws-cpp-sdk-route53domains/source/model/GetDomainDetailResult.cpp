@@ -21,15 +21,13 @@ GetDomainDetailResult::GetDomainDetailResult() :
     m_autoRenew(false),
     m_adminPrivacy(false),
     m_registrantPrivacy(false),
-    m_techPrivacy(false)
+    m_techPrivacy(false),
+    m_billingPrivacy(false)
 {
 }
 
-GetDomainDetailResult::GetDomainDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoRenew(false),
-    m_adminPrivacy(false),
-    m_registrantPrivacy(false),
-    m_techPrivacy(false)
+GetDomainDetailResult::GetDomainDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDomainDetailResult()
 {
   *this = result;
 }
@@ -176,6 +174,18 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
     {
       m_dnssecKeys.push_back(dnssecKeysJsonList[dnssecKeysIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("BillingContact"))
+  {
+    m_billingContact = jsonValue.GetObject("BillingContact");
+
+  }
+
+  if(jsonValue.ValueExists("BillingPrivacy"))
+  {
+    m_billingPrivacy = jsonValue.GetBool("BillingPrivacy");
+
   }
 
 

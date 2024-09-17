@@ -29,14 +29,8 @@ ChangeLog::ChangeLog() :
 {
 }
 
-ChangeLog::ChangeLog(JsonView jsonValue) : 
-    m_objectType(ObjectTypeEnum::NOT_SET),
-    m_objectTypeHasBeenSet(false),
-    m_objectNameHasBeenSet(false),
-    m_action(ActionEnum::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+ChangeLog::ChangeLog(JsonView jsonValue)
+  : ChangeLog()
 {
   *this = jsonValue;
 }

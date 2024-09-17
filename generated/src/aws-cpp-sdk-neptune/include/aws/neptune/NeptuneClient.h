@@ -842,13 +842,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBClusterEndpointsOutcome DescribeDBClusterEndpoints(const Model::DescribeDBClusterEndpointsRequest& request) const;
+        virtual Model::DescribeDBClusterEndpointsOutcome DescribeDBClusterEndpoints(const Model::DescribeDBClusterEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBClusterEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBClusterEndpointsRequestT = Model::DescribeDBClusterEndpointsRequest>
-        Model::DescribeDBClusterEndpointsOutcomeCallable DescribeDBClusterEndpointsCallable(const DescribeDBClusterEndpointsRequestT& request) const
+        Model::DescribeDBClusterEndpointsOutcomeCallable DescribeDBClusterEndpointsCallable(const DescribeDBClusterEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBClusterEndpoints, request);
         }
@@ -857,7 +857,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBClusterEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBClusterEndpointsRequestT = Model::DescribeDBClusterEndpointsRequest>
-        void DescribeDBClusterEndpointsAsync(const DescribeDBClusterEndpointsRequestT& request, const DescribeDBClusterEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBClusterEndpointsAsync(const DescribeDBClusterEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBClusterEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBClusterEndpoints, request, handler, context);
         }
@@ -870,13 +870,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBClusterParameterGroupsOutcome DescribeDBClusterParameterGroups(const Model::DescribeDBClusterParameterGroupsRequest& request) const;
+        virtual Model::DescribeDBClusterParameterGroupsOutcome DescribeDBClusterParameterGroups(const Model::DescribeDBClusterParameterGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBClusterParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBClusterParameterGroupsRequestT = Model::DescribeDBClusterParameterGroupsRequest>
-        Model::DescribeDBClusterParameterGroupsOutcomeCallable DescribeDBClusterParameterGroupsCallable(const DescribeDBClusterParameterGroupsRequestT& request) const
+        Model::DescribeDBClusterParameterGroupsOutcomeCallable DescribeDBClusterParameterGroupsCallable(const DescribeDBClusterParameterGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBClusterParameterGroups, request);
         }
@@ -885,7 +885,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBClusterParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBClusterParameterGroupsRequestT = Model::DescribeDBClusterParameterGroupsRequest>
-        void DescribeDBClusterParameterGroupsAsync(const DescribeDBClusterParameterGroupsRequestT& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBClusterParameterGroupsAsync(const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBClusterParameterGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBClusterParameterGroups, request, handler, context);
         }
@@ -958,13 +958,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBClusterSnapshotsOutcome DescribeDBClusterSnapshots(const Model::DescribeDBClusterSnapshotsRequest& request) const;
+        virtual Model::DescribeDBClusterSnapshotsOutcome DescribeDBClusterSnapshots(const Model::DescribeDBClusterSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBClusterSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBClusterSnapshotsRequestT = Model::DescribeDBClusterSnapshotsRequest>
-        Model::DescribeDBClusterSnapshotsOutcomeCallable DescribeDBClusterSnapshotsCallable(const DescribeDBClusterSnapshotsRequestT& request) const
+        Model::DescribeDBClusterSnapshotsOutcomeCallable DescribeDBClusterSnapshotsCallable(const DescribeDBClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBClusterSnapshots, request);
         }
@@ -973,7 +973,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBClusterSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBClusterSnapshotsRequestT = Model::DescribeDBClusterSnapshotsRequest>
-        void DescribeDBClusterSnapshotsAsync(const DescribeDBClusterSnapshotsRequestT& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBClusterSnapshotsAsync(const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBClusterSnapshots, request, handler, context);
         }
@@ -985,13 +985,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBClustersOutcome DescribeDBClusters(const Model::DescribeDBClustersRequest& request) const;
+        virtual Model::DescribeDBClustersOutcome DescribeDBClusters(const Model::DescribeDBClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBClustersRequestT = Model::DescribeDBClustersRequest>
-        Model::DescribeDBClustersOutcomeCallable DescribeDBClustersCallable(const DescribeDBClustersRequestT& request) const
+        Model::DescribeDBClustersOutcomeCallable DescribeDBClustersCallable(const DescribeDBClustersRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBClusters, request);
         }
@@ -1000,7 +1000,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBClustersRequestT = Model::DescribeDBClustersRequest>
-        void DescribeDBClustersAsync(const DescribeDBClustersRequestT& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBClustersAsync(const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBClustersRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBClusters, request, handler, context);
         }
@@ -1010,13 +1010,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBEngineVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBEngineVersionsOutcome DescribeDBEngineVersions(const Model::DescribeDBEngineVersionsRequest& request) const;
+        virtual Model::DescribeDBEngineVersionsOutcome DescribeDBEngineVersions(const Model::DescribeDBEngineVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBEngineVersionsRequestT = Model::DescribeDBEngineVersionsRequest>
-        Model::DescribeDBEngineVersionsOutcomeCallable DescribeDBEngineVersionsCallable(const DescribeDBEngineVersionsRequestT& request) const
+        Model::DescribeDBEngineVersionsOutcomeCallable DescribeDBEngineVersionsCallable(const DescribeDBEngineVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBEngineVersions, request);
         }
@@ -1025,7 +1025,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBEngineVersionsRequestT = Model::DescribeDBEngineVersionsRequest>
-        void DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsRequestT& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBEngineVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBEngineVersions, request, handler, context);
         }
@@ -1037,13 +1037,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest& request) const;
+        virtual Model::DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBInstancesRequestT = Model::DescribeDBInstancesRequest>
-        Model::DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const DescribeDBInstancesRequestT& request) const
+        Model::DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const DescribeDBInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBInstances, request);
         }
@@ -1052,7 +1052,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBInstancesRequestT = Model::DescribeDBInstancesRequest>
-        void DescribeDBInstancesAsync(const DescribeDBInstancesRequestT& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBInstancesAsync(const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBInstances, request, handler, context);
         }
@@ -1064,13 +1064,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameterGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBParameterGroupsOutcome DescribeDBParameterGroups(const Model::DescribeDBParameterGroupsRequest& request) const;
+        virtual Model::DescribeDBParameterGroupsOutcome DescribeDBParameterGroups(const Model::DescribeDBParameterGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBParameterGroupsRequestT = Model::DescribeDBParameterGroupsRequest>
-        Model::DescribeDBParameterGroupsOutcomeCallable DescribeDBParameterGroupsCallable(const DescribeDBParameterGroupsRequestT& request) const
+        Model::DescribeDBParameterGroupsOutcomeCallable DescribeDBParameterGroupsCallable(const DescribeDBParameterGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBParameterGroups, request);
         }
@@ -1079,7 +1079,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBParameterGroupsRequestT = Model::DescribeDBParameterGroupsRequest>
-        void DescribeDBParameterGroupsAsync(const DescribeDBParameterGroupsRequestT& request, const DescribeDBParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBParameterGroupsAsync(const DescribeDBParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBParameterGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBParameterGroups, request, handler, context);
         }
@@ -1119,13 +1119,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBSubnetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDBSubnetGroupsOutcome DescribeDBSubnetGroups(const Model::DescribeDBSubnetGroupsRequest& request) const;
+        virtual Model::DescribeDBSubnetGroupsOutcome DescribeDBSubnetGroups(const Model::DescribeDBSubnetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDBSubnetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDBSubnetGroupsRequestT = Model::DescribeDBSubnetGroupsRequest>
-        Model::DescribeDBSubnetGroupsOutcomeCallable DescribeDBSubnetGroupsCallable(const DescribeDBSubnetGroupsRequestT& request) const
+        Model::DescribeDBSubnetGroupsOutcomeCallable DescribeDBSubnetGroupsCallable(const DescribeDBSubnetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeDBSubnetGroups, request);
         }
@@ -1134,7 +1134,7 @@ namespace Neptune
          * An Async wrapper for DescribeDBSubnetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDBSubnetGroupsRequestT = Model::DescribeDBSubnetGroupsRequest>
-        void DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsRequestT& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDBSubnetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeDBSubnetGroups, request, handler, context);
         }
@@ -1197,13 +1197,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventCategories">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
+        virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventCategories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventCategoriesRequestT = Model::DescribeEventCategoriesRequest>
-        Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const DescribeEventCategoriesRequestT& request) const
+        Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const DescribeEventCategoriesRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeEventCategories, request);
         }
@@ -1212,7 +1212,7 @@ namespace Neptune
          * An Async wrapper for DescribeEventCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventCategoriesRequestT = Model::DescribeEventCategoriesRequest>
-        void DescribeEventCategoriesAsync(const DescribeEventCategoriesRequestT& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventCategoriesAsync(const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventCategoriesRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeEventCategories, request, handler, context);
         }
@@ -1226,13 +1226,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
+        virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventSubscriptionsRequestT = Model::DescribeEventSubscriptionsRequest>
-        Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const DescribeEventSubscriptionsRequestT& request) const
+        Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const DescribeEventSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeEventSubscriptions, request);
         }
@@ -1241,7 +1241,7 @@ namespace Neptune
          * An Async wrapper for DescribeEventSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventSubscriptionsRequestT = Model::DescribeEventSubscriptionsRequest>
-        void DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequestT& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeEventSubscriptions, request, handler, context);
         }
@@ -1255,13 +1255,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request) const
+        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeEvents, request);
         }
@@ -1270,7 +1270,7 @@ namespace Neptune
          * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        void DescribeEventsAsync(const DescribeEventsRequestT& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeEvents, request, handler, context);
         }
@@ -1281,13 +1281,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGlobalClustersOutcome DescribeGlobalClusters(const Model::DescribeGlobalClustersRequest& request) const;
+        virtual Model::DescribeGlobalClustersOutcome DescribeGlobalClusters(const Model::DescribeGlobalClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGlobalClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGlobalClustersRequestT = Model::DescribeGlobalClustersRequest>
-        Model::DescribeGlobalClustersOutcomeCallable DescribeGlobalClustersCallable(const DescribeGlobalClustersRequestT& request) const
+        Model::DescribeGlobalClustersOutcomeCallable DescribeGlobalClustersCallable(const DescribeGlobalClustersRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribeGlobalClusters, request);
         }
@@ -1296,7 +1296,7 @@ namespace Neptune
          * An Async wrapper for DescribeGlobalClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGlobalClustersRequestT = Model::DescribeGlobalClustersRequest>
-        void DescribeGlobalClustersAsync(const DescribeGlobalClustersRequestT& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGlobalClustersAsync(const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGlobalClustersRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribeGlobalClusters, request, handler, context);
         }
@@ -1333,13 +1333,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribePendingMaintenanceActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePendingMaintenanceActionsOutcome DescribePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest& request) const;
+        virtual Model::DescribePendingMaintenanceActionsOutcome DescribePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePendingMaintenanceActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePendingMaintenanceActionsRequestT = Model::DescribePendingMaintenanceActionsRequest>
-        Model::DescribePendingMaintenanceActionsOutcomeCallable DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequestT& request) const
+        Model::DescribePendingMaintenanceActionsOutcomeCallable DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::DescribePendingMaintenanceActions, request);
         }
@@ -1348,7 +1348,7 @@ namespace Neptune
          * An Async wrapper for DescribePendingMaintenanceActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePendingMaintenanceActionsRequestT = Model::DescribePendingMaintenanceActionsRequest>
-        void DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequestT& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePendingMaintenanceActionsRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::DescribePendingMaintenanceActions, request, handler, context);
         }
@@ -1393,13 +1393,13 @@ namespace Neptune
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          */
-        virtual Model::FailoverDBClusterOutcome FailoverDBCluster(const Model::FailoverDBClusterRequest& request) const;
+        virtual Model::FailoverDBClusterOutcome FailoverDBCluster(const Model::FailoverDBClusterRequest& request = {}) const;
 
         /**
          * A Callable wrapper for FailoverDBCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename FailoverDBClusterRequestT = Model::FailoverDBClusterRequest>
-        Model::FailoverDBClusterOutcomeCallable FailoverDBClusterCallable(const FailoverDBClusterRequestT& request) const
+        Model::FailoverDBClusterOutcomeCallable FailoverDBClusterCallable(const FailoverDBClusterRequestT& request = {}) const
         {
             return SubmitCallable(&NeptuneClient::FailoverDBCluster, request);
         }
@@ -1408,7 +1408,7 @@ namespace Neptune
          * An Async wrapper for FailoverDBCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename FailoverDBClusterRequestT = Model::FailoverDBClusterRequest>
-        void FailoverDBClusterAsync(const FailoverDBClusterRequestT& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void FailoverDBClusterAsync(const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const FailoverDBClusterRequestT& request = {}) const
         {
             return SubmitAsync(&NeptuneClient::FailoverDBCluster, request, handler, context);
         }
@@ -2121,7 +2121,6 @@ namespace Neptune
         void init(const NeptuneClientConfiguration& clientConfiguration);
 
         NeptuneClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<NeptuneEndpointProviderBase> m_endpointProvider;
   };
 

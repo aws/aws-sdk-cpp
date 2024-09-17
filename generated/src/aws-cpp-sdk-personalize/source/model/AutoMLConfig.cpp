@@ -24,9 +24,8 @@ AutoMLConfig::AutoMLConfig() :
 {
 }
 
-AutoMLConfig::AutoMLConfig(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_recipeListHasBeenSet(false)
+AutoMLConfig::AutoMLConfig(JsonView jsonValue)
+  : AutoMLConfig()
 {
   *this = jsonValue;
 }

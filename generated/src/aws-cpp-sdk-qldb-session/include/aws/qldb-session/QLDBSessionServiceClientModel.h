@@ -19,6 +19,7 @@
 
 /* Service model headers required in QLDBSessionClient header */
 #include <aws/qldb-session/model/SendCommandResult.h>
+#include <aws/qldb-session/model/SendCommandRequest.h>
 /* End of service model headers required in QLDBSessionClient header */
 
 namespace Aws
@@ -52,7 +53,7 @@ namespace Aws
 
   namespace QLDBSession
   {
-    using QLDBSessionClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QLDBSessionClientConfiguration = Aws::Client::GenericClientConfiguration;
     using QLDBSessionEndpointProviderBase = Aws::QLDBSession::Endpoint::QLDBSessionEndpointProviderBase;
     using QLDBSessionEndpointProvider = Aws::QLDBSession::Endpoint::QLDBSessionEndpointProvider;
 

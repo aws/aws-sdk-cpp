@@ -36,72 +36,36 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Security Hub default value for a control parameter that is a double.
      * </p>
      */
     inline double GetDefaultValue() const{ return m_defaultValue; }
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a double.
-     * </p>
-     */
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a double.
-     * </p>
-     */
     inline void SetDefaultValue(double value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a double.
-     * </p>
-     */
     inline DoubleConfigurationOptions& WithDefaultValue(double value) { SetDefaultValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The minimum valid value for a control parameter that is a double. </p>
      */
     inline double GetMin() const{ return m_min; }
-
-    /**
-     * <p> The minimum valid value for a control parameter that is a double. </p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p> The minimum valid value for a control parameter that is a double. </p>
-     */
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p> The minimum valid value for a control parameter that is a double. </p>
-     */
     inline DoubleConfigurationOptions& WithMin(double value) { SetMin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The maximum valid value for a control parameter that is a double. </p>
      */
     inline double GetMax() const{ return m_max; }
-
-    /**
-     * <p> The maximum valid value for a control parameter that is a double. </p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p> The maximum valid value for a control parameter that is a double. </p>
-     */
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p> The maximum valid value for a control parameter that is a double. </p>
-     */
     inline DoubleConfigurationOptions& WithMax(double value) { SetMax(value); return *this;}
-
+    ///@}
   private:
 
     double m_defaultValue;

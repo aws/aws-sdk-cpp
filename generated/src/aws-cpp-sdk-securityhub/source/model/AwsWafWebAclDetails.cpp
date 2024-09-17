@@ -26,11 +26,8 @@ AwsWafWebAclDetails::AwsWafWebAclDetails() :
 {
 }
 
-AwsWafWebAclDetails::AwsWafWebAclDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_webAclIdHasBeenSet(false)
+AwsWafWebAclDetails::AwsWafWebAclDetails(JsonView jsonValue)
+  : AwsWafWebAclDetails()
 {
   *this = jsonValue;
 }

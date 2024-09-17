@@ -24,9 +24,8 @@ ChangeServerLifeCycleStateSourceServerLifecycle::ChangeServerLifeCycleStateSourc
 {
 }
 
-ChangeServerLifeCycleStateSourceServerLifecycle::ChangeServerLifeCycleStateSourceServerLifecycle(JsonView jsonValue) : 
-    m_state(ChangeServerLifeCycleStateSourceServerLifecycleState::NOT_SET),
-    m_stateHasBeenSet(false)
+ChangeServerLifeCycleStateSourceServerLifecycle::ChangeServerLifeCycleStateSourceServerLifecycle(JsonView jsonValue)
+  : ChangeServerLifeCycleStateSourceServerLifecycle()
 {
   *this = jsonValue;
 }

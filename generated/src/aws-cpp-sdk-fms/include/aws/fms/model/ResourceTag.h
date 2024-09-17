@@ -32,7 +32,12 @@ namespace Model
    * add more than one tag to a policy scope, a resource must have all the specified
    * tags to be included or excluded. For more information, see <a
    * href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working
-   * with Tag Editor</a>.</p><p><h3>See Also:</h3>   <a
+   * with Tag Editor</a>.</p> <p>Every resource tag must have a string value, either
+   * a non-empty string or an empty string. If you don't provide a value for a
+   * resource tag, Firewall Manager saves the value as an empty string: "". When
+   * Firewall Manager compares tags, it only matches two tags if they have the same
+   * key and the same value. A tag with an empty string value only matches with tags
+   * that also have an empty string value. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ResourceTag">AWS API
    * Reference</a></p>
    */
@@ -45,87 +50,34 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resource tag key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The resource tag key.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The resource tag key.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The resource tag key.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The resource tag key.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The resource tag key.</p>
-     */
     inline ResourceTag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The resource tag key.</p>
-     */
     inline ResourceTag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource tag key.</p>
-     */
     inline ResourceTag& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The resource tag value.</p>
+     * <p>The resource tag value. To specify an empty string value, either don't
+     * provide this or specify it as "". </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The resource tag value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The resource tag value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The resource tag value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The resource tag value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The resource tag value.</p>
-     */
     inline ResourceTag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The resource tag value.</p>
-     */
     inline ResourceTag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource tag value.</p>
-     */
     inline ResourceTag& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

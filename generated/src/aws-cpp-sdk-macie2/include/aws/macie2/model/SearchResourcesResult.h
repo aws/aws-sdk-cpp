@@ -34,113 +34,44 @@ namespace Model
     AWS_MACIE2_API SearchResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline const Aws::Vector<MatchingResource>& GetMatchingResources() const{ return m_matchingResources; }
-
-    /**
-     * <p>An array of objects, one for each resource that matches the filter criteria
-     * specified in the request.</p>
-     */
     inline void SetMatchingResources(const Aws::Vector<MatchingResource>& value) { m_matchingResources = value; }
-
-    /**
-     * <p>An array of objects, one for each resource that matches the filter criteria
-     * specified in the request.</p>
-     */
     inline void SetMatchingResources(Aws::Vector<MatchingResource>&& value) { m_matchingResources = std::move(value); }
-
-    /**
-     * <p>An array of objects, one for each resource that matches the filter criteria
-     * specified in the request.</p>
-     */
     inline SearchResourcesResult& WithMatchingResources(const Aws::Vector<MatchingResource>& value) { SetMatchingResources(value); return *this;}
-
-    /**
-     * <p>An array of objects, one for each resource that matches the filter criteria
-     * specified in the request.</p>
-     */
     inline SearchResourcesResult& WithMatchingResources(Aws::Vector<MatchingResource>&& value) { SetMatchingResources(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects, one for each resource that matches the filter criteria
-     * specified in the request.</p>
-     */
     inline SearchResourcesResult& AddMatchingResources(const MatchingResource& value) { m_matchingResources.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects, one for each resource that matches the filter criteria
-     * specified in the request.</p>
-     */
     inline SearchResourcesResult& AddMatchingResources(MatchingResource&& value) { m_matchingResources.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline SearchResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline SearchResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
     inline SearchResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SearchResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SearchResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SearchResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MatchingResource> m_matchingResources;

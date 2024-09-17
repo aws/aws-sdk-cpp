@@ -33,53 +33,27 @@ namespace Model
     AWS_WELLARCHITECTED_API GetProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The profile.</p>
      */
     inline const Profile& GetProfile() const{ return m_profile; }
-
-    /**
-     * <p>The profile.</p>
-     */
     inline void SetProfile(const Profile& value) { m_profile = value; }
-
-    /**
-     * <p>The profile.</p>
-     */
     inline void SetProfile(Profile&& value) { m_profile = std::move(value); }
-
-    /**
-     * <p>The profile.</p>
-     */
     inline GetProfileResult& WithProfile(const Profile& value) { SetProfile(value); return *this;}
-
-    /**
-     * <p>The profile.</p>
-     */
     inline GetProfileResult& WithProfile(Profile&& value) { SetProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Profile m_profile;

@@ -26,11 +26,8 @@ App::App() :
 {
 }
 
-App::App(JsonView jsonValue) : 
-    m_appNameHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+App::App(JsonView jsonValue)
+  : App()
 {
   *this = jsonValue;
 }

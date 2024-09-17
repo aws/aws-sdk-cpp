@@ -23,8 +23,8 @@ CodegenJobAsset::CodegenJobAsset() :
 {
 }
 
-CodegenJobAsset::CodegenJobAsset(JsonView jsonValue) : 
-    m_downloadUrlHasBeenSet(false)
+CodegenJobAsset::CodegenJobAsset(JsonView jsonValue)
+  : CodegenJobAsset()
 {
   *this = jsonValue;
 }

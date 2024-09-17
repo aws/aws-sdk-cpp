@@ -34,19 +34,8 @@ ReactStartCodegenJobData::ReactStartCodegenJobData() :
 {
 }
 
-ReactStartCodegenJobData::ReactStartCodegenJobData(JsonView jsonValue) : 
-    m_module(JSModule::NOT_SET),
-    m_moduleHasBeenSet(false),
-    m_target(JSTarget::NOT_SET),
-    m_targetHasBeenSet(false),
-    m_script(JSScript::NOT_SET),
-    m_scriptHasBeenSet(false),
-    m_renderTypeDeclarations(false),
-    m_renderTypeDeclarationsHasBeenSet(false),
-    m_inlineSourceMap(false),
-    m_inlineSourceMapHasBeenSet(false),
-    m_apiConfigurationHasBeenSet(false),
-    m_dependenciesHasBeenSet(false)
+ReactStartCodegenJobData::ReactStartCodegenJobData(JsonView jsonValue)
+  : ReactStartCodegenJobData()
 {
   *this = jsonValue;
 }

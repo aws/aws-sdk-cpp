@@ -23,8 +23,8 @@ StreamProcessorNotificationChannel::StreamProcessorNotificationChannel() :
 {
 }
 
-StreamProcessorNotificationChannel::StreamProcessorNotificationChannel(JsonView jsonValue) : 
-    m_sNSTopicArnHasBeenSet(false)
+StreamProcessorNotificationChannel::StreamProcessorNotificationChannel(JsonView jsonValue)
+  : StreamProcessorNotificationChannel()
 {
   *this = jsonValue;
 }

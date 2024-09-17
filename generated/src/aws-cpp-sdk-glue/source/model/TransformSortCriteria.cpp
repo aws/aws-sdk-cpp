@@ -26,11 +26,8 @@ TransformSortCriteria::TransformSortCriteria() :
 {
 }
 
-TransformSortCriteria::TransformSortCriteria(JsonView jsonValue) : 
-    m_column(TransformSortColumnType::NOT_SET),
-    m_columnHasBeenSet(false),
-    m_sortDirection(SortDirectionType::NOT_SET),
-    m_sortDirectionHasBeenSet(false)
+TransformSortCriteria::TransformSortCriteria(JsonView jsonValue)
+  : TransformSortCriteria()
 {
   *this = jsonValue;
 }

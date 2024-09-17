@@ -23,9 +23,8 @@ CreateWorldGenerationJobResult::CreateWorldGenerationJobResult() :
 {
 }
 
-CreateWorldGenerationJobResult::CreateWorldGenerationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(WorldGenerationJobStatus::NOT_SET),
-    m_failureCode(WorldGenerationJobErrorCode::NOT_SET)
+CreateWorldGenerationJobResult::CreateWorldGenerationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateWorldGenerationJobResult()
 {
   *this = result;
 }

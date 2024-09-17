@@ -35,46 +35,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * A request to stop a running channel
      */
     inline const Aws::String& GetChannelId() const{ return m_channelId; }
-
-    /**
-     * A request to stop a running channel
-     */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-
-    /**
-     * A request to stop a running channel
-     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-
-    /**
-     * A request to stop a running channel
-     */
     inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-
-    /**
-     * A request to stop a running channel
-     */
     inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-
-    /**
-     * A request to stop a running channel
-     */
     inline StopChannelRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-
-    /**
-     * A request to stop a running channel
-     */
     inline StopChannelRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-
-    /**
-     * A request to stop a running channel
-     */
     inline StopChannelRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelId;

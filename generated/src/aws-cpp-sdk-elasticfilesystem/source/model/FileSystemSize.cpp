@@ -31,16 +31,8 @@ FileSystemSize::FileSystemSize() :
 {
 }
 
-FileSystemSize::FileSystemSize(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_valueInIA(0),
-    m_valueInIAHasBeenSet(false),
-    m_valueInStandard(0),
-    m_valueInStandardHasBeenSet(false),
-    m_valueInArchive(0),
-    m_valueInArchiveHasBeenSet(false)
+FileSystemSize::FileSystemSize(JsonView jsonValue)
+  : FileSystemSize()
 {
   *this = jsonValue;
 }

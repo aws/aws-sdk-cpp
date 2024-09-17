@@ -22,8 +22,8 @@ ListStreamsResult::ListStreamsResult() :
 {
 }
 
-ListStreamsResult::ListStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hasMoreStreams(false)
+ListStreamsResult::ListStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListStreamsResult()
 {
   *this = result;
 }

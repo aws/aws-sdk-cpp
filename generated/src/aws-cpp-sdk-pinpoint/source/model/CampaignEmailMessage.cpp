@@ -21,16 +21,14 @@ namespace Model
 CampaignEmailMessage::CampaignEmailMessage() : 
     m_bodyHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
+    m_headersHasBeenSet(false),
     m_htmlBodyHasBeenSet(false),
     m_titleHasBeenSet(false)
 {
 }
 
-CampaignEmailMessage::CampaignEmailMessage(JsonView jsonValue) : 
-    m_bodyHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_htmlBodyHasBeenSet(false),
-    m_titleHasBeenSet(false)
+CampaignEmailMessage::CampaignEmailMessage(JsonView jsonValue)
+  : CampaignEmailMessage()
 {
   *this = jsonValue;
 }
@@ -49,6 +47,16 @@ CampaignEmailMessage& CampaignEmailMessage::operator =(JsonView jsonValue)
     m_fromAddress = jsonValue.GetString("FromAddress");
 
     m_fromAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Headers"))
+  {
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
+    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+    {
+      m_headers.push_back(headersJsonList[headersIndex].AsObject());
+    }
+    m_headersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("HtmlBody"))
@@ -81,6 +89,17 @@ JsonValue CampaignEmailMessage::Jsonize() const
   if(m_fromAddressHasBeenSet)
   {
    payload.WithString("FromAddress", m_fromAddress);
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+   {
+     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+   }
+   payload.WithArray("Headers", std::move(headersJsonList));
 
   }
 

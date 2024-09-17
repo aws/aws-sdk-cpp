@@ -39,6 +39,11 @@
 #include <aws/dax/model/UpdateClusterResult.h>
 #include <aws/dax/model/UpdateParameterGroupResult.h>
 #include <aws/dax/model/UpdateSubnetGroupResult.h>
+#include <aws/dax/model/DescribeClustersRequest.h>
+#include <aws/dax/model/DescribeEventsRequest.h>
+#include <aws/dax/model/DescribeParameterGroupsRequest.h>
+#include <aws/dax/model/DescribeDefaultParametersRequest.h>
+#include <aws/dax/model/DescribeSubnetGroupsRequest.h>
 /* End of service model headers required in DAXClient header */
 
 namespace Aws
@@ -72,7 +77,7 @@ namespace Aws
 
   namespace DAX
   {
-    using DAXClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DAXClientConfiguration = Aws::Client::GenericClientConfiguration;
     using DAXEndpointProviderBase = Aws::DAX::Endpoint::DAXEndpointProviderBase;
     using DAXEndpointProvider = Aws::DAX::Endpoint::DAXEndpointProvider;
 

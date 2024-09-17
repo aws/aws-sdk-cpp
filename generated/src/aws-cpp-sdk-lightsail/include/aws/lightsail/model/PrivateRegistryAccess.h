@@ -43,6 +43,7 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that describes the activation status of the role that you can use
      * to grant a Lightsail container service access to Amazon ECR private
@@ -50,47 +51,12 @@ namespace Model
      * role is also listed.</p>
      */
     inline const ContainerServiceECRImagePullerRole& GetEcrImagePullerRole() const{ return m_ecrImagePullerRole; }
-
-    /**
-     * <p>An object that describes the activation status of the role that you can use
-     * to grant a Lightsail container service access to Amazon ECR private
-     * repositories. If the role is activated, the Amazon Resource Name (ARN) of the
-     * role is also listed.</p>
-     */
     inline bool EcrImagePullerRoleHasBeenSet() const { return m_ecrImagePullerRoleHasBeenSet; }
-
-    /**
-     * <p>An object that describes the activation status of the role that you can use
-     * to grant a Lightsail container service access to Amazon ECR private
-     * repositories. If the role is activated, the Amazon Resource Name (ARN) of the
-     * role is also listed.</p>
-     */
     inline void SetEcrImagePullerRole(const ContainerServiceECRImagePullerRole& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = value; }
-
-    /**
-     * <p>An object that describes the activation status of the role that you can use
-     * to grant a Lightsail container service access to Amazon ECR private
-     * repositories. If the role is activated, the Amazon Resource Name (ARN) of the
-     * role is also listed.</p>
-     */
     inline void SetEcrImagePullerRole(ContainerServiceECRImagePullerRole&& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = std::move(value); }
-
-    /**
-     * <p>An object that describes the activation status of the role that you can use
-     * to grant a Lightsail container service access to Amazon ECR private
-     * repositories. If the role is activated, the Amazon Resource Name (ARN) of the
-     * role is also listed.</p>
-     */
     inline PrivateRegistryAccess& WithEcrImagePullerRole(const ContainerServiceECRImagePullerRole& value) { SetEcrImagePullerRole(value); return *this;}
-
-    /**
-     * <p>An object that describes the activation status of the role that you can use
-     * to grant a Lightsail container service access to Amazon ECR private
-     * repositories. If the role is activated, the Amazon Resource Name (ARN) of the
-     * role is also listed.</p>
-     */
     inline PrivateRegistryAccess& WithEcrImagePullerRole(ContainerServiceECRImagePullerRole&& value) { SetEcrImagePullerRole(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContainerServiceECRImagePullerRole m_ecrImagePullerRole;

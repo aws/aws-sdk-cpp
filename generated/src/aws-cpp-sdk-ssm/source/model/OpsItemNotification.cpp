@@ -23,8 +23,8 @@ OpsItemNotification::OpsItemNotification() :
 {
 }
 
-OpsItemNotification::OpsItemNotification(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+OpsItemNotification::OpsItemNotification(JsonView jsonValue)
+  : OpsItemNotification()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SearchResourcesBucketCriteria::SearchResourcesBucketCriteria() :
 {
 }
 
-SearchResourcesBucketCriteria::SearchResourcesBucketCriteria(JsonView jsonValue) : 
-    m_excludesHasBeenSet(false),
-    m_includesHasBeenSet(false)
+SearchResourcesBucketCriteria::SearchResourcesBucketCriteria(JsonView jsonValue)
+  : SearchResourcesBucketCriteria()
 {
   *this = jsonValue;
 }

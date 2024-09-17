@@ -21,14 +21,15 @@ namespace Model
 DataIntegrationAssociationSummary::DataIntegrationAssociationSummary() : 
     m_dataIntegrationAssociationArnHasBeenSet(false),
     m_dataIntegrationArnHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+    m_clientIdHasBeenSet(false),
+    m_destinationURIHasBeenSet(false),
+    m_lastExecutionStatusHasBeenSet(false),
+    m_executionConfigurationHasBeenSet(false)
 {
 }
 
-DataIntegrationAssociationSummary::DataIntegrationAssociationSummary(JsonView jsonValue) : 
-    m_dataIntegrationAssociationArnHasBeenSet(false),
-    m_dataIntegrationArnHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+DataIntegrationAssociationSummary::DataIntegrationAssociationSummary(JsonView jsonValue)
+  : DataIntegrationAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -56,6 +57,27 @@ DataIntegrationAssociationSummary& DataIntegrationAssociationSummary::operator =
     m_clientIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DestinationURI"))
+  {
+    m_destinationURI = jsonValue.GetString("DestinationURI");
+
+    m_destinationURIHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastExecutionStatus"))
+  {
+    m_lastExecutionStatus = jsonValue.GetObject("LastExecutionStatus");
+
+    m_lastExecutionStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionConfiguration"))
+  {
+    m_executionConfiguration = jsonValue.GetObject("ExecutionConfiguration");
+
+    m_executionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +100,24 @@ JsonValue DataIntegrationAssociationSummary::Jsonize() const
   if(m_clientIdHasBeenSet)
   {
    payload.WithString("ClientId", m_clientId);
+
+  }
+
+  if(m_destinationURIHasBeenSet)
+  {
+   payload.WithString("DestinationURI", m_destinationURI);
+
+  }
+
+  if(m_lastExecutionStatusHasBeenSet)
+  {
+   payload.WithObject("LastExecutionStatus", m_lastExecutionStatus.Jsonize());
+
+  }
+
+  if(m_executionConfigurationHasBeenSet)
+  {
+   payload.WithObject("ExecutionConfiguration", m_executionConfiguration.Jsonize());
 
   }
 

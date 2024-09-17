@@ -35,18 +35,8 @@ AutoScalingInstanceDetails::AutoScalingInstanceDetails() :
 {
 }
 
-AutoScalingInstanceDetails::AutoScalingInstanceDetails(const XmlNode& xmlNode) : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_lifecycleStateHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_protectedFromScaleIn(false),
-    m_protectedFromScaleInHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+AutoScalingInstanceDetails::AutoScalingInstanceDetails(const XmlNode& xmlNode)
+  : AutoScalingInstanceDetails()
 {
   *this = xmlNode;
 }

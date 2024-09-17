@@ -23,8 +23,8 @@ CloudWatchDashboard::CloudWatchDashboard() :
 {
 }
 
-CloudWatchDashboard::CloudWatchDashboard(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+CloudWatchDashboard::CloudWatchDashboard(JsonView jsonValue)
+  : CloudWatchDashboard()
 {
   *this = jsonValue;
 }

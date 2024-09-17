@@ -38,42 +38,18 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the
      * plugin file stored in Amazon S3.</p>
      */
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
-
-    /**
-     * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the
-     * plugin file stored in Amazon S3.</p>
-     */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-
-    /**
-     * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the
-     * plugin file stored in Amazon S3.</p>
-     */
     inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-
-    /**
-     * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the
-     * plugin file stored in Amazon S3.</p>
-     */
     inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-
-    /**
-     * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the
-     * plugin file stored in Amazon S3.</p>
-     */
     inline CustomPluginLocation& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-
-    /**
-     * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the
-     * plugin file stored in Amazon S3.</p>
-     */
     inline CustomPluginLocation& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Location m_s3Location;

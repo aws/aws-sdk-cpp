@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using PricingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PricingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using PricingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PricingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

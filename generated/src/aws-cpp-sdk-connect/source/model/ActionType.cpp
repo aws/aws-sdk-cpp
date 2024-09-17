@@ -27,6 +27,7 @@ namespace Aws
         static const int CREATE_CASE_HASH = HashingUtils::HashString("CREATE_CASE");
         static const int UPDATE_CASE_HASH = HashingUtils::HashString("UPDATE_CASE");
         static const int END_ASSOCIATED_TASKS_HASH = HashingUtils::HashString("END_ASSOCIATED_TASKS");
+        static const int SUBMIT_AUTO_EVALUATION_HASH = HashingUtils::HashString("SUBMIT_AUTO_EVALUATION");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ActionType::END_ASSOCIATED_TASKS;
           }
+          else if (hashCode == SUBMIT_AUTO_EVALUATION_HASH)
+          {
+            return ActionType::SUBMIT_AUTO_EVALUATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "UPDATE_CASE";
           case ActionType::END_ASSOCIATED_TASKS:
             return "END_ASSOCIATED_TASKS";
+          case ActionType::SUBMIT_AUTO_EVALUATION:
+            return "SUBMIT_AUTO_EVALUATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

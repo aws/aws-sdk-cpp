@@ -24,9 +24,8 @@ DynamoDBv2Action::DynamoDBv2Action() :
 {
 }
 
-DynamoDBv2Action::DynamoDBv2Action(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+DynamoDBv2Action::DynamoDBv2Action(JsonView jsonValue)
+  : DynamoDBv2Action()
 {
   *this = jsonValue;
 }

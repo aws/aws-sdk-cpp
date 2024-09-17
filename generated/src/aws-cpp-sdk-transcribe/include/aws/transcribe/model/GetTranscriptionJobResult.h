@@ -33,58 +33,28 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Provides detailed information about the specified transcription job,
      * including job status and, if applicable, failure reason.</p>
      */
     inline const TranscriptionJob& GetTranscriptionJob() const{ return m_transcriptionJob; }
-
-    /**
-     * <p>Provides detailed information about the specified transcription job,
-     * including job status and, if applicable, failure reason.</p>
-     */
     inline void SetTranscriptionJob(const TranscriptionJob& value) { m_transcriptionJob = value; }
-
-    /**
-     * <p>Provides detailed information about the specified transcription job,
-     * including job status and, if applicable, failure reason.</p>
-     */
     inline void SetTranscriptionJob(TranscriptionJob&& value) { m_transcriptionJob = std::move(value); }
-
-    /**
-     * <p>Provides detailed information about the specified transcription job,
-     * including job status and, if applicable, failure reason.</p>
-     */
     inline GetTranscriptionJobResult& WithTranscriptionJob(const TranscriptionJob& value) { SetTranscriptionJob(value); return *this;}
-
-    /**
-     * <p>Provides detailed information about the specified transcription job,
-     * including job status and, if applicable, failure reason.</p>
-     */
     inline GetTranscriptionJobResult& WithTranscriptionJob(TranscriptionJob&& value) { SetTranscriptionJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTranscriptionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTranscriptionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTranscriptionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TranscriptionJob m_transcriptionJob;

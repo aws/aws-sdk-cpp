@@ -26,9 +26,8 @@ ContextAttribute::ContextAttribute() :
 {
 }
 
-ContextAttribute::ContextAttribute(const XmlNode& xmlNode) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+ContextAttribute::ContextAttribute(const XmlNode& xmlNode)
+  : ContextAttribute()
 {
   *this = xmlNode;
 }

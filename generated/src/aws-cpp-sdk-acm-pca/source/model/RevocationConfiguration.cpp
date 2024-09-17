@@ -24,9 +24,8 @@ RevocationConfiguration::RevocationConfiguration() :
 {
 }
 
-RevocationConfiguration::RevocationConfiguration(JsonView jsonValue) : 
-    m_crlConfigurationHasBeenSet(false),
-    m_ocspConfigurationHasBeenSet(false)
+RevocationConfiguration::RevocationConfiguration(JsonView jsonValue)
+  : RevocationConfiguration()
 {
   *this = jsonValue;
 }

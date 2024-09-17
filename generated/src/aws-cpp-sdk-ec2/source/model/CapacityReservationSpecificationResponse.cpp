@@ -27,10 +27,8 @@ CapacityReservationSpecificationResponse::CapacityReservationSpecificationRespon
 {
 }
 
-CapacityReservationSpecificationResponse::CapacityReservationSpecificationResponse(const XmlNode& xmlNode) : 
-    m_capacityReservationPreference(CapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationTargetHasBeenSet(false)
+CapacityReservationSpecificationResponse::CapacityReservationSpecificationResponse(const XmlNode& xmlNode)
+  : CapacityReservationSpecificationResponse()
 {
   *this = xmlNode;
 }

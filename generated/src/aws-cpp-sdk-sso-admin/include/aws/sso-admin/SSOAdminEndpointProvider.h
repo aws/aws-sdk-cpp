@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using SSOAdminClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SSOAdminClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using SSOAdminClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSOAdminBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

@@ -39,46 +39,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the execution property groups.</p>
      */
     inline const Aws::Vector<PropertyGroup>& GetPropertyGroupDescriptions() const{ return m_propertyGroupDescriptions; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline bool PropertyGroupDescriptionsHasBeenSet() const { return m_propertyGroupDescriptionsHasBeenSet; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline void SetPropertyGroupDescriptions(const Aws::Vector<PropertyGroup>& value) { m_propertyGroupDescriptionsHasBeenSet = true; m_propertyGroupDescriptions = value; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline void SetPropertyGroupDescriptions(Aws::Vector<PropertyGroup>&& value) { m_propertyGroupDescriptionsHasBeenSet = true; m_propertyGroupDescriptions = std::move(value); }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentPropertyDescriptions& WithPropertyGroupDescriptions(const Aws::Vector<PropertyGroup>& value) { SetPropertyGroupDescriptions(value); return *this;}
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentPropertyDescriptions& WithPropertyGroupDescriptions(Aws::Vector<PropertyGroup>&& value) { SetPropertyGroupDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentPropertyDescriptions& AddPropertyGroupDescriptions(const PropertyGroup& value) { m_propertyGroupDescriptionsHasBeenSet = true; m_propertyGroupDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the execution property groups.</p>
-     */
     inline EnvironmentPropertyDescriptions& AddPropertyGroupDescriptions(PropertyGroup&& value) { m_propertyGroupDescriptionsHasBeenSet = true; m_propertyGroupDescriptions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PropertyGroup> m_propertyGroupDescriptions;

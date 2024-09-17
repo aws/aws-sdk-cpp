@@ -37,22 +37,8 @@ PipelineExecution::PipelineExecution() :
 {
 }
 
-PipelineExecution::PipelineExecution(JsonView jsonValue) : 
-    m_pipelineArnHasBeenSet(false),
-    m_pipelineExecutionArnHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false),
-    m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
-    m_pipelineExecutionStatusHasBeenSet(false),
-    m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExperimentConfigHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_parallelismConfigurationHasBeenSet(false),
-    m_selectiveExecutionConfigHasBeenSet(false),
-    m_pipelineParametersHasBeenSet(false)
+PipelineExecution::PipelineExecution(JsonView jsonValue)
+  : PipelineExecution()
 {
   *this = jsonValue;
 }

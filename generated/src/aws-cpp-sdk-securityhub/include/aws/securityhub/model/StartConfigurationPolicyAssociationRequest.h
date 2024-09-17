@@ -33,91 +33,34 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline const Aws::String& GetConfigurationPolicyIdentifier() const{ return m_configurationPolicyIdentifier; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
-     */
     inline bool ConfigurationPolicyIdentifierHasBeenSet() const { return m_configurationPolicyIdentifierHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
-     */
     inline void SetConfigurationPolicyIdentifier(const Aws::String& value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
-     */
     inline void SetConfigurationPolicyIdentifier(Aws::String&& value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
-     */
     inline void SetConfigurationPolicyIdentifier(const char* value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
-     */
     inline StartConfigurationPolicyAssociationRequest& WithConfigurationPolicyIdentifier(const Aws::String& value) { SetConfigurationPolicyIdentifier(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
-     */
     inline StartConfigurationPolicyAssociationRequest& WithConfigurationPolicyIdentifier(Aws::String&& value) { SetConfigurationPolicyIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
-     */
     inline StartConfigurationPolicyAssociationRequest& WithConfigurationPolicyIdentifier(const char* value) { SetConfigurationPolicyIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The identifier of the target account, organizational unit, or the root to
      * associate with the specified configuration. </p>
      */
     inline const Target& GetTarget() const{ return m_target; }
-
-    /**
-     * <p> The identifier of the target account, organizational unit, or the root to
-     * associate with the specified configuration. </p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p> The identifier of the target account, organizational unit, or the root to
-     * associate with the specified configuration. </p>
-     */
     inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p> The identifier of the target account, organizational unit, or the root to
-     * associate with the specified configuration. </p>
-     */
     inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p> The identifier of the target account, organizational unit, or the root to
-     * associate with the specified configuration. </p>
-     */
     inline StartConfigurationPolicyAssociationRequest& WithTarget(const Target& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p> The identifier of the target account, organizational unit, or the root to
-     * associate with the specified configuration. </p>
-     */
     inline StartConfigurationPolicyAssociationRequest& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationPolicyIdentifier;

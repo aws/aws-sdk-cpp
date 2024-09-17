@@ -40,77 +40,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sort configuration of the category fields.</p>
      */
     inline const Aws::Vector<FieldSortOptions>& GetCategorySort() const{ return m_categorySort; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline bool CategorySortHasBeenSet() const { return m_categorySortHasBeenSet; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline void SetCategorySort(const Aws::Vector<FieldSortOptions>& value) { m_categorySortHasBeenSet = true; m_categorySort = value; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline void SetCategorySort(Aws::Vector<FieldSortOptions>&& value) { m_categorySortHasBeenSet = true; m_categorySort = std::move(value); }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline FunnelChartSortConfiguration& WithCategorySort(const Aws::Vector<FieldSortOptions>& value) { SetCategorySort(value); return *this;}
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline FunnelChartSortConfiguration& WithCategorySort(Aws::Vector<FieldSortOptions>&& value) { SetCategorySort(std::move(value)); return *this;}
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline FunnelChartSortConfiguration& AddCategorySort(const FieldSortOptions& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(value); return *this; }
-
-    /**
-     * <p>The sort configuration of the category fields.</p>
-     */
     inline FunnelChartSortConfiguration& AddCategorySort(FieldSortOptions&& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The limit on the number of categories displayed.</p>
      */
     inline const ItemsLimitConfiguration& GetCategoryItemsLimit() const{ return m_categoryItemsLimit; }
-
-    /**
-     * <p>The limit on the number of categories displayed.</p>
-     */
     inline bool CategoryItemsLimitHasBeenSet() const { return m_categoryItemsLimitHasBeenSet; }
-
-    /**
-     * <p>The limit on the number of categories displayed.</p>
-     */
     inline void SetCategoryItemsLimit(const ItemsLimitConfiguration& value) { m_categoryItemsLimitHasBeenSet = true; m_categoryItemsLimit = value; }
-
-    /**
-     * <p>The limit on the number of categories displayed.</p>
-     */
     inline void SetCategoryItemsLimit(ItemsLimitConfiguration&& value) { m_categoryItemsLimitHasBeenSet = true; m_categoryItemsLimit = std::move(value); }
-
-    /**
-     * <p>The limit on the number of categories displayed.</p>
-     */
     inline FunnelChartSortConfiguration& WithCategoryItemsLimit(const ItemsLimitConfiguration& value) { SetCategoryItemsLimit(value); return *this;}
-
-    /**
-     * <p>The limit on the number of categories displayed.</p>
-     */
     inline FunnelChartSortConfiguration& WithCategoryItemsLimit(ItemsLimitConfiguration&& value) { SetCategoryItemsLimit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FieldSortOptions> m_categorySort;

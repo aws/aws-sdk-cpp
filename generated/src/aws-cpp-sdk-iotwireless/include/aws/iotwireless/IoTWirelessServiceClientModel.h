@@ -61,6 +61,8 @@
 #include <aws/iotwireless/model/GetEventConfigurationByResourceTypesResult.h>
 #include <aws/iotwireless/model/GetFuotaTaskResult.h>
 #include <aws/iotwireless/model/GetLogLevelsByResourceTypesResult.h>
+#include <aws/iotwireless/model/GetMetricConfigurationResult.h>
+#include <aws/iotwireless/model/GetMetricsResult.h>
 #include <aws/iotwireless/model/GetMulticastGroupResult.h>
 #include <aws/iotwireless/model/GetMulticastGroupSessionResult.h>
 #include <aws/iotwireless/model/GetNetworkAnalyzerConfigurationResult.h>
@@ -114,6 +116,7 @@
 #include <aws/iotwireless/model/UpdateEventConfigurationByResourceTypesResult.h>
 #include <aws/iotwireless/model/UpdateFuotaTaskResult.h>
 #include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesResult.h>
+#include <aws/iotwireless/model/UpdateMetricConfigurationResult.h>
 #include <aws/iotwireless/model/UpdateMulticastGroupResult.h>
 #include <aws/iotwireless/model/UpdateNetworkAnalyzerConfigurationResult.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountResult.h>
@@ -122,6 +125,29 @@
 #include <aws/iotwireless/model/UpdateWirelessDeviceResult.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceImportTaskResult.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayResult.h>
+#include <aws/iotwireless/model/UpdateMetricConfigurationRequest.h>
+#include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
+#include <aws/iotwireless/model/GetEventConfigurationByResourceTypesRequest.h>
+#include <aws/iotwireless/model/ListDeviceProfilesRequest.h>
+#include <aws/iotwireless/model/ListServiceProfilesRequest.h>
+#include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
+#include <aws/iotwireless/model/GetMetricConfigurationRequest.h>
+#include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesRequest.h>
+#include <aws/iotwireless/model/UpdateEventConfigurationByResourceTypesRequest.h>
+#include <aws/iotwireless/model/GetLogLevelsByResourceTypesRequest.h>
+#include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
+#include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
+#include <aws/iotwireless/model/CreateDeviceProfileRequest.h>
+#include <aws/iotwireless/model/GetPositionEstimateRequest.h>
+#include <aws/iotwireless/model/ListNetworkAnalyzerConfigurationsRequest.h>
+#include <aws/iotwireless/model/CreateServiceProfileRequest.h>
+#include <aws/iotwireless/model/GetServiceEndpointRequest.h>
+#include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
+#include <aws/iotwireless/model/ListFuotaTasksRequest.h>
+#include <aws/iotwireless/model/ListWirelessDeviceImportTasksRequest.h>
+#include <aws/iotwireless/model/ListDestinationsRequest.h>
+#include <aws/iotwireless/model/GetMetricsRequest.h>
+#include <aws/iotwireless/model/ListMulticastGroupsRequest.h>
 /* End of service model headers required in IoTWirelessClient header */
 
 namespace Aws
@@ -155,7 +181,7 @@ namespace Aws
 
   namespace IoTWireless
   {
-    using IoTWirelessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTWirelessClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoTWirelessEndpointProviderBase = Aws::IoTWireless::Endpoint::IoTWirelessEndpointProviderBase;
     using IoTWirelessEndpointProvider = Aws::IoTWireless::Endpoint::IoTWirelessEndpointProvider;
 
@@ -205,6 +231,8 @@ namespace Aws
       class GetEventConfigurationByResourceTypesRequest;
       class GetFuotaTaskRequest;
       class GetLogLevelsByResourceTypesRequest;
+      class GetMetricConfigurationRequest;
+      class GetMetricsRequest;
       class GetMulticastGroupRequest;
       class GetMulticastGroupSessionRequest;
       class GetNetworkAnalyzerConfigurationRequest;
@@ -258,6 +286,7 @@ namespace Aws
       class UpdateEventConfigurationByResourceTypesRequest;
       class UpdateFuotaTaskRequest;
       class UpdateLogLevelsByResourceTypesRequest;
+      class UpdateMetricConfigurationRequest;
       class UpdateMulticastGroupRequest;
       class UpdateNetworkAnalyzerConfigurationRequest;
       class UpdatePartnerAccountRequest;
@@ -312,6 +341,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetEventConfigurationByResourceTypesResult, IoTWirelessError> GetEventConfigurationByResourceTypesOutcome;
       typedef Aws::Utils::Outcome<GetFuotaTaskResult, IoTWirelessError> GetFuotaTaskOutcome;
       typedef Aws::Utils::Outcome<GetLogLevelsByResourceTypesResult, IoTWirelessError> GetLogLevelsByResourceTypesOutcome;
+      typedef Aws::Utils::Outcome<GetMetricConfigurationResult, IoTWirelessError> GetMetricConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetMetricsResult, IoTWirelessError> GetMetricsOutcome;
       typedef Aws::Utils::Outcome<GetMulticastGroupResult, IoTWirelessError> GetMulticastGroupOutcome;
       typedef Aws::Utils::Outcome<GetMulticastGroupSessionResult, IoTWirelessError> GetMulticastGroupSessionOutcome;
       typedef Aws::Utils::Outcome<GetNetworkAnalyzerConfigurationResult, IoTWirelessError> GetNetworkAnalyzerConfigurationOutcome;
@@ -365,6 +396,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateEventConfigurationByResourceTypesResult, IoTWirelessError> UpdateEventConfigurationByResourceTypesOutcome;
       typedef Aws::Utils::Outcome<UpdateFuotaTaskResult, IoTWirelessError> UpdateFuotaTaskOutcome;
       typedef Aws::Utils::Outcome<UpdateLogLevelsByResourceTypesResult, IoTWirelessError> UpdateLogLevelsByResourceTypesOutcome;
+      typedef Aws::Utils::Outcome<UpdateMetricConfigurationResult, IoTWirelessError> UpdateMetricConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateMulticastGroupResult, IoTWirelessError> UpdateMulticastGroupOutcome;
       typedef Aws::Utils::Outcome<UpdateNetworkAnalyzerConfigurationResult, IoTWirelessError> UpdateNetworkAnalyzerConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdatePartnerAccountResult, IoTWirelessError> UpdatePartnerAccountOutcome;
@@ -419,6 +451,8 @@ namespace Aws
       typedef std::future<GetEventConfigurationByResourceTypesOutcome> GetEventConfigurationByResourceTypesOutcomeCallable;
       typedef std::future<GetFuotaTaskOutcome> GetFuotaTaskOutcomeCallable;
       typedef std::future<GetLogLevelsByResourceTypesOutcome> GetLogLevelsByResourceTypesOutcomeCallable;
+      typedef std::future<GetMetricConfigurationOutcome> GetMetricConfigurationOutcomeCallable;
+      typedef std::future<GetMetricsOutcome> GetMetricsOutcomeCallable;
       typedef std::future<GetMulticastGroupOutcome> GetMulticastGroupOutcomeCallable;
       typedef std::future<GetMulticastGroupSessionOutcome> GetMulticastGroupSessionOutcomeCallable;
       typedef std::future<GetNetworkAnalyzerConfigurationOutcome> GetNetworkAnalyzerConfigurationOutcomeCallable;
@@ -472,6 +506,7 @@ namespace Aws
       typedef std::future<UpdateEventConfigurationByResourceTypesOutcome> UpdateEventConfigurationByResourceTypesOutcomeCallable;
       typedef std::future<UpdateFuotaTaskOutcome> UpdateFuotaTaskOutcomeCallable;
       typedef std::future<UpdateLogLevelsByResourceTypesOutcome> UpdateLogLevelsByResourceTypesOutcomeCallable;
+      typedef std::future<UpdateMetricConfigurationOutcome> UpdateMetricConfigurationOutcomeCallable;
       typedef std::future<UpdateMulticastGroupOutcome> UpdateMulticastGroupOutcomeCallable;
       typedef std::future<UpdateNetworkAnalyzerConfigurationOutcome> UpdateNetworkAnalyzerConfigurationOutcomeCallable;
       typedef std::future<UpdatePartnerAccountOutcome> UpdatePartnerAccountOutcomeCallable;
@@ -529,6 +564,8 @@ namespace Aws
     typedef std::function<void(const IoTWirelessClient*, const Model::GetEventConfigurationByResourceTypesRequest&, const Model::GetEventConfigurationByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventConfigurationByResourceTypesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetFuotaTaskRequest&, const Model::GetFuotaTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFuotaTaskResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetLogLevelsByResourceTypesRequest&, const Model::GetLogLevelsByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogLevelsByResourceTypesResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::GetMetricConfigurationRequest&, const Model::GetMetricConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricConfigurationResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::GetMetricsRequest&, const Model::GetMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricsResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetMulticastGroupRequest&, const Model::GetMulticastGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMulticastGroupResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetMulticastGroupSessionRequest&, const Model::GetMulticastGroupSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMulticastGroupSessionResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetNetworkAnalyzerConfigurationRequest&, const Model::GetNetworkAnalyzerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkAnalyzerConfigurationResponseReceivedHandler;
@@ -582,6 +619,7 @@ namespace Aws
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateEventConfigurationByResourceTypesRequest&, const Model::UpdateEventConfigurationByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventConfigurationByResourceTypesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateFuotaTaskRequest&, const Model::UpdateFuotaTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFuotaTaskResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateLogLevelsByResourceTypesRequest&, const Model::UpdateLogLevelsByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLogLevelsByResourceTypesResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::UpdateMetricConfigurationRequest&, const Model::UpdateMetricConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMetricConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateMulticastGroupRequest&, const Model::UpdateMulticastGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMulticastGroupResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateNetworkAnalyzerConfigurationRequest&, const Model::UpdateNetworkAnalyzerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkAnalyzerConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdatePartnerAccountRequest&, const Model::UpdatePartnerAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartnerAccountResponseReceivedHandler;

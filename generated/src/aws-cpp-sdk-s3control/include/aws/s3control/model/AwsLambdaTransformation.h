@@ -38,95 +38,34 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline AwsLambdaTransformation& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline AwsLambdaTransformation& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-     */
     inline AwsLambdaTransformation& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional JSON that provides supplemental data to the Lambda function used
      * to transform objects.</p>
      */
     inline const Aws::String& GetFunctionPayload() const{ return m_functionPayload; }
-
-    /**
-     * <p>Additional JSON that provides supplemental data to the Lambda function used
-     * to transform objects.</p>
-     */
     inline bool FunctionPayloadHasBeenSet() const { return m_functionPayloadHasBeenSet; }
-
-    /**
-     * <p>Additional JSON that provides supplemental data to the Lambda function used
-     * to transform objects.</p>
-     */
     inline void SetFunctionPayload(const Aws::String& value) { m_functionPayloadHasBeenSet = true; m_functionPayload = value; }
-
-    /**
-     * <p>Additional JSON that provides supplemental data to the Lambda function used
-     * to transform objects.</p>
-     */
     inline void SetFunctionPayload(Aws::String&& value) { m_functionPayloadHasBeenSet = true; m_functionPayload = std::move(value); }
-
-    /**
-     * <p>Additional JSON that provides supplemental data to the Lambda function used
-     * to transform objects.</p>
-     */
     inline void SetFunctionPayload(const char* value) { m_functionPayloadHasBeenSet = true; m_functionPayload.assign(value); }
-
-    /**
-     * <p>Additional JSON that provides supplemental data to the Lambda function used
-     * to transform objects.</p>
-     */
     inline AwsLambdaTransformation& WithFunctionPayload(const Aws::String& value) { SetFunctionPayload(value); return *this;}
-
-    /**
-     * <p>Additional JSON that provides supplemental data to the Lambda function used
-     * to transform objects.</p>
-     */
     inline AwsLambdaTransformation& WithFunctionPayload(Aws::String&& value) { SetFunctionPayload(std::move(value)); return *this;}
-
-    /**
-     * <p>Additional JSON that provides supplemental data to the Lambda function used
-     * to transform objects.</p>
-     */
     inline AwsLambdaTransformation& WithFunctionPayload(const char* value) { SetFunctionPayload(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_functionArn;

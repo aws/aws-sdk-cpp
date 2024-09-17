@@ -29,14 +29,8 @@ QueueSummary::QueueSummary() :
 {
 }
 
-QueueSummary::QueueSummary(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_queueType(QueueType::NOT_SET),
-    m_queueTypeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
+QueueSummary::QueueSummary(JsonView jsonValue)
+  : QueueSummary()
 {
   *this = jsonValue;
 }

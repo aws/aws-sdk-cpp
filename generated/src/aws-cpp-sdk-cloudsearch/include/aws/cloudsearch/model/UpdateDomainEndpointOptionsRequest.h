@@ -43,89 +43,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A string that represents the name of a domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline UpdateDomainEndpointOptionsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline UpdateDomainEndpointOptionsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that represents the name of a domain.</p>
-     */
     inline UpdateDomainEndpointOptionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether to require that all requests to the domain arrive over HTTPS. We
      * recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility
      * with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
      */
     inline const DomainEndpointOptions& GetDomainEndpointOptions() const{ return m_domainEndpointOptions; }
-
-    /**
-     * <p>Whether to require that all requests to the domain arrive over HTTPS. We
-     * recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility
-     * with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-     */
     inline bool DomainEndpointOptionsHasBeenSet() const { return m_domainEndpointOptionsHasBeenSet; }
-
-    /**
-     * <p>Whether to require that all requests to the domain arrive over HTTPS. We
-     * recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility
-     * with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-     */
     inline void SetDomainEndpointOptions(const DomainEndpointOptions& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = value; }
-
-    /**
-     * <p>Whether to require that all requests to the domain arrive over HTTPS. We
-     * recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility
-     * with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-     */
     inline void SetDomainEndpointOptions(DomainEndpointOptions&& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = std::move(value); }
-
-    /**
-     * <p>Whether to require that all requests to the domain arrive over HTTPS. We
-     * recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility
-     * with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-     */
     inline UpdateDomainEndpointOptionsRequest& WithDomainEndpointOptions(const DomainEndpointOptions& value) { SetDomainEndpointOptions(value); return *this;}
-
-    /**
-     * <p>Whether to require that all requests to the domain arrive over HTTPS. We
-     * recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility
-     * with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-     */
     inline UpdateDomainEndpointOptionsRequest& WithDomainEndpointOptions(DomainEndpointOptions&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

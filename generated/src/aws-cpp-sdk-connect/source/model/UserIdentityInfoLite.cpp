@@ -24,9 +24,8 @@ UserIdentityInfoLite::UserIdentityInfoLite() :
 {
 }
 
-UserIdentityInfoLite::UserIdentityInfoLite(JsonView jsonValue) : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
+UserIdentityInfoLite::UserIdentityInfoLite(JsonView jsonValue)
+  : UserIdentityInfoLite()
 {
   *this = jsonValue;
 }

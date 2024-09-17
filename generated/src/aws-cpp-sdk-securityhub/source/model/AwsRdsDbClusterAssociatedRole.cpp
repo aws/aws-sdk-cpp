@@ -24,9 +24,8 @@ AwsRdsDbClusterAssociatedRole::AwsRdsDbClusterAssociatedRole() :
 {
 }
 
-AwsRdsDbClusterAssociatedRole::AwsRdsDbClusterAssociatedRole(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+AwsRdsDbClusterAssociatedRole::AwsRdsDbClusterAssociatedRole(JsonView jsonValue)
+  : AwsRdsDbClusterAssociatedRole()
 {
   *this = jsonValue;
 }

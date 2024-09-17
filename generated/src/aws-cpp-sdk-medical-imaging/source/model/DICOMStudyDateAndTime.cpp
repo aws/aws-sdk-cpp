@@ -24,9 +24,8 @@ DICOMStudyDateAndTime::DICOMStudyDateAndTime() :
 {
 }
 
-DICOMStudyDateAndTime::DICOMStudyDateAndTime(JsonView jsonValue) : 
-    m_dICOMStudyDateHasBeenSet(false),
-    m_dICOMStudyTimeHasBeenSet(false)
+DICOMStudyDateAndTime::DICOMStudyDateAndTime(JsonView jsonValue)
+  : DICOMStudyDateAndTime()
 {
   *this = jsonValue;
 }

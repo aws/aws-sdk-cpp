@@ -38,36 +38,17 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The implementation provider chosen for tracing App Runner services.</p>
      */
     inline const TracingVendor& GetVendor() const{ return m_vendor; }
-
-    /**
-     * <p>The implementation provider chosen for tracing App Runner services.</p>
-     */
     inline bool VendorHasBeenSet() const { return m_vendorHasBeenSet; }
-
-    /**
-     * <p>The implementation provider chosen for tracing App Runner services.</p>
-     */
     inline void SetVendor(const TracingVendor& value) { m_vendorHasBeenSet = true; m_vendor = value; }
-
-    /**
-     * <p>The implementation provider chosen for tracing App Runner services.</p>
-     */
     inline void SetVendor(TracingVendor&& value) { m_vendorHasBeenSet = true; m_vendor = std::move(value); }
-
-    /**
-     * <p>The implementation provider chosen for tracing App Runner services.</p>
-     */
     inline TraceConfiguration& WithVendor(const TracingVendor& value) { SetVendor(value); return *this;}
-
-    /**
-     * <p>The implementation provider chosen for tracing App Runner services.</p>
-     */
     inline TraceConfiguration& WithVendor(TracingVendor&& value) { SetVendor(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TracingVendor m_vendor;

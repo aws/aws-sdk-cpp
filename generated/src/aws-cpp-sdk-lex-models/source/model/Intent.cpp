@@ -24,9 +24,8 @@ Intent::Intent() :
 {
 }
 
-Intent::Intent(JsonView jsonValue) : 
-    m_intentNameHasBeenSet(false),
-    m_intentVersionHasBeenSet(false)
+Intent::Intent(JsonView jsonValue)
+  : Intent()
 {
   *this = jsonValue;
 }

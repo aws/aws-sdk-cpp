@@ -40,87 +40,33 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The objects and indexed values attached to the index.</p>
      */
     inline const Aws::Vector<IndexAttachment>& GetIndexAttachments() const{ return m_indexAttachments; }
-
-    /**
-     * <p>The objects and indexed values attached to the index.</p>
-     */
     inline bool IndexAttachmentsHasBeenSet() const { return m_indexAttachmentsHasBeenSet; }
-
-    /**
-     * <p>The objects and indexed values attached to the index.</p>
-     */
     inline void SetIndexAttachments(const Aws::Vector<IndexAttachment>& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments = value; }
-
-    /**
-     * <p>The objects and indexed values attached to the index.</p>
-     */
     inline void SetIndexAttachments(Aws::Vector<IndexAttachment>&& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments = std::move(value); }
-
-    /**
-     * <p>The objects and indexed values attached to the index.</p>
-     */
     inline BatchListIndexResponse& WithIndexAttachments(const Aws::Vector<IndexAttachment>& value) { SetIndexAttachments(value); return *this;}
-
-    /**
-     * <p>The objects and indexed values attached to the index.</p>
-     */
     inline BatchListIndexResponse& WithIndexAttachments(Aws::Vector<IndexAttachment>&& value) { SetIndexAttachments(std::move(value)); return *this;}
-
-    /**
-     * <p>The objects and indexed values attached to the index.</p>
-     */
     inline BatchListIndexResponse& AddIndexAttachments(const IndexAttachment& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments.push_back(value); return *this; }
-
-    /**
-     * <p>The objects and indexed values attached to the index.</p>
-     */
     inline BatchListIndexResponse& AddIndexAttachments(IndexAttachment&& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline BatchListIndexResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline BatchListIndexResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline BatchListIndexResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<IndexAttachment> m_indexAttachments;

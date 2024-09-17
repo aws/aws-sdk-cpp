@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The voice profile ID.</p>
      */
     inline const Aws::String& GetVoiceProfileId() const{ return m_voiceProfileId; }
-
-    /**
-     * <p>The voice profile ID.</p>
-     */
     inline bool VoiceProfileIdHasBeenSet() const { return m_voiceProfileIdHasBeenSet; }
-
-    /**
-     * <p>The voice profile ID.</p>
-     */
     inline void SetVoiceProfileId(const Aws::String& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = value; }
-
-    /**
-     * <p>The voice profile ID.</p>
-     */
     inline void SetVoiceProfileId(Aws::String&& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = std::move(value); }
-
-    /**
-     * <p>The voice profile ID.</p>
-     */
     inline void SetVoiceProfileId(const char* value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId.assign(value); }
-
-    /**
-     * <p>The voice profile ID.</p>
-     */
     inline DeleteVoiceProfileRequest& WithVoiceProfileId(const Aws::String& value) { SetVoiceProfileId(value); return *this;}
-
-    /**
-     * <p>The voice profile ID.</p>
-     */
     inline DeleteVoiceProfileRequest& WithVoiceProfileId(Aws::String&& value) { SetVoiceProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The voice profile ID.</p>
-     */
     inline DeleteVoiceProfileRequest& WithVoiceProfileId(const char* value) { SetVoiceProfileId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceProfileId;

@@ -26,11 +26,8 @@ AggregatedUtterancesSortBy::AggregatedUtterancesSortBy() :
 {
 }
 
-AggregatedUtterancesSortBy::AggregatedUtterancesSortBy(JsonView jsonValue) : 
-    m_attribute(AggregatedUtterancesSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
+AggregatedUtterancesSortBy::AggregatedUtterancesSortBy(JsonView jsonValue)
+  : AggregatedUtterancesSortBy()
 {
   *this = jsonValue;
 }

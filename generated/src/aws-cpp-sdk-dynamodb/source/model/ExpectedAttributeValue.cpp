@@ -28,13 +28,8 @@ ExpectedAttributeValue::ExpectedAttributeValue() :
 {
 }
 
-ExpectedAttributeValue::ExpectedAttributeValue(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_exists(false),
-    m_existsHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_attributeValueListHasBeenSet(false)
+ExpectedAttributeValue::ExpectedAttributeValue(JsonView jsonValue)
+  : ExpectedAttributeValue()
 {
   *this = jsonValue;
 }

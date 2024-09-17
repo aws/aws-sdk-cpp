@@ -25,10 +25,8 @@ ServerSideEncryption::ServerSideEncryption() :
 {
 }
 
-ServerSideEncryption::ServerSideEncryption(JsonView jsonValue) : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kmsMasterKeyIdHasBeenSet(false)
+ServerSideEncryption::ServerSideEncryption(JsonView jsonValue)
+  : ServerSideEncryption()
 {
   *this = jsonValue;
 }

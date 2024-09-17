@@ -27,12 +27,8 @@ RuleUpdate::RuleUpdate() :
 {
 }
 
-RuleUpdate::RuleUpdate(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_ruleIdentifierHasBeenSet(false)
+RuleUpdate::RuleUpdate(JsonView jsonValue)
+  : RuleUpdate()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ Measurement::Measurement() :
 {
 }
 
-Measurement::Measurement(JsonView jsonValue) : 
-    m_processingConfigHasBeenSet(false)
+Measurement::Measurement(JsonView jsonValue)
+  : Measurement()
 {
   *this = jsonValue;
 }

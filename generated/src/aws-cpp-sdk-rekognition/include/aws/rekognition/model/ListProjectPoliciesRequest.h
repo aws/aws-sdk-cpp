@@ -34,47 +34,21 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the project for which you want to list the project policies.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The ARN of the project for which you want to list the project policies.</p>
-     */
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the project for which you want to list the project policies.</p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-
-    /**
-     * <p>The ARN of the project for which you want to list the project policies.</p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the project for which you want to list the project policies.</p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-
-    /**
-     * <p>The ARN of the project for which you want to list the project policies.</p>
-     */
     inline ListProjectPoliciesRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the project for which you want to list the project policies.</p>
-     */
     inline ListProjectPoliciesRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the project for which you want to list the project policies.</p>
-     */
     inline ListProjectPoliciesRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the previous response was incomplete (because there is more results to
      * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
@@ -82,92 +56,26 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
-     * response. You can use this pagination token to retrieve the next set of results.
-     * </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
-     * response. You can use this pagination token to retrieve the next set of results.
-     * </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
-     * response. You can use this pagination token to retrieve the next set of results.
-     * </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
-     * response. You can use this pagination token to retrieve the next set of results.
-     * </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
-     * response. You can use this pagination token to retrieve the next set of results.
-     * </p>
-     */
     inline ListProjectPoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
-     * response. You can use this pagination token to retrieve the next set of results.
-     * </p>
-     */
     inline ListProjectPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition Custom Labels returns a pagination token in the
-     * response. You can use this pagination token to retrieve the next set of results.
-     * </p>
-     */
     inline ListProjectPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return per paginated call. The largest value
      * you can specify is 5. If you specify a value greater than 5, a
      * ValidationException error occurs. The default value is 5. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return per paginated call. The largest value
-     * you can specify is 5. If you specify a value greater than 5, a
-     * ValidationException error occurs. The default value is 5. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return per paginated call. The largest value
-     * you can specify is 5. If you specify a value greater than 5, a
-     * ValidationException error occurs. The default value is 5. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return per paginated call. The largest value
-     * you can specify is 5. If you specify a value greater than 5, a
-     * ValidationException error occurs. The default value is 5. </p>
-     */
     inline ListProjectPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectArn;

@@ -23,9 +23,8 @@ GetImageSetResult::GetImageSetResult() :
 {
 }
 
-GetImageSetResult::GetImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET)
+GetImageSetResult::GetImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImageSetResult()
 {
   *this = result;
 }
@@ -90,6 +89,12 @@ GetImageSetResult& GetImageSetResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("imageSetArn"))
   {
     m_imageSetArn = jsonValue.GetString("imageSetArn");
+
+  }
+
+  if(jsonValue.ValueExists("overrides"))
+  {
+    m_overrides = jsonValue.GetObject("overrides");
 
   }
 

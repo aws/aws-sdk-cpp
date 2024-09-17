@@ -32,17 +32,8 @@ ExecutionConfiguration::ExecutionConfiguration() :
 {
 }
 
-ExecutionConfiguration::ExecutionConfiguration(JsonView jsonValue) : 
-    m_jobTimeoutMinutes(0),
-    m_jobTimeoutMinutesHasBeenSet(false),
-    m_accountsCleanup(false),
-    m_accountsCleanupHasBeenSet(false),
-    m_appPackagesCleanup(false),
-    m_appPackagesCleanupHasBeenSet(false),
-    m_videoCapture(false),
-    m_videoCaptureHasBeenSet(false),
-    m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
+ExecutionConfiguration::ExecutionConfiguration(JsonView jsonValue)
+  : ExecutionConfiguration()
 {
   *this = jsonValue;
 }

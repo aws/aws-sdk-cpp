@@ -34,63 +34,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API GetObjectAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The attributes that are associated with the object.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The attributes that are associated with the object.</p>
-     */
     inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributes = value; }
-
-    /**
-     * <p>The attributes that are associated with the object.</p>
-     */
     inline void SetAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_attributes = std::move(value); }
-
-    /**
-     * <p>The attributes that are associated with the object.</p>
-     */
     inline GetObjectAttributesResult& WithAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The attributes that are associated with the object.</p>
-     */
     inline GetObjectAttributesResult& WithAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The attributes that are associated with the object.</p>
-     */
     inline GetObjectAttributesResult& AddAttributes(const AttributeKeyAndValue& value) { m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>The attributes that are associated with the object.</p>
-     */
     inline GetObjectAttributesResult& AddAttributes(AttributeKeyAndValue&& value) { m_attributes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetObjectAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetObjectAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetObjectAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AttributeKeyAndValue> m_attributes;

@@ -21,7 +21,9 @@ namespace Model
     active,
     retired,
     queued,
-    queued_deleted
+    queued_deleted,
+    pending_return,
+    returned
   };
 
 namespace SavingsPlanStateMapper

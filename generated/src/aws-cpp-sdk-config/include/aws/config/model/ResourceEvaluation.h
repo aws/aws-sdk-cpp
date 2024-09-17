@@ -39,108 +39,43 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ResourceEvaluationId of a evaluation.</p>
      */
     inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
-
-    /**
-     * <p>The ResourceEvaluationId of a evaluation.</p>
-     */
     inline bool ResourceEvaluationIdHasBeenSet() const { return m_resourceEvaluationIdHasBeenSet; }
-
-    /**
-     * <p>The ResourceEvaluationId of a evaluation.</p>
-     */
     inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = value; }
-
-    /**
-     * <p>The ResourceEvaluationId of a evaluation.</p>
-     */
     inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::move(value); }
-
-    /**
-     * <p>The ResourceEvaluationId of a evaluation.</p>
-     */
     inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId.assign(value); }
-
-    /**
-     * <p>The ResourceEvaluationId of a evaluation.</p>
-     */
     inline ResourceEvaluation& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
-
-    /**
-     * <p>The ResourceEvaluationId of a evaluation.</p>
-     */
     inline ResourceEvaluation& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ResourceEvaluationId of a evaluation.</p>
-     */
     inline ResourceEvaluation& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
      */
     inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline ResourceEvaluation& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline ResourceEvaluation& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The starting time of an execution.</p>
      */
     inline const Aws::Utils::DateTime& GetEvaluationStartTimestamp() const{ return m_evaluationStartTimestamp; }
-
-    /**
-     * <p>The starting time of an execution.</p>
-     */
     inline bool EvaluationStartTimestampHasBeenSet() const { return m_evaluationStartTimestampHasBeenSet; }
-
-    /**
-     * <p>The starting time of an execution.</p>
-     */
     inline void SetEvaluationStartTimestamp(const Aws::Utils::DateTime& value) { m_evaluationStartTimestampHasBeenSet = true; m_evaluationStartTimestamp = value; }
-
-    /**
-     * <p>The starting time of an execution.</p>
-     */
     inline void SetEvaluationStartTimestamp(Aws::Utils::DateTime&& value) { m_evaluationStartTimestampHasBeenSet = true; m_evaluationStartTimestamp = std::move(value); }
-
-    /**
-     * <p>The starting time of an execution.</p>
-     */
     inline ResourceEvaluation& WithEvaluationStartTimestamp(const Aws::Utils::DateTime& value) { SetEvaluationStartTimestamp(value); return *this;}
-
-    /**
-     * <p>The starting time of an execution.</p>
-     */
     inline ResourceEvaluation& WithEvaluationStartTimestamp(Aws::Utils::DateTime&& value) { SetEvaluationStartTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceEvaluationId;

@@ -28,13 +28,8 @@ ExportTaskSummary::ExportTaskSummary() :
 {
 }
 
-ExportTaskSummary::ExportTaskSummary(JsonView jsonValue) : 
-    m_applicationsCount(0),
-    m_applicationsCountHasBeenSet(false),
-    m_serversCount(0),
-    m_serversCountHasBeenSet(false),
-    m_wavesCount(0),
-    m_wavesCountHasBeenSet(false)
+ExportTaskSummary::ExportTaskSummary(JsonView jsonValue)
+  : ExportTaskSummary()
 {
   *this = jsonValue;
 }

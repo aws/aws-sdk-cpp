@@ -27,12 +27,8 @@ MigrationAlert::MigrationAlert() :
 {
 }
 
-MigrationAlert::MigrationAlert(JsonView jsonValue) : 
-    m_type(MigrationAlertType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_referenceURLsHasBeenSet(false)
+MigrationAlert::MigrationAlert(JsonView jsonValue)
+  : MigrationAlert()
 {
   *this = jsonValue;
 }

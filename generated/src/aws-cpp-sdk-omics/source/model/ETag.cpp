@@ -26,11 +26,8 @@ ETag::ETag() :
 {
 }
 
-ETag::ETag(JsonView jsonValue) : 
-    m_algorithm(ETagAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_source1HasBeenSet(false),
-    m_source2HasBeenSet(false)
+ETag::ETag(JsonView jsonValue)
+  : ETag()
 {
   *this = jsonValue;
 }

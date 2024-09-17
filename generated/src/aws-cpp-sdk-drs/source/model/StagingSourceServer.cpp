@@ -25,10 +25,8 @@ StagingSourceServer::StagingSourceServer() :
 {
 }
 
-StagingSourceServer::StagingSourceServer(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StagingSourceServer::StagingSourceServer(JsonView jsonValue)
+  : StagingSourceServer()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ DeltaTime::DeltaTime() :
 {
 }
 
-DeltaTime::DeltaTime(JsonView jsonValue) : 
-    m_offsetSeconds(0),
-    m_offsetSecondsHasBeenSet(false),
-    m_timeExpressionHasBeenSet(false)
+DeltaTime::DeltaTime(JsonView jsonValue)
+  : DeltaTime()
 {
   *this = jsonValue;
 }

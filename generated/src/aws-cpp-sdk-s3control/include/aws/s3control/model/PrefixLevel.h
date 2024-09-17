@@ -37,36 +37,17 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
      */
     inline const PrefixLevelStorageMetrics& GetStorageMetrics() const{ return m_storageMetrics; }
-
-    /**
-     * <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-     */
     inline bool StorageMetricsHasBeenSet() const { return m_storageMetricsHasBeenSet; }
-
-    /**
-     * <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-     */
     inline void SetStorageMetrics(const PrefixLevelStorageMetrics& value) { m_storageMetricsHasBeenSet = true; m_storageMetrics = value; }
-
-    /**
-     * <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-     */
     inline void SetStorageMetrics(PrefixLevelStorageMetrics&& value) { m_storageMetricsHasBeenSet = true; m_storageMetrics = std::move(value); }
-
-    /**
-     * <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-     */
     inline PrefixLevel& WithStorageMetrics(const PrefixLevelStorageMetrics& value) { SetStorageMetrics(value); return *this;}
-
-    /**
-     * <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-     */
     inline PrefixLevel& WithStorageMetrics(PrefixLevelStorageMetrics&& value) { SetStorageMetrics(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PrefixLevelStorageMetrics m_storageMetrics;

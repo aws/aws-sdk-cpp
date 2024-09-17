@@ -22,8 +22,8 @@ CreateSyncJobResult::CreateSyncJobResult() :
 {
 }
 
-CreateSyncJobResult::CreateSyncJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(SyncJobState::NOT_SET)
+CreateSyncJobResult::CreateSyncJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateSyncJobResult()
 {
   *this = result;
 }

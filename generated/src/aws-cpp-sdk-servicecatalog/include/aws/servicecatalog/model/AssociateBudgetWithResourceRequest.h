@@ -34,87 +34,33 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the budget you want to associate.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
-
-    /**
-     * <p>The name of the budget you want to associate.</p>
-     */
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the budget you want to associate.</p>
-     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-
-    /**
-     * <p>The name of the budget you want to associate.</p>
-     */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-
-    /**
-     * <p>The name of the budget you want to associate.</p>
-     */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-
-    /**
-     * <p>The name of the budget you want to associate.</p>
-     */
     inline AssociateBudgetWithResourceRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-
-    /**
-     * <p>The name of the budget you want to associate.</p>
-     */
     inline AssociateBudgetWithResourceRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the budget you want to associate.</p>
-     */
     inline AssociateBudgetWithResourceRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-     */
     inline AssociateBudgetWithResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-     */
     inline AssociateBudgetWithResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-     */
     inline AssociateBudgetWithResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_budgetName;

@@ -38,46 +38,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A list of resources.
      */
     inline const Aws::Vector<Resource>& GetResources() const{ return m_resources; }
-
-    /**
-     * A list of resources.
-     */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-
-    /**
-     * A list of resources.
-     */
     inline void SetResources(const Aws::Vector<Resource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-
-    /**
-     * A list of resources.
-     */
     inline void SetResources(Aws::Vector<Resource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-
-    /**
-     * A list of resources.
-     */
     inline ResourceDefinitionVersion& WithResources(const Aws::Vector<Resource>& value) { SetResources(value); return *this;}
-
-    /**
-     * A list of resources.
-     */
     inline ResourceDefinitionVersion& WithResources(Aws::Vector<Resource>&& value) { SetResources(std::move(value)); return *this;}
-
-    /**
-     * A list of resources.
-     */
     inline ResourceDefinitionVersion& AddResources(const Resource& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
-    /**
-     * A list of resources.
-     */
     inline ResourceDefinitionVersion& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Resource> m_resources;

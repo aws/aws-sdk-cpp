@@ -27,12 +27,8 @@ BotMember::BotMember() :
 {
 }
 
-BotMember::BotMember(JsonView jsonValue) : 
-    m_botMemberIdHasBeenSet(false),
-    m_botMemberNameHasBeenSet(false),
-    m_botMemberAliasIdHasBeenSet(false),
-    m_botMemberAliasNameHasBeenSet(false),
-    m_botMemberVersionHasBeenSet(false)
+BotMember::BotMember(JsonView jsonValue)
+  : BotMember()
 {
   *this = jsonValue;
 }

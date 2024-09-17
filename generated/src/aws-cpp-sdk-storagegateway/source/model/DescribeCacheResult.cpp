@@ -26,12 +26,8 @@ DescribeCacheResult::DescribeCacheResult() :
 {
 }
 
-DescribeCacheResult::DescribeCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_cacheAllocatedInBytes(0),
-    m_cacheUsedPercentage(0.0),
-    m_cacheDirtyPercentage(0.0),
-    m_cacheHitPercentage(0.0),
-    m_cacheMissPercentage(0.0)
+DescribeCacheResult::DescribeCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeCacheResult()
 {
   *this = result;
 }

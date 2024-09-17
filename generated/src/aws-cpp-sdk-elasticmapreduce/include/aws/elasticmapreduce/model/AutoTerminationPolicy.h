@@ -39,34 +39,17 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the amount of idle time in seconds after which the cluster
      * automatically terminates. You can specify a minimum of 60 seconds and a maximum
      * of 604800 seconds (seven days).</p>
      */
     inline long long GetIdleTimeout() const{ return m_idleTimeout; }
-
-    /**
-     * <p>Specifies the amount of idle time in seconds after which the cluster
-     * automatically terminates. You can specify a minimum of 60 seconds and a maximum
-     * of 604800 seconds (seven days).</p>
-     */
     inline bool IdleTimeoutHasBeenSet() const { return m_idleTimeoutHasBeenSet; }
-
-    /**
-     * <p>Specifies the amount of idle time in seconds after which the cluster
-     * automatically terminates. You can specify a minimum of 60 seconds and a maximum
-     * of 604800 seconds (seven days).</p>
-     */
     inline void SetIdleTimeout(long long value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
-
-    /**
-     * <p>Specifies the amount of idle time in seconds after which the cluster
-     * automatically terminates. You can specify a minimum of 60 seconds and a maximum
-     * of 604800 seconds (seven days).</p>
-     */
     inline AutoTerminationPolicy& WithIdleTimeout(long long value) { SetIdleTimeout(value); return *this;}
-
+    ///@}
   private:
 
     long long m_idleTimeout;

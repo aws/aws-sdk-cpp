@@ -26,11 +26,8 @@ PrivateLinkConfig::PrivateLinkConfig() :
 {
 }
 
-PrivateLinkConfig::PrivateLinkConfig(JsonView jsonValue) : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_privateLinkEndpointHasBeenSet(false),
-    m_subnetArnsHasBeenSet(false),
-    m_securityGroupArnsHasBeenSet(false)
+PrivateLinkConfig::PrivateLinkConfig(JsonView jsonValue)
+  : PrivateLinkConfig()
 {
   *this = jsonValue;
 }

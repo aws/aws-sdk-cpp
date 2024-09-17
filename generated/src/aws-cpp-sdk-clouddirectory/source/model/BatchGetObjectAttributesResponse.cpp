@@ -23,8 +23,8 @@ BatchGetObjectAttributesResponse::BatchGetObjectAttributesResponse() :
 {
 }
 
-BatchGetObjectAttributesResponse::BatchGetObjectAttributesResponse(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false)
+BatchGetObjectAttributesResponse::BatchGetObjectAttributesResponse(JsonView jsonValue)
+  : BatchGetObjectAttributesResponse()
 {
   *this = jsonValue;
 }

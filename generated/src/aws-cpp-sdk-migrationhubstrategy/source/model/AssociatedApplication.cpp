@@ -24,9 +24,8 @@ AssociatedApplication::AssociatedApplication() :
 {
 }
 
-AssociatedApplication::AssociatedApplication(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AssociatedApplication::AssociatedApplication(JsonView jsonValue)
+  : AssociatedApplication()
 {
   *this = jsonValue;
 }

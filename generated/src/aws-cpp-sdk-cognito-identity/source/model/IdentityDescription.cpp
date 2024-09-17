@@ -28,12 +28,8 @@ IdentityDescription::IdentityDescription() :
 {
 }
 
-IdentityDescription::IdentityDescription(JsonView jsonValue) : 
-    m_identityIdHasBeenSet(false),
-    m_loginsHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+IdentityDescription::IdentityDescription(JsonView jsonValue)
+  : IdentityDescription()
 {
   *this = jsonValue;
 }

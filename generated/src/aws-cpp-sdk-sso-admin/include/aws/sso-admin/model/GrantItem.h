@@ -39,67 +39,29 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration structure for the selected grant.</p>
      */
     inline const Grant& GetGrant() const{ return m_grant; }
-
-    /**
-     * <p>The configuration structure for the selected grant.</p>
-     */
     inline bool GrantHasBeenSet() const { return m_grantHasBeenSet; }
-
-    /**
-     * <p>The configuration structure for the selected grant.</p>
-     */
     inline void SetGrant(const Grant& value) { m_grantHasBeenSet = true; m_grant = value; }
-
-    /**
-     * <p>The configuration structure for the selected grant.</p>
-     */
     inline void SetGrant(Grant&& value) { m_grantHasBeenSet = true; m_grant = std::move(value); }
-
-    /**
-     * <p>The configuration structure for the selected grant.</p>
-     */
     inline GrantItem& WithGrant(const Grant& value) { SetGrant(value); return *this;}
-
-    /**
-     * <p>The configuration structure for the selected grant.</p>
-     */
     inline GrantItem& WithGrant(Grant&& value) { SetGrant(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the selected grant.</p>
      */
     inline const GrantType& GetGrantType() const{ return m_grantType; }
-
-    /**
-     * <p>The type of the selected grant.</p>
-     */
     inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the selected grant.</p>
-     */
     inline void SetGrantType(const GrantType& value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
-
-    /**
-     * <p>The type of the selected grant.</p>
-     */
     inline void SetGrantType(GrantType&& value) { m_grantTypeHasBeenSet = true; m_grantType = std::move(value); }
-
-    /**
-     * <p>The type of the selected grant.</p>
-     */
     inline GrantItem& WithGrantType(const GrantType& value) { SetGrantType(value); return *this;}
-
-    /**
-     * <p>The type of the selected grant.</p>
-     */
     inline GrantItem& WithGrantType(GrantType&& value) { SetGrantType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Grant m_grant;

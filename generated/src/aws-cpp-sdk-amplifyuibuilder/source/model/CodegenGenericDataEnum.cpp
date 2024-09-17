@@ -23,8 +23,8 @@ CodegenGenericDataEnum::CodegenGenericDataEnum() :
 {
 }
 
-CodegenGenericDataEnum::CodegenGenericDataEnum(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+CodegenGenericDataEnum::CodegenGenericDataEnum(JsonView jsonValue)
+  : CodegenGenericDataEnum()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ FindingDetailsError::FindingDetailsError() :
 {
 }
 
-FindingDetailsError::FindingDetailsError(JsonView jsonValue) : 
-    m_errorCode(FindingDetailsErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_findingArnHasBeenSet(false)
+FindingDetailsError::FindingDetailsError(JsonView jsonValue)
+  : FindingDetailsError()
 {
   *this = jsonValue;
 }

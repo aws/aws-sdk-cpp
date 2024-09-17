@@ -30,15 +30,8 @@ WaveAggregatedStatus::WaveAggregatedStatus() :
 {
 }
 
-WaveAggregatedStatus::WaveAggregatedStatus(JsonView jsonValue) : 
-    m_healthStatus(WaveHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_lastUpdateDateTimeHasBeenSet(false),
-    m_progressStatus(WaveProgressStatus::NOT_SET),
-    m_progressStatusHasBeenSet(false),
-    m_replicationStartedDateTimeHasBeenSet(false),
-    m_totalApplications(0),
-    m_totalApplicationsHasBeenSet(false)
+WaveAggregatedStatus::WaveAggregatedStatus(JsonView jsonValue)
+  : WaveAggregatedStatus()
 {
   *this = jsonValue;
 }

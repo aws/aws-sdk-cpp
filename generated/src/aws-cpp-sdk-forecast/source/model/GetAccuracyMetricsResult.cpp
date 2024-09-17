@@ -24,10 +24,8 @@ GetAccuracyMetricsResult::GetAccuracyMetricsResult() :
 {
 }
 
-GetAccuracyMetricsResult::GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isAutoPredictor(false),
-    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
-    m_optimizationMetric(OptimizationMetric::NOT_SET)
+GetAccuracyMetricsResult::GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAccuracyMetricsResult()
 {
   *this = result;
 }

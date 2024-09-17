@@ -52,7 +52,7 @@ namespace Aws
 
   namespace MarketplaceCommerceAnalytics
   {
-    using MarketplaceCommerceAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MarketplaceCommerceAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MarketplaceCommerceAnalyticsEndpointProviderBase = Aws::MarketplaceCommerceAnalytics::Endpoint::MarketplaceCommerceAnalyticsEndpointProviderBase;
     using MarketplaceCommerceAnalyticsEndpointProvider = Aws::MarketplaceCommerceAnalytics::Endpoint::MarketplaceCommerceAnalyticsEndpointProvider;
 

@@ -148,8 +148,12 @@ namespace Personalize
         }
 
         /**
-         * <p>Creates a campaign that deploys a solution version. When a client calls the
-         * <a
+         *  <p> You incur campaign costs while it is active. To avoid
+         * unnecessary costs, make sure to delete the campaign when you are finished. For
+         * information about campaign costs, see <a
+         * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+         * pricing</a>.</p>  <p>Creates a campaign that deploys a solution
+         * version. When a client calls the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
          * and <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
@@ -214,6 +218,66 @@ namespace Personalize
         void CreateCampaignAsync(const CreateCampaignRequestT& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PersonalizeClient::CreateCampaign, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a batch job that deletes all references to specific users from an
+         * Amazon Personalize dataset group in batches. You specify the users to delete in
+         * a CSV file of userIds in an Amazon S3 bucket. After a job completes, Amazon
+         * Personalize no longer trains on the users’ data and no longer considers the
+         * users when generating user segments. For more information about creating a data
+         * deletion job, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+         * users</a>.</p> <ul> <li> <p>Your input file must be a CSV file with a single
+         * USER_ID column that lists the users IDs. For more information about preparing
+         * the CSV file, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/prepare-deletion-input-file.html">Preparing
+         * your data deletion file and uploading it to Amazon S3</a>.</p> </li> <li> <p>To
+         * give Amazon Personalize permission to access your input CSV file of userIds, you
+         * must specify an IAM service role that has permission to read from the data
+         * source. This role needs <code>GetObject</code> and <code>ListBucket</code>
+         * permissions for the bucket and its content. These permissions are the same as
+         * importing data. For information on granting access to your Amazon S3 bucket, see
+         * <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+         * Amazon Personalize Access to Amazon S3 Resources</a>. </p> </li> </ul> <p> After
+         * you create a job, it can take up to a day to delete all references to the users
+         * from datasets and models. Until the job completes, Amazon Personalize continues
+         * to use the data when training. And if you use a User Segmentation recipe, the
+         * users might appear in user segments. </p> <p> <b>Status</b> </p> <p>A data
+         * deletion job can have one of the following statuses:</p> <ul> <li> <p>PENDING
+         * &gt; IN_PROGRESS &gt; COMPLETED -or- FAILED</p> </li> </ul> <p>To get the status
+         * of the data deletion job, call <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+         * API operation and specify the Amazon Resource Name (ARN) of the job. If the
+         * status is FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p> <p class="title"> <b>Related APIs</b> </p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDataDeletionJobs.html">ListDataDeletionJobs</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataDeletionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataDeletionJobOutcome CreateDataDeletionJob(const Model::CreateDataDeletionJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataDeletionJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataDeletionJobRequestT = Model::CreateDataDeletionJobRequest>
+        Model::CreateDataDeletionJobOutcomeCallable CreateDataDeletionJobCallable(const CreateDataDeletionJobRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::CreateDataDeletionJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataDeletionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataDeletionJobRequestT = Model::CreateDataDeletionJobRequest>
+        void CreateDataDeletionJobAsync(const CreateDataDeletionJobRequestT& request, const CreateDataDeletionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::CreateDataDeletionJob, request, handler, context);
         }
 
         /**
@@ -632,32 +696,51 @@ namespace Personalize
         }
 
         /**
-         * <p>Creates the configuration for training a model. A trained model is known as a
-         * solution version. After the configuration is created, you train the model
-         * (create a solution version) by calling the <a
+         *  <p>By default, all new solutions use automatic training. With
+         * automatic training, you incur training costs while your solution is active. To
+         * avoid unnecessary costs, when you are finished you can <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">update
+         * the solution</a> to turn off automatic training. For information about training
+         * costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+         * Personalize pricing</a>.</p>  <p>Creates the configuration for
+         * training a model (creating a solution version). This configuration includes the
+         * recipe to use for model training and optional training configuration, such as
+         * columns to use in training and feature transformation parameters. For more
+         * information about configuring a solution, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
+         * and configuring a solution</a>. </p> <p> By default, new solutions use automatic
+         * training to create solution versions every 7 days. You can change the training
+         * frequency. Automatic solution version creation starts within one hour after the
+         * solution is ACTIVE. If you manually create a solution version within the hour,
+         * the solution skips the first automatic training. For more information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
+         * automatic training</a>.</p> <p> To turn off automatic training, set
+         * <code>performAutoTraining</code> to false. If you turn off automatic training,
+         * you must manually create a solution version by calling the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
-         * operation. Every time you call <code>CreateSolutionVersion</code>, a new version
-         * of the solution is created.</p> <p>After creating a solution version, you check
-         * its accuracy by calling <a
+         * operation.</p> <p>After training starts, you can get the solution version's
+         * Amazon Resource Name (ARN) with the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+         * API operation. To get its status, use the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
+         * </p> <p>After training completes you can evaluate model accuracy by calling <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html">GetSolutionMetrics</a>.
-         * When you are satisfied with the version, you deploy it using <a
+         * When you are satisfied with the solution version, you deploy it using <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
          * The campaign provides recommendations to a client through the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-         * API.</p> <p>To train a model, Amazon Personalize requires training data and a
-         * recipe. The training data comes from the dataset group that you provide in the
-         * request. A recipe specifies the training algorithm and a feature transformation.
-         * You can specify one of the predefined recipes provided by Amazon Personalize.
-         * </p>  <p>Amazon Personalize doesn't support configuring the
+         * API.</p>  <p>Amazon Personalize doesn't support configuring the
          * <code>hpoObjective</code> for solution hyperparameter optimization at this
          * time.</p>  <p> <b>Status</b> </p> <p>A solution can be in one of the
          * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
          * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
          * IN_PROGRESS</p> </li> </ul> <p>To get the status of the solution, call <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
-         * Wait until the status shows as ACTIVE before calling
+         * If you use manual training, the status must be ACTIVE before you call
          * <code>CreateSolutionVersion</code>.</p> <p class="title"> <b>Related APIs</b>
          * </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">UpdateSolution</a>
+         * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
@@ -1111,6 +1194,33 @@ namespace Personalize
         }
 
         /**
+         * <p>Describes the data deletion job created by <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html">CreateDataDeletionJob</a>,
+         * including the job status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataDeletionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataDeletionJobOutcome DescribeDataDeletionJob(const Model::DescribeDataDeletionJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDataDeletionJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDataDeletionJobRequestT = Model::DescribeDataDeletionJobRequest>
+        Model::DescribeDataDeletionJobOutcomeCallable DescribeDataDeletionJobCallable(const DescribeDataDeletionJobRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::DescribeDataDeletionJob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDataDeletionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDataDeletionJobRequestT = Model::DescribeDataDeletionJobRequest>
+        void DescribeDataDeletionJobAsync(const DescribeDataDeletionJobRequestT& request, const DescribeDataDeletionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::DescribeDataDeletionJob, request, handler, context);
+        }
+
+        /**
          * <p>Describes the given dataset. For more information on datasets, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1508,13 +1618,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBatchInferenceJobsOutcome ListBatchInferenceJobs(const Model::ListBatchInferenceJobsRequest& request) const;
+        virtual Model::ListBatchInferenceJobsOutcome ListBatchInferenceJobs(const Model::ListBatchInferenceJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBatchInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBatchInferenceJobsRequestT = Model::ListBatchInferenceJobsRequest>
-        Model::ListBatchInferenceJobsOutcomeCallable ListBatchInferenceJobsCallable(const ListBatchInferenceJobsRequestT& request) const
+        Model::ListBatchInferenceJobsOutcomeCallable ListBatchInferenceJobsCallable(const ListBatchInferenceJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListBatchInferenceJobs, request);
         }
@@ -1523,7 +1633,7 @@ namespace Personalize
          * An Async wrapper for ListBatchInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBatchInferenceJobsRequestT = Model::ListBatchInferenceJobsRequest>
-        void ListBatchInferenceJobsAsync(const ListBatchInferenceJobsRequestT& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBatchInferenceJobsAsync(const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBatchInferenceJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListBatchInferenceJobs, request, handler, context);
         }
@@ -1534,13 +1644,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBatchSegmentJobsOutcome ListBatchSegmentJobs(const Model::ListBatchSegmentJobsRequest& request) const;
+        virtual Model::ListBatchSegmentJobsOutcome ListBatchSegmentJobs(const Model::ListBatchSegmentJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBatchSegmentJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBatchSegmentJobsRequestT = Model::ListBatchSegmentJobsRequest>
-        Model::ListBatchSegmentJobsOutcomeCallable ListBatchSegmentJobsCallable(const ListBatchSegmentJobsRequestT& request) const
+        Model::ListBatchSegmentJobsOutcomeCallable ListBatchSegmentJobsCallable(const ListBatchSegmentJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListBatchSegmentJobs, request);
         }
@@ -1549,7 +1659,7 @@ namespace Personalize
          * An Async wrapper for ListBatchSegmentJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBatchSegmentJobsRequestT = Model::ListBatchSegmentJobsRequest>
-        void ListBatchSegmentJobsAsync(const ListBatchSegmentJobsRequestT& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBatchSegmentJobsAsync(const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBatchSegmentJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListBatchSegmentJobs, request, handler, context);
         }
@@ -1564,13 +1674,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListCampaigns">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request) const;
+        virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCampaigns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCampaignsRequestT = Model::ListCampaignsRequest>
-        Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const ListCampaignsRequestT& request) const
+        Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const ListCampaignsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListCampaigns, request);
         }
@@ -1579,9 +1689,40 @@ namespace Personalize
          * An Async wrapper for ListCampaigns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCampaignsRequestT = Model::ListCampaignsRequest>
-        void ListCampaignsAsync(const ListCampaignsRequestT& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCampaignsAsync(const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCampaignsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListCampaigns, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of data deletion jobs for a dataset group ordered by creation
+         * time, with the most recent first. When a dataset group is not specified, all the
+         * data deletion jobs associated with the account are listed. The response provides
+         * the properties for each job, including the Amazon Resource Name (ARN). For more
+         * information on data deletion jobs, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+         * users</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDataDeletionJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataDeletionJobsOutcome ListDataDeletionJobs(const Model::ListDataDeletionJobsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDataDeletionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataDeletionJobsRequestT = Model::ListDataDeletionJobsRequest>
+        Model::ListDataDeletionJobsOutcomeCallable ListDataDeletionJobsCallable(const ListDataDeletionJobsRequestT& request = {}) const
+        {
+            return SubmitCallable(&PersonalizeClient::ListDataDeletionJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataDeletionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataDeletionJobsRequestT = Model::ListDataDeletionJobsRequest>
+        void ListDataDeletionJobsAsync(const ListDataDeletionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataDeletionJobsRequestT& request = {}) const
+        {
+            return SubmitAsync(&PersonalizeClient::ListDataDeletionJobs, request, handler, context);
         }
 
         /**
@@ -1597,13 +1738,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetExportJobsOutcome ListDatasetExportJobs(const Model::ListDatasetExportJobsRequest& request) const;
+        virtual Model::ListDatasetExportJobsOutcome ListDatasetExportJobs(const Model::ListDatasetExportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetExportJobsRequestT = Model::ListDatasetExportJobsRequest>
-        Model::ListDatasetExportJobsOutcomeCallable ListDatasetExportJobsCallable(const ListDatasetExportJobsRequestT& request) const
+        Model::ListDatasetExportJobsOutcomeCallable ListDatasetExportJobsCallable(const ListDatasetExportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasetExportJobs, request);
         }
@@ -1612,7 +1753,7 @@ namespace Personalize
          * An Async wrapper for ListDatasetExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetExportJobsRequestT = Model::ListDatasetExportJobsRequest>
-        void ListDatasetExportJobsAsync(const ListDatasetExportJobsRequestT& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetExportJobsAsync(const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetExportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasetExportJobs, request, handler, context);
         }
@@ -1626,13 +1767,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request) const;
+        virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetGroupsRequestT = Model::ListDatasetGroupsRequest>
-        Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const ListDatasetGroupsRequestT& request) const
+        Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const ListDatasetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasetGroups, request);
         }
@@ -1641,7 +1782,7 @@ namespace Personalize
          * An Async wrapper for ListDatasetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetGroupsRequestT = Model::ListDatasetGroupsRequest>
-        void ListDatasetGroupsAsync(const ListDatasetGroupsRequestT& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetGroupsAsync(const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasetGroups, request, handler, context);
         }
@@ -1659,13 +1800,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetImportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request) const;
+        virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetImportJobsRequestT = Model::ListDatasetImportJobsRequest>
-        Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const ListDatasetImportJobsRequestT& request) const
+        Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const ListDatasetImportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasetImportJobs, request);
         }
@@ -1674,7 +1815,7 @@ namespace Personalize
          * An Async wrapper for ListDatasetImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetImportJobsRequestT = Model::ListDatasetImportJobsRequest>
-        void ListDatasetImportJobsAsync(const ListDatasetImportJobsRequestT& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetImportJobsAsync(const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetImportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasetImportJobs, request, handler, context);
         }
@@ -1688,13 +1829,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasets, request);
         }
@@ -1703,7 +1844,7 @@ namespace Personalize
          * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasets, request, handler, context);
         }
@@ -1717,13 +1858,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListEventTrackers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventTrackersOutcome ListEventTrackers(const Model::ListEventTrackersRequest& request) const;
+        virtual Model::ListEventTrackersOutcome ListEventTrackers(const Model::ListEventTrackersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventTrackers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventTrackersRequestT = Model::ListEventTrackersRequest>
-        Model::ListEventTrackersOutcomeCallable ListEventTrackersCallable(const ListEventTrackersRequestT& request) const
+        Model::ListEventTrackersOutcomeCallable ListEventTrackersCallable(const ListEventTrackersRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListEventTrackers, request);
         }
@@ -1732,7 +1873,7 @@ namespace Personalize
          * An Async wrapper for ListEventTrackers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventTrackersRequestT = Model::ListEventTrackersRequest>
-        void ListEventTrackersAsync(const ListEventTrackersRequestT& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventTrackersAsync(const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventTrackersRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListEventTrackers, request, handler, context);
         }
@@ -1743,13 +1884,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request) const;
+        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFilters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFiltersRequestT = Model::ListFiltersRequest>
-        Model::ListFiltersOutcomeCallable ListFiltersCallable(const ListFiltersRequestT& request) const
+        Model::ListFiltersOutcomeCallable ListFiltersCallable(const ListFiltersRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListFilters, request);
         }
@@ -1758,7 +1899,7 @@ namespace Personalize
          * An Async wrapper for ListFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFiltersRequestT = Model::ListFiltersRequest>
-        void ListFiltersAsync(const ListFiltersRequestT& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFiltersAsync(const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFiltersRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListFilters, request, handler, context);
         }
@@ -1768,13 +1909,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMetricAttributionMetricsOutcome ListMetricAttributionMetrics(const Model::ListMetricAttributionMetricsRequest& request) const;
+        virtual Model::ListMetricAttributionMetricsOutcome ListMetricAttributionMetrics(const Model::ListMetricAttributionMetricsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMetricAttributionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMetricAttributionMetricsRequestT = Model::ListMetricAttributionMetricsRequest>
-        Model::ListMetricAttributionMetricsOutcomeCallable ListMetricAttributionMetricsCallable(const ListMetricAttributionMetricsRequestT& request) const
+        Model::ListMetricAttributionMetricsOutcomeCallable ListMetricAttributionMetricsCallable(const ListMetricAttributionMetricsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListMetricAttributionMetrics, request);
         }
@@ -1783,7 +1924,7 @@ namespace Personalize
          * An Async wrapper for ListMetricAttributionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMetricAttributionMetricsRequestT = Model::ListMetricAttributionMetricsRequest>
-        void ListMetricAttributionMetricsAsync(const ListMetricAttributionMetricsRequestT& request, const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMetricAttributionMetricsAsync(const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMetricAttributionMetricsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListMetricAttributionMetrics, request, handler, context);
         }
@@ -1793,13 +1934,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMetricAttributionsOutcome ListMetricAttributions(const Model::ListMetricAttributionsRequest& request) const;
+        virtual Model::ListMetricAttributionsOutcome ListMetricAttributions(const Model::ListMetricAttributionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMetricAttributions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMetricAttributionsRequestT = Model::ListMetricAttributionsRequest>
-        Model::ListMetricAttributionsOutcomeCallable ListMetricAttributionsCallable(const ListMetricAttributionsRequestT& request) const
+        Model::ListMetricAttributionsOutcomeCallable ListMetricAttributionsCallable(const ListMetricAttributionsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListMetricAttributions, request);
         }
@@ -1808,7 +1949,7 @@ namespace Personalize
          * An Async wrapper for ListMetricAttributions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMetricAttributionsRequestT = Model::ListMetricAttributionsRequest>
-        void ListMetricAttributionsAsync(const ListMetricAttributionsRequestT& request, const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMetricAttributionsAsync(const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMetricAttributionsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListMetricAttributions, request, handler, context);
         }
@@ -1820,13 +1961,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecipes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request) const;
+        virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecipes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecipesRequestT = Model::ListRecipesRequest>
-        Model::ListRecipesOutcomeCallable ListRecipesCallable(const ListRecipesRequestT& request) const
+        Model::ListRecipesOutcomeCallable ListRecipesCallable(const ListRecipesRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListRecipes, request);
         }
@@ -1835,7 +1976,7 @@ namespace Personalize
          * An Async wrapper for ListRecipes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecipesRequestT = Model::ListRecipesRequest>
-        void ListRecipesAsync(const ListRecipesRequestT& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecipesAsync(const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecipesRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListRecipes, request, handler, context);
         }
@@ -1850,13 +1991,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecommendersOutcome ListRecommenders(const Model::ListRecommendersRequest& request) const;
+        virtual Model::ListRecommendersOutcome ListRecommenders(const Model::ListRecommendersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecommenders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecommendersRequestT = Model::ListRecommendersRequest>
-        Model::ListRecommendersOutcomeCallable ListRecommendersCallable(const ListRecommendersRequestT& request) const
+        Model::ListRecommendersOutcomeCallable ListRecommendersCallable(const ListRecommendersRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListRecommenders, request);
         }
@@ -1865,7 +2006,7 @@ namespace Personalize
          * An Async wrapper for ListRecommenders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecommendersRequestT = Model::ListRecommendersRequest>
-        void ListRecommendersAsync(const ListRecommendersRequestT& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecommendersAsync(const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecommendersRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListRecommenders, request, handler, context);
         }
@@ -1879,13 +2020,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSchemas">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request) const;
+        virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSchemasRequestT = Model::ListSchemasRequest>
-        Model::ListSchemasOutcomeCallable ListSchemasCallable(const ListSchemasRequestT& request) const
+        Model::ListSchemasOutcomeCallable ListSchemasCallable(const ListSchemasRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListSchemas, request);
         }
@@ -1894,7 +2035,7 @@ namespace Personalize
          * An Async wrapper for ListSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSchemasRequestT = Model::ListSchemasRequest>
-        void ListSchemasAsync(const ListSchemasRequestT& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSchemasAsync(const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSchemasRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListSchemas, request, handler, context);
         }
@@ -1907,13 +2048,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutionVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolutionVersionsOutcome ListSolutionVersions(const Model::ListSolutionVersionsRequest& request) const;
+        virtual Model::ListSolutionVersionsOutcome ListSolutionVersions(const Model::ListSolutionVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolutionVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolutionVersionsRequestT = Model::ListSolutionVersionsRequest>
-        Model::ListSolutionVersionsOutcomeCallable ListSolutionVersionsCallable(const ListSolutionVersionsRequestT& request) const
+        Model::ListSolutionVersionsOutcomeCallable ListSolutionVersionsCallable(const ListSolutionVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListSolutionVersions, request);
         }
@@ -1922,28 +2063,28 @@ namespace Personalize
          * An Async wrapper for ListSolutionVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolutionVersionsRequestT = Model::ListSolutionVersionsRequest>
-        void ListSolutionVersionsAsync(const ListSolutionVersionsRequestT& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolutionVersionsAsync(const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolutionVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListSolutionVersions, request, handler, context);
         }
 
         /**
-         * <p>Returns a list of solutions that use the given dataset group. When a dataset
-         * group is not specified, all the solutions associated with the account are
-         * listed. The response provides the properties for each solution, including the
-         * Amazon Resource Name (ARN). For more information on solutions, see <a
+         * <p>Returns a list of solutions in a given dataset group. When a dataset group is
+         * not specified, all the solutions associated with the account are listed. The
+         * response provides the properties for each solution, including the Amazon
+         * Resource Name (ARN). For more information on solutions, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolutionsOutcome ListSolutions(const Model::ListSolutionsRequest& request) const;
+        virtual Model::ListSolutionsOutcome ListSolutions(const Model::ListSolutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolutionsRequestT = Model::ListSolutionsRequest>
-        Model::ListSolutionsOutcomeCallable ListSolutionsCallable(const ListSolutionsRequestT& request) const
+        Model::ListSolutionsOutcomeCallable ListSolutionsCallable(const ListSolutionsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListSolutions, request);
         }
@@ -1952,7 +2093,7 @@ namespace Personalize
          * An Async wrapper for ListSolutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolutionsRequestT = Model::ListSolutionsRequest>
-        void ListSolutionsAsync(const ListSolutionsRequestT& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolutionsAsync(const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolutionsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListSolutions, request, handler, context);
         }
@@ -2095,9 +2236,10 @@ namespace Personalize
         }
 
         /**
-         * <p>Remove <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
-         * that are attached to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags that are attached to a resource. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/tags-remove.html">Removing
+         * tags from Amazon Personalize resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -2124,9 +2266,16 @@ namespace Personalize
         /**
          * <p> Updates a campaign to deploy a retrained solution version with an existing
          * campaign, change your campaign's <code>minProvisionedTPS</code>, or modify your
-         * campaign's configuration, such as the exploration configuration. </p> <p>To
-         * update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check
-         * the campaign status using the <a
+         * campaign's configuration. For example, you can set
+         * <code>enableMetadataWithRecommendations</code> to true for an existing
+         * campaign.</p> <p> To update a campaign to start automatically using the latest
+         * solution version, specify the following:</p> <ul> <li> <p>For the
+         * <code>SolutionVersionArn</code> parameter, specify the Amazon Resource Name
+         * (ARN) of your solution in <code>SolutionArn/$LATEST</code> format. </p> </li>
+         * <li> <p> In the <code>campaignConfig</code>, set
+         * <code>syncWithLatestSolutionVersion</code> to <code>true</code>. </p> </li>
+         * </ul> <p>To update a campaign, the campaign status must be ACTIVE or CREATE
+         * FAILED. Check the campaign status using the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
          * operation.</p>  <p>You can still get recommendations from a campaign while
          * an update is in progress. The campaign will use the previous solution version
@@ -2193,13 +2342,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateMetricAttributionOutcome UpdateMetricAttribution(const Model::UpdateMetricAttributionRequest& request) const;
+        virtual Model::UpdateMetricAttributionOutcome UpdateMetricAttribution(const Model::UpdateMetricAttributionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateMetricAttributionRequestT = Model::UpdateMetricAttributionRequest>
-        Model::UpdateMetricAttributionOutcomeCallable UpdateMetricAttributionCallable(const UpdateMetricAttributionRequestT& request) const
+        Model::UpdateMetricAttributionOutcomeCallable UpdateMetricAttributionCallable(const UpdateMetricAttributionRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::UpdateMetricAttribution, request);
         }
@@ -2208,7 +2357,7 @@ namespace Personalize
          * An Async wrapper for UpdateMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateMetricAttributionRequestT = Model::UpdateMetricAttributionRequest>
-        void UpdateMetricAttributionAsync(const UpdateMetricAttributionRequestT& request, const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateMetricAttributionAsync(const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateMetricAttributionRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::UpdateMetricAttribution, request, handler, context);
         }
@@ -2246,6 +2395,41 @@ namespace Personalize
             return SubmitAsync(&PersonalizeClient::UpdateRecommender, request, handler, context);
         }
 
+        /**
+         * <p>Updates an Amazon Personalize solution to use a different automatic training
+         * configuration. When you update a solution, you can change whether the solution
+         * uses automatic training, and you can change the training frequency. For more
+         * information about updating a solution, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-solution.html">Updating
+         * a solution</a>.</p> <p>A solution update can be in one of the following
+         * states:</p> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
+         * FAILED</p> <p>To get the status of a solution update, call the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+         * API operation and find the status in the <code>latestSolutionUpdate</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateSolution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSolutionOutcome UpdateSolution(const Model::UpdateSolutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSolution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSolutionRequestT = Model::UpdateSolutionRequest>
+        Model::UpdateSolutionOutcomeCallable UpdateSolutionCallable(const UpdateSolutionRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::UpdateSolution, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSolution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSolutionRequestT = Model::UpdateSolutionRequest>
+        void UpdateSolutionAsync(const UpdateSolutionRequestT& request, const UpdateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::UpdateSolution, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PersonalizeEndpointProviderBase>& accessEndpointProvider();
@@ -2254,7 +2438,6 @@ namespace Personalize
       void init(const PersonalizeClientConfiguration& clientConfiguration);
 
       PersonalizeClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PersonalizeEndpointProviderBase> m_endpointProvider;
   };
 

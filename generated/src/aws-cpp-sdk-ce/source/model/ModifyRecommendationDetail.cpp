@@ -23,8 +23,8 @@ ModifyRecommendationDetail::ModifyRecommendationDetail() :
 {
 }
 
-ModifyRecommendationDetail::ModifyRecommendationDetail(JsonView jsonValue) : 
-    m_targetInstancesHasBeenSet(false)
+ModifyRecommendationDetail::ModifyRecommendationDetail(JsonView jsonValue)
+  : ModifyRecommendationDetail()
 {
   *this = jsonValue;
 }

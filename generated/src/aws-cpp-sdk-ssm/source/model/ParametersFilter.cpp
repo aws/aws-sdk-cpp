@@ -25,10 +25,8 @@ ParametersFilter::ParametersFilter() :
 {
 }
 
-ParametersFilter::ParametersFilter(JsonView jsonValue) : 
-    m_key(ParametersFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ParametersFilter::ParametersFilter(JsonView jsonValue)
+  : ParametersFilter()
 {
   *this = jsonValue;
 }

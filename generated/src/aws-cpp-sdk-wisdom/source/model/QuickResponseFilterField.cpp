@@ -28,13 +28,8 @@ QuickResponseFilterField::QuickResponseFilterField() :
 {
 }
 
-QuickResponseFilterField::QuickResponseFilterField(JsonView jsonValue) : 
-    m_includeNoExistence(false),
-    m_includeNoExistenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_operator(QuickResponseFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+QuickResponseFilterField::QuickResponseFilterField(JsonView jsonValue)
+  : QuickResponseFilterField()
 {
   *this = jsonValue;
 }

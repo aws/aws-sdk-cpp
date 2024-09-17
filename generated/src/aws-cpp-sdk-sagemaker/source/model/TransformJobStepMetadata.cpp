@@ -23,8 +23,8 @@ TransformJobStepMetadata::TransformJobStepMetadata() :
 {
 }
 
-TransformJobStepMetadata::TransformJobStepMetadata(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+TransformJobStepMetadata::TransformJobStepMetadata(JsonView jsonValue)
+  : TransformJobStepMetadata()
 {
   *this = jsonValue;
 }

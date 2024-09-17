@@ -24,9 +24,8 @@ UserReference::UserReference() :
 {
 }
 
-UserReference::UserReference(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+UserReference::UserReference(JsonView jsonValue)
+  : UserReference()
 {
   *this = jsonValue;
 }

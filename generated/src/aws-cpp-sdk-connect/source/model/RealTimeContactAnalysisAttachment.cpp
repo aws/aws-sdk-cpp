@@ -27,12 +27,8 @@ RealTimeContactAnalysisAttachment::RealTimeContactAnalysisAttachment() :
 {
 }
 
-RealTimeContactAnalysisAttachment::RealTimeContactAnalysisAttachment(JsonView jsonValue) : 
-    m_attachmentNameHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_status(ArtifactStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+RealTimeContactAnalysisAttachment::RealTimeContactAnalysisAttachment(JsonView jsonValue)
+  : RealTimeContactAnalysisAttachment()
 {
   *this = jsonValue;
 }

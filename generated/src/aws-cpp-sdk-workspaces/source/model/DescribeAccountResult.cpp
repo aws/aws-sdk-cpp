@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeAccountResult::DescribeAccountResult() : 
-    m_dedicatedTenancySupport(DedicatedTenancySupportResultEnum::NOT_SET)
+    m_dedicatedTenancySupport(DedicatedTenancySupportResultEnum::NOT_SET),
+    m_dedicatedTenancyAccountType(DedicatedTenancyAccountType::NOT_SET)
 {
 }
 
-DescribeAccountResult::DescribeAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dedicatedTenancySupport(DedicatedTenancySupportResultEnum::NOT_SET)
+DescribeAccountResult::DescribeAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeAccountResult()
 {
   *this = result;
 }
@@ -40,6 +41,12 @@ DescribeAccountResult& DescribeAccountResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("DedicatedTenancyManagementCidrRange"))
   {
     m_dedicatedTenancyManagementCidrRange = jsonValue.GetString("DedicatedTenancyManagementCidrRange");
+
+  }
+
+  if(jsonValue.ValueExists("DedicatedTenancyAccountType"))
+  {
+    m_dedicatedTenancyAccountType = DedicatedTenancyAccountTypeMapper::GetDedicatedTenancyAccountTypeForName(jsonValue.GetString("DedicatedTenancyAccountType"));
 
   }
 

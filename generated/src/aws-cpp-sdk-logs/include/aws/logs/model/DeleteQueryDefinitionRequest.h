@@ -34,62 +34,21 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the query definition that you want to delete. You can use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
      * to retrieve the IDs of your saved query definitions.</p>
      */
     inline const Aws::String& GetQueryDefinitionId() const{ return m_queryDefinitionId; }
-
-    /**
-     * <p>The ID of the query definition that you want to delete. You can use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
-     * to retrieve the IDs of your saved query definitions.</p>
-     */
     inline bool QueryDefinitionIdHasBeenSet() const { return m_queryDefinitionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the query definition that you want to delete. You can use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
-     * to retrieve the IDs of your saved query definitions.</p>
-     */
     inline void SetQueryDefinitionId(const Aws::String& value) { m_queryDefinitionIdHasBeenSet = true; m_queryDefinitionId = value; }
-
-    /**
-     * <p>The ID of the query definition that you want to delete. You can use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
-     * to retrieve the IDs of your saved query definitions.</p>
-     */
     inline void SetQueryDefinitionId(Aws::String&& value) { m_queryDefinitionIdHasBeenSet = true; m_queryDefinitionId = std::move(value); }
-
-    /**
-     * <p>The ID of the query definition that you want to delete. You can use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
-     * to retrieve the IDs of your saved query definitions.</p>
-     */
     inline void SetQueryDefinitionId(const char* value) { m_queryDefinitionIdHasBeenSet = true; m_queryDefinitionId.assign(value); }
-
-    /**
-     * <p>The ID of the query definition that you want to delete. You can use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
-     * to retrieve the IDs of your saved query definitions.</p>
-     */
     inline DeleteQueryDefinitionRequest& WithQueryDefinitionId(const Aws::String& value) { SetQueryDefinitionId(value); return *this;}
-
-    /**
-     * <p>The ID of the query definition that you want to delete. You can use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
-     * to retrieve the IDs of your saved query definitions.</p>
-     */
     inline DeleteQueryDefinitionRequest& WithQueryDefinitionId(Aws::String&& value) { SetQueryDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the query definition that you want to delete. You can use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
-     * to retrieve the IDs of your saved query definitions.</p>
-     */
     inline DeleteQueryDefinitionRequest& WithQueryDefinitionId(const char* value) { SetQueryDefinitionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queryDefinitionId;

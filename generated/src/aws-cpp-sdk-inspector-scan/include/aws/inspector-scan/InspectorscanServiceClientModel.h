@@ -52,7 +52,7 @@ namespace Aws
 
   namespace inspectorscan
   {
-    using InspectorscanClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using InspectorscanClientConfiguration = Aws::Client::GenericClientConfiguration;
     using InspectorscanEndpointProviderBase = Aws::inspectorscan::Endpoint::InspectorscanEndpointProviderBase;
     using InspectorscanEndpointProvider = Aws::inspectorscan::Endpoint::InspectorscanEndpointProvider;
 

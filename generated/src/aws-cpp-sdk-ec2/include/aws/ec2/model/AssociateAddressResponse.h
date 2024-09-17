@@ -33,64 +33,28 @@ namespace Model
     AWS_EC2_API AssociateAddressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID that represents the association of the Elastic IP address with an
      * instance.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The ID that represents the association of the Elastic IP address with an
-     * instance.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
-
-    /**
-     * <p>The ID that represents the association of the Elastic IP address with an
-     * instance.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
-
-    /**
-     * <p>The ID that represents the association of the Elastic IP address with an
-     * instance.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
-
-    /**
-     * <p>The ID that represents the association of the Elastic IP address with an
-     * instance.</p>
-     */
     inline AssociateAddressResponse& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID that represents the association of the Elastic IP address with an
-     * instance.</p>
-     */
     inline AssociateAddressResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID that represents the association of the Elastic IP address with an
-     * instance.</p>
-     */
     inline AssociateAddressResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AssociateAddressResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AssociateAddressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

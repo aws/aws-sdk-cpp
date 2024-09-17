@@ -32,17 +32,8 @@ NumberFilter::NumberFilter() :
 {
 }
 
-NumberFilter::NumberFilter(JsonView jsonValue) : 
-    m_gte(0.0),
-    m_gteHasBeenSet(false),
-    m_lte(0.0),
-    m_lteHasBeenSet(false),
-    m_eq(0.0),
-    m_eqHasBeenSet(false),
-    m_gt(0.0),
-    m_gtHasBeenSet(false),
-    m_lt(0.0),
-    m_ltHasBeenSet(false)
+NumberFilter::NumberFilter(JsonView jsonValue)
+  : NumberFilter()
 {
   *this = jsonValue;
 }

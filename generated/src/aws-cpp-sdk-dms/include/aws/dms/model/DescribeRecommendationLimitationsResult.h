@@ -34,6 +34,7 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DescribeRecommendationLimitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique pagination token returned for you to pass to a subsequent request.
      * Fleet Advisor returns this token when the number of records in the response is
@@ -42,126 +43,38 @@ namespace Model
      * unchanged.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The unique pagination token returned for you to pass to a subsequent request.
-     * Fleet Advisor returns this token when the number of records in the response is
-     * greater than the <code>MaxRecords</code> value. To retrieve the next page, make
-     * the call again using the returned token and keeping all other arguments
-     * unchanged.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The unique pagination token returned for you to pass to a subsequent request.
-     * Fleet Advisor returns this token when the number of records in the response is
-     * greater than the <code>MaxRecords</code> value. To retrieve the next page, make
-     * the call again using the returned token and keeping all other arguments
-     * unchanged.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The unique pagination token returned for you to pass to a subsequent request.
-     * Fleet Advisor returns this token when the number of records in the response is
-     * greater than the <code>MaxRecords</code> value. To retrieve the next page, make
-     * the call again using the returned token and keeping all other arguments
-     * unchanged.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The unique pagination token returned for you to pass to a subsequent request.
-     * Fleet Advisor returns this token when the number of records in the response is
-     * greater than the <code>MaxRecords</code> value. To retrieve the next page, make
-     * the call again using the returned token and keeping all other arguments
-     * unchanged.</p>
-     */
     inline DescribeRecommendationLimitationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The unique pagination token returned for you to pass to a subsequent request.
-     * Fleet Advisor returns this token when the number of records in the response is
-     * greater than the <code>MaxRecords</code> value. To retrieve the next page, make
-     * the call again using the returned token and keeping all other arguments
-     * unchanged.</p>
-     */
     inline DescribeRecommendationLimitationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique pagination token returned for you to pass to a subsequent request.
-     * Fleet Advisor returns this token when the number of records in the response is
-     * greater than the <code>MaxRecords</code> value. To retrieve the next page, make
-     * the call again using the returned token and keeping all other arguments
-     * unchanged.</p>
-     */
     inline DescribeRecommendationLimitationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of limitations for recommendations of target Amazon Web Services
      * engines.</p>
      */
     inline const Aws::Vector<Limitation>& GetLimitations() const{ return m_limitations; }
-
-    /**
-     * <p>The list of limitations for recommendations of target Amazon Web Services
-     * engines.</p>
-     */
     inline void SetLimitations(const Aws::Vector<Limitation>& value) { m_limitations = value; }
-
-    /**
-     * <p>The list of limitations for recommendations of target Amazon Web Services
-     * engines.</p>
-     */
     inline void SetLimitations(Aws::Vector<Limitation>&& value) { m_limitations = std::move(value); }
-
-    /**
-     * <p>The list of limitations for recommendations of target Amazon Web Services
-     * engines.</p>
-     */
     inline DescribeRecommendationLimitationsResult& WithLimitations(const Aws::Vector<Limitation>& value) { SetLimitations(value); return *this;}
-
-    /**
-     * <p>The list of limitations for recommendations of target Amazon Web Services
-     * engines.</p>
-     */
     inline DescribeRecommendationLimitationsResult& WithLimitations(Aws::Vector<Limitation>&& value) { SetLimitations(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of limitations for recommendations of target Amazon Web Services
-     * engines.</p>
-     */
     inline DescribeRecommendationLimitationsResult& AddLimitations(const Limitation& value) { m_limitations.push_back(value); return *this; }
-
-    /**
-     * <p>The list of limitations for recommendations of target Amazon Web Services
-     * engines.</p>
-     */
     inline DescribeRecommendationLimitationsResult& AddLimitations(Limitation&& value) { m_limitations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRecommendationLimitationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRecommendationLimitationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRecommendationLimitationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

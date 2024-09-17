@@ -37,67 +37,29 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of a request to renew an offering.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
-
-    /**
-     * <p>The ID of a request to renew an offering.</p>
-     */
     inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
-
-    /**
-     * <p>The ID of a request to renew an offering.</p>
-     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
-
-    /**
-     * <p>The ID of a request to renew an offering.</p>
-     */
     inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
-
-    /**
-     * <p>The ID of a request to renew an offering.</p>
-     */
     inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
-
-    /**
-     * <p>The ID of a request to renew an offering.</p>
-     */
     inline RenewOfferingRequest& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
-
-    /**
-     * <p>The ID of a request to renew an offering.</p>
-     */
     inline RenewOfferingRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of a request to renew an offering.</p>
-     */
     inline RenewOfferingRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The quantity requested in an offering renewal.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The quantity requested in an offering renewal.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The quantity requested in an offering renewal.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The quantity requested in an offering renewal.</p>
-     */
     inline RenewOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_offeringId;

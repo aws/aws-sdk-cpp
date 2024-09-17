@@ -22,8 +22,8 @@ UpgradeDomainResult::UpgradeDomainResult() :
 {
 }
 
-UpgradeDomainResult::UpgradeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_performCheckOnly(false)
+UpgradeDomainResult::UpgradeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpgradeDomainResult()
 {
   *this = result;
 }

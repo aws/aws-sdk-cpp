@@ -27,10 +27,8 @@ StagingDistributionDnsNames::StagingDistributionDnsNames() :
 {
 }
 
-StagingDistributionDnsNames::StagingDistributionDnsNames(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+StagingDistributionDnsNames::StagingDistributionDnsNames(const XmlNode& xmlNode)
+  : StagingDistributionDnsNames()
 {
   *this = xmlNode;
 }

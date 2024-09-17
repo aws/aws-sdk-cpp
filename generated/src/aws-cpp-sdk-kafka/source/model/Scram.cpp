@@ -24,9 +24,8 @@ Scram::Scram() :
 {
 }
 
-Scram::Scram(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+Scram::Scram(JsonView jsonValue)
+  : Scram()
 {
   *this = jsonValue;
 }

@@ -37,54 +37,20 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
      * be used only once in a list of alarms.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
-     * be used only once in a list of alarms.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
-     * be used only once in a list of alarms.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
-     * be used only once in a list of alarms.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
-     * be used only once in a list of alarms.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
-     * be used only once in a list of alarms.</p>
-     */
     inline Alarm& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
-     * be used only once in a list of alarms.</p>
-     */
     inline Alarm& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
-     * be used only once in a list of alarms.</p>
-     */
     inline Alarm& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

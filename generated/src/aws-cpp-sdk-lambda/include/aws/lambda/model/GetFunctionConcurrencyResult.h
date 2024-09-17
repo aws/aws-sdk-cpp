@@ -32,43 +32,25 @@ namespace Model
     AWS_LAMBDA_API GetFunctionConcurrencyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of simultaneous executions that are reserved for the function.</p>
      */
     inline int GetReservedConcurrentExecutions() const{ return m_reservedConcurrentExecutions; }
-
-    /**
-     * <p>The number of simultaneous executions that are reserved for the function.</p>
-     */
     inline void SetReservedConcurrentExecutions(int value) { m_reservedConcurrentExecutions = value; }
-
-    /**
-     * <p>The number of simultaneous executions that are reserved for the function.</p>
-     */
     inline GetFunctionConcurrencyResult& WithReservedConcurrentExecutions(int value) { SetReservedConcurrentExecutions(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetFunctionConcurrencyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetFunctionConcurrencyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetFunctionConcurrencyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_reservedConcurrentExecutions;

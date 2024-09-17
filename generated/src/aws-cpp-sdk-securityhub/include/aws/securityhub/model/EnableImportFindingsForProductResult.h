@@ -32,63 +32,29 @@ namespace Model
     AWS_SECURITYHUB_API EnableImportFindingsForProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline const Aws::String& GetProductSubscriptionArn() const{ return m_productSubscriptionArn; }
-
-    /**
-     * <p>The ARN of your subscription to the product to enable integrations for.</p>
-     */
     inline void SetProductSubscriptionArn(const Aws::String& value) { m_productSubscriptionArn = value; }
-
-    /**
-     * <p>The ARN of your subscription to the product to enable integrations for.</p>
-     */
     inline void SetProductSubscriptionArn(Aws::String&& value) { m_productSubscriptionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of your subscription to the product to enable integrations for.</p>
-     */
     inline void SetProductSubscriptionArn(const char* value) { m_productSubscriptionArn.assign(value); }
-
-    /**
-     * <p>The ARN of your subscription to the product to enable integrations for.</p>
-     */
     inline EnableImportFindingsForProductResult& WithProductSubscriptionArn(const Aws::String& value) { SetProductSubscriptionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of your subscription to the product to enable integrations for.</p>
-     */
     inline EnableImportFindingsForProductResult& WithProductSubscriptionArn(Aws::String&& value) { SetProductSubscriptionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of your subscription to the product to enable integrations for.</p>
-     */
     inline EnableImportFindingsForProductResult& WithProductSubscriptionArn(const char* value) { SetProductSubscriptionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline EnableImportFindingsForProductResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline EnableImportFindingsForProductResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline EnableImportFindingsForProductResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_productSubscriptionArn;

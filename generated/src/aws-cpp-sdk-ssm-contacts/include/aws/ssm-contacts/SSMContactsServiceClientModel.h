@@ -57,6 +57,9 @@
 #include <aws/ssm-contacts/model/UpdateContactResult.h>
 #include <aws/ssm-contacts/model/UpdateContactChannelResult.h>
 #include <aws/ssm-contacts/model/UpdateRotationResult.h>
+#include <aws/ssm-contacts/model/ListContactsRequest.h>
+#include <aws/ssm-contacts/model/ListRotationsRequest.h>
+#include <aws/ssm-contacts/model/ListEngagementsRequest.h>
 /* End of service model headers required in SSMContactsClient header */
 
 namespace Aws
@@ -90,7 +93,7 @@ namespace Aws
 
   namespace SSMContacts
   {
-    using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SSMContactsEndpointProviderBase = Aws::SSMContacts::Endpoint::SSMContactsEndpointProviderBase;
     using SSMContactsEndpointProvider = Aws::SSMContacts::Endpoint::SSMContactsEndpointProvider;
 

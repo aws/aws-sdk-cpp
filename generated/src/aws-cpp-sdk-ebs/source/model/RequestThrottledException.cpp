@@ -25,10 +25,8 @@ RequestThrottledException::RequestThrottledException() :
 {
 }
 
-RequestThrottledException::RequestThrottledException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_reason(RequestThrottledExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+RequestThrottledException::RequestThrottledException(JsonView jsonValue)
+  : RequestThrottledException()
 {
   *this = jsonValue;
 }

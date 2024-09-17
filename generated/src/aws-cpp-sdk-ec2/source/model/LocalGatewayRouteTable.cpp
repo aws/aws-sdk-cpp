@@ -34,17 +34,8 @@ LocalGatewayRouteTable::LocalGatewayRouteTable() :
 {
 }
 
-LocalGatewayRouteTable::LocalGatewayRouteTable(const XmlNode& xmlNode) : 
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_mode(LocalGatewayRouteTableMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
+LocalGatewayRouteTable::LocalGatewayRouteTable(const XmlNode& xmlNode)
+  : LocalGatewayRouteTable()
 {
   *this = xmlNode;
 }

@@ -34,62 +34,35 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const CloudWatchLogs& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
-
-    
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-
-    
     inline void SetCloudWatchLogs(const CloudWatchLogs& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-
-    
     inline void SetCloudWatchLogs(CloudWatchLogs&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-
-    
     inline BrokerLogs& WithCloudWatchLogs(const CloudWatchLogs& value) { SetCloudWatchLogs(value); return *this;}
-
-    
     inline BrokerLogs& WithCloudWatchLogs(CloudWatchLogs&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Firehose& GetFirehose() const{ return m_firehose; }
-
-    
     inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
-
-    
     inline void SetFirehose(const Firehose& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
-
-    
     inline void SetFirehose(Firehose&& value) { m_firehoseHasBeenSet = true; m_firehose = std::move(value); }
-
-    
     inline BrokerLogs& WithFirehose(const Firehose& value) { SetFirehose(value); return *this;}
-
-    
     inline BrokerLogs& WithFirehose(Firehose&& value) { SetFirehose(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const S3& GetS3() const{ return m_s3; }
-
-    
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    
     inline void SetS3(const S3& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    
     inline void SetS3(S3&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    
     inline BrokerLogs& WithS3(const S3& value) { SetS3(value); return *this;}
-
-    
     inline BrokerLogs& WithS3(S3&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudWatchLogs m_cloudWatchLogs;

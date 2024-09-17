@@ -27,11 +27,8 @@ LayerVersionContentInput::LayerVersionContentInput() :
 {
 }
 
-LayerVersionContentInput::LayerVersionContentInput(JsonView jsonValue) : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false),
-    m_zipFileHasBeenSet(false)
+LayerVersionContentInput::LayerVersionContentInput(JsonView jsonValue)
+  : LayerVersionContentInput()
 {
   *this = jsonValue;
 }

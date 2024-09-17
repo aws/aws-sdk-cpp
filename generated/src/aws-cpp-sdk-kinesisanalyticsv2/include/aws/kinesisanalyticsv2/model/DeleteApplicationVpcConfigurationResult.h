@@ -32,84 +32,58 @@ namespace Model
     AWS_KINESISANALYTICSV2_API DeleteApplicationVpcConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-
-    /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
-     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-
-    /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
-     */
     inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
-     */
     inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-
-    /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
-     */
     inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
-     */
     inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
-     */
     inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The updated version ID of the application.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-
-    /**
-     * <p>The updated version ID of the application.</p>
-     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
-
-    /**
-     * <p>The updated version ID of the application.</p>
-     */
     inline DeleteApplicationVpcConfigurationResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * Operation ID for tracking DeleteApplicationVpcConfiguration request
+     */
+    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
+    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
+    inline DeleteApplicationVpcConfigurationResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
+    inline DeleteApplicationVpcConfigurationResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
+    inline DeleteApplicationVpcConfigurationResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteApplicationVpcConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteApplicationVpcConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteApplicationVpcConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationARN;
 
     long long m_applicationVersionId;
+
+    Aws::String m_operationId;
 
     Aws::String m_requestId;
   };

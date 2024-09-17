@@ -39,153 +39,58 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name associated with the parameter.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
-
-    /**
-     * <p>The name associated with the parameter.</p>
-     */
     inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
-
-    /**
-     * <p>The name associated with the parameter.</p>
-     */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
-
-    /**
-     * <p>The name associated with the parameter.</p>
-     */
     inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
-
-    /**
-     * <p>The name associated with the parameter.</p>
-     */
     inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
-
-    /**
-     * <p>The name associated with the parameter.</p>
-     */
     inline TemplateParameter& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
-
-    /**
-     * <p>The name associated with the parameter.</p>
-     */
     inline TemplateParameter& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The name associated with the parameter.</p>
-     */
     inline TemplateParameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default value associated with the parameter.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
-
-    /**
-     * <p>The default value associated with the parameter.</p>
-     */
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-
-    /**
-     * <p>The default value associated with the parameter.</p>
-     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-
-    /**
-     * <p>The default value associated with the parameter.</p>
-     */
     inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-
-    /**
-     * <p>The default value associated with the parameter.</p>
-     */
     inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-
-    /**
-     * <p>The default value associated with the parameter.</p>
-     */
     inline TemplateParameter& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-
-    /**
-     * <p>The default value associated with the parameter.</p>
-     */
     inline TemplateParameter& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The default value associated with the parameter.</p>
-     */
     inline TemplateParameter& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Flag indicating whether the parameter should be displayed as plain text in
      * logs and UIs.</p>
      */
     inline bool GetNoEcho() const{ return m_noEcho; }
-
-    /**
-     * <p>Flag indicating whether the parameter should be displayed as plain text in
-     * logs and UIs.</p>
-     */
     inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
-
-    /**
-     * <p>Flag indicating whether the parameter should be displayed as plain text in
-     * logs and UIs.</p>
-     */
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
-
-    /**
-     * <p>Flag indicating whether the parameter should be displayed as plain text in
-     * logs and UIs.</p>
-     */
     inline TemplateParameter& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>User defined description associated with the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>User defined description associated with the parameter.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>User defined description associated with the parameter.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>User defined description associated with the parameter.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>User defined description associated with the parameter.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>User defined description associated with the parameter.</p>
-     */
     inline TemplateParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>User defined description associated with the parameter.</p>
-     */
     inline TemplateParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>User defined description associated with the parameter.</p>
-     */
     inline TemplateParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_parameterKey;

@@ -25,10 +25,8 @@ SuperuserParameters::SuperuserParameters() :
 {
 }
 
-SuperuserParameters::SuperuserParameters(JsonView jsonValue) : 
-    m_emailAddressHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
+SuperuserParameters::SuperuserParameters(JsonView jsonValue)
+  : SuperuserParameters()
 {
   *this = jsonValue;
 }

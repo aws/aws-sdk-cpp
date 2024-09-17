@@ -27,20 +27,14 @@ ListSolNetworkOperationsInfo::ListSolNetworkOperationsInfo() :
     m_metadataHasBeenSet(false),
     m_nsInstanceIdHasBeenSet(false),
     m_operationState(NsLcmOperationState::NOT_SET),
-    m_operationStateHasBeenSet(false)
+    m_operationStateHasBeenSet(false),
+    m_updateType(UpdateSolNetworkType::NOT_SET),
+    m_updateTypeHasBeenSet(false)
 {
 }
 
-ListSolNetworkOperationsInfo::ListSolNetworkOperationsInfo(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lcmOperationType(LcmOperationType::NOT_SET),
-    m_lcmOperationTypeHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nsInstanceIdHasBeenSet(false),
-    m_operationState(NsLcmOperationState::NOT_SET),
-    m_operationStateHasBeenSet(false)
+ListSolNetworkOperationsInfo::ListSolNetworkOperationsInfo(JsonView jsonValue)
+  : ListSolNetworkOperationsInfo()
 {
   *this = jsonValue;
 }
@@ -96,6 +90,13 @@ ListSolNetworkOperationsInfo& ListSolNetworkOperationsInfo::operator =(JsonView 
     m_operationStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updateType"))
+  {
+    m_updateType = UpdateSolNetworkTypeMapper::GetUpdateSolNetworkTypeForName(jsonValue.GetString("updateType"));
+
+    m_updateTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +142,11 @@ JsonValue ListSolNetworkOperationsInfo::Jsonize() const
   if(m_operationStateHasBeenSet)
   {
    payload.WithString("operationState", NsLcmOperationStateMapper::GetNameForNsLcmOperationState(m_operationState));
+  }
+
+  if(m_updateTypeHasBeenSet)
+  {
+   payload.WithString("updateType", UpdateSolNetworkTypeMapper::GetNameForUpdateSolNetworkType(m_updateType));
   }
 
   return payload;

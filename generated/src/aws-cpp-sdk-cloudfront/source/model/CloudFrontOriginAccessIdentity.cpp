@@ -27,10 +27,8 @@ CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentity() :
 {
 }
 
-CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentity(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_s3CanonicalUserIdHasBeenSet(false),
-    m_cloudFrontOriginAccessIdentityConfigHasBeenSet(false)
+CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentity(const XmlNode& xmlNode)
+  : CloudFrontOriginAccessIdentity()
 {
   *this = xmlNode;
 }

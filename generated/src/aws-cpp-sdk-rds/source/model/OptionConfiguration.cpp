@@ -31,14 +31,8 @@ OptionConfiguration::OptionConfiguration() :
 {
 }
 
-OptionConfiguration::OptionConfiguration(const XmlNode& xmlNode) : 
-    m_optionNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_optionVersionHasBeenSet(false),
-    m_dBSecurityGroupMembershipsHasBeenSet(false),
-    m_vpcSecurityGroupMembershipsHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+OptionConfiguration::OptionConfiguration(const XmlNode& xmlNode)
+  : OptionConfiguration()
 {
   *this = xmlNode;
 }

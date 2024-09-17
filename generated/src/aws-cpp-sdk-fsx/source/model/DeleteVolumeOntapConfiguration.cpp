@@ -27,12 +27,8 @@ DeleteVolumeOntapConfiguration::DeleteVolumeOntapConfiguration() :
 {
 }
 
-DeleteVolumeOntapConfiguration::DeleteVolumeOntapConfiguration(JsonView jsonValue) : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false),
-    m_bypassSnaplockEnterpriseRetention(false),
-    m_bypassSnaplockEnterpriseRetentionHasBeenSet(false)
+DeleteVolumeOntapConfiguration::DeleteVolumeOntapConfiguration(JsonView jsonValue)
+  : DeleteVolumeOntapConfiguration()
 {
   *this = jsonValue;
 }

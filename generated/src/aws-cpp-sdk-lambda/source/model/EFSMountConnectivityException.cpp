@@ -24,9 +24,8 @@ EFSMountConnectivityException::EFSMountConnectivityException() :
 {
 }
 
-EFSMountConnectivityException::EFSMountConnectivityException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+EFSMountConnectivityException::EFSMountConnectivityException(JsonView jsonValue)
+  : EFSMountConnectivityException()
 {
   *this = jsonValue;
 }

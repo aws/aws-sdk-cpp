@@ -34,106 +34,43 @@ namespace Model
     AWS_TIMESTREAMQUERY_API ListScheduledQueriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of scheduled queries.</p>
      */
     inline const Aws::Vector<ScheduledQuery>& GetScheduledQueries() const{ return m_scheduledQueries; }
-
-    /**
-     * <p>A list of scheduled queries.</p>
-     */
     inline void SetScheduledQueries(const Aws::Vector<ScheduledQuery>& value) { m_scheduledQueries = value; }
-
-    /**
-     * <p>A list of scheduled queries.</p>
-     */
     inline void SetScheduledQueries(Aws::Vector<ScheduledQuery>&& value) { m_scheduledQueries = std::move(value); }
-
-    /**
-     * <p>A list of scheduled queries.</p>
-     */
     inline ListScheduledQueriesResult& WithScheduledQueries(const Aws::Vector<ScheduledQuery>& value) { SetScheduledQueries(value); return *this;}
-
-    /**
-     * <p>A list of scheduled queries.</p>
-     */
     inline ListScheduledQueriesResult& WithScheduledQueries(Aws::Vector<ScheduledQuery>&& value) { SetScheduledQueries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of scheduled queries.</p>
-     */
     inline ListScheduledQueriesResult& AddScheduledQueries(const ScheduledQuery& value) { m_scheduledQueries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of scheduled queries.</p>
-     */
     inline ListScheduledQueriesResult& AddScheduledQueries(ScheduledQuery&& value) { m_scheduledQueries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token to specify where to start paginating. This is the NextToken from a
      * previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
-     */
     inline ListScheduledQueriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
-     */
     inline ListScheduledQueriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
-     */
     inline ListScheduledQueriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListScheduledQueriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListScheduledQueriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListScheduledQueriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ScheduledQuery> m_scheduledQueries;

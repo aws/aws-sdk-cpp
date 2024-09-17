@@ -24,9 +24,8 @@ WebvttDestinationSettings::WebvttDestinationSettings() :
 {
 }
 
-WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue) : 
-    m_styleControl(WebvttDestinationStyleControl::NOT_SET),
-    m_styleControlHasBeenSet(false)
+WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue)
+  : WebvttDestinationSettings()
 {
   *this = jsonValue;
 }

@@ -33,60 +33,21 @@ namespace Model
     AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
      * delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWorlds() const{ return m_worlds; }
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline bool WorldsHasBeenSet() const { return m_worldsHasBeenSet; }
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline void SetWorlds(const Aws::Vector<Aws::String>& value) { m_worldsHasBeenSet = true; m_worlds = value; }
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline void SetWorlds(Aws::Vector<Aws::String>&& value) { m_worldsHasBeenSet = true; m_worlds = std::move(value); }
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline BatchDeleteWorldsRequest& WithWorlds(const Aws::Vector<Aws::String>& value) { SetWorlds(value); return *this;}
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline BatchDeleteWorldsRequest& WithWorlds(Aws::Vector<Aws::String>&& value) { SetWorlds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline BatchDeleteWorldsRequest& AddWorlds(const Aws::String& value) { m_worldsHasBeenSet = true; m_worlds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline BatchDeleteWorldsRequest& AddWorlds(Aws::String&& value) { m_worldsHasBeenSet = true; m_worlds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of Amazon Resource Names (arns) that correspond to worlds to
-     * delete.</p>
-     */
     inline BatchDeleteWorldsRequest& AddWorlds(const char* value) { m_worldsHasBeenSet = true; m_worlds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_worlds;

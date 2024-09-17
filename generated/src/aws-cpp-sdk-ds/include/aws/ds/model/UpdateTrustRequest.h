@@ -35,77 +35,31 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Identifier of the trust relationship.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = std::move(value); }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline UpdateTrustRequest& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline UpdateTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline UpdateTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Updates selective authentication for the trust.</p>
      */
     inline const SelectiveAuth& GetSelectiveAuth() const{ return m_selectiveAuth; }
-
-    /**
-     * <p>Updates selective authentication for the trust.</p>
-     */
     inline bool SelectiveAuthHasBeenSet() const { return m_selectiveAuthHasBeenSet; }
-
-    /**
-     * <p>Updates selective authentication for the trust.</p>
-     */
     inline void SetSelectiveAuth(const SelectiveAuth& value) { m_selectiveAuthHasBeenSet = true; m_selectiveAuth = value; }
-
-    /**
-     * <p>Updates selective authentication for the trust.</p>
-     */
     inline void SetSelectiveAuth(SelectiveAuth&& value) { m_selectiveAuthHasBeenSet = true; m_selectiveAuth = std::move(value); }
-
-    /**
-     * <p>Updates selective authentication for the trust.</p>
-     */
     inline UpdateTrustRequest& WithSelectiveAuth(const SelectiveAuth& value) { SetSelectiveAuth(value); return *this;}
-
-    /**
-     * <p>Updates selective authentication for the trust.</p>
-     */
     inline UpdateTrustRequest& WithSelectiveAuth(SelectiveAuth&& value) { SetSelectiveAuth(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trustId;

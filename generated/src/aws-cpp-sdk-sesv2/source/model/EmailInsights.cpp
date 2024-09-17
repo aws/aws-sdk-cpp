@@ -25,10 +25,8 @@ EmailInsights::EmailInsights() :
 {
 }
 
-EmailInsights::EmailInsights(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+EmailInsights::EmailInsights(JsonView jsonValue)
+  : EmailInsights()
 {
   *this = jsonValue;
 }

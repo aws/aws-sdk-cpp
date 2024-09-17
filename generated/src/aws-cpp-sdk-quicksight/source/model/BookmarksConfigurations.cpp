@@ -24,9 +24,8 @@ BookmarksConfigurations::BookmarksConfigurations() :
 {
 }
 
-BookmarksConfigurations::BookmarksConfigurations(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
+BookmarksConfigurations::BookmarksConfigurations(JsonView jsonValue)
+  : BookmarksConfigurations()
 {
   *this = jsonValue;
 }

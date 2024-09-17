@@ -25,10 +25,8 @@ GitPullRequestFilter::GitPullRequestFilter() :
 {
 }
 
-GitPullRequestFilter::GitPullRequestFilter(JsonView jsonValue) : 
-    m_eventsHasBeenSet(false),
-    m_branchesHasBeenSet(false),
-    m_filePathsHasBeenSet(false)
+GitPullRequestFilter::GitPullRequestFilter(JsonView jsonValue)
+  : GitPullRequestFilter()
 {
   *this = jsonValue;
 }

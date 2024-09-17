@@ -22,8 +22,8 @@ DescribeTopicPermissionsResult::DescribeTopicPermissionsResult() :
 {
 }
 
-DescribeTopicPermissionsResult::DescribeTopicPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+DescribeTopicPermissionsResult::DescribeTopicPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeTopicPermissionsResult()
 {
   *this = result;
 }

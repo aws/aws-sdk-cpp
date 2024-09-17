@@ -23,8 +23,8 @@ SlotValue::SlotValue() :
 {
 }
 
-SlotValue::SlotValue(JsonView jsonValue) : 
-    m_interpretedValueHasBeenSet(false)
+SlotValue::SlotValue(JsonView jsonValue)
+  : SlotValue()
 {
   *this = jsonValue;
 }

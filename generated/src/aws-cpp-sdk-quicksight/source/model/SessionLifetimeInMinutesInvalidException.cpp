@@ -24,9 +24,8 @@ SessionLifetimeInMinutesInvalidException::SessionLifetimeInMinutesInvalidExcepti
 {
 }
 
-SessionLifetimeInMinutesInvalidException::SessionLifetimeInMinutesInvalidException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+SessionLifetimeInMinutesInvalidException::SessionLifetimeInMinutesInvalidException(JsonView jsonValue)
+  : SessionLifetimeInMinutesInvalidException()
 {
   *this = jsonValue;
 }

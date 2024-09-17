@@ -38,36 +38,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration information for the chat participant role.</p>
      */
     inline const ChatParticipantRoleConfig& GetChat() const{ return m_chat; }
-
-    /**
-     * <p>Configuration information for the chat participant role.</p>
-     */
     inline bool ChatHasBeenSet() const { return m_chatHasBeenSet; }
-
-    /**
-     * <p>Configuration information for the chat participant role.</p>
-     */
     inline void SetChat(const ChatParticipantRoleConfig& value) { m_chatHasBeenSet = true; m_chat = value; }
-
-    /**
-     * <p>Configuration information for the chat participant role.</p>
-     */
     inline void SetChat(ChatParticipantRoleConfig&& value) { m_chatHasBeenSet = true; m_chat = std::move(value); }
-
-    /**
-     * <p>Configuration information for the chat participant role.</p>
-     */
     inline UpdateParticipantRoleConfigChannelInfo& WithChat(const ChatParticipantRoleConfig& value) { SetChat(value); return *this;}
-
-    /**
-     * <p>Configuration information for the chat participant role.</p>
-     */
     inline UpdateParticipantRoleConfigChannelInfo& WithChat(ChatParticipantRoleConfig&& value) { SetChat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChatParticipantRoleConfig m_chat;

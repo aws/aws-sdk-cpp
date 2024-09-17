@@ -34,19 +34,8 @@ AnnotationImportJobItem::AnnotationImportJobItem() :
 {
 }
 
-AnnotationImportJobItem::AnnotationImportJobItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false),
-    m_annotationFieldsHasBeenSet(false)
+AnnotationImportJobItem::AnnotationImportJobItem(JsonView jsonValue)
+  : AnnotationImportJobItem()
 {
   *this = jsonValue;
 }

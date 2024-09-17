@@ -27,11 +27,8 @@ ThrottlingException::ThrottlingException() :
 {
 }
 
-ThrottlingException::ThrottlingException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_retryAfterSecondsHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
+ThrottlingException::ThrottlingException(JsonView jsonValue)
+  : ThrottlingException()
 {
   *this = jsonValue;
 }

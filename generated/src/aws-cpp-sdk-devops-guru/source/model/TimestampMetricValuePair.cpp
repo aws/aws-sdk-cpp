@@ -25,10 +25,8 @@ TimestampMetricValuePair::TimestampMetricValuePair() :
 {
 }
 
-TimestampMetricValuePair::TimestampMetricValuePair(JsonView jsonValue) : 
-    m_timestampHasBeenSet(false),
-    m_metricValue(0.0),
-    m_metricValueHasBeenSet(false)
+TimestampMetricValuePair::TimestampMetricValuePair(JsonView jsonValue)
+  : TimestampMetricValuePair()
 {
   *this = jsonValue;
 }

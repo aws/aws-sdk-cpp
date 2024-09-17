@@ -40,47 +40,25 @@ namespace Model
     AWS_CLOUDSEARCH_API UpdateDomainEndpointOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The newly-configured domain endpoint options.</p>
      */
     inline const DomainEndpointOptionsStatus& GetDomainEndpointOptions() const{ return m_domainEndpointOptions; }
-
-    /**
-     * <p>The newly-configured domain endpoint options.</p>
-     */
     inline void SetDomainEndpointOptions(const DomainEndpointOptionsStatus& value) { m_domainEndpointOptions = value; }
-
-    /**
-     * <p>The newly-configured domain endpoint options.</p>
-     */
     inline void SetDomainEndpointOptions(DomainEndpointOptionsStatus&& value) { m_domainEndpointOptions = std::move(value); }
-
-    /**
-     * <p>The newly-configured domain endpoint options.</p>
-     */
     inline UpdateDomainEndpointOptionsResult& WithDomainEndpointOptions(const DomainEndpointOptionsStatus& value) { SetDomainEndpointOptions(value); return *this;}
-
-    /**
-     * <p>The newly-configured domain endpoint options.</p>
-     */
     inline UpdateDomainEndpointOptionsResult& WithDomainEndpointOptions(DomainEndpointOptionsStatus&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UpdateDomainEndpointOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UpdateDomainEndpointOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DomainEndpointOptionsStatus m_domainEndpointOptions;

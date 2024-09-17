@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace KinesisAnalyticsV2
+{
+namespace Model
+{
+
+  /**
+   * Describes system rollback configuration for a Managed Service for Apache Flink
+   * application<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationSystemRollbackConfigurationDescription">AWS
+   * API Reference</a></p>
+   */
+  class ApplicationSystemRollbackConfigurationDescription
+  {
+  public:
+    AWS_KINESISANALYTICSV2_API ApplicationSystemRollbackConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ApplicationSystemRollbackConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationSystemRollbackConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * Describes whether system rollbacks are enabled for a Managed Service for Apache
+     * Flink application
+     */
+    inline bool GetRollbackEnabled() const{ return m_rollbackEnabled; }
+    inline bool RollbackEnabledHasBeenSet() const { return m_rollbackEnabledHasBeenSet; }
+    inline void SetRollbackEnabled(bool value) { m_rollbackEnabledHasBeenSet = true; m_rollbackEnabled = value; }
+    inline ApplicationSystemRollbackConfigurationDescription& WithRollbackEnabled(bool value) { SetRollbackEnabled(value); return *this;}
+    ///@}
+  private:
+
+    bool m_rollbackEnabled;
+    bool m_rollbackEnabledHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace KinesisAnalyticsV2
+} // namespace Aws

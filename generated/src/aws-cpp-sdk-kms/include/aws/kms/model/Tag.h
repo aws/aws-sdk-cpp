@@ -45,87 +45,33 @@ namespace Model
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key of the tag.</p>
      */
     inline const Aws::String& GetTagKey() const{ return m_tagKey; }
-
-    /**
-     * <p>The key of the tag.</p>
-     */
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-
-    /**
-     * <p>The key of the tag.</p>
-     */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-
-    /**
-     * <p>The key of the tag.</p>
-     */
     inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-
-    /**
-     * <p>The key of the tag.</p>
-     */
     inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-
-    /**
-     * <p>The key of the tag.</p>
-     */
     inline Tag& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-
-    /**
-     * <p>The key of the tag.</p>
-     */
     inline Tag& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key of the tag.</p>
-     */
     inline Tag& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the tag.</p>
      */
     inline const Aws::String& GetTagValue() const{ return m_tagValue; }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline Tag& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline Tag& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the tag.</p>
-     */
     inline Tag& WithTagValue(const char* value) { SetTagValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tagKey;

@@ -39,67 +39,29 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The scoring mode of the evaluation form.</p>
      */
     inline const EvaluationFormScoringMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>The scoring mode of the evaluation form.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>The scoring mode of the evaluation form.</p>
-     */
     inline void SetMode(const EvaluationFormScoringMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>The scoring mode of the evaluation form.</p>
-     */
     inline void SetMode(EvaluationFormScoringMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>The scoring mode of the evaluation form.</p>
-     */
     inline EvaluationFormScoringStrategy& WithMode(const EvaluationFormScoringMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>The scoring mode of the evaluation form.</p>
-     */
     inline EvaluationFormScoringStrategy& WithMode(EvaluationFormScoringMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scoring status of the evaluation form.</p>
      */
     inline const EvaluationFormScoringStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The scoring status of the evaluation form.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The scoring status of the evaluation form.</p>
-     */
     inline void SetStatus(const EvaluationFormScoringStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The scoring status of the evaluation form.</p>
-     */
     inline void SetStatus(EvaluationFormScoringStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The scoring status of the evaluation form.</p>
-     */
     inline EvaluationFormScoringStrategy& WithStatus(const EvaluationFormScoringStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The scoring status of the evaluation form.</p>
-     */
     inline EvaluationFormScoringStrategy& WithStatus(EvaluationFormScoringStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EvaluationFormScoringMode m_mode;

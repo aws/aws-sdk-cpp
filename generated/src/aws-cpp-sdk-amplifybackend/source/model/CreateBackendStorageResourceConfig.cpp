@@ -26,11 +26,8 @@ CreateBackendStorageResourceConfig::CreateBackendStorageResourceConfig() :
 {
 }
 
-CreateBackendStorageResourceConfig::CreateBackendStorageResourceConfig(JsonView jsonValue) : 
-    m_bucketNameHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false)
+CreateBackendStorageResourceConfig::CreateBackendStorageResourceConfig(JsonView jsonValue)
+  : CreateBackendStorageResourceConfig()
 {
   *this = jsonValue;
 }

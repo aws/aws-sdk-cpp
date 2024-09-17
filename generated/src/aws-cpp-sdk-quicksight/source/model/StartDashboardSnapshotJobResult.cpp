@@ -22,8 +22,8 @@ StartDashboardSnapshotJobResult::StartDashboardSnapshotJobResult() :
 {
 }
 
-StartDashboardSnapshotJobResult::StartDashboardSnapshotJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+StartDashboardSnapshotJobResult::StartDashboardSnapshotJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartDashboardSnapshotJobResult()
 {
   *this = result;
 }

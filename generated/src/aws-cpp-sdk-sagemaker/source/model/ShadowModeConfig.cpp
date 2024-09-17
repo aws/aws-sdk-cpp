@@ -24,9 +24,8 @@ ShadowModeConfig::ShadowModeConfig() :
 {
 }
 
-ShadowModeConfig::ShadowModeConfig(JsonView jsonValue) : 
-    m_sourceModelVariantNameHasBeenSet(false),
-    m_shadowModelVariantsHasBeenSet(false)
+ShadowModeConfig::ShadowModeConfig(JsonView jsonValue)
+  : ShadowModeConfig()
 {
   *this = jsonValue;
 }

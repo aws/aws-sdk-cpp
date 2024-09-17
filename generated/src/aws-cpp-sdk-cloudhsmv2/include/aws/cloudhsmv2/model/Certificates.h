@@ -38,234 +38,78 @@ namespace Model
     AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
      * cluster's state is <code>UNINITIALIZED</code>.</p>
      */
     inline const Aws::String& GetClusterCsr() const{ return m_clusterCsr; }
-
-    /**
-     * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
-     * cluster's state is <code>UNINITIALIZED</code>.</p>
-     */
     inline bool ClusterCsrHasBeenSet() const { return m_clusterCsrHasBeenSet; }
-
-    /**
-     * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
-     * cluster's state is <code>UNINITIALIZED</code>.</p>
-     */
     inline void SetClusterCsr(const Aws::String& value) { m_clusterCsrHasBeenSet = true; m_clusterCsr = value; }
-
-    /**
-     * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
-     * cluster's state is <code>UNINITIALIZED</code>.</p>
-     */
     inline void SetClusterCsr(Aws::String&& value) { m_clusterCsrHasBeenSet = true; m_clusterCsr = std::move(value); }
-
-    /**
-     * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
-     * cluster's state is <code>UNINITIALIZED</code>.</p>
-     */
     inline void SetClusterCsr(const char* value) { m_clusterCsrHasBeenSet = true; m_clusterCsr.assign(value); }
-
-    /**
-     * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
-     * cluster's state is <code>UNINITIALIZED</code>.</p>
-     */
     inline Certificates& WithClusterCsr(const Aws::String& value) { SetClusterCsr(value); return *this;}
-
-    /**
-     * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
-     * cluster's state is <code>UNINITIALIZED</code>.</p>
-     */
     inline Certificates& WithClusterCsr(Aws::String&& value) { SetClusterCsr(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster's certificate signing request (CSR). The CSR exists only when the
-     * cluster's state is <code>UNINITIALIZED</code>.</p>
-     */
     inline Certificates& WithClusterCsr(const char* value) { SetClusterCsr(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
      */
     inline const Aws::String& GetHsmCertificate() const{ return m_hsmCertificate; }
-
-    /**
-     * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-     */
     inline bool HsmCertificateHasBeenSet() const { return m_hsmCertificateHasBeenSet; }
-
-    /**
-     * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-     */
     inline void SetHsmCertificate(const Aws::String& value) { m_hsmCertificateHasBeenSet = true; m_hsmCertificate = value; }
-
-    /**
-     * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-     */
     inline void SetHsmCertificate(Aws::String&& value) { m_hsmCertificateHasBeenSet = true; m_hsmCertificate = std::move(value); }
-
-    /**
-     * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-     */
     inline void SetHsmCertificate(const char* value) { m_hsmCertificateHasBeenSet = true; m_hsmCertificate.assign(value); }
-
-    /**
-     * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-     */
     inline Certificates& WithHsmCertificate(const Aws::String& value) { SetHsmCertificate(value); return *this;}
-
-    /**
-     * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-     */
     inline Certificates& WithHsmCertificate(Aws::String&& value) { SetHsmCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-     */
     inline Certificates& WithHsmCertificate(const char* value) { SetHsmCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+     * <p>The HSM hardware certificate issued (signed) by CloudHSM.</p>
      */
     inline const Aws::String& GetAwsHardwareCertificate() const{ return m_awsHardwareCertificate; }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-     */
     inline bool AwsHardwareCertificateHasBeenSet() const { return m_awsHardwareCertificateHasBeenSet; }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-     */
     inline void SetAwsHardwareCertificate(const Aws::String& value) { m_awsHardwareCertificateHasBeenSet = true; m_awsHardwareCertificate = value; }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-     */
     inline void SetAwsHardwareCertificate(Aws::String&& value) { m_awsHardwareCertificateHasBeenSet = true; m_awsHardwareCertificate = std::move(value); }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-     */
     inline void SetAwsHardwareCertificate(const char* value) { m_awsHardwareCertificateHasBeenSet = true; m_awsHardwareCertificate.assign(value); }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-     */
     inline Certificates& WithAwsHardwareCertificate(const Aws::String& value) { SetAwsHardwareCertificate(value); return *this;}
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-     */
     inline Certificates& WithAwsHardwareCertificate(Aws::String&& value) { SetAwsHardwareCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-     */
     inline Certificates& WithAwsHardwareCertificate(const char* value) { SetAwsHardwareCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HSM hardware certificate issued (signed) by the hardware
      * manufacturer.</p>
      */
     inline const Aws::String& GetManufacturerHardwareCertificate() const{ return m_manufacturerHardwareCertificate; }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by the hardware
-     * manufacturer.</p>
-     */
     inline bool ManufacturerHardwareCertificateHasBeenSet() const { return m_manufacturerHardwareCertificateHasBeenSet; }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by the hardware
-     * manufacturer.</p>
-     */
     inline void SetManufacturerHardwareCertificate(const Aws::String& value) { m_manufacturerHardwareCertificateHasBeenSet = true; m_manufacturerHardwareCertificate = value; }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by the hardware
-     * manufacturer.</p>
-     */
     inline void SetManufacturerHardwareCertificate(Aws::String&& value) { m_manufacturerHardwareCertificateHasBeenSet = true; m_manufacturerHardwareCertificate = std::move(value); }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by the hardware
-     * manufacturer.</p>
-     */
     inline void SetManufacturerHardwareCertificate(const char* value) { m_manufacturerHardwareCertificateHasBeenSet = true; m_manufacturerHardwareCertificate.assign(value); }
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by the hardware
-     * manufacturer.</p>
-     */
     inline Certificates& WithManufacturerHardwareCertificate(const Aws::String& value) { SetManufacturerHardwareCertificate(value); return *this;}
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by the hardware
-     * manufacturer.</p>
-     */
     inline Certificates& WithManufacturerHardwareCertificate(Aws::String&& value) { SetManufacturerHardwareCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The HSM hardware certificate issued (signed) by the hardware
-     * manufacturer.</p>
-     */
     inline Certificates& WithManufacturerHardwareCertificate(const char* value) { SetManufacturerHardwareCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cluster certificate issued (signed) by the issuing certificate authority
      * (CA) of the cluster's owner.</p>
      */
     inline const Aws::String& GetClusterCertificate() const{ return m_clusterCertificate; }
-
-    /**
-     * <p>The cluster certificate issued (signed) by the issuing certificate authority
-     * (CA) of the cluster's owner.</p>
-     */
     inline bool ClusterCertificateHasBeenSet() const { return m_clusterCertificateHasBeenSet; }
-
-    /**
-     * <p>The cluster certificate issued (signed) by the issuing certificate authority
-     * (CA) of the cluster's owner.</p>
-     */
     inline void SetClusterCertificate(const Aws::String& value) { m_clusterCertificateHasBeenSet = true; m_clusterCertificate = value; }
-
-    /**
-     * <p>The cluster certificate issued (signed) by the issuing certificate authority
-     * (CA) of the cluster's owner.</p>
-     */
     inline void SetClusterCertificate(Aws::String&& value) { m_clusterCertificateHasBeenSet = true; m_clusterCertificate = std::move(value); }
-
-    /**
-     * <p>The cluster certificate issued (signed) by the issuing certificate authority
-     * (CA) of the cluster's owner.</p>
-     */
     inline void SetClusterCertificate(const char* value) { m_clusterCertificateHasBeenSet = true; m_clusterCertificate.assign(value); }
-
-    /**
-     * <p>The cluster certificate issued (signed) by the issuing certificate authority
-     * (CA) of the cluster's owner.</p>
-     */
     inline Certificates& WithClusterCertificate(const Aws::String& value) { SetClusterCertificate(value); return *this;}
-
-    /**
-     * <p>The cluster certificate issued (signed) by the issuing certificate authority
-     * (CA) of the cluster's owner.</p>
-     */
     inline Certificates& WithClusterCertificate(Aws::String&& value) { SetClusterCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster certificate issued (signed) by the issuing certificate authority
-     * (CA) of the cluster's owner.</p>
-     */
     inline Certificates& WithClusterCertificate(const char* value) { SetClusterCertificate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterCsr;

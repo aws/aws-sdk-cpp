@@ -26,9 +26,8 @@ LaunchTemplateInstanceMaintenanceOptions::LaunchTemplateInstanceMaintenanceOptio
 {
 }
 
-LaunchTemplateInstanceMaintenanceOptions::LaunchTemplateInstanceMaintenanceOptions(const XmlNode& xmlNode) : 
-    m_autoRecovery(LaunchTemplateAutoRecoveryState::NOT_SET),
-    m_autoRecoveryHasBeenSet(false)
+LaunchTemplateInstanceMaintenanceOptions::LaunchTemplateInstanceMaintenanceOptions(const XmlNode& xmlNode)
+  : LaunchTemplateInstanceMaintenanceOptions()
 {
   *this = xmlNode;
 }

@@ -46,79 +46,31 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about a static policy that wasn't created with a policy
      * template.</p>
      */
     inline const StaticPolicyDefinitionItem& GetStatic() const{ return m_static; }
-
-    /**
-     * <p>Information about a static policy that wasn't created with a policy
-     * template.</p>
-     */
     inline bool StaticHasBeenSet() const { return m_staticHasBeenSet; }
-
-    /**
-     * <p>Information about a static policy that wasn't created with a policy
-     * template.</p>
-     */
     inline void SetStatic(const StaticPolicyDefinitionItem& value) { m_staticHasBeenSet = true; m_static = value; }
-
-    /**
-     * <p>Information about a static policy that wasn't created with a policy
-     * template.</p>
-     */
     inline void SetStatic(StaticPolicyDefinitionItem&& value) { m_staticHasBeenSet = true; m_static = std::move(value); }
-
-    /**
-     * <p>Information about a static policy that wasn't created with a policy
-     * template.</p>
-     */
     inline PolicyDefinitionItem& WithStatic(const StaticPolicyDefinitionItem& value) { SetStatic(value); return *this;}
-
-    /**
-     * <p>Information about a static policy that wasn't created with a policy
-     * template.</p>
-     */
     inline PolicyDefinitionItem& WithStatic(StaticPolicyDefinitionItem&& value) { SetStatic(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a template-linked policy that was created by instantiating
      * a policy template.</p>
      */
     inline const TemplateLinkedPolicyDefinitionItem& GetTemplateLinked() const{ return m_templateLinked; }
-
-    /**
-     * <p>Information about a template-linked policy that was created by instantiating
-     * a policy template.</p>
-     */
     inline bool TemplateLinkedHasBeenSet() const { return m_templateLinkedHasBeenSet; }
-
-    /**
-     * <p>Information about a template-linked policy that was created by instantiating
-     * a policy template.</p>
-     */
     inline void SetTemplateLinked(const TemplateLinkedPolicyDefinitionItem& value) { m_templateLinkedHasBeenSet = true; m_templateLinked = value; }
-
-    /**
-     * <p>Information about a template-linked policy that was created by instantiating
-     * a policy template.</p>
-     */
     inline void SetTemplateLinked(TemplateLinkedPolicyDefinitionItem&& value) { m_templateLinkedHasBeenSet = true; m_templateLinked = std::move(value); }
-
-    /**
-     * <p>Information about a template-linked policy that was created by instantiating
-     * a policy template.</p>
-     */
     inline PolicyDefinitionItem& WithTemplateLinked(const TemplateLinkedPolicyDefinitionItem& value) { SetTemplateLinked(value); return *this;}
-
-    /**
-     * <p>Information about a template-linked policy that was created by instantiating
-     * a policy template.</p>
-     */
     inline PolicyDefinitionItem& WithTemplateLinked(TemplateLinkedPolicyDefinitionItem&& value) { SetTemplateLinked(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StaticPolicyDefinitionItem m_static;

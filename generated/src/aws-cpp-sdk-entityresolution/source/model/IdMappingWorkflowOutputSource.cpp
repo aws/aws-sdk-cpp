@@ -24,9 +24,8 @@ IdMappingWorkflowOutputSource::IdMappingWorkflowOutputSource() :
 {
 }
 
-IdMappingWorkflowOutputSource::IdMappingWorkflowOutputSource(JsonView jsonValue) : 
-    m_kMSArnHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false)
+IdMappingWorkflowOutputSource::IdMappingWorkflowOutputSource(JsonView jsonValue)
+  : IdMappingWorkflowOutputSource()
 {
   *this = jsonValue;
 }

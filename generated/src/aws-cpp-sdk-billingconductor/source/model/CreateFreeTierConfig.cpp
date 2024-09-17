@@ -24,9 +24,8 @@ CreateFreeTierConfig::CreateFreeTierConfig() :
 {
 }
 
-CreateFreeTierConfig::CreateFreeTierConfig(JsonView jsonValue) : 
-    m_activated(false),
-    m_activatedHasBeenSet(false)
+CreateFreeTierConfig::CreateFreeTierConfig(JsonView jsonValue)
+  : CreateFreeTierConfig()
 {
   *this = jsonValue;
 }

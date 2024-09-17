@@ -25,10 +25,8 @@ ReservationPurchaseRecommendationSummary::ReservationPurchaseRecommendationSumma
 {
 }
 
-ReservationPurchaseRecommendationSummary::ReservationPurchaseRecommendationSummary(JsonView jsonValue) : 
-    m_totalEstimatedMonthlySavingsAmountHasBeenSet(false),
-    m_totalEstimatedMonthlySavingsPercentageHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
+ReservationPurchaseRecommendationSummary::ReservationPurchaseRecommendationSummary(JsonView jsonValue)
+  : ReservationPurchaseRecommendationSummary()
 {
   *this = jsonValue;
 }

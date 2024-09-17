@@ -34,19 +34,8 @@ MediaCapturePipeline::MediaCapturePipeline() :
 {
 }
 
-MediaCapturePipeline::MediaCapturePipeline(JsonView jsonValue) : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_sourceType(MediaPipelineSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sinkType(MediaPipelineSinkType::NOT_SET),
-    m_sinkTypeHasBeenSet(false),
-    m_sinkArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_chimeSdkMeetingConfigurationHasBeenSet(false)
+MediaCapturePipeline::MediaCapturePipeline(JsonView jsonValue)
+  : MediaCapturePipeline()
 {
   *this = jsonValue;
 }

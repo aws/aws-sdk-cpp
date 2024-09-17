@@ -22,8 +22,8 @@ ListRecommendationSummariesResult::ListRecommendationSummariesResult() :
 {
 }
 
-ListRecommendationSummariesResult::ListRecommendationSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_estimatedTotalDedupedSavings(0.0)
+ListRecommendationSummariesResult::ListRecommendationSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListRecommendationSummariesResult()
 {
   *this = result;
 }
@@ -31,21 +31,9 @@ ListRecommendationSummariesResult::ListRecommendationSummariesResult(const Aws::
 ListRecommendationSummariesResult& ListRecommendationSummariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("currencyCode"))
-  {
-    m_currencyCode = jsonValue.GetString("currencyCode");
-
-  }
-
   if(jsonValue.ValueExists("estimatedTotalDedupedSavings"))
   {
     m_estimatedTotalDedupedSavings = jsonValue.GetDouble("estimatedTotalDedupedSavings");
-
-  }
-
-  if(jsonValue.ValueExists("groupBy"))
-  {
-    m_groupBy = jsonValue.GetString("groupBy");
 
   }
 
@@ -56,6 +44,24 @@ ListRecommendationSummariesResult& ListRecommendationSummariesResult::operator =
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("groupBy"))
+  {
+    m_groupBy = jsonValue.GetString("groupBy");
+
+  }
+
+  if(jsonValue.ValueExists("currencyCode"))
+  {
+    m_currencyCode = jsonValue.GetString("currencyCode");
+
+  }
+
+  if(jsonValue.ValueExists("metrics"))
+  {
+    m_metrics = jsonValue.GetObject("metrics");
+
   }
 
   if(jsonValue.ValueExists("nextToken"))

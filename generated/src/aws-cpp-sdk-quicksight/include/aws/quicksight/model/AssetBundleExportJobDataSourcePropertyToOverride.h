@@ -32,7 +32,8 @@ namespace Model
     ClusterId,
     ManifestFileLocation,
     Warehouse,
-    RoleArn
+    RoleArn,
+    ProductType
   };
 
 namespace AssetBundleExportJobDataSourcePropertyToOverrideMapper

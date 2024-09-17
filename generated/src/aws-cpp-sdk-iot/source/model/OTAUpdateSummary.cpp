@@ -25,10 +25,8 @@ OTAUpdateSummary::OTAUpdateSummary() :
 {
 }
 
-OTAUpdateSummary::OTAUpdateSummary(JsonView jsonValue) : 
-    m_otaUpdateIdHasBeenSet(false),
-    m_otaUpdateArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+OTAUpdateSummary::OTAUpdateSummary(JsonView jsonValue)
+  : OTAUpdateSummary()
 {
   *this = jsonValue;
 }

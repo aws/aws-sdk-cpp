@@ -25,10 +25,8 @@ Hive::Hive() :
 {
 }
 
-Hive::Hive(JsonView jsonValue) : 
-    m_queryHasBeenSet(false),
-    m_initQueryFileHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+Hive::Hive(JsonView jsonValue)
+  : Hive()
 {
   *this = jsonValue;
 }

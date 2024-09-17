@@ -34,46 +34,19 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the approval rule template to delete.</p>
      */
     inline const Aws::String& GetApprovalRuleTemplateName() const{ return m_approvalRuleTemplateName; }
-
-    /**
-     * <p>The name of the approval rule template to delete.</p>
-     */
     inline bool ApprovalRuleTemplateNameHasBeenSet() const { return m_approvalRuleTemplateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the approval rule template to delete.</p>
-     */
     inline void SetApprovalRuleTemplateName(const Aws::String& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = value; }
-
-    /**
-     * <p>The name of the approval rule template to delete.</p>
-     */
     inline void SetApprovalRuleTemplateName(Aws::String&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::move(value); }
-
-    /**
-     * <p>The name of the approval rule template to delete.</p>
-     */
     inline void SetApprovalRuleTemplateName(const char* value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName.assign(value); }
-
-    /**
-     * <p>The name of the approval rule template to delete.</p>
-     */
     inline DeleteApprovalRuleTemplateRequest& WithApprovalRuleTemplateName(const Aws::String& value) { SetApprovalRuleTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the approval rule template to delete.</p>
-     */
     inline DeleteApprovalRuleTemplateRequest& WithApprovalRuleTemplateName(Aws::String&& value) { SetApprovalRuleTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the approval rule template to delete.</p>
-     */
     inline DeleteApprovalRuleTemplateRequest& WithApprovalRuleTemplateName(const char* value) { SetApprovalRuleTemplateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_approvalRuleTemplateName;

@@ -26,11 +26,8 @@ PushNotificationConfiguration::PushNotificationConfiguration() :
 {
 }
 
-PushNotificationConfiguration::PushNotificationConfiguration(JsonView jsonValue) : 
-    m_titleHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_type(PushNotificationType::NOT_SET),
-    m_typeHasBeenSet(false)
+PushNotificationConfiguration::PushNotificationConfiguration(JsonView jsonValue)
+  : PushNotificationConfiguration()
 {
   *this = jsonValue;
 }

@@ -32,87 +32,33 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Chime SDK meeting ID.</p>
      */
     inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
-
-    /**
-     * <p>The Amazon Chime SDK meeting ID.</p>
-     */
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime SDK meeting ID.</p>
-     */
     inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-
-    /**
-     * <p>The Amazon Chime SDK meeting ID.</p>
-     */
     inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime SDK meeting ID.</p>
-     */
     inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime SDK meeting ID.</p>
-     */
     inline DeleteAttendeeRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime SDK meeting ID.</p>
-     */
     inline DeleteAttendeeRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime SDK meeting ID.</p>
-     */
     inline DeleteAttendeeRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Chime SDK attendee ID.</p>
      */
     inline const Aws::String& GetAttendeeId() const{ return m_attendeeId; }
-
-    /**
-     * <p>The Amazon Chime SDK attendee ID.</p>
-     */
     inline bool AttendeeIdHasBeenSet() const { return m_attendeeIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Chime SDK attendee ID.</p>
-     */
     inline void SetAttendeeId(const Aws::String& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = value; }
-
-    /**
-     * <p>The Amazon Chime SDK attendee ID.</p>
-     */
     inline void SetAttendeeId(Aws::String&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime SDK attendee ID.</p>
-     */
     inline void SetAttendeeId(const char* value) { m_attendeeIdHasBeenSet = true; m_attendeeId.assign(value); }
-
-    /**
-     * <p>The Amazon Chime SDK attendee ID.</p>
-     */
     inline DeleteAttendeeRequest& WithAttendeeId(const Aws::String& value) { SetAttendeeId(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime SDK attendee ID.</p>
-     */
     inline DeleteAttendeeRequest& WithAttendeeId(Aws::String&& value) { SetAttendeeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Chime SDK attendee ID.</p>
-     */
     inline DeleteAttendeeRequest& WithAttendeeId(const char* value) { SetAttendeeId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_meetingId;

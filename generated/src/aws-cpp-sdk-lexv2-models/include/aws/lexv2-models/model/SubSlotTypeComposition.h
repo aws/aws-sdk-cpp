@@ -37,95 +37,34 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of a constituent sub slot inside a composite slot.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Name of a constituent sub slot inside a composite slot.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Name of a constituent sub slot inside a composite slot.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Name of a constituent sub slot inside a composite slot.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Name of a constituent sub slot inside a composite slot.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Name of a constituent sub slot inside a composite slot.</p>
-     */
     inline SubSlotTypeComposition& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Name of a constituent sub slot inside a composite slot.</p>
-     */
     inline SubSlotTypeComposition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of a constituent sub slot inside a composite slot.</p>
-     */
     inline SubSlotTypeComposition& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier assigned to a slot type. This refers to either a
      * built-in slot type or the unique slotTypeId of a custom slot type.</p>
      */
     inline const Aws::String& GetSlotTypeId() const{ return m_slotTypeId; }
-
-    /**
-     * <p>The unique identifier assigned to a slot type. This refers to either a
-     * built-in slot type or the unique slotTypeId of a custom slot type.</p>
-     */
     inline bool SlotTypeIdHasBeenSet() const { return m_slotTypeIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier assigned to a slot type. This refers to either a
-     * built-in slot type or the unique slotTypeId of a custom slot type.</p>
-     */
     inline void SetSlotTypeId(const Aws::String& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = value; }
-
-    /**
-     * <p>The unique identifier assigned to a slot type. This refers to either a
-     * built-in slot type or the unique slotTypeId of a custom slot type.</p>
-     */
     inline void SetSlotTypeId(Aws::String&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::move(value); }
-
-    /**
-     * <p>The unique identifier assigned to a slot type. This refers to either a
-     * built-in slot type or the unique slotTypeId of a custom slot type.</p>
-     */
     inline void SetSlotTypeId(const char* value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId.assign(value); }
-
-    /**
-     * <p>The unique identifier assigned to a slot type. This refers to either a
-     * built-in slot type or the unique slotTypeId of a custom slot type.</p>
-     */
     inline SubSlotTypeComposition& WithSlotTypeId(const Aws::String& value) { SetSlotTypeId(value); return *this;}
-
-    /**
-     * <p>The unique identifier assigned to a slot type. This refers to either a
-     * built-in slot type or the unique slotTypeId of a custom slot type.</p>
-     */
     inline SubSlotTypeComposition& WithSlotTypeId(Aws::String&& value) { SetSlotTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier assigned to a slot type. This refers to either a
-     * built-in slot type or the unique slotTypeId of a custom slot type.</p>
-     */
     inline SubSlotTypeComposition& WithSlotTypeId(const char* value) { SetSlotTypeId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

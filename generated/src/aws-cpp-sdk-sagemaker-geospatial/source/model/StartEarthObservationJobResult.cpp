@@ -23,9 +23,8 @@ StartEarthObservationJobResult::StartEarthObservationJobResult() :
 {
 }
 
-StartEarthObservationJobResult::StartEarthObservationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_durationInSeconds(0),
-    m_status(EarthObservationJobStatus::NOT_SET)
+StartEarthObservationJobResult::StartEarthObservationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartEarthObservationJobResult()
 {
   *this = result;
 }

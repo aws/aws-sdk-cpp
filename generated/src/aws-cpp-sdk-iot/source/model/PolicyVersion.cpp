@@ -26,11 +26,8 @@ PolicyVersion::PolicyVersion() :
 {
 }
 
-PolicyVersion::PolicyVersion(JsonView jsonValue) : 
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+PolicyVersion::PolicyVersion(JsonView jsonValue)
+  : PolicyVersion()
 {
   *this = jsonValue;
 }

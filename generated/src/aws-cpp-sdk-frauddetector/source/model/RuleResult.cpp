@@ -24,9 +24,8 @@ RuleResult::RuleResult() :
 {
 }
 
-RuleResult::RuleResult(JsonView jsonValue) : 
-    m_ruleIdHasBeenSet(false),
-    m_outcomesHasBeenSet(false)
+RuleResult::RuleResult(JsonView jsonValue)
+  : RuleResult()
 {
   *this = jsonValue;
 }

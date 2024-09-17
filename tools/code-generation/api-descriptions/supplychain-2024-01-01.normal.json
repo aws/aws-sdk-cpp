@@ -2,9 +2,10 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2024-01-01",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"scn",
-    "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"AWS Supply Chain",
     "serviceId":"SupplyChain",
     "signatureVersion":"v4",
@@ -52,6 +53,27 @@
         {"shape":"ConflictException"}
       ],
       "documentation":"<p>Get status and details of a BillOfMaterialsImportJob.</p>"
+    },
+    "SendDataIntegrationEvent":{
+      "name":"SendDataIntegrationEvent",
+      "http":{
+        "method":"POST",
+        "requestUri":"/api-data/data-integration/instance/{instanceId}/data-integration-events",
+        "responseCode":200
+      },
+      "input":{"shape":"SendDataIntegrationEventRequest"},
+      "output":{"shape":"SendDataIntegrationEventResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"}
+      ],
+      "documentation":"<p>Send the transactional data payload for the event with real-time data for analysis or monitoring. The real-time data events are stored in an Amazon Web Services service before being processed and stored in data lake. New data events are synced with data lake at 5 PM GMT everyday. The updated transactional data is available in data lake after ingestion.</p>",
+      "idempotent":true
     }
   },
   "shapes":{
@@ -169,6 +191,37 @@
       },
       "documentation":"<p>The response parameters of CreateBillOfMaterialsImportJob.</p>"
     },
+    "DataIntegrationEventData":{
+      "type":"string",
+      "max":1048576,
+      "min":1,
+      "sensitive":true
+    },
+    "DataIntegrationEventGroupId":{
+      "type":"string",
+      "max":255,
+      "min":1
+    },
+    "DataIntegrationEventType":{
+      "type":"string",
+      "enum":[
+        "scn.data.forecast",
+        "scn.data.inventorylevel",
+        "scn.data.inboundorder",
+        "scn.data.inboundorderline",
+        "scn.data.inboundorderlineschedule",
+        "scn.data.outboundorderline",
+        "scn.data.outboundshipment",
+        "scn.data.processheader",
+        "scn.data.processoperation",
+        "scn.data.processproduct",
+        "scn.data.reservation",
+        "scn.data.shipment",
+        "scn.data.shipmentstop",
+        "scn.data.shipmentstoporder",
+        "scn.data.supplyplan"
+      ]
+    },
     "GetBillOfMaterialsImportJobRequest":{
       "type":"structure",
       "required":[
@@ -225,6 +278,56 @@
       },
       "exception":true
     },
+    "SendDataIntegrationEventRequest":{
+      "type":"structure",
+      "required":[
+        "instanceId",
+        "eventType",
+        "data",
+        "eventGroupId"
+      ],
+      "members":{
+        "instanceId":{
+          "shape":"UUID",
+          "documentation":"<p>The AWS Supply Chain instance identifier.</p>",
+          "location":"uri",
+          "locationName":"instanceId"
+        },
+        "eventType":{
+          "shape":"DataIntegrationEventType",
+          "documentation":"<p>The data event type.</p>"
+        },
+        "data":{
+          "shape":"DataIntegrationEventData",
+          "documentation":"<p>The data payload of the event. For more information on the data schema to use, see <a href=\"https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html\">Data entities supported in AWS Supply Chain </a>.</p>"
+        },
+        "eventGroupId":{
+          "shape":"DataIntegrationEventGroupId",
+          "documentation":"<p>Event identifier (for example, orderId for InboundOrder) used for data sharing or partitioning.</p>"
+        },
+        "eventTimestamp":{
+          "shape":"SyntheticTimestamp_epoch_seconds",
+          "documentation":"<p>The event timestamp (in epoch seconds).</p>"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The idempotent client token.</p>",
+          "idempotencyToken":true
+        }
+      },
+      "documentation":"<p>The request parameters for SendDataIntegrationEvent.</p>"
+    },
+    "SendDataIntegrationEventResponse":{
+      "type":"structure",
+      "required":["eventId"],
+      "members":{
+        "eventId":{
+          "shape":"UUID",
+          "documentation":"<p>The unique event identifier.</p>"
+        }
+      },
+      "documentation":"<p>The response parameters for SendDataIntegrationEvent.</p>"
+    },
     "ServiceQuotaExceededException":{
       "type":"structure",
       "members":{
@@ -238,6 +341,10 @@
       "exception":true
     },
     "String":{"type":"string"},
+    "SyntheticTimestamp_epoch_seconds":{
+      "type":"timestamp",
+      "timestampFormat":"unixTimestamp"
+    },
     "ThrottlingException":{
       "type":"structure",
       "members":{

@@ -30,15 +30,8 @@ Statistics::Statistics() :
 {
 }
 
-Statistics::Statistics(JsonView jsonValue) : 
-    m_autoCompute(false),
-    m_autoComputeHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_statisticsIdHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_signatureInfoHasBeenSet(false)
+Statistics::Statistics(JsonView jsonValue)
+  : Statistics()
 {
   *this = jsonValue;
 }

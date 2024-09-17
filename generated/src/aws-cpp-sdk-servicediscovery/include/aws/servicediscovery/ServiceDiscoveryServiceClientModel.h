@@ -44,6 +44,9 @@
 #include <aws/servicediscovery/model/UpdatePrivateDnsNamespaceResult.h>
 #include <aws/servicediscovery/model/UpdatePublicDnsNamespaceResult.h>
 #include <aws/servicediscovery/model/UpdateServiceResult.h>
+#include <aws/servicediscovery/model/ListServicesRequest.h>
+#include <aws/servicediscovery/model/ListNamespacesRequest.h>
+#include <aws/servicediscovery/model/ListOperationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ServiceDiscoveryClient header */
 
@@ -78,7 +81,7 @@ namespace Aws
 
   namespace ServiceDiscovery
   {
-    using ServiceDiscoveryClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServiceDiscoveryClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ServiceDiscoveryEndpointProviderBase = Aws::ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProviderBase;
     using ServiceDiscoveryEndpointProvider = Aws::ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProvider;
 

@@ -25,10 +25,8 @@ HashAlgorithmOptions::HashAlgorithmOptions() :
 {
 }
 
-HashAlgorithmOptions::HashAlgorithmOptions(JsonView jsonValue) : 
-    m_allowedValuesHasBeenSet(false),
-    m_defaultValue(HashAlgorithm::NOT_SET),
-    m_defaultValueHasBeenSet(false)
+HashAlgorithmOptions::HashAlgorithmOptions(JsonView jsonValue)
+  : HashAlgorithmOptions()
 {
   *this = jsonValue;
 }

@@ -29,6 +29,7 @@
 #include <aws/iot1click-devices/model/ListTagsForResourceResult.h>
 #include <aws/iot1click-devices/model/UnclaimDeviceResult.h>
 #include <aws/iot1click-devices/model/UpdateDeviceStateResult.h>
+#include <aws/iot1click-devices/model/ListDevicesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IoT1ClickDevicesServiceClient header */
 
@@ -63,7 +64,7 @@ namespace Aws
 
   namespace IoT1ClickDevicesService
   {
-    using IoT1ClickDevicesServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoT1ClickDevicesServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using IoT1ClickDevicesServiceEndpointProviderBase = Aws::IoT1ClickDevicesService::Endpoint::IoT1ClickDevicesServiceEndpointProviderBase;
     using IoT1ClickDevicesServiceEndpointProvider = Aws::IoT1ClickDevicesService::Endpoint::IoT1ClickDevicesServiceEndpointProvider;
 

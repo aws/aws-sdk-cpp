@@ -22,8 +22,8 @@ CancelDomainConfigChangeResult::CancelDomainConfigChangeResult() :
 {
 }
 
-CancelDomainConfigChangeResult::CancelDomainConfigChangeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_dryRun(false)
+CancelDomainConfigChangeResult::CancelDomainConfigChangeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CancelDomainConfigChangeResult()
 {
   *this = result;
 }

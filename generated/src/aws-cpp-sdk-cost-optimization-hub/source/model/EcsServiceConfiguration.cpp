@@ -23,8 +23,8 @@ EcsServiceConfiguration::EcsServiceConfiguration() :
 {
 }
 
-EcsServiceConfiguration::EcsServiceConfiguration(JsonView jsonValue) : 
-    m_computeHasBeenSet(false)
+EcsServiceConfiguration::EcsServiceConfiguration(JsonView jsonValue)
+  : EcsServiceConfiguration()
 {
   *this = jsonValue;
 }

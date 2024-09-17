@@ -25,10 +25,8 @@ LimitExceededException::LimitExceededException() :
 {
 }
 
-LimitExceededException::LimitExceededException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false)
+LimitExceededException::LimitExceededException(JsonView jsonValue)
+  : LimitExceededException()
 {
   *this = jsonValue;
 }

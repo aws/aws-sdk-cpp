@@ -28,13 +28,8 @@ ZookeeperNodeInfo::ZookeeperNodeInfo() :
 {
 }
 
-ZookeeperNodeInfo::ZookeeperNodeInfo(JsonView jsonValue) : 
-    m_attachedENIIdHasBeenSet(false),
-    m_clientVpcIpAddressHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_zookeeperId(0.0),
-    m_zookeeperIdHasBeenSet(false),
-    m_zookeeperVersionHasBeenSet(false)
+ZookeeperNodeInfo::ZookeeperNodeInfo(JsonView jsonValue)
+  : ZookeeperNodeInfo()
 {
   *this = jsonValue;
 }

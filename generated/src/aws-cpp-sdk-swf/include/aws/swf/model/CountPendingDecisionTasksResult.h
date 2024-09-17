@@ -37,62 +37,35 @@ namespace Model
     AWS_SWF_API CountPendingDecisionTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of tasks in the task list.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of tasks in the task list.</p>
-     */
     inline void SetCount(int value) { m_count = value; }
-
-    /**
-     * <p>The number of tasks in the task list.</p>
-     */
     inline CountPendingDecisionTasksResult& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If set to true, indicates that the actual count was more than the maximum
      * supported by this API and the count returned is the truncated value.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
-
-    /**
-     * <p>If set to true, indicates that the actual count was more than the maximum
-     * supported by this API and the count returned is the truncated value.</p>
-     */
     inline void SetTruncated(bool value) { m_truncated = value; }
-
-    /**
-     * <p>If set to true, indicates that the actual count was more than the maximum
-     * supported by this API and the count returned is the truncated value.</p>
-     */
     inline CountPendingDecisionTasksResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CountPendingDecisionTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CountPendingDecisionTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CountPendingDecisionTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_count;

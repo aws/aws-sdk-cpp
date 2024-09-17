@@ -159,23 +159,24 @@ namespace Lambda
         }
 
         /**
-         * <p>Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web
-         * Services organization permission to use a function. You can apply the policy at
-         * the function level, or specify a qualifier to restrict access to a single
+         * <p>Grants an Amazon Web Servicesservice, Amazon Web Services account, or Amazon
+         * Web Services organization permission to use a function. You can apply the policy
+         * at the function level, or specify a qualifier to restrict access to a single
          * version or alias. If you use a qualifier, the invoker must use the full Amazon
          * Resource Name (ARN) of that version or alias to invoke the function. Note:
          * Lambda does not support adding policies to version $LATEST.</p> <p>To grant
          * permission to another account, specify the account ID as the
          * <code>Principal</code>. To grant permission to an organization defined in
          * Organizations, specify the organization ID as the <code>PrincipalOrgID</code>.
-         * For Amazon Web Services, the principal is a domain-style identifier that the
-         * service defines, such as <code>s3.amazonaws.com</code> or
-         * <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify
-         * the ARN of the associated resource as the <code>SourceArn</code>. If you grant
-         * permission to a service principal without specifying the source, other accounts
-         * could potentially configure resources in their account to invoke your Lambda
-         * function.</p> <p>This operation adds a statement to a resource-based permissions
-         * policy for the function. For more information about function policies, see <a
+         * For Amazon Web Servicesservices, the principal is a domain-style identifier that
+         * the service defines, such as <code>s3.amazonaws.com</code> or
+         * <code>sns.amazonaws.com</code>. For Amazon Web Servicesservices, you can also
+         * specify the ARN of the associated resource as the <code>SourceArn</code>. If you
+         * grant permission to a service principal without specifying the source, other
+         * accounts could potentially configure resources in their account to invoke your
+         * Lambda function.</p> <p>This operation adds a statement to a resource-based
+         * permissions policy for the function. For more information about function
+         * policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using
          * resource-based policies for Lambda</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -339,8 +340,9 @@ namespace Lambda
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package is a .zip file archive or container image that
          * contains your function code. The execution role grants the function permission
-         * to use Amazon Web Services, such as Amazon CloudWatch Logs for log streaming and
-         * X-Ray for request tracing.</p> <p>If the deployment package is a <a
+         * to use Amazon Web Servicesservices, such as Amazon CloudWatch Logs for log
+         * streaming and X-Ray for request tracing.</p> <p>If the deployment package is a
+         * <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
          * image</a>, then you set the package type to <code>Image</code>. For a container
          * image, the code property must include the URI of a container image in the Amazon
@@ -378,13 +380,13 @@ namespace Lambda
          * code package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set of signing profiles, which define the trusted
          * publishers for this function.</p> <p>If another Amazon Web Services account or
-         * an Amazon Web Service invokes your function, use <a>AddPermission</a> to grant
-         * permission by creating a resource-based Identity and Access Management (IAM)
-         * policy. You can grant permissions at the function level, on a version, or on an
-         * alias.</p> <p>To invoke your function directly, use <a>Invoke</a>. To invoke
-         * your function in response to events in other Amazon Web Services, create an
-         * event source mapping (<a>CreateEventSourceMapping</a>), or configure a function
-         * trigger in the other service. For more information, see <a
+         * an Amazon Web Servicesservice invokes your function, use <a>AddPermission</a> to
+         * grant permission by creating a resource-based Identity and Access Management
+         * (IAM) policy. You can grant permissions at the function level, on a version, or
+         * on an alias.</p> <p>To invoke your function directly, use <a>Invoke</a>. To
+         * invoke your function in response to events in other Amazon Web Servicesservices,
+         * create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
+         * function trigger in the other service. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Lambda functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
@@ -525,9 +527,9 @@ namespace Lambda
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
          * deleted. This doesn't require the user to have explicit permissions for
          * <a>DeleteAlias</a>.</p> <p>To delete Lambda event source mappings that invoke a
-         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Services and
-         * resources that invoke your function directly, delete the trigger in the service
-         * where you originally configured it.</p><p><h3>See Also:</h3>   <a
+         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Servicesservices
+         * and resources that invoke your function directly, delete the trigger in the
+         * service where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          */
@@ -713,19 +715,46 @@ namespace Lambda
         }
 
         /**
+         * <p>Deletes a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policy</a> from a function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves details about your account's <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
          * usage in an Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
+        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
-        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request) const
+        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::GetAccountSettings, request);
         }
@@ -734,7 +763,7 @@ namespace Lambda
          * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
-        void GetAccountSettingsAsync(const GetAccountSettingsRequestT& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::GetAccountSettings, request, handler, context);
         }
@@ -957,6 +986,33 @@ namespace Lambda
         }
 
         /**
+         * <p>Returns your function's <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
+         * loop detection</a> configuration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionRecursionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFunctionRecursionConfigOutcome GetFunctionRecursionConfig(const Model::GetFunctionRecursionConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFunctionRecursionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFunctionRecursionConfigRequestT = Model::GetFunctionRecursionConfigRequest>
+        Model::GetFunctionRecursionConfigOutcomeCallable GetFunctionRecursionConfigCallable(const GetFunctionRecursionConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::GetFunctionRecursionConfig, request);
+        }
+
+        /**
+         * An Async wrapper for GetFunctionRecursionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFunctionRecursionConfigRequestT = Model::GetFunctionRecursionConfigRequest>
+        void GetFunctionRecursionConfigAsync(const GetFunctionRecursionConfigRequestT& request, const GetFunctionRecursionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::GetFunctionRecursionConfig, request, handler, context);
+        }
+
+        /**
          * <p>Returns details about a Lambda function URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">AWS
          * API Reference</a></p>
@@ -1116,6 +1172,59 @@ namespace Lambda
         void GetProvisionedConcurrencyConfigAsync(const GetProvisionedConcurrencyConfigRequestT& request, const GetProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LambdaClient::GetProvisionedConcurrencyConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve the public-access settings for a function.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPublicAccessBlockConfigOutcome GetPublicAccessBlockConfig(const Model::GetPublicAccessBlockConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPublicAccessBlockConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPublicAccessBlockConfigRequestT = Model::GetPublicAccessBlockConfigRequest>
+        Model::GetPublicAccessBlockConfigOutcomeCallable GetPublicAccessBlockConfigCallable(const GetPublicAccessBlockConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::GetPublicAccessBlockConfig, request);
+        }
+
+        /**
+         * An Async wrapper for GetPublicAccessBlockConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPublicAccessBlockConfigRequestT = Model::GetPublicAccessBlockConfigRequest>
+        void GetPublicAccessBlockConfigAsync(const GetPublicAccessBlockConfigRequestT& request, const GetPublicAccessBlockConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::GetPublicAccessBlockConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policy</a> attached to a function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::GetResourcePolicy, request, handler, context);
         }
 
         /**
@@ -1288,13 +1397,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCodeSigningConfigsOutcome ListCodeSigningConfigs(const Model::ListCodeSigningConfigsRequest& request) const;
+        virtual Model::ListCodeSigningConfigsOutcome ListCodeSigningConfigs(const Model::ListCodeSigningConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCodeSigningConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCodeSigningConfigsRequestT = Model::ListCodeSigningConfigsRequest>
-        Model::ListCodeSigningConfigsOutcomeCallable ListCodeSigningConfigsCallable(const ListCodeSigningConfigsRequestT& request) const
+        Model::ListCodeSigningConfigsOutcomeCallable ListCodeSigningConfigsCallable(const ListCodeSigningConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListCodeSigningConfigs, request);
         }
@@ -1303,7 +1412,7 @@ namespace Lambda
          * An Async wrapper for ListCodeSigningConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCodeSigningConfigsRequestT = Model::ListCodeSigningConfigsRequest>
-        void ListCodeSigningConfigsAsync(const ListCodeSigningConfigsRequestT& request, const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCodeSigningConfigsAsync(const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCodeSigningConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListCodeSigningConfigs, request, handler, context);
         }
@@ -1315,13 +1424,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventSourceMappingsOutcome ListEventSourceMappings(const Model::ListEventSourceMappingsRequest& request) const;
+        virtual Model::ListEventSourceMappingsOutcome ListEventSourceMappings(const Model::ListEventSourceMappingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventSourceMappings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventSourceMappingsRequestT = Model::ListEventSourceMappingsRequest>
-        Model::ListEventSourceMappingsOutcomeCallable ListEventSourceMappingsCallable(const ListEventSourceMappingsRequestT& request) const
+        Model::ListEventSourceMappingsOutcomeCallable ListEventSourceMappingsCallable(const ListEventSourceMappingsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListEventSourceMappings, request);
         }
@@ -1330,7 +1439,7 @@ namespace Lambda
          * An Async wrapper for ListEventSourceMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventSourceMappingsRequestT = Model::ListEventSourceMappingsRequest>
-        void ListEventSourceMappingsAsync(const ListEventSourceMappingsRequestT& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventSourceMappingsAsync(const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventSourceMappingsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListEventSourceMappings, request, handler, context);
         }
@@ -1401,13 +1510,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request) const;
+        virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFunctions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFunctionsRequestT = Model::ListFunctionsRequest>
-        Model::ListFunctionsOutcomeCallable ListFunctionsCallable(const ListFunctionsRequestT& request) const
+        Model::ListFunctionsOutcomeCallable ListFunctionsCallable(const ListFunctionsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListFunctions, request);
         }
@@ -1416,7 +1525,7 @@ namespace Lambda
          * An Async wrapper for ListFunctions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFunctionsRequestT = Model::ListFunctionsRequest>
-        void ListFunctionsAsync(const ListFunctionsRequestT& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFunctionsAsync(const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFunctionsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListFunctions, request, handler, context);
         }
@@ -1492,13 +1601,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLayersOutcome ListLayers(const Model::ListLayersRequest& request) const;
+        virtual Model::ListLayersOutcome ListLayers(const Model::ListLayersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLayers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLayersRequestT = Model::ListLayersRequest>
-        Model::ListLayersOutcomeCallable ListLayersCallable(const ListLayersRequestT& request) const
+        Model::ListLayersOutcomeCallable ListLayersCallable(const ListLayersRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListLayers, request);
         }
@@ -1507,7 +1616,7 @@ namespace Lambda
          * An Async wrapper for ListLayers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLayersRequestT = Model::ListLayersRequest>
-        void ListLayersAsync(const ListLayersRequestT& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLayersAsync(const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLayersRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListLayers, request, handler, context);
         }
@@ -1763,6 +1872,42 @@ namespace Lambda
         }
 
         /**
+         * <p>Sets your function's <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
+         * loop detection</a> configuration.</p> <p>When you configure a Lambda function to
+         * output to the same service or resource that invokes the function, it's possible
+         * to create an infinite recursive loop. For example, a Lambda function might write
+         * a message to an Amazon Simple Queue Service (Amazon SQS) queue, which then
+         * invokes the same function. This invocation causes the function to write another
+         * message to the queue, which in turn invokes the function again.</p> <p>Lambda
+         * can detect certain types of recursive loops shortly after they occur. When
+         * Lambda detects a recursive loop and your function's recursive loop detection
+         * configuration is set to <code>Terminate</code>, it stops your function being
+         * invoked and notifies you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionRecursionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFunctionRecursionConfigOutcome PutFunctionRecursionConfig(const Model::PutFunctionRecursionConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutFunctionRecursionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutFunctionRecursionConfigRequestT = Model::PutFunctionRecursionConfigRequest>
+        Model::PutFunctionRecursionConfigOutcomeCallable PutFunctionRecursionConfigCallable(const PutFunctionRecursionConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::PutFunctionRecursionConfig, request);
+        }
+
+        /**
+         * An Async wrapper for PutFunctionRecursionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutFunctionRecursionConfigRequestT = Model::PutFunctionRecursionConfigRequest>
+        void PutFunctionRecursionConfigAsync(const PutFunctionRecursionConfigRequestT& request, const PutFunctionRecursionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::PutFunctionRecursionConfig, request, handler, context);
+        }
+
+        /**
          * <p>Adds a provisioned concurrency configuration to a function's alias or
          * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">AWS
@@ -1786,6 +1931,75 @@ namespace Lambda
         void PutProvisionedConcurrencyConfigAsync(const PutProvisionedConcurrencyConfigRequestT& request, const PutProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LambdaClient::PutProvisionedConcurrencyConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Configure your function's public-access settings.</p> <p>To control public
+         * access to a Lambda function, you can choose whether to allow the creation of <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policies</a> that allow public access to that function. You can also block
+         * public access to a function, even if it has an existing resource-based policy
+         * that allows it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPublicAccessBlockConfigOutcome PutPublicAccessBlockConfig(const Model::PutPublicAccessBlockConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutPublicAccessBlockConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutPublicAccessBlockConfigRequestT = Model::PutPublicAccessBlockConfigRequest>
+        Model::PutPublicAccessBlockConfigOutcomeCallable PutPublicAccessBlockConfigCallable(const PutPublicAccessBlockConfigRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::PutPublicAccessBlockConfig, request);
+        }
+
+        /**
+         * An Async wrapper for PutPublicAccessBlockConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutPublicAccessBlockConfigRequestT = Model::PutPublicAccessBlockConfigRequest>
+        void PutPublicAccessBlockConfigAsync(const PutPublicAccessBlockConfigRequestT& request, const PutPublicAccessBlockConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::PutPublicAccessBlockConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Adds a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+         * policy</a> to a function. You can use resource-based policies to grant access to
+         * other <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
+         * Web Services accounts</a>, <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
+         * or <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
+         * Resource-based policies apply to a single function, version, or alias.</p>
+         *  <p>Adding a resource-based policy using this API action replaces any
+         * existing policy you've previously created. This means that if you've previously
+         * added resource-based permissions to a function using the <a>AddPermission</a>
+         * action, those permissions will be overwritten by your new policy.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::PutResourcePolicy, request, handler, context);
         }
 
         /**
@@ -1845,9 +2059,9 @@ namespace Lambda
         }
 
         /**
-         * <p>Revokes function-use permission from an Amazon Web Service or another Amazon
-         * Web Services account. You can get the ID of the statement from the output of
-         * <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Revokes function-use permission from an Amazon Web Servicesservice or another
+         * Amazon Web Services account. You can get the ID of the statement from the output
+         * of <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
          */
@@ -2109,8 +2323,8 @@ namespace Lambda
          * function and are locked when you publish a version. You can't modify the
          * configuration of a published version, only the unpublished version.</p> <p>To
          * configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant
-         * invoke permissions to an Amazon Web Services account or Amazon Web Service, use
-         * <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * invoke permissions to an Amazon Web Services account or Amazon Web
+         * Servicesservice, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2195,7 +2409,6 @@ namespace Lambda
       void init(const LambdaClientConfiguration& clientConfiguration);
 
       LambdaClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<LambdaEndpointProviderBase> m_endpointProvider;
   };
 

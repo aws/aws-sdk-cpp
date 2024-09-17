@@ -28,13 +28,8 @@ CustomMessageActivity::CustomMessageActivity() :
 {
 }
 
-CustomMessageActivity::CustomMessageActivity(JsonView jsonValue) : 
-    m_deliveryUriHasBeenSet(false),
-    m_endpointTypesHasBeenSet(false),
-    m_messageConfigHasBeenSet(false),
-    m_nextActivityHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
+CustomMessageActivity::CustomMessageActivity(JsonView jsonValue)
+  : CustomMessageActivity()
 {
   *this = jsonValue;
 }

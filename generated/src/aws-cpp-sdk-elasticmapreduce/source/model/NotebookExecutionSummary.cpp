@@ -31,16 +31,8 @@ NotebookExecutionSummary::NotebookExecutionSummary() :
 {
 }
 
-NotebookExecutionSummary::NotebookExecutionSummary(JsonView jsonValue) : 
-    m_notebookExecutionIdHasBeenSet(false),
-    m_editorIdHasBeenSet(false),
-    m_notebookExecutionNameHasBeenSet(false),
-    m_status(NotebookExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_notebookS3LocationHasBeenSet(false),
-    m_executionEngineIdHasBeenSet(false)
+NotebookExecutionSummary::NotebookExecutionSummary(JsonView jsonValue)
+  : NotebookExecutionSummary()
 {
   *this = jsonValue;
 }

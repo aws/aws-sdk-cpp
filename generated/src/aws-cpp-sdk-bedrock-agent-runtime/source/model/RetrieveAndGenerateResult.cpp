@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RetrieveAndGenerateResult::RetrieveAndGenerateResult()
+RetrieveAndGenerateResult::RetrieveAndGenerateResult() : 
+    m_guardrailAction(GuadrailAction::NOT_SET)
 {
 }
 
 RetrieveAndGenerateResult::RetrieveAndGenerateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RetrieveAndGenerateResult()
 {
   *this = result;
 }
@@ -29,9 +31,18 @@ RetrieveAndGenerateResult::RetrieveAndGenerateResult(const Aws::AmazonWebService
 RetrieveAndGenerateResult& RetrieveAndGenerateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("sessionId"))
+  if(jsonValue.ValueExists("citations"))
   {
-    m_sessionId = jsonValue.GetString("sessionId");
+    Aws::Utils::Array<JsonView> citationsJsonList = jsonValue.GetArray("citations");
+    for(unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex)
+    {
+      m_citations.push_back(citationsJsonList[citationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("guardrailAction"))
+  {
+    m_guardrailAction = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("guardrailAction"));
 
   }
 
@@ -41,13 +52,10 @@ RetrieveAndGenerateResult& RetrieveAndGenerateResult::operator =(const Aws::Amaz
 
   }
 
-  if(jsonValue.ValueExists("citations"))
+  if(jsonValue.ValueExists("sessionId"))
   {
-    Aws::Utils::Array<JsonView> citationsJsonList = jsonValue.GetArray("citations");
-    for(unsigned citationsIndex = 0; citationsIndex < citationsJsonList.GetLength(); ++citationsIndex)
-    {
-      m_citations.push_back(citationsJsonList[citationsIndex].AsObject());
-    }
+    m_sessionId = jsonValue.GetString("sessionId");
+
   }
 
 

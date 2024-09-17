@@ -28,13 +28,8 @@ RoomMembership::RoomMembership() :
 {
 }
 
-RoomMembership::RoomMembership(JsonView jsonValue) : 
-    m_roomIdHasBeenSet(false),
-    m_memberHasBeenSet(false),
-    m_role(RoomMembershipRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_invitedByHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+RoomMembership::RoomMembership(JsonView jsonValue)
+  : RoomMembership()
 {
   *this = jsonValue;
 }

@@ -34,46 +34,19 @@ namespace Model
     AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
-     * <p>The administator account that you want to get the details for.</p>
+     * <p>The administrator account that you want to get the details for.</p>
      */
     inline const Aws::String& GetAdminAccount() const{ return m_adminAccount; }
-
-    /**
-     * <p>The administator account that you want to get the details for.</p>
-     */
     inline bool AdminAccountHasBeenSet() const { return m_adminAccountHasBeenSet; }
-
-    /**
-     * <p>The administator account that you want to get the details for.</p>
-     */
     inline void SetAdminAccount(const Aws::String& value) { m_adminAccountHasBeenSet = true; m_adminAccount = value; }
-
-    /**
-     * <p>The administator account that you want to get the details for.</p>
-     */
     inline void SetAdminAccount(Aws::String&& value) { m_adminAccountHasBeenSet = true; m_adminAccount = std::move(value); }
-
-    /**
-     * <p>The administator account that you want to get the details for.</p>
-     */
     inline void SetAdminAccount(const char* value) { m_adminAccountHasBeenSet = true; m_adminAccount.assign(value); }
-
-    /**
-     * <p>The administator account that you want to get the details for.</p>
-     */
     inline GetAdminScopeRequest& WithAdminAccount(const Aws::String& value) { SetAdminAccount(value); return *this;}
-
-    /**
-     * <p>The administator account that you want to get the details for.</p>
-     */
     inline GetAdminScopeRequest& WithAdminAccount(Aws::String&& value) { SetAdminAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The administator account that you want to get the details for.</p>
-     */
     inline GetAdminScopeRequest& WithAdminAccount(const char* value) { SetAdminAccount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_adminAccount;

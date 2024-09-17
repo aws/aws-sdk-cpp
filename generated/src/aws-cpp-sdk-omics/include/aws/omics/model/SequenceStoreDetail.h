@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/SseConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/ETagAlgorithmFamily.h>
 #include <utility>
 
 namespace Aws
@@ -39,280 +40,112 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The store's ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline SequenceStoreDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline SequenceStoreDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline SequenceStoreDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline SequenceStoreDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline SequenceStoreDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline SequenceStoreDetail& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline SequenceStoreDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline SequenceStoreDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline SequenceStoreDetail& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline SequenceStoreDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline SequenceStoreDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline SequenceStoreDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's server-side encryption (SSE) settings.</p>
      */
     inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline bool SseConfigHasBeenSet() const { return m_sseConfigHasBeenSet; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline void SetSseConfig(const SseConfig& value) { m_sseConfigHasBeenSet = true; m_sseConfig = value; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline void SetSseConfig(SseConfig&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::move(value); }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline SequenceStoreDetail& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline SequenceStoreDetail& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When the store was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline SequenceStoreDetail& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline SequenceStoreDetail& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An S3 location that is used to store files that have failed a direct upload.
      * </p>
      */
     inline const Aws::String& GetFallbackLocation() const{ return m_fallbackLocation; }
-
-    /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
-     */
     inline bool FallbackLocationHasBeenSet() const { return m_fallbackLocationHasBeenSet; }
-
-    /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
-     */
     inline void SetFallbackLocation(const Aws::String& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = value; }
-
-    /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
-     */
     inline void SetFallbackLocation(Aws::String&& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = std::move(value); }
-
-    /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
-     */
     inline void SetFallbackLocation(const char* value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation.assign(value); }
-
-    /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
-     */
     inline SequenceStoreDetail& WithFallbackLocation(const Aws::String& value) { SetFallbackLocation(value); return *this;}
-
-    /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
-     */
     inline SequenceStoreDetail& WithFallbackLocation(Aws::String&& value) { SetFallbackLocation(std::move(value)); return *this;}
-
-    /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
-     */
     inline SequenceStoreDetail& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline const ETagAlgorithmFamily& GetETagAlgorithmFamily() const{ return m_eTagAlgorithmFamily; }
+    inline bool ETagAlgorithmFamilyHasBeenSet() const { return m_eTagAlgorithmFamilyHasBeenSet; }
+    inline void SetETagAlgorithmFamily(const ETagAlgorithmFamily& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = value; }
+    inline void SetETagAlgorithmFamily(ETagAlgorithmFamily&& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = std::move(value); }
+    inline SequenceStoreDetail& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
+    inline SequenceStoreDetail& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -335,6 +168,9 @@ namespace Model
 
     Aws::String m_fallbackLocation;
     bool m_fallbackLocationHasBeenSet = false;
+
+    ETagAlgorithmFamily m_eTagAlgorithmFamily;
+    bool m_eTagAlgorithmFamilyHasBeenSet = false;
   };
 
 } // namespace Model

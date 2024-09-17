@@ -27,12 +27,8 @@ BotReplicaSummary::BotReplicaSummary() :
 {
 }
 
-BotReplicaSummary::BotReplicaSummary(JsonView jsonValue) : 
-    m_replicaRegionHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_botReplicaStatus(BotReplicaStatus::NOT_SET),
-    m_botReplicaStatusHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false)
+BotReplicaSummary::BotReplicaSummary(JsonView jsonValue)
+  : BotReplicaSummary()
 {
   *this = jsonValue;
 }

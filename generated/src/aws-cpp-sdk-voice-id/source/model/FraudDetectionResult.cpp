@@ -30,15 +30,8 @@ FraudDetectionResult::FraudDetectionResult() :
 {
 }
 
-FraudDetectionResult::FraudDetectionResult(JsonView jsonValue) : 
-    m_audioAggregationEndedAtHasBeenSet(false),
-    m_audioAggregationStartedAtHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_decision(FraudDetectionDecision::NOT_SET),
-    m_decisionHasBeenSet(false),
-    m_fraudDetectionResultIdHasBeenSet(false),
-    m_reasonsHasBeenSet(false),
-    m_riskDetailsHasBeenSet(false)
+FraudDetectionResult::FraudDetectionResult(JsonView jsonValue)
+  : FraudDetectionResult()
 {
   *this = jsonValue;
 }

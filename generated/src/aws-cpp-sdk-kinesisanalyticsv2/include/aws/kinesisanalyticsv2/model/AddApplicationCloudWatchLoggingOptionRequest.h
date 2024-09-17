@@ -35,119 +35,48 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Kinesis Data Analytics application name.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The Kinesis Data Analytics application name.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The Kinesis Data Analytics application name.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The Kinesis Data Analytics application name.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The Kinesis Data Analytics application name.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The Kinesis Data Analytics application name.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The Kinesis Data Analytics application name.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Kinesis Data Analytics application name.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
+     * <p>The version ID of the SQL-based Kinesis Data Analytics application. You must
+     * provide the <code>CurrentApplicationVersionId</code> or the
      * <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of
      * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
-
-    /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>.You can retrieve the application version ID using
-     * <a>DescribeApplication</a>. For better concurrency support, use the
-     * <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
-
-    /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>.You can retrieve the application version ID using
-     * <a>DescribeApplication</a>. For better concurrency support, use the
-     * <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
-
-    /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>.You can retrieve the application version ID using
-     * <a>DescribeApplication</a>. For better concurrency support, use the
-     * <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
      */
     inline const CloudWatchLoggingOption& GetCloudWatchLoggingOption() const{ return m_cloudWatchLoggingOption; }
-
-    /**
-     * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-     */
     inline bool CloudWatchLoggingOptionHasBeenSet() const { return m_cloudWatchLoggingOptionHasBeenSet; }
-
-    /**
-     * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-     */
     inline void SetCloudWatchLoggingOption(const CloudWatchLoggingOption& value) { m_cloudWatchLoggingOptionHasBeenSet = true; m_cloudWatchLoggingOption = value; }
-
-    /**
-     * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-     */
     inline void SetCloudWatchLoggingOption(CloudWatchLoggingOption&& value) { m_cloudWatchLoggingOptionHasBeenSet = true; m_cloudWatchLoggingOption = std::move(value); }
-
-    /**
-     * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOption(const CloudWatchLoggingOption& value) { SetCloudWatchLoggingOption(value); return *this;}
-
-    /**
-     * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOption(CloudWatchLoggingOption&& value) { SetCloudWatchLoggingOption(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>CurrentApplicationVersionId</code> or the
@@ -157,77 +86,14 @@ namespace Model
      * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
-
-    /**
-     * <p>A value you use to implement strong concurrency for application updates. You
-     * must provide the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
-     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
-
-    /**
-     * <p>A value you use to implement strong concurrency for application updates. You
-     * must provide the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
-     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
-
-    /**
-     * <p>A value you use to implement strong concurrency for application updates. You
-     * must provide the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
-     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
-
-    /**
-     * <p>A value you use to implement strong concurrency for application updates. You
-     * must provide the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
-     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
-
-    /**
-     * <p>A value you use to implement strong concurrency for application updates. You
-     * must provide the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
-     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
-
-    /**
-     * <p>A value you use to implement strong concurrency for application updates. You
-     * must provide the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
-     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A value you use to implement strong concurrency for application updates. You
-     * must provide the <code>CurrentApplicationVersionId</code> or the
-     * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
-     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
-     * <code>CurrentApplicationVersionId</code>.</p>
-     */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

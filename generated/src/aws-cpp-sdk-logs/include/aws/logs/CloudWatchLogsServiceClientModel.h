@@ -23,6 +23,7 @@
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
 #include <aws/logs/model/DeleteQueryDefinitionResult.h>
 #include <aws/logs/model/DescribeAccountPoliciesResult.h>
+#include <aws/logs/model/DescribeConfigurationTemplatesResult.h>
 #include <aws/logs/model/DescribeDeliveriesResult.h>
 #include <aws/logs/model/DescribeDeliveryDestinationsResult.h>
 #include <aws/logs/model/DescribeDeliverySourcesResult.h>
@@ -61,6 +62,26 @@
 #include <aws/logs/model/StartQueryResult.h>
 #include <aws/logs/model/StopQueryResult.h>
 #include <aws/logs/model/TestMetricFilterResult.h>
+#include <aws/logs/model/UpdateDeliveryConfigurationResult.h>
+#include <aws/logs/model/DeleteResourcePolicyRequest.h>
+#include <aws/logs/model/ListAnomaliesRequest.h>
+#include <aws/logs/model/DescribeQueriesRequest.h>
+#include <aws/logs/model/DescribeDeliverySourcesRequest.h>
+#include <aws/logs/model/FilterLogEventsRequest.h>
+#include <aws/logs/model/DescribeMetricFiltersRequest.h>
+#include <aws/logs/model/DescribeResourcePoliciesRequest.h>
+#include <aws/logs/model/PutResourcePolicyRequest.h>
+#include <aws/logs/model/DescribeDeliveriesRequest.h>
+#include <aws/logs/model/DescribeQueryDefinitionsRequest.h>
+#include <aws/logs/model/DescribeConfigurationTemplatesRequest.h>
+#include <aws/logs/model/DescribeExportTasksRequest.h>
+#include <aws/logs/model/DescribeDestinationsRequest.h>
+#include <aws/logs/model/DescribeLogGroupsRequest.h>
+#include <aws/logs/model/DescribeLogStreamsRequest.h>
+#include <aws/logs/model/GetLogGroupFieldsRequest.h>
+#include <aws/logs/model/DescribeDeliveryDestinationsRequest.h>
+#include <aws/logs/model/DisassociateKmsKeyRequest.h>
+#include <aws/logs/model/ListLogAnomalyDetectorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudWatchLogsClient header */
 
@@ -95,7 +116,7 @@ namespace Aws
 
   namespace CloudWatchLogs
   {
-    using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudWatchLogsEndpointProviderBase = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProviderBase;
     using CloudWatchLogsEndpointProvider = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProvider;
 
@@ -125,6 +146,7 @@ namespace Aws
       class DeleteRetentionPolicyRequest;
       class DeleteSubscriptionFilterRequest;
       class DescribeAccountPoliciesRequest;
+      class DescribeConfigurationTemplatesRequest;
       class DescribeDeliveriesRequest;
       class DescribeDeliveryDestinationsRequest;
       class DescribeDeliverySourcesRequest;
@@ -172,6 +194,7 @@ namespace Aws
       class TestMetricFilterRequest;
       class UntagResourceRequest;
       class UpdateAnomalyRequest;
+      class UpdateDeliveryConfigurationRequest;
       class UpdateLogAnomalyDetectorRequest;
       /* End of service model forward declarations required in CloudWatchLogsClient header */
 
@@ -199,6 +222,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteRetentionPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteSubscriptionFilterOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountPoliciesResult, CloudWatchLogsError> DescribeAccountPoliciesOutcome;
+      typedef Aws::Utils::Outcome<DescribeConfigurationTemplatesResult, CloudWatchLogsError> DescribeConfigurationTemplatesOutcome;
       typedef Aws::Utils::Outcome<DescribeDeliveriesResult, CloudWatchLogsError> DescribeDeliveriesOutcome;
       typedef Aws::Utils::Outcome<DescribeDeliveryDestinationsResult, CloudWatchLogsError> DescribeDeliveryDestinationsOutcome;
       typedef Aws::Utils::Outcome<DescribeDeliverySourcesResult, CloudWatchLogsError> DescribeDeliverySourcesOutcome;
@@ -246,6 +270,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TestMetricFilterResult, CloudWatchLogsError> TestMetricFilterOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UpdateAnomalyOutcome;
+      typedef Aws::Utils::Outcome<UpdateDeliveryConfigurationResult, CloudWatchLogsError> UpdateDeliveryConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UpdateLogAnomalyDetectorOutcome;
       /* End of service model Outcome class definitions */
 
@@ -273,6 +298,7 @@ namespace Aws
       typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
       typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
       typedef std::future<DescribeAccountPoliciesOutcome> DescribeAccountPoliciesOutcomeCallable;
+      typedef std::future<DescribeConfigurationTemplatesOutcome> DescribeConfigurationTemplatesOutcomeCallable;
       typedef std::future<DescribeDeliveriesOutcome> DescribeDeliveriesOutcomeCallable;
       typedef std::future<DescribeDeliveryDestinationsOutcome> DescribeDeliveryDestinationsOutcomeCallable;
       typedef std::future<DescribeDeliverySourcesOutcome> DescribeDeliverySourcesOutcomeCallable;
@@ -320,6 +346,7 @@ namespace Aws
       typedef std::future<TestMetricFilterOutcome> TestMetricFilterOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAnomalyOutcome> UpdateAnomalyOutcomeCallable;
+      typedef std::future<UpdateDeliveryConfigurationOutcome> UpdateDeliveryConfigurationOutcomeCallable;
       typedef std::future<UpdateLogAnomalyDetectorOutcome> UpdateLogAnomalyDetectorOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -350,6 +377,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSubscriptionFilterRequest&, const Model::DeleteSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeAccountPoliciesRequest&, const Model::DescribeAccountPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountPoliciesResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeConfigurationTemplatesRequest&, const Model::DescribeConfigurationTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationTemplatesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeDeliveriesRequest&, const Model::DescribeDeliveriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveriesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeDeliveryDestinationsRequest&, const Model::DescribeDeliveryDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveryDestinationsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeDeliverySourcesRequest&, const Model::DescribeDeliverySourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliverySourcesResponseReceivedHandler;
@@ -397,6 +425,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMetricFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::UpdateAnomalyRequest&, const Model::UpdateAnomalyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalyResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::UpdateDeliveryConfigurationRequest&, const Model::UpdateDeliveryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeliveryConfigurationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::UpdateLogAnomalyDetectorRequest&, const Model::UpdateLogAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLogAnomalyDetectorResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace CloudWatchLogs

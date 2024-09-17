@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWorkerConfigurationResult::DescribeWorkerConfigurationResult()
+DescribeWorkerConfigurationResult::DescribeWorkerConfigurationResult() : 
+    m_workerConfigurationState(WorkerConfigurationState::NOT_SET)
 {
 }
 
 DescribeWorkerConfigurationResult::DescribeWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeWorkerConfigurationResult()
 {
   *this = result;
 }
@@ -56,6 +58,12 @@ DescribeWorkerConfigurationResult& DescribeWorkerConfigurationResult::operator =
   if(jsonValue.ValueExists("workerConfigurationArn"))
   {
     m_workerConfigurationArn = jsonValue.GetString("workerConfigurationArn");
+
+  }
+
+  if(jsonValue.ValueExists("workerConfigurationState"))
+  {
+    m_workerConfigurationState = WorkerConfigurationStateMapper::GetWorkerConfigurationStateForName(jsonValue.GetString("workerConfigurationState"));
 
   }
 

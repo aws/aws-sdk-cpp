@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     dualstack,
-    ipv4
+    ipv4,
+    ipv6
   };
 
 namespace IpAddressTypeMapper

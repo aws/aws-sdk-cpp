@@ -38,24 +38,15 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FaceDetail& GetFaceDetail() const{ return m_faceDetail; }
-
-    
     inline bool FaceDetailHasBeenSet() const { return m_faceDetailHasBeenSet; }
-
-    
     inline void SetFaceDetail(const FaceDetail& value) { m_faceDetailHasBeenSet = true; m_faceDetail = value; }
-
-    
     inline void SetFaceDetail(FaceDetail&& value) { m_faceDetailHasBeenSet = true; m_faceDetail = std::move(value); }
-
-    
     inline SearchedFaceDetails& WithFaceDetail(const FaceDetail& value) { SetFaceDetail(value); return *this;}
-
-    
     inline SearchedFaceDetails& WithFaceDetail(FaceDetail&& value) { SetFaceDetail(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FaceDetail m_faceDetail;

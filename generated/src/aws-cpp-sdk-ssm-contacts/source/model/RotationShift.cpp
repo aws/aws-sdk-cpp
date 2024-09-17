@@ -28,13 +28,8 @@ RotationShift::RotationShift() :
 {
 }
 
-RotationShift::RotationShift(JsonView jsonValue) : 
-    m_contactIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_type(ShiftType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_shiftDetailsHasBeenSet(false)
+RotationShift::RotationShift(JsonView jsonValue)
+  : RotationShift()
 {
   *this = jsonValue;
 }

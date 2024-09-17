@@ -581,6 +581,32 @@ namespace AppStream
         }
 
         /**
+         * <p>Creates custom branding that customizes the appearance of the streaming
+         * application catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateThemeForStackOutcome CreateThemeForStack(const Model::CreateThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateThemeForStackRequestT = Model::CreateThemeForStackRequest>
+        Model::CreateThemeForStackOutcomeCallable CreateThemeForStackCallable(const CreateThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::CreateThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for CreateThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateThemeForStackRequestT = Model::CreateThemeForStackRequest>
+        void CreateThemeForStackAsync(const CreateThemeForStackRequestT& request, const CreateThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::CreateThemeForStack, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new image with the latest Windows operating system updates, driver
          * updates, and AppStream 2.0 agent software.</p> <p>For more information, see the
          * "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
@@ -616,13 +642,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateUsageReportSubscriptionOutcome CreateUsageReportSubscription(const Model::CreateUsageReportSubscriptionRequest& request) const;
+        virtual Model::CreateUsageReportSubscriptionOutcome CreateUsageReportSubscription(const Model::CreateUsageReportSubscriptionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateUsageReportSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateUsageReportSubscriptionRequestT = Model::CreateUsageReportSubscriptionRequest>
-        Model::CreateUsageReportSubscriptionOutcomeCallable CreateUsageReportSubscriptionCallable(const CreateUsageReportSubscriptionRequestT& request) const
+        Model::CreateUsageReportSubscriptionOutcomeCallable CreateUsageReportSubscriptionCallable(const CreateUsageReportSubscriptionRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::CreateUsageReportSubscription, request);
         }
@@ -631,7 +657,7 @@ namespace AppStream
          * An Async wrapper for CreateUsageReportSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateUsageReportSubscriptionRequestT = Model::CreateUsageReportSubscriptionRequest>
-        void CreateUsageReportSubscriptionAsync(const CreateUsageReportSubscriptionRequestT& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateUsageReportSubscriptionAsync(const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateUsageReportSubscriptionRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::CreateUsageReportSubscription, request, handler, context);
         }
@@ -923,17 +949,43 @@ namespace AppStream
         }
 
         /**
+         * <p>Deletes custom branding that customizes the appearance of the streaming
+         * application catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteThemeForStackOutcome DeleteThemeForStack(const Model::DeleteThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteThemeForStackRequestT = Model::DeleteThemeForStackRequest>
+        Model::DeleteThemeForStackOutcomeCallable DeleteThemeForStackCallable(const DeleteThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DeleteThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteThemeForStackRequestT = Model::DeleteThemeForStackRequest>
+        void DeleteThemeForStackAsync(const DeleteThemeForStackRequestT& request, const DeleteThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DeleteThemeForStack, request, handler, context);
+        }
+
+        /**
          * <p>Disables usage report generation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteUsageReportSubscriptionOutcome DeleteUsageReportSubscription(const Model::DeleteUsageReportSubscriptionRequest& request) const;
+        virtual Model::DeleteUsageReportSubscriptionOutcome DeleteUsageReportSubscription(const Model::DeleteUsageReportSubscriptionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteUsageReportSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteUsageReportSubscriptionRequestT = Model::DeleteUsageReportSubscriptionRequest>
-        Model::DeleteUsageReportSubscriptionOutcomeCallable DeleteUsageReportSubscriptionCallable(const DeleteUsageReportSubscriptionRequestT& request) const
+        Model::DeleteUsageReportSubscriptionOutcomeCallable DeleteUsageReportSubscriptionCallable(const DeleteUsageReportSubscriptionRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DeleteUsageReportSubscription, request);
         }
@@ -942,7 +994,7 @@ namespace AppStream
          * An Async wrapper for DeleteUsageReportSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteUsageReportSubscriptionRequestT = Model::DeleteUsageReportSubscriptionRequest>
-        void DeleteUsageReportSubscriptionAsync(const DeleteUsageReportSubscriptionRequestT& request, const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteUsageReportSubscriptionAsync(const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteUsageReportSubscriptionRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DeleteUsageReportSubscription, request, handler, context);
         }
@@ -978,13 +1030,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAppBlockBuilderAppBlockAssociationsOutcome DescribeAppBlockBuilderAppBlockAssociations(const Model::DescribeAppBlockBuilderAppBlockAssociationsRequest& request) const;
+        virtual Model::DescribeAppBlockBuilderAppBlockAssociationsOutcome DescribeAppBlockBuilderAppBlockAssociations(const Model::DescribeAppBlockBuilderAppBlockAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAppBlockBuilderAppBlockAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAppBlockBuilderAppBlockAssociationsRequestT = Model::DescribeAppBlockBuilderAppBlockAssociationsRequest>
-        Model::DescribeAppBlockBuilderAppBlockAssociationsOutcomeCallable DescribeAppBlockBuilderAppBlockAssociationsCallable(const DescribeAppBlockBuilderAppBlockAssociationsRequestT& request) const
+        Model::DescribeAppBlockBuilderAppBlockAssociationsOutcomeCallable DescribeAppBlockBuilderAppBlockAssociationsCallable(const DescribeAppBlockBuilderAppBlockAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeAppBlockBuilderAppBlockAssociations, request);
         }
@@ -993,7 +1045,7 @@ namespace AppStream
          * An Async wrapper for DescribeAppBlockBuilderAppBlockAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAppBlockBuilderAppBlockAssociationsRequestT = Model::DescribeAppBlockBuilderAppBlockAssociationsRequest>
-        void DescribeAppBlockBuilderAppBlockAssociationsAsync(const DescribeAppBlockBuilderAppBlockAssociationsRequestT& request, const DescribeAppBlockBuilderAppBlockAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAppBlockBuilderAppBlockAssociationsAsync(const DescribeAppBlockBuilderAppBlockAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAppBlockBuilderAppBlockAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeAppBlockBuilderAppBlockAssociations, request, handler, context);
         }
@@ -1004,13 +1056,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAppBlockBuildersOutcome DescribeAppBlockBuilders(const Model::DescribeAppBlockBuildersRequest& request) const;
+        virtual Model::DescribeAppBlockBuildersOutcome DescribeAppBlockBuilders(const Model::DescribeAppBlockBuildersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAppBlockBuilders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAppBlockBuildersRequestT = Model::DescribeAppBlockBuildersRequest>
-        Model::DescribeAppBlockBuildersOutcomeCallable DescribeAppBlockBuildersCallable(const DescribeAppBlockBuildersRequestT& request) const
+        Model::DescribeAppBlockBuildersOutcomeCallable DescribeAppBlockBuildersCallable(const DescribeAppBlockBuildersRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeAppBlockBuilders, request);
         }
@@ -1019,7 +1071,7 @@ namespace AppStream
          * An Async wrapper for DescribeAppBlockBuilders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAppBlockBuildersRequestT = Model::DescribeAppBlockBuildersRequest>
-        void DescribeAppBlockBuildersAsync(const DescribeAppBlockBuildersRequestT& request, const DescribeAppBlockBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAppBlockBuildersAsync(const DescribeAppBlockBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAppBlockBuildersRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeAppBlockBuilders, request, handler, context);
         }
@@ -1030,13 +1082,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAppBlocksOutcome DescribeAppBlocks(const Model::DescribeAppBlocksRequest& request) const;
+        virtual Model::DescribeAppBlocksOutcome DescribeAppBlocks(const Model::DescribeAppBlocksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAppBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAppBlocksRequestT = Model::DescribeAppBlocksRequest>
-        Model::DescribeAppBlocksOutcomeCallable DescribeAppBlocksCallable(const DescribeAppBlocksRequestT& request) const
+        Model::DescribeAppBlocksOutcomeCallable DescribeAppBlocksCallable(const DescribeAppBlocksRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeAppBlocks, request);
         }
@@ -1045,7 +1097,7 @@ namespace AppStream
          * An Async wrapper for DescribeAppBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAppBlocksRequestT = Model::DescribeAppBlocksRequest>
-        void DescribeAppBlocksAsync(const DescribeAppBlocksRequestT& request, const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAppBlocksAsync(const DescribeAppBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAppBlocksRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeAppBlocks, request, handler, context);
         }
@@ -1057,13 +1109,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeApplicationFleetAssociationsOutcome DescribeApplicationFleetAssociations(const Model::DescribeApplicationFleetAssociationsRequest& request) const;
+        virtual Model::DescribeApplicationFleetAssociationsOutcome DescribeApplicationFleetAssociations(const Model::DescribeApplicationFleetAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeApplicationFleetAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeApplicationFleetAssociationsRequestT = Model::DescribeApplicationFleetAssociationsRequest>
-        Model::DescribeApplicationFleetAssociationsOutcomeCallable DescribeApplicationFleetAssociationsCallable(const DescribeApplicationFleetAssociationsRequestT& request) const
+        Model::DescribeApplicationFleetAssociationsOutcomeCallable DescribeApplicationFleetAssociationsCallable(const DescribeApplicationFleetAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeApplicationFleetAssociations, request);
         }
@@ -1072,7 +1124,7 @@ namespace AppStream
          * An Async wrapper for DescribeApplicationFleetAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeApplicationFleetAssociationsRequestT = Model::DescribeApplicationFleetAssociationsRequest>
-        void DescribeApplicationFleetAssociationsAsync(const DescribeApplicationFleetAssociationsRequestT& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeApplicationFleetAssociationsAsync(const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeApplicationFleetAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeApplicationFleetAssociations, request, handler, context);
         }
@@ -1083,13 +1135,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request) const;
+        virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeApplicationsRequestT = Model::DescribeApplicationsRequest>
-        Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const DescribeApplicationsRequestT& request) const
+        Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const DescribeApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeApplications, request);
         }
@@ -1098,7 +1150,7 @@ namespace AppStream
          * An Async wrapper for DescribeApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeApplicationsRequestT = Model::DescribeApplicationsRequest>
-        void DescribeApplicationsAsync(const DescribeApplicationsRequestT& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeApplicationsAsync(const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeApplications, request, handler, context);
         }
@@ -1114,13 +1166,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDirectoryConfigsOutcome DescribeDirectoryConfigs(const Model::DescribeDirectoryConfigsRequest& request) const;
+        virtual Model::DescribeDirectoryConfigsOutcome DescribeDirectoryConfigs(const Model::DescribeDirectoryConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDirectoryConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDirectoryConfigsRequestT = Model::DescribeDirectoryConfigsRequest>
-        Model::DescribeDirectoryConfigsOutcomeCallable DescribeDirectoryConfigsCallable(const DescribeDirectoryConfigsRequestT& request) const
+        Model::DescribeDirectoryConfigsOutcomeCallable DescribeDirectoryConfigsCallable(const DescribeDirectoryConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeDirectoryConfigs, request);
         }
@@ -1129,7 +1181,7 @@ namespace AppStream
          * An Async wrapper for DescribeDirectoryConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDirectoryConfigsRequestT = Model::DescribeDirectoryConfigsRequest>
-        void DescribeDirectoryConfigsAsync(const DescribeDirectoryConfigsRequestT& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDirectoryConfigsAsync(const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDirectoryConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeDirectoryConfigs, request, handler, context);
         }
@@ -1167,13 +1219,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
+        virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFleets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFleetsRequestT = Model::DescribeFleetsRequest>
-        Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const DescribeFleetsRequestT& request) const
+        Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const DescribeFleetsRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeFleets, request);
         }
@@ -1182,7 +1234,7 @@ namespace AppStream
          * An Async wrapper for DescribeFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFleetsRequestT = Model::DescribeFleetsRequest>
-        void DescribeFleetsAsync(const DescribeFleetsRequestT& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFleetsAsync(const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFleetsRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeFleets, request, handler, context);
         }
@@ -1194,13 +1246,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeImageBuildersOutcome DescribeImageBuilders(const Model::DescribeImageBuildersRequest& request) const;
+        virtual Model::DescribeImageBuildersOutcome DescribeImageBuilders(const Model::DescribeImageBuildersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeImageBuilders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeImageBuildersRequestT = Model::DescribeImageBuildersRequest>
-        Model::DescribeImageBuildersOutcomeCallable DescribeImageBuildersCallable(const DescribeImageBuildersRequestT& request) const
+        Model::DescribeImageBuildersOutcomeCallable DescribeImageBuildersCallable(const DescribeImageBuildersRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeImageBuilders, request);
         }
@@ -1209,7 +1261,7 @@ namespace AppStream
          * An Async wrapper for DescribeImageBuilders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeImageBuildersRequestT = Model::DescribeImageBuildersRequest>
-        void DescribeImageBuildersAsync(const DescribeImageBuildersRequestT& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeImageBuildersAsync(const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeImageBuildersRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeImageBuilders, request, handler, context);
         }
@@ -1247,13 +1299,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
+        virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeImages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeImagesRequestT = Model::DescribeImagesRequest>
-        Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const DescribeImagesRequestT& request) const
+        Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const DescribeImagesRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeImages, request);
         }
@@ -1262,7 +1314,7 @@ namespace AppStream
          * An Async wrapper for DescribeImages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeImagesRequestT = Model::DescribeImagesRequest>
-        void DescribeImagesAsync(const DescribeImagesRequestT& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeImagesAsync(const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeImagesRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeImages, request, handler, context);
         }
@@ -1303,13 +1355,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
+        virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeStacks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeStacksRequestT = Model::DescribeStacksRequest>
-        Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const DescribeStacksRequestT& request) const
+        Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const DescribeStacksRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeStacks, request);
         }
@@ -1318,9 +1370,36 @@ namespace AppStream
          * An Async wrapper for DescribeStacks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeStacksRequestT = Model::DescribeStacksRequest>
-        void DescribeStacksAsync(const DescribeStacksRequestT& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeStacksAsync(const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeStacksRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeStacks, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list that describes the theme for a specified stack. A theme is
+         * custom branding that customizes the appearance of the streaming application
+         * catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeThemeForStackOutcome DescribeThemeForStack(const Model::DescribeThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeThemeForStackRequestT = Model::DescribeThemeForStackRequest>
+        Model::DescribeThemeForStackOutcomeCallable DescribeThemeForStackCallable(const DescribeThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DescribeThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeThemeForStackRequestT = Model::DescribeThemeForStackRequest>
+        void DescribeThemeForStackAsync(const DescribeThemeForStackRequestT& request, const DescribeThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DescribeThemeForStack, request, handler, context);
         }
 
         /**
@@ -1329,13 +1408,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeUsageReportSubscriptionsOutcome DescribeUsageReportSubscriptions(const Model::DescribeUsageReportSubscriptionsRequest& request) const;
+        virtual Model::DescribeUsageReportSubscriptionsOutcome DescribeUsageReportSubscriptions(const Model::DescribeUsageReportSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeUsageReportSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeUsageReportSubscriptionsRequestT = Model::DescribeUsageReportSubscriptionsRequest>
-        Model::DescribeUsageReportSubscriptionsOutcomeCallable DescribeUsageReportSubscriptionsCallable(const DescribeUsageReportSubscriptionsRequestT& request) const
+        Model::DescribeUsageReportSubscriptionsOutcomeCallable DescribeUsageReportSubscriptionsCallable(const DescribeUsageReportSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeUsageReportSubscriptions, request);
         }
@@ -1344,7 +1423,7 @@ namespace AppStream
          * An Async wrapper for DescribeUsageReportSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeUsageReportSubscriptionsRequestT = Model::DescribeUsageReportSubscriptionsRequest>
-        void DescribeUsageReportSubscriptionsAsync(const DescribeUsageReportSubscriptionsRequestT& request, const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeUsageReportSubscriptionsAsync(const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeUsageReportSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeUsageReportSubscriptions, request, handler, context);
         }
@@ -1358,13 +1437,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeUserStackAssociationsOutcome DescribeUserStackAssociations(const Model::DescribeUserStackAssociationsRequest& request) const;
+        virtual Model::DescribeUserStackAssociationsOutcome DescribeUserStackAssociations(const Model::DescribeUserStackAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeUserStackAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeUserStackAssociationsRequestT = Model::DescribeUserStackAssociationsRequest>
-        Model::DescribeUserStackAssociationsOutcomeCallable DescribeUserStackAssociationsCallable(const DescribeUserStackAssociationsRequestT& request) const
+        Model::DescribeUserStackAssociationsOutcomeCallable DescribeUserStackAssociationsCallable(const DescribeUserStackAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::DescribeUserStackAssociations, request);
         }
@@ -1373,7 +1452,7 @@ namespace AppStream
          * An Async wrapper for DescribeUserStackAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeUserStackAssociationsRequestT = Model::DescribeUserStackAssociationsRequest>
-        void DescribeUserStackAssociationsAsync(const DescribeUserStackAssociationsRequestT& request, const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeUserStackAssociationsAsync(const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeUserStackAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::DescribeUserStackAssociations, request, handler, context);
         }
@@ -2039,13 +2118,13 @@ namespace AppStream
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateFleetOutcome UpdateFleet(const Model::UpdateFleetRequest& request) const;
+        virtual Model::UpdateFleetOutcome UpdateFleet(const Model::UpdateFleetRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateFleetRequestT = Model::UpdateFleetRequest>
-        Model::UpdateFleetOutcomeCallable UpdateFleetCallable(const UpdateFleetRequestT& request) const
+        Model::UpdateFleetOutcomeCallable UpdateFleetCallable(const UpdateFleetRequestT& request = {}) const
         {
             return SubmitCallable(&AppStreamClient::UpdateFleet, request);
         }
@@ -2054,7 +2133,7 @@ namespace AppStream
          * An Async wrapper for UpdateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateFleetRequestT = Model::UpdateFleetRequest>
-        void UpdateFleetAsync(const UpdateFleetRequestT& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateFleetAsync(const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateFleetRequestT& request = {}) const
         {
             return SubmitAsync(&AppStreamClient::UpdateFleet, request, handler, context);
         }
@@ -2111,6 +2190,32 @@ namespace AppStream
             return SubmitAsync(&AppStreamClient::UpdateStack, request, handler, context);
         }
 
+        /**
+         * <p>Updates custom branding that customizes the appearance of the streaming
+         * application catalog page.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateThemeForStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThemeForStackOutcome UpdateThemeForStack(const Model::UpdateThemeForStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateThemeForStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateThemeForStackRequestT = Model::UpdateThemeForStackRequest>
+        Model::UpdateThemeForStackOutcomeCallable UpdateThemeForStackCallable(const UpdateThemeForStackRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::UpdateThemeForStack, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateThemeForStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateThemeForStackRequestT = Model::UpdateThemeForStackRequest>
+        void UpdateThemeForStackAsync(const UpdateThemeForStackRequestT& request, const UpdateThemeForStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::UpdateThemeForStack, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppStreamEndpointProviderBase>& accessEndpointProvider();
@@ -2119,7 +2224,6 @@ namespace AppStream
       void init(const AppStreamClientConfiguration& clientConfiguration);
 
       AppStreamClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<AppStreamEndpointProviderBase> m_endpointProvider;
   };
 

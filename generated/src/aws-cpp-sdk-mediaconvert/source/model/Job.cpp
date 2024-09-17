@@ -34,6 +34,8 @@ Job::Job() :
     m_errorMessageHasBeenSet(false),
     m_hopDestinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_jobEngineVersionRequestedHasBeenSet(false),
+    m_jobEngineVersionUsedHasBeenSet(false),
     m_jobPercentComplete(0),
     m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
@@ -59,44 +61,8 @@ Job::Job() :
 {
 }
 
-Job::Job(JsonView jsonValue) : 
-    m_accelerationSettingsHasBeenSet(false),
-    m_accelerationStatus(AccelerationStatus::NOT_SET),
-    m_accelerationStatusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_billingTagsSource(BillingTagsSource::NOT_SET),
-    m_billingTagsSourceHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_currentPhase(JobPhase::NOT_SET),
-    m_currentPhaseHasBeenSet(false),
-    m_errorCode(0),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_hopDestinationsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_jobPercentComplete(0),
-    m_jobPercentCompleteHasBeenSet(false),
-    m_jobTemplateHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_outputGroupDetailsHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueHasBeenSet(false),
-    m_queueTransitionsHasBeenSet(false),
-    m_retryCount(0),
-    m_retryCountHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_simulateReservedQueue(SimulateReservedQueue::NOT_SET),
-    m_simulateReservedQueueHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
-    m_statusUpdateIntervalHasBeenSet(false),
-    m_timingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+Job::Job(JsonView jsonValue)
+  : Job()
 {
   *this = jsonValue;
 }
@@ -181,6 +147,20 @@ Job& Job::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobEngineVersionRequested"))
+  {
+    m_jobEngineVersionRequested = jsonValue.GetString("jobEngineVersionRequested");
+
+    m_jobEngineVersionRequestedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobEngineVersionUsed"))
+  {
+    m_jobEngineVersionUsed = jsonValue.GetString("jobEngineVersionUsed");
+
+    m_jobEngineVersionUsedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobPercentComplete"))
@@ -378,6 +358,18 @@ JsonValue Job::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_jobEngineVersionRequestedHasBeenSet)
+  {
+   payload.WithString("jobEngineVersionRequested", m_jobEngineVersionRequested);
+
+  }
+
+  if(m_jobEngineVersionUsedHasBeenSet)
+  {
+   payload.WithString("jobEngineVersionUsed", m_jobEngineVersionUsed);
 
   }
 

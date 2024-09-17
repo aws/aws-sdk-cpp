@@ -22,8 +22,8 @@ ListServiceVersionsResult::ListServiceVersionsResult() :
 {
 }
 
-ListServiceVersionsResult::ListServiceVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_serviceName(ServiceName::NOT_SET)
+ListServiceVersionsResult::ListServiceVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListServiceVersionsResult()
 {
   *this = result;
 }

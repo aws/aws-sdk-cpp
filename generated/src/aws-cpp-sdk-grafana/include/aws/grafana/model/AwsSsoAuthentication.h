@@ -38,54 +38,20 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the IAM Identity Center-managed application that is created by
      * Amazon Managed Grafana.</p>
      */
     inline const Aws::String& GetSsoClientId() const{ return m_ssoClientId; }
-
-    /**
-     * <p>The ID of the IAM Identity Center-managed application that is created by
-     * Amazon Managed Grafana.</p>
-     */
     inline bool SsoClientIdHasBeenSet() const { return m_ssoClientIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the IAM Identity Center-managed application that is created by
-     * Amazon Managed Grafana.</p>
-     */
     inline void SetSsoClientId(const Aws::String& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = value; }
-
-    /**
-     * <p>The ID of the IAM Identity Center-managed application that is created by
-     * Amazon Managed Grafana.</p>
-     */
     inline void SetSsoClientId(Aws::String&& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = std::move(value); }
-
-    /**
-     * <p>The ID of the IAM Identity Center-managed application that is created by
-     * Amazon Managed Grafana.</p>
-     */
     inline void SetSsoClientId(const char* value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId.assign(value); }
-
-    /**
-     * <p>The ID of the IAM Identity Center-managed application that is created by
-     * Amazon Managed Grafana.</p>
-     */
     inline AwsSsoAuthentication& WithSsoClientId(const Aws::String& value) { SetSsoClientId(value); return *this;}
-
-    /**
-     * <p>The ID of the IAM Identity Center-managed application that is created by
-     * Amazon Managed Grafana.</p>
-     */
     inline AwsSsoAuthentication& WithSsoClientId(Aws::String&& value) { SetSsoClientId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the IAM Identity Center-managed application that is created by
-     * Amazon Managed Grafana.</p>
-     */
     inline AwsSsoAuthentication& WithSsoClientId(const char* value) { SetSsoClientId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ssoClientId;

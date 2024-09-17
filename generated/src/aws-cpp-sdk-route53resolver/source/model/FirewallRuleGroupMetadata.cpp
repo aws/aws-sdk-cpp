@@ -29,14 +29,8 @@ FirewallRuleGroupMetadata::FirewallRuleGroupMetadata() :
 {
 }
 
-FirewallRuleGroupMetadata::FirewallRuleGroupMetadata(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
+FirewallRuleGroupMetadata::FirewallRuleGroupMetadata(JsonView jsonValue)
+  : FirewallRuleGroupMetadata()
 {
   *this = jsonValue;
 }

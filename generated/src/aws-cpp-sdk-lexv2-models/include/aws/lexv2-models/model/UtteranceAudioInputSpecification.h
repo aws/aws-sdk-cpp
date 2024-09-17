@@ -38,46 +38,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Amazon S3 file pointing to the audio.</p>
      */
     inline const Aws::String& GetAudioFileS3Location() const{ return m_audioFileS3Location; }
-
-    /**
-     * <p>Amazon S3 file pointing to the audio.</p>
-     */
     inline bool AudioFileS3LocationHasBeenSet() const { return m_audioFileS3LocationHasBeenSet; }
-
-    /**
-     * <p>Amazon S3 file pointing to the audio.</p>
-     */
     inline void SetAudioFileS3Location(const Aws::String& value) { m_audioFileS3LocationHasBeenSet = true; m_audioFileS3Location = value; }
-
-    /**
-     * <p>Amazon S3 file pointing to the audio.</p>
-     */
     inline void SetAudioFileS3Location(Aws::String&& value) { m_audioFileS3LocationHasBeenSet = true; m_audioFileS3Location = std::move(value); }
-
-    /**
-     * <p>Amazon S3 file pointing to the audio.</p>
-     */
     inline void SetAudioFileS3Location(const char* value) { m_audioFileS3LocationHasBeenSet = true; m_audioFileS3Location.assign(value); }
-
-    /**
-     * <p>Amazon S3 file pointing to the audio.</p>
-     */
     inline UtteranceAudioInputSpecification& WithAudioFileS3Location(const Aws::String& value) { SetAudioFileS3Location(value); return *this;}
-
-    /**
-     * <p>Amazon S3 file pointing to the audio.</p>
-     */
     inline UtteranceAudioInputSpecification& WithAudioFileS3Location(Aws::String&& value) { SetAudioFileS3Location(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon S3 file pointing to the audio.</p>
-     */
     inline UtteranceAudioInputSpecification& WithAudioFileS3Location(const char* value) { SetAudioFileS3Location(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_audioFileS3Location;

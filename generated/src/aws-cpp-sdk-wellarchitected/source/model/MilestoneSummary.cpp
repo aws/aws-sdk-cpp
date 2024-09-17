@@ -27,12 +27,8 @@ MilestoneSummary::MilestoneSummary() :
 {
 }
 
-MilestoneSummary::MilestoneSummary(JsonView jsonValue) : 
-    m_milestoneNumber(0),
-    m_milestoneNumberHasBeenSet(false),
-    m_milestoneNameHasBeenSet(false),
-    m_recordedAtHasBeenSet(false),
-    m_workloadSummaryHasBeenSet(false)
+MilestoneSummary::MilestoneSummary(JsonView jsonValue)
+  : MilestoneSummary()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CopyAction::CopyAction() :
 {
 }
 
-CopyAction::CopyAction(JsonView jsonValue) : 
-    m_lifecycleHasBeenSet(false),
-    m_destinationBackupVaultArnHasBeenSet(false)
+CopyAction::CopyAction(JsonView jsonValue)
+  : CopyAction()
 {
   *this = jsonValue;
 }

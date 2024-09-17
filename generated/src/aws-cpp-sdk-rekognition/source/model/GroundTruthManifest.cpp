@@ -23,8 +23,8 @@ GroundTruthManifest::GroundTruthManifest() :
 {
 }
 
-GroundTruthManifest::GroundTruthManifest(JsonView jsonValue) : 
-    m_s3ObjectHasBeenSet(false)
+GroundTruthManifest::GroundTruthManifest(JsonView jsonValue)
+  : GroundTruthManifest()
 {
   *this = jsonValue;
 }

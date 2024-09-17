@@ -22,8 +22,8 @@ CreateBotVersionResult::CreateBotVersionResult() :
 {
 }
 
-CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botStatus(BotStatus::NOT_SET)
+CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateBotVersionResult()
 {
   *this = result;
 }

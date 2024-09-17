@@ -24,9 +24,8 @@ PropertyLatestValue::PropertyLatestValue() :
 {
 }
 
-PropertyLatestValue::PropertyLatestValue(JsonView jsonValue) : 
-    m_propertyReferenceHasBeenSet(false),
-    m_propertyValueHasBeenSet(false)
+PropertyLatestValue::PropertyLatestValue(JsonView jsonValue)
+  : PropertyLatestValue()
 {
   *this = jsonValue;
 }

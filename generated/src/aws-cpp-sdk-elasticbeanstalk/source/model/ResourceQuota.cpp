@@ -26,9 +26,8 @@ ResourceQuota::ResourceQuota() :
 {
 }
 
-ResourceQuota::ResourceQuota(const XmlNode& xmlNode) : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false)
+ResourceQuota::ResourceQuota(const XmlNode& xmlNode)
+  : ResourceQuota()
 {
   *this = xmlNode;
 }

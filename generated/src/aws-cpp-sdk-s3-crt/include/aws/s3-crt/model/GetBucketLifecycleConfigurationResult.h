@@ -34,63 +34,29 @@ namespace Model
     AWS_S3CRT_API GetBucketLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Container for a lifecycle rule.</p>
      */
     inline const Aws::Vector<LifecycleRule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>Container for a lifecycle rule.</p>
-     */
     inline void SetRules(const Aws::Vector<LifecycleRule>& value) { m_rules = value; }
-
-    /**
-     * <p>Container for a lifecycle rule.</p>
-     */
     inline void SetRules(Aws::Vector<LifecycleRule>&& value) { m_rules = std::move(value); }
-
-    /**
-     * <p>Container for a lifecycle rule.</p>
-     */
     inline GetBucketLifecycleConfigurationResult& WithRules(const Aws::Vector<LifecycleRule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>Container for a lifecycle rule.</p>
-     */
     inline GetBucketLifecycleConfigurationResult& WithRules(Aws::Vector<LifecycleRule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>Container for a lifecycle rule.</p>
-     */
     inline GetBucketLifecycleConfigurationResult& AddRules(const LifecycleRule& value) { m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>Container for a lifecycle rule.</p>
-     */
     inline GetBucketLifecycleConfigurationResult& AddRules(LifecycleRule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketLifecycleConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketLifecycleConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketLifecycleConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LifecycleRule> m_rules;

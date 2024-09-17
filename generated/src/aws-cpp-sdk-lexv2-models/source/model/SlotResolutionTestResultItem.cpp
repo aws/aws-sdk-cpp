@@ -24,9 +24,8 @@ SlotResolutionTestResultItem::SlotResolutionTestResultItem() :
 {
 }
 
-SlotResolutionTestResultItem::SlotResolutionTestResultItem(JsonView jsonValue) : 
-    m_slotNameHasBeenSet(false),
-    m_resultCountsHasBeenSet(false)
+SlotResolutionTestResultItem::SlotResolutionTestResultItem(JsonView jsonValue)
+  : SlotResolutionTestResultItem()
 {
   *this = jsonValue;
 }

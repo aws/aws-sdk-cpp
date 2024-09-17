@@ -54,6 +54,23 @@
 #include <aws/network-firewall/model/UpdateRuleGroupResult.h>
 #include <aws/network-firewall/model/UpdateSubnetChangeProtectionResult.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationResult.h>
+#include <aws/network-firewall/model/DescribeFirewallPolicyRequest.h>
+#include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
+#include <aws/network-firewall/model/DeleteTLSInspectionConfigurationRequest.h>
+#include <aws/network-firewall/model/UpdateLoggingConfigurationRequest.h>
+#include <aws/network-firewall/model/DescribeLoggingConfigurationRequest.h>
+#include <aws/network-firewall/model/UpdateFirewallEncryptionConfigurationRequest.h>
+#include <aws/network-firewall/model/DescribeRuleGroupMetadataRequest.h>
+#include <aws/network-firewall/model/ListFirewallsRequest.h>
+#include <aws/network-firewall/model/ListRuleGroupsRequest.h>
+#include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
+#include <aws/network-firewall/model/DescribeRuleGroupRequest.h>
+#include <aws/network-firewall/model/ListTLSInspectionConfigurationsRequest.h>
+#include <aws/network-firewall/model/DescribeTLSInspectionConfigurationRequest.h>
+#include <aws/network-firewall/model/DeleteFirewallRequest.h>
+#include <aws/network-firewall/model/DeleteRuleGroupRequest.h>
+#include <aws/network-firewall/model/DescribeFirewallRequest.h>
+#include <aws/network-firewall/model/UpdateFirewallDescriptionRequest.h>
 /* End of service model headers required in NetworkFirewallClient header */
 
 namespace Aws
@@ -87,7 +104,7 @@ namespace Aws
 
   namespace NetworkFirewall
   {
-    using NetworkFirewallClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NetworkFirewallClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NetworkFirewallEndpointProviderBase = Aws::NetworkFirewall::Endpoint::NetworkFirewallEndpointProviderBase;
     using NetworkFirewallEndpointProvider = Aws::NetworkFirewall::Endpoint::NetworkFirewallEndpointProvider;
 

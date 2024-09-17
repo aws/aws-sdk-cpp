@@ -29,14 +29,8 @@ FlowExecutionSummary::FlowExecutionSummary() :
 {
 }
 
-FlowExecutionSummary::FlowExecutionSummary(JsonView jsonValue) : 
-    m_flowExecutionIdHasBeenSet(false),
-    m_status(FlowExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_systemInstanceIdHasBeenSet(false),
-    m_flowTemplateIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+FlowExecutionSummary::FlowExecutionSummary(JsonView jsonValue)
+  : FlowExecutionSummary()
 {
   *this = jsonValue;
 }

@@ -33,18 +33,8 @@ PhysicalResource::PhysicalResource() :
 {
 }
 
-PhysicalResource::PhysicalResource(JsonView jsonValue) : 
-    m_additionalInfoHasBeenSet(false),
-    m_appComponentsHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_parentResourceNameHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_sourceType(ResourceSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+PhysicalResource::PhysicalResource(JsonView jsonValue)
+  : PhysicalResource()
 {
   *this = jsonValue;
 }

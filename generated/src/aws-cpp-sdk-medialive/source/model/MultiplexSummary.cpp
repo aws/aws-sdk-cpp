@@ -34,19 +34,8 @@ MultiplexSummary::MultiplexSummary() :
 {
 }
 
-MultiplexSummary::MultiplexSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_multiplexSettingsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pipelinesRunningCount(0),
-    m_pipelinesRunningCountHasBeenSet(false),
-    m_programCount(0),
-    m_programCountHasBeenSet(false),
-    m_state(MultiplexState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+MultiplexSummary::MultiplexSummary(JsonView jsonValue)
+  : MultiplexSummary()
 {
   *this = jsonValue;
 }

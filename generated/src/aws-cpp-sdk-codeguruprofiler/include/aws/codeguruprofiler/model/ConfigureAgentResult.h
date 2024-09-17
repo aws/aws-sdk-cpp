@@ -39,6 +39,7 @@ namespace Model
     AWS_CODEGURUPROFILER_API ConfigureAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> An <a
      * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
@@ -46,61 +47,22 @@ namespace Model
      * or not and for how long to return profiling data. </p>
      */
     inline const AgentConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p> An <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
-     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles
-     * or not and for how long to return profiling data. </p>
-     */
     inline void SetConfiguration(const AgentConfiguration& value) { m_configuration = value; }
-
-    /**
-     * <p> An <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
-     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles
-     * or not and for how long to return profiling data. </p>
-     */
     inline void SetConfiguration(AgentConfiguration&& value) { m_configuration = std::move(value); }
-
-    /**
-     * <p> An <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
-     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles
-     * or not and for how long to return profiling data. </p>
-     */
     inline ConfigureAgentResult& WithConfiguration(const AgentConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p> An <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
-     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles
-     * or not and for how long to return profiling data. </p>
-     */
     inline ConfigureAgentResult& WithConfiguration(AgentConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ConfigureAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ConfigureAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ConfigureAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AgentConfiguration m_configuration;

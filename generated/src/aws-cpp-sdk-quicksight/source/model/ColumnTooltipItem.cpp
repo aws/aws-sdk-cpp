@@ -23,16 +23,14 @@ ColumnTooltipItem::ColumnTooltipItem() :
     m_labelHasBeenSet(false),
     m_visibility(Visibility::NOT_SET),
     m_visibilityHasBeenSet(false),
-    m_aggregationHasBeenSet(false)
+    m_aggregationHasBeenSet(false),
+    m_tooltipTarget(TooltipTarget::NOT_SET),
+    m_tooltipTargetHasBeenSet(false)
 {
 }
 
-ColumnTooltipItem::ColumnTooltipItem(JsonView jsonValue) : 
-    m_columnHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_aggregationHasBeenSet(false)
+ColumnTooltipItem::ColumnTooltipItem(JsonView jsonValue)
+  : ColumnTooltipItem()
 {
   *this = jsonValue;
 }
@@ -67,6 +65,13 @@ ColumnTooltipItem& ColumnTooltipItem::operator =(JsonView jsonValue)
     m_aggregationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TooltipTarget"))
+  {
+    m_tooltipTarget = TooltipTargetMapper::GetTooltipTargetForName(jsonValue.GetString("TooltipTarget"));
+
+    m_tooltipTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +100,11 @@ JsonValue ColumnTooltipItem::Jsonize() const
   {
    payload.WithObject("Aggregation", m_aggregation.Jsonize());
 
+  }
+
+  if(m_tooltipTargetHasBeenSet)
+  {
+   payload.WithString("TooltipTarget", TooltipTargetMapper::GetNameForTooltipTarget(m_tooltipTarget));
   }
 
   return payload;

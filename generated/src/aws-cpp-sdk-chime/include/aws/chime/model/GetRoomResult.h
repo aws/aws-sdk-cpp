@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIME_API GetRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The room details.</p>
      */
     inline const Room& GetRoom() const{ return m_room; }
-
-    /**
-     * <p>The room details.</p>
-     */
     inline void SetRoom(const Room& value) { m_room = value; }
-
-    /**
-     * <p>The room details.</p>
-     */
     inline void SetRoom(Room&& value) { m_room = std::move(value); }
-
-    /**
-     * <p>The room details.</p>
-     */
     inline GetRoomResult& WithRoom(const Room& value) { SetRoom(value); return *this;}
-
-    /**
-     * <p>The room details.</p>
-     */
     inline GetRoomResult& WithRoom(Room&& value) { SetRoom(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRoomResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRoomResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRoomResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Room m_room;

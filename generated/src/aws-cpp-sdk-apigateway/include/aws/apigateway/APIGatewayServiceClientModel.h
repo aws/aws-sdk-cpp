@@ -113,6 +113,17 @@
 #include <aws/apigateway/model/UpdateUsageResult.h>
 #include <aws/apigateway/model/UpdateUsagePlanResult.h>
 #include <aws/apigateway/model/UpdateVpcLinkResult.h>
+#include <aws/apigateway/model/CreateApiKeyRequest.h>
+#include <aws/apigateway/model/GetDomainNamesRequest.h>
+#include <aws/apigateway/model/GetAccountRequest.h>
+#include <aws/apigateway/model/GetUsagePlansRequest.h>
+#include <aws/apigateway/model/GetClientCertificatesRequest.h>
+#include <aws/apigateway/model/GetSdkTypesRequest.h>
+#include <aws/apigateway/model/UpdateAccountRequest.h>
+#include <aws/apigateway/model/GetApiKeysRequest.h>
+#include <aws/apigateway/model/GetRestApisRequest.h>
+#include <aws/apigateway/model/GenerateClientCertificateRequest.h>
+#include <aws/apigateway/model/GetVpcLinksRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in APIGatewayClient header */
 
@@ -147,7 +158,7 @@ namespace Aws
 
   namespace APIGateway
   {
-    using APIGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using APIGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
     using APIGatewayEndpointProviderBase = Aws::APIGateway::Endpoint::APIGatewayEndpointProviderBase;
     using APIGatewayEndpointProvider = Aws::APIGateway::Endpoint::APIGatewayEndpointProvider;
 

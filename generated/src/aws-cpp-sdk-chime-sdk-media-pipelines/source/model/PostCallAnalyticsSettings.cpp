@@ -27,12 +27,8 @@ PostCallAnalyticsSettings::PostCallAnalyticsSettings() :
 {
 }
 
-PostCallAnalyticsSettings::PostCallAnalyticsSettings(JsonView jsonValue) : 
-    m_outputLocationHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_contentRedactionOutput(ContentRedactionOutput::NOT_SET),
-    m_contentRedactionOutputHasBeenSet(false),
-    m_outputEncryptionKMSKeyIdHasBeenSet(false)
+PostCallAnalyticsSettings::PostCallAnalyticsSettings(JsonView jsonValue)
+  : PostCallAnalyticsSettings()
 {
   *this = jsonValue;
 }

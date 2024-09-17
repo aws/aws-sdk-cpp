@@ -23,8 +23,8 @@ TranscriptEvent::TranscriptEvent() :
 {
 }
 
-TranscriptEvent::TranscriptEvent(JsonView jsonValue) : 
-    m_transcriptHasBeenSet(false)
+TranscriptEvent::TranscriptEvent(JsonView jsonValue)
+  : TranscriptEvent()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ GlobalIdentity::GlobalIdentity() :
 {
 }
 
-GlobalIdentity::GlobalIdentity(JsonView jsonValue) : 
-    m_lac(0),
-    m_lacHasBeenSet(false),
-    m_geranCid(0),
-    m_geranCidHasBeenSet(false)
+GlobalIdentity::GlobalIdentity(JsonView jsonValue)
+  : GlobalIdentity()
 {
   *this = jsonValue;
 }

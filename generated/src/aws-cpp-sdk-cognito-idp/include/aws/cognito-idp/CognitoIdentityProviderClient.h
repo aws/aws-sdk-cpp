@@ -201,16 +201,16 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>This IAM-authenticated API operation provides a code that Amazon Cognito sent
-         * to your user when they signed up in your user pool. After your user enters their
-         * code, they confirm ownership of the email address or phone number that they
-         * provided, and their user account becomes active. Depending on your user pool
-         * configuration, your users will receive their confirmation code in an email or
-         * SMS message.</p> <p>Local users who signed up in your user pool are the only
-         * type of user who can confirm sign-up with a code. Users who federate through an
-         * external identity provider (IdP) have already been confirmed by their IdP.
-         * Administrator-created users confirm their accounts when they respond to their
-         * invitation email message and choose a password.</p>  <p>Amazon Cognito
+         * <p>This IAM-authenticated API operation confirms user sign-up as an
+         * administrator. Unlike <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html">ConfirmSignUp</a>,
+         * your IAM credentials authorize user account confirmation. No confirmation code
+         * is required.</p> <p>This request sets a user account active in a user pool that
+         * <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#signing-up-users-in-your-app-and-confirming-them-as-admin">requires
+         * confirmation of new user accounts</a> before they can sign in. You can configure
+         * your user pool to not send confirmation codes to new users and instead confirm
+         * them with this API operation on the back end.</p>  <p>Amazon Cognito
          * evaluates Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you must use IAM credentials to authorize
          * requests, and you must grant yourself the corresponding IAM permission in a
@@ -254,9 +254,10 @@ namespace CognitoIdentityProvider
          * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
          * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
          * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
-         * SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon
-         * Simple Notification Service might place your account in the SMS sandbox. In <i>
-         * <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+         * SMS text messages with Amazon Cognito or any other Amazon Web Servicesservice,
+         * Amazon Simple Notification Service might place your account in the SMS sandbox.
+         * In <i> <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
          * and into production. For more information, see <a
@@ -615,8 +616,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -842,17 +843,21 @@ namespace CognitoIdentityProvider
 
         /**
          * <p>Resets the specified user's password in a user pool as an administrator.
-         * Works on any user.</p>  <p>This action might generate an SMS text message.
-         * Starting June 1, 2021, US telecom carriers require you to register an
-         * origination phone number before you can send SMS messages to US phone numbers.
-         * If you use SMS text messages in Amazon Cognito, you must register a phone number
-         * with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-         * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
-         * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
-         * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
-         * SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon
-         * Simple Notification Service might place your account in the SMS sandbox. In <i>
-         * <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+         * Works on any user.</p> <p>To use this API operation, your user pool must have
+         * self-service account recovery configured. Use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+         * if you manage passwords as an administrator.</p>  <p>This action might
+         * generate an SMS text message. Starting June 1, 2021, US telecom carriers require
+         * you to register an origination phone number before you can send SMS messages to
+         * US phone numbers. If you use SMS text messages in Amazon Cognito, you must
+         * register a phone number with <a
+         * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
+         * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
+         * users who must receive SMS messages might not be able to sign up, activate their
+         * accounts, or sign in.</p> <p>If you have never used SMS text messages with
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
          * and into production. For more information, see <a
@@ -917,8 +922,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -959,9 +964,9 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>The user's multi-factor authentication (MFA) preference, including which MFA
-         * options are activated, and if any are preferred. Only one factor can be set as
-         * preferred. The preferred MFA factor will be used to authenticate a user if
+         * <p>Sets the user's multi-factor authentication (MFA) preference, including which
+         * MFA options are activated, and if any are preferred. Only one factor can be set
+         * as preferred. The preferred MFA factor will be used to authenticate a user if
          * multiple factors are activated. If multiple options are activated and no
          * preference is set, a challenge to choose an MFA option will be returned during
          * sign-in.</p>  <p>Amazon Cognito evaluates Identity and Access Management
@@ -1168,8 +1173,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -1280,7 +1285,7 @@ namespace CognitoIdentityProvider
          * your user pool doesn't require MFA, the user can then authenticate with user
          * name and password credentials alone. If your user pool requires TOTP MFA, Amazon
          * Cognito generates an <code>MFA_SETUP</code> or <code>SOFTWARE_TOKEN_SETUP</code>
-         * challenge each time your user signs. Complete setup with
+         * challenge each time your user signs in. Complete setup with
          * <code>AssociateSoftwareToken</code> and <code>VerifySoftwareToken</code>.</p>
          * <p>After you set up software token MFA for your user, Amazon Cognito generates a
          * <code>SOFTWARE_TOKEN_MFA</code> challenge when they authenticate. Respond to
@@ -1295,13 +1300,13 @@ namespace CognitoIdentityProvider
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">AWS
          * API Reference</a></p>
          */
-        virtual Model::AssociateSoftwareTokenOutcome AssociateSoftwareToken(const Model::AssociateSoftwareTokenRequest& request) const;
+        virtual Model::AssociateSoftwareTokenOutcome AssociateSoftwareToken(const Model::AssociateSoftwareTokenRequest& request = {}) const;
 
         /**
          * A Callable wrapper for AssociateSoftwareToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename AssociateSoftwareTokenRequestT = Model::AssociateSoftwareTokenRequest>
-        Model::AssociateSoftwareTokenOutcomeCallable AssociateSoftwareTokenCallable(const AssociateSoftwareTokenRequestT& request) const
+        Model::AssociateSoftwareTokenOutcomeCallable AssociateSoftwareTokenCallable(const AssociateSoftwareTokenRequestT& request = {}) const
         {
             return SubmitCallable(&CognitoIdentityProviderClient::AssociateSoftwareToken, request);
         }
@@ -1310,7 +1315,7 @@ namespace CognitoIdentityProvider
          * An Async wrapper for AssociateSoftwareToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename AssociateSoftwareTokenRequestT = Model::AssociateSoftwareTokenRequest>
-        void AssociateSoftwareTokenAsync(const AssociateSoftwareTokenRequestT& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void AssociateSoftwareTokenAsync(const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const AssociateSoftwareTokenRequestT& request = {}) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::AssociateSoftwareToken, request, handler, context);
         }
@@ -1611,8 +1616,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -2193,7 +2198,10 @@ namespace CognitoIdentityProvider
          * </p> <p>If neither a verified phone number nor a verified email exists, this API
          * returns <code>InvalidParameterException</code>. If your app client has a client
          * secret and you don't provide a <code>SECRET_HASH</code> parameter, this API
-         * returns <code>NotAuthorizedException</code>.</p>  <p>Amazon Cognito
+         * returns <code>NotAuthorizedException</code>.</p> <p>To use this API operation,
+         * your user pool must have self-service account recovery configured. Use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+         * if you manage passwords as an administrator.</p>  <p>Amazon Cognito
          * doesn't evaluate Identity and Access Management (IAM) policies in requests for
          * this API operation. For this operation, you can't use IAM credentials to
          * authorize requests, and you can't grant IAM permissions in policies. For more
@@ -2208,8 +2216,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -2354,8 +2362,7 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Gets the detailed activity logging configuration for a user
-         * pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the logging configuration of a user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetLogDeliveryConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2492,8 +2499,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -2621,8 +2628,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3010,8 +3017,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3066,8 +3073,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3134,8 +3141,9 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Sets up or modifies the detailed activity logging configuration of a user
-         * pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets up or modifies the logging configuration of a user pool. User pools can
+         * export user notification logs and advanced security features user activity
+         * logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetLogDeliveryConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3275,8 +3283,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3362,8 +3370,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3707,8 +3715,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3748,8 +3756,8 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3972,7 +3980,6 @@ namespace CognitoIdentityProvider
       void init(const CognitoIdentityProviderClientConfiguration& clientConfiguration);
 
       CognitoIdentityProviderClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> m_endpointProvider;
   };
 

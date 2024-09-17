@@ -22,8 +22,8 @@ CheckAccessNotGrantedSdkResult::CheckAccessNotGrantedSdkResult() :
 {
 }
 
-CheckAccessNotGrantedSdkResult::CheckAccessNotGrantedSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_result(CheckAccessNotGrantedResult::NOT_SET)
+CheckAccessNotGrantedSdkResult::CheckAccessNotGrantedSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CheckAccessNotGrantedSdkResult()
 {
   *this = result;
 }

@@ -25,11 +25,8 @@ DescribeOrganizationHealthResult::DescribeOrganizationHealthResult() :
 {
 }
 
-DescribeOrganizationHealthResult::DescribeOrganizationHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_openReactiveInsights(0),
-    m_openProactiveInsights(0),
-    m_metricsAnalyzed(0),
-    m_resourceHours(0)
+DescribeOrganizationHealthResult::DescribeOrganizationHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeOrganizationHealthResult()
 {
   *this = result;
 }

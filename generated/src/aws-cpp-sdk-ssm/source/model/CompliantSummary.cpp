@@ -25,10 +25,8 @@ CompliantSummary::CompliantSummary() :
 {
 }
 
-CompliantSummary::CompliantSummary(JsonView jsonValue) : 
-    m_compliantCount(0),
-    m_compliantCountHasBeenSet(false),
-    m_severitySummaryHasBeenSet(false)
+CompliantSummary::CompliantSummary(JsonView jsonValue)
+  : CompliantSummary()
 {
   *this = jsonValue;
 }

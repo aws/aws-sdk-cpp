@@ -62,45 +62,8 @@ DBCluster::DBCluster() :
 {
 }
 
-DBCluster::DBCluster(const XmlNode& xmlNode) : 
-    m_availabilityZonesHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterParameterGroupHasBeenSet(false),
-    m_dBSubnetGroupHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_percentProgressHasBeenSet(false),
-    m_earliestRestorableTimeHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_latestRestorableTimeHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_replicationSourceIdentifierHasBeenSet(false),
-    m_readReplicaIdentifiersHasBeenSet(false),
-    m_dBClusterMembersHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_dBClusterArnHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false),
-    m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+DBCluster::DBCluster(const XmlNode& xmlNode)
+  : DBCluster()
 {
   *this = xmlNode;
 }

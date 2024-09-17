@@ -24,9 +24,8 @@ QueueInfo::QueueInfo() :
 {
 }
 
-QueueInfo::QueueInfo(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_enqueueTimestampHasBeenSet(false)
+QueueInfo::QueueInfo(JsonView jsonValue)
+  : QueueInfo()
 {
   *this = jsonValue;
 }

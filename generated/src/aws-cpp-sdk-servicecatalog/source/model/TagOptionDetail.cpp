@@ -28,13 +28,8 @@ TagOptionDetail::TagOptionDetail() :
 {
 }
 
-TagOptionDetail::TagOptionDetail(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+TagOptionDetail::TagOptionDetail(JsonView jsonValue)
+  : TagOptionDetail()
 {
   *this = jsonValue;
 }

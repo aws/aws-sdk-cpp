@@ -40,48 +40,19 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Prometheus settings.</p>
          
      */
     inline const PrometheusInfo& GetPrometheus() const{ return m_prometheus; }
-
-    /**
-     * 
-            <p>Prometheus settings.</p>
-         
-     */
     inline bool PrometheusHasBeenSet() const { return m_prometheusHasBeenSet; }
-
-    /**
-     * 
-            <p>Prometheus settings.</p>
-         
-     */
     inline void SetPrometheus(const PrometheusInfo& value) { m_prometheusHasBeenSet = true; m_prometheus = value; }
-
-    /**
-     * 
-            <p>Prometheus settings.</p>
-         
-     */
     inline void SetPrometheus(PrometheusInfo&& value) { m_prometheusHasBeenSet = true; m_prometheus = std::move(value); }
-
-    /**
-     * 
-            <p>Prometheus settings.</p>
-         
-     */
     inline OpenMonitoringInfo& WithPrometheus(const PrometheusInfo& value) { SetPrometheus(value); return *this;}
-
-    /**
-     * 
-            <p>Prometheus settings.</p>
-         
-     */
     inline OpenMonitoringInfo& WithPrometheus(PrometheusInfo&& value) { SetPrometheus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PrometheusInfo m_prometheus;

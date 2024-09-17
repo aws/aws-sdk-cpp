@@ -25,35 +25,24 @@ namespace Model
     AWS_S3_API RecordsEvent() = default;
     AWS_S3_API RecordsEvent(Aws::Vector<unsigned char>&& value) { m_payload = std::move(value); }
 
+    ///@{
     /**
-     * <p>The byte array of partial, one or more result records.</p>
+     * <p>The byte array of partial, one or more result records. S3 Select doesn't
+     * guarantee that a record will be self-contained in one record frame. To ensure
+     * continuous streaming of data, S3 Select might split the same record across
+     * multiple record frames instead of aggregating the results in memory. Some S3
+     * clients (for example, the SDK for Java) handle this behavior by creating a
+     * <code>ByteStream</code> out of the response by default. Other clients might not
+     * handle this behavior by default. In those cases, you must aggregate the results
+     * on the client side and parse the response.</p>
      */
     inline const Aws::Vector<unsigned char>& GetPayload() const { return m_payload; }
-
-    /**
-     * <p>The byte array of partial, one or more result records.</p>
-     */
     inline Aws::Vector<unsigned char>&& GetPayloadWithOwnership() { return std::move(m_payload); }
-
-    /**
-     * <p>The byte array of partial, one or more result records.</p>
-     */
     inline void SetPayload(const Aws::Vector<unsigned char>& value) { m_payloadHasBeenSet = true; m_payload = value; }
-
-    /**
-     * <p>The byte array of partial, one or more result records.</p>
-     */
     inline void SetPayload(Aws::Vector<unsigned char>&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-
-    /**
-     * <p>The byte array of partial, one or more result records.</p>
-     */
     inline RecordsEvent& WithPayload(const Aws::Vector<unsigned char>& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>The byte array of partial, one or more result records.</p>
-     */
     inline RecordsEvent& WithPayload(Aws::Vector<unsigned char>&& value) { SetPayload(std::move(value)); return *this;}
+    ///@}
 
   private:
 

@@ -24,9 +24,8 @@ OfferReleaseDateFilterDateRange::OfferReleaseDateFilterDateRange() :
 {
 }
 
-OfferReleaseDateFilterDateRange::OfferReleaseDateFilterDateRange(JsonView jsonValue) : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
+OfferReleaseDateFilterDateRange::OfferReleaseDateFilterDateRange(JsonView jsonValue)
+  : OfferReleaseDateFilterDateRange()
 {
   *this = jsonValue;
 }

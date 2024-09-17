@@ -26,9 +26,8 @@ InvalidCloudWatchDestinationException::InvalidCloudWatchDestinationException() :
 {
 }
 
-InvalidCloudWatchDestinationException::InvalidCloudWatchDestinationException(const XmlNode& xmlNode) : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
+InvalidCloudWatchDestinationException::InvalidCloudWatchDestinationException(const XmlNode& xmlNode)
+  : InvalidCloudWatchDestinationException()
 {
   *this = xmlNode;
 }

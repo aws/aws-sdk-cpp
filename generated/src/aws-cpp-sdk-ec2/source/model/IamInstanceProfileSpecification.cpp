@@ -26,9 +26,8 @@ IamInstanceProfileSpecification::IamInstanceProfileSpecification() :
 {
 }
 
-IamInstanceProfileSpecification::IamInstanceProfileSpecification(const XmlNode& xmlNode) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+IamInstanceProfileSpecification::IamInstanceProfileSpecification(const XmlNode& xmlNode)
+  : IamInstanceProfileSpecification()
 {
   *this = xmlNode;
 }

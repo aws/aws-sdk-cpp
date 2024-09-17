@@ -38,30 +38,16 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
      * monitoring is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
-     * monitoring is enabled.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
-     * monitoring is enabled.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
-     * monitoring is enabled.</p>
-     */
     inline InstanceMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

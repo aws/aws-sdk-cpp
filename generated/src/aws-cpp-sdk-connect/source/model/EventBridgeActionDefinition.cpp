@@ -23,8 +23,8 @@ EventBridgeActionDefinition::EventBridgeActionDefinition() :
 {
 }
 
-EventBridgeActionDefinition::EventBridgeActionDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+EventBridgeActionDefinition::EventBridgeActionDefinition(JsonView jsonValue)
+  : EventBridgeActionDefinition()
 {
   *this = jsonValue;
 }

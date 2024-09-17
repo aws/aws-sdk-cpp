@@ -30,15 +30,8 @@ EndpointLocation::EndpointLocation() :
 {
 }
 
-EndpointLocation::EndpointLocation(JsonView jsonValue) : 
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_regionHasBeenSet(false)
+EndpointLocation::EndpointLocation(JsonView jsonValue)
+  : EndpointLocation()
 {
   *this = jsonValue;
 }

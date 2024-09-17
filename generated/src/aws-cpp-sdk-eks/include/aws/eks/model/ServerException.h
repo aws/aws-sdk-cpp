@@ -38,210 +38,75 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon EKS cluster associated with the exception.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-
-    /**
-     * <p>The Amazon EKS cluster associated with the exception.</p>
-     */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon EKS cluster associated with the exception.</p>
-     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-
-    /**
-     * <p>The Amazon EKS cluster associated with the exception.</p>
-     */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-
-    /**
-     * <p>The Amazon EKS cluster associated with the exception.</p>
-     */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-
-    /**
-     * <p>The Amazon EKS cluster associated with the exception.</p>
-     */
     inline ServerException& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-
-    /**
-     * <p>The Amazon EKS cluster associated with the exception.</p>
-     */
     inline ServerException& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon EKS cluster associated with the exception.</p>
-     */
     inline ServerException& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon EKS managed node group associated with the exception.</p>
      */
     inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
-
-    /**
-     * <p>The Amazon EKS managed node group associated with the exception.</p>
-     */
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon EKS managed node group associated with the exception.</p>
-     */
     inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
-
-    /**
-     * <p>The Amazon EKS managed node group associated with the exception.</p>
-     */
     inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
-
-    /**
-     * <p>The Amazon EKS managed node group associated with the exception.</p>
-     */
     inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
-
-    /**
-     * <p>The Amazon EKS managed node group associated with the exception.</p>
-     */
     inline ServerException& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
-
-    /**
-     * <p>The Amazon EKS managed node group associated with the exception.</p>
-     */
     inline ServerException& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon EKS managed node group associated with the exception.</p>
-     */
     inline ServerException& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon EKS add-on name associated with the exception.</p>
      */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
-
-    /**
-     * <p>The Amazon EKS add-on name associated with the exception.</p>
-     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon EKS add-on name associated with the exception.</p>
-     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
-
-    /**
-     * <p>The Amazon EKS add-on name associated with the exception.</p>
-     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
-
-    /**
-     * <p>The Amazon EKS add-on name associated with the exception.</p>
-     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
-
-    /**
-     * <p>The Amazon EKS add-on name associated with the exception.</p>
-     */
     inline ServerException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
-
-    /**
-     * <p>The Amazon EKS add-on name associated with the exception.</p>
-     */
     inline ServerException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon EKS add-on name associated with the exception.</p>
-     */
     inline ServerException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon EKS subscription ID with the exception.</p>
      */
     inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
-
-    /**
-     * <p>The Amazon EKS subscription ID with the exception.</p>
-     */
     inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon EKS subscription ID with the exception.</p>
-     */
     inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
-
-    /**
-     * <p>The Amazon EKS subscription ID with the exception.</p>
-     */
     inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
-
-    /**
-     * <p>The Amazon EKS subscription ID with the exception.</p>
-     */
     inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
-
-    /**
-     * <p>The Amazon EKS subscription ID with the exception.</p>
-     */
     inline ServerException& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
-
-    /**
-     * <p>The Amazon EKS subscription ID with the exception.</p>
-     */
     inline ServerException& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon EKS subscription ID with the exception.</p>
-     */
     inline ServerException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>These errors are usually caused by a server-side issue.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>These errors are usually caused by a server-side issue.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>These errors are usually caused by a server-side issue.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>These errors are usually caused by a server-side issue.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>These errors are usually caused by a server-side issue.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>These errors are usually caused by a server-side issue.</p>
-     */
     inline ServerException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>These errors are usually caused by a server-side issue.</p>
-     */
     inline ServerException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>These errors are usually caused by a server-side issue.</p>
-     */
     inline ServerException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterName;

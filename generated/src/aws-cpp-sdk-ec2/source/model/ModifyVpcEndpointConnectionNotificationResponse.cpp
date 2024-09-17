@@ -22,8 +22,8 @@ ModifyVpcEndpointConnectionNotificationResponse::ModifyVpcEndpointConnectionNoti
 {
 }
 
-ModifyVpcEndpointConnectionNotificationResponse::ModifyVpcEndpointConnectionNotificationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_returnValue(false)
+ModifyVpcEndpointConnectionNotificationResponse::ModifyVpcEndpointConnectionNotificationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : ModifyVpcEndpointConnectionNotificationResponse()
 {
   *this = result;
 }

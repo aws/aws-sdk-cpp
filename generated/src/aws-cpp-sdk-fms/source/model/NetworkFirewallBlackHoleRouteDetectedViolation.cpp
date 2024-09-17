@@ -26,11 +26,8 @@ NetworkFirewallBlackHoleRouteDetectedViolation::NetworkFirewallBlackHoleRouteDet
 {
 }
 
-NetworkFirewallBlackHoleRouteDetectedViolation::NetworkFirewallBlackHoleRouteDetectedViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_violatingRoutesHasBeenSet(false)
+NetworkFirewallBlackHoleRouteDetectedViolation::NetworkFirewallBlackHoleRouteDetectedViolation(JsonView jsonValue)
+  : NetworkFirewallBlackHoleRouteDetectedViolation()
 {
   *this = jsonValue;
 }

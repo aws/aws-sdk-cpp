@@ -27,12 +27,8 @@ NetworkFirewallMissingExpectedRTViolation::NetworkFirewallMissingExpectedRTViola
 {
 }
 
-NetworkFirewallMissingExpectedRTViolation::NetworkFirewallMissingExpectedRTViolation(JsonView jsonValue) : 
-    m_violationTargetHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_currentRouteTableHasBeenSet(false),
-    m_expectedRouteTableHasBeenSet(false)
+NetworkFirewallMissingExpectedRTViolation::NetworkFirewallMissingExpectedRTViolation(JsonView jsonValue)
+  : NetworkFirewallMissingExpectedRTViolation()
 {
   *this = jsonValue;
 }

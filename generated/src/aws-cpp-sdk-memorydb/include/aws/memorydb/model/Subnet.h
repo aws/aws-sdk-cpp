@@ -40,77 +40,31 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the subnet.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The unique identifier for the subnet.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the subnet.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The unique identifier for the subnet.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the subnet.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The unique identifier for the subnet.</p>
-     */
     inline Subnet& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the subnet.</p>
-     */
     inline Subnet& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the subnet.</p>
-     */
     inline Subnet& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Availability Zone where the subnet resides</p>
      */
     inline const AvailabilityZone& GetAvailabilityZone() const{ return m_availabilityZone; }
-
-    /**
-     * <p>The Availability Zone where the subnet resides</p>
-     */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-
-    /**
-     * <p>The Availability Zone where the subnet resides</p>
-     */
     inline void SetAvailabilityZone(const AvailabilityZone& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-
-    /**
-     * <p>The Availability Zone where the subnet resides</p>
-     */
     inline void SetAvailabilityZone(AvailabilityZone&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-
-    /**
-     * <p>The Availability Zone where the subnet resides</p>
-     */
     inline Subnet& WithAvailabilityZone(const AvailabilityZone& value) { SetAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>The Availability Zone where the subnet resides</p>
-     */
     inline Subnet& WithAvailabilityZone(AvailabilityZone&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

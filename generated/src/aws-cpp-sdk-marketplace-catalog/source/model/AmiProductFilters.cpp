@@ -26,11 +26,8 @@ AmiProductFilters::AmiProductFilters() :
 {
 }
 
-AmiProductFilters::AmiProductFilters(JsonView jsonValue) : 
-    m_entityIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_productTitleHasBeenSet(false),
-    m_visibilityHasBeenSet(false)
+AmiProductFilters::AmiProductFilters(JsonView jsonValue)
+  : AmiProductFilters()
 {
   *this = jsonValue;
 }

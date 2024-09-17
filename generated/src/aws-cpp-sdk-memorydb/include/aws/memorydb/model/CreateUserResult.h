@@ -33,53 +33,27 @@ namespace Model
     AWS_MEMORYDB_API CreateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The newly-created user.</p>
      */
     inline const User& GetUser() const{ return m_user; }
-
-    /**
-     * <p>The newly-created user.</p>
-     */
     inline void SetUser(const User& value) { m_user = value; }
-
-    /**
-     * <p>The newly-created user.</p>
-     */
     inline void SetUser(User&& value) { m_user = std::move(value); }
-
-    /**
-     * <p>The newly-created user.</p>
-     */
     inline CreateUserResult& WithUser(const User& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>The newly-created user.</p>
-     */
     inline CreateUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     User m_user;

@@ -40,99 +40,42 @@ namespace Model
     AWS_COGNITOIDENTITY_API ListIdentityPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identity pools returned by the ListIdentityPools action.</p>
      */
     inline const Aws::Vector<IdentityPoolShortDescription>& GetIdentityPools() const{ return m_identityPools; }
-
-    /**
-     * <p>The identity pools returned by the ListIdentityPools action.</p>
-     */
     inline void SetIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { m_identityPools = value; }
-
-    /**
-     * <p>The identity pools returned by the ListIdentityPools action.</p>
-     */
     inline void SetIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { m_identityPools = std::move(value); }
-
-    /**
-     * <p>The identity pools returned by the ListIdentityPools action.</p>
-     */
     inline ListIdentityPoolsResult& WithIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { SetIdentityPools(value); return *this;}
-
-    /**
-     * <p>The identity pools returned by the ListIdentityPools action.</p>
-     */
     inline ListIdentityPoolsResult& WithIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { SetIdentityPools(std::move(value)); return *this;}
-
-    /**
-     * <p>The identity pools returned by the ListIdentityPools action.</p>
-     */
     inline ListIdentityPoolsResult& AddIdentityPools(const IdentityPoolShortDescription& value) { m_identityPools.push_back(value); return *this; }
-
-    /**
-     * <p>The identity pools returned by the ListIdentityPools action.</p>
-     */
     inline ListIdentityPoolsResult& AddIdentityPools(IdentityPoolShortDescription&& value) { m_identityPools.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token.</p>
-     */
     inline ListIdentityPoolsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token.</p>
-     */
     inline ListIdentityPoolsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token.</p>
-     */
     inline ListIdentityPoolsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListIdentityPoolsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListIdentityPoolsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListIdentityPoolsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<IdentityPoolShortDescription> m_identityPools;

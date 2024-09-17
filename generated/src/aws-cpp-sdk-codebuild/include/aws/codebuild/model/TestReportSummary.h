@@ -38,110 +38,43 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The number of test cases in this <code>TestReportSummary</code>. The total
      * includes truncated test cases. </p>
      */
     inline int GetTotal() const{ return m_total; }
-
-    /**
-     * <p> The number of test cases in this <code>TestReportSummary</code>. The total
-     * includes truncated test cases. </p>
-     */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    /**
-     * <p> The number of test cases in this <code>TestReportSummary</code>. The total
-     * includes truncated test cases. </p>
-     */
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
-
-    /**
-     * <p> The number of test cases in this <code>TestReportSummary</code>. The total
-     * includes truncated test cases. </p>
-     */
     inline TestReportSummary& WithTotal(int value) { SetTotal(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A map that contains the number of each type of status returned by the test
      * results in this <code>TestReportSummary</code>. </p>
      */
     inline const Aws::Map<Aws::String, int>& GetStatusCounts() const{ return m_statusCounts; }
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline bool StatusCountsHasBeenSet() const { return m_statusCountsHasBeenSet; }
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline void SetStatusCounts(const Aws::Map<Aws::String, int>& value) { m_statusCountsHasBeenSet = true; m_statusCounts = value; }
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline void SetStatusCounts(Aws::Map<Aws::String, int>&& value) { m_statusCountsHasBeenSet = true; m_statusCounts = std::move(value); }
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline TestReportSummary& WithStatusCounts(const Aws::Map<Aws::String, int>& value) { SetStatusCounts(value); return *this;}
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline TestReportSummary& WithStatusCounts(Aws::Map<Aws::String, int>&& value) { SetStatusCounts(std::move(value)); return *this;}
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline TestReportSummary& AddStatusCounts(const Aws::String& key, int value) { m_statusCountsHasBeenSet = true; m_statusCounts.emplace(key, value); return *this; }
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline TestReportSummary& AddStatusCounts(Aws::String&& key, int value) { m_statusCountsHasBeenSet = true; m_statusCounts.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> A map that contains the number of each type of status returned by the test
-     * results in this <code>TestReportSummary</code>. </p>
-     */
     inline TestReportSummary& AddStatusCounts(const char* key, int value) { m_statusCountsHasBeenSet = true; m_statusCounts.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The number of nanoseconds it took to run all of the test cases in this
      * report. </p>
      */
     inline long long GetDurationInNanoSeconds() const{ return m_durationInNanoSeconds; }
-
-    /**
-     * <p> The number of nanoseconds it took to run all of the test cases in this
-     * report. </p>
-     */
     inline bool DurationInNanoSecondsHasBeenSet() const { return m_durationInNanoSecondsHasBeenSet; }
-
-    /**
-     * <p> The number of nanoseconds it took to run all of the test cases in this
-     * report. </p>
-     */
     inline void SetDurationInNanoSeconds(long long value) { m_durationInNanoSecondsHasBeenSet = true; m_durationInNanoSeconds = value; }
-
-    /**
-     * <p> The number of nanoseconds it took to run all of the test cases in this
-     * report. </p>
-     */
     inline TestReportSummary& WithDurationInNanoSeconds(long long value) { SetDurationInNanoSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_total;

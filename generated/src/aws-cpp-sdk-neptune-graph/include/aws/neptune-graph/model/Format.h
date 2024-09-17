@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CSV,
-    OPEN_CYPHER
+    OPEN_CYPHER,
+    NTRIPLES
   };
 
 namespace FormatMapper

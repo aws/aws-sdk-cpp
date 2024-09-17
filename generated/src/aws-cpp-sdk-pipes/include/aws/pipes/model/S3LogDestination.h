@@ -39,153 +39,22 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
      * records for the pipe.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
-     * records for the pipe.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
-     * records for the pipe.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
-     * records for the pipe.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
-     * records for the pipe.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
-     * records for the pipe.</p>
-     */
     inline S3LogDestination& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
-     * records for the pipe.</p>
-     */
     inline S3LogDestination& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket to which EventBridge delivers the log
-     * records for the pipe.</p>
-     */
     inline S3LogDestination& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    ///@}
 
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline const Aws::String& GetBucketOwner() const{ return m_bucketOwner; }
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline bool BucketOwnerHasBeenSet() const { return m_bucketOwnerHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline void SetBucketOwner(const Aws::String& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = value; }
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline void SetBucketOwner(Aws::String&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline void SetBucketOwner(const char* value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline S3LogDestination& WithBucketOwner(const Aws::String& value) { SetBucketOwner(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline S3LogDestination& WithBucketOwner(Aws::String&& value) { SetBucketOwner(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
-     * EventBridge delivers the log records for the pipe.</p>
-     */
-    inline S3LogDestination& WithBucketOwner(const char* value) { SetBucketOwner(value); return *this;}
-
-
-    /**
-     * <p>The format EventBridge uses for the log records.</p> <ul> <li> <p>
-     * <code>json</code>: JSON </p> </li> <li> <p> <code>plain</code>: Plain text</p>
-     * </li> <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C
-     * extended logging file format</a> </p> </li> </ul>
-     */
-    inline const S3OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
-
-    /**
-     * <p>The format EventBridge uses for the log records.</p> <ul> <li> <p>
-     * <code>json</code>: JSON </p> </li> <li> <p> <code>plain</code>: Plain text</p>
-     * </li> <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C
-     * extended logging file format</a> </p> </li> </ul>
-     */
-    inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-
-    /**
-     * <p>The format EventBridge uses for the log records.</p> <ul> <li> <p>
-     * <code>json</code>: JSON </p> </li> <li> <p> <code>plain</code>: Plain text</p>
-     * </li> <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C
-     * extended logging file format</a> </p> </li> </ul>
-     */
-    inline void SetOutputFormat(const S3OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-
-    /**
-     * <p>The format EventBridge uses for the log records.</p> <ul> <li> <p>
-     * <code>json</code>: JSON </p> </li> <li> <p> <code>plain</code>: Plain text</p>
-     * </li> <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C
-     * extended logging file format</a> </p> </li> </ul>
-     */
-    inline void SetOutputFormat(S3OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-
-    /**
-     * <p>The format EventBridge uses for the log records.</p> <ul> <li> <p>
-     * <code>json</code>: JSON </p> </li> <li> <p> <code>plain</code>: Plain text</p>
-     * </li> <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C
-     * extended logging file format</a> </p> </li> </ul>
-     */
-    inline S3LogDestination& WithOutputFormat(const S3OutputFormat& value) { SetOutputFormat(value); return *this;}
-
-    /**
-     * <p>The format EventBridge uses for the log records.</p> <ul> <li> <p>
-     * <code>json</code>: JSON </p> </li> <li> <p> <code>plain</code>: Plain text</p>
-     * </li> <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C
-     * extended logging file format</a> </p> </li> </ul>
-     */
-    inline S3LogDestination& WithOutputFormat(S3OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
-
-
+    ///@{
     /**
      * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
      * more information, see <a
@@ -194,83 +63,55 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
     inline S3LogDestination& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
     inline S3LogDestination& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
     inline S3LogDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
+     * EventBridge delivers the log records for the pipe.</p>
+     */
+    inline const Aws::String& GetBucketOwner() const{ return m_bucketOwner; }
+    inline bool BucketOwnerHasBeenSet() const { return m_bucketOwnerHasBeenSet; }
+    inline void SetBucketOwner(const Aws::String& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = value; }
+    inline void SetBucketOwner(Aws::String&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::move(value); }
+    inline void SetBucketOwner(const char* value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner.assign(value); }
+    inline S3LogDestination& WithBucketOwner(const Aws::String& value) { SetBucketOwner(value); return *this;}
+    inline S3LogDestination& WithBucketOwner(Aws::String&& value) { SetBucketOwner(std::move(value)); return *this;}
+    inline S3LogDestination& WithBucketOwner(const char* value) { SetBucketOwner(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The format EventBridge uses for the log records.</p> <p>EventBridge currently
+     * only supports <code>json</code> formatting.</p>
+     */
+    inline const S3OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+    inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
+    inline void SetOutputFormat(const S3OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+    inline void SetOutputFormat(S3OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
+    inline S3LogDestination& WithOutputFormat(const S3OutputFormat& value) { SetOutputFormat(value); return *this;}
+    inline S3LogDestination& WithOutputFormat(S3OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet = false;
+
+    Aws::String m_prefix;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_bucketOwner;
     bool m_bucketOwnerHasBeenSet = false;
 
     S3OutputFormat m_outputFormat;
     bool m_outputFormatHasBeenSet = false;
-
-    Aws::String m_prefix;
-    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

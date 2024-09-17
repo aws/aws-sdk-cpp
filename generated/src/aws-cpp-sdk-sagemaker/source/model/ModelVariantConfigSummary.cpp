@@ -27,12 +27,8 @@ ModelVariantConfigSummary::ModelVariantConfigSummary() :
 {
 }
 
-ModelVariantConfigSummary::ModelVariantConfigSummary(JsonView jsonValue) : 
-    m_modelNameHasBeenSet(false),
-    m_variantNameHasBeenSet(false),
-    m_infrastructureConfigHasBeenSet(false),
-    m_status(ModelVariantStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ModelVariantConfigSummary::ModelVariantConfigSummary(JsonView jsonValue)
+  : ModelVariantConfigSummary()
 {
   *this = jsonValue;
 }

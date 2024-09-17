@@ -226,13 +226,13 @@ namespace PrometheusService
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateWorkspaceOutcome CreateWorkspace(const Model::CreateWorkspaceRequest& request) const;
+        virtual Model::CreateWorkspaceOutcome CreateWorkspace(const Model::CreateWorkspaceRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateWorkspaceRequestT = Model::CreateWorkspaceRequest>
-        Model::CreateWorkspaceOutcomeCallable CreateWorkspaceCallable(const CreateWorkspaceRequestT& request) const
+        Model::CreateWorkspaceOutcomeCallable CreateWorkspaceCallable(const CreateWorkspaceRequestT& request = {}) const
         {
             return SubmitCallable(&PrometheusServiceClient::CreateWorkspace, request);
         }
@@ -241,7 +241,7 @@ namespace PrometheusService
          * An Async wrapper for CreateWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateWorkspaceRequestT = Model::CreateWorkspaceRequest>
-        void CreateWorkspaceAsync(const CreateWorkspaceRequestT& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateWorkspaceAsync(const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateWorkspaceRequestT& request = {}) const
         {
             return SubmitAsync(&PrometheusServiceClient::CreateWorkspace, request, handler, context);
         }
@@ -515,13 +515,13 @@ namespace PrometheusService
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDefaultScraperConfigurationOutcome GetDefaultScraperConfiguration(const Model::GetDefaultScraperConfigurationRequest& request) const;
+        virtual Model::GetDefaultScraperConfigurationOutcome GetDefaultScraperConfiguration(const Model::GetDefaultScraperConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDefaultScraperConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDefaultScraperConfigurationRequestT = Model::GetDefaultScraperConfigurationRequest>
-        Model::GetDefaultScraperConfigurationOutcomeCallable GetDefaultScraperConfigurationCallable(const GetDefaultScraperConfigurationRequestT& request) const
+        Model::GetDefaultScraperConfigurationOutcomeCallable GetDefaultScraperConfigurationCallable(const GetDefaultScraperConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&PrometheusServiceClient::GetDefaultScraperConfiguration, request);
         }
@@ -530,7 +530,7 @@ namespace PrometheusService
          * An Async wrapper for GetDefaultScraperConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDefaultScraperConfigurationRequestT = Model::GetDefaultScraperConfigurationRequest>
-        void GetDefaultScraperConfigurationAsync(const GetDefaultScraperConfigurationRequestT& request, const GetDefaultScraperConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDefaultScraperConfigurationAsync(const GetDefaultScraperConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDefaultScraperConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&PrometheusServiceClient::GetDefaultScraperConfiguration, request, handler, context);
         }
@@ -568,13 +568,13 @@ namespace PrometheusService
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScrapersOutcome ListScrapers(const Model::ListScrapersRequest& request) const;
+        virtual Model::ListScrapersOutcome ListScrapers(const Model::ListScrapersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScrapers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScrapersRequestT = Model::ListScrapersRequest>
-        Model::ListScrapersOutcomeCallable ListScrapersCallable(const ListScrapersRequestT& request) const
+        Model::ListScrapersOutcomeCallable ListScrapersCallable(const ListScrapersRequestT& request = {}) const
         {
             return SubmitCallable(&PrometheusServiceClient::ListScrapers, request);
         }
@@ -583,7 +583,7 @@ namespace PrometheusService
          * An Async wrapper for ListScrapers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScrapersRequestT = Model::ListScrapersRequest>
-        void ListScrapersAsync(const ListScrapersRequestT& request, const ListScrapersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScrapersAsync(const ListScrapersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScrapersRequestT& request = {}) const
         {
             return SubmitAsync(&PrometheusServiceClient::ListScrapers, request, handler, context);
         }
@@ -623,13 +623,13 @@ namespace PrometheusService
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request) const;
+        virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkspaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkspacesRequestT = Model::ListWorkspacesRequest>
-        Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const ListWorkspacesRequestT& request) const
+        Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const ListWorkspacesRequestT& request = {}) const
         {
             return SubmitCallable(&PrometheusServiceClient::ListWorkspaces, request);
         }
@@ -638,7 +638,7 @@ namespace PrometheusService
          * An Async wrapper for ListWorkspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkspacesRequestT = Model::ListWorkspacesRequest>
-        void ListWorkspacesAsync(const ListWorkspacesRequestT& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkspacesAsync(const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkspacesRequestT& request = {}) const
         {
             return SubmitAsync(&PrometheusServiceClient::ListWorkspaces, request, handler, context);
         }
@@ -819,7 +819,6 @@ namespace PrometheusService
       void init(const PrometheusServiceClientConfiguration& clientConfiguration);
 
       PrometheusServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<PrometheusServiceEndpointProviderBase> m_endpointProvider;
   };
 

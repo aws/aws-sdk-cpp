@@ -24,9 +24,8 @@ ExternalModelOutputs::ExternalModelOutputs() :
 {
 }
 
-ExternalModelOutputs::ExternalModelOutputs(JsonView jsonValue) : 
-    m_externalModelHasBeenSet(false),
-    m_outputsHasBeenSet(false)
+ExternalModelOutputs::ExternalModelOutputs(JsonView jsonValue)
+  : ExternalModelOutputs()
 {
   *this = jsonValue;
 }

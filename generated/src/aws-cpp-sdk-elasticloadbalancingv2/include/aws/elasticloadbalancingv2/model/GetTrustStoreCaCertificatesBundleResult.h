@@ -33,57 +33,27 @@ namespace Model
     AWS_ELASTICLOADBALANCINGV2_API GetTrustStoreCaCertificatesBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ca certificate bundles Amazon S3 URI.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The ca certificate bundles Amazon S3 URI.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>The ca certificate bundles Amazon S3 URI.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>The ca certificate bundles Amazon S3 URI.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>The ca certificate bundles Amazon S3 URI.</p>
-     */
     inline GetTrustStoreCaCertificatesBundleResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The ca certificate bundles Amazon S3 URI.</p>
-     */
     inline GetTrustStoreCaCertificatesBundleResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The ca certificate bundles Amazon S3 URI.</p>
-     */
     inline GetTrustStoreCaCertificatesBundleResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetTrustStoreCaCertificatesBundleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetTrustStoreCaCertificatesBundleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_location;

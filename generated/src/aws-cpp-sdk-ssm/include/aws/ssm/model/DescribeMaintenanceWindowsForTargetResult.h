@@ -34,113 +34,44 @@ namespace Model
     AWS_SSM_API DescribeMaintenanceWindowsForTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the maintenance window targets and tasks a managed node is
      * associated with.</p>
      */
     inline const Aws::Vector<MaintenanceWindowIdentityForTarget>& GetWindowIdentities() const{ return m_windowIdentities; }
-
-    /**
-     * <p>Information about the maintenance window targets and tasks a managed node is
-     * associated with.</p>
-     */
     inline void SetWindowIdentities(const Aws::Vector<MaintenanceWindowIdentityForTarget>& value) { m_windowIdentities = value; }
-
-    /**
-     * <p>Information about the maintenance window targets and tasks a managed node is
-     * associated with.</p>
-     */
     inline void SetWindowIdentities(Aws::Vector<MaintenanceWindowIdentityForTarget>&& value) { m_windowIdentities = std::move(value); }
-
-    /**
-     * <p>Information about the maintenance window targets and tasks a managed node is
-     * associated with.</p>
-     */
     inline DescribeMaintenanceWindowsForTargetResult& WithWindowIdentities(const Aws::Vector<MaintenanceWindowIdentityForTarget>& value) { SetWindowIdentities(value); return *this;}
-
-    /**
-     * <p>Information about the maintenance window targets and tasks a managed node is
-     * associated with.</p>
-     */
     inline DescribeMaintenanceWindowsForTargetResult& WithWindowIdentities(Aws::Vector<MaintenanceWindowIdentityForTarget>&& value) { SetWindowIdentities(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the maintenance window targets and tasks a managed node is
-     * associated with.</p>
-     */
     inline DescribeMaintenanceWindowsForTargetResult& AddWindowIdentities(const MaintenanceWindowIdentityForTarget& value) { m_windowIdentities.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the maintenance window targets and tasks a managed node is
-     * associated with.</p>
-     */
     inline DescribeMaintenanceWindowsForTargetResult& AddWindowIdentities(MaintenanceWindowIdentityForTarget&& value) { m_windowIdentities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of items to return. (You use this token in the
      * next call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of items to return. (You use this token in the
-     * next call.)</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of items to return. (You use this token in the
-     * next call.)</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of items to return. (You use this token in the
-     * next call.)</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of items to return. (You use this token in the
-     * next call.)</p>
-     */
     inline DescribeMaintenanceWindowsForTargetResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. (You use this token in the
-     * next call.)</p>
-     */
     inline DescribeMaintenanceWindowsForTargetResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. (You use this token in the
-     * next call.)</p>
-     */
     inline DescribeMaintenanceWindowsForTargetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeMaintenanceWindowsForTargetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeMaintenanceWindowsForTargetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeMaintenanceWindowsForTargetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MaintenanceWindowIdentityForTarget> m_windowIdentities;

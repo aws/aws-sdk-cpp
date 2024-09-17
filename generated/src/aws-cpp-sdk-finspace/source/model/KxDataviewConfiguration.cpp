@@ -26,11 +26,8 @@ KxDataviewConfiguration::KxDataviewConfiguration() :
 {
 }
 
-KxDataviewConfiguration::KxDataviewConfiguration(JsonView jsonValue) : 
-    m_dataviewNameHasBeenSet(false),
-    m_dataviewVersionIdHasBeenSet(false),
-    m_changesetIdHasBeenSet(false),
-    m_segmentConfigurationsHasBeenSet(false)
+KxDataviewConfiguration::KxDataviewConfiguration(JsonView jsonValue)
+  : KxDataviewConfiguration()
 {
   *this = jsonValue;
 }

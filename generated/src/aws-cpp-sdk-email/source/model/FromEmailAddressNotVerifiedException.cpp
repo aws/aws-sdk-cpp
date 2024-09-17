@@ -25,8 +25,8 @@ FromEmailAddressNotVerifiedException::FromEmailAddressNotVerifiedException() :
 {
 }
 
-FromEmailAddressNotVerifiedException::FromEmailAddressNotVerifiedException(const XmlNode& xmlNode) : 
-    m_fromEmailAddressHasBeenSet(false)
+FromEmailAddressNotVerifiedException::FromEmailAddressNotVerifiedException(const XmlNode& xmlNode)
+  : FromEmailAddressNotVerifiedException()
 {
   *this = xmlNode;
 }

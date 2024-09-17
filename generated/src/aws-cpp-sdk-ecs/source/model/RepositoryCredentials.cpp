@@ -23,8 +23,8 @@ RepositoryCredentials::RepositoryCredentials() :
 {
 }
 
-RepositoryCredentials::RepositoryCredentials(JsonView jsonValue) : 
-    m_credentialsParameterHasBeenSet(false)
+RepositoryCredentials::RepositoryCredentials(JsonView jsonValue)
+  : RepositoryCredentials()
 {
   *this = jsonValue;
 }

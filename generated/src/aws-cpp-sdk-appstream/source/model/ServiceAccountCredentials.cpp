@@ -24,9 +24,8 @@ ServiceAccountCredentials::ServiceAccountCredentials() :
 {
 }
 
-ServiceAccountCredentials::ServiceAccountCredentials(JsonView jsonValue) : 
-    m_accountNameHasBeenSet(false),
-    m_accountPasswordHasBeenSet(false)
+ServiceAccountCredentials::ServiceAccountCredentials(JsonView jsonValue)
+  : ServiceAccountCredentials()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ SourceDescription::SourceDescription() :
 {
 }
 
-SourceDescription::SourceDescription(JsonView jsonValue) : 
-    m_kinesisStreamSourceDescriptionHasBeenSet(false),
-    m_mSKSourceDescriptionHasBeenSet(false)
+SourceDescription::SourceDescription(JsonView jsonValue)
+  : SourceDescription()
 {
   *this = jsonValue;
 }

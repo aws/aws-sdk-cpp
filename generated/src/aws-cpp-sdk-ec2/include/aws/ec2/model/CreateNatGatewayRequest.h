@@ -40,6 +40,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
      * associate with the NAT gateway. You cannot specify an Elastic IP address with a
@@ -47,129 +48,33 @@ namespace Model
      * resource, you must first disassociate it.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
-
-    /**
-     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
-     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
-     * private NAT gateway. If the Elastic IP address is associated with another
-     * resource, you must first disassociate it.</p>
-     */
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-
-    /**
-     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
-     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
-     * private NAT gateway. If the Elastic IP address is associated with another
-     * resource, you must first disassociate it.</p>
-     */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-
-    /**
-     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
-     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
-     * private NAT gateway. If the Elastic IP address is associated with another
-     * resource, you must first disassociate it.</p>
-     */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-
-    /**
-     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
-     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
-     * private NAT gateway. If the Elastic IP address is associated with another
-     * resource, you must first disassociate it.</p>
-     */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-
-    /**
-     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
-     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
-     * private NAT gateway. If the Elastic IP address is associated with another
-     * resource, you must first disassociate it.</p>
-     */
     inline CreateNatGatewayRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-
-    /**
-     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
-     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
-     * private NAT gateway. If the Elastic IP address is associated with another
-     * resource, you must first disassociate it.</p>
-     */
     inline CreateNatGatewayRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-
-    /**
-     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
-     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
-     * private NAT gateway. If the Elastic IP address is associated with another
-     * resource, you must first disassociate it.</p>
-     */
     inline CreateNatGatewayRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
-     */
     inline CreateNatGatewayRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
-     */
     inline CreateNatGatewayRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
-     */
     inline CreateNatGatewayRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -177,264 +82,85 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateNatGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet in which to create the NAT gateway.</p>
-     */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the subnet in which to create the NAT gateway.</p>
-     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet in which to create the NAT gateway.</p>
-     */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet in which to create the NAT gateway.</p>
-     */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet in which to create the NAT gateway.</p>
-     */
     inline CreateNatGatewayRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet in which to create the NAT gateway.</p>
-     */
     inline CreateNatGatewayRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet in which to create the NAT gateway.</p>
-     */
     inline CreateNatGatewayRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to assign to the NAT gateway.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags to assign to the NAT gateway.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags to assign to the NAT gateway.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags to assign to the NAT gateway.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags to assign to the NAT gateway.</p>
-     */
     inline CreateNatGatewayRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags to assign to the NAT gateway.</p>
-     */
     inline CreateNatGatewayRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to assign to the NAT gateway.</p>
-     */
     inline CreateNatGatewayRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to assign to the NAT gateway.</p>
-     */
     inline CreateNatGatewayRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the NAT gateway supports public or private connectivity.
      * The default is public connectivity.</p>
      */
     inline const ConnectivityType& GetConnectivityType() const{ return m_connectivityType; }
-
-    /**
-     * <p>Indicates whether the NAT gateway supports public or private connectivity.
-     * The default is public connectivity.</p>
-     */
     inline bool ConnectivityTypeHasBeenSet() const { return m_connectivityTypeHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the NAT gateway supports public or private connectivity.
-     * The default is public connectivity.</p>
-     */
     inline void SetConnectivityType(const ConnectivityType& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = value; }
-
-    /**
-     * <p>Indicates whether the NAT gateway supports public or private connectivity.
-     * The default is public connectivity.</p>
-     */
     inline void SetConnectivityType(ConnectivityType&& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = std::move(value); }
-
-    /**
-     * <p>Indicates whether the NAT gateway supports public or private connectivity.
-     * The default is public connectivity.</p>
-     */
     inline CreateNatGatewayRequest& WithConnectivityType(const ConnectivityType& value) { SetConnectivityType(value); return *this;}
-
-    /**
-     * <p>Indicates whether the NAT gateway supports public or private connectivity.
-     * The default is public connectivity.</p>
-     */
     inline CreateNatGatewayRequest& WithConnectivityType(ConnectivityType&& value) { SetConnectivityType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
      * an address, a private IPv4 address will be automatically assigned.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
-
-    /**
-     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
-     * an address, a private IPv4 address will be automatically assigned.</p>
-     */
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-
-    /**
-     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
-     * an address, a private IPv4 address will be automatically assigned.</p>
-     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-
-    /**
-     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
-     * an address, a private IPv4 address will be automatically assigned.</p>
-     */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-
-    /**
-     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
-     * an address, a private IPv4 address will be automatically assigned.</p>
-     */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-
-    /**
-     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
-     * an address, a private IPv4 address will be automatically assigned.</p>
-     */
     inline CreateNatGatewayRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
-     * an address, a private IPv4 address will be automatically assigned.</p>
-     */
     inline CreateNatGatewayRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
-     * an address, a private IPv4 address will be automatically assigned.</p>
-     */
     inline CreateNatGatewayRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Secondary EIP allocation IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecondaryAllocationIds() const{ return m_secondaryAllocationIds; }
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline bool SecondaryAllocationIdsHasBeenSet() const { return m_secondaryAllocationIdsHasBeenSet; }
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline void SetSecondaryAllocationIds(const Aws::Vector<Aws::String>& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds = value; }
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline void SetSecondaryAllocationIds(Aws::Vector<Aws::String>&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds = std::move(value); }
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& WithSecondaryAllocationIds(const Aws::Vector<Aws::String>& value) { SetSecondaryAllocationIds(value); return *this;}
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& WithSecondaryAllocationIds(Aws::Vector<Aws::String>&& value) { SetSecondaryAllocationIds(std::move(value)); return *this;}
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& AddSecondaryAllocationIds(const Aws::String& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(value); return *this; }
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& AddSecondaryAllocationIds(Aws::String&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& AddSecondaryAllocationIds(const char* value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Secondary private IPv4 addresses. For more information about secondary
      * addresses, see <a
@@ -442,72 +168,17 @@ namespace Model
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecondaryPrivateIpAddresses() const{ return m_secondaryPrivateIpAddresses; }
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline bool SecondaryPrivateIpAddressesHasBeenSet() const { return m_secondaryPrivateIpAddressesHasBeenSet; }
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline void SetSecondaryPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses = value; }
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline void SetSecondaryPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses = std::move(value); }
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetSecondaryPrivateIpAddresses(value); return *this;}
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetSecondaryPrivateIpAddresses(std::move(value)); return *this;}
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(const Aws::String& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(value); return *this; }
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(Aws::String&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Secondary private IPv4 addresses. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(const char* value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
      * want to assign to the NAT gateway. For more information about secondary
@@ -516,34 +187,10 @@ namespace Model
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
-
-    /**
-     * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
-     * want to assign to the NAT gateway. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
-
-    /**
-     * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
-     * want to assign to the NAT gateway. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
-
-    /**
-     * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
-     * want to assign to the NAT gateway. For more information about secondary
-     * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
-     * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-     */
     inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_allocationId;

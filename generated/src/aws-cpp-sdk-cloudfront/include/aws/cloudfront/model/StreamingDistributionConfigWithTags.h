@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A streaming distribution Configuration.</p>
      */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
-
-    /**
-     * <p>A streaming distribution Configuration.</p>
-     */
     inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
-
-    /**
-     * <p>A streaming distribution Configuration.</p>
-     */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
-
-    /**
-     * <p>A streaming distribution Configuration.</p>
-     */
     inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::move(value); }
-
-    /**
-     * <p>A streaming distribution Configuration.</p>
-     */
     inline StreamingDistributionConfigWithTags& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
-
-    /**
-     * <p>A streaming distribution Configuration.</p>
-     */
     inline StreamingDistributionConfigWithTags& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline void SetTags(const Tags& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline void SetTags(Tags&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline StreamingDistributionConfigWithTags& WithTags(const Tags& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline StreamingDistributionConfigWithTags& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StreamingDistributionConfig m_streamingDistributionConfig;

@@ -25,10 +25,8 @@ EmergencyContact::EmergencyContact() :
 {
 }
 
-EmergencyContact::EmergencyContact(JsonView jsonValue) : 
-    m_emailAddressHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_contactNotesHasBeenSet(false)
+EmergencyContact::EmergencyContact(JsonView jsonValue)
+  : EmergencyContact()
 {
   *this = jsonValue;
 }

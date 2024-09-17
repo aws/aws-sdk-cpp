@@ -24,9 +24,8 @@ OtherMetadataValueListItem::OtherMetadataValueListItem() :
 {
 }
 
-OtherMetadataValueListItem::OtherMetadataValueListItem(JsonView jsonValue) : 
-    m_metadataValueHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+OtherMetadataValueListItem::OtherMetadataValueListItem(JsonView jsonValue)
+  : OtherMetadataValueListItem()
 {
   *this = jsonValue;
 }

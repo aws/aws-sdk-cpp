@@ -24,9 +24,8 @@ AssetBundleImportJobThemeOverridePermissions::AssetBundleImportJobThemeOverrideP
 {
 }
 
-AssetBundleImportJobThemeOverridePermissions::AssetBundleImportJobThemeOverridePermissions(JsonView jsonValue) : 
-    m_themeIdsHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
+AssetBundleImportJobThemeOverridePermissions::AssetBundleImportJobThemeOverridePermissions(JsonView jsonValue)
+  : AssetBundleImportJobThemeOverridePermissions()
 {
   *this = jsonValue;
 }

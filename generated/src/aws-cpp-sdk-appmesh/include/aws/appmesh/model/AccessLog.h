@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file object to send virtual node access logs to.</p>
      */
     inline const FileAccessLog& GetFile() const{ return m_file; }
-
-    /**
-     * <p>The file object to send virtual node access logs to.</p>
-     */
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-
-    /**
-     * <p>The file object to send virtual node access logs to.</p>
-     */
     inline void SetFile(const FileAccessLog& value) { m_fileHasBeenSet = true; m_file = value; }
-
-    /**
-     * <p>The file object to send virtual node access logs to.</p>
-     */
     inline void SetFile(FileAccessLog&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-
-    /**
-     * <p>The file object to send virtual node access logs to.</p>
-     */
     inline AccessLog& WithFile(const FileAccessLog& value) { SetFile(value); return *this;}
-
-    /**
-     * <p>The file object to send virtual node access logs to.</p>
-     */
     inline AccessLog& WithFile(FileAccessLog&& value) { SetFile(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FileAccessLog m_file;

@@ -25,10 +25,8 @@ SecurityKey::SecurityKey() :
 {
 }
 
-SecurityKey::SecurityKey(JsonView jsonValue) : 
-    m_associationIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+SecurityKey::SecurityKey(JsonView jsonValue)
+  : SecurityKey()
 {
   *this = jsonValue;
 }

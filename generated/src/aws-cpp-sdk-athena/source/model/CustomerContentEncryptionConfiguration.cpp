@@ -23,8 +23,8 @@ CustomerContentEncryptionConfiguration::CustomerContentEncryptionConfiguration()
 {
 }
 
-CustomerContentEncryptionConfiguration::CustomerContentEncryptionConfiguration(JsonView jsonValue) : 
-    m_kmsKeyHasBeenSet(false)
+CustomerContentEncryptionConfiguration::CustomerContentEncryptionConfiguration(JsonView jsonValue)
+  : CustomerContentEncryptionConfiguration()
 {
   *this = jsonValue;
 }

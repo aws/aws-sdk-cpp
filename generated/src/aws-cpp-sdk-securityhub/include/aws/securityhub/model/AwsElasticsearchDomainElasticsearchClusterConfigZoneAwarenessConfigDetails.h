@@ -35,30 +35,16 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>he number of Availability Zones that the domain uses. Valid values are 2 and
      * 3. The default is 2.</p>
      */
     inline int GetAvailabilityZoneCount() const{ return m_availabilityZoneCount; }
-
-    /**
-     * <p>he number of Availability Zones that the domain uses. Valid values are 2 and
-     * 3. The default is 2.</p>
-     */
     inline bool AvailabilityZoneCountHasBeenSet() const { return m_availabilityZoneCountHasBeenSet; }
-
-    /**
-     * <p>he number of Availability Zones that the domain uses. Valid values are 2 and
-     * 3. The default is 2.</p>
-     */
     inline void SetAvailabilityZoneCount(int value) { m_availabilityZoneCountHasBeenSet = true; m_availabilityZoneCount = value; }
-
-    /**
-     * <p>he number of Availability Zones that the domain uses. Valid values are 2 and
-     * 3. The default is 2.</p>
-     */
     inline AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails& WithAvailabilityZoneCount(int value) { SetAvailabilityZoneCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_availabilityZoneCount;

@@ -42,73 +42,30 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies whether S3 Replication Time Control (S3 RTC) is enabled. </p>
      */
     inline const ReplicationTimeStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies whether S3 Replication Time Control (S3 RTC) is enabled. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Specifies whether S3 Replication Time Control (S3 RTC) is enabled. </p>
-     */
     inline void SetStatus(const ReplicationTimeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Specifies whether S3 Replication Time Control (S3 RTC) is enabled. </p>
-     */
     inline void SetStatus(ReplicationTimeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Specifies whether S3 Replication Time Control (S3 RTC) is enabled. </p>
-     */
     inline ReplicationTime& WithStatus(const ReplicationTimeStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies whether S3 Replication Time Control (S3 RTC) is enabled. </p>
-     */
     inline ReplicationTime& WithStatus(ReplicationTimeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A container that specifies the time by which replication should be complete
      * for all objects and operations on objects. </p>
      */
     inline const ReplicationTimeValue& GetTime() const{ return m_time; }
-
-    /**
-     * <p>A container that specifies the time by which replication should be complete
-     * for all objects and operations on objects. </p>
-     */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-
-    /**
-     * <p>A container that specifies the time by which replication should be complete
-     * for all objects and operations on objects. </p>
-     */
     inline void SetTime(const ReplicationTimeValue& value) { m_timeHasBeenSet = true; m_time = value; }
-
-    /**
-     * <p>A container that specifies the time by which replication should be complete
-     * for all objects and operations on objects. </p>
-     */
     inline void SetTime(ReplicationTimeValue&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-
-    /**
-     * <p>A container that specifies the time by which replication should be complete
-     * for all objects and operations on objects. </p>
-     */
     inline ReplicationTime& WithTime(const ReplicationTimeValue& value) { SetTime(value); return *this;}
-
-    /**
-     * <p>A container that specifies the time by which replication should be complete
-     * for all objects and operations on objects. </p>
-     */
     inline ReplicationTime& WithTime(ReplicationTimeValue&& value) { SetTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReplicationTimeStatus m_status;

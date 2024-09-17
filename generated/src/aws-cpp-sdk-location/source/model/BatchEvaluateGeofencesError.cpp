@@ -20,15 +20,13 @@ namespace Model
 
 BatchEvaluateGeofencesError::BatchEvaluateGeofencesError() : 
     m_deviceIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false)
+    m_sampleTimeHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
-BatchEvaluateGeofencesError::BatchEvaluateGeofencesError(JsonView jsonValue) : 
-    m_deviceIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false)
+BatchEvaluateGeofencesError::BatchEvaluateGeofencesError(JsonView jsonValue)
+  : BatchEvaluateGeofencesError()
 {
   *this = jsonValue;
 }
@@ -42,18 +40,18 @@ BatchEvaluateGeofencesError& BatchEvaluateGeofencesError::operator =(JsonView js
     m_deviceIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Error"))
-  {
-    m_error = jsonValue.GetObject("Error");
-
-    m_errorHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("SampleTime"))
   {
     m_sampleTime = jsonValue.GetString("SampleTime");
 
     m_sampleTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Error"))
+  {
+    m_error = jsonValue.GetObject("Error");
+
+    m_errorHasBeenSet = true;
   }
 
   return *this;
@@ -69,15 +67,15 @@ JsonValue BatchEvaluateGeofencesError::Jsonize() const
 
   }
 
+  if(m_sampleTimeHasBeenSet)
+  {
+   payload.WithString("SampleTime", m_sampleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_errorHasBeenSet)
   {
    payload.WithObject("Error", m_error.Jsonize());
 
-  }
-
-  if(m_sampleTimeHasBeenSet)
-  {
-   payload.WithString("SampleTime", m_sampleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

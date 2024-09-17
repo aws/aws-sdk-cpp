@@ -19,12 +19,13 @@ namespace Model
 {
 
 RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigurations() : 
-    m_statePersistenceHasBeenSet(false)
+    m_statePersistenceHasBeenSet(false),
+    m_sharedViewHasBeenSet(false)
 {
 }
 
-RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigurations(JsonView jsonValue) : 
-    m_statePersistenceHasBeenSet(false)
+RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigurations(JsonView jsonValue)
+  : RegisteredUserConsoleFeatureConfigurations()
 {
   *this = jsonValue;
 }
@@ -38,6 +39,13 @@ RegisteredUserConsoleFeatureConfigurations& RegisteredUserConsoleFeatureConfigur
     m_statePersistenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SharedView"))
+  {
+    m_sharedView = jsonValue.GetObject("SharedView");
+
+    m_sharedViewHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue RegisteredUserConsoleFeatureConfigurations::Jsonize() const
   if(m_statePersistenceHasBeenSet)
   {
    payload.WithObject("StatePersistence", m_statePersistence.Jsonize());
+
+  }
+
+  if(m_sharedViewHasBeenSet)
+  {
+   payload.WithObject("SharedView", m_sharedView.Jsonize());
 
   }
 

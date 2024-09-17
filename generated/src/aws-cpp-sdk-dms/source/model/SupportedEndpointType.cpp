@@ -29,14 +29,8 @@ SupportedEndpointType::SupportedEndpointType() :
 {
 }
 
-SupportedEndpointType::SupportedEndpointType(JsonView jsonValue) : 
-    m_engineNameHasBeenSet(false),
-    m_supportsCDC(false),
-    m_supportsCDCHasBeenSet(false),
-    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_replicationInstanceEngineMinimumVersionHasBeenSet(false),
-    m_engineDisplayNameHasBeenSet(false)
+SupportedEndpointType::SupportedEndpointType(JsonView jsonValue)
+  : SupportedEndpointType()
 {
   *this = jsonValue;
 }

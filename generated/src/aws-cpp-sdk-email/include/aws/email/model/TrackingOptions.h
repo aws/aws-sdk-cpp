@@ -44,54 +44,20 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The custom subdomain that is used to redirect email recipients to the Amazon
      * SES event tracking domain.</p>
      */
     inline const Aws::String& GetCustomRedirectDomain() const{ return m_customRedirectDomain; }
-
-    /**
-     * <p>The custom subdomain that is used to redirect email recipients to the Amazon
-     * SES event tracking domain.</p>
-     */
     inline bool CustomRedirectDomainHasBeenSet() const { return m_customRedirectDomainHasBeenSet; }
-
-    /**
-     * <p>The custom subdomain that is used to redirect email recipients to the Amazon
-     * SES event tracking domain.</p>
-     */
     inline void SetCustomRedirectDomain(const Aws::String& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = value; }
-
-    /**
-     * <p>The custom subdomain that is used to redirect email recipients to the Amazon
-     * SES event tracking domain.</p>
-     */
     inline void SetCustomRedirectDomain(Aws::String&& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = std::move(value); }
-
-    /**
-     * <p>The custom subdomain that is used to redirect email recipients to the Amazon
-     * SES event tracking domain.</p>
-     */
     inline void SetCustomRedirectDomain(const char* value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain.assign(value); }
-
-    /**
-     * <p>The custom subdomain that is used to redirect email recipients to the Amazon
-     * SES event tracking domain.</p>
-     */
     inline TrackingOptions& WithCustomRedirectDomain(const Aws::String& value) { SetCustomRedirectDomain(value); return *this;}
-
-    /**
-     * <p>The custom subdomain that is used to redirect email recipients to the Amazon
-     * SES event tracking domain.</p>
-     */
     inline TrackingOptions& WithCustomRedirectDomain(Aws::String&& value) { SetCustomRedirectDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The custom subdomain that is used to redirect email recipients to the Amazon
-     * SES event tracking domain.</p>
-     */
     inline TrackingOptions& WithCustomRedirectDomain(const char* value) { SetCustomRedirectDomain(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_customRedirectDomain;

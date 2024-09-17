@@ -38,6 +38,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Sets how the endpoint routes incoming traffic:</p> <ul> <li> <p>
      * <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the
@@ -46,52 +47,12 @@ namespace Model
      * instance.</p> </li> </ul>
      */
     inline const RoutingStrategy& GetRoutingStrategy() const{ return m_routingStrategy; }
-
-    /**
-     * <p>Sets how the endpoint routes incoming traffic:</p> <ul> <li> <p>
-     * <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the
-     * specific instances that have more capacity to process them.</p> </li> <li> <p>
-     * <code>RANDOM</code>: The endpoint routes each request to a randomly chosen
-     * instance.</p> </li> </ul>
-     */
     inline bool RoutingStrategyHasBeenSet() const { return m_routingStrategyHasBeenSet; }
-
-    /**
-     * <p>Sets how the endpoint routes incoming traffic:</p> <ul> <li> <p>
-     * <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the
-     * specific instances that have more capacity to process them.</p> </li> <li> <p>
-     * <code>RANDOM</code>: The endpoint routes each request to a randomly chosen
-     * instance.</p> </li> </ul>
-     */
     inline void SetRoutingStrategy(const RoutingStrategy& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
-
-    /**
-     * <p>Sets how the endpoint routes incoming traffic:</p> <ul> <li> <p>
-     * <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the
-     * specific instances that have more capacity to process them.</p> </li> <li> <p>
-     * <code>RANDOM</code>: The endpoint routes each request to a randomly chosen
-     * instance.</p> </li> </ul>
-     */
     inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = std::move(value); }
-
-    /**
-     * <p>Sets how the endpoint routes incoming traffic:</p> <ul> <li> <p>
-     * <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the
-     * specific instances that have more capacity to process them.</p> </li> <li> <p>
-     * <code>RANDOM</code>: The endpoint routes each request to a randomly chosen
-     * instance.</p> </li> </ul>
-     */
     inline ProductionVariantRoutingConfig& WithRoutingStrategy(const RoutingStrategy& value) { SetRoutingStrategy(value); return *this;}
-
-    /**
-     * <p>Sets how the endpoint routes incoming traffic:</p> <ul> <li> <p>
-     * <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the
-     * specific instances that have more capacity to process them.</p> </li> <li> <p>
-     * <code>RANDOM</code>: The endpoint routes each request to a randomly chosen
-     * instance.</p> </li> </ul>
-     */
     inline ProductionVariantRoutingConfig& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RoutingStrategy m_routingStrategy;

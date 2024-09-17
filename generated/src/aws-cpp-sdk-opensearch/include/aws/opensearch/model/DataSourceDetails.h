@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/DataSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/model/DataSourceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -38,118 +39,57 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of data source.</p>
      */
     inline const DataSourceType& GetDataSourceType() const{ return m_dataSourceType; }
-
-    /**
-     * <p>The type of data source.</p>
-     */
     inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of data source.</p>
-     */
     inline void SetDataSourceType(const DataSourceType& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
-
-    /**
-     * <p>The type of data source.</p>
-     */
     inline void SetDataSourceType(DataSourceType&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::move(value); }
-
-    /**
-     * <p>The type of data source.</p>
-     */
     inline DataSourceDetails& WithDataSourceType(const DataSourceType& value) { SetDataSourceType(value); return *this;}
-
-    /**
-     * <p>The type of data source.</p>
-     */
     inline DataSourceDetails& WithDataSourceType(DataSourceType&& value) { SetDataSourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the data source.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the data source.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the data source.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the data source.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the data source.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the data source.</p>
-     */
     inline DataSourceDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the data source.</p>
-     */
     inline DataSourceDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the data source.</p>
-     */
     inline DataSourceDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the data source.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the data source.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the data source.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the data source.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the data source.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the data source.</p>
-     */
     inline DataSourceDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the data source.</p>
-     */
     inline DataSourceDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the data source.</p>
-     */
     inline DataSourceDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The status of the data source.</p>
+     */
+    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline DataSourceDetails& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
+    inline DataSourceDetails& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
   private:
 
     DataSourceType m_dataSourceType;
@@ -160,6 +100,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    DataSourceStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

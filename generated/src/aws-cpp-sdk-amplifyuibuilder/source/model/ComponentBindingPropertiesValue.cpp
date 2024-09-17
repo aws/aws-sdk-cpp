@@ -25,10 +25,8 @@ ComponentBindingPropertiesValue::ComponentBindingPropertiesValue() :
 {
 }
 
-ComponentBindingPropertiesValue::ComponentBindingPropertiesValue(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
+ComponentBindingPropertiesValue::ComponentBindingPropertiesValue(JsonView jsonValue)
+  : ComponentBindingPropertiesValue()
 {
   *this = jsonValue;
 }

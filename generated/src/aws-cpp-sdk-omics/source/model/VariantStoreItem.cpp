@@ -35,20 +35,8 @@ VariantStoreItem::VariantStoreItem() :
 {
 }
 
-VariantStoreItem::VariantStoreItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_referenceHasBeenSet(false),
-    m_status(StoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_storeArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_storeSizeBytes(0),
-    m_storeSizeBytesHasBeenSet(false)
+VariantStoreItem::VariantStoreItem(JsonView jsonValue)
+  : VariantStoreItem()
 {
   *this = jsonValue;
 }

@@ -38,67 +38,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The link configuration of a table field URL.</p>
      */
     inline const TableFieldLinkConfiguration& GetLinkConfiguration() const{ return m_linkConfiguration; }
-
-    /**
-     * <p>The link configuration of a table field URL.</p>
-     */
     inline bool LinkConfigurationHasBeenSet() const { return m_linkConfigurationHasBeenSet; }
-
-    /**
-     * <p>The link configuration of a table field URL.</p>
-     */
     inline void SetLinkConfiguration(const TableFieldLinkConfiguration& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = value; }
-
-    /**
-     * <p>The link configuration of a table field URL.</p>
-     */
     inline void SetLinkConfiguration(TableFieldLinkConfiguration&& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = std::move(value); }
-
-    /**
-     * <p>The link configuration of a table field URL.</p>
-     */
     inline TableFieldURLConfiguration& WithLinkConfiguration(const TableFieldLinkConfiguration& value) { SetLinkConfiguration(value); return *this;}
-
-    /**
-     * <p>The link configuration of a table field URL.</p>
-     */
     inline TableFieldURLConfiguration& WithLinkConfiguration(TableFieldLinkConfiguration&& value) { SetLinkConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image configuration of a table field URL.</p>
      */
     inline const TableFieldImageConfiguration& GetImageConfiguration() const{ return m_imageConfiguration; }
-
-    /**
-     * <p>The image configuration of a table field URL.</p>
-     */
     inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
-
-    /**
-     * <p>The image configuration of a table field URL.</p>
-     */
     inline void SetImageConfiguration(const TableFieldImageConfiguration& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = value; }
-
-    /**
-     * <p>The image configuration of a table field URL.</p>
-     */
     inline void SetImageConfiguration(TableFieldImageConfiguration&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::move(value); }
-
-    /**
-     * <p>The image configuration of a table field URL.</p>
-     */
     inline TableFieldURLConfiguration& WithImageConfiguration(const TableFieldImageConfiguration& value) { SetImageConfiguration(value); return *this;}
-
-    /**
-     * <p>The image configuration of a table field URL.</p>
-     */
     inline TableFieldURLConfiguration& WithImageConfiguration(TableFieldImageConfiguration&& value) { SetImageConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TableFieldLinkConfiguration m_linkConfiguration;

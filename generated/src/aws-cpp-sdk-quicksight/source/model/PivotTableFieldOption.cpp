@@ -26,11 +26,8 @@ PivotTableFieldOption::PivotTableFieldOption() :
 {
 }
 
-PivotTableFieldOption::PivotTableFieldOption(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+PivotTableFieldOption::PivotTableFieldOption(JsonView jsonValue)
+  : PivotTableFieldOption()
 {
   *this = jsonValue;
 }

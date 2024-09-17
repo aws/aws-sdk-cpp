@@ -45,6 +45,7 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the configuration set. The name must meet the following
      * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
@@ -52,63 +53,14 @@ namespace Model
      * fewer.</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the configuration set. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
-     * fewer.</p> </li> </ul>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration set. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
-     * fewer.</p> </li> </ul>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the configuration set. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
-     * fewer.</p> </li> </ul>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the configuration set. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
-     * fewer.</p> </li> </ul>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the configuration set. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
-     * fewer.</p> </li> </ul>
-     */
     inline ConfigurationSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration set. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
-     * fewer.</p> </li> </ul>
-     */
     inline ConfigurationSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration set. The name must meet the following
-     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
-     * fewer.</p> </li> </ul>
-     */
     inline ConfigurationSet& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

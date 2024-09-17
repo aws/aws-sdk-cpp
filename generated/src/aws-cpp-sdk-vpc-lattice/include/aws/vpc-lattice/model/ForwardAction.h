@@ -39,6 +39,7 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The target groups. Traffic matching the rule is forwarded to the specified
      * target groups. With forward actions, you can assign a weight that controls the
@@ -46,95 +47,18 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline const Aws::Vector<WeightedTargetGroup>& GetTargetGroups() const{ return m_targetGroups; }
-
-    /**
-     * <p>The target groups. Traffic matching the rule is forwarded to the specified
-     * target groups. With forward actions, you can assign a weight that controls the
-     * prioritization and selection of each target group. This means that requests are
-     * distributed to individual target groups based on their weights. For example, if
-     * two target groups have the same weight, each target group receives half of the
-     * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
-     */
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
-
-    /**
-     * <p>The target groups. Traffic matching the rule is forwarded to the specified
-     * target groups. With forward actions, you can assign a weight that controls the
-     * prioritization and selection of each target group. This means that requests are
-     * distributed to individual target groups based on their weights. For example, if
-     * two target groups have the same weight, each target group receives half of the
-     * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
-     */
     inline void SetTargetGroups(const Aws::Vector<WeightedTargetGroup>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
-
-    /**
-     * <p>The target groups. Traffic matching the rule is forwarded to the specified
-     * target groups. With forward actions, you can assign a weight that controls the
-     * prioritization and selection of each target group. This means that requests are
-     * distributed to individual target groups based on their weights. For example, if
-     * two target groups have the same weight, each target group receives half of the
-     * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
-     */
     inline void SetTargetGroups(Aws::Vector<WeightedTargetGroup>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
-
-    /**
-     * <p>The target groups. Traffic matching the rule is forwarded to the specified
-     * target groups. With forward actions, you can assign a weight that controls the
-     * prioritization and selection of each target group. This means that requests are
-     * distributed to individual target groups based on their weights. For example, if
-     * two target groups have the same weight, each target group receives half of the
-     * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
-     */
     inline ForwardAction& WithTargetGroups(const Aws::Vector<WeightedTargetGroup>& value) { SetTargetGroups(value); return *this;}
-
-    /**
-     * <p>The target groups. Traffic matching the rule is forwarded to the specified
-     * target groups. With forward actions, you can assign a weight that controls the
-     * prioritization and selection of each target group. This means that requests are
-     * distributed to individual target groups based on their weights. For example, if
-     * two target groups have the same weight, each target group receives half of the
-     * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
-     */
     inline ForwardAction& WithTargetGroups(Aws::Vector<WeightedTargetGroup>&& value) { SetTargetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The target groups. Traffic matching the rule is forwarded to the specified
-     * target groups. With forward actions, you can assign a weight that controls the
-     * prioritization and selection of each target group. This means that requests are
-     * distributed to individual target groups based on their weights. For example, if
-     * two target groups have the same weight, each target group receives half of the
-     * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
-     */
     inline ForwardAction& AddTargetGroups(const WeightedTargetGroup& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
-
-    /**
-     * <p>The target groups. Traffic matching the rule is forwarded to the specified
-     * target groups. With forward actions, you can assign a weight that controls the
-     * prioritization and selection of each target group. This means that requests are
-     * distributed to individual target groups based on their weights. For example, if
-     * two target groups have the same weight, each target group receives half of the
-     * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
-     */
     inline ForwardAction& AddTargetGroups(WeightedTargetGroup&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<WeightedTargetGroup> m_targetGroups;

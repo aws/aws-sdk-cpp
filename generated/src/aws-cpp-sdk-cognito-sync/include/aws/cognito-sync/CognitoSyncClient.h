@@ -362,13 +362,13 @@ namespace CognitoSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsage">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIdentityPoolUsageOutcome ListIdentityPoolUsage(const Model::ListIdentityPoolUsageRequest& request) const;
+        virtual Model::ListIdentityPoolUsageOutcome ListIdentityPoolUsage(const Model::ListIdentityPoolUsageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIdentityPoolUsage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIdentityPoolUsageRequestT = Model::ListIdentityPoolUsageRequest>
-        Model::ListIdentityPoolUsageOutcomeCallable ListIdentityPoolUsageCallable(const ListIdentityPoolUsageRequestT& request) const
+        Model::ListIdentityPoolUsageOutcomeCallable ListIdentityPoolUsageCallable(const ListIdentityPoolUsageRequestT& request = {}) const
         {
             return SubmitCallable(&CognitoSyncClient::ListIdentityPoolUsage, request);
         }
@@ -377,7 +377,7 @@ namespace CognitoSync
          * An Async wrapper for ListIdentityPoolUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIdentityPoolUsageRequestT = Model::ListIdentityPoolUsageRequest>
-        void ListIdentityPoolUsageAsync(const ListIdentityPoolUsageRequestT& request, const ListIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIdentityPoolUsageAsync(const ListIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIdentityPoolUsageRequestT& request = {}) const
         {
             return SubmitAsync(&CognitoSyncClient::ListIdentityPoolUsage, request, handler, context);
         }
@@ -598,7 +598,6 @@ namespace CognitoSync
       void init(const CognitoSyncClientConfiguration& clientConfiguration);
 
       CognitoSyncClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<CognitoSyncEndpointProviderBase> m_endpointProvider;
   };
 

@@ -37,46 +37,19 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Lifecycle last Cutover reverted API call date time.</p>
      */
     inline const Aws::String& GetApiCallDateTime() const{ return m_apiCallDateTime; }
-
-    /**
-     * <p>Lifecycle last Cutover reverted API call date time.</p>
-     */
     inline bool ApiCallDateTimeHasBeenSet() const { return m_apiCallDateTimeHasBeenSet; }
-
-    /**
-     * <p>Lifecycle last Cutover reverted API call date time.</p>
-     */
     inline void SetApiCallDateTime(const Aws::String& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = value; }
-
-    /**
-     * <p>Lifecycle last Cutover reverted API call date time.</p>
-     */
     inline void SetApiCallDateTime(Aws::String&& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = std::move(value); }
-
-    /**
-     * <p>Lifecycle last Cutover reverted API call date time.</p>
-     */
     inline void SetApiCallDateTime(const char* value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime.assign(value); }
-
-    /**
-     * <p>Lifecycle last Cutover reverted API call date time.</p>
-     */
     inline LifeCycleLastCutoverReverted& WithApiCallDateTime(const Aws::String& value) { SetApiCallDateTime(value); return *this;}
-
-    /**
-     * <p>Lifecycle last Cutover reverted API call date time.</p>
-     */
     inline LifeCycleLastCutoverReverted& WithApiCallDateTime(Aws::String&& value) { SetApiCallDateTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Lifecycle last Cutover reverted API call date time.</p>
-     */
     inline LifeCycleLastCutoverReverted& WithApiCallDateTime(const char* value) { SetApiCallDateTime(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiCallDateTime;

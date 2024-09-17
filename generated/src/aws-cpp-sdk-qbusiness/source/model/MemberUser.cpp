@@ -19,34 +19,32 @@ namespace Model
 {
 
 MemberUser::MemberUser() : 
+    m_userIdHasBeenSet(false),
     m_type(MembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
 }
 
-MemberUser::MemberUser(JsonView jsonValue) : 
-    m_type(MembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+MemberUser::MemberUser(JsonView jsonValue)
+  : MemberUser()
 {
   *this = jsonValue;
 }
 
 MemberUser& MemberUser::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = MembershipTypeMapper::GetMembershipTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
 
     m_userIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = MembershipTypeMapper::GetMembershipTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +54,15 @@ JsonValue MemberUser::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", MembershipTypeMapper::GetNameForMembershipType(m_type));
-  }
-
   if(m_userIdHasBeenSet)
   {
    payload.WithString("userId", m_userId);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", MembershipTypeMapper::GetNameForMembershipType(m_type));
   }
 
   return payload;

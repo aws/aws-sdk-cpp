@@ -37,67 +37,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>Denotes the configration as enabled or disabled.</p>
+     * <p>Denotes the configuration as enabled or disabled.</p>
      */
     inline bool GetDisabled() const{ return m_disabled; }
-
-    /**
-     * <p>Denotes the configration as enabled or disabled.</p>
-     */
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
-
-    /**
-     * <p>Denotes the configration as enabled or disabled.</p>
-     */
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
-
-    /**
-     * <p>Denotes the configration as enabled or disabled.</p>
-     */
     inline MediaInsightsConfiguration& WithDisabled(bool value) { SetDisabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration's ARN.</p>
      */
     inline const Aws::String& GetConfigurationArn() const{ return m_configurationArn; }
-
-    /**
-     * <p>The configuration's ARN.</p>
-     */
     inline bool ConfigurationArnHasBeenSet() const { return m_configurationArnHasBeenSet; }
-
-    /**
-     * <p>The configuration's ARN.</p>
-     */
     inline void SetConfigurationArn(const Aws::String& value) { m_configurationArnHasBeenSet = true; m_configurationArn = value; }
-
-    /**
-     * <p>The configuration's ARN.</p>
-     */
     inline void SetConfigurationArn(Aws::String&& value) { m_configurationArnHasBeenSet = true; m_configurationArn = std::move(value); }
-
-    /**
-     * <p>The configuration's ARN.</p>
-     */
     inline void SetConfigurationArn(const char* value) { m_configurationArnHasBeenSet = true; m_configurationArn.assign(value); }
-
-    /**
-     * <p>The configuration's ARN.</p>
-     */
     inline MediaInsightsConfiguration& WithConfigurationArn(const Aws::String& value) { SetConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The configuration's ARN.</p>
-     */
     inline MediaInsightsConfiguration& WithConfigurationArn(Aws::String&& value) { SetConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration's ARN.</p>
-     */
     inline MediaInsightsConfiguration& WithConfigurationArn(const char* value) { SetConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     bool m_disabled;

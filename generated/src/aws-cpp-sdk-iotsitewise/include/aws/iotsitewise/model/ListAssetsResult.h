@@ -34,106 +34,43 @@ namespace Model
     AWS_IOTSITEWISE_API ListAssetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that summarizes each asset.</p>
      */
     inline const Aws::Vector<AssetSummary>& GetAssetSummaries() const{ return m_assetSummaries; }
-
-    /**
-     * <p>A list that summarizes each asset.</p>
-     */
     inline void SetAssetSummaries(const Aws::Vector<AssetSummary>& value) { m_assetSummaries = value; }
-
-    /**
-     * <p>A list that summarizes each asset.</p>
-     */
     inline void SetAssetSummaries(Aws::Vector<AssetSummary>&& value) { m_assetSummaries = std::move(value); }
-
-    /**
-     * <p>A list that summarizes each asset.</p>
-     */
     inline ListAssetsResult& WithAssetSummaries(const Aws::Vector<AssetSummary>& value) { SetAssetSummaries(value); return *this;}
-
-    /**
-     * <p>A list that summarizes each asset.</p>
-     */
     inline ListAssetsResult& WithAssetSummaries(Aws::Vector<AssetSummary>&& value) { SetAssetSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that summarizes each asset.</p>
-     */
     inline ListAssetsResult& AddAssetSummaries(const AssetSummary& value) { m_assetSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>A list that summarizes each asset.</p>
-     */
     inline ListAssetsResult& AddAssetSummaries(AssetSummary&& value) { m_assetSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAssetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAssetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAssetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AssetSummary> m_assetSummaries;

@@ -23,8 +23,8 @@ VirtualGatewayTlsValidationContextAcmTrust::VirtualGatewayTlsValidationContextAc
 {
 }
 
-VirtualGatewayTlsValidationContextAcmTrust::VirtualGatewayTlsValidationContextAcmTrust(JsonView jsonValue) : 
-    m_certificateAuthorityArnsHasBeenSet(false)
+VirtualGatewayTlsValidationContextAcmTrust::VirtualGatewayTlsValidationContextAcmTrust(JsonView jsonValue)
+  : VirtualGatewayTlsValidationContextAcmTrust()
 {
   *this = jsonValue;
 }

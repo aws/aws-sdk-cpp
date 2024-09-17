@@ -26,11 +26,8 @@ NotificationContext::NotificationContext() :
 {
 }
 
-NotificationContext::NotificationContext(JsonView jsonValue) : 
-    m_validationIdHasBeenSet(false),
-    m_status(ValidationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+NotificationContext::NotificationContext(JsonView jsonValue)
+  : NotificationContext()
 {
   *this = jsonValue;
 }

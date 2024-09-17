@@ -25,10 +25,8 @@ GdgAttributes::GdgAttributes() :
 {
 }
 
-GdgAttributes::GdgAttributes(JsonView jsonValue) : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_rollDispositionHasBeenSet(false)
+GdgAttributes::GdgAttributes(JsonView jsonValue)
+  : GdgAttributes()
 {
   *this = jsonValue;
 }

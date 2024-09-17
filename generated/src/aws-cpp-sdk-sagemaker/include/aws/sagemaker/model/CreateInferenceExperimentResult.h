@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateInferenceExperimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN for your inference experiment.</p>
      */
     inline const Aws::String& GetInferenceExperimentArn() const{ return m_inferenceExperimentArn; }
-
-    /**
-     * <p>The ARN for your inference experiment.</p>
-     */
     inline void SetInferenceExperimentArn(const Aws::String& value) { m_inferenceExperimentArn = value; }
-
-    /**
-     * <p>The ARN for your inference experiment.</p>
-     */
     inline void SetInferenceExperimentArn(Aws::String&& value) { m_inferenceExperimentArn = std::move(value); }
-
-    /**
-     * <p>The ARN for your inference experiment.</p>
-     */
     inline void SetInferenceExperimentArn(const char* value) { m_inferenceExperimentArn.assign(value); }
-
-    /**
-     * <p>The ARN for your inference experiment.</p>
-     */
     inline CreateInferenceExperimentResult& WithInferenceExperimentArn(const Aws::String& value) { SetInferenceExperimentArn(value); return *this;}
-
-    /**
-     * <p>The ARN for your inference experiment.</p>
-     */
     inline CreateInferenceExperimentResult& WithInferenceExperimentArn(Aws::String&& value) { SetInferenceExperimentArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN for your inference experiment.</p>
-     */
     inline CreateInferenceExperimentResult& WithInferenceExperimentArn(const char* value) { SetInferenceExperimentArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateInferenceExperimentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateInferenceExperimentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateInferenceExperimentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inferenceExperimentArn;

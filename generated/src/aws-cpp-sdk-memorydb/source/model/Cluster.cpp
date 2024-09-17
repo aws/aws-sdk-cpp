@@ -54,39 +54,8 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_pendingUpdatesHasBeenSet(false),
-    m_numberOfShards(0),
-    m_numberOfShardsHasBeenSet(false),
-    m_shardsHasBeenSet(false),
-    m_availabilityMode(AZStatus::NOT_SET),
-    m_availabilityModeHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_enginePatchVersionHasBeenSet(false),
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterGroupStatusHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetGroupNameHasBeenSet(false),
-    m_tLSEnabled(false),
-    m_tLSEnabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsTopicStatusHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_aCLNameHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
+Cluster::Cluster(JsonView jsonValue)
+  : Cluster()
 {
   *this = jsonValue;
 }

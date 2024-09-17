@@ -33,53 +33,27 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API GetAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
      */
     inline const Alias& GetAlias() const{ return m_alias; }
-
-    /**
-     * <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
-     */
     inline void SetAlias(const Alias& value) { m_alias = value; }
-
-    /**
-     * <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
-     */
     inline void SetAlias(Alias&& value) { m_alias = std::move(value); }
-
-    /**
-     * <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
-     */
     inline GetAliasResult& WithAlias(const Alias& value) { SetAlias(value); return *this;}
-
-    /**
-     * <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
-     */
     inline GetAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Alias m_alias;

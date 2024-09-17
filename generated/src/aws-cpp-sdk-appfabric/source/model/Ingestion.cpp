@@ -32,17 +32,8 @@ Ingestion::Ingestion() :
 {
 }
 
-Ingestion::Ingestion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_appBundleArnHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_state(IngestionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ingestionType(IngestionType::NOT_SET),
-    m_ingestionTypeHasBeenSet(false)
+Ingestion::Ingestion(JsonView jsonValue)
+  : Ingestion()
 {
   *this = jsonValue;
 }

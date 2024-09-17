@@ -32,63 +32,29 @@ namespace Model
     AWS_PANORAMA_API UpdateDeviceMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The device's ID.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline UpdateDeviceMetadataResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline UpdateDeviceMetadataResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's ID.</p>
-     */
     inline UpdateDeviceMetadataResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDeviceMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDeviceMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDeviceMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

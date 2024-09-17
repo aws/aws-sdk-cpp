@@ -22,19 +22,15 @@ NetworkRouteDestination::NetworkRouteDestination() :
     m_coreNetworkAttachmentIdHasBeenSet(false),
     m_transitGatewayAttachmentIdHasBeenSet(false),
     m_segmentNameHasBeenSet(false),
+    m_networkFunctionGroupNameHasBeenSet(false),
     m_edgeLocationHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false)
 {
 }
 
-NetworkRouteDestination::NetworkRouteDestination(JsonView jsonValue) : 
-    m_coreNetworkAttachmentIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+NetworkRouteDestination::NetworkRouteDestination(JsonView jsonValue)
+  : NetworkRouteDestination()
 {
   *this = jsonValue;
 }
@@ -60,6 +56,13 @@ NetworkRouteDestination& NetworkRouteDestination::operator =(JsonView jsonValue)
     m_segmentName = jsonValue.GetString("SegmentName");
 
     m_segmentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFunctionGroupName"))
+  {
+    m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
+
+    m_networkFunctionGroupNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EdgeLocation"))
@@ -105,6 +108,12 @@ JsonValue NetworkRouteDestination::Jsonize() const
   if(m_segmentNameHasBeenSet)
   {
    payload.WithString("SegmentName", m_segmentName);
+
+  }
+
+  if(m_networkFunctionGroupNameHasBeenSet)
+  {
+   payload.WithString("NetworkFunctionGroupName", m_networkFunctionGroupName);
 
   }
 

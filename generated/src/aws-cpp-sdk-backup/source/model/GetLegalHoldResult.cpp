@@ -22,8 +22,8 @@ GetLegalHoldResult::GetLegalHoldResult() :
 {
 }
 
-GetLegalHoldResult::GetLegalHoldResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(LegalHoldStatus::NOT_SET)
+GetLegalHoldResult::GetLegalHoldResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetLegalHoldResult()
 {
   *this = result;
 }

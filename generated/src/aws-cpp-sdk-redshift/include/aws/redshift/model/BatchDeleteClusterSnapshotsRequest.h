@@ -37,46 +37,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A list of identifiers for the snapshots that you want to delete.</p>
      */
     inline const Aws::Vector<DeleteClusterSnapshotMessage>& GetIdentifiers() const{ return m_identifiers; }
-
-    /**
-     * <p>A list of identifiers for the snapshots that you want to delete.</p>
-     */
     inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
-
-    /**
-     * <p>A list of identifiers for the snapshots that you want to delete.</p>
-     */
     inline void SetIdentifiers(const Aws::Vector<DeleteClusterSnapshotMessage>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
-
-    /**
-     * <p>A list of identifiers for the snapshots that you want to delete.</p>
-     */
     inline void SetIdentifiers(Aws::Vector<DeleteClusterSnapshotMessage>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
-
-    /**
-     * <p>A list of identifiers for the snapshots that you want to delete.</p>
-     */
     inline BatchDeleteClusterSnapshotsRequest& WithIdentifiers(const Aws::Vector<DeleteClusterSnapshotMessage>& value) { SetIdentifiers(value); return *this;}
-
-    /**
-     * <p>A list of identifiers for the snapshots that you want to delete.</p>
-     */
     inline BatchDeleteClusterSnapshotsRequest& WithIdentifiers(Aws::Vector<DeleteClusterSnapshotMessage>&& value) { SetIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of identifiers for the snapshots that you want to delete.</p>
-     */
     inline BatchDeleteClusterSnapshotsRequest& AddIdentifiers(const DeleteClusterSnapshotMessage& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of identifiers for the snapshots that you want to delete.</p>
-     */
     inline BatchDeleteClusterSnapshotsRequest& AddIdentifiers(DeleteClusterSnapshotMessage&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DeleteClusterSnapshotMessage> m_identifiers;

@@ -26,9 +26,8 @@ MetricDimension::MetricDimension() :
 {
 }
 
-MetricDimension::MetricDimension(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+MetricDimension::MetricDimension(const XmlNode& xmlNode)
+  : MetricDimension()
 {
   *this = xmlNode;
 }

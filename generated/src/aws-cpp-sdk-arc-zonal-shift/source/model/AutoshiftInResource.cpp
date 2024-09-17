@@ -26,11 +26,8 @@ AutoshiftInResource::AutoshiftInResource() :
 {
 }
 
-AutoshiftInResource::AutoshiftInResource(JsonView jsonValue) : 
-    m_appliedStatus(AutoshiftAppliedStatus::NOT_SET),
-    m_appliedStatusHasBeenSet(false),
-    m_awayFromHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+AutoshiftInResource::AutoshiftInResource(JsonView jsonValue)
+  : AutoshiftInResource()
 {
   *this = jsonValue;
 }

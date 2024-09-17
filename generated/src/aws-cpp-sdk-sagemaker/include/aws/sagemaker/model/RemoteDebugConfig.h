@@ -40,26 +40,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If set to True, enables remote debugging.</p>
      */
     inline bool GetEnableRemoteDebug() const{ return m_enableRemoteDebug; }
-
-    /**
-     * <p>If set to True, enables remote debugging.</p>
-     */
     inline bool EnableRemoteDebugHasBeenSet() const { return m_enableRemoteDebugHasBeenSet; }
-
-    /**
-     * <p>If set to True, enables remote debugging.</p>
-     */
     inline void SetEnableRemoteDebug(bool value) { m_enableRemoteDebugHasBeenSet = true; m_enableRemoteDebug = value; }
-
-    /**
-     * <p>If set to True, enables remote debugging.</p>
-     */
     inline RemoteDebugConfig& WithEnableRemoteDebug(bool value) { SetEnableRemoteDebug(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableRemoteDebug;

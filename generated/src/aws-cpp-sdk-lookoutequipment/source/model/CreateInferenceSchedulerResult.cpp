@@ -18,12 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateInferenceSchedulerResult::CreateInferenceSchedulerResult() : 
-    m_status(InferenceSchedulerStatus::NOT_SET)
+    m_status(InferenceSchedulerStatus::NOT_SET),
+    m_modelQuality(ModelQuality::NOT_SET)
 {
 }
 
-CreateInferenceSchedulerResult::CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(InferenceSchedulerStatus::NOT_SET)
+CreateInferenceSchedulerResult::CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateInferenceSchedulerResult()
 {
   *this = result;
 }
@@ -46,6 +47,12 @@ CreateInferenceSchedulerResult& CreateInferenceSchedulerResult::operator =(const
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InferenceSchedulerStatusMapper::GetInferenceSchedulerStatusForName(jsonValue.GetString("Status"));
+
+  }
+
+  if(jsonValue.ValueExists("ModelQuality"))
+  {
+    m_modelQuality = ModelQualityMapper::GetModelQualityForName(jsonValue.GetString("ModelQuality"));
 
   }
 

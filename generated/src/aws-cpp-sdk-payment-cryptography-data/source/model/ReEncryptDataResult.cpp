@@ -29,12 +29,6 @@ ReEncryptDataResult::ReEncryptDataResult(const Aws::AmazonWebServiceResult<JsonV
 ReEncryptDataResult& ReEncryptDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CipherText"))
-  {
-    m_cipherText = jsonValue.GetString("CipherText");
-
-  }
-
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
@@ -44,6 +38,12 @@ ReEncryptDataResult& ReEncryptDataResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
+
+  }
+
+  if(jsonValue.ValueExists("CipherText"))
+  {
+    m_cipherText = jsonValue.GetString("CipherText");
 
   }
 

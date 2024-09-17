@@ -33,18 +33,8 @@ ComponentVersion::ComponentVersion() :
 {
 }
 
-ComponentVersion::ComponentVersion(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_supportedOsVersionsHasBeenSet(false),
-    m_type(ComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false)
+ComponentVersion::ComponentVersion(JsonView jsonValue)
+  : ComponentVersion()
 {
   *this = jsonValue;
 }

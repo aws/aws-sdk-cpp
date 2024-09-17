@@ -40,6 +40,17 @@
 #include <aws/migrationhubstrategy/model/StopAssessmentResult.h>
 #include <aws/migrationhubstrategy/model/UpdateApplicationComponentConfigResult.h>
 #include <aws/migrationhubstrategy/model/UpdateServerConfigResult.h>
+#include <aws/migrationhubstrategy/model/StartRecommendationReportGenerationRequest.h>
+#include <aws/migrationhubstrategy/model/ListAnalyzableServersRequest.h>
+#include <aws/migrationhubstrategy/model/ListApplicationComponentsRequest.h>
+#include <aws/migrationhubstrategy/model/ListServersRequest.h>
+#include <aws/migrationhubstrategy/model/PutPortfolioPreferencesRequest.h>
+#include <aws/migrationhubstrategy/model/ListImportFileTaskRequest.h>
+#include <aws/migrationhubstrategy/model/GetLatestAssessmentIdRequest.h>
+#include <aws/migrationhubstrategy/model/GetPortfolioPreferencesRequest.h>
+#include <aws/migrationhubstrategy/model/GetPortfolioSummaryRequest.h>
+#include <aws/migrationhubstrategy/model/StartAssessmentRequest.h>
+#include <aws/migrationhubstrategy/model/ListCollectorsRequest.h>
 /* End of service model headers required in MigrationHubStrategyRecommendationsClient header */
 
 namespace Aws
@@ -73,7 +84,7 @@ namespace Aws
 
   namespace MigrationHubStrategyRecommendations
   {
-    using MigrationHubStrategyRecommendationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MigrationHubStrategyRecommendationsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MigrationHubStrategyRecommendationsEndpointProviderBase = Aws::MigrationHubStrategyRecommendations::Endpoint::MigrationHubStrategyRecommendationsEndpointProviderBase;
     using MigrationHubStrategyRecommendationsEndpointProvider = Aws::MigrationHubStrategyRecommendations::Endpoint::MigrationHubStrategyRecommendationsEndpointProvider;
 

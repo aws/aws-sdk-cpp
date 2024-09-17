@@ -26,11 +26,8 @@ ApplicationSettingsResponse::ApplicationSettingsResponse() :
 {
 }
 
-ApplicationSettingsResponse::ApplicationSettingsResponse(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_settingsGroupHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
+ApplicationSettingsResponse::ApplicationSettingsResponse(JsonView jsonValue)
+  : ApplicationSettingsResponse()
 {
   *this = jsonValue;
 }

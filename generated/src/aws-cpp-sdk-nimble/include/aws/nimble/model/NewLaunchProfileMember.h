@@ -38,77 +38,31 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The persona.</p>
      */
     inline const LaunchProfilePersona& GetPersona() const{ return m_persona; }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline bool PersonaHasBeenSet() const { return m_personaHasBeenSet; }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline void SetPersona(const LaunchProfilePersona& value) { m_personaHasBeenSet = true; m_persona = value; }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline void SetPersona(LaunchProfilePersona&& value) { m_personaHasBeenSet = true; m_persona = std::move(value); }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline NewLaunchProfileMember& WithPersona(const LaunchProfilePersona& value) { SetPersona(value); return *this;}
-
-    /**
-     * <p>The persona.</p>
-     */
     inline NewLaunchProfileMember& WithPersona(LaunchProfilePersona&& value) { SetPersona(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal ID.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline NewLaunchProfileMember& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline NewLaunchProfileMember& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline NewLaunchProfileMember& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
-
+    ///@}
   private:
 
     LaunchProfilePersona m_persona;

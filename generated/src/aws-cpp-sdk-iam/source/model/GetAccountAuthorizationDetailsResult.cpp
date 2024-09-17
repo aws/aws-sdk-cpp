@@ -22,8 +22,8 @@ GetAccountAuthorizationDetailsResult::GetAccountAuthorizationDetailsResult() :
 {
 }
 
-GetAccountAuthorizationDetailsResult::GetAccountAuthorizationDetailsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+GetAccountAuthorizationDetailsResult::GetAccountAuthorizationDetailsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetAccountAuthorizationDetailsResult()
 {
   *this = result;
 }

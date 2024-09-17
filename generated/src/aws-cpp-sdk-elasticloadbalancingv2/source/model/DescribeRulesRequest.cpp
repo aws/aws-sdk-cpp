@@ -30,12 +30,19 @@ Aws::String DescribeRulesRequest::SerializePayload() const
 
   if(m_ruleArnsHasBeenSet)
   {
-    unsigned ruleArnsCount = 1;
-    for(auto& item : m_ruleArns)
+    if (m_ruleArns.empty())
     {
-      ss << "RuleArns.member." << ruleArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      ruleArnsCount++;
+      ss << "RuleArns=&";
+    }
+    else
+    {
+      unsigned ruleArnsCount = 1;
+      for(auto& item : m_ruleArns)
+      {
+        ss << "RuleArns.member." << ruleArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        ruleArnsCount++;
+      }
     }
   }
 

@@ -25,10 +25,8 @@ ClarifyExplainerConfig::ClarifyExplainerConfig() :
 {
 }
 
-ClarifyExplainerConfig::ClarifyExplainerConfig(JsonView jsonValue) : 
-    m_enableExplanationsHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_shapConfigHasBeenSet(false)
+ClarifyExplainerConfig::ClarifyExplainerConfig(JsonView jsonValue)
+  : ClarifyExplainerConfig()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ BatchGetRecordResultDetail::BatchGetRecordResultDetail() :
 {
 }
 
-BatchGetRecordResultDetail::BatchGetRecordResultDetail(JsonView jsonValue) : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_recordHasBeenSet(false),
-    m_expiresAtHasBeenSet(false)
+BatchGetRecordResultDetail::BatchGetRecordResultDetail(JsonView jsonValue)
+  : BatchGetRecordResultDetail()
 {
   *this = jsonValue;
 }

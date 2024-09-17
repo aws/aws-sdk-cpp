@@ -44,46 +44,19 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error description.</p>
      */
     inline const Aws::String& GetErrorDescription() const{ return m_errorDescription; }
-
-    /**
-     * <p>The error description.</p>
-     */
     inline bool ErrorDescriptionHasBeenSet() const { return m_errorDescriptionHasBeenSet; }
-
-    /**
-     * <p>The error description.</p>
-     */
     inline void SetErrorDescription(const Aws::String& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = value; }
-
-    /**
-     * <p>The error description.</p>
-     */
     inline void SetErrorDescription(Aws::String&& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = std::move(value); }
-
-    /**
-     * <p>The error description.</p>
-     */
     inline void SetErrorDescription(const char* value) { m_errorDescriptionHasBeenSet = true; m_errorDescription.assign(value); }
-
-    /**
-     * <p>The error description.</p>
-     */
     inline EvaluationErrorItem& WithErrorDescription(const Aws::String& value) { SetErrorDescription(value); return *this;}
-
-    /**
-     * <p>The error description.</p>
-     */
     inline EvaluationErrorItem& WithErrorDescription(Aws::String&& value) { SetErrorDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The error description.</p>
-     */
     inline EvaluationErrorItem& WithErrorDescription(const char* value) { SetErrorDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_errorDescription;

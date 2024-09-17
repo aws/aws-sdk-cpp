@@ -26,9 +26,8 @@ AuthenticationProfile::AuthenticationProfile() :
 {
 }
 
-AuthenticationProfile::AuthenticationProfile(const XmlNode& xmlNode) : 
-    m_authenticationProfileNameHasBeenSet(false),
-    m_authenticationProfileContentHasBeenSet(false)
+AuthenticationProfile::AuthenticationProfile(const XmlNode& xmlNode)
+  : AuthenticationProfile()
 {
   *this = xmlNode;
 }

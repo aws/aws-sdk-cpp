@@ -26,11 +26,8 @@ VideoArtifactsConfiguration::VideoArtifactsConfiguration() :
 {
 }
 
-VideoArtifactsConfiguration::VideoArtifactsConfiguration(JsonView jsonValue) : 
-    m_state(ArtifactsState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_muxType(VideoMuxType::NOT_SET),
-    m_muxTypeHasBeenSet(false)
+VideoArtifactsConfiguration::VideoArtifactsConfiguration(JsonView jsonValue)
+  : VideoArtifactsConfiguration()
 {
   *this = jsonValue;
 }

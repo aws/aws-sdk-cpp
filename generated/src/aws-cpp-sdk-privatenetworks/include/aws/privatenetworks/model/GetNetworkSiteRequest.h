@@ -32,46 +32,19 @@ namespace Model
     AWS_PRIVATENETWORKS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the network site.</p>
      */
     inline const Aws::String& GetNetworkSiteArn() const{ return m_networkSiteArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site.</p>
-     */
     inline bool NetworkSiteArnHasBeenSet() const { return m_networkSiteArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site.</p>
-     */
     inline void SetNetworkSiteArn(const Aws::String& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site.</p>
-     */
     inline void SetNetworkSiteArn(Aws::String&& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site.</p>
-     */
     inline void SetNetworkSiteArn(const char* value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site.</p>
-     */
     inline GetNetworkSiteRequest& WithNetworkSiteArn(const Aws::String& value) { SetNetworkSiteArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site.</p>
-     */
     inline GetNetworkSiteRequest& WithNetworkSiteArn(Aws::String&& value) { SetNetworkSiteArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site.</p>
-     */
     inline GetNetworkSiteRequest& WithNetworkSiteArn(const char* value) { SetNetworkSiteArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkSiteArn;

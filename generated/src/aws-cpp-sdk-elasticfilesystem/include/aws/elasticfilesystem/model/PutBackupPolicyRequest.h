@@ -33,77 +33,31 @@ namespace Model
     AWS_EFS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies which EFS file system to update the backup policy for.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>Specifies which EFS file system to update the backup policy for.</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>Specifies which EFS file system to update the backup policy for.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>Specifies which EFS file system to update the backup policy for.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>Specifies which EFS file system to update the backup policy for.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>Specifies which EFS file system to update the backup policy for.</p>
-     */
     inline PutBackupPolicyRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>Specifies which EFS file system to update the backup policy for.</p>
-     */
     inline PutBackupPolicyRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies which EFS file system to update the backup policy for.</p>
-     */
     inline PutBackupPolicyRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
      */
     inline const BackupPolicy& GetBackupPolicy() const{ return m_backupPolicy; }
-
-    /**
-     * <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-     */
     inline bool BackupPolicyHasBeenSet() const { return m_backupPolicyHasBeenSet; }
-
-    /**
-     * <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-     */
     inline void SetBackupPolicy(const BackupPolicy& value) { m_backupPolicyHasBeenSet = true; m_backupPolicy = value; }
-
-    /**
-     * <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-     */
     inline void SetBackupPolicy(BackupPolicy&& value) { m_backupPolicyHasBeenSet = true; m_backupPolicy = std::move(value); }
-
-    /**
-     * <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-     */
     inline PutBackupPolicyRequest& WithBackupPolicy(const BackupPolicy& value) { SetBackupPolicy(value); return *this;}
-
-    /**
-     * <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-     */
     inline PutBackupPolicyRequest& WithBackupPolicy(BackupPolicy&& value) { SetBackupPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemId;

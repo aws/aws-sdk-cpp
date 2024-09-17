@@ -23,8 +23,8 @@ FilledMapSortConfiguration::FilledMapSortConfiguration() :
 {
 }
 
-FilledMapSortConfiguration::FilledMapSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false)
+FilledMapSortConfiguration::FilledMapSortConfiguration(JsonView jsonValue)
+  : FilledMapSortConfiguration()
 {
   *this = jsonValue;
 }

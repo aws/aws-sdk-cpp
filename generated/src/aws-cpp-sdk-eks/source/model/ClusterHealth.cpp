@@ -23,8 +23,8 @@ ClusterHealth::ClusterHealth() :
 {
 }
 
-ClusterHealth::ClusterHealth(JsonView jsonValue) : 
-    m_issuesHasBeenSet(false)
+ClusterHealth::ClusterHealth(JsonView jsonValue)
+  : ClusterHealth()
 {
   *this = jsonValue;
 }

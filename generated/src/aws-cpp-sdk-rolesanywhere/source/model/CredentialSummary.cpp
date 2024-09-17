@@ -30,15 +30,8 @@ CredentialSummary::CredentialSummary() :
 {
 }
 
-CredentialSummary::CredentialSummary(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_failed(false),
-    m_failedHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_seenAtHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_x509CertificateDataHasBeenSet(false)
+CredentialSummary::CredentialSummary(JsonView jsonValue)
+  : CredentialSummary()
 {
   *this = jsonValue;
 }

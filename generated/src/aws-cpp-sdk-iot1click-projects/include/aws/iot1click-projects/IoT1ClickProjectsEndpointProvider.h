@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using IoT1ClickProjectsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoT1ClickProjectsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using IoT1ClickProjectsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoT1ClickProjectsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

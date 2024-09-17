@@ -27,10 +27,8 @@ KeyValueStoreAssociations::KeyValueStoreAssociations() :
 {
 }
 
-KeyValueStoreAssociations::KeyValueStoreAssociations(const XmlNode& xmlNode) : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+KeyValueStoreAssociations::KeyValueStoreAssociations(const XmlNode& xmlNode)
+  : KeyValueStoreAssociations()
 {
   *this = xmlNode;
 }

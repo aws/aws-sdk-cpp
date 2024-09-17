@@ -40,25 +40,8 @@ DocumentIdentifier::DocumentIdentifier() :
 {
 }
 
-DocumentIdentifier::DocumentIdentifier(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_platformTypesHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_documentType(DocumentType::NOT_SET),
-    m_documentTypeHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false),
-    m_targetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requiresHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_authorHasBeenSet(false)
+DocumentIdentifier::DocumentIdentifier(JsonView jsonValue)
+  : DocumentIdentifier()
 {
   *this = jsonValue;
 }

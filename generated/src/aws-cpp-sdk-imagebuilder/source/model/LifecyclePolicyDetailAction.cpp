@@ -25,10 +25,8 @@ LifecyclePolicyDetailAction::LifecyclePolicyDetailAction() :
 {
 }
 
-LifecyclePolicyDetailAction::LifecyclePolicyDetailAction(JsonView jsonValue) : 
-    m_type(LifecyclePolicyDetailActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_includeResourcesHasBeenSet(false)
+LifecyclePolicyDetailAction::LifecyclePolicyDetailAction(JsonView jsonValue)
+  : LifecyclePolicyDetailAction()
 {
   *this = jsonValue;
 }

@@ -23,8 +23,8 @@ SidewalkCreateWirelessDevice::SidewalkCreateWirelessDevice() :
 {
 }
 
-SidewalkCreateWirelessDevice::SidewalkCreateWirelessDevice(JsonView jsonValue) : 
-    m_deviceProfileIdHasBeenSet(false)
+SidewalkCreateWirelessDevice::SidewalkCreateWirelessDevice(JsonView jsonValue)
+  : SidewalkCreateWirelessDevice()
 {
   *this = jsonValue;
 }

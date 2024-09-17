@@ -40,135 +40,55 @@ namespace Model
     AWS_DATAPIPELINE_API PutPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The validation errors that are associated with the objects defined in
      * <code>pipelineObjects</code>.</p>
      */
     inline const Aws::Vector<ValidationError>& GetValidationErrors() const{ return m_validationErrors; }
-
-    /**
-     * <p>The validation errors that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline void SetValidationErrors(const Aws::Vector<ValidationError>& value) { m_validationErrors = value; }
-
-    /**
-     * <p>The validation errors that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline void SetValidationErrors(Aws::Vector<ValidationError>&& value) { m_validationErrors = std::move(value); }
-
-    /**
-     * <p>The validation errors that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& WithValidationErrors(const Aws::Vector<ValidationError>& value) { SetValidationErrors(value); return *this;}
-
-    /**
-     * <p>The validation errors that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& WithValidationErrors(Aws::Vector<ValidationError>&& value) { SetValidationErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>The validation errors that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& AddValidationErrors(const ValidationError& value) { m_validationErrors.push_back(value); return *this; }
-
-    /**
-     * <p>The validation errors that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& AddValidationErrors(ValidationError&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The validation warnings that are associated with the objects defined in
      * <code>pipelineObjects</code>.</p>
      */
     inline const Aws::Vector<ValidationWarning>& GetValidationWarnings() const{ return m_validationWarnings; }
-
-    /**
-     * <p>The validation warnings that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline void SetValidationWarnings(const Aws::Vector<ValidationWarning>& value) { m_validationWarnings = value; }
-
-    /**
-     * <p>The validation warnings that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline void SetValidationWarnings(Aws::Vector<ValidationWarning>&& value) { m_validationWarnings = std::move(value); }
-
-    /**
-     * <p>The validation warnings that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& WithValidationWarnings(const Aws::Vector<ValidationWarning>& value) { SetValidationWarnings(value); return *this;}
-
-    /**
-     * <p>The validation warnings that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& WithValidationWarnings(Aws::Vector<ValidationWarning>&& value) { SetValidationWarnings(std::move(value)); return *this;}
-
-    /**
-     * <p>The validation warnings that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& AddValidationWarnings(const ValidationWarning& value) { m_validationWarnings.push_back(value); return *this; }
-
-    /**
-     * <p>The validation warnings that are associated with the objects defined in
-     * <code>pipelineObjects</code>.</p>
-     */
     inline PutPipelineDefinitionResult& AddValidationWarnings(ValidationWarning&& value) { m_validationWarnings.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether there were validation errors, and the pipeline definition
      * is stored but cannot be activated until you correct the pipeline and call
      * <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
      */
     inline bool GetErrored() const{ return m_errored; }
-
-    /**
-     * <p>Indicates whether there were validation errors, and the pipeline definition
-     * is stored but cannot be activated until you correct the pipeline and call
-     * <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
-     */
     inline void SetErrored(bool value) { m_errored = value; }
-
-    /**
-     * <p>Indicates whether there were validation errors, and the pipeline definition
-     * is stored but cannot be activated until you correct the pipeline and call
-     * <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
-     */
     inline PutPipelineDefinitionResult& WithErrored(bool value) { SetErrored(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutPipelineDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutPipelineDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutPipelineDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ValidationError> m_validationErrors;

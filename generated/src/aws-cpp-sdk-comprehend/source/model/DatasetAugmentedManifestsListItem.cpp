@@ -28,13 +28,8 @@ DatasetAugmentedManifestsListItem::DatasetAugmentedManifestsListItem() :
 {
 }
 
-DatasetAugmentedManifestsListItem::DatasetAugmentedManifestsListItem(JsonView jsonValue) : 
-    m_attributeNamesHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_annotationDataS3UriHasBeenSet(false),
-    m_sourceDocumentsS3UriHasBeenSet(false),
-    m_documentType(AugmentedManifestsDocumentTypeFormat::NOT_SET),
-    m_documentTypeHasBeenSet(false)
+DatasetAugmentedManifestsListItem::DatasetAugmentedManifestsListItem(JsonView jsonValue)
+  : DatasetAugmentedManifestsListItem()
 {
   *this = jsonValue;
 }

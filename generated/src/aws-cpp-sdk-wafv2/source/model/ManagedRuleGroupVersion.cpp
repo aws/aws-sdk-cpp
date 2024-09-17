@@ -24,9 +24,8 @@ ManagedRuleGroupVersion::ManagedRuleGroupVersion() :
 {
 }
 
-ManagedRuleGroupVersion::ManagedRuleGroupVersion(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false)
+ManagedRuleGroupVersion::ManagedRuleGroupVersion(JsonView jsonValue)
+  : ManagedRuleGroupVersion()
 {
   *this = jsonValue;
 }

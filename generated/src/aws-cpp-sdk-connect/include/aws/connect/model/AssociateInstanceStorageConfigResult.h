@@ -32,70 +32,30 @@ namespace Model
     AWS_CONNECT_API AssociateInstanceStorageConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The existing association identifier that uniquely identifies the resource
      * type and storage config for the given instance ID.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The existing association identifier that uniquely identifies the resource
-     * type and storage config for the given instance ID.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
-
-    /**
-     * <p>The existing association identifier that uniquely identifies the resource
-     * type and storage config for the given instance ID.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
-
-    /**
-     * <p>The existing association identifier that uniquely identifies the resource
-     * type and storage config for the given instance ID.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
-
-    /**
-     * <p>The existing association identifier that uniquely identifies the resource
-     * type and storage config for the given instance ID.</p>
-     */
     inline AssociateInstanceStorageConfigResult& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The existing association identifier that uniquely identifies the resource
-     * type and storage config for the given instance ID.</p>
-     */
     inline AssociateInstanceStorageConfigResult& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The existing association identifier that uniquely identifies the resource
-     * type and storage config for the given instance ID.</p>
-     */
     inline AssociateInstanceStorageConfigResult& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateInstanceStorageConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateInstanceStorageConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateInstanceStorageConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

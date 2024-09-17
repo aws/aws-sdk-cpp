@@ -52,6 +52,7 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The encryption option specified for the table. You can choose one of the
      * following KMS keys (KMS keys):</p> <ul> <li> <p>
@@ -65,126 +66,27 @@ namespace Model
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
     inline const EncryptionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <ul> <li> <p>
-     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
-     * stored in your account and is created, owned, and managed by you. This option
-     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
-     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
-     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
-     * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <ul> <li> <p>
-     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
-     * stored in your account and is created, owned, and managed by you. This option
-     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
-     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
-     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
-     * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-     */
     inline void SetType(const EncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <ul> <li> <p>
-     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
-     * stored in your account and is created, owned, and managed by you. This option
-     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
-     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
-     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
-     * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-     */
     inline void SetType(EncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <ul> <li> <p>
-     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
-     * stored in your account and is created, owned, and managed by you. This option
-     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
-     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
-     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
-     * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-     */
     inline EncryptionSpecification& WithType(const EncryptionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <ul> <li> <p>
-     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
-     * stored in your account and is created, owned, and managed by you. This option
-     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
-     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
-     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
-     * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-     */
     inline EncryptionSpecification& WithType(EncryptionType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
      * <code>kms_key_identifier:ARN</code>.</p>
      */
     inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
-     * <code>kms_key_identifier:ARN</code>.</p>
-     */
     inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
-     * <code>kms_key_identifier:ARN</code>.</p>
-     */
     inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
-     * <code>kms_key_identifier:ARN</code>.</p>
-     */
     inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
-     * <code>kms_key_identifier:ARN</code>.</p>
-     */
     inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
-     * <code>kms_key_identifier:ARN</code>.</p>
-     */
     inline EncryptionSpecification& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
-     * <code>kms_key_identifier:ARN</code>.</p>
-     */
     inline EncryptionSpecification& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
-     * <code>kms_key_identifier:ARN</code>.</p>
-     */
     inline EncryptionSpecification& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     EncryptionType m_type;

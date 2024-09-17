@@ -39,46 +39,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cache behaviors for the distribution.</p>
      */
     inline const Aws::Vector<AwsCloudFrontDistributionCacheBehavior>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The cache behaviors for the distribution.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The cache behaviors for the distribution.</p>
-     */
     inline void SetItems(const Aws::Vector<AwsCloudFrontDistributionCacheBehavior>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The cache behaviors for the distribution.</p>
-     */
     inline void SetItems(Aws::Vector<AwsCloudFrontDistributionCacheBehavior>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The cache behaviors for the distribution.</p>
-     */
     inline AwsCloudFrontDistributionCacheBehaviors& WithItems(const Aws::Vector<AwsCloudFrontDistributionCacheBehavior>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The cache behaviors for the distribution.</p>
-     */
     inline AwsCloudFrontDistributionCacheBehaviors& WithItems(Aws::Vector<AwsCloudFrontDistributionCacheBehavior>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The cache behaviors for the distribution.</p>
-     */
     inline AwsCloudFrontDistributionCacheBehaviors& AddItems(const AwsCloudFrontDistributionCacheBehavior& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The cache behaviors for the distribution.</p>
-     */
     inline AwsCloudFrontDistributionCacheBehaviors& AddItems(AwsCloudFrontDistributionCacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AwsCloudFrontDistributionCacheBehavior> m_items;

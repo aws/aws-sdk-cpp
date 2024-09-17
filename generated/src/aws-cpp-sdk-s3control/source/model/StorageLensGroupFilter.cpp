@@ -31,14 +31,8 @@ StorageLensGroupFilter::StorageLensGroupFilter() :
 {
 }
 
-StorageLensGroupFilter::StorageLensGroupFilter(const XmlNode& xmlNode) : 
-    m_matchAnyPrefixHasBeenSet(false),
-    m_matchAnySuffixHasBeenSet(false),
-    m_matchAnyTagHasBeenSet(false),
-    m_matchObjectAgeHasBeenSet(false),
-    m_matchObjectSizeHasBeenSet(false),
-    m_andHasBeenSet(false),
-    m_orHasBeenSet(false)
+StorageLensGroupFilter::StorageLensGroupFilter(const XmlNode& xmlNode)
+  : StorageLensGroupFilter()
 {
   *this = xmlNode;
 }

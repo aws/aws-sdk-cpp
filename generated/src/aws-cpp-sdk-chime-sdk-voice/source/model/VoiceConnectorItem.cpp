@@ -25,10 +25,8 @@ VoiceConnectorItem::VoiceConnectorItem() :
 {
 }
 
-VoiceConnectorItem::VoiceConnectorItem(JsonView jsonValue) : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+VoiceConnectorItem::VoiceConnectorItem(JsonView jsonValue)
+  : VoiceConnectorItem()
 {
   *this = jsonValue;
 }

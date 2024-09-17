@@ -24,9 +24,8 @@ ParameterGroup::ParameterGroup() :
 {
 }
 
-ParameterGroup::ParameterGroup(JsonView jsonValue) : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+ParameterGroup::ParameterGroup(JsonView jsonValue)
+  : ParameterGroup()
 {
   *this = jsonValue;
 }

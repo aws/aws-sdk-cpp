@@ -24,10 +24,8 @@ UpdateAuthorizerResult::UpdateAuthorizerResult() :
 {
 }
 
-UpdateAuthorizerResult::UpdateAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerType(AuthorizerType::NOT_SET),
-    m_enableSimpleResponses(false)
+UpdateAuthorizerResult::UpdateAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateAuthorizerResult()
 {
   *this = result;
 }

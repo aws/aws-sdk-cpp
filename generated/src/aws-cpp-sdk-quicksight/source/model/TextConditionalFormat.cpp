@@ -25,10 +25,8 @@ TextConditionalFormat::TextConditionalFormat() :
 {
 }
 
-TextConditionalFormat::TextConditionalFormat(JsonView jsonValue) : 
-    m_backgroundColorHasBeenSet(false),
-    m_textColorHasBeenSet(false),
-    m_iconHasBeenSet(false)
+TextConditionalFormat::TextConditionalFormat(JsonView jsonValue)
+  : TextConditionalFormat()
 {
   *this = jsonValue;
 }

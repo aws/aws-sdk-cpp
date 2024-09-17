@@ -22,8 +22,8 @@ DeletePrivateGraphEndpointResult::DeletePrivateGraphEndpointResult() :
 {
 }
 
-DeletePrivateGraphEndpointResult::DeletePrivateGraphEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(PrivateGraphEndpointStatus::NOT_SET)
+DeletePrivateGraphEndpointResult::DeletePrivateGraphEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeletePrivateGraphEndpointResult()
 {
   *this = result;
 }

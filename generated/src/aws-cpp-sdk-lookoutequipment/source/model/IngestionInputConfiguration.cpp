@@ -23,8 +23,8 @@ IngestionInputConfiguration::IngestionInputConfiguration() :
 {
 }
 
-IngestionInputConfiguration::IngestionInputConfiguration(JsonView jsonValue) : 
-    m_s3InputConfigurationHasBeenSet(false)
+IngestionInputConfiguration::IngestionInputConfiguration(JsonView jsonValue)
+  : IngestionInputConfiguration()
 {
   *this = jsonValue;
 }

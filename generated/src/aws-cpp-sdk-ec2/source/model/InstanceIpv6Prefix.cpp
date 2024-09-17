@@ -25,8 +25,8 @@ InstanceIpv6Prefix::InstanceIpv6Prefix() :
 {
 }
 
-InstanceIpv6Prefix::InstanceIpv6Prefix(const XmlNode& xmlNode) : 
-    m_ipv6PrefixHasBeenSet(false)
+InstanceIpv6Prefix::InstanceIpv6Prefix(const XmlNode& xmlNode)
+  : InstanceIpv6Prefix()
 {
   *this = xmlNode;
 }

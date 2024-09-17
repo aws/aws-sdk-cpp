@@ -35,6 +35,7 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The key block format type (for example, TR-34 or TR-31) to use during key
      * material export. Export token is only required for a TR-34 key export,
@@ -42,90 +43,26 @@ namespace Model
      * export.</p>
      */
     inline const KeyMaterialType& GetKeyMaterialType() const{ return m_keyMaterialType; }
-
-    /**
-     * <p>The key block format type (for example, TR-34 or TR-31) to use during key
-     * material export. Export token is only required for a TR-34 key export,
-     * <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key
-     * export.</p>
-     */
     inline bool KeyMaterialTypeHasBeenSet() const { return m_keyMaterialTypeHasBeenSet; }
-
-    /**
-     * <p>The key block format type (for example, TR-34 or TR-31) to use during key
-     * material export. Export token is only required for a TR-34 key export,
-     * <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key
-     * export.</p>
-     */
     inline void SetKeyMaterialType(const KeyMaterialType& value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = value; }
-
-    /**
-     * <p>The key block format type (for example, TR-34 or TR-31) to use during key
-     * material export. Export token is only required for a TR-34 key export,
-     * <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key
-     * export.</p>
-     */
     inline void SetKeyMaterialType(KeyMaterialType&& value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = std::move(value); }
-
-    /**
-     * <p>The key block format type (for example, TR-34 or TR-31) to use during key
-     * material export. Export token is only required for a TR-34 key export,
-     * <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key
-     * export.</p>
-     */
     inline GetParametersForExportRequest& WithKeyMaterialType(const KeyMaterialType& value) { SetKeyMaterialType(value); return *this;}
-
-    /**
-     * <p>The key block format type (for example, TR-34 or TR-31) to use during key
-     * material export. Export token is only required for a TR-34 key export,
-     * <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key
-     * export.</p>
-     */
     inline GetParametersForExportRequest& WithKeyMaterialType(KeyMaterialType&& value) { SetKeyMaterialType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The signing key algorithm to generate a signing key certificate. This
      * certificate signs the wrapped key under export within the TR-34 key block.
      * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
     inline const KeyAlgorithm& GetSigningKeyAlgorithm() const{ return m_signingKeyAlgorithm; }
-
-    /**
-     * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block.
-     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-     */
     inline bool SigningKeyAlgorithmHasBeenSet() const { return m_signingKeyAlgorithmHasBeenSet; }
-
-    /**
-     * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block.
-     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-     */
     inline void SetSigningKeyAlgorithm(const KeyAlgorithm& value) { m_signingKeyAlgorithmHasBeenSet = true; m_signingKeyAlgorithm = value; }
-
-    /**
-     * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block.
-     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-     */
     inline void SetSigningKeyAlgorithm(KeyAlgorithm&& value) { m_signingKeyAlgorithmHasBeenSet = true; m_signingKeyAlgorithm = std::move(value); }
-
-    /**
-     * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block.
-     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-     */
     inline GetParametersForExportRequest& WithSigningKeyAlgorithm(const KeyAlgorithm& value) { SetSigningKeyAlgorithm(value); return *this;}
-
-    /**
-     * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block.
-     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-     */
     inline GetParametersForExportRequest& WithSigningKeyAlgorithm(KeyAlgorithm&& value) { SetSigningKeyAlgorithm(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KeyMaterialType m_keyMaterialType;

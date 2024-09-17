@@ -16,11 +16,9 @@ namespace Endpoint
 /**
  * Instantiate endpoint providers
  */
-template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<false>,
+template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration,
             Aws::Endpoint::BuiltInParameters,
             Aws::Endpoint::ClientContextParameters>;
-
-template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<true>>;
 #endif
 
 char CharToDec(const char c)
@@ -139,6 +137,27 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
             {
                 AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, "Endpoint str eval parameter: " << parameter.GetName() << " = " << parameter.GetStrValueNoCheck());
                 crtRequestCtx.AddString(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), Aws::Crt::ByteCursorFromCString(parameter.GetStrValueNoCheck().c_str()));
+            }
+            else if(EndpointParameter::ParameterType::STRING_ARRAY == parameter.GetStoredType())
+            {
+                Aws::Crt::Vector<Aws::Crt::ByteCursor> byteCursorArray;
+                byteCursorArray.reserve(parameter.GetStrArrayValueNoCheck().size());
+                for (const auto &e: parameter.GetStrArrayValueNoCheck())
+                {
+                    byteCursorArray.emplace_back(Aws::Crt::ByteCursorFromCString(e.c_str()));
+                }
+                AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, 
+                "Endpoint str array eval parameter: " << 
+                    parameter.GetName() << " = " << 
+                    [&parameter]() ->  Aws::String {
+                        Aws::OStringStream os;
+                        for (const auto &e: parameter.GetStrArrayValueNoCheck())
+                        {
+                            os<<e<<",";
+                        }
+                        return os.str();
+                    }());
+                crtRequestCtx.AddStringArray(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), byteCursorArray);
             }
             else
             {

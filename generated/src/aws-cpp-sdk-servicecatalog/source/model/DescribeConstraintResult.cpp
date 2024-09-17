@@ -22,8 +22,8 @@ DescribeConstraintResult::DescribeConstraintResult() :
 {
 }
 
-DescribeConstraintResult::DescribeConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(Status::NOT_SET)
+DescribeConstraintResult::DescribeConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeConstraintResult()
 {
   *this = result;
 }

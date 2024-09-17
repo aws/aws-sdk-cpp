@@ -38,55 +38,22 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier that you can provide to ensure the idempotency of the
      * request. Case-sensitive.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The alert manager definition to add. A base64-encoded version of the YAML
      * alert manager definition file.</p> <p>For details about the alert manager
@@ -94,88 +61,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The alert manager definition to add. A base64-encoded version of the YAML
-     * alert manager definition file.</p> <p>For details about the alert manager
-     * definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The alert manager definition to add. A base64-encoded version of the YAML
-     * alert manager definition file.</p> <p>For details about the alert manager
-     * definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The alert manager definition to add. A base64-encoded version of the YAML
-     * alert manager definition file.</p> <p>For details about the alert manager
-     * definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The alert manager definition to add. A base64-encoded version of the YAML
-     * alert manager definition file.</p> <p>For details about the alert manager
-     * definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The alert manager definition to add. A base64-encoded version of the YAML
-     * alert manager definition file.</p> <p>For details about the alert manager
-     * definition, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the workspace to add the alert manager definition to.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace to add the alert manager definition to.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace to add the alert manager definition to.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace to add the alert manager definition to.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace to add the alert manager definition to.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace to add the alert manager definition to.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace to add the alert manager definition to.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace to add the alert manager definition to.</p>
-     */
     inline CreateAlertManagerDefinitionRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

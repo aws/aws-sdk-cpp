@@ -36,29 +36,13 @@ ImpactedLocation::ImpactedLocation() :
     m_status(HealthEventStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_causedByHasBeenSet(false),
-    m_internetHealthHasBeenSet(false)
+    m_internetHealthHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false)
 {
 }
 
-ImpactedLocation::ImpactedLocation(JsonView jsonValue) : 
-    m_aSNameHasBeenSet(false),
-    m_aSNumber(0),
-    m_aSNumberHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_subdivisionHasBeenSet(false),
-    m_metroHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_subdivisionCodeHasBeenSet(false),
-    m_serviceLocationHasBeenSet(false),
-    m_status(HealthEventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_causedByHasBeenSet(false),
-    m_internetHealthHasBeenSet(false)
+ImpactedLocation::ImpactedLocation(JsonView jsonValue)
+  : ImpactedLocation()
 {
   *this = jsonValue;
 }
@@ -163,6 +147,16 @@ ImpactedLocation& ImpactedLocation::operator =(JsonView jsonValue)
     m_internetHealthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ipv4Prefixes"))
+  {
+    Aws::Utils::Array<JsonView> ipv4PrefixesJsonList = jsonValue.GetArray("Ipv4Prefixes");
+    for(unsigned ipv4PrefixesIndex = 0; ipv4PrefixesIndex < ipv4PrefixesJsonList.GetLength(); ++ipv4PrefixesIndex)
+    {
+      m_ipv4Prefixes.push_back(ipv4PrefixesJsonList[ipv4PrefixesIndex].AsString());
+    }
+    m_ipv4PrefixesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -250,6 +244,17 @@ JsonValue ImpactedLocation::Jsonize() const
   if(m_internetHealthHasBeenSet)
   {
    payload.WithObject("InternetHealth", m_internetHealth.Jsonize());
+
+  }
+
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ipv4PrefixesJsonList(m_ipv4Prefixes.size());
+   for(unsigned ipv4PrefixesIndex = 0; ipv4PrefixesIndex < ipv4PrefixesJsonList.GetLength(); ++ipv4PrefixesIndex)
+   {
+     ipv4PrefixesJsonList[ipv4PrefixesIndex].AsString(m_ipv4Prefixes[ipv4PrefixesIndex]);
+   }
+   payload.WithArray("Ipv4Prefixes", std::move(ipv4PrefixesJsonList));
 
   }
 

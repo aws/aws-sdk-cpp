@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Trace Part which contains information if preprocessing was
-   * successful</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the response from the Lambda parsing of the output from the
+   * pre-processing step.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/PreProcessingParsedResponse">AWS
    * API Reference</a></p>
    */
@@ -38,58 +38,39 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
-    inline const Aws::String& GetRationale() const{ return m_rationale; }
-
-    
-    inline bool RationaleHasBeenSet() const { return m_rationaleHasBeenSet; }
-
-    
-    inline void SetRationale(const Aws::String& value) { m_rationaleHasBeenSet = true; m_rationale = value; }
-
-    
-    inline void SetRationale(Aws::String&& value) { m_rationaleHasBeenSet = true; m_rationale = std::move(value); }
-
-    
-    inline void SetRationale(const char* value) { m_rationaleHasBeenSet = true; m_rationale.assign(value); }
-
-    
-    inline PreProcessingParsedResponse& WithRationale(const Aws::String& value) { SetRationale(value); return *this;}
-
-    
-    inline PreProcessingParsedResponse& WithRationale(Aws::String&& value) { SetRationale(std::move(value)); return *this;}
-
-    
-    inline PreProcessingParsedResponse& WithRationale(const char* value) { SetRationale(value); return *this;}
-
-
+    ///@{
     /**
-     * <p>Boolean value</p>
+     * <p>Whether the user input is valid or not. If <code>false</code>, the agent
+     * doesn't proceed to orchestration.</p>
      */
     inline bool GetIsValid() const{ return m_isValid; }
-
-    /**
-     * <p>Boolean value</p>
-     */
     inline bool IsValidHasBeenSet() const { return m_isValidHasBeenSet; }
-
-    /**
-     * <p>Boolean value</p>
-     */
     inline void SetIsValid(bool value) { m_isValidHasBeenSet = true; m_isValid = value; }
-
-    /**
-     * <p>Boolean value</p>
-     */
     inline PreProcessingParsedResponse& WithIsValid(bool value) { SetIsValid(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The text returned by the parsing of the pre-processing step, explaining the
+     * steps that the agent plans to take in orchestration, if the user input is
+     * valid.</p>
+     */
+    inline const Aws::String& GetRationale() const{ return m_rationale; }
+    inline bool RationaleHasBeenSet() const { return m_rationaleHasBeenSet; }
+    inline void SetRationale(const Aws::String& value) { m_rationaleHasBeenSet = true; m_rationale = value; }
+    inline void SetRationale(Aws::String&& value) { m_rationaleHasBeenSet = true; m_rationale = std::move(value); }
+    inline void SetRationale(const char* value) { m_rationaleHasBeenSet = true; m_rationale.assign(value); }
+    inline PreProcessingParsedResponse& WithRationale(const Aws::String& value) { SetRationale(value); return *this;}
+    inline PreProcessingParsedResponse& WithRationale(Aws::String&& value) { SetRationale(std::move(value)); return *this;}
+    inline PreProcessingParsedResponse& WithRationale(const char* value) { SetRationale(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_rationale;
-    bool m_rationaleHasBeenSet = false;
 
     bool m_isValid;
     bool m_isValidHasBeenSet = false;
+
+    Aws::String m_rationale;
+    bool m_rationaleHasBeenSet = false;
   };
 
 } // namespace Model

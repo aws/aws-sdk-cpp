@@ -37,80 +37,38 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of SubChannels that you want to allow in the elastic
      * channel.</p>
      */
     inline int GetMaximumSubChannels() const{ return m_maximumSubChannels; }
-
-    /**
-     * <p>The maximum number of SubChannels that you want to allow in the elastic
-     * channel.</p>
-     */
     inline bool MaximumSubChannelsHasBeenSet() const { return m_maximumSubChannelsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of SubChannels that you want to allow in the elastic
-     * channel.</p>
-     */
     inline void SetMaximumSubChannels(int value) { m_maximumSubChannelsHasBeenSet = true; m_maximumSubChannels = value; }
-
-    /**
-     * <p>The maximum number of SubChannels that you want to allow in the elastic
-     * channel.</p>
-     */
     inline ElasticChannelConfiguration& WithMaximumSubChannels(int value) { SetMaximumSubChannels(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of members allowed in a SubChannel.</p>
      */
     inline int GetTargetMembershipsPerSubChannel() const{ return m_targetMembershipsPerSubChannel; }
-
-    /**
-     * <p>The maximum number of members allowed in a SubChannel.</p>
-     */
     inline bool TargetMembershipsPerSubChannelHasBeenSet() const { return m_targetMembershipsPerSubChannelHasBeenSet; }
-
-    /**
-     * <p>The maximum number of members allowed in a SubChannel.</p>
-     */
     inline void SetTargetMembershipsPerSubChannel(int value) { m_targetMembershipsPerSubChannelHasBeenSet = true; m_targetMembershipsPerSubChannel = value; }
-
-    /**
-     * <p>The maximum number of members allowed in a SubChannel.</p>
-     */
     inline ElasticChannelConfiguration& WithTargetMembershipsPerSubChannel(int value) { SetTargetMembershipsPerSubChannel(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil
      * of the calculated value is used in balancing members among SubChannels of the
      * elastic channel.</p>
      */
     inline int GetMinimumMembershipPercentage() const{ return m_minimumMembershipPercentage; }
-
-    /**
-     * <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil
-     * of the calculated value is used in balancing members among SubChannels of the
-     * elastic channel.</p>
-     */
     inline bool MinimumMembershipPercentageHasBeenSet() const { return m_minimumMembershipPercentageHasBeenSet; }
-
-    /**
-     * <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil
-     * of the calculated value is used in balancing members among SubChannels of the
-     * elastic channel.</p>
-     */
     inline void SetMinimumMembershipPercentage(int value) { m_minimumMembershipPercentageHasBeenSet = true; m_minimumMembershipPercentage = value; }
-
-    /**
-     * <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil
-     * of the calculated value is used in balancing members among SubChannels of the
-     * elastic channel.</p>
-     */
     inline ElasticChannelConfiguration& WithMinimumMembershipPercentage(int value) { SetMinimumMembershipPercentage(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumSubChannels;

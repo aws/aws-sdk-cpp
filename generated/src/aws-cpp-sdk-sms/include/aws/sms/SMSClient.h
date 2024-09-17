@@ -94,13 +94,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateApp">AWS API
          * Reference</a></p>
          */
-        virtual Model::CreateAppOutcome CreateApp(const Model::CreateAppRequest& request) const;
+        virtual Model::CreateAppOutcome CreateApp(const Model::CreateAppRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateApp that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateAppRequestT = Model::CreateAppRequest>
-        Model::CreateAppOutcomeCallable CreateAppCallable(const CreateAppRequestT& request) const
+        Model::CreateAppOutcomeCallable CreateAppCallable(const CreateAppRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::CreateApp, request);
         }
@@ -109,7 +109,7 @@ namespace SMS
          * An Async wrapper for CreateApp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateAppRequestT = Model::CreateAppRequest>
-        void CreateAppAsync(const CreateAppRequestT& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateAppAsync(const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateAppRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::CreateApp, request, handler, context);
         }
@@ -148,13 +148,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteApp">AWS API
          * Reference</a></p>
          */
-        virtual Model::DeleteAppOutcome DeleteApp(const Model::DeleteAppRequest& request) const;
+        virtual Model::DeleteAppOutcome DeleteApp(const Model::DeleteAppRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteApp that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteAppRequestT = Model::DeleteAppRequest>
-        Model::DeleteAppOutcomeCallable DeleteAppCallable(const DeleteAppRequestT& request) const
+        Model::DeleteAppOutcomeCallable DeleteAppCallable(const DeleteAppRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::DeleteApp, request);
         }
@@ -163,7 +163,7 @@ namespace SMS
          * An Async wrapper for DeleteApp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteAppRequestT = Model::DeleteAppRequest>
-        void DeleteAppAsync(const DeleteAppRequestT& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteAppAsync(const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteAppRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::DeleteApp, request, handler, context);
         }
@@ -174,13 +174,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppLaunchConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteAppLaunchConfigurationOutcome DeleteAppLaunchConfiguration(const Model::DeleteAppLaunchConfigurationRequest& request) const;
+        virtual Model::DeleteAppLaunchConfigurationOutcome DeleteAppLaunchConfiguration(const Model::DeleteAppLaunchConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteAppLaunchConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteAppLaunchConfigurationRequestT = Model::DeleteAppLaunchConfigurationRequest>
-        Model::DeleteAppLaunchConfigurationOutcomeCallable DeleteAppLaunchConfigurationCallable(const DeleteAppLaunchConfigurationRequestT& request) const
+        Model::DeleteAppLaunchConfigurationOutcomeCallable DeleteAppLaunchConfigurationCallable(const DeleteAppLaunchConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::DeleteAppLaunchConfiguration, request);
         }
@@ -189,7 +189,7 @@ namespace SMS
          * An Async wrapper for DeleteAppLaunchConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteAppLaunchConfigurationRequestT = Model::DeleteAppLaunchConfigurationRequest>
-        void DeleteAppLaunchConfigurationAsync(const DeleteAppLaunchConfigurationRequestT& request, const DeleteAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteAppLaunchConfigurationAsync(const DeleteAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteAppLaunchConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::DeleteAppLaunchConfiguration, request, handler, context);
         }
@@ -200,13 +200,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppReplicationConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteAppReplicationConfigurationOutcome DeleteAppReplicationConfiguration(const Model::DeleteAppReplicationConfigurationRequest& request) const;
+        virtual Model::DeleteAppReplicationConfigurationOutcome DeleteAppReplicationConfiguration(const Model::DeleteAppReplicationConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteAppReplicationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteAppReplicationConfigurationRequestT = Model::DeleteAppReplicationConfigurationRequest>
-        Model::DeleteAppReplicationConfigurationOutcomeCallable DeleteAppReplicationConfigurationCallable(const DeleteAppReplicationConfigurationRequestT& request) const
+        Model::DeleteAppReplicationConfigurationOutcomeCallable DeleteAppReplicationConfigurationCallable(const DeleteAppReplicationConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::DeleteAppReplicationConfiguration, request);
         }
@@ -215,7 +215,7 @@ namespace SMS
          * An Async wrapper for DeleteAppReplicationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteAppReplicationConfigurationRequestT = Model::DeleteAppReplicationConfigurationRequest>
-        void DeleteAppReplicationConfigurationAsync(const DeleteAppReplicationConfigurationRequestT& request, const DeleteAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteAppReplicationConfigurationAsync(const DeleteAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteAppReplicationConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::DeleteAppReplicationConfiguration, request, handler, context);
         }
@@ -280,13 +280,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteServerCatalogOutcome DeleteServerCatalog(const Model::DeleteServerCatalogRequest& request) const;
+        virtual Model::DeleteServerCatalogOutcome DeleteServerCatalog(const Model::DeleteServerCatalogRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteServerCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteServerCatalogRequestT = Model::DeleteServerCatalogRequest>
-        Model::DeleteServerCatalogOutcomeCallable DeleteServerCatalogCallable(const DeleteServerCatalogRequestT& request) const
+        Model::DeleteServerCatalogOutcomeCallable DeleteServerCatalogCallable(const DeleteServerCatalogRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::DeleteServerCatalog, request);
         }
@@ -295,7 +295,7 @@ namespace SMS
          * An Async wrapper for DeleteServerCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteServerCatalogRequestT = Model::DeleteServerCatalogRequest>
-        void DeleteServerCatalogAsync(const DeleteServerCatalogRequestT& request, const DeleteServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteServerCatalogAsync(const DeleteServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteServerCatalogRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::DeleteServerCatalog, request, handler, context);
         }
@@ -334,13 +334,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateChangeSet">AWS
          * API Reference</a></p>
          */
-        virtual Model::GenerateChangeSetOutcome GenerateChangeSet(const Model::GenerateChangeSetRequest& request) const;
+        virtual Model::GenerateChangeSetOutcome GenerateChangeSet(const Model::GenerateChangeSetRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GenerateChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GenerateChangeSetRequestT = Model::GenerateChangeSetRequest>
-        Model::GenerateChangeSetOutcomeCallable GenerateChangeSetCallable(const GenerateChangeSetRequestT& request) const
+        Model::GenerateChangeSetOutcomeCallable GenerateChangeSetCallable(const GenerateChangeSetRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GenerateChangeSet, request);
         }
@@ -349,7 +349,7 @@ namespace SMS
          * An Async wrapper for GenerateChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GenerateChangeSetRequestT = Model::GenerateChangeSetRequest>
-        void GenerateChangeSetAsync(const GenerateChangeSetRequestT& request, const GenerateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GenerateChangeSetAsync(const GenerateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GenerateChangeSetRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GenerateChangeSet, request, handler, context);
         }
@@ -361,13 +361,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateTemplate">AWS
          * API Reference</a></p>
          */
-        virtual Model::GenerateTemplateOutcome GenerateTemplate(const Model::GenerateTemplateRequest& request) const;
+        virtual Model::GenerateTemplateOutcome GenerateTemplate(const Model::GenerateTemplateRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GenerateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GenerateTemplateRequestT = Model::GenerateTemplateRequest>
-        Model::GenerateTemplateOutcomeCallable GenerateTemplateCallable(const GenerateTemplateRequestT& request) const
+        Model::GenerateTemplateOutcomeCallable GenerateTemplateCallable(const GenerateTemplateRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GenerateTemplate, request);
         }
@@ -376,7 +376,7 @@ namespace SMS
          * An Async wrapper for GenerateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GenerateTemplateRequestT = Model::GenerateTemplateRequest>
-        void GenerateTemplateAsync(const GenerateTemplateRequestT& request, const GenerateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GenerateTemplateAsync(const GenerateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GenerateTemplateRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GenerateTemplate, request, handler, context);
         }
@@ -387,13 +387,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetApp">AWS API
          * Reference</a></p>
          */
-        virtual Model::GetAppOutcome GetApp(const Model::GetAppRequest& request) const;
+        virtual Model::GetAppOutcome GetApp(const Model::GetAppRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetApp that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAppRequestT = Model::GetAppRequest>
-        Model::GetAppOutcomeCallable GetAppCallable(const GetAppRequestT& request) const
+        Model::GetAppOutcomeCallable GetAppCallable(const GetAppRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GetApp, request);
         }
@@ -402,7 +402,7 @@ namespace SMS
          * An Async wrapper for GetApp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAppRequestT = Model::GetAppRequest>
-        void GetAppAsync(const GetAppRequestT& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAppAsync(const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAppRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GetApp, request, handler, context);
         }
@@ -413,13 +413,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppLaunchConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAppLaunchConfigurationOutcome GetAppLaunchConfiguration(const Model::GetAppLaunchConfigurationRequest& request) const;
+        virtual Model::GetAppLaunchConfigurationOutcome GetAppLaunchConfiguration(const Model::GetAppLaunchConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAppLaunchConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAppLaunchConfigurationRequestT = Model::GetAppLaunchConfigurationRequest>
-        Model::GetAppLaunchConfigurationOutcomeCallable GetAppLaunchConfigurationCallable(const GetAppLaunchConfigurationRequestT& request) const
+        Model::GetAppLaunchConfigurationOutcomeCallable GetAppLaunchConfigurationCallable(const GetAppLaunchConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GetAppLaunchConfiguration, request);
         }
@@ -428,7 +428,7 @@ namespace SMS
          * An Async wrapper for GetAppLaunchConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAppLaunchConfigurationRequestT = Model::GetAppLaunchConfigurationRequest>
-        void GetAppLaunchConfigurationAsync(const GetAppLaunchConfigurationRequestT& request, const GetAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAppLaunchConfigurationAsync(const GetAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAppLaunchConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GetAppLaunchConfiguration, request, handler, context);
         }
@@ -439,13 +439,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppReplicationConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAppReplicationConfigurationOutcome GetAppReplicationConfiguration(const Model::GetAppReplicationConfigurationRequest& request) const;
+        virtual Model::GetAppReplicationConfigurationOutcome GetAppReplicationConfiguration(const Model::GetAppReplicationConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAppReplicationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAppReplicationConfigurationRequestT = Model::GetAppReplicationConfigurationRequest>
-        Model::GetAppReplicationConfigurationOutcomeCallable GetAppReplicationConfigurationCallable(const GetAppReplicationConfigurationRequestT& request) const
+        Model::GetAppReplicationConfigurationOutcomeCallable GetAppReplicationConfigurationCallable(const GetAppReplicationConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GetAppReplicationConfiguration, request);
         }
@@ -454,7 +454,7 @@ namespace SMS
          * An Async wrapper for GetAppReplicationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAppReplicationConfigurationRequestT = Model::GetAppReplicationConfigurationRequest>
-        void GetAppReplicationConfigurationAsync(const GetAppReplicationConfigurationRequestT& request, const GetAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAppReplicationConfigurationAsync(const GetAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAppReplicationConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GetAppReplicationConfiguration, request, handler, context);
         }
@@ -517,13 +517,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetConnectorsOutcome GetConnectors(const Model::GetConnectorsRequest& request) const;
+        virtual Model::GetConnectorsOutcome GetConnectors(const Model::GetConnectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetConnectorsRequestT = Model::GetConnectorsRequest>
-        Model::GetConnectorsOutcomeCallable GetConnectorsCallable(const GetConnectorsRequestT& request) const
+        Model::GetConnectorsOutcomeCallable GetConnectorsCallable(const GetConnectorsRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GetConnectors, request);
         }
@@ -532,7 +532,7 @@ namespace SMS
          * An Async wrapper for GetConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetConnectorsRequestT = Model::GetConnectorsRequest>
-        void GetConnectorsAsync(const GetConnectorsRequestT& request, const GetConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetConnectorsAsync(const GetConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetConnectorsRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GetConnectors, request, handler, context);
         }
@@ -543,13 +543,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetReplicationJobsOutcome GetReplicationJobs(const Model::GetReplicationJobsRequest& request) const;
+        virtual Model::GetReplicationJobsOutcome GetReplicationJobs(const Model::GetReplicationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetReplicationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetReplicationJobsRequestT = Model::GetReplicationJobsRequest>
-        Model::GetReplicationJobsOutcomeCallable GetReplicationJobsCallable(const GetReplicationJobsRequestT& request) const
+        Model::GetReplicationJobsOutcomeCallable GetReplicationJobsCallable(const GetReplicationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GetReplicationJobs, request);
         }
@@ -558,7 +558,7 @@ namespace SMS
          * An Async wrapper for GetReplicationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetReplicationJobsRequestT = Model::GetReplicationJobsRequest>
-        void GetReplicationJobsAsync(const GetReplicationJobsRequestT& request, const GetReplicationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetReplicationJobsAsync(const GetReplicationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetReplicationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GetReplicationJobs, request, handler, context);
         }
@@ -596,13 +596,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">AWS API
          * Reference</a></p>
          */
-        virtual Model::GetServersOutcome GetServers(const Model::GetServersRequest& request) const;
+        virtual Model::GetServersOutcome GetServers(const Model::GetServersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetServers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetServersRequestT = Model::GetServersRequest>
-        Model::GetServersOutcomeCallable GetServersCallable(const GetServersRequestT& request) const
+        Model::GetServersOutcomeCallable GetServersCallable(const GetServersRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::GetServers, request);
         }
@@ -611,7 +611,7 @@ namespace SMS
          * An Async wrapper for GetServers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetServersRequestT = Model::GetServersRequest>
-        void GetServersAsync(const GetServersRequestT& request, const GetServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetServersAsync(const GetServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetServersRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::GetServers, request, handler, context);
         }
@@ -621,13 +621,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportAppCatalog">AWS
          * API Reference</a></p>
          */
-        virtual Model::ImportAppCatalogOutcome ImportAppCatalog(const Model::ImportAppCatalogRequest& request) const;
+        virtual Model::ImportAppCatalogOutcome ImportAppCatalog(const Model::ImportAppCatalogRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ImportAppCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ImportAppCatalogRequestT = Model::ImportAppCatalogRequest>
-        Model::ImportAppCatalogOutcomeCallable ImportAppCatalogCallable(const ImportAppCatalogRequestT& request) const
+        Model::ImportAppCatalogOutcomeCallable ImportAppCatalogCallable(const ImportAppCatalogRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::ImportAppCatalog, request);
         }
@@ -636,7 +636,7 @@ namespace SMS
          * An Async wrapper for ImportAppCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ImportAppCatalogRequestT = Model::ImportAppCatalogRequest>
-        void ImportAppCatalogAsync(const ImportAppCatalogRequestT& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ImportAppCatalogAsync(const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ImportAppCatalogRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::ImportAppCatalog, request, handler, context);
         }
@@ -649,13 +649,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">AWS
          * API Reference</a></p>
          */
-        virtual Model::ImportServerCatalogOutcome ImportServerCatalog(const Model::ImportServerCatalogRequest& request) const;
+        virtual Model::ImportServerCatalogOutcome ImportServerCatalog(const Model::ImportServerCatalogRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ImportServerCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ImportServerCatalogRequestT = Model::ImportServerCatalogRequest>
-        Model::ImportServerCatalogOutcomeCallable ImportServerCatalogCallable(const ImportServerCatalogRequestT& request) const
+        Model::ImportServerCatalogOutcomeCallable ImportServerCatalogCallable(const ImportServerCatalogRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::ImportServerCatalog, request);
         }
@@ -664,7 +664,7 @@ namespace SMS
          * An Async wrapper for ImportServerCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ImportServerCatalogRequestT = Model::ImportServerCatalogRequest>
-        void ImportServerCatalogAsync(const ImportServerCatalogRequestT& request, const ImportServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ImportServerCatalogAsync(const ImportServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ImportServerCatalogRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::ImportServerCatalog, request, handler, context);
         }
@@ -675,13 +675,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/LaunchApp">AWS API
          * Reference</a></p>
          */
-        virtual Model::LaunchAppOutcome LaunchApp(const Model::LaunchAppRequest& request) const;
+        virtual Model::LaunchAppOutcome LaunchApp(const Model::LaunchAppRequest& request = {}) const;
 
         /**
          * A Callable wrapper for LaunchApp that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename LaunchAppRequestT = Model::LaunchAppRequest>
-        Model::LaunchAppOutcomeCallable LaunchAppCallable(const LaunchAppRequestT& request) const
+        Model::LaunchAppOutcomeCallable LaunchAppCallable(const LaunchAppRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::LaunchApp, request);
         }
@@ -690,7 +690,7 @@ namespace SMS
          * An Async wrapper for LaunchApp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename LaunchAppRequestT = Model::LaunchAppRequest>
-        void LaunchAppAsync(const LaunchAppRequestT& request, const LaunchAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void LaunchAppAsync(const LaunchAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const LaunchAppRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::LaunchApp, request, handler, context);
         }
@@ -700,13 +700,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ListApps">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request) const;
+        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request) const
+        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::ListApps, request);
         }
@@ -715,7 +715,7 @@ namespace SMS
          * An Async wrapper for ListApps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        void ListAppsAsync(const ListAppsRequestT& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppsAsync(const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppsRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::ListApps, request, handler, context);
         }
@@ -752,13 +752,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppLaunchConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutAppLaunchConfigurationOutcome PutAppLaunchConfiguration(const Model::PutAppLaunchConfigurationRequest& request) const;
+        virtual Model::PutAppLaunchConfigurationOutcome PutAppLaunchConfiguration(const Model::PutAppLaunchConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutAppLaunchConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutAppLaunchConfigurationRequestT = Model::PutAppLaunchConfigurationRequest>
-        Model::PutAppLaunchConfigurationOutcomeCallable PutAppLaunchConfigurationCallable(const PutAppLaunchConfigurationRequestT& request) const
+        Model::PutAppLaunchConfigurationOutcomeCallable PutAppLaunchConfigurationCallable(const PutAppLaunchConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::PutAppLaunchConfiguration, request);
         }
@@ -767,7 +767,7 @@ namespace SMS
          * An Async wrapper for PutAppLaunchConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutAppLaunchConfigurationRequestT = Model::PutAppLaunchConfigurationRequest>
-        void PutAppLaunchConfigurationAsync(const PutAppLaunchConfigurationRequestT& request, const PutAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutAppLaunchConfigurationAsync(const PutAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutAppLaunchConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::PutAppLaunchConfiguration, request, handler, context);
         }
@@ -778,13 +778,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppReplicationConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutAppReplicationConfigurationOutcome PutAppReplicationConfiguration(const Model::PutAppReplicationConfigurationRequest& request) const;
+        virtual Model::PutAppReplicationConfigurationOutcome PutAppReplicationConfiguration(const Model::PutAppReplicationConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutAppReplicationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutAppReplicationConfigurationRequestT = Model::PutAppReplicationConfigurationRequest>
-        Model::PutAppReplicationConfigurationOutcomeCallable PutAppReplicationConfigurationCallable(const PutAppReplicationConfigurationRequestT& request) const
+        Model::PutAppReplicationConfigurationOutcomeCallable PutAppReplicationConfigurationCallable(const PutAppReplicationConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::PutAppReplicationConfiguration, request);
         }
@@ -793,7 +793,7 @@ namespace SMS
          * An Async wrapper for PutAppReplicationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutAppReplicationConfigurationRequestT = Model::PutAppReplicationConfigurationRequest>
-        void PutAppReplicationConfigurationAsync(const PutAppReplicationConfigurationRequestT& request, const PutAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutAppReplicationConfigurationAsync(const PutAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutAppReplicationConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::PutAppReplicationConfiguration, request, handler, context);
         }
@@ -830,13 +830,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartAppReplication">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartAppReplicationOutcome StartAppReplication(const Model::StartAppReplicationRequest& request) const;
+        virtual Model::StartAppReplicationOutcome StartAppReplication(const Model::StartAppReplicationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartAppReplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartAppReplicationRequestT = Model::StartAppReplicationRequest>
-        Model::StartAppReplicationOutcomeCallable StartAppReplicationCallable(const StartAppReplicationRequestT& request) const
+        Model::StartAppReplicationOutcomeCallable StartAppReplicationCallable(const StartAppReplicationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::StartAppReplication, request);
         }
@@ -845,7 +845,7 @@ namespace SMS
          * An Async wrapper for StartAppReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartAppReplicationRequestT = Model::StartAppReplicationRequest>
-        void StartAppReplicationAsync(const StartAppReplicationRequestT& request, const StartAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartAppReplicationAsync(const StartAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartAppReplicationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::StartAppReplication, request, handler, context);
         }
@@ -911,13 +911,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StopAppReplication">AWS
          * API Reference</a></p>
          */
-        virtual Model::StopAppReplicationOutcome StopAppReplication(const Model::StopAppReplicationRequest& request) const;
+        virtual Model::StopAppReplicationOutcome StopAppReplication(const Model::StopAppReplicationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StopAppReplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StopAppReplicationRequestT = Model::StopAppReplicationRequest>
-        Model::StopAppReplicationOutcomeCallable StopAppReplicationCallable(const StopAppReplicationRequestT& request) const
+        Model::StopAppReplicationOutcomeCallable StopAppReplicationCallable(const StopAppReplicationRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::StopAppReplication, request);
         }
@@ -926,7 +926,7 @@ namespace SMS
          * An Async wrapper for StopAppReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StopAppReplicationRequestT = Model::StopAppReplicationRequest>
-        void StopAppReplicationAsync(const StopAppReplicationRequestT& request, const StopAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StopAppReplicationAsync(const StopAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StopAppReplicationRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::StopAppReplication, request, handler, context);
         }
@@ -936,13 +936,13 @@ namespace SMS
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/TerminateApp">AWS
          * API Reference</a></p>
          */
-        virtual Model::TerminateAppOutcome TerminateApp(const Model::TerminateAppRequest& request) const;
+        virtual Model::TerminateAppOutcome TerminateApp(const Model::TerminateAppRequest& request = {}) const;
 
         /**
          * A Callable wrapper for TerminateApp that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename TerminateAppRequestT = Model::TerminateAppRequest>
-        Model::TerminateAppOutcomeCallable TerminateAppCallable(const TerminateAppRequestT& request) const
+        Model::TerminateAppOutcomeCallable TerminateAppCallable(const TerminateAppRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::TerminateApp, request);
         }
@@ -951,7 +951,7 @@ namespace SMS
          * An Async wrapper for TerminateApp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename TerminateAppRequestT = Model::TerminateAppRequest>
-        void TerminateAppAsync(const TerminateAppRequestT& request, const TerminateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void TerminateAppAsync(const TerminateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const TerminateAppRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::TerminateApp, request, handler, context);
         }
@@ -961,13 +961,13 @@ namespace SMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateApp">AWS API
          * Reference</a></p>
          */
-        virtual Model::UpdateAppOutcome UpdateApp(const Model::UpdateAppRequest& request) const;
+        virtual Model::UpdateAppOutcome UpdateApp(const Model::UpdateAppRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateApp that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAppRequestT = Model::UpdateAppRequest>
-        Model::UpdateAppOutcomeCallable UpdateAppCallable(const UpdateAppRequestT& request) const
+        Model::UpdateAppOutcomeCallable UpdateAppCallable(const UpdateAppRequestT& request = {}) const
         {
             return SubmitCallable(&SMSClient::UpdateApp, request);
         }
@@ -976,7 +976,7 @@ namespace SMS
          * An Async wrapper for UpdateApp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAppRequestT = Model::UpdateAppRequest>
-        void UpdateAppAsync(const UpdateAppRequestT& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAppAsync(const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAppRequestT& request = {}) const
         {
             return SubmitAsync(&SMSClient::UpdateApp, request, handler, context);
         }
@@ -1015,7 +1015,6 @@ namespace SMS
       void init(const SMSClientConfiguration& clientConfiguration);
 
       SMSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SMSEndpointProviderBase> m_endpointProvider;
   };
 

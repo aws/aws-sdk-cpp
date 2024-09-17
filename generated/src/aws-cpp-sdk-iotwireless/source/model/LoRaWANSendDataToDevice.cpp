@@ -25,10 +25,8 @@ LoRaWANSendDataToDevice::LoRaWANSendDataToDevice() :
 {
 }
 
-LoRaWANSendDataToDevice::LoRaWANSendDataToDevice(JsonView jsonValue) : 
-    m_fPort(0),
-    m_fPortHasBeenSet(false),
-    m_participatingGatewaysHasBeenSet(false)
+LoRaWANSendDataToDevice::LoRaWANSendDataToDevice(JsonView jsonValue)
+  : LoRaWANSendDataToDevice()
 {
   *this = jsonValue;
 }

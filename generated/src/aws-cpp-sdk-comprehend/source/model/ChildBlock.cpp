@@ -27,12 +27,8 @@ ChildBlock::ChildBlock() :
 {
 }
 
-ChildBlock::ChildBlock(JsonView jsonValue) : 
-    m_childBlockIdHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
+ChildBlock::ChildBlock(JsonView jsonValue)
+  : ChildBlock()
 {
   *this = jsonValue;
 }

@@ -22,8 +22,8 @@ UpdateGlossaryTermResult::UpdateGlossaryTermResult() :
 {
 }
 
-UpdateGlossaryTermResult::UpdateGlossaryTermResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GlossaryTermStatus::NOT_SET)
+UpdateGlossaryTermResult::UpdateGlossaryTermResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateGlossaryTermResult()
 {
   *this = result;
 }

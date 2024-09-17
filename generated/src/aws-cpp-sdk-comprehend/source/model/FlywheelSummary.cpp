@@ -33,18 +33,8 @@ FlywheelSummary::FlywheelSummary() :
 {
 }
 
-FlywheelSummary::FlywheelSummary(JsonView jsonValue) : 
-    m_flywheelArnHasBeenSet(false),
-    m_activeModelArnHasBeenSet(false),
-    m_dataLakeS3UriHasBeenSet(false),
-    m_status(FlywheelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_modelType(ModelType::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_latestFlywheelIterationHasBeenSet(false)
+FlywheelSummary::FlywheelSummary(JsonView jsonValue)
+  : FlywheelSummary()
 {
   *this = jsonValue;
 }

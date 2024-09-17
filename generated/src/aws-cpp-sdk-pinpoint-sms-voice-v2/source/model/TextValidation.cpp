@@ -27,12 +27,8 @@ TextValidation::TextValidation() :
 {
 }
 
-TextValidation::TextValidation(JsonView jsonValue) : 
-    m_minLength(0),
-    m_minLengthHasBeenSet(false),
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_patternHasBeenSet(false)
+TextValidation::TextValidation(JsonView jsonValue)
+  : TextValidation()
 {
   *this = jsonValue;
 }

@@ -30,15 +30,8 @@ VolumeDetail::VolumeDetail() :
 {
 }
 
-VolumeDetail::VolumeDetail(JsonView jsonValue) : 
-    m_volumeArnHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_encryptionTypeHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+VolumeDetail::VolumeDetail(JsonView jsonValue)
+  : VolumeDetail()
 {
   *this = jsonValue;
 }

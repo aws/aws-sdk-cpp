@@ -25,10 +25,8 @@ SecurityProfileSearchCriteria::SecurityProfileSearchCriteria() :
 {
 }
 
-SecurityProfileSearchCriteria::SecurityProfileSearchCriteria(JsonView jsonValue) : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
+SecurityProfileSearchCriteria::SecurityProfileSearchCriteria(JsonView jsonValue)
+  : SecurityProfileSearchCriteria()
 {
   *this = jsonValue;
 }

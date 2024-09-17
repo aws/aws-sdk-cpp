@@ -25,10 +25,8 @@ UpdateRoutingControlStateEntry::UpdateRoutingControlStateEntry() :
 {
 }
 
-UpdateRoutingControlStateEntry::UpdateRoutingControlStateEntry(JsonView jsonValue) : 
-    m_routingControlArnHasBeenSet(false),
-    m_routingControlState(RoutingControlState::NOT_SET),
-    m_routingControlStateHasBeenSet(false)
+UpdateRoutingControlStateEntry::UpdateRoutingControlStateEntry(JsonView jsonValue)
+  : UpdateRoutingControlStateEntry()
 {
   *this = jsonValue;
 }

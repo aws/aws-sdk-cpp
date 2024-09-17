@@ -25,10 +25,8 @@ TargetGroupPairInfo::TargetGroupPairInfo() :
 {
 }
 
-TargetGroupPairInfo::TargetGroupPairInfo(JsonView jsonValue) : 
-    m_targetGroupsHasBeenSet(false),
-    m_prodTrafficRouteHasBeenSet(false),
-    m_testTrafficRouteHasBeenSet(false)
+TargetGroupPairInfo::TargetGroupPairInfo(JsonView jsonValue)
+  : TargetGroupPairInfo()
 {
   *this = jsonValue;
 }

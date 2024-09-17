@@ -24,10 +24,8 @@ GetFindingV2Result::GetFindingV2Result() :
 {
 }
 
-GetFindingV2Result::GetFindingV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_status(FindingStatus::NOT_SET),
-    m_findingType(FindingType::NOT_SET)
+GetFindingV2Result::GetFindingV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetFindingV2Result()
 {
   *this = result;
 }

@@ -43,117 +43,51 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Parameters for importing a bot.</p>
      */
     inline const BotImportSpecification& GetBotImportSpecification() const{ return m_botImportSpecification; }
-
-    /**
-     * <p>Parameters for importing a bot.</p>
-     */
     inline bool BotImportSpecificationHasBeenSet() const { return m_botImportSpecificationHasBeenSet; }
-
-    /**
-     * <p>Parameters for importing a bot.</p>
-     */
     inline void SetBotImportSpecification(const BotImportSpecification& value) { m_botImportSpecificationHasBeenSet = true; m_botImportSpecification = value; }
-
-    /**
-     * <p>Parameters for importing a bot.</p>
-     */
     inline void SetBotImportSpecification(BotImportSpecification&& value) { m_botImportSpecificationHasBeenSet = true; m_botImportSpecification = std::move(value); }
-
-    /**
-     * <p>Parameters for importing a bot.</p>
-     */
     inline ImportResourceSpecification& WithBotImportSpecification(const BotImportSpecification& value) { SetBotImportSpecification(value); return *this;}
-
-    /**
-     * <p>Parameters for importing a bot.</p>
-     */
     inline ImportResourceSpecification& WithBotImportSpecification(BotImportSpecification&& value) { SetBotImportSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Parameters for importing a bot locale.</p>
      */
     inline const BotLocaleImportSpecification& GetBotLocaleImportSpecification() const{ return m_botLocaleImportSpecification; }
-
-    /**
-     * <p>Parameters for importing a bot locale.</p>
-     */
     inline bool BotLocaleImportSpecificationHasBeenSet() const { return m_botLocaleImportSpecificationHasBeenSet; }
-
-    /**
-     * <p>Parameters for importing a bot locale.</p>
-     */
     inline void SetBotLocaleImportSpecification(const BotLocaleImportSpecification& value) { m_botLocaleImportSpecificationHasBeenSet = true; m_botLocaleImportSpecification = value; }
-
-    /**
-     * <p>Parameters for importing a bot locale.</p>
-     */
     inline void SetBotLocaleImportSpecification(BotLocaleImportSpecification&& value) { m_botLocaleImportSpecificationHasBeenSet = true; m_botLocaleImportSpecification = std::move(value); }
-
-    /**
-     * <p>Parameters for importing a bot locale.</p>
-     */
     inline ImportResourceSpecification& WithBotLocaleImportSpecification(const BotLocaleImportSpecification& value) { SetBotLocaleImportSpecification(value); return *this;}
-
-    /**
-     * <p>Parameters for importing a bot locale.</p>
-     */
     inline ImportResourceSpecification& WithBotLocaleImportSpecification(BotLocaleImportSpecification&& value) { SetBotLocaleImportSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const CustomVocabularyImportSpecification& GetCustomVocabularyImportSpecification() const{ return m_customVocabularyImportSpecification; }
-
-    
     inline bool CustomVocabularyImportSpecificationHasBeenSet() const { return m_customVocabularyImportSpecificationHasBeenSet; }
-
-    
     inline void SetCustomVocabularyImportSpecification(const CustomVocabularyImportSpecification& value) { m_customVocabularyImportSpecificationHasBeenSet = true; m_customVocabularyImportSpecification = value; }
-
-    
     inline void SetCustomVocabularyImportSpecification(CustomVocabularyImportSpecification&& value) { m_customVocabularyImportSpecificationHasBeenSet = true; m_customVocabularyImportSpecification = std::move(value); }
-
-    
     inline ImportResourceSpecification& WithCustomVocabularyImportSpecification(const CustomVocabularyImportSpecification& value) { SetCustomVocabularyImportSpecification(value); return *this;}
-
-    
     inline ImportResourceSpecification& WithCustomVocabularyImportSpecification(CustomVocabularyImportSpecification&& value) { SetCustomVocabularyImportSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifications for the test set that is imported.</p>
      */
     inline const TestSetImportResourceSpecification& GetTestSetImportResourceSpecification() const{ return m_testSetImportResourceSpecification; }
-
-    /**
-     * <p>Specifications for the test set that is imported.</p>
-     */
     inline bool TestSetImportResourceSpecificationHasBeenSet() const { return m_testSetImportResourceSpecificationHasBeenSet; }
-
-    /**
-     * <p>Specifications for the test set that is imported.</p>
-     */
     inline void SetTestSetImportResourceSpecification(const TestSetImportResourceSpecification& value) { m_testSetImportResourceSpecificationHasBeenSet = true; m_testSetImportResourceSpecification = value; }
-
-    /**
-     * <p>Specifications for the test set that is imported.</p>
-     */
     inline void SetTestSetImportResourceSpecification(TestSetImportResourceSpecification&& value) { m_testSetImportResourceSpecificationHasBeenSet = true; m_testSetImportResourceSpecification = std::move(value); }
-
-    /**
-     * <p>Specifications for the test set that is imported.</p>
-     */
     inline ImportResourceSpecification& WithTestSetImportResourceSpecification(const TestSetImportResourceSpecification& value) { SetTestSetImportResourceSpecification(value); return *this;}
-
-    /**
-     * <p>Specifications for the test set that is imported.</p>
-     */
     inline ImportResourceSpecification& WithTestSetImportResourceSpecification(TestSetImportResourceSpecification&& value) { SetTestSetImportResourceSpecification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BotImportSpecification m_botImportSpecification;

@@ -27,12 +27,8 @@ ListSourceRepositoriesItem::ListSourceRepositoriesItem() :
 {
 }
 
-ListSourceRepositoriesItem::ListSourceRepositoriesItem(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+ListSourceRepositoriesItem::ListSourceRepositoriesItem(JsonView jsonValue)
+  : ListSourceRepositoriesItem()
 {
   *this = jsonValue;
 }

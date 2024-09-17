@@ -19,32 +19,31 @@ namespace Model
 {
 
 ValidationExceptionField::ValidationExceptionField() : 
-    m_messageHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
-ValidationExceptionField::ValidationExceptionField(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_pathHasBeenSet(false)
+ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
+  : ValidationExceptionField()
 {
   *this = jsonValue;
 }
 
 ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("message"))
-  {
-    m_message = jsonValue.GetString("message");
-
-    m_messageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
 
     m_pathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+    m_messageHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +53,15 @@ JsonValue ValidationExceptionField::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
-  }
-
   if(m_pathHasBeenSet)
   {
    payload.WithString("path", m_path);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
 
   }
 

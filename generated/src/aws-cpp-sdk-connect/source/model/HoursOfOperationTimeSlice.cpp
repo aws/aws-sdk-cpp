@@ -26,11 +26,8 @@ HoursOfOperationTimeSlice::HoursOfOperationTimeSlice() :
 {
 }
 
-HoursOfOperationTimeSlice::HoursOfOperationTimeSlice(JsonView jsonValue) : 
-    m_hours(0),
-    m_hoursHasBeenSet(false),
-    m_minutes(0),
-    m_minutesHasBeenSet(false)
+HoursOfOperationTimeSlice::HoursOfOperationTimeSlice(JsonView jsonValue)
+  : HoursOfOperationTimeSlice()
 {
   *this = jsonValue;
 }

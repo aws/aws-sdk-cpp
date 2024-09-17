@@ -61,14 +61,15 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
     m_credentialsProvider(credentialsProvider),
     m_serviceName(serviceName),
     m_region(region),
-    m_hash(Aws::MakeUnique<Aws::Utils::Crypto::Sha256>(v4LogTag)),
-    m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha256HMAC>(v4LogTag)),
     m_unsignedHeaders({USER_AGENT, Aws::Auth::AWSAuthHelper::X_AMZN_TRACE_ID}),
     m_payloadSigningPolicy(signingPolicy),
     m_urlEscapePath(urlEscapePath)
 {
     //go ahead and warm up the signing cache.
-    ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(Aws::Auth::AWSAuthHelper::SIMPLE_DATE_FORMAT_STR), region, m_serviceName);
+    if (credentialsProvider)
+    {
+        ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(Aws::Auth::AWSAuthHelper::SIMPLE_DATE_FORMAT_STR), region, m_serviceName);
+    }
 }
 
 AWSAuthV4Signer::~AWSAuthV4Signer()
@@ -79,7 +80,7 @@ AWSAuthV4Signer::~AWSAuthV4Signer()
 bool AWSAuthV4Signer::SignRequestWithSigV4a(Aws::Http::HttpRequest& request, const char* region, const char* serviceName,
     bool signBody, long long expirationTimeInSeconds, Aws::Crt::Auth::SignatureType signatureType) const
 {
-    AWSCredentials credentials = GetCredentials(*request.GetServiceSpecificParameters());
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
     auto crtCredentials = Aws::MakeShared<Aws::Crt::Auth::Credentials>(v4AsymmetricLogTag,
         Aws::Crt::ByteCursorFromCString(credentials.GetAWSAccessKeyId().c_str()),
         Aws::Crt::ByteCursorFromCString(credentials.GetAWSSecretKey().c_str()),
@@ -187,11 +188,11 @@ bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
     return m_unsignedHeaders.find(Aws::Utils::StringUtils::ToLower(header.c_str())) == m_unsignedHeaders.cend();
 }
 
-bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
+bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, const AWSCredentials& credentials,
+                                           const char* region, const char* serviceName, bool signBody) const
 {
     Aws::String signingRegion = region ? region : m_region;
     Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
-    AWSCredentials credentials = GetCredentials(*request.GetServiceSpecificParameters());
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
@@ -324,15 +325,14 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Canonical Request String: " << canonicalRequestString);
 
     //now compute sha256 on that request string
-    auto hashResult = m_hash->Calculate(canonicalRequestString);
-    if (!hashResult.IsSuccess())
+    auto sha256Digest = HashingUtils::CalculateSHA256(canonicalRequestString);
+    if (sha256Digest.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hash (sha256) request string");
         AWS_LOGSTREAM_DEBUG(v4LogTag, "The request string is: \"" << canonicalRequestString << "\"");
         return false;
     }
 
-    auto sha256Digest = hashResult.GetResult();
     Aws::String canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
     Aws::String simpleDate = now.ToGmtString(Aws::Auth::AWSAuthHelper::SIMPLE_DATE_FORMAT_STR);
 
@@ -350,6 +350,12 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     return true;
 }
 
+bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
+{
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
+    return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
+}
+
 bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long expirationTimeInSeconds) const
 {
     return PresignRequest(request, m_region.c_str(), expirationTimeInSeconds);
@@ -364,7 +370,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
 {
     Aws::String signingRegion = region ? region : m_region;
     Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
-    AWSCredentials credentials = GetCredentials(*request.GetServiceSpecificParameters());
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
@@ -448,15 +454,14 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Canonical Request String: " << canonicalRequestString);
 
     //now compute sha256 on that request string
-    auto hashResult = m_hash->Calculate(canonicalRequestString);
-    if (!hashResult.IsSuccess())
+    auto sha256Digest = HashingUtils::CalculateSHA256(canonicalRequestString);
+    if (sha256Digest.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hash (sha256) request string");
         AWS_LOGSTREAM_DEBUG(v4LogTag, "The request string is: \"" << canonicalRequestString << "\"");
         return false;
     }
 
-    auto sha256Digest = hashResult.GetResult();
     auto canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
 
     auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, canonicalRequestHash, signingRegion, signingServiceName);
@@ -507,16 +512,14 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const Aws::String& stringToSign, 
 
     Aws::StringStream ss;
 
-    auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)stringToSign.c_str(), stringToSign.length()), key);
-    if (!hashResult.IsSuccess())
+    //now we finally sign our request string with our hex encoded derived hash.
+    auto finalSigningDigest = HashingUtils::CalculateSHA256HMAC(ByteBuffer((unsigned char*)stringToSign.c_str(), stringToSign.length()), key);
+    if (finalSigningDigest.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) final string");
         AWS_LOGSTREAM_DEBUG(v4LogTag, "The final string is: \"" << stringToSign << "\"");
         return {};
     }
-
-    //now we finally sign our request string with our hex encoded derived hash.
-    auto finalSigningDigest = hashResult.GetResult();
 
     auto finalSigningHash = HashingUtils::HexEncode(finalSigningDigest);
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Final computed signing hash: " << finalSigningHash);
@@ -534,17 +537,16 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
     }
 
     // compute hash on payload if it exists
-    auto hashResult =  m_hash->Calculate(*body);
+    auto sha256Digest =  HashingUtils::CalculateSHA256(*request.GetContentBody());
     body->clear();      // clears ios_flags
     body->seekg(0);
 
-    if (!hashResult.IsSuccess())
+    if (sha256Digest.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hash (sha256) request body");
         return {};
     }
 
-    auto sha256Digest = hashResult.GetResult();
     Aws::String payloadHash(HashingUtils::HexEncode(sha256Digest));
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Calculated sha256 " << payloadHash << " for payload.");
     return payloadHash;
@@ -567,43 +569,39 @@ Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey
 {
     Aws::String signingKey(Aws::Auth::AWSAuthHelper::SIGNING_KEY);
     signingKey.append(secretKey);
-    auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)simpleDate.c_str(), simpleDate.length()),
-            ByteBuffer((unsigned char*)signingKey.c_str(), signingKey.length()));
+    auto kDate = HashingUtils::CalculateSHA256HMAC(simpleDate, signingKey);
 
-    if (!hashResult.IsSuccess())
+    if (kDate.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to HMAC (SHA256) date string \"" << simpleDate << "\"");
         return {};
     }
 
-    auto kDate = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)region.c_str(), region.length()), kDate);
-    if (!hashResult.IsSuccess())
+    auto kRegion = HashingUtils::CalculateSHA256HMAC(ByteBuffer((unsigned char*)region.c_str(), region.length()), kDate);
+    if (kRegion.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to HMAC (SHA256) region string \"" << region << "\"");
         return {};
     }
 
-    auto kRegion = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)serviceName.c_str(), serviceName.length()), kRegion);
-    if (!hashResult.IsSuccess())
+    auto kService = HashingUtils::CalculateSHA256HMAC(ByteBuffer((unsigned char*)serviceName.c_str(), serviceName.length()), kRegion);
+    if (kService.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to HMAC (SHA256) service string \"" << m_serviceName << "\"");
         return {};
     }
 
-    auto kService = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)Aws::Auth::AWSAuthHelper::AWS4_REQUEST, strlen(Aws::Auth::AWSAuthHelper::AWS4_REQUEST)), kService);
-    if (!hashResult.IsSuccess())
+    auto kFinalHash = HashingUtils::CalculateSHA256HMAC(ByteBuffer((unsigned char*)Aws::Auth::AWSAuthHelper::AWS4_REQUEST, strlen(Aws::Auth::AWSAuthHelper::AWS4_REQUEST)), kService);
+    if (kFinalHash.GetLength() == 0)
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to HMAC (SHA256) request string");
         AWS_LOGSTREAM_DEBUG(v4LogTag, "The request string is: \"" << Aws::Auth::AWSAuthHelper::AWS4_REQUEST << "\"");
         return {};
     }
-    return hashResult.GetResult();
+    return kFinalHash;
 }
 
-Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const Aws::Http::ServiceSpecificParameters &serviceSpecificParameters) const {
+Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
     return m_credentialsProvider->GetAWSCredentials();
 }

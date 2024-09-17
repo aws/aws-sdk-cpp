@@ -42,27 +42,8 @@ CertificateAuthority::CertificateAuthority() :
 {
 }
 
-CertificateAuthority::CertificateAuthority(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastStateChangeAtHasBeenSet(false),
-    m_type(CertificateAuthorityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_status(CertificateAuthorityStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_certificateAuthorityConfigurationHasBeenSet(false),
-    m_revocationConfigurationHasBeenSet(false),
-    m_restorableUntilHasBeenSet(false),
-    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
-    m_keyStorageSecurityStandardHasBeenSet(false),
-    m_usageMode(CertificateAuthorityUsageMode::NOT_SET),
-    m_usageModeHasBeenSet(false)
+CertificateAuthority::CertificateAuthority(JsonView jsonValue)
+  : CertificateAuthority()
 {
   *this = jsonValue;
 }

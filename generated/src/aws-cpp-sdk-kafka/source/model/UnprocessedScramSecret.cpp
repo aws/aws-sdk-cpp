@@ -25,10 +25,8 @@ UnprocessedScramSecret::UnprocessedScramSecret() :
 {
 }
 
-UnprocessedScramSecret::UnprocessedScramSecret(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+UnprocessedScramSecret::UnprocessedScramSecret(JsonView jsonValue)
+  : UnprocessedScramSecret()
 {
   *this = jsonValue;
 }

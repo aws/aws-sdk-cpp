@@ -28,13 +28,8 @@ DeliveryStreamEncryptionConfiguration::DeliveryStreamEncryptionConfiguration() :
 {
 }
 
-DeliveryStreamEncryptionConfiguration::DeliveryStreamEncryptionConfiguration(JsonView jsonValue) : 
-    m_keyARNHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_status(DeliveryStreamEncryptionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureDescriptionHasBeenSet(false)
+DeliveryStreamEncryptionConfiguration::DeliveryStreamEncryptionConfiguration(JsonView jsonValue)
+  : DeliveryStreamEncryptionConfiguration()
 {
   *this = jsonValue;
 }

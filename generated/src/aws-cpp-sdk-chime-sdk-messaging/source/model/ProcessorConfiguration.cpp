@@ -23,8 +23,8 @@ ProcessorConfiguration::ProcessorConfiguration() :
 {
 }
 
-ProcessorConfiguration::ProcessorConfiguration(JsonView jsonValue) : 
-    m_lambdaHasBeenSet(false)
+ProcessorConfiguration::ProcessorConfiguration(JsonView jsonValue)
+  : ProcessorConfiguration()
 {
   *this = jsonValue;
 }

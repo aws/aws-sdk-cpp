@@ -33,43 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API GetKnowledgeBaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    ///@{
+    /**
+     * <p>Contains details about the knowledge base.</p>
+     */
     inline const KnowledgeBase& GetKnowledgeBase() const{ return m_knowledgeBase; }
-
-    
     inline void SetKnowledgeBase(const KnowledgeBase& value) { m_knowledgeBase = value; }
-
-    
     inline void SetKnowledgeBase(KnowledgeBase&& value) { m_knowledgeBase = std::move(value); }
-
-    
     inline GetKnowledgeBaseResult& WithKnowledgeBase(const KnowledgeBase& value) { SetKnowledgeBase(value); return *this;}
-
-    
     inline GetKnowledgeBaseResult& WithKnowledgeBase(KnowledgeBase&& value) { SetKnowledgeBase(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetKnowledgeBaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetKnowledgeBaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetKnowledgeBaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     KnowledgeBase m_knowledgeBase;

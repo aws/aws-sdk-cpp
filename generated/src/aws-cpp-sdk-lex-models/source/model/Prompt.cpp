@@ -26,11 +26,8 @@ Prompt::Prompt() :
 {
 }
 
-Prompt::Prompt(JsonView jsonValue) : 
-    m_messagesHasBeenSet(false),
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false),
-    m_responseCardHasBeenSet(false)
+Prompt::Prompt(JsonView jsonValue)
+  : Prompt()
 {
   *this = jsonValue;
 }

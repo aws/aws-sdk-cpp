@@ -30,15 +30,8 @@ MediaInsightsPipelineConfiguration::MediaInsightsPipelineConfiguration() :
 {
 }
 
-MediaInsightsPipelineConfiguration::MediaInsightsPipelineConfiguration(JsonView jsonValue) : 
-    m_mediaInsightsPipelineConfigurationNameHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationArnHasBeenSet(false),
-    m_resourceAccessRoleArnHasBeenSet(false),
-    m_realTimeAlertConfigurationHasBeenSet(false),
-    m_elementsHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+MediaInsightsPipelineConfiguration::MediaInsightsPipelineConfiguration(JsonView jsonValue)
+  : MediaInsightsPipelineConfiguration()
 {
   *this = jsonValue;
 }

@@ -40,51 +40,20 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The values sent must match the specified values exactly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExact() const{ return m_exact; }
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline void SetExact(const Aws::Vector<Aws::String>& value) { m_exactHasBeenSet = true; m_exact = value; }
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline void SetExact(Aws::Vector<Aws::String>&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline SubjectAlternativeNameMatchers& WithExact(const Aws::Vector<Aws::String>& value) { SetExact(value); return *this;}
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline SubjectAlternativeNameMatchers& WithExact(Aws::Vector<Aws::String>&& value) { SetExact(std::move(value)); return *this;}
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline SubjectAlternativeNameMatchers& AddExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact.push_back(value); return *this; }
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline SubjectAlternativeNameMatchers& AddExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The values sent must match the specified values exactly.</p>
-     */
     inline SubjectAlternativeNameMatchers& AddExact(const char* value) { m_exactHasBeenSet = true; m_exact.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_exact;

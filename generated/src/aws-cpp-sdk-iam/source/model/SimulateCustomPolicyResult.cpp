@@ -22,8 +22,8 @@ SimulateCustomPolicyResult::SimulateCustomPolicyResult() :
 {
 }
 
-SimulateCustomPolicyResult::SimulateCustomPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+SimulateCustomPolicyResult::SimulateCustomPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : SimulateCustomPolicyResult()
 {
   *this = result;
 }

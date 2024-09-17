@@ -24,9 +24,8 @@ ExecutionRedrivenEventDetails::ExecutionRedrivenEventDetails() :
 {
 }
 
-ExecutionRedrivenEventDetails::ExecutionRedrivenEventDetails(JsonView jsonValue) : 
-    m_redriveCount(0),
-    m_redriveCountHasBeenSet(false)
+ExecutionRedrivenEventDetails::ExecutionRedrivenEventDetails(JsonView jsonValue)
+  : ExecutionRedrivenEventDetails()
 {
   *this = jsonValue;
 }

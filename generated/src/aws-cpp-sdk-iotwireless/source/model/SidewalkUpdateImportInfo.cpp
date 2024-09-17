@@ -23,8 +23,8 @@ SidewalkUpdateImportInfo::SidewalkUpdateImportInfo() :
 {
 }
 
-SidewalkUpdateImportInfo::SidewalkUpdateImportInfo(JsonView jsonValue) : 
-    m_deviceCreationFileHasBeenSet(false)
+SidewalkUpdateImportInfo::SidewalkUpdateImportInfo(JsonView jsonValue)
+  : SidewalkUpdateImportInfo()
 {
   *this = jsonValue;
 }

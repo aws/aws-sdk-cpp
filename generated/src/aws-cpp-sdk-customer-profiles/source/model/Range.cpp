@@ -26,11 +26,8 @@ Range::Range() :
 {
 }
 
-Range::Range(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false)
+Range::Range(JsonView jsonValue)
+  : Range()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ CloudWatchLogsLogGroupArnConfigDetails::CloudWatchLogsLogGroupArnConfigDetails()
 {
 }
 
-CloudWatchLogsLogGroupArnConfigDetails::CloudWatchLogsLogGroupArnConfigDetails(JsonView jsonValue) : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_idHasBeenSet(false)
+CloudWatchLogsLogGroupArnConfigDetails::CloudWatchLogsLogGroupArnConfigDetails(JsonView jsonValue)
+  : CloudWatchLogsLogGroupArnConfigDetails()
 {
   *this = jsonValue;
 }

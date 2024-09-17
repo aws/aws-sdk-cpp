@@ -24,9 +24,8 @@ CopyImageSetInformation::CopyImageSetInformation() :
 {
 }
 
-CopyImageSetInformation::CopyImageSetInformation(JsonView jsonValue) : 
-    m_sourceImageSetHasBeenSet(false),
-    m_destinationImageSetHasBeenSet(false)
+CopyImageSetInformation::CopyImageSetInformation(JsonView jsonValue)
+  : CopyImageSetInformation()
 {
   *this = jsonValue;
 }

@@ -43,197 +43,78 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The connection pool information for the listener.</p>
      */
     inline const VirtualNodeConnectionPool& GetConnectionPool() const{ return m_connectionPool; }
-
-    /**
-     * <p>The connection pool information for the listener.</p>
-     */
     inline bool ConnectionPoolHasBeenSet() const { return m_connectionPoolHasBeenSet; }
-
-    /**
-     * <p>The connection pool information for the listener.</p>
-     */
     inline void SetConnectionPool(const VirtualNodeConnectionPool& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = value; }
-
-    /**
-     * <p>The connection pool information for the listener.</p>
-     */
     inline void SetConnectionPool(VirtualNodeConnectionPool&& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = std::move(value); }
-
-    /**
-     * <p>The connection pool information for the listener.</p>
-     */
     inline Listener& WithConnectionPool(const VirtualNodeConnectionPool& value) { SetConnectionPool(value); return *this;}
-
-    /**
-     * <p>The connection pool information for the listener.</p>
-     */
     inline Listener& WithConnectionPool(VirtualNodeConnectionPool&& value) { SetConnectionPool(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The health check information for the listener.</p>
      */
     inline const HealthCheckPolicy& GetHealthCheck() const{ return m_healthCheck; }
-
-    /**
-     * <p>The health check information for the listener.</p>
-     */
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-
-    /**
-     * <p>The health check information for the listener.</p>
-     */
     inline void SetHealthCheck(const HealthCheckPolicy& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-
-    /**
-     * <p>The health check information for the listener.</p>
-     */
     inline void SetHealthCheck(HealthCheckPolicy&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-
-    /**
-     * <p>The health check information for the listener.</p>
-     */
     inline Listener& WithHealthCheck(const HealthCheckPolicy& value) { SetHealthCheck(value); return *this;}
-
-    /**
-     * <p>The health check information for the listener.</p>
-     */
     inline Listener& WithHealthCheck(HealthCheckPolicy&& value) { SetHealthCheck(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The outlier detection information for the listener.</p>
      */
     inline const OutlierDetection& GetOutlierDetection() const{ return m_outlierDetection; }
-
-    /**
-     * <p>The outlier detection information for the listener.</p>
-     */
     inline bool OutlierDetectionHasBeenSet() const { return m_outlierDetectionHasBeenSet; }
-
-    /**
-     * <p>The outlier detection information for the listener.</p>
-     */
     inline void SetOutlierDetection(const OutlierDetection& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = value; }
-
-    /**
-     * <p>The outlier detection information for the listener.</p>
-     */
     inline void SetOutlierDetection(OutlierDetection&& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = std::move(value); }
-
-    /**
-     * <p>The outlier detection information for the listener.</p>
-     */
     inline Listener& WithOutlierDetection(const OutlierDetection& value) { SetOutlierDetection(value); return *this;}
-
-    /**
-     * <p>The outlier detection information for the listener.</p>
-     */
     inline Listener& WithOutlierDetection(OutlierDetection&& value) { SetOutlierDetection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port mapping information for the listener.</p>
      */
     inline const PortMapping& GetPortMapping() const{ return m_portMapping; }
-
-    /**
-     * <p>The port mapping information for the listener.</p>
-     */
     inline bool PortMappingHasBeenSet() const { return m_portMappingHasBeenSet; }
-
-    /**
-     * <p>The port mapping information for the listener.</p>
-     */
     inline void SetPortMapping(const PortMapping& value) { m_portMappingHasBeenSet = true; m_portMapping = value; }
-
-    /**
-     * <p>The port mapping information for the listener.</p>
-     */
     inline void SetPortMapping(PortMapping&& value) { m_portMappingHasBeenSet = true; m_portMapping = std::move(value); }
-
-    /**
-     * <p>The port mapping information for the listener.</p>
-     */
     inline Listener& WithPortMapping(const PortMapping& value) { SetPortMapping(value); return *this;}
-
-    /**
-     * <p>The port mapping information for the listener.</p>
-     */
     inline Listener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that represents timeouts for different protocols.</p>
      */
     inline const ListenerTimeout& GetTimeout() const{ return m_timeout; }
-
-    /**
-     * <p>An object that represents timeouts for different protocols.</p>
-     */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-
-    /**
-     * <p>An object that represents timeouts for different protocols.</p>
-     */
     inline void SetTimeout(const ListenerTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-
-    /**
-     * <p>An object that represents timeouts for different protocols.</p>
-     */
     inline void SetTimeout(ListenerTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
-
-    /**
-     * <p>An object that represents timeouts for different protocols.</p>
-     */
     inline Listener& WithTimeout(const ListenerTimeout& value) { SetTimeout(value); return *this;}
-
-    /**
-     * <p>An object that represents timeouts for different protocols.</p>
-     */
     inline Listener& WithTimeout(ListenerTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to an object that represents the Transport Layer Security (TLS)
      * properties for a listener.</p>
      */
     inline const ListenerTls& GetTls() const{ return m_tls; }
-
-    /**
-     * <p>A reference to an object that represents the Transport Layer Security (TLS)
-     * properties for a listener.</p>
-     */
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
-
-    /**
-     * <p>A reference to an object that represents the Transport Layer Security (TLS)
-     * properties for a listener.</p>
-     */
     inline void SetTls(const ListenerTls& value) { m_tlsHasBeenSet = true; m_tls = value; }
-
-    /**
-     * <p>A reference to an object that represents the Transport Layer Security (TLS)
-     * properties for a listener.</p>
-     */
     inline void SetTls(ListenerTls&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
-
-    /**
-     * <p>A reference to an object that represents the Transport Layer Security (TLS)
-     * properties for a listener.</p>
-     */
     inline Listener& WithTls(const ListenerTls& value) { SetTls(value); return *this;}
-
-    /**
-     * <p>A reference to an object that represents the Transport Layer Security (TLS)
-     * properties for a listener.</p>
-     */
     inline Listener& WithTls(ListenerTls&& value) { SetTls(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VirtualNodeConnectionPool m_connectionPool;

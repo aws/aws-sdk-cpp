@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The ID of the Active Directory used for authentication. </p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p> The ID of the Active Directory used for authentication. </p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the Active Directory used for authentication. </p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p> The ID of the Active Directory used for authentication. </p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p> The ID of the Active Directory used for authentication. </p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p> The ID of the Active Directory used for authentication. </p>
-     */
     inline AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p> The ID of the Active Directory used for authentication. </p>
-     */
     inline AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the Active Directory used for authentication. </p>
-     */
     inline AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

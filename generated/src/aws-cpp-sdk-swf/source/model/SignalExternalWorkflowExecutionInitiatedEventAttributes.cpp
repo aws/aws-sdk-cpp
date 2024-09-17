@@ -29,14 +29,8 @@ SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowE
 {
 }
 
-SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue) : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_signalNameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_controlHasBeenSet(false)
+SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue)
+  : SignalExternalWorkflowExecutionInitiatedEventAttributes()
 {
   *this = jsonValue;
 }

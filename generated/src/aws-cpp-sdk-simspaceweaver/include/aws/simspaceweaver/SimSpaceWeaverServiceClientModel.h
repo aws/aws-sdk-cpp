@@ -34,6 +34,7 @@
 #include <aws/simspaceweaver/model/StopSimulationResult.h>
 #include <aws/simspaceweaver/model/TagResourceResult.h>
 #include <aws/simspaceweaver/model/UntagResourceResult.h>
+#include <aws/simspaceweaver/model/ListSimulationsRequest.h>
 /* End of service model headers required in SimSpaceWeaverClient header */
 
 namespace Aws
@@ -67,7 +68,7 @@ namespace Aws
 
   namespace SimSpaceWeaver
   {
-    using SimSpaceWeaverClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SimSpaceWeaverClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SimSpaceWeaverEndpointProviderBase = Aws::SimSpaceWeaver::Endpoint::SimSpaceWeaverEndpointProviderBase;
     using SimSpaceWeaverEndpointProvider = Aws::SimSpaceWeaver::Endpoint::SimSpaceWeaverEndpointProvider;
 

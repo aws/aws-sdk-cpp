@@ -35,77 +35,31 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the source resource for which to enable or modify the add-on.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The name of the source resource for which to enable or modify the add-on.</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the source resource for which to enable or modify the add-on.</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The name of the source resource for which to enable or modify the add-on.</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The name of the source resource for which to enable or modify the add-on.</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The name of the source resource for which to enable or modify the add-on.</p>
-     */
     inline EnableAddOnRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The name of the source resource for which to enable or modify the add-on.</p>
-     */
     inline EnableAddOnRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source resource for which to enable or modify the add-on.</p>
-     */
     inline EnableAddOnRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of strings representing the add-on to enable or modify.</p>
      */
     inline const AddOnRequest& GetAddOnRequest() const{ return m_addOnRequest; }
-
-    /**
-     * <p>An array of strings representing the add-on to enable or modify.</p>
-     */
     inline bool AddOnRequestHasBeenSet() const { return m_addOnRequestHasBeenSet; }
-
-    /**
-     * <p>An array of strings representing the add-on to enable or modify.</p>
-     */
     inline void SetAddOnRequest(const AddOnRequest& value) { m_addOnRequestHasBeenSet = true; m_addOnRequest = value; }
-
-    /**
-     * <p>An array of strings representing the add-on to enable or modify.</p>
-     */
     inline void SetAddOnRequest(AddOnRequest&& value) { m_addOnRequestHasBeenSet = true; m_addOnRequest = std::move(value); }
-
-    /**
-     * <p>An array of strings representing the add-on to enable or modify.</p>
-     */
     inline EnableAddOnRequest& WithAddOnRequest(const AddOnRequest& value) { SetAddOnRequest(value); return *this;}
-
-    /**
-     * <p>An array of strings representing the add-on to enable or modify.</p>
-     */
     inline EnableAddOnRequest& WithAddOnRequest(AddOnRequest&& value) { SetAddOnRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

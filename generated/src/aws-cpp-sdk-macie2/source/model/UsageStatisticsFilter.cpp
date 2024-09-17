@@ -27,12 +27,8 @@ UsageStatisticsFilter::UsageStatisticsFilter() :
 {
 }
 
-UsageStatisticsFilter::UsageStatisticsFilter(JsonView jsonValue) : 
-    m_comparator(UsageStatisticsFilterComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(UsageStatisticsFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+UsageStatisticsFilter::UsageStatisticsFilter(JsonView jsonValue)
+  : UsageStatisticsFilter()
 {
   *this = jsonValue;
 }

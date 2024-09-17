@@ -37,36 +37,17 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Rank of business goals based on priority. </p>
      */
     inline const BusinessGoals& GetBusinessGoals() const{ return m_businessGoals; }
-
-    /**
-     * <p> Rank of business goals based on priority. </p>
-     */
     inline bool BusinessGoalsHasBeenSet() const { return m_businessGoalsHasBeenSet; }
-
-    /**
-     * <p> Rank of business goals based on priority. </p>
-     */
     inline void SetBusinessGoals(const BusinessGoals& value) { m_businessGoalsHasBeenSet = true; m_businessGoals = value; }
-
-    /**
-     * <p> Rank of business goals based on priority. </p>
-     */
     inline void SetBusinessGoals(BusinessGoals&& value) { m_businessGoalsHasBeenSet = true; m_businessGoals = std::move(value); }
-
-    /**
-     * <p> Rank of business goals based on priority. </p>
-     */
     inline PrioritizeBusinessGoals& WithBusinessGoals(const BusinessGoals& value) { SetBusinessGoals(value); return *this;}
-
-    /**
-     * <p> Rank of business goals based on priority. </p>
-     */
     inline PrioritizeBusinessGoals& WithBusinessGoals(BusinessGoals&& value) { SetBusinessGoals(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BusinessGoals m_businessGoals;

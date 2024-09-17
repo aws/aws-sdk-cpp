@@ -20,15 +20,14 @@ namespace Model
 
 MetricBasedObservation::MetricBasedObservation() : 
     m_metricNameHasBeenSet(false),
+    m_statisticIdHasBeenSet(false),
     m_metricValuesHasBeenSet(false),
     m_newRulesHasBeenSet(false)
 {
 }
 
-MetricBasedObservation::MetricBasedObservation(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_metricValuesHasBeenSet(false),
-    m_newRulesHasBeenSet(false)
+MetricBasedObservation::MetricBasedObservation(JsonView jsonValue)
+  : MetricBasedObservation()
 {
   *this = jsonValue;
 }
@@ -40,6 +39,13 @@ MetricBasedObservation& MetricBasedObservation::operator =(JsonView jsonValue)
     m_metricName = jsonValue.GetString("MetricName");
 
     m_metricNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatisticId"))
+  {
+    m_statisticId = jsonValue.GetString("StatisticId");
+
+    m_statisticIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MetricValues"))
@@ -69,6 +75,12 @@ JsonValue MetricBasedObservation::Jsonize() const
   if(m_metricNameHasBeenSet)
   {
    payload.WithString("MetricName", m_metricName);
+
+  }
+
+  if(m_statisticIdHasBeenSet)
+  {
+   payload.WithString("StatisticId", m_statisticId);
 
   }
 

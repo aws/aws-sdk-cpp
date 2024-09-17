@@ -37,22 +37,8 @@ MobileDeviceAccessRule::MobileDeviceAccessRule() :
 {
 }
 
-MobileDeviceAccessRule::MobileDeviceAccessRule(JsonView jsonValue) : 
-    m_mobileDeviceAccessRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_deviceTypesHasBeenSet(false),
-    m_notDeviceTypesHasBeenSet(false),
-    m_deviceModelsHasBeenSet(false),
-    m_notDeviceModelsHasBeenSet(false),
-    m_deviceOperatingSystemsHasBeenSet(false),
-    m_notDeviceOperatingSystemsHasBeenSet(false),
-    m_deviceUserAgentsHasBeenSet(false),
-    m_notDeviceUserAgentsHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
+MobileDeviceAccessRule::MobileDeviceAccessRule(JsonView jsonValue)
+  : MobileDeviceAccessRule()
 {
   *this = jsonValue;
 }

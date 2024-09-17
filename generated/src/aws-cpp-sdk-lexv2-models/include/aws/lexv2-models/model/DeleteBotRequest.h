@@ -38,47 +38,21 @@ namespace Model
     AWS_LEXMODELSV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the bot to delete. </p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The identifier of the bot to delete. </p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the bot to delete. </p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The identifier of the bot to delete. </p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The identifier of the bot to delete. </p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The identifier of the bot to delete. </p>
-     */
     inline DeleteBotRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The identifier of the bot to delete. </p>
-     */
     inline DeleteBotRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the bot to delete. </p>
-     */
     inline DeleteBotRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
      * network, is using the bot version before it is deleted and throws a
@@ -87,34 +61,10 @@ namespace Model
      * remove the bot even if it is being used by another resource.</p>
      */
     inline bool GetSkipResourceInUseCheck() const{ return m_skipResourceInUseCheck; }
-
-    /**
-     * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
-     * network, is using the bot version before it is deleted and throws a
-     * <code>ResourceInUseException</code> exception if the bot is being used by
-     * another resource. Set this parameter to <code>true</code> to skip this check and
-     * remove the bot even if it is being used by another resource.</p>
-     */
     inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
-
-    /**
-     * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
-     * network, is using the bot version before it is deleted and throws a
-     * <code>ResourceInUseException</code> exception if the bot is being used by
-     * another resource. Set this parameter to <code>true</code> to skip this check and
-     * remove the bot even if it is being used by another resource.</p>
-     */
     inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
-
-    /**
-     * <p>By default, Amazon Lex checks if any other resource, such as an alias or bot
-     * network, is using the bot version before it is deleted and throws a
-     * <code>ResourceInUseException</code> exception if the bot is being used by
-     * another resource. Set this parameter to <code>true</code> to skip this check and
-     * remove the bot even if it is being used by another resource.</p>
-     */
     inline DeleteBotRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botId;

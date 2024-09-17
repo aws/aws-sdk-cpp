@@ -39,46 +39,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines CloudWatch dimension values to publish.</p>
      */
     inline const Aws::Vector<StatelessCustomPublishMetricActionDimension>& GetDimensions() const{ return m_dimensions; }
-
-    /**
-     * <p>Defines CloudWatch dimension values to publish.</p>
-     */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-
-    /**
-     * <p>Defines CloudWatch dimension values to publish.</p>
-     */
     inline void SetDimensions(const Aws::Vector<StatelessCustomPublishMetricActionDimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-
-    /**
-     * <p>Defines CloudWatch dimension values to publish.</p>
-     */
     inline void SetDimensions(Aws::Vector<StatelessCustomPublishMetricActionDimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-
-    /**
-     * <p>Defines CloudWatch dimension values to publish.</p>
-     */
     inline StatelessCustomPublishMetricAction& WithDimensions(const Aws::Vector<StatelessCustomPublishMetricActionDimension>& value) { SetDimensions(value); return *this;}
-
-    /**
-     * <p>Defines CloudWatch dimension values to publish.</p>
-     */
     inline StatelessCustomPublishMetricAction& WithDimensions(Aws::Vector<StatelessCustomPublishMetricActionDimension>&& value) { SetDimensions(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines CloudWatch dimension values to publish.</p>
-     */
     inline StatelessCustomPublishMetricAction& AddDimensions(const StatelessCustomPublishMetricActionDimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-
-    /**
-     * <p>Defines CloudWatch dimension values to publish.</p>
-     */
     inline StatelessCustomPublishMetricAction& AddDimensions(StatelessCustomPublishMetricActionDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<StatelessCustomPublishMetricActionDimension> m_dimensions;

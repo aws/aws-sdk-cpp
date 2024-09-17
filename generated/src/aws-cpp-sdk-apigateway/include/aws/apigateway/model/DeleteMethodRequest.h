@@ -35,128 +35,47 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteMethodRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteMethodRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteMethodRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Resource identifier for the Method resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The Resource identifier for the Method resource.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The Resource identifier for the Method resource.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The Resource identifier for the Method resource.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The Resource identifier for the Method resource.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The Resource identifier for the Method resource.</p>
-     */
     inline DeleteMethodRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The Resource identifier for the Method resource.</p>
-     */
     inline DeleteMethodRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Resource identifier for the Method resource.</p>
-     */
     inline DeleteMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP verb of the Method resource.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
-
-    /**
-     * <p>The HTTP verb of the Method resource.</p>
-     */
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-
-    /**
-     * <p>The HTTP verb of the Method resource.</p>
-     */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-
-    /**
-     * <p>The HTTP verb of the Method resource.</p>
-     */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
-
-    /**
-     * <p>The HTTP verb of the Method resource.</p>
-     */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
-
-    /**
-     * <p>The HTTP verb of the Method resource.</p>
-     */
     inline DeleteMethodRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
-
-    /**
-     * <p>The HTTP verb of the Method resource.</p>
-     */
     inline DeleteMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP verb of the Method resource.</p>
-     */
     inline DeleteMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

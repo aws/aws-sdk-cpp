@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the backend properties associated with an Amplify
-   * <code>Branch</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the backend associated with an Amplify <code>Branch</code>.</p>
+   * <p>This property is available to Amplify Gen 2 apps only. When you deploy an
+   * application with Amplify Gen 2, you provision the app's backend infrastructure
+   * using Typescript code.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Backend">AWS API
    * Reference</a></p>
    */
@@ -38,46 +40,19 @@ namespace Model
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
      */
     inline const Aws::String& GetStackArn() const{ return m_stackArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-     */
     inline bool StackArnHasBeenSet() const { return m_stackArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-     */
     inline void SetStackArn(const Aws::String& value) { m_stackArnHasBeenSet = true; m_stackArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-     */
     inline void SetStackArn(Aws::String&& value) { m_stackArnHasBeenSet = true; m_stackArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-     */
     inline void SetStackArn(const char* value) { m_stackArnHasBeenSet = true; m_stackArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-     */
     inline Backend& WithStackArn(const Aws::String& value) { SetStackArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-     */
     inline Backend& WithStackArn(Aws::String&& value) { SetStackArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-     */
     inline Backend& WithStackArn(const char* value) { SetStackArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackArn;

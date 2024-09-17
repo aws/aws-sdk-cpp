@@ -36,26 +36,15 @@ namespace Model
     AWS_ELASTICINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
      */
     inline int GetSizeInMiB() const{ return m_sizeInMiB; }
-
-    /**
-     * <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
-     */
     inline bool SizeInMiBHasBeenSet() const { return m_sizeInMiBHasBeenSet; }
-
-    /**
-     * <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
-     */
     inline void SetSizeInMiB(int value) { m_sizeInMiBHasBeenSet = true; m_sizeInMiB = value; }
-
-    /**
-     * <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
-     */
     inline MemoryInfo& WithSizeInMiB(int value) { SetSizeInMiB(value); return *this;}
-
+    ///@}
   private:
 
     int m_sizeInMiB;

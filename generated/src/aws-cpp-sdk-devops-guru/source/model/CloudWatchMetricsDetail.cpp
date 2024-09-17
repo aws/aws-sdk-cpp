@@ -31,16 +31,8 @@ CloudWatchMetricsDetail::CloudWatchMetricsDetail() :
 {
 }
 
-CloudWatchMetricsDetail::CloudWatchMetricsDetail(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_stat(CloudWatchMetricsStat::NOT_SET),
-    m_statHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_metricDataSummaryHasBeenSet(false)
+CloudWatchMetricsDetail::CloudWatchMetricsDetail(JsonView jsonValue)
+  : CloudWatchMetricsDetail()
 {
   *this = jsonValue;
 }

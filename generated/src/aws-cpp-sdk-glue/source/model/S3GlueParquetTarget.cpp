@@ -29,14 +29,8 @@ S3GlueParquetTarget::S3GlueParquetTarget() :
 {
 }
 
-S3GlueParquetTarget::S3GlueParquetTarget(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_compression(ParquetCompressionType::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
+S3GlueParquetTarget::S3GlueParquetTarget(JsonView jsonValue)
+  : S3GlueParquetTarget()
 {
   *this = jsonValue;
 }

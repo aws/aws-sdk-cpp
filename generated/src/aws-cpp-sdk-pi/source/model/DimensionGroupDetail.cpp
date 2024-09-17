@@ -24,9 +24,8 @@ DimensionGroupDetail::DimensionGroupDetail() :
 {
 }
 
-DimensionGroupDetail::DimensionGroupDetail(JsonView jsonValue) : 
-    m_groupHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+DimensionGroupDetail::DimensionGroupDetail(JsonView jsonValue)
+  : DimensionGroupDetail()
 {
   *this = jsonValue;
 }

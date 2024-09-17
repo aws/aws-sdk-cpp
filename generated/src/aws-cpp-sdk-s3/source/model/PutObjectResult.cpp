@@ -23,10 +23,8 @@ PutObjectResult::PutObjectResult() :
 {
 }
 
-PutObjectResult::PutObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_bucketKeyEnabled(false),
-    m_requestCharged(RequestCharged::NOT_SET)
+PutObjectResult::PutObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : PutObjectResult()
 {
   *this = result;
 }

@@ -38,36 +38,17 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The desired authentication mode for the cluster.</p>
      */
     inline const AuthenticationMode& GetAuthenticationMode() const{ return m_authenticationMode; }
-
-    /**
-     * <p>The desired authentication mode for the cluster.</p>
-     */
     inline bool AuthenticationModeHasBeenSet() const { return m_authenticationModeHasBeenSet; }
-
-    /**
-     * <p>The desired authentication mode for the cluster.</p>
-     */
     inline void SetAuthenticationMode(const AuthenticationMode& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
-
-    /**
-     * <p>The desired authentication mode for the cluster.</p>
-     */
     inline void SetAuthenticationMode(AuthenticationMode&& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = std::move(value); }
-
-    /**
-     * <p>The desired authentication mode for the cluster.</p>
-     */
     inline UpdateAccessConfigRequest& WithAuthenticationMode(const AuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
-
-    /**
-     * <p>The desired authentication mode for the cluster.</p>
-     */
     inline UpdateAccessConfigRequest& WithAuthenticationMode(AuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AuthenticationMode m_authenticationMode;

@@ -26,11 +26,8 @@ BarChartAggregatedFieldWells::BarChartAggregatedFieldWells() :
 {
 }
 
-BarChartAggregatedFieldWells::BarChartAggregatedFieldWells(JsonView jsonValue) : 
-    m_categoryHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_colorsHasBeenSet(false),
-    m_smallMultiplesHasBeenSet(false)
+BarChartAggregatedFieldWells::BarChartAggregatedFieldWells(JsonView jsonValue)
+  : BarChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }

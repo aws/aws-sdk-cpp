@@ -29,14 +29,8 @@ AssessmentRunFilter::AssessmentRunFilter() :
 {
 }
 
-AssessmentRunFilter::AssessmentRunFilter(JsonView jsonValue) : 
-    m_namePatternHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_durationRangeHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false),
-    m_startTimeRangeHasBeenSet(false),
-    m_completionTimeRangeHasBeenSet(false),
-    m_stateChangeTimeRangeHasBeenSet(false)
+AssessmentRunFilter::AssessmentRunFilter(JsonView jsonValue)
+  : AssessmentRunFilter()
 {
   *this = jsonValue;
 }

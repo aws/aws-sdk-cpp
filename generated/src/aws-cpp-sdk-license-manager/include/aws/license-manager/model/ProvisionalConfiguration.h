@@ -35,26 +35,15 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum time for the provisional configuration, in minutes.</p>
      */
     inline int GetMaxTimeToLiveInMinutes() const{ return m_maxTimeToLiveInMinutes; }
-
-    /**
-     * <p>Maximum time for the provisional configuration, in minutes.</p>
-     */
     inline bool MaxTimeToLiveInMinutesHasBeenSet() const { return m_maxTimeToLiveInMinutesHasBeenSet; }
-
-    /**
-     * <p>Maximum time for the provisional configuration, in minutes.</p>
-     */
     inline void SetMaxTimeToLiveInMinutes(int value) { m_maxTimeToLiveInMinutesHasBeenSet = true; m_maxTimeToLiveInMinutes = value; }
-
-    /**
-     * <p>Maximum time for the provisional configuration, in minutes.</p>
-     */
     inline ProvisionalConfiguration& WithMaxTimeToLiveInMinutes(int value) { SetMaxTimeToLiveInMinutes(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxTimeToLiveInMinutes;

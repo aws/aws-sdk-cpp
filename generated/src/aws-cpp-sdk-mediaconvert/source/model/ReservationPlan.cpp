@@ -32,17 +32,8 @@ ReservationPlan::ReservationPlan() :
 {
 }
 
-ReservationPlan::ReservationPlan(JsonView jsonValue) : 
-    m_commitment(Commitment::NOT_SET),
-    m_commitmentHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_purchasedAtHasBeenSet(false),
-    m_renewalType(RenewalType::NOT_SET),
-    m_renewalTypeHasBeenSet(false),
-    m_reservedSlots(0),
-    m_reservedSlotsHasBeenSet(false),
-    m_status(ReservationPlanStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+ReservationPlan::ReservationPlan(JsonView jsonValue)
+  : ReservationPlan()
 {
   *this = jsonValue;
 }

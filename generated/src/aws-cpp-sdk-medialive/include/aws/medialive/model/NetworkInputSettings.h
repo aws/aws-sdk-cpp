@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/HlsInputSettings.h>
 #include <aws/medialive/model/NetworkInputServerValidation.h>
+#include <aws/medialive/model/MulticastInputSettings.h>
 #include <utility>
 
 namespace Aws
@@ -40,37 +41,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specifies HLS input settings when the uri is for a HLS manifest.
      */
     inline const HlsInputSettings& GetHlsInputSettings() const{ return m_hlsInputSettings; }
-
-    /**
-     * Specifies HLS input settings when the uri is for a HLS manifest.
-     */
     inline bool HlsInputSettingsHasBeenSet() const { return m_hlsInputSettingsHasBeenSet; }
-
-    /**
-     * Specifies HLS input settings when the uri is for a HLS manifest.
-     */
     inline void SetHlsInputSettings(const HlsInputSettings& value) { m_hlsInputSettingsHasBeenSet = true; m_hlsInputSettings = value; }
-
-    /**
-     * Specifies HLS input settings when the uri is for a HLS manifest.
-     */
     inline void SetHlsInputSettings(HlsInputSettings&& value) { m_hlsInputSettingsHasBeenSet = true; m_hlsInputSettings = std::move(value); }
-
-    /**
-     * Specifies HLS input settings when the uri is for a HLS manifest.
-     */
     inline NetworkInputSettings& WithHlsInputSettings(const HlsInputSettings& value) { SetHlsInputSettings(value); return *this;}
-
-    /**
-     * Specifies HLS input settings when the uri is for a HLS manifest.
-     */
     inline NetworkInputSettings& WithHlsInputSettings(HlsInputSettings&& value) { SetHlsInputSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography
      * in the certificate will be checked, but not the server's name. Certain
@@ -79,52 +62,24 @@ namespace Model
      * the event to error. This setting is ignored for protocols that do not use https.
      */
     inline const NetworkInputServerValidation& GetServerValidation() const{ return m_serverValidation; }
-
-    /**
-     * Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography
-     * in the certificate will be checked, but not the server's name. Certain
-     * subdomains (notably S3 buckets that use dots in the bucket name) do not strictly
-     * match the corresponding certificate's wildcard pattern and would otherwise cause
-     * the event to error. This setting is ignored for protocols that do not use https.
-     */
     inline bool ServerValidationHasBeenSet() const { return m_serverValidationHasBeenSet; }
-
-    /**
-     * Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography
-     * in the certificate will be checked, but not the server's name. Certain
-     * subdomains (notably S3 buckets that use dots in the bucket name) do not strictly
-     * match the corresponding certificate's wildcard pattern and would otherwise cause
-     * the event to error. This setting is ignored for protocols that do not use https.
-     */
     inline void SetServerValidation(const NetworkInputServerValidation& value) { m_serverValidationHasBeenSet = true; m_serverValidation = value; }
-
-    /**
-     * Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography
-     * in the certificate will be checked, but not the server's name. Certain
-     * subdomains (notably S3 buckets that use dots in the bucket name) do not strictly
-     * match the corresponding certificate's wildcard pattern and would otherwise cause
-     * the event to error. This setting is ignored for protocols that do not use https.
-     */
     inline void SetServerValidation(NetworkInputServerValidation&& value) { m_serverValidationHasBeenSet = true; m_serverValidation = std::move(value); }
-
-    /**
-     * Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography
-     * in the certificate will be checked, but not the server's name. Certain
-     * subdomains (notably S3 buckets that use dots in the bucket name) do not strictly
-     * match the corresponding certificate's wildcard pattern and would otherwise cause
-     * the event to error. This setting is ignored for protocols that do not use https.
-     */
     inline NetworkInputSettings& WithServerValidation(const NetworkInputServerValidation& value) { SetServerValidation(value); return *this;}
-
-    /**
-     * Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography
-     * in the certificate will be checked, but not the server's name. Certain
-     * subdomains (notably S3 buckets that use dots in the bucket name) do not strictly
-     * match the corresponding certificate's wildcard pattern and would otherwise cause
-     * the event to error. This setting is ignored for protocols that do not use https.
-     */
     inline NetworkInputSettings& WithServerValidation(NetworkInputServerValidation&& value) { SetServerValidation(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * Specifies multicast input settings when the uri is for a multicast event.
+     */
+    inline const MulticastInputSettings& GetMulticastInputSettings() const{ return m_multicastInputSettings; }
+    inline bool MulticastInputSettingsHasBeenSet() const { return m_multicastInputSettingsHasBeenSet; }
+    inline void SetMulticastInputSettings(const MulticastInputSettings& value) { m_multicastInputSettingsHasBeenSet = true; m_multicastInputSettings = value; }
+    inline void SetMulticastInputSettings(MulticastInputSettings&& value) { m_multicastInputSettingsHasBeenSet = true; m_multicastInputSettings = std::move(value); }
+    inline NetworkInputSettings& WithMulticastInputSettings(const MulticastInputSettings& value) { SetMulticastInputSettings(value); return *this;}
+    inline NetworkInputSettings& WithMulticastInputSettings(MulticastInputSettings&& value) { SetMulticastInputSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     HlsInputSettings m_hlsInputSettings;
@@ -132,6 +87,9 @@ namespace Model
 
     NetworkInputServerValidation m_serverValidation;
     bool m_serverValidationHasBeenSet = false;
+
+    MulticastInputSettings m_multicastInputSettings;
+    bool m_multicastInputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,19 +34,8 @@ OrganizationCustomPolicyRuleMetadata::OrganizationCustomPolicyRuleMetadata() :
 {
 }
 
-OrganizationCustomPolicyRuleMetadata::OrganizationCustomPolicyRuleMetadata(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_organizationConfigRuleTriggerTypesHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false),
-    m_resourceTypesScopeHasBeenSet(false),
-    m_resourceIdScopeHasBeenSet(false),
-    m_tagKeyScopeHasBeenSet(false),
-    m_tagValueScopeHasBeenSet(false),
-    m_policyRuntimeHasBeenSet(false),
-    m_policyTextHasBeenSet(false),
-    m_debugLogDeliveryAccountsHasBeenSet(false)
+OrganizationCustomPolicyRuleMetadata::OrganizationCustomPolicyRuleMetadata(JsonView jsonValue)
+  : OrganizationCustomPolicyRuleMetadata()
 {
   *this = jsonValue;
 }

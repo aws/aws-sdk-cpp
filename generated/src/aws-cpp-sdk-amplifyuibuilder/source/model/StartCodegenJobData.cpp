@@ -28,13 +28,8 @@ StartCodegenJobData::StartCodegenJobData() :
 {
 }
 
-StartCodegenJobData::StartCodegenJobData(JsonView jsonValue) : 
-    m_renderConfigHasBeenSet(false),
-    m_genericDataSchemaHasBeenSet(false),
-    m_autoGenerateForms(false),
-    m_autoGenerateFormsHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StartCodegenJobData::StartCodegenJobData(JsonView jsonValue)
+  : StartCodegenJobData()
 {
   *this = jsonValue;
 }

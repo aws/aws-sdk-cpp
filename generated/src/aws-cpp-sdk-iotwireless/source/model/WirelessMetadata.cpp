@@ -24,9 +24,8 @@ WirelessMetadata::WirelessMetadata() :
 {
 }
 
-WirelessMetadata::WirelessMetadata(JsonView jsonValue) : 
-    m_loRaWANHasBeenSet(false),
-    m_sidewalkHasBeenSet(false)
+WirelessMetadata::WirelessMetadata(JsonView jsonValue)
+  : WirelessMetadata()
 {
   *this = jsonValue;
 }

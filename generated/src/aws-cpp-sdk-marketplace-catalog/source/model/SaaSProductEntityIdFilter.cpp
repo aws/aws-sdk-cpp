@@ -23,8 +23,8 @@ SaaSProductEntityIdFilter::SaaSProductEntityIdFilter() :
 {
 }
 
-SaaSProductEntityIdFilter::SaaSProductEntityIdFilter(JsonView jsonValue) : 
-    m_valueListHasBeenSet(false)
+SaaSProductEntityIdFilter::SaaSProductEntityIdFilter(JsonView jsonValue)
+  : SaaSProductEntityIdFilter()
 {
   *this = jsonValue;
 }

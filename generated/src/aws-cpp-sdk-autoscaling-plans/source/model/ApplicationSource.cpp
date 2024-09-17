@@ -24,9 +24,8 @@ ApplicationSource::ApplicationSource() :
 {
 }
 
-ApplicationSource::ApplicationSource(JsonView jsonValue) : 
-    m_cloudFormationStackARNHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+ApplicationSource::ApplicationSource(JsonView jsonValue)
+  : ApplicationSource()
 {
   *this = jsonValue;
 }

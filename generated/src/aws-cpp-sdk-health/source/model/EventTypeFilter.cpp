@@ -25,10 +25,8 @@ EventTypeFilter::EventTypeFilter() :
 {
 }
 
-EventTypeFilter::EventTypeFilter(JsonView jsonValue) : 
-    m_eventTypeCodesHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_eventTypeCategoriesHasBeenSet(false)
+EventTypeFilter::EventTypeFilter(JsonView jsonValue)
+  : EventTypeFilter()
 {
   *this = jsonValue;
 }

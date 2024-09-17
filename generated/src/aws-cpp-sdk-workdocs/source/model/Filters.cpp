@@ -32,17 +32,8 @@ Filters::Filters() :
 {
 }
 
-Filters::Filters(JsonView jsonValue) : 
-    m_textLocalesHasBeenSet(false),
-    m_contentCategoriesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_ancestorIdsHasBeenSet(false),
-    m_searchCollectionTypesHasBeenSet(false),
-    m_sizeRangeHasBeenSet(false),
-    m_createdRangeHasBeenSet(false),
-    m_modifiedRangeHasBeenSet(false)
+Filters::Filters(JsonView jsonValue)
+  : Filters()
 {
   *this = jsonValue;
 }

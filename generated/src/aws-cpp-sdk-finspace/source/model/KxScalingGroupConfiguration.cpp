@@ -31,16 +31,8 @@ KxScalingGroupConfiguration::KxScalingGroupConfiguration() :
 {
 }
 
-KxScalingGroupConfiguration::KxScalingGroupConfiguration(JsonView jsonValue) : 
-    m_scalingGroupNameHasBeenSet(false),
-    m_memoryLimit(0),
-    m_memoryLimitHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false),
-    m_cpu(0.0),
-    m_cpuHasBeenSet(false)
+KxScalingGroupConfiguration::KxScalingGroupConfiguration(JsonView jsonValue)
+  : KxScalingGroupConfiguration()
 {
   *this = jsonValue;
 }

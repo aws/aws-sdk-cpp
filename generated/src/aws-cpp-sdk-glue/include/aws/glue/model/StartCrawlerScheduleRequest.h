@@ -34,46 +34,19 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of the crawler to schedule.</p>
      */
     inline const Aws::String& GetCrawlerName() const{ return m_crawlerName; }
-
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
     inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
-
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
     inline void SetCrawlerName(const Aws::String& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = value; }
-
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
     inline void SetCrawlerName(Aws::String&& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = std::move(value); }
-
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
     inline void SetCrawlerName(const char* value) { m_crawlerNameHasBeenSet = true; m_crawlerName.assign(value); }
-
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
     inline StartCrawlerScheduleRequest& WithCrawlerName(const Aws::String& value) { SetCrawlerName(value); return *this;}
-
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
     inline StartCrawlerScheduleRequest& WithCrawlerName(Aws::String&& value) { SetCrawlerName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the crawler to schedule.</p>
-     */
     inline StartCrawlerScheduleRequest& WithCrawlerName(const char* value) { SetCrawlerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_crawlerName;

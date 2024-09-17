@@ -49,6 +49,14 @@
 #include <aws/sns/model/TagResourceResult.h>
 #include <aws/sns/model/UntagResourceResult.h>
 #include <aws/sns/model/VerifySMSSandboxPhoneNumberResult.h>
+#include <aws/sns/model/ListTopicsRequest.h>
+#include <aws/sns/model/ListOriginationNumbersRequest.h>
+#include <aws/sns/model/GetSMSSandboxAccountStatusRequest.h>
+#include <aws/sns/model/ListPhoneNumbersOptedOutRequest.h>
+#include <aws/sns/model/ListSMSSandboxPhoneNumbersRequest.h>
+#include <aws/sns/model/ListSubscriptionsRequest.h>
+#include <aws/sns/model/GetSMSAttributesRequest.h>
+#include <aws/sns/model/ListPlatformApplicationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SNSClient header */
 
@@ -83,7 +91,7 @@ namespace Aws
 
   namespace SNS
   {
-    using SNSClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SNSClientConfiguration = Aws::Client::GenericClientConfiguration;
     using SNSEndpointProviderBase = Aws::SNS::Endpoint::SNSEndpointProviderBase;
     using SNSEndpointProvider = Aws::SNS::Endpoint::SNSEndpointProvider;
 

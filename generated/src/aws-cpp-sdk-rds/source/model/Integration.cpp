@@ -31,22 +31,14 @@ Integration::Integration() :
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+    m_errorsHasBeenSet(false),
+    m_dataFilterHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
-Integration::Integration(const XmlNode& xmlNode) : 
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_integrationNameHasBeenSet(false),
-    m_integrationArnHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_status(IntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_errorsHasBeenSet(false)
+Integration::Integration(const XmlNode& xmlNode)
+  : Integration()
 {
   *this = xmlNode;
 }
@@ -139,6 +131,18 @@ Integration& Integration::operator =(const XmlNode& xmlNode)
 
       m_errorsHasBeenSet = true;
     }
+    XmlNode dataFilterNode = resultNode.FirstChild("DataFilter");
+    if(!dataFilterNode.IsNull())
+    {
+      m_dataFilter = Aws::Utils::Xml::DecodeEscapedXmlText(dataFilterNode.GetText());
+      m_dataFilterHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
+      m_descriptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -216,6 +220,16 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
+  if(m_dataFilterHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataFilter=" << StringUtils::URLEncode(m_dataFilter.c_str()) << "&";
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -283,6 +297,14 @@ void Integration::OutputToStream(Aws::OStream& oStream, const char* location) co
         errorsSs << location <<  ".IntegrationError." << errorsIdx++;
         item.OutputToStream(oStream, errorsSs.str().c_str());
       }
+  }
+  if(m_dataFilterHasBeenSet)
+  {
+      oStream << location << ".DataFilter=" << StringUtils::URLEncode(m_dataFilter.c_str()) << "&";
+  }
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

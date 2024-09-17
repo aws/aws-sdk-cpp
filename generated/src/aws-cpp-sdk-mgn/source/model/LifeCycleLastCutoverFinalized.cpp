@@ -23,8 +23,8 @@ LifeCycleLastCutoverFinalized::LifeCycleLastCutoverFinalized() :
 {
 }
 
-LifeCycleLastCutoverFinalized::LifeCycleLastCutoverFinalized(JsonView jsonValue) : 
-    m_apiCallDateTimeHasBeenSet(false)
+LifeCycleLastCutoverFinalized::LifeCycleLastCutoverFinalized(JsonView jsonValue)
+  : LifeCycleLastCutoverFinalized()
 {
   *this = jsonValue;
 }

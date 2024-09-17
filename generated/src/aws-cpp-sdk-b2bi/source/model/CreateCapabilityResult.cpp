@@ -22,8 +22,8 @@ CreateCapabilityResult::CreateCapabilityResult() :
 {
 }
 
-CreateCapabilityResult::CreateCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(CapabilityType::NOT_SET)
+CreateCapabilityResult::CreateCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateCapabilityResult()
 {
   *this = result;
 }

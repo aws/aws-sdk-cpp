@@ -24,9 +24,8 @@ CustomHTTPHeader::CustomHTTPHeader() :
 {
 }
 
-CustomHTTPHeader::CustomHTTPHeader(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+CustomHTTPHeader::CustomHTTPHeader(JsonView jsonValue)
+  : CustomHTTPHeader()
 {
   *this = jsonValue;
 }

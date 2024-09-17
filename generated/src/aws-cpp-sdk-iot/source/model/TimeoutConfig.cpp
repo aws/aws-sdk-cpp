@@ -24,9 +24,8 @@ TimeoutConfig::TimeoutConfig() :
 {
 }
 
-TimeoutConfig::TimeoutConfig(JsonView jsonValue) : 
-    m_inProgressTimeoutInMinutes(0),
-    m_inProgressTimeoutInMinutesHasBeenSet(false)
+TimeoutConfig::TimeoutConfig(JsonView jsonValue)
+  : TimeoutConfig()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ PredictorExecution::PredictorExecution() :
 {
 }
 
-PredictorExecution::PredictorExecution(JsonView jsonValue) : 
-    m_algorithmArnHasBeenSet(false),
-    m_testWindowsHasBeenSet(false)
+PredictorExecution::PredictorExecution(JsonView jsonValue)
+  : PredictorExecution()
 {
   *this = jsonValue;
 }

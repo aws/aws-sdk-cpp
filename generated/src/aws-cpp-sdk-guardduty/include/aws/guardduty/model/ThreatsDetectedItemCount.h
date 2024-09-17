@@ -35,26 +35,15 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Total number of infected files.</p>
      */
     inline int GetFiles() const{ return m_files; }
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline void SetFiles(int value) { m_filesHasBeenSet = true; m_files = value; }
-
-    /**
-     * <p>Total number of infected files.</p>
-     */
     inline ThreatsDetectedItemCount& WithFiles(int value) { SetFiles(value); return *this;}
-
+    ///@}
   private:
 
     int m_files;

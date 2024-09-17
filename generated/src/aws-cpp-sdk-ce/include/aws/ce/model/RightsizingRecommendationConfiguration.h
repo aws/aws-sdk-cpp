@@ -42,73 +42,30 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The option to see recommendations within the same instance family or
      * recommendations for instances across other families. The default value is
      * <code>SAME_INSTANCE_FAMILY</code>. </p>
      */
     inline const RecommendationTarget& GetRecommendationTarget() const{ return m_recommendationTarget; }
-
-    /**
-     * <p>The option to see recommendations within the same instance family or
-     * recommendations for instances across other families. The default value is
-     * <code>SAME_INSTANCE_FAMILY</code>. </p>
-     */
     inline bool RecommendationTargetHasBeenSet() const { return m_recommendationTargetHasBeenSet; }
-
-    /**
-     * <p>The option to see recommendations within the same instance family or
-     * recommendations for instances across other families. The default value is
-     * <code>SAME_INSTANCE_FAMILY</code>. </p>
-     */
     inline void SetRecommendationTarget(const RecommendationTarget& value) { m_recommendationTargetHasBeenSet = true; m_recommendationTarget = value; }
-
-    /**
-     * <p>The option to see recommendations within the same instance family or
-     * recommendations for instances across other families. The default value is
-     * <code>SAME_INSTANCE_FAMILY</code>. </p>
-     */
     inline void SetRecommendationTarget(RecommendationTarget&& value) { m_recommendationTargetHasBeenSet = true; m_recommendationTarget = std::move(value); }
-
-    /**
-     * <p>The option to see recommendations within the same instance family or
-     * recommendations for instances across other families. The default value is
-     * <code>SAME_INSTANCE_FAMILY</code>. </p>
-     */
     inline RightsizingRecommendationConfiguration& WithRecommendationTarget(const RecommendationTarget& value) { SetRecommendationTarget(value); return *this;}
-
-    /**
-     * <p>The option to see recommendations within the same instance family or
-     * recommendations for instances across other families. The default value is
-     * <code>SAME_INSTANCE_FAMILY</code>. </p>
-     */
     inline RightsizingRecommendationConfiguration& WithRecommendationTarget(RecommendationTarget&& value) { SetRecommendationTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The option to consider RI or Savings Plans discount benefits in your savings
      * calculation. The default value is <code>TRUE</code>. </p>
      */
     inline bool GetBenefitsConsidered() const{ return m_benefitsConsidered; }
-
-    /**
-     * <p>The option to consider RI or Savings Plans discount benefits in your savings
-     * calculation. The default value is <code>TRUE</code>. </p>
-     */
     inline bool BenefitsConsideredHasBeenSet() const { return m_benefitsConsideredHasBeenSet; }
-
-    /**
-     * <p>The option to consider RI or Savings Plans discount benefits in your savings
-     * calculation. The default value is <code>TRUE</code>. </p>
-     */
     inline void SetBenefitsConsidered(bool value) { m_benefitsConsideredHasBeenSet = true; m_benefitsConsidered = value; }
-
-    /**
-     * <p>The option to consider RI or Savings Plans discount benefits in your savings
-     * calculation. The default value is <code>TRUE</code>. </p>
-     */
     inline RightsizingRecommendationConfiguration& WithBenefitsConsidered(bool value) { SetBenefitsConsidered(value); return *this;}
-
+    ///@}
   private:
 
     RecommendationTarget m_recommendationTarget;

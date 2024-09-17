@@ -26,9 +26,8 @@ ClusterSecurityGroupMembership::ClusterSecurityGroupMembership() :
 {
 }
 
-ClusterSecurityGroupMembership::ClusterSecurityGroupMembership(const XmlNode& xmlNode) : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+ClusterSecurityGroupMembership::ClusterSecurityGroupMembership(const XmlNode& xmlNode)
+  : ClusterSecurityGroupMembership()
 {
   *this = xmlNode;
 }

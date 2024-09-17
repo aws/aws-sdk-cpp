@@ -32,17 +32,8 @@ TransformJobDefinition::TransformJobDefinition() :
 {
 }
 
-TransformJobDefinition::TransformJobDefinition(JsonView jsonValue) : 
-    m_maxConcurrentTransforms(0),
-    m_maxConcurrentTransformsHasBeenSet(false),
-    m_maxPayloadInMB(0),
-    m_maxPayloadInMBHasBeenSet(false),
-    m_batchStrategy(BatchStrategy::NOT_SET),
-    m_batchStrategyHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_transformInputHasBeenSet(false),
-    m_transformOutputHasBeenSet(false),
-    m_transformResourcesHasBeenSet(false)
+TransformJobDefinition::TransformJobDefinition(JsonView jsonValue)
+  : TransformJobDefinition()
 {
   *this = jsonValue;
 }

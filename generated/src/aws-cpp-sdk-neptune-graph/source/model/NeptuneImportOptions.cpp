@@ -28,13 +28,8 @@ NeptuneImportOptions::NeptuneImportOptions() :
 {
 }
 
-NeptuneImportOptions::NeptuneImportOptions(JsonView jsonValue) : 
-    m_s3ExportPathHasBeenSet(false),
-    m_s3ExportKmsKeyIdHasBeenSet(false),
-    m_preserveDefaultVertexLabels(false),
-    m_preserveDefaultVertexLabelsHasBeenSet(false),
-    m_preserveEdgeIds(false),
-    m_preserveEdgeIdsHasBeenSet(false)
+NeptuneImportOptions::NeptuneImportOptions(JsonView jsonValue)
+  : NeptuneImportOptions()
 {
   *this = jsonValue;
 }

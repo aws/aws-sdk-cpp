@@ -24,9 +24,8 @@ PostLaunchActionsStatus::PostLaunchActionsStatus() :
 {
 }
 
-PostLaunchActionsStatus::PostLaunchActionsStatus(JsonView jsonValue) : 
-    m_postLaunchActionsLaunchStatusListHasBeenSet(false),
-    m_ssmAgentDiscoveryDatetimeHasBeenSet(false)
+PostLaunchActionsStatus::PostLaunchActionsStatus(JsonView jsonValue)
+  : PostLaunchActionsStatus()
 {
   *this = jsonValue;
 }

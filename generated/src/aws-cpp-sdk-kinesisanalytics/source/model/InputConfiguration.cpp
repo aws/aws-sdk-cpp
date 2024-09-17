@@ -24,9 +24,8 @@ InputConfiguration::InputConfiguration() :
 {
 }
 
-InputConfiguration::InputConfiguration(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_inputStartingPositionConfigurationHasBeenSet(false)
+InputConfiguration::InputConfiguration(JsonView jsonValue)
+  : InputConfiguration()
 {
   *this = jsonValue;
 }

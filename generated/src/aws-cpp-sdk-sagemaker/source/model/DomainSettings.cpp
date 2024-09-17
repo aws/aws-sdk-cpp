@@ -23,16 +23,13 @@ DomainSettings::DomainSettings() :
     m_rStudioServerProDomainSettingsHasBeenSet(false),
     m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
     m_executionRoleIdentityConfigHasBeenSet(false),
-    m_dockerSettingsHasBeenSet(false)
+    m_dockerSettingsHasBeenSet(false),
+    m_amazonQSettingsHasBeenSet(false)
 {
 }
 
-DomainSettings::DomainSettings(JsonView jsonValue) : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_rStudioServerProDomainSettingsHasBeenSet(false),
-    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
-    m_executionRoleIdentityConfigHasBeenSet(false),
-    m_dockerSettingsHasBeenSet(false)
+DomainSettings::DomainSettings(JsonView jsonValue)
+  : DomainSettings()
 {
   *this = jsonValue;
 }
@@ -70,6 +67,13 @@ DomainSettings& DomainSettings::operator =(JsonView jsonValue)
     m_dockerSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmazonQSettings"))
+  {
+    m_amazonQSettings = jsonValue.GetObject("AmazonQSettings");
+
+    m_amazonQSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +106,12 @@ JsonValue DomainSettings::Jsonize() const
   if(m_dockerSettingsHasBeenSet)
   {
    payload.WithObject("DockerSettings", m_dockerSettings.Jsonize());
+
+  }
+
+  if(m_amazonQSettingsHasBeenSet)
+  {
+   payload.WithObject("AmazonQSettings", m_amazonQSettings.Jsonize());
 
   }
 

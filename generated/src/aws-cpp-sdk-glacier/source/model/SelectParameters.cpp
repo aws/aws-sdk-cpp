@@ -27,12 +27,8 @@ SelectParameters::SelectParameters() :
 {
 }
 
-SelectParameters::SelectParameters(JsonView jsonValue) : 
-    m_inputSerializationHasBeenSet(false),
-    m_expressionType(ExpressionType::NOT_SET),
-    m_expressionTypeHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_outputSerializationHasBeenSet(false)
+SelectParameters::SelectParameters(JsonView jsonValue)
+  : SelectParameters()
 {
   *this = jsonValue;
 }

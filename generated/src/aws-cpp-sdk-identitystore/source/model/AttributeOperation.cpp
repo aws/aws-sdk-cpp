@@ -24,9 +24,8 @@ AttributeOperation::AttributeOperation() :
 {
 }
 
-AttributeOperation::AttributeOperation(JsonView jsonValue) : 
-    m_attributePathHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
+AttributeOperation::AttributeOperation(JsonView jsonValue)
+  : AttributeOperation()
 {
   *this = jsonValue;
 }

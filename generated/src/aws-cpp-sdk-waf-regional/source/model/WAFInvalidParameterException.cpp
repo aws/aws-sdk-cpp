@@ -27,12 +27,8 @@ WAFInvalidParameterException::WAFInvalidParameterException() :
 {
 }
 
-WAFInvalidParameterException::WAFInvalidParameterException(JsonView jsonValue) : 
-    m_field(ParameterExceptionField::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_parameterHasBeenSet(false),
-    m_reason(ParameterExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+WAFInvalidParameterException::WAFInvalidParameterException(JsonView jsonValue)
+  : WAFInvalidParameterException()
 {
   *this = jsonValue;
 }

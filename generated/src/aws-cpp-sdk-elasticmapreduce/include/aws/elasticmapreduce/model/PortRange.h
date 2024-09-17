@@ -37,47 +37,25 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The smallest port number in a specified range of port numbers.</p>
      */
     inline int GetMinRange() const{ return m_minRange; }
-
-    /**
-     * <p>The smallest port number in a specified range of port numbers.</p>
-     */
     inline bool MinRangeHasBeenSet() const { return m_minRangeHasBeenSet; }
-
-    /**
-     * <p>The smallest port number in a specified range of port numbers.</p>
-     */
     inline void SetMinRange(int value) { m_minRangeHasBeenSet = true; m_minRange = value; }
-
-    /**
-     * <p>The smallest port number in a specified range of port numbers.</p>
-     */
     inline PortRange& WithMinRange(int value) { SetMinRange(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The smallest port number in a specified range of port numbers.</p>
      */
     inline int GetMaxRange() const{ return m_maxRange; }
-
-    /**
-     * <p>The smallest port number in a specified range of port numbers.</p>
-     */
     inline bool MaxRangeHasBeenSet() const { return m_maxRangeHasBeenSet; }
-
-    /**
-     * <p>The smallest port number in a specified range of port numbers.</p>
-     */
     inline void SetMaxRange(int value) { m_maxRangeHasBeenSet = true; m_maxRange = value; }
-
-    /**
-     * <p>The smallest port number in a specified range of port numbers.</p>
-     */
     inline PortRange& WithMaxRange(int value) { SetMaxRange(value); return *this;}
-
+    ///@}
   private:
 
     int m_minRange;

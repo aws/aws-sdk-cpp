@@ -25,10 +25,8 @@ Coverage::Coverage() :
 {
 }
 
-Coverage::Coverage(JsonView jsonValue) : 
-    m_coverageHoursHasBeenSet(false),
-    m_coverageNormalizedUnitsHasBeenSet(false),
-    m_coverageCostHasBeenSet(false)
+Coverage::Coverage(JsonView jsonValue)
+  : Coverage()
 {
   *this = jsonValue;
 }

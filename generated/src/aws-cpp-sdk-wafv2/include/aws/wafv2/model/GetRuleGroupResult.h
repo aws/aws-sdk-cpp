@@ -33,32 +33,18 @@ namespace Model
     AWS_WAFV2_API GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const RuleGroup& GetRuleGroup() const{ return m_ruleGroup; }
-
-    /**
-     * <p/>
-     */
     inline void SetRuleGroup(const RuleGroup& value) { m_ruleGroup = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetRuleGroup(RuleGroup&& value) { m_ruleGroup = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline GetRuleGroupResult& WithRuleGroup(const RuleGroup& value) { SetRuleGroup(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetRuleGroupResult& WithRuleGroup(RuleGroup&& value) { SetRuleGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token used for optimistic locking. WAF returns a token to your
      * <code>get</code> and <code>list</code> requests, to mark the state of the entity
@@ -70,101 +56,24 @@ namespace Model
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline const Aws::String& GetLockToken() const{ return m_lockToken; }
-
-    /**
-     * <p>A token used for optimistic locking. WAF returns a token to your
-     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
-     * at the time of the request. To make changes to the entity associated with the
-     * token, you provide the token to operations like <code>update</code> and
-     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
-     * to the entity since you last retrieved it. If a change has been made, the update
-     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
-     * another <code>get</code>, and use the new token returned by that operation. </p>
-     */
     inline void SetLockToken(const Aws::String& value) { m_lockToken = value; }
-
-    /**
-     * <p>A token used for optimistic locking. WAF returns a token to your
-     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
-     * at the time of the request. To make changes to the entity associated with the
-     * token, you provide the token to operations like <code>update</code> and
-     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
-     * to the entity since you last retrieved it. If a change has been made, the update
-     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
-     * another <code>get</code>, and use the new token returned by that operation. </p>
-     */
     inline void SetLockToken(Aws::String&& value) { m_lockToken = std::move(value); }
-
-    /**
-     * <p>A token used for optimistic locking. WAF returns a token to your
-     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
-     * at the time of the request. To make changes to the entity associated with the
-     * token, you provide the token to operations like <code>update</code> and
-     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
-     * to the entity since you last retrieved it. If a change has been made, the update
-     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
-     * another <code>get</code>, and use the new token returned by that operation. </p>
-     */
     inline void SetLockToken(const char* value) { m_lockToken.assign(value); }
-
-    /**
-     * <p>A token used for optimistic locking. WAF returns a token to your
-     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
-     * at the time of the request. To make changes to the entity associated with the
-     * token, you provide the token to operations like <code>update</code> and
-     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
-     * to the entity since you last retrieved it. If a change has been made, the update
-     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
-     * another <code>get</code>, and use the new token returned by that operation. </p>
-     */
     inline GetRuleGroupResult& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-
-    /**
-     * <p>A token used for optimistic locking. WAF returns a token to your
-     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
-     * at the time of the request. To make changes to the entity associated with the
-     * token, you provide the token to operations like <code>update</code> and
-     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
-     * to the entity since you last retrieved it. If a change has been made, the update
-     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
-     * another <code>get</code>, and use the new token returned by that operation. </p>
-     */
     inline GetRuleGroupResult& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token used for optimistic locking. WAF returns a token to your
-     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
-     * at the time of the request. To make changes to the entity associated with the
-     * token, you provide the token to operations like <code>update</code> and
-     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
-     * to the entity since you last retrieved it. If a change has been made, the update
-     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
-     * another <code>get</code>, and use the new token returned by that operation. </p>
-     */
     inline GetRuleGroupResult& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RuleGroup m_ruleGroup;

@@ -24,9 +24,8 @@ GetSolNetworkInstanceMetadata::GetSolNetworkInstanceMetadata() :
 {
 }
 
-GetSolNetworkInstanceMetadata::GetSolNetworkInstanceMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+GetSolNetworkInstanceMetadata::GetSolNetworkInstanceMetadata(JsonView jsonValue)
+  : GetSolNetworkInstanceMetadata()
 {
   *this = jsonValue;
 }

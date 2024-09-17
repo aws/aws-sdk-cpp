@@ -22,8 +22,8 @@ RemoveTargetsResult::RemoveTargetsResult() :
 {
 }
 
-RemoveTargetsResult::RemoveTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_failedEntryCount(0)
+RemoveTargetsResult::RemoveTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RemoveTargetsResult()
 {
   *this = result;
 }

@@ -24,9 +24,8 @@ ResourceDescription::ResourceDescription() :
 {
 }
 
-ResourceDescription::ResourceDescription(JsonView jsonValue) : 
-    m_identifierHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+ResourceDescription::ResourceDescription(JsonView jsonValue)
+  : ResourceDescription()
 {
   *this = jsonValue;
 }

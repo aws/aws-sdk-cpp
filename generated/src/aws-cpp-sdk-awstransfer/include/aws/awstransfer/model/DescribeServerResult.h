@@ -33,58 +33,28 @@ namespace Model
     AWS_TRANSFER_API DescribeServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array containing the properties of a server with the <code>ServerID</code>
      * you specified.</p>
      */
     inline const DescribedServer& GetServer() const{ return m_server; }
-
-    /**
-     * <p>An array containing the properties of a server with the <code>ServerID</code>
-     * you specified.</p>
-     */
     inline void SetServer(const DescribedServer& value) { m_server = value; }
-
-    /**
-     * <p>An array containing the properties of a server with the <code>ServerID</code>
-     * you specified.</p>
-     */
     inline void SetServer(DescribedServer&& value) { m_server = std::move(value); }
-
-    /**
-     * <p>An array containing the properties of a server with the <code>ServerID</code>
-     * you specified.</p>
-     */
     inline DescribeServerResult& WithServer(const DescribedServer& value) { SetServer(value); return *this;}
-
-    /**
-     * <p>An array containing the properties of a server with the <code>ServerID</code>
-     * you specified.</p>
-     */
     inline DescribeServerResult& WithServer(DescribedServer&& value) { SetServer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DescribedServer m_server;

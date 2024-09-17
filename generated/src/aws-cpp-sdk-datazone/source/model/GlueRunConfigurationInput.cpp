@@ -19,20 +19,28 @@ namespace Model
 {
 
 GlueRunConfigurationInput::GlueRunConfigurationInput() : 
+    m_autoImportDataQualityResult(false),
+    m_autoImportDataQualityResultHasBeenSet(false),
     m_dataAccessRoleHasBeenSet(false),
     m_relationalFilterConfigurationsHasBeenSet(false)
 {
 }
 
-GlueRunConfigurationInput::GlueRunConfigurationInput(JsonView jsonValue) : 
-    m_dataAccessRoleHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
+GlueRunConfigurationInput::GlueRunConfigurationInput(JsonView jsonValue)
+  : GlueRunConfigurationInput()
 {
   *this = jsonValue;
 }
 
 GlueRunConfigurationInput& GlueRunConfigurationInput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("autoImportDataQualityResult"))
+  {
+    m_autoImportDataQualityResult = jsonValue.GetBool("autoImportDataQualityResult");
+
+    m_autoImportDataQualityResultHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("dataAccessRole"))
   {
     m_dataAccessRole = jsonValue.GetString("dataAccessRole");
@@ -56,6 +64,12 @@ GlueRunConfigurationInput& GlueRunConfigurationInput::operator =(JsonView jsonVa
 JsonValue GlueRunConfigurationInput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_autoImportDataQualityResultHasBeenSet)
+  {
+   payload.WithBool("autoImportDataQualityResult", m_autoImportDataQualityResult);
+
+  }
 
   if(m_dataAccessRoleHasBeenSet)
   {

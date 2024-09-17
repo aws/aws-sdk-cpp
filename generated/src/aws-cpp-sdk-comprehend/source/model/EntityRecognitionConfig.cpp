@@ -23,8 +23,8 @@ EntityRecognitionConfig::EntityRecognitionConfig() :
 {
 }
 
-EntityRecognitionConfig::EntityRecognitionConfig(JsonView jsonValue) : 
-    m_entityTypesHasBeenSet(false)
+EntityRecognitionConfig::EntityRecognitionConfig(JsonView jsonValue)
+  : EntityRecognitionConfig()
 {
   *this = jsonValue;
 }

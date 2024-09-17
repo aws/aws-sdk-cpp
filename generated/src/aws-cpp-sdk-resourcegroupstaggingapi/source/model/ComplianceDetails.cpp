@@ -26,11 +26,8 @@ ComplianceDetails::ComplianceDetails() :
 {
 }
 
-ComplianceDetails::ComplianceDetails(JsonView jsonValue) : 
-    m_noncompliantKeysHasBeenSet(false),
-    m_keysWithNoncompliantValuesHasBeenSet(false),
-    m_complianceStatus(false),
-    m_complianceStatusHasBeenSet(false)
+ComplianceDetails::ComplianceDetails(JsonView jsonValue)
+  : ComplianceDetails()
 {
   *this = jsonValue;
 }

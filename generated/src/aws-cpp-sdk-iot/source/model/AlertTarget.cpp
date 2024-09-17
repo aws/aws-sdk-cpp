@@ -24,9 +24,8 @@ AlertTarget::AlertTarget() :
 {
 }
 
-AlertTarget::AlertTarget(JsonView jsonValue) : 
-    m_alertTargetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+AlertTarget::AlertTarget(JsonView jsonValue)
+  : AlertTarget()
 {
   *this = jsonValue;
 }

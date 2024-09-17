@@ -39,24 +39,8 @@ ProxySession::ProxySession() :
 {
 }
 
-ProxySession::ProxySession(JsonView jsonValue) : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_proxySessionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ProxySessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_expiryMinutes(0),
-    m_expiryMinutesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_endedTimestampHasBeenSet(false),
-    m_participantsHasBeenSet(false),
-    m_numberSelectionBehavior(NumberSelectionBehavior::NOT_SET),
-    m_numberSelectionBehaviorHasBeenSet(false),
-    m_geoMatchLevel(GeoMatchLevel::NOT_SET),
-    m_geoMatchLevelHasBeenSet(false),
-    m_geoMatchParamsHasBeenSet(false)
+ProxySession::ProxySession(JsonView jsonValue)
+  : ProxySession()
 {
   *this = jsonValue;
 }

@@ -29,7 +29,7 @@ aws configure set aws_secret_access_key $(echo "$sts" | jq -r '.[1]') --profile 
 aws configure set aws_session_token $(echo "$sts" | jq -r '.[2]') --profile "$profile"
 aws configure list --profile "$profile"
 export AWS_PROFILE=$profile
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/:${PREFIX_DIR}/al2-build/tests/testing-resources/"
 cd "${PREFIX_DIR}/al2-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
 python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./tests

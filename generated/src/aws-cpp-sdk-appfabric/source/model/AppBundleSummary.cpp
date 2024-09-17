@@ -23,8 +23,8 @@ AppBundleSummary::AppBundleSummary() :
 {
 }
 
-AppBundleSummary::AppBundleSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false)
+AppBundleSummary::AppBundleSummary(JsonView jsonValue)
+  : AppBundleSummary()
 {
   *this = jsonValue;
 }

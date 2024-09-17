@@ -24,9 +24,8 @@ IPSetReferenceStatement::IPSetReferenceStatement() :
 {
 }
 
-IPSetReferenceStatement::IPSetReferenceStatement(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false),
-    m_iPSetForwardedIPConfigHasBeenSet(false)
+IPSetReferenceStatement::IPSetReferenceStatement(JsonView jsonValue)
+  : IPSetReferenceStatement()
 {
   *this = jsonValue;
 }

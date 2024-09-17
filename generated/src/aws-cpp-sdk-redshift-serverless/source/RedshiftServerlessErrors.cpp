@@ -51,6 +51,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
+static const int IPV6_CIDR_BLOCK_NOT_FOUND_HASH = HashingUtils::HashString("Ipv6CidrBlockNotFoundException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_PAGINATION_HASH = HashingUtils::HashString("InvalidPaginationException");
 
@@ -74,6 +75,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INSUFFICIENT_CAPACITY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INSUFFICIENT_CAPACITY), RetryableType::RETRYABLE);
+  }
+  else if (hashCode == IPV6_CIDR_BLOCK_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::IPV6_CIDR_BLOCK_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {

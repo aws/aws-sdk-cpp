@@ -24,9 +24,8 @@ GrpcGatewayRouteAction::GrpcGatewayRouteAction() :
 {
 }
 
-GrpcGatewayRouteAction::GrpcGatewayRouteAction(JsonView jsonValue) : 
-    m_rewriteHasBeenSet(false),
-    m_targetHasBeenSet(false)
+GrpcGatewayRouteAction::GrpcGatewayRouteAction(JsonView jsonValue)
+  : GrpcGatewayRouteAction()
 {
   *this = jsonValue;
 }

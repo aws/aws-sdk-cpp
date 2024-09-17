@@ -20,17 +20,14 @@ namespace Model
 
 BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError() : 
     m_channelArnHasBeenSet(false),
+    m_viewerIdHasBeenSet(false),
     m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_viewerIdHasBeenSet(false)
+    m_messageHasBeenSet(false)
 {
 }
 
-BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError(JsonView jsonValue) : 
-    m_channelArnHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_viewerIdHasBeenSet(false)
+BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError(JsonView jsonValue)
+  : BatchStartViewerSessionRevocationError()
 {
   *this = jsonValue;
 }
@@ -42,6 +39,13 @@ BatchStartViewerSessionRevocationError& BatchStartViewerSessionRevocationError::
     m_channelArn = jsonValue.GetString("channelArn");
 
     m_channelArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("viewerId"))
+  {
+    m_viewerId = jsonValue.GetString("viewerId");
+
+    m_viewerIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("code"))
@@ -58,13 +62,6 @@ BatchStartViewerSessionRevocationError& BatchStartViewerSessionRevocationError::
     m_messageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("viewerId"))
-  {
-    m_viewerId = jsonValue.GetString("viewerId");
-
-    m_viewerIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -78,6 +75,12 @@ JsonValue BatchStartViewerSessionRevocationError::Jsonize() const
 
   }
 
+  if(m_viewerIdHasBeenSet)
+  {
+   payload.WithString("viewerId", m_viewerId);
+
+  }
+
   if(m_codeHasBeenSet)
   {
    payload.WithString("code", m_code);
@@ -87,12 +90,6 @@ JsonValue BatchStartViewerSessionRevocationError::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
-
-  }
-
-  if(m_viewerIdHasBeenSet)
-  {
-   payload.WithString("viewerId", m_viewerId);
 
   }
 

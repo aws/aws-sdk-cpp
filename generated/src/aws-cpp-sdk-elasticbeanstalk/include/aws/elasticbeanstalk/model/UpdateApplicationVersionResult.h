@@ -39,47 +39,25 @@ namespace Model
     AWS_ELASTICBEANSTALK_API UpdateApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
      */
     inline const ApplicationVersionDescription& GetApplicationVersion() const{ return m_applicationVersion; }
-
-    /**
-     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-     */
     inline void SetApplicationVersion(const ApplicationVersionDescription& value) { m_applicationVersion = value; }
-
-    /**
-     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-     */
     inline void SetApplicationVersion(ApplicationVersionDescription&& value) { m_applicationVersion = std::move(value); }
-
-    /**
-     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-     */
     inline UpdateApplicationVersionResult& WithApplicationVersion(const ApplicationVersionDescription& value) { SetApplicationVersion(value); return *this;}
-
-    /**
-     * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
-     */
     inline UpdateApplicationVersionResult& WithApplicationVersion(ApplicationVersionDescription&& value) { SetApplicationVersion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UpdateApplicationVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UpdateApplicationVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApplicationVersionDescription m_applicationVersion;

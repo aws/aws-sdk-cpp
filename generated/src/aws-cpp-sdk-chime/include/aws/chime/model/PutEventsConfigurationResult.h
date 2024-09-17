@@ -33,58 +33,28 @@ namespace Model
     AWS_CHIME_API PutEventsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The configuration that allows a bot to receive outgoing events. Can be an
      * HTTPS endpoint or an AWS Lambda function ARN.</p>
      */
     inline const EventsConfiguration& GetEventsConfiguration() const{ return m_eventsConfiguration; }
-
-    /**
-     * <p>The configuration that allows a bot to receive outgoing events. Can be an
-     * HTTPS endpoint or an AWS Lambda function ARN.</p>
-     */
     inline void SetEventsConfiguration(const EventsConfiguration& value) { m_eventsConfiguration = value; }
-
-    /**
-     * <p>The configuration that allows a bot to receive outgoing events. Can be an
-     * HTTPS endpoint or an AWS Lambda function ARN.</p>
-     */
     inline void SetEventsConfiguration(EventsConfiguration&& value) { m_eventsConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration that allows a bot to receive outgoing events. Can be an
-     * HTTPS endpoint or an AWS Lambda function ARN.</p>
-     */
     inline PutEventsConfigurationResult& WithEventsConfiguration(const EventsConfiguration& value) { SetEventsConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration that allows a bot to receive outgoing events. Can be an
-     * HTTPS endpoint or an AWS Lambda function ARN.</p>
-     */
     inline PutEventsConfigurationResult& WithEventsConfiguration(EventsConfiguration&& value) { SetEventsConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutEventsConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutEventsConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutEventsConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EventsConfiguration m_eventsConfiguration;

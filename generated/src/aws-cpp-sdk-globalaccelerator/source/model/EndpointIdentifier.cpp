@@ -25,10 +25,8 @@ EndpointIdentifier::EndpointIdentifier() :
 {
 }
 
-EndpointIdentifier::EndpointIdentifier(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false),
-    m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false)
+EndpointIdentifier::EndpointIdentifier(JsonView jsonValue)
+  : EndpointIdentifier()
 {
   *this = jsonValue;
 }

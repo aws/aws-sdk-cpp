@@ -25,8 +25,28 @@ namespace Model
 {
 
   /**
-   * <p>The severity assigned to the finding by the finding provider.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The severity assigned to a finding by the finding provider. This object may
+   * include one or more of the following attributes:</p> <ul> <li> <p>
+   * <code>Label</code> </p> </li> <li> <p> <code>Normalized</code> </p> </li> <li>
+   * <p> <code>Original</code> </p> </li> <li> <p> <code>Product</code> </p> </li>
+   * </ul> <p>If a <a
+   * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
+   * <code>BatchImportFindings</code> </a> request for a new finding only provides
+   * <code>Label</code> or only provides <code>Normalized</code>, Security Hub
+   * automatically populates the value of the other field.</p> <p>The
+   * <code>Normalized</code> and <code>Product</code> attributes are included in the
+   * <code>FindingProviderSeverity</code> structure to preserve the historical
+   * information associated with the finding, even if the top-level
+   * <code>Severity</code> object is later modified using the <a
+   * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
+   * <code>BatchUpdateFindings</code> </a> operation.</p> <p>If the top-level
+   * <code>Finding.Severity</code> object is present, but
+   * <code>Finding.FindingProviderFields</code> isn't present, Security Hub creates
+   * the <code>FindingProviderFields.Severity</code> object and copies the entire
+   * <code>Finding.Severity</code> object into it. This ensures that the original,
+   * provider-supplied details are retained within the
+   * <code>FindingProviderFields.Severity</code> object, even if the top-level
+   * <code>Severity</code> object is overwritten. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FindingProviderSeverity">AWS
    * API Reference</a></p>
    */
@@ -39,77 +59,32 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The severity label assigned to the finding by the finding provider.</p>
      */
     inline const SeverityLabel& GetLabel() const{ return m_label; }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline void SetLabel(const SeverityLabel& value) { m_labelHasBeenSet = true; m_label = value; }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline void SetLabel(SeverityLabel&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline FindingProviderSeverity& WithLabel(const SeverityLabel& value) { SetLabel(value); return *this;}
-
-    /**
-     * <p>The severity label assigned to the finding by the finding provider.</p>
-     */
     inline FindingProviderSeverity& WithLabel(SeverityLabel&& value) { SetLabel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline const Aws::String& GetOriginal() const{ return m_original; }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p>
-     */
     inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p>
-     */
     inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p>
-     */
     inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p>
-     */
     inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
-
-    /**
-     * <p>The finding provider's original value for the severity.</p>
-     */
     inline FindingProviderSeverity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
-
-    /**
-     * <p>The finding provider's original value for the severity.</p>
-     */
     inline FindingProviderSeverity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
-
-    /**
-     * <p>The finding provider's original value for the severity.</p>
-     */
     inline FindingProviderSeverity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
-
+    ///@}
   private:
 
     SeverityLabel m_label;

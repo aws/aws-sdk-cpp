@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 EnableKeyRotationRequest::EnableKeyRotationRequest() : 
-    m_keyIdHasBeenSet(false)
+    m_keyIdHasBeenSet(false),
+    m_rotationPeriodInDays(0),
+    m_rotationPeriodInDaysHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String EnableKeyRotationRequest::SerializePayload() const
   if(m_keyIdHasBeenSet)
   {
    payload.WithString("KeyId", m_keyId);
+
+  }
+
+  if(m_rotationPeriodInDaysHasBeenSet)
+  {
+   payload.WithInteger("RotationPeriodInDays", m_rotationPeriodInDays);
 
   }
 

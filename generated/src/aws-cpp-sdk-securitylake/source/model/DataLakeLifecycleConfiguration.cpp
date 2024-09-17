@@ -24,9 +24,8 @@ DataLakeLifecycleConfiguration::DataLakeLifecycleConfiguration() :
 {
 }
 
-DataLakeLifecycleConfiguration::DataLakeLifecycleConfiguration(JsonView jsonValue) : 
-    m_expirationHasBeenSet(false),
-    m_transitionsHasBeenSet(false)
+DataLakeLifecycleConfiguration::DataLakeLifecycleConfiguration(JsonView jsonValue)
+  : DataLakeLifecycleConfiguration()
 {
   *this = jsonValue;
 }

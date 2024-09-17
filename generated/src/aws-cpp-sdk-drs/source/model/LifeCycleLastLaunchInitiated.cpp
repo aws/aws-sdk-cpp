@@ -26,11 +26,8 @@ LifeCycleLastLaunchInitiated::LifeCycleLastLaunchInitiated() :
 {
 }
 
-LifeCycleLastLaunchInitiated::LifeCycleLastLaunchInitiated(JsonView jsonValue) : 
-    m_apiCallDateTimeHasBeenSet(false),
-    m_jobIDHasBeenSet(false),
-    m_type(LastLaunchType::NOT_SET),
-    m_typeHasBeenSet(false)
+LifeCycleLastLaunchInitiated::LifeCycleLastLaunchInitiated(JsonView jsonValue)
+  : LifeCycleLastLaunchInitiated()
 {
   *this = jsonValue;
 }

@@ -29,12 +29,8 @@ AnalysisLoadBalancerTarget::AnalysisLoadBalancerTarget() :
 {
 }
 
-AnalysisLoadBalancerTarget::AnalysisLoadBalancerTarget(const XmlNode& xmlNode) : 
-    m_addressHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
+AnalysisLoadBalancerTarget::AnalysisLoadBalancerTarget(const XmlNode& xmlNode)
+  : AnalysisLoadBalancerTarget()
 {
   *this = xmlNode;
 }

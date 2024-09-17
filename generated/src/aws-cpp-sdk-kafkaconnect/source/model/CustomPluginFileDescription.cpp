@@ -25,10 +25,8 @@ CustomPluginFileDescription::CustomPluginFileDescription() :
 {
 }
 
-CustomPluginFileDescription::CustomPluginFileDescription(JsonView jsonValue) : 
-    m_fileMd5HasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false)
+CustomPluginFileDescription::CustomPluginFileDescription(JsonView jsonValue)
+  : CustomPluginFileDescription()
 {
   *this = jsonValue;
 }

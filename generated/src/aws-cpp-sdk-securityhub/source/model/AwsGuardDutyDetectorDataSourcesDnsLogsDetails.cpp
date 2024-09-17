@@ -23,8 +23,8 @@ AwsGuardDutyDetectorDataSourcesDnsLogsDetails::AwsGuardDutyDetectorDataSourcesDn
 {
 }
 
-AwsGuardDutyDetectorDataSourcesDnsLogsDetails::AwsGuardDutyDetectorDataSourcesDnsLogsDetails(JsonView jsonValue) : 
-    m_statusHasBeenSet(false)
+AwsGuardDutyDetectorDataSourcesDnsLogsDetails::AwsGuardDutyDetectorDataSourcesDnsLogsDetails(JsonView jsonValue)
+  : AwsGuardDutyDetectorDataSourcesDnsLogsDetails()
 {
   *this = jsonValue;
 }

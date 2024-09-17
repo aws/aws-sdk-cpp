@@ -26,19 +26,13 @@ VirtualCluster::VirtualCluster() :
     m_stateHasBeenSet(false),
     m_containerProviderHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_securityConfigurationIdHasBeenSet(false)
 {
 }
 
-VirtualCluster::VirtualCluster(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_state(VirtualClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_containerProviderHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+VirtualCluster::VirtualCluster(JsonView jsonValue)
+  : VirtualCluster()
 {
   *this = jsonValue;
 }
@@ -97,6 +91,13 @@ VirtualCluster& VirtualCluster::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("securityConfigurationId"))
+  {
+    m_securityConfigurationId = jsonValue.GetString("securityConfigurationId");
+
+    m_securityConfigurationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +147,12 @@ JsonValue VirtualCluster::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_securityConfigurationIdHasBeenSet)
+  {
+   payload.WithString("securityConfigurationId", m_securityConfigurationId);
 
   }
 

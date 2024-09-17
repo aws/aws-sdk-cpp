@@ -25,10 +25,8 @@ ModelVersionEvaluation::ModelVersionEvaluation() :
 {
 }
 
-ModelVersionEvaluation::ModelVersionEvaluation(JsonView jsonValue) : 
-    m_outputVariableNameHasBeenSet(false),
-    m_evaluationScoreHasBeenSet(false),
-    m_predictionExplanationsHasBeenSet(false)
+ModelVersionEvaluation::ModelVersionEvaluation(JsonView jsonValue)
+  : ModelVersionEvaluation()
 {
   *this = jsonValue;
 }

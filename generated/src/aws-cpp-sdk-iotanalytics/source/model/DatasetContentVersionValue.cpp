@@ -23,8 +23,8 @@ DatasetContentVersionValue::DatasetContentVersionValue() :
 {
 }
 
-DatasetContentVersionValue::DatasetContentVersionValue(JsonView jsonValue) : 
-    m_datasetNameHasBeenSet(false)
+DatasetContentVersionValue::DatasetContentVersionValue(JsonView jsonValue)
+  : DatasetContentVersionValue()
 {
   *this = jsonValue;
 }

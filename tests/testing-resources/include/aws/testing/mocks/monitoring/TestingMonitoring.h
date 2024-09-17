@@ -18,21 +18,22 @@ struct TestingMonitoringMetrics
         static bool s_enablePayload;
     };
 
-    static Aws::String s_lastUriString;
-    static Aws::String s_lastSigningRegion;
-    static Aws::String s_lastSigningServiceName;
-    static Aws::String s_lastPayload;
-    static Aws::Map<Aws::String, Aws::String> s_lastRequestHeaders;
+    // Note: these must be std:: to avoid memory issues because they are used outside InitAPI {...} ShutdownAPI.
+    static std::string s_lastUriString;
+    static std::string s_lastSigningRegion;
+    static std::string s_lastSigningServiceName;
+    static std::string s_lastPayload;
+    static std::map<std::string, std::string> s_lastRequestHeaders;
 };
 
 bool TestingMonitoringMetrics::Config::s_enablePayload;
 
 std::mutex s_lastMutex;
-Aws::String TestingMonitoringMetrics::s_lastUriString;
-Aws::String TestingMonitoringMetrics::s_lastSigningRegion;
-Aws::String TestingMonitoringMetrics::s_lastSigningServiceName;
-Aws::String TestingMonitoringMetrics::s_lastPayload;
-Aws::Map<Aws::String, Aws::String> TestingMonitoringMetrics::s_lastRequestHeaders;
+std::string TestingMonitoringMetrics::s_lastUriString;
+std::string TestingMonitoringMetrics::s_lastSigningRegion;
+std::string TestingMonitoringMetrics::s_lastSigningServiceName;
+std::string TestingMonitoringMetrics::s_lastPayload;
+std::map<std::string, std::string> TestingMonitoringMetrics::s_lastRequestHeaders;
 
 class TestingMonitoring : public Aws::Monitoring::MonitoringInterface
 {

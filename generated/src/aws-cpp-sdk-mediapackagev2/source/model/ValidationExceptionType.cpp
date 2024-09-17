@@ -33,6 +33,7 @@ namespace Aws
         static const int ENCRYPTION_CONTRACT_SHARED_HASH = HashingUtils::HashString("ENCRYPTION_CONTRACT_SHARED");
         static const int NUM_MANIFESTS_LOW_HASH = HashingUtils::HashString("NUM_MANIFESTS_LOW");
         static const int NUM_MANIFESTS_HIGH_HASH = HashingUtils::HashString("NUM_MANIFESTS_HIGH");
+        static const int MANIFEST_DRM_SYSTEMS_INCOMPATIBLE_HASH = HashingUtils::HashString("MANIFEST_DRM_SYSTEMS_INCOMPATIBLE");
         static const int DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE_HASH = HashingUtils::HashString("DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE");
         static const int ROLE_ARN_NOT_ASSUMABLE_HASH = HashingUtils::HashString("ROLE_ARN_NOT_ASSUMABLE");
         static const int ROLE_ARN_LENGTH_OUT_OF_RANGE_HASH = HashingUtils::HashString("ROLE_ARN_LENGTH_OUT_OF_RANGE");
@@ -57,6 +58,15 @@ namespace Aws
         static const int INVALID_MANIFEST_FILTER_HASH = HashingUtils::HashString("INVALID_MANIFEST_FILTER");
         static const int INVALID_TIME_DELAY_SECONDS_HASH = HashingUtils::HashString("INVALID_TIME_DELAY_SECONDS");
         static const int END_TIME_EARLIER_THAN_START_TIME_HASH = HashingUtils::HashString("END_TIME_EARLIER_THAN_START_TIME");
+        static const int TS_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH = HashingUtils::HashString("TS_CONTAINER_TYPE_WITH_DASH_MANIFEST");
+        static const int DIRECT_MODE_WITH_TIMING_SOURCE_HASH = HashingUtils::HashString("DIRECT_MODE_WITH_TIMING_SOURCE");
+        static const int NONE_MODE_WITH_TIMING_SOURCE_HASH = HashingUtils::HashString("NONE_MODE_WITH_TIMING_SOURCE");
+        static const int TIMING_SOURCE_MISSING_HASH = HashingUtils::HashString("TIMING_SOURCE_MISSING");
+        static const int UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION_HASH = HashingUtils::HashString("UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION");
+        static const int PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES_HASH = HashingUtils::HashString("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");
+        static const int DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS_HASH = HashingUtils::HashString("DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS");
+        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION");
+        static const int SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH = HashingUtils::HashString("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -113,6 +123,10 @@ namespace Aws
           else if (hashCode == NUM_MANIFESTS_HIGH_HASH)
           {
             return ValidationExceptionType::NUM_MANIFESTS_HIGH;
+          }
+          else if (hashCode == MANIFEST_DRM_SYSTEMS_INCOMPATIBLE_HASH)
+          {
+            return ValidationExceptionType::MANIFEST_DRM_SYSTEMS_INCOMPATIBLE;
           }
           else if (hashCode == DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE_HASH)
           {
@@ -210,6 +224,42 @@ namespace Aws
           {
             return ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME;
           }
+          else if (hashCode == TS_CONTAINER_TYPE_WITH_DASH_MANIFEST_HASH)
+          {
+            return ValidationExceptionType::TS_CONTAINER_TYPE_WITH_DASH_MANIFEST;
+          }
+          else if (hashCode == DIRECT_MODE_WITH_TIMING_SOURCE_HASH)
+          {
+            return ValidationExceptionType::DIRECT_MODE_WITH_TIMING_SOURCE;
+          }
+          else if (hashCode == NONE_MODE_WITH_TIMING_SOURCE_HASH)
+          {
+            return ValidationExceptionType::NONE_MODE_WITH_TIMING_SOURCE;
+          }
+          else if (hashCode == TIMING_SOURCE_MISSING_HASH)
+          {
+            return ValidationExceptionType::TIMING_SOURCE_MISSING;
+          }
+          else if (hashCode == UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION_HASH)
+          {
+            return ValidationExceptionType::UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION;
+          }
+          else if (hashCode == PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES_HASH)
+          {
+            return ValidationExceptionType::PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES;
+          }
+          else if (hashCode == DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS_HASH)
+          {
+            return ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS;
+          }
+          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION;
+          }
+          else if (hashCode == SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH)
+          {
+            return ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -252,6 +302,8 @@ namespace Aws
             return "NUM_MANIFESTS_LOW";
           case ValidationExceptionType::NUM_MANIFESTS_HIGH:
             return "NUM_MANIFESTS_HIGH";
+          case ValidationExceptionType::MANIFEST_DRM_SYSTEMS_INCOMPATIBLE:
+            return "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE";
           case ValidationExceptionType::DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE:
             return "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE";
           case ValidationExceptionType::ROLE_ARN_NOT_ASSUMABLE:
@@ -300,6 +352,24 @@ namespace Aws
             return "INVALID_TIME_DELAY_SECONDS";
           case ValidationExceptionType::END_TIME_EARLIER_THAN_START_TIME:
             return "END_TIME_EARLIER_THAN_START_TIME";
+          case ValidationExceptionType::TS_CONTAINER_TYPE_WITH_DASH_MANIFEST:
+            return "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST";
+          case ValidationExceptionType::DIRECT_MODE_WITH_TIMING_SOURCE:
+            return "DIRECT_MODE_WITH_TIMING_SOURCE";
+          case ValidationExceptionType::NONE_MODE_WITH_TIMING_SOURCE:
+            return "NONE_MODE_WITH_TIMING_SOURCE";
+          case ValidationExceptionType::TIMING_SOURCE_MISSING:
+            return "TIMING_SOURCE_MISSING";
+          case ValidationExceptionType::UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION:
+            return "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION";
+          case ValidationExceptionType::PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES:
+            return "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES";
+          case ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS:
+            return "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS";
+          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION:
+            return "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION";
+          case ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY:
+            return "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

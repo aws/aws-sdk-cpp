@@ -39,159 +39,59 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
      */
     inline const Aws::String& GetParameterControlId() const{ return m_parameterControlId; }
-
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline bool ParameterControlIdHasBeenSet() const { return m_parameterControlIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetParameterControlId(const Aws::String& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = value; }
-
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetParameterControlId(Aws::String&& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = std::move(value); }
-
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetParameterControlId(const char* value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId.assign(value); }
-
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithParameterControlId(const Aws::String& value) { SetParameterControlId(value); return *this;}
-
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithParameterControlId(Aws::String&& value) { SetParameterControlId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithParameterControlId(const char* value) { SetParameterControlId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
-
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-
-    /**
-     * <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithTitle(const char* value) { SetTitle(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
      */
     inline const Aws::String& GetSourceParameterName() const{ return m_sourceParameterName; }
-
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline bool SourceParameterNameHasBeenSet() const { return m_sourceParameterNameHasBeenSet; }
-
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetSourceParameterName(const Aws::String& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = value; }
-
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetSourceParameterName(Aws::String&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::move(value); }
-
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline void SetSourceParameterName(const char* value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName.assign(value); }
-
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithSourceParameterName(const Aws::String& value) { SetSourceParameterName(value); return *this;}
-
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithSourceParameterName(Aws::String&& value) { SetSourceParameterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-     */
     inline ParameterDateTimePickerControl& WithSourceParameterName(const char* value) { SetSourceParameterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The display options of a control.</p>
      */
     inline const DateTimePickerControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline void SetDisplayOptions(const DateTimePickerControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline void SetDisplayOptions(DateTimePickerControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline ParameterDateTimePickerControl& WithDisplayOptions(const DateTimePickerControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline ParameterDateTimePickerControl& WithDisplayOptions(DateTimePickerControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_parameterControlId;

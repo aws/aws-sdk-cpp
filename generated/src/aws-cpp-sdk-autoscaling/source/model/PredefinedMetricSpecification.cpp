@@ -27,10 +27,8 @@ PredefinedMetricSpecification::PredefinedMetricSpecification() :
 {
 }
 
-PredefinedMetricSpecification::PredefinedMetricSpecification(const XmlNode& xmlNode) : 
-    m_predefinedMetricType(MetricType::NOT_SET),
-    m_predefinedMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
+PredefinedMetricSpecification::PredefinedMetricSpecification(const XmlNode& xmlNode)
+  : PredefinedMetricSpecification()
 {
   *this = xmlNode;
 }

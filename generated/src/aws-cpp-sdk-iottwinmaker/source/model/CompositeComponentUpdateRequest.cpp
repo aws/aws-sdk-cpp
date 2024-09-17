@@ -27,12 +27,8 @@ CompositeComponentUpdateRequest::CompositeComponentUpdateRequest() :
 {
 }
 
-CompositeComponentUpdateRequest::CompositeComponentUpdateRequest(JsonView jsonValue) : 
-    m_updateType(ComponentUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertyUpdatesHasBeenSet(false),
-    m_propertyGroupUpdatesHasBeenSet(false)
+CompositeComponentUpdateRequest::CompositeComponentUpdateRequest(JsonView jsonValue)
+  : CompositeComponentUpdateRequest()
 {
   *this = jsonValue;
 }

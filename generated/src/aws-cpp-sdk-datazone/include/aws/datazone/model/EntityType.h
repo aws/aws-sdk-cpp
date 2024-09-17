@@ -16,7 +16,8 @@ namespace Model
   enum class EntityType
   {
     NOT_SET,
-    ASSET
+    ASSET,
+    DATA_PRODUCT
   };
 
 namespace EntityTypeMapper

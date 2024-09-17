@@ -25,10 +25,8 @@ CacheBehaviorPerPath::CacheBehaviorPerPath() :
 {
 }
 
-CacheBehaviorPerPath::CacheBehaviorPerPath(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_behavior(BehaviorEnum::NOT_SET),
-    m_behaviorHasBeenSet(false)
+CacheBehaviorPerPath::CacheBehaviorPerPath(JsonView jsonValue)
+  : CacheBehaviorPerPath()
 {
   *this = jsonValue;
 }

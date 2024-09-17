@@ -30,13 +30,8 @@ SpotDatafeedSubscription::SpotDatafeedSubscription() :
 {
 }
 
-SpotDatafeedSubscription::SpotDatafeedSubscription(const XmlNode& xmlNode) : 
-    m_bucketHasBeenSet(false),
-    m_faultHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_state(DatafeedSubscriptionState::NOT_SET),
-    m_stateHasBeenSet(false)
+SpotDatafeedSubscription::SpotDatafeedSubscription(const XmlNode& xmlNode)
+  : SpotDatafeedSubscription()
 {
   *this = xmlNode;
 }

@@ -24,9 +24,8 @@ KPIActualValueConditionalFormatting::KPIActualValueConditionalFormatting() :
 {
 }
 
-KPIActualValueConditionalFormatting::KPIActualValueConditionalFormatting(JsonView jsonValue) : 
-    m_textColorHasBeenSet(false),
-    m_iconHasBeenSet(false)
+KPIActualValueConditionalFormatting::KPIActualValueConditionalFormatting(JsonView jsonValue)
+  : KPIActualValueConditionalFormatting()
 {
   *this = jsonValue;
 }

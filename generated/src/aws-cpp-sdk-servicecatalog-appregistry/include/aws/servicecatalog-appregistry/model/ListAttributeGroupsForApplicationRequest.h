@@ -38,112 +38,44 @@ namespace Model
     AWS_APPREGISTRY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name or ID of the application.</p>
      */
     inline const Aws::String& GetApplication() const{ return m_application; }
-
-    /**
-     * <p>The name or ID of the application.</p>
-     */
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-
-    /**
-     * <p>The name or ID of the application.</p>
-     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-
-    /**
-     * <p>The name or ID of the application.</p>
-     */
     inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-
-    /**
-     * <p>The name or ID of the application.</p>
-     */
     inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-
-    /**
-     * <p>The name or ID of the application.</p>
-     */
     inline ListAttributeGroupsForApplicationRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-
-    /**
-     * <p>The name or ID of the application.</p>
-     */
     inline ListAttributeGroupsForApplicationRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or ID of the application.</p>
-     */
     inline ListAttributeGroupsForApplicationRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This token retrieves the next page of results after a previous API call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>This token retrieves the next page of results after a previous API call.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>This token retrieves the next page of results after a previous API call.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>This token retrieves the next page of results after a previous API call.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>This token retrieves the next page of results after a previous API call.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>This token retrieves the next page of results after a previous API call.</p>
-     */
     inline ListAttributeGroupsForApplicationRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>This token retrieves the next page of results after a previous API call.</p>
-     */
     inline ListAttributeGroupsForApplicationRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>This token retrieves the next page of results after a previous API call.</p>
-     */
     inline ListAttributeGroupsForApplicationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The upper bound of the number of results to return. The value cannot exceed
      * 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The upper bound of the number of results to return. The value cannot exceed
-     * 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The upper bound of the number of results to return. The value cannot exceed
-     * 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The upper bound of the number of results to return. The value cannot exceed
-     * 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
-     */
     inline ListAttributeGroupsForApplicationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_application;

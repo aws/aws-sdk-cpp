@@ -26,9 +26,8 @@ DashboardInvalidInputError::DashboardInvalidInputError() :
 {
 }
 
-DashboardInvalidInputError::DashboardInvalidInputError(const XmlNode& xmlNode) : 
-    m_messageHasBeenSet(false),
-    m_dashboardValidationMessagesHasBeenSet(false)
+DashboardInvalidInputError::DashboardInvalidInputError(const XmlNode& xmlNode)
+  : DashboardInvalidInputError()
 {
   *this = xmlNode;
 }

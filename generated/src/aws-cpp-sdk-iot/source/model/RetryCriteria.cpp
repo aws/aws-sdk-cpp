@@ -26,11 +26,8 @@ RetryCriteria::RetryCriteria() :
 {
 }
 
-RetryCriteria::RetryCriteria(JsonView jsonValue) : 
-    m_failureType(RetryableFailureType::NOT_SET),
-    m_failureTypeHasBeenSet(false),
-    m_numberOfRetries(0),
-    m_numberOfRetriesHasBeenSet(false)
+RetryCriteria::RetryCriteria(JsonView jsonValue)
+  : RetryCriteria()
 {
   *this = jsonValue;
 }

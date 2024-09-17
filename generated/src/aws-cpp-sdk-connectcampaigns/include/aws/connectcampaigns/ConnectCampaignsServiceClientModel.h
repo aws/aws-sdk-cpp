@@ -28,6 +28,7 @@
 #include <aws/connectcampaigns/model/ListTagsForResourceResult.h>
 #include <aws/connectcampaigns/model/PutDialRequestBatchResult.h>
 #include <aws/connectcampaigns/model/StartInstanceOnboardingJobResult.h>
+#include <aws/connectcampaigns/model/ListCampaignsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectCampaignsClient header */
 
@@ -62,7 +63,7 @@ namespace Aws
 
   namespace ConnectCampaigns
   {
-    using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using ConnectCampaignsEndpointProviderBase = Aws::ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProviderBase;
     using ConnectCampaignsEndpointProvider = Aws::ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProvider;
 

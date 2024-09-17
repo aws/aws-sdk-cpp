@@ -34,113 +34,44 @@ namespace Model
     AWS_HEALTHLAKE_API ListFHIRImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
+     * the status of the job, and the progress report of the job. </p>
      */
     inline const Aws::Vector<ImportJobProperties>& GetImportJobPropertiesList() const{ return m_importJobPropertiesList; }
-
-    /**
-     * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
-     */
     inline void SetImportJobPropertiesList(const Aws::Vector<ImportJobProperties>& value) { m_importJobPropertiesList = value; }
-
-    /**
-     * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
-     */
     inline void SetImportJobPropertiesList(Aws::Vector<ImportJobProperties>&& value) { m_importJobPropertiesList = std::move(value); }
-
-    /**
-     * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
-     */
     inline ListFHIRImportJobsResult& WithImportJobPropertiesList(const Aws::Vector<ImportJobProperties>& value) { SetImportJobPropertiesList(value); return *this;}
-
-    /**
-     * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
-     */
     inline ListFHIRImportJobsResult& WithImportJobPropertiesList(Aws::Vector<ImportJobProperties>&& value) { SetImportJobPropertiesList(std::move(value)); return *this;}
-
-    /**
-     * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
-     */
     inline ListFHIRImportJobsResult& AddImportJobPropertiesList(const ImportJobProperties& value) { m_importJobPropertiesList.push_back(value); return *this; }
-
-    /**
-     * <p> The properties of a listed FHIR import jobs, including the ID, ARN, name,
-     * and the status of the job. </p>
-     */
     inline ListFHIRImportJobsResult& AddImportJobPropertiesList(ImportJobProperties&& value) { m_importJobPropertiesList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> A pagination token used to identify the next page of results to return for a
      * ListFHIRImportJobs query. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRImportJobs query. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRImportJobs query. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRImportJobs query. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRImportJobs query. </p>
-     */
     inline ListFHIRImportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRImportJobs query. </p>
-     */
     inline ListFHIRImportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRImportJobs query. </p>
-     */
     inline ListFHIRImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListFHIRImportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListFHIRImportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListFHIRImportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ImportJobProperties> m_importJobPropertiesList;

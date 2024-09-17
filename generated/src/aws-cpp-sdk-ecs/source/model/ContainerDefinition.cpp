@@ -32,6 +32,7 @@ ContainerDefinition::ContainerDefinition() :
     m_portMappingsHasBeenSet(false),
     m_essential(false),
     m_essentialHasBeenSet(false),
+    m_restartPolicyHasBeenSet(false),
     m_entryPointHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -73,58 +74,8 @@ ContainerDefinition::ContainerDefinition() :
 {
 }
 
-ContainerDefinition::ContainerDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_repositoryCredentialsHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false),
-    m_linksHasBeenSet(false),
-    m_portMappingsHasBeenSet(false),
-    m_essential(false),
-    m_essentialHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_environmentFilesHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_volumesFromHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false),
-    m_secretsHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_startTimeout(0),
-    m_startTimeoutHasBeenSet(false),
-    m_stopTimeout(0),
-    m_stopTimeoutHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_disableNetworking(false),
-    m_disableNetworkingHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_readonlyRootFilesystem(false),
-    m_readonlyRootFilesystemHasBeenSet(false),
-    m_dnsServersHasBeenSet(false),
-    m_dnsSearchDomainsHasBeenSet(false),
-    m_extraHostsHasBeenSet(false),
-    m_dockerSecurityOptionsHasBeenSet(false),
-    m_interactive(false),
-    m_interactiveHasBeenSet(false),
-    m_pseudoTerminal(false),
-    m_pseudoTerminalHasBeenSet(false),
-    m_dockerLabelsHasBeenSet(false),
-    m_ulimitsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_systemControlsHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false),
-    m_firelensConfigurationHasBeenSet(false),
-    m_credentialSpecsHasBeenSet(false)
+ContainerDefinition::ContainerDefinition(JsonView jsonValue)
+  : ContainerDefinition()
 {
   *this = jsonValue;
 }
@@ -198,6 +149,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_essential = jsonValue.GetBool("essential");
 
     m_essentialHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("restartPolicy"))
+  {
+    m_restartPolicy = jsonValue.GetObject("restartPolicy");
+
+    m_restartPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("entryPoint"))
@@ -536,6 +494,12 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_essentialHasBeenSet)
   {
    payload.WithBool("essential", m_essential);
+
+  }
+
+  if(m_restartPolicyHasBeenSet)
+  {
+   payload.WithObject("restartPolicy", m_restartPolicy.Jsonize());
 
   }
 

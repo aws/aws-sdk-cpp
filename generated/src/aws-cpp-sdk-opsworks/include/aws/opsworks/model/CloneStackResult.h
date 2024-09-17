@@ -38,63 +38,29 @@ namespace Model
     AWS_OPSWORKS_API CloneStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The cloned stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
-
-    /**
-     * <p>The cloned stack ID.</p>
-     */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
-
-    /**
-     * <p>The cloned stack ID.</p>
-     */
     inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
-
-    /**
-     * <p>The cloned stack ID.</p>
-     */
     inline void SetStackId(const char* value) { m_stackId.assign(value); }
-
-    /**
-     * <p>The cloned stack ID.</p>
-     */
     inline CloneStackResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-
-    /**
-     * <p>The cloned stack ID.</p>
-     */
     inline CloneStackResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-
-    /**
-     * <p>The cloned stack ID.</p>
-     */
     inline CloneStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CloneStackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CloneStackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CloneStackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackId;

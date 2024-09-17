@@ -28,13 +28,8 @@ ConnectPeerConfiguration::ConnectPeerConfiguration() :
 {
 }
 
-ConnectPeerConfiguration::ConnectPeerConfiguration(JsonView jsonValue) : 
-    m_coreNetworkAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false),
-    m_protocol(TunnelProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_bgpConfigurationsHasBeenSet(false)
+ConnectPeerConfiguration::ConnectPeerConfiguration(JsonView jsonValue)
+  : ConnectPeerConfiguration()
 {
   *this = jsonValue;
 }

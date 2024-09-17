@@ -28,13 +28,8 @@ AlternateContact::AlternateContact() :
 {
 }
 
-AlternateContact::AlternateContact(JsonView jsonValue) : 
-    m_alternateContactType(AlternateContactType::NOT_SET),
-    m_alternateContactTypeHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_titleHasBeenSet(false)
+AlternateContact::AlternateContact(JsonView jsonValue)
+  : AlternateContact()
 {
   *this = jsonValue;
 }

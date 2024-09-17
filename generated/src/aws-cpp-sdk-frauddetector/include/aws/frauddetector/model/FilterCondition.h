@@ -38,54 +38,20 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A statement containing a resource property and a value to specify filter
      * condition. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p> A statement containing a resource property and a value to specify filter
-     * condition. </p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p> A statement containing a resource property and a value to specify filter
-     * condition. </p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p> A statement containing a resource property and a value to specify filter
-     * condition. </p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p> A statement containing a resource property and a value to specify filter
-     * condition. </p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p> A statement containing a resource property and a value to specify filter
-     * condition. </p>
-     */
     inline FilterCondition& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p> A statement containing a resource property and a value to specify filter
-     * condition. </p>
-     */
     inline FilterCondition& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p> A statement containing a resource property and a value to specify filter
-     * condition. </p>
-     */
     inline FilterCondition& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

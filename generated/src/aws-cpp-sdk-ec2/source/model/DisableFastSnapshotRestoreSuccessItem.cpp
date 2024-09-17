@@ -36,19 +36,8 @@ DisableFastSnapshotRestoreSuccessItem::DisableFastSnapshotRestoreSuccessItem() :
 {
 }
 
-DisableFastSnapshotRestoreSuccessItem::DisableFastSnapshotRestoreSuccessItem(const XmlNode& xmlNode) : 
-    m_snapshotIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_state(FastSnapshotRestoreStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateTransitionReasonHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_ownerAliasHasBeenSet(false),
-    m_enablingTimeHasBeenSet(false),
-    m_optimizingTimeHasBeenSet(false),
-    m_enabledTimeHasBeenSet(false),
-    m_disablingTimeHasBeenSet(false),
-    m_disabledTimeHasBeenSet(false)
+DisableFastSnapshotRestoreSuccessItem::DisableFastSnapshotRestoreSuccessItem(const XmlNode& xmlNode)
+  : DisableFastSnapshotRestoreSuccessItem()
 {
   *this = xmlNode;
 }

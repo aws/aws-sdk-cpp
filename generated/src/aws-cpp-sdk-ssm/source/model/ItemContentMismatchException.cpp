@@ -24,9 +24,8 @@ ItemContentMismatchException::ItemContentMismatchException() :
 {
 }
 
-ItemContentMismatchException::ItemContentMismatchException(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+ItemContentMismatchException::ItemContentMismatchException(JsonView jsonValue)
+  : ItemContentMismatchException()
 {
   *this = jsonValue;
 }

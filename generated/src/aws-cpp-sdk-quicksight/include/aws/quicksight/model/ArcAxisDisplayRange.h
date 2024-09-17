@@ -36,47 +36,25 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum value of the arc axis range.</p>
      */
     inline double GetMin() const{ return m_min; }
-
-    /**
-     * <p>The minimum value of the arc axis range.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The minimum value of the arc axis range.</p>
-     */
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The minimum value of the arc axis range.</p>
-     */
     inline ArcAxisDisplayRange& WithMin(double value) { SetMin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum value of the arc axis range.</p>
      */
     inline double GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum value of the arc axis range.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum value of the arc axis range.</p>
-     */
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum value of the arc axis range.</p>
-     */
     inline ArcAxisDisplayRange& WithMax(double value) { SetMax(value); return *this;}
-
+    ///@}
   private:
 
     double m_min;

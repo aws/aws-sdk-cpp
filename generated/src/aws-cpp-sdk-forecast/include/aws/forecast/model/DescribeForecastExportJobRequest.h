@@ -34,46 +34,19 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
      */
     inline const Aws::String& GetForecastExportJobArn() const{ return m_forecastExportJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-     */
     inline bool ForecastExportJobArnHasBeenSet() const { return m_forecastExportJobArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-     */
     inline void SetForecastExportJobArn(const Aws::String& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-     */
     inline void SetForecastExportJobArn(Aws::String&& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-     */
     inline void SetForecastExportJobArn(const char* value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-     */
     inline DescribeForecastExportJobRequest& WithForecastExportJobArn(const Aws::String& value) { SetForecastExportJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-     */
     inline DescribeForecastExportJobRequest& WithForecastExportJobArn(Aws::String&& value) { SetForecastExportJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-     */
     inline DescribeForecastExportJobRequest& WithForecastExportJobArn(const char* value) { SetForecastExportJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_forecastExportJobArn;

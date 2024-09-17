@@ -26,11 +26,8 @@ MetricDestinationSummary::MetricDestinationSummary() :
 {
 }
 
-MetricDestinationSummary::MetricDestinationSummary(JsonView jsonValue) : 
-    m_destination(MetricDestination::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
+MetricDestinationSummary::MetricDestinationSummary(JsonView jsonValue)
+  : MetricDestinationSummary()
 {
   *this = jsonValue;
 }

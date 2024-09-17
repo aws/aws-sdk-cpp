@@ -24,9 +24,8 @@ DataLakeReplicationConfiguration::DataLakeReplicationConfiguration() :
 {
 }
 
-DataLakeReplicationConfiguration::DataLakeReplicationConfiguration(JsonView jsonValue) : 
-    m_regionsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+DataLakeReplicationConfiguration::DataLakeReplicationConfiguration(JsonView jsonValue)
+  : DataLakeReplicationConfiguration()
 {
   *this = jsonValue;
 }

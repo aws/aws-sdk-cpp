@@ -25,10 +25,8 @@ Service::Service() :
 {
 }
 
-Service::Service(JsonView jsonValue) : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
+Service::Service(JsonView jsonValue)
+  : Service()
 {
   *this = jsonValue;
 }

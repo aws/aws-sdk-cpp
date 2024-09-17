@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ElasticInferenceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ElasticInferenceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ElasticInferenceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElasticInferenceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

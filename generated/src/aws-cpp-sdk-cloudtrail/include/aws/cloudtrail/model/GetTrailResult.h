@@ -33,43 +33,25 @@ namespace Model
     AWS_CLOUDTRAIL_API GetTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Trail& GetTrail() const{ return m_trail; }
-
-    
     inline void SetTrail(const Trail& value) { m_trail = value; }
-
-    
     inline void SetTrail(Trail&& value) { m_trail = std::move(value); }
-
-    
     inline GetTrailResult& WithTrail(const Trail& value) { SetTrail(value); return *this;}
-
-    
     inline GetTrailResult& WithTrail(Trail&& value) { SetTrail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTrailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTrailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTrailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Trail m_trail;

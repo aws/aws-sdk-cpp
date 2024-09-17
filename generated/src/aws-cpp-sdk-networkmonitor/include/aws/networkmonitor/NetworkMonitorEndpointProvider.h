@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using NetworkMonitorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NetworkMonitorClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using NetworkMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NetworkMonitorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

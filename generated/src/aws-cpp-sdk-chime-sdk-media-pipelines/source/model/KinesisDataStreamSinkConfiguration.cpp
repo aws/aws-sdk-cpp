@@ -23,8 +23,8 @@ KinesisDataStreamSinkConfiguration::KinesisDataStreamSinkConfiguration() :
 {
 }
 
-KinesisDataStreamSinkConfiguration::KinesisDataStreamSinkConfiguration(JsonView jsonValue) : 
-    m_insightsTargetHasBeenSet(false)
+KinesisDataStreamSinkConfiguration::KinesisDataStreamSinkConfiguration(JsonView jsonValue)
+  : KinesisDataStreamSinkConfiguration()
 {
   *this = jsonValue;
 }

@@ -42,277 +42,106 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current service software version present on the domain.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
-
-    /**
-     * <p>The current service software version present on the domain.</p>
-     */
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-
-    /**
-     * <p>The current service software version present on the domain.</p>
-     */
     inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-
-    /**
-     * <p>The current service software version present on the domain.</p>
-     */
     inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-
-    /**
-     * <p>The current service software version present on the domain.</p>
-     */
     inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-
-    /**
-     * <p>The current service software version present on the domain.</p>
-     */
     inline ServiceSoftwareOptions& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-
-    /**
-     * <p>The current service software version present on the domain.</p>
-     */
     inline ServiceSoftwareOptions& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The current service software version present on the domain.</p>
-     */
     inline ServiceSoftwareOptions& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new service software version, if one is available.</p>
      */
     inline const Aws::String& GetNewVersion() const{ return m_newVersion; }
-
-    /**
-     * <p>The new service software version, if one is available.</p>
-     */
     inline bool NewVersionHasBeenSet() const { return m_newVersionHasBeenSet; }
-
-    /**
-     * <p>The new service software version, if one is available.</p>
-     */
     inline void SetNewVersion(const Aws::String& value) { m_newVersionHasBeenSet = true; m_newVersion = value; }
-
-    /**
-     * <p>The new service software version, if one is available.</p>
-     */
     inline void SetNewVersion(Aws::String&& value) { m_newVersionHasBeenSet = true; m_newVersion = std::move(value); }
-
-    /**
-     * <p>The new service software version, if one is available.</p>
-     */
     inline void SetNewVersion(const char* value) { m_newVersionHasBeenSet = true; m_newVersion.assign(value); }
-
-    /**
-     * <p>The new service software version, if one is available.</p>
-     */
     inline ServiceSoftwareOptions& WithNewVersion(const Aws::String& value) { SetNewVersion(value); return *this;}
-
-    /**
-     * <p>The new service software version, if one is available.</p>
-     */
     inline ServiceSoftwareOptions& WithNewVersion(Aws::String&& value) { SetNewVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The new service software version, if one is available.</p>
-     */
     inline ServiceSoftwareOptions& WithNewVersion(const char* value) { SetNewVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>True if you're able to update your service software version. False if you
      * can't update your service software version.</p>
      */
     inline bool GetUpdateAvailable() const{ return m_updateAvailable; }
-
-    /**
-     * <p>True if you're able to update your service software version. False if you
-     * can't update your service software version.</p>
-     */
     inline bool UpdateAvailableHasBeenSet() const { return m_updateAvailableHasBeenSet; }
-
-    /**
-     * <p>True if you're able to update your service software version. False if you
-     * can't update your service software version.</p>
-     */
     inline void SetUpdateAvailable(bool value) { m_updateAvailableHasBeenSet = true; m_updateAvailable = value; }
-
-    /**
-     * <p>True if you're able to update your service software version. False if you
-     * can't update your service software version.</p>
-     */
     inline ServiceSoftwareOptions& WithUpdateAvailable(bool value) { SetUpdateAvailable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> True if you're able to cancel your service software version update. False if
      * you can't cancel your service software update.</p>
      */
     inline bool GetCancellable() const{ return m_cancellable; }
-
-    /**
-     * <p> True if you're able to cancel your service software version update. False if
-     * you can't cancel your service software update.</p>
-     */
     inline bool CancellableHasBeenSet() const { return m_cancellableHasBeenSet; }
-
-    /**
-     * <p> True if you're able to cancel your service software version update. False if
-     * you can't cancel your service software update.</p>
-     */
     inline void SetCancellable(bool value) { m_cancellableHasBeenSet = true; m_cancellable = value; }
-
-    /**
-     * <p> True if you're able to cancel your service software version update. False if
-     * you can't cancel your service software update.</p>
-     */
     inline ServiceSoftwareOptions& WithCancellable(bool value) { SetCancellable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of your service software update.</p>
      */
     inline const DeploymentStatus& GetUpdateStatus() const{ return m_updateStatus; }
-
-    /**
-     * <p>The status of your service software update.</p>
-     */
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-
-    /**
-     * <p>The status of your service software update.</p>
-     */
     inline void SetUpdateStatus(const DeploymentStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-
-    /**
-     * <p>The status of your service software update.</p>
-     */
     inline void SetUpdateStatus(DeploymentStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-
-    /**
-     * <p>The status of your service software update.</p>
-     */
     inline ServiceSoftwareOptions& WithUpdateStatus(const DeploymentStatus& value) { SetUpdateStatus(value); return *this;}
-
-    /**
-     * <p>The status of your service software update.</p>
-     */
     inline ServiceSoftwareOptions& WithUpdateStatus(DeploymentStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the service software update status.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the service software update status.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the service software update status.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the service software update status.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the service software update status.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the service software update status.</p>
-     */
     inline ServiceSoftwareOptions& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the service software update status.</p>
-     */
     inline ServiceSoftwareOptions& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the service software update status.</p>
-     */
     inline ServiceSoftwareOptions& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp, in Epoch time, until which you can manually request a service
      * software update. After this date, we automatically update your service
      * software.</p>
      */
     inline const Aws::Utils::DateTime& GetAutomatedUpdateDate() const{ return m_automatedUpdateDate; }
-
-    /**
-     * <p>The timestamp, in Epoch time, until which you can manually request a service
-     * software update. After this date, we automatically update your service
-     * software.</p>
-     */
     inline bool AutomatedUpdateDateHasBeenSet() const { return m_automatedUpdateDateHasBeenSet; }
-
-    /**
-     * <p>The timestamp, in Epoch time, until which you can manually request a service
-     * software update. After this date, we automatically update your service
-     * software.</p>
-     */
     inline void SetAutomatedUpdateDate(const Aws::Utils::DateTime& value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate = value; }
-
-    /**
-     * <p>The timestamp, in Epoch time, until which you can manually request a service
-     * software update. After this date, we automatically update your service
-     * software.</p>
-     */
     inline void SetAutomatedUpdateDate(Aws::Utils::DateTime&& value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate = std::move(value); }
-
-    /**
-     * <p>The timestamp, in Epoch time, until which you can manually request a service
-     * software update. After this date, we automatically update your service
-     * software.</p>
-     */
     inline ServiceSoftwareOptions& WithAutomatedUpdateDate(const Aws::Utils::DateTime& value) { SetAutomatedUpdateDate(value); return *this;}
-
-    /**
-     * <p>The timestamp, in Epoch time, until which you can manually request a service
-     * software update. After this date, we automatically update your service
-     * software.</p>
-     */
     inline ServiceSoftwareOptions& WithAutomatedUpdateDate(Aws::Utils::DateTime&& value) { SetAutomatedUpdateDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>True if a service software is never automatically updated. False if a service
      * software is automatically updated after the automated update date.</p>
      */
     inline bool GetOptionalDeployment() const{ return m_optionalDeployment; }
-
-    /**
-     * <p>True if a service software is never automatically updated. False if a service
-     * software is automatically updated after the automated update date.</p>
-     */
     inline bool OptionalDeploymentHasBeenSet() const { return m_optionalDeploymentHasBeenSet; }
-
-    /**
-     * <p>True if a service software is never automatically updated. False if a service
-     * software is automatically updated after the automated update date.</p>
-     */
     inline void SetOptionalDeployment(bool value) { m_optionalDeploymentHasBeenSet = true; m_optionalDeployment = value; }
-
-    /**
-     * <p>True if a service software is never automatically updated. False if a service
-     * software is automatically updated after the automated update date.</p>
-     */
     inline ServiceSoftwareOptions& WithOptionalDeployment(bool value) { SetOptionalDeployment(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_currentVersion;

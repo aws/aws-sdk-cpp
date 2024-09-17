@@ -25,10 +25,8 @@ BatchDetectTargetedSentimentItemResult::BatchDetectTargetedSentimentItemResult()
 {
 }
 
-BatchDetectTargetedSentimentItemResult::BatchDetectTargetedSentimentItemResult(JsonView jsonValue) : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
+BatchDetectTargetedSentimentItemResult::BatchDetectTargetedSentimentItemResult(JsonView jsonValue)
+  : BatchDetectTargetedSentimentItemResult()
 {
   *this = jsonValue;
 }

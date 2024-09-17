@@ -32,46 +32,19 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Uniquely identifies the job that restores a recovery point.</p>
      */
     inline const Aws::String& GetRestoreJobId() const{ return m_restoreJobId; }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline bool RestoreJobIdHasBeenSet() const { return m_restoreJobIdHasBeenSet; }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline void SetRestoreJobId(const Aws::String& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = value; }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline void SetRestoreJobId(Aws::String&& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = std::move(value); }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline void SetRestoreJobId(const char* value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId.assign(value); }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline DescribeRestoreJobRequest& WithRestoreJobId(const Aws::String& value) { SetRestoreJobId(value); return *this;}
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline DescribeRestoreJobRequest& WithRestoreJobId(Aws::String&& value) { SetRestoreJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline DescribeRestoreJobRequest& WithRestoreJobId(const char* value) { SetRestoreJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restoreJobId;

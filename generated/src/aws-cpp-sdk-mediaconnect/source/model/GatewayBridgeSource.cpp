@@ -24,9 +24,8 @@ GatewayBridgeSource::GatewayBridgeSource() :
 {
 }
 
-GatewayBridgeSource::GatewayBridgeSource(JsonView jsonValue) : 
-    m_bridgeArnHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
+GatewayBridgeSource::GatewayBridgeSource(JsonView jsonValue)
+  : GatewayBridgeSource()
 {
   *this = jsonValue;
 }

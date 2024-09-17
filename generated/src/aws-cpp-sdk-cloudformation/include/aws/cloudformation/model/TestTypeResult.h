@@ -33,57 +33,27 @@ namespace Model
     AWS_CLOUDFORMATION_API TestTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
     inline const Aws::String& GetTypeVersionArn() const{ return m_typeVersionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the extension.</p>
-     */
     inline void SetTypeVersionArn(const Aws::String& value) { m_typeVersionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the extension.</p>
-     */
     inline void SetTypeVersionArn(Aws::String&& value) { m_typeVersionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the extension.</p>
-     */
     inline void SetTypeVersionArn(const char* value) { m_typeVersionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the extension.</p>
-     */
     inline TestTypeResult& WithTypeVersionArn(const Aws::String& value) { SetTypeVersionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the extension.</p>
-     */
     inline TestTypeResult& WithTypeVersionArn(Aws::String&& value) { SetTypeVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the extension.</p>
-     */
     inline TestTypeResult& WithTypeVersionArn(const char* value) { SetTypeVersionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline TestTypeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline TestTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_typeVersionArn;

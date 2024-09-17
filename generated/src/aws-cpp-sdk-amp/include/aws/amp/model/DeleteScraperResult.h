@@ -39,89 +39,40 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API DeleteScraperResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the scraper to delete.</p>
      */
     inline const Aws::String& GetScraperId() const{ return m_scraperId; }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline void SetScraperId(const Aws::String& value) { m_scraperId = value; }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline void SetScraperId(Aws::String&& value) { m_scraperId = std::move(value); }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline void SetScraperId(const char* value) { m_scraperId.assign(value); }
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline DeleteScraperResult& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline DeleteScraperResult& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
     inline DeleteScraperResult& WithScraperId(const char* value) { SetScraperId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the scraper.</p>
      */
     inline const ScraperStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline void SetStatus(const ScraperStatus& value) { m_status = value; }
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline void SetStatus(ScraperStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline DeleteScraperResult& WithStatus(const ScraperStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline DeleteScraperResult& WithStatus(ScraperStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteScraperResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteScraperResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteScraperResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scraperId;

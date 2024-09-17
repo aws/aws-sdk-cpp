@@ -337,13 +337,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAgentsOutcome DescribeAgents(const Model::DescribeAgentsRequest& request) const;
+        virtual Model::DescribeAgentsOutcome DescribeAgents(const Model::DescribeAgentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAgents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAgentsRequestT = Model::DescribeAgentsRequest>
-        Model::DescribeAgentsOutcomeCallable DescribeAgentsCallable(const DescribeAgentsRequestT& request) const
+        Model::DescribeAgentsOutcomeCallable DescribeAgentsCallable(const DescribeAgentsRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::DescribeAgents, request);
         }
@@ -352,7 +352,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for DescribeAgents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAgentsRequestT = Model::DescribeAgentsRequest>
-        void DescribeAgentsAsync(const DescribeAgentsRequestT& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAgentsAsync(const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAgentsRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeAgents, request, handler, context);
         }
@@ -425,13 +425,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeContinuousExportsOutcome DescribeContinuousExports(const Model::DescribeContinuousExportsRequest& request) const;
+        virtual Model::DescribeContinuousExportsOutcome DescribeContinuousExports(const Model::DescribeContinuousExportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeContinuousExports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeContinuousExportsRequestT = Model::DescribeContinuousExportsRequest>
-        Model::DescribeContinuousExportsOutcomeCallable DescribeContinuousExportsCallable(const DescribeContinuousExportsRequestT& request) const
+        Model::DescribeContinuousExportsOutcomeCallable DescribeContinuousExportsCallable(const DescribeContinuousExportsRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::DescribeContinuousExports, request);
         }
@@ -440,7 +440,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for DescribeContinuousExports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeContinuousExportsRequestT = Model::DescribeContinuousExportsRequest>
-        void DescribeContinuousExportsAsync(const DescribeContinuousExportsRequestT& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeContinuousExportsAsync(const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeContinuousExportsRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeContinuousExports, request, handler, context);
         }
@@ -451,13 +451,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
+        virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeExportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeExportTasksRequestT = Model::DescribeExportTasksRequest>
-        Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const DescribeExportTasksRequestT& request) const
+        Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const DescribeExportTasksRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::DescribeExportTasks, request);
         }
@@ -466,7 +466,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for DescribeExportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeExportTasksRequestT = Model::DescribeExportTasksRequest>
-        void DescribeExportTasksAsync(const DescribeExportTasksRequestT& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeExportTasksAsync(const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeExportTasksRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeExportTasks, request, handler, context);
         }
@@ -478,13 +478,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeImportTasksOutcome DescribeImportTasks(const Model::DescribeImportTasksRequest& request) const;
+        virtual Model::DescribeImportTasksOutcome DescribeImportTasks(const Model::DescribeImportTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeImportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeImportTasksRequestT = Model::DescribeImportTasksRequest>
-        Model::DescribeImportTasksOutcomeCallable DescribeImportTasksCallable(const DescribeImportTasksRequestT& request) const
+        Model::DescribeImportTasksOutcomeCallable DescribeImportTasksCallable(const DescribeImportTasksRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::DescribeImportTasks, request);
         }
@@ -493,7 +493,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for DescribeImportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeImportTasksRequestT = Model::DescribeImportTasksRequest>
-        void DescribeImportTasksAsync(const DescribeImportTasksRequestT& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeImportTasksAsync(const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeImportTasksRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeImportTasks, request, handler, context);
         }
@@ -509,13 +509,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
+        virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeTagsRequestT = Model::DescribeTagsRequest>
-        Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const DescribeTagsRequestT& request) const
+        Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const DescribeTagsRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::DescribeTags, request);
         }
@@ -524,7 +524,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeTagsRequestT = Model::DescribeTagsRequest>
-        void DescribeTagsAsync(const DescribeTagsRequestT& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeTagsAsync(const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeTagsRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeTags, request, handler, context);
         }
@@ -562,13 +562,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDiscoverySummaryOutcome GetDiscoverySummary(const Model::GetDiscoverySummaryRequest& request) const;
+        virtual Model::GetDiscoverySummaryOutcome GetDiscoverySummary(const Model::GetDiscoverySummaryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDiscoverySummary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDiscoverySummaryRequestT = Model::GetDiscoverySummaryRequest>
-        Model::GetDiscoverySummaryOutcomeCallable GetDiscoverySummaryCallable(const GetDiscoverySummaryRequestT& request) const
+        Model::GetDiscoverySummaryOutcomeCallable GetDiscoverySummaryCallable(const GetDiscoverySummaryRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::GetDiscoverySummary, request);
         }
@@ -577,7 +577,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for GetDiscoverySummary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDiscoverySummaryRequestT = Model::GetDiscoverySummaryRequest>
-        void GetDiscoverySummaryAsync(const GetDiscoverySummaryRequestT& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDiscoverySummaryAsync(const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDiscoverySummaryRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::GetDiscoverySummary, request, handler, context);
         }
@@ -668,13 +668,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartContinuousExportOutcome StartContinuousExport(const Model::StartContinuousExportRequest& request) const;
+        virtual Model::StartContinuousExportOutcome StartContinuousExport(const Model::StartContinuousExportRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartContinuousExport that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartContinuousExportRequestT = Model::StartContinuousExportRequest>
-        Model::StartContinuousExportOutcomeCallable StartContinuousExportCallable(const StartContinuousExportRequestT& request) const
+        Model::StartContinuousExportOutcomeCallable StartContinuousExportCallable(const StartContinuousExportRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::StartContinuousExport, request);
         }
@@ -683,7 +683,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for StartContinuousExport that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartContinuousExportRequestT = Model::StartContinuousExportRequest>
-        void StartContinuousExportAsync(const StartContinuousExportRequestT& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartContinuousExportAsync(const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartContinuousExportRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::StartContinuousExport, request, handler, context);
         }
@@ -739,13 +739,13 @@ namespace ApplicationDiscoveryService
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartExportTaskOutcome StartExportTask(const Model::StartExportTaskRequest& request) const;
+        virtual Model::StartExportTaskOutcome StartExportTask(const Model::StartExportTaskRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartExportTaskRequestT = Model::StartExportTaskRequest>
-        Model::StartExportTaskOutcomeCallable StartExportTaskCallable(const StartExportTaskRequestT& request) const
+        Model::StartExportTaskOutcomeCallable StartExportTaskCallable(const StartExportTaskRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationDiscoveryServiceClient::StartExportTask, request);
         }
@@ -754,7 +754,7 @@ namespace ApplicationDiscoveryService
          * An Async wrapper for StartExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartExportTaskRequestT = Model::StartExportTaskRequest>
-        void StartExportTaskAsync(const StartExportTaskRequestT& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartExportTaskAsync(const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartExportTaskRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::StartExportTask, request, handler, context);
         }
@@ -895,7 +895,6 @@ namespace ApplicationDiscoveryService
       void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
 
       ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> m_endpointProvider;
   };
 

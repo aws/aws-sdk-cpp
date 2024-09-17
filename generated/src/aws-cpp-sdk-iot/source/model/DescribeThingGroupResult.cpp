@@ -23,9 +23,8 @@ DescribeThingGroupResult::DescribeThingGroupResult() :
 {
 }
 
-DescribeThingGroupResult::DescribeThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_version(0),
-    m_status(DynamicGroupStatus::NOT_SET)
+DescribeThingGroupResult::DescribeThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeThingGroupResult()
 {
   *this = result;
 }

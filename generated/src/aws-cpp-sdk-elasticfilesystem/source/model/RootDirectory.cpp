@@ -24,9 +24,8 @@ RootDirectory::RootDirectory() :
 {
 }
 
-RootDirectory::RootDirectory(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_creationInfoHasBeenSet(false)
+RootDirectory::RootDirectory(JsonView jsonValue)
+  : RootDirectory()
 {
   *this = jsonValue;
 }

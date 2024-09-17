@@ -36,55 +36,25 @@ namespace Model
 
   public:
 
+    ///@{
     /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
-
-    /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-     */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-
-    /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-
-    /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-     */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-
-    /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-     */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-
-    /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-     */
     inline DeleteCustomDBEngineVersionRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-
-    /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-     */
     inline DeleteCustomDBEngineVersionRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-
-    /**
-     * <p>The database engine. The only supported engines are
-     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-     */
     inline DeleteCustomDBEngineVersionRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The custom engine version (CEV) for your DB instance. This option is required
      * for RDS Custom, but optional for Amazon RDS. The combination of
@@ -92,63 +62,14 @@ namespace Model
      * Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
-
-    /**
-     * <p>The custom engine version (CEV) for your DB instance. This option is required
-     * for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-     * Amazon Web Services Region.</p>
-     */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-
-    /**
-     * <p>The custom engine version (CEV) for your DB instance. This option is required
-     * for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-     * Amazon Web Services Region.</p>
-     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-
-    /**
-     * <p>The custom engine version (CEV) for your DB instance. This option is required
-     * for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-     * Amazon Web Services Region.</p>
-     */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-
-    /**
-     * <p>The custom engine version (CEV) for your DB instance. This option is required
-     * for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-     * Amazon Web Services Region.</p>
-     */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-
-    /**
-     * <p>The custom engine version (CEV) for your DB instance. This option is required
-     * for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-     * Amazon Web Services Region.</p>
-     */
     inline DeleteCustomDBEngineVersionRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-
-    /**
-     * <p>The custom engine version (CEV) for your DB instance. This option is required
-     * for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-     * Amazon Web Services Region.</p>
-     */
     inline DeleteCustomDBEngineVersionRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The custom engine version (CEV) for your DB instance. This option is required
-     * for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
-     * Amazon Web Services Region.</p>
-     */
     inline DeleteCustomDBEngineVersionRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_engine;

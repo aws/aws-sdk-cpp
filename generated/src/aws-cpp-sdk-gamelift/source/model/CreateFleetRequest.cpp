@@ -40,7 +40,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_computeTypeHasBeenSet(false),
     m_anywhereConfigurationHasBeenSet(false),
     m_instanceRoleCredentialsProvider(InstanceRoleCredentialsProvider::NOT_SET),
-    m_instanceRoleCredentialsProviderHasBeenSet(false)
+    m_instanceRoleCredentialsProviderHasBeenSet(false),
+    m_containerGroupsConfigurationHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_instanceRoleCredentialsProviderHasBeenSet)
   {
    payload.WithString("InstanceRoleCredentialsProvider", InstanceRoleCredentialsProviderMapper::GetNameForInstanceRoleCredentialsProvider(m_instanceRoleCredentialsProvider));
+  }
+
+  if(m_containerGroupsConfigurationHasBeenSet)
+  {
+   payload.WithObject("ContainerGroupsConfiguration", m_containerGroupsConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

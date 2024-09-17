@@ -26,11 +26,8 @@ MatchmakingRuleSet::MatchmakingRuleSet() :
 {
 }
 
-MatchmakingRuleSet::MatchmakingRuleSet(JsonView jsonValue) : 
-    m_ruleSetNameHasBeenSet(false),
-    m_ruleSetArnHasBeenSet(false),
-    m_ruleSetBodyHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+MatchmakingRuleSet::MatchmakingRuleSet(JsonView jsonValue)
+  : MatchmakingRuleSet()
 {
   *this = jsonValue;
 }

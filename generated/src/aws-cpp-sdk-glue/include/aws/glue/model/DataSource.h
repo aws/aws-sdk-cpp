@@ -38,36 +38,17 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Glue table.</p>
      */
     inline const GlueTable& GetGlueTable() const{ return m_glueTable; }
-
-    /**
-     * <p>An Glue table.</p>
-     */
     inline bool GlueTableHasBeenSet() const { return m_glueTableHasBeenSet; }
-
-    /**
-     * <p>An Glue table.</p>
-     */
     inline void SetGlueTable(const GlueTable& value) { m_glueTableHasBeenSet = true; m_glueTable = value; }
-
-    /**
-     * <p>An Glue table.</p>
-     */
     inline void SetGlueTable(GlueTable&& value) { m_glueTableHasBeenSet = true; m_glueTable = std::move(value); }
-
-    /**
-     * <p>An Glue table.</p>
-     */
     inline DataSource& WithGlueTable(const GlueTable& value) { SetGlueTable(value); return *this;}
-
-    /**
-     * <p>An Glue table.</p>
-     */
     inline DataSource& WithGlueTable(GlueTable&& value) { SetGlueTable(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlueTable m_glueTable;

@@ -27,12 +27,8 @@ Outcome::Outcome() :
 {
 }
 
-Outcome::Outcome(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Outcome::Outcome(JsonView jsonValue)
+  : Outcome()
 {
   *this = jsonValue;
 }

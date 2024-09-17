@@ -23,8 +23,8 @@ AutoMLDataSource::AutoMLDataSource() :
 {
 }
 
-AutoMLDataSource::AutoMLDataSource(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false)
+AutoMLDataSource::AutoMLDataSource(JsonView jsonValue)
+  : AutoMLDataSource()
 {
   *this = jsonValue;
 }

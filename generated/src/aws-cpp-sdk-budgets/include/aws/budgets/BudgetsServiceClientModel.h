@@ -37,6 +37,9 @@
 #include <aws/budgets/model/DescribeNotificationsForBudgetResult.h>
 #include <aws/budgets/model/DescribeSubscribersForNotificationResult.h>
 #include <aws/budgets/model/ExecuteBudgetActionResult.h>
+#include <aws/budgets/model/ListTagsForResourceResult.h>
+#include <aws/budgets/model/TagResourceResult.h>
+#include <aws/budgets/model/UntagResourceResult.h>
 #include <aws/budgets/model/UpdateBudgetResult.h>
 #include <aws/budgets/model/UpdateBudgetActionResult.h>
 #include <aws/budgets/model/UpdateNotificationResult.h>
@@ -74,7 +77,7 @@ namespace Aws
 
   namespace Budgets
   {
-    using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using BudgetsEndpointProviderBase = Aws::Budgets::Endpoint::BudgetsEndpointProviderBase;
     using BudgetsEndpointProvider = Aws::Budgets::Endpoint::BudgetsEndpointProvider;
 
@@ -100,6 +103,9 @@ namespace Aws
       class DescribeNotificationsForBudgetRequest;
       class DescribeSubscribersForNotificationRequest;
       class ExecuteBudgetActionRequest;
+      class ListTagsForResourceRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateBudgetRequest;
       class UpdateBudgetActionRequest;
       class UpdateNotificationRequest;
@@ -126,6 +132,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeNotificationsForBudgetResult, BudgetsError> DescribeNotificationsForBudgetOutcome;
       typedef Aws::Utils::Outcome<DescribeSubscribersForNotificationResult, BudgetsError> DescribeSubscribersForNotificationOutcome;
       typedef Aws::Utils::Outcome<ExecuteBudgetActionResult, BudgetsError> ExecuteBudgetActionOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, BudgetsError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, BudgetsError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, BudgetsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateBudgetResult, BudgetsError> UpdateBudgetOutcome;
       typedef Aws::Utils::Outcome<UpdateBudgetActionResult, BudgetsError> UpdateBudgetActionOutcome;
       typedef Aws::Utils::Outcome<UpdateNotificationResult, BudgetsError> UpdateNotificationOutcome;
@@ -152,6 +161,9 @@ namespace Aws
       typedef std::future<DescribeNotificationsForBudgetOutcome> DescribeNotificationsForBudgetOutcomeCallable;
       typedef std::future<DescribeSubscribersForNotificationOutcome> DescribeSubscribersForNotificationOutcomeCallable;
       typedef std::future<ExecuteBudgetActionOutcome> ExecuteBudgetActionOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateBudgetOutcome> UpdateBudgetOutcomeCallable;
       typedef std::future<UpdateBudgetActionOutcome> UpdateBudgetActionOutcomeCallable;
       typedef std::future<UpdateNotificationOutcome> UpdateNotificationOutcomeCallable;
@@ -181,6 +193,9 @@ namespace Aws
     typedef std::function<void(const BudgetsClient*, const Model::DescribeNotificationsForBudgetRequest&, const Model::DescribeNotificationsForBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationsForBudgetResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::DescribeSubscribersForNotificationRequest&, const Model::DescribeSubscribersForNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscribersForNotificationResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::ExecuteBudgetActionRequest&, const Model::ExecuteBudgetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteBudgetActionResponseReceivedHandler;
+    typedef std::function<void(const BudgetsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const BudgetsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const BudgetsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::UpdateBudgetRequest&, const Model::UpdateBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBudgetResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::UpdateBudgetActionRequest&, const Model::UpdateBudgetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBudgetActionResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::UpdateNotificationRequest&, const Model::UpdateNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotificationResponseReceivedHandler;

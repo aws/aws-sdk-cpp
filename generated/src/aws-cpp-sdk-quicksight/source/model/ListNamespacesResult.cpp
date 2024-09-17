@@ -22,8 +22,8 @@ ListNamespacesResult::ListNamespacesResult() :
 {
 }
 
-ListNamespacesResult::ListNamespacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+ListNamespacesResult::ListNamespacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListNamespacesResult()
 {
   *this = result;
 }

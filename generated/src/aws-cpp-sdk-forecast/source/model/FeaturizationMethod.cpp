@@ -25,10 +25,8 @@ FeaturizationMethod::FeaturizationMethod() :
 {
 }
 
-FeaturizationMethod::FeaturizationMethod(JsonView jsonValue) : 
-    m_featurizationMethodName(FeaturizationMethodName::NOT_SET),
-    m_featurizationMethodNameHasBeenSet(false),
-    m_featurizationMethodParametersHasBeenSet(false)
+FeaturizationMethod::FeaturizationMethod(JsonView jsonValue)
+  : FeaturizationMethod()
 {
   *this = jsonValue;
 }

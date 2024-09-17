@@ -26,11 +26,8 @@ SNOMEDCTTrait::SNOMEDCTTrait() :
 {
 }
 
-SNOMEDCTTrait::SNOMEDCTTrait(JsonView jsonValue) : 
-    m_name(SNOMEDCTTraitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+SNOMEDCTTrait::SNOMEDCTTrait(JsonView jsonValue)
+  : SNOMEDCTTrait()
 {
   *this = jsonValue;
 }

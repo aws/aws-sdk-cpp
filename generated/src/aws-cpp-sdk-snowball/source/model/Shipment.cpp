@@ -24,9 +24,8 @@ Shipment::Shipment() :
 {
 }
 
-Shipment::Shipment(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_trackingNumberHasBeenSet(false)
+Shipment::Shipment(JsonView jsonValue)
+  : Shipment()
 {
   *this = jsonValue;
 }

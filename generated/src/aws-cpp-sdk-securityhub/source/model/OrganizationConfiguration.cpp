@@ -27,12 +27,8 @@ OrganizationConfiguration::OrganizationConfiguration() :
 {
 }
 
-OrganizationConfiguration::OrganizationConfiguration(JsonView jsonValue) : 
-    m_configurationType(OrganizationConfigurationConfigurationType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_status(OrganizationConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+OrganizationConfiguration::OrganizationConfiguration(JsonView jsonValue)
+  : OrganizationConfiguration()
 {
   *this = jsonValue;
 }

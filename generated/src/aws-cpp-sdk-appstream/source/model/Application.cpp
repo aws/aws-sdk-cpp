@@ -38,23 +38,8 @@ Application::Application() :
 {
 }
 
-Application::Application(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_iconURLHasBeenSet(false),
-    m_launchPathHasBeenSet(false),
-    m_launchParametersHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_appBlockArnHasBeenSet(false),
-    m_iconS3LocationHasBeenSet(false),
-    m_platformsHasBeenSet(false),
-    m_instanceFamiliesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+Application::Application(JsonView jsonValue)
+  : Application()
 {
   *this = jsonValue;
 }

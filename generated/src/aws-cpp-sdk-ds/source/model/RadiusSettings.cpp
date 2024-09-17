@@ -35,20 +35,8 @@ RadiusSettings::RadiusSettings() :
 {
 }
 
-RadiusSettings::RadiusSettings(JsonView jsonValue) : 
-    m_radiusServersHasBeenSet(false),
-    m_radiusPort(0),
-    m_radiusPortHasBeenSet(false),
-    m_radiusTimeout(0),
-    m_radiusTimeoutHasBeenSet(false),
-    m_radiusRetries(0),
-    m_radiusRetriesHasBeenSet(false),
-    m_sharedSecretHasBeenSet(false),
-    m_authenticationProtocol(RadiusAuthenticationProtocol::NOT_SET),
-    m_authenticationProtocolHasBeenSet(false),
-    m_displayLabelHasBeenSet(false),
-    m_useSameUsername(false),
-    m_useSameUsernameHasBeenSet(false)
+RadiusSettings::RadiusSettings(JsonView jsonValue)
+  : RadiusSettings()
 {
   *this = jsonValue;
 }

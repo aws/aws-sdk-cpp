@@ -38,67 +38,29 @@ namespace Model
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const DataModel& GetDataModel() const{ return m_dataModel; }
-
-    /**
-     * <p/>
-     */
     inline bool DataModelHasBeenSet() const { return m_dataModelHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetDataModel(const DataModel& value) { m_dataModelHasBeenSet = true; m_dataModel = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetDataModel(DataModel&& value) { m_dataModelHasBeenSet = true; m_dataModel = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline DataModelConfiguration& WithDataModel(const DataModel& value) { SetDataModel(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline DataModelConfiguration& WithDataModel(DataModel&& value) { SetDataModel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const DataModelS3Configuration& GetDataModelS3Configuration() const{ return m_dataModelS3Configuration; }
-
-    /**
-     * <p/>
-     */
     inline bool DataModelS3ConfigurationHasBeenSet() const { return m_dataModelS3ConfigurationHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetDataModelS3Configuration(const DataModelS3Configuration& value) { m_dataModelS3ConfigurationHasBeenSet = true; m_dataModelS3Configuration = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetDataModelS3Configuration(DataModelS3Configuration&& value) { m_dataModelS3ConfigurationHasBeenSet = true; m_dataModelS3Configuration = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline DataModelConfiguration& WithDataModelS3Configuration(const DataModelS3Configuration& value) { SetDataModelS3Configuration(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline DataModelConfiguration& WithDataModelS3Configuration(DataModelS3Configuration&& value) { SetDataModelS3Configuration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataModel m_dataModel;

@@ -27,12 +27,8 @@ CatalogTarget::CatalogTarget() :
 {
 }
 
-CatalogTarget::CatalogTarget(JsonView jsonValue) : 
-    m_databaseNameHasBeenSet(false),
-    m_tablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_eventQueueArnHasBeenSet(false),
-    m_dlqEventQueueArnHasBeenSet(false)
+CatalogTarget::CatalogTarget(JsonView jsonValue)
+  : CatalogTarget()
 {
   *this = jsonValue;
 }

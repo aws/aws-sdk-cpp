@@ -24,9 +24,8 @@ ExecutionProperty::ExecutionProperty() :
 {
 }
 
-ExecutionProperty::ExecutionProperty(JsonView jsonValue) : 
-    m_maxConcurrentRuns(0),
-    m_maxConcurrentRunsHasBeenSet(false)
+ExecutionProperty::ExecutionProperty(JsonView jsonValue)
+  : ExecutionProperty()
 {
   *this = jsonValue;
 }

@@ -34,46 +34,19 @@ namespace Model
     AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An identifier associated with a message movement task.</p>
      */
     inline const Aws::String& GetTaskHandle() const{ return m_taskHandle; }
-
-    /**
-     * <p>An identifier associated with a message movement task.</p>
-     */
     inline bool TaskHandleHasBeenSet() const { return m_taskHandleHasBeenSet; }
-
-    /**
-     * <p>An identifier associated with a message movement task.</p>
-     */
     inline void SetTaskHandle(const Aws::String& value) { m_taskHandleHasBeenSet = true; m_taskHandle = value; }
-
-    /**
-     * <p>An identifier associated with a message movement task.</p>
-     */
     inline void SetTaskHandle(Aws::String&& value) { m_taskHandleHasBeenSet = true; m_taskHandle = std::move(value); }
-
-    /**
-     * <p>An identifier associated with a message movement task.</p>
-     */
     inline void SetTaskHandle(const char* value) { m_taskHandleHasBeenSet = true; m_taskHandle.assign(value); }
-
-    /**
-     * <p>An identifier associated with a message movement task.</p>
-     */
     inline CancelMessageMoveTaskRequest& WithTaskHandle(const Aws::String& value) { SetTaskHandle(value); return *this;}
-
-    /**
-     * <p>An identifier associated with a message movement task.</p>
-     */
     inline CancelMessageMoveTaskRequest& WithTaskHandle(Aws::String&& value) { SetTaskHandle(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier associated with a message movement task.</p>
-     */
     inline CancelMessageMoveTaskRequest& WithTaskHandle(const char* value) { SetTaskHandle(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskHandle;

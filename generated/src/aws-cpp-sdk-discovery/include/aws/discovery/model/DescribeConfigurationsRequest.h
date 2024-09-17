@@ -35,51 +35,20 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>One or more configuration IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationIds() const{ return m_configurationIds; }
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline void SetConfigurationIds(const Aws::Vector<Aws::String>& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = value; }
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline void SetConfigurationIds(Aws::Vector<Aws::String>&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = std::move(value); }
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline DescribeConfigurationsRequest& WithConfigurationIds(const Aws::Vector<Aws::String>& value) { SetConfigurationIds(value); return *this;}
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline DescribeConfigurationsRequest& WithConfigurationIds(Aws::Vector<Aws::String>&& value) { SetConfigurationIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline DescribeConfigurationsRequest& AddConfigurationIds(const Aws::String& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline DescribeConfigurationsRequest& AddConfigurationIds(Aws::String&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more configuration IDs.</p>
-     */
     inline DescribeConfigurationsRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_configurationIds;

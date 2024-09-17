@@ -24,9 +24,8 @@ AppBlockBuilderAppBlockAssociation::AppBlockBuilderAppBlockAssociation() :
 {
 }
 
-AppBlockBuilderAppBlockAssociation::AppBlockBuilderAppBlockAssociation(JsonView jsonValue) : 
-    m_appBlockArnHasBeenSet(false),
-    m_appBlockBuilderNameHasBeenSet(false)
+AppBlockBuilderAppBlockAssociation::AppBlockBuilderAppBlockAssociation(JsonView jsonValue)
+  : AppBlockBuilderAppBlockAssociation()
 {
   *this = jsonValue;
 }

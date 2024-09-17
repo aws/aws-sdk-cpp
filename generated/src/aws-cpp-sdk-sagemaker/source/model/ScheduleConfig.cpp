@@ -25,10 +25,8 @@ ScheduleConfig::ScheduleConfig() :
 {
 }
 
-ScheduleConfig::ScheduleConfig(JsonView jsonValue) : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_dataAnalysisStartTimeHasBeenSet(false),
-    m_dataAnalysisEndTimeHasBeenSet(false)
+ScheduleConfig::ScheduleConfig(JsonView jsonValue)
+  : ScheduleConfig()
 {
   *this = jsonValue;
 }

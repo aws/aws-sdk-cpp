@@ -45,8 +45,11 @@ namespace Aws
         {
             Aws::Utils::Memory::InitializeAWSMemorySystem(*options.memoryManagementOptions.memoryManager);
         }
+        else
+        {
+            Aws::Utils::Memory::InitializeAWSMemorySystem(Utils::Memory::GetDefaultMemorySystem());
+        }
 #endif // USE_AWS_MEMORY_MANAGEMENT
-        Aws::InitializeCrt();
         Aws::Client::CoreErrorsMapper::InitCoreErrorsMapper();
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
@@ -72,6 +75,7 @@ namespace Aws
             AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initiate AWS SDK for C++ with Version:" << Aws::String(Aws::Version::GetVersionString()));
         }
 
+        Aws::InitializeCrt();
         Aws::Config::InitConfigAndCredentialsCacheManager();
 
         if (options.ioOptions.clientBootstrap_create_fn)
@@ -155,6 +159,7 @@ namespace Aws
         Aws::Http::SetInitCleanupCurlFlag(options.httpOptions.initAndCleanupCurl);
         Aws::Http::SetInstallSigPipeHandlerFlag(options.httpOptions.installSigPipeHandler);
         Aws::Http::SetCompliantRfc3986Encoding(options.httpOptions.compliantRfc3986Encoding);
+        Aws::Http::SetPreservePathSeparators(options.httpOptions.preservePathSeparators);
         Aws::Http::InitHttp();
         Aws::InitializeEnumOverflowContainer();
         cJSON_AS4CPP_Hooks hooks;
@@ -209,13 +214,15 @@ namespace Aws
 
         Aws::Config::CleanupConfigAndCredentialsCacheManager();
 
+        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
+        Aws::CleanupCrt();
+
         if (options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             Aws::Utils::Logging::ShutdownCRTLogging();
-            Aws::Utils::Logging::ShutdownAWSLogging();
+            Aws::Utils::Logging::PushLogger(nullptr); // stops further logging but keeps old logger object alive
         }
-        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
-        Aws::CleanupCrt();
+        Aws::Utils::Logging::ShutdownAWSLogging();
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {

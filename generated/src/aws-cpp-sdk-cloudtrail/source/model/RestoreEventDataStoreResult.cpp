@@ -27,13 +27,8 @@ RestoreEventDataStoreResult::RestoreEventDataStoreResult() :
 {
 }
 
-RestoreEventDataStoreResult::RestoreEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(EventDataStoreStatus::NOT_SET),
-    m_multiRegionEnabled(false),
-    m_organizationEnabled(false),
-    m_retentionPeriod(0),
-    m_terminationProtectionEnabled(false),
-    m_billingMode(BillingMode::NOT_SET)
+RestoreEventDataStoreResult::RestoreEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RestoreEventDataStoreResult()
 {
   *this = result;
 }

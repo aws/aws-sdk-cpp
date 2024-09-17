@@ -40,169 +40,54 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The ARN of the connector.
      */
     inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
-
-    /**
-     * The ARN of the connector.
-     */
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-
-    /**
-     * The ARN of the connector.
-     */
     inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-
-    /**
-     * The ARN of the connector.
-     */
     inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-
-    /**
-     * The ARN of the connector.
-     */
     inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-
-    /**
-     * The ARN of the connector.
-     */
     inline Connector& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-
-    /**
-     * The ARN of the connector.
-     */
     inline Connector& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the connector.
-     */
     inline Connector& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A descriptive or arbitrary ID for the connector. This value must be unique
      * within the connector definition version. Max length is 128 characters with
      * pattern [a-zA-Z0-9:_-]+.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * A descriptive or arbitrary ID for the connector. This value must be unique
-     * within the connector definition version. Max length is 128 characters with
-     * pattern [a-zA-Z0-9:_-]+.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * A descriptive or arbitrary ID for the connector. This value must be unique
-     * within the connector definition version. Max length is 128 characters with
-     * pattern [a-zA-Z0-9:_-]+.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * A descriptive or arbitrary ID for the connector. This value must be unique
-     * within the connector definition version. Max length is 128 characters with
-     * pattern [a-zA-Z0-9:_-]+.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * A descriptive or arbitrary ID for the connector. This value must be unique
-     * within the connector definition version. Max length is 128 characters with
-     * pattern [a-zA-Z0-9:_-]+.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * A descriptive or arbitrary ID for the connector. This value must be unique
-     * within the connector definition version. Max length is 128 characters with
-     * pattern [a-zA-Z0-9:_-]+.
-     */
     inline Connector& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * A descriptive or arbitrary ID for the connector. This value must be unique
-     * within the connector definition version. Max length is 128 characters with
-     * pattern [a-zA-Z0-9:_-]+.
-     */
     inline Connector& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * A descriptive or arbitrary ID for the connector. This value must be unique
-     * within the connector definition version. Max length is 128 characters with
-     * pattern [a-zA-Z0-9:_-]+.
-     */
     inline Connector& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The parameters or configuration that the connector uses.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * The parameters or configuration that the connector uses.
-     */
     inline Connector& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_connectorArn;

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/http/HttpResponse.h>
@@ -53,7 +53,7 @@ namespace {
   const char* ALLOCATION_TAG = "S3ClientS3ExpressTest";
   const char* S3_EXPRESS_SUFFIX = "--use1-az6--x-s3";
 
-  class S3ExpressTest : public ::testing::Test {
+  class S3ExpressTest : public Aws::Testing::AwsCppSdkGTestSuite {
   public:
     CreateBucketOutcome CreateBucket(const Aws::String &bucketName = randomString() + S3_EXPRESS_SUFFIX) {
       bucketsToCleanup.push_back(bucketName);
@@ -300,6 +300,7 @@ namespace {
     void SetUp() override {
       S3ClientConfiguration configuration;
       configuration.region = "us-east-1";
+      configuration.enableHttpClientTrace = true;
       client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, configuration);
     }
 
@@ -477,5 +478,24 @@ namespace {
         EXPECT_TRUE(response.IsSuccess());
       }
     }
+  }
+
+  TEST_F(S3ExpressTest, PutObjectChecksumWithoutAlgorithm) {
+    const auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
+    const auto createOutcome = CreateBucket(bucketName);
+    AWS_EXPECT_SUCCESS(createOutcome);
+
+    auto request = PutObjectRequest()
+        .WithBucket(bucketName)
+        .WithKey("swingingparty")
+        .WithChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("Bring your own lampshade, somewhere there's a party.")));
+
+    std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
+      "Bring your own lampshade, somewhere there's a party.",
+      std::ios_base::in | std::ios_base::binary);
+    request.SetBody(body);
+
+    const auto response = client->PutObject(request);
+    AWS_EXPECT_SUCCESS(response);
   }
 }

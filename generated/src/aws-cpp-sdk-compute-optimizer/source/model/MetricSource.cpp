@@ -25,10 +25,8 @@ MetricSource::MetricSource() :
 {
 }
 
-MetricSource::MetricSource(JsonView jsonValue) : 
-    m_provider(MetricSourceProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_providerArnHasBeenSet(false)
+MetricSource::MetricSource(JsonView jsonValue)
+  : MetricSource()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ TransformProcessingConfig::TransformProcessingConfig() :
 {
 }
 
-TransformProcessingConfig::TransformProcessingConfig(JsonView jsonValue) : 
-    m_computeLocation(ComputeLocation::NOT_SET),
-    m_computeLocationHasBeenSet(false),
-    m_forwardingConfigHasBeenSet(false)
+TransformProcessingConfig::TransformProcessingConfig(JsonView jsonValue)
+  : TransformProcessingConfig()
 {
   *this = jsonValue;
 }

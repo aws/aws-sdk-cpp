@@ -23,8 +23,8 @@ AvailabilityZoneDetail::AvailabilityZoneDetail() :
 {
 }
 
-AvailabilityZoneDetail::AvailabilityZoneDetail(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+AvailabilityZoneDetail::AvailabilityZoneDetail(JsonView jsonValue)
+  : AvailabilityZoneDetail()
 {
   *this = jsonValue;
 }

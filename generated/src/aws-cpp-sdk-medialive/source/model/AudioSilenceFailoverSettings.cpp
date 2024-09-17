@@ -25,10 +25,8 @@ AudioSilenceFailoverSettings::AudioSilenceFailoverSettings() :
 {
 }
 
-AudioSilenceFailoverSettings::AudioSilenceFailoverSettings(JsonView jsonValue) : 
-    m_audioSelectorNameHasBeenSet(false),
-    m_audioSilenceThresholdMsec(0),
-    m_audioSilenceThresholdMsecHasBeenSet(false)
+AudioSilenceFailoverSettings::AudioSilenceFailoverSettings(JsonView jsonValue)
+  : AudioSilenceFailoverSettings()
 {
   *this = jsonValue;
 }

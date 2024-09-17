@@ -34,46 +34,19 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the scheduled query. </p>
      */
     inline const Aws::String& GetScheduledQueryArn() const{ return m_scheduledQueryArn; }
-
-    /**
-     * <p>The ARN of the scheduled query. </p>
-     */
     inline bool ScheduledQueryArnHasBeenSet() const { return m_scheduledQueryArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the scheduled query. </p>
-     */
     inline void SetScheduledQueryArn(const Aws::String& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = value; }
-
-    /**
-     * <p>The ARN of the scheduled query. </p>
-     */
     inline void SetScheduledQueryArn(Aws::String&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the scheduled query. </p>
-     */
     inline void SetScheduledQueryArn(const char* value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn.assign(value); }
-
-    /**
-     * <p>The ARN of the scheduled query. </p>
-     */
     inline DeleteScheduledQueryRequest& WithScheduledQueryArn(const Aws::String& value) { SetScheduledQueryArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the scheduled query. </p>
-     */
     inline DeleteScheduledQueryRequest& WithScheduledQueryArn(Aws::String&& value) { SetScheduledQueryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the scheduled query. </p>
-     */
     inline DeleteScheduledQueryRequest& WithScheduledQueryArn(const char* value) { SetScheduledQueryArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduledQueryArn;

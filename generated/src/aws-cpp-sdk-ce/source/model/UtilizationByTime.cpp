@@ -25,10 +25,8 @@ UtilizationByTime::UtilizationByTime() :
 {
 }
 
-UtilizationByTime::UtilizationByTime(JsonView jsonValue) : 
-    m_timePeriodHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_totalHasBeenSet(false)
+UtilizationByTime::UtilizationByTime(JsonView jsonValue)
+  : UtilizationByTime()
 {
   *this = jsonValue;
 }

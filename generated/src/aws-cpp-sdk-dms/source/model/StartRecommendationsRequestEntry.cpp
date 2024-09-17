@@ -24,9 +24,8 @@ StartRecommendationsRequestEntry::StartRecommendationsRequestEntry() :
 {
 }
 
-StartRecommendationsRequestEntry::StartRecommendationsRequestEntry(JsonView jsonValue) : 
-    m_databaseIdHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+StartRecommendationsRequestEntry::StartRecommendationsRequestEntry(JsonView jsonValue)
+  : StartRecommendationsRequestEntry()
 {
   *this = jsonValue;
 }

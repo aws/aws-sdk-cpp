@@ -26,9 +26,8 @@ EfaInfo::EfaInfo() :
 {
 }
 
-EfaInfo::EfaInfo(const XmlNode& xmlNode) : 
-    m_maximumEfaInterfaces(0),
-    m_maximumEfaInterfacesHasBeenSet(false)
+EfaInfo::EfaInfo(const XmlNode& xmlNode)
+  : EfaInfo()
 {
   *this = xmlNode;
 }

@@ -22,8 +22,8 @@ GetServiceLinkedRoleDeletionStatusResult::GetServiceLinkedRoleDeletionStatusResu
 {
 }
 
-GetServiceLinkedRoleDeletionStatusResult::GetServiceLinkedRoleDeletionStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(DeletionTaskStatusType::NOT_SET)
+GetServiceLinkedRoleDeletionStatusResult::GetServiceLinkedRoleDeletionStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetServiceLinkedRoleDeletionStatusResult()
 {
   *this = result;
 }

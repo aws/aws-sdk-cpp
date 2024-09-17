@@ -28,13 +28,8 @@ Name::Name() :
 {
 }
 
-Name::Name(JsonView jsonValue) : 
-    m_formattedHasBeenSet(false),
-    m_familyNameHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_middleNameHasBeenSet(false),
-    m_honorificPrefixHasBeenSet(false),
-    m_honorificSuffixHasBeenSet(false)
+Name::Name(JsonView jsonValue)
+  : Name()
 {
   *this = jsonValue;
 }

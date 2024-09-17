@@ -33,53 +33,27 @@ namespace Model
     AWS_VOICEID_API StartFraudsterRegistrationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the started fraudster registration job.</p>
      */
     inline const FraudsterRegistrationJob& GetJob() const{ return m_job; }
-
-    /**
-     * <p>Details about the started fraudster registration job.</p>
-     */
     inline void SetJob(const FraudsterRegistrationJob& value) { m_job = value; }
-
-    /**
-     * <p>Details about the started fraudster registration job.</p>
-     */
     inline void SetJob(FraudsterRegistrationJob&& value) { m_job = std::move(value); }
-
-    /**
-     * <p>Details about the started fraudster registration job.</p>
-     */
     inline StartFraudsterRegistrationJobResult& WithJob(const FraudsterRegistrationJob& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>Details about the started fraudster registration job.</p>
-     */
     inline StartFraudsterRegistrationJobResult& WithJob(FraudsterRegistrationJob&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartFraudsterRegistrationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartFraudsterRegistrationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartFraudsterRegistrationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FraudsterRegistrationJob m_job;

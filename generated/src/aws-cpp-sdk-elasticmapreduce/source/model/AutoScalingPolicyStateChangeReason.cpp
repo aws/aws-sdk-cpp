@@ -25,10 +25,8 @@ AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason() :
 {
 }
 
-AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason(JsonView jsonValue) : 
-    m_code(AutoScalingPolicyStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason(JsonView jsonValue)
+  : AutoScalingPolicyStateChangeReason()
 {
   *this = jsonValue;
 }

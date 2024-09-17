@@ -26,11 +26,8 @@ CanaryTimeline::CanaryTimeline() :
 {
 }
 
-CanaryTimeline::CanaryTimeline(JsonView jsonValue) : 
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_lastStartedHasBeenSet(false),
-    m_lastStoppedHasBeenSet(false)
+CanaryTimeline::CanaryTimeline(JsonView jsonValue)
+  : CanaryTimeline()
 {
   *this = jsonValue;
 }

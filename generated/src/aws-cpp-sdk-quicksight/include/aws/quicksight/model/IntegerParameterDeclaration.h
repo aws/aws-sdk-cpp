@@ -43,176 +43,69 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value type determines whether the parameter is a single-value or
      * multi-value parameter.</p>
      */
     inline const ParameterValueType& GetParameterValueType() const{ return m_parameterValueType; }
-
-    /**
-     * <p>The value type determines whether the parameter is a single-value or
-     * multi-value parameter.</p>
-     */
     inline bool ParameterValueTypeHasBeenSet() const { return m_parameterValueTypeHasBeenSet; }
-
-    /**
-     * <p>The value type determines whether the parameter is a single-value or
-     * multi-value parameter.</p>
-     */
     inline void SetParameterValueType(const ParameterValueType& value) { m_parameterValueTypeHasBeenSet = true; m_parameterValueType = value; }
-
-    /**
-     * <p>The value type determines whether the parameter is a single-value or
-     * multi-value parameter.</p>
-     */
     inline void SetParameterValueType(ParameterValueType&& value) { m_parameterValueTypeHasBeenSet = true; m_parameterValueType = std::move(value); }
-
-    /**
-     * <p>The value type determines whether the parameter is a single-value or
-     * multi-value parameter.</p>
-     */
     inline IntegerParameterDeclaration& WithParameterValueType(const ParameterValueType& value) { SetParameterValueType(value); return *this;}
-
-    /**
-     * <p>The value type determines whether the parameter is a single-value or
-     * multi-value parameter.</p>
-     */
     inline IntegerParameterDeclaration& WithParameterValueType(ParameterValueType&& value) { SetParameterValueType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the parameter that is being declared.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline IntegerParameterDeclaration& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline IntegerParameterDeclaration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the parameter that is being declared.</p>
-     */
     inline IntegerParameterDeclaration& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default values of a parameter. If the parameter is a single-value
      * parameter, a maximum of one default value can be provided.</p>
      */
     inline const IntegerDefaultValues& GetDefaultValues() const{ return m_defaultValues; }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline bool DefaultValuesHasBeenSet() const { return m_defaultValuesHasBeenSet; }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline void SetDefaultValues(const IntegerDefaultValues& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = value; }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline void SetDefaultValues(IntegerDefaultValues&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::move(value); }
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline IntegerParameterDeclaration& WithDefaultValues(const IntegerDefaultValues& value) { SetDefaultValues(value); return *this;}
-
-    /**
-     * <p>The default values of a parameter. If the parameter is a single-value
-     * parameter, a maximum of one default value can be provided.</p>
-     */
     inline IntegerParameterDeclaration& WithDefaultValues(IntegerDefaultValues&& value) { SetDefaultValues(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A parameter declaration for the <code>Integer</code> data type.</p>
      */
     inline const IntegerValueWhenUnsetConfiguration& GetValueWhenUnset() const{ return m_valueWhenUnset; }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline bool ValueWhenUnsetHasBeenSet() const { return m_valueWhenUnsetHasBeenSet; }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline void SetValueWhenUnset(const IntegerValueWhenUnsetConfiguration& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = value; }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline void SetValueWhenUnset(IntegerValueWhenUnsetConfiguration&& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = std::move(value); }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline IntegerParameterDeclaration& WithValueWhenUnset(const IntegerValueWhenUnsetConfiguration& value) { SetValueWhenUnset(value); return *this;}
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline IntegerParameterDeclaration& WithValueWhenUnset(IntegerValueWhenUnsetConfiguration&& value) { SetValueWhenUnset(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<MappedDataSetParameter>& GetMappedDataSetParameters() const{ return m_mappedDataSetParameters; }
-
-    
     inline bool MappedDataSetParametersHasBeenSet() const { return m_mappedDataSetParametersHasBeenSet; }
-
-    
     inline void SetMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = value; }
-
-    
     inline void SetMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = std::move(value); }
-
-    
     inline IntegerParameterDeclaration& WithMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { SetMappedDataSetParameters(value); return *this;}
-
-    
     inline IntegerParameterDeclaration& WithMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { SetMappedDataSetParameters(std::move(value)); return *this;}
-
-    
     inline IntegerParameterDeclaration& AddMappedDataSetParameters(const MappedDataSetParameter& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(value); return *this; }
-
-    
     inline IntegerParameterDeclaration& AddMappedDataSetParameters(MappedDataSetParameter&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ParameterValueType m_parameterValueType;

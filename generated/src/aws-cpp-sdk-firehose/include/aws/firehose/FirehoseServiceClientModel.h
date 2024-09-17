@@ -30,6 +30,7 @@
 #include <aws/firehose/model/TagDeliveryStreamResult.h>
 #include <aws/firehose/model/UntagDeliveryStreamResult.h>
 #include <aws/firehose/model/UpdateDestinationResult.h>
+#include <aws/firehose/model/ListDeliveryStreamsRequest.h>
 /* End of service model headers required in FirehoseClient header */
 
 namespace Aws
@@ -63,7 +64,7 @@ namespace Aws
 
   namespace Firehose
   {
-    using FirehoseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FirehoseClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FirehoseEndpointProviderBase = Aws::Firehose::Endpoint::FirehoseEndpointProviderBase;
     using FirehoseEndpointProvider = Aws::Firehose::Endpoint::FirehoseEndpointProvider;
 

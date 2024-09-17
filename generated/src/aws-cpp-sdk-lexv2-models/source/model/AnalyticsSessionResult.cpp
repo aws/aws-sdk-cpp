@@ -25,10 +25,8 @@ AnalyticsSessionResult::AnalyticsSessionResult() :
 {
 }
 
-AnalyticsSessionResult::AnalyticsSessionResult(JsonView jsonValue) : 
-    m_binKeysHasBeenSet(false),
-    m_groupByKeysHasBeenSet(false),
-    m_metricsResultsHasBeenSet(false)
+AnalyticsSessionResult::AnalyticsSessionResult(JsonView jsonValue)
+  : AnalyticsSessionResult()
 {
   *this = jsonValue;
 }

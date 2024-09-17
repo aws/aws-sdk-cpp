@@ -26,11 +26,8 @@ VpcConnectionInfoServerless::VpcConnectionInfoServerless() :
 {
 }
 
-VpcConnectionInfoServerless::VpcConnectionInfoServerless(JsonView jsonValue) : 
-    m_creationTimeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_userIdentityHasBeenSet(false),
-    m_vpcConnectionArnHasBeenSet(false)
+VpcConnectionInfoServerless::VpcConnectionInfoServerless(JsonView jsonValue)
+  : VpcConnectionInfoServerless()
 {
   *this = jsonValue;
 }

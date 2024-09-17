@@ -19,27 +19,29 @@ namespace Model
 {
 
 RetrievalResultLocation::RetrievalResultLocation() : 
+    m_confluenceLocationHasBeenSet(false),
+    m_s3LocationHasBeenSet(false),
+    m_salesforceLocationHasBeenSet(false),
+    m_sharePointLocationHasBeenSet(false),
     m_type(RetrievalResultLocationType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+    m_webLocationHasBeenSet(false)
 {
 }
 
-RetrievalResultLocation::RetrievalResultLocation(JsonView jsonValue) : 
-    m_type(RetrievalResultLocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+RetrievalResultLocation::RetrievalResultLocation(JsonView jsonValue)
+  : RetrievalResultLocation()
 {
   *this = jsonValue;
 }
 
 RetrievalResultLocation& RetrievalResultLocation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("confluenceLocation"))
   {
-    m_type = RetrievalResultLocationTypeMapper::GetRetrievalResultLocationTypeForName(jsonValue.GetString("type"));
+    m_confluenceLocation = jsonValue.GetObject("confluenceLocation");
 
-    m_typeHasBeenSet = true;
+    m_confluenceLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("s3Location"))
@@ -49,6 +51,34 @@ RetrievalResultLocation& RetrievalResultLocation::operator =(JsonView jsonValue)
     m_s3LocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("salesforceLocation"))
+  {
+    m_salesforceLocation = jsonValue.GetObject("salesforceLocation");
+
+    m_salesforceLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sharePointLocation"))
+  {
+    m_sharePointLocation = jsonValue.GetObject("sharePointLocation");
+
+    m_sharePointLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RetrievalResultLocationTypeMapper::GetRetrievalResultLocationTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("webLocation"))
+  {
+    m_webLocation = jsonValue.GetObject("webLocation");
+
+    m_webLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -56,14 +86,38 @@ JsonValue RetrievalResultLocation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
+  if(m_confluenceLocationHasBeenSet)
   {
-   payload.WithString("type", RetrievalResultLocationTypeMapper::GetNameForRetrievalResultLocationType(m_type));
+   payload.WithObject("confluenceLocation", m_confluenceLocation.Jsonize());
+
   }
 
   if(m_s3LocationHasBeenSet)
   {
    payload.WithObject("s3Location", m_s3Location.Jsonize());
+
+  }
+
+  if(m_salesforceLocationHasBeenSet)
+  {
+   payload.WithObject("salesforceLocation", m_salesforceLocation.Jsonize());
+
+  }
+
+  if(m_sharePointLocationHasBeenSet)
+  {
+   payload.WithObject("sharePointLocation", m_sharePointLocation.Jsonize());
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RetrievalResultLocationTypeMapper::GetNameForRetrievalResultLocationType(m_type));
+  }
+
+  if(m_webLocationHasBeenSet)
+  {
+   payload.WithObject("webLocation", m_webLocation.Jsonize());
 
   }
 

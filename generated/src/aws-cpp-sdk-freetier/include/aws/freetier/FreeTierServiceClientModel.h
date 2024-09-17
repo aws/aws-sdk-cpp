@@ -19,6 +19,7 @@
 
 /* Service model headers required in FreeTierClient header */
 #include <aws/freetier/model/GetFreeTierUsageResult.h>
+#include <aws/freetier/model/GetFreeTierUsageRequest.h>
 /* End of service model headers required in FreeTierClient header */
 
 namespace Aws
@@ -52,7 +53,7 @@ namespace Aws
 
   namespace FreeTier
   {
-    using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration;
     using FreeTierEndpointProviderBase = Aws::FreeTier::Endpoint::FreeTierEndpointProviderBase;
     using FreeTierEndpointProvider = Aws::FreeTier::Endpoint::FreeTierEndpointProvider;
 

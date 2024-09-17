@@ -24,9 +24,8 @@ SlateSource::SlateSource() :
 {
 }
 
-SlateSource::SlateSource(JsonView jsonValue) : 
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
+SlateSource::SlateSource(JsonView jsonValue)
+  : SlateSource()
 {
   *this = jsonValue;
 }

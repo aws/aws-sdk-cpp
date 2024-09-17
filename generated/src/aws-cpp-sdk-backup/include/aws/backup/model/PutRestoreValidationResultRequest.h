@@ -33,126 +33,46 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>This is a unique identifier of a restore job within Backup.</p>
      */
     inline const Aws::String& GetRestoreJobId() const{ return m_restoreJobId; }
-
-    /**
-     * <p>This is a unique identifier of a restore job within Backup.</p>
-     */
     inline bool RestoreJobIdHasBeenSet() const { return m_restoreJobIdHasBeenSet; }
-
-    /**
-     * <p>This is a unique identifier of a restore job within Backup.</p>
-     */
     inline void SetRestoreJobId(const Aws::String& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = value; }
-
-    /**
-     * <p>This is a unique identifier of a restore job within Backup.</p>
-     */
     inline void SetRestoreJobId(Aws::String&& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = std::move(value); }
-
-    /**
-     * <p>This is a unique identifier of a restore job within Backup.</p>
-     */
     inline void SetRestoreJobId(const char* value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId.assign(value); }
-
-    /**
-     * <p>This is a unique identifier of a restore job within Backup.</p>
-     */
     inline PutRestoreValidationResultRequest& WithRestoreJobId(const Aws::String& value) { SetRestoreJobId(value); return *this;}
-
-    /**
-     * <p>This is a unique identifier of a restore job within Backup.</p>
-     */
     inline PutRestoreValidationResultRequest& WithRestoreJobId(Aws::String&& value) { SetRestoreJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>This is a unique identifier of a restore job within Backup.</p>
-     */
     inline PutRestoreValidationResultRequest& WithRestoreJobId(const char* value) { SetRestoreJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>This is the status of your restore validation.</p>
+     * <p>The status of your restore validation.</p>
      */
     inline const RestoreValidationStatus& GetValidationStatus() const{ return m_validationStatus; }
-
-    /**
-     * <p>This is the status of your restore validation.</p>
-     */
     inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
-
-    /**
-     * <p>This is the status of your restore validation.</p>
-     */
     inline void SetValidationStatus(const RestoreValidationStatus& value) { m_validationStatusHasBeenSet = true; m_validationStatus = value; }
-
-    /**
-     * <p>This is the status of your restore validation.</p>
-     */
     inline void SetValidationStatus(RestoreValidationStatus&& value) { m_validationStatusHasBeenSet = true; m_validationStatus = std::move(value); }
-
-    /**
-     * <p>This is the status of your restore validation.</p>
-     */
     inline PutRestoreValidationResultRequest& WithValidationStatus(const RestoreValidationStatus& value) { SetValidationStatus(value); return *this;}
-
-    /**
-     * <p>This is the status of your restore validation.</p>
-     */
     inline PutRestoreValidationResultRequest& WithValidationStatus(RestoreValidationStatus&& value) { SetValidationStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This is an optional message string you can input to describe the validation
      * status for the restore test validation.</p>
      */
     inline const Aws::String& GetValidationStatusMessage() const{ return m_validationStatusMessage; }
-
-    /**
-     * <p>This is an optional message string you can input to describe the validation
-     * status for the restore test validation.</p>
-     */
     inline bool ValidationStatusMessageHasBeenSet() const { return m_validationStatusMessageHasBeenSet; }
-
-    /**
-     * <p>This is an optional message string you can input to describe the validation
-     * status for the restore test validation.</p>
-     */
     inline void SetValidationStatusMessage(const Aws::String& value) { m_validationStatusMessageHasBeenSet = true; m_validationStatusMessage = value; }
-
-    /**
-     * <p>This is an optional message string you can input to describe the validation
-     * status for the restore test validation.</p>
-     */
     inline void SetValidationStatusMessage(Aws::String&& value) { m_validationStatusMessageHasBeenSet = true; m_validationStatusMessage = std::move(value); }
-
-    /**
-     * <p>This is an optional message string you can input to describe the validation
-     * status for the restore test validation.</p>
-     */
     inline void SetValidationStatusMessage(const char* value) { m_validationStatusMessageHasBeenSet = true; m_validationStatusMessage.assign(value); }
-
-    /**
-     * <p>This is an optional message string you can input to describe the validation
-     * status for the restore test validation.</p>
-     */
     inline PutRestoreValidationResultRequest& WithValidationStatusMessage(const Aws::String& value) { SetValidationStatusMessage(value); return *this;}
-
-    /**
-     * <p>This is an optional message string you can input to describe the validation
-     * status for the restore test validation.</p>
-     */
     inline PutRestoreValidationResultRequest& WithValidationStatusMessage(Aws::String&& value) { SetValidationStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>This is an optional message string you can input to describe the validation
-     * status for the restore test validation.</p>
-     */
     inline PutRestoreValidationResultRequest& WithValidationStatusMessage(const char* value) { SetValidationStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restoreJobId;

@@ -36,26 +36,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates if the CSV data has a header.</p>
      */
     inline bool GetHeader() const{ return m_header; }
-
-    /**
-     * <p>Indicates if the CSV data has a header.</p>
-     */
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-
-    /**
-     * <p>Indicates if the CSV data has a header.</p>
-     */
     inline void SetHeader(bool value) { m_headerHasBeenSet = true; m_header = value; }
-
-    /**
-     * <p>Indicates if the CSV data has a header.</p>
-     */
     inline MonitoringCsvDatasetFormat& WithHeader(bool value) { SetHeader(value); return *this;}
-
+    ///@}
   private:
 
     bool m_header;

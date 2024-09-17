@@ -22,8 +22,8 @@ DeleteWorkteamResult::DeleteWorkteamResult() :
 {
 }
 
-DeleteWorkteamResult::DeleteWorkteamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_success(false)
+DeleteWorkteamResult::DeleteWorkteamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteWorkteamResult()
 {
   *this = result;
 }

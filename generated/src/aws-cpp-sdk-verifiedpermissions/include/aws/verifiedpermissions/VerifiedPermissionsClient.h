@@ -168,33 +168,76 @@ namespace VerifiedPermissions
         }
 
         /**
-         * <p>Creates a reference to an Amazon Cognito user pool as an external identity
-         * provider (IdP). </p> <p>After you create an identity source, you can use the
-         * identities provided by the IdP as proxies for the principal in authorization
-         * queries that use the <a
+         * <p>Makes a series of decisions about multiple authorization requests for one
+         * token. The principal in this request comes from an external identity source in
+         * the form of an identity or access token, formatted as a <a
+         * href="https://wikipedia.org/wiki/JSON_Web_Token">JSON web token (JWT)</a>. The
+         * information in the parameters can also define additional context that Verified
+         * Permissions can include in the evaluations.</p> <p>The request is evaluated
+         * against all policies in the specified policy store that match the entities that
+         * you provide in the entities declaration and in the token. The result of the
+         * decisions is a series of <code>Allow</code> or <code>Deny</code> responses,
+         * along with the IDs of the policies that produced each decision.</p> <p>The
+         * <code>entities</code> of a <code>BatchIsAuthorizedWithToken</code> API request
+         * can contain up to 100 resources and up to 99 user groups. The
+         * <code>requests</code> of a <code>BatchIsAuthorizedWithToken</code> API request
+         * can contain up to 30 requests.</p>  <p>The
+         * <code>BatchIsAuthorizedWithToken</code> operation doesn't have its own IAM
+         * permission. To authorize this operation for Amazon Web Services principals,
+         * include the permission <code>verifiedpermissions:IsAuthorizedWithToken</code> in
+         * their IAM policies.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorizedWithToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchIsAuthorizedWithTokenOutcome BatchIsAuthorizedWithToken(const Model::BatchIsAuthorizedWithTokenRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchIsAuthorizedWithToken that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchIsAuthorizedWithTokenRequestT = Model::BatchIsAuthorizedWithTokenRequest>
+        Model::BatchIsAuthorizedWithTokenOutcomeCallable BatchIsAuthorizedWithTokenCallable(const BatchIsAuthorizedWithTokenRequestT& request) const
+        {
+            return SubmitCallable(&VerifiedPermissionsClient::BatchIsAuthorizedWithToken, request);
+        }
+
+        /**
+         * An Async wrapper for BatchIsAuthorizedWithToken that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchIsAuthorizedWithTokenRequestT = Model::BatchIsAuthorizedWithTokenRequest>
+        void BatchIsAuthorizedWithTokenAsync(const BatchIsAuthorizedWithTokenRequestT& request, const BatchIsAuthorizedWithTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VerifiedPermissionsClient::BatchIsAuthorizedWithToken, request, handler, context);
+        }
+
+        /**
+         * <p>Adds an identity source to a policy store–an Amazon Cognito user pool or
+         * OpenID Connect (OIDC) identity provider (IdP). </p> <p>After you create an
+         * identity source, you can use the identities provided by the IdP as proxies for
+         * the principal in authorization queries that use the <a
          * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
-         * operation. These identities take the form of tokens that contain claims about
-         * the user, such as IDs, attributes and group memberships. Amazon Cognito provides
-         * both identity tokens and access tokens, and Verified Permissions can use either
-         * or both. Any combination of identity and access tokens results in the same Cedar
-         * principal. Verified Permissions automatically translates the information about
-         * the identities into the standard Cedar attributes that can be evaluated by your
-         * policies. Because the Amazon Cognito identity and access tokens can contain
-         * different information, the tokens you choose to use determine which principal
-         * attributes are available to access when evaluating Cedar policies.</p>
-         *  <p>If you delete a Amazon Cognito user pool or user, tokens from
-         * that deleted pool or that deleted user continue to be usable until they
-         * expire.</p>   <p>To reference a user from this identity source
-         * in your Cedar policies, use the following syntax.</p> <p>
-         * <i>IdentityType::"&lt;CognitoUserPoolIdentifier&gt;|&lt;CognitoClientId&gt;</i>
-         * </p> <p>Where <code>IdentityType</code> is the string that you provide to the
-         * <code>PrincipalEntityType</code> parameter for this operation. The
-         * <code>CognitoUserPoolId</code> and <code>CognitoClientId</code> are defined by
-         * the Amazon Cognito user pool.</p>   <p>Verified Permissions is <i>
-         * <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-         * consistent</a> </i>. It can take a few seconds for a new or changed element to
-         * be propagate through the service and be visible in the results of other Verified
-         * Permissions operations.</p> <p><h3>See Also:</h3>   <a
+         * or <a
+         * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorizedWithToken.html">BatchIsAuthorizedWithToken</a>
+         * API operations. These identities take the form of tokens that contain claims
+         * about the user, such as IDs, attributes and group memberships. Identity sources
+         * provide identity (ID) tokens and access tokens. Verified Permissions derives
+         * information about your user and session from token claims. Access tokens provide
+         * action <code>context</code> to your policies, and ID tokens provide principal
+         * <code>Attributes</code>.</p>  <p>Tokens from an identity source user
+         * continue to be usable until they expire. Token revocation and resource deletion
+         * have no effect on the validity of a token in your policy store</p> 
+         *  <p>To reference a user from this identity source in your Cedar policies,
+         * refer to the following syntax examples.</p> <ul> <li> <p>Amazon Cognito user
+         * pool: <code>Namespace::[Entity type]::[User pool ID]|[user principal
+         * attribute]</code>, for example
+         * <code>MyCorp::User::us-east-1_EXAMPLE|a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+         * </li> <li> <p>OpenID Connect (OIDC) provider: <code>Namespace::[Entity
+         * type]::[principalIdClaim]|[user principal attribute]</code>, for example
+         * <code>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+         * </li> </ul>   <p>Verified Permissions is <i> <a
+         * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
+         * </i>. It can take a few seconds for a new or changed element to propagate
+         * through the service and be visible in the results of other Verified Permissions
+         * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreateIdentitySource">AWS
          * API Reference</a></p>
          */
@@ -233,7 +276,7 @@ namespace VerifiedPermissions
          * the operation fails and the policy isn't stored.</p>   <p>Verified
          * Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicy">AWS
@@ -266,7 +309,7 @@ namespace VerifiedPermissions
          * multiple namespaces</a>, Verified Permissions currently supports only one
          * namespace per policy store.</p>   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyStore">AWS
@@ -302,7 +345,7 @@ namespace VerifiedPermissions
          * that are linked to that template are immediately updated as well.</p> 
          * <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyTemplate">AWS
@@ -611,19 +654,13 @@ namespace VerifiedPermissions
          * Permissions can include in the evaluation. The request is evaluated against all
          * matching policies in the specified policy store. The result of the decision is
          * either <code>Allow</code> or <code>Deny</code>, along with a list of the
-         * policies that resulted in the decision.</p>  <p>If you specify the
-         * <code>identityToken</code> parameter, then this operation derives the principal
-         * from that token. You must not also include that principal in the
-         * <code>entities</code> parameter or the operation fails and reports a conflict
-         * between the two entity sources.</p> <p>If you provide only an
-         * <code>accessToken</code>, then you can include the entity as part of the
-         * <code>entities</code> parameter to provide additional attributes.</p>
-         *  <p>At this time, Verified Permissions accepts tokens from only
-         * Amazon Cognito.</p> <p>Verified Permissions validates each token that is
-         * specified in a request by checking its expiration date and its signature.</p>
-         *  <p>If you delete a Amazon Cognito user pool or user, tokens from
-         * that deleted pool or that deleted user continue to be usable until they
-         * expire.</p> <p><h3>See Also:</h3>   <a
+         * policies that resulted in the decision.</p> <p>At this time, Verified
+         * Permissions accepts tokens from only Amazon Cognito.</p> <p>Verified Permissions
+         * validates each token that is specified in a request by checking its expiration
+         * date and its signature.</p>  <p>Tokens from an identity source user
+         * continue to be usable until they expire. Token revocation and resource deletion
+         * have no effect on the validity of a token in your policy store</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorizedWithToken">AWS
          * API Reference</a></p>
          */
@@ -705,13 +742,13 @@ namespace VerifiedPermissions
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPolicyStoresOutcome ListPolicyStores(const Model::ListPolicyStoresRequest& request) const;
+        virtual Model::ListPolicyStoresOutcome ListPolicyStores(const Model::ListPolicyStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPolicyStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPolicyStoresRequestT = Model::ListPolicyStoresRequest>
-        Model::ListPolicyStoresOutcomeCallable ListPolicyStoresCallable(const ListPolicyStoresRequestT& request) const
+        Model::ListPolicyStoresOutcomeCallable ListPolicyStoresCallable(const ListPolicyStoresRequestT& request = {}) const
         {
             return SubmitCallable(&VerifiedPermissionsClient::ListPolicyStores, request);
         }
@@ -720,7 +757,7 @@ namespace VerifiedPermissions
          * An Async wrapper for ListPolicyStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPolicyStoresRequestT = Model::ListPolicyStoresRequest>
-        void ListPolicyStoresAsync(const ListPolicyStoresRequestT& request, const ListPolicyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPolicyStoresAsync(const ListPolicyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPolicyStoresRequestT& request = {}) const
         {
             return SubmitAsync(&VerifiedPermissionsClient::ListPolicyStores, request, handler, context);
         }
@@ -760,7 +797,7 @@ namespace VerifiedPermissions
          * is evaluated against the new schema at that time.</p>  <p>Verified
          * Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/PutSchema">AWS
@@ -787,11 +824,11 @@ namespace VerifiedPermissions
         }
 
         /**
-         * <p>Updates the specified identity source to use a new identity provider (IdP)
-         * source, or to change the mapping of identities from the IdP to a different
-         * principal entity type.</p>  <p>Verified Permissions is <i> <a
+         * <p>Updates the specified identity source to use a new identity provider (IdP),
+         * or to change the mapping of identities from the IdP to a different principal
+         * entity type.</p>  <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdateIdentitySource">AWS
@@ -828,7 +865,7 @@ namespace VerifiedPermissions
          * updating a static policy causes Verified Permissions to validate the policy
          * against the schema in the policy store. If the updated static policy doesn't
          * pass validation, the operation fails and the update isn't stored.</p> </li> <li>
-         * <p>When you edit a static policy, You can change only certain elements of a
+         * <p>When you edit a static policy, you can change only certain elements of a
          * static policy:</p> <ul> <li> <p>The action referenced by the policy. </p> </li>
          * <li> <p>A condition clause, such as when and unless. </p> </li> </ul> <p>You
          * can't change these elements of a static policy: </p> <ul> <li> <p>Changing a
@@ -839,7 +876,7 @@ namespace VerifiedPermissions
          * template-linked policy, you must update the template instead. </p> </li> </ul>
          *   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicy">AWS
@@ -869,7 +906,7 @@ namespace VerifiedPermissions
          * <p>Modifies the validation setting for a policy store.</p>  <p>Verified
          * Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyStore">AWS
@@ -904,7 +941,7 @@ namespace VerifiedPermissions
          * authorization decisions that involve all template-linked policies instantiated
          * from this template.</p>   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
-         * </i>. It can take a few seconds for a new or changed element to be propagate
+         * </i>. It can take a few seconds for a new or changed element to propagate
          * through the service and be visible in the results of other Verified Permissions
          * operations.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyTemplate">AWS
@@ -938,7 +975,6 @@ namespace VerifiedPermissions
       void init(const VerifiedPermissionsClientConfiguration& clientConfiguration);
 
       VerifiedPermissionsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<VerifiedPermissionsEndpointProviderBase> m_endpointProvider;
   };
 

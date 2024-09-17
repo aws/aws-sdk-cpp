@@ -42,108 +42,43 @@ namespace Model
     AWS_ACCESSANALYZER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the analyzer to retrieve rules from.</p>
      */
     inline const Aws::String& GetAnalyzerName() const{ return m_analyzerName; }
-
-    /**
-     * <p>The name of the analyzer to retrieve rules from.</p>
-     */
     inline bool AnalyzerNameHasBeenSet() const { return m_analyzerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the analyzer to retrieve rules from.</p>
-     */
     inline void SetAnalyzerName(const Aws::String& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = value; }
-
-    /**
-     * <p>The name of the analyzer to retrieve rules from.</p>
-     */
     inline void SetAnalyzerName(Aws::String&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::move(value); }
-
-    /**
-     * <p>The name of the analyzer to retrieve rules from.</p>
-     */
     inline void SetAnalyzerName(const char* value) { m_analyzerNameHasBeenSet = true; m_analyzerName.assign(value); }
-
-    /**
-     * <p>The name of the analyzer to retrieve rules from.</p>
-     */
     inline ListArchiveRulesRequest& WithAnalyzerName(const Aws::String& value) { SetAnalyzerName(value); return *this;}
-
-    /**
-     * <p>The name of the analyzer to retrieve rules from.</p>
-     */
     inline ListArchiveRulesRequest& WithAnalyzerName(Aws::String&& value) { SetAnalyzerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the analyzer to retrieve rules from.</p>
-     */
     inline ListArchiveRulesRequest& WithAnalyzerName(const char* value) { SetAnalyzerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token used for pagination of results returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListArchiveRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListArchiveRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListArchiveRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return in the request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in the request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in the request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in the request.</p>
-     */
     inline ListArchiveRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analyzerName;

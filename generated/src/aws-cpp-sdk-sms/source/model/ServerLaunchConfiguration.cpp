@@ -36,21 +36,8 @@ ServerLaunchConfiguration::ServerLaunchConfiguration() :
 {
 }
 
-ServerLaunchConfiguration::ServerLaunchConfiguration(JsonView jsonValue) : 
-    m_serverHasBeenSet(false),
-    m_logicalIdHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_subnetHasBeenSet(false),
-    m_securityGroupHasBeenSet(false),
-    m_ec2KeyNameHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_iamInstanceProfileNameHasBeenSet(false),
-    m_configureScriptHasBeenSet(false),
-    m_configureScriptType(ScriptType::NOT_SET),
-    m_configureScriptTypeHasBeenSet(false)
+ServerLaunchConfiguration::ServerLaunchConfiguration(JsonView jsonValue)
+  : ServerLaunchConfiguration()
 {
   *this = jsonValue;
 }

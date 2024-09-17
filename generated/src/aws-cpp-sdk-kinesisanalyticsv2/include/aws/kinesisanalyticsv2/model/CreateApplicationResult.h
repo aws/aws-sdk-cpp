@@ -33,58 +33,29 @@ namespace Model
     AWS_KINESISANALYTICSV2_API CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
+     * <p>In response to your <code>CreateApplication</code> request, Managed Service
+     * for Apache Flink returns a response with details of the application it
+     * created.</p>
      */
     inline const ApplicationDetail& GetApplicationDetail() const{ return m_applicationDetail; }
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
-     */
     inline void SetApplicationDetail(const ApplicationDetail& value) { m_applicationDetail = value; }
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
-     */
     inline void SetApplicationDetail(ApplicationDetail&& value) { m_applicationDetail = std::move(value); }
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
-     */
     inline CreateApplicationResult& WithApplicationDetail(const ApplicationDetail& value) { SetApplicationDetail(value); return *this;}
-
-    /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
-     */
     inline CreateApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationDetail m_applicationDetail;

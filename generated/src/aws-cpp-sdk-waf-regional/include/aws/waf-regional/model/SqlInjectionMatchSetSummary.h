@@ -46,6 +46,7 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
      * <code>SqlInjectionMatchSetId</code> to get information about a
@@ -59,154 +60,29 @@ namespace Model
      * <a>ListSqlInjectionMatchSets</a>.</p>
      */
     inline const Aws::String& GetSqlInjectionMatchSetId() const{ return m_sqlInjectionMatchSetId; }
-
-    /**
-     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
-     * <code>SqlInjectionMatchSetId</code> to get information about a
-     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
-     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
-     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
-     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
-     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
-     * <a>ListSqlInjectionMatchSets</a>.</p>
-     */
     inline bool SqlInjectionMatchSetIdHasBeenSet() const { return m_sqlInjectionMatchSetIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
-     * <code>SqlInjectionMatchSetId</code> to get information about a
-     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
-     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
-     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
-     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
-     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
-     * <a>ListSqlInjectionMatchSets</a>.</p>
-     */
     inline void SetSqlInjectionMatchSetId(const Aws::String& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = value; }
-
-    /**
-     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
-     * <code>SqlInjectionMatchSetId</code> to get information about a
-     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
-     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
-     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
-     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
-     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
-     * <a>ListSqlInjectionMatchSets</a>.</p>
-     */
     inline void SetSqlInjectionMatchSetId(Aws::String&& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
-     * <code>SqlInjectionMatchSetId</code> to get information about a
-     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
-     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
-     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
-     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
-     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
-     * <a>ListSqlInjectionMatchSets</a>.</p>
-     */
     inline void SetSqlInjectionMatchSetId(const char* value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
-     * <code>SqlInjectionMatchSetId</code> to get information about a
-     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
-     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
-     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
-     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
-     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
-     * <a>ListSqlInjectionMatchSets</a>.</p>
-     */
     inline SqlInjectionMatchSetSummary& WithSqlInjectionMatchSetId(const Aws::String& value) { SetSqlInjectionMatchSetId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
-     * <code>SqlInjectionMatchSetId</code> to get information about a
-     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
-     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
-     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
-     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
-     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
-     * <a>ListSqlInjectionMatchSets</a>.</p>
-     */
     inline SqlInjectionMatchSetSummary& WithSqlInjectionMatchSetId(Aws::String&& value) { SetSqlInjectionMatchSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
-     * <code>SqlInjectionMatchSetId</code> to get information about a
-     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
-     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
-     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
-     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
-     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
-     * <a>ListSqlInjectionMatchSets</a>.</p>
-     */
     inline SqlInjectionMatchSetSummary& WithSqlInjectionMatchSetId(const char* value) { SetSqlInjectionMatchSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
-     * <code>Id</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
-     * <code>Id</code>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
-     * <code>Id</code>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
-     * <code>Id</code>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
-     * <code>Id</code>.</p>
-     */
     inline SqlInjectionMatchSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
-     * <code>Id</code>.</p>
-     */
     inline SqlInjectionMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
-     * <code>Id</code>.</p>
-     */
     inline SqlInjectionMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sqlInjectionMatchSetId;

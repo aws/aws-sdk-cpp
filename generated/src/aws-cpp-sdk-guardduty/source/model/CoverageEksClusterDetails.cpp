@@ -30,15 +30,8 @@ CoverageEksClusterDetails::CoverageEksClusterDetails() :
 {
 }
 
-CoverageEksClusterDetails::CoverageEksClusterDetails(JsonView jsonValue) : 
-    m_clusterNameHasBeenSet(false),
-    m_coveredNodes(0),
-    m_coveredNodesHasBeenSet(false),
-    m_compatibleNodes(0),
-    m_compatibleNodesHasBeenSet(false),
-    m_addonDetailsHasBeenSet(false),
-    m_managementType(ManagementType::NOT_SET),
-    m_managementTypeHasBeenSet(false)
+CoverageEksClusterDetails::CoverageEksClusterDetails(JsonView jsonValue)
+  : CoverageEksClusterDetails()
 {
   *this = jsonValue;
 }

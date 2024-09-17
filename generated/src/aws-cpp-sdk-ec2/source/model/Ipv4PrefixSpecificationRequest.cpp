@@ -25,8 +25,8 @@ Ipv4PrefixSpecificationRequest::Ipv4PrefixSpecificationRequest() :
 {
 }
 
-Ipv4PrefixSpecificationRequest::Ipv4PrefixSpecificationRequest(const XmlNode& xmlNode) : 
-    m_ipv4PrefixHasBeenSet(false)
+Ipv4PrefixSpecificationRequest::Ipv4PrefixSpecificationRequest(const XmlNode& xmlNode)
+  : Ipv4PrefixSpecificationRequest()
 {
   *this = xmlNode;
 }

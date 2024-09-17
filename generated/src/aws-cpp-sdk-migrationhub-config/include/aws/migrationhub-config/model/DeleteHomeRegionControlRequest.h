@@ -34,62 +34,21 @@ namespace Model
     AWS_MIGRATIONHUBCONFIG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier that's generated for each home region control. It's
      * always a string that begins with "hrc-" followed by 12 lowercase letters and
      * numbers.</p>
      */
     inline const Aws::String& GetControlId() const{ return m_controlId; }
-
-    /**
-     * <p>A unique identifier that's generated for each home region control. It's
-     * always a string that begins with "hrc-" followed by 12 lowercase letters and
-     * numbers.</p>
-     */
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier that's generated for each home region control. It's
-     * always a string that begins with "hrc-" followed by 12 lowercase letters and
-     * numbers.</p>
-     */
     inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
-
-    /**
-     * <p>A unique identifier that's generated for each home region control. It's
-     * always a string that begins with "hrc-" followed by 12 lowercase letters and
-     * numbers.</p>
-     */
     inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
-
-    /**
-     * <p>A unique identifier that's generated for each home region control. It's
-     * always a string that begins with "hrc-" followed by 12 lowercase letters and
-     * numbers.</p>
-     */
     inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
-
-    /**
-     * <p>A unique identifier that's generated for each home region control. It's
-     * always a string that begins with "hrc-" followed by 12 lowercase letters and
-     * numbers.</p>
-     */
     inline DeleteHomeRegionControlRequest& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
-
-    /**
-     * <p>A unique identifier that's generated for each home region control. It's
-     * always a string that begins with "hrc-" followed by 12 lowercase letters and
-     * numbers.</p>
-     */
     inline DeleteHomeRegionControlRequest& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier that's generated for each home region control. It's
-     * always a string that begins with "hrc-" followed by 12 lowercase letters and
-     * numbers.</p>
-     */
     inline DeleteHomeRegionControlRequest& WithControlId(const char* value) { SetControlId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_controlId;

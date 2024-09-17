@@ -19,12 +19,14 @@ namespace Model
 {
 
 AvailConfiguration::AvailConfiguration() : 
-    m_availSettingsHasBeenSet(false)
+    m_availSettingsHasBeenSet(false),
+    m_scte35SegmentationScope(Scte35SegmentationScope::NOT_SET),
+    m_scte35SegmentationScopeHasBeenSet(false)
 {
 }
 
-AvailConfiguration::AvailConfiguration(JsonView jsonValue) : 
-    m_availSettingsHasBeenSet(false)
+AvailConfiguration::AvailConfiguration(JsonView jsonValue)
+  : AvailConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ AvailConfiguration& AvailConfiguration::operator =(JsonView jsonValue)
     m_availSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scte35SegmentationScope"))
+  {
+    m_scte35SegmentationScope = Scte35SegmentationScopeMapper::GetScte35SegmentationScopeForName(jsonValue.GetString("scte35SegmentationScope"));
+
+    m_scte35SegmentationScopeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +58,11 @@ JsonValue AvailConfiguration::Jsonize() const
   {
    payload.WithObject("availSettings", m_availSettings.Jsonize());
 
+  }
+
+  if(m_scte35SegmentationScopeHasBeenSet)
+  {
+   payload.WithString("scte35SegmentationScope", Scte35SegmentationScopeMapper::GetNameForScte35SegmentationScope(m_scte35SegmentationScope));
   }
 
   return payload;

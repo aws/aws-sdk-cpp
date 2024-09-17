@@ -35,118 +35,46 @@ namespace Model
     AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of
+     * the table in this parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline UpdateContributorInsightsRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline UpdateContributorInsightsRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline UpdateContributorInsightsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The global secondary index name, if applicable.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The global secondary index name, if applicable.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The global secondary index name, if applicable.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The global secondary index name, if applicable.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The global secondary index name, if applicable.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The global secondary index name, if applicable.</p>
-     */
     inline UpdateContributorInsightsRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The global secondary index name, if applicable.</p>
-     */
     inline UpdateContributorInsightsRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The global secondary index name, if applicable.</p>
-     */
     inline UpdateContributorInsightsRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the contributor insights action.</p>
      */
     inline const ContributorInsightsAction& GetContributorInsightsAction() const{ return m_contributorInsightsAction; }
-
-    /**
-     * <p>Represents the contributor insights action.</p>
-     */
     inline bool ContributorInsightsActionHasBeenSet() const { return m_contributorInsightsActionHasBeenSet; }
-
-    /**
-     * <p>Represents the contributor insights action.</p>
-     */
     inline void SetContributorInsightsAction(const ContributorInsightsAction& value) { m_contributorInsightsActionHasBeenSet = true; m_contributorInsightsAction = value; }
-
-    /**
-     * <p>Represents the contributor insights action.</p>
-     */
     inline void SetContributorInsightsAction(ContributorInsightsAction&& value) { m_contributorInsightsActionHasBeenSet = true; m_contributorInsightsAction = std::move(value); }
-
-    /**
-     * <p>Represents the contributor insights action.</p>
-     */
     inline UpdateContributorInsightsRequest& WithContributorInsightsAction(const ContributorInsightsAction& value) { SetContributorInsightsAction(value); return *this;}
-
-    /**
-     * <p>Represents the contributor insights action.</p>
-     */
     inline UpdateContributorInsightsRequest& WithContributorInsightsAction(ContributorInsightsAction&& value) { SetContributorInsightsAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableName;

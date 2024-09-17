@@ -30,15 +30,8 @@ DomainDetails::DomainDetails() :
 {
 }
 
-DomainDetails::DomainDetails(JsonView jsonValue) : 
-    m_domainArnHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_status(DomainStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_urlHasBeenSet(false)
+DomainDetails::DomainDetails(JsonView jsonValue)
+  : DomainDetails()
 {
   *this = jsonValue;
 }

@@ -37,6 +37,7 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The starting point for the results to be returned. For the first call, this
      * value should be empty. As long as there are more results, continue to call
@@ -44,63 +45,14 @@ namespace Model
      * retrieve the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The starting point for the results to be returned. For the first call, this
-     * value should be empty. As long as there are more results, continue to call
-     * <code>ListPipelines</code> with the marker value from the previous call to
-     * retrieve the next set of results.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>The starting point for the results to be returned. For the first call, this
-     * value should be empty. As long as there are more results, continue to call
-     * <code>ListPipelines</code> with the marker value from the previous call to
-     * retrieve the next set of results.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>The starting point for the results to be returned. For the first call, this
-     * value should be empty. As long as there are more results, continue to call
-     * <code>ListPipelines</code> with the marker value from the previous call to
-     * retrieve the next set of results.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>The starting point for the results to be returned. For the first call, this
-     * value should be empty. As long as there are more results, continue to call
-     * <code>ListPipelines</code> with the marker value from the previous call to
-     * retrieve the next set of results.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>The starting point for the results to be returned. For the first call, this
-     * value should be empty. As long as there are more results, continue to call
-     * <code>ListPipelines</code> with the marker value from the previous call to
-     * retrieve the next set of results.</p>
-     */
     inline ListPipelinesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The starting point for the results to be returned. For the first call, this
-     * value should be empty. As long as there are more results, continue to call
-     * <code>ListPipelines</code> with the marker value from the previous call to
-     * retrieve the next set of results.</p>
-     */
     inline ListPipelinesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The starting point for the results to be returned. For the first call, this
-     * value should be empty. As long as there are more results, continue to call
-     * <code>ListPipelines</code> with the marker value from the previous call to
-     * retrieve the next set of results.</p>
-     */
     inline ListPipelinesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

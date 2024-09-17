@@ -32,46 +32,19 @@ namespace Model
     AWS_EFS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the source file system in the replication configuration.</p>
      */
     inline const Aws::String& GetSourceFileSystemId() const{ return m_sourceFileSystemId; }
-
-    /**
-     * <p>The ID of the source file system in the replication configuration.</p>
-     */
     inline bool SourceFileSystemIdHasBeenSet() const { return m_sourceFileSystemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the source file system in the replication configuration.</p>
-     */
     inline void SetSourceFileSystemId(const Aws::String& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = value; }
-
-    /**
-     * <p>The ID of the source file system in the replication configuration.</p>
-     */
     inline void SetSourceFileSystemId(Aws::String&& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = std::move(value); }
-
-    /**
-     * <p>The ID of the source file system in the replication configuration.</p>
-     */
     inline void SetSourceFileSystemId(const char* value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId.assign(value); }
-
-    /**
-     * <p>The ID of the source file system in the replication configuration.</p>
-     */
     inline DeleteReplicationConfigurationRequest& WithSourceFileSystemId(const Aws::String& value) { SetSourceFileSystemId(value); return *this;}
-
-    /**
-     * <p>The ID of the source file system in the replication configuration.</p>
-     */
     inline DeleteReplicationConfigurationRequest& WithSourceFileSystemId(Aws::String&& value) { SetSourceFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the source file system in the replication configuration.</p>
-     */
     inline DeleteReplicationConfigurationRequest& WithSourceFileSystemId(const char* value) { SetSourceFileSystemId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceFileSystemId;

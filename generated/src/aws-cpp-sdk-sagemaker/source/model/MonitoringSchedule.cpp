@@ -35,20 +35,8 @@ MonitoringSchedule::MonitoringSchedule() :
 {
 }
 
-MonitoringSchedule::MonitoringSchedule(JsonView jsonValue) : 
-    m_monitoringScheduleArnHasBeenSet(false),
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
-    m_monitoringScheduleStatusHasBeenSet(false),
-    m_monitoringType(MonitoringType::NOT_SET),
-    m_monitoringTypeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_monitoringScheduleConfigHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_lastMonitoringExecutionSummaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+MonitoringSchedule::MonitoringSchedule(JsonView jsonValue)
+  : MonitoringSchedule()
 {
   *this = jsonValue;
 }

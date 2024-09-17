@@ -33,16 +33,8 @@ TrafficMirrorTarget::TrafficMirrorTarget() :
 {
 }
 
-TrafficMirrorTarget::TrafficMirrorTarget(const XmlNode& xmlNode) : 
-    m_trafficMirrorTargetIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkLoadBalancerArnHasBeenSet(false),
-    m_type(TrafficMirrorTargetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_gatewayLoadBalancerEndpointIdHasBeenSet(false)
+TrafficMirrorTarget::TrafficMirrorTarget(const XmlNode& xmlNode)
+  : TrafficMirrorTarget()
 {
   *this = xmlNode;
 }

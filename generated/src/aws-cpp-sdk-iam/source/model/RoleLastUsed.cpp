@@ -26,9 +26,8 @@ RoleLastUsed::RoleLastUsed() :
 {
 }
 
-RoleLastUsed::RoleLastUsed(const XmlNode& xmlNode) : 
-    m_lastUsedDateHasBeenSet(false),
-    m_regionHasBeenSet(false)
+RoleLastUsed::RoleLastUsed(const XmlNode& xmlNode)
+  : RoleLastUsed()
 {
   *this = xmlNode;
 }

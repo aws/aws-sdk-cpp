@@ -13,22 +13,42 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListParticipantsRequest::ListParticipantsRequest() : 
+    m_stageArnHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_filterByUserIdHasBeenSet(false),
     m_filterByPublished(false),
     m_filterByPublishedHasBeenSet(false),
     m_filterByState(ParticipantState::NOT_SET),
     m_filterByStateHasBeenSet(false),
-    m_filterByUserIdHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_stageArnHasBeenSet(false)
+    m_filterByRecordingState(ParticipantRecordingFilterByRecordingState::NOT_SET),
+    m_filterByRecordingStateHasBeenSet(false)
 {
 }
 
 Aws::String ListParticipantsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_stageArnHasBeenSet)
+  {
+   payload.WithString("stageArn", m_stageArn);
+
+  }
+
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("sessionId", m_sessionId);
+
+  }
+
+  if(m_filterByUserIdHasBeenSet)
+  {
+   payload.WithString("filterByUserId", m_filterByUserId);
+
+  }
 
   if(m_filterByPublishedHasBeenSet)
   {
@@ -41,9 +61,9 @@ Aws::String ListParticipantsRequest::SerializePayload() const
    payload.WithString("filterByState", ParticipantStateMapper::GetNameForParticipantState(m_filterByState));
   }
 
-  if(m_filterByUserIdHasBeenSet)
+  if(m_nextTokenHasBeenSet)
   {
-   payload.WithString("filterByUserId", m_filterByUserId);
+   payload.WithString("nextToken", m_nextToken);
 
   }
 
@@ -53,22 +73,9 @@ Aws::String ListParticipantsRequest::SerializePayload() const
 
   }
 
-  if(m_nextTokenHasBeenSet)
+  if(m_filterByRecordingStateHasBeenSet)
   {
-   payload.WithString("nextToken", m_nextToken);
-
-  }
-
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
-  }
-
-  if(m_stageArnHasBeenSet)
-  {
-   payload.WithString("stageArn", m_stageArn);
-
+   payload.WithString("filterByRecordingState", ParticipantRecordingFilterByRecordingStateMapper::GetNameForParticipantRecordingFilterByRecordingState(m_filterByRecordingState));
   }
 
   return payload.View().WriteReadable();

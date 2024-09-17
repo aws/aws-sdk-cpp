@@ -24,9 +24,8 @@ DataPreProcessingConfiguration::DataPreProcessingConfiguration() :
 {
 }
 
-DataPreProcessingConfiguration::DataPreProcessingConfiguration(JsonView jsonValue) : 
-    m_targetSamplingRate(TargetSamplingRate::NOT_SET),
-    m_targetSamplingRateHasBeenSet(false)
+DataPreProcessingConfiguration::DataPreProcessingConfiguration(JsonView jsonValue)
+  : DataPreProcessingConfiguration()
 {
   *this = jsonValue;
 }

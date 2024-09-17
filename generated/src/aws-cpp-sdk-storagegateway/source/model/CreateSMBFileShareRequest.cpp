@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 CreateSMBFileShareRequest::CreateSMBFileShareRequest() : 
     m_clientTokenHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
+    m_encryptionType(EncryptionType::NOT_SET),
+    m_encryptionTypeHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
@@ -67,10 +67,9 @@ Aws::String CreateSMBFileShareRequest::SerializePayload() const
 
   }
 
-  if(m_kMSEncryptedHasBeenSet)
+  if(m_encryptionTypeHasBeenSet)
   {
-   payload.WithBool("KMSEncrypted", m_kMSEncrypted);
-
+   payload.WithString("EncryptionType", EncryptionTypeMapper::GetNameForEncryptionType(m_encryptionType));
   }
 
   if(m_kMSKeyHasBeenSet)

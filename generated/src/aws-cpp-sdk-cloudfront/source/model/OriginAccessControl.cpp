@@ -26,9 +26,8 @@ OriginAccessControl::OriginAccessControl() :
 {
 }
 
-OriginAccessControl::OriginAccessControl(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_originAccessControlConfigHasBeenSet(false)
+OriginAccessControl::OriginAccessControl(const XmlNode& xmlNode)
+  : OriginAccessControl()
 {
   *this = xmlNode;
 }

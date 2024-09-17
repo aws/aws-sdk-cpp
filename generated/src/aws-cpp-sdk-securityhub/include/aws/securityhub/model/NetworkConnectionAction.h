@@ -42,215 +42,82 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The direction of the network connection request (<code>IN</code> or
      * <code>OUT</code>).</p>
      */
     inline const Aws::String& GetConnectionDirection() const{ return m_connectionDirection; }
-
-    /**
-     * <p>The direction of the network connection request (<code>IN</code> or
-     * <code>OUT</code>).</p>
-     */
     inline bool ConnectionDirectionHasBeenSet() const { return m_connectionDirectionHasBeenSet; }
-
-    /**
-     * <p>The direction of the network connection request (<code>IN</code> or
-     * <code>OUT</code>).</p>
-     */
     inline void SetConnectionDirection(const Aws::String& value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection = value; }
-
-    /**
-     * <p>The direction of the network connection request (<code>IN</code> or
-     * <code>OUT</code>).</p>
-     */
     inline void SetConnectionDirection(Aws::String&& value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection = std::move(value); }
-
-    /**
-     * <p>The direction of the network connection request (<code>IN</code> or
-     * <code>OUT</code>).</p>
-     */
     inline void SetConnectionDirection(const char* value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection.assign(value); }
-
-    /**
-     * <p>The direction of the network connection request (<code>IN</code> or
-     * <code>OUT</code>).</p>
-     */
     inline NetworkConnectionAction& WithConnectionDirection(const Aws::String& value) { SetConnectionDirection(value); return *this;}
-
-    /**
-     * <p>The direction of the network connection request (<code>IN</code> or
-     * <code>OUT</code>).</p>
-     */
     inline NetworkConnectionAction& WithConnectionDirection(Aws::String&& value) { SetConnectionDirection(std::move(value)); return *this;}
-
-    /**
-     * <p>The direction of the network connection request (<code>IN</code> or
-     * <code>OUT</code>).</p>
-     */
     inline NetworkConnectionAction& WithConnectionDirection(const char* value) { SetConnectionDirection(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the remote IP address that issued the network connection
      * request.</p>
      */
     inline const ActionRemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
-
-    /**
-     * <p>Information about the remote IP address that issued the network connection
-     * request.</p>
-     */
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
-
-    /**
-     * <p>Information about the remote IP address that issued the network connection
-     * request.</p>
-     */
     inline void SetRemoteIpDetails(const ActionRemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
-
-    /**
-     * <p>Information about the remote IP address that issued the network connection
-     * request.</p>
-     */
     inline void SetRemoteIpDetails(ActionRemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
-
-    /**
-     * <p>Information about the remote IP address that issued the network connection
-     * request.</p>
-     */
     inline NetworkConnectionAction& WithRemoteIpDetails(const ActionRemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
-
-    /**
-     * <p>Information about the remote IP address that issued the network connection
-     * request.</p>
-     */
     inline NetworkConnectionAction& WithRemoteIpDetails(ActionRemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the port on the remote IP address.</p>
      */
     inline const ActionRemotePortDetails& GetRemotePortDetails() const{ return m_remotePortDetails; }
-
-    /**
-     * <p>Information about the port on the remote IP address.</p>
-     */
     inline bool RemotePortDetailsHasBeenSet() const { return m_remotePortDetailsHasBeenSet; }
-
-    /**
-     * <p>Information about the port on the remote IP address.</p>
-     */
     inline void SetRemotePortDetails(const ActionRemotePortDetails& value) { m_remotePortDetailsHasBeenSet = true; m_remotePortDetails = value; }
-
-    /**
-     * <p>Information about the port on the remote IP address.</p>
-     */
     inline void SetRemotePortDetails(ActionRemotePortDetails&& value) { m_remotePortDetailsHasBeenSet = true; m_remotePortDetails = std::move(value); }
-
-    /**
-     * <p>Information about the port on the remote IP address.</p>
-     */
     inline NetworkConnectionAction& WithRemotePortDetails(const ActionRemotePortDetails& value) { SetRemotePortDetails(value); return *this;}
-
-    /**
-     * <p>Information about the port on the remote IP address.</p>
-     */
     inline NetworkConnectionAction& WithRemotePortDetails(ActionRemotePortDetails&& value) { SetRemotePortDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the port on the EC2 instance.</p>
      */
     inline const ActionLocalPortDetails& GetLocalPortDetails() const{ return m_localPortDetails; }
-
-    /**
-     * <p>Information about the port on the EC2 instance.</p>
-     */
     inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
-
-    /**
-     * <p>Information about the port on the EC2 instance.</p>
-     */
     inline void SetLocalPortDetails(const ActionLocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
-
-    /**
-     * <p>Information about the port on the EC2 instance.</p>
-     */
     inline void SetLocalPortDetails(ActionLocalPortDetails&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::move(value); }
-
-    /**
-     * <p>Information about the port on the EC2 instance.</p>
-     */
     inline NetworkConnectionAction& WithLocalPortDetails(const ActionLocalPortDetails& value) { SetLocalPortDetails(value); return *this;}
-
-    /**
-     * <p>Information about the port on the EC2 instance.</p>
-     */
     inline NetworkConnectionAction& WithLocalPortDetails(ActionLocalPortDetails&& value) { SetLocalPortDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The protocol used to make the network connection request.</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The protocol used to make the network connection request.</p>
-     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The protocol used to make the network connection request.</p>
-     */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The protocol used to make the network connection request.</p>
-     */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-
-    /**
-     * <p>The protocol used to make the network connection request.</p>
-     */
     inline NetworkConnectionAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The protocol used to make the network connection request.</p>
-     */
     inline NetworkConnectionAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-
-    /**
-     * <p>The protocol used to make the network connection request.</p>
-     */
     inline NetworkConnectionAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the network connection attempt was blocked.</p>
      */
     inline bool GetBlocked() const{ return m_blocked; }
-
-    /**
-     * <p>Indicates whether the network connection attempt was blocked.</p>
-     */
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the network connection attempt was blocked.</p>
-     */
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
-
-    /**
-     * <p>Indicates whether the network connection attempt was blocked.</p>
-     */
     inline NetworkConnectionAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectionDirection;

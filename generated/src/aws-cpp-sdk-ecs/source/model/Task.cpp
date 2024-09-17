@@ -60,53 +60,13 @@ Task::Task() :
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_fargateEphemeralStorageHasBeenSet(false)
 {
 }
 
-Task::Task(JsonView jsonValue) : 
-    m_attachmentsHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_capacityProviderNameHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_connectivity(Connectivity::NOT_SET),
-    m_connectivityHasBeenSet(false),
-    m_connectivityAtHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_desiredStatusHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_executionStoppedAtHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_inferenceAcceleratorsHasBeenSet(false),
-    m_lastStatusHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformFamilyHasBeenSet(false),
-    m_pullStartedAtHasBeenSet(false),
-    m_pullStoppedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_stopCode(TaskStopCode::NOT_SET),
-    m_stopCodeHasBeenSet(false),
-    m_stoppedAtHasBeenSet(false),
-    m_stoppedReasonHasBeenSet(false),
-    m_stoppingAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+Task::Task(JsonView jsonValue)
+  : Task()
 {
   *this = jsonValue;
 }
@@ -380,6 +340,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_ephemeralStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fargateEphemeralStorage"))
+  {
+    m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
+
+    m_fargateEphemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -613,6 +580,12 @@ JsonValue Task::Jsonize() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_fargateEphemeralStorageHasBeenSet)
+  {
+   payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
 
   }
 

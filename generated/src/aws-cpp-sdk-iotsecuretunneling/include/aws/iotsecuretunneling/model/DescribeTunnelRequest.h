@@ -34,46 +34,19 @@ namespace Model
     AWS_IOTSECURETUNNELING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The tunnel to describe.</p>
      */
     inline const Aws::String& GetTunnelId() const{ return m_tunnelId; }
-
-    /**
-     * <p>The tunnel to describe.</p>
-     */
     inline bool TunnelIdHasBeenSet() const { return m_tunnelIdHasBeenSet; }
-
-    /**
-     * <p>The tunnel to describe.</p>
-     */
     inline void SetTunnelId(const Aws::String& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = value; }
-
-    /**
-     * <p>The tunnel to describe.</p>
-     */
     inline void SetTunnelId(Aws::String&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::move(value); }
-
-    /**
-     * <p>The tunnel to describe.</p>
-     */
     inline void SetTunnelId(const char* value) { m_tunnelIdHasBeenSet = true; m_tunnelId.assign(value); }
-
-    /**
-     * <p>The tunnel to describe.</p>
-     */
     inline DescribeTunnelRequest& WithTunnelId(const Aws::String& value) { SetTunnelId(value); return *this;}
-
-    /**
-     * <p>The tunnel to describe.</p>
-     */
     inline DescribeTunnelRequest& WithTunnelId(Aws::String&& value) { SetTunnelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The tunnel to describe.</p>
-     */
     inline DescribeTunnelRequest& WithTunnelId(const char* value) { SetTunnelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tunnelId;

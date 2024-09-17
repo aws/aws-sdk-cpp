@@ -39,60 +39,21 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
      * the full name of an excluded bucket.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBucketNames() const{ return m_bucketNames; }
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline bool BucketNamesHasBeenSet() const { return m_bucketNamesHasBeenSet; }
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline void SetBucketNames(const Aws::Vector<Aws::String>& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = value; }
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline void SetBucketNames(Aws::Vector<Aws::String>&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = std::move(value); }
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline S3ClassificationScopeExclusion& WithBucketNames(const Aws::Vector<Aws::String>& value) { SetBucketNames(value); return *this;}
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline S3ClassificationScopeExclusion& WithBucketNames(Aws::Vector<Aws::String>&& value) { SetBucketNames(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline S3ClassificationScopeExclusion& AddBucketNames(const Aws::String& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(value); return *this; }
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline S3ClassificationScopeExclusion& AddBucketNames(Aws::String&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
-     * the full name of an excluded bucket.</p>
-     */
     inline S3ClassificationScopeExclusion& AddBucketNames(const char* value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_bucketNames;

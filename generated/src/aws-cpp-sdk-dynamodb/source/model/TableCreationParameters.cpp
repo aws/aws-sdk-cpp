@@ -25,20 +25,14 @@ TableCreationParameters::TableCreationParameters() :
     m_billingMode(BillingMode::NOT_SET),
     m_billingModeHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false),
     m_sSESpecificationHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false)
 {
 }
 
-TableCreationParameters::TableCreationParameters(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_attributeDefinitionsHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
+TableCreationParameters::TableCreationParameters(JsonView jsonValue)
+  : TableCreationParameters()
 {
   *this = jsonValue;
 }
@@ -84,6 +78,13 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
 
     m_provisionedThroughputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnDemandThroughput"))
+  {
+    m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
+
+    m_onDemandThroughputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SSESpecification"))
@@ -146,6 +147,12 @@ JsonValue TableCreationParameters::Jsonize() const
   if(m_provisionedThroughputHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 

@@ -80,6 +80,20 @@
 #include <aws/neptune/model/RestoreDBClusterToPointInTimeResult.h>
 #include <aws/neptune/model/StartDBClusterResult.h>
 #include <aws/neptune/model/StopDBClusterResult.h>
+#include <aws/neptune/model/DescribeEventSubscriptionsRequest.h>
+#include <aws/neptune/model/DescribeDBInstancesRequest.h>
+#include <aws/neptune/model/DescribeDBClustersRequest.h>
+#include <aws/neptune/model/DescribeEventCategoriesRequest.h>
+#include <aws/neptune/model/DescribeDBClusterParameterGroupsRequest.h>
+#include <aws/neptune/model/DescribeDBEngineVersionsRequest.h>
+#include <aws/neptune/model/DescribePendingMaintenanceActionsRequest.h>
+#include <aws/neptune/model/DescribeEventsRequest.h>
+#include <aws/neptune/model/DescribeDBClusterEndpointsRequest.h>
+#include <aws/neptune/model/DescribeGlobalClustersRequest.h>
+#include <aws/neptune/model/DescribeDBParameterGroupsRequest.h>
+#include <aws/neptune/model/DescribeDBSubnetGroupsRequest.h>
+#include <aws/neptune/model/DescribeDBClusterSnapshotsRequest.h>
+#include <aws/neptune/model/FailoverDBClusterRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in NeptuneClient header */
 
@@ -114,7 +128,7 @@ namespace Aws
 
   namespace Neptune
   {
-    using NeptuneClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NeptuneClientConfiguration = Aws::Client::GenericClientConfiguration;
     using NeptuneEndpointProviderBase = Aws::Neptune::Endpoint::NeptuneEndpointProviderBase;
     using NeptuneEndpointProvider = Aws::Neptune::Endpoint::NeptuneEndpointProvider;
 

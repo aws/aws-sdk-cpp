@@ -24,9 +24,8 @@ WorkloadProfile::WorkloadProfile() :
 {
 }
 
-WorkloadProfile::WorkloadProfile(JsonView jsonValue) : 
-    m_profileArnHasBeenSet(false),
-    m_profileVersionHasBeenSet(false)
+WorkloadProfile::WorkloadProfile(JsonView jsonValue)
+  : WorkloadProfile()
 {
   *this = jsonValue;
 }

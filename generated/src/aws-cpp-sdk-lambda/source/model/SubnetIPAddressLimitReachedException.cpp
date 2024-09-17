@@ -24,9 +24,8 @@ SubnetIPAddressLimitReachedException::SubnetIPAddressLimitReachedException() :
 {
 }
 
-SubnetIPAddressLimitReachedException::SubnetIPAddressLimitReachedException(JsonView jsonValue) : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+SubnetIPAddressLimitReachedException::SubnetIPAddressLimitReachedException(JsonView jsonValue)
+  : SubnetIPAddressLimitReachedException()
 {
   *this = jsonValue;
 }

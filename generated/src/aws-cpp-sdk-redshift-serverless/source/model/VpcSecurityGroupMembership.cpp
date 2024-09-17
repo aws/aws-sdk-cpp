@@ -24,9 +24,8 @@ VpcSecurityGroupMembership::VpcSecurityGroupMembership() :
 {
 }
 
-VpcSecurityGroupMembership::VpcSecurityGroupMembership(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_vpcSecurityGroupIdHasBeenSet(false)
+VpcSecurityGroupMembership::VpcSecurityGroupMembership(JsonView jsonValue)
+  : VpcSecurityGroupMembership()
 {
   *this = jsonValue;
 }

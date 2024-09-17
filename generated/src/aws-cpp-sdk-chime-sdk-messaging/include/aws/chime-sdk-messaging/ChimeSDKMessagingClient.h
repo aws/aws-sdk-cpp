@@ -870,13 +870,13 @@ namespace ChimeSDKMessaging
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingSessionEndpoint">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetMessagingSessionEndpointOutcome GetMessagingSessionEndpoint(const Model::GetMessagingSessionEndpointRequest& request) const;
+        virtual Model::GetMessagingSessionEndpointOutcome GetMessagingSessionEndpoint(const Model::GetMessagingSessionEndpointRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetMessagingSessionEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetMessagingSessionEndpointRequestT = Model::GetMessagingSessionEndpointRequest>
-        Model::GetMessagingSessionEndpointOutcomeCallable GetMessagingSessionEndpointCallable(const GetMessagingSessionEndpointRequestT& request) const
+        Model::GetMessagingSessionEndpointOutcomeCallable GetMessagingSessionEndpointCallable(const GetMessagingSessionEndpointRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeSDKMessagingClient::GetMessagingSessionEndpoint, request);
         }
@@ -885,7 +885,7 @@ namespace ChimeSDKMessaging
          * An Async wrapper for GetMessagingSessionEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetMessagingSessionEndpointRequestT = Model::GetMessagingSessionEndpointRequest>
-        void GetMessagingSessionEndpointAsync(const GetMessagingSessionEndpointRequestT& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetMessagingSessionEndpointAsync(const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetMessagingSessionEndpointRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeSDKMessagingClient::GetMessagingSessionEndpoint, request, handler, context);
         }
@@ -1598,7 +1598,6 @@ namespace ChimeSDKMessaging
       void init(const ChimeSDKMessagingClientConfiguration& clientConfiguration);
 
       ChimeSDKMessagingClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> m_endpointProvider;
   };
 

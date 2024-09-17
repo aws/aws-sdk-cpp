@@ -32,169 +32,61 @@ namespace Model
     AWS_SSMSAP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetDatabaseRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetDatabaseRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetDatabaseRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the component.</p>
      */
     inline const Aws::String& GetComponentId() const{ return m_componentId; }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline bool ComponentIdHasBeenSet() const { return m_componentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline void SetComponentId(const Aws::String& value) { m_componentIdHasBeenSet = true; m_componentId = value; }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline void SetComponentId(Aws::String&& value) { m_componentIdHasBeenSet = true; m_componentId = std::move(value); }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline void SetComponentId(const char* value) { m_componentIdHasBeenSet = true; m_componentId.assign(value); }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline GetDatabaseRequest& WithComponentId(const Aws::String& value) { SetComponentId(value); return *this;}
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline GetDatabaseRequest& WithComponentId(Aws::String&& value) { SetComponentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline GetDatabaseRequest& WithComponentId(const char* value) { SetComponentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the database.</p>
      */
     inline const Aws::String& GetDatabaseId() const{ return m_databaseId; }
-
-    /**
-     * <p>The ID of the database.</p>
-     */
     inline bool DatabaseIdHasBeenSet() const { return m_databaseIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the database.</p>
-     */
     inline void SetDatabaseId(const Aws::String& value) { m_databaseIdHasBeenSet = true; m_databaseId = value; }
-
-    /**
-     * <p>The ID of the database.</p>
-     */
     inline void SetDatabaseId(Aws::String&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::move(value); }
-
-    /**
-     * <p>The ID of the database.</p>
-     */
     inline void SetDatabaseId(const char* value) { m_databaseIdHasBeenSet = true; m_databaseId.assign(value); }
-
-    /**
-     * <p>The ID of the database.</p>
-     */
     inline GetDatabaseRequest& WithDatabaseId(const Aws::String& value) { SetDatabaseId(value); return *this;}
-
-    /**
-     * <p>The ID of the database.</p>
-     */
     inline GetDatabaseRequest& WithDatabaseId(Aws::String&& value) { SetDatabaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the database.</p>
-     */
     inline GetDatabaseRequest& WithDatabaseId(const char* value) { SetDatabaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline const Aws::String& GetDatabaseArn() const{ return m_databaseArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the database.</p>
-     */
     inline bool DatabaseArnHasBeenSet() const { return m_databaseArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the database.</p>
-     */
     inline void SetDatabaseArn(const Aws::String& value) { m_databaseArnHasBeenSet = true; m_databaseArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the database.</p>
-     */
     inline void SetDatabaseArn(Aws::String&& value) { m_databaseArnHasBeenSet = true; m_databaseArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the database.</p>
-     */
     inline void SetDatabaseArn(const char* value) { m_databaseArnHasBeenSet = true; m_databaseArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the database.</p>
-     */
     inline GetDatabaseRequest& WithDatabaseArn(const Aws::String& value) { SetDatabaseArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the database.</p>
-     */
     inline GetDatabaseRequest& WithDatabaseArn(Aws::String&& value) { SetDatabaseArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the database.</p>
-     */
     inline GetDatabaseRequest& WithDatabaseArn(const char* value) { SetDatabaseArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

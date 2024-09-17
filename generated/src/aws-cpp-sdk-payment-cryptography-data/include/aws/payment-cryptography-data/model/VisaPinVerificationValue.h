@@ -38,71 +38,30 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The encrypted PIN block data to verify.</p>
      */
     inline const Aws::String& GetEncryptedPinBlock() const{ return m_encryptedPinBlock; }
-
-    /**
-     * <p>The encrypted PIN block data to verify.</p>
-     */
     inline bool EncryptedPinBlockHasBeenSet() const { return m_encryptedPinBlockHasBeenSet; }
-
-    /**
-     * <p>The encrypted PIN block data to verify.</p>
-     */
     inline void SetEncryptedPinBlock(const Aws::String& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = value; }
-
-    /**
-     * <p>The encrypted PIN block data to verify.</p>
-     */
     inline void SetEncryptedPinBlock(Aws::String&& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = std::move(value); }
-
-    /**
-     * <p>The encrypted PIN block data to verify.</p>
-     */
     inline void SetEncryptedPinBlock(const char* value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock.assign(value); }
-
-    /**
-     * <p>The encrypted PIN block data to verify.</p>
-     */
     inline VisaPinVerificationValue& WithEncryptedPinBlock(const Aws::String& value) { SetEncryptedPinBlock(value); return *this;}
-
-    /**
-     * <p>The encrypted PIN block data to verify.</p>
-     */
     inline VisaPinVerificationValue& WithEncryptedPinBlock(Aws::String&& value) { SetEncryptedPinBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The encrypted PIN block data to verify.</p>
-     */
     inline VisaPinVerificationValue& WithEncryptedPinBlock(const char* value) { SetEncryptedPinBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
      * calculate the PVV (PIN Verification Value).</p>
      */
     inline int GetPinVerificationKeyIndex() const{ return m_pinVerificationKeyIndex; }
-
-    /**
-     * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
-     * calculate the PVV (PIN Verification Value).</p>
-     */
     inline bool PinVerificationKeyIndexHasBeenSet() const { return m_pinVerificationKeyIndexHasBeenSet; }
-
-    /**
-     * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
-     * calculate the PVV (PIN Verification Value).</p>
-     */
     inline void SetPinVerificationKeyIndex(int value) { m_pinVerificationKeyIndexHasBeenSet = true; m_pinVerificationKeyIndex = value; }
-
-    /**
-     * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
-     * calculate the PVV (PIN Verification Value).</p>
-     */
     inline VisaPinVerificationValue& WithPinVerificationKeyIndex(int value) { SetPinVerificationKeyIndex(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_encryptedPinBlock;

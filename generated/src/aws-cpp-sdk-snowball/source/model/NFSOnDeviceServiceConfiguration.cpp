@@ -26,11 +26,8 @@ NFSOnDeviceServiceConfiguration::NFSOnDeviceServiceConfiguration() :
 {
 }
 
-NFSOnDeviceServiceConfiguration::NFSOnDeviceServiceConfiguration(JsonView jsonValue) : 
-    m_storageLimit(0),
-    m_storageLimitHasBeenSet(false),
-    m_storageUnit(StorageUnit::NOT_SET),
-    m_storageUnitHasBeenSet(false)
+NFSOnDeviceServiceConfiguration::NFSOnDeviceServiceConfiguration(JsonView jsonValue)
+  : NFSOnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }

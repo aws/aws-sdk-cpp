@@ -26,11 +26,8 @@ KxNAS1Configuration::KxNAS1Configuration() :
 {
 }
 
-KxNAS1Configuration::KxNAS1Configuration(JsonView jsonValue) : 
-    m_type(KxNAS1Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
+KxNAS1Configuration::KxNAS1Configuration(JsonView jsonValue)
+  : KxNAS1Configuration()
 {
   *this = jsonValue;
 }

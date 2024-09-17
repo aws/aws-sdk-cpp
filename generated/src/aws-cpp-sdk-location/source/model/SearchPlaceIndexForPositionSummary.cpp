@@ -19,26 +19,39 @@ namespace Model
 {
 
 SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary() : 
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false),
+    m_positionHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_positionHasBeenSet(false)
+    m_dataSourceHasBeenSet(false),
+    m_languageHasBeenSet(false)
 {
 }
 
-SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary(JsonView jsonValue) : 
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_positionHasBeenSet(false)
+SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary(JsonView jsonValue)
+  : SearchPlaceIndexForPositionSummary()
 {
   *this = jsonValue;
 }
 
 SearchPlaceIndexForPositionSummary& SearchPlaceIndexForPositionSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Position"))
+  {
+    Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
+    for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
+    {
+      m_position.push_back(positionJsonList[positionIndex].AsDouble());
+    }
+    m_positionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxResults"))
+  {
+    m_maxResults = jsonValue.GetInteger("MaxResults");
+
+    m_maxResultsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
@@ -53,29 +66,29 @@ SearchPlaceIndexForPositionSummary& SearchPlaceIndexForPositionSummary::operator
     m_languageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("MaxResults"))
-  {
-    m_maxResults = jsonValue.GetInteger("MaxResults");
-
-    m_maxResultsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Position"))
-  {
-    Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
-    for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
-    {
-      m_position.push_back(positionJsonList[positionIndex].AsDouble());
-    }
-    m_positionHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue SearchPlaceIndexForPositionSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_positionHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> positionJsonList(m_position.size());
+   for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
+   {
+     positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);
+   }
+   payload.WithArray("Position", std::move(positionJsonList));
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
 
   if(m_dataSourceHasBeenSet)
   {
@@ -86,23 +99,6 @@ JsonValue SearchPlaceIndexForPositionSummary::Jsonize() const
   if(m_languageHasBeenSet)
   {
    payload.WithString("Language", m_language);
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
-  }
-
-  if(m_positionHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> positionJsonList(m_position.size());
-   for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
-   {
-     positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);
-   }
-   payload.WithArray("Position", std::move(positionJsonList));
 
   }
 

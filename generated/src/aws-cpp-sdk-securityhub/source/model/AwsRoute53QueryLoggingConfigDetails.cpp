@@ -23,8 +23,8 @@ AwsRoute53QueryLoggingConfigDetails::AwsRoute53QueryLoggingConfigDetails() :
 {
 }
 
-AwsRoute53QueryLoggingConfigDetails::AwsRoute53QueryLoggingConfigDetails(JsonView jsonValue) : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false)
+AwsRoute53QueryLoggingConfigDetails::AwsRoute53QueryLoggingConfigDetails(JsonView jsonValue)
+  : AwsRoute53QueryLoggingConfigDetails()
 {
   *this = jsonValue;
 }

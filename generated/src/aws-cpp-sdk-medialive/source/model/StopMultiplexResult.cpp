@@ -24,10 +24,8 @@ StopMultiplexResult::StopMultiplexResult() :
 {
 }
 
-StopMultiplexResult::StopMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pipelinesRunningCount(0),
-    m_programCount(0),
-    m_state(MultiplexState::NOT_SET)
+StopMultiplexResult::StopMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StopMultiplexResult()
 {
   *this = result;
 }

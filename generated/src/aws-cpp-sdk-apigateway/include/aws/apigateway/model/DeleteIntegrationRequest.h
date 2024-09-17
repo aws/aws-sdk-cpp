@@ -35,128 +35,47 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteIntegrationRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteIntegrationRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline DeleteIntegrationRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a delete integration request's resource identifier.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>Specifies a delete integration request's resource identifier.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>Specifies a delete integration request's resource identifier.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>Specifies a delete integration request's resource identifier.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>Specifies a delete integration request's resource identifier.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>Specifies a delete integration request's resource identifier.</p>
-     */
     inline DeleteIntegrationRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>Specifies a delete integration request's resource identifier.</p>
-     */
     inline DeleteIntegrationRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a delete integration request's resource identifier.</p>
-     */
     inline DeleteIntegrationRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a delete integration request's HTTP method.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
-
-    /**
-     * <p>Specifies a delete integration request's HTTP method.</p>
-     */
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-
-    /**
-     * <p>Specifies a delete integration request's HTTP method.</p>
-     */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-
-    /**
-     * <p>Specifies a delete integration request's HTTP method.</p>
-     */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
-
-    /**
-     * <p>Specifies a delete integration request's HTTP method.</p>
-     */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
-
-    /**
-     * <p>Specifies a delete integration request's HTTP method.</p>
-     */
     inline DeleteIntegrationRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
-
-    /**
-     * <p>Specifies a delete integration request's HTTP method.</p>
-     */
     inline DeleteIntegrationRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a delete integration request's HTTP method.</p>
-     */
     inline DeleteIntegrationRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

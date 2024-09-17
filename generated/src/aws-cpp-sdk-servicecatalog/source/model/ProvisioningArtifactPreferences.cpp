@@ -24,9 +24,8 @@ ProvisioningArtifactPreferences::ProvisioningArtifactPreferences() :
 {
 }
 
-ProvisioningArtifactPreferences::ProvisioningArtifactPreferences(JsonView jsonValue) : 
-    m_stackSetAccountsHasBeenSet(false),
-    m_stackSetRegionsHasBeenSet(false)
+ProvisioningArtifactPreferences::ProvisioningArtifactPreferences(JsonView jsonValue)
+  : ProvisioningArtifactPreferences()
 {
   *this = jsonValue;
 }

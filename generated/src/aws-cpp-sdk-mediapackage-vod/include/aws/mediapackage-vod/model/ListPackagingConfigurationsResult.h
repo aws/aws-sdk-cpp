@@ -34,99 +34,42 @@ namespace Model
     AWS_MEDIAPACKAGEVOD_API ListPackagingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A token that can be used to resume pagination from the end of the collection.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListPackagingConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListPackagingConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListPackagingConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A list of MediaPackage VOD PackagingConfiguration resources.
      */
     inline const Aws::Vector<PackagingConfiguration>& GetPackagingConfigurations() const{ return m_packagingConfigurations; }
-
-    /**
-     * A list of MediaPackage VOD PackagingConfiguration resources.
-     */
     inline void SetPackagingConfigurations(const Aws::Vector<PackagingConfiguration>& value) { m_packagingConfigurations = value; }
-
-    /**
-     * A list of MediaPackage VOD PackagingConfiguration resources.
-     */
     inline void SetPackagingConfigurations(Aws::Vector<PackagingConfiguration>&& value) { m_packagingConfigurations = std::move(value); }
-
-    /**
-     * A list of MediaPackage VOD PackagingConfiguration resources.
-     */
     inline ListPackagingConfigurationsResult& WithPackagingConfigurations(const Aws::Vector<PackagingConfiguration>& value) { SetPackagingConfigurations(value); return *this;}
-
-    /**
-     * A list of MediaPackage VOD PackagingConfiguration resources.
-     */
     inline ListPackagingConfigurationsResult& WithPackagingConfigurations(Aws::Vector<PackagingConfiguration>&& value) { SetPackagingConfigurations(std::move(value)); return *this;}
-
-    /**
-     * A list of MediaPackage VOD PackagingConfiguration resources.
-     */
     inline ListPackagingConfigurationsResult& AddPackagingConfigurations(const PackagingConfiguration& value) { m_packagingConfigurations.push_back(value); return *this; }
-
-    /**
-     * A list of MediaPackage VOD PackagingConfiguration resources.
-     */
     inline ListPackagingConfigurationsResult& AddPackagingConfigurations(PackagingConfiguration&& value) { m_packagingConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListPackagingConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListPackagingConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListPackagingConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

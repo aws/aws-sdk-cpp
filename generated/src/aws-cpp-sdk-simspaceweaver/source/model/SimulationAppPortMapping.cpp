@@ -26,11 +26,8 @@ SimulationAppPortMapping::SimulationAppPortMapping() :
 {
 }
 
-SimulationAppPortMapping::SimulationAppPortMapping(JsonView jsonValue) : 
-    m_actual(0),
-    m_actualHasBeenSet(false),
-    m_declared(0),
-    m_declaredHasBeenSet(false)
+SimulationAppPortMapping::SimulationAppPortMapping(JsonView jsonValue)
+  : SimulationAppPortMapping()
 {
   *this = jsonValue;
 }

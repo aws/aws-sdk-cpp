@@ -38,126 +38,46 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Source column from where the attribute value is to be read.</p>
      */
     inline const Aws::String& GetSourceColumn() const{ return m_sourceColumn; }
-
-    /**
-     * <p>Source column from where the attribute value is to be read.</p>
-     */
     inline bool SourceColumnHasBeenSet() const { return m_sourceColumnHasBeenSet; }
-
-    /**
-     * <p>Source column from where the attribute value is to be read.</p>
-     */
     inline void SetSourceColumn(const Aws::String& value) { m_sourceColumnHasBeenSet = true; m_sourceColumn = value; }
-
-    /**
-     * <p>Source column from where the attribute value is to be read.</p>
-     */
     inline void SetSourceColumn(Aws::String&& value) { m_sourceColumnHasBeenSet = true; m_sourceColumn = std::move(value); }
-
-    /**
-     * <p>Source column from where the attribute value is to be read.</p>
-     */
     inline void SetSourceColumn(const char* value) { m_sourceColumnHasBeenSet = true; m_sourceColumn.assign(value); }
-
-    /**
-     * <p>Source column from where the attribute value is to be read.</p>
-     */
     inline MultiMeasureAttributeMapping& WithSourceColumn(const Aws::String& value) { SetSourceColumn(value); return *this;}
-
-    /**
-     * <p>Source column from where the attribute value is to be read.</p>
-     */
     inline MultiMeasureAttributeMapping& WithSourceColumn(Aws::String&& value) { SetSourceColumn(std::move(value)); return *this;}
-
-    /**
-     * <p>Source column from where the attribute value is to be read.</p>
-     */
     inline MultiMeasureAttributeMapping& WithSourceColumn(const char* value) { SetSourceColumn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Custom name to be used for attribute name in derived table. If not provided,
      * source column name would be used.</p>
      */
     inline const Aws::String& GetTargetMultiMeasureAttributeName() const{ return m_targetMultiMeasureAttributeName; }
-
-    /**
-     * <p>Custom name to be used for attribute name in derived table. If not provided,
-     * source column name would be used.</p>
-     */
     inline bool TargetMultiMeasureAttributeNameHasBeenSet() const { return m_targetMultiMeasureAttributeNameHasBeenSet; }
-
-    /**
-     * <p>Custom name to be used for attribute name in derived table. If not provided,
-     * source column name would be used.</p>
-     */
     inline void SetTargetMultiMeasureAttributeName(const Aws::String& value) { m_targetMultiMeasureAttributeNameHasBeenSet = true; m_targetMultiMeasureAttributeName = value; }
-
-    /**
-     * <p>Custom name to be used for attribute name in derived table. If not provided,
-     * source column name would be used.</p>
-     */
     inline void SetTargetMultiMeasureAttributeName(Aws::String&& value) { m_targetMultiMeasureAttributeNameHasBeenSet = true; m_targetMultiMeasureAttributeName = std::move(value); }
-
-    /**
-     * <p>Custom name to be used for attribute name in derived table. If not provided,
-     * source column name would be used.</p>
-     */
     inline void SetTargetMultiMeasureAttributeName(const char* value) { m_targetMultiMeasureAttributeNameHasBeenSet = true; m_targetMultiMeasureAttributeName.assign(value); }
-
-    /**
-     * <p>Custom name to be used for attribute name in derived table. If not provided,
-     * source column name would be used.</p>
-     */
     inline MultiMeasureAttributeMapping& WithTargetMultiMeasureAttributeName(const Aws::String& value) { SetTargetMultiMeasureAttributeName(value); return *this;}
-
-    /**
-     * <p>Custom name to be used for attribute name in derived table. If not provided,
-     * source column name would be used.</p>
-     */
     inline MultiMeasureAttributeMapping& WithTargetMultiMeasureAttributeName(Aws::String&& value) { SetTargetMultiMeasureAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>Custom name to be used for attribute name in derived table. If not provided,
-     * source column name would be used.</p>
-     */
     inline MultiMeasureAttributeMapping& WithTargetMultiMeasureAttributeName(const char* value) { SetTargetMultiMeasureAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Type of the attribute to be read from the source column.</p>
      */
     inline const ScalarMeasureValueType& GetMeasureValueType() const{ return m_measureValueType; }
-
-    /**
-     * <p>Type of the attribute to be read from the source column.</p>
-     */
     inline bool MeasureValueTypeHasBeenSet() const { return m_measureValueTypeHasBeenSet; }
-
-    /**
-     * <p>Type of the attribute to be read from the source column.</p>
-     */
     inline void SetMeasureValueType(const ScalarMeasureValueType& value) { m_measureValueTypeHasBeenSet = true; m_measureValueType = value; }
-
-    /**
-     * <p>Type of the attribute to be read from the source column.</p>
-     */
     inline void SetMeasureValueType(ScalarMeasureValueType&& value) { m_measureValueTypeHasBeenSet = true; m_measureValueType = std::move(value); }
-
-    /**
-     * <p>Type of the attribute to be read from the source column.</p>
-     */
     inline MultiMeasureAttributeMapping& WithMeasureValueType(const ScalarMeasureValueType& value) { SetMeasureValueType(value); return *this;}
-
-    /**
-     * <p>Type of the attribute to be read from the source column.</p>
-     */
     inline MultiMeasureAttributeMapping& WithMeasureValueType(ScalarMeasureValueType&& value) { SetMeasureValueType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceColumn;

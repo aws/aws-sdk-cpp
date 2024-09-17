@@ -32,54 +32,20 @@ namespace Model
     AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services Account ID for the organizations account to be
      * disabled as a GuardDuty delegated administrator.</p>
      */
     inline const Aws::String& GetAdminAccountId() const{ return m_adminAccountId; }
-
-    /**
-     * <p>The Amazon Web Services Account ID for the organizations account to be
-     * disabled as a GuardDuty delegated administrator.</p>
-     */
     inline bool AdminAccountIdHasBeenSet() const { return m_adminAccountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Account ID for the organizations account to be
-     * disabled as a GuardDuty delegated administrator.</p>
-     */
     inline void SetAdminAccountId(const Aws::String& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = value; }
-
-    /**
-     * <p>The Amazon Web Services Account ID for the organizations account to be
-     * disabled as a GuardDuty delegated administrator.</p>
-     */
     inline void SetAdminAccountId(Aws::String&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Account ID for the organizations account to be
-     * disabled as a GuardDuty delegated administrator.</p>
-     */
     inline void SetAdminAccountId(const char* value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Account ID for the organizations account to be
-     * disabled as a GuardDuty delegated administrator.</p>
-     */
     inline DisableOrganizationAdminAccountRequest& WithAdminAccountId(const Aws::String& value) { SetAdminAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Account ID for the organizations account to be
-     * disabled as a GuardDuty delegated administrator.</p>
-     */
     inline DisableOrganizationAdminAccountRequest& WithAdminAccountId(Aws::String&& value) { SetAdminAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Account ID for the organizations account to be
-     * disabled as a GuardDuty delegated administrator.</p>
-     */
     inline DisableOrganizationAdminAccountRequest& WithAdminAccountId(const char* value) { SetAdminAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_adminAccountId;

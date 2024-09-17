@@ -137,13 +137,13 @@ namespace SsmSap
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetApplication">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
+        virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetApplicationRequestT = Model::GetApplicationRequest>
-        Model::GetApplicationOutcomeCallable GetApplicationCallable(const GetApplicationRequestT& request) const
+        Model::GetApplicationOutcomeCallable GetApplicationCallable(const GetApplicationRequestT& request = {}) const
         {
             return SubmitCallable(&SsmSapClient::GetApplication, request);
         }
@@ -152,7 +152,7 @@ namespace SsmSap
          * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetApplicationRequestT = Model::GetApplicationRequest>
-        void GetApplicationAsync(const GetApplicationRequestT& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetApplicationAsync(const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetApplicationRequestT& request = {}) const
         {
             return SubmitAsync(&SsmSapClient::GetApplication, request, handler, context);
         }
@@ -189,13 +189,13 @@ namespace SsmSap
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetDatabase">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDatabaseOutcome GetDatabase(const Model::GetDatabaseRequest& request) const;
+        virtual Model::GetDatabaseOutcome GetDatabase(const Model::GetDatabaseRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDatabaseRequestT = Model::GetDatabaseRequest>
-        Model::GetDatabaseOutcomeCallable GetDatabaseCallable(const GetDatabaseRequestT& request) const
+        Model::GetDatabaseOutcomeCallable GetDatabaseCallable(const GetDatabaseRequestT& request = {}) const
         {
             return SubmitCallable(&SsmSapClient::GetDatabase, request);
         }
@@ -204,7 +204,7 @@ namespace SsmSap
          * An Async wrapper for GetDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDatabaseRequestT = Model::GetDatabaseRequest>
-        void GetDatabaseAsync(const GetDatabaseRequestT& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDatabaseAsync(const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDatabaseRequestT& request = {}) const
         {
             return SubmitAsync(&SsmSapClient::GetDatabase, request, handler, context);
         }
@@ -267,13 +267,13 @@ namespace SsmSap
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&SsmSapClient::ListApplications, request);
         }
@@ -282,7 +282,7 @@ namespace SsmSap
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&SsmSapClient::ListApplications, request, handler, context);
         }
@@ -293,13 +293,13 @@ namespace SsmSap
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListComponents">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
+        virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListComponentsRequestT = Model::ListComponentsRequest>
-        Model::ListComponentsOutcomeCallable ListComponentsCallable(const ListComponentsRequestT& request) const
+        Model::ListComponentsOutcomeCallable ListComponentsCallable(const ListComponentsRequestT& request = {}) const
         {
             return SubmitCallable(&SsmSapClient::ListComponents, request);
         }
@@ -308,7 +308,7 @@ namespace SsmSap
          * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListComponentsRequestT = Model::ListComponentsRequest>
-        void ListComponentsAsync(const ListComponentsRequestT& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListComponentsAsync(const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListComponentsRequestT& request = {}) const
         {
             return SubmitAsync(&SsmSapClient::ListComponents, request, handler, context);
         }
@@ -319,13 +319,13 @@ namespace SsmSap
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListDatabases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request) const;
+        virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatabasesRequestT = Model::ListDatabasesRequest>
-        Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const ListDatabasesRequestT& request) const
+        Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const ListDatabasesRequestT& request = {}) const
         {
             return SubmitCallable(&SsmSapClient::ListDatabases, request);
         }
@@ -334,9 +334,37 @@ namespace SsmSap
          * An Async wrapper for ListDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatabasesRequestT = Model::ListDatabasesRequest>
-        void ListDatabasesAsync(const ListDatabasesRequestT& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatabasesAsync(const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatabasesRequestT& request = {}) const
         {
             return SubmitAsync(&SsmSapClient::ListDatabases, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of operations events.</p> <p>Available parameters include
+         * <code>OperationID</code>, as well as optional parameters
+         * <code>MaxResults</code>, <code>NextToken</code>, and
+         * <code>Filters</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperationEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOperationEventsOutcome ListOperationEvents(const Model::ListOperationEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListOperationEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOperationEventsRequestT = Model::ListOperationEventsRequest>
+        Model::ListOperationEventsOutcomeCallable ListOperationEventsCallable(const ListOperationEventsRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::ListOperationEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListOperationEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOperationEventsRequestT = Model::ListOperationEventsRequest>
+        void ListOperationEventsAsync(const ListOperationEventsRequestT& request, const ListOperationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::ListOperationEvents, request, handler, context);
         }
 
         /**
@@ -448,6 +476,32 @@ namespace SsmSap
         }
 
         /**
+         * <p>Request is an operation which starts an application.</p> <p>Parameter
+         * <code>ApplicationId</code> is required.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartApplicationOutcome StartApplication(const Model::StartApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartApplicationRequestT = Model::StartApplicationRequest>
+        Model::StartApplicationOutcomeCallable StartApplicationCallable(const StartApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::StartApplication, request);
+        }
+
+        /**
+         * An Async wrapper for StartApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartApplicationRequestT = Model::StartApplicationRequest>
+        void StartApplicationAsync(const StartApplicationRequestT& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::StartApplication, request, handler, context);
+        }
+
+        /**
          * <p>Refreshes a registered application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">AWS
          * API Reference</a></p>
@@ -470,6 +524,34 @@ namespace SsmSap
         void StartApplicationRefreshAsync(const StartApplicationRefreshRequestT& request, const StartApplicationRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SsmSapClient::StartApplicationRefresh, request, handler, context);
+        }
+
+        /**
+         * <p>Request is an operation to stop an application.</p> <p>Parameter
+         * <code>ApplicationId</code> is required. Parameters
+         * <code>StopConnectedEntity</code> and <code>IncludeEc2InstanceShutdown</code> are
+         * optional.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StopApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopApplicationOutcome StopApplication(const Model::StopApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopApplicationRequestT = Model::StopApplicationRequest>
+        Model::StopApplicationOutcomeCallable StopApplicationCallable(const StopApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::StopApplication, request);
+        }
+
+        /**
+         * An Async wrapper for StopApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopApplicationRequestT = Model::StopApplicationRequest>
+        void StopApplicationAsync(const StopApplicationRequestT& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::StopApplication, request, handler, context);
         }
 
         /**
@@ -557,7 +639,6 @@ namespace SsmSap
       void init(const SsmSapClientConfiguration& clientConfiguration);
 
       SsmSapClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SsmSapEndpointProviderBase> m_endpointProvider;
   };
 

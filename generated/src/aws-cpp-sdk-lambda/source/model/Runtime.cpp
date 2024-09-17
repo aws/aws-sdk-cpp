@@ -41,6 +41,7 @@ namespace Aws
         static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
         static const int dotnetcore3_1_HASH = HashingUtils::HashString("dotnetcore3.1");
         static const int dotnet6_HASH = HashingUtils::HashString("dotnet6");
+        static const int dotnet8_HASH = HashingUtils::HashString("dotnet8");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
         static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
@@ -51,6 +52,7 @@ namespace Aws
         static const int python3_10_HASH = HashingUtils::HashString("python3.10");
         static const int java17_HASH = HashingUtils::HashString("java17");
         static const int ruby3_2_HASH = HashingUtils::HashString("ruby3.2");
+        static const int ruby3_3_HASH = HashingUtils::HashString("ruby3.3");
         static const int python3_11_HASH = HashingUtils::HashString("python3.11");
         static const int nodejs20_x_HASH = HashingUtils::HashString("nodejs20.x");
         static const int provided_al2023_HASH = HashingUtils::HashString("provided.al2023");
@@ -145,6 +147,10 @@ namespace Aws
           {
             return Runtime::dotnet6;
           }
+          else if (hashCode == dotnet8_HASH)
+          {
+            return Runtime::dotnet8;
+          }
           else if (hashCode == nodejs4_3_edge_HASH)
           {
             return Runtime::nodejs4_3_edge;
@@ -184,6 +190,10 @@ namespace Aws
           else if (hashCode == ruby3_2_HASH)
           {
             return Runtime::ruby3_2;
+          }
+          else if (hashCode == ruby3_3_HASH)
+          {
+            return Runtime::ruby3_3;
           }
           else if (hashCode == python3_11_HASH)
           {
@@ -263,6 +273,8 @@ namespace Aws
             return "dotnetcore3.1";
           case Runtime::dotnet6:
             return "dotnet6";
+          case Runtime::dotnet8:
+            return "dotnet8";
           case Runtime::nodejs4_3_edge:
             return "nodejs4.3-edge";
           case Runtime::go1_x:
@@ -283,6 +295,8 @@ namespace Aws
             return "java17";
           case Runtime::ruby3_2:
             return "ruby3.2";
+          case Runtime::ruby3_3:
+            return "ruby3.3";
           case Runtime::python3_11:
             return "python3.11";
           case Runtime::nodejs20_x:

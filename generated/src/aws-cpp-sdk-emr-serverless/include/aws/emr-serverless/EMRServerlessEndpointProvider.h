@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using EMRServerlessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EMRServerlessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using EMRServerlessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EMRServerlessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

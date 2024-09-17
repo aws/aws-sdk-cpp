@@ -25,10 +25,8 @@ S3Config::S3Config() :
 {
 }
 
-S3Config::S3Config(JsonView jsonValue) : 
-    m_pathHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false)
+S3Config::S3Config(JsonView jsonValue)
+  : S3Config()
 {
   *this = jsonValue;
 }

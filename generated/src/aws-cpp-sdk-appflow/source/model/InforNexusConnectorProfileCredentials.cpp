@@ -26,11 +26,8 @@ InforNexusConnectorProfileCredentials::InforNexusConnectorProfileCredentials() :
 {
 }
 
-InforNexusConnectorProfileCredentials::InforNexusConnectorProfileCredentials(JsonView jsonValue) : 
-    m_accessKeyIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_datakeyHasBeenSet(false)
+InforNexusConnectorProfileCredentials::InforNexusConnectorProfileCredentials(JsonView jsonValue)
+  : InforNexusConnectorProfileCredentials()
 {
   *this = jsonValue;
 }

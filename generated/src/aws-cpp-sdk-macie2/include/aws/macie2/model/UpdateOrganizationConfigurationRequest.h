@@ -30,30 +30,16 @@ namespace Model
     AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
-     * <p>Specifies whether to enable Amazon Macie automatically for an account when
-     * the account is added to the organization in Organizations.</p>
+     * <p>Specifies whether to enable Amazon Macie automatically for accounts that are
+     * added to the organization in Organizations.</p>
      */
     inline bool GetAutoEnable() const{ return m_autoEnable; }
-
-    /**
-     * <p>Specifies whether to enable Amazon Macie automatically for an account when
-     * the account is added to the organization in Organizations.</p>
-     */
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to enable Amazon Macie automatically for an account when
-     * the account is added to the organization in Organizations.</p>
-     */
     inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-
-    /**
-     * <p>Specifies whether to enable Amazon Macie automatically for an account when
-     * the account is added to the organization in Organizations.</p>
-     */
     inline UpdateOrganizationConfigurationRequest& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoEnable;

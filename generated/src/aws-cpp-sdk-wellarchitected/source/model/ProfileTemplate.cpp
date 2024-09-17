@@ -26,11 +26,8 @@ ProfileTemplate::ProfileTemplate() :
 {
 }
 
-ProfileTemplate::ProfileTemplate(JsonView jsonValue) : 
-    m_templateNameHasBeenSet(false),
-    m_templateQuestionsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+ProfileTemplate::ProfileTemplate(JsonView jsonValue)
+  : ProfileTemplate()
 {
   *this = jsonValue;
 }

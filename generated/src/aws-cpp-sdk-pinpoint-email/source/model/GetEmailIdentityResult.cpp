@@ -24,10 +24,8 @@ GetEmailIdentityResult::GetEmailIdentityResult() :
 {
 }
 
-GetEmailIdentityResult::GetEmailIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_identityType(IdentityType::NOT_SET),
-    m_feedbackForwardingStatus(false),
-    m_verifiedForSendingStatus(false)
+GetEmailIdentityResult::GetEmailIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetEmailIdentityResult()
 {
   *this = result;
 }

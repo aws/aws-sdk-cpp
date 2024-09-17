@@ -24,9 +24,8 @@ LifecyclePolicyRuleAction::LifecyclePolicyRuleAction() :
 {
 }
 
-LifecyclePolicyRuleAction::LifecyclePolicyRuleAction(JsonView jsonValue) : 
-    m_type(ImageActionType::NOT_SET),
-    m_typeHasBeenSet(false)
+LifecyclePolicyRuleAction::LifecyclePolicyRuleAction(JsonView jsonValue)
+  : LifecyclePolicyRuleAction()
 {
   *this = jsonValue;
 }

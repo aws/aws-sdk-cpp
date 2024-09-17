@@ -23,8 +23,8 @@ DifferentialPrivacyParameters::DifferentialPrivacyParameters() :
 {
 }
 
-DifferentialPrivacyParameters::DifferentialPrivacyParameters(JsonView jsonValue) : 
-    m_sensitivityParametersHasBeenSet(false)
+DifferentialPrivacyParameters::DifferentialPrivacyParameters(JsonView jsonValue)
+  : DifferentialPrivacyParameters()
 {
   *this = jsonValue;
 }

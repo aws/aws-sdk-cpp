@@ -25,23 +25,37 @@ Aws::String DescribeTrustStoresRequest::SerializePayload() const
   ss << "Action=DescribeTrustStores&";
   if(m_trustStoreArnsHasBeenSet)
   {
-    unsigned trustStoreArnsCount = 1;
-    for(auto& item : m_trustStoreArns)
+    if (m_trustStoreArns.empty())
     {
-      ss << "TrustStoreArns.member." << trustStoreArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      trustStoreArnsCount++;
+      ss << "TrustStoreArns=&";
+    }
+    else
+    {
+      unsigned trustStoreArnsCount = 1;
+      for(auto& item : m_trustStoreArns)
+      {
+        ss << "TrustStoreArns.member." << trustStoreArnsCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        trustStoreArnsCount++;
+      }
     }
   }
 
   if(m_namesHasBeenSet)
   {
-    unsigned namesCount = 1;
-    for(auto& item : m_names)
+    if (m_names.empty())
     {
-      ss << "Names.member." << namesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      namesCount++;
+      ss << "Names=&";
+    }
+    else
+    {
+      unsigned namesCount = 1;
+      for(auto& item : m_names)
+      {
+        ss << "Names.member." << namesCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        namesCount++;
+      }
     }
   }
 

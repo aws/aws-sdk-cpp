@@ -39,193 +39,64 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The category field wells of a line chart. Values are grouped by category
      * fields.</p>
      */
     inline const Aws::Vector<DimensionField>& GetCategory() const{ return m_category; }
-
-    /**
-     * <p>The category field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-
-    /**
-     * <p>The category field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline void SetCategory(const Aws::Vector<DimensionField>& value) { m_categoryHasBeenSet = true; m_category = value; }
-
-    /**
-     * <p>The category field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline void SetCategory(Aws::Vector<DimensionField>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-
-    /**
-     * <p>The category field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& WithCategory(const Aws::Vector<DimensionField>& value) { SetCategory(value); return *this;}
-
-    /**
-     * <p>The category field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& WithCategory(Aws::Vector<DimensionField>&& value) { SetCategory(std::move(value)); return *this;}
-
-    /**
-     * <p>The category field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& AddCategory(const DimensionField& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
-
-    /**
-     * <p>The category field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& AddCategory(DimensionField&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value field wells of a line chart. Values are aggregated based on
      * categories.</p>
      */
     inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value field wells of a line chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value field wells of a line chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value field wells of a line chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value field wells of a line chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline LineChartAggregatedFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value field wells of a line chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline LineChartAggregatedFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value field wells of a line chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline LineChartAggregatedFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value field wells of a line chart. Values are aggregated based on
-     * categories.</p>
-     */
     inline LineChartAggregatedFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The color field wells of a line chart. Values are grouped by category
      * fields.</p>
      */
     inline const Aws::Vector<DimensionField>& GetColors() const{ return m_colors; }
-
-    /**
-     * <p>The color field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline bool ColorsHasBeenSet() const { return m_colorsHasBeenSet; }
-
-    /**
-     * <p>The color field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline void SetColors(const Aws::Vector<DimensionField>& value) { m_colorsHasBeenSet = true; m_colors = value; }
-
-    /**
-     * <p>The color field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline void SetColors(Aws::Vector<DimensionField>&& value) { m_colorsHasBeenSet = true; m_colors = std::move(value); }
-
-    /**
-     * <p>The color field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& WithColors(const Aws::Vector<DimensionField>& value) { SetColors(value); return *this;}
-
-    /**
-     * <p>The color field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& WithColors(Aws::Vector<DimensionField>&& value) { SetColors(std::move(value)); return *this;}
-
-    /**
-     * <p>The color field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& AddColors(const DimensionField& value) { m_colorsHasBeenSet = true; m_colors.push_back(value); return *this; }
-
-    /**
-     * <p>The color field wells of a line chart. Values are grouped by category
-     * fields.</p>
-     */
     inline LineChartAggregatedFieldWells& AddColors(DimensionField&& value) { m_colorsHasBeenSet = true; m_colors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The small multiples field well of a line chart.</p>
      */
     inline const Aws::Vector<DimensionField>& GetSmallMultiples() const{ return m_smallMultiples; }
-
-    /**
-     * <p>The small multiples field well of a line chart.</p>
-     */
     inline bool SmallMultiplesHasBeenSet() const { return m_smallMultiplesHasBeenSet; }
-
-    /**
-     * <p>The small multiples field well of a line chart.</p>
-     */
     inline void SetSmallMultiples(const Aws::Vector<DimensionField>& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples = value; }
-
-    /**
-     * <p>The small multiples field well of a line chart.</p>
-     */
     inline void SetSmallMultiples(Aws::Vector<DimensionField>&& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples = std::move(value); }
-
-    /**
-     * <p>The small multiples field well of a line chart.</p>
-     */
     inline LineChartAggregatedFieldWells& WithSmallMultiples(const Aws::Vector<DimensionField>& value) { SetSmallMultiples(value); return *this;}
-
-    /**
-     * <p>The small multiples field well of a line chart.</p>
-     */
     inline LineChartAggregatedFieldWells& WithSmallMultiples(Aws::Vector<DimensionField>&& value) { SetSmallMultiples(std::move(value)); return *this;}
-
-    /**
-     * <p>The small multiples field well of a line chart.</p>
-     */
     inline LineChartAggregatedFieldWells& AddSmallMultiples(const DimensionField& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples.push_back(value); return *this; }
-
-    /**
-     * <p>The small multiples field well of a line chart.</p>
-     */
     inline LineChartAggregatedFieldWells& AddSmallMultiples(DimensionField&& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DimensionField> m_category;

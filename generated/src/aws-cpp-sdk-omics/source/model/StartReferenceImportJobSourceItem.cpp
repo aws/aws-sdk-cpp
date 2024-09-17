@@ -26,11 +26,8 @@ StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem() :
 {
 }
 
-StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem(JsonView jsonValue) : 
-    m_sourceFileHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem(JsonView jsonValue)
+  : StartReferenceImportJobSourceItem()
 {
   *this = jsonValue;
 }

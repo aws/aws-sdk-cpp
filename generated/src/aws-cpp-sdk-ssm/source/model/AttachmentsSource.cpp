@@ -26,11 +26,8 @@ AttachmentsSource::AttachmentsSource() :
 {
 }
 
-AttachmentsSource::AttachmentsSource(JsonView jsonValue) : 
-    m_key(AttachmentsSourceKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_nameHasBeenSet(false)
+AttachmentsSource::AttachmentsSource(JsonView jsonValue)
+  : AttachmentsSource()
 {
   *this = jsonValue;
 }

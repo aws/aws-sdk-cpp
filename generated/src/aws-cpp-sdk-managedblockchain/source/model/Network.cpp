@@ -36,21 +36,8 @@ Network::Network() :
 {
 }
 
-Network::Network(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_framework(Framework::NOT_SET),
-    m_frameworkHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false),
-    m_frameworkAttributesHasBeenSet(false),
-    m_vpcEndpointServiceNameHasBeenSet(false),
-    m_votingPolicyHasBeenSet(false),
-    m_status(NetworkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false)
+Network::Network(JsonView jsonValue)
+  : Network()
 {
   *this = jsonValue;
 }

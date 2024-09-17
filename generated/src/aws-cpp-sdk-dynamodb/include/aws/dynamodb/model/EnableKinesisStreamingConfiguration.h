@@ -38,42 +38,18 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Toggle for the precision of Kinesis data stream timestamp. The values are
      * either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
      */
     inline const ApproximateCreationDateTimePrecision& GetApproximateCreationDateTimePrecision() const{ return m_approximateCreationDateTimePrecision; }
-
-    /**
-     * <p>Toggle for the precision of Kinesis data stream timestamp. The values are
-     * either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
-     */
     inline bool ApproximateCreationDateTimePrecisionHasBeenSet() const { return m_approximateCreationDateTimePrecisionHasBeenSet; }
-
-    /**
-     * <p>Toggle for the precision of Kinesis data stream timestamp. The values are
-     * either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
-     */
     inline void SetApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = value; }
-
-    /**
-     * <p>Toggle for the precision of Kinesis data stream timestamp. The values are
-     * either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
-     */
     inline void SetApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = std::move(value); }
-
-    /**
-     * <p>Toggle for the precision of Kinesis data stream timestamp. The values are
-     * either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
-     */
     inline EnableKinesisStreamingConfiguration& WithApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { SetApproximateCreationDateTimePrecision(value); return *this;}
-
-    /**
-     * <p>Toggle for the precision of Kinesis data stream timestamp. The values are
-     * either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
-     */
     inline EnableKinesisStreamingConfiguration& WithApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { SetApproximateCreationDateTimePrecision(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApproximateCreationDateTimePrecision m_approximateCreationDateTimePrecision;

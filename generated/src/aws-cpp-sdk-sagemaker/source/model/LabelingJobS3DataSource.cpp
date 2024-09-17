@@ -23,8 +23,8 @@ LabelingJobS3DataSource::LabelingJobS3DataSource() :
 {
 }
 
-LabelingJobS3DataSource::LabelingJobS3DataSource(JsonView jsonValue) : 
-    m_manifestS3UriHasBeenSet(false)
+LabelingJobS3DataSource::LabelingJobS3DataSource(JsonView jsonValue)
+  : LabelingJobS3DataSource()
 {
   *this = jsonValue;
 }

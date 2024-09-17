@@ -24,9 +24,8 @@ GitTagFilterCriteria::GitTagFilterCriteria() :
 {
 }
 
-GitTagFilterCriteria::GitTagFilterCriteria(JsonView jsonValue) : 
-    m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false)
+GitTagFilterCriteria::GitTagFilterCriteria(JsonView jsonValue)
+  : GitTagFilterCriteria()
 {
   *this = jsonValue;
 }

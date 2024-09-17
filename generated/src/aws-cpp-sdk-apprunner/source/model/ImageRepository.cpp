@@ -26,11 +26,8 @@ ImageRepository::ImageRepository() :
 {
 }
 
-ImageRepository::ImageRepository(JsonView jsonValue) : 
-    m_imageIdentifierHasBeenSet(false),
-    m_imageConfigurationHasBeenSet(false),
-    m_imageRepositoryType(ImageRepositoryType::NOT_SET),
-    m_imageRepositoryTypeHasBeenSet(false)
+ImageRepository::ImageRepository(JsonView jsonValue)
+  : ImageRepository()
 {
   *this = jsonValue;
 }

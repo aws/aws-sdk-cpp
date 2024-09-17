@@ -31,16 +31,8 @@ RuleUpdateSuccess::RuleUpdateSuccess() :
 {
 }
 
-RuleUpdateSuccess::RuleUpdateSuccess(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
+RuleUpdateSuccess::RuleUpdateSuccess(JsonView jsonValue)
+  : RuleUpdateSuccess()
 {
   *this = jsonValue;
 }

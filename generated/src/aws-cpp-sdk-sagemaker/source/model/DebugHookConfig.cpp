@@ -26,11 +26,8 @@ DebugHookConfig::DebugHookConfig() :
 {
 }
 
-DebugHookConfig::DebugHookConfig(JsonView jsonValue) : 
-    m_localPathHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_hookParametersHasBeenSet(false),
-    m_collectionConfigurationsHasBeenSet(false)
+DebugHookConfig::DebugHookConfig(JsonView jsonValue)
+  : DebugHookConfig()
 {
   *this = jsonValue;
 }

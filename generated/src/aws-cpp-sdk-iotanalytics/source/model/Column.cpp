@@ -24,9 +24,8 @@ Column::Column() :
 {
 }
 
-Column::Column(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
+Column::Column(JsonView jsonValue)
+  : Column()
 {
   *this = jsonValue;
 }

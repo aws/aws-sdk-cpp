@@ -26,6 +26,7 @@ EmailTemplateResponse::EmailTemplateResponse() :
     m_lastModifiedDateHasBeenSet(false),
     m_recommenderIdHasBeenSet(false),
     m_subjectHasBeenSet(false),
+    m_headersHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
@@ -36,21 +37,8 @@ EmailTemplateResponse::EmailTemplateResponse() :
 {
 }
 
-EmailTemplateResponse::EmailTemplateResponse(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_htmlPartHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_textPartHasBeenSet(false),
-    m_versionHasBeenSet(false)
+EmailTemplateResponse::EmailTemplateResponse(JsonView jsonValue)
+  : EmailTemplateResponse()
 {
   *this = jsonValue;
 }
@@ -104,6 +92,16 @@ EmailTemplateResponse& EmailTemplateResponse::operator =(JsonView jsonValue)
     m_subject = jsonValue.GetString("Subject");
 
     m_subjectHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Headers"))
+  {
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
+    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+    {
+      m_headers.push_back(headersJsonList[headersIndex].AsObject());
+    }
+    m_headersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -197,6 +195,17 @@ JsonValue EmailTemplateResponse::Jsonize() const
   if(m_subjectHasBeenSet)
   {
    payload.WithString("Subject", m_subject);
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+   {
+     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+   }
+   payload.WithArray("Headers", std::move(headersJsonList));
 
   }
 

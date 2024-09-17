@@ -43,77 +43,31 @@ namespace Model
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of interface endpoint.</p>
      */
     inline const AccessEndpointType& GetEndpointType() const{ return m_endpointType; }
-
-    /**
-     * <p>The type of interface endpoint.</p>
-     */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-
-    /**
-     * <p>The type of interface endpoint.</p>
-     */
     inline void SetEndpointType(const AccessEndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-
-    /**
-     * <p>The type of interface endpoint.</p>
-     */
     inline void SetEndpointType(AccessEndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-
-    /**
-     * <p>The type of interface endpoint.</p>
-     */
     inline AccessEndpoint& WithEndpointType(const AccessEndpointType& value) { SetEndpointType(value); return *this;}
-
-    /**
-     * <p>The type of interface endpoint.</p>
-     */
     inline AccessEndpoint& WithEndpointType(AccessEndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
      */
     inline const Aws::String& GetVpceId() const{ return m_vpceId; }
-
-    /**
-     * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-     */
     inline bool VpceIdHasBeenSet() const { return m_vpceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-     */
     inline void SetVpceId(const Aws::String& value) { m_vpceIdHasBeenSet = true; m_vpceId = value; }
-
-    /**
-     * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-     */
     inline void SetVpceId(Aws::String&& value) { m_vpceIdHasBeenSet = true; m_vpceId = std::move(value); }
-
-    /**
-     * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-     */
     inline void SetVpceId(const char* value) { m_vpceIdHasBeenSet = true; m_vpceId.assign(value); }
-
-    /**
-     * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-     */
     inline AccessEndpoint& WithVpceId(const Aws::String& value) { SetVpceId(value); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-     */
     inline AccessEndpoint& WithVpceId(Aws::String&& value) { SetVpceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-     */
     inline AccessEndpoint& WithVpceId(const char* value) { SetVpceId(value); return *this;}
-
+    ///@}
   private:
 
     AccessEndpointType m_endpointType;

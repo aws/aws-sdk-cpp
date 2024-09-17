@@ -23,8 +23,8 @@ Model::Model() :
 {
 }
 
-Model::Model(JsonView jsonValue) : 
-    m_smithyHasBeenSet(false)
+Model::Model(JsonView jsonValue)
+  : Model()
 {
   *this = jsonValue;
 }

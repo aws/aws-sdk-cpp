@@ -25,10 +25,8 @@ TimerDefinition::TimerDefinition() :
 {
 }
 
-TimerDefinition::TimerDefinition(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_seconds(0),
-    m_secondsHasBeenSet(false)
+TimerDefinition::TimerDefinition(JsonView jsonValue)
+  : TimerDefinition()
 {
   *this = jsonValue;
 }

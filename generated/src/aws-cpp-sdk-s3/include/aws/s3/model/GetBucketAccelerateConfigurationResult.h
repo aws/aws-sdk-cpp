@@ -34,69 +34,36 @@ namespace Model
     AWS_S3_API GetBucketAccelerateConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The accelerate configuration of the bucket.</p>
      */
     inline const BucketAccelerateStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The accelerate configuration of the bucket.</p>
-     */
     inline void SetStatus(const BucketAccelerateStatus& value) { m_status = value; }
-
-    /**
-     * <p>The accelerate configuration of the bucket.</p>
-     */
     inline void SetStatus(BucketAccelerateStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The accelerate configuration of the bucket.</p>
-     */
     inline GetBucketAccelerateConfigurationResult& WithStatus(const BucketAccelerateStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The accelerate configuration of the bucket.</p>
-     */
     inline GetBucketAccelerateConfigurationResult& WithStatus(BucketAccelerateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
-
-    
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
-
-    
     inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
-
-    
     inline GetBucketAccelerateConfigurationResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
-
-    
     inline GetBucketAccelerateConfigurationResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketAccelerateConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketAccelerateConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketAccelerateConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BucketAccelerateStatus m_status;

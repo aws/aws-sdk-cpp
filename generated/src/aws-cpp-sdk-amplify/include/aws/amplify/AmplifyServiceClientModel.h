@@ -55,6 +55,7 @@
 #include <aws/amplify/model/UpdateBranchResult.h>
 #include <aws/amplify/model/UpdateDomainAssociationResult.h>
 #include <aws/amplify/model/UpdateWebhookResult.h>
+#include <aws/amplify/model/ListAppsRequest.h>
 /* End of service model headers required in AmplifyClient header */
 
 namespace Aws
@@ -88,7 +89,7 @@ namespace Aws
 
   namespace Amplify
   {
-    using AmplifyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AmplifyClientConfiguration = Aws::Client::GenericClientConfiguration;
     using AmplifyEndpointProviderBase = Aws::Amplify::Endpoint::AmplifyEndpointProviderBase;
     using AmplifyEndpointProvider = Aws::Amplify::Endpoint::AmplifyEndpointProvider;
 

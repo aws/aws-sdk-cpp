@@ -24,9 +24,8 @@ ProtectedQueryOutput::ProtectedQueryOutput() :
 {
 }
 
-ProtectedQueryOutput::ProtectedQueryOutput(JsonView jsonValue) : 
-    m_s3HasBeenSet(false),
-    m_memberListHasBeenSet(false)
+ProtectedQueryOutput::ProtectedQueryOutput(JsonView jsonValue)
+  : ProtectedQueryOutput()
 {
   *this = jsonValue;
 }

@@ -25,11 +25,8 @@ GetAnnotationStoreResult::GetAnnotationStoreResult() :
 {
 }
 
-GetAnnotationStoreResult::GetAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StoreStatus::NOT_SET),
-    m_storeFormat(StoreFormat::NOT_SET),
-    m_storeSizeBytes(0),
-    m_numVersions(0)
+GetAnnotationStoreResult::GetAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAnnotationStoreResult()
 {
   *this = result;
 }

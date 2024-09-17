@@ -27,12 +27,8 @@ UdpOutputSettings::UdpOutputSettings() :
 {
 }
 
-UdpOutputSettings::UdpOutputSettings(JsonView jsonValue) : 
-    m_bufferMsec(0),
-    m_bufferMsecHasBeenSet(false),
-    m_containerSettingsHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_fecOutputSettingsHasBeenSet(false)
+UdpOutputSettings::UdpOutputSettings(JsonView jsonValue)
+  : UdpOutputSettings()
 {
   *this = jsonValue;
 }

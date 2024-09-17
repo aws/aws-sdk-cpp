@@ -29,14 +29,8 @@ EntitlementValue::EntitlementValue() :
 {
 }
 
-EntitlementValue::EntitlementValue(JsonView jsonValue) : 
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
+EntitlementValue::EntitlementValue(JsonView jsonValue)
+  : EntitlementValue()
 {
   *this = jsonValue;
 }

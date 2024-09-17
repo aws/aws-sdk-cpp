@@ -29,14 +29,8 @@ ValidationResult::ValidationResult() :
 {
 }
 
-ValidationResult::ValidationResult(JsonView jsonValue) : 
-    m_state(LaunchProfileValidationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusCode(LaunchProfileValidationStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_type(LaunchProfileValidationType::NOT_SET),
-    m_typeHasBeenSet(false)
+ValidationResult::ValidationResult(JsonView jsonValue)
+  : ValidationResult()
 {
   *this = jsonValue;
 }

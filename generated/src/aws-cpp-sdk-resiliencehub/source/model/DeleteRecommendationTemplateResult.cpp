@@ -22,8 +22,8 @@ DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult() :
 {
 }
 
-DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(RecommendationTemplateStatus::NOT_SET)
+DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteRecommendationTemplateResult()
 {
   *this = result;
 }

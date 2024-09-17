@@ -24,9 +24,8 @@ RDSDatabase::RDSDatabase() :
 {
 }
 
-RDSDatabase::RDSDatabase(JsonView jsonValue) : 
-    m_instanceIdentifierHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+RDSDatabase::RDSDatabase(JsonView jsonValue)
+  : RDSDatabase()
 {
   *this = jsonValue;
 }

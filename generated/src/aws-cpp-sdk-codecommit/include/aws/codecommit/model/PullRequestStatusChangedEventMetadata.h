@@ -38,36 +38,17 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The changed status of the pull request.</p>
      */
     inline const PullRequestStatusEnum& GetPullRequestStatus() const{ return m_pullRequestStatus; }
-
-    /**
-     * <p>The changed status of the pull request.</p>
-     */
     inline bool PullRequestStatusHasBeenSet() const { return m_pullRequestStatusHasBeenSet; }
-
-    /**
-     * <p>The changed status of the pull request.</p>
-     */
     inline void SetPullRequestStatus(const PullRequestStatusEnum& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = value; }
-
-    /**
-     * <p>The changed status of the pull request.</p>
-     */
     inline void SetPullRequestStatus(PullRequestStatusEnum&& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = std::move(value); }
-
-    /**
-     * <p>The changed status of the pull request.</p>
-     */
     inline PullRequestStatusChangedEventMetadata& WithPullRequestStatus(const PullRequestStatusEnum& value) { SetPullRequestStatus(value); return *this;}
-
-    /**
-     * <p>The changed status of the pull request.</p>
-     */
     inline PullRequestStatusChangedEventMetadata& WithPullRequestStatus(PullRequestStatusEnum&& value) { SetPullRequestStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PullRequestStatusEnum m_pullRequestStatus;

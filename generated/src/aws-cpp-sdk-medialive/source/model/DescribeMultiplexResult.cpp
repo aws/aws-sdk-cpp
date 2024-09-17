@@ -24,10 +24,8 @@ DescribeMultiplexResult::DescribeMultiplexResult() :
 {
 }
 
-DescribeMultiplexResult::DescribeMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pipelinesRunningCount(0),
-    m_programCount(0),
-    m_state(MultiplexState::NOT_SET)
+DescribeMultiplexResult::DescribeMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeMultiplexResult()
 {
   *this = result;
 }

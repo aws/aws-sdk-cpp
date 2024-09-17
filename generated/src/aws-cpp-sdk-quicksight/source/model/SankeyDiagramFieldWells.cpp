@@ -23,8 +23,8 @@ SankeyDiagramFieldWells::SankeyDiagramFieldWells() :
 {
 }
 
-SankeyDiagramFieldWells::SankeyDiagramFieldWells(JsonView jsonValue) : 
-    m_sankeyDiagramAggregatedFieldWellsHasBeenSet(false)
+SankeyDiagramFieldWells::SankeyDiagramFieldWells(JsonView jsonValue)
+  : SankeyDiagramFieldWells()
 {
   *this = jsonValue;
 }

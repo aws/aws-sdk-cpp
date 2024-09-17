@@ -25,10 +25,8 @@ ThingGroupMetadata::ThingGroupMetadata() :
 {
 }
 
-ThingGroupMetadata::ThingGroupMetadata(JsonView jsonValue) : 
-    m_parentGroupNameHasBeenSet(false),
-    m_rootToParentThingGroupsHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+ThingGroupMetadata::ThingGroupMetadata(JsonView jsonValue)
+  : ThingGroupMetadata()
 {
   *this = jsonValue;
 }

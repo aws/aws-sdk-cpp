@@ -21,18 +21,18 @@ namespace Model
 SolutionVersionSummary::SolutionVersionSummary() : 
     m_solutionVersionArnHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_trainingMode(TrainingMode::NOT_SET),
+    m_trainingModeHasBeenSet(false),
+    m_trainingType(TrainingType::NOT_SET),
+    m_trainingTypeHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false)
 {
 }
 
-SolutionVersionSummary::SolutionVersionSummary(JsonView jsonValue) : 
-    m_solutionVersionArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+SolutionVersionSummary::SolutionVersionSummary(JsonView jsonValue)
+  : SolutionVersionSummary()
 {
   *this = jsonValue;
 }
@@ -51,6 +51,20 @@ SolutionVersionSummary& SolutionVersionSummary::operator =(JsonView jsonValue)
     m_status = jsonValue.GetString("status");
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trainingMode"))
+  {
+    m_trainingMode = TrainingModeMapper::GetTrainingModeForName(jsonValue.GetString("trainingMode"));
+
+    m_trainingModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trainingType"))
+  {
+    m_trainingType = TrainingTypeMapper::GetTrainingTypeForName(jsonValue.GetString("trainingType"));
+
+    m_trainingTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("creationDateTime"))
@@ -91,6 +105,16 @@ JsonValue SolutionVersionSummary::Jsonize() const
   {
    payload.WithString("status", m_status);
 
+  }
+
+  if(m_trainingModeHasBeenSet)
+  {
+   payload.WithString("trainingMode", TrainingModeMapper::GetNameForTrainingMode(m_trainingMode));
+  }
+
+  if(m_trainingTypeHasBeenSet)
+  {
+   payload.WithString("trainingType", TrainingTypeMapper::GetNameForTrainingType(m_trainingType));
   }
 
   if(m_creationDateTimeHasBeenSet)

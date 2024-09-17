@@ -21,22 +21,16 @@ namespace Model
 ThumbnailConfiguration::ThumbnailConfiguration() : 
     m_recordingMode(RecordingMode::NOT_SET),
     m_recordingModeHasBeenSet(false),
+    m_targetIntervalSeconds(0),
+    m_targetIntervalSecondsHasBeenSet(false),
     m_resolution(ThumbnailConfigurationResolution::NOT_SET),
     m_resolutionHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_targetIntervalSeconds(0),
-    m_targetIntervalSecondsHasBeenSet(false)
+    m_storageHasBeenSet(false)
 {
 }
 
-ThumbnailConfiguration::ThumbnailConfiguration(JsonView jsonValue) : 
-    m_recordingMode(RecordingMode::NOT_SET),
-    m_recordingModeHasBeenSet(false),
-    m_resolution(ThumbnailConfigurationResolution::NOT_SET),
-    m_resolutionHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_targetIntervalSeconds(0),
-    m_targetIntervalSecondsHasBeenSet(false)
+ThumbnailConfiguration::ThumbnailConfiguration(JsonView jsonValue)
+  : ThumbnailConfiguration()
 {
   *this = jsonValue;
 }
@@ -48,6 +42,13 @@ ThumbnailConfiguration& ThumbnailConfiguration::operator =(JsonView jsonValue)
     m_recordingMode = RecordingModeMapper::GetRecordingModeForName(jsonValue.GetString("recordingMode"));
 
     m_recordingModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetIntervalSeconds"))
+  {
+    m_targetIntervalSeconds = jsonValue.GetInt64("targetIntervalSeconds");
+
+    m_targetIntervalSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resolution"))
@@ -67,13 +68,6 @@ ThumbnailConfiguration& ThumbnailConfiguration::operator =(JsonView jsonValue)
     m_storageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("targetIntervalSeconds"))
-  {
-    m_targetIntervalSeconds = jsonValue.GetInt64("targetIntervalSeconds");
-
-    m_targetIntervalSecondsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -84,6 +78,12 @@ JsonValue ThumbnailConfiguration::Jsonize() const
   if(m_recordingModeHasBeenSet)
   {
    payload.WithString("recordingMode", RecordingModeMapper::GetNameForRecordingMode(m_recordingMode));
+  }
+
+  if(m_targetIntervalSecondsHasBeenSet)
+  {
+   payload.WithInt64("targetIntervalSeconds", m_targetIntervalSeconds);
+
   }
 
   if(m_resolutionHasBeenSet)
@@ -99,12 +99,6 @@ JsonValue ThumbnailConfiguration::Jsonize() const
      storageJsonList[storageIndex].AsString(ThumbnailConfigurationStorageMapper::GetNameForThumbnailConfigurationStorage(m_storage[storageIndex]));
    }
    payload.WithArray("storage", std::move(storageJsonList));
-
-  }
-
-  if(m_targetIntervalSecondsHasBeenSet)
-  {
-   payload.WithInt64("targetIntervalSeconds", m_targetIntervalSeconds);
 
   }
 

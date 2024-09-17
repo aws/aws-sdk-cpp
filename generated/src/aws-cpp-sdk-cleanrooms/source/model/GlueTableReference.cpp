@@ -24,9 +24,8 @@ GlueTableReference::GlueTableReference() :
 {
 }
 
-GlueTableReference::GlueTableReference(JsonView jsonValue) : 
-    m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+GlueTableReference::GlueTableReference(JsonView jsonValue)
+  : GlueTableReference()
 {
   *this = jsonValue;
 }

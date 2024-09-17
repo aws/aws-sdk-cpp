@@ -28,11 +28,8 @@ Invalidation::Invalidation() :
 {
 }
 
-Invalidation::Invalidation(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_invalidationBatchHasBeenSet(false)
+Invalidation::Invalidation(const XmlNode& xmlNode)
+  : Invalidation()
 {
   *this = xmlNode;
 }

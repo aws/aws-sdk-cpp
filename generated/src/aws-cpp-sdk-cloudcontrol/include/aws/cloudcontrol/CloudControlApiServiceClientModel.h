@@ -26,6 +26,7 @@
 #include <aws/cloudcontrol/model/ListResourceRequestsResult.h>
 #include <aws/cloudcontrol/model/ListResourcesResult.h>
 #include <aws/cloudcontrol/model/UpdateResourceResult.h>
+#include <aws/cloudcontrol/model/ListResourceRequestsRequest.h>
 /* End of service model headers required in CloudControlApiClient header */
 
 namespace Aws
@@ -59,7 +60,7 @@ namespace Aws
 
   namespace CloudControlApi
   {
-    using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration;
     using CloudControlApiEndpointProviderBase = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProviderBase;
     using CloudControlApiEndpointProvider = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProvider;
 

@@ -32,17 +32,8 @@ ContainerRecipeSummary::ContainerRecipeSummary() :
 {
 }
 
-ContainerRecipeSummary::ContainerRecipeSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_containerType(ContainerType::NOT_SET),
-    m_containerTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ContainerRecipeSummary::ContainerRecipeSummary(JsonView jsonValue)
+  : ContainerRecipeSummary()
 {
   *this = jsonValue;
 }

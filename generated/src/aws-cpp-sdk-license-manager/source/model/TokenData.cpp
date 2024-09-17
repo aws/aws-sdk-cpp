@@ -29,14 +29,8 @@ TokenData::TokenData() :
 {
 }
 
-TokenData::TokenData(JsonView jsonValue) : 
-    m_tokenIdHasBeenSet(false),
-    m_tokenTypeHasBeenSet(false),
-    m_licenseArnHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_tokenPropertiesHasBeenSet(false),
-    m_roleArnsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+TokenData::TokenData(JsonView jsonValue)
+  : TokenData()
 {
   *this = jsonValue;
 }

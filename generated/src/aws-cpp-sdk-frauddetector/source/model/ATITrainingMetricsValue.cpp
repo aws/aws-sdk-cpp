@@ -24,9 +24,8 @@ ATITrainingMetricsValue::ATITrainingMetricsValue() :
 {
 }
 
-ATITrainingMetricsValue::ATITrainingMetricsValue(JsonView jsonValue) : 
-    m_metricDataPointsHasBeenSet(false),
-    m_modelPerformanceHasBeenSet(false)
+ATITrainingMetricsValue::ATITrainingMetricsValue(JsonView jsonValue)
+  : ATITrainingMetricsValue()
 {
   *this = jsonValue;
 }

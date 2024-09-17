@@ -24,9 +24,8 @@ SupplementaryFeature::SupplementaryFeature() :
 {
 }
 
-SupplementaryFeature::SupplementaryFeature(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+SupplementaryFeature::SupplementaryFeature(JsonView jsonValue)
+  : SupplementaryFeature()
 {
   *this = jsonValue;
 }

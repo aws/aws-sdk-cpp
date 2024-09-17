@@ -27,12 +27,8 @@ WebACLSummary::WebACLSummary() :
 {
 }
 
-WebACLSummary::WebACLSummary(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+WebACLSummary::WebACLSummary(JsonView jsonValue)
+  : WebACLSummary()
 {
   *this = jsonValue;
 }

@@ -28,13 +28,8 @@ CoverageEc2InstanceDetails::CoverageEc2InstanceDetails() :
 {
 }
 
-CoverageEc2InstanceDetails::CoverageEc2InstanceDetails(JsonView jsonValue) : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_agentDetailsHasBeenSet(false),
-    m_managementType(ManagementType::NOT_SET),
-    m_managementTypeHasBeenSet(false)
+CoverageEc2InstanceDetails::CoverageEc2InstanceDetails(JsonView jsonValue)
+  : CoverageEc2InstanceDetails()
 {
   *this = jsonValue;
 }

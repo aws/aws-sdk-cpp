@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API VerifyOTPMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const VerificationResponse& GetVerificationResponse() const{ return m_verificationResponse; }
-
-    
     inline void SetVerificationResponse(const VerificationResponse& value) { m_verificationResponse = value; }
-
-    
     inline void SetVerificationResponse(VerificationResponse&& value) { m_verificationResponse = std::move(value); }
-
-    
     inline VerifyOTPMessageResult& WithVerificationResponse(const VerificationResponse& value) { SetVerificationResponse(value); return *this;}
-
-    
     inline VerifyOTPMessageResult& WithVerificationResponse(VerificationResponse&& value) { SetVerificationResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline VerifyOTPMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline VerifyOTPMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline VerifyOTPMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VerificationResponse m_verificationResponse;

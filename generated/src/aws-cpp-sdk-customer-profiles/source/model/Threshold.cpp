@@ -25,10 +25,8 @@ Threshold::Threshold() :
 {
 }
 
-Threshold::Threshold(JsonView jsonValue) : 
-    m_valueHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
+Threshold::Threshold(JsonView jsonValue)
+  : Threshold()
 {
   *this = jsonValue;
 }

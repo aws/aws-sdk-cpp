@@ -28,13 +28,8 @@ BoxPlotVisual::BoxPlotVisual() :
 {
 }
 
-BoxPlotVisual::BoxPlotVisual(JsonView jsonValue) : 
-    m_visualIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false)
+BoxPlotVisual::BoxPlotVisual(JsonView jsonValue)
+  : BoxPlotVisual()
 {
   *this = jsonValue;
 }

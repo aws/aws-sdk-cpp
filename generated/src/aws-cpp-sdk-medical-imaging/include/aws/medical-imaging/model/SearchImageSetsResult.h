@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medical-imaging/model/Sort.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medical-imaging/model/ImageSetsMetadataSummary.h>
 #include <utility>
@@ -34,102 +35,58 @@ namespace Model
     AWS_MEDICALIMAGING_API SearchImageSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The model containing the image set results.</p>
      */
     inline const Aws::Vector<ImageSetsMetadataSummary>& GetImageSetsMetadataSummaries() const{ return m_imageSetsMetadataSummaries; }
-
-    /**
-     * <p>The model containing the image set results.</p>
-     */
     inline void SetImageSetsMetadataSummaries(const Aws::Vector<ImageSetsMetadataSummary>& value) { m_imageSetsMetadataSummaries = value; }
-
-    /**
-     * <p>The model containing the image set results.</p>
-     */
     inline void SetImageSetsMetadataSummaries(Aws::Vector<ImageSetsMetadataSummary>&& value) { m_imageSetsMetadataSummaries = std::move(value); }
-
-    /**
-     * <p>The model containing the image set results.</p>
-     */
     inline SearchImageSetsResult& WithImageSetsMetadataSummaries(const Aws::Vector<ImageSetsMetadataSummary>& value) { SetImageSetsMetadataSummaries(value); return *this;}
-
-    /**
-     * <p>The model containing the image set results.</p>
-     */
     inline SearchImageSetsResult& WithImageSetsMetadataSummaries(Aws::Vector<ImageSetsMetadataSummary>&& value) { SetImageSetsMetadataSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>The model containing the image set results.</p>
-     */
     inline SearchImageSetsResult& AddImageSetsMetadataSummaries(const ImageSetsMetadataSummary& value) { m_imageSetsMetadataSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>The model containing the image set results.</p>
-     */
     inline SearchImageSetsResult& AddImageSetsMetadataSummaries(ImageSetsMetadataSummary&& value) { m_imageSetsMetadataSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
+    ///@{
+    /**
+     * <p>The sort order for image set search results.</p>
+     */
+    inline const Sort& GetSort() const{ return m_sort; }
+    inline void SetSort(const Sort& value) { m_sort = value; }
+    inline void SetSort(Sort&& value) { m_sort = std::move(value); }
+    inline SearchImageSetsResult& WithSort(const Sort& value) { SetSort(value); return *this;}
+    inline SearchImageSetsResult& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
     /**
      * <p>The token for pagination results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for pagination results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for pagination results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for pagination results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for pagination results.</p>
-     */
     inline SearchImageSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for pagination results.</p>
-     */
     inline SearchImageSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for pagination results.</p>
-     */
     inline SearchImageSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SearchImageSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SearchImageSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SearchImageSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ImageSetsMetadataSummary> m_imageSetsMetadataSummaries;
+
+    Sort m_sort;
 
     Aws::String m_nextToken;
 

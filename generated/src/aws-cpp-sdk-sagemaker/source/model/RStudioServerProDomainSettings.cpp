@@ -26,11 +26,8 @@ RStudioServerProDomainSettings::RStudioServerProDomainSettings() :
 {
 }
 
-RStudioServerProDomainSettings::RStudioServerProDomainSettings(JsonView jsonValue) : 
-    m_domainExecutionRoleArnHasBeenSet(false),
-    m_rStudioConnectUrlHasBeenSet(false),
-    m_rStudioPackageManagerUrlHasBeenSet(false),
-    m_defaultResourceSpecHasBeenSet(false)
+RStudioServerProDomainSettings::RStudioServerProDomainSettings(JsonView jsonValue)
+  : RStudioServerProDomainSettings()
 {
   *this = jsonValue;
 }

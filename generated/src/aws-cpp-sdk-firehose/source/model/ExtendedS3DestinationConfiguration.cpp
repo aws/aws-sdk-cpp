@@ -33,26 +33,14 @@ ExtendedS3DestinationConfiguration::ExtendedS3DestinationConfiguration() :
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupConfigurationHasBeenSet(false),
     m_dataFormatConversionConfigurationHasBeenSet(false),
-    m_dynamicPartitioningConfigurationHasBeenSet(false)
+    m_dynamicPartitioningConfigurationHasBeenSet(false),
+    m_fileExtensionHasBeenSet(false),
+    m_customTimeZoneHasBeenSet(false)
 {
 }
 
-ExtendedS3DestinationConfiguration::ExtendedS3DestinationConfiguration(JsonView jsonValue) : 
-    m_roleARNHasBeenSet(false),
-    m_bucketARNHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_errorOutputPrefixHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_compressionFormat(CompressionFormat::NOT_SET),
-    m_compressionFormatHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_s3BackupMode(S3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3BackupConfigurationHasBeenSet(false),
-    m_dataFormatConversionConfigurationHasBeenSet(false),
-    m_dynamicPartitioningConfigurationHasBeenSet(false)
+ExtendedS3DestinationConfiguration::ExtendedS3DestinationConfiguration(JsonView jsonValue)
+  : ExtendedS3DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -150,6 +138,20 @@ ExtendedS3DestinationConfiguration& ExtendedS3DestinationConfiguration::operator
     m_dynamicPartitioningConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileExtension"))
+  {
+    m_fileExtension = jsonValue.GetString("FileExtension");
+
+    m_fileExtensionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomTimeZone"))
+  {
+    m_customTimeZone = jsonValue.GetString("CustomTimeZone");
+
+    m_customTimeZoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +232,18 @@ JsonValue ExtendedS3DestinationConfiguration::Jsonize() const
   if(m_dynamicPartitioningConfigurationHasBeenSet)
   {
    payload.WithObject("DynamicPartitioningConfiguration", m_dynamicPartitioningConfiguration.Jsonize());
+
+  }
+
+  if(m_fileExtensionHasBeenSet)
+  {
+   payload.WithString("FileExtension", m_fileExtension);
+
+  }
+
+  if(m_customTimeZoneHasBeenSet)
+  {
+   payload.WithString("CustomTimeZone", m_customTimeZone);
 
   }
 

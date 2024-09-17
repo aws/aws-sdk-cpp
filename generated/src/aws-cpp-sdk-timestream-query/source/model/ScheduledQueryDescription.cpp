@@ -38,23 +38,8 @@ ScheduledQueryDescription::ScheduledQueryDescription() :
 {
 }
 
-ScheduledQueryDescription::ScheduledQueryDescription(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_state(ScheduledQueryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_previousInvocationTimeHasBeenSet(false),
-    m_nextInvocationTimeHasBeenSet(false),
-    m_scheduleConfigurationHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false),
-    m_scheduledQueryExecutionRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_errorReportConfigurationHasBeenSet(false),
-    m_lastRunSummaryHasBeenSet(false),
-    m_recentlyFailedRunsHasBeenSet(false)
+ScheduledQueryDescription::ScheduledQueryDescription(JsonView jsonValue)
+  : ScheduledQueryDescription()
 {
   *this = jsonValue;
 }

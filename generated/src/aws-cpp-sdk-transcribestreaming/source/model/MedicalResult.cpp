@@ -31,16 +31,8 @@ MedicalResult::MedicalResult() :
 {
 }
 
-MedicalResult::MedicalResult(JsonView jsonValue) : 
-    m_resultIdHasBeenSet(false),
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_alternativesHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
+MedicalResult::MedicalResult(JsonView jsonValue)
+  : MedicalResult()
 {
   *this = jsonValue;
 }

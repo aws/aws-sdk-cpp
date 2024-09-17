@@ -35,9 +35,11 @@
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationVpcConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationResult.h>
+#include <aws/kinesisanalyticsv2/model/DescribeApplicationOperationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationVersionResult.h>
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaResult.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationOperationsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsResult.h>
@@ -49,6 +51,7 @@
 #include <aws/kinesisanalyticsv2/model/UntagResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/UpdateApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/UpdateApplicationMaintenanceConfigurationResult.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationsRequest.h>
 /* End of service model headers required in KinesisAnalyticsV2Client header */
 
 namespace Aws
@@ -82,7 +85,7 @@ namespace Aws
 
   namespace KinesisAnalyticsV2
   {
-    using KinesisAnalyticsV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisAnalyticsV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisAnalyticsV2EndpointProviderBase = Aws::KinesisAnalyticsV2::Endpoint::KinesisAnalyticsV2EndpointProviderBase;
     using KinesisAnalyticsV2EndpointProvider = Aws::KinesisAnalyticsV2::Endpoint::KinesisAnalyticsV2EndpointProvider;
 
@@ -106,9 +109,11 @@ namespace Aws
       class DeleteApplicationSnapshotRequest;
       class DeleteApplicationVpcConfigurationRequest;
       class DescribeApplicationRequest;
+      class DescribeApplicationOperationRequest;
       class DescribeApplicationSnapshotRequest;
       class DescribeApplicationVersionRequest;
       class DiscoverInputSchemaRequest;
+      class ListApplicationOperationsRequest;
       class ListApplicationSnapshotsRequest;
       class ListApplicationVersionsRequest;
       class ListApplicationsRequest;
@@ -140,9 +145,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteApplicationSnapshotResult, KinesisAnalyticsV2Error> DeleteApplicationSnapshotOutcome;
       typedef Aws::Utils::Outcome<DeleteApplicationVpcConfigurationResult, KinesisAnalyticsV2Error> DeleteApplicationVpcConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeApplicationResult, KinesisAnalyticsV2Error> DescribeApplicationOutcome;
+      typedef Aws::Utils::Outcome<DescribeApplicationOperationResult, KinesisAnalyticsV2Error> DescribeApplicationOperationOutcome;
       typedef Aws::Utils::Outcome<DescribeApplicationSnapshotResult, KinesisAnalyticsV2Error> DescribeApplicationSnapshotOutcome;
       typedef Aws::Utils::Outcome<DescribeApplicationVersionResult, KinesisAnalyticsV2Error> DescribeApplicationVersionOutcome;
       typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, KinesisAnalyticsV2Error> DiscoverInputSchemaOutcome;
+      typedef Aws::Utils::Outcome<ListApplicationOperationsResult, KinesisAnalyticsV2Error> ListApplicationOperationsOutcome;
       typedef Aws::Utils::Outcome<ListApplicationSnapshotsResult, KinesisAnalyticsV2Error> ListApplicationSnapshotsOutcome;
       typedef Aws::Utils::Outcome<ListApplicationVersionsResult, KinesisAnalyticsV2Error> ListApplicationVersionsOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, KinesisAnalyticsV2Error> ListApplicationsOutcome;
@@ -174,9 +181,11 @@ namespace Aws
       typedef std::future<DeleteApplicationSnapshotOutcome> DeleteApplicationSnapshotOutcomeCallable;
       typedef std::future<DeleteApplicationVpcConfigurationOutcome> DeleteApplicationVpcConfigurationOutcomeCallable;
       typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
+      typedef std::future<DescribeApplicationOperationOutcome> DescribeApplicationOperationOutcomeCallable;
       typedef std::future<DescribeApplicationSnapshotOutcome> DescribeApplicationSnapshotOutcomeCallable;
       typedef std::future<DescribeApplicationVersionOutcome> DescribeApplicationVersionOutcomeCallable;
       typedef std::future<DiscoverInputSchemaOutcome> DiscoverInputSchemaOutcomeCallable;
+      typedef std::future<ListApplicationOperationsOutcome> ListApplicationOperationsOutcomeCallable;
       typedef std::future<ListApplicationSnapshotsOutcome> ListApplicationSnapshotsOutcomeCallable;
       typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
@@ -211,9 +220,11 @@ namespace Aws
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationSnapshotRequest&, const Model::DeleteApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationSnapshotResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationVpcConfigurationRequest&, const Model::DeleteApplicationVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationVpcConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationRequest&, const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationOperationRequest&, const Model::DescribeApplicationOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationOperationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationSnapshotRequest&, const Model::DescribeApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationSnapshotResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationVersionRequest&, const Model::DescribeApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationVersionResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DiscoverInputSchemaRequest&, const Model::DiscoverInputSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInputSchemaResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationOperationsRequest&, const Model::ListApplicationOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationOperationsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationSnapshotsRequest&, const Model::ListApplicationSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationSnapshotsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationVersionsRequest&, const Model::ListApplicationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationVersionsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;

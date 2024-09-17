@@ -26,19 +26,13 @@ TopBottomFilter::TopBottomFilter() :
     m_aggregationSortConfigurationsHasBeenSet(false),
     m_timeGranularity(TimeGranularity::NOT_SET),
     m_timeGranularityHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
+    m_parameterNameHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
 }
 
-TopBottomFilter::TopBottomFilter(JsonView jsonValue) : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_aggregationSortConfigurationsHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
+TopBottomFilter::TopBottomFilter(JsonView jsonValue)
+  : TopBottomFilter()
 {
   *this = jsonValue;
 }
@@ -90,6 +84,13 @@ TopBottomFilter& TopBottomFilter::operator =(JsonView jsonValue)
     m_parameterNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
+  {
+    m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
+
+    m_defaultFilterControlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +135,12 @@ JsonValue TopBottomFilter::Jsonize() const
   if(m_parameterNameHasBeenSet)
   {
    payload.WithString("ParameterName", m_parameterName);
+
+  }
+
+  if(m_defaultFilterControlConfigurationHasBeenSet)
+  {
+   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
 
   }
 

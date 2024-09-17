@@ -37,20 +37,8 @@ CapacityBlockOffering::CapacityBlockOffering() :
 {
 }
 
-CapacityBlockOffering::CapacityBlockOffering(const XmlNode& xmlNode) : 
-    m_capacityBlockOfferingIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_capacityBlockDurationHours(0),
-    m_capacityBlockDurationHoursHasBeenSet(false),
-    m_upfrontFeeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false)
+CapacityBlockOffering::CapacityBlockOffering(const XmlNode& xmlNode)
+  : CapacityBlockOffering()
 {
   *this = xmlNode;
 }

@@ -39,57 +39,27 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The amount of the recurring charge.</p>
      */
     inline double GetAmount() const{ return m_amount; }
-
-    /**
-     * <p>The amount of the recurring charge.</p>
-     */
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
-
-    /**
-     * <p>The amount of the recurring charge.</p>
-     */
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
-
-    /**
-     * <p>The amount of the recurring charge.</p>
-     */
     inline RecurringCharge& WithAmount(double value) { SetAmount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The frequency of the recurring charge.</p>
      */
     inline const RecurringChargeFrequency& GetFrequency() const{ return m_frequency; }
-
-    /**
-     * <p>The frequency of the recurring charge.</p>
-     */
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
-
-    /**
-     * <p>The frequency of the recurring charge.</p>
-     */
     inline void SetFrequency(const RecurringChargeFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
-
-    /**
-     * <p>The frequency of the recurring charge.</p>
-     */
     inline void SetFrequency(RecurringChargeFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
-
-    /**
-     * <p>The frequency of the recurring charge.</p>
-     */
     inline RecurringCharge& WithFrequency(const RecurringChargeFrequency& value) { SetFrequency(value); return *this;}
-
-    /**
-     * <p>The frequency of the recurring charge.</p>
-     */
     inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_amount;

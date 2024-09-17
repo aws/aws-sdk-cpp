@@ -22,8 +22,8 @@ AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult() :
 {
 }
 
-AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_applicationVersionId(0)
+AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : AddApplicationVpcConfigurationResult()
 {
   *this = result;
 }
@@ -46,6 +46,12 @@ AddApplicationVpcConfigurationResult& AddApplicationVpcConfigurationResult::oper
   if(jsonValue.ValueExists("VpcConfigurationDescription"))
   {
     m_vpcConfigurationDescription = jsonValue.GetObject("VpcConfigurationDescription");
+
+  }
+
+  if(jsonValue.ValueExists("OperationId"))
+  {
+    m_operationId = jsonValue.GetString("OperationId");
 
   }
 

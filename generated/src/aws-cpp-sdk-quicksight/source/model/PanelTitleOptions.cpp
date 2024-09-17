@@ -27,12 +27,8 @@ PanelTitleOptions::PanelTitleOptions() :
 {
 }
 
-PanelTitleOptions::PanelTitleOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false),
-    m_horizontalTextAlignment(HorizontalTextAlignment::NOT_SET),
-    m_horizontalTextAlignmentHasBeenSet(false)
+PanelTitleOptions::PanelTitleOptions(JsonView jsonValue)
+  : PanelTitleOptions()
 {
   *this = jsonValue;
 }

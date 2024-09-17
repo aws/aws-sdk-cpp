@@ -25,10 +25,8 @@ EntityFilter::EntityFilter() :
 {
 }
 
-EntityFilter::EntityFilter(JsonView jsonValue) : 
-    m_name(EntityFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EntityFilter::EntityFilter(JsonView jsonValue)
+  : EntityFilter()
 {
   *this = jsonValue;
 }

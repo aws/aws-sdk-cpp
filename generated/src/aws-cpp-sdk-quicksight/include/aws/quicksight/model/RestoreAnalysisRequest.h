@@ -32,87 +32,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-     */
     inline RestoreAnalysisRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-     */
     inline RestoreAnalysisRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-     */
     inline RestoreAnalysisRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the analysis that you're restoring.</p>
      */
     inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
-
-    /**
-     * <p>The ID of the analysis that you're restoring.</p>
-     */
     inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the analysis that you're restoring.</p>
-     */
     inline void SetAnalysisId(const Aws::String& value) { m_analysisIdHasBeenSet = true; m_analysisId = value; }
-
-    /**
-     * <p>The ID of the analysis that you're restoring.</p>
-     */
     inline void SetAnalysisId(Aws::String&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::move(value); }
-
-    /**
-     * <p>The ID of the analysis that you're restoring.</p>
-     */
     inline void SetAnalysisId(const char* value) { m_analysisIdHasBeenSet = true; m_analysisId.assign(value); }
-
-    /**
-     * <p>The ID of the analysis that you're restoring.</p>
-     */
     inline RestoreAnalysisRequest& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-
-    /**
-     * <p>The ID of the analysis that you're restoring.</p>
-     */
     inline RestoreAnalysisRequest& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the analysis that you're restoring.</p>
-     */
     inline RestoreAnalysisRequest& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

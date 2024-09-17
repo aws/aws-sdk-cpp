@@ -25,10 +25,8 @@ VisualSubtitleLabelOptions::VisualSubtitleLabelOptions() :
 {
 }
 
-VisualSubtitleLabelOptions::VisualSubtitleLabelOptions(JsonView jsonValue) : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_formatTextHasBeenSet(false)
+VisualSubtitleLabelOptions::VisualSubtitleLabelOptions(JsonView jsonValue)
+  : VisualSubtitleLabelOptions()
 {
   *this = jsonValue;
 }

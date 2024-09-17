@@ -209,13 +209,14 @@ namespace Synthetics
          * After you delete a canary that you do not intend to use again, you should also
          * delete the following:</p> <ul> <li> <p>The CloudWatch alarms created for this
          * canary. These alarms have a name of
-         * <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i> </code>.</p> </li> <li>
-         * <p>Amazon S3 objects and buckets, such as the canary's artifact location.</p>
-         * </li> <li> <p>IAM roles created for the canary. If they were created in the
-         * console, these roles have the name <code>
-         * role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i> </code>.</p>
-         * </li> <li> <p>CloudWatch Logs log groups created for the canary. These logs
-         * groups have the name <code>/aws/lambda/cwsyn-<i>MyCanaryName</i> </code>. </p>
+         * <code>Synthetics-Alarm-<i>first-198-characters-of-canary-name</i>-<i>canaryId</i>-<i>alarm
+         * number</i> </code> </p> </li> <li> <p>Amazon S3 objects and buckets, such as the
+         * canary's artifact location.</p> </li> <li> <p>IAM roles created for the canary.
+         * If they were created in the console, these roles have the name <code>
+         * role/service-role/CloudWatchSyntheticsRole-<i>First-21-Characters-of-CanaryName</i>
+         * </code> </p> </li> <li> <p>CloudWatch Logs log groups created for the canary.
+         * These logs groups have the name
+         * <code>/aws/lambda/cwsyn-<i>First-21-Characters-of-CanaryName</i> </code> </p>
          * </li> </ul> <p>Before you delete a canary, you might want to use
          * <code>GetCanary</code> to display the information about this canary. Make note
          * of the information returned by this operation so that you can delete these
@@ -288,13 +289,13 @@ namespace Synthetics
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCanariesOutcome DescribeCanaries(const Model::DescribeCanariesRequest& request) const;
+        virtual Model::DescribeCanariesOutcome DescribeCanaries(const Model::DescribeCanariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCanaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCanariesRequestT = Model::DescribeCanariesRequest>
-        Model::DescribeCanariesOutcomeCallable DescribeCanariesCallable(const DescribeCanariesRequestT& request) const
+        Model::DescribeCanariesOutcomeCallable DescribeCanariesCallable(const DescribeCanariesRequestT& request = {}) const
         {
             return SubmitCallable(&SyntheticsClient::DescribeCanaries, request);
         }
@@ -303,7 +304,7 @@ namespace Synthetics
          * An Async wrapper for DescribeCanaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCanariesRequestT = Model::DescribeCanariesRequest>
-        void DescribeCanariesAsync(const DescribeCanariesRequestT& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCanariesAsync(const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCanariesRequestT& request = {}) const
         {
             return SubmitAsync(&SyntheticsClient::DescribeCanaries, request, handler, context);
         }
@@ -324,13 +325,13 @@ namespace Synthetics
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanariesLastRun">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCanariesLastRunOutcome DescribeCanariesLastRun(const Model::DescribeCanariesLastRunRequest& request) const;
+        virtual Model::DescribeCanariesLastRunOutcome DescribeCanariesLastRun(const Model::DescribeCanariesLastRunRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCanariesLastRun that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCanariesLastRunRequestT = Model::DescribeCanariesLastRunRequest>
-        Model::DescribeCanariesLastRunOutcomeCallable DescribeCanariesLastRunCallable(const DescribeCanariesLastRunRequestT& request) const
+        Model::DescribeCanariesLastRunOutcomeCallable DescribeCanariesLastRunCallable(const DescribeCanariesLastRunRequestT& request = {}) const
         {
             return SubmitCallable(&SyntheticsClient::DescribeCanariesLastRun, request);
         }
@@ -339,7 +340,7 @@ namespace Synthetics
          * An Async wrapper for DescribeCanariesLastRun that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCanariesLastRunRequestT = Model::DescribeCanariesLastRunRequest>
-        void DescribeCanariesLastRunAsync(const DescribeCanariesLastRunRequestT& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCanariesLastRunAsync(const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCanariesLastRunRequestT& request = {}) const
         {
             return SubmitAsync(&SyntheticsClient::DescribeCanariesLastRun, request, handler, context);
         }
@@ -352,13 +353,13 @@ namespace Synthetics
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeRuntimeVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRuntimeVersionsOutcome DescribeRuntimeVersions(const Model::DescribeRuntimeVersionsRequest& request) const;
+        virtual Model::DescribeRuntimeVersionsOutcome DescribeRuntimeVersions(const Model::DescribeRuntimeVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRuntimeVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRuntimeVersionsRequestT = Model::DescribeRuntimeVersionsRequest>
-        Model::DescribeRuntimeVersionsOutcomeCallable DescribeRuntimeVersionsCallable(const DescribeRuntimeVersionsRequestT& request) const
+        Model::DescribeRuntimeVersionsOutcomeCallable DescribeRuntimeVersionsCallable(const DescribeRuntimeVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&SyntheticsClient::DescribeRuntimeVersions, request);
         }
@@ -367,7 +368,7 @@ namespace Synthetics
          * An Async wrapper for DescribeRuntimeVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRuntimeVersionsRequestT = Model::DescribeRuntimeVersionsRequest>
-        void DescribeRuntimeVersionsAsync(const DescribeRuntimeVersionsRequestT& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRuntimeVersionsAsync(const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRuntimeVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&SyntheticsClient::DescribeRuntimeVersions, request, handler, context);
         }
@@ -538,13 +539,13 @@ namespace Synthetics
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
+        virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGroupsRequestT = Model::ListGroupsRequest>
-        Model::ListGroupsOutcomeCallable ListGroupsCallable(const ListGroupsRequestT& request) const
+        Model::ListGroupsOutcomeCallable ListGroupsCallable(const ListGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&SyntheticsClient::ListGroups, request);
         }
@@ -553,7 +554,7 @@ namespace Synthetics
          * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGroupsRequestT = Model::ListGroupsRequest>
-        void ListGroupsAsync(const ListGroupsRequestT& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGroupsAsync(const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&SyntheticsClient::ListGroups, request, handler, context);
         }
@@ -742,7 +743,6 @@ namespace Synthetics
       void init(const SyntheticsClientConfiguration& clientConfiguration);
 
       SyntheticsClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<SyntheticsEndpointProviderBase> m_endpointProvider;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A check for whether you have the required permissions for the action without
      * actually making the request and provides an error response. If you have the
@@ -43,72 +44,42 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeletePublicIpv4PoolRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the public IPv4 pool you want to delete.</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
-
-    /**
-     * <p>The ID of the public IPv4 pool you want to delete.</p>
-     */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the public IPv4 pool you want to delete.</p>
-     */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-
-    /**
-     * <p>The ID of the public IPv4 pool you want to delete.</p>
-     */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-
-    /**
-     * <p>The ID of the public IPv4 pool you want to delete.</p>
-     */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-
-    /**
-     * <p>The ID of the public IPv4 pool you want to delete.</p>
-     */
     inline DeletePublicIpv4PoolRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-
-    /**
-     * <p>The ID of the public IPv4 pool you want to delete.</p>
-     */
     inline DeletePublicIpv4PoolRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the public IPv4 pool you want to delete.</p>
-     */
     inline DeletePublicIpv4PoolRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the
+     * resource that the IP address is assigned to is in. Defaults to an AZ network
+     * border group. For more information on available Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local
+     * Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+    inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
+    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
+    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
+    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
+    inline DeletePublicIpv4PoolRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
+    inline DeletePublicIpv4PoolRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
+    inline DeletePublicIpv4PoolRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun;
@@ -116,6 +87,9 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet = false;
+
+    Aws::String m_networkBorderGroup;
+    bool m_networkBorderGroupHasBeenSet = false;
   };
 
 } // namespace Model

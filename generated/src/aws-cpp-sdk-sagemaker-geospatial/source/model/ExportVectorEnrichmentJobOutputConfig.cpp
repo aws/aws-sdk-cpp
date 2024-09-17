@@ -23,8 +23,8 @@ ExportVectorEnrichmentJobOutputConfig::ExportVectorEnrichmentJobOutputConfig() :
 {
 }
 
-ExportVectorEnrichmentJobOutputConfig::ExportVectorEnrichmentJobOutputConfig(JsonView jsonValue) : 
-    m_s3DataHasBeenSet(false)
+ExportVectorEnrichmentJobOutputConfig::ExportVectorEnrichmentJobOutputConfig(JsonView jsonValue)
+  : ExportVectorEnrichmentJobOutputConfig()
 {
   *this = jsonValue;
 }

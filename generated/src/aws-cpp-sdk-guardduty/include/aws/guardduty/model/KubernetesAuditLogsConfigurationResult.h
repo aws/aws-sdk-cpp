@@ -38,42 +38,18 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A value that describes whether Kubernetes audit logs are enabled as a data
      * source.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>A value that describes whether Kubernetes audit logs are enabled as a data
-     * source.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>A value that describes whether Kubernetes audit logs are enabled as a data
-     * source.</p>
-     */
     inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>A value that describes whether Kubernetes audit logs are enabled as a data
-     * source.</p>
-     */
     inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>A value that describes whether Kubernetes audit logs are enabled as a data
-     * source.</p>
-     */
     inline KubernetesAuditLogsConfigurationResult& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>A value that describes whether Kubernetes audit logs are enabled as a data
-     * source.</p>
-     */
     inline KubernetesAuditLogsConfigurationResult& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataSourceStatus m_status;

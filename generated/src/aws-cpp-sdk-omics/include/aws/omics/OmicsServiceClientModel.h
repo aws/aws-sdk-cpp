@@ -94,6 +94,15 @@
 #include <aws/omics/model/UpdateAnnotationStoreVersionResult.h>
 #include <aws/omics/model/UpdateVariantStoreResult.h>
 #include <aws/omics/model/UploadReadSetPartResult.h>
+#include <aws/omics/model/ListVariantStoresRequest.h>
+#include <aws/omics/model/ListWorkflowsRequest.h>
+#include <aws/omics/model/ListVariantImportJobsRequest.h>
+#include <aws/omics/model/ListRunsRequest.h>
+#include <aws/omics/model/ListAnnotationImportJobsRequest.h>
+#include <aws/omics/model/ListRunGroupsRequest.h>
+#include <aws/omics/model/ListSequenceStoresRequest.h>
+#include <aws/omics/model/ListAnnotationStoresRequest.h>
+#include <aws/omics/model/ListReferenceStoresRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in OmicsClient header */
 
@@ -128,7 +137,7 @@ namespace Aws
 
   namespace Omics
   {
-    using OmicsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OmicsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using OmicsEndpointProviderBase = Aws::Omics::Endpoint::OmicsEndpointProviderBase;
     using OmicsEndpointProvider = Aws::Omics::Endpoint::OmicsEndpointProvider;
 

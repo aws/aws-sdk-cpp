@@ -23,8 +23,8 @@ EventSourcesConfig::EventSourcesConfig() :
 {
 }
 
-EventSourcesConfig::EventSourcesConfig(JsonView jsonValue) : 
-    m_amazonCodeGuruProfilerHasBeenSet(false)
+EventSourcesConfig::EventSourcesConfig(JsonView jsonValue)
+  : EventSourcesConfig()
 {
   *this = jsonValue;
 }

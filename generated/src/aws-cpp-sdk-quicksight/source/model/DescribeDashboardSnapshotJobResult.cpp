@@ -23,9 +23,8 @@ DescribeDashboardSnapshotJobResult::DescribeDashboardSnapshotJobResult() :
 {
 }
 
-DescribeDashboardSnapshotJobResult::DescribeDashboardSnapshotJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(SnapshotJobStatus::NOT_SET),
-    m_status(0)
+DescribeDashboardSnapshotJobResult::DescribeDashboardSnapshotJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDashboardSnapshotJobResult()
 {
   *this = result;
 }

@@ -25,10 +25,8 @@ ControlScope::ControlScope() :
 {
 }
 
-ControlScope::ControlScope(JsonView jsonValue) : 
-    m_complianceResourceIdsHasBeenSet(false),
-    m_complianceResourceTypesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ControlScope::ControlScope(JsonView jsonValue)
+  : ControlScope()
 {
   *this = jsonValue;
 }

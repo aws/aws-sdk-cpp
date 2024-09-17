@@ -25,10 +25,8 @@ EventDetailsErrorItem::EventDetailsErrorItem() :
 {
 }
 
-EventDetailsErrorItem::EventDetailsErrorItem(JsonView jsonValue) : 
-    m_eventArnHasBeenSet(false),
-    m_errorNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+EventDetailsErrorItem::EventDetailsErrorItem(JsonView jsonValue)
+  : EventDetailsErrorItem()
 {
   *this = jsonValue;
 }

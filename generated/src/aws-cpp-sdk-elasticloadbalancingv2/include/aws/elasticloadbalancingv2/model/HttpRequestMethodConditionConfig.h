@@ -44,6 +44,7 @@ namespace Model
     AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the request method. The maximum size is 40 characters. The
      * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
@@ -54,95 +55,15 @@ namespace Model
      * HEAD request may be cached.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline HttpRequestMethodConditionConfig& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline HttpRequestMethodConditionConfig& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline HttpRequestMethodConditionConfig& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline HttpRequestMethodConditionConfig& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
-     * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
-     * case sensitive. Wildcards are not supported; therefore, the method name must be
-     * an exact match.</p> <p>If you specify multiple strings, the condition is
-     * satisfied if one of the strings matches the HTTP request method. We recommend
-     * that you route GET and HEAD requests in the same way, because the response to a
-     * HEAD request may be cached.</p>
-     */
     inline HttpRequestMethodConditionConfig& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_values;

@@ -26,11 +26,8 @@ ScalingRule::ScalingRule() :
 {
 }
 
-ScalingRule::ScalingRule(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_triggerHasBeenSet(false)
+ScalingRule::ScalingRule(JsonView jsonValue)
+  : ScalingRule()
 {
   *this = jsonValue;
 }

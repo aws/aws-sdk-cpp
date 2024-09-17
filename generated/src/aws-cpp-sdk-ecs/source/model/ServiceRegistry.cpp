@@ -28,13 +28,8 @@ ServiceRegistry::ServiceRegistry() :
 {
 }
 
-ServiceRegistry::ServiceRegistry(JsonView jsonValue) : 
-    m_registryArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false)
+ServiceRegistry::ServiceRegistry(JsonView jsonValue)
+  : ServiceRegistry()
 {
   *this = jsonValue;
 }

@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Information about the error.</p>
      */
     inline const UnsuccessfulItemError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Information about the error.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Information about the error.</p>
-     */
     inline void SetError(const UnsuccessfulItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Information about the error.</p>
-     */
     inline void SetError(UnsuccessfulItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Information about the error.</p>
-     */
     inline UnsuccessfulItem& WithError(const UnsuccessfulItemError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Information about the error.</p>
-     */
     inline UnsuccessfulItem& WithError(UnsuccessfulItemError&& value) { SetError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The ID of the resource.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the resource.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The ID of the resource.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The ID of the resource.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The ID of the resource.</p>
-     */
     inline UnsuccessfulItem& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The ID of the resource.</p>
-     */
     inline UnsuccessfulItem& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the resource.</p>
-     */
     inline UnsuccessfulItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-
+    ///@}
   private:
 
     UnsuccessfulItemError m_error;

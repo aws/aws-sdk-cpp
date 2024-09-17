@@ -29,14 +29,8 @@ DatasetParameter::DatasetParameter() :
 {
 }
 
-DatasetParameter::DatasetParameter(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_datetimeOptionsHasBeenSet(false),
-    m_createColumn(false),
-    m_createColumnHasBeenSet(false),
-    m_filterHasBeenSet(false)
+DatasetParameter::DatasetParameter(JsonView jsonValue)
+  : DatasetParameter()
 {
   *this = jsonValue;
 }

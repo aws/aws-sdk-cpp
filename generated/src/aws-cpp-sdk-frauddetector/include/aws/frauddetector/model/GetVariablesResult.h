@@ -34,99 +34,42 @@ namespace Model
     AWS_FRAUDDETECTOR_API GetVariablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The names of the variables returned. </p>
      */
     inline const Aws::Vector<Variable>& GetVariables() const{ return m_variables; }
-
-    /**
-     * <p>The names of the variables returned. </p>
-     */
     inline void SetVariables(const Aws::Vector<Variable>& value) { m_variables = value; }
-
-    /**
-     * <p>The names of the variables returned. </p>
-     */
     inline void SetVariables(Aws::Vector<Variable>&& value) { m_variables = std::move(value); }
-
-    /**
-     * <p>The names of the variables returned. </p>
-     */
     inline GetVariablesResult& WithVariables(const Aws::Vector<Variable>& value) { SetVariables(value); return *this;}
-
-    /**
-     * <p>The names of the variables returned. </p>
-     */
     inline GetVariablesResult& WithVariables(Aws::Vector<Variable>&& value) { SetVariables(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the variables returned. </p>
-     */
     inline GetVariablesResult& AddVariables(const Variable& value) { m_variables.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the variables returned. </p>
-     */
     inline GetVariablesResult& AddVariables(Variable&& value) { m_variables.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The next page token to be used in subsequent requests. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The next page token to be used in subsequent requests. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The next page token to be used in subsequent requests. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The next page token to be used in subsequent requests. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The next page token to be used in subsequent requests. </p>
-     */
     inline GetVariablesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The next page token to be used in subsequent requests. </p>
-     */
     inline GetVariablesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The next page token to be used in subsequent requests. </p>
-     */
     inline GetVariablesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetVariablesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetVariablesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetVariablesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Variable> m_variables;

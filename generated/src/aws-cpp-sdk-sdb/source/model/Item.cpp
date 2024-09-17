@@ -27,10 +27,8 @@ Item::Item() :
 {
 }
 
-Item::Item(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_alternateNameEncodingHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+Item::Item(const XmlNode& xmlNode)
+  : Item()
 {
   *this = xmlNode;
 }

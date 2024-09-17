@@ -42,27 +42,8 @@ InsertableImage::InsertableImage() :
 {
 }
 
-InsertableImage::InsertableImage(JsonView jsonValue) : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fadeIn(0),
-    m_fadeInHasBeenSet(false),
-    m_fadeOut(0),
-    m_fadeOutHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_imageInserterInputHasBeenSet(false),
-    m_imageX(0),
-    m_imageXHasBeenSet(false),
-    m_imageY(0),
-    m_imageYHasBeenSet(false),
-    m_layer(0),
-    m_layerHasBeenSet(false),
-    m_opacity(0),
-    m_opacityHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
+InsertableImage::InsertableImage(JsonView jsonValue)
+  : InsertableImage()
 {
   *this = jsonValue;
 }

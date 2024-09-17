@@ -24,9 +24,8 @@ TaggedDatabase::TaggedDatabase() :
 {
 }
 
-TaggedDatabase::TaggedDatabase(JsonView jsonValue) : 
-    m_databaseHasBeenSet(false),
-    m_lFTagsHasBeenSet(false)
+TaggedDatabase::TaggedDatabase(JsonView jsonValue)
+  : TaggedDatabase()
 {
   *this = jsonValue;
 }

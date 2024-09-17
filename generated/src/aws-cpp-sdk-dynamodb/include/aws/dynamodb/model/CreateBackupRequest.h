@@ -34,87 +34,34 @@ namespace Model
     AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
-     * <p>The name of the table.</p>
+     * <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of
+     * the table in this parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline CreateBackupRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline CreateBackupRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline CreateBackupRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specified name for the backup.</p>
      */
     inline const Aws::String& GetBackupName() const{ return m_backupName; }
-
-    /**
-     * <p>Specified name for the backup.</p>
-     */
     inline bool BackupNameHasBeenSet() const { return m_backupNameHasBeenSet; }
-
-    /**
-     * <p>Specified name for the backup.</p>
-     */
     inline void SetBackupName(const Aws::String& value) { m_backupNameHasBeenSet = true; m_backupName = value; }
-
-    /**
-     * <p>Specified name for the backup.</p>
-     */
     inline void SetBackupName(Aws::String&& value) { m_backupNameHasBeenSet = true; m_backupName = std::move(value); }
-
-    /**
-     * <p>Specified name for the backup.</p>
-     */
     inline void SetBackupName(const char* value) { m_backupNameHasBeenSet = true; m_backupName.assign(value); }
-
-    /**
-     * <p>Specified name for the backup.</p>
-     */
     inline CreateBackupRequest& WithBackupName(const Aws::String& value) { SetBackupName(value); return *this;}
-
-    /**
-     * <p>Specified name for the backup.</p>
-     */
     inline CreateBackupRequest& WithBackupName(Aws::String&& value) { SetBackupName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specified name for the backup.</p>
-     */
     inline CreateBackupRequest& WithBackupName(const char* value) { SetBackupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableName;

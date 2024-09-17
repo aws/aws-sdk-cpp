@@ -34,46 +34,19 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the inference scheduler to be deleted. </p>
      */
     inline const Aws::String& GetInferenceSchedulerName() const{ return m_inferenceSchedulerName; }
-
-    /**
-     * <p>The name of the inference scheduler to be deleted. </p>
-     */
     inline bool InferenceSchedulerNameHasBeenSet() const { return m_inferenceSchedulerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the inference scheduler to be deleted. </p>
-     */
     inline void SetInferenceSchedulerName(const Aws::String& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = value; }
-
-    /**
-     * <p>The name of the inference scheduler to be deleted. </p>
-     */
     inline void SetInferenceSchedulerName(Aws::String&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::move(value); }
-
-    /**
-     * <p>The name of the inference scheduler to be deleted. </p>
-     */
     inline void SetInferenceSchedulerName(const char* value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName.assign(value); }
-
-    /**
-     * <p>The name of the inference scheduler to be deleted. </p>
-     */
     inline DeleteInferenceSchedulerRequest& WithInferenceSchedulerName(const Aws::String& value) { SetInferenceSchedulerName(value); return *this;}
-
-    /**
-     * <p>The name of the inference scheduler to be deleted. </p>
-     */
     inline DeleteInferenceSchedulerRequest& WithInferenceSchedulerName(Aws::String&& value) { SetInferenceSchedulerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the inference scheduler to be deleted. </p>
-     */
     inline DeleteInferenceSchedulerRequest& WithInferenceSchedulerName(const char* value) { SetInferenceSchedulerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inferenceSchedulerName;

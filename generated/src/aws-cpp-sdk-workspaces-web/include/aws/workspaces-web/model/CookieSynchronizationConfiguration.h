@@ -40,103 +40,35 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of cookie specifications that are allowed to be synchronized to the
      * remote browser.</p>
      */
     inline const Aws::Vector<CookieSpecification>& GetAllowlist() const{ return m_allowlist; }
-
-    /**
-     * <p>The list of cookie specifications that are allowed to be synchronized to the
-     * remote browser.</p>
-     */
     inline bool AllowlistHasBeenSet() const { return m_allowlistHasBeenSet; }
-
-    /**
-     * <p>The list of cookie specifications that are allowed to be synchronized to the
-     * remote browser.</p>
-     */
     inline void SetAllowlist(const Aws::Vector<CookieSpecification>& value) { m_allowlistHasBeenSet = true; m_allowlist = value; }
-
-    /**
-     * <p>The list of cookie specifications that are allowed to be synchronized to the
-     * remote browser.</p>
-     */
     inline void SetAllowlist(Aws::Vector<CookieSpecification>&& value) { m_allowlistHasBeenSet = true; m_allowlist = std::move(value); }
-
-    /**
-     * <p>The list of cookie specifications that are allowed to be synchronized to the
-     * remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& WithAllowlist(const Aws::Vector<CookieSpecification>& value) { SetAllowlist(value); return *this;}
-
-    /**
-     * <p>The list of cookie specifications that are allowed to be synchronized to the
-     * remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& WithAllowlist(Aws::Vector<CookieSpecification>&& value) { SetAllowlist(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of cookie specifications that are allowed to be synchronized to the
-     * remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& AddAllowlist(const CookieSpecification& value) { m_allowlistHasBeenSet = true; m_allowlist.push_back(value); return *this; }
-
-    /**
-     * <p>The list of cookie specifications that are allowed to be synchronized to the
-     * remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& AddAllowlist(CookieSpecification&& value) { m_allowlistHasBeenSet = true; m_allowlist.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of cookie specifications that are blocked from being synchronized to
      * the remote browser.</p>
      */
     inline const Aws::Vector<CookieSpecification>& GetBlocklist() const{ return m_blocklist; }
-
-    /**
-     * <p>The list of cookie specifications that are blocked from being synchronized to
-     * the remote browser.</p>
-     */
     inline bool BlocklistHasBeenSet() const { return m_blocklistHasBeenSet; }
-
-    /**
-     * <p>The list of cookie specifications that are blocked from being synchronized to
-     * the remote browser.</p>
-     */
     inline void SetBlocklist(const Aws::Vector<CookieSpecification>& value) { m_blocklistHasBeenSet = true; m_blocklist = value; }
-
-    /**
-     * <p>The list of cookie specifications that are blocked from being synchronized to
-     * the remote browser.</p>
-     */
     inline void SetBlocklist(Aws::Vector<CookieSpecification>&& value) { m_blocklistHasBeenSet = true; m_blocklist = std::move(value); }
-
-    /**
-     * <p>The list of cookie specifications that are blocked from being synchronized to
-     * the remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& WithBlocklist(const Aws::Vector<CookieSpecification>& value) { SetBlocklist(value); return *this;}
-
-    /**
-     * <p>The list of cookie specifications that are blocked from being synchronized to
-     * the remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& WithBlocklist(Aws::Vector<CookieSpecification>&& value) { SetBlocklist(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of cookie specifications that are blocked from being synchronized to
-     * the remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& AddBlocklist(const CookieSpecification& value) { m_blocklistHasBeenSet = true; m_blocklist.push_back(value); return *this; }
-
-    /**
-     * <p>The list of cookie specifications that are blocked from being synchronized to
-     * the remote browser.</p>
-     */
     inline CookieSynchronizationConfiguration& AddBlocklist(CookieSpecification&& value) { m_blocklistHasBeenSet = true; m_blocklist.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CookieSpecification> m_allowlist;

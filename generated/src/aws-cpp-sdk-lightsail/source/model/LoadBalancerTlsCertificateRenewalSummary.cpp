@@ -25,10 +25,8 @@ LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSumma
 {
 }
 
-LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary(JsonView jsonValue) : 
-    m_renewalStatus(LoadBalancerTlsCertificateRenewalStatus::NOT_SET),
-    m_renewalStatusHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false)
+LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary(JsonView jsonValue)
+  : LoadBalancerTlsCertificateRenewalSummary()
 {
   *this = jsonValue;
 }

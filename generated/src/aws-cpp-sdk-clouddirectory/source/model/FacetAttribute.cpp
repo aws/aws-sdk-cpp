@@ -27,12 +27,8 @@ FacetAttribute::FacetAttribute() :
 {
 }
 
-FacetAttribute::FacetAttribute(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_attributeDefinitionHasBeenSet(false),
-    m_attributeReferenceHasBeenSet(false),
-    m_requiredBehavior(RequiredAttributeBehavior::NOT_SET),
-    m_requiredBehaviorHasBeenSet(false)
+FacetAttribute::FacetAttribute(JsonView jsonValue)
+  : FacetAttribute()
 {
   *this = jsonValue;
 }

@@ -27,12 +27,8 @@ ExperimentResultsData::ExperimentResultsData() :
 {
 }
 
-ExperimentResultsData::ExperimentResultsData(JsonView jsonValue) : 
-    m_metricNameHasBeenSet(false),
-    m_resultStat(ExperimentResultResponseType::NOT_SET),
-    m_resultStatHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ExperimentResultsData::ExperimentResultsData(JsonView jsonValue)
+  : ExperimentResultsData()
 {
   *this = jsonValue;
 }

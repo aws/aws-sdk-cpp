@@ -47,6 +47,15 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($spaces = "  ")
 #end
 #if($member.value.shape.list)
+#if($metadata.protocol != "ec2")
+#set($spaces = "    ")
+    if (${memberVarName}.empty())
+    {
+      ss << "${member.key}=&";
+    }
+    else
+    {
+#end
   ${spaces}unsigned ${varName}Count = 1;
   ${spaces}for(auto& item : $memberVarName)
   ${spaces}{
@@ -95,6 +104,9 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
   ${spaces}  ${varName}Count++;
   ${spaces}}
+#if($metadata.protocol != "ec2")
+${spaces}}
+#end
 #elseif($member.value.shape.map)##--#if($member.value.shape.list)
 #if($member.value.locationName)
 #set($mapLocationName = $member.value.locationName)

@@ -24,9 +24,8 @@ SectionStyle::SectionStyle() :
 {
 }
 
-SectionStyle::SectionStyle(JsonView jsonValue) : 
-    m_heightHasBeenSet(false),
-    m_paddingHasBeenSet(false)
+SectionStyle::SectionStyle(JsonView jsonValue)
+  : SectionStyle()
 {
   *this = jsonValue;
 }

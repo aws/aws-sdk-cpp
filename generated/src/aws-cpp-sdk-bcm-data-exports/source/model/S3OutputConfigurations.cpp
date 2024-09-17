@@ -30,15 +30,8 @@ S3OutputConfigurations::S3OutputConfigurations() :
 {
 }
 
-S3OutputConfigurations::S3OutputConfigurations(JsonView jsonValue) : 
-    m_compression(CompressionOption::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_format(FormatOption::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_outputType(S3OutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false),
-    m_overwrite(OverwriteOption::NOT_SET),
-    m_overwriteHasBeenSet(false)
+S3OutputConfigurations::S3OutputConfigurations(JsonView jsonValue)
+  : S3OutputConfigurations()
 {
   *this = jsonValue;
 }

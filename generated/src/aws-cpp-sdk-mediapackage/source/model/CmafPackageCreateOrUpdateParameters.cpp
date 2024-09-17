@@ -28,13 +28,8 @@ CmafPackageCreateOrUpdateParameters::CmafPackageCreateOrUpdateParameters() :
 {
 }
 
-CmafPackageCreateOrUpdateParameters::CmafPackageCreateOrUpdateParameters(JsonView jsonValue) : 
-    m_encryptionHasBeenSet(false),
-    m_hlsManifestsHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_segmentPrefixHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false)
+CmafPackageCreateOrUpdateParameters::CmafPackageCreateOrUpdateParameters(JsonView jsonValue)
+  : CmafPackageCreateOrUpdateParameters()
 {
   *this = jsonValue;
 }

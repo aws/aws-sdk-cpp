@@ -24,9 +24,8 @@ HierarchyGroupSummaryReference::HierarchyGroupSummaryReference() :
 {
 }
 
-HierarchyGroupSummaryReference::HierarchyGroupSummaryReference(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+HierarchyGroupSummaryReference::HierarchyGroupSummaryReference(JsonView jsonValue)
+  : HierarchyGroupSummaryReference()
 {
   *this = jsonValue;
 }

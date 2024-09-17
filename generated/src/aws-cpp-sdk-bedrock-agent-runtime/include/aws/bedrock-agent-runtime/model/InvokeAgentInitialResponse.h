@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/http/HttpTypes.h>
 #include <utility>
 
 namespace Aws
@@ -29,97 +30,62 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse();
     AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKAGENTRUNTIME_API InvokeAgentInitialResponse(const Http::HeaderValueCollection& responseHeaders);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline InvokeAgentInitialResponse& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline InvokeAgentInitialResponse& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
-    inline InvokeAgentInitialResponse& WithSessionId(const char* value) { SetSessionId(value); return *this;}
-
-
-    /**
-     * <p>streaming response mimetype of the model</p>
+     * <p>The MIME type of the input data in the request. The default value is
+     * <code>application/json</code>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
     inline InvokeAgentInitialResponse& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
     inline InvokeAgentInitialResponse& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-
-    /**
-     * <p>streaming response mimetype of the model</p>
-     */
     inline InvokeAgentInitialResponse& WithContentType(const char* value) { SetContentType(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>The unique identifier of the agent memory.</p>
+     */
+    inline const Aws::String& GetMemoryId() const{ return m_memoryId; }
+    inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
+    inline void SetMemoryId(const Aws::String& value) { m_memoryIdHasBeenSet = true; m_memoryId = value; }
+    inline void SetMemoryId(Aws::String&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::move(value); }
+    inline void SetMemoryId(const char* value) { m_memoryIdHasBeenSet = true; m_memoryId.assign(value); }
+    inline InvokeAgentInitialResponse& WithMemoryId(const Aws::String& value) { SetMemoryId(value); return *this;}
+    inline InvokeAgentInitialResponse& WithMemoryId(Aws::String&& value) { SetMemoryId(std::move(value)); return *this;}
+    inline InvokeAgentInitialResponse& WithMemoryId(const char* value) { SetMemoryId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the session with the agent.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline InvokeAgentInitialResponse& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline InvokeAgentInitialResponse& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline InvokeAgentInitialResponse& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
+
+    Aws::String m_memoryId;
+    bool m_memoryIdHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

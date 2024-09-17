@@ -29,14 +29,8 @@ CollapseConfiguration::CollapseConfiguration() :
 {
 }
 
-CollapseConfiguration::CollapseConfiguration(JsonView jsonValue) : 
-    m_documentAttributeKeyHasBeenSet(false),
-    m_sortingConfigurationsHasBeenSet(false),
-    m_missingAttributeKeyStrategy(MissingAttributeKeyStrategy::NOT_SET),
-    m_missingAttributeKeyStrategyHasBeenSet(false),
-    m_expand(false),
-    m_expandHasBeenSet(false),
-    m_expandConfigurationHasBeenSet(false)
+CollapseConfiguration::CollapseConfiguration(JsonView jsonValue)
+  : CollapseConfiguration()
 {
   *this = jsonValue;
 }

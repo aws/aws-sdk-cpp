@@ -38,6 +38,8 @@
 #include <aws/kinesisanalytics/model/TagResourceResult.h>
 #include <aws/kinesisanalytics/model/UntagResourceResult.h>
 #include <aws/kinesisanalytics/model/UpdateApplicationResult.h>
+#include <aws/kinesisanalytics/model/DiscoverInputSchemaRequest.h>
+#include <aws/kinesisanalytics/model/ListApplicationsRequest.h>
 /* End of service model headers required in KinesisAnalyticsClient header */
 
 namespace Aws
@@ -71,7 +73,7 @@ namespace Aws
 
   namespace KinesisAnalytics
   {
-    using KinesisAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisAnalyticsEndpointProviderBase = Aws::KinesisAnalytics::Endpoint::KinesisAnalyticsEndpointProviderBase;
     using KinesisAnalyticsEndpointProvider = Aws::KinesisAnalytics::Endpoint::KinesisAnalyticsEndpointProvider;
 

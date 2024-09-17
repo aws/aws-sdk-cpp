@@ -23,8 +23,8 @@ AwsCloudFrontDistributionOriginGroup::AwsCloudFrontDistributionOriginGroup() :
 {
 }
 
-AwsCloudFrontDistributionOriginGroup::AwsCloudFrontDistributionOriginGroup(JsonView jsonValue) : 
-    m_failoverCriteriaHasBeenSet(false)
+AwsCloudFrontDistributionOriginGroup::AwsCloudFrontDistributionOriginGroup(JsonView jsonValue)
+  : AwsCloudFrontDistributionOriginGroup()
 {
   *this = jsonValue;
 }

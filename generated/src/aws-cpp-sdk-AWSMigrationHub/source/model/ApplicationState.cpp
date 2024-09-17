@@ -26,11 +26,8 @@ ApplicationState::ApplicationState() :
 {
 }
 
-ApplicationState::ApplicationState(JsonView jsonValue) : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+ApplicationState::ApplicationState(JsonView jsonValue)
+  : ApplicationState()
 {
   *this = jsonValue;
 }

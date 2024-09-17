@@ -31,16 +31,8 @@ ErrorMetric::ErrorMetric() :
 {
 }
 
-ErrorMetric::ErrorMetric(JsonView jsonValue) : 
-    m_forecastTypeHasBeenSet(false),
-    m_wAPE(0.0),
-    m_wAPEHasBeenSet(false),
-    m_rMSE(0.0),
-    m_rMSEHasBeenSet(false),
-    m_mASE(0.0),
-    m_mASEHasBeenSet(false),
-    m_mAPE(0.0),
-    m_mAPEHasBeenSet(false)
+ErrorMetric::ErrorMetric(JsonView jsonValue)
+  : ErrorMetric()
 {
   *this = jsonValue;
 }

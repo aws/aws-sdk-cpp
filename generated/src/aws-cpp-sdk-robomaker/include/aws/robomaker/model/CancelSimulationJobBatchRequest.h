@@ -32,46 +32,19 @@ namespace Model
     AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The id of the batch to cancel.</p>
      */
     inline const Aws::String& GetBatch() const{ return m_batch; }
-
-    /**
-     * <p>The id of the batch to cancel.</p>
-     */
     inline bool BatchHasBeenSet() const { return m_batchHasBeenSet; }
-
-    /**
-     * <p>The id of the batch to cancel.</p>
-     */
     inline void SetBatch(const Aws::String& value) { m_batchHasBeenSet = true; m_batch = value; }
-
-    /**
-     * <p>The id of the batch to cancel.</p>
-     */
     inline void SetBatch(Aws::String&& value) { m_batchHasBeenSet = true; m_batch = std::move(value); }
-
-    /**
-     * <p>The id of the batch to cancel.</p>
-     */
     inline void SetBatch(const char* value) { m_batchHasBeenSet = true; m_batch.assign(value); }
-
-    /**
-     * <p>The id of the batch to cancel.</p>
-     */
     inline CancelSimulationJobBatchRequest& WithBatch(const Aws::String& value) { SetBatch(value); return *this;}
-
-    /**
-     * <p>The id of the batch to cancel.</p>
-     */
     inline CancelSimulationJobBatchRequest& WithBatch(Aws::String&& value) { SetBatch(std::move(value)); return *this;}
-
-    /**
-     * <p>The id of the batch to cancel.</p>
-     */
     inline CancelSimulationJobBatchRequest& WithBatch(const char* value) { SetBatch(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_batch;

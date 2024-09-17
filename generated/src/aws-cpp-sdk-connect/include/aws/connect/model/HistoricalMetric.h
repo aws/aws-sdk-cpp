@@ -44,129 +44,53 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the metric.</p>
      */
     inline const HistoricalMetricName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline void SetName(const HistoricalMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline void SetName(HistoricalMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline HistoricalMetric& WithName(const HistoricalMetricName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline HistoricalMetric& WithName(HistoricalMetricName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The threshold for the metric, used with service level metrics.</p>
      */
     inline const Threshold& GetThreshold() const{ return m_threshold; }
-
-    /**
-     * <p>The threshold for the metric, used with service level metrics.</p>
-     */
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
-
-    /**
-     * <p>The threshold for the metric, used with service level metrics.</p>
-     */
     inline void SetThreshold(const Threshold& value) { m_thresholdHasBeenSet = true; m_threshold = value; }
-
-    /**
-     * <p>The threshold for the metric, used with service level metrics.</p>
-     */
     inline void SetThreshold(Threshold&& value) { m_thresholdHasBeenSet = true; m_threshold = std::move(value); }
-
-    /**
-     * <p>The threshold for the metric, used with service level metrics.</p>
-     */
     inline HistoricalMetric& WithThreshold(const Threshold& value) { SetThreshold(value); return *this;}
-
-    /**
-     * <p>The threshold for the metric, used with service level metrics.</p>
-     */
     inline HistoricalMetric& WithThreshold(Threshold&& value) { SetThreshold(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The statistic for the metric.</p>
      */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
-
-    /**
-     * <p>The statistic for the metric.</p>
-     */
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-
-    /**
-     * <p>The statistic for the metric.</p>
-     */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-
-    /**
-     * <p>The statistic for the metric.</p>
-     */
     inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-
-    /**
-     * <p>The statistic for the metric.</p>
-     */
     inline HistoricalMetric& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
-
-    /**
-     * <p>The statistic for the metric.</p>
-     */
     inline HistoricalMetric& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit for the metric.</p>
      */
     inline const Unit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline HistoricalMetric& WithUnit(const Unit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline HistoricalMetric& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HistoricalMetricName m_name;

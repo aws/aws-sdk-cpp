@@ -23,8 +23,8 @@ Platform::Platform() :
 {
 }
 
-Platform::Platform(JsonView jsonValue) : 
-    m_versionHasBeenSet(false)
+Platform::Platform(JsonView jsonValue)
+  : Platform()
 {
   *this = jsonValue;
 }

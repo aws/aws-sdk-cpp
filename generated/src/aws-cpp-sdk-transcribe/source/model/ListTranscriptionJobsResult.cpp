@@ -22,8 +22,8 @@ ListTranscriptionJobsResult::ListTranscriptionJobsResult() :
 {
 }
 
-ListTranscriptionJobsResult::ListTranscriptionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TranscriptionJobStatus::NOT_SET)
+ListTranscriptionJobsResult::ListTranscriptionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListTranscriptionJobsResult()
 {
   *this = result;
 }

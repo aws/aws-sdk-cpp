@@ -24,17 +24,13 @@ InstanceFleetModifyConfig::InstanceFleetModifyConfig() :
     m_targetOnDemandCapacityHasBeenSet(false),
     m_targetSpotCapacity(0),
     m_targetSpotCapacityHasBeenSet(false),
-    m_resizeSpecificationsHasBeenSet(false)
+    m_resizeSpecificationsHasBeenSet(false),
+    m_instanceTypeConfigsHasBeenSet(false)
 {
 }
 
-InstanceFleetModifyConfig::InstanceFleetModifyConfig(JsonView jsonValue) : 
-    m_instanceFleetIdHasBeenSet(false),
-    m_targetOnDemandCapacity(0),
-    m_targetOnDemandCapacityHasBeenSet(false),
-    m_targetSpotCapacity(0),
-    m_targetSpotCapacityHasBeenSet(false),
-    m_resizeSpecificationsHasBeenSet(false)
+InstanceFleetModifyConfig::InstanceFleetModifyConfig(JsonView jsonValue)
+  : InstanceFleetModifyConfig()
 {
   *this = jsonValue;
 }
@@ -69,6 +65,16 @@ InstanceFleetModifyConfig& InstanceFleetModifyConfig::operator =(JsonView jsonVa
     m_resizeSpecificationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceTypeConfigs"))
+  {
+    Aws::Utils::Array<JsonView> instanceTypeConfigsJsonList = jsonValue.GetArray("InstanceTypeConfigs");
+    for(unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength(); ++instanceTypeConfigsIndex)
+    {
+      m_instanceTypeConfigs.push_back(instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject());
+    }
+    m_instanceTypeConfigsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +103,17 @@ JsonValue InstanceFleetModifyConfig::Jsonize() const
   if(m_resizeSpecificationsHasBeenSet)
   {
    payload.WithObject("ResizeSpecifications", m_resizeSpecifications.Jsonize());
+
+  }
+
+  if(m_instanceTypeConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceTypeConfigsJsonList(m_instanceTypeConfigs.size());
+   for(unsigned instanceTypeConfigsIndex = 0; instanceTypeConfigsIndex < instanceTypeConfigsJsonList.GetLength(); ++instanceTypeConfigsIndex)
+   {
+     instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject(m_instanceTypeConfigs[instanceTypeConfigsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceTypeConfigs", std::move(instanceTypeConfigsJsonList));
 
   }
 

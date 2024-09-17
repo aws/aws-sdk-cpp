@@ -51,36 +51,8 @@ Server::Server() :
 {
 }
 
-Server::Server(JsonView jsonValue) : 
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_backupRetentionCount(0),
-    m_backupRetentionCountHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_cloudFormationStackArnHasBeenSet(false),
-    m_customDomainHasBeenSet(false),
-    m_disableAutomatedBackup(false),
-    m_disableAutomatedBackupHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineModelHasBeenSet(false),
-    m_engineAttributesHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_keyPairHasBeenSet(false),
-    m_maintenanceStatus(MaintenanceStatus::NOT_SET),
-    m_maintenanceStatusHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_status(ServerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_serverArnHasBeenSet(false)
+Server::Server(JsonView jsonValue)
+  : Server()
 {
   *this = jsonValue;
 }

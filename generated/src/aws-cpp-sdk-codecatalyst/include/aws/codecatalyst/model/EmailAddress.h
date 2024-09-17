@@ -37,67 +37,29 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email address.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
-
-    /**
-     * <p>The email address.</p>
-     */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-
-    /**
-     * <p>The email address.</p>
-     */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-
-    /**
-     * <p>The email address.</p>
-     */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-
-    /**
-     * <p>The email address.</p>
-     */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-
-    /**
-     * <p>The email address.</p>
-     */
     inline EmailAddress& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-
-    /**
-     * <p>The email address.</p>
-     */
     inline EmailAddress& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address.</p>
-     */
     inline EmailAddress& WithEmail(const char* value) { SetEmail(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the email address has been verified.</p>
      */
     inline bool GetVerified() const{ return m_verified; }
-
-    /**
-     * <p>Whether the email address has been verified.</p>
-     */
     inline bool VerifiedHasBeenSet() const { return m_verifiedHasBeenSet; }
-
-    /**
-     * <p>Whether the email address has been verified.</p>
-     */
     inline void SetVerified(bool value) { m_verifiedHasBeenSet = true; m_verified = value; }
-
-    /**
-     * <p>Whether the email address has been verified.</p>
-     */
     inline EmailAddress& WithVerified(bool value) { SetVerified(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_email;

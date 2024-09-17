@@ -23,8 +23,8 @@ UserSettings::UserSettings() :
 {
 }
 
-UserSettings::UserSettings(JsonView jsonValue) : 
-    m_telephonyHasBeenSet(false)
+UserSettings::UserSettings(JsonView jsonValue)
+  : UserSettings()
 {
   *this = jsonValue;
 }

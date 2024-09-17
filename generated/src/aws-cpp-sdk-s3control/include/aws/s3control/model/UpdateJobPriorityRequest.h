@@ -44,116 +44,44 @@ namespace Model
      */
     AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
      * job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
-     * job.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
-     * job.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
-     * job.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
-     * job.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
-     * job.</p>
-     */
     inline UpdateJobPriorityRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
-     * job.</p>
-     */
     inline UpdateJobPriorityRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
-     * job.</p>
-     */
     inline UpdateJobPriorityRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID for the job whose priority you want to update.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The ID for the job whose priority you want to update.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the job whose priority you want to update.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The ID for the job whose priority you want to update.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The ID for the job whose priority you want to update.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The ID for the job whose priority you want to update.</p>
-     */
     inline UpdateJobPriorityRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The ID for the job whose priority you want to update.</p>
-     */
     inline UpdateJobPriorityRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the job whose priority you want to update.</p>
-     */
     inline UpdateJobPriorityRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The priority you want to assign to this job.</p>
      */
     inline int GetPriority() const{ return m_priority; }
-
-    /**
-     * <p>The priority you want to assign to this job.</p>
-     */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>The priority you want to assign to this job.</p>
-     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>The priority you want to assign to this job.</p>
-     */
     inline UpdateJobPriorityRequest& WithPriority(int value) { SetPriority(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

@@ -23,8 +23,8 @@ ClusterOperationV2Serverless::ClusterOperationV2Serverless() :
 {
 }
 
-ClusterOperationV2Serverless::ClusterOperationV2Serverless(JsonView jsonValue) : 
-    m_vpcConnectionInfoHasBeenSet(false)
+ClusterOperationV2Serverless::ClusterOperationV2Serverless(JsonView jsonValue)
+  : ClusterOperationV2Serverless()
 {
   *this = jsonValue;
 }

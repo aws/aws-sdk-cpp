@@ -26,11 +26,8 @@ MapMatchingConfig::MapMatchingConfig() :
 {
 }
 
-MapMatchingConfig::MapMatchingConfig(JsonView jsonValue) : 
-    m_idAttributeNameHasBeenSet(false),
-    m_timestampAttributeNameHasBeenSet(false),
-    m_xAttributeNameHasBeenSet(false),
-    m_yAttributeNameHasBeenSet(false)
+MapMatchingConfig::MapMatchingConfig(JsonView jsonValue)
+  : MapMatchingConfig()
 {
   *this = jsonValue;
 }

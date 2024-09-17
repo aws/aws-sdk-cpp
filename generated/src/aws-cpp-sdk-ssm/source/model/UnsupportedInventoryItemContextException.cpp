@@ -24,9 +24,8 @@ UnsupportedInventoryItemContextException::UnsupportedInventoryItemContextExcepti
 {
 }
 
-UnsupportedInventoryItemContextException::UnsupportedInventoryItemContextException(JsonView jsonValue) : 
-    m_typeNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+UnsupportedInventoryItemContextException::UnsupportedInventoryItemContextException(JsonView jsonValue)
+  : UnsupportedInventoryItemContextException()
 {
   *this = jsonValue;
 }

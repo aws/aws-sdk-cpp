@@ -42,30 +42,16 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Desired value to use with a game server group target-based scaling policy.
      * </p>
      */
     inline double GetTargetValue() const{ return m_targetValue; }
-
-    /**
-     * <p>Desired value to use with a game server group target-based scaling policy.
-     * </p>
-     */
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
-
-    /**
-     * <p>Desired value to use with a game server group target-based scaling policy.
-     * </p>
-     */
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
-
-    /**
-     * <p>Desired value to use with a game server group target-based scaling policy.
-     * </p>
-     */
     inline TargetTrackingConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_targetValue;

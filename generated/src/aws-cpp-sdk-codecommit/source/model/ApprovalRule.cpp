@@ -30,15 +30,8 @@ ApprovalRule::ApprovalRule() :
 {
 }
 
-ApprovalRule::ApprovalRule(JsonView jsonValue) : 
-    m_approvalRuleIdHasBeenSet(false),
-    m_approvalRuleNameHasBeenSet(false),
-    m_approvalRuleContentHasBeenSet(false),
-    m_ruleContentSha256HasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_originApprovalRuleTemplateHasBeenSet(false)
+ApprovalRule::ApprovalRule(JsonView jsonValue)
+  : ApprovalRule()
 {
   *this = jsonValue;
 }

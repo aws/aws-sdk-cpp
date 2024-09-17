@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/model/AutomatedDiscoveryMonitoringStatus.h>
 #include <aws/macie2/model/BucketMetadataErrorCode.h>
 #include <aws/macie2/model/JobDetails.h>
 #include <aws/core/utils/DateTime.h>
@@ -52,125 +53,64 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the Amazon Web Services account that owns the
      * bucket.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account that owns the
-     * bucket.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account that owns the
-     * bucket.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account that owns the
-     * bucket.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account that owns the
-     * bucket.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account that owns the
-     * bucket.</p>
-     */
     inline MatchingBucket& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account that owns the
-     * bucket.</p>
-     */
     inline MatchingBucket& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account that owns the
-     * bucket.</p>
-     */
     inline MatchingBucket& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
+    ///@{
+    /**
+     * <p>Specifies whether automated sensitive data discovery is currently configured
+     * to analyze objects in the bucket. Possible values are: MONITORED, the bucket is
+     * included in analyses; and, NOT_MONITORED, the bucket is excluded from analyses.
+     * If automated sensitive data discovery is disabled for your account, this value
+     * is NOT_MONITORED.</p>
+     */
+    inline const AutomatedDiscoveryMonitoringStatus& GetAutomatedDiscoveryMonitoringStatus() const{ return m_automatedDiscoveryMonitoringStatus; }
+    inline bool AutomatedDiscoveryMonitoringStatusHasBeenSet() const { return m_automatedDiscoveryMonitoringStatusHasBeenSet; }
+    inline void SetAutomatedDiscoveryMonitoringStatus(const AutomatedDiscoveryMonitoringStatus& value) { m_automatedDiscoveryMonitoringStatusHasBeenSet = true; m_automatedDiscoveryMonitoringStatus = value; }
+    inline void SetAutomatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus&& value) { m_automatedDiscoveryMonitoringStatusHasBeenSet = true; m_automatedDiscoveryMonitoringStatus = std::move(value); }
+    inline MatchingBucket& WithAutomatedDiscoveryMonitoringStatus(const AutomatedDiscoveryMonitoringStatus& value) { SetAutomatedDiscoveryMonitoringStatus(value); return *this;}
+    inline MatchingBucket& WithAutomatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus&& value) { SetAutomatedDiscoveryMonitoringStatus(std::move(value)); return *this;}
+    ///@}
 
+    ///@{
     /**
      * <p>The name of the bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>The name of the bucket.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the bucket.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>The name of the bucket.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>The name of the bucket.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>The name of the bucket.</p>
-     */
     inline MatchingBucket& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>The name of the bucket.</p>
-     */
     inline MatchingBucket& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the bucket.</p>
-     */
     inline MatchingBucket& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects that Amazon Macie can analyze in the bucket.
      * These objects use a supported storage class and have a file name extension for a
      * supported file or storage format.</p>
      */
     inline long long GetClassifiableObjectCount() const{ return m_classifiableObjectCount; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie can analyze in the bucket.
-     * These objects use a supported storage class and have a file name extension for a
-     * supported file or storage format.</p>
-     */
     inline bool ClassifiableObjectCountHasBeenSet() const { return m_classifiableObjectCountHasBeenSet; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie can analyze in the bucket.
-     * These objects use a supported storage class and have a file name extension for a
-     * supported file or storage format.</p>
-     */
     inline void SetClassifiableObjectCount(long long value) { m_classifiableObjectCountHasBeenSet = true; m_classifiableObjectCount = value; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie can analyze in the bucket.
-     * These objects use a supported storage class and have a file name extension for a
-     * supported file or storage format.</p>
-     */
     inline MatchingBucket& WithClassifiableObjectCount(long long value) { SetClassifiableObjectCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can
      * analyze in the bucket. These objects use a supported storage class and have a
@@ -181,41 +121,12 @@ namespace Model
      * bucket.</p>
      */
     inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can
-     * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p> <p>If versioning
-     * is enabled for the bucket, Macie calculates this value based on the size of the
-     * latest version of each applicable object in the bucket. This value doesn't
-     * reflect the storage size of all versions of each applicable object in the
-     * bucket.</p>
-     */
     inline bool ClassifiableSizeInBytesHasBeenSet() const { return m_classifiableSizeInBytesHasBeenSet; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can
-     * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p> <p>If versioning
-     * is enabled for the bucket, Macie calculates this value based on the size of the
-     * latest version of each applicable object in the bucket. This value doesn't
-     * reflect the storage size of all versions of each applicable object in the
-     * bucket.</p>
-     */
     inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytesHasBeenSet = true; m_classifiableSizeInBytes = value; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can
-     * analyze in the bucket. These objects use a supported storage class and have a
-     * file name extension for a supported file or storage format.</p> <p>If versioning
-     * is enabled for the bucket, Macie calculates this value based on the size of the
-     * latest version of each applicable object in the bucket. This value doesn't
-     * reflect the storage size of all versions of each applicable object in the
-     * bucket.</p>
-     */
     inline MatchingBucket& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code for an error that prevented Amazon Macie from retrieving and
      * processing information about the bucket and the bucket's objects. If this value
@@ -225,58 +136,14 @@ namespace Model
      * information.</p>
      */
     inline const BucketMetadataErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code for an error that prevented Amazon Macie from retrieving and
-     * processing information about the bucket and the bucket's objects. If this value
-     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
-     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code for an error that prevented Amazon Macie from retrieving and
-     * processing information about the bucket and the bucket's objects. If this value
-     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
-     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline void SetErrorCode(const BucketMetadataErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code for an error that prevented Amazon Macie from retrieving and
-     * processing information about the bucket and the bucket's objects. If this value
-     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
-     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline void SetErrorCode(BucketMetadataErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code for an error that prevented Amazon Macie from retrieving and
-     * processing information about the bucket and the bucket's objects. If this value
-     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
-     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline MatchingBucket& WithErrorCode(const BucketMetadataErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code for an error that prevented Amazon Macie from retrieving and
-     * processing information about the bucket and the bucket's objects. If this value
-     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
-     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline MatchingBucket& WithErrorCode(BucketMetadataErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
      * retrieving and processing information about the bucket and the bucket's objects.
@@ -284,249 +151,84 @@ namespace Model
      * information.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline MatchingBucket& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline MatchingBucket& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
-     */
     inline MatchingBucket& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether any one-time or recurring classification jobs are
      * configured to analyze objects in the bucket, and, if so, the details of the job
      * that ran most recently.</p>
      */
     inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
-
-    /**
-     * <p>Specifies whether any one-time or recurring classification jobs are
-     * configured to analyze objects in the bucket, and, if so, the details of the job
-     * that ran most recently.</p>
-     */
     inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether any one-time or recurring classification jobs are
-     * configured to analyze objects in the bucket, and, if so, the details of the job
-     * that ran most recently.</p>
-     */
     inline void SetJobDetails(const JobDetails& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
-
-    /**
-     * <p>Specifies whether any one-time or recurring classification jobs are
-     * configured to analyze objects in the bucket, and, if so, the details of the job
-     * that ran most recently.</p>
-     */
     inline void SetJobDetails(JobDetails&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
-
-    /**
-     * <p>Specifies whether any one-time or recurring classification jobs are
-     * configured to analyze objects in the bucket, and, if so, the details of the job
-     * that ran most recently.</p>
-     */
     inline MatchingBucket& WithJobDetails(const JobDetails& value) { SetJobDetails(value); return *this;}
-
-    /**
-     * <p>Specifies whether any one-time or recurring classification jobs are
-     * configured to analyze objects in the bucket, and, if so, the details of the job
-     * that ran most recently.</p>
-     */
     inline MatchingBucket& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently analyzed data in the bucket while performing automated sensitive
-     * data discovery for your account. This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
+     * most recently analyzed objects in the bucket while performing automated
+     * sensitive data discovery. This value is null if automated sensitive data
+     * discovery is disabled for your account.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAutomatedDiscoveryTime() const{ return m_lastAutomatedDiscoveryTime; }
-
-    /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently analyzed data in the bucket while performing automated sensitive
-     * data discovery for your account. This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline bool LastAutomatedDiscoveryTimeHasBeenSet() const { return m_lastAutomatedDiscoveryTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently analyzed data in the bucket while performing automated sensitive
-     * data discovery for your account. This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline void SetLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = value; }
-
-    /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently analyzed data in the bucket while performing automated sensitive
-     * data discovery for your account. This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline void SetLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = std::move(value); }
-
-    /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently analyzed data in the bucket while performing automated sensitive
-     * data discovery for your account. This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline MatchingBucket& WithLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { SetLastAutomatedDiscoveryTime(value); return *this;}
-
-    /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently analyzed data in the bucket while performing automated sensitive
-     * data discovery for your account. This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline MatchingBucket& WithLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { SetLastAutomatedDiscoveryTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects in the bucket.</p>
      */
     inline long long GetObjectCount() const{ return m_objectCount; }
-
-    /**
-     * <p>The total number of objects in the bucket.</p>
-     */
     inline bool ObjectCountHasBeenSet() const { return m_objectCountHasBeenSet; }
-
-    /**
-     * <p>The total number of objects in the bucket.</p>
-     */
     inline void SetObjectCount(long long value) { m_objectCountHasBeenSet = true; m_objectCount = value; }
-
-    /**
-     * <p>The total number of objects in the bucket.</p>
-     */
     inline MatchingBucket& WithObjectCount(long long value) { SetObjectCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects in the bucket, grouped by server-side encryption
      * type. This includes a grouping that reports the total number of objects that
      * aren't encrypted or use client-side encryption.</p>
      */
     inline const ObjectCountByEncryptionType& GetObjectCountByEncryptionType() const{ return m_objectCountByEncryptionType; }
-
-    /**
-     * <p>The total number of objects in the bucket, grouped by server-side encryption
-     * type. This includes a grouping that reports the total number of objects that
-     * aren't encrypted or use client-side encryption.</p>
-     */
     inline bool ObjectCountByEncryptionTypeHasBeenSet() const { return m_objectCountByEncryptionTypeHasBeenSet; }
-
-    /**
-     * <p>The total number of objects in the bucket, grouped by server-side encryption
-     * type. This includes a grouping that reports the total number of objects that
-     * aren't encrypted or use client-side encryption.</p>
-     */
     inline void SetObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = value; }
-
-    /**
-     * <p>The total number of objects in the bucket, grouped by server-side encryption
-     * type. This includes a grouping that reports the total number of objects that
-     * aren't encrypted or use client-side encryption.</p>
-     */
     inline void SetObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = std::move(value); }
-
-    /**
-     * <p>The total number of objects in the bucket, grouped by server-side encryption
-     * type. This includes a grouping that reports the total number of objects that
-     * aren't encrypted or use client-side encryption.</p>
-     */
     inline MatchingBucket& WithObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { SetObjectCountByEncryptionType(value); return *this;}
-
-    /**
-     * <p>The total number of objects in the bucket, grouped by server-side encryption
-     * type. This includes a grouping that reports the total number of objects that
-     * aren't encrypted or use client-side encryption.</p>
-     */
     inline MatchingBucket& WithObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { SetObjectCountByEncryptionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
+     * <p>The sensitivity score for the bucket, ranging from -1 (classification error)
+     * to 100 (sensitive).</p><p>If automated sensitive data discovery has never been
+     * enabled for your account or it’s been disabled for your organization or your
+     * standalone account for more than 30 days, possible values are: 1, the bucket is
+     * empty; or, 50, the bucket stores objects but it’s been excluded from recent
+     * analyses.</p>
      */
     inline int GetSensitivityScore() const{ return m_sensitivityScore; }
-
-    /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline bool SensitivityScoreHasBeenSet() const { return m_sensitivityScoreHasBeenSet; }
-
-    /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline void SetSensitivityScore(int value) { m_sensitivityScoreHasBeenSet = true; m_sensitivityScore = value; }
-
-    /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
-     */
     inline MatchingBucket& WithSensitivityScore(int value) { SetSensitivityScore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
      * enabled for the bucket, Amazon Macie calculates this value based on the size of
@@ -534,32 +236,12 @@ namespace Model
      * storage size of all versions of each object in the bucket.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
-
-    /**
-     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
-     * enabled for the bucket, Amazon Macie calculates this value based on the size of
-     * the latest version of each object in the bucket. This value doesn't reflect the
-     * storage size of all versions of each object in the bucket.</p>
-     */
     inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
-
-    /**
-     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
-     * enabled for the bucket, Amazon Macie calculates this value based on the size of
-     * the latest version of each object in the bucket. This value doesn't reflect the
-     * storage size of all versions of each object in the bucket.</p>
-     */
     inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
-
-    /**
-     * <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is
-     * enabled for the bucket, Amazon Macie calculates this value based on the size of
-     * the latest version of each object in the bucket. This value doesn't reflect the
-     * storage size of all versions of each object in the bucket.</p>
-     */
     inline MatchingBucket& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
      * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
@@ -568,124 +250,45 @@ namespace Model
      * storage size of all versions of each applicable object in the bucket.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
-     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
-     * bucket, Amazon Macie calculates this value based on the size of the latest
-     * version of each applicable object in the bucket. This value doesn't reflect the
-     * storage size of all versions of each applicable object in the bucket.</p>
-     */
     inline bool SizeInBytesCompressedHasBeenSet() const { return m_sizeInBytesCompressedHasBeenSet; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
-     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
-     * bucket, Amazon Macie calculates this value based on the size of the latest
-     * version of each applicable object in the bucket. This value doesn't reflect the
-     * storage size of all versions of each applicable object in the bucket.</p>
-     */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressedHasBeenSet = true; m_sizeInBytesCompressed = value; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
-     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
-     * bucket, Amazon Macie calculates this value based on the size of the latest
-     * version of each applicable object in the bucket. This value doesn't reflect the
-     * storage size of all versions of each applicable object in the bucket.</p>
-     */
     inline MatchingBucket& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
      * These objects don't use a supported storage class or don't have a file name
      * extension for a supported file or storage format.</p>
      */
     inline const ObjectLevelStatistics& GetUnclassifiableObjectCount() const{ return m_unclassifiableObjectCount; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
-     * These objects don't use a supported storage class or don't have a file name
-     * extension for a supported file or storage format.</p>
-     */
     inline bool UnclassifiableObjectCountHasBeenSet() const { return m_unclassifiableObjectCountHasBeenSet; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
-     * These objects don't use a supported storage class or don't have a file name
-     * extension for a supported file or storage format.</p>
-     */
     inline void SetUnclassifiableObjectCount(const ObjectLevelStatistics& value) { m_unclassifiableObjectCountHasBeenSet = true; m_unclassifiableObjectCount = value; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
-     * These objects don't use a supported storage class or don't have a file name
-     * extension for a supported file or storage format.</p>
-     */
     inline void SetUnclassifiableObjectCount(ObjectLevelStatistics&& value) { m_unclassifiableObjectCountHasBeenSet = true; m_unclassifiableObjectCount = std::move(value); }
-
-    /**
-     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
-     * These objects don't use a supported storage class or don't have a file name
-     * extension for a supported file or storage format.</p>
-     */
     inline MatchingBucket& WithUnclassifiableObjectCount(const ObjectLevelStatistics& value) { SetUnclassifiableObjectCount(value); return *this;}
-
-    /**
-     * <p>The total number of objects that Amazon Macie can't analyze in the bucket.
-     * These objects don't use a supported storage class or don't have a file name
-     * extension for a supported file or storage format.</p>
-     */
     inline MatchingBucket& WithUnclassifiableObjectCount(ObjectLevelStatistics&& value) { SetUnclassifiableObjectCount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
      * analyze in the bucket. These objects don't use a supported storage class or
      * don't have a file name extension for a supported file or storage format.</p>
      */
     inline const ObjectLevelStatistics& GetUnclassifiableObjectSizeInBytes() const{ return m_unclassifiableObjectSizeInBytes; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
-     * analyze in the bucket. These objects don't use a supported storage class or
-     * don't have a file name extension for a supported file or storage format.</p>
-     */
     inline bool UnclassifiableObjectSizeInBytesHasBeenSet() const { return m_unclassifiableObjectSizeInBytesHasBeenSet; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
-     * analyze in the bucket. These objects don't use a supported storage class or
-     * don't have a file name extension for a supported file or storage format.</p>
-     */
     inline void SetUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { m_unclassifiableObjectSizeInBytesHasBeenSet = true; m_unclassifiableObjectSizeInBytes = value; }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
-     * analyze in the bucket. These objects don't use a supported storage class or
-     * don't have a file name extension for a supported file or storage format.</p>
-     */
     inline void SetUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { m_unclassifiableObjectSizeInBytesHasBeenSet = true; m_unclassifiableObjectSizeInBytes = std::move(value); }
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
-     * analyze in the bucket. These objects don't use a supported storage class or
-     * don't have a file name extension for a supported file or storage format.</p>
-     */
     inline MatchingBucket& WithUnclassifiableObjectSizeInBytes(const ObjectLevelStatistics& value) { SetUnclassifiableObjectSizeInBytes(value); return *this;}
-
-    /**
-     * <p>The total storage size, in bytes, of the objects that Amazon Macie can't
-     * analyze in the bucket. These objects don't use a supported storage class or
-     * don't have a file name extension for a supported file or storage format.</p>
-     */
     inline MatchingBucket& WithUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { SetUnclassifiableObjectSizeInBytes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    AutomatedDiscoveryMonitoringStatus m_automatedDiscoveryMonitoringStatus;
+    bool m_automatedDiscoveryMonitoringStatusHasBeenSet = false;
 
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet = false;

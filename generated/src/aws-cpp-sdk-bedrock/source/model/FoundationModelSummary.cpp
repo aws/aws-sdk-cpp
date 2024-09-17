@@ -33,18 +33,8 @@ FoundationModelSummary::FoundationModelSummary() :
 {
 }
 
-FoundationModelSummary::FoundationModelSummary(JsonView jsonValue) : 
-    m_modelArnHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_inputModalitiesHasBeenSet(false),
-    m_outputModalitiesHasBeenSet(false),
-    m_responseStreamingSupported(false),
-    m_responseStreamingSupportedHasBeenSet(false),
-    m_customizationsSupportedHasBeenSet(false),
-    m_inferenceTypesSupportedHasBeenSet(false),
-    m_modelLifecycleHasBeenSet(false)
+FoundationModelSummary::FoundationModelSummary(JsonView jsonValue)
+  : FoundationModelSummary()
 {
   *this = jsonValue;
 }

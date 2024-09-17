@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACESWEB_API GetTrustStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The trust store.</p>
      */
     inline const TrustStore& GetTrustStore() const{ return m_trustStore; }
-
-    /**
-     * <p>The trust store.</p>
-     */
     inline void SetTrustStore(const TrustStore& value) { m_trustStore = value; }
-
-    /**
-     * <p>The trust store.</p>
-     */
     inline void SetTrustStore(TrustStore&& value) { m_trustStore = std::move(value); }
-
-    /**
-     * <p>The trust store.</p>
-     */
     inline GetTrustStoreResult& WithTrustStore(const TrustStore& value) { SetTrustStore(value); return *this;}
-
-    /**
-     * <p>The trust store.</p>
-     */
     inline GetTrustStoreResult& WithTrustStore(TrustStore&& value) { SetTrustStore(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTrustStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTrustStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTrustStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TrustStore m_trustStore;

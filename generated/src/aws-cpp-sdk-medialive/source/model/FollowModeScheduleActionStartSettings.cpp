@@ -25,10 +25,8 @@ FollowModeScheduleActionStartSettings::FollowModeScheduleActionStartSettings() :
 {
 }
 
-FollowModeScheduleActionStartSettings::FollowModeScheduleActionStartSettings(JsonView jsonValue) : 
-    m_followPoint(FollowPoint::NOT_SET),
-    m_followPointHasBeenSet(false),
-    m_referenceActionNameHasBeenSet(false)
+FollowModeScheduleActionStartSettings::FollowModeScheduleActionStartSettings(JsonView jsonValue)
+  : FollowModeScheduleActionStartSettings()
 {
   *this = jsonValue;
 }

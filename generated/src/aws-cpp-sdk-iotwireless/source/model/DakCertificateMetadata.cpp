@@ -29,14 +29,8 @@ DakCertificateMetadata::DakCertificateMetadata() :
 {
 }
 
-DakCertificateMetadata::DakCertificateMetadata(JsonView jsonValue) : 
-    m_certificateIdHasBeenSet(false),
-    m_maxAllowedSignature(0),
-    m_maxAllowedSignatureHasBeenSet(false),
-    m_factorySupport(false),
-    m_factorySupportHasBeenSet(false),
-    m_apIdHasBeenSet(false),
-    m_deviceTypeIdHasBeenSet(false)
+DakCertificateMetadata::DakCertificateMetadata(JsonView jsonValue)
+  : DakCertificateMetadata()
 {
   *this = jsonValue;
 }

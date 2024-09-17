@@ -30,15 +30,8 @@ CdmaNmrObj::CdmaNmrObj() :
 {
 }
 
-CdmaNmrObj::CdmaNmrObj(JsonView jsonValue) : 
-    m_pnOffset(0),
-    m_pnOffsetHasBeenSet(false),
-    m_cdmaChannel(0),
-    m_cdmaChannelHasBeenSet(false),
-    m_pilotPower(0),
-    m_pilotPowerHasBeenSet(false),
-    m_baseStationId(0),
-    m_baseStationIdHasBeenSet(false)
+CdmaNmrObj::CdmaNmrObj(JsonView jsonValue)
+  : CdmaNmrObj()
 {
   *this = jsonValue;
 }

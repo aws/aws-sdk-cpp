@@ -23,8 +23,8 @@ ConfluencePageConfiguration::ConfluencePageConfiguration() :
 {
 }
 
-ConfluencePageConfiguration::ConfluencePageConfiguration(JsonView jsonValue) : 
-    m_pageFieldMappingsHasBeenSet(false)
+ConfluencePageConfiguration::ConfluencePageConfiguration(JsonView jsonValue)
+  : ConfluencePageConfiguration()
 {
   *this = jsonValue;
 }

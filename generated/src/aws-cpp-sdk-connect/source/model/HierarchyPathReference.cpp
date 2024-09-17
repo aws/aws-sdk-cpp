@@ -27,12 +27,8 @@ HierarchyPathReference::HierarchyPathReference() :
 {
 }
 
-HierarchyPathReference::HierarchyPathReference(JsonView jsonValue) : 
-    m_levelOneHasBeenSet(false),
-    m_levelTwoHasBeenSet(false),
-    m_levelThreeHasBeenSet(false),
-    m_levelFourHasBeenSet(false),
-    m_levelFiveHasBeenSet(false)
+HierarchyPathReference::HierarchyPathReference(JsonView jsonValue)
+  : HierarchyPathReference()
 {
   *this = jsonValue;
 }

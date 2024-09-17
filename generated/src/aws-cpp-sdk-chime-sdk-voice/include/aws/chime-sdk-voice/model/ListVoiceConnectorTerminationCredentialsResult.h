@@ -33,68 +33,30 @@ namespace Model
     AWS_CHIMESDKVOICE_API ListVoiceConnectorTerminationCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of user names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUsernames() const{ return m_usernames; }
-
-    /**
-     * <p>A list of user names.</p>
-     */
     inline void SetUsernames(const Aws::Vector<Aws::String>& value) { m_usernames = value; }
-
-    /**
-     * <p>A list of user names.</p>
-     */
     inline void SetUsernames(Aws::Vector<Aws::String>&& value) { m_usernames = std::move(value); }
-
-    /**
-     * <p>A list of user names.</p>
-     */
     inline ListVoiceConnectorTerminationCredentialsResult& WithUsernames(const Aws::Vector<Aws::String>& value) { SetUsernames(value); return *this;}
-
-    /**
-     * <p>A list of user names.</p>
-     */
     inline ListVoiceConnectorTerminationCredentialsResult& WithUsernames(Aws::Vector<Aws::String>&& value) { SetUsernames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of user names.</p>
-     */
     inline ListVoiceConnectorTerminationCredentialsResult& AddUsernames(const Aws::String& value) { m_usernames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of user names.</p>
-     */
     inline ListVoiceConnectorTerminationCredentialsResult& AddUsernames(Aws::String&& value) { m_usernames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of user names.</p>
-     */
     inline ListVoiceConnectorTerminationCredentialsResult& AddUsernames(const char* value) { m_usernames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListVoiceConnectorTerminationCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListVoiceConnectorTerminationCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListVoiceConnectorTerminationCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_usernames;

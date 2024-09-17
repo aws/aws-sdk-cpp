@@ -23,8 +23,8 @@ ConversationLevelTestResults::ConversationLevelTestResults() :
 {
 }
 
-ConversationLevelTestResults::ConversationLevelTestResults(JsonView jsonValue) : 
-    m_itemsHasBeenSet(false)
+ConversationLevelTestResults::ConversationLevelTestResults(JsonView jsonValue)
+  : ConversationLevelTestResults()
 {
   *this = jsonValue;
 }

@@ -35,20 +35,8 @@ Activation::Activation() :
 {
 }
 
-Activation::Activation(JsonView jsonValue) : 
-    m_activationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultInstanceNameHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_registrationLimit(0),
-    m_registrationLimitHasBeenSet(false),
-    m_registrationsCount(0),
-    m_registrationsCountHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_expired(false),
-    m_expiredHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+Activation::Activation(JsonView jsonValue)
+  : Activation()
 {
   *this = jsonValue;
 }

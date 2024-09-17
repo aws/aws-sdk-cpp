@@ -32,46 +32,19 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the API key resource.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>The name of the API key resource.</p>
-     */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the API key resource.</p>
-     */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>The name of the API key resource.</p>
-     */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>The name of the API key resource.</p>
-     */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>The name of the API key resource.</p>
-     */
     inline DescribeKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the API key resource.</p>
-     */
     inline DescribeKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the API key resource.</p>
-     */
     inline DescribeKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyName;

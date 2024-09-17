@@ -39,12 +39,22 @@
 #include <aws/mediaconvert/model/ListPresetsResult.h>
 #include <aws/mediaconvert/model/ListQueuesResult.h>
 #include <aws/mediaconvert/model/ListTagsForResourceResult.h>
+#include <aws/mediaconvert/model/ListVersionsResult.h>
 #include <aws/mediaconvert/model/PutPolicyResult.h>
+#include <aws/mediaconvert/model/SearchJobsResult.h>
 #include <aws/mediaconvert/model/TagResourceResult.h>
 #include <aws/mediaconvert/model/UntagResourceResult.h>
 #include <aws/mediaconvert/model/UpdateJobTemplateResult.h>
 #include <aws/mediaconvert/model/UpdatePresetResult.h>
 #include <aws/mediaconvert/model/UpdateQueueResult.h>
+#include <aws/mediaconvert/model/ListQueuesRequest.h>
+#include <aws/mediaconvert/model/ListJobTemplatesRequest.h>
+#include <aws/mediaconvert/model/ListVersionsRequest.h>
+#include <aws/mediaconvert/model/SearchJobsRequest.h>
+#include <aws/mediaconvert/model/DeletePolicyRequest.h>
+#include <aws/mediaconvert/model/ListPresetsRequest.h>
+#include <aws/mediaconvert/model/GetPolicyRequest.h>
+#include <aws/mediaconvert/model/ListJobsRequest.h>
 /* End of service model headers required in MediaConvertClient header */
 
 namespace Aws
@@ -78,7 +88,7 @@ namespace Aws
 
   namespace MediaConvert
   {
-    using MediaConvertClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MediaConvertClientConfiguration = Aws::Client::GenericClientConfiguration;
     using MediaConvertEndpointProviderBase = Aws::MediaConvert::Endpoint::MediaConvertEndpointProviderBase;
     using MediaConvertEndpointProvider = Aws::MediaConvert::Endpoint::MediaConvertEndpointProvider;
 
@@ -106,7 +116,9 @@ namespace Aws
       class ListPresetsRequest;
       class ListQueuesRequest;
       class ListTagsForResourceRequest;
+      class ListVersionsRequest;
       class PutPolicyRequest;
+      class SearchJobsRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateJobTemplateRequest;
@@ -136,7 +148,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPresetsResult, MediaConvertError> ListPresetsOutcome;
       typedef Aws::Utils::Outcome<ListQueuesResult, MediaConvertError> ListQueuesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaConvertError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListVersionsResult, MediaConvertError> ListVersionsOutcome;
       typedef Aws::Utils::Outcome<PutPolicyResult, MediaConvertError> PutPolicyOutcome;
+      typedef Aws::Utils::Outcome<SearchJobsResult, MediaConvertError> SearchJobsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, MediaConvertError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, MediaConvertError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateJobTemplateResult, MediaConvertError> UpdateJobTemplateOutcome;
@@ -166,7 +180,9 @@ namespace Aws
       typedef std::future<ListPresetsOutcome> ListPresetsOutcomeCallable;
       typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
       typedef std::future<PutPolicyOutcome> PutPolicyOutcomeCallable;
+      typedef std::future<SearchJobsOutcome> SearchJobsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateJobTemplateOutcome> UpdateJobTemplateOutcomeCallable;
@@ -199,7 +215,9 @@ namespace Aws
     typedef std::function<void(const MediaConvertClient*, const Model::ListPresetsRequest&, const Model::ListPresetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPresetsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::PutPolicyRequest&, const Model::PutPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::SearchJobsRequest&, const Model::SearchJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchJobsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::UpdateJobTemplateRequest&, const Model::UpdateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobTemplateResponseReceivedHandler;

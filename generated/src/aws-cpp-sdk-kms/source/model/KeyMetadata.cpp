@@ -44,6 +44,7 @@ KeyMetadata::KeyMetadata() :
     m_keySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
     m_signingAlgorithmsHasBeenSet(false),
+    m_keyAgreementAlgorithmsHasBeenSet(false),
     m_multiRegion(false),
     m_multiRegionHasBeenSet(false),
     m_multiRegionConfigurationHasBeenSet(false),
@@ -54,39 +55,8 @@ KeyMetadata::KeyMetadata() :
 {
 }
 
-KeyMetadata::KeyMetadata(JsonView jsonValue) : 
-    m_aWSAccountIdHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_keyUsage(KeyUsageType::NOT_SET),
-    m_keyUsageHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_deletionDateHasBeenSet(false),
-    m_validToHasBeenSet(false),
-    m_origin(OriginType::NOT_SET),
-    m_originHasBeenSet(false),
-    m_customKeyStoreIdHasBeenSet(false),
-    m_cloudHsmClusterIdHasBeenSet(false),
-    m_expirationModel(ExpirationModelType::NOT_SET),
-    m_expirationModelHasBeenSet(false),
-    m_keyManager(KeyManagerType::NOT_SET),
-    m_keyManagerHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_encryptionAlgorithmsHasBeenSet(false),
-    m_signingAlgorithmsHasBeenSet(false),
-    m_multiRegion(false),
-    m_multiRegionHasBeenSet(false),
-    m_multiRegionConfigurationHasBeenSet(false),
-    m_pendingDeletionWindowInDays(0),
-    m_pendingDeletionWindowInDaysHasBeenSet(false),
-    m_macAlgorithmsHasBeenSet(false),
-    m_xksKeyConfigurationHasBeenSet(false)
+KeyMetadata::KeyMetadata(JsonView jsonValue)
+  : KeyMetadata()
 {
   *this = jsonValue;
 }
@@ -223,6 +193,16 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
       m_signingAlgorithms.push_back(SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString()));
     }
     m_signingAlgorithmsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeyAgreementAlgorithms"))
+  {
+    Aws::Utils::Array<JsonView> keyAgreementAlgorithmsJsonList = jsonValue.GetArray("KeyAgreementAlgorithms");
+    for(unsigned keyAgreementAlgorithmsIndex = 0; keyAgreementAlgorithmsIndex < keyAgreementAlgorithmsJsonList.GetLength(); ++keyAgreementAlgorithmsIndex)
+    {
+      m_keyAgreementAlgorithms.push_back(KeyAgreementAlgorithmSpecMapper::GetKeyAgreementAlgorithmSpecForName(keyAgreementAlgorithmsJsonList[keyAgreementAlgorithmsIndex].AsString()));
+    }
+    m_keyAgreementAlgorithmsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MultiRegion"))
@@ -376,6 +356,17 @@ JsonValue KeyMetadata::Jsonize() const
      signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString(SigningAlgorithmSpecMapper::GetNameForSigningAlgorithmSpec(m_signingAlgorithms[signingAlgorithmsIndex]));
    }
    payload.WithArray("SigningAlgorithms", std::move(signingAlgorithmsJsonList));
+
+  }
+
+  if(m_keyAgreementAlgorithmsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> keyAgreementAlgorithmsJsonList(m_keyAgreementAlgorithms.size());
+   for(unsigned keyAgreementAlgorithmsIndex = 0; keyAgreementAlgorithmsIndex < keyAgreementAlgorithmsJsonList.GetLength(); ++keyAgreementAlgorithmsIndex)
+   {
+     keyAgreementAlgorithmsJsonList[keyAgreementAlgorithmsIndex].AsString(KeyAgreementAlgorithmSpecMapper::GetNameForKeyAgreementAlgorithmSpec(m_keyAgreementAlgorithms[keyAgreementAlgorithmsIndex]));
+   }
+   payload.WithArray("KeyAgreementAlgorithms", std::move(keyAgreementAlgorithmsJsonList));
 
   }
 

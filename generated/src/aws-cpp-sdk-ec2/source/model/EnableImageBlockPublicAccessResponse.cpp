@@ -22,8 +22,8 @@ EnableImageBlockPublicAccessResponse::EnableImageBlockPublicAccessResponse() :
 {
 }
 
-EnableImageBlockPublicAccessResponse::EnableImageBlockPublicAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_imageBlockPublicAccessState(ImageBlockPublicAccessEnabledState::NOT_SET)
+EnableImageBlockPublicAccessResponse::EnableImageBlockPublicAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : EnableImageBlockPublicAccessResponse()
 {
   *this = result;
 }

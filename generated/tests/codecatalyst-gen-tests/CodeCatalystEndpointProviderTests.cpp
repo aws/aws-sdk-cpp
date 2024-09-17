@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class CodeCatalystEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct CodeCatalystEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct CodeCatalystEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASES = {
+class CodeCatalystEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase>> CodeCatalystEndpointProviderTests::TEST_CASES;
+const size_t CodeCatalystEndpointProviderTests::TEST_CASES_SZ = 9;
+
+Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> CodeCatalystEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"Override endpoint", // documentation
     {EpParam("Endpoint", "https://test.codecatalyst.global.api.aws")}, // params
@@ -137,7 +160,9 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -232,9 +257,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const CodeCatalystEn
 TEST_P(CodeCatalystEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const CodeCatalystEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const CodeCatalystEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/CodeCatalystEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<CodeCatalystEndpointProvider> endpointProvider = Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize CodeCatalystEndpointProvider";
@@ -276,4 +302,4 @@ TEST_P(CodeCatalystEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          CodeCatalystEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, CodeCatalystEndpointProviderTests::TEST_CASES_SZ));

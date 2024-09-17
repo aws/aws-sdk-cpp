@@ -27,10 +27,8 @@ ScheduledActionFilter::ScheduledActionFilter() :
 {
 }
 
-ScheduledActionFilter::ScheduledActionFilter(const XmlNode& xmlNode) : 
-    m_name(ScheduledActionFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+ScheduledActionFilter::ScheduledActionFilter(const XmlNode& xmlNode)
+  : ScheduledActionFilter()
 {
   *this = xmlNode;
 }

@@ -109,7 +109,7 @@ namespace
         static Aws::String GetTestContainerName()
         {
             // "-" is not allowed in container name, convert uuid to its hex.
-            static const std::string suffix = HashingUtils::HexEncode(ByteBuffer(Aws::Utils::UUID::RandomUUID())).c_str();
+            static const std::string suffix = HashingUtils::HexEncode(ByteBuffer(Aws::Utils::UUID::RandomUUID().operator ByteBuffer())).c_str();
             Aws::StringStream ss;
             ss << Aws::Testing::GetAwsResourcePrefix() << TEST_CONTAINER_NAME_BASE << suffix;
             return Aws::Utils::StringUtils::ToLower(ss.str().c_str());

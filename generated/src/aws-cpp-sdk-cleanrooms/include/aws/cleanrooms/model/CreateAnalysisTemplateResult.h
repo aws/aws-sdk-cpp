@@ -33,53 +33,27 @@ namespace Model
     AWS_CLEANROOMS_API CreateAnalysisTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The analysis template.</p>
      */
     inline const AnalysisTemplate& GetAnalysisTemplate() const{ return m_analysisTemplate; }
-
-    /**
-     * <p>The analysis template.</p>
-     */
     inline void SetAnalysisTemplate(const AnalysisTemplate& value) { m_analysisTemplate = value; }
-
-    /**
-     * <p>The analysis template.</p>
-     */
     inline void SetAnalysisTemplate(AnalysisTemplate&& value) { m_analysisTemplate = std::move(value); }
-
-    /**
-     * <p>The analysis template.</p>
-     */
     inline CreateAnalysisTemplateResult& WithAnalysisTemplate(const AnalysisTemplate& value) { SetAnalysisTemplate(value); return *this;}
-
-    /**
-     * <p>The analysis template.</p>
-     */
     inline CreateAnalysisTemplateResult& WithAnalysisTemplate(AnalysisTemplate&& value) { SetAnalysisTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAnalysisTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAnalysisTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAnalysisTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AnalysisTemplate m_analysisTemplate;

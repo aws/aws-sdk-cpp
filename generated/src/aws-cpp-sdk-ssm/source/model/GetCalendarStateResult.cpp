@@ -22,8 +22,8 @@ GetCalendarStateResult::GetCalendarStateResult() :
 {
 }
 
-GetCalendarStateResult::GetCalendarStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(CalendarState::NOT_SET)
+GetCalendarStateResult::GetCalendarStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetCalendarStateResult()
 {
   *this = result;
 }

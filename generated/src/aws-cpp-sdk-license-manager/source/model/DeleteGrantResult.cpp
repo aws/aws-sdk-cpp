@@ -22,8 +22,8 @@ DeleteGrantResult::DeleteGrantResult() :
 {
 }
 
-DeleteGrantResult::DeleteGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(GrantStatus::NOT_SET)
+DeleteGrantResult::DeleteGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteGrantResult()
 {
   *this = result;
 }

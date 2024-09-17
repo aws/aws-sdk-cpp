@@ -27,12 +27,8 @@ PutPartnerEventsRequestEntry::PutPartnerEventsRequestEntry() :
 {
 }
 
-PutPartnerEventsRequestEntry::PutPartnerEventsRequestEntry(JsonView jsonValue) : 
-    m_timeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false)
+PutPartnerEventsRequestEntry::PutPartnerEventsRequestEntry(JsonView jsonValue)
+  : PutPartnerEventsRequestEntry()
 {
   *this = jsonValue;
 }

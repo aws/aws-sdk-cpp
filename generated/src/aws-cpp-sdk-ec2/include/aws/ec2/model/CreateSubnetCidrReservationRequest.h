@@ -39,88 +39,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of reservation. The reservation type determines how the reserved IP
      * addresses are assigned to resources.</p> <ul> <li> <p> <code>prefix</code> -
@@ -129,94 +76,28 @@ namespace Model
      * network interfaces.</p> </li> </ul>
      */
     inline const SubnetCidrReservationType& GetReservationType() const{ return m_reservationType; }
-
-    /**
-     * <p>The type of reservation. The reservation type determines how the reserved IP
-     * addresses are assigned to resources.</p> <ul> <li> <p> <code>prefix</code> -
-     * Amazon Web Services assigns the reserved IP addresses to network interfaces.</p>
-     * </li> <li> <p> <code>explicit</code> - You assign the reserved IP addresses to
-     * network interfaces.</p> </li> </ul>
-     */
     inline bool ReservationTypeHasBeenSet() const { return m_reservationTypeHasBeenSet; }
-
-    /**
-     * <p>The type of reservation. The reservation type determines how the reserved IP
-     * addresses are assigned to resources.</p> <ul> <li> <p> <code>prefix</code> -
-     * Amazon Web Services assigns the reserved IP addresses to network interfaces.</p>
-     * </li> <li> <p> <code>explicit</code> - You assign the reserved IP addresses to
-     * network interfaces.</p> </li> </ul>
-     */
     inline void SetReservationType(const SubnetCidrReservationType& value) { m_reservationTypeHasBeenSet = true; m_reservationType = value; }
-
-    /**
-     * <p>The type of reservation. The reservation type determines how the reserved IP
-     * addresses are assigned to resources.</p> <ul> <li> <p> <code>prefix</code> -
-     * Amazon Web Services assigns the reserved IP addresses to network interfaces.</p>
-     * </li> <li> <p> <code>explicit</code> - You assign the reserved IP addresses to
-     * network interfaces.</p> </li> </ul>
-     */
     inline void SetReservationType(SubnetCidrReservationType&& value) { m_reservationTypeHasBeenSet = true; m_reservationType = std::move(value); }
-
-    /**
-     * <p>The type of reservation. The reservation type determines how the reserved IP
-     * addresses are assigned to resources.</p> <ul> <li> <p> <code>prefix</code> -
-     * Amazon Web Services assigns the reserved IP addresses to network interfaces.</p>
-     * </li> <li> <p> <code>explicit</code> - You assign the reserved IP addresses to
-     * network interfaces.</p> </li> </ul>
-     */
     inline CreateSubnetCidrReservationRequest& WithReservationType(const SubnetCidrReservationType& value) { SetReservationType(value); return *this;}
-
-    /**
-     * <p>The type of reservation. The reservation type determines how the reserved IP
-     * addresses are assigned to resources.</p> <ul> <li> <p> <code>prefix</code> -
-     * Amazon Web Services assigns the reserved IP addresses to network interfaces.</p>
-     * </li> <li> <p> <code>explicit</code> - You assign the reserved IP addresses to
-     * network interfaces.</p> </li> </ul>
-     */
     inline CreateSubnetCidrReservationRequest& WithReservationType(SubnetCidrReservationType&& value) { SetReservationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description to assign to the subnet CIDR reservation.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description to assign to the subnet CIDR reservation.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description to assign to the subnet CIDR reservation.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description to assign to the subnet CIDR reservation.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description to assign to the subnet CIDR reservation.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description to assign to the subnet CIDR reservation.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description to assign to the subnet CIDR reservation.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description to assign to the subnet CIDR reservation.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -224,72 +105,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to assign to the subnet CIDR reservation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags to assign to the subnet CIDR reservation.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags to assign to the subnet CIDR reservation.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags to assign to the subnet CIDR reservation.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags to assign to the subnet CIDR reservation.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags to assign to the subnet CIDR reservation.</p>
-     */
     inline CreateSubnetCidrReservationRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to assign to the subnet CIDR reservation.</p>
-     */
     inline CreateSubnetCidrReservationRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to assign to the subnet CIDR reservation.</p>
-     */
     inline CreateSubnetCidrReservationRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_subnetId;

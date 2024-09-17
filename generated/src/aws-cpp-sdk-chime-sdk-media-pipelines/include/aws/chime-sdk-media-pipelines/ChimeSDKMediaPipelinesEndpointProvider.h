@@ -26,7 +26,7 @@ using Aws::Endpoint::DefaultEndpointProvider;
 
 using ChimeSDKMediaPipelinesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChimeSDKMediaPipelinesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+using ChimeSDKMediaPipelinesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKMediaPipelinesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
 
 /**

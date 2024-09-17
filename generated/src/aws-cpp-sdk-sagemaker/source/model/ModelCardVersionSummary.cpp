@@ -30,15 +30,8 @@ ModelCardVersionSummary::ModelCardVersionSummary() :
 {
 }
 
-ModelCardVersionSummary::ModelCardVersionSummary(JsonView jsonValue) : 
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardArnHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false),
-    m_modelCardVersion(0),
-    m_modelCardVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+ModelCardVersionSummary::ModelCardVersionSummary(JsonView jsonValue)
+  : ModelCardVersionSummary()
 {
   *this = jsonValue;
 }

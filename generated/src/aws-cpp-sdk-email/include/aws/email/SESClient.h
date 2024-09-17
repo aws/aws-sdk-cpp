@@ -709,13 +709,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeActiveReceiptRuleSetOutcome DescribeActiveReceiptRuleSet(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
+        virtual Model::DescribeActiveReceiptRuleSetOutcome DescribeActiveReceiptRuleSet(const Model::DescribeActiveReceiptRuleSetRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeActiveReceiptRuleSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeActiveReceiptRuleSetRequestT = Model::DescribeActiveReceiptRuleSetRequest>
-        Model::DescribeActiveReceiptRuleSetOutcomeCallable DescribeActiveReceiptRuleSetCallable(const DescribeActiveReceiptRuleSetRequestT& request) const
+        Model::DescribeActiveReceiptRuleSetOutcomeCallable DescribeActiveReceiptRuleSetCallable(const DescribeActiveReceiptRuleSetRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::DescribeActiveReceiptRuleSet, request);
         }
@@ -724,7 +724,7 @@ namespace SES
          * An Async wrapper for DescribeActiveReceiptRuleSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeActiveReceiptRuleSetRequestT = Model::DescribeActiveReceiptRuleSetRequest>
-        void DescribeActiveReceiptRuleSetAsync(const DescribeActiveReceiptRuleSetRequestT& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeActiveReceiptRuleSetAsync(const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeActiveReceiptRuleSetRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::DescribeActiveReceiptRuleSet, request, handler, context);
         }
@@ -823,13 +823,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountSendingEnabledOutcome GetAccountSendingEnabled(const Model::GetAccountSendingEnabledRequest& request) const;
+        virtual Model::GetAccountSendingEnabledOutcome GetAccountSendingEnabled(const Model::GetAccountSendingEnabledRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountSendingEnabled that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountSendingEnabledRequestT = Model::GetAccountSendingEnabledRequest>
-        Model::GetAccountSendingEnabledOutcomeCallable GetAccountSendingEnabledCallable(const GetAccountSendingEnabledRequestT& request) const
+        Model::GetAccountSendingEnabledOutcomeCallable GetAccountSendingEnabledCallable(const GetAccountSendingEnabledRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::GetAccountSendingEnabled, request);
         }
@@ -838,7 +838,7 @@ namespace SES
          * An Async wrapper for GetAccountSendingEnabled that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountSendingEnabledRequestT = Model::GetAccountSendingEnabledRequest>
-        void GetAccountSendingEnabledAsync(const GetAccountSendingEnabledRequestT& request, const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountSendingEnabledAsync(const GetAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSendingEnabledRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::GetAccountSendingEnabled, request, handler, context);
         }
@@ -1056,13 +1056,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSendQuotaOutcome GetSendQuota(const Model::GetSendQuotaRequest& request) const;
+        virtual Model::GetSendQuotaOutcome GetSendQuota(const Model::GetSendQuotaRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSendQuota that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSendQuotaRequestT = Model::GetSendQuotaRequest>
-        Model::GetSendQuotaOutcomeCallable GetSendQuotaCallable(const GetSendQuotaRequestT& request) const
+        Model::GetSendQuotaOutcomeCallable GetSendQuotaCallable(const GetSendQuotaRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::GetSendQuota, request);
         }
@@ -1071,7 +1071,7 @@ namespace SES
          * An Async wrapper for GetSendQuota that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSendQuotaRequestT = Model::GetSendQuotaRequest>
-        void GetSendQuotaAsync(const GetSendQuotaRequestT& request, const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSendQuotaAsync(const GetSendQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSendQuotaRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::GetSendQuota, request, handler, context);
         }
@@ -1085,13 +1085,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSendStatisticsOutcome GetSendStatistics(const Model::GetSendStatisticsRequest& request) const;
+        virtual Model::GetSendStatisticsOutcome GetSendStatistics(const Model::GetSendStatisticsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSendStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSendStatisticsRequestT = Model::GetSendStatisticsRequest>
-        Model::GetSendStatisticsOutcomeCallable GetSendStatisticsCallable(const GetSendStatisticsRequestT& request) const
+        Model::GetSendStatisticsOutcomeCallable GetSendStatisticsCallable(const GetSendStatisticsRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::GetSendStatistics, request);
         }
@@ -1100,7 +1100,7 @@ namespace SES
          * An Async wrapper for GetSendStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSendStatisticsRequestT = Model::GetSendStatisticsRequest>
-        void GetSendStatisticsAsync(const GetSendStatisticsRequestT& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSendStatisticsAsync(const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSendStatisticsRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::GetSendStatistics, request, handler, context);
         }
@@ -1148,13 +1148,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConfigurationSetsOutcome ListConfigurationSets(const Model::ListConfigurationSetsRequest& request) const;
+        virtual Model::ListConfigurationSetsOutcome ListConfigurationSets(const Model::ListConfigurationSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConfigurationSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConfigurationSetsRequestT = Model::ListConfigurationSetsRequest>
-        Model::ListConfigurationSetsOutcomeCallable ListConfigurationSetsCallable(const ListConfigurationSetsRequestT& request) const
+        Model::ListConfigurationSetsOutcomeCallable ListConfigurationSetsCallable(const ListConfigurationSetsRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::ListConfigurationSets, request);
         }
@@ -1163,7 +1163,7 @@ namespace SES
          * An Async wrapper for ListConfigurationSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConfigurationSetsRequestT = Model::ListConfigurationSetsRequest>
-        void ListConfigurationSetsAsync(const ListConfigurationSetsRequestT& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConfigurationSetsAsync(const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfigurationSetsRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::ListConfigurationSets, request, handler, context);
         }
@@ -1179,13 +1179,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCustomVerificationEmailTemplatesOutcome ListCustomVerificationEmailTemplates(const Model::ListCustomVerificationEmailTemplatesRequest& request) const;
+        virtual Model::ListCustomVerificationEmailTemplatesOutcome ListCustomVerificationEmailTemplates(const Model::ListCustomVerificationEmailTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCustomVerificationEmailTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCustomVerificationEmailTemplatesRequestT = Model::ListCustomVerificationEmailTemplatesRequest>
-        Model::ListCustomVerificationEmailTemplatesOutcomeCallable ListCustomVerificationEmailTemplatesCallable(const ListCustomVerificationEmailTemplatesRequestT& request) const
+        Model::ListCustomVerificationEmailTemplatesOutcomeCallable ListCustomVerificationEmailTemplatesCallable(const ListCustomVerificationEmailTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::ListCustomVerificationEmailTemplates, request);
         }
@@ -1194,7 +1194,7 @@ namespace SES
          * An Async wrapper for ListCustomVerificationEmailTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCustomVerificationEmailTemplatesRequestT = Model::ListCustomVerificationEmailTemplatesRequest>
-        void ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesRequestT& request, const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCustomVerificationEmailTemplatesAsync(const ListCustomVerificationEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomVerificationEmailTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::ListCustomVerificationEmailTemplates, request, handler, context);
         }
@@ -1216,13 +1216,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIdentitiesOutcome ListIdentities(const Model::ListIdentitiesRequest& request) const;
+        virtual Model::ListIdentitiesOutcome ListIdentities(const Model::ListIdentitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIdentities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIdentitiesRequestT = Model::ListIdentitiesRequest>
-        Model::ListIdentitiesOutcomeCallable ListIdentitiesCallable(const ListIdentitiesRequestT& request) const
+        Model::ListIdentitiesOutcomeCallable ListIdentitiesCallable(const ListIdentitiesRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::ListIdentities, request);
         }
@@ -1231,7 +1231,7 @@ namespace SES
          * An Async wrapper for ListIdentities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIdentitiesRequestT = Model::ListIdentitiesRequest>
-        void ListIdentitiesAsync(const ListIdentitiesRequestT& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIdentitiesAsync(const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIdentitiesRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::ListIdentities, request, handler, context);
         }
@@ -1281,13 +1281,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request) const;
+        virtual Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReceiptFilters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReceiptFiltersRequestT = Model::ListReceiptFiltersRequest>
-        Model::ListReceiptFiltersOutcomeCallable ListReceiptFiltersCallable(const ListReceiptFiltersRequestT& request) const
+        Model::ListReceiptFiltersOutcomeCallable ListReceiptFiltersCallable(const ListReceiptFiltersRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::ListReceiptFilters, request);
         }
@@ -1296,7 +1296,7 @@ namespace SES
          * An Async wrapper for ListReceiptFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReceiptFiltersRequestT = Model::ListReceiptFiltersRequest>
-        void ListReceiptFiltersAsync(const ListReceiptFiltersRequestT& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReceiptFiltersAsync(const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReceiptFiltersRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::ListReceiptFilters, request, handler, context);
         }
@@ -1313,13 +1313,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReceiptRuleSetsOutcome ListReceiptRuleSets(const Model::ListReceiptRuleSetsRequest& request) const;
+        virtual Model::ListReceiptRuleSetsOutcome ListReceiptRuleSets(const Model::ListReceiptRuleSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReceiptRuleSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReceiptRuleSetsRequestT = Model::ListReceiptRuleSetsRequest>
-        Model::ListReceiptRuleSetsOutcomeCallable ListReceiptRuleSetsCallable(const ListReceiptRuleSetsRequestT& request) const
+        Model::ListReceiptRuleSetsOutcomeCallable ListReceiptRuleSetsCallable(const ListReceiptRuleSetsRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::ListReceiptRuleSets, request);
         }
@@ -1328,7 +1328,7 @@ namespace SES
          * An Async wrapper for ListReceiptRuleSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReceiptRuleSetsRequestT = Model::ListReceiptRuleSetsRequest>
-        void ListReceiptRuleSetsAsync(const ListReceiptRuleSetsRequestT& request, const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReceiptRuleSetsAsync(const ListReceiptRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReceiptRuleSetsRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::ListReceiptRuleSets, request, handler, context);
         }
@@ -1340,13 +1340,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTemplatesOutcome ListTemplates(const Model::ListTemplatesRequest& request) const;
+        virtual Model::ListTemplatesOutcome ListTemplates(const Model::ListTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTemplatesRequestT = Model::ListTemplatesRequest>
-        Model::ListTemplatesOutcomeCallable ListTemplatesCallable(const ListTemplatesRequestT& request) const
+        Model::ListTemplatesOutcomeCallable ListTemplatesCallable(const ListTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::ListTemplates, request);
         }
@@ -1355,7 +1355,7 @@ namespace SES
          * An Async wrapper for ListTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTemplatesRequestT = Model::ListTemplatesRequest>
-        void ListTemplatesAsync(const ListTemplatesRequestT& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTemplatesAsync(const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::ListTemplates, request, handler, context);
         }
@@ -1367,13 +1367,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVerifiedEmailAddressesOutcome ListVerifiedEmailAddresses(const Model::ListVerifiedEmailAddressesRequest& request) const;
+        virtual Model::ListVerifiedEmailAddressesOutcome ListVerifiedEmailAddresses(const Model::ListVerifiedEmailAddressesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVerifiedEmailAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVerifiedEmailAddressesRequestT = Model::ListVerifiedEmailAddressesRequest>
-        Model::ListVerifiedEmailAddressesOutcomeCallable ListVerifiedEmailAddressesCallable(const ListVerifiedEmailAddressesRequestT& request) const
+        Model::ListVerifiedEmailAddressesOutcomeCallable ListVerifiedEmailAddressesCallable(const ListVerifiedEmailAddressesRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::ListVerifiedEmailAddresses, request);
         }
@@ -1382,7 +1382,7 @@ namespace SES
          * An Async wrapper for ListVerifiedEmailAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVerifiedEmailAddressesRequestT = Model::ListVerifiedEmailAddressesRequest>
-        void ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesRequestT& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVerifiedEmailAddressesAsync(const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVerifiedEmailAddressesRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::ListVerifiedEmailAddresses, request, handler, context);
         }
@@ -1798,13 +1798,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">AWS
          * API Reference</a></p>
          */
-        virtual Model::SetActiveReceiptRuleSetOutcome SetActiveReceiptRuleSet(const Model::SetActiveReceiptRuleSetRequest& request) const;
+        virtual Model::SetActiveReceiptRuleSetOutcome SetActiveReceiptRuleSet(const Model::SetActiveReceiptRuleSetRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SetActiveReceiptRuleSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SetActiveReceiptRuleSetRequestT = Model::SetActiveReceiptRuleSetRequest>
-        Model::SetActiveReceiptRuleSetOutcomeCallable SetActiveReceiptRuleSetCallable(const SetActiveReceiptRuleSetRequestT& request) const
+        Model::SetActiveReceiptRuleSetOutcomeCallable SetActiveReceiptRuleSetCallable(const SetActiveReceiptRuleSetRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::SetActiveReceiptRuleSet, request);
         }
@@ -1813,7 +1813,7 @@ namespace SES
          * An Async wrapper for SetActiveReceiptRuleSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SetActiveReceiptRuleSetRequestT = Model::SetActiveReceiptRuleSetRequest>
-        void SetActiveReceiptRuleSetAsync(const SetActiveReceiptRuleSetRequestT& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SetActiveReceiptRuleSetAsync(const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SetActiveReceiptRuleSetRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::SetActiveReceiptRuleSet, request, handler, context);
         }
@@ -2054,13 +2054,13 @@ namespace SES
          * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountSendingEnabledOutcome UpdateAccountSendingEnabled(const Model::UpdateAccountSendingEnabledRequest& request) const;
+        virtual Model::UpdateAccountSendingEnabledOutcome UpdateAccountSendingEnabled(const Model::UpdateAccountSendingEnabledRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccountSendingEnabled that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountSendingEnabledRequestT = Model::UpdateAccountSendingEnabledRequest>
-        Model::UpdateAccountSendingEnabledOutcomeCallable UpdateAccountSendingEnabledCallable(const UpdateAccountSendingEnabledRequestT& request) const
+        Model::UpdateAccountSendingEnabledOutcomeCallable UpdateAccountSendingEnabledCallable(const UpdateAccountSendingEnabledRequestT& request = {}) const
         {
             return SubmitCallable(&SESClient::UpdateAccountSendingEnabled, request);
         }
@@ -2069,7 +2069,7 @@ namespace SES
          * An Async wrapper for UpdateAccountSendingEnabled that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountSendingEnabledRequestT = Model::UpdateAccountSendingEnabledRequest>
-        void UpdateAccountSendingEnabledAsync(const UpdateAccountSendingEnabledRequestT& request, const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountSendingEnabledAsync(const UpdateAccountSendingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountSendingEnabledRequestT& request = {}) const
         {
             return SubmitAsync(&SESClient::UpdateAccountSendingEnabled, request, handler, context);
         }
@@ -2433,7 +2433,6 @@ namespace SES
         void init(const SESClientConfiguration& clientConfiguration);
 
         SESClientConfiguration m_clientConfiguration;
-        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
         std::shared_ptr<SESEndpointProviderBase> m_endpointProvider;
   };
 

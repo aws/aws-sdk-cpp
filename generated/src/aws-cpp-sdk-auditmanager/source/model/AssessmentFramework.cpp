@@ -26,11 +26,8 @@ AssessmentFramework::AssessmentFramework() :
 {
 }
 
-AssessmentFramework::AssessmentFramework(JsonView jsonValue) : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_controlSetsHasBeenSet(false)
+AssessmentFramework::AssessmentFramework(JsonView jsonValue)
+  : AssessmentFramework()
 {
   *this = jsonValue;
 }

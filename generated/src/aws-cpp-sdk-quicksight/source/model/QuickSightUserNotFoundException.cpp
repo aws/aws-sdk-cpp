@@ -24,9 +24,8 @@ QuickSightUserNotFoundException::QuickSightUserNotFoundException() :
 {
 }
 
-QuickSightUserNotFoundException::QuickSightUserNotFoundException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+QuickSightUserNotFoundException::QuickSightUserNotFoundException(JsonView jsonValue)
+  : QuickSightUserNotFoundException()
 {
   *this = jsonValue;
 }

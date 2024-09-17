@@ -34,46 +34,19 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Token ID.</p>
      */
     inline const Aws::String& GetTokenId() const{ return m_tokenId; }
-
-    /**
-     * <p>Token ID.</p>
-     */
     inline bool TokenIdHasBeenSet() const { return m_tokenIdHasBeenSet; }
-
-    /**
-     * <p>Token ID.</p>
-     */
     inline void SetTokenId(const Aws::String& value) { m_tokenIdHasBeenSet = true; m_tokenId = value; }
-
-    /**
-     * <p>Token ID.</p>
-     */
     inline void SetTokenId(Aws::String&& value) { m_tokenIdHasBeenSet = true; m_tokenId = std::move(value); }
-
-    /**
-     * <p>Token ID.</p>
-     */
     inline void SetTokenId(const char* value) { m_tokenIdHasBeenSet = true; m_tokenId.assign(value); }
-
-    /**
-     * <p>Token ID.</p>
-     */
     inline DeleteTokenRequest& WithTokenId(const Aws::String& value) { SetTokenId(value); return *this;}
-
-    /**
-     * <p>Token ID.</p>
-     */
     inline DeleteTokenRequest& WithTokenId(Aws::String&& value) { SetTokenId(std::move(value)); return *this;}
-
-    /**
-     * <p>Token ID.</p>
-     */
     inline DeleteTokenRequest& WithTokenId(const char* value) { SetTokenId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tokenId;

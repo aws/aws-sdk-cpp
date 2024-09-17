@@ -37,95 +37,34 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The device key.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline void SetDeviceKey(const char* value) { m_deviceKeyHasBeenSet = true; m_deviceKey.assign(value); }
-
-    /**
-     * <p>The device key.</p>
-     */
     inline GetDeviceRequest& WithDeviceKey(const Aws::String& value) { SetDeviceKey(value); return *this;}
-
-    /**
-     * <p>The device key.</p>
-     */
     inline GetDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The device key.</p>
-     */
     inline GetDeviceRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A valid access token that Amazon Cognito issued to the user whose device
      * information you want to request.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * information you want to request.</p>
-     */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * information you want to request.</p>
-     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * information you want to request.</p>
-     */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * information you want to request.</p>
-     */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * information you want to request.</p>
-     */
     inline GetDeviceRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * information you want to request.</p>
-     */
     inline GetDeviceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user whose device
-     * information you want to request.</p>
-     */
     inline GetDeviceRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceKey;

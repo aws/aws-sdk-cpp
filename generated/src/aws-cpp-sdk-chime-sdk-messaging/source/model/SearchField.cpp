@@ -27,12 +27,8 @@ SearchField::SearchField() :
 {
 }
 
-SearchField::SearchField(JsonView jsonValue) : 
-    m_key(SearchFieldKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(SearchFieldOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
+SearchField::SearchField(JsonView jsonValue)
+  : SearchField()
 {
   *this = jsonValue;
 }

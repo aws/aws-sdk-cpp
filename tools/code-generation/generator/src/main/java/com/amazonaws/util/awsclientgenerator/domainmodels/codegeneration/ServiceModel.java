@@ -32,16 +32,6 @@ public class ServiceModel {
     boolean enableVirtualOperations;
     Collection<Error> serviceErrors;
 
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
-    Set<String> inputShapes = new HashSet<>();
-
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
-    Set<String> outputShapes = new HashSet<>();
-
-
-
     public boolean hasStreamingRequestShapes() {
         return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers()));
     }
@@ -71,7 +61,26 @@ public class ServiceModel {
         return operations.values().parallelStream().allMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
     }
 
-    String endpointRules;
+    public boolean hasServiceSpecificClientConfig() {
+        return metadata.getServiceId().equalsIgnoreCase("S3") ||
+                metadata.getServiceId().equalsIgnoreCase("S3-CRT") ||
+                metadata.getServiceId().equalsIgnoreCase("S3 Control") ||
+                metadata.isHasEndpointDiscoveryTrait() ||
+                endpointRuleSetModel.getParameters().containsKey("AccountId") || endpointRuleSetModel.getParameters().containsKey("AccountIdEndpointMode");
+    }
+
+    public Operation getOperationForRequestShapeName(String requestShapeName) {
+        for (Map.Entry<String, Operation> opEntry : operations.entrySet()) {
+            Operation op = opEntry.getValue();
+            if (op.getRequest() != null && op.getRequest().getShape().getName() == requestShapeName) {
+                return op;
+            }
+        }
+        return null;
+    }
+
+    String endpointRules; // as a blob
+    EndpointRuleSetModel endpointRuleSetModel;
     EndpointTests endpointTests;
     ClientContextParams clientContextParams;
 }

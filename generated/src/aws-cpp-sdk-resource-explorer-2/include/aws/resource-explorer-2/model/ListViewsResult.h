@@ -33,6 +33,7 @@ namespace Model
     AWS_RESOURCEEXPLORER2_API ListViewsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If present, indicates that more output is available than is included in the
      * current response. Use this value in the <code>NextToken</code> request parameter
@@ -41,132 +42,39 @@ namespace Model
      * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-     */
     inline ListViewsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-     */
     inline ListViewsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If present, indicates that more output is available than is included in the
-     * current response. Use this value in the <code>NextToken</code> request parameter
-     * in a subsequent call to the operation to get the next part of the output. You
-     * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-     */
     inline ListViewsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of views available in the Amazon Web Services Region in which you
      * called this operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetViews() const{ return m_views; }
-
-    /**
-     * <p>The list of views available in the Amazon Web Services Region in which you
-     * called this operation.</p>
-     */
     inline void SetViews(const Aws::Vector<Aws::String>& value) { m_views = value; }
-
-    /**
-     * <p>The list of views available in the Amazon Web Services Region in which you
-     * called this operation.</p>
-     */
     inline void SetViews(Aws::Vector<Aws::String>&& value) { m_views = std::move(value); }
-
-    /**
-     * <p>The list of views available in the Amazon Web Services Region in which you
-     * called this operation.</p>
-     */
     inline ListViewsResult& WithViews(const Aws::Vector<Aws::String>& value) { SetViews(value); return *this;}
-
-    /**
-     * <p>The list of views available in the Amazon Web Services Region in which you
-     * called this operation.</p>
-     */
     inline ListViewsResult& WithViews(Aws::Vector<Aws::String>&& value) { SetViews(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of views available in the Amazon Web Services Region in which you
-     * called this operation.</p>
-     */
     inline ListViewsResult& AddViews(const Aws::String& value) { m_views.push_back(value); return *this; }
-
-    /**
-     * <p>The list of views available in the Amazon Web Services Region in which you
-     * called this operation.</p>
-     */
     inline ListViewsResult& AddViews(Aws::String&& value) { m_views.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of views available in the Amazon Web Services Region in which you
-     * called this operation.</p>
-     */
     inline ListViewsResult& AddViews(const char* value) { m_views.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListViewsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListViewsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListViewsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

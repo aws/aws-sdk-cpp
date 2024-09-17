@@ -27,10 +27,8 @@ RouteTableAssociationState::RouteTableAssociationState() :
 {
 }
 
-RouteTableAssociationState::RouteTableAssociationState(const XmlNode& xmlNode) : 
-    m_state(RouteTableAssociationStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+RouteTableAssociationState::RouteTableAssociationState(const XmlNode& xmlNode)
+  : RouteTableAssociationState()
 {
   *this = xmlNode;
 }

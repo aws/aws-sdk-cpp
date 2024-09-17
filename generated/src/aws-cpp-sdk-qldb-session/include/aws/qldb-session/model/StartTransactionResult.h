@@ -39,77 +39,31 @@ namespace Model
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The transaction ID of the started transaction.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
-
-    /**
-     * <p>The transaction ID of the started transaction.</p>
-     */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-
-    /**
-     * <p>The transaction ID of the started transaction.</p>
-     */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-
-    /**
-     * <p>The transaction ID of the started transaction.</p>
-     */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-
-    /**
-     * <p>The transaction ID of the started transaction.</p>
-     */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-
-    /**
-     * <p>The transaction ID of the started transaction.</p>
-     */
     inline StartTransactionResult& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-
-    /**
-     * <p>The transaction ID of the started transaction.</p>
-     */
     inline StartTransactionResult& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The transaction ID of the started transaction.</p>
-     */
     inline StartTransactionResult& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains server-side performance information for the command.</p>
      */
     inline const TimingInformation& GetTimingInformation() const{ return m_timingInformation; }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline void SetTimingInformation(const TimingInformation& value) { m_timingInformationHasBeenSet = true; m_timingInformation = value; }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline void SetTimingInformation(TimingInformation&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::move(value); }
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline StartTransactionResult& WithTimingInformation(const TimingInformation& value) { SetTimingInformation(value); return *this;}
-
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
     inline StartTransactionResult& WithTimingInformation(TimingInformation&& value) { SetTimingInformation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transactionId;

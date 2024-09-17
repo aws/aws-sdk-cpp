@@ -34,6 +34,8 @@ namespace Aws
         static const int RESOURCE_SCAN_NOT_DISABLED_HASH = HashingUtils::HashString("RESOURCE_SCAN_NOT_DISABLED");
         static const int DISASSOCIATE_ALL_MEMBERS_HASH = HashingUtils::HashString("DISASSOCIATE_ALL_MEMBERS");
         static const int ACCOUNT_IS_ISOLATED_HASH = HashingUtils::HashString("ACCOUNT_IS_ISOLATED");
+        static const int EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED");
+        static const int EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -95,6 +97,14 @@ namespace Aws
           {
             return ErrorCode::ACCOUNT_IS_ISOLATED;
           }
+          else if (hashCode == EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED_HASH)
+          {
+            return ErrorCode::EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH)
+          {
+            return ErrorCode::EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +149,10 @@ namespace Aws
             return "DISASSOCIATE_ALL_MEMBERS";
           case ErrorCode::ACCOUNT_IS_ISOLATED:
             return "ACCOUNT_IS_ISOLATED";
+          case ErrorCode::EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED:
+            return "EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED";
+          case ErrorCode::EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED:
+            return "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

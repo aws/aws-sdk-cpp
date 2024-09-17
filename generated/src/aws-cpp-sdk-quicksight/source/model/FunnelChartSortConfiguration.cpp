@@ -24,9 +24,8 @@ FunnelChartSortConfiguration::FunnelChartSortConfiguration() :
 {
 }
 
-FunnelChartSortConfiguration::FunnelChartSortConfiguration(JsonView jsonValue) : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitHasBeenSet(false)
+FunnelChartSortConfiguration::FunnelChartSortConfiguration(JsonView jsonValue)
+  : FunnelChartSortConfiguration()
 {
   *this = jsonValue;
 }

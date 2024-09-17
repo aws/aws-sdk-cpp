@@ -19,36 +19,48 @@ namespace Model
 {
 
 AudienceExportJobSummary::AudienceExportJobSummary() : 
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_audienceGenerationJobArnHasBeenSet(false),
     m_audienceSizeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
     m_status(AudienceExportJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusDetailsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_outputLocationHasBeenSet(false)
 {
 }
 
-AudienceExportJobSummary::AudienceExportJobSummary(JsonView jsonValue) : 
-    m_audienceGenerationJobArnHasBeenSet(false),
-    m_audienceSizeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_status(AudienceExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+AudienceExportJobSummary::AudienceExportJobSummary(JsonView jsonValue)
+  : AudienceExportJobSummary()
 {
   *this = jsonValue;
 }
 
 AudienceExportJobSummary& AudienceExportJobSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("createTime"))
+  {
+    m_createTime = jsonValue.GetString("createTime");
+
+    m_createTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
+
+    m_updateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audienceGenerationJobArn"))
   {
     m_audienceGenerationJobArn = jsonValue.GetString("audienceGenerationJobArn");
@@ -63,32 +75,11 @@ AudienceExportJobSummary& AudienceExportJobSummary::operator =(JsonView jsonValu
     m_audienceSizeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createTime"))
-  {
-    m_createTime = jsonValue.GetString("createTime");
-
-    m_createTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("outputLocation"))
-  {
-    m_outputLocation = jsonValue.GetString("outputLocation");
-
-    m_outputLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -105,11 +96,11 @@ AudienceExportJobSummary& AudienceExportJobSummary::operator =(JsonView jsonValu
     m_statusDetailsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updateTime"))
+  if(jsonValue.ValueExists("outputLocation"))
   {
-    m_updateTime = jsonValue.GetString("updateTime");
+    m_outputLocation = jsonValue.GetString("outputLocation");
 
-    m_updateTimeHasBeenSet = true;
+    m_outputLocationHasBeenSet = true;
   }
 
   return *this;
@@ -118,6 +109,22 @@ AudienceExportJobSummary& AudienceExportJobSummary::operator =(JsonView jsonValu
 JsonValue AudienceExportJobSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_createTimeHasBeenSet)
+  {
+   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updateTimeHasBeenSet)
+  {
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_audienceGenerationJobArnHasBeenSet)
   {
@@ -131,26 +138,9 @@ JsonValue AudienceExportJobSummary::Jsonize() const
 
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithString("createTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_outputLocationHasBeenSet)
-  {
-   payload.WithString("outputLocation", m_outputLocation);
 
   }
 
@@ -165,9 +155,10 @@ JsonValue AudienceExportJobSummary::Jsonize() const
 
   }
 
-  if(m_updateTimeHasBeenSet)
+  if(m_outputLocationHasBeenSet)
   {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("outputLocation", m_outputLocation);
+
   }
 
   return payload;

@@ -26,9 +26,8 @@ InstanceRefreshProgressDetails::InstanceRefreshProgressDetails() :
 {
 }
 
-InstanceRefreshProgressDetails::InstanceRefreshProgressDetails(const XmlNode& xmlNode) : 
-    m_livePoolProgressHasBeenSet(false),
-    m_warmPoolProgressHasBeenSet(false)
+InstanceRefreshProgressDetails::InstanceRefreshProgressDetails(const XmlNode& xmlNode)
+  : InstanceRefreshProgressDetails()
 {
   *this = xmlNode;
 }

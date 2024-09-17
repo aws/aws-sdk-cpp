@@ -24,9 +24,8 @@ MembershipQueryComputePaymentConfig::MembershipQueryComputePaymentConfig() :
 {
 }
 
-MembershipQueryComputePaymentConfig::MembershipQueryComputePaymentConfig(JsonView jsonValue) : 
-    m_isResponsible(false),
-    m_isResponsibleHasBeenSet(false)
+MembershipQueryComputePaymentConfig::MembershipQueryComputePaymentConfig(JsonView jsonValue)
+  : MembershipQueryComputePaymentConfig()
 {
   *this = jsonValue;
 }

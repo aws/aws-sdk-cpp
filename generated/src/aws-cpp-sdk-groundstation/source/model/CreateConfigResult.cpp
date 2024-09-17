@@ -22,8 +22,8 @@ CreateConfigResult::CreateConfigResult() :
 {
 }
 
-CreateConfigResult::CreateConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_configType(ConfigCapabilityType::NOT_SET)
+CreateConfigResult::CreateConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateConfigResult()
 {
   *this = result;
 }

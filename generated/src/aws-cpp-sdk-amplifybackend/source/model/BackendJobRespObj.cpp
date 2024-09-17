@@ -30,15 +30,8 @@ BackendJobRespObj::BackendJobRespObj() :
 {
 }
 
-BackendJobRespObj::BackendJobRespObj(JsonView jsonValue) : 
-    m_appIdHasBeenSet(false),
-    m_backendEnvironmentNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+BackendJobRespObj::BackendJobRespObj(JsonView jsonValue)
+  : BackendJobRespObj()
 {
   *this = jsonValue;
 }

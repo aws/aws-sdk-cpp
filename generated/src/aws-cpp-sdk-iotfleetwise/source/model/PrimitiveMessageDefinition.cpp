@@ -23,8 +23,8 @@ PrimitiveMessageDefinition::PrimitiveMessageDefinition() :
 {
 }
 
-PrimitiveMessageDefinition::PrimitiveMessageDefinition(JsonView jsonValue) : 
-    m_ros2PrimitiveMessageDefinitionHasBeenSet(false)
+PrimitiveMessageDefinition::PrimitiveMessageDefinition(JsonView jsonValue)
+  : PrimitiveMessageDefinition()
 {
   *this = jsonValue;
 }

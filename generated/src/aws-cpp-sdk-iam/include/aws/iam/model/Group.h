@@ -43,104 +43,37 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The path to the group. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithPath(const char* value) { SetPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The friendly name that identifies the group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The friendly name that identifies the group.</p>
-     */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>The friendly name that identifies the group.</p>
-     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The friendly name that identifies the group.</p>
-     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The friendly name that identifies the group.</p>
-     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The friendly name that identifies the group.</p>
-     */
     inline Group& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The friendly name that identifies the group.</p>
-     */
     inline Group& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The friendly name that identifies the group.</p>
-     */
     inline Group& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The stable and unique string identifying the group. For more information
      * about IDs, see <a
@@ -148,64 +81,16 @@ namespace Model
      * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p> The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-
-    /**
-     * <p> The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p> The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * <p> The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p> The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p> The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p> The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) specifying the group. For more information
      * about ARNs and how to use them in policies, see <a
@@ -213,100 +98,27 @@ namespace Model
      * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) specifying the group. For more information
-     * about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) specifying the group. For more information
-     * about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) specifying the group. For more information
-     * about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) specifying the group. For more information
-     * about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) specifying the group. For more information
-     * about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) specifying the group. For more information
-     * about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) specifying the group. For more information
-     * about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * identifiers</a> in the <i>IAM User Guide</i>. </p>
-     */
     inline Group& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the group was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the group was created.</p>
-     */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the group was created.</p>
-     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the group was created.</p>
-     */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the group was created.</p>
-     */
     inline Group& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-
-    /**
-     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
-     * date-time format</a>, when the group was created.</p>
-     */
     inline Group& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_path;

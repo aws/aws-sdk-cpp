@@ -45,36 +45,18 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
-     * <p> The Amazon Web Service that the configuration policy applies to. </p>
+     * <p> The Amazon Web Servicesservice that the configuration policy applies to.
+     * </p>
      */
     inline const SecurityHubPolicy& GetSecurityHub() const{ return m_securityHub; }
-
-    /**
-     * <p> The Amazon Web Service that the configuration policy applies to. </p>
-     */
     inline bool SecurityHubHasBeenSet() const { return m_securityHubHasBeenSet; }
-
-    /**
-     * <p> The Amazon Web Service that the configuration policy applies to. </p>
-     */
     inline void SetSecurityHub(const SecurityHubPolicy& value) { m_securityHubHasBeenSet = true; m_securityHub = value; }
-
-    /**
-     * <p> The Amazon Web Service that the configuration policy applies to. </p>
-     */
     inline void SetSecurityHub(SecurityHubPolicy&& value) { m_securityHubHasBeenSet = true; m_securityHub = std::move(value); }
-
-    /**
-     * <p> The Amazon Web Service that the configuration policy applies to. </p>
-     */
     inline Policy& WithSecurityHub(const SecurityHubPolicy& value) { SetSecurityHub(value); return *this;}
-
-    /**
-     * <p> The Amazon Web Service that the configuration policy applies to. </p>
-     */
     inline Policy& WithSecurityHub(SecurityHubPolicy&& value) { SetSecurityHub(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SecurityHubPolicy m_securityHub;

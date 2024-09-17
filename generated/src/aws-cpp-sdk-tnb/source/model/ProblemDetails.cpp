@@ -24,9 +24,8 @@ ProblemDetails::ProblemDetails() :
 {
 }
 
-ProblemDetails::ProblemDetails(JsonView jsonValue) : 
-    m_detailHasBeenSet(false),
-    m_titleHasBeenSet(false)
+ProblemDetails::ProblemDetails(JsonView jsonValue)
+  : ProblemDetails()
 {
   *this = jsonValue;
 }

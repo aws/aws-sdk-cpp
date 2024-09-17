@@ -39,47 +39,25 @@ namespace Model
     AWS_IAM_API UploadSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Contains information about the SSH public key.</p>
      */
     inline const SSHPublicKey& GetSSHPublicKey() const{ return m_sSHPublicKey; }
-
-    /**
-     * <p>Contains information about the SSH public key.</p>
-     */
     inline void SetSSHPublicKey(const SSHPublicKey& value) { m_sSHPublicKey = value; }
-
-    /**
-     * <p>Contains information about the SSH public key.</p>
-     */
     inline void SetSSHPublicKey(SSHPublicKey&& value) { m_sSHPublicKey = std::move(value); }
-
-    /**
-     * <p>Contains information about the SSH public key.</p>
-     */
     inline UploadSSHPublicKeyResult& WithSSHPublicKey(const SSHPublicKey& value) { SetSSHPublicKey(value); return *this;}
-
-    /**
-     * <p>Contains information about the SSH public key.</p>
-     */
     inline UploadSSHPublicKeyResult& WithSSHPublicKey(SSHPublicKey&& value) { SetSSHPublicKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UploadSSHPublicKeyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UploadSSHPublicKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SSHPublicKey m_sSHPublicKey;

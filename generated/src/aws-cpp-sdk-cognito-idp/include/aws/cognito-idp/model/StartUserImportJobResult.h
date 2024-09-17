@@ -39,53 +39,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The job object that represents the user import job.</p>
      */
     inline const UserImportJobType& GetUserImportJob() const{ return m_userImportJob; }
-
-    /**
-     * <p>The job object that represents the user import job.</p>
-     */
     inline void SetUserImportJob(const UserImportJobType& value) { m_userImportJob = value; }
-
-    /**
-     * <p>The job object that represents the user import job.</p>
-     */
     inline void SetUserImportJob(UserImportJobType&& value) { m_userImportJob = std::move(value); }
-
-    /**
-     * <p>The job object that represents the user import job.</p>
-     */
     inline StartUserImportJobResult& WithUserImportJob(const UserImportJobType& value) { SetUserImportJob(value); return *this;}
-
-    /**
-     * <p>The job object that represents the user import job.</p>
-     */
     inline StartUserImportJobResult& WithUserImportJob(UserImportJobType&& value) { SetUserImportJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartUserImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartUserImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartUserImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     UserImportJobType m_userImportJob;

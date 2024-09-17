@@ -23,8 +23,8 @@ DeviceConfig::DeviceConfig() :
 {
 }
 
-DeviceConfig::DeviceConfig(JsonView jsonValue) : 
-    m_deviceHasBeenSet(false)
+DeviceConfig::DeviceConfig(JsonView jsonValue)
+  : DeviceConfig()
 {
   *this = jsonValue;
 }

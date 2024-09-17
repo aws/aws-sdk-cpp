@@ -34,19 +34,8 @@ CaseDetails::CaseDetails() :
 {
 }
 
-CaseDetails::CaseDetails(JsonView jsonValue) : 
-    m_caseIdHasBeenSet(false),
-    m_displayIdHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_categoryCodeHasBeenSet(false),
-    m_severityCodeHasBeenSet(false),
-    m_submittedByHasBeenSet(false),
-    m_timeCreatedHasBeenSet(false),
-    m_recentCommunicationsHasBeenSet(false),
-    m_ccEmailAddressesHasBeenSet(false),
-    m_languageHasBeenSet(false)
+CaseDetails::CaseDetails(JsonView jsonValue)
+  : CaseDetails()
 {
   *this = jsonValue;
 }

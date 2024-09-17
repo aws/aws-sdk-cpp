@@ -28,6 +28,7 @@
 #include <aws/redshift-data/model/ListSchemasResult.h>
 #include <aws/redshift-data/model/ListStatementsResult.h>
 #include <aws/redshift-data/model/ListTablesResult.h>
+#include <aws/redshift-data/model/ListStatementsRequest.h>
 /* End of service model headers required in RedshiftDataAPIServiceClient header */
 
 namespace Aws
@@ -61,7 +62,7 @@ namespace Aws
 
   namespace RedshiftDataAPIService
   {
-    using RedshiftDataAPIServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using RedshiftDataAPIServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
     using RedshiftDataAPIServiceEndpointProviderBase = Aws::RedshiftDataAPIService::Endpoint::RedshiftDataAPIServiceEndpointProviderBase;
     using RedshiftDataAPIServiceEndpointProvider = Aws::RedshiftDataAPIService::Endpoint::RedshiftDataAPIServiceEndpointProvider;
 

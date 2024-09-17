@@ -23,8 +23,8 @@ EvaluationContext::EvaluationContext() :
 {
 }
 
-EvaluationContext::EvaluationContext(JsonView jsonValue) : 
-    m_evaluationContextIdentifierHasBeenSet(false)
+EvaluationContext::EvaluationContext(JsonView jsonValue)
+  : EvaluationContext()
 {
   *this = jsonValue;
 }

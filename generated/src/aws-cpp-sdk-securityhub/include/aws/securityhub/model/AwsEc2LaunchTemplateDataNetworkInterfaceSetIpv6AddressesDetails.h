@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
      * subnet. </p>
      */
     inline const Aws::String& GetIpv6Address() const{ return m_ipv6Address; }
-
-    /**
-     * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. </p>
-     */
     inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
-
-    /**
-     * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. </p>
-     */
     inline void SetIpv6Address(const Aws::String& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
-
-    /**
-     * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. </p>
-     */
     inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::move(value); }
-
-    /**
-     * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. </p>
-     */
     inline void SetIpv6Address(const char* value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address.assign(value); }
-
-    /**
-     * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. </p>
-     */
     inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails& WithIpv6Address(const Aws::String& value) { SetIpv6Address(value); return *this;}
-
-    /**
-     * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. </p>
-     */
     inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
-
-    /**
-     * <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your
-     * subnet. </p>
-     */
     inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipv6Address;

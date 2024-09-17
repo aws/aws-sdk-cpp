@@ -24,9 +24,8 @@ CertificateAlreadyExistsException::CertificateAlreadyExistsException() :
 {
 }
 
-CertificateAlreadyExistsException::CertificateAlreadyExistsException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+CertificateAlreadyExistsException::CertificateAlreadyExistsException(JsonView jsonValue)
+  : CertificateAlreadyExistsException()
 {
   *this = jsonValue;
 }

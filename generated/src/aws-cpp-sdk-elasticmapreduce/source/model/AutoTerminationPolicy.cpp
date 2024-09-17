@@ -24,9 +24,8 @@ AutoTerminationPolicy::AutoTerminationPolicy() :
 {
 }
 
-AutoTerminationPolicy::AutoTerminationPolicy(JsonView jsonValue) : 
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
+AutoTerminationPolicy::AutoTerminationPolicy(JsonView jsonValue)
+  : AutoTerminationPolicy()
 {
   *this = jsonValue;
 }

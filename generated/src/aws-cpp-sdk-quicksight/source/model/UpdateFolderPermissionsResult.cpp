@@ -22,8 +22,8 @@ UpdateFolderPermissionsResult::UpdateFolderPermissionsResult() :
 {
 }
 
-UpdateFolderPermissionsResult::UpdateFolderPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(0)
+UpdateFolderPermissionsResult::UpdateFolderPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateFolderPermissionsResult()
 {
   *this = result;
 }

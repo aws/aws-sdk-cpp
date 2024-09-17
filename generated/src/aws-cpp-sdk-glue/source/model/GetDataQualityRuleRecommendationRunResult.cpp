@@ -25,11 +25,8 @@ GetDataQualityRuleRecommendationRunResult::GetDataQualityRuleRecommendationRunRe
 {
 }
 
-GetDataQualityRuleRecommendationRunResult::GetDataQualityRuleRecommendationRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfWorkers(0),
-    m_timeout(0),
-    m_status(TaskStatusType::NOT_SET),
-    m_executionTime(0)
+GetDataQualityRuleRecommendationRunResult::GetDataQualityRuleRecommendationRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetDataQualityRuleRecommendationRunResult()
 {
   *this = result;
 }
@@ -112,6 +109,12 @@ GetDataQualityRuleRecommendationRunResult& GetDataQualityRuleRecommendationRunRe
   if(jsonValue.ValueExists("CreatedRulesetName"))
   {
     m_createdRulesetName = jsonValue.GetString("CreatedRulesetName");
+
+  }
+
+  if(jsonValue.ValueExists("DataQualitySecurityConfiguration"))
+  {
+    m_dataQualitySecurityConfiguration = jsonValue.GetString("DataQualitySecurityConfiguration");
 
   }
 

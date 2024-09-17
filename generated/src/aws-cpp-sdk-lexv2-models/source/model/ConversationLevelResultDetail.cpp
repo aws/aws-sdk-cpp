@@ -26,11 +26,8 @@ ConversationLevelResultDetail::ConversationLevelResultDetail() :
 {
 }
 
-ConversationLevelResultDetail::ConversationLevelResultDetail(JsonView jsonValue) : 
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false),
-    m_speechTranscriptionResult(TestResultMatchStatus::NOT_SET),
-    m_speechTranscriptionResultHasBeenSet(false)
+ConversationLevelResultDetail::ConversationLevelResultDetail(JsonView jsonValue)
+  : ConversationLevelResultDetail()
 {
   *this = jsonValue;
 }

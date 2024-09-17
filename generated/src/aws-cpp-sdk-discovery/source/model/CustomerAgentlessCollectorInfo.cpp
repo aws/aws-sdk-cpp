@@ -36,21 +36,8 @@ CustomerAgentlessCollectorInfo::CustomerAgentlessCollectorInfo() :
 {
 }
 
-CustomerAgentlessCollectorInfo::CustomerAgentlessCollectorInfo(JsonView jsonValue) : 
-    m_activeAgentlessCollectors(0),
-    m_activeAgentlessCollectorsHasBeenSet(false),
-    m_healthyAgentlessCollectors(0),
-    m_healthyAgentlessCollectorsHasBeenSet(false),
-    m_denyListedAgentlessCollectors(0),
-    m_denyListedAgentlessCollectorsHasBeenSet(false),
-    m_shutdownAgentlessCollectors(0),
-    m_shutdownAgentlessCollectorsHasBeenSet(false),
-    m_unhealthyAgentlessCollectors(0),
-    m_unhealthyAgentlessCollectorsHasBeenSet(false),
-    m_totalAgentlessCollectors(0),
-    m_totalAgentlessCollectorsHasBeenSet(false),
-    m_unknownAgentlessCollectors(0),
-    m_unknownAgentlessCollectorsHasBeenSet(false)
+CustomerAgentlessCollectorInfo::CustomerAgentlessCollectorInfo(JsonView jsonValue)
+  : CustomerAgentlessCollectorInfo()
 {
   *this = jsonValue;
 }

@@ -24,9 +24,8 @@ CapacityAssignmentConfiguration::CapacityAssignmentConfiguration() :
 {
 }
 
-CapacityAssignmentConfiguration::CapacityAssignmentConfiguration(JsonView jsonValue) : 
-    m_capacityReservationNameHasBeenSet(false),
-    m_capacityAssignmentsHasBeenSet(false)
+CapacityAssignmentConfiguration::CapacityAssignmentConfiguration(JsonView jsonValue)
+  : CapacityAssignmentConfiguration()
 {
   *this = jsonValue;
 }

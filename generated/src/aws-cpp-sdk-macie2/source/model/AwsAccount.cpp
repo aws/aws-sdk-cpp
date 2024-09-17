@@ -24,9 +24,8 @@ AwsAccount::AwsAccount() :
 {
 }
 
-AwsAccount::AwsAccount(JsonView jsonValue) : 
-    m_accountIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+AwsAccount::AwsAccount(JsonView jsonValue)
+  : AwsAccount()
 {
   *this = jsonValue;
 }

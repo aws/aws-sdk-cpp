@@ -25,10 +25,8 @@ RunConfiguration::RunConfiguration() :
 {
 }
 
-RunConfiguration::RunConfiguration(JsonView jsonValue) : 
-    m_flinkRunConfigurationHasBeenSet(false),
-    m_sqlRunConfigurationsHasBeenSet(false),
-    m_applicationRestoreConfigurationHasBeenSet(false)
+RunConfiguration::RunConfiguration(JsonView jsonValue)
+  : RunConfiguration()
 {
   *this = jsonValue;
 }

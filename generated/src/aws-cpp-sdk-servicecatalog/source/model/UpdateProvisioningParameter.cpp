@@ -26,11 +26,8 @@ UpdateProvisioningParameter::UpdateProvisioningParameter() :
 {
 }
 
-UpdateProvisioningParameter::UpdateProvisioningParameter(JsonView jsonValue) : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_usePreviousValue(false),
-    m_usePreviousValueHasBeenSet(false)
+UpdateProvisioningParameter::UpdateProvisioningParameter(JsonView jsonValue)
+  : UpdateProvisioningParameter()
 {
   *this = jsonValue;
 }

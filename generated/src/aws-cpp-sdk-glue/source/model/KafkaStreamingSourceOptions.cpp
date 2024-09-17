@@ -47,32 +47,8 @@ KafkaStreamingSourceOptions::KafkaStreamingSourceOptions() :
 {
 }
 
-KafkaStreamingSourceOptions::KafkaStreamingSourceOptions(JsonView jsonValue) : 
-    m_bootstrapServersHasBeenSet(false),
-    m_securityProtocolHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_assignHasBeenSet(false),
-    m_subscribePatternHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_startingOffsetsHasBeenSet(false),
-    m_endingOffsetsHasBeenSet(false),
-    m_pollTimeoutMs(0),
-    m_pollTimeoutMsHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_retryIntervalMs(0),
-    m_retryIntervalMsHasBeenSet(false),
-    m_maxOffsetsPerTrigger(0),
-    m_maxOffsetsPerTriggerHasBeenSet(false),
-    m_minPartitions(0),
-    m_minPartitionsHasBeenSet(false),
-    m_includeHeaders(false),
-    m_includeHeadersHasBeenSet(false),
-    m_addRecordTimestampHasBeenSet(false),
-    m_emitConsumerLagMetricsHasBeenSet(false),
-    m_startingTimestampHasBeenSet(false)
+KafkaStreamingSourceOptions::KafkaStreamingSourceOptions(JsonView jsonValue)
+  : KafkaStreamingSourceOptions()
 {
   *this = jsonValue;
 }

@@ -32,99 +32,42 @@ namespace Model
     AWS_CONNECT_API CreateIntegrationAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier for the integration association.</p>
      */
     inline const Aws::String& GetIntegrationAssociationId() const{ return m_integrationAssociationId; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(const Aws::String& value) { m_integrationAssociationId = value; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(Aws::String&& value) { m_integrationAssociationId = std::move(value); }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(const char* value) { m_integrationAssociationId.assign(value); }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationId(const Aws::String& value) { SetIntegrationAssociationId(value); return *this;}
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationId(Aws::String&& value) { SetIntegrationAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationId(const char* value) { SetIntegrationAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the association.</p>
      */
     inline const Aws::String& GetIntegrationAssociationArn() const{ return m_integrationAssociationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the association.</p>
-     */
     inline void SetIntegrationAssociationArn(const Aws::String& value) { m_integrationAssociationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the association.</p>
-     */
     inline void SetIntegrationAssociationArn(Aws::String&& value) { m_integrationAssociationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the association.</p>
-     */
     inline void SetIntegrationAssociationArn(const char* value) { m_integrationAssociationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the association.</p>
-     */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationArn(const Aws::String& value) { SetIntegrationAssociationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the association.</p>
-     */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationArn(Aws::String&& value) { SetIntegrationAssociationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the association.</p>
-     */
     inline CreateIntegrationAssociationResult& WithIntegrationAssociationArn(const char* value) { SetIntegrationAssociationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateIntegrationAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateIntegrationAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateIntegrationAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_integrationAssociationId;

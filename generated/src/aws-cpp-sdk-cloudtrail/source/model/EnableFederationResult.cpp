@@ -22,8 +22,8 @@ EnableFederationResult::EnableFederationResult() :
 {
 }
 
-EnableFederationResult::EnableFederationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_federationStatus(FederationStatus::NOT_SET)
+EnableFederationResult::EnableFederationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : EnableFederationResult()
 {
   *this = result;
 }

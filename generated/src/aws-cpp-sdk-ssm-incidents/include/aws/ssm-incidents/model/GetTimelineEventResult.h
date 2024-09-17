@@ -33,53 +33,27 @@ namespace Model
     AWS_SSMINCIDENTS_API GetTimelineEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the timeline event.</p>
      */
     inline const TimelineEvent& GetEvent() const{ return m_event; }
-
-    /**
-     * <p>Details about the timeline event.</p>
-     */
     inline void SetEvent(const TimelineEvent& value) { m_event = value; }
-
-    /**
-     * <p>Details about the timeline event.</p>
-     */
     inline void SetEvent(TimelineEvent&& value) { m_event = std::move(value); }
-
-    /**
-     * <p>Details about the timeline event.</p>
-     */
     inline GetTimelineEventResult& WithEvent(const TimelineEvent& value) { SetEvent(value); return *this;}
-
-    /**
-     * <p>Details about the timeline event.</p>
-     */
     inline GetTimelineEventResult& WithEvent(TimelineEvent&& value) { SetEvent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTimelineEventResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTimelineEventResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTimelineEventResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TimelineEvent m_event;

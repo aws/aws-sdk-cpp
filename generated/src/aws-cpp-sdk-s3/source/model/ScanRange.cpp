@@ -28,11 +28,8 @@ ScanRange::ScanRange() :
 {
 }
 
-ScanRange::ScanRange(const XmlNode& xmlNode) : 
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_end(0),
-    m_endHasBeenSet(false)
+ScanRange::ScanRange(const XmlNode& xmlNode)
+  : ScanRange()
 {
   *this = xmlNode;
 }

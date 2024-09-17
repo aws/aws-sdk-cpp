@@ -42,27 +42,8 @@ QuickResponseData::QuickResponseData() :
 {
 }
 
-QuickResponseData::QuickResponseData(JsonView jsonValue) : 
-    m_channelsHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_contentsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupingConfigurationHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_quickResponseArnHasBeenSet(false),
-    m_quickResponseIdHasBeenSet(false),
-    m_shortcutKeyHasBeenSet(false),
-    m_status(QuickResponseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+QuickResponseData::QuickResponseData(JsonView jsonValue)
+  : QuickResponseData()
 {
   *this = jsonValue;
 }

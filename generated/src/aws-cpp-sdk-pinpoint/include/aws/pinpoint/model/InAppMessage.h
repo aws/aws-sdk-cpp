@@ -42,143 +42,50 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>In-app message content.</p>
      */
     inline const Aws::Vector<InAppMessageContent>& GetContent() const{ return m_content; }
-
-    /**
-     * <p>In-app message content.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>In-app message content.</p>
-     */
     inline void SetContent(const Aws::Vector<InAppMessageContent>& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>In-app message content.</p>
-     */
     inline void SetContent(Aws::Vector<InAppMessageContent>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>In-app message content.</p>
-     */
     inline InAppMessage& WithContent(const Aws::Vector<InAppMessageContent>& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>In-app message content.</p>
-     */
     inline InAppMessage& WithContent(Aws::Vector<InAppMessageContent>&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>In-app message content.</p>
-     */
     inline InAppMessage& AddContent(const InAppMessageContent& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
-
-    /**
-     * <p>In-app message content.</p>
-     */
     inline InAppMessage& AddContent(InAppMessageContent&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Custom config to be sent to SDK.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomConfig() const{ return m_customConfig; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline bool CustomConfigHasBeenSet() const { return m_customConfigHasBeenSet; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline void SetCustomConfig(const Aws::Map<Aws::String, Aws::String>& value) { m_customConfigHasBeenSet = true; m_customConfig = value; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline void SetCustomConfig(Aws::Map<Aws::String, Aws::String>&& value) { m_customConfigHasBeenSet = true; m_customConfig = std::move(value); }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& WithCustomConfig(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomConfig(value); return *this;}
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& WithCustomConfig(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& AddCustomConfig(const Aws::String& key, const Aws::String& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, value); return *this; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& AddCustomConfig(Aws::String&& key, const Aws::String& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& AddCustomConfig(const Aws::String& key, Aws::String&& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& AddCustomConfig(Aws::String&& key, Aws::String&& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& AddCustomConfig(const char* key, Aws::String&& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& AddCustomConfig(Aws::String&& key, const char* value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Custom config to be sent to SDK.</p>
-     */
     inline InAppMessage& AddCustomConfig(const char* key, const char* value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The layout of the message.</p>
      */
     inline const Layout& GetLayout() const{ return m_layout; }
-
-    /**
-     * <p>The layout of the message.</p>
-     */
     inline bool LayoutHasBeenSet() const { return m_layoutHasBeenSet; }
-
-    /**
-     * <p>The layout of the message.</p>
-     */
     inline void SetLayout(const Layout& value) { m_layoutHasBeenSet = true; m_layout = value; }
-
-    /**
-     * <p>The layout of the message.</p>
-     */
     inline void SetLayout(Layout&& value) { m_layoutHasBeenSet = true; m_layout = std::move(value); }
-
-    /**
-     * <p>The layout of the message.</p>
-     */
     inline InAppMessage& WithLayout(const Layout& value) { SetLayout(value); return *this;}
-
-    /**
-     * <p>The layout of the message.</p>
-     */
     inline InAppMessage& WithLayout(Layout&& value) { SetLayout(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InAppMessageContent> m_content;

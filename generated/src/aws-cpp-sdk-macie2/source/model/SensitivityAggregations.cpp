@@ -30,15 +30,8 @@ SensitivityAggregations::SensitivityAggregations() :
 {
 }
 
-SensitivityAggregations::SensitivityAggregations(JsonView jsonValue) : 
-    m_classifiableSizeInBytes(0),
-    m_classifiableSizeInBytesHasBeenSet(false),
-    m_publiclyAccessibleCount(0),
-    m_publiclyAccessibleCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_totalSizeInBytes(0),
-    m_totalSizeInBytesHasBeenSet(false)
+SensitivityAggregations::SensitivityAggregations(JsonView jsonValue)
+  : SensitivityAggregations()
 {
   *this = jsonValue;
 }

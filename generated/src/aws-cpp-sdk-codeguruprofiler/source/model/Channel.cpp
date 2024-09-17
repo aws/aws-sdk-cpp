@@ -25,10 +25,8 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(JsonView jsonValue) : 
-    m_eventPublishersHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_uriHasBeenSet(false)
+Channel::Channel(JsonView jsonValue)
+  : Channel()
 {
   *this = jsonValue;
 }

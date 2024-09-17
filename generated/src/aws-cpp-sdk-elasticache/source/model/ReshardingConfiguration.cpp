@@ -26,9 +26,8 @@ ReshardingConfiguration::ReshardingConfiguration() :
 {
 }
 
-ReshardingConfiguration::ReshardingConfiguration(const XmlNode& xmlNode) : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_preferredAvailabilityZonesHasBeenSet(false)
+ReshardingConfiguration::ReshardingConfiguration(const XmlNode& xmlNode)
+  : ReshardingConfiguration()
 {
   *this = xmlNode;
 }

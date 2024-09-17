@@ -41,85 +41,32 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The instance family.</p>
      */
     inline const UnlimitedSupportedInstanceFamily& GetInstanceFamily() const{ return m_instanceFamily; }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline void SetInstanceFamily(const UnlimitedSupportedInstanceFamily& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline void SetInstanceFamily(UnlimitedSupportedInstanceFamily&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline InstanceFamilyCreditSpecification& WithInstanceFamily(const UnlimitedSupportedInstanceFamily& value) { SetInstanceFamily(value); return *this;}
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline InstanceFamilyCreditSpecification& WithInstanceFamily(UnlimitedSupportedInstanceFamily&& value) { SetInstanceFamily(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default credit option for CPU usage of the instance family. Valid values
      * are <code>standard</code> and <code>unlimited</code>.</p>
      */
     inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
-
-    /**
-     * <p>The default credit option for CPU usage of the instance family. Valid values
-     * are <code>standard</code> and <code>unlimited</code>.</p>
-     */
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
-
-    /**
-     * <p>The default credit option for CPU usage of the instance family. Valid values
-     * are <code>standard</code> and <code>unlimited</code>.</p>
-     */
     inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
-
-    /**
-     * <p>The default credit option for CPU usage of the instance family. Valid values
-     * are <code>standard</code> and <code>unlimited</code>.</p>
-     */
     inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
-
-    /**
-     * <p>The default credit option for CPU usage of the instance family. Valid values
-     * are <code>standard</code> and <code>unlimited</code>.</p>
-     */
     inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
-
-    /**
-     * <p>The default credit option for CPU usage of the instance family. Valid values
-     * are <code>standard</code> and <code>unlimited</code>.</p>
-     */
     inline InstanceFamilyCreditSpecification& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
-
-    /**
-     * <p>The default credit option for CPU usage of the instance family. Valid values
-     * are <code>standard</code> and <code>unlimited</code>.</p>
-     */
     inline InstanceFamilyCreditSpecification& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
-
-    /**
-     * <p>The default credit option for CPU usage of the instance family. Valid values
-     * are <code>standard</code> and <code>unlimited</code>.</p>
-     */
     inline InstanceFamilyCreditSpecification& WithCpuCredits(const char* value) { SetCpuCredits(value); return *this;}
-
+    ///@}
   private:
 
     UnlimitedSupportedInstanceFamily m_instanceFamily;

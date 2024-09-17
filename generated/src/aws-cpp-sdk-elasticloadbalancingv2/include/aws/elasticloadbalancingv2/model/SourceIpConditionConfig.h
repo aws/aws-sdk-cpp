@@ -43,6 +43,7 @@ namespace Model
     AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
      * addresses. Wildcards are not supported.</p> <p>If you specify multiple
@@ -53,95 +54,15 @@ namespace Model
      * must be less than, or equal to five.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline SourceIpConditionConfig& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline SourceIpConditionConfig& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline SourceIpConditionConfig& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline SourceIpConditionConfig& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The source IP addresses, in CIDR format. You can use both IPv4 and IPv6
-     * addresses. Wildcards are not supported.</p> <p>If you specify multiple
-     * addresses, the condition is satisfied if the source IP address of the request
-     * matches one of the CIDR blocks. This condition is not satisfied by the addresses
-     * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
-     * must be less than, or equal to five.</p>
-     */
     inline SourceIpConditionConfig& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_values;

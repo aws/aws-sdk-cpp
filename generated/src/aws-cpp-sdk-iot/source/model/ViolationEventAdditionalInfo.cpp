@@ -24,9 +24,8 @@ ViolationEventAdditionalInfo::ViolationEventAdditionalInfo() :
 {
 }
 
-ViolationEventAdditionalInfo::ViolationEventAdditionalInfo(JsonView jsonValue) : 
-    m_confidenceLevel(ConfidenceLevel::NOT_SET),
-    m_confidenceLevelHasBeenSet(false)
+ViolationEventAdditionalInfo::ViolationEventAdditionalInfo(JsonView jsonValue)
+  : ViolationEventAdditionalInfo()
 {
   *this = jsonValue;
 }

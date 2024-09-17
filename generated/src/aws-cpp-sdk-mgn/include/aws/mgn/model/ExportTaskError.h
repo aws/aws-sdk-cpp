@@ -38,77 +38,31 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Export task error data.</p>
      */
     inline const ExportErrorData& GetErrorData() const{ return m_errorData; }
-
-    /**
-     * <p>Export task error data.</p>
-     */
     inline bool ErrorDataHasBeenSet() const { return m_errorDataHasBeenSet; }
-
-    /**
-     * <p>Export task error data.</p>
-     */
     inline void SetErrorData(const ExportErrorData& value) { m_errorDataHasBeenSet = true; m_errorData = value; }
-
-    /**
-     * <p>Export task error data.</p>
-     */
     inline void SetErrorData(ExportErrorData&& value) { m_errorDataHasBeenSet = true; m_errorData = std::move(value); }
-
-    /**
-     * <p>Export task error data.</p>
-     */
     inline ExportTaskError& WithErrorData(const ExportErrorData& value) { SetErrorData(value); return *this;}
-
-    /**
-     * <p>Export task error data.</p>
-     */
     inline ExportTaskError& WithErrorData(ExportErrorData&& value) { SetErrorData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Export task error datetime.</p>
      */
     inline const Aws::String& GetErrorDateTime() const{ return m_errorDateTime; }
-
-    /**
-     * <p>Export task error datetime.</p>
-     */
     inline bool ErrorDateTimeHasBeenSet() const { return m_errorDateTimeHasBeenSet; }
-
-    /**
-     * <p>Export task error datetime.</p>
-     */
     inline void SetErrorDateTime(const Aws::String& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = value; }
-
-    /**
-     * <p>Export task error datetime.</p>
-     */
     inline void SetErrorDateTime(Aws::String&& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = std::move(value); }
-
-    /**
-     * <p>Export task error datetime.</p>
-     */
     inline void SetErrorDateTime(const char* value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime.assign(value); }
-
-    /**
-     * <p>Export task error datetime.</p>
-     */
     inline ExportTaskError& WithErrorDateTime(const Aws::String& value) { SetErrorDateTime(value); return *this;}
-
-    /**
-     * <p>Export task error datetime.</p>
-     */
     inline ExportTaskError& WithErrorDateTime(Aws::String&& value) { SetErrorDateTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Export task error datetime.</p>
-     */
     inline ExportTaskError& WithErrorDateTime(const char* value) { SetErrorDateTime(value); return *this;}
-
+    ///@}
   private:
 
     ExportErrorData m_errorData;

@@ -35,20 +35,8 @@ OutpostResolver::OutpostResolver() :
 {
 }
 
-OutpostResolver::OutpostResolver(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_preferredInstanceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(OutpostResolverStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+OutpostResolver::OutpostResolver(JsonView jsonValue)
+  : OutpostResolver()
 {
   *this = jsonValue;
 }

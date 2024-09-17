@@ -22,7 +22,8 @@ CreateAutoMLJobV2Request::CreateAutoMLJobV2Request() :
     m_securityConfigHasBeenSet(false),
     m_autoMLJobObjectiveHasBeenSet(false),
     m_modelDeployConfigHasBeenSet(false),
-    m_dataSplitConfigHasBeenSet(false)
+    m_dataSplitConfigHasBeenSet(false),
+    m_autoMLComputeConfigHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,12 @@ Aws::String CreateAutoMLJobV2Request::SerializePayload() const
   if(m_dataSplitConfigHasBeenSet)
   {
    payload.WithObject("DataSplitConfig", m_dataSplitConfig.Jsonize());
+
+  }
+
+  if(m_autoMLComputeConfigHasBeenSet)
+  {
+   payload.WithObject("AutoMLComputeConfig", m_autoMLComputeConfig.Jsonize());
 
   }
 

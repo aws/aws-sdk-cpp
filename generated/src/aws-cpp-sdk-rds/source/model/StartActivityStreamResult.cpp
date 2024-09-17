@@ -25,11 +25,8 @@ StartActivityStreamResult::StartActivityStreamResult() :
 {
 }
 
-StartActivityStreamResult::StartActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_status(ActivityStreamStatus::NOT_SET),
-    m_mode(ActivityStreamMode::NOT_SET),
-    m_applyImmediately(false),
-    m_engineNativeAuditFieldsIncluded(false)
+StartActivityStreamResult::StartActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : StartActivityStreamResult()
 {
   *this = result;
 }

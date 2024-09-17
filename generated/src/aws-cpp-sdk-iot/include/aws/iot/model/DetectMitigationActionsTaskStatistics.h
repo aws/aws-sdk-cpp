@@ -35,68 +35,35 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The actions that were performed. </p>
      */
     inline long long GetActionsExecuted() const{ return m_actionsExecuted; }
-
-    /**
-     * <p> The actions that were performed. </p>
-     */
     inline bool ActionsExecutedHasBeenSet() const { return m_actionsExecutedHasBeenSet; }
-
-    /**
-     * <p> The actions that were performed. </p>
-     */
     inline void SetActionsExecuted(long long value) { m_actionsExecutedHasBeenSet = true; m_actionsExecuted = value; }
-
-    /**
-     * <p> The actions that were performed. </p>
-     */
     inline DetectMitigationActionsTaskStatistics& WithActionsExecuted(long long value) { SetActionsExecuted(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The actions that were skipped. </p>
      */
     inline long long GetActionsSkipped() const{ return m_actionsSkipped; }
-
-    /**
-     * <p> The actions that were skipped. </p>
-     */
     inline bool ActionsSkippedHasBeenSet() const { return m_actionsSkippedHasBeenSet; }
-
-    /**
-     * <p> The actions that were skipped. </p>
-     */
     inline void SetActionsSkipped(long long value) { m_actionsSkippedHasBeenSet = true; m_actionsSkipped = value; }
-
-    /**
-     * <p> The actions that were skipped. </p>
-     */
     inline DetectMitigationActionsTaskStatistics& WithActionsSkipped(long long value) { SetActionsSkipped(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The actions that failed. </p>
      */
     inline long long GetActionsFailed() const{ return m_actionsFailed; }
-
-    /**
-     * <p> The actions that failed. </p>
-     */
     inline bool ActionsFailedHasBeenSet() const { return m_actionsFailedHasBeenSet; }
-
-    /**
-     * <p> The actions that failed. </p>
-     */
     inline void SetActionsFailed(long long value) { m_actionsFailedHasBeenSet = true; m_actionsFailed = value; }
-
-    /**
-     * <p> The actions that failed. </p>
-     */
     inline DetectMitigationActionsTaskStatistics& WithActionsFailed(long long value) { SetActionsFailed(value); return *this;}
-
+    ///@}
   private:
 
     long long m_actionsExecuted;

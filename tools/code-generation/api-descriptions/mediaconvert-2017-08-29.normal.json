@@ -9,7 +9,10 @@
     "jsonVersion": "1.1",
     "uid": "mediaconvert-2017-08-29",
     "signatureVersion": "v4",
-    "serviceAbbreviation": "MediaConvert"
+    "serviceAbbreviation": "MediaConvert",
+    "auth": [
+      "aws.auth#sigv4"
+    ]
   },
   "operations": {
     "AssociateCertificate": {
@@ -438,30 +441,30 @@
       "errors": [
         {
           "shape": "BadRequestException",
-          "documentation": "BadRequestException"
+          "documentation": "The service can't process your request because of a problem in the request. Please check your request form and syntax."
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "InternalServiceException"
+          "documentation": "The service encountered an unexpected condition and can't fulfill your request."
         },
         {
           "shape": "ForbiddenException",
-          "documentation": "AccessDeniedException"
+          "documentation": "You don't have permissions for this action with the credentials you sent."
         },
         {
           "shape": "NotFoundException",
-          "documentation": "ResourceNotFoundException"
+          "documentation": "The resource you requested doesn't exist."
         },
         {
           "shape": "TooManyRequestsException",
-          "documentation": "LimitExceededException"
+          "documentation": "Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests."
         },
         {
           "shape": "ConflictException",
-          "documentation": "ResourceInUseException"
+          "documentation": "The service couldn't complete your request because there is a conflict with the current state of the resource."
         }
       ],
-      "documentation": "Send an request with an empty body to the regional API endpoint to get your account API endpoint.",
+      "documentation": "Send a request with an empty body to the regional API endpoint to get your account API endpoint. Note that DescribeEndpoints is no longer required. We recommend that you send your requests directly to the regional endpoint instead.",
       "deprecated": true,
       "deprecatedMessage": "DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead."
     },
@@ -916,6 +919,47 @@
       ],
       "documentation": "Retrieve the tags for a MediaConvert resource."
     },
+    "ListVersions": {
+      "name": "ListVersions",
+      "http": {
+        "method": "GET",
+        "requestUri": "/2017-08-29/versions",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListVersionsRequest"
+      },
+      "output": {
+        "shape": "ListVersionsResponse"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "The service can't process your request because of a problem in the request. Please check your request form and syntax."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "The service encountered an unexpected condition and can't fulfill your request."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You don't have permissions for this action with the credentials you sent."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resource you requested doesn't exist."
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The service couldn't complete your request because there is a conflict with the current state of the resource."
+        }
+      ],
+      "documentation": "Retrieve a JSON array of all available Job engine versions and the date they expire."
+    },
     "PutPolicy": {
       "name": "PutPolicy",
       "http": {
@@ -956,6 +1000,47 @@
         }
       ],
       "documentation": "Create or change your policy. For more information about policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html"
+    },
+    "SearchJobs": {
+      "name": "SearchJobs",
+      "http": {
+        "method": "GET",
+        "requestUri": "/2017-08-29/search",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchJobsRequest"
+      },
+      "output": {
+        "shape": "SearchJobsResponse"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "The service can't process your request because of a problem in the request. Please check your request form and syntax."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "The service encountered an unexpected condition and can't fulfill your request."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You don't have permissions for this action with the credentials you sent."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resource you requested doesn't exist."
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The service couldn't complete your request because there is a conflict with the current state of the resource."
+        }
+      ],
+      "documentation": "Retrieve a JSON array that includes job details for up to twenty of your most recent jobs. Optionally filter results further according to input file, queue, or status. To retrieve the twenty next most recent jobs, use the nextToken string returned with the array."
     },
     "TagResource": {
       "name": "TagResource",
@@ -1174,7 +1259,7 @@
     },
     "AacCodecProfile": {
       "type": "string",
-      "documentation": "AAC Profile.",
+      "documentation": "Specify the AAC profile. For the widest player compatibility and where higher bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio at very low bitrates.",
       "enum": [
         "LC",
         "HEV1",
@@ -1194,7 +1279,7 @@
     },
     "AacRateControlMode": {
       "type": "string",
-      "documentation": "Rate Control Mode.",
+      "documentation": "Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.",
       "enum": [
         "CBR",
         "VBR"
@@ -1224,7 +1309,7 @@
         "CodecProfile": {
           "shape": "AacCodecProfile",
           "locationName": "codecProfile",
-          "documentation": "AAC Profile."
+          "documentation": "Specify the AAC profile. For the widest player compatibility and where higher bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio at very low bitrates."
         },
         "CodingMode": {
           "shape": "AacCodingMode",
@@ -1234,7 +1319,7 @@
         "RateControlMode": {
           "shape": "AacRateControlMode",
           "locationName": "rateControlMode",
-          "documentation": "Rate Control Mode."
+          "documentation": "Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality."
         },
         "RawFormat": {
           "shape": "AacRawFormat",
@@ -1244,7 +1329,7 @@
         "SampleRate": {
           "shape": "__integerMin8000Max96000",
           "locationName": "sampleRate",
-          "documentation": "Specify the Sample rate in Hz. Valid sample rates depend on the Profile and Coding mode that you select. The following list shows valid sample rates for each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile, Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode 2.0: 22050, 24000, 32000, 44100, 48000."
+          "documentation": "Specify the AAC sample rate in samples per second (Hz). Valid sample rates depend on the AAC profile and Coding mode that you select. For a list of supported sample rates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html"
         },
         "Specification": {
           "shape": "AacSpecification",
@@ -1254,7 +1339,7 @@
         "VbrQuality": {
           "shape": "AacVbrQuality",
           "locationName": "vbrQuality",
-          "documentation": "VBR Quality Level - Only used if rate_control_mode is VBR."
+          "documentation": "Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr"
         }
       },
       "documentation": "Required when you set Codec to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode to \"VBR\" or \"CBR\". In VBR mode, you control the audio quality with the setting VBR quality. In CBR mode, you use the setting Bitrate. Defaults and valid values depend on the rate control mode."
@@ -1269,7 +1354,7 @@
     },
     "AacVbrQuality": {
       "type": "string",
-      "documentation": "VBR Quality Level - Only used if rate_control_mode is VBR.",
+      "documentation": "Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr",
       "enum": [
         "LOW",
         "MEDIUM_LOW",
@@ -1806,12 +1891,13 @@
     },
     "AudioDurationCorrection": {
       "type": "string",
-      "documentation": "Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.",
+      "documentation": "Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion. * Force: Apply audio duration correction, either Track or Frame depending on your input, regardless of the accuracy of your input's STTS table. Your output audio and video may not be aligned or it may contain audio artifacts.",
       "enum": [
         "DISABLED",
         "AUTO",
         "TRACK",
-        "FRAME"
+        "FRAME",
+        "FORCE"
       ]
     },
     "AudioLanguageCodeControl": {
@@ -1903,7 +1989,7 @@
         "AudioDurationCorrection": {
           "shape": "AudioDurationCorrection",
           "locationName": "audioDurationCorrection",
-          "documentation": "Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion."
+          "documentation": "Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion. * Force: Apply audio duration correction, either Track or Frame depending on your input, regardless of the accuracy of your input's STTS table. Your output audio and video may not be aligned or it may contain audio artifacts."
         },
         "CustomLanguageCode": {
           "shape": "__stringMin3Max3PatternAZaZ3",
@@ -2423,7 +2509,7 @@
     },
     "BurnInSubtitleStylePassthrough": {
       "type": "string",
-      "documentation": "Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.",
+      "documentation": "To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files.",
       "enum": [
         "ENABLED",
         "DISABLED"
@@ -2461,6 +2547,26 @@
           "shape": "BurninSubtitleFontColor",
           "locationName": "fontColor",
           "documentation": "Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present."
+        },
+        "FontFileBold": {
+          "shape": "__stringPatternS3TtfHttpsTtf",
+          "locationName": "fontFileBold",
+          "documentation": "Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file."
+        },
+        "FontFileBoldItalic": {
+          "shape": "__string",
+          "locationName": "fontFileBoldItalic",
+          "documentation": "Specify a bold italic TrueType font file to use when rendering your output captions.\nEnter an S3, HTTP, or HTTPS URL.\nWhen you do, you must also separately specify a regular, a bold, and an italic font file."
+        },
+        "FontFileItalic": {
+          "shape": "__stringPatternS3TtfHttpsTtf",
+          "locationName": "fontFileItalic",
+          "documentation": "Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file."
+        },
+        "FontFileRegular": {
+          "shape": "__stringPatternS3TtfHttpsTtf",
+          "locationName": "fontFileRegular",
+          "documentation": "Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file."
         },
         "FontOpacity": {
           "shape": "__integerMin0Max255",
@@ -2520,7 +2626,7 @@
         "StylePassthrough": {
           "shape": "BurnInSubtitleStylePassthrough",
           "locationName": "stylePassthrough",
-          "documentation": "Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings."
+          "documentation": "To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files."
         },
         "TeletextSpacing": {
           "shape": "BurninSubtitleTeletextSpacing",
@@ -2795,6 +2901,14 @@
       },
       "documentation": "Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 100 captions selectors per input."
     },
+    "CaptionSourceByteRateLimit": {
+      "type": "string",
+      "documentation": "Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60.",
+      "enum": [
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
     "CaptionSourceConvertPaintOnToPopOn": {
       "type": "string",
       "documentation": "Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.",
@@ -3020,6 +3134,11 @@
           "shape": "CmafCodecSpecification",
           "locationName": "codecSpecification",
           "documentation": "Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation."
+        },
+        "DashIFrameTrickPlayNameModifier": {
+          "shape": "__stringMin1Max256",
+          "locationName": "dashIFrameTrickPlayNameModifier",
+          "documentation": "Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank."
         },
         "DashManifestStyle": {
           "shape": "DashManifestStyle",
@@ -3692,6 +3811,7 @@
         "MP4",
         "MPD",
         "MXF",
+        "OGG",
         "WEBM",
         "RAW",
         "Y4M"
@@ -3728,6 +3848,11 @@
           "shape": "__listOfHopDestination",
           "locationName": "hopDestinations",
           "documentation": "Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide."
+        },
+        "JobEngineVersion": {
+          "shape": "__string",
+          "locationName": "jobEngineVersion",
+          "documentation": "Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions, submit a ListVersions request. To not specify a Job engine version: Leave blank."
         },
         "JobTemplate": {
           "shape": "__string",
@@ -4008,6 +4133,11 @@
           "shape": "__string",
           "locationName": "baseUrl",
           "documentation": "A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file."
+        },
+        "DashIFrameTrickPlayNameModifier": {
+          "shape": "__stringMin1Max256",
+          "locationName": "dashIFrameTrickPlayNameModifier",
+          "documentation": "Specify whether MediaConvert generates I-frame only video segments for DASH trick play, also known as trick mode. When specified, the I-frame only video segments are included within an additional AdaptationSet in your DASH output manifest. To generate I-frame only video segments: Enter a name as a text string, up to 256 character long. This name is appended to the end of this output group's base filename, that you specify as part of your destination URI, and used for the I-frame only video segment files. You may also include format identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs To not generate I-frame only video segments: Leave blank."
         },
         "DashManifestStyle": {
           "shape": "DashManifestStyle",
@@ -4391,7 +4521,6 @@
           "documentation": "Use this string, provided with the response to a previous request, to request the next batch of endpoints."
         }
       },
-      "documentation": "DescribeEndpointsRequest",
       "deprecated": true,
       "deprecatedMessage": "DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead."
     },
@@ -4612,6 +4741,26 @@
           "locationName": "fontColor",
           "documentation": "Specify the color of the captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical."
         },
+        "FontFileBold": {
+          "shape": "__stringPatternS3TtfHttpsTtf",
+          "locationName": "fontFileBold",
+          "documentation": "Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file."
+        },
+        "FontFileBoldItalic": {
+          "shape": "__stringPatternS3TtfHttpsTtf",
+          "locationName": "fontFileBoldItalic",
+          "documentation": "Specify a bold italic TrueType font file to use when rendering your output captions.\nEnter an S3, HTTP, or HTTPS URL.\nWhen you do, you must also separately specify a regular, a bold, and an italic font file."
+        },
+        "FontFileItalic": {
+          "shape": "__stringPatternS3TtfHttpsTtf",
+          "locationName": "fontFileItalic",
+          "documentation": "Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file."
+        },
+        "FontFileRegular": {
+          "shape": "__stringPatternS3TtfHttpsTtf",
+          "locationName": "fontFileRegular",
+          "documentation": "Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file."
+        },
         "FontOpacity": {
           "shape": "__integerMin0Max255",
           "locationName": "fontOpacity",
@@ -4675,7 +4824,7 @@
         "StylePassthrough": {
           "shape": "DvbSubtitleStylePassthrough",
           "locationName": "stylePassthrough",
-          "documentation": "Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings."
+          "documentation": "To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files."
         },
         "SubtitlingType": {
           "shape": "DvbSubtitlingType",
@@ -4793,7 +4942,7 @@
     },
     "DvbSubtitleStylePassthrough": {
       "type": "string",
-      "documentation": "Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.",
+      "documentation": "To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files.",
       "enum": [
         "ENABLED",
         "DISABLED"
@@ -5452,6 +5601,11 @@
     "FileSourceSettings": {
       "type": "structure",
       "members": {
+        "ByteRateLimit": {
+          "shape": "CaptionSourceByteRateLimit",
+          "locationName": "byteRateLimit",
+          "documentation": "Choose whether to limit the byte rate at which your SCC input captions are inserted into your output. To not limit the caption rate: We recommend that you keep the default value, Disabled. MediaConvert inserts captions in your output according to the byte rates listed in the EIA-608 specification, typically 2 or 3 caption bytes per frame depending on your output frame rate. To limit your output caption rate: Choose Enabled. Choose this option if your downstream systems require a maximum of 2 caption bytes per frame. Note that this setting has no effect when your output frame rate is 30 or 60."
+        },
         "Convert608To708": {
           "shape": "FileSourceConvert608To708",
           "locationName": "convert608To708",
@@ -5879,6 +6033,14 @@
         "ENABLED"
       ]
     },
+    "H264SaliencyAwareEncoding": {
+      "type": "string",
+      "documentation": "Specify whether to apply Saliency aware encoding to your output. Use to improve the perceptual video quality of your output by allocating more encoding bits to the prominent or noticeable parts of your content. To apply saliency aware encoding, when possible: We recommend that you choose Preferred. The effects of Saliency aware encoding are best seen in lower bitrate outputs. When you choose Preferred, note that Saliency aware encoding will only apply to outputs that are 720p or higher in resolution. To not apply saliency aware encoding, prioritizing encoding speed over perceptual video quality: Choose Disabled.",
+      "enum": [
+        "DISABLED",
+        "PREFERRED"
+      ]
+    },
     "H264ScanTypeConversionMode": {
       "type": "string",
       "documentation": "Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.",
@@ -6017,7 +6179,7 @@
         "MinIInterval": {
           "shape": "__integerMin0Max30",
           "locationName": "minIInterval",
-          "documentation": "Use this setting only when you also enable Scene change detection. This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs."
+          "documentation": "Specify the minimum number of frames allowed between two IDR-frames in your output. This includes frames created at the start of a GOP or a scene change. Use Min I-Interval to improve video compression by varying GOP size when two IDR-frames would be created near each other. For example, if a regular cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame, and you set Min I-interval to 5, then the encoder would only write an IDR-frame for the scene-change. In this way, one GOP is shortened or extended. If a cadence-driven IDR-frame would be further than 5 frames from a scene-change IDR-frame, then the encoder leaves all IDR-frames in place. To use an automatically determined interval: We recommend that you keep this value blank. This allows for MediaConvert to use an optimal setting according to the characteristics of your input video, and results in better video compression. To manually specify an interval: Enter a value from 1 to 30. Use when your downstream systems have specific GOP size requirements. To disable GOP size variance: Enter 0. MediaConvert will only create IDR-frames at the start of your output's cadence-driven GOP. Use when your downstream systems require a regular GOP size."
         },
         "NumberBFramesBetweenReferenceFrames": {
           "shape": "__integerMin0Max7",
@@ -6063,6 +6225,11 @@
           "shape": "H264RepeatPps",
           "locationName": "repeatPps",
           "documentation": "Places a PPS header on each encoded picture, even if repeated."
+        },
+        "SaliencyAwareEncoding": {
+          "shape": "H264SaliencyAwareEncoding",
+          "locationName": "saliencyAwareEncoding",
+          "documentation": "Specify whether to apply Saliency aware encoding to your output. Use to improve the perceptual video quality of your output by allocating more encoding bits to the prominent or noticeable parts of your content. To apply saliency aware encoding, when possible: We recommend that you choose Preferred. The effects of Saliency aware encoding are best seen in lower bitrate outputs. When you choose Preferred, note that Saliency aware encoding will only apply to outputs that are 720p or higher in resolution. To not apply saliency aware encoding, prioritizing encoding speed over perceptual video quality: Choose Disabled."
         },
         "ScanTypeConversionMode": {
           "shape": "H264ScanTypeConversionMode",
@@ -6479,7 +6646,7 @@
         "MinIInterval": {
           "shape": "__integerMin0Max30",
           "locationName": "minIInterval",
-          "documentation": "Use this setting only when you also enable Scene change detection. This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs."
+          "documentation": "Specify the minimum number of frames allowed between two IDR-frames in your output. This includes frames created at the start of a GOP or a scene change. Use Min I-Interval to improve video compression by varying GOP size when two IDR-frames would be created near each other. For example, if a regular cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame, and you set Min I-interval to 5, then the encoder would only write an IDR-frame for the scene-change. In this way, one GOP is shortened or extended. If a cadence-driven IDR-frame would be further than 5 frames from a scene-change IDR-frame, then the encoder leaves all IDR-frames in place. To use an automatically determined interval: We recommend that you keep this value blank. This allows for MediaConvert to use an optimal setting according to the characteristics of your input video, and results in better video compression. To manually specify an interval: Enter a value from 1 to 30. Use when your downstream systems have specific GOP size requirements. To disable GOP size variance: Enter 0. MediaConvert will only create IDR-frames at the start of your output's cadence-driven GOP. Use when your downstream systems require a regular GOP size."
         },
         "NumberBFramesBetweenReferenceFrames": {
           "shape": "__integerMin0Max7",
@@ -7528,12 +7695,12 @@
       "type": "structure",
       "members": {
         "EndTimecode": {
-          "shape": "__stringPattern010920405090509092",
+          "shape": "__stringPattern010920405090509092090909",
           "locationName": "endTimecode",
           "documentation": "Set End timecode to the end of the portion of the input you are clipping. The frame corresponding to the End timecode value is included in the clip. Start timecode or End timecode may be left blank, but not both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When choosing this value, take into account your setting for timecode source under input settings. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your clip to end six minutes into the video, use 01:06:00:00."
         },
         "StartTimecode": {
-          "shape": "__stringPattern010920405090509092",
+          "shape": "__stringPattern010920405090509092090909",
           "locationName": "startTimecode",
           "documentation": "Set Start timecode to the beginning of the portion of the input you are clipping. The frame corresponding to the Start timecode value is included in the clip. Start timecode or End timecode may be left blank, but not both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When choosing this value, take into account your setting for Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your clip to begin five minutes into the video, use 01:05:00:00."
         }
@@ -7758,10 +7925,30 @@
     "InputVideoGenerator": {
       "type": "structure",
       "members": {
+        "Channels": {
+          "shape": "__integerMin1Max32",
+          "locationName": "channels",
+          "documentation": "Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32."
+        },
         "Duration": {
           "shape": "__integerMin50Max86400000",
           "locationName": "duration",
-          "documentation": "Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator."
+          "documentation": "Specify the duration, in milliseconds, for your video generator input.\nEnter an integer from 50 to 86400000."
+        },
+        "FramerateDenominator": {
+          "shape": "__integerMin1Max1001",
+          "locationName": "framerateDenominator",
+          "documentation": "Specify the denominator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank."
+        },
+        "FramerateNumerator": {
+          "shape": "__integerMin1Max60000",
+          "locationName": "framerateNumerator",
+          "documentation": "Specify the numerator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate denominator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank."
+        },
+        "SampleRate": {
+          "shape": "__integerMin32000Max48000",
+          "locationName": "sampleRate",
+          "documentation": "Specify the audio sample rate, in Hz, for the silent audio in your video generator input.\nEnter an integer from 32000 to 48000."
         }
       },
       "documentation": "When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html"
@@ -7899,6 +8086,16 @@
           "locationName": "id",
           "documentation": "A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources"
         },
+        "JobEngineVersionRequested": {
+          "shape": "__string",
+          "locationName": "jobEngineVersionRequested",
+          "documentation": "The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format."
+        },
+        "JobEngineVersionUsed": {
+          "shape": "__string",
+          "locationName": "jobEngineVersionUsed",
+          "documentation": "The Job engine version that your job used. Job engine versions are in a YYYY-MM-DD format. When you request an expired version, the response for this property will be empty. Requests to create jobs with an expired version result in a regular job, as if no specific Job engine version was requested. When you request an invalid version, the response for this property will be empty. Requests to create jobs with an invalid version result in a 400 error message, and no job is created."
+        },
         "JobPercentComplete": {
           "shape": "__integer",
           "locationName": "jobPercentComplete",
@@ -7986,6 +8183,22 @@
         "Role"
       ]
     },
+    "JobEngineVersion": {
+      "type": "structure",
+      "members": {
+        "ExpirationDate": {
+          "shape": "__timestampUnix",
+          "locationName": "expirationDate",
+          "documentation": "The date that this Job engine version expires. Requests to create jobs with an expired version result in a regular job, as if no specific Job engine version was requested."
+        },
+        "Version": {
+          "shape": "__string",
+          "locationName": "version",
+          "documentation": "Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions are in a YYYY-MM-DD format."
+        }
+      },
+      "documentation": "Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions are in a YYYY-MM-DD format."
+    },
     "JobMessages": {
       "type": "structure",
       "members": {
@@ -8027,7 +8240,7 @@
         "ColorConversion3DLUTSettings": {
           "shape": "__listOfColorConversion3DLUTSetting",
           "locationName": "colorConversion3DLUTSettings",
-          "documentation": "Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs."
+          "documentation": "Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html"
         },
         "Esam": {
           "shape": "EsamSettings",
@@ -8198,7 +8411,7 @@
         "ColorConversion3DLUTSettings": {
           "shape": "__listOfColorConversion3DLUTSetting",
           "locationName": "colorConversion3DLUTSettings",
-          "documentation": "Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs."
+          "documentation": "Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html"
         },
         "Esam": {
           "shape": "EsamSettings",
@@ -8745,6 +8958,38 @@
         }
       }
     },
+    "ListVersionsRequest": {
+      "type": "structure",
+      "members": {
+        "MaxResults": {
+          "shape": "__integerMin1Max20",
+          "locationName": "maxResults",
+          "documentation": "Optional. Number of valid Job engine versions, up to twenty, that will be returned at one time.",
+          "location": "querystring"
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "Optional. Use this string, provided with the response to a previous request, to request the next batch of Job engine versions.",
+          "location": "querystring"
+        }
+      }
+    },
+    "ListVersionsResponse": {
+      "type": "structure",
+      "members": {
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "Optional. Use this string, provided with the response to a previous request, to request the next batch of Job engine versions."
+        },
+        "Versions": {
+          "shape": "__listOfJobEngineVersion",
+          "locationName": "versions",
+          "documentation": "Retrieve a JSON array of all available Job engine versions and the date they expire."
+        }
+      }
+    },
     "M2tsAudioBufferModel": {
       "type": "string",
       "documentation": "Selects between the DVB and ATSC buffer models for Dolby Digital audio.",
@@ -8831,6 +9076,14 @@
       "enum": [
         "PCR_EVERY_PES_PACKET",
         "CONFIGURED_PCR_PERIOD"
+      ]
+    },
+    "M2tsPreventBufferUnderflow": {
+      "type": "string",
+      "documentation": "Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your job will take longer to complete.",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
       ]
     },
     "M2tsRateMode": {
@@ -9017,6 +9270,11 @@
           "shape": "__integerMin32Max8182",
           "locationName": "pmtPid",
           "documentation": "Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480."
+        },
+        "PreventBufferUnderflow": {
+          "shape": "M2tsPreventBufferUnderflow",
+          "locationName": "preventBufferUnderflow",
+          "documentation": "Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your job will take longer to complete."
         },
         "PrivateMetadataPid": {
           "shape": "__integerMin32Max8182",
@@ -9902,7 +10160,7 @@
         "MinIInterval": {
           "shape": "__integerMin0Max30",
           "locationName": "minIInterval",
-          "documentation": "Use this setting only when you also enable Scene change detection. This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs."
+          "documentation": "Specify the minimum number of frames allowed between two IDR-frames in your output. This includes frames created at the start of a GOP or a scene change. Use Min I-Interval to improve video compression by varying GOP size when two IDR-frames would be created near each other. For example, if a regular cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame, and you set Min I-interval to 5, then the encoder would only write an IDR-frame for the scene-change. In this way, one GOP is shortened or extended. If a cadence-driven IDR-frame would be further than 5 frames from a scene-change IDR-frame, then the encoder leaves all IDR-frames in place. To manually specify an interval: Enter a value from 1 to 30. Use when your downstream systems have specific GOP size requirements. To disable GOP size variance: Enter 0. MediaConvert will only create IDR-frames at the start of your output's cadence-driven GOP. Use when your downstream systems require a regular GOP size."
         },
         "NumberBFramesBetweenReferenceFrames": {
           "shape": "__integerMin0Max7",
@@ -10495,7 +10753,7 @@
           "documentation": "Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)"
         },
         "NameModifier": {
-          "shape": "__stringMin1",
+          "shape": "__stringMin1Max256",
           "locationName": "nameModifier",
           "documentation": "Use Name modifier to have the service add a string to the end of each output filename. You specify the base filename as part of your destination URI. When you create multiple outputs in the same output group, Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output group."
         },
@@ -11370,6 +11628,62 @@
         }
       },
       "documentation": "Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html."
+    },
+    "SearchJobsRequest": {
+      "type": "structure",
+      "members": {
+        "InputFile": {
+          "shape": "__string",
+          "locationName": "inputFile",
+          "documentation": "Optional. Provide your input file URL or your partial input file name. The maximum length for an input file is 300 characters.",
+          "location": "querystring"
+        },
+        "MaxResults": {
+          "shape": "__integerMin1Max20",
+          "locationName": "maxResults",
+          "documentation": "Optional. Number of jobs, up to twenty, that will be returned at one time.",
+          "location": "querystring"
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.",
+          "location": "querystring"
+        },
+        "Order": {
+          "shape": "Order",
+          "locationName": "order",
+          "documentation": "Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.",
+          "location": "querystring"
+        },
+        "Queue": {
+          "shape": "__string",
+          "locationName": "queue",
+          "documentation": "Optional. Provide a queue name, or a queue ARN, to return only jobs from that queue.",
+          "location": "querystring"
+        },
+        "Status": {
+          "shape": "JobStatus",
+          "locationName": "status",
+          "documentation": "Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.",
+          "location": "querystring"
+        }
+      }
+    },
+    "SearchJobsResponse": {
+      "type": "structure",
+      "members": {
+        "Jobs": {
+          "shape": "__listOfJob",
+          "locationName": "jobs",
+          "documentation": "List of jobs."
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "Use this string to request the next batch of jobs."
+        }
+      }
     },
     "SimulateReservedQueue": {
       "type": "string",
@@ -12319,17 +12633,32 @@
         "EndTimecode": {
           "shape": "__stringPattern010920405090509092",
           "locationName": "endTimecode",
-          "documentation": "Enter the end timecode in the underlying input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00."
+          "documentation": "Enter the end timecode in the base input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the base input video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS isthe second, and FF is the frame number. When entering this value, take into account your choice for the base input video's timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00."
+        },
+        "InitialPosition": {
+          "shape": "VideoOverlayPosition",
+          "locationName": "initialPosition",
+          "documentation": "Specify the Initial position of your video overlay. To specify the Initial position of your video overlay, including distance from the left or top edge of the base input video's frame, or size: Enter a value for X position, Y position, Width, or Height. To use the full frame of the base input video: Leave blank."
         },
         "Input": {
           "shape": "VideoOverlayInput",
           "locationName": "input",
           "documentation": "Input settings for Video overlay. You can include one or more video overlays in sequence at different times that you specify."
         },
+        "Playback": {
+          "shape": "VideoOverlayPlayBackMode",
+          "locationName": "playback",
+          "documentation": "Specify whether your video overlay repeats or plays only once. To repeat your video overlay on a loop: Keep the default value, Repeat. Your overlay will repeat for the duration of the base input video. To playback your video overlay only once: Choose Once. With either option, you can end playback at a time that you specify by entering a value for End timecode."
+        },
         "StartTimecode": {
           "shape": "__stringPattern010920405090509092",
           "locationName": "startTimecode",
-          "documentation": "Enter the start timecode in the underlying input video for this overlay. Your overlay will be active starting with this frame. To display your video overlay starting at the beginning of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to begin five minutes into the video, enter 01:05:00:00."
+          "documentation": "Enter the start timecode in the base input video for this overlay. Your overlay will be active starting with this frame. To display your video overlay starting at the beginning of the base input video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the base input video's timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to begin five minutes into the video, enter 01:05:00:00."
+        },
+        "Transitions": {
+          "shape": "__listOfVideoOverlayTransition",
+          "locationName": "transitions",
+          "documentation": "Specify one or more transitions for your video overlay. Use Transitions to reposition or resize your overlay over time. To use the same position and size for the duration of your video overlay: Leave blank. To specify a Transition: Enter a value for Start timecode, End Timecode, X Position, Y Position, Width, or Height."
         }
       },
       "documentation": "Overlay one or more videos on top of your input video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-overlays.html"
@@ -12340,7 +12669,7 @@
         "FileInput": {
           "shape": "__stringPatternS3Https",
           "locationName": "fileInput",
-          "documentation": "Specify the input file S3, HTTP, or HTTPS URI for your video overlay. For consistency in color and formatting in your output video image, we recommend that you specify a video with similar characteristics as the underlying input video."
+          "documentation": "Specify the input file S3, HTTP, or HTTPS URL for your video overlay.\nTo specify one or more Transitions for your base input video instead: Leave blank."
         },
         "InputClippings": {
           "shape": "__listOfVideoOverlayInputClipping",
@@ -12364,17 +12693,85 @@
       "type": "structure",
       "members": {
         "EndTimecode": {
-          "shape": "__stringPattern010920405090509092",
+          "shape": "__stringPattern010920405090509092090909",
           "locationName": "endTimecode",
           "documentation": "Specify the timecode of the last frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source."
         },
         "StartTimecode": {
-          "shape": "__stringPattern010920405090509092",
+          "shape": "__stringPattern010920405090509092090909",
           "locationName": "startTimecode",
           "documentation": "Specify the timecode of the first frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source."
         }
       },
       "documentation": "To transcode only portions of your video overlay, include one input clip for each part of your video overlay that you want in your output."
+    },
+    "VideoOverlayPlayBackMode": {
+      "type": "string",
+      "documentation": "Specify whether your video overlay repeats or plays only once. To repeat your video overlay on a loop: Keep the default value, Repeat. Your overlay will repeat for the duration of the base input video. To playback your video overlay only once: Choose Once. With either option, you can end playback at a time that you specify by entering a value for End timecode.",
+      "enum": [
+        "ONCE",
+        "REPEAT"
+      ]
+    },
+    "VideoOverlayPosition": {
+      "type": "structure",
+      "members": {
+        "Height": {
+          "shape": "__integerMinNegative1Max2147483647",
+          "locationName": "height",
+          "documentation": "To scale your video overlay to the same height as the base input video: Leave blank. To scale the height of your video overlay to a different height: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 360 and choose Pixels, your video overlay will be rendered with a height of 360. When you enter 50, choose Percentage, and your overlay's source has a height of 1080, your video overlay will be rendered with a height of 540. To scale your overlay to a specific height while automatically maintaining its original aspect ratio, enter a value for Height and leave Width blank."
+        },
+        "Unit": {
+          "shape": "VideoOverlayUnit",
+          "locationName": "unit",
+          "documentation": "Specify the Unit type to use when you enter a value for X position, Y position, Width, or Height. You can choose Pixels or Percentage. Leave blank to use the default value, Pixels."
+        },
+        "Width": {
+          "shape": "__integerMinNegative1Max2147483647",
+          "locationName": "width",
+          "documentation": "To scale your video overlay to the same width as the base input video: Leave blank. To scale the width of your video overlay to a different width: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 640 and choose Pixels, your video overlay will scale to a height of 640 pixels. When you enter 50, choose Percentage, and your overlay's source has a width of 1920, your video overlay will scale to a width of 960. To scale your overlay to a specific width while automatically maintaining its original aspect ratio, enter a value for Width and leave Height blank."
+        },
+        "XPosition": {
+          "shape": "__integerMinNegative2147483648Max2147483647",
+          "locationName": "xPosition",
+          "documentation": "To position the left edge of your video overlay along the left edge of the base input video's frame: Keep blank, or enter 0. To position the left edge of your video overlay to the right, relative to the left edge of the base input video's frame: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 10 and choose Pixels, your video overlay will be positioned 10 pixels from the left edge of the base input video's frame. When you enter 10, choose Percentage, and your base input video is 1920x1080, your video overlay will be positioned 192 pixels from the left edge of the base input video's frame."
+        },
+        "YPosition": {
+          "shape": "__integerMinNegative2147483648Max2147483647",
+          "locationName": "yPosition",
+          "documentation": "To position the top edge of your video overlay along the top edge of the base input video's frame: Keep blank, or enter 0. To position the top edge of your video overlay down, relative to the top edge of the base input video's frame: Enter an integer representing the Unit type that you choose, either Pixels or Percentage. For example, when you enter 10 and choose Pixels, your video overlay will be positioned 10 pixels from the top edge of the base input video's frame. When you enter 10, choose Percentage, and your underlying video is 1920x1080, your video overlay will be positioned 108 pixels from the top edge of the base input video's frame."
+        }
+      },
+      "documentation": "position of video overlay"
+    },
+    "VideoOverlayTransition": {
+      "type": "structure",
+      "members": {
+        "EndPosition": {
+          "shape": "VideoOverlayPosition",
+          "locationName": "endPosition",
+          "documentation": "Specify the ending position for this transition, relative to the base input video's frame. Your video overlay will move smoothly to this position, beginning at this transition's Start timecode and ending at this transition's End timecode."
+        },
+        "EndTimecode": {
+          "shape": "__stringPattern010920405090509092",
+          "locationName": "endTimecode",
+          "documentation": "Specify the timecode for when this transition ends. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source."
+        },
+        "StartTimecode": {
+          "shape": "__stringPattern010920405090509092",
+          "locationName": "startTimecode",
+          "documentation": "Specify the timecode for when this transition begins. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source."
+        }
+      },
+      "documentation": "Specify one or more Transitions for your video overlay. Use Transitions to reposition or resize your overlay over time. To use the same position and size for the duration of your video overlay: Leave blank. To specify a Transition: Enter a value for Start timecode, End Timecode, X Position, Y Position, Width, or Height."
+    },
+    "VideoOverlayUnit": {
+      "type": "string",
+      "documentation": "Specify the Unit type to use when you enter a value for X position, Y position, Width, or Height. You can choose Pixels or Percentage. Leave blank to use the default value, Pixels.",
+      "enum": [
+        "PIXELS",
+        "PERCENTAGE"
+      ]
     },
     "VideoPreprocessor": {
       "type": "structure",
@@ -13750,6 +14147,11 @@
       "min": -1,
       "max": 10
     },
+    "__integerMinNegative1Max2147483647": {
+      "type": "integer",
+      "min": -1,
+      "max": 2147483647
+    },
     "__integerMinNegative1Max3": {
       "type": "integer",
       "min": -1,
@@ -13911,6 +14313,12 @@
         "shape": "Job"
       }
     },
+    "__listOfJobEngineVersion": {
+      "type": "list",
+      "member": {
+        "shape": "JobEngineVersion"
+      }
+    },
     "__listOfJobTemplate": {
       "type": "list",
       "member": {
@@ -13987,6 +14395,12 @@
       "type": "list",
       "member": {
         "shape": "VideoOverlayInputClipping"
+      }
+    },
+    "__listOfVideoOverlayTransition": {
+      "type": "list",
+      "member": {
+        "shape": "VideoOverlayTransition"
       }
     },
     "__listOfWarningGroup": {
@@ -14224,6 +14638,10 @@
       "type": "string",
       "pattern": "^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$"
     },
+    "__stringPattern010920405090509092090909": {
+      "type": "string",
+      "pattern": "^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}(@[0-9]+(\\.[0-9]+)?(:[0-9]+)?)?$"
+    },
     "__stringPattern01D20305D205D": {
       "type": "string",
       "pattern": "^((([0-1]\\d)|(2[0-3]))(:[0-5]\\d){2}([:;][0-5]\\d))$"
@@ -14295,6 +14713,10 @@
     "__stringPatternS3Https": {
       "type": "string",
       "pattern": "^s3://([^\\/]+\\/+)+((([^\\/]*)))|^https?://[^\\/].*[^&]$"
+    },
+    "__stringPatternS3TtfHttpsTtf": {
+      "type": "string",
+      "pattern": "^((s3://(.*?)\\.(ttf))|(https?://(.*?)\\.(ttf)(\\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$"
     },
     "__stringPatternSNManifestConfirmConditionNotificationNS": {
       "type": "string",

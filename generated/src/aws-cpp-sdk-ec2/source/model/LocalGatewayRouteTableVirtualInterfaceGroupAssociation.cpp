@@ -32,15 +32,8 @@ LocalGatewayRouteTableVirtualInterfaceGroupAssociation::LocalGatewayRouteTableVi
 {
 }
 
-LocalGatewayRouteTableVirtualInterfaceGroupAssociation::LocalGatewayRouteTableVirtualInterfaceGroupAssociation(const XmlNode& xmlNode) : 
-    m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+LocalGatewayRouteTableVirtualInterfaceGroupAssociation::LocalGatewayRouteTableVirtualInterfaceGroupAssociation(const XmlNode& xmlNode)
+  : LocalGatewayRouteTableVirtualInterfaceGroupAssociation()
 {
   *this = xmlNode;
 }

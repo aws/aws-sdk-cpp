@@ -33,18 +33,8 @@ Robot::Robot() :
 {
 }
 
-Robot::Robot(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_status(RobotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_greenGrassGroupIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_lastDeploymentJobHasBeenSet(false),
-    m_lastDeploymentTimeHasBeenSet(false)
+Robot::Robot(JsonView jsonValue)
+  : Robot()
 {
   *this = jsonValue;
 }

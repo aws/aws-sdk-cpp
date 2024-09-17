@@ -32,17 +32,8 @@ TreeMapConfiguration::TreeMapConfiguration() :
 {
 }
 
-TreeMapConfiguration::TreeMapConfiguration(JsonView jsonValue) : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_groupLabelOptionsHasBeenSet(false),
-    m_sizeLabelOptionsHasBeenSet(false),
-    m_colorLabelOptionsHasBeenSet(false),
-    m_colorScaleHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
+TreeMapConfiguration::TreeMapConfiguration(JsonView jsonValue)
+  : TreeMapConfiguration()
 {
   *this = jsonValue;
 }

@@ -25,10 +25,8 @@ EncoderConfigurationSummary::EncoderConfigurationSummary() :
 {
 }
 
-EncoderConfigurationSummary::EncoderConfigurationSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+EncoderConfigurationSummary::EncoderConfigurationSummary(JsonView jsonValue)
+  : EncoderConfigurationSummary()
 {
   *this = jsonValue;
 }

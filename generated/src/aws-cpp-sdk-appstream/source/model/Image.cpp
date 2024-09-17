@@ -39,32 +39,19 @@ Image::Image() :
     m_publicBaseImageReleasedDateHasBeenSet(false),
     m_appstreamAgentVersionHasBeenSet(false),
     m_imagePermissionsHasBeenSet(false),
-    m_imageErrorsHasBeenSet(false)
+    m_imageErrorsHasBeenSet(false),
+    m_latestAppstreamAgentVersion(LatestAppstreamAgentVersion::NOT_SET),
+    m_latestAppstreamAgentVersionHasBeenSet(false),
+    m_supportedInstanceFamiliesHasBeenSet(false),
+    m_dynamicAppProvidersEnabled(DynamicAppProvidersEnabled::NOT_SET),
+    m_dynamicAppProvidersEnabledHasBeenSet(false),
+    m_imageSharedWithOthers(ImageSharedWithOthers::NOT_SET),
+    m_imageSharedWithOthersHasBeenSet(false)
 {
 }
 
-Image::Image(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_baseImageArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_visibility(VisibilityType::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_imageBuilderSupported(false),
-    m_imageBuilderSupportedHasBeenSet(false),
-    m_imageBuilderNameHasBeenSet(false),
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_publicBaseImageReleasedDateHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false),
-    m_imagePermissionsHasBeenSet(false),
-    m_imageErrorsHasBeenSet(false)
+Image::Image(JsonView jsonValue)
+  : Image()
 {
   *this = jsonValue;
 }
@@ -196,6 +183,37 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageErrorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LatestAppstreamAgentVersion"))
+  {
+    m_latestAppstreamAgentVersion = LatestAppstreamAgentVersionMapper::GetLatestAppstreamAgentVersionForName(jsonValue.GetString("LatestAppstreamAgentVersion"));
+
+    m_latestAppstreamAgentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SupportedInstanceFamilies"))
+  {
+    Aws::Utils::Array<JsonView> supportedInstanceFamiliesJsonList = jsonValue.GetArray("SupportedInstanceFamilies");
+    for(unsigned supportedInstanceFamiliesIndex = 0; supportedInstanceFamiliesIndex < supportedInstanceFamiliesJsonList.GetLength(); ++supportedInstanceFamiliesIndex)
+    {
+      m_supportedInstanceFamilies.push_back(supportedInstanceFamiliesJsonList[supportedInstanceFamiliesIndex].AsString());
+    }
+    m_supportedInstanceFamiliesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DynamicAppProvidersEnabled"))
+  {
+    m_dynamicAppProvidersEnabled = DynamicAppProvidersEnabledMapper::GetDynamicAppProvidersEnabledForName(jsonValue.GetString("DynamicAppProvidersEnabled"));
+
+    m_dynamicAppProvidersEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageSharedWithOthers"))
+  {
+    m_imageSharedWithOthers = ImageSharedWithOthersMapper::GetImageSharedWithOthersForName(jsonValue.GetString("ImageSharedWithOthers"));
+
+    m_imageSharedWithOthersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -308,6 +326,32 @@ JsonValue Image::Jsonize() const
    }
    payload.WithArray("ImageErrors", std::move(imageErrorsJsonList));
 
+  }
+
+  if(m_latestAppstreamAgentVersionHasBeenSet)
+  {
+   payload.WithString("LatestAppstreamAgentVersion", LatestAppstreamAgentVersionMapper::GetNameForLatestAppstreamAgentVersion(m_latestAppstreamAgentVersion));
+  }
+
+  if(m_supportedInstanceFamiliesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedInstanceFamiliesJsonList(m_supportedInstanceFamilies.size());
+   for(unsigned supportedInstanceFamiliesIndex = 0; supportedInstanceFamiliesIndex < supportedInstanceFamiliesJsonList.GetLength(); ++supportedInstanceFamiliesIndex)
+   {
+     supportedInstanceFamiliesJsonList[supportedInstanceFamiliesIndex].AsString(m_supportedInstanceFamilies[supportedInstanceFamiliesIndex]);
+   }
+   payload.WithArray("SupportedInstanceFamilies", std::move(supportedInstanceFamiliesJsonList));
+
+  }
+
+  if(m_dynamicAppProvidersEnabledHasBeenSet)
+  {
+   payload.WithString("DynamicAppProvidersEnabled", DynamicAppProvidersEnabledMapper::GetNameForDynamicAppProvidersEnabled(m_dynamicAppProvidersEnabled));
+  }
+
+  if(m_imageSharedWithOthersHasBeenSet)
+  {
+   payload.WithString("ImageSharedWithOthers", ImageSharedWithOthersMapper::GetNameForImageSharedWithOthers(m_imageSharedWithOthers));
   }
 
   return payload;

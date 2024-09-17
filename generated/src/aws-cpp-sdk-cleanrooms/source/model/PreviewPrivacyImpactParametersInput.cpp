@@ -23,8 +23,8 @@ PreviewPrivacyImpactParametersInput::PreviewPrivacyImpactParametersInput() :
 {
 }
 
-PreviewPrivacyImpactParametersInput::PreviewPrivacyImpactParametersInput(JsonView jsonValue) : 
-    m_differentialPrivacyHasBeenSet(false)
+PreviewPrivacyImpactParametersInput::PreviewPrivacyImpactParametersInput(JsonView jsonValue)
+  : PreviewPrivacyImpactParametersInput()
 {
   *this = jsonValue;
 }

@@ -32,95 +32,34 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The pattern to test.</p>
      */
     inline const Aws::String& GetPattern() const{ return m_pattern; }
-
-    /**
-     * <p>The pattern to test.</p>
-     */
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-
-    /**
-     * <p>The pattern to test.</p>
-     */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-
-    /**
-     * <p>The pattern to test.</p>
-     */
     inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-
-    /**
-     * <p>The pattern to test.</p>
-     */
     inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-
-    /**
-     * <p>The pattern to test.</p>
-     */
     inline TestSegmentPatternRequest& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-
-    /**
-     * <p>The pattern to test.</p>
-     */
     inline TestSegmentPatternRequest& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-
-    /**
-     * <p>The pattern to test.</p>
-     */
     inline TestSegmentPatternRequest& WithPattern(const char* value) { SetPattern(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A sample <code>evaluationContext</code> JSON block to test against the
      * specified pattern.</p>
      */
     inline const Aws::String& GetPayload() const{ return m_payload; }
-
-    /**
-     * <p>A sample <code>evaluationContext</code> JSON block to test against the
-     * specified pattern.</p>
-     */
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-
-    /**
-     * <p>A sample <code>evaluationContext</code> JSON block to test against the
-     * specified pattern.</p>
-     */
     inline void SetPayload(const Aws::String& value) { m_payloadHasBeenSet = true; m_payload = value; }
-
-    /**
-     * <p>A sample <code>evaluationContext</code> JSON block to test against the
-     * specified pattern.</p>
-     */
     inline void SetPayload(Aws::String&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-
-    /**
-     * <p>A sample <code>evaluationContext</code> JSON block to test against the
-     * specified pattern.</p>
-     */
     inline void SetPayload(const char* value) { m_payloadHasBeenSet = true; m_payload.assign(value); }
-
-    /**
-     * <p>A sample <code>evaluationContext</code> JSON block to test against the
-     * specified pattern.</p>
-     */
     inline TestSegmentPatternRequest& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>A sample <code>evaluationContext</code> JSON block to test against the
-     * specified pattern.</p>
-     */
     inline TestSegmentPatternRequest& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
-
-    /**
-     * <p>A sample <code>evaluationContext</code> JSON block to test against the
-     * specified pattern.</p>
-     */
     inline TestSegmentPatternRequest& WithPayload(const char* value) { SetPayload(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pattern;

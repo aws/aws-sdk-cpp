@@ -34,54 +34,20 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the custom language model you want information about. Model names
      * are case sensitive.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
-
-    /**
-     * <p>The name of the custom language model you want information about. Model names
-     * are case sensitive.</p>
-     */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the custom language model you want information about. Model names
-     * are case sensitive.</p>
-     */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-
-    /**
-     * <p>The name of the custom language model you want information about. Model names
-     * are case sensitive.</p>
-     */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-
-    /**
-     * <p>The name of the custom language model you want information about. Model names
-     * are case sensitive.</p>
-     */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-
-    /**
-     * <p>The name of the custom language model you want information about. Model names
-     * are case sensitive.</p>
-     */
     inline DescribeLanguageModelRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-
-    /**
-     * <p>The name of the custom language model you want information about. Model names
-     * are case sensitive.</p>
-     */
     inline DescribeLanguageModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the custom language model you want information about. Model names
-     * are case sensitive.</p>
-     */
     inline DescribeLanguageModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelName;

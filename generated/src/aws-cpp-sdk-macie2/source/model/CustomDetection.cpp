@@ -27,12 +27,8 @@ CustomDetection::CustomDetection() :
 {
 }
 
-CustomDetection::CustomDetection(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_occurrencesHasBeenSet(false)
+CustomDetection::CustomDetection(JsonView jsonValue)
+  : CustomDetection()
 {
   *this = jsonValue;
 }

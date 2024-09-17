@@ -19,30 +19,45 @@ namespace Model
 {
 
 WrappedKey::WrappedKey() : 
-    m_keyCheckValueHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_keyMaterialHasBeenSet(false),
+    m_wrappingKeyArnHasBeenSet(false),
     m_wrappedKeyMaterialFormat(WrappedKeyMaterialFormat::NOT_SET),
     m_wrappedKeyMaterialFormatHasBeenSet(false),
-    m_wrappingKeyArnHasBeenSet(false)
+    m_keyMaterialHasBeenSet(false),
+    m_keyCheckValueHasBeenSet(false),
+    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
+    m_keyCheckValueAlgorithmHasBeenSet(false)
 {
 }
 
-WrappedKey::WrappedKey(JsonView jsonValue) : 
-    m_keyCheckValueHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_keyMaterialHasBeenSet(false),
-    m_wrappedKeyMaterialFormat(WrappedKeyMaterialFormat::NOT_SET),
-    m_wrappedKeyMaterialFormatHasBeenSet(false),
-    m_wrappingKeyArnHasBeenSet(false)
+WrappedKey::WrappedKey(JsonView jsonValue)
+  : WrappedKey()
 {
   *this = jsonValue;
 }
 
 WrappedKey& WrappedKey::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("WrappingKeyArn"))
+  {
+    m_wrappingKeyArn = jsonValue.GetString("WrappingKeyArn");
+
+    m_wrappingKeyArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WrappedKeyMaterialFormat"))
+  {
+    m_wrappedKeyMaterialFormat = WrappedKeyMaterialFormatMapper::GetWrappedKeyMaterialFormatForName(jsonValue.GetString("WrappedKeyMaterialFormat"));
+
+    m_wrappedKeyMaterialFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeyMaterial"))
+  {
+    m_keyMaterial = jsonValue.GetString("KeyMaterial");
+
+    m_keyMaterialHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
@@ -57,33 +72,29 @@ WrappedKey& WrappedKey::operator =(JsonView jsonValue)
     m_keyCheckValueAlgorithmHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KeyMaterial"))
-  {
-    m_keyMaterial = jsonValue.GetString("KeyMaterial");
-
-    m_keyMaterialHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("WrappedKeyMaterialFormat"))
-  {
-    m_wrappedKeyMaterialFormat = WrappedKeyMaterialFormatMapper::GetWrappedKeyMaterialFormatForName(jsonValue.GetString("WrappedKeyMaterialFormat"));
-
-    m_wrappedKeyMaterialFormatHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("WrappingKeyArn"))
-  {
-    m_wrappingKeyArn = jsonValue.GetString("WrappingKeyArn");
-
-    m_wrappingKeyArnHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue WrappedKey::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_wrappingKeyArnHasBeenSet)
+  {
+   payload.WithString("WrappingKeyArn", m_wrappingKeyArn);
+
+  }
+
+  if(m_wrappedKeyMaterialFormatHasBeenSet)
+  {
+   payload.WithString("WrappedKeyMaterialFormat", WrappedKeyMaterialFormatMapper::GetNameForWrappedKeyMaterialFormat(m_wrappedKeyMaterialFormat));
+  }
+
+  if(m_keyMaterialHasBeenSet)
+  {
+   payload.WithString("KeyMaterial", m_keyMaterial);
+
+  }
 
   if(m_keyCheckValueHasBeenSet)
   {
@@ -94,23 +105,6 @@ JsonValue WrappedKey::Jsonize() const
   if(m_keyCheckValueAlgorithmHasBeenSet)
   {
    payload.WithString("KeyCheckValueAlgorithm", KeyCheckValueAlgorithmMapper::GetNameForKeyCheckValueAlgorithm(m_keyCheckValueAlgorithm));
-  }
-
-  if(m_keyMaterialHasBeenSet)
-  {
-   payload.WithString("KeyMaterial", m_keyMaterial);
-
-  }
-
-  if(m_wrappedKeyMaterialFormatHasBeenSet)
-  {
-   payload.WithString("WrappedKeyMaterialFormat", WrappedKeyMaterialFormatMapper::GetNameForWrappedKeyMaterialFormat(m_wrappedKeyMaterialFormat));
-  }
-
-  if(m_wrappingKeyArnHasBeenSet)
-  {
-   payload.WithString("WrappingKeyArn", m_wrappingKeyArn);
-
   }
 
   return payload;

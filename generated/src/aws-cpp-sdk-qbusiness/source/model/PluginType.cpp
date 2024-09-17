@@ -24,6 +24,7 @@ namespace Aws
         static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
         static const int JIRA_HASH = HashingUtils::HashString("JIRA");
         static const int ZENDESK_HASH = HashingUtils::HashString("ZENDESK");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         PluginType GetPluginTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ZENDESK_HASH)
           {
             return PluginType::ZENDESK;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return PluginType::CUSTOM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "JIRA";
           case PluginType::ZENDESK:
             return "ZENDESK";
+          case PluginType::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -26,11 +26,8 @@ TieringPolicy::TieringPolicy() :
 {
 }
 
-TieringPolicy::TieringPolicy(JsonView jsonValue) : 
-    m_coolingPeriod(0),
-    m_coolingPeriodHasBeenSet(false),
-    m_name(TieringPolicyName::NOT_SET),
-    m_nameHasBeenSet(false)
+TieringPolicy::TieringPolicy(JsonView jsonValue)
+  : TieringPolicy()
 {
   *this = jsonValue;
 }

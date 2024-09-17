@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the security profile whose information you want to get.</p>
      */
     inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
-
-    /**
-     * <p>The name of the security profile whose information you want to get.</p>
-     */
     inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
-
-    /**
-     * <p>The name of the security profile whose information you want to get.</p>
-     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
-
-    /**
-     * <p>The name of the security profile whose information you want to get.</p>
-     */
     inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::move(value); }
-
-    /**
-     * <p>The name of the security profile whose information you want to get.</p>
-     */
     inline void SetSecurityProfileName(const char* value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName.assign(value); }
-
-    /**
-     * <p>The name of the security profile whose information you want to get.</p>
-     */
     inline DescribeSecurityProfileRequest& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-
-    /**
-     * <p>The name of the security profile whose information you want to get.</p>
-     */
     inline DescribeSecurityProfileRequest& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the security profile whose information you want to get.</p>
-     */
     inline DescribeSecurityProfileRequest& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityProfileName;

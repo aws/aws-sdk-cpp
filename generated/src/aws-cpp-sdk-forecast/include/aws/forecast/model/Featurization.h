@@ -48,6 +48,7 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the schema attribute that specifies the data field to be
      * featurized. Amazon Forecast supports the target field of the
@@ -58,133 +59,29 @@ namespace Model
      * <a>howitworks-missing-values</a>.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Amazon Forecast supports the target field of the
-     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
-     * datasets. For example, for the <code>RETAIL</code> domain, the target is
-     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>. For more information, see
-     * <a>howitworks-missing-values</a>.</p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Amazon Forecast supports the target field of the
-     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
-     * datasets. For example, for the <code>RETAIL</code> domain, the target is
-     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>. For more information, see
-     * <a>howitworks-missing-values</a>.</p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Amazon Forecast supports the target field of the
-     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
-     * datasets. For example, for the <code>RETAIL</code> domain, the target is
-     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>. For more information, see
-     * <a>howitworks-missing-values</a>.</p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Amazon Forecast supports the target field of the
-     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
-     * datasets. For example, for the <code>RETAIL</code> domain, the target is
-     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>. For more information, see
-     * <a>howitworks-missing-values</a>.</p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Amazon Forecast supports the target field of the
-     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
-     * datasets. For example, for the <code>RETAIL</code> domain, the target is
-     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>. For more information, see
-     * <a>howitworks-missing-values</a>.</p>
-     */
     inline Featurization& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Amazon Forecast supports the target field of the
-     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
-     * datasets. For example, for the <code>RETAIL</code> domain, the target is
-     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>. For more information, see
-     * <a>howitworks-missing-values</a>.</p>
-     */
     inline Featurization& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Amazon Forecast supports the target field of the
-     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
-     * datasets. For example, for the <code>RETAIL</code> domain, the target is
-     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>. For more information, see
-     * <a>howitworks-missing-values</a>.</p>
-     */
     inline Featurization& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
      * feature transformation method.</p>
      */
     inline const Aws::Vector<FeaturizationMethod>& GetFeaturizationPipeline() const{ return m_featurizationPipeline; }
-
-    /**
-     * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
-     * feature transformation method.</p>
-     */
     inline bool FeaturizationPipelineHasBeenSet() const { return m_featurizationPipelineHasBeenSet; }
-
-    /**
-     * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
-     * feature transformation method.</p>
-     */
     inline void SetFeaturizationPipeline(const Aws::Vector<FeaturizationMethod>& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline = value; }
-
-    /**
-     * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
-     * feature transformation method.</p>
-     */
     inline void SetFeaturizationPipeline(Aws::Vector<FeaturizationMethod>&& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline = std::move(value); }
-
-    /**
-     * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
-     * feature transformation method.</p>
-     */
     inline Featurization& WithFeaturizationPipeline(const Aws::Vector<FeaturizationMethod>& value) { SetFeaturizationPipeline(value); return *this;}
-
-    /**
-     * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
-     * feature transformation method.</p>
-     */
     inline Featurization& WithFeaturizationPipeline(Aws::Vector<FeaturizationMethod>&& value) { SetFeaturizationPipeline(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
-     * feature transformation method.</p>
-     */
     inline Featurization& AddFeaturizationPipeline(const FeaturizationMethod& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline.push_back(value); return *this; }
-
-    /**
-     * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
-     * feature transformation method.</p>
-     */
     inline Featurization& AddFeaturizationPipeline(FeaturizationMethod&& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_attributeName;

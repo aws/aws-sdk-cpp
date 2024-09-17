@@ -34,27 +34,14 @@ EnhancedImageScanFinding::EnhancedImageScanFinding() :
     m_statusHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_fixAvailableHasBeenSet(false),
+    m_exploitAvailableHasBeenSet(false)
 {
 }
 
-EnhancedImageScanFinding::EnhancedImageScanFinding(JsonView jsonValue) : 
-    m_awsAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_packageVulnerabilityDetailsHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_scoreDetailsHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+EnhancedImageScanFinding::EnhancedImageScanFinding(JsonView jsonValue)
+  : EnhancedImageScanFinding()
 {
   *this = jsonValue;
 }
@@ -169,6 +156,20 @@ EnhancedImageScanFinding& EnhancedImageScanFinding::operator =(JsonView jsonValu
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fixAvailable"))
+  {
+    m_fixAvailable = jsonValue.GetString("fixAvailable");
+
+    m_fixAvailableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exploitAvailable"))
+  {
+    m_exploitAvailable = jsonValue.GetString("exploitAvailable");
+
+    m_exploitAvailableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -266,6 +267,18 @@ JsonValue EnhancedImageScanFinding::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_fixAvailableHasBeenSet)
+  {
+   payload.WithString("fixAvailable", m_fixAvailable);
+
+  }
+
+  if(m_exploitAvailableHasBeenSet)
+  {
+   payload.WithString("exploitAvailable", m_exploitAvailable);
+
   }
 
   return payload;

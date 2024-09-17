@@ -24,9 +24,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails::Aw
 {
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueFromHasBeenSet(false)
+AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails(JsonView jsonValue)
+  : AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails()
 {
   *this = jsonValue;
 }

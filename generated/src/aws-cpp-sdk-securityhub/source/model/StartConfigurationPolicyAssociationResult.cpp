@@ -24,10 +24,8 @@ StartConfigurationPolicyAssociationResult::StartConfigurationPolicyAssociationRe
 {
 }
 
-StartConfigurationPolicyAssociationResult::StartConfigurationPolicyAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_targetType(TargetType::NOT_SET),
-    m_associationType(AssociationType::NOT_SET),
-    m_associationStatus(ConfigurationPolicyAssociationStatus::NOT_SET)
+StartConfigurationPolicyAssociationResult::StartConfigurationPolicyAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : StartConfigurationPolicyAssociationResult()
 {
   *this = result;
 }

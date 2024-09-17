@@ -24,9 +24,8 @@ ContributionAnalysisDefault::ContributionAnalysisDefault() :
 {
 }
 
-ContributionAnalysisDefault::ContributionAnalysisDefault(JsonView jsonValue) : 
-    m_measureFieldIdHasBeenSet(false),
-    m_contributorDimensionsHasBeenSet(false)
+ContributionAnalysisDefault::ContributionAnalysisDefault(JsonView jsonValue)
+  : ContributionAnalysisDefault()
 {
   *this = jsonValue;
 }

@@ -26,11 +26,8 @@ ResourceServerType::ResourceServerType() :
 {
 }
 
-ResourceServerType::ResourceServerType(JsonView jsonValue) : 
-    m_userPoolIdHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scopesHasBeenSet(false)
+ResourceServerType::ResourceServerType(JsonView jsonValue)
+  : ResourceServerType()
 {
   *this = jsonValue;
 }

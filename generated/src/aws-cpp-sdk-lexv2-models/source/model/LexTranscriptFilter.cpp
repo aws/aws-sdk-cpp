@@ -23,8 +23,8 @@ LexTranscriptFilter::LexTranscriptFilter() :
 {
 }
 
-LexTranscriptFilter::LexTranscriptFilter(JsonView jsonValue) : 
-    m_dateRangeFilterHasBeenSet(false)
+LexTranscriptFilter::LexTranscriptFilter(JsonView jsonValue)
+  : LexTranscriptFilter()
 {
   *this = jsonValue;
 }

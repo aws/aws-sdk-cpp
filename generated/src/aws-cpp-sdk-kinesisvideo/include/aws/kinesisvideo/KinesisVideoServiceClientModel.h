@@ -48,6 +48,19 @@
 #include <aws/kinesisvideo/model/UpdateNotificationConfigurationResult.h>
 #include <aws/kinesisvideo/model/UpdateSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/UpdateStreamResult.h>
+#include <aws/kinesisvideo/model/ListStreamsRequest.h>
+#include <aws/kinesisvideo/model/UpdateImageGenerationConfigurationRequest.h>
+#include <aws/kinesisvideo/model/ListTagsForStreamRequest.h>
+#include <aws/kinesisvideo/model/DescribeImageGenerationConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeNotificationConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeStreamRequest.h>
+#include <aws/kinesisvideo/model/ListSignalingChannelsRequest.h>
+#include <aws/kinesisvideo/model/DescribeSignalingChannelRequest.h>
+#include <aws/kinesisvideo/model/UpdateNotificationConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeEdgeConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeMappedResourceConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DeleteEdgeConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeMediaStorageConfigurationRequest.h>
 /* End of service model headers required in KinesisVideoClient header */
 
 namespace Aws
@@ -81,7 +94,7 @@ namespace Aws
 
   namespace KinesisVideo
   {
-    using KinesisVideoClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KinesisVideoClientConfiguration = Aws::Client::GenericClientConfiguration;
     using KinesisVideoEndpointProviderBase = Aws::KinesisVideo::Endpoint::KinesisVideoEndpointProviderBase;
     using KinesisVideoEndpointProvider = Aws::KinesisVideo::Endpoint::KinesisVideoEndpointProvider;
 

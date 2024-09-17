@@ -25,10 +25,8 @@ MySQLCatalogSource::MySQLCatalogSource() :
 {
 }
 
-MySQLCatalogSource::MySQLCatalogSource(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
+MySQLCatalogSource::MySQLCatalogSource(JsonView jsonValue)
+  : MySQLCatalogSource()
 {
   *this = jsonValue;
 }

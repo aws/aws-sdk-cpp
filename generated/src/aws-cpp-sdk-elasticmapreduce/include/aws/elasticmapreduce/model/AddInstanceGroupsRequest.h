@@ -39,87 +39,33 @@ namespace Model
     AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Instance groups to add.</p>
      */
     inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
-
-    /**
-     * <p>Instance groups to add.</p>
-     */
     inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
-
-    /**
-     * <p>Instance groups to add.</p>
-     */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
-
-    /**
-     * <p>Instance groups to add.</p>
-     */
     inline void SetInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
-
-    /**
-     * <p>Instance groups to add.</p>
-     */
     inline AddInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
-
-    /**
-     * <p>Instance groups to add.</p>
-     */
     inline AddInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { SetInstanceGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Instance groups to add.</p>
-     */
     inline AddInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
-
-    /**
-     * <p>Instance groups to add.</p>
-     */
     inline AddInstanceGroupsRequest& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Job flow in which to add the instance groups.</p>
      */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
-
-    /**
-     * <p>Job flow in which to add the instance groups.</p>
-     */
     inline bool JobFlowIdHasBeenSet() const { return m_jobFlowIdHasBeenSet; }
-
-    /**
-     * <p>Job flow in which to add the instance groups.</p>
-     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
-
-    /**
-     * <p>Job flow in which to add the instance groups.</p>
-     */
     inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = std::move(value); }
-
-    /**
-     * <p>Job flow in which to add the instance groups.</p>
-     */
     inline void SetJobFlowId(const char* value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId.assign(value); }
-
-    /**
-     * <p>Job flow in which to add the instance groups.</p>
-     */
     inline AddInstanceGroupsRequest& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
-
-    /**
-     * <p>Job flow in which to add the instance groups.</p>
-     */
     inline AddInstanceGroupsRequest& WithJobFlowId(Aws::String&& value) { SetJobFlowId(std::move(value)); return *this;}
-
-    /**
-     * <p>Job flow in which to add the instance groups.</p>
-     */
     inline AddInstanceGroupsRequest& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;

@@ -24,9 +24,8 @@ CertificateInUseException::CertificateInUseException() :
 {
 }
 
-CertificateInUseException::CertificateInUseException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+CertificateInUseException::CertificateInUseException(JsonView jsonValue)
+  : CertificateInUseException()
 {
   *this = jsonValue;
 }

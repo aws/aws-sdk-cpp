@@ -24,9 +24,8 @@ ForecastScenario::ForecastScenario() :
 {
 }
 
-ForecastScenario::ForecastScenario(JsonView jsonValue) : 
-    m_whatIfPointScenarioHasBeenSet(false),
-    m_whatIfRangeScenarioHasBeenSet(false)
+ForecastScenario::ForecastScenario(JsonView jsonValue)
+  : ForecastScenario()
 {
   *this = jsonValue;
 }

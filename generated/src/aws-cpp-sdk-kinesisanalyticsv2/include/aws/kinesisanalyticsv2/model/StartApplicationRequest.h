@@ -35,83 +35,32 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline StartApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline StartApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline StartApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
+     * <p>Identifies the run configuration (start parameters) of a Managed Service for
+     * Apache Flink application.</p>
      */
     inline const RunConfiguration& GetRunConfiguration() const{ return m_runConfiguration; }
-
-    /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
-     */
     inline bool RunConfigurationHasBeenSet() const { return m_runConfigurationHasBeenSet; }
-
-    /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
-     */
     inline void SetRunConfiguration(const RunConfiguration& value) { m_runConfigurationHasBeenSet = true; m_runConfiguration = value; }
-
-    /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
-     */
     inline void SetRunConfiguration(RunConfiguration&& value) { m_runConfigurationHasBeenSet = true; m_runConfiguration = std::move(value); }
-
-    /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
-     */
     inline StartApplicationRequest& WithRunConfiguration(const RunConfiguration& value) { SetRunConfiguration(value); return *this;}
-
-    /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
-     */
     inline StartApplicationRequest& WithRunConfiguration(RunConfiguration&& value) { SetRunConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

@@ -32,46 +32,19 @@ namespace Model
     AWS_RESOURCEGROUPS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name or the ARN of the resource group to retrieve.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The name or the ARN of the resource group to retrieve.</p>
-     */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p>The name or the ARN of the resource group to retrieve.</p>
-     */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The name or the ARN of the resource group to retrieve.</p>
-     */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The name or the ARN of the resource group to retrieve.</p>
-     */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-
-    /**
-     * <p>The name or the ARN of the resource group to retrieve.</p>
-     */
     inline GetGroupRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The name or the ARN of the resource group to retrieve.</p>
-     */
     inline GetGroupRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or the ARN of the resource group to retrieve.</p>
-     */
     inline GetGroupRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_group;

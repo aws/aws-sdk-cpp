@@ -23,8 +23,8 @@ AwsWafv2RulesActionCaptchaDetails::AwsWafv2RulesActionCaptchaDetails() :
 {
 }
 
-AwsWafv2RulesActionCaptchaDetails::AwsWafv2RulesActionCaptchaDetails(JsonView jsonValue) : 
-    m_customRequestHandlingHasBeenSet(false)
+AwsWafv2RulesActionCaptchaDetails::AwsWafv2RulesActionCaptchaDetails(JsonView jsonValue)
+  : AwsWafv2RulesActionCaptchaDetails()
 {
   *this = jsonValue;
 }

@@ -34,19 +34,8 @@ AssessmentSummary::AssessmentSummary() :
 {
 }
 
-AssessmentSummary::AssessmentSummary(JsonView jsonValue) : 
-    m_antipatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false),
-    m_lastAnalyzedTimestampHasBeenSet(false),
-    m_listAntipatternSeveritySummaryHasBeenSet(false),
-    m_listApplicationComponentStatusSummaryHasBeenSet(false),
-    m_listApplicationComponentStrategySummaryHasBeenSet(false),
-    m_listApplicationComponentSummaryHasBeenSet(false),
-    m_listServerStatusSummaryHasBeenSet(false),
-    m_listServerStrategySummaryHasBeenSet(false),
-    m_listServerSummaryHasBeenSet(false)
+AssessmentSummary::AssessmentSummary(JsonView jsonValue)
+  : AssessmentSummary()
 {
   *this = jsonValue;
 }

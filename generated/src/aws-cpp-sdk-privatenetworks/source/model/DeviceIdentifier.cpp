@@ -32,17 +32,8 @@ DeviceIdentifier::DeviceIdentifier() :
 {
 }
 
-DeviceIdentifier::DeviceIdentifier(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_deviceIdentifierArnHasBeenSet(false),
-    m_iccidHasBeenSet(false),
-    m_imsiHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_orderArnHasBeenSet(false),
-    m_status(DeviceIdentifierStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trafficGroupArnHasBeenSet(false),
-    m_vendorHasBeenSet(false)
+DeviceIdentifier::DeviceIdentifier(JsonView jsonValue)
+  : DeviceIdentifier()
 {
   *this = jsonValue;
 }

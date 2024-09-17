@@ -25,10 +25,8 @@ TemplateDefinition::TemplateDefinition() :
 {
 }
 
-TemplateDefinition::TemplateDefinition(JsonView jsonValue) : 
-    m_templateV2HasBeenSet(false),
-    m_templateV3HasBeenSet(false),
-    m_templateV4HasBeenSet(false)
+TemplateDefinition::TemplateDefinition(JsonView jsonValue)
+  : TemplateDefinition()
 {
   *this = jsonValue;
 }

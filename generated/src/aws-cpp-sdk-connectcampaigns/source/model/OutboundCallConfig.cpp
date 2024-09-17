@@ -26,11 +26,8 @@ OutboundCallConfig::OutboundCallConfig() :
 {
 }
 
-OutboundCallConfig::OutboundCallConfig(JsonView jsonValue) : 
-    m_connectContactFlowIdHasBeenSet(false),
-    m_connectSourcePhoneNumberHasBeenSet(false),
-    m_connectQueueIdHasBeenSet(false),
-    m_answerMachineDetectionConfigHasBeenSet(false)
+OutboundCallConfig::OutboundCallConfig(JsonView jsonValue)
+  : OutboundCallConfig()
 {
   *this = jsonValue;
 }

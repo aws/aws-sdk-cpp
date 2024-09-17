@@ -21,8 +21,8 @@ PutObjectRetentionResult::PutObjectRetentionResult() :
 {
 }
 
-PutObjectRetentionResult::PutObjectRetentionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_requestCharged(RequestCharged::NOT_SET)
+PutObjectRetentionResult::PutObjectRetentionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : PutObjectRetentionResult()
 {
   *this = result;
 }

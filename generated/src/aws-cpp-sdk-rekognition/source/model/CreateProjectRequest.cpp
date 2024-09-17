@@ -17,7 +17,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_feature(CustomizationFeature::NOT_SET),
     m_featureHasBeenSet(false),
     m_autoUpdate(ProjectAutoUpdate::NOT_SET),
-    m_autoUpdateHasBeenSet(false)
+    m_autoUpdateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,17 @@ Aws::String CreateProjectRequest::SerializePayload() const
   if(m_autoUpdateHasBeenSet)
   {
    payload.WithString("AutoUpdate", ProjectAutoUpdateMapper::GetNameForProjectAutoUpdate(m_autoUpdate));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

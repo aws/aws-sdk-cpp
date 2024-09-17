@@ -26,11 +26,8 @@ ResultData::ResultData() :
 {
 }
 
-ResultData::ResultData(JsonView jsonValue) : 
-    m_documentHasBeenSet(false),
-    m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false),
-    m_resultIdHasBeenSet(false)
+ResultData::ResultData(JsonView jsonValue)
+  : ResultData()
 {
   *this = jsonValue;
 }

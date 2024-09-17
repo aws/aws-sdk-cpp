@@ -26,9 +26,8 @@ AuthorizedTokenIssuer::AuthorizedTokenIssuer() :
 {
 }
 
-AuthorizedTokenIssuer::AuthorizedTokenIssuer(const XmlNode& xmlNode) : 
-    m_trustedTokenIssuerArnHasBeenSet(false),
-    m_authorizedAudiencesListHasBeenSet(false)
+AuthorizedTokenIssuer::AuthorizedTokenIssuer(const XmlNode& xmlNode)
+  : AuthorizedTokenIssuer()
 {
   *this = xmlNode;
 }

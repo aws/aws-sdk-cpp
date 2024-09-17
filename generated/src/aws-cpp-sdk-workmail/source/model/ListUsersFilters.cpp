@@ -27,12 +27,8 @@ ListUsersFilters::ListUsersFilters() :
 {
 }
 
-ListUsersFilters::ListUsersFilters(JsonView jsonValue) : 
-    m_usernamePrefixHasBeenSet(false),
-    m_displayNamePrefixHasBeenSet(false),
-    m_primaryEmailPrefixHasBeenSet(false),
-    m_state(EntityState::NOT_SET),
-    m_stateHasBeenSet(false)
+ListUsersFilters::ListUsersFilters(JsonView jsonValue)
+  : ListUsersFilters()
 {
   *this = jsonValue;
 }

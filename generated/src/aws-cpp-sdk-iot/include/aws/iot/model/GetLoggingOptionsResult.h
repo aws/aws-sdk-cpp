@@ -39,89 +39,40 @@ namespace Model
     AWS_IOT_API GetLoggingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM role that grants access.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM role that grants access.</p>
-     */
     inline GetLoggingOptionsResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that grants access.</p>
-     */
     inline GetLoggingOptionsResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that grants access.</p>
-     */
     inline GetLoggingOptionsResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The logging level.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-
-    /**
-     * <p>The logging level.</p>
-     */
     inline void SetLogLevel(const LogLevel& value) { m_logLevel = value; }
-
-    /**
-     * <p>The logging level.</p>
-     */
     inline void SetLogLevel(LogLevel&& value) { m_logLevel = std::move(value); }
-
-    /**
-     * <p>The logging level.</p>
-     */
     inline GetLoggingOptionsResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-
-    /**
-     * <p>The logging level.</p>
-     */
     inline GetLoggingOptionsResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLoggingOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLoggingOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLoggingOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

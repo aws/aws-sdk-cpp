@@ -19,30 +19,52 @@ namespace Model
 {
 
 Destination::Destination() : 
-    m_configurationHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
     m_state(DestinationState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_configurationHasBeenSet(false),
+    m_detailHasBeenSet(false)
 {
 }
 
-Destination::Destination(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(DestinationState::NOT_SET),
-    m_stateHasBeenSet(false)
+Destination::Destination(JsonView jsonValue)
+  : Destination()
 {
   *this = jsonValue;
 }
 
 Destination& Destination::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = DestinationStateMapper::GetDestinationStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetString("endTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
@@ -57,40 +79,33 @@ Destination& Destination::operator =(JsonView jsonValue)
     m_detailHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetString("endTime");
-
-    m_endTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("state"))
-  {
-    m_state = DestinationStateMapper::GetDestinationStateForName(jsonValue.GetString("state"));
-
-    m_stateHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue Destination::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", DestinationStateMapper::GetNameForDestinationState(m_state));
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
   if(m_configurationHasBeenSet)
   {
@@ -102,27 +117,6 @@ JsonValue Destination::Jsonize() const
   {
    payload.WithObject("detail", m_detail.Jsonize());
 
-  }
-
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", DestinationStateMapper::GetNameForDestinationState(m_state));
   }
 
   return payload;

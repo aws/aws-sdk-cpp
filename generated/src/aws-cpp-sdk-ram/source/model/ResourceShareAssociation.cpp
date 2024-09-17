@@ -34,19 +34,8 @@ ResourceShareAssociation::ResourceShareAssociation() :
 {
 }
 
-ResourceShareAssociation::ResourceShareAssociation(JsonView jsonValue) : 
-    m_resourceShareArnHasBeenSet(false),
-    m_resourceShareNameHasBeenSet(false),
-    m_associatedEntityHasBeenSet(false),
-    m_associationType(ResourceShareAssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_status(ResourceShareAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_external(false),
-    m_externalHasBeenSet(false)
+ResourceShareAssociation::ResourceShareAssociation(JsonView jsonValue)
+  : ResourceShareAssociation()
 {
   *this = jsonValue;
 }

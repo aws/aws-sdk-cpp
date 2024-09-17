@@ -43,85 +43,32 @@ namespace Model
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Returns an enumerated type where each value identifies an X12 transaction
      * set. Transaction sets are maintained by the X12 Accredited Standards
      * Committee.</p>
      */
     inline const X12TransactionSet& GetTransactionSet() const{ return m_transactionSet; }
-
-    /**
-     * <p>Returns an enumerated type where each value identifies an X12 transaction
-     * set. Transaction sets are maintained by the X12 Accredited Standards
-     * Committee.</p>
-     */
     inline bool TransactionSetHasBeenSet() const { return m_transactionSetHasBeenSet; }
-
-    /**
-     * <p>Returns an enumerated type where each value identifies an X12 transaction
-     * set. Transaction sets are maintained by the X12 Accredited Standards
-     * Committee.</p>
-     */
     inline void SetTransactionSet(const X12TransactionSet& value) { m_transactionSetHasBeenSet = true; m_transactionSet = value; }
-
-    /**
-     * <p>Returns an enumerated type where each value identifies an X12 transaction
-     * set. Transaction sets are maintained by the X12 Accredited Standards
-     * Committee.</p>
-     */
     inline void SetTransactionSet(X12TransactionSet&& value) { m_transactionSetHasBeenSet = true; m_transactionSet = std::move(value); }
-
-    /**
-     * <p>Returns an enumerated type where each value identifies an X12 transaction
-     * set. Transaction sets are maintained by the X12 Accredited Standards
-     * Committee.</p>
-     */
     inline X12Details& WithTransactionSet(const X12TransactionSet& value) { SetTransactionSet(value); return *this;}
-
-    /**
-     * <p>Returns an enumerated type where each value identifies an X12 transaction
-     * set. Transaction sets are maintained by the X12 Accredited Standards
-     * Committee.</p>
-     */
     inline X12Details& WithTransactionSet(X12TransactionSet&& value) { SetTransactionSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
+     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
+     * &lt;/p&gt; </code></pre>
      */
     inline const X12Version& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
-     */
     inline void SetVersion(const X12Version& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
-     */
     inline void SetVersion(X12Version&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
-     */
     inline X12Details& WithVersion(const X12Version& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
-     */
     inline X12Details& WithVersion(X12Version&& value) { SetVersion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     X12TransactionSet m_transactionSet;

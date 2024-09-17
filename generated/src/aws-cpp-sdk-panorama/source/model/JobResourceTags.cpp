@@ -25,10 +25,8 @@ JobResourceTags::JobResourceTags() :
 {
 }
 
-JobResourceTags::JobResourceTags(JsonView jsonValue) : 
-    m_resourceType(JobResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+JobResourceTags::JobResourceTags(JsonView jsonValue)
+  : JobResourceTags()
 {
   *this = jsonValue;
 }

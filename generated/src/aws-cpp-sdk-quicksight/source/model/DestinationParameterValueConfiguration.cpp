@@ -28,13 +28,8 @@ DestinationParameterValueConfiguration::DestinationParameterValueConfiguration()
 {
 }
 
-DestinationParameterValueConfiguration::DestinationParameterValueConfiguration(JsonView jsonValue) : 
-    m_customValuesConfigurationHasBeenSet(false),
-    m_selectAllValueOptions(SelectAllValueOptions::NOT_SET),
-    m_selectAllValueOptionsHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_sourceColumnHasBeenSet(false)
+DestinationParameterValueConfiguration::DestinationParameterValueConfiguration(JsonView jsonValue)
+  : DestinationParameterValueConfiguration()
 {
   *this = jsonValue;
 }

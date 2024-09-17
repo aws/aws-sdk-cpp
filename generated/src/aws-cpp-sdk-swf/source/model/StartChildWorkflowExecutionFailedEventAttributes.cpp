@@ -31,16 +31,8 @@ StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFai
 {
 }
 
-StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
-    m_workflowTypeHasBeenSet(false),
-    m_cause(StartChildWorkflowExecutionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_controlHasBeenSet(false)
+StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
+  : StartChildWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }

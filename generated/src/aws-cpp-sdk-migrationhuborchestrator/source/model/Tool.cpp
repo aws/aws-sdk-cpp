@@ -24,9 +24,8 @@ Tool::Tool() :
 {
 }
 
-Tool::Tool(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_urlHasBeenSet(false)
+Tool::Tool(JsonView jsonValue)
+  : Tool()
 {
   *this = jsonValue;
 }

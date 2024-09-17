@@ -38,67 +38,29 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the connector's auto scaling capacity.</p>
      */
     inline const AutoScalingDescription& GetAutoScaling() const{ return m_autoScaling; }
-
-    /**
-     * <p>Describes the connector's auto scaling capacity.</p>
-     */
     inline bool AutoScalingHasBeenSet() const { return m_autoScalingHasBeenSet; }
-
-    /**
-     * <p>Describes the connector's auto scaling capacity.</p>
-     */
     inline void SetAutoScaling(const AutoScalingDescription& value) { m_autoScalingHasBeenSet = true; m_autoScaling = value; }
-
-    /**
-     * <p>Describes the connector's auto scaling capacity.</p>
-     */
     inline void SetAutoScaling(AutoScalingDescription&& value) { m_autoScalingHasBeenSet = true; m_autoScaling = std::move(value); }
-
-    /**
-     * <p>Describes the connector's auto scaling capacity.</p>
-     */
     inline CapacityDescription& WithAutoScaling(const AutoScalingDescription& value) { SetAutoScaling(value); return *this;}
-
-    /**
-     * <p>Describes the connector's auto scaling capacity.</p>
-     */
     inline CapacityDescription& WithAutoScaling(AutoScalingDescription&& value) { SetAutoScaling(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes a connector's provisioned capacity.</p>
      */
     inline const ProvisionedCapacityDescription& GetProvisionedCapacity() const{ return m_provisionedCapacity; }
-
-    /**
-     * <p>Describes a connector's provisioned capacity.</p>
-     */
     inline bool ProvisionedCapacityHasBeenSet() const { return m_provisionedCapacityHasBeenSet; }
-
-    /**
-     * <p>Describes a connector's provisioned capacity.</p>
-     */
     inline void SetProvisionedCapacity(const ProvisionedCapacityDescription& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = value; }
-
-    /**
-     * <p>Describes a connector's provisioned capacity.</p>
-     */
     inline void SetProvisionedCapacity(ProvisionedCapacityDescription&& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = std::move(value); }
-
-    /**
-     * <p>Describes a connector's provisioned capacity.</p>
-     */
     inline CapacityDescription& WithProvisionedCapacity(const ProvisionedCapacityDescription& value) { SetProvisionedCapacity(value); return *this;}
-
-    /**
-     * <p>Describes a connector's provisioned capacity.</p>
-     */
     inline CapacityDescription& WithProvisionedCapacity(ProvisionedCapacityDescription&& value) { SetProvisionedCapacity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutoScalingDescription m_autoScaling;

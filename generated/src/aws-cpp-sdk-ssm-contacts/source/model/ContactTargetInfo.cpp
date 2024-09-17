@@ -25,10 +25,8 @@ ContactTargetInfo::ContactTargetInfo() :
 {
 }
 
-ContactTargetInfo::ContactTargetInfo(JsonView jsonValue) : 
-    m_contactIdHasBeenSet(false),
-    m_isEssential(false),
-    m_isEssentialHasBeenSet(false)
+ContactTargetInfo::ContactTargetInfo(JsonView jsonValue)
+  : ContactTargetInfo()
 {
   *this = jsonValue;
 }

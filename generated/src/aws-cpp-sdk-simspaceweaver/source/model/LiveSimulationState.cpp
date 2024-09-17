@@ -24,9 +24,8 @@ LiveSimulationState::LiveSimulationState() :
 {
 }
 
-LiveSimulationState::LiveSimulationState(JsonView jsonValue) : 
-    m_clocksHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+LiveSimulationState::LiveSimulationState(JsonView jsonValue)
+  : LiveSimulationState()
 {
   *this = jsonValue;
 }

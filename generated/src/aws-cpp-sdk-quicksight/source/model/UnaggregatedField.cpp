@@ -25,10 +25,8 @@ UnaggregatedField::UnaggregatedField() :
 {
 }
 
-UnaggregatedField::UnaggregatedField(JsonView jsonValue) : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
+UnaggregatedField::UnaggregatedField(JsonView jsonValue)
+  : UnaggregatedField()
 {
   *this = jsonValue;
 }

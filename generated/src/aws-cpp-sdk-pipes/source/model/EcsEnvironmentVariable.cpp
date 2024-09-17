@@ -24,9 +24,8 @@ EcsEnvironmentVariable::EcsEnvironmentVariable() :
 {
 }
 
-EcsEnvironmentVariable::EcsEnvironmentVariable(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+EcsEnvironmentVariable::EcsEnvironmentVariable(JsonView jsonValue)
+  : EcsEnvironmentVariable()
 {
   *this = jsonValue;
 }

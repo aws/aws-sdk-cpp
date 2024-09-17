@@ -38,110 +38,43 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Enter the check digit string for the watermark
      */
     inline const Aws::String& GetCheckDigitString() const{ return m_checkDigitString; }
-
-    /**
-     * Enter the check digit string for the watermark
-     */
     inline bool CheckDigitStringHasBeenSet() const { return m_checkDigitStringHasBeenSet; }
-
-    /**
-     * Enter the check digit string for the watermark
-     */
     inline void SetCheckDigitString(const Aws::String& value) { m_checkDigitStringHasBeenSet = true; m_checkDigitString = value; }
-
-    /**
-     * Enter the check digit string for the watermark
-     */
     inline void SetCheckDigitString(Aws::String&& value) { m_checkDigitStringHasBeenSet = true; m_checkDigitString = std::move(value); }
-
-    /**
-     * Enter the check digit string for the watermark
-     */
     inline void SetCheckDigitString(const char* value) { m_checkDigitStringHasBeenSet = true; m_checkDigitString.assign(value); }
-
-    /**
-     * Enter the check digit string for the watermark
-     */
     inline NielsenNaesIiNw& WithCheckDigitString(const Aws::String& value) { SetCheckDigitString(value); return *this;}
-
-    /**
-     * Enter the check digit string for the watermark
-     */
     inline NielsenNaesIiNw& WithCheckDigitString(Aws::String&& value) { SetCheckDigitString(std::move(value)); return *this;}
-
-    /**
-     * Enter the check digit string for the watermark
-     */
     inline NielsenNaesIiNw& WithCheckDigitString(const char* value) { SetCheckDigitString(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Enter the Nielsen Source ID (SID) to include in the watermark
      */
     inline double GetSid() const{ return m_sid; }
-
-    /**
-     * Enter the Nielsen Source ID (SID) to include in the watermark
-     */
     inline bool SidHasBeenSet() const { return m_sidHasBeenSet; }
-
-    /**
-     * Enter the Nielsen Source ID (SID) to include in the watermark
-     */
     inline void SetSid(double value) { m_sidHasBeenSet = true; m_sid = value; }
-
-    /**
-     * Enter the Nielsen Source ID (SID) to include in the watermark
-     */
     inline NielsenNaesIiNw& WithSid(double value) { SetSid(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Choose the timezone for the time stamps in the watermark. If not provided,
 the
      * timestamps will be in Coordinated Universal Time (UTC)
      */
     inline const NielsenWatermarkTimezones& GetTimezone() const{ return m_timezone; }
-
-    /**
-     * Choose the timezone for the time stamps in the watermark. If not provided,
-the
-     * timestamps will be in Coordinated Universal Time (UTC)
-     */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-
-    /**
-     * Choose the timezone for the time stamps in the watermark. If not provided,
-the
-     * timestamps will be in Coordinated Universal Time (UTC)
-     */
     inline void SetTimezone(const NielsenWatermarkTimezones& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-
-    /**
-     * Choose the timezone for the time stamps in the watermark. If not provided,
-the
-     * timestamps will be in Coordinated Universal Time (UTC)
-     */
     inline void SetTimezone(NielsenWatermarkTimezones&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-
-    /**
-     * Choose the timezone for the time stamps in the watermark. If not provided,
-the
-     * timestamps will be in Coordinated Universal Time (UTC)
-     */
     inline NielsenNaesIiNw& WithTimezone(const NielsenWatermarkTimezones& value) { SetTimezone(value); return *this;}
-
-    /**
-     * Choose the timezone for the time stamps in the watermark. If not provided,
-the
-     * timestamps will be in Coordinated Universal Time (UTC)
-     */
     inline NielsenNaesIiNw& WithTimezone(NielsenWatermarkTimezones&& value) { SetTimezone(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_checkDigitString;

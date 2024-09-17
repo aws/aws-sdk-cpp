@@ -28,13 +28,8 @@ CmafPackage::CmafPackage() :
 {
 }
 
-CmafPackage::CmafPackage(JsonView jsonValue) : 
-    m_encryptionHasBeenSet(false),
-    m_hlsManifestsHasBeenSet(false),
-    m_includeEncoderConfigurationInSegments(false),
-    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false)
+CmafPackage::CmafPackage(JsonView jsonValue)
+  : CmafPackage()
 {
   *this = jsonValue;
 }

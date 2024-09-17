@@ -23,9 +23,8 @@ DescribeDiscovererResult::DescribeDiscovererResult() :
 {
 }
 
-DescribeDiscovererResult::DescribeDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(DiscovererState::NOT_SET),
-    m_crossAccount(false)
+DescribeDiscovererResult::DescribeDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DescribeDiscovererResult()
 {
   *this = result;
 }

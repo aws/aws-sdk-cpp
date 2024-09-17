@@ -38,77 +38,31 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The SceneError code.</p>
      */
     inline const SceneErrorCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The SceneError code.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The SceneError code.</p>
-     */
     inline void SetCode(const SceneErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The SceneError code.</p>
-     */
     inline void SetCode(SceneErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The SceneError code.</p>
-     */
     inline SceneError& WithCode(const SceneErrorCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The SceneError code.</p>
-     */
     inline SceneError& WithCode(SceneErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The SceneError message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The SceneError message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The SceneError message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The SceneError message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The SceneError message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The SceneError message.</p>
-     */
     inline SceneError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The SceneError message.</p>
-     */
     inline SceneError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The SceneError message.</p>
-     */
     inline SceneError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     SceneErrorCode m_code;

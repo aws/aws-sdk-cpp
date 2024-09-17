@@ -24,9 +24,8 @@ VectorSearchConfiguration::VectorSearchConfiguration() :
 {
 }
 
-VectorSearchConfiguration::VectorSearchConfiguration(JsonView jsonValue) : 
-    m_dimension(0),
-    m_dimensionHasBeenSet(false)
+VectorSearchConfiguration::VectorSearchConfiguration(JsonView jsonValue)
+  : VectorSearchConfiguration()
 {
   *this = jsonValue;
 }

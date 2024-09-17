@@ -280,8 +280,8 @@ namespace EKS
          * you create an Amazon EKS cluster, you must configure your Kubernetes tooling to
          * communicate with the API server and launch nodes into your cluster. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
-         * Cluster Authentication</a> and <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-auth.html">Allowing
+         * users to access your cluster</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
          * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -396,10 +396,11 @@ namespace EKS
          * version for the respective minor Kubernetes version of the cluster, unless you
          * deploy a custom AMI using a launch template. For more information about using
          * launch templates, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-         * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
-         * Auto Scaling group and associated Amazon EC2 instances that are managed by
-         * Amazon Web Services for an Amazon EKS cluster. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+         * managed nodes with launch templates</a>.</p> <p>An Amazon EKS managed node group
+         * is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
+         * managed by Amazon Web Services for an Amazon EKS cluster. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * node groups</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>Windows AMI
          * types are only supported for commercial Amazon Web Services Regions that support
@@ -781,13 +782,13 @@ namespace EKS
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAddonVersionsOutcome DescribeAddonVersions(const Model::DescribeAddonVersionsRequest& request) const;
+        virtual Model::DescribeAddonVersionsOutcome DescribeAddonVersions(const Model::DescribeAddonVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAddonVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAddonVersionsRequestT = Model::DescribeAddonVersionsRequest>
-        Model::DescribeAddonVersionsOutcomeCallable DescribeAddonVersionsCallable(const DescribeAddonVersionsRequestT& request) const
+        Model::DescribeAddonVersionsOutcomeCallable DescribeAddonVersionsCallable(const DescribeAddonVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&EKSClient::DescribeAddonVersions, request);
         }
@@ -796,7 +797,7 @@ namespace EKS
          * An Async wrapper for DescribeAddonVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAddonVersionsRequestT = Model::DescribeAddonVersionsRequest>
-        void DescribeAddonVersionsAsync(const DescribeAddonVersionsRequestT& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAddonVersionsAsync(const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAddonVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&EKSClient::DescribeAddonVersions, request, handler, context);
         }
@@ -1103,13 +1104,13 @@ namespace EKS
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccessPoliciesOutcome ListAccessPolicies(const Model::ListAccessPoliciesRequest& request) const;
+        virtual Model::ListAccessPoliciesOutcome ListAccessPolicies(const Model::ListAccessPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccessPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccessPoliciesRequestT = Model::ListAccessPoliciesRequest>
-        Model::ListAccessPoliciesOutcomeCallable ListAccessPoliciesCallable(const ListAccessPoliciesRequestT& request) const
+        Model::ListAccessPoliciesOutcomeCallable ListAccessPoliciesCallable(const ListAccessPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&EKSClient::ListAccessPolicies, request);
         }
@@ -1118,7 +1119,7 @@ namespace EKS
          * An Async wrapper for ListAccessPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccessPoliciesRequestT = Model::ListAccessPoliciesRequest>
-        void ListAccessPoliciesAsync(const ListAccessPoliciesRequestT& request, const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccessPoliciesAsync(const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccessPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&EKSClient::ListAccessPolicies, request, handler, context);
         }
@@ -1180,13 +1181,13 @@ namespace EKS
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request) const
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
         {
             return SubmitCallable(&EKSClient::ListClusters, request);
         }
@@ -1195,7 +1196,7 @@ namespace EKS
          * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&EKSClient::ListClusters, request, handler, context);
         }
@@ -1206,13 +1207,13 @@ namespace EKS
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListEksAnywhereSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEksAnywhereSubscriptionsOutcome ListEksAnywhereSubscriptions(const Model::ListEksAnywhereSubscriptionsRequest& request) const;
+        virtual Model::ListEksAnywhereSubscriptionsOutcome ListEksAnywhereSubscriptions(const Model::ListEksAnywhereSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEksAnywhereSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEksAnywhereSubscriptionsRequestT = Model::ListEksAnywhereSubscriptionsRequest>
-        Model::ListEksAnywhereSubscriptionsOutcomeCallable ListEksAnywhereSubscriptionsCallable(const ListEksAnywhereSubscriptionsRequestT& request) const
+        Model::ListEksAnywhereSubscriptionsOutcomeCallable ListEksAnywhereSubscriptionsCallable(const ListEksAnywhereSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&EKSClient::ListEksAnywhereSubscriptions, request);
         }
@@ -1221,7 +1222,7 @@ namespace EKS
          * An Async wrapper for ListEksAnywhereSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEksAnywhereSubscriptionsRequestT = Model::ListEksAnywhereSubscriptionsRequest>
-        void ListEksAnywhereSubscriptionsAsync(const ListEksAnywhereSubscriptionsRequestT& request, const ListEksAnywhereSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEksAnywhereSubscriptionsAsync(const ListEksAnywhereSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEksAnywhereSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&EKSClient::ListEksAnywhereSubscriptions, request, handler, context);
         }
@@ -1787,7 +1788,6 @@ namespace EKS
       void init(const EKSClientConfiguration& clientConfiguration);
 
       EKSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
       std::shared_ptr<EKSEndpointProviderBase> m_endpointProvider;
   };
 

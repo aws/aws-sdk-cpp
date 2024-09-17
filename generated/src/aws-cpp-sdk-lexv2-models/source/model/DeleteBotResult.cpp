@@ -22,8 +22,8 @@ DeleteBotResult::DeleteBotResult() :
 {
 }
 
-DeleteBotResult::DeleteBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_botStatus(BotStatus::NOT_SET)
+DeleteBotResult::DeleteBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : DeleteBotResult()
 {
   *this = result;
 }

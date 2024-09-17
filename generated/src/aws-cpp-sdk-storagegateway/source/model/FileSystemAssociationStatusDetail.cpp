@@ -23,8 +23,8 @@ FileSystemAssociationStatusDetail::FileSystemAssociationStatusDetail() :
 {
 }
 
-FileSystemAssociationStatusDetail::FileSystemAssociationStatusDetail(JsonView jsonValue) : 
-    m_errorCodeHasBeenSet(false)
+FileSystemAssociationStatusDetail::FileSystemAssociationStatusDetail(JsonView jsonValue)
+  : FileSystemAssociationStatusDetail()
 {
   *this = jsonValue;
 }

@@ -23,9 +23,8 @@ GetThreatIntelSetResult::GetThreatIntelSetResult() :
 {
 }
 
-GetThreatIntelSetResult::GetThreatIntelSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_format(ThreatIntelSetFormat::NOT_SET),
-    m_status(ThreatIntelSetStatus::NOT_SET)
+GetThreatIntelSetResult::GetThreatIntelSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetThreatIntelSetResult()
 {
   *this = result;
 }

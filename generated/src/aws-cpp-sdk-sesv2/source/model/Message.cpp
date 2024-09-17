@@ -20,13 +20,13 @@ namespace Model
 
 Message::Message() : 
     m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false)
+    m_bodyHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
 }
 
-Message::Message(JsonView jsonValue) : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false)
+Message::Message(JsonView jsonValue)
+  : Message()
 {
   *this = jsonValue;
 }
@@ -47,6 +47,16 @@ Message& Message::operator =(JsonView jsonValue)
     m_bodyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Headers"))
+  {
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
+    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+    {
+      m_headers.push_back(headersJsonList[headersIndex].AsObject());
+    }
+    m_headersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +73,17 @@ JsonValue Message::Jsonize() const
   if(m_bodyHasBeenSet)
   {
    payload.WithObject("Body", m_body.Jsonize());
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+   {
+     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+   }
+   payload.WithArray("Headers", std::move(headersJsonList));
 
   }
 

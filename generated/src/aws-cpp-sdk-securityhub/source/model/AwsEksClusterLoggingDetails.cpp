@@ -23,8 +23,8 @@ AwsEksClusterLoggingDetails::AwsEksClusterLoggingDetails() :
 {
 }
 
-AwsEksClusterLoggingDetails::AwsEksClusterLoggingDetails(JsonView jsonValue) : 
-    m_clusterLoggingHasBeenSet(false)
+AwsEksClusterLoggingDetails::AwsEksClusterLoggingDetails(JsonView jsonValue)
+  : AwsEksClusterLoggingDetails()
 {
   *this = jsonValue;
 }

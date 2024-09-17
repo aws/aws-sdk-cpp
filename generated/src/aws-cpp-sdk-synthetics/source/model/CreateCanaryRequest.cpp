@@ -25,6 +25,7 @@ CreateCanaryRequest::CreateCanaryRequest() :
     m_failureRetentionPeriodInDaysHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_resourcesToReplicateTagsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_artifactConfigHasBeenSet(false)
 {
@@ -91,6 +92,17 @@ Aws::String CreateCanaryRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_resourcesToReplicateTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourcesToReplicateTagsJsonList(m_resourcesToReplicateTags.size());
+   for(unsigned resourcesToReplicateTagsIndex = 0; resourcesToReplicateTagsIndex < resourcesToReplicateTagsJsonList.GetLength(); ++resourcesToReplicateTagsIndex)
+   {
+     resourcesToReplicateTagsJsonList[resourcesToReplicateTagsIndex].AsString(ResourceToTagMapper::GetNameForResourceToTag(m_resourcesToReplicateTags[resourcesToReplicateTagsIndex]));
+   }
+   payload.WithArray("ResourcesToReplicateTags", std::move(resourcesToReplicateTagsJsonList));
 
   }
 

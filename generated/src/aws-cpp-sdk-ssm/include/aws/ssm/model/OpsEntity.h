@@ -39,107 +39,37 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The query ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The query ID.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The query ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The query ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The query ID.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The query ID.</p>
-     */
     inline OpsEntity& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The query ID.</p>
-     */
     inline OpsEntity& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The query ID.</p>
-     */
     inline OpsEntity& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data returned by the query.</p>
      */
     inline const Aws::Map<Aws::String, OpsEntityItem>& GetData() const{ return m_data; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline void SetData(const Aws::Map<Aws::String, OpsEntityItem>& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline void SetData(Aws::Map<Aws::String, OpsEntityItem>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& WithData(const Aws::Map<Aws::String, OpsEntityItem>& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& WithData(Aws::Map<Aws::String, OpsEntityItem>&& value) { SetData(std::move(value)); return *this;}
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& AddData(const Aws::String& key, const OpsEntityItem& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& AddData(Aws::String&& key, const OpsEntityItem& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& AddData(const Aws::String& key, OpsEntityItem&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& AddData(Aws::String&& key, OpsEntityItem&& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& AddData(const char* key, OpsEntityItem&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The data returned by the query.</p>
-     */
     inline OpsEntity& AddData(const char* key, const OpsEntityItem& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_id;

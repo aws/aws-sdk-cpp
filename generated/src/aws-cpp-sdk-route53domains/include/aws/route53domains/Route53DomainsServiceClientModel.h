@@ -50,6 +50,12 @@
 #include <aws/route53domains/model/UpdateDomainNameserversResult.h>
 #include <aws/route53domains/model/UpdateTagsForDomainResult.h>
 #include <aws/route53domains/model/ViewBillingResult.h>
+#include <aws/route53domains/model/ResendContactReachabilityEmailRequest.h>
+#include <aws/route53domains/model/ListDomainsRequest.h>
+#include <aws/route53domains/model/ListPricesRequest.h>
+#include <aws/route53domains/model/ViewBillingRequest.h>
+#include <aws/route53domains/model/GetContactReachabilityStatusRequest.h>
+#include <aws/route53domains/model/ListOperationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in Route53DomainsClient header */
 
@@ -84,7 +90,7 @@ namespace Aws
 
   namespace Route53Domains
   {
-    using Route53DomainsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53DomainsClientConfiguration = Aws::Client::GenericClientConfiguration;
     using Route53DomainsEndpointProviderBase = Aws::Route53Domains::Endpoint::Route53DomainsEndpointProviderBase;
     using Route53DomainsEndpointProvider = Aws::Route53Domains::Endpoint::Route53DomainsEndpointProvider;
 
